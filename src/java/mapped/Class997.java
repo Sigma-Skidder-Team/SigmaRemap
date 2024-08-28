@@ -11,11 +11,11 @@ public class Class997 extends Class995 {
    private float field5494 = 1.0F;
    private boolean field5495;
 
-   public Class997(Class8992<? extends Class997> var1, Class1655 var2) {
+   public Class997(Class8992<? extends Class997> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class997(Class1655 var1, BlockPos var2, Direction var3) {
+   public Class997(World var1, BlockPos var2, Direction var3) {
       super(Class8992.field41043, var1, var2);
       this.method4077(var3);
    }
@@ -311,7 +311,7 @@ public class Class997 extends Class995 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       boolean var6 = !this.method4090().method32105();
       boolean var7 = !var5.method32105();
@@ -327,12 +327,12 @@ public class Class997 extends Class995 {
                }
             }
 
-            return Class2274.field14819;
+            return ActionResultType.field14819;
          } else {
-            return !var6 && !var7 ? Class2274.field14820 : Class2274.field14818;
+            return !var6 && !var7 ? ActionResultType.field14820 : ActionResultType.field14818;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

@@ -231,7 +231,7 @@ public class Class216 implements Class215 {
       }
    }
 
-   public Class7202 method788(ItemStack var1, Class1655 var2, Class880 var3) {
+   public Class7202 method788(ItemStack var1, World var2, Class880 var3) {
       Class3257 var6 = var1.method32107();
       Class7202 var7;
       if (var6 != Class8514.field38144) {
@@ -251,10 +251,10 @@ public class Class216 implements Class215 {
    }
 
    public void method789(ItemStack var1, Class2327 var2, int var3, int var4, Class9332 var5, Class7733 var6) {
-      this.method790((Class880)null, var1, var2, false, var5, var6, (Class1655)null, var3, var4);
+      this.method790((Class880)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
-   public void method790(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, Class9332 var5, Class7733 var6, Class1655 var7, int var8, int var9) {
+   public void method790(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, Class9332 var5, Class7733 var6, World var7, int var8, int var9) {
       if (!var2.method32105()) {
          Class7202 var12 = this.method788(var2, var7, var1);
          this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
@@ -262,7 +262,7 @@ public class Class216 implements Class215 {
    }
 
    public void method791(ItemStack var1, int var2, int var3) {
-      this.method792(var1, var2, var3, this.method788(var1, (Class1655)null, (Class880)null));
+      this.method792(var1, var2, var3, this.method788(var1, (World)null, (Class880)null));
    }
 
    public void method792(ItemStack var1, int var2, int var3, Class7202 var4) {
@@ -317,7 +317,7 @@ public class Class216 implements Class215 {
          this.field847 += 50.0F;
 
          try {
-            this.method792(var2, var3, var4, this.method788(var2, (Class1655)null, var1));
+            this.method792(var2, var3, var4, this.method788(var2, (World)null, var1));
          } catch (Throwable var10) {
             Class4526 var8 = Class4526.method14413(var10, "Rendering item");
             Class8965 var9 = var8.method14410("Item being rendered");

@@ -23,7 +23,7 @@ public class Class3747<E extends Class1034> extends Class3676<E> {
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
-      Class1000 var5 = var2.method2992().<Class1000>method21410(Class8830.field39847).get();
+      ItemEntity var5 = var2.method2992().<ItemEntity>method21410(Class8830.field39847).get();
       return Class4388.method13827(var5.method4124().method32107());
    }
 

@@ -104,13 +104,13 @@ public class Class966 extends Class944 implements Class935 {
       return false;
    }
 
-   private void method3994(Class1655 var1) {
+   private void method3994(World var1) {
       if (!var1.field9020) {
          this.field5419.stream().filter(this::method3996).forEach(this::method3997);
       }
    }
 
-   private void method3995(Class1655 var1) {
+   private void method3995(World var1) {
       if (var1.field9020) {
          BlockPos var4 = this.method3774();
          MutableInt var5 = new MutableInt(16700985);

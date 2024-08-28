@@ -109,7 +109,7 @@ public class Class9749 {
 
    private static int method38289(Class6619 var0) {
       ServerWorld var3 = var0.method20172();
-      Class8705<Class1655> var4 = var3.method6813();
+      Class8705<World> var4 = var3.method6813();
       LongSet var5 = var3.method6949();
       for (long var1 : var5) {
          var3.method6950(Class7481.method24354(var1), Class7481.method24355(var1), false);

@@ -18,7 +18,7 @@ public class Class3237 extends Class3238 {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7379 var6 = var1.method18360().method6739(var1.method18345());
       BlockPos var7 = var5.method8341();

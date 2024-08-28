@@ -8,11 +8,11 @@ public class Class897 extends Entity implements Class889 {
    private int field5136;
    private boolean field5137;
 
-   public Class897(Class8992<? extends Class897> var1, Class1655 var2) {
+   public Class897(Class8992<? extends Class897> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class897(Class1655 var1, double var2, double var4, double var6) {
+   public Class897(World var1, double var2, double var4, double var6) {
       this(Class8992.field41030, var1);
       this.field5136 = 0;
       this.method3215(var2, var4, var6);
@@ -148,7 +148,7 @@ public class Class897 extends Entity implements Class889 {
             if (!this.field5137) {
                this.field5024.method6999(2003, this.method3432(), 0);
             } else {
-               this.field5024.method6916(new Class1000(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
+               this.field5024.method6916(new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
             }
          }
       }

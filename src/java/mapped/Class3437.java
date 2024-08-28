@@ -46,7 +46,7 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method23463(field19198);
       double var8 = (double)var3.method8304() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var10 = (double)var3.getY() + 0.55 - (double)(var4.nextFloat() * 0.1F);

@@ -17,7 +17,7 @@ public class Class3342 extends Class3198 implements Class3255 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383())) {
          this.method11892(var2, var3);
       }
@@ -27,7 +27,7 @@ public class Class3342 extends Class3198 implements Class3255 {
       return this.method11893().method38656(var1, var2) != null || this.method11895().method38656(var1, var2) != null;
    }
 
-   private void method11892(Class1655 var1, BlockPos var2) {
+   private void method11892(World var1, BlockPos var2) {
       Class9086 var5 = this.method11894().method38656(var1, var2);
       if (var5 == null) {
          var5 = this.method11896().method38656(var1, var2);
@@ -47,7 +47,7 @@ public class Class3342 extends Class3198 implements Class3255 {
             var1.method6916(var15);
 
             for (Class878 var9 : var1.<Class878>method7182(Class878.class, var15.method3389().method19664(5.0))) {
-               Class9551.field44478.method15080(var9, var15);
+               CriteriaTriggers.field44478.method15080(var9, var15);
             }
 
             for (int var19 = 0; var19 < this.method11896().method38654(); var19++) {
@@ -70,7 +70,7 @@ public class Class3342 extends Class3198 implements Class3255 {
          var1.method6916(var14);
 
          for (Class878 var23 : var1.<Class878>method7182(Class878.class, var14.method3389().method19664(5.0))) {
-            Class9551.field44478.method15080(var23, var14);
+            CriteriaTriggers.field44478.method15080(var23, var14);
          }
 
          for (int var21 = 0; var21 < this.method11894().method38653(); var21++) {

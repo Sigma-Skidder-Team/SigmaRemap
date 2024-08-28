@@ -16,7 +16,7 @@ public class Class7892 extends Class7882<Class1006> {
 
    public void method26425(ServerWorld var1, Class1006 var2) {
       Class6947 var5 = var2.method2992();
-      List<Class1000> var6 = var1.<Class1000>method6772(Class1000.class, var2.method3389().method19663(8.0, 4.0, 8.0), var0 -> true);
+      List<ItemEntity> var6 = var1.<ItemEntity>method6772(ItemEntity.class, var2.method3389().method19663(8.0, 4.0, 8.0), var0 -> true);
       var6.sort(Comparator.comparingDouble(var2::getDistanceSq));
       Optional var7 = var6.stream()
          .filter(var1x -> var2.method4253(var1x.method4124()))

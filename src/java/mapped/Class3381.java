@@ -30,7 +30,7 @@ public class Class3381 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.method8304() + 0.5;
       double var9 = (double)var3.getY() + 0.7;
       double var11 = (double)var3.method8306() + 0.5;

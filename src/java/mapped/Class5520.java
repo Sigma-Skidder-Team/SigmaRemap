@@ -13,7 +13,7 @@ public class Class5520 implements Packet<Class5116> {
    public Class5520() {
    }
 
-   public Class5520(Class1003 var1) {
+   public Class5520(ExperienceOrbEntity var1) {
       this.field24488 = var1.method3205();
       this.field24489 = var1.getPosX();
       this.field24490 = var1.getPosY();

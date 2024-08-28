@@ -15,7 +15,7 @@ public class Class5405 extends Class5404 {
       }
    }
 
-   public Class1674 method16992(Class1655 var1, int var2, int var3) {
+   public Class1674 method16992(World var1, int var2, int var3) {
       return this.field24089 != null && this.field24089.method7072().field32174 == var2 && this.field24089.method7072().field32175 == var3
          ? this.field24089
          : (this.field24089 = var1.method6824(var2, var3));

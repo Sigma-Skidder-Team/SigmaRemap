@@ -365,7 +365,7 @@ public class Class5254 extends PremiumModule {
                 ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                 if (var6.method32107() == Class8514.field38108) {
                     if (Class8005.method27349() <= Class5989.field26136.method18582()) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+                        mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
                     Class7789.method25873(var5, 8);

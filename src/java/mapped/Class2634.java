@@ -44,7 +44,7 @@ public class Class2634 extends Class2628 {
             (float)this.field16950.method4259()
          );
       if (this.method10838()) {
-         Class1655 var3 = this.field16950.field5024;
+         World var3 = this.field16950.field5024;
          BlockPos var4 = this.field16933.method8311();
          Class7380 var5 = var3.method6738(var4);
          Block var6 = var5.method23383();

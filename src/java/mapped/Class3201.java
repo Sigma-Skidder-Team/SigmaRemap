@@ -61,23 +61,23 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          Class7380 var11 = this.method11510(var1, var2, var3);
          float var10 = !var11.<Boolean>method23463(field18501) ? 0.5F : 0.6F;
          var2.method6742((PlayerEntity)null, var3, Class6067.field26730, Class2266.field14732, 0.3F, var10);
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       } else {
          Class7380 var9 = var1.method23459(field18501);
          if (var9.<Boolean>method23463(field18501)) {
             method11511(var9, var2, var3, 1.0F);
          }
 
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       }
    }
 
-   public Class7380 method11510(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public Class7380 method11510(Class7380 var1, World var2, BlockPos var3) {
       var1 = var1.method23459(field18501);
       var2.method6725(var3, var1, 3);
       this.method11517(var1, var2, var3);
@@ -94,14 +94,14 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18501) && var4.nextFloat() < 0.25F) {
          method11511(var1, var2, var3, 0.5F);
       }
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5 && !var1.method23448(var4.method23383())) {
          if (var1.<Boolean>method23463(field18501)) {
             this.method11517(var1, var2, var3);
@@ -126,7 +126,7 @@ public class Class3201 extends Class3200 {
       return true;
    }
 
-   private void method11517(Class7380 var1, Class1655 var2, BlockPos var3) {
+   private void method11517(Class7380 var1, World var2, BlockPos var3) {
       var2.method6733(var3, this);
       var2.method6733(var3.method8349(method11509(var1).method536()), this);
    }

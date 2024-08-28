@@ -136,11 +136,11 @@ public class Class7846 {
       }
    }
 
-   public ImmutableSet<Class8705<Class1655>> method26266() {
+   public ImmutableSet<Class8705<World>> method26266() {
       return this.method26264()
          .method9191()
          .stream()
-         .<Class8705<Class1655>>map(var0 -> Class8705.<Class1655>method31395(Class2348.field16067, var0.getKey().method31399()))
+         .<Class8705<World>>map(var0 -> Class8705.<World>method31395(Class2348.field16067, var0.getKey().method31399()))
          .collect(ImmutableSet.toImmutableSet());
    }
 

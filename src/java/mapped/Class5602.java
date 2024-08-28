@@ -69,7 +69,7 @@ public class Class5602 implements Packet<Class5116> {
    }
 
    @Nullable
-   public Vector3d method17624(Class1655 var1) {
+   public Vector3d method17624(World var1) {
       if (!this.field24876) {
          return new Vector3d(this.field24870, this.field24871, this.field24872);
       } else {

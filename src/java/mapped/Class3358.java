@@ -30,11 +30,11 @@ public class Class3358 extends Class3357 {
             Class920 var10 = Class936.method3715(var1, var2.method8349(var9));
             ItemStack var12;
             if (var10 != null) {
-               var12 = Class936.method3708(var6, var10, var8.method32126().method32106(1), var9.method536());
+               var12 = Class936.method3708(var6, var10, var8.copy().method32106(1), var9.method536());
                if (!var12.method32105()) {
-                  var12 = var8.method32126();
+                  var12 = var8.copy();
                } else {
-                  var12 = var8.method32126();
+                  var12 = var8.copy();
                   var12.method32182(1);
                }
             } else {

@@ -19,7 +19,7 @@ public class Class6218 implements Class6226 {
       return var2;
    }
 
-   public static void method19197(Class1655 var0, ItemStack var1, int var2, Direction var3, Class2955 var4) {
+   public static void method19197(World var0, ItemStack var1, int var2, Direction var3, Class2955 var4) {
       double var7 = var4.method11320();
       double var9 = var4.method11321();
       double var11 = var4.method11322();
@@ -29,7 +29,7 @@ public class Class6218 implements Class6226 {
          var9 -= 0.125;
       }
 
-      Class1000 var13 = new Class1000(var0, var7, var9, var11, var1);
+      ItemEntity var13 = new ItemEntity(var0, var7, var9, var11, var1);
       double var14 = var0.field9016.nextDouble() * 0.1 + 0.2;
       var13.method3435(
          var0.field9016.nextGaussian() * 0.0075F * (double)var2 + (double)var3.method539() * var14,

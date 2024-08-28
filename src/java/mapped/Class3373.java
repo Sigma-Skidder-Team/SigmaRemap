@@ -35,13 +35,13 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      ItemStack var9 = var4.method3094(var5);
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.getHeldItem(var5);
       boolean var10 = var9.method32107() instanceof Class3321 && var4.field4919.field29610;
       if (!var2.field9020) {
          Class944 var11 = var2.method6759(var3);
          if (!(var11 instanceof Class954)) {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else {
             Class954 var12 = (Class954)var11;
             if (var10) {
@@ -51,10 +51,10 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
                }
             }
 
-            return !var12.method3842(var4) ? Class2274.field14820 : Class2274.field14818;
+            return !var12.method3842(var4) ? ActionResultType.field14820 : ActionResultType.field14818;
          }
       } else {
-         return !var10 ? Class2274.field14819 : Class2274.field14818;
+         return !var10 ? ActionResultType.field14819 : ActionResultType.field14818;
       }
    }
 

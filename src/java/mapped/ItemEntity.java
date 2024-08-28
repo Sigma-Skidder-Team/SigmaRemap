@@ -7,8 +7,8 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Class1000 extends Entity {
-   private static final Class9289<ItemStack> field5514 = Class9361.<ItemStack>method35441(Class1000.class, Class7784.field33396);
+public class ItemEntity extends Entity {
+   private static final Class9289<ItemStack> field5514 = Class9361.<ItemStack>method35441(ItemEntity.class, Class7784.field33396);
    private int field5515;
    private int field5516;
    private int field5517 = 5;
@@ -16,24 +16,24 @@ public class Class1000 extends Entity {
    private UUID field5519;
    public final float field5520;
 
-   public Class1000(Class8992<? extends Class1000> var1, Class1655 var2) {
+   public ItemEntity(Class8992<? extends ItemEntity> var1, World var2) {
       super(var1, var2);
       this.field5520 = (float)(Math.random() * Math.PI * 2.0);
    }
 
-   public Class1000(Class1655 var1, double var2, double var4, double var6) {
+   public ItemEntity(World var1, double var2, double var4, double var6) {
       this(Class8992.field41042, var1);
       this.method3215(var2, var4, var6);
       this.field5031 = this.field5054.nextFloat() * 360.0F;
       this.method3435(this.field5054.nextDouble() * 0.2 - 0.1, 0.2, this.field5054.nextDouble() * 0.2 - 0.1);
    }
 
-   public Class1000(Class1655 var1, double var2, double var4, double var6, ItemStack var8) {
+   public ItemEntity(World var1, double var2, double var4, double var6, ItemStack var8) {
       this(var1, var2, var4, var6);
       this.method4125(var8);
    }
 
-   private Class1000(Class1000 var1) {
+   private ItemEntity(ItemEntity var1) {
       super(var1.method3204(), var1.field5024);
       this.method4125(var1.method4124().copy());
       this.method3364(var1);
@@ -144,8 +144,8 @@ public class Class1000 extends Entity {
 
    private void method4117() {
       if (this.method4118()) {
-         for (Class1000 var4 : this.field5024
-            .<Class1000>method6772(Class1000.class, this.method3389().method19663(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
+         for (ItemEntity var4 : this.field5024
+            .<ItemEntity>method6772(ItemEntity.class, this.method3389().method19663(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
             if (var4.method4118()) {
                this.method4119(var4);
                if (this.field5041) {
@@ -161,7 +161,7 @@ public class Class1000 extends Entity {
       return this.method3066() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.method32179() < var3.method32113();
    }
 
-   private void method4119(Class1000 var1) {
+   private void method4119(ItemEntity var1) {
       ItemStack var4 = this.method4124();
       ItemStack var5 = var1.method4124();
       if (Objects.equals(this.method4126(), var1.method4126()) && method4120(var4, var5)) {
@@ -191,12 +191,12 @@ public class Class1000 extends Entity {
       return var6;
    }
 
-   private static void method4122(Class1000 var0, ItemStack var1, ItemStack var2) {
+   private static void method4122(ItemEntity var0, ItemStack var1, ItemStack var2) {
       ItemStack var5 = method4121(var1, var2, 64);
       var0.method4125(var5);
    }
 
-   private static void method4123(Class1000 var0, ItemStack var1, Class1000 var2, ItemStack var3) {
+   private static void method4123(ItemEntity var0, ItemStack var1, ItemEntity var2, ItemStack var3) {
       method4122(var0, var1, var3);
       var0.field5516 = Math.max(var0.field5516, var2.field5516);
       var0.field5515 = Math.min(var0.field5515, var2.field5515);
@@ -292,7 +292,7 @@ public class Class1000 extends Entity {
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       ITextComponent var3 = this.method3380();
       return (ITextComponent)(var3 == null ? new TranslationTextComponent(this.method4124().method32134()) : var3);
    }
@@ -306,8 +306,8 @@ public class Class1000 extends Entity {
    @Override
    public Entity method2745(ServerWorld var1) {
       Entity var4 = super.method2745(var1);
-      if (!this.field5024.field9020 && var4 instanceof Class1000) {
-         ((Class1000)var4).method4117();
+      if (!this.field5024.field9020 && var4 instanceof ItemEntity) {
+         ((ItemEntity)var4).method4117();
       }
 
       return var4;
@@ -389,7 +389,7 @@ public class Class1000 extends Entity {
       return new Class5487(this);
    }
 
-   public Class1000 method4139() {
-      return new Class1000(this);
+   public ItemEntity method4139() {
+      return new ItemEntity(this);
    }
 }

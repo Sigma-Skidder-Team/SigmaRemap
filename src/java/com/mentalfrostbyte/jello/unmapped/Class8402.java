@@ -95,7 +95,7 @@ public class Class8402 {
                 AbstractClientPlayerEntity var6 = var5.next();
                 if (this.field36053.contains(var6.getUniqueID())
                         || Client.getInstance().getCombatManager().method29346(var6)
-                        || var6.method2941().getUnformattedComponentText().equals("")) {
+                        || var6.getName().getUnformattedComponentText().equals("")) {
                     var5.remove();
                 }
             }
@@ -107,7 +107,7 @@ public class Class8402 {
 
                 while (var10.hasNext() && var7++ < 70) {
                     Entity var9 = (Entity) var10.next();
-                    var8.add(var9.method2941().getUnformattedComponentText());
+                    var8.add(var9.getName().getUnformattedComponentText());
                     this.field36053.add(var9.getUniqueID());
                 }
 

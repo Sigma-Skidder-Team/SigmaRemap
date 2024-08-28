@@ -10,7 +10,7 @@ public class Class3427 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(5) == 0) {
          Direction var7 = Direction.method552(var4);
          if (var7 != Direction.field673) {

@@ -20,7 +20,7 @@ public class Class2793<T extends Class1038> extends Class2794<T> {
    public void method10997(T var1, float var2, float var3, float var4) {
       this.field17440 = Class2278.field14836;
       this.field17439 = Class2278.field14836;
-      ItemStack var7 = var1.method3094(Hand.field182);
+      ItemStack var7 = var1.getHeldItem(Hand.field182);
       if (var7.method32107() == Class8514.field38144 && var1.method4307()) {
          if (var1.method2967() != Class2205.field14418) {
             this.field17439 = Class2278.field14840;

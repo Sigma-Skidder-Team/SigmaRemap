@@ -14,7 +14,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    private static final Class8369 field5867 = Class8763.method31620(4, 6);
    private int field5868;
 
-   public Class1063(Class8992<? extends Class1063> var1, Class1655 var2) {
+   public Class1063(Class8992<? extends Class1063> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14190, 8.0F);
    }

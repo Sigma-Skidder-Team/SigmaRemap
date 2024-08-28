@@ -12,7 +12,7 @@ public class Class8080 implements IAmbientSoundHandler {
 
    @Override
    public void tick() {
-      Class1655 var3 = this.field34730.field5024;
+      World var3 = this.field34730.field5024;
       Class7380 var4 = var3.method7004(this.field34730.method3389().method19663(0.0, -0.4F, 0.0).method19679(0.001))
          .filter(var0 -> var0.method23448(Blocks.field37013))
          .findFirst()

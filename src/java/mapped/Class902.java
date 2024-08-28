@@ -4,15 +4,15 @@ public class Class902 extends Class901 {
    private static String[] field5144;
    private static final Class9289<Boolean> field5145 = Class9361.<Boolean>method35441(Class902.class, Class7784.field33398);
 
-   public Class902(Class8992<? extends Class902> var1, Class1655 var2) {
+   public Class902(Class8992<? extends Class902> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class902(Class1655 var1, Class880 var2, double var3, double var5, double var7) {
+   public Class902(World var1, Class880 var2, double var3, double var5, double var7) {
       super(Class8992.field41104, var2, var3, var5, var7, var1);
    }
 
-   public Class902(Class1655 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class902(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(Class8992.field41104, var2, var4, var6, var8, var10, var12, var1);
    }
 

@@ -71,7 +71,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
       String var4;
       Object var5;
       if (var1 != null) {
-         var4 = var1.method2941().getString();
+         var4 = var1.getName().getString();
          var5 = var1.getDisplayName();
       } else {
          var4 = "Lectern";

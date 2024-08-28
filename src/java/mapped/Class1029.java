@@ -9,7 +9,7 @@ public class Class1029 extends Class1026 {
    private int field5729;
    private int field5730;
 
-   public Class1029(Class8992<? extends Class1029> var1, Class1655 var2) {
+   public Class1029(Class8992<? extends Class1029> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.field5594 = 20;
@@ -71,7 +71,7 @@ public class Class1029 extends Class1026 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6992(this, var1);
    }
 

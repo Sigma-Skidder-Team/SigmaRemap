@@ -9,7 +9,7 @@ public abstract class Class1013 extends Class1018 {
    public static final Class9289<Optional<UUID>> field5669 = Class9361.<Optional<UUID>>method35441(Class1013.class, Class7784.field33404);
    private boolean field5670;
 
-   public Class1013(Class8992<? extends Class1013> var1, Class1655 var2) {
+   public Class1013(Class8992<? extends Class1013> var1, World var2) {
       super(var1, var2);
       this.method4394();
    }
@@ -131,7 +131,7 @@ public abstract class Class1013 extends Class1018 {
       this.method4379(true);
       this.method4398(var1.getUniqueID());
       if (var1 instanceof Class878) {
-         Class9551.field44488.method15115((Class878)var1, this);
+         CriteriaTriggers.field44488.method15115((Class878)var1, this);
       }
    }
 

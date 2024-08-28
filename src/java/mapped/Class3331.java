@@ -8,7 +8,7 @@ public class Class3331 extends Class3257 {
    }
 
    @Override
-   public boolean method11714(ItemStack var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, Class7380 var3, BlockPos var4, Class880 var5) {
       if (!var2.field9020 && !var3.method23383().method11540(Class7645.field32798)) {
          var1.method32121(1, var5, var0 -> var0.method3184(Class2106.field13731));
       }

@@ -28,7 +28,7 @@ public class Class3413 extends Block {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       int var7 = var1.<Integer>method23463(field19100);
       float var8 = (float)var3.getY() + (6.0F + (float)(3 * var7)) / 16.0F;
       if (!var2.field9020 && var4.method3327() && var7 > 0 && var4.getPosY() <= (double)var8) {
@@ -38,8 +38,8 @@ public class Class3413 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      ItemStack var9 = var4.method3094(var5);
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.getHeldItem(var5);
       if (!var9.method32105()) {
          int var10 = var1.<Integer>method23463(field19100);
          Class3257 var11 = var9.method32107();
@@ -61,7 +61,7 @@ public class Class3413 extends Block {
                         this.method12051(var2, var3, var1, var10 + 1);
                      }
 
-                     return Class2274.method9002(var2.field9020);
+                     return ActionResultType.method9002(var2.field9020);
                   } else {
                      if (var10 > 0 && var11 instanceof Class3277) {
                         Class3277 var14 = (Class3277)var11;
@@ -69,13 +69,13 @@ public class Class3413 extends Block {
                            var14.method11801(var9);
                            this.method12051(var2, var3, var1, var10 - 1);
                            var4.method2911(Class8876.field40144);
-                           return Class2274.field14818;
+                           return ActionResultType.field14818;
                         }
                      }
 
                      if (var10 > 0 && var11 instanceof Class3301) {
                         if (Class958.method3889(var9) > 0 && !var2.field9020) {
-                           ItemStack var16 = var9.method32126();
+                           ItemStack var16 = var9.copy();
                            var16.method32180(1);
                            Class958.method3892(var16);
                            var4.method2911(Class8876.field40145);
@@ -97,7 +97,7 @@ public class Class3413 extends Block {
                            }
                         }
 
-                        return Class2274.method9002(var2.field9020);
+                        return ActionResultType.method9002(var2.field9020);
                      } else if (var10 > 0 && var11 instanceof Class3292) {
                         Block var15 = ((Class3292)var11).method11845();
                         if (var15 instanceof Class3368 && !var2.method6714()) {
@@ -109,12 +109,12 @@ public class Class3413 extends Block {
                            var4.method3095(var5, var13);
                            this.method12051(var2, var3, var1, var10 - 1);
                            var4.method2911(Class8876.field40146);
-                           return Class2274.field14818;
+                           return ActionResultType.field14818;
                         } else {
-                           return Class2274.field14819;
+                           return ActionResultType.field14819;
                         }
                      } else {
-                        return Class2274.field14820;
+                        return ActionResultType.field14820;
                      }
                   }
                } else {
@@ -140,7 +140,7 @@ public class Class3413 extends Block {
                      this.method12051(var2, var3, var1, var10 - 1);
                   }
 
-                  return Class2274.method9002(var2.field9020);
+                  return ActionResultType.method9002(var2.field9020);
                }
             } else {
                if (var10 == 3 && !var2.field9020) {
@@ -160,7 +160,7 @@ public class Class3413 extends Block {
                   var2.method6742((PlayerEntity)null, var3, Class6067.field26429, Class2266.field14732, 1.0F, 1.0F);
                }
 
-               return Class2274.method9002(var2.field9020);
+               return ActionResultType.method9002(var2.field9020);
             }
          } else {
             if (var10 < 3 && !var2.field9020) {
@@ -173,20 +173,20 @@ public class Class3413 extends Block {
                var2.method6742((PlayerEntity)null, var3, Class6067.field26426, Class2266.field14732, 1.0F, 1.0F);
             }
 
-            return Class2274.method9002(var2.field9020);
+            return ActionResultType.method9002(var2.field9020);
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
-   public void method12051(Class1655 var1, BlockPos var2, Class7380 var3, int var4) {
+   public void method12051(World var1, BlockPos var2, Class7380 var3, int var4) {
       var1.method6725(var2, var3.method23465(field19100, Integer.valueOf(MathHelper.method37775(var4, 0, 3))), 2);
       var1.method6806(var2, this);
    }
 
    @Override
-   public void method11575(Class1655 var1, BlockPos var2) {
+   public void method11575(World var1, BlockPos var2) {
       if (var1.field9016.nextInt(20) == 1) {
          float var5 = var1.method7003(var2).method32503(var2);
          if (!(var5 < 0.15F)) {
@@ -204,7 +204,7 @@ public class Class3413 extends Block {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       return var1.<Integer>method23463(field19100);
    }
 

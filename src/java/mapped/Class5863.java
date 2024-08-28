@@ -25,9 +25,9 @@ public class Class5863 extends Class5839 {
          int var5 = this.method18279(var1x);
 
          while (var5 > 0) {
-            int var6 = Class1003.method4179(var5);
+            int var6 = ExperienceOrbEntity.method4179(var5);
             var5 -= var6;
-            var1x.method6916(new Class1003(var1x, (double)var2x.method8304(), (double)var2x.getY() + 0.5, (double)var2x.method8306() + 0.5, var6));
+            var1x.method6916(new ExperienceOrbEntity(var1x, (double)var2x.method8304(), (double)var2x.getY() + 0.5, (double)var2x.method8306() + 0.5, var6));
          }
 
          var1x.method6999(1042, var2x, 0);
@@ -37,7 +37,7 @@ public class Class5863 extends Class5839 {
       return var2;
    }
 
-   private int method18279(Class1655 var1) {
+   private int method18279(World var1) {
       int var4 = 0;
       var4 += this.method18280(Class5815.method18171(this.field25631).method3618(0));
       var4 += this.method18280(Class5815.method18171(this.field25631).method3618(1));

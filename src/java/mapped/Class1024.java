@@ -10,7 +10,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    private static final Class9289<Boolean> field5710 = Class9361.<Boolean>method35441(Class1024.class, Class7784.field33398);
    private final Class927 field5711 = new Class927(5);
 
-   public Class1024(Class8992<? extends Class1024> var1, Class1655 var2) {
+   public Class1024(Class8992<? extends Class1024> var1, World var2) {
       super(var1, var2);
    }
 
@@ -180,7 +180,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
       if (!(var4.method32107() instanceof Class3301)) {
          Class3257 var5 = var4.method32107();

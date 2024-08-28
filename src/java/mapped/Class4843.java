@@ -1,7 +1,7 @@
 package mapped;
 
 public interface Class4843<C extends Class920> {
-   boolean method14963(C var1, Class1655 var2);
+   boolean method14963(C var1, World var2);
 
    ItemStack method14962(C var1);
 

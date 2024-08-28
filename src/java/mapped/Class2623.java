@@ -22,7 +22,7 @@ public class Class2623 extends Class2595 {
          && this.field16917.method5186() <= 0) {
          List var3 = this.field16917
             .field5024
-            .<Class1000>method6772(Class1000.class, this.field16917.method3389().method19663(6.0, 6.0, 6.0), Class1097.method5243());
+            .<ItemEntity>method6772(ItemEntity.class, this.field16917.method3389().method19663(6.0, 6.0, 6.0), Class1097.method5243());
          return !var3.isEmpty() || !this.field16917.method2943(Class2106.field13731).method32105();
       } else {
          return false;
@@ -47,7 +47,7 @@ public class Class2623 extends Class2595 {
    public void method10804() {
       List var3 = this.field16917
          .field5024
-         .<Class1000>method6772(Class1000.class, this.field16917.method3389().method19663(8.0, 8.0, 8.0), Class1097.method5243());
+         .<ItemEntity>method6772(ItemEntity.class, this.field16917.method3389().method19663(8.0, 8.0, 8.0), Class1097.method5243());
       if (!var3.isEmpty() && this.field16917.method2943(Class2106.field13731).method32105()) {
          this.field16917.method4230().method21655((Entity)var3.get(0), 1.2F);
       } else if (!this.field16917.method2943(Class2106.field13731).method32105()) {

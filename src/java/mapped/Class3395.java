@@ -12,19 +12,19 @@ public class Class3395 extends Block {
    }
 
    @Override
-   public void method11595(Class1655 var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
       int var7 = method12006(var1, var2, var3, var4);
       Entity var8 = var4.method3460();
       if (var8 instanceof Class878) {
          Class878 var9 = (Class878)var8;
          var9.method2911(Class8876.field40177);
-         Class9551.field44502.method15161(var9, var4, var3.method31419(), var7);
+         CriteriaTriggers.field44502.method15161(var9, var4, var3.method31419(), var7);
       }
    }
 
    private static int method12006(Class1660 var0, Class7380 var1, Class8711 var2, Entity var3) {
       int var6 = method12007(var2, var2.method31419());
-      int var7 = !(var3 instanceof Class884) ? 8 : 20;
+      int var7 = !(var3 instanceof AbstractArrowEntity) ? 8 : 20;
       if (!var0.method6860().method20718(var2.method31423(), var1.method23383())) {
          method12008(var0, var1, var6, var2.method31423(), var7);
       }
@@ -80,7 +80,7 @@ public class Class3395 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var2.method6714()
          && !var1.method23448(var4.method23383())
          && var1.<Integer>method23463(field19032) > 0

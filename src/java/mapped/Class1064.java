@@ -11,7 +11,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    private Class1064 field5874;
    private Class1064 field5875;
 
-   public Class1064(Class8992<? extends Class1064> var1, Class1655 var2) {
+   public Class1064(Class8992<? extends Class1064> var1, World var2) {
       super(var1, var2);
    }
 

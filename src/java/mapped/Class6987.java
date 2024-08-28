@@ -210,7 +210,7 @@ public class Class6987 {
       if (var4 != null) {
          return var4;
       } else {
-         throw field30230.create(var0.method2941(), new TranslationTextComponent(var1.method15032()));
+         throw field30230.create(var0.getName(), new TranslationTextComponent(var1.method15032()));
       }
    }
 
@@ -218,7 +218,7 @@ public class Class6987 {
       if (var0 instanceof Class880) {
          return (Class880)var0;
       } else {
-         throw field30229.create(var0.method2941());
+         throw field30229.create(var0.getName());
       }
    }
 
@@ -227,7 +227,7 @@ public class Class6987 {
       if (var4.method3088().method33381(var1)) {
          return var4;
       } else {
-         throw field30230.create(var0.method2941(), new TranslationTextComponent(var1.method15032()));
+         throw field30230.create(var0.getName(), new TranslationTextComponent(var1.method15032()));
       }
    }
 
@@ -235,7 +235,7 @@ public class Class6987 {
       Class880 var7 = method21613(var1, var2);
       double var8 = var7.method3086(var2);
       var0.method20179(
-         new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.method15032()), var1.method2941(), var8), false
+         new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8), false
       );
       return (int)(var8 * var3);
    }
@@ -244,7 +244,7 @@ public class Class6987 {
       Class880 var7 = method21613(var1, var2);
       double var8 = var7.method3087(var2);
       var0.method20179(
-         new TranslationTextComponent("commands.attribute.base_value.get.success", new TranslationTextComponent(var2.method15032()), var1.method2941(), var8),
+         new TranslationTextComponent("commands.attribute.base_value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8),
          false
       );
       return (int)(var8 * var3);
@@ -257,20 +257,20 @@ public class Class6987 {
          double var10 = var9.method33385(var2, var3);
          var0.method20179(
             new TranslationTextComponent(
-               "commands.attribute.modifier.value.get.success", var3, new TranslationTextComponent(var2.method15032()), var1.method2941(), var10
+               "commands.attribute.modifier.value.get.success", var3, new TranslationTextComponent(var2.method15032()), var1.getName(), var10
             ),
             false
          );
          return (int)(var10 * var4);
       } else {
-         throw field30231.create(var1.method2941(), new TranslationTextComponent(var2.method15032()), var3);
+         throw field30231.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
       }
    }
 
    private static int method21617(Class6619 var0, Entity var1, Class4869 var2, double var3) throws CommandSyntaxException {
       method21611(var1, var2).method38661(var3);
       var0.method20179(
-         new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method15032()), var1.method2941(), var3),
+         new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var3),
          false
       );
       return 1;
@@ -282,23 +282,23 @@ public class Class6987 {
       if (!var10.method38665(var11)) {
          var10.method38668(var11);
          var0.method20179(
-            new TranslationTextComponent("commands.attribute.modifier.add.success", var3, new TranslationTextComponent(var2.method15032()), var1.method2941()),
+            new TranslationTextComponent("commands.attribute.modifier.add.success", var3, new TranslationTextComponent(var2.method15032()), var1.getName()),
             false
          );
          return 1;
       } else {
-         throw field30232.create(var1.method2941(), new TranslationTextComponent(var2.method15032()), var3);
+         throw field30232.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
       }
    }
 
    private static int method21619(Class6619 var0, Entity var1, Class4869 var2, UUID var3) throws CommandSyntaxException {
       Class9805 var6 = method21611(var1, var2);
       if (!var6.method38672(var3)) {
-         throw field30231.create(var1.method2941(), new TranslationTextComponent(var2.method15032()), var3);
+         throw field30231.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.attribute.modifier.remove.success", var3, new TranslationTextComponent(var2.method15032()), var1.method2941()
+               "commands.attribute.modifier.remove.success", var3, new TranslationTextComponent(var2.method15032()), var1.getName()
             ),
             false
          );

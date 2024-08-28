@@ -11,7 +11,7 @@ public class Class1095 extends Class1018 {
    private static final Class9289<Byte> field5994 = Class9361.<Byte>method35441(Class1095.class, Class7784.field33390);
    private static final Class9289<Optional<UUID>> field5995 = Class9361.<Optional<UUID>>method35441(Class1095.class, Class7784.field33404);
    private static final Class9289<Optional<UUID>> field5996 = Class9361.<Optional<UUID>>method35441(Class1095.class, Class7784.field33404);
-   private static final Predicate<Class1000> field5997 = var0 -> !var0.method4135() && var0.method3066();
+   private static final Predicate<ItemEntity> field5997 = var0 -> !var0.method4135() && var0.method3066();
    private static final Predicate<Entity> field5998 = var0 -> {
       if (!(var0 instanceof Class880)) {
          return false;
@@ -31,7 +31,7 @@ public class Class1095 extends Class1018 {
    private float field6007;
    private int field6008;
 
-   public Class1095(Class8992<? extends Class1095> var1, Class1655 var2) {
+   public Class1095(Class8992<? extends Class1095> var1, World var2) {
       super(var1, var2);
       this.field5595 = new Class8091(this);
       this.field5596 = new Class6833(this);
@@ -384,7 +384,7 @@ public class Class1095 extends Class1018 {
 
    private void method5138(ItemStack var1) {
       if (!var1.method32105() && !this.field5024.field9020) {
-         Class1000 var4 = new Class1000(
+         ItemEntity var4 = new ItemEntity(
             this.field5024, this.getPosX() + this.method3320().field18048, this.getPosY() + 1.0, this.getPosZ() + this.method3320().field18050, var1
          );
          var4.method4134(40);
@@ -395,12 +395,12 @@ public class Class1095 extends Class1018 {
    }
 
    private void method5139(ItemStack var1) {
-      Class1000 var4 = new Class1000(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var1);
+      ItemEntity var4 = new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var1);
       this.field5024.method6916(var4);
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
       if (this.method4252(var4)) {
          int var5 = var4.method32179();

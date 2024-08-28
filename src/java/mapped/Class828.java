@@ -62,7 +62,7 @@ public class Class828 extends Screen {
          this.field4584.add("");
       }
 
-      this.field4599 = new TranslationTextComponent("book.byAuthor", var1.method2941()).mergeStyle(TextFormatting.DARK_GRAY);
+      this.field4599 = new TranslationTextComponent("book.byAuthor", var1.getName()).mergeStyle(TextFormatting.DARK_GRAY);
    }
 
    private void method2493(String var1) {

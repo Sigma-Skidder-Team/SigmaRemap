@@ -28,8 +28,8 @@ public class Class4487 extends Class4457 {
             if (this.field21688 != Class8634.field38839) {
                boolean var6 = false;
                Entity var7 = var2.<Entity>method26081(Class9525.field44330);
-               if (var7 instanceof Class1000) {
-                  Class1000 var8 = (Class1000)var7;
+               if (var7 instanceof ItemEntity) {
+                  ItemEntity var8 = (ItemEntity)var7;
                   if (this.field21688.method31016(var8.method4124())) {
                      var6 = true;
                   }

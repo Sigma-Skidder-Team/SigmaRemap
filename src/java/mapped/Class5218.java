@@ -70,8 +70,8 @@ public class Class5218 extends Module {
                     this.field23549++;
                     if (this.field23549 != 1) {
                         if (this.field23549 > 1
-                                && mc.field1339.method3094(Hand.field182).method32107() != Class8514.field37872
-                                && mc.field1339.method3094(Hand.field182).method32107() != Class8514.field37873) {
+                                && mc.field1339.getHeldItem(Hand.field182).method32107() != Class8514.field37872
+                                && mc.field1339.getHeldItem(Hand.field182).method32107() != Class8514.field37873) {
                             mc.field1339.field4902.field5443 = this.field23550;
                             this.field23550 = -1;
                             this.field23549 = -1;

@@ -38,12 +38,12 @@ public class Class1002 extends Entity {
    private float field5553;
    private float field5554;
 
-   public Class1002(Class8992<? extends Class1002> var1, Class1655 var2) {
+   public Class1002(Class8992<? extends Class1002> var1, World var2) {
       super(var1, var2);
       this.field5019 = true;
    }
 
-   public Class1002(Class1655 var1, double var2, double var4, double var6) {
+   public Class1002(World var1, double var2, double var4, double var6) {
       this(Class8992.field41011, var1);
       this.method3215(var2, var4, var6);
       this.method3434(Vector3d.field18047);
@@ -723,17 +723,17 @@ public class Class1002 extends Entity {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       if (!var1.method2851()) {
          if (!(this.field5533 < 60.0F)) {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else if (this.field5024.field9020) {
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          } else {
-            return !var1.method3311(this) ? Class2274.field14820 : Class2274.field14819;
+            return !var1.method3311(this) ? ActionResultType.field14820 : ActionResultType.field14819;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

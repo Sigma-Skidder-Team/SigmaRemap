@@ -11,7 +11,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    public Class46 field5796;
    private final Class927 field5797 = new Class927(8);
 
-   public Class1043(Class8992<? extends Class1043> var1, Class1655 var2) {
+   public Class1043(Class8992<? extends Class1043> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14195, 16.0F);
       this.method4224(Class2163.field14196, -1.0F);
@@ -89,7 +89,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
       this.field5593 = -this.method4236();
       this.method4696(var1);
       if (this.field5795 instanceof Class878) {
-         Class9551.field44483.method15134((Class878)this.field5795, this, var1.method35368());
+         CriteriaTriggers.field44483.method15134((Class878)this.field5795, this, var1.method35368());
       }
    }
 
@@ -193,7 +193,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public Class1655 method4753() {
+   public World method4753() {
       return this.field5024;
    }
 

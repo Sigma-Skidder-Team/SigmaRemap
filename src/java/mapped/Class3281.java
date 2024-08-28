@@ -8,26 +8,26 @@ public class Class3281 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
+   public ActionResultType method11707(Class5911 var1) {
       PlayerEntity var4 = var1.method18358();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Class7380 var7 = var5.method6738(var6);
       if (!Class3244.method11656(var7)) {
          BlockPos var8 = var6.method8349(var1.method18354());
          if (!Class3397.method12012(var5, var8, var1.method18350())) {
-            return Class2274.field14821;
+            return ActionResultType.field14821;
          } else {
             var5.method6742(var4, var8, Class6067.field26587, Class2266.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);
             Class7380 var9 = Class3397.method12009(var5, var8);
             var5.method6725(var8, var9, 11);
             ItemStack var10 = var1.method18357();
             if (var4 instanceof Class878) {
-               Class9551.field44489.method15138((Class878)var4, var8, var10);
+               CriteriaTriggers.field44489.method15138((Class878)var4, var8, var10);
                var10.method32121(1, var4, var1x -> var1x.method3185(var1.method18359()));
             }
 
-            return Class2274.method9002(var5.method6714());
+            return ActionResultType.method9002(var5.method6714());
          }
       } else {
          var5.method6742(var4, var6, Class6067.field26587, Class2266.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);
@@ -36,7 +36,7 @@ public class Class3281 extends Class3257 {
             var1.method18357().method32121(1, var4, var1x -> var1x.method3185(var1.method18359()));
          }
 
-         return Class2274.method9002(var5.method6714());
+         return ActionResultType.method9002(var5.method6714());
       }
    }
 }

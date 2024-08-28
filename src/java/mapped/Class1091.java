@@ -29,7 +29,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       Class8830.field39864
    );
 
-   public Class1091(Class8992<? extends Class1091> var1, Class1655 var2) {
+   public Class1091(Class8992<? extends Class1091> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -168,9 +168,9 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      Class2274 var5 = super.method4285(var1, var2);
-      if (var5.method9000()) {
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ActionResultType var5 = super.method4285(var1, var2);
+      if (var5.isSuccessOrConsume()) {
          this.method4278();
       }
 

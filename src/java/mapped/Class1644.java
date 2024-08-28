@@ -22,7 +22,7 @@ public class Class1644 extends Class314 {
    private Class384 field8922;
    private UUID field8923;
    private long field8924 = 0L;
-   public Class1655 field8925 = null;
+   public World field8925 = null;
    public BlockPos field8926 = null;
    public Class9755 field8927 = null;
 
@@ -275,7 +275,7 @@ public class Class1644 extends Class314 {
       }
    }
 
-   public Class9755 method6492(Class1655 var1, BlockPos var2) {
+   public Class9755 method6492(World var1, BlockPos var2) {
       this.field8925 = var1;
       this.field8926 = var2;
       return this.field8927;

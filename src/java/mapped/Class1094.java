@@ -14,7 +14,7 @@ public class Class1094 extends Class1018 {
    private int field5991;
    private int field5992;
 
-   public Class1094(Class8992<? extends Class1094> var1, Class1655 var2) {
+   public Class1094(Class8992<? extends Class1094> var1, World var2) {
       super(var1, var2);
       this.field5597 = new Class7955(this, this);
       this.field5596 = new Class6840(this);

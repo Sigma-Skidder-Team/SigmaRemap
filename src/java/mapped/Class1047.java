@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class1047 extends Class1046 {
-   public Class1047(Class8992<? extends Class1047> var1, Class1655 var2) {
+   public Class1047(Class8992<? extends Class1047> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
    }

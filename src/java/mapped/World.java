@@ -12,13 +12,13 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public abstract class Class1655 implements Class1660, AutoCloseable {
+public abstract class World implements Class1660, AutoCloseable {
    public static final Logger field8997 = LogManager.getLogger();
-   public static final Codec<Class8705<Class1655>> field8998 = ResourceLocation.field13020
-      .xmap(Class8705.<Class1655>method31400(Class2348.field16067), Class8705::method31399);
-   public static final Class8705<Class1655> field8999 = Class8705.<Class1655>method31395(Class2348.field16067, new ResourceLocation("overworld"));
-   public static final Class8705<Class1655> field9000 = Class8705.<Class1655>method31395(Class2348.field16067, new ResourceLocation("the_nether"));
-   public static final Class8705<Class1655> field9001 = Class8705.<Class1655>method31395(Class2348.field16067, new ResourceLocation("the_end"));
+   public static final Codec<Class8705<World>> field8998 = ResourceLocation.field13020
+      .xmap(Class8705.<World>method31400(Class2348.field16067), Class8705::method31399);
+   public static final Class8705<World> field8999 = Class8705.<World>method31395(Class2348.field16067, new ResourceLocation("overworld"));
+   public static final Class8705<World> field9000 = Class8705.<World>method31395(Class2348.field16067, new ResourceLocation("the_nether"));
+   public static final Class8705<World> THE_END = Class8705.<World>method31395(Class2348.field16067, new ResourceLocation("the_end"));
    private static final Direction[] field9002 = Direction.values();
    public final List<Class944> field9003 = Lists.newArrayList();
    public final List<Class944> field9004 = Lists.newArrayList();
@@ -41,9 +41,9 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    public boolean field9021;
    private final Class7522 field9022;
    private final Class6668 field9023;
-   private final Class8705<Class1655> field9024;
+   private final Class8705<World> field9024;
 
-   public Class1655(Class6607 var1, Class8705<Class1655> var2, Class9535 var3, Supplier<Class7165> var4, boolean var5, boolean var6, long var7) {
+   public World(Class6607 var1, Class8705<World> var2, Class9535 var3, Supplier<Class7165> var4, boolean var5, boolean var6, long var7) {
       this.field9019 = var4;
       this.field9018 = var1;
       this.field9017 = var3;
@@ -950,7 +950,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
       return this.field9017;
    }
 
-   public Class8705<Class1655> method6813() {
+   public Class8705<World> method6813() {
       return this.field9024;
    }
 

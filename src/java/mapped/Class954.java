@@ -125,7 +125,7 @@ public class Class954 extends Class944 {
    }
 
    public Class6619 method3843(Class878 var1) {
-      String var4 = var1 != null ? var1.method2941().getString() : "Sign";
+      String var4 = var1 != null ? var1.getName().getString() : "Sign";
       Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
       return new Class6619(
          Class909.field5189,

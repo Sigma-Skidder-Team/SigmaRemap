@@ -8,7 +8,7 @@ public abstract class Class1028 extends Class1009 {
    private boolean field5725;
    private boolean field5726;
 
-   public Class1028(Class8992<? extends Class1028> var1, Class1655 var2) {
+   public Class1028(Class8992<? extends Class1028> var1, World var2) {
       super(var1, var2);
    }
 

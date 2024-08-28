@@ -11,7 +11,7 @@ public class Class2640 extends Class2595 {
    private double field16968;
    private double field16969;
    private final double field16970;
-   private final Class1655 field16971;
+   private final World field16971;
 
    public Class2640(Class1046 var1, double var2) {
       this.field16966 = var1;

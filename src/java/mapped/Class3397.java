@@ -29,7 +29,7 @@ public abstract class Class3397 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(24) == 0) {
          var2.method6745(
             (double)var3.method8304() + 0.5,
@@ -103,7 +103,7 @@ public abstract class Class3397 extends Block {
    public abstract boolean method12010(Class7380 var1);
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.method3249()) {
          var4.method2966(var4.method3222() + 1);
          if (var4.method3222() == 0) {
@@ -117,7 +117,7 @@ public abstract class Class3397 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383())) {
          if (method12011(var2)) {
             Optional var8 = Class7473.method24194(var2, var3, Class113.field413);
@@ -133,23 +133,23 @@ public abstract class Class3397 extends Block {
       }
    }
 
-   private static boolean method12011(Class1655 var0) {
-      return var0.method6813() == Class1655.field8999 || var0.method6813() == Class1655.field9000;
+   private static boolean method12011(World var0) {
+      return var0.method6813() == World.field8999 || var0.method6813() == World.field9000;
    }
 
    @Override
-   public void method11574(Class1655 var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
+   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
       if (!var1.method6714()) {
          var1.method6869((PlayerEntity)null, 1009, var2, 0);
       }
    }
 
-   public static boolean method12012(Class1655 var0, BlockPos var1, Direction var2) {
+   public static boolean method12012(World var0, BlockPos var1, Direction var2) {
       Class7380 var5 = var0.method6738(var1);
       return !var5.method23393() ? false : method12009(var0, var1).method23443(var0, var1) || method12013(var0, var1, var2);
    }
 
-   private static boolean method12013(Class1655 var0, BlockPos var1, Direction var2) {
+   private static boolean method12013(World var0, BlockPos var1, Direction var2) {
       if (!method12011(var0)) {
          return false;
       } else {

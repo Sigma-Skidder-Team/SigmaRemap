@@ -19,7 +19,7 @@ public class Class7782 {
    private final boolean field33370;
    private final Class2141 field33371;
    private final Random field33372 = new Random();
-   private final Class1655 field33373;
+   private final World field33373;
    private final double field33374;
    private final double field33375;
    private final double field33376;
@@ -30,21 +30,21 @@ public class Class7782 {
    private final List<BlockPos> field33381 = Lists.newArrayList();
    private final Map<PlayerEntity, Vector3d> field33382 = Maps.newHashMap();
 
-   public Class7782(Class1655 var1, Entity var2, double var3, double var5, double var7, float var9, List<BlockPos> var10) {
+   public Class7782(World var1, Entity var2, double var3, double var5, double var7, float var9, List<BlockPos> var10) {
       this(var1, var2, var3, var5, var7, var9, false, Class2141.field14016, var10);
    }
 
-   public Class7782(Class1655 var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, Class2141 var11, List<BlockPos> var12) {
+   public Class7782(World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, Class2141 var11, List<BlockPos> var12) {
       this(var1, var2, var3, var5, var7, var9, var10, var11);
       this.field33381.addAll(var12);
    }
 
-   public Class7782(Class1655 var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, Class2141 var11) {
+   public Class7782(World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, Class2141 var11) {
       this(var1, var2, (Class8654)null, (Class5924)null, var3, var5, var7, var9, var10, var11);
    }
 
    public Class7782(
-           Class1655 var1, Entity var2, Class8654 var3, Class5924 var4, double var5, double var7, double var9, float var11, boolean var12, Class2141 var13
+           World var1, Entity var2, Class8654 var3, Class5924 var4, double var5, double var7, double var9, float var11, boolean var12, Class2141 var13
    ) {
       this.field33373 = var1;
       this.field33377 = var2;
@@ -264,8 +264,8 @@ public class Class7782 {
       for (int var6 = 0; var6 < var5; var6++) {
          Pair<ItemStack, BlockPos> var7 = var0.get(var6);
          ItemStack var8 = (ItemStack)var7.getFirst();
-         if (Class1000.method4120(var8, var1)) {
-            ItemStack var9 = Class1000.method4121(var8, var1, 16);
+         if (ItemEntity.method4120(var8, var1)) {
+            ItemStack var9 = ItemEntity.method4121(var8, var1, 16);
             var0.set(var6, Pair.of(var9, var7.getSecond()));
             if (var1.method32105()) {
                return;

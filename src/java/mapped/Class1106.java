@@ -6,7 +6,7 @@ public class Class1106 extends Class1105 {
    private static String[] field6077;
    public static final float field6078 = Class8992.field41022.method33213() / Class8992.field41036.method33213();
 
-   public Class1106(Class8992<? extends Class1106> var1, Class1655 var2) {
+   public Class1106(Class8992<? extends Class1106> var1, World var2) {
       super(var1, var2);
       this.method4278();
       if (this.field6076 != null) {

@@ -54,7 +54,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
    }
 
    private void method3794() {
-      Class1655 var3 = this.method3734();
+      World var3 = this.method3734();
       if (var3 != null) {
          BlockPos var4 = this.method3774();
          Random var5 = var3.field9016;

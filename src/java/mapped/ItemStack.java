@@ -125,16 +125,16 @@ public final class ItemStack {
       return !this.field39980 ? this.field39978 : Class8514.field37222;
    }
 
-   public Class2274 method32108(Class5911 var1) {
+   public ActionResultType method32108(Class5911 var1) {
       PlayerEntity var4 = var1.method18358();
       BlockPos var5 = var1.method18345();
       Class9632 var6 = new Class9632(var1.method18360(), var5, false);
       if (var4 != null && !var4.field4919.field29610 && !this.method32176(var1.method18360().method6817(), var6)) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
          Class3257 var7 = this.method32107();
-         Class2274 var8 = var7.method11707(var1);
-         if (var4 != null && var8.method9000()) {
+         ActionResultType var8 = var7.method11707(var1);
+         if (var4 != null && var8.isSuccessOrConsume()) {
             var4.method2913(Class8876.field40098.method172(var7));
          }
 
@@ -146,11 +146,11 @@ public final class ItemStack {
       return this.method32107().method11708(this, var1);
    }
 
-   public Class6794<ItemStack> method32110(Class1655 var1, PlayerEntity var2, Hand var3) {
+   public Class6794<ItemStack> method32110(World var1, PlayerEntity var2, Hand var3) {
       return this.method32107().method11700(var1, var2, var3);
    }
 
-   public ItemStack method32111(Class1655 var1, Class880 var2) {
+   public ItemStack method32111(World var1, Class880 var2) {
       return this.method32107().method11709(this, var1, var2);
    }
 
@@ -219,7 +219,7 @@ public final class ItemStack {
          }
 
          if (var3 != null && var1 != 0) {
-            Class9551.field44484.method15106(var3, this, this.method32117() + var1);
+            CriteriaTriggers.field44484.method15106(var3, this, this.method32117() + var1);
          }
 
          int var9 = this.method32117() + var1;
@@ -251,7 +251,7 @@ public final class ItemStack {
       }
    }
 
-   public void method32123(Class1655 var1, Class7380 var2, BlockPos var3, PlayerEntity var4) {
+   public void method32123(World var1, Class7380 var2, BlockPos var3, PlayerEntity var4) {
       Class3257 var7 = this.method32107();
       if (var7.method11714(this, var1, var2, var3, var4)) {
          var4.method2913(Class8876.field40098.method172(var7));
@@ -262,7 +262,7 @@ public final class ItemStack {
       return this.method32107().method11715(var1);
    }
 
-   public Class2274 method32125(PlayerEntity var1, Class880 var2, Hand var3) {
+   public ActionResultType method32125(PlayerEntity var1, Class880 var2, Hand var3) {
       return this.method32107().method11716(this, var1, var2, var3);
    }
 
@@ -341,7 +341,7 @@ public final class ItemStack {
       return this.field39976 + " " + this.method32107();
    }
 
-   public void method32135(Class1655 var1, Entity var2, int var3, boolean var4) {
+   public void method32135(World var1, Entity var2, int var3, boolean var4) {
       if (this.field39977 > 0) {
          this.field39977--;
       }
@@ -351,7 +351,7 @@ public final class ItemStack {
       }
    }
 
-   public void method32136(Class1655 var1, PlayerEntity var2, int var3) {
+   public void method32136(World var1, PlayerEntity var2, int var3) {
       var2.method2776(Class8876.field40097.method172(this.method32107()), var3);
       this.method32107().method11725(this, var1, var2);
    }
@@ -364,7 +364,7 @@ public final class ItemStack {
       return this.method32107().method11727(this);
    }
 
-   public void method32139(Class1655 var1, Class880 var2, int var3) {
+   public void method32139(World var1, Class880 var2, int var3) {
       this.method32107().method11729(this, var1, var2, var3);
    }
 
@@ -890,7 +890,7 @@ public final class ItemStack {
       this.method32181(-var1);
    }
 
-   public void method32183(Class1655 var1, Class880 var2, int var3) {
+   public void method32183(World var1, Class880 var2, int var3) {
       this.method32107().method11704(var1, var2, this, var3);
    }
 

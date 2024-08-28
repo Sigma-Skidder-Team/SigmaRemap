@@ -12,11 +12,11 @@ public class Class8597 {
    private static int field38681 = 0;
    private static int field38682 = -1;
    private static int field38683 = 16;
-   private static Class1655 field38684 = null;
+   private static World field38684 = null;
    private static int field38685 = Integer.MIN_VALUE;
    private static int field38686 = Integer.MIN_VALUE;
 
-   public static int method30743(Class1655 var0, Entity var1, int var2) {
+   public static int method30743(World var0, Entity var1, int var2) {
       int var5 = MathHelper.method37769(var1.getPosX()) >> 4;
       int var6 = MathHelper.method37769(var1.getPosY()) >> 4;
       int var7 = MathHelper.method37769(var1.getPosZ()) >> 4;

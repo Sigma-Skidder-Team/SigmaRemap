@@ -5,11 +5,11 @@ import java.util.List;
 public class Class996 extends Class995 {
    private static String[] field5490;
 
-   public Class996(Class8992<? extends Class996> var1, Class1655 var2) {
+   public Class996(Class8992<? extends Class996> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class996(Class1655 var1, BlockPos var2) {
+   public Class996(World var1, BlockPos var2) {
       super(Class8992.field41045, var1, var2);
       this.method3215((double)var2.method8304() + 0.5, (double)var2.getY() + 0.5, (double)var2.method8306() + 0.5);
       float var5 = 0.125F;
@@ -76,9 +76,9 @@ public class Class996 extends Class995 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       if (this.field5024.field9020) {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else {
          boolean var5 = false;
          double var6 = 7.0;
@@ -113,7 +113,7 @@ public class Class996 extends Class995 {
             }
          }
 
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
@@ -122,7 +122,7 @@ public class Class996 extends Class995 {
       return this.field5024.method6738(this.field5488).method23383().method11540(Class7645.field32771);
    }
 
-   public static Class996 method4087(Class1655 var0, BlockPos var1) {
+   public static Class996 method4087(World var0, BlockPos var1) {
       int var4 = var1.method8304();
       int var5 = var1.getY();
       int var6 = var1.method8306();

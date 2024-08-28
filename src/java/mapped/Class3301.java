@@ -34,7 +34,7 @@ public class Class3301 extends Class3298 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       method11848(var1, var3);
    }
 }

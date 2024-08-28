@@ -67,7 +67,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    private String field1222;
    private int field1223 = -1;
    public final Class8905 field1224;
-   private final Map<Class8705<Class1655>, ServerWorld> field1225 = Maps.newLinkedHashMap();
+   private final Map<Class8705<World>, ServerWorld> field1225 = Maps.newLinkedHashMap();
    private Class6395 field1226;
    private volatile boolean field1227 = true;
    private boolean field1228;
@@ -205,8 +205,8 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          var15 = var13.method36413();
       }
 
-      ServerWorld var16 = new ServerWorld(this, this.field1265, this.field1211, var4, Class1655.field8999, var14, var1, (Class5646)var15, var6, var9, var11, true);
-      this.field1225.put(Class1655.field8999, var16);
+      ServerWorld var16 = new ServerWorld(this, this.field1265, this.field1211, var4, World.field8999, var14, var1, (Class5646)var15, var6, var9, var11, true);
+      this.field1225.put(World.field8999, var16);
       Class8250 var17 = var16.method6945();
       this.method1276(var17);
       this.field1259 = new Class8962(var17);
@@ -241,7 +241,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       for (Entry var29 : var12.method9191()) {
          Class8705 var21 = (Class8705)var29.getKey();
          if (var21 != Class9459.field43952) {
-            Class8705 var22 = Class8705.<Class1655>method31395(Class2348.field16067, var21.method31399());
+            Class8705 var22 = Class8705.<World>method31395(Class2348.field16067, var21.method31399());
             Class9535 var23 = ((Class9459)var29.getValue()).method36412();
             Class5646 var24 = ((Class9459)var29.getValue()).method36413();
             Class6609 var25 = new Class6609(this.field1269, var4);
@@ -744,15 +744,15 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    public final ServerWorld method1317() {
-      return this.field1225.get(Class1655.field8999);
+      return this.field1225.get(World.field8999);
    }
 
    @Nullable
-   public ServerWorld method1318(Class8705<Class1655> var1) {
+   public ServerWorld method1318(Class8705<World> var1) {
       return this.field1225.get(var1);
    }
 
-   public Set<Class8705<Class1655>> method1319() {
+   public Set<Class8705<World>> method1319() {
       return this.field1225.keySet();
    }
 

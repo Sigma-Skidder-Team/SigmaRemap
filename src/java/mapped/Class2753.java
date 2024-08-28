@@ -26,7 +26,7 @@ public class Class2753 extends Class2595 {
    public void method10805() {
       this.field17293--;
       if (this.field17293 <= 0) {
-         Class1655 var3 = this.field17292.field5024;
+         World var3 = this.field17292.field5024;
          Random var4 = this.field17292.method3013();
          BlockPos var5 = this.field17292.method3432();
 

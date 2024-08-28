@@ -104,7 +104,7 @@ public class Class7699 {
       return this.field32990 == Class2305.field15741;
    }
 
-   public Class1655 method25394() {
+   public World method25394() {
       return this.field32978;
    }
 
@@ -304,7 +304,7 @@ public class Class7699 {
                         if (var10 instanceof Class878) {
                            Class878 var11 = (Class878)var10;
                            var11.method2911(Class8876.field40174);
-                           Class9551.field44498.method15062(var11);
+                           CriteriaTriggers.field44498.method15062(var11);
                         }
                      }
                   }

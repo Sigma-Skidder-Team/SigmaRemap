@@ -83,7 +83,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
       }
    }
 
-   public static int method3758(Class1655 var0, Class932 var1, int var2, int var3, int var4, int var5, int var6) {
+   public static int method3758(World var0, Class932 var1, int var2, int var3, int var4, int var5, int var6) {
       if (!var0.field9020 && var6 != 0 && (var2 + var3 + var4 + var5) % 200 == 0) {
          var6 = method3759(var0, var1, var3, var4, var5);
       }
@@ -91,7 +91,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
       return var6;
    }
 
-   public static int method3759(Class1655 var0, Class932 var1, int var2, int var3, int var4) {
+   public static int method3759(World var0, Class932 var1, int var2, int var3, int var4) {
       int var7 = 0;
       float var8 = 5.0F;
 

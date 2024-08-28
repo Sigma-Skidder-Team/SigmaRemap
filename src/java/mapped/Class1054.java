@@ -14,7 +14,7 @@ public class Class1054 extends Class1049 {
       }
    };
 
-   public Class1054(Class8992<? extends Class1054> var1, Class1655 var2) {
+   public Class1054(Class8992<? extends Class1054> var1, World var2) {
       super(var1, var2);
    }
 

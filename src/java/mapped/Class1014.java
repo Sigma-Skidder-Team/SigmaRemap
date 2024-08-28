@@ -3,7 +3,7 @@ package mapped;
 public abstract class Class1014 extends Class1013 {
    private int field5671;
 
-   public Class1014(Class8992<? extends Class1014> var1, Class1655 var2) {
+   public Class1014(Class8992<? extends Class1014> var1, World var2) {
       super(var1, var2);
    }
 

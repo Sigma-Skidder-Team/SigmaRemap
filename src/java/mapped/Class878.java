@@ -44,7 +44,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    private boolean field4881;
    private Vector3d field4882;
    private Class2002 field4883 = Class2002.method8389(0, 0, 0);
-   private Class8705<Class1655> field4884 = Class1655.field8999;
+   private Class8705<World> field4884 = World.field8999;
    private BlockPos field4885;
    private boolean field4886;
    private float field4887;
@@ -52,7 +52,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    private int field4889;
    public boolean field4890;
    public int field4891;
-   public boolean field4892;
+   public boolean queuedEndExit;
 
    public Class878(Class314 var1, ServerWorld var2, GameProfile var3, Class9081 var4) {
       super(var2, var2.method6947(), var2.method6948(), var3);
@@ -144,10 +144,10 @@ public class Class878 extends PlayerEntity implements Class876 {
          this.field4886 = var1.method132("SpawnForced");
          this.field4887 = var1.method124("SpawnAngle");
          if (var1.method118("SpawnDimension")) {
-            this.field4884 = Class1655.field8998
+            this.field4884 = World.field8998
                .parse(Class8063.field34602, var1.method116("SpawnDimension"))
                .resultOrPartial(field4854::error)
-               .orElse(Class1655.field8999);
+               .orElse(World.field8999);
          }
       }
    }
@@ -234,7 +234,7 @@ public class Class878 extends PlayerEntity implements Class876 {
 
    @Override
    public void method2732(Class7380 var1) {
-      Class9551.field44468.method15169(this, var1);
+      CriteriaTriggers.field44468.method15169(this, var1);
    }
 
    @Override
@@ -283,9 +283,9 @@ public class Class878 extends PlayerEntity implements Class876 {
          }
       }
 
-      Class9551.field44487.method15046(this);
+      CriteriaTriggers.field44487.method15046(this);
       if (this.field4879 != null) {
-         Class9551.field44485.method15118(this, this.field4879, this.field5055 - this.field4880);
+         CriteriaTriggers.field44485.method15118(this, this.field4879, this.field5055 - this.field4880);
       }
 
       this.field4859.method27414(this);
@@ -350,7 +350,7 @@ public class Class878 extends PlayerEntity implements Class876 {
          }
 
          if (this.field5055 % 20 == 0) {
-            Class9551.field44480.method15062(this);
+            CriteriaTriggers.field44480.method15062(this);
          }
       } catch (Throwable var6) {
          Class4526 var4 = Class4526.method14413(var6, "Ticking player");
@@ -451,7 +451,7 @@ public class Class878 extends PlayerEntity implements Class876 {
 
          this.method2740(var6, var7, Class9008.field41200);
          this.method2740(var7, var6, Class9008.field41201);
-         Class9551.field44466.method15158(this, var1, var3);
+         CriteriaTriggers.field44466.method15158(this, var1, var3);
       }
    }
 
@@ -480,8 +480,8 @@ public class Class878 extends PlayerEntity implements Class876 {
                   return false;
                }
 
-               if (var6 instanceof Class884) {
-                  Class884 var7 = (Class884)var6;
+               if (var6 instanceof AbstractArrowEntity) {
+                  AbstractArrowEntity var7 = (AbstractArrowEntity)var6;
                   Entity var8 = var7.method3460();
                   if (var8 instanceof PlayerEntity && !this.method2742((PlayerEntity)var8)) {
                      return false;
@@ -507,7 +507,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    @Override
    public Class9761 method2744(ServerWorld var1) {
       Class9761 var4 = super.method2744(var1);
-      if (var4 != null && this.field5024.method6813() == Class1655.field8999 && var1.method6813() == Class1655.field9001) {
+      if (var4 != null && this.field5024.method6813() == World.field8999 && var1.method6813() == World.THE_END) {
          Vector3d var5 = var4.field45665.method11339(0.0, -1.0, 0.0);
          return new Class9761(var5, Vector3d.field18047, 90.0F, 0.0F);
       } else {
@@ -521,11 +521,11 @@ public class Class878 extends PlayerEntity implements Class876 {
       this.field4876 = true;
       ServerWorld var4 = this.getServerWorld();
       Class8705 var5 = var4.method6813();
-      if (var5 == Class1655.field9001 && var1.method6813() == Class1655.field8999) {
+      if (var5 == World.THE_END && var1.method6813() == World.field8999) {
          this.method3200();
          this.getServerWorld().method6934(this);
-         if (!this.field4892) {
-            this.field4892 = true;
+         if (!this.queuedEndExit) {
+            this.queuedEndExit = true;
             this.field4855.sendPacket(new Class5534(Class5534.field24564, !this.field4877 ? 1.0F : 0.0F));
             this.field4877 = true;
          }
@@ -554,9 +554,9 @@ public class Class878 extends PlayerEntity implements Class876 {
          Class9761 var8 = this.method2744(var1);
          if (var8 != null) {
             var4.method6820().method22503("moving");
-            if (var5 == Class1655.field8999 && var1.method6813() == Class1655.field9000) {
+            if (var5 == World.field8999 && var1.method6813() == World.field9000) {
                this.field4882 = this.getPositionVec();
-            } else if (var1.method6813() == Class1655.field9001) {
+            } else if (var1.method6813() == World.THE_END) {
                this.method2746(var1, new BlockPos(var8.field45665));
             }
 
@@ -619,12 +619,12 @@ public class Class878 extends PlayerEntity implements Class876 {
    private void method2748(ServerWorld var1) {
       Class8705 var4 = var1.method6813();
       Class8705 var5 = this.field5024.method6813();
-      Class9551.field44486.method15146(this, var4, var5);
-      if (var4 == Class1655.field9000 && var5 == Class1655.field8999 && this.field4882 != null) {
-         Class9551.field44493.method15143(this, this.field4882);
+      CriteriaTriggers.CHANGED_DIMENSION.testForAll(this, var4, var5);
+      if (var4 == World.field9000 && var5 == World.field8999 && this.field4882 != null) {
+         CriteriaTriggers.field44493.method15143(this, this.field4882);
       }
 
-      if (var5 != Class1655.field9000) {
+      if (var5 != World.field9000) {
          this.field4882 = null;
       }
    }
@@ -689,7 +689,7 @@ public class Class878 extends PlayerEntity implements Class876 {
 
             Either var5 = super.method2752(var1).ifRight(var1x -> {
                this.method2911(Class8876.field40162);
-               Class9551.field44481.method15062(this);
+               CriteriaTriggers.field44481.method15062(this);
             });
             ((ServerWorld)this.field5024).method6902();
             return var5;
@@ -858,7 +858,7 @@ public class Class878 extends PlayerEntity implements Class876 {
    public void method2720(Class5812 var1, int var2, ItemStack var3) {
       if (!(var1.method18131(var2) instanceof Class5856)) {
          if (var1 == this.field4904) {
-            Class9551.field44469.method15086(this, this.field4902, var3);
+            CriteriaTriggers.field44469.method15086(this, this.field4902, var3);
          }
 
          if (!this.field4890) {
@@ -1037,14 +1037,14 @@ public class Class878 extends PlayerEntity implements Class876 {
          this.field4879 = this.getPositionVec();
       }
 
-      Class9551.field44491.method15083(this);
+      CriteriaTriggers.field44491.method15083(this);
    }
 
    @Override
    public void method2791(Class2023 var1, boolean var2) {
       super.method2791(var1, var2);
       this.field4855.sendPacket(new Class5537(this.method3205(), var1));
-      Class9551.field44491.method15083(this);
+      CriteriaTriggers.field44491.method15083(this);
    }
 
    @Override
@@ -1055,7 +1055,7 @@ public class Class878 extends PlayerEntity implements Class876 {
          this.field4879 = null;
       }
 
-      Class9551.field44491.method15083(this);
+      CriteriaTriggers.field44491.method15083(this);
    }
 
    @Override
@@ -1302,7 +1302,7 @@ public class Class878 extends PlayerEntity implements Class876 {
       return this.field4887;
    }
 
-   public Class8705<Class1655> method2827() {
+   public Class8705<World> method2827() {
       return this.field4884;
    }
 
@@ -1310,10 +1310,10 @@ public class Class878 extends PlayerEntity implements Class876 {
       return this.field4886;
    }
 
-   public void method2829(Class8705<Class1655> var1, BlockPos var2, float var3, boolean var4, boolean var5) {
+   public void method2829(Class8705<World> var1, BlockPos var2, float var3, boolean var4, boolean var5) {
       if (var2 == null) {
          this.field4885 = null;
-         this.field4884 = Class1655.field8999;
+         this.field4884 = World.field8999;
          this.field4887 = 0.0F;
          this.field4886 = false;
       } else {
@@ -1359,8 +1359,8 @@ public class Class878 extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public Class1000 method2836(ItemStack var1, boolean var2, boolean var3) {
-      Class1000 var6 = super.method2836(var1, var2, var3);
+   public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
+      ItemEntity var6 = super.method2836(var1, var2, var3);
       if (var6 != null) {
          this.field5024.method6916(var6);
          ItemStack var7 = var6.method4124();

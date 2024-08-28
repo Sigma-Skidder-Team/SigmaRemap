@@ -23,7 +23,7 @@ public class Class6942 extends Class6941 {
             this.method21359(var9);
             this.method21367(var9);
             var5.add(var9);
-            Class9551.field44470.method15130(var2, var8);
+            CriteriaTriggers.field44470.method15130(var2, var8);
             var6++;
          }
       }

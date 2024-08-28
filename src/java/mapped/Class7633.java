@@ -383,12 +383,12 @@ public abstract class Class7633 extends Class7631 {
 
    public abstract int method25092(Class1662 var1);
 
-   public int method25093(Class1655 var1, BlockPos var2, Class7379 var3, Class7379 var4) {
+   public int method25093(World var1, BlockPos var2, Class7379 var3, Class7379 var4) {
       return this.method25057(var1);
    }
 
    @Override
-   public void method25052(Class1655 var1, BlockPos var2, Class7379 var3) {
+   public void method25052(World var1, BlockPos var2, Class7379 var3) {
       if (!var3.method23473()) {
          Class7379 var6 = this.method25073(var1, var2, var1.method6738(var2));
          int var7 = this.method25093(var1, var2, var3, var6);

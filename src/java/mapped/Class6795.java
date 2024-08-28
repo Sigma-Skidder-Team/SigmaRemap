@@ -63,14 +63,14 @@ public class Class6795 {
          for (Entity var8 : var1) {
             if (!(var8 instanceof Class880)) {
                if (var1.size() == 1) {
-                  throw field29598.create(var8.method2941().getString());
+                  throw field29598.create(var8.getName().getString());
                }
             } else {
                Class880 var9 = (Class880)var8;
                ItemStack var10 = var9.method3090();
                if (var10.method32105()) {
                   if (var1.size() == 1) {
-                     throw field29599.create(var9.method2941().getString());
+                     throw field29599.create(var9.getName().getString());
                   }
                } else if (var2.method18821(var10) && Class7858.method26345(Class7858.method26312(var10).keySet(), var2)) {
                   var10.method32162(var2, var3);

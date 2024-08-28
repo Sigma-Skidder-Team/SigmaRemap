@@ -50,7 +50,7 @@ public class Class3428 extends Block implements Class3207 {
    @Override
    public Class7380 method11495(Class5909 var1) {
       BlockPos var4 = var1.method18345();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       int var6 = method12085(var5, var4);
       return this.method11579()
          .method23465(field19185, Boolean.valueOf(var5.method6739(var4).method23472() == Class9479.field44066))
@@ -59,7 +59,7 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var2.field9020) {
          var2.method6860().method20726(var3, this, 1);
       }

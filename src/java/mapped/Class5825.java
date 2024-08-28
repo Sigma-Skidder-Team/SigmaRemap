@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Class5825 extends Class5823 {
    private static String[] field25521;
-   private final Class1655 field25522;
+   private final World field25522;
    private Class4846 field25523;
    private final List<Class4846> field25524;
 

@@ -10,7 +10,7 @@ public class Class1100 extends Class1009 {
    private boolean field6054;
    private int field6055;
 
-   public Class1100(Class8992<? extends Class1100> var1, Class1655 var2) {
+   public Class1100(Class8992<? extends Class1100> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6839(this, this);
       this.field5594 = 3;

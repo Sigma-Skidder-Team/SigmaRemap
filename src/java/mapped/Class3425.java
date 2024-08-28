@@ -41,7 +41,7 @@ public class Class3425 extends Block {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       return this.method11579()
          .method23465(field19166, Boolean.valueOf(this.method12082(var4.method6738(var5.method8341()), Direction.NORTH)))
@@ -58,21 +58,21 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383())) {
          this.method12080(var2, var3, var1);
       }
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5 && !var1.method23448(var4.method23383())) {
          this.method12080(var2, var3, var1.method23465(field19163, Boolean.valueOf(true)));
       }
    }
 
    @Override
-   public void method11574(Class1655 var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
+   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
       if (!var1.field9020 && !var4.method3090().method32105() && var4.method3090().method32107() == Class8514.field37956) {
          var1.method6725(var2, var3.method23465(field19165, Boolean.valueOf(true)), 4);
       }
@@ -80,7 +80,7 @@ public class Class3425 extends Block {
       super.method11574(var1, var2, var3, var4);
    }
 
-   private void method12080(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method12080(World var1, BlockPos var2, Class7380 var3) {
       for (Direction var9 : new Direction[]{Direction.SOUTH, Direction.WEST}) {
          for (int var10 = 1; var10 < 42; var10++) {
             BlockPos var11 = var2.method8350(var9, var10);
@@ -100,7 +100,7 @@ public class Class3425 extends Block {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.field9020 && !var1.<Boolean>method23463(field19163)) {
          this.method12081(var2, var3);
       }
@@ -113,7 +113,7 @@ public class Class3425 extends Block {
       }
    }
 
-   private void method12081(Class1655 var1, BlockPos var2) {
+   private void method12081(World var1, BlockPos var2) {
       Class7380 var5 = var1.method6738(var2);
       boolean var6 = var5.<Boolean>method23463(field19163);
       boolean var7 = false;

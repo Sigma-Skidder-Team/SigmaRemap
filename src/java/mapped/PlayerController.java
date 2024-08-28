@@ -211,20 +211,20 @@ public class PlayerController {
       }
    }
 
-   public Class2274 method23139(ClientPlayerEntity var1, Class1656 var2, Hand var3, Class8711 var4) {
+   public ActionResultType method23139(ClientPlayerEntity var1, Class1656 var2, Hand var3, Class8711 var4) {
       this.method23138();
       BlockPos var7 = var4.method31423();
       if (this.field31358.field1338.method6810().method24523(var7)) {
          ItemStack var8 = var1.getHeldItem(var3);
          if (this.field31366 == Class1894.field11105) {
             this.field31359.sendPacket(new Class5570(var3, var4));
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          } else {
             boolean var9 = !var1.method3090().method32105() || !var1.method3091().method32105();
             boolean var10 = var1.method2851() && var9;
             if (!var10) {
-               Class2274 var11 = var2.method6738(var7).method23435(var2, var1, var3, var4);
-               if (var11.method9000()) {
+               ActionResultType var11 = var2.method6738(var7).method23435(var2, var1, var3, var4);
+               if (var11.isSuccessOrConsume()) {
                   this.field31359.sendPacket(new Class5570(var3, var4));
                   return var11;
                }
@@ -233,7 +233,7 @@ public class PlayerController {
             this.field31359.sendPacket(new Class5570(var3, var4));
             if (!var8.method32105() && !var1.method2976().method19635(var8.method32107())) {
                Class5911 var14 = new Class5911(var1, var3, var4);
-               Class2274 var12;
+               ActionResultType var12;
                if (!this.field31366.method8157()) {
                   var12 = var8.method32108(var14);
                } else {
@@ -244,15 +244,15 @@ public class PlayerController {
 
                return var12;
             } else {
-               return Class2274.field14820;
+               return ActionResultType.field14820;
             }
          }
       } else {
-         return Class2274.field14821;
+         return ActionResultType.field14821;
       }
    }
 
-   public Class2274 method23140(PlayerEntity var1, Class1655 var2, Hand var3) {
+   public ActionResultType method23140(PlayerEntity var1, World var2, Hand var3) {
       if (this.field31366 != Class1894.field11105) {
          this.method23138();
          this.field31359.sendPacket(new Class5555(var3));
@@ -267,10 +267,10 @@ public class PlayerController {
 
             return var8.method20694();
          } else {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
@@ -291,17 +291,17 @@ public class PlayerController {
       }
    }
 
-   public Class2274 method23142(PlayerEntity var1, Entity var2, Hand var3) {
+   public ActionResultType method23142(PlayerEntity var1, Entity var2, Hand var3) {
       this.method23138();
       this.field31359.sendPacket(new CUseEntityPacket(var2, var3, var1.method3331()));
-      return this.field31366 != Class1894.field11105 ? var1.method2893(var2, var3) : Class2274.field14820;
+      return this.field31366 != Class1894.field11105 ? var1.interactOn(var2, var3) : ActionResultType.field14820;
    }
 
-   public Class2274 method23143(PlayerEntity var1, Entity var2, Class8709 var3, Hand var4) {
+   public ActionResultType method23143(PlayerEntity var1, Entity var2, Class8709 var3, Hand var4) {
       this.method23138();
       Vector3d var7 = var3.method31419().method11337(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       this.field31359.sendPacket(new CUseEntityPacket(var2, var4, var7, var1.method3331()));
-      return this.field31366 != Class1894.field11105 ? var2.method3397(var1, var7, var4) : Class2274.field14820;
+      return this.field31366 != Class1894.field11105 ? var2.applyPlayerInteraction(var1, var7, var4) : ActionResultType.field14820;
    }
 
    public ItemStack method23144(int var1, int var2, int var3, Class2259 var4, PlayerEntity var5) {

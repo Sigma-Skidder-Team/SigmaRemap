@@ -22,7 +22,7 @@ public class Class9234 {
    }
 
    private static int method34728(Class6619 var0) {
-      return method34729(var0, var0x -> new TranslationTextComponent("commands.list.nameAndId", var0x.method2941(), var0x.getGameProfile().getId()));
+      return method34729(var0, var0x -> new TranslationTextComponent("commands.list.nameAndId", var0x.getName(), var0x.getGameProfile().getId()));
    }
 
    private static int method34729(Class6619 var0, Function<Class878, ITextComponent> var1) {

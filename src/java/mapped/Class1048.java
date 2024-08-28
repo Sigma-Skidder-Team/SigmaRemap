@@ -11,9 +11,9 @@ public class Class1048 extends Class1047 {
    private static final Class9289<Boolean> field5805 = Class9361.<Boolean>method35441(Class1048.class, Class7784.field33398);
    private static final Class9289<Integer> field5806 = Class9361.<Integer>method35441(Class1048.class, Class7784.field33391);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
-   public static final Predicate<Class1000> field5808 = var0 -> !var0.method4135() && var0.method3066() && var0.method3250();
+   public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.method3066() && var0.method3250();
 
-   public Class1048(Class8992<? extends Class1048> var1, Class1655 var2) {
+   public Class1048(Class8992<? extends Class1048> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6836(this);
       this.field5595 = new Class8093(this, 10);
@@ -112,7 +112,7 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6997(this, var1);
    }
 
@@ -164,7 +164,7 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       if (this.method2943(Class2106.field13731).method32105()) {
          ItemStack var4 = var1.method4124();
          if (this.method4252(var4)) {
@@ -253,8 +253,8 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (!var5.method32105() && var5.method32107().method11743(Class5985.field26114)) {
          if (!this.field5024.field9020) {
             this.method2863(Class6067.field26502, 1.0F, 1.0F);
@@ -265,7 +265,7 @@ public class Class1048 extends Class1047 {
             var5.method32182(1);
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          return super.method4285(var1, var2);
       }

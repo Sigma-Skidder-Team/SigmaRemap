@@ -31,7 +31,7 @@ public class Class5464 implements Packet<Class5116> {
       var1.method15717(this);
    }
 
-   public Entity method17178(Class1655 var1) {
+   public Entity method17178(World var1) {
       return var1.method6774(this.field24259);
    }
 

@@ -5,14 +5,14 @@ import net.minecraft.util.text.ITextComponent;
 import javax.annotation.Nullable;
 
 public interface Class933 {
-   ITextComponent method2941();
+   ITextComponent getName();
 
    default boolean method3381() {
       return this.method3380() != null;
    }
 
    default ITextComponent getDisplayName() {
-      return this.method2941();
+      return this.getName();
    }
 
    @Nullable

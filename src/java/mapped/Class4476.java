@@ -13,19 +13,19 @@ public class Class4476 extends Class4457 {
    }
 
    public static Class4476 method14134(Class7552 var0) {
-      return new Class4476(Class4905.method15160(Class9551.field44466), Class9587.field44822, Class9587.method37226(var0.method24717()), Class9539.field44409);
+      return new Class4476(Class4905.method15160(CriteriaTriggers.field44466), Class9587.field44822, Class9587.method37226(var0.method24717()), Class9539.field44409);
    }
 
    public static Class4476 method14135() {
-      return new Class4476(Class4905.method15160(Class9551.field44466), Class9587.field44822, Class9587.field44822, Class9539.field44409);
+      return new Class4476(Class4905.method15160(CriteriaTriggers.field44466), Class9587.field44822, Class9587.field44822, Class9539.field44409);
    }
 
    public static Class4476 method14136(Class7552 var0, Class9714 var1) {
-      return new Class4476(Class4905.method15160(Class9551.field44466), Class9587.field44822, Class9587.method37226(var0.method24717()), var1.method38060());
+      return new Class4476(Class4905.method15160(CriteriaTriggers.field44466), Class9587.field44822, Class9587.method37226(var0.method24717()), var1.method38060());
    }
 
    public static Class4476 method14137() {
-      return new Class4476(Class4905.method15160(Class9551.field44467), Class9587.field44822, Class9587.field44822, Class9539.field44409);
+      return new Class4476(Class4905.method15160(CriteriaTriggers.field44467), Class9587.field44822, Class9587.field44822, Class9539.field44409);
    }
 
    public boolean method14138(Class878 var1, Class7812 var2, Class8654 var3) {

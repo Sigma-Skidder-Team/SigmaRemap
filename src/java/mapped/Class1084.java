@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1084 extends Class1082 {
    private static String[] field5949;
 
-   public Class1084(Class8992<? extends Class1084> var1, Class1655 var2) {
+   public Class1084(Class8992<? extends Class1084> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14190, 8.0F);
    }
@@ -86,8 +86,8 @@ public class Class1084 extends Class1082 {
    }
 
    @Override
-   public Class884 method5032(ItemStack var1, float var2) {
-      Class884 var5 = super.method5032(var1, var2);
+   public AbstractArrowEntity method5032(ItemStack var1, float var2) {
+      AbstractArrowEntity var5 = super.method5032(var1, var2);
       var5.method3221(100);
       return var5;
    }

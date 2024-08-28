@@ -94,7 +94,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public boolean method11487(Class1655 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
       return true;
    }
 

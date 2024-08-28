@@ -24,7 +24,7 @@ public class Class1305 extends Screen implements Class1306 {
    @Override
    public void method1921() {
       this.field6906 = true;
-      this.field4562.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14278));
+      this.field4562.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
    }
 
    public void method6179() {

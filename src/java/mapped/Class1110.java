@@ -8,7 +8,7 @@ public class Class1110 extends Class1111 implements Class1008 {
    private BlockPos field6089 = BlockPos.field13032;
    private Class2143 field6090 = Class2143.field14028;
 
-   public Class1110(Class8992<? extends Class1110> var1, Class1655 var2) {
+   public Class1110(Class8992<? extends Class1110> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
       this.field5596 = new Class6831(this, this);

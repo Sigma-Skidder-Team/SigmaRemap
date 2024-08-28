@@ -8,11 +8,11 @@ import java.util.Iterator;
 public class Class998 extends Class995 {
    public Class9078 field5496;
 
-   public Class998(Class8992<? extends Class998> var1, Class1655 var2) {
+   public Class998(Class8992<? extends Class998> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class998(Class1655 var1, BlockPos var2, Direction var3) {
+   public Class998(World var1, BlockPos var2, Direction var3) {
       super(Class8992.field41060, var1, var2);
       ArrayList var6 = Lists.newArrayList();
       int var7 = 0;
@@ -45,7 +45,7 @@ public class Class998 extends Class995 {
       this.method4077(var3);
    }
 
-   public Class998(Class1655 var1, BlockPos var2, Direction var3, Class9078 var4) {
+   public Class998(World var1, BlockPos var2, Direction var3, Class9078 var4) {
       this(var1, var2, var3);
       this.field5496 = var4;
       this.method4077(var3);

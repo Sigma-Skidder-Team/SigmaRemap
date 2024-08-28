@@ -10,7 +10,7 @@ public class Class3417 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (var2.method6812().method36877()) {
          var2.method6725(var3, Blocks.field36452.method11579(), 3);
          var2.method6999(2009, var3, 0);
@@ -19,7 +19,7 @@ public class Class3417 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = Direction.method552(var4);
       if (var7 != Direction.field673) {
          BlockPos var8 = var3.method8349(var7);

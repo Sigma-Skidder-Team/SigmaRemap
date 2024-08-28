@@ -10,11 +10,11 @@ public class Class888 extends Class882 implements Class889 {
    private int field5124;
    public Class880 field5125;
 
-   public Class888(Class8992<? extends Class888> var1, Class1655 var2) {
+   public Class888(Class8992<? extends Class888> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class888(Class1655 var1, double var2, double var4, double var6, ItemStack var8) {
+   public Class888(World var1, double var2, double var4, double var6, ItemStack var8) {
       super(Class8992.field41032, var1);
       this.field5123 = 0;
       this.method3215(var2, var4, var6);
@@ -28,23 +28,23 @@ public class Class888 extends Class882 implements Class889 {
       this.field5124 = 10 * var11 + this.field5054.nextInt(6) + this.field5054.nextInt(7);
    }
 
-   public Class888(Class1655 var1, Entity var2, double var3, double var5, double var7, ItemStack var9) {
+   public Class888(World var1, Entity var2, double var3, double var5, double var7, ItemStack var9) {
       this(var1, var3, var5, var7, var9);
       this.method3459(var2);
    }
 
-   public Class888(Class1655 var1, ItemStack var2, Class880 var3) {
+   public Class888(World var1, ItemStack var2, Class880 var3) {
       this(var1, var3, var3.getPosX(), var3.getPosY(), var3.getPosZ(), var2);
       this.field5063.method35446(field5121, OptionalInt.of(var3.method3205()));
       this.field5125 = var3;
    }
 
-   public Class888(Class1655 var1, ItemStack var2, double var3, double var5, double var7, boolean var9) {
+   public Class888(World var1, ItemStack var2, double var3, double var5, double var7, boolean var9) {
       this(var1, var3, var5, var7, var2);
       this.field5063.method35446(field5122, var9);
    }
 
-   public Class888(Class1655 var1, ItemStack var2, Entity var3, double var4, double var6, double var8, boolean var10) {
+   public Class888(World var1, ItemStack var2, Entity var3, double var4, double var6, double var8, boolean var10) {
       this(var1, var2, var4, var6, var8, var10);
       this.method3459(var3);
    }

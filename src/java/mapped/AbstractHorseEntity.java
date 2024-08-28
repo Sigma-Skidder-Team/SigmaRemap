@@ -40,7 +40,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public boolean field5900 = true;
    public int field5901;
 
-   public AbstractHorseEntity(Class8992<? extends AbstractHorseEntity> var1, Class1655 var2) {
+   public AbstractHorseEntity(Class8992<? extends AbstractHorseEntity> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.method4948();
@@ -228,7 +228,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          for (int var5 = 0; var5 < var4; var5++) {
             ItemStack var6 = var3.method3618(var5);
             if (!var6.method32105()) {
-               this.field5890.method3621(var5, var6.method32126());
+               this.field5890.method3621(var5, var6.copy());
             }
          }
       }
@@ -350,16 +350,16 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
    }
 
-   public Class2274 method4953(PlayerEntity var1, ItemStack var2) {
+   public ActionResultType method4953(PlayerEntity var1, ItemStack var2) {
       boolean var5 = this.method4892(var1, var2);
       if (!var1.field4919.field29609) {
          var2.method32182(1);
       }
 
       if (!this.field5024.field9020) {
-         return !var5 ? Class2274.field14820 : Class2274.field14818;
+         return !var5 ? ActionResultType.field14820 : ActionResultType.field14818;
       } else {
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
@@ -630,7 +630,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       this.method4934(var1.getUniqueID());
       this.method4936(true);
       if (var1 instanceof Class878) {
-         Class9551.field44488.method15115((Class878)var1, this);
+         CriteriaTriggers.field44488.method15115((Class878)var1, this);
       }
 
       this.field5024.method6786(this, (byte)7);

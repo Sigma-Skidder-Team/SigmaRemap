@@ -21,7 +21,7 @@ public class Class4593 extends Class4587 {
    }
 
    private Entity method14532(Entity var1) {
-      return (Entity)(var1 instanceof Class1000 ? ((Class1000)var1).method4139() : var1);
+      return (Entity)(var1 instanceof ItemEntity ? ((ItemEntity)var1).method4139() : var1);
    }
 
    @Override

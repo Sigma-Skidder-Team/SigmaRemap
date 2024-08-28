@@ -12,7 +12,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    private int field5944 = 3;
    private int field5945;
 
-   public Class1081(Class8992<? extends Class1081> var1, Class1655 var2) {
+   public Class1081(Class8992<? extends Class1081> var1, World var2) {
       super(var1, var2);
    }
 
@@ -166,8 +166,8 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() != Class8514.field37794) {
          return super.method4285(var1, var2);
       } else {
@@ -187,7 +187,7 @@ public class Class1081 extends Class1009 implements Class1080 {
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       }
    }
 

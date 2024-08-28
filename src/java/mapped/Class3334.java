@@ -15,7 +15,7 @@ public class Class3334 extends Class3257 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       Class3301.method11848(var1, var3);
    }
 
@@ -30,8 +30,8 @@ public class Class3334 extends Class3257 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       var2.method3154(var3);
       return Class6794.<ItemStack>method20697(var6);
    }

@@ -7,7 +7,7 @@ public class Class1032 extends Class1031 {
    private static String[] field5736;
    private Class1019 field5737;
 
-   public Class1032(Class8992<? extends Class1032> var1, Class1655 var2) {
+   public Class1032(Class8992<? extends Class1032> var1, World var2) {
       super(var1, var2);
       this.field5594 = 10;
    }

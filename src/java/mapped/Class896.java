@@ -6,15 +6,15 @@ import java.util.function.Predicate;
 public class Class896 extends Class890 implements Class889 {
    public static final Predicate<Class880> field5131 = Class880::method3124;
 
-   public Class896(Class8992<? extends Class896> var1, Class1655 var2) {
+   public Class896(Class8992<? extends Class896> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class896(Class1655 var1, Class880 var2) {
+   public Class896(World var1, Class880 var2) {
       super(Class8992.field41092, var2, var1);
    }
 
-   public Class896(Class1655 var1, double var2, double var4, double var6) {
+   public Class896(World var1, double var2, double var4, double var6) {
       super(Class8992.field41092, var2, var4, var6, var1);
    }
 

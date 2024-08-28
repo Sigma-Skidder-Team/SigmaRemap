@@ -198,10 +198,10 @@ public class Class8418 {
       }
    }
 
-   public static Class8418 method29580(Class8705<Class1655> var0, Class8250 var1) {
-      if (var0 != Class1655.field8999) {
-         if (var0 != Class1655.field9000) {
-            if (var0 != Class1655.field9001) {
+   public static Class8418 method29580(Class8705<World> var0, Class8250 var1) {
+      if (var0 != World.field8999) {
+         if (var0 != World.field9000) {
+            if (var0 != World.THE_END) {
                throw new RuntimeException(String.format("Unknown dimension type : %s", var0));
             } else {
                ImmutableList var5 = ImmutableList.of("EndCity");

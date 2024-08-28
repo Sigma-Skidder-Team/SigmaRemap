@@ -61,7 +61,7 @@ public class Class5200 extends Module {
                     }
 
                     if (var6.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+                        mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
                     mc.field1339.field4902.field5443 = Class7789.method25857(var5);

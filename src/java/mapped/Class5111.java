@@ -32,7 +32,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class5111 implements Class5110 {
-   private static final Logger field23223 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    public final Class8586 field23224;
    private final Class314 server;
    public Class878 player;
@@ -89,7 +89,7 @@ public class Class5111 implements Class5110 {
       this.field23255 = this.field23254;
       if (this.field23250 && !this.player.isSleeping()) {
          if (++this.field23251 > 80) {
-            field23223.warn("{} was kicked for floating too long!", this.player.method2941().getString());
+            LOGGER.warn("{} was kicked for floating too long!", this.player.getName().getString());
             this.disconnect(new TranslationTextComponent("multiplayer.disconnect.flying"));
             return;
          }
@@ -108,7 +108,7 @@ public class Class5111 implements Class5110 {
          this.field23246 = this.field23240.getPosZ();
          if (this.field23252 && this.player.method3415().method3407() == this.player) {
             if (++this.field23253 > 80) {
-               field23223.warn("{} was kicked for floating a vehicle too long!", this.player.method2941().getString());
+               LOGGER.warn("{} was kicked for floating a vehicle too long!", this.player.getName().getString());
                this.disconnect(new TranslationTextComponent("multiplayer.disconnect.flying"));
                return;
             }
@@ -179,7 +179,7 @@ public class Class5111 implements Class5110 {
       Class314 var6 = this.player.getServerWorld().method6715();
       Consumer<T> var7 = var2x -> {
          if (!this.method15589().method30707()) {
-            field23223.debug("Ignoring packet due to disconnection");
+            LOGGER.debug("Ignoring packet due to disconnection");
          } else {
             var2.accept(var2x);
          }
@@ -245,10 +245,10 @@ public class Class5111 implements Class5110 {
             double var26 = var4.method3433().method11349();
             double var28 = var20 * var20 + var22 * var22 + var24 * var24;
             if (var28 - var26 > 100.0 && !this.method15657()) {
-               field23223.warn(
+               LOGGER.warn(
                   "{} (vehicle of {}) moved too quickly! {},{},{}",
-                  var4.method2941().getString(),
-                  this.player.method2941().getString(),
+                  var4.getName().getString(),
+                  this.player.getName().getString(),
                   var20,
                   var22,
                   var24
@@ -273,8 +273,8 @@ public class Class5111 implements Class5110 {
             boolean var31 = false;
             if (var28 > 0.0625) {
                var31 = true;
-               field23223.warn(
-                  "{} (vehicle of {}) moved wrongly! {}", var4.method2941().getString(), this.player.method2941().getString(), Math.sqrt(var28)
+               LOGGER.warn(
+                  "{} (vehicle of {}) moved wrongly! {}", var4.getName().getString(), this.player.getName().getString(), Math.sqrt(var28)
                );
             }
 
@@ -627,7 +627,7 @@ public class Class5111 implements Class5110 {
             var7.method32148(var8.method79());
          }
 
-         var7.method32164("author", Class40.method150(this.player.method2941().getString()));
+         var7.method32164("author", Class40.method150(this.player.getName().getString()));
          var7.method32164("title", Class40.method150(var1));
          Class41 var9 = new Class41();
 
@@ -669,7 +669,7 @@ public class Class5111 implements Class5110 {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (!method15662(var1)) {
          ServerWorld var4 = this.player.getServerWorld();
-         if (!this.player.field4892) {
+         if (!this.player.queuedEndExit) {
             if (this.field23227 == 0) {
                this.method15656();
             }
@@ -695,8 +695,8 @@ public class Class5111 implements Class5110 {
                      this.field23254++;
                      int var31 = this.field23254 - this.field23255;
                      if (var31 > 5) {
-                        field23223.debug(
-                           "{} is sending move packets too frequently ({} packets since last tick)", this.player.method2941().getString(), var31
+                        LOGGER.debug(
+                           "{} is sending move packets too frequently ({} packets since last tick)", this.player.getName().getString(), var31
                         );
                         var31 = 1;
                      }
@@ -705,7 +705,7 @@ public class Class5111 implements Class5110 {
                         && (!this.player.getServerWorld().method6789().method17135(Class5462.field24240) || !this.player.method3165())) {
                         float var32 = !this.player.method3165() ? 100.0F : 300.0F;
                         if (var29 - var27 > (double)(var32 * (float)var31) && !this.method15657()) {
-                           field23223.warn("{} moved too quickly! {},{},{}", this.player.method2941().getString(), var21, var23, var25);
+                           LOGGER.warn("{} moved too quickly! {},{},{}", this.player.getName().getString(), var21, var23, var25);
                            this.method15668(
                               this.player.getPosX(),
                               this.player.getPosY(),
@@ -742,7 +742,7 @@ public class Class5111 implements Class5110 {
                         && !this.player.field4857.method33866()
                         && this.player.field4857.method33863() != Class1894.field11105) {
                         var34 = true;
-                        field23223.warn("{} moved wrongly!", this.player.method2941().getString());
+                        LOGGER.warn("{} moved wrongly!", this.player.getName().getString());
                      }
 
                      this.player.method3269(var13, var15, var17, var19, var20);
@@ -895,12 +895,12 @@ public class Class5111 implements Class5110 {
       } else if (this.targetPos == null
          && this.player.method3276((double)var8.method8304() + 0.5, (double)var8.getY() + 0.5, (double)var8.method8306() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
-         Class2274 var12 = this.player.field4857.method33860(this.player, var4, var6, var5, var7);
-         if (var9 == Direction.field673 && !var12.method9000() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
+         ActionResultType var12 = this.player.field4857.method33860(this.player, var4, var6, var5, var7);
+         if (var9 == Direction.field673 && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
             this.player.field4855.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.field45724));
-         } else if (var12.method9001()) {
-            this.player.method3081(var5, true);
+         } else if (var12.isSuccess()) {
+            this.player.swing(var5, true);
          }
       }
 
@@ -916,9 +916,9 @@ public class Class5111 implements Class5110 {
       ItemStack var6 = this.player.getHeldItem(var5);
       this.player.markPlayerActive();
       if (!var6.method32105()) {
-         Class2274 var7 = this.player.field4857.method33859(this.player, var4, var6, var5);
-         if (var7.method9001()) {
-            this.player.method3081(var5, true);
+         ActionResultType var7 = this.player.field4857.method33859(this.player, var4, var6, var5);
+         if (var7.isSuccess()) {
+            this.player.swing(var5, true);
          }
       }
    }
@@ -952,7 +952,7 @@ public class Class5111 implements Class5110 {
 
    @Override
    public void method15588(ITextComponent var1) {
-      field23223.info("{} lost connection: {}", this.player.method2941().getString(), var1.getString());
+      LOGGER.info("{} lost connection: {}", this.player.getName().getString(), var1.getString());
       this.server.method1388();
       this.server
          .getPlayerList()
@@ -969,7 +969,7 @@ public class Class5111 implements Class5110 {
       }
 
       if (this.method15657()) {
-         field23223.info("Stopping singleplayer server as player logged out");
+         LOGGER.info("Stopping singleplayer server as player logged out");
          this.server.method1296(false);
       }
    }
@@ -1012,7 +1012,7 @@ public class Class5111 implements Class5110 {
          this.player.field4902.field5443 = var1.method17416();
          this.player.markPlayerActive();
       } else {
-         field23223.warn("{} tried to set an invalid carried item", this.player.method2941().getString());
+         LOGGER.warn("{} tried to set an invalid carried item", this.player.getName().getString());
       }
    }
 
@@ -1130,29 +1130,29 @@ public class Class5111 implements Class5110 {
          if (this.player.getDistanceSq(entity) < 36.0) {
             Hand hand = packetIn.getHand();
             ItemStack itemstack = hand == null ? ItemStack.EMPTY : this.player.getHeldItem(hand).copy();
-            Optional var10 = Optional.empty();
-            if (packetIn.method17316() != Class1968.field12832) {
-               if (packetIn.method17316() != Class1968.field12834) {
-                  if (packetIn.method17316() == Class1968.field12833) {
-                     if (entity instanceof Class1000 || entity instanceof Class1003 || entity instanceof Class884 || entity == this.player) {
+            Optional<ActionResultType> optional = Optional.empty();
+            if (packetIn.getAction() != CUseEntityPacketAction.INTERACT) {
+               if (packetIn.getAction() != CUseEntityPacketAction.INTERACT_AT) {
+                  if (packetIn.getAction() == CUseEntityPacketAction.ATTACK) {
+                     if (entity instanceof ItemEntity || entity instanceof ExperienceOrbEntity || entity instanceof AbstractArrowEntity || entity == this.player) {
                         this.disconnect(new TranslationTextComponent("multiplayer.disconnect.invalid_entity_attacked"));
-                        field23223.warn("Player {} tried to attack an invalid entity", this.player.method2941().getString());
+                        LOGGER.warn("Player {} tried to attack an invalid entity", this.player.getName().getString());
                         return;
                      }
 
                      this.player.method2817(entity);
                   }
                } else {
-                  var10 = Optional.<Class2274>of(entity.method3397(this.player, packetIn.method17318(), hand));
+                  optional = Optional.of(entity.applyPlayerInteraction(this.player, packetIn.getHitVec(), hand));
                }
             } else {
-               var10 = Optional.<Class2274>of(this.player.method2893(entity, hand));
+               optional = Optional.of(this.player.interactOn(entity, hand));
             }
 
-            if (var10.isPresent() && ((Class2274)var10.get()).method9000()) {
-               Class9551.field44506.method15127(this.player, itemstack, entity);
-               if (((Class2274)var10.get()).method9001()) {
-                  this.player.method3081(hand, true);
+            if (optional.isPresent() && optional.get().isSuccessOrConsume()) {
+               CriteriaTriggers.PLAYER_ENTITY_INTERACTION.test(this.player, itemstack, entity);
+               if (optional.get().isSuccess()) {
+                  this.player.swing(hand, true);
                }
             }
          }
@@ -1160,22 +1160,22 @@ public class Class5111 implements Class5110 {
    }
 
    @Override
-   public void method15612(Class5564 var1) {
-      PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
+   public void processClientStatus(CClientStatusPacket packetIn) {
+      PacketThreadUtil.checkThreadAndEnqueue(packetIn, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      Class2175 var4 = var1.method17491();
-      switch (Class9703.field45359[var4.ordinal()]) {
+      CClientStatusPacketState var4 = packetIn.getStatus();
+      switch (Class9703.state[var4.ordinal()]) {
          case 1:
-            if (this.player.field4892) {
-               this.player.field4892 = false;
-               this.player = this.server.getPlayerList().method19453(this.player, true);
-               Class9551.field44486.method15146(this.player, Class1655.field9001, Class1655.field8999);
+            if (this.player.queuedEndExit) {
+               this.player.queuedEndExit = false;
+               this.player = this.server.getPlayerList().func_232644_a_(this.player, true);
+               CriteriaTriggers.CHANGED_DIMENSION.testForAll(this.player, World.THE_END, World.field8999);
             } else {
                if (this.player.method3042() > 0.0F) {
                   return;
                }
 
-               this.player = this.server.getPlayerList().method19453(this.player, false);
+               this.player = this.server.getPlayerList().func_232644_a_(this.player, false);
                if (this.server.method1287()) {
                   this.player.method2799(Class1894.field11105);
                   this.player.getServerWorld().method6789().<Class7466>method17128(Class5462.field24238).method24175(false, this.server);
@@ -1326,7 +1326,7 @@ public class Class5111 implements Class5110 {
 
          Class954 var9 = (Class954)var8;
          if (!var9.method3838() || var9.method3841() != this.player) {
-            field23223.warn("Player {} just tried to change non-editable sign", this.player.method2941().getString());
+            LOGGER.warn("Player {} just tried to change non-editable sign", this.player.getName().getString());
             return;
          }
 

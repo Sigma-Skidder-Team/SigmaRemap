@@ -9,7 +9,7 @@ public class Class3388 extends Class3386 {
    }
 
    @Override
-   public void method11567(Class1655 var1, BlockPos var2, Entity var3, float var4) {
+   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       var3.method2921(var4, 0.2F);
    }
 }

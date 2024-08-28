@@ -45,7 +45,7 @@ public class Class3285 extends Class3257 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       if (var1.method32141()) {
          Class39 var7 = var1.method32142();
          String var8 = var7.method126("author");
@@ -58,20 +58,20 @@ public class Class3285 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (!var6.method23448(Blocks.field37061)) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
-         return !Class3354.method11919(var4, var5, var6, var1.method18357()) ? Class2274.field14820 : Class2274.method9002(var4.field9020);
+         return !Class3354.method11919(var4, var5, var6, var1.method18357()) ? ActionResultType.field14820 : ActionResultType.method9002(var4.field9020);
       }
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       var2.method2769(var6, var3);
       var2.method2913(Class8876.field40098.method172(this));
       return Class6794.<ItemStack>method20700(var6, var1.method6714());

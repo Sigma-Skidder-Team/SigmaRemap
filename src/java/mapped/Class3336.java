@@ -11,8 +11,8 @@ public class Class3336 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockPos var6 = var5.method8349(var1.method18354());
       if (!method11883(var1.method18357(), var4, var5)) {
@@ -23,20 +23,20 @@ public class Class3336 extends Class3257 {
                var4.method6999(2005, var6, 0);
             }
 
-            return Class2274.method9002(var4.field9020);
+            return ActionResultType.method9002(var4.field9020);
          } else {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          }
       } else {
          if (!var4.field9020) {
             var4.method6999(2005, var5, 0);
          }
 
-         return Class2274.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.field9020);
       }
    }
 
-   public static boolean method11883(ItemStack var0, Class1655 var1, BlockPos var2) {
+   public static boolean method11883(ItemStack var0, World var1, BlockPos var2) {
       Class7380 var5 = var1.method6738(var2);
       if (var5.method23383() instanceof Class3196) {
          Class3196 var6 = (Class3196)var5.method23383();
@@ -56,7 +56,7 @@ public class Class3336 extends Class3257 {
       return false;
    }
 
-   public static boolean method11884(ItemStack var0, Class1655 var1, BlockPos var2, Direction var3) {
+   public static boolean method11884(ItemStack var0, World var1, BlockPos var2, Direction var3) {
       if (var1.method6738(var2).method23448(Blocks.WATER) && var1.method6739(var2).method23477() == 8) {
          if (!(var1 instanceof ServerWorld)) {
             return true;

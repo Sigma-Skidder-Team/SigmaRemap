@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class1046 extends Class1006 {
-   public Class1046(Class8992<? extends Class1046> var1, Class1655 var2) {
+   public Class1046(Class8992<? extends Class1046> var1, World var2) {
       super(var1, var2);
    }
 

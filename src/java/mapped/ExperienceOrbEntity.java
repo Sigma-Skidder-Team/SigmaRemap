@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Map.Entry;
 
-public class Class1003 extends Entity {
+public class ExperienceOrbEntity extends Entity {
    public int field5555;
    public int field5556;
    public int field5557;
@@ -11,7 +11,7 @@ public class Class1003 extends Entity {
    private PlayerEntity field5560;
    private int field5561;
 
-   public Class1003(Class1655 var1, double var2, double var4, double var6, int var8) {
+   public ExperienceOrbEntity(World var1, double var2, double var4, double var6, int var8) {
       this(Class8992.field41029, var1);
       this.method3215(var2, var4, var6);
       this.field5031 = (float)(this.field5054.nextDouble() * 360.0);
@@ -21,7 +21,7 @@ public class Class1003 extends Entity {
       this.field5559 = var8;
    }
 
-   public Class1003(Class8992<? extends Class1003> var1, Class1655 var2) {
+   public ExperienceOrbEntity(Class8992<? extends ExperienceOrbEntity> var1, World var2) {
       super(var1, var2);
    }
 

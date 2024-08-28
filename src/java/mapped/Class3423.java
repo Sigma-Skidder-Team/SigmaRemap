@@ -66,7 +66,7 @@ public class Class3423 extends Block implements Class3207 {
       }
 
       Class7380 var12 = this.method11579();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Class7379 var7 = var1.method18360().method6739(var1.method18345());
 

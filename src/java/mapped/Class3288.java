@@ -15,7 +15,7 @@ public class Class3288 extends Class3287 {
    }
 
    @Override
-   public void method11824(Class1655 var1, ItemStack var2, BlockPos var3) {
+   public void method11824(World var1, ItemStack var2, BlockPos var3) {
       if (var1 instanceof ServerWorld) {
          this.method11827((ServerWorld)var1, var2, var3);
       }
@@ -34,7 +34,7 @@ public class Class3288 extends Class3287 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       if (this.field18799 == Class8992.field41095) {
          Class39 var7 = var1.method32142();
          if (var7 != null && var7.method119("BucketVariantTag", 3)) {

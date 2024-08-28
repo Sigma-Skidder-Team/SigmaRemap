@@ -7,7 +7,7 @@ public class Class4838 extends Class4837 {
       super(var1);
    }
 
-   public boolean method14963(Class926 var1, Class1655 var2) {
+   public boolean method14963(Class926 var1, World var2) {
       int var5 = 0;
       int var6 = 0;
 

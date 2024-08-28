@@ -76,7 +76,7 @@ public class Class6619 implements Class6618 {
             this.field29135,
             this.field29126,
             this.field29127,
-            var1.method2941().getString(),
+            var1.getName().getString(),
             var1.getDisplayName(),
             this.field29130,
             var1,
@@ -381,7 +381,7 @@ public class Class6619 implements Class6618 {
    }
 
    @Override
-   public Set<Class8705<Class1655>> method20135() {
+   public Set<Class8705<World>> method20135() {
       return this.field29130.method1319();
    }
 

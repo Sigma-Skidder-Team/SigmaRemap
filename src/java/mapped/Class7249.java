@@ -56,7 +56,7 @@ public abstract class Class7249 implements Class7251 {
 
    public PlayerEntity method22767(String var1) {
       for (PlayerEntity var5 : this.method22766()) {
-         if (var5.method2941().equals(var1)) {
+         if (var5.getName().equals(var1)) {
             return var5;
          }
       }

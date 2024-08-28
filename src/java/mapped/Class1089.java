@@ -10,7 +10,7 @@ public class Class1089 extends Class1018 {
    public int field5970 = this.field5054.nextInt(6000) + 6000;
    public boolean field5971;
 
-   public Class1089(Class8992<? extends Class1089> var1, Class1655 var2) {
+   public Class1089(Class8992<? extends Class1089> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
    }

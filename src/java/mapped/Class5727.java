@@ -1,6 +1,6 @@
 package mapped;
 
-public abstract class Class5727<T extends Class884> extends Class5715<T> {
+public abstract class Class5727<T extends AbstractArrowEntity> extends Class5715<T> {
    public Class5727(Class8853 var1) {
       super(var1);
    }

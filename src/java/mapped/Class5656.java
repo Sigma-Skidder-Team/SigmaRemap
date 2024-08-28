@@ -17,7 +17,7 @@ public class Class5656 extends Class5651<Class1094, Class2876<Class1094>> {
    }
 
    public ResourceLocation method17843(Class1094 var1) {
-      String var4 = TextFormatting.getTextWithoutFormattingCodes(var1.method2941().getString());
+      String var4 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
       if (var4 != null && "Toast".equals(var4)) {
          return field25016;
       } else {

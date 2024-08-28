@@ -14,7 +14,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    public float field6084;
    private boolean field6085;
 
-   public Class1108(Class8992<? extends Class1108> var1, Class1655 var2) {
+   public Class1108(Class8992<? extends Class1108> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6841(this);
    }

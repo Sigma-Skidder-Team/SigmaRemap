@@ -22,10 +22,10 @@ public class Class3311 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       if (!(var4 instanceof ServerWorld)) {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else {
          ItemStack var5 = var1.method18357();
          BlockPos var6 = var1.method18345();
@@ -40,7 +40,7 @@ public class Class3311 extends Class3257 {
                var9.method3622();
                var4.method6731(var6, var8, var8, 3);
                var5.method32182(1);
-               return Class2274.field14819;
+               return ActionResultType.field14819;
             }
          }
 
@@ -59,13 +59,13 @@ public class Class3311 extends Class3257 {
             var5.method32182(1);
          }
 
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       Class8711 var7 = method11735(var1, var2, Class1985.field12963);
       if (var7.method31417() == Class2100.field13690) {
          if (var1 instanceof ServerWorld) {

@@ -9,7 +9,7 @@ public class Class1090 extends Class1018 {
    private Class2775<PlayerEntity> field5974;
    private Class2681 field5975;
 
-   public Class1090(Class8992<? extends Class1090> var1, Class1655 var2) {
+   public Class1090(Class8992<? extends Class1090> var1, World var2) {
       super(var1, var2);
       this.method5077();
    }
@@ -127,8 +127,8 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if ((this.field5975 == null || this.field5975.method10900()) && !this.method5072() && this.method4381(var5) && var1.getDistanceSq(this) < 9.0) {
          this.method4501(var1, var5);
          if (!this.field5024.field9020) {
@@ -142,7 +142,7 @@ public class Class1090 extends Class1018 {
             }
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          return super.method4285(var1, var2);
       }

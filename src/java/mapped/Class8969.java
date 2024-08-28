@@ -28,7 +28,7 @@ public class Class8969 {
       return this.field40548;
    }
 
-   public void method32889(Class1655 var1, BlockPos var2, BlockPos var3, boolean var4, Block var5) {
+   public void method32889(World var1, BlockPos var2, BlockPos var3, boolean var4, Block var5) {
       if (var3.method8304() >= 1 && var3.getY() >= 1 && var3.method8306() >= 1) {
          BlockPos var8 = var2.method8337(var3).method8336(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
@@ -99,7 +99,7 @@ public class Class8969 {
       return var6;
    }
 
-   private void method32892(Class1655 var1, BlockPos var2, BlockPos var3) {
+   private void method32892(World var1, BlockPos var2, BlockPos var3) {
       List<Entity> var6 = var1.<Entity>method6772(Entity.class, new Class6488(var2, var3), var0 -> !(var0 instanceof PlayerEntity));
       this.field40546.clear();
 

@@ -70,22 +70,22 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public Class2274 method33859(Class878 var1, Class1655 var2, ItemStack var3, Hand var4) {
+   public ActionResultType method33859(Class878 var1, World var2, ItemStack var3, Hand var4) {
       if (!this.field41566) {
          return super.method33859(var1, var2, var3, var4);
       } else {
          this.method33857();
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
    @Override
-   public Class2274 method33860(Class878 var1, Class1655 var2, ItemStack var3, Hand var4, Class8711 var5) {
+   public ActionResultType method33860(Class878 var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
       if (!this.field41566) {
          return super.method33860(var1, var2, var3, var4, var5);
       } else {
          this.method33857();
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 }

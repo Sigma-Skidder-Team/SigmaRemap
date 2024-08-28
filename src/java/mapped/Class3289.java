@@ -11,10 +11,10 @@ public class Class3289 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
+   public ActionResultType method11707(Class5911 var1) {
       Direction var4 = var1.method18354();
       if (var4 != Direction.field672) {
-         Class1655 var5 = var1.method18360();
+         World var5 = var1.method18360();
          Class5909 var6 = new Class5909(var1);
          BlockPos var7 = var6.method18345();
          ItemStack var8 = var1.method18357();
@@ -26,7 +26,7 @@ public class Class3289 extends Class3257 {
                Class1005 var12 = Class8992.field41006
                   .method33202(var11, var8.method32142(), (ITextComponent)null, var1.method18358(), var7, Class2202.field14403, true, true);
                if (var12 == null) {
-                  return Class2274.field14821;
+                  return ActionResultType.field14821;
                }
 
                var11.method6995(var12);
@@ -40,12 +40,12 @@ public class Class3289 extends Class3257 {
             }
 
             var8.method32182(1);
-            return Class2274.method9002(var5.field9020);
+            return ActionResultType.method9002(var5.field9020);
          } else {
-            return Class2274.field14821;
+            return ActionResultType.field14821;
          }
       } else {
-         return Class2274.field14821;
+         return ActionResultType.field14821;
       }
    }
 

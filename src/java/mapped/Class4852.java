@@ -60,7 +60,7 @@ public class Class4852 implements Class4842 {
       return var1 >= this.field22641 && var2 >= this.field22642;
    }
 
-   public boolean method14963(Class926 var1, Class1655 var2) {
+   public boolean method14963(Class926 var1, World var2) {
       for (int var5 = 0; var5 <= var1.method3671() - this.field22641; var5++) {
          for (int var6 = 0; var6 <= var1.method3670() - this.field22642; var6++) {
             if (this.method14978(var1, var5, var6, true)) {

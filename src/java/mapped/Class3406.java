@@ -12,7 +12,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       Class7380 var7 = var2.method6738(var3.method8311());
       if (!var7.method23393()) {
          var4.method3355(var1.<Boolean>method23463(field19084));
@@ -50,7 +50,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       method12045(var2, var3.method8311(), method12047(var2, var3.method8313()));
    }
 
@@ -81,7 +81,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.method8304();
       double var9 = (double)var3.getY();
       double var11 = (double)var3.method8306();

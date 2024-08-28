@@ -41,7 +41,7 @@ public class Class3384 extends Class3383 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18991)) {
          Direction var7 = var1.<Direction>method23463(field18990).method536();
          double var8 = 0.27;
@@ -53,7 +53,7 @@ public class Class3384 extends Class3383 {
    }
 
    @Override
-   public boolean method11981(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public boolean method11981(World var1, BlockPos var2, Class7380 var3) {
       Direction var6 = var3.<Direction>method23463(field18990).method536();
       return var1.method6778(var2.method8349(var6), var6);
    }

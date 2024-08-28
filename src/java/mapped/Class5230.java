@@ -24,7 +24,7 @@ public class Class5230 extends Module {
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();
-                String var7 = mc.field1339.method2941().getString().toLowerCase();
+                String var7 = mc.field1339.getName().getString().toLowerCase();
                 if (this.field23579.method15974("AutoL")
                         && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {
                     this.field23579.method16761(var6);

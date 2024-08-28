@@ -48,7 +48,7 @@ public class Class8909 {
             boolean var11 = var7.field4902.method4045(var10);
             if (var11 && var10.method32105()) {
                var10.method32180(1);
-               Class1000 var13 = var7.method2882(var10, false);
+               ItemEntity var13 = var7.method2882(var10, false);
                if (var13 != null) {
                   var13.method4137();
                }
@@ -66,7 +66,7 @@ public class Class8909 {
                   );
                var7.field4904.method18130();
             } else {
-               Class1000 var12 = var7.method2882(var10, false);
+               ItemEntity var12 = var7.method2882(var10, false);
                if (var12 != null) {
                   var12.method4132();
                   var12.method4127(var7.getUniqueID());

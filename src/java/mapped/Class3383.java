@@ -17,14 +17,14 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       for (Direction var11 : Direction.values()) {
          var2.method6733(var3.method8349(var11), this);
       }
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5) {
          for (Direction var11 : Direction.values()) {
             var2.method6733(var3.method8349(var11), this);
@@ -37,7 +37,7 @@ public class Class3383 extends Class3381 {
       return var1.<Boolean>method23463(field18987) && Direction.field673 != var4 ? 15 : 0;
    }
 
-   public boolean method11981(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public boolean method11981(World var1, BlockPos var2, Class7380 var3) {
       return var1.method6778(var2.method8313(), Direction.field672);
    }
 
@@ -64,7 +64,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var1.<Boolean>method23463(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
          var2.method6860().method20726(var3, this, 2);
       }
@@ -81,7 +81,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18987)) {
          double var7 = (double)var3.method8304() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.getY() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
@@ -95,7 +95,7 @@ public class Class3383 extends Class3381 {
       var1.method24737(field18987);
    }
 
-   private static boolean method11982(Class1655 var0, BlockPos var1, boolean var2) {
+   private static boolean method11982(World var0, BlockPos var1, boolean var2) {
       List var5 = field18988.computeIfAbsent(var0, var0x -> Lists.newArrayList());
       if (var2) {
          var5.add(new Class9018(var1.method8353(), var0.method6783()));

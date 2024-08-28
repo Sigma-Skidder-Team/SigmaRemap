@@ -82,7 +82,7 @@ public class Class5941 extends Class5942<Class964> {
    }
 
    private void method18459(Class964 var1, Class5422 var2, BlockPos var3, boolean var4, Class9332 var5) {
-      Class1655 var8 = var1.method3734();
+      World var8 = var1.method3734();
       BlockPos var9 = var1.method3774();
       BlockPos var10 = var9.method8337(var3);
 

@@ -10,7 +10,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    private int field5853;
    private UUID field5854;
 
-   public Class1058(Class8992<? extends Class1058> var1, Class1655 var2) {
+   public Class1058(Class8992<? extends Class1058> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
    }
@@ -221,8 +221,8 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       Class3257 var6 = var5.method32107();
       if (var6 == Class8514.field37801) {
          float var7 = this.method3042();
@@ -234,12 +234,12 @@ public class Class1058 extends Class1056 implements Class1011 {
                var5.method32182(1);
             }
 
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          } else {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

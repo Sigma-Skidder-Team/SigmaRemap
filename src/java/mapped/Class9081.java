@@ -248,7 +248,7 @@ public class Class9081 {
       }
    }
 
-   public Class2274 method33859(Class878 var1, Class1655 var2, ItemStack var3, Hand var4) {
+   public ActionResultType method33859(Class878 var1, World var2, ItemStack var3, Hand var4) {
       if (this.field41572 != Class1894.field11105) {
          if (!var1.method2976().method19635(var3.method32107())) {
             int var7 = var3.method32179();
@@ -257,7 +257,7 @@ public class Class9081 {
             ItemStack var10 = (ItemStack)var9.method20695();
             if (var10 == var3 && var10.method32179() == var7 && var10.method32137() <= 0 && var10.method32117() == var8) {
                return var9.method20694();
-            } else if (var9.method20694() == Class2274.field14821 && var10.method32137() > 0 && !var1.method3148()) {
+            } else if (var9.method20694() == ActionResultType.field14821 && var10.method32137() > 0 && !var1.method3148()) {
                return var9.method20694();
             } else {
                var1.method3095(var4, var10);
@@ -279,39 +279,39 @@ public class Class9081 {
                return var9.method20694();
             }
          } else {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
-   public Class2274 method33860(Class878 var1, Class1655 var2, ItemStack var3, Hand var4, Class8711 var5) {
+   public ActionResultType method33860(Class878 var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
       BlockPos var8 = var5.method31423();
       Class7380 var9 = var2.method6738(var8);
       if (this.field41572 == Class1894.field11105) {
          Class949 var16 = var9.method23445(var2, var8);
          if (var16 == null) {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else {
             var1.method2766(var16);
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          }
       } else {
          boolean var10 = !var1.method3090().method32105() || !var1.method3091().method32105();
          boolean var11 = var1.method2851() && var10;
          ItemStack var12 = var3.copy();
          if (!var11) {
-            Class2274 var13 = var9.method23435(var2, var1, var4, var5);
-            if (var13.method9000()) {
-               Class9551.field44503.method15155(var1, var8, var12);
+            ActionResultType var13 = var9.method23435(var2, var1, var4, var5);
+            if (var13.isSuccessOrConsume()) {
+               CriteriaTriggers.field44503.method15155(var1, var8, var12);
                return var13;
             }
          }
 
          if (!var3.method32105() && !var1.method2976().method19635(var3.method32107())) {
             Class5911 var17 = new Class5911(var1, var4, var5);
-            Class2274 var14;
+            ActionResultType var14;
             if (!this.method33866()) {
                var14 = var3.method32108(var17);
             } else {
@@ -320,13 +320,13 @@ public class Class9081 {
                var3.method32180(var15);
             }
 
-            if (var14.method9000()) {
-               Class9551.field44503.method15155(var1, var8, var12);
+            if (var14.isSuccessOrConsume()) {
+               CriteriaTriggers.field44503.method15155(var1, var8, var12);
             }
 
             return var14;
          } else {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          }
       }
    }

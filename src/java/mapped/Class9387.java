@@ -31,7 +31,7 @@ public class Class9387 {
    private static final String[] field43566 = (String[])Class9694.method37956(null, Class1074.class, String[].class, 0);
    private static final String[] field43567 = (String[])Class9694.method37956(null, Class1074.class, String[].class, 1);
 
-   public static void method35629(Entity var0, Class1655 var1) {
+   public static void method35629(Entity var0, World var1) {
       if (var1 != null) {
          Class9361 var4 = var0.method3210();
          var4.field43438 = var0.method3432();
@@ -43,7 +43,7 @@ public class Class9387 {
       }
    }
 
-   public static void method35630(Entity var0, Class1655 var1) {
+   public static void method35630(Entity var0, World var1) {
       if (var0 instanceof Class1014) {
          Class1014 var4 = (Class1014)var0;
          method35631(var4, true);
@@ -88,7 +88,7 @@ public class Class9387 {
       }
    }
 
-   public static void method35632(Class1655 var0, Class1655 var1) {
+   public static void method35632(World var0, World var1) {
       if (var1 instanceof Class1656) {
          Class1656 var4 = (Class1656)var1;
 

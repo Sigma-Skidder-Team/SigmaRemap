@@ -15,7 +15,7 @@ public class Class1040 extends Class1038 implements Class1041 {
    private Class39 field5774;
    private int field5775;
 
-   public Class1040(Class8992<? extends Class1040> var1, Class1655 var2) {
+   public Class1040(Class8992<? extends Class1040> var1, World var2) {
       super(var1, var2);
       this.method4673(this.method4674().method26574(Class2348.field16090.method9254(this.field5054)));
    }
@@ -89,12 +89,12 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() != Class8514.field37872) {
          return super.method4285(var1, var2);
       } else if (!this.method3033(Class8254.field35484)) {
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       } else {
          if (!var1.field4919.field29609) {
             var5.method32182(1);
@@ -104,7 +104,7 @@ public class Class1040 extends Class1038 implements Class1041 {
             this.method4668(var1.getUniqueID(), this.field5054.nextInt(2401) + 3600);
          }
 
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       }
    }
 
@@ -181,7 +181,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       if (this.field5772 != null) {
          PlayerEntity var12 = var1.method7196(this.field5772);
          if (var12 instanceof Class878) {
-            Class9551.field44482.method15121((Class878)var12, this, var4);
+            CriteriaTriggers.field44482.method15121((Class878)var12, this, var4);
             var1.method6959(Class8214.field35285, var12, var4);
          }
       }

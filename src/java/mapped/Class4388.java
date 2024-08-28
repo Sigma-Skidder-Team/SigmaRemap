@@ -209,7 +209,7 @@ public class Class4388 {
       }
    }
 
-   public static void method13814(Class1034 var0, Class1000 var1) {
+   public static void method13814(Class1034 var0, ItemEntity var1) {
       method13844(var0);
       ItemStack var4;
       if (var1.method4124().method32107() != Class8514.field37969) {
@@ -246,7 +246,7 @@ public class Class4388 {
       var0.method4626(var1);
    }
 
-   private static ItemStack method13816(Class1000 var0) {
+   private static ItemStack method13816(ItemEntity var0) {
       ItemStack var3 = var0.method4124();
       ItemStack var4 = var3.method32106(1);
       if (!var3.method32105()) {
@@ -426,16 +426,16 @@ public class Class4388 {
       });
    }
 
-   public static Class2274 method13833(Class1034 var0, PlayerEntity var1, Hand var2) {
+   public static ActionResultType method13833(Class1034 var0, PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!method13834(var0, var5)) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
          ItemStack var6 = var5.method32106(1);
          method13815(var0, var6);
          method13867(var0);
          method13844(var0);
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 

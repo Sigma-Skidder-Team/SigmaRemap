@@ -49,14 +49,14 @@ public class Class3257 implements Class3303 {
       this.field18740 = Class5643.method17788(var1);
    }
 
-   public void method11704(Class1655 var1, Class880 var2, ItemStack var3, int var4) {
+   public void method11704(World var1, Class880 var2, ItemStack var3, int var4) {
    }
 
    public boolean method11705(Class39 var1) {
       return false;
    }
 
-   public boolean method11706(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public boolean method11706(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
       return true;
    }
 
@@ -65,19 +65,19 @@ public class Class3257 implements Class3303 {
       return this;
    }
 
-   public Class2274 method11707(Class5911 var1) {
-      return Class2274.field14820;
+   public ActionResultType method11707(Class5911 var1) {
+      return ActionResultType.field14820;
    }
 
    public float method11708(ItemStack var1, Class7380 var2) {
       return 1.0F;
    }
 
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       if (!this.method11744()) {
-         return Class6794.<ItemStack>method20698(var2.method3094(var3));
+         return Class6794.<ItemStack>method20698(var2.getHeldItem(var3));
       } else {
-         ItemStack var6 = var2.method3094(var3);
+         ItemStack var6 = var2.getHeldItem(var3);
          if (!var2.method2933(this.method11745().method36160())) {
             return Class6794.<ItemStack>method20699(var6);
          } else {
@@ -87,7 +87,7 @@ public class Class3257 implements Class3303 {
       }
    }
 
-   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
       return !this.method11744() ? var1 : var3.method2984(var2, var1);
    }
 
@@ -107,7 +107,7 @@ public class Class3257 implements Class3303 {
       return false;
    }
 
-   public boolean method11714(ItemStack var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, Class7380 var3, BlockPos var4, Class880 var5) {
       return false;
    }
 
@@ -115,8 +115,8 @@ public class Class3257 implements Class3303 {
       return false;
    }
 
-   public Class2274 method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
-      return Class2274.field14820;
+   public ActionResultType method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
+      return ActionResultType.field14820;
    }
 
    public ITextComponent method11717() {
@@ -157,10 +157,10 @@ public class Class3257 implements Class3303 {
       return this.field18741 != null;
    }
 
-   public void method11724(ItemStack var1, Class1655 var2, Entity var3, int var4, boolean var5) {
+   public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
    }
 
-   public void method11725(ItemStack var1, Class1655 var2, PlayerEntity var3) {
+   public void method11725(ItemStack var1, World var2, PlayerEntity var3) {
    }
 
    public boolean method11726() {
@@ -179,10 +179,10 @@ public class Class3257 implements Class3303 {
       }
    }
 
-   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
    }
 
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
    }
 
    public ITextComponent method11731(ItemStack var1) {
@@ -214,7 +214,7 @@ public class Class3257 implements Class3303 {
       return this.method11710() == 1 && this.method11712();
    }
 
-   public static Class8711 method11735(Class1655 var0, PlayerEntity var1, Class1985 var2) {
+   public static Class8711 method11735(World var0, PlayerEntity var1, Class1985 var2) {
       float var5 = var1.field5032;
       float var6 = var1.field5031;
       Vector3d var7 = var1.method3286(1.0F);

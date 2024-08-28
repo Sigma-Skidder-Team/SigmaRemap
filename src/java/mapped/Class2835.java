@@ -52,7 +52,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
             false,
             false
          )
-         .method27312("entered_nether", Class4488.method14156(Class1655.field9000))
+         .method27312("entered_nether", Class4488.method14156(World.field9000))
          .method27317(var1, "nether/root");
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)
@@ -119,7 +119,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          .method27310(Class9182.method34343(100))
          .method27312(
             "killed_ghast",
-            Class4476.method14134(Class7552.method24700().method24701(Class8992.field41034).method24706(Class8576.method30648(Class1655.field8999)))
+            Class4476.method14134(Class7552.method24700().method24701(Class8992.field41034).method24706(Class8576.method30648(World.field8999)))
          )
          .method27317(var1, "nether/uneasy_alliance");
       Class7952 var7 = Class7999.method27304()

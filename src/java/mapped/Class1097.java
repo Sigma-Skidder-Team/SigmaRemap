@@ -23,12 +23,12 @@ public class Class1097 extends Class1018 {
    private float field6032;
    private float field6033;
    private Class2616 field6034;
-   private static final Predicate<Class1000> field6035 = var0 -> {
+   private static final Predicate<ItemEntity> field6035 = var0 -> {
       Class3257 var3 = var0.method4124().method32107();
       return (var3 == Blocks.field37009.method11581() || var3 == Blocks.field36591.method11581()) && var0.method3066() && !var0.method4135();
    };
 
-   public Class1097(Class8992<? extends Class1097> var1, Class1655 var2) {
+   public Class1097(Class8992<? extends Class1097> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6834(this);
       if (!this.method3005()) {
@@ -459,7 +459,7 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       if (this.method2943(Class2106.field13731).method32105() && field6035.test(var1)) {
          this.method3134(var1);
          ItemStack var4 = var1.method4124();
@@ -538,14 +538,14 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!this.method5214()) {
          if (this.method5191()) {
             this.method5192(false);
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          } else if (!this.method4381(var5)) {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else {
             if (this.method4232() != null) {
                this.field6024 = true;
@@ -557,7 +557,7 @@ public class Class1097 extends Class1018 {
                   this.method4503(var1);
                } else {
                   if (this.field5024.field9020 || this.method5189() || this.method3250()) {
-                     return Class2274.field14820;
+                     return ActionResultType.field14820;
                   }
 
                   this.method5228();
@@ -575,10 +575,10 @@ public class Class1097 extends Class1018 {
                this.method4768((int)((float)(-this.method4767() / 20) * 0.1F), true);
             }
 
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

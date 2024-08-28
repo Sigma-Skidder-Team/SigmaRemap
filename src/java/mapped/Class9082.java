@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9082 implements ArgumentType<ResourceLocation> {
-   private static final Collection<String> field41582 = Stream.<Class8705>of(Class1655.field8999, Class1655.field9000)
+   private static final Collection<String> field41582 = Stream.<Class8705>of(World.field8999, World.field9000)
       .<String>map(var0 -> var0.method31399().toString())
       .collect(Collectors.<String>toList());
    private static final DynamicCommandExceptionType field41583 = new DynamicCommandExceptionType(
@@ -41,7 +41,7 @@ public class Class9082 implements ArgumentType<ResourceLocation> {
 
    public static ServerWorld method33873(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      Class8705 var5 = Class8705.<Class1655>method31395(Class2348.field16067, var4);
+      Class8705 var5 = Class8705.<World>method31395(Class2348.field16067, var4);
       ServerWorld var6 = ((Class6619)var0.getSource()).method20177().method1318(var5);
       if (var6 != null) {
          return var6;

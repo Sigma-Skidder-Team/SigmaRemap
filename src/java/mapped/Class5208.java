@@ -29,7 +29,7 @@ public class Class5208 extends Module {
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();
-                String var7 = mc.field1339.method2941().getString().toLowerCase();
+                String var7 = mc.field1339.getName().getString().toLowerCase();
                 String var8 = var5.method17648().getString();
                 if (this.field23527.method15974("AutoL")
                         && (

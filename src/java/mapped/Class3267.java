@@ -22,7 +22,7 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11706(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public boolean method11706(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
       return !var4.method2801();
    }
 
@@ -49,7 +49,7 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11714(ItemStack var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, Class7380 var3, BlockPos var4, Class880 var5) {
       if (var3.method23405(var2, var4) != 0.0F) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }

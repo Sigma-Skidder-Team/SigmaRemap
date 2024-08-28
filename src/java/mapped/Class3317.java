@@ -12,8 +12,8 @@ public class Class3317<T extends Entity & Class1071> extends Class3257 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       if (!var1.field9020) {
          Entity var7 = var2.getRidingEntity();
          if (var2.method3328() && var7 instanceof Class1071 && var7.method3204() == this.field18826) {

@@ -52,7 +52,7 @@ public class Class9561 {
       return !Class9299.field42826.method20214() ? var0.method23392() : Class9299.method35065(var0, Class9299.field42826, var1, var2);
    }
 
-   public static Class7529 method37048(ItemStack var0, Class1655 var1) {
+   public static Class7529 method37048(ItemStack var0, World var1) {
       if (!Class9299.field42864.method20245()) {
          return Class3316.method11861(var0, var1);
       } else {

@@ -12,7 +12,7 @@ public interface Class937 extends Class920 {
    }
 
    @Nullable
-   Class1655 method3734();
+   World method3734();
 
    double method3718();
 

@@ -8,7 +8,7 @@ public abstract class Class1018 extends Class1045 {
    private int field5702;
    private UUID field5703;
 
-   public Class1018(Class8992<? extends Class1018> var1, Class1655 var2) {
+   public Class1018(Class8992<? extends Class1018> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14195, 16.0F);
       this.method4224(Class2163.field14196, -1.0F);
@@ -101,24 +101,24 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (this.method4381(var5)) {
          int var6 = this.method4767();
          if (!this.field5024.field9020 && var6 == 0 && this.method4502()) {
             this.method4501(var1, var5);
             this.method4503(var1);
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          }
 
          if (this.method3005()) {
             this.method4501(var1, var5);
             this.method4768((int)((float)(-var6 / 20) * 0.1F), true);
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
 
          if (this.field5024.field9020) {
-            return Class2274.field14819;
+            return ActionResultType.field14819;
          }
       }
 
@@ -188,7 +188,7 @@ public abstract class Class1018 extends Class1045 {
 
          if (var6 != null) {
             var6.method2911(Class8876.field40136);
-            Class9551.field44479.method15112(var6, this, var2, var5);
+            CriteriaTriggers.field44479.method15112(var6, this, var2, var5);
          }
 
          this.method4770(6000);
@@ -200,7 +200,7 @@ public abstract class Class1018 extends Class1045 {
          var1.method6995(var5);
          var1.method6786(this, (byte)18);
          if (var1.method6789().method17135(Class5462.field24227)) {
-            var1.method6916(new Class1003(var1, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3013().nextInt(7) + 1));
+            var1.method6916(new ExperienceOrbEntity(var1, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3013().nextInt(7) + 1));
          }
       }
    }

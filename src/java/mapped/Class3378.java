@@ -35,7 +35,7 @@ public class Class3378 extends Class3377 {
       }
    }
 
-   private boolean method11969(Class7380 var1, Class1655 var2, BlockPos var3) {
+   private boolean method11969(Class7380 var1, World var2, BlockPos var3) {
       int var6 = var1.<Integer>method23463(field18978);
       if (var6 >= 3) {
          this.method11968(var1, var2, var3);
@@ -47,7 +47,7 @@ public class Class3378 extends Class3377 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var4 == this && this.method11970(var2, var3, 2)) {
          this.method11968(var1, var2, var3);
       }

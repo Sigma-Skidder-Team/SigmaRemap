@@ -5,11 +5,11 @@ public abstract class Class901 extends Class882 {
    public double field5142;
    public double field5143;
 
-   public Class901(Class8992<? extends Class901> var1, Class1655 var2) {
+   public Class901(Class8992<? extends Class901> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class901(Class8992<? extends Class901> var1, double var2, double var4, double var6, double var8, double var10, double var12, Class1655 var14) {
+   public Class901(Class8992<? extends Class901> var1, double var2, double var4, double var6, double var8, double var10, double var12, World var14) {
       this(var1, var14);
       this.method3273(var2, var4, var6, this.field5031, this.field5032);
       this.method3216();
@@ -21,7 +21,7 @@ public abstract class Class901 extends Class882 {
       }
    }
 
-   public Class901(Class8992<? extends Class901> var1, Class880 var2, double var3, double var5, double var7, Class1655 var9) {
+   public Class901(Class8992<? extends Class901> var1, Class880 var2, double var3, double var5, double var7, World var9) {
       this(var1, var2.getPosX(), var2.getPosY(), var2.getPosZ(), var3, var5, var7, var9);
       this.method3459(var2);
       this.method3214(var2.field5031, var2.field5032);

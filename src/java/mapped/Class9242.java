@@ -7,14 +7,14 @@ import javax.annotation.Nullable;
 public class Class9242 {
    private static String[] field42522;
    public final Class264 field42523;
-   public final Class1655 field42524;
+   public final World field42524;
    public int field42525;
    public int field42526;
    public int field42527;
    public Class8066[] field42528;
    private Map<Class7481, Class8836[]> field42529 = new HashMap<Class7481, Class8836[]>();
 
-   public Class9242(Class9016 var1, Class1655 var2, int var3, Class264 var4) {
+   public Class9242(Class9016 var1, World var2, int var3, Class264 var4) {
       this.field42523 = var4;
       this.field42524 = var2;
       this.method34758(var3);

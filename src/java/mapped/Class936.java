@@ -160,7 +160,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
          Direction var6 = Direction.field672;
          return !method3704(var3, var6) ? method3702(var3, var6).anyMatch(var3x -> method3706(var0, var3, var3x, var6)) : false;
       } else {
-         for (Class1000 var5 : method3714(var0)) {
+         for (ItemEntity var5 : method3714(var0)) {
             if (method3707(var0, var5)) {
                return true;
             }
@@ -186,7 +186,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
       return false;
    }
 
-   public static boolean method3707(Class920 var0, Class1000 var1) {
+   public static boolean method3707(Class920 var0, ItemEntity var1) {
       boolean var4 = false;
       ItemStack var5 = var1.method4124().copy();
       ItemStack var6 = method3708((Class920)null, var0, var5, (Direction)null);
@@ -280,27 +280,27 @@ public class Class936 extends Class939 implements Class937, Class935 {
       return method3716(var0.method3734(), var0.method3718(), var0.method3719() + 1.0, var0.method3720());
    }
 
-   public static List<Class1000> method3714(Class937 var0) {
+   public static List<ItemEntity> method3714(Class937 var0) {
       return var0.method3733()
          .method19521()
          .stream()
          .flatMap(
             var1 -> var0.method3734()
                   .method6772(
-                     Class1000.class, var1.method19667(var0.method3718() - 0.5, var0.method3719() - 0.5, var0.method3720() - 0.5), Class8088.field34757
+                     ItemEntity.class, var1.method19667(var0.method3718() - 0.5, var0.method3719() - 0.5, var0.method3720() - 0.5), Class8088.field34757
                   )
                   .stream()
          )
-         .collect(Collectors.<Class1000>toList());
+         .collect(Collectors.<ItemEntity>toList());
    }
 
    @Nullable
-   public static Class920 method3715(Class1655 var0, BlockPos var1) {
+   public static Class920 method3715(World var0, BlockPos var1) {
       return method3716(var0, (double)var1.method8304() + 0.5, (double)var1.getY() + 0.5, (double)var1.method8306() + 0.5);
    }
 
    @Nullable
-   public static Class920 method3716(Class1655 var0, double var1, double var3, double var5) {
+   public static Class920 method3716(World var0, double var1, double var3, double var5) {
       Object var9 = null;
       BlockPos var10 = new BlockPos(var1, var3, var5);
       Class7380 var11 = var0.method6738(var10);
@@ -381,14 +381,14 @@ public class Class936 extends Class939 implements Class937, Class935 {
    }
 
    public void method3726(Entity var1) {
-      if (var1 instanceof Class1000) {
+      if (var1 instanceof ItemEntity) {
          BlockPos var4 = this.method3774();
          if (Class8022.method27435(
             Class8022.method27428(var1.method3389().method19667((double)(-var4.method8304()), (double)(-var4.getY()), (double)(-var4.method8306()))),
             this.method3733(),
             Class9477.field44045
          )) {
-            this.method3699(() -> method3707(this, (Class1000)var1));
+            this.method3699(() -> method3707(this, (ItemEntity)var1));
          }
       }
    }

@@ -160,7 +160,7 @@ public class Class964 extends Class944 {
    }
 
    public void method3939(Class880 var1) {
-      this.field5396 = var1.method2941().getString();
+      this.field5396 = var1.getName().getString();
    }
 
    public BlockPos method3940() {

@@ -10,7 +10,7 @@ public class Class8086 {
    private final Class5425 field34744 = new Class5425(256);
    private Class9834 field34745;
    public TextureManager field34746;
-   public Class1655 field34747;
+   public World field34747;
    public Class9624 field34748;
    public Class8710 field34749;
    public Class944 field34750;
@@ -46,7 +46,7 @@ public class Class8086 {
       return (Class5942<E>)this.field34742.get(var1.method3786());
    }
 
-   public void method27961(Class1655 var1, TextureManager var2, Class9834 var3, Class9624 var4, Class8710 var5) {
+   public void method27961(World var1, TextureManager var2, Class9834 var3, Class9624 var4, Class8710 var5) {
       if (this.field34747 != var1) {
          this.method27966(var1);
       }
@@ -67,7 +67,7 @@ public class Class8086 {
    }
 
    private static <T extends Class944> void method27963(Class5942<T> var0, T var1, float var2, Class9332 var3, Class7733 var4) {
-      Class1655 var7 = var1.method3734();
+      World var7 = var1.method3734();
       int var8;
       if (var7 == null) {
          var8 = 15728880;
@@ -130,7 +130,7 @@ public class Class8086 {
       }
    }
 
-   public void method27966(Class1655 var1) {
+   public void method27966(World var1) {
       this.field34747 = var1;
       if (var1 == null) {
          this.field34748 = null;

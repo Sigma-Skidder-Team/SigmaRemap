@@ -66,7 +66,7 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public void method11567(Class1655 var1, BlockPos var2, Entity var3, float var4) {
+   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       if (!var1.field9020
          && var1.field9016.nextFloat() < var4 - 0.5F
          && var3 instanceof Class880
@@ -78,7 +78,7 @@ public class Class3221 extends Block {
       super.method11567(var1, var2, var3, var4);
    }
 
-   public static void method11610(Class7380 var0, Class1655 var1, BlockPos var2) {
+   public static void method11610(Class7380 var0, World var1, BlockPos var2) {
       var1.method6730(var2, method11538(var0, Blocks.field36396.method11579(), var1, var2));
    }
 

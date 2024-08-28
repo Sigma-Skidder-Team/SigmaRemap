@@ -280,7 +280,7 @@ public class Class974 implements Class920, Class933 {
       }
    }
 
-   public void method4047(Class1655 var1, ItemStack var2) {
+   public void method4047(World var1, ItemStack var2) {
       if (!var1.field9020) {
          while (!var2.method32105()) {
             int var5 = this.method4043(var2);
@@ -469,7 +469,7 @@ public class Class974 implements Class920, Class933 {
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       return new TranslationTextComponent("container.inventory");
    }
 

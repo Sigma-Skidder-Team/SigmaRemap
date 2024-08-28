@@ -194,7 +194,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("entered_nether", Class4488.method14156(Class1655.field9000))
+         .method27312("entered_nether", Class4488.method14156(World.field9000))
          .method27317(var1, "story/enter_the_nether");
       Class7999.method27304()
          .method27305(var13)
@@ -236,7 +236,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("entered_end", Class4488.method14156(Class1655.field9001))
+         .method27312("entered_end", Class4488.method14156(World.THE_END))
          .method27317(var1, "story/enter_the_end");
    }
 }

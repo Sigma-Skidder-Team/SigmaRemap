@@ -41,7 +41,7 @@ public class Class4854 implements Class4842 {
       return this.field22651;
    }
 
-   public boolean method14963(Class926 var1, Class1655 var2) {
+   public boolean method14963(Class926 var1, World var2) {
       Class6207 var5 = new Class6207();
       int var6 = 0;
 

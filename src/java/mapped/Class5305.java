@@ -43,8 +43,8 @@ public class Class5305 extends Module {
             RenderSystem.method27905(33986, 240.0F, 240.0F);
 
             for (Entity var5 : Class5628.method17708()) {
-                if (var5 instanceof Class1000) {
-                    Class1000 var6 = (Class1000) var5;
+                if (var5 instanceof ItemEntity) {
+                    ItemEntity var6 = (ItemEntity) var5;
                     if (!(var6.method4124().method32107() instanceof Class3292)
                             || !(((Class3292) var6.method4124().method32107()).method11845() instanceof Class3368)) {
                         return;
@@ -97,7 +97,7 @@ public class Class5305 extends Module {
         }
     }
 
-    public boolean method16672(Class1000 var1) {
+    public boolean method16672(ItemEntity var1) {
         if (mc.field1339.method3275(var1) > 5.0F) {
             return false;
         } else {
@@ -120,7 +120,7 @@ public class Class5305 extends Module {
 
     public void method16674(double var1, double var3, double var5, Entity var7, float var8) {
         ClientResource var11 = ResourceRegistry.JelloLightFont25;
-        String var12 = var7.method2941().getUnformattedComponentText();
+        String var12 = var7.getName().getUnformattedComponentText();
         float var13 = (float) (var1 - mc.field1295.method768().method37504().method11320());
         float var14 = (float) (var3 - mc.field1295.method768().method37504().method11321());
         float var15 = (float) (var5 - mc.field1295.method768().method37504().method11322());
@@ -138,8 +138,8 @@ public class Class5305 extends Module {
         GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
         GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
         GL11.glTranslated(-var11.method23942(var12) / 2, 0.0, 0.0);
-        List var16 = this.method16678(((Class1000) var7).method4124());
-        this.method16676(-87, -70, var16, ((Class1000) var7).method4124().method32149().getString(), false);
+        List var16 = this.method16678(((ItemEntity) var7).method4124());
+        this.method16676(-87, -70, var16, ((ItemEntity) var7).method4124().method32149().getString(), false);
         GL11.glPopMatrix();
         GL11.glEnable(2929);
         GL11.glEnable(2896);

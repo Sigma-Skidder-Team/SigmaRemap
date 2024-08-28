@@ -8,7 +8,7 @@ public abstract class Class882 extends Entity {
    private int field5094;
    private boolean field5095;
 
-   public Class882(Class8992<? extends Class882> var1, Class1655 var2) {
+   public Class882(Class8992<? extends Class882> var1, World var2) {
       super(var1, var2);
    }
 

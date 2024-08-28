@@ -71,7 +71,7 @@ public interface Class1011 {
       }
    }
 
-   default boolean method4368(Class1655 var1) {
+   default boolean method4368(World var1) {
       return var1.method6789().method17135(Class5462.field24255) && this.method4369() && this.method4350() == null;
    }
 

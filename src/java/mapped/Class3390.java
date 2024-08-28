@@ -64,28 +64,28 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       Class7393.method23618(var2, var3);
    }
 
    @Deprecated
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
    }
 
    @Deprecated
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (this.method11998() && !var1.method23448(var4.method23383())) {
          var2.method6762(var3);
       }
    }
 
    @Deprecated
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      return Class2274.field14820;
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      return ActionResultType.field14820;
    }
 
    @Deprecated
-   public boolean method11647(Class7380 var1, Class1655 var2, BlockPos var3, int var4, int var5) {
+   public boolean method11647(Class7380 var1, World var2, BlockPos var3, int var4, int var5) {
       return false;
    }
 
@@ -187,7 +187,7 @@ public abstract class Class3390 {
 
    @Nullable
    @Deprecated
-   public Class949 method11528(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public Class949 method11528(Class7380 var1, World var2, BlockPos var3) {
       return null;
    }
 
@@ -202,7 +202,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       return 0;
    }
 
@@ -246,7 +246,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11602(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public void method11602(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
    }
 
    @Deprecated
@@ -255,7 +255,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
    }
 
    @Deprecated
@@ -277,7 +277,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11595(Class1655 var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
    }
 
    public abstract Class3257 method11581();

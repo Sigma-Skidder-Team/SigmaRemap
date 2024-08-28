@@ -99,11 +99,11 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       (BiPredicate<Class1042, Class4913>)(var0, var1) -> var1 == Class4913.field22767
    );
 
-   public Class1042(Class8992<? extends Class1042> var1, Class1655 var2) {
+   public Class1042(Class8992<? extends Class1042> var1, World var2) {
       this(var1, var2, Class9564.field44542);
    }
 
-   public Class1042(Class8992<? extends Class1042> var1, Class1655 var2, Class9564 var3) {
+   public Class1042(Class8992<? extends Class1042> var1, World var2, Class9564 var3) {
       super(var1, var2);
       ((Class6991)this.method4230()).method21682(true);
       this.method4230().method21674(true);
@@ -227,8 +227,8 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field38034 || !this.method3066() || this.method4741() || this.isSleeping()) {
          return super.method4285(var1, var2);
       } else if (!this.method3005()) {
@@ -246,13 +246,13 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
                this.method4682(var1);
             }
 
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          } else {
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
       } else {
          this.method4681();
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       }
    }
 
@@ -496,7 +496,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       }
 
       if (var1.method35385()) {
-         this.field5024.method6916(new Class1003(this.field5024, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
+         this.field5024.method6916(new ExperienceOrbEntity(this.field5024, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
       }
    }
 
@@ -702,7 +702,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
       if (this.method4253(var4)) {
          Class927 var5 = this.method4752();

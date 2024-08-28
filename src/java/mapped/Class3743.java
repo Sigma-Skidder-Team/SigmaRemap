@@ -15,8 +15,8 @@ public class Class3743<E extends Class1034> extends Class3676<E> {
 
    public boolean method12508(ServerWorld var1, E var2) {
       if (var2.method3091().method32105()) {
-         Optional var5 = var2.method2992().<Class1000>method21410(Class8830.field39847);
-         return var5.isPresent() ? !((Class1000)var5.get()).method3213(var2, (double)this.field19878) : true;
+         Optional var5 = var2.method2992().<ItemEntity>method21410(Class8830.field39847);
+         return var5.isPresent() ? !((ItemEntity)var5.get()).method3213(var2, (double)this.field19878) : true;
       } else {
          return false;
       }

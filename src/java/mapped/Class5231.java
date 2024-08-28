@@ -30,7 +30,7 @@ public class Class5231 extends Module {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();
                 String var7 = var5.method17648().getString();
-                String var8 = mc.field1339.method2941().getString().toLowerCase();
+                String var8 = mc.field1339.getName().getString().toLowerCase();
                 if (this.field23580.method15974("AutoL")
                         && (
                         var6.toLowerCase().contains("was slain by " + var8)
@@ -60,7 +60,7 @@ public class Class5231 extends Module {
                     }
                 }
 
-                if (this.field23580.method15974("AutoGG") && var7.equalsIgnoreCase("§e" + mc.field1339.method2941().getString() + "§r§a won the game!§r")) {
+                if (this.field23580.method15974("AutoGG") && var7.equalsIgnoreCase("§e" + mc.field1339.getName().getString() + "§r§a won the game!§r")) {
                     this.field23580.method16760();
                 }
             }

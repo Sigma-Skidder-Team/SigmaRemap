@@ -3,7 +3,7 @@ package mapped;
 public abstract class Class5831 extends Class5828<Class920> {
    private final Class920 field25551;
    private final Class8202 field25552;
-   public final Class1655 field25553;
+   public final World field25553;
    private final Class7207<? extends Class4847> field25554;
    private final Class1939 field25555;
 

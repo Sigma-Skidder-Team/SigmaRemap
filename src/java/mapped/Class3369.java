@@ -32,7 +32,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method6780(var3);
       if (var9 != var1.<Boolean>method23463(field18945)) {
          if (var9) {
@@ -44,18 +44,18 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public void method11595(Class1655 var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
       Entity var7 = var4.method3460();
       PlayerEntity var8 = !(var7 instanceof PlayerEntity) ? null : (PlayerEntity)var7;
       this.method11960(var1, var2, var3, var8, true);
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      return !this.method11960(var2, var1, var6, var4, true) ? Class2274.field14820 : Class2274.method9002(var2.field9020);
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      return !this.method11960(var2, var1, var6, var4, true) ? ActionResultType.field14820 : ActionResultType.method9002(var2.field9020);
    }
 
-   public boolean method11960(Class1655 var1, Class7380 var2, Class8711 var3, PlayerEntity var4, boolean var5) {
+   public boolean method11960(World var1, Class7380 var2, Class8711 var3, PlayerEntity var4, boolean var5) {
       Direction var8 = var3.method31424();
       BlockPos var9 = var3.method31423();
       boolean var10 = !var5 || this.method11961(var2, var8, var3.method31419().field18049 - (double)var9.getY());
@@ -91,7 +91,7 @@ public class Class3369 extends Class3241 {
       }
    }
 
-   public boolean method11962(Class1655 var1, BlockPos var2, Direction var3) {
+   public boolean method11962(World var1, BlockPos var2, Direction var3) {
       Class944 var6 = var1.method6759(var2);
       if (!var1.field9020 && var6 instanceof Class966) {
          if (var3 == null) {
@@ -152,7 +152,7 @@ public class Class3369 extends Class3241 {
    public Class7380 method11495(Class5909 var1) {
       Direction var4 = var1.method18354();
       BlockPos var5 = var1.method18345();
-      Class1655 var6 = var1.method18360();
+      World var6 = var1.method18360();
       Class113 var7 = var4.method544();
       if (var7 != Class113.field414) {
          boolean var8 = var7 == Class113.field413

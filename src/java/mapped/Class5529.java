@@ -37,7 +37,7 @@ public class Class5529 implements Packet<Class5110> {
    }
 
    @Nullable
-   public Class911 method17387(Class1655 var1) {
+   public Class911 method17387(World var1) {
       Entity var4 = var1.method6774(this.field24529);
       return !(var4 instanceof Class918) ? null : ((Class918)var4).method3614();
    }

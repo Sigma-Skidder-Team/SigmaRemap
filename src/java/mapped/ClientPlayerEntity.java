@@ -240,7 +240,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2903() {
-      this.connection.sendPacket(new Class5564(Class2175.field14277));
+      this.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
    }
 
    @Override

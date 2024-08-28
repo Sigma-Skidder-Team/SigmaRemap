@@ -167,7 +167,7 @@ public class BlockFly extends Class5325 {
 
                     if (var5 >= 0) {
                         if (!(mc.field1355 instanceof Class859) && var3.equals("FakeInv")) {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+                            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                         }
 
                         this.method16740(var5, var4 - 36);
@@ -203,7 +203,7 @@ public class BlockFly extends Class5325 {
 
                 if (var4 >= 0 && mc.field1339.field4904.method18131(var4).field25579 != var8) {
                     if (!(mc.field1355 instanceof Class859) && var3.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+                        mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
                     this.method16740(var8, var4 - 36);
@@ -252,7 +252,7 @@ public class BlockFly extends Class5325 {
     public boolean method16739(Hand var1) {
         if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
             return this.method16735() != 0;
-        } else return method16733(mc.field1339.method3094(var1).method32107());
+        } else return method16733(mc.field1339.getHeldItem(var1).method32107());
     }
 
     public void method16740(int var1, int var2) {

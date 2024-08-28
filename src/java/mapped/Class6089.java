@@ -27,7 +27,7 @@ public class Class6089 extends Class6069 {
       return 2;
    }
 
-   public static void method18829(Class880 var0, Class1655 var1, BlockPos var2, int var3) {
+   public static void method18829(Class880 var0, World var1, BlockPos var2, int var3) {
       if (var0.method3226()) {
          Class7380 var6 = Blocks.field36889.method11579();
          float var7 = (float)Math.min(16, 2 + var3);

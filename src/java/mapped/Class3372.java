@@ -26,7 +26,7 @@ public class Class3372 extends Class3241 {
       return var1.<Integer>method23463(field18963);
    }
 
-   public static void method11966(Class7380 var0, Class1655 var1, BlockPos var2) {
+   public static void method11966(Class7380 var0, World var1, BlockPos var2) {
       if (var1.method6812().method36875()) {
          int var5 = var1.method7020(Class1977.field12881, var2) - var1.method6808();
          float var6 = var1.method6750(1.0F);
@@ -49,16 +49,16 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var4.method2935()) {
          return super.method11505(var1, var2, var3, var4, var5, var6);
       } else if (!var2.field9020) {
          Class7380 var9 = var1.method23459(field18964);
          var2.method6725(var3, var9, 4);
          method11966(var9, var2, var3);
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       } else {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       }
    }
 

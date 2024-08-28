@@ -53,7 +53,7 @@ public abstract class Class2348<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class8705<Class2348<Class7128>> field16064 = method9173("loot_function_type");
    public static final Class8705<Class2348<Class7130>> field16065 = method9173("loot_condition_type");
    public static final Class8705<Class2348<Class9535>> field16066 = method9173("dimension_type");
-   public static final Class8705<Class2348<Class1655>> field16067 = method9173("dimension");
+   public static final Class8705<Class2348<World>> field16067 = method9173("dimension");
    public static final Class8705<Class2348<Class9459>> field16068 = method9173("dimension");
    public static final Class2348<Class9455> field16069 = method9175(field16036, () -> Class6067.field26714);
    public static final Class2351<Class7631> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);

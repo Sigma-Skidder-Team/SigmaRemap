@@ -65,7 +65,7 @@ public class Class3354 extends Class3241 {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       ItemStack var5 = var1.method18357();
       Class39 var6 = var5.method32142();
       PlayerEntity var7 = var1.method18358();
@@ -122,7 +122,7 @@ public class Class3354 extends Class3241 {
       return new Class948();
    }
 
-   public static boolean method11919(Class1655 var0, BlockPos var1, Class7380 var2, ItemStack var3) {
+   public static boolean method11919(World var0, BlockPos var1, Class7380 var2, ItemStack var3) {
       if (var2.<Boolean>method23463(field18882)) {
          return false;
       } else {
@@ -134,7 +134,7 @@ public class Class3354 extends Class3241 {
       }
    }
 
-   private static void method11920(Class1655 var0, BlockPos var1, Class7380 var2, ItemStack var3) {
+   private static void method11920(World var0, BlockPos var1, Class7380 var2, ItemStack var3) {
       Class944 var6 = var0.method6759(var1);
       if (var6 instanceof Class948) {
          Class948 var7 = (Class948)var6;
@@ -144,23 +144,23 @@ public class Class3354 extends Class3241 {
       }
    }
 
-   public static void method11921(Class1655 var0, BlockPos var1, Class7380 var2, boolean var3) {
+   public static void method11921(World var0, BlockPos var1, Class7380 var2, boolean var3) {
       var0.method6725(var1, var2.method23465(field18881, Boolean.valueOf(false)).method23465(field18882, Boolean.valueOf(var3)), 3);
       method11924(var0, var1, var2);
    }
 
-   public static void method11922(Class1655 var0, BlockPos var1, Class7380 var2) {
+   public static void method11922(World var0, BlockPos var1, Class7380 var2) {
       method11923(var0, var1, var2, true);
       var0.method6860().method20726(var1, var2.method23383(), 2);
       var0.method6999(1043, var1, 0);
    }
 
-   private static void method11923(Class1655 var0, BlockPos var1, Class7380 var2, boolean var3) {
+   private static void method11923(World var0, BlockPos var1, Class7380 var2, boolean var3) {
       var0.method6725(var1, var2.method23465(field18881, Boolean.valueOf(var3)), 3);
       method11924(var0, var1, var2);
    }
 
-   private static void method11924(Class1655 var0, BlockPos var1, Class7380 var2) {
+   private static void method11924(World var0, BlockPos var1, Class7380 var2) {
       var0.method6733(var1.method8313(), var2.method23383());
    }
 
@@ -170,7 +170,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          if (var1.<Boolean>method23463(field18882)) {
             this.method11925(var1, var2, var3);
@@ -184,15 +184,15 @@ public class Class3354 extends Class3241 {
       }
    }
 
-   private void method11925(Class7380 var1, Class1655 var2, BlockPos var3) {
+   private void method11925(Class7380 var1, World var2, BlockPos var3) {
       Class944 var6 = var2.method6759(var3);
       if (var6 instanceof Class948) {
          Class948 var7 = (Class948)var6;
          Direction var8 = var1.<Direction>method23463(field18880);
-         ItemStack var9 = var7.method3805().method32126();
+         ItemStack var9 = var7.method3805().copy();
          float var10 = 0.25F * (float)var8.method539();
          float var11 = 0.25F * (float)var8.method541();
-         Class1000 var12 = new Class1000(
+         ItemEntity var12 = new ItemEntity(
             var2, (double)var3.method8304() + 0.5 + (double)var10, (double)(var3.getY() + 1), (double)var3.method8306() + 0.5 + (double)var11, var9
          );
          var12.method4131();
@@ -222,7 +222,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       if (var1.<Boolean>method23463(field18882)) {
          Class944 var6 = var2.method6759(var3);
          if (var6 instanceof Class948) {
@@ -234,26 +234,26 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (var1.<Boolean>method23463(field18882)) {
          if (!var2.field9020) {
             this.method11926(var2, var3, var4);
          }
 
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else {
-         ItemStack var9 = var4.method3094(var5);
-         return !var9.method32105() && !var9.method32107().method11743(Class5985.field26120) ? Class2274.field14819 : Class2274.field14820;
+         ItemStack var9 = var4.getHeldItem(var5);
+         return !var9.method32105() && !var9.method32107().method11743(Class5985.field26120) ? ActionResultType.field14819 : ActionResultType.field14820;
       }
    }
 
    @Nullable
    @Override
-   public Class949 method11528(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public Class949 method11528(Class7380 var1, World var2, BlockPos var3) {
       return var1.<Boolean>method23463(field18882) ? super.method11528(var1, var2, var3) : null;
    }
 
-   private void method11926(Class1655 var1, BlockPos var2, PlayerEntity var3) {
+   private void method11926(World var1, BlockPos var2, PlayerEntity var3) {
       Class944 var6 = var1.method6759(var2);
       if (var6 instanceof Class948) {
          var3.method2766((Class948)var6);

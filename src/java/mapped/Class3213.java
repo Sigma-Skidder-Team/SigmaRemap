@@ -10,7 +10,7 @@ public class Class3213 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       var2.method6860().method20726(var3, this, this.method11597());
    }
 
@@ -41,14 +41,14 @@ public class Class3213 extends Block {
       return var0.method23393() || var0.method23446(Class7645.field32798) || var3.method31085() || var3.method31089();
    }
 
-   public void method11599(Class1655 var1, BlockPos var2, Class7380 var3, Class7380 var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, Class7380 var3, Class7380 var4, Class907 var5) {
    }
 
-   public void method11600(Class1655 var1, BlockPos var2, Class907 var3) {
+   public void method11600(World var1, BlockPos var2, Class907 var3) {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(16) == 0) {
          BlockPos var7 = var3.method8313();
          if (method11598(var2.method6738(var7))) {

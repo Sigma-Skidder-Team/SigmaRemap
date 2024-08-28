@@ -89,7 +89,7 @@ public class Class8862 {
       }
    }
 
-   public static void method32263(Class1655 var0, TextureManager var1, Class9332 var2, float var3) {
+   public static void method32263(World var0, TextureManager var1, Class9332 var2, float var3) {
       if (field40050 != null) {
          int var6 = Class8509.method30144(var0);
          if (var6 >= 0 && var6 < field40050.length) {
@@ -118,7 +118,7 @@ public class Class8862 {
       }
    }
 
-   public static boolean method32264(Class1655 var0) {
+   public static boolean method32264(World var0) {
       if (field40050 != null) {
          int var3 = Class8509.method30144(var0);
          if (var3 >= 0 && var3 < field40050.length) {

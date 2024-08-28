@@ -3,11 +3,11 @@ package mapped;
 public class Class993 extends Class916 {
    private int field5480 = -1;
 
-   public Class993(Class8992<? extends Class993> var1, Class1655 var2) {
+   public Class993(Class8992<? extends Class993> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class993(Class1655 var1, double var2, double var4, double var6) {
+   public Class993(World var1, double var2, double var4, double var6) {
       super(Class8992.field41056, var1, var2, var4, var6);
    }
 
@@ -44,8 +44,8 @@ public class Class993 extends Class916 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       Entity var5 = var1.method31113();
-      if (var5 instanceof Class884) {
-         Class884 var6 = (Class884)var5;
+      if (var5 instanceof AbstractArrowEntity) {
+         AbstractArrowEntity var6 = (AbstractArrowEntity)var5;
          if (var6.method3327()) {
             this.method4071(var6.method3433().method11349());
          }

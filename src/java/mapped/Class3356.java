@@ -25,7 +25,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          Class944 var8 = var2.method6759(var3);
          if (var8 instanceof Class955) {
@@ -44,12 +44,12 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020 && var2.method6759(var3) == null) {
          var2.method6728(var3, false);
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

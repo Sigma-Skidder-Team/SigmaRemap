@@ -12,7 +12,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    private Class2712<Class1026> field5722;
    private Class2711<PlayerEntity> field5723;
 
-   public Class1027(Class8992<? extends Class1027> var1, Class1655 var2) {
+   public Class1027(Class8992<? extends Class1027> var1, World var2) {
       super(var1, var2);
    }
 

@@ -34,13 +34,13 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          if (var1.<Class82>method23463(field18713) != Class82.field205) {
             var3 = var3.method8349(var1.<Direction>method23463(field18484));
             var1 = var2.method6738(var3);
             if (!var1.method23448(this)) {
-               return Class2274.field14819;
+               return ActionResultType.field14819;
             }
          }
 
@@ -51,13 +51,13 @@ public class Class3250 extends Class3198 implements Class3245 {
                      var4.method2785(var1x.method8769(), true);
                   }
                });
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             } else {
                if (!this.method11680(var2, var3)) {
                   var4.method2785(new TranslationTextComponent("block.minecraft.bed.occupied"), true);
                }
 
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
          } else {
             var2.method6728(var3, false);
@@ -77,18 +77,18 @@ public class Class3250 extends Class3198 implements Class3245 {
                true,
                Class2141.field14016
             );
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          }
       } else {
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
-   public static boolean method11679(Class1655 var0) {
+   public static boolean method11679(World var0) {
       return var0.method6812().method36881();
    }
 
-   private boolean method11680(Class1655 var1, BlockPos var2) {
+   private boolean method11680(World var1, BlockPos var2) {
       List var5 = var1.<Class1042>method6772(Class1042.class, new Class6488(var2), Class880::isSleeping);
       if (!var5.isEmpty()) {
          ((Class1042)var5.get(0)).method2907();
@@ -99,7 +99,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11567(Class1655 var1, BlockPos var2, Entity var3, float var4) {
+   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       super.method11567(var1, var2, var3, var4 * 0.5F);
    }
 
@@ -136,7 +136,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11574(Class1655 var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
+   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
       if (!var1.field9020 && var4.method2801()) {
          Class82 var7 = var3.<Class82>method23463(field18713);
          if (var7 == Class82.field206) {
@@ -266,7 +266,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       if (!var1.field9020) {
          BlockPos var8 = var2.method8349(var3.<Direction>method23463(field18484));

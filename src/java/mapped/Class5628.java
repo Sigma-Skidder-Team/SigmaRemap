@@ -489,7 +489,7 @@ public class Class5628 {
    }
 
    public static Class8709 method17713(
-           Class1655 var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5, double var6, double var8
+           World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5, double var6, double var8
    ) {
       double var12 = var6;
       Entity var14 = null;
@@ -697,7 +697,7 @@ public class Class5628 {
          }
 
          field24949.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var5.method13935(), field24949.field1339.method3331()));
-         if (Class7858.method26311(Class6069.method18810(12), field24949.field1339.method3094(Hand.field182)) > 0) {
+         if (Class7858.method26311(Class6069.method18810(12), field24949.field1339.getHeldItem(Hand.field182)) > 0) {
             field24949.field1291.method1195(var5.method13935(), Class7940.field34065);
          }
 

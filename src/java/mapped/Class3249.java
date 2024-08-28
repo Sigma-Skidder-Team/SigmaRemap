@@ -45,13 +45,13 @@ public class Class3249 extends Block implements Class3245 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       Class944 var9 = var2.method6759(var3);
       if (var9 instanceof Class965 && var4.method2979()) {
          var4.method2892((Class965)var9);
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

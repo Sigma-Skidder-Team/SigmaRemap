@@ -10,7 +10,7 @@ public class Class3217 extends Class3213 {
    }
 
    @Override
-   public void method11599(Class1655 var1, BlockPos var2, Class7380 var3, Class7380 var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, Class7380 var3, Class7380 var4, Class907 var5) {
       if (method11604(var1, var2, var4)) {
          var1.method6725(var2, this.field18626, 3);
       }
@@ -18,7 +18,7 @@ public class Class3217 extends Class3213 {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       return !method11604(var4, var5, var6) ? super.method11495(var1) : this.field18626;

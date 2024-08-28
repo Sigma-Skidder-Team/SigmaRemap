@@ -199,7 +199,7 @@ public class Class7819 {
             Class1007 var4 = this.method26123();
 
             for (Class878 var6 : this.field33537.method12288()) {
-               Class9551.field44478.method15080(var6, var4);
+               CriteriaTriggers.field44478.method15080(var6, var4);
             }
          }
       }

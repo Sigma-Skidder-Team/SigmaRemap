@@ -284,10 +284,10 @@ public class Class9446 {
                         }
 
                         if (!(var0 instanceof Class880)) {
-                           if (!(var0 instanceof Class1000)) {
+                           if (!(var0 instanceof ItemEntity)) {
                               return 0;
                            } else {
-                              Class1000 var16 = (Class1000)var0;
+                              ItemEntity var16 = (ItemEntity)var0;
                               ItemStack var18 = method36323(var16);
                               return method36318(var18);
                            }
@@ -347,7 +347,7 @@ public class Class9446 {
       }
    }
 
-   public static ItemStack method36323(Class1000 var0) {
+   public static ItemStack method36323(ItemEntity var0) {
       return var0.method3210().<ItemStack>method35445(field43893);
    }
 }

@@ -47,7 +47,7 @@ public class Class958 extends Class944 implements Class933 {
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       return (ITextComponent)(this.field5376 == null ? new TranslationTextComponent("block.minecraft.banner") : this.field5376);
    }
 

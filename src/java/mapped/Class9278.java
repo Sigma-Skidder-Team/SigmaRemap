@@ -79,7 +79,7 @@ public class Class9278 {
             Object var29 = null;
             boolean var30 = var28 || this.field42679 % 60 == 0;
             boolean var10 = Math.abs(var22 - this.field42675) >= 1 || Math.abs(var25 - this.field42676) >= 1;
-            if (this.field42679 > 0 || this.field42668 instanceof Class884) {
+            if (this.field42679 > 0 || this.field42668 instanceof AbstractArrowEntity) {
                long var11 = Class5476.method17229(var27.field18048);
                long var13 = Class5476.method17229(var27.field18049);
                long var15 = Class5476.method17229(var27.field18050);
@@ -88,7 +88,7 @@ public class Class9278 {
                   this.field42683 = this.field42668.method3226();
                   this.field42680 = 0;
                   var29 = new Class5595(this.field42668);
-               } else if ((!var30 || !var10) && !(this.field42668 instanceof Class884)) {
+               } else if ((!var30 || !var10) && !(this.field42668 instanceof AbstractArrowEntity)) {
                   if (!var30) {
                      if (var10) {
                         var29 = new Class5479(this.field42668.method3205(), (byte)var22, (byte)var25, this.field42668.method3226());
@@ -213,7 +213,7 @@ public class Class9278 {
          for (Class2106 var10 : Class2106.values()) {
             ItemStack var11 = ((Class880)this.field42668).method2943(var10);
             if (!var11.method32105()) {
-               var12.add(Pair.of(var10, var11.method32126()));
+               var12.add(Pair.of(var10, var11.copy()));
             }
          }
 

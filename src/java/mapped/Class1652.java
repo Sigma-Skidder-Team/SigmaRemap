@@ -69,7 +69,7 @@ public class Class1652<R> implements AutoCloseable {
    }
 
    public boolean method6644(Class2002 var1) {
-      return Class1655.method6721(Class2002.method8406(var1.method8411()));
+      return World.method6721(Class2002.method8406(var1.method8411()));
    }
 
    public R method6645(long var1) {

@@ -25,7 +25,7 @@ public class Class3309 extends Class3308 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       Class9741.method38189(var1, var3, 0.125F);
    }
 

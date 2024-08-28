@@ -19,9 +19,9 @@ public class Class9251 {
       ArrayList var4 = Lists.newArrayList();
       ArrayList var5 = Lists.newArrayList();
       ArrayList var6 = Lists.newArrayList();
-      File var7 = var0.method7992(Class1655.field8999);
-      File var8 = var0.method7992(Class1655.field9000);
-      File var9 = var0.method7992(Class1655.field9001);
+      File var7 = var0.method7992(World.field8999);
+      File var8 = var0.method7992(World.field9000);
+      File var9 = var0.method7992(World.THE_END);
       field42556.info("Scanning folders...");
       method34802(var7, var4);
       if (var8.exists()) {

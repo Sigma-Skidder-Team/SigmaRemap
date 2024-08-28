@@ -10,7 +10,7 @@ public class Class1037 extends Class1038 implements Class1022 {
    public final Class6997 field5756;
    public final Class6991 field5757;
 
-   public Class1037(Class8992<? extends Class1037> var1, Class1655 var2) {
+   public Class1037(Class8992<? extends Class1037> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.field5596 = new Class6835(this);

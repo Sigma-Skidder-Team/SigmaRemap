@@ -21,7 +21,7 @@ public class Class5840 extends Class5839 {
    public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       Class8812 var5 = Class9741.method38185(var2);
       if (var1 instanceof Class878) {
-         Class9551.field44475.method15071((Class878)var1, var5);
+         CriteriaTriggers.field44475.method15071((Class878)var1, var5);
       }
 
       super.method18264(var1, var2);

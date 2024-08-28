@@ -6,14 +6,14 @@ import javax.annotation.Nullable;
 
 public class Class9435 {
    private static String[] field43776;
-   private final Class1655 field43777;
+   private final World field43777;
    private final BlockPos field43778;
    private final Class3429 field43779;
    private Class7380 field43780;
    private final boolean field43781;
    private final List<BlockPos> field43782 = Lists.newArrayList();
 
-   public Class9435(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public Class9435(World var1, BlockPos var2, Class7380 var3) {
       this.field43777 = var1;
       this.field43778 = var2;
       this.field43780 = var3;

@@ -15,23 +15,23 @@ public class Class3292 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class2274 var4 = this.method11834(new Class5909(var1));
-      return !var4.method9000() && this.method11744() ? this.method11700(var1.method18360(), var1.method18358(), var1.method18359()).method20694() : var4;
+   public ActionResultType method11707(Class5911 var1) {
+      ActionResultType var4 = this.method11834(new Class5909(var1));
+      return !var4.isSuccessOrConsume() && this.method11744() ? this.method11700(var1.method18360(), var1.method18358(), var1.method18359()).method20694() : var4;
    }
 
-   public Class2274 method11834(Class5909 var1) {
+   public ActionResultType method11834(Class5909 var1) {
       if (!var1.method18346()) {
-         return Class2274.field14821;
+         return ActionResultType.field14821;
       } else {
          Class5909 var4 = this.method11836(var1);
          if (var4 != null) {
             Class7380 var5 = this.method11838(var4);
             if (var5 == null) {
-               return Class2274.field14821;
+               return ActionResultType.field14821;
             } else if (this.method11843(var4, var5)) {
                BlockPos var6 = var4.method18345();
-               Class1655 var7 = var4.method18360();
+               World var7 = var4.method18360();
                PlayerEntity var8 = var4.method18358();
                ItemStack var9 = var4.method18357();
                Class7380 var10 = var7.method6738(var6);
@@ -41,7 +41,7 @@ public class Class3292 extends Class3257 {
                   this.method11837(var6, var7, var8, var9, var10);
                   var11.method11563(var7, var6, var10, var8, var9);
                   if (var8 instanceof Class878) {
-                     Class9551.field44489.method15138((Class878)var8, var6, var9);
+                     CriteriaTriggers.field44489.method15138((Class878)var8, var6, var9);
                   }
                }
 
@@ -51,12 +51,12 @@ public class Class3292 extends Class3257 {
                   var9.method32182(1);
                }
 
-               return Class2274.method9002(var7.field9020);
+               return ActionResultType.method9002(var7.field9020);
             } else {
-               return Class2274.field14821;
+               return ActionResultType.field14821;
             }
          } else {
-            return Class2274.field14821;
+            return ActionResultType.field14821;
          }
       }
    }
@@ -70,7 +70,7 @@ public class Class3292 extends Class3257 {
       return var1;
    }
 
-   public boolean method11837(BlockPos var1, Class1655 var2, PlayerEntity var3, ItemStack var4, Class7380 var5) {
+   public boolean method11837(BlockPos var1, World var2, PlayerEntity var3, ItemStack var4, Class7380 var5) {
       return method11844(var2, var3, var1, var4);
    }
 
@@ -80,7 +80,7 @@ public class Class3292 extends Class3257 {
       return var4 != null && this.method11841(var1, var4) ? var4 : null;
    }
 
-   private Class7380 method11839(BlockPos var1, Class1655 var2, ItemStack var3, Class7380 var4) {
+   private Class7380 method11839(BlockPos var1, World var2, ItemStack var3, Class7380 var4) {
       Class7380 var7 = var4;
       Class39 var8 = var3.method32142();
       if (var8 != null) {
@@ -121,7 +121,7 @@ public class Class3292 extends Class3257 {
       return var1.method18360().method6725(var1.method18345(), var2, 11);
    }
 
-   public static boolean method11844(Class1655 var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {
+   public static boolean method11844(World var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {
       Class314 var6 = var0.method6715();
       if (var6 == null) {
          return false;
@@ -165,7 +165,7 @@ public class Class3292 extends Class3257 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11730(var1, var2, var3, var4);
       this.method11845().method11583(var1, var2, var3, var4);
    }

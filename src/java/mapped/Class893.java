@@ -1,16 +1,16 @@
 package mapped;
 
 public abstract class Class893 extends Class882 {
-   public Class893(Class8992<? extends Class893> var1, Class1655 var2) {
+   public Class893(Class8992<? extends Class893> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class893(Class8992<? extends Class893> var1, double var2, double var4, double var6, Class1655 var8) {
+   public Class893(Class8992<? extends Class893> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
       this.method3215(var2, var4, var6);
    }
 
-   public Class893(Class8992<? extends Class893> var1, Class880 var2, Class1655 var3) {
+   public Class893(Class8992<? extends Class893> var1, Class880 var2, World var3) {
       this(var1, var2.getPosX(), var2.method3442() - 0.1F, var2.getPosZ(), var3);
       this.method3459(var2);
    }

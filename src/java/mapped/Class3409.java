@@ -40,7 +40,7 @@ public class Class3409 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       var2.method6860().method20726(var3, this, 20);
    }
 

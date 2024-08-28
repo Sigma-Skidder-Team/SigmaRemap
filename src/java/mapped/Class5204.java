@@ -132,7 +132,7 @@ public class Class5204 extends Module {
         if (var3 != null && var3.method31417() == Class2100.field13690) {
             if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
                 BlockFly var10000 = (BlockFly) this.method16004();
-                if (!BlockFly.method16733(mc.field1339.method3094(Hand.field182).method32107())) {
+                if (!BlockFly.method16733(mc.field1339.getHeldItem(Hand.field182).method32107())) {
                     return false;
                 }
             }
@@ -163,12 +163,12 @@ public class Class5204 extends Module {
                 ((BlockFly) this.method16004()).method16734();
             }
 
-            Class2274 var6 = mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var3);
+            ActionResultType var6 = mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var3);
             if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
                 mc.field1339.field4902.field5443 = var5;
             }
 
-            if (var6 == Class2274.field14818) {
+            if (var6 == ActionResultType.field14818) {
                 if (!this.method16004().method15974("NoSwing")) {
                     mc.field1339.swingArm(Hand.field182);
                 } else {

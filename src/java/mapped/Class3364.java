@@ -9,7 +9,7 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       Class39 var8 = var5.method32143();
       if (var8.method118("BlockEntityTag")) {
@@ -21,26 +21,26 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var1.<Boolean>method23463(field18931)) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
          this.method11942(var2, var3);
          var1 = var1.method23465(field18931, Boolean.valueOf(false));
          var2.method6725(var3, var1, 2);
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       }
    }
 
    public void method11941(Class1660 var1, BlockPos var2, Class7380 var3, ItemStack var4) {
       Class944 var7 = var1.method6759(var2);
       if (var7 instanceof Class947) {
-         ((Class947)var7).method3804(var4.method32126());
+         ((Class947)var7).method3804(var4.copy());
          var1.method6725(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
       }
    }
 
-   private void method11942(Class1655 var1, BlockPos var2) {
+   private void method11942(World var1, BlockPos var2) {
       if (!var1.field9020) {
          Class944 var5 = var1.method6759(var2);
          if (var5 instanceof Class947) {
@@ -53,8 +53,8 @@ public class Class3364 extends Class3241 {
                double var9 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
                double var11 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.060000002F + 0.6;
                double var13 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
-               ItemStack var15 = var7.method32126();
-               Class1000 var16 = new Class1000(
+               ItemStack var15 = var7.copy();
+               ItemEntity var16 = new ItemEntity(
                   var1, (double)var2.method8304() + var9, (double)var2.getY() + var11, (double)var2.method8306() + var13, var15
                );
                var16.method4131();
@@ -65,7 +65,7 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          this.method11942(var2, var3);
          super.method11513(var1, var2, var3, var4, var5);
@@ -83,7 +83,7 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       Class944 var6 = var2.method6759(var3);
       if (var6 instanceof Class947) {
          Class3257 var7 = ((Class947)var6).method3803().method32107();

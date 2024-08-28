@@ -5,21 +5,21 @@ import com.google.common.collect.Sets;
 import java.util.List;
 import java.util.Set;
 
-public class Class887 extends Class884 {
+public class Class887 extends AbstractArrowEntity {
    private static final Class9289<Integer> field5116 = Class9361.<Integer>method35441(Class887.class, Class7784.field33391);
    private Class8812 field5117 = Class8137.field34976;
    private final Set<Class2023> field5118 = Sets.newHashSet();
    private boolean field5119;
 
-   public Class887(Class8992<? extends Class887> var1, Class1655 var2) {
+   public Class887(Class8992<? extends Class887> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class887(Class1655 var1, double var2, double var4, double var6) {
+   public Class887(World var1, double var2, double var4, double var6) {
       super(Class8992.field41007, var2, var4, var6, var1);
    }
 
-   public Class887(Class1655 var1, Class880 var2) {
+   public Class887(World var1, Class880 var2) {
       super(Class8992.field41007, var2, var1);
    }
 

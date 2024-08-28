@@ -9,11 +9,11 @@ public class Class918 extends Class916 {
    private final Class911 field5234 = new Class912(this);
    private int field5235;
 
-   public Class918(Class8992<? extends Class918> var1, Class1655 var2) {
+   public Class918(Class8992<? extends Class918> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class918(Class1655 var1, double var2, double var4, double var6) {
+   public Class918(World var1, double var2, double var4, double var6) {
       super(Class8992.field41052, var1, var2, var4, var6);
    }
 
@@ -61,7 +61,7 @@ public class Class918 extends Class916 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       return this.field5234.method3572(var1);
    }
 

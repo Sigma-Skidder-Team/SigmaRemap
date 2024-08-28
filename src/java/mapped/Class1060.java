@@ -19,7 +19,7 @@ public interface Class1060 {
 
    void method4747(ItemStack var1);
 
-   Class1655 method4753();
+   World method4753();
 
    int method4721();
 

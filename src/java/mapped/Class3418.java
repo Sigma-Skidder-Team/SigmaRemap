@@ -133,7 +133,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public boolean method11487(Class1655 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
       return true;
    }
 
@@ -162,7 +162,7 @@ public class Class3418 extends Block implements Class3196 {
       return !(var2.method3090().method32107() instanceof Class3267) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 
-   public void method12065(Class7380 var1, Class1655 var2, BlockPos var3, Random var4, int var5) {
+   public void method12065(Class7380 var1, World var2, BlockPos var3, Random var4, int var5) {
       Class7380 var8 = var2.method6738(var3.method8313());
       BlockPos var9 = var3.method8340(2);
       Class7380 var10 = var2.method6738(var9);

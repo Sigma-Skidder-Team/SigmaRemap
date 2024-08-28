@@ -10,12 +10,12 @@ public class Class3340 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (!var6.method23448(Blocks.field36527) && !var6.method23448(Blocks.BEDROCK)) {
-         return Class2274.field14821;
+         return ActionResultType.field14821;
       } else {
          BlockPos var7 = var5.method8311();
          if (var4.method7007(var7)) {
@@ -35,12 +35,12 @@ public class Class3340 extends Class3257 {
                }
 
                var1.method18357().method32182(1);
-               return Class2274.method9002(var4.field9020);
+               return ActionResultType.method9002(var4.field9020);
             } else {
-               return Class2274.field14821;
+               return ActionResultType.field14821;
             }
          } else {
-            return Class2274.field14821;
+            return ActionResultType.field14821;
          }
       }
    }

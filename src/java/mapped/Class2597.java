@@ -7,7 +7,7 @@ public class Class2597 extends Class2595 {
    private static String[] field16821;
    private static final Predicate<Class7380> field16822 = Class166.method497(Blocks.GRASS);
    private final Class1006 field16823;
-   private final Class1655 field16824;
+   private final World field16824;
    private int field16825;
 
    public Class2597(Class1006 var1) {

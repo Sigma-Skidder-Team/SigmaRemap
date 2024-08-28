@@ -59,7 +59,7 @@ public class Class3459 extends Block {
    @Override
    public Class7380 method11495(Class5909 var1) {
       Class7380 var4 = this.method11579().method23465(field19282, Boolean.valueOf(false)).method23465(field19283, Boolean.valueOf(false));
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Direction[] var7 = var1.method18349();
 
@@ -77,11 +77,11 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       this.method12134(var1, var2, var3, false, false, -1, (Class7380)null);
    }
 
-   public void method12134(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4, boolean var5, int var6, Class7380 var7) {
+   public void method12134(World var1, BlockPos var2, Class7380 var3, boolean var4, boolean var5, int var6, Class7380 var7) {
       Direction var10 = var3.<Direction>method23463(field19281);
       boolean var11 = var3.<Boolean>method23463(field19283);
       boolean var12 = var3.<Boolean>method23463(field19282);
@@ -156,7 +156,7 @@ public class Class3459 extends Block {
       this.method12134(var2, var3, var1, false, true, -1, (Class7380)null);
    }
 
-   private void method12135(Class1655 var1, BlockPos var2, boolean var3, boolean var4, boolean var5, boolean var6) {
+   private void method12135(World var1, BlockPos var2, boolean var3, boolean var4, boolean var5, boolean var6) {
       if (var4 && !var6) {
          var1.method6742((PlayerEntity)null, var2, Class6067.field27158, Class2266.field14732, 0.4F, 0.6F);
       } else if (!var4 && var6) {
@@ -168,13 +168,13 @@ public class Class3459 extends Block {
       }
    }
 
-   private void method12136(Class1655 var1, BlockPos var2, Direction var3) {
+   private void method12136(World var1, BlockPos var2, Direction var3) {
       var1.method6733(var2, this);
       var1.method6733(var2.method8349(var3.method536()), this);
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5 && !var1.method23448(var4.method23383())) {
          boolean var8 = var1.<Boolean>method23463(field19283);
          boolean var9 = var1.<Boolean>method23463(field19282);

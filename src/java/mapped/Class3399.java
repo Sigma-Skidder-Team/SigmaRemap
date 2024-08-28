@@ -192,7 +192,7 @@ public class Class3399 extends Class3397 {
       }
    }
 
-   public boolean method12017(Class1655 var1, BlockPos var2) {
+   public boolean method12017(World var1, BlockPos var2) {
       return var1.method6796(var2)
          || var1.method6796(var2.method8345())
          || var1.method6796(var2.method8347())
@@ -208,7 +208,7 @@ public class Class3399 extends Class3397 {
       return var1.method23462(Class8820.field39710) && var1.<Boolean>method23463(Class8820.field39710) ? 0 : this.field19051.getInt(var1.method23383());
    }
 
-   private void method12020(Class1655 var1, BlockPos var2, int var3, Random var4, int var5) {
+   private void method12020(World var1, BlockPos var2, int var3, Random var4, int var5) {
       int var8 = this.method12018(var1.method6738(var2));
       if (var4.nextInt(var3) < var8) {
          Class7380 var9 = var1.method6738(var2);
@@ -263,7 +263,7 @@ public class Class3399 extends Class3397 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       super.method11589(var1, var2, var3, var4, var5);
       var2.method6860().method20726(var3, this, method12024(var2.field9016));
    }

@@ -36,7 +36,7 @@ public abstract class Entity implements Class933, Class909 {
    public int field5021;
    private Entity field5022;
    public boolean field5023;
-   public Class1655 field5024;
+   public World field5024;
    public double field5025;
    public double field5026;
    public double field5027;
@@ -106,7 +106,7 @@ public abstract class Entity implements Class933, Class909 {
    private Class8847 field5091;
    public float field5092;
 
-   public Entity(Class8992<?> var1, Class1655 var2) {
+   public Entity(Class8992<?> var1, World var2) {
       this.field5017 = var1;
       this.field5024 = var2;
       this.field5091 = var1.method33221();
@@ -654,7 +654,7 @@ public abstract class Entity implements Class933, Class909 {
       return var0.field18048 * var0.field18048 + var0.field18050 * var0.field18050;
    }
 
-   public static Vector3d method3235(Entity var0, Vector3d var1, Class6488 var2, Class1655 var3, Class4832 var4, Class8544<Class6408> var5) {
+   public static Vector3d method3235(Entity var0, Vector3d var1, Class6488 var2, World var3, Class4832 var4, Class8544<Class6408> var5) {
       boolean var8 = var1.field18048 == 0.0;
       boolean var9 = var1.field18049 == 0.0;
       boolean var10 = var1.field18050 == 0.0;
@@ -1066,7 +1066,7 @@ public abstract class Entity implements Class933, Class909 {
       }
    }
 
-   public void method3268(Class1655 var1) {
+   public void method3268(World var1) {
       this.field5024 = var1;
    }
 
@@ -1262,7 +1262,7 @@ public abstract class Entity implements Class933, Class909 {
 
    public void method2739(Entity var1, int var2, Class8654 var3) {
       if (var1 instanceof Class878) {
-         Class9551.field44467.method15158((Class878)var1, this, var3);
+         CriteriaTriggers.field44467.method15158((Class878)var1, this, var3);
       }
    }
 
@@ -1480,25 +1480,25 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Nullable
-   public Class1000 method3300(Class3303 var1) {
+   public ItemEntity method3300(Class3303 var1) {
       return this.method3301(var1, 0);
    }
 
    @Nullable
-   public Class1000 method3301(Class3303 var1, int var2) {
+   public ItemEntity method3301(Class3303 var1, int var2) {
       return this.method3303(new ItemStack(var1), (float)var2);
    }
 
    @Nullable
-   public Class1000 method3302(ItemStack var1) {
+   public ItemEntity method3302(ItemStack var1) {
       return this.method3303(var1, 0.0F);
    }
 
    @Nullable
-   public Class1000 method3303(ItemStack var1, float var2) {
+   public ItemEntity method3303(ItemStack var1, float var2) {
       if (!var1.method32105()) {
          if (!this.field5024.field9020) {
-            Class1000 var5 = new Class1000(this.field5024, this.getPosX(), this.getPosY() + (double)var2, this.getPosZ(), var1);
+            ItemEntity var5 = new ItemEntity(this.field5024, this.getPosX(), this.getPosY() + (double)var2, this.getPosZ(), var1);
             var5.method4131();
             this.field5024.method6916(var5);
             return var5;
@@ -1525,8 +1525,8 @@ public abstract class Entity implements Class933, Class909 {
       }
    }
 
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
-      return Class2274.field14820;
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+      return ActionResultType.field14820;
    }
 
    public boolean method3305(Entity var1) {
@@ -1698,7 +1698,7 @@ public abstract class Entity implements Class933, Class909 {
             }
          } else {
             Class314 var5 = var4.method6715();
-            Class8705 var6 = this.field5024.method6813() != Class1655.field9000 ? Class1655.field9000 : Class1655.field8999;
+            Class8705 var6 = this.field5024.method6813() != World.field9000 ? World.field9000 : World.field8999;
             ServerWorld var7 = var5.method1318(var6);
             if (var7 != null && var5.method1312() && !this.method3328() && this.field5081++ >= var3) {
                this.field5024.method6820().method22503("portal");
@@ -1971,7 +1971,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       ITextComponent var3 = this.method3380();
       return var3 == null ? this.method3358() : method3357(var3);
    }
@@ -2008,7 +2008,7 @@ public abstract class Entity implements Class933, Class909 {
          Locale.ROOT,
          "%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]",
          this.getClass().getSimpleName(),
-         this.method2941().getString(),
+         this.getName().getString(),
          this.field5018,
          this.field5024 != null ? this.field5024.toString() : "~NULL~",
          this.getPosX(),
@@ -2056,7 +2056,7 @@ public abstract class Entity implements Class933, Class909 {
                var5.method3273(var4.field45665.field18048, var4.field45665.field18049, var4.field45665.field18050, var4.field45667, var5.field5032);
                var5.method3434(var4.field45666);
                var1.method6918(var5);
-               if (var1.method6813() == Class1655.field9001) {
+               if (var1.method6813() == World.THE_END) {
                   ServerWorld.method6973(var1);
                }
             }
@@ -2081,11 +2081,11 @@ public abstract class Entity implements Class933, Class909 {
 
    @Nullable
    public Class9761 method2744(ServerWorld var1) {
-      boolean var4 = this.field5024.method6813() == Class1655.field9001 && var1.method6813() == Class1655.field8999;
-      boolean var5 = var1.method6813() == Class1655.field9001;
+      boolean var4 = this.field5024.method6813() == World.THE_END && var1.method6813() == World.field8999;
+      boolean var5 = var1.method6813() == World.THE_END;
       if (!var4 && !var5) {
-         boolean var19 = var1.method6813() == Class1655.field9000;
-         if (this.field5024.method6813() != Class1655.field9000 && !var19) {
+         boolean var19 = var1.method6813() == World.field9000;
+         if (this.field5024.method6813() != World.field9000 && !var19) {
             return null;
          } else {
             Class7522 var7 = var1.method6810();
@@ -2161,7 +2161,7 @@ public abstract class Entity implements Class933, Class909 {
    public void method3372(Class8965 var1) {
       var1.method32806("Entity Type", () -> Class8992.method33198(this.method3204()) + " (" + this.getClass().getCanonicalName() + ")");
       var1.method32807("Entity ID", this.field5018);
-      var1.method32806("Entity Name", () -> this.method2941().getString());
+      var1.method32806("Entity Name", () -> this.getName().getString());
       var1.method32807("Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
       var1.method32807(
          "Entity's Block location",
@@ -2208,7 +2208,7 @@ public abstract class Entity implements Class933, Class909 {
 
    @Override
    public ITextComponent getDisplayName() {
-      return Class8218.method28577(this.method3344(), this.method2941())
+      return Class8218.method28577(this.method3344(), this.getName())
          .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.method3376()));
    }
 
@@ -2315,7 +2315,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public HoverEvent method3388() {
-      return new HoverEvent(HoverEvent$Action.SHOW_ENTITY, new HoverEvent$EntityHover(this.method3204(), this.getUniqueID(), this.method2941()));
+      return new HoverEvent(HoverEvent$Action.SHOW_ENTITY, new HoverEvent$EntityHover(this.method3204(), this.getUniqueID(), this.getName()));
    }
 
    public boolean method2749(Class878 var1) {
@@ -2366,7 +2366,7 @@ public abstract class Entity implements Class933, Class909 {
    public void method1328(ITextComponent var1, UUID var2) {
    }
 
-   public Class1655 method3395() {
+   public World method3395() {
       return this.field5024;
    }
 
@@ -2375,8 +2375,8 @@ public abstract class Entity implements Class933, Class909 {
       return this.field5024.method6715();
    }
 
-   public Class2274 method3397(PlayerEntity var1, Vector3d var2, Hand var3) {
-      return Class2274.field14820;
+   public ActionResultType applyPlayerInteraction(PlayerEntity var1, Vector3d var2, Hand var3) {
+      return ActionResultType.field14820;
    }
 
    public boolean method3398() {
@@ -2568,7 +2568,7 @@ public abstract class Entity implements Class933, Class909 {
          this.method3321(),
          !(this.field5024 instanceof ServerWorld) ? null : (ServerWorld)this.field5024,
          this.method2807(),
-         this.method2941().getString(),
+         this.getName().getString(),
          this.getDisplayName(),
          this.field5024.method6715(),
          this

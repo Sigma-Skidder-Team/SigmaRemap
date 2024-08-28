@@ -16,7 +16,7 @@ public class Class1096 extends Class1018 implements Class1011 {
    private int field6015;
    private UUID field6016;
 
-   public Class1096(Class8992<? extends Class1096> var1, Class1655 var2) {
+   public Class1096(Class8992<? extends Class1096> var1, World var2) {
       super(var1, var2);
    }
 

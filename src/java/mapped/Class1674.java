@@ -25,7 +25,7 @@ public class Class1674 implements Class1670 {
    private Class1684 field9113;
    private final Map<BlockPos, Class39> field9114 = Maps.newHashMap();
    public boolean field9115;
-   private final Class1655 field9116;
+   private final World field9116;
    private final Map<Class101, Class7527> field9117 = Maps.newEnumMap(Class101.class);
    private final Class8922 field9118;
    private final Map<BlockPos, Class944> field9119 = Maps.newHashMap();
@@ -44,7 +44,7 @@ public class Class1674 implements Class1670 {
    private final Class7481 field9132;
    private volatile boolean field9133;
 
-   public Class1674(Class1655 var1, Class7481 var2, Class1684 var3) {
+   public Class1674(World var1, Class7481 var2, Class1684 var3) {
       this(
          var1,
          var2,
@@ -59,7 +59,7 @@ public class Class1674 implements Class1670 {
    }
 
    public Class1674(
-      Class1655 var1,
+      World var1,
       Class7481 var2,
       Class1684 var3,
       Class8922 var4,
@@ -98,7 +98,7 @@ public class Class1674 implements Class1670 {
       }
    }
 
-   public Class1674(Class1655 var1, Class1672 var2) {
+   public Class1674(World var1, Class1672 var2) {
       this(
          var1,
          var2.method7072(),
@@ -559,7 +559,7 @@ public class Class1674 implements Class1670 {
       this.field9115 = var1;
    }
 
-   public Class1655 method7144() {
+   public World method7144() {
       return this.field9116;
    }
 

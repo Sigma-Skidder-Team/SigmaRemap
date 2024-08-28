@@ -171,7 +171,7 @@ public class WaypointsManager {
                      if ((!var18 || var19)
                         && !var17.method7141()
                         && this.field36365.field1338.method6883().method7352(var17.method7072())
-                        && this.field36365.field1338.method6813() == Class1655.field8999) {
+                        && this.field36365.field1338.method6813() == World.field8999) {
                         if (!var18) {
                            this.field36366.add(var17.method7072());
                         }

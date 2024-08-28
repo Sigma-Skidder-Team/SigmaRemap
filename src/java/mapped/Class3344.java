@@ -9,7 +9,7 @@ public class Class3344 extends Class3343 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       Class944 var8 = var1.method6759(var2);
       if (var8 instanceof Class968) {
@@ -17,7 +17,7 @@ public class Class3344 extends Class3343 {
       }
    }
 
-   public static void method11898(Class1655 var0, BlockPos var1, Class968 var2) {
+   public static void method11898(World var0, BlockPos var1, Class968 var2) {
       if (!var0.field9020) {
          Class7380 var5 = var2.method3775();
          boolean var6 = var5.method23448(Blocks.field36703) || var5.method23448(Blocks.field36704);
@@ -46,7 +46,7 @@ public class Class3344 extends Class3343 {
                var13.method5003();
 
                for (Class878 var12 : var0.<Class878>method7182(Class878.class, var13.method3389().method19664(50.0))) {
-                  Class9551.field44478.method15080(var12, var13);
+                  CriteriaTriggers.field44478.method15080(var12, var13);
                }
 
                var0.method6916(var13);
@@ -61,7 +61,7 @@ public class Class3344 extends Class3343 {
       }
    }
 
-   public static boolean method11899(Class1655 var0, BlockPos var1, ItemStack var2) {
+   public static boolean method11899(World var0, BlockPos var1, ItemStack var2) {
       return var2.method32107() == Class8514.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.field9020
          ? method11901().method38656(var0, var1) != null
          : false;

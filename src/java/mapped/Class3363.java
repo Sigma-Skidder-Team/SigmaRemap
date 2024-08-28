@@ -23,7 +23,7 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       super.method11512(var1, var2, var3, var4);
 
       for (int var7 = -2; var7 <= 2; var7++) {
@@ -67,18 +67,18 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          var4.method2766(var1.method23445(var2, var3));
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       } else {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       }
    }
 
    @Nullable
    @Override
-   public Class949 method11528(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public Class949 method11528(Class7380 var1, World var2, BlockPos var3) {
       Class944 var6 = var2.method6759(var3);
       if (!(var6 instanceof Class934)) {
          return null;
@@ -89,7 +89,7 @@ public class Class3363 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
          Class944 var8 = var1.method6759(var2);
          if (var8 instanceof Class934) {

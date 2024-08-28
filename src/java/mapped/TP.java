@@ -33,7 +33,7 @@ public class TP extends Command {
          Collections.sort(var6, new Class3596(this));
 
          for (Entity var8 : var6) {
-            if (var8.method2941().getString().equalsIgnoreCase(var2[0].method30899())) {
+            if (var8.getName().getString().equalsIgnoreCase(var2[0].method30899())) {
                this.field25710.field45879 = var8;
                break;
             }
@@ -53,7 +53,7 @@ public class TP extends Command {
                this.field25710.field45878 = 1;
                Client.getInstance()
                   .getNotificationManager()
-                  .post(new Notification("Teleport", "Teleporting to \"" + this.field25710.field45879.method2941().getString() + "\"...", 10000));
+                  .post(new Notification("Teleport", "Teleporting to \"" + this.field25710.field45879.getName().getString() + "\"...", 10000));
                this.field25710.field45877.method27118();
             }
          } else {

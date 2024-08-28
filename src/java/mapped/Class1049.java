@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class Class1049 extends Class1047 {
    private static final Class9289<Boolean> field5809 = Class9361.<Boolean>method35441(Class1049.class, Class7784.field33398);
 
-   public Class1049(Class8992<? extends Class1049> var1, Class1655 var2) {
+   public Class1049(Class8992<? extends Class1049> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6830(this);
    }
@@ -73,7 +73,7 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6997(this, var1);
    }
 
@@ -107,15 +107,15 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field37883 && this.method3066()) {
          this.method2863(Class6067.field26430, 1.0F, 1.0F);
          var5.method32182(1);
          ItemStack var6 = this.method4796();
          this.method4795(var6);
          if (!this.field5024.field9020) {
-            Class9551.field44474.method15152((Class878)var1, var6);
+            CriteriaTriggers.field44474.method15152((Class878)var1, var6);
          }
 
          if (!var5.method32105()) {
@@ -127,7 +127,7 @@ public abstract class Class1049 extends Class1047 {
          }
 
          this.method2904();
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          return super.method4285(var1, var2);
       }

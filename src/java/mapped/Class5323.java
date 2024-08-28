@@ -215,9 +215,9 @@ public class Class5323 extends Module {
                                 mc.field1339.field4902.field5443 = this.field23871;
                                 Vector3d var7 = Class9217.method34572(Direction.field673, this.field23870);
                                 Class8711 var8 = new Class8711(var7, Direction.field673, this.field23870, false);
-                                Class2274 var9 = mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var8);
+                                ActionResultType var9 = mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var8);
                                 mc.field1339.swingArm(Hand.field182);
-                                if (var9 == Class2274.field14818) {
+                                if (var9 == ActionResultType.field14818) {
                                     this.field23873++;
                                     mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10040));
                                     mc.field1339.field6131.field43914 = true;

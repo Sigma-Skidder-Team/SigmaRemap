@@ -34,17 +34,17 @@ public class Class5300 extends Module {
                             && ((ItemStack) var6.getSecond()).method32107() instanceof Class3267
                             && mc.field1338.method6774(var4.method17561()) instanceof PlayerEntity) {
                         Entity var7 = mc.field1338.method6774(var4.method17561());
-                        if (!this.field23833.equalsIgnoreCase(var7.method2941().getString())) {
+                        if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {
                             if (this.method15974("Chat Message")) {
-                                mc.field1339.method5389("Murderer is " + var7.method2941() + ", detected by Jello client");
+                                mc.field1339.method5389("Murderer is " + var7.getName() + ", detected by Jello client");
                             }
 
-                            this.field23833 = var7.method2941().getUnformattedComponentText();
+                            this.field23833 = var7.getName().getUnformattedComponentText();
                             this.field23835 = true;
                             this.field23836 = true;
                         }
 
-                        this.field23833 = var7.method2941().getUnformattedComponentText();
+                        this.field23833 = var7.getName().getUnformattedComponentText();
                     }
                 }
             }

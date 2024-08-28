@@ -20,7 +20,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public void method25051(Class1655 var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
       if (!var3.method23473() && !var3.<Boolean>method23463(field32712)) {
          if (var4.nextInt(64) == 0) {
             var1.method6745(

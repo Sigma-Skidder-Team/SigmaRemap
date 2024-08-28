@@ -58,7 +58,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
                var5 = this.field6660.method4032();
             }
 
-            ItemStack var6 = var4.method32126();
+            ItemStack var6 = var4.copy();
             var6.method32180(1);
             if (!this.field6660.method4046(var5, var6)) {
                field6658.error("Can't find any space for item in the inventory");
@@ -142,7 +142,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    public void method5873(Class5839 var1, ItemStack var2) {
       int var5 = this.field6660.method4037(var2);
       if (var5 != -1) {
-         ItemStack var6 = this.field6660.method3618(var5).method32126();
+         ItemStack var6 = this.field6660.method3618(var5).copy();
          if (!var6.method32105()) {
             if (var6.method32179() <= 1) {
                this.field6660.method3620(var5);
@@ -166,7 +166,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
       for (int var5 = 0; var5 < this.field6661.method18224() * this.field6661.method18225() + 1; var5++) {
          if (var5 != this.field6661.method18223()) {
-            ItemStack var6 = this.field6661.method18131(var5).method18265().method32126();
+            ItemStack var6 = this.field6661.method18131(var5).method18265().copy();
             if (!var6.method32105()) {
                int var7 = this.field6660.method4043(var6);
                if (var7 == -1 && var3.size() <= var4) {

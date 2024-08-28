@@ -30,27 +30,27 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       Class944 var9 = var2.method6759(var3);
       if (var9 instanceof Class945) {
          Class945 var10 = (Class945)var9;
-         ItemStack var11 = var4.method3094(var5);
+         ItemStack var11 = var4.getHeldItem(var5);
          Optional var12 = var10.method3797(var11);
          if (var12.isPresent()) {
-            if (!var2.field9020 && var10.method3798(!var4.field4919.field29609 ? var11 : var11.method32126(), ((Class4850)var12.get()).method14977())) {
+            if (!var2.field9020 && var10.method3798(!var4.field4919.field29609 ? var11 : var11.copy(), ((Class4850)var12.get()).method14977())) {
                var4.method2911(Class8876.field40168);
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
 
-            return Class2274.field14819;
+            return ActionResultType.field14819;
          }
       }
 
-      return Class2274.field14820;
+      return ActionResultType.field14820;
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.method3249() && var1.<Boolean>method23463(field18698) && var4 instanceof Class880 && !Class7858.method26332((Class880)var4)) {
          var4.method2741(Class8654.field38992, (float)this.field18704);
       }
@@ -59,7 +59,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          Class944 var8 = var2.method6759(var3);
          if (var8 instanceof Class945) {
@@ -73,7 +73,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    @Nullable
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       boolean var6 = var4.method6739(var5).method23472() == Class9479.field44066;
       return this.method11579()
@@ -109,7 +109,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18698)) {
          if (var4.nextInt(10) == 0) {
             var2.method6745(
@@ -143,7 +143,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    public static void method11652(Class1660 var0, BlockPos var1, Class7380 var2) {
       if (var0.method6714()) {
          for (int var5 = 0; var5 < 20; var5++) {
-            method11653((Class1655)var0, var1, var2.<Boolean>method23463(field18699), true);
+            method11653((World)var0, var1, var2.<Boolean>method23463(field18699), true);
          }
       }
 
@@ -174,7 +174,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11595(Class1655 var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
       if (!var1.field9020 && var4.method3327()) {
          Entity var7 = var4.method3460();
          boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224);
@@ -185,7 +185,7 @@ public class Class3244 extends Class3241 implements Class3207 {
       }
    }
 
-   public static void method11653(Class1655 var0, BlockPos var1, boolean var2, boolean var3) {
+   public static void method11653(World var0, BlockPos var1, boolean var2, boolean var3) {
       Random var6 = var0.method6814();
       Class7435 var7 = !var2 ? Class7940.field34106 : Class7940.field34107;
       var0.method6749(
@@ -211,7 +211,7 @@ public class Class3244 extends Class3241 implements Class3207 {
       }
    }
 
-   public static boolean method11654(Class1655 var0, BlockPos var1) {
+   public static boolean method11654(World var0, BlockPos var1) {
       for (int var4 = 1; var4 <= 5; var4++) {
          BlockPos var5 = var1.method8340(var4);
          Class7380 var6 = var0.method6738(var5);

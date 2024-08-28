@@ -16,7 +16,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public Class7995<? extends Class941> method11904(Class7380 var1, Class1655 var2, BlockPos var3, boolean var4) {
+   public Class7995<? extends Class941> method11904(Class7380 var1, World var2, BlockPos var3, boolean var4) {
       return Class6139::method19041;
    }
 
@@ -39,25 +39,25 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       Class980 var9 = var4.method2942();
       Class944 var10 = var2.method6759(var3);
       if (var9 != null && var10 instanceof Class943) {
          BlockPos var11 = var3.method8311();
          if (var2.method6738(var11).method23400(var2, var11)) {
-            return Class2274.method9002(var2.field9020);
+            return ActionResultType.method9002(var2.field9020);
          } else if (!var2.field9020) {
             Class943 var12 = (Class943)var10;
             var9.method4064(var12);
             var4.method2766(new Class953((var1x, var2x, var3x) -> Class5813.method18162(var1x, var2x, var9), field18863));
             var4.method2911(Class8876.field40156);
             Class4388.method13832(var4, true);
-            return Class2274.field14819;
+            return ActionResultType.field14819;
          } else {
-            return Class2274.field14818;
+            return ActionResultType.field14818;
          }
       } else {
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       }
    }
 
@@ -67,7 +67,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       for (int var7 = 0; var7 < 3; var7++) {
          int var8 = var4.nextInt(2) * 2 - 1;
          int var9 = var4.nextInt(2) * 2 - 1;

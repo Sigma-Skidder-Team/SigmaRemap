@@ -2,25 +2,25 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class886 extends Class884 {
+public class Class886 extends AbstractArrowEntity {
    private static final Class9289<Byte> field5111 = Class9361.<Byte>method35441(Class886.class, Class7784.field33390);
    private static final Class9289<Boolean> field5112 = Class9361.<Boolean>method35441(Class886.class, Class7784.field33398);
    private ItemStack field5113 = new ItemStack(Class8514.field38144);
    private boolean field5114;
    public int field5115;
 
-   public Class886(Class8992<? extends Class886> var1, Class1655 var2) {
+   public Class886(Class8992<? extends Class886> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class886(Class1655 var1, Class880 var2, ItemStack var3) {
+   public Class886(World var1, Class880 var2, ItemStack var3) {
       super(Class8992.field41093, var2, var1);
-      this.field5113 = var3.method32126();
+      this.field5113 = var3.copy();
       this.field5063.method35446(field5111, (byte)Class7858.method26336(var3));
       this.field5063.method35446(field5112, var3.method32159());
    }
 
-   public Class886(Class1655 var1, double var2, double var4, double var6) {
+   public Class886(World var1, double var2, double var4, double var6) {
       super(Class8992.field41093, var2, var4, var6, var1);
    }
 
@@ -74,7 +74,7 @@ public class Class886 extends Class884 {
 
    @Override
    public ItemStack method3480() {
-      return this.field5113.method32126();
+      return this.field5113.copy();
    }
 
    public boolean method3496() {

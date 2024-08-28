@@ -6,7 +6,7 @@ public class Class1103 extends Class1009 {
    private int field6061;
    private static final Class9289<Byte> field6062 = Class9361.<Byte>method35441(Class1103.class, Class7784.field33390);
 
-   public Class1103(Class8992<? extends Class1103> var1, Class1655 var2) {
+   public Class1103(Class8992<? extends Class1103> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, -1.0F);
       this.method4224(Class2163.field14190, 8.0F);

@@ -13,7 +13,7 @@ public abstract class Class3241 extends Block implements Class3245 {
    }
 
    @Override
-   public boolean method11647(Class7380 var1, Class1655 var2, BlockPos var3, int var4, int var5) {
+   public boolean method11647(Class7380 var1, World var2, BlockPos var3, int var4, int var5) {
       super.method11647(var1, var2, var3, var4, var5);
       Class944 var8 = var2.method6759(var3);
       return var8 != null ? var8.method3751(var4, var5) : false;
@@ -21,7 +21,7 @@ public abstract class Class3241 extends Block implements Class3245 {
 
    @Nullable
    @Override
-   public Class949 method11528(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public Class949 method11528(Class7380 var1, World var2, BlockPos var3) {
       Class944 var6 = var2.method6759(var3);
       return !(var6 instanceof Class949) ? null : (Class949)var6;
    }

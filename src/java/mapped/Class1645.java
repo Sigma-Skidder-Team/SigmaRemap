@@ -351,7 +351,7 @@ public class Class1645 extends Class314 implements Class1646 {
 
    @Override
    public boolean method1378(ServerWorld var1, BlockPos var2, PlayerEntity var3) {
-      if (var1.method6813() == Class1655.field8999) {
+      if (var1.method6813() == World.field8999) {
          if (!this.getPlayerList().method19470().method14440()) {
             if (!this.getPlayerList().canSendCommands(var3.getGameProfile())) {
                if (this.method1377() > 0) {

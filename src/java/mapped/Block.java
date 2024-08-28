@@ -50,7 +50,7 @@ public class Block extends Class3390 implements Class3303 {
       return !(var0 instanceof Class3292) ? Blocks.AIR : ((Class3292)var0).method11845();
    }
 
-   public static Class7380 method11538(Class7380 var0, Class7380 var1, Class1655 var2, BlockPos var3) {
+   public static Class7380 method11538(Class7380 var0, Class7380 var1, World var2, BlockPos var3) {
       Class6408 var6 = Class8022.method27434(var0.method23414(var2, var3), var1.method23414(var2, var3), Class9477.field44039)
          .method19517((double)var3.method8304(), (double)var3.getY(), (double)var3.method8306());
 
@@ -183,7 +183,7 @@ public class Block extends Class3390 implements Class3303 {
       return !method11550(var1.method23412(var2, var3)) && var1.method23449().method23474();
    }
 
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
    }
 
    public void method11551(Class1660 var1, BlockPos var2, Class7380 var3) {
@@ -208,7 +208,7 @@ public class Block extends Class3390 implements Class3303 {
       return var0.method23434(var8);
    }
 
-   public static void method11554(Class7380 var0, Class1655 var1, BlockPos var2) {
+   public static void method11554(Class7380 var0, World var1, BlockPos var2) {
       if (var1 instanceof ServerWorld) {
          method11552(var0, (ServerWorld)var1, var2, (Class944)null).forEach(var2x -> method11557(var1, var2, var2x));
          var0.method23433((ServerWorld)var1, var2, ItemStack.EMPTY);
@@ -222,20 +222,20 @@ public class Block extends Class3390 implements Class3303 {
       }
    }
 
-   public static void method11556(Class7380 var0, Class1655 var1, BlockPos var2, Class944 var3, Entity var4, ItemStack var5) {
+   public static void method11556(Class7380 var0, World var1, BlockPos var2, Class944 var3, Entity var4, ItemStack var5) {
       if (var1 instanceof ServerWorld) {
          method11553(var0, (ServerWorld)var1, var2, var3, var4, var5).forEach(var2x -> method11557(var1, var2, var2x));
          var0.method23433((ServerWorld)var1, var2, var5);
       }
    }
 
-   public static void method11557(Class1655 var0, BlockPos var1, ItemStack var2) {
+   public static void method11557(World var0, BlockPos var1, ItemStack var2) {
       if (!var0.field9020 && !var2.method32105() && var0.method6789().method17135(Class5462.field24228)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
          double var8 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
          double var10 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
-         Class1000 var12 = new Class1000(var0, (double)var1.method8304() + var6, (double)var1.getY() + var8, (double)var1.method8306() + var10, var2);
+         ItemEntity var12 = new ItemEntity(var0, (double)var1.method8304() + var6, (double)var1.getY() + var8, (double)var1.method8306() + var10, var2);
          var12.method4131();
          var0.method6916(var12);
       }
@@ -244,9 +244,9 @@ public class Block extends Class3390 implements Class3303 {
    public void method11558(ServerWorld var1, BlockPos var2, int var3) {
       if (var1.method6789().method17135(Class5462.field24228)) {
          while (var3 > 0) {
-            int var6 = Class1003.method4179(var3);
+            int var6 = ExperienceOrbEntity.method4179(var3);
             var3 -= var6;
-            var1.method6916(new Class1003(var1, (double)var2.method8304() + 0.5, (double)var2.getY() + 0.5, (double)var2.method8306() + 0.5, var6));
+            var1.method6916(new ExperienceOrbEntity(var1, (double)var2.method8304() + 0.5, (double)var2.getY() + 0.5, (double)var2.method8306() + 0.5, var6));
          }
       }
    }
@@ -255,10 +255,10 @@ public class Block extends Class3390 implements Class3303 {
       return this.field19006;
    }
 
-   public void method11560(Class1655 var1, BlockPos var2, Class7782 var3) {
+   public void method11560(World var1, BlockPos var2, Class7782 var3) {
    }
 
-   public void method11561(Class1655 var1, BlockPos var2, Entity var3) {
+   public void method11561(World var1, BlockPos var2, Entity var3) {
    }
 
    @Nullable
@@ -266,13 +266,13 @@ public class Block extends Class3390 implements Class3303 {
       return this.method11579();
    }
 
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
+   public void method11562(World var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       var2.method2913(Class8876.field40096.method172(this));
       var2.method2931(0.005F);
       method11556(var4, var1, var3, var5, var2, var6);
    }
 
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
    }
 
    public boolean method11564() {
@@ -291,7 +291,7 @@ public class Block extends Class3390 implements Class3303 {
       return this.field18614;
    }
 
-   public void method11567(Class1655 var1, BlockPos var2, Entity var3, float var4) {
+   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       var3.method2921(var4, 1.0F);
    }
 
@@ -319,14 +319,14 @@ public class Block extends Class3390 implements Class3303 {
       return this.field19011;
    }
 
-   public void method11574(Class1655 var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
+   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
       var1.method6869(var4, 2001, var2, method11535(var3));
       if (this.method11540(Class7645.field32810)) {
          Class4388.method13832(var4, false);
       }
    }
 
-   public void method11575(Class1655 var1, BlockPos var2) {
+   public void method11575(World var1, BlockPos var2) {
    }
 
    public boolean method11576(Class7782 var1) {

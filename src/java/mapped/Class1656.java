@@ -16,7 +16,7 @@ import java.util.Random;
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
-public class Class1656 extends Class1655 {
+public class Class1656 extends World {
    public final Int2ObjectMap<Entity> field9025 = new Int2ObjectOpenHashMap();
    private final ClientPlayNetHandler field9026;
    private final Class264 field9027;
@@ -38,7 +38,7 @@ public class Class1656 extends Class1655 {
    private boolean field9037 = false;
 
    public Class1656(
-           ClientPlayNetHandler var1, Class6606 var2, Class8705<Class1655> var3, Class9535 var4, int var5, Supplier<Class7165> var6, Class264 var7, boolean var8, long var9
+           ClientPlayNetHandler var1, Class6606 var2, Class8705<World> var3, Class9535 var4, int var5, Supplier<Class7165> var6, Class264 var7, boolean var8, long var9
    ) {
       super(var2, var3, var4, var6, true, var8, var9);
       this.field9026 = var1;

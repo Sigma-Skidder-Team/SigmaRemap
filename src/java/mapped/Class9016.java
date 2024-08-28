@@ -21,7 +21,7 @@ public class Class9016 {
    private final Class7828 field41234;
    private final Class322<Runnable> field41235;
    private final Executor field41236;
-   private Class1655 field41237;
+   private World field41237;
    private final Class264 field41238;
    private Vector3d field41239 = Vector3d.field18047;
    private int field41240;
@@ -33,11 +33,11 @@ public class Class9016 {
    private static final boolean field41246 = Class9299.field42895.method20214();
    public static int field41247;
 
-   public Class9016(Class1655 var1, Class264 var2, Executor var3, boolean var4, Class7828 var5) {
+   public Class9016(World var1, Class264 var2, Executor var3, boolean var4, Class7828 var5) {
       this(var1, var2, var3, var4, var5, -1);
    }
 
-   public Class9016(Class1655 var1, Class264 var2, Executor var3, boolean var4, Class7828 var5, int var6) {
+   public Class9016(World var1, Class264 var2, Executor var3, boolean var4, Class7828 var5, int var6) {
       this.field41237 = var1;
       this.field41238 = var2;
       int var9 = Math.max(
@@ -76,7 +76,7 @@ public class Class9016 {
       this.field41235.method1641(this::method33319);
    }
 
-   public void method33318(Class1655 var1) {
+   public void method33318(World var1) {
       this.field41237 = var1;
    }
 
@@ -212,7 +212,7 @@ public class Class9016 {
    }
 
    // $VF: synthetic method
-   public static Class1655 method33344(Class9016 var0) {
+   public static World method33344(Class9016 var0) {
       return var0.field41237;
    }
 

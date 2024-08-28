@@ -48,8 +48,8 @@ public class Class5203 extends Module {
         if (this.method15996()) {
             if (var1.method13932() instanceof CUseEntityPacket) {
                 CUseEntityPacket var4 = (CUseEntityPacket) var1.method13932();
-                Class1968 var5 = var4.method17316();
-                if (var5 != Class1968.field12833) {
+                CUseEntityPacketAction var5 = var4.getAction();
+                if (var5 != CUseEntityPacketAction.ATTACK) {
                 }
             }
         }

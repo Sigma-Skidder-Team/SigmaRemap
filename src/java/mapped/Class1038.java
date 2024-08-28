@@ -20,11 +20,11 @@ public class Class1038 extends Class1009 {
    private int field5766;
    private int field5767;
 
-   public Class1038(Class8992<? extends Class1038> var1, Class1655 var2) {
+   public Class1038(Class8992<? extends Class1038> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class1038(Class1655 var1) {
+   public Class1038(World var1) {
       this(Class8992.field41107, var1);
    }
 

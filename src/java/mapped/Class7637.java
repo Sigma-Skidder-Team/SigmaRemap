@@ -20,7 +20,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25051(Class1655 var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
       BlockPos var7 = var2.method8311();
       if (var1.method6738(var7).method23393() && !var1.method6738(var7).method23409(var1, var7)) {
          if (var4.nextInt(100) == 0) {
@@ -49,7 +49,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25053(Class1655 var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25053(World var1, BlockPos var2, Class7379 var3, Random var4) {
       if (var1.method6789().method17135(Class5462.field24223)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
@@ -142,7 +142,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public int method25093(Class1655 var1, BlockPos var2, Class7379 var3, Class7379 var4) {
+   public int method25093(World var1, BlockPos var2, Class7379 var3, Class7379 var4) {
       int var7 = this.method25057(var1);
       if (!var3.method23474()
          && !var4.method23474()

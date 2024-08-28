@@ -327,7 +327,7 @@ public class Class9725 {
 
    private static void method38090(Class39 var0, Class1674 var1) {
       Class41 var4 = var0.method131("Entities", 10);
-      Class1655 var5 = var1.method7144();
+      World var5 = var1.method7144();
 
       for (int var6 = 0; var6 < var4.size(); var6++) {
          Class39 var7 = var4.method153(var6);

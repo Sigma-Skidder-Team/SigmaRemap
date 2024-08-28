@@ -57,7 +57,7 @@ public class Class8002 {
 
    private static int method27336(Class6619 var0, ResourceLocation var1, Vector3d var2, Class39 var3, boolean var4) throws CommandSyntaxException {
       BlockPos var7 = new BlockPos(var2);
-      if (Class1655.method6717(var7)) {
+      if (World.method6717(var7)) {
          Class39 var8 = var3.method79();
          var8.method109("id", var1.toString());
          ServerWorld var9 = var0.method20172();

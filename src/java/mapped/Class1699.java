@@ -174,7 +174,7 @@ public class Class1699 implements AutoCloseable {
       return 1.0F - var4 * var4 * var4 * var4;
    }
 
-   private float method7320(Class1655 var1, int var2) {
+   private float method7320(World var1, int var2) {
       return var1.method6812().method36890(var2);
    }
 

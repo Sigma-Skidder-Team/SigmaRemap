@@ -14,19 +14,19 @@ public class Class3316 extends Class3314 {
       super(var1);
    }
 
-   public static ItemStack method11859(Class1655 var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
+   public static ItemStack method11859(World var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
       ItemStack var8 = new ItemStack(Class8514.field37955);
       method11863(var8, var0, var1, var2, var3, var4, var5, var0.method6813());
       return var8;
    }
 
    @Nullable
-   public static Class7529 method11860(ItemStack var0, Class1655 var1) {
+   public static Class7529 method11860(ItemStack var0, World var1) {
       return var1.method6798(method11864(method11862(var0)));
    }
 
    @Nullable
-   public static Class7529 method11861(ItemStack var0, Class1655 var1) {
+   public static Class7529 method11861(ItemStack var0, World var1) {
       Class7529 var4 = method11860(var0, var1);
       if (var4 == null && var1 instanceof ServerWorld) {
          var4 = method11863(var0, var1, var1.method6788().method20029(), var1.method6788().method20031(), 3, false, false, var1.method6813());
@@ -40,7 +40,7 @@ public class Class3316 extends Class3314 {
       return var3 != null && var3.method119("map", 99) ? var3.method122("map") : 0;
    }
 
-   private static Class7529 method11863(ItemStack var0, Class1655 var1, int var2, int var3, int var4, boolean var5, boolean var6, Class8705<Class1655> var7) {
+   private static Class7529 method11863(ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, Class8705<World> var7) {
       int var10 = var1.method6800();
       Class7529 var11 = new Class7529(method11864(var10));
       var11.method24589(var2, var3, var4, var5, var6, var7);
@@ -53,7 +53,7 @@ public class Class3316 extends Class3314 {
       return "map_" + var0;
    }
 
-   public void method11865(Class1655 var1, Entity var2, Class7529 var3) {
+   public void method11865(World var1, Entity var2, Class7529 var3) {
       if (var1.method6813() == var3.field32318 && var2 instanceof PlayerEntity) {
          int var6 = 1 << var3.field32321;
          int var7 = var3.field32316;
@@ -179,7 +179,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   private Class7380 method11866(Class1655 var1, Class7380 var2, BlockPos var3) {
+   private Class7380 method11866(World var1, Class7380 var2, BlockPos var3) {
       Class7379 var6 = var2.method23449();
       return !var6.method23474() && !var2.method23454(var1, var3, Direction.field673) ? var6.method23484() : var2;
    }
@@ -289,7 +289,7 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public void method11724(ItemStack var1, Class1655 var2, Entity var3, int var4, boolean var5) {
+   public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.field9020) {
          Class7529 var8 = method11861(var1, var2);
          if (var8 != null) {
@@ -307,12 +307,12 @@ public class Class3316 extends Class3314 {
 
    @Nullable
    @Override
-   public Packet<?> method11858(ItemStack var1, Class1655 var2, PlayerEntity var3) {
+   public Packet<?> method11858(ItemStack var1, World var2, PlayerEntity var3) {
       return method11861(var1, var2).method24597(var1, var2, var3);
    }
 
    @Override
-   public void method11725(ItemStack var1, Class1655 var2, PlayerEntity var3) {
+   public void method11725(ItemStack var1, World var2, PlayerEntity var3) {
       Class39 var6 = var1.method32142();
       if (var6 != null && var6.method119("map_scale_direction", 99)) {
          method11869(var1, var2, var6.method122("map_scale_direction"));
@@ -323,7 +323,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   public static void method11869(ItemStack var0, Class1655 var1, int var2) {
+   public static void method11869(ItemStack var0, World var1, int var2) {
       Class7529 var5 = method11861(var0, var1);
       if (var5 != null) {
          method11863(
@@ -339,7 +339,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   public static void method11870(Class1655 var0, ItemStack var1) {
+   public static void method11870(World var0, ItemStack var1) {
       Class7529 var4 = method11861(var1, var0);
       if (var4 != null) {
          Class7529 var5 = method11863(var1, var0, 0, 0, var4.field32321, var4.field32319, var4.field32320, var4.field32318);
@@ -348,7 +348,7 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       Class7529 var7 = var2 != null ? method11861(var1, var2) : null;
       if (var7 != null && var7.field32323) {
          var3.add(new TranslationTextComponent("filled_map.locked", method11862(var1)).mergeStyle(TextFormatting.GRAY));
@@ -376,7 +376,7 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
+   public ActionResultType method11707(Class5911 var1) {
       Class7380 var4 = var1.method18360().method6738(var1.method18345());
       if (!var4.method23446(Class7645.field32760)) {
          return super.method11707(var1);
@@ -386,7 +386,7 @@ public class Class3316 extends Class3314 {
             var5.method24600(var1.method18360(), var1.method18345());
          }
 
-         return Class2274.method9002(var1.method18360().field9020);
+         return ActionResultType.method9002(var1.method18360().field9020);
       }
    }
 }

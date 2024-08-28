@@ -56,12 +56,12 @@ public class Class3270 extends Class3264 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (var1.method18354() == Direction.field672) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
          PlayerEntity var7 = var1.method18358();
          Class7380 var8 = field18770.get(var6.method23383());
@@ -79,7 +79,7 @@ public class Class3270 extends Class3264 {
          }
 
          if (var9 == null) {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else {
             if (!var4.field9020) {
                var4.method6725(var5, var9, 11);
@@ -88,7 +88,7 @@ public class Class3270 extends Class3264 {
                }
             }
 
-            return Class2274.method9002(var4.field9020);
+            return ActionResultType.method9002(var4.field9020);
          }
       }
    }

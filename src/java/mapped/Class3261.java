@@ -30,8 +30,8 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       if (!method11755(var6)) {
          if (var2.method2983(var6).method32105()) {
             return Class6794.<ItemStack>method20699(var6);
@@ -52,7 +52,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
       int var7 = this.method11728(var1) - var4;
       float var8 = method11769(var7, var1);
       if (var8 >= 1.0F && !method11755(var1) && method11753(var3, var1)) {
@@ -76,16 +76,16 @@ public class Class3261 extends Class3262 implements Class3260 {
       int var5 = var4 != 0 ? 3 : 1;
       boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).field4919.field29609;
       ItemStack var7 = var0.method2983(var1);
-      ItemStack var8 = var7.method32126();
+      ItemStack var8 = var7.copy();
 
       for (int var9 = 0; var9 < var5; var9++) {
          if (var9 > 0) {
-            var7 = var8.method32126();
+            var7 = var8.copy();
          }
 
          if (var7.method32105() && var6) {
             var7 = new ItemStack(Class8514.field37797);
-            var8 = var7.method32126();
+            var8 = var7.copy();
          }
 
          if (!method11754(var0, var1, var7, var9 > 0, var6)) {
@@ -108,7 +108,7 @@ public class Class3261 extends Class3262 implements Class3260 {
                ((PlayerEntity)var0).field4902.method4048(var2);
             }
          } else {
-            var8 = var2.method32126();
+            var8 = var2.copy();
          }
 
          method11757(var1, var8);
@@ -171,7 +171,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static void method11761(
-           Class1655 var0, Class880 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
+           World var0, Class880 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.field9020) {
          boolean var12 = var4.method32107() == Class8514.field38068;
@@ -179,7 +179,7 @@ public class Class3261 extends Class3262 implements Class3260 {
          if (!var12) {
             var13 = method11762(var0, var1, var3, var4);
             if (var6 || var9 != 0.0F) {
-               ((Class884)var13).field5102 = Class2192.field14333;
+               ((AbstractArrowEntity)var13).field5102 = Class2192.field14333;
             }
          } else {
             var13 = new Class888(var0, var4, var1, var1.getPosX(), var1.method3442() - 0.15F, var1.getPosZ(), true);
@@ -203,9 +203,9 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static Class884 method11762(Class1655 var0, Class880 var1, ItemStack var2, ItemStack var3) {
+   private static AbstractArrowEntity method11762(World var0, Class880 var1, ItemStack var2, ItemStack var3) {
       Class3308 var6 = (Class3308)(!(var3.method32107() instanceof Class3308) ? Class8514.field37797 : var3.method32107());
-      Class884 var7 = var6.method11850(var0, var3, var1);
+      AbstractArrowEntity var7 = var6.method11850(var0, var3, var1);
       if (var1 instanceof PlayerEntity) {
          var7.method3484(true);
       }
@@ -220,7 +220,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return var7;
    }
 
-   public static void method11763(Class1655 var0, Class880 var1, Hand var2, ItemStack var3, float var4, float var5) {
+   public static void method11763(World var0, Class880 var1, Hand var2, ItemStack var3, float var4, float var5) {
       List var8 = method11758(var3);
       float[] var9 = method11764(var1.method3013());
 
@@ -255,11 +255,11 @@ public class Class3261 extends Class3262 implements Class3260 {
       return 1.0F / (field18735.nextFloat() * 0.5F + 1.8F) + var3;
    }
 
-   private static void method11766(Class1655 var0, Class880 var1, ItemStack var2) {
+   private static void method11766(World var0, Class880 var1, ItemStack var2) {
       if (var1 instanceof Class878) {
          Class878 var5 = (Class878)var1;
          if (!var0.field9020) {
-            Class9551.field44496.method15103(var5, var2);
+            CriteriaTriggers.field44496.method15103(var5, var2);
          }
 
          var5.method2913(Class8876.field40098.method172(var2.method32107()));
@@ -269,7 +269,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11704(Class1655 var1, Class880 var2, ItemStack var3, int var4) {
+   public void method11704(World var1, Class880 var2, ItemStack var3, int var4) {
       if (!var1.field9020) {
          int var7 = Class7858.method26311(Class8122.field34930, var3);
          Class9455 var8 = this.method11768(var7);
@@ -330,7 +330,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       List var7 = method11758(var1);
       if (method11755(var1) && !var7.isEmpty()) {
          ItemStack var8 = (ItemStack)var7.get(0);

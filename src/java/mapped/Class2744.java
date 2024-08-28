@@ -47,7 +47,7 @@ public class Class2744 extends Class2736 {
    @Override
    public void method10804() {
       if (this.field17272) {
-         Class1655 var3 = this.field17258.field5024;
+         World var3 = this.field17258.field5024;
          BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
             .method8349(this.field17271);
          Class7380 var5 = var3.method6738(var4);

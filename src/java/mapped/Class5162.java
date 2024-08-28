@@ -69,9 +69,9 @@ public class Class5162 extends Module {
     @EventTarget
     private void method16058(Class4402 var1) {
         if (this.method15996()) {
-            if (this.field23433 && var1.method13932() instanceof Class5564) {
-                Class5564 var4 = (Class5564) var1.method13932();
-                if (var4.method17491() == Class2175.field14279) {
+            if (this.field23433 && var1.method13932() instanceof CClientStatusPacket) {
+                CClientStatusPacket var4 = (CClientStatusPacket) var1.method13932();
+                if (var4.getStatus() == CClientStatusPacketState.field14279) {
                     var1.method13900(true);
                 }
             }
@@ -83,7 +83,7 @@ public class Class5162 extends Module {
         if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
                 && !(mc.field1355 instanceof Class859)
                 && Class8005.method27349() <= Class5989.field26136.method18582()) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23433 = true;
         }
 

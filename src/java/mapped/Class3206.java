@@ -60,7 +60,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (this.field19004 != Class8649.field38967) {
          var1 = var1.method23459(field18594);
          var2.method6725(var3, var1, 2);
@@ -69,13 +69,13 @@ public class Class3206 extends Class3198 implements Class3207 {
          }
 
          this.method11530(var4, var2, var3, var1.<Boolean>method23463(field18594));
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
-   public void method11530(PlayerEntity var1, Class1655 var2, BlockPos var3, boolean var4) {
+   public void method11530(PlayerEntity var1, World var2, BlockPos var3, boolean var4) {
       if (!var4) {
          int var7 = this.field19004 != Class8649.field38967 ? 1013 : 1036;
          var2.method6869(var1, var7, var3, 0);
@@ -86,7 +86,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          boolean var9 = var2.method6780(var3);
          if (var9 != var1.<Boolean>method23463(field18596)) {

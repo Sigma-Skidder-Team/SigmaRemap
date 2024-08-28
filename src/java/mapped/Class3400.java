@@ -36,7 +36,7 @@ public class Class3400 extends Block {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       return !var1.<Boolean>method23463(field19054) ? 0 : 15;
    }
 

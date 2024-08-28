@@ -7,11 +7,11 @@ public class Class994 extends Class916 {
    public double field5484;
    private static final Class120 field5485 = Class120.method339(Class8514.field37798, Class8514.field37799);
 
-   public Class994(Class8992<? extends Class994> var1, Class1655 var2) {
+   public Class994(Class8992<? extends Class994> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class994(Class1655 var1, double var2, double var4, double var6) {
+   public Class994(World var1, double var2, double var4, double var6) {
       super(Class8992.field41053, var1, var2, var4, var6);
    }
 
@@ -92,8 +92,8 @@ public class Class994 extends Class916 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (field5485.test(var5) && this.field5482 + 3600 <= 32000) {
          if (!var1.field4919.field29609) {
             var5.method32182(1);
@@ -107,7 +107,7 @@ public class Class994 extends Class916 {
          this.field5484 = this.getPosZ() - var1.getPosZ();
       }
 
-      return Class2274.method9002(this.field5024.field9020);
+      return ActionResultType.method9002(this.field5024.field9020);
    }
 
    @Override

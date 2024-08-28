@@ -109,7 +109,7 @@ public class Class934 extends Class944 implements Class933, Class935 {
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       return (ITextComponent)(this.field5292 == null ? new TranslationTextComponent("container.enchant") : this.field5292);
    }
 

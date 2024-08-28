@@ -22,7 +22,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    private static final Class8369 field5666 = Class8763.method31620(20, 39);
    private UUID field5667;
 
-   public Class1012(Class8992<? extends Class1012> var1, Class1655 var2) {
+   public Class1012(Class8992<? extends Class1012> var1, World var2) {
       super(var1, var2);
       this.method4379(false);
    }
@@ -239,7 +239,7 @@ public class Class1012 extends Class1013 implements Class1011 {
       if (!this.method2760(var1)) {
          Entity var5 = var1.method31109();
          this.method4403(false);
-         if (var5 != null && !(var5 instanceof PlayerEntity) && !(var5 instanceof Class884)) {
+         if (var5 != null && !(var5 instanceof PlayerEntity) && !(var5 instanceof AbstractArrowEntity)) {
             var2 = (var2 + 1.0F) / 2.0F;
          }
 
@@ -273,8 +273,8 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       Class3257 var6 = var5.method32107();
       if (!this.field5024.field9020) {
          if (!this.method4393()) {
@@ -293,7 +293,7 @@ public class Class1012 extends Class1013 implements Class1011 {
                   this.field5024.method6786(this, (byte)7);
                }
 
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
          } else {
             if (this.method4381(var5) && this.method3042() < this.method3075()) {
@@ -302,17 +302,17 @@ public class Class1012 extends Class1013 implements Class1011 {
                }
 
                this.method3041((float)var6.method11745().method36157());
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
 
             if (!(var6 instanceof Class3321)) {
-               Class2274 var9 = super.method4285(var1, var2);
-               if ((!var9.method9000() || this.method3005()) && this.method4401(var1)) {
+               ActionResultType var9 = super.method4285(var1, var2);
+               if ((!var9.isSuccessOrConsume() || this.method3005()) && this.method4401(var1)) {
                   this.method4403(!this.method4402());
                   this.field4981 = false;
                   this.field5599.method21666();
                   this.method4233((Class880)null);
-                  return Class2274.field14818;
+                  return ActionResultType.field14818;
                }
 
                return var9;
@@ -325,14 +325,14 @@ public class Class1012 extends Class1013 implements Class1011 {
                   var5.method32182(1);
                }
 
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
          }
 
          return super.method4285(var1, var2);
       } else {
          boolean var7 = this.method4401(var1) || this.method4393() || var6 == Class8514.field37935 && !this.method4393() && !this.method4369();
-         return !var7 ? Class2274.field14820 : Class2274.field14819;
+         return !var7 ? ActionResultType.field14820 : ActionResultType.field14819;
       }
    }
 

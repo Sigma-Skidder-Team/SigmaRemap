@@ -4,7 +4,7 @@ public class Class6996 extends Class6995 {
    private static String[] field30269;
    public final Class1017 field30270;
 
-   public Class6996(Class1017 var1, Class1006 var2, Class1655 var3) {
+   public Class6996(Class1017 var1, Class1006 var2, World var3) {
       super(var2, var3);
       this.field30270 = var1;
    }

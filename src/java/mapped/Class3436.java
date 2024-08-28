@@ -78,7 +78,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public void method11574(Class1655 var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
+   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
       if (!var1.field9020 && var4.field4919.field29609) {
          BlockPos var7 = var2.method8349(var3.<Direction>method23463(field19198).method536());
          if (this.method12108(var3, var1.method6738(var7))) {
@@ -90,7 +90,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          super.method11513(var1, var2, var3, var4, var5);
          BlockPos var8 = var3.method8349(var1.<Direction>method23463(field19198).method536());
@@ -115,7 +115,7 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var1.method23443(var2, var3)) {
          BlockPos var9 = var3.method8349(var1.<Direction>method23463(field19198).method536());
          var2.method6738(var9).method23423(var2, var9, var4, var5, false);

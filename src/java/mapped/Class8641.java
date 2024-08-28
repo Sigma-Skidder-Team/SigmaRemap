@@ -137,7 +137,7 @@ public class Class8641 {
 
    public void method31049(Class1674 var1) {
       if (this.field38908 || this.field38911 != 0 || this.field38910 != 0) {
-         Class1655 var4 = var1.method7144();
+         World var4 = var1.method7144();
          int var5 = 0;
 
          for (int var6 = 0; var6 < this.field38909.length; var6++) {
@@ -175,13 +175,13 @@ public class Class8641 {
       }
    }
 
-   private void method31050(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method31050(World var1, BlockPos var2, Class7380 var3) {
       if (var3.method23383().method11998()) {
          this.method31051(var1, var2);
       }
    }
 
-   private void method31051(Class1655 var1, BlockPos var2) {
+   private void method31051(World var1, BlockPos var2) {
       Class944 var5 = var1.method6759(var2);
       if (var5 != null) {
          Class5610 var6 = var5.method3776();

@@ -18,7 +18,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    private Class2680 field5909;
    private Class2747 field5910;
 
-   public Class1070(Class8992<? extends Class1070> var1, Class1655 var2) {
+   public Class1070(Class8992<? extends Class1070> var1, World var2) {
       super(var1, var2);
       this.field5019 = true;
       this.method4224(Class2163.field14191, -1.0F);
@@ -308,7 +308,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6994(this, var1);
    }
 
@@ -339,17 +339,17 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      boolean var5 = this.method4381(var1.method3094(var2));
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      boolean var5 = this.method4381(var1.getHeldItem(var2));
       if (!var5 && this.method4943() && !this.method3329() && !var1.method2851()) {
          if (!this.field5024.field9020) {
             var1.method3311(this);
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
-         Class2274 var6 = super.method4285(var1, var2);
-         if (var6.method9000()) {
+         ActionResultType var6 = super.method4285(var1, var2);
+         if (var6.isSuccessOrConsume()) {
             if (var5 && !this.method3245()) {
                this.field5024
                   .method6743(
@@ -366,8 +366,8 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
             return var6;
          } else {
-            ItemStack var7 = var1.method3094(var2);
-            return var7.method32107() != Class8514.field37886 ? Class2274.field14820 : var7.method32125(var1, this, var2);
+            ItemStack var7 = var1.getHeldItem(var2);
+            return var7.method32107() != Class8514.field37886 ? ActionResultType.field14820 : var7.method32125(var1, this, var2);
          }
       }
    }

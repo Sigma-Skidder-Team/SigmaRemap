@@ -26,7 +26,7 @@ public class Class8716 {
          File var7 = new File(this.field39330, var1.method3376() + ".dat_old");
          Util.method38526(var6, var5, var7);
       } catch (Exception var8) {
-         field39329.warn("Failed to save player data for {}", var1.method2941().getString());
+         field39329.warn("Failed to save player data for {}", var1.getName().getString());
       }
    }
 
@@ -40,7 +40,7 @@ public class Class8716 {
             var4 = Class8799.method31765(var5);
          }
       } catch (Exception var6) {
-         field39329.warn("Failed to load player data for {}", var1.method2941().getString());
+         field39329.warn("Failed to load player data for {}", var1.getName().getString());
       }
 
       if (var4 != null) {

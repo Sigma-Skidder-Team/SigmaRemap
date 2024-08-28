@@ -4,7 +4,7 @@ public class Class6997 extends Class6990 {
    private static String[] field30271;
    private boolean field30272;
 
-   public Class6997(Class1006 var1, Class1655 var2) {
+   public Class6997(Class1006 var1, World var2) {
       super(var1, var2);
    }
 

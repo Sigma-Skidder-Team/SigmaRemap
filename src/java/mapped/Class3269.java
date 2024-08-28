@@ -45,8 +45,8 @@ public class Class3269 extends Class3264 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       if (var1.method18354() != Direction.field672 && var4.method6738(var5.method8311()).method23393()) {
          Class7380 var6 = field18767.get(var4.method6738(var5).method23383());
@@ -60,10 +60,10 @@ public class Class3269 extends Class3264 {
                }
             }
 
-            return Class2274.method9002(var4.field9020);
+            return ActionResultType.method9002(var4.field9020);
          }
       }
 
-      return Class2274.field14820;
+      return ActionResultType.field14820;
    }
 }

@@ -32,13 +32,13 @@ public abstract class Class7631 {
 
    public abstract Class3257 method25050();
 
-   public void method25051(Class1655 var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
    }
 
-   public void method25052(Class1655 var1, BlockPos var2, Class7379 var3) {
+   public void method25052(World var1, BlockPos var2, Class7379 var3) {
    }
 
-   public void method25053(Class1655 var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25053(World var1, BlockPos var2, Class7379 var3, Random var4) {
    }
 
    @Nullable

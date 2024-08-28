@@ -16,24 +16,24 @@ public class Class3339 extends Class3257 {
    }
 
    @Override
-   public boolean method11706(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public boolean method11706(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
       if (!var2.field9020) {
-         this.method11886(var4, var1, var2, var3, false, var4.method3094(Hand.field182));
+         this.method11886(var4, var1, var2, var3, false, var4.getHeldItem(Hand.field182));
       }
 
       return false;
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
+   public ActionResultType method11707(Class5911 var1) {
       PlayerEntity var4 = var1.method18358();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       if (!var5.field9020 && var4 != null) {
          BlockPos var6 = var1.method18345();
          this.method11886(var4, var5.method6738(var6), var5, var6, true, var1.method18357());
       }
 
-      return Class2274.method9002(var5.field9020);
+      return ActionResultType.method9002(var5.field9020);
    }
 
    private void method11886(PlayerEntity var1, Class7380 var2, Class1660 var3, BlockPos var4, boolean var5, ItemStack var6) {

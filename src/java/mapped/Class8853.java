@@ -11,7 +11,7 @@ public class Class8853 {
    private final Class5713 field40013;
    private final Class9834 field40014;
    public final TextureManager field40015;
-   private Class1655 field40016;
+   private World field40016;
    public Class9624 field40017;
    private Class8661 field40018;
    public Entity field40019;
@@ -172,7 +172,7 @@ public class Class8853 {
       }
    }
 
-   public void method32213(Class1655 var1, Class9624 var2, Entity var3) {
+   public void method32213(World var1, Class9624 var2, Entity var3) {
       this.field40016 = var1;
       this.field40017 = var2;
       this.field40018 = var2.method37508();
@@ -455,7 +455,7 @@ public class Class8853 {
          .method17031();
    }
 
-   public void method32227(Class1655 var1) {
+   public void method32227(World var1) {
       this.field40016 = var1;
       if (var1 == null) {
          this.field40017 = null;

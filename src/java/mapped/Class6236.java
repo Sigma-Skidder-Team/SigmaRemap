@@ -7,13 +7,13 @@ public final class Class6236 extends Class6230 {
    private ItemStack method19208(Class2956 var1, ItemStack var2, ItemStack var3) {
       var2.method32182(1);
       if (!var2.method32105()) {
-         if (var1.<Class971>method11325().method4023(var3.method32126()) < 0) {
-            this.field27730.method19196(var1, var3.method32126());
+         if (var1.<Class971>method11325().method4023(var3.copy()) < 0) {
+            this.field27730.method19196(var1, var3.copy());
          }
 
          return var2;
       } else {
-         return var3.method32126();
+         return var3.copy();
       }
    }
 

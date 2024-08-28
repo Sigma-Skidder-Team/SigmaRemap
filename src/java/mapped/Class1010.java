@@ -18,7 +18,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    private int field5654;
    private UUID field5655;
 
-   public Class1010(Class8992<? extends Class1010> var1, Class1655 var2) {
+   public Class1010(Class8992<? extends Class1010> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.method4224(Class2163.field14191, -1.0F);

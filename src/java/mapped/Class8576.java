@@ -16,7 +16,7 @@ public class Class8576 {
       Class8841.field39940,
       (Class8705<Class8907>)null,
       (Class2961<?>)null,
-      (Class8705<Class1655>)null,
+      (Class8705<World>)null,
       (Boolean)null,
       Class7231.field31074,
       Class9449.field43899,
@@ -27,7 +27,7 @@ public class Class8576 {
    private final Class8841 field38562;
    private final Class8705<Class8907> field38563;
    private final Class2961<?> field38564;
-   private final Class8705<Class1655> field38565;
+   private final Class8705<World> field38565;
    private final Boolean field38566;
    private final Class7231 field38567;
    private final Class9449 field38568;
@@ -39,7 +39,7 @@ public class Class8576 {
       Class8841 var3,
       Class8705<Class8907> var4,
       Class2961<?> var5,
-      Class8705<Class1655> var6,
+      Class8705<World> var6,
       Boolean var7,
       Class7231 var8,
       Class9449 var9,
@@ -64,7 +64,7 @@ public class Class8576 {
          Class8841.field39940,
          var0,
          (Class2961<?>)null,
-         (Class8705<Class1655>)null,
+         (Class8705<World>)null,
          (Boolean)null,
          Class7231.field31074,
          Class9449.field43899,
@@ -72,7 +72,7 @@ public class Class8576 {
       );
    }
 
-   public static Class8576 method30648(Class8705<Class1655> var0) {
+   public static Class8576 method30648(Class8705<World> var0) {
       return new Class8576(
          Class8841.field39940,
          Class8841.field39940,
@@ -94,7 +94,7 @@ public class Class8576 {
          Class8841.field39940,
          (Class8705<Class8907>)null,
          var0,
-         (Class8705<Class1655>)null,
+         (Class8705<World>)null,
          (Boolean)null,
          Class7231.field31074,
          Class9449.field43899,
@@ -157,7 +157,7 @@ public class Class8576 {
          }
 
          if (this.field38565 != null) {
-            Class1655.field8998
+            World.field8998
                .encodeStart(JsonOps.INSTANCE, this.field38565)
                .resultOrPartial(field38558::error)
                .ifPresent(var1 -> var3.add("dimension", var1));
@@ -194,7 +194,7 @@ public class Class8576 {
             : ResourceLocation.field13020
                .parse(JsonOps.INSTANCE, var3.get("dimension"))
                .resultOrPartial(field38558::error)
-               .<Class8705>map(var0x -> Class8705.<Class1655>method31395(Class2348.field16067, var0x))
+               .<Class8705>map(var0x -> Class8705.<World>method31395(Class2348.field16067, var0x))
                .orElse((Class8705)null);
          Class2961 var9 = !var3.has("feature") ? null : (Class2961)Class2961.field18055.get(Class8963.method32763(var3, "feature"));
          Class8705 var10 = null;

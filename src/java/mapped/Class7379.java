@@ -52,11 +52,11 @@ public final class Class7379 extends Class7378<Class7631, Class7379> {
       return false;
    }
 
-   public void method23479(Class1655 var1, BlockPos var2) {
+   public void method23479(World var1, BlockPos var2) {
       this.method23472().method25052(var1, var2, this);
    }
 
-   public void method23480(Class1655 var1, BlockPos var2, Random var3) {
+   public void method23480(World var1, BlockPos var2, Random var3) {
       this.method23472().method25051(var1, var2, this, var3);
    }
 
@@ -64,7 +64,7 @@ public final class Class7379 extends Class7378<Class7631, Class7379> {
       return this.method23472().method25058();
    }
 
-   public void method23482(Class1655 var1, BlockPos var2, Random var3) {
+   public void method23482(World var1, BlockPos var2, Random var3) {
       this.method23472().method25053(var1, var2, this, var3);
    }
 

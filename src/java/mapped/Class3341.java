@@ -8,14 +8,14 @@ public class Class3341 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (!var6.method23448(Blocks.field36650) || var6.<Boolean>method23463(Class3400.field19054)) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else if (var4.field9020) {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else {
          Class7380 var7 = var6.method23465(Class3400.field19054, Boolean.valueOf(true));
          Block.method11538(var6, var7, var4, var5);
@@ -36,13 +36,13 @@ public class Class3341 extends Class3257 {
             var4.method6801(1038, var9.method8336(1, 0, 1), 0);
          }
 
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       Class8711 var7 = method11735(var1, var2, Class1985.field12962);
       if (var7.method31417() == Class2100.field13690 && var1.method6738(var7.method31423()).method23448(Blocks.field36650)) {
          return Class6794.<ItemStack>method20698(var6);
@@ -56,7 +56,7 @@ public class Class3341 extends Class3257 {
                var9.method3524(var8);
                var1.method6916(var9);
                if (var2 instanceof Class878) {
-                  Class9551.field44477.method15065((Class878)var2, var8);
+                  CriteriaTriggers.field44477.method15065((Class878)var2, var8);
                }
 
                var1.method6743(
@@ -75,7 +75,7 @@ public class Class3341 extends Class3257 {
                }
 
                var2.method2913(Class8876.field40098.method172(this));
-               var2.method3081(var3, true);
+               var2.swing(var3, true);
                return Class6794.<ItemStack>method20696(var6);
             }
          }

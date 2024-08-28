@@ -7,7 +7,7 @@ public class Class4856 extends Class4837 {
       super(var1);
    }
 
-   public boolean method14963(Class926 var1, Class1655 var2) {
+   public boolean method14963(Class926 var1, World var2) {
       if (var1.method3671() == 3 && var1.method3670() == 3) {
          for (int var5 = 0; var5 < var1.method3671(); var5++) {
             for (int var6 = 0; var6 < var1.method3670(); var6++) {

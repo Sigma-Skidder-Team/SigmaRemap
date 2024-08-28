@@ -7,11 +7,11 @@ public class Class938 extends Class919 implements Class937 {
    private int field5300 = -1;
    private final BlockPos field5301 = BlockPos.field13032;
 
-   public Class938(Class8992<? extends Class938> var1, Class1655 var2) {
+   public Class938(Class8992<? extends Class938> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class938(Class1655 var1, double var2, double var4, double var6) {
+   public Class938(World var1, double var2, double var4, double var6) {
       super(Class8992.field41054, var2, var4, var6, var1);
    }
 
@@ -52,7 +52,7 @@ public class Class938 extends Class919 implements Class937 {
    }
 
    @Override
-   public Class1655 method3734() {
+   public World method3734() {
       return this.field5024;
    }
 
@@ -94,9 +94,9 @@ public class Class938 extends Class919 implements Class937 {
 
    public boolean method3737() {
       if (!Class936.method3705(this)) {
-         List var3 = this.field5024.<Entity>method6772(Class1000.class, this.method3389().method19663(0.25, 0.0, 0.25), Class8088.field34757);
+         List var3 = this.field5024.<Entity>method6772(ItemEntity.class, this.method3389().method19663(0.25, 0.0, 0.25), Class8088.field34757);
          if (!var3.isEmpty()) {
-            Class936.method3707(this, (Class1000)var3.get(0));
+            Class936.method3707(this, (ItemEntity)var3.get(0));
          }
 
          return false;

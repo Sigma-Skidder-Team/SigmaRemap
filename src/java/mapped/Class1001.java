@@ -8,13 +8,13 @@ public class Class1001 extends Entity {
    private static final Class9289<Boolean> field5522 = Class9361.<Boolean>method35441(Class1001.class, Class7784.field33398);
    public int field5523;
 
-   public Class1001(Class8992<? extends Class1001> var1, Class1655 var2) {
+   public Class1001(Class8992<? extends Class1001> var1, World var2) {
       super(var1, var2);
       this.field5019 = true;
       this.field5523 = this.field5054.nextInt(100000);
    }
 
-   public Class1001(Class1655 var1, double var2, double var4, double var6) {
+   public Class1001(World var1, double var2, double var4, double var6) {
       this(Class8992.field41023, var1);
       this.method3215(var2, var4, var6);
    }

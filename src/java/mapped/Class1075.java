@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1075 extends AbstractHorseEntity {
    private static String[] field5918;
 
-   public Class1075(Class8992<? extends Class1075> var1, Class1655 var2) {
+   public Class1075(Class8992<? extends Class1075> var1, World var2) {
       super(var1, var2);
    }
 
@@ -48,8 +48,8 @@ public class Class1075 extends AbstractHorseEntity {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (this.method4932()) {
          if (!this.method3005()) {
             if (!var1.method2851()) {
@@ -57,29 +57,29 @@ public class Class1075 extends AbstractHorseEntity {
                   if (!var5.method32105()) {
                      if (var5.method32107() == Class8514.field37886 && !this.method4943()) {
                         this.openGUI(var1);
-                        return Class2274.method9002(this.field5024.field9020);
+                        return ActionResultType.method9002(this.field5024.field9020);
                      }
 
-                     Class2274 var6 = var5.method32125(var1, this, var2);
-                     if (var6.method9000()) {
+                     ActionResultType var6 = var5.method32125(var1, this, var2);
+                     if (var6.isSuccessOrConsume()) {
                         return var6;
                      }
                   }
 
                   this.method4920(var1);
-                  return Class2274.method9002(this.field5024.field9020);
+                  return ActionResultType.method9002(this.field5024.field9020);
                } else {
                   return super.method4285(var1, var2);
                }
             } else {
                this.openGUI(var1);
-               return Class2274.method9002(this.field5024.field9020);
+               return ActionResultType.method9002(this.field5024.field9020);
             }
          } else {
             return super.method4285(var1, var2);
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

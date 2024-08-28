@@ -23,7 +23,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    private static final Predicate<Class880> field5936 = var0 -> var0.method3089() != Class7809.field33506 && var0.method3170();
    private static final Class8522 field5937 = new Class8522().method30203(20.0).method30209(field5936);
 
-   public Class1079(Class8992<? extends Class1079> var1, Class1655 var2) {
+   public Class1079(Class8992<? extends Class1079> var1, World var2) {
       super(var1, var2);
       this.method3043(this.method3075());
       this.method4230().method21674(true);
@@ -406,7 +406,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
       } else {
          if (this.method5016()) {
             Entity var5 = var1.method31113();
-            if (var5 instanceof Class884) {
+            if (var5 instanceof AbstractArrowEntity) {
                return false;
             }
          }
@@ -431,7 +431,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    @Override
    public void method3054(Class8654 var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
-      Class1000 var6 = this.method3300(Class8514.field38066);
+      ItemEntity var6 = this.method3300(Class8514.field38066);
       if (var6 != null) {
          var6.method4136();
       }

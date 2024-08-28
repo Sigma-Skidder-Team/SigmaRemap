@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class5724 extends Class5715<Class1000> {
+public class Class5724 extends Class5715<ItemEntity> {
    private static String[] field25128;
    private final Class216 field25129;
    private final Random field25130 = new Random();
@@ -35,7 +35,7 @@ public class Class5724 extends Class5715<Class1000> {
       return var4;
    }
 
-   public void method17853(Class1000 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(ItemEntity var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
       var4.method35294();
       ItemStack var9 = var1.method4124();
       int var10 = !var9.method32105() ? Class3257.method11701(var9.method32107()) + var9.method32117() : 187;
@@ -94,7 +94,7 @@ public class Class5724 extends Class5715<Class1000> {
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 
-   public ResourceLocation method17843(Class1000 var1) {
+   public ResourceLocation method17843(ItemEntity var1) {
       return Class289.field1102;
    }
 

@@ -29,8 +29,8 @@ public class Class5171 extends Module {
 
     private void method16089(Class4420 var1, PlayerEntity var2) {
         Color var5 = new Color(
-                !Client.getInstance().getFriendManager().method26998(var2.method2941().getString())
-                        ? (!var2.method2941().getString().equalsIgnoreCase(mc.field1339.method2941().getString()) ? new Color(16775672).getRGB() : -6684775)
+                !Client.getInstance().getFriendManager().method26998(var2.getName().getString())
+                        ? (!var2.getName().getString().equalsIgnoreCase(mc.field1339.getName().getString()) ? new Color(16775672).getRGB() : -6684775)
                         : -8401409
         );
         if (!var2.method3342()) {

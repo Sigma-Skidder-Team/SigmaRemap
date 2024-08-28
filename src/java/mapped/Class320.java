@@ -3,7 +3,7 @@ package mapped;
 public final class Class320 extends Class318<Runnable> {
    public final Class1703 field1383;
 
-   public Class320(Class1703 var1, Class1655 var2) {
+   public Class320(Class1703 var1, World var2) {
       super("Chunk source main thread executor for " + var2.method6813().method31399());
       this.field1383 = var1;
    }

@@ -20,12 +20,12 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       return var1.<Integer>method23463(field18936);
    }
 
    @Override
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
+   public void method11562(World var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (!var1.field9020 && var5 instanceof Class962) {
          Class962 var9 = (Class962)var5;
@@ -35,11 +35,11 @@ public class Class3366 extends Class3241 {
             this.method11943(var1, var3);
          }
 
-         Class9551.field44501.method15076((Class878)var2, var4.method23383(), var6, var9.method3918());
+         CriteriaTriggers.field44501.method15076((Class878)var2, var4.method23383(), var6, var9.method3918());
       }
    }
 
-   private void method11943(Class1655 var1, BlockPos var2) {
+   private void method11943(World var1, BlockPos var2) {
       List<Class1017> var5 = var1.method7182(Class1017.class, new Class6488(var2).method19663(8.0, 6.0, 8.0));
       if (!var5.isEmpty()) {
          List var6 = var1.<PlayerEntity>method7182(PlayerEntity.class, new Class6488(var2).method19663(8.0, 6.0, 8.0));
@@ -53,13 +53,13 @@ public class Class3366 extends Class3241 {
       }
    }
 
-   public static void method11944(Class1655 var0, BlockPos var1) {
+   public static void method11944(World var0, BlockPos var1) {
       method11557(var0, var1, new ItemStack(Class8514.field38174, 3));
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      ItemStack var9 = var4.method3094(var5);
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.getHeldItem(var5);
       int var10 = var1.<Integer>method23463(field18936);
       boolean var11 = false;
       if (var10 >= 5) {
@@ -98,11 +98,11 @@ public class Class3366 extends Class3241 {
             this.method11946(var2, var1, var3, var4, Class2084.field13573);
          }
 
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       }
    }
 
-   private boolean method11945(Class1655 var1, BlockPos var2) {
+   private boolean method11945(World var1, BlockPos var2) {
       Class944 var5 = var1.method6759(var2);
       if (!(var5 instanceof Class962)) {
          return false;
@@ -112,7 +112,7 @@ public class Class3366 extends Class3241 {
       }
    }
 
-   public void method11946(Class1655 var1, Class7380 var2, BlockPos var3, PlayerEntity var4, Class2084 var5) {
+   public void method11946(World var1, Class7380 var2, BlockPos var3, PlayerEntity var4, Class2084 var5) {
       this.method11947(var1, var2, var3);
       Class944 var8 = var1.method6759(var3);
       if (var8 instanceof Class962) {
@@ -121,12 +121,12 @@ public class Class3366 extends Class3241 {
       }
    }
 
-   public void method11947(Class1655 var1, Class7380 var2, BlockPos var3) {
+   public void method11947(World var1, Class7380 var2, BlockPos var3) {
       var1.method6725(var3, var2.method23465(field18936, Integer.valueOf(0)), 3);
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field18936) >= 5) {
          for (int var7 = 0; var7 < var4.nextInt(1) + 1; var7++) {
             this.method11948(var2, var3, var1);
@@ -134,7 +134,7 @@ public class Class3366 extends Class3241 {
       }
    }
 
-   private void method11948(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method11948(World var1, BlockPos var2, Class7380 var3) {
       if (var3.method23449().method23474() && !(var1.field9016.nextFloat() < 0.3F)) {
          Class6408 var6 = var3.method23414(var1, var2);
          double var7 = var6.method19513(Class113.field414);
@@ -155,7 +155,7 @@ public class Class3366 extends Class3241 {
       }
    }
 
-   private void method11949(Class1655 var1, BlockPos var2, Class6408 var3, double var4) {
+   private void method11949(World var1, BlockPos var2, Class6408 var3, double var4) {
       this.method11950(
          var1,
          (double)var2.method8304() + var3.method19512(Class113.field413),
@@ -166,7 +166,7 @@ public class Class3366 extends Class3241 {
       );
    }
 
-   private void method11950(Class1655 var1, double var2, double var4, double var6, double var8, double var10) {
+   private void method11950(World var1, double var2, double var4, double var6, double var8, double var10) {
       var1.method6746(
          Class7940.field34108,
          MathHelper.method37822(var1.field9016.nextDouble(), var2, var4),
@@ -200,7 +200,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public void method11574(Class1655 var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
+   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
       if (!var1.field9020 && var4.method2801() && var1.method6789().method17135(Class5462.field24228)) {
          Class944 var7 = var1.method6759(var2);
          if (var7 instanceof Class962) {
@@ -221,7 +221,7 @@ public class Class3366 extends Class3241 {
             Class39 var14 = new Class39();
             var14.method102("honey_level", var10);
             var9.method32164("BlockStateTag", var14);
-            Class1000 var13 = new Class1000(var1, (double)var2.method8304(), (double)var2.getY(), (double)var2.method8306(), var9);
+            ItemEntity var13 = new ItemEntity(var1, (double)var2.method8304(), (double)var2.getY(), (double)var2.method8306(), var9);
             var13.method4131();
             var1.method6916(var13);
          }

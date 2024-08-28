@@ -6,7 +6,7 @@ public class Class2618 extends Class2595 {
    private static String[] field16893;
    private final Class1012 field16894;
    private PlayerEntity field16895;
-   private final Class1655 field16896;
+   private final World field16896;
    private final float field16897;
    private int field16898;
    private final Class8522 field16899;
@@ -58,7 +58,7 @@ public class Class2618 extends Class2595 {
 
    private boolean method10825(PlayerEntity var1) {
       for (Hand var7 : Hand.values()) {
-         ItemStack var8 = var1.method3094(var7);
+         ItemStack var8 = var1.getHeldItem(var7);
          if (this.field16894.method4393() && var8.method32107() == Class8514.field37935) {
             return true;
          }

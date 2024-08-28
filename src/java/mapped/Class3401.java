@@ -53,14 +53,14 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.method3328() && !var4.method3329() && var4.method3367()) {
          var4.method3323(var3);
       }
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(100) == 0) {
          var2.method6745(
             (double)var3.method8304() + 0.5,

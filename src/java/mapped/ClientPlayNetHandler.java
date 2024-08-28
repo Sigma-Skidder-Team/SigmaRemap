@@ -50,7 +50,7 @@ public class ClientPlayNetHandler implements Class5116 {
    private CommandDispatcher<Class6618> field23283 = new CommandDispatcher();
    private final Class282 field23284 = new Class282();
    private final UUID field23285 = UUID.randomUUID();
-   private Set<Class8705<Class1655>> field23286;
+   private Set<Class8705<World>> field23286;
    public Class8904 field23287 = Class8904.method32457();
 
    public ClientPlayNetHandler(Minecraft var1, Screen var2, Class8586 var3, GameProfile var4) {
@@ -185,7 +185,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                                                                          );
                                                                                                       }
                                                                                                    } else {
-                                                                                                      var11 = new Class1000(this.field23273, var4, var6, var8);
+                                                                                                      var11 = new ItemEntity(this.field23273, var4, var6, var8);
                                                                                                    }
                                                                                                 } else {
                                                                                                    var11 = new Class1001(this.field23273, var4, var6, var8);
@@ -289,21 +289,21 @@ public class ClientPlayNetHandler implements Class5116 {
                                        var11 = new Class886(this.field23273, var4, var6, var8);
                                        Entity var12 = this.field23273.method6774(var1.method17267());
                                        if (var12 != null) {
-                                          ((Class884)var11).method3459(var12);
+                                          ((AbstractArrowEntity)var11).method3459(var12);
                                        }
                                     }
                                  } else {
                                     var11 = new Class885(this.field23273, var4, var6, var8);
                                     Entity var13 = this.field23273.method6774(var1.method17267());
                                     if (var13 != null) {
-                                       ((Class884)var11).method3459(var13);
+                                       ((AbstractArrowEntity)var11).method3459(var13);
                                     }
                                  }
                               } else {
                                  var11 = new Class887(this.field23273, var4, var6, var8);
                                  Entity var14 = this.field23273.method6774(var1.method17267());
                                  if (var14 != null) {
-                                    ((Class884)var11).method3459(var14);
+                                    ((AbstractArrowEntity)var11).method3459(var14);
                                  }
                               }
                            } else {
@@ -357,7 +357,7 @@ public class ClientPlayNetHandler implements Class5116 {
       double var4 = var1.method17354();
       double var6 = var1.method17355();
       double var8 = var1.method17356();
-      Class1003 var10 = new Class1003(this.field23273, var4, var6, var8, var1.method17357());
+      ExperienceOrbEntity var10 = new ExperienceOrbEntity(this.field23273, var4, var6, var8, var1.method17357());
       var10.method3201(var4, var6, var8);
       var10.field5031 = 0.0F;
       var10.field5032 = 0.0F;
@@ -639,7 +639,7 @@ public class ClientPlayNetHandler implements Class5116 {
       }
 
       if (var4 != null) {
-         if (!(var4 instanceof Class1003)) {
+         if (!(var4 instanceof ExperienceOrbEntity)) {
             this.field23273
                .method6745(
                   var4.getPosX(),
@@ -666,10 +666,10 @@ public class ClientPlayNetHandler implements Class5116 {
          }
 
          this.field23272.field1291.method1199(new Class4593(this.field23272.method1554(), this.field23272.method1581(), this.field23273, var4, (Entity)var5));
-         if (!(var4 instanceof Class1000)) {
+         if (!(var4 instanceof ItemEntity)) {
             this.field23273.method6848(var1.method17186());
          } else {
-            Class1000 var6 = (Class1000)var4;
+            ItemEntity var6 = (ItemEntity)var4;
             ItemStack var7 = var6.method4124();
             var7.method32182(var1.method17188());
             if (var7.method32105()) {
@@ -1182,10 +1182,10 @@ public class ClientPlayNetHandler implements Class5116 {
                   } else if (var7 != 0) {
                      if (var7 == 1) {
                         this.field23272
-                           .displayGuiScreen(new Class1342(true, () -> this.field23272.field1339.connection.sendPacket(new Class5564(Class2175.field14277))));
+                           .displayGuiScreen(new Class1342(true, () -> this.field23272.field1339.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277))));
                      }
                   } else {
-                     this.field23272.field1339.connection.sendPacket(new Class5564(Class2175.field14277));
+                     this.field23272.field1339.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
                      this.field23272.displayGuiScreen(new Class1312());
                   }
                } else {
@@ -2205,7 +2205,7 @@ public class ClientPlayNetHandler implements Class5116 {
       return this.field23285;
    }
 
-   public Set<Class8705<Class1655>> method15801() {
+   public Set<Class8705<World>> method15801() {
       return this.field23286;
    }
 

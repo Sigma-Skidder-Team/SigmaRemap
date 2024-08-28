@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class5731 extends Class5715<Class1003> {
+public class Class5731 extends Class5715<ExperienceOrbEntity> {
    private static final ResourceLocation field25141 = new ResourceLocation("textures/entity/experience_orb.png");
    private static final Class4520 field25142 = Class4520.method14315(field25141);
 
@@ -10,11 +10,11 @@ public class Class5731 extends Class5715<Class1003> {
       this.field25099 = 0.75F;
    }
 
-   public int method17858(Class1003 var1, BlockPos var2) {
+   public int method17858(ExperienceOrbEntity var1, BlockPos var2) {
       return MathHelper.method37775(super.method17858(var1, var2) + 7, 0, 15);
    }
 
-   public void method17853(Class1003 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
+   public void method17853(ExperienceOrbEntity var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
       var4.method35294();
       int var9 = var1.method4178();
       float var10 = (float)(var9 % 4 * 16 + 0) / 64.0F;
@@ -74,7 +74,7 @@ public class Class5731 extends Class5715<Class1003> {
          .method17031();
    }
 
-   public ResourceLocation method17843(Class1003 var1) {
+   public ResourceLocation method17843(ExperienceOrbEntity var1) {
       return field25141;
    }
 }

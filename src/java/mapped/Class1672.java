@@ -65,7 +65,7 @@ public class Class1672 implements Class1670 {
    @Override
    public Class7380 method6738(BlockPos var1) {
       int var4 = var1.getY();
-      if (!Class1655.method6721(var4)) {
+      if (!World.method6721(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
          return !Class7038.method21859(var5) ? var5.method21852(var1.method8304() & 15, var4 & 15, var1.method8306() & 15) : Blocks.AIR.method11579();
       } else {
@@ -76,7 +76,7 @@ public class Class1672 implements Class1670 {
    @Override
    public Class7379 method6739(BlockPos var1) {
       int var4 = var1.getY();
-      if (!Class1655.method6721(var4)) {
+      if (!World.method6721(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
          return !Class7038.method21859(var5) ? var5.method21853(var1.method8304() & 15, var4 & 15, var1.method8306() & 15) : Class9479.field44064.method25049();
       } else {
@@ -353,7 +353,7 @@ public class Class1672 implements Class1670 {
 
    @Override
    public void method7082(BlockPos var1) {
-      if (!Class1655.method6720(var1)) {
+      if (!World.method6720(var1)) {
          Class1670.method7094(this.field9100, var1.getY() >> 4).add(method7113(var1));
       }
    }

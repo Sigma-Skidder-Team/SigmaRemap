@@ -14,7 +14,7 @@ public class Class7250 extends Class7249 {
       if (var1 != null) {
          String var4 = var1.getDisplayName().getString();
          String var5 = var1.method3380() != null ? var1.method3380().getString() : null;
-         String var6 = var1.method2941().getString();
+         String var6 = var1.getName().getString();
          if (var1.method3342() && !var4.startsWith("§c") && var4.endsWith("§r") && (var5 == null || var5.equals(var6))) {
             double var7 = Math.abs(var1.getPosX() - field31119.field1339.getPosX());
             double var9 = Math.abs(var1.getPosY() - field31119.field1339.getPosY());

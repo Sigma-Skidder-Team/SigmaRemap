@@ -61,7 +61,7 @@ public class Class5227 extends Module {
                                 .put(
                                         var9.getUniqueID(),
                                         new Class8351(
-                                                var9.method2941().getUnformattedComponentText() + " Unspawn",
+                                                var9.getName().getUnformattedComponentText() + " Unspawn",
                                                 (int) var9.getPosX(),
                                                 (int) var9.getPosY(),
                                                 (int) var9.getPosZ(),

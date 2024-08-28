@@ -30,14 +30,14 @@ public class Class3246 extends Class3247 implements Class3245 {
       return !(var6 instanceof Class963) ? 0 : ((Class963)var6).method3930();
    }
 
-   private int method11660(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private int method11660(World var1, BlockPos var2, Class7380 var3) {
       return var3.method23463(field18706) != Class105.field326
          ? this.method11662(var1, var2, var3)
          : Math.max(this.method11662(var1, var2, var3) - this.method11668(var1, var2, var3), 0);
    }
 
    @Override
-   public boolean method11661(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public boolean method11661(World var1, BlockPos var2, Class7380 var3) {
       int var6 = this.method11662(var1, var2, var3);
       if (var6 != 0) {
          int var7 = this.method11668(var1, var2, var3);
@@ -48,7 +48,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public int method11662(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public int method11662(World var1, BlockPos var2, Class7380 var3) {
       int var6 = super.method11662(var1, var2, var3);
       Direction var7 = var3.<Direction>method23463(field18484);
       BlockPos var8 = var2.method8349(var7);
@@ -71,7 +71,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Nullable
-   private Class997 method11663(Class1655 var1, Direction var2, BlockPos var3) {
+   private Class997 method11663(World var1, Direction var2, BlockPos var3) {
       List var6 = var1.<Class997>method6772(
          Class997.class,
          new Class6488(
@@ -88,21 +88,21 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (var4.field4919.field29610) {
          var1 = var1.method23459(field18706);
          float var9 = var1.method23463(field18706) != Class105.field326 ? 0.5F : 0.55F;
          var2.method6742(var4, var3, Class6067.field26462, Class2266.field14732, 0.3F, var9);
          var2.method6725(var3, var1, 2);
          this.method11665(var2, var3, var1);
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
    @Override
-   public void method11664(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public void method11664(World var1, BlockPos var2, Class7380 var3) {
       if (!var1.method6860().method20720(var2, this)) {
          int var6 = this.method11660(var1, var2, var3);
          Class944 var7 = var1.method6759(var2);
@@ -114,7 +114,7 @@ public class Class3246 extends Class3247 implements Class3245 {
       }
    }
 
-   private void method11665(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method11665(World var1, BlockPos var2, Class7380 var3) {
       int var6 = this.method11660(var1, var2, var3);
       Class944 var7 = var1.method6759(var2);
       int var8 = 0;
@@ -143,7 +143,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    }
 
    @Override
-   public boolean method11647(Class7380 var1, Class1655 var2, BlockPos var3, int var4, int var5) {
+   public boolean method11647(Class7380 var1, World var2, BlockPos var3, int var4, int var5) {
       super.method11647(var1, var2, var3, var4, var5);
       Class944 var8 = var2.method6759(var3);
       return var8 != null && var8.method3751(var4, var5);

@@ -22,12 +22,12 @@ public class Class3271 extends Class3257 implements Class3260 {
       return method11789(var1) || super.method11732(var1);
    }
 
-   public static Optional<Class8705<Class1655>> method11790(Class39 var0) {
-      return Class1655.field8998.parse(Class8063.field34602, var0.method116("LodestoneDimension")).result();
+   public static Optional<Class8705<World>> method11790(Class39 var0) {
+      return World.field8998.parse(Class8063.field34602, var0.method116("LodestoneDimension")).result();
    }
 
    @Override
-   public void method11724(ItemStack var1, Class1655 var2, Entity var3, int var4, boolean var5) {
+   public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.field9020 && method11789(var1)) {
          Class39 var8 = var1.method32143();
          if (var8.method118("LodestoneTracked") && !var8.method132("LodestoneTracked")) {
@@ -45,9 +45,9 @@ public class Class3271 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
+   public ActionResultType method11707(Class5911 var1) {
       BlockPos var4 = var1.method18345();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       if (!var5.method6738(var4).method23448(Blocks.field37129)) {
          return super.method11707(var1);
       } else {
@@ -71,13 +71,13 @@ public class Class3271 extends Class3257 implements Class3260 {
             this.method11791(var5.method6813(), var4, var7.method32143());
          }
 
-         return Class2274.method9002(var5.field9020);
+         return ActionResultType.method9002(var5.field9020);
       }
    }
 
-   private void method11791(Class8705<Class1655> var1, BlockPos var2, Class39 var3) {
+   private void method11791(Class8705<World> var1, BlockPos var2, Class39 var3) {
       var3.method99("LodestonePos", Class8354.method29284(var2));
-      Class1655.field8998
+      World.field8998
          .encodeStart(Class8063.field34602, var1)
          .resultOrPartial(field18771::error)
          .ifPresent(var1x -> var3.method99("LodestoneDimension", var1x));

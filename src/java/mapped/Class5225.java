@@ -76,7 +76,7 @@ public class Class5225 extends Module {
                                 mc.getClientPlayNetHandler().sendPacket(new Class5539(var5));
                             }
 
-                            if (var6 && (var5 >= 0 || mc.field1339.method3094(Hand.field182).method32107() instanceof Class3292)) {
+                            if (var6 && (var5 >= 0 || mc.field1339.getHeldItem(Hand.field182).method32107() instanceof Class3292)) {
                                 Class8711 var7 = new Class8711(
                                         mc.field1339.getPositionVec().method11339(0.0, -2.0, 0.0),
                                         Direction.field673,

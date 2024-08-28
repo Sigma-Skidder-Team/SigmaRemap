@@ -217,7 +217,7 @@ public class Class9651 {
            Class6619 var0, Entity var1, ServerWorld var2, double var3, double var5, double var7, Set<Class2033> var9, float var10, float var11, Class8502 var12
    ) throws CommandSyntaxException {
       BlockPos var15 = new BlockPos(var3, var5, var7);
-      if (Class1655.method6717(var15)) {
+      if (World.method6717(var15)) {
          if (!(var1 instanceof Class878)) {
             float var16 = MathHelper.method37792(var10);
             float var17 = MathHelper.method37792(var11);

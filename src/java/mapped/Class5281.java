@@ -198,7 +198,7 @@ public class Class5281 extends Module {
                                 if (!(var4 instanceof Class5570)) {
                                     if (!(var4 instanceof Class5492)) {
                                         if (!(var4 instanceof Class5482)) {
-                                            if (!(var4 instanceof Class5564)) {
+                                            if (!(var4 instanceof CClientStatusPacket)) {
                                                 if (!(var4 instanceof Class5522)) {
                                                     if (!(var4 instanceof Class5561)) {
                                                         if (!(var4 instanceof Class5600) && var4 instanceof Class5594) {
@@ -211,8 +211,8 @@ public class Class5281 extends Module {
                                                     new Class5522();
                                                 }
                                             } else {
-                                                Class5564 var12 = (Class5564) var4;
-                                                if (var12.method17491() != Class2175.field14279) {
+                                                CClientStatusPacket var12 = (CClientStatusPacket) var4;
+                                                if (var12.getStatus() != CClientStatusPacketState.field14279) {
                                                 }
                                             }
                                         }
@@ -243,12 +243,12 @@ public class Class5281 extends Module {
                 CUseEntityPacket var18 = (CUseEntityPacket) var4;
                 Entity var6 = var18.getEntityFromWorld(mc.field1338);
                 if (var6 != null) {
-                    var6.method2941().getString();
+                    var6.getName().getString();
                 } else {
                     String var10000 = "null";
                 }
 
-                if (var18.method17316() != Class1968.field12833) {
+                if (var18.getAction() != CUseEntityPacketAction.ATTACK) {
                 }
             }
 

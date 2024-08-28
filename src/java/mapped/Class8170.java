@@ -220,7 +220,7 @@ public final class Class8170 {
          : var2.method17808(var5 == null ? var0.method7003(var4) : var5, var1, var3, var4);
    }
 
-   private static BlockPos method28427(Class1655 var0, Class1674 var1) {
+   private static BlockPos method28427(World var0, Class1674 var1) {
       Class7481 var4 = var1.method7072();
       int var5 = var4.method24356() + var0.field9016.nextInt(16);
       int var6 = var4.method24357() + var0.field9016.nextInt(16);

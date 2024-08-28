@@ -20,12 +20,12 @@ public class Class3248 extends Class3247 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (var4.field4919.field29610) {
          var2.method6725(var3, var1.method23459(field18711), 3);
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
@@ -58,7 +58,7 @@ public class Class3248 extends Class3247 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18708)) {
          Direction var7 = var1.<Direction>method23463(field18484);
          double var8 = (double)var3.method8304() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;

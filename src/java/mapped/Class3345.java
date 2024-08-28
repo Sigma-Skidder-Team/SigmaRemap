@@ -10,7 +10,7 @@ public class Class3345 extends Class3343 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       Class944 var8 = var1.method6759(var2);
       if (var8 instanceof Class968) {

@@ -18,7 +18,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    private BlockPos field5847 = null;
    private int field5848;
 
-   public Class1057(Class8992<? extends Class1057> var1, Class1655 var2) {
+   public Class1057(Class8992<? extends Class1057> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -324,7 +324,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    public boolean method2741(Class8654 var1, float var2) {
       if (this.method4847()) {
          Entity var5 = var1.method31113();
-         if (var5 instanceof Class884) {
+         if (var5 instanceof AbstractArrowEntity) {
             return false;
          }
       }

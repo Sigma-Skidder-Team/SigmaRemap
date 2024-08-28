@@ -262,7 +262,7 @@ public class Class1262 extends Class1193 {
             this.method5877();
          }
 
-         Class1655 var14 = this.method5885();
+         World var14 = this.method5885();
          LongSet var15 = var14 instanceof ServerWorld ? ((ServerWorld)var14).method6949() : LongSets.EMPTY_SET;
          List<String> var16 = Lists.newArrayList(
             new String[]{
@@ -439,8 +439,8 @@ public class Class1262 extends Class1193 {
       return var3 == null ? null : var3.method6758();
    }
 
-   private Class1655 method5885() {
-      return (Class1655)DataFixUtils.orElse(
+   private World method5885() {
+      return (World)DataFixUtils.orElse(
          Optional.<Class1644>ofNullable(this.field6665.method1531())
             .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.field1338.method6813()))),
          this.field6665.field1338

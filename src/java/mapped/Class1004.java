@@ -7,12 +7,12 @@ public class Class1004 extends Entity {
    private Class880 field5563;
    private int field5564 = 80;
 
-   public Class1004(Class8992<? extends Class1004> var1, Class1655 var2) {
+   public Class1004(Class8992<? extends Class1004> var1, World var2) {
       super(var1, var2);
       this.field5019 = true;
    }
 
-   public Class1004(Class1655 var1, double var2, double var4, double var6, Class880 var8) {
+   public Class1004(World var1, double var2, double var4, double var6, Class880 var8) {
       this(Class8992.field41069, var1);
       this.method3215(var2, var4, var6);
       double var11 = var1.field9016.nextDouble() * (float) (Math.PI * 2);

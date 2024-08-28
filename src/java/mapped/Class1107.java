@@ -6,7 +6,7 @@ public class Class1107 extends Class1009 {
    private static String[] field6079;
    private Class2753 field6080;
 
-   public Class1107(Class8992<? extends Class1107> var1, Class1655 var2) {
+   public Class1107(Class8992<? extends Class1107> var1, World var2) {
       super(var1, var2);
    }
 

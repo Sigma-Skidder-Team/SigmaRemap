@@ -138,7 +138,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.method23383().method11648(this.method23457());
    }
 
-   public int method23404(Class1655 var1, BlockPos var2) {
+   public int method23404(World var1, BlockPos var2) {
       return this.method23383().method11649(this.method23457(), var1, var2);
    }
 
@@ -225,11 +225,11 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       }
    }
 
-   public boolean method23422(Class1655 var1, BlockPos var2, int var3, int var4) {
+   public boolean method23422(World var1, BlockPos var2, int var3, int var4) {
       return this.method23383().method11647(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23423(Class1655 var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
+   public void method23423(World var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
       this.method23383().method11506(this.method23457(), var1, var2, var3, var4, var5);
    }
 
@@ -257,11 +257,11 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       this.method23383().method11618(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23428(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public void method23428(World var1, BlockPos var2, Class7380 var3, boolean var4) {
       this.method23383().method11589(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23429(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public void method23429(World var1, BlockPos var2, Class7380 var3, boolean var4) {
       this.method23383().method11513(this.method23457(), var1, var2, var3, var4);
    }
 
@@ -273,7 +273,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       this.method23383().method11484(this.method23457(), var1, var2, var3);
    }
 
-   public void method23432(Class1655 var1, BlockPos var2, Entity var3) {
+   public void method23432(World var1, BlockPos var2, Entity var3) {
       this.method23383().method11523(this.method23457(), var1, var2, var3);
    }
 
@@ -285,11 +285,11 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.method23383().method11697(this.method23457(), var1);
    }
 
-   public Class2274 method23435(Class1655 var1, PlayerEntity var2, Hand var3, Class8711 var4) {
+   public ActionResultType method23435(World var1, PlayerEntity var2, Hand var3, Class8711 var4) {
       return this.method23383().method11505(this.method23457(), var1, var4.method31423(), var2, var3, var4);
    }
 
-   public void method23436(Class1655 var1, BlockPos var2, PlayerEntity var3) {
+   public void method23436(World var1, BlockPos var2, PlayerEntity var3) {
       this.method23383().method11602(this.method23457(), var1, var2, var3);
    }
 
@@ -326,7 +326,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    @Nullable
-   public Class949 method23445(Class1655 var1, BlockPos var2) {
+   public Class949 method23445(World var1, BlockPos var2) {
       return this.method23383().method11528(this.method23457(), var1, var2);
    }
 
@@ -358,7 +358,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.method23383().method11580(this.method23457());
    }
 
-   public void method23453(Class1655 var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method23453(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
       this.method23383().method11595(var1, var2, var3, var4);
    }
 

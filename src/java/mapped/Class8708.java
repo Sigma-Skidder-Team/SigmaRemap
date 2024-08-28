@@ -13,14 +13,14 @@ public class Class8708 {
    public static Class8907 field39312 = field39310.method9189(Class9495.field44127);
    public static Class8907 field39313 = field39310.method9189(Class9495.field44178);
 
-   public static void method31403(Class1655 var0) {
+   public static void method31403(World var0) {
       field39310 = method31404(var0);
       field39311 = field39310.method9189(Class9495.field44122);
       field39312 = field39310.method9189(Class9495.field44127);
       field39313 = field39310.method9189(Class9495.field44178);
    }
 
-   public static Class2348<Class8907> method31404(Class1655 var0) {
+   public static Class2348<Class8907> method31404(World var0) {
       return var0 == null
          ? Class8904.method32457().<Class8907>method32453(Class2348.field16106)
          : var0.method6867().<Class8907>method32453(Class2348.field16106);

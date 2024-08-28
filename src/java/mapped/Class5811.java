@@ -7,7 +7,7 @@ public class Class5811 extends Class5812 {
    private static String[] field25455;
    private final Class8786 field25456;
    private final Class4923 field25457 = Class4923.method15238();
-   private final Class1655 field25458;
+   private final World field25458;
    private List<Class4845> field25459 = Lists.newArrayList();
    private ItemStack field25460 = ItemStack.EMPTY;
    private long field25461;

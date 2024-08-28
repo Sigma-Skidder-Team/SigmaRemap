@@ -33,12 +33,12 @@ public class Class1005 extends Class880 {
    private Class7087 field5590 = field5569;
    private Class7087 field5591 = field5570;
 
-   public Class1005(Class8992<? extends Class1005> var1, Class1655 var2) {
+   public Class1005(Class8992<? extends Class1005> var1, World var2) {
       super(var1, var2);
       this.field5051 = 0.0F;
    }
 
-   public Class1005(Class1655 var1, double var2, double var4, double var6) {
+   public Class1005(World var1, double var2, double var4, double var6) {
       this(Class8992.field41006, var1);
       this.method3215(var2, var4, var6);
    }
@@ -286,37 +286,37 @@ public class Class1005 extends Class880 {
    }
 
    @Override
-   public Class2274 method3397(PlayerEntity var1, Vector3d var2, Hand var3) {
+   public ActionResultType applyPlayerInteraction(PlayerEntity var1, Vector3d var2, Hand var3) {
       ItemStack var6 = var1.getHeldItem(var3);
       if (this.method4203() || var6.method32107() == Class8514.field38088) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else if (var1.method2800()) {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else if (!var1.field5024.field9020) {
          Class2106 var7 = Class1006.method4271(var6);
          if (!var6.method32105()) {
             if (this.method4189(var7)) {
-               return Class2274.field14821;
+               return ActionResultType.field14821;
             }
 
             if (var7.method8772() == Class1969.field12836 && !this.method4199()) {
-               return Class2274.field14821;
+               return ActionResultType.field14821;
             }
 
             if (this.method4190(var1, var7, var6, var3)) {
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
          } else {
             Class2106 var8 = this.method4188(var2);
             Class2106 var9 = !this.method4189(var8) ? var8 : var7;
             if (this.method3096(var9) && this.method4190(var1, var9, var6, var3)) {
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
          }
 
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
@@ -388,8 +388,8 @@ public class Class1005 extends Class880 {
             this.method4192(var1, 4.0F);
             return false;
          } else {
-            boolean var5 = var1.method31113() instanceof Class884;
-            boolean var6 = var5 && ((Class884)var1.method31113()).method3489() > 0;
+            boolean var5 = var1.method31113() instanceof AbstractArrowEntity;
+            boolean var6 = var5 && ((AbstractArrowEntity)var1.method31113()).method3489() > 0;
             boolean var7 = "player".equals(var1.method31142());
             if (!var7 && !var5) {
                return false;

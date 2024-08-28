@@ -5,7 +5,7 @@ public interface Class5110 extends Class5104 {
 
    void method15611(Class5522 var1);
 
-   void method15612(Class5564 var1);
+   void processClientStatus(CClientStatusPacket var1);
 
    void method15613(Class5561 var1);
 

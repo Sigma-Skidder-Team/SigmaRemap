@@ -37,7 +37,7 @@ public class Class1814 implements AutoCloseable {
       return this.field9782.computeIfAbsent(var1, var1x -> this.field9780.resolve(var1x.method15910()));
    }
 
-   public File method7992(Class8705<Class1655> var1) {
+   public File method7992(Class8705<World> var1) {
       return Class9535.method36874(var1, this.field9780.toFile());
    }
 

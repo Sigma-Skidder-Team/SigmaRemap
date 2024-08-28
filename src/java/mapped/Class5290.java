@@ -167,7 +167,7 @@ public class Class5290 extends Module {
 
     private void method16617(boolean var1) {
         if (var1 && this.field23797 && !(mc.field1355 instanceof Class859) && Class8005.method27349() <= Class5989.field26136.method18582()) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23797 = false;
         }
     }

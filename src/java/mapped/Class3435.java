@@ -48,21 +48,21 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (!var1.field9020) {
          this.method12102(var1, var2, var3);
       }
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          this.method12102(var2, var3, var1);
       }
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383()) && !var2.field9020 && var2.method6759(var3) == null) {
          this.method12102(var2, var3, var1);
       }
@@ -73,7 +73,7 @@ public class Class3435 extends Class3433 {
       return this.method11579().method23465(field19198, var1.method18348().method536()).method23465(field19202, Boolean.valueOf(false));
    }
 
-   private void method12102(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method12102(World var1, BlockPos var2, Class7380 var3) {
       Direction var6 = var3.<Direction>method23463(field19198);
       boolean var7 = this.method12103(var1, var2, var6);
       if (var7 && !var3.<Boolean>method23463(field19202)) {
@@ -98,7 +98,7 @@ public class Class3435 extends Class3433 {
       }
    }
 
-   private boolean method12103(Class1655 var1, BlockPos var2, Direction var3) {
+   private boolean method12103(World var1, BlockPos var2, Direction var3) {
       for (Direction var9 : Direction.values()) {
          if (var9 != var3 && var1.method6778(var2.method8349(var9), var9)) {
             return true;
@@ -121,7 +121,7 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public boolean method11647(Class7380 var1, Class1655 var2, BlockPos var3, int var4, int var5) {
+   public boolean method11647(Class7380 var1, World var2, BlockPos var3, int var4, int var5) {
       Direction var8 = var1.<Direction>method23463(field19198);
       if (!var2.field9020) {
          boolean var9 = this.method12103(var2, var3, var8);
@@ -193,7 +193,7 @@ public class Class3435 extends Class3433 {
       return true;
    }
 
-   public static boolean method12104(Class7380 var0, Class1655 var1, BlockPos var2, Direction var3, boolean var4, Direction var5) {
+   public static boolean method12104(Class7380 var0, World var1, BlockPos var2, Direction var3, boolean var4, Direction var5) {
       if (var2.getY() < 0 || var2.getY() > var1.method7034() - 1 || !var1.method6810().method24523(var2)) {
          return false;
       } else if (var0.method23393()) {
@@ -226,7 +226,7 @@ public class Class3435 extends Class3433 {
       }
    }
 
-   private boolean method12105(Class1655 var1, BlockPos var2, Direction var3, boolean var4) {
+   private boolean method12105(World var1, BlockPos var2, Direction var3, boolean var4) {
       BlockPos var7 = var2.method8349(var3);
       if (!var4 && var1.method6738(var7).method23448(Blocks.PISTON_HEAD)) {
          var1.method6725(var7, Blocks.AIR.method11579(), 20);

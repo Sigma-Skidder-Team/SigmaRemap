@@ -8,7 +8,7 @@ public class Class3380 extends Class3231 {
    }
 
    @Override
-   public void method11567(Class1655 var1, BlockPos var2, Entity var3, float var4) {
+   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       if (!var3.method3333()) {
          var3.method2921(var4, 0.0F);
       } else {
@@ -34,7 +34,7 @@ public class Class3380 extends Class3231 {
    }
 
    @Override
-   public void method11561(Class1655 var1, BlockPos var2, Entity var3) {
+   public void method11561(World var1, BlockPos var2, Entity var3) {
       double var6 = Math.abs(var3.method3433().field18049);
       if (var6 < 0.1 && !var3.method3332()) {
          double var8 = 0.4 + var6 * 0.2;

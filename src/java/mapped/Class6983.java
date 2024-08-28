@@ -56,7 +56,7 @@ public class Class6983 {
 
    public static void method21578(Class880 var0, ItemStack var1, Vector3d var2) {
       double var5 = var0.method3442() - 0.3F;
-      Class1000 var7 = new Class1000(var0.field5024, var0.getPosX(), var5, var0.getPosZ(), var1);
+      ItemEntity var7 = new ItemEntity(var0.field5024, var0.getPosX(), var5, var0.getPosZ(), var1);
       float var8 = 0.3F;
       Vector3d var9 = var2.method11336(var0.getPositionVec());
       var9 = var9.method11333().method11344(0.3F);

@@ -3,7 +3,7 @@ package mapped;
 public class Class6998 extends Class6997 {
    private static String[] field30273;
 
-   public Class6998(Class1088 var1, Class1655 var2) {
+   public Class6998(Class1088 var1, World var2) {
       super(var1, var2);
    }
 

@@ -179,10 +179,10 @@ public class Class5176 extends Module {
                     this.field23470++;
                     var1.method13908(true);
                     this.field23472 = Hand.field182;
-                    if (BlockFly.method16733(mc.field1339.method3094(Hand.field183).method32107())
+                    if (BlockFly.method16733(mc.field1339.getHeldItem(Hand.field183).method32107())
                             && (
-                            mc.field1339.method3094(this.field23472).method32105()
-                                    || !BlockFly.method16733(mc.field1339.method3094(this.field23472).method32107())
+                            mc.field1339.getHeldItem(this.field23472).method32105()
+                                    || !BlockFly.method16733(mc.field1339.getHeldItem(this.field23472).method32107())
                     )) {
                         this.field23472 = Hand.field183;
                     }

@@ -41,7 +41,7 @@ public class Class282 extends Class281 {
       field1075.info("Loaded {} recipes", var6.size());
    }
 
-   public <C extends Class920, T extends Class4843<C>> Optional<T> method1030(Class7207<T> var1, C var2, Class1655 var3) {
+   public <C extends Class920, T extends Class4843<C>> Optional<T> method1030(Class7207<T> var1, C var2, World var3) {
       return this.method1033(var1)
          .values()
          .stream()
@@ -53,7 +53,7 @@ public class Class282 extends Class281 {
       return (List<T>) this.method1033(var1).values().stream().map(var0 -> (T) var0).collect(Collectors.toList());
    }
 
-   public <C extends Class920, T extends Class4843<C>> List<T> method1032(Class7207<T> var1, C var2, Class1655 var3) {
+   public <C extends Class920, T extends Class4843<C>> List<T> method1032(Class7207<T> var1, C var2, World var3) {
       return this.method1033(var1)
          .values()
          .stream()
@@ -66,7 +66,7 @@ public class Class282 extends Class281 {
       return (Map)this.field1076.getOrDefault(var1, Collections.emptyMap());
    }
 
-   public <C extends Class920, T extends Class4843<C>> Class25<ItemStack> method1034(Class7207<T> var1, C var2, Class1655 var3) {
+   public <C extends Class920, T extends Class4843<C>> Class25<ItemStack> method1034(Class7207<T> var1, C var2, World var3) {
       Optional<T> var6 = this.method1030(var1, var2, var3);
       if (var6.isPresent()) {
          return ((Class4843)var6.get()).method14968(var2);

@@ -32,7 +32,7 @@ public class Class5195 extends Module {
     @EventTarget
     public void method16178(Class4401 var1) {
         if (this.method15996()) {
-            if (mc.field1339.method3094(Hand.field182).method32107() == Class8514.field37796 && this.field23504 >= 1) {
+            if (mc.field1339.getHeldItem(Hand.field182).method32107() == Class8514.field37796 && this.field23504 >= 1) {
                 var1.method13900(true);
             }
         }
@@ -72,7 +72,7 @@ public class Class5195 extends Module {
 
             int var4 = this.method16181();
             if (var4 >= 0 || var4 <= 8) {
-                if (mc.field1339.method3094(Hand.field182).method32107() == Class8514.field37796) {
+                if (mc.field1339.getHeldItem(Hand.field182).method32107() == Class8514.field37796) {
                     if (Class5260.method16437(Class8514.field37797) == 0) {
                         if (this.field23505.method27121() > 5000L) {
                             Client.getInstance().getNotificationManager().post(new Notification("BowFly", "You have no arrows"));

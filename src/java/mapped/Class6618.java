@@ -40,7 +40,7 @@ public interface Class6618 {
       return Collections.<Class9203>singleton(Class9203.field42266);
    }
 
-   Set<Class8705<Class1655>> method20135();
+   Set<Class8705<World>> method20135();
 
    Class8904 method20136();
 

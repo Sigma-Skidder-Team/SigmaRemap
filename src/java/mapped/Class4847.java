@@ -20,7 +20,7 @@ public abstract class Class4847 implements Class4843<Class920> {
    }
 
    @Override
-   public boolean method14963(Class920 var1, Class1655 var2) {
+   public boolean method14963(Class920 var1, World var2) {
       return this.field22633.test(var1.method3618(0));
    }
 

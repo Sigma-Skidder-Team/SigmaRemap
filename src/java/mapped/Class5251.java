@@ -41,7 +41,7 @@ public class Class5251 extends Module {
                     return;
                 }
 
-                String var7 = mc.field1339.method2941().getString().toLowerCase();
+                String var7 = mc.field1339.getName().getString().toLowerCase();
                 if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996()) {
                 }
 

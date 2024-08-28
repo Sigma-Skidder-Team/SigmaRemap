@@ -12,30 +12,30 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public void method11602(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public void method11602(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
       method12041(var1, var2, var3);
       super.method11602(var1, var2, var3, var4);
    }
 
    @Override
-   public void method11561(Class1655 var1, BlockPos var2, Entity var3) {
+   public void method11561(World var1, BlockPos var2, Entity var3) {
       method12041(var1.method6738(var2), var1, var2);
       super.method11561(var1, var2, var3);
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          method12041(var1, var2, var3);
       } else {
          method12042(var2, var3);
       }
 
-      ItemStack var9 = var4.method3094(var5);
-      return var9.method32107() instanceof Class3292 && new Class5909(var4, var5, var9, var6).method18346() ? Class2274.field14820 : Class2274.field14818;
+      ItemStack var9 = var4.getHeldItem(var5);
+      return var9.method32107() instanceof Class3292 && new Class5909(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.field14818;
    }
 
-   private static void method12041(Class7380 var0, Class1655 var1, BlockPos var2) {
+   private static void method12041(Class7380 var0, World var1, BlockPos var2) {
       method12042(var1, var2);
       if (!var0.<Boolean>method23463(field19077)) {
          var1.method6725(var2, var0.method23465(field19077, Boolean.valueOf(true)), 3);
@@ -64,13 +64,13 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field19077)) {
          method12042(var2, var3);
       }
    }
 
-   private static void method12042(Class1655 var0, BlockPos var1) {
+   private static void method12042(World var0, BlockPos var1) {
       double var4 = 0.5625;
       Random var6 = var0.field9016;
 

@@ -63,8 +63,8 @@ public abstract class Class6395 {
       var6.method31790(var5);
       Class39 var9 = this.method19448(var2);
       Class8705 var10 = var9 == null
-         ? Class1655.field8999
-         : Class9535.method36867(new Dynamic(Class8063.field34602, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(Class1655.field8999);
+         ? World.field8999
+         : Class9535.method36867(new Dynamic(Class8063.field34602, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(World.field8999);
       ServerWorld var11 = this.field27990.method1318(var10);
       ServerWorld var12;
       if (var11 != null) {
@@ -83,7 +83,7 @@ public abstract class Class6395 {
 
       field27988.info(
          "{}[{}] logged in with entity id {} at ({}, {}, {})",
-         var2.method2941().getString(),
+         var2.getName().getString(),
          var13,
          var2.method3205(),
          var2.getPosX(),
@@ -217,7 +217,7 @@ public abstract class Class6395 {
    public Class39 method19448(Class878 var1) {
       Class39 var4 = this.field27990.method1436().method20083();
       Class39 var5;
-      if (var1.method2941().getString().equals(this.field27990.method1332()) && var4 != null) {
+      if (var1.getName().getString().equals(this.field27990.method1332()) && var4 != null) {
          var5 = var4;
          var1.method3295(var4);
          field27988.debug("loading single player");
@@ -338,7 +338,7 @@ public abstract class Class6395 {
       return new Class878(this.field27990, var11, var1, (Class9081)var12);
    }
 
-   public Class878 method19453(Class878 var1, boolean var2) {
+   public Class878 func_232644_a_(Class878 var1, boolean var2) {
       this.field27991.remove(var1);
       var1.getServerWorld().method6934(var1);
       BlockPos var5 = var1.method2825();
@@ -453,7 +453,7 @@ public abstract class Class6395 {
       }
    }
 
-   public void method19457(Packet<?> var1, Class8705<Class1655> var2) {
+   public void method19457(Packet<?> var1, Class8705<World> var2) {
       for (int var5 = 0; var5 < this.field27991.size(); var5++) {
          Class878 var6 = this.field27991.get(var5);
          if (var6.field5024.method6813() == var2) {
@@ -560,7 +560,7 @@ public abstract class Class6395 {
       return null;
    }
 
-   public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8, Class8705<Class1655> var10, Packet<?> var11) {
+   public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8, Class8705<World> var10, Packet<?> var11) {
       for (int var14 = 0; var14 < this.field27991.size(); var14++) {
          Class878 var15 = this.field27991.get(var14);
          if (var15 != var1 && var15.field5024.method6813() == var10) {
@@ -695,7 +695,7 @@ public abstract class Class6395 {
          File var6 = this.field27990.method1433(Class5137.field23347).toFile();
          File var7 = new File(var6, var4 + ".json");
          if (!var7.exists()) {
-            File var8 = new File(var6, var1.method2941().getString() + ".json");
+            File var8 = new File(var6, var1.getName().getString() + ".json");
             if (var8.exists() && var8.isFile()) {
                var8.renameTo(var7);
             }

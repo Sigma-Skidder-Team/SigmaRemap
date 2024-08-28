@@ -73,17 +73,17 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var1.<Boolean>method23463(field18510)) {
          this.method11519(var1, var2, var3);
          this.method11520(var4, var2, var3, true);
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else {
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
-   public void method11519(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public void method11519(Class7380 var1, World var2, BlockPos var3) {
       var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(true)), 3);
       this.method11525(var1, var2, var3);
       var2.method6860().method20726(var3, this, this.method11518());
@@ -96,7 +96,7 @@ public abstract class Class3202 extends Class3200 {
    public abstract Class9455 method11521(boolean var1);
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5 && !var1.method23448(var4.method23383())) {
          if (var1.<Boolean>method23463(field18510)) {
             this.method11525(var1, var2, var3);
@@ -135,14 +135,14 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.field9020 && this.field18527 && !var1.<Boolean>method23463(field18510)) {
          this.method11524(var1, var2, var3);
       }
    }
 
-   private void method11524(Class7380 var1, Class1655 var2, BlockPos var3) {
-      List var6 = var2.<Class884>method7182(Class884.class, var1.method23412(var2, var3).method19514().method19668(var3));
+   private void method11524(Class7380 var1, World var2, BlockPos var3) {
+      List var6 = var2.<AbstractArrowEntity>method7182(AbstractArrowEntity.class, var1.method23412(var2, var3).method19514().method19668(var3));
       boolean var7 = !var6.isEmpty();
       boolean var8 = var1.<Boolean>method23463(field18510);
       if (var7 != var8) {
@@ -156,7 +156,7 @@ public abstract class Class3202 extends Class3200 {
       }
    }
 
-   private void method11525(Class7380 var1, Class1655 var2, BlockPos var3) {
+   private void method11525(Class7380 var1, World var2, BlockPos var3) {
       var2.method6733(var3, this);
       var2.method6733(var3.method8349(method11509(var1).method536()), this);
    }

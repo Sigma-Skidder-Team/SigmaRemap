@@ -11,7 +11,7 @@ public class Class5945 extends Class5942<Class955> {
    }
 
    public void method18462(Class955 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
-      Class1655 var9 = var1.method3734();
+      World var9 = var1.method3734();
       if (var9 != null) {
          BlockPos var10 = var1.method3774().method8349(var1.method3860().method536());
          Class7380 var11 = var1.method3864();
@@ -45,7 +45,7 @@ public class Class5945 extends Class5942<Class955> {
       }
    }
 
-   private void method18467(BlockPos var1, Class7380 var2, Class9332 var3, Class7733 var4, Class1655 var5, boolean var6, int var7) {
+   private void method18467(BlockPos var1, Class7380 var2, Class9332 var3, Class7733 var4, World var5, boolean var6, int var7) {
       Class4520 var10 = Class8928.method32631(var2);
       Class5422 var11 = var4.method25597(var10);
       this.field25935.method812().method24679(var5, this.field25935.method813(var2), var2, var1, var3, var11, var6, new Random(), var2.method23451(var1), var7);

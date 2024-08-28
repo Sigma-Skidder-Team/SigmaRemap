@@ -19,7 +19,7 @@ public class Class2907 extends Class2898<Class4712> {
          boolean var13 = true;
 
          while (var1.method7007(var8)) {
-            if (Class1655.method6720(var8)) {
+            if (World.method6720(var8)) {
                return true;
             }
 

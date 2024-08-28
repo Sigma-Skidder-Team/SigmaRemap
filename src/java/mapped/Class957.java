@@ -126,7 +126,7 @@ public class Class957 extends Class956 implements Class935 {
    public void method3877(Entity var1) {
       if (this.field5324 instanceof ServerWorld && !this.method3873()) {
          this.field5373 = 100;
-         if (this.field5374 == null && this.field5324.method6813() == Class1655.field9001) {
+         if (this.field5374 == null && this.field5324.method6813() == World.THE_END) {
             this.method3879((ServerWorld)this.field5324);
          }
 
@@ -138,7 +138,7 @@ public class Class957 extends Class956 implements Class935 {
             } else {
                Entity var6 = ((Class895)var1).method3460();
                if (var6 instanceof Class878) {
-                  Class9551.field44468.method15169((Class878)var6, this.field5324.method6738(this.method3774()));
+                  CriteriaTriggers.field44468.method15169((Class878)var6, this.field5324.method6738(this.method3774()));
                }
 
                if (var6 == null) {
@@ -214,7 +214,7 @@ public class Class957 extends Class956 implements Class935 {
       return var6 != null ? var6 : var1;
    }
 
-   private static Class1674 method3881(Class1655 var0, Vector3d var1) {
+   private static Class1674 method3881(World var0, Vector3d var1) {
       return var0.method6824(MathHelper.method37769(var1.field18048 / 16.0), MathHelper.method37769(var1.field18050 / 16.0));
    }
 

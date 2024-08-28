@@ -5,7 +5,7 @@ public class Class1033 extends Class1031 implements Class1022 {
    private int field5739;
    private final Vector3d[][] field5740;
 
-   public Class1033(Class8992<? extends Class1033> var1, Class1655 var2) {
+   public Class1033(Class8992<? extends Class1033> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
       this.field5740 = new Vector3d[2][4];
@@ -150,8 +150,8 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      ItemStack var5 = this.method2983(this.method3094(Class9456.method36389(this, Class8514.field37796)));
-      Class884 var6 = Class9456.method36390(this, var5, var2);
+      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Class8514.field37796)));
+      AbstractArrowEntity var6 = Class9456.method36390(this, var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();

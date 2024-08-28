@@ -15,11 +15,11 @@ public class Class907 extends Entity {
    public Class39 field5183;
    public static final Class9289<BlockPos> field5184 = Class9361.<BlockPos>method35441(Class907.class, Class7784.field33401);
 
-   public Class907(Class8992<? extends Class907> var1, Class1655 var2) {
+   public Class907(Class8992<? extends Class907> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class907(Class1655 var1, double var2, double var4, double var6, Class7380 var8) {
+   public Class907(World var1, double var2, double var4, double var6, Class7380 var8) {
       this(Class8992.field41031, var1);
       this.field5176 = var8;
       this.field5019 = true;
@@ -231,7 +231,7 @@ public class Class907 extends Entity {
       }
    }
 
-   public Class1655 method3554() {
+   public World method3554() {
       return this.field5024;
    }
 

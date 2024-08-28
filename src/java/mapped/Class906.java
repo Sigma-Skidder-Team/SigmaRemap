@@ -10,7 +10,7 @@ public class Class906 extends Entity {
    private boolean field5174;
    private Class878 field5175;
 
-   public Class906(Class8992<? extends Class906> var1, Class1655 var2) {
+   public Class906(Class8992<? extends Class906> var1, World var2) {
       super(var1, var2);
       this.field5077 = true;
       this.field5171 = 2;
@@ -101,7 +101,7 @@ public class Class906 extends Entity {
                }
 
                if (this.field5175 != null) {
-                  Class9551.field44495.method15099(this.field5175, var6);
+                  CriteriaTriggers.field44495.method15099(this.field5175, var6);
                }
             }
          } else {

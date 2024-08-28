@@ -12,7 +12,7 @@ public class Class1030 extends Class1025 {
    private static final Predicate<Class2197> field5731 = var0 -> var0 == Class2197.field14353 || var0 == Class2197.field14354;
    private boolean field5732;
 
-   public Class1030(Class8992<? extends Class1030> var1, Class1655 var2) {
+   public Class1030(Class8992<? extends Class1030> var1, World var2) {
       super(var1, var2);
    }
 

@@ -3,11 +3,11 @@ package mapped;
 public class Class991 extends Class919 {
    private static String[] field5477;
 
-   public Class991(Class8992<? extends Class991> var1, Class1655 var2) {
+   public Class991(Class8992<? extends Class991> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class991(Class1655 var1, double var2, double var4, double var6) {
+   public Class991(World var1, double var2, double var4, double var6) {
       super(Class8992.field41051, var2, var4, var6, var1);
    }
 

@@ -25,7 +25,7 @@ public class Class7720 {
    private float field33145;
    private Class8851 field33146;
    public int field33147;
-   private Class1655 field33148;
+   private World field33148;
    public static final float[] field33149 = new float[]{1.0F, 0.0F, 0.0F};
    private static final String field33150 = "clear";
    private static final String field33151 = "rain";
@@ -223,7 +223,7 @@ public class Class7720 {
       return var1;
    }
 
-   public void method25513(Class1655 var1, Class9332 var2, int var3, float var4, float var5, float var6) {
+   public void method25513(World var1, Class9332 var2, int var3, float var4, float var5, float var6) {
       float var9 = this.method25514(var1);
       float var10 = this.method25516(var5, var6);
       float var11 = this.method25517(var3);
@@ -268,7 +268,7 @@ public class Class7720 {
       }
    }
 
-   private float method25514(Class1655 var1) {
+   private float method25514(World var1) {
       if (this.field33143 == null && this.field33144 == null) {
          return 1.0F;
       } else {
@@ -281,7 +281,7 @@ public class Class7720 {
       }
    }
 
-   private float method25515(Class1655 var1) {
+   private float method25515(World var1) {
       Entity var4 = Minecraft.getInstance().method1550();
       if (var4 != null) {
          BlockPos var5 = var4.method3432();
@@ -353,7 +353,7 @@ public class Class7720 {
       var1.method35410();
    }
 
-   public boolean method25519(Class1655 var1, int var2) {
+   public boolean method25519(World var1, int var2) {
       if (var1 != this.field33148) {
          this.field33148 = var1;
          this.field33146 = null;

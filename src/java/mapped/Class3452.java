@@ -60,7 +60,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public boolean method11487(Class1655 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
       return true;
    }
 

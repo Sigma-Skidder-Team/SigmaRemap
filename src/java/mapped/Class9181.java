@@ -25,7 +25,7 @@ public class Class9181 {
 
    public static Class9181 method34336(JsonObject var0, Class9366 var1) {
       ResourceLocation var4 = new ResourceLocation(Class8963.method32763(var0, "trigger"));
-      Class4907 var5 = Class9551.method37000(var4);
+      Class4907 var5 = CriteriaTriggers.method37000(var4);
       if (var5 != null) {
          Class4477 var6 = var5.method15054(Class8963.method32783(var0, "conditions", new JsonObject()), var1);
          return new Class9181(var6);

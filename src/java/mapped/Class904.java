@@ -23,7 +23,7 @@ public class Class904 extends Class882 {
    private final int field5161;
    private final int field5162;
 
-   private Class904(Class1655 var1, PlayerEntity var2, int var3, int var4) {
+   private Class904(World var1, PlayerEntity var2, int var3, int var4) {
       super(Class8992.field41112, var1);
       this.field5077 = true;
       this.method3459(var2);
@@ -32,7 +32,7 @@ public class Class904 extends Class882 {
       this.field5162 = Math.max(0, var4);
    }
 
-   public Class904(Class1655 var1, PlayerEntity var2, double var3, double var5, double var7) {
+   public Class904(World var1, PlayerEntity var2, double var3, double var5, double var7) {
       this(var1, var2, 0, 0);
       this.method3215(var3, var5, var7);
       this.field5025 = this.getPosX();
@@ -40,7 +40,7 @@ public class Class904 extends Class882 {
       this.field5027 = this.getPosZ();
    }
 
-   public Class904(PlayerEntity var1, Class1655 var2, int var3, int var4) {
+   public Class904(PlayerEntity var1, World var2, int var3, int var4) {
       this(var2, var1, var3, var4);
       float var7 = var1.field5032;
       float var8 = var1.field5031;
@@ -220,7 +220,7 @@ public class Class904 extends Class882 {
 
    @Override
    public boolean method3467(Entity var1) {
-      return super.method3467(var1) || var1.method3066() && var1 instanceof Class1000;
+      return super.method3467(var1) || var1.method3066() && var1 instanceof ItemEntity;
    }
 
    @Override
@@ -421,10 +421,10 @@ public class Class904 extends Class882 {
                   .method36453((float)this.field5161 + var4.method2978());
                Class7318 var7 = this.field5024.method6715().method1411().method1058(Class8793.field39591);
                List<ItemStack> var8 = var7.method23182(var6.method36460(Class8524.field38285));
-               Class9551.field44494.method15124((Class878)var4, var1, this, var8);
+               CriteriaTriggers.field44494.method15124((Class878)var4, var1, this, var8);
 
                for (ItemStack var10 : var8) {
-                  Class1000 var11 = new Class1000(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var10);
+                  ItemEntity var11 = new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var10);
                   double var12 = var4.getPosX() - this.getPosX();
                   double var14 = var4.getPosY() - this.getPosY();
                   double var16 = var4.getPosZ() - this.getPosZ();
@@ -433,7 +433,7 @@ public class Class904 extends Class882 {
                   this.field5024.method6916(var11);
                   var4.field5024
                      .method6916(
-                        new Class1003(var4.field5024, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.field5054.nextInt(6) + 1)
+                        new ExperienceOrbEntity(var4.field5024, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.field5054.nextInt(6) + 1)
                      );
                   if (var10.method32107().method11743(Class5985.field26114)) {
                      var4.method2912(Class8876.field40138, 1);
@@ -444,9 +444,9 @@ public class Class904 extends Class882 {
             }
          } else {
             this.method3543();
-            Class9551.field44494.method15124((Class878)var4, var1, this, Collections.<ItemStack>emptyList());
+            CriteriaTriggers.field44494.method15124((Class878)var4, var1, this, Collections.<ItemStack>emptyList());
             this.field5024.method6786(this, (byte)31);
-            var5 = !(this.field5159 instanceof Class1000) ? 5 : 3;
+            var5 = !(this.field5159 instanceof ItemEntity) ? 5 : 3;
          }
 
          if (this.field5036) {

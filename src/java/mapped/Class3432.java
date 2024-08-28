@@ -10,7 +10,7 @@ public class Class3432 extends Class3429 {
       this.method11578(this.field18612.method35393().method23465(field19196, Class96.field247).method23465(field19197, Boolean.valueOf(false)));
    }
 
-   public boolean method12098(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4, int var5) {
+   public boolean method12098(World var1, BlockPos var2, Class7380 var3, boolean var4, int var5) {
       if (var5 >= 8) {
          return false;
       } else {
@@ -85,7 +85,7 @@ public class Class3432 extends Class3429 {
       }
    }
 
-   public boolean method12099(Class1655 var1, BlockPos var2, boolean var3, int var4, Class96 var5) {
+   public boolean method12099(World var1, BlockPos var2, boolean var3, int var4, Class96 var5) {
       Class7380 var8 = var1.method6738(var2);
       if (!var8.method23448(this)) {
          return false;
@@ -108,7 +108,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Block var4) {
+   public void method12091(Class7380 var1, World var2, BlockPos var3, Block var4) {
       boolean var7 = var1.<Boolean>method23463(field19197);
       boolean var8 = var2.method6780(var3) || this.method12098(var2, var3, var1, true, 0) || this.method12098(var2, var3, var1, false, 0);
       if (var8 != var7) {

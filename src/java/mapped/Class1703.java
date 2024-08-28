@@ -238,7 +238,7 @@ public class Class1703 extends Class1702 {
       }
    }
 
-   public Class1655 method7386() {
+   public World method7386() {
       return this.field9275;
    }
 

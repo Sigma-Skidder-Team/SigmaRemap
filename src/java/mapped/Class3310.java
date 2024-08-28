@@ -8,7 +8,7 @@ public class Class3310 extends Class3308 {
    }
 
    @Override
-   public Class884 method11850(Class1655 var1, ItemStack var2, Class880 var3) {
+   public AbstractArrowEntity method11850(World var1, ItemStack var2, Class880 var3) {
       return new Class885(var1, var3);
    }
 }

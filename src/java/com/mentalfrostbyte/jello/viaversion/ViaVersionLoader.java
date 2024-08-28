@@ -47,7 +47,7 @@ public class ViaVersionLoader {
    @EventTarget
    public void method23343(Class4430 var1) {
       if (var1.method13977() == this.mc.field1299.field44639.field13070.method28100() && Class8005.method27349() <= Class5989.field26136.method18582()) {
-         this.mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
+         this.mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
       }
 
       if (Class8005.method27349() == Class5989.field26129.method18582()

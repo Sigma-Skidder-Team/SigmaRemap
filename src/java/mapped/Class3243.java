@@ -15,7 +15,7 @@ public class Class3243 extends Class3241 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       Class944 var7 = var2.method6759(var3);
       if (var7 instanceof Class957) {
          int var8 = ((Class957)var7).method3884();

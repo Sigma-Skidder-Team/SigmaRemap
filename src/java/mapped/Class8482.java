@@ -3,9 +3,9 @@ package mapped;
 public class Class8482 {
    private static String[] field36360;
 
-   public static Class6794<ItemStack> method29977(Class1655 var0, PlayerEntity var1, Hand var2) {
+   public static Class6794<ItemStack> method29977(World var0, PlayerEntity var1, Hand var2) {
       var1.method3154(var2);
-      return Class6794.<ItemStack>method20697(var1.method3094(var2));
+      return Class6794.<ItemStack>method20697(var1.getHeldItem(var2));
    }
 
    public static ItemStack method29978(ItemStack var0, PlayerEntity var1, ItemStack var2, boolean var3) {

@@ -29,12 +29,12 @@ public final class Class8178 implements Class8176 {
             double var13 = 0.0;
             if (!var12) {
                if (!(var6 instanceof Class997)) {
-                  if (!(var6 instanceof Class1000)) {
+                  if (!(var6 instanceof ItemEntity)) {
                      if (var3 != null) {
                         var13 = (double)var3.field4965;
                      }
                   } else {
-                     var13 = (double)(180.0F - ((Class1000)var6).method4138(0.5F) / (float) (Math.PI * 2) * 360.0F);
+                     var13 = (double)(180.0F - ((ItemEntity)var6).method4138(0.5F) / (float) (Math.PI * 2) * 360.0F);
                   }
                } else {
                   var13 = this.method28471((Class997)var6);
@@ -74,7 +74,7 @@ public final class Class8178 implements Class8176 {
    }
 
    @Nullable
-   private BlockPos method28470(Class1655 var1, Class39 var2) {
+   private BlockPos method28470(World var1, Class39 var2) {
       boolean var5 = var2.method118("LodestonePos");
       boolean var6 = var2.method118("LodestoneDimension");
       if (var5 && var6) {

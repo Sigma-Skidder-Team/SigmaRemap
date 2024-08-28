@@ -10,7 +10,7 @@ public class Class3430 extends Class3429 {
    }
 
    @Override
-   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Block var4) {
+   public void method12091(Class7380 var1, World var2, BlockPos var3, Block var4) {
       if (var4.method11579().method23401() && new Class9435(var2, var3, var1).method36240() == 3) {
          this.method12092(var2, var3, var1, false);
       }

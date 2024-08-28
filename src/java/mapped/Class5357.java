@@ -160,7 +160,7 @@ public class Class5357 extends Module {
         field23951 = new Class7461(mc.field1339.field5031, mc.field1339.field5032);
         this.field23957 = -1.0F;
         this.field23938
-                .method36814(mc.field1339.method3094(Hand.field182).method32107() instanceof Class3267 && mc.field1299.field44642.method8509());
+                .method36814(mc.field1339.getHeldItem(Hand.field182).method32107() instanceof Class3267 && mc.field1299.field44642.method8509());
         this.field23959 = false;
         this.field23946 = -1;
         this.field23938.field44349.clear();

@@ -356,7 +356,7 @@ public class Class9653 {
    private static int method37668(Class6619 var0, Vector3d var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
       ServerWorld var6 = var0.method20172();
       var2.forEach(var2x -> {
-         Class1000 var5 = new Class1000(var6, var1.field18048, var1.field18049, var1.field18050, var2x.copy());
+         ItemEntity var5 = new ItemEntity(var6, var1.field18048, var1.field18049, var1.field18050, var2x.copy());
          var5.method4131();
          var6.method6916(var5);
       });

@@ -4,7 +4,7 @@ public class Class5910 extends Class5909 {
    private static String[] field25716;
    private final Direction field25719;
 
-   public Class5910(Class1655 var1, BlockPos var2, Direction var3, ItemStack var4, Direction var5) {
+   public Class5910(World var1, BlockPos var2, Direction var3, ItemStack var4, Direction var5) {
       super(var1, (PlayerEntity)null, Hand.field182, var4, new Class8711(Vector3d.method11330(var2), var5, var2, false));
       this.field25719 = var3;
    }

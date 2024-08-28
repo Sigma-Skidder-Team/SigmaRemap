@@ -139,7 +139,7 @@ public class Class5365 extends Module {
                             this.field23976.method16734();
                         }
 
-                        ItemStack var15 = mc.field1339.method3094(Hand.field182);
+                        ItemStack var15 = mc.field1339.getHeldItem(Hand.field182);
                         new Class5911(mc.field1339, Hand.field182, var13);
                         int var17 = var15.method32179();
                         mc.field1337.method23139(mc.field1339, mc.field1338, this.field23975, var13);
@@ -160,10 +160,10 @@ public class Class5365 extends Module {
                 this.field23980--;
                 var1.method13908(true);
                 this.field23975 = Hand.field182;
-                if (BlockFly.method16733(mc.field1339.method3094(Hand.field183).method32107())
+                if (BlockFly.method16733(mc.field1339.getHeldItem(Hand.field183).method32107())
                         && (
-                        mc.field1339.method3094(this.field23975).method32105()
-                                || !BlockFly.method16733(mc.field1339.method3094(this.field23975).method32107())
+                        mc.field1339.getHeldItem(this.field23975).method32105()
+                                || !BlockFly.method16733(mc.field1339.getHeldItem(this.field23975).method32107())
                 )) {
                     this.field23975 = Hand.field183;
                 }

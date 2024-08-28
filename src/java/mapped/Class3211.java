@@ -93,12 +93,12 @@ public class Class3211 extends Block {
       }
    }
 
-   private void method11590(Class1655 var1, BlockPos var2, int var3) {
+   private void method11590(World var1, BlockPos var2, int var3) {
       var1.method6725(var2, this.method11579().method23465(field18619, Integer.valueOf(var3)), 2);
       var1.method6999(1033, var2, 0);
    }
 
-   private void method11591(Class1655 var1, BlockPos var2) {
+   private void method11591(World var1, BlockPos var2) {
       var1.method6725(var2, this.method11579().method23465(field18619, Integer.valueOf(5)), 2);
       var1.method6999(1034, var2, 0);
    }
@@ -209,7 +209,7 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public void method11595(Class1655 var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
       if (var4.method3204().method33228(Class8613.field38738)) {
          BlockPos var7 = var3.method31423();
          var1.method7180(var7, true, var4);

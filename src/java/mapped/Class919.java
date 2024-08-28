@@ -8,11 +8,11 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    private ResourceLocation field5238;
    private long field5239;
 
-   public Class919(Class8992<?> var1, Class1655 var2) {
+   public Class919(Class8992<?> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class919(Class8992<?> var1, double var2, double var4, double var6, Class1655 var8) {
+   public Class919(Class8992<?> var1, double var2, double var4, double var6, World var8) {
       super(var1, var8, var2, var4, var6);
    }
 
@@ -135,13 +135,13 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       var1.method2766(this);
       if (var1.field5024.field9020) {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else {
          Class4388.method13832(var1, true);
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
@@ -160,7 +160,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
       if (this.field5238 != null && this.field5024.method6715() != null) {
          Class7318 var4 = this.field5024.method6715().method1411().method1058(this.field5238);
          if (var1 instanceof Class878) {
-            Class9551.field44504.method15109((Class878)var1, this.field5238);
+            CriteriaTriggers.field44504.method15109((Class878)var1, this.field5238);
          }
 
          this.field5238 = null;

@@ -7,14 +7,14 @@ public class Class5911 {
    private final PlayerEntity field25721;
    private final Hand field25722;
    private final Class8711 field25723;
-   private final Class1655 field25724;
+   private final World field25724;
    private final ItemStack field25725;
 
    public Class5911(PlayerEntity var1, Hand var2, Class8711 var3) {
-      this(var1.field5024, var1, var2, var1.method3094(var2), var3);
+      this(var1.field5024, var1, var2, var1.getHeldItem(var2), var3);
    }
 
-   public Class5911(Class1655 var1, PlayerEntity var2, Hand var3, ItemStack var4, Class8711 var5) {
+   public Class5911(World var1, PlayerEntity var2, Hand var3, ItemStack var4, Class8711 var5) {
       this.field25721 = var2;
       this.field25722 = var3;
       this.field25723 = var5;
@@ -55,7 +55,7 @@ public class Class5911 {
       return this.field25722;
    }
 
-   public Class1655 method18360() {
+   public World method18360() {
       return this.field25724;
    }
 

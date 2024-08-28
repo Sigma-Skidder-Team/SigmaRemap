@@ -80,7 +80,7 @@ public class Class8284 {
       } else if (var1.size() != 1) {
          throw field35588.create(var1.size());
       } else {
-         throw field35587.create(((Class878)var1.iterator().next()).method2941());
+         throw field35587.create(((Class878)var1.iterator().next()).getName());
       }
    }
 }

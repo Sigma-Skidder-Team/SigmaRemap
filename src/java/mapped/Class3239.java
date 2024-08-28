@@ -45,18 +45,18 @@ public class Class3239 extends Class3238 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          return Class3329.method11880(var4, var2, var3);
       } else {
-         ItemStack var9 = var4.method3094(var5);
-         return var9.method32107() != Class8514.field38087 ? Class2274.field14820 : Class2274.field14818;
+         ItemStack var9 = var4.getHeldItem(var5);
+         return var9.method32107() != Class8514.field38087 ? ActionResultType.field14820 : ActionResultType.field14818;
       }
    }
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7379 var6 = var1.method18360().method6739(var1.method18345());
       BlockPos var7 = var5.method8341();

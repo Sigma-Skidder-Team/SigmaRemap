@@ -39,7 +39,7 @@ public class Class3724<E extends Class880> extends Class3676<E> {
       Class6983.method21576(var2, this.method12623((E)var2), this.field19813, 0);
    }
 
-   private Class1000 method12623(E var1) {
-      return var1.method2992().<Class1000>method21410(Class8830.field39847).get();
+   private ItemEntity method12623(E var1) {
+      return var1.method2992().<ItemEntity>method21410(Class8830.field39847).get();
    }
 }

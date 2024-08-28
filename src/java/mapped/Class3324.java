@@ -8,8 +8,8 @@ public class Class3324 extends Class3323 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       if (!var1.field9020) {
          Class896 var7 = new Class896(var1, var2);
          var7.method3511(var6);

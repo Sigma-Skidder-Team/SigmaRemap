@@ -36,7 +36,7 @@ public class Class2786 extends Class2785 {
 
          if (var7 != null) {
             var7.method2911(Class8876.field40136);
-            Class9551.field44479.method15112(var7, this.field17407, this.field17410, var4);
+            CriteriaTriggers.field44479.method15112(var7, this.field17407, this.field17410, var4);
          }
 
          this.field17407.method4770(6000);
@@ -50,7 +50,7 @@ public class Class2786 extends Class2785 {
          if (this.field17409.method6789().method17135(Class5462.field24227)) {
             this.field17409
                .method6916(
-                  new Class1003(
+                  new ExperienceOrbEntity(
                      this.field17409,
                      this.field17407.getPosX(),
                      this.field17407.getPosY(),

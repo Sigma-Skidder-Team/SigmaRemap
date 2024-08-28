@@ -6,7 +6,7 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
    }
 
    public void method820(Class9332 var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if ("deadmau5".equals(var4.method2941().getString()) && var4.method5370() && !var4.method3342()) {
+      if ("deadmau5".equals(var4.getName().getString()) && var4.method5370() && !var4.method3342()) {
          Class5422 var13 = var2.method25597(Class4520.method14309(var4.method5371()));
          int var14 = Class5712.method17883(var4, 0.0F);
 

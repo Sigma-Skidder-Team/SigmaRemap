@@ -5,7 +5,7 @@ public abstract class Class1031 extends Class1025 {
    public int field5734;
    private Class2031 field5735 = Class2031.field13181;
 
-   public Class1031(Class8992<? extends Class1031> var1, Class1655 var2) {
+   public Class1031(Class8992<? extends Class1031> var1, World var2) {
       super(var1, var2);
    }
 

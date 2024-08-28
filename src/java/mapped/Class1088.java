@@ -14,7 +14,7 @@ public class Class1088 extends Class1018 {
    private int field5962;
    public static final Predicate<Class880> field5963 = var0 -> var0.method3005() && !var0.method3250();
 
-   public Class1088(Class8992<? extends Class1088> var1, Class1655 var2) {
+   public Class1088(Class8992<? extends Class1088> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
       this.field5596 = new Class6838(this);
@@ -206,7 +206,7 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6998(this, var1);
    }
 

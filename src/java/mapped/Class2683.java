@@ -67,7 +67,7 @@ public class Class2683 extends Class2595 {
 
    @Override
    public void method10805() {
-      Class1655 var3 = this.field17097.field5024;
+      World var3 = this.field17097.field5024;
       if (this.field17097.method4785() || this.field17097.method4230().method21664()) {
          Vector3d var4 = Vector3d.method11328(this.field17097.method4777());
          Vector3d var5 = Class8037.method27588(this.field17097, 16, 1, var4, (float) (Math.PI / 8));

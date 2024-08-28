@@ -33,7 +33,7 @@ public class Class1036 extends Class1035 {
       }
    );
 
-   public Class1036(Class8992<? extends Class1036> var1, Class1655 var2) {
+   public Class1036(Class8992<? extends Class1036> var1, World var2) {
       super(var1, var2);
       this.field5594 = 20;
    }

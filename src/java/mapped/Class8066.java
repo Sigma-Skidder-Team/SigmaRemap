@@ -340,7 +340,7 @@ public class Class8066 {
       return new Class1664(var6, var4, var5, 1);
    }
 
-   public Class1677 method27738(Class1655 var1, BlockPos var2, BlockPos var3, int var4) {
+   public Class1677 method27738(World var1, BlockPos var2, BlockPos var3, int var4) {
       return Class1677.method7172(var1, var2, var3, var4, false);
    }
 

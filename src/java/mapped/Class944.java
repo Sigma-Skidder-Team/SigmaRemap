@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public abstract class Class944 {
    private static final Logger field5322 = LogManager.getLogger();
    private final Class4387<?> field5323;
-   public Class1655 field5324;
+   public World field5324;
    public BlockPos field5325 = BlockPos.field13032;
    public boolean field5326;
    private Class7380 field5327;
@@ -20,11 +20,11 @@ public abstract class Class944 {
    }
 
    @Nullable
-   public Class1655 method3734() {
+   public World method3734() {
       return this.field5324;
    }
 
-   public void method3769(Class1655 var1, BlockPos var2) {
+   public void method3769(World var1, BlockPos var2) {
       this.field5324 = var1;
       this.field5325 = var2.method8353();
    }

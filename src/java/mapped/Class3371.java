@@ -47,7 +47,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
          Class944 var8 = var1.method6759(var2);
          if (var8 instanceof Class950) {

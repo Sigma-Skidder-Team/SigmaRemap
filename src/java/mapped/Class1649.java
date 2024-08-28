@@ -589,7 +589,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             this.field8956.method6820().method22508("chunkSave");
             Class39 var6 = Class9725.method38088(this.field8956, var1);
             if (Class9299.field42773.method20241()) {
-               Class1655 var7 = (Class1655)Class9299.method35070(var1, Class9299.field42908);
+               World var7 = (World)Class9299.method35070(var1, Class9299.field42908);
                Class9299.method35085(Class9299.field42773, var1, var7 != null ? var7 : this.field8956, var6);
             }
 

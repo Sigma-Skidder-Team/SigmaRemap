@@ -15,7 +15,7 @@ public class Class3321 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
+   public ActionResultType method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
       if (var3 instanceof Class1019) {
          Class1019 var7 = (Class1019)var3;
          if (var7.method3066() && !var7.method4519() && var7.method4517() != this.field18831) {
@@ -24,11 +24,11 @@ public class Class3321 extends Class3257 {
                var1.method32182(1);
             }
 
-            return Class2274.method9002(var2.field5024.field9020);
+            return ActionResultType.method9002(var2.field5024.field9020);
          }
       }
 
-      return Class2274.field14820;
+      return ActionResultType.field14820;
    }
 
    public Class112 method11876() {

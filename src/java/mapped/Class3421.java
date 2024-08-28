@@ -85,12 +85,12 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       this.field19148.method11512(var1, var2, var3, var4);
    }
 
    @Override
-   public void method11602(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public void method11602(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
       this.field19149.method23436(var2, var3, var4);
    }
 
@@ -105,7 +105,7 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var1.method23383())) {
          this.field19149.method23423(var2, var3, Blocks.AIR, var3, false);
          this.field19148.method11589(this.field19149, var2, var3, var4, false);
@@ -113,14 +113,14 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          this.field19149.method23429(var2, var3, var4, var5);
       }
    }
 
    @Override
-   public void method11561(Class1655 var1, BlockPos var2, Entity var3) {
+   public void method11561(World var1, BlockPos var2, Entity var3) {
       this.field19148.method11561(var1, var2, var3);
    }
 
@@ -140,12 +140,12 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       return this.field19149.method23435(var2, var4, var5, var6);
    }
 
    @Override
-   public void method11560(Class1655 var1, BlockPos var2, Class7782 var3) {
+   public void method11560(World var1, BlockPos var2, Class7782 var3) {
       this.field19148.method11560(var1, var2, var3);
    }
 

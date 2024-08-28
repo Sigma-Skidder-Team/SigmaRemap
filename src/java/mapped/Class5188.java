@@ -31,7 +31,7 @@ public class Class5188 extends Module {
                 PlayerEntity var8 = (PlayerEntity) var7.getKey();
                 if (!var8.method3342()) {
                     Class8513 var9 = (Class8513) var7.getValue();
-                    String var10 = var8.method2941().getUnformattedComponentText();
+                    String var10 = var8.getName().getUnformattedComponentText();
                     int var11 = Class7925.field33952.method23942(var10) + 8;
                     int var12 = Math.round(var9.field37220);
                     int var13 = Math.round(var9.field37221);

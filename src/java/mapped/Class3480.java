@@ -69,7 +69,7 @@ public class Class3480 extends Class3194 implements Class3196 {
       }
    }
 
-   public void method12180(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public void method12180(World var1, BlockPos var2, Class7380 var3) {
       int var6 = this.method12177(var3) + this.method12181(var1);
       int var7 = this.method12176();
       if (var6 > var7) {
@@ -79,7 +79,7 @@ public class Class3480 extends Class3194 implements Class3196 {
       var1.method6725(var2, this.method12178(var6), 2);
    }
 
-   public int method12181(Class1655 var1) {
+   public int method12181(World var1) {
       return MathHelper.method37782(var1.field9016, 2, 5);
    }
 
@@ -133,7 +133,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (var4 instanceof Class1029 && var2.method6789().method17135(Class5462.field24224)) {
          var2.method7180(var3, true, var4);
       }
@@ -156,7 +156,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11487(Class1655 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
       return true;
    }
 

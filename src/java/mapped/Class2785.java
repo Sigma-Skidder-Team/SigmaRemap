@@ -9,7 +9,7 @@ public class Class2785 extends Class2595 {
    private static final Class8522 field17406 = new Class8522().method30203(8.0).method30204().method30205().method30206();
    public final Class1018 field17407;
    private final Class<? extends Class1018> field17408;
-   public final Class1655 field17409;
+   public final World field17409;
    public Class1018 field17410;
    private int field17411;
    private final double field17412;

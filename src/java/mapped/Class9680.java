@@ -935,7 +935,7 @@ public class Class9680 {
       }
    }
 
-   public static Vector3d method37876(Vector3d var0, Class1655 var1, Entity var2, float var3) {
+   public static Vector3d method37876(Vector3d var0, World var1, Entity var2, float var3) {
       Minecraft var6 = Minecraft.getInstance();
       if (!Class8509.method30146(var1)) {
          if (!Class8509.method30147(var1)) {
@@ -948,7 +948,7 @@ public class Class9680 {
       }
    }
 
-   public static Vector3d method37877(Vector3d var0, Class1655 var1, Entity var2, float var3) {
+   public static Vector3d method37877(Vector3d var0, World var1, Entity var2, float var3) {
       Minecraft var6 = Minecraft.getInstance();
       if (!Class8509.method30147(var1)) {
          return !Class8509.method30148(var1) ? var0 : method37868(var0);

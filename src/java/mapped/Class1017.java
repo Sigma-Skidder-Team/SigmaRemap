@@ -24,7 +24,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    private Class2665 field5700;
    private int field5701;
 
-   public Class1017(Class8992<? extends Class1017> var1, Class1655 var2) {
+   public Class1017(Class8992<? extends Class1017> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6832(this, 20, true);
       this.field5595 = new Class8094(this, this);
@@ -158,7 +158,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       this.method4428();
    }
 
-   private void method4419(Class1655 var1, double var2, double var4, double var6, double var8, double var10, Class7436 var12) {
+   private void method4419(World var1, double var2, double var4, double var6, double var8, double var10, Class7436 var12) {
       var1.method6746(
          var12,
          MathHelper.method37822(var1.field9016.nextDouble(), var2, var4),
@@ -427,7 +427,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       Class6996 var4 = new Class6996(this, this, var1);
       var4.method21685(false);
       var4.method21674(false);

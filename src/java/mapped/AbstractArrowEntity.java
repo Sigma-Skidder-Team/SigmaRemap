@@ -7,9 +7,9 @@ import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class Class884 extends Class882 {
-   private static final Class9289<Byte> field5097 = Class9361.<Byte>method35441(Class884.class, Class7784.field33390);
-   private static final Class9289<Byte> field5098 = Class9361.<Byte>method35441(Class884.class, Class7784.field33390);
+public abstract class AbstractArrowEntity extends Class882 {
+   private static final Class9289<Byte> field5097 = Class9361.<Byte>method35441(AbstractArrowEntity.class, Class7784.field33390);
+   private static final Class9289<Byte> field5098 = Class9361.<Byte>method35441(AbstractArrowEntity.class, Class7784.field33390);
    private Class7380 field5099;
    public boolean field5100;
    public int field5101;
@@ -22,16 +22,16 @@ public abstract class Class884 extends Class882 {
    private IntOpenHashSet field5108;
    private List<Entity> field5109;
 
-   public Class884(Class8992<? extends Class884> var1, Class1655 var2) {
+   public AbstractArrowEntity(Class8992<? extends AbstractArrowEntity> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class884(Class8992<? extends Class884> var1, double var2, double var4, double var6, Class1655 var8) {
+   public AbstractArrowEntity(Class8992<? extends AbstractArrowEntity> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
       this.method3215(var2, var4, var6);
    }
 
-   public Class884(Class8992<? extends Class884> var1, Class880 var2, Class1655 var3) {
+   public AbstractArrowEntity(Class8992<? extends AbstractArrowEntity> var1, Class880 var2, World var3) {
       this(var1, var2.getPosX(), var2.method3442() - 0.1F, var2.getPosZ(), var3);
       this.method3459(var2);
       if (var2 instanceof PlayerEntity) {
@@ -343,9 +343,9 @@ public abstract class Class884 extends Class882 {
             if (!this.field5024.field9020 && var7 instanceof Class878) {
                Class878 var15 = (Class878)var7;
                if (this.field5109 != null && this.method3488()) {
-                  Class9551.field44497.method15149(var15, this.field5109);
+                  CriteriaTriggers.field44497.method15149(var15, this.field5109);
                } else if (!var4.method3066() && this.method3488()) {
-                  Class9551.field44497.method15149(var15, Arrays.<Entity>asList(var4));
+                  CriteriaTriggers.field44497.method15149(var15, Arrays.<Entity>asList(var4));
                }
             }
          }

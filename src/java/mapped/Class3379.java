@@ -18,7 +18,7 @@ public class Class3379 extends Class3231 {
    }
 
    @Override
-   public void method11567(Class1655 var1, BlockPos var2, Entity var3, float var4) {
+   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       var3.method2863(Class6067.field26664, 1.0F, 1.0F);
       if (!var1.field9020) {
          var1.method6786(var3, (byte)54);
@@ -30,7 +30,7 @@ public class Class3379 extends Class3231 {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (this.method11972(var3, var4)) {
          this.method11973(var4, var3);
          this.method11974(var4);
@@ -59,7 +59,7 @@ public class Class3379 extends Class3231 {
 
    private void method11973(Entity var1, BlockPos var2) {
       if (var1 instanceof Class878 && var1.field5024.method6783() % 20L == 0L) {
-         Class9551.field44500.method15057((Class878)var1, var1.field5024.method6738(var2));
+         CriteriaTriggers.field44500.method15057((Class878)var1, var1.field5024.method6738(var2));
       }
    }
 
@@ -75,7 +75,7 @@ public class Class3379 extends Class3231 {
       var1.field5045 = 0.0F;
    }
 
-   private void method11975(Class1655 var1, Entity var2) {
+   private void method11975(World var1, Entity var2) {
       if (method11971(var2)) {
          if (var1.field9016.nextInt(5) == 0) {
             var2.method2863(Class6067.field26664, 1.0F, 1.0F);

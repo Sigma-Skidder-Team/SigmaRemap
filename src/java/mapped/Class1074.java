@@ -7,7 +7,7 @@ public class Class1074 extends AbstractHorseEntity {
    private static final UUID field5916 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
    private static final Class9289<Integer> field5917 = Class9361.<Integer>method35441(Class1074.class, Class7784.field33391);
 
-   public Class1074(Class8992<? extends Class1074> var1, Class1655 var2) {
+   public Class1074(Class8992<? extends Class1074> var1, World var2) {
       super(var1, var2);
    }
 
@@ -147,12 +147,12 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (!this.method3005()) {
          if (this.method4932() && var1.method2851()) {
             this.openGUI(var1);
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
 
          if (this.method3329()) {
@@ -165,26 +165,26 @@ public class Class1074 extends AbstractHorseEntity {
             return this.method4953(var1, var5);
          }
 
-         Class2274 var6 = var5.method32125(var1, this, var2);
-         if (var6.method9000()) {
+         ActionResultType var6 = var5.method32125(var1, this, var2);
+         if (var6.isSuccessOrConsume()) {
             return var6;
          }
 
          if (!this.method4932()) {
             this.method4896();
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
 
          boolean var7 = !this.method3005() && !this.method4943() && var5.method32107() == Class8514.field37886;
          if (this.method4900(var5) || var7) {
             this.openGUI(var1);
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
       }
 
       if (!this.method3005()) {
          this.method4920(var1);
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          return super.method4285(var1, var2);
       }

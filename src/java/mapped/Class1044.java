@@ -6,7 +6,7 @@ public class Class1044 extends Class1043 {
    private BlockPos field5798;
    private int field5799;
 
-   public Class1044(Class8992<? extends Class1044> var1, Class1655 var2) {
+   public Class1044(Class8992<? extends Class1044> var1, World var2) {
       super(var1, var2);
       this.field5023 = true;
    }
@@ -58,8 +58,8 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() != Class8514.field38034 && this.method3066() && !this.method4741() && !this.method3005()) {
          if (var2 == Hand.field182) {
             var1.method2911(Class8876.field40139);
@@ -71,9 +71,9 @@ public class Class1044 extends Class1043 {
                this.method4872(var1, this.getDisplayName(), 1);
             }
 
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          } else {
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
       } else {
          return super.method4285(var1, var2);
@@ -128,7 +128,7 @@ public class Class1044 extends Class1043 {
    public void method4696(Class9346 var1) {
       if (var1.method35385()) {
          int var4 = 3 + this.field5054.nextInt(4);
-         this.field5024.method6916(new Class1003(this.field5024, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
+         this.field5024.method6916(new ExperienceOrbEntity(this.field5024, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
       }
    }
 

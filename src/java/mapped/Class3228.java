@@ -12,7 +12,7 @@ public class Class3228 extends Class3227 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       this.method11632(var1, var2, var3);
    }
 

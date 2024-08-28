@@ -42,7 +42,7 @@ public class Class3469 extends Class3468 {
    }
 
    @Override
-   public int method12157(Class1655 var1, BlockPos var2) {
+   public int method12157(World var1, BlockPos var2) {
       Class6488 var5 = field19315.method19668(var2);
       List<Entity> var6;
       switch (Class7415.field31771[this.field19318.ordinal()]) {

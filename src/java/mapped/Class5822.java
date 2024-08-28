@@ -163,7 +163,7 @@ public class Class5822 extends Class5812 {
 
                var1.method2911(Class8876.field40157);
                if (var1 instanceof Class878) {
-                  Class9551.field44473.method15177((Class878)var1, var10, var7);
+                  CriteriaTriggers.field44473.method15177((Class878)var1, var10, var7);
                }
 
                this.field25505.method3622();

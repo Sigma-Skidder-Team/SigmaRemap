@@ -37,7 +37,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    private final int[] field5643 = new int[24];
    private final Class8662 field5644 = new Class8662();
 
-   public Class1007(Class8992<? extends Class1007> var1, Class1655 var2) {
+   public Class1007(Class8992<? extends Class1007> var1, World var2) {
       super(Class8992.field41024, var2);
       this.field5624 = new Class908(this, "head", 1.0F, 1.0F);
       this.field5625 = new Class908(this, "neck", 3.0F, 3.0F);
@@ -541,9 +541,9 @@ public class Class1007 extends Class1006 implements Class1008 {
 
    private void method4327(int var1) {
       while (var1 > 0) {
-         int var4 = Class1003.method4179(var1);
+         int var4 = ExperienceOrbEntity.method4179(var1);
          var1 -= var4;
-         this.field5024.method6916(new Class1003(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var4));
+         this.field5024.method6916(new ExperienceOrbEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var4));
       }
    }
 

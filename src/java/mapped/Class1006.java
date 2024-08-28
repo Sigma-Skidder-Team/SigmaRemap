@@ -33,7 +33,7 @@ public abstract class Class1006 extends Class880 {
    private BlockPos field5616 = BlockPos.field13032;
    private float field5617 = -1.0F;
 
-   public Class1006(Class8992<? extends Class1006> var1, Class1655 var2) {
+   public Class1006(Class8992<? extends Class1006> var1, World var2) {
       super(var1, var2);
       this.field5600 = new Class6603(var2.method6821());
       this.field5601 = new Class6603(var2.method6821());
@@ -57,7 +57,7 @@ public abstract class Class1006 extends Class880 {
       return Class880.method2997().method21849(Class9173.field42106, 16.0).method21848(Class9173.field42111);
    }
 
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6991(this, var1);
    }
 
@@ -447,7 +447,7 @@ public abstract class Class1006 extends Class880 {
       }
 
       if (!this.field5024.field9020 && this.method4280() && this.method3066() && !this.field4972 && var3) {
-         for (Class1000 var5 : this.field5024.<Class1000>method7182(Class1000.class, this.method3389().method19663(1.0, 0.0, 1.0))) {
+         for (ItemEntity var5 : this.field5024.<ItemEntity>method7182(ItemEntity.class, this.method3389().method19663(1.0, 0.0, 1.0))) {
             if (!var5.field5041 && !var5.method4124().method32105() && !var5.method4135() && this.method4253(var5.method4124())) {
                this.method4246(var5);
             }
@@ -457,7 +457,7 @@ public abstract class Class1006 extends Class880 {
       this.field5024.method6820().method22505();
    }
 
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
       if (this.method4247(var4)) {
          this.method3134(var1);
@@ -1000,48 +1000,48 @@ public abstract class Class1006 extends Class880 {
    }
 
    @Override
-   public final Class2274 method3304(PlayerEntity var1, Hand var2) {
+   public final ActionResultType method3304(PlayerEntity var1, Hand var2) {
       if (this.method3066()) {
          if (this.method4297() != var1) {
-            Class2274 var5 = this.method4283(var1, var2);
-            if (!var5.method9000()) {
+            ActionResultType var5 = this.method4283(var1, var2);
+            if (!var5.isSuccessOrConsume()) {
                var5 = this.method4285(var1, var2);
-               return !var5.method9000() ? super.method3304(var1, var2) : var5;
+               return !var5.isSuccessOrConsume() ? super.method3304(var1, var2) : var5;
             } else {
                return var5;
             }
          } else {
             this.method4294(true, !var1.field4919.field29609);
-            return Class2274.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.field5024.field9020);
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
-   private Class2274 method4283(PlayerEntity var1, Hand var2) {
+   private ActionResultType method4283(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field38087 && this.method4295(var1)) {
          this.method4298(var1, true);
          var5.method32182(1);
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          if (var5.method32107() == Class8514.field38088) {
-            Class2274 var6 = var5.method32125(var1, this, var2);
-            if (var6.method9000()) {
+            ActionResultType var6 = var5.method32125(var1, this, var2);
+            if (var6.isSuccessOrConsume()) {
                return var6;
             }
          }
 
          if (!(var5.method32107() instanceof Class3311)) {
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else if (!(this.field5024 instanceof ServerWorld)) {
-            return Class2274.field14819;
+            return ActionResultType.field14819;
          } else {
             Class3311 var8 = (Class3311)var5.method32107();
             Optional<Class1006> var7 = var8.method11856(var1, this, (Class8992<? extends Class1006>)this.method3204(), (ServerWorld)this.field5024, this.getPositionVec(), var5);
             var7.ifPresent(var2x -> this.method4284(var1, var2x));
-            return !var7.isPresent() ? Class2274.field14820 : Class2274.field14818;
+            return !var7.isPresent() ? ActionResultType.field14820 : ActionResultType.field14818;
          }
       }
    }
@@ -1049,8 +1049,8 @@ public abstract class Class1006 extends Class880 {
    public void method4284(PlayerEntity var1, Class1006 var2) {
    }
 
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      return Class2274.field14820;
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      return ActionResultType.field14820;
    }
 
    public boolean method4286() {
@@ -1422,8 +1422,8 @@ public abstract class Class1006 extends Class880 {
       }
    }
 
-   private List method4312(Class1655 var1) {
-      Class1655 var4 = this.method3395();
+   private List method4312(World var1) {
+      World var4 = this.method3395();
       if (!(var4 instanceof Class1656)) {
          if (!(var4 instanceof ServerWorld)) {
             return null;

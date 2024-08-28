@@ -32,7 +32,7 @@ public class Class5950 extends Class5942<Class967> {
 
    public void method18462(Class967 var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
       Class7826 var9 = Class8624.field38785[var1.method4000().method309()];
-      Class1655 var10 = var1.method3734();
+      World var10 = var1.method3734();
       if (var10 == null) {
          this.method18480(var3, var4, true, Direction.SOUTH, var9, var5, var6, false);
          this.method18480(var3, var4, false, Direction.SOUTH, var9, var5, var6, true);

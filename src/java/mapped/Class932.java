@@ -39,13 +39,13 @@ public abstract class Class932 extends Class944 implements Class920, Class949, C
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       return this.field5280 == null ? this.method3686() : this.field5280;
    }
 
    @Override
    public ITextComponent getDisplayName() {
-      return this.method2941();
+      return this.getName();
    }
 
    @Nullable

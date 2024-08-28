@@ -112,7 +112,7 @@ public enum Class1858 {
                .method23905(Class5486.class, Class5486::new)
                .method23905(Class5517.class, Class5517::new)
                .method23905(Class5522.class, Class5522::new)
-               .method23905(Class5564.class, Class5564::new)
+               .method23905(CClientStatusPacket.class, CClientStatusPacket::new)
                .method23905(Class5561.class, Class5561::new)
                .method23905(Class5562.class, Class5562::new)
                .method23905(Class5493.class, Class5493::new)

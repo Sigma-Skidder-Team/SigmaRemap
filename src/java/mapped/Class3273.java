@@ -8,8 +8,8 @@ public class Class3273 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       boolean var7 = false;
@@ -27,14 +27,14 @@ public class Class3273 extends Class3257 {
       }
 
       if (!var7) {
-         return Class2274.field14821;
+         return ActionResultType.field14821;
       } else {
          var1.method18357().method32182(1);
-         return Class2274.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.field9020);
       }
    }
 
-   private void method11796(Class1655 var1, BlockPos var2) {
+   private void method11796(World var1, BlockPos var2) {
       var1.method6742((PlayerEntity)null, var2, Class6067.field26572, Class2266.field14732, 1.0F, (field18735.nextFloat() - field18735.nextFloat()) * 0.2F + 1.0F);
    }
 }

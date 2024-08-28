@@ -53,7 +53,7 @@ public class Class8654 {
       return new Class8652("player", var0);
    }
 
-   public static Class8654 method31118(Class884 var0, Entity var1) {
+   public static Class8654 method31118(AbstractArrowEntity var0, Entity var1) {
       return new Class8653("arrow", var0, var1).method31130();
    }
 

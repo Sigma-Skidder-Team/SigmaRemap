@@ -10,7 +10,7 @@ public class Class1114 extends Class1113 {
    private static final Class8522 field6094 = new Class8522().method30203(4.0).method30205();
    private BlockPos field6095;
 
-   public Class1114(Class8992<? extends Class1114> var1, Class1655 var2) {
+   public Class1114(Class8992<? extends Class1114> var1, World var2) {
       super(var1, var2);
       this.method5365(true);
    }

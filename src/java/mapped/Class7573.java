@@ -14,7 +14,7 @@ public class Class7573 extends Class7574 {
    }
 
    @Override
-   public Class1655 method24786() {
+   public World method24786() {
       return this.field32514.field5324;
    }
 

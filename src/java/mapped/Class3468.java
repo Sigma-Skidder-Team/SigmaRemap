@@ -47,7 +47,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.field9020) {
          int var7 = this.method12158(var1);
          if (var7 == 0) {
@@ -56,7 +56,7 @@ public abstract class Class3468 extends Block {
       }
    }
 
-   public void method12153(Class1655 var1, BlockPos var2, Class7380 var3, int var4) {
+   public void method12153(World var1, BlockPos var2, Class7380 var3, int var4) {
       int var7 = this.method12157(var1, var2);
       boolean var8 = var4 > 0;
       boolean var9 = var7 > 0;
@@ -83,7 +83,7 @@ public abstract class Class3468 extends Block {
    public abstract void method12155(Class1660 var1, BlockPos var2);
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5 && !var1.method23448(var4.method23383())) {
          if (this.method12158(var1) > 0) {
             this.method12156(var2, var3);
@@ -93,7 +93,7 @@ public abstract class Class3468 extends Block {
       }
    }
 
-   public void method12156(Class1655 var1, BlockPos var2) {
+   public void method12156(World var1, BlockPos var2) {
       var1.method6733(var2, this);
       var1.method6733(var2.method8313(), this);
    }
@@ -118,7 +118,7 @@ public abstract class Class3468 extends Block {
       return Class2315.field15863;
    }
 
-   public abstract int method12157(Class1655 var1, BlockPos var2);
+   public abstract int method12157(World var1, BlockPos var2);
 
    public abstract int method12158(Class7380 var1);
 

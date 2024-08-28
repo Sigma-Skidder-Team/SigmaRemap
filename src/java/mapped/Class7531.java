@@ -107,7 +107,7 @@ public class Class7531 extends Class7530 {
                var1.field4855.sendPacket(new Class5464(var1, (byte)43));
                if (!var14.method25390()) {
                   var1.method2911(Class8876.field40173);
-                  Class9551.field44499.method15062(var1);
+                  CriteriaTriggers.field44499.method15062(var1);
                }
             }
 

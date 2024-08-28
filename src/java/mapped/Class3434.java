@@ -53,7 +53,7 @@ public class Class3434 extends Class3433 {
       }
    }
 
-   public void method12101(Class1655 var1, BlockPos var2, Class7380 var3) {
+   public void method12101(World var1, BlockPos var2, Class7380 var3) {
       Direction var6 = var3.<Direction>method23463(field19198);
       BlockPos var7 = var2.method8349(var6.method536());
       var1.method6735(var7, this, var2);
@@ -76,7 +76,7 @@ public class Class3434 extends Class3433 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383()) && !var2.method6714() && var1.<Boolean>method23463(field19200) && !var2.method6860().method20718(var3, this)) {
          Class7380 var8 = var1.method23465(field19200, Boolean.valueOf(false));
          var2.method6725(var3, var8, 18);
@@ -85,7 +85,7 @@ public class Class3434 extends Class3433 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383()) && !var2.field9020 && var1.<Boolean>method23463(field19200) && var2.method6860().method20718(var3, this)) {
          this.method12101(var2, var3, var1.method23465(field19200, Boolean.valueOf(false)));
       }

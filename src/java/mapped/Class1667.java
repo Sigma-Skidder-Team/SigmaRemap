@@ -10,9 +10,9 @@ public class Class1667 implements Class1665, Class1668 {
    public final int field9082;
    public final Class1670[][] field9083;
    public boolean field9084;
-   public final Class1655 field9085;
+   public final World field9085;
 
-   public Class1667(Class1655 var1, BlockPos var2, BlockPos var3) {
+   public Class1667(World var1, BlockPos var2, BlockPos var3) {
       this.field9085 = var1;
       this.field9081 = var2.method8304() >> 4;
       this.field9082 = var2.method8306() >> 4;
@@ -73,7 +73,7 @@ public class Class1667 implements Class1665, Class1668 {
 
    @Override
    public Class7380 method6738(BlockPos var1) {
-      if (!Class1655.method6720(var1)) {
+      if (!World.method6720(var1)) {
          Class1670 var4 = this.method7044(var1);
          return var4.method6738(var1);
       } else {
@@ -93,7 +93,7 @@ public class Class1667 implements Class1665, Class1668 {
 
    @Override
    public Class7379 method6739(BlockPos var1) {
-      if (!Class1655.method6720(var1)) {
+      if (!World.method6720(var1)) {
          Class1670 var4 = this.method7044(var1);
          return var4.method6739(var1);
       } else {

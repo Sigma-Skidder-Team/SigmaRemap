@@ -57,7 +57,7 @@ public class Class8079 implements IAmbientSoundHandler {
       this.field34725
          .ifPresent(
             var1 -> {
-               Class1655 var4 = this.field34720.field5024;
+               World var4 = this.field34720.field5024;
                int var5 = var1.method27075() * 2 + 1;
                BlockPos var6 = new BlockPos(
                   this.field34720.getPosX() + (double)this.field34723.nextInt(var5) - (double)var1.method27075(),

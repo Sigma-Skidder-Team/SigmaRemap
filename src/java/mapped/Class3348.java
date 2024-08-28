@@ -133,7 +133,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
          Class944 var8 = var1.method6759(var2);
          if (var8 instanceof Class941) {
@@ -143,7 +143,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var1.method23448(var4.method23383())) {
          Class944 var8 = var2.method6759(var3);
          if (var8 instanceof Class920) {
@@ -156,7 +156,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          Class949 var9 = this.method11528(var1, var2, var3);
          if (var9 != null) {
@@ -165,9 +165,9 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
             Class4388.method13832(var4, true);
          }
 
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       } else {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       }
    }
 
@@ -176,12 +176,12 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Nullable
-   public static Class920 method11911(Class3348 var0, Class7380 var1, Class1655 var2, BlockPos var3, boolean var4) {
+   public static Class920 method11911(Class3348 var0, Class7380 var1, World var2, BlockPos var3, boolean var4) {
       return var0.method11904(var1, var2, var3, var4).<Optional<Class920>>method27292(field18873).orElse((Class920)null);
    }
 
    @Override
-   public Class7995<? extends Class941> method11904(Class7380 var1, Class1655 var2, BlockPos var3, boolean var4) {
+   public Class7995<? extends Class941> method11904(Class7380 var1, World var2, BlockPos var3, boolean var4) {
       BiPredicate<Class1660, BlockPos> var7;
       if (!var4) {
          var7 = Class3348::method11913;
@@ -194,7 +194,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
 
    @Nullable
    @Override
-   public Class949 method11528(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public Class949 method11528(Class7380 var1, World var2, BlockPos var3) {
       return this.method11904(var1, var2, var3, false).<Optional<Class949>>method27292(field18874).orElse((Class949)null);
    }
 
@@ -245,7 +245,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       return Class5812.method18152(method11911(this, var1, var2, var3, false));
    }
 

@@ -6,16 +6,16 @@ public class Class9703 {
    public static final int[] field45356;
    public static final int[] field45357;
    public static final int[] field45358;
-   public static final int[] field45359 = new int[Class2175.values().length];
+   public static final int[] state = new int[CClientStatusPacketState.values().length];
 
    static {
       try {
-         field45359[Class2175.field14277.ordinal()] = 1;
+         state[CClientStatusPacketState.field14277.ordinal()] = 1;
       } catch (NoSuchFieldError var23) {
       }
 
       try {
-         field45359[Class2175.field14278.ordinal()] = 2;
+         state[CClientStatusPacketState.field14278.ordinal()] = 2;
       } catch (NoSuchFieldError var22) {
       }
 

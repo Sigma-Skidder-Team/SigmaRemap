@@ -14,18 +14,18 @@ public class Class905 extends Class882 {
    private double field5168;
    private UUID field5169;
 
-   public Class905(Class8992<? extends Class905> var1, Class1655 var2) {
+   public Class905(Class8992<? extends Class905> var1, World var2) {
       super(var1, var2);
       this.field5052 = true;
    }
 
-   public Class905(Class1655 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class905(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this(Class8992.field41076, var1);
       this.method3273(var2, var4, var6, this.field5031, this.field5032);
       this.method3435(var8, var10, var12);
    }
 
-   public Class905(Class1655 var1, Class880 var2, Entity var3, Class113 var4) {
+   public Class905(World var1, Class880 var2, Entity var3, Class113 var4) {
       this(Class8992.field41076, var1);
       this.method3459(var2);
       BlockPos var7 = var2.method3432();

@@ -86,8 +86,8 @@ public class Class8992<T extends Entity> {
    public static final Class8992<Class915> field41028 = method33197(
       "evoker_fangs", Class8878.<Class915>method32299(Class915::new, Class179.field628).method32301(0.5F, 0.8F).method32307(6).method32308(2)
    );
-   public static final Class8992<Class1003> field41029 = method33197(
-      "experience_orb", Class8878.<Class1003>method32299(Class1003::new, Class179.field628).method32301(0.5F, 0.5F).method32307(6).method32308(20)
+   public static final Class8992<ExperienceOrbEntity> field41029 = method33197(
+      "experience_orb", Class8878.<ExperienceOrbEntity>method32299(ExperienceOrbEntity::new, Class179.field628).method32301(0.5F, 0.5F).method32307(6).method32308(20)
    );
    public static final Class8992<Class897> field41030 = method33197(
       "eye_of_ender", Class8878.<Class897>method32299(Class897::new, Class179.field628).method32301(0.25F, 0.25F).method32307(4).method32308(4)
@@ -125,8 +125,8 @@ public class Class8992<T extends Entity> {
    public static final Class8992<Class1058> field41041 = method33197(
       "iron_golem", Class8878.<Class1058>method32299(Class1058::new, Class179.field628).method32301(1.4F, 2.7F).method32307(10)
    );
-   public static final Class8992<Class1000> field41042 = method33197(
-      "item", Class8878.<Class1000>method32299(Class1000::new, Class179.field628).method32301(0.25F, 0.25F).method32307(6).method32308(20)
+   public static final Class8992<ItemEntity> field41042 = method33197(
+      "item", Class8878.<ItemEntity>method32299(ItemEntity::new, Class179.field628).method32301(0.25F, 0.25F).method32307(6).method32308(20)
    );
    public static final Class8992<Class997> field41043 = method33197(
       "item_frame", Class8878.<Class997>method32299(Class997::new, Class179.field628).method32301(0.5F, 0.5F).method32307(10).method32308(Integer.MAX_VALUE)
@@ -465,7 +465,7 @@ public class Class8992<T extends Entity> {
       return 1.0 + Class8022.method27437(Class113.field414, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
-   public static void method33204(Class1655 var0, PlayerEntity var1, Entity var2, Class39 var3) {
+   public static void method33204(World var0, PlayerEntity var1, Entity var2, Class39 var3) {
       if (var3 != null && var3.method119("EntityTag", 10)) {
          Class314 var6 = var0.method6715();
          if (var6 != null && var2 != null && (var0.field9020 || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
@@ -537,16 +537,16 @@ public class Class8992<T extends Entity> {
    }
 
    @Nullable
-   public T method33215(Class1655 var1) {
+   public T method33215(World var1) {
       return this.field41113.method35007(this, var1);
    }
 
    @Nullable
-   public static Entity method33216(int var0, Class1655 var1) {
+   public static Entity method33216(int var0, World var1) {
       return method33218(var1, Class2348.field16074.method9172(var0));
    }
 
-   public static Optional<Entity> method33217(Class39 var0, Class1655 var1) {
+   public static Optional<Entity> method33217(Class39 var0, World var1) {
       return Util.<Entity>method38514(
          method33222(var0).<Entity>map(var1x -> var1x.method33215(var1)),
          var1x -> var1x.method3295(var0),
@@ -555,7 +555,7 @@ public class Class8992<T extends Entity> {
    }
 
    @Nullable
-   private static Entity method33218(Class1655 var0, Class8992<?> var1) {
+   private static Entity method33218(World var0, Class8992<?> var1) {
       return var1 != null ? var1.method33215(var0) : null;
    }
 
@@ -587,7 +587,7 @@ public class Class8992<T extends Entity> {
    }
 
    @Nullable
-   public static Entity method33223(Class39 var0, Class1655 var1, Function<Entity, Entity> var2) {
+   public static Entity method33223(Class39 var0, World var1, Function<Entity, Entity> var2) {
       return method33224(var0, var1).<Entity>map(var2).<Entity>map(var3 -> {
          if (var0.method119("Passengers", 9)) {
             Class41 var6 = var0.method131("Passengers", 10);
@@ -604,7 +604,7 @@ public class Class8992<T extends Entity> {
       }).orElse((Entity)null);
    }
 
-   private static Optional<Entity> method33224(Class39 var0, Class1655 var1) {
+   private static Optional<Entity> method33224(Class39 var0, World var1) {
       try {
          return method33217(var0, var1);
       } catch (RuntimeException var5) {

@@ -22,7 +22,7 @@ public class Class2734 extends Class2595 {
    @Override
    public void method10805() {
       Random var3 = this.field17254.method3013();
-      Class1655 var4 = this.field17254.field5024;
+      World var4 = this.field17254.field5024;
       int var5 = MathHelper.method37769(this.field17254.getPosX() - 2.0 + var3.nextDouble() * 4.0);
       int var6 = MathHelper.method37769(this.field17254.getPosY() + var3.nextDouble() * 3.0);
       int var7 = MathHelper.method37769(this.field17254.getPosZ() - 2.0 + var3.nextDouble() * 4.0);

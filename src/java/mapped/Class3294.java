@@ -14,7 +14,7 @@ public class Class3294 extends Class3292 {
    @Override
    public Class5909 method11836(Class5909 var1) {
       BlockPos var4 = var1.method18345();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       Class7380 var6 = var5.method6738(var4);
       Block var7 = this.method11845();
       if (!var6.method23448(var7)) {
@@ -31,7 +31,7 @@ public class Class3294 extends Class3292 {
          Mutable var10 = var4.method8354().method8379(var8);
 
          while (var9 < 7) {
-            if (!var5.field9020 && !Class1655.method6716(var10)) {
+            if (!var5.field9020 && !World.method6716(var10)) {
                PlayerEntity var11 = var1.method18358();
                int var12 = var5.method7034();
                if (var11 instanceof Class878 && var10.getY() >= var12) {

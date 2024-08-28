@@ -74,7 +74,7 @@ public class Class3465 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var2.method6796(var3.method8311()) && var4.nextInt(15) == 1) {
          BlockPos var7 = var3.method8313();
          Class7380 var8 = var2.method6738(var7);

@@ -49,12 +49,12 @@ public class Class8922 {
          method32604(var1, var7);
       }
 
-      Class1655 var8 = var1.method7144();
+      World var8 = var1.method7144();
       field40393.forEach(var1x -> var1x.method8971(var8));
    }
 
    private static void method32604(Class1674 var0, Class1976 var1) {
-      Class1655 var4 = var0.method7144();
+      World var4 = var0.method7144();
       if (var0.method7091().field40390.remove(var1)) {
          Set var5 = var1.method8262();
          boolean var6 = false;
@@ -94,7 +94,7 @@ public class Class8922 {
       Mutable var4 = new Mutable();
       Mutable var5 = new Mutable();
       Class7481 var6 = var1.method7072();
-      Class1655 var7 = var1.method7144();
+      World var7 = var1.method7144();
 
       for (int var8 = 0; var8 < 16; var8++) {
          Class7038 var9 = var1.method7067()[var8];

@@ -62,7 +62,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       }
    );
 
-   public Class1034(Class8992<? extends Class1035> var1, Class1655 var2) {
+   public Class1034(Class8992<? extends Class1035> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -188,14 +188,14 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      Class2274 var5 = super.method4285(var1, var2);
-      if (!var5.method9000()) {
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ActionResultType var5 = super.method4285(var1, var2);
+      if (!var5.isSuccessOrConsume()) {
          if (!this.field5024.field9020) {
             return Class4388.method13833(this, var1, var2);
          } else {
-            boolean var6 = Class4388.method13834(this, var1.method3094(var2)) && this.method4622() != Class2172.field14262;
-            return !var6 ? Class2274.field14820 : Class2274.field14818;
+            boolean var6 = Class4388.method13834(this, var1.getHeldItem(var2)) && this.method4622() != Class2172.field14262;
+            return !var6 ? ActionResultType.field14820 : ActionResultType.field14818;
          }
       } else {
          return var5;
@@ -375,7 +375,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       this.method3134(var1);
       Class4388.method13814(this, var1);
    }

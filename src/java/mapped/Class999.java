@@ -30,13 +30,13 @@ public class Class999 extends Entity {
    private Class880 field5512;
    private UUID field5513;
 
-   public Class999(Class8992<? extends Class999> var1, Class1655 var2) {
+   public Class999(Class8992<? extends Class999> var1, World var2) {
       super(var1, var2);
       this.field5052 = true;
       this.method4097(3.0F);
    }
 
-   public Class999(Class1655 var1, double var2, double var4, double var6) {
+   public Class999(World var1, double var2, double var4, double var6) {
       this(Class8992.field41005, var1);
       this.method3215(var2, var4, var6);
    }

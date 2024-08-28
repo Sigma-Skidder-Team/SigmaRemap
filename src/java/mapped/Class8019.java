@@ -67,7 +67,7 @@ public class Class8019 {
    }
 
    public void method27403() {
-      for (Class4907 var4 : Class9551.method37001()) {
+      for (Class4907 var4 : CriteriaTriggers.method37001()) {
          var4.method15051(this);
       }
    }
@@ -253,7 +253,7 @@ public class Class8019 {
             if (var7 != null && !var7.method37263()) {
                Class4477 var8 = ((Class9181)var6.getValue()).method34341();
                if (var8 != null) {
-                  Class4907 var9 = Class9551.method37000(var8.method14093());
+                  Class4907 var9 = CriteriaTriggers.method37000(var8.method14093());
                   if (var9 != null) {
                      var9.method15049(this, new Class9282<Class4477>(var8, var1, (String)var6.getKey()));
                   }
@@ -271,7 +271,7 @@ public class Class8019 {
          if (var7 != null && (var7.method37263() || var4.method8489())) {
             Class4477 var8 = ((Class9181)var6.getValue()).method34341();
             if (var8 != null) {
-               Class4907 var9 = Class9551.method37000(var8.method14093());
+               Class4907 var9 = CriteriaTriggers.method37000(var8.method14093());
                if (var9 != null) {
                   var9.method15050(this, new Class9282<Class4477>(var8, var1, (String)var6.getKey()));
                }

@@ -8,9 +8,9 @@ public class Class3315 extends Class3314 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = Class3316.method11859(var1, MathHelper.method37769(var2.getPosX()), MathHelper.method37769(var2.getPosZ()), (byte)0, true, false);
-      ItemStack var7 = var2.method3094(var3);
+      ItemStack var7 = var2.getHeldItem(var3);
       if (!var2.field4919.field29609) {
          var7.method32182(1);
       }
@@ -18,7 +18,7 @@ public class Class3315 extends Class3314 {
       var2.method2913(Class8876.field40098.method172(this));
       var2.method2863(Class6067.field27179, 1.0F, 1.0F);
       if (!var7.method32105()) {
-         if (!var2.field4902.method4045(var6.method32126())) {
+         if (!var2.field4902.method4045(var6.copy())) {
             var2.method2882(var6, false);
          }
 

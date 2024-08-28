@@ -15,7 +15,7 @@ public class Class3351 extends Class3350 {
    }
 
    @Override
-   public void method11918(Class1655 var1, BlockPos var2, PlayerEntity var3) {
+   public void method11918(World var1, BlockPos var2, PlayerEntity var3) {
       Class944 var6 = var1.method6759(var2);
       if (var6 instanceof Class987) {
          var3.method2766((Class949)var6);
@@ -24,7 +24,7 @@ public class Class3351 extends Class3350 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18876)) {
          double var7 = (double)var3.method8304() + 0.5;
          double var9 = (double)var3.getY();

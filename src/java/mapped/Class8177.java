@@ -32,7 +32,7 @@ public final class Class8177 implements Class8176 {
       }
    }
 
-   private double method28468(Class1655 var1, double var2) {
+   private double method28468(World var1, double var2) {
       if (var1.method6783() != this.field35171) {
          this.field35171 = var1.method6783();
          double var6 = var2 - this.field35169;

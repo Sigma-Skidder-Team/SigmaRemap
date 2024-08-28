@@ -112,7 +112,7 @@ public class Class2784 extends Class2595 {
          this.field17401
             .field5024
             .method6916(
-               new Class1000(
+               new ItemEntity(
                   this.field17401.field5024,
                   (double)var4.method8304() - (double) MathHelper.method37763(this.field17401.field4965 * (float) (Math.PI / 180.0)),
                   (double)var4.getY(),

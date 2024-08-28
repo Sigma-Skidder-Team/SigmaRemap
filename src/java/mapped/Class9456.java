@@ -9,7 +9,7 @@ public final class Class9456 {
 
    public static Class8710 method36385(Entity var0, Predicate<Entity> var1) {
       Vector3d var4 = var0.method3433();
-      Class1655 var5 = var0.field5024;
+      World var5 = var0.field5024;
       Vector3d var6 = var0.getPositionVec();
       Vector3d var7 = var6.method11338(var4);
       Object var8 = var5.method7036(new Class6809(var6, var7, Class2271.field14774, Class1985.field12962, var0));
@@ -27,7 +27,7 @@ public final class Class9456 {
 
    @Nullable
    public static Class8709 method36386(Entity var0, Vector3d var1, Vector3d var2, Class6488 var3, Predicate<Entity> var4, double var5) {
-      Class1655 var9 = var0.field5024;
+      World var9 = var0.field5024;
       double var10 = var5;
       Entity var12 = null;
       Vector3d var13 = null;
@@ -61,7 +61,7 @@ public final class Class9456 {
    }
 
    @Nullable
-   public static Class8709 method36387(Class1655 var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5) {
+   public static Class8709 method36387(World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5) {
       double var8 = Double.MAX_VALUE;
       Entity var10 = null;
 
@@ -112,9 +112,9 @@ public final class Class9456 {
       return var0.method3090().method32107() != var1 ? Hand.field183 : Hand.field182;
    }
 
-   public static Class884 method36390(Class880 var0, ItemStack var1, float var2) {
+   public static AbstractArrowEntity method36390(Class880 var0, ItemStack var1, float var2) {
       Class3308 var5 = (Class3308)(!(var1.method32107() instanceof Class3308) ? Class8514.field37797 : var1.method32107());
-      Class884 var6 = var5.method11850(var0.field5024, var1, var0);
+      AbstractArrowEntity var6 = var5.method11850(var0.field5024, var1, var0);
       var6.method3490(var0, var2);
       if (var1.method32107() == Class8514.field38117 && var6 instanceof Class887) {
          ((Class887)var6).method3497(var1);

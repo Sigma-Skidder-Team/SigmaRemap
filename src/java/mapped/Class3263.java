@@ -10,7 +10,7 @@ public class Class3263 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, World var2, Class880 var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          boolean var8 = var7.field4919.field29609 || Class7858.method26311(Class8122.field34922, var1) > 0;
@@ -26,7 +26,7 @@ public class Class3263 extends Class3262 implements Class3260 {
                boolean var12 = var8 && var9.method32107() == Class8514.field37797;
                if (!var2.field9020) {
                   Class3308 var13 = (Class3308)(!(var9.method32107() instanceof Class3308) ? Class8514.field37797 : var9.method32107());
-                  Class884 var14 = var13.method11850(var2, var9, var7);
+                  AbstractArrowEntity var14 = var13.method11850(var2, var9, var7);
                   var14.method3463(var7, var7.field5032, var7.field5031, 0.0F, var11 * 3.0F, 1.0F);
                   if (var11 == 1.0F) {
                      var14.method3484(true);
@@ -98,8 +98,8 @@ public class Class3263 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.getHeldItem(var3);
       boolean var7 = !var2.method2983(var6).method32105();
       if (!var2.field4919.field29609 && !var7) {
          return Class6794.<ItemStack>method20699(var6);

@@ -12,7 +12,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    private int field5953;
    private UUID field5954;
 
-   public Class1086(Class8992<? extends Class1086> var1, Class1655 var2) {
+   public Class1086(Class8992<? extends Class1086> var1, World var2) {
       super(var1, var2);
    }
 
@@ -42,8 +42,8 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field37836 && !this.method3005()) {
          boolean var11 = false;
          ItemStack var12;
@@ -67,19 +67,19 @@ public class Class1086 extends Class1087 implements Class1020 {
          }
 
          this.method2863(var9, 1.0F, 1.0F);
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else if (var5.method32107() == Class8514.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.field5024.field9020) {
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else if (this.method5037() == Class2210.field14453 && var5.method32107().method11743(Class5985.field26103)) {
          if (this.field5952 == null) {
             Optional var6 = this.method5035(var5);
             if (!var6.isPresent()) {
-               return Class2274.field14820;
+               return ActionResultType.field14820;
             }
 
             Pair var7 = (Pair)var6.get();
@@ -118,7 +118,7 @@ public class Class1086 extends Class1087 implements Class1020 {
             }
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          return super.method4285(var1, var2);
       }
@@ -149,7 +149,7 @@ public class Class1086 extends Class1087 implements Class1020 {
          for (int var5 = 0; var5 < 5; var5++) {
             this.field5024
                .method6916(
-                  new Class1000(
+                  new ItemEntity(
                      this.field5024,
                      this.getPosX(),
                      this.method3440(1.0),

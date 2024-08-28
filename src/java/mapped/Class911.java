@@ -89,7 +89,7 @@ public abstract class Class911 implements Class909 {
       return this.field5198;
    }
 
-   public boolean method3564(Class1655 var1) {
+   public boolean method3564(World var1) {
       if (var1.field9020 || var1.method6783() == this.field5193) {
          return false;
       } else if ("Searge".equalsIgnoreCase(this.field5198)) {
@@ -163,15 +163,15 @@ public abstract class Class911 implements Class909 {
       return this.field5196;
    }
 
-   public Class2274 method3572(PlayerEntity var1) {
+   public ActionResultType method3572(PlayerEntity var1) {
       if (var1.method2979()) {
          if (var1.method3395().field9020) {
             var1.method2890(this);
          }
 
-         return Class2274.method9002(var1.field5024.field9020);
+         return ActionResultType.method9002(var1.field5024.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

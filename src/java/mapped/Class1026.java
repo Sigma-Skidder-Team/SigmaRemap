@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public abstract class Class1026 extends Class1028 {
    public static final Class9289<Boolean> field5712 = Class9361.<Boolean>method35441(Class1026.class, Class7784.field33398);
-   private static final Predicate<Class1000> field5713 = var0 -> !var0.method4135()
+   private static final Predicate<ItemEntity> field5713 = var0 -> !var0.method4135()
          && var0.method3066()
          && ItemStack.method32128(var0.method4124(), Class7699.method25421());
    public Class7699 field5714;
@@ -14,7 +14,7 @@ public abstract class Class1026 extends Class1028 {
    private boolean field5716;
    private int field5717;
 
-   public Class1026(Class8992<? extends Class1026> var1, Class1655 var2) {
+   public Class1026(Class8992<? extends Class1026> var1, World var2) {
       super(var1, var2);
    }
 
@@ -188,7 +188,7 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public void method4246(Class1000 var1) {
+   public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
       boolean var5 = this.method4552() && this.method4551().method25422(this.method4554()) != null;
       if (this.method4552() && !var5 && ItemStack.method32128(var4, Class7699.method25421())) {

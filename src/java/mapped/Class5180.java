@@ -16,7 +16,7 @@ public class Class5180 extends Module {
         if (this.method15996()) {
             for (Entity var5 : Class5628.method17680()) {
                 if (!Client.getInstance().getCombatManager().method29346(var5) && var5.field5055 > 30 && var5.method3381()) {
-                    Class5628.method17678(var5.method2941().getUnformattedComponentText() + " might have a custom nametag");
+                    Class5628.method17678(var5.getName().getUnformattedComponentText() + " might have a custom nametag");
                 }
             }
         }

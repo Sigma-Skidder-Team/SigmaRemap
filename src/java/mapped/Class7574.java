@@ -55,7 +55,7 @@ public abstract class Class7574 {
 
    public void method24792() {
       if (this.method24791()) {
-         Class1655 var3 = this.method24786();
+         World var3 = this.method24786();
          BlockPos var4 = this.method24787();
          if (var3 instanceof ServerWorld) {
             if (this.field32516 == -1) {
@@ -271,7 +271,7 @@ public abstract class Class7574 {
 
    public abstract void method24785(int var1);
 
-   public abstract Class1655 method24786();
+   public abstract World method24786();
 
    public abstract BlockPos method24787();
 

@@ -204,24 +204,24 @@ public class Class9535 {
    }
 
    @Deprecated
-   public static DataResult<Class8705<Class1655>> method36867(Dynamic<?> var0) {
+   public static DataResult<Class8705<World>> method36867(Dynamic<?> var0) {
       Optional var3 = var0.asNumber().result();
       if (var3.isPresent()) {
          int var4 = ((Number)var3.get()).intValue();
          if (var4 == -1) {
-            return DataResult.success(Class1655.field9000);
+            return DataResult.success(World.field9000);
          }
 
          if (var4 == 0) {
-            return DataResult.success(Class1655.field8999);
+            return DataResult.success(World.field8999);
          }
 
          if (var4 == 1) {
-            return DataResult.success(Class1655.field9001);
+            return DataResult.success(World.THE_END);
          }
       }
 
-      return Class1655.field8998.parse(var0);
+      return World.field8998.parse(var0);
    }
 
    public static Class8905 method36868(Class8905 var0) {
@@ -259,10 +259,10 @@ public class Class9535 {
       return !this.method36893(field44376) ? "" : "_end";
    }
 
-   public static File method36874(Class8705<Class1655> var0, File var1) {
-      if (var0 != Class1655.field8999) {
-         if (var0 != Class1655.field9001) {
-            return var0 != Class1655.field9000
+   public static File method36874(Class8705<World> var0, File var1) {
+      if (var0 != World.field8999) {
+         if (var0 != World.THE_END) {
+            return var0 != World.field9000
                ? new File(var1, "dimensions/" + var0.method31399().method8293() + "/" + var0.method31399().method8292())
                : new File(var1, "DIM-1");
          } else {

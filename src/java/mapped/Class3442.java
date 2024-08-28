@@ -38,7 +38,7 @@ public class Class3442 extends Block {
    }
 
    @Override
-   public void method11560(Class1655 var1, BlockPos var2, Class7782 var3) {
+   public void method11560(World var1, BlockPos var2, Class7782 var3) {
       if (var1 instanceof ServerWorld) {
          this.method12120((ServerWorld)var1, var2);
       }

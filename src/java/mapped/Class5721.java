@@ -13,7 +13,7 @@ public class Class5721 extends Class5715<Class907> {
    public void method17853(Class907 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
       Class7380 var9 = var1.method3556();
       if (var9.method23397() == Class1855.field9887) {
-         Class1655 var10 = var1.method3554();
+         World var10 = var1.method3554();
          if (var9 != var10.method6738(var1.method3432()) && var9.method23397() != Class1855.field9885) {
             var4.method35294();
             BlockPos var11 = new BlockPos(var1.getPosX(), var1.method3389().field28453, var1.getPosZ());

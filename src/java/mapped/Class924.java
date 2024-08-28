@@ -398,7 +398,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       this.field5253.clear();
    }
 
-   public List<Class4843<?>> method3657(Class1655 var1, Vector3d var2) {
+   public List<Class4843<?>> method3657(World var1, Vector3d var2) {
       ArrayList var5 = Lists.newArrayList();
       ObjectIterator var6 = this.field5253.object2IntEntrySet().iterator();
 
@@ -413,7 +413,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       return var5;
    }
 
-   private static void method3658(Class1655 var0, Vector3d var1, int var2, float var3) {
+   private static void method3658(World var0, Vector3d var1, int var2, float var3) {
       int var6 = MathHelper.method37767((float)var2 * var3);
       float var7 = MathHelper.method37807((float)var2 * var3);
       if (var7 != 0.0F && Math.random() < (double)var7) {
@@ -421,9 +421,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
 
       while (var6 > 0) {
-         int var8 = Class1003.method4179(var6);
+         int var8 = ExperienceOrbEntity.method4179(var6);
          var6 -= var8;
-         var0.method6916(new Class1003(var0, var1.field18048, var1.field18049, var1.field18050, var8));
+         var0.method6916(new ExperienceOrbEntity(var0, var1.field18048, var1.field18049, var1.field18050, var8));
       }
    }
 

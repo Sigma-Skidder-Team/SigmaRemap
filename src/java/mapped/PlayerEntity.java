@@ -67,7 +67,7 @@ public abstract class PlayerEntity extends Class880 {
    private final Class6462 field4929 = this.method2733();
    public Class904 field4930;
 
-   public PlayerEntity(Class1655 var1, BlockPos var2, float var3, GameProfile var4) {
+   public PlayerEntity(World var1, BlockPos var2, float var3, GameProfile var4) {
       super(Class8992.field41111, var1);
       this.method3374(method2960(var4));
       this.field4926 = var4;
@@ -77,7 +77,7 @@ public abstract class PlayerEntity extends Class880 {
       this.field4978 = 180.0F;
    }
 
-   public boolean method2848(Class1655 var1, BlockPos var2, Class1894 var3) {
+   public boolean method2848(World var1, BlockPos var2, Class1894 var3) {
       if (!var3.method8156()) {
          return false;
       } else if (var3 != Class1894.field11105) {
@@ -574,19 +574,19 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Nullable
-   public Class1000 method2882(ItemStack var1, boolean var2) {
+   public ItemEntity method2882(ItemStack var1, boolean var2) {
       return this.method2836(var1, false, var2);
    }
 
    @Nullable
-   public Class1000 method2836(ItemStack var1, boolean var2, boolean var3) {
+   public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
       if (!var1.method32105()) {
          if (this.field5024.field9020 && Class8005.method27372().method18582() >= Class5989.field26151.method18582()) {
             this.swingArm(Hand.field182);
          }
 
          double var6 = this.method3442() - 0.3F;
-         Class1000 var8 = new Class1000(this.field5024, this.getPosX(), var6, this.getPosZ(), var1);
+         ItemEntity var8 = new ItemEntity(this.field5024, this.getPosX(), var6, this.getPosZ(), var1);
          var8.method4134(40);
          if (var3) {
             var8.method4129(this.getUniqueID());
@@ -878,19 +878,19 @@ public abstract class PlayerEntity extends Class880 {
    public void method2769(ItemStack var1, Hand var2) {
    }
 
-   public Class2274 method2893(Entity var1, Hand var2) {
+   public ActionResultType interactOn(Entity var1, Hand var2) {
       if (!this.method2800()) {
          ItemStack var5 = this.getHeldItem(var2);
          ItemStack var6 = var5.copy();
-         Class2274 var7 = var1.method3304(this, var2);
-         if (!var7.method9000()) {
+         ActionResultType var7 = var1.method3304(this, var2);
+         if (!var7.isSuccessOrConsume()) {
             if (!var5.method32105() && var1 instanceof Class880) {
                if (this.field4919.field29609) {
                   var5 = var6;
                }
 
-               Class2274 var8 = var5.method32125(this, (Class880)var1, var2);
-               if (var8.method9000()) {
+               ActionResultType var8 = var5.method32125(this, (Class880)var1, var2);
+               if (var8.isSuccessOrConsume()) {
                   if (var5.method32105() && !this.field4919.field29609) {
                      this.method3095(var2, ItemStack.EMPTY);
                   }
@@ -899,7 +899,7 @@ public abstract class PlayerEntity extends Class880 {
                }
             }
 
-            return Class2274.field14820;
+            return ActionResultType.field14820;
          } else {
             if (this.field4919.field29609 && var5 == this.getHeldItem(var2) && var5.method32179() < var6.method32179()) {
                var5.method32180(var6.method32179());
@@ -912,7 +912,7 @@ public abstract class PlayerEntity extends Class880 {
             this.method2766((Class949)var1);
          }
 
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
@@ -1650,7 +1650,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public ITextComponent method2941() {
+   public ITextComponent getName() {
       return new StringTextComponent(this.field4926.getName());
    }
 
@@ -1763,7 +1763,7 @@ public abstract class PlayerEntity extends Class880 {
 
    @Override
    public ITextComponent getDisplayName() {
-      IFormattableTextComponent var3 = Class8218.method28577(this.method3344(), this.method2941());
+      IFormattableTextComponent var3 = Class8218.method28577(this.method3344(), this.getName());
       return this.method2955(var3);
    }
 
@@ -1992,7 +1992,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public ItemStack method2984(Class1655 var1, ItemStack var2) {
+   public ItemStack method2984(World var1, ItemStack var2) {
       this.method2932().method37570(var2.method32107(), var2);
       this.method2913(Class8876.field40098.method172(var2.method32107()));
       var1.method6743(
@@ -2006,7 +2006,7 @@ public abstract class PlayerEntity extends Class880 {
          var1.field9016.nextFloat() * 0.1F + 0.9F
       );
       if (this instanceof Class878) {
-         Class9551.field44490.method15174((Class878)this, var2);
+         CriteriaTriggers.field44490.method15174((Class878)this, var2);
       }
 
       return super.method2984(var1, var2);

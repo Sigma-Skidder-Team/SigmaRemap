@@ -23,8 +23,8 @@ public class Class3283 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11707(Class5911 var1) {
-      Class1655 var4 = var1.method18360();
+   public ActionResultType method11707(Class5911 var1) {
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (var6.method23448(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
@@ -39,9 +39,9 @@ public class Class3283 extends Class3257 {
             }
          }
 
-         return Class2274.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
@@ -50,7 +50,7 @@ public class Class3283 extends Class3257 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       var3.add(this.method11813().mergeStyle(TextFormatting.GRAY));
    }
 

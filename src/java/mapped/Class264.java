@@ -2886,7 +2886,7 @@ public class Class264 implements Class215, AutoCloseable {
       this.method910(this.field943, var2, var1 != null);
    }
 
-   private void method910(Class1655 var1, BlockPos var2, boolean var3) {
+   private void method910(World var1, BlockPos var2, boolean var3) {
       for (Class880 var5 : var1.<Class880>method7182(Class880.class, new Class6488(var2).method19664(3.0))) {
          var5.method3171(var2, var3);
       }

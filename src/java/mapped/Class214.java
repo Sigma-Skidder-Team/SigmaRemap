@@ -81,7 +81,7 @@ public class Class214 implements Class215, AutoCloseable {
    private boolean field832;
    private final Class9624 field833 = new Class9624();
    private boolean field834 = false;
-   private Class1655 field835 = null;
+   private World field835 = null;
    private float field836 = 128.0F;
    private long field837 = 0L;
    private int field838 = 0;

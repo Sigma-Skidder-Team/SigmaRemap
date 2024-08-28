@@ -53,7 +53,7 @@ public class Class5953<T extends Class944 & Class942> extends Class5942<T> {
 
    @Override
    public void method18462(T var1, float var2, Class9332 var3, Class7733 var4, int var5, int var6) {
-      Class1655 var9 = var1.method3734();
+      World var9 = var1.method3734();
       boolean var10 = var9 != null;
       Class7380 var11 = !var10 ? Blocks.CHEST.method11579().method23465(Class3348.field18865, Direction.SOUTH) : var1.method3775();
       Class111 var12 = !var11.method23462(Class3348.field18866) ? Class111.field379 : var11.<Class111>method23463(Class3348.field18866);

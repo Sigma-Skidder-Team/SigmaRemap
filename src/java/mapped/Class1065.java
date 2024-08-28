@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1065 extends Class1064 {
    private int field5876 = 47999;
 
-   public Class1065(Class8992<? extends Class1065> var1, Class1655 var2) {
+   public Class1065(Class8992<? extends Class1065> var1, World var2) {
       super(var1, var2);
    }
 

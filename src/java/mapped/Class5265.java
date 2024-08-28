@@ -53,7 +53,7 @@ public class Class5265 extends PremiumModule {
     private void method16473(Class4422 var1) {
         if (this.field23693 != null) {
             this.field23684 = (this.method15974("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.field23693.method2941().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.field23693.getName().getString()))
                     + (this.method15974("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");
@@ -146,7 +146,7 @@ public class Class5265 extends PremiumModule {
                 var7 = UUID.fromString("b1adf2ec-eed6-46d6-a770-40f409651913");
             }
 
-            GameProfile var8 = new GameProfile(var7, this.field23693.method2941().getString());
+            GameProfile var8 = new GameProfile(var7, this.field23693.getName().getString());
             Class1117 var9 = new Class1117(this, mc.field1338, var8);
             RenderSystem.pushMatrix();
             RenderSystem.translatef((float) var1 + 50.0F, (float) this.field23683 + 295.0F, 1000.0F);

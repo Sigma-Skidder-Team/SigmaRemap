@@ -54,13 +54,13 @@ public class Class2632 extends Class2628 {
    public void method10842(Class1660 var1, BlockPos var2) {
    }
 
-   public void method10843(Class1655 var1, BlockPos var2) {
+   public void method10843(World var1, BlockPos var2) {
    }
 
    @Override
    public void method10805() {
       super.method10805();
-      Class1655 var3 = this.field16946.field5024;
+      World var3 = this.field16946.field5024;
       BlockPos var4 = this.field16946.method3432();
       BlockPos var5 = this.method10844(var4, var3);
       Random var6 = this.field16946.method3013();

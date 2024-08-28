@@ -34,7 +34,7 @@ public class Class1098 extends Class1013 {
    private float field6048;
    private float field6049;
 
-   public Class1098(Class8992<? extends Class1098> var1, Class1655 var2) {
+   public Class1098(Class8992<? extends Class1098> var1, World var2) {
       super(var1, var2);
    }
 
@@ -311,8 +311,8 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       Class3257 var6 = var5.method32107();
       if (!this.field5024.field9020) {
          if (!this.method4393()) {
@@ -327,18 +327,18 @@ public class Class1098 extends Class1013 {
                }
 
                this.method4278();
-               return Class2274.field14819;
+               return ActionResultType.field14819;
             }
          } else if (this.method4401(var1)) {
             if (!(var6 instanceof Class3321)) {
                if (var6.method11744() && this.method4381(var5) && this.method3042() < this.method3075()) {
                   this.method4501(var1, var5);
                   this.method3041((float)var6.method11745().method36157());
-                  return Class2274.field14819;
+                  return ActionResultType.field14819;
                }
 
-               Class2274 var9 = super.method4285(var1, var2);
-               if (!var9.method9000() || this.method3005()) {
+               ActionResultType var9 = super.method4285(var1, var2);
+               if (!var9.isSuccessOrConsume() || this.method3005()) {
                   this.method4403(!this.method4402());
                }
 
@@ -353,20 +353,20 @@ public class Class1098 extends Class1013 {
                }
 
                this.method4278();
-               return Class2274.field14819;
+               return ActionResultType.field14819;
             }
          }
 
-         Class2274 var8 = super.method4285(var1, var2);
-         if (var8.method9000()) {
+         ActionResultType var8 = super.method4285(var1, var2);
+         if (var8.isSuccessOrConsume()) {
             this.method4278();
          }
 
          return var8;
       } else if (this.method4393() && this.method4401(var1)) {
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else {
-         return this.method4381(var5) && (this.method3042() < this.method3075() || !this.method4393()) ? Class2274.field14818 : Class2274.field14820;
+         return this.method4381(var5) && (this.method3042() < this.method3075() || !this.method4393()) ? ActionResultType.field14818 : ActionResultType.field14820;
       }
    }
 

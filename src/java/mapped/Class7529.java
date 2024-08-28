@@ -15,7 +15,7 @@ public class Class7529 extends Class7530 {
    private static final Logger field32315 = LogManager.getLogger();
    public int field32316;
    public int field32317;
-   public Class8705<Class1655> field32318;
+   public Class8705<World> field32318;
    public boolean field32319;
    public boolean field32320;
    public byte field32321;
@@ -31,7 +31,7 @@ public class Class7529 extends Class7530 {
       super(var1);
    }
 
-   public void method24589(int var1, int var2, int var3, boolean var4, boolean var5, Class8705<Class1655> var6) {
+   public void method24589(int var1, int var2, int var3, boolean var4, boolean var5, Class8705<World> var6) {
       this.field32321 = (byte)var3;
       this.method24590((double)var1, (double)var2, this.field32321);
       this.field32318 = var6;
@@ -50,7 +50,7 @@ public class Class7529 extends Class7530 {
 
    @Override
    public void method24591(Class39 var1) {
-      this.field32318 = (Class8705<Class1655>)Class9535.method36867(new Dynamic(Class8063.field34602, var1.method116("dimension")))
+      this.field32318 = (Class8705<World>)Class9535.method36867(new Dynamic(Class8063.field34602, var1.method116("dimension")))
          .resultOrPartial(field32315::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
       this.field32316 = var1.method122("xCenter");
@@ -145,12 +145,12 @@ public class Class7529 extends Class7530 {
       }
 
       if (!var1.field4902.method4058(var2)) {
-         this.field32327.remove(var1.method2941().getString());
+         this.field32327.remove(var1.getName().getString());
       }
 
       for (int var9 = 0; var9 < this.field32324.size(); var9++) {
          Class8541 var6 = this.field32324.get(var9);
-         String var7 = var6.field38390.method2941().getString();
+         String var7 = var6.field38390.getName().getString();
          if (!var6.field38390.field5041 && (var6.field38390.field4902.method4058(var2) || var2.method32165())) {
             if (!var2.method32165() && var6.field38390.field5024.method6813() == this.field32318 && this.field32319) {
                this.method24596(
@@ -245,7 +245,7 @@ public class Class7529 extends Class7530 {
       if (var14 >= -63.0F && var15 >= -63.0F && var14 <= 63.0F && var15 <= 63.0F) {
          var8 += !(var8 < 0.0) ? 8.0 : -8.0;
          var20 = (byte)((int)(var8 * 16.0 / 360.0));
-         if (this.field32318 == Class1655.field9000 && var2 != null) {
+         if (this.field32318 == World.field9000 && var2 != null) {
             int var22 = (int)(var2.method6788().method20034() / 10L);
             var20 = (byte)(var22 * var22 * 34187121 + var22 * 121 >> 15 & 15);
          }

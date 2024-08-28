@@ -5,15 +5,15 @@ import java.util.List;
 public class Class903 extends Class901 {
    private static String[] field5146;
 
-   public Class903(Class8992<? extends Class903> var1, Class1655 var2) {
+   public Class903(Class8992<? extends Class903> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class903(Class1655 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class903(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(Class8992.field41020, var2, var4, var6, var8, var10, var12, var1);
    }
 
-   public Class903(Class1655 var1, Class880 var2, double var3, double var5, double var7) {
+   public Class903(World var1, Class880 var2, double var3, double var5, double var7) {
       super(Class8992.field41020, var2, var3, var5, var7, var1);
    }
 

@@ -114,7 +114,7 @@ public class Class950 extends Class944 implements Class949, Class935 {
                      Class878.class,
                      new Class6488((double)var3, (double)var4, (double)var5, (double)var3, (double)(var4 - 4), (double)var5).method19663(10.0, 5.0, 10.0)
                   )) {
-                  Class9551.field44476.method15096(var13, this);
+                  CriteriaTriggers.field44476.method15096(var13, this);
                }
             } else if (var15 && !var16) {
                this.method3822(Class6067.field26387);

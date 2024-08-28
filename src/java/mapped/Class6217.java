@@ -18,7 +18,7 @@ public abstract class Class6217 extends Class6218 {
       var1.method11326().method6999(1002, var1.method11323(), 0);
    }
 
-   public abstract Class882 method19191(Class1655 var1, Class2955 var2, ItemStack var3);
+   public abstract Class882 method19191(World var1, Class2955 var2, ItemStack var3);
 
    public float method19194() {
       return 6.0F;

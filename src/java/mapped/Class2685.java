@@ -22,7 +22,7 @@ public class Class2685 extends Class2595 {
    @Override
    public void method10805() {
       Random var3 = this.field17102.method3013();
-      Class1655 var4 = this.field17102.field5024;
+      World var4 = this.field17102.field5024;
       int var5 = MathHelper.method37769(this.field17102.getPosX() - 1.0 + var3.nextDouble() * 2.0);
       int var6 = MathHelper.method37769(this.field17102.getPosY() + var3.nextDouble() * 2.0);
       int var7 = MathHelper.method37769(this.field17102.getPosZ() - 1.0 + var3.nextDouble() * 2.0);
@@ -40,7 +40,7 @@ public class Class2685 extends Class2595 {
       }
    }
 
-   private boolean method10901(Class1655 var1, BlockPos var2, Class7380 var3, Class7380 var4, Class7380 var5, BlockPos var6) {
+   private boolean method10901(World var1, BlockPos var2, Class7380 var3, Class7380 var4, Class7380 var5, BlockPos var6) {
       return var4.method23393()
          && !var5.method23393()
          && !var5.method23448(Blocks.BEDROCK)

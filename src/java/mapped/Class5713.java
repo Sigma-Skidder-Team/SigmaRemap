@@ -63,7 +63,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
    }
 
    private static Class2278 method17888(AbstractClientPlayerEntity var0, Hand var1) {
-      ItemStack var4 = var0.method3094(var1);
+      ItemStack var4 = var0.getHeldItem(var1);
       if (var4.method32105()) {
          return Class2278.field14836;
       } else {

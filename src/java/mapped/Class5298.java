@@ -86,7 +86,7 @@ public class Class5298 extends Module {
         this.field23817 = mc.field1339.getPosZ();
         this.field23821 = mc.field1339.field5031;
         this.field23822 = mc.field1339.field5032;
-        String var3 = mc.field1339.method2941().getString();
+        String var3 = mc.field1339.getName().getString();
         GameProfile var4 = new GameProfile(mc.field1339.getGameProfile().getId(), var3);
         field23814 = new Class1116(mc.field1338, var4);
         field23814.field4902 = mc.field1339.field4902;

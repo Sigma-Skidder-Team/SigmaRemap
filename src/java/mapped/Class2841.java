@@ -16,7 +16,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             false,
             false
          )
-         .method27312("entered_end", Class4488.method14156(Class1655.field9001))
+         .method27312("entered_end", Class4488.method14156(World.THE_END))
          .method27317(var1, "end/root");
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)

@@ -86,7 +86,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                if (this.field17126 != Class2229.field14615) {
                   if (this.field17126 == Class2229.field14616 && var4) {
                      this.field17125.method4530(var3, 1.0F);
-                     ItemStack var9 = this.field17125.method3094(Class9456.method36389(this.field17125, Class8514.field38148));
+                     ItemStack var9 = this.field17125.getHeldItem(Class9456.method36389(this.field17125, Class8514.field38148));
                      Class3261.method11756(var9, false);
                      this.field17126 = Class2229.field14613;
                   }

@@ -32,24 +32,24 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      ItemStack var9 = var4.method3094(var5);
-      if (var5 == Hand.field182 && !method11984(var9) && method11984(var4.method3094(Hand.field183))) {
-         return Class2274.field14820;
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.getHeldItem(var5);
+      if (var5 == Hand.field182 && !method11984(var9) && method11984(var4.getHeldItem(Hand.field183))) {
+         return ActionResultType.field14820;
       } else if (method11984(var9) && method11985(var1)) {
          method11989(var2, var3, var1);
          if (!var4.field4919.field29609) {
             var9.method32182(1);
          }
 
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       } else if (var1.<Integer>method23463(field19000) != 0) {
          if (!method11988(var2)) {
             if (!var2.field9020) {
                this.method11987(var1, var2, var3);
             }
 
-            return Class2274.method9002(var2.field9020);
+            return ActionResultType.method9002(var2.field9020);
          } else {
             if (!var2.field9020) {
                Class878 var10 = (Class878)var4;
@@ -65,14 +65,14 @@ public class Class3389 extends Block {
                      1.0F,
                      1.0F
                   );
-                  return Class2274.field14818;
+                  return ActionResultType.field14818;
                }
             }
 
-            return Class2274.field14819;
+            return ActionResultType.field14819;
          }
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
@@ -84,7 +84,7 @@ public class Class3389 extends Block {
       return var0.<Integer>method23463(field19000) < 4;
    }
 
-   private static boolean method11986(BlockPos var0, Class1655 var1) {
+   private static boolean method11986(BlockPos var0, World var1) {
       Class7379 var4 = var1.method6739(var0);
       if (var4.method23486(Class8953.field40469)) {
          if (!var4.method23473()) {
@@ -103,7 +103,7 @@ public class Class3389 extends Block {
       }
    }
 
-   private void method11987(Class7380 var1, Class1655 var2, BlockPos var3) {
+   private void method11987(Class7380 var1, World var2, BlockPos var3) {
       var2.method6728(var3, false);
       boolean var6 = Class76.field161.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
       boolean var7 = var6 || var2.method6739(var3.method8311()).method23486(Class8953.field40469);
@@ -121,11 +121,11 @@ public class Class3389 extends Block {
       );
    }
 
-   public static boolean method11988(Class1655 var0) {
+   public static boolean method11988(World var0) {
       return var0.method6812().method36882();
    }
 
-   public static void method11989(Class1655 var0, BlockPos var1, Class7380 var2) {
+   public static void method11989(World var0, BlockPos var1, Class7380 var2) {
       var0.method6725(var1, var2.method23465(field19000, Integer.valueOf(var2.<Integer>method23463(field19000) + 1)), 3);
       var0.method6743(
          (PlayerEntity)null,
@@ -140,7 +140,7 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19000) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.method6743(
@@ -178,7 +178,7 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       return method11990(var1, 15);
    }
 

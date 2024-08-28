@@ -241,7 +241,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          if (!var1.method3130()) {
             if (var8 != Class2090.field13621) {
                if (var1.method3381() || var1 instanceof PlayerEntity) {
-                  String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.method2941().getString());
+                  String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
                   if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method2962(Class2318.field15879))
                      )
                    {

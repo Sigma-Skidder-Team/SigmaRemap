@@ -42,7 +42,7 @@ public class Class8830<U> {
    public static final Class8830<Long> field39844 = method31927("last_woken", Codec.LONG);
    public static final Class8830<Long> field39845 = method31927("last_worked_at_poi", Codec.LONG);
    public static final Class8830<Class1045> field39846 = method31928("nearest_visible_adult");
-   public static final Class8830<Class1000> field39847 = method31928("nearest_visible_wanted_item");
+   public static final Class8830<ItemEntity> field39847 = method31928("nearest_visible_wanted_item");
    public static final Class8830<Class1006> field39848 = method31928("nearest_visible_nemesis");
    public static final Class8830<UUID> field39849 = method31927("angry_at", Class8749.field39430);
    public static final Class8830<Boolean> field39850 = method31927("universal_anger", Codec.BOOL);

@@ -98,7 +98,7 @@ public class Class5362 extends Module {
                     if (Class9217.method34535(mc.field1339, var5)) {
                         Class7380 var6 = mc.field1338.method6738(var5);
                         if (var6.method23383() instanceof Class3480 || var6.method23383() instanceof Class3481 || var6.method23383() instanceof Class3483) {
-                            ItemStack var14 = mc.field1339.method3094(Hand.field182);
+                            ItemStack var14 = mc.field1339.getHeldItem(Hand.field182);
                             if (var14 != null && var14.method32107() instanceof Class3321) {
                                 if (var6.<Integer>method23463(Class8820.field39742) != 7) {
                                     float[] var18 = Class9217.method34542(var5, Direction.field672);

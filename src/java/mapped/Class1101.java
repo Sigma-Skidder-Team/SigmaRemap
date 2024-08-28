@@ -6,7 +6,7 @@ public class Class1101 extends Class1009 {
    private static String[] field6056;
    private static final Class9289<Byte> field6057 = Class9361.<Byte>method35441(Class1101.class, Class7784.field33390);
 
-   public Class1101(Class8992<? extends Class1101> var1, Class1655 var2) {
+   public Class1101(Class8992<? extends Class1101> var1, World var2) {
       super(var1, var2);
    }
 
@@ -29,7 +29,7 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6993(this, var1);
    }
 

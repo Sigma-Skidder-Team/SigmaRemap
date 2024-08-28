@@ -47,7 +47,7 @@ public class Class9299 {
    public static Class6633 field42791 = new Class6633(field42790, "INSTANCE");
    public static Class6631 field42792 = new Class6631(field42790, "handOffWindow");
    public static Class6636 field42793 = new Class6636("net.minecraftforge.event.entity.EntityLeaveWorldEvent");
-   public static Class6634 field42794 = new Class6634(field42793, new Class[]{Entity.class, Class1655.class});
+   public static Class6634 field42794 = new Class6634(field42793, new Class[]{Entity.class, World.class});
    public static Class6636 field42795 = new Class6636("net.minecraftforge.client.event.EntityViewRenderEvent$CameraSetup");
    public static Class6631 field42796 = new Class6631(field42795, "getYaw");
    public static Class6631 field42797 = new Class6631(field42795, "getPitch");
@@ -60,7 +60,7 @@ public class Class9299 {
    public static Class6636 field42804 = new Class6636("net.minecraftforge.client.event.EntityViewRenderEvent$RenderFogEvent");
    public static Class6634 field42805 = new Class6634(field42804, new Class[]{Class2040.class, Class9624.class, float.class, float.class});
    public static Class6636 field42806 = new Class6636("net.minecraftforge.event.entity.EntityJoinWorldEvent");
-   public static Class6634 field42807 = new Class6634(field42806, new Class[]{Entity.class, Class1655.class});
+   public static Class6634 field42807 = new Class6634(field42806, new Class[]{Entity.class, World.class});
    public static Class6636 field42808 = new Class6636("net.minecraftforge.eventbus.api.Event");
    public static Class6631 field42809 = new Class6631(field42808, "isCanceled");
    public static Class6631 field42810 = new Class6631(field42808, "getResult");
@@ -75,7 +75,7 @@ public class Class9299 {
    public static Class6636 field42819 = new Class6636("net.minecraftforge.client.model.pipeline.ForgeBlockModelRenderer");
    public static Class6634 field42820 = new Class6634(field42819, new Class[]{Class8396.class});
    public static Class6636 field42821 = new Class6636(Class9736.class);
-   public static Class6631 field42822 = new Class6631(field42821, "getTexture", new Class[]{Class7380.class, Class1655.class, BlockPos.class});
+   public static Class6631 field42822 = new Class6631(field42821, "getTexture", new Class[]{Class7380.class, World.class, BlockPos.class});
    public static Class6636 field42823 = new Class6636("net.minecraftforge.common.extensions.IForgeBlockState");
    public static Class6631 field42824 = new Class6631(field42823, "addDestroyEffects");
    public static Class6631 field42825 = new Class6631(field42823, "addHitEffects");
@@ -202,7 +202,7 @@ public class Class9299 {
    public static Class6636 field42942 = new Class6636("net.minecraftforge.common.extensions.IForgeTileEntity");
    public static Class6631 field42943 = new Class6631(field42942, "getRenderBoundingBox");
    public static Class6633 field42944 = new Class6633(
-      new Class7109(Class1655.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
+      new Class7109(World.class, new Class[]{List.class}, Set.class, new Class[]{Thread.class}, "World.tileEntitiesToBeRemoved")
    );
    public static Class6636 field42945 = new Class6636(Class6349.class);
    public static Class6631 field42946 = field42945.method20249("getCloudRenderHandler");
@@ -271,7 +271,7 @@ public class Class9299 {
    public static Class6636 field43003 = new Class6636("net.minecraftforge.event.world.WorldEvent$Load");
    public static Class6634 field43004 = new Class6634(field43003, new Class[]{Class1660.class});
    private static boolean field43005 = method35096("*** Reflector Vanilla ***");
-   public static Class6636 field43006 = new Class6636(Class1000.class);
+   public static Class6636 field43006 = new Class6636(ItemEntity.class);
    public static Class6633 field43007 = new Class6633(field43006, Class9289.class);
    public static Class6636 field43008 = new Class6636(Class5718.class);
    public static Class6633 field43009 = new Class6633(field43008, Class2875.class);

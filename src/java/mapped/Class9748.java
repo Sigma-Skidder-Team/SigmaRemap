@@ -62,7 +62,7 @@ public class Class9748 {
                   var0.method30318(true);
                }
 
-               var0.method30278(var2 -> var2.method2941().getString().equals(var5) != var4);
+               var0.method30278(var2 -> var2.getName().getString().equals(var5) != var4);
             }
          }, var0 -> !var0.method30315(), new TranslationTextComponent("argument.entity.options.name.description"));
          method38218("distance", var0 -> {

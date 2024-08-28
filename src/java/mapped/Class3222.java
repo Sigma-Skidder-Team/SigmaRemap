@@ -239,7 +239,7 @@ public class Class3222 extends Block {
       return var3.method23454(var1, var2, Direction.field673) || var3.method23448(Blocks.field36723);
    }
 
-   private void method11622(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method11622(World var1, BlockPos var2, Class7380 var3) {
       int var6 = this.method11623(var1, var2);
       if (var3.<Integer>method23463(field18651) != var6) {
          if (var1.method6738(var2) == var3) {
@@ -259,7 +259,7 @@ public class Class3222 extends Block {
       }
    }
 
-   private int method11623(Class1655 var1, BlockPos var2) {
+   private int method11623(World var1, BlockPos var2) {
       this.field18659 = false;
       int var5 = var1.method6781(var2);
       this.field18659 = true;
@@ -285,7 +285,7 @@ public class Class3222 extends Block {
       return !var1.method23448(this) ? 0 : var1.<Integer>method23463(field18651);
    }
 
-   private void method11625(Class1655 var1, BlockPos var2) {
+   private void method11625(World var1, BlockPos var2) {
       if (var1.method6738(var2).method23448(this)) {
          var1.method6733(var2, this);
 
@@ -296,7 +296,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383()) && !var2.field9020) {
          this.method11622(var2, var3, var1);
 
@@ -309,7 +309,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5 && !var1.method23448(var4.method23383())) {
          super.method11513(var1, var2, var3, var4, var5);
          if (!var2.field9020) {
@@ -323,7 +323,7 @@ public class Class3222 extends Block {
       }
    }
 
-   private void method11626(Class1655 var1, BlockPos var2) {
+   private void method11626(World var1, BlockPos var2) {
       for (Direction var6 : Class76.field161) {
          this.method11625(var1, var2.method8349(var6));
       }
@@ -339,7 +339,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          if (!var1.method23443(var2, var3)) {
             method11554(var1, var2, var3);
@@ -396,7 +396,7 @@ public class Class3222 extends Block {
       return MathHelper.method37805(var3.method25269(), var3.method25270(), var3.method25271());
    }
 
-   private void method11630(Class1655 var1, Random var2, BlockPos var3, Class7680 var4, Direction var5, Direction var6, float var7, float var8) {
+   private void method11630(World var1, Random var2, BlockPos var3, Class7680 var4, Direction var5, Direction var6, float var7, float var8) {
       float var11 = var8 - var7;
       if (!(var2.nextFloat() >= 0.2F * var11)) {
          float var12 = 0.4375F;
@@ -417,7 +417,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>method23463(field18651);
       if (var7 != 0) {
          for (Direction var9 : Class76.field161) {
@@ -477,9 +477,9 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var4.field4919.field29610) {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       } else {
          if (method11616(var1) || method11617(var1)) {
             Class7380 var9 = !method11616(var1) ? this.field18658 : this.method11579();
@@ -488,15 +488,15 @@ public class Class3222 extends Block {
             if (var9 != var1) {
                var2.method6725(var3, var9, 3);
                this.method11631(var2, var3, var1, var9);
-               return Class2274.field14818;
+               return ActionResultType.field14818;
             }
          }
 
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 
-   private void method11631(Class1655 var1, BlockPos var2, Class7380 var3, Class7380 var4) {
+   private void method11631(World var1, BlockPos var2, Class7380 var3, Class7380 var4) {
       for (Direction var8 : Class76.field161) {
          BlockPos var9 = var2.method8349(var8);
          if (var3.<Class98>method23463(field18652.get(var8)).method279() != var4.<Class98>method23463(field18652.get(var8)).method279()

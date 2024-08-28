@@ -14,10 +14,10 @@ public class Class3323 extends Class3257 {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
       PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
       if (var6 instanceof Class878) {
-         Class9551.field44490.method15174((Class878)var6, var1);
+         CriteriaTriggers.field44490.method15174((Class878)var6, var1);
       }
 
       if (!var2.field9020) {
@@ -61,7 +61,7 @@ public class Class3323 extends Class3257 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       return Class8482.method29977(var1, var2, var3);
    }
 
@@ -71,7 +71,7 @@ public class Class3323 extends Class3257 {
    }
 
    @Override
-   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       Class9741.method38189(var1, var3, 1.0F);
    }
 

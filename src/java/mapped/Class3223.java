@@ -19,7 +19,7 @@ public class Class3223 extends Block {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          boolean var9 = var1.<Boolean>method23463(field18661);
          if (var9 != var2.method6780(var3)) {

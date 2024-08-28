@@ -30,7 +30,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ServerWorld extends Class1655 implements Class1658 {
+public class ServerWorld extends World implements Class1658 {
    public static final BlockPos field9038 = new BlockPos(100, 50, 0);
    private static final Logger field8997 = LogManager.getLogger();
    private final Int2ObjectMap<Entity> field9039 = new Int2ObjectLinkedOpenHashMap();
@@ -65,7 +65,7 @@ public class ServerWorld extends Class1655 implements Class1658 {
       Executor var2,
       Class1814 var3,
       Class6608 var4,
-      Class8705<Class1655> var5,
+      Class8705<World> var5,
       Class9535 var6,
       Class7243 var7,
       Class5646 var8,

@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class PacketThreadUtil {
    private static final Logger field39629 = LogManager.getLogger();
-   public static Class8705<Class1655> field39630 = null;
+   public static Class8705<World> field39630 = null;
 
    public static <T extends Class5104> void checkThreadAndEnqueue(Packet<T> var0, T var1, ServerWorld var2) throws Class2466 {
       method31780(var0, var1, var2.method6715());

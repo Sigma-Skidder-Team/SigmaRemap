@@ -53,7 +53,7 @@ public class Class3382 extends Class3381 {
    @Override
    public Class7380 method11495(Class5909 var1) {
       Class7380 var4 = this.method11579();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Direction[] var7 = var1.method18349();
 
@@ -76,7 +76,7 @@ public class Class3382 extends Class3381 {
    }
 
    @Override
-   public void method11512(Class7380 var1, Class1655 var2, BlockPos var3, Random var4) {
+   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method23463(field18985);
       double var8 = (double)var3.method8304() + 0.5;
       double var10 = (double)var3.getY() + 0.7;

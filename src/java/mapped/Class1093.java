@@ -27,7 +27,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
       Class8830.field39827
    );
 
-   public Class1093(Class8992<? extends Class1093> var1, Class1655 var2) {
+   public Class1093(Class8992<? extends Class1093> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }

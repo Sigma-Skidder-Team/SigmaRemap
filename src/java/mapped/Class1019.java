@@ -49,7 +49,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       return field5706.get(var0);
    }
 
-   public Class1019(Class8992<? extends Class1019> var1, Class1655 var2) {
+   public Class1019(Class8992<? extends Class1019> var1, World var2) {
       super(var1, var2);
    }
 
@@ -166,16 +166,16 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() != Class8514.field37956) {
          return super.method4285(var1, var2);
       } else if (!this.field5024.field9020 && this.method4516()) {
          this.method4515(Class2266.field14735);
          var5.method32121(1, var1, var1x -> var1x.method3185(var2));
-         return Class2274.field14818;
+         return ActionResultType.field14818;
       } else {
-         return Class2274.field14819;
+         return ActionResultType.field14819;
       }
    }
 
@@ -186,7 +186,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       int var4 = 1 + this.field5054.nextInt(3);
 
       for (int var5 = 0; var5 < var4; var5++) {
-         Class1000 var6 = this.method3301(field5705.get(this.method4517()), 1);
+         ItemEntity var6 = this.method3301(field5705.get(this.method4517()), 1);
          if (var6 != null) {
             var6.method3434(
                var6.method3433()

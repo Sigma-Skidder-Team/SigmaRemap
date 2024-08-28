@@ -53,7 +53,7 @@ public class Class1052 extends Class1050 {
       return var0.method8237() & 0xFF | (var0.method8238() & 0xFF) << 8 | (var1.method309() & 0xFF) << 16 | (var2.method309() & 0xFF) << 24;
    }
 
-   public Class1052(Class8992<? extends Class1052> var1, Class1655 var2) {
+   public Class1052(Class8992<? extends Class1052> var1, World var2) {
       super(var1, var2);
    }
 

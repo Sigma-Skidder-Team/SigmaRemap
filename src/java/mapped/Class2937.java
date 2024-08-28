@@ -46,7 +46,7 @@ public class Class2937 extends Class2898<Class4712> {
    private static boolean method11279(Class1660 var0, Mutable var1) {
       while (true) {
          var1.method8381(0, -1, 0);
-         if (!Class1655.method6720(var1)) {
+         if (!World.method6720(var1)) {
             if (var0.method6738(var1).method23393()) {
                continue;
             }

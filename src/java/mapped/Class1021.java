@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1021 extends Class1056 implements Class1020, Class1022 {
    private static final Class9289<Byte> field5709 = Class9361.<Byte>method35441(Class1021.class, Class7784.field33390);
 
-   public Class1021(Class8992<? extends Class1021> var1, Class1655 var2) {
+   public Class1021(Class8992<? extends Class1021> var1, World var2) {
       super(var1, var2);
    }
 
@@ -97,17 +97,17 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.field5024.field9020) {
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
-         return Class2274.field14820;
+         return ActionResultType.field14820;
       }
    }
 

@@ -5,7 +5,7 @@ public abstract class Class3429 extends Block {
    public static final Class6408 field19188 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    private final boolean field19189;
 
-   public static boolean method12086(Class1655 var0, BlockPos var1) {
+   public static boolean method12086(World var0, BlockPos var1) {
       return method12087(var0.method6738(var1));
    }
 
@@ -34,13 +34,13 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383())) {
          this.method12089(var1, var2, var3, var5);
       }
    }
 
-   public Class7380 method12089(Class7380 var1, Class1655 var2, BlockPos var3, boolean var4) {
+   public Class7380 method12089(Class7380 var1, World var2, BlockPos var3, boolean var4) {
       var1 = this.method12092(var2, var3, var1, true);
       if (this.field19189) {
          var1.method23423(var2, var3, this, var3, var4);
@@ -50,7 +50,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020 && var2.method6738(var3).method23448(this)) {
          Class96 var9 = var1.<Class96>method23463(this.method12093());
          if (!method12090(var3, var2, var9)) {
@@ -62,7 +62,7 @@ public abstract class Class3429 extends Block {
       }
    }
 
-   private static boolean method12090(BlockPos var0, Class1655 var1, Class96 var2) {
+   private static boolean method12090(BlockPos var0, World var1, Class96 var2) {
       if (!method11547(var1, var0.method8313())) {
          return true;
       } else {
@@ -81,10 +81,10 @@ public abstract class Class3429 extends Block {
       }
    }
 
-   public void method12091(Class7380 var1, Class1655 var2, BlockPos var3, Block var4) {
+   public void method12091(Class7380 var1, World var2, BlockPos var3, Block var4) {
    }
 
-   public Class7380 method12092(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public Class7380 method12092(World var1, BlockPos var2, Class7380 var3, boolean var4) {
       if (!var1.field9020) {
          Class96 var7 = var3.<Class96>method23463(this.method12093());
          return new Class9435(var1, var2, var3).method36244(var1.method6780(var2), var4, var7).method36245();
@@ -99,7 +99,7 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public void method11513(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var5) {
          super.method11513(var1, var2, var3, var4, var5);
          if (var1.<Class96>method23463(this.method12093()).method275()) {

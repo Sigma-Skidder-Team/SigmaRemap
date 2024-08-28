@@ -59,7 +59,7 @@ public class Class8396 {
       return var2;
    }
 
-   public int method29464(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method29464(Class7380 var1, World var2, BlockPos var3) {
       Class8040 var6 = this.field36032.method9172(Class2348.field16072.method9171(var1.method23383()));
       if (var6 == null) {
          Class7210 var7 = var1.method23394(var2, var3);

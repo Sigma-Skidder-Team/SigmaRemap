@@ -10,7 +10,7 @@ public class Class3210 extends Block {
    }
 
    @Override
-   public void method11561(Class1655 var1, BlockPos var2, Entity var3) {
+   public void method11561(World var1, BlockPos var2, Entity var3) {
       if (!var3.method3249() && var3 instanceof Class880 && !Class7858.method26332((Class880)var3)) {
          var3.method2741(Class8654.field38996, 1.0F);
       }
@@ -46,7 +46,7 @@ public class Class3210 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       var2.method6860().method20726(var3, this, 20);
    }
 }

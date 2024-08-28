@@ -8,8 +8,8 @@ public class Class3464 extends Class3462 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
-      ItemStack var9 = var4.method3094(var5);
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.getHeldItem(var5);
       if (var9.method32107() != Class8514.field37956) {
          return super.method11505(var1, var2, var3, var4, var5, var6);
       } else {
@@ -18,7 +18,7 @@ public class Class3464 extends Class3462 {
             Direction var11 = var10.method544() != Class113.field414 ? var10 : var4.method3386().method536();
             var2.method6742((PlayerEntity)null, var3, Class6067.field26986, Class2266.field14732, 1.0F, 1.0F);
             var2.method6725(var3, Blocks.field36589.method11579().method23465(Class3342.field18848, var11), 11);
-            Class1000 var12 = new Class1000(
+            ItemEntity var12 = new ItemEntity(
                var2,
                (double)var3.method8304() + 0.5 + (double)var11.method539() * 0.65,
                (double)var3.getY() + 0.1,
@@ -34,7 +34,7 @@ public class Class3464 extends Class3462 {
             var9.method32121(1, var4, var1x -> var1x.method3185(var5));
          }
 
-         return Class2274.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.field9020);
       }
    }
 

@@ -89,7 +89,7 @@ public class Class3199 extends Class3198 {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      Class1655 var4 = var1.method18360();
+      World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       boolean var6 = var4.method6780(var5);
       Direction var7 = var1.method18350();
@@ -109,7 +109,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var1.<Boolean>method23463(field18486)) {
          Direction var9 = var4.method3386();
          if (var1.<Direction>method23463(field18484) == var9.method536()) {
@@ -124,11 +124,11 @@ public class Class3199 extends Class3198 {
       }
 
       var2.method6869(var4, !var1.<Boolean>method23463(field18486) ? 1014 : 1008, var3, 0);
-      return Class2274.method9002(var2.field9020);
+      return ActionResultType.method9002(var2.field9020);
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          boolean var9 = var2.method6780(var3);
          if (var1.<Boolean>method23463(field18487) != var9) {

@@ -73,7 +73,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    @Override
    public Class7380 method11495(Class5909 var1) {
       Class7380 var4 = this.method11579();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
 
       for (Direction var10 : var1.method18349()) {
@@ -101,7 +101,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    }
 
    @Override
-   public boolean method11487(Class1655 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
       return true;
    }
 

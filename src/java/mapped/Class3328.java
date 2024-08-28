@@ -10,11 +10,11 @@ public class Class3328 extends Class3257 {
    }
 
    @Override
-   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+   public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       List var6 = var1.<Class999>method6772(
          Class999.class, var2.method3389().method19664(2.0), var0 -> var0 != null && var0.method3066() && var0.method4114() instanceof Class1007
       );
-      ItemStack var7 = var2.method3094(var3);
+      ItemStack var7 = var2.getHeldItem(var3);
       if (var6.isEmpty()) {
          Class8711 var10 = method11735(var1, var2, Class1985.field12963);
          if (var10.method31417() != Class2100.field13689) {

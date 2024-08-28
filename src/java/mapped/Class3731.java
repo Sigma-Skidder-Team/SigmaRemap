@@ -43,7 +43,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
             if (this.field19841 != Class2276.field14828) {
                if (this.field19841 == Class2276.field14829) {
                   ((Class1022)var1).method4530(var2, 1.0F);
-                  ItemStack var5 = var1.method3094(Class9456.method36389(var1, Class8514.field38148));
+                  ItemStack var5 = var1.getHeldItem(Class9456.method36389(var1, Class8514.field38148));
                   Class3261.method11756(var5, false);
                   this.field19841 = Class2276.field14826;
                }

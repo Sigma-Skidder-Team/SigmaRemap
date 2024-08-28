@@ -14,17 +14,17 @@ public class Class3214 extends Class3213 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       this.method11603(var1, var2, var3);
-      return Class2274.method9002(var2.field9020);
+      return ActionResultType.method9002(var2.field9020);
    }
 
    @Override
-   public void method11602(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
+   public void method11602(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
       this.method11603(var1, var2, var3);
    }
 
-   private void method11603(Class7380 var1, Class1655 var2, BlockPos var3) {
+   private void method11603(Class7380 var1, World var2, BlockPos var3) {
       for (int var6 = 0; var6 < 1000; var6++) {
          BlockPos var7 = var3.method8336(
             var2.field9016.nextInt(16) - var2.field9016.nextInt(16),

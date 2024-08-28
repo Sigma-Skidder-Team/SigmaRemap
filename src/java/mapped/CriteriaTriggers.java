@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public class Class9551 {
+public class CriteriaTriggers {
    private static final Map<ResourceLocation, Class4907<?>> field44464 = Maps.newHashMap();
    public static final Class4908 field44465 = method36999(new Class4908());
    public static final Class4905 field44466 = method36999(new Class4905(new ResourceLocation("player_killed_entity")));
@@ -27,7 +27,7 @@ public class Class9551 {
    public static final Class4898 field44483 = method36999(new Class4898());
    public static final Class4889 field44484 = method36999(new Class4889());
    public static final Class4893 field44485 = method36999(new Class4893());
-   public static final Class4901 field44486 = method36999(new Class4901());
+   public static final Class4901 CHANGED_DIMENSION = method36999(new Class4901());
    public static final Class4873 field44487 = method36999(new Class4873());
    public static final Class4892 field44488 = method36999(new Class4892());
    public static final Class4899 field44489 = method36999(new Class4899());
@@ -47,7 +47,7 @@ public class Class9551 {
    public static final Class4904 field44503 = method36999(new Class4904());
    public static final Class4890 field44504 = method36999(new Class4890());
    public static final Class4884 field44505 = method36999(new Class4884());
-   public static final Class4896 field44506 = method36999(new Class4896());
+   public static final Class4896 PLAYER_ENTITY_INTERACTION = method36999(new Class4896());
 
    private static <T extends Class4907<?>> T method36999(T var0) {
       if (!field44464.containsKey(var0.method15044())) {

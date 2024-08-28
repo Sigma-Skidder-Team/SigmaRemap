@@ -4,11 +4,11 @@ public class Class992 extends Class916 {
    private static String[] field5478;
    private final Class7574 field5479 = new Class7575(this);
 
-   public Class992(Class8992<? extends Class992> var1, Class1655 var2) {
+   public Class992(Class8992<? extends Class992> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class992(Class1655 var1, double var2, double var4, double var6) {
+   public Class992(World var1, double var2, double var4, double var6) {
       super(Class8992.field41055, var1, var2, var4, var6);
    }
 

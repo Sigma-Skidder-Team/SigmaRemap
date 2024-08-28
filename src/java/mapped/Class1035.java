@@ -6,7 +6,7 @@ public abstract class Class1035 extends Class1009 {
    public static final Class9289<Boolean> field5750 = Class9361.<Boolean>method35441(Class1035.class, Class7784.field33398);
    public int field5751 = 0;
 
-   public Class1035(Class8992<? extends Class1035> var1, Class1655 var2) {
+   public Class1035(Class8992<? extends Class1035> var1, World var2) {
       super(var1, var2);
       this.method4281(true);
       this.method4631();

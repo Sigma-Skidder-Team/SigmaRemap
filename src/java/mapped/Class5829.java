@@ -36,7 +36,7 @@ public class Class5829 extends Class5828<Class926> {
       }
    }
 
-   public static void method18228(int var0, Class1655 var1, PlayerEntity var2, Class926 var3, Class921 var4) {
+   public static void method18228(int var0, World var1, PlayerEntity var2, Class926 var3, Class921 var4) {
       if (!var1.field9020) {
          Class878 var7 = (Class878)var2;
          ItemStack var8 = ItemStack.EMPTY;

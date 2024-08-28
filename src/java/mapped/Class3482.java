@@ -39,7 +39,7 @@ public class Class3482 extends Class3480 {
    }
 
    @Override
-   public int method12181(Class1655 var1) {
+   public int method12181(World var1) {
       return super.method12181(var1) / 3;
    }
 

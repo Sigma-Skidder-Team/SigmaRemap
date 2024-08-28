@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Class9196 {
    private static String[] field42236;
-   private final Class1655 field42237;
+   private final World field42237;
    private final BlockPos field42238;
    private final boolean field42239;
    private final BlockPos field42240;
@@ -15,7 +15,7 @@ public class Class9196 {
    private final List<BlockPos> field42243 = Lists.newArrayList();
    private final Direction field42244;
 
-   public Class9196(Class1655 var1, BlockPos var2, Direction var3, boolean var4) {
+   public Class9196(World var1, BlockPos var2, Direction var3, boolean var4) {
       this.field42237 = var1;
       this.field42238 = var2;
       this.field42244 = var3;

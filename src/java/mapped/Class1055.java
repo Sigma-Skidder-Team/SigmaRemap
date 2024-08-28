@@ -19,7 +19,7 @@ public class Class1055 extends Class1047 {
    private float field5837;
    private float field5838;
 
-   public Class1055(Class8992<? extends Class1055> var1, Class1655 var2) {
+   public Class1055(Class8992<? extends Class1055> var1, World var2) {
       super(var1, var2);
       this.field5054.setSeed((long)this.method3205());
       this.field5834 = 1.0F / (this.field5054.nextFloat() + 1.0F) * 0.2F;

@@ -98,7 +98,7 @@ public abstract class Class880 extends Entity {
    private float field5010;
    public Class6947<?> field5011;
 
-   public Class880(Class8992<? extends Class880> var1, Class1655 var2) {
+   public Class880(Class8992<? extends Class880> var1, World var2) {
       super(var1, var2);
       this.field4942 = new Class9020(Class9614.method37375(var1));
       this.method3043(this.method3075());
@@ -990,14 +990,14 @@ public abstract class Class880 extends Entity {
             }
 
             if (this instanceof Class878) {
-               Class9551.field44472.method15165((Class878)this, var1, var5, var2, var6);
+               CriteriaTriggers.field44472.method15165((Class878)this, var1, var5, var2, var6);
                if (var7 > 0.0F && var7 < 3.4028235E37F) {
                   ((Class878)this).method2912(Class8876.field40131, Math.round(var7 * 10.0F));
                }
             }
 
             if (var9 instanceof Class878) {
-               Class9551.field44471.method15093((Class878)var9, this, var1, var5, var2, var6);
+               CriteriaTriggers.field44471.method15093((Class878)var9, this, var1, var5, var2, var6);
             }
 
             return var19;
@@ -1034,7 +1034,7 @@ public abstract class Class880 extends Entity {
             if (this instanceof Class878) {
                Class878 var10 = (Class878)this;
                var10.method2913(Class8876.field40098.method172(Class8514.field38126));
-               Class9551.field44492.method15068(var10, var4);
+               CriteriaTriggers.field44492.method15068(var10, var4);
             }
 
             this.method3043(1.0F);
@@ -1068,8 +1068,8 @@ public abstract class Class880 extends Entity {
    private boolean method3049(Class8654 var1) {
       Entity var4 = var1.method31113();
       boolean var5 = false;
-      if (var4 instanceof Class884) {
-         Class884 var6 = (Class884)var4;
+      if (var4 instanceof AbstractArrowEntity) {
+         AbstractArrowEntity var6 = (AbstractArrowEntity)var4;
          if (var6.method3489() > 0) {
             var5 = true;
          }
@@ -1152,7 +1152,7 @@ public abstract class Class880 extends Entity {
             }
 
             if (!var4) {
-               Class1000 var7 = new Class1000(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), new ItemStack(Class8514.field37345));
+               ItemEntity var7 = new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), new ItemStack(Class8514.field37345));
                this.field5024.method6916(var7);
             }
          }
@@ -1187,9 +1187,9 @@ public abstract class Class880 extends Entity {
          int var3 = this.method2937(this.field4970);
 
          while (var3 > 0) {
-            int var4 = Class1003.method4179(var3);
+            int var4 = ExperienceOrbEntity.method4179(var3);
             var3 -= var4;
-            this.field5024.method6916(new Class1003(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var4));
+            this.field5024.method6916(new ExperienceOrbEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var4));
          }
       }
    }
@@ -1472,10 +1472,10 @@ public abstract class Class880 extends Entity {
    }
 
    public void swingArm(Hand var1) {
-      this.method3081(var1, false);
+      this.swing(var1, false);
    }
 
-   public void method3081(Hand var1, boolean var2) {
+   public void swing(Hand var1, boolean var2) {
       if (!this.field4947 || this.field4949 >= this.method3080() / 2 || this.field4949 < 0) {
          this.field4949 = -1;
          this.field4947 = true;
@@ -2538,15 +2538,15 @@ public abstract class Class880 extends Entity {
       this.field4981 = var1;
    }
 
-   public void method3134(Class1000 var1) {
+   public void method3134(ItemEntity var1) {
       PlayerEntity var4 = var1.method4128() == null ? null : this.field5024.method7196(var1.method4128());
       if (var4 instanceof Class878) {
-         Class9551.field44505.method15090((Class878)var4, var1.method4124(), this);
+         CriteriaTriggers.field44505.method15090((Class878)var4, var1.method4124(), this);
       }
    }
 
    public void method2751(Entity var1, int var2) {
-      if (!var1.field5041 && !this.field5024.field9020 && (var1 instanceof Class1000 || var1 instanceof Class884 || var1 instanceof Class1003)) {
+      if (!var1.field5041 && !this.field5024.field9020 && (var1 instanceof ItemEntity || var1 instanceof AbstractArrowEntity || var1 instanceof ExperienceOrbEntity)) {
          ((ServerWorld)this.field5024).method6883().method7380(var1, new Class5467(var1.method3205(), this.method3205(), var2));
       }
    }
@@ -2852,7 +2852,7 @@ public abstract class Class880 extends Entity {
       double var16 = var3;
       boolean var18 = false;
       BlockPos var19 = new BlockPos(var1, var3, var5);
-      Class1655 var20 = this.field5024;
+      World var20 = this.field5024;
       if (var20.method7017(var19)) {
          boolean var21 = false;
 
@@ -3019,7 +3019,7 @@ public abstract class Class880 extends Entity {
       return ItemStack.EMPTY;
    }
 
-   public ItemStack method2984(Class1655 var1, ItemStack var2) {
+   public ItemStack method2984(World var1, ItemStack var2) {
       if (var2.method32184()) {
          var1.method6743(
             (PlayerEntity)null,
@@ -3040,7 +3040,7 @@ public abstract class Class880 extends Entity {
       return var2;
    }
 
-   private void method3182(ItemStack var1, Class1655 var2, Class880 var3) {
+   private void method3182(ItemStack var1, World var2, Class880 var3) {
       Class3257 var6 = var1.method32107();
       if (var6.method11744()) {
          for (Pair var8 : var6.method11745().method36162()) {

@@ -50,7 +50,7 @@ public class Class3361 extends Class3359 {
    @Override
    public Class7380 method11495(Class5909 var1) {
       Class7380 var4 = this.method11579();
-      Class1655 var5 = var1.method18360();
+      World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Direction[] var7 = var1.method18349();
 

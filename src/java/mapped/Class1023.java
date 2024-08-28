@@ -14,7 +14,7 @@ public interface Class1023 extends Class1022 {
 
    default void method4538(Class880 var1, float var2) {
       Hand var5 = Class9456.method36389(var1, Class8514.field38148);
-      ItemStack var6 = var1.method3094(var5);
+      ItemStack var6 = var1.getHeldItem(var5);
       if (var1.method3092(Class8514.field38148)) {
          Class3261.method11763(var1.field5024, var1, var5, var6, var2, (float)(14 - var1.field5024.method6997().method8905() * 4));
       }

@@ -53,12 +53,12 @@ public abstract class Class916 extends Entity {
    private double field5229;
    private double field5230;
 
-   public Class916(Class8992<?> var1, Class1655 var2) {
+   public Class916(Class8992<?> var1, World var2) {
       super(var1, var2);
       this.field5019 = true;
    }
 
-   public Class916(Class8992<?> var1, Class1655 var2, double var3, double var5, double var7) {
+   public Class916(Class8992<?> var1, World var2, double var3, double var5, double var7) {
       this(var1, var2);
       this.method3215(var3, var5, var7);
       this.method3434(Vector3d.field18047);
@@ -67,7 +67,7 @@ public abstract class Class916 extends Entity {
       this.field5027 = var7;
    }
 
-   public static Class916 method3585(Class1655 var0, double var1, double var3, double var5, Class2177 var7) {
+   public static Class916 method3585(World var0, double var1, double var3, double var5, Class2177 var7) {
       if (var7 != Class2177.field14288) {
          if (var7 != Class2177.field14289) {
             if (var7 != Class2177.field14290) {

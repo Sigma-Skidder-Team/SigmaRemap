@@ -82,7 +82,7 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (this.method12043(var2, var3, var1)) {
          var2.method6861().method20726(var3, var1.method23449().method23472(), this.field19080.method25057(var2));
       }
@@ -98,13 +98,13 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (this.method12043(var2, var3, var1)) {
          var2.method6861().method20726(var3, var1.method23449().method23472(), this.field19080.method25057(var2));
       }
    }
 
-   private boolean method12043(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private boolean method12043(World var1, BlockPos var2, Class7380 var3) {
       if (this.field19080.method25067(Class8953.field40470)) {
          boolean var6 = var1.method6738(var2.method8313()).method23448(Blocks.SOUL_SOIL);
 

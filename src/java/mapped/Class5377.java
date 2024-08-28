@@ -364,7 +364,7 @@ public class Class5377 extends Module {
 
     public void method16933(double var1, double var3, double var5, Entity var7, float var8, String var9) {
         ClientResource var12 = ResourceRegistry.JelloLightFont25;
-        String var13 = var9 == null ? var7.method2941().getString().replaceAll("§.", "") : var9;
+        String var13 = var9 == null ? var7.getName().getString().replaceAll("§.", "") : var9;
         if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(mc.method1533().method21526())) {
             var13 = Client.getInstance().getModuleManager().method14662(Class5364.class).getStringSettingValueByName("Username");
         }

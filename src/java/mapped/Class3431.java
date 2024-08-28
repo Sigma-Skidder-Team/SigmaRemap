@@ -20,7 +20,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
+   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.field9020 && !var1.<Boolean>method23463(field19194)) {
          this.method12094(var2, var3, var1);
       }
@@ -47,7 +47,7 @@ public class Class3431 extends Class3429 {
       }
    }
 
-   private void method12094(Class1655 var1, BlockPos var2, Class7380 var3) {
+   private void method12094(World var1, BlockPos var2, Class7380 var3) {
       if (this.method11492(var3, var1, var2)) {
          boolean var6 = var3.<Boolean>method23463(field19194);
          boolean var7 = false;
@@ -82,7 +82,7 @@ public class Class3431 extends Class3429 {
       }
    }
 
-   public void method12095(Class1655 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public void method12095(World var1, BlockPos var2, Class7380 var3, boolean var4) {
       Class9435 var7 = new Class9435(var1, var2, var3);
 
       for (BlockPos var9 : var7.method36233()) {
@@ -92,7 +92,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public void method11589(Class7380 var1, Class1655 var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
       if (!var4.method23448(var1.method23383())) {
          this.method12094(var2, var3, this.method12089(var1, var2, var3, var5));
       }
@@ -109,7 +109,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public int method11649(Class7380 var1, Class1655 var2, BlockPos var3) {
+   public int method11649(Class7380 var1, World var2, BlockPos var3) {
       if (var1.<Boolean>method23463(field19194)) {
          List var6 = this.<Class918>method12096(var2, var3, Class918.class, (Predicate<Entity>)null);
          if (!var6.isEmpty()) {
@@ -125,7 +125,7 @@ public class Class3431 extends Class3429 {
       return 0;
    }
 
-   public <T extends Class916> List<T> method12096(Class1655 var1, BlockPos var2, Class<T> var3, Predicate<Entity> var4) {
+   public <T extends Class916> List<T> method12096(World var1, BlockPos var2, Class<T> var3, Predicate<Entity> var4) {
       return var1.<T>method6772(var3, this.method12097(var2), var4);
    }
 

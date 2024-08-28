@@ -3,7 +3,7 @@ package mapped;
 public class Class1087 extends Class1018 {
    private static String[] field5955;
 
-   public Class1087(Class8992<? extends Class1087> var1, Class1655 var2) {
+   public Class1087(Class8992<? extends Class1087> var1, World var2) {
       super(var1, var2);
    }
 
@@ -49,13 +49,13 @@ public class Class1087 extends Class1018 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+   public ActionResultType method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field37882 && !this.method3005()) {
          var1.method2863(Class6067.field26480, 1.0F, 1.0F);
          ItemStack var6 = Class8482.method29979(var5, var1, Class8514.field37891.method11742());
          var1.method3095(var2, var6);
-         return Class2274.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.field5024.field9020);
       } else {
          return super.method4285(var1, var2);
       }

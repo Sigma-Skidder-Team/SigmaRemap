@@ -8,7 +8,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    private final Class2758<Class1082> field5946 = new Class2758<Class1082>(this, 1.0, 20, 15.0F);
    private final Class2647 field5947 = new Class2652(this, this, 1.2, false);
 
-   public Class1082(Class8992<? extends Class1082> var1, Class1655 var2) {
+   public Class1082(Class8992<? extends Class1082> var1, World var2) {
       super(var1, var2);
       this.method5031();
    }
@@ -126,7 +126,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method4530(Class880 var1, float var2) {
       ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Class8514.field37796)));
-      Class884 var6 = this.method5032(var5, var2);
+      AbstractArrowEntity var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
@@ -136,7 +136,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       this.field5024.method6916(var6);
    }
 
-   public Class884 method5032(ItemStack var1, float var2) {
+   public AbstractArrowEntity method5032(ItemStack var1, float var2) {
       return Class9456.method36390(this, var1, var2);
    }
 

@@ -10,11 +10,11 @@ public abstract class Class995 extends Entity {
    public BlockPos field5488;
    public Direction field5489 = Direction.SOUTH;
 
-   public Class995(Class8992<? extends Class995> var1, Class1655 var2) {
+   public Class995(Class8992<? extends Class995> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class995(Class8992<? extends Class995> var1, Class1655 var2, BlockPos var3) {
+   public Class995(Class8992<? extends Class995> var1, World var2, BlockPos var3) {
       this(var1, var2);
       this.field5488 = var3;
    }
@@ -183,8 +183,8 @@ public abstract class Class995 extends Entity {
    public abstract void method4084();
 
    @Override
-   public Class1000 method3303(ItemStack var1, float var2) {
-      Class1000 var5 = new Class1000(
+   public ItemEntity method3303(ItemStack var1, float var2) {
+      ItemEntity var5 = new ItemEntity(
          this.field5024,
          this.getPosX() + (double)((float)this.field5489.method539() * 0.15F),
          this.getPosY() + (double)var2,

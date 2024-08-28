@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 public class Class5545 implements Packet<Class5116> {
    private static String[] field24614;
    private Class9535 field24615;
-   private Class8705<Class1655> field24616;
+   private Class8705<World> field24616;
    private long field24617;
    private Class1894 field24618;
    private Class1894 field24619;
@@ -17,7 +17,7 @@ public class Class5545 implements Packet<Class5116> {
    public Class5545() {
    }
 
-   public Class5545(Class9535 var1, Class8705<Class1655> var2, long var3, Class1894 var5, Class1894 var6, boolean var7, boolean var8, boolean var9) {
+   public Class5545(Class9535 var1, Class8705<World> var2, long var3, Class1894 var5, Class1894 var6, boolean var7, boolean var8, boolean var9) {
       this.field24615 = var1;
       this.field24616 = var2;
       this.field24617 = var3;
@@ -35,7 +35,7 @@ public class Class5545 implements Packet<Class5116> {
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
       this.field24615 = var1.<Supplier<Class9535>>method35696(Class9535.field44379).get();
-      this.field24616 = Class8705.<Class1655>method31395(Class2348.field16067, var1.method35731());
+      this.field24616 = Class8705.<World>method31395(Class2348.field16067, var1.method35731());
       this.field24617 = var1.readLong();
       this.field24618 = Class1894.method8159(var1.readUnsignedByte());
       this.field24619 = Class1894.method8159(var1.readUnsignedByte());
@@ -60,7 +60,7 @@ public class Class5545 implements Packet<Class5116> {
       return this.field24615;
    }
 
-   public Class8705<Class1655> method17433() {
+   public Class8705<World> method17433() {
       return this.field24616;
    }
 

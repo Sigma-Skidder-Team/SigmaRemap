@@ -17,7 +17,7 @@ public class Class3298 extends Class3292 {
    public Class7380 method11838(Class5909 var1) {
       Class7380 var4 = this.field18807.method11495(var1);
       Class7380 var5 = null;
-      Class1655 var6 = var1.method18360();
+      World var6 = var1.method18360();
       BlockPos var7 = var1.method18345();
 
       for (Direction var11 : var1.method18349()) {

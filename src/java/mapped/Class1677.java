@@ -13,14 +13,14 @@ public class Class1677 implements Class1663 {
    public final Class1674[][] field9147;
    public final Class7380[] field9148;
    public final Class7379[] field9149;
-   public final Class1655 field9150;
+   public final World field9150;
 
    @Nullable
-   public static Class1677 method7171(Class1655 var0, BlockPos var1, BlockPos var2, int var3) {
+   public static Class1677 method7171(World var0, BlockPos var1, BlockPos var2, int var3) {
       return method7172(var0, var1, var2, var3, true);
    }
 
-   public static Class1677 method7172(Class1655 var0, BlockPos var1, BlockPos var2, int var3, boolean var4) {
+   public static Class1677 method7172(World var0, BlockPos var1, BlockPos var2, int var3, boolean var4) {
       int var7 = var1.method8304() - var3 >> 4;
       int var8 = var1.method8306() - var3 >> 4;
       int var9 = var2.method8304() + var3 >> 4;
@@ -56,7 +56,7 @@ public class Class1677 implements Class1663 {
       return true;
    }
 
-   public Class1677(Class1655 var1, int var2, int var3, Class1674[][] var4, BlockPos var5, BlockPos var6) {
+   public Class1677(World var1, int var2, int var3, Class1674[][] var4, BlockPos var5, BlockPos var6) {
       this.field9150 = var1;
       this.field9141 = var2;
       this.field9142 = var3;

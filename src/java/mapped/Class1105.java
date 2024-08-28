@@ -18,7 +18,7 @@ public class Class1105 extends Class1009 {
    private boolean field6075;
    public Class2736 field6076;
 
-   public Class1105(Class8992<? extends Class1105> var1, Class1655 var2) {
+   public Class1105(Class8992<? extends Class1105> var1, World var2) {
       super(var1, var2);
       this.field5594 = 10;
       this.method4224(Class2163.field14191, 0.0F);
@@ -51,7 +51,7 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public Class6990 method4221(Class1655 var1) {
+   public Class6990 method4221(World var1) {
       return new Class6997(this, var1);
    }
 
