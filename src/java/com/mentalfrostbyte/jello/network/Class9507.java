@@ -26,7 +26,7 @@ public class Class9507 {
                 try {
                     URL var4 = new URL("https://jelloprg.sigmaclient.info/captcha/" + var1 + ".png");
                     this.field44263 = ImageIO.read(var4);
-                } catch (IOException var5) {
+                } catch (IOException ignored) {
                 }
             }).start();
         }
