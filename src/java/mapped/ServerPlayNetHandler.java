@@ -31,7 +31,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class5111 implements Class5110 {
+public class ServerPlayNetHandler implements IServerPlayNetHandler {
    private static final Logger LOGGER = LogManager.getLogger();
    public final Class8586 field23224;
    private final Class314 server;
@@ -66,7 +66,7 @@ public class Class5111 implements Class5110 {
    private int field23254;
    private int field23255;
 
-   public Class5111(Class314 var1, Class8586 var2, Class878 var3) {
+   public ServerPlayNetHandler(Class314 var1, Class8586 var2, Class878 var3) {
       this.server = var1;
       this.field23224 = var2;
       var2.method30692(this);

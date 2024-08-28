@@ -92,7 +92,7 @@ public abstract class Class6395 {
       );
       Class6612 var14 = var12.method6788();
       this.method19481(var2, (Class878)null, var12);
-      Class5111 var15 = new Class5111(this.field27990, var1, var2);
+      ServerPlayNetHandler var15 = new ServerPlayNetHandler(this.field27990, var1, var2);
       Class5462 var16 = var12.method6789();
       boolean var17 = var16.method17135(Class5462.field24248);
       boolean var18 = var16.method17135(Class5462.field24237);

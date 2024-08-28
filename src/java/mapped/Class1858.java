@@ -107,7 +107,7 @@ public enum Class1858 {
          )
          .method31658(
             Class1975.SERVERBOUND,
-            new Class7417<Class5110>()
+            new Class7417<IServerPlayNetHandler>()
                .method23905(Class5580.class, Class5580::new)
                .method23905(Class5486.class, Class5486::new)
                .method23905(Class5517.class, Class5517::new)

@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class5522 implements Packet<Class5110> {
+public class Class5522 implements Packet<IServerPlayNetHandler> {
    private static String[] field24495;
    public String field24496;
 
@@ -27,7 +27,7 @@ public class Class5522 implements Packet<Class5110> {
       var1.method35729(this.field24496);
    }
 
-   public void method17180(Class5110 var1) {
+   public void method17180(IServerPlayNetHandler var1) {
       var1.method15611(this);
    }
 

@@ -3,7 +3,7 @@ package mapped;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class CUseEntityPacket implements Packet<Class5110> {
+public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
    private static String[] field24438;
    private int field24439;
    private CUseEntityPacketAction field24440;
@@ -67,7 +67,7 @@ public class CUseEntityPacket implements Packet<Class5110> {
       var1.writeBoolean(this.field24443);
    }
 
-   public void method17180(Class5110 var1) {
+   public void method17180(IServerPlayNetHandler var1) {
       var1.processUseEntity(this);
    }
 

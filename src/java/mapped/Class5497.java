@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public class Class5497 implements Packet<Class5110> {
+public class Class5497 implements Packet<IServerPlayNetHandler> {
    private static String[] field24399;
    private UUID field24400;
 
@@ -25,7 +25,7 @@ public class Class5497 implements Packet<Class5110> {
       var1.method35716(this.field24400);
    }
 
-   public void method17180(Class5110 var1) {
+   public void method17180(IServerPlayNetHandler var1) {
       var1.method15632(this);
    }
 

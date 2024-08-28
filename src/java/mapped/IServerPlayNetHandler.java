@@ -1,6 +1,6 @@
 package mapped;
 
-public interface Class5110 extends Class5104 {
+public interface IServerPlayNetHandler extends Class5104 {
    void handleAnimation(CAnimateHandPacket var1);
 
    void method15611(Class5522 var1);

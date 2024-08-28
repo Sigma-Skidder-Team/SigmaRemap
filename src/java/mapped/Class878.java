@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Class878 extends PlayerEntity implements Class876 {
    private static final Logger field4854 = LogManager.getLogger();
-   public Class5111 field4855;
+   public ServerPlayNetHandler field4855;
    public final Class314 field4856;
    public final Class9081 field4857;
    private final List<Integer> field4858 = Lists.newLinkedList();

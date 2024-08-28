@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class CAnimateHandPacket implements Packet<Class5110> {
+public class CAnimateHandPacket implements Packet<IServerPlayNetHandler> {
    private static String[] field24459;
    private Hand field24460;
 
@@ -23,7 +23,7 @@ public class CAnimateHandPacket implements Packet<Class5110> {
       var1.method35713(this.field24460);
    }
 
-   public void method17180(Class5110 var1) {
+   public void method17180(IServerPlayNetHandler var1) {
       var1.handleAnimation(this);
    }
 

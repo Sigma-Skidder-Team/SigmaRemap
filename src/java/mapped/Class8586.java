@@ -229,8 +229,8 @@ public class Class8586 extends SimpleChannelInboundHandler<Packet<?>> {
          ((Class5109)this.field38650).method15599();
       }
 
-      if (this.field38650 instanceof Class5111) {
-         ((Class5111)this.field38650).method15655();
+      if (this.field38650 instanceof ServerPlayNetHandler) {
+         ((ServerPlayNetHandler)this.field38650).method15655();
       }
 
       if (this.field38648 != null) {

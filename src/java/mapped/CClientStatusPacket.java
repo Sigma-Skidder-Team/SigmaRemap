@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class CClientStatusPacket implements Packet<Class5110> {
+public class CClientStatusPacket implements Packet<IServerPlayNetHandler> {
    private static String[] field24690;
    private CClientStatusPacketState field24691;
 
@@ -23,7 +23,7 @@ public class CClientStatusPacket implements Packet<Class5110> {
       var1.method35713(this.field24691);
    }
 
-   public void method17180(Class5110 var1) {
+   public void method17180(IServerPlayNetHandler var1) {
       var1.processClientStatus(this);
    }
 

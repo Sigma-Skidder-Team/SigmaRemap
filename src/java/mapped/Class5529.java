@@ -3,7 +3,7 @@ package mapped;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class Class5529 implements Packet<Class5110> {
+public class Class5529 implements Packet<IServerPlayNetHandler> {
    private static String[] field24528;
    private int field24529;
    private String field24530;
@@ -32,7 +32,7 @@ public class Class5529 implements Packet<Class5110> {
       var1.writeBoolean(this.field24531);
    }
 
-   public void method17180(Class5110 var1) {
+   public void method17180(IServerPlayNetHandler var1) {
       var1.method15642(this);
    }
 
