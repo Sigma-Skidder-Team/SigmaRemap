@@ -1,0 +1,13 @@
+JarIndex-Version: 1.0
+
+lwjgl-glfw-natives-linux.jar
+META-INF
+META-INF/versions
+META-INF/versions/9
+libglfw.so
+libglfw.so.git
+libglfw.so.sha1
+libglfw_wayland.so
+libglfw_wayland.so.git
+libglfw_wayland.so.sha1
+
