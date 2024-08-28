@@ -66,7 +66,7 @@ public class Class9758 {
 
          if (var6x.isEmpty()) {
             var1.getProperties().clear();
-            if (var1.getId().equals(Minecraft.getInstance().method1533().method21528().getId())) {
+            if (var1.getId().equals(Minecraft.getInstance().method1533().getProfile().getId())) {
                var1.getProperties().putAll(Minecraft.getInstance().method1534());
                var6x.putAll(this.field45650.getTextures(var1, false));
             } else {

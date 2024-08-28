@@ -9,6 +9,7 @@ import mapped.*;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONObject;
 
 import java.awt.Color;
 import java.io.File;
@@ -115,7 +116,7 @@ public class GuiManager {
         Minecraft.getInstance();
         if (Minecraft.IS_RUNNING_ON_MAC) {
             try {
-                JSONObject var2 = FileUtil.method18363(new File(Client.getInstance().getFile() + "/config.json"));
+                JSONObject var2 = FileUtil.readFile(new File(Client.getInstance().getFile() + "/config.json"));
                 if (var2.has("hidpicocoa")) {
                     field41351 = var2.method21763("hidpicocoa");
                 }
@@ -284,7 +285,7 @@ public class GuiManager {
         if (this.field41352 != null) {
             JSONObject var4 = this.field41352.method13160(new JSONObject());
             if (var4.method21779() != 0) {
-                var1.method21806(this.field41352.method13257(), var4);
+                var1.put(this.field41352.method13257(), var4);
             }
         }
 

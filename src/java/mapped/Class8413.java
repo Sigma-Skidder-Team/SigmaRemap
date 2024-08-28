@@ -1,12 +1,16 @@
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
-import org.json.JSONException;
 
 public class Class8413 {
-   private static Object method29537(Class7474 var0, boolean var1, Class2344 var2) throws Class2455 {
+   private static Object method29537(Class7474 var0, boolean var1, JSONArray var2) throws JSONException {
       Object var5 = null;
-      Class2344 var6 = null;
+      JSONArray var6 = null;
       JSONObject var7 = null;
       Object var8 = null;
 
@@ -16,21 +20,21 @@ public class Class8413 {
             var9 = var0.method24215();
             if (!(var9 instanceof Character)) {
                if (!(var9 instanceof String)) {
-                  throw var0.method24230("Bad tagName '" + var9 + "'.");
+                  throw var0.syntaxError("Bad tagName '" + var9 + "'.");
                }
 
                var8 = (String)var9;
-               var6 = new Class2344();
+               var6 = new JSONArray();
                var7 = new JSONObject();
                if (!var1) {
-                  var7.method21806("tagName", var8);
+                  var7.put("tagName", var8);
                   if (var2 != null) {
-                     var2.method9158(var7);
+                     var2.put(var7);
                   }
                } else {
-                  var6.method9158(var8);
+                  var6.put(var8);
                   if (var2 != null) {
-                     var2.method9158(var6);
+                     var2.put(var6);
                   }
                }
 
@@ -42,28 +46,28 @@ public class Class8413 {
                   }
 
                   if (var9 == null) {
-                     throw var0.method24230("Misshaped tag");
+                     throw var0.syntaxError("Misshaped tag");
                   }
 
                   if (!(var9 instanceof String)) {
                      if (var1 && var7.method21779() > 0) {
-                        var6.method9158(var7);
+                        var6.put(var7);
                      }
 
                      if (var9 != Class9029.field41320) {
                         if (var9 != Class9029.field41316) {
-                           throw var0.method24230("Misshaped tag");
+                           throw var0.syntaxError("Misshaped tag");
                         }
 
                         var5 = (String)method29537(var0, var1, var6);
                         if (var5 != null) {
                            if (!var5.equals(var8)) {
-                              throw var0.method24230("Mismatched '" + var8 + "' and '" + var5 + "'");
+                              throw var0.syntaxError("Mismatched '" + var8 + "' and '" + var5 + "'");
                            }
 
                            var8 = null;
-                           if (!var1 && var6.method9134() > 0) {
-                              var7.method21806("childNodes", var6);
+                           if (!var1 && var6.length() > 0) {
+                              var7.put("childNodes", var6);
                            }
 
                            if (var2 == null) {
@@ -76,7 +80,7 @@ public class Class8413 {
                         }
                      } else {
                         if (var0.method24215() != Class9029.field41316) {
-                           throw var0.method24230("Misshaped tag");
+                           throw var0.syntaxError("Misshaped tag");
                         }
 
                         if (var2 == null) {
@@ -92,7 +96,7 @@ public class Class8413 {
 
                   String var12 = (String)var9;
                   if (!var1 && ("tagName".equals(var12) || "childNode".equals(var12))) {
-                     throw var0.method24230("Reserved attribute.");
+                     throw var0.syntaxError("Reserved attribute.");
                   }
 
                   var9 = var0.method24215();
@@ -101,7 +105,7 @@ public class Class8413 {
                   } else {
                      var9 = var0.method24215();
                      if (!(var9 instanceof String)) {
-                        throw var0.method24230("Missing value");
+                        throw var0.syntaxError("Missing value");
                      }
 
                      var7.method21758(var12, Class9029.method33430((String)var9));
@@ -116,15 +120,15 @@ public class Class8413 {
                         return var9;
                      }
 
-                     throw var0.method24230("Misshaped close tag");
+                     throw var0.syntaxError("Misshaped close tag");
                   }
 
-                  throw new Class2499("Expected a closing name instead of '" + var9 + "'.");
+                  throw new JSONException2("Expected a closing name instead of '" + var9 + "'.");
                }
 
                if (var9 != Class9029.field41314) {
                   if (var9 != Class9029.field41318) {
-                     throw var0.method24230("Misshaped tag");
+                     throw var0.syntaxError("Misshaped tag");
                   }
 
                   var0.method24216("?>");
@@ -132,18 +136,18 @@ public class Class8413 {
                   char var10 = var0.method24221();
                   if (var10 == '-') {
                      if (var0.method24221() != '-') {
-                        var0.method24217();
+                        var0.back();
                      } else {
                         var0.method24216("-->");
                      }
                   } else if (var10 == '[') {
                      var9 = var0.method24215();
                      if (!var9.equals("CDATA") || var0.method24221() != '[') {
-                        throw var0.method24230("Expected 'CDATA['");
+                        throw var0.syntaxError("Expected 'CDATA['");
                      }
 
                      if (var2 != null) {
-                        var2.method9158(var0.method24211());
+                        var2.put(var0.method24211());
                      }
                   } else {
                      int var11 = 1;
@@ -151,7 +155,7 @@ public class Class8413 {
                      while (true) {
                         var9 = var0.method24214();
                         if (var9 == null) {
-                           throw var0.method24230("Missing '>' after '<!'.");
+                           throw var0.syntaxError("Missing '>' after '<!'.");
                         }
 
                         if (var9 != Class9029.field41317) {
@@ -170,37 +174,37 @@ public class Class8413 {
                }
             }
          } else if (var2 != null) {
-            var2.method9158(!(var9 instanceof String) ? var9 : Class9029.method33430((String)var9));
+            var2.put(!(var9 instanceof String) ? var9 : Class9029.method33430((String)var9));
          }
       }
 
-      throw var0.method24230("Bad XML");
+      throw var0.syntaxError("Bad XML");
    }
 
-   public static Class2344 method29538(String var0) throws Class2455 {
+   public static JSONArray method29538(String var0) throws JSONException {
       return method29539(new Class7474(var0));
    }
 
-   public static Class2344 method29539(Class7474 var0) throws Class2455 {
-      return (Class2344)method29537(var0, true, null);
+   public static JSONArray method29539(Class7474 var0) throws JSONException {
+      return (JSONArray)method29537(var0, true, null);
    }
 
-   public static JSONObject method29540(Class7474 var0) throws Class2455 {
+   public static JSONObject method29540(Class7474 var0) throws JSONException {
       return (JSONObject)method29537(var0, false, null);
    }
 
-   public static JSONObject method29541(String var0) throws Class2455 {
+   public static JSONObject method29541(String var0) throws JSONException {
       return method29540(new Class7474(var0));
    }
 
-   public static String toString(Class2344 var0) throws Class2455 {
+   public static String toString(JSONArray var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
-      String var4 = var0.method9131(0);
+      String var4 = var0.getString(0);
       Class9029.method33428(var4);
       var4 = Class9029.method33427(var4);
       var3.append('<');
       var3.append(var4);
-      Object var5 = var0.method9135(1);
+      Object var5 = var0.opt(1);
       int var6;
       if (!(var5 instanceof JSONObject)) {
          var6 = 1;
@@ -224,20 +228,20 @@ public class Class8413 {
          }
       }
 
-      int var9 = var0.method9134();
+      int var9 = var0.length();
       if (var6 < var9) {
          var3.append('>');
 
          do {
-            var5 = var0.method9121(var6);
+            var5 = var0.get(var6);
             var6++;
             if (var5 != null) {
                if (!(var5 instanceof String)) {
                   if (!(var5 instanceof JSONObject)) {
-                     if (!(var5 instanceof Class2344)) {
+                     if (!(var5 instanceof JSONArray)) {
                         var3.append(var5.toString());
                      } else {
-                        var3.append(toString((Class2344)var5));
+                        var3.append(toString((JSONArray)var5));
                      }
                   } else {
                      var3.append(toString((JSONObject)var5));
@@ -260,7 +264,7 @@ public class Class8413 {
       return var3.toString();
    }
 
-   public static String toString(JSONObject var0) throws Class2455 {
+   public static String toString(JSONObject var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
       String var4 = var0.method21797("tagName");
       if (var4 == null) {
@@ -288,20 +292,20 @@ public class Class8413 {
             }
          }
 
-         Class2344 var6 = var0.method21793("childNodes");
+         JSONArray var6 = var0.method21793("childNodes");
          if (var6 != null) {
             var3.append('>');
-            int var7 = var6.method9134();
+            int var7 = var6.length();
 
             for (int var8 = 0; var8 < var7; var8++) {
-               Object var11 = var6.method9121(var8);
+               Object var11 = var6.get(var8);
                if (var11 != null) {
                   if (!(var11 instanceof String)) {
                      if (!(var11 instanceof JSONObject)) {
-                        if (!(var11 instanceof Class2344)) {
+                        if (!(var11 instanceof JSONArray)) {
                            var3.append(var11.toString());
                         } else {
-                           var3.append(toString((Class2344)var11));
+                           var3.append(toString((JSONArray)var11));
                         }
                      } else {
                         var3.append(toString((JSONObject)var11));

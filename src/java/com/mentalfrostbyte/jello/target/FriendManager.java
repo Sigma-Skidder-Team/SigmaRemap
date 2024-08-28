@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
-import mapped.Class2344;
+import totalcross.json.JSONArray;
 import mapped.Entity;
 import mapped.Class8906;
 import mapped.Minecraft;
@@ -136,14 +136,14 @@ public class FriendManager {
 
     private void method27011() {
         if (Client.getInstance().getConfig().has("friends")) {
-            Class2344 var3 = Client.getInstance().getConfig().method21768("friends");
+            JSONArray var3 = Client.getInstance().getConfig().getJSONArray("friends");
             if (var3 != null) {
                 var3.forEach(var1 -> this.field34176.add((String) var1));
             }
         }
 
         if (Client.getInstance().getConfig().has("enemies")) {
-            Class2344 var4 = Client.getInstance().getConfig().method21768("enemies");
+            JSONArray var4 = Client.getInstance().getConfig().getJSONArray("enemies");
             if (var4 != null) {
                 var4.forEach(var1 -> this.field34177.add((String) var1));
             }

@@ -44,6 +44,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 public class Class5628 {
    private static final Minecraft field24949 = Minecraft.getInstance();
@@ -279,7 +281,7 @@ public class Class5628 {
       String var9 = "";
       JSONObject var10 = new JSONObject(var7);
 
-      for (Object var13 : var10.method21768("properties")) {
+      for (Object var13 : var10.getJSONArray("properties")) {
          JSONObject var14 = (JSONObject)var13;
          if (var14.has("value") && var14.has("name")) {
             var9 = var14.method21773("value");
@@ -316,7 +318,7 @@ public class Class5628 {
       String var8 = "";
       JSONObject var9 = new JSONObject(var6);
 
-      for (Object var12 : var9.method21768("properties")) {
+      for (Object var12 : var9.getJSONArray("properties")) {
          JSONObject var13 = (JSONObject)var12;
          if (var13.has("value") && var13.has("name")) {
             var8 = var13.method21773("value");
@@ -360,10 +362,10 @@ public class Class5628 {
             var7.close();
          }
 
-         Class2344 var9 = new Class2344(var4);
+         JSONArray var9 = new JSONArray(var4);
 
-         for (int var10 = 0; var10 < var9.method9134(); var10++) {
-            JSONObject var11 = new JSONObject(var9.method9121(var10).toString());
+         for (int var10 = 0; var10 < var9.length(); var10++) {
+            JSONObject var11 = new JSONObject(var9.get(var10).toString());
             var3.add(var11.method21773("name"));
          }
 
@@ -663,7 +665,7 @@ public class Class5628 {
       return var3;
    }
 
-   public static Class6974 method17732(String var0, String var1) {
+   public static Session method17732(String var0, String var1) {
       YggdrasilAuthenticationService var4 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, "");
       YggdrasilUserAuthentication var5 = (YggdrasilUserAuthentication)var4.createUserAuthentication(Agent.MINECRAFT);
       var5.setUsername(var0);
@@ -671,7 +673,7 @@ public class Class5628 {
 
       try {
          var5.logIn();
-         return new Class6974(var5.getSelectedProfile().getName(), var5.getSelectedProfile().getId().toString(), var5.getAuthenticatedToken(), "mojang");
+         return new Session(var5.getSelectedProfile().getName(), var5.getSelectedProfile().getId().toString(), var5.getAuthenticatedToken(), "mojang");
       } catch (AuthenticationException var7) {
          var7.printStackTrace();
          return null;

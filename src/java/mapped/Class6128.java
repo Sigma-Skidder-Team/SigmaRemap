@@ -65,7 +65,7 @@ public class Class6128 extends Class6109 {
       int var5 = 0;
 
       for (String var7 : var1.field27420) {
-         if (!var7.equals(Minecraft.getInstance().method1533().method21525())) {
+         if (!var7.equals(Minecraft.getInstance().method1533().getPlayerID())) {
             String var8 = "";
 
             try {

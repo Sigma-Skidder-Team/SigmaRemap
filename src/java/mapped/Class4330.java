@@ -5,7 +5,9 @@ import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class8603;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONObject;
 
 public class Class4330 extends Class4305 {
    public Animation field21139 = new Animation(370, 150, Direction.BACKWARDS);
@@ -19,12 +21,12 @@ public class Class4330 extends Class4305 {
       }
 
       String var7 = var3.method21773("title");
-      Class2344 var8 = var3.method21768("changes");
+      JSONArray var8 = var3.getJSONArray("changes");
       this.method13230(new Class4287(this, "title", 0, var6, 0, 0, Class6387.field27961, var7, ResourceRegistry.JelloMediumFont40));
       var6 += 55;
 
-      for (int var9 = 0; var9 < var8.method9134(); var9++) {
-         String var10 = " - " + var8.method9131(var9);
+      for (int var9 = 0; var9 < var8.length(); var9++) {
+         String var10 = " - " + var8.getString(var9);
          this.method13230(
             new Class4287(
                this,

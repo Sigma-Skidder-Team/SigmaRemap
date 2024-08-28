@@ -1,4 +1,4 @@
-package mapped;
+package totalcross.json;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,9 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringReader;
-import org.json.JSONException;
 
-public class Class7475 {
+public class JSONTokener {
    private long field32120;
    private boolean field32121;
    private long field32122;
@@ -17,7 +16,7 @@ public class Class7475 {
    private Reader field32125;
    private boolean field32126;
 
-   public Class7475(Reader var1) {
+   public JSONTokener(Reader var1) {
       this.field32125 = (Reader)(!var1.markSupported() ? new BufferedReader(var1) : var1);
       this.field32121 = false;
       this.field32126 = false;
@@ -27,22 +26,22 @@ public class Class7475 {
       this.field32123 = 1L;
    }
 
-   public Class7475(InputStream var1) throws Class2455 {
+   public JSONTokener(InputStream var1) throws JSONException {
       this(new InputStreamReader(var1));
    }
 
-   public Class7475(String var1) {
+   public JSONTokener(String var1) {
       this(new StringReader(var1));
    }
 
-   public void method24217() throws Class2455 {
+   public void back() throws JSONException {
       if (!this.field32126 && this.field32122 > 0L) {
          this.field32122--;
          this.field32120--;
          this.field32126 = true;
          this.field32121 = false;
       } else {
-         throw new Class2499("Stepping back two steps is not supported");
+         throw new JSONException2("Stepping back two steps is not supported");
       }
    }
 
@@ -60,17 +59,17 @@ public class Class7475 {
       return this.field32121 && !this.field32126;
    }
 
-   public boolean method24220() throws Class2455 {
+   public boolean method24220() throws JSONException {
       this.method24221();
       if (!this.method24219()) {
-         this.method24217();
+         this.back();
          return true;
       } else {
          return false;
       }
    }
 
-   public char method24221() throws Class2455 {
+   public char method24221() throws JSONException {
       int var3;
       if (this.field32126) {
          this.field32126 = false;
@@ -79,7 +78,7 @@ public class Class7475 {
          try {
             var3 = this.field32125.read();
          } catch (IOException var5) {
-            throw new Class2499(var5);
+            throw new JSONException2(var5);
          }
 
          if (var3 <= 0) {
@@ -103,16 +102,16 @@ public class Class7475 {
       return this.field32124;
    }
 
-   public char method24222(char var1) throws Class2455 {
+   public char method24222(char var1) throws JSONException {
       char var4 = this.method24221();
       if (var4 == var1) {
          return var4;
       } else {
-         throw this.method24230("Expected '" + var1 + "' and instead saw '" + var4 + "'");
+         throw this.syntaxError("Expected '" + var1 + "' and instead saw '" + var4 + "'");
       }
    }
 
-   public String method24223(int var1) throws Class2455 {
+   public String method24223(int var1) throws JSONException {
       if (var1 == 0) {
          return "";
       } else {
@@ -121,7 +120,7 @@ public class Class7475 {
          for (int var5 = 0; var5 < var1; var5++) {
             var4[var5] = this.method24221();
             if (this.method24219()) {
-               throw this.method24230("Substring bounds error");
+               throw this.syntaxError("Substring bounds error");
             }
          }
 
@@ -129,7 +128,7 @@ public class Class7475 {
       }
    }
 
-   public char method24224() throws Class2455 {
+   public char nextClean() throws JSONException {
       char var3;
       do {
          var3 = this.method24221();
@@ -138,7 +137,7 @@ public class Class7475 {
       return var3;
    }
 
-   public String method24225(char var1) throws Class2455 {
+   public String method24225(char var1) throws JSONException {
       StringBuilder var4 = new StringBuilder();
 
       while (true) {
@@ -147,7 +146,7 @@ public class Class7475 {
             case '\u0000':
             case '\n':
             case '\r':
-               throw this.method24230("Unterminated string");
+               throw this.syntaxError("Unterminated string");
             case '\\':
                var5 = this.method24221();
                switch (var5) {
@@ -176,7 +175,7 @@ public class Class7475 {
                      var4.append((char)Integer.parseInt(this.method24223(4), 16));
                      continue;
                   default:
-                     throw this.method24230("Illegal escape.");
+                     throw this.syntaxError("Illegal escape.");
                }
             default:
                if (var5 == var1) {
@@ -188,14 +187,14 @@ public class Class7475 {
       }
    }
 
-   public String method24226(char var1) throws Class2455 {
+   public String method24226(char var1) throws JSONException {
       StringBuilder var4 = new StringBuilder();
 
       while (true) {
          char var5 = this.method24221();
          if (var5 == var1 || var5 == 0 || var5 == '\n' || var5 == '\r') {
             if (var5 != 0) {
-               this.method24217();
+               this.back();
             }
 
             return var4.toString().trim();
@@ -205,14 +204,14 @@ public class Class7475 {
       }
    }
 
-   public String method24227(String var1) throws Class2455 {
+   public String method24227(String var1) throws JSONException {
       StringBuilder var4 = new StringBuilder();
 
       while (true) {
          char var5 = this.method24221();
          if (var1.indexOf(var5) >= 0 || var5 == 0 || var5 == '\n' || var5 == '\r') {
             if (var5 != 0) {
-               this.method24217();
+               this.back();
             }
 
             return var4.toString().trim();
@@ -222,17 +221,17 @@ public class Class7475 {
       }
    }
 
-   public Object method24228() throws Class2455 {
-      char var3 = this.method24224();
+   public Object nextValue() throws JSONException {
+      char var3 = this.nextClean();
       switch (var3) {
          case '"':
          case '\'':
             return this.method24225(var3);
          case '[':
-            this.method24217();
-            return new Class2344(this);
+            this.back();
+            return new JSONArray(this);
          case '{':
-            this.method24217();
+            this.back();
             return new JSONObject(this);
          default:
             StringBuilder var4;
@@ -240,17 +239,17 @@ public class Class7475 {
                var4.append(var3);
             }
 
-            this.method24217();
+            this.back();
             String var5 = var4.toString().trim();
             if ("".equals(var5)) {
-               throw this.method24230("Missing value");
+               throw this.syntaxError("Missing value");
             } else {
                return JSONObject.method21813(var5);
             }
       }
    }
 
-   public char method24229(char var1) throws Class2455 {
+   public char method24229(char var1) throws JSONException {
       char var10;
       try {
          long var4 = this.field32122;
@@ -269,15 +268,15 @@ public class Class7475 {
             }
          } while (var10 != var1);
       } catch (IOException var12) {
-         throw new Class2499(var12);
+         throw new JSONException2(var12);
       }
 
-      this.method24217();
+      this.back();
       return var10;
    }
 
-   public Class2499 method24230(String var1) {
-      return new Class2499(var1 + this.toString());
+   public JSONException2 syntaxError(String var1) {
+      return new JSONException2(var1 + this.toString());
    }
 
    @Override

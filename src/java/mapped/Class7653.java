@@ -60,8 +60,8 @@ public class Class7653 implements Class7651 {
 
    private static Map<String, String> method25147() {
       HashMap var2 = Maps.newHashMap();
-      var2.put("X-Minecraft-Username", Minecraft.getInstance().method1533().method21526());
-      var2.put("X-Minecraft-UUID", Minecraft.getInstance().method1533().method21525());
+      var2.put("X-Minecraft-Username", Minecraft.getInstance().method1533().getUsername());
+      var2.put("X-Minecraft-UUID", Minecraft.getInstance().method1533().getPlayerID());
       var2.put("X-Minecraft-Version", SharedConstants.method34773().getName());
       var2.put("X-Minecraft-Version-ID", SharedConstants.method34773().getId());
       var2.put("X-Minecraft-Pack-Format", String.valueOf(SharedConstants.method34773().getPackVersion()));

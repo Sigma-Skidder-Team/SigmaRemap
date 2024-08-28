@@ -1,23 +1,25 @@
 package mapped;
 
-import java.util.HashMap;
-import org.json.JSONException;
+import totalcross.json.JSONException;
+import totalcross.json.JSONTokener;
 
-public class Class7474 extends Class7475 {
+import java.util.HashMap;
+
+public class Class7474 extends JSONTokener {
    public static final HashMap<String, Character> field32119 = new HashMap<String, Character>(8);
 
    public Class7474(String var1) {
       super(var1);
    }
 
-   public String method24211() throws Class2455 {
+   public String method24211() throws JSONException {
       StringBuilder var3 = new StringBuilder();
 
       int var5;
       do {
          char var4 = this.method24221();
          if (this.method24219()) {
-            throw this.method24230("Unclosed CDATA");
+            throw this.syntaxError("Unclosed CDATA");
          }
 
          var3.append(var4);
@@ -28,7 +30,7 @@ public class Class7474 extends Class7475 {
       return var3.toString();
    }
 
-   public Object method24212() throws Class2455 {
+   public Object method24212() throws JSONException {
       char var3;
       do {
          var3 = this.method24221();
@@ -48,19 +50,19 @@ public class Class7474 extends Class7475 {
             }
          }
 
-         this.method24217();
+         this.back();
          return var4.toString().trim();
       }
    }
 
-   public Object method24213(char var1) throws Class2455 {
+   public Object method24213(char var1) throws JSONException {
       StringBuilder var4 = new StringBuilder();
 
       while (true) {
          char var5 = this.method24221();
          if (!Character.isLetterOrDigit(var5) && var5 != '#') {
             if (var5 != ';') {
-               throw this.method24230("Missing ';' in XML entity: &" + var4);
+               throw this.syntaxError("Missing ';' in XML entity: &" + var4);
             }
 
             String var7 = var4.toString();
@@ -72,7 +74,7 @@ public class Class7474 extends Class7475 {
       }
    }
 
-   public Object method24214() throws Class2455 {
+   public Object method24214() throws JSONException {
       char var3;
       do {
          var3 = this.method24221();
@@ -80,7 +82,7 @@ public class Class7474 extends Class7475 {
 
       switch (var3) {
          case '\u0000':
-            throw this.method24230("Misshaped meta tag");
+            throw this.syntaxError("Misshaped meta tag");
          case '!':
             return Class9029.field41314;
          case '"':
@@ -90,7 +92,7 @@ public class Class7474 extends Class7475 {
             do {
                var3 = this.method24221();
                if (var3 == 0) {
-                  throw this.method24230("Unterminated string");
+                  throw this.syntaxError("Unterminated string");
                }
             } while (var3 != var4);
 
@@ -122,14 +124,14 @@ public class Class7474 extends Class7475 {
                   case '=':
                   case '>':
                   case '?':
-                     this.method24217();
+                     this.back();
                      return Boolean.TRUE;
                }
             }
       }
    }
 
-   public Object method24215() throws Class2455 {
+   public Object method24215() throws JSONException {
       char var3;
       do {
          var3 = this.method24221();
@@ -137,7 +139,7 @@ public class Class7474 extends Class7475 {
 
       switch (var3) {
          case '\u0000':
-            throw this.method24230("Misshaped element");
+            throw this.syntaxError("Misshaped element");
          case '!':
             return Class9029.field41314;
          case '"':
@@ -148,7 +150,7 @@ public class Class7474 extends Class7475 {
             while (true) {
                var3 = this.method24221();
                if (var3 == 0) {
-                  throw this.method24230("Unterminated string");
+                  throw this.syntaxError("Unterminated string");
                }
 
                if (var3 == var4) {
@@ -164,7 +166,7 @@ public class Class7474 extends Class7475 {
          case '/':
             return Class9029.field41320;
          case '<':
-            throw this.method24230("Misplaced '<'");
+            throw this.syntaxError("Misplaced '<'");
          case '=':
             return Class9029.field41315;
          case '>':
@@ -191,18 +193,18 @@ public class Class7474 extends Class7475 {
                   case '?':
                   case '[':
                   case ']':
-                     this.method24217();
+                     this.back();
                      return var5.toString();
                   case '"':
                   case '\'':
                   case '<':
-                     throw this.method24230("Bad character in a name");
+                     throw this.syntaxError("Bad character in a name");
                }
             }
       }
    }
 
-   public boolean method24216(String var1) throws Class2455 {
+   public boolean method24216(String var1) throws JSONException {
       int var4 = 0;
       int var5 = var1.length();
       char[] var6 = new char[var5];

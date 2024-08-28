@@ -48,7 +48,7 @@ public class Class358 extends Thread {
             return;
          }
 
-         Class9267.method34901(this.field1590).method30693(new Class5500(this.field1588.method1533().method21528()));
+         Class9267.method34901(this.field1590).method30693(new Class5500(this.field1588.method1533().getProfile()));
          this.field1588.method1527(this.field1589.method18922(this.field1586));
       } catch (UnknownHostException var7) {
          this.field1588.method1539().method25150();

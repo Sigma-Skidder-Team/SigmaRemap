@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
-import com.mentalfrostbyte.jello.account.Class8794;
+import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
@@ -28,9 +28,9 @@ public class Class4296 extends Class4278 {
       }
 
       if (var1 != null) {
-         List<Class8794> var11 = new ArrayList();
+         List<Ban> var11 = new ArrayList();
 
-         for (Class8794 var6 : var1.method34215()) {
+         for (Ban var6 : var1.getBans()) {
             var11.add(var6);
          }
 
@@ -39,10 +39,10 @@ public class Class4296 extends Class4278 {
          int var14 = 90;
          int var7 = 14;
 
-         for (Class8794 var9 : var11) {
+         for (Ban var9 : var11) {
             if (var9.method31736() != null && var9.method31736().method25580() != null) {
                Class4348 var10 = new Class4348(
-                  this, ((Class8794)var11.get(var13)).method31734(), 40, 100 + var13 * (var14 + var7), this.field20897 - 90, var14, var9
+                  this, ((Ban)var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.field20897 - 90, var14, var9
                );
                this.method13230(var10);
                this.field20814.add(var10);
@@ -76,9 +76,9 @@ public class Class4296 extends Class4278 {
          int var7 = Class5628.method17688(Class1979.field12891.field12910, 0.7F);
          Class3192.method11439(
             ResourceRegistry.field38860,
-            (float)(this.field20895 + (this.field20897 - ResourceRegistry.field38860.method23942(this.field20813.method34217())) / 2),
+            (float)(this.field20895 + (this.field20897 - ResourceRegistry.field38860.method23942(this.field20813.getKnownName())) / 2),
             (float)this.field20896,
-            this.field20813.method34217(),
+            this.field20813.getKnownName(),
             var7
          );
          super.method13027(var1);

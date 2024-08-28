@@ -120,7 +120,7 @@ public class Class4349 extends Class4278 {
 
    public void method13583() {
       Class3192.method11450(
-         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.field21249.method34227(), Class1979.field12896.field12910, true
+         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(), Class1979.field12896.field12910, true
       );
       Class3192.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       Class3192.method11449(
@@ -134,9 +134,9 @@ public class Class4349 extends Class4278 {
    }
 
    public void method13584() {
-      String var3 = this.field21249.method34217();
+      String var3 = this.field21249.getKnownName();
       if (var3.equals("Unknown name")) {
-         var3 = this.field21249.method34216();
+         var3 = this.field21249.getEmail();
       }
 
       Class3192.method11440(
@@ -157,12 +157,12 @@ public class Class4349 extends Class4278 {
          Class2218.field14492,
          Class2218.field14492
       );
-      if (!this.field21249.method34240()) {
+      if (!this.field21249.isEmailAValidEmailFormat()) {
          Class3192.method11441(
             ResourceRegistry.field38868,
             (float)(this.field20895 + this.field20897 / 2),
             (float)(this.field20896 + 32),
-            this.field21249.method34220().replaceAll(".", "*"),
+            this.field21249.getPassword().replaceAll(".", "*"),
             -8355712,
             Class2218.field14492,
             Class2218.field14489,

@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.Minecraft;
 
 public abstract class Class4307 extends Class4305 {

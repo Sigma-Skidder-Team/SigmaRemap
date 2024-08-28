@@ -76,7 +76,7 @@ public class Class1342 extends Screen {
 
                String var8;
                while ((var8 = var6.readLine()) != null) {
-                  var8 = var8.replaceAll("PLAYERNAME", this.field4562.method1533().method21526());
+                  var8 = var8.replaceAll("PLAYERNAME", this.field4562.method1533().getUsername());
 
                   int var9;
                   while ((var9 = var8.indexOf(field7124)) != -1) {
@@ -101,7 +101,7 @@ public class Class1342 extends Screen {
 
             String var19;
             while ((var19 = var18.readLine()) != null) {
-               var19 = var19.replaceAll("PLAYERNAME", this.field4562.method1533().method21526());
+               var19 = var19.replaceAll("PLAYERNAME", this.field4562.method1533().getUsername());
                var19 = var19.replaceAll("\t", "    ");
                boolean var23;
                if (var19.startsWith("[C]")) {

@@ -1,7 +1,11 @@
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
-import org.json.JSONException;
 
 public class Class9029 {
    public static final Character field41312 = '&';
@@ -44,20 +48,20 @@ public class Class9029 {
       return var3.toString();
    }
 
-   public static void method33428(String var0) throws Class2455 {
+   public static void method33428(String var0) throws JSONException {
       int var3 = var0.length();
       if (var3 == 0) {
-         throw new Class2499("Empty string.");
+         throw new JSONException2("Empty string.");
       } else {
          for (int var4 = 0; var4 < var3; var4++) {
             if (Character.isWhitespace(var0.charAt(var4))) {
-               throw new Class2499("'" + var0 + "' contains a space character.");
+               throw new JSONException2("'" + var0 + "' contains a space character.");
             }
          }
       }
    }
 
-   private static boolean method33429(Class7474 var0, JSONObject var1, String var2) throws Class2455 {
+   private static boolean method33429(Class7474 var0, JSONObject var1, String var2) throws JSONException {
       JSONObject var5 = null;
       Object var6 = var0.method24215();
       if (var6 == field41314) {
@@ -74,7 +78,7 @@ public class Class9029 {
                   return false;
                }
 
-               throw var0.method24230("Expected 'CDATA['");
+               throw var0.syntaxError("Expected 'CDATA['");
             }
          } else {
             if (var0.method24221() == '-') {
@@ -82,7 +86,7 @@ public class Class9029 {
                return false;
             }
 
-            var0.method24217();
+            var0.back();
          }
 
          int var9 = 1;
@@ -90,7 +94,7 @@ public class Class9029 {
          do {
             var6 = var0.method24214();
             if (var6 == null) {
-               throw var0.method24230("Missing '>' after '<!'.");
+               throw var0.syntaxError("Missing '>' after '<!'.");
             }
 
             if (var6 != field41317) {
@@ -113,16 +117,16 @@ public class Class9029 {
                if (var0.method24215() == field41316) {
                   return true;
                } else {
-                  throw var0.method24230("Misshaped close tag");
+                  throw var0.syntaxError("Misshaped close tag");
                }
             } else {
-               throw var0.method24230("Mismatched " + var2 + " and " + var6);
+               throw var0.syntaxError("Mismatched " + var2 + " and " + var6);
             }
          } else {
-            throw var0.method24230("Mismatched close tag " + var6);
+            throw var0.syntaxError("Mismatched close tag " + var6);
          }
       } else if (var6 instanceof Character) {
-         throw var0.method24230("Misshaped tag");
+         throw var0.syntaxError("Misshaped tag");
       } else {
          String var7 = (String)var6;
          var6 = null;
@@ -145,11 +149,11 @@ public class Class9029 {
                      return false;
                   }
 
-                  throw var0.method24230("Misshaped tag");
+                  throw var0.syntaxError("Misshaped tag");
                }
 
                if (var6 != field41316) {
-                  throw var0.method24230("Misshaped tag");
+                  throw var0.syntaxError("Misshaped tag");
                }
 
                while (true) {
@@ -159,14 +163,14 @@ public class Class9029 {
                         return false;
                      }
 
-                     throw var0.method24230("Unclosed tag " + var7);
+                     throw var0.syntaxError("Unclosed tag " + var7);
                   }
 
                   if (!(var6 instanceof String)) {
                      if (var6 == field41317 && method33429(var0, var5, var7)) {
                         if (var5.method21779() != 0) {
-                           if (var5.method21779() == 1 && var5.method21782("content") != null) {
-                              var1.method21758(var7, var5.method21782("content"));
+                           if (var5.method21779() == 1 && var5.opt("content") != null) {
+                              var1.method21758(var7, var5.opt("content"));
                            } else {
                               var1.method21758(var7, var5);
                            }
@@ -192,7 +196,7 @@ public class Class9029 {
             } else {
                var6 = var0.method24215();
                if (!(var6 instanceof String)) {
-                  throw var0.method24230("Missing value");
+                  throw var0.syntaxError("Missing value");
                }
 
                var5.method21758(var10, method33430((String)var6));
@@ -208,7 +212,7 @@ public class Class9029 {
       } else if ("false".equalsIgnoreCase(var0)) {
          return Boolean.FALSE;
       } else if ("null".equalsIgnoreCase(var0)) {
-         return JSONObject.field30342;
+         return JSONObject.NULL;
       } else {
          try {
             char var3 = var0.charAt(0);
@@ -232,7 +236,7 @@ public class Class9029 {
       }
    }
 
-   public static JSONObject method33431(String var0) throws Class2455 {
+   public static JSONObject method33431(String var0) throws JSONException {
       JSONObject var3 = new JSONObject();
       Class7474 var4 = new Class7474(var0);
 
@@ -243,24 +247,24 @@ public class Class9029 {
       return var3;
    }
 
-   public static String toString(Object var0) throws Class2455 {
+   public static String toString(Object var0) throws JSONException {
       return toString(var0, null);
    }
 
-   public static String toString(Object var0, String var1) throws Class2455 {
+   public static String toString(Object var0, String var1) throws JSONException {
       StringBuilder var4 = new StringBuilder();
       if (!(var0 instanceof JSONObject)) {
          if (var0 != null) {
             if (var0.getClass().isArray()) {
-               var0 = new Class2344(var0);
+               var0 = new JSONArray(var0);
             }
 
-            if (var0 instanceof Class2344) {
-               Class2344 var15 = (Class2344)var0;
-               int var17 = var15.method9134();
+            if (var0 instanceof JSONArray) {
+               JSONArray var15 = (JSONArray)var0;
+               int var17 = var15.length();
 
                for (int var19 = 0; var19 < var17; var19++) {
-                  var4.append(toString(var15.method9135(var19), var1 != null ? var1 : "array"));
+                  var4.append(toString(var15.opt(var19), var1 != null ? var1 : "array"));
                }
 
                return var4.toString();
@@ -281,7 +285,7 @@ public class Class9029 {
 
          while (var6.hasNext()) {
             String var7 = (String)var6.next();
-            Object var8 = var5.method21782(var7);
+            Object var8 = var5.opt(var7);
             if (var8 == null) {
                var8 = "";
             }
@@ -291,13 +295,13 @@ public class Class9029 {
             }
 
             if (!"content".equals(var7)) {
-               if (var8 instanceof Class2344) {
-                  Class2344 var14 = (Class2344)var8;
-                  int var16 = var14.method9134();
+               if (var8 instanceof JSONArray) {
+                  JSONArray var14 = (JSONArray)var8;
+                  int var16 = var14.length();
 
                   for (int var18 = 0; var18 < var16; var18++) {
-                     var8 = var14.method9121(var18);
-                     if (!(var8 instanceof Class2344)) {
+                     var8 = var14.get(var18);
+                     if (!(var8 instanceof JSONArray)) {
                         var4.append(toString(var8, var7));
                      } else {
                         var4.append('<');
@@ -316,18 +320,18 @@ public class Class9029 {
                   var4.append(var7);
                   var4.append("/>");
                }
-            } else if (!(var8 instanceof Class2344)) {
+            } else if (!(var8 instanceof JSONArray)) {
                var4.append(method33427(var8.toString()));
             } else {
-               Class2344 var10 = (Class2344)var8;
-               int var11 = var10.method9134();
+               JSONArray var10 = (JSONArray)var8;
+               int var11 = var10.length();
 
                for (int var12 = 0; var12 < var11; var12++) {
                   if (var12 > 0) {
                      var4.append('\n');
                   }
 
-                  var4.append(method33427(var10.method9121(var12).toString()));
+                  var4.append(method33427(var10.get(var12).toString()));
                }
             }
          }

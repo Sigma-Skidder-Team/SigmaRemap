@@ -1,10 +1,13 @@
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 public class Class576 implements Runnable {
-   public final Class2344 field2812;
+   public final JSONArray field2812;
    public final Class4336 field2813;
 
-   public Class576(Class4336 var1, Class2344 var2) {
+   public Class576(Class4336 var1, JSONArray var2) {
       this.field2813 = var1;
       this.field2812 = var2;
    }
@@ -13,8 +16,8 @@ public class Class576 implements Runnable {
    public void run() {
       int var3 = 75;
 
-      for (int var4 = 0; var4 < this.field2812.method9134(); var4++) {
-         JSONObject var5 = this.field2812.method9129(var4);
+      for (int var4 = 0; var4 < this.field2812.length(); var4++) {
+         JSONObject var5 = this.field2812.getJSONObject(var4);
          Class4330 var6 = null;
          if (var5.has("url")) {
             Util.getOSType().method8181(var5.method21773("url"));

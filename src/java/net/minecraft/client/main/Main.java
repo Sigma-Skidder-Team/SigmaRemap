@@ -98,7 +98,7 @@ public class Main {
       Class7729.method25566();
       Class7729.method25570();
       Util.method38531();
-      Class6974 var54 = new Class6974((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
+      Session var54 = new Session((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
       Class8051 var55 = new Class8051(
          new Class8227(var54, var44, var45, var31),
          new Class9790(var34, var35, var36, var37, var38),

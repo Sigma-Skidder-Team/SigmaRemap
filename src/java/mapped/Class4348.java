@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.account.Class8794;
+import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
@@ -21,14 +21,14 @@ import java.io.IOException;
 import java.util.Date;
 
 public class Class4348 extends Class4278 {
-   public Class8794 field21243 = null;
+   public Ban field21243 = null;
    public Class7730 field21244 = null;
    public Texture field21245 = null;
    public Texture field21246 = null;
    private BufferedImage field21247;
    private Animation field21248;
 
-   public Class4348(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class8794 var7) {
+   public Class4348(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Ban var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21243 = var7;
       this.field21244 = var7.method31736();

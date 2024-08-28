@@ -13,7 +13,8 @@ import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
-import org.json.JSONException;
+import totalcross.json.JSONException;
+import totalcross.json.JSONObject;
 
 public class Class9275 {
    public static String method34955(int var0) {
@@ -37,7 +38,7 @@ public class Class9275 {
       return var3.toString();
    }
 
-   public static JSONObject method34957(String var0) throws IOException, JSONException {
+   public static JSONObject method34957(String var0) throws IOException, org.json.JSONException {
       InputStream var3 = new URL(var0).openStream();
 
       JSONObject var7;
@@ -53,7 +54,7 @@ public class Class9275 {
       return var7;
    }
 
-   public static JSONObject method34958(String var0) throws Class2455 {
+   public static JSONObject method34958(String var0) throws JSONException {
       return new JSONObject(var0);
    }
 

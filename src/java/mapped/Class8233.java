@@ -15,6 +15,8 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 public class Class8233 {
    public static List<String> field35347;
@@ -40,11 +42,11 @@ public class Class8233 {
             ArrayList var24;
             try (InputStream var6 = var5.getContent()) {
                String var8 = IOUtils.toString(var6, "UTF-8");
-               Class2344 var9 = new Class2344(var8);
+               JSONArray var9 = new JSONArray(var8);
                ArrayList var10 = new ArrayList();
 
-               for (int var11 = 0; var11 < var9.method9134(); var11++) {
-                  var10.add(var9.method9131(var11));
+               for (int var11 = 0; var11 < var9.length(); var11++) {
+                  var10.add(var9.getString(var11));
                }
 
                var24 = var10;

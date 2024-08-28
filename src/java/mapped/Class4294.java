@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import java.awt.image.BufferedImage;
 
 public class Class4294 extends Class4278 {
-   public Account field20798 = null;
+   public Account selectedAccount = null;
    private BufferedImage field20799;
    private Texture field20800;
    private Class4285 field20801;
@@ -24,7 +24,7 @@ public class Class4294 extends Class4278 {
 
    public Class4294(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
-      this.field20798 = var7;
+      this.selectedAccount = var7;
       this.method13230(this.field20801 = new Class4285(this, "loading", var5 - 50, 35, 30, 30));
       this.field20801.method13296(false);
    }
@@ -65,7 +65,7 @@ public class Class4294 extends Class4278 {
                Class5628.method17688(!this.method13212() ? Class1979.field12896.field12910 : this.field20808, var7)
             );
             Class3192.method11421(this.field20895, var5, this.field20895 + this.field20897 + 20, var5 + var6, true);
-            if (this.field20798 != null) {
+            if (this.selectedAccount != null) {
                this.method13169();
                this.method13170();
                this.method13171(var7);
@@ -91,7 +91,7 @@ public class Class4294 extends Class4278 {
 
    public void method13169() {
       Class3192.method11450(
-         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.field20798.method34227(), Class1979.field12896.field12910, true
+         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), Class1979.field12896.field12910, true
       );
       Class3192.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       Class3192.method11449(
@@ -105,15 +105,15 @@ public class Class4294 extends Class4278 {
    }
 
    public void method13170() {
-      if (this.field20798.method34240()) {
+      if (this.selectedAccount.isEmailAValidEmailFormat()) {
          Class3192.method11439(
-            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.field20798.method34216(), Class1979.field12891.field12910
+            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getEmail(), Class1979.field12891.field12910
          );
          Class3192.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
-            "Username: " + this.field20798.method34216(),
+            "Username: " + this.selectedAccount.getEmail(),
             Class1979.field12899.field12910
          );
          Class3192.method11439(
@@ -121,20 +121,20 @@ public class Class4294 extends Class4278 {
          );
       } else {
          Class3192.method11439(
-            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.field20798.method34217(), Class1979.field12891.field12910
+            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getKnownName(), Class1979.field12891.field12910
          );
          Class3192.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
-            "Email: " + this.field20798.method34216(),
+            "Email: " + this.selectedAccount.getEmail(),
             Class1979.field12899.field12910
          );
          Class3192.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 65),
-            "Password: " + this.field20798.method34220().replaceAll(".", Character.toString('·')),
+            "Password: " + this.selectedAccount.getPassword().replaceAll(".", Character.toString('·')),
             Class1979.field12899.field12910
          );
       }

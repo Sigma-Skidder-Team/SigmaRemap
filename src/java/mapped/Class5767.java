@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class8402;
 import io.socket.emitter.Emitter;
+import totalcross.json.JSONObject;
 
 public class Class5767 implements Emitter.Listener {
    private static String[] field25223;

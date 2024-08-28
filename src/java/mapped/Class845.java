@@ -52,16 +52,16 @@ public class Class845 extends Class838 {
 
             if (var4.field6523 == 210) {
                try {
-                  String var5 = this.field4562.method1533().method21528().getName();
-                  String var6 = this.field4562.method1533().method21528().getId().toString().replace("-", "");
-                  String var7 = this.field4562.method1533().method21527();
+                  String var5 = this.field4562.method1533().getProfile().getName();
+                  String var6 = this.field4562.method1533().getProfile().getId().toString().replace("-", "");
+                  String var7 = this.field4562.method1533().getToken();
                   Random var8 = new Random();
                   Random var9 = new Random((long)System.identityHashCode(new Object()));
                   BigInteger var10 = new BigInteger(128, var8);
                   BigInteger var11 = new BigInteger(128, var9);
                   BigInteger var12 = var10.xor(var11);
                   String var13 = var12.toString(16);
-                  this.field4562.method1548().joinServer(this.field4562.method1533().method21528(), var7, var13);
+                  this.field4562.method1548().joinServer(this.field4562.method1533().getProfile(), var7, var13);
                   String var14 = "https://optifine.net/capeChange?u=" + var6 + "&n=" + var5 + "&s=" + var13;
                   boolean var15 = Class7944.method26980(new URI(var14));
                   if (var15) {

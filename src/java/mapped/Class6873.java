@@ -1,6 +1,8 @@
 package mapped;
 
-import org.json.JSONException;
+import totalcross.json.JSONException;
+import totalcross.json.JSONObject;
+import totalcross.json.JSONTokener;
 
 public class Class6873 {
    public static String method20928(String var0) {
@@ -22,12 +24,12 @@ public class Class6873 {
       return var5.toString();
    }
 
-   public static JSONObject method20929(String var0) throws Class2455 {
+   public static JSONObject method20929(String var0) throws JSONException {
       JSONObject var3 = new JSONObject();
-      Class7475 var4 = new Class7475(var0);
-      var3.method21806("name", var4.method24226('='));
+      JSONTokener var4 = new JSONTokener(var0);
+      var3.put("name", var4.method24226('='));
       var4.method24222('=');
-      var3.method21806("value", var4.method24226(';'));
+      var3.put("value", var4.method24226(';'));
       var4.method24221();
 
       while (var4.method24220()) {
@@ -38,19 +40,19 @@ public class Class6873 {
             var4.method24221();
          } else {
             if (!var5.equals("secure")) {
-               throw var4.method24230("Missing '=' in cookie parameter.");
+               throw var4.syntaxError("Missing '=' in cookie parameter.");
             }
 
             var6 = Boolean.TRUE;
          }
 
-         var3.method21806(var5, var6);
+         var3.put(var5, var6);
       }
 
       return var3;
    }
 
-   public static String toString(JSONObject var0) throws Class2455 {
+   public static String toString(JSONObject var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
       var3.append(method20928(var0.method21773("name")));
       var3.append("=");
@@ -85,8 +87,8 @@ public class Class6873 {
          char var6 = var0.charAt(var5);
          if (var6 != '+') {
             if (var6 == '%' && var5 + 2 < var3) {
-               int var7 = Class7475.method24218(var0.charAt(var5 + 1));
-               int var8 = Class7475.method24218(var0.charAt(var5 + 2));
+               int var7 = JSONTokener.method24218(var0.charAt(var5 + 1));
+               int var8 = JSONTokener.method24218(var0.charAt(var5 + 2));
                if (var7 >= 0 && var8 >= 0) {
                   var6 = (char)(var7 * 16 + var8);
                   var5 += 2;

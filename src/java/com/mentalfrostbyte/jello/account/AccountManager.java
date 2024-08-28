@@ -2,56 +2,59 @@ package com.mentalfrostbyte.jello.account;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.util.FileUtil;
-import com.mojang.authlib.exceptions.AuthenticationException;
+import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import mapped.*;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class AccountManager {
-    public ArrayList<Account> field44312 = new ArrayList<Account>();
-    public File field44313 = new File(Client.getInstance().getFile() + "/alts.json");
-    private String field44314;
-    private final Class8606 field44315 = new Class8606();
+    public ArrayList<Account> accounts = new ArrayList<Account>();
+    public File altsFile = new File(Client.getInstance().getFile() + "/alts.json");
+    private String email;
+    private final BanListener banListener = new BanListener();
 
     public AccountManager() {
-        this.method36777();
+        this.loadAltsFromFile();
     }
 
-    public void method36766() {
+    public void registerEvents() {
         Client.getInstance().getEventManager().register(this);
-        Client.getInstance().getEventManager().register(this.field44315);
+        Client.getInstance().getEventManager().register(this.banListener);
     }
 
     @Deprecated
-    public void method36767(Account var1) {
-        this.field44312.add(var1);
+    public void addAccount(Account account) {
+        this.accounts.add(account);
     }
 
-    public void method36768(Account var1) {
-        for (int var4 = 0; var4 < this.field44312.size(); var4++) {
-            if (this.field44312.get(var4).method34216().equals(var1.method34216())) {
-                this.field44312.set(var4, var1);
+    public void updateAccount(Account account) {
+        for (int i = 0; i < this.accounts.size(); i++) {
+            if (this.accounts.get(i).getEmail().equals(account.getEmail())) {
+                this.accounts.set(i, account);
                 return;
             }
         }
 
-        this.field44312.add(var1);
+        this.accounts.add(account);
     }
 
-    public void method36769(Account var1) {
-        for (int var4 = 0; var4 < this.field44312.size(); var4++) {
-            if (this.field44312.get(var4).method34216().equals(var1.method34216())) {
-                this.field44312.remove(var4);
+    public void removeAccount(Account account) {
+        for (int i = 0; i < this.accounts.size(); i++) {
+            if (this.accounts.get(i).getEmail().equals(account.getEmail())) {
+                this.accounts.remove(i);
                 return;
             }
         }
     }
 
-    public boolean method36770(Account var1) {
-        for (int var4 = 0; var4 < this.field44312.size(); var4++) {
-            if (this.field44312.get(var4).method34216().equals(var1.method34216())) {
+    public boolean containsAccount(Account account) {
+        for (Account acc : this.accounts) {
+            if (acc.getEmail().equals(account.getEmail())) {
                 return true;
             }
         }
@@ -59,9 +62,9 @@ public class AccountManager {
         return false;
     }
 
-    public Account method36771() {
-        for (Account var4 : this.field44312) {
-            if (var4.method34216().equals(this.field44314)) {
+    public Account containsAccount() {
+        for (Account var4 : this.accounts) {
+            if (var4.getEmail().equals(this.email)) {
                 return var4;
             }
         }
@@ -69,78 +72,84 @@ public class AccountManager {
         return null;
     }
 
-    public boolean method36772(Account var1) {
+    /**
+     * Logs into the account
+     * @param account specified account
+     * @return if the login was successful
+     */
+    public boolean login(Account account) {
         try {
-            Class806.field4268 = null;
-            Class6974 var4 = Minecraft.getInstance().field1293;
-            Class6974 var5 = var1.method34231();
-            var4.field30184 = var5.method21526();
-            var4.field30185 = var5.method21525();
-            var4.field30186 = var5.method21527();
-            this.field44314 = var1.method34216();
+            Class806.field4268 = null; // ?????
+            Session session = Minecraft.getInstance().session;
+            Session newSession = account.login();
+            session.username = newSession.getUsername();
+            session.playerID = newSession.getPlayerID();
+            session.token = newSession.getToken();
+            this.email = account.getEmail();
             return true;
-        } catch (AuthenticationException var6) {
+        } catch (MicrosoftAuthenticationException e) {
             return false;
         }
     }
 
-    public boolean method36773(Account var1) {
+    // What
+    public boolean updateSelectedEmail(Account account) {
         try {
-            var1.method34231();
-            this.field44314 = var1.method34216();
+            account.login();
+            this.email = account.getEmail();
             return true;
-        } catch (AuthenticationException var5) {
+        } catch (MicrosoftAuthenticationException var5) {
             return false;
         }
     }
 
-    public void method36774(Account var1) {
-        this.field44312.remove(var1);
+    public void removeAccountDirectly(Account var1) {
+        this.accounts.remove(var1);
     }
 
-    public ArrayList<Account> method36775() {
-        return this.field44312;
+    public ArrayList<Account> getAccounts() {
+        return this.accounts;
     }
 
-    public void method36776() {
-        Class2344 var3 = new Class2344();
+    public void saveAlts() {
+        JSONArray jsonArray = new JSONArray();
 
-        for (Account var5 : this.field44312) {
-            var3.method9158(var5.method34232());
+        for (Account account : this.accounts) {
+            jsonArray.put(account.method34232());
         }
 
-        JSONObject var7 = new JSONObject();
-        var7.method21806("alts", var3);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("alts", jsonArray);
 
         try {
-            FileUtil.method18362(var7, new File(Client.getInstance().getFile() + "/alts.json"));
-        } catch (IOException | Class2499 var6) {
-            Client.getInstance().getLogger().method20358(var6.getMessage());
+            FileUtil.save(jsonObject, new File(Client.getInstance().getFile() + "/alts.json"));
+        } catch (IOException | JSONException2 var6) {
+            Client.getInstance().getLogger().error(var6.getMessage());
         }
     }
 
-    private void method36777() {
+    private void loadAltsFromFile() {
         try {
-            JSONObject var3 = FileUtil.method18363(this.field44313);
-            if (!var3.has("alts")) {
-                var3.method21806("alts", new Class2344());
+            JSONObject jsonObject = FileUtil.readFile(this.altsFile);
+            if (!jsonObject.has("alts")) {
+                jsonObject.put("alts", new JSONArray());
             }
 
-            for (Object var5 : var3.method21768("alts")) {
-                this.field44312.add(new Account((JSONObject) var5));
+            for (Object obj : jsonObject.getJSONArray("alts")) {
+                this.accounts.add(new Account((JSONObject) obj));
             }
-        } catch (IOException var6) {
-            Client.getInstance().getLogger().method20358(var6.getMessage());
+        } catch (IOException e) {
+            Client.getInstance().getLogger().error(e.getMessage());
         }
     }
 
-    public String method36778() {
-        return this.field44314;
+    public String getEmail() {
+        return this.email;
     }
 
     public boolean method36779(Account var1) {
-        return this.method36778() != null
-                ? var1.method34216().equals(this.method36778())
-                : var1.method34217().equals(Minecraft.getInstance().method1533().method21526());
+        return this.getEmail() != null
+                ? var1.getEmail().equals(this.getEmail())
+                : var1.getKnownName().equals(Minecraft.getInstance().method1533().getUsername());
     }
 }

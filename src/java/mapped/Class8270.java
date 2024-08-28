@@ -19,7 +19,7 @@ public class Class8270 {
 
          while (var8.hasNext()) {
             Account var9 = (Account)var8.next();
-            if (var9.method34217().toLowerCase().startsWith(var3)) {
+            if (var9.getKnownName().toLowerCase().startsWith(var3)) {
                var7.add(var9);
                var8.remove();
             }
@@ -29,7 +29,7 @@ public class Class8270 {
 
          while (var12.hasNext()) {
             Account var10 = (Account)var12.next();
-            if (var10.method34217().toLowerCase().contains(var3)) {
+            if (var10.getKnownName().toLowerCase().contains(var3)) {
                var7.add(var10);
                var12.remove();
             }

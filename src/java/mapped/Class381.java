@@ -38,7 +38,7 @@ public class Class381 extends Thread {
                )
             );
          Class1314.method6224(this.field1641).method30693(new Class5575(this.field1639, this.field1640, Class1858.field9904));
-         Class1314.method6224(this.field1641).method30693(new Class5500(this.field1641.field4562.method1533().method21528()));
+         Class1314.method6224(this.field1641).method30693(new Class5500(this.field1641.field4562.method1533().getProfile()));
       } catch (UnknownHostException var6) {
          if (Class1314.method6222(this.field1641)) {
             return;

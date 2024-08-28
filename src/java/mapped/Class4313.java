@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class Class4313 extends Class4307 {
    private int field21016 = 30;
    private Class4298 field21017;
    private Class4296 field21018;
-   public AccountManager field21019 = Client.getInstance().getAccountManager();
+   public AccountManager accountManager = Client.getInstance().getAccountManager();
    private Texture field21020;
    private float field21021;
    private Class4274 field21022;
@@ -177,7 +178,7 @@ public class Class4313 extends Class4307 {
          .method13230(
             var5 = new Class4294(
                this.field21010,
-               var1.method34216(),
+               var1.getEmail(),
                this.field21016,
                (100 + this.field21016 / 2) * this.method13370(),
                this.field21010.method13267() - this.field21016 * 2 + 4,
@@ -189,14 +190,14 @@ public class Class4313 extends Class4307 {
          var5.field20805 = new Animation(0, 0);
       }
 
-      if (this.field21019.method36779(var1)) {
+      if (this.accountManager.method36779(var1)) {
          var5.method13172(true);
       }
 
       var5.method13247((var2x, var3) -> {
          if (var3 != 0) {
             this.field21013.method13036(var2xx -> {
-               this.field21019.method36774(var5.field20798);
+               this.accountManager.removeAccountDirectly(var5.selectedAccount);
                this.field21018.method13178(null);
                this.field21017.method13181(null);
                this.method13372(false);
@@ -204,14 +205,14 @@ public class Class4313 extends Class4307 {
             this.field21013.method13145(true);
             this.field21013.method13603(true);
          } else {
-            if (this.field21017.field20826 == var5.field20798 && var5.method13168()) {
+            if (this.field21017.account == var5.selectedAccount && var5.method13168()) {
                this.method13361(var5);
             } else {
                this.field21011.method13512(0);
             }
 
-            this.field21017.method13181(var5.field20798);
-            this.field21018.method13178(var5.field20798);
+            this.field21017.method13181(var5.selectedAccount);
+            this.field21018.method13178(var5.selectedAccount);
 
             for (Class4305 var7 : this.field21010.method13241()) {
                if (!(var7 instanceof Class4292)) {
@@ -225,8 +226,8 @@ public class Class4313 extends Class4307 {
          }
       });
       if (Client.getInstance().getAccountManager().method36779(var1)) {
-         this.field21017.method13181(var5.field20798);
-         this.field21018.method13178(var5.field20798);
+         this.field21017.method13181(var5.selectedAccount);
+         this.field21018.method13178(var5.selectedAccount);
          var5.method13167(true, true);
       }
    }
@@ -234,7 +235,7 @@ public class Class4313 extends Class4307 {
    private void method13361(Class4294 var1) {
       var1.method13174(true);
       new Thread(() -> {
-         if (!this.field21019.method36772(var1.field20798)) {
+         if (!this.accountManager.login(var1.selectedAccount)) {
             var1.method13173(114);
             Client.getInstance().getSoundManager().play("error");
          } else {
@@ -260,8 +261,8 @@ public class Class4313 extends Class4307 {
       this.field21012.method13036(var1 -> {
          if (!this.field21012.method13600().get("Email").contains(":")) {
             Account var11 = new Account(this.field21012.method13600().get("Email"), this.field21012.method13600().get("Password"));
-            if (!this.field21019.method36770(var11)) {
-               this.field21019.method36768(var11);
+            if (!this.accountManager.containsAccount(var11)) {
+               this.accountManager.updateAccount(var11);
             }
 
             this.method13372(false);
@@ -272,8 +273,8 @@ public class Class4313 extends Class4307 {
                String[] var9x = var8x.split(":");
                if (var9x.length == 2) {
                   Account var10 = new Account(var9x[0], var9x[1]);
-                  if (!this.field21019.method36770(var10)) {
-                     this.field21019.method36768(var10);
+                  if (!this.accountManager.containsAccount(var10)) {
+                     this.accountManager.updateAccount(var10);
                   }
                }
             }
@@ -448,7 +449,7 @@ public class Class4313 extends Class4307 {
 
    @Override
    public JSONObject method13160(JSONObject var1) {
-      this.field21019.method36776();
+      this.accountManager.saveAlts();
       return var1;
    }
 
@@ -466,7 +467,7 @@ public class Class4313 extends Class4307 {
    }
 
    public void method13372(boolean var1) {
-      List<Account> var5 = Class8270.method28878(this.field21019.method36775(), this.field21023, this.field21024, this.field21026.method13303());
+      List<Account> var5 = Class8270.method28878(this.accountManager.getAccounts(), this.field21023, this.field21024, this.field21026.method13303());
       this.method13222(new Class1428(this, this, var5, var1));
    }
 

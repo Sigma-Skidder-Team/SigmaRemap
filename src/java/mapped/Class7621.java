@@ -83,7 +83,7 @@ public class Class7621 extends Class7620 {
             this.field32683.invoke(this.field32684, var5);
          }
       } catch (IllegalArgumentException | InvocationTargetException | IllegalAccessException var7) {
-         Client.getInstance().getLogger().method20358("Unable to invoke " + this.field32684.getClass().getName() + "::" + this.field32683.getName());
+         Client.getInstance().getLogger().error("Unable to invoke " + this.field32684.getClass().getName() + "::" + this.field32683.getName());
          var7.printStackTrace();
       }
    }

@@ -268,7 +268,7 @@ public class Class4354 extends Class4247 {
                "blur", ImageUtil.method35036(0, 0, this.method13267(), this.method13269(), 5, 10, Class1979.field12896.field12910, true)
             );
          } catch (IOException var5) {
-            Client.getInstance().getLogger().method20358(var5.getMessage());
+            Client.getInstance().getLogger().error(var5.getMessage());
          }
       }
 

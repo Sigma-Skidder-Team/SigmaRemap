@@ -22,7 +22,7 @@ public class Class4298 extends Class4278 {
    private AbstractClientPlayerEntity field20823;
    private Minecraft field20824 = Minecraft.getInstance();
    private static Class1656 field20825;
-   public Account field20826;
+   public Account account;
    private Class291 field20827;
    private Class1118 field20828;
 
@@ -38,7 +38,7 @@ public class Class4298 extends Class4278 {
 
    @Override
    public void method13027(float var1) {
-      if (this.field20826 != null) {
+      if (this.account != null) {
          GL11.glEnable(2929);
          Class7516.method24498();
          RenderSystem.disableDepthTest();
@@ -53,15 +53,15 @@ public class Class4298 extends Class4278 {
          float var7 = (float)Math.atan((double)(var5 / (float)(this.field20824.mainWindow.method8043() / 2))) * 20.0F;
          RenderSystem.method27883(-var6, 1.0F, 0.0F, 0.0F);
          RenderSystem.method27883(-var7, 0.0F, 1.0F, 0.0F);
-         UUID var8 = UUID.fromString(this.field20826.method34219().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field20826.method34219());
+         UUID var8 = UUID.fromString(this.account.getKnownUUID().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.account.getKnownUUID());
          if (field20825 == null) {
             Class6606 var9 = new Class6606(Class2197.field14353, false, false);
             field20825 = new Class1656(this.field20824.getClientPlayNetHandler(), var9, World.field8999, Class9535.field44374, 1, this::method13180, null, false, 0L);
          }
 
-         GameProfile var20 = new GameProfile(var8, this.field20826.method34217());
-         if (this.field20828 == null || !this.field20828.getDisplayName().getString().equals(this.field20826.method34217())) {
-            this.field20828 = new Class1118(field20825, new GameProfile(var8, this.field20826.method34217()));
+         GameProfile var20 = new GameProfile(var8, this.account.getKnownName());
+         if (this.field20828 == null || !this.field20828.getDisplayName().getString().equals(this.account.getKnownName())) {
+            this.field20828 = new Class1118(field20825, new GameProfile(var8, this.account.getKnownName()));
             this.field20828.field6096 = new Class6589(new Class8790(var20, 0, Class1894.field11103, this.field20828.getDisplayName()));
          }
 
@@ -97,11 +97,11 @@ public class Class4298 extends Class4278 {
          RenderSystem.method27862();
          RenderSystem.method27860(33984);
          GL11.glDisable(2929);
-         if (this.field20826.method34228() != null) {
+         if (this.account.method34228() != null) {
             Object var17 = null;
 
             try {
-               var17 = TextureUtil.method32933("sf", this.field20826.method34228());
+               var17 = TextureUtil.method32933("sf", this.account.method34228());
             } catch (IOException var19) {
                var19.printStackTrace();
             }
@@ -110,7 +110,7 @@ public class Class4298 extends Class4278 {
    }
 
    public void method13181(Account var1) {
-      this.field20826 = var1;
+      this.account = var1;
       this.field20827 = null;
    }
 }

@@ -1,5 +1,7 @@
 package mapped;
 
+import totalcross.json.JSONObject;
+
 public class Class8351 {
    public String field35889;
    public int field35890;
@@ -47,10 +49,10 @@ public class Class8351 {
 
    public JSONObject method29263() {
       JSONObject var3 = new JSONObject();
-      var3.method21806("name", this.field35889);
-      var3.method21803("color", this.field35892);
-      var3.method21803("x", this.field35890);
-      var3.method21803("z", this.field35891);
+      var3.put("name", this.field35889);
+      var3.put("color", this.field35892);
+      var3.put("x", this.field35890);
+      var3.put("z", this.field35891);
       return var3;
    }
 

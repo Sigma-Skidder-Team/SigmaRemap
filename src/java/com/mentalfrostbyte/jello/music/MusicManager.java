@@ -25,6 +25,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONObject;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
@@ -122,10 +123,10 @@ public class MusicManager {
 
     public void method24294() {
         JSONObject var3 = new JSONObject();
-        var3.method21803("volume", this.field32146);
+        var3.put("volume", this.field32146);
         var3.method21800("spectrum", this.field32161);
-        var3.method21803("repeat", this.field32162.field719);
-        Client.getInstance().getConfig().method21806("music", var3);
+        var3.put("repeat", this.field32162.field719);
+        Client.getInstance().getConfig().put("music", var3);
     }
 
     private void method24295() {
@@ -344,7 +345,7 @@ public class MusicManager {
 
                         for (int var4 = this.field32159; var4 < this.field32145.field44778.size(); var4++) {
                             URL var5 = Class9275.method34960(this.field32145.field44778.get(var4).field41970);
-                            Client.method19919().method20359(var5.toString());
+                            Client.method19919().dummyMethod(var5.toString());
                             this.field32157 = var4;
                             this.field32160 = this.field32145.field44778.get(var4);
                             this.field32163.clear();
@@ -368,7 +369,7 @@ public class MusicManager {
 
                             try {
                                 URL var28 = this.method24323(var5);
-                                Client.method19919().method20359(var28 == null ? "No stream" : var28.toString());
+                                Client.method19919().dummyMethod(var28 == null ? "No stream" : var28.toString());
                                 if (var28 != null) {
                                     URLConnection var7 = var28.openConnection();
                                     var7.setConnectTimeout(14000);
@@ -382,7 +383,7 @@ public class MusicManager {
                                     Class8583 var11 = var10.method30073();
                                     List var12 = var11.method30672();
                                     if (var12.isEmpty()) {
-                                        Client.method19919().method20359("No content");
+                                        Client.method19919().dummyMethod("No content");
                                     }
 
                                     Class7356 var13 = (Class7356) var11.method30672().get(1);
@@ -677,7 +678,7 @@ public class MusicManager {
     }
 
     public void method24331() {
-        Client.getInstance().getLogger().method20359("Updating dependencies threaded");
+        Client.getInstance().getLogger().dummyMethod("Updating dependencies threaded");
         new Thread(() -> this.method24332()).start();
     }
 
@@ -685,7 +686,7 @@ public class MusicManager {
         if (!this.field32164) {
             File var3 = new File(Client.getInstance().getFile() + "/music/");
             var3.mkdirs();
-            Client.getInstance().getLogger().method20359("Updating dependencies");
+            Client.getInstance().getLogger().dummyMethod("Updating dependencies");
             if (Util.getOSType() == OS.WINDOWS) {
                 try {
                     File var4 = new File(Client.getInstance().getFile() + "/music/youtube-dl.exe");

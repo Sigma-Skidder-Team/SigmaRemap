@@ -39,10 +39,10 @@ public class Class4311 extends Class4307 {
          this.field20991 = "§bLogging in...";
          new Thread(() -> {
             Account var3x = new Account(this.field20985.method13303(), this.field20986.method13303());
-            if (!this.field20990.method36772(var3x)) {
+            if (!this.field20990.login(var3x)) {
                this.field20991 = "§cLogin failed!";
             } else {
-               this.field20991 = "Logged in. (" + var3x.method34216() + (!var3x.method34240() ? "" : " - offline name") + ")";
+               this.field20991 = "Logged in. (" + var3x.getEmail() + (!var3x.isEmailAValidEmailFormat() ? "" : " - offline name") + ")";
             }
          }).start();
       });

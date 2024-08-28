@@ -16,6 +16,7 @@ import javax.annotation.Nullable;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import totalcross.json.JSONException;
 
 public class Class1808 implements Class1809, AutoCloseable {
    private static final Logger field9742 = LogManager.getLogger();
@@ -55,7 +56,7 @@ public class Class1808 implements Class1809, AutoCloseable {
                try {
                   this.method7939(var13);
                } catch (Exception var26) {
-                  Class2455 var15 = Class2455.method10464(var26);
+                  JSONException var15 = JSONException.method10464(var26);
                   var15.method10462("samplers[" + var11 + "]");
                   throw var15;
                }
@@ -74,7 +75,7 @@ public class Class1808 implements Class1809, AutoCloseable {
                try {
                   this.field9757.add(Class8963.method32762(var14, "attribute"));
                } catch (Exception var25) {
-                  Class2455 var16 = Class2455.method10464(var25);
+                  JSONException var16 = JSONException.method10464(var25);
                   var16.method10462("attributes[" + var32 + "]");
                   throw var16;
                }
@@ -94,7 +95,7 @@ public class Class1808 implements Class1809, AutoCloseable {
                try {
                   this.method7941(var39);
                } catch (Exception var24) {
-                  Class2455 var17 = Class2455.method10464(var24);
+                  JSONException var17 = JSONException.method10464(var24);
                   var17.method10462("uniforms[" + var35 + "]");
                   throw var17;
                }
@@ -123,7 +124,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             var8 = "";
          }
 
-         Class2455 var9 = Class2455.method10464(var27);
+         JSONException var9 = JSONException.method10464(var27);
          var9.method10463(var5.method8292() + var8);
          throw var9;
       } finally {
@@ -330,7 +331,7 @@ public class Class1808 implements Class1809, AutoCloseable {
       this.method7935();
    }
 
-   private void method7941(JsonElement var1) throws Class2455 {
+   private void method7941(JsonElement var1) throws JSONException {
       JsonObject var4 = Class8963.method32781(var1, "uniform");
       String var5 = Class8963.method32763(var4, "name");
       int var6 = Class1708.method7434(Class8963.method32763(var4, "type"));
@@ -338,7 +339,7 @@ public class Class1808 implements Class1809, AutoCloseable {
       float[] var8 = new float[Math.max(var7, 16)];
       JsonArray var9 = Class8963.method32785(var4, "values");
       if (var9.size() != var7 && var9.size() > 1) {
-         throw new Class2455("Invalid amount of values specified (expected " + var7 + ", found " + var9.size() + ")");
+         throw new JSONException("Invalid amount of values specified (expected " + var7 + ", found " + var9.size() + ")");
       } else {
          int var10 = 0;
 
@@ -346,7 +347,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             try {
                var8[var10] = Class8963.method32770(var12, "value");
             } catch (Exception var15) {
-               Class2455 var14 = Class2455.method10464(var15);
+               JSONException var14 = JSONException.method10464(var15);
                var14.method10462("values[" + var10 + "]");
                throw var14;
             }

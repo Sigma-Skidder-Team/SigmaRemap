@@ -114,7 +114,7 @@ public class Class806 extends Class798 {
          return true;
       } else {
          for (Class6128 var4 : this.field4281) {
-            if (var4.field27449.equals(this.field4562.method1533().method21525())) {
+            if (var4.field27449.equals(this.field4562.method1533().getPlayerID())) {
                return false;
             }
          }
@@ -432,7 +432,7 @@ public class Class806 extends Class798 {
          String var4 = "https://aka.ms/ExtendJavaRealms?subscriptionId="
             + var3.field27444
             + "&profileId="
-            + this.field4562.method1533().method21525()
+            + this.field4562.method1533().getPlayerID()
             + "&ref="
             + (!var3.field27453 ? "expiredRealm" : "expiredTrial");
          this.field4562.field1302.method36350(var4);
@@ -476,14 +476,14 @@ public class Class806 extends Class798 {
    }
 
    private void method2031(Class6128 var1) {
-      if (this.field4562.method1533().method21525().equals(var1.field27449) || field4263) {
+      if (this.field4562.method1533().getPlayerID().equals(var1.field27449) || field4263) {
          this.method2033();
          this.field4562.displayGuiScreen(new Class815(this, var1.field27443));
       }
    }
 
    private void method2032(Class6128 var1) {
-      if (var1 != null && !this.field4562.method1533().method21525().equals(var1.field27449)) {
+      if (var1 != null && !this.field4562.method1533().getPlayerID().equals(var1.field27449)) {
          this.method2033();
          TranslationTextComponent var4 = new TranslationTextComponent("mco.configure.world.leave.question.line1");
          TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.leave.question.line2");
@@ -771,7 +771,7 @@ public class Class806 extends Class798 {
    }
 
    private boolean method2047(Class6128 var1) {
-      return var1.field27449 != null && var1.field27449.equals(this.field4562.method1533().method21525());
+      return var1.field27449 != null && var1.field27449.equals(this.field4562.method1533().getPlayerID());
    }
 
    private boolean method2048(Class6128 var1) {

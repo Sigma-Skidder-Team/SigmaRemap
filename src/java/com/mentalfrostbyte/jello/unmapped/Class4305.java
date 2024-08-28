@@ -4,7 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.*;
+import totalcross.json.JSONArray;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -157,7 +159,7 @@ public class Class4305 implements Class4328 {
             }
         } catch (ConcurrentModificationException var7) {
             var7.printStackTrace();
-            Client.method19919().method20358("FUCK! Why does this shit happen");
+            Client.method19919().error("FUCK! Why does this shit happen");
         }
 
         this.field20909 = this.field20909 & this.field20908;
@@ -480,15 +482,15 @@ public class Class4305 implements Class4328 {
 
     public JSONObject method13160(JSONObject var1) {
         if (this.method13299()) {
-            var1.method21806("id", this.method13257());
-            var1.method21803("x", this.method13263());
-            var1.method21803("y", this.method13265());
+            var1.put("id", this.method13257());
+            var1.put("x", this.method13263());
+            var1.put("y", this.method13265());
             if (this.method13301()) {
-                var1.method21803("width", this.method13267());
-                var1.method21803("height", this.method13269());
+                var1.put("width", this.method13267());
+                var1.put("height", this.method13269());
             }
 
-            var1.method21803("index", this.field20892 == null ? 0 : this.field20892.method13240(this));
+            var1.put("index", this.field20892 == null ? 0 : this.field20892.method13240(this));
             return this.method13245(var1);
         } else {
             return var1;
@@ -496,18 +498,18 @@ public class Class4305 implements Class4328 {
     }
 
     public final JSONObject method13245(JSONObject var1) {
-        Class2344 var4 = new Class2344();
+        JSONArray var4 = new JSONArray();
 
         for (Class4305 var6 : this.field20893) {
             if (var6.method13299()) {
                 JSONObject var7 = var6.method13160(new JSONObject());
                 if (var7.method21779() > 0) {
-                    var4.method9158(var7);
+                    var4.put(var7);
                 }
             }
         }
 
-        var1.method21806("children", var4);
+        var1.put("children", var4);
         return var1;
     }
 
@@ -520,13 +522,13 @@ public class Class4305 implements Class4328 {
                 this.field20898 = Class8000.method27326(var1, "height", this.field20898);
             }
 
-            Class2344 var4 = Class8000.method27332(var1, "children");
+            JSONArray var4 = Class8000.method27332(var1, "children");
             Iterator<String> var5 = var1.method21778().iterator();
             if (var4 != null) {
                 List<Class4305> var6 = new ArrayList<>(this.field20893);
 
-                for (int var7 = 0; var7 < var4.method9134(); var7++) {
-                    JSONObject var8 = var4.method9129(var7);
+                for (int var7 = 0; var7 < var4.length(); var7++) {
+                    JSONObject var8 = var4.getJSONObject(var7);
                     String var9 = Class8000.method27330(var8, "id", null);
                     int var10 = Class8000.method27326(var8, "index", -1);
 

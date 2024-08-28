@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONObject;
 
 import java.awt.Color;
 
@@ -34,8 +35,8 @@ public class Class6010 extends Class6001<Integer> {
 
    @Override
    public JSONObject method18611(JSONObject var1) {
-      var1.method21806("name", this.method18625());
-      var1.method21806("value", this.method18645());
+      var1.put("name", this.method18625());
+      var1.put("value", this.method18645());
       var1.method21800("rainbow", this.field26196);
       return var1;
    }

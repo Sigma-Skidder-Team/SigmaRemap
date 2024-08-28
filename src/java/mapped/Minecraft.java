@@ -71,7 +71,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    private final Class9641 field1290;
    public final Class302 particles;
    private final Class266 field1292 = new Class266();
-   public final Class6974 field1293;
+   public final Session session;
    public final Class9834 field1294;
    public final Class214 gameRenderer;
    public final Class8023 field1296;
@@ -170,9 +170,9 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field1306);
       this.field1325 = var3.createMinecraftSessionService();
       this.field1326 = this.method1456(var3, var1);
-      this.field1293 = var1.field34577.field35340;
-      LOGGER.info("Setting user: {}", this.field1293.method21526());
-      LOGGER.debug("(Session ID is {})", this.field1293.method21524());
+      this.session = var1.field34577.field35340;
+      LOGGER.info("Setting user: {}", this.session.getUsername());
+      LOGGER.debug("(Session ID is {})", this.session.toString());
       this.method1525();
       this.field1310 = var1.field34580.field33253;
       this.field1311 = !var1.field34580.field33256;
@@ -242,7 +242,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       this.saveFormat = new SaveFormat(this.field1303.toPath().resolve("saves"), this.field1303.toPath().resolve("backups"), this.field1281);
       this.soundHandler = new Class274(this.resourceManager, this.gameSettings);
       this.resourceManager.method587(this.soundHandler);
-      this.field1323 = new Class271(this.field1293);
+      this.field1323 = new Class271(this.session);
       this.resourceManager.method587(this.field1323);
       this.field1321 = new Class9052(this);
       this.fontResourceMananger = new Class1654(this.textureManager);
@@ -339,7 +339,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
    private SocialInteractionsService method1456(YggdrasilAuthenticationService var1, Class8051 var2) {
       try {
-         return var1.createSocialInteractionsService(var2.field34577.field35340.method21527());
+         return var1.createSocialInteractionsService(var2.field34577.field35340.getToken());
       } catch (AuthenticationException var4) {
          LOGGER.error("Failed to verify authentication", var4);
          return new OfflineSocialInteractions();
@@ -1605,7 +1605,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
          var26.method30692(new Class5102(var26, this, (Screen)null, var0 -> {
          }));
          var26.method30693(new Class5575(var24.toString(), 0, Class1858.field9904));
-         var26.method30693(new Class5500(this.method1533().method21528()));
+         var26.method30693(new Class5500(this.method1533().getProfile()));
          this.field1342 = var26;
       } else {
          this.method1502(var6, var1, var10, () -> this.method1501(var1, var2, var3, var4, var5, Class2145.field14034));
@@ -2104,13 +2104,13 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       return this.field1285;
    }
 
-   public Class6974 method1533() {
-      return this.field1293;
+   public Session method1533() {
+      return this.session;
    }
 
    public PropertyMap method1534() {
       if (this.field1279.isEmpty()) {
-         GameProfile var1 = this.method1548().fillProfileProperties(this.field1293.method21528(), false);
+         GameProfile var1 = this.method1548().fillProfileProperties(this.session.getProfile(), false);
          this.field1279.putAll(var1.getProperties());
       }
 

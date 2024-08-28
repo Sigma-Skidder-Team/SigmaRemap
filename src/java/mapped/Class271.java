@@ -14,9 +14,9 @@ public class Class271 extends Class269<List<String>> {
    private static final ResourceLocation field1045 = new ResourceLocation("texts/splashes.txt");
    private static final Random field1046 = new Random();
    private final List<String> field1047 = Lists.newArrayList();
-   private final Class6974 field1048;
+   private final Session field1048;
 
-   public Class271(Class6974 var1) {
+   public Class271(Session var1) {
       this.field1048 = var1;
    }
 
@@ -50,7 +50,7 @@ public class Class271 extends Class269<List<String>> {
          return null;
       } else {
          return this.field1048 != null && field1046.nextInt(this.field1047.size()) == 42
-            ? this.field1048.method21526().toUpperCase(Locale.ROOT) + " IS YOU"
+            ? this.field1048.getUsername().toUpperCase(Locale.ROOT) + " IS YOU"
             : this.field1047.get(field1046.nextInt(this.field1047.size()));
       }
    }

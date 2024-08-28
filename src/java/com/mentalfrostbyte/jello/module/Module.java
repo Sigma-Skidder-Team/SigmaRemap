@@ -6,6 +6,9 @@ import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.unmapped.Class6000;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
 import mapped.*;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 import java.util.*;
 
@@ -120,25 +123,25 @@ public abstract class Module {
     }
 
     public JSONObject method15986(JSONObject var1) {
-        Class2344 var4 = Class8000.method27332(var1, "options");
+        JSONArray var4 = Class8000.method27332(var1, "options");
 
         this.enabled = var1.method21763("enabled");
 
         this.field23391 = var1.method21763("allowed");
 
         if (var4 != null) {
-            for (int var5 = 0; var5 < var4.method9134(); var5++) {
-                JSONObject  var6 = var4.method9129(var5);
+            for (int var5 = 0; var5 < var4.length(); var5++) {
+                JSONObject  var6 = var4.getJSONObject(var5);
                 String   var7 = Class8000.method27330(var6, "name", null);
 
                 for (Class6001 var9 : this.field23397.values()) {
                     if (var9.method18625().equals(var7)) {
                         try {
                             var9.method18610(var6);
-                        } catch (Class2499 var11) {
+                        } catch (JSONException2 var11) {
                             Client.getInstance()
                                     .getLogger()
-                                    .method20357("Could not initialize settings of " + this.method15991() + "." + var9.method18625() + " from config.");
+                                    .warn("Could not initialize settings of " + this.method15991() + "." + var9.method18625() + " from config.");
                         }
                         break;
                     }
@@ -155,16 +158,16 @@ public abstract class Module {
 
     public JSONObject method15987(JSONObject var1) {
         try {
-            var1.method21806("name", this.method15991());
+            var1.put("name", this.method15991());
             var1.method21800("enabled", this.enabled);
             var1.method21800("allowed", this.method16001());
-            Class2344 var4 = new Class2344();
+            JSONArray var4 = new JSONArray();
 
             for (Class6001 var6 : this.field23397.values()) {
-                var4.method9158(var6.method18611(new JSONObject()));
+                var4.put(var6.method18611(new JSONObject()));
             }
 
-            var1.method21806("options", var4);
+            var1.put("options", var4);
             return var1;
         } catch (Exception e) {
             throw new RuntimeException();
@@ -173,7 +176,7 @@ public abstract class Module {
 
     public void isInDevelopment() {
         if (this.getClass().isAnnotationPresent(InDevelopment.class) && !moduleList.contains(this.getClass())) {
-            Client.getInstance().getLogger().method20357("This mod is still in development. Be careful!");
+            Client.getInstance().getLogger().warn("This mod is still in development. Be careful!");
             moduleList.add(this.getClass());
         }
     }

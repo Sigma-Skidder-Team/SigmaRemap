@@ -18,8 +18,8 @@ public class Class4624 {
 
    public static Class4624 method14543() {
       Minecraft var2 = Minecraft.getInstance();
-      String var3 = var2.method1533().method21526();
-      String var4 = var2.method1533().method21524();
+      String var3 = var2.method1533().getUsername();
+      String var4 = var2.method1533().toString();
       if (!field22143) {
          field22143 = true;
          String var5 = System.getenv("realms.environment");

@@ -2,6 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,10 +22,10 @@ public abstract class Class6006 extends Class6001<Boolean> {
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      Class2344 var4 = Class8000.method27332(var1, this.method18625());
+      JSONArray var4 = Class8000.method27332(var1, this.method18625());
       if (var4 != null) {
-         for (int var5 = 0; var5 < var4.method9134(); var5++) {
-            JSONObject var6 = var4.method9129(var5);
+         for (int var5 = 0; var5 < var4.length(); var5++) {
+            JSONObject var6 = var4.getJSONObject(var5);
             String var7 = Class8000.method27330(var1, "name", null);
 
             for (Class6001 var9 : this.method18635()) {
@@ -41,14 +43,14 @@ public abstract class Class6006 extends Class6001<Boolean> {
 
    @Override
    public JSONObject method18611(JSONObject var1) {
-      Class2344 var4 = new Class2344();
+      JSONArray var4 = new JSONArray();
 
       for (Class6001 var6 : this.method18635()) {
-         var4.method9158(var6.method18611(new JSONObject()));
+         var4.put(var6.method18611(new JSONObject()));
       }
 
-      var1.method21806("children", var4);
-      var1.method21806("name", this.method18625());
+      var1.put("children", var4);
+      var1.put("name", this.method18625());
       return super.method18611(var1);
    }
 

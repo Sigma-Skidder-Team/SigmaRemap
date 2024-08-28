@@ -2,22 +2,22 @@ package com.mentalfrostbyte.jello.account;
 
 import mapped.Class7730;
 import mapped.Class7970;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.Minecraft;
 
 import java.util.Calendar;
 import java.util.Date;
 
-public class Class8794 {
-    private final String field39610;
+public class Ban {
+    private final String serverIP;
     private final Date field39611;
 
-    public Class8794(String var1, Date var2) {
-        this.field39610 = var1;
+    public Ban(String var1, Date var2) {
+        this.serverIP = var1;
         this.field39611 = var2;
     }
 
-    public Class8794(JSONObject var1) {
+    public Ban(JSONObject var1) {
         Calendar var4 = Calendar.getInstance();
         long var5 = 0L;
         if (!(var1.method21761("until") instanceof Integer)) {
@@ -31,19 +31,19 @@ public class Class8794 {
         }
 
         var4.setTimeInMillis(var5);
-        this.field39610 = var1.method21773("server");
+        this.serverIP = var1.method21773("server");
         this.field39611 = var4.getTime();
     }
 
-    public JSONObject method31733() {
+    public JSONObject asJSONObject() {
         JSONObject var3 = new JSONObject();
-        var3.method21806("server", this.field39610);
-        var3.method21804("until", this.field39611.getTime());
+        var3.put("server", this.serverIP);
+        var3.put("until", this.field39611.getTime());
         return var3;
     }
 
-    public String method31734() {
-        return this.field39610;
+    public String getServerIP() {
+        return this.serverIP;
     }
 
     public Date method31735() {
@@ -57,7 +57,7 @@ public class Class8794 {
 
         for (int var5 = 0; var5 < var4; var5++) {
             Class7730 var6 = var3.method27096(var5);
-            if (var6.field33189.equals(this.field39610)) {
+            if (var6.field33189.equals(this.serverIP)) {
                 return var6;
             }
         }

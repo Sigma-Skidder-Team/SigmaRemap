@@ -4,6 +4,9 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
 import mapped.*;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.util.*;
@@ -171,11 +174,11 @@ public class ModuleManager {
     }
 
     public JSONObject method14656(JSONObject var1) {
-        Class2344 var4 = null;
+        JSONArray var4 = null;
 
         try {
             var4 = Class8000.method27332(var1, "mods");
-        } catch (Class2499 var14) {
+        } catch (JSONException2 var14) {
         }
 
         for (Module var6 : this.moduleMap.values()) {
@@ -183,24 +186,24 @@ public class ModuleManager {
         }
 
         if (var4 != null) {
-            for (int var15 = 0; var15 < var4.method9134(); var15++) {
-                JSONObject var17 = var4.method9129(var15);
+            for (int var15 = 0; var15 < var4.length(); var15++) {
+                JSONObject var17 = var4.getJSONObject(var15);
                 String var7 = null;
 
                 try {
                     var7 = Class8000.method27330(var17, "name", null);
-                } catch (Class2499 var13) {
-                    Client.getInstance().getLogger().method20357("Invalid name in mod list config");
+                } catch (JSONException2 var13) {
+                    Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
 
                 for (Module var9 : this.moduleMap.values()) {
                     if (var9.method15991().equals(var7)) {
                         try {
                             var9.method15986(var17);
-                        } catch (Class2499 var12) {
+                        } catch (JSONException2 var12) {
                             Client.getInstance()
                                     .getLogger()
-                                    .method20357("Could not initialize mod " + var9.method15991() + " from config. All settings for this mod have been erased.");
+                                    .warn("Could not initialize mod " + var9.method15991() + " from config. All settings for this mod have been erased.");
                         }
                         break;
                     }
@@ -237,13 +240,13 @@ public class ModuleManager {
     }
 
     public JSONObject method14657(JSONObject var1) {
-        Class2344 var4 = new Class2344();
+        JSONArray var4 = new JSONArray();
 
         for (Module var6 : this.moduleMap.values()) {
-            var4.method9158(var6.method15987(new JSONObject()));
+            var4.put(var6.method15987(new JSONObject()));
         }
 
-        var1.method21806("mods", var4);
+        var1.put("mods", var4);
         return var1;
     }
 
@@ -274,7 +277,7 @@ public class ModuleManager {
 
         try {
             var4 = var1.method21773("profile");
-        } catch (Class2499 var7) {
+        } catch (JSONException2 var7) {
         }
 
         if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
@@ -288,7 +291,7 @@ public class ModuleManager {
             this.field22247.method20767(var4);
             this.field22248.method13732(var1);
         } catch (IOException var6) {
-            Client.getInstance().getLogger().method20358("Could not load profiles!");
+            Client.getInstance().getLogger().error("Could not load profiles!");
             var6.printStackTrace();
             throw new RuntimeException("sorry m8");
         }
@@ -297,7 +300,7 @@ public class ModuleManager {
     }
 
     public void method14660(JSONObject var1) {
-        var1.method21806("profile", this.field22247.method20770().field31263);
+        var1.put("profile", this.field22247.method20770().field31263);
         this.field22247.method20770().field31262 = this.method14657(new JSONObject());
 
         try {
@@ -305,7 +308,7 @@ public class ModuleManager {
             this.field22248.method13731(var1);
         } catch (IOException var5) {
             var5.printStackTrace();
-            Client.getInstance().getLogger().method20357("Unable to save mod profiles...");
+            Client.getInstance().getLogger().warn("Unable to save mod profiles...");
         }
     }
 

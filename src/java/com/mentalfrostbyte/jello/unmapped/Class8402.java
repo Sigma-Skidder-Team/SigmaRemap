@@ -15,6 +15,7 @@ import io.socket.client.Socket;
 import mapped.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -134,8 +135,8 @@ public class Class8402 {
 
     public void method29515(String var1, String var2) {
         JSONObject var5 = new JSONObject();
-        var5.method21806("target", var1);
-        var5.method21806("message", var2);
+        var5.put("target", var1);
+        var5.put("message", var2);
         if (this.field36057 != null) {
             this.field36057.emit("message", var5);
         }
@@ -164,14 +165,14 @@ public class Class8402 {
     }
 
     private void method29520(GameProfile var1, String var2) throws AuthenticationException, IOException {
-        String var5 = this.field36050.field1293.method21527();
+        String var5 = this.field36050.session.getToken();
         YggdrasilAuthenticationService var6 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, var5);
         YggdrasilMinecraftSessionService var7 = (YggdrasilMinecraftSessionService) var6.createMinecraftSessionService();
         var7.joinServer(var1, var5, var2);
         Client.getInstance();
         Client.method19919().info("Jello Connect: successfully reached out mojangs servers " + var2);
         System.out
-                .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field36050.field1293.method21526());
+                .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field36050.session.getUsername());
     }
 
     private String method29521(String var1) {

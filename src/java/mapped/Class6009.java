@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONObject;
 
 public class Class6009<T extends Number> extends Class6001<Float> {
    private Class<? extends T> field26192;

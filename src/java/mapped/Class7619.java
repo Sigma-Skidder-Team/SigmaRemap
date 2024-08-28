@@ -57,7 +57,7 @@ public class Class7619 extends Class7620 {
       } catch (Exception var6) {
          Client.getInstance()
             .getLogger()
-            .method20358(var2[0] + "is an invalid input for variable " + this.field32681.getClass().getName() + "::" + this.field32680.getName());
+            .error(var2[0] + "is an invalid input for variable " + this.field32681.getClass().getName() + "::" + this.field32680.getName());
          var6.printStackTrace();
       }
    }

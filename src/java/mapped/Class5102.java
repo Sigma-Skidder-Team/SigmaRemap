@@ -69,7 +69,7 @@ public class Class5102 implements Class5103 {
    @Nullable
    private ITextComponent method15585(String var1) {
       try {
-         this.method15586().joinServer(this.field23200.method1533().method21528(), this.field23200.method1533().method21527(), var1);
+         this.method15586().joinServer(this.field23200.method1533().getProfile(), this.field23200.method1533().getToken(), var1);
          return null;
       } catch (AuthenticationUnavailableException var5) {
          return new TranslationTextComponent("disconnect.loginFailedInfo", new TranslationTextComponent("disconnect.loginFailedInfo.serversUnavailable"));

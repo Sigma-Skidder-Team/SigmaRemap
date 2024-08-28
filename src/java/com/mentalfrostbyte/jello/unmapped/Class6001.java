@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import mapped.Class9792;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +24,8 @@ public abstract class Class6001<T> {
     public abstract JSONObject method18610(JSONObject var1);
 
     public JSONObject method18611(JSONObject var1) {
-        var1.method21806("name", this.method18625());
-        var1.method21806("value", this.field26179);
+        var1.put("name", this.method18625());
+        var1.put("value", this.field26179);
         return var1;
     }
 

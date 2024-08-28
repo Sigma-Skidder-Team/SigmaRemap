@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.Event;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 
 public class Class4419 implements Event {
     private final JSONObject field21549;

@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 
 import com.mentalfrostbyte.jello.Client;
+import totalcross.json.JSONObject;
 
 public class Panic extends Command {
    public Panic() {

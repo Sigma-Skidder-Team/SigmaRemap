@@ -40,7 +40,7 @@ public class Class1644 extends MinecraftServer {
       Class8216 var11
    ) {
       super(var1, var3, var4, var7, var5, var2.method1535(), var2.method1561(), var6, var8, var9, var10, var11);
-      this.method1333(var2.method1533().method21526());
+      this.method1333(var2.method1533().getUsername());
       this.method1343(var2.method1513());
       this.method1365(256);
       this.method1368(new Class6396(this, this.field1224, this.field1212));

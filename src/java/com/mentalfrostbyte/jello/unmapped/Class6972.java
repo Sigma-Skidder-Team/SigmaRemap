@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import mapped.Class2344;
+import totalcross.json.JSONArray;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
@@ -36,8 +36,8 @@ public class Class6972 {
     public static Class7869[] method21519(String var0) {
         if (var0.startsWith("[")) {
             try {
-                Class2344 var3 = new Class2344(var0);
-                var0 = var3.method9129(1).method21769("body").method21773("content");
+                JSONArray var3 = new JSONArray(var0);
+                var0 = var3.getJSONObject(1).method21769("body").method21773("content");
             } catch (Exception var9) {
             }
         }
@@ -64,8 +64,8 @@ public class Class6972 {
     public static Class7869[] method21520(String var0) {
         if (var0.startsWith("[")) {
             try {
-                Class2344 var3 = new Class2344(var0);
-                var0 = var3.method9129(1).method21769("body").method21773("content");
+                JSONArray var3 = new JSONArray(var0);
+                var0 = var3.getJSONObject(1).method21769("body").method21773("content");
             } catch (Exception var9) {
             }
         }

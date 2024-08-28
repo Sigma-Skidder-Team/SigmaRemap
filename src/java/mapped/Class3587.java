@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
-import com.mentalfrostbyte.jello.account.Class8794;
+import com.mentalfrostbyte.jello.account.Ban;
 
 import java.util.Comparator;
 import java.util.Date;
@@ -15,8 +15,8 @@ public final class Class3587 implements Comparator<Account> {
    }
 
    public int compare(Account var1, Account var2) {
-      Class8794 var5 = var1.method34239(this.field19531);
-      Class8794 var6 = var2.method34239(this.field19531);
+      Ban var5 = var1.getBanInfo(this.field19531);
+      Ban var6 = var2.getBanInfo(this.field19531);
       Date var7;
       if (var5 != null) {
          var7 = var5.method31735();

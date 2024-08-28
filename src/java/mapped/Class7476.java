@@ -1,13 +1,14 @@
 package mapped;
 
-import org.json.JSONException;
+import totalcross.json.JSONException;
+import totalcross.json.JSONTokener;
 
-public class Class7476 extends Class7475 {
+public class Class7476 extends JSONTokener {
    public Class7476(String var1) {
       super(var1);
    }
 
-   public String method24231() throws Class2455 {
+   public String method24231() throws JSONException {
       StringBuilder var3 = new StringBuilder();
 
       char var4;
@@ -28,7 +29,7 @@ public class Class7476 extends Class7475 {
          while (true) {
             var4 = this.method24221();
             if (var4 < ' ') {
-               throw this.method24230("Unterminated string.");
+               throw this.syntaxError("Unterminated string.");
             }
 
             if (var4 == var5) {

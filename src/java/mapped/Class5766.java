@@ -6,6 +6,8 @@ import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import io.socket.emitter.Emitter;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 
@@ -20,14 +22,14 @@ public class Class5766 implements Emitter.Listener {
    public void call(Object... objects) {
       JSONObject var4 = (JSONObject)objects[0];
       System.out.println(var4);
-      if (Class8402.method29522(this.field25222).field1293 != null && Class8402.method29522(this.field25222).field1293.method21528() != null) {
+      if (Class8402.method29522(this.field25222).session != null && Class8402.method29522(this.field25222).session.getProfile() != null) {
          try {
-            Class8402.method29523(this.field25222, Class8402.method29522(this.field25222).field1293.method21528(), var4.method21773("serverHash"));
+            Class8402.method29523(this.field25222, Class8402.method29522(this.field25222).session.getProfile(), var4.method21773("serverHash"));
             System.out.println("s");
             JSONObject var5 = new JSONObject();
-            var5.method21806("username", Class8402.method29522(this.field25222).field1293.method21526());
+            var5.put("username", Class8402.method29522(this.field25222).session.getUsername());
             this.field25222.field36057.emit("server-auth", var5);
-         } catch (AuthenticationException | IOException | Class2499 var6) {
+         } catch (AuthenticationException | IOException | JSONException2 var6) {
             var6.printStackTrace();
          }
 

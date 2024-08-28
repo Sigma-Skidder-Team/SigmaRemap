@@ -158,7 +158,7 @@ public class EventManager {
                     }
                 } catch (Exception var8) {
                     var8.printStackTrace();
-                    Client.getInstance().getLogger().method20358("An unhandled exception occured in an event handler's function");
+                    Client.getInstance().getLogger().error("An unhandled exception occured in an event handler's function");
                 } catch (Throwable var9) {
                     var9.printStackTrace();
                 }

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class4307;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,7 @@ public class Class4317 extends Class4307 {
       Class4349 var5;
       this.field21055
          .method13230(
-            var5 = new Class4349(this.field21055, var1.method34216(), 4, var4 * this.method13400() + 4, this.field21055.method13267() - 8, var4, var1)
+            var5 = new Class4349(this.field21055, var1.getEmail(), 4, var4 * this.method13400() + 4, this.field21055.method13267() - 8, var4, var1)
          );
       var5.method13251((var2, var3) -> {
          if (var3 == 0) {
@@ -106,7 +107,7 @@ public class Class4317 extends Class4307 {
    public void method13397() {
       Class4349 var3 = this.method13406();
       if (var3 != null) {
-         this.field21061.method36769(var3.field21249);
+         this.field21061.removeAccount(var3.field21249);
          this.field21067.method13296(false);
          this.method13402();
       }
@@ -119,10 +120,10 @@ public class Class4317 extends Class4307 {
    public void method13399(Account var1) {
       this.field21068 = "§bLogging in...";
       new Thread(() -> {
-         if (!this.field21061.method36772(var1)) {
+         if (!this.field21061.login(var1)) {
             this.field21068 = "§cLogin Failed!";
          } else {
-            this.field21068 = "§aLogged in. (" + var1.method34218() + (!var1.method34240() ? "" : " - offline name") + ")";
+            this.field21068 = "§aLogged in. (" + var1.getName() + (!var1.isEmailAValidEmailFormat() ? "" : " - offline name") + ")";
          }
       }).start();
    }
@@ -131,7 +132,7 @@ public class Class4317 extends Class4307 {
    public void method13027(float var1) {
       this.method13401();
       super.method13027(var1);
-      Class3192.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().method1533().method21526(), -2236963);
+      Class3192.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().method1533().getUsername(), -2236963);
       Class3192.method11440(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
@@ -182,7 +183,7 @@ public class Class4317 extends Class4307 {
 
    @Override
    public JSONObject method13160(JSONObject var1) {
-      this.field21061.method36776();
+      this.field21061.saveAlts();
       return var1;
    }
 
@@ -204,7 +205,7 @@ public class Class4317 extends Class4307 {
    }
 
    public void method13403() {
-      List<Account> var4 = Class8270.method28878(this.field21061.method36775(), Class2209.field14448, "", this.field21066.method13303());
+      List<Account> var4 = Class8270.method28878(this.field21061.getAccounts(), Class2209.field14448, "", this.field21066.method13303());
       int var5 = 0;
       if (this.field21055 != null) {
          var5 = this.field21055.method13513();

@@ -7,6 +7,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import org.apache.commons.io.IOUtils;
+import totalcross.json.JSONException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -54,7 +55,7 @@ public class Class1647 implements AutoCloseable {
                try {
                   this.method6518(var10);
                } catch (Exception var19) {
-                  Class2455 var12 = Class2455.method10464(var19);
+                  JSONException var12 = JSONException.method10464(var19);
                   var12.method10462("targets[" + var24 + "]");
                   throw var12;
                }
@@ -71,7 +72,7 @@ public class Class1647 implements AutoCloseable {
                try {
                   this.method6519(var1, var27);
                } catch (Exception var18) {
-                  Class2455 var28 = Class2455.method10464(var18);
+                  JSONException var28 = JSONException.method10464(var18);
                   var28.method10462("passes[" + var25 + "]");
                   throw var28;
                }
@@ -87,7 +88,7 @@ public class Class1647 implements AutoCloseable {
             var7 = "";
          }
 
-         Class2455 var8 = Class2455.method10464(var20);
+         JSONException var8 = JSONException.method10464(var20);
          var8.method10463(var2.method8292() + var7);
          throw var8;
       } finally {
@@ -95,14 +96,14 @@ public class Class1647 implements AutoCloseable {
       }
    }
 
-   private void method6518(JsonElement var1) throws Class2455 {
+   private void method6518(JsonElement var1) throws JSONException {
       if (!Class8963.method32756(var1)) {
          JsonObject var4 = Class8963.method32781(var1, "target");
          String var5 = Class8963.method32763(var4, "name");
          int var6 = Class8963.method32778(var4, "width", this.field8943);
          int var7 = Class8963.method32778(var4, "height", this.field8944);
          if (this.field8940.containsKey(var5)) {
-            throw new Class2455(var5 + " is already defined");
+            throw new JSONException(var5 + " is already defined");
          }
 
          this.method6522(var5, var6, var7);
@@ -119,9 +120,9 @@ public class Class1647 implements AutoCloseable {
       Framebuffer var9 = this.method6528(var7);
       Framebuffer var10 = this.method6528(var8);
       if (var9 == null) {
-         throw new Class2455("Input target '" + var7 + "' does not exist");
+         throw new JSONException("Input target '" + var7 + "' does not exist");
       } else if (var10 == null) {
-         throw new Class2455("Output target '" + var8 + "' does not exist");
+         throw new JSONException("Output target '" + var8 + "' does not exist");
       } else {
          Class1706 var11 = this.method6523(var6, var9, var10);
          JsonArray var12 = Class8963.method32786(var5, "auxtargets", (JsonArray)null);
@@ -146,7 +147,7 @@ public class Class1647 implements AutoCloseable {
                   Framebuffer var21 = this.method6528(var20);
                   if (var21 == null) {
                      if (var19) {
-                        throw new Class2455("Render target '" + var20 + "' can't be used as depth buffer");
+                        throw new JSONException("Render target '" + var20 + "' can't be used as depth buffer");
                      }
 
                      ResourceLocation var22 = new ResourceLocation("textures/effect/" + var20 + ".png");
@@ -155,7 +156,7 @@ public class Class1647 implements AutoCloseable {
                      try {
                         var23 = this.field8937.method580(var22);
                      } catch (FileNotFoundException var33) {
-                        throw new Class2455("Render target or texture '" + var20 + "' does not exist");
+                        throw new JSONException("Render target or texture '" + var20 + "' does not exist");
                      } finally {
                         IOUtils.closeQuietly(var23);
                      }
@@ -180,7 +181,7 @@ public class Class1647 implements AutoCloseable {
                      var11.method7407(var40, var21::method29120, var21.field35730, var21.field35731);
                   }
                } catch (Exception var35) {
-                  Class2455 var17 = Class2455.method10464(var35);
+                  JSONException var17 = JSONException.method10464(var35);
                   var17.method10462("auxtargets[" + var13 + "]");
                   throw var17;
                }
@@ -197,7 +198,7 @@ public class Class1647 implements AutoCloseable {
                try {
                   this.method6520(var39);
                } catch (Exception var32) {
-                  Class2455 var41 = Class2455.method10464(var32);
+                  JSONException var41 = JSONException.method10464(var32);
                   var41.method10462("uniforms[" + var37 + "]");
                   throw var41;
                }
@@ -208,12 +209,12 @@ public class Class1647 implements AutoCloseable {
       }
    }
 
-   private void method6520(JsonElement var1) throws Class2455 {
+   private void method6520(JsonElement var1) throws JSONException {
       JsonObject var4 = Class8963.method32781(var1, "uniform");
       String var5 = Class8963.method32763(var4, "name");
       Class1708 var6 = this.field8939.get(this.field8939.size() - 1).method7410().method7936(var5);
       if (var6 == null) {
-         throw new Class2455("Uniform '" + var5 + "' does not exist");
+         throw new JSONException("Uniform '" + var5 + "' does not exist");
       } else {
          float[] var7 = new float[4];
          int var8 = 0;
@@ -222,7 +223,7 @@ public class Class1647 implements AutoCloseable {
             try {
                var7[var8] = Class8963.method32770(var10, "value");
             } catch (Exception var13) {
-               Class2455 var12 = Class2455.method10464(var13);
+               JSONException var12 = JSONException.method10464(var13);
                var12.method10462("values[" + var8 + "]");
                throw var12;
             }

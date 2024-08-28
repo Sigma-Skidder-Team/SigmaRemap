@@ -15,7 +15,7 @@ public class SoundManager {
 
     public void play(String url) {
         if (!VALID_SOUNDS.contains(url)) {
-            Client.getInstance().getLogger().method20357("Invalid audio file attempted to be played: " + url);
+            Client.getInstance().getLogger().warn("Invalid audio file attempted to be played: " + url);
         } else {
             InputStream var4 = ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/audio/" + url + fileType);
             if (SOUNDS.containsKey(url) && SOUNDS.get(url).method10520()) {

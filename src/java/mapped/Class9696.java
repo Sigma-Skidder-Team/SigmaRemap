@@ -40,13 +40,13 @@ public class Class9696 {
       .setConnectTimeout((int)TimeUnit.SECONDS.toMillis(15L))
       .build();
 
-   public Class9696(File var1, long var2, int var4, Class6133 var5, Class6974 var6, String var7, Class7424 var8) {
+   public Class9696(File var1, long var2, int var4, Class6133 var5, Session var6, String var7, Class7424 var8) {
       this.field45318 = var1;
       this.field45319 = var2;
       this.field45320 = var4;
       this.field45321 = var5;
-      this.field45322 = var6.method21524();
-      this.field45323 = var6.method21526();
+      this.field45322 = var6.toString();
+      this.field45323 = var6.getUsername();
       this.field45324 = var7;
       this.field45325 = var8;
    }

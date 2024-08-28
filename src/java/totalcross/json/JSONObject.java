@@ -1,4 +1,6 @@
-package mapped;
+package totalcross.json;
+
+import mapped.*;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -19,58 +21,100 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 public class JSONObject {
-   private final Map<String, Object> field30341 = new HashMap<String, Object>();
-   public static final Object field30342 = new Class9527();
+   private final Map<String, Object> map = new HashMap<String, Object>();
+   public static final Object NULL = new Null();
+
+   /**
+    * JSONObject.NULL is equivalent to the value that JavaScript calls null,
+    * whilst Java's null is equivalent to the value that JavaScript calls
+    * undefined.
+    */
+   private static final class Null {
+
+      /**
+       * There is only intended to be a single instance of the NULL object,
+       * so the clone method returns itself.
+       *
+       * @return NULL.
+       */
+      @Override
+      protected final Object clone() {
+         return this;
+      }
+
+      /**
+       * A Null object is equal to the null value and to itself.
+       *
+       * @param object
+       *            An object to test for nullness.
+       * @return true if the object parameter is the JSONObject.NULL object or
+       *         null.
+       */
+      @Override
+      public boolean equals(Object object) {
+         return object == null || object == this;
+      }
+
+      /**
+       * Get the "null" string value.
+       *
+       * @return The string "null".
+       */
+      @Override
+      public String toString() {
+         return "null";
+      }
+   }
 
    public JSONObject() {
    }
 
-   public JSONObject(JSONObject var1, String[] var2) {
+   public JSONObject(JSONObject jo, String[] names) {
       this();
 
-      for (int var5 = 0; var5 < var2.length; var5++) {
+      for (int i = 0; i < names.length; i++) {
          try {
-            this.method21807(var2[var5], var1.method21782(var2[var5]));
+            this.putOnce(names[i], jo.opt(names[i]));
          } catch (Exception var7) {
          }
       }
    }
 
-   public JSONObject(Class7475 var1) throws Class2455 {
+   public JSONObject(JSONTokener var1) throws JSONException {
       this();
-      if (var1.method24224() != '{') {
-         throw var1.method24230("A JSONObject text must begin with '{'");
+      if (var1.nextClean() != '{') {
+         throw var1.syntaxError("A JSONObject text must begin with '{'");
       } else {
          while (true) {
-            char var4 = var1.method24224();
+            char var4 = var1.nextClean();
             switch (var4) {
                case '\u0000':
-                  throw var1.method24230("A JSONObject text must end with '}'");
+                  throw var1.syntaxError("A JSONObject text must end with '}'");
                case '}':
                   return;
             }
 
-            var1.method24217();
-            String var5 = var1.method24228().toString();
-            var4 = var1.method24224();
+            var1.back();
+            String var5 = var1.nextValue().toString();
+            var4 = var1.nextClean();
             if (var4 != ':') {
-               throw var1.method24230("Expected a ':' after a key");
+               throw var1.syntaxError("Expected a ':' after a key");
             }
 
-            this.method21807(var5, var1.method24228());
-            switch (var1.method24224()) {
+            this.putOnce(var5, var1.nextValue());
+            switch (var1.nextClean()) {
                case ',':
                case ';':
-                  if (var1.method24224() == '}') {
+                  if (var1.nextClean() == '}') {
                      return;
                   }
 
-                  var1.method24217();
+                  var1.back();
                   break;
                case '}':
                   return;
                default:
-                  throw var1.method24230("Expected a ',' or '}'");
+                  throw var1.syntaxError("Expected a ',' or '}'");
             }
          }
       }
@@ -81,7 +125,7 @@ public class JSONObject {
          for (Entry var5 : var1.entrySet()) {
             Object var6 = var5.getValue();
             if (var6 != null) {
-               this.field30341.put(String.valueOf(var5.getKey()), method21817(var6));
+               this.map.put(String.valueOf(var5.getKey()), wrap(var6));
             }
          }
       }
@@ -106,11 +150,11 @@ public class JSONObject {
       }
    }
 
-   public JSONObject(String var1) throws Class2455 {
-      this(new Class7475(var1));
+   public JSONObject(String var1) throws JSONException {
+      this(new JSONTokener(var1));
    }
 
-   public JSONObject(String var1, Locale var2) throws Class2499 {
+   public JSONObject(String var1, Locale var2) throws JSONException2 {
       this();
       ResourceBundle var5 = ResourceBundle.getBundle(var1, var2, Thread.currentThread().getContextClassLoader());
       Enumeration var6 = var5.getKeys();
@@ -127,44 +171,44 @@ public class JSONObject {
                JSONObject var13 = var10.method21794(var12);
                if (var13 == null) {
                   var13 = new JSONObject();
-                  var10.method21806(var12, var13);
+                  var10.put(var12, var13);
                }
 
                var10 = var13;
             }
 
-            var10.method21806(var8[var9], var5.getString((String)var7));
+            var10.put(var8[var9], var5.getString((String)var7));
          }
       }
    }
 
-   public JSONObject method21758(String var1, Object var2) throws Class2499 {
-      method21814(var2);
-      Object var5 = this.method21782(var1);
+   public JSONObject method21758(String var1, Object var2) throws JSONException2 {
+      testValidity(var2);
+      Object var5 = this.opt(var1);
       if (var5 != null) {
-         if (!(var5 instanceof Class2344)) {
-            this.method21806(var1, new Class2344().method9158(var5).method9158(var2));
+         if (!(var5 instanceof JSONArray)) {
+            this.put(var1, new JSONArray().put(var5).put(var2));
          } else {
-            ((Class2344)var5).method9158(var2);
+            ((JSONArray)var5).put(var2);
          }
       } else {
-         this.method21806(var1, !(var2 instanceof Class2344) ? var2 : new Class2344().method9158(var2));
+         this.put(var1, !(var2 instanceof JSONArray) ? var2 : new JSONArray().put(var2));
       }
 
       return this;
    }
 
-   public JSONObject method21759(String var1, Object var2) throws Class2499 {
-      method21814(var2);
-      Object var5 = this.method21782(var1);
+   public JSONObject method21759(String var1, Object var2) throws JSONException2 {
+      testValidity(var2);
+      Object var5 = this.opt(var1);
       if (var5 != null) {
-         if (!(var5 instanceof Class2344)) {
-            throw new Class2499("JSONObject[" + var1 + "] is not a JSONArray.");
+         if (!(var5 instanceof JSONArray)) {
+            throw new JSONException2("JSONObject[" + var1 + "] is not a JSONArray.");
          }
 
-         this.method21806(var1, ((Class2344)var5).method9158(var2));
+         this.put(var1, ((JSONArray)var5).put(var2));
       } else {
-         this.method21806(var1, new Class2344().method9158(var2));
+         this.put(var1, new JSONArray().put(var2));
       }
 
       return this;
@@ -191,31 +235,31 @@ public class JSONObject {
 
    public Object method21761(String var1) {
       if (var1 != null) {
-         Object var4 = this.method21782(var1);
+         Object var4 = this.opt(var1);
          if (var4 != null) {
             return var4;
          } else {
-            throw new Class2499("JSONObject[" + method21809(var1) + "] not found.");
+            throw new JSONException2("JSONObject[" + method21809(var1) + "] not found.");
          }
       } else {
-         throw new Class2499("Null key.");
+         throw new JSONException2("Null key.");
       }
    }
 
-   public <E extends Enum<E>> E method21762(Class<E> var1, String var2) throws Class2499 {
+   public <E extends Enum<E>> E method21762(Class<E> var1, String var2) throws JSONException2 {
       Enum<E> var5 = this.method21783(var1, var2);
       if (var5 != null) {
          return (E)var5;
       } else {
-         throw new Class2499("JSONObject[" + method21809(var2) + "] is not an enum of type " + method21809(var1.getSimpleName()) + ".");
+         throw new JSONException2("JSONObject[" + method21809(var2) + "] is not an enum of type " + method21809(var1.getSimpleName()) + ".");
       }
    }
 
-   public boolean method21763(String var1) throws Class2499 {
+   public boolean method21763(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
       if (!var4.equals(Boolean.FALSE) && (!(var4 instanceof String) || !((String)var4).equalsIgnoreCase("false"))) {
          if (!var4.equals(Boolean.TRUE) && (!(var4 instanceof String) || !((String)var4).equalsIgnoreCase("true"))) {
-            throw new Class2499("JSONObject[" + method21809(var1) + "] is not a Boolean.");
+            throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a Boolean.");
          } else {
             return true;
          }
@@ -224,71 +268,71 @@ public class JSONObject {
       }
    }
 
-   public BigInteger method21764(String var1) throws Class2499 {
+   public BigInteger method21764(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
 
       try {
          return new BigInteger(var4.toString());
       } catch (Exception var6) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] could not be converted to BigInteger.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] could not be converted to BigInteger.");
       }
    }
 
-   public BigDecimal method21765(String var1) throws Class2499 {
+   public BigDecimal method21765(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
 
       try {
          return new BigDecimal(var4.toString());
       } catch (Exception var6) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] could not be converted to BigDecimal.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] could not be converted to BigDecimal.");
       }
    }
 
-   public double method21766(String var1) throws Class2499 {
+   public double method21766(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
 
       try {
          return var4 instanceof Number ? ((Number)var4).doubleValue() : Double.parseDouble((String)var4);
       } catch (Exception var6) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] is not a number.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a number.");
       }
    }
 
-   public int method21767(String var1) throws Class2499 {
+   public int method21767(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
 
       try {
          return var4 instanceof Number ? ((Number)var4).intValue() : Integer.parseInt((String)var4);
       } catch (Exception var6) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] is not an int.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not an int.");
       }
    }
 
-   public Class2344 method21768(String var1) throws Class2499 {
+   public JSONArray getJSONArray(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
-      if (!(var4 instanceof Class2344)) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] is not a JSONArray.");
+      if (!(var4 instanceof JSONArray)) {
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a JSONArray.");
       } else {
-         return (Class2344)var4;
+         return (JSONArray)var4;
       }
    }
 
-   public JSONObject method21769(String var1) throws Class2499 {
+   public JSONObject method21769(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
       if (!(var4 instanceof JSONObject)) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] is not a JSONObject.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a JSONObject.");
       } else {
          return (JSONObject)var4;
       }
    }
 
-   public long method21770(String var1) throws Class2499 {
+   public long method21770(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
 
       try {
          return var4 instanceof Number ? ((Number)var4).longValue() : Long.parseLong((String)var4);
       } catch (Exception var6) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] is not a long.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a long.");
       }
    }
 
@@ -329,21 +373,21 @@ public class JSONObject {
       }
    }
 
-   public String method21773(String var1) throws Class2499 {
+   public String method21773(String var1) throws JSONException2 {
       Object var4 = this.method21761(var1);
       if (!(var4 instanceof String)) {
-         throw new Class2499("JSONObject[" + method21809(var1) + "] not a string.");
+         throw new JSONException2("JSONObject[" + method21809(var1) + "] not a string.");
       } else {
          return (String)var4;
       }
    }
 
    public boolean has(String var1) {
-      return this.field30341.containsKey(var1);
+      return this.map.containsKey(var1);
    }
 
-   public JSONObject method21775(String var1) throws Class2499 {
-      Object var4 = this.method21782(var1);
+   public JSONObject method21775(String var1) throws JSONException2 {
+      Object var4 = this.opt(var1);
       if (var4 != null) {
          if (!(var4 instanceof BigInteger)) {
             if (!(var4 instanceof BigDecimal)) {
@@ -351,7 +395,7 @@ public class JSONObject {
                   if (!(var4 instanceof Long)) {
                      if (!(var4 instanceof Double)) {
                         if (!(var4 instanceof Float)) {
-                           throw new Class2499("Unable to increment [" + method21809(var1) + "].");
+                           throw new JSONException2("Unable to increment [" + method21809(var1) + "].");
                         }
 
                         this.method21802(var1, (double)((Float)var4 + 1.0F));
@@ -359,26 +403,26 @@ public class JSONObject {
                         this.method21802(var1, (Double)var4 + 1.0);
                      }
                   } else {
-                     this.method21804(var1, (Long)var4 + 1L);
+                     this.put(var1, (Long)var4 + 1L);
                   }
                } else {
-                  this.method21803(var1, (Integer)var4 + 1);
+                  this.put(var1, (Integer)var4 + 1);
                }
             } else {
-               this.method21806(var1, ((BigDecimal)var4).add(BigDecimal.ONE));
+               this.put(var1, ((BigDecimal)var4).add(BigDecimal.ONE));
             }
          } else {
-            this.method21806(var1, ((BigInteger)var4).add(BigInteger.ONE));
+            this.put(var1, ((BigInteger)var4).add(BigInteger.ONE));
          }
       } else {
-         this.method21803(var1, 1);
+         this.put(var1, 1);
       }
 
       return this;
    }
 
    public boolean method21776(String var1) {
-      return field30342.equals(this.method21782(var1));
+      return NULL.equals(this.opt(var1));
    }
 
    public Iterator<String> method21777() {
@@ -386,29 +430,29 @@ public class JSONObject {
    }
 
    public Set<String> method21778() {
-      return this.field30341.keySet();
+      return this.map.keySet();
    }
 
    public int method21779() {
-      return this.field30341.size();
+      return this.map.size();
    }
 
-   public Class2344 method21780() {
-      Class2344 var3 = new Class2344();
+   public JSONArray method21780() {
+      JSONArray var3 = new JSONArray();
       Iterator var4 = this.method21777();
 
       while (var4.hasNext()) {
-         var3.method9158(var4.next());
+         var3.put(var4.next());
       }
 
-      return var3.method9134() != 0 ? var3 : null;
+      return var3.length() != 0 ? var3 : null;
    }
 
-   public static String method21781(Number var0) throws Class2499 {
+   public static String method21781(Number var0) throws JSONException2 {
       if (var0 == null) {
-         throw new Class2499("Null pointer");
+         throw new JSONException2("Null pointer");
       } else {
-         method21814(var0);
+         testValidity(var0);
          String var3 = var0.toString();
          if (var3.indexOf(46) > 0 && var3.indexOf(101) < 0 && var3.indexOf(69) < 0) {
             while (var3.endsWith("0")) {
@@ -424,8 +468,8 @@ public class JSONObject {
       }
    }
 
-   public Object method21782(String var1) {
-      return var1 != null ? this.field30341.get(var1) : null;
+   public Object opt(String var1) {
+      return var1 != null ? this.map.get(var1) : null;
    }
 
    public <E extends Enum<E>> E method21783(Class<E> var1, String var2) {
@@ -434,8 +478,8 @@ public class JSONObject {
 
    public <E extends Enum<E>> E method21784(Class<E> var1, String var2, E var3) {
       try {
-         Object var6 = this.method21782(var2);
-         if (field30342.equals(var6)) {
+         Object var6 = this.opt(var2);
+         if (NULL.equals(var6)) {
             return (E)var3;
          } else {
             return (E)(var1.isAssignableFrom(var6.getClass()) ? var6 : Enum.<E>valueOf(var1, var6.toString()));
@@ -497,13 +541,13 @@ public class JSONObject {
       }
    }
 
-   public Class2344 method21793(String var1) {
-      Object var4 = this.method21782(var1);
-      return !(var4 instanceof Class2344) ? null : (Class2344)var4;
+   public JSONArray method21793(String var1) {
+      Object var4 = this.opt(var1);
+      return !(var4 instanceof JSONArray) ? null : (JSONArray)var4;
    }
 
    public JSONObject method21794(String var1) {
-      Object var4 = this.method21782(var1);
+      Object var4 = this.opt(var1);
       return !(var4 instanceof JSONObject) ? null : (JSONObject)var4;
    }
 
@@ -524,8 +568,8 @@ public class JSONObject {
    }
 
    public String method21798(String var1, String var2) {
-      Object var5 = this.method21782(var1);
-      return !field30342.equals(var5) ? var5.toString() : var2;
+      Object var5 = this.opt(var1);
+      return ! NULL.equals(var5) ? var5.toString() : var2;
    }
 
    private void method21799(Object var1) {
@@ -558,7 +602,7 @@ public class JSONObject {
 
                   Object var11 = var8.invoke(var1, (Object[])null);
                   if (var11 != null) {
-                     this.field30341.put(var10, method21817(var11));
+                     this.map.put(var10, wrap(var11));
                   }
                }
             }
@@ -568,42 +612,42 @@ public class JSONObject {
    }
 
    public JSONObject method21800(String var1, boolean var2) {
-      this.method21806(var1, !var2 ? Boolean.FALSE : Boolean.TRUE);
+      this.put(var1, !var2 ? Boolean.FALSE : Boolean.TRUE);
       return this;
    }
 
    public JSONObject method21801(String var1, Collection<?> var2) {
-      this.method21806(var1, new Class2344(var2));
+      this.put(var1, new JSONArray(var2));
       return this;
    }
 
    public JSONObject method21802(String var1, double var2) {
-      this.method21806(var1, new Double(var2));
+      this.put(var1, new Double(var2));
       return this;
    }
 
-   public JSONObject method21803(String var1, int var2) {
-      this.method21806(var1, new Integer(var2));
+   public JSONObject put(String key, int value) {
+      this.put(key, new Integer(value));
       return this;
    }
 
-   public JSONObject method21804(String var1, long var2) {
-      this.method21806(var1, new Long(var2));
+   public JSONObject put(String key, long value) {
+      this.put(key, new Long(value));
       return this;
    }
 
-   public JSONObject method21805(String var1, Map<?, ?> var2) throws Class2499 {
-      this.method21806(var1, new JSONObject(var2));
+   public JSONObject method21805(String var1, Map<?, ?> var2) throws JSONException2 {
+      this.put(var1, new JSONObject(var2));
       return this;
    }
 
-   public JSONObject method21806(String var1, Object var2) {
-      if (var1 != null) {
-         if (var2 == null) {
-            this.method21811(var1);
+   public JSONObject put(String key, Object object) {
+      if (key != null) {
+         if (object == null) {
+            this.remove(key);
          } else {
-            method21814(var2);
-            this.field30341.put(var1, var2);
+            testValidity(object);
+            this.map.put(key, object);
          }
 
          return this;
@@ -612,21 +656,21 @@ public class JSONObject {
       }
    }
 
-   public JSONObject method21807(String var1, Object var2) throws Class2499 {
+   public JSONObject putOnce(String var1, Object var2) throws JSONException2 {
       if (var1 != null && var2 != null) {
-         if (this.method21782(var1) != null) {
-            throw new Class2499("Duplicate key \"" + var1 + "\"");
+         if (this.opt(var1) != null) {
+            throw new JSONException2("Duplicate key \"" + var1 + "\"");
          }
 
-         this.method21806(var1, var2);
+         this.put(var1, var2);
       }
 
       return this;
    }
 
-   public JSONObject method21808(String var1, Object var2) throws Class2499 {
+   public JSONObject method21808(String var1, Object var2) throws JSONException2 {
       if (var1 != null && var2 != null) {
-         this.method21806(var1, var2);
+         this.put(var1, var2);
       }
 
       return this;
@@ -703,8 +747,8 @@ public class JSONObject {
       }
    }
 
-   public Object method21811(String var1) {
-      return this.field30341.remove(var1);
+   public Object remove(String var1) {
+      return this.map.remove(var1);
    }
 
    public boolean method21812(Object var1) {
@@ -723,8 +767,8 @@ public class JSONObject {
                      if (!((JSONObject)var7).method21812(var8)) {
                         return false;
                      }
-                  } else if (var7 instanceof Class2344) {
-                     if (!((Class2344)var7).method9167(var8)) {
+                  } else if (var7 instanceof JSONArray) {
+                     if (!((JSONArray)var7).method9167(var8)) {
                         return false;
                      }
                   } else if (!var7.equals(var8)) {
@@ -748,7 +792,7 @@ public class JSONObject {
       } else if (var0.equalsIgnoreCase("false")) {
          return Boolean.FALSE;
       } else if (var0.equalsIgnoreCase("null")) {
-         return field30342;
+         return NULL;
       } else {
          char var3 = var0.charAt(0);
          if (var3 >= '0' && var3 <= '9' || var3 == '-') {
@@ -776,24 +820,24 @@ public class JSONObject {
       }
    }
 
-   public static void method21814(Object var0) {
+   public static void testValidity(Object var0) {
       if (var0 != null) {
          if (!(var0 instanceof Double)) {
             if (var0 instanceof Float && (((Float)var0).isInfinite() || ((Float)var0).isNaN())) {
-               throw new Class2499("JSON does not allow non-finite numbers.");
+               throw new JSONException2("JSON does not allow non-finite numbers.");
             }
          } else if (((Double)var0).isInfinite() || ((Double)var0).isNaN()) {
-            throw new Class2499("JSON does not allow non-finite numbers.");
+            throw new JSONException2("JSON does not allow non-finite numbers.");
          }
       }
    }
 
-   public Class2344 method21815(Class2344 var1) throws Class2455 {
-      if (var1 != null && var1.method9134() != 0) {
-         Class2344 var4 = new Class2344();
+   public JSONArray method21815(JSONArray var1) throws JSONException {
+      if (var1 != null && var1.length() != 0) {
+         JSONArray var4 = new JSONArray();
 
-         for (int var5 = 0; var5 < var1.method9134(); var5++) {
-            var4.method9158(this.method21782(var1.method9131(var5)));
+         for (int var5 = 0; var5 < var1.length(); var5++) {
+            var4.put(this.opt(var1.getString(var5)));
          }
 
          return var4;
@@ -811,14 +855,14 @@ public class JSONObject {
       }
    }
 
-   public String toString(int var1) throws Class2499 {
+   public String toString(int var1) throws JSONException2 {
       StringWriter var4 = new StringWriter();
       synchronized (var4.getBuffer()) {
          return this.method21821(var4, var1, 0).toString();
       }
    }
 
-   public static String method21816(Object var0) throws Class2455 {
+   public static String method21816(Object var0) throws JSONException {
       if (var0 == null || var0.equals(null)) {
          return "null";
       } else if (var0 instanceof Class9093) {
@@ -826,36 +870,36 @@ public class JSONObject {
          try {
             var7 = ((Class9093)var0).method33920();
          } catch (Exception var5) {
-            throw new Class2499(var5);
+            throw new JSONException2(var5);
          }
 
          if (var7 instanceof String) {
             return var7;
          } else {
-            throw new Class2499("Bad value from toJSONString: " + var7);
+            throw new JSONException2("Bad value from toJSONString: " + var7);
          }
       } else if (var0 instanceof Number) {
          return method21781((Number)var0);
-      } else if (var0 instanceof Boolean || var0 instanceof JSONObject || var0 instanceof Class2344) {
+      } else if (var0 instanceof Boolean || var0 instanceof JSONObject || var0 instanceof JSONArray) {
          return var0.toString();
       } else if (var0 instanceof Map) {
          Map var6 = (Map)var0;
          return new JSONObject(var6).toString();
       } else if (var0 instanceof Collection) {
          Collection var3 = (Collection)var0;
-         return new Class2344(var3).toString();
+         return new JSONArray(var3).toString();
       } else {
-         return var0.getClass().isArray() ? new Class2344(var0).toString() : method21809(var0.toString());
+         return var0.getClass().isArray() ? new JSONArray(var0).toString() : method21809(var0.toString());
       }
    }
 
-   public static Object method21817(Object var0) {
+   public static Object wrap(Object var0) {
       try {
          if (var0 == null) {
-            return field30342;
+            return NULL;
          } else if (var0 instanceof JSONObject
-            || var0 instanceof Class2344
-            || field30342.equals(var0)
+            || var0 instanceof JSONArray
+            || NULL.equals(var0)
             || var0 instanceof Class9093
             || var0 instanceof Byte
             || var0 instanceof Character
@@ -871,9 +915,9 @@ public class JSONObject {
             return var0;
          } else if (var0 instanceof Collection) {
             Collection var7 = (Collection)var0;
-            return new Class2344(var7);
+            return new JSONArray(var7);
          } else if (var0.getClass().isArray()) {
-            return new Class2344(var0);
+            return new JSONArray(var0);
          } else if (var0 instanceof Map) {
             Map var6 = (Map)var0;
             return new JSONObject(var6);
@@ -887,25 +931,25 @@ public class JSONObject {
       }
    }
 
-   public Writer method21818(Writer var1) throws Class2499 {
+   public Writer method21818(Writer var1) throws JSONException2 {
       return this.method21821(var1, 0, 0);
    }
 
-   public static final Writer method21819(Writer var0, Object var1, int var2, int var3) throws Class2499, IOException {
+   public static final Writer method21819(Writer var0, Object var1, int var2, int var3) throws JSONException2, IOException {
       if (var1 == null || var1.equals(null)) {
          var0.write("null");
       } else if (var1 instanceof JSONObject) {
          ((JSONObject)var1).method21821(var0, var2, var3);
-      } else if (var1 instanceof Class2344) {
-         ((Class2344)var1).method9170(var0, var2, var3);
+      } else if (var1 instanceof JSONArray) {
+         ((JSONArray)var1).method9170(var0, var2, var3);
       } else if (var1 instanceof Map) {
          Map var6 = (Map)var1;
          new JSONObject(var6).method21821(var0, var2, var3);
       } else if (var1 instanceof Collection) {
          Collection var9 = (Collection)var1;
-         new Class2344(var9).method9170(var0, var2, var3);
+         new JSONArray(var9).method9170(var0, var2, var3);
       } else if (var1.getClass().isArray()) {
-         new Class2344(var1).method9170(var0, var2, var3);
+         new JSONArray(var1).method9170(var0, var2, var3);
       } else if (var1 instanceof Number) {
          var0.write(method21781((Number)var1));
       } else if (var1 instanceof Boolean) {
@@ -915,7 +959,7 @@ public class JSONObject {
          try {
             var10 = ((Class9093)var1).method33920();
          } catch (Exception var8) {
-            throw new Class2499(var8);
+            throw new JSONException2(var8);
          }
 
          var0.write(var10 != null ? var10.toString() : method21809(var1.toString()));
@@ -932,7 +976,7 @@ public class JSONObject {
       }
    }
 
-   public Writer method21821(Writer var1, int var2, int var3) throws Class2499 {
+   public Writer method21821(Writer var1, int var2, int var3) throws JSONException2 {
       try {
          boolean var6 = false;
          int var7 = this.method21779();
@@ -946,7 +990,7 @@ public class JSONObject {
                var1.write(32);
             }
 
-            method21819(var1, this.field30341.get(var9), var2, var3);
+            method21819(var1, this.map.get(var9), var2, var3);
          } else if (var7 != 0) {
             for (int var12 = var3 + var2; var8.hasNext(); var6 = true) {
                Object var10 = var8.next();
@@ -965,7 +1009,7 @@ public class JSONObject {
                   var1.write(32);
                }
 
-               method21819(var1, this.field30341.get(var10), var2, var12);
+               method21819(var1, this.map.get(var10), var2, var12);
             }
 
             if (var2 > 0) {
@@ -978,7 +1022,7 @@ public class JSONObject {
          var1.write(125);
          return var1;
       } catch (IOException var11) {
-         throw new Class2499(var11);
+         throw new JSONException2(var11);
       }
    }
 }

@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.timer.Timer;
+import totalcross.json.JSONObject;
 
 public class Class4292 extends Class4278 implements Class4293 {
    public int field20793;
@@ -121,7 +122,7 @@ public class Class4292 extends Class4278 implements Class4293 {
 
    @Override
    public JSONObject method13160(JSONObject var1) {
-      var1.method21803("offset", this.field20793);
+      var1.put("offset", this.field20793);
       return super.method13160(var1);
    }
 

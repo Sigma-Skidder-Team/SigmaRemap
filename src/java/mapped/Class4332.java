@@ -37,8 +37,8 @@ public class Class4332 extends Class4305 {
             (var1x, var2x) -> {
                Account var5 = Client.getInstance()
                   .getAccountManager()
-                  .method36775()
-                  .get(new Random().nextInt(Client.getInstance().getAccountManager().method36775().size()));
+                  .getAccounts()
+                  .get(new Random().nextInt(Client.getInstance().getAccountManager().getAccounts().size()));
                var10.method13399(var5);
             }
          );

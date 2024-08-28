@@ -2,6 +2,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,18 +19,18 @@ public class Class6003 extends Class6001<List<String>> {
 
    @Override
    public JSONObject method18611(JSONObject var1) {
-      var1.method21806("name", this.method18625());
-      var1.method21806("value", new Class2344(this.field26179));
+      var1.put("name", this.method18625());
+      var1.put("value", new JSONArray(this.field26179));
       return var1;
    }
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      Class2344 var4 = Class8000.method27332(var1, "value");
+      JSONArray var4 = Class8000.method27332(var1, "value");
       this.field26179 = new ArrayList<String>();
       if (var4 != null) {
-         for (int var5 = 0; var5 < var4.method9134(); var5++) {
-            this.field26179.add(var4.method9131(var5));
+         for (int var5 = 0; var5 < var4.length(); var5++) {
+            this.field26179.add(var4.getString(var5));
          }
       }
 

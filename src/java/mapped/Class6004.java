@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONObject;
 
 public class Class6004 extends Class6001<Boolean> {
    public boolean field26186 = false;

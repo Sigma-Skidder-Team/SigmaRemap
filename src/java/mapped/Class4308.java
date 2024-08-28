@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.unmapped.Class4307;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;

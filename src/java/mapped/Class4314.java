@@ -31,14 +31,14 @@ public class Class4314 extends Class4307 {
       this.field21028.method13147("*");
       this.field21029.method13251((var2, var3) -> {
          if (this.field21027.method13303().length() > 0) {
-            if (!this.field21027.method13303().equals(var1.method34216())) {
-               var1.method34225(this.field21027.method13303());
+            if (!this.field21027.method13303().equals(var1.getEmail())) {
+               var1.setName(this.field21027.method13303());
             }
 
-            var1.method34222(this.field21027.method13303());
+            var1.setEmail(this.field21027.method13303());
          }
 
-         var1.method34221(this.field21028.method13303());
+         var1.setPassword(this.field21028.method13303());
          this.field21032 = "Edited!";
       });
       this.field21030.method13251((var0, var1x) -> Client.getInstance().getGuiManager().method33482(new Class4317()));

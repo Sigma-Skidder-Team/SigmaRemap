@@ -1,24 +1,27 @@
 package mapped;
 
+import totalcross.json.JSONException;
+import totalcross.json.JSONObject;
+import totalcross.json.JSONTokener;
+
 import java.util.Iterator;
-import org.json.JSONException;
 
 public class Class6637 {
-   public static JSONObject method20251(String var0) throws Class2455 {
+   public static JSONObject method20251(String var0) throws JSONException {
       JSONObject var3 = new JSONObject();
-      Class7475 var4 = new Class7475(var0);
+      JSONTokener var4 = new JSONTokener(var0);
 
       while (var4.method24220()) {
          String var5 = Class6873.method20930(var4.method24226('='));
          var4.method24222('=');
-         var3.method21806(var5, Class6873.method20930(var4.method24226(';')));
+         var3.put(var5, Class6873.method20930(var4.method24226(';')));
          var4.method24221();
       }
 
       return var3;
    }
 
-   public static String toString(JSONObject var0) throws Class2455 {
+   public static String toString(JSONObject var0) throws JSONException {
       boolean var3 = false;
       Iterator var4 = var0.method21777();
       StringBuilder var5 = new StringBuilder();

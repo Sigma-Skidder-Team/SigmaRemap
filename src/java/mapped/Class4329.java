@@ -7,11 +7,12 @@ import com.mentalfrostbyte.jello.unmapped.Class4305;
 import com.mentalfrostbyte.jello.unmapped.Class8603;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import totalcross.json.JSONArray;
 
 public class Class4329 extends Class4305 {
    public String field21135 = "";
    public Animation field21136 = new Animation(380, 200, Direction.BACKWARDS);
-   private static Class2344 field21137;
+   private static JSONArray field21137;
    private Class4281 field21138;
 
    public Class4329(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {

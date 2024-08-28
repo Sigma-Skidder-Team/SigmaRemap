@@ -39,11 +39,11 @@ public class Class4326 extends Class4307 {
          this.field21122 = "§bLogging in...";
          new Thread(() -> {
             Account var3x = new Account(this.field21116.method13303(), this.field21117.method13303());
-            if (!this.field21121.method36773(var3x)) {
+            if (!this.field21121.updateSelectedEmail(var3x)) {
                this.field21122 = "§cAlt failed!";
             } else {
-               this.field21121.method36768(var3x);
-               this.field21122 = "Alt added. (" + var3x.method34216() + (!var3x.method34240() ? "" : " - offline name") + ")";
+               this.field21121.updateAccount(var3x);
+               this.field21122 = "Alt added. (" + var3x.getEmail() + (!var3x.isEmailAValidEmailFormat() ? "" : " - offline name") + ")";
             }
          }).start();
       });

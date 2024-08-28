@@ -51,7 +51,7 @@ public class Class825 extends Class798 {
                String var4 = "https://aka.ms/ExtendJavaRealms?subscriptionId="
                   + this.field4553.field27444
                   + "&profileId="
-                  + this.field4562.method1533().method21525();
+                  + this.field4562.method1533().getPlayerID();
                this.field4562.field1302.method36350(var4);
                Util.getOSType().method8181(var4);
             }

@@ -18,7 +18,7 @@ public class Class5364 extends Module {
     @EventTarget
     public void method16883(Class4411 var1) {
         if (this.method15996()) {
-            var1.method13959(var1.method13958().replaceAll(mc.method1533().method21526(), this.getStringSettingValueByName("Username")));
+            var1.method13959(var1.method13958().replaceAll(mc.method1533().getUsername(), this.getStringSettingValueByName("Username")));
         }
     }
 
@@ -30,8 +30,8 @@ public class Class5364 extends Module {
                 Class5556 var5 = (Class5556) var4;
                 if (var5.method17476() == Class2073.field13503) {
                     String var6 = var5.method17473();
-                    if (var6.contains(mc.method1533().method21526())) {
-                        var6 = var6.replaceAll(mc.method1533().method21526(), this.getStringSettingValueByName("Username"));
+                    if (var6.contains(mc.method1533().getUsername())) {
+                        var6 = var6.replaceAll(mc.method1533().getUsername(), this.getStringSettingValueByName("Username"));
                         var1.method13899(new Class5556(var5.method17476(), var5.method17474(), var6, var5.method17475()));
                     }
                 }
@@ -49,8 +49,8 @@ public class Class5364 extends Module {
                     Class8790 var8 = (Class8790) var15.get(var7);
                     if (var8.method31729() != null) {
                         String var9 = var8.method31729().getString();
-                        if (var9.contains(mc.method1533().method21526())) {
-                            var9 = var9.replaceAll(mc.method1533().method21526(), this.getStringSettingValueByName("Username"));
+                        if (var9.contains(mc.method1533().getUsername())) {
+                            var9 = var9.replaceAll(mc.method1533().getUsername(), this.getStringSettingValueByName("Username"));
                             var8.field39530 = new StringTextComponent(var9);
                         }
                     }
@@ -66,8 +66,8 @@ public class Class5364 extends Module {
                 }
 
                 String var16 = var12.method17207().getString();
-                if (var16.contains(mc.method1533().method21526())) {
-                    var16 = var16.replaceAll(mc.method1533().method21526(), this.getStringSettingValueByName("Username"));
+                if (var16.contains(mc.method1533().getUsername())) {
+                    var16 = var16.replaceAll(mc.method1533().getUsername(), this.getStringSettingValueByName("Username"));
                     StringTextComponent var20 = new StringTextComponent(var16);
                     var12.field24289 = var20;
                 }
@@ -80,8 +80,8 @@ public class Class5364 extends Module {
                 }
 
                 String var18 = var13.method17570().getString();
-                if (var18.contains(mc.method1533().method21526())) {
-                    var18 = var18.replaceAll(mc.method1533().method21526(), this.getStringSettingValueByName("Username"));
+                if (var18.contains(mc.method1533().getUsername())) {
+                    var18 = var18.replaceAll(mc.method1533().getUsername(), this.getStringSettingValueByName("Username"));
                     StringTextComponent var21 = new StringTextComponent(var18);
                     var1.method13899(new Class5591(var13.method17569(), var21, var13.method17571(), var13.method17572(), var13.method17573()));
                 }

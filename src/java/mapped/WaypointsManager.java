@@ -22,7 +22,10 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.FileUtil;
+import totalcross.json.JSONArray;
 import org.lwjgl.BufferUtils;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 public class WaypointsManager {
    private Minecraft field36365 = Minecraft.getInstance();
@@ -69,19 +72,19 @@ public class WaypointsManager {
    public void method29991() {
       if (this.field36371 != null) {
          File var3 = new File(this.field36371 + "/waypoints.json");
-         Class2344 var4 = new Class2344();
+         JSONArray var4 = new JSONArray();
 
          for (Class8351 var6 : this.field36368) {
-            var4.method9158(var6.method29263());
+            var4.put(var6.method29263());
          }
 
          JSONObject var8 = new JSONObject();
-         var8.method21806("waypoints", var4);
+         var8.put("waypoints", var4);
 
          try {
-            FileUtil.method18362(var8, var3);
-         } catch (IOException | Class2499 var7) {
-            Client.getInstance().getLogger().method20358(var7.getMessage());
+            FileUtil.save(var8, var3);
+         } catch (IOException | JSONException2 var7) {
+            Client.getInstance().getLogger().error(var7.getMessage());
          }
       }
    }
@@ -90,12 +93,12 @@ public class WaypointsManager {
       File var3 = new File(this.field36371 + "/waypoints.json");
 
       try {
-         JSONObject var4 = FileUtil.method18363(var3);
+         JSONObject var4 = FileUtil.readFile(var3);
          if (!var4.has("waypoints")) {
-            var4.method21806("waypoints", new Class2344());
+            var4.put("waypoints", new JSONArray());
          }
 
-         for (Object var6 : var4.method21768("waypoints")) {
+         for (Object var6 : var4.getJSONArray("waypoints")) {
             this.field36368.add(new Class8351((JSONObject)var6));
          }
 

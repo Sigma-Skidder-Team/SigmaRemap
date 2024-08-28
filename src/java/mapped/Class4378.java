@@ -13,7 +13,9 @@ import com.thizzer.jtouchbar.item.TouchBarItem;
 import com.thizzer.jtouchbar.item.view.TouchBarButton;
 import com.thizzer.jtouchbar.item.view.TouchBarButton$ButtonType;
 import com.thizzer.jtouchbar.item.view.TouchBarTextField;
+import totalcross.json.JSONArray;
 import org.lwjgl.glfw.GLFWNativeCocoa;
+import totalcross.json.JSONObject;
 
 import java.util.*;
 
@@ -93,24 +95,24 @@ public class Class4378 {
    }
 
    public JSONObject method13731(JSONObject var1) {
-      Class2344 var4 = new Class2344();
+      JSONArray var4 = new JSONArray();
 
       for (Class7957 var6 : this.field21387) {
          if (var6.method27053() != -1 && var6.method27053() != 0) {
-            var4.method9158(var6.method27051());
+            var4.put(var6.method27051());
          }
       }
 
-      var1.method21806("keybinds", var4);
+      var1.put("keybinds", var4);
       return var1;
    }
 
    public void method13732(JSONObject var1) {
       if (var1.has("keybinds")) {
-         Class2344 var4 = var1.method21768("keybinds");
+         JSONArray var4 = var1.getJSONArray("keybinds");
 
-         for (int var5 = 0; var5 < var4.method9134(); var5++) {
-            JSONObject var6 = var4.method9129(var5);
+         for (int var5 = 0; var5 < var4.length(); var5++) {
+            JSONObject var6 = var4.getJSONObject(var5);
             Class7957 var7 = new Class7957(var6);
             if (var7.method27052()) {
                this.field21387.add(var7);

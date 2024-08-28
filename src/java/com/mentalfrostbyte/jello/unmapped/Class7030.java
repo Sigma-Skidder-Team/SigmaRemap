@@ -1,10 +1,10 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import mapped.Class2455;
-import mapped.JSONObject;
+import totalcross.json.JSONException;
+import totalcross.json.JSONObject;
 
 public class Class7030 extends JSONObject {
-    public Class7030(String var1) throws Class2455 {
+    public Class7030(String var1) throws JSONException {
         super(var1);
     }
 

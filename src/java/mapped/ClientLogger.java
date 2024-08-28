@@ -7,45 +7,48 @@ import com.mentalfrostbyte.jello.Client;
 import org.apache.commons.io.IOUtils;
 
 public class ClientLogger implements Logger {
-   public OutputStream field29273;
-   public OutputStream field29274;
-   public OutputStream field29275;
+   public OutputStream infoStream;
+   public OutputStream warningStream;
+   public OutputStream errorStream;
 
    public ClientLogger(OutputStream var1, OutputStream var2, OutputStream var3) {
-      this.field29273 = var1;
-      this.field29274 = var2;
-      this.field29275 = var3;
+      this.infoStream = var1;
+      this.warningStream = var2;
+      this.errorStream = var3;
    }
 
    @Override
-   public void info(String var1) {
+   public void info(String str) {
       try {
-         IOUtils.write("Jello: INFO - " + var1 + "\n", this.field29273);
+         IOUtils.write("Jello: INFO - " + str + "\n", this.infoStream);
       } catch (IOException var5) {
          var5.printStackTrace();
       }
    }
 
    @Override
-   public void method20357(String var1) {
+   public void warn(String str) {
       try {
-         IOUtils.write("Jello: WARNING - " + var1 + "\n", this.field29274);
+         IOUtils.write("Jello: WARNING - " + str + "\n", this.warningStream);
       } catch (IOException var5) {
          var5.printStackTrace();
       }
    }
 
    @Override
-   public void method20358(String var1) {
+   public void error(String str) {
       try {
-         IOUtils.write("Jello: ERROR - " + var1 + "\n", this.field29275);
+         IOUtils.write("Jello: ERROR - " + str + "\n", this.errorStream);
       } catch (IOException var5) {
          var5.printStackTrace();
       }
    }
 
+   /**
+    * wtf
+    */
    @Override
-   public void method20359(String var1) {
+   public void dummyMethod(String var1) {
       Client.getInstance();
    }
 }

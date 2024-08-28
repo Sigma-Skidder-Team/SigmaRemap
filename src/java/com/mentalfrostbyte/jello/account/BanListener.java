@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Class8606 {
+public class BanListener {
     public Minecraft field38719 = Minecraft.getInstance();
 
     @EventTarget
@@ -30,12 +30,12 @@ public class Class8606 {
                 if (!var4.method17648().getSiblings().isEmpty()
                         && var5.contains(var4.method17648().getString())
                         && var4.method17648().getSiblings().get(0).getStyle().getColor().toString().equalsIgnoreCase("red")) {
-                    Account var6 = Client.getInstance().getAccountManager().method36771();
+                    Account var6 = Client.getInstance().getAccountManager().containsAccount();
                     if (var6 != null) {
-                        Class8794 var7 = new Class8794(this.field38719.method1528().field33189, new Date(Long.MAX_VALUE));
-                        var6.method34223(var7);
-                        Client.getInstance().getAccountManager().method36768(var6);
-                        Client.getInstance().getAccountManager().method36776();
+                        Ban var7 = new Ban(this.field38719.method1528().field33189, new Date(Long.MAX_VALUE));
+                        var6.registerBan(var7);
+                        Client.getInstance().getAccountManager().updateAccount(var6);
+                        Client.getInstance().getAccountManager().saveAlts();
                     }
                 }
             }
@@ -48,12 +48,12 @@ public class Class8606 {
                             return;
                         }
 
-                        Class8794 var15 = new Class8794(this.field38719.method1528().field33189, new Date(var11));
-                        Account var16 = Client.getInstance().getAccountManager().method36771();
+                        Ban var15 = new Ban(this.field38719.method1528().field33189, new Date(var11));
+                        Account var16 = Client.getInstance().getAccountManager().containsAccount();
                         if (var16 != null) {
-                            var16.method34223(var15);
-                            Client.getInstance().getAccountManager().method36768(var16);
-                            Client.getInstance().getAccountManager().method36776();
+                            var16.registerBan(var15);
+                            Client.getInstance().getAccountManager().updateAccount(var16);
+                            Client.getInstance().getAccountManager().saveAlts();
                         }
                     }
                 } else {
@@ -63,12 +63,12 @@ public class Class8606 {
                         return;
                     }
 
-                    Class8794 var17 = new Class8794(this.field38719.method1528().field33189, new Date(var8));
-                    Account var10 = Client.getInstance().getAccountManager().method36771();
+                    Ban var17 = new Ban(this.field38719.method1528().field33189, new Date(var8));
+                    Account var10 = Client.getInstance().getAccountManager().containsAccount();
                     if (var10 != null) {
-                        var10.method34223(var17);
-                        Client.getInstance().getAccountManager().method36768(var10);
-                        Client.getInstance().getAccountManager().method36776();
+                        var10.registerBan(var17);
+                        Client.getInstance().getAccountManager().updateAccount(var10);
+                        Client.getInstance().getAccountManager().saveAlts();
                     }
                 }
             } else {
@@ -78,12 +78,12 @@ public class Class8606 {
                     return;
                 }
 
-                Class8794 var18 = new Class8794(this.field38719.method1528().field33189, new Date(var19));
-                Account var20 = Client.getInstance().getAccountManager().method36771();
+                Ban var18 = new Ban(this.field38719.method1528().field33189, new Date(var19));
+                Account var20 = Client.getInstance().getAccountManager().containsAccount();
                 if (var20 != null) {
-                    var20.method34223(var18);
-                    Client.getInstance().getAccountManager().method36768(var20);
-                    Client.getInstance().getAccountManager().method36776();
+                    var20.registerBan(var18);
+                    Client.getInstance().getAccountManager().updateAccount(var20);
+                    Client.getInstance().getAccountManager().saveAlts();
                 }
             }
         }

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import mapped.Class8000;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 
 public class Class6002 extends Class6001<Integer> {
     private final String[] field26184;

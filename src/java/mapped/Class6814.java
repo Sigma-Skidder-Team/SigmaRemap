@@ -12,6 +12,8 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.Class1537;
 import org.apache.commons.io.IOUtils;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 public class Class6814 {
    private List<Class7286> field29667 = new ArrayList<Class7286>();
@@ -77,8 +79,8 @@ public class Class6814 {
             if (var1 != null && var11.field31263.toLowerCase().equals(var1.toLowerCase())) {
                this.field29668 = var11;
             }
-         } catch (Class2499 var12) {
-            Client.getInstance().getLogger().method20357("Unable to load profile from " + var9.getName());
+         } catch (JSONException2 var12) {
+            Client.getInstance().getLogger().warn("Unable to load profile from " + var9.getName());
          }
       }
 
@@ -136,12 +138,12 @@ public class Class6814 {
       if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
          this.field29668.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
          this.field29668 = var1;
-         Client.getInstance().getConfig().method21806("profile", var1.field31263);
+         Client.getInstance().getConfig().put("profile", var1.field31263);
          Client.getInstance().getModuleManager().method14656(var1.field31262);
          Client.getInstance().method19924();
       } else {
          this.field29668.field31262 = var1.method22986();
-         Client.getInstance().getConfig().method21806("profile", "Classic");
+         Client.getInstance().getConfig().put("profile", "Classic");
          Client.getInstance().getModuleManager().method14656(var1.field31262);
          Client.getInstance().method19924();
       }

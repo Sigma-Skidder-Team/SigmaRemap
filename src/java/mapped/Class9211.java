@@ -22,7 +22,7 @@ public class Class9211 {
       if (!var5.contains(var2)) {
          var5.add(var2);
       } else {
-         Client.getInstance().getLogger().method20357("Registered the same method of the same instance twice. Was this intended?");
+         Client.getInstance().getLogger().warn("Registered the same method of the same instance twice. Was this intended?");
       }
    }
 

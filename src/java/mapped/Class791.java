@@ -64,7 +64,7 @@ public class Class791 extends Class789 {
       if (var8) {
          method1905(new Class817(this.field4139, this.field4140, this.field4138));
       } else if (var9) {
-         if (this.field4138.field27449.equals(Minecraft.getInstance().method1533().method21525())) {
+         if (this.field4138.field27449.equals(Minecraft.getInstance().method1533().getPlayerID())) {
             method1905(new Class819(this.field4139, this.field4140, this.field4138.field27443, this.field4138.field27455 == Class2049.field13370));
          } else {
             method1905(

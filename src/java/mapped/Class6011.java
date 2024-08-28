@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.Class2314;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONObject;
 
 public class Class6011 extends Class6001<String> {
    public Class6011(String var1, String var2, String var3) {

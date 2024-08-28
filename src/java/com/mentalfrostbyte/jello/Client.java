@@ -25,6 +25,7 @@ import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import mapped.*;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -91,7 +92,7 @@ public class Client {
                 this.file.mkdirs();
             }
 
-            this.config = FileUtil.method18363(new File(this.file + "/config.json"));
+            this.config = FileUtil.readFile(new File(this.file + "/config.json"));
         } catch (IOException var8) {
             var8.printStackTrace();
         }
@@ -122,7 +123,7 @@ public class Client {
         this.notificationManager = new NotificationManager();
         this.notificationManager.method31999();
         this.accountManager = new AccountManager();
-        this.accountManager.method36766();
+        this.accountManager.registerEvents();
         this.waypointsManager = new WaypointsManager();
         this.waypointsManager.method29988();
         this.field28981 = new Class8480();
@@ -185,9 +186,9 @@ public class Client {
                 this.eventManager.call(var3);
             }
 
-            FileUtil.method18362(var3.method13968(), new File(this.file + "/config.json"));
+            FileUtil.save(var3.method13968(), new File(this.file + "/config.json"));
         } catch (IOException var4) {
-            this.logger.method20358("Unable to shutdown correctly. Config may be corrupt?");
+            this.logger.error("Unable to shutdown correctly. Config may be corrupt?");
             var4.printStackTrace();
         }
 
@@ -196,7 +197,7 @@ public class Client {
 
     public void method19924() {
         try {
-            FileUtil.method18362(this.config, new File(this.file + "/config.json"));
+            FileUtil.save(this.config, new File(this.file + "/config.json"));
         } catch (IOException var4) {
             var4.printStackTrace();
         }

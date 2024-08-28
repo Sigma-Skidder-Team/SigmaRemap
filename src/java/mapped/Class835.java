@@ -22,7 +22,7 @@ public class Class835 extends Class834 {
             Client.getInstance().method19924();
          } catch (IOException var4) {
             var4.printStackTrace();
-            Client.getInstance().getLogger().method20357("Unable to save mod profiles...");
+            Client.getInstance().getLogger().warn("Unable to save mod profiles...");
          }
       }
    }

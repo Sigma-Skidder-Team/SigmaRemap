@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import mapped.Class8000;
 import mapped.Class9318;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 
 public class Class6000 extends Class6001<Class9318> {
     public Class6000(String var1, String var2, float var3, float var4, float var5, float var6) {
@@ -17,8 +17,8 @@ public class Class6000 extends Class6001<Class9318> {
 
     @Override
     public JSONObject method18611(JSONObject var1) {
-        var1.method21806("name", this.method18625());
-        var1.method21806("value", this.method18619().method35208());
+        var1.put("name", this.method18625());
+        var1.put("value", this.method18619().method35208());
         return var1;
     }
 

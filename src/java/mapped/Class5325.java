@@ -6,6 +6,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.unmapped.Class6001;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,20 +94,20 @@ public class Class5325 extends Module {
         JSONObject var4 = Class8000.method27331(var1, "sub-options");
         if (var4 != null) {
             for (Module var8 : this.field23878) {
-                Class2344 var9 = Class8000.method27332(var4, var8.method15991());
+                JSONArray var9 = Class8000.method27332(var4, var8.method15991());
                 if (var9 != null) {
-                    for (int var10 = 0; var10 < var9.method9134(); var10++) {
-                        JSONObject var11 = var9.method9129(var10);
+                    for (int var10 = 0; var10 < var9.length(); var10++) {
+                        JSONObject var11 = var9.getJSONObject(var10);
                         String var12 = Class8000.method27330(var11, "name", null);
 
                         for (Class6001 var14 : var8.field23397.values()) {
                             if (var14.method18625().equals(var12)) {
                                 try {
                                     var14.method18610(var11);
-                                } catch (Class2499 var16) {
+                                } catch (JSONException2 var16) {
                                     Client.getInstance()
                                             .getLogger()
-                                            .method20357("Could not initialize settings of " + var8.method15991() + "." + var14.method18625() + " from config.");
+                                            .warn("Could not initialize settings of " + var8.method15991() + "." + var14.method18625() + " from config.");
                                 }
                                 break;
                             }
@@ -128,16 +131,16 @@ public class Class5325 extends Module {
             JSONObject var4 = new JSONObject();
 
             for (Module var8 : this.field23878) {
-                Class2344 var9 = new Class2344();
+                JSONArray var9 = new JSONArray();
 
                 for (Class6001 var11 : var8.field23397.values()) {
-                    var9.method9158(var11.method18611(new JSONObject()));
+                    var9.put(var11.method18611(new JSONObject()));
                 }
 
-                var4.method21806(var8.method15991(), var9);
+                var4.put(var8.method15991(), var9);
             }
 
-            var1.method21806("sub-options", var4);
+            var1.put("sub-options", var4);
             return super.method15987(var1);
         } catch (Exception e) {
             throw new RuntimeException(e);

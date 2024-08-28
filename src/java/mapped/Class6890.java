@@ -1,37 +1,40 @@
 package mapped;
 
+import totalcross.json.JSONException;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
-import org.json.JSONException;
 
 public class Class6890 {
    public static final String field29861 = "\r\n";
 
-   public static JSONObject method21049(String var0) throws Class2455 {
+   public static JSONObject method21049(String var0) throws JSONException {
       JSONObject var3 = new JSONObject();
       Class7476 var4 = new Class7476(var0);
       String var5 = var4.method24231();
       if (!var5.toUpperCase().startsWith("HTTP")) {
-         var3.method21806("Method", var5);
-         var3.method21806("Request-URI", var4.method24231());
-         var3.method21806("HTTP-Version", var4.method24231());
+         var3.put("Method", var5);
+         var3.put("Request-URI", var4.method24231());
+         var3.put("HTTP-Version", var4.method24231());
       } else {
-         var3.method21806("HTTP-Version", var5);
-         var3.method21806("Status-Code", var4.method24231());
-         var3.method21806("Reason-Phrase", var4.method24226('\u0000'));
+         var3.put("HTTP-Version", var5);
+         var3.put("Status-Code", var4.method24231());
+         var3.put("Reason-Phrase", var4.method24226('\u0000'));
          var4.method24221();
       }
 
       while (var4.method24220()) {
          String var6 = var4.method24226(':');
          var4.method24222(':');
-         var3.method21806(var6, var4.method24226('\u0000'));
+         var3.put(var6, var4.method24226('\u0000'));
          var4.method24221();
       }
 
       return var3;
    }
 
-   public static String toString(JSONObject var0) throws Class2455 {
+   public static String toString(JSONObject var0) throws JSONException {
       Iterator var3 = var0.method21777();
       StringBuilder var4 = new StringBuilder();
       if (var0.has("Status-Code") && var0.has("Reason-Phrase")) {
@@ -42,7 +45,7 @@ public class Class6890 {
          var4.append(var0.method21773("Reason-Phrase"));
       } else {
          if (!var0.has("Method") || !var0.has("Request-URI")) {
-            throw new Class2499("Not enough material for an HTTP header.");
+            throw new JSONException2("Not enough material for an HTTP header.");
          }
 
          var4.append(var0.method21773("Method"));

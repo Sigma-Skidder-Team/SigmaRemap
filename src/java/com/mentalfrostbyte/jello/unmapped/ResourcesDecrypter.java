@@ -173,7 +173,7 @@ public class ResourcesDecrypter {
             var4.printStackTrace();
             Client.getInstance()
                     .getLogger()
-                    .method20358(
+                    .error(
                             "Unable to load texture "
                                     + var0
                                     + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function."

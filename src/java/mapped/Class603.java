@@ -21,7 +21,7 @@ public class Class603 implements Runnable {
          Class4624 var3 = Class4624.method14543();
          List var4 = var3.method14547().field27398;
          if (var4 != null) {
-            var4.sort(new Class3575(Minecraft.getInstance().method1533().method21526()));
+            var4.sort(new Class3575(Minecraft.getInstance().method1533().getUsername()));
             Class9408.method36037(this.field2978, var4);
             Class9408.method36034(this.field2978).put(Class2310.field15834, true);
          } else {

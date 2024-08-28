@@ -19,7 +19,4 @@ out/
 run/
 .idea
 libraries/desktop.ini
-
-# This is why i hate intellij
-# - Raca
-OpenJello.iml
+*.iml

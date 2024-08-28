@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import totalcross.json.JSONObject;
 
 public class Class4321 extends Class4307 {
     private static final Minecraft field21078 = Minecraft.getInstance();

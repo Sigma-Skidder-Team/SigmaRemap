@@ -12,6 +12,8 @@ import java.util.Arrays;
 
 import com.mentalfrostbyte.jello.Client;
 import org.apache.commons.io.IOUtils;
+import totalcross.json.JSONException2;
+import totalcross.json.JSONObject;
 
 public class Config extends Command {
    private final String folder = "/configs/";
@@ -108,7 +110,7 @@ public class Config extends Command {
 
       try {
          IOUtils.write(new JSONObject().toString(0), new FileOutputStream(var6));
-      } catch (IOException | Class2499 var8) {
+      } catch (IOException | JSONException2 var8) {
          var8.printStackTrace();
       }
    }

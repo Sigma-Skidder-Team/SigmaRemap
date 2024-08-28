@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
+import totalcross.json.JSONObject;
 
 public class Class7957 {
    private int field34204 = -1;
@@ -50,15 +51,15 @@ public class Class7957 {
       JSONObject var3 = new JSONObject();
       switch (Class8251.field35450[this.method27055().ordinal()]) {
          case 1:
-            var3.method21806("type", "mod");
-            var3.method21806("target", ((Module)this.field34205).method15991());
+            var3.put("type", "mod");
+            var3.put("target", ((Module)this.field34205).method15991());
             break;
          case 2:
-            var3.method21806("type", "screen");
-            var3.method21806("target", Client.getInstance().getGuiManager().method33478((Class<? extends Screen>)this.field34205));
+            var3.put("type", "screen");
+            var3.put("target", Client.getInstance().getGuiManager().method33478((Class<? extends Screen>)this.field34205));
       }
 
-      var3.method21803("key", this.field34204);
+      var3.put("key", this.field34204);
       return var3;
    }
 
