@@ -145,7 +145,7 @@ public class Client {
         DiscordRichPresence var7 = new DiscordRichPresence();
         var7.startTimestamp = System.currentTimeMillis() / 1000L;
         var7.state = "Playing Minecraft";
-        var7.details = "Je110 for Sigma";
+        var7.details = "Jello for Sigma";
         var7.largeImageKey = "jello";
         var3.Discord_UpdatePresence(var7);
         new Thread(() -> {
