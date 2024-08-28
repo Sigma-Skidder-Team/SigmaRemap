@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4426;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
@@ -16,7 +16,7 @@ public class Class5256 extends PremiumModule {
     }
 
     @EventTarget
-    public void method16416(Class4428 var1) {
+    public void method16416(TickEvent var1) {
         if (this.method15996()) {
             if (mc.field1339.method3421() != null) {
                 float var4 = Class9567.method37086();
@@ -68,7 +68,7 @@ public class Class5256 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (!mc.field1299.field44637.method8509()) {
             if (!mc.field1299.field44637.method8509()) {
                 this.field23643 = false;

@@ -119,7 +119,7 @@ public class Class5305 extends Module {
     }
 
     public void method16674(double var1, double var3, double var5, Entity var7, float var8) {
-        ClientResource var11 = ResourceRegistry.field38855;
+        ClientResource var11 = ResourceRegistry.JelloLightFont25;
         String var12 = var7.method2941().getUnformattedComponentText();
         float var13 = (float) (var1 - mc.field1295.method768().method37504().method11320());
         float var14 = (float) (var3 - mc.field1295.method768().method37504().method11321());
@@ -171,7 +171,7 @@ public class Class5305 extends Module {
                     int var9 = Math.round(16.0F * Class3192.method11417());
                     byte var10 = 1;
                     byte var11 = 12;
-                    int var12 = ResourceRegistry.field38855.method23952();
+                    int var12 = ResourceRegistry.JelloLightFont25.method23952();
                     int var13 = (int) (mc.field1301.method36738() * (double) GuiManager.field41348 - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
                     int var14 = (int) (mc.field1301.method36739() * (double) GuiManager.field41348 - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
@@ -191,7 +191,7 @@ public class Class5305 extends Module {
 
     private void method16676(int var1, int var2, List<Class8848> var3, String var4, boolean var5) {
         byte var8 = 12;
-        int var9 = ResourceRegistry.field38855.method23952();
+        int var9 = ResourceRegistry.JelloLightFont25.method23952();
         int var10 = Math.round(16.0F * Class3192.method11417());
         byte var11 = 1;
         int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;
@@ -212,7 +212,7 @@ public class Class5305 extends Module {
         }
 
         Class3192.method11439(
-                ResourceRegistry.field38855, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(Class1979.field12896.field12910, 0.8F)
+                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(Class1979.field12896.field12910, 0.8F)
         );
         RenderSystem.method27820();
 
@@ -227,8 +227,8 @@ public class Class5305 extends Module {
 
             Class3192.method11479(var15, var17, var16, var10, var10);
             if (var15.field39976 > 1) {
-                int var18 = var10 - ResourceRegistry.field38854.method23942("" + var15.field39976);
-                int var19 = ResourceRegistry.field38854.method23942("" + var15.field39976);
+                int var18 = var10 - ResourceRegistry.JelloLightFont20.method23942("" + var15.field39976);
+                int var19 = ResourceRegistry.JelloLightFont20.method23942("" + var15.field39976);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.method27821();
                 Class3192.method11450(
@@ -240,7 +240,7 @@ public class Class5305 extends Module {
                         Class5628.method17688(Class1979.field12896.field12910, 0.7F),
                         false
                 );
-                Class3192.method11439(ResourceRegistry.field38854, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, Class1979.field12896.field12910);
+                Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, Class1979.field12896.field12910);
                 RenderSystem.method27820();
             }
 

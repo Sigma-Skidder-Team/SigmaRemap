@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 
@@ -14,17 +14,17 @@ public class Class5266 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23695 = 0;
     }
 
     @EventTarget
-    private void method16482(Class4428 var1) {
+    private void method16482(TickEvent var1) {
         if (this.method15996()) {
             if (mc.method1530()) {
                 this.method16000();
             } else {
-                String var4 = this.method15978("Mode");
+                String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
                     case "Flying Enabled":
                         double var6 = mc.field1339.getPosX();

@@ -5,7 +5,7 @@ import java.util.Random;
 public class Class3417 extends Block {
    private static String[] field19120;
 
-   public Class3417(Class7929 var1) {
+   public Class3417(AbstractBlock var1) {
       super(var1);
    }
 

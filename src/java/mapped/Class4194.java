@@ -34,17 +34,17 @@ public abstract class Class4194 extends Class4178 {
             this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 2, var7, var3);
             this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 1, var7, var3);
             this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6, var7, var3);
-            this.method12923(var1, Blocks.field36548.method11579(), var5 + 1, var6, var7, var3);
-            this.method12923(var1, Blocks.field36548.method11579().method23465(Class3461.field19297, Class84.field209), var5 + 1, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.OAK_DOOR.method11579(), var5 + 1, var6, var7, var3);
+            this.method12923(var1, Blocks.OAK_DOOR.method11579().method23465(Class3461.field19297, Class84.field209), var5 + 1, var6 + 1, var7, var3);
             break;
          case 3:
             this.method12923(var1, Blocks.field37012.method11579(), var5 + 1, var6, var7, var3);
             this.method12923(var1, Blocks.field37012.method11579(), var5 + 1, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.field36628.method11579().method23465(Class3237.field18683, Boolean.valueOf(true)), var5, var6, var7, var3);
-            this.method12923(var1, Blocks.field36628.method11579().method23465(Class3237.field18683, Boolean.valueOf(true)), var5, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.method11579().method23465(Class3237.field18683, Boolean.valueOf(true)), var5, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.method11579().method23465(Class3237.field18683, Boolean.valueOf(true)), var5, var6 + 1, var7, var3);
             this.method12923(
                var1,
-               Blocks.field36628
+               Blocks.IRON_BARS
                   .method11579()
                   .method23465(Class3237.field18681, Boolean.valueOf(true))
                   .method23465(Class3237.field18683, Boolean.valueOf(true)),
@@ -55,7 +55,7 @@ public abstract class Class4194 extends Class4178 {
             );
             this.method12923(
                var1,
-               Blocks.field36628
+               Blocks.IRON_BARS
                   .method11579()
                   .method23465(Class3237.field18681, Boolean.valueOf(true))
                   .method23465(Class3237.field18683, Boolean.valueOf(true)),
@@ -66,7 +66,7 @@ public abstract class Class4194 extends Class4178 {
             );
             this.method12923(
                var1,
-               Blocks.field36628
+               Blocks.IRON_BARS
                   .method11579()
                   .method23465(Class3237.field18681, Boolean.valueOf(true))
                   .method23465(Class3237.field18683, Boolean.valueOf(true)),
@@ -75,8 +75,8 @@ public abstract class Class4194 extends Class4178 {
                var7,
                var3
             );
-            this.method12923(var1, Blocks.field36628.method11579().method23465(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6 + 1, var7, var3);
-            this.method12923(var1, Blocks.field36628.method11579().method23465(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.method11579().method23465(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.IRON_BARS.method11579().method23465(Class3237.field18681, Boolean.valueOf(true)), var5 + 2, var6, var7, var3);
             break;
          case 4:
             this.method12923(var1, Blocks.field36615.method11579(), var5, var6, var7, var3);
@@ -86,8 +86,8 @@ public abstract class Class4194 extends Class4178 {
             this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 2, var7, var3);
             this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6 + 1, var7, var3);
             this.method12923(var1, Blocks.field36615.method11579(), var5 + 2, var6, var7, var3);
-            this.method12923(var1, Blocks.field36560.method11579(), var5 + 1, var6, var7, var3);
-            this.method12923(var1, Blocks.field36560.method11579().method23465(Class3461.field19297, Class84.field209), var5 + 1, var6 + 1, var7, var3);
+            this.method12923(var1, Blocks.IRON_DOOR.method11579(), var5 + 1, var6, var7, var3);
+            this.method12923(var1, Blocks.IRON_DOOR.method11579().method23465(Class3461.field19297, Class84.field209), var5 + 1, var6 + 1, var7, var3);
             this.method12923(var1, Blocks.STONE_BUTTON.method11579().method23465(Class3202.field18484, Direction.NORTH), var5 + 2, var6 + 1, var7 + 1, var3);
             this.method12923(var1, Blocks.STONE_BUTTON.method11579().method23465(Class3202.field18484, Direction.SOUTH), var5 + 2, var6 + 1, var7 - 1, var3);
       }

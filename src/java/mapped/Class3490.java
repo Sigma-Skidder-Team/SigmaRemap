@@ -6,7 +6,7 @@ public class Class3490 extends Class3194 {
    private final Class7144 field19358;
    private final int field19359;
 
-   public Class3490(Class7144 var1, int var2, Class7929 var3) {
+   public Class3490(Class7144 var1, int var2, AbstractBlock var3) {
       super(var3);
       this.field19358 = var1;
       if (!var1.method22292()) {

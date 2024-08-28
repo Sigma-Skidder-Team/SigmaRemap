@@ -30,11 +30,11 @@ public class Class3269 extends Class3264 {
    public static final Map<Block, Class7380> field18767 = Maps.newHashMap(
       ImmutableMap.of(
          Blocks.field36395,
-         Blocks.field36540.method11579(),
+         Blocks.FARMLAND.method11579(),
          Blocks.field36885,
-         Blocks.field36540.method11579(),
+         Blocks.FARMLAND.method11579(),
          Blocks.field36396,
-         Blocks.field36540.method11579(),
+         Blocks.FARMLAND.method11579(),
          Blocks.field36397,
          Blocks.field36396.method11579()
       )

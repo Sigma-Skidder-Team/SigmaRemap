@@ -375,7 +375,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Blocks.field36507).method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F))))
+                  .method18291(Class4695.method14724(Blocks.POPPY).method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F))))
             )
             .method18320(
                Class8894.method32373()
@@ -594,22 +594,22 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                   )
             )
       );
-      this.method11034(Class8793.field39590, method11032(Blocks.field36504));
-      this.method11034(Class8793.field39586, method11032(Blocks.field36500));
-      this.method11034(Class8793.field39587, method11032(Blocks.field36501));
-      this.method11034(Class8793.field39584, method11032(Blocks.field36498));
-      this.method11034(Class8793.field39582, method11032(Blocks.field36496));
-      this.method11034(Class8793.field39588, method11032(Blocks.field36502));
-      this.method11034(Class8793.field39578, method11032(Blocks.field36492));
-      this.method11034(Class8793.field39583, method11032(Blocks.field36497));
-      this.method11034(Class8793.field39580, method11032(Blocks.field36494));
-      this.method11034(Class8793.field39577, method11032(Blocks.field36491));
-      this.method11034(Class8793.field39576, method11032(Blocks.field36490));
-      this.method11034(Class8793.field39581, method11032(Blocks.field36495));
-      this.method11034(Class8793.field39585, method11032(Blocks.field36499));
-      this.method11034(Class8793.field39589, method11032(Blocks.field36503));
-      this.method11034(Class8793.field39575, method11032(Blocks.field36489));
-      this.method11034(Class8793.field39579, method11032(Blocks.field36493));
+      this.method11034(Class8793.field39590, method11032(Blocks.BLACK_WOOL));
+      this.method11034(Class8793.field39586, method11032(Blocks.BLUE_WOOL));
+      this.method11034(Class8793.field39587, method11032(Blocks.BROWN_WOOL));
+      this.method11034(Class8793.field39584, method11032(Blocks.CYAN_WOOL));
+      this.method11034(Class8793.field39582, method11032(Blocks.GRAY_WOOL));
+      this.method11034(Class8793.field39588, method11032(Blocks.GREEN_WOOL));
+      this.method11034(Class8793.field39578, method11032(Blocks.LIGHT_BLUE_WOOL));
+      this.method11034(Class8793.field39583, method11032(Blocks.LIGHT_GRAY_WOOL));
+      this.method11034(Class8793.field39580, method11032(Blocks.LIME_WOOL));
+      this.method11034(Class8793.field39577, method11032(Blocks.MAGENTA_WOOL));
+      this.method11034(Class8793.field39576, method11032(Blocks.ORANGE_WOOL));
+      this.method11034(Class8793.field39581, method11032(Blocks.PINK_WOOL));
+      this.method11034(Class8793.field39585, method11032(Blocks.PURPLE_WOOL));
+      this.method11034(Class8793.field39589, method11032(Blocks.RED_WOOL));
+      this.method11034(Class8793.field39575, method11032(Blocks.WHITE_WOOL));
+      this.method11034(Class8793.field39579, method11032(Blocks.YELLOW_WOOL));
       this.method11033(
          Class8992.field41075,
          Class7318.method23188()
@@ -795,7 +795,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Blocks.field36485)
+                     Class4695.method14724(Blocks.SEAGRASS)
                         .method18299(3)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))

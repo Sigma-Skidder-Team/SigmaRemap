@@ -25,7 +25,7 @@ public class Class5158 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23415 = Class9567.method37076();
         this.field23414 = 6;
         this.field23418 = Class2094.field13640;
@@ -168,7 +168,7 @@ public class Class5158 extends Module {
     @EventTarget
     @LowerPriority
     public void method16039(Class4436 var1) {
-        if (!Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+        if (!Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (this.method15974("Auto Jump") || mc.field1339.field4981) {
                 if (this.field23414 < 0) {
                     var1.method13900(true);

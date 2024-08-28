@@ -19,7 +19,7 @@ public class Class5238 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23596 = mc.field1339.getPosY();
         this.field23594 = 0;
         if (!mc.field1299.field44637.method8509()) {

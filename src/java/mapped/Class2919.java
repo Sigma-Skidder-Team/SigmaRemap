@@ -18,7 +18,7 @@ public class Class2919 extends Class2898<Class4712> {
          boolean var8 = false;
 
          for (Direction var12 : Direction.values()) {
-            if (var12 != Direction.field672 && var1.method6738(var4.method8349(var12)).method23448(Blocks.field36796)) {
+            if (var12 != Direction.field672 && var1.method6738(var4.method8349(var12)).method23448(Blocks.PACKED_ICE)) {
                var8 = true;
                break;
             }
@@ -41,7 +41,7 @@ public class Class2919 extends Class2898<Class4712> {
                   Class7380 var13 = var1.method6738(var22);
                   if (var13.method23384() == Class8649.field38932
                      || var13.method23448(Blocks.WATER)
-                     || var13.method23448(Blocks.field36796)
+                     || var13.method23448(Blocks.PACKED_ICE)
                      || var13.method23448(Blocks.ICE)) {
                      for (Direction var17 : Direction.values()) {
                         Class7380 var18 = var1.method6738(var22.method8349(var17));

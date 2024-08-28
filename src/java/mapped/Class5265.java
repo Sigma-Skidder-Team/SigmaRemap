@@ -45,7 +45,7 @@ public class Class5265 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
     }
 
     @EventTarget
@@ -53,10 +53,10 @@ public class Class5265 extends PremiumModule {
     private void method16473(Class4422 var1) {
         if (this.field23693 != null) {
             this.field23684 = (this.method15974("Head") ? 100 : 0)
-                    + Math.max(95, ResourceRegistry.field38854.method23942(this.field23693.method2941().getString()))
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.field23693.method2941().getString()))
                     + (this.method15974("Armor") ? 80 : 0)
                     + 20;
-            String var4 = this.method15978("Position");
+            String var4 = this.getStringSettingValueByName("Position");
             switch (var4) {
                 case "Center":
                     this.field23682 = Minecraft.getInstance().field1283.method8043() / 2 - this.field23684 / 2;

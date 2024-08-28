@@ -169,8 +169,8 @@ public class Class4259 extends Class4247 {
       int var23 = Math.round((float)(this.field20648.field32175 * 16) - this.field20650 * 16.0F);
       String var24 = var22 + "  " + var23;
       Class3192.method11439(
-         ResourceRegistry.field38852,
-         (float)(this.field20895 - ResourceRegistry.field38852.method23942(var24) - 23),
+         ResourceRegistry.JelloLightFont14,
+         (float)(this.field20895 - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
          (float)(this.field20896 + 35),
          var24,
          Class5628.method17688(Class1979.field12891.field12910, 0.4F)

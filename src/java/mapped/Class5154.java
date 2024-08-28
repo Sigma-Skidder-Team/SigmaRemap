@@ -25,7 +25,7 @@ public class Class5154 extends Module {
    }
 
    @Override
-   public void method15966() {
+   public void isInDevelopment() {
       this.field23398 = -1;
       this.field23399 = 0;
       this.field23403 = mc.field1339.getPosY();
@@ -50,7 +50,7 @@ public class Class5154 extends Module {
    @EventTarget
    public void method16009(Class4435 var1) {
       if (this.method15996()) {
-         String var4 = this.method15978("Mode");
+         String var4 = this.getStringSettingValueByName("Mode");
          if (Class5628.method17730(mc.field1339, 0.01F)) {
             if (this.field23400 <= 1) {
                this.field23400++;
@@ -111,7 +111,7 @@ public class Class5154 extends Module {
       if (this.method15996()) {
          if (this.method15974("Fluid Fix")) {
             if (!mc.field1339.field5037 && !mc.field1339.field5038) {
-               String var4 = this.method15978("Mode");
+               String var4 = this.getStringSettingValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
                   if (var4.equals("Basic")) {
@@ -140,7 +140,7 @@ public class Class5154 extends Module {
       this.field23398 = 0;
       this.field23400 = 0;
       this.field23404 = Class9567.method37083()[0];
-      String var4 = this.method15978("Mode");
+      String var4 = this.getStringSettingValueByName("Mode");
       switch (var4) {
          case "Basic":
             if (this.field23399 < 3) {

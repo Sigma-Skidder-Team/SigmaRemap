@@ -15,7 +15,7 @@ public class Class5360 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23966 = 0;
     }
 
@@ -24,7 +24,7 @@ public class Class5360 extends Module {
     private void method16861(Class4399 var1) {
         if (var1.method13921()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5334.class);
-            if (!var4.method15996() || !var4.method15978("Type").equalsIgnoreCase("Minemen")) {
+            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Minemen")) {
                 if (!mc.field1339.field5036) {
                     this.field23966 = 0;
                 } else {

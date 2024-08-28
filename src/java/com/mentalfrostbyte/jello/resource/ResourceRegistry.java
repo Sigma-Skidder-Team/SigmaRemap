@@ -9,33 +9,27 @@ import java.awt.*;
 import java.io.InputStream;
 
 public class ResourceRegistry {
-    public static final ClientResource field38851 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 12.0F);
-    public static final ClientResource field38852 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 14.0F);
-    public static final ClientResource field38853 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 18.0F);
-    public static final ClientResource field38854 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 20.0F);
-    public static final ClientResource field38855 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 25.0F);
-    public static final ClientResource field38856 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 40.0F);
-    public static final ClientResource field38857 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 50.0F);
-    public static final ClientResource field38858 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 28.0F);
-    public static final ClientResource field38859 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 24.0F);
-    public static final ClientResource field38860 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 36.0F);
-    public static final ClientResource field38861 = method31023("com/mentalfrostbyte/gui/resources/font/regular.ttf", 0, 20.0F);
-    public static final ClientResource field38862 = method31023("com/mentalfrostbyte/gui/resources/font/regular.ttf", 0, 40.0F);
-    public static final ClientResource field38863 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 14.0F);
-    public static final ClientResource field38864 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 20.0F);
-    public static final ClientResource field38865 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 25.0F);
-    public static final ClientResource field38866 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 40.0F);
-    public static final ClientResource field38867 = method31023("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 50.0F);
+    public static final ClientResource JelloLightFont12 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 12.0F);
+    public static final ClientResource JelloLightFont14 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 14.0F);
+    public static final ClientResource JelloLightFont18 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 18.0F);
+    public static final ClientResource JelloLightFont20 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 20.0F);
+    public static final ClientResource JelloLightFont25 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 25.0F);
+    public static final ClientResource JelloLightFont40 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 40.0F);
+    public static final ClientResource field38857 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 50.0F);
+    public static final ClientResource field38858 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 28.0F);
+    public static final ClientResource field38859 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 24.0F);
+    public static final ClientResource field38860 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 36.0F);
+    public static final ClientResource RegularFont20 = getFont("com/mentalfrostbyte/gui/resources/font/regular.ttf", 0, 20.0F);
+    public static final ClientResource RegularFont40 = getFont("com/mentalfrostbyte/gui/resources/font/regular.ttf", 0, 40.0F);
+    public static final ClientResource JelloMediumFont20 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 20.0F);
+    public static final ClientResource JelloMediumFont25 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 25.0F);
+    public static final ClientResource JelloMediumFont40 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 40.0F);
+    public static final ClientResource JelloMediumFont50 = getFont("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 50.0F);
     public static final Class7430 field38868 = new Class7430(2);
-    public static final ClientResource field38869 = method31022("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 18.0F);
-    public static final ClientResource field38870 = method31022("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 14.0F);
-    public static final ClientResource field38871 = method31022("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 20.0F);
-    public static final ClientResource field38872 = method31022("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 25.0F);
-    private static final String field38848 = "com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf";
-    private static final String field38849 = "com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf";
-    private static final String field38850 = "com/mentalfrostbyte/gui/resources/font/regular.ttf";
+    public static final ClientResource JelloLightFont18_1 = getFont2("com/mentalfrostbyte/gui/resources/font/helvetica-neue-light.ttf", 0, 18.0F);
+    public static final ClientResource JelloMediumFont20_1 = getFont2("com/mentalfrostbyte/gui/resources/font/helvetica-neue medium.ttf", 0, 20.0F);
 
-    public static ClientResource method31022(String var0, int var1, float var2) {
+    public static ClientResource getFont2(String var0, int var1, float var2) {
         try {
             InputStream var5 = ResourcesDecrypter.readInputStream(var0);
             Font var6 = Font.createFont(0, var5);
@@ -47,7 +41,7 @@ public class ResourceRegistry {
         }
     }
 
-    public static ClientResource method31023(String var0, int var1, float var2) {
+    public static ClientResource getFont(String var0, int var1, float var2) {
         try {
             InputStream var5 = ResourcesDecrypter.readInputStream(var0);
             Font var6 = Font.createFont(0, var5);
@@ -55,7 +49,7 @@ public class ResourceRegistry {
             return new ClientResource(var6, true);
         } catch (Exception var7) {
             var7.printStackTrace();
-            return new ClientResource(new Font("Arial", 0, (int) var2), Client.getInstance().method19954() != ClientMode.CLASSIC);
+            return new ClientResource(new Font("Arial", 0, (int) var2), Client.getInstance().getClientMode() != ClientMode.CLASSIC);
         }
     }
 }

@@ -35,7 +35,7 @@ public class Class5382 extends Module {
    }
 
    @Override
-   public void method15966() {
+   public void isInDevelopment() {
       try {
          String var3 = "D8374378";
          String var4 = mc.field1293.method21526();

@@ -81,7 +81,7 @@ public class Class4363 extends Class4247 {
 
    private void method13646() {
       this.method13241().clear();
-      this.field20913 = ResourceRegistry.field38853;
+      this.field20913 = ResourceRegistry.JelloLightFont18;
       Class4240 var3;
       this.method13230(var3 = new Class4240(this, "dropdownButton", 0, 0, this.method13269(), this.method13269(), this.field20914));
       var3.method13261((var1, var2) -> {

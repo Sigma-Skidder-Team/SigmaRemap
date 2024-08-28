@@ -33,7 +33,7 @@ public class Class5268 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         int[] var3 = new int[]{
                 0,
                 0,

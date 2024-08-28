@@ -1144,7 +1144,7 @@ public abstract class Class880 extends Entity {
          if (var1 instanceof Class1079) {
             if (this.field5024.method6789().method17135(Class5462.field24224)) {
                BlockPos var5 = this.method3432();
-               Class7380 var6 = Blocks.field36517.method11579();
+               Class7380 var6 = Blocks.WITHER_ROSE.method11579();
                if (this.field5024.method6738(var5).method23393() && var6.method23443(this.field5024, var5)) {
                   this.field5024.method6725(var5, var6, 3);
                   var4 = true;
@@ -1299,7 +1299,7 @@ public abstract class Class880 extends Entity {
    private boolean method3065(BlockPos var1, Class7380 var2) {
       if (var2.<Boolean>method23463(Class3206.field18594)) {
          Class7380 var5 = this.field5024.method6738(var1.method8313());
-         if (var5.method23448(Blocks.field36549) && var5.<Direction>method23463(Class3423.field19154) == var2.<Direction>method23463(Class3206.field18484)) {
+         if (var5.method23448(Blocks.LADDER) && var5.<Direction>method23463(Class3423.field19154) == var2.<Direction>method23463(Class3206.field18484)) {
             return true;
          }
       }

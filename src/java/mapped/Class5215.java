@@ -17,7 +17,7 @@ public class Class5215 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
     }
 
     @EventTarget

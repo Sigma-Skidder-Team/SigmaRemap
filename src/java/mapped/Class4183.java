@@ -64,7 +64,7 @@ public class Class4183 extends Class4180 {
       } else {
          var3.method6725(
             var2,
-            Blocks.field36534.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.method6739(var2).method23486(Class8953.field40469))),
+            Blocks.CHEST.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.method6739(var2).method23486(Class8953.field40469))),
             2
          );
          Class944 var9 = var3.method6759(var2);

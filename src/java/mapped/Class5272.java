@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.util.text.StringTextComponent;
@@ -16,7 +16,7 @@ public class Class5272 extends Module {
     }
 
     @EventTarget
-    public void method16498(Class4428 var1) {
+    public void method16498(TickEvent var1) {
         if (this.method15996() && mc.field1339.field5055 > 10 && mc.method1531() == null && mc.method1528() != null) {
             float var4 = mc.field1339.method3042() / mc.field1339.method3075() * 10.0F;
             if (var4 < this.method15977("Min Health") || Class7789.method25878(Class8514.field38126) == 0) {

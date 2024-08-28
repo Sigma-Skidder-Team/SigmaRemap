@@ -45,7 +45,7 @@ public class Class918 extends Class916 {
 
    @Override
    public Class7380 method3604() {
-      return Blocks.field36664.method11579();
+      return Blocks.COMMAND_BLOCK.method11579();
    }
 
    public Class911 method3614() {

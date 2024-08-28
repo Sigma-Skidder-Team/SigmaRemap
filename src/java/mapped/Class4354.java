@@ -116,7 +116,7 @@ public class Class4354 extends Class4247 {
                         Class1979.field12899.field12910, Class1979.field12899.field12910, Class1979.field12899.field12910, Class1979.field12899.field12910
                      ),
                      var15.field44772,
-                     ResourceRegistry.field38854
+                     ResourceRegistry.JelloLightFont20
                   )
                );
          }

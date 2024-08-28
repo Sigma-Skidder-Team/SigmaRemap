@@ -142,7 +142,7 @@ public class Class4266 extends Class4247 {
             );
             GL11.glPopMatrix();
             Class3192.method11439(
-               ResourceRegistry.field38864,
+               ResourceRegistry.JelloMediumFont20,
                (float)(this.field20895 + 14),
                (float)(this.field20896 + 8),
                "+",

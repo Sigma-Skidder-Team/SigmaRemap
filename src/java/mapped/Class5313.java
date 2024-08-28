@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -21,18 +21,18 @@ public class Class5313 extends Module {
     }
 
     @Override
-    public void method15966() {
-        if (this.method15978("Type").equals("Normal")) {
+    public void isInDevelopment() {
+        if (this.getStringSettingValueByName("Type").equals("Normal")) {
             mc.field1299.field44672 = 999.0;
         }
     }
 
     @EventTarget
-    public void method16691(Class4428 var1) {
+    public void method16691(TickEvent var1) {
         if (this.method15996()) {
             mc.field1299.field44672 = 999.0;
             if (mc.field1338 != null) {
-                if (!this.method15978("Type").equals("Normal")) {
+                if (!this.getStringSettingValueByName("Type").equals("Normal")) {
                     int var4 = 16;
                     BlockPos var5 = new BlockPos(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ())
                             .method8311();

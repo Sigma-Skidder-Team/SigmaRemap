@@ -16,17 +16,17 @@ public abstract class Class4178 {
    public int field20448;
    private final Class7792 field20449;
    private static final Set<Block> field20450 = ImmutableSet.<Block>builder()
-      .add(Blocks.field36643)
-      .add(Blocks.field36528)
-      .add(Blocks.field36529)
+      .add(Blocks.NETHER_BRICK_FENCE)
+      .add(Blocks.TORCH)
+      .add(Blocks.WALL_TORCH)
       .add(Blocks.OAK_FENCE)
       .add(Blocks.field36867)
       .add(Blocks.field36871)
       .add(Blocks.field36870)
       .add(Blocks.field36868)
       .add(Blocks.field36869)
-      .add(Blocks.field36549)
-      .add(Blocks.field36628)
+      .add(Blocks.LADDER)
+      .add(Blocks.IRON_BARS)
       .build();
 
    public Class4178(Class7792 var1, int var2) {
@@ -350,7 +350,7 @@ public abstract class Class4178 {
       for (Direction var7 : Class76.field161) {
          BlockPos var8 = var1.method8349(var7);
          Class7380 var9 = var0.method6738(var8);
-         if (var9.method23448(Blocks.field36534)) {
+         if (var9.method23448(Blocks.CHEST)) {
             return var2;
          }
 
@@ -389,9 +389,9 @@ public abstract class Class4178 {
    }
 
    public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, Class7380 var6) {
-      if (var2.method38396(var4) && !var1.method6738(var4).method23448(Blocks.field36534)) {
+      if (var2.method38396(var4) && !var1.method6738(var4).method23448(Blocks.CHEST)) {
          if (var6 == null) {
-            var6 = method12934(var1, var4, Blocks.field36534.method11579());
+            var6 = method12934(var1, var4, Blocks.CHEST.method11579());
          }
 
          var1.method6725(var4, var6, 2);
@@ -408,8 +408,8 @@ public abstract class Class4178 {
 
    public boolean method12936(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      if (var2.method38396(var11) && !var1.method6738(var11).method23448(Blocks.field36457)) {
-         this.method12923(var1, Blocks.field36457.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
+      if (var2.method38396(var11) && !var1.method6738(var11).method23448(Blocks.DISPENSER)) {
+         this.method12923(var1, Blocks.DISPENSER.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
          Class944 var12 = var1.method6759(var11);
          if (var12 instanceof Class971) {
             ((Class971)var12).method3744(var8, var3.nextLong());

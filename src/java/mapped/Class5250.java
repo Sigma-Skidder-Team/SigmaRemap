@@ -34,7 +34,7 @@ public class Class5250 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23625 = null;
         this.field23621 = false;
         if (!this.field23622.isEmpty()) {

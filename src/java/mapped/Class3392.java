@@ -22,7 +22,7 @@ public class Class3392 extends Block {
    });
    public final Class6408[] field19026;
 
-   public Class3392(float var1, Class7929 var2) {
+   public Class3392(float var1, AbstractBlock var2) {
       super(var2);
       this.field19026 = this.method12001(var1);
    }

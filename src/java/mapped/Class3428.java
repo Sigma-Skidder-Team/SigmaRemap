@@ -12,7 +12,7 @@ public class Class3428 extends Block implements Class3207 {
    public static final Class8551 field19185 = Class8820.field39710;
    public static final Class8551 field19186 = Class8820.field39683;
 
-   public Class3428(Class7929 var1) {
+   public Class3428(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

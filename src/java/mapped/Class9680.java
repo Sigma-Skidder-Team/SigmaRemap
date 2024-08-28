@@ -538,7 +538,7 @@ public class Class9680 {
                var8 = field45266;
             }
 
-            if (var7 == Blocks.field36535) {
+            if (var7 == Blocks.REDSTONE_WIRE) {
                return -1;
             }
          }
@@ -560,19 +560,19 @@ public class Class9680 {
 
       if (!var0.method30512()) {
          return -1;
-      } else if (var7 != Blocks.field36641) {
-         if (var7 == Blocks.field36535) {
+      } else if (var7 != Blocks.LILY_PAD) {
+         if (var7 == Blocks.REDSTONE_WIRE) {
             return method37858(var4.method29420());
          } else if (!(var7 instanceof Class3486)) {
             if (field45249) {
                return -1;
             } else {
                Class7443 var10;
-               if (var7 == Blocks.field36395 || var7 == Blocks.field36801 || var7 instanceof Class3456) {
+               if (var7 == Blocks.field36395 || var7 == Blocks.TALL_GRASS || var7 instanceof Class3456) {
                   var10 = field45269;
                } else if (!(var7 instanceof Class3456)) {
                   if (!(var7 instanceof Class3465)) {
-                     if (var7 != Blocks.field36636) {
+                     if (var7 != Blocks.VINE) {
                         return -1;
                      }
 
@@ -813,7 +813,7 @@ public class Class9680 {
    }
 
    private static int method37865(Class1663 var0, BlockPos var1) {
-      return field45252 >= 0 ? field45252 : method37855().method29465(Blocks.field36641.method11579(), var0, var1, 0);
+      return field45252 >= 0 ? field45252 : method37855().method29465(Blocks.LILY_PAD.method11579(), var0, var1, 0);
    }
 
    private static Vector3d method37866(Vector3d var0) {
@@ -896,11 +896,11 @@ public class Class9680 {
    private static int method37874(Class7380 var0, Class1665 var1, BlockPos var2, Class8391 var3) {
       Class7448 var6 = field45245;
       Block var7 = var0.method23383();
-      if (var7 == Blocks.field36634 && field45247 != null) {
+      if (var7 == Blocks.PUMPKIN_STEM && field45247 != null) {
          var6 = field45247;
       }
 
-      if (var7 == Blocks.field36635 && field45246 != null) {
+      if (var7 == Blocks.MELON_STEM && field45246 != null) {
          var6 = field45246;
       }
 

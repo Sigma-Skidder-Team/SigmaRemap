@@ -50,11 +50,11 @@ public class Class4204 extends Class4194 {
       this.method12927(var1, var5, 9, 1, 1, 9, 1, 3, Blocks.LAVA.method11579(), Blocks.LAVA.method11579(), false);
       this.method12928(var1, var5, 3, 1, 8, 7, 1, 12, false, var4, Class9331.method35288());
       this.method12927(var1, var5, 4, 1, 9, 6, 1, 11, Blocks.LAVA.method11579(), Blocks.LAVA.method11579(), false);
-      Class7380 var11 = Blocks.field36628
+      Class7380 var11 = Blocks.IRON_BARS
          .method11579()
          .method23465(Class3237.field18680, Boolean.valueOf(true))
          .method23465(Class3237.field18682, Boolean.valueOf(true));
-      Class7380 var12 = Blocks.field36628
+      Class7380 var12 = Blocks.IRON_BARS
          .method11579()
          .method23465(Class3237.field18683, Boolean.valueOf(true))
          .method23465(Class3237.field18681, Boolean.valueOf(true));
@@ -68,7 +68,7 @@ public class Class4204 extends Class4194 {
          this.method12927(var1, var5, var23, 3, 15, var23, 4, 15, var12, var12, false);
       }
 
-      Class7380 var24 = Blocks.field36639.method11579().method23465(Class3421.field19131, Direction.NORTH);
+      Class7380 var24 = Blocks.STONE_BRICK_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
       this.method12928(var1, var5, 4, 1, 5, 6, 1, 7, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 4, 2, 6, 6, 2, 7, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 4, 3, 7, 6, 3, 7, false, var4, Class9331.method35288());

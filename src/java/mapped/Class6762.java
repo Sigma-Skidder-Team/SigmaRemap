@@ -493,7 +493,7 @@ public class Class6762 extends Class6764 {
       Class8649 var6 = var4.method23384();
       if (var4.method23393()) {
          return Class2163.field14185;
-      } else if (var4.method23446(Class7645.field32768) || var4.method23448(Blocks.field36641)) {
+      } else if (var4.method23446(Class7645.field32768) || var4.method23448(Blocks.LILY_PAD)) {
          return Class2163.field14188;
       } else if (var4.method23448(Blocks.CACTUS)) {
          return Class2163.field14198;
@@ -501,7 +501,7 @@ public class Class6762 extends Class6764 {
          return Class2163.field14200;
       } else if (var4.method23448(Blocks.field37119)) {
          return Class2163.field14206;
-      } else if (var4.method23448(Blocks.field36654)) {
+      } else if (var4.method23448(Blocks.COCOA)) {
          return Class2163.field14207;
       } else {
          Class7379 var7 = var0.method6739(var1);

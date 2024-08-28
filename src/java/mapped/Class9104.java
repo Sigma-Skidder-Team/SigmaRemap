@@ -277,7 +277,7 @@ public class Class9104 {
       Class2898.field17942
          .method11216(
             new Class4697(
-               Class7700.field33045, true, 4, 1, ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.field36393)
+               Class7700.field33045, true, 4, 1, ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE)
             )
          )
          .method26510(Class6272.field27764.method19244(new Class4725(8, 8, 256)))

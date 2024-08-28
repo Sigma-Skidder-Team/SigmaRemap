@@ -452,22 +452,22 @@ public class Class3192 {
       GL11.glPushMatrix();
       boolean var16 = false;
       if ((double) GuiManager.field41348 == 2.0) {
-         if (var0 == ResourceRegistry.field38854) {
-            var0 = ResourceRegistry.field38856;
-         } else if (var0 == ResourceRegistry.field38855) {
+         if (var0 == ResourceRegistry.JelloLightFont20) {
+            var0 = ResourceRegistry.JelloLightFont40;
+         } else if (var0 == ResourceRegistry.JelloLightFont25) {
             var0 = ResourceRegistry.field38857;
-         } else if (var0 == ResourceRegistry.field38851) {
+         } else if (var0 == ResourceRegistry.JelloLightFont12) {
             var0 = ResourceRegistry.field38859;
-         } else if (var0 == ResourceRegistry.field38852) {
+         } else if (var0 == ResourceRegistry.JelloLightFont14) {
             var0 = ResourceRegistry.field38858;
-         } else if (var0 == ResourceRegistry.field38853) {
+         } else if (var0 == ResourceRegistry.JelloLightFont18) {
             var0 = ResourceRegistry.field38860;
-         } else if (var0 == ResourceRegistry.field38861) {
-            var0 = ResourceRegistry.field38862;
-         } else if (var0 == ResourceRegistry.field38864) {
-            var0 = ResourceRegistry.field38866;
-         } else if (var0 == ResourceRegistry.field38865) {
-            var0 = ResourceRegistry.field38867;
+         } else if (var0 == ResourceRegistry.RegularFont20) {
+            var0 = ResourceRegistry.RegularFont40;
+         } else if (var0 == ResourceRegistry.JelloMediumFont20) {
+            var0 = ResourceRegistry.JelloMediumFont40;
+         } else if (var0 == ResourceRegistry.JelloMediumFont25) {
+            var0 = ResourceRegistry.JelloMediumFont50;
          } else {
             var16 = true;
          }

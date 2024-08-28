@@ -62,7 +62,7 @@ public interface Class6226 {
       Class3357.method11931(Class8514.field37882, new Class6243());
       Class3357.method11931(Class8514.field37794, new Class6234());
       Class3357.method11931(Class8514.field37934, new Class6241());
-      Class3357.method11931(Blocks.field36524, new Class6219());
+      Class3357.method11931(Blocks.TNT, new Class6219());
       Class6239 var5 = new Class6239();
       Class3357.method11931(Class8514.field38062, var5);
       Class3357.method11931(Class8514.field38061, var5);

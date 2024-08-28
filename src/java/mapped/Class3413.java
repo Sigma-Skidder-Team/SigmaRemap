@@ -12,7 +12,7 @@ public class Class3413 extends Block {
       Class9477.field44041
    );
 
-   public Class3413(Class7929 var1) {
+   public Class3413(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19100, Integer.valueOf(0)));
    }

@@ -145,7 +145,7 @@ public class Class5254 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23628.method27120();
         this.field23628.method27118();
         this.field23635 = null;

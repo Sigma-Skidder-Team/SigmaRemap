@@ -6,7 +6,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
    public static final Class8554 field19267 = Class8820.field39744;
    private final double field19268;
 
-   public Class3452(Class7929 var1, Direction var2, Class6408 var3, boolean var4, double var5) {
+   public Class3452(AbstractBlock var1, Direction var2, Class6408 var3, boolean var4, double var5) {
       super(var1, var2, var3, var4);
       this.field19268 = var5;
       this.method11578(this.field18612.method35393().method23465(field19267, Integer.valueOf(0)));

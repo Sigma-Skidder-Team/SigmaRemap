@@ -2,11 +2,11 @@ package mapped;
 
 public final class Class7700 {
    private static String[] field32993;
-   public static final Class7380 field32994 = Blocks.field36482.method11579();
-   public static final Class7380 field32995 = Blocks.field36483.method11579();
+   public static final Class7380 field32994 = Blocks.GRASS.method11579();
+   public static final Class7380 field32995 = Blocks.FERN.method11579();
    public static final Class7380 field32996 = Blocks.field36398.method11579();
    public static final Class7380 field32997 = Blocks.field36397.method11579();
-   public static final Class7380 field32998 = Blocks.field36640.method11579();
+   public static final Class7380 field32998 = Blocks.MYCELIUM.method11579();
    public static final Class7380 field32999 = Blocks.SNOW_BLOCK.method11579();
    public static final Class7380 field33000 = Blocks.ICE.method11579();
    public static final Class7380 field33001 = Blocks.field36422.method11579();
@@ -23,39 +23,39 @@ public final class Class7700 {
    public static final Class7380 field33012 = Blocks.field36451.method11579();
    public static final Class7380 field33013 = Blocks.field36395.method11579();
    public static final Class7380 field33014 = Blocks.field36802.method11579();
-   public static final Class7380 field33015 = Blocks.field36801.method11579();
-   public static final Class7380 field33016 = Blocks.field36798.method11579();
-   public static final Class7380 field33017 = Blocks.field36799.method11579();
+   public static final Class7380 field33015 = Blocks.TALL_GRASS.method11579();
+   public static final Class7380 field33016 = Blocks.LILAC.method11579();
+   public static final Class7380 field33017 = Blocks.ROSE_BUSH.method11579();
    public static final Class7380 field33018 = Blocks.field36800.method11579();
-   public static final Class7380 field33019 = Blocks.field36519.method11579();
-   public static final Class7380 field33020 = Blocks.field36520.method11579();
-   public static final Class7380 field33021 = Blocks.field36796.method11579();
+   public static final Class7380 field33019 = Blocks.BROWN_MUSHROOM.method11579();
+   public static final Class7380 field33020 = Blocks.RED_MUSHROOM.method11579();
+   public static final Class7380 field33021 = Blocks.PACKED_ICE.method11579();
    public static final Class7380 field33022 = Blocks.field37006.method11579();
-   public static final Class7380 field33023 = Blocks.field36518.method11579();
-   public static final Class7380 field33024 = Blocks.field36508.method11579();
-   public static final Class7380 field33025 = Blocks.field36507.method11579();
-   public static final Class7380 field33026 = Blocks.field36506.method11579();
-   public static final Class7380 field33027 = Blocks.field36484.method11579();
-   public static final Class7380 field33028 = Blocks.field36631.method11579();
+   public static final Class7380 field33023 = Blocks.LILY_OF_THE_VALLEY.method11579();
+   public static final Class7380 field33024 = Blocks.BLUE_ORCHID.method11579();
+   public static final Class7380 field33025 = Blocks.POPPY.method11579();
+   public static final Class7380 field33026 = Blocks.DANDELION.method11579();
+   public static final Class7380 field33027 = Blocks.DEAD_BUSH.method11579();
+   public static final Class7380 field33028 = Blocks.MELON.method11579();
    public static final Class7380 field33029 = Blocks.PUMPKIN.method11579();
    public static final Class7380 field33030 = Blocks.field37069.method11579().method23465(Class3484.field19342, Integer.valueOf(3));
-   public static final Class7380 field33031 = Blocks.field36530.method11579();
+   public static final Class7380 field33031 = Blocks.FIRE.method11579();
    public static final Class7380 field33032 = Blocks.field36531.method11579();
    public static final Class7380 field33033 = Blocks.NETHERRACK.method11579();
    public static final Class7380 field33034 = Blocks.SOUL_SOIL.method11579();
    public static final Class7380 field33035 = Blocks.field37090.method11579();
-   public static final Class7380 field33036 = Blocks.field36641.method11579();
+   public static final Class7380 field33036 = Blocks.LILY_PAD.method11579();
    public static final Class7380 field33037 = Blocks.SNOW.method11579();
    public static final Class7380 field33038 = Blocks.field36590.method11579();
-   public static final Class7380 field33039 = Blocks.field36797.method11579();
+   public static final Class7380 field33039 = Blocks.SUNFLOWER.method11579();
    public static final Class7380 field33040 = Blocks.CACTUS.method11579();
    public static final Class7380 field33041 = Blocks.SUGAR_CANE.method11579();
-   public static final Class7380 field33042 = Blocks.field36626.method11579().method23465(Class3443.field19254, Boolean.valueOf(false));
-   public static final Class7380 field33043 = Blocks.field36625
+   public static final Class7380 field33042 = Blocks.RED_MUSHROOM_BLOCK.method11579().method23465(Class3443.field19254, Boolean.valueOf(false));
+   public static final Class7380 field33043 = Blocks.BROWN_MUSHROOM_BLOCK
       .method11579()
       .method23465(Class3443.field19253, Boolean.valueOf(true))
       .method23465(Class3443.field19254, Boolean.valueOf(false));
-   public static final Class7380 field33044 = Blocks.field36627
+   public static final Class7380 field33044 = Blocks.MUSHROOM_STEM
       .method11579()
       .method23465(Class3443.field19253, Boolean.valueOf(false))
       .method23465(Class3443.field19254, Boolean.valueOf(false));
@@ -67,7 +67,7 @@ public final class Class7700 {
    public static final Class7380 field33050 = Blocks.GRAVEL.method11579();
    public static final Class7380 field33051 = Blocks.GRANITE.method11579();
    public static final Class7380 field33052 = Blocks.DIORITE.method11579();
-   public static final Class7380 field33053 = Blocks.field36393.method11579();
+   public static final Class7380 field33053 = Blocks.ANDESITE.method11579();
    public static final Class7380 field33054 = Blocks.field36420.method11579();
    public static final Class7380 field33055 = Blocks.field36419.method11579();
    public static final Class7380 field33056 = Blocks.field36418.method11579();
@@ -75,12 +75,12 @@ public final class Class7700 {
    public static final Class7380 field33058 = Blocks.field36536.method11579();
    public static final Class7380 field33059 = Blocks.field36455.method11579();
    public static final Class7380 field33060 = Blocks.STONE.method11579();
-   public static final Class7380 field33061 = Blocks.field36656.method11579();
+   public static final Class7380 field33061 = Blocks.EMERALD_ORE.method11579();
    public static final Class7380 field33062 = Blocks.field36619.method11579();
    public static final Class7380 field33063 = Blocks.SAND.method11579();
    public static final Class7380 field33064 = Blocks.CLAY.method11579();
    public static final Class7380 field33065 = Blocks.field36526.method11579();
-   public static final Class7380 field33066 = Blocks.field36485.method11579();
+   public static final Class7380 field33066 = Blocks.SEAGRASS.method11579();
    public static final Class7380 field33067 = Blocks.field36890.method11579();
    public static final Class7380 field33068 = Blocks.SOUL_SAND.method11579();
    public static final Class7380 field33069 = Blocks.field36421.method11579();

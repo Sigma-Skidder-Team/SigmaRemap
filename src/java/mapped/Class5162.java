@@ -27,7 +27,7 @@ public class Class5162 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23428 = (int) this.method15977("Refill delay");
         this.field23431 = (int) this.method15977("Refill delay");
         this.field23432 = false;
@@ -40,7 +40,7 @@ public class Class5162 extends Module {
         if (this.method15996() && var1.method13921()) {
             this.field23428++;
             this.field23431++;
-            String var4 = this.method15978("Refill mode");
+            String var4 = this.getStringSettingValueByName("Refill mode");
             if (!this.field23432) {
                 if (this.method16063(Class8514.field37837) == 0) {
                     if (var4.equals("OpenInv") && !(mc.field1355 instanceof Class859)) {
@@ -80,14 +80,14 @@ public class Class5162 extends Module {
 
     private void method16059() {
         this.field23432 = true;
-        if (this.method15978("Refill mode").equals("FakeInv")
+        if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
                 && !(mc.field1355 instanceof Class859)
                 && Class8005.method27349() <= Class5989.field26136.method18582()) {
             mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));
             this.field23433 = true;
         }
 
-        if (this.method15978("Bowls").equals("Stack")) {
+        if (this.getStringSettingValueByName("Bowls").equals("Stack")) {
             int var3 = this.method16063(Class8514.field37836);
             if (var3 > 0) {
                 int var4 = this.method16062(var3);
@@ -145,8 +145,8 @@ public class Class5162 extends Module {
             }
         }
 
-        boolean var5 = this.method15978("Bowls").equals("Drop");
-        if (!this.method15978("Soup mode").equals("Instant")) {
+        boolean var5 = this.getStringSettingValueByName("Bowls").equals("Drop");
+        if (!this.getStringSettingValueByName("Soup mode").equals("Instant")) {
             if (this.field23430 >= 0) {
                 if (var5) {
                     mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13488, BlockPos.field13032, Direction.field672));

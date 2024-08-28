@@ -64,7 +64,7 @@ public class Class7440 {
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, -1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
-      var4.method6730(var7, Blocks.field36665.method11579().method23395(var0.method28821()));
+      var4.method6730(var7, Blocks.BEACON.method11579().method23395(var0.method28821()));
       BlockPos var8 = var7.method8336(0, 1, 0);
       var4.method6730(var8, var1.method11579());
 

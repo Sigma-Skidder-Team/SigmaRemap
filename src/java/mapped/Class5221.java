@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -20,7 +20,7 @@ public class Class5221 extends Module {
     }
 
     @EventTarget
-    public void method16256(Class4428 var1) {
+    public void method16256(TickEvent var1) {
         if (this.method15996()) {
             Vector3d var4 = new Vector3d(mc.field1339.getPosX(), 0.0, mc.field1339.getPosZ());
             if (mc.field1339.field5036 && this.field23558 != null) {

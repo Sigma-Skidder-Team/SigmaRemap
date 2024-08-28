@@ -100,7 +100,7 @@ public class Block extends Class3390 implements Class3303 {
       }
    }
 
-   public Block(Class7929 var1) {
+   public Block(AbstractBlock var1) {
       super(var1);
       Class7558<Block, Class7380> var4 = new Class7558<>(this);
       this.method11489(var4);
@@ -113,7 +113,7 @@ public class Block extends Class3390 implements Class3303 {
          || var0 == Blocks.field36765
          || var0 == Blocks.field36589
          || var0 == Blocks.field36590
-         || var0 == Blocks.field36631
+         || var0 == Blocks.MELON
          || var0 == Blocks.PUMPKIN
          || var0.method11540(Class7645.field32805);
    }

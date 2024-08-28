@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class3232 extends Class3231 {
-   public Class3232(Class7929 var1) {
+   public Class3232(AbstractBlock var1) {
       super(var1);
    }
 

@@ -147,7 +147,7 @@ public class Class5357 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23950 = new ArrayList<Class8012>();
         field23948 = null;
         field23949 = null;
@@ -169,7 +169,7 @@ public class Class5357 extends Module {
             this.field23941 = 1;
         }
 
-        super.method15966();
+        super.isInDevelopment();
     }
 
     @Override
@@ -190,7 +190,7 @@ public class Class5357 extends Module {
     }
 
     @EventTarget
-    public void method16819(Class4428 var1) {
+    public void method16819(TickEvent var1) {
         if (this.method15996()) {
             if (this.field23957 != -1.0F) {
                 this.field23957++;
@@ -208,7 +208,7 @@ public class Class5357 extends Module {
     @EventTarget
     public void method16820(Class4401 var1) {
         if (this.method15996()) {
-            if (!this.method15978("Autoblock Mode").equals("None")
+            if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
                     && (mc.field1339.method3090().method32107() instanceof Class3267 || this.field23943 != mc.field1339.field4902.field5443)
                     && field23948 != null) {
                 var1.method13900(true);
@@ -232,7 +232,7 @@ public class Class5357 extends Module {
                     this.field23945--;
                 }
 
-                if (field23948 != null && this.field23938.method36813() && Class9567.method37087() && this.method15978("Autoblock Mode").equals("NCP")) {
+                if (field23948 != null && this.field23938.method36813() && Class9567.method37087() && this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
                     this.field23938.method36816();
                 }
 
@@ -254,8 +254,8 @@ public class Class5357 extends Module {
                     this.field23939++;
                     float var4 = this.method15977("Hit box expand");
                     Class5325 var5 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5332.class);
-                    if (var5.method15996() && var5.method15978("Type").equalsIgnoreCase("Minis")) {
-                        this.method16828(var1, var5.method16726().method15978("Mode"), var5.method16726().method15974("Avoid Fall Damage"));
+                    if (var5.method15996() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
+                        this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().method15974("Avoid Fall Damage"));
                     }
 
                     this.method16831();
@@ -275,7 +275,7 @@ public class Class5357 extends Module {
 
                     if (var8) {
                         Class338 var9 = new Class338(this, var4);
-                        boolean var10 = this.method15978("Attack Mode").equals("Pre");
+                        boolean var10 = this.getStringSettingValueByName("Attack Mode").equals("Pre");
                         if (!var10) {
                             var1.method13922(var9);
                         } else {
@@ -295,7 +295,7 @@ public class Class5357 extends Module {
 
     @EventTarget
     public void method16822(Class4415 var1) {
-        if (field23949 != null && !this.method15974("Silent") && !this.method15978("Rotation Mode").equals("None")) {
+        if (field23949 != null && !this.method15974("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
             float var4 = Class9679.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.method1562());
             float var5 = Class9679.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.method1562());
             mc.field1339.field5031 = var4;
@@ -459,7 +459,7 @@ public class Class5357 extends Module {
         return field23948 != null
                 && mc.field1339.method3090() != null
                 && mc.field1339.method3090().method32107() instanceof Class3267
-                && !this.method15978("Autoblock Mode").equals("None");
+                && !this.getStringSettingValueByName("Autoblock Mode").equals("None");
     }
 
     @Override
@@ -494,8 +494,8 @@ public class Class5357 extends Module {
             this.field23941++;
             if ((
                     !Client.getInstance().getModuleManager().method14662(Class5341.class).method15996()
-                            || Client.getInstance().getModuleManager().method14662(Class5341.class).method15978("Type").equalsIgnoreCase("Cubecraft")
-                            || Client.getInstance().getModuleManager().method14662(Class5341.class).method15978("Type").equalsIgnoreCase("Vanilla")
+                            || Client.getInstance().getModuleManager().method14662(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
+                            || Client.getInstance().getModuleManager().method14662(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
             )
                     && mc.field1339.field5038
                     && var9
@@ -520,11 +520,11 @@ public class Class5357 extends Module {
     private void method16830() {
         float var3 = this.method15977("Block Range");
         float var4 = this.method15977("Range");
-        String var5 = this.method15978("Mode");
+        String var5 = this.getStringSettingValueByName("Mode");
         List var6 = this.field23938.method36823(Math.max(var3, var4));
         var6 = this.field23938.method36824(var6);
         if (this.field23952 == null) {
-            this.method15966();
+            this.isInDevelopment();
         }
 
         if (var6 != null && var6.size() != 0 && !mc.field1299.field44643.method8511()) {
@@ -603,7 +603,7 @@ public class Class5357 extends Module {
                     this.field23956 = var9 * 1.95F / 50.0F;
                     this.field23955 = Math.random();
                     field23949 = new Class8012(
-                            this.field23950.get(this.field23942).method27397(), new Class9491(!this.method15978("Rotation Mode").equals("NCP") ? 500L : 270L)
+                            this.field23950.get(this.field23942).method27397(), new Class9491(!this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 500L : 270L)
                     );
                 }
 
@@ -641,7 +641,7 @@ public class Class5357 extends Module {
         Class7461 var4 = Class9142.method34150(var3, !this.method15974("Through walls"));
         float var5 = Class9142.method34152(this.field23952.field32084, var4.field32084);
         float var6 = var4.field32085 - this.field23952.field32085;
-        String var7 = this.method15978("Rotation Mode");
+        String var7 = this.getStringSettingValueByName("Rotation Mode");
         switch (var7) {
             case "Test":
                 this.field23953.field32084 = this.field23952.field32084;

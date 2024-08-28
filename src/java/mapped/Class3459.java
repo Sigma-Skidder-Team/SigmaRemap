@@ -14,7 +14,7 @@ public class Class3459 extends Block {
    public static final Class6408 field19286 = Block.method11539(10.0, 0.0, 5.0, 16.0, 10.0, 11.0);
    public static final Class6408 field19287 = Block.method11539(0.0, 0.0, 5.0, 6.0, 10.0, 11.0);
 
-   public Class3459(Class7929 var1) {
+   public Class3459(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612
@@ -93,14 +93,14 @@ public class Class3459 extends Block {
       for (int var17 = 1; var17 < 42; var17++) {
          BlockPos var18 = var2.method8350(var10, var17);
          Class7380 var19 = var1.method6738(var18);
-         if (var19.method23448(Blocks.field36658)) {
+         if (var19.method23448(Blocks.TRIPWIRE_HOOK)) {
             if (var19.<Direction>method23463(field19281) == var10.method536()) {
                var15 = var17;
             }
             break;
          }
 
-         if (!var19.method23448(Blocks.field36659) && var17 != var6) {
+         if (!var19.method23448(Blocks.TRIPWIRE) && var17 != var6) {
             var16[var17] = null;
             var13 = false;
          } else {

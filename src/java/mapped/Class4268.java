@@ -47,7 +47,7 @@ public class Class4268 extends Class4247 {
       Class3192.method11474(
          (float)this.field20895, (float)this.field20896 + 3.0F * this.field20691, (float)this.field20897, (float)this.field20898, 8.0F, -986896
       );
-      ClientResource var4 = ResourceRegistry.field38854;
+      ClientResource var4 = ResourceRegistry.JelloLightFont20;
       if (this.field20912.contains("Lock")) {
          Class3192.method11438(
             (float)(this.field20895 + 14),
@@ -63,7 +63,7 @@ public class Class4268 extends Class4247 {
                if (!this.field20912.equals("Menu")) {
                   if (!this.field20912.equals("Space")) {
                      if (this.field20693) {
-                        var4 = ResourceRegistry.field38861;
+                        var4 = ResourceRegistry.RegularFont20;
                      }
 
                      Class3192.method11439(

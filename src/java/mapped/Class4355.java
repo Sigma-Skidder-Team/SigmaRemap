@@ -56,14 +56,14 @@ public class Class4355 extends Class4247 {
          Class5628.method17688(Class5628.method17691(Class1979.field12896.field12910, 0.03F), this.field21289.calcPercent())
       );
       Class3192.method11439(
-         ResourceRegistry.field38854,
+         ResourceRegistry.JelloLightFont20,
          (float)(this.field20895 + 68),
          (float)(this.field20896 + 14),
          this.field21291,
          Class5628.method17688(Class1979.field12891.field12910, 0.8F)
       );
       Class3192.method11439(
-         ResourceRegistry.field38852,
+         ResourceRegistry.JelloLightFont14,
          (float)(this.field20895 + 68),
          (float)(this.field20896 + 38),
          "x:" + this.field21292.method8304() + " z:" + this.field21292.method8306(),

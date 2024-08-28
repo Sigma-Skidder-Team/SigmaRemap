@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import org.lwjgl.glfw.GLFW;
 
-public class Class5378 extends Module {
-    public Class5378() {
+public class GameIdler extends Module {
+    public GameIdler() {
         super(ModuleCategory.MISC, "GameIdler", "Lowers your fps when the game is idle to increase performance");
     }
 

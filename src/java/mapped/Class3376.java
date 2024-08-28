@@ -9,7 +9,7 @@ public class Class3376 extends Class3241 {
       Block.method11539(1.0, 0.0, 1.0, 15.0, 2.0, 15.0), Block.method11539(7.0, 0.0, 7.0, 9.0, 14.0, 9.0)
    );
 
-   public Class3376(Class7929 var1) {
+   public Class3376(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

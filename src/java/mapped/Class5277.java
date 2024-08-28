@@ -25,7 +25,7 @@ public class Class5277 extends Module {
 
     @Override
     
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23721 = (float) ((double) (mc.field1283.method8043() - this.field23725.field41839) * Math.random());
         this.field23722 = (float) ((double) (mc.field1283.method8044() - this.field23725.field41840) * Math.random());
         this.method16513();

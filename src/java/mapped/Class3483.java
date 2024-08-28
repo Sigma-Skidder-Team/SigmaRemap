@@ -13,7 +13,7 @@ public class Class3483 extends Class3480 {
       Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0)
    };
 
-   public Class3483(Class7929 var1) {
+   public Class3483(AbstractBlock var1) {
       super(var1);
    }
 

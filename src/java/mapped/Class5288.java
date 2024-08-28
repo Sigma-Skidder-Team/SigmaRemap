@@ -19,7 +19,7 @@ public class Class5288 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.method16603();
     }
 
@@ -31,7 +31,7 @@ public class Class5288 extends Module {
 
     private void method16603() {
         Client.getInstance().getCombatManager().field35947.clear();
-        String var3 = this.method15978("Mode");
+        String var3 = this.getStringSettingValueByName("Mode");
         switch (var3) {
             case "Advanced":
                 Client.getInstance().getCombatManager().field35946 = new Class7248();

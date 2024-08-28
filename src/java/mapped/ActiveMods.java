@@ -18,38 +18,38 @@ import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.*;
 
-public class Class5246 extends Module {
+public class ActiveMods extends Module {
     public int field23613 = 0;
     public int field23614;
     public HashMap<Module, Animation> field23615 = new HashMap<Module, Animation>();
-    public ClientResource field23616 = ResourceRegistry.field38854;
+    public ClientResource field23616 = ResourceRegistry.JelloLightFont20;
     private final List<Module> field23612 = new ArrayList<Module>();
 
-    public Class5246() {
+    public ActiveMods() {
         super(ModuleCategory.GUI, "ActiveMods", "Renders active mods");
         this.method15972(new Class6005("Size", "The font size", 0, "Normal", "Small", "Tiny"));
         this.method15972(new Class6004("Animations", "Scale in animation", true));
         this.method15972(new Class6004("Sound", "Toggle sound", true));
-        this.method15989().get("Size").method18616(var1 -> this.method16353());
+        this.method15989().get("Size").method18616(var1 -> this.setFontSize());
         this.method16005(false);
     }
 
     @Override
-    public void method15966() {
-        this.method16353();
+    public void isInDevelopment() {
+        this.setFontSize();
     }
 
-    public void method16353() {
-        String var3 = this.method15978("Size");
+    public void setFontSize() {
+        String var3 = this.getStringSettingValueByName("Size");
         switch (var3) {
             case "Normal":
-                this.field23616 = ResourceRegistry.field38854;
+                this.field23616 = ResourceRegistry.JelloLightFont20;
                 break;
             case "Small":
-                this.field23616 = ResourceRegistry.field38853;
+                this.field23616 = ResourceRegistry.JelloLightFont18;
                 break;
             default:
-                this.field23616 = ResourceRegistry.field38852;
+                this.field23616 = ResourceRegistry.JelloLightFont14;
         }
     }
 
@@ -126,7 +126,7 @@ public class Class5246 extends Module {
                 ClientResource var8 = this.field23616;
                 byte var9 = -1;
                 int var7 = var20 - 4;
-                if (this.field23616 == ResourceRegistry.field38852) {
+                if (this.field23616 == ResourceRegistry.JelloLightFont14) {
                     var20 -= 3;
                 }
 

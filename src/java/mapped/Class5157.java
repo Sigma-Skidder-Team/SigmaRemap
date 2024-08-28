@@ -21,9 +21,9 @@ public class Class5157 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (Class5628.method17730(mc.field1339, 0.001F)) {
-            this.field23411 = this.method15978("Offset").equals("OldHypixel");
+            this.field23411 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
             this.field23410 = !this.field23411 ? 1 : 2;
         }
 
@@ -61,8 +61,8 @@ public class Class5157 extends Module {
                     mc.field1339.method2914();
                 }
 
-                if (this.method15978("Offset").equals("OldHypixel") != this.field23411) {
-                    this.field23411 = this.method15978("Offset").equals("OldHypixel");
+                if (this.getStringSettingValueByName("Offset").equals("OldHypixel") != this.field23411) {
+                    this.field23411 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
                     this.field23410 = 2;
                 }
 

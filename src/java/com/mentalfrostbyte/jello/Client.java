@@ -66,7 +66,7 @@ public class Client {
     private WaypointsManager waypointsManager;
     private Class8795 field28989;
     private Class8005 field28990;
-    private ClientMode field28991 = ClientMode.field13886;
+    private ClientMode field28991 = ClientMode.PREMIUM;
 
     private Client() {
     }
@@ -246,7 +246,7 @@ public class Client {
             }
         }
 
-        if (getInstance().method19954() != ClientMode.field13889) {
+        if (getInstance().getClientMode() != ClientMode.field13889) {
             double var5 = mc.field1283.method8049() / (double) ((float) Math.pow(mc.field1283.method8049(), 2.0));
             GL11.glScaled(var5, var5, 1.0);
             GL11.glScaled(GuiManager.field41348, GuiManager.field41348, 1.0);
@@ -375,7 +375,7 @@ public class Client {
         return this.file;
     }
 
-    public ClientMode method19954() {
+    public ClientMode getClientMode() {
         return this.field28991;
     }
 

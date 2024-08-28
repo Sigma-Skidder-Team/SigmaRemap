@@ -15,7 +15,7 @@ public class Class5184 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         mc.field1287.method868();
         Class5313 var3 = (Class5313) Client.getInstance().getModuleManager().method14662(Class5313.class);
         if (!var3.method15996()) {

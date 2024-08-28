@@ -30,7 +30,7 @@ public class Class5178 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23479 = false;
         this.field23477 = 0;
     }
@@ -71,7 +71,7 @@ public class Class5178 extends Module {
                     } else if ((float) this.field23478 > this.method15977("Duration") + (float) Class9567.method37078()) {
                         this.field23480 = var5;
                     } else if (this.field23480 > var5) {
-                        String var7 = this.method15978("Speed Mode");
+                        String var7 = this.getStringSettingValueByName("Speed Mode");
                         switch (var7) {
                             case "Basic":
                                 this.field23480 *= 0.987;
@@ -94,7 +94,7 @@ public class Class5178 extends Module {
 
                     Class9567.method37088(var1, this.field23480);
                     if (Class9567.method37079() == 0) {
-                        String var13 = this.method15978("Glide Mode");
+                        String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
                             case "Basic":
                                 var1.method13995(((Class5327) this.method16004()).method16730(this.field23478));
@@ -135,14 +135,14 @@ public class Class5178 extends Module {
             this.field23480 = Class9567.method37076();
             var1.method14003(this.field23480);
             var1.method14002(0.425 + (double) Class9567.method37079() * 0.1);
-            if (this.method15978("Glide Mode").equals("High") && Class9567.method37079() == 0) {
+            if (this.getStringSettingValueByName("Glide Mode").equals("High") && Class9567.method37079() == 0) {
                 var1.method14002(0.599);
                 var1.method14003(0.0);
                 if ((double) this.method15977("Boost") > 1.5) {
                     var1.method14003(0.28 + (double) this.method15977("Boost") * 0.1 + (double) Class9567.method37078() * 0.05);
                 }
 
-                if (this.method15978("Speed Mode").equals("Hypixel") && (double) this.method15977("Boost") > 1.75) {
+                if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.method15977("Boost") > 1.75) {
                     Class5628.method17749(true);
                 }
 
@@ -166,7 +166,7 @@ public class Class5178 extends Module {
 
     @EventTarget
     public void method16124(Class4417 var1) {
-        if (!this.method15996() || !this.method15978("Glide Mode").equals("High")) {
+        if (!this.method15996() || !this.getStringSettingValueByName("Glide Mode").equals("High")) {
         }
     }
 }

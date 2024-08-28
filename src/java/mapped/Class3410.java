@@ -18,7 +18,7 @@ public class Class3410 extends Block {
       Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
    };
 
-   public Class3410(Class7929 var1) {
+   public Class3410(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19092, Integer.valueOf(1)));
    }
@@ -65,7 +65,7 @@ public class Class3410 extends Block {
    @Override
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       Class7380 var6 = var2.method6738(var3.method8313());
-      if (var6.method23448(Blocks.ICE) || var6.method23448(Blocks.field36796) || var6.method23448(Blocks.field36765)) {
+      if (var6.method23448(Blocks.ICE) || var6.method23448(Blocks.PACKED_ICE) || var6.method23448(Blocks.field36765)) {
          return false;
       } else {
          return !var6.method23448(Blocks.field37119) && !var6.method23448(Blocks.SOUL_SAND)

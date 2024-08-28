@@ -49,7 +49,7 @@ public class Class3222 extends Block {
    private final Class7380 field18658;
    private boolean field18659 = true;
 
-   public Class3222(Class7929 var1) {
+   public Class3222(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612
@@ -376,7 +376,7 @@ public class Class3222 extends Block {
    }
 
    public static boolean method11628(Class7380 var0, Direction var1) {
-      if (var0.method23448(Blocks.field36535)) {
+      if (var0.method23448(Blocks.REDSTONE_WIRE)) {
          return true;
       } else if (!var0.method23448(Blocks.field36592)) {
          return var0.method23448(Blocks.field36895) ? var1 == var0.<Direction>method23463(Class3434.field19198) : var0.method23401() && var1 != null;

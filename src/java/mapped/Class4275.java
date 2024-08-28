@@ -27,21 +27,21 @@ public class Class4275 extends Class4247 {
             "Register",
             228,
             43,
-            ResourceRegistry.field38866.method23942("New Account"),
+            ResourceRegistry.JelloMediumFont40.method23942("New Account"),
             50,
             new Class6387(Class1979.field12891.field12910, Class1979.field12891.field12910, Class1979.field12891.field12910, -7631989),
             "New Account",
-            ResourceRegistry.field38866
+            ResourceRegistry.JelloMediumFont40
          )
       );
       this.method13230(
          this.field20717 = new Class4274(
-            this, "RegisterButton", 468, 291, ResourceRegistry.field38855.method23942("Register"), 70, Class6387.field27961, "Register", ResourceRegistry.field38855
+            this, "RegisterButton", 468, 291, ResourceRegistry.JelloLightFont25.method23942("Register"), 70, Class6387.field27961, "Register", ResourceRegistry.JelloLightFont25
          )
       );
       this.method13230(
          this.field20718 = new Class4274(
-            this, "LoginButton", 98, 333, ResourceRegistry.field38852.method23942("Login"), 14, Class6387.field27961, "Login", ResourceRegistry.field38852
+            this, "LoginButton", 98, 333, ResourceRegistry.JelloLightFont14.method23942("Login"), 14, Class6387.field27961, "Login", ResourceRegistry.JelloLightFont14
          )
       );
       this.method13230(this.field20720 = new Class4285(this, "loading", 530, 314, 30, 30));
@@ -52,14 +52,14 @@ public class Class4275 extends Class4247 {
       byte var11 = 106;
       Class6387 var12 = new Class6387(-892679478, -892679478, -892679478, Class1979.field12899.field12910, Class2218.field14488, Class2218.field14492);
       this.method13230(this.field20713 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
-      this.field20713.method13306(ResourceRegistry.field38854);
+      this.field20713.method13306(ResourceRegistry.JelloLightFont20);
       this.method13230(this.field20714 = new Class4281(this, "Email", 228, var11 + 53, var10, var9, var12, "", "Email"));
-      this.field20714.method13306(ResourceRegistry.field38854);
+      this.field20714.method13306(ResourceRegistry.JelloLightFont20);
       this.method13230(this.field20715 = new Class4281(this, "Password", 228, var11 + 106, var10, var9, var12, "", "Password"));
-      this.field20715.method13306(ResourceRegistry.field38854);
+      this.field20715.method13306(ResourceRegistry.JelloLightFont20);
       this.field20715.method13155(true);
       this.method13230(this.field20716 = new Class4281(this, "CaptchaBox", 228, var11 + 53 + 135, 80, var9, var12, "", "Captcha"));
-      this.field20716.method13306(ResourceRegistry.field38854);
+      this.field20716.method13306(ResourceRegistry.JelloLightFont20);
       this.field20716.method13288(false);
       this.field20717.method13251((var1x, var2x) -> this.method13126());
       this.field20718.method13251((var1x, var2x) -> {

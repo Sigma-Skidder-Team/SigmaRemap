@@ -25,7 +25,7 @@ public class Class5371 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23989.clear();
         this.field23991 = false;
         this.field23990.method27120();

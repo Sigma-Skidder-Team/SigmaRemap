@@ -108,7 +108,7 @@ public class Class5381 extends Module {
                var1.method13995(-0.078);
             }
 
-            if (this.method15978("Mode").equals("Dolphin")) {
+            if (this.getStringSettingValueByName("Mode").equals("Dolphin")) {
                if (this.field24016 > 0) {
                   if (Class5628.method17730(mc.field1339, 0.001F)) {
                      this.field24016 = 0;
@@ -204,8 +204,8 @@ public class Class5381 extends Module {
             if (var9 != Blocks.WATER
                && var9 != Blocks.LAVA
                && var9 != Blocks.AIR
-               && var9 != Blocks.field36485
-               && var9 != Blocks.field36486) {
+               && var9 != Blocks.SEAGRASS
+               && var9 != Blocks.TALL_SEAGRASS) {
                var5 = false;
             }
          }

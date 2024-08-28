@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -25,7 +25,7 @@ public class Class5290 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (!this.field23796.method27123()) {
             this.field23796.method27118();
         }
@@ -41,15 +41,15 @@ public class Class5290 extends Module {
 
     @EventTarget
     @HigherPriority
-    public void method16615(Class4428 var1) {
+    public void method16615(TickEvent var1) {
         if (this.method15996()) {
             if (!this.field23796.method27123()) {
                 this.field23796.method27118();
             }
 
-            if (!this.method15978("Mode").equals("OpenInv") || mc.field1355 instanceof Class859) {
+            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.field1355 instanceof Class859) {
                 long var4 = (long) (this.method15977("Delay") * 1000.0F);
-                String var6 = this.method15978("Elytra");
+                String var6 = this.getStringSettingValueByName("Elytra");
                 switch (var6) {
                     case "Ignore":
                         this.field23799 = false;
@@ -74,7 +74,7 @@ public class Class5290 extends Module {
                         && this.field23796.method27121() > var4
                         && (float) Client.getInstance().method19939().method31333() > (float) var4 / 50.0F) {
                     field23798 = false;
-                    this.method16616(this.method15978("Mode").equalsIgnoreCase("FakeInv"));
+                    this.method16616(this.getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
                 }
 
                 for (Class2106 var9 : Class2106.values()) {
@@ -124,7 +124,7 @@ public class Class5290 extends Module {
                             Class7789.method25870(mc.field1339.field4904.field25471, var12, 0, Class2259.field14695, mc.field1339, true);
                             this.field23796.method27120();
                             field23798 = true;
-                            if (this.method15978("Elytra").equals("On Use")) {
+                            if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
                                 mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10048));
                                 mc.field1339.method3349(7, true);
                             }

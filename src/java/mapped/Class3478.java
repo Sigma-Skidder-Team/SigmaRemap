@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class3478 extends Class3198 {
    private static final ITextComponent field19331 = new TranslationTextComponent("container.loom");
 
-   public Class3478(Class7929 var1) {
+   public Class3478(AbstractBlock var1) {
       super(var1);
    }
 

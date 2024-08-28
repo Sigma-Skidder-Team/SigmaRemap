@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.Class3192;
@@ -28,8 +28,8 @@ public class NotificationManager {
     private int field39925 = 10;
     private int field39926 = 10;
     private int field39927 = 10;
-    private ClientResource field39928 = ResourceRegistry.field38852;
-    private ClientResource field39929 = ResourceRegistry.field38854;
+    private ClientResource field39928 = ResourceRegistry.JelloLightFont14;
+    private ClientResource field39929 = ResourceRegistry.JelloLightFont20;
 
     public void post(Notification var1) {
         for (Notification var5 : this.field39919) {
@@ -115,7 +115,7 @@ public class NotificationManager {
     }
 
     @EventTarget
-    private void method31996(Class4428 var1) {
+    private void method31996(TickEvent var1) {
         Iterator var4 = this.field39919.iterator();
 
         while (var4.hasNext()) {

@@ -21,7 +21,7 @@ public class Class5267 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23696 = 0;
         if (!mc.field1299.field44637.method8509()) {
             this.field23699 = false;

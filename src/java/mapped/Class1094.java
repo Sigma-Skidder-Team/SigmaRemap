@@ -26,7 +26,7 @@ public class Class1094 extends Class1018 {
       this.field5600.method20002(1, new Class2603(this));
       this.field5600.method20002(1, new Class2749(this, 2.2));
       this.field5600.method20002(2, new Class2785(this, 0.8));
-      this.field5600.method20002(3, new Class2680(this, 1.0, Class120.method339(Class8514.field38052, Class8514.field38057, Blocks.field36506), false));
+      this.field5600.method20002(3, new Class2680(this, 1.0, Class120.method339(Class8514.field38052, Class8514.field38057, Blocks.DANDELION), false));
       this.field5600.method20002(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
       this.field5600.method20002(4, new Class2772<Class1012>(this, Class1012.class, 10.0F, 2.2, 2.2));
       this.field5600.method20002(4, new Class2772<Class1009>(this, Class1009.class, 4.0F, 2.2, 2.2));
@@ -248,7 +248,7 @@ public class Class1094 extends Class1018 {
    }
 
    private boolean method5113(Class3257 var1) {
-      return var1 == Class8514.field38052 || var1 == Class8514.field38057 || var1 == Blocks.field36506.method11581();
+      return var1 == Class8514.field38052 || var1 == Class8514.field38057 || var1 == Blocks.DANDELION.method11581();
    }
 
    public Class1094 method4389(Class1657 var1, Class1045 var2) {

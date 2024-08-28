@@ -164,8 +164,8 @@ public class Class5234 extends Module {
                                 0.75F * var11
                         );
                         Class3192.method11439(
-                                ResourceRegistry.field38853,
-                                (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.field38853.method23942(var12)) / 2),
+                                ResourceRegistry.JelloLightFont18,
+                                (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.JelloLightFont18.method23942(var12)) / 2),
                                 (float) (this.field23586 + var21.field42636 + 12),
                                 var12,
                                 Class1979.field12896.field12910

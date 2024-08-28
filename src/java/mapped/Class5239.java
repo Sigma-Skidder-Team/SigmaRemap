@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import org.lwjgl.glfw.GLFW;
@@ -12,7 +12,7 @@ public class Class5239 extends Module {
     }
 
     @EventTarget
-    private void method16336(Class4428 var1) {
+    private void method16336(TickEvent var1) {
         if (this.method15996()) {
             mc.field1299.field44632.field13071 = true;
         }

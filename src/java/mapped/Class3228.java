@@ -6,7 +6,7 @@ public class Class3228 extends Class3227 {
    private static String[] field18666;
    private final Block field18667;
 
-   public Class3228(Block var1, Class7929 var2) {
+   public Class3228(Block var1, AbstractBlock var2) {
       super(var2);
       this.field18667 = var1;
    }

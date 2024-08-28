@@ -68,7 +68,7 @@ public class Class5168 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         File var3 = new File(Client.getInstance().getFile() + "/shematics/" + (String) this.method15973("Shematics"));
         if (var3.exists()) {
             this.field23440 = new Class8817(var3);

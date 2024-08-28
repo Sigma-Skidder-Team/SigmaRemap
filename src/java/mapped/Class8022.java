@@ -255,7 +255,7 @@ public final class Class8022 {
                   if (var30 < 3) {
                      var14.method8376(var10, var28, var29, var27);
                      Class7380 var31 = var1.method6738(var14);
-                     if ((var30 != 1 || var31.method23390()) && (var30 != 2 || var31.method23448(Blocks.field36505))) {
+                     if ((var30 != 1 || var31.method23390()) && (var30 != 2 || var31.method23448(Blocks.MOVING_PISTON))) {
                         Class6408 var32 = var31.method23415(var1, var14, var4);
                         if (var7) {
                            Class4398 var33 = new Class4398(var14, var32);

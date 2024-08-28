@@ -8,7 +8,7 @@ public class Class3485 extends Class3194 implements Class3196 {
    public static final Class6408 field19345 = Block.method11539(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
    private final Supplier<Class7909<Class4709, ?>> field19346;
 
-   public Class3485(Class7929 var1, Supplier<Class7909<Class4709, ?>> var2) {
+   public Class3485(AbstractBlock var1, Supplier<Class7909<Class4709, ?>> var2) {
       super(var1);
       this.field19346 = var2;
    }
@@ -21,7 +21,7 @@ public class Class3485 extends Class3194 implements Class3196 {
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
       return var1.method23446(Class7645.field32799)
-         || var1.method23448(Blocks.field36640)
+         || var1.method23448(Blocks.MYCELIUM)
          || var1.method23448(Blocks.SOUL_SOIL)
          || super.method11490(var1, var2, var3);
    }

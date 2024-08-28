@@ -22,7 +22,7 @@ public class Class5224 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         field23568 = true;
     }
 }

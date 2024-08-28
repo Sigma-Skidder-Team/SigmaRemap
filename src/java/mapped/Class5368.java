@@ -24,7 +24,7 @@ public class Class5368 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (!mc.field1339.field5036) {
             this.field23984 = false;
         } else {

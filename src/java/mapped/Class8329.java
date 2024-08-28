@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4402;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class Class8329 {
 
    @EventTarget
    @Class5631
-   public void method29201(Class4428 var1) {
+   public void method29201(TickEvent var1) {
    }
 
    @EventTarget

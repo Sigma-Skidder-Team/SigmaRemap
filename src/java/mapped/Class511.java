@@ -33,7 +33,7 @@ public class Class511 implements Runnable {
                   Class4303.method13207(this.field2427),
                   this.field2425,
                   this.field2424.field44775,
-                  ResourceRegistry.field38852
+                  ResourceRegistry.JelloLightFont14
                )
             );
          Class4339 var4;

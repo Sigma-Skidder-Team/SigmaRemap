@@ -5,7 +5,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    public static final Class6408 field18967 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
    private final Class9673 field18968;
 
-   public Class3373(Class7929 var1, Class9673 var2) {
+   public Class3373(AbstractBlock var1, Class9673 var2) {
       super(var1);
       this.field18968 = var2;
    }

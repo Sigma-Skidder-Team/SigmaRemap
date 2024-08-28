@@ -3,7 +3,7 @@ package mapped;
 public class Class3467 extends Block {
    private static String[] field19312;
 
-   public Class3467(Class7929 var1) {
+   public Class3467(AbstractBlock var1) {
       super(var1);
    }
 

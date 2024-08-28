@@ -70,7 +70,7 @@ public abstract class Module {
         }
     }
 
-    public String method15978(String var1) {
+    public String getStringSettingValueByName(String var1) {
         try {
             return (String) this.method15973(var1);
         } catch (Exception var5) {
@@ -147,7 +147,7 @@ public abstract class Module {
         }
 
         if (this.enabled && mc.field1338 != null) {
-            this.method15966();
+            this.isInDevelopment();
         }
 
         return var1;
@@ -171,7 +171,7 @@ public abstract class Module {
         }
     }
 
-    public void method15966() {
+    public void isInDevelopment() {
         if (this.getClass().isAnnotationPresent(InDevelopment.class) && !moduleList.contains(this.getClass())) {
             Client.getInstance().getLogger().method20357("This mod is still in development. Be careful!");
             moduleList.add(this.getClass());
@@ -202,10 +202,10 @@ public abstract class Module {
     }
 
     public ModuleCategory method15993() {
-        if (Client.getInstance().method19954() == ClientMode.CLASSIC && this.category == ModuleCategory.ITEM) {
+        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && this.category == ModuleCategory.ITEM) {
             return ModuleCategory.PLAYER;
         } else {
-            return Client.getInstance().method19954() == ClientMode.CLASSIC && this.category == ModuleCategory.EXPLOIT
+            return Client.getInstance().getClientMode() == ClientMode.CLASSIC && this.category == ModuleCategory.EXPLOIT
                     ? ModuleCategory.MISC
                     : this.category;
         }
@@ -220,8 +220,8 @@ public abstract class Module {
     }
 
     public boolean method15996() {
-        if (Client.getInstance().method19954() != ClientMode.field13889) {
-            return (Client.getInstance().method19954() != ClientMode.CLASSIC || this.method16006()) && this.enabled;
+        if (Client.getInstance().getClientMode() != ClientMode.field13889) {
+            return (Client.getInstance().getClientMode() != ClientMode.CLASSIC || this.method16006()) && this.enabled;
         } else {
             return false;
         }
@@ -234,7 +234,7 @@ public abstract class Module {
                 this.method15965();
             } else {
                 Client.getInstance().getEventManager().subscribe(this);
-                this.method15966();
+                this.isInDevelopment();
             }
         }
 
@@ -255,12 +255,12 @@ public abstract class Module {
             if (!(this.enabled = var1)) {
                 Client.getInstance().getEventManager().unsubscribe(this);
                 if (!(this instanceof Class5325)) {
-                    if (Client.getInstance().method19954() == ClientMode.JELLO
-                            && Client.getInstance().getModuleManager().method14662(Class5246.class).method15974("Sound")) {
+                    if (Client.getInstance().getClientMode() == ClientMode.JELLO
+                            && Client.getInstance().getModuleManager().method14662(ActiveMods.class).method15974("Sound")) {
                         Client.getInstance().getSoundManager().play("deactivate");
                     }
 
-                    if (Client.getInstance().method19954() == ClientMode.CLASSIC
+                    if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                             && Client.getInstance().getModuleManager().method14662(Class5359.class).method15974("Sound")) {
                         Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27131, 0.6F));
                     }
@@ -269,17 +269,17 @@ public abstract class Module {
                 this.method15965();
             } else {
                 Client.getInstance().getEventManager().subscribe(this);
-                if (Client.getInstance().method19954() == ClientMode.JELLO
-                        && Client.getInstance().getModuleManager().method14662(Class5246.class).method15974("Sound")) {
+                if (Client.getInstance().getClientMode() == ClientMode.JELLO
+                        && Client.getInstance().getModuleManager().method14662(ActiveMods.class).method15974("Sound")) {
                     Client.getInstance().getSoundManager().play("activate");
                 }
 
-                if (Client.getInstance().method19954() == ClientMode.CLASSIC
+                if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                         && Client.getInstance().getModuleManager().method14662(Class5359.class).method15974("Sound")) {
                     Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27131, 0.7F));
                 }
 
-                this.method15966();
+                this.isInDevelopment();
                 this.field23395++;
             }
         }

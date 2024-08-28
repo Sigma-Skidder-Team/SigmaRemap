@@ -32,7 +32,7 @@ public class Class4289 extends Class4278 {
       int var10 = 0;
 
       for (String var14 : this.field20783.field42047) {
-         Class3192.method11439(ResourceRegistry.field38853, (float)(var4 + 10), (float)(var5 + 5 + var10 * ResourceRegistry.field38853.method23952()), var14, var9);
+         Class3192.method11439(ResourceRegistry.JelloLightFont18, (float)(var4 + 10), (float)(var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.method23952()), var14, var9);
          var10++;
       }
 

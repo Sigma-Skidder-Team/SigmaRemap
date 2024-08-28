@@ -16,7 +16,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    private static boolean method11227(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, var0x -> var0x.method23448(Blocks.field36636));
+      return var0.method6815(var1, var0x -> var0x.method23448(Blocks.VINE));
    }
 
    private static boolean method11228(Class1680 var0, BlockPos var1) {
@@ -30,7 +30,7 @@ public class Class2903 extends Class2898<Class4733> {
    private static boolean method11230(Class1680 var0, BlockPos var1) {
       return var0.method6815(var1, var0x -> {
          Block var3 = var0x.method23383();
-         return method11219(var3) || var3 == Blocks.field36540;
+         return method11219(var3) || var3 == Blocks.FARMLAND;
       });
    }
 

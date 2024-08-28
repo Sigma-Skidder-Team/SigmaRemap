@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 
-public class Class5262 extends PremiumModule {
+public class MineplexFly extends PremiumModule {
     private int field23668;
     private int field23669;
     private int field23670;
@@ -17,14 +17,14 @@ public class Class5262 extends PremiumModule {
     private boolean field23674;
     private boolean field23675;
 
-    public Class5262() {
+    public MineplexFly() {
         super("Mineplex", "Mineplex fly/longjump", ModuleCategory.MOVEMENT);
         this.method15972(new Class6009<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
         this.method15972(new Class6004("Fake", "Simulate a real fly", false));
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23668 = -1;
         this.field23671 = Class9567.method37075();
         this.field23669 = 0;

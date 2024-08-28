@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -20,7 +20,7 @@ public class Class5283 extends Module {
     }
 
     @EventTarget
-    private void method16578(Class4428 var1) {
+    private void method16578(TickEvent var1) {
         if (this.method15996()) {
             if (Class5628.method17705() > this.field23755 && mc.field1339.field5055 % 3 == 0) {
                 this.field23755++;
@@ -57,7 +57,7 @@ public class Class5283 extends Module {
                         byte var6 = 85;
                         int var7 = var1.method13960();
                         short var8 = 150;
-                        float var9 = (float) ResourceRegistry.field38853.method23942(var5);
+                        float var9 = (float) ResourceRegistry.JelloLightFont18.method23942(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
                         if (this.field23756.method25319() != Direction.FORWARDS) {
                             var10 *= 0.9F + Class9782.method38556(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
@@ -70,7 +70,7 @@ public class Class5283 extends Module {
                         GL11.glScalef(var10, var10, 1.0F);
                         GL11.glTranslatef((float) (-var6), (float) (-var7 - 10), 0.0F);
                         Class3192.method11440(
-                                ResourceRegistry.field38869,
+                                ResourceRegistry.JelloLightFont18_1,
                                 var6,
                                 (float) var7,
                                 var5,
@@ -79,7 +79,7 @@ public class Class5283 extends Module {
                                 Class2218.field14488
                         );
                         Class3192.method11440(
-                                ResourceRegistry.field38853,
+                                ResourceRegistry.JelloLightFont18,
                                 var6,
                                 (float) var7,
                                 var5,

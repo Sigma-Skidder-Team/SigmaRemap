@@ -18,11 +18,11 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.method6738(var1.method8313()).method23448(Blocks.field36640) ? var2.method7009(var1) - 0.5F : 10.0F;
+      return !var2.method6738(var1.method8313()).method23448(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
    public static boolean method5034(Class8992<Class1086> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6738(var3.method8313()).method23448(Blocks.field36640) && var1.method7021(var3, 0) > 8;
+      return var1.method6738(var3.method8313()).method23448(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
    }
 
    @Override

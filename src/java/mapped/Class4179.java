@@ -26,9 +26,9 @@ public class Class4179 extends Class4178 {
       while (var11.getY() > 0) {
          Class7380 var12 = var1.method6738(var11);
          Class7380 var13 = var1.method6738(var11.method8313());
-         if (var13 == Blocks.field36458.method11579()
+         if (var13 == Blocks.SANDSTONE.method11579()
             || var13 == Blocks.STONE.method11579()
-            || var13 == Blocks.field36393.method11579()
+            || var13 == Blocks.ANDESITE.method11579()
             || var13 == Blocks.GRANITE.method11579()
             || var13 == Blocks.DIORITE.method11579()) {
             Class7380 var14 = !var12.method23393() && !this.method12942(var12) ? var12 : Blocks.SAND.method11579();

@@ -13,7 +13,7 @@ public abstract class Class6768<C extends Class8277> {
    private static final Class7380 field29493 = Blocks.SAND.method11579();
    private static final Class7380 field29494 = Blocks.RED_SAND.method11579();
    private static final Class7380 field29495 = Blocks.field36730.method11579();
-   private static final Class7380 field29496 = Blocks.field36640.method11579();
+   private static final Class7380 field29496 = Blocks.MYCELIUM.method11579();
    private static final Class7380 field29497 = Blocks.SOUL_SAND.method11579();
    private static final Class7380 field29498 = Blocks.NETHERRACK.method11579();
    private static final Class7380 field29499 = Blocks.field36651.method11579();

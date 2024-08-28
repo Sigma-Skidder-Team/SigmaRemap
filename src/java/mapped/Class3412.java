@@ -9,7 +9,7 @@ public class Class3412 extends Block {
    public static final Class8553 field19097 = Class3198.field18484;
    public static final Class6408 field19098 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
-   public Class3412(Class7929 var1) {
+   public Class3412(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19097, Direction.NORTH));
    }

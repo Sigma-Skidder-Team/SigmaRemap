@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public abstract class Class3241 extends Block implements Class3245 {
-   public Class3241(Class7929 var1) {
+   public Class3241(AbstractBlock var1) {
       super(var1);
    }
 

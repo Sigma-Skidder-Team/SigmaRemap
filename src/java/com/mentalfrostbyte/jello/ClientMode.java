@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello;
 
 public enum ClientMode {
-   field13886,
+   PREMIUM,
    JELLO,
    CLASSIC,
    field13889;

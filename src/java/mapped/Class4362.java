@@ -22,7 +22,7 @@ public class Class4362 extends Class4247 {
 
    private void method13634() {
       this.method13241().clear();
-      this.field20913 = ResourceRegistry.field38853;
+      this.field20913 = ResourceRegistry.JelloLightFont18;
 
       for (String var4 : this.field21323) {
          Class4240 var5;

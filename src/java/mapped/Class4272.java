@@ -19,7 +19,7 @@ public class Class4272 extends Class4247 {
       super(var1, var2, var3, var4, var5, 0, Class6387.field27961, false);
       Class4274 var9;
       this.method13230(
-         var9 = new Class4274(this, "blankButton", 25, 0, ResourceRegistry.field38854.method23942("Blank"), 30, Class6387.field27961, "Blank", ResourceRegistry.field38854)
+         var9 = new Class4274(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, Class6387.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
       var9.method13251((var1x, var2x) -> {
          Class4357 var5x = (Class4357)this.method13258();
@@ -30,13 +30,13 @@ public class Class4272 extends Class4247 {
          var10 = new Class4274(
             this,
             "dupeButton",
-            var5 - 25 - ResourceRegistry.field38854.method23942("Duplicate"),
+            var5 - 25 - ResourceRegistry.JelloLightFont20.method23942("Duplicate"),
             0,
-            ResourceRegistry.field38854.method23942("Duplicate"),
+            ResourceRegistry.JelloLightFont20.method23942("Duplicate"),
             30,
             Class6387.field27961,
             "Duplicate",
-            ResourceRegistry.field38854
+            ResourceRegistry.JelloLightFont20
          )
       );
       var10.method13251((var1x, var2x) -> {
@@ -55,7 +55,7 @@ public class Class4272 extends Class4247 {
                this.field20705
                   .method13230(
                      var8 = new Class4240(
-                        this.field20705, "p_" + var7, 0, 0, var5, 30, new Class6387(-723724, -2039584, 0, -14671840), var7, ResourceRegistry.field38853
+                        this.field20705, "p_" + var7, 0, 0, var5, 30, new Class6387(-723724, -2039584, 0, -14671840), var7, ResourceRegistry.JelloLightFont18
                      )
                   );
                var8.method13251((var3x, var4x) -> {
@@ -118,7 +118,7 @@ public class Class4272 extends Class4247 {
          );
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {
             Class3192.method11439(
-               ResourceRegistry.field38852,
+               ResourceRegistry.JelloLightFont14,
                (float)(this.field20895 + 40),
                (float)(this.field20896 + 110),
                "No Default Profiles Available",

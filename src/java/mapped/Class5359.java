@@ -52,8 +52,8 @@ public class Class5359 extends Module {
     @EventTarget
     private void method16854(Class4415 var1) {
         if (this.method15996() && mc.field1339 != null) {
-            String var4 = this.method15978("Animation");
-            String var5 = this.method15978("Outline");
+            String var4 = this.getStringSettingValueByName("Animation");
+            String var5 = this.getStringSettingValueByName("Outline");
             this.method16855();
             if (this.field23965.calcPercent() == 1.0F) {
                 this.field23965.method25318(0.0F);
@@ -174,12 +174,12 @@ public class Class5359 extends Module {
 
     private String method16856(Module var1) {
         String var4 = "";
-        if (var1.method15978("Type") == null) {
-            if (var1.method15978("Mode") != null) {
-                var4 = var4 + " " + var1.method15978("Mode");
+        if (var1.getStringSettingValueByName("Type") == null) {
+            if (var1.getStringSettingValueByName("Mode") != null) {
+                var4 = var4 + " " + var1.getStringSettingValueByName("Mode");
             }
         } else {
-            var4 = var4 + " " + var1.method15978("Type");
+            var4 = var4 + " " + var1.getStringSettingValueByName("Type");
         }
 
         return var4;

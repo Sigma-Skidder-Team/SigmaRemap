@@ -28,23 +28,23 @@ public class Class4168 extends Class4167 {
 
    @Override
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
-      this.method12927(var1, var5, 0, 3, 0, 4, 4, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 3, 0, 4, 4, 18, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 1, 5, 0, 3, 7, 18, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
-      this.method12927(var1, var5, 0, 5, 0, 0, 5, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
-      this.method12927(var1, var5, 4, 5, 0, 4, 5, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 2, 0, 4, 2, 5, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 2, 13, 4, 2, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 0, 0, 4, 1, 3, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
-      this.method12927(var1, var5, 0, 0, 15, 4, 1, 18, Blocks.field36642.method11579(), Blocks.field36642.method11579(), false);
+      this.method12927(var1, var5, 0, 5, 0, 0, 5, 18, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 4, 5, 0, 4, 5, 18, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 0, 2, 0, 4, 2, 5, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 0, 2, 13, 4, 2, 18, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 0, 0, 0, 4, 1, 3, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
+      this.method12927(var1, var5, 0, 0, 15, 4, 1, 18, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
 
       for (int var10 = 0; var10 <= 4; var10++) {
          for (int var11 = 0; var11 <= 2; var11++) {
-            this.method12932(var1, Blocks.field36642.method11579(), var10, -1, var11, var5);
-            this.method12932(var1, Blocks.field36642.method11579(), var10, -1, 18 - var11, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), var10, -1, var11, var5);
+            this.method12932(var1, Blocks.NETHER_BRICKS.method11579(), var10, -1, 18 - var11, var5);
          }
       }
 
-      Class7380 var13 = Blocks.field36643
+      Class7380 var13 = Blocks.NETHER_BRICK_FENCE
          .method11579()
          .method23465(Class3239.field18680, Boolean.valueOf(true))
          .method23465(Class3239.field18682, Boolean.valueOf(true));

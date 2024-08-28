@@ -9,7 +9,7 @@ public class Class5312 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         String var3 = "op " + mc.field1339.method2941();
         var3.replace("&", "§");
         this.method15965();

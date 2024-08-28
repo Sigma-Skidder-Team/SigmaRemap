@@ -21,7 +21,7 @@ public class Class5209 extends Module {
     }
 
     @EventTarget
-    public void method16220(Class4428 var1) {
+    public void method16220(TickEvent var1) {
         if (this.method15996()) {
             mc.field1299.field44637.field13071 = false;
             if (!(mc.field1339.method3433().field18049 < 0.08) || mc.field1339.field5036) {
@@ -148,7 +148,7 @@ public class Class5209 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (mc.field1339.field5036) {
             Class5628.method17725(0.3994F);
         }

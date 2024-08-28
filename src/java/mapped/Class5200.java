@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4426;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -35,7 +35,7 @@ public class Class5200 extends Module {
     }
 
     @EventTarget
-    private void method16191(Class4428 var1) {
+    private void method16191(TickEvent var1) {
         if (this.method15996() && mc.field1339 != null && mc.field1299.field44643.method8509()) {
             this.method16192(null);
         }
@@ -55,7 +55,7 @@ public class Class5200 extends Module {
                 if (var5 >= 36 && var5 <= 44) {
                     mc.field1339.field4902.field5443 = var5 % 9;
                 } else if (Client.getInstance().method19939().method31333() > 1) {
-                    String var6 = this.method15978("Inv Mode");
+                    String var6 = this.getStringSettingValueByName("Inv Mode");
                     if (var6.equals("OpenInv") && !(mc.field1355 instanceof Class859)) {
                         return;
                     }

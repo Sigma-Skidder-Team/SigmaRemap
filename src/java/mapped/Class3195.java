@@ -12,7 +12,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    public static final Class6408 field18476 = Block.method11539(2.0, 0.0, 2.0, 14.0, 6.0, 14.0);
    public static final Class6408 field18477 = Block.method11539(2.0, 0.0, 2.0, 14.0, 7.0, 14.0);
 
-   public Class3195(Class7929 var1) {
+   public Class3195(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18472, Integer.valueOf(1)).method23465(field18473, Boolean.valueOf(true)));
    }

@@ -6,9 +6,9 @@ public class Class8514 {
    public static final Class3257 field37224 = method30154(Blocks.GRANITE, Class7401.field31665);
    public static final Class3257 field37225 = method30154(Blocks.POLISHED_GRANITE, Class7401.field31665);
    public static final Class3257 field37226 = method30154(Blocks.DIORITE, Class7401.field31665);
-   public static final Class3257 field37227 = method30154(Blocks.field36392, Class7401.field31665);
-   public static final Class3257 field37228 = method30154(Blocks.field36393, Class7401.field31665);
-   public static final Class3257 field37229 = method30154(Blocks.field36394, Class7401.field31665);
+   public static final Class3257 field37227 = method30154(Blocks.POLISHED_DIORITE, Class7401.field31665);
+   public static final Class3257 field37228 = method30154(Blocks.ANDESITE, Class7401.field31665);
+   public static final Class3257 field37229 = method30154(Blocks.POLISHED_ANDESITE, Class7401.field31665);
    public static final Class3257 field37230 = method30154(Blocks.field36395, Class7401.field31665);
    public static final Class3257 field37231 = method30154(Blocks.field36396, Class7401.field31665);
    public static final Class3257 field37232 = method30154(Blocks.field36397, Class7401.field31665);
@@ -81,52 +81,52 @@ public class Class8514 {
    public static final Class3257 field37299 = method30154(Blocks.field36454, Class7401.field31665);
    public static final Class3257 field37300 = method30154(Blocks.field36455, Class7401.field31665);
    public static final Class3257 field37301 = method30154(Blocks.field36456, Class7401.field31665);
-   public static final Class3257 field37302 = method30154(Blocks.field36457, Class7401.field31667);
-   public static final Class3257 field37303 = method30154(Blocks.field36458, Class7401.field31665);
-   public static final Class3257 field37304 = method30154(Blocks.field36459, Class7401.field31665);
-   public static final Class3257 field37305 = method30154(Blocks.field36460, Class7401.field31665);
-   public static final Class3257 field37306 = method30154(Blocks.field36461, Class7401.field31667);
-   public static final Class3257 field37307 = method30154(Blocks.field36478, Class7401.field31668);
-   public static final Class3257 field37308 = method30154(Blocks.field36479, Class7401.field31668);
-   public static final Class3257 field37309 = method30154(Blocks.field36480, Class7401.field31667);
-   public static final Class3257 field37310 = method30154(Blocks.field36481, Class7401.field31666);
-   public static final Class3257 field37311 = method30154(Blocks.field36482, Class7401.field31666);
-   public static final Class3257 field37312 = method30154(Blocks.field36483, Class7401.field31666);
-   public static final Class3257 field37313 = method30154(Blocks.field36484, Class7401.field31666);
-   public static final Class3257 field37314 = method30154(Blocks.field36485, Class7401.field31666);
+   public static final Class3257 field37302 = method30154(Blocks.DISPENSER, Class7401.field31667);
+   public static final Class3257 field37303 = method30154(Blocks.SANDSTONE, Class7401.field31665);
+   public static final Class3257 field37304 = method30154(Blocks.CHISELED_SANDSTONE, Class7401.field31665);
+   public static final Class3257 field37305 = method30154(Blocks.CUT_SANDSTONE, Class7401.field31665);
+   public static final Class3257 field37306 = method30154(Blocks.NOTE_BLOCK, Class7401.field31667);
+   public static final Class3257 field37307 = method30154(Blocks.POWERED_RAIL, Class7401.field31668);
+   public static final Class3257 field37308 = method30154(Blocks.DETECTOR_RAIL, Class7401.field31668);
+   public static final Class3257 field37309 = method30154(Blocks.STICKY_PISTON, Class7401.field31667);
+   public static final Class3257 field37310 = method30154(Blocks.COBWEB, Class7401.field31666);
+   public static final Class3257 field37311 = method30154(Blocks.GRASS, Class7401.field31666);
+   public static final Class3257 field37312 = method30154(Blocks.FERN, Class7401.field31666);
+   public static final Class3257 field37313 = method30154(Blocks.DEAD_BUSH, Class7401.field31666);
+   public static final Class3257 field37314 = method30154(Blocks.SEAGRASS, Class7401.field31666);
    public static final Class3257 field37315 = method30154(Blocks.field37005, Class7401.field31666);
-   public static final Class3257 field37316 = method30154(Blocks.field36487, Class7401.field31667);
-   public static final Class3257 field37317 = method30154(Blocks.field36489, Class7401.field31665);
-   public static final Class3257 field37318 = method30154(Blocks.field36490, Class7401.field31665);
-   public static final Class3257 field37319 = method30154(Blocks.field36491, Class7401.field31665);
-   public static final Class3257 field37320 = method30154(Blocks.field36492, Class7401.field31665);
-   public static final Class3257 field37321 = method30154(Blocks.field36493, Class7401.field31665);
-   public static final Class3257 field37322 = method30154(Blocks.field36494, Class7401.field31665);
-   public static final Class3257 field37323 = method30154(Blocks.field36495, Class7401.field31665);
-   public static final Class3257 field37324 = method30154(Blocks.field36496, Class7401.field31665);
-   public static final Class3257 field37325 = method30154(Blocks.field36497, Class7401.field31665);
-   public static final Class3257 field37326 = method30154(Blocks.field36498, Class7401.field31665);
-   public static final Class3257 field37327 = method30154(Blocks.field36499, Class7401.field31665);
-   public static final Class3257 field37328 = method30154(Blocks.field36500, Class7401.field31665);
-   public static final Class3257 field37329 = method30154(Blocks.field36501, Class7401.field31665);
-   public static final Class3257 field37330 = method30154(Blocks.field36502, Class7401.field31665);
-   public static final Class3257 field37331 = method30154(Blocks.field36503, Class7401.field31665);
-   public static final Class3257 field37332 = method30154(Blocks.field36504, Class7401.field31665);
-   public static final Class3257 field37333 = method30154(Blocks.field36506, Class7401.field31666);
-   public static final Class3257 field37334 = method30154(Blocks.field36507, Class7401.field31666);
-   public static final Class3257 field37335 = method30154(Blocks.field36508, Class7401.field31666);
-   public static final Class3257 field37336 = method30154(Blocks.field36509, Class7401.field31666);
-   public static final Class3257 field37337 = method30154(Blocks.field36510, Class7401.field31666);
-   public static final Class3257 field37338 = method30154(Blocks.field36511, Class7401.field31666);
-   public static final Class3257 field37339 = method30154(Blocks.field36512, Class7401.field31666);
-   public static final Class3257 field37340 = method30154(Blocks.field36513, Class7401.field31666);
-   public static final Class3257 field37341 = method30154(Blocks.field36514, Class7401.field31666);
-   public static final Class3257 field37342 = method30154(Blocks.field36515, Class7401.field31666);
-   public static final Class3257 field37343 = method30154(Blocks.field36516, Class7401.field31666);
-   public static final Class3257 field37344 = method30154(Blocks.field36518, Class7401.field31666);
-   public static final Class3257 field37345 = method30154(Blocks.field36517, Class7401.field31666);
-   public static final Class3257 field37346 = method30154(Blocks.field36519, Class7401.field31666);
-   public static final Class3257 field37347 = method30154(Blocks.field36520, Class7401.field31666);
+   public static final Class3257 field37316 = method30154(Blocks.PISTON, Class7401.field31667);
+   public static final Class3257 field37317 = method30154(Blocks.WHITE_WOOL, Class7401.field31665);
+   public static final Class3257 field37318 = method30154(Blocks.ORANGE_WOOL, Class7401.field31665);
+   public static final Class3257 field37319 = method30154(Blocks.MAGENTA_WOOL, Class7401.field31665);
+   public static final Class3257 field37320 = method30154(Blocks.LIGHT_BLUE_WOOL, Class7401.field31665);
+   public static final Class3257 field37321 = method30154(Blocks.YELLOW_WOOL, Class7401.field31665);
+   public static final Class3257 field37322 = method30154(Blocks.LIME_WOOL, Class7401.field31665);
+   public static final Class3257 field37323 = method30154(Blocks.PINK_WOOL, Class7401.field31665);
+   public static final Class3257 field37324 = method30154(Blocks.GRAY_WOOL, Class7401.field31665);
+   public static final Class3257 field37325 = method30154(Blocks.LIGHT_GRAY_WOOL, Class7401.field31665);
+   public static final Class3257 field37326 = method30154(Blocks.CYAN_WOOL, Class7401.field31665);
+   public static final Class3257 field37327 = method30154(Blocks.PURPLE_WOOL, Class7401.field31665);
+   public static final Class3257 field37328 = method30154(Blocks.BLUE_WOOL, Class7401.field31665);
+   public static final Class3257 field37329 = method30154(Blocks.BROWN_WOOL, Class7401.field31665);
+   public static final Class3257 field37330 = method30154(Blocks.GREEN_WOOL, Class7401.field31665);
+   public static final Class3257 field37331 = method30154(Blocks.RED_WOOL, Class7401.field31665);
+   public static final Class3257 field37332 = method30154(Blocks.BLACK_WOOL, Class7401.field31665);
+   public static final Class3257 field37333 = method30154(Blocks.DANDELION, Class7401.field31666);
+   public static final Class3257 field37334 = method30154(Blocks.POPPY, Class7401.field31666);
+   public static final Class3257 field37335 = method30154(Blocks.BLUE_ORCHID, Class7401.field31666);
+   public static final Class3257 field37336 = method30154(Blocks.ALLIUM, Class7401.field31666);
+   public static final Class3257 field37337 = method30154(Blocks.AZURE_BLUET, Class7401.field31666);
+   public static final Class3257 field37338 = method30154(Blocks.RED_TULIP, Class7401.field31666);
+   public static final Class3257 field37339 = method30154(Blocks.ORANGE_TULIP, Class7401.field31666);
+   public static final Class3257 field37340 = method30154(Blocks.WHITE_TULIP, Class7401.field31666);
+   public static final Class3257 field37341 = method30154(Blocks.PINK_TULIP, Class7401.field31666);
+   public static final Class3257 field37342 = method30154(Blocks.OXEYE_DAISY, Class7401.field31666);
+   public static final Class3257 field37343 = method30154(Blocks.CORNFLOWER, Class7401.field31666);
+   public static final Class3257 field37344 = method30154(Blocks.LILY_OF_THE_VALLEY, Class7401.field31666);
+   public static final Class3257 field37345 = method30154(Blocks.WITHER_ROSE, Class7401.field31666);
+   public static final Class3257 field37346 = method30154(Blocks.BROWN_MUSHROOM, Class7401.field31666);
+   public static final Class3257 field37347 = method30154(Blocks.RED_MUSHROOM, Class7401.field31666);
    public static final Class3257 field37348 = method30154(Blocks.field37084, Class7401.field31666);
    public static final Class3257 field37349 = method30154(Blocks.field37075, Class7401.field31666);
    public static final Class3257 field37350 = method30154(Blocks.field37090, Class7401.field31666);
@@ -168,12 +168,12 @@ public class Class8514 {
    public static final Class3257 field37386 = method30154(Blocks.field36859, Class7401.field31665);
    public static final Class3257 field37387 = method30154(Blocks.field36858, Class7401.field31665);
    public static final Class3257 field37388 = method30154(Blocks.field36523, Class7401.field31665);
-   public static final Class3257 field37389 = method30154(Blocks.field36524, Class7401.field31667);
+   public static final Class3257 field37389 = method30154(Blocks.TNT, Class7401.field31667);
    public static final Class3257 field37390 = method30154(Blocks.field36525, Class7401.field31665);
    public static final Class3257 field37391 = method30154(Blocks.field36526, Class7401.field31665);
    public static final Class3257 field37392 = method30154(Blocks.field36527, Class7401.field31665);
    public static final Class3257 field37393 = method30155(
-      new Class3298(Blocks.field36528, Blocks.field36529, new Class5643().method17779(Class7401.field31666))
+      new Class3298(Blocks.TORCH, Blocks.WALL_TORCH, new Class5643().method17779(Class7401.field31666))
    );
    public static final Class3257 field37394 = method30154(Blocks.field36877, Class7401.field31666);
    public static final Class3257 field37395 = method30154(Blocks.field36878, Class7401.field31666);
@@ -183,16 +183,16 @@ public class Class8514 {
    public static final Class3257 field37399 = method30154(Blocks.field36882, Class7401.field31665);
    public static final Class3257 field37400 = method30153(Blocks.field36532);
    public static final Class3257 field37401 = method30154(Blocks.field36533, Class7401.field31665);
-   public static final Class3257 field37402 = method30154(Blocks.field36534, Class7401.field31666);
+   public static final Class3257 field37402 = method30154(Blocks.CHEST, Class7401.field31666);
    public static final Class3257 field37403 = method30154(Blocks.field36536, Class7401.field31665);
    public static final Class3257 field37404 = method30154(Blocks.field36537, Class7401.field31665);
-   public static final Class3257 field37405 = method30154(Blocks.field36538, Class7401.field31666);
-   public static final Class3257 field37406 = method30154(Blocks.field36540, Class7401.field31666);
-   public static final Class3257 field37407 = method30154(Blocks.field36541, Class7401.field31666);
-   public static final Class3257 field37408 = method30154(Blocks.field36549, Class7401.field31666);
-   public static final Class3257 field37409 = method30154(Blocks.field36550, Class7401.field31668);
-   public static final Class3257 field37410 = method30154(Blocks.field36551, Class7401.field31665);
-   public static final Class3257 field37411 = method30154(Blocks.field36558, Class7401.field31667);
+   public static final Class3257 field37405 = method30154(Blocks.CRAFTING_TABLE, Class7401.field31666);
+   public static final Class3257 field37406 = method30154(Blocks.FARMLAND, Class7401.field31666);
+   public static final Class3257 field37407 = method30154(Blocks.FURNACE, Class7401.field31666);
+   public static final Class3257 field37408 = method30154(Blocks.LADDER, Class7401.field31666);
+   public static final Class3257 field37409 = method30154(Blocks.RAIL, Class7401.field31668);
+   public static final Class3257 field37410 = method30154(Blocks.COBBLESTONE_STAIRS, Class7401.field31665);
+   public static final Class3257 field37411 = method30154(Blocks.LEVER, Class7401.field31667);
    public static final Class3257 field37412 = method30154(Blocks.field36559, Class7401.field31667);
    public static final Class3257 field37413 = method30154(Blocks.field36561, Class7401.field31667);
    public static final Class3257 field37414 = method30154(Blocks.field36562, Class7401.field31667);
@@ -237,7 +237,7 @@ public class Class8514 {
    public static final Class3257 field37449 = method30154(Blocks.field36610, Class7401.field31667);
    public static final Class3257 field37450 = method30154(Blocks.field36611, Class7401.field31667);
    public static final Class3257 field37451 = method30154(Blocks.field36612, Class7401.field31667);
-   public static final Class3257 field37452 = method30154(Blocks.field36613, Class7401.field31667);
+   public static final Class3257 field37452 = method30154(Blocks.ACACIA_TRAPDOOR, Class7401.field31667);
    public static final Class3257 field37453 = method30154(Blocks.field36614, Class7401.field31667);
    public static final Class3257 field37454 = method30154(Blocks.field37099, Class7401.field31667);
    public static final Class3257 field37455 = method30154(Blocks.field37100, Class7401.field31667);
@@ -251,15 +251,15 @@ public class Class8514 {
    public static final Class3257 field37463 = method30154(Blocks.field36616, Class7401.field31665);
    public static final Class3257 field37464 = method30154(Blocks.field36617, Class7401.field31665);
    public static final Class3257 field37465 = method30154(Blocks.field36618, Class7401.field31665);
-   public static final Class3257 field37466 = method30154(Blocks.field36625, Class7401.field31666);
-   public static final Class3257 field37467 = method30154(Blocks.field36626, Class7401.field31666);
-   public static final Class3257 field37468 = method30154(Blocks.field36627, Class7401.field31666);
-   public static final Class3257 field37469 = method30154(Blocks.field36628, Class7401.field31666);
-   public static final Class3257 field37470 = method30154(Blocks.field36629, Class7401.field31666);
-   public static final Class3257 field37471 = method30154(Blocks.field36630, Class7401.field31666);
-   public static final Class3257 field37472 = method30154(Blocks.field36631, Class7401.field31665);
-   public static final Class3257 field37473 = method30154(Blocks.field36636, Class7401.field31666);
-   public static final Class3257 field37474 = method30154(Blocks.field36637, Class7401.field31667);
+   public static final Class3257 field37466 = method30154(Blocks.BROWN_MUSHROOM_BLOCK, Class7401.field31666);
+   public static final Class3257 field37467 = method30154(Blocks.RED_MUSHROOM_BLOCK, Class7401.field31666);
+   public static final Class3257 field37468 = method30154(Blocks.MUSHROOM_STEM, Class7401.field31666);
+   public static final Class3257 field37469 = method30154(Blocks.IRON_BARS, Class7401.field31666);
+   public static final Class3257 field37470 = method30154(Blocks.CHAIN, Class7401.field31666);
+   public static final Class3257 field37471 = method30154(Blocks.GLASS_PANE, Class7401.field31666);
+   public static final Class3257 field37472 = method30154(Blocks.MELON, Class7401.field31665);
+   public static final Class3257 field37473 = method30154(Blocks.VINE, Class7401.field31666);
+   public static final Class3257 field37474 = method30154(Blocks.OAK_FENCE_GATE, Class7401.field31667);
    public static final Class3257 field37475 = method30154(Blocks.field36862, Class7401.field31667);
    public static final Class3257 field37476 = method30154(Blocks.field36863, Class7401.field31667);
    public static final Class3257 field37477 = method30154(Blocks.field36864, Class7401.field31667);
@@ -267,37 +267,37 @@ public class Class8514 {
    public static final Class3257 field37479 = method30154(Blocks.field36866, Class7401.field31667);
    public static final Class3257 field37480 = method30154(Blocks.field37101, Class7401.field31667);
    public static final Class3257 field37481 = method30154(Blocks.field37102, Class7401.field31667);
-   public static final Class3257 field37482 = method30154(Blocks.field36638, Class7401.field31665);
-   public static final Class3257 field37483 = method30154(Blocks.field36639, Class7401.field31665);
-   public static final Class3257 field37484 = method30154(Blocks.field36640, Class7401.field31665);
-   public static final Class3257 field37485 = method30155(new Class3302(Blocks.field36641, new Class5643().method17779(Class7401.field31666)));
-   public static final Class3257 field37486 = method30154(Blocks.field36642, Class7401.field31665);
+   public static final Class3257 field37482 = method30154(Blocks.BRICK_STAIRS, Class7401.field31665);
+   public static final Class3257 field37483 = method30154(Blocks.STONE_BRICK_STAIRS, Class7401.field31665);
+   public static final Class3257 field37484 = method30154(Blocks.MYCELIUM, Class7401.field31665);
+   public static final Class3257 field37485 = method30155(new Class3302(Blocks.LILY_PAD, new Class5643().method17779(Class7401.field31666)));
+   public static final Class3257 field37486 = method30154(Blocks.NETHER_BRICKS, Class7401.field31665);
    public static final Class3257 field37487 = method30154(Blocks.field37148, Class7401.field31665);
    public static final Class3257 field37488 = method30154(Blocks.field37147, Class7401.field31665);
-   public static final Class3257 field37489 = method30154(Blocks.field36643, Class7401.field31666);
-   public static final Class3257 field37490 = method30154(Blocks.field36644, Class7401.field31665);
-   public static final Class3257 field37491 = method30154(Blocks.field36646, Class7401.field31666);
+   public static final Class3257 field37489 = method30154(Blocks.NETHER_BRICK_FENCE, Class7401.field31666);
+   public static final Class3257 field37490 = method30154(Blocks.NETHER_BRICK_STAIRS, Class7401.field31665);
+   public static final Class3257 field37491 = method30154(Blocks.ENCHANTING_TABLE, Class7401.field31666);
    public static final Class3257 field37492 = method30154(Blocks.field36650, Class7401.field31666);
    public static final Class3257 field37493 = method30154(Blocks.field36651, Class7401.field31665);
    public static final Class3257 field37494 = method30154(Blocks.field36883, Class7401.field31665);
    public static final Class3257 field37495 = method30155(new Class3292(Blocks.field36652, new Class5643().method17780(Class1978.field12888)));
    public static final Class3257 field37496 = method30154(Blocks.field36653, Class7401.field31667);
-   public static final Class3257 field37497 = method30154(Blocks.field36655, Class7401.field31665);
-   public static final Class3257 field37498 = method30154(Blocks.field36656, Class7401.field31665);
-   public static final Class3257 field37499 = method30154(Blocks.field36657, Class7401.field31666);
-   public static final Class3257 field37500 = method30154(Blocks.field36658, Class7401.field31667);
-   public static final Class3257 field37501 = method30154(Blocks.field36660, Class7401.field31665);
-   public static final Class3257 field37502 = method30154(Blocks.field36661, Class7401.field31665);
+   public static final Class3257 field37497 = method30154(Blocks.SANDSTONE_STAIRS, Class7401.field31665);
+   public static final Class3257 field37498 = method30154(Blocks.EMERALD_ORE, Class7401.field31665);
+   public static final Class3257 field37499 = method30154(Blocks.ENDER_CHEST, Class7401.field31666);
+   public static final Class3257 field37500 = method30154(Blocks.TRIPWIRE_HOOK, Class7401.field31667);
+   public static final Class3257 field37501 = method30154(Blocks.EMERALD_BLOCK, Class7401.field31665);
+   public static final Class3257 field37502 = method30154(Blocks.SPRUCE_STAIRS, Class7401.field31665);
    public static final Class3257 field37503 = method30154(Blocks.field36662, Class7401.field31665);
    public static final Class3257 field37504 = method30154(Blocks.field36663, Class7401.field31665);
    public static final Class3257 field37505 = method30154(Blocks.field37103, Class7401.field31665);
    public static final Class3257 field37506 = method30154(Blocks.field37104, Class7401.field31665);
-   public static final Class3257 field37507 = method30155(new Class3293(Blocks.field36664, new Class5643().method17780(Class1978.field12888)));
+   public static final Class3257 field37507 = method30155(new Class3293(Blocks.COMMAND_BLOCK, new Class5643().method17780(Class1978.field12888)));
    public static final Class3257 field37508 = method30155(
-      new Class3292(Blocks.field36665, new Class5643().method17779(Class7401.field31669).method17780(Class1978.field12887))
+      new Class3292(Blocks.BEACON, new Class5643().method17779(Class7401.field31669).method17780(Class1978.field12887))
    );
-   public static final Class3257 field37509 = method30154(Blocks.field36666, Class7401.field31666);
-   public static final Class3257 field37510 = method30154(Blocks.field36667, Class7401.field31666);
+   public static final Class3257 field37509 = method30154(Blocks.COBBLESTONE_WALL, Class7401.field31666);
+   public static final Class3257 field37510 = method30154(Blocks.MOSSY_COBBLESTONE_WALL, Class7401.field31666);
    public static final Class3257 field37511 = method30154(Blocks.field37041, Class7401.field31666);
    public static final Class3257 field37512 = method30154(Blocks.field37042, Class7401.field31666);
    public static final Class3257 field37513 = method30154(Blocks.field37043, Class7401.field31666);
@@ -323,10 +323,10 @@ public class Class8514 {
    public static final Class3257 field37533 = method30154(Blocks.field37105, Class7401.field31667);
    public static final Class3257 field37534 = method30154(Blocks.field37106, Class7401.field31667);
    public static final Class3257 field37535 = method30154(Blocks.field37145, Class7401.field31667);
-   public static final Class3257 field37536 = method30154(Blocks.field36713, Class7401.field31666);
+   public static final Class3257 field37536 = method30154(Blocks.ANVIL, Class7401.field31666);
    public static final Class3257 field37537 = method30154(Blocks.field36714, Class7401.field31666);
    public static final Class3257 field37538 = method30154(Blocks.field36715, Class7401.field31666);
-   public static final Class3257 field37539 = method30154(Blocks.field36716, Class7401.field31667);
+   public static final Class3257 field37539 = method30154(Blocks.TRAPPED_CHEST, Class7401.field31667);
    public static final Class3257 field37540 = method30154(Blocks.field36717, Class7401.field31667);
    public static final Class3257 field37541 = method30154(Blocks.field36718, Class7401.field31667);
    public static final Class3257 field37542 = method30154(Blocks.field36720, Class7401.field31667);
@@ -339,7 +339,7 @@ public class Class8514 {
    public static final Class3257 field37549 = method30154(Blocks.field36726, Class7401.field31665);
    public static final Class3257 field37550 = method30154(Blocks.field36727, Class7401.field31665);
    public static final Class3257 field37551 = method30154(Blocks.field36728, Class7401.field31668);
-   public static final Class3257 field37552 = method30154(Blocks.field36729, Class7401.field31667);
+   public static final Class3257 field37552 = method30154(Blocks.DROPPER, Class7401.field31667);
    public static final Class3257 field37553 = method30154(Blocks.field36730, Class7401.field31665);
    public static final Class3257 field37554 = method30154(Blocks.field36731, Class7401.field31665);
    public static final Class3257 field37555 = method30154(Blocks.field36732, Class7401.field31665);
@@ -359,34 +359,34 @@ public class Class8514 {
    public static final Class3257 field37569 = method30153(Blocks.field36765);
    public static final Class3257 field37570 = method30154(Blocks.field36766, Class7401.field31667);
    public static final Class3257 field37571 = method30154(Blocks.field36777, Class7401.field31665);
-   public static final Class3257 field37572 = method30154(Blocks.field36778, Class7401.field31666);
-   public static final Class3257 field37573 = method30154(Blocks.field36779, Class7401.field31666);
-   public static final Class3257 field37574 = method30154(Blocks.field36780, Class7401.field31666);
-   public static final Class3257 field37575 = method30154(Blocks.field36781, Class7401.field31666);
-   public static final Class3257 field37576 = method30154(Blocks.field36782, Class7401.field31666);
-   public static final Class3257 field37577 = method30154(Blocks.field36783, Class7401.field31666);
-   public static final Class3257 field37578 = method30154(Blocks.field36784, Class7401.field31666);
-   public static final Class3257 field37579 = method30154(Blocks.field36785, Class7401.field31666);
-   public static final Class3257 field37580 = method30154(Blocks.field36786, Class7401.field31666);
-   public static final Class3257 field37581 = method30154(Blocks.field36787, Class7401.field31666);
-   public static final Class3257 field37582 = method30154(Blocks.field36788, Class7401.field31666);
-   public static final Class3257 field37583 = method30154(Blocks.field36789, Class7401.field31666);
-   public static final Class3257 field37584 = method30154(Blocks.field36790, Class7401.field31666);
-   public static final Class3257 field37585 = method30154(Blocks.field36791, Class7401.field31666);
-   public static final Class3257 field37586 = method30154(Blocks.field36792, Class7401.field31666);
-   public static final Class3257 field37587 = method30154(Blocks.field36793, Class7401.field31666);
+   public static final Class3257 field37572 = method30154(Blocks.WHITE_CARPET, Class7401.field31666);
+   public static final Class3257 field37573 = method30154(Blocks.ORANGE_CARPET, Class7401.field31666);
+   public static final Class3257 field37574 = method30154(Blocks.MAGENTA_CARPET, Class7401.field31666);
+   public static final Class3257 field37575 = method30154(Blocks.LIGHT_BLUE_CARPET, Class7401.field31666);
+   public static final Class3257 field37576 = method30154(Blocks.YELLOW_CARPET, Class7401.field31666);
+   public static final Class3257 field37577 = method30154(Blocks.LIME_CARPET, Class7401.field31666);
+   public static final Class3257 field37578 = method30154(Blocks.PINK_CARPET, Class7401.field31666);
+   public static final Class3257 field37579 = method30154(Blocks.GRAY_CARPET, Class7401.field31666);
+   public static final Class3257 field37580 = method30154(Blocks.LIGHT_GRAY_CARPET, Class7401.field31666);
+   public static final Class3257 field37581 = method30154(Blocks.CYAN_CARPET, Class7401.field31666);
+   public static final Class3257 field37582 = method30154(Blocks.PURPLE_CARPET, Class7401.field31666);
+   public static final Class3257 field37583 = method30154(Blocks.BLUE_CARPET, Class7401.field31666);
+   public static final Class3257 field37584 = method30154(Blocks.BROWN_CARPET, Class7401.field31666);
+   public static final Class3257 field37585 = method30154(Blocks.GREEN_CARPET, Class7401.field31666);
+   public static final Class3257 field37586 = method30154(Blocks.RED_CARPET, Class7401.field31666);
+   public static final Class3257 field37587 = method30154(Blocks.BLACK_CARPET, Class7401.field31666);
    public static final Class3257 field37588 = method30154(Blocks.field36794, Class7401.field31665);
    public static final Class3257 field37589 = method30154(Blocks.field36795, Class7401.field31665);
-   public static final Class3257 field37590 = method30154(Blocks.field36796, Class7401.field31665);
+   public static final Class3257 field37590 = method30154(Blocks.PACKED_ICE, Class7401.field31665);
    public static final Class3257 field37591 = method30154(Blocks.field36762, Class7401.field31665);
    public static final Class3257 field37592 = method30154(Blocks.field36763, Class7401.field31665);
    public static final Class3257 field37593 = method30154(Blocks.field36764, Class7401.field31666);
    public static final Class3257 field37594 = method30154(Blocks.field36885, Class7401.field31666);
-   public static final Class3257 field37595 = method30155(new Class3295(Blocks.field36797, new Class5643().method17779(Class7401.field31666)));
-   public static final Class3257 field37596 = method30155(new Class3295(Blocks.field36798, new Class5643().method17779(Class7401.field31666)));
-   public static final Class3257 field37597 = method30155(new Class3295(Blocks.field36799, new Class5643().method17779(Class7401.field31666)));
+   public static final Class3257 field37595 = method30155(new Class3295(Blocks.SUNFLOWER, new Class5643().method17779(Class7401.field31666)));
+   public static final Class3257 field37596 = method30155(new Class3295(Blocks.LILAC, new Class5643().method17779(Class7401.field31666)));
+   public static final Class3257 field37597 = method30155(new Class3295(Blocks.ROSE_BUSH, new Class5643().method17779(Class7401.field31666)));
    public static final Class3257 field37598 = method30155(new Class3295(Blocks.field36800, new Class5643().method17779(Class7401.field31666)));
-   public static final Class3257 field37599 = method30155(new Class3295(Blocks.field36801, new Class5643().method17779(Class7401.field31666)));
+   public static final Class3257 field37599 = method30155(new Class3295(Blocks.TALL_GRASS, new Class5643().method17779(Class7401.field31666)));
    public static final Class3257 field37600 = method30155(new Class3295(Blocks.field36802, new Class5643().method17779(Class7401.field31666)));
    public static final Class3257 field37601 = method30154(Blocks.field36593, Class7401.field31665);
    public static final Class3257 field37602 = method30154(Blocks.field36594, Class7401.field31665);
@@ -588,8 +588,8 @@ public class Class8514 {
    public static final Class3257 field37776 = method30154(Blocks.field37039, Class7401.field31665);
    public static final Class3257 field37777 = method30154(Blocks.field37040, Class7401.field31665);
    public static final Class3257 field37778 = method30155(new Class3294(Blocks.field37053, new Class5643().method17779(Class7401.field31666)));
-   public static final Class3257 field37779 = method30155(new Class3295(Blocks.field36560, new Class5643().method17779(Class7401.field31667)));
-   public static final Class3257 field37780 = method30155(new Class3295(Blocks.field36548, new Class5643().method17779(Class7401.field31667)));
+   public static final Class3257 field37779 = method30155(new Class3295(Blocks.IRON_DOOR, new Class5643().method17779(Class7401.field31667)));
+   public static final Class3257 field37780 = method30155(new Class3295(Blocks.OAK_DOOR, new Class5643().method17779(Class7401.field31667)));
    public static final Class3257 field37781 = method30155(new Class3295(Blocks.field36872, new Class5643().method17779(Class7401.field31667)));
    public static final Class3257 field37782 = method30155(new Class3295(Blocks.field36873, new Class5643().method17779(Class7401.field31667)));
    public static final Class3257 field37783 = method30155(new Class3295(Blocks.field36874, new Class5643().method17779(Class7401.field31667)));
@@ -713,7 +713,7 @@ public class Class8514 {
    public static final Class3257 field37837 = method30157(
       "mushroom_stew", new Class3306(new Class5643().method17775(1).method17779(Class7401.field31671).method17774(Class8672.field39082))
    );
-   public static final Class3257 field37838 = method30157("string", new Class3296(Blocks.field36659, new Class5643().method17779(Class7401.field31669)));
+   public static final Class3257 field37838 = method30157("string", new Class3296(Blocks.TRIPWIRE, new Class5643().method17779(Class7401.field31669)));
    public static final Class3257 field37839 = method30157("feather", new Class3257(new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37840 = method30157("gunpowder", new Class3257(new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37841 = method30157("wheat_seeds", new Class3296(Blocks.field36539, new Class5643().method17779(Class7401.field31675)));
@@ -809,22 +809,22 @@ public class Class8514 {
       new Class3322(new Class5643().method17779(Class7401.field31671).method17780(Class1978.field12888).method17774(Class8672.field39077))
    );
    public static final Class3257 field37874 = method30157(
-      "oak_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field36542, Blocks.field36552)
+      "oak_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.OAK_SIGN, Blocks.OAK_WALL_SIGN)
    );
    public static final Class3257 field37875 = method30157(
-      "spruce_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field36543, Blocks.field36553)
+      "spruce_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.SPRUCE_SIGN, Blocks.SPRUCE_WALL_SIGN)
    );
    public static final Class3257 field37876 = method30157(
-      "birch_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field36544, Blocks.field36554)
+      "birch_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.BIRCH_SIGN, Blocks.BIRCH_WALL_SIGN)
    );
    public static final Class3257 field37877 = method30157(
-      "jungle_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field36546, Blocks.field36556)
+      "jungle_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.JUNGLE_SIGN, Blocks.JUNGLE_WALL_SIGN)
    );
    public static final Class3257 field37878 = method30157(
-      "acacia_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field36545, Blocks.field36555)
+      "acacia_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.ACACIA_SIGN, Blocks.ACACIA_WALL_SIGN)
    );
    public static final Class3257 field37879 = method30157(
-      "dark_oak_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field36547, Blocks.field36557)
+      "dark_oak_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.DARK_OAK_SIGN, Blocks.DARK_OAK_WALL_SIGN)
    );
    public static final Class3257 field37880 = method30157(
       "crimson_sign", new Class3300(new Class5643().method17775(16).method17779(Class7401.field31666), Blocks.field37109, Blocks.field37111)
@@ -845,7 +845,7 @@ public class Class8514 {
       "minecart", new Class3282(Class2177.field14287, new Class5643().method17775(1).method17779(Class7401.field31668))
    );
    public static final Class3257 field37886 = method30157("saddle", new Class3330(new Class5643().method17775(1).method17779(Class7401.field31668)));
-   public static final Class3257 field37887 = method30157("redstone", new Class3296(Blocks.field36535, new Class5643().method17779(Class7401.field31667)));
+   public static final Class3257 field37887 = method30157("redstone", new Class3296(Blocks.REDSTONE_WIRE, new Class5643().method17779(Class7401.field31667)));
    public static final Class3257 field37888 = method30157("snowball", new Class3333(new Class5643().method17775(16).method17779(Class7401.field31669)));
    public static final Class3257 field37889 = method30157(
       "oak_boat", new Class3305(Class2099.field13680, new Class5643().method17775(1).method17779(Class7401.field31668))
@@ -902,7 +902,7 @@ public class Class8514 {
       "cooked_salmon", new Class3257(new Class5643().method17779(Class7401.field31671).method17774(Class8672.field39074))
    );
    public static final Class3257 field37915 = method30157("ink_sac", new Class3257(new Class5643().method17779(Class7401.field31675)));
-   public static final Class3257 field37916 = method30157("cocoa_beans", new Class3296(Blocks.field36654, new Class5643().method17779(Class7401.field31675)));
+   public static final Class3257 field37916 = method30157("cocoa_beans", new Class3296(Blocks.COCOA, new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37917 = method30157("lapis_lazuli", new Class3257(new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37918 = method30157("white_dye", new Class3321(Class112.field386, new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37919 = method30157("orange_dye", new Class3321(Class112.field387, new Class5643().method17779(Class7401.field31675)));
@@ -924,22 +924,22 @@ public class Class8514 {
    public static final Class3257 field37935 = method30157("bone", new Class3257(new Class5643().method17779(Class7401.field31669)));
    public static final Class3257 field37936 = method30157("sugar", new Class3257(new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37937 = method30155(new Class3292(Blocks.field36591, new Class5643().method17775(1).method17779(Class7401.field31671)));
-   public static final Class3257 field37938 = method30155(new Class3297(Blocks.field36462, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37939 = method30155(new Class3297(Blocks.field36463, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37940 = method30155(new Class3297(Blocks.field36464, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37941 = method30155(new Class3297(Blocks.field36465, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37942 = method30155(new Class3297(Blocks.field36466, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37943 = method30155(new Class3297(Blocks.field36467, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37944 = method30155(new Class3297(Blocks.field36468, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37945 = method30155(new Class3297(Blocks.field36469, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37946 = method30155(new Class3297(Blocks.field36470, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37947 = method30155(new Class3297(Blocks.field36471, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37948 = method30155(new Class3297(Blocks.field36472, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37949 = method30155(new Class3297(Blocks.field36473, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37950 = method30155(new Class3297(Blocks.field36474, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37951 = method30155(new Class3297(Blocks.field36475, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37952 = method30155(new Class3297(Blocks.field36476, new Class5643().method17775(1).method17779(Class7401.field31666)));
-   public static final Class3257 field37953 = method30155(new Class3297(Blocks.field36477, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37938 = method30155(new Class3297(Blocks.WHITE_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37939 = method30155(new Class3297(Blocks.ORANGE_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37940 = method30155(new Class3297(Blocks.MAGENTA_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37941 = method30155(new Class3297(Blocks.LIGHT_BLUE_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37942 = method30155(new Class3297(Blocks.YELLOW_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37943 = method30155(new Class3297(Blocks.LIME_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37944 = method30155(new Class3297(Blocks.PINK_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37945 = method30155(new Class3297(Blocks.GRAY_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37946 = method30155(new Class3297(Blocks.LIGHT_GRAY_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37947 = method30155(new Class3297(Blocks.CYAN_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37948 = method30155(new Class3297(Blocks.PURPLE_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37949 = method30155(new Class3297(Blocks.BLUE_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37950 = method30155(new Class3297(Blocks.BROWN_RED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37951 = method30155(new Class3297(Blocks.GREEN_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37952 = method30155(new Class3297(Blocks.RED_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
+   public static final Class3257 field37953 = method30155(new Class3297(Blocks.BLACK_BED, new Class5643().method17775(1).method17779(Class7401.field31666)));
    public static final Class3257 field37954 = method30157(
       "cookie", new Class3257(new Class5643().method17779(Class7401.field31671).method17774(Class8672.field39075))
    );
@@ -952,9 +952,9 @@ public class Class8514 {
       "dried_kelp", new Class3257(new Class5643().method17779(Class7401.field31671).method17774(Class8672.field39076))
    );
    public static final Class3257 field37959 = method30157(
-      "pumpkin_seeds", new Class3296(Blocks.field36634, new Class5643().method17779(Class7401.field31675))
+      "pumpkin_seeds", new Class3296(Blocks.PUMPKIN_STEM, new Class5643().method17779(Class7401.field31675))
    );
-   public static final Class3257 field37960 = method30157("melon_seeds", new Class3296(Blocks.field36635, new Class5643().method17779(Class7401.field31675)));
+   public static final Class3257 field37960 = method30157("melon_seeds", new Class3296(Blocks.MELON_STEM, new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37961 = method30157(
       "beef", new Class3257(new Class5643().method17779(Class7401.field31671).method17774(Class8672.field39060))
    );
@@ -974,7 +974,7 @@ public class Class8514 {
    public static final Class3257 field37967 = method30157("blaze_rod", new Class3257(new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37968 = method30157("ghast_tear", new Class3257(new Class5643().method17779(Class7401.field31674)));
    public static final Class3257 field37969 = method30157("gold_nugget", new Class3257(new Class5643().method17779(Class7401.field31675)));
-   public static final Class3257 field37970 = method30157("nether_wart", new Class3296(Blocks.field36645, new Class5643().method17779(Class7401.field31675)));
+   public static final Class3257 field37970 = method30157("nether_wart", new Class3296(Blocks.NETHER_WART, new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field37971 = method30157("potion", new Class3323(new Class5643().method17775(1).method17779(Class7401.field31674)));
    public static final Class3257 field37972 = method30157("glass_bottle", new Class3328(new Class5643().method17779(Class7401.field31674)));
    public static final Class3257 field37973 = method30157(
@@ -1187,7 +1187,7 @@ public class Class8514 {
    public static final Class3257 field38048 = method30157("written_book", new Class3285(new Class5643().method17775(16)));
    public static final Class3257 field38049 = method30157("emerald", new Class3257(new Class5643().method17779(Class7401.field31675)));
    public static final Class3257 field38050 = method30157("item_frame", new Class3313(new Class5643().method17779(Class7401.field31666)));
-   public static final Class3257 field38051 = method30154(Blocks.field36668, Class7401.field31666);
+   public static final Class3257 field38051 = method30154(Blocks.FLOWER_POT, Class7401.field31666);
    public static final Class3257 field38052 = method30157(
       "carrot", new Class3296(Blocks.field36693, new Class5643().method17779(Class7401.field31671).method17774(Class8672.field39064))
    );

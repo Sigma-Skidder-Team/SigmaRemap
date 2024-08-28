@@ -69,7 +69,7 @@ public class Class2634 extends Class2628 {
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
       Block var5 = var1.method6738(var2).method23383();
-      if (var5 == Blocks.field36540 && this.field16951 && !this.field16952) {
+      if (var5 == Blocks.FARMLAND && this.field16951 && !this.field16952) {
          var2 = var2.method8311();
          Class7380 var6 = var1.method6738(var2);
          var5 = var6.method23383();

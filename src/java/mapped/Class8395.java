@@ -13,7 +13,7 @@ public class Class8395 {
       "farmer",
       Class4913.field22756,
       ImmutableSet.of(Class8514.field37842, Class8514.field37841, Class8514.field38112, Class8514.field37934),
-      ImmutableSet.of(Blocks.field36540),
+      ImmutableSet.of(Blocks.FARMLAND),
       Class6067.field27200
    );
    public static final Class8395 field36017 = method29461("fisherman", Class4913.field22757, Class6067.field27201);

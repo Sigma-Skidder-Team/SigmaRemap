@@ -259,8 +259,8 @@ public class Class4308 extends Class4307 {
       if (Client.getInstance().getModuleManager().method14667().method20770() != null) {
          String var12 = Client.getInstance().getModuleManager().method14667().method20770().field31263;
          Class3192.method11439(
-            ResourceRegistry.field38854,
-            (float)(this.field20897 - ResourceRegistry.field38854.method23942(var12) - 80),
+            ResourceRegistry.JelloLightFont20,
+            (float)(this.field20897 - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
             (float)(this.field20898 - 47),
             var12,
             Class5628.method17688(Class1979.field12896.field12910, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))

@@ -52,9 +52,9 @@ public class Class5235 extends Module {
     @HigherPriority
     private void method16320(Class4399 var1) {
         if (this.method15996()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5333.class);
-            if (var4.method16726() instanceof Class5262) {
-                Class5262 var5 = (Class5262) var4.method16726();
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Fly.class);
+            if (var4.method16726() instanceof MineplexFly) {
+                MineplexFly var5 = (MineplexFly) var4.method16726();
                 if (var5.method16456()) {
                     return;
                 }

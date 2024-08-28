@@ -30,11 +30,11 @@ public class Class4329 extends Class4305 {
             30,
             new Class6387(Class1979.field12896.field12910, Class1979.field12896.field12910, Class1979.field12896.field12910),
             "Redeem",
-            ResourceRegistry.field38854
+            ResourceRegistry.JelloLightFont20
          )
       );
       this.method13230(this.field21138 = new Class4281(this, "captcha", 195, 290, 75, 35, Class4281.field20742, "", "Captcha"));
-      this.field21138.method13306(ResourceRegistry.field38853);
+      this.field21138.method13306(ResourceRegistry.JelloLightFont18);
       this.field21138.method13288(false);
       var10.method13251((var2x, var3x) -> new Thread(() -> {
             Class9507 var4x = Client.getInstance().getNetworkManager().method30452();
@@ -84,13 +84,13 @@ public class Class4329 extends Class4305 {
 
       Class3192.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Redeem Premium", Class5628.method17688(Class1979.field12896.field12910, var1));
       Class3192.method11439(
-         ResourceRegistry.field38855,
+         ResourceRegistry.JelloLightFont25,
          100.0F,
          150.0F,
          "Visit http://sigmaclient.info for more info",
          Class5628.method17688(Class1979.field12896.field12910, 0.6F * var1)
       );
-      Class3192.method11439(ResourceRegistry.field38853, 100.0F, 263.0F, this.field21135, Class5628.method17688(Class1979.field12896.field12910, 0.6F * var1));
+      Class3192.method11439(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, Class5628.method17688(Class1979.field12896.field12910, 0.6F * var1));
       super.method13027(var1);
    }
 }

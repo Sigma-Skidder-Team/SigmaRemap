@@ -44,7 +44,7 @@ public class Config extends Command {
 
                      for (Class7286 var8 : Client.getInstance().getModuleManager().method14667().method20772()) {
                         boolean var9 = Client.getInstance().getModuleManager().method14667().method20770() == var8;
-                        if (Client.getInstance().method19954() != ClientMode.CLASSIC || !var9) {
+                        if (Client.getInstance().getClientMode() != ClientMode.CLASSIC || !var9) {
                            var3.method20327((!var9 ? "" : "§n") + var8.field31263);
                         }
                      }
@@ -87,7 +87,7 @@ public class Config extends Command {
    }
 
    public String method18342() {
-      return Client.getInstance().method19954() != ClientMode.CLASSIC ? "Profile" : "Config";
+      return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? "Profile" : "Config";
    }
 
    public void method18343(String var1) {

@@ -18,7 +18,7 @@ public class Class993 extends Class916 {
 
    @Override
    public Class7380 method3604() {
-      return Blocks.field36524.method11579();
+      return Blocks.TNT.method11579();
    }
 
    @Override
@@ -60,7 +60,7 @@ public class Class993 extends Class916 {
       if (!var1.method31141() && !var1.method31131() && !(var4 >= 0.01F)) {
          super.method3586(var1);
          if (!var1.method31131() && this.field5024.method6789().method17135(Class5462.field24229)) {
-            this.method3300(Blocks.field36524);
+            this.method3300(Blocks.TNT);
          }
       } else if (this.field5480 < 0) {
          this.method4072();

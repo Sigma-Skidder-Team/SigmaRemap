@@ -16,7 +16,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             false,
             false
          )
-         .method27312("crafting_table", Class4491.method14164(Blocks.field36538))
+         .method27312("crafting_table", Class4491.method14164(Blocks.CRAFTING_TABLE))
          .method27317(var1, "story/root");
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)

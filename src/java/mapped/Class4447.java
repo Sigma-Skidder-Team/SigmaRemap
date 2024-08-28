@@ -124,8 +124,8 @@ public class Class4447 implements Class4442 {
       method14057(var0, Blocks.field36565, Blocks.field36404);
       method14058(var0, Blocks.field36843, Blocks.field36404);
       method14059(var0, Blocks.field36762, Blocks.field36404);
-      method14060(var0, Blocks.field36613, Blocks.field36404);
-      method14061(var0, Blocks.field36545, Blocks.field36404);
+      method14060(var0, Blocks.ACACIA_TRAPDOOR, Blocks.field36404);
+      method14061(var0, Blocks.ACACIA_SIGN, Blocks.field36404);
       method14053(var0, Blocks.field36697, Blocks.field36402);
       method14054(var0, Blocks.field36873, Blocks.field36402);
       method14055(var0, Blocks.field36868, Blocks.field36402);
@@ -134,7 +134,7 @@ public class Class4447 implements Class4442 {
       method14058(var0, Blocks.field36841, Blocks.field36402);
       method14059(var0, Blocks.field36662, Blocks.field36402);
       method14060(var0, Blocks.field36611, Blocks.field36402);
-      method14061(var0, Blocks.field36544, Blocks.field36402);
+      method14061(var0, Blocks.BIRCH_SIGN, Blocks.field36402);
       method14053(var0, Blocks.field37105, Blocks.field37091);
       method14054(var0, Blocks.field37107, Blocks.field37091);
       method14055(var0, Blocks.field37097, Blocks.field37091);
@@ -152,7 +152,7 @@ public class Class4447 implements Class4442 {
       method14058(var0, Blocks.field36844, Blocks.field36405);
       method14059(var0, Blocks.field36763, Blocks.field36405);
       method14060(var0, Blocks.field36614, Blocks.field36405);
-      method14061(var0, Blocks.field36547, Blocks.field36405);
+      method14061(var0, Blocks.DARK_OAK_SIGN, Blocks.field36405);
       method14053(var0, Blocks.field36698, Blocks.field36403);
       method14054(var0, Blocks.field36874, Blocks.field36403);
       method14055(var0, Blocks.field36869, Blocks.field36403);
@@ -161,25 +161,25 @@ public class Class4447 implements Class4442 {
       method14058(var0, Blocks.field36842, Blocks.field36403);
       method14059(var0, Blocks.field36663, Blocks.field36403);
       method14060(var0, Blocks.field36612, Blocks.field36403);
-      method14061(var0, Blocks.field36546, Blocks.field36403);
+      method14061(var0, Blocks.JUNGLE_SIGN, Blocks.field36403);
       method14053(var0, Blocks.field36695, Blocks.field36400);
-      method14054(var0, Blocks.field36548, Blocks.field36400);
+      method14054(var0, Blocks.OAK_DOOR, Blocks.field36400);
       method14055(var0, Blocks.OAK_FENCE, Blocks.field36400);
-      method14056(var0, Blocks.field36637, Blocks.field36400);
+      method14056(var0, Blocks.OAK_FENCE_GATE, Blocks.field36400);
       method14057(var0, Blocks.field36561, Blocks.field36400);
       method14058(var0, Blocks.field36839, Blocks.field36400);
       method14059(var0, Blocks.field36533, Blocks.field36400);
       method14060(var0, Blocks.field36609, Blocks.field36400);
-      method14061(var0, Blocks.field36542, Blocks.field36400);
+      method14061(var0, Blocks.OAK_SIGN, Blocks.field36400);
       method14053(var0, Blocks.field36696, Blocks.field36401);
       method14054(var0, Blocks.field36872, Blocks.field36401);
       method14055(var0, Blocks.field36867, Blocks.field36401);
       method14056(var0, Blocks.field36862, Blocks.field36401);
       method14057(var0, Blocks.field36562, Blocks.field36401);
       method14058(var0, Blocks.field36840, Blocks.field36401);
-      method14059(var0, Blocks.field36661, Blocks.field36401);
+      method14059(var0, Blocks.SPRUCE_STAIRS, Blocks.field36401);
       method14060(var0, Blocks.field36610, Blocks.field36401);
-      method14061(var0, Blocks.field36543, Blocks.field36401);
+      method14061(var0, Blocks.SPRUCE_SIGN, Blocks.field36401);
       method14053(var0, Blocks.field37106, Blocks.field37092);
       method14054(var0, Blocks.field37108, Blocks.field37092);
       method14055(var0, Blocks.field37098, Blocks.field37092);
@@ -189,99 +189,99 @@ public class Class4447 implements Class4442 {
       method14059(var0, Blocks.field37104, Blocks.field37092);
       method14060(var0, Blocks.field37100, Blocks.field37092);
       method14061(var0, Blocks.field37110, Blocks.field37092);
-      method14062(var0, Blocks.field36504, Class8514.field37933);
-      method14063(var0, Blocks.field36793, Blocks.field36504);
-      method14064(var0, Blocks.field36793, Class8514.field37933);
-      method14065(var0, Class8514.field37953, Blocks.field36504);
+      method14062(var0, Blocks.BLACK_WOOL, Class8514.field37933);
+      method14063(var0, Blocks.BLACK_CARPET, Blocks.BLACK_WOOL);
+      method14064(var0, Blocks.BLACK_CARPET, Class8514.field37933);
+      method14065(var0, Class8514.field37953, Blocks.BLACK_WOOL);
       method14066(var0, Class8514.field37953, Class8514.field37933);
-      method14067(var0, Class8514.field38107, Blocks.field36504);
-      method14062(var0, Blocks.field36500, Class8514.field37929);
-      method14063(var0, Blocks.field36789, Blocks.field36500);
-      method14064(var0, Blocks.field36789, Class8514.field37929);
-      method14065(var0, Class8514.field37949, Blocks.field36500);
+      method14067(var0, Class8514.field38107, Blocks.BLACK_WOOL);
+      method14062(var0, Blocks.BLUE_WOOL, Class8514.field37929);
+      method14063(var0, Blocks.BLUE_CARPET, Blocks.BLUE_WOOL);
+      method14064(var0, Blocks.BLUE_CARPET, Class8514.field37929);
+      method14065(var0, Class8514.field37949, Blocks.BLUE_WOOL);
       method14066(var0, Class8514.field37949, Class8514.field37929);
-      method14067(var0, Class8514.field38103, Blocks.field36500);
-      method14062(var0, Blocks.field36501, Class8514.field37930);
-      method14063(var0, Blocks.field36790, Blocks.field36501);
-      method14064(var0, Blocks.field36790, Class8514.field37930);
-      method14065(var0, Class8514.field37950, Blocks.field36501);
+      method14067(var0, Class8514.field38103, Blocks.BLUE_WOOL);
+      method14062(var0, Blocks.BROWN_WOOL, Class8514.field37930);
+      method14063(var0, Blocks.BROWN_CARPET, Blocks.BROWN_WOOL);
+      method14064(var0, Blocks.BROWN_CARPET, Class8514.field37930);
+      method14065(var0, Class8514.field37950, Blocks.BROWN_WOOL);
       method14066(var0, Class8514.field37950, Class8514.field37930);
-      method14067(var0, Class8514.field38104, Blocks.field36501);
-      method14062(var0, Blocks.field36498, Class8514.field37927);
-      method14063(var0, Blocks.field36787, Blocks.field36498);
-      method14064(var0, Blocks.field36787, Class8514.field37927);
-      method14065(var0, Class8514.field37947, Blocks.field36498);
+      method14067(var0, Class8514.field38104, Blocks.BROWN_WOOL);
+      method14062(var0, Blocks.CYAN_WOOL, Class8514.field37927);
+      method14063(var0, Blocks.CYAN_CARPET, Blocks.CYAN_WOOL);
+      method14064(var0, Blocks.CYAN_CARPET, Class8514.field37927);
+      method14065(var0, Class8514.field37947, Blocks.CYAN_WOOL);
       method14066(var0, Class8514.field37947, Class8514.field37927);
-      method14067(var0, Class8514.field38101, Blocks.field36498);
-      method14062(var0, Blocks.field36496, Class8514.field37925);
-      method14063(var0, Blocks.field36785, Blocks.field36496);
-      method14064(var0, Blocks.field36785, Class8514.field37925);
-      method14065(var0, Class8514.field37945, Blocks.field36496);
+      method14067(var0, Class8514.field38101, Blocks.CYAN_WOOL);
+      method14062(var0, Blocks.GRAY_WOOL, Class8514.field37925);
+      method14063(var0, Blocks.GRAY_CARPET, Blocks.GRAY_WOOL);
+      method14064(var0, Blocks.GRAY_CARPET, Class8514.field37925);
+      method14065(var0, Class8514.field37945, Blocks.GRAY_WOOL);
       method14066(var0, Class8514.field37945, Class8514.field37925);
-      method14067(var0, Class8514.field38099, Blocks.field36496);
-      method14062(var0, Blocks.field36502, Class8514.field37931);
-      method14063(var0, Blocks.field36791, Blocks.field36502);
-      method14064(var0, Blocks.field36791, Class8514.field37931);
-      method14065(var0, Class8514.field37951, Blocks.field36502);
+      method14067(var0, Class8514.field38099, Blocks.GRAY_WOOL);
+      method14062(var0, Blocks.GREEN_WOOL, Class8514.field37931);
+      method14063(var0, Blocks.GREEN_CARPET, Blocks.GREEN_WOOL);
+      method14064(var0, Blocks.GREEN_CARPET, Class8514.field37931);
+      method14065(var0, Class8514.field37951, Blocks.GREEN_WOOL);
       method14066(var0, Class8514.field37951, Class8514.field37931);
-      method14067(var0, Class8514.field38105, Blocks.field36502);
-      method14062(var0, Blocks.field36492, Class8514.field37921);
-      method14063(var0, Blocks.field36781, Blocks.field36492);
-      method14064(var0, Blocks.field36781, Class8514.field37921);
-      method14065(var0, Class8514.field37941, Blocks.field36492);
+      method14067(var0, Class8514.field38105, Blocks.GREEN_WOOL);
+      method14062(var0, Blocks.LIGHT_BLUE_WOOL, Class8514.field37921);
+      method14063(var0, Blocks.LIGHT_BLUE_CARPET, Blocks.LIGHT_BLUE_WOOL);
+      method14064(var0, Blocks.LIGHT_BLUE_CARPET, Class8514.field37921);
+      method14065(var0, Class8514.field37941, Blocks.LIGHT_BLUE_WOOL);
       method14066(var0, Class8514.field37941, Class8514.field37921);
-      method14067(var0, Class8514.field38095, Blocks.field36492);
-      method14062(var0, Blocks.field36497, Class8514.field37926);
-      method14063(var0, Blocks.field36786, Blocks.field36497);
-      method14064(var0, Blocks.field36786, Class8514.field37926);
-      method14065(var0, Class8514.field37946, Blocks.field36497);
+      method14067(var0, Class8514.field38095, Blocks.LIGHT_BLUE_WOOL);
+      method14062(var0, Blocks.LIGHT_GRAY_WOOL, Class8514.field37926);
+      method14063(var0, Blocks.LIGHT_GRAY_CARPET, Blocks.LIGHT_GRAY_WOOL);
+      method14064(var0, Blocks.LIGHT_GRAY_CARPET, Class8514.field37926);
+      method14065(var0, Class8514.field37946, Blocks.LIGHT_GRAY_WOOL);
       method14066(var0, Class8514.field37946, Class8514.field37926);
-      method14067(var0, Class8514.field38100, Blocks.field36497);
-      method14062(var0, Blocks.field36494, Class8514.field37923);
-      method14063(var0, Blocks.field36783, Blocks.field36494);
-      method14064(var0, Blocks.field36783, Class8514.field37923);
-      method14065(var0, Class8514.field37943, Blocks.field36494);
+      method14067(var0, Class8514.field38100, Blocks.LIGHT_GRAY_WOOL);
+      method14062(var0, Blocks.LIME_WOOL, Class8514.field37923);
+      method14063(var0, Blocks.LIME_CARPET, Blocks.LIME_WOOL);
+      method14064(var0, Blocks.LIME_CARPET, Class8514.field37923);
+      method14065(var0, Class8514.field37943, Blocks.LIME_WOOL);
       method14066(var0, Class8514.field37943, Class8514.field37923);
-      method14067(var0, Class8514.field38097, Blocks.field36494);
-      method14062(var0, Blocks.field36491, Class8514.field37920);
-      method14063(var0, Blocks.field36780, Blocks.field36491);
-      method14064(var0, Blocks.field36780, Class8514.field37920);
-      method14065(var0, Class8514.field37940, Blocks.field36491);
+      method14067(var0, Class8514.field38097, Blocks.LIME_WOOL);
+      method14062(var0, Blocks.MAGENTA_WOOL, Class8514.field37920);
+      method14063(var0, Blocks.MAGENTA_CARPET, Blocks.MAGENTA_WOOL);
+      method14064(var0, Blocks.MAGENTA_CARPET, Class8514.field37920);
+      method14065(var0, Class8514.field37940, Blocks.MAGENTA_WOOL);
       method14066(var0, Class8514.field37940, Class8514.field37920);
-      method14067(var0, Class8514.field38094, Blocks.field36491);
-      method14062(var0, Blocks.field36490, Class8514.field37919);
-      method14063(var0, Blocks.field36779, Blocks.field36490);
-      method14064(var0, Blocks.field36779, Class8514.field37919);
-      method14065(var0, Class8514.field37939, Blocks.field36490);
+      method14067(var0, Class8514.field38094, Blocks.MAGENTA_WOOL);
+      method14062(var0, Blocks.ORANGE_WOOL, Class8514.field37919);
+      method14063(var0, Blocks.ORANGE_CARPET, Blocks.ORANGE_WOOL);
+      method14064(var0, Blocks.ORANGE_CARPET, Class8514.field37919);
+      method14065(var0, Class8514.field37939, Blocks.ORANGE_WOOL);
       method14066(var0, Class8514.field37939, Class8514.field37919);
-      method14067(var0, Class8514.field38093, Blocks.field36490);
-      method14062(var0, Blocks.field36495, Class8514.field37924);
-      method14063(var0, Blocks.field36784, Blocks.field36495);
-      method14064(var0, Blocks.field36784, Class8514.field37924);
-      method14065(var0, Class8514.field37944, Blocks.field36495);
+      method14067(var0, Class8514.field38093, Blocks.ORANGE_WOOL);
+      method14062(var0, Blocks.PINK_WOOL, Class8514.field37924);
+      method14063(var0, Blocks.PINK_CARPET, Blocks.PINK_WOOL);
+      method14064(var0, Blocks.PINK_CARPET, Class8514.field37924);
+      method14065(var0, Class8514.field37944, Blocks.PINK_WOOL);
       method14066(var0, Class8514.field37944, Class8514.field37924);
-      method14067(var0, Class8514.field38098, Blocks.field36495);
-      method14062(var0, Blocks.field36499, Class8514.field37928);
-      method14063(var0, Blocks.field36788, Blocks.field36499);
-      method14064(var0, Blocks.field36788, Class8514.field37928);
-      method14065(var0, Class8514.field37948, Blocks.field36499);
+      method14067(var0, Class8514.field38098, Blocks.PINK_WOOL);
+      method14062(var0, Blocks.PURPLE_WOOL, Class8514.field37928);
+      method14063(var0, Blocks.PURPLE_CARPET, Blocks.PURPLE_WOOL);
+      method14064(var0, Blocks.PURPLE_CARPET, Class8514.field37928);
+      method14065(var0, Class8514.field37948, Blocks.PURPLE_WOOL);
       method14066(var0, Class8514.field37948, Class8514.field37928);
-      method14067(var0, Class8514.field38102, Blocks.field36499);
-      method14062(var0, Blocks.field36503, Class8514.field37932);
-      method14063(var0, Blocks.field36792, Blocks.field36503);
-      method14064(var0, Blocks.field36792, Class8514.field37932);
-      method14065(var0, Class8514.field37952, Blocks.field36503);
+      method14067(var0, Class8514.field38102, Blocks.PURPLE_WOOL);
+      method14062(var0, Blocks.RED_WOOL, Class8514.field37932);
+      method14063(var0, Blocks.RED_CARPET, Blocks.RED_WOOL);
+      method14064(var0, Blocks.RED_CARPET, Class8514.field37932);
+      method14065(var0, Class8514.field37952, Blocks.RED_WOOL);
       method14066(var0, Class8514.field37952, Class8514.field37932);
-      method14067(var0, Class8514.field38106, Blocks.field36503);
-      method14063(var0, Blocks.field36778, Blocks.field36489);
-      method14065(var0, Class8514.field37938, Blocks.field36489);
-      method14067(var0, Class8514.field38092, Blocks.field36489);
-      method14062(var0, Blocks.field36493, Class8514.field37922);
-      method14063(var0, Blocks.field36782, Blocks.field36493);
-      method14064(var0, Blocks.field36782, Class8514.field37922);
-      method14065(var0, Class8514.field37942, Blocks.field36493);
+      method14067(var0, Class8514.field38106, Blocks.RED_WOOL);
+      method14063(var0, Blocks.WHITE_CARPET, Blocks.WHITE_WOOL);
+      method14065(var0, Class8514.field37938, Blocks.WHITE_WOOL);
+      method14067(var0, Class8514.field38092, Blocks.WHITE_WOOL);
+      method14062(var0, Blocks.YELLOW_WOOL, Class8514.field37922);
+      method14063(var0, Blocks.YELLOW_CARPET, Blocks.YELLOW_WOOL);
+      method14064(var0, Blocks.YELLOW_CARPET, Class8514.field37922);
+      method14065(var0, Class8514.field37942, Blocks.YELLOW_WOOL);
       method14066(var0, Class8514.field37942, Class8514.field37922);
-      method14067(var0, Class8514.field38096, Blocks.field36493);
+      method14067(var0, Class8514.field38096, Blocks.YELLOW_WOOL);
       method14068(var0, Blocks.field36608, Class8514.field37933);
       method14069(var0, Blocks.field36761, Blocks.field36608);
       method14070(var0, Blocks.field36761, Class8514.field37933);
@@ -369,14 +369,14 @@ public class Class4447 implements Class4442 {
          .method30252("XSX")
          .method30252("X#X")
          .method30252("XSX")
-         .method30253("has_rail", method14075(Blocks.field36550))
+         .method30253("has_rail", method14075(Blocks.RAIL))
          .method30255(var0);
-      Class8888.method32342(Blocks.field36393, 2)
+      Class8888.method32342(Blocks.ANDESITE, 2)
          .method32344(Blocks.DIORITE)
          .method32344(Blocks.field36399)
          .method32348("has_stone", method14075(Blocks.DIORITE))
          .method32350(var0);
-      Class8528.method30247(Blocks.field36713)
+      Class8528.method30247(Blocks.ANVIL)
          .method30250('I', Blocks.field36522)
          .method30250('i', Class8514.field37801)
          .method30252("III")
@@ -411,7 +411,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_planks", method14076(Class5985.field26071))
          .method30253("has_wood_slab", method14076(Class5985.field26078))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36665)
+      Class8528.method30247(Blocks.BEACON)
          .method30250('S', Class8514.field38066)
          .method30250('G', Blocks.field36454)
          .method30250('O', Blocks.field36527)
@@ -439,9 +439,9 @@ public class Class4447 implements Class4442 {
          .method32348("has_ink_sac", method14075(Class8514.field37915))
          .method32350(var0);
       Class8888.method32341(Class8514.field37933)
-         .method32344(Blocks.field36517)
+         .method32344(Blocks.WITHER_ROSE)
          .method32349("black_dye")
-         .method32348("has_black_flower", method14075(Blocks.field36517))
+         .method32348("has_black_flower", method14075(Blocks.WITHER_ROSE))
          .method32351(var0, "black_dye_from_wither_rose");
       Class8888.method32342(Class8514.field37975, 2)
          .method32344(Class8514.field37967)
@@ -453,16 +453,16 @@ public class Class4447 implements Class4442 {
          .method32348("has_lapis_lazuli", method14075(Class8514.field37917))
          .method32350(var0);
       Class8888.method32341(Class8514.field37929)
-         .method32344(Blocks.field36516)
+         .method32344(Blocks.CORNFLOWER)
          .method32349("blue_dye")
-         .method32348("has_blue_flower", method14075(Blocks.field36516))
+         .method32348("has_blue_flower", method14075(Blocks.CORNFLOWER))
          .method32351(var0, "blue_dye_from_cornflower");
       Class8528.method30247(Blocks.field37006)
-         .method30250('#', Blocks.field36796)
+         .method30250('#', Blocks.PACKED_ICE)
          .method30252("###")
          .method30252("###")
          .method30252("###")
-         .method30253("has_packed_ice", method14075(Blocks.field36796))
+         .method30253("has_packed_ice", method14075(Blocks.PACKED_ICE))
          .method30255(var0);
       Class8528.method30247(Blocks.field36893)
          .method30250('X', Class8514.field37934)
@@ -506,8 +506,8 @@ public class Class4447 implements Class4442 {
          .method30249('#', Class5985.field26071)
          .method30252("# #")
          .method30252(" # ")
-         .method30253("has_brown_mushroom", method14075(Blocks.field36519))
-         .method30253("has_red_mushroom", method14075(Blocks.field36520))
+         .method30253("has_brown_mushroom", method14075(Blocks.BROWN_MUSHROOM))
+         .method30253("has_red_mushroom", method14075(Blocks.RED_MUSHROOM))
          .method30253("has_mushroom_stew", method14075(Class8514.field37837))
          .method30255(var0);
       Class8528.method30247(Class8514.field37843)
@@ -533,7 +533,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_brick_block", method14075(Blocks.field36523))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36638, 4)
+      Class8528.method30248(Blocks.BRICK_STAIRS, 4)
          .method30250('#', Blocks.field36523)
          .method30252("#  ")
          .method30252("## ")
@@ -599,7 +599,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_wood_slab", method14076(Class5985.field26078))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36534)
+      Class8528.method30247(Blocks.CHEST)
          .method30249('#', Class5985.field26071)
          .method30252("###")
          .method30252("# #")
@@ -609,7 +609,7 @@ public class Class4447 implements Class4442 {
          )
          .method30255(var0);
       Class8528.method30247(Class8514.field37902)
-         .method30250('A', Blocks.field36534)
+         .method30250('A', Blocks.CHEST)
          .method30250('B', Class8514.field37885)
          .method30252("A")
          .method30252("B")
@@ -619,7 +619,7 @@ public class Class4447 implements Class4442 {
          .method30250('#', Blocks.field36853)
          .method30252("#")
          .method30252("#")
-         .method30253("has_nether_bricks", method14075(Blocks.field36642))
+         .method30253("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30247(Blocks.field36725)
          .method30250('#', Blocks.field36854)
@@ -672,7 +672,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_cobblestone", method14075(Blocks.field36399))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36666, 6)
+      Class8528.method30248(Blocks.COBBLESTONE_WALL, 6)
          .method30250('#', Blocks.field36399)
          .method30252("###")
          .method30252("###")
@@ -701,7 +701,7 @@ public class Class4447 implements Class4442 {
          .method30252("#X#")
          .method30253("has_cocoa", method14075(Class8514.field37916))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36538)
+      Class8528.method30247(Blocks.CRAFTING_TABLE)
          .method30249('#', Class5985.field26071)
          .method30252("##")
          .method30252("##")
@@ -711,14 +711,14 @@ public class Class4447 implements Class4442 {
          .method30250('~', Class8514.field37838)
          .method30250('#', Class8514.field37835)
          .method30250('&', Class8514.field37801)
-         .method30250('$', Blocks.field36658)
+         .method30250('$', Blocks.TRIPWIRE_HOOK)
          .method30252("#&#")
          .method30252("~$~")
          .method30252(" # ")
          .method30253("has_string", method14075(Class8514.field37838))
          .method30253("has_stick", method14075(Class8514.field37835))
          .method30253("has_iron_ingot", method14075(Class8514.field37801))
-         .method30253("has_tripwire_hook", method14075(Blocks.field36658))
+         .method30253("has_tripwire_hook", method14075(Blocks.TRIPWIRE_HOOK))
          .method30255(var0);
       Class8528.method30247(Blocks.field37054)
          .method30249('#', Class5985.field26071)
@@ -735,7 +735,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_chiseled_red_sandstone", method14075(Blocks.field36836))
          .method30253("has_cut_red_sandstone", method14075(Blocks.field36837))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36459)
+      Class8528.method30247(Blocks.CHISELED_SANDSTONE)
          .method30250('#', Blocks.field36847)
          .method30252("#")
          .method30252("#")
@@ -785,14 +785,14 @@ public class Class4447 implements Class4442 {
          .method30252("WWW")
          .method30253("has_quartz", method14075(Class8514.field38072))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36479, 6)
+      Class8528.method30248(Blocks.DETECTOR_RAIL, 6)
          .method30250('R', Class8514.field37887)
          .method30250('#', Blocks.field36559)
          .method30250('X', Class8514.field37801)
          .method30252("X X")
          .method30252("X#X")
          .method30252("XRX")
-         .method30253("has_rail", method14075(Blocks.field36550))
+         .method30253("has_rail", method14075(Blocks.RAIL))
          .method30255(var0);
       Class8888.method32342(Class8514.field37800, 9)
          .method32344(Blocks.field36537)
@@ -878,7 +878,7 @@ public class Class4447 implements Class4442 {
          .method30252("QC")
          .method30253("has_quartz", method14075(Class8514.field38072))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36457)
+      Class8528.method30247(Blocks.DISPENSER)
          .method30250('R', Class8514.field37887)
          .method30250('#', Blocks.field36399)
          .method30250('X', Class8514.field37796)
@@ -887,7 +887,7 @@ public class Class4447 implements Class4442 {
          .method30252("#R#")
          .method30253("has_bow", method14075(Class8514.field37796))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36729)
+      Class8528.method30247(Blocks.DROPPER)
          .method30250('R', Class8514.field37887)
          .method30250('#', Blocks.field36399)
          .method30252("###")
@@ -896,17 +896,17 @@ public class Class4447 implements Class4442 {
          .method30253("has_redstone", method14075(Class8514.field37887))
          .method30255(var0);
       Class8888.method32342(Class8514.field38049, 9)
-         .method32344(Blocks.field36660)
-         .method32348("has_emerald_block", method14075(Blocks.field36660))
+         .method32344(Blocks.EMERALD_BLOCK)
+         .method32348("has_emerald_block", method14075(Blocks.EMERALD_BLOCK))
          .method32350(var0);
-      Class8528.method30247(Blocks.field36660)
+      Class8528.method30247(Blocks.EMERALD_BLOCK)
          .method30250('#', Class8514.field38049)
          .method30252("###")
          .method30252("###")
          .method30252("###")
          .method30253("has_emerald", method14075(Class8514.field38049))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36646)
+      Class8528.method30247(Blocks.ENCHANTING_TABLE)
          .method30250('B', Class8514.field37900)
          .method30250('#', Blocks.field36527)
          .method30250('D', Class8514.field37800)
@@ -915,7 +915,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_obsidian", method14075(Blocks.field36527))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36657)
+      Class8528.method30247(Blocks.ENDER_CHEST)
          .method30250('#', Blocks.field36527)
          .method30250('E', Class8514.field37979)
          .method30252("###")
@@ -952,7 +952,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8888.method32341(Class8514.field37974)
          .method32344(Class8514.field37973)
-         .method32344(Blocks.field36519)
+         .method32344(Blocks.BROWN_MUSHROOM)
          .method32344(Class8514.field37936)
          .method32348("has_spider_eye", method14075(Class8514.field37973))
          .method32350(var0);
@@ -976,13 +976,13 @@ public class Class4447 implements Class4442 {
          .method32348("has_flint", method14075(Class8514.field37868))
          .method32348("has_obsidian", method14075(Blocks.field36527))
          .method32350(var0);
-      Class8528.method30247(Blocks.field36668)
+      Class8528.method30247(Blocks.FLOWER_POT)
          .method30250('#', Class8514.field37896)
          .method30252("# #")
          .method30252(" # ")
          .method30253("has_brick", method14075(Class8514.field37896))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36541)
+      Class8528.method30247(Blocks.FURNACE)
          .method30249('#', Class5985.field26123)
          .method30252("###")
          .method30252("# #")
@@ -990,7 +990,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_cobblestone", method14076(Class5985.field26123))
          .method30255(var0);
       Class8528.method30247(Class8514.field37903)
-         .method30250('A', Blocks.field36541)
+         .method30250('A', Blocks.FURNACE)
          .method30250('B', Class8514.field37885)
          .method30252("A")
          .method30252("B")
@@ -1002,7 +1002,7 @@ public class Class4447 implements Class4442 {
          .method30252(" # ")
          .method30253("has_glass", method14075(Blocks.field36454))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36630, 16)
+      Class8528.method30248(Blocks.GLASS_PANE, 16)
          .method30250('#', Blocks.field36454)
          .method30252("###")
          .method30252("###")
@@ -1080,14 +1080,14 @@ public class Class4447 implements Class4442 {
          .method30252(" # ")
          .method30253("has_gold_ingot", method14075(Class8514.field37802))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36478, 6)
+      Class8528.method30248(Blocks.POWERED_RAIL, 6)
          .method30250('R', Class8514.field37887)
          .method30250('#', Class8514.field37835)
          .method30250('X', Class8514.field37802)
          .method30252("X X")
          .method30252("X#X")
          .method30252("XRX")
-         .method30253("has_rail", method14075(Blocks.field36550))
+         .method30253("has_rail", method14075(Blocks.RAIL))
          .method30255(var0);
       Class8528.method30247(Class8514.field37816)
          .method30250('#', Class8514.field37835)
@@ -1170,7 +1170,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_honeycomb", method14075(Class8514.field38174))
          .method30255(var0);
       Class8528.method30247(Blocks.field36723)
-         .method30250('C', Blocks.field36534)
+         .method30250('C', Blocks.CHEST)
          .method30250('I', Class8514.field37801)
          .method30252("I I")
          .method30252("ICI")
@@ -1192,7 +1192,7 @@ public class Class4447 implements Class4442 {
          .method30252(" #")
          .method30253("has_iron_ingot", method14075(Class8514.field37801))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36628, 16)
+      Class8528.method30248(Blocks.IRON_BARS, 16)
          .method30250('#', Class8514.field37801)
          .method30252("###")
          .method30252("###")
@@ -1218,7 +1218,7 @@ public class Class4447 implements Class4442 {
          .method30252("XXX")
          .method30253("has_iron_ingot", method14075(Class8514.field37801))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36560, 3)
+      Class8528.method30248(Blocks.IRON_DOOR, 3)
          .method30250('#', Class8514.field37801)
          .method30252("##")
          .method30252("##")
@@ -1309,7 +1309,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_diamond", method14075(Class8514.field37800))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36549, 3)
+      Class8528.method30248(Blocks.LADDER, 3)
          .method30250('#', Class8514.field37835)
          .method30252("# #")
          .method30252("###")
@@ -1382,7 +1382,7 @@ public class Class4447 implements Class4442 {
          .method30252(" S ")
          .method30253("has_book", method14075(Class8514.field37900))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36558)
+      Class8528.method30247(Blocks.LEVER)
          .method30250('#', Blocks.field36399)
          .method30250('X', Class8514.field37835)
          .method30252("X")
@@ -1390,9 +1390,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_cobblestone", method14075(Blocks.field36399))
          .method30255(var0);
       Class8888.method32341(Class8514.field37921)
-         .method32344(Blocks.field36508)
+         .method32344(Blocks.BLUE_ORCHID)
          .method32349("light_blue_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36508))
+         .method32348("has_red_flower", method14075(Blocks.BLUE_ORCHID))
          .method32351(var0, "light_blue_dye_from_blue_orchid");
       Class8888.method32342(Class8514.field37921, 2)
          .method32344(Class8514.field37929)
@@ -1402,9 +1402,9 @@ public class Class4447 implements Class4442 {
          .method32348("has_white_dye", method14075(Class8514.field37918))
          .method32351(var0, "light_blue_dye_from_blue_white_dye");
       Class8888.method32341(Class8514.field37926)
-         .method32344(Blocks.field36510)
+         .method32344(Blocks.AZURE_BLUET)
          .method32349("light_gray_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36510))
+         .method32348("has_red_flower", method14075(Blocks.AZURE_BLUET))
          .method32351(var0, "light_gray_dye_from_azure_bluet");
       Class8888.method32342(Class8514.field37926, 2)
          .method32344(Class8514.field37925)
@@ -1421,14 +1421,14 @@ public class Class4447 implements Class4442 {
          .method32348("has_black_dye", method14075(Class8514.field37933))
          .method32351(var0, "light_gray_dye_from_black_white_dye");
       Class8888.method32341(Class8514.field37926)
-         .method32344(Blocks.field36515)
+         .method32344(Blocks.OXEYE_DAISY)
          .method32349("light_gray_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36515))
+         .method32348("has_red_flower", method14075(Blocks.OXEYE_DAISY))
          .method32351(var0, "light_gray_dye_from_oxeye_daisy");
       Class8888.method32341(Class8514.field37926)
-         .method32344(Blocks.field36513)
+         .method32344(Blocks.WHITE_TULIP)
          .method32349("light_gray_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36513))
+         .method32348("has_red_flower", method14075(Blocks.WHITE_TULIP))
          .method32351(var0, "light_gray_dye_from_white_tulip");
       Class8528.method30247(Blocks.field36717)
          .method30250('#', Class8514.field37802)
@@ -1443,15 +1443,15 @@ public class Class4447 implements Class4442 {
          .method32350(var0);
       Class8528.method30247(Blocks.field36590)
          .method30250('A', Blocks.field36589)
-         .method30250('B', Blocks.field36528)
+         .method30250('B', Blocks.TORCH)
          .method30252("A")
          .method30252("B")
          .method30253("has_carved_pumpkin", method14075(Blocks.field36589))
          .method30255(var0);
       Class8888.method32341(Class8514.field37920)
-         .method32344(Blocks.field36509)
+         .method32344(Blocks.ALLIUM)
          .method32349("magenta_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36509))
+         .method32348("has_red_flower", method14075(Blocks.ALLIUM))
          .method32351(var0, "magenta_dye_from_allium");
       Class8888.method32342(Class8514.field37920, 4)
          .method32344(Class8514.field37929)
@@ -1472,9 +1472,9 @@ public class Class4447 implements Class4442 {
          .method32348("has_red_dye", method14075(Class8514.field37932))
          .method32351(var0, "magenta_dye_from_blue_red_pink");
       Class8888.method32342(Class8514.field37920, 2)
-         .method32344(Blocks.field36798)
+         .method32344(Blocks.LILAC)
          .method32349("magenta_dye")
-         .method32348("has_double_plant", method14075(Blocks.field36798))
+         .method32348("has_double_plant", method14075(Blocks.LILAC))
          .method32351(var0, "magenta_dye_from_lilac");
       Class8888.method32342(Class8514.field37920, 2)
          .method32344(Class8514.field37928)
@@ -1502,7 +1502,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_compass", method14075(Class8514.field37905))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36631)
+      Class8528.method30247(Blocks.MELON)
          .method30250('M', Class8514.field37957)
          .method30252("MMM")
          .method30252("MMM")
@@ -1521,10 +1521,10 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8888.method32341(Blocks.field36526)
          .method32344(Blocks.field36399)
-         .method32344(Blocks.field36636)
-         .method32348("has_vine", method14075(Blocks.field36636))
+         .method32344(Blocks.VINE)
+         .method32348("has_vine", method14075(Blocks.VINE))
          .method32350(var0);
-      Class8528.method30248(Blocks.field36667, 6)
+      Class8528.method30248(Blocks.MOSSY_COBBLESTONE_WALL, 6)
          .method30250('#', Blocks.field36526)
          .method30252("###")
          .method30252("###")
@@ -1532,42 +1532,42 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8888.method32341(Blocks.field36616)
          .method32344(Blocks.field36615)
-         .method32344(Blocks.field36636)
+         .method32344(Blocks.VINE)
          .method32348("has_mossy_cobblestone", method14075(Blocks.field36526))
          .method32350(var0);
       Class8888.method32341(Class8514.field37837)
-         .method32344(Blocks.field36519)
-         .method32344(Blocks.field36520)
+         .method32344(Blocks.BROWN_MUSHROOM)
+         .method32344(Blocks.RED_MUSHROOM)
          .method32344(Class8514.field37836)
          .method32348("has_mushroom_stew", method14075(Class8514.field37837))
          .method32348("has_bowl", method14075(Class8514.field37836))
-         .method32348("has_brown_mushroom", method14075(Blocks.field36519))
-         .method32348("has_red_mushroom", method14075(Blocks.field36520))
+         .method32348("has_brown_mushroom", method14075(Blocks.BROWN_MUSHROOM))
+         .method32348("has_red_mushroom", method14075(Blocks.RED_MUSHROOM))
          .method32350(var0);
-      Class8528.method30247(Blocks.field36642)
+      Class8528.method30247(Blocks.NETHER_BRICKS)
          .method30250('N', Class8514.field38071)
          .method30252("NN")
          .method30252("NN")
          .method30253("has_netherbrick", method14075(Class8514.field38071))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36643, 6)
-         .method30250('#', Blocks.field36642)
+      Class8528.method30248(Blocks.NETHER_BRICK_FENCE, 6)
+         .method30250('#', Blocks.NETHER_BRICKS)
          .method30250('-', Class8514.field38071)
          .method30252("#-#")
          .method30252("#-#")
-         .method30253("has_nether_brick", method14075(Blocks.field36642))
+         .method30253("has_nether_brick", method14075(Blocks.NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field36853, 6)
-         .method30250('#', Blocks.field36642)
+         .method30250('#', Blocks.NETHER_BRICKS)
          .method30252("###")
-         .method30253("has_nether_brick", method14075(Blocks.field36642))
+         .method30253("has_nether_brick", method14075(Blocks.NETHER_BRICKS))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36644, 4)
-         .method30250('#', Blocks.field36642)
+      Class8528.method30248(Blocks.NETHER_BRICK_STAIRS, 4)
+         .method30250('#', Blocks.NETHER_BRICKS)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_nether_brick", method14075(Blocks.field36642))
+         .method30253("has_nether_brick", method14075(Blocks.NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30247(Blocks.field36891)
          .method30250('#', Class8514.field37970)
@@ -1576,7 +1576,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_nether_wart", method14075(Class8514.field37970))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36461)
+      Class8528.method30247(Blocks.NOTE_BLOCK)
          .method30249('#', Class5985.field26071)
          .method30250('X', Class8514.field37887)
          .method30252("###")
@@ -1594,9 +1594,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_quartz", method14075(Class8514.field38072))
          .method30255(var0);
       Class8888.method32341(Class8514.field37919)
-         .method32344(Blocks.field36512)
+         .method32344(Blocks.ORANGE_TULIP)
          .method32349("orange_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36512))
+         .method32348("has_red_flower", method14075(Blocks.ORANGE_TULIP))
          .method32351(var0, "orange_dye_from_orange_tulip");
       Class8888.method32342(Class8514.field37919, 2)
          .method32344(Class8514.field37932)
@@ -1626,7 +1626,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_quartz_block", method14075(Blocks.field36724))
          .method30253("has_quartz_pillar", method14075(Blocks.field36726))
          .method30255(var0);
-      Class8888.method32341(Blocks.field36796)
+      Class8888.method32341(Blocks.PACKED_ICE)
          .method32345(Blocks.ICE, 9)
          .method32348("has_ice", method14075(Blocks.ICE))
          .method32350(var0);
@@ -1636,9 +1636,9 @@ public class Class4447 implements Class4442 {
          .method32348("has_double_plant", method14075(Blocks.field36800))
          .method32351(var0, "pink_dye_from_peony");
       Class8888.method32341(Class8514.field37924)
-         .method32344(Blocks.field36514)
+         .method32344(Blocks.PINK_TULIP)
          .method32349("pink_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36514))
+         .method32348("has_red_flower", method14075(Blocks.PINK_TULIP))
          .method32351(var0, "pink_dye_from_pink_tulip");
       Class8888.method32342(Class8514.field37924, 2)
          .method32344(Class8514.field37932)
@@ -1647,7 +1647,7 @@ public class Class4447 implements Class4442 {
          .method32348("has_white_dye", method14075(Class8514.field37918))
          .method32348("has_red_dye", method14075(Class8514.field37932))
          .method32351(var0, "pink_dye_from_red_white_dye");
-      Class8528.method30247(Blocks.field36487)
+      Class8528.method30247(Blocks.PISTON)
          .method30250('R', Class8514.field37887)
          .method30250('#', Blocks.field36399)
          .method30249('T', Class5985.field26071)
@@ -1669,17 +1669,17 @@ public class Class4447 implements Class4442 {
          .method30252("SS")
          .method30253("has_stone", method14075(Blocks.GRANITE))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36392, 4)
+      Class8528.method30248(Blocks.POLISHED_DIORITE, 4)
          .method30250('S', Blocks.DIORITE)
          .method30252("SS")
          .method30252("SS")
          .method30253("has_stone", method14075(Blocks.DIORITE))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36394, 4)
-         .method30250('S', Blocks.field36393)
+      Class8528.method30248(Blocks.POLISHED_ANDESITE, 4)
+         .method30250('S', Blocks.ANDESITE)
          .method30252("SS")
          .method30252("SS")
-         .method30253("has_stone", method14075(Blocks.field36393))
+         .method30253("has_stone", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30247(Blocks.field36767)
          .method30250('S', Class8514.field38075)
@@ -1727,7 +1727,7 @@ public class Class4447 implements Class4442 {
          .method32348("has_red_dye", method14075(Class8514.field37932))
          .method32350(var0);
       Class8528.method30247(Blocks.field36896)
-         .method30250('#', Blocks.field36534)
+         .method30250('#', Blocks.CHEST)
          .method30250('-', Class8514.field38127)
          .method30252("-")
          .method30252("#")
@@ -1791,7 +1791,7 @@ public class Class4447 implements Class4442 {
          .method32344(Class8514.field38078)
          .method32344(Class8514.field37836)
          .method32344(Class8514.field38052)
-         .method32344(Blocks.field36519)
+         .method32344(Blocks.BROWN_MUSHROOM)
          .method32349("rabbit_stew")
          .method32348("has_cooked_rabbit", method14075(Class8514.field38078))
          .method32351(var0, "rabbit_stew_from_brown_mushroom");
@@ -1800,11 +1800,11 @@ public class Class4447 implements Class4442 {
          .method32344(Class8514.field38078)
          .method32344(Class8514.field37836)
          .method32344(Class8514.field38052)
-         .method32344(Blocks.field36520)
+         .method32344(Blocks.RED_MUSHROOM)
          .method32349("rabbit_stew")
          .method32348("has_cooked_rabbit", method14075(Class8514.field38078))
          .method32351(var0, "rabbit_stew_from_red_mushroom");
-      Class8528.method30248(Blocks.field36550, 16)
+      Class8528.method30248(Blocks.RAIL, 16)
          .method30250('#', Class8514.field37835)
          .method30250('X', Class8514.field37801)
          .method30252("X X")
@@ -1844,19 +1844,19 @@ public class Class4447 implements Class4442 {
          .method32348("has_beetroot", method14075(Class8514.field38111))
          .method32351(var0, "red_dye_from_beetroot");
       Class8888.method32341(Class8514.field37932)
-         .method32344(Blocks.field36507)
+         .method32344(Blocks.POPPY)
          .method32349("red_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36507))
+         .method32348("has_red_flower", method14075(Blocks.POPPY))
          .method32351(var0, "red_dye_from_poppy");
       Class8888.method32342(Class8514.field37932, 2)
-         .method32344(Blocks.field36799)
+         .method32344(Blocks.ROSE_BUSH)
          .method32349("red_dye")
-         .method32348("has_double_plant", method14075(Blocks.field36799))
+         .method32348("has_double_plant", method14075(Blocks.ROSE_BUSH))
          .method32351(var0, "red_dye_from_rose_bush");
       Class8888.method32341(Class8514.field37932)
-         .method32344(Blocks.field36511)
+         .method32344(Blocks.RED_TULIP)
          .method32349("red_dye")
-         .method32348("has_red_flower", method14075(Blocks.field36511))
+         .method32348("has_red_flower", method14075(Blocks.RED_TULIP))
          .method32351(var0, "red_dye_from_tulip");
       Class8528.method30247(Blocks.field36892)
          .method30250('W', Class8514.field37970)
@@ -1899,31 +1899,31 @@ public class Class4447 implements Class4442 {
          .method30252("III")
          .method30253("has_redstone_torch", method14075(Blocks.field36568))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36458)
+      Class8528.method30247(Blocks.SANDSTONE)
          .method30250('#', Blocks.SAND)
          .method30252("##")
          .method30252("##")
          .method30253("has_sand", method14075(Blocks.SAND))
          .method30255(var0);
       Class8528.method30248(Blocks.field36847, 6)
-         .method30251('#', Class120.method339(Blocks.field36458, Blocks.field36459))
+         .method30251('#', Class120.method339(Blocks.SANDSTONE, Blocks.CHISELED_SANDSTONE))
          .method30252("###")
-         .method30253("has_sandstone", method14075(Blocks.field36458))
-         .method30253("has_chiseled_sandstone", method14075(Blocks.field36459))
+         .method30253("has_sandstone", method14075(Blocks.SANDSTONE))
+         .method30253("has_chiseled_sandstone", method14075(Blocks.CHISELED_SANDSTONE))
          .method30255(var0);
       Class8528.method30248(Blocks.field36848, 6)
-         .method30250('#', Blocks.field36460)
+         .method30250('#', Blocks.CUT_SANDSTONE)
          .method30252("###")
-         .method30253("has_cut_sandstone", method14075(Blocks.field36460))
+         .method30253("has_cut_sandstone", method14075(Blocks.CUT_SANDSTONE))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36655, 4)
-         .method30251('#', Class120.method339(Blocks.field36458, Blocks.field36459, Blocks.field36460))
+      Class8528.method30248(Blocks.SANDSTONE_STAIRS, 4)
+         .method30251('#', Class120.method339(Blocks.SANDSTONE, Blocks.CHISELED_SANDSTONE, Blocks.CUT_SANDSTONE))
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_sandstone", method14075(Blocks.field36458))
-         .method30253("has_chiseled_sandstone", method14075(Blocks.field36459))
-         .method30253("has_cut_sandstone", method14075(Blocks.field36460))
+         .method30253("has_sandstone", method14075(Blocks.SANDSTONE))
+         .method30253("has_chiseled_sandstone", method14075(Blocks.CHISELED_SANDSTONE))
+         .method30253("has_cut_sandstone", method14075(Blocks.CUT_SANDSTONE))
          .method30255(var0);
       Class8528.method30247(Blocks.field36776)
          .method30250('S', Class8514.field38075)
@@ -1964,11 +1964,11 @@ public class Class4447 implements Class4442 {
          .method30252("##")
          .method30253("has_red_sandstone", method14075(Blocks.field36835))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36460, 4)
-         .method30250('#', Blocks.field36458)
+      Class8528.method30248(Blocks.CUT_SANDSTONE, 4)
+         .method30250('#', Blocks.SANDSTONE)
          .method30252("##")
          .method30252("##")
-         .method30253("has_sandstone", method14075(Blocks.field36458))
+         .method30253("has_sandstone", method14075(Blocks.SANDSTONE))
          .method30255(var0);
       Class8528.method30247(Blocks.SNOW_BLOCK)
          .method30250('#', Class8514.field37888)
@@ -2021,8 +2021,8 @@ public class Class4447 implements Class4442 {
          .method30254("sticks")
          .method30253("has_bamboo", method14075(Blocks.field37009))
          .method30256(var0, "stick_from_bamboo_item");
-      Class8528.method30247(Blocks.field36480)
-         .method30250('P', Blocks.field36487)
+      Class8528.method30247(Blocks.STICKY_PISTON)
+         .method30250('P', Blocks.PISTON)
          .method30250('S', Class8514.field37901)
          .method30252("S")
          .method30252("P")
@@ -2047,7 +2047,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_stone_bricks", method14076(Class5985.field26072))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36639, 4)
+      Class8528.method30248(Blocks.STONE_BRICK_STAIRS, 4)
          .method30250('#', Blocks.field36615)
          .method30252("#  ")
          .method30252("## ")
@@ -2097,7 +2097,7 @@ public class Class4447 implements Class4442 {
          .method30252("###")
          .method30253("has_smooth_stone", method14075(Blocks.field36858))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36551, 4)
+      Class8528.method30248(Blocks.COBBLESTONE_STAIRS, 4)
          .method30250('#', Blocks.field36399)
          .method30252("#  ")
          .method30252("## ")
@@ -2112,7 +2112,7 @@ public class Class4447 implements Class4442 {
          .method30252("#")
          .method30253("has_cobblestone", method14076(Class5985.field26122))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36489)
+      Class8528.method30247(Blocks.WHITE_WOOL)
          .method30250('#', Class8514.field37838)
          .method30252("##")
          .method30252("##")
@@ -2137,7 +2137,7 @@ public class Class4447 implements Class4442 {
          .method30253("has_redstone", method14075(Class8514.field37887))
          .method30253("has_hay_block", method14075(Blocks.field36777))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36524)
+      Class8528.method30247(Blocks.TNT)
          .method30251('#', Class120.method339(Blocks.SAND, Blocks.RED_SAND))
          .method30250('X', Class8514.field37840)
          .method30252("X#X")
@@ -2146,13 +2146,13 @@ public class Class4447 implements Class4442 {
          .method30253("has_gunpowder", method14075(Class8514.field37840))
          .method30255(var0);
       Class8528.method30247(Class8514.field38073)
-         .method30250('A', Blocks.field36524)
+         .method30250('A', Blocks.TNT)
          .method30250('B', Class8514.field37885)
          .method30252("A")
          .method30252("B")
          .method30253("has_minecart", method14075(Class8514.field37885))
          .method30255(var0);
-      Class8528.method30248(Blocks.field36528, 4)
+      Class8528.method30248(Blocks.TORCH, 4)
          .method30250('#', Class8514.field37835)
          .method30251('X', Class120.method339(Class8514.field37798, Class8514.field37799))
          .method30252("X")
@@ -2185,12 +2185,12 @@ public class Class4447 implements Class4442 {
          .method30252("XXX")
          .method30253("has_soul_torch", method14075(Class8514.field37445))
          .method30255(var0);
-      Class8888.method32341(Blocks.field36716)
-         .method32344(Blocks.field36534)
-         .method32344(Blocks.field36658)
-         .method32348("has_tripwire_hook", method14075(Blocks.field36658))
+      Class8888.method32341(Blocks.TRAPPED_CHEST)
+         .method32344(Blocks.CHEST)
+         .method32344(Blocks.TRIPWIRE_HOOK)
+         .method32348("has_tripwire_hook", method14075(Blocks.TRIPWIRE_HOOK))
          .method32350(var0);
-      Class8528.method30248(Blocks.field36658, 2)
+      Class8528.method30248(Blocks.TRIPWIRE_HOOK, 2)
          .method30249('#', Class5985.field26071)
          .method30250('S', Class8514.field37835)
          .method30250('I', Class8514.field37801)
@@ -2215,9 +2215,9 @@ public class Class4447 implements Class4442 {
          .method32348("has_bone_meal", method14075(Class8514.field37934))
          .method32350(var0);
       Class8888.method32341(Class8514.field37918)
-         .method32344(Blocks.field36518)
+         .method32344(Blocks.LILY_OF_THE_VALLEY)
          .method32349("white_dye")
-         .method32348("has_white_flower", method14075(Blocks.field36518))
+         .method32348("has_white_flower", method14075(Blocks.LILY_OF_THE_VALLEY))
          .method32351(var0, "white_dye_from_lily_of_the_valley");
       Class8528.method30247(Class8514.field37808)
          .method30250('#', Class8514.field37835)
@@ -2266,14 +2266,14 @@ public class Class4447 implements Class4442 {
          .method32348("has_book", method14075(Class8514.field37900))
          .method32350(var0);
       Class8888.method32341(Class8514.field37922)
-         .method32344(Blocks.field36506)
+         .method32344(Blocks.DANDELION)
          .method32349("yellow_dye")
-         .method32348("has_yellow_flower", method14075(Blocks.field36506))
+         .method32348("has_yellow_flower", method14075(Blocks.DANDELION))
          .method32351(var0, "yellow_dye_from_dandelion");
       Class8888.method32342(Class8514.field37922, 2)
-         .method32344(Blocks.field36797)
+         .method32344(Blocks.SUNFLOWER)
          .method32349("yellow_dye")
-         .method32348("has_double_plant", method14075(Blocks.field36797))
+         .method32348("has_double_plant", method14075(Blocks.SUNFLOWER))
          .method32351(var0, "yellow_dye_from_sunflower");
       Class8888.method32342(Class8514.field37958, 9)
          .method32344(Blocks.field36963)
@@ -2314,11 +2314,11 @@ public class Class4447 implements Class4442 {
          .method30253("has_mossy_stone_bricks", method14075(Blocks.field36616))
          .method30255(var0);
       Class8528.method30248(Blocks.field37017, 4)
-         .method30250('#', Blocks.field36392)
+         .method30250('#', Blocks.POLISHED_DIORITE)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_polished_diorite", method14075(Blocks.field36392))
+         .method30253("has_polished_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37018, 4)
          .method30250('#', Blocks.field36526)
@@ -2363,11 +2363,11 @@ public class Class4447 implements Class4442 {
          .method30253("has_granite", method14075(Blocks.GRANITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37024, 4)
-         .method30250('#', Blocks.field36393)
+         .method30250('#', Blocks.ANDESITE)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_andesite", method14075(Blocks.field36393))
+         .method30253("has_andesite", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37025, 4)
          .method30250('#', Blocks.field36892)
@@ -2377,11 +2377,11 @@ public class Class4447 implements Class4442 {
          .method30253("has_red_nether_bricks", method14075(Blocks.field36892))
          .method30255(var0);
       Class8528.method30248(Blocks.field37026, 4)
-         .method30250('#', Blocks.field36394)
+         .method30250('#', Blocks.POLISHED_ANDESITE)
          .method30252("#  ")
          .method30252("## ")
          .method30252("###")
-         .method30253("has_polished_andesite", method14075(Blocks.field36394))
+         .method30253("has_polished_andesite", method14075(Blocks.POLISHED_ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37027, 4)
          .method30250('#', Blocks.DIORITE)
@@ -2406,9 +2406,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_mossy_stone_bricks", method14075(Blocks.field36616))
          .method30255(var0);
       Class8528.method30248(Blocks.field37031, 6)
-         .method30250('#', Blocks.field36392)
+         .method30250('#', Blocks.POLISHED_DIORITE)
          .method30252("###")
-         .method30253("has_polished_diorite", method14075(Blocks.field36392))
+         .method30253("has_polished_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37032, 6)
          .method30250('#', Blocks.field36526)
@@ -2436,9 +2436,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_granite", method14075(Blocks.GRANITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37037, 6)
-         .method30250('#', Blocks.field36393)
+         .method30250('#', Blocks.ANDESITE)
          .method30252("###")
-         .method30253("has_andesite", method14075(Blocks.field36393))
+         .method30253("has_andesite", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37038, 6)
          .method30250('#', Blocks.field36892)
@@ -2446,9 +2446,9 @@ public class Class4447 implements Class4442 {
          .method30253("has_red_nether_bricks", method14075(Blocks.field36892))
          .method30255(var0);
       Class8528.method30248(Blocks.field37039, 6)
-         .method30250('#', Blocks.field36394)
+         .method30250('#', Blocks.POLISHED_ANDESITE)
          .method30252("###")
-         .method30253("has_polished_andesite", method14075(Blocks.field36394))
+         .method30253("has_polished_andesite", method14075(Blocks.POLISHED_ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37040, 6)
          .method30250('#', Blocks.DIORITE)
@@ -2492,16 +2492,16 @@ public class Class4447 implements Class4442 {
          .method30253("has_stone_bricks", method14075(Blocks.field36615))
          .method30255(var0);
       Class8528.method30248(Blocks.field37047, 6)
-         .method30250('#', Blocks.field36642)
+         .method30250('#', Blocks.NETHER_BRICKS)
          .method30252("###")
          .method30252("###")
-         .method30253("has_nether_bricks", method14075(Blocks.field36642))
+         .method30253("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method30255(var0);
       Class8528.method30248(Blocks.field37048, 6)
-         .method30250('#', Blocks.field36393)
+         .method30250('#', Blocks.ANDESITE)
          .method30252("###")
          .method30252("###")
-         .method30253("has_andesite", method14075(Blocks.field36393))
+         .method30253("has_andesite", method14075(Blocks.ANDESITE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37049, 6)
          .method30250('#', Blocks.field36892)
@@ -2510,10 +2510,10 @@ public class Class4447 implements Class4442 {
          .method30253("has_red_nether_bricks", method14075(Blocks.field36892))
          .method30255(var0);
       Class8528.method30248(Blocks.field37050, 6)
-         .method30250('#', Blocks.field36458)
+         .method30250('#', Blocks.SANDSTONE)
          .method30252("###")
          .method30252("###")
-         .method30253("has_sandstone", method14075(Blocks.field36458))
+         .method30253("has_sandstone", method14075(Blocks.SANDSTONE))
          .method30255(var0);
       Class8528.method30248(Blocks.field37051, 6)
          .method30250('#', Blocks.field36883)
@@ -2539,8 +2539,8 @@ public class Class4447 implements Class4442 {
          .method32350(var0);
       Class8888.method32341(Class8514.field38151)
          .method32344(Class8514.field37899)
-         .method32344(Blocks.field36515)
-         .method32348("has_oxeye_daisy", method14075(Blocks.field36515))
+         .method32344(Blocks.OXEYE_DAISY)
+         .method32348("has_oxeye_daisy", method14075(Blocks.OXEYE_DAISY))
          .method32350(var0);
       Class8888.method32341(Class8514.field38154)
          .method32344(Class8514.field37899)
@@ -2565,7 +2565,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8528.method30247(Blocks.field37057)
          .method30250('#', Blocks.field36858)
-         .method30250('X', Blocks.field36541)
+         .method30250('X', Blocks.FURNACE)
          .method30250('I', Class8514.field37801)
          .method30252("III")
          .method30252("IXI")
@@ -2574,11 +2574,11 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
       Class8528.method30247(Blocks.field37056)
          .method30249('#', Class5985.field26085)
-         .method30250('X', Blocks.field36541)
+         .method30250('X', Blocks.FURNACE)
          .method30252(" # ")
          .method30252("#X#")
          .method30252(" # ")
-         .method30253("has_furnace", method14075(Blocks.field36541))
+         .method30253("has_furnace", method14075(Blocks.FURNACE))
          .method30255(var0);
       Class8528.method30247(Blocks.field37058)
          .method30249('#', Class5985.field26071)
@@ -2726,7 +2726,7 @@ public class Class4447 implements Class4442 {
          .method30252("##")
          .method30253("has_polished_blackstone", method14075(Blocks.field37134))
          .method30255(var0);
-      Class8528.method30247(Blocks.field36629)
+      Class8528.method30247(Blocks.CHAIN)
          .method30250('I', Class8514.field37801)
          .method30250('N', Class8514.field38128)
          .method30252("N")
@@ -2793,8 +2793,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.field36455.method11581()), Class8514.field37917, 0.2F, 200)
          .method17667("has_lapis_ore", method14075(Blocks.field36455))
          .method17669(var0, "lapis_from_smelting");
-      Class5625.method17666(Class120.method339(Blocks.field36656.method11581()), Class8514.field38049, 1.0F, 200)
-         .method17667("has_emerald_ore", method14075(Blocks.field36656))
+      Class5625.method17666(Class120.method339(Blocks.EMERALD_ORE.method11581()), Class8514.field38049, 1.0F, 200)
+         .method17667("has_emerald_ore", method14075(Blocks.EMERALD_ORE))
          .method17669(var0, "emerald_from_smelting");
       Class5625.method17666(Class120.method342(Class5985.field26095), Blocks.field36454.method11581(), 0.1F, 200)
          .method17667("has_sand", method14076(Class5985.field26095))
@@ -2896,8 +2896,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.STONE), Blocks.field36858.method11581(), 0.1F, 200)
          .method17667("has_stone", method14075(Blocks.STONE))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36458), Blocks.field36859.method11581(), 0.1F, 200)
-         .method17667("has_sandstone", method14075(Blocks.field36458))
+      Class5625.method17666(Class120.method339(Blocks.SANDSTONE), Blocks.field36859.method11581(), 0.1F, 200)
+         .method17667("has_sandstone", method14075(Blocks.SANDSTONE))
          .method17668(var0);
       Class5625.method17666(Class120.method339(Blocks.field36835), Blocks.field36861.method11581(), 0.1F, 200)
          .method17667("has_red_sandstone", method14075(Blocks.field36835))
@@ -2962,8 +2962,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17666(Class120.method339(Blocks.field37135), Blocks.field37136.method11581(), 0.1F, 200)
          .method17667("has_blackstone_bricks", method14075(Blocks.field37135))
          .method17668(var0);
-      Class5625.method17666(Class120.method339(Blocks.field36642), Blocks.field37148.method11581(), 0.1F, 200)
-         .method17667("has_nether_bricks", method14075(Blocks.field36642))
+      Class5625.method17666(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field37148.method11581(), 0.1F, 200)
+         .method17667("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method17668(var0);
       Class5625.method17665(Class120.method339(Blocks.field36419.method11581()), Class8514.field37801, 0.7F, 100)
          .method17667("has_iron_ore", method14075(Blocks.field36419.method11581()))
@@ -2983,8 +2983,8 @@ public class Class4447 implements Class4442 {
       Class5625.method17665(Class120.method339(Blocks.field36420.method11581()), Class8514.field37798, 0.1F, 100)
          .method17667("has_coal_ore", method14075(Blocks.field36420))
          .method17669(var0, "coal_from_blasting");
-      Class5625.method17665(Class120.method339(Blocks.field36656.method11581()), Class8514.field38049, 1.0F, 100)
-         .method17667("has_emerald_ore", method14075(Blocks.field36656))
+      Class5625.method17665(Class120.method339(Blocks.EMERALD_ORE.method11581()), Class8514.field38049, 1.0F, 100)
+         .method17667("has_emerald_ore", method14075(Blocks.EMERALD_ORE))
          .method17669(var0, "emerald_from_blasting");
       Class5625.method17665(Class120.method339(Blocks.field36722), Class8514.field38072, 0.2F, 100)
          .method17667("has_nether_quartz_ore", method14075(Blocks.field36722))
@@ -3070,7 +3070,7 @@ public class Class4447 implements Class4442 {
       Class9067.method33770(Class120.method339(Blocks.STONE), Blocks.field36852, 2)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "stone_brick_slab_from_stone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field36639)
+      Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.STONE_BRICK_STAIRS)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "stone_brick_stairs_from_stone_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field36618)
@@ -3079,26 +3079,26 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.STONE), Blocks.field37046)
          .method33771("has_stone", method14075(Blocks.STONE))
          .method33772(var0, "stone_brick_walls_from_stone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36458), Blocks.field36460)
-         .method33771("has_sandstone", method14075(Blocks.field36458))
+      Class9067.method33769(Class120.method339(Blocks.SANDSTONE), Blocks.CUT_SANDSTONE)
+         .method33771("has_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "cut_sandstone_from_sandstone_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36458), Blocks.field36847, 2)
-         .method33771("has_sandstone", method14075(Blocks.field36458))
+      Class9067.method33770(Class120.method339(Blocks.SANDSTONE), Blocks.field36847, 2)
+         .method33771("has_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "sandstone_slab_from_sandstone_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36458), Blocks.field36848, 2)
-         .method33771("has_sandstone", method14075(Blocks.field36458))
+      Class9067.method33770(Class120.method339(Blocks.SANDSTONE), Blocks.field36848, 2)
+         .method33771("has_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "cut_sandstone_slab_from_sandstone_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36460), Blocks.field36848, 2)
-         .method33771("has_cut_sandstone", method14075(Blocks.field36458))
+      Class9067.method33770(Class120.method339(Blocks.CUT_SANDSTONE), Blocks.field36848, 2)
+         .method33771("has_cut_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "cut_sandstone_slab_from_cut_sandstone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36458), Blocks.field36655)
-         .method33771("has_sandstone", method14075(Blocks.field36458))
+      Class9067.method33769(Class120.method339(Blocks.SANDSTONE), Blocks.SANDSTONE_STAIRS)
+         .method33771("has_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "sandstone_stairs_from_sandstone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36458), Blocks.field37050)
-         .method33771("has_sandstone", method14075(Blocks.field36458))
+      Class9067.method33769(Class120.method339(Blocks.SANDSTONE), Blocks.field37050)
+         .method33771("has_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "sandstone_wall_from_sandstone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36458), Blocks.field36459)
-         .method33771("has_sandstone", method14075(Blocks.field36458))
+      Class9067.method33769(Class120.method339(Blocks.SANDSTONE), Blocks.CHISELED_SANDSTONE)
+         .method33771("has_sandstone", method14075(Blocks.SANDSTONE))
          .method33772(var0, "chiseled_sandstone_from_sandstone_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.field36835), Blocks.field36837)
          .method33771("has_red_sandstone", method14075(Blocks.field36835))
@@ -3136,19 +3136,19 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.field36724), Blocks.field37149)
          .method33771("has_quartz_block", method14075(Blocks.field36724))
          .method33772(var0, "quartz_bricks_from_quartz_block_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36399), Blocks.field36551)
+      Class9067.method33769(Class120.method339(Blocks.field36399), Blocks.COBBLESTONE_STAIRS)
          .method33771("has_cobblestone", method14075(Blocks.field36399))
          .method33772(var0, "cobblestone_stairs_from_cobblestone_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.field36399), Blocks.field36850, 2)
          .method33771("has_cobblestone", method14075(Blocks.field36399))
          .method33772(var0, "cobblestone_slab_from_cobblestone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36399), Blocks.field36666)
+      Class9067.method33769(Class120.method339(Blocks.field36399), Blocks.COBBLESTONE_WALL)
          .method33771("has_cobblestone", method14075(Blocks.field36399))
          .method33772(var0, "cobblestone_wall_from_cobblestone_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.field36615), Blocks.field36852, 2)
          .method33771("has_stone_bricks", method14075(Blocks.field36615))
          .method33772(var0, "stone_brick_slab_from_stone_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36615), Blocks.field36639)
+      Class9067.method33769(Class120.method339(Blocks.field36615), Blocks.STONE_BRICK_STAIRS)
          .method33771("has_stone_bricks", method14075(Blocks.field36615))
          .method33772(var0, "stone_brick_stairs_from_stone_bricks_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.field36615), Blocks.field37046)
@@ -3160,23 +3160,23 @@ public class Class4447 implements Class4442 {
       Class9067.method33770(Class120.method339(Blocks.field36523), Blocks.field36851, 2)
          .method33771("has_bricks", method14075(Blocks.field36523))
          .method33772(var0, "brick_slab_from_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36523), Blocks.field36638)
+      Class9067.method33769(Class120.method339(Blocks.field36523), Blocks.BRICK_STAIRS)
          .method33771("has_bricks", method14075(Blocks.field36523))
          .method33772(var0, "brick_stairs_from_bricks_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.field36523), Blocks.field37041)
          .method33771("has_bricks", method14075(Blocks.field36523))
          .method33772(var0, "brick_wall_from_bricks_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36642), Blocks.field36853, 2)
-         .method33771("has_nether_bricks", method14075(Blocks.field36642))
+      Class9067.method33770(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field36853, 2)
+         .method33771("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method33772(var0, "nether_brick_slab_from_nether_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36642), Blocks.field36644)
-         .method33771("has_nether_bricks", method14075(Blocks.field36642))
+      Class9067.method33769(Class120.method339(Blocks.NETHER_BRICKS), Blocks.NETHER_BRICK_STAIRS)
+         .method33771("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method33772(var0, "nether_brick_stairs_from_nether_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36642), Blocks.field37047)
-         .method33771("has_nether_bricks", method14075(Blocks.field36642))
+      Class9067.method33769(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field37047)
+         .method33771("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method33772(var0, "nether_brick_wall_from_nether_bricks_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36642), Blocks.field37147)
-         .method33771("has_nether_bricks", method14075(Blocks.field36642))
+      Class9067.method33769(Class120.method339(Blocks.NETHER_BRICKS), Blocks.field37147)
+         .method33771("has_nether_bricks", method14075(Blocks.NETHER_BRICKS))
          .method33772(var0, "chiseled_nether_bricks_from_nether_bricks_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.field36892), Blocks.field37038, 2)
          .method33771("has_nether_bricks", method14075(Blocks.field36892))
@@ -3217,29 +3217,29 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.field36769), Blocks.field36772)
          .method33771("has_dark_prismarine", method14075(Blocks.field36769))
          .method33772(var0, "dark_prismarine_stairs_from_dark_prismarine_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36393), Blocks.field37037, 2)
-         .method33771("has_andesite", method14075(Blocks.field36393))
+      Class9067.method33770(Class120.method339(Blocks.ANDESITE), Blocks.field37037, 2)
+         .method33771("has_andesite", method14075(Blocks.ANDESITE))
          .method33772(var0, "andesite_slab_from_andesite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36393), Blocks.field37024)
-         .method33771("has_andesite", method14075(Blocks.field36393))
+      Class9067.method33769(Class120.method339(Blocks.ANDESITE), Blocks.field37024)
+         .method33771("has_andesite", method14075(Blocks.ANDESITE))
          .method33772(var0, "andesite_stairs_from_andesite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36393), Blocks.field37048)
-         .method33771("has_andesite", method14075(Blocks.field36393))
+      Class9067.method33769(Class120.method339(Blocks.ANDESITE), Blocks.field37048)
+         .method33771("has_andesite", method14075(Blocks.ANDESITE))
          .method33772(var0, "andesite_wall_from_andesite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36393), Blocks.field36394)
-         .method33771("has_andesite", method14075(Blocks.field36393))
+      Class9067.method33769(Class120.method339(Blocks.ANDESITE), Blocks.POLISHED_ANDESITE)
+         .method33771("has_andesite", method14075(Blocks.ANDESITE))
          .method33772(var0, "polished_andesite_from_andesite_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36393), Blocks.field37039, 2)
-         .method33771("has_andesite", method14075(Blocks.field36393))
+      Class9067.method33770(Class120.method339(Blocks.ANDESITE), Blocks.field37039, 2)
+         .method33771("has_andesite", method14075(Blocks.ANDESITE))
          .method33772(var0, "polished_andesite_slab_from_andesite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36393), Blocks.field37026)
-         .method33771("has_andesite", method14075(Blocks.field36393))
+      Class9067.method33769(Class120.method339(Blocks.ANDESITE), Blocks.field37026)
+         .method33771("has_andesite", method14075(Blocks.ANDESITE))
          .method33772(var0, "polished_andesite_stairs_from_andesite_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36394), Blocks.field37039, 2)
-         .method33771("has_polished_andesite", method14075(Blocks.field36394))
+      Class9067.method33770(Class120.method339(Blocks.POLISHED_ANDESITE), Blocks.field37039, 2)
+         .method33771("has_polished_andesite", method14075(Blocks.POLISHED_ANDESITE))
          .method33772(var0, "polished_andesite_slab_from_polished_andesite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36394), Blocks.field37026)
-         .method33771("has_polished_andesite", method14075(Blocks.field36394))
+      Class9067.method33769(Class120.method339(Blocks.POLISHED_ANDESITE), Blocks.field37026)
+         .method33771("has_polished_andesite", method14075(Blocks.POLISHED_ANDESITE))
          .method33772(var0, "polished_andesite_stairs_from_polished_andesite_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.BASALT), Blocks.POLISHED_BASALT)
          .method33771("has_basalt", method14075(Blocks.BASALT))
@@ -3277,20 +3277,20 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.DIORITE), Blocks.field37052)
          .method33771("has_diorite", method14075(Blocks.DIORITE))
          .method33772(var0, "diorite_wall_from_diorite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.DIORITE), Blocks.field36392)
+      Class9067.method33769(Class120.method339(Blocks.DIORITE), Blocks.POLISHED_DIORITE)
          .method33771("has_diorite", method14075(Blocks.DIORITE))
          .method33772(var0, "polished_diorite_from_diorite_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.DIORITE), Blocks.field37031, 2)
-         .method33771("has_diorite", method14075(Blocks.field36392))
+         .method33771("has_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method33772(var0, "polished_diorite_slab_from_diorite_stonecutting");
       Class9067.method33769(Class120.method339(Blocks.DIORITE), Blocks.field37017)
-         .method33771("has_diorite", method14075(Blocks.field36392))
+         .method33771("has_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method33772(var0, "polished_diorite_stairs_from_diorite_stonecutting");
-      Class9067.method33770(Class120.method339(Blocks.field36392), Blocks.field37031, 2)
-         .method33771("has_polished_diorite", method14075(Blocks.field36392))
+      Class9067.method33770(Class120.method339(Blocks.POLISHED_DIORITE), Blocks.field37031, 2)
+         .method33771("has_polished_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method33772(var0, "polished_diorite_slab_from_polished_diorite_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36392), Blocks.field37017)
-         .method33771("has_polished_diorite", method14075(Blocks.field36392))
+      Class9067.method33769(Class120.method339(Blocks.POLISHED_DIORITE), Blocks.field37017)
+         .method33771("has_polished_diorite", method14075(Blocks.POLISHED_DIORITE))
          .method33772(var0, "polished_diorite_stairs_from_polished_diorite_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.field36616), Blocks.field37030, 2)
          .method33771("has_mossy_stone_bricks", method14075(Blocks.field36616))
@@ -3307,7 +3307,7 @@ public class Class4447 implements Class4442 {
       Class9067.method33769(Class120.method339(Blocks.field36526), Blocks.field37018)
          .method33771("has_mossy_cobblestone", method14075(Blocks.field36526))
          .method33772(var0, "mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting");
-      Class9067.method33769(Class120.method339(Blocks.field36526), Blocks.field36667)
+      Class9067.method33769(Class120.method339(Blocks.field36526), Blocks.MOSSY_COBBLESTONE_WALL)
          .method33771("has_mossy_cobblestone", method14075(Blocks.field36526))
          .method33772(var0, "mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting");
       Class9067.method33770(Class120.method339(Blocks.field36859), Blocks.field37034, 2)
@@ -3558,9 +3558,9 @@ public class Class4447 implements Class4442 {
    private static void method14062(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
       Class8888.method32341(var1)
          .method32344(var2)
-         .method32344(Blocks.field36489)
+         .method32344(Blocks.WHITE_WOOL)
          .method32349("wool")
-         .method32348("has_white_wool", method14075(Blocks.field36489))
+         .method32348("has_white_wool", method14075(Blocks.WHITE_WOOL))
          .method32350(var0);
    }
 
@@ -3578,13 +3578,13 @@ public class Class4447 implements Class4442 {
       String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
       String var6 = Class2348.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30248(var1, 8)
-         .method30250('#', Blocks.field36778)
+         .method30250('#', Blocks.WHITE_CARPET)
          .method30250('$', var2)
          .method30252("###")
          .method30252("#$#")
          .method30252("###")
          .method30254("carpet")
-         .method30253("has_white_carpet", method14075(Blocks.field36778))
+         .method30253("has_white_carpet", method14075(Blocks.WHITE_CARPET))
          .method30253("has_" + var6, method14075(var2))
          .method30256(var0, var5 + "_from_white_carpet");
    }
@@ -3650,13 +3650,13 @@ public class Class4447 implements Class4442 {
       String var5 = Class2348.field16075.method9181(var1.method11581()).method8292();
       String var6 = Class2348.field16075.method9181(var2.method11581()).method8292();
       Class8528.method30248(var1, 8)
-         .method30250('#', Blocks.field36630)
+         .method30250('#', Blocks.GLASS_PANE)
          .method30250('$', var2)
          .method30252("###")
          .method30252("#$#")
          .method30252("###")
          .method30254("stained_glass_pane")
-         .method30253("has_glass_pane", method14075(Blocks.field36630))
+         .method30253("has_glass_pane", method14075(Blocks.GLASS_PANE))
          .method30253("has_" + var6, method14075(var2))
          .method30256(var0, var5 + "_from_glass_pane");
    }

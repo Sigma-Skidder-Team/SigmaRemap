@@ -75,7 +75,7 @@ public class Class5227 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
     }
 
     @Override
@@ -251,7 +251,7 @@ public class Class5227 extends Module {
         GL11.glTranslated((double) var1 + 0.5, (double) var2 + 1.9, (double) var3 + 0.5);
         GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
         GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
-        ClientResource var9 = ResourceRegistry.field38855;
+        ClientResource var9 = ResourceRegistry.JelloLightFont25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(var6)), 0.0);

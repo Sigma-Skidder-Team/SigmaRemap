@@ -11,22 +11,22 @@ import java.util.stream.Collectors;
 public class Class1019 extends Class1018 implements Class1020 {
    private static final Class9289<Byte> field5704 = Class9361.<Byte>method35441(Class1019.class, Class7784.field33390);
    private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>method38508(Maps.newEnumMap(Class112.class), var0 -> {
-      var0.put(Class112.field386, Blocks.field36489);
-      var0.put(Class112.field387, Blocks.field36490);
-      var0.put(Class112.field388, Blocks.field36491);
-      var0.put(Class112.field389, Blocks.field36492);
-      var0.put(Class112.field390, Blocks.field36493);
-      var0.put(Class112.field391, Blocks.field36494);
-      var0.put(Class112.field392, Blocks.field36495);
-      var0.put(Class112.field393, Blocks.field36496);
-      var0.put(Class112.field394, Blocks.field36497);
-      var0.put(Class112.field395, Blocks.field36498);
-      var0.put(Class112.field396, Blocks.field36499);
-      var0.put(Class112.field397, Blocks.field36500);
-      var0.put(Class112.field398, Blocks.field36501);
-      var0.put(Class112.field399, Blocks.field36502);
-      var0.put(Class112.field400, Blocks.field36503);
-      var0.put(Class112.field401, Blocks.field36504);
+      var0.put(Class112.field386, Blocks.WHITE_WOOL);
+      var0.put(Class112.field387, Blocks.ORANGE_WOOL);
+      var0.put(Class112.field388, Blocks.MAGENTA_WOOL);
+      var0.put(Class112.field389, Blocks.LIGHT_BLUE_WOOL);
+      var0.put(Class112.field390, Blocks.YELLOW_WOOL);
+      var0.put(Class112.field391, Blocks.LIME_WOOL);
+      var0.put(Class112.field392, Blocks.PINK_WOOL);
+      var0.put(Class112.field393, Blocks.GRAY_WOOL);
+      var0.put(Class112.field394, Blocks.LIGHT_GRAY_WOOL);
+      var0.put(Class112.field395, Blocks.CYAN_WOOL);
+      var0.put(Class112.field396, Blocks.PURPLE_WOOL);
+      var0.put(Class112.field397, Blocks.BLUE_WOOL);
+      var0.put(Class112.field398, Blocks.BROWN_WOOL);
+      var0.put(Class112.field399, Blocks.GREEN_WOOL);
+      var0.put(Class112.field400, Blocks.RED_WOOL);
+      var0.put(Class112.field401, Blocks.BLACK_WOOL);
    });
 
    private static final Map<Class112, float[]> field5706 = Maps.newEnumMap(Arrays.stream(Class112.values())

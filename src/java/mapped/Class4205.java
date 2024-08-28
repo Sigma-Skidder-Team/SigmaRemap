@@ -49,10 +49,10 @@ public class Class4205 extends Class4194 {
             this.method12923(var1, Blocks.field36615.method11579(), 5, 1, 5, var5);
             this.method12923(var1, Blocks.field36615.method11579(), 5, 2, 5, var5);
             this.method12923(var1, Blocks.field36615.method11579(), 5, 3, 5, var5);
-            this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.WEST), 4, 3, 5, var5);
-            this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.EAST), 6, 3, 5, var5);
-            this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.SOUTH), 5, 3, 4, var5);
-            this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.NORTH), 5, 3, 6, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.WEST), 4, 3, 5, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.EAST), 6, 3, 5, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.SOUTH), 5, 3, 4, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.NORTH), 5, 3, 6, var5);
             this.method12923(var1, Blocks.field36846.method11579(), 4, 1, 4, var5);
             this.method12923(var1, Blocks.field36846.method11579(), 4, 1, 5, var5);
             this.method12923(var1, Blocks.field36846.method11579(), 4, 1, 6, var5);
@@ -102,7 +102,7 @@ public class Class4205 extends Class4194 {
                this.method12923(var1, Blocks.field36399.method11579(), 6, var12, 6, var5);
             }
 
-            this.method12923(var1, Blocks.field36528.method11579(), 5, 3, 5, var5);
+            this.method12923(var1, Blocks.TORCH.method11579(), 5, 3, 5, var5);
 
             for (int var13 = 2; var13 <= 8; var13++) {
                this.method12923(var1, Blocks.field36400.method11579(), 2, 3, var13, var5);
@@ -117,7 +117,7 @@ public class Class4205 extends Class4194 {
                this.method12923(var1, Blocks.field36400.method11579(), 8, 3, var13, var5);
             }
 
-            Class7380 var14 = Blocks.field36549.method11579().method23465(Class3423.field19154, Direction.WEST);
+            Class7380 var14 = Blocks.LADDER.method11579().method23465(Class3423.field19154, Direction.WEST);
             this.method12923(var1, var14, 9, 1, 3, var5);
             this.method12923(var1, var14, 9, 2, 3, var5);
             this.method12923(var1, var14, 9, 3, 3, var5);

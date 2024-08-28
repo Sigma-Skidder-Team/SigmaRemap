@@ -22,7 +22,7 @@ public class Class5286 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23758 = 0;
     }
 
@@ -59,7 +59,7 @@ public class Class5286 extends Module {
             if (this.field23758 != 1) {
                 if (this.field23758 == 3) {
                     Module var4 = Client.getInstance().getModuleManager().method14662(Class5332.class);
-                    if (var4.method15996() && var4.method15978("Type").equals("NoGround")) {
+                    if (var4.method15996() && var4.getStringSettingValueByName("Type").equals("NoGround")) {
                         var1.method13912(var1.method13911() + 1.0E-14);
                     } else {
                         var1.method13920(true);
@@ -86,7 +86,7 @@ public class Class5286 extends Module {
                 this.field23758++;
             } else if (this.field23758 == 2) {
                 var1.method13995(this.field23759 + this.field23760 - mc.field1339.getPosY());
-                double var10 = this.method15978("Mode").equals("AAC") ? 0.301 : Class9567.method37075();
+                double var10 = this.getStringSettingValueByName("Mode").equals("AAC") ? 0.301 : Class9567.method37075();
                 float var6 = this.field23761 * (float) (Math.PI / 180.0);
                 var1.method13993((double) (-Class9679.method37763(var6)) * var10);
                 var1.method13997((double) Class9679.method37764(var6) * var10);
@@ -94,7 +94,7 @@ public class Class5286 extends Module {
             } else if (this.field23758 == 3) {
                 if (Class5628.method17730(mc.field1339, 0.001F)) {
                     var1.method13995(-0.078);
-                    String var7 = this.method15978("Mode");
+                    String var7 = this.getStringSettingValueByName("Mode");
                     switch (var7) {
                         case "NCP":
                             Class9567.method37088(var1, Class9567.method37075());

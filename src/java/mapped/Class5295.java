@@ -28,7 +28,7 @@ public class Class5295 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23811 = 0;
     }
 
@@ -171,7 +171,7 @@ public class Class5295 extends Module {
                 this.field23808 = 0;
                 int var7 = mc.field1339.field4902.field5443;
                 boolean var8 = Client.getInstance().getModuleManager().method14662(Class5332.class).method15996()
-                        && Client.getInstance().getModuleManager().method14662(Class5332.class).method15978("Type").equalsIgnoreCase("NoGround");
+                        && Client.getInstance().getModuleManager().method14662(Class5332.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 float[] var9 = this.method16630();
                 mc.field1339.field4902.field5443 = var6 - 36;
                 mc.field1337.method23138();

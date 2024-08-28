@@ -58,7 +58,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             this.field21223.put(var36, var2);
             Class6009 var44 = (Class6009)var2;
             Class4277 var47 = new Class4277(var1, var2.method18625() + "slider", var1.method13267() - 126 - var5, var4 + 6, 126, 24);
-            var47.method13137().method13306(ResourceRegistry.field38852);
+            var47.method13137().method13306(ResourceRegistry.JelloLightFont14);
             var47.method13304(Float.toString((Float)var2.method18619()));
             var47.method13140(Class4277.method13134(var44.method18637(), var44.method18639(), (Float)var44.method18619()), false);
             var47.method13143(-1.0F);
@@ -106,7 +106,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                   (String)var2.method18619()
                )
             );
-            var35.method13306(ResourceRegistry.field38853);
+            var35.method13306(ResourceRegistry.JelloLightFont18);
             var35.method13151(var1x -> var2.method18620(var1x.method13303()));
             var2.method18616(var2x -> {
                if (var35.method13303() != ((Class6011)var2).method18619()) {
@@ -322,22 +322,22 @@ public class Class4343 extends Class4339 implements Class4342 {
       GL11.glPopMatrix();
       this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
       Class3192.method11439(
-         ResourceRegistry.field38852,
+         ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 10),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
          Class5628.method17688(Class1979.field12896.field12910, 0.5F * this.field21225.calcPercent())
       );
       Class3192.method11439(
-         ResourceRegistry.field38852,
+         ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 11),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
          Class5628.method17688(Class1979.field12896.field12910, 0.5F * this.field21225.calcPercent())
       );
       Class3192.method11439(
-         ResourceRegistry.field38852,
-         (float)(this.method13263() + 14 + ResourceRegistry.field38852.method23942(this.field21227) + 2),
+         ResourceRegistry.JelloLightFont14,
+         (float)(this.method13263() + 14 + ResourceRegistry.JelloLightFont14.method23942(this.field21227) + 2),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21226,
          Class5628.method17688(Class1979.field12896.field12910, 0.5F * this.field21225.calcPercent())

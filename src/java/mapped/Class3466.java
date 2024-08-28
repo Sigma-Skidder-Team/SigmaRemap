@@ -13,7 +13,7 @@ public class Class3466 extends Block implements Class3207 {
       Block.method11539(5.0, 1.0, 5.0, 11.0, 8.0, 11.0), Block.method11539(6.0, 8.0, 6.0, 10.0, 10.0, 10.0)
    );
 
-   public Class3466(Class7929 var1) {
+   public Class3466(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19308, Boolean.valueOf(false)).method23465(field19309, Boolean.valueOf(false)));
    }

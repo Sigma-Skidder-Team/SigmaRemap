@@ -18,20 +18,20 @@ public abstract class Class3390 {
    public final float field19010;
    public final float field19011;
    public final boolean field19012;
-   public final Class7929 field19013;
+   public final AbstractBlock field19013;
    public ResourceLocation field19014;
 
-   public Class3390(Class7929 var1) {
-      this.field19004 = Class7929.method26643(var1);
-      this.field19005 = Class7929.method26644(var1);
-      this.field19014 = Class7929.method26645(var1);
-      this.field19006 = Class7929.method26646(var1);
-      this.field19007 = Class7929.method26647(var1);
-      this.field19008 = Class7929.method26648(var1);
-      this.field19009 = Class7929.method26649(var1);
-      this.field19010 = Class7929.method26650(var1);
-      this.field19011 = Class7929.method26651(var1);
-      this.field19012 = Class7929.method26652(var1);
+   public Class3390(AbstractBlock var1) {
+      this.field19004 = AbstractBlock.method26643(var1);
+      this.field19005 = AbstractBlock.method26644(var1);
+      this.field19014 = AbstractBlock.method26645(var1);
+      this.field19006 = AbstractBlock.method26646(var1);
+      this.field19007 = AbstractBlock.method26647(var1);
+      this.field19008 = AbstractBlock.method26648(var1);
+      this.field19009 = AbstractBlock.method26649(var1);
+      this.field19010 = AbstractBlock.method26650(var1);
+      this.field19011 = AbstractBlock.method26651(var1);
+      this.field19012 = AbstractBlock.method26652(var1);
       this.field19013 = var1;
    }
 
@@ -285,6 +285,6 @@ public abstract class Class3390 {
    public abstract Block method11584();
 
    public Class7210 method12000() {
-      return (Class7210)Class7929.method26653(this.field19013).apply(this.method11584().method11579());
+      return (Class7210) AbstractBlock.method26653(this.field19013).apply(this.method11584().method11579());
    }
 }

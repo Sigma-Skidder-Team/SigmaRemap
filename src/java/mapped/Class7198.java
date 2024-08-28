@@ -14,7 +14,7 @@ public class Class7198 extends Class7194 {
          Blocks.STONE,
          Blocks.GRANITE,
          Blocks.DIORITE,
-         Blocks.field36393,
+         Blocks.ANDESITE,
          Blocks.field36396,
          Blocks.field36397,
          new Block[]{
@@ -37,9 +37,9 @@ public class Class7198 extends Class7194 {
             Blocks.field36743,
             Blocks.field36744,
             Blocks.field36745,
-            Blocks.field36458,
+            Blocks.SANDSTONE,
             Blocks.field36835,
-            Blocks.field36640,
+            Blocks.MYCELIUM,
             Blocks.SNOW,
             Blocks.SAND,
             Blocks.GRAVEL,
@@ -48,7 +48,7 @@ public class Class7198 extends Class7194 {
             Blocks.field36527,
             Blocks.AIR,
             Blocks.field37012,
-            Blocks.field36796
+            Blocks.PACKED_ICE
          }
       );
    }

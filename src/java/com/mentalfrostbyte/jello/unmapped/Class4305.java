@@ -62,7 +62,7 @@ public class Class4305 implements Class4328 {
     }
 
     public Class4305(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8) {
-        this(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.field38855);
+        this(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25);
     }
 
     public Class4305(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, ClientResource var9) {

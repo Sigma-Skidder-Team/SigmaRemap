@@ -17,7 +17,7 @@ public class Class5299 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23832 = false;
     }
 
@@ -53,7 +53,7 @@ public class Class5299 extends Module {
     private void method16652(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
             Class9629 var4 = Class5628.method17760(1.0E-4);
-            String var5 = this.method15978("Mode");
+            String var5 = this.getStringSettingValueByName("Mode");
             if (this.method15974("Ceiling")
                     && !mc.field1339.field5036
                     && mc.field1338.method7055(mc.field1339, mc.field1339.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {

@@ -70,7 +70,7 @@ public class Class4288 extends Class4278 {
       var1 *= !this.field20877 ? (!this.field20908 ? 0.3F : 0.7F) : 0.75F;
       int var5 = this.field20895;
       int var6 = this.field20897;
-      if (Client.getInstance().method19954() != ClientMode.JELLO) {
+      if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
          var4 = 0;
          var6 -= 7;
          var5 += 7;

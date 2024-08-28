@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import org.lwjgl.BufferUtils;
 
@@ -127,7 +127,7 @@ public class WaypointsManager {
    }
 
    @EventTarget
-   private void method29995(Class4428 var1) {
+   private void method29995(TickEvent var1) {
       if (this.field36365.field1338 != null) {
          if (this.field36371 != null) {
             boolean var4 = false;

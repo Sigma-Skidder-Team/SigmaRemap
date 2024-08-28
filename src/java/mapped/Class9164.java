@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 
 public class Class9164 {
    private static String[] field42070;
@@ -13,6 +13,6 @@ public class Class9164 {
    }
 
    @EventTarget
-   private void method34211(Class4428 var1) {
+   private void method34211(TickEvent var1) {
    }
 }

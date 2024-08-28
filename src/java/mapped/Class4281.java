@@ -49,7 +49,7 @@ public class Class4281 extends Class4278 {
    }
 
    public Class4281(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Class6387 var7, String var8, String var9) {
-      super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.field38855, false);
+      super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25, false);
       this.field20743 = var9;
       this.field20756.method27118();
    }

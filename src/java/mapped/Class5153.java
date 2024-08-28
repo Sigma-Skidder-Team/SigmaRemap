@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -13,7 +13,7 @@ public class Class5153 extends Module {
    }
 
    @EventTarget
-   private void method16007(Class4428 var1) {
+   private void method16007(TickEvent var1) {
       if (this.method15996()) {
          if (!mc.field1339.field4919.field29609
             && mc.field1339.method2932().method37574() > 17

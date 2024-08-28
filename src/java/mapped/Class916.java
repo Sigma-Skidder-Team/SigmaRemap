@@ -380,7 +380,7 @@ public abstract class Class916 extends Entity {
       boolean var12 = false;
       boolean var13 = false;
       Class3429 var14 = (Class3429)var2.method23383();
-      if (var14 == Blocks.field36478) {
+      if (var14 == Blocks.POWERED_RAIL) {
          var12 = var2.<Boolean>method23463(Class3432.field19197);
          var13 = !var12;
       }

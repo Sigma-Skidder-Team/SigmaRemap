@@ -7,7 +7,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
    private static String[] field18470;
    public static final Class6408 field19264 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
 
-   public Class3450(Class7929 var1) {
+   public Class3450(AbstractBlock var1) {
       super(var1);
    }
 
@@ -55,7 +55,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
 
    @Override
    public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
-      Class7380 var7 = Blocks.field36486.method11579();
+      Class7380 var7 = Blocks.TALL_SEAGRASS.method11579();
       Class7380 var8 = var7.method23465(Class3455.field19274, Class84.field209);
       BlockPos var9 = var3.method8311();
       if (var1.method6738(var9).method23448(Blocks.WATER)) {

@@ -33,7 +33,7 @@ public class Class4320 extends Class4307 {
                0,
                Class6387.field27961,
                var12,
-               var12.startsWith("*") ? ResourceRegistry.field38864 : ResourceRegistry.field38854
+               var12.startsWith("*") ? ResourceRegistry.JelloMediumFont20 : ResourceRegistry.JelloLightFont20
             )
          );
       }
@@ -48,7 +48,7 @@ public class Class4320 extends Class4307 {
          (float)this.field20898,
          Class5628.method17688(Class1979.field12891.field12910, this.field21076.calcPercent() * 0.95F)
       );
-      Class3192.method11439(ResourceRegistry.field38866, 40.0F, 40.0F, "Credits and third party licensing information", Class1979.field12896.field12910);
+      Class3192.method11439(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", Class1979.field12896.field12910);
       byte var4 = 40;
       super.method13027(this.field21076.calcPercent());
    }

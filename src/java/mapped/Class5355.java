@@ -65,7 +65,7 @@ public class Class5355 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23924 = mc.field1339.field4902.field5443;
         this.field23922 = this.field23921 = 999.0F;
         ((BlockFly) this.method16004()).field23884 = -1;
@@ -89,7 +89,7 @@ public class Class5355 extends Module {
 
     @Override
     public void method15965() {
-        if (this.field23924 != -1 && this.method16004().method15978("ItemSpoof").equals("Switch")) {
+        if (this.field23924 != -1 && this.method16004().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
             mc.field1339.field4902.field5443 = this.field23924;
         }
 
@@ -101,7 +101,7 @@ public class Class5355 extends Module {
 
         Class9567.method37090(Class9567.method37075() * 0.9);
         mc.field1284.field40360 = 1.0F;
-        if (this.method15978("Speed Mode").equals("Cubecraft") && this.field23926 == 0) {
+        if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 == 0) {
             Class5628.method17725(-0.0789);
         }
     }
@@ -109,7 +109,7 @@ public class Class5355 extends Module {
     @EventTarget
     public void method16805(Class4417 var1) {
         if (this.method15996()) {
-            if (this.method15978("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                 if (mc.field1338
                         .method7055(
                                 mc.field1339,
@@ -159,7 +159,7 @@ public class Class5355 extends Module {
                             method16814(this.field23923.field33646, this.field23923.field33647), this.field23923.field33647, this.field23923.field33646, false
                     );
                     int var14 = mc.field1339.field4902.field5443;
-                    if (!this.method16004().method15978("ItemSpoof").equals("None")) {
+                    if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
                         this.field23928.method16734();
                     }
 
@@ -170,7 +170,7 @@ public class Class5355 extends Module {
                         mc.getClientPlayNetHandler().sendPacket(new Class5511(this.field23927));
                     }
 
-                    if (this.method16004().method15978("ItemSpoof").equals("Spoof") || this.method16004().method15978("ItemSpoof").equals("LiteSpoof")) {
+                    if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
                         mc.field1339.field4902.field5443 = var14;
                     }
                 }
@@ -201,7 +201,7 @@ public class Class5355 extends Module {
                     var8 += Math.min(mc.field1339.method3433().field18049 * 2.0, 4.0);
                 } else if (this.field23929 && this.method15974("Downwards")) {
                     var8--;
-                } else if ((this.method15978("Speed Mode").equals("Jump") || this.method15978("Speed Mode").equals("Cubecraft"))
+                } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                         && !mc.field1299.field44636.method8509()) {
                     var8 = this.field23931;
                 }
@@ -266,7 +266,7 @@ public class Class5355 extends Module {
                 this.field23928 = (BlockFly) this.method16004();
             }
 
-            String var4 = this.method15978("Speed Mode");
+            String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
                     if (mc.field1339.field5036 && Class5628.method17686() && !mc.field1339.method3331() && !this.field23929) {
@@ -364,7 +364,7 @@ public class Class5355 extends Module {
     @EventTarget
     public void method16811(Class4436 var1) {
         if (this.method15996() && this.field23930) {
-            if (this.method16004().method15978("Tower Mode").equalsIgnoreCase("Vanilla")
+            if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
                     && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
                 var1.method13900(true);
             }
@@ -373,7 +373,7 @@ public class Class5355 extends Module {
 
     @EventTarget
     public void method16812(Class4422 var1) {
-        if (this.method15996() && this.method15978("Speed Mode").equals("Cubecraft") && this.field23926 >= 0) {
+        if (this.method15996() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 >= 0) {
             if (!(mc.field1339.field5045 > 1.2F)) {
                 if (!(mc.field1339.field4915 < this.field23931)) {
                     if (!mc.field1339.field4981) {

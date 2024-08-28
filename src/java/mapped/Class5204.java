@@ -25,7 +25,7 @@ public class Class5204 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23523 = mc.field1339.field4902.field5443;
         this.field23520 = mc.field1339.field5031;
         this.field23521 = mc.field1339.field5032;
@@ -36,7 +36,7 @@ public class Class5204 extends Module {
 
     @Override
     public void method15965() {
-        if (this.field23523 != -1 && this.method16004().method15978("ItemSpoof").equals("Switch")) {
+        if (this.field23523 != -1 && this.method16004().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
             mc.field1339.field4902.field5443 = this.field23523;
         }
 
@@ -130,7 +130,7 @@ public class Class5204 extends Module {
         Class8711 var3 = (Class8711) Class9217.method34569(mc.field1339.field6122, mc.field1339.field6123, Class9217.method34560(), 0.0F);
         boolean var4 = false;
         if (var3 != null && var3.method31417() == Class2100.field13690) {
-            if (this.method16004().method15978("ItemSpoof").equals("None")) {
+            if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
                 BlockFly var10000 = (BlockFly) this.method16004();
                 if (!BlockFly.method16733(mc.field1339.method3094(Class79.field182).method32107())) {
                     return false;
@@ -159,12 +159,12 @@ public class Class5204 extends Module {
 
             ((BlockFly) this.method16004()).method16736();
             int var5 = mc.field1339.field4902.field5443;
-            if (!this.method16004().method15978("ItemSpoof").equals("None")) {
+            if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
                 ((BlockFly) this.method16004()).method16734();
             }
 
             Class2274 var6 = mc.field1337.method23139(mc.field1339, mc.field1338, Class79.field182, var3);
-            if (this.method16004().method15978("ItemSpoof").equals("Spoof") || this.method16004().method15978("ItemSpoof").equals("LiteSpoof")) {
+            if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
                 mc.field1339.field4902.field5443 = var5;
             }
 
@@ -245,7 +245,7 @@ public class Class5204 extends Module {
     @EventTarget
     public void method16211(Class4436 var1) {
         if (this.method15996()) {
-            if (this.method16004().method15978("Tower Mode").equalsIgnoreCase("Vanilla")
+            if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
                     && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
                 var1.method13900(true);
             }

@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class3416 extends Block {
    private static final ITextComponent field19119 = new TranslationTextComponent("container.cartography_table");
 
-   public Class3416(Class7929 var1) {
+   public Class3416(AbstractBlock var1) {
       super(var1);
    }
 

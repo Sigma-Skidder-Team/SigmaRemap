@@ -10,7 +10,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    public static final Class6408 field18862 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
    private static final ITextComponent field18863 = new TranslationTextComponent("container.enderchest");
 
-   public Class3347(Class7929 var1) {
+   public Class3347(AbstractBlock var1) {
       super(var1, () -> Class4387.field21424);
       this.method11578(this.field18612.method35393().method23465(field18860, Direction.NORTH).method23465(field18861, Boolean.valueOf(false)));
    }

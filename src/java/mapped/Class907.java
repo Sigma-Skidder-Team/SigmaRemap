@@ -109,7 +109,7 @@ public class Class907 extends Entity {
             } else {
                Class7380 var19 = this.field5024.method6738(var18);
                this.method3434(this.method3433().method11347(0.7, -0.5, 0.7));
-               if (!var19.method23448(Blocks.field36505)) {
+               if (!var19.method23448(Blocks.MOVING_PISTON)) {
                   this.method2904();
                   if (this.field5179) {
                      if (var3 instanceof Class3213) {

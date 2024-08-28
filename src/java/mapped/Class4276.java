@@ -41,11 +41,11 @@ public class Class4276 extends Class4247 {
             "addButton",
             this.field20897 - 66,
             this.field20898 - 60,
-            ResourceRegistry.field38855.method23942("Add"),
+            ResourceRegistry.JelloLightFont25.method23942("Add"),
             50,
             Class6387.field27961,
             "Add",
-            ResourceRegistry.field38855
+            ResourceRegistry.JelloLightFont25
          )
       );
       var8.method13251((var1x, var2x) -> this.method13132(this.field20729.method13303(), this.method13130(), this.field20730.field21296));
@@ -67,7 +67,7 @@ public class Class4276 extends Class4247 {
          )
       );
       this.field20728.method13156(false);
-      this.field20728.method13306(ResourceRegistry.field38853);
+      this.field20728.method13306(ResourceRegistry.JelloLightFont18);
    }
 
    public Class1998 method13130() {

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4403;
 import com.mentalfrostbyte.jello.event.impl.Class4423;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -18,7 +18,7 @@ public class Class5243 extends Module {
     }
 
     @EventTarget
-    public void method16343(Class4428 var1) {
+    public void method16343(TickEvent var1) {
         if (this.method15996()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(BlockFly.class);
             Module var5 = var4.field23879;

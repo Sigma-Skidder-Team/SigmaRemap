@@ -301,14 +301,14 @@ public class Class4303 extends Class4278 {
       this.method13192(var1);
       byte var4 = 55;
       Class3192.method11439(
-         ResourceRegistry.field38856,
+         ResourceRegistry.JelloLightFont40,
          (float)(var4 + this.method13263()),
          (float)(this.method13265() + 20),
          "Jello",
          Class5628.method17688(Class1979.field12896.field12910, var1)
       );
       Class3192.method11439(
-         ResourceRegistry.field38854,
+         ResourceRegistry.JelloLightFont20,
          (float)(var4 + this.method13263() + 80),
          (float)(this.method13265() + 40),
          "music",
@@ -325,15 +325,15 @@ public class Class4303 extends Class4278 {
       int var4 = (int)this.field20854.method24321();
       int var5 = this.field20854.method24327();
       Class3192.method11439(
-         ResourceRegistry.field38852,
+         ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + this.field20845 + 14),
          (float)(this.method13265() + this.method13269() - 10) - 22.0F * var1,
          Class9275.method34955(var4),
          Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
       );
       Class3192.method11439(
-         ResourceRegistry.field38852,
-         (float)(this.method13263() + this.method13267() - 14 - ResourceRegistry.field38852.method23942(Class9275.method34955(var5))),
+         ResourceRegistry.JelloLightFont14,
+         (float)(this.method13263() + this.method13267() - 14 - ResourceRegistry.JelloLightFont14.method23942(Class9275.method34955(var5))),
          (float)(this.method13265() + this.method13269() - 10) - 22.0F * var1,
          Class9275.method34955(var5),
          Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
@@ -438,9 +438,9 @@ public class Class4303 extends Class4278 {
       }
 
       var9 = Class9782.method38558(var9, 0.0F, 1.0F, 1.0F);
-      int var10 = ResourceRegistry.field38852.method23942(var2);
+      int var10 = ResourceRegistry.JelloLightFont14.method23942(var2);
       int var11 = Math.min(var3, var10);
-      int var12 = ResourceRegistry.field38852.method23952();
+      int var12 = ResourceRegistry.JelloLightFont14.method23952();
       int var13 = this.method13263() + (this.field20845 - var11) / 2;
       int var14 = this.method13265() + this.method13269() - 50 + var4;
       int var15 = Math.max(0, var10 - var11) * 2;
@@ -450,7 +450,7 @@ public class Class4303 extends Class4278 {
 
       Class3192.method11421(var13, var14, var13 + var11, var14 + var12, true);
       Class3192.method11439(
-         ResourceRegistry.field38852,
+         ResourceRegistry.JelloLightFont14,
          (float)var13 - (float)var10 * var9 - 50.0F * var9,
          (float)var14,
          var2,
@@ -458,7 +458,7 @@ public class Class4303 extends Class4278 {
       );
       if (var9 > 0.0F) {
          Class3192.method11439(
-            ResourceRegistry.field38852,
+            ResourceRegistry.JelloLightFont14,
             (float)var13 - (float)var10 * var9 + (float)var10,
             (float)var14,
             var2,
@@ -506,15 +506,15 @@ public class Class4303 extends Class4278 {
          Class5628.method17688(Class1979.field12896.field12910, var4 * var1 * 0.2F)
       );
       Class3192.method11439(
-         ResourceRegistry.field38855,
-         (float)((this.method13267() - ResourceRegistry.field38855.method23942(this.field20849) + this.field20845) / 2),
+         ResourceRegistry.JelloLightFont25,
+         (float)((this.method13267() - ResourceRegistry.JelloLightFont25.method23942(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
          Class5628.method17688(Class1979.field12896.field12910, var4)
       );
       Class3192.method11439(
-         ResourceRegistry.field38865,
-         (float)((this.method13267() - ResourceRegistry.field38865.method23942(this.field20849) + this.field20845) / 2),
+         ResourceRegistry.JelloMediumFont25,
+         (float)((this.method13267() - ResourceRegistry.JelloMediumFont25.method23942(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
          Class5628.method17688(Class1979.field12896.field12910, 1.0F - var4)

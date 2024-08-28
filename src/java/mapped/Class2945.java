@@ -17,7 +17,7 @@ public class Class2945 extends Class2898<Class4728> {
       BlockPos var12 = new BlockPos(var4.method8304() + var9, var11, var4.method8306() + var10);
       if (var1.method6738(var12).method23448(Blocks.WATER)) {
          boolean var13 = var3.nextDouble() < (double)var5.field22399;
-         Class7380 var14 = !var13 ? Blocks.field36485.method11579() : Blocks.field36486.method11579();
+         Class7380 var14 = !var13 ? Blocks.SEAGRASS.method11579() : Blocks.TALL_SEAGRASS.method11579();
          if (var14.method23443(var1, var12)) {
             if (!var13) {
                var1.method6725(var12, var14, 2);

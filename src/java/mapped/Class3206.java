@@ -13,7 +13,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    public static final Class6408 field18602 = Block.method11539(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
    public static final Class6408 field18603 = Block.method11539(0.0, 13.0, 0.0, 16.0, 16.0, 16.0);
 
-   public Class3206(Class7929 var1) {
+   public Class3206(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

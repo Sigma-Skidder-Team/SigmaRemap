@@ -180,7 +180,7 @@ public class Class4348 extends Class4278 {
       GL11.glScaled(1.0 - 0.1 * (double)var11, 1.0 - 0.1 * (double)var11, 0.0);
       GL11.glTranslatef((float)(-this.method13263() - 76), (float)(-this.method13265() - 44), 0.0F);
       Class3192.method11439(
-         ResourceRegistry.field38865,
+         ResourceRegistry.JelloMediumFont25,
          (float)(this.field20895 + 94),
          (float)(this.field20896 + 16),
          !this.field21244.field33188.equals("Minecraft Server")
@@ -193,7 +193,7 @@ public class Class4348 extends Class4278 {
       if (this.field21243.method31735().getTime() != 9223372036854775806L) {
          if (var3 > 0L && this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             Class3192.method11439(
-               ResourceRegistry.field38853,
+               ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
@@ -201,7 +201,7 @@ public class Class4348 extends Class4278 {
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             Class3192.method11439(
-               ResourceRegistry.field38853,
+               ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Unbanned!",
@@ -209,7 +209,7 @@ public class Class4348 extends Class4278 {
             );
          } else {
             Class3192.method11439(
-               ResourceRegistry.field38853,
+               ResourceRegistry.JelloLightFont18,
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Permanently banned!",
@@ -218,7 +218,7 @@ public class Class4348 extends Class4278 {
          }
       } else {
          Class3192.method11439(
-            ResourceRegistry.field38853,
+            ResourceRegistry.JelloLightFont18,
             (float)(this.field20895 + var12),
             (float)(this.field20896 + var13),
             "Compromised ban (unbannable)!",

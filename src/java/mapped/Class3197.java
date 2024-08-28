@@ -27,7 +27,7 @@ public class Class3197 extends Class3198 implements Class3196 {
       Block.method11539(4.0, 3.0, 7.0, 12.0, 12.0, 15.0)
    };
 
-   public Class3197(Class7929 var1) {
+   public Class3197(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18484, Direction.NORTH).method23465(field18479, Integer.valueOf(0)));
    }

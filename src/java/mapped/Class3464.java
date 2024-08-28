@@ -3,7 +3,7 @@ package mapped;
 public class Class3464 extends Class3462 {
    private static String[] field19303;
 
-   public Class3464(Class7929 var1) {
+   public Class3464(AbstractBlock var1) {
       super(var1);
    }
 
@@ -40,11 +40,11 @@ public class Class3464 extends Class3462 {
 
    @Override
    public Class3486 method12146() {
-      return (Class3486) Blocks.field36634;
+      return (Class3486) Blocks.PUMPKIN_STEM;
    }
 
    @Override
    public Class3493 method12147() {
-      return (Class3493) Blocks.field36632;
+      return (Class3493) Blocks.ATTACHED_PUMPKIN_STEM;
    }
 }

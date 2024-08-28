@@ -7,7 +7,7 @@ public abstract class Class3397 extends Block {
    private final float field19034;
    public static final Class6408 field19035 = Block.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
-   public Class3397(Class7929 var1, float var2) {
+   public Class3397(AbstractBlock var1, float var2) {
       super(var1);
       this.field19034 = var2;
    }
@@ -20,7 +20,7 @@ public abstract class Class3397 extends Block {
    public static Class7380 method12009(Class1665 var0, BlockPos var1) {
       BlockPos var4 = var1.method8313();
       Class7380 var5 = var0.method6738(var4);
-      return !Class3398.method12014(var5.method23383()) ? ((Class3399) Blocks.field36530).method12016(var0, var1) : Blocks.field36531.method11579();
+      return !Class3398.method12014(var5.method23383()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.field36531.method11579();
    }
 
    @Override

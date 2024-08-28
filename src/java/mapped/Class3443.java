@@ -12,7 +12,7 @@ public class Class3443 extends Block {
    public static final Class8551 field19254 = Class3392.field19024;
    private static final Map<Direction, Class8551> field19255 = Class3392.field19025;
 
-   public Class3443(Class7929 var1) {
+   public Class3443(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

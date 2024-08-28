@@ -64,7 +64,7 @@ public class Class5176 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23469 = mc.field1339.field4902.field5443;
         this.field23467 = this.field23466 = 999.0F;
         ((BlockFly) this.method16004()).field23884 = -1;
@@ -88,7 +88,7 @@ public class Class5176 extends Module {
 
     @Override
     public void method15965() {
-        if (this.field23469 != -1 && this.method16004().method15978("ItemSpoof").equals("Switch")) {
+        if (this.field23469 != -1 && this.method16004().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
             mc.field1339.field4902.field5443 = this.field23469;
         }
 
@@ -100,7 +100,7 @@ public class Class5176 extends Module {
 
         Class9567.method37090(Class9567.method37075() * 0.9);
         mc.field1284.field40360 = 1.0F;
-        if (this.method15978("Speed Mode").equals("Cubecraft") && this.field23471 == 0) {
+        if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 == 0) {
             Class5628.method17725(-0.0789);
         }
     }
@@ -108,7 +108,7 @@ public class Class5176 extends Module {
     @EventTarget
     public void method16108(Class4417 var1) {
         if (this.method15996()) {
-            if (this.method15978("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                 if (mc.field1338
                         .method7055(
                                 mc.field1339,
@@ -151,8 +151,8 @@ public class Class5176 extends Module {
     @LowerPriority
     public void method16111(Class4399 var1) {
         if (this.method15996() && this.field23473.method16735() != 0) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5333.class);
-            if (!var4.method15996() || !var4.method15978("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().method15978("Bypass").equals("Blink")) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Fly.class);
+            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
                 if (!var1.method13921()) {
                     this.field23473.method16736();
                     if (this.field23468 != null) {
@@ -160,7 +160,7 @@ public class Class5176 extends Module {
                                 method16116(this.field23468.field33646, this.field23468.field33647), this.field23468.field33647, this.field23468.field33646, false
                         );
                         int var21 = mc.field1339.field4902.field5443;
-                        if (!this.method16004().method15978("ItemSpoof").equals("None")) {
+                        if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
                             this.field23473.method16734();
                         }
 
@@ -171,7 +171,7 @@ public class Class5176 extends Module {
                             mc.getClientPlayNetHandler().sendPacket(new Class5511(this.field23472));
                         }
 
-                        if (this.method16004().method15978("ItemSpoof").equals("Spoof") || this.method16004().method15978("ItemSpoof").equals("LiteSpoof")) {
+                        if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
                             mc.field1339.field4902.field5443 = var21;
                         }
                     }
@@ -196,7 +196,7 @@ public class Class5176 extends Module {
                         var9 += Math.min(mc.field1339.method3433().field18049 * 2.0, 4.0);
                     } else if (this.field23474 && this.method15974("Downwards")) {
                         var9--;
-                    } else if ((this.method15978("Speed Mode").equals("Jump") || this.method15978("Speed Mode").equals("Cubecraft"))
+                    } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                             && !mc.field1299.field44636.method8509()) {
                         var9 = this.field23476;
                     }
@@ -274,7 +274,7 @@ public class Class5176 extends Module {
                 this.field23473 = (BlockFly) this.method16004();
             }
 
-            String var4 = this.method15978("Speed Mode");
+            String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
                     if (mc.field1339.field5036 && Class5628.method17686() && !mc.field1339.method3331() && !this.field23474) {
@@ -372,7 +372,7 @@ public class Class5176 extends Module {
     @EventTarget
     public void method16114(Class4436 var1) {
         if (this.method15996() && this.field23475) {
-            if (this.method16004().method15978("Tower Mode").equalsIgnoreCase("Vanilla")
+            if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
                     && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
                 var1.method13900(true);
             }
@@ -381,7 +381,7 @@ public class Class5176 extends Module {
 
     @EventTarget
     public void method16115(Class4422 var1) {
-        if (this.method15996() && this.method15978("Speed Mode").equals("Cubecraft") && this.field23471 >= 0) {
+        if (this.method15996() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 >= 0) {
             if (!(mc.field1339.field5045 > 1.2F)) {
                 if (!(mc.field1339.field4915 < this.field23476)) {
                     if (!mc.field1339.field4981) {

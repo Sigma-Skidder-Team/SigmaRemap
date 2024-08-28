@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -75,7 +75,7 @@ public class Class5255 extends PremiumModule {
     }
 
     @EventTarget
-    private void method16405(Class4428 var1) {
+    private void method16405(TickEvent var1) {
         if (this.method15996()) {
             if (this.field23639 != null) {
                 if (mc.field1337.method23152()) {
@@ -243,7 +243,7 @@ public class Class5255 extends PremiumModule {
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glRotatef(mc.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
         GL11.glRotatef(mc.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
-        ClientResource var10 = ResourceRegistry.field38855;
+        ClientResource var10 = ResourceRegistry.JelloLightFont25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01F, -0.01F, -0.01F);
         Class3192.method11426(
@@ -265,7 +265,7 @@ public class Class5255 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (!mc.field1337.method23152()) {
             if (this.field23640.isEmpty()) {
                 Class5628.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
@@ -277,7 +277,7 @@ public class Class5255 extends PremiumModule {
                     return;
                 }
             } else {
-                File var3 = new File(Client.getInstance().getFile() + "/nbs/" + this.method15978("Song"));
+                File var3 = new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song"));
                 this.field23639 = Class8471.method29869(var3);
                 if (this.field23639 == null) {
                     Class5628.method17678("§cError loading song! Make sure song is saved as <= V3 format");

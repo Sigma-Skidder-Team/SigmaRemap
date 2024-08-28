@@ -100,7 +100,7 @@ public class Class5281 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23739 = 0.0;
         this.field23751 = new Animation(1000, 100000, Direction.FORWARDS);
         this.field23745 = Class9679.method37792(mc.field1339.field5031);
@@ -135,7 +135,7 @@ public class Class5281 extends Module {
     }
 
     @EventTarget
-    public void method16549(Class4428 var1) {
+    public void method16549(TickEvent var1) {
         if (!this.method15996()) {
         }
     }

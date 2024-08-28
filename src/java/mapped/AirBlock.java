@@ -1,9 +1,9 @@
 package mapped;
 
-public class Class3419 extends Block {
+public class AirBlock extends Block {
    private static String[] field19128;
 
-   public Class3419(Class7929 var1) {
+   public AirBlock(AbstractBlock var1) {
       super(var1);
    }
 

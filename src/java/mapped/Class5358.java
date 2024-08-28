@@ -19,10 +19,10 @@ public class Class5358 extends Module {
     @EventTarget
     public void method16849(Class4411 var1) {
         if (this.method15996()) {
-            if (this.method15974("Hide server name") && this.method15978("Server name").length() > 1) {
-                var1.method13959(var1.method13958().replaceAll(this.method15978("Server name"), "sigmaclient"));
-                var1.method13959(var1.method13958().replaceAll(this.method15978("Server name").toLowerCase(), "sigmaclient"));
-                var1.method13959(var1.method13958().replaceAll(this.method15978("Server name").toUpperCase(), "sigmaclient"));
+            if (this.method15974("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
+                var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
+                var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
+                var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
             }
         }
     }

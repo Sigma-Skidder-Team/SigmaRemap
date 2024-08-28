@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -88,7 +88,7 @@ public class Class5169 extends Module {
    }
 
    @EventTarget
-   public void method16079(Class4428 var1) {
+   public void method16079(TickEvent var1) {
       if (this.method15996()) {
          if (mc.field1339.field5055 < 20) {
             this.field23451.clear();
@@ -235,7 +235,7 @@ public class Class5169 extends Module {
    }
 
    @Override
-   public void method15966() {
+   public void isInDevelopment() {
       if (this.field23454 != null) {
          this.field23454.interrupt();
       }

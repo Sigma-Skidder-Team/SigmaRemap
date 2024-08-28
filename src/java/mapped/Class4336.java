@@ -61,7 +61,7 @@ public class Class4336 extends Class4305 {
       this.method13285((int)(150.0F * (1.0F - var4)));
       this.method13225();
       Class3192.method11439(ResourceRegistry.field38860, 100.0F, 100.0F, "Changelog", Class5628.method17688(Class1979.field12896.field12910, var1));
-      ClientResource var10000 = ResourceRegistry.field38855;
+      ClientResource var10000 = ResourceRegistry.JelloLightFont25;
       StringBuilder var10003 = new StringBuilder().append("You're currently using Sigma ");
       Client.getInstance();
       Class3192.method11439(

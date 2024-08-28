@@ -13,7 +13,7 @@ public class Class3265 extends Class3264 {
    );
    private static final Set<Block> field18757 = Sets.newHashSet(
       new Block[]{
-         Blocks.field36549,
+         Blocks.LADDER,
          Blocks.field37053,
          Blocks.field36695,
          Blocks.field36696,

@@ -18,7 +18,7 @@ public class Class3218 extends Class3213 {
    private static final Class6408 field18636 = Class8022.method27432(field18628, field18632, field18633, field18634);
    private static final ITextComponent field18637 = new TranslationTextComponent("container.repair");
 
-   public Class3218(Class7929 var1) {
+   public Class3218(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18627, Direction.NORTH));
    }
@@ -72,7 +72,7 @@ public class Class3218 extends Class3213 {
 
    @Nullable
    public static Class7380 method11607(Class7380 var0) {
-      if (!var0.method23448(Blocks.field36713)) {
+      if (!var0.method23448(Blocks.ANVIL)) {
          return !var0.method23448(Blocks.field36714)
             ? null
             : Blocks.field36715.method11579().method23465(field18627, var0.<Direction>method23463(field18627));

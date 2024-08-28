@@ -122,7 +122,7 @@ public class Class4338 extends Class4304 {
 
       String var5 = this.method13506().getName();
       Class3192.method11440(
-         ResourceRegistry.field38855,
+         ResourceRegistry.JelloLightFont25,
          (float)(this.method13263() + 20),
          (float)(this.method13265() + 30),
          var5,

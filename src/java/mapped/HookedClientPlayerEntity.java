@@ -42,7 +42,7 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
 
    @Override
    public void tick() {
-      Class4428 var3 = new Class4428();
+      TickEvent var3 = new TickEvent();
       if (Class1537.field8342 && this.field5055 > 1000) {
          try {
             if (this.field5055 % 150 == 0) {

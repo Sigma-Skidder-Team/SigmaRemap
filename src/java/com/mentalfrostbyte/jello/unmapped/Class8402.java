@@ -4,24 +4,21 @@ import com.google.gson.JsonArray;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.network.Class8930;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService;
-import io.socket.client.IO;
 import io.socket.client.Socket;
 import mapped.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.json.JSONException;
 
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.Proxy;
-import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -88,7 +85,7 @@ public class Class8402 {
     }
 
     @EventTarget
-    private void method29513(Class4428 var1) {
+    private void method29513(TickEvent var1) {
         if (this.field36050.field1339.field5055 % 100 == 0) {
             this.method29514();
             List<AbstractClientPlayerEntity> var4 = this.field36050.field1338.method6870();

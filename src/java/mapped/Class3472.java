@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 
 public abstract class Class3472 extends Class3471 {
-   public Class3472(Class7929 var1) {
+   public Class3472(AbstractBlock var1) {
       super(var1);
    }
 

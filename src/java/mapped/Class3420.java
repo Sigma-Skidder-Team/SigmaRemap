@@ -5,14 +5,14 @@ import java.util.Random;
 public class Class3420 extends Block {
    private static String[] field19129;
 
-   public Class3420(Class7929 var1) {
+   public Class3420(AbstractBlock var1) {
       super(var1);
    }
 
    public int method12068(Random var1) {
       if (this != Blocks.field36420) {
          if (this != Blocks.field36536) {
-            if (this != Blocks.field36656) {
+            if (this != Blocks.EMERALD_ORE) {
                if (this != Blocks.field36455) {
                   if (this != Blocks.field36722) {
                      return this != Blocks.field36421 ? 0 : Class9679.method37782(var1, 0, 1);

@@ -186,7 +186,7 @@ public class Class4286 extends Class4278 {
             ResourcesDecrypter.playIconPNG,
             Class5628.method17688(Class1979.field12896.field12910, var4 * var1)
          );
-         ClientResource var11 = ResourceRegistry.field38851;
+         ClientResource var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
             Class3192.method11415(this);
             String[] var12 = this.method13303().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");

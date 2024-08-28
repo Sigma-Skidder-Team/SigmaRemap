@@ -21,7 +21,7 @@ public class Class5311 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23845 = 0;
         if (!mc.field1299.field44637.method8509()) {
             if (!mc.field1299.field44637.method8509()) {

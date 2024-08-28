@@ -21,7 +21,7 @@ public class Class5244 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23608 = 1;
         double var3 = mc.field1339.method3433().field18048;
         double var5 = mc.field1339.method3433().field18050;
@@ -33,7 +33,7 @@ public class Class5244 extends Module {
         if (this.method15996()
                 && mc.field1339 != null
                 && !Class5381.method16953()
-                && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+                && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (var1.method13921() && Class5341.field23893 > 1) {
                 double var4 = mc.field1339.getPosX() - mc.field1339.field6119;
                 double var6 = mc.field1339.getPosZ() - mc.field1339.field6121;

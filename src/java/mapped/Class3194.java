@@ -3,7 +3,7 @@ package mapped;
 public class Class3194 extends Block {
    private static String[] field18470;
 
-   public Class3194(Class7929 var1) {
+   public Class3194(AbstractBlock var1) {
       super(var1);
    }
 
@@ -12,7 +12,7 @@ public class Class3194 extends Block {
          || var1.method23448(Blocks.field36396)
          || var1.method23448(Blocks.field36397)
          || var1.method23448(Blocks.field36398)
-         || var1.method23448(Blocks.field36540);
+         || var1.method23448(Blocks.FARMLAND);
    }
 
    @Override

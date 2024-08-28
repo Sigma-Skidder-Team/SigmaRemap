@@ -20,6 +20,6 @@ public class Class5334 extends Class5325 {
 
     @Override
     public String method15990() {
-        return Client.getInstance().method19954() != ClientMode.CLASSIC ? super.method15990() : "AntiVelocity";
+        return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? super.method15990() : "AntiVelocity";
     }
 }

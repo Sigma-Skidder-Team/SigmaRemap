@@ -14,10 +14,10 @@ public class Class7091 extends Class7092 {
       var0.put(Blocks.STONE, Blocks.field37134);
       var0.put(Blocks.field36615, Blocks.field37135);
       var0.put(Blocks.field36616, Blocks.field37135);
-      var0.put(Blocks.field36551, Blocks.field37131);
+      var0.put(Blocks.COBBLESTONE_STAIRS, Blocks.field37131);
       var0.put(Blocks.field37018, Blocks.field37131);
       var0.put(Blocks.field37020, Blocks.field37142);
-      var0.put(Blocks.field36639, Blocks.field37139);
+      var0.put(Blocks.STONE_BRICK_STAIRS, Blocks.field37139);
       var0.put(Blocks.field37016, Blocks.field37139);
       var0.put(Blocks.field36850, Blocks.field37133);
       var0.put(Blocks.field37032, Blocks.field37133);
@@ -27,11 +27,11 @@ public class Class7091 extends Class7092 {
       var0.put(Blocks.field37030, Blocks.field37138);
       var0.put(Blocks.field37046, Blocks.field37140);
       var0.put(Blocks.field37044, Blocks.field37140);
-      var0.put(Blocks.field36666, Blocks.field37132);
-      var0.put(Blocks.field36667, Blocks.field37132);
+      var0.put(Blocks.COBBLESTONE_WALL, Blocks.field37132);
+      var0.put(Blocks.MOSSY_COBBLESTONE_WALL, Blocks.field37132);
       var0.put(Blocks.field36618, Blocks.field37137);
       var0.put(Blocks.field36617, Blocks.field37136);
-      var0.put(Blocks.field36628, Blocks.field36629);
+      var0.put(Blocks.IRON_BARS, Blocks.CHAIN);
    });
 
    private Class7091() {

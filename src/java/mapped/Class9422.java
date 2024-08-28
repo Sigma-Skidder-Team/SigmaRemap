@@ -189,7 +189,7 @@ public class Class9422 {
             return field43706.method22619(var1, var3, field43715);
          }
       } else if (!var8) {
-         if (field43687 && method36154(var2.method8313(), var3, var0) == Blocks.field36640) {
+         if (field43687 && method36154(var2.method8313(), var3, var0) == Blocks.MYCELIUM) {
             return field43704.method22619(var1, var3, field43715);
          }
       } else if (field43690 && method36154(var2, var3, var0) == Blocks.SNOW) {

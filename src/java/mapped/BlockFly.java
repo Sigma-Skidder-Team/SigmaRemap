@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
@@ -37,41 +37,41 @@ public class BlockFly extends Class5325 {
                 Blocks.AIR,
                 Blocks.WATER,
                 Blocks.LAVA,
-                Blocks.field36646,
-                Blocks.field36793,
-                Blocks.field36630,
-                Blocks.field36628,
+                Blocks.ENCHANTING_TABLE,
+                Blocks.BLACK_CARPET,
+                Blocks.GLASS_PANE,
+                Blocks.IRON_BARS,
                 Blocks.ICE,
-                Blocks.field36796,
-                Blocks.field36534,
-                Blocks.field36716,
-                Blocks.field36528,
-                Blocks.field36713,
-                Blocks.field36716,
-                Blocks.field36461,
+                Blocks.PACKED_ICE,
+                Blocks.CHEST,
+                Blocks.TRAPPED_CHEST,
+                Blocks.TORCH,
+                Blocks.ANVIL,
+                Blocks.TRAPPED_CHEST,
+                Blocks.NOTE_BLOCK,
                 Blocks.JUKEBOX,
-                Blocks.field36524,
-                Blocks.field36535,
-                Blocks.field36558,
-                Blocks.field36666,
+                Blocks.TNT,
+                Blocks.REDSTONE_WIRE,
+                Blocks.LEVER,
+                Blocks.COBBLESTONE_WALL,
                 Blocks.OAK_FENCE,
-                Blocks.field36801,
-                Blocks.field36659,
-                Blocks.field36658,
-                Blocks.field36550,
-                Blocks.field36641,
-                Blocks.field36520,
-                Blocks.field36519,
-                Blocks.field36636,
-                Blocks.field36613,
-                Blocks.field36549,
-                Blocks.field36541,
+                Blocks.TALL_GRASS,
+                Blocks.TRIPWIRE,
+                Blocks.TRIPWIRE_HOOK,
+                Blocks.RAIL,
+                Blocks.LILY_PAD,
+                Blocks.RED_MUSHROOM,
+                Blocks.BROWN_MUSHROOM,
+                Blocks.VINE,
+                Blocks.ACACIA_TRAPDOOR,
+                Blocks.LADDER,
+                Blocks.FURNACE,
                 Blocks.SAND,
                 Blocks.CACTUS,
-                Blocks.field36457,
-                Blocks.field36729,
-                Blocks.field36538,
-                Blocks.field36481,
+                Blocks.DISPENSER,
+                Blocks.DROPPER,
+                Blocks.CRAFTING_TABLE,
+                Blocks.COBWEB,
                 Blocks.PUMPKIN,
                 Blocks.ACACIA_SAPLING
         );
@@ -113,7 +113,7 @@ public class BlockFly extends Class5325 {
                     }
 
                     mc.field1339.field4902.field5443 = var4;
-                    if (this.method15978("ItemSpoof").equals("LiteSpoof") && (this.field23884 < 0 || this.field23884 != var4)) {
+                    if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof") && (this.field23884 < 0 || this.field23884 != var4)) {
                         mc.getClientPlayNetHandler().method15589().method30693(new Class5539(var4));
                         this.field23884 = var4;
                     }
@@ -141,7 +141,7 @@ public class BlockFly extends Class5325 {
     }
 
     public void method16736() {
-        String var3 = this.method15978("Picking mode");
+        String var3 = this.getStringSettingValueByName("Picking mode");
         if ((!var3.equals("OpenInv") || mc.field1355 instanceof Class859) && this.method16735() != 0) {
             int var4 = 43;
             if (!this.method15974("Intelligent Block Picker")) {
@@ -250,7 +250,7 @@ public class BlockFly extends Class5325 {
     }
 
     public boolean method16739(Class79 var1) {
-        if (!this.method16004().method15978("ItemSpoof").equals("None")) {
+        if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
             return this.method16735() != 0;
         } else return method16733(mc.field1339.method3094(var1).method32107());
     }
@@ -264,9 +264,9 @@ public class BlockFly extends Class5325 {
             mc.field1284.field40360 = 1.0F;
         }
 
-        if (this.method16735() != 0 && (!mc.field1339.field5038 || this.method15978("Tower Mode").equalsIgnoreCase("Vanilla"))) {
+        if (this.method16735() != 0 && (!mc.field1339.field5038 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
             if (!Class5628.method17686() || this.method15974("Tower while moving")) {
-                String var4 = this.method15978("Tower Mode");
+                String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
                     case "NCP":
                         if (var1.method13994() > 0.0) {
@@ -320,11 +320,11 @@ public class BlockFly extends Class5325 {
                         }
                 }
             }
-        } else if (!this.method15978("Tower Mode").equals("AAC")
+        } else if (!this.getStringSettingValueByName("Tower Mode").equals("AAC")
                 || !Class5628.method17730(mc.field1339, 0.001F)
                 || !mc.field1299.field44636.field13071) {
-            if (!this.method15978("Tower Mode").equals("NCP")
-                    && !this.method15978("Tower Mode").equals("Vanilla")
+            if (!this.getStringSettingValueByName("Tower Mode").equals("NCP")
+                    && !this.getStringSettingValueByName("Tower Mode").equals("Vanilla")
                     && Class5628.method17730(mc.field1339, 0.001F)
                     && mc.field1299.field44636.field13071) {
                 mc.field1339.field4999 = 20;
@@ -337,18 +337,18 @@ public class BlockFly extends Class5325 {
             Class9567.method37090(Class9567.method37075());
         }
 
-        if (!this.method15978("Tower Mode").equalsIgnoreCase("Vanilla")) {
+        if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {
             Class5628.method17725(var1.method13994());
         }
     }
 
     @Override
     public String method15990() {
-        return Client.getInstance().method19954() != ClientMode.CLASSIC ? super.method15990() : "Scaffold";
+        return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? super.method15990() : "Scaffold";
     }
 
     @EventTarget
-    public void method16742(Class4428 var1) {
+    public void method16742(TickEvent var1) {
         if (this.method15996()) {
             if (this.method15974("Show Block Amount")) {
                 this.field23886 = this.method16735();
@@ -367,7 +367,7 @@ public class BlockFly extends Class5325 {
         this.field23885.changeDirection(Direction.FORWARDS);
         if (this.field23885.calcPercent() != 0.0F) {
             if (this.method15974("Show Block Amount")) {
-                if (Client.getInstance().method19954() != ClientMode.JELLO) {
+                if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                     this.method16744(
                             mc.field1283.method8043() / 2,
                             mc.field1283.method8044() / 2 + 15 - (int) (10.0F * this.field23885.calcPercent()),
@@ -406,19 +406,19 @@ public class BlockFly extends Class5325 {
 
     public void method16745(int var1, int var2, float var3) {
         int var6 = 0;
-        int var7 = ResourceRegistry.field38853.method23942(this.field23886 + "") + 3;
+        int var7 = ResourceRegistry.JelloLightFont18.method23942(this.field23886 + "") + 3;
         var6 += var7;
-        var6 += ResourceRegistry.field38852.method23942("Blocks");
+        var6 += ResourceRegistry.JelloLightFont14.method23942("Blocks");
         int var8 = var6 + 20;
         byte var9 = 32;
         var1 -= var8 / 2;
         GL11.glPushMatrix();
         Class3192.method11465(var1, var2, var8, var9, Class5628.method17688(-15461356, 0.8F * var3));
         Class3192.method11439(
-                ResourceRegistry.field38853, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", Class5628.method17688(Class1979.field12896.field12910, var3)
+                ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", Class5628.method17688(Class1979.field12896.field12910, var3)
         );
         Class3192.method11439(
-                ResourceRegistry.field38852, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", Class5628.method17688(Class1979.field12896.field12910, 0.6F * var3)
+                ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", Class5628.method17688(Class1979.field12896.field12910, 0.6F * var3)
         );
         var1 += 11 + var8 / 2;
         var2 += var9;

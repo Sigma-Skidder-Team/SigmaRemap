@@ -11,7 +11,7 @@ public class Class3423 extends Block implements Class3207 {
    public static final Class6408 field19158 = Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
    public static final Class6408 field19159 = Block.method11539(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
 
-   public Class3423(Class7929 var1) {
+   public Class3423(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19154, Direction.NORTH).method23465(field19155, Boolean.valueOf(false)));
    }

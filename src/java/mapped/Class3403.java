@@ -6,7 +6,7 @@ public class Class3403 extends Block {
    private static String[] field19076;
    public static final Class8551 field19077 = Class3383.field18987;
 
-   public Class3403(Class7929 var1) {
+   public Class3403(AbstractBlock var1) {
       super(var1);
       this.method11578(this.method11579().method23465(field19077, Boolean.valueOf(false)));
    }

@@ -12,7 +12,7 @@ public class Class3404 extends Block implements Class3405 {
    private final List<Class7379> field19081;
    public static final Class6408 field19082 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 
-   public Class3404(Class7633 var1, Class7929 var2) {
+   public Class3404(Class7633 var1, AbstractBlock var2) {
       super(var2);
       this.field19080 = var1;
       this.field19081 = Lists.newArrayList();

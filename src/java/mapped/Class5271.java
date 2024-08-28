@@ -19,7 +19,7 @@ public class Class5271 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23701 = 0;
         this.field23700 = -1;
         double var3 = this.field23703[0];

@@ -30,9 +30,9 @@ public class Class8039 {
          }
       } else {
          Class7380 var4 = this.field34542.field5024.method6738((BlockPos)var3.get());
-         if (var4.method23448(Blocks.field36549) || var4.method23446(Class7645.field32768)) {
+         if (var4.method23448(Blocks.LADDER) || var4.method23446(Class7645.field32768)) {
             this.field34548 = "ladder";
-         } else if (!var4.method23448(Blocks.field36636)) {
+         } else if (!var4.method23448(Blocks.VINE)) {
             if (var4.method23448(Blocks.field37086) || var4.method23448(Blocks.field37087)) {
                this.field34548 = "weeping_vines";
             } else if (var4.method23448(Blocks.field37088) || var4.method23448(Blocks.field37089)) {

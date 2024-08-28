@@ -7,7 +7,7 @@ public class Class3455 extends Class3456 implements Class3449 {
    public static final Class8552<Class84> field19274 = Class3456.field19276;
    public static final Class6408 field19275 = Block.method11539(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 
-   public Class3455(Class7929 var1) {
+   public Class3455(AbstractBlock var1) {
       super(var1);
    }
 
@@ -23,7 +23,7 @@ public class Class3455 extends Class3456 implements Class3449 {
 
    @Override
    public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(Blocks.field36485);
+      return new Class8848(Blocks.SEAGRASS);
    }
 
    @Nullable

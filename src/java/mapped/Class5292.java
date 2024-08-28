@@ -26,7 +26,7 @@ public class Class5292 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23807 = true;
         this.field23804 = -1;
         this.field23805 = 0;

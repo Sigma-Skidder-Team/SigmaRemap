@@ -80,7 +80,7 @@ public class GuiManager {
             Minecraft.getInstance().field1355 = null;
             Minecraft.getInstance().displayGuiScreen(new Class835());
             return true;
-        } else if (Client.getInstance().method19954() == ClientMode.field13889 && var0 instanceof Class849 && !(var0 instanceof Class850)) {
+        } else if (Client.getInstance().getClientMode() == ClientMode.field13889 && var0 instanceof Class849 && !(var0 instanceof Class850)) {
             Minecraft.getInstance().field1355 = null;
             Minecraft.getInstance().displayGuiScreen(new Class850());
             return true;
@@ -92,7 +92,7 @@ public class GuiManager {
     public static Class4307 method33458(Screen var0) {
         if (var0 == null) {
             return null;
-        } else if (Client.getInstance().method19954() == ClientMode.field13886) {
+        } else if (Client.getInstance().getClientMode() == ClientMode.PREMIUM) {
             return new Class4318();
         } else if (method33457(var0)) {
             return null;
@@ -238,7 +238,7 @@ public class GuiManager {
                 var3 = Minecraft.getInstance().field1283.method8043() / 2 - var5 / 2;
             }
 
-            if (Client.getInstance().method19954() != ClientMode.JELLO) {
+            if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 float var7 = 0.5F + Class5151.field23380.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
                 Class3192.method11424(4.0F, 2.0F, 106.0F, 28.0F, Class5628.method17688(Class1979.field12891.field12910, 0.6F * var7));

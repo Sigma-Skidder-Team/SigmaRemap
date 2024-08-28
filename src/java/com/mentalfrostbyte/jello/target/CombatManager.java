@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.target;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import mapped.Class5628;
 import mapped.Class7249;
@@ -38,7 +38,7 @@ public class CombatManager {
 
     @EventTarget
     @HigestPriority
-    private void method29349(Class4428 var1) {
+    private void method29349(TickEvent var1) {
         if (this.field35946 != null) {
             for (PlayerEntity var5 : Class5628.method17680()) {
                 if (!this.field35946.method22751(var5)) {

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -15,12 +15,12 @@ public class Class5164 extends Module {
     }
 
     @EventTarget
-    public void method16066(Class4428 var1) {
+    public void method16066(TickEvent var1) {
         if (this.method15996()) {
             this.field23438++;
             if ((float) this.field23438 > this.method15977("Messages delay") * 20.0F) {
                 this.field23438 = 0;
-                String var4 = this.method15978("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float) Math.random() * 89.0F)));
+                String var4 = this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float) Math.random() * 89.0F)));
                 Class5628.method17679(var4);
             }
         }

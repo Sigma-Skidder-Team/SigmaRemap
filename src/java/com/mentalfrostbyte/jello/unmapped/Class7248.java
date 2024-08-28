@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.*;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class Class7248 extends Class7249 {
    }
 
    @EventTarget
-   private void method22752(Class4428 var1) {
+   private void method22752(TickEvent var1) {
       if (field31119.field1339.field5055 < 10) {
          this.field31116.clear();
       }

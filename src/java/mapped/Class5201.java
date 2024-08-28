@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -49,7 +49,7 @@ public class Class5201 extends Module {
     }
 
     @EventTarget
-    public void method16195(Class4428 var1) {
+    public void method16195(TickEvent var1) {
         if (mc.field1339 != null) {
             if (mc.field1339.field5055 % 14 == 0) {
                 Entity var4 = this.method16193();

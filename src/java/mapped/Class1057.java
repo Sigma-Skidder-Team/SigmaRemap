@@ -127,8 +127,8 @@ public class Class1057 extends Class1056 implements Class1008 {
          if (!this.field5024.field9020) {
             Class7380 var4 = this.field5024.method6738(var3);
             if (!var4.method23393()) {
-               if (!var4.method23448(Blocks.field36505)) {
-                  if (!var4.method23448(Blocks.field36488)) {
+               if (!var4.method23448(Blocks.MOVING_PISTON)) {
+                  if (!var4.method23448(Blocks.PISTON_HEAD)) {
                      this.method4846();
                   } else {
                      Direction var5 = var4.<Direction>method23463(Class3436.field19198);

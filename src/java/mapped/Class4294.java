@@ -107,31 +107,31 @@ public class Class4294 extends Class4278 {
    public void method13170() {
       if (this.field20798.method34240()) {
          Class3192.method11439(
-            ResourceRegistry.field38855, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.field20798.method34216(), Class1979.field12891.field12910
+            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.field20798.method34216(), Class1979.field12891.field12910
          );
          Class3192.method11439(
-            ResourceRegistry.field38852,
+            ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Username: " + this.field20798.method34216(),
             Class1979.field12899.field12910
          );
          Class3192.method11439(
-            ResourceRegistry.field38852, (float)(this.field20895 + 110), (float)(this.field20896 + 65), "Offline account", Class1979.field12899.field12910
+            ResourceRegistry.JelloLightFont14, (float)(this.field20895 + 110), (float)(this.field20896 + 65), "Offline account", Class1979.field12899.field12910
          );
       } else {
          Class3192.method11439(
-            ResourceRegistry.field38855, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.field20798.method34217(), Class1979.field12891.field12910
+            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.field20798.method34217(), Class1979.field12891.field12910
          );
          Class3192.method11439(
-            ResourceRegistry.field38852,
+            ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Email: " + this.field20798.method34216(),
             Class1979.field12899.field12910
          );
          Class3192.method11439(
-            ResourceRegistry.field38852,
+            ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 65),
             "Password: " + this.field20798.method34220().replaceAll(".", Character.toString('·')),

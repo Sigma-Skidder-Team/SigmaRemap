@@ -5,7 +5,7 @@ import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class3345 extends Class3343 {
-   public Class3345(Class7929 var1) {
+   public Class3345(AbstractBlock var1) {
       super(Class2136.field13991, var1);
    }
 

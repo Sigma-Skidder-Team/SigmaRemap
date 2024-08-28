@@ -19,7 +19,7 @@ public class Class5388 extends Module {
    }
 
    @Override
-   public void method15966() {
+   public void isInDevelopment() {
       this.field24023 = false;
    }
 

@@ -116,7 +116,7 @@ public class Class4200 extends Class4194 {
          Blocks.field36846.method11579().method23465(Class3208.field18605, Class86.field220),
          false
       );
-      this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.SOUTH), 6, 5, 6, var5);
+      this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.SOUTH), 6, 5, 6, var5);
       return true;
    }
 }

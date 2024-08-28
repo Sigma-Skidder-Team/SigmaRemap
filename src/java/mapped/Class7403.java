@@ -7,6 +7,6 @@ public final class Class7403 extends Class7401 {
 
    @Override
    public Class8848 method23640() {
-      return new Class8848(Blocks.field36534);
+      return new Class8848(Blocks.CHEST);
    }
 }

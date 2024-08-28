@@ -46,7 +46,7 @@ public class Class4323 extends Class4307 {
         this.method13230(this.field21103 = new Class4337(this, "group", (this.method13267() - var13) / 2, this.method13269() / 2 - 230, var13, var14));
         this.method13230(
                 this.field21095 = new Class4287(
-                        this, "Copyright", 10, 8, var9.method23942(var11), 140, new Class6387(Class1979.field12896.field12910), var11, ResourceRegistry.field38853
+                        this, "Copyright", 10, 8, var9.method23942(var11), 140, new Class6387(Class1979.field12896.field12910), var11, ResourceRegistry.JelloLightFont18
                 )
         );
         Class6387 var15 = new Class6387(Class5628.method17688(Class1979.field12896.field12910, 0.5F));

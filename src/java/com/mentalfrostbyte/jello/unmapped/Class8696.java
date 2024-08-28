@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4402;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import mapped.Class5554;
 import mapped.Class5594;
 import mapped.Class9567;
@@ -26,7 +26,7 @@ public class Class8696 {
    }
 
    @EventTarget
-   private void method31324(Class4428 var1) {
+   private void method31324(TickEvent var1) {
       this.field39248++;
       this.field39249++;
       this.field39250++;

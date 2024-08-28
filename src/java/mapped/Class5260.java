@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
@@ -181,20 +181,20 @@ public class Class5260 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23659 = mc.field1355 instanceof Class859;
         this.field23660 = false;
     }
 
     @EventTarget
-    public void method16430(Class4428 var1) {
+    public void method16430(TickEvent var1) {
         if (!this.field23658.method27123()) {
             this.field23658.method27118();
         }
 
         if (this.method15996() && !Class5290.field23798) {
-            String var4 = this.method15978("Mode");
-            if (!this.method15978("Mode").equals("OpenInv") || mc.field1355 instanceof Class859) {
+            String var4 = this.getStringSettingValueByName("Mode");
+            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.field1355 instanceof Class859) {
                 long var5 = (long) (this.method15977("Delay") * 20.0F);
                 if (mc.field1355 instanceof Class859) {
                     this.field23659 = false;
@@ -217,7 +217,7 @@ public class Class5260 extends PremiumModule {
                             }
                         }
 
-                        boolean var7 = this.method15978("Tools").equals("Organize");
+                        boolean var7 = this.getStringSettingValueByName("Tools").equals("Organize");
                         if ((long) Client.getInstance().method19939().method31333() >= var5 && field23655 >= 36 && var7) {
                             this.method16438(field23655, var4.equals("FakeInv"));
                         }
@@ -286,19 +286,19 @@ public class Class5260 extends PremiumModule {
             return false;
         } else if (var5 instanceof Class3334 && this.method15974("Auto Shield")) {
             return false;
-        } else if (this.method15978("Tools").equals("Throw")
+        } else if (this.getStringSettingValueByName("Tools").equals("Throw")
                 || (
-                var2 != field23655 && !this.method15978("Tools").equals("Keep")
+                var2 != field23655 && !this.getStringSettingValueByName("Tools").equals("Keep")
                         || !method16442(mc.field1339.field4904.method18131(var2).method18265())
                         || field23655 < 0
         )
                 && (
-                var2 != field23656 && !this.method15978("Tools").equals("Keep")
+                var2 != field23656 && !this.getStringSettingValueByName("Tools").equals("Keep")
                         || !method16444(mc.field1339.field4904.method18131(var2).method18265())
                         || field23656 < 0
         )
                 && (
-                var2 != field23657 && !this.method15978("Tools").equals("Keep")
+                var2 != field23657 && !this.getStringSettingValueByName("Tools").equals("Keep")
                         || !method16443(mc.field1339.field4904.method18131(var2).method18265())
                         || field23657 < 0
         )) {

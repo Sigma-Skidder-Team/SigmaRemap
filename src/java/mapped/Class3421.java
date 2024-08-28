@@ -56,7 +56,7 @@ public class Class3421 extends Block implements Class3207 {
       }
    }
 
-   public Class3421(Class7380 var1, Class7929 var2) {
+   public Class3421(Class7380 var1, AbstractBlock var2) {
       super(var2);
       this.method11578(
          this.field18612

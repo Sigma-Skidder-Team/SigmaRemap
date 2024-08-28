@@ -8,7 +8,7 @@ public abstract class Class3444 extends Block {
    public final boolean field19257;
    public final Class6408 field19258;
 
-   public Class3444(Class7929 var1, Direction var2, Class6408 var3, boolean var4) {
+   public Class3444(AbstractBlock var1, Direction var2, Class6408 var3, boolean var4) {
       super(var1);
       this.field19256 = var2;
       this.field19258 = var3;

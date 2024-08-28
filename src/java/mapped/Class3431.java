@@ -9,7 +9,7 @@ public class Class3431 extends Class3429 {
    public static final Class8552<Class96> field19193 = Class8820.field39737;
    public static final Class8551 field19194 = Class8820.field39704;
 
-   public Class3431(Class7929 var1) {
+   public Class3431(AbstractBlock var1) {
       super(true, var1);
       this.method11578(this.field18612.method35393().method23465(field19194, Boolean.valueOf(false)).method23465(field19193, Class96.field247));
    }

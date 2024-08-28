@@ -8,7 +8,7 @@ public class Class3193 extends Class3194 implements Class3196 {
    public static final Class6408 field18468 = Block.method11539(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
    private final Class7665 field18469;
 
-   public Class3193(Class7665 var1, Class7929 var2) {
+   public Class3193(Class7665 var1, AbstractBlock var2) {
       super(var2);
       this.field18469 = var1;
       this.method11578(this.field18612.method35393().method23465(field18467, Integer.valueOf(0)));

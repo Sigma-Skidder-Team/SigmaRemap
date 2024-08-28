@@ -47,7 +47,7 @@ public class Class5189 extends Module {
             if (var4 != null) {
                 double var5 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
                 float var7 = this.method15977("Radius");
-                String var8 = this.method15978("Mode");
+                String var8 = this.getStringSettingValueByName("Mode");
                 switch (var8) {
                     case "Basic":
                         this.method16152(var4, var5, (double) var7, var1);
@@ -104,9 +104,9 @@ public class Class5189 extends Module {
                 mc.field1339.method3431().field18049 + var6.method13994(),
                 mc.field1339.method3431().field18050 + var6.method13996()
         );
-        String var27 = this.method15978("AntiVoid");
+        String var27 = this.getStringSettingValueByName("AntiVoid");
         if (!var27.equals("None")) {
-            if (!this.field23496 && this.method16153(var26) && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+            if (!this.field23496 && this.method16153(var26) && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                 this.field23495 *= -1;
                 this.field23496 = true;
             } else if (this.field23496 && !this.method16153(var26)) {
@@ -123,7 +123,7 @@ public class Class5189 extends Module {
                             mc.field1339.method3431().field18049 + var6.method13994(),
                             mc.field1339.method3431().field18050 + var6.method13996()
                     );
-                    if (this.method16153(var26) && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+                    if (this.method16153(var26) && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                         Class9567.method37088(var6, 0.0);
                     }
                 }

@@ -18,7 +18,7 @@ public class Class230 extends Class219<Class1058, Class2880<Class1058>> {
          var1.method35292(0.5F, 0.5F, 0.5F);
          var1.method35293(Class7680.field32898.method25286(-90.0F));
          var1.method35291(-0.5, -0.5, -0.5);
-         Minecraft.getInstance().method1553().method814(Blocks.field36507.method11579(), var1, var2, var3, Class213.field798);
+         Minecraft.getInstance().method1553().method814(Blocks.POPPY.method11579(), var1, var2, var3, Class213.field798);
          var1.method35295();
       }
    }

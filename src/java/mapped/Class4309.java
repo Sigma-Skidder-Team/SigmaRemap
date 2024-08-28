@@ -144,7 +144,7 @@ public class Class4309 extends Class4307 {
       );
       super.method13224();
       Class3192.method11439(
-         ResourceRegistry.field38866,
+         ResourceRegistry.JelloMediumFont40,
          (float)((this.field20897 - 1060) / 2),
          (float)((this.field20898 - 357) / 2 - 90),
          "Keybind Manager",

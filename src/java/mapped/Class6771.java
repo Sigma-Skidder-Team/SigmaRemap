@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6771 extends Class6768<Class8278> {
-   public static final Class7380 field29539 = Blocks.field36796.method11579();
+   public static final Class7380 field29539 = Blocks.PACKED_ICE.method11579();
    public static final Class7380 field29540 = Blocks.SNOW_BLOCK.method11579();
    private static final Class7380 field29541 = Blocks.AIR.method11579();
    private static final Class7380 field29490 = Blocks.GRAVEL.method11579();
@@ -93,7 +93,7 @@ public class Class6771 extends Class6768<Class8278> {
                      var2.method7061(var21, var30, false);
                      if (var33 == 0 && var30.method23448(Blocks.SAND) && var32 > 1) {
                         var33 = var1.nextInt(4) + Math.max(0, var37 - 63);
-                        var30 = !var30.method23448(Blocks.RED_SAND) ? Blocks.field36458.method11579() : Blocks.field36835.method11579();
+                        var30 = !var30.method23448(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
                      }
                   }
                } else {
@@ -128,7 +128,7 @@ public class Class6771 extends Class6768<Class8278> {
                      var2.method7061(var21, var31, false);
                   }
                }
-            } else if (var44.method23448(Blocks.field36796) && var34 <= var35 && var37 > var36) {
+            } else if (var44.method23448(Blocks.PACKED_ICE) && var34 <= var35 && var37 > var36) {
                var2.method7061(var21, field29540, false);
                var34++;
             }

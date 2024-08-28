@@ -20,7 +20,7 @@ public class Class4330 extends Class4305 {
 
       String var7 = var3.method21773("title");
       Class2344 var8 = var3.method21768("changes");
-      this.method13230(new Class4287(this, "title", 0, var6, 0, 0, Class6387.field27961, var7, ResourceRegistry.field38866));
+      this.method13230(new Class4287(this, "title", 0, var6, 0, 0, Class6387.field27961, var7, ResourceRegistry.JelloMediumFont40));
       var6 += 55;
 
       for (int var9 = 0; var9 < var8.method9134(); var9++) {
@@ -35,7 +35,7 @@ public class Class4330 extends Class4305 {
                0,
                new Class6387(0, 0, 0, Class5628.method17688(Class1979.field12896.field12910, 0.8F)),
                var10,
-               ResourceRegistry.field38854
+               ResourceRegistry.JelloLightFont20
             )
          );
          var6 += 22;

@@ -22,7 +22,7 @@ public class Class3238 extends Block implements Class3207 {
    public final Class6408[] field18687;
    private final Object2IntMap<Class7380> field18688 = new Object2IntOpenHashMap();
 
-   public Class3238(float var1, float var2, float var3, float var4, float var5, Class7929 var6) {
+   public Class3238(float var1, float var2, float var3, float var4, float var5, AbstractBlock var6) {
       super(var6);
       this.field18686 = this.method11639(var1, var2, var5, 0.0F, var5);
       this.field18687 = this.method11639(var1, var2, var3, 0.0F, var4);

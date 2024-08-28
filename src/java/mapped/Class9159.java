@@ -12,7 +12,7 @@ public class Class9159 {
 
    public Class9159(String var1, boolean var2) {
       this.field42046 = var2;
-      this.field42047 = Class5628.method17745(var1, 200, ResourceRegistry.field38853);
+      this.field42047 = Class5628.method17745(var1, 200, ResourceRegistry.JelloLightFont18);
    }
 
    public int method34192() {

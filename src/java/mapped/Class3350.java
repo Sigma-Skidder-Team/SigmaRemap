@@ -4,7 +4,7 @@ public abstract class Class3350 extends Class3241 {
    public static final Class8553 field18875 = Class3198.field18484;
    public static final Class8551 field18876 = Class8820.field39699;
 
-   public Class3350(Class7929 var1) {
+   public Class3350(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18875, Direction.NORTH).method23465(field18876, Boolean.valueOf(false)));
    }

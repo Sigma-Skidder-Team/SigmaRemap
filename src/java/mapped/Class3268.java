@@ -10,11 +10,11 @@ public class Class3268 extends Class3264 {
       Blocks.field36728,
       Blocks.field36420,
       Blocks.field36399,
-      Blocks.field36479,
+      Blocks.DETECTOR_RAIL,
       Blocks.field36537,
       Blocks.field36536,
       new Block[]{
-         Blocks.field36478,
+         Blocks.POWERED_RAIL,
          Blocks.field36521,
          Blocks.field36418,
          Blocks.field36421,
@@ -25,13 +25,13 @@ public class Class3268 extends Class3264 {
          Blocks.field36455,
          Blocks.field36526,
          Blocks.NETHERRACK,
-         Blocks.field36796,
+         Blocks.PACKED_ICE,
          Blocks.field37006,
-         Blocks.field36550,
+         Blocks.RAIL,
          Blocks.field36567,
-         Blocks.field36458,
-         Blocks.field36459,
-         Blocks.field36460,
+         Blocks.SANDSTONE,
+         Blocks.CHISELED_SANDSTONE,
+         Blocks.CUT_SANDSTONE,
          Blocks.field36836,
          Blocks.field36837,
          Blocks.field36835,
@@ -39,9 +39,9 @@ public class Class3268 extends Class3264 {
          Blocks.GRANITE,
          Blocks.POLISHED_GRANITE,
          Blocks.DIORITE,
-         Blocks.field36392,
-         Blocks.field36393,
-         Blocks.field36394,
+         Blocks.POLISHED_DIORITE,
+         Blocks.ANDESITE,
+         Blocks.POLISHED_ANDESITE,
          Blocks.field36845,
          Blocks.field36846,
          Blocks.field36847,
@@ -89,9 +89,9 @@ public class Class3268 extends Class3264 {
          Blocks.field36911,
          Blocks.field36897,
          Blocks.field36901,
-         Blocks.field36487,
-         Blocks.field36480,
-         Blocks.field36488
+         Blocks.PISTON,
+         Blocks.STICKY_PISTON,
+         Blocks.PISTON_HEAD
       }
    );
 
@@ -110,8 +110,8 @@ public class Class3268 extends Class3264 {
          return var4 >= 3;
       } else if (var1.method23448(Blocks.field36537)
          || var1.method23448(Blocks.field36536)
-         || var1.method23448(Blocks.field36656)
-         || var1.method23448(Blocks.field36660)
+         || var1.method23448(Blocks.EMERALD_ORE)
+         || var1.method23448(Blocks.EMERALD_BLOCK)
          || var1.method23448(Blocks.field36521)
          || var1.method23448(Blocks.field36418)
          || var1.method23448(Blocks.field36567)) {

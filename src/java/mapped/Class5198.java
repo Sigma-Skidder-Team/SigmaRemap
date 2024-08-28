@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -12,7 +12,7 @@ public class Class5198 extends Module {
     }
 
     @EventTarget
-    private void method16186(Class4428 var1) {
+    private void method16186(TickEvent var1) {
         if (this.method15996()) {
             if (mc.field1339.method3090() != null) {
                 if (mc.field1339.method3090().method32107() instanceof Class3292) {

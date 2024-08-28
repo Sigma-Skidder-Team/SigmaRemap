@@ -15,7 +15,7 @@ public class Class991 extends Class919 {
    public void method3586(Class8654 var1) {
       super.method3586(var1);
       if (this.field5024.method6789().method17135(Class5462.field24229)) {
-         this.method3300(Blocks.field36534);
+         this.method3300(Blocks.CHEST);
       }
    }
 
@@ -31,7 +31,7 @@ public class Class991 extends Class919 {
 
    @Override
    public Class7380 method3604() {
-      return Blocks.field36534.method11579().method23465(Class3348.field18865, Direction.NORTH);
+      return Blocks.CHEST.method11579().method23465(Class3348.field18865, Direction.NORTH);
    }
 
    @Override

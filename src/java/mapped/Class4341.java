@@ -38,7 +38,7 @@ public class Class4341 extends Class4339 implements Class4342 {
          this.method13517()
             .method13230(
                var13 = new Class4240(
-                  this.method13517(), var5.method15991() + "Button", 0, var3 * 30, this.method13267(), 30, var12, var5.method15991(), ResourceRegistry.field38854
+                  this.method13517(), var5.method15991() + "Button", 0, var3 * 30, this.method13267(), 30, var12, var5.method15991(), ResourceRegistry.JelloLightFont20
                )
             );
          if (!var5.method15996()) {

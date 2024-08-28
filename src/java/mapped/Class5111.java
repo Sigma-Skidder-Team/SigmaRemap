@@ -398,7 +398,7 @@ public class Class5111 implements Class5110 {
                   break;
                case 3:
                default:
-                  Class7380 var14 = Blocks.field36664.method11579();
+                  Class7380 var14 = Blocks.COMMAND_BLOCK.method11579();
                   this.field23226
                      .field5024
                      .method6725(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);

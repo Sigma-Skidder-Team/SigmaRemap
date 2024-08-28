@@ -157,12 +157,12 @@ public class Class4313 extends Class4307 {
             Class4281.field20741,
             "",
             "Search...",
-            ResourceRegistry.field38853
+            ResourceRegistry.JelloLightFont18
          )
       );
-      this.field21026.method13306(ResourceRegistry.field38853);
+      this.field21026.method13306(ResourceRegistry.JelloLightFont18);
       this.field21026.method13151(var1 -> this.method13372(false));
-      this.method13230(this.field21022 = new Class4274(this, "btnt", this.method13267() - 90, 43, 70, 30, Class6387.field27961, "Add +", ResourceRegistry.field38855));
+      this.method13230(this.field21022 = new Class4274(this, "btnt", this.method13267() - 90, 43, 70, 30, Class6387.field27961, "Add +", ResourceRegistry.JelloLightFont25));
       this.field21010.method13242();
       this.field21022.method13251((var1, var2) -> {
          if (this.method13369()) {
@@ -341,8 +341,8 @@ public class Class4313 extends Class4307 {
       int var3 = this.field20895 + this.field21016;
       int var4 = this.field20896 + this.field21016;
       int var5 = Class5628.method17688(Class1979.field12891.field12910, 0.8F);
-      Class3192.method11439(ResourceRegistry.field38856, (float)var3, (float)var4, "Jello", var5);
-      Class3192.method11439(ResourceRegistry.field38855, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
+      Class3192.method11439(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
+      Class3192.method11439(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
 
    private void method13367() {

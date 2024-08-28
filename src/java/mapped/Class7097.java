@@ -43,7 +43,7 @@ public class Class7097 extends Class7092 {
    @Nullable
    private Class7380 method22076(Random var1) {
       if (!(var1.nextFloat() >= 0.5F)) {
-         Class7380[] var4 = new Class7380[]{Blocks.field36617.method11579(), method22081(var1, Blocks.field36639)};
+         Class7380[] var4 = new Class7380[]{Blocks.field36617.method11579(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
          Class7380[] var5 = new Class7380[]{Blocks.field36616.method11579(), method22081(var1, Blocks.field37016)};
          return this.method22082(var1, var4, var5);
       } else {

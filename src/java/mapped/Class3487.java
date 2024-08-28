@@ -6,7 +6,7 @@ public class Class3487 extends Class3194 implements Class3196 {
    private static String[] field19350;
    public static final Class6408 field19351 = Block.method11539(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
 
-   public Class3487(Class7929 var1) {
+   public Class3487(AbstractBlock var1) {
       super(var1);
    }
 
@@ -27,7 +27,7 @@ public class Class3487 extends Class3194 implements Class3196 {
 
    @Override
    public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
-      Class3456 var7 = (Class3456)(this != Blocks.field36483 ? Blocks.field36801 : Blocks.field36802);
+      Class3456 var7 = (Class3456)(this != Blocks.FERN ? Blocks.TALL_GRASS : Blocks.field36802);
       if (var7.method11579().method23443(var1, var3) && var1.method7007(var3.method8311())) {
          var7.method12129(var1, var3, 2);
       }

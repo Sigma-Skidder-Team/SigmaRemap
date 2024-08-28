@@ -53,7 +53,7 @@ public class Class9528 {
    }
 
    public boolean method36817() {
-      return !this.field44346.method15978("Autoblock Mode").equals("None")
+      return !this.field44346.getStringSettingValueByName("Autoblock Mode").equals("None")
          && this.field44347.field1339.method3090().method32107() instanceof Class3267
          && !this.method36813();
    }
@@ -80,7 +80,7 @@ public class Class9528 {
 
    public boolean method36820(int var1) {
       int var4 = (int)this.method36819(0) - var1;
-      boolean var5 = this.field44346.method15978("Attack Mode").equals("Pre");
+      boolean var5 = this.field44346.getStringSettingValueByName("Attack Mode").equals("Pre");
       if (!var5) {
          var4++;
       }
@@ -143,7 +143,7 @@ public class Class9528 {
       Iterator var24 = var4.iterator();
       Class5325 var25 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
       float var7 = 150.0F;
-      if (var25.method15996() && var25.method15978("Type").equalsIgnoreCase("PingSpoof")) {
+      if (var25.method15996() && var25.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
          var7 += var25.method16726().method15977("Lag");
       }
 
@@ -249,7 +249,7 @@ public class Class9528 {
    }
 
    public List<Class8012> method36824(List<Class8012> var1) {
-      String var4 = this.field44346.method15978("Sort Mode");
+      String var4 = this.field44346.getStringSettingValueByName("Sort Mode");
       switch (var4) {
          case "Range":
             Collections.sort(var1, new Class3607(this));

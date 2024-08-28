@@ -385,7 +385,7 @@ public class Class904 extends Class882 {
 
    private Class2331 method3540(BlockPos var1) {
       Class7380 var4 = this.field5024.method6738(var1);
-      if (!var4.method23393() && !var4.method23448(Blocks.field36641)) {
+      if (!var4.method23393() && !var4.method23448(Blocks.LILY_PAD)) {
          Class7379 var5 = var4.method23449();
          return var5.method23486(Class8953.field40469) && var5.method23473() && var4.method23414(this.field5024, var1).method19516()
             ? Class2331.field15948

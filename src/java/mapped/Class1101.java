@@ -78,7 +78,7 @@ public class Class1101 extends Class1009 {
 
    @Override
    public void method2928(Class7380 var1, Vector3d var2) {
-      if (!var1.method23448(Blocks.field36481)) {
+      if (!var1.method23448(Blocks.COBWEB)) {
          super.method2928(var1, var2);
       }
    }

@@ -44,7 +44,7 @@ public abstract class Class6896 {
    private static boolean method21068(Class1680 var0, BlockPos var1) {
       return var0.method6815(var1, var0x -> {
          Block var3 = var0x.method23383();
-         return Class2898.method11219(var3) && !var0x.method23448(Blocks.field36395) && !var0x.method23448(Blocks.field36640);
+         return Class2898.method11219(var3) && !var0x.method23448(Blocks.field36395) && !var0x.method23448(Blocks.MYCELIUM);
       });
    }
 

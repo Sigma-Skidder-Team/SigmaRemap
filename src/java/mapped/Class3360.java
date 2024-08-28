@@ -9,7 +9,7 @@ public class Class3360 extends Class3359 {
    private static final Map<Class112, Block> field18907 = Maps.newHashMap();
    private static final Class6408 field18908 = Block.method11539(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 
-   public Class3360(Class112 var1, Class7929 var2) {
+   public Class3360(Class112 var1, AbstractBlock var2) {
       super(var1, var2);
       this.method11578(this.field18612.method35393().method23465(field18906, Integer.valueOf(0)));
       field18907.put(var1, this);

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4398;
 import com.mentalfrostbyte.jello.event.impl.Class4425;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -29,7 +29,7 @@ public class Class5284 extends Module {
     }
 
     @EventTarget
-    public void method16582(Class4428 var1) {
+    public void method16582(TickEvent var1) {
         if (this.method15996()) {
             mc.field1339.field4999 = 3;
             if (mc.field1339.field5055 % 2 == 0) {

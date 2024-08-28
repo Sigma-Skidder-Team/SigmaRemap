@@ -42,7 +42,7 @@ public class Class5276 extends Module {
     }
 
     private void method16507() {
-        if (Client.getInstance().method19954() == ClientMode.JELLO) {
+        if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             mc.field1338
                     .field9025
                     .forEach(
@@ -99,7 +99,7 @@ public class Class5276 extends Module {
                     double var15 = (var5.getPosZ() - var5.field5050) * (double) mc.field1284.field40356 - (var5.getPosZ() - var5.field5050);
                     Class9388 var17 = new Class9388(var5.method3389().method19667(var11, var13, var15)).method35648(0.1F);
                     if (var1) {
-                        Class3192.method11462(var17, 3.0F, Class5628.method17688(var10, Client.getInstance().method19954() != ClientMode.JELLO ? 0.8F : 0.35F));
+                        Class3192.method11462(var17, 3.0F, Class5628.method17688(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
                         Class3192.method11459(var17, Class1979.field12896.field12910);
                     }

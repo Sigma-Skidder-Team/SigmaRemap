@@ -262,7 +262,7 @@ public class Class4310 extends Class4307 {
 
          if (this.field20973.method25319() == Direction.FORWARDS) {
             Class3192.method11440(
-               ResourceRegistry.field38867,
+               ResourceRegistry.JelloMediumFont50,
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 - 30),
                field20980,
@@ -271,7 +271,7 @@ public class Class4310 extends Class4307 {
                Class2218.field14492
             );
             Class3192.method11440(
-               ResourceRegistry.field38853,
+               ResourceRegistry.JelloLightFont18,
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 + 30),
                "\"" + field20981 + "\"",

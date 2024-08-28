@@ -24,7 +24,7 @@ public class Class5304 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
@@ -41,10 +41,10 @@ public class Class5304 extends Module {
             }
 
             if (this.field23839 <= 0) {
-                Module var4 = Client.getInstance().getModuleManager().method14662(Class5333.class);
-                String var5 = var4.method15978("Type");
+                Module var4 = Client.getInstance().getModuleManager().method14662(Fly.class);
+                String var5 = var4.getStringSettingValueByName("Type");
                 Module var6 = Client.getInstance().getModuleManager().method14662(Class5342.class);
-                String var7 = var6.method15978("Type");
+                String var7 = var6.getStringSettingValueByName("Type");
                 boolean var8 = var4.method15996();
                 if (var5.equals("Cubecraft") && var1.method13994() < -0.4) {
                     var8 = false;
@@ -67,7 +67,7 @@ public class Class5304 extends Module {
 
             if (this.field23837 > (double) this.method15977("Fall Distance") && (this.method16667() || !this.method15974("Void"))) {
                 this.field23837 = 0.0;
-                this.method16668(this.method15978("Mode"), var1);
+                this.method16668(this.getStringSettingValueByName("Mode"), var1);
             }
 
             if (this.field23838 > 0) {
@@ -127,7 +127,7 @@ public class Class5304 extends Module {
             case "Cubecraft":
                 double var13 = 3.2E7;
                 mc.getClientPlayNetHandler().sendPacket(new Class5605(var5, var13, var9, false));
-                Client.getInstance().getModuleManager().method14662(Class5333.class).method15999(false);
+                Client.getInstance().getModuleManager().method14662(Fly.class).method15999(false);
                 break;
             case "Legit":
                 this.field23839 = 200;

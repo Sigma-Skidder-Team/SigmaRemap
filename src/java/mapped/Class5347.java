@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -45,7 +45,7 @@ public class Class5347 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23898 = false;
         this.field23897 = (int) (20.0F / this.method16004().method15977("CPS"));
         this.field23899 = (float) this.field23897;
@@ -60,7 +60,7 @@ public class Class5347 extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16772(Class4428 var1) {
+    public void method16772(TickEvent var1) {
         if (this.method15996()) {
             List<Class8012> var4 = this.method16775((float) ((int) this.method15977("Range")));
             if (var4 != null && var4.size() != 0) {

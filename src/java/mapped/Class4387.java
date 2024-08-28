@@ -10,29 +10,29 @@ import java.util.function.Supplier;
 
 public class Class4387<T extends Class944> {
    private static final Logger field21420 = LogManager.getLogger();
-   public static final Class4387<Class986> field21421 = method13794("furnace", Class9785.<Class986>method38569(Class986::new, Blocks.field36541));
-   public static final Class4387<Class941> field21422 = method13794("chest", Class9785.<Class941>method38569(Class941::new, Blocks.field36534));
-   public static final Class4387<Class970> field21423 = method13794("trapped_chest", Class9785.<Class970>method38569(Class970::new, Blocks.field36716));
-   public static final Class4387<Class943> field21424 = method13794("ender_chest", Class9785.<Class943>method38569(Class943::new, Blocks.field36657));
+   public static final Class4387<Class986> field21421 = method13794("furnace", Class9785.<Class986>method38569(Class986::new, Blocks.FURNACE));
+   public static final Class4387<Class941> field21422 = method13794("chest", Class9785.<Class941>method38569(Class941::new, Blocks.CHEST));
+   public static final Class4387<Class970> field21423 = method13794("trapped_chest", Class9785.<Class970>method38569(Class970::new, Blocks.TRAPPED_CHEST));
+   public static final Class4387<Class943> field21424 = method13794("ender_chest", Class9785.<Class943>method38569(Class943::new, Blocks.ENDER_CHEST));
    public static final Class4387<Class947> field21425 = method13794("jukebox", Class9785.<Class947>method38569(Class947::new, Blocks.JUKEBOX));
-   public static final Class4387<Class971> field21426 = method13794("dispenser", Class9785.<Class971>method38569(Class971::new, Blocks.field36457));
-   public static final Class4387<Class972> field21427 = method13794("dropper", Class9785.<Class972>method38569(Class972::new, Blocks.field36729));
+   public static final Class4387<Class971> field21426 = method13794("dispenser", Class9785.<Class971>method38569(Class971::new, Blocks.DISPENSER));
+   public static final Class4387<Class972> field21427 = method13794("dropper", Class9785.<Class972>method38569(Class972::new, Blocks.DROPPER));
    public static final Class4387<Class954> field21428 = method13794(
       "sign",
       Class9785.<Class954>method38569(
          Class954::new,
-         Blocks.field36542,
-         Blocks.field36543,
-         Blocks.field36544,
-         Blocks.field36545,
-         Blocks.field36546,
-         Blocks.field36547,
-         Blocks.field36552,
-         Blocks.field36553,
-         Blocks.field36554,
-         Blocks.field36555,
-         Blocks.field36556,
-         Blocks.field36557,
+         Blocks.OAK_SIGN,
+         Blocks.SPRUCE_SIGN,
+         Blocks.BIRCH_SIGN,
+         Blocks.ACACIA_SIGN,
+         Blocks.JUNGLE_SIGN,
+         Blocks.DARK_OAK_SIGN,
+         Blocks.OAK_WALL_SIGN,
+         Blocks.SPRUCE_WALL_SIGN,
+         Blocks.BIRCH_WALL_SIGN,
+         Blocks.ACACIA_WALL_SIGN,
+         Blocks.JUNGLE_WALL_SIGN,
+         Blocks.DARK_OAK_WALL_SIGN,
          Blocks.field37109,
          Blocks.field37111,
          Blocks.field37110,
@@ -40,11 +40,11 @@ public class Class4387<T extends Class944> {
       )
    );
    public static final Class4387<Class960> field21429 = method13794("mob_spawner", Class9785.<Class960>method38569(Class960::new, Blocks.field36532));
-   public static final Class4387<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Blocks.field36505));
+   public static final Class4387<Class955> field21430 = method13794("piston", Class9785.<Class955>method38569(Class955::new, Blocks.MOVING_PISTON));
    public static final Class4387<Class931> field21431 = method13794("brewing_stand", Class9785.<Class931>method38569(Class931::new, Blocks.field36647));
-   public static final Class4387<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.field36646));
+   public static final Class4387<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.ENCHANTING_TABLE));
    public static final Class4387<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.field36649));
-   public static final Class4387<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Blocks.field36665));
+   public static final Class4387<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Blocks.BEACON));
    public static final Class4387<Class968> field21435 = method13794(
       "skull",
       Class9785.<Class968>method38569(
@@ -107,7 +107,7 @@ public class Class4387<T extends Class944> {
    public static final Class4387<Class964> field21440 = method13794("structure_block", Class9785.<Class964>method38569(Class964::new, Blocks.field37113));
    public static final Class4387<Class957> field21441 = method13794("end_gateway", Class9785.<Class957>method38569(Class957::new, Blocks.field36886));
    public static final Class4387<Class969> field21442 = method13794(
-      "command_block", Class9785.<Class969>method38569(Class969::new, Blocks.field36664, Blocks.field36888, Blocks.field36887)
+      "command_block", Class9785.<Class969>method38569(Class969::new, Blocks.COMMAND_BLOCK, Blocks.field36888, Blocks.field36887)
    );
    public static final Class4387<Class940> field21443 = method13794(
       "shulker_box",
@@ -136,22 +136,22 @@ public class Class4387<T extends Class944> {
       "bed",
       Class9785.<Class967>method38569(
          Class967::new,
-         Blocks.field36476,
-         Blocks.field36477,
-         Blocks.field36473,
-         Blocks.field36474,
-         Blocks.field36471,
-         Blocks.field36469,
-         Blocks.field36475,
-         Blocks.field36465,
-         Blocks.field36470,
-         Blocks.field36467,
-         Blocks.field36464,
-         Blocks.field36463,
-         Blocks.field36468,
-         Blocks.field36472,
-         Blocks.field36462,
-         Blocks.field36466
+         Blocks.RED_BED,
+         Blocks.BLACK_BED,
+         Blocks.BLUE_BED,
+         Blocks.BROWN_RED,
+         Blocks.CYAN_BED,
+         Blocks.GRAY_BED,
+         Blocks.GREEN_BED,
+         Blocks.LIGHT_BLUE_BED,
+         Blocks.LIGHT_GRAY_BED,
+         Blocks.LIME_BED,
+         Blocks.MAGENTA_BED,
+         Blocks.ORANGE_BED,
+         Blocks.PINK_BED,
+         Blocks.PURPLE_BED,
+         Blocks.WHITE_BED,
+         Blocks.YELLOW_BED
       )
    );
    public static final Class4387<Class959> field21445 = method13794("conduit", Class9785.<Class959>method38569(Class959::new, Blocks.field37007));

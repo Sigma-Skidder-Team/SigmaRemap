@@ -16,7 +16,7 @@ public class Class4331 extends Class4305 {
       Class4274 var11;
       this.method13230(var11 = new Class4274(this, "openGui", var5 / 2, var6 - 80, 300, 38, var9, "Open Jello's Click GUI", ResourceRegistry.field38859));
       Class4274 var12;
-      this.method13230(var12 = new Class4274(this, "credits", var5 / 2 - 100, var6 - 280, 200, 38, var9, "Credits", ResourceRegistry.field38853));
+      this.method13230(var12 = new Class4274(this, "credits", var5 / 2 - 100, var6 - 280, 200, 38, var9, "Credits", ResourceRegistry.JelloLightFont18));
       var10.method13251((var0, var1x) -> Class4325.method13438(new Class1144(new StringTextComponent("Keybind Manager"))));
       var11.method13251((var0, var1x) -> Class4325.method13438(new Class1145(new StringTextComponent("Click GUI"))));
       var12.method13251((var0, var1x) -> Class4325.method13438(new Class1133(new StringTextComponent("GuiCredits"))));
@@ -37,8 +37,8 @@ public class Class4331 extends Class4305 {
       Client.getInstance();
       String var4 = var10000.append(Client.VERSION).toString();
       Class3192.method11439(
-         ResourceRegistry.field38854,
-         (float)(this.field20895 + (this.method13267() - ResourceRegistry.field38854.method23942(var4)) / 2),
+         ResourceRegistry.JelloLightFont20,
+         (float)(this.field20895 + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var4)) / 2),
          (float)(this.field20896 + 70),
          var4,
          Class5628.method17688(Class1979.field12896.field12910, 0.4F * var1)
@@ -47,32 +47,32 @@ public class Class4331 extends Class4305 {
          + Class5628.method17736(Client.getInstance().getModuleManager().method14668().method13728(Class1145.class))
          + " Key";
       Class3192.method11439(
-         ResourceRegistry.field38854,
-         (float)(this.method13263() + (this.method13267() - ResourceRegistry.field38854.method23942(var5)) / 2),
+         ResourceRegistry.JelloLightFont20,
+         (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var5)) / 2),
          (float)(this.method13265() + this.method13269() - 180),
          var5,
          Class5628.method17688(Class1979.field12896.field12910, 0.6F * var1)
       );
       String var6 = "Configure all your keybinds in the keybind manager!";
       Class3192.method11439(
-         ResourceRegistry.field38852,
-         (float)(this.method13263() + (this.method13267() - ResourceRegistry.field38852.method23942(var6)) / 2),
+         ResourceRegistry.JelloLightFont14,
+         (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont14.method23942(var6)) / 2),
          (float)(this.method13265() + this.method13269() - 150),
          var6,
          Class5628.method17688(Class1979.field12896.field12910, 0.4F * var1)
       );
       String var7 = "GUI Blur: ";
       Class3192.method11439(
-         ResourceRegistry.field38854,
-         (float)(this.method13263() + (this.method13267() - ResourceRegistry.field38854.method23942(var7)) / 2 - 114),
+         ResourceRegistry.JelloLightFont20,
+         (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var7)) / 2 - 114),
          (float)(this.method13265() + this.method13269() - 221),
          var7,
          Class5628.method17688(Class1979.field12896.field12910, 0.5F * var1)
       );
       String var8 = "GPU Accelerated: ";
       Class3192.method11439(
-         ResourceRegistry.field38854,
-         (float)(this.method13263() + (this.method13267() - ResourceRegistry.field38854.method23942(var8)) / 2 + 52),
+         ResourceRegistry.JelloLightFont20,
+         (float)(this.method13263() + (this.method13267() - ResourceRegistry.JelloLightFont20.method23942(var8)) / 2 + 52),
          (float)(this.method13265() + this.method13269() - 221),
          var8,
          Class5628.method17688(Class1979.field12896.field12910, 0.5F * var1)
@@ -81,9 +81,9 @@ public class Class4331 extends Class4305 {
    }
 
    private void method13463(int var1, int var2, float var3) {
-      Class3192.method11439(ResourceRegistry.field38866, (float)var1, (float)(var2 + 1), "Jello", Class5628.method17688(Class1979.field12896.field12910, var3));
+      Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", Class5628.method17688(Class1979.field12896.field12910, var3));
       Class3192.method11439(
-         ResourceRegistry.field38855, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", Class5628.method17688(Class1979.field12896.field12910, 0.86F * var3)
+         ResourceRegistry.JelloLightFont25, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", Class5628.method17688(Class1979.field12896.field12910, 0.86F * var3)
       );
    }
 }

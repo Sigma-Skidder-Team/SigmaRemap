@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.event.impl.Class4422;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
@@ -33,10 +33,10 @@ public class Class5261 extends PremiumModule {
     }
 
     @EventTarget
-    public void method16447(Class4428 var1) {
+    public void method16447(TickEvent var1) {
         if (this.method15996()) {
             if (field23663 != null && (field23663.field35732 != mc.field1283.method8041() || field23663.field35733 != mc.field1283.method8042())) {
-                this.method15966();
+                this.isInDevelopment();
             }
 
             if (this.method15974("Smart Visibility")) {
@@ -210,13 +210,13 @@ public class Class5261 extends PremiumModule {
                     mc.method1464().method29112(true);
                 }
             } else {
-                this.method15966();
+                this.isInDevelopment();
             }
         }
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         Class3192.method11469(mc.method1464());
         field23663 = new Framebuffer(mc.field1283.method8041(), mc.field1283.method8042(), true, Minecraft.field1272);
         field23663.method29115(1.0F, 1.0F, 1.0F, 1.0F);

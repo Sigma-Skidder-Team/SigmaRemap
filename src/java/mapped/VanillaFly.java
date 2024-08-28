@@ -14,18 +14,18 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class5373 extends Module {
+public class VanillaFly extends Module {
     private boolean field23995;
     private int field23996;
 
-    public Class5373() {
+    public VanillaFly() {
         super(ModuleCategory.MOVEMENT, "Vanilla", "Regular vanilla fly");
         this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
         this.method15972(new Class6004("Kick bypass", "Bypass vanilla kick for flying", true));
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (!mc.field1299.field44637.method8509()) {
             if (!mc.field1299.field44637.method8509()) {
                 this.field23995 = false;

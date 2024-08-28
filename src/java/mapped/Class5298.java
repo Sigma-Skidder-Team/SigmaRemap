@@ -44,7 +44,7 @@ public class Class5298 extends Module {
     public void method16640(Class4422 var1) {
         if (this.method15996()) {
             if (field23814 == null) {
-                this.method15966();
+                this.isInDevelopment();
             }
 
             mc.field1339.field6123 = mc.field1339.field5032;
@@ -80,7 +80,7 @@ public class Class5298 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23815 = mc.field1339.getPosX();
         this.field23816 = mc.field1339.getPosY();
         this.field23817 = mc.field1339.getPosZ();

@@ -92,9 +92,9 @@ public class Class4251 extends Class4247 {
       );
       int var6 = Class5628.method17688(Class5628.method17691(-7687425, 0.2F), 0.8F);
       var6 = Class5628.method17688(Class1979.field12891.field12910, 0.6F);
-      Class3192.method11439(ResourceRegistry.field38855, (float)(this.field20895 + 30), (float)(this.field20896 + 25), "Waypoints", var6);
+      Class3192.method11439(ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 30), (float)(this.field20896 + 25), "Waypoints", var6);
       Class3192.method11439(
-         ResourceRegistry.field38866,
+         ResourceRegistry.JelloMediumFont40,
          (float)this.field20895,
          (float)((this.field20892.method13269() - this.field20898) / 2 - 70),
          "Jello Maps",

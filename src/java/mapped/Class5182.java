@@ -19,11 +19,11 @@ public class Class5182 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         String var3 = "Error";
-        if (!this.method15978("Jargon").equals("Excuse")) {
-            if (!this.method15978("Jargon").equals("Techincal")) {
-                if (this.method15978("Jargon").equals("Audio")) {
+        if (!this.getStringSettingValueByName("Jargon").equals("Excuse")) {
+            if (!this.getStringSettingValueByName("Jargon").equals("Techincal")) {
+                if (this.getStringSettingValueByName("Jargon").equals("Audio")) {
                     var3 = this.method16130();
                 }
             } else {

@@ -11,7 +11,7 @@ public class Class3342 extends Class3198 implements Class3255 {
    private static final Predicate<Class7380> field18853 = var0 -> var0 != null
          && (var0.method23448(Blocks.field36589) || var0.method23448(Blocks.field36590));
 
-   public Class3342(Class7929 var1) {
+   public Class3342(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18848, Direction.NORTH));
    }

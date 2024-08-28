@@ -58,7 +58,7 @@ public enum Class108 implements Class83 {
          if (var0.method23448(Blocks.field36521)) {
             return field353;
          } else if (!var0.method23446(Class7645.field32734)) {
-            if (var0.method23448(Blocks.field36796)) {
+            if (var0.method23448(Blocks.PACKED_ICE)) {
                return field355;
             } else if (!var0.method23448(Blocks.field36893)) {
                if (var0.method23448(Blocks.field36522)) {
@@ -66,7 +66,7 @@ public enum Class108 implements Class83 {
                } else if (!var0.method23448(Blocks.SOUL_SAND)) {
                   if (var0.method23448(Blocks.PUMPKIN)) {
                      return field359;
-                  } else if (!var0.method23448(Blocks.field36660)) {
+                  } else if (!var0.method23448(Blocks.EMERALD_BLOCK)) {
                      if (var0.method23448(Blocks.field36777)) {
                         return field361;
                      } else if (!var0.method23448(Blocks.field36587)) {

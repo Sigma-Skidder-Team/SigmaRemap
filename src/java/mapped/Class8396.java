@@ -17,14 +17,14 @@ public class Class8396 {
                ? Class8527.method30242(var1, var0.method23463(Class3456.field19276) != Class84.field209 ? var2x : var2x.method8313())
                : -1,
          Blocks.field36802,
-         Blocks.field36801
+         Blocks.TALL_GRASS
       );
-      var2.method29468(Class3456.field19276, Blocks.field36802, Blocks.field36801);
+      var2.method29468(Class3456.field19276, Blocks.field36802, Blocks.TALL_GRASS);
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30242(var1, var2x) : Class6406.method19509(0.5, 1.0),
          Blocks.field36395,
-         Blocks.field36483,
-         Blocks.field36482,
+         Blocks.FERN,
+         Blocks.GRASS,
          Blocks.field36675
       );
       var2.method29466((var0, var1, var2x, var3) -> Class9441.method36293(), Blocks.field36447);
@@ -35,7 +35,7 @@ public class Class8396 {
          Blocks.field36449,
          Blocks.field36450,
          Blocks.field36451,
-         Blocks.field36636
+         Blocks.VINE
       );
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30244(var1, var2x) : -1,
@@ -43,19 +43,19 @@ public class Class8396 {
          Blocks.field37013,
          Blocks.field36648
       );
-      var2.method29466((var0, var1, var2x, var3) -> Class3222.method11629(var0.<Integer>method23463(Class3222.field18651)), Blocks.field36535);
-      var2.method29468(Class3222.field18651, Blocks.field36535);
+      var2.method29466((var0, var1, var2x, var3) -> Class3222.method11629(var0.<Integer>method23463(Class3222.field18651)), Blocks.REDSTONE_WIRE);
+      var2.method29468(Class3222.field18651, Blocks.REDSTONE_WIRE);
       var2.method29466((var0, var1, var2x, var3) -> var1 != null && var2x != null ? Class8527.method30242(var1, var2x) : -1, Blocks.SUGAR_CANE);
-      var2.method29466((var0, var1, var2x, var3) -> 14731036, Blocks.field36633, Blocks.field36632);
+      var2.method29466((var0, var1, var2x, var3) -> 14731036, Blocks.ATTACHED_MELON_STEM, Blocks.ATTACHED_PUMPKIN_STEM);
       var2.method29466((var0, var1, var2x, var3) -> {
          int var6 = var0.<Integer>method23463(Class3486.field19347);
          int var7 = var6 * 32;
          int var8 = 255 - var6 * 8;
          int var9 = var6 * 4;
          return var7 << 16 | var8 << 8 | var9;
-      }, Blocks.field36635, Blocks.field36634);
-      var2.method29468(Class3486.field19347, Blocks.field36635, Blocks.field36634);
-      var2.method29466((var0, var1, var2x, var3) -> var1 != null && var2x != null ? 2129968 : 7455580, Blocks.field36641);
+      }, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
+      var2.method29468(Class3486.field19347, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
+      var2.method29466((var0, var1, var2x, var3) -> var1 != null && var2x != null ? 2129968 : 7455580, Blocks.LILY_PAD);
       return var2;
    }
 

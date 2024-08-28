@@ -26,7 +26,7 @@ public class Class6814 {
    }
 
    public boolean method20764(Class7286 var1) {
-      if (Client.getInstance().method19954() == ClientMode.CLASSIC && var1.field31263.equals("Classic")) {
+      if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && var1.field31263.equals("Classic")) {
          return false;
       } else if (this.field29667.size() <= 1) {
          return false;
@@ -133,7 +133,7 @@ public class Class6814 {
    public void method20771(Class7286 var1) {
       Client.getInstance().method19924();
       Class1537.field8343 = new HashMap<Object, Integer>();
-      if (Client.getInstance().method19954() != ClientMode.CLASSIC) {
+      if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
          this.field29668.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
          this.field29668 = var1;
          Client.getInstance().getConfig().method21806("profile", var1.field31263);

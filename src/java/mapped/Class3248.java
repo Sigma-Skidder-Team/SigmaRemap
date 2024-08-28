@@ -7,7 +7,7 @@ public class Class3248 extends Class3247 {
    public static final Class8551 field18710 = Class8820.field39700;
    public static final Class8554 field18711 = Class8820.field39746;
 
-   public Class3248(Class7929 var1) {
+   public Class3248(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

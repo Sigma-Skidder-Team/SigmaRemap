@@ -13,7 +13,7 @@ public class Class3368 extends Class3241 {
    public static final ResourceLocation field18940 = new ResourceLocation("contents");
    private final Class112 field18941;
 
-   public Class3368(Class112 var1, Class7929 var2) {
+   public Class3368(Class112 var1, AbstractBlock var2) {
       super(var2);
       this.field18941 = var1;
       this.method11578(this.field18612.method35393().method23465(field18939, Direction.field673));

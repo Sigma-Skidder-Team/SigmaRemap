@@ -42,22 +42,22 @@ public class Class5156 extends Module {
                     Block var9 = mc.field1338.method6738(var8).method23383();
                     ArrayList var10 = new ArrayList<Block>(
                             Arrays.asList(
-                                    Blocks.field36534,
-                                    Blocks.field36657,
-                                    Blocks.field36716,
-                                    Blocks.field36538,
-                                    Blocks.field36665,
-                                    Blocks.field36541,
+                                    Blocks.CHEST,
+                                    Blocks.ENDER_CHEST,
+                                    Blocks.TRAPPED_CHEST,
+                                    Blocks.CRAFTING_TABLE,
+                                    Blocks.BEACON,
+                                    Blocks.FURNACE,
                                     Blocks.field37057,
-                                    Blocks.field36646,
-                                    Blocks.field36713,
+                                    Blocks.ENCHANTING_TABLE,
+                                    Blocks.ANVIL,
                                     Blocks.field36714,
                                     Blocks.field36715,
-                                    Blocks.field36457,
-                                    Blocks.field36461,
-                                    Blocks.field36558,
+                                    Blocks.DISPENSER,
+                                    Blocks.NOTE_BLOCK,
+                                    Blocks.LEVER,
                                     Blocks.field36723,
-                                    Blocks.field36729,
+                                    Blocks.DROPPER,
                                     Blocks.field36592,
                                     Blocks.field36719
                             )
@@ -66,7 +66,7 @@ public class Class5156 extends Module {
                             || var9 instanceof Class3204
                             || var9 instanceof Class3203
                             || var9 instanceof Class3199
-                            || var9 instanceof Class3461 && var9 != Blocks.field36560) {
+                            || var9 instanceof Class3461 && var9 != Blocks.IRON_DOOR) {
                         var6 = false;
                     }
                 }
@@ -121,7 +121,7 @@ public class Class5156 extends Module {
             } else if (var1.method13927() != Class2205.field14417 || !field23408) {
                 if (field23408 && var1.method13926()) {
                     var1.method13900(true);
-                    String var5 = this.method15978("Animation");
+                    String var5 = this.getStringSettingValueByName("Animation");
                     switch (var5) {
                         case "Vanilla":
                             this.method16026(0.0F, var4, var1.method13929());

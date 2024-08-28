@@ -317,7 +317,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    }
 
    private String method1455() {
-      StringBuilder var1 = new StringBuilder(Client.getInstance().method19954() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
+      StringBuilder var1 = new StringBuilder(Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
       var1.append(" ");
       var1.append(Class9246.method34773().getName());
       ClientPlayNetHandler var2 = this.getClientPlayNetHandler();

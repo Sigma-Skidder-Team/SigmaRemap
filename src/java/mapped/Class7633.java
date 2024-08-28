@@ -362,7 +362,7 @@ public abstract class Class7633 extends Class7631 {
       if (!(var7 instanceof Class3449)) {
          if (!(var7 instanceof Class3461)
             && !var7.method11540(Class7645.field32790)
-            && var7 != Blocks.field36549
+            && var7 != Blocks.LADDER
             && var7 != Blocks.SUGAR_CANE
             && var7 != Blocks.field37013) {
             Class8649 var8 = var3.method23384();

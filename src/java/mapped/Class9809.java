@@ -75,9 +75,9 @@ public class Class9809 {
             if (!(var14 instanceof Class3359)) {
                if (!(var14 instanceof Class3250)) {
                   if (var14 != Blocks.field37007) {
-                     if (var14 != Blocks.field36534) {
-                        if (var14 != Blocks.field36657) {
-                           if (var14 != Blocks.field36716) {
+                     if (var14 != Blocks.CHEST) {
+                        if (var14 != Blocks.ENDER_CHEST) {
+                           if (var14 != Blocks.TRAPPED_CHEST) {
                               if (!(var14 instanceof Class3368)) {
                                  return;
                               }

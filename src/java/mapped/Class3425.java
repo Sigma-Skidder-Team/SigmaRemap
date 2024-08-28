@@ -18,7 +18,7 @@ public class Class3425 extends Block {
    public static final Class6408 field19172 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    private final Class3459 field19173;
 
-   public Class3425(Class3459 var1, Class7929 var2) {
+   public Class3425(Class3459 var1, AbstractBlock var2) {
       super(var2);
       this.method11578(
          this.field18612

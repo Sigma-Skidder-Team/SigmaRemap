@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class3438 extends Block {
    private static final ITextComponent field19237 = new TranslationTextComponent("container.crafting");
 
-   public Class3438(Class7929 var1) {
+   public Class3438(AbstractBlock var1) {
       super(var1);
    }
 

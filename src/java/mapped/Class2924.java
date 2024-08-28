@@ -7,7 +7,7 @@ import java.util.Random;
 public class Class2924 extends Class2898<Class4712> {
    private static final Class166 field17998 = Class166.method497(Blocks.SAND);
    private final Class7380 field17999 = Blocks.field36847.method11579();
-   private final Class7380 field18000 = Blocks.field36458.method11579();
+   private final Class7380 field18000 = Blocks.SANDSTONE.method11579();
    private final Class7380 field18001 = Blocks.WATER.method11579();
 
    public Class2924(Codec<Class4712> var1) {

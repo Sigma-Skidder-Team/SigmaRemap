@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -14,7 +14,7 @@ public class Class5194 extends Module {
     }
 
     @EventTarget
-    private void method16175(Class4428 var1) {
+    private void method16175(TickEvent var1) {
         this.method16177();
     }
 

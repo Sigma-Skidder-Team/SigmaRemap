@@ -63,7 +63,7 @@ public class Class5365 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23972 = mc.field1339.field4902.field5443;
         this.field23970 = this.field23969 = 999.0F;
         ((BlockFly) this.method16004()).field23884 = -1;
@@ -78,7 +78,7 @@ public class Class5365 extends Module {
 
     @Override
     public void method15965() {
-        if (this.field23972 != -1 && this.method16004().method15978("ItemSpoof").equals("Switch")) {
+        if (this.field23972 != -1 && this.method16004().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
             mc.field1339.field4902.field5443 = this.field23972;
         }
 
@@ -90,7 +90,7 @@ public class Class5365 extends Module {
 
         Class9567.method37090(Class9567.method37075() * 0.9);
         mc.field1284.field40360 = 1.0F;
-        if (this.method15978("Speed Mode").equals("Cubecraft") && this.field23974 == 0) {
+        if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23974 == 0) {
             Class5628.method17725(-0.0789);
         }
     }
@@ -98,7 +98,7 @@ public class Class5365 extends Module {
     @EventTarget
     public void method16885(Class4417 var1) {
         if (this.method15996()) {
-            if (this.method15978("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                 if (mc.field1338
                         .method7055(
                                 mc.field1339,
@@ -135,7 +135,7 @@ public class Class5365 extends Module {
                         }
 
                         int var14 = mc.field1339.field4902.field5443;
-                        if (!this.method16004().method15978("ItemSpoof").equals("None")) {
+                        if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
                             this.field23976.method16734();
                         }
 
@@ -150,7 +150,7 @@ public class Class5365 extends Module {
                             mc.getClientPlayNetHandler().sendPacket(new Class5511(this.field23975));
                         }
 
-                        if (this.method16004().method15978("ItemSpoof").equals("Spoof") || this.method16004().method15978("ItemSpoof").equals("LiteSpoof")) {
+                        if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
                             mc.field1339.field4902.field5443 = var14;
                         }
                     }
@@ -181,7 +181,7 @@ public class Class5365 extends Module {
                         && mc.field1339.field5045 > 1.0F
                         && Class9217.method34567(0.0F, 90.0F, 3.0F).method31417() == Class2100.field13689) {
                     var8 += Math.min(mc.field1339.method3433().field18049 * 2.0, 4.0);
-                } else if ((this.method15978("Speed Mode").equals("Jump") || this.method15978("Speed Mode").equals("Cubecraft"))
+                } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                         && !mc.field1299.field44636.method8509()) {
                     var8 = this.field23979;
                 }
@@ -244,7 +244,7 @@ public class Class5365 extends Module {
                 this.field23976 = (BlockFly) this.method16004();
             }
 
-            String var4 = this.method15978("Speed Mode");
+            String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
                     if (mc.field1339.field5036 && Class5628.method17686() && !mc.field1339.method3331() && !this.field23977) {
@@ -342,7 +342,7 @@ public class Class5365 extends Module {
     @EventTarget
     public void method16889(Class4436 var1) {
         if (this.method15996() && this.field23978) {
-            if (this.method16004().method15978("Tower Mode").equalsIgnoreCase("Vanilla")
+            if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
                     && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
                 var1.method13900(true);
             }
@@ -351,7 +351,7 @@ public class Class5365 extends Module {
 
     @EventTarget
     public void method16890(Class4422 var1) {
-        if (this.method15996() && this.method15978("Speed Mode").equals("Cubecraft") && this.field23974 >= 0) {
+        if (this.method15996() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23974 >= 0) {
             if (!(mc.field1339.field5045 > 1.2F)) {
                 if (!(mc.field1339.field4915 < this.field23979)) {
                     if (!mc.field1339.field4981) {

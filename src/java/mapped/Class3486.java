@@ -18,7 +18,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    };
    private final Class3462 field19349;
 
-   public Class3486(Class3462 var1, Class7929 var2) {
+   public Class3486(Class3462 var1, AbstractBlock var2) {
       super(var2);
       this.field19349 = var1;
       this.method11578(this.field18612.method35393().method23465(field19347, Integer.valueOf(0)));
@@ -31,7 +31,7 @@ public class Class3486 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23448(Blocks.field36540);
+      return var1.method23448(Blocks.FARMLAND);
    }
 
    @Override
@@ -46,7 +46,7 @@ public class Class3486 extends Class3194 implements Class3196 {
                Class7380 var11 = var2.method6738(var10.method8313());
                if (var2.method6738(var10).method23393()
                   && (
-                     var11.method23448(Blocks.field36540)
+                     var11.method23448(Blocks.FARMLAND)
                         || var11.method23448(Blocks.field36396)
                         || var11.method23448(Blocks.field36397)
                         || var11.method23448(Blocks.field36398)
@@ -66,7 +66,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    @Nullable
    public Class3257 method12184() {
       if (this.field19349 != Blocks.PUMPKIN) {
-         return this.field19349 != Blocks.field36631 ? null : Class8514.field37960;
+         return this.field19349 != Blocks.MELON ? null : Class8514.field37960;
       } else {
          return Class8514.field37959;
       }

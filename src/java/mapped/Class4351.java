@@ -64,8 +64,8 @@ public class Class4351 extends Class4278 {
             }
          }
       });
-      var13.method13306(ResourceRegistry.field38853);
-      var14.method13306(ResourceRegistry.field38853);
+      var13.method13306(ResourceRegistry.JelloLightFont18);
+      var14.method13306(ResourceRegistry.JelloLightFont18);
       var13.method13261((var0, var1x) -> var0.method13268(Math.round((float)var1x.method13267() / 2.0F)));
       var14.method13261((var0, var1x) -> {
          var0.method13264(Math.round((float)var1x.method13267() / 2.0F));

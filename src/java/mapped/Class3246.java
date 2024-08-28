@@ -8,7 +8,7 @@ public class Class3246 extends Class3247 implements Class3245 {
    private static String[] field18705;
    public static final Class8552<Class105> field18706 = Class8820.field39766;
 
-   public Class3246(Class7929 var1) {
+   public Class3246(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

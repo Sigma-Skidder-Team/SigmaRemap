@@ -14,7 +14,7 @@ public class Class5387 extends Module {
    }
 
    @Override
-   public void method15966() {
+   public void isInDevelopment() {
    }
 
    @Override

@@ -19,7 +19,7 @@ public class Class3362 extends Class3241 {
    private static final Class6408 field18927 = Class8022.method27431(Class937.field5296, Block.method11539(6.0, 8.0, 12.0, 10.0, 10.0, 16.0));
    private static final Class6408 field18928 = Class8022.method27431(Class937.field5296, Block.method11539(0.0, 8.0, 6.0, 4.0, 10.0, 10.0));
 
-   public Class3362(Class7929 var1) {
+   public Class3362(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18913, Direction.field672).method23465(field18914, Boolean.valueOf(true)));
    }

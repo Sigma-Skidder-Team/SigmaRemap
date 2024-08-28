@@ -23,7 +23,7 @@ public class Class5317 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         field23862 = 0;
     }
 

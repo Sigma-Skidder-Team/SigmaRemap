@@ -9,7 +9,7 @@ public class Class3208 extends Block implements Class3207 {
    public static final Class6408 field18607 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    public static final Class6408 field18608 = Block.method11539(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
 
-   public Class3208(Class7929 var1) {
+   public Class3208(AbstractBlock var1) {
       super(var1);
       this.method11578(this.method11579().method23465(field18605, Class86.field219).method23465(field18606, Boolean.valueOf(false)));
    }

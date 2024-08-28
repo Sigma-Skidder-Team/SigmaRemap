@@ -29,7 +29,7 @@ public class Class835 extends Class834 {
 
    @Override
    public void method1921() {
-      if (Client.getInstance().method19954() == ClientMode.JELLO) {
+      if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
          this.method2455(
             new Class1206(
                this.field4564 / 2 - 102,

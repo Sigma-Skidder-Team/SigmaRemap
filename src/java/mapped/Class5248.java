@@ -21,7 +21,7 @@ public class Class5248 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23618 = 0;
         this.field23620 = -1.0;
     }
@@ -40,7 +40,7 @@ public class Class5248 extends Module {
         if (this.method15996()
                 && !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()
                 && !Class5628.method17684(mc.field1339)) {
-            String var4 = this.method15978("Mode");
+            String var4 = this.getStringSettingValueByName("Mode");
             switch (var4) {
                 case "Basic":
                     this.field23618++;
@@ -129,7 +129,7 @@ public class Class5248 extends Module {
 
     @EventTarget
     public void method16362(Class4422 var1) {
-        if (this.method15996() && !(this.field23620 < 0.0) && this.method15978("Mode").equals("YPort")) {
+        if (this.method15996() && !(this.field23620 < 0.0) && this.getStringSettingValueByName("Mode").equals("YPort")) {
             if (mc.field1339.field5036 && Class5628.method17730(mc.field1339, 0.001F)) {
                 this.field23620 = mc.field1339.getPosY();
             }

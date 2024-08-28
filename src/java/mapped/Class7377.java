@@ -28,20 +28,20 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
 
    public Class7377(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7380> var3) {
       super(var1, var2, var3);
-      Class7929 var6 = var1.field19013;
-      this.field31564 = Class7929.method26654(var6).applyAsInt(this.method23457());
+      AbstractBlock var6 = var1.field19013;
+      this.field31564 = AbstractBlock.method26654(var6).applyAsInt(this.method23457());
       this.field31565 = var1.method11534(this.method23457());
-      this.field31566 = Class7929.method26655(var6);
-      this.field31567 = Class7929.method26643(var6);
-      this.field31568 = (Class7210)Class7929.method26653(var6).apply(this.method23457());
-      this.field31569 = Class7929.method26656(var6);
-      this.field31570 = Class7929.method26657(var6);
-      this.field31571 = Class7929.method26658(var6);
-      this.field31572 = Class7929.method26659(var6);
-      this.field31573 = Class7929.method26660(var6);
-      this.field31574 = Class7929.method26661(var6);
-      this.field31575 = Class7929.method26662(var6);
-      this.field31576 = Class7929.method26663(var6);
+      this.field31566 = AbstractBlock.method26655(var6);
+      this.field31567 = AbstractBlock.method26643(var6);
+      this.field31568 = (Class7210) AbstractBlock.method26653(var6).apply(this.method23457());
+      this.field31569 = AbstractBlock.method26656(var6);
+      this.field31570 = AbstractBlock.method26657(var6);
+      this.field31571 = AbstractBlock.method26658(var6);
+      this.field31572 = AbstractBlock.method26659(var6);
+      this.field31573 = AbstractBlock.method26660(var6);
+      this.field31574 = AbstractBlock.method26661(var6);
+      this.field31575 = AbstractBlock.method26662(var6);
+      this.field31576 = AbstractBlock.method26663(var6);
    }
 
    public void method23382() {
@@ -59,7 +59,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public boolean method23385(Class1665 var1, BlockPos var2, Class8992<?> var3) {
-      return Class7929.method26664(this.method23383().field19013).method38752(this.method23457(), var1, var2, var3);
+      return AbstractBlock.method26664(this.method23383().field19013).method38752(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23386(Class1665 var1, BlockPos var2) {

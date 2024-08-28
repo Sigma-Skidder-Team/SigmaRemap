@@ -66,7 +66,7 @@ public class Class4185 extends Class4180 {
       if (this.field20471.equals(Class3191.method11410())) {
          BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
          Class7380 var17 = var1.method6738(var16.method8313());
-         if (!var17.method23393() && !var17.method23448(Blocks.field36549)) {
+         if (!var17.method23393() && !var17.method23448(Blocks.LADDER)) {
             var1.method6725(var16, Blocks.SNOW_BLOCK.method11579(), 3);
          }
       }

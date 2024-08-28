@@ -28,7 +28,7 @@ public class Class8795 {
       this.field39614 = -999.0F;
       this.field39615 = -999.0F;
       Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(false);
-      Client.getInstance().getModuleManager().method14662(Class5333.class).setState(false);
+      Client.getInstance().getModuleManager().method14662(Fly.class).setState(false);
    }
 
    public void method31739(List<Class9510> var1) {
@@ -212,16 +212,16 @@ public class Class8795 {
             }
 
             this.field39612.field1339.field5031 = var37;
-            if (var36 && !this.field39612.field1339.field5036 && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+            if (var36 && !this.field39612.field1339.field5036 && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                Class5628.method17724(0.0);
                Class5628.method17726(0.0);
             } else {
-               if (Client.getInstance().getModuleManager().method14662(Class5333.class).method15996() && !Class5628.method17730(this.field39612.field1339, 5.0F)) {
+               if (Client.getInstance().getModuleManager().method14662(Fly.class).method15996() && !Class5628.method17730(this.field39612.field1339, 5.0F)) {
                   var36 = true;
                }
 
                Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(var35);
-               Client.getInstance().getModuleManager().method14662(Class5333.class).setState(var36);
+               Client.getInstance().getModuleManager().method14662(Fly.class).setState(var36);
                if (!var17 || !var16) {
                   if (var8.field44271.method33972().method11341(this.field39612.field1339.method3431()) > 10.0) {
                      this.method31738();
@@ -415,7 +415,7 @@ public class Class8795 {
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glRotatef(this.field39612.field1295.method768().method37507(), 0.0F, -1.0F, 0.0F);
       GL11.glRotatef(this.field39612.field1295.method768().method37506(), 1.0F, 0.0F, 0.0F);
-      ClientResource var10 = ResourceRegistry.field38855;
+      ClientResource var10 = ResourceRegistry.JelloLightFont25;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
       Class3192.method11426(

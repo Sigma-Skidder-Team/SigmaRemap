@@ -114,7 +114,7 @@ public class Class3475 extends Block implements Class3476 {
       field19327.put(var1.method11581(), var0);
    }
 
-   public Class3475(Class7929 var1) {
+   public Class3475(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19326, Integer.valueOf(0)));
    }

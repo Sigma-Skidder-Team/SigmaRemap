@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -78,7 +78,7 @@ public class Class5274 extends Module {
     }
 
     @EventTarget
-    private void method16500(Class4428 var1) {
+    private void method16500(TickEvent var1) {
         if (this.method15996() && mc.field1339 != null && mc.field1338 != null) {
             this.field23707++;
             if ((double) field23708 < mc.field1339.getPosY() && mc.field1339.field5036) {
@@ -152,7 +152,7 @@ public class Class5274 extends Module {
                         this.field23712 = var1.method13960();
                         if (var4 != null) {
                             String var5 = "^";
-                            ClientResource var6 = ResourceRegistry.field38864;
+                            ClientResource var6 = ResourceRegistry.JelloMediumFont20;
                             float var7 = 1.5F;
                             Class3192.method11424((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, -7687425);
                             GL11.glPushMatrix();

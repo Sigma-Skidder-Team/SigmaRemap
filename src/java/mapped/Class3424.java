@@ -6,7 +6,7 @@ public class Class3424 extends Block implements Class3196 {
    private static String[] field19160;
    public static final Class6408 field19161 = Block.method11539(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
 
-   public Class3424(Class7929 var1) {
+   public Class3424(AbstractBlock var1) {
       super(var1);
    }
 

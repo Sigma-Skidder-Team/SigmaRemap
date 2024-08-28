@@ -15,7 +15,7 @@ public class Class5191 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23498 = mc.field1339.getPosY();
         this.field23497 = 10;
         mc.field1284.field40360 = 0.6F;

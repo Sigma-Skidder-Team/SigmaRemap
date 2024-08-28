@@ -100,7 +100,7 @@ public class ViaVersionLoader {
 
    @EventTarget
    @HigestPriority
-   public void method23347(Class4428 var1) {
+   public void method23347(TickEvent var1) {
       if (this.method23351()) {
          int var4 = field31493.size();
 

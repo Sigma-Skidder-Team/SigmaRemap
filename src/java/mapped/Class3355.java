@@ -9,7 +9,7 @@ public class Class3355 extends Class3241 {
    public static final Class8553 field18893 = Class3433.field19198;
    public static final Class8551 field18894 = Class8820.field39684;
 
-   public Class3355(Class7929 var1) {
+   public Class3355(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18893, Direction.NORTH).method23465(field18894, Boolean.valueOf(false)));
    }

@@ -46,7 +46,7 @@ public class Class4187 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if (var1.startsWith("Chest")) {
          Class80 var8 = this.field20454.method36437();
-         Class7380 var9 = Blocks.field36534.method11579();
+         Class7380 var9 = Blocks.CHEST.method11579();
          if ("ChestWest".equals(var1)) {
             var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.WEST));
          } else if ("ChestEast".equals(var1)) {

@@ -21,7 +21,7 @@ public class Class3375 extends Class3373 {
       )
    );
 
-   public Class3375(Class7929 var1, Class9673 var2) {
+   public Class3375(AbstractBlock var1, Class9673 var2) {
       super(var1, var2);
       this.method11578(this.field18612.method35393().method23465(field18972, Direction.NORTH).method23465(field18966, Boolean.valueOf(false)));
    }

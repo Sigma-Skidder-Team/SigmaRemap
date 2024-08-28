@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.util.timer.Timer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class5222 extends Module {
+public class HypixelFly extends Module {
     private short field23559;
     private double field23560;
     private float field23561;
@@ -21,7 +21,7 @@ public class Class5222 extends Module {
     private Timer field23564;
     private List<Short> field23565 = new ArrayList<Short>();
 
-    public Class5222() {
+    public HypixelFly() {
         super(ModuleCategory.MOVEMENT, "Hypixel", "Fly for Hypixel");
         this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method18631("Fast"));
         this.method15972(new Class6009<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
@@ -31,8 +31,8 @@ public class Class5222 extends Module {
     }
 
     @Override
-    public void method15966() {
-        String var3 = this.method15978("Mode");
+    public void isInDevelopment() {
+        String var3 = this.getStringSettingValueByName("Mode");
         this.field23561 = 1.0F;
         this.field23563 = -1;
         if (mc.field1339.field5036 || Class5628.method17730(mc.field1339, 0.001F)) {
@@ -109,7 +109,7 @@ public class Class5222 extends Module {
 
     @EventTarget
     @Class5631
-    public void method16260(Class4428 var1) {
+    public void method16260(TickEvent var1) {
     }
 
     @EventTarget
@@ -128,7 +128,7 @@ public class Class5222 extends Module {
 
     @EventTarget
     public void method16262(Class4435 var1) {
-        String var4 = this.method15978("Mode");
+        String var4 = this.getStringSettingValueByName("Mode");
         float var5 = this.method15977("Timer Boost");
         this.field23561 = (float) ((double) this.field23561 - 0.01);
         if (this.field23561 < var5 - this.method15977("Timer Duration") || this.field23561 < 1.0F) {

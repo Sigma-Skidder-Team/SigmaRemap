@@ -26,25 +26,25 @@ public enum Class2230 implements Class2234 {
       Blocks.field36958,
       Blocks.field36959,
       Blocks.field36960,
-      Blocks.field36713,
+      Blocks.ANVIL,
       Blocks.field36714,
       Blocks.field36715,
       Blocks.field36652,
       Blocks.GRAVEL,
       Blocks.SAND,
       Blocks.RED_SAND,
-      Blocks.field36542,
-      Blocks.field36543,
-      Blocks.field36544,
-      Blocks.field36545,
-      Blocks.field36546,
-      Blocks.field36547,
-      Blocks.field36552,
-      Blocks.field36553,
-      Blocks.field36554,
-      Blocks.field36555,
-      Blocks.field36556,
-      Blocks.field36557
+      Blocks.OAK_SIGN,
+      Blocks.SPRUCE_SIGN,
+      Blocks.BIRCH_SIGN,
+      Blocks.ACACIA_SIGN,
+      Blocks.JUNGLE_SIGN,
+      Blocks.DARK_OAK_SIGN,
+      Blocks.OAK_WALL_SIGN,
+      Blocks.SPRUCE_WALL_SIGN,
+      Blocks.BIRCH_WALL_SIGN,
+      Blocks.ACACIA_WALL_SIGN,
+      Blocks.JUNGLE_WALL_SIGN,
+      Blocks.DARK_OAK_WALL_SIGN
    ) {
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
@@ -57,7 +57,7 @@ public enum Class2230 implements Class2234 {
          return var1.method23439(var2, var4.method6738(var6), var4, var5, var6);
       }
    },
-   field14620(Blocks.field36534, Blocks.field36716) {
+   field14620(Blocks.CHEST, Blocks.TRAPPED_CHEST) {
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var3.method23448(var1.method23383())
@@ -135,7 +135,7 @@ public enum Class2230 implements Class2234 {
          var5.clear();
       }
    },
-   field14622(Blocks.field36635, Blocks.field36634) {
+   field14622(Blocks.MELON_STEM, Blocks.PUMPKIN_STEM) {
       @Override
       public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var1.method23463(Class3486.field19347) == 7) {

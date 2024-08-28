@@ -37,7 +37,7 @@ public class Class5325 extends Module {
         this.method16725();
 
         for (Module var6 : this.field23878) {
-            boolean var7 = this.method15978("Type").equals(var6.name);
+            boolean var7 = this.getStringSettingValueByName("Type").equals(var6.name);
             if (this.method15996() && mc.field1339 != null) {
                 var6.setState(var7);
                 if (var7) {
@@ -55,7 +55,7 @@ public class Class5325 extends Module {
         boolean var3 = false;
 
         for (Module var7 : this.field23878) {
-            if (this.method15978("Type").equals(var7.name)) {
+            if (this.getStringSettingValueByName("Type").equals(var7.name)) {
                 var3 = true;
             }
         }
@@ -69,7 +69,7 @@ public class Class5325 extends Module {
         this.method16725();
 
         for (Module var6 : this.field23878) {
-            if (this.method15978("Type").equals(var6.name)) {
+            if (this.getStringSettingValueByName("Type").equals(var6.name)) {
                 return var6;
             }
         }
@@ -145,7 +145,7 @@ public class Class5325 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.method16724();
         if (this.field23879 instanceof PremiumModule && !Client.getInstance().getNetworkManager().isPremium()) {
             this.method15998(false);

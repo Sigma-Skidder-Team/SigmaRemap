@@ -37,7 +37,7 @@ public class Class3354 extends Class3241 {
       field18885
    );
 
-   public Class3354(Class7929 var1) {
+   public Class3354(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

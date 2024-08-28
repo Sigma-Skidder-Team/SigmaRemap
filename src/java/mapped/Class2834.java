@@ -45,7 +45,7 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
-                  .method18291(Class4695.method14724(Blocks.field36641).method18299(17))
+                  .method18291(Class4695.method14724(Blocks.LILY_PAD).method18299(17))
                   .method18291(Class4695.method14724(Class8514.field37847).method18299(10).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))
                   .method18291(Class4695.method14724(Class8514.field37890).method18299(10))
                   .method18291(Class4695.method14724(Class8514.field37935).method18299(10))
@@ -59,7 +59,7 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Class8514.field37836).method18299(10))
                   .method18291(Class4695.method14724(Class8514.field37835).method18299(5))
                   .method18291(Class4695.method14724(Class8514.field37915).method18299(1).method18296(Class140.method420(Class6871.method20919(10))))
-                  .method18291(Class4695.method14724(Blocks.field36658).method18299(10))
+                  .method18291(Class4695.method14724(Blocks.TRIPWIRE_HOOK).method18299(10))
                   .method18291(Class4695.method14724(Class8514.field37965).method18299(10))
                   .method18291(
                      Class4695.method14724(Blocks.field37009)

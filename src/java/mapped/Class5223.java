@@ -140,7 +140,7 @@ public class Class5223 extends Module {
                             mc.field1339.method3276((double) var8.method8304() + 0.5, (double) var8.getY() + 0.5, (double) var8.method8306() + 0.5)
                     )
                             < (double) var1) {
-                        String var9 = this.method15978("Mode");
+                        String var9 = this.getStringSettingValueByName("Mode");
                         switch (var9) {
                             case "One hit":
                                 if (!this.method16266(var8)) {

@@ -20,7 +20,7 @@ public class Class5225 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23570 = false;
         this.field23569 = -10.0;
         if (!mc.field1299.field44637.method8509()) {

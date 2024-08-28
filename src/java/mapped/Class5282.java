@@ -127,7 +127,7 @@ public class Class5282 extends Module {
             }
         }
 
-        String var8 = this.method15978("Sort mode");
+        String var8 = this.getStringSettingValueByName("Sort mode");
         switch (var8) {
             case "Range":
                 Collections.sort(var4, new Class3610(this));

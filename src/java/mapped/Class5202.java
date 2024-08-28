@@ -18,7 +18,7 @@ public class Class5202 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23517 = 0;
     }
 
@@ -27,7 +27,7 @@ public class Class5202 extends Module {
         if (this.method15996() && mc.field1339 != null && var1.method13921() && mc.method1528() != null) {
             this.field23517++;
             double var4 = -4.503599627370497E15;
-            String var6 = this.method15978("Mode");
+            String var6 = this.getStringSettingValueByName("Mode");
             switch (var6) {
                 case "Basic1":
                     var4 = mc.field1339.getPosY() - 20.0;

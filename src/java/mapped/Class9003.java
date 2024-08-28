@@ -13,7 +13,7 @@ public class Class9003 {
          Class8514.field37847,
          Class8514.field38086
       );
-      var3.method33259((var0x, var1) -> Class6406.method19509(0.5, 1.0), Blocks.field36801, Blocks.field36802);
+      var3.method33259((var0x, var1) -> Class6406.method19509(0.5, 1.0), Blocks.TALL_GRASS, Blocks.field36802);
       var3.method33259((var0x, var1) -> {
          if (var1 != 1) {
             return -1;
@@ -56,16 +56,16 @@ public class Class9003 {
             return var0.method29465(var5x, (Class1663)null, (BlockPos)null, var2);
          },
          Blocks.field36395,
-         Blocks.field36482,
-         Blocks.field36483,
-         Blocks.field36636,
+         Blocks.GRASS,
+         Blocks.FERN,
+         Blocks.VINE,
          Blocks.field36446,
          Blocks.field36447,
          Blocks.field36448,
          Blocks.field36449,
          Blocks.field36450,
          Blocks.field36451,
-         Blocks.field36641
+         Blocks.LILY_PAD
       );
       var3.method33259((var0x, var1) -> var1 != 0 ? -1 : Class9741.method38182(var0x), Class8514.field38117);
       var3.method33259((var0x, var1) -> var1 != 0 ? Class3316.method11871(var0x) : -1, Class8514.field37955);

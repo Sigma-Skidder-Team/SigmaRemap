@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.FileUtil;
@@ -135,7 +135,7 @@ public class Class4378 {
    }
 
    @EventTarget
-   public void method13734(Class4428 var1) {
+   public void method13734(TickEvent var1) {
       if (Minecraft.getInstance().field1338 == null && this.field21388) {
          this.method13738();
       } else if (Minecraft.getInstance().field1338 != null && !this.field21388) {
@@ -145,7 +145,7 @@ public class Class4378 {
 
    public boolean method13735() {
       return Minecraft.field1272
-         && Client.getInstance().method19954() == ClientMode.JELLO
+         && Client.getInstance().getClientMode() == ClientMode.JELLO
          && (
             System.getProperty("os.version").startsWith("10.14")
                || System.getProperty("os.version").startsWith("10.15")

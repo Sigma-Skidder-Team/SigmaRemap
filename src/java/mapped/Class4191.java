@@ -225,7 +225,7 @@ public class Class4191 extends Class4188 {
    public boolean method12933(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
       if (var2.method38396(var10) && var1.method6738(var10).method23393() && !var1.method6738(var10.method8313()).method23393()) {
-         Class7380 var11 = Blocks.field36550.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
+         Class7380 var11 = Blocks.RAIL.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
          this.method12923(var1, var11, var4, var5, var6, var2);
          Class991 var12 = new Class991(var1.method6970(), (double)var10.method8304() + 0.5, (double)var10.getY() + 0.5, (double)var10.method8306() + 0.5);
          var12.method3626(var7, var3.nextLong());
@@ -246,7 +246,7 @@ public class Class4191 extends Class4188 {
          this.method12927(var1, var5, 0, 0, 0, 2, 1, var14, field20443, field20443, false);
          this.method12929(var1, var5, var4, 0.8F, 0, 2, 0, 2, 2, var14, field20443, field20443, false, false);
          if (this.field20484) {
-            this.method12929(var1, var5, var4, 0.6F, 0, 0, 0, 2, 1, var14, Blocks.field36481.method11579(), field20443, false, true);
+            this.method12929(var1, var5, var4, 0.6F, 0, 0, 0, 2, 1, var14, Blocks.COBWEB.method11579(), field20443, false, true);
          }
 
          for (int var16 = 0; var16 < this.field20486; var16++) {
@@ -297,7 +297,7 @@ public class Class4191 extends Class4188 {
          }
 
          if (this.field20483) {
-            Class7380 var25 = Blocks.field36550.method11579().method23465(Class3430.field19191, Class96.field247);
+            Class7380 var25 = Blocks.RAIL.method11579().method23465(Class3430.field19191, Class96.field247);
 
             for (int var27 = 0; var27 <= var14; var27++) {
                Class7380 var29 = this.method12924(var1, 1, -1, var27, var5);
@@ -323,10 +323,10 @@ public class Class4191 extends Class4188 {
          if (var8.nextInt(4) != 0) {
             this.method12927(var1, var2, var3, var6, var5, var7, var6, var5, var11, field20443, false);
             this.method12930(
-               var1, var2, var8, 0.05F, var3 + 1, var6, var5 - 1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.NORTH)
+               var1, var2, var8, 0.05F, var3 + 1, var6, var5 - 1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.NORTH)
             );
             this.method12930(
-               var1, var2, var8, 0.05F, var3 + 1, var6, var5 + 1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.SOUTH)
+               var1, var2, var8, 0.05F, var3 + 1, var6, var5 + 1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.SOUTH)
             );
          } else {
             this.method12927(var1, var2, var3, var6, var5, var3, var6, var5, var11, field20443, false);
@@ -337,7 +337,7 @@ public class Class4191 extends Class4188 {
 
    private void method12974(Class1658 var1, Class9764 var2, Random var3, float var4, int var5, int var6, int var7) {
       if (this.method12925(var1, var5, var6, var7, var2)) {
-         this.method12930(var1, var2, var3, var4, var5, var6, var7, Blocks.field36481.method11579());
+         this.method12930(var1, var2, var3, var4, var5, var6, var7, Blocks.COBWEB.method11579());
       }
    }
 }

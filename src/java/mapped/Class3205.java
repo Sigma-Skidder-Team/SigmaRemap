@@ -70,7 +70,7 @@ public class Class3205 extends Class3200 {
    public static final Class6408 field18591 = Class8022.method27431(field18590, Block.method11539(2.0, 0.0, 4.0, 14.0, 12.0, 12.0));
    private static final ITextComponent field18592 = new TranslationTextComponent("container.grindstone_title");
 
-   public Class3205(Class7929 var1) {
+   public Class3205(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18484, Direction.NORTH).method23465(field18500, Class103.field314));
    }

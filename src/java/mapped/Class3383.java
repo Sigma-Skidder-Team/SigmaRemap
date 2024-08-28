@@ -11,7 +11,7 @@ public class Class3383 extends Class3381 {
    public static final Class8551 field18987 = Class8820.field39699;
    private static final Map<Class1665, List<Class9018>> field18988 = new WeakHashMap<Class1665, List<Class9018>>();
 
-   public Class3383(Class7929 var1) {
+   public Class3383(AbstractBlock var1) {
       super(var1, Class7437.field32000);
       this.method11578(this.field18612.method35393().method23465(field18987, Boolean.valueOf(true)));
    }

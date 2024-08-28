@@ -21,7 +21,7 @@ public class Class3493 extends Class3194 {
       )
    );
 
-   public Class3493(Class3462 var1, Class7929 var2) {
+   public Class3493(Class3462 var1, AbstractBlock var2) {
       super(var2);
       this.method11578(this.field18612.method35393().method23465(field19361, Direction.NORTH));
       this.field19362 = var1;
@@ -41,12 +41,12 @@ public class Class3493 extends Class3194 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23448(Blocks.field36540);
+      return var1.method23448(Blocks.FARMLAND);
    }
 
    public Class3257 method12188() {
       if (this.field19362 != Blocks.PUMPKIN) {
-         return this.field19362 != Blocks.field36631 ? Class8514.field37222 : Class8514.field37960;
+         return this.field19362 != Blocks.MELON ? Class8514.field37222 : Class8514.field37960;
       } else {
          return Class8514.field37959;
       }

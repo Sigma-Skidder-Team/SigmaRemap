@@ -311,7 +311,7 @@ public class Class8992<T extends Entity> {
       "wither",
       Class8878.<Class1079>method32299(Class1079::new, Class179.field623)
          .method32304()
-         .method32305(Blocks.field36517)
+         .method32305(Blocks.WITHER_ROSE)
          .method32301(0.9F, 3.5F)
          .method32307(10)
    );
@@ -319,7 +319,7 @@ public class Class8992<T extends Entity> {
       "wither_skeleton",
       Class8878.<Class1084>method32299(Class1084::new, Class179.field623)
          .method32304()
-         .method32305(Blocks.field36517)
+         .method32305(Blocks.WITHER_ROSE)
          .method32301(0.7F, 2.4F)
          .method32307(8)
    );
@@ -573,7 +573,7 @@ public class Class8992<T extends Entity> {
                   && !var1.method23448(Blocks.field36890)
                   && !Class3244.method11655(var1)
                   && !var1.method23448(Blocks.LAVA)
-            ? var1.method23448(Blocks.field36517) || var1.method23448(Blocks.field37069) || var1.method23448(Blocks.CACTUS)
+            ? var1.method23448(Blocks.WITHER_ROSE) || var1.method23448(Blocks.field37069) || var1.method23448(Blocks.CACTUS)
             : true;
       }
    }

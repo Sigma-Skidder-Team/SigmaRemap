@@ -19,19 +19,19 @@ public class Class4913 {
    public static final Predicate<Class4913> field22747 = var0 -> field22746.get().contains(var0);
    public static final Predicate<Class4913> field22748 = var0 -> true;
    private static final Set<Class7380> field22749 = ImmutableList.of(
-         Blocks.field36476,
-         Blocks.field36477,
-         Blocks.field36473,
-         Blocks.field36474,
-         Blocks.field36471,
-         Blocks.field36469,
-         Blocks.field36475,
-         Blocks.field36465,
-         Blocks.field36470,
-         Blocks.field36467,
-         Blocks.field36464,
-         Blocks.field36463,
-         new Block[]{Blocks.field36468, Blocks.field36472, Blocks.field36462, Blocks.field36466}
+         Blocks.RED_BED,
+         Blocks.BLACK_BED,
+         Blocks.BLUE_BED,
+         Blocks.BROWN_RED,
+         Blocks.CYAN_BED,
+         Blocks.GRAY_BED,
+         Blocks.GREEN_BED,
+         Blocks.LIGHT_BLUE_BED,
+         Blocks.LIGHT_GRAY_BED,
+         Blocks.LIME_BED,
+         Blocks.MAGENTA_BED,
+         Blocks.ORANGE_BED,
+         new Block[]{Blocks.PINK_BED, Blocks.PURPLE_BED, Blocks.WHITE_BED, Blocks.YELLOW_BED}
       )
       .stream()
       .<Class7380>flatMap(var0 -> var0.method11577().method35392().stream())

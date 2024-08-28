@@ -300,7 +300,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.overworld"),
-         Blocks.field36482,
+         Blocks.GRASS,
          Class9495.field44122,
          Arrays.<Class2961<?>>asList(Class2961.field18073, Class2961.field18059, Class2961.field18058, Class2961.field18064),
          true,
@@ -346,7 +346,7 @@ public class Class1313 extends Screen {
          true,
          false,
          new Class9537(8, Blocks.SAND),
-         new Class9537(52, Blocks.field36458),
+         new Class9537(52, Blocks.SANDSTONE),
          new Class9537(3, Blocks.STONE),
          new Class9537(1, Blocks.BEDROCK)
       );
@@ -358,7 +358,7 @@ public class Class1313 extends Screen {
          false,
          false,
          false,
-         new Class9537(52, Blocks.field36458),
+         new Class9537(52, Blocks.SANDSTONE),
          new Class9537(3, Blocks.STONE),
          new Class9537(1, Blocks.BEDROCK)
       );

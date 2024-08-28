@@ -272,11 +272,11 @@ public class Class4829 {
                         var68 = Class9299.method35064(var66, Class9299.field42831, var1, var121, var4);
                      }
 
-                     if (var68 || var67 instanceof Class3231 || var67 instanceof Class3465 || var67 == Blocks.field36665) {
+                     if (var68 || var67 instanceof Class3231 || var67 instanceof Class3465 || var67 == Blocks.BEACON) {
                         var122 = this.field22604;
                      }
 
-                     if (var67 == Blocks.field36540 || var67 == Blocks.field36885) {
+                     if (var67 == Blocks.FARMLAND || var67 == Blocks.field36885) {
                         var123 = 0.9375F;
                         var125 = 0.9375F;
                      }

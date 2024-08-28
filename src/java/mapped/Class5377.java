@@ -71,7 +71,7 @@ public class Class5377 extends Module {
     }
 
     @EventTarget
-    private void method16926(Class4428 var1) {
+    private void method16926(TickEvent var1) {
         if (this.method15996()) {
             this.field24006 = this.method15974("Furnaces");
             if (!this.field24006) {
@@ -293,7 +293,7 @@ public class Class5377 extends Module {
     }
 
     public void method16932(BlockPos var1, Class7070 var2, float var3) {
-        ClientResource var6 = ResourceRegistry.field38855;
+        ClientResource var6 = ResourceRegistry.JelloLightFont25;
         String var7 = "None";
         if (var2.field30453 != null) {
             var7 = var2.field30453.field39976 + " " + var2.field30453.method32149();
@@ -323,7 +323,7 @@ public class Class5377 extends Module {
         int var15 = 0;
         Class8848 var16 = var2.method21987();
         if (var16 != null) {
-            var15 = Math.max(ResourceRegistry.field38854.method23942(var16.method32149().getString()), 50);
+            var15 = Math.max(ResourceRegistry.JelloLightFont20.method23942(var16.method32149().getString()), 50);
         } else {
             var15 = 37;
         }
@@ -337,15 +337,15 @@ public class Class5377 extends Module {
         Class3192.method11439(var6, var13, (float) (var13 - 5), "Furnace", Class1979.field12896.field12910);
         if (var16 == null) {
             Class3192.method11439(
-                    ResourceRegistry.field38854, (float) (var13 + 15), (float) (var13 + 40), "Empty", Class5628.method17688(Class1979.field12896.field12910, 0.6F)
+                    ResourceRegistry.JelloLightFont20, (float) (var13 + 15), (float) (var13 + 40), "Empty", Class5628.method17688(Class1979.field12896.field12910, 0.6F)
             );
         }
 
         Class8848 var20 = var2.method21987();
         if (var20 != null) {
             Class3192.method11479(var20, var13, var13 + 27, 45, 45);
-            Class3192.method11439(ResourceRegistry.field38854, (float) (var13 + 51), 40.0F, var20.method32149().getString(), Class1979.field12896.field12910);
-            Class3192.method11439(ResourceRegistry.field38852, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, Class1979.field12896.field12910);
+            Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), Class1979.field12896.field12910);
+            Class3192.method11439(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, Class1979.field12896.field12910);
         }
 
         Class3192.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, Class5628.method17688(-106750, 0.3F));
@@ -363,10 +363,10 @@ public class Class5377 extends Module {
     }
 
     public void method16933(double var1, double var3, double var5, Entity var7, float var8, String var9) {
-        ClientResource var12 = ResourceRegistry.field38855;
+        ClientResource var12 = ResourceRegistry.JelloLightFont25;
         String var13 = var9 == null ? var7.method2941().getString().replaceAll("§.", "") : var9;
         if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(mc.method1533().method21526())) {
-            var13 = Client.getInstance().getModuleManager().method14662(Class5364.class).method15978("Username");
+            var13 = Client.getInstance().getModuleManager().method14662(Class5364.class).getStringSettingValueByName("Username");
         }
 
         if (var13.length() != 0) {
@@ -434,7 +434,7 @@ public class Class5377 extends Module {
             );
             GL11.glPushMatrix();
             GL11.glTranslated(-var12.method23942(var13) / 2, 0.0, 0.0);
-            int var26 = ResourceRegistry.field38852.method23942("Health: 20.0");
+            int var26 = ResourceRegistry.JelloLightFont14.method23942("Health: 20.0");
             String var23 = "Health: ";
             int var24 = var12.method23942(var13);
             if (var26 > var24) {
@@ -442,10 +442,10 @@ public class Class5377 extends Module {
             }
 
             Class3192.method11439(var12, 0.0F, -20.0F, var13, Class1979.field12896.field12910);
-            Class3192.method11439(ResourceRegistry.field38852, 0.0F, 10.0F, var23 + var17, Class1979.field12896.field12910);
+            Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, Class1979.field12896.field12910);
             Class8433 var25 = Client.getInstance().getNetworkManager().field38429.method29512(var7);
             if (var25 != null) {
-                Class3192.method11439(ResourceRegistry.field38852, 0.0F, -30.0F, var25.field36141, Class1979.field12896.field12910);
+                Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, Class1979.field12896.field12910);
             }
 
             GL11.glPopMatrix();

@@ -7,17 +7,17 @@ public class Class6702 extends Class6698 {
    private static String[] field29337;
    public static final Codec<Class6702> field29338 = Codec.unit(() -> Class6702.field29340);
    private static final Class7380[] field29339 = new Class7380[]{
-      Blocks.field36506.method11579(),
-      Blocks.field36507.method11579(),
-      Blocks.field36509.method11579(),
-      Blocks.field36510.method11579(),
-      Blocks.field36511.method11579(),
-      Blocks.field36512.method11579(),
-      Blocks.field36513.method11579(),
-      Blocks.field36514.method11579(),
-      Blocks.field36515.method11579(),
-      Blocks.field36516.method11579(),
-      Blocks.field36518.method11579()
+      Blocks.DANDELION.method11579(),
+      Blocks.POPPY.method11579(),
+      Blocks.ALLIUM.method11579(),
+      Blocks.AZURE_BLUET.method11579(),
+      Blocks.RED_TULIP.method11579(),
+      Blocks.ORANGE_TULIP.method11579(),
+      Blocks.WHITE_TULIP.method11579(),
+      Blocks.PINK_TULIP.method11579(),
+      Blocks.OXEYE_DAISY.method11579(),
+      Blocks.CORNFLOWER.method11579(),
+      Blocks.LILY_OF_THE_VALLEY.method11579()
    };
    public static final Class6702 field29340 = new Class6702();
 

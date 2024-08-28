@@ -60,7 +60,7 @@ public class Class4322 extends Class4307 {
             60,
             new Class6387(Class5628.method17688(Class1979.field12896.field12910, 0.5F)),
             "Continue",
-            ResourceRegistry.field38855
+            ResourceRegistry.JelloLightFont25
          )
       );
       this.field21091.method13288(false);
@@ -86,7 +86,7 @@ public class Class4322 extends Class4307 {
          this.method13222(() -> {
             ArrayList<Class9577> var5 = new ArrayList();
             var5.add(new Class9577(Class2189.field14314, var1, 45));
-            String[] var6 = Class5628.method17745(var2, 240, ResourceRegistry.field38854);
+            String[] var6 = Class5628.method17745(var2, 240, ResourceRegistry.JelloLightFont20);
 
             for (int var7 = 0; var7 < var6.length; var7++) {
                var5.add(new Class9577(Class2189.field14311, var6[var7], var7 != var6.length - 1 ? 14 : 35));
@@ -153,7 +153,7 @@ public class Class4322 extends Class4307 {
          String var7 = "Welcome back";
          byte var8 = 100;
          byte var9 = 10;
-         int var10 = var8 + Math.max(ResourceRegistry.field38866.method23942(var7), ResourceRegistry.field38860.method23942(var6)) + var9 * 10;
+         int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.method23942(var7), ResourceRegistry.field38860.method23942(var6)) + var9 * 10;
          int var11 = (this.field20897 - var10) / 2;
          int var12 = (this.field20898 - var8 * 2) / 2;
          Class3192.method11426(
@@ -168,7 +168,7 @@ public class Class4322 extends Class4307 {
          );
          int var13 = 165;
          int var14 = 54;
-         Class3192.method11439(ResourceRegistry.field38866, (float)(var11 + var13), (float)(var12 + var14), var7, Class1979.field12896.field12910);
+         Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), var7, Class1979.field12896.field12910);
          Class3192.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), var6, Class1979.field12896.field12910);
       }
 

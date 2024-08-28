@@ -82,7 +82,7 @@ public abstract class Class2898<FC extends Class4698> {
    public abstract boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, FC var5);
 
    public static boolean method11218(Block var0) {
-      return var0 == Blocks.STONE || var0 == Blocks.GRANITE || var0 == Blocks.DIORITE || var0 == Blocks.field36393;
+      return var0 == Blocks.STONE || var0 == Blocks.GRANITE || var0 == Blocks.DIORITE || var0 == Blocks.ANDESITE;
    }
 
    public static boolean method11219(Block var0) {
@@ -90,7 +90,7 @@ public abstract class Class2898<FC extends Class4698> {
          || var0 == Blocks.field36395
          || var0 == Blocks.field36398
          || var0 == Blocks.field36397
-         || var0 == Blocks.field36640;
+         || var0 == Blocks.MYCELIUM;
    }
 
    public static boolean method11220(Class1680 var0, BlockPos var1) {

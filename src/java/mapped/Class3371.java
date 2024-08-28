@@ -7,7 +7,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    public static final Class8551 field18960 = Class8820.field39710;
    public static final Class6408 field18961 = Block.method11539(5.0, 5.0, 5.0, 11.0, 11.0, 11.0);
 
-   public Class3371(Class7929 var1) {
+   public Class3371(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18960, Boolean.valueOf(true)));
    }

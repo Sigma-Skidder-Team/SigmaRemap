@@ -46,7 +46,7 @@ public class Class4202 extends Class4194 {
 
       this.method12928(var1, var5, 0, 0, 0, 13, var10 - 1, 14, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 4, 1, 0);
-      this.method12929(var1, var5, var4, 0.07F, 2, 1, 1, 11, 4, 13, Blocks.field36481.method11579(), Blocks.field36481.method11579(), false, false);
+      this.method12929(var1, var5, var4, 0.07F, 2, 1, 1, 11, 4, 13, Blocks.COBWEB.method11579(), Blocks.COBWEB.method11579(), false, false);
       boolean var11 = true;
       byte var12 = 12;
 
@@ -61,8 +61,8 @@ public class Class4202 extends Class4194 {
          } else {
             this.method12927(var1, var5, 1, 1, var13, 1, 4, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
             this.method12927(var1, var5, 12, 1, var13, 12, 4, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
-            this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.EAST), 2, 3, var13, var5);
-            this.method12923(var1, Blocks.field36529.method11579().method23465(Class3382.field18985, Direction.WEST), 11, 3, var13, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.EAST), 2, 3, var13, var5);
+            this.method12923(var1, Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.WEST), 11, 3, var13, var5);
             if (this.field20509) {
                this.method12927(var1, var5, 1, 6, var13, 1, 9, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
                this.method12927(var1, var5, 12, 6, var13, 12, 9, var13, Blocks.field36400.method11579(), Blocks.field36400.method11579(), false);
@@ -157,7 +157,7 @@ public class Class4202 extends Class4194 {
             }
          }
 
-         Class7380 var24 = Blocks.field36549.method11579().method23465(Class3423.field19154, Direction.SOUTH);
+         Class7380 var24 = Blocks.LADDER.method11579().method23465(Class3423.field19154, Direction.SOUTH);
          this.method12923(var1, var24, 10, 1, 13, var5);
          this.method12923(var1, var24, 10, 2, 13, var5);
          this.method12923(var1, var24, 10, 3, 13, var5);
@@ -182,7 +182,7 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, var18.method23465(Class3239.field18682, Boolean.valueOf(true)), 6, 7, 8, var5);
          this.method12923(var1, var19.method23465(Class3239.field18680, Boolean.valueOf(true)), 7, 7, 6, var5);
          this.method12923(var1, var19.method23465(Class3239.field18682, Boolean.valueOf(true)), 7, 7, 8, var5);
-         Class7380 var21 = Blocks.field36528.method11579();
+         Class7380 var21 = Blocks.TORCH.method11579();
          this.method12923(var1, var21, 5, 8, 7, var5);
          this.method12923(var1, var21, 8, 8, 7, var5);
          this.method12923(var1, var21, 6, 8, 6, var5);

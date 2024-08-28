@@ -21,7 +21,7 @@ public class Class2663 extends Class2661 {
          if (!var0.method23446(Class7645.field32772)) {
             return var0.method23446(Class7645.field32769);
          } else {
-            return !var0.method23448(Blocks.field36797) ? true : var0.<Class84>method23463(Class3456.field19276) == Class84.field209;
+            return !var0.method23448(Blocks.SUNFLOWER) ? true : var0.<Class84>method23463(Class3456.field19276) == Class84.field209;
          }
       };
       this.field17026 = 0;

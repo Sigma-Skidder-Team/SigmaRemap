@@ -117,7 +117,7 @@ public class Class969 extends Class944 {
 
    public Class2037 method4020() {
       Class7380 var3 = this.method3775();
-      if (!var3.method23448(Blocks.field36664)) {
+      if (!var3.method23448(Blocks.COMMAND_BLOCK)) {
          if (!var3.method23448(Blocks.field36887)) {
             return !var3.method23448(Blocks.field36888) ? Class2037.field13325 : Class2037.field13323;
          } else {

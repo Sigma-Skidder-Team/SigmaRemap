@@ -57,14 +57,14 @@ public class Class4253 extends Class4247 {
 
       Class3192.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
       Class3192.method11439(
-         ResourceRegistry.field38861,
+         ResourceRegistry.RegularFont20,
          (float)(this.field20895 + 25),
          (float)this.field20896 + (float)this.field20898 / 2.0F - 17.5F,
          this.field20624.method21596(),
          Class5628.method17688(Class1979.field12891.field12910, 0.6F * var1)
       );
       Class3192.method11439(
-         ResourceRegistry.field38851,
+         ResourceRegistry.JelloLightFont12,
          (float)(this.field20895 + 25),
          (float)this.field20896 + (float)this.field20898 / 2.0F + 7.5F,
          this.field20624.method21597(),

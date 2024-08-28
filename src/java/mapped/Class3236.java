@@ -4,7 +4,7 @@ public class Class3236 extends Class3237 implements Class3235 {
    private static String[] field18676;
    private final Class112 field18677;
 
-   public Class3236(Class112 var1, Class7929 var2) {
+   public Class3236(Class112 var1, AbstractBlock var2) {
       super(var2);
       this.field18677 = var1;
       this.method11578(

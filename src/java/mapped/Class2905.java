@@ -38,14 +38,14 @@ public class Class2905 extends Class2898<Class4712> {
                      Class7380 var17 = var1.method6738(var4.method8336(var13, var10, var15));
                      Block var18 = var17.method23383();
                      if (var17.method23393() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
-                        this.method11217(var1, var4.method8336(var13, var10, var15), Blocks.field36796.method11579());
+                        this.method11217(var1, var4.method8336(var13, var10, var15), Blocks.PACKED_ICE.method11579());
                      }
 
                      if (var10 != 0 && var12 > 1) {
                         var17 = var1.method6738(var4.method8336(var13, -var10, var15));
                         var18 = var17.method23383();
                         if (var17.method23393() || method11219(var18) || var18 == Blocks.SNOW_BLOCK || var18 == Blocks.ICE) {
-                           this.method11217(var1, var4.method8336(var13, -var10, var15), Blocks.field36796.method11579());
+                           this.method11217(var1, var4.method8336(var13, -var10, var15), Blocks.PACKED_ICE.method11579());
                         }
                      }
                   }
@@ -77,11 +77,11 @@ public class Class2905 extends Class2898<Class4712> {
                      && !method11219(var26)
                      && var26 != Blocks.SNOW_BLOCK
                      && var26 != Blocks.ICE
-                     && var26 != Blocks.field36796) {
+                     && var26 != Blocks.PACKED_ICE) {
                      break;
                   }
 
-                  this.method11217(var1, var23, Blocks.field36796.method11579());
+                  this.method11217(var1, var23, Blocks.PACKED_ICE.method11579());
                   var23 = var23.method8313();
                   if (--var24 <= 0) {
                      var23 = var23.method8340(var3.nextInt(5) + 1);

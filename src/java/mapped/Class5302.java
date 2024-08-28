@@ -89,16 +89,16 @@ public class Class5302 extends Module {
         if (!var8.matches(".*\\d+.*")) {
             if (var8.length() != 1) {
                 Class3192.method11439(
-                        ResourceRegistry.field38855,
-                        (float) (var1 + (var3 - ResourceRegistry.field38855.method23942(var8)) / 2),
+                        ResourceRegistry.JelloLightFont25,
+                        (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.method23942(var8)) / 2),
                         (float) (var2 + 20),
                         var8,
                         Class5628.method17688(Class1979.field12896.field12910, var5)
                 );
             } else {
                 Class3192.method11439(
-                        ResourceRegistry.field38866,
-                        (float) (var1 + (var3 - ResourceRegistry.field38866.method23942(var8)) / 2),
+                        ResourceRegistry.JelloMediumFont40,
+                        (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.method23942(var8)) / 2),
                         (float) (var2 + 10),
                         var8,
                         Class5628.method17688(Class1979.field12896.field12910, var5)
@@ -113,8 +113,8 @@ public class Class5302 extends Module {
                     Class5628.method17688(Class1979.field12896.field12910, var5 * 0.5F)
             );
             Class3192.method11439(
-                    ResourceRegistry.field38853,
-                    (float) (var1 + (var3 - ResourceRegistry.field38853.method23942(var8)) / 2),
+                    ResourceRegistry.JelloLightFont18,
+                    (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.method23942(var8)) / 2),
                     (float) (var2 + 40),
                     var8,
                     Class5628.method17688(Class1979.field12896.field12910, var5)

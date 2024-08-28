@@ -3,7 +3,7 @@ package mapped;
 public class Class3237 extends Class3238 {
    private static String[] field18678;
 
-   public Class3237(Class7929 var1) {
+   public Class3237(AbstractBlock var1) {
       super(1.0F, 1.0F, 16.0F, 16.0F, 16.0F, var1);
       this.method11578(
          this.field18612

@@ -15,7 +15,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    private final boolean field18703;
    private final int field18704;
 
-   public Class3244(boolean var1, int var2, Class7929 var3) {
+   public Class3244(boolean var1, int var2, AbstractBlock var3) {
       super(var3);
       this.field18703 = var1;
       this.field18704 = var2;

@@ -20,7 +20,7 @@ public class Class5160 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23425 = mc.field1339.getPosX();
         this.field23426 = mc.field1339.getPosY();
         this.field23427 = mc.field1339.getPosZ();

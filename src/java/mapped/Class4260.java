@@ -84,7 +84,7 @@ public class Class4260 extends Class4247 {
          Class5628.method17688(Class1979.field12896.field12910, var1)
       );
       Class3192.method11439(
-         ResourceRegistry.field38866,
+         ResourceRegistry.JelloMediumFont40,
          (float)this.field20664,
          (float)(this.field20663 - 60),
          this.field20669.method15991(),
@@ -93,7 +93,7 @@ public class Class4260 extends Class4247 {
       byte var5 = 30;
       Class3192.method11419((float)this.field20664, (float)this.field20663, (float)(this.field20665 - 30), (float)this.field20666);
       Class3192.method11439(
-         ResourceRegistry.field38854,
+         ResourceRegistry.JelloLightFont20,
          (float)(var5 + this.field20664),
          (float)(var5 + this.field20663),
          this.field20669.method15992(),

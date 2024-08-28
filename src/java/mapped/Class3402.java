@@ -26,7 +26,7 @@ public class Class3402 extends Block {
    private static final Class6408 field19074 = Block.method11539(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
    private final Map<Class7380, Class6408> field19075;
 
-   public Class3402(Class7929 var1) {
+   public Class3402(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

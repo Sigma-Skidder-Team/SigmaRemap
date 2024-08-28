@@ -27,7 +27,7 @@ public class Class5353 extends Module {
 
     @EventTarget
     public void method16796(Class4399 var1) {
-        if (this.method15996() && mc.field1339 != null && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+        if (this.method15996() && mc.field1339 != null && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (mc.field1339.field5036 && var1.method13921()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
@@ -72,7 +72,7 @@ public class Class5353 extends Module {
     @EventTarget
     @LowerPriority
     public void method16798(Class4436 var1) {
-        if (this.method15996() && !Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+        if (this.method15996() && !Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (!mc.field1299.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
                 this.field23916 = Class9567.method37083()[0];
                 this.field23918 = 0;

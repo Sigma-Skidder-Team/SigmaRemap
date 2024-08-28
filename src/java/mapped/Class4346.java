@@ -15,7 +15,7 @@ public class Class4346 extends Class4339 {
    private float field21236 = 1.0F;
    private int field21237 = 0;
    private int field21238 = 14;
-   private static ClientResource field21239 = ResourceRegistry.field38853;
+   private static ClientResource field21239 = ResourceRegistry.JelloLightFont18;
    private static int field21240 = 14;
    private boolean field21241 = false;
    private static final String field21242 = "\n";

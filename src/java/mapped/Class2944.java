@@ -68,7 +68,7 @@ public class Class2944 extends Class2898<Class4707> {
                   if (var15 || var16 || var17) {
                      boolean var18 = var12 == -2 || var12 == 2 || var17;
                      boolean var19 = var13 == -2 || var13 == 2 || var17;
-                     Class7380 var20 = Blocks.field36628
+                     Class7380 var20 = Blocks.IRON_BARS
                         .method11579()
                         .method23465(Class3237.field18680, Boolean.valueOf(var18 && var13 != -2))
                         .method23465(Class3237.field18682, Boolean.valueOf(var18 && var13 != 2))

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -13,14 +13,14 @@ public class Class5389 extends Module {
    }
 
    @EventTarget
-   public void method16976(Class4428 var1) {
+   public void method16976(TickEvent var1) {
       if (this.method15996() && mc.field1339 != null) {
          if (mc.field1339.method3148()) {
             Class8848 var4 = mc.field1339.method3158();
             if (var4 != null
                && (var4.method32138() == Class2103.field13708 || var4.method32138() == Class2103.field13707)
                && (float) mc.field1339.method3159() < this.method15977("Speed") * 32.0F) {
-               String var5 = this.method15978("Mode");
+               String var5 = this.getStringSettingValueByName("Mode");
                switch (var5) {
                   case "Basic":
                      int var7 = mc.field1339.method3159() + 2;

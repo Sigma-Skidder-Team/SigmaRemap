@@ -14,7 +14,7 @@ public class Class7193 extends Class7194 {
          Blocks.STONE,
          Blocks.GRANITE,
          Blocks.DIORITE,
-         Blocks.field36393,
+         Blocks.ANDESITE,
          Blocks.field36396,
          Blocks.field36397,
          new Block[]{

@@ -41,11 +41,11 @@ public class Class4375 extends Class4247 {
             "addButton",
             this.field20897 - 70,
             this.field20898 - 70,
-            ResourceRegistry.field38855.method23942("Add"),
+            ResourceRegistry.JelloLightFont25.method23942("Add"),
             70,
             Class6387.field27961,
             "Add",
-            ResourceRegistry.field38855
+            ResourceRegistry.JelloLightFont25
          )
       );
       var9.method13251((var1x, var2x) -> this.method13714());
@@ -144,7 +144,7 @@ public class Class4375 extends Class4247 {
       );
       GL11.glPopMatrix();
       Class3192.method11439(
-         ResourceRegistry.field38855,
+         ResourceRegistry.JelloLightFont25,
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 20),
          this.field20912 + " Key",

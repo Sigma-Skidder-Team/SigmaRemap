@@ -23,7 +23,7 @@ public class Class5237 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23591 = null;
         this.field23592.clear();
         this.field23593.clear();

@@ -7,7 +7,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    private static String[] field19265;
    public static final Class6408 field19266 = Block.method11539(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 
-   public Class3451(Class7929 var1) {
+   public Class3451(AbstractBlock var1) {
       super(var1, Direction.field673, field19266, true, 0.14);
    }
 

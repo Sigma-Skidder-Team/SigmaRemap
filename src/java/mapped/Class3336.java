@@ -64,7 +64,7 @@ public class Class3336 extends Class3257 {
             label110:
             for (int var6 = 0; var6 < 128; var6++) {
                BlockPos var7 = var2;
-               Class7380 var8 = Blocks.field36485.method11579();
+               Class7380 var8 = Blocks.SEAGRASS.method11579();
 
                for (int var9 = 0; var9 < var6 / 16; var9++) {
                   var7 = var7.method8336(field18735.nextInt(3) - 1, (field18735.nextInt(3) - 1) * field18735.nextInt(3) / 2, field18735.nextInt(3) - 1);
@@ -93,8 +93,8 @@ public class Class3336 extends Class3257 {
                   Class7380 var12 = var1.method6738(var7);
                   if (var12.method23448(Blocks.WATER) && var1.method6739(var7).method23477() == 8) {
                      var1.method6725(var7, var8, 3);
-                  } else if (var12.method23448(Blocks.field36485) && field18735.nextInt(10) == 0) {
-                     ((Class3196) Blocks.field36485).method11488((Class1657)var1, field18735, var7, var12);
+                  } else if (var12.method23448(Blocks.SEAGRASS) && field18735.nextInt(10) == 0) {
+                     ((Class3196) Blocks.SEAGRASS).method11488((Class1657)var1, field18735, var7, var12);
                   }
                }
             }

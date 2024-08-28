@@ -64,7 +64,7 @@ public class Class4246 extends Class4240 {
       if (this.method13303() == null) {
       }
 
-      ClientResource var7 = ResourceRegistry.field38851;
+      ClientResource var7 = ResourceRegistry.JelloLightFont12;
       super.method13226(var1);
    }
 }

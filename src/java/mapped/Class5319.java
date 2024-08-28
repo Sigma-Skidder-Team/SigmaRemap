@@ -20,7 +20,7 @@ public class Class5319 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23865 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
         this.field23866 = mc.field1339.field5031;
         this.field23867 = mc.field1339.field5032;

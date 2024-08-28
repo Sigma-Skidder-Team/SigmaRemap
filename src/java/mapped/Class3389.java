@@ -26,7 +26,7 @@ public class Class3389 extends Block {
       .add(new Class1998(0, 1, 0))
       .build();
 
-   public Class3389(Class7929 var1) {
+   public Class3389(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field19000, Integer.valueOf(0)));
    }

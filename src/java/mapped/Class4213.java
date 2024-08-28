@@ -13,7 +13,7 @@ public abstract class Class4213 extends Class4178 {
    public static final Class7380 field20533 = Blocks.WATER.method11579();
    public static final Set<Block> field20534 = ImmutableSet.<Block>builder()
       .add(Blocks.ICE)
-      .add(Blocks.field36796)
+      .add(Blocks.PACKED_ICE)
       .add(Blocks.field37006)
       .add(field20533.method23383())
       .build();

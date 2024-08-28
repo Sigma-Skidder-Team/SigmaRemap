@@ -11,22 +11,22 @@ public class Class4454 extends Class4441<Block> {
    public void method14010() {
       this.method14014(Class7645.field32734)
          .method31560(
-            Blocks.field36489,
-            Blocks.field36490,
-            Blocks.field36491,
-            Blocks.field36492,
-            Blocks.field36493,
-            Blocks.field36494,
-            Blocks.field36495,
-            Blocks.field36496,
-            Blocks.field36497,
-            Blocks.field36498,
-            Blocks.field36499,
-            Blocks.field36500,
-            Blocks.field36501,
-            Blocks.field36502,
-            Blocks.field36503,
-            Blocks.field36504
+            Blocks.WHITE_WOOL,
+            Blocks.ORANGE_WOOL,
+            Blocks.MAGENTA_WOOL,
+            Blocks.LIGHT_BLUE_WOOL,
+            Blocks.YELLOW_WOOL,
+            Blocks.LIME_WOOL,
+            Blocks.PINK_WOOL,
+            Blocks.GRAY_WOOL,
+            Blocks.LIGHT_GRAY_WOOL,
+            Blocks.CYAN_WOOL,
+            Blocks.PURPLE_WOOL,
+            Blocks.BLUE_WOOL,
+            Blocks.BROWN_WOOL,
+            Blocks.GREEN_WOOL,
+            Blocks.RED_WOOL,
+            Blocks.BLACK_WOOL
          );
       this.method14014(Class7645.field32735)
          .method31560(
@@ -54,26 +54,26 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(Class7645.field32738).method31559(Class7645.field32737).method31558(Blocks.STONE_BUTTON).method31558(Blocks.field37145);
       this.method14014(Class7645.field32739)
          .method31560(
-            Blocks.field36778,
-            Blocks.field36779,
-            Blocks.field36780,
-            Blocks.field36781,
-            Blocks.field36782,
-            Blocks.field36783,
-            Blocks.field36784,
-            Blocks.field36785,
-            Blocks.field36786,
-            Blocks.field36787,
-            Blocks.field36788,
-            Blocks.field36789,
-            Blocks.field36790,
-            Blocks.field36791,
-            Blocks.field36792,
-            Blocks.field36793
+            Blocks.WHITE_CARPET,
+            Blocks.ORANGE_CARPET,
+            Blocks.MAGENTA_CARPET,
+            Blocks.LIGHT_BLUE_CARPET,
+            Blocks.YELLOW_CARPET,
+            Blocks.LIME_CARPET,
+            Blocks.PINK_CARPET,
+            Blocks.GRAY_CARPET,
+            Blocks.LIGHT_GRAY_CARPET,
+            Blocks.CYAN_CARPET,
+            Blocks.PURPLE_CARPET,
+            Blocks.BLUE_CARPET,
+            Blocks.BROWN_CARPET,
+            Blocks.GREEN_CARPET,
+            Blocks.RED_CARPET,
+            Blocks.BLACK_CARPET
          );
       this.method14014(Class7645.field32740)
          .method31560(
-            Blocks.field36548,
+            Blocks.OAK_DOOR,
             Blocks.field36872,
             Blocks.field36873,
             Blocks.field36874,
@@ -85,7 +85,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(Class7645.field32741)
          .method31560(
             Blocks.field36533,
-            Blocks.field36661,
+            Blocks.SPRUCE_STAIRS,
             Blocks.field36662,
             Blocks.field36663,
             Blocks.field36762,
@@ -115,7 +115,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field37097,
             Blocks.field37098
          );
-      this.method14014(Class7645.field32748).method31559(Class7645.field32740).method31558(Blocks.field36560);
+      this.method14014(Class7645.field32748).method31559(Class7645.field32740).method31558(Blocks.IRON_DOOR);
       this.method14014(Class7645.field32749)
          .method31560(Blocks.field36406, Blocks.SPRUCE_SAPLING, Blocks.BIRCH_SAPLING, Blocks.JUNGLE_SAPLING, Blocks.ACACIA_SAPLING, Blocks.DARK_OAK_SAPLING);
       this.method14014(Class7645.field32752).method31560(Blocks.field36427, Blocks.field36439, Blocks.field36432, Blocks.field36445);
@@ -134,22 +134,22 @@ public class Class4454 extends Class4441<Block> {
          .method31559(Class7645.field32756)
          .method31559(Class7645.field32757);
       this.method14014(Class7645.field32751).method31559(Class7645.field32750).method31559(Class7645.field32758).method31559(Class7645.field32759);
-      this.method14014(Class7645.field32765).method31560(Blocks.field36713, Blocks.field36714, Blocks.field36715);
+      this.method14014(Class7645.field32765).method31560(Blocks.ANVIL, Blocks.field36714, Blocks.field36715);
       this.method14014(Class7645.field32769)
          .method31560(
-            Blocks.field36506,
-            Blocks.field36507,
-            Blocks.field36508,
-            Blocks.field36509,
-            Blocks.field36510,
-            Blocks.field36511,
-            Blocks.field36512,
-            Blocks.field36513,
-            Blocks.field36514,
-            Blocks.field36515,
-            Blocks.field36516,
-            Blocks.field36518,
-            Blocks.field36517
+            Blocks.DANDELION,
+            Blocks.POPPY,
+            Blocks.BLUE_ORCHID,
+            Blocks.ALLIUM,
+            Blocks.AZURE_BLUET,
+            Blocks.RED_TULIP,
+            Blocks.ORANGE_TULIP,
+            Blocks.WHITE_TULIP,
+            Blocks.PINK_TULIP,
+            Blocks.OXEYE_DAISY,
+            Blocks.CORNFLOWER,
+            Blocks.LILY_OF_THE_VALLEY,
+            Blocks.WITHER_ROSE
          );
       this.method14014(Class7645.field32778)
          .method31559(Class7645.field32769)
@@ -161,15 +161,15 @@ public class Class4454 extends Class4441<Block> {
             Blocks.SAND,
             Blocks.RED_SAND,
             Blocks.GRAVEL,
-            Blocks.field36519,
-            Blocks.field36520,
-            Blocks.field36524,
+            Blocks.BROWN_MUSHROOM,
+            Blocks.RED_MUSHROOM,
+            Blocks.TNT,
             Blocks.CACTUS,
             Blocks.CLAY,
             Blocks.PUMPKIN,
             Blocks.field36589,
-            Blocks.field36631,
-            Blocks.field36640,
+            Blocks.MELON,
+            Blocks.MYCELIUM,
             Blocks.field37084,
             Blocks.field37083,
             Blocks.field37090,
@@ -179,7 +179,7 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(Class7645.field32777)
          .method31560(
-            Blocks.field36668,
+            Blocks.FLOWER_POT,
             Blocks.field36677,
             Blocks.field36678,
             Blocks.field36679,
@@ -190,12 +190,12 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36684,
             Blocks.field36685,
             Blocks.field36676,
-            Blocks.field36669,
-            Blocks.field36670,
-            Blocks.field36671,
-            Blocks.field36672,
+            Blocks.POTTED_OAK_SAPLING,
+            Blocks.POTTED_SPRUCE_SAPLING,
+            Blocks.POTTED_BIRCH_SAPLING,
+            Blocks.POTTED_JUNGLE_SAPLING,
             Blocks.field36673,
-            Blocks.field36674,
+            Blocks.POTTED_DARK_OAK_SAPLING,
             Blocks.field36689,
             Blocks.field36690,
             Blocks.field36691,
@@ -264,11 +264,11 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(Class7645.field32762)
          .method31559(Class7645.field32741)
          .method31560(
-            Blocks.field36551,
-            Blocks.field36655,
-            Blocks.field36644,
-            Blocks.field36639,
-            Blocks.field36638,
+            Blocks.COBBLESTONE_STAIRS,
+            Blocks.SANDSTONE_STAIRS,
+            Blocks.NETHER_BRICK_STAIRS,
+            Blocks.STONE_BRICK_STAIRS,
+            Blocks.BRICK_STAIRS,
             Blocks.field36882,
             Blocks.field36727,
             Blocks.field36838,
@@ -331,8 +331,8 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(Class7645.field32764)
          .method31560(
-            Blocks.field36666,
-            Blocks.field36667,
+            Blocks.COBBLESTONE_WALL,
+            Blocks.MOSSY_COBBLESTONE_WALL,
             Blocks.field37041,
             Blocks.field37042,
             Blocks.field37043,
@@ -357,10 +357,10 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(Class7645.field32784)
          .method31560(Blocks.field37000, Blocks.field37001, Blocks.field37002, Blocks.field37003, Blocks.field37004);
       this.method14014(Class7645.field32761).method31560(Blocks.SAND, Blocks.RED_SAND);
-      this.method14014(Class7645.field32766).method31560(Blocks.field36550, Blocks.field36478, Blocks.field36479, Blocks.field36728);
+      this.method14014(Class7645.field32766).method31560(Blocks.RAIL, Blocks.POWERED_RAIL, Blocks.DETECTOR_RAIL, Blocks.field36728);
       this.method14014(Class7645.field32783)
          .method31560(Blocks.field36970, Blocks.field36971, Blocks.field36972, Blocks.field36973, Blocks.field36974);
-      this.method14014(Class7645.field32779).method31560(Blocks.ICE, Blocks.field36796, Blocks.field37006, Blocks.field36889);
+      this.method14014(Class7645.field32779).method31560(Blocks.ICE, Blocks.PACKED_ICE, Blocks.field37006, Blocks.field36889);
       this.method14014(Class7645.field32780).method31560(Blocks.field36395, Blocks.field36398);
       this.method14014(Class7645.field32767)
          .method31560(Blocks.field36449, Blocks.field36446, Blocks.field36447, Blocks.field36451, Blocks.field36450, Blocks.field36448);
@@ -386,7 +386,7 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(Class7645.field32747)
          .method31560(
-            Blocks.field36613,
+            Blocks.ACACIA_TRAPDOOR,
             Blocks.field36611,
             Blocks.field36614,
             Blocks.field36612,
@@ -396,7 +396,7 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field37100
          );
       this.method14014(Class7645.field32768).method31559(Class7645.field32747).method31558(Blocks.field36766);
-      this.method14014(Class7645.field32782).method31558(Blocks.field36485).method31559(Class7645.field32786).method31559(Class7645.field32784);
+      this.method14014(Class7645.field32782).method31558(Blocks.SEAGRASS).method31559(Class7645.field32786).method31559(Class7645.field32784);
       this.method14014(Class7645.field32787)
          .method31559(Class7645.field32761)
          .method31560(
@@ -407,51 +407,51 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36395,
             Blocks.field36398,
             Blocks.field36397,
-            Blocks.field36640
+            Blocks.MYCELIUM
          );
       this.method14014(Class7645.field32788)
          .method31560(
-            Blocks.field36542,
-            Blocks.field36543,
-            Blocks.field36544,
-            Blocks.field36545,
-            Blocks.field36546,
-            Blocks.field36547,
+            Blocks.OAK_SIGN,
+            Blocks.SPRUCE_SIGN,
+            Blocks.BIRCH_SIGN,
+            Blocks.ACACIA_SIGN,
+            Blocks.JUNGLE_SIGN,
+            Blocks.DARK_OAK_SIGN,
             Blocks.field37109,
             Blocks.field37110
          );
       this.method14014(Class7645.field32789)
          .method31560(
-            Blocks.field36552,
-            Blocks.field36553,
-            Blocks.field36554,
-            Blocks.field36555,
-            Blocks.field36556,
-            Blocks.field36557,
+            Blocks.OAK_WALL_SIGN,
+            Blocks.SPRUCE_WALL_SIGN,
+            Blocks.BIRCH_WALL_SIGN,
+            Blocks.ACACIA_WALL_SIGN,
+            Blocks.JUNGLE_WALL_SIGN,
+            Blocks.DARK_OAK_WALL_SIGN,
             Blocks.field37111,
             Blocks.field37112
          );
       this.method14014(Class7645.field32790).method31559(Class7645.field32788).method31559(Class7645.field32789);
       this.method14014(Class7645.field32770)
          .method31560(
-            Blocks.field36476,
-            Blocks.field36477,
-            Blocks.field36473,
-            Blocks.field36474,
-            Blocks.field36471,
-            Blocks.field36469,
-            Blocks.field36475,
-            Blocks.field36465,
-            Blocks.field36470,
-            Blocks.field36467,
-            Blocks.field36464,
-            Blocks.field36463,
-            Blocks.field36468,
-            Blocks.field36472,
-            Blocks.field36462,
-            Blocks.field36466
+            Blocks.RED_BED,
+            Blocks.BLACK_BED,
+            Blocks.BLUE_BED,
+            Blocks.BROWN_RED,
+            Blocks.CYAN_BED,
+            Blocks.GRAY_BED,
+            Blocks.GREEN_BED,
+            Blocks.LIGHT_BLUE_BED,
+            Blocks.LIGHT_GRAY_BED,
+            Blocks.LIME_BED,
+            Blocks.MAGENTA_BED,
+            Blocks.ORANGE_BED,
+            Blocks.PINK_BED,
+            Blocks.PURPLE_BED,
+            Blocks.WHITE_BED,
+            Blocks.YELLOW_BED
          );
-      this.method14014(Class7645.field32771).method31559(Class7645.field32743).method31558(Blocks.field36643);
+      this.method14014(Class7645.field32771).method31559(Class7645.field32743).method31558(Blocks.NETHER_BRICK_FENCE);
       this.method14014(Class7645.field32791)
          .method31560(
             Blocks.field36765,
@@ -459,16 +459,16 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36649,
             Blocks.field36650,
             Blocks.field36886,
-            Blocks.field36664,
+            Blocks.COMMAND_BLOCK,
             Blocks.field36887,
             Blocks.field36888,
             Blocks.field37113,
             Blocks.field37114,
-            Blocks.field36505,
+            Blocks.MOVING_PISTON,
             Blocks.field36527,
             Blocks.field37123,
             Blocks.field36651,
-            Blocks.field36628,
+            Blocks.IRON_BARS,
             Blocks.field37124
          );
       this.method14014(Class7645.field32792)
@@ -478,19 +478,19 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36649,
             Blocks.field36650,
             Blocks.field36886,
-            Blocks.field36664,
+            Blocks.COMMAND_BLOCK,
             Blocks.field36887,
             Blocks.field36888,
             Blocks.field37113,
             Blocks.field37114,
-            Blocks.field36505
+            Blocks.MOVING_PISTON
          );
       this.method14014(Class7645.field32793).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
-      this.method14014(Class7645.field32772).method31560(Blocks.field36797, Blocks.field36798, Blocks.field36800, Blocks.field36799);
+      this.method14014(Class7645.field32772).method31560(Blocks.SUNFLOWER, Blocks.LILAC, Blocks.field36800, Blocks.ROSE_BUSH);
       this.method14014(Class7645.field32773).method31559(Class7645.field32769).method31559(Class7645.field32772);
       this.method14014(Class7645.field32794).method31560(Blocks.field37117, Blocks.field37118);
       this.method14014(Class7645.field32795)
-         .method31560(Blocks.field36884, Blocks.field36693, Blocks.field36694, Blocks.field36539, Blocks.field36635, Blocks.field36634);
+         .method31560(Blocks.field36884, Blocks.field36693, Blocks.field36694, Blocks.field36539, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM);
       this.method14014(Class7645.field32796).method31559(Class7645.field32795).method31558(Blocks.field37069);
       this.method14014(Class7645.field32805)
          .method31560(
@@ -513,21 +513,21 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36901
          );
       this.method14014(Class7645.field32797).method31560(Blocks.field36588, Blocks.field36649, Blocks.field36886);
-      this.method14014(Class7645.field32798).method31560(Blocks.field36530, Blocks.field36531);
+      this.method14014(Class7645.field32798).method31560(Blocks.FIRE, Blocks.field36531);
       this.method14014(Class7645.field32799).method31560(Blocks.field37083, Blocks.field37074);
       this.method14014(Class7645.field32800).method31560(Blocks.field36891, Blocks.field37076);
       this.method14014(Class7645.field32801)
-         .method31560(Blocks.field37121, Blocks.field36660, Blocks.field36537, Blocks.field36521, Blocks.field36522);
+         .method31560(Blocks.field37121, Blocks.EMERALD_BLOCK, Blocks.field36537, Blocks.field36521, Blocks.field36522);
       this.method14014(Class7645.field32802).method31560(Blocks.SOUL_SAND, Blocks.SOUL_SOIL);
       this.method14014(Class7645.field32803)
-         .method31560(Blocks.field36528, Blocks.field36585, Blocks.field36568, Blocks.field36659)
+         .method31560(Blocks.TORCH, Blocks.field36585, Blocks.field36568, Blocks.TRIPWIRE)
          .method31559(Class7645.field32790)
          .method31559(Class7645.field32760)
          .method31559(Class7645.field32744);
       this.method14014(Class7645.field32804)
          .method31560(
-            Blocks.field36549,
-            Blocks.field36636,
+            Blocks.LADDER,
+            Blocks.VINE,
             Blocks.field37053,
             Blocks.field37086,
             Blocks.field37087,
@@ -583,7 +583,7 @@ public class Class4454 extends Class4441<Block> {
       this.method14014(Class7645.field32808).method31558(Blocks.LAVA);
       this.method14014(Class7645.field32809).method31560(Blocks.field37067, Blocks.field37068);
       this.method14014(Class7645.field32810)
-         .method31560(Blocks.field36521, Blocks.field37055, Blocks.field36534, Blocks.field36657, Blocks.field37141, Blocks.field36716)
+         .method31560(Blocks.field36521, Blocks.field37055, Blocks.CHEST, Blocks.ENDER_CHEST, Blocks.field37141, Blocks.TRAPPED_CHEST)
          .method31559(Class7645.field32805)
          .method31559(Class7645.field32775);
       this.method14014(Class7645.field32811).method31559(Class7645.field32766);
@@ -593,14 +593,14 @@ public class Class4454 extends Class4441<Block> {
             Blocks.field36863,
             Blocks.field36866,
             Blocks.field36864,
-            Blocks.field36637,
+            Blocks.OAK_FENCE_GATE,
             Blocks.field36862,
             Blocks.field37101,
             Blocks.field37102
          );
       this.method14014(Class7645.field32813).method31559(Class7645.field32812);
       this.method14014(Class7645.field32814)
-         .method31558(Blocks.field36640)
+         .method31558(Blocks.MYCELIUM)
          .method31558(Blocks.field36398)
          .method31558(Blocks.field37083)
          .method31558(Blocks.field37074);
@@ -611,7 +611,7 @@ public class Class4454 extends Class4441<Block> {
          .method31558(Blocks.STONE)
          .method31558(Blocks.GRANITE)
          .method31558(Blocks.DIORITE)
-         .method31558(Blocks.field36393);
+         .method31558(Blocks.ANDESITE);
       this.method14014(Class7645.field32819).method31558(Blocks.NETHERRACK).method31558(Blocks.BASALT).method31558(Blocks.field37130);
    }
 

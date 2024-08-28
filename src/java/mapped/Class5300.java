@@ -60,7 +60,7 @@ public class Class5300 extends Module {
         if (this.method15996()) {
             if (this.field23836) {
                 if (this.method15974("GUI")) {
-                    ClientResource var4 = ResourceRegistry.field38854;
+                    ClientResource var4 = ResourceRegistry.JelloLightFont20;
                     byte var5 = -1;
                     int var6 = Minecraft.getInstance().field1283.method8043();
                     int var7 = Minecraft.getInstance().field1283.method8044();

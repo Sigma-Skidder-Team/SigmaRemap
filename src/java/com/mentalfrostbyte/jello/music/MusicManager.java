@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4413;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Class9133;
@@ -149,7 +149,7 @@ public class MusicManager {
 
     @EventTarget
     private void method24296(Class4415 var1) {
-        if (Client.getInstance().method19954() == ClientMode.JELLO) {
+        if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             if (this.field32144 && this.field32163.size() != 0) {
                 double[] var4 = this.field32163.get(0);
                 if (this.field32165.isEmpty()) {
@@ -237,14 +237,14 @@ public class MusicManager {
                     int var12 = 30;
                     if (var11.length <= 1) {
                         Class3192.method11439(
-                                ResourceRegistry.field38869,
+                                ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.field1283.method8044() - 70),
                                 var11[0],
                                 Class5628.method17688(Class1979.field12891.field12910, 0.5F)
                         );
                         Class3192.method11439(
-                                ResourceRegistry.field38853,
+                                ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.field1283.method8044() - 70),
                                 var11[0],
@@ -252,28 +252,28 @@ public class MusicManager {
                         );
                     } else {
                         Class3192.method11439(
-                                ResourceRegistry.field38871,
+                                ResourceRegistry.JelloMediumFont20_1,
                                 130.0F,
                                 (float) (field32143.field1283.method8044() - 81),
                                 var11[0],
                                 Class5628.method17688(Class1979.field12891.field12910, 0.4F)
                         );
                         Class3192.method11439(
-                                ResourceRegistry.field38869,
+                                ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.field1283.method8044() - 56),
                                 var11[1],
                                 Class5628.method17688(Class1979.field12891.field12910, 0.5F)
                         );
                         Class3192.method11439(
-                                ResourceRegistry.field38853,
+                                ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.field1283.method8044() - 56),
                                 var11[1],
                                 Class5628.method17688(Class1979.field12896.field12910, 0.7F)
                         );
                         Class3192.method11439(
-                                ResourceRegistry.field38864,
+                                ResourceRegistry.JelloMediumFont20,
                                 130.0F,
                                 (float) (field32143.field1283.method8044() - 81),
                                 var11[0],
@@ -286,7 +286,7 @@ public class MusicManager {
     }
 
     @EventTarget
-    private void method24299(Class4428 var1) {
+    private void method24299(TickEvent var1) {
         if (!this.field32144) {
             this.field32163.clear();
             this.field32165.clear();

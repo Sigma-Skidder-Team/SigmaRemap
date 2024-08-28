@@ -23,7 +23,7 @@ public class Class5199 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23507 = false;
         this.field23508 = false;
         this.field23509 = 0.0;
@@ -36,7 +36,7 @@ public class Class5199 extends Module {
             if (var1.method13994() < -0.5
                     && (double) mc.field1339.field5045 > 2.0 + (double) Class9567.method37079() * 0.5
                     && !mc.field1339.field5036
-                    && this.method15978("Mode").equals("Hypixel")
+                    && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && Class5628.method17716()) {
                 double[] var4 = Class5628.method17747();
                 int var5 = var4.length;
@@ -80,7 +80,7 @@ public class Class5199 extends Module {
     private void method16188(Class4399 var1) {
         if (this.method15996() && mc.field1339 != null) {
             if (!(mc.field1339.getPosY() < 2.0)) {
-                String var4 = this.method15978("Mode");
+                String var4 = this.getStringSettingValueByName("Mode");
                 if (!Class5628.method17716() && var4.equals("Hypixel")) {
                     var4 = "OldHypixel";
                 }
@@ -139,7 +139,7 @@ public class Class5199 extends Module {
                                 this.field23507 = false;
                             }
 
-                            if (!this.field23507 && mc.field1339.field5045 > 3.0F && this.method15978("Mode").equals("AAC")) {
+                            if (!this.field23507 && mc.field1339.field5045 > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
                                 this.field23507 = !this.field23507;
                                 Class5605 var7 = new Class5605(mc.field1339.getPosX(), Double.NaN, mc.field1339.getPosZ(), true);
                                 mc.getClientPlayNetHandler().sendPacket(var7);

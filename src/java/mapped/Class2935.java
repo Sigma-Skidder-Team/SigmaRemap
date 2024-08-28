@@ -12,11 +12,11 @@ public class Class2935 extends Class2898<Class4708> {
       Blocks.BEDROCK,
       Blocks.field36890,
       Blocks.SOUL_SAND,
-      Blocks.field36642,
-      Blocks.field36643,
-      Blocks.field36644,
-      Blocks.field36645,
-      Blocks.field36534,
+      Blocks.NETHER_BRICKS,
+      Blocks.NETHER_BRICK_FENCE,
+      Blocks.NETHER_BRICK_STAIRS,
+      Blocks.NETHER_WART,
+      Blocks.CHEST,
       Blocks.field36532
    );
 

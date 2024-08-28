@@ -13,7 +13,7 @@ public abstract class Class3429 extends Block {
       return var0.method23446(Class7645.field32766) && var0.method23383() instanceof Class3429;
    }
 
-   public Class3429(boolean var1, Class7929 var2) {
+   public Class3429(boolean var1, AbstractBlock var2) {
       super(var2);
       this.field19189 = var1;
    }

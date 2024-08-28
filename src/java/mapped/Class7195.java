@@ -22,7 +22,7 @@ public abstract class Class7195<C extends Class4729> {
       Blocks.STONE,
       Blocks.GRANITE,
       Blocks.DIORITE,
-      Blocks.field36393,
+      Blocks.ANDESITE,
       Blocks.field36396,
       Blocks.field36397,
       new Block[]{
@@ -45,11 +45,11 @@ public abstract class Class7195<C extends Class4729> {
          Blocks.field36743,
          Blocks.field36744,
          Blocks.field36745,
-         Blocks.field36458,
+         Blocks.SANDSTONE,
          Blocks.field36835,
-         Blocks.field36640,
+         Blocks.MYCELIUM,
          Blocks.SNOW,
-         Blocks.field36796
+         Blocks.PACKED_ICE
       }
    );
    public Set<Class7631> field30898 = ImmutableSet.of(Class9479.field44066);
@@ -165,7 +165,7 @@ public abstract class Class7195<C extends Class4729> {
          var5.method8372(var11, var14, var12);
          Class7380 var20 = var1.method6738(var5);
          Class7380 var21 = var1.method6738(var6.method8377(var5, Direction.field673));
-         if (var20.method23448(Blocks.field36395) || var20.method23448(Blocks.field36640)) {
+         if (var20.method23448(Blocks.field36395) || var20.method23448(Blocks.MYCELIUM)) {
             var16.setTrue();
          }
 

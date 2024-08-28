@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -21,13 +21,13 @@ public class Class5193 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23501 = -1;
         mc.field1284.field40360 = 0.3F;
     }
 
     @EventTarget
-    public void method16174(Class4428 var1) {
+    public void method16174(TickEvent var1) {
         if (this.method15996() && mc.field1339 != null) {
             if (!Class5628.method17730(mc.field1339, 0.001F)) {
                 this.field23501++;

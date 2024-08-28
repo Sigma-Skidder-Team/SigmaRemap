@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 
@@ -36,7 +36,7 @@ public class Class5341 extends Class5325 {
     }
 
     @EventTarget
-    public void method16762(Class4428 var1) {
+    public void method16762(TickEvent var1) {
         field23893++;
     }
 

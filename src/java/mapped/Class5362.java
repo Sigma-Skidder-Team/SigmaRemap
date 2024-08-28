@@ -162,7 +162,7 @@ public class Class5362 extends Module {
                                 var16 = Class7789.method25843(Class8514.field37959);
                             }
 
-                            if (var16 != -1 && var13.method23383() instanceof Class3419) {
+                            if (var16 != -1 && var13.method23383() instanceof AirBlock) {
                                 float[] var20 = Class9217.method34542(var5, Direction.field673);
                                 var1.method13918(var20[0]);
                                 var1.method13916(var20[1]);

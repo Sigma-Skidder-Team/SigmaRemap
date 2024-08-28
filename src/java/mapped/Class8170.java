@@ -214,7 +214,7 @@ public final class Class8170 {
 
    private static List<Class6692> method28426(Class1657 var0, Class7480 var1, Class5646 var2, Class179 var3, BlockPos var4, Class8907 var5) {
       return var3 == Class179.field623
-            && var0.method6738(var4.method8313()).method23383() == Blocks.field36642
+            && var0.method6738(var4.method8313()).method23383() == Blocks.NETHER_BRICKS
             && var1.method24345(var4, false, Class2961.field18070).method17117()
          ? Class2961.field18070.method11374()
          : var2.method17808(var5 == null ? var0.method7003(var4) : var5, var1, var3, var4);

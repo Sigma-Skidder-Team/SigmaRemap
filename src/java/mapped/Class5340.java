@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.Timer;
@@ -39,7 +39,7 @@ public class Class5340 extends Class5325 {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         if (!this.field23891.method27123()) {
             this.field23891.method27118();
         }
@@ -57,7 +57,7 @@ public class Class5340 extends Class5325 {
     }
 
     @EventTarget
-    private void method16758(Class4428 var1) {
+    private void method16758(TickEvent var1) {
         if (this.method15996()) {
             if (this.field23890 != null) {
                 if (mc.field1355 instanceof Class1331) {
@@ -81,7 +81,7 @@ public class Class5340 extends Class5325 {
             }
 
             if (!this.field23889.isEmpty()) {
-                String var4 = this.method15978("Type");
+                String var4 = this.getStringSettingValueByName("Type");
 
                 try {
                     if (mc.field1339.field5055 <= 3) {
@@ -131,14 +131,14 @@ public class Class5340 extends Class5325 {
     public void method16761(String var1) {
         String[] var4 = var1.split(" ");
         String var5 = var4[0];
-        if (this.method15978("Type").equals("Mineplex") || this.method15978("Type").equals("Funcraft")) {
+        if (this.getStringSettingValueByName("Type").equals("Mineplex") || this.getStringSettingValueByName("Type").equals("Funcraft")) {
             var5 = var4[1];
         }
 
-        String var6 = this.method15978("AutoL Mode");
+        String var6 = this.getStringSettingValueByName("AutoL Mode");
         switch (var6) {
             case "Basic":
-                this.field23889.add(this.method15978("First character") + "L " + var5);
+                this.field23889.add(this.getStringSettingValueByName("First character") + "L " + var5);
                 break;
             case "Sigmeme":
                 if (this.field23888.isEmpty()) {
@@ -147,12 +147,12 @@ public class Class5340 extends Class5325 {
                 }
 
                 String var11 = this.field23888.get(0);
-                if (this.method15978("Type").equals("Cubecraft")) {
+                if (this.getStringSettingValueByName("Type").equals("Cubecraft")) {
                     var11 = var11.replaceAll("sigma", "ＳＩＧＭＡ");
                     var11 = var11.replaceAll("Sigma", "ＳＩＧＭＡ");
                 }
 
-                var11 = this.method15978("First character") + var11;
+                var11 = this.getStringSettingValueByName("First character") + var11;
                 this.field23889.add(var11);
                 this.field23888.remove(0);
                 break;
@@ -163,12 +163,12 @@ public class Class5340 extends Class5325 {
                 }
 
                 String var8 = this.field23888.get(0);
-                if (this.method15978("Type").equals("Cubecraft")) {
+                if (this.getStringSettingValueByName("Type").equals("Cubecraft")) {
                     var8 = var8.replaceAll("sigma", "ＳＩＧＭＡ");
                     var8 = var8.replaceAll("Sigma", "ＳＩＧＭＡ");
                 }
 
-                var8 = this.method15978("First character") + var8;
+                var8 = this.getStringSettingValueByName("First character") + var8;
                 this.field23889.add(var8);
                 this.field23888.remove(0);
         }

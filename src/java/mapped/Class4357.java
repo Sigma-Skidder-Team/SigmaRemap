@@ -25,7 +25,7 @@ public class Class4357 extends Class4247 {
       Class4274 var7;
       this.method13230(
          var7 = new Class4274(
-            this, "addButton", this.field20897 - 55, 0, ResourceRegistry.field38855.method23942("Add"), 69, Class6387.field27961, "+", ResourceRegistry.field38855
+            this, "addButton", this.field20897 - 55, 0, ResourceRegistry.JelloLightFont25.method23942("Add"), 69, Class6387.field27961, "+", ResourceRegistry.JelloLightFont25
          )
       );
       var7.method13251((var1x, var2x) -> this.field21300.method13119(true));
@@ -170,7 +170,7 @@ public class Class4357 extends Class4247 {
 
       this.field21299.method13279(var7, var7);
       Class3192.method11439(
-         ResourceRegistry.field38855,
+         ResourceRegistry.JelloLightFont25,
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 20),
          "Profiles",

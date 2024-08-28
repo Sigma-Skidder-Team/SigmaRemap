@@ -23,7 +23,7 @@ public abstract class Class3202 extends Class3200 {
    public static final Class6408 field18526 = Block.method11539(0.0, 6.0, 5.0, 1.0, 10.0, 11.0);
    private final boolean field18527;
 
-   public Class3202(boolean var1, Class7929 var2) {
+   public Class3202(boolean var1, AbstractBlock var2) {
       super(var2);
       this.method11578(
          this.field18612

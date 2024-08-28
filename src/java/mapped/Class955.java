@@ -69,10 +69,10 @@ public class Class955 extends Class944 implements Class935 {
 
    private Class7380 method3854() {
       return !this.method3846() && this.method3848() && this.field5361.method23383() instanceof Class3435
-         ? Blocks.field36488
+         ? Blocks.PISTON_HEAD
             .method11579()
             .method23465(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
-            .method23465(Class3436.field19211, !this.field5361.method23448(Blocks.field36480) ? Class180.field638 : Class180.field639)
+            .method23465(Class3436.field19211, !this.field5361.method23448(Blocks.STICKY_PISTON) ? Class180.field638 : Class180.field639)
             .method23465(Class3436.field19198, this.field5361.<Direction>method23463(Class3435.field19198))
          : this.field5361;
    }
@@ -238,7 +238,7 @@ public class Class955 extends Class944 implements Class935 {
          this.field5367 = this.field5366;
          this.field5324.method6762(this.field5325);
          this.method3765();
-         if (this.field5324.method6738(this.field5325).method23448(Blocks.field36505)) {
+         if (this.field5324.method6738(this.field5325).method23448(Blocks.MOVING_PISTON)) {
             Class7380 var3;
             if (!this.field5364) {
                var3 = Block.method11542(this.field5361, this.field5324, this.field5325);
@@ -269,7 +269,7 @@ public class Class955 extends Class944 implements Class935 {
       } else {
          this.field5324.method6762(this.field5325);
          this.method3765();
-         if (this.field5361 != null && this.field5324.method6738(this.field5325).method23448(Blocks.field36505)) {
+         if (this.field5361 != null && this.field5324.method6738(this.field5325).method23448(Blocks.MOVING_PISTON)) {
             Class7380 var4 = Block.method11542(this.field5361, this.field5324, this.field5325);
             if (!var4.method23393()) {
                if (var4.method23462(Class8820.field39710) && var4.<Boolean>method23463(Class8820.field39710)) {
@@ -324,7 +324,7 @@ public class Class955 extends Class944 implements Class935 {
          if (!this.method3848()) {
             var7 = this.field5361;
          } else {
-            var7 = Blocks.field36488
+            var7 = Blocks.PISTON_HEAD
                .method11579()
                .method23465(Class3436.field19198, this.field5362)
                .method23465(Class3436.field19212, Boolean.valueOf(this.field5363 != 1.0F - this.field5366 < 0.25F));

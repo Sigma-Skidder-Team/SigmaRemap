@@ -9,7 +9,7 @@ public class Class3460 extends Block {
    public static final Class6408 field19290 = Block.method11539(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
    private final Block field19291;
 
-   public Class3460(Block var1, Class7929 var2) {
+   public Class3460(Block var1, AbstractBlock var2) {
       super(var2);
       this.field19291 = var1;
       field19289.put(var1, this);
@@ -45,7 +45,7 @@ public class Class3460 extends Block {
                var4.method3095(var5, var14);
             }
 
-            var2.method6725(var3, Blocks.field36668.method11579(), 3);
+            var2.method6725(var3, Blocks.FLOWER_POT.method11579(), 3);
          } else {
             var2.method6725(var3, var11.method11579(), 3);
             var4.method2911(Class8876.field40154);

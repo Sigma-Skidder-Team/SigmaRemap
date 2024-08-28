@@ -2,16 +2,16 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
-public class Class5333 extends Class5325 {
-    public Class5333() {
+public class Fly extends Class5325 {
+    public Fly() {
         super(
                 ModuleCategory.MOVEMENT,
                 "Fly",
                 "Allows you to fly like a bird",
-                new Class5373(),
-                new Class5222(),
-                new Class5262(),
-                new Class5321(),
+                new VanillaFly(),
+                new HypixelFly(),
+                new MineplexFly(),
+                new JetpackFly(),
                 new Class5195(),
                 new Class5271(),
                 new Class5238(),

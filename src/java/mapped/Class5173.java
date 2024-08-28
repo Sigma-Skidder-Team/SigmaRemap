@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4402;
 import com.mentalfrostbyte.jello.event.impl.Class4418;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -26,7 +26,7 @@ public class Class5173 extends Module {
     public void method16100(Class4418 var1) {
         if (!this.method15996()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
-            if (!var4.method15996() || !var4.method15978("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
+            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
                 return;
             }
         }
@@ -35,10 +35,10 @@ public class Class5173 extends Module {
     }
 
     @EventTarget
-    public void method16101(Class4428 var1) {
+    public void method16101(TickEvent var1) {
         if (!this.method15996()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
-            if (!var4.method15996() || !var4.method15978("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
+            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
                 return;
             }
         }
@@ -79,7 +79,7 @@ public class Class5173 extends Module {
     public void method16103(Class4396 var1) {
         if (!this.method15996()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
-            if (!var4.method15996() || !var4.method15978("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
+            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
                 return;
             }
         }

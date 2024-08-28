@@ -24,7 +24,7 @@ public class Class5323 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23870 = null;
 
         for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.field1337.method23135()))) {

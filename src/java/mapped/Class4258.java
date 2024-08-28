@@ -17,8 +17,8 @@ public class Class4258 extends Class4247 {
    public Class4258(Class4305 var1, String var2, int var3, int var4, int var5, int var6, boolean var7, String... var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20644 = var7;
-      this.method13230(this.field20643 = new Class4281(this, "textbox", 0, 0, var5, 32, Class4281.field20741, "", "Search...", ResourceRegistry.field38852));
-      this.field20643.method13306(ResourceRegistry.field38853);
+      this.method13230(this.field20643 = new Class4281(this, "textbox", 0, 0, var5, 32, Class4281.field20741, "", "Search...", ResourceRegistry.JelloLightFont14));
+      this.field20643.method13306(ResourceRegistry.JelloLightFont18);
       this.field20643.method13151(var1x -> this.method13069(this.field20643.method13303()));
       this.method13071(var8);
       this.method13069("");

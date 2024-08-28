@@ -78,7 +78,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7952 var6 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Blocks.field36642,
+            Blocks.NETHER_BRICKS,
             new TranslationTextComponent("advancements.nether.find_fortress.title"),
             new TranslationTextComponent("advancements.nether.find_fortress.description"),
             (ResourceLocation)null,
@@ -167,7 +167,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7952 var10 = Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Blocks.field36665,
+            Blocks.BEACON,
             new TranslationTextComponent("advancements.nether.create_beacon.title"),
             new TranslationTextComponent("advancements.nether.create_beacon.description"),
             (ResourceLocation)null,
@@ -181,7 +181,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Blocks.field36665,
+            Blocks.BEACON,
             new TranslationTextComponent("advancements.nether.create_full_beacon.title"),
             new TranslationTextComponent("advancements.nether.create_full_beacon.description"),
             (ResourceLocation)null,
@@ -426,7 +426,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var16)
          .method27308(
-            Blocks.field36534,
+            Blocks.CHEST,
             new TranslationTextComponent("advancements.nether.loot_bastion.title"),
             new TranslationTextComponent("advancements.nether.loot_bastion.description"),
             (ResourceLocation)null,

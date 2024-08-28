@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -28,7 +28,7 @@ public class Class5185 extends Module {
     }
 
     @EventTarget
-    public void method16142(Class4428 var1) {
+    public void method16142(TickEvent var1) {
         this.field23490 = Class9217.method34567(mc.field1339.field5031, mc.field1339.field5032, 200.0F);
         if (this.field23491 != null && this.field23492 != null) {
             Client.getInstance()

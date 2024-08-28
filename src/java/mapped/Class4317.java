@@ -61,7 +61,7 @@ public class Class4317 extends Class4307 {
             Class4281.field20741,
             "",
             "Search...",
-            ResourceRegistry.field38853
+            ResourceRegistry.JelloLightFont18
          )
       );
       this.field21066.method13306(ResourceRegistry.field38868);

@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 
@@ -21,7 +21,7 @@ public class Class5257 extends PremiumModule {
     }
 
     @EventTarget
-    public void method16419(Class4428 var1) {
+    public void method16419(TickEvent var1) {
         if (!this.method15996()) {
         }
     }

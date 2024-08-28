@@ -39,7 +39,7 @@ public class Class5163 extends Module {
                 mc.field1339.method2820(var4);
             }
 
-            String var6 = this.method15978("Rotation Mode");
+            String var6 = this.getStringSettingValueByName("Rotation Mode");
             switch (var6) {
                 case "Random":
                     var1.method13918(this.field23434.nextFloat() * 360.0F);
@@ -58,7 +58,7 @@ public class Class5163 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23437 = (int) mc.field1339.field5031;
     }
 }

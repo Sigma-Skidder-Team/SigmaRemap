@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class Class3407 extends Block {
    private static String[] field19085;
 
-   public Class3407(Class7929 var1) {
+   public Class3407(AbstractBlock var1) {
       super(var1);
    }
 

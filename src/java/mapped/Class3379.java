@@ -4,7 +4,7 @@ public class Class3379 extends Class3231 {
    private static String[] field18979;
    public static final Class6408 field18980 = Block.method11539(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
 
-   public Class3379(Class7929 var1) {
+   public Class3379(AbstractBlock var1) {
       super(var1);
    }
 

@@ -23,7 +23,7 @@ public class Class5740 extends Class5715<Class1004> {
       var4.method35293(Class7680.field32900.method25286(-90.0F));
       var4.method35291(-0.5, -0.5, 0.5);
       var4.method35293(Class7680.field32900.method25286(90.0F));
-      Class5733.method17916(Blocks.field36524.method11579(), var4, var5, var6, var1.method4184() / 5 % 2 == 0);
+      Class5733.method17916(Blocks.TNT.method11579(), var4, var5, var6, var1.method4184() / 5 % 2 == 0);
       var4.method35295();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }

@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class3249 extends Block implements Class3245 {
    public static final Class8552<Class182> field18712 = Class8820.field39723;
 
-   public Class3249(Class7929 var1) {
+   public Class3249(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(field18712, Class182.field657));
    }

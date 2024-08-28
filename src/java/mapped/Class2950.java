@@ -210,7 +210,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private boolean method11303(Block var1) {
-      return var1 == Blocks.field36796 || var1 == Blocks.SNOW_BLOCK || var1 == Blocks.field37006;
+      return var1 == Blocks.PACKED_ICE || var1 == Blocks.SNOW_BLOCK || var1 == Blocks.field37006;
    }
 
    private boolean method11304(Class1665 var1, BlockPos var2) {

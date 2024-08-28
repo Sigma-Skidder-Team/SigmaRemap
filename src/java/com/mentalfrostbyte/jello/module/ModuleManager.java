@@ -41,7 +41,7 @@ public class ModuleManager {
     public void register(ClientMode var1) {
         this.createModules();
         this.register(new BlockFly());
-        this.register(new Class5333());
+        this.register(new Fly());
         this.register(new Class5341());
         this.register(new Class5215());
         this.register(new Class5327());
@@ -123,7 +123,7 @@ public class ModuleManager {
         this.register(new Class5182());
         this.register(new Class5306());
         this.register(new Class5177());
-        this.register(new Class5378());
+        this.register(new GameIdler());
         this.register(new Class5340());
         this.register(new Class5323());
         this.register(new Class5235());
@@ -145,7 +145,7 @@ public class ModuleManager {
             this.register(new Class5305());
             this.register(new Class5234());
             this.register(new Class5274());
-            this.register(new Class5246());
+            this.register(new ActiveMods());
             this.register(new Class5261());
             this.register(new Class5377());
             this.register(new Class5227());
@@ -277,7 +277,7 @@ public class ModuleManager {
         } catch (Class2499 var7) {
         }
 
-        if (Client.getInstance().method19954() == ClientMode.CLASSIC) {
+        if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
             var4 = "Classic";
         }
 

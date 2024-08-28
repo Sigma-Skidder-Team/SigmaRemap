@@ -7,7 +7,7 @@ public abstract class Class3468 extends Block {
    public static final Class6408 field19314 = Block.method11539(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
    public static final Class6488 field19315 = new Class6488(0.125, 0.0, 0.125, 0.875, 0.25, 0.875);
 
-   public Class3468(Class7929 var1) {
+   public Class3468(AbstractBlock var1) {
       super(var1);
    }
 

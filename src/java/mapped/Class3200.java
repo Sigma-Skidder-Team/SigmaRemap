@@ -6,7 +6,7 @@ public class Class3200 extends Class3198 {
    private static String[] field18499;
    public static final Class8552<Class103> field18500 = Class8820.field39724;
 
-   public Class3200(Class7929 var1) {
+   public Class3200(AbstractBlock var1) {
       super(var1);
    }
 

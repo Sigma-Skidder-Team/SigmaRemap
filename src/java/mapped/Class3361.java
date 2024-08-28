@@ -20,7 +20,7 @@ public class Class3361 extends Class3359 {
       )
    );
 
-   public Class3361(Class112 var1, Class7929 var2) {
+   public Class3361(Class112 var1, AbstractBlock var2) {
       super(var1, var2);
       this.method11578(this.field18612.method35393().method23465(field18910, Direction.NORTH));
    }

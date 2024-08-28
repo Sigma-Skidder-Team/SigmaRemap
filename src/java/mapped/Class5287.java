@@ -147,17 +147,17 @@ public class Class5287 extends Module {
 
             if (var9.method15996()) {
                 Class3192.method11439(
-                        ResourceRegistry.field38864,
+                        ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.field38864.method23952() / 2 + 3 + var7 * this.field23778),
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3 + var7 * this.field23778),
                         var9.method15991(),
                         Class1979.field12896.field12910
                 );
             } else {
                 Class3192.method11439(
-                        ResourceRegistry.field38854,
+                        ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.field38854.method23952() / 2 + 2 + var7 * this.field23778),
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var7 * this.field23778),
                         var9.method15991(),
                         Class1979.field12896.field12910
                 );
@@ -186,9 +186,9 @@ public class Class5287 extends Module {
             }
 
             Class3192.method11439(
-                    ResourceRegistry.field38854,
+                    ResourceRegistry.JelloLightFont20,
                     (float) (var1 + 11) + this.field23773.get(var8),
-                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.field38854.method23952() / 2 + 2 + var6 * this.field23778),
+                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var6 * this.field23778),
                     var8.toString(),
                     -1
             );

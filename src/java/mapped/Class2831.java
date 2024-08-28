@@ -108,7 +108,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Blocks.field36476,
+            Blocks.RED_BED,
             new TranslationTextComponent("advancements.adventure.sleep_in_bed.title"),
             new TranslationTextComponent("advancements.adventure.sleep_in_bed.description"),
             (ResourceLocation)null,

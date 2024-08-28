@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -165,7 +165,7 @@ public class Class5151 extends Module {
    }
 
    @EventTarget
-   private void method15956(Class4428 var1) {
+   private void method15956(TickEvent var1) {
       if (this.method15996()) {
          if (this.field23384 <= 0) {
             field23380.changeDirection(Direction.BACKWARDS);
@@ -327,7 +327,7 @@ public class Class5151 extends Module {
    }
 
    @Override
-   public void method15966() {
+   public void isInDevelopment() {
       field23380.changeDirection(Direction.FORWARDS);
       this.field23384 = 40;
    }

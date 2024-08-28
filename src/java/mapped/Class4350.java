@@ -32,7 +32,7 @@ public class Class4350 extends Class4278 {
             (float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)(this.field20898 - this.method13265()), 114.0F, var1
          );
          byte var4 = 30;
-         ClientResource var5 = ResourceRegistry.field38853;
+         ClientResource var5 = ResourceRegistry.JelloLightFont18;
          String var6 = System.getProperty("line.separator");
          String[] var7 = this.field20912.split("(?<=" + var6 + ")");
          int var8 = this.field21260;
@@ -122,7 +122,7 @@ public class Class4350 extends Class4278 {
    @Override
    public void method13150(char var1) {
       super.method13150(var1);
-      if (this.method13297() && Class8906.method32486(var1) && ResourceRegistry.field38853.method23942(Character.toString(var1)) > 1) {
+      if (this.method13297() && Class8906.method32486(var1) && ResourceRegistry.JelloLightFont18.method23942(Character.toString(var1)) > 1) {
          this.field20912 = Class8906.method32492(this.field20912, Character.toString(var1), this.field21260);
          this.field21260++;
       }
@@ -140,7 +140,7 @@ public class Class4350 extends Class4278 {
       if (this.field20909) {
          String var5 = System.getProperty("line.separator");
          String[] var6 = this.field20912.split("(?<=" + var5 + ")");
-         int var7 = (var2 - this.method13272() - ResourceRegistry.field38853.method23952() / 2) / ResourceRegistry.field38853.method23952() - 1;
+         int var7 = (var2 - this.method13272() - ResourceRegistry.JelloLightFont18.method23952() / 2) / ResourceRegistry.JelloLightFont18.method23952() - 1;
          if (var7 > var6.length - 1) {
             var7 = var6.length - 1;
          }
@@ -155,7 +155,7 @@ public class Class4350 extends Class4278 {
             var8 += var6[var9].length();
          }
 
-         this.field21260 = var8 + Class8906.method32494(var6[var7], ResourceRegistry.field38853, (float)this.method13271(), var1, 30.0F);
+         this.field21260 = var8 + Class8906.method32494(var6[var7], ResourceRegistry.JelloLightFont18, (float)this.method13271(), var1, 30.0F);
          if (this.field20912.substring(0, this.field21260).endsWith(var5) && this.field21260 != this.field20912.length()) {
             this.field21260--;
          }

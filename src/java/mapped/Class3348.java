@@ -20,7 +20,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    private static final Class6139<Class941, Optional<Class920>> field18873 = new Class6140();
    private static final Class6139<Class941, Optional<Class949>> field18874 = new Class6142();
 
-   public Class3348(Class7929 var1, Supplier<Class4387<? extends Class941>> var2) {
+   public Class3348(AbstractBlock var1, Supplier<Class4387<? extends Class941>> var2) {
       super(var1, var2);
       this.method11578(
          this.field18612

@@ -118,13 +118,13 @@ public class Class4184 extends Class4180 {
 
    private void method12951(Random var1, Class1660 var2, BlockPos var3) {
       Class7380 var6 = var2.method6738(var3);
-      if (!var6.method23393() && !var6.method23448(Blocks.field36636)) {
+      if (!var6.method23393() && !var6.method23448(Blocks.VINE)) {
          Direction var7 = Class76.field161.method247(var1);
          BlockPos var8 = var3.method8349(var7);
          Class7380 var9 = var2.method6738(var8);
          if (var9.method23393() && Block.method11549(var6.method23414(var2, var3), var7)) {
             Class8551 var10 = Class3402.method12039(var7.method536());
-            var2.method6725(var8, Blocks.field36636.method11579().method23465(var10, Boolean.valueOf(true)), 3);
+            var2.method6725(var8, Blocks.VINE.method11579().method23465(var10, Boolean.valueOf(true)), 3);
          }
       }
    }
@@ -198,7 +198,7 @@ public class Class4184 extends Class4180 {
       Class7380 var5 = var1.method6738(var2);
       return !var5.method23448(Blocks.AIR)
          && !var5.method23448(Blocks.field36527)
-         && !var5.method23448(Blocks.field36534)
+         && !var5.method23448(Blocks.CHEST)
          && (this.field20469 == Class2219.field14499 || !var5.method23448(Blocks.LAVA));
    }
 

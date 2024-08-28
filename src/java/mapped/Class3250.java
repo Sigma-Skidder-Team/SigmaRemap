@@ -21,7 +21,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    public static final Class6408 field18723 = Class8022.method27432(field18715, field18718, field18719);
    private final Class112 field18724;
 
-   public Class3250(Class112 var1, Class7929 var2) {
+   public Class3250(Class112 var1, AbstractBlock var2) {
       super(var2);
       this.field18724 = var1;
       this.method11578(this.field18612.method35393().method23465(field18713, Class82.field206).method23465(field18714, Boolean.valueOf(false)));

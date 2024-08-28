@@ -88,7 +88,7 @@ public class Class5263 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23676 = System.nanoTime();
     }
 

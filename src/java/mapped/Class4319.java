@@ -35,7 +35,7 @@ public class Class4319 extends Class4307 {
       GL11.glTranslatef((float)(-this.method13267() / 2), (float)(-this.method13269() / 2), 0.0F);
       String var7 = "##Jello \n";
       String var8 = "Jello by MF";
-      ClientResource var9 = ResourceRegistry.field38855;
+      ClientResource var9 = ResourceRegistry.JelloLightFont25;
       Class3192.method11439(
          var9, (float)((this.method13267() - var9.method23942(var8)) / 2), (float)(this.method13269() - 110), var8, Class1979.field12891.field12910
       );

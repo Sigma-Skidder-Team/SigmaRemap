@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4428;
+import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -22,7 +22,7 @@ public class Class5212 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23538 = mc.field1338.method6792(1.0F);
         if (mc.field1338.method6792(1.0F) != 1.0F) {
             if (mc.field1338.method6792(1.0F) == 0.0F) {
@@ -36,7 +36,7 @@ public class Class5212 extends Module {
     }
 
     @EventTarget
-    private void method16230(Class4428 var1) {
+    private void method16230(TickEvent var1) {
         if (this.method15996()) {
             if (!this.method15974("Disable rain")) {
                 if (this.field23539) {

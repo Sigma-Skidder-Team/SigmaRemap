@@ -96,10 +96,10 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          )
          .method27314(Class9014.field41221)
          .method27312("wheat", Class4486.method14152(Blocks.field36539))
-         .method27312("pumpkin_stem", Class4486.method14152(Blocks.field36634))
-         .method27312("melon_stem", Class4486.method14152(Blocks.field36635))
+         .method27312("pumpkin_stem", Class4486.method14152(Blocks.PUMPKIN_STEM))
+         .method27312("melon_stem", Class4486.method14152(Blocks.MELON_STEM))
          .method27312("beetroots", Class4486.method14152(Blocks.field36884))
-         .method27312("nether_wart", Class4486.method14152(Blocks.field36645))
+         .method27312("nether_wart", Class4486.method14152(Blocks.NETHER_WART))
          .method27317(var1, "husbandry/plant_seed");
       Class7952 var6 = Class7999.method27304()
          .method27305(var4)

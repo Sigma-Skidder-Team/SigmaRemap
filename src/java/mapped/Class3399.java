@@ -30,7 +30,7 @@ public class Class3399 extends Class3397 {
    private final Object2IntMap<Block> field19051 = new Object2IntOpenHashMap();
    private final Object2IntMap<Block> field19052 = new Object2IntOpenHashMap();
 
-   public Class3399(Class7929 var1) {
+   public Class3399(AbstractBlock var1) {
       super(var1, 1.0F);
       this.method11578(
          this.field18612
@@ -229,7 +229,7 @@ public class Class3399 extends Class3397 {
 
    private Class7380 method12021(Class1660 var1, BlockPos var2, int var3) {
       Class7380 var6 = method12009(var1, var2);
-      return !var6.method23448(Blocks.field36530) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
+      return !var6.method23448(Blocks.FIRE) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
    }
 
    private boolean method12022(Class1665 var1, BlockPos var2) {
@@ -283,7 +283,7 @@ public class Class3399 extends Class3397 {
    }
 
    public static void method12026() {
-      Class3399 var2 = (Class3399) Blocks.field36530;
+      Class3399 var2 = (Class3399) Blocks.FIRE;
       var2.method12025(Blocks.field36400, 5, 20);
       var2.method12025(Blocks.field36401, 5, 20);
       var2.method12025(Blocks.field36402, 5, 20);
@@ -296,7 +296,7 @@ public class Class3399 extends Class3397 {
       var2.method12025(Blocks.field36842, 5, 20);
       var2.method12025(Blocks.field36843, 5, 20);
       var2.method12025(Blocks.field36844, 5, 20);
-      var2.method12025(Blocks.field36637, 5, 20);
+      var2.method12025(Blocks.OAK_FENCE_GATE, 5, 20);
       var2.method12025(Blocks.field36862, 5, 20);
       var2.method12025(Blocks.field36863, 5, 20);
       var2.method12025(Blocks.field36864, 5, 20);
@@ -310,7 +310,7 @@ public class Class3399 extends Class3397 {
       var2.method12025(Blocks.field36870, 5, 20);
       var2.method12025(Blocks.field36533, 5, 20);
       var2.method12025(Blocks.field36662, 5, 20);
-      var2.method12025(Blocks.field36661, 5, 20);
+      var2.method12025(Blocks.SPRUCE_STAIRS, 5, 20);
       var2.method12025(Blocks.field36663, 5, 20);
       var2.method12025(Blocks.field36762, 5, 20);
       var2.method12025(Blocks.field36763, 5, 20);
@@ -345,65 +345,65 @@ public class Class3399 extends Class3397 {
       var2.method12025(Blocks.field36450, 30, 60);
       var2.method12025(Blocks.field36451, 30, 60);
       var2.method12025(Blocks.field36525, 30, 20);
-      var2.method12025(Blocks.field36524, 15, 100);
-      var2.method12025(Blocks.field36482, 60, 100);
-      var2.method12025(Blocks.field36483, 60, 100);
-      var2.method12025(Blocks.field36484, 60, 100);
-      var2.method12025(Blocks.field36797, 60, 100);
-      var2.method12025(Blocks.field36798, 60, 100);
-      var2.method12025(Blocks.field36799, 60, 100);
+      var2.method12025(Blocks.TNT, 15, 100);
+      var2.method12025(Blocks.GRASS, 60, 100);
+      var2.method12025(Blocks.FERN, 60, 100);
+      var2.method12025(Blocks.DEAD_BUSH, 60, 100);
+      var2.method12025(Blocks.SUNFLOWER, 60, 100);
+      var2.method12025(Blocks.LILAC, 60, 100);
+      var2.method12025(Blocks.ROSE_BUSH, 60, 100);
       var2.method12025(Blocks.field36800, 60, 100);
-      var2.method12025(Blocks.field36801, 60, 100);
+      var2.method12025(Blocks.TALL_GRASS, 60, 100);
       var2.method12025(Blocks.field36802, 60, 100);
-      var2.method12025(Blocks.field36506, 60, 100);
-      var2.method12025(Blocks.field36507, 60, 100);
-      var2.method12025(Blocks.field36508, 60, 100);
-      var2.method12025(Blocks.field36509, 60, 100);
-      var2.method12025(Blocks.field36510, 60, 100);
-      var2.method12025(Blocks.field36511, 60, 100);
-      var2.method12025(Blocks.field36512, 60, 100);
-      var2.method12025(Blocks.field36513, 60, 100);
-      var2.method12025(Blocks.field36514, 60, 100);
-      var2.method12025(Blocks.field36515, 60, 100);
-      var2.method12025(Blocks.field36516, 60, 100);
-      var2.method12025(Blocks.field36518, 60, 100);
-      var2.method12025(Blocks.field36517, 60, 100);
-      var2.method12025(Blocks.field36489, 30, 60);
-      var2.method12025(Blocks.field36490, 30, 60);
-      var2.method12025(Blocks.field36491, 30, 60);
-      var2.method12025(Blocks.field36492, 30, 60);
-      var2.method12025(Blocks.field36493, 30, 60);
-      var2.method12025(Blocks.field36494, 30, 60);
-      var2.method12025(Blocks.field36495, 30, 60);
-      var2.method12025(Blocks.field36496, 30, 60);
-      var2.method12025(Blocks.field36497, 30, 60);
-      var2.method12025(Blocks.field36498, 30, 60);
-      var2.method12025(Blocks.field36499, 30, 60);
-      var2.method12025(Blocks.field36500, 30, 60);
-      var2.method12025(Blocks.field36501, 30, 60);
-      var2.method12025(Blocks.field36502, 30, 60);
-      var2.method12025(Blocks.field36503, 30, 60);
-      var2.method12025(Blocks.field36504, 30, 60);
-      var2.method12025(Blocks.field36636, 15, 100);
+      var2.method12025(Blocks.DANDELION, 60, 100);
+      var2.method12025(Blocks.POPPY, 60, 100);
+      var2.method12025(Blocks.BLUE_ORCHID, 60, 100);
+      var2.method12025(Blocks.ALLIUM, 60, 100);
+      var2.method12025(Blocks.AZURE_BLUET, 60, 100);
+      var2.method12025(Blocks.RED_TULIP, 60, 100);
+      var2.method12025(Blocks.ORANGE_TULIP, 60, 100);
+      var2.method12025(Blocks.WHITE_TULIP, 60, 100);
+      var2.method12025(Blocks.PINK_TULIP, 60, 100);
+      var2.method12025(Blocks.OXEYE_DAISY, 60, 100);
+      var2.method12025(Blocks.CORNFLOWER, 60, 100);
+      var2.method12025(Blocks.LILY_OF_THE_VALLEY, 60, 100);
+      var2.method12025(Blocks.WITHER_ROSE, 60, 100);
+      var2.method12025(Blocks.WHITE_WOOL, 30, 60);
+      var2.method12025(Blocks.ORANGE_WOOL, 30, 60);
+      var2.method12025(Blocks.MAGENTA_WOOL, 30, 60);
+      var2.method12025(Blocks.LIGHT_BLUE_WOOL, 30, 60);
+      var2.method12025(Blocks.YELLOW_WOOL, 30, 60);
+      var2.method12025(Blocks.LIME_WOOL, 30, 60);
+      var2.method12025(Blocks.PINK_WOOL, 30, 60);
+      var2.method12025(Blocks.GRAY_WOOL, 30, 60);
+      var2.method12025(Blocks.LIGHT_GRAY_WOOL, 30, 60);
+      var2.method12025(Blocks.CYAN_WOOL, 30, 60);
+      var2.method12025(Blocks.PURPLE_WOOL, 30, 60);
+      var2.method12025(Blocks.BLUE_WOOL, 30, 60);
+      var2.method12025(Blocks.BROWN_WOOL, 30, 60);
+      var2.method12025(Blocks.GREEN_WOOL, 30, 60);
+      var2.method12025(Blocks.RED_WOOL, 30, 60);
+      var2.method12025(Blocks.BLACK_WOOL, 30, 60);
+      var2.method12025(Blocks.VINE, 15, 100);
       var2.method12025(Blocks.field36795, 5, 5);
       var2.method12025(Blocks.field36777, 60, 20);
       var2.method12025(Blocks.field37116, 15, 20);
-      var2.method12025(Blocks.field36778, 60, 20);
-      var2.method12025(Blocks.field36779, 60, 20);
-      var2.method12025(Blocks.field36780, 60, 20);
-      var2.method12025(Blocks.field36781, 60, 20);
-      var2.method12025(Blocks.field36782, 60, 20);
-      var2.method12025(Blocks.field36783, 60, 20);
-      var2.method12025(Blocks.field36784, 60, 20);
-      var2.method12025(Blocks.field36785, 60, 20);
-      var2.method12025(Blocks.field36786, 60, 20);
-      var2.method12025(Blocks.field36787, 60, 20);
-      var2.method12025(Blocks.field36788, 60, 20);
-      var2.method12025(Blocks.field36789, 60, 20);
-      var2.method12025(Blocks.field36790, 60, 20);
-      var2.method12025(Blocks.field36791, 60, 20);
-      var2.method12025(Blocks.field36792, 60, 20);
-      var2.method12025(Blocks.field36793, 60, 20);
+      var2.method12025(Blocks.WHITE_CARPET, 60, 20);
+      var2.method12025(Blocks.ORANGE_CARPET, 60, 20);
+      var2.method12025(Blocks.MAGENTA_CARPET, 60, 20);
+      var2.method12025(Blocks.LIGHT_BLUE_CARPET, 60, 20);
+      var2.method12025(Blocks.YELLOW_CARPET, 60, 20);
+      var2.method12025(Blocks.LIME_CARPET, 60, 20);
+      var2.method12025(Blocks.PINK_CARPET, 60, 20);
+      var2.method12025(Blocks.GRAY_CARPET, 60, 20);
+      var2.method12025(Blocks.LIGHT_GRAY_CARPET, 60, 20);
+      var2.method12025(Blocks.CYAN_CARPET, 60, 20);
+      var2.method12025(Blocks.PURPLE_CARPET, 60, 20);
+      var2.method12025(Blocks.BLUE_CARPET, 60, 20);
+      var2.method12025(Blocks.BROWN_CARPET, 60, 20);
+      var2.method12025(Blocks.GREEN_CARPET, 60, 20);
+      var2.method12025(Blocks.RED_CARPET, 60, 20);
+      var2.method12025(Blocks.BLACK_CARPET, 60, 20);
       var2.method12025(Blocks.field36963, 30, 60);
       var2.method12025(Blocks.field37009, 60, 60);
       var2.method12025(Blocks.field37053, 60, 60);

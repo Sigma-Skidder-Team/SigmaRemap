@@ -242,7 +242,7 @@ public class Class9446 {
 
                return 0;
             } else {
-               return Blocks.field36665.method11579().method23392() / 2;
+               return Blocks.BEACON.method11579().method23392() / 2;
             }
          } else {
             return Blocks.LAVA.method11579().method23392();

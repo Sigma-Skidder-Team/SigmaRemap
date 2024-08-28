@@ -21,7 +21,7 @@ public class Class5214 extends Module {
 
     @EventTarget
     public void method16235(Class4399 var1) {
-        if (this.method15996() && mc.field1339 != null && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+        if (this.method15996() && mc.field1339 != null && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (mc.field1339.field5036 && var1.method13921() && Class5628.method17716()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
@@ -29,7 +29,7 @@ public class Class5214 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23541 = false;
         this.field23545 = 0;
         this.field23543 = mc.field1339 != null ? Class9567.method37075() : 0.2873;
@@ -47,9 +47,9 @@ public class Class5214 extends Module {
 
     @EventTarget
     public void method16236(Class4435 var1) {
-        if (this.method15996() && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+        if (this.method15996() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (!mc.field1339.field4981) {
-                String var4 = this.method15978("Mode");
+                String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
                     case "NCP":
                         if (Class9567.method37087() && mc.field1339.field5036) {
@@ -114,8 +114,8 @@ public class Class5214 extends Module {
     @EventTarget
     private void method16237(Class4404 var1) {
         if (this.method15996()
-                && !this.method15978("Mode").equalsIgnoreCase("NCP")
-                && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+                && !this.getStringSettingValueByName("Mode").equalsIgnoreCase("NCP")
+                && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (!mc.field1339.method3250() && !mc.field1339.method3264() && !mc.field1339.method3063()) {
                 if (!mc.field1299.field44636.field13071
                         && !mc.field1339.method3063()
@@ -141,7 +141,7 @@ public class Class5214 extends Module {
                 && !((double) mc.field1339.field5045 > 0.09)
                 && this.method15974("OnGround")
                 && !mc.field1299.field44636.field13071
-                && !Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()) {
+                && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
             if (mc.field1339.field5036 && Class5628.method17730(mc.field1339, 0.001F)) {
                 this.field23542 = mc.field1339.getPosY();
             }

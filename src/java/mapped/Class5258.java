@@ -29,7 +29,7 @@ public class Class5258 extends PremiumModule {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         field23649 = -1;
     }
 
@@ -75,7 +75,7 @@ public class Class5258 extends PremiumModule {
             }
 
             int var7 = this.method16424();
-            if (!Client.getInstance().getModuleManager().method14662(Class5333.class).method15996()
+            if (!Client.getInstance().getModuleManager().method14662(Fly.class).method15996()
                     && var7 != -1
                     && !mc.field1339.field5036
                     && mc.field1339.field5045 > 3.0F) {

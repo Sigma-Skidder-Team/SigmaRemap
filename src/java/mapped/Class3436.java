@@ -49,7 +49,7 @@ public class Class3436 extends Class3433 {
       }
    }
 
-   public Class3436(Class7929 var1) {
+   public Class3436(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612
@@ -71,7 +71,7 @@ public class Class3436 extends Class3433 {
    }
 
    private boolean method12108(Class7380 var1, Class7380 var2) {
-      Block var5 = var1.method23463(field19211) != Class180.field638 ? Blocks.field36480 : Blocks.field36487;
+      Block var5 = var1.method23463(field19211) != Class180.field638 ? Blocks.STICKY_PISTON : Blocks.PISTON;
       return var2.method23448(var5)
          && var2.<Boolean>method23463(Class3435.field19202)
          && var2.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
@@ -111,7 +111,7 @@ public class Class3436 extends Class3433 {
    public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
       Class7380 var6 = var2.method6738(var3.method8349(var1.<Direction>method23463(field19198).method536()));
       return this.method12108(var1, var6)
-         || var6.method23448(Blocks.field36505) && var6.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
+         || var6.method23448(Blocks.MOVING_PISTON) && var6.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
    }
 
    @Override
@@ -124,7 +124,7 @@ public class Class3436 extends Class3433 {
 
    @Override
    public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(var3.method23463(field19211) != Class180.field639 ? Blocks.field36487 : Blocks.field36480);
+      return new Class8848(var3.method23463(field19211) != Class180.field639 ? Blocks.PISTON : Blocks.STICKY_PISTON);
    }
 
    @Override

@@ -20,7 +20,7 @@ public class Class3415 extends Block implements Class3207 {
    private static final Class6408 field19117 = Block.method11539(0.0, 0.0, 7.0, 9.0, 16.0, 9.0);
    private static final Class6408 field19118 = Block.method11539(7.0, 0.0, 7.0, 16.0, 16.0, 9.0);
 
-   public Class3415(Class7929 var1) {
+   public Class3415(AbstractBlock var1) {
       super(var1);
       this.method11578(
          this.field18612

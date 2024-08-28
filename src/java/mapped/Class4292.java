@@ -78,7 +78,7 @@ public class Class4292 extends Class4278 implements Class4293 {
       int var5 = Class5628.method17688(Class1979.field12891.field12910, 0.2F * var1);
       int var6 = this.field20895;
       int var7 = this.field20897;
-      if (Client.getInstance().method19954() != ClientMode.JELLO) {
+      if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
          var4 = 0;
          var7 -= 8;
          var6 += 8;

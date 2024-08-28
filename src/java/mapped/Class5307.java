@@ -55,7 +55,7 @@ public class Class5307 extends Module {
     }
 
     @Override
-    public void method15966() {
+    public void isInDevelopment() {
         this.field23843 = (int) mc.field1339.getPosY();
         this.field23844 = (double) this.field23843 - mc.field1339.getPosY();
     }

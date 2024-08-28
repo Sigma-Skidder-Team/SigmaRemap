@@ -16,7 +16,7 @@ public class Class3480 extends Class3194 implements Class3196 {
       Block.method11539(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
    };
 
-   public Class3480(Class7929 var1) {
+   public Class3480(AbstractBlock var1) {
       super(var1);
       this.method11578(this.field18612.method35393().method23465(this.method12175(), Integer.valueOf(0)));
    }
@@ -28,7 +28,7 @@ public class Class3480 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      return var1.method23448(Blocks.field36540);
+      return var1.method23448(Blocks.FARMLAND);
    }
 
    public Class8554 method12175() {
@@ -91,7 +91,7 @@ public class Class3480 extends Class3194 implements Class3196 {
          for (int var8 = -1; var8 <= 1; var8++) {
             float var9 = 0.0F;
             Class7380 var10 = var1.method6738(var6.method8336(var7, 0, var8));
-            if (var10.method23448(Blocks.field36540)) {
+            if (var10.method23448(Blocks.FARMLAND)) {
                var9 = 1.0F;
                if (var10.<Integer>method23463(Class3221.field18644) > 0) {
                   var9 = 3.0F;

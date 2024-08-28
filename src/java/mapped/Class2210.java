@@ -1,8 +1,8 @@
 package mapped;
 
 public enum Class2210 {
-   field14452("red", Blocks.field36520.method11579()),
-   field14453("brown", Blocks.field36519.method11579());
+   field14452("red", Blocks.RED_MUSHROOM.method11579()),
+   field14453("brown", Blocks.BROWN_MUSHROOM.method11579());
 
    private final String field14454;
    private final Class7380 field14455;

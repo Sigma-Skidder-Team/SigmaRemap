@@ -35,7 +35,7 @@ public class Class5314 extends Module {
                         var6 += this.method16695(var6, mc.field1283.method8044() - 14) + 10;
                     }
 
-                    if (!this.method15978("Cords").equals("None")) {
+                    if (!this.getStringSettingValueByName("Cords").equals("None")) {
                         var6 += this.method16694(var6, 42) + 10;
                     }
                 }
@@ -59,15 +59,15 @@ public class Class5314 extends Module {
 
     public int method16694(int var1, int var2) {
         String var5 = "Facing South";
-        String var6 = this.method16693(this.method15978("Cords").equals("Precise"));
+        String var6 = this.method16693(this.getStringSettingValueByName("Cords").equals("Precise"));
         Class3192.method11439(
-                ResourceRegistry.field38864,
+                ResourceRegistry.JelloMediumFont20,
                 (float) var1,
                 (float) (mc.field1283.method8044() - var2),
                 var6,
                 Class5628.method17688(Class1979.field12896.field12910, 0.8F)
         );
-        return Math.max(ResourceRegistry.field38854.method23942(var5), ResourceRegistry.field38864.method23942(var6));
+        return Math.max(ResourceRegistry.JelloLightFont20.method23942(var5), ResourceRegistry.JelloMediumFont20.method23942(var6));
     }
 
     public int method16695(int var1, int var2) {
