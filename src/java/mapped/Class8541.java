@@ -23,7 +23,7 @@ public class Class8541 {
    }
 
    @Nullable
-   public Packet<?> method30388(Class8848 var1) {
+   public Packet<?> method30388(ItemStack var1) {
       if (!this.field38391) {
          return this.field38396++ % 5 != 0
             ? null

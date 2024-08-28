@@ -13,17 +13,17 @@ public class Class5848 extends Class5839 {
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       return this.field25596.method18264(var1, var2);
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return this.field25596.method18259(var1);
    }
 
    @Override
-   public Class8848 method18265() {
+   public ItemStack method18265() {
       return this.field25596.method18265();
    }
 
@@ -33,7 +33,7 @@ public class Class5848 extends Class5839 {
    }
 
    @Override
-   public void method18267(Class8848 var1) {
+   public void method18267(ItemStack var1) {
       this.field25596.method18267(var1);
    }
 
@@ -48,7 +48,7 @@ public class Class5848 extends Class5839 {
    }
 
    @Override
-   public int method18270(Class8848 var1) {
+   public int method18270(ItemStack var1) {
       return this.field25596.method18270(var1);
    }
 
@@ -59,7 +59,7 @@ public class Class5848 extends Class5839 {
    }
 
    @Override
-   public Class8848 method18272(int var1) {
+   public ItemStack method18272(int var1) {
       return this.field25596.method18272(var1);
    }
 

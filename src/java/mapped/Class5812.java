@@ -57,7 +57,7 @@ public abstract class Class5812 {
    public Class5839 method18124(Class5839 var1) {
       var1.field25579 = this.field25468.size();
       this.field25468.add(var1);
-      this.field25467.add(ItemStack.field39973);
+      this.field25467.add(ItemStack.EMPTY);
       return var1;
    }
 
@@ -99,7 +99,7 @@ public abstract class Class5812 {
          ItemStack var4 = this.field25468.get(var3).method18265();
          ItemStack var5 = this.field25467.get(var3);
          if (!ItemStack.method32128(var5, var4)) {
-            ItemStack var6 = var4.method32126();
+            ItemStack var6 = var4.copy();
             this.field25467.set(var3, var6);
 
             for (Class876 var8 : this.field25476) {
@@ -128,7 +128,7 @@ public abstract class Class5812 {
 
    public ItemStack method18112(PlayerEntity var1, int var2) {
       Class5839 var5 = this.field25468.get(var2);
-      return var5 == null ? ItemStack.field39973 : var5.method18265();
+      return var5 == null ? ItemStack.EMPTY : var5.method18265();
    }
 
    public ItemStack method18132(int var1, int var2, Class2259 var3, PlayerEntity var4) {
@@ -148,7 +148,7 @@ public abstract class Class5812 {
    }
 
    private ItemStack method18133(int var1, int var2, Class2259 var3, PlayerEntity var4) {
-      ItemStack var7 = ItemStack.field39973;
+      ItemStack var7 = ItemStack.EMPTY;
       Class974 var8 = var4.field4902;
       if (var3 != Class2259.field14699) {
          if (this.field25474 != 0) {
@@ -157,7 +157,7 @@ public abstract class Class5812 {
             if (var1 != -999) {
                if (var3 != Class2259.field14695) {
                   if (var1 < 0) {
-                     return ItemStack.field39973;
+                     return ItemStack.EMPTY;
                   }
 
                   Class5839 var24 = this.field25468.get(var1);
@@ -165,7 +165,7 @@ public abstract class Class5812 {
                      ItemStack var31 = var24.method18265();
                      ItemStack var36 = var8.method4057();
                      if (!var31.method32105()) {
-                        var7 = var31.method32126();
+                        var7 = var31.copy();
                      }
 
                      if (!var31.method32105()) {
@@ -178,7 +178,7 @@ public abstract class Class5812 {
                                        var36.method32181(var40);
                                        var31 = var24.method18272(var40);
                                        if (var31.method32105()) {
-                                          var24.method18267(ItemStack.field39973);
+                                          var24.method18267(ItemStack.EMPTY);
                                        }
 
                                        var24.method18264(var4, var8.method4057());
@@ -206,13 +206,13 @@ public abstract class Class5812 {
                               int var42 = var2 != 0 ? (var31.method32179() + 1) / 2 : var31.method32179();
                               var8.method4056(var24.method18272(var42));
                               if (var31.method32105()) {
-                                 var24.method18267(ItemStack.field39973);
+                                 var24.method18267(ItemStack.EMPTY);
                               }
 
                               var24.method18264(var4, var8.method4057());
                            } else {
-                              var24.method18267(ItemStack.field39973);
-                              var8.method4056(ItemStack.field39973);
+                              var24.method18267(ItemStack.EMPTY);
+                              var8.method4056(ItemStack.EMPTY);
                            }
                         }
                      } else if (!var36.method32105() && var24.method18259(var36)) {
@@ -228,25 +228,25 @@ public abstract class Class5812 {
                   }
                } else {
                   if (var1 < 0) {
-                     return ItemStack.field39973;
+                     return ItemStack.EMPTY;
                   }
 
                   Class5839 var23 = this.field25468.get(var1);
                   if (var23 == null || !var23.method18273(var4)) {
-                     return ItemStack.field39973;
+                     return ItemStack.EMPTY;
                   }
 
                   for (ItemStack var30 = this.method18112(var4, var1);
                        !var30.method32105() && ItemStack.method32130(var23.method18265(), var30);
                        var30 = this.method18112(var4, var1)
                   ) {
-                     var7 = var30.method32126();
+                     var7 = var30.copy();
                   }
                }
             } else if (!var8.method4057().method32105()) {
                if (var2 == 0) {
                   var4.method2882(var8.method4057(), true);
-                  var8.method4056(ItemStack.field39973);
+                  var8.method4056(ItemStack.EMPTY);
                }
 
                if (var2 == 1) {
@@ -257,7 +257,7 @@ public abstract class Class5812 {
             if (var3 == Class2259.field14697 && var4.field4919.field29609 && var8.method4057().method32105() && var1 >= 0) {
                Class5839 var21 = this.field25468.get(var1);
                if (var21 != null && var21.method18266()) {
-                  ItemStack var28 = var21.method18265().method32126();
+                  ItemStack var28 = var21.method18265().copy();
                   var28.method32180(var28.method32113());
                   var8.method4056(var28);
                }
@@ -285,7 +285,7 @@ public abstract class Class5812 {
                               ItemStack var18 = var46.method18272(var48);
                               var26.method32181(var48);
                               if (var18.method32105()) {
-                                 var46.method18267(ItemStack.field39973);
+                                 var46.method18267(ItemStack.EMPTY);
                               }
 
                               var46.method18264(var4, var18);
@@ -322,7 +322,7 @@ public abstract class Class5812 {
                      int var39 = var22.method18270(var29);
                      if (var29.method32179() <= var39) {
                         var22.method18267(var29);
-                        var8.method3621(var2, ItemStack.field39973);
+                        var8.method3621(var2, ItemStack.EMPTY);
                      } else {
                         var22.method18267(var29.method32106(var39));
                      }
@@ -330,7 +330,7 @@ public abstract class Class5812 {
                } else if (var22.method18273(var4)) {
                   var8.method3621(var2, var35);
                   var22.method18262(var35.method32179());
-                  var22.method18267(ItemStack.field39973);
+                  var22.method18267(ItemStack.EMPTY);
                   var22.method18264(var4, var35);
                }
             }
@@ -347,7 +347,7 @@ public abstract class Class5812 {
                      this.method18147();
                   } else {
                      if (!this.field25475.isEmpty()) {
-                        ItemStack var10 = var8.method4057().method32126();
+                        ItemStack var10 = var8.method4057().copy();
                         int var11 = var8.method4057().method32179();
 
                         for (Class5839 var13 : this.field25475) {
@@ -357,7 +357,7 @@ public abstract class Class5812 {
                               && var13.method18259(var14)
                               && (this.field25473 == 2 || var14.method32179() >= this.field25475.size())
                               && this.method18150(var13)) {
-                              ItemStack var15 = var10.method32126();
+                              ItemStack var15 = var10.copy();
                               int var16 = !var13.method18266() ? 0 : var13.method18265().method32179();
                               method18149(this.field25475, this.field25473, var15, var16);
                               int var17 = Math.min(var15.method32113(), var13.method18270(var15));
@@ -416,7 +416,7 @@ public abstract class Class5812 {
       Class974 var4 = var1.field4902;
       if (!var4.method4057().method32105()) {
          var1.method2882(var4.method4057(), false);
-         var4.method4056(ItemStack.field39973);
+         var4.method4056(ItemStack.EMPTY);
       }
    }
 

@@ -93,11 +93,11 @@ public class Class217 implements Class215 {
                break;
             case 2:
                if (Class9299.field42913.method20214()) {
-                  Class8848 var15 = new Class8848(var1.method23383());
+                  ItemStack var15 = new ItemStack(var1.method23383());
                   Class9809 var16 = (Class9809)Class9299.method35070(var15.method32107(), Class9299.field42913);
                   var16.method38685(var15, Class2327.field15924, var2, var3, var4, var5);
                } else {
-                  Class9809.field45844.method38685(new Class8848(var1.method23383()), Class2327.field15924, var2, var3, var4, var5);
+                  Class9809.field45844.method38685(new ItemStack(var1.method23383()), Class2327.field15924, var2, var3, var4, var5);
                }
          }
       }

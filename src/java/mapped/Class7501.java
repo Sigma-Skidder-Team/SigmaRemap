@@ -11,11 +11,11 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class7501 implements Class7502 {
    private final List<String> field32222;
 
-   public Class7501(Class8848 var1) {
+   public Class7501(ItemStack var1) {
       this.field32222 = method24458(var1);
    }
 
-   private static List<String> method24458(Class8848 var0) {
+   private static List<String> method24458(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return (List<String>)(var3 != null && Class3285.method11817(var3)
          ? Class870.method2696(var3)

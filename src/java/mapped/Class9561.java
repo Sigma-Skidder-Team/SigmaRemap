@@ -44,7 +44,7 @@ public class Class9561 {
       return !field44535 ? var0.method23383().method11998() : Class9299.method35064(var0, Class9299.field42829);
    }
 
-   public static boolean method37046(Class8848 var0) {
+   public static boolean method37046(ItemStack var0) {
       return Class9299.field42919.method20214() ? Class9299.method35064(var0.method32107(), Class9299.field42919, var0) : var0.method32116();
    }
 
@@ -52,7 +52,7 @@ public class Class9561 {
       return !Class9299.field42826.method20214() ? var0.method23392() : Class9299.method35065(var0, Class9299.field42826, var1, var2);
    }
 
-   public static Class7529 method37048(Class8848 var0, Class1655 var1) {
+   public static Class7529 method37048(ItemStack var0, Class1655 var1) {
       if (!Class9299.field42864.method20245()) {
          return Class3316.method11861(var0, var1);
       } else {
@@ -90,13 +90,13 @@ public class Class9561 {
       return !Class9299.field42830.method20214() ? var0.method23393() : Class9299.method35064(var0, Class9299.field42830, var1, var2);
    }
 
-   public static boolean method37051(Class8848 var0, Class8848 var1, PlayerEntity var2, Class1006 var3) {
+   public static boolean method37051(ItemStack var0, ItemStack var1, PlayerEntity var2, Class1006 var3) {
       return !Class9299.field42921.method20214()
          ? var0.method32107() instanceof Class3265
          : Class9299.method35064(var0, Class9299.field42921, var1, var2, var3);
    }
 
-   public static boolean method37052(Class8848 var0, PlayerEntity var1) {
+   public static boolean method37052(ItemStack var0, PlayerEntity var1) {
       return !Class9299.field42925.method20214() ? var0.method32107() == Class8514.field38119 : Class9299.method35064(var0, Class9299.field42925, var1);
    }
 
@@ -152,7 +152,7 @@ public class Class9561 {
       return !field44536 ? true : Class9299.method35064(var0, Class9299.field42835);
    }
 
-   public static boolean method37058(Class3257 var0, Class8848 var1) {
+   public static boolean method37058(Class3257 var0, ItemStack var1) {
       return !Class9299.field42915.method20214() ? var0.method11712() : Class9299.method35064(var0, Class9299.field42915, var1);
    }
 }

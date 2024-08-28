@@ -17,7 +17,7 @@ public class Class1261<C extends Class920> extends Class1260<C> {
       this.field6663 = this.field6661.method18222(var1);
       int var5 = this.field6659.method19125(var1, (IntList)null);
       if (this.field6663) {
-         Class8848 var6 = this.field6661.method18131(0).method18265();
+         ItemStack var6 = this.field6661.method18131(0).method18265();
          if (var6.method32105() || var5 <= var6.method32179()) {
             return;
          }
@@ -44,7 +44,7 @@ public class Class1261<C extends Class920> extends Class1260<C> {
    public void method5876(int var1, IntList var2) {
       IntListIterator var5 = var2.iterator();
       Class5839 var6 = this.field6661.method18131(0);
-      Class8848 var7 = Class6207.method19127((Integer)var5.next());
+      ItemStack var7 = Class6207.method19127((Integer)var5.next());
       if (!var7.method32105()) {
          int var8 = Math.min(var7.method32113(), var1);
          if (this.field6663) {

@@ -16,7 +16,7 @@ public class Class149 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       if (!var1.method32105()) {
          Class39 var5 = new Class39();
          var5.method109("LootTable", this.field493.toString());

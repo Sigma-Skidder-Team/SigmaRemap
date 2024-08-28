@@ -5,7 +5,7 @@ public class Class3284 extends Class3257 {
       super(var1);
    }
 
-   public static void method11816(Class8848 var0, Class7144 var1, int var2) {
+   public static void method11816(ItemStack var0, Class7144 var1, int var2) {
       Class39 var5 = var0.method32143();
       Class41 var6 = var5.method131("Effects", 9);
       Class39 var7 = new Class39();
@@ -16,8 +16,8 @@ public class Class3284 extends Class3257 {
    }
 
    @Override
-   public Class8848 method11709(Class8848 var1, Class1655 var2, Class880 var3) {
-      Class8848 var6 = super.method11709(var1, var2, var3);
+   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
+      ItemStack var6 = super.method11709(var1, var2, var3);
       Class39 var7 = var1.method32142();
       if (var7 != null && var7.method119("Effects", 9)) {
          Class41 var8 = var7.method131("Effects", 10);
@@ -36,6 +36,6 @@ public class Class3284 extends Class3257 {
          }
       }
 
-      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).field4919.field29609 ? var6 : new Class8848(Class8514.field37836);
+      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).field4919.field29609 ? var6 : new ItemStack(Class8514.field37836);
    }
 }

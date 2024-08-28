@@ -18,9 +18,9 @@ public abstract class Class1006 extends Class880 {
    public final Class6603 field5601;
    private Class880 field5602;
    private final Class9363 field5603;
-   private final Class25<ItemStack> field5604 = Class25.<ItemStack>method68(2, ItemStack.field39973);
+   private final Class25<ItemStack> field5604 = Class25.<ItemStack>method68(2, ItemStack.EMPTY);
    public final float[] field5605 = new float[2];
-   private final Class25<ItemStack> field5606 = Class25.<ItemStack>method68(4, ItemStack.field39973);
+   private final Class25<ItemStack> field5606 = Class25.<ItemStack>method68(4, ItemStack.EMPTY);
    public final float[] field5607 = new float[4];
    private boolean field5608;
    private boolean field5609;
@@ -757,7 +757,7 @@ public abstract class Class1006 extends Class880 {
          case 2:
             return this.field5606.get(var1.method8773());
          default:
-            return ItemStack.field39973;
+            return ItemStack.EMPTY;
       }
    }
 
@@ -789,7 +789,7 @@ public abstract class Class1006 extends Class880 {
             }
 
             this.method3302(var10);
-            this.method2944(var9, ItemStack.field39973);
+            this.method2944(var9, ItemStack.EMPTY);
          }
       }
    }
@@ -1020,7 +1020,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    private Class2274 method4283(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() == Class8514.field38087 && this.method4295(var1)) {
          this.method4298(var1, true);
          var5.method32182(1);
@@ -1103,7 +1103,7 @@ public abstract class Class1006 extends Class880 {
             for (Class2106 var9 : Class2106.values()) {
                ItemStack var10 = this.method2943(var9);
                if (!var10.method32105()) {
-                  var5.method2944(var9, var10.method32126());
+                  var5.method2944(var9, var10.copy());
                   var5.method4279(var9, this.method4269(var9));
                   var10.method32180(0);
                }
@@ -1344,7 +1344,7 @@ public abstract class Class1006 extends Class880 {
 
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var8 = (PlayerEntity)var1;
-            this.method4309(var8, this.method3090(), !var8.method3148() ? ItemStack.field39973 : var8.method3158());
+            this.method4309(var8, this.method3090(), !var8.method3148() ? ItemStack.EMPTY : var8.method3158());
          }
 
          this.method3399(this, var1);

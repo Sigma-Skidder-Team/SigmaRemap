@@ -15,7 +15,7 @@ public class Class135 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       int var5 = this.field457.applyAsInt(var1.method32179());
       var1.method32180(var5);
       return var1;

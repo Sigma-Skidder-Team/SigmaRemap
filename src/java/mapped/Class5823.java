@@ -8,7 +8,7 @@ public abstract class Class5823 extends Class5812 {
 
    public abstract boolean method18189(PlayerEntity var1, boolean var2);
 
-   public abstract Class8848 method18190(PlayerEntity var1, Class8848 var2);
+   public abstract ItemStack method18190(PlayerEntity var1, ItemStack var2);
 
    public abstract boolean method18191(Class7380 var1);
 
@@ -58,31 +58,31 @@ public abstract class Class5823 extends Class5812 {
          );
    }
 
-   public boolean method18193(Class8848 var1) {
+   public boolean method18193(ItemStack var1) {
       return false;
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
-         var5 = var7.method32126();
+         ItemStack var7 = var6.method18265();
+         var5 = var7.copy();
          if (var2 != 2) {
             if (var2 != 0 && var2 != 1) {
                if (var2 >= 3 && var2 < 39) {
                   int var8 = !this.method18193(var5) ? 0 : 1;
                   if (!this.method18142(var7, var8, 2, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.EMPTY;
                   }
                }
             } else if (!this.method18142(var7, 3, 39, false)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method18142(var7, 3, 39, true)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
 
             var6.method18260(var7, var5);
@@ -91,11 +91,11 @@ public abstract class Class5823 extends Class5812 {
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.EMPTY);
          }
 
          if (var7.method32179() == var5.method32179()) {
-            return Class8848.field39973;
+            return ItemStack.EMPTY;
          }
 
          var6.method18264(var1, var7);

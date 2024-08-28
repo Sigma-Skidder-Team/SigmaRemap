@@ -29,7 +29,7 @@ public class Class4880 extends Class4874<Class4479> {
       }
    }
 
-   public void method15076(Class878 var1, Block var2, Class8848 var3, int var4) {
+   public void method15076(Class878 var1, Block var2, ItemStack var3, int var4) {
       this.method15053(var1, var3x -> var3x.method14140(var2, var3, var4));
    }
 

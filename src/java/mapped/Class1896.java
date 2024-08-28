@@ -6,24 +6,24 @@ import java.util.List;
 import java.util.Map;
 
 public enum Class1896 {
-   field11113(new Class8848(Class8514.field37905)),
-   field11114(new Class8848(Blocks.field36523)),
-   field11115(new Class8848(Class8514.field37887)),
-   field11116(new Class8848(Class8514.field37823), new Class8848(Class8514.field37815)),
-   field11117(new Class8848(Class8514.field37884), new Class8848(Class8514.field37795)),
-   field11118(new Class8848(Class8514.field37905)),
-   field11119(new Class8848(Class8514.field37869)),
-   field11120(new Class8848(Blocks.STONE)),
-   field11121(new Class8848(Class8514.field37884), new Class8848(Class8514.field38049)),
-   field11122(new Class8848(Class8514.field37905)),
-   field11123(new Class8848(Blocks.field36567)),
-   field11124(new Class8848(Class8514.field37821), new Class8848(Class8514.field37862)),
-   field11125(new Class8848(Class8514.field37905)),
-   field11126(new Class8848(Class8514.field37869)),
-   field11127(new Class8848(Class8514.field37465)),
-   field11128(new Class8848(Class8514.field37865)),
-   field11129(new Class8848(Class8514.field37869)),
-   field11130(new Class8848(Class8514.field37569));
+   field11113(new ItemStack(Class8514.field37905)),
+   field11114(new ItemStack(Blocks.field36523)),
+   field11115(new ItemStack(Class8514.field37887)),
+   field11116(new ItemStack(Class8514.field37823), new ItemStack(Class8514.field37815)),
+   field11117(new ItemStack(Class8514.field37884), new ItemStack(Class8514.field37795)),
+   field11118(new ItemStack(Class8514.field37905)),
+   field11119(new ItemStack(Class8514.field37869)),
+   field11120(new ItemStack(Blocks.STONE)),
+   field11121(new ItemStack(Class8514.field37884), new ItemStack(Class8514.field38049)),
+   field11122(new ItemStack(Class8514.field37905)),
+   field11123(new ItemStack(Blocks.field36567)),
+   field11124(new ItemStack(Class8514.field37821), new ItemStack(Class8514.field37862)),
+   field11125(new ItemStack(Class8514.field37905)),
+   field11126(new ItemStack(Class8514.field37869)),
+   field11127(new ItemStack(Class8514.field37465)),
+   field11128(new ItemStack(Class8514.field37865)),
+   field11129(new ItemStack(Class8514.field37869)),
+   field11130(new ItemStack(Class8514.field37569));
 
    public static final List<Class1896> field11131 = ImmutableList.of(field11125, field11126);
    public static final List<Class1896> field11132 = ImmutableList.of(field11122, field11123, field11124);
@@ -39,7 +39,7 @@ public enum Class1896 {
       field11125,
       ImmutableList.of(field11126)
    );
-   private final List<Class8848> field11136;
+   private final List<ItemStack> field11136;
    private static final Class1896[] field11137 = new Class1896[]{
       field11113,
       field11114,
@@ -61,7 +61,7 @@ public enum Class1896 {
       field11130
    };
 
-   private Class1896(Class8848... var3) {
+   private Class1896(ItemStack... var3) {
       this.field11136 = ImmutableList.copyOf(var3);
    }
 
@@ -80,7 +80,7 @@ public enum Class1896 {
       }
    }
 
-   public List<Class8848> method8164() {
+   public List<ItemStack> method8164() {
       return this.field11136;
    }
 }

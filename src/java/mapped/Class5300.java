@@ -31,7 +31,7 @@ public class Class5300 extends Module {
 
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
-                            && ((Class8848) var6.getSecond()).method32107() instanceof Class3267
+                            && ((ItemStack) var6.getSecond()).method32107() instanceof Class3267
                             && mc.field1338.method6774(var4.method17561()) instanceof PlayerEntity) {
                         Entity var7 = mc.field1338.method6774(var4.method17561());
                         if (!this.field23833.equalsIgnoreCase(var7.method2941().getString())) {

@@ -45,7 +45,7 @@ public class Class9557 {
       }
    }
 
-   public void method37028(Class8848 var1) {
+   public void method37028(ItemStack var1) {
       if (this.field44524 != null) {
          this.field44524.method19104(var1);
       }

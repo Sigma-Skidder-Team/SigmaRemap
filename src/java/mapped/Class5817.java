@@ -37,28 +37,28 @@ public class Class5817 extends Class5812 {
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
-         var5 = var7.method32126();
+         ItemStack var7 = var6.method18265();
+         var5 = var7.copy();
          if (var2 >= 9) {
             if (!this.method18142(var7, 0, 9, false)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
          } else if (!this.method18142(var7, 9, 45, true)) {
-            return Class8848.field39973;
+            return ItemStack.EMPTY;
          }
 
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.EMPTY);
          }
 
          if (var7.method32179() == var5.method32179()) {
-            return Class8848.field39973;
+            return ItemStack.EMPTY;
          }
 
          var6.method18264(var1, var7);

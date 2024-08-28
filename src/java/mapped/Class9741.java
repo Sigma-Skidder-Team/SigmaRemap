@@ -16,7 +16,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class9741 {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
-   public static List<Class2023> method38176(Class8848 var0) {
+   public static List<Class2023> method38176(ItemStack var0) {
       return method38178(var0.method32142());
    }
 
@@ -34,7 +34,7 @@ public class Class9741 {
       return var3;
    }
 
-   public static List<Class2023> method38179(Class8848 var0) {
+   public static List<Class2023> method38179(ItemStack var0) {
       return method38180(var0.method32142());
    }
 
@@ -58,7 +58,7 @@ public class Class9741 {
       }
    }
 
-   public static int method38182(Class8848 var0) {
+   public static int method38182(ItemStack var0) {
       Class39 var3 = var0.method32142();
       if (var3 != null && var3.method119("CustomPotionColor", 99)) {
          return var3.method122("CustomPotionColor");
@@ -107,7 +107,7 @@ public class Class9741 {
       }
    }
 
-   public static Class8812 method38185(Class8848 var0) {
+   public static Class8812 method38185(ItemStack var0) {
       return method38186(var0.method32142());
    }
 
@@ -115,7 +115,7 @@ public class Class9741 {
       return var0 != null ? Class8812.method31814(var0.method126("Potion")) : Class8137.field34976;
    }
 
-   public static Class8848 method38187(Class8848 var0, Class8812 var1) {
+   public static ItemStack method38187(ItemStack var0, Class8812 var1) {
       ResourceLocation var4 = Class2348.field16076.method9181(var1);
       if (var1 != Class8137.field34976) {
          var0.method32143().method109("Potion", var4.toString());
@@ -126,7 +126,7 @@ public class Class9741 {
       return var0;
    }
 
-   public static Class8848 method38188(Class8848 var0, Collection<Class2023> var1) {
+   public static ItemStack method38188(ItemStack var0, Collection<Class2023> var1) {
       if (var1.isEmpty()) {
          return var0;
       } else {
@@ -142,7 +142,7 @@ public class Class9741 {
       }
    }
 
-   public static void method38189(Class8848 var0, List<ITextComponent> var1, float var2) {
+   public static void method38189(ItemStack var0, List<ITextComponent> var1, float var2) {
       List<Class2023> var5 = method38176(var0);
       ArrayList<Pair> var6 = Lists.newArrayList();
       if (!var5.isEmpty()) {
@@ -192,7 +192,7 @@ public class Class9741 {
                   var1.add(
                      new TranslationTextComponent(
                            "attribute.modifier.take." + var22.method37932().method8685(),
-                           Class8848.field39974.format(var18),
+                           ItemStack.field39974.format(var18),
                            new TranslationTextComponent(((Class4869)var21.getFirst()).method15032())
                         )
                         .mergeStyle(TextFormatting.RED)
@@ -202,7 +202,7 @@ public class Class9741 {
                var1.add(
                   new TranslationTextComponent(
                         "attribute.modifier.plus." + var22.method37932().method8685(),
-                        Class8848.field39974.format(var18),
+                        ItemStack.field39974.format(var18),
                         new TranslationTextComponent(((Class4869)var21.getFirst()).method15032())
                      )
                      .mergeStyle(TextFormatting.BLUE)

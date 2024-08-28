@@ -15,7 +15,7 @@ public class Class140 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       var1.method32180(this.field470.method20914(var2.method26088()));
       return var1;
    }

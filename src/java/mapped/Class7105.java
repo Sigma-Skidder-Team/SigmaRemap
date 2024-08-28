@@ -8,7 +8,7 @@ public class Class7105 {
    private static final List<Class9127<Class8812>> field30617 = Lists.newArrayList();
    private static final List<Class9127<Class3257>> field30618 = Lists.newArrayList();
    private static final List<Class120> field30619 = Lists.newArrayList();
-   private static final Predicate<Class8848> field30620 = var0 -> {
+   private static final Predicate<ItemStack> field30620 = var0 -> {
       for (Class120 var4 : field30619) {
          if (var4.test(var0)) {
             return true;
@@ -18,11 +18,11 @@ public class Class7105 {
       return false;
    };
 
-   public static boolean method22132(Class8848 var0) {
+   public static boolean method22132(ItemStack var0) {
       return method22133(var0) || method22134(var0);
    }
 
-   public static boolean method22133(Class8848 var0) {
+   public static boolean method22133(ItemStack var0) {
       int var3 = 0;
 
       for (int var4 = field30618.size(); var3 < var4; var3++) {
@@ -34,7 +34,7 @@ public class Class7105 {
       return false;
    }
 
-   public static boolean method22134(Class8848 var0) {
+   public static boolean method22134(ItemStack var0) {
       int var3 = 0;
 
       for (int var4 = field30617.size(); var3 < var4; var3++) {
@@ -58,11 +58,11 @@ public class Class7105 {
       return false;
    }
 
-   public static boolean method22136(Class8848 var0, Class8848 var1) {
+   public static boolean method22136(ItemStack var0, ItemStack var1) {
       return !field30620.test(var0) ? false : method22137(var0, var1) || method22138(var0, var1);
    }
 
-   public static boolean method22137(Class8848 var0, Class8848 var1) {
+   public static boolean method22137(ItemStack var0, ItemStack var1) {
       Class3257 var4 = var0.method32107();
       int var5 = 0;
 
@@ -76,7 +76,7 @@ public class Class7105 {
       return false;
    }
 
-   public static boolean method22138(Class8848 var0, Class8848 var1) {
+   public static boolean method22138(ItemStack var0, ItemStack var1) {
       Class8812 var4 = Class9741.method38185(var0);
       int var5 = 0;
 
@@ -90,7 +90,7 @@ public class Class7105 {
       return false;
    }
 
-   public static Class8848 method22139(Class8848 var0, Class8848 var1) {
+   public static ItemStack method22139(ItemStack var0, ItemStack var1) {
       if (!var1.method32105()) {
          Class8812 var4 = Class9741.method38185(var1);
          Class3257 var5 = var1.method32107();
@@ -99,7 +99,7 @@ public class Class7105 {
          for (int var7 = field30618.size(); var6 < var7; var6++) {
             Class9127 var8 = field30618.get(var6);
             if (Class9127.method34061(var8) == var5 && Class9127.method34059(var8).test(var0)) {
-               return Class9741.method38187(new Class8848((Class3303)Class9127.method34060(var8)), var4);
+               return Class9741.method38187(new ItemStack((Class3303)Class9127.method34060(var8)), var4);
             }
          }
 
@@ -108,7 +108,7 @@ public class Class7105 {
          for (int var10 = field30617.size(); var6 < var10; var6++) {
             Class9127 var11 = field30617.get(var6);
             if (Class9127.method34061(var11) == var4 && Class9127.method34059(var11).test(var0)) {
-               return Class9741.method38187(new Class8848(var5), (Class8812)Class9127.method34060(var11));
+               return Class9741.method38187(new ItemStack(var5), (Class8812)Class9127.method34060(var11));
             }
          }
       }

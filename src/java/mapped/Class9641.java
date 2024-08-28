@@ -10,8 +10,8 @@ public class Class9641 {
    private static final Class4520 field45076 = Class4520.method14339(new ResourceLocation("textures/map/map_background.png"));
    private static final Class4520 field45077 = Class4520.method14339(new ResourceLocation("textures/map/map_background_checkerboard.png"));
    private final Minecraft field45078;
-   private ItemStack field45079 = ItemStack.field39973;
-   private ItemStack field45080 = ItemStack.field39973;
+   private ItemStack field45079 = ItemStack.EMPTY;
+   private ItemStack field45080 = ItemStack.EMPTY;
    private float field45081;
    private float field45082;
    private float field45083;

@@ -18,7 +18,7 @@ public class Class4479 extends Class4457 {
       return new Class4479(Class9587.field44822, var0, var1.method38151(), var2);
    }
 
-   public boolean method14140(Block var1, Class8848 var2, int var3) {
+   public boolean method14140(Block var1, ItemStack var2, int var3) {
       if (this.field21669 != null && var1 != this.field21669) {
          return false;
       } else {

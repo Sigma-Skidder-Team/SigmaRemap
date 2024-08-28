@@ -18,7 +18,7 @@ public class Class871 extends Class851<Class5822> {
    public float field4837;
    public float field4838;
    public float field4839;
-   private ItemStack field4840 = ItemStack.field39973;
+   private ItemStack field4840 = ItemStack.EMPTY;
 
    public Class871(Class5822 var1, Class974 var2, ITextComponent var3) {
       super(var1, var2, var3);

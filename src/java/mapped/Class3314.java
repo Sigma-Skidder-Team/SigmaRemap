@@ -15,7 +15,7 @@ public class Class3314 extends Class3257 {
    }
 
    @Nullable
-   public Packet<?> method11858(Class8848 var1, Class1655 var2, PlayerEntity var3) {
+   public Packet<?> method11858(ItemStack var1, Class1655 var2, PlayerEntity var3) {
       return null;
    }
 }

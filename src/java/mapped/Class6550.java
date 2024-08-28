@@ -12,7 +12,7 @@ public class Class6550 extends Class6548 {
    }
 
    @Override
-   public void method19893(Consumer<Class8848> var1, Class7812 var2) {
+   public void method19893(Consumer<ItemStack> var1, Class7812 var2) {
       this.field28908.method14695(Class127.method369(Class4686.method14705(this.field28908), var1, var2), var2);
    }
 }

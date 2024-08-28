@@ -52,7 +52,7 @@ public class Class9235 {
             Class1193.method5686(var1, var11, var12, var11 + 16, var12 + 16, 822018048);
          }
 
-         Class8848 var13 = var10.method27662();
+         ItemStack var13 = var10.method27662();
          Class216 var14 = var2.method1555();
          var14.method794(var13, var11, var12);
          RenderSystem.depthFunc(516);

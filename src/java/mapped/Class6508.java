@@ -20,14 +20,14 @@ public class Class6508<T extends Class4844> implements Class6504<T> {
 
       String var7 = Class8963.method32763(var2, "result");
       int var8 = Class8963.method32777(var2, "count");
-      Class8848 var9 = new Class8848(Class2348.field16075.method9184(new ResourceLocation(var7)), var8);
+      ItemStack var9 = new ItemStack(Class2348.field16075.method9184(new ResourceLocation(var7)), var8);
       return this.field28493.method17789(var1, var5, var6, var9);
    }
 
    public T method19699(ResourceLocation var1, PacketBuffer var2) {
       String var5 = var2.method35728(32767);
       Class120 var6 = Class120.method343(var2);
-      Class8848 var7 = var2.method35726();
+      ItemStack var7 = var2.method35726();
       return this.field28493.method17789(var1, var5, var6, var7);
    }
 

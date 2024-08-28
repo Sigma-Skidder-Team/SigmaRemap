@@ -291,7 +291,7 @@ public class Class8928 {
       }
    }
 
-   public static Class4520 method32633(Class8848 var0, boolean var1) {
+   public static Class4520 method32633(ItemStack var0, boolean var1) {
       Class3257 var4 = var0.method32107();
       if (!(var4 instanceof Class3292)) {
          return !var1 ? Class8624.method30908() : Class8624.method30909();

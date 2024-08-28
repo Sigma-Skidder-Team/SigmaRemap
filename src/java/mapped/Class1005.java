@@ -21,8 +21,8 @@ public class Class1005 extends Class880 {
    public static final Class9289<Class7087> field5578 = Class9361.<Class7087>method35441(Class1005.class, Class7784.field33400);
    public static final Class9289<Class7087> field5579 = Class9361.<Class7087>method35441(Class1005.class, Class7784.field33400);
    private static final Predicate<Entity> field5580 = var0 -> var0 instanceof Class916 && ((Class916)var0).method3602() == Class2177.field14287;
-   private final Class25<ItemStack> field5581 = Class25.<ItemStack>method68(2, ItemStack.field39973);
-   private final Class25<ItemStack> field5582 = Class25.<ItemStack>method68(4, ItemStack.field39973);
+   private final Class25<ItemStack> field5581 = Class25.<ItemStack>method68(2, ItemStack.EMPTY);
+   private final Class25<ItemStack> field5582 = Class25.<ItemStack>method68(4, ItemStack.EMPTY);
    private boolean field5583;
    public long field5584;
    private int field5585;
@@ -91,7 +91,7 @@ public class Class1005 extends Class880 {
          case 2:
             return this.field5582.get(var1.method8773());
          default:
-            return ItemStack.field39973;
+            return ItemStack.EMPTY;
       }
    }
 
@@ -287,7 +287,7 @@ public class Class1005 extends Class880 {
 
    @Override
    public Class2274 method3397(PlayerEntity var1, Vector3d var2, Hand var3) {
-      ItemStack var6 = var1.method3094(var3);
+      ItemStack var6 = var1.getHeldItem(var3);
       if (this.method4203() || var6.method32107() == Class8514.field38088) {
          return Class2274.field14820;
       } else if (var1.method2800()) {
@@ -351,7 +351,7 @@ public class Class1005 extends Class880 {
       } else if (var7.method32105() && (this.field5585 & 1 << var2.method8774() + 16) != 0) {
          return false;
       } else if (var1.field4919.field29609 && var7.method32105() && !var3.method32105()) {
-         ItemStack var9 = var3.method32126();
+         ItemStack var9 = var3.copy();
          var9.method32180(1);
          this.method2944(var2, var9);
          return true;
@@ -360,7 +360,7 @@ public class Class1005 extends Class880 {
          var1.method3095(var4, var7);
          return true;
       } else if (var7.method32105()) {
-         ItemStack var8 = var3.method32126();
+         ItemStack var8 = var3.copy();
          var8.method32180(1);
          this.method2944(var2, var8);
          var3.method32182(1);
@@ -487,7 +487,7 @@ public class Class1005 extends Class880 {
          ItemStack var5 = this.field5581.get(var4);
          if (!var5.method32105()) {
             Block.method11557(this.field5024, this.method3432().method8311(), var5);
-            this.field5581.set(var4, ItemStack.field39973);
+            this.field5581.set(var4, ItemStack.EMPTY);
          }
       }
 
@@ -495,7 +495,7 @@ public class Class1005 extends Class880 {
          ItemStack var7 = this.field5582.get(var6);
          if (!var7.method32105()) {
             Block.method11557(this.field5024, this.method3432().method8311(), var7);
-            this.field5582.set(var6, ItemStack.field39973);
+            this.field5582.set(var6, ItemStack.EMPTY);
          }
       }
    }

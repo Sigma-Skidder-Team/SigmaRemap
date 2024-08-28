@@ -123,8 +123,8 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(var3.method23463(field19211) != Class180.field639 ? Blocks.PISTON : Blocks.STICKY_PISTON);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(var3.method23463(field19211) != Class180.field639 ? Blocks.PISTON : Blocks.STICKY_PISTON);
    }
 
    @Override

@@ -46,7 +46,7 @@ public class Class9653 {
                                                       var1x,
                                                       Class8303.method29036(var1x, "loot_table"),
                                                       Class6849.method20827(var1x, "pos"),
-                                                      ItemStack.field39973,
+                                                      ItemStack.EMPTY,
                                                       var1
                                                    )
                                              ))
@@ -108,7 +108,7 @@ public class Class9653 {
                      Class6099.method18839("mine")
                         .then(
                            ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("pos", Class6849.method20826())
-                                       .executes(var1x -> method37672(var1x, Class6849.method20827(var1x, "pos"), ItemStack.field39973, var1)))
+                                       .executes(var1x -> method37672(var1x, Class6849.method20827(var1x, "pos"), ItemStack.EMPTY, var1)))
                                     .then(
                                        Class6099.method18840("tool", Class8722.method31481())
                                           .executes(
@@ -247,7 +247,7 @@ public class Class9653 {
       ArrayList var7 = Lists.newArrayListWithCapacity(var2.size());
 
       for (ItemStack var9 : var2) {
-         if (method37662(var6, var9.method32126())) {
+         if (method37662(var6, var9.copy())) {
             var6.method3622();
             var7.add(var9);
          }
@@ -290,7 +290,7 @@ public class Class9653 {
 
          for (int var11 = 0; var11 < var3; var11++) {
             int var12 = var2 + var11;
-            ItemStack var13 = var11 >= var4.size() ? ItemStack.field39973 : (ItemStack)var4.get(var11);
+            ItemStack var13 = var11 >= var4.size() ? ItemStack.EMPTY : (ItemStack)var4.get(var11);
             if (var8.method3633(var12, var13)) {
                var8.method3621(var12, var13);
                var10.add(var13);
@@ -316,7 +316,7 @@ public class Class9653 {
 
       for (ItemStack var7 : var1) {
          for (Class878 var9 : var0) {
-            if (var9.field4902.method4045(var7.method32126())) {
+            if (var9.field4902.method4045(var7.copy())) {
                var5.add(var7);
             }
          }
@@ -328,8 +328,8 @@ public class Class9653 {
 
    private static void method37666(Entity var0, List<ItemStack> var1, int var2, int var3, List<ItemStack> var4) {
       for (int var7 = 0; var7 < var3; var7++) {
-         ItemStack var8 = var7 >= var1.size() ? ItemStack.field39973 : (ItemStack)var1.get(var7);
-         if (var0.method2963(var2 + var7, var8.method32126())) {
+         ItemStack var8 = var7 >= var1.size() ? ItemStack.EMPTY : (ItemStack)var1.get(var7);
+         if (var0.method2963(var2 + var7, var8.copy())) {
             var4.add(var8);
          }
       }
@@ -356,7 +356,7 @@ public class Class9653 {
    private static int method37668(Class6619 var0, Vector3d var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
       ServerWorld var6 = var0.method20172();
       var2.forEach(var2x -> {
-         Class1000 var5 = new Class1000(var6, var1.field18048, var1.field18049, var1.field18050, var2x.method32126());
+         Class1000 var5 = new Class1000(var6, var1.field18048, var1.field18049, var1.field18050, var2x.copy());
          var5.method4131();
          var6.method6916(var5);
       });

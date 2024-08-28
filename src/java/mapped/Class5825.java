@@ -29,7 +29,7 @@ public class Class5825 extends Class5823 {
    }
 
    @Override
-   public Class8848 method18190(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18190(PlayerEntity var1, ItemStack var2) {
       var2.method32136(var1.field5024, var1, var2.method32179());
       this.field25512.method3638(var1);
       this.method18200(0);
@@ -39,7 +39,7 @@ public class Class5825 extends Class5823 {
    }
 
    private void method18200(int var1) {
-      Class8848 var4 = this.field25513.method3618(var1);
+      ItemStack var4 = this.field25513.method3618(var1);
       var4.method32182(1);
       this.field25513.method3621(var1, var4);
    }
@@ -49,21 +49,21 @@ public class Class5825 extends Class5823 {
       List var3 = this.field25522.method6816().<Class920, Class4846>method1032(Class7207.field30941, this.field25513, this.field25522);
       if (!var3.isEmpty()) {
          this.field25523 = (Class4846)var3.get(0);
-         Class8848 var4 = this.field25523.method14962(this.field25513);
+         ItemStack var4 = this.field25523.method14962(this.field25513);
          this.field25512.method3636(this.field25523);
          this.field25512.method3621(0, var4);
       } else {
-         this.field25512.method3621(0, Class8848.field39973);
+         this.field25512.method3621(0, ItemStack.EMPTY);
       }
    }
 
    @Override
-   public boolean method18193(Class8848 var1) {
+   public boolean method18193(ItemStack var1) {
       return this.field25524.stream().anyMatch(var1x -> var1x.method14972(var1));
    }
 
    @Override
-   public boolean method18111(Class8848 var1, Class5839 var2) {
+   public boolean method18111(ItemStack var1, Class5839 var2) {
       return var2.field25578 != this.field25512 && super.method18111(var1, var2);
    }
 }

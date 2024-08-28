@@ -33,7 +33,7 @@ public class Class7318 {
             int var4 = var1.method32179();
 
             while (var4 > 0) {
-               ItemStack var5 = var1.method32126();
+               ItemStack var5 = var1.copy();
                var5.method32180(Math.min(var1.method32113(), var4));
                var4 -= var5.method32179();
                var0.accept(var5);
@@ -97,7 +97,7 @@ public class Class7318 {
          if (!var9.method32105()) {
             var1.method3621((Integer)var7.remove(var7.size() - 1), var9);
          } else {
-            var1.method3621((Integer)var7.remove(var7.size() - 1), ItemStack.field39973);
+            var1.method3621((Integer)var7.remove(var7.size() - 1), ItemStack.EMPTY);
          }
       }
    }

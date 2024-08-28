@@ -27,7 +27,7 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public float method11708(Class8848 var1, Class7380 var2) {
+   public float method11708(ItemStack var1, Class7380 var2) {
       if (var2.method23448(Blocks.COBWEB)) {
          return 15.0F;
       } else {
@@ -43,13 +43,13 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11713(Class8848 var1, Class880 var2, Class880 var3) {
+   public boolean method11713(ItemStack var1, Class880 var2, Class880 var3) {
       var1.method32121(1, var3, var0 -> var0.method3184(Class2106.field13731));
       return true;
    }
 
    @Override
-   public boolean method11714(Class8848 var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
       if (var3.method23405(var2, var4) != 0.0F) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }

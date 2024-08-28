@@ -13,7 +13,7 @@ import net.minecraft.util.text.ITextComponent$Serializer;
 public class Class9272 {
    private final ITextComponent field42646;
    private final ITextComponent field42647;
-   private final Class8848 field42648;
+   private final ItemStack field42648;
    private final ResourceLocation field42649;
    private final Class1965 field42650;
    private final boolean field42651;
@@ -22,7 +22,7 @@ public class Class9272 {
    private float field42654;
    private float field42655;
 
-   public Class9272(Class8848 var1, ITextComponent var2, ITextComponent var3, ResourceLocation var4, Class1965 var5, boolean var6, boolean var7, boolean var8) {
+   public Class9272(ItemStack var1, ITextComponent var2, ITextComponent var3, ResourceLocation var4, Class1965 var5, boolean var6, boolean var7, boolean var8) {
       this.field42646 = var2;
       this.field42647 = var3;
       this.field42648 = var1;
@@ -46,7 +46,7 @@ public class Class9272 {
       return this.field42647;
    }
 
-   public Class8848 method34936() {
+   public ItemStack method34936() {
       return this.field42648;
    }
 
@@ -83,7 +83,7 @@ public class Class9272 {
       IFormattableTextComponent var3 = ITextComponent$Serializer.func_240641_a_(var0.get("title"));
       IFormattableTextComponent var4 = ITextComponent$Serializer.func_240641_a_(var0.get("description"));
       if (var3 != null && var4 != null) {
-         Class8848 var5 = method34945(Class8963.method32782(var0, "icon"));
+         ItemStack var5 = method34945(Class8963.method32782(var0, "icon"));
          ResourceLocation var6 = !var0.has("background") ? null : new ResourceLocation(Class8963.method32763(var0, "background"));
          Class1965 var7 = !var0.has("frame") ? Class1965.field12814 : Class1965.method8243(Class8963.method32763(var0, "frame"));
          boolean var8 = Class8963.method32769(var0, "show_toast", true);
@@ -95,7 +95,7 @@ public class Class9272 {
       }
    }
 
-   private static Class8848 method34945(JsonObject var0) {
+   private static ItemStack method34945(JsonObject var0) {
       if (!var0.has("item")) {
          throw new JsonSyntaxException("Unsupported icon type, currently only items are supported (add 'item' key)");
       } else {
@@ -103,7 +103,7 @@ public class Class9272 {
          if (var0.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
          } else {
-            Class8848 var4 = new Class8848(var3);
+            ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
                   Class39 var5 = Class7671.method25188(Class8963.method32762(var0.get("nbt"), "nbt"));
@@ -148,7 +148,7 @@ public class Class9272 {
    public static Class9272 method34947(PacketBuffer var0) {
       ITextComponent var3 = var0.method35710();
       ITextComponent var4 = var0.method35710();
-      Class8848 var5 = var0.method35726();
+      ItemStack var5 = var0.method35726();
       Class1965 var6 = var0.<Class1965>method35712(Class1965.class);
       int var7 = var0.readInt();
       Object var8 = null;

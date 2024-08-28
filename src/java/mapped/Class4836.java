@@ -14,7 +14,7 @@ public class Class4836 extends Class4837 {
       boolean var8 = false;
 
       for (int var9 = 0; var9 < var1.method3629(); var9++) {
-         Class8848 var10 = var1.method3618(var9);
+         ItemStack var10 = var1.method3618(var9);
          if (!var10.method32105()) {
             if (var10.method32107() == Blocks.BROWN_MUSHROOM.method11581() && !var7) {
                var7 = true;
@@ -35,18 +35,18 @@ public class Class4836 extends Class4837 {
       return var5 && var7 && var6 && var8;
    }
 
-   public Class8848 method14962(Class926 var1) {
-      Class8848 var4 = Class8848.field39973;
+   public ItemStack method14962(Class926 var1) {
+      ItemStack var4 = ItemStack.EMPTY;
 
       for (int var5 = 0; var5 < var1.method3629(); var5++) {
-         Class8848 var6 = var1.method3618(var5);
+         ItemStack var6 = var1.method3618(var5);
          if (!var6.method32105() && var6.method32107().method11743(Class5985.field26103)) {
             var4 = var6;
             break;
          }
       }
 
-      Class8848 var8 = new Class8848(Class8514.field38149, 1);
+      ItemStack var8 = new ItemStack(Class8514.field38149, 1);
       if (var4.method32107() instanceof Class3292 && ((Class3292)var4.method32107()).method11845() instanceof Class3490) {
          Class3490 var9 = (Class3490)((Class3292)var4.method32107()).method11845();
          Class7144 var7 = var9.method12186();

@@ -26,7 +26,7 @@ public abstract class Class1255 extends Class1254 {
 
    @Override
    public void method5858(Class4843<?> var1, List<Class5839> var2) {
-      Class8848 var5 = var1.method14966();
+      ItemStack var5 = var1.method14966();
       this.field6637.method34738(var1);
       this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(2)).field25580, ((Class5839)var2.get(2)).field25581);
       Class25 var6 = var1.method14969();

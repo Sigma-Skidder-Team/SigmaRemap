@@ -44,7 +44,7 @@ public class Class4186 extends Class4180 {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {
                Class997 var8 = new Class997(var3.method6970(), var2, this.field20474.method252(Direction.SOUTH));
-               var8.method4092(new Class8848(Class8514.field38120), false);
+               var8.method4092(new ItemStack(Class8514.field38120), false);
                var3.method6916(var8);
             }
          } else {

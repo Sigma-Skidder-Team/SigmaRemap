@@ -92,7 +92,7 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public ItemStack method4644() {
-      return ItemStack.field39973;
+      return ItemStack.EMPTY;
    }
 
    @Override

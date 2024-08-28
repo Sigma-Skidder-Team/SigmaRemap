@@ -14,7 +14,7 @@ public class Class987 extends Class924 {
    }
 
    @Override
-   public int method3650(Class8848 var1) {
+   public int method3650(ItemStack var1) {
       return super.method3650(var1) / 2;
    }
 

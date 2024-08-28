@@ -10,7 +10,7 @@ public class Class1252 extends Class1251 {
 
    @Override
    public void method5829(Class4843<?> var1) {
-      Class8848[] var4 = var1.method14969().get(0).method332();
+      ItemStack[] var4 = var1.method14969().get(0).method332();
       this.field6626.add(new Class8834(this, 10, 10, var4));
    }
 }

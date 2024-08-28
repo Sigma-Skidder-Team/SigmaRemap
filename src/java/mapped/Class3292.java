@@ -33,7 +33,7 @@ public class Class3292 extends Class3257 {
                BlockPos var6 = var4.method18345();
                Class1655 var7 = var4.method18360();
                PlayerEntity var8 = var4.method18358();
-               Class8848 var9 = var4.method18357();
+               ItemStack var9 = var4.method18357();
                Class7380 var10 = var7.method6738(var6);
                Block var11 = var10.method23383();
                if (var11 == var5.method23383()) {
@@ -70,7 +70,7 @@ public class Class3292 extends Class3257 {
       return var1;
    }
 
-   public boolean method11837(BlockPos var1, Class1655 var2, PlayerEntity var3, Class8848 var4, Class7380 var5) {
+   public boolean method11837(BlockPos var1, Class1655 var2, PlayerEntity var3, ItemStack var4, Class7380 var5) {
       return method11844(var2, var3, var1, var4);
    }
 
@@ -80,7 +80,7 @@ public class Class3292 extends Class3257 {
       return var4 != null && this.method11841(var1, var4) ? var4 : null;
    }
 
-   private Class7380 method11839(BlockPos var1, Class1655 var2, Class8848 var3, Class7380 var4) {
+   private Class7380 method11839(BlockPos var1, Class1655 var2, ItemStack var3, Class7380 var4) {
       Class7380 var7 = var4;
       Class39 var8 = var3.method32142();
       if (var8 != null) {
@@ -121,7 +121,7 @@ public class Class3292 extends Class3257 {
       return var1.method18360().method6725(var1.method18345(), var2, 11);
    }
 
-   public static boolean method11844(Class1655 var0, PlayerEntity var1, BlockPos var2, Class8848 var3) {
+   public static boolean method11844(Class1655 var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {
       Class314 var6 = var0.method6715();
       if (var6 == null) {
          return false;
@@ -158,14 +158,14 @@ public class Class3292 extends Class3257 {
    }
 
    @Override
-   public void method11737(Class7401 var1, Class25<Class8848> var2) {
+   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
       if (this.method11738(var1)) {
          this.method11845().method11570(var1, var2);
       }
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11730(var1, var2, var3, var4);
       this.method11845().method11583(var1, var2, var3, var4);
    }

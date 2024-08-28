@@ -8,8 +8,8 @@ public class Class1051 extends Class1050 {
    }
 
    @Override
-   public Class8848 method4796() {
-      return new Class8848(Class8514.field37894);
+   public ItemStack method4796() {
+      return new ItemStack(Class8514.field37894);
    }
 
    @Override

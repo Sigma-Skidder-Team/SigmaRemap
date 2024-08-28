@@ -109,11 +109,11 @@ public class Class872 extends Class851<Class5821> {
       int var8 = (this.field4565 - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
       this.field4563.field847 = 100.0F;
-      this.field4563.method793(new Class8848(Class8514.field37803), var7 + 20, var8 + 109);
-      this.field4563.method793(new Class8848(Class8514.field38049), var7 + 41, var8 + 109);
-      this.field4563.method793(new Class8848(Class8514.field37800), var7 + 41 + 22, var8 + 109);
-      this.field4563.method793(new Class8848(Class8514.field37802), var7 + 42 + 44, var8 + 109);
-      this.field4563.method793(new Class8848(Class8514.field37801), var7 + 42 + 66, var8 + 109);
+      this.field4563.method793(new ItemStack(Class8514.field37803), var7 + 20, var8 + 109);
+      this.field4563.method793(new ItemStack(Class8514.field38049), var7 + 41, var8 + 109);
+      this.field4563.method793(new ItemStack(Class8514.field37800), var7 + 41 + 22, var8 + 109);
+      this.field4563.method793(new ItemStack(Class8514.field37802), var7 + 42 + 44, var8 + 109);
+      this.field4563.method793(new ItemStack(Class8514.field37801), var7 + 42 + 66, var8 + 109);
       this.field4563.field847 = 0.0F;
    }
 

@@ -119,7 +119,7 @@ public class Class3749 extends Class3676<Class1042> {
                      );
                      var12.method32182(1);
                      if (var12.method32105()) {
-                        var10.method3621(var11, ItemStack.field39973);
+                        var10.method3621(var11, ItemStack.EMPTY);
                      }
                      break;
                   }

@@ -2,7 +2,7 @@ package mapped;
 
 public class Class5820 extends Class5812 {
    private static String[] field25497;
-   public final Class25<Class8848> field25498 = Class25.<Class8848>method67();
+   public final Class25<ItemStack> field25498 = Class25.<ItemStack>method67();
 
    public Class5820(PlayerEntity var1) {
       super((Class8298<?>)null, 0);
@@ -39,7 +39,7 @@ public class Class5820 extends Class5812 {
             if (var8 >= 0 && var8 < this.field25498.size()) {
                Class861.method2660().method3621(var7 + var6 * 9, this.field25498.get(var8));
             } else {
-               Class861.method2660().method3621(var7 + var6 * 9, Class8848.field39973);
+               Class861.method2660().method3621(var7 + var6 * 9, ItemStack.EMPTY);
             }
          }
       }
@@ -50,19 +50,19 @@ public class Class5820 extends Class5812 {
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
+   public ItemStack method18112(PlayerEntity var1, int var2) {
       if (var2 >= this.field25468.size() - 9 && var2 < this.field25468.size()) {
          Class5839 var5 = this.field25468.get(var2);
          if (var5 != null && var5.method18266()) {
-            var5.method18267(Class8848.field39973);
+            var5.method18267(ItemStack.EMPTY);
          }
       }
 
-      return Class8848.field39973;
+      return ItemStack.EMPTY;
    }
 
    @Override
-   public boolean method18111(Class8848 var1, Class5839 var2) {
+   public boolean method18111(ItemStack var1, Class5839 var2) {
       return var2.field25578 != Class861.method2660();
    }
 

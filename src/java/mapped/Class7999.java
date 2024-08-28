@@ -47,7 +47,7 @@ public class Class7999 {
    }
 
    public Class7999 method27307(
-           Class8848 var1, ITextComponent var2, ITextComponent var3, ResourceLocation var4, Class1965 var5, boolean var6, boolean var7, boolean var8
+           ItemStack var1, ITextComponent var2, ITextComponent var3, ResourceLocation var4, Class1965 var5, boolean var6, boolean var7, boolean var8
    ) {
       return this.method27309(new Class9272(var1, var2, var3, var4, var5, var6, var7, var8));
    }
@@ -55,7 +55,7 @@ public class Class7999 {
    public Class7999 method27308(
            Class3303 var1, ITextComponent var2, ITextComponent var3, ResourceLocation var4, Class1965 var5, boolean var6, boolean var7, boolean var8
    ) {
-      return this.method27309(new Class9272(new Class8848(var1.method11581()), var2, var3, var4, var5, var6, var7, var8));
+      return this.method27309(new Class9272(new ItemStack(var1.method11581()), var2, var3, var4, var5, var6, var7, var8));
    }
 
    public Class7999 method27309(Class9272 var1) {

@@ -5,13 +5,13 @@ import com.mojang.serialization.Codec;
 public class Class7438 implements Class7436 {
    public static final Class6865<Class7438> field32007 = new Class6866();
    private final Class7434<Class7438> field32008;
-   private final Class8848 field32009;
+   private final ItemStack field32009;
 
    public static Codec<Class7438> method24021(Class7434<Class7438> var0) {
-      return Class8848.field39971.xmap(var1 -> new Class7438(var0, var1), var0x -> var0x.field32009);
+      return ItemStack.field39971.xmap(var1 -> new Class7438(var0, var1), var0x -> var0x.field32009);
    }
 
-   public Class7438(Class7434<Class7438> var1, Class8848 var2) {
+   public Class7438(Class7434<Class7438> var1, ItemStack var2) {
       this.field32008 = var1;
       this.field32009 = var2;
    }
@@ -31,7 +31,7 @@ public class Class7438 implements Class7436 {
       return this.field32008;
    }
 
-   public Class8848 method24022() {
+   public ItemStack method24022() {
       return this.field32009;
    }
 }

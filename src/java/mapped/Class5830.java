@@ -80,45 +80,45 @@ public class Class5830 extends Class5828<Class926> {
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
-         var5 = var7.method32126();
+         ItemStack var7 = var6.method18265();
+         var5 = var7.copy();
          Class2106 var8 = Class1006.method4271(var5);
          if (var2 != 0) {
             if (var2 >= 1 && var2 < 5) {
                if (!this.method18142(var7, 9, 45, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 5 && var2 < 9) {
                if (!this.method18142(var7, 9, 45, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (var8.method8772() == Class1969.field12837 && !this.field25468.get(8 - var8.method8773()).method18266()) {
                int var9 = 8 - var8.method8773();
                if (!this.method18142(var7, var9, var9 + 1, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (var8 == Class2106.field13732 && !this.field25468.get(45).method18266()) {
                if (!this.method18142(var7, 45, 46, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 9 && var2 < 36) {
                if (!this.method18142(var7, 36, 45, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 36 && var2 < 45) {
                if (!this.method18142(var7, 9, 36, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method18142(var7, 9, 45, false)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method18142(var7, 9, 45, true)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
 
             var6.method18260(var7, var5);
@@ -127,14 +127,14 @@ public class Class5830 extends Class5828<Class926> {
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.EMPTY);
          }
 
          if (var7.method32179() == var5.method32179()) {
-            return Class8848.field39973;
+            return ItemStack.EMPTY;
          }
 
-         Class8848 var10 = var6.method18264(var1, var7);
+         ItemStack var10 = var6.method18264(var1, var7);
          if (var2 == 0) {
             var1.method2882(var10, false);
          }
@@ -144,7 +144,7 @@ public class Class5830 extends Class5828<Class926> {
    }
 
    @Override
-   public boolean method18111(Class8848 var1, Class5839 var2) {
+   public boolean method18111(ItemStack var1, Class5839 var2) {
       return var2.field25578 != this.field25548 && super.method18111(var1, var2);
    }
 

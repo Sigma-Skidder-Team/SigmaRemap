@@ -15,7 +15,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
          var1.method35291(0.0, -0.34375, 0.0);
          var1.method35293(Class7680.field32900.method25286(180.0F));
          var1.method35292(0.625F, -0.625F, -0.625F);
-         Class8848 var14 = new Class8848(Blocks.field36589);
+         ItemStack var14 = new ItemStack(Blocks.field36589);
          Minecraft.getInstance()
             .method1555()
             .method790(var4, var14, Class2327.field15929, false, var1, var2, var4.field5024, var3, Class5712.method17883(var4, 0.0F));

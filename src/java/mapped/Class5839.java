@@ -18,32 +18,32 @@ public class Class5839 {
       this.field25581 = var4;
    }
 
-   public void method18260(Class8848 var1, Class8848 var2) {
+   public void method18260(ItemStack var1, ItemStack var2) {
       int var5 = var2.method32179() - var1.method32179();
       if (var5 > 0) {
          this.method18261(var2, var5);
       }
    }
 
-   public void method18261(Class8848 var1, int var2) {
+   public void method18261(ItemStack var1, int var2) {
    }
 
    public void method18262(int var1) {
    }
 
-   public void method18263(Class8848 var1) {
+   public void method18263(ItemStack var1) {
    }
 
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       this.method18268();
       return var2;
    }
 
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return true;
    }
 
-   public Class8848 method18265() {
+   public ItemStack method18265() {
       return this.field25578.method3618(this.field25577);
    }
 
@@ -51,7 +51,7 @@ public class Class5839 {
       return !this.method18265().method32105();
    }
 
-   public void method18267(Class8848 var1) {
+   public void method18267(ItemStack var1) {
       this.field25578.method3621(this.field25577, var1);
       this.method18268();
    }
@@ -64,7 +64,7 @@ public class Class5839 {
       return this.field25578.method3630();
    }
 
-   public int method18270(Class8848 var1) {
+   public int method18270(ItemStack var1) {
       return this.method18269();
    }
 
@@ -73,7 +73,7 @@ public class Class5839 {
       return null;
    }
 
-   public Class8848 method18272(int var1) {
+   public ItemStack method18272(int var1) {
       return this.field25578.method3619(this.field25577, var1);
    }
 

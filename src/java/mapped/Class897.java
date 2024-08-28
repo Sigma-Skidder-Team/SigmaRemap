@@ -20,7 +20,7 @@ public class Class897 extends Entity implements Class889 {
 
    public void method3522(ItemStack var1) {
       if (var1.method32107() != Class8514.field37979 || var1.method32141()) {
-         this.method3210().method35446(field5132, Util.<ItemStack>method38508(var1.method32126(), var0 -> var0.method32180(1)));
+         this.method3210().method35446(field5132, Util.<ItemStack>method38508(var1.copy(), var0 -> var0.method32180(1)));
       }
    }
 
@@ -36,7 +36,7 @@ public class Class897 extends Entity implements Class889 {
 
    @Override
    public void method2850() {
-      this.method3210().method35442(field5132, ItemStack.field39973);
+      this.method3210().method35442(field5132, ItemStack.EMPTY);
    }
 
    @Override

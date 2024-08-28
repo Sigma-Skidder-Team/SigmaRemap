@@ -18,7 +18,7 @@ public abstract class Class4837 implements Class4842 {
    }
 
    @Override
-   public Class8848 method14966() {
-      return Class8848.field39973;
+   public ItemStack method14966() {
+      return ItemStack.EMPTY;
    }
 }

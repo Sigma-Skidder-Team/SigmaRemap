@@ -15,7 +15,7 @@ public class Class7784 {
    public static final Class6466<String> field33393 = new Class6479();
    public static final Class6466<ITextComponent> field33394 = new Class6481();
    public static final Class6466<Optional<ITextComponent>> field33395 = new Class6484();
-   public static final Class6466<Class8848> field33396 = new Class6471();
+   public static final Class6466<ItemStack> field33396 = new Class6471();
    public static final Class6466<Optional<Class7380>> field33397 = new Class6470();
    public static final Class6466<Boolean> field33398 = new Class6478();
    public static final Class6466<Class7436> field33399 = new Class6482();

@@ -3,7 +3,7 @@ package mapped;
 import java.util.function.BiFunction;
 
 public class Class8585 {
-   public static final BiFunction<Class8848, Class7812, Class8848> field38617 = (var0, var1) -> var0;
+   public static final BiFunction<ItemStack, Class7812, ItemStack> field38617 = (var0, var1) -> var0;
    public static final Class7128 field38618 = method30684("set_count", new Class4959());
    public static final Class7128 field38619 = method30684("enchant_with_levels", new Class4962());
    public static final Class7128 field38620 = method30684("enchant_randomly", new Class4970());
@@ -34,7 +34,7 @@ public class Class8585 {
       return Class9709.<Class127, Class7128>method38040(Class2348.field16097, "function", "function", Class127::method368).method31075();
    }
 
-   public static BiFunction<Class8848, Class7812, Class8848> method30686(BiFunction<Class8848, Class7812, Class8848>[] var0) {
+   public static BiFunction<ItemStack, Class7812, ItemStack> method30686(BiFunction<ItemStack, Class7812, ItemStack>[] var0) {
       switch (var0.length) {
          case 0:
             return field38617;
@@ -43,11 +43,11 @@ public class Class8585 {
          case 2:
             BiFunction var3 = var0[0];
             BiFunction var4 = var0[1];
-            return (var2, var3x) -> (Class8848)var4.apply(var3.apply(var2, var3x), var3x);
+            return (var2, var3x) -> (ItemStack)var4.apply(var3.apply(var2, var3x), var3x);
          default:
             return (var1, var2) -> {
                for (BiFunction var8 : var0) {
-                  var1 = (Class8848)var8.apply(var1, var2);
+                  var1 = (ItemStack)var8.apply(var1, var2);
                }
 
                return var1;

@@ -6,11 +6,11 @@ public class Class4841 extends Class4837 {
    }
 
    public boolean method14963(Class926 var1, Class1655 var2) {
-      Class8848 var5 = Class8848.field39973;
-      Class8848 var6 = Class8848.field39973;
+      ItemStack var5 = ItemStack.EMPTY;
+      ItemStack var6 = ItemStack.EMPTY;
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         Class8848 var8 = var1.method3618(var7);
+         ItemStack var8 = var1.method3618(var7);
          if (!var8.method32105()) {
             if (!(var8.method32107() instanceof Class3301)) {
                if (var8.method32107() != Class8514.field38119) {
@@ -39,16 +39,16 @@ public class Class4841 extends Class4837 {
       return !var5.method32105() && !var6.method32105();
    }
 
-   public Class8848 method14962(Class926 var1) {
-      Class8848 var4 = Class8848.field39973;
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method14962(Class926 var1) {
+      ItemStack var4 = ItemStack.EMPTY;
+      ItemStack var5 = ItemStack.EMPTY;
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         Class8848 var7 = var1.method3618(var6);
+         ItemStack var7 = var1.method3618(var6);
          if (!var7.method32105()) {
             if (!(var7.method32107() instanceof Class3301)) {
                if (var7.method32107() == Class8514.field38119) {
-                  var5 = var7.method32126();
+                  var5 = var7.copy();
                }
             } else {
                var4 = var7;

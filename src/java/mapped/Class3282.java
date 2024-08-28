@@ -17,7 +17,7 @@ public class Class3282 extends Class3257 {
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (var6.method23446(Class7645.field32766)) {
-         Class8848 var7 = var1.method18357();
+         ItemStack var7 = var1.method18357();
          if (!var4.field9020) {
             Class96 var8 = !(var6.method23383() instanceof Class3429)
                ? Class96.field247

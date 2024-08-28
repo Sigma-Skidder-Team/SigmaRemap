@@ -58,7 +58,7 @@ public class Class3208 extends Block implements Class3207 {
 
    @Override
    public boolean method11497(Class7380 var1, Class5909 var2) {
-      Class8848 var5 = var2.method18357();
+      ItemStack var5 = var2.method18357();
       Class86 var6 = var1.<Class86>method23463(field18605);
       if (var6 == Class86.field220 || var5.method32107() != this.method11581()) {
          return false;

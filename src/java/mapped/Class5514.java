@@ -5,14 +5,14 @@ import java.io.IOException;
 public class Class5514 implements Packet<Class5110> {
    private static String[] field24464;
    private int field24465;
-   private Class8848 field24466 = Class8848.field39973;
+   private ItemStack field24466 = ItemStack.EMPTY;
 
    public Class5514() {
    }
 
-   public Class5514(int var1, Class8848 var2) {
+   public Class5514(int var1, ItemStack var2) {
       this.field24465 = var1;
-      this.field24466 = var2.method32126();
+      this.field24466 = var2.copy();
    }
 
    public void method17180(Class5110 var1) {
@@ -35,7 +35,7 @@ public class Class5514 implements Packet<Class5110> {
       return this.field24465;
    }
 
-   public Class8848 method17337() {
+   public ItemStack method17337() {
       return this.field24466;
    }
 }

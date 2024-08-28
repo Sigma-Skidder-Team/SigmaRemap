@@ -26,6 +26,6 @@ public class Class3370 extends Class3241 {
 
    @Override
    public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return ItemStack.field39973;
+      return ItemStack.EMPTY;
    }
 }

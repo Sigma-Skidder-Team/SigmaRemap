@@ -314,7 +314,7 @@ public class Class5305 extends Module {
             Class39 var6 = var5.method130("BlockEntityTag");
             Peek.method18338(var6);
             if (var6.method119("Items", 9)) {
-                Class25<ItemStack> var7 = Class25.method68(27, ItemStack.field39973);
+                Class25<ItemStack> var7 = Class25.method68(27, ItemStack.EMPTY);
                 Class7920.method26567(var6, var7);
 
                 for (ItemStack var9 : var7) {

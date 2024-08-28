@@ -265,7 +265,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                                );
                                                             }
                                                          } else {
-                                                            var11 = new Class888(this.field23273, var4, var6, var8, ItemStack.field39973);
+                                                            var11 = new Class888(this.field23273, var4, var6, var8, ItemStack.EMPTY);
                                                          }
                                                       } else {
                                                          var11 = new Class897(this.field23273, var4, var6, var8);
@@ -809,7 +809,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    private static ItemStack method15785(PlayerEntity var0) {
       for (Hand var6 : Hand.values()) {
-         ItemStack var7 = var0.method3094(var6);
+         ItemStack var7 = var0.getHeldItem(var6);
          if (var7.method32107() == Class8514.field38126) {
             return var7;
          }
@@ -1677,7 +1677,7 @@ public class ClientPlayNetHandler implements Class5116 {
    @Override
    public void method15775(Class5509 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      ItemStack var4 = this.field23272.field1339.method3094(var1.method17327());
+      ItemStack var4 = this.field23272.field1339.getHeldItem(var1.method17327());
       if (var4.method32107() == Class8514.field38048) {
          this.field23272.displayGuiScreen(new Class870(new Class7501(var4)));
       }

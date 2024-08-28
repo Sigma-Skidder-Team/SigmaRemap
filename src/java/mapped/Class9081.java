@@ -231,7 +231,7 @@ public class Class9081 {
 
             if (!this.method33866()) {
                ItemStack var8 = this.field41571.method3090();
-               ItemStack var9 = var8.method32126();
+               ItemStack var9 = var8.copy();
                boolean var10 = this.field41571.method2884(var4);
                var8.method32123(this.field41570, var4, var1, this.field41571);
                if (var7 && var10) {
@@ -269,7 +269,7 @@ public class Class9081 {
                }
 
                if (var10.method32105()) {
-                  var1.method3095(var4, ItemStack.field39973);
+                  var1.method3095(var4, ItemStack.EMPTY);
                }
 
                if (!var1.method3148()) {
@@ -300,7 +300,7 @@ public class Class9081 {
       } else {
          boolean var10 = !var1.method3090().method32105() || !var1.method3091().method32105();
          boolean var11 = var1.method2851() && var10;
-         ItemStack var12 = var3.method32126();
+         ItemStack var12 = var3.copy();
          if (!var11) {
             Class2274 var13 = var9.method23435(var2, var1, var4, var5);
             if (var13.method9000()) {

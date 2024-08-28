@@ -28,7 +28,7 @@ public class Class958 extends Class944 implements Class933 {
    }
 
    @Nullable
-   public static Class41 method3886(Class8848 var0) {
+   public static Class41 method3886(ItemStack var0) {
       Class41 var3 = null;
       Class39 var4 = var0.method32145("BlockEntityTag");
       if (var4 != null && var4.method119("Patterns", 9)) {
@@ -38,7 +38,7 @@ public class Class958 extends Class944 implements Class933 {
       return var3;
    }
 
-   public void method3887(Class8848 var1, Class112 var2) {
+   public void method3887(ItemStack var1, Class112 var2) {
       this.field5378 = method3886(var1);
       this.field5377 = var2;
       this.field5380 = null;
@@ -104,7 +104,7 @@ public class Class958 extends Class944 implements Class933 {
       return this.method3646(new Class39());
    }
 
-   public static int method3889(Class8848 var0) {
+   public static int method3889(ItemStack var0) {
       Class39 var3 = var0.method32145("BlockEntityTag");
       return var3 != null && var3.method118("Patterns") ? var3.method131("Patterns", 10).size() : 0;
    }
@@ -134,7 +134,7 @@ public class Class958 extends Class944 implements Class933 {
       return var4;
    }
 
-   public static void method3892(Class8848 var0) {
+   public static void method3892(ItemStack var0) {
       Class39 var3 = var0.method32145("BlockEntityTag");
       if (var3 != null && var3.method119("Patterns", 9)) {
          Class41 var4 = var3.method131("Patterns", 10);
@@ -147,8 +147,8 @@ public class Class958 extends Class944 implements Class933 {
       }
    }
 
-   public Class8848 method3893(Class7380 var1) {
-      Class8848 var4 = new Class8848(Class3360.method11937(this.method3894(() -> var1)));
+   public ItemStack method3893(Class7380 var1) {
+      ItemStack var4 = new ItemStack(Class3360.method11937(this.method3894(() -> var1)));
       if (this.field5378 != null && !this.field5378.isEmpty()) {
          var4.method32144("BlockEntityTag").method99("Patterns", this.field5378.method79());
       }

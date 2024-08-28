@@ -28,7 +28,7 @@ public class Class852 extends Class851<Class5836> {
       boolean var10 = var9 == Class8514.field38056;
       boolean var11 = var9 == Class8514.field37899;
       boolean var12 = var9 == Class8514.field37471;
-      Class8848 var13 = this.field4727.method18131(0).method18265();
+      ItemStack var13 = this.field4727.method18131(0).method18265();
       boolean var14 = false;
       Class7529 var15;
       if (var13.method32107() != Class8514.field37955) {

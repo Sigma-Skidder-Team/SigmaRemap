@@ -16,7 +16,7 @@ public class Class4912 extends Class4874<Class4465> {
       return new Class4465(var2, var6, var7);
    }
 
-   public void method15177(Class878 var1, Class8848 var2, int var3) {
+   public void method15177(Class878 var1, ItemStack var2, int var3) {
       this.method15053(var1, var2x -> var2x.method14112(var2, var3));
    }
 

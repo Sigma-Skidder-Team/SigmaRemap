@@ -838,8 +838,8 @@ public class Class5111 implements Class5110 {
       switch (Class9703.field45357[var5.ordinal()]) {
          case 1:
             if (!this.player.method2800()) {
-               ItemStack var6 = this.player.method3094(Hand.field183);
-               this.player.method3095(Hand.field183, this.player.method3094(Hand.field182));
+               ItemStack var6 = this.player.getHeldItem(Hand.field183);
+               this.player.method3095(Hand.field183, this.player.getHeldItem(Hand.field182));
                this.player.method3095(Hand.field182, var6);
                this.player.method3162();
             }
@@ -884,7 +884,7 @@ public class Class5111 implements Class5110 {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       ServerWorld var4 = this.player.getServerWorld();
       Hand var5 = var1.method17497();
-      ItemStack var6 = this.player.method3094(var5);
+      ItemStack var6 = this.player.getHeldItem(var5);
       Class8711 var7 = var1.method17498();
       BlockPos var8 = var7.method31423();
       Direction var9 = var7.method31424();
@@ -913,7 +913,7 @@ public class Class5111 implements Class5110 {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       ServerWorld var4 = this.player.getServerWorld();
       Hand var5 = var1.method17472();
-      ItemStack var6 = this.player.method3094(var5);
+      ItemStack var6 = this.player.getHeldItem(var5);
       this.player.markPlayerActive();
       if (!var6.method32105()) {
          Class2274 var7 = this.player.field4857.method33859(this.player, var4, var6, var5);
@@ -1128,8 +1128,8 @@ public class Class5111 implements Class5110 {
       if (entity != null) {
          double var6 = 36.0;
          if (this.player.getDistanceSq(entity) < 36.0) {
-            Hand var8 = packetIn.getHand();
-            ItemStack var9 = var8 == null ? ItemStack.field39973 : this.player.method3094(var8).method32126();
+            Hand hand = packetIn.getHand();
+            ItemStack itemstack = hand == null ? ItemStack.EMPTY : this.player.getHeldItem(hand).copy();
             Optional var10 = Optional.empty();
             if (packetIn.method17316() != Class1968.field12832) {
                if (packetIn.method17316() != Class1968.field12834) {
@@ -1143,16 +1143,16 @@ public class Class5111 implements Class5110 {
                      this.player.method2817(entity);
                   }
                } else {
-                  var10 = Optional.<Class2274>of(entity.method3397(this.player, packetIn.method17318(), var8));
+                  var10 = Optional.<Class2274>of(entity.method3397(this.player, packetIn.method17318(), hand));
                }
             } else {
-               var10 = Optional.<Class2274>of(this.player.method2893(entity, var8));
+               var10 = Optional.<Class2274>of(this.player.method2893(entity, hand));
             }
 
             if (var10.isPresent() && ((Class2274)var10.get()).method9000()) {
-               Class9551.field44506.method15127(this.player, var9, entity);
+               Class9551.field44506.method15127(this.player, itemstack, entity);
                if (((Class2274)var10.get()).method9001()) {
-                  this.player.method3081(var8, true);
+                  this.player.method3081(hand, true);
                }
             }
          }
@@ -1208,7 +1208,7 @@ public class Class5111 implements Class5110 {
 
                for (int var6 = 0; var6 < this.player.field4905.field25468.size(); var6++) {
                   ItemStack var7 = this.player.field4905.field25468.get(var6).method18265();
-                  var5.add(!var7.method32105() ? var7 : ItemStack.field39973);
+                  var5.add(!var7.method32105() ? var7 : ItemStack.EMPTY);
                }
 
                this.player.method2718(this.player.field4905, var5);
@@ -1283,7 +1283,7 @@ public class Class5111 implements Class5110 {
             if (!var5.method32105()) {
                this.player.field4904.method18136(var1.method17336(), var5);
             } else {
-               this.player.field4904.method18136(var1.method17336(), ItemStack.field39973);
+               this.player.field4904.method18136(var1.method17336(), ItemStack.EMPTY);
             }
 
             this.player.field4904.method18141(this.player, true);

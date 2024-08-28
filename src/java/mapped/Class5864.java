@@ -8,11 +8,11 @@ public class Class5864 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return method18282(var1);
    }
 
-   public static boolean method18282(Class8848 var0) {
+   public static boolean method18282(ItemStack var0) {
       return var0.method32107() == Class8514.field37975;
    }
 

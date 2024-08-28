@@ -7,7 +7,7 @@ public class Class929 extends Class927 implements Class930 {
    private final BlockPos field5268;
    private boolean field5269;
 
-   public Class929(Class7380 var1, Class1660 var2, BlockPos var3, Class8848 var4) {
+   public Class929(Class7380 var1, Class1660 var2, BlockPos var3, ItemStack var4) {
       super(var4);
       this.field5266 = var1;
       this.field5267 = var2;
@@ -25,12 +25,12 @@ public class Class929 extends Class927 implements Class930 {
    }
 
    @Override
-   public boolean method3654(int var1, Class8848 var2, Direction var3) {
+   public boolean method3654(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 
    @Override
-   public boolean method3655(int var1, Class8848 var2, Direction var3) {
+   public boolean method3655(int var1, ItemStack var2, Direction var3) {
       return !this.field5269 && var3 == Direction.field672 && var2.method32107() == Class8514.field37934;
    }
 

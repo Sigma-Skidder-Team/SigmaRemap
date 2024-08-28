@@ -15,7 +15,7 @@ public class Enchant extends Command {
          if (var2[1].method30895() == Class2193.field14336) {
             if (!mc.field1337.method23151()) {
                Class6069 var6 = null;
-               Class8848 var7 = mc.field1339.method3090().method32126();
+               ItemStack var7 = mc.field1339.method3090().copy();
 
                for (ResourceLocation var9 : Class2348.field16073.method9190()) {
                   if (var2[0].method30899().equals(var9.method8292())) {

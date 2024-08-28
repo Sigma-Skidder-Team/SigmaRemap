@@ -12,11 +12,11 @@ public abstract class Class128 implements Class127 {
       this.field442 = Class8582.<Class7812>method30665(var1);
    }
 
-   public final Class8848 apply(Class8848 var1, Class7812 var2) {
+   public final ItemStack apply(ItemStack var1, Class7812 var2) {
       return !this.field442.test(var2) ? var1 : this.method371(var1, var2);
    }
 
-   public abstract Class8848 method371(Class8848 var1, Class7812 var2);
+   public abstract ItemStack method371(ItemStack var1, Class7812 var2);
 
    @Override
    public void method367(Class8478 var1) {

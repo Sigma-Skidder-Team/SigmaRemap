@@ -22,6 +22,6 @@ public interface Class6196 {
    default void method19099() {
    }
 
-   default void method19104(Class8848 var1) {
+   default void method19104(ItemStack var1) {
    }
 }

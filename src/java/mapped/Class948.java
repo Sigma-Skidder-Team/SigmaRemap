@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class948 extends Class944 implements Class946, Class949 {
    private final Class920 field5333 = new Class989(this);
    private final Class8202 field5334 = new Class8205(this);
-   private ItemStack field5335 = ItemStack.field39973;
+   private ItemStack field5335 = ItemStack.EMPTY;
    private int field5336;
    private int field5337;
 
@@ -93,7 +93,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
       if (!var2.method119("Book", 10)) {
-         this.field5335 = ItemStack.field39973;
+         this.field5335 = ItemStack.EMPTY;
       } else {
          this.field5335 = this.method3813(ItemStack.method32104(var2.method130("Book")), (PlayerEntity)null);
       }
@@ -115,7 +115,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
 
    @Override
    public void method3625() {
-      this.method3807(ItemStack.field39973);
+      this.method3807(ItemStack.EMPTY);
    }
 
    @Override

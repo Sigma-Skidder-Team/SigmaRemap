@@ -74,14 +74,14 @@ public class Class3725 extends Class3676<Class1042> {
    }
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
-      var2.method2944(Class2106.field13731, ItemStack.field39973);
+      var2.method2944(Class2106.field13731, ItemStack.EMPTY);
       this.field19816 = (long)var2.field5055;
    }
 
    public void method12504(ServerWorld var1, Class1042 var2, long var3) {
       BlockPos var7 = this.field19818.get();
       if (var3 >= this.field19815 && var7.method8317(var2.getPositionVec(), 1.0)) {
-         ItemStack var8 = ItemStack.field39973;
+         ItemStack var8 = ItemStack.EMPTY;
          Class927 var9 = var2.method4752();
          int var10 = var9.method3629();
 

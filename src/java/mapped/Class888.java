@@ -20,7 +20,7 @@ public class Class888 extends Class882 implements Class889 {
       this.method3215(var2, var4, var6);
       byte var11 = 1;
       if (!var8.method32105() && var8.method32141()) {
-         this.field5063.method35446(field5120, var8.method32126());
+         this.field5063.method35446(field5120, var8.copy());
          var11 += var8.method32144("Fireworks").method120("Flight");
       }
 
@@ -51,7 +51,7 @@ public class Class888 extends Class882 implements Class889 {
 
    @Override
    public void method2850() {
-      this.field5063.method35442(field5120, ItemStack.field39973);
+      this.field5063.method35442(field5120, ItemStack.EMPTY);
       this.field5063.method35442(field5121, OptionalInt.empty());
       this.field5063.method35442(field5122, false);
    }

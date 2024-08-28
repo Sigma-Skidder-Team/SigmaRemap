@@ -9,17 +9,17 @@ import java.util.List;
 public class Class6207 {
    public final Int2IntMap field27690 = new Int2IntOpenHashMap();
 
-   public void method19116(Class8848 var1) {
+   public void method19116(ItemStack var1) {
       if (!var1.method32116() && !var1.method32163() && !var1.method32152()) {
          this.method19117(var1);
       }
    }
 
-   public void method19117(Class8848 var1) {
+   public void method19117(ItemStack var1) {
       this.method19118(var1, 64);
    }
 
-   public void method19118(Class8848 var1, int var2) {
+   public void method19118(ItemStack var1, int var2) {
       if (!var1.method32105()) {
          int var5 = method19119(var1);
          int var6 = Math.min(var2, var1.method32179());
@@ -27,7 +27,7 @@ public class Class6207 {
       }
    }
 
-   public static int method19119(Class8848 var0) {
+   public static int method19119(ItemStack var0) {
       return Class2348.field16075.method9171(var0.method32107());
    }
 
@@ -65,8 +65,8 @@ public class Class6207 {
       return new Class8520(var1).method30200(var2, var3);
    }
 
-   public static Class8848 method19127(int var0) {
-      return var0 != 0 ? new Class8848(Class3257.method11702(var0)) : Class8848.field39973;
+   public static ItemStack method19127(int var0) {
+      return var0 != 0 ? new ItemStack(Class3257.method11702(var0)) : ItemStack.EMPTY;
    }
 
    public void method19128() {

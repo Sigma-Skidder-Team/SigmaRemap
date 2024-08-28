@@ -4,22 +4,22 @@ public class Class6218 implements Class6226 {
    private static String[] field27718;
 
    @Override
-   public final Class8848 method19196(Class2956 var1, Class8848 var2) {
-      Class8848 var5 = this.method19192(var1, var2);
+   public final ItemStack method19196(Class2956 var1, ItemStack var2) {
+      ItemStack var5 = this.method19192(var1, var2);
       this.method19193(var1);
       this.method19198(var1, var1.method11324().<Direction>method23463(Class3357.field18899));
       return var5;
    }
 
-   public Class8848 method19192(Class2956 var1, Class8848 var2) {
+   public ItemStack method19192(Class2956 var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       Class2955 var6 = Class3357.method11934(var1);
-      Class8848 var7 = var2.method32106(1);
+      ItemStack var7 = var2.method32106(1);
       method19197(var1.method11326(), var7, 6, var5, var6);
       return var2;
    }
 
-   public static void method19197(Class1655 var0, Class8848 var1, int var2, Direction var3, Class2955 var4) {
+   public static void method19197(Class1655 var0, ItemStack var1, int var2, Direction var3, Class2955 var4) {
       double var7 = var4.method11320();
       double var9 = var4.method11321();
       double var11 = var4.method11322();

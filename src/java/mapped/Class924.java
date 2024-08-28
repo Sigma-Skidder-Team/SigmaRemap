@@ -16,7 +16,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private static final int[] field5244 = new int[]{0};
    private static final int[] field5245 = new int[]{2, 1};
    private static final int[] field5246 = new int[]{1};
-   public Class25<ItemStack> field5247 = Class25.<ItemStack>method68(3, ItemStack.field39973);
+   public Class25<ItemStack> field5247 = Class25.<ItemStack>method68(3, ItemStack.EMPTY);
    private int field5248;
    private int field5249;
    private int field5250;
@@ -129,7 +129,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5247 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
+      this.field5247 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5247);
       this.field5248 = var2.method121("BurnTime");
       this.field5250 = var2.method121("CookTime");
@@ -177,7 +177,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
                      var5.method32182(1);
                      if (var5.method32105()) {
                         Class3257 var8 = var7.method11722();
-                        this.field5247.set(1, var8 != null ? new ItemStack(var8) : ItemStack.field39973);
+                        this.field5247.set(1, var8 != null ? new ItemStack(var8) : ItemStack.EMPTY);
                      }
                   }
                }
@@ -240,7 +240,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
                var6.method32181(1);
             }
          } else {
-            this.field5247.set(2, var5.method32126());
+            this.field5247.set(2, var5.copy());
          }
 
          if (!this.field5324.field9020) {

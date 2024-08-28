@@ -14,7 +14,7 @@ public class Class8811 {
       this.field39646 = var1;
    }
 
-   public boolean method31808(Class8848 var1) {
+   public boolean method31808(ItemStack var1) {
       return this != field39645 ? this.method31810(var1.method32142()) : true;
    }
 
@@ -48,7 +48,7 @@ public class Class8811 {
    public static Class39 method31813(Entity var0) {
       Class39 var3 = var0.method3294(new Class39());
       if (var0 instanceof PlayerEntity) {
-         Class8848 var4 = ((PlayerEntity)var0).field4902.method4028();
+         ItemStack var4 = ((PlayerEntity)var0).field4902.method4028();
          if (!var4.method32105()) {
             var3.method99("SelectedItem", var4.method32112(new Class39()));
          }

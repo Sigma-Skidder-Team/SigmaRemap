@@ -27,7 +27,7 @@ public class Class997 extends Class995 {
 
    @Override
    public void method2850() {
-      this.method3210().method35442(field5492, ItemStack.field39973);
+      this.method3210().method35442(field5492, ItemStack.EMPTY);
       this.method3210().method35442(field5493, 0);
    }
 
@@ -172,7 +172,7 @@ public class Class997 extends Class995 {
    private void method4088(Entity var1, boolean var2) {
       if (!this.field5495) {
          ItemStack var5 = this.method4090();
-         this.method4091(ItemStack.field39973);
+         this.method4091(ItemStack.EMPTY);
          if (this.field5024.method6789().method17135(Class5462.field24229)) {
             if (var1 instanceof PlayerEntity) {
                PlayerEntity var6 = (PlayerEntity)var1;
@@ -187,7 +187,7 @@ public class Class997 extends Class995 {
             }
 
             if (!var5.method32105()) {
-               var5 = var5.method32126();
+               var5 = var5.copy();
                this.method4089(var5);
                if (this.field5054.nextFloat() < this.field5494) {
                   this.method3302(var5);
@@ -219,7 +219,7 @@ public class Class997 extends Class995 {
 
    public void method4092(ItemStack var1, boolean var2) {
       if (!var1.method32105()) {
-         var1 = var1.method32126();
+         var1 = var1.copy();
          var1.method32180(1);
          var1.method32166(this);
       }
@@ -312,7 +312,7 @@ public class Class997 extends Class995 {
 
    @Override
    public Class2274 method3304(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+      ItemStack var5 = var1.getHeldItem(var2);
       boolean var6 = !this.method4090().method32105();
       boolean var7 = !var5.method32105();
       if (!this.field5495) {

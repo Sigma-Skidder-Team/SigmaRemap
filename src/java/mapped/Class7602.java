@@ -30,7 +30,7 @@ public class Class7602 implements Class7601 {
          var2.method5915().field1294.method38805(var1, field32632, 30.0F, 7.0F, -11534256);
          var2.method5915().field1294.method38805(var1, field32633, 30.0F, 18.0F, -16777216);
          Class4843 var7 = this.field32634.get((int)(var3 / Math.max(1L, 5000L / (long)this.field32634.size()) % (long)this.field32634.size()));
-         Class8848 var8 = var7.method14971();
+         ItemStack var8 = var7.method14971();
          RenderSystem.pushMatrix();
          RenderSystem.scalef(0.6F, 0.6F, 1.0F);
          var2.method5915().method1555().method794(var8, 3, 3);

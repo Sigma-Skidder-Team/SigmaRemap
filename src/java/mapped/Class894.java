@@ -21,7 +21,7 @@ public class Class894 extends Class890 {
    }
 
    private Class7436 method3516() {
-      Class8848 var3 = this.method3513();
+      ItemStack var3 = this.method3513();
       return (Class7436)(!var3.method32105() ? new Class7438(Class7940.field34082, var3) : Class7940.field34084);
    }
 

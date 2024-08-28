@@ -106,7 +106,7 @@ public class Class1124 extends Class875<Class5824> {
    }
 
    @Override
-   public void method2720(Class5812 var1, int var2, Class8848 var3) {
+   public void method2720(Class5812 var1, int var2, ItemStack var3) {
       if (var2 == 0) {
          this.field6160.method5635(!var3.method32105() ? var3.method32149().getString() : "");
          this.field6160.method5666(!var3.method32105());

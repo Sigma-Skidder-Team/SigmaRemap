@@ -19,7 +19,7 @@ public class Class3280 extends Class3257 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11730(var1, var2, var3, var4);
       this.field18788.method11583(var1, var2, var3, var4);
    }

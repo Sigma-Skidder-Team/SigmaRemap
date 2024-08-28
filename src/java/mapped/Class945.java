@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class Class945 extends Class944 implements Class946, Class935 {
-   private final Class25<ItemStack> field5329 = Class25.<ItemStack>method68(4, ItemStack.field39973);
+   private final Class25<ItemStack> field5329 = Class25.<ItemStack>method68(4, ItemStack.EMPTY);
    private final int[] field5330 = new int[4];
    private final int[] field5331 = new int[4];
 
@@ -46,7 +46,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
                   .orElse(var4);
                BlockPos var8 = this.method3774();
                Class7236.method22725(this.field5324, (double)var8.method8304(), (double)var8.getY(), (double)var8.method8306(), var7);
-               this.field5329.set(var3, ItemStack.field39973);
+               this.field5329.set(var3, ItemStack.EMPTY);
                this.method3799();
             }
          }

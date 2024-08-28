@@ -43,7 +43,7 @@ public class Class3729 extends Class3676<Class1042> {
       Class880 var7 = this.method12645(var2);
       this.method12641(var7, var2);
       if (this.field19829.isEmpty()) {
-         var2.method2944(Class2106.field13731, ItemStack.field39973);
+         var2.method2944(Class2106.field13731, ItemStack.EMPTY);
          this.field19832 = Math.min(this.field19832, 40);
       } else {
          this.method12646(var2);
@@ -55,7 +55,7 @@ public class Class3729 extends Class3676<Class1042> {
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       super.method12506(var1, var2, var3);
       var2.method2992().method21405(Class8830.field39828);
-      var2.method2944(Class2106.field13731, ItemStack.field39973);
+      var2.method2944(Class2106.field13731, ItemStack.EMPTY);
       this.field19828 = null;
    }
 

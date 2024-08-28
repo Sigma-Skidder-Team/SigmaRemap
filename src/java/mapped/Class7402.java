@@ -6,7 +6,7 @@ public final class Class7402 extends Class7401 {
    }
 
    @Override
-   public Class8848 method23640() {
-      return Class9741.method38187(new Class8848(Class8514.field37971), Class8137.field34977);
+   public ItemStack method23640() {
+      return Class9741.method38187(new ItemStack(Class8514.field37971), Class8137.field34977);
    }
 }

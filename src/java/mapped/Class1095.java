@@ -582,7 +582,7 @@ public class Class1095 extends Class1018 {
       ItemStack var4 = this.method2943(Class2106.field13731);
       if (!var4.method32105()) {
          this.method3302(var4);
-         this.method2944(Class2106.field13731, ItemStack.field39973);
+         this.method2944(Class2106.field13731, ItemStack.EMPTY);
       }
 
       super.method3052(var1);

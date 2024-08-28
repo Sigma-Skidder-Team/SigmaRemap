@@ -10,7 +10,7 @@ public class Class5841 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return false;
    }
 
@@ -20,7 +20,7 @@ public class Class5841 extends Class5839 {
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       return this.field25584.method18190(var1, var2);
    }
 }

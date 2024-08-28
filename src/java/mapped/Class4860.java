@@ -44,7 +44,7 @@ public class Class4860 extends Class4837 {
       boolean var9 = false;
 
       for (int var10 = 0; var10 < var1.method3629(); var10++) {
-         Class8848 var11 = var1.method3618(var10);
+         ItemStack var11 = var1.method3618(var10);
          if (!var11.method32105()) {
             if (!field22658.test(var11)) {
                if (!field22660.test(var11)) {
@@ -89,14 +89,14 @@ public class Class4860 extends Class4837 {
       return var5 && var6;
    }
 
-   public Class8848 method14962(Class926 var1) {
-      Class8848 var4 = new Class8848(Class8514.field38069);
+   public ItemStack method14962(Class926 var1) {
+      ItemStack var4 = new ItemStack(Class8514.field38069);
       Class39 var5 = var4.method32144("Explosion");
       Class2119 var6 = Class2119.field13807;
       ArrayList var7 = Lists.newArrayList();
 
       for (int var8 = 0; var8 < var1.method3629(); var8++) {
-         Class8848 var9 = var1.method3618(var8);
+         ItemStack var9 = var1.method3618(var8);
          if (!var9.method32105()) {
             if (!field22658.test(var9)) {
                if (!field22660.test(var9)) {
@@ -127,8 +127,8 @@ public class Class4860 extends Class4837 {
    }
 
    @Override
-   public Class8848 method14966() {
-      return new Class8848(Class8514.field38069);
+   public ItemStack method14966() {
+      return new ItemStack(Class8514.field38069);
    }
 
    @Override

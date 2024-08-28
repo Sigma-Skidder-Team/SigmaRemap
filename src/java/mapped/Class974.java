@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Class974 implements Class920, Class933 {
-   public final Class25<ItemStack> field5439 = Class25.<ItemStack>method68(36, ItemStack.field39973);
-   public final Class25<ItemStack> field5440 = Class25.<ItemStack>method68(4, ItemStack.field39973);
-   public final Class25<ItemStack> field5441 = Class25.<ItemStack>method68(1, ItemStack.field39973);
+   public final Class25<ItemStack> field5439 = Class25.<ItemStack>method68(36, ItemStack.EMPTY);
+   public final Class25<ItemStack> field5440 = Class25.<ItemStack>method68(4, ItemStack.EMPTY);
+   public final Class25<ItemStack> field5441 = Class25.<ItemStack>method68(1, ItemStack.EMPTY);
    private final List<Class25<ItemStack>> field5442 = ImmutableList.of(this.field5439, this.field5440, this.field5441);
    public int field5443;
    public final PlayerEntity field5444;
-   private ItemStack field5445 = ItemStack.field39973;
+   private ItemStack field5445 = ItemStack.EMPTY;
    private int field5446;
 
    public Class974(PlayerEntity var1) {
@@ -22,7 +22,7 @@ public class Class974 implements Class920, Class933 {
    }
 
    public ItemStack method4028() {
-      return !method4035(this.field5443) ? ItemStack.field39973 : this.field5439.get(this.field5443);
+      return !method4035(this.field5443) ? ItemStack.EMPTY : this.field5439.get(this.field5443);
    }
 
    public static int method4029() {
@@ -153,7 +153,7 @@ public class Class974 implements Class920, Class933 {
       var6 += Class7920.method26568(var3, var1, var2 - var6, var7);
       var6 += Class7920.method26569(this.field5445, var1, var2 - var6, var7);
       if (this.field5445.method32105()) {
-         this.field5445 = ItemStack.field39973;
+         this.field5445 = ItemStack.EMPTY;
       }
 
       return var6;
@@ -241,7 +241,7 @@ public class Class974 implements Class920, Class933 {
                }
 
                if (var1 >= 0) {
-                  this.field5439.set(var1, var2.method32126());
+                  this.field5439.set(var1, var2.copy());
                   this.field5439.get(var1).method32178(5);
                   var2.method32180(0);
                   return true;
@@ -314,14 +314,14 @@ public class Class974 implements Class920, Class933 {
          var1 -= var7.size();
       }
 
-      return var5 != null && !((ItemStack)var5.get(var1)).method32105() ? Class7920.method26563(var5, var1, var2) : ItemStack.field39973;
+      return var5 != null && !((ItemStack)var5.get(var1)).method32105() ? Class7920.method26563(var5, var1, var2) : ItemStack.EMPTY;
    }
 
    public void method4048(ItemStack var1) {
       for (Class25 var5 : this.field5442) {
          for (int var6 = 0; var6 < var5.size(); var6++) {
             if (var5.get(var6) == var1) {
-               var5.set(var6, ItemStack.field39973);
+               var5.set(var6, ItemStack.EMPTY);
                break;
             }
          }
@@ -343,10 +343,10 @@ public class Class974 implements Class920, Class933 {
 
       if (var4 != null && !((ItemStack)var4.get(var1)).method32105()) {
          ItemStack var7 = (ItemStack)var4.get(var1);
-         var4.set(var1, ItemStack.field39973);
+         var4.set(var1, ItemStack.EMPTY);
          return var7;
       } else {
-         return ItemStack.field39973;
+         return ItemStack.EMPTY;
       }
    }
 
@@ -465,7 +465,7 @@ public class Class974 implements Class920, Class933 {
          var1 -= var6.size();
       }
 
-      return var4 != null ? (ItemStack)var4.get(var1) : ItemStack.field39973;
+      return var4 != null ? (ItemStack)var4.get(var1) : ItemStack.EMPTY;
    }
 
    @Override
@@ -500,7 +500,7 @@ public class Class974 implements Class920, Class933 {
             ItemStack var6 = (ItemStack)var4.get(var5);
             if (!var6.method32105()) {
                this.field5444.method2836(var6, true, false);
-               var4.set(var5, ItemStack.field39973);
+               var4.set(var5, ItemStack.EMPTY);
             }
          }
       }

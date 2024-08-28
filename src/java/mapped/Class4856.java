@@ -11,7 +11,7 @@ public class Class4856 extends Class4837 {
       if (var1.method3671() == 3 && var1.method3670() == 3) {
          for (int var5 = 0; var5 < var1.method3671(); var5++) {
             for (int var6 = 0; var6 < var1.method3670(); var6++) {
-               Class8848 var7 = var1.method3618(var5 + var6 * var1.method3671());
+               ItemStack var7 = var1.method3618(var5 + var6 * var1.method3671());
                if (var7.method32105()) {
                   return false;
                }
@@ -33,15 +33,15 @@ public class Class4856 extends Class4837 {
       }
    }
 
-   public Class8848 method14962(Class926 var1) {
-      Class8848 var4 = var1.method3618(1 + var1.method3671());
+   public ItemStack method14962(Class926 var1) {
+      ItemStack var4 = var1.method3618(1 + var1.method3671());
       if (var4.method32107() == Class8514.field38118) {
-         Class8848 var5 = new Class8848(Class8514.field38117, 8);
+         ItemStack var5 = new ItemStack(Class8514.field38117, 8);
          Class9741.method38187(var5, Class9741.method38185(var4));
          Class9741.method38188(var5, Class9741.method38179(var4));
          return var5;
       } else {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       }
    }
 

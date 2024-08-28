@@ -17,8 +17,8 @@ public class Class4695 extends Class4686 {
    }
 
    @Override
-   public void method14695(Consumer<Class8848> var1, Class7812 var2) {
-      var1.accept(new Class8848(this.field22281));
+   public void method14695(Consumer<ItemStack> var1, Class7812 var2) {
+      var1.accept(new ItemStack(this.field22281));
    }
 
    public static Class5872<?> method14724(Class3303 var0) {

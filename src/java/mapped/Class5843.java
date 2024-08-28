@@ -19,13 +19,13 @@ public class Class5843 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return this.field25588 == Class1006.method4271(var1);
    }
 
    @Override
    public boolean method18273(PlayerEntity var1) {
-      Class8848 var4 = this.method18265();
+      ItemStack var4 = this.method18265();
       return !var4.method32105() && !var1.method2801() && Class7858.method26334(var4) ? false : super.method18273(var1);
    }
 

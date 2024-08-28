@@ -22,8 +22,8 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(Blocks.SEAGRASS);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(Blocks.SEAGRASS);
    }
 
    @Nullable

@@ -7,10 +7,10 @@ public class Class4857 extends Class4837 {
 
    public boolean method14963(Class926 var1, Class1655 var2) {
       int var5 = 0;
-      Class8848 var6 = Class8848.field39973;
+      ItemStack var6 = ItemStack.EMPTY;
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         Class8848 var8 = var1.method3618(var7);
+         ItemStack var8 = var1.method3618(var7);
          if (!var8.method32105()) {
             if (var8.method32107() != Class8514.field38048) {
                if (var8.method32107() != Class8514.field38047) {
@@ -31,22 +31,22 @@ public class Class4857 extends Class4837 {
       return !var6.method32105() && var6.method32141() && var5 > 0;
    }
 
-   public Class8848 method14962(Class926 var1) {
+   public ItemStack method14962(Class926 var1) {
       int var4 = 0;
-      Class8848 var5 = Class8848.field39973;
+      ItemStack var5 = ItemStack.EMPTY;
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         Class8848 var7 = var1.method3618(var6);
+         ItemStack var7 = var1.method3618(var6);
          if (!var7.method32105()) {
             if (var7.method32107() != Class8514.field38048) {
                if (var7.method32107() != Class8514.field38047) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
 
                var4++;
             } else {
                if (!var5.method32105()) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
 
                var5 = var7;
@@ -55,30 +55,30 @@ public class Class4857 extends Class4837 {
       }
 
       if (!var5.method32105() && var5.method32141() && var4 >= 1 && Class3285.method11818(var5) < 2) {
-         Class8848 var8 = new Class8848(Class8514.field38048, var4);
+         ItemStack var8 = new ItemStack(Class8514.field38048, var4);
          Class39 var9 = var5.method32142().method79();
          var9.method102("generation", Class3285.method11818(var5) + 1);
          var8.method32148(var9);
          return var8;
       } else {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       }
    }
 
-   public Class25<Class8848> method14968(Class926 var1) {
-      Class25 var4 = Class25.<Class8848>method68(var1.method3629(), Class8848.field39973);
+   public Class25<ItemStack> method14968(Class926 var1) {
+      Class25 var4 = Class25.<ItemStack>method68(var1.method3629(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         Class8848 var6 = var1.method3618(var5);
+         ItemStack var6 = var1.method3618(var5);
          if (!var6.method32107().method11723()) {
             if (var6.method32107() instanceof Class3285) {
-               Class8848 var7 = var6.method32126();
+               ItemStack var7 = var6.copy();
                var7.method32180(1);
                var4.set(var5, var7);
                break;
             }
          } else {
-            var4.set(var5, new Class8848(var6.method32107().method11722()));
+            var4.set(var5, new ItemStack(var6.method32107().method11722()));
          }
       }
 

@@ -12,8 +12,8 @@ public class Class5955 extends Class5942<Class945> {
       Class25 var10 = var1.method3795();
 
       for (int var11 = 0; var11 < var10.size(); var11++) {
-         Class8848 var12 = (Class8848)var10.get(var11);
-         if (var12 != Class8848.field39973) {
+         ItemStack var12 = (ItemStack)var10.get(var11);
+         if (var12 != ItemStack.EMPTY) {
             var3.method35294();
             var3.method35291(0.5, 0.44921875, 0.5);
             Direction var13 = Direction.method547((var11 + var9.method534()) % 4);

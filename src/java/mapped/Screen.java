@@ -85,11 +85,11 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       return (T)var1;
    }
 
-   public void method2457(Class9332 var1, Class8848 var2, int var3, int var4) {
+   public void method2457(Class9332 var1, ItemStack var2, int var3, int var4) {
       this.method2460(var1, this.method2458(var2), var3, var4);
    }
 
-   public List<ITextComponent> method2458(Class8848 var1) {
+   public List<ITextComponent> method2458(ItemStack var1) {
       return var1.method32153(this.field4562.field1339, !this.field4562.field1299.field44588 ? Class2215.field14480 : Class2215.field14481);
    }
 

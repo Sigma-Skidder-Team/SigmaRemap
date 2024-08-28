@@ -20,7 +20,7 @@ public class Class9446 {
    private static final int field43890 = 13;
    private static final int field43891 = 8;
    private static final int field43892 = 8;
-   private static final Class9289<Class8848> field43893 = (Class9289<Class8848>)Class9299.field43007.method20234();
+   private static final Class9289<ItemStack> field43893 = (Class9289<ItemStack>)Class9299.field43007.method20234();
    private static boolean field43894;
 
    public static void method36307(Entity var0, Class264 var1) {
@@ -212,7 +212,7 @@ public class Class9446 {
       return Class7944.method26833(var3, 0.0, 15.0);
    }
 
-   public static int method36318(Class8848 var0) {
+   public static int method36318(ItemStack var0) {
       if (var0 != null) {
          Class3257 var3 = var0.method32107();
          if (var3 instanceof Class3292) {
@@ -288,16 +288,16 @@ public class Class9446 {
                               return 0;
                            } else {
                               Class1000 var16 = (Class1000)var0;
-                              Class8848 var18 = method36323(var16);
+                              ItemStack var18 = method36323(var16);
                               return method36318(var18);
                            }
                         } else {
                            Class880 var15 = (Class880)var0;
-                           Class8848 var17 = var15.method3090();
+                           ItemStack var17 = var15.method3090();
                            int var5 = method36318(var17);
-                           Class8848 var6 = var15.method3091();
+                           ItemStack var6 = var15.method3091();
                            int var7 = method36318(var6);
-                           Class8848 var8 = var15.method2943(Class2106.field13736);
+                           ItemStack var8 = var15.method2943(Class2106.field13736);
                            int var9 = method36318(var8);
                            int var10 = Math.max(var5, var7);
                            return Math.max(var10, var9);
@@ -347,7 +347,7 @@ public class Class9446 {
       }
    }
 
-   public static Class8848 method36323(Class1000 var0) {
-      return var0.method3210().<Class8848>method35445(field43893);
+   public static ItemStack method36323(Class1000 var0) {
+      return var0.method3210().<ItemStack>method35445(field43893);
    }
 }

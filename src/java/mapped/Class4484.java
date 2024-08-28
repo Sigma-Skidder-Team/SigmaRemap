@@ -18,7 +18,7 @@ public class Class4484 extends Class4457 {
       return new Class4484(var0, var1, var2, Class8840.field39936);
    }
 
-   public boolean method14150(Class8848 var1, int var2) {
+   public boolean method14150(ItemStack var1, int var2) {
       if (this.field21678.method31016(var1)) {
          return this.field21679.method32015(var1.method32119() - var2) ? this.field21680.method32015(var1.method32117() - var2) : false;
       } else {

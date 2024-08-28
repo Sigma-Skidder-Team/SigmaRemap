@@ -90,7 +90,7 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    @Override
    public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+      ItemStack var5 = var1.getHeldItem(var2);
       if (var5.method32107() != Class8514.field37872) {
          return super.method4285(var1, var2);
       } else if (!this.method3033(Class8254.field35484)) {
@@ -246,7 +246,7 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    @Override
    public ItemStack method4644() {
-      return ItemStack.field39973;
+      return ItemStack.EMPTY;
    }
 
    public void method4671(Class39 var1) {

@@ -51,7 +51,7 @@ public class Class6201 implements Class6196 {
    }
 
    @Override
-   public void method19104(Class8848 var1) {
+   public void method19104(ItemStack var1) {
       Class3257 var4 = var1.method32107();
       if (Class5985.field26071.method24917(var4)) {
          this.field27675.method37034(Class2200.field14381);

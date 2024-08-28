@@ -42,8 +42,8 @@ public class Class3243 extends Class3241 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return Class8848.field39973;
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return ItemStack.EMPTY;
    }
 
    @Override

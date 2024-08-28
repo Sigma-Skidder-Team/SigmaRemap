@@ -34,7 +34,7 @@ public class Class1083 extends Class1082 {
    }
 
    @Override
-   public Class884 method5032(Class8848 var1, float var2) {
+   public Class884 method5032(ItemStack var1, float var2) {
       Class884 var5 = super.method5032(var1, var2);
       if (var5 instanceof Class887) {
          ((Class887)var5).method3500(new Class2023(Class8254.field35468, 600));

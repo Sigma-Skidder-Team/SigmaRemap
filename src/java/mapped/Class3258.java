@@ -16,10 +16,10 @@ public class Class3258 extends Class3257 {
 
    @Override
    public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
-      ItemStack var6 = var2.method3094(var3);
+      ItemStack var6 = var2.getHeldItem(var3);
       Class39 var7 = var6.method32142();
       if (!var2.field4919.field29609) {
-         var2.method3095(var3, ItemStack.field39973);
+         var2.method3095(var3, ItemStack.EMPTY);
       }
 
       if (var7 != null && var7.method119("Recipes", 9)) {

@@ -15,12 +15,12 @@ public class Class5868 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return false;
    }
 
    @Override
-   public Class8848 method18272(int var1) {
+   public ItemStack method18272(int var1) {
       if (this.method18266()) {
          this.field25644 = this.field25644 + Math.min(var1, this.method18265().method32179());
       }
@@ -29,24 +29,24 @@ public class Class5868 extends Class5839 {
    }
 
    @Override
-   public void method18261(Class8848 var1, int var2) {
+   public void method18261(ItemStack var1, int var2) {
       this.field25644 += var2;
       this.method18263(var1);
    }
 
    @Override
-   public void method18263(Class8848 var1) {
+   public void method18263(ItemStack var1) {
       var1.method32136(this.field25643.field5024, this.field25643, this.field25644);
       this.field25644 = 0;
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       this.method18263(var2);
       Class9346 var5 = this.field25642.method4067();
       if (var5 != null) {
-         Class8848 var6 = this.field25642.method3618(0);
-         Class8848 var7 = this.field25642.method3618(1);
+         ItemStack var6 = this.field25642.method3618(0);
+         ItemStack var7 = this.field25642.method3618(1);
          if (var5.method35389(var6, var7) || var5.method35389(var7, var6)) {
             this.field25645.method4745(var5);
             var1.method2911(Class8876.field40140);

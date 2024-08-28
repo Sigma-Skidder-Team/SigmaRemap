@@ -33,7 +33,7 @@ public class Class137 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Class41 var5 = this.method402(var1, !this.field461.isEmpty());
       if (var5 != null) {
          if (this.field460) {
@@ -48,7 +48,7 @@ public class Class137 extends Class128 {
    }
 
    @Nullable
-   private Class41 method402(Class8848 var1, boolean var2) {
+   private Class41 method402(ItemStack var1, boolean var2) {
       Class39 var5;
       if (!var1.method32141()) {
          if (!var2) {

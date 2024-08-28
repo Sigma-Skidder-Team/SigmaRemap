@@ -19,16 +19,16 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public Class8848 method3618(int var1) {
-      return var1 != 0 ? Class8848.field39973 : Class948.method3815(this.field5473);
+   public ItemStack method3618(int var1) {
+      return var1 != 0 ? ItemStack.EMPTY : Class948.method3815(this.field5473);
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       if (var1 != 0) {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       } else {
-         Class8848 var5 = Class948.method3815(this.field5473).method32106(var2);
+         ItemStack var5 = Class948.method3815(this.field5473).method32106(var2);
          if (Class948.method3815(this.field5473).method32105()) {
             Class948.method3816(this.field5473);
          }
@@ -38,19 +38,19 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       if (var1 != 0) {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       } else {
-         Class8848 var4 = Class948.method3815(this.field5473);
-         Class948.method3817(this.field5473, Class8848.field39973);
+         ItemStack var4 = Class948.method3815(this.field5473);
+         Class948.method3817(this.field5473, ItemStack.EMPTY);
          Class948.method3816(this.field5473);
          return var4;
       }
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
    }
 
    @Override
@@ -82,7 +82,7 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public boolean method3633(int var1, Class8848 var2) {
+   public boolean method3633(int var1, ItemStack var2) {
       return false;
    }
 

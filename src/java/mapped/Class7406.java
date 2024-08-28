@@ -6,12 +6,12 @@ public final class Class7406 extends Class7401 {
    }
 
    @Override
-   public Class8848 method23640() {
-      return new Class8848(Blocks.field36525);
+   public ItemStack method23640() {
+      return new ItemStack(Blocks.field36525);
    }
 
    @Override
-   public void method23658(Class25<Class8848> var1) {
+   public void method23658(Class25<ItemStack> var1) {
       throw new RuntimeException("Implement exception client-side.");
    }
 

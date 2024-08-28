@@ -30,7 +30,7 @@ public class Class8652 extends Class8654 {
 
    @Override
    public ITextComponent method31110(Class880 var1) {
-      ItemStack var4 = !(this.field38989 instanceof Class880) ? ItemStack.field39973 : ((Class880)this.field38989).method3090();
+      ItemStack var4 = !(this.field38989 instanceof Class880) ? ItemStack.EMPTY : ((Class880)this.field38989).method3090();
       String var5 = "death.attack." + this.field39022;
       return !var4.method32105() && var4.method32152()
          ? new TranslationTextComponent(var5 + ".item", var1.getDisplayName(), this.field38989.getDisplayName(), var4.method32173())

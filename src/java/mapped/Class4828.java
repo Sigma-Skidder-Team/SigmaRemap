@@ -13,11 +13,11 @@ public class Class4828 implements Class4826 {
    }
 
    @Override
-   public Collection<Class8848> method14917() {
+   public Collection<ItemStack> method14917() {
       ArrayList var3 = Lists.newArrayList();
 
       for (Class3257 var5 : this.field22600.method24918()) {
-         var3.add(new Class8848(var5));
+         var3.add(new ItemStack(var5));
       }
 
       return var3;

@@ -223,7 +223,7 @@ public class Class7782 {
                   Class9464 var12 = new Class9464((ServerWorld)this.field33373)
                      .method36450(this.field33373.field9016)
                      .method36454(Class9525.field44335, Vector3d.method11328(var7))
-                     .method36454(Class9525.field44338, ItemStack.field39973)
+                     .method36454(Class9525.field44338, ItemStack.EMPTY)
                      .method36455(Class9525.field44337, var11)
                      .method36455(Class9525.field44330, this.field33377);
                   if (this.field33371 == Class2141.field14016) {

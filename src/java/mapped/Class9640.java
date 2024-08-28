@@ -16,7 +16,7 @@ public class Class9640 {
       this.field45072 = Math.min(this.field45072 + (float)var1 * var2 * 2.0F, (float)this.field45071);
    }
 
-   public void method37570(Class3257 var1, Class8848 var2) {
+   public void method37570(Class3257 var1, ItemStack var2) {
       if (var1.method11744()) {
          Class9427 var5 = var1.method11745();
          this.method37569(var5.method36157(), var5.method36158());

@@ -282,11 +282,11 @@ public class PacketBuffer extends ByteBuf {
       }
    }
 
-   public PacketBuffer method35724(Class8848 var1) {
+   public PacketBuffer method35724(ItemStack var1) {
       return this.method35725(var1, true);
    }
 
-   public PacketBuffer method35725(Class8848 var1, boolean var2) {
+   public PacketBuffer method35725(ItemStack var1, boolean var2) {
       if (!var1.method32105()) {
          this.writeBoolean(true);
          Class3257 var5 = var1.method32107();
@@ -309,11 +309,11 @@ public class PacketBuffer extends ByteBuf {
       return this;
    }
 
-   public Class8848 method35726() {
+   public ItemStack method35726() {
       if (this.readBoolean()) {
          int var3 = this.method35714();
          byte var4 = this.readByte();
-         Class8848 var5 = new Class8848(Class3257.method11702(var3), var4);
+         ItemStack var5 = new ItemStack(Class3257.method11702(var3), var4);
          if (!Class9299.field42926.method20214()) {
             var5.method32148(this.method35721());
          } else {
@@ -322,7 +322,7 @@ public class PacketBuffer extends ByteBuf {
 
          return var5;
       } else {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       }
    }
 

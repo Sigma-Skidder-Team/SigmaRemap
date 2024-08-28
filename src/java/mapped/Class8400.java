@@ -17,17 +17,17 @@ public class Class8400 {
    }
 
    public Class1713 method29490(Class3303 var1) {
-      return this.method29491(new Class8848(var1));
+      return this.method29491(new ItemStack(var1));
    }
 
-   public Class1713 method29491(Class8848 var1) {
+   public Class1713 method29491(ItemStack var1) {
       Class7202 var4 = this.method29492(var1);
       return var4 == this.field36049.method1024() && var1.method32107() instanceof Class3292
          ? this.field36049.method1025().method38152(((Class3292)var1.method32107()).method11845().method11579())
          : var4.method22624();
    }
 
-   public Class7202 method29492(Class8848 var1) {
+   public Class7202 method29492(ItemStack var1) {
       Class7202 var4 = this.method29493(var1.method32107());
       return var4 != null ? var4 : this.field36049.method1024();
    }

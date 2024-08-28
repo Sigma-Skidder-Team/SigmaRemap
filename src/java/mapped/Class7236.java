@@ -20,11 +20,11 @@ public class Class7236 {
       }
    }
 
-   public static void method22724(Class1655 var0, BlockPos var1, Class25<Class8848> var2) {
+   public static void method22724(Class1655 var0, BlockPos var1, Class25<ItemStack> var2) {
       var2.forEach(var2x -> method22725(var0, (double)var1.method8304(), (double)var1.getY(), (double)var1.method8306(), var2x));
    }
 
-   public static void method22725(Class1655 var0, double var1, double var3, double var5, Class8848 var7) {
+   public static void method22725(Class1655 var0, double var1, double var3, double var5, ItemStack var7) {
       double var10 = (double)Class8992.field41042.method33213();
       double var12 = 1.0 - var10;
       double var14 = var10 / 2.0;

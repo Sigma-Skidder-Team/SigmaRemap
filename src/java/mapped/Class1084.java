@@ -51,7 +51,7 @@ public class Class1084 extends Class1082 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new Class8848(Class8514.field37810));
+      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37810));
    }
 
    @Override
@@ -86,7 +86,7 @@ public class Class1084 extends Class1082 {
    }
 
    @Override
-   public Class884 method5032(Class8848 var1, float var2) {
+   public Class884 method5032(ItemStack var1, float var2) {
       Class884 var5 = super.method5032(var1, var2);
       var5.method3221(100);
       return var5;

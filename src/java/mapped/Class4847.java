@@ -5,11 +5,11 @@ public abstract class Class4847 implements Class4843<Class920> {
    public final ResourceLocation field22631;
    public final String field22632;
    public final Class120 field22633;
-   public final Class8848 field22634;
+   public final ItemStack field22634;
    public final float field22635;
    public final int field22636;
 
-   public Class4847(Class7207<?> var1, ResourceLocation var2, String var3, Class120 var4, Class8848 var5, float var6, int var7) {
+   public Class4847(Class7207<?> var1, ResourceLocation var2, String var3, Class120 var4, ItemStack var5, float var6, int var7) {
       this.field22630 = var1;
       this.field22631 = var2;
       this.field22632 = var3;
@@ -25,8 +25,8 @@ public abstract class Class4847 implements Class4843<Class920> {
    }
 
    @Override
-   public Class8848 method14962(Class920 var1) {
-      return this.field22634.method32126();
+   public ItemStack method14962(Class920 var1) {
+      return this.field22634.copy();
    }
 
    @Override
@@ -46,7 +46,7 @@ public abstract class Class4847 implements Class4843<Class920> {
    }
 
    @Override
-   public Class8848 method14966() {
+   public ItemStack method14966() {
       return this.field22634;
    }
 

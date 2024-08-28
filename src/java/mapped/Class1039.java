@@ -63,7 +63,7 @@ public class Class1039 extends Class1038 {
    }
 
    @Override
-   public Class8848 method4644() {
-      return Class8848.field39973;
+   public ItemStack method4644() {
+      return ItemStack.EMPTY;
    }
 }

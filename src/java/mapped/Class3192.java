@@ -1249,7 +1249,7 @@ public class Class3192 {
       field18461 = false;
    }
 
-   public static void method11479(Class8848 var0, int var1, int var2, int var3, int var4) {
+   public static void method11479(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
          TextureManager var10000 = field18460.getTextureManager();
          field18460.getTextureManager();
@@ -1259,7 +1259,7 @@ public class Class3192 {
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
          Class216 var7 = field18460.method1555();
          if (var0.field39976 == 0) {
-            var0 = new Class8848(var0.method32107());
+            var0 = new ItemStack(var0.method32107());
          }
 
          Class3257 var8 = var0.method32107();
@@ -1286,7 +1286,7 @@ public class Class3192 {
       }
    }
 
-   public static void method11480(Class8848 var0, int var1, int var2, float var3) {
+   public static void method11480(ItemStack var0, int var1, int var2, float var3) {
       GL11.glPushMatrix();
       RenderSystem.method27878(5888);
       RenderSystem.method27879();

@@ -20,7 +20,7 @@ public class Class4487 extends Class4457 {
       return new Class4487(Class9587.field44822, var0, Class9587.method37226(var1), var2);
    }
 
-   public boolean method14155(Class8848 var1, Class7812 var2, Collection<Class8848> var3) {
+   public boolean method14155(ItemStack var1, Class7812 var2, Collection<ItemStack> var3) {
       if (this.field21686.method31016(var1)) {
          if (!this.field21687.method37227(var2)) {
             return false;
@@ -35,7 +35,7 @@ public class Class4487 extends Class4457 {
                   }
                }
 
-               for (Class8848 var9 : var3) {
+               for (ItemStack var9 : var3) {
                   if (this.field21688.method31016(var9)) {
                      var6 = true;
                      break;

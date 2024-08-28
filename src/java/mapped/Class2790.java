@@ -37,7 +37,7 @@ public class Class2790 extends Class2595 {
       List var3 = this.field17424
          .field5024
          .<Class1000>method6772(Class1000.class, this.field17424.method3389().method19663(8.0, 8.0, 8.0), Class1095.method5166());
-      Class8848 var4 = this.field17424.method2943(Class2106.field13731);
+      ItemStack var4 = this.field17424.method2943(Class2106.field13731);
       if (var4.method32105() && !var3.isEmpty()) {
          this.field17424.method4230().method21655((Entity)var3.get(0), 1.2F);
       }

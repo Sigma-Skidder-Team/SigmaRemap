@@ -9,27 +9,27 @@ public class Class3290 extends Class3257 {
    }
 
    @Override
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return true;
    }
 
    @Override
-   public boolean method11734(Class8848 var1) {
+   public boolean method11734(ItemStack var1) {
       return false;
    }
 
-   public static Class41 method11830(Class8848 var0) {
+   public static Class41 method11830(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return var3 == null ? new Class41() : var3.method131("StoredEnchantments", 10);
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11730(var1, var2, var3, var4);
-      Class8848.method32157(var3, method11830(var1));
+      ItemStack.method32157(var3, method11830(var1));
    }
 
-   public static void method11831(Class8848 var0, Class6694 var1) {
+   public static void method11831(ItemStack var0, Class6694 var1) {
       Class41 var4 = method11830(var0);
       boolean var5 = true;
       ResourceLocation var6 = Class2348.field16073.method9181(var1.field29316);
@@ -57,14 +57,14 @@ public class Class3290 extends Class3257 {
       var0.method32143().method99("StoredEnchantments", var4);
    }
 
-   public static Class8848 method11832(Class6694 var0) {
-      Class8848 var3 = new Class8848(Class8514.field38070);
+   public static ItemStack method11832(Class6694 var0) {
+      ItemStack var3 = new ItemStack(Class8514.field38070);
       method11831(var3, var0);
       return var3;
    }
 
    @Override
-   public void method11737(Class7401 var1, Class25<Class8848> var2) {
+   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
       if (var1 != Class7401.field31670) {
          if (var1.method23655().length != 0) {
             for (Class6069 var6 : Class2348.field16073) {

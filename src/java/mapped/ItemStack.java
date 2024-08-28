@@ -40,7 +40,7 @@ public final class ItemStack {
             .apply(var0, ItemStack::new)
    );
    private static final Logger field39972 = LogManager.getLogger();
-   public static final ItemStack field39973 = new ItemStack((Class3257)null);
+   public static final ItemStack EMPTY = new ItemStack((Class3257)null);
    public static final DecimalFormat field39974 = Util.<DecimalFormat>method38508(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
@@ -101,12 +101,12 @@ public final class ItemStack {
          return new ItemStack(var0);
       } catch (RuntimeException var4) {
          field39972.debug("Tried to load invalid item: {}", var0, var4);
-         return field39973;
+         return EMPTY;
       }
    }
 
    public boolean method32105() {
-      if (this != field39973) {
+      if (this != EMPTY) {
          return this.method32107() != null && this.method32107() != Class8514.field37222 ? this.field39976 <= 0 : true;
       } else {
          return true;
@@ -115,7 +115,7 @@ public final class ItemStack {
 
    public ItemStack method32106(int var1) {
       int var4 = Math.min(var1, this.field39976);
-      ItemStack var5 = this.method32126();
+      ItemStack var5 = this.copy();
       var5.method32180(var4);
       this.method32182(var4);
       return var5;
@@ -266,7 +266,7 @@ public final class ItemStack {
       return this.method32107().method11716(this, var1, var2, var3);
    }
 
-   public ItemStack method32126() {
+   public ItemStack copy() {
       if (!this.method32105()) {
          ItemStack var3 = new ItemStack(this.method32107(), this.field39976);
          var3.method32178(this.method32177());
@@ -276,7 +276,7 @@ public final class ItemStack {
 
          return var3;
       } else {
-         return field39973;
+         return EMPTY;
       }
    }
 

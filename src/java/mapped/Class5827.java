@@ -38,16 +38,16 @@ public class Class5827 extends Class5812 {
 
    @Override
    public ItemStack method18112(PlayerEntity var1, int var2) {
-      ItemStack var5 = ItemStack.field39973;
+      ItemStack var5 = ItemStack.EMPTY;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
          ItemStack var7 = var6.method18265();
-         var5 = var7.method32126();
+         var5 = var7.copy();
          int var8 = this.field25532.method3629();
          if (var2 >= var8) {
             if (this.method18131(1).method18259(var7) && !this.method18131(1).method18266()) {
                if (!this.method18142(var7, 1, 2, false)) {
-                  return ItemStack.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method18131(0).method18259(var7)) {
                if (var8 <= 2 || !this.method18142(var7, 2, var8, false)) {
@@ -55,29 +55,29 @@ public class Class5827 extends Class5812 {
                   int var10 = var9 + 9;
                   if (var2 >= var9 && var2 < var10) {
                      if (!this.method18142(var7, var8, var9, false)) {
-                        return ItemStack.field39973;
+                        return ItemStack.EMPTY;
                      }
                   } else if (var2 >= var8 && var2 < var9) {
                      if (!this.method18142(var7, var9, var10, false)) {
-                        return ItemStack.field39973;
+                        return ItemStack.EMPTY;
                      }
                   } else if (!this.method18142(var7, var9, var9, false)) {
-                     return ItemStack.field39973;
+                     return ItemStack.EMPTY;
                   }
 
-                  return ItemStack.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method18142(var7, 0, 1, false)) {
-               return ItemStack.field39973;
+               return ItemStack.EMPTY;
             }
          } else if (!this.method18142(var7, var8, this.field25468.size(), true)) {
-            return ItemStack.field39973;
+            return ItemStack.EMPTY;
          }
 
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(ItemStack.field39973);
+            var6.method18267(ItemStack.EMPTY);
          }
       }
 

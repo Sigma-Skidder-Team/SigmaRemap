@@ -43,7 +43,7 @@ public class Class8634 {
       this.field38847 = var8;
    }
 
-   public boolean method31016(Class8848 var1) {
+   public boolean method31016(ItemStack var1) {
       if (this == field38839) {
          return true;
       } else if (this.field38840 != null && !this.field38840.method24917(var1.method32107())) {

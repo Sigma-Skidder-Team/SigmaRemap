@@ -46,7 +46,7 @@ public class Class5736 extends Class5715<Class997> {
          var4.method35295();
       }
 
-      Class8848 var19 = var1.method4090();
+      ItemStack var19 = var1.method4090();
       if (!var19.method32105()) {
          boolean var20 = var19.method32107() instanceof Class3316;
          if (!var13) {

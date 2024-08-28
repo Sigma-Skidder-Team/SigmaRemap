@@ -11,11 +11,11 @@ public class Class1122 implements Class876 {
    }
 
    @Override
-   public void method2718(Class5812 var1, Class25<Class8848> var2) {
+   public void method2718(Class5812 var1, Class25<ItemStack> var2) {
    }
 
    @Override
-   public void method2720(Class5812 var1, int var2, Class8848 var3) {
+   public void method2720(Class5812 var1, int var2, ItemStack var3) {
    }
 
    @Override

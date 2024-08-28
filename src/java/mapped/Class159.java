@@ -23,7 +23,7 @@ public class Class159 implements Class122 {
    }
 
    public boolean test(Class7812 var1) {
-      Class8848 var4 = var1.<Class8848>method26081(Class9525.field44338);
+      ItemStack var4 = var1.<ItemStack>method26081(Class9525.field44338);
       return var4 != null && this.field518.method31016(var4);
    }
 

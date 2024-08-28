@@ -10,7 +10,7 @@ public class PlayerController {
    public final Minecraft field31358;
    public final ClientPlayNetHandler field31359;
    private BlockPos field31360 = new BlockPos(-1, -1, -1);
-   private ItemStack field31361 = ItemStack.field39973;
+   private ItemStack field31361 = ItemStack.EMPTY;
    public float field31362;
    private float field31363;
    public int field31364;
@@ -215,7 +215,7 @@ public class PlayerController {
       this.method23138();
       BlockPos var7 = var4.method31423();
       if (this.field31358.field1338.method6810().method24523(var7)) {
-         ItemStack var8 = var1.method3094(var3);
+         ItemStack var8 = var1.getHeldItem(var3);
          if (this.field31366 == Class1894.field11105) {
             this.field31359.sendPacket(new Class5570(var3, var4));
             return Class2274.field14818;
@@ -256,7 +256,7 @@ public class PlayerController {
       if (this.field31366 != Class1894.field11105) {
          this.method23138();
          this.field31359.sendPacket(new Class5555(var3));
-         ItemStack var6 = var1.method3094(var3);
+         ItemStack var6 = var1.getHeldItem(var3);
          if (!var1.method2976().method19635(var6.method32107())) {
             int var7 = var6.method32179();
             Class6794 var8 = var6.method32110(var2, var1, var3);

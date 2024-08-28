@@ -10,9 +10,9 @@ public class Class865 extends Class851<Class5837> {
    private static final int field4802 = (Class2154.field14124 - Class2154.field14125 - 1 + 4 - 1) / 4;
    private final Class7219 field4803;
    private List<Pair<Class2154, Class112>> field4804;
-   private ItemStack field4805 = ItemStack.field39973;
-   private ItemStack field4806 = ItemStack.field39973;
-   private ItemStack field4807 = ItemStack.field39973;
+   private ItemStack field4805 = ItemStack.EMPTY;
+   private ItemStack field4806 = ItemStack.EMPTY;
+   private ItemStack field4807 = ItemStack.EMPTY;
    private boolean field4808;
    private boolean field4809;
    private boolean field4810;
@@ -225,8 +225,8 @@ public class Class865 extends Class851<Class5837> {
          this.field4809 = !this.field4810 && !var6.method32105() && !var4.method32105() && !var5.method32105();
       }
 
-      this.field4805 = var4.method32126();
-      this.field4806 = var5.method32126();
-      this.field4807 = var6.method32126();
+      this.field4805 = var4.copy();
+      this.field4806 = var5.copy();
+      this.field4807 = var6.copy();
    }
 }

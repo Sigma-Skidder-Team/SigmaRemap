@@ -25,7 +25,7 @@ public class Class158 implements Class122 {
    }
 
    public boolean test(Class7812 var1) {
-      Class8848 var4 = var1.<Class8848>method26081(Class9525.field44338);
+      ItemStack var4 = var1.<ItemStack>method26081(Class9525.field44338);
       int var5 = var4 == null ? 0 : Class7858.method26311(this.field515, var4);
       float var6 = this.field516[Math.min(var5, this.field516.length - 1)];
       return var1.method26088().nextFloat() < var6;

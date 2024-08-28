@@ -197,7 +197,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
 
          if (var2) {
             Class944 var9 = !var7.method23383().method11998() ? null : this.method6759(var1);
-            Block.method11556(var7, this, var1, var9, var3, ItemStack.field39973);
+            Block.method11556(var7, this, var1, var9, var3, ItemStack.EMPTY);
          }
 
          return this.method6726(var1, var8.method23484(), 3, var4);

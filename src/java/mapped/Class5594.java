@@ -8,17 +8,17 @@ public class Class5594 implements Packet<Class5110> {
    private int field24819;
    private int field24820;
    private short field24821;
-   private Class8848 field24822 = Class8848.field39973;
+   private ItemStack field24822 = ItemStack.EMPTY;
    private Class2259 field24823;
 
    public Class5594() {
    }
 
-   public Class5594(int var1, int var2, int var3, Class2259 var4, Class8848 var5, short var6) {
+   public Class5594(int var1, int var2, int var3, Class2259 var4, ItemStack var5, short var6) {
       this.field24818 = var1;
       this.field24819 = var2;
       this.field24820 = var3;
-      this.field24822 = var5.method32126();
+      this.field24822 = var5.copy();
       this.field24821 = var6;
       this.field24823 = var4;
    }
@@ -63,7 +63,7 @@ public class Class5594 implements Packet<Class5110> {
       return this.field24821;
    }
 
-   public Class8848 method17583() {
+   public ItemStack method17583() {
       return this.field24822;
    }
 

@@ -118,7 +118,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          } else if (this.field5721-- <= 0) {
             this.method4567(false);
             ItemStack var3 = this.method3090();
-            this.method2944(Class2106.field13731, ItemStack.field39973);
+            this.method2944(Class2106.field13731, ItemStack.EMPTY);
             if (var3.method32107() == Class8514.field37971) {
                List<Class2023> var4 = Class9741.method38176(var3);
                if (var4 != null) {

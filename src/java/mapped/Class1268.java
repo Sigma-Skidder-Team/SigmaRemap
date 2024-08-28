@@ -28,7 +28,7 @@ public class Class1268 extends Class1193 {
     private boolean field6722;
     public float field6723 = 1.0F;
     private int field6724;
-    private ItemStack field6725 = ItemStack.field39973;
+    private ItemStack field6725 = ItemStack.EMPTY;
     public final Class1262 field6726;
     private final Class1269 field6727;
     private final Class1195 field6728;

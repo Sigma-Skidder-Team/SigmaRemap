@@ -3,7 +3,7 @@ package mapped;
 public interface Class6226 {
    Class6226 field27722 = (var0, var1) -> var1;
 
-   Class8848 method19196(Class2956 var1, Class8848 var2);
+   ItemStack method19196(Class2956 var1, ItemStack var2);
 
    static void method19200() {
       Class3357.method11931(Class8514.field37797, new Class6246());

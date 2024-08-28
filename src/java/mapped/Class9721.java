@@ -302,25 +302,25 @@ public class Class9721 {
                   1,
                   new Class5391[]{
                      new Class5396(Class8514.field37798, 15, 16, 2),
-                     new Class5395(new Class8848(Class8514.field37854), 7, 1, 12, 1, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37855), 4, 1, 12, 1, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37852), 5, 1, 12, 1, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37853), 9, 1, 12, 1, 0.2F)
+                     new Class5395(new ItemStack(Class8514.field37854), 7, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37855), 4, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37852), 5, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37853), 9, 1, 12, 1, 0.2F)
                   },
                   2,
                   new Class5391[]{
                      new Class5396(Class8514.field37801, 4, 12, 10),
-                     new Class5395(new Class8848(Class8514.field38167), 36, 1, 12, 5, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37851), 1, 1, 12, 5, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37850), 3, 1, 12, 5, 0.2F)
+                     new Class5395(new ItemStack(Class8514.field38167), 36, 1, 12, 5, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37851), 1, 1, 12, 5, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37850), 3, 1, 12, 5, 0.2F)
                   },
                   3,
                   new Class5391[]{
                      new Class5396(Class8514.field37884, 1, 12, 20),
                      new Class5396(Class8514.field37800, 1, 12, 20),
-                     new Class5395(new Class8848(Class8514.field37848), 1, 1, 12, 10, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37849), 4, 1, 12, 10, 0.2F),
-                     new Class5395(new Class8848(Class8514.field38119), 5, 1, 12, 10, 0.2F)
+                     new Class5395(new ItemStack(Class8514.field37848), 1, 1, 12, 10, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37849), 4, 1, 12, 10, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field38119), 5, 1, 12, 10, 0.2F)
                   },
                   4,
                   new Class5391[]{new Class5392(Class8514.field37858, 14, 3, 15, 0.2F), new Class5392(Class8514.field37859, 8, 3, 15, 0.2F)},
@@ -336,11 +336,11 @@ public class Class9721 {
                   1,
                   new Class5391[]{
                      new Class5396(Class8514.field37798, 15, 16, 2),
-                     new Class5395(new Class8848(Class8514.field37823), 3, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37823), 3, 1, 12, 1, 0.2F),
                      new Class5392(Class8514.field37820, 2, 3, 1)
                   },
                   2,
-                  new Class5391[]{new Class5396(Class8514.field37801, 4, 12, 10), new Class5395(new Class8848(Class8514.field38167), 36, 1, 12, 5, 0.2F)},
+                  new Class5391[]{new Class5396(Class8514.field37801, 4, 12, 10), new Class5395(new ItemStack(Class8514.field38167), 36, 1, 12, 5, 0.2F)},
                   3,
                   new Class5391[]{new Class5396(Class8514.field37868, 24, 12, 20)},
                   4,
@@ -357,20 +357,20 @@ public class Class9721 {
                   1,
                   new Class5391[]{
                      new Class5396(Class8514.field37798, 15, 16, 2),
-                     new Class5395(new Class8848(Class8514.field37813), 1, 1, 12, 1, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37811), 1, 1, 12, 1, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37812), 1, 1, 12, 1, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37814), 1, 1, 12, 1, 0.2F)
+                     new Class5395(new ItemStack(Class8514.field37813), 1, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37811), 1, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37812), 1, 1, 12, 1, 0.2F),
+                     new Class5395(new ItemStack(Class8514.field37814), 1, 1, 12, 1, 0.2F)
                   },
                   2,
-                  new Class5391[]{new Class5396(Class8514.field37801, 4, 12, 10), new Class5395(new Class8848(Class8514.field38167), 36, 1, 12, 5, 0.2F)},
+                  new Class5391[]{new Class5396(Class8514.field37801, 4, 12, 10), new Class5395(new ItemStack(Class8514.field38167), 36, 1, 12, 5, 0.2F)},
                   3,
                   new Class5391[]{
                      new Class5396(Class8514.field37868, 30, 12, 20),
                      new Class5392(Class8514.field37823, 1, 3, 10, 0.2F),
                      new Class5392(Class8514.field37821, 2, 3, 10, 0.2F),
                      new Class5392(Class8514.field37822, 3, 3, 10, 0.2F),
-                     new Class5395(new Class8848(Class8514.field37829), 4, 1, 3, 10, 0.2F)
+                     new Class5395(new ItemStack(Class8514.field37829), 4, 1, 3, 10, 0.2F)
                   },
                   4,
                   new Class5391[]{
@@ -428,7 +428,7 @@ public class Class9721 {
                   4,
                   new Class5391[]{new Class5396(Class8514.field37793, 4, 12, 30), new Class5394(Class8514.field38086, 6, 12, 15)},
                   5,
-                  new Class5391[]{new Class5395(new Class8848(Class8514.field37886), 6, 1, 12, 30, 0.2F), new Class5394(Class8514.field37844, 5, 12, 30)}
+                  new Class5391[]{new Class5395(new ItemStack(Class8514.field37886), 6, 1, 12, 30, 0.2F), new Class5394(Class8514.field37844, 5, 12, 30)}
                )
             )
          );

@@ -9,7 +9,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    private static final int[] field5270 = new int[]{3};
    private static final int[] field5271 = new int[]{0, 1, 2, 3};
    private static final int[] field5272 = new int[]{0, 1, 2, 4};
-   private Class25<Class8848> field5273 = Class25.<Class8848>method68(5, Class8848.field39973);
+   private Class25<ItemStack> field5273 = Class25.<ItemStack>method68(5, ItemStack.EMPTY);
    private int field5274;
    private boolean[] field5275;
    private Class3257 field5276;
@@ -32,7 +32,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
 
    @Override
    public boolean method3617() {
-      for (Class8848 var4 : this.field5273) {
+      for (ItemStack var4 : this.field5273) {
          if (!var4.method32105()) {
             return false;
          }
@@ -43,7 +43,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
 
    @Override
    public void method3647() {
-      Class8848 var3 = this.field5273.get(4);
+      ItemStack var3 = this.field5273.get(4);
       if (this.field5277 <= 0 && var3.method32107() == Class8514.field37975) {
          this.field5277 = 20;
          var3.method32182(1);
@@ -52,7 +52,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
 
       boolean var4 = this.method3688();
       boolean var5 = this.field5274 > 0;
-      Class8848 var6 = this.field5273.get(3);
+      ItemStack var6 = this.field5273.get(3);
       if (!var5) {
          if (var4 && this.field5277 > 0) {
             this.field5277--;
@@ -108,11 +108,11 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    private boolean method3688() {
-      Class8848 var3 = this.field5273.get(3);
+      ItemStack var3 = this.field5273.get(3);
       if (!var3.method32105()) {
          if (Class7105.method22132(var3)) {
             for (int var4 = 0; var4 < 3; var4++) {
-               Class8848 var5 = this.field5273.get(var4);
+               ItemStack var5 = this.field5273.get(var4);
                if (!var5.method32105() && Class7105.method22136(var5, var3)) {
                   return true;
                }
@@ -128,7 +128,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    private void method3689() {
-      Class8848 var3 = this.field5273.get(3);
+      ItemStack var3 = this.field5273.get(3);
 
       for (int var4 = 0; var4 < 3; var4++) {
          this.field5273.set(var4, Class7105.method22139(var3, this.field5273.get(var4)));
@@ -137,7 +137,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
       var3.method32182(1);
       BlockPos var6 = this.method3774();
       if (var3.method32107().method11723()) {
-         Class8848 var5 = new Class8848(var3.method32107().method11722());
+         ItemStack var5 = new ItemStack(var3.method32107().method11722());
          if (!var3.method32105()) {
             if (!this.field5324.field9020) {
                Class7236.method22725(this.field5324, (double)var6.method8304(), (double)var6.getY(), (double)var6.method8306(), var5);
@@ -154,7 +154,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5273 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5273 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5273);
       this.field5274 = var2.method121("BrewTime");
       this.field5277 = var2.method120("Fuel");
@@ -170,22 +170,22 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    @Override
-   public Class8848 method3618(int var1) {
-      return var1 >= 0 && var1 < this.field5273.size() ? this.field5273.get(var1) : Class8848.field39973;
+   public ItemStack method3618(int var1) {
+      return var1 >= 0 && var1 < this.field5273.size() ? this.field5273.get(var1) : ItemStack.EMPTY;
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       return Class7920.method26563(this.field5273, var1, var2);
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       return Class7920.method26564(this.field5273, var1);
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
       if (var1 >= 0 && var1 < this.field5273.size()) {
          this.field5273.set(var1, var2);
       }
@@ -202,7 +202,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    @Override
-   public boolean method3633(int var1, Class8848 var2) {
+   public boolean method3633(int var1, ItemStack var2) {
       if (var1 != 3) {
          Class3257 var5 = var2.method32107();
          return var1 == 4
@@ -224,12 +224,12 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    @Override
-   public boolean method3654(int var1, Class8848 var2, Direction var3) {
+   public boolean method3654(int var1, ItemStack var2, Direction var3) {
       return this.method3633(var1, var2);
    }
 
    @Override
-   public boolean method3655(int var1, Class8848 var2, Direction var3) {
+   public boolean method3655(int var1, ItemStack var2, Direction var3) {
       return var1 != 3 ? true : var2.method32107() == Class8514.field37972;
    }
 

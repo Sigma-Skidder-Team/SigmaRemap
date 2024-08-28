@@ -52,7 +52,7 @@ public class Class6197 implements Class6196 {
             ClientPlayerEntity var3 = this.field27648.method37035().field1339;
             if (var3 != null) {
                for (Block var5 : field27645) {
-                  if (var3.field4902.method4058(new Class8848(var5))) {
+                  if (var3.field4902.method4058(new ItemStack(var5))) {
                      this.field27648.method37034(Class2200.field14380);
                      return;
                   }
@@ -93,7 +93,7 @@ public class Class6197 implements Class6196 {
    }
 
    @Override
-   public void method19104(Class8848 var1) {
+   public void method19104(ItemStack var1) {
       for (Block var5 : field27645) {
          if (var1.method32107() == var5.method11581()) {
             this.field27648.method37034(Class2200.field14380);

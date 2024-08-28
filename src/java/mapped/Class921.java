@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 public class Class921 implements Class920, Class923 {
    private static String[] field5240;
-   private final Class25<Class8848> field5241 = Class25.<Class8848>method68(1, Class8848.field39973);
+   private final Class25<ItemStack> field5241 = Class25.<ItemStack>method68(1, ItemStack.EMPTY);
    private Class4843<?> field5242;
 
    @Override
@@ -14,7 +14,7 @@ public class Class921 implements Class920, Class923 {
 
    @Override
    public boolean method3617() {
-      for (Class8848 var4 : this.field5241) {
+      for (ItemStack var4 : this.field5241) {
          if (!var4.method32105()) {
             return false;
          }
@@ -24,22 +24,22 @@ public class Class921 implements Class920, Class923 {
    }
 
    @Override
-   public Class8848 method3618(int var1) {
+   public ItemStack method3618(int var1) {
       return this.field5241.get(0);
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       return Class7920.method26564(this.field5241, 0);
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       return Class7920.method26564(this.field5241, 0);
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
       this.field5241.set(0, var2);
    }
 

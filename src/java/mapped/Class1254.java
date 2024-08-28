@@ -245,7 +245,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    }
 
    private void method5849(Class9332 var1, int var2, int var3, int var4, int var5) {
-      Class8848 var8 = null;
+      ItemStack var8 = null;
 
       for (int var9 = 0; var9 < this.field6637.method34736(); var9++) {
          Class8055 var10 = this.field6637.method34735(var9);
@@ -422,7 +422,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    }
 
    public void method5858(Class4843<?> var1, List<Class5839> var2) {
-      Class8848 var5 = var1.method14966();
+      ItemStack var5 = var1.method14966();
       this.field6637.method34738(var1);
       this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(0)).field25580, ((Class5839)var2.get(0)).field25581);
       this.method5832(this.field6641.method18224(), this.field6641.method18225(), this.field6641.method18223(), var1, var1.method14969().iterator(), 0);

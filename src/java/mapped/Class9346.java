@@ -40,7 +40,7 @@ public class Class9346 {
    }
 
    public Class9346(ItemStack var1, ItemStack var2, int var3, int var4, float var5) {
-      this(var1, ItemStack.field39973, var2, var3, var4, var5);
+      this(var1, ItemStack.EMPTY, var2, var3, var4, var5);
    }
 
    public Class9346(ItemStack var1, ItemStack var2, ItemStack var3, int var4, int var5, float var6) {
@@ -68,7 +68,7 @@ public class Class9346 {
 
    public ItemStack method35366() {
       int var3 = this.field43384.method32179();
-      ItemStack var4 = this.field43384.method32126();
+      ItemStack var4 = this.field43384.copy();
       int var5 = Math.max(0, MathHelper.method37767((float)(var3 * this.field43391) * this.field43392));
       var4.method32180(MathHelper.method37775(var3 + var5 + this.field43390, 1, this.field43384.method32107().method11710()));
       return var4;
@@ -87,7 +87,7 @@ public class Class9346 {
    }
 
    public ItemStack method35370() {
-      return this.field43386.method32126();
+      return this.field43386.copy();
    }
 
    public int method35371() {
@@ -176,7 +176,7 @@ public class Class9346 {
       if (var2.method32105() && var1.method32105()) {
          return true;
       } else {
-         ItemStack var5 = var1.method32126();
+         ItemStack var5 = var1.copy();
          if (var5.method32107().method11712()) {
             var5.method32118(var5.method32117());
          }

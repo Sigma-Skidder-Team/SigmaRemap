@@ -15,7 +15,7 @@ public class Class4694 extends Class4686 {
    }
 
    @Override
-   public void method14695(Consumer<Class8848> var1, Class7812 var2) {
+   public void method14695(Consumer<ItemStack> var1, Class7812 var2) {
    }
 
    public static Class5872<?> method14723() {

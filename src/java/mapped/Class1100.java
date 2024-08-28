@@ -159,7 +159,7 @@ public class Class1100 extends Class1009 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new Class8848(Class8514.field37820));
+      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37820));
       this.method4279(Class2106.field13731, 0.0F);
    }
 

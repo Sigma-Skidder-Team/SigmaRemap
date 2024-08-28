@@ -40,7 +40,7 @@ public class Class1061 implements Class1060 {
    }
 
    @Override
-   public void method4747(Class8848 var1) {
+   public void method4747(ItemStack var1) {
    }
 
    @Override

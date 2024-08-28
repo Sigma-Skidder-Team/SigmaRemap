@@ -8,7 +8,7 @@ public class Class3313 extends Class3312 {
    }
 
    @Override
-   public boolean method11857(PlayerEntity var1, Direction var2, Class8848 var3, BlockPos var4) {
+   public boolean method11857(PlayerEntity var1, Direction var2, ItemStack var3, BlockPos var4) {
       return !Class1655.method6720(var4) && var1.method2936(var4, var2, var3);
    }
 }

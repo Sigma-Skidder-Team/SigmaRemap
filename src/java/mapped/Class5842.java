@@ -10,7 +10,7 @@ public class Class5842 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return true;
    }
 

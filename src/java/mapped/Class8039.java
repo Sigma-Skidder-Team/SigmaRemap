@@ -78,7 +78,7 @@ public class Class8039 {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method27603(var3), this.field34542.getDisplayName());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method37101().method31109();
-               ItemStack var10 = !(var11 instanceof Class880) ? ItemStack.field39973 : ((Class880)var11).method3090();
+               ItemStack var10 = !(var11 instanceof Class880) ? ItemStack.EMPTY : ((Class880)var11).method3090();
                if (!var10.method32105() && var10.method32152()) {
                   var7 = new TranslationTextComponent("death.fell.assist.item", this.field34542.getDisplayName(), var8, var10.method32173());
                } else {
@@ -87,7 +87,7 @@ public class Class8039 {
             } else if (var5 == null) {
                var7 = new TranslationTextComponent("death.fell.killer", this.field34542.getDisplayName());
             } else {
-               ItemStack var9 = !(var6 instanceof Class880) ? ItemStack.field39973 : ((Class880)var6).method3090();
+               ItemStack var9 = !(var6 instanceof Class880) ? ItemStack.EMPTY : ((Class880)var6).method3090();
                if (!var9.method32105() && var9.method32152()) {
                   var7 = new TranslationTextComponent("death.fell.finish.item", this.field34542.getDisplayName(), var5, var9.method32173());
                } else {

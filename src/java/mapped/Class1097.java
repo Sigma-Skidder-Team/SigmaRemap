@@ -325,7 +325,7 @@ public class Class1097 extends Class1018 {
          if (!this.field5024.field9020 && this.method5195() > 80 && this.field5054.nextInt(20) == 1) {
             if (this.method5195() > 100 && this.method5229(this.method2943(Class2106.field13731))) {
                if (!this.field5024.field9020) {
-                  this.method2944(Class2106.field13731, ItemStack.field39973);
+                  this.method2944(Class2106.field13731, ItemStack.EMPTY);
                }
 
                this.method5190(false);
@@ -539,7 +539,7 @@ public class Class1097 extends Class1018 {
 
    @Override
    public Class2274 method4285(PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+      ItemStack var5 = var1.getHeldItem(var2);
       if (!this.method5214()) {
          if (this.method5191()) {
             this.method5192(false);

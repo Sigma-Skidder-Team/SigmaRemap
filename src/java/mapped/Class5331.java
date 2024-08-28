@@ -13,7 +13,7 @@ public class Class5331 extends Class5325 {
     public int method16749(boolean var1) {
         for (int var4 = 36; var4 < 45; var4++) {
             if (mc.field1339.field4904.method18131(var4).method18266()) {
-                Class8848 var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
                 if (var5 != null) {
                     if (!var1) {
                         if (var5.method32107() == Class8514.field37872 || var5.method32107() == Class8514.field37873) {
@@ -35,7 +35,7 @@ public class Class5331 extends Class5325 {
 
         for (int var9 = 9; var9 < 36; var9++) {
             if (mc.field1339.field4904.method18131(var9).method18266()) {
-                Class8848 var10 = mc.field1339.field4904.method18131(var9).method18265();
+                ItemStack var10 = mc.field1339.field4904.method18131(var9).method18265();
                 if (!var1) {
                     if (var10.method32107() == Class8514.field37872 || var10.method32107() == Class8514.field37873) {
                         Class7789.method25873(var9, 4);

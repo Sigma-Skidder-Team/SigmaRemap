@@ -240,7 +240,7 @@ public class Class4388 {
 
    private static void method13815(Class1034 var0, ItemStack var1) {
       if (method13878(var0)) {
-         var0.method3302(var0.method3094(Hand.field183));
+         var0.method3302(var0.getHeldItem(Hand.field183));
       }
 
       var0.method4626(var1);
@@ -259,8 +259,8 @@ public class Class4388 {
    }
 
    public static void method13817(Class1034 var0, boolean var1) {
-      ItemStack var4 = var0.method3094(Hand.field183);
-      var0.method3095(Hand.field183, ItemStack.field39973);
+      ItemStack var4 = var0.getHeldItem(Hand.field183);
+      var0.method3095(Hand.field183, ItemStack.EMPTY);
       if (!var0.method4635()) {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
@@ -289,7 +289,7 @@ public class Class4388 {
    public static void method13818(Class1034 var0) {
       if (method13868(var0) && !var0.method3091().method32105()) {
          var0.method3302(var0.method3091());
-         var0.method3095(Hand.field183, ItemStack.field39973);
+         var0.method3095(Hand.field183, ItemStack.EMPTY);
       }
    }
 
@@ -427,7 +427,7 @@ public class Class4388 {
    }
 
    public static Class2274 method13833(Class1034 var0, PlayerEntity var1, Hand var2) {
-      ItemStack var5 = var1.method3094(var2);
+      ItemStack var5 = var1.getHeldItem(var2);
       if (!method13834(var0, var5)) {
          return Class2274.field14820;
       } else {

@@ -41,7 +41,7 @@ public class Class2688 extends Class2595 {
       ItemStack var3 = this.field17115.method2943(Class2106.field13731);
       if (!var3.method32105()) {
          this.method10906(var3);
-         this.field17115.method2944(Class2106.field13731, ItemStack.field39973);
+         this.field17115.method2944(Class2106.field13731, ItemStack.EMPTY);
          this.field17114 = this.field17115.field5055 + Class1048.method4787(this.field17115).nextInt(100);
       }
    }
@@ -58,7 +58,7 @@ public class Class2688 extends Class2595 {
          }
       } else {
          this.method10906(var4);
-         this.field17115.method2944(Class2106.field13731, ItemStack.field39973);
+         this.field17115.method2944(Class2106.field13731, ItemStack.EMPTY);
       }
    }
 

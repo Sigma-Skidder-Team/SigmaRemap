@@ -22,7 +22,7 @@ public class Class235<T extends Class880, M extends Class2827<T> & Class2824> ex
    }
 
    public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      Class8848 var13 = var4.method2943(Class2106.field13736);
+      ItemStack var13 = var4.method2943(Class2106.field13736);
       if (!var13.method32105()) {
          Class3257 var14 = var13.method32107();
          var1.method35294();

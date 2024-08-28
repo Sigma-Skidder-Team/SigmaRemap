@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Class971 extends Class939 {
    private static final Random field5435 = new Random();
-   private Class25<Class8848> field5436 = Class25.<Class8848>method68(9, Class8848.field39973);
+   private Class25<ItemStack> field5436 = Class25.<ItemStack>method68(9, ItemStack.EMPTY);
 
    public Class971(Class4387<?> var1) {
       super(var1);
@@ -36,7 +36,7 @@ public class Class971 extends Class939 {
       return var3;
    }
 
-   public int method4023(Class8848 var1) {
+   public int method4023(ItemStack var1) {
       for (int var4 = 0; var4 < this.field5436.size(); var4++) {
          if (this.field5436.get(var4).method32105()) {
             this.method3621(var4, var1);
@@ -55,7 +55,7 @@ public class Class971 extends Class939 {
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5436 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5436 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5436);
       }
@@ -72,12 +72,12 @@ public class Class971 extends Class939 {
    }
 
    @Override
-   public Class25<Class8848> method3724() {
+   public Class25<ItemStack> method3724() {
       return this.field5436;
    }
 
    @Override
-   public void method3725(Class25<Class8848> var1) {
+   public void method3725(Class25<ItemStack> var1) {
       this.field5436 = var1;
    }
 

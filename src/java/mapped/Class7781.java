@@ -17,7 +17,7 @@ public class Class7781 {
       return this.field33367;
    }
 
-   public boolean method25781(Class8848 var1, Class1656 var2, Class880 var3) {
+   public boolean method25781(ItemStack var1, Class1656 var2, Class880 var3) {
       Class3257 var6 = var1.method32107();
 
       for (Entry var8 : this.field33368.entrySet()) {

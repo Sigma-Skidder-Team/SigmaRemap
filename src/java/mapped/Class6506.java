@@ -10,7 +10,7 @@ public class Class6506 implements Class6504<Class4854> {
       Class25 var6 = method19703(Class8963.method32785(var2, "ingredients"));
       if (!var6.isEmpty()) {
          if (var6.size() <= 9) {
-            Class8848 var7 = Class4852.method14987(Class8963.method32782(var2, "result"));
+            ItemStack var7 = Class4852.method14987(Class8963.method32782(var2, "result"));
             return new Class4854(var1, var5, var7, var6);
          } else {
             throw new JsonParseException("Too many ingredients for shapeless recipe");
@@ -42,7 +42,7 @@ public class Class6506 implements Class6504<Class4854> {
          var7.set(var8, Class120.method343(var2));
       }
 
-      Class8848 var9 = var2.method35726();
+      ItemStack var9 = var2.method35726();
       return new Class4854(var1, var5, var9, var7);
    }
 

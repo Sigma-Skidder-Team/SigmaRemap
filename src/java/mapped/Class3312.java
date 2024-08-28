@@ -15,7 +15,7 @@ public class Class3312 extends Class3257 {
       Direction var5 = var1.method18354();
       BlockPos var6 = var4.method8349(var5);
       PlayerEntity var7 = var1.method18358();
-      Class8848 var8 = var1.method18357();
+      ItemStack var8 = var1.method18357();
       if (var7 != null && !this.method11857(var7, var5, var8, var6)) {
          return Class2274.field14821;
       } else {
@@ -50,7 +50,7 @@ public class Class3312 extends Class3257 {
       }
    }
 
-   public boolean method11857(PlayerEntity var1, Direction var2, Class8848 var3, BlockPos var4) {
+   public boolean method11857(PlayerEntity var1, Direction var2, ItemStack var3, BlockPos var4) {
       return !var2.method544().method323() && var1.method2936(var4, var2, var3);
    }
 }

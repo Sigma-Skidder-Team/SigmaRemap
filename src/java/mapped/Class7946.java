@@ -5,5 +5,5 @@ import java.util.List;
 
 @FunctionalInterface
 public interface Class7946 {
-   void method27014(List<Class8848> var1) throws CommandSyntaxException;
+   void method27014(List<ItemStack> var1) throws CommandSyntaxException;
 }

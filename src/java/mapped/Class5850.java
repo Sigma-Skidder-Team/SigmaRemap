@@ -12,15 +12,15 @@ public class Class5850 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return false;
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       var2.method32136(var1.field5024, var1, var2.method32179());
       Class5811.method18117(this.field25601).method3638(var1);
-      Class8848 var5 = this.field25601.field25462.method18272(1);
+      ItemStack var5 = this.field25601.field25462.method18272(1);
       if (!var5.method32105()) {
          Class5811.method18118(this.field25601);
       }

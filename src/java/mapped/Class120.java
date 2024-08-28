@@ -10,17 +10,17 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public final class Class120 implements Predicate<Class8848> {
+public final class Class120 implements Predicate<ItemStack> {
    public static final Class120 field427 = new Class120(Stream.empty());
    private final Class4826[] field428;
-   private Class8848[] field429;
+   private ItemStack[] field429;
    private IntList field430;
 
    private Class120(Stream<? extends Class4826> var1) {
       this.field428 = var1.<Class4826>toArray(Class4826[]::new);
    }
 
-   public Class8848[] method332() {
+   public ItemStack[] method332() {
       this.method333();
       return this.field429;
    }
@@ -28,13 +28,13 @@ public final class Class120 implements Predicate<Class8848> {
    private void method333() {
       if (this.field429 == null) {
          this.field429 = Arrays.<Class4826>stream(this.field428)
-            .<Class8848>flatMap(var0 -> var0.method14917().stream())
+            .<ItemStack>flatMap(var0 -> var0.method14917().stream())
             .distinct()
-            .<Class8848>toArray(Class8848[]::new);
+            .<ItemStack>toArray(ItemStack[]::new);
       }
    }
 
-   public boolean test(Class8848 var1) {
+   public boolean test(ItemStack var1) {
       if (var1 == null) {
          return false;
       } else {
@@ -42,7 +42,7 @@ public final class Class120 implements Predicate<Class8848> {
          if (this.field429.length == 0) {
             return var1.method32105();
          } else {
-            for (Class8848 var7 : this.field429) {
+            for (ItemStack var7 : this.field429) {
                if (var7.method32107() == var1.method32107()) {
                   return true;
                }
@@ -58,7 +58,7 @@ public final class Class120 implements Predicate<Class8848> {
          this.method333();
          this.field430 = new IntArrayList(this.field429.length);
 
-         for (Class8848 var6 : this.field429) {
+         for (ItemStack var6 : this.field429) {
             this.field430.add(Class6207.method19119(var6));
          }
 
@@ -101,14 +101,14 @@ public final class Class120 implements Predicate<Class8848> {
    }
 
    public static Class120 method339(Class3303... var0) {
-      return method341(Arrays.<Class3303>stream(var0).<Class8848>map(Class8848::new));
+      return method341(Arrays.<Class3303>stream(var0).<ItemStack>map(ItemStack::new));
    }
 
-   public static Class120 method340(Class8848... var0) {
-      return method341(Arrays.<Class8848>stream(var0));
+   public static Class120 method340(ItemStack... var0) {
+      return method341(Arrays.<ItemStack>stream(var0));
    }
 
-   public static Class120 method341(Stream<Class8848> var0) {
+   public static Class120 method341(Stream<ItemStack> var0) {
       return method338(var0.filter(var0x -> !var0x.method32105()).map(var0x -> new Class4827(var0x)));
    }
 
@@ -156,7 +156,7 @@ public final class Class120 implements Predicate<Class8848> {
       } else {
          ResourceLocation var3 = new ResourceLocation(Class8963.method32763(var0, "item"));
          Class3257 var4 = Class2348.field16075.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
-         return new Class4827(new Class8848(var4));
+         return new Class4827(new ItemStack(var4));
       }
    }
 }

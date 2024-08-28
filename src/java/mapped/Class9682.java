@@ -12,7 +12,7 @@ public class Class9682 {
       Arrays.sort(this.field45276);
    }
 
-   public Integer method37908(Class8848 var1, Class1656 var2, Class880 var3) {
+   public Integer method37908(ItemStack var1, Class1656 var2, Class880 var3) {
       Class3257 var6 = var1.method32107();
       Class8176 var7 = Class9065.method33752(var6, this.field45275);
       if (var7 != null) {

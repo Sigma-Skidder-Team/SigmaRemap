@@ -53,7 +53,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
                var4.method32118(var4.method32117() + this.field5054.nextInt(2));
                if (var4.method32117() >= var4.method32119()) {
                   this.method3184(Class2106.field13736);
-                  this.method2944(Class2106.field13736, ItemStack.field39973);
+                  this.method2944(Class2106.field13736, ItemStack.EMPTY);
                }
             }
 
@@ -108,7 +108,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       if (this.field5024 != null && !this.field5024.field9020) {
          this.field5600.method20003(this.field5947);
          this.field5600.method20003(this.field5946);
-         ItemStack var3 = this.method3094(Class9456.method36389(this, Class8514.field37796));
+         ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Class8514.field37796));
          if (var3.method32107() != Class8514.field37796) {
             this.field5600.method20002(4, this.field5947);
          } else {
@@ -125,7 +125,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      ItemStack var5 = this.method2983(this.method3094(Class9456.method36389(this, Class8514.field37796)));
+      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Class8514.field37796)));
       Class884 var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();

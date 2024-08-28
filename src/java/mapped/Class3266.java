@@ -19,7 +19,7 @@ public class Class3266 extends Class3257 {
    }
 
    @Override
-   public boolean method11699(Class8848 var1, Class8848 var2) {
+   public boolean method11699(ItemStack var1, ItemStack var2) {
       return this.field18760.method9015().test(var2) || super.method11699(var1, var2);
    }
 }

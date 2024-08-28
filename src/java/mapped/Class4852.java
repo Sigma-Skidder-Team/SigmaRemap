@@ -17,11 +17,11 @@ public class Class4852 implements Class4842 {
    private final int field22641;
    private final int field22642;
    private final Class25<Class120> field22643;
-   private final Class8848 field22644;
+   private final ItemStack field22644;
    private final ResourceLocation field22645;
    private final String field22646;
 
-   public Class4852(ResourceLocation var1, String var2, int var3, int var4, Class25<Class120> var5, Class8848 var6) {
+   public Class4852(ResourceLocation var1, String var2, int var3, int var4, Class25<Class120> var5, ItemStack var6) {
       this.field22645 = var1;
       this.field22646 = var2;
       this.field22641 = var3;
@@ -46,7 +46,7 @@ public class Class4852 implements Class4842 {
    }
 
    @Override
-   public Class8848 method14966() {
+   public ItemStack method14966() {
       return this.field22644;
    }
 
@@ -99,8 +99,8 @@ public class Class4852 implements Class4842 {
       return true;
    }
 
-   public Class8848 method14962(Class926 var1) {
-      return this.method14966().method32126();
+   public ItemStack method14962(Class926 var1) {
+      return this.method14966().copy();
    }
 
    public int method14979() {
@@ -235,12 +235,12 @@ public class Class4852 implements Class4842 {
       return var3;
    }
 
-   public static Class8848 method14987(JsonObject var0) {
+   public static ItemStack method14987(JsonObject var0) {
       String var3 = Class8963.method32763(var0, "item");
       Class3257 var4 = Class2348.field16075.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
          int var5 = Class8963.method32778(var0, "count", 1);
-         return new Class8848(var4, var5);
+         return new ItemStack(var4, var5);
       } else {
          throw new JsonParseException("Disallowed data tag found");
       }
@@ -282,7 +282,7 @@ public class Class4852 implements Class4842 {
    }
 
    // $VF: synthetic method
-   public static Class8848 method14996(Class4852 var0) {
+   public static ItemStack method14996(Class4852 var0) {
       return var0.field22644;
    }
 }

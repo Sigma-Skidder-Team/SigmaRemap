@@ -11,7 +11,7 @@ public class Class7969 {
       this.field34260 = var1;
    }
 
-   public boolean method27091(Class8848 var1) {
+   public boolean method27091(ItemStack var1) {
       return this.field34260.isEmpty() || !var1.method32105() && var1.method32152() && this.field34260.equals(var1.method32149().getString());
    }
 

@@ -74,7 +74,7 @@ public class Class5314 extends Module {
         int var5 = 0;
 
         for (int var6 = 0; var6 < mc.field1339.field4902.field5440.size(); var6++) {
-            Class8848 var7 = mc.field1339.field4902.field5440.get(var6);
+            ItemStack var7 = mc.field1339.field4902.field5440.get(var6);
             if (!(var7.method32107() instanceof Class3280)) {
                 var5++;
                 int var8 = var2 - 32 * var5;

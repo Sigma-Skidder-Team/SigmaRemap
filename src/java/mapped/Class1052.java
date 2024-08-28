@@ -107,15 +107,15 @@ public class Class1052 extends Class1050 {
    }
 
    @Override
-   public void method4795(Class8848 var1) {
+   public void method4795(ItemStack var1) {
       super.method4795(var1);
       Class39 var4 = var1.method32143();
       var4.method102("BucketVariantTag", this.method4818());
    }
 
    @Override
-   public Class8848 method4796() {
-      return new Class8848(Class8514.field37895);
+   public ItemStack method4796() {
+      return new ItemStack(Class8514.field37895);
    }
 
    @Override

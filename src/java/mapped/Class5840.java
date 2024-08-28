@@ -8,7 +8,7 @@ public class Class5840 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return method18275(var1);
    }
 
@@ -18,7 +18,7 @@ public class Class5840 extends Class5839 {
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       Class8812 var5 = Class9741.method38185(var2);
       if (var1 instanceof Class878) {
          Class9551.field44475.method15071((Class878)var1, var5);
@@ -28,7 +28,7 @@ public class Class5840 extends Class5839 {
       return var2;
    }
 
-   public static boolean method18275(Class8848 var0) {
+   public static boolean method18275(ItemStack var0) {
       Class3257 var3 = var0.method32107();
       return var3 == Class8514.field37971 || var3 == Class8514.field38115 || var3 == Class8514.field38118 || var3 == Class8514.field37972;
    }

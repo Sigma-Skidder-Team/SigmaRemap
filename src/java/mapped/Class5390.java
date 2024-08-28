@@ -26,8 +26,8 @@ public class Class5390 implements Class5391 {
       if (!(var1 instanceof Class1041)) {
          return null;
       } else {
-         Class8848 var5 = new Class8848(this.field24027.get(((Class1041)var1).method4674().method26570()), this.field24028);
-         return new Class9346(var5, new Class8848(Class8514.field38049), this.field24029, this.field24030, 0.05F);
+         ItemStack var5 = new ItemStack(this.field24027.get(((Class1041)var1).method4674().method26570()), this.field24028);
+         return new Class9346(var5, new ItemStack(Class8514.field38049), this.field24029, this.field24030, 0.05F);
       }
    }
 }

@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public abstract class Class919 extends Class916 implements Class920, Class949 {
-   private Class25<ItemStack> field5236 = Class25.<ItemStack>method68(36, ItemStack.field39973);
+   private Class25<ItemStack> field5236 = Class25.<ItemStack>method68(36, ItemStack.EMPTY);
    private boolean field5237 = true;
    private ResourceLocation field5238;
    private long field5239;
@@ -58,10 +58,10 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
       this.method3624((PlayerEntity)null);
       ItemStack var4 = this.field5236.get(var1);
       if (!var4.method32105()) {
-         this.field5236.set(var1, ItemStack.field39973);
+         this.field5236.set(var1, ItemStack.EMPTY);
          return var4;
       } else {
-         return ItemStack.field39973;
+         return ItemStack.EMPTY;
       }
    }
 
@@ -125,7 +125,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    @Override
    public void method2723(Class39 var1) {
       super.method2723(var1);
-      this.field5236 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
+      this.field5236 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!var1.method119("LootTable", 8)) {
          Class7920.method26567(var1, this.field5236);
       } else {

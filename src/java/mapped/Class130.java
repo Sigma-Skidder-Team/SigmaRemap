@@ -30,7 +30,7 @@ public class Class130 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Entity var5 = var2.<Entity>method26081(Class9525.field44333);
       if (var5 instanceof Class880) {
          int var6 = Class7858.method26330((Class880)var5);

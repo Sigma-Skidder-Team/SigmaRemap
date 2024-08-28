@@ -12,9 +12,9 @@ public class Class7070 {
    public float field30450;
    public int field30451;
    public int field30452;
-   public Class8848 field30453;
-   public Class8848 field30454;
-   public Class8848 field30455;
+   public ItemStack field30453;
+   public ItemStack field30454;
+   public ItemStack field30455;
 
    public Class7070(int var1) {
       this.field30448 = var1;
@@ -52,7 +52,7 @@ public class Class7070 {
 
          this.field30450 = 0.0F;
          if (this.field30455 != null) {
-            Class8848 var6 = this.method21985();
+            ItemStack var6 = this.method21985();
             this.field30455.field39976 = this.field30455.field39976 + var6.field39976;
          }
       }
@@ -62,12 +62,12 @@ public class Class7070 {
       }
    }
 
-   public Class8848 method21985() {
+   public ItemStack method21985() {
       if (this.field30453 == null) {
          return null;
       } else {
          if (!Class5377.method16937()
-            .<Class920, Class4849>method1030(Class7207.field30936, new Class927(new Class8848(Class8514.field37236)), Class5377.method16936().field1338)
+            .<Class920, Class4849>method1030(Class7207.field30936, new Class927(new ItemStack(Class8514.field37236)), Class5377.method16936().field1338)
             .isPresent()) {
             Class193 var3 = new Class193(Class1946.field12611);
 
@@ -82,9 +82,9 @@ public class Class7070 {
          Optional var7 = Class5377.method16937()
             .<Class920, Class4849>method1030(Class7207.field30936, new Class927(this.field30453), Class5377.method16940().field1338);
          if (var7.isPresent()) {
-            Class8848 var8 = ((Class4849)var7.get()).method14966();
+            ItemStack var8 = ((Class4849)var7.get()).method14966();
             if (!var8.method32105()) {
-               return var8.method32126();
+               return var8.copy();
             }
          }
 
@@ -93,11 +93,11 @@ public class Class7070 {
    }
 
    public Class3257 method21986() {
-      Class8848 var3 = this.method21985();
+      ItemStack var3 = this.method21985();
       return var3 == null ? null : var3.method32107();
    }
 
-   public Class8848 method21987() {
+   public ItemStack method21987() {
       if (this.field30455 != null && this.field30455.method32107() instanceof Class3280) {
          this.field30455 = null;
       }
@@ -112,7 +112,7 @@ public class Class7070 {
 
       if (this.field30455 == null) {
          if (this.field30453 != null) {
-            Class8848 var3 = this.method21985();
+            ItemStack var3 = this.method21985();
             if (var3 != null) {
                var3.field39976 = 0;
             }

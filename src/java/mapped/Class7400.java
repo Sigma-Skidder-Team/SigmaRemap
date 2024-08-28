@@ -6,7 +6,7 @@ public final class Class7400 extends Class7401 {
    }
 
    @Override
-   public Class8848 method23640() {
-      return new Class8848(Blocks.POWERED_RAIL);
+   public ItemStack method23640() {
+      return new ItemStack(Blocks.POWERED_RAIL);
    }
 }

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Class936 extends Class939 implements Class937, Class935 {
-   private Class25<Class8848> field5293 = Class25.<Class8848>method68(5, Class8848.field39973);
+   private Class25<ItemStack> field5293 = Class25.<ItemStack>method68(5, ItemStack.EMPTY);
    private int field5294 = -1;
    private long field5295;
 
@@ -21,7 +21,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5293 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5293 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5293);
       }
@@ -46,13 +46,13 @@ public class Class936 extends Class939 implements Class937, Class935 {
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       this.method3743((PlayerEntity)null);
       return Class7920.method26563(this.method3724(), var1, var2);
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
       this.method3743((PlayerEntity)null);
       this.method3724().set(var1, var2);
       if (var2.method32179() > this.method3630()) {
@@ -103,7 +103,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
    }
 
    private boolean method3700() {
-      for (Class8848 var4 : this.field5293) {
+      for (ItemStack var4 : this.field5293) {
          if (var4.method32105() || var4.method32179() != var4.method32113()) {
             return false;
          }
@@ -119,8 +119,8 @@ public class Class936 extends Class939 implements Class937, Class935 {
          if (!this.method3703(var3, var4)) {
             for (int var5 = 0; var5 < this.method3629(); var5++) {
                if (!this.method3618(var5).method32105()) {
-                  Class8848 var6 = this.method3618(var5).method32126();
-                  Class8848 var7 = method3708(this, var3, this.method3619(var5, 1), var4);
+                  ItemStack var6 = this.method3618(var5).copy();
+                  ItemStack var7 = method3708(this, var3, this.method3619(var5, 1), var4);
                   if (var7.method32105()) {
                      var3.method3622();
                      return true;
@@ -145,7 +145,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
 
    private boolean method3703(Class920 var1, Direction var2) {
       return method3702(var1, var2).allMatch(var1x -> {
-         Class8848 var4 = var1.method3618(var1x);
+         ItemStack var4 = var1.method3618(var1x);
          return var4.method32179() >= var4.method32113();
       });
    }
@@ -171,10 +171,10 @@ public class Class936 extends Class939 implements Class937, Class935 {
    }
 
    private static boolean method3706(Class937 var0, Class920 var1, int var2, Direction var3) {
-      Class8848 var6 = var1.method3618(var2);
+      ItemStack var6 = var1.method3618(var2);
       if (!var6.method32105() && method3710(var1, var6, var2, var3)) {
-         Class8848 var7 = var6.method32126();
-         Class8848 var8 = method3708(var1, var0, var1.method3619(var2, 1), (Direction)null);
+         ItemStack var7 = var6.copy();
+         ItemStack var8 = method3708(var1, var0, var1.method3619(var2, 1), (Direction)null);
          if (var8.method32105()) {
             var1.method3622();
             return true;
@@ -188,8 +188,8 @@ public class Class936 extends Class939 implements Class937, Class935 {
 
    public static boolean method3707(Class920 var0, Class1000 var1) {
       boolean var4 = false;
-      Class8848 var5 = var1.method4124().method32126();
-      Class8848 var6 = method3708((Class920)null, var0, var5, (Direction)null);
+      ItemStack var5 = var1.method4124().copy();
+      ItemStack var6 = method3708((Class920)null, var0, var5, (Direction)null);
       if (!var6.method32105()) {
          var1.method4125(var6);
       } else {
@@ -200,7 +200,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
       return var4;
    }
 
-   public static Class8848 method3708(Class920 var0, Class920 var1, Class8848 var2, Direction var3) {
+   public static ItemStack method3708(Class920 var0, Class920 var1, ItemStack var2, Direction var3) {
       if (var1 instanceof Class930 && var3 != null) {
          Class930 var9 = (Class930)var1;
          int[] var10 = var9.method3653(var3);
@@ -219,16 +219,16 @@ public class Class936 extends Class939 implements Class937, Class935 {
       return var2;
    }
 
-   private static boolean method3709(Class920 var0, Class8848 var1, int var2, Direction var3) {
+   private static boolean method3709(Class920 var0, ItemStack var1, int var2, Direction var3) {
       return !var0.method3633(var2, var1) ? false : !(var0 instanceof Class930) || ((Class930)var0).method3654(var2, var1, var3);
    }
 
-   private static boolean method3710(Class920 var0, Class8848 var1, int var2, Direction var3) {
+   private static boolean method3710(Class920 var0, ItemStack var1, int var2, Direction var3) {
       return !(var0 instanceof Class930) || ((Class930)var0).method3655(var2, var1, var3);
    }
 
-   private static Class8848 method3711(Class920 var0, Class920 var1, Class8848 var2, int var3, Direction var4) {
-      Class8848 var7 = var1.method3618(var3);
+   private static ItemStack method3711(Class920 var0, Class920 var1, ItemStack var2, int var3, Direction var4) {
+      ItemStack var7 = var1.method3618(var3);
       if (method3709(var1, var2, var3, var4)) {
          boolean var8 = false;
          boolean var9 = var1.method3617();
@@ -242,7 +242,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
             }
          } else {
             var1.method3621(var3, var2);
-            var2 = Class8848.field39973;
+            var2 = ItemStack.EMPTY;
             var8 = true;
          }
 
@@ -331,10 +331,10 @@ public class Class936 extends Class939 implements Class937, Class935 {
       return (Class920)var9;
    }
 
-   private static boolean method3717(Class8848 var0, Class8848 var1) {
+   private static boolean method3717(ItemStack var0, ItemStack var1) {
       if (var0.method32107() == var1.method32107()) {
          if (var0.method32117() == var1.method32117()) {
-            return var0.method32179() <= var0.method32113() ? Class8848.method32127(var0, var1) : false;
+            return var0.method32179() <= var0.method32113() ? ItemStack.method32127(var0, var1) : false;
          } else {
             return false;
          }
@@ -371,12 +371,12 @@ public class Class936 extends Class939 implements Class937, Class935 {
    }
 
    @Override
-   public Class25<Class8848> method3724() {
+   public Class25<ItemStack> method3724() {
       return this.field5293;
    }
 
    @Override
-   public void method3725(Class25<Class8848> var1) {
+   public void method3725(Class25<ItemStack> var1) {
       this.field5293 = var1;
    }
 

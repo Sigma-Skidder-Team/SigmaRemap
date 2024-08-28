@@ -25,11 +25,11 @@ public class Class6095 extends Class6069 {
    }
 
    @Override
-   public boolean method18821(Class8848 var1) {
+   public boolean method18821(ItemStack var1) {
       return !var1.method32115() ? super.method18821(var1) : true;
    }
 
-   public static boolean method18833(Class8848 var0, int var1, Random var2) {
+   public static boolean method18833(ItemStack var0, int var1, Random var2) {
       return var0.method32107() instanceof Class3279 && var2.nextFloat() < 0.6F ? false : var2.nextInt(var1 + 1) > 0;
    }
 }

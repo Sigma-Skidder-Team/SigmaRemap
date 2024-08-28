@@ -72,7 +72,7 @@ public class Class9003 {
       return var3;
    }
 
-   public int method33258(Class8848 var1, int var2) {
+   public int method33258(ItemStack var1, int var2) {
       Class7216 var5 = this.field41160.method9172(Class2348.field16075.method9171(var1.method32107()));
       return var5 != null ? var5.method22661(var1, var2) : -1;
    }

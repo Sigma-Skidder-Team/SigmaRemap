@@ -35,7 +35,7 @@ public class Class1000 extends Entity {
 
    private Class1000(Class1000 var1) {
       super(var1.method3204(), var1.field5024);
-      this.method4125(var1.method4124().method32126());
+      this.method4125(var1.method4124().copy());
       this.method3364(var1);
       this.field5515 = var1.field5515;
       this.field5520 = var1.field5520;
@@ -48,7 +48,7 @@ public class Class1000 extends Entity {
 
    @Override
    public void method2850() {
-      this.method3210().method35442(field5514, ItemStack.field39973);
+      this.method3210().method35442(field5514, ItemStack.EMPTY);
    }
 
    @Override
@@ -185,7 +185,7 @@ public class Class1000 extends Entity {
 
    public static ItemStack method4121(ItemStack var0, ItemStack var1, int var2) {
       int var5 = Math.min(Math.min(var0.method32113(), var2) - var0.method32179(), var1.method32179());
-      ItemStack var6 = var0.method32126();
+      ItemStack var6 = var0.copy();
       var6.method32181(var5);
       var1.method32182(var5);
       return var6;

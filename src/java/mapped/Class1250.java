@@ -71,11 +71,11 @@ public class Class1250 extends Class1249 {
       int var5 = !this.field6616 ? 0 : -2;
       if (var4.size() != 1) {
          if (var4.size() == 2) {
-            var1.method794((Class8848)var4.get(0), this.field6477 + 3 + var5, this.field6478 + 5);
-            var1.method794((Class8848)var4.get(1), this.field6477 + 14 + var5, this.field6478 + 5);
+            var1.method794((ItemStack)var4.get(0), this.field6477 + 3 + var5, this.field6478 + 5);
+            var1.method794((ItemStack)var4.get(1), this.field6477 + 14 + var5, this.field6478 + 5);
          }
       } else {
-         var1.method794((Class8848)var4.get(0), this.field6477 + 9 + var5, this.field6478 + 5);
+         var1.method794((ItemStack)var4.get(0), this.field6477 + 9 + var5, this.field6478 + 5);
       }
    }
 

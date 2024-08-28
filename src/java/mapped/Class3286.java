@@ -20,7 +20,7 @@ public class Class3286 extends Class3257 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       var3.add(this.method11822().mergeStyle(TextFormatting.GRAY));
    }
 

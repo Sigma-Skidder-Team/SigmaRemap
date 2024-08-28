@@ -9,7 +9,7 @@ public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
    }
 
    public void method820(Class9332 var1, Class7733 var2, int var3, Class1074 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      Class8848 var13 = var4.method4990();
+      ItemStack var13 = var4.method4990();
       if (var13.method32107() instanceof Class3275) {
          Class3275 var14 = (Class3275)var13.method32107();
          this.method825().method11027(this.field918);

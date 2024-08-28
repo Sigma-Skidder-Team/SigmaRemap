@@ -4,7 +4,7 @@ public final class Class6223 extends Class6218 {
    private static String[] field27718;
 
    @Override
-   public Class8848 method19192(Class2956 var1, Class8848 var2) {
+   public ItemStack method19192(Class2956 var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       Class888 var6 = new Class888(var1.method11326(), var2, var1.method11320(), var1.method11321(), var1.method11320(), true);
       Class6226.method19201(var1, var6, var5);

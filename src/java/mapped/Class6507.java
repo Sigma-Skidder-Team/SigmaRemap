@@ -11,7 +11,7 @@ public class Class6507 implements Class6504<Class4852> {
       int var8 = var7[0].length();
       int var9 = var7.length;
       Class25 var10 = Class4852.method14991(var7, var6, var8, var9);
-      Class8848 var11 = Class4852.method14987(Class8963.method32782(var2, "result"));
+      ItemStack var11 = Class4852.method14987(Class8963.method32782(var2, "result"));
       return new Class4852(var1, var5, var8, var9, var10, var11);
    }
 
@@ -25,7 +25,7 @@ public class Class6507 implements Class6504<Class4852> {
          var8.set(var9, Class120.method343(var2));
       }
 
-      Class8848 var10 = var2.method35726();
+      ItemStack var10 = var2.method35726();
       return new Class4852(var1, var7, var5, var6, var8, var10);
    }
 

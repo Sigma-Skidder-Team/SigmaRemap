@@ -9,7 +9,7 @@ public class Class3344 extends Class3343 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       Class944 var8 = var1.method6759(var2);
       if (var8 instanceof Class968) {
@@ -61,7 +61,7 @@ public class Class3344 extends Class3343 {
       }
    }
 
-   public static boolean method11899(Class1655 var0, BlockPos var1, Class8848 var2) {
+   public static boolean method11899(Class1655 var0, BlockPos var1, ItemStack var2) {
       return var2.method32107() == Class8514.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.field9020
          ? method11901().method38656(var0, var1) != null
          : false;

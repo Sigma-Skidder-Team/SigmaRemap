@@ -24,7 +24,7 @@ public class Class1174 extends Class1155<Class1174> {
          }
       }
 
-      Class8848 var16 = new Class8848(var15);
+      ItemStack var16 = new ItemStack(var15);
       this.method5596(var1, var4, var3, var16);
       this.field6359.field6849.field4568.method38805(var1, var15.method11731(var16), (float)(var4 + 18 + 5), (float)(var3 + 3), 16777215);
       String var17;
@@ -54,7 +54,7 @@ public class Class1174 extends Class1155<Class1174> {
       }
    }
 
-   private void method5596(Class9332 var1, int var2, int var3, Class8848 var4) {
+   private void method5596(Class9332 var1, int var2, int var3, ItemStack var4) {
       this.method5597(var1, var2 + 1, var3 + 1);
       RenderSystem.method27867();
       if (!var4.method32105()) {

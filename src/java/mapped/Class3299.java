@@ -12,7 +12,7 @@ public class Class3299 extends Class3298 {
    }
 
    @Override
-   public ITextComponent method11731(Class8848 var1) {
+   public ITextComponent method11731(ItemStack var1) {
       if (var1.method32107() == Class8514.field38060 && var1.method32141()) {
          String var4 = null;
          Class39 var5 = var1.method32142();

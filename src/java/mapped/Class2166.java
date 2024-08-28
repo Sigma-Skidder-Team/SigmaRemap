@@ -39,7 +39,7 @@ public enum Class2166 {
       var2.method5696(var1, var3 + this.method8888(var6), var4 + this.method8889(var6), var9, var10, this.field14226, this.field14227);
    }
 
-   public void method8887(int var1, int var2, int var3, Class216 var4, Class8848 var5) {
+   public void method8887(int var1, int var2, int var3, Class216 var4, ItemStack var5) {
       int var8 = var1 + this.method8888(var3);
       int var9 = var2 + this.method8889(var3);
       switch (Class8863.field40052[this.ordinal()]) {

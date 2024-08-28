@@ -18,13 +18,13 @@ public class Class131 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       if (!var1.method32105()) {
          Optional var5 = var2.method26090().method6816().<Class920, Class4849>method1030(Class7207.field30936, new Class927(var1), var2.method26090());
          if (var5.isPresent()) {
-            Class8848 var6 = ((Class4849)var5.get()).method14966();
+            ItemStack var6 = ((Class4849)var5.get()).method14966();
             if (!var6.method32105()) {
-               Class8848 var7 = var6.method32126();
+               ItemStack var7 = var6.copy();
                var7.method32180(var1.method32179());
                return var7;
             }

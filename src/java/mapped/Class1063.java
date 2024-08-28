@@ -188,7 +188,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public ItemStack method4644() {
-      return ItemStack.field39973;
+      return ItemStack.EMPTY;
    }
 
    @Override

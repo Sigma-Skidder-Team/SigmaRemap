@@ -23,7 +23,7 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
    }
 
    private void method843(Class9332 var1, Class7733 var2, T var3, Class2106 var4, int var5, A var6) {
-      Class8848 var9 = var3.method2943(var4);
+      ItemStack var9 = var3.method2943(var4);
       if (var9.method32107() instanceof Class3279) {
          Class3279 var10 = (Class3279)var9.method32107();
          if (var10.method11805() == var4) {
@@ -96,11 +96,11 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
       return field912.computeIfAbsent(var6, ResourceLocation::new);
    }
 
-   public A method850(T var1, Class8848 var2, Class2106 var3, A var4) {
+   public A method850(T var1, ItemStack var2, Class2106 var3, A var4) {
       return (A)(!Class9299.field42873.method20214() ? var4 : Class9299.field42873.method20217(var1, var2, var3, var4));
    }
 
-   public ResourceLocation method851(Entity var1, Class8848 var2, Class2106 var3, String var4) {
+   public ResourceLocation method851(Entity var1, ItemStack var2, Class2106 var3, String var4) {
       Class3279 var7 = (Class3279)var2.method32107();
       String var8 = var7.method11806().method8790();
       String var9 = "minecraft";

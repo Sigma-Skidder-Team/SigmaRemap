@@ -75,7 +75,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    @Override
    public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
       Class3257 var6 = this.method12184();
-      return var6 != null ? new ItemStack(var6) : ItemStack.field39973;
+      return var6 != null ? new ItemStack(var6) : ItemStack.EMPTY;
    }
 
    @Override

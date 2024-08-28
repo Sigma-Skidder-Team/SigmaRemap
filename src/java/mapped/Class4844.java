@@ -2,13 +2,13 @@ package mapped;
 
 public abstract class Class4844 implements Class4843<Class920> {
    public final Class120 field22618;
-   public final Class8848 field22619;
+   public final ItemStack field22619;
    private final Class7207<?> field22620;
    private final Class6504<?> field22621;
    public final ResourceLocation field22622;
    public final String field22623;
 
-   public Class4844(Class7207<?> var1, Class6504<?> var2, ResourceLocation var3, String var4, Class120 var5, Class8848 var6) {
+   public Class4844(Class7207<?> var1, Class6504<?> var2, ResourceLocation var3, String var4, Class120 var5, ItemStack var6) {
       this.field22620 = var1;
       this.field22621 = var2;
       this.field22622 = var3;
@@ -38,7 +38,7 @@ public abstract class Class4844 implements Class4843<Class920> {
    }
 
    @Override
-   public Class8848 method14966() {
+   public ItemStack method14966() {
       return this.field22619;
    }
 
@@ -55,7 +55,7 @@ public abstract class Class4844 implements Class4843<Class920> {
    }
 
    @Override
-   public Class8848 method14962(Class920 var1) {
-      return this.field22619.method32126();
+   public ItemStack method14962(Class920 var1) {
+      return this.field22619.copy();
    }
 }

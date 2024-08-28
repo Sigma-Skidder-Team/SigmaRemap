@@ -104,13 +104,13 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public Class8848 method2983(Class8848 var1) {
+   public ItemStack method2983(ItemStack var1) {
       if (!(var1.method32107() instanceof Class3262)) {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       } else {
          Predicate var4 = ((Class3262)var1.method32107()).method11751();
-         Class8848 var5 = Class3262.method11774(this, var4);
-         return !var5.method32105() ? var5 : new Class8848(Class8514.field37797);
+         ItemStack var5 = Class3262.method11774(this, var4);
+         return !var5.method32105() ? var5 : new ItemStack(Class8514.field37797);
       }
    }
 }

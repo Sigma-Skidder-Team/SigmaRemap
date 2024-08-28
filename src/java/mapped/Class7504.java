@@ -8,11 +8,11 @@ public class Class7504 implements Class7502 {
    private static String[] field32224;
    private final List<String> field32225;
 
-   public Class7504(Class8848 var1) {
+   public Class7504(ItemStack var1) {
       this.field32225 = method24463(var1);
    }
 
-   private static List<String> method24463(Class8848 var0) {
+   private static List<String> method24463(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return (List<String>)(var3 == null ? ImmutableList.of() : Class870.method2696(var3));
    }

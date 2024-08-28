@@ -13,7 +13,7 @@ public class Class3301 extends Class3298 {
       Validate.isInstanceOf(Class3359.class, var2);
    }
 
-   public static void method11848(Class8848 var0, List<ITextComponent> var1) {
+   public static void method11848(ItemStack var0, List<ITextComponent> var1) {
       Class39 var4 = var0.method32145("BlockEntityTag");
       if (var4 != null && var4.method118("Patterns")) {
          Class41 var5 = var4.method131("Patterns", 10);
@@ -34,7 +34,7 @@ public class Class3301 extends Class3298 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       method11848(var1, var3);
    }
 }

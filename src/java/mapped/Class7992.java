@@ -432,7 +432,7 @@ public class Class7992 {
       var5.add(var0);
    }
 
-   public static Class7202 method27268(Class8848 var0, Class7202 var1, ResourceLocation var2, boolean var3) {
+   public static Class7202 method27268(ItemStack var0, Class7202 var1, ResourceLocation var2, boolean var3) {
       if (!var3 && var1.method22621()) {
          return var1;
       } else if (field34350 != null) {
@@ -448,7 +448,7 @@ public class Class7992 {
       }
    }
 
-   public static ResourceLocation method27269(Class8848 var0, Class2106 var1, String var2, ResourceLocation var3) {
+   public static ResourceLocation method27269(ItemStack var0, Class2106 var1, String var2, ResourceLocation var3) {
       if (field34350 != null) {
          ResourceLocation var6 = method27270(var0, var1, var2);
          return var6 != null ? var6 : var3;
@@ -457,7 +457,7 @@ public class Class7992 {
       }
    }
 
-   private static ResourceLocation method27270(Class8848 var0, Class2106 var1, String var2) {
+   private static ResourceLocation method27270(ItemStack var0, Class2106 var1, String var2) {
       Class8090 var5 = method27272(var0, 3);
       if (var5 != null) {
          if (var5.field34791 != null) {
@@ -490,7 +490,7 @@ public class Class7992 {
       }
    }
 
-   public static ResourceLocation method27271(Class8848 var0, ResourceLocation var1) {
+   public static ResourceLocation method27271(ItemStack var0, ResourceLocation var1) {
       if (field34350 != null) {
          Class8090 var4 = method27272(var0, 4);
          if (var4 != null) {
@@ -503,7 +503,7 @@ public class Class7992 {
       }
    }
 
-   private static Class8090 method27272(Class8848 var0, int var1) {
+   private static Class8090 method27272(ItemStack var0, int var1) {
       if (field34350 != null) {
          if (var0 == null) {
             return null;
@@ -529,7 +529,7 @@ public class Class7992 {
       }
    }
 
-   private static boolean method27273(Class8090 var0, Class8848 var1, int[][] var2) {
+   private static boolean method27273(Class8090 var0, ItemStack var1, int[][] var2) {
       Class3257 var5 = var1.method32107();
       if (var0.field34776 != null) {
          int var6 = method27274(var1);
@@ -620,12 +620,12 @@ public class Class7992 {
       }
    }
 
-   private static int method27274(Class8848 var0) {
+   private static int method27274(ItemStack var0) {
       Class3257 var3 = var0.method32107();
       return !(var3 instanceof Class3323) ? var0.method32117() : method27275(var0);
    }
 
-   private static int method27275(Class8848 var0) {
+   private static int method27275(ItemStack var0) {
       Class39 var3 = var0.method32142();
       if (var3 != null) {
          String var4 = var3.method126("Potion");
@@ -685,7 +685,7 @@ public class Class7992 {
       }
    }
 
-   private static int[][] method27278(Class8848 var0) {
+   private static int[][] method27278(ItemStack var0) {
       Class3257 var3 = var0.method32107();
       Class41 var4;
       if (var3 != Class8514.field38070) {
@@ -717,7 +717,7 @@ public class Class7992 {
       }
    }
 
-   public static boolean method27279(Class216 var0, Class8848 var1, Class7202 var2) {
+   public static boolean method27279(Class216 var0, ItemStack var1, Class7202 var2) {
       if (field34351 == null) {
          return false;
       } else if (var1 == null) {
@@ -784,7 +784,7 @@ public class Class7992 {
    }
 
    public static boolean method27280(
-      Class880 var0, Class8848 var1, Class2827 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9
+           Class880 var0, ItemStack var1, Class2827 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9
    ) {
       if (field34351 == null) {
          return false;

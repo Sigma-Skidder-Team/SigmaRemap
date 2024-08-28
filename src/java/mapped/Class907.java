@@ -116,7 +116,7 @@ public class Class907 extends Entity {
                         ((Class3213)var3).method11600(this.field5024, var18, this);
                      }
                   } else {
-                     boolean var10 = var19.method23441(new Class5910(this.field5024, var18, Direction.field672, ItemStack.field39973, Direction.field673));
+                     boolean var10 = var19.method23441(new Class5910(this.field5024, var18, Direction.field672, ItemStack.EMPTY, Direction.field673));
                      boolean var11 = Class3213.method11598(this.field5024.method6738(var18.method8313())) && (!var5 || !var6);
                      boolean var12 = this.field5176.method23443(this.field5024, var18) && !var11;
                      if (var10 && var12) {

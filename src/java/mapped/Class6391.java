@@ -42,7 +42,7 @@ public class Class6391 {
    }
 
    @Nullable
-   public Class7202 method19424(Class7202 var1, Class8848 var2, Class1656 var3, Class880 var4) {
+   public Class7202 method19424(Class7202 var1, ItemStack var2, Class1656 var3, Class880 var4) {
       boolean var7 = Class7944.method26953();
       if (var7) {
          field27977 = null;

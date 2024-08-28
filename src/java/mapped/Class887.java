@@ -23,7 +23,7 @@ public class Class887 extends Class884 {
       super(Class8992.field41007, var2, var1);
    }
 
-   public void method3497(Class8848 var1) {
+   public void method3497(ItemStack var1) {
       if (var1.method32107() != Class8514.field38117) {
          if (var1.method32107() == Class8514.field37797) {
             this.field5117 = Class8137.field34976;
@@ -48,7 +48,7 @@ public class Class887 extends Class884 {
       }
    }
 
-   public static int method3498(Class8848 var0) {
+   public static int method3498(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return var3 != null && var3.method119("CustomPotionColor", 99) ? var3.method122("CustomPotionColor") : -1;
    }
@@ -168,11 +168,11 @@ public class Class887 extends Class884 {
    }
 
    @Override
-   public Class8848 method3480() {
+   public ItemStack method3480() {
       if (this.field5118.isEmpty() && this.field5117 == Class8137.field34976) {
-         return new Class8848(Class8514.field37797);
+         return new ItemStack(Class8514.field37797);
       } else {
-         Class8848 var3 = new Class8848(Class8514.field38117);
+         ItemStack var3 = new ItemStack(Class8514.field38117);
          Class9741.method38187(var3, this.field5117);
          Class9741.method38188(var3, this.field5118);
          if (this.field5119) {

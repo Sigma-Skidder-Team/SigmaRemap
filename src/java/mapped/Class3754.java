@@ -60,7 +60,7 @@ public class Class3754 extends Class3676<Class1042> {
 
    private static void method12722(Class1042 var0, Set<Class3257> var1, Class880 var2) {
       Class927 var5 = var0.method4752();
-      ItemStack var6 = ItemStack.field39973;
+      ItemStack var6 = ItemStack.EMPTY;
 
       for (int var7 = 0; var7 < var5.method3629(); var7++) {
          ItemStack var8 = var5.method3618(var7);

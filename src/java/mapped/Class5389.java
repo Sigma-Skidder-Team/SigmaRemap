@@ -16,7 +16,7 @@ public class Class5389 extends Module {
    public void method16976(TickEvent var1) {
       if (this.method15996() && mc.field1339 != null) {
          if (mc.field1339.method3148()) {
-            Class8848 var4 = mc.field1339.method3158();
+            ItemStack var4 = mc.field1339.method3158();
             if (var4 != null
                && (var4.method32138() == Class2103.field13708 || var4.method32138() == Class2103.field13707)
                && (float) mc.field1339.method3159() < this.method15977("Speed") * 32.0F) {

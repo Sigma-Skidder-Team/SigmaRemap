@@ -13,12 +13,12 @@ public class Class976 extends Class927 implements Class930 {
    }
 
    @Override
-   public boolean method3654(int var1, Class8848 var2, Direction var3) {
+   public boolean method3654(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 
    @Override
-   public boolean method3655(int var1, Class8848 var2, Direction var3) {
+   public boolean method3655(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 }

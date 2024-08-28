@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Class266 implements Class215 {
    private static String[] field1029;
-   public static final Class9434<Class8848> field1030 = new Class9434<Class8848>();
-   public static final Class9434<Class8848> field1031 = new Class9434<Class8848>();
+   public static final Class9434<ItemStack> field1030 = new Class9434<ItemStack>();
+   public static final Class9434<ItemStack> field1031 = new Class9434<ItemStack>();
    public static final Class9434<Class9266> field1032 = new Class9434<Class9266>();
    private final Map<Class9434<?>, Class7010<?>> field1033 = Maps.newHashMap();
 

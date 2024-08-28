@@ -168,7 +168,7 @@ public class Class1038 extends Class1009 {
                   var4.method32118(var4.method32117() + this.field5054.nextInt(2));
                   if (var4.method32117() >= var4.method32119()) {
                      this.method3184(Class2106.field13736);
-                     this.method2944(Class2106.field13736, ItemStack.field39973);
+                     this.method2944(Class2106.field13736, ItemStack.EMPTY);
                   }
                }
 

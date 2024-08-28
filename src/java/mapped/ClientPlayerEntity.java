@@ -225,7 +225,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       this.connection.sendPacket(new Class5492(var4, BlockPos.field13032, Direction.field672));
       return this.field4902
             .method3619(this.field4902.field5443, var1 && !this.field4902.method4028().method32105() ? this.field4902.method4028().method32179() : 1)
-         != ItemStack.field39973;
+         != ItemStack.EMPTY;
    }
 
    public void method5389(String var1) {
@@ -257,7 +257,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5390() {
-      this.field4902.method4056(ItemStack.field39973);
+      this.field4902.method4056(ItemStack.EMPTY);
       super.method2772();
       this.field6132.displayGuiScreen((Screen)null);
    }
@@ -452,7 +452,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method3154(Hand var1) {
-      ItemStack var4 = this.method3094(var1);
+      ItemStack var4 = this.getHeldItem(var1);
       if (!var4.method32105() && !this.method3148()) {
          super.method3154(var1);
          this.field6143 = true;

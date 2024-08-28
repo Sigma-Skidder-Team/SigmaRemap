@@ -33,21 +33,21 @@ public class Class5824 extends Class5823 {
    }
 
    @Override
-   public Class8848 method18190(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18190(PlayerEntity var1, ItemStack var2) {
       if (!var1.field4919.field29609) {
          var1.method2727(-this.field25520.method15234());
       }
 
-      this.field25513.method3621(0, Class8848.field39973);
+      this.field25513.method3621(0, ItemStack.EMPTY);
       if (this.field25518 <= 0) {
-         this.field25513.method3621(1, Class8848.field39973);
+         this.field25513.method3621(1, ItemStack.EMPTY);
       } else {
-         Class8848 var5 = this.field25513.method3618(1);
+         ItemStack var5 = this.field25513.method3618(1);
          if (!var5.method32105() && var5.method32179() > this.field25518) {
             var5.method32182(this.field25518);
             this.field25513.method3621(1, var5);
          } else {
-            this.field25513.method3621(1, Class8848.field39973);
+            this.field25513.method3621(1, ItemStack.EMPTY);
          }
       }
 
@@ -72,17 +72,17 @@ public class Class5824 extends Class5823 {
 
    @Override
    public void method18192() {
-      Class8848 var3 = this.field25513.method3618(0);
+      ItemStack var3 = this.field25513.method3618(0);
       this.field25520.method15235(1);
       int var4 = 0;
       int var5 = 0;
       int var6 = 0;
       if (var3.method32105()) {
-         this.field25512.method3621(0, Class8848.field39973);
+         this.field25512.method3621(0, ItemStack.EMPTY);
          this.field25520.method15235(0);
       } else {
-         Class8848 var7 = var3.method32126();
-         Class8848 var8 = this.field25513.method3618(1);
+         ItemStack var7 = var3.copy();
+         ItemStack var8 = this.field25513.method3618(1);
          Map<Class6069, Integer> var9 = Class7858.method26312(var7);
          var5 = var5 + var3.method32169() + (var8.method32105() ? 0 : var8.method32169());
          this.field25518 = 0;
@@ -91,7 +91,7 @@ public class Class5824 extends Class5823 {
             if (var7.method32115() && var7.method32107().method11699(var3, var8)) {
                int var24 = Math.min(var7.method32117(), var7.method32119() / 4);
                if (var24 <= 0) {
-                  this.field25512.method3621(0, Class8848.field39973);
+                  this.field25512.method3621(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
                }
@@ -107,7 +107,7 @@ public class Class5824 extends Class5823 {
                this.field25518 = var26;
             } else {
                if (!var10 && (var7.method32107() != var8.method32107() || !var7.method32115())) {
-                  this.field25512.method3621(0, Class8848.field39973);
+                  this.field25512.method3621(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
                }
@@ -186,7 +186,7 @@ public class Class5824 extends Class5823 {
                }
 
                if (var27 && !var25) {
-                  this.field25512.method3621(0, Class8848.field39973);
+                  this.field25512.method3621(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
                }
@@ -207,7 +207,7 @@ public class Class5824 extends Class5823 {
 
          this.field25520.method15235(var5 + var4);
          if (var4 <= 0) {
-            var7 = Class8848.field39973;
+            var7 = ItemStack.EMPTY;
          }
 
          if (var6 == var4 && var6 > 0 && this.field25520.method15234() >= 40) {
@@ -215,7 +215,7 @@ public class Class5824 extends Class5823 {
          }
 
          if (this.field25520.method15234() >= 40 && !this.field25515.field4919.field29609) {
-            var7 = Class8848.field39973;
+            var7 = ItemStack.EMPTY;
          }
 
          if (!var7.method32105()) {
@@ -244,7 +244,7 @@ public class Class5824 extends Class5823 {
    public void method18197(String var1) {
       this.field25519 = var1;
       if (this.method18131(2).method18266()) {
-         Class8848 var4 = this.method18131(2).method18265();
+         ItemStack var4 = this.method18131(2).method18265();
          if (!StringUtils.isBlank(var1)) {
             var4.method32150(new StringTextComponent(this.field25519));
          } else {

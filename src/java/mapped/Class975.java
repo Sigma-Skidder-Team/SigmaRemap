@@ -25,18 +25,18 @@ public class Class975 extends Class927 implements Class930 {
    }
 
    @Override
-   public boolean method3654(int var1, Class8848 var2, Direction var3) {
+   public boolean method3654(int var1, ItemStack var2, Direction var3) {
       return !this.field5450 && var3 == Direction.field673 && Class3475.field19327.containsKey(var2.method32107());
    }
 
    @Override
-   public boolean method3655(int var1, Class8848 var2, Direction var3) {
+   public boolean method3655(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 
    @Override
    public void method3622() {
-      Class8848 var3 = this.method3618(0);
+      ItemStack var3 = this.method3618(0);
       if (!var3.method32105()) {
          this.field5450 = true;
          Class7380 var4 = Class3475.method12172(this.field5447, this.field5448, this.field5449, var3);

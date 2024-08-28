@@ -33,22 +33,22 @@ public class Class990 implements Class920 {
    }
 
    @Override
-   public Class8848 method3618(int var1) {
+   public ItemStack method3618(int var1) {
       return var1 < this.field5475.method3629() ? this.field5475.method3618(var1) : this.field5476.method3618(var1 - this.field5475.method3629());
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       return var1 < this.field5475.method3629() ? this.field5475.method3619(var1, var2) : this.field5476.method3619(var1 - this.field5475.method3629(), var2);
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       return var1 < this.field5475.method3629() ? this.field5475.method3620(var1) : this.field5476.method3620(var1 - this.field5475.method3629());
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
       if (var1 < this.field5475.method3629()) {
          this.field5475.method3621(var1, var2);
       } else {
@@ -85,7 +85,7 @@ public class Class990 implements Class920 {
    }
 
    @Override
-   public boolean method3633(int var1, Class8848 var2) {
+   public boolean method3633(int var1, ItemStack var2) {
       return var1 < this.field5475.method3629() ? this.field5475.method3633(var1, var2) : this.field5476.method3633(var1 - this.field5475.method3629(), var2);
    }
 

@@ -19,8 +19,8 @@ public class Class4685 extends Class4686 {
    }
 
    @Override
-   public void method14695(Consumer<Class8848> var1, Class7812 var2) {
-      this.field22263.method24918().forEach(var1x -> var1.accept(new Class8848(var1x)));
+   public void method14695(Consumer<ItemStack> var1, Class7812 var2) {
+      this.field22263.method24918().forEach(var1x -> var1.accept(new ItemStack(var1x)));
    }
 
    private boolean method14696(Class7812 var1, Consumer<Class6549> var2) {

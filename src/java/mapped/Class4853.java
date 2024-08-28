@@ -19,7 +19,7 @@ public class Class4853 extends Class4852 {
             Class120.method339(Class8514.field37899),
             Class120.method339(Class8514.field37899)
          ),
-         new Class8848(Class8514.field38056)
+         new ItemStack(Class8514.field38056)
       );
    }
 
@@ -28,10 +28,10 @@ public class Class4853 extends Class4852 {
       if (!super.method14963(var1, var2)) {
          return false;
       } else {
-         Class8848 var5 = Class8848.field39973;
+         ItemStack var5 = ItemStack.EMPTY;
 
          for (int var6 = 0; var6 < var1.method3629() && var5.method32105(); var6++) {
-            Class8848 var7 = var1.method3618(var6);
+            ItemStack var7 = var1.method3618(var6);
             if (var7.method32107() == Class8514.field37955) {
                var5 = var7;
             }
@@ -63,17 +63,17 @@ public class Class4853 extends Class4852 {
    }
 
    @Override
-   public Class8848 method14962(Class926 var1) {
-      Class8848 var4 = Class8848.field39973;
+   public ItemStack method14962(Class926 var1) {
+      ItemStack var4 = ItemStack.EMPTY;
 
       for (int var5 = 0; var5 < var1.method3629() && var4.method32105(); var5++) {
-         Class8848 var6 = var1.method3618(var5);
+         ItemStack var6 = var1.method3618(var5);
          if (var6.method32107() == Class8514.field37955) {
             var4 = var6;
          }
       }
 
-      var4 = var4.method32126();
+      var4 = var4.copy();
       var4.method32180(1);
       var4.method32143().method102("map_scale_direction", 1);
       return var4;

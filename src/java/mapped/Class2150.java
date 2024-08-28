@@ -6,18 +6,18 @@ import net.minecraft.util.text.TranslationTextComponent;
 import java.util.Optional;
 
 public enum Class2150 {
-   field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new Class8848(Blocks.field36395)),
-   field14056(new TranslationTextComponent("gameMode.survival"), "/gamemode survival", new Class8848(Class8514.field37820)),
-   field14057(new TranslationTextComponent("gameMode.adventure"), "/gamemode adventure", new Class8848(Class8514.field38056)),
-   field14058(new TranslationTextComponent("gameMode.spectator"), "/gamemode spectator", new Class8848(Class8514.field37979));
+   field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new ItemStack(Blocks.field36395)),
+   field14056(new TranslationTextComponent("gameMode.survival"), "/gamemode survival", new ItemStack(Class8514.field37820)),
+   field14057(new TranslationTextComponent("gameMode.adventure"), "/gamemode adventure", new ItemStack(Class8514.field38056)),
+   field14058(new TranslationTextComponent("gameMode.spectator"), "/gamemode spectator", new ItemStack(Class8514.field37979));
 
    public static final Class2150[] field14059 = values();
    public final ITextComponent field14060;
    public final String field14061;
-   public final Class8848 field14062;
+   public final ItemStack field14062;
    private static final Class2150[] field14063 = new Class2150[]{field14055, field14056, field14057, field14058};
 
-   private Class2150(ITextComponent var3, String var4, Class8848 var5) {
+   private Class2150(ITextComponent var3, String var4, ItemStack var5) {
       this.field14060 = var3;
       this.field14061 = var4;
       this.field14062 = var5;

@@ -28,7 +28,7 @@ public class Class3283 extends Class3257 {
       BlockPos var5 = var1.method18345();
       Class7380 var6 = var4.method6738(var5);
       if (var6.method23448(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
-         Class8848 var7 = var1.method18357();
+         ItemStack var7 = var1.method18357();
          if (!var4.field9020) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);
             var4.method6869((PlayerEntity)null, 1010, var5, Class3257.method11701(this));
@@ -50,7 +50,7 @@ public class Class3283 extends Class3257 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       var3.add(this.method11813().mergeStyle(TextFormatting.GRAY));
    }
 

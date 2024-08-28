@@ -59,10 +59,10 @@ public class Class2623 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class8848 var3 = this.field16917.method2943(Class2106.field13731);
+      ItemStack var3 = this.field16917.method2943(Class2106.field13731);
       if (!var3.method32105()) {
          this.field16917.method3302(var3);
-         this.field16917.method2944(Class2106.field13731, Class8848.field39973);
+         this.field16917.method2944(Class2106.field13731, ItemStack.EMPTY);
          int var4 = !this.field16917.method5210()
             ? Class1097.method5248(this.field16917).nextInt(150) + 10
             : Class1097.method5247(this.field16917).nextInt(50) + 10;

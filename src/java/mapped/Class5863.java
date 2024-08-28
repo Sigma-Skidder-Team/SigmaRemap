@@ -15,12 +15,12 @@ public class Class5863 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return false;
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       this.field25630.method31716((var1x, var2x) -> {
          int var5 = this.method18279(var1x);
 
@@ -32,8 +32,8 @@ public class Class5863 extends Class5839 {
 
          var1x.method6999(1042, var2x, 0);
       });
-      Class5815.method18171(this.field25631).method3621(0, Class8848.field39973);
-      Class5815.method18171(this.field25631).method3621(1, Class8848.field39973);
+      Class5815.method18171(this.field25631).method3621(0, ItemStack.EMPTY);
+      Class5815.method18171(this.field25631).method3621(1, ItemStack.EMPTY);
       return var2;
    }
 
@@ -49,7 +49,7 @@ public class Class5863 extends Class5839 {
       }
    }
 
-   private int method18280(Class8848 var1) {
+   private int method18280(ItemStack var1) {
       int var4 = 0;
       Map<Class6069, Integer> var5 = Class7858.method26312(var1);
 

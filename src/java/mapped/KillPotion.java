@@ -13,7 +13,7 @@ public class KillPotion extends Command {
    public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
       if (var2.length <= 0) {
          if (!mc.field1337.method23151()) {
-            Class8848 var6 = new Class8848(Class8514.field38115);
+            ItemStack var6 = new ItemStack(Class8514.field38115);
             Class39 var7 = new Class39();
             var7.method102("Amplifier", 125);
             var7.method102("Duration", 2000);

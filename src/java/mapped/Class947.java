@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class947 extends Class944 implements Class946 {
-   private Class8848 field5332 = Class8848.field39973;
+   private ItemStack field5332 = ItemStack.EMPTY;
 
    public Class947() {
       super(Class4387.field21425);
@@ -11,7 +11,7 @@ public class Class947 extends Class944 implements Class946 {
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
       if (var2.method119("RecordItem", 10)) {
-         this.method3804(Class8848.method32104(var2.method130("RecordItem")));
+         this.method3804(ItemStack.method32104(var2.method130("RecordItem")));
       }
    }
 
@@ -25,17 +25,17 @@ public class Class947 extends Class944 implements Class946 {
       return var1;
    }
 
-   public Class8848 method3803() {
+   public ItemStack method3803() {
       return this.field5332;
    }
 
-   public void method3804(Class8848 var1) {
+   public void method3804(ItemStack var1) {
       this.field5332 = var1;
       this.method3622();
    }
 
    @Override
    public void method3625() {
-      this.method3804(Class8848.field39973);
+      this.method3804(ItemStack.EMPTY);
    }
 }

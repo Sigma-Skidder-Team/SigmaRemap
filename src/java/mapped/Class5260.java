@@ -37,13 +37,13 @@ public class Class5260 extends PremiumModule {
         this.method15972(new Class6004("Auto Shield", "Automatically equip shields for 1.9+.", false));
     }
 
-    public static boolean method16431(Class8848 var0) {
+    public static boolean method16431(ItemStack var0) {
         float var3 = method16433(var0);
         Module var4 = Client.getInstance().getModuleManager().method14662(Class5260.class);
 
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.field1339.field4904.method18131(var5).method18266()) {
-                Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                 if (method16433(var6) > var3 && (var6.method32107() instanceof Class3267 || !var4.method15974("Sword"))) {
                     return false;
                 }
@@ -53,7 +53,7 @@ public class Class5260 extends PremiumModule {
         return var0.method32107() instanceof Class3267 || !var4.method15974("Sword");
     }
 
-    public static float method16433(Class8848 var0) {
+    public static float method16433(ItemStack var0) {
         float var3 = 0.0F;
         Class3257 var4 = var0.method32107();
         if (var4 instanceof Class3264) {
@@ -74,7 +74,7 @@ public class Class5260 extends PremiumModule {
 
         for (int var4 = 0; var4 < 45; var4++) {
             if (mc.field1339.field4904.method18131(var4).method18266()) {
-                Class8848 var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
                 if (var5.method32107() == var0) {
                     var3 += var5.field39976;
                 }
@@ -84,14 +84,14 @@ public class Class5260 extends PremiumModule {
         return var3;
     }
 
-    public static boolean method16442(Class8848 var0) {
+    public static boolean method16442(ItemStack var0) {
         Class3257 var3 = var0.method32107();
         if (var3 instanceof Class3268) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                     if (method16445(var6) > var4 && var6.method32107() instanceof Class3268) {
                         return false;
                     }
@@ -104,14 +104,14 @@ public class Class5260 extends PremiumModule {
         }
     }
 
-    public static boolean method16443(Class8848 var0) {
+    public static boolean method16443(ItemStack var0) {
         Class3257 var3 = var0.method32107();
         if (var3 instanceof Class3270) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                     if (method16445(var6) > var4 && var6.method32107() instanceof Class3270) {
                         return false;
                     }
@@ -124,14 +124,14 @@ public class Class5260 extends PremiumModule {
         }
     }
 
-    public static boolean method16444(Class8848 var0) {
+    public static boolean method16444(ItemStack var0) {
         Class3257 var3 = var0.method32107();
         if (var3 instanceof Class3265) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                     if (method16445(var6) > var4 && var6.method32107() instanceof Class3265 && !method16431(var0)) {
                         return false;
                     }
@@ -144,7 +144,7 @@ public class Class5260 extends PremiumModule {
         }
     }
 
-    public static float method16445(Class8848 var0) {
+    public static float method16445(ItemStack var0) {
         Class3257 var3 = var0.method32107();
         if (var3 instanceof Class3264) {
             String var4 = var3.method11717().getString().toLowerCase();
@@ -237,7 +237,7 @@ public class Class5260 extends PremiumModule {
                         if ((long) Client.getInstance().method19939().method31333() >= var5 && this.method15974("Cleaner")) {
                             for (int var8 = 9; var8 < 45; var8++) {
                                 if (mc.field1339.field4904.method18131(var8).method18266()) {
-                                    Class8848 var9 = mc.field1339.field4904.method18131(var8).method18265();
+                                    ItemStack var9 = mc.field1339.field4904.method18131(var8).method18265();
                                     if (this.method16434(var9, var8)) {
                                         this.method16446(var4.equals("FakeInv"));
                                         Class7789.method25871(var8);
@@ -263,7 +263,7 @@ public class Class5260 extends PremiumModule {
     public void method16432(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.field1339.field4904.method18131(var5).method18266()) {
-                Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                 if (method16431(var6) && method16433(var6) > 0.0F && (var6.method32107() instanceof Class3267 || !this.method15974("Sword"))) {
                     this.method16446(var2);
                     Class7789.method25873(var5, var1 - 36);
@@ -274,7 +274,7 @@ public class Class5260 extends PremiumModule {
         }
     }
 
-    public boolean method16434(Class8848 var1, int var2) {
+    public boolean method16434(ItemStack var1, int var2) {
         Class3257 var5 = var1.method32107();
         if (var1.method32149().getString().toLowerCase().contains("(right click)")
                 || var1.method32149().getString().toLowerCase().contains("(clique direito)")
@@ -309,7 +309,7 @@ public class Class5260 extends PremiumModule {
 
                 for (Class2106 var9 : Class2106.values()) {
                     if (mc.field1339.field4904.method18131(8 - var9.method8773()).method18266()) {
-                        Class8848 var10 = mc.field1339.field4904.method18131(8 - var9.method8773()).method18265();
+                        ItemStack var10 = mc.field1339.field4904.method18131(8 - var9.method8773()).method18265();
                         if (!Class7789.method25872(var10)) {
                         }
                     }
@@ -376,7 +376,7 @@ public class Class5260 extends PremiumModule {
 
         for (int var4 = 0; var4 < 45; var4++) {
             if (mc.field1339.field4904.method18131(var4).method18266()) {
-                Class8848 var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
                 Class3257 var6 = var5.method32107();
                 if (var5.method32107() instanceof Class3292 && !BlockFly.field23883.contains(((Class3292) var6).method11845())) {
                     var3 += var5.field39976;
@@ -390,7 +390,7 @@ public class Class5260 extends PremiumModule {
     private void method16438(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.field1339.field4904.method18131(var5).method18266()) {
-                Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                 if (method16442(var6) && field23655 != var5 && !method16431(var6)) {
                     if (mc.field1339.field4904.method18131(field23655).method18266()) {
                         if (!method16442(mc.field1339.field4904.method18131(field23655).method18265())) {
@@ -417,7 +417,7 @@ public class Class5260 extends PremiumModule {
     private void method16439(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.field1339.field4904.method18131(var5).method18266()) {
-                Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                 if (method16443(var6) && field23657 != var5 && !method16431(var6)) {
                     if (mc.field1339.field4904.method18131(field23657).method18266()) {
                         if (!method16443(mc.field1339.field4904.method18131(field23657).method18265())) {
@@ -444,7 +444,7 @@ public class Class5260 extends PremiumModule {
     private void method16440(int var1, boolean var2) {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.field1339.field4904.method18131(var5).method18266()) {
-                Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                 if (method16444(var6) && field23656 != var5 && !method16431(var6)) {
                     if (mc.field1339.field4904.method18131(field23656).method18266()) {
                         if (!method16444(mc.field1339.field4904.method18131(field23656).method18265())) {
@@ -471,7 +471,7 @@ public class Class5260 extends PremiumModule {
     private void method16441(boolean var1) {
         if (!mc.field1339.field4904.method18131(45).method18266()) {
             for (int var4 = 9; var4 < 45; var4++) {
-                Class8848 var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
                 if (var5.method32107() instanceof Class3334) {
                     this.method16446(var1);
                     this.field23658.method27120();

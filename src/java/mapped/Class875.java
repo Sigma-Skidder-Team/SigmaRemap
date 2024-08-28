@@ -53,7 +53,7 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    }
 
    @Override
-   public void method2718(Class5812 var1, Class25<Class8848> var2) {
+   public void method2718(Class5812 var1, Class25<ItemStack> var2) {
       this.method2720(var1, 0, var1.method18131(0).method18265());
    }
 
@@ -62,6 +62,6 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    }
 
    @Override
-   public void method2720(Class5812 var1, int var2, Class8848 var3) {
+   public void method2720(Class5812 var1, int var2, ItemStack var3) {
    }
 }

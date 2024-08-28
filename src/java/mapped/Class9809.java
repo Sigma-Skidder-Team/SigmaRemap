@@ -23,7 +23,7 @@ public class Class9809 {
    private final Class2853 field45851 = new Class2853();
    private final Class2842 field45852 = new Class2842();
 
-   public void method38685(Class8848 var1, Class2327 var2, Class9332 var3, Class7733 var4, int var5, int var6) {
+   public void method38685(ItemStack var1, Class2327 var2, Class9332 var3, Class7733 var4, int var5, int var6) {
       if (Class8564.method30588()) {
          Class8564.method30590();
       }
@@ -40,7 +40,7 @@ public class Class9809 {
       }
    }
 
-   public void method38686(Class8848 var1, Class9332 var2, Class7733 var3, int var4, int var5) {
+   public void method38686(ItemStack var1, Class9332 var2, Class7733 var3, int var4, int var5) {
       Class3257 var8 = var1.method32107();
       if (!(var8 instanceof Class3292)) {
          if (var8 != Class8514.field38119) {

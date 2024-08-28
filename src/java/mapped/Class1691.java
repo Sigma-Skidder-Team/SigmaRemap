@@ -148,7 +148,7 @@ public class Class1691 implements Class1658 {
       if (!var7.method23393()) {
          if (var2) {
             Class944 var8 = !var7.method23383().method11998() ? null : this.method6759(var1);
-            Block.method11556(var7, this.field9205, var1, var8, var3, ItemStack.field39973);
+            Block.method11556(var7, this.field9205, var1, var8, var3, ItemStack.EMPTY);
          }
 
          return this.method6726(var1, Blocks.AIR.method11579(), 3, var4);

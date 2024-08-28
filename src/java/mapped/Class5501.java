@@ -6,15 +6,15 @@ public class Class5501 implements Packet<Class5116> {
    private static String[] field24423;
    private int field24424;
    private int field24425;
-   private Class8848 field24426 = Class8848.field39973;
+   private ItemStack field24426 = ItemStack.EMPTY;
 
    public Class5501() {
    }
 
-   public Class5501(int var1, int var2, Class8848 var3) {
+   public Class5501(int var1, int var2, ItemStack var3) {
       this.field24424 = var1;
       this.field24425 = var2;
-      this.field24426 = var3.method32126();
+      this.field24426 = var3.copy();
    }
 
    public void method17180(Class5116 var1) {
@@ -43,7 +43,7 @@ public class Class5501 implements Packet<Class5116> {
       return this.field24425;
    }
 
-   public Class8848 method17305() {
+   public ItemStack method17305() {
       return this.field24426;
    }
 }

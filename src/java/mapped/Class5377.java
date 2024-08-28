@@ -123,7 +123,7 @@ public class Class5377 extends Module {
                 if (mc.field1355 instanceof Class856) {
                     Class856 var6 = (Class856) mc.field1355;
                     var5.field30453 = var6.method2628().method18131(0).method18265();
-                    var5.field30454 = new Class8848(var6.method2628().method18131(1).method18265().method32107());
+                    var5.field30454 = new ItemStack(var6.method2628().method18131(1).method18265().method32107());
                     var5.field30454.field39976 = var6.method2628().method18131(1).method18265().field39976;
                     var5.field30455 = var6.method2628().method18131(2).method18265();
                 }
@@ -151,13 +151,13 @@ public class Class5377 extends Module {
                 }
 
                 if (var6.method17304() == 0) {
-                    var5.field30453 = new Class8848(var6.method17305().method32107());
+                    var5.field30453 = new ItemStack(var6.method17305().method32107());
                     var5.field30453.field39976 = var6.method17305().field39976;
                 } else if (var6.method17304() == 1) {
-                    var5.field30454 = new Class8848(var6.method17305().method32107());
+                    var5.field30454 = new ItemStack(var6.method17305().method32107());
                     var5.field30454.field39976 = var6.method17305().field39976;
                 } else if (var6.method17304() == 2) {
-                    var5.field30455 = new Class8848(var6.method17305().method32107());
+                    var5.field30455 = new ItemStack(var6.method17305().method32107());
                     var5.field30455.field39976 = var6.method17305().field39976;
                 }
             }
@@ -321,7 +321,7 @@ public class Class5377 extends Module {
         float var14 = 0.008F;
         GL11.glScalef(-var14 * var3, -var14 * var3, -var14 * var3);
         int var15 = 0;
-        Class8848 var16 = var2.method21987();
+        ItemStack var16 = var2.method21987();
         if (var16 != null) {
             var15 = Math.max(ResourceRegistry.JelloLightFont20.method23942(var16.method32149().getString()), 50);
         } else {
@@ -341,7 +341,7 @@ public class Class5377 extends Module {
             );
         }
 
-        Class8848 var20 = var2.method21987();
+        ItemStack var20 = var2.method21987();
         if (var20 != null) {
             Class3192.method11479(var20, var13, var13 + 27, 45, 45);
             Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), Class1979.field12896.field12910);

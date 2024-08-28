@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class973 extends Class939 {
-   private Class25<Class8848> field5437 = Class25.<Class8848>method68(27, Class8848.field39973);
+   private Class25<ItemStack> field5437 = Class25.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5438;
 
    private Class973(Class4387<?> var1) {
@@ -28,7 +28,7 @@ public class Class973 extends Class939 {
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5437 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5437 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5437);
       }
@@ -40,12 +40,12 @@ public class Class973 extends Class939 {
    }
 
    @Override
-   public Class25<Class8848> method3724() {
+   public Class25<ItemStack> method3724() {
       return this.field5437;
    }
 
    @Override
-   public void method3725(Class25<Class8848> var1) {
+   public void method3725(Class25<ItemStack> var1) {
       this.field5437 = var1;
    }
 

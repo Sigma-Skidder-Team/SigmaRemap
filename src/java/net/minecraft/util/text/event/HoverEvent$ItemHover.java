@@ -13,7 +13,7 @@ public class HoverEvent$ItemHover {
    private final Class3257 item;
    private final int count;
    private final Class39 tag;
-   private Class8848 stack;
+   private ItemStack stack;
 
    public HoverEvent$ItemHover(Class3257 item, int count, Class39 tag) {
       this.item = item;
@@ -21,7 +21,7 @@ public class HoverEvent$ItemHover {
       this.tag = tag;
    }
 
-   public HoverEvent$ItemHover(Class8848 stack) {
+   public HoverEvent$ItemHover(ItemStack stack) {
       this(stack.method32107(), stack.method32179(), stack.method32142() != null ? stack.method32142().method79() : null);
    }
 
@@ -44,9 +44,9 @@ public class HoverEvent$ItemHover {
       return 31 * var3 + (this.tag != null ? this.tag.hashCode() : 0);
    }
 
-   public Class8848 createStack() {
+   public ItemStack createStack() {
       if (this.stack == null) {
-         this.stack = new Class8848(this.item, this.count);
+         this.stack = new ItemStack(this.item, this.count);
          if (this.tag != null) {
             this.stack.method32148(this.tag);
          }
@@ -81,7 +81,7 @@ public class HoverEvent$ItemHover {
    private static HoverEvent$ItemHover deserialize(ITextComponent component) {
       try {
          Class39 var3 = Class7671.method25188(component.getString());
-         return new HoverEvent$ItemHover(Class8848.method32104(var3));
+         return new HoverEvent$ItemHover(ItemStack.method32104(var3));
       } catch (CommandSyntaxException var4) {
          HoverEvent.access$400().warn("Failed to parse item tag: {}", component, var4);
          return null;

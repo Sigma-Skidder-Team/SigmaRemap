@@ -9,8 +9,8 @@ public class Class242<T extends Class880, M extends Class2827<T> & Class2825> ex
 
    public void method820(Class9332 var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.method2967() == Class2205.field14418;
-      Class8848 var14 = !var13 ? var4.method3090() : var4.method3091();
-      Class8848 var15 = !var13 ? var4.method3091() : var4.method3090();
+      ItemStack var14 = !var13 ? var4.method3090() : var4.method3091();
+      ItemStack var15 = !var13 ? var4.method3091() : var4.method3090();
       if (!var14.method32105() || !var15.method32105()) {
          var1.method35294();
          if (this.method825().field17602) {
@@ -25,7 +25,7 @@ public class Class242<T extends Class880, M extends Class2827<T> & Class2825> ex
       }
    }
 
-   private void method838(Class880 var1, Class8848 var2, Class2327 var3, Class2205 var4, Class9332 var5, Class7733 var6, int var7) {
+   private void method838(Class880 var1, ItemStack var2, Class2327 var3, Class2205 var4, Class9332 var5, Class7733 var6, int var7) {
       if (!var2.method32105()) {
          var5.method35294();
          this.method825().method11010(var4, var5);

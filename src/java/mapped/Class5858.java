@@ -10,16 +10,16 @@ public class Class5858 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return this.field25619.method18235(var1) || method18278(var1);
    }
 
    @Override
-   public int method18270(Class8848 var1) {
+   public int method18270(ItemStack var1) {
       return !method18278(var1) ? super.method18270(var1) : 1;
    }
 
-   public static boolean method18278(Class8848 var0) {
+   public static boolean method18278(ItemStack var0) {
       return var0.method32107() == Class8514.field37882;
    }
 }

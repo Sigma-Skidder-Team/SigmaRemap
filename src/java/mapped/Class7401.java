@@ -43,13 +43,13 @@ public abstract class Class7401 {
    private boolean field31683 = true;
    private boolean field31684 = true;
    private Class2242[] field31685 = new Class2242[0];
-   private Class8848 field31686;
+   private ItemStack field31686;
 
    public Class7401(int var1, String var2) {
       this.field31678 = var1;
       this.field31679 = var2;
       this.field31680 = new TranslationTextComponent("itemGroup." + var2);
-      this.field31686 = Class8848.field39973;
+      this.field31686 = ItemStack.EMPTY;
       field31664[var1] = this;
    }
 
@@ -65,7 +65,7 @@ public abstract class Class7401 {
       return this.field31680;
    }
 
-   public Class8848 method23644() {
+   public ItemStack method23644() {
       if (this.field31686.method32105()) {
          this.field31686 = this.method23640();
       }
@@ -73,7 +73,7 @@ public abstract class Class7401 {
       return this.field31686;
    }
 
-   public abstract Class8848 method23640();
+   public abstract ItemStack method23640();
 
    public String method23645() {
       return this.field31682;
@@ -140,7 +140,7 @@ public abstract class Class7401 {
       return false;
    }
 
-   public void method23658(Class25<Class8848> var1) {
+   public void method23658(Class25<ItemStack> var1) {
       for (Class3257 var5 : Class2348.field16075) {
          var5.method11737(this, var1);
       }

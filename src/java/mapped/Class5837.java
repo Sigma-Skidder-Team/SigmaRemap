@@ -60,10 +60,10 @@ public class Class5837 extends Class5812 {
 
    @Override
    public void method18106(Class920 var1) {
-      Class8848 var4 = this.field25567.method18265();
-      Class8848 var5 = this.field25568.method18265();
-      Class8848 var6 = this.field25569.method18265();
-      Class8848 var7 = this.field25570.method18265();
+      ItemStack var4 = this.field25567.method18265();
+      ItemStack var5 = this.field25568.method18265();
+      ItemStack var6 = this.field25569.method18265();
+      ItemStack var7 = this.field25570.method18265();
       if (var7.method32105()
          || !var4.method32105()
             && !var5.method32105()
@@ -79,7 +79,7 @@ public class Class5837 extends Class5812 {
             }
          }
       } else {
-         this.field25570.method18267(Class8848.field39973);
+         this.field25570.method18267(ItemStack.EMPTY);
          this.field25565.method15235(0);
       }
 
@@ -92,39 +92,39 @@ public class Class5837 extends Class5812 {
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
-         var5 = var7.method32126();
+         ItemStack var7 = var6.method18265();
+         var5 = var7.copy();
          if (var2 != this.field25570.field25579) {
             if (var2 != this.field25568.field25579 && var2 != this.field25567.field25579 && var2 != this.field25569.field25579) {
                if (var7.method32107() instanceof Class3301) {
                   if (!this.method18142(var7, this.field25567.field25579, this.field25567.field25579 + 1, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.EMPTY;
                   }
                } else if (var7.method32107() instanceof Class3321) {
                   if (!this.method18142(var7, this.field25568.field25579, this.field25568.field25579 + 1, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.EMPTY;
                   }
                } else if (var7.method32107() instanceof Class3286) {
                   if (!this.method18142(var7, this.field25569.field25579, this.field25569.field25579 + 1, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.EMPTY;
                   }
                } else if (var2 >= 4 && var2 < 31) {
                   if (!this.method18142(var7, 31, 40, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.EMPTY;
                   }
                } else if (var2 >= 31 && var2 < 40 && !this.method18142(var7, 4, 31, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method18142(var7, 4, 40, false)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method18142(var7, 4, 40, true)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
 
             var6.method18260(var7, var5);
@@ -133,11 +133,11 @@ public class Class5837 extends Class5812 {
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.EMPTY);
          }
 
          if (var7.method32179() == var5.method32179()) {
-            return Class8848.field39973;
+            return ItemStack.EMPTY;
          }
 
          var6.method18264(var1, var7);
@@ -154,11 +154,11 @@ public class Class5837 extends Class5812 {
 
    private void method18246() {
       if (this.field25565.method15234() > 0) {
-         Class8848 var3 = this.field25567.method18265();
-         Class8848 var4 = this.field25568.method18265();
-         Class8848 var5 = Class8848.field39973;
+         ItemStack var3 = this.field25567.method18265();
+         ItemStack var4 = this.field25568.method18265();
+         ItemStack var5 = ItemStack.EMPTY;
          if (!var3.method32105() && !var4.method32105()) {
-            var5 = var3.method32126();
+            var5 = var3.copy();
             var5.method32180(1);
             Class2154 var6 = Class2154.values()[this.field25565.method15234()];
             Class112 var7 = ((Class3321)var4.method32107()).method11876();
@@ -177,7 +177,7 @@ public class Class5837 extends Class5812 {
             var9.add(var10);
          }
 
-         if (!Class8848.method32128(var5, this.field25570.method18265())) {
+         if (!ItemStack.method32128(var5, this.field25570.method18265())) {
             this.field25570.method18267(var5);
          }
       }

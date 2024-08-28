@@ -53,8 +53,8 @@ public class Class3493 extends Class3194 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(this.method12188());
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(this.method12188());
    }
 
    @Override

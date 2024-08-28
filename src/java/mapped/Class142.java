@@ -40,7 +40,7 @@ public class Class142 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Class30 var5 = this.field479.field16024.apply(var2);
       if (var5 != null) {
          this.field480.forEach(var2x -> var2x.method37313(var1::method32143, var5));

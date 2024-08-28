@@ -30,8 +30,8 @@ public abstract class Class880 extends Entity {
    private final Class9020 field4942;
    private final Class8039 field4943 = new Class8039(this);
    private final Map<Class7144, Class2023> field4944 = Maps.newHashMap();
-   private final Class25<ItemStack> field4945 = Class25.<ItemStack>method68(2, ItemStack.field39973);
-   private final Class25<ItemStack> field4946 = Class25.<ItemStack>method68(4, ItemStack.field39973);
+   private final Class25<ItemStack> field4945 = Class25.<ItemStack>method68(2, ItemStack.EMPTY);
+   private final Class25<ItemStack> field4946 = Class25.<ItemStack>method68(4, ItemStack.EMPTY);
    public boolean field4947;
    public Hand field4948;
    public int field4949;
@@ -86,7 +86,7 @@ public abstract class Class880 extends Entity {
    private float field4998;
    public int field4999;
    private float field5000;
-   public ItemStack field5001 = ItemStack.field39973;
+   public ItemStack field5001 = ItemStack.EMPTY;
    public int field5002;
    public int field5003;
    private BlockPos field5004;
@@ -1022,9 +1022,9 @@ public abstract class Class880 extends Entity {
          ItemStack var4 = null;
 
          for (Hand var8 : Hand.values()) {
-            ItemStack var9 = this.method3094(var8);
+            ItemStack var9 = this.getHeldItem(var8);
             if (var9.method32107() == Class8514.field38126) {
-               var4 = var9.method32126();
+               var4 = var9.copy();
                var9.method32182(1);
                break;
             }
@@ -1693,7 +1693,7 @@ public abstract class Class880 extends Entity {
       return var1.test(this.method3090().method32107()) || var1.test(this.method3091().method32107());
    }
 
-   public ItemStack method3094(Hand var1) {
+   public ItemStack getHeldItem(Hand var1) {
       if (var1 != Hand.field182) {
          if (var1 != Hand.field183) {
             throw new IllegalArgumentException("Invalid hand " + var1);
@@ -2234,15 +2234,15 @@ public abstract class Class880 extends Entity {
          ((ServerWorld)this.field5024).method6883().method7380(this, new Class5464(this, (byte)55));
          var1.remove(Class2106.field13731);
          var1.remove(Class2106.field13732);
-         this.method3122(Class2106.field13731, var4.method32126());
-         this.method3122(Class2106.field13732, var5.method32126());
+         this.method3122(Class2106.field13731, var4.copy());
+         this.method3122(Class2106.field13732, var5.copy());
       }
    }
 
    private void method3118(Map<Class2106, ItemStack> var1) {
       ArrayList var4 = Lists.newArrayListWithCapacity(var1.size());
       var1.forEach((var2, var3) -> {
-         ItemStack var6 = var3.method32126();
+         ItemStack var6 = var3.copy();
          var4.add(Pair.of(var2, var6));
          switch (Class8717.field39333[var2.method8772().ordinal()]) {
             case 1:
@@ -2648,10 +2648,10 @@ public abstract class Class880 extends Entity {
 
    private void method3150() {
       if (this.method3148()) {
-         if (!ItemStack.method32131(this.method3094(this.method3149()), this.field5001)) {
+         if (!ItemStack.method32131(this.getHeldItem(this.method3149()), this.field5001)) {
             this.method3162();
          } else {
-            this.field5001 = this.method3094(this.method3149());
+            this.field5001 = this.getHeldItem(this.method3149());
             this.field5001.method32183(this.field5024, this, this.method3159());
             if (this.method3151()) {
                this.method3156(this.field5001, 5);
@@ -2693,7 +2693,7 @@ public abstract class Class880 extends Entity {
    }
 
    public void method3154(Hand var1) {
-      ItemStack var4 = this.method3094(var1);
+      ItemStack var4 = this.getHeldItem(var1);
       if (!var4.method32105() && !this.method3148()) {
          this.field5001 = var4;
          this.field5002 = var4.method32137();
@@ -2710,12 +2710,12 @@ public abstract class Class880 extends Entity {
       if (!field4940.equals(var1)) {
          if (field4934.equals(var1) && this.field5024.field9020) {
             if (this.method3148() && this.field5001.method32105()) {
-               this.field5001 = this.method3094(this.method3149());
+               this.field5001 = this.getHeldItem(this.method3149());
                if (!this.field5001.method32105()) {
                   this.field5002 = this.field5001.method32137();
                }
             } else if (!this.method3148() && !this.field5001.method32105()) {
-               this.field5001 = ItemStack.field39973;
+               this.field5001 = ItemStack.EMPTY;
                this.field5002 = 0;
             }
          }
@@ -2772,7 +2772,7 @@ public abstract class Class880 extends Entity {
 
    public void method2786() {
       Hand var3 = this.method3149();
-      if (this.field5001.equals(this.method3094(var3))) {
+      if (this.field5001.equals(this.getHeldItem(var3))) {
          if (!this.field5001.method32105() && this.method3148()) {
             this.method3156(this.field5001, 16);
             ItemStack var4 = this.field5001.method32111(this.field5024, this);
@@ -2815,7 +2815,7 @@ public abstract class Class880 extends Entity {
          this.method3153(1, false);
       }
 
-      this.field5001 = ItemStack.field39973;
+      this.field5001 = ItemStack.EMPTY;
       this.field5002 = 0;
    }
 
@@ -3016,7 +3016,7 @@ public abstract class Class880 extends Entity {
    }
 
    public ItemStack method2983(ItemStack var1) {
-      return ItemStack.field39973;
+      return ItemStack.EMPTY;
    }
 
    public ItemStack method2984(Class1655 var1, ItemStack var2) {

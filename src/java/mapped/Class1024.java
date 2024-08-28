@@ -68,7 +68,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       Class41 var4 = new Class41();
 
       for (int var5 = 0; var5 < this.field5711.method3629(); var5++) {
-         Class8848 var6 = this.field5711.method3618(var5);
+         ItemStack var6 = this.field5711.method3618(var5);
          if (!var6.method32105()) {
             var4.add(var6.method32112(new Class39()));
          }
@@ -96,7 +96,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       Class41 var4 = var1.method131("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         Class8848 var6 = Class8848.method32104(var4.method153(var5));
+         ItemStack var6 = ItemStack.method32104(var4.method153(var5));
          if (!var6.method32105()) {
             this.field5711.method3676(var6);
          }
@@ -126,14 +126,14 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new Class8848(Class8514.field38148));
+      this.method2944(Class2106.field13731, new ItemStack(Class8514.field38148));
    }
 
    @Override
    public void method4274(float var1) {
       super.method4274(var1);
       if (this.field5054.nextInt(300) == 0) {
-         Class8848 var4 = this.method3090();
+         ItemStack var4 = this.method3090();
          if (var4.method32107() == Class8514.field38148) {
             Map var5 = Class7858.method26312(var4);
             var5.putIfAbsent(Class8122.field34931, 1);
@@ -175,18 +175,18 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method4536(Class880 var1, Class8848 var2, Class882 var3, float var4) {
+   public void method4536(Class880 var1, ItemStack var2, Class882 var3, float var4) {
       this.method4539(this, var1, var3, var4, 1.6F);
    }
 
    @Override
    public void method4246(Class1000 var1) {
-      Class8848 var4 = var1.method4124();
+      ItemStack var4 = var1.method4124();
       if (!(var4.method32107() instanceof Class3301)) {
          Class3257 var5 = var4.method32107();
          if (this.method4544(var5)) {
             this.method3134(var1);
-            Class8848 var6 = this.field5711.method3676(var4);
+            ItemStack var6 = this.field5711.method3676(var4);
             if (!var6.method32105()) {
                var4.method32180(var6.method32179());
             } else {
@@ -203,7 +203,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       if (!super.method2963(var1, var2)) {
          int var5 = var1 - 300;
          if (var5 >= 0 && var5 < this.field5711.method3629()) {
@@ -222,7 +222,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       Class7699 var5 = this.method4551();
       boolean var6 = this.field5054.nextFloat() <= var5.method25436();
       if (var6) {
-         Class8848 var7 = new Class8848(Class8514.field38148);
+         ItemStack var7 = new ItemStack(Class8514.field38148);
          HashMap var8 = Maps.newHashMap();
          if (var1 <= var5.method25435(Class2197.field14353)) {
             if (var1 > var5.method25435(Class2197.field14352)) {

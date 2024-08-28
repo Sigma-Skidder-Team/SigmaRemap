@@ -25,8 +25,8 @@ public class Class5394 implements Class5391 {
 
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
-      Class8848 var5 = new Class8848(Class8514.field38049, this.field24044);
-      Class8848 var6 = new Class8848(this.field24043);
+      ItemStack var5 = new ItemStack(Class8514.field38049, this.field24044);
+      ItemStack var6 = new ItemStack(this.field24043);
       if (this.field24043 instanceof Class3278) {
          ArrayList var7 = Lists.newArrayList();
          var7.add(method16980(var2));

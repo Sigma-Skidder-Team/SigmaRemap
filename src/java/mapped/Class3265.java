@@ -49,7 +49,7 @@ public class Class3265 extends Class3264 {
    }
 
    @Override
-   public float method11708(Class8848 var1, Class7380 var2) {
+   public float method11708(ItemStack var1, Class7380 var2) {
       Class8649 var5 = var2.method23384();
       return !field18756.contains(var5) ? super.method11708(var1, var2) : this.field18752;
    }

@@ -146,7 +146,7 @@ public class Class3368 extends Class3241 {
          }
 
          if (var7.method119("Items", 9)) {
-            Class25<ItemStack> var8 = Class25.method68(27, ItemStack.field39973);
+            Class25<ItemStack> var8 = Class25.method68(27, ItemStack.EMPTY);
             Class7920.method26567(var7, var8);
             int var9 = 0;
             int var10 = 0;

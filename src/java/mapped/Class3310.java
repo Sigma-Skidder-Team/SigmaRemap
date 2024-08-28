@@ -8,7 +8,7 @@ public class Class3310 extends Class3308 {
    }
 
    @Override
-   public Class884 method11850(Class1655 var1, Class8848 var2, Class880 var3) {
+   public Class884 method11850(Class1655 var1, ItemStack var2, Class880 var3) {
       return new Class885(var1, var3);
    }
 }

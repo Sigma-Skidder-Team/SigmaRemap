@@ -15,7 +15,7 @@ public class Class144 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Float var5 = var2.<Float>method26081(Class9525.field44339);
       if (var5 != null) {
          Random var6 = var2.method26088();

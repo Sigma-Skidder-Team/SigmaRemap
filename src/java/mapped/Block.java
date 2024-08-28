@@ -193,7 +193,7 @@ public class Block extends Class3390 implements Class3303 {
       Class9464 var6 = new Class9464(var1)
          .method36450(var1.field9016)
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
-         .method36454(Class9525.field44338, ItemStack.field39973)
+         .method36454(Class9525.field44338, ItemStack.EMPTY)
          .method36455(Class9525.field44337, var3);
       return var0.method23434(var6);
    }
@@ -211,14 +211,14 @@ public class Block extends Class3390 implements Class3303 {
    public static void method11554(Class7380 var0, Class1655 var1, BlockPos var2) {
       if (var1 instanceof ServerWorld) {
          method11552(var0, (ServerWorld)var1, var2, (Class944)null).forEach(var2x -> method11557(var1, var2, var2x));
-         var0.method23433((ServerWorld)var1, var2, ItemStack.field39973);
+         var0.method23433((ServerWorld)var1, var2, ItemStack.EMPTY);
       }
    }
 
    public static void method11555(Class7380 var0, Class1660 var1, BlockPos var2, Class944 var3) {
       if (var1 instanceof ServerWorld) {
          method11552(var0, (ServerWorld)var1, var2, var3).forEach(var2x -> method11557((ServerWorld)var1, var2, var2x));
-         var0.method23433((ServerWorld)var1, var2, ItemStack.field39973);
+         var0.method23433((ServerWorld)var1, var2, ItemStack.EMPTY);
       }
    }
 

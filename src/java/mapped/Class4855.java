@@ -15,7 +15,7 @@ public class Class4855 extends Class4837 {
       boolean var6 = false;
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         Class8848 var8 = var1.method3618(var7);
+         ItemStack var8 = var1.method3618(var7);
          if (!var8.method32105()) {
             if (!(var8.method32107() instanceof Class3321)) {
                if (!field22652.test(var8)) {
@@ -36,16 +36,16 @@ public class Class4855 extends Class4837 {
       return var6 && var5;
    }
 
-   public Class8848 method14962(Class926 var1) {
+   public ItemStack method14962(Class926 var1) {
       ArrayList var4 = Lists.newArrayList();
-      Class8848 var5 = null;
+      ItemStack var5 = null;
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         Class8848 var7 = var1.method3618(var6);
+         ItemStack var7 = var1.method3618(var6);
          Class3257 var8 = var7.method32107();
          if (!(var8 instanceof Class3321)) {
             if (field22652.test(var7)) {
-               var5 = var7.method32126();
+               var5 = var7.copy();
                var5.method32180(1);
             }
          } else {
@@ -57,7 +57,7 @@ public class Class4855 extends Class4837 {
          var5.method32144("Explosion").method112("FadeColors", var4);
          return var5;
       } else {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       }
    }
 

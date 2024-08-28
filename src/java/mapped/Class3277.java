@@ -3,29 +3,29 @@ package mapped;
 import java.util.List;
 
 public interface Class3277 {
-   default boolean method11799(Class8848 var1) {
+   default boolean method11799(ItemStack var1) {
       Class39 var4 = var1.method32145("display");
       return var4 != null && var4.method119("color", 99);
    }
 
-   default int method11800(Class8848 var1) {
+   default int method11800(ItemStack var1) {
       Class39 var4 = var1.method32145("display");
       return var4 != null && var4.method119("color", 99) ? var4.method122("color") : 10511680;
    }
 
-   default void method11801(Class8848 var1) {
+   default void method11801(ItemStack var1) {
       Class39 var4 = var1.method32145("display");
       if (var4 != null && var4.method118("color")) {
          var4.method133("color");
       }
    }
 
-   default void method11802(Class8848 var1, int var2) {
+   default void method11802(ItemStack var1, int var2) {
       var1.method32144("display").method102("color", var2);
    }
 
-   static Class8848 method11803(Class8848 var0, List<Class3321> var1) {
-      Class8848 var4 = Class8848.field39973;
+   static ItemStack method11803(ItemStack var0, List<Class3321> var1) {
+      ItemStack var4 = ItemStack.EMPTY;
       int[] var5 = new int[3];
       int var6 = 0;
       int var7 = 0;
@@ -33,7 +33,7 @@ public interface Class3277 {
       Class3257 var9 = var0.method32107();
       if (var9 instanceof Class3277) {
          var8 = (Class3277)var9;
-         var4 = var0.method32126();
+         var4 = var0.copy();
          var4.method32180(1);
          if (var8.method11799(var0)) {
             int var10 = var8.method11800(var4);
@@ -74,7 +74,7 @@ public interface Class3277 {
          var8.method11802(var4, var28);
          return var4;
       } else {
-         return Class8848.field39973;
+         return ItemStack.EMPTY;
       }
    }
 }

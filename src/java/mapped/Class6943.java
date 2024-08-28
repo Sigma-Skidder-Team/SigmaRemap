@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.collect.*;
 import com.google.common.collect.ImmutableList.Builder;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.logging.log4j.LogManager;
@@ -95,7 +94,7 @@ public class Class6943 extends Class6941 {
             return Class1896.field11119;
          }
       } else {
-         Class8848 var4 = var0.method14966();
+         ItemStack var4 = var0.method14966();
          Class7401 var5 = var4.method32107().method11739();
          if (var5 != Class7401.field31665) {
             if (var5 != Class7401.field31672 && var5 != Class7401.field31673) {

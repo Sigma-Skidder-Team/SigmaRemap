@@ -67,7 +67,7 @@ public class Class4491 extends Class4457 {
       return var4;
    }
 
-   public boolean method14165(Class974 var1, Class8848 var2, int var3, int var4, int var5) {
+   public boolean method14165(Class974 var1, ItemStack var2, int var3, int var4, int var5) {
       if (!this.field21694.method32015(var3)) {
          return false;
       } else if (!this.field21695.method32015(var4)) {
@@ -89,7 +89,7 @@ public class Class4491 extends Class4457 {
                   return true;
                }
 
-               Class8848 var12 = var1.method3618(var11);
+               ItemStack var12 = var1.method3618(var11);
                if (!var12.method32105()) {
                   var9.removeIf(var1x -> var1x.method31016(var12));
                }

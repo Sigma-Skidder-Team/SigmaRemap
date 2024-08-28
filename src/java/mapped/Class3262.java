@@ -17,10 +17,10 @@ public abstract class Class3262 extends Class3257 {
    public abstract Predicate<ItemStack> method11752();
 
    public static ItemStack method11774(Class880 var0, Predicate<ItemStack> var1) {
-      if (!var1.test(var0.method3094(Hand.field183))) {
-         return !var1.test(var0.method3094(Hand.field182)) ? ItemStack.field39973 : var0.method3094(Hand.field182);
+      if (!var1.test(var0.getHeldItem(Hand.field183))) {
+         return !var1.test(var0.getHeldItem(Hand.field182)) ? ItemStack.EMPTY : var0.getHeldItem(Hand.field182);
       } else {
-         return var0.method3094(Hand.field183);
+         return var0.getHeldItem(Hand.field183);
       }
    }
 

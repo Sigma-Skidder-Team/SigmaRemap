@@ -7,7 +7,7 @@ public abstract class Class4686 extends Class4688 {
    public final int field22265;
    public final int field22266;
    public final Class127[] field22267;
-   private final BiFunction<Class8848, Class7812, Class8848> field22268;
+   private final BiFunction<ItemStack, Class7812, ItemStack> field22268;
    private final Class6549 field22269 = new Class6550(this);
 
    public Class4686(int var1, int var2, Class122[] var3, Class127[] var4) {
@@ -27,7 +27,7 @@ public abstract class Class4686 extends Class4688 {
       }
    }
 
-   public abstract void method14695(Consumer<Class8848> var1, Class7812 var2);
+   public abstract void method14695(Consumer<ItemStack> var1, Class7812 var2);
 
    @Override
    public boolean method14697(Class7812 var1, Consumer<Class6549> var2) {

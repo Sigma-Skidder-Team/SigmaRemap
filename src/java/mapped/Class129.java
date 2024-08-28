@@ -25,7 +25,7 @@ public class Class129 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Class7380 var5 = var2.<Class7380>method26081(Class9525.field44336);
       if (var5 != null) {
          Class39 var6 = var1.method32143();

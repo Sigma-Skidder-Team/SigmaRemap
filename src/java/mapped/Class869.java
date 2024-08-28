@@ -77,7 +77,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    }
 
    private void method2684() {
-      Class8848 var3 = this.field4817.method18172();
+      ItemStack var3 = this.field4817.method18172();
       this.method2690(Class7502.method24462(var3));
    }
 

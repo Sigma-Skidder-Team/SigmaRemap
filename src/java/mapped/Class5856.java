@@ -13,12 +13,12 @@ public class Class5856 extends Class5839 {
    }
 
    @Override
-   public boolean method18259(Class8848 var1) {
+   public boolean method18259(ItemStack var1) {
       return false;
    }
 
    @Override
-   public Class8848 method18272(int var1) {
+   public ItemStack method18272(int var1) {
       if (this.method18266()) {
          this.field25615 = this.field25615 + Math.min(var1, this.method18265().method32179());
       }
@@ -27,7 +27,7 @@ public class Class5856 extends Class5839 {
    }
 
    @Override
-   public void method18261(Class8848 var1, int var2) {
+   public void method18261(ItemStack var1, int var2) {
       this.field25615 += var2;
       this.method18263(var1);
    }
@@ -38,7 +38,7 @@ public class Class5856 extends Class5839 {
    }
 
    @Override
-   public void method18263(Class8848 var1) {
+   public void method18263(ItemStack var1) {
       if (this.field25615 > 0) {
          var1.method32136(this.field25614.field5024, this.field25614, this.field25615);
       }
@@ -51,13 +51,13 @@ public class Class5856 extends Class5839 {
    }
 
    @Override
-   public Class8848 method18264(PlayerEntity var1, Class8848 var2) {
+   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       this.method18263(var2);
       Class25 var5 = var1.field5024.method6816().method1034(Class7207.field30935, this.field25613, var1.field5024);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
-         Class8848 var7 = this.field25613.method3618(var6);
-         Class8848 var8 = (Class8848)var5.get(var6);
+         ItemStack var7 = this.field25613.method3618(var6);
+         ItemStack var8 = (ItemStack)var5.get(var6);
          if (!var7.method32105()) {
             this.field25613.method3619(var6, 1);
             var7 = this.field25613.method3618(var6);
@@ -65,7 +65,7 @@ public class Class5856 extends Class5839 {
 
          if (!var8.method32105()) {
             if (!var7.method32105()) {
-               if (Class8848.method32130(var7, var8) && Class8848.method32127(var7, var8)) {
+               if (ItemStack.method32130(var7, var8) && ItemStack.method32127(var7, var8)) {
                   var8.method32181(var7.method32179());
                   this.field25613.method3621(var6, var8);
                } else if (!this.field25614.field4902.method4045(var8)) {

@@ -24,8 +24,8 @@ public class Class885 extends Class884 {
    }
 
    @Override
-   public Class8848 method3480() {
-      return new Class8848(Class8514.field38116);
+   public ItemStack method3480() {
+      return new ItemStack(Class8514.field38116);
    }
 
    @Override

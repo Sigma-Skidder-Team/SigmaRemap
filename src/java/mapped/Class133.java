@@ -22,7 +22,7 @@ public class Class133 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       if (var1.method32107() == Class8514.field38149 && !this.field453.isEmpty()) {
          Random var5 = var2.method26088();
          int var6 = var5.nextInt(this.field453.size());

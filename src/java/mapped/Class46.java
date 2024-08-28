@@ -16,7 +16,7 @@ public class Class46 extends ArrayList<Class9346> {
    }
 
    @Nullable
-   public Class9346 method163(Class8848 var1, Class8848 var2, int var3) {
+   public Class9346 method163(ItemStack var1, ItemStack var2, int var3) {
       if (var3 > 0 && var3 < this.size()) {
          Class9346 var8 = this.get(var3);
          return !var8.method35387(var1, var2) ? null : var8;
@@ -39,7 +39,7 @@ public class Class46 extends ArrayList<Class9346> {
          Class9346 var5 = this.get(var4);
          var1.method35724(var5.method35365());
          var1.method35724(var5.method35368());
-         Class8848 var6 = var5.method35367();
+         ItemStack var6 = var5.method35367();
          var1.writeBoolean(!var6.method32105());
          if (!var6.method32105()) {
             var1.method35724(var6);
@@ -60,9 +60,9 @@ public class Class46 extends ArrayList<Class9346> {
       int var4 = var0.readByte() & 255;
 
       for (int var5 = 0; var5 < var4; var5++) {
-         Class8848 var6 = var0.method35726();
-         Class8848 var7 = var0.method35726();
-         Class8848 var8 = Class8848.field39973;
+         ItemStack var6 = var0.method35726();
+         ItemStack var7 = var0.method35726();
+         ItemStack var8 = ItemStack.EMPTY;
          if (var0.readBoolean()) {
             var8 = var0.method35726();
          }

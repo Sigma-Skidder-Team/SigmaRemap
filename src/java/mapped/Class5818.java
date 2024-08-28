@@ -40,7 +40,7 @@ public class Class5818 extends Class5812 {
                   return false;
                }
 
-               Class8848 var7 = this.field25491.method3620(0);
+               ItemStack var7 = this.field25491.method3620(0);
                this.field25491.method3622();
                if (!var1.field4902.method4045(var7)) {
                   var1.method2882(var7, false);
@@ -64,7 +64,7 @@ public class Class5818 extends Class5812 {
       return this.field25491.method3623(var1);
    }
 
-   public Class8848 method18172() {
+   public ItemStack method18172() {
       return this.field25491.method3618(0);
    }
 

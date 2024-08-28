@@ -9,7 +9,7 @@ public class Class5811 extends Class5812 {
    private final Class4923 field25457 = Class4923.method15238();
    private final Class1655 field25458;
    private List<Class4845> field25459 = Lists.newArrayList();
-   private Class8848 field25460 = Class8848.field39973;
+   private ItemStack field25460 = ItemStack.EMPTY;
    private long field25461;
    public final Class5839 field25462;
    public final Class5839 field25463;
@@ -79,17 +79,17 @@ public class Class5811 extends Class5812 {
 
    @Override
    public void method18106(Class920 var1) {
-      Class8848 var4 = this.field25462.method18265();
+      ItemStack var4 = this.field25462.method18265();
       if (var4.method32107() != this.field25460.method32107()) {
-         this.field25460 = var4.method32126();
+         this.field25460 = var4.copy();
          this.method18107(var1, var4);
       }
    }
 
-   private void method18107(Class920 var1, Class8848 var2) {
+   private void method18107(Class920 var1, ItemStack var2) {
       this.field25459.clear();
       this.field25457.method15235(-1);
-      this.field25463.method18267(Class8848.field39973);
+      this.field25463.method18267(ItemStack.EMPTY);
       if (!var2.method32105()) {
          this.field25459 = this.field25458.method6816().<Class920, Class4845>method1032(Class7207.field30940, var1, this.field25458);
       }
@@ -101,7 +101,7 @@ public class Class5811 extends Class5812 {
          this.field25466.method3636(var3);
          this.field25463.method18267(var3.method14962(this.field25465));
       } else {
-         this.field25463.method18267(Class8848.field39973);
+         this.field25463.method18267(ItemStack.EMPTY);
       }
 
       this.method18130();
@@ -117,50 +117,50 @@ public class Class5811 extends Class5812 {
    }
 
    @Override
-   public boolean method18111(Class8848 var1, Class5839 var2) {
+   public boolean method18111(ItemStack var1, Class5839 var2) {
       return var2.field25578 != this.field25466 && super.method18111(var1, var2);
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
+         ItemStack var7 = var6.method18265();
          Class3257 var8 = var7.method32107();
-         var5 = var7.method32126();
+         var5 = var7.copy();
          if (var2 != 1) {
             if (var2 != 0) {
                if (!this.field25458.method6816().<Class920, Class4845>method1030(Class7207.field30940, new Class927(var7), this.field25458).isPresent()) {
                   if (var2 >= 2 && var2 < 29) {
                      if (!this.method18142(var7, 29, 38, false)) {
-                        return Class8848.field39973;
+                        return ItemStack.EMPTY;
                      }
                   } else if (var2 >= 29 && var2 < 38 && !this.method18142(var7, 2, 29, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.EMPTY;
                   }
                } else if (!this.method18142(var7, 0, 1, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method18142(var7, 2, 38, false)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
          } else {
             var8.method11725(var7, var1.field5024, var1);
             if (!this.method18142(var7, 2, 38, true)) {
-               return Class8848.field39973;
+               return ItemStack.EMPTY;
             }
 
             var6.method18260(var7, var5);
          }
 
          if (var7.method32105()) {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.EMPTY);
          }
 
          var6.method18268();
          if (var7.method32179() == var5.method32179()) {
-            return Class8848.field39973;
+            return ItemStack.EMPTY;
          }
 
          var6.method18264(var1, var7);

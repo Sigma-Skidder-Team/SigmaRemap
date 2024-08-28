@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class Class940 extends Class939 implements Class930, Class935 {
    private static final int[] field5304 = IntStream.range(0, 27).toArray();
-   private Class25<ItemStack> field5305 = Class25.<ItemStack>method68(27, ItemStack.field39973);
+   private Class25<ItemStack> field5305 = Class25.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5306;
    private Class2126 field5307 = Class2126.field13872;
    private float field5308;
@@ -212,7 +212,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    public void method3753(Class39 var1) {
-      this.field5305 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
+      this.field5305 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var1) && var1.method119("Items", 9)) {
          Class7920.method26567(var1, this.field5305);
       }

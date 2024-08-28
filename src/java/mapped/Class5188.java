@@ -51,7 +51,7 @@ public class Class5188 extends Module {
 
                         for (int var16 = 0; var16 < var14.size(); var16++) {
                             int var17 = var12 + var16 * var5;
-                            Class8848 var18 = (Class8848) var14.get(var16);
+                            ItemStack var18 = (ItemStack) var14.get(var16);
                             int var19 = var17 + 6;
                             Class41 var20 = var18.method32147();
                             int var21 = var13 - Math.max(0, var20.size() - 4) * 8 - 2;

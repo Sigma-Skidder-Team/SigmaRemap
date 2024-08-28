@@ -13,7 +13,7 @@ public class Class3320 extends Class3257 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       Class39 var7 = var1.method32145("Explosion");
       if (var7 != null) {
          method11873(var7, var3);
