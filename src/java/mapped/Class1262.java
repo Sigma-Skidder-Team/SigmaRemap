@@ -216,7 +216,7 @@ public class Class1262 extends Class1193 {
       }
 
       BlockPos var8 = this.field6665.method1550().method3432();
-      String var9 = Class9246.method34773().getName();
+      String var9 = SharedConstants.method34773().getName();
       if (!this.field6665.method1530()) {
          var9 = Class5989.method18569(Class8005.method27349()).method18580();
       }
@@ -263,11 +263,11 @@ public class Class1262 extends Class1193 {
          }
 
          Class1655 var14 = this.method5885();
-         LongSet var15 = var14 instanceof Class1657 ? ((Class1657)var14).method6949() : LongSets.EMPTY_SET;
+         LongSet var15 = var14 instanceof ServerWorld ? ((ServerWorld)var14).method6949() : LongSets.EMPTY_SET;
          List<String> var16 = Lists.newArrayList(
             new String[]{
                "Minecraft "
-                  + Class9246.method34773().getName()
+                  + SharedConstants.method34773().getName()
                   + " ("
                   + this.field6665.method1465()
                   + "/"
@@ -312,7 +312,7 @@ public class Class1262 extends Class1193 {
          );
          var16.add(
             String.format(
-               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, Class9679.method37792(var10.field5031), Class9679.method37792(var10.field5032)
+               Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", var11, var12, MathHelper.method37792(var10.field5031), MathHelper.method37792(var10.field5032)
             )
          );
          if (this.field6665.field1338 != null) {
@@ -398,7 +398,7 @@ public class Class1262 extends Class1193 {
             var16.add("Outside of world...");
          }
 
-         Class1657 var30 = this.method5883();
+         ServerWorld var30 = this.method5883();
          if (var30 != null) {
             Class7307 var31 = var30.method6883().method7385();
             if (var31 != null) {
@@ -428,21 +428,21 @@ public class Class1262 extends Class1193 {
    }
 
    @Nullable
-   private Class1657 method5883() {
+   private ServerWorld method5883() {
       Class1644 var3 = this.field6665.method1531();
       return var3 == null ? null : var3.method1318(this.field6665.field1338.method6813());
    }
 
    @Nullable
    private String method5884() {
-      Class1657 var3 = this.method5883();
+      ServerWorld var3 = this.method5883();
       return var3 == null ? null : var3.method6758();
    }
 
    private Class1655 method5885() {
       return (Class1655)DataFixUtils.orElse(
          Optional.<Class1644>ofNullable(this.field6665.method1531())
-            .<Class1657>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.field1338.method6813()))),
+            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.field1338.method6813()))),
          this.field6665.field1338
       );
    }
@@ -450,7 +450,7 @@ public class Class1262 extends Class1193 {
    @Nullable
    private Class1674 method5886() {
       if (this.field6671 == null) {
-         Class1657 var3 = this.method5883();
+         ServerWorld var3 = this.method5883();
          if (var3 != null) {
             this.field6671 = var3.method6883()
                .method7358(this.field6669.field32174, this.field6669.field32175, Class9176.field42145, false)
@@ -627,7 +627,7 @@ public class Class1262 extends Class1193 {
          for (Class9367 var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2.method38596(var15 + 1)) {
             int var23 = var2.method38593(var11[var15], !var5 ? 60 : 30, !var5 ? 20 : 60);
             int var24 = !var5 ? 60 : 100;
-            int var25 = this.method5891(Class9679.method37775(var23, 0, var24), 0, var24 / 2, var24);
+            int var25 = this.method5891(MathHelper.method37775(var23, 0, var24), 0, var24 / 2, var24);
             int var26 = var25 >> 24 & 0xFF;
             int var27 = var25 >> 16 & 0xFF;
             int var28 = var25 >> 8 & 0xFF;
@@ -688,10 +688,10 @@ public class Class1262 extends Class1193 {
       int var11 = var2 >> 16 & 0xFF;
       int var12 = var2 >> 8 & 0xFF;
       int var13 = var2 & 0xFF;
-      int var14 = Class9679.method37775((int)Class9679.method37821(var3, (float)var6, (float)var10), 0, 255);
-      int var15 = Class9679.method37775((int)Class9679.method37821(var3, (float)var7, (float)var11), 0, 255);
-      int var16 = Class9679.method37775((int)Class9679.method37821(var3, (float)var8, (float)var12), 0, 255);
-      int var17 = Class9679.method37775((int)Class9679.method37821(var3, (float)var9, (float)var13), 0, 255);
+      int var14 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var6, (float)var10), 0, 255);
+      int var15 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var7, (float)var11), 0, 255);
+      int var16 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var8, (float)var12), 0, 255);
+      int var17 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var9, (float)var13), 0, 255);
       return var14 << 24 | var15 << 16 | var16 << 8 | var17;
    }
 

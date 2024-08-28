@@ -221,9 +221,9 @@ public class Class999 extends Entity {
 
             for (int var28 = 0; (float)var28 < var25; var28++) {
                float var31 = this.field5054.nextFloat() * (float) (Math.PI * 2);
-               float var34 = Class9679.method37765(this.field5054.nextFloat()) * var4;
-               float var36 = Class9679.method37764(var31) * var34;
-               float var11 = Class9679.method37763(var31) * var34;
+               float var34 = MathHelper.method37765(this.field5054.nextFloat()) * var4;
+               float var36 = MathHelper.method37764(var31) * var34;
+               float var11 = MathHelper.method37763(var31) * var34;
                if (var24.method24011() != Class7940.field34068) {
                   this.field5024
                      .method6748(
@@ -255,9 +255,9 @@ public class Class999 extends Entity {
          } else if (this.field5054.nextBoolean()) {
             for (int var26 = 0; var26 < 2; var26++) {
                float var29 = this.field5054.nextFloat() * (float) (Math.PI * 2);
-               float var32 = Class9679.method37765(this.field5054.nextFloat()) * 0.2F;
-               float var35 = Class9679.method37764(var29) * var32;
-               float var37 = Class9679.method37763(var29) * var32;
+               float var32 = MathHelper.method37765(this.field5054.nextFloat()) * 0.2F;
+               float var35 = MathHelper.method37764(var29) * var32;
+               float var37 = MathHelper.method37763(var29) * var32;
                if (var24.method24011() != Class7940.field34068) {
                   this.field5024.method6748(var24, this.getPosX() + (double)var35, this.getPosY(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);
                } else {
@@ -295,13 +295,13 @@ public class Class999 extends Entity {
 
    public void method4113(Class880 var1) {
       this.field5512 = var1;
-      this.field5513 = var1 != null ? var1.method3375() : null;
+      this.field5513 = var1 != null ? var1.getUniqueID() : null;
    }
 
    @Nullable
    public Class880 method4114() {
-      if (this.field5512 == null && this.field5513 != null && this.field5024 instanceof Class1657) {
-         Entity var3 = ((Class1657)this.field5024).method6942(this.field5513);
+      if (this.field5512 == null && this.field5513 != null && this.field5024 instanceof ServerWorld) {
+         Entity var3 = ((ServerWorld)this.field5024).method6942(this.field5513);
          if (var3 instanceof Class880) {
             this.field5512 = (Class880)var3;
          }

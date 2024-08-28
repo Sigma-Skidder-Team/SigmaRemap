@@ -12,8 +12,8 @@ public class Class7730 {
    public ITextComponent field33190;
    public ITextComponent field33191;
    public long field33192;
-   public int field33193 = Class9246.method34773().getProtocolVersion();
-   public ITextComponent field33194 = new StringTextComponent(Class9246.method34773().getName());
+   public int field33193 = SharedConstants.method34773().getProtocolVersion();
+   public ITextComponent field33194 = new StringTextComponent(SharedConstants.method34773().getName());
    public boolean field33195;
    public List<ITextComponent> field33196 = Collections.<ITextComponent>emptyList();
    private Class2168 field33197 = Class2168.field14236;

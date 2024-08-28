@@ -61,9 +61,9 @@ public class Class5223 extends Module {
                     Client.getInstance().getEventManager().call(var5);
                     mc.field1337.method23134(this.field23566, Class9217.method34580(this.field23566));
                     if (!this.method15974("NoSwing")) {
-                        mc.field1339.method2820(Class79.field182);
+                        mc.field1339.swingArm(Hand.field182);
                     } else {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     }
                 } else {
                     this.field23566 = this.field23567.get(0);
@@ -76,18 +76,18 @@ public class Class5223 extends Module {
                     Client.getInstance().getEventManager().call(var8);
                     mc.field1337.method23134(this.field23566, Class9217.method34580(this.field23566));
                     if (!this.method15974("NoSwing")) {
-                        mc.field1339.method2820(Class79.field182);
+                        mc.field1339.swingArm(Hand.field182);
                     } else {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     }
                 }
             } else {
                 for (BlockPos var9 : this.field23567) {
                     mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var9, Class9217.method34580(var9)));
                     if (!this.method15974("NoSwing")) {
-                        mc.field1339.method2820(Class79.field182);
+                        mc.field1339.swingArm(Hand.field182);
                     } else {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     }
                 }
             }

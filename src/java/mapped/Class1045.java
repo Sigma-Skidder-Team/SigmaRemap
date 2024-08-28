@@ -28,7 +28,7 @@ public abstract class Class1045 extends Class1046 {
    }
 
    @Nullable
-   public abstract Class1045 method4389(Class1657 var1, Class1045 var2);
+   public abstract Class1045 method4389(ServerWorld var1, Class1045 var2);
 
    @Override
    public void method2850() {

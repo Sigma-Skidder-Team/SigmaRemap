@@ -89,7 +89,7 @@ public class Class6099 {
       Class8322.method29142(this.field27345);
       Class8295.method28988(this.field27345);
       Class8243.method28741(this.field27345);
-      if (Class9246.field42545) {
+      if (SharedConstants.field42545) {
          Class9037.method33489(this.field27345);
       }
 
@@ -122,7 +122,7 @@ public class Class6099 {
       this.field27345.setConsumer((var0, var1x, var2) -> ((Class6619)var0.getSource()).method20182(var0, var1x, var2));
    }
 
-   public int method18836(Class6619 var1, String var2) {
+   public int handleCommand(Class6619 var1, String var2) {
       StringReader var5 = new StringReader(var2);
       if (var5.canRead() && var5.peek() == '/') {
          var5.skip();
@@ -178,7 +178,7 @@ public class Class6099 {
          var1.method20181(
             new TranslationTextComponent("command.failed").modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7)))
          );
-         if (Class9246.field42545) {
+         if (SharedConstants.field42545) {
             var1.method20181(new StringTextComponent(Util.method38517(var17)));
             field27344.error("'" + var2 + "' threw an exception", var17);
          }
@@ -195,8 +195,8 @@ public class Class6099 {
       HashMap var4 = Maps.newHashMap();
       RootCommandNode var5 = new RootCommandNode();
       var4.put(this.field27345.getRoot(), var5);
-      this.method18838(this.field27345.getRoot(), var5, var1.method3423(), var4);
-      var1.field4855.method15671(new Class5617(var5));
+      this.method18838(this.field27345.getRoot(), var5, var1.getCommandSource(), var4);
+      var1.field4855.sendPacket(new Class5617(var5));
    }
 
    private void method18838(CommandNode<Class6619> var1, CommandNode<Class6618> var2, Class6619 var3, Map<CommandNode<Class6619>, CommandNode<Class6618>> var4) {

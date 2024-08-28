@@ -18,8 +18,8 @@ public class Class8606 {
     @EventTarget
     private void method30840(Class4396 var1) {
         if (this.field38719.method1528() != null) {
-            if (var1.method13898() instanceof Class5616) {
-                Class5616 var4 = (Class5616) var1.method13898();
+            if (var1.method13898() instanceof SChatPacket) {
+                SChatPacket var4 = (SChatPacket) var1.method13898();
                 ArrayList var5 = new ArrayList<String>(
                         Arrays.asList(
                                 "You are permanently banned from MinemenClub. ",

@@ -41,7 +41,7 @@ public class Class8345 {
    private static int method29253(Class6619 var0, String var1, ITextComponent var2) throws CommandSyntaxException {
       Matcher var5 = field35870.matcher(var1);
       if (!var5.matches()) {
-         Class878 var6 = var0.method20177().method1367().method19465(var1);
+         Class878 var6 = var0.method20177().getPlayerList().method19465(var1);
          if (var6 == null) {
             throw field35871.create();
          } else {
@@ -53,11 +53,11 @@ public class Class8345 {
    }
 
    private static int method29254(Class6619 var0, String var1, ITextComponent var2) throws CommandSyntaxException {
-      Class4532 var5 = var0.method20177().method1367().method19462();
+      Class4532 var5 = var0.method20177().getPlayerList().method19462();
       if (var5.method14450(var1)) {
          throw field35872.create();
       } else {
-         List<Class878> var6 = var0.method20177().method1367().method19477(var1);
+         List<Class878> var6 = var0.method20177().getPlayerList().method19477(var1);
          Class6788 var7 = new Class6788(var1, (Date)null, var0.method20170(), (Date)null, var2 != null ? var2.getString() : null);
          var5.method14436(var7);
          var0.method20179(new TranslationTextComponent("commands.banip.success", var1, var7.method20683()), true);
@@ -66,7 +66,7 @@ public class Class8345 {
          }
 
          for (Class878 var9 : var6) {
-            var9.field4855.method15658(new TranslationTextComponent("multiplayer.disconnect.ip_banned"));
+            var9.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.ip_banned"));
          }
 
          return var6.size();

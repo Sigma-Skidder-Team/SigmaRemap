@@ -36,7 +36,7 @@ public class Class2675 extends Class2672 {
 
    @Override
    public void method10890() {
-      Class1657 var3 = (Class1657)this.field17067.field5024;
+      ServerWorld var3 = (ServerWorld)this.field17067.field5024;
 
       for (int var4 = 0; var4 < 3; var4++) {
          BlockPos var5 = this.field17067

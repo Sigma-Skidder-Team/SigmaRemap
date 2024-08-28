@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Random;
 import java.util.function.BiFunction;
@@ -14,7 +14,7 @@ public class Class8894 {
    private final Class122[] field40252;
    private final Predicate<Class7812> field40253;
    private final Class127[] field40254;
-   private final BiFunction<Class8848, Class7812, Class8848> field40255;
+   private final BiFunction<ItemStack, Class7812, ItemStack> field40255;
    private final Class6870 field40256;
    private final Class6872 field40257;
 
@@ -28,7 +28,7 @@ public class Class8894 {
       this.field40257 = var5;
    }
 
-   private void method32370(Consumer<Class8848> var1, Class7812 var2) {
+   private void method32370(Consumer<ItemStack> var1, Class7812 var2) {
       Random var5 = var2.method26088();
       List<Class6549> var6 = Lists.newArrayList();
       MutableInt var7 = new MutableInt();
@@ -61,11 +61,11 @@ public class Class8894 {
       }
    }
 
-   public void method32371(Consumer<Class8848> var1, Class7812 var2) {
+   public void method32371(Consumer<ItemStack> var1, Class7812 var2) {
       if (this.field40253.test(var2)) {
          Consumer var5 = Class127.method369(this.field40255, var1, var2);
          Random var6 = var2.method26088();
-         int var7 = this.field40256.method20914(var6) + Class9679.method37767(this.field40257.method20924(var6) * var2.method26089());
+         int var7 = this.field40256.method20914(var6) + MathHelper.method37767(this.field40257.method20924(var6) * var2.method26089());
 
          for (int var8 = 0; var8 < var7; var8++) {
             this.method32370(var5, var2);

@@ -39,7 +39,7 @@ public class Class5829 extends Class5828<Class926> {
    public static void method18228(int var0, Class1655 var1, PlayerEntity var2, Class926 var3, Class921 var4) {
       if (!var1.field9020) {
          Class878 var7 = (Class878)var2;
-         Class8848 var8 = Class8848.field39973;
+         ItemStack var8 = ItemStack.field39973;
          Optional var9 = var1.method6715().method1407().<Class926, Class4842>method1030(Class7207.field30935, var3, var1);
          if (var9.isPresent()) {
             Class4842 var10 = (Class4842)var9.get();
@@ -49,7 +49,7 @@ public class Class5829 extends Class5828<Class926> {
          }
 
          var4.method3621(0, var8);
-         var7.field4855.method15671(new Class5501(var0, 0, var8));
+         var7.field4855.sendPacket(new Class5501(var0, 0, var8));
       }
    }
 
@@ -86,30 +86,30 @@ public class Class5829 extends Class5828<Class926> {
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.field39973;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
+         ItemStack var7 = var6.method18265();
          var5 = var7.method32126();
          if (var2 != 0) {
             if (var2 >= 10 && var2 < 46) {
                if (!this.method18142(var7, 1, 10, false)) {
                   if (var2 >= 37) {
                      if (!this.method18142(var7, 10, 37, false)) {
-                        return Class8848.field39973;
+                        return ItemStack.field39973;
                      }
                   } else if (!this.method18142(var7, 37, 46, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.field39973;
                   }
                }
             } else if (!this.method18142(var7, 10, 46, false)) {
-               return Class8848.field39973;
+               return ItemStack.field39973;
             }
          } else {
             this.field25537.method31716((var2x, var3) -> var7.method32107().method11725(var7, var2x, var1));
             if (!this.method18142(var7, 10, 46, true)) {
-               return Class8848.field39973;
+               return ItemStack.field39973;
             }
 
             var6.method18260(var7, var5);
@@ -118,14 +118,14 @@ public class Class5829 extends Class5828<Class926> {
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.field39973);
          }
 
          if (var7.method32179() == var5.method32179()) {
-            return Class8848.field39973;
+            return ItemStack.field39973;
          }
 
-         Class8848 var8 = var6.method18264(var1, var7);
+         ItemStack var8 = var6.method18264(var1, var7);
          if (var2 == 0) {
             var1.method2882(var8, false);
          }
@@ -135,7 +135,7 @@ public class Class5829 extends Class5828<Class926> {
    }
 
    @Override
-   public boolean method18111(Class8848 var1, Class5839 var2) {
+   public boolean method18111(ItemStack var1, Class5839 var2) {
       return var2.field25578 != this.field25536 && super.method18111(var1, var2);
    }
 

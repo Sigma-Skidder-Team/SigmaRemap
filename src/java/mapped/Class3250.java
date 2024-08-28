@@ -34,7 +34,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          if (var1.<Class82>method23463(field18713) != Class82.field205) {
             var3 = var3.method8349(var1.<Direction>method23463(field18484));
@@ -89,7 +89,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private boolean method11680(Class1655 var1, BlockPos var2) {
-      List var5 = var1.<Class1042>method6772(Class1042.class, new Class6488(var2), Class880::method3176);
+      List var5 = var1.<Class1042>method6772(Class1042.class, new Class6488(var2), Class880::isSleeping);
       if (!var5.isEmpty()) {
          ((Class1042)var5.get(0)).method2907();
          return true;
@@ -266,7 +266,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       if (!var1.field9020) {
          BlockPos var8 = var2.method8349(var3.<Direction>method23463(field18484));
@@ -283,7 +283,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    @Override
    public long method11691(Class7380 var1, BlockPos var2) {
       BlockPos var5 = var2.method8350(var1.<Direction>method23463(field18484), var1.method23463(field18713) != Class82.field205 ? 1 : 0);
-      return Class9679.method37810(var5.method8304(), var2.getY(), var5.method8306());
+      return MathHelper.method37810(var5.method8304(), var2.getY(), var5.method8306());
    }
 
    @Override

@@ -6,7 +6,7 @@ public class Class6878 {
    private static String[] field29818;
 
    @Nullable
-   public static BlockPos method20940(Class1657 var0, int var1, int var2, boolean var3) {
+   public static BlockPos method20940(ServerWorld var0, int var1, int var2, boolean var3) {
       Mutable var6 = new Mutable(var1, 0, var2);
       Class8907 var7 = var0.method7003(var6);
       boolean var8 = var0.method6812().method36876();
@@ -42,7 +42,7 @@ public class Class6878 {
    }
 
    @Nullable
-   public static BlockPos method20941(Class1657 var0, Class7481 var1, boolean var2) {
+   public static BlockPos method20941(ServerWorld var0, Class7481 var1, boolean var2) {
       for (int var5 = var1.method24356(); var5 <= var1.method24358(); var5++) {
          for (int var6 = var1.method24357(); var6 <= var1.method24359(); var6++) {
             BlockPos var7 = method20940(var0, var5, var6, var2);

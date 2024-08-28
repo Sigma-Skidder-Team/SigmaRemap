@@ -145,9 +145,9 @@ public class Class4829 {
                } else {
                   Class1713 var46 = var9[1];
                   var3.method17043(var46);
-                  float var50 = (float)Class9679.method37814(var86.field18050, var86.field18048) - (float) (Math.PI / 2);
-                  float var51 = Class9679.method37763(var50) * 0.25F;
-                  float var52 = Class9679.method37764(var50) * 0.25F;
+                  float var50 = (float) MathHelper.method37814(var86.field18050, var86.field18048) - (float) (Math.PI / 2);
+                  float var51 = MathHelper.method37763(var50) * 0.25F;
+                  float var52 = MathHelper.method37764(var50) * 0.25F;
                   float var53 = 8.0F;
                   var101 = var46.method7461((double)(8.0F + (-var52 - var51) * 16.0F));
                   var90 = var46.method7464((double)(8.0F + (-var52 + var51) * 16.0F));
@@ -164,14 +164,14 @@ public class Class4829 {
                float var116 = (float)var9[0].method7457() / (var9[0].method7460() - var9[0].method7459());
                float var118 = (float)var9[0].method7458() / (var9[0].method7463() - var9[0].method7462());
                float var120 = 4.0F / Math.max(var118, var116);
-               var101 = Class9679.method37821(var120, var101, var108);
-               var104 = Class9679.method37821(var120, var104, var108);
-               var48 = Class9679.method37821(var120, var48, var108);
-               var49 = Class9679.method37821(var120, var49, var108);
-               var90 = Class9679.method37821(var120, var90, var115);
-               var47 = Class9679.method37821(var120, var47, var115);
-               var94 = Class9679.method37821(var120, var94, var115);
-               var98 = Class9679.method37821(var120, var98, var115);
+               var101 = MathHelper.method37821(var120, var101, var108);
+               var104 = MathHelper.method37821(var120, var104, var108);
+               var48 = MathHelper.method37821(var120, var48, var108);
+               var49 = MathHelper.method37821(var120, var49, var108);
+               var90 = MathHelper.method37821(var120, var90, var115);
+               var47 = MathHelper.method37821(var120, var47, var115);
+               var94 = MathHelper.method37821(var120, var94, var115);
+               var98 = MathHelper.method37821(var120, var98, var115);
                int var54 = this.method14928(var1, var2);
                float var55 = var25 * var20;
                float var56 = var25 * var21;

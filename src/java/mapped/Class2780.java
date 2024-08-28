@@ -28,7 +28,7 @@ public class Class2780 extends Class2595 {
          for (Entity var8 : var3) {
             Class1064 var9 = (Class1064)var8;
             if (var9.method4914() && !var9.method4913()) {
-               double var10 = this.field17382.method3277(var9);
+               double var10 = this.field17382.getDistanceSq(var9);
                if (!(var10 > var5)) {
                   var5 = var10;
                   var4 = var9;
@@ -40,7 +40,7 @@ public class Class2780 extends Class2595 {
             for (Entity var13 : var3) {
                Class1064 var14 = (Class1064)var13;
                if (var14.method4296() && !var14.method4913()) {
-                  double var15 = this.field17382.method3277(var14);
+                  double var15 = this.field17382.getDistanceSq(var14);
                   if (!(var15 > var5)) {
                      var5 = var15;
                      var4 = var14;
@@ -67,7 +67,7 @@ public class Class2780 extends Class2595 {
    @Override
    public boolean method10806() {
       if (this.field17382.method4914() && this.field17382.method4915().method3066() && this.method10971(this.field17382, 0)) {
-         double var3 = this.field17382.method3277(this.field17382.method4915());
+         double var3 = this.field17382.getDistanceSq(this.field17382.method4915());
          if (var3 > 676.0) {
             if (this.field17383 <= 3.0) {
                this.field17383 *= 1.2;

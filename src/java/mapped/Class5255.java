@@ -108,7 +108,7 @@ public class Class5255 extends PremiumModule {
 
                                             mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], mc.field1339.field5036));
                                             mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var8.field28401, Direction.field673));
-                                            mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                                            mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                                             this.field23642.add(var8.field28401);
                                         }
                                     }
@@ -155,10 +155,10 @@ public class Class5255 extends PremiumModule {
                     && Math.sqrt(mc.field1339.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
                 if (0 == 0) {
                     float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                    mc.field1339.method2820(Class79.field182);
+                    mc.field1339.swingArm(Hand.field182);
                     mc.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], mc.field1339.field5036));
                     mc.getClientPlayNetHandler()
-                            .sendPacket(new Class5570(Class79.field182, Class9217.method34567(var6[0], var6[1], mc.field1337.method23135() + 1.0F)));
+                            .sendPacket(new Class5570(Hand.field182, Class9217.method34567(var6[0], var6[1], mc.field1337.method23135() + 1.0F)));
                     this.field23642.clear();
                     this.field23642.add(var5.field28401);
                 }

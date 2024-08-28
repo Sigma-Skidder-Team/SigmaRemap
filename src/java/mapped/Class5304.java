@@ -95,10 +95,10 @@ public class Class5304 extends Module {
     }
 
     private boolean method16667() {
-        if (!(mc.field1339.method3431().field18049 < 1.0)) {
+        if (!(mc.field1339.getPositionVec().field18049 < 1.0)) {
             if (!mc.field1339.field5036) {
                 Class6488 var3 = mc.field1339.field5035;
-                var3 = var3.method19662(0.0, -mc.field1339.method3431().field18049, 0.0);
+                var3 = var3.method19662(0.0, -mc.field1339.getPositionVec().field18049, 0.0);
                 return mc.field1338.method7055(mc.field1339, var3).count() == 0L;
             } else {
                 return false;
@@ -109,9 +109,9 @@ public class Class5304 extends Module {
     }
 
     private void method16668(String var1, Class4435 var2) {
-        double var5 = mc.field1339.method3431().method11320();
-        double var7 = mc.field1339.method3431().method11321();
-        double var9 = mc.field1339.method3431().method11322();
+        double var5 = mc.field1339.getPositionVec().method11320();
+        double var7 = mc.field1339.getPositionVec().method11321();
+        double var9 = mc.field1339.getPositionVec().method11322();
         if (var1.equals("Cubecraft") && !Class5628.method17718()) {
             var1 = "Motion";
         }

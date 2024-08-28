@@ -13,14 +13,14 @@ public class Class2729 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field17239.method3176()) {
+      if (this.field17239.isSleeping()) {
          return false;
       } else {
          Class880 var3 = this.field17239.method4232();
          return var3 != null
             && var3.method3066()
             && Class1095.method5169().test(var3)
-            && this.field17239.method3277(var3) > 36.0
+            && this.field17239.getDistanceSq(var3) > 36.0
             && !this.field17239.method3336()
             && !this.field17239.method5145()
             && !this.field17239.field4981;
@@ -51,7 +51,7 @@ public class Class2729 extends Class2595 {
    public void method10805() {
       Class880 var3 = this.field17239.method4232();
       this.field17239.method4227().method28040(var3, (float)this.field17239.method4260(), (float)this.field17239.method4259());
-      if (!(this.field17239.method3277(var3) <= 36.0)) {
+      if (!(this.field17239.getDistanceSq(var3) <= 36.0)) {
          this.field17239.method4230().method21655(var3, 1.5);
       } else {
          this.field17239.method5144(true);

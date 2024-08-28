@@ -51,10 +51,10 @@ public enum Direction implements Class83 {
    public static Direction[] method529(Entity var0) {
       float var3 = var0.method3282(1.0F) * (float) (Math.PI / 180.0);
       float var4 = -var0.method3136(1.0F) * (float) (Math.PI / 180.0);
-      float var5 = Class9679.method37763(var3);
-      float var6 = Class9679.method37764(var3);
-      float var7 = Class9679.method37763(var4);
-      float var8 = Class9679.method37764(var4);
+      float var5 = MathHelper.method37763(var3);
+      float var6 = MathHelper.method37764(var3);
+      float var7 = MathHelper.method37763(var4);
+      float var8 = MathHelper.method37764(var4);
       boolean var9 = var7 > 0.0F;
       boolean var10 = var5 < 0.0F;
       boolean var11 = var8 > 0.0F;
@@ -188,11 +188,11 @@ public enum Direction implements Class83 {
    }
 
    public static Direction method546(int var0) {
-      return field687[Class9679.method37772(var0 % field687.length)];
+      return field687[MathHelper.method37772(var0 % field687.length)];
    }
 
    public static Direction method547(int var0) {
-      return field688[Class9679.method37772(var0 % field688.length)];
+      return field688[MathHelper.method37772(var0 % field688.length)];
    }
 
    @Nullable
@@ -201,7 +201,7 @@ public enum Direction implements Class83 {
    }
 
    public static Direction method549(double var0) {
-      return method547(Class9679.method37769(var0 / 90.0 + 0.5) & 3);
+      return method547(MathHelper.method37769(var0 / 90.0 + 0.5) & 3);
    }
 
    public static Direction method550(Class113 var0, Class1892 var1) {
@@ -269,8 +269,8 @@ public enum Direction implements Class83 {
 
    public boolean method557(float var1) {
       float var4 = var1 * (float) (Math.PI / 180.0);
-      float var5 = -Class9679.method37763(var4);
-      float var6 = Class9679.method37764(var4);
+      float var5 = -MathHelper.method37763(var4);
+      float var6 = MathHelper.method37764(var4);
       return (float)this.field684.method8304() * var5 + (float)this.field684.method8306() * var6 > 0.0F;
    }
 }

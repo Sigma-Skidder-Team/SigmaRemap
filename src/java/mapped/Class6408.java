@@ -115,7 +115,7 @@ public abstract class Class6408 {
    }
 
    public int method19523(Class113 var1, double var2) {
-      return Class9679.method37820(0, this.field28033.method26732(var1) + 1, var4 -> {
+      return MathHelper.method37820(0, this.field28033.method26732(var1) + 1, var4 -> {
          if (var4 >= 0) {
             return var4 <= this.field28033.method26732(var1) ? var2 < this.method19515(var1, var4) : true;
          } else {

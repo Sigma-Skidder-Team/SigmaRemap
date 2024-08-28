@@ -41,7 +41,7 @@ public class Class2907 extends Class2898<Class4712> {
 
          for (int var15 = -3; var15 < 4; var15++) {
             for (int var16 = -3; var16 < 4; var16++) {
-               int var17 = Class9679.method37772(var15) * Class9679.method37772(var16);
+               int var17 = MathHelper.method37772(var15) * MathHelper.method37772(var16);
                if (var3.nextInt(10) < 10 - var17) {
                   var14.method8374(var8.method8336(var15, 0, var16));
                   int var18 = 3;

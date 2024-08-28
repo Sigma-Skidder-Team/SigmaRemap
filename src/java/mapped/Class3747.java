@@ -22,12 +22,12 @@ public class Class3747<E extends Class1034> extends Class3676<E> {
       this.field19892 = var1;
    }
 
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       Class1000 var5 = var2.method2992().<Class1000>method21410(Class8830.field39847).get();
       return Class4388.method13827(var5.method4124().method32107());
    }
 
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       var2.method2992().method21407(Class8830.field39851, true, (long)this.field19892);
    }
 }

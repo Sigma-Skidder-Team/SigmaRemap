@@ -53,7 +53,7 @@ public class Class8284 {
       );
    }
 
-   private static int method28948(Class6619 var0, Collection<Class878> var1, Predicate<Class8848> var2, int var3) throws CommandSyntaxException {
+   private static int method28948(Class6619 var0, Collection<Class878> var1, Predicate<ItemStack> var2, int var3) throws CommandSyntaxException {
       int var6 = 0;
 
       for (Class878 var8 : var1) {
@@ -68,12 +68,12 @@ public class Class8284 {
             if (var1.size() != 1) {
                var0.method20179(new TranslationTextComponent("commands.clear.success.multiple", var6, var1.size()), true);
             } else {
-               var0.method20179(new TranslationTextComponent("commands.clear.success.single", var6, ((Class878)var1.iterator().next()).method2954()), true);
+               var0.method20179(new TranslationTextComponent("commands.clear.success.single", var6, ((Class878)var1.iterator().next()).getDisplayName()), true);
             }
          } else if (var1.size() != 1) {
             var0.method20179(new TranslationTextComponent("commands.clear.test.multiple", var6, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.clear.test.single", var6, ((Class878)var1.iterator().next()).method2954()), true);
+            var0.method20179(new TranslationTextComponent("commands.clear.test.single", var6, ((Class878)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var6;

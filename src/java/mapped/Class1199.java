@@ -76,8 +76,8 @@ public class Class1199 extends Class1197 {
 
       this.method5696(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
       List var14 = this.method5755();
-      this.field6498 = Class9679.method37767(this.field6496 / 30.0F) % var14.size();
-      Class8848 var12 = ((Class4843)var14.get(this.field6498)).method14966();
+      this.field6498 = MathHelper.method37767(this.field6496 / 30.0F) % var14.size();
+      ItemStack var12 = ((Class4843)var14.get(this.field6498)).method14966();
       int var13 = 4;
       if (this.field6495.method34895() && this.method5755().size() > 1) {
          var7.method1555().method793(var12, this.field6477 + var13 + 1, this.field6478 + var13 + 1);
@@ -109,7 +109,7 @@ public class Class1199 extends Class1197 {
    }
 
    public List<ITextComponent> method5758(Screen var1) {
-      Class8848 var4 = this.method5755().get(this.field6498).method14966();
+      ItemStack var4 = this.method5755().get(this.field6498).method14966();
       ArrayList var5 = Lists.newArrayList(var1.method2458(var4));
       if (this.field6495.method34893(this.field6494.method21370(this.field6493)).size() > 1) {
          var5.add(field6492);

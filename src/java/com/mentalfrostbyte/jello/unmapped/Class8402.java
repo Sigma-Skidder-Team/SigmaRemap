@@ -77,11 +77,11 @@ public class Class8402 {
     }
 
     public boolean method29511(Entity var1) {
-        return var1 != null && this.field36054.containsKey(var1.method3375());
+        return var1 != null && this.field36054.containsKey(var1.getUniqueID());
     }
 
     public Class8433 method29512(Entity var1) {
-        return this.field36054.get(var1.method3375());
+        return this.field36054.get(var1.getUniqueID());
     }
 
     @EventTarget
@@ -93,7 +93,7 @@ public class Class8402 {
 
             while (var5.hasNext()) {
                 AbstractClientPlayerEntity var6 = var5.next();
-                if (this.field36053.contains(var6.method3375())
+                if (this.field36053.contains(var6.getUniqueID())
                         || Client.getInstance().getCombatManager().method29346(var6)
                         || var6.method2941().getUnformattedComponentText().equals("")) {
                     var5.remove();
@@ -108,7 +108,7 @@ public class Class8402 {
                 while (var10.hasNext() && var7++ < 70) {
                     Entity var9 = (Entity) var10.next();
                     var8.add(var9.method2941().getUnformattedComponentText());
-                    this.field36053.add(var9.method3375());
+                    this.field36053.add(var9.getUniqueID());
                 }
 
                 if (this.field36057 != null && this.field36057.connected()) {

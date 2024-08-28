@@ -13,7 +13,7 @@ public class Class3414 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!this.method12052(var2, var3)) {
          var2.method6725(var3, this.field19104.method11579(), 2);
       }

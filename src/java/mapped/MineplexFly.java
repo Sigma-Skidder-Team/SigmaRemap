@@ -138,7 +138,7 @@ public class MineplexFly extends PremiumModule {
                     Vector3d var6 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
                     BlockPos var7 = new BlockPos(mc.field1339.method3432()).method8336(0, -1, 0);
                     Class8711 var8 = new Class8711(var6, Direction.field673, var7, false);
-                    Class5570 var9 = new Class5570(Class79.field182, var8);
+                    Class5570 var9 = new Class5570(Hand.field182, var8);
                     mc.getClientPlayNetHandler().sendPacket(var9);
                     if (!(this.field23671 < (double) this.method15977("Boost"))) {
                         Class9567.method37088(var1, 0.0);

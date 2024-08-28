@@ -57,7 +57,7 @@ public class Class862 extends Class851<Class5826> {
          this.field4568.method38805(var1, this.field4560, (float)(49 + this.field4721 / 2 - this.field4568.method38821(this.field4560) / 2), 6.0F, 4210752);
       }
 
-      this.field4568.method38805(var1, this.field4728.method2954(), (float)this.field4725, (float)this.field4726, 4210752);
+      this.field4568.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
       int var10 = this.field4568.method38821(field4787);
       this.field4568.method38805(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
    }
@@ -95,11 +95,11 @@ public class Class862 extends Class851<Class5826> {
          if (var8 >= var9 && Class7921.method26578(var7)) {
             byte var10 = 100;
             float var11 = 100.0F / (float)(Class7921.method26577(var7) - var9);
-            int var12 = Math.min(Class9679.method37767(var11 * (float)(var8 - var9)), 100);
+            int var12 = Math.min(MathHelper.method37767(var11 * (float)(var8 - var9)), 100);
             method5697(var1, var2 + 136, var3 + 16, this.method5702(), 0.0F, 191.0F, var12 + 1, 5, 256, 512);
             int var13 = this.field4727.method18206();
             if (var13 > 0) {
-               int var14 = Math.min(Class9679.method37767((float)var13 * var11), 100 - var12);
+               int var14 = Math.min(MathHelper.method37767((float)var13 * var11), 100 - var12);
                method5697(var1, var2 + 136 + var12 + 1, var3 + 16 + 1, this.method5702(), 2.0F, 182.0F, var14, 3, 256, 512);
             }
          }
@@ -141,10 +141,10 @@ public class Class862 extends Class851<Class5826> {
 
          for (Class9346 var14 : var7) {
             if (!this.method2666(var7.size()) || var12 >= this.field4792 && var12 < 7 + this.field4792) {
-               Class8848 var15 = var14.method35365();
-               Class8848 var16 = var14.method35366();
-               Class8848 var17 = var14.method35367();
-               Class8848 var18 = var14.method35368();
+               ItemStack var15 = var14.method35365();
+               ItemStack var16 = var14.method35366();
+               ItemStack var17 = var14.method35367();
+               ItemStack var18 = var14.method35368();
                this.field4563.field847 = 100.0F;
                int var19 = var10 + 2;
                this.method2665(var1, var16, var15, var11, var19);
@@ -199,7 +199,7 @@ public class Class862 extends Class851<Class5826> {
       }
    }
 
-   private void method2665(Class9332 var1, Class8848 var2, Class8848 var3, int var4, int var5) {
+   private void method2665(Class9332 var1, ItemStack var2, ItemStack var3, int var4, int var5) {
       this.field4563.method794(var2, var4, var5);
       if (var3.method32179() != var2.method32179()) {
          this.field4563.method798(this.field4568, var3, var4, var5, var3.method32179() != 1 ? null : "1");
@@ -223,7 +223,7 @@ public class Class862 extends Class851<Class5826> {
       if (this.method2666(var9)) {
          int var10 = var9 - 7;
          this.field4792 = (int)((double)this.field4792 - var5);
-         this.field4792 = Class9679.method37775(this.field4792, 0, var10);
+         this.field4792 = MathHelper.method37775(this.field4792, 0, var10);
       }
 
       return true;
@@ -240,7 +240,7 @@ public class Class862 extends Class851<Class5826> {
          int var15 = var12 - 7;
          float var16 = ((float)var3 - (float)var13 - 13.5F) / ((float)(var14 - var13) - 27.0F);
          var16 = var16 * (float)var15 + 0.5F;
-         this.field4792 = Class9679.method37775((int)var16, 0, var15);
+         this.field4792 = MathHelper.method37775((int)var16, 0, var15);
          return true;
       }
    }
@@ -267,17 +267,17 @@ public class Class862 extends Class851<Class5826> {
    }
 
    // $VF: synthetic method
-   public static void method2669(Class862 var0, Class9332 var1, Class8848 var2, int var3, int var4) {
+   public static void method2669(Class862 var0, Class9332 var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method
-   public static void method2670(Class862 var0, Class9332 var1, Class8848 var2, int var3, int var4) {
+   public static void method2670(Class862 var0, Class9332 var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 
    // $VF: synthetic method
-   public static void method2671(Class862 var0, Class9332 var1, Class8848 var2, int var3, int var4) {
+   public static void method2671(Class862 var0, Class9332 var1, ItemStack var2, int var3, int var4) {
       var0.method2457(var1, var2, var3, var4);
    }
 }

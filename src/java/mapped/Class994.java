@@ -69,8 +69,8 @@ public class Class994 extends Class916 {
       double var10 = method3234(var9);
       double var12 = this.field5483 * this.field5483 + this.field5484 * this.field5484;
       if (var12 > 1.0E-4 && var10 > 0.001) {
-         double var14 = (double)Class9679.method37766(var10);
-         double var16 = (double)Class9679.method37766(var12);
+         double var14 = (double) MathHelper.method37766(var10);
+         double var16 = (double) MathHelper.method37766(var12);
          this.field5483 = var9.field18048 / var14 * var16;
          this.field5484 = var9.field18050 / var14 * var16;
       }
@@ -82,7 +82,7 @@ public class Class994 extends Class916 {
       if (!(var3 > 1.0E-7)) {
          this.method3434(this.method3433().method11347(0.98, 0.0, 0.98));
       } else {
-         var3 = (double)Class9679.method37766(var3);
+         var3 = (double) MathHelper.method37766(var3);
          this.field5483 /= var3;
          this.field5484 /= var3;
          this.method3434(this.method3433().method11347(0.8, 0.0, 0.8).method11339(this.field5483, 0.0, this.field5484));
@@ -92,8 +92,8 @@ public class Class994 extends Class916 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (field5485.test(var5) && this.field5482 + 3600 <= 32000) {
          if (!var1.field4919.field29609) {
             var5.method32182(1);

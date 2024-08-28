@@ -32,8 +32,8 @@ public class Class7679 {
 
    private static int method25265(Class6619 var0, Collection<Class878> var1, ITextComponent var2) {
       for (Class878 var6 : var1) {
-         var6.field4855.method15658(var2);
-         var0.method20179(new TranslationTextComponent("commands.kick.success", var6.method2954(), var2), true);
+         var6.field4855.disconnect(var2);
+         var0.method20179(new TranslationTextComponent("commands.kick.success", var6.getDisplayName(), var2), true);
       }
 
       return var1.size();

@@ -56,7 +56,7 @@ public abstract class Class6395 {
    }
 
    public void method19445(Class8586 var1, Class878 var2) {
-      GameProfile var5 = var2.method2906();
+      GameProfile var5 = var2.getGameProfile();
       Class8805 var6 = this.field27990.method1386();
       GameProfile var7 = var6.method31793(var5.getId());
       String var8 = var7 != null ? var7.getName() : var5.getName();
@@ -65,8 +65,8 @@ public abstract class Class6395 {
       Class8705 var10 = var9 == null
          ? Class1655.field8999
          : Class9535.method36867(new Dynamic(Class8063.field34602, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(Class1655.field8999);
-      Class1657 var11 = this.field27990.method1318(var10);
-      Class1657 var12;
+      ServerWorld var11 = this.field27990.method1318(var10);
+      ServerWorld var12;
       if (var11 != null) {
          var12 = var11;
       } else {
@@ -75,7 +75,7 @@ public abstract class Class6395 {
       }
 
       var2.method3268(var12);
-      var2.field4857.method33871((Class1657)var2.field5024);
+      var2.field4857.method33871((ServerWorld)var2.field5024);
       String var13 = "local";
       if (var1.method30700() != null) {
          var13 = var1.method30700().toString();
@@ -96,7 +96,7 @@ public abstract class Class6395 {
       Class5462 var16 = var12.method6789();
       boolean var17 = var16.method17135(Class5462.field24248);
       boolean var18 = var16.method17135(Class5462.field24237);
-      var15.method15671(
+      var15.sendPacket(
          new Class5499(
             var2.method3205(),
             var2.field4857.method33863(),
@@ -115,32 +115,32 @@ public abstract class Class6395 {
             var12.method6966()
          )
       );
-      var15.method15671(new Class5532(Class5532.field24537, new PacketBuffer(Unpooled.buffer()).method35729(this.method19444().method1325())));
-      var15.method15671(new Class5535(var14.method20047(), var14.method20048()));
-      var15.method15671(new Class5599(var2.field4919));
-      var15.method15671(new Class5608(var2.field4902.field5443));
-      var15.method15671(new Class5512(this.field27990.method1407().method1036()));
-      var15.method15671(new Class5611(this.field27990.method1408()));
+      var15.sendPacket(new Class5532(Class5532.field24537, new PacketBuffer(Unpooled.buffer()).method35729(this.method19444().method1325())));
+      var15.sendPacket(new Class5535(var14.method20047(), var14.method20048()));
+      var15.sendPacket(new Class5599(var2.field4919));
+      var15.sendPacket(new Class5608(var2.field4902.field5443));
+      var15.sendPacket(new Class5512(this.field27990.method1407().method1036()));
+      var15.sendPacket(new Class5611(this.field27990.method1408()));
       this.method19454(var2);
       var2.method2809().method28969();
       var2.method2810().method21382(var2);
       this.method19446(var12.method6805(), var2);
       this.field27990.method1388();
       TranslationTextComponent var19;
-      if (!var2.method2906().getName().equalsIgnoreCase(var8)) {
-         var19 = new TranslationTextComponent("multiplayer.player.joined.renamed", var2.method2954(), var8);
+      if (!var2.getGameProfile().getName().equalsIgnoreCase(var8)) {
+         var19 = new TranslationTextComponent("multiplayer.player.joined.renamed", var2.getDisplayName(), var8);
       } else {
-         var19 = new TranslationTextComponent("multiplayer.player.joined", var2.method2954());
+         var19 = new TranslationTextComponent("multiplayer.player.joined", var2.getDisplayName());
       }
 
       this.method19484(var19.mergeStyle(TextFormatting.YELLOW), ChatType.SYSTEM, Util.field45724);
       var15.method15668(var2.getPosX(), var2.getPosY(), var2.getPosZ(), var2.field5031, var2.field5032);
       this.field27991.add(var2);
-      this.field27992.put(var2.method3375(), var2);
+      this.field27992.put(var2.getUniqueID(), var2);
       this.method19456(new Class5503(Class2176.field14281, var2));
 
       for (int var20 = 0; var20 < this.field27991.size(); var20++) {
-         var2.field4855.method15671(new Class5503(Class2176.field14281, this.field27991.get(var20)));
+         var2.field4855.sendPacket(new Class5503(Class2176.field14281, this.field27991.get(var20)));
       }
 
       var12.method6921(var2);
@@ -151,7 +151,7 @@ public abstract class Class6395 {
       }
 
       for (Class2023 var21 : var2.method3031()) {
-         var15.method15671(new Class5537(var2.method3205(), var21));
+         var15.sendPacket(new Class5537(var2.method3205(), var21));
       }
 
       if (var9 != null && var9.method119("RootVehicle", 10)) {
@@ -165,9 +165,9 @@ public abstract class Class6395 {
                var22 = var26.method105("Attach");
             }
 
-            if (!var27.method3375().equals(var22)) {
+            if (!var27.getUniqueID().equals(var22)) {
                for (Entity var24 : var27.method3411()) {
-                  if (var24.method3375().equals(var22)) {
+                  if (var24.getUniqueID().equals(var22)) {
                      var2.method2758(var24, true);
                      break;
                   }
@@ -194,14 +194,14 @@ public abstract class Class6395 {
       HashSet var5 = Sets.newHashSet();
 
       for (Class8218 var7 : var1.method20997()) {
-         var2.field4855.method15671(new Class5581(var7, 0));
+         var2.field4855.sendPacket(new Class5581(var7, 0));
       }
 
       for (int var10 = 0; var10 < 19; var10++) {
          Class8375 var11 = var1.method20989(var10);
          if (var11 != null && !var5.contains(var11)) {
             for (Packet var9 : var1.method21023(var11)) {
-               var2.field4855.method15671(var9);
+               var2.field4855.sendPacket(var9);
             }
 
             var5.add(var11);
@@ -209,7 +209,7 @@ public abstract class Class6395 {
       }
    }
 
-   public void method19447(Class1657 var1) {
+   public void method19447(ServerWorld var1) {
       var1.method6810().method24543(new Class7046(this));
    }
 
@@ -230,19 +230,19 @@ public abstract class Class6395 {
 
    public void method19449(Class878 var1) {
       this.field27999.method31441(var1);
-      Class8287 var4 = this.field27997.get(var1.method3375());
+      Class8287 var4 = this.field27997.get(var1.getUniqueID());
       if (var4 != null) {
          var4.method28962();
       }
 
-      Class8019 var5 = this.field27998.get(var1.method3375());
+      Class8019 var5 = this.field27998.get(var1.getUniqueID());
       if (var5 != null) {
          var5.method27409();
       }
    }
 
    public void method19450(Class878 var1) {
-      Class1657 var4 = var1.method2798();
+      ServerWorld var4 = var1.getServerWorld();
       var1.method2911(Class8876.field40105);
       this.method19449(var1);
       if (var1.method3328()) {
@@ -267,7 +267,7 @@ public abstract class Class6395 {
       var1.method2823().method27403();
       this.field27991.remove(var1);
       this.field27990.method1414().method29608(var1);
-      UUID var8 = var1.method3375();
+      UUID var8 = var1.getUniqueID();
       Class878 var9 = this.field27992.get(var8);
       if (var9 == var1) {
          this.field27992.remove(var8);
@@ -313,7 +313,7 @@ public abstract class Class6395 {
 
       for (int var6 = 0; var6 < this.field27991.size(); var6++) {
          Class878 var7 = this.field27991.get(var6);
-         if (var7.method3375().equals(var4)) {
+         if (var7.getUniqueID().equals(var4)) {
             var5.add(var7);
          }
       }
@@ -324,10 +324,10 @@ public abstract class Class6395 {
       }
 
       for (Class878 var8 : var5) {
-         var8.field4855.method15658(new TranslationTextComponent("multiplayer.disconnect.duplicate_login"));
+         var8.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.duplicate_login"));
       }
 
-      Class1657 var11 = this.field27990.method1317();
+      ServerWorld var11 = this.field27990.method1317();
       Object var12;
       if (!this.field27990.method1342()) {
          var12 = new Class9081(var11);
@@ -340,11 +340,11 @@ public abstract class Class6395 {
 
    public Class878 method19453(Class878 var1, boolean var2) {
       this.field27991.remove(var1);
-      var1.method2798().method6934(var1);
+      var1.getServerWorld().method6934(var1);
       BlockPos var5 = var1.method2825();
       float var6 = var1.method2826();
       boolean var7 = var1.method2828();
-      Class1657 var8 = this.field27990.method1318(var1.method2827());
+      ServerWorld var8 = this.field27990.method1318(var1.method2827());
       Optional var9;
       if (var8 != null && var5 != null) {
          var9 = PlayerEntity.method2908(var8, var5, var6, var7, var2);
@@ -352,7 +352,7 @@ public abstract class Class6395 {
          var9 = Optional.empty();
       }
 
-      Class1657 var10 = var8 != null && var9.isPresent() ? var8 : this.field27990.method1317();
+      ServerWorld var10 = var8 != null && var9.isPresent() ? var8 : this.field27990.method1317();
       Object var11;
       if (!this.field27990.method1342()) {
          var11 = new Class9081(var10);
@@ -360,7 +360,7 @@ public abstract class Class6395 {
          var11 = new Class9080(var10);
       }
 
-      Class878 var12 = new Class878(this.field27990, var10, var1.method2906(), (Class9081)var11);
+      Class878 var12 = new Class878(this.field27990, var10, var1.getGameProfile(), (Class9081)var11);
       var12.field4855 = var1.field4855;
       var12.method2789(var1, var2);
       var12.method3206(var1.method3205());
@@ -374,7 +374,7 @@ public abstract class Class6395 {
       boolean var19 = false;
       if (!var9.isPresent()) {
          if (var5 != null) {
-            var12.field4855.method15671(new Class5534(Class5534.field24560, 0.0F));
+            var12.field4855.sendPacket(new Class5534(Class5534.field24560, 0.0F));
          }
       } else {
          Class7380 var20 = var10.method6738(var5);
@@ -385,7 +385,7 @@ public abstract class Class6395 {
             var18 = var6;
          } else {
             Vector3d var17 = Vector3d.method11330(var5).method11336(var16).method11333();
-            var18 = (float)Class9679.method37793(Class9679.method37814(var17.field18050, var17.field18048) * 180.0F / (float)Math.PI - 90.0);
+            var18 = (float) MathHelper.method37793(MathHelper.method37814(var17.field18050, var17.field18048) * 180.0F / (float)Math.PI - 90.0);
          }
 
          var12.method3273(var16.field18048, var16.field18049, var16.field18050, var18, 0.0F);
@@ -399,32 +399,32 @@ public abstract class Class6395 {
 
       Class6612 var21 = var12.field5024.method6788();
       var12.field4855
-         .method15671(
+         .sendPacket(
             new Class5545(
                var12.field5024.method6812(),
                var12.field5024.method6813(),
-               Class6668.method20321(var12.method2798().method6967()),
+               Class6668.method20321(var12.getServerWorld().method6967()),
                var12.field4857.method33863(),
                var12.field4857.method33864(),
-               var12.method2798().method6823(),
-               var12.method2798().method6966(),
+               var12.getServerWorld().method6823(),
+               var12.getServerWorld().method6966(),
                var2
             )
          );
       var12.field4855.method15668(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var12.field5031, var12.field5032);
-      var12.field4855.method15671(new Class5525(var10.method6947(), var10.method6948()));
-      var12.field4855.method15671(new Class5535(var21.method20047(), var21.method20048()));
-      var12.field4855.method15671(new Class5507(var12.field4922, var12.field4921, var12.field4920));
+      var12.field4855.sendPacket(new Class5525(var10.method6947(), var10.method6948()));
+      var12.field4855.sendPacket(new Class5535(var21.method20047(), var21.method20048()));
+      var12.field4855.sendPacket(new Class5507(var12.field4922, var12.field4921, var12.field4920));
       this.method19472(var12, var10);
       this.method19454(var12);
       var10.method6922(var12);
       this.field27991.add(var12);
-      this.field27992.put(var12.method3375(), var12);
+      this.field27992.put(var12.getUniqueID(), var12);
       var12.method2729();
       var12.method3043(var12.method3042());
       if (var19) {
          var12.field4855
-            .method15671(
+            .sendPacket(
                new Class5584(
                   Class6067.field27014, Class2266.field14732, (double)var5.method8304(), (double)var5.getY(), (double)var5.method8306(), 1.0F, 1.0F
                )
@@ -435,7 +435,7 @@ public abstract class Class6395 {
    }
 
    public void method19454(Class878 var1) {
-      GameProfile var4 = var1.method2906();
+      GameProfile var4 = var1.getGameProfile();
       int var5 = this.field27990.method1418(var4);
       this.method19463(var1, var5);
    }
@@ -449,7 +449,7 @@ public abstract class Class6395 {
 
    public void method19456(Packet<?> var1) {
       for (int var4 = 0; var4 < this.field27991.size(); var4++) {
-         this.field27991.get(var4).field4855.method15671(var1);
+         this.field27991.get(var4).field4855.sendPacket(var1);
       }
    }
 
@@ -457,7 +457,7 @@ public abstract class Class6395 {
       for (int var5 = 0; var5 < this.field27991.size(); var5++) {
          Class878 var6 = this.field27991.get(var5);
          if (var6.field5024.method6813() == var2) {
-            var6.field4855.method15671(var1);
+            var6.field4855.sendPacket(var1);
          }
       }
    }
@@ -468,7 +468,7 @@ public abstract class Class6395 {
          for (String var7 : var5.method28575()) {
             Class878 var8 = this.method19465(var7);
             if (var8 != null && var8 != var1) {
-               var8.method1328(var2, var1.method3375());
+               var8.method1328(var2, var1.getUniqueID());
             }
          }
       }
@@ -480,11 +480,11 @@ public abstract class Class6395 {
          for (int var6 = 0; var6 < this.field27991.size(); var6++) {
             Class878 var7 = this.field27991.get(var6);
             if (var7.method3344() != var5) {
-               var7.method1328(var2, var1.method3375());
+               var7.method1328(var2, var1.getUniqueID());
             }
          }
       } else {
-         this.method19484(var2, ChatType.SYSTEM, var1.method3375());
+         this.method19484(var2, ChatType.SYSTEM, var1.getUniqueID());
       }
    }
 
@@ -492,7 +492,7 @@ public abstract class Class6395 {
       String[] var3 = new String[this.field27991.size()];
 
       for (int var4 = 0; var4 < this.field27991.size(); var4++) {
-         var3[var4] = this.field27991.get(var4).method2906().getName();
+         var3[var4] = this.field27991.get(var4).getGameProfile().getName();
       }
 
       return var3;
@@ -535,24 +535,24 @@ public abstract class Class6395 {
             var5 = 24;
          }
 
-         var1.field4855.method15671(new Class5464(var1, var5));
+         var1.field4855.sendPacket(new Class5464(var1, var5));
       }
 
-      this.field27990.method1403().method18837(var1);
+      this.field27990.getCommandManager().method18837(var1);
    }
 
    public boolean method19441(GameProfile var1) {
       return !this.field28000 || this.field27995.method14441(var1) || this.field27996.method14441(var1);
    }
 
-   public boolean method19464(GameProfile var1) {
+   public boolean canSendCommands(GameProfile var1) {
       return this.field27995.method14441(var1) || this.field27990.method1421(var1) && this.field27990.method1436().method20072() || this.field28005;
    }
 
    @Nullable
    public Class878 method19465(String var1) {
       for (Class878 var5 : this.field27991) {
-         if (var5.method2906().getName().equalsIgnoreCase(var1)) {
+         if (var5.getGameProfile().getName().equalsIgnoreCase(var1)) {
             return var5;
          }
       }
@@ -568,7 +568,7 @@ public abstract class Class6395 {
             double var18 = var4 - var15.getPosY();
             double var20 = var6 - var15.getPosZ();
             if (var16 * var16 + var18 * var18 + var20 * var20 < var8 * var8) {
-               var15.field4855.method15671(var11);
+               var15.field4855.sendPacket(var11);
             }
          }
       }
@@ -599,22 +599,22 @@ public abstract class Class6395 {
    public void method19432() {
    }
 
-   public void method19472(Class878 var1, Class1657 var2) {
+   public void method19472(Class878 var1, ServerWorld var2) {
       Class7522 var5 = this.field27990.method1317().method6810();
-      var1.field4855.method15671(new Class5474(var5, Class1864.field10036));
-      var1.field4855.method15671(new Class5577(var2.method6783(), var2.method6784(), var2.method6789().method17135(Class5462.field24232)));
-      var1.field4855.method15671(new Class5525(var2.method6947(), var2.method6948()));
+      var1.field4855.sendPacket(new Class5474(var5, Class1864.field10036));
+      var1.field4855.sendPacket(new Class5577(var2.method6783(), var2.method6784(), var2.method6789().method17135(Class5462.field24232)));
+      var1.field4855.sendPacket(new Class5525(var2.method6947(), var2.method6948()));
       if (var2.method6795()) {
-         var1.field4855.method15671(new Class5534(Class5534.field24561, 0.0F));
-         var1.field4855.method15671(new Class5534(Class5534.field24567, var2.method6792(1.0F)));
-         var1.field4855.method15671(new Class5534(Class5534.field24568, var2.method6790(1.0F)));
+         var1.field4855.sendPacket(new Class5534(Class5534.field24561, 0.0F));
+         var1.field4855.sendPacket(new Class5534(Class5534.field24567, var2.method6792(1.0F)));
+         var1.field4855.sendPacket(new Class5534(Class5534.field24568, var2.method6790(1.0F)));
       }
    }
 
    public void method19473(Class878 var1) {
       var1.method2771(var1.field4904);
       var1.method2784();
-      var1.field4855.method15671(new Class5608(var1.field4902.field5443));
+      var1.field4855.sendPacket(new Class5608(var1.field4902.field5443));
    }
 
    public int method19474() {
@@ -661,7 +661,7 @@ public abstract class Class6395 {
       this.field28004 = var1;
    }
 
-   private void method19481(Class878 var1, Class878 var2, Class1657 var3) {
+   private void method19481(Class878 var1, Class878 var2, ServerWorld var3) {
       if (var2 == null) {
          if (this.field28004 != null) {
             var1.field4857.method33862(this.field28004, Class1894.field11101);
@@ -679,17 +679,17 @@ public abstract class Class6395 {
 
    public void method19483() {
       for (int var3 = 0; var3 < this.field27991.size(); var3++) {
-         this.field27991.get(var3).field4855.method15658(new TranslationTextComponent("multiplayer.disconnect.server_shutdown"));
+         this.field27991.get(var3).field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.server_shutdown"));
       }
    }
 
    public void method19484(ITextComponent var1, ChatType var2, UUID var3) {
       this.field27990.method1328(var1, var3);
-      this.method19456(new Class5616(var1, var2, var3));
+      this.method19456(new SChatPacket(var1, var2, var3));
    }
 
    public Class8287 method19485(PlayerEntity var1) {
-      UUID var4 = var1.method3375();
+      UUID var4 = var1.getUniqueID();
       Class8287 var5 = var4 != null ? this.field27997.get(var4) : null;
       if (var5 == null) {
          File var6 = this.field27990.method1433(Class5137.field23347).toFile();
@@ -709,7 +709,7 @@ public abstract class Class6395 {
    }
 
    public Class8019 method19486(Class878 var1) {
-      UUID var4 = var1.method3375();
+      UUID var4 = var1.getUniqueID();
       Class8019 var5 = this.field27998.get(var4);
       if (var5 == null) {
          File var6 = this.field27990.method1433(Class5137.field23346).toFile();
@@ -726,7 +726,7 @@ public abstract class Class6395 {
       this.field28003 = var1;
       this.method19456(new Class5502(var1));
 
-      for (Class1657 var5 : this.field27990.method1320()) {
+      for (ServerWorld var5 : this.field27990.method1320()) {
          if (var5 != null) {
             var5.method6883().method7381(var1);
          }
@@ -755,7 +755,7 @@ public abstract class Class6395 {
       Class5512 var6 = new Class5512(this.field27990.method1407().method1036());
 
       for (Class878 var5 : this.field27991) {
-         var5.field4855.method15671(var6);
+         var5.field4855.sendPacket(var6);
          var5.method2810().method21382(var5);
       }
    }

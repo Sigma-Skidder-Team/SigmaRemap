@@ -61,10 +61,10 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
       this.field17677.field31035 = var6 * (float) (Math.PI / 180.0);
       this.field17677.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17678.field31035 = (float) (Math.PI / 2);
-      this.field17679.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
-      this.field17680.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17681.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17682.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17679.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17680.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17681.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17682.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
       boolean var9 = !var1.method3005() && var1.method4927();
       this.field17683.field31039 = var9;
       this.field17684.field31039 = var9;

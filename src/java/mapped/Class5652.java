@@ -17,7 +17,7 @@ public class Class5652 extends Class5651<Class1109, Class2882<Class1109>> {
 
    public void method17857(Class1109 var1, Class9332 var2, float var3) {
       int var6 = var1.method5319();
-      float var7 = Class9679.method37821(var3, var1.field6084, var1.field6083) / ((float)var6 * 0.5F + 1.0F);
+      float var7 = MathHelper.method37821(var3, var1.field6084, var1.field6083) / ((float)var6 * 0.5F + 1.0F);
       float var8 = 1.0F / (var7 + 1.0F);
       var2.method35292(var8 * (float)var6, 1.0F / var8 * (float)var6, var8 * (float)var6);
    }

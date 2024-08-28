@@ -127,12 +127,12 @@ public class Class2663 extends Class2661 {
       this.field17030++;
       if (this.field17030 <= 600) {
          Vector3d var3 = Vector3d.method11330(Class1017.method4469(this.field17031)).method11339(0.0, 0.6F, 0.0);
-         if (!(var3.method11341(this.field17031.method3431()) > 1.0)) {
+         if (!(var3.method11341(this.field17031.getPositionVec()) > 1.0)) {
             if (this.field17029 == null) {
                this.field17029 = var3;
             }
 
-            boolean var4 = this.field17031.method3431().method11341(this.field17029) <= 0.1;
+            boolean var4 = this.field17031.getPositionVec().method11341(this.field17029) <= 0.1;
             boolean var5 = true;
             if (!var4 && this.field17030 > 600) {
                Class1017.method4473(this.field17031, null);

@@ -10,9 +10,9 @@ public class Class865 extends Class851<Class5837> {
    private static final int field4802 = (Class2154.field14124 - Class2154.field14125 - 1 + 4 - 1) / 4;
    private final Class7219 field4803;
    private List<Pair<Class2154, Class112>> field4804;
-   private Class8848 field4805 = Class8848.field39973;
-   private Class8848 field4806 = Class8848.field39973;
-   private Class8848 field4807 = Class8848.field39973;
+   private ItemStack field4805 = ItemStack.field39973;
+   private ItemStack field4806 = ItemStack.field39973;
+   private ItemStack field4807 = ItemStack.field39973;
    private boolean field4808;
    private boolean field4809;
    private boolean field4810;
@@ -113,7 +113,7 @@ public class Class865 extends Class851<Class5837> {
    }
 
    private void method2677(int var1, int var2, int var3) {
-      Class8848 var6 = new Class8848(Class8514.field38099);
+      ItemStack var6 = new ItemStack(Class8514.field38099);
       Class39 var7 = var6.method32144("BlockEntityTag");
       Class41 var8 = new Class7291()
          .method23058(Class2154.field14082, Class112.field393)
@@ -172,7 +172,7 @@ public class Class865 extends Class851<Class5837> {
          int var12 = this.field4735 + 13;
          int var13 = var12 + 56;
          this.field4811 = ((float)var3 - (float)var12 - 7.5F) / ((float)(var13 - var12) - 15.0F);
-         this.field4811 = Class9679.method37777(this.field4811, 0.0F, 1.0F);
+         this.field4811 = MathHelper.method37777(this.field4811, 0.0F, 1.0F);
          int var14 = field4802 - 4;
          int var15 = (int)((double)(this.field4811 * (float)var14) + 0.5);
          if (var15 < 0) {
@@ -191,7 +191,7 @@ public class Class865 extends Class851<Class5837> {
       if (this.field4808) {
          int var9 = field4802 - 4;
          this.field4811 = (float)((double)this.field4811 - var5 / (double)var9);
-         this.field4811 = Class9679.method37777(this.field4811, 0.0F, 1.0F);
+         this.field4811 = MathHelper.method37777(this.field4811, 0.0F, 1.0F);
          this.field4813 = 1 + (int)((double)(this.field4811 * (float)var9) + 0.5) * 4;
       }
 
@@ -204,23 +204,23 @@ public class Class865 extends Class851<Class5837> {
    }
 
    private void method2678() {
-      Class8848 var3 = this.field4727.method18250().method18265();
+      ItemStack var3 = this.field4727.method18250().method18265();
       if (!var3.method32105()) {
          this.field4804 = Class958.method3891(((Class3301)var3.method32107()).method11849(), Class958.method3886(var3));
       } else {
          this.field4804 = null;
       }
 
-      Class8848 var4 = this.field4727.method18247().method18265();
-      Class8848 var5 = this.field4727.method18248().method18265();
-      Class8848 var6 = this.field4727.method18249().method18265();
+      ItemStack var4 = this.field4727.method18247().method18265();
+      ItemStack var5 = this.field4727.method18248().method18265();
+      ItemStack var6 = this.field4727.method18249().method18265();
       Class39 var7 = var4.method32144("BlockEntityTag");
       this.field4810 = var7.method119("Patterns", 9) && !var4.method32105() && var7.method131("Patterns", 10).size() >= 6;
       if (this.field4810) {
          this.field4804 = null;
       }
 
-      if (!Class8848.method32128(var4, this.field4805) || !Class8848.method32128(var5, this.field4806) || !Class8848.method32128(var6, this.field4807)) {
+      if (!ItemStack.method32128(var4, this.field4805) || !ItemStack.method32128(var5, this.field4806) || !ItemStack.method32128(var6, this.field4807)) {
          this.field4808 = !var4.method32105() && !var5.method32105() && var6.method32105() && !this.field4810;
          this.field4809 = !this.field4810 && !var6.method32105() && !var4.method32105() && !var5.method32105();
       }

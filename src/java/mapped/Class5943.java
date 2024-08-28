@@ -20,7 +20,7 @@ public class Class5943 extends Class5942<Class960> {
          }
 
          var3.method35291(0.0, 0.4F, 0.0);
-         var3.method35293(Class7680.field32900.method25286((float)Class9679.method37822((double)var2, var9.method24799(), var9.method24798()) * 10.0F));
+         var3.method35293(Class7680.field32900.method25286((float) MathHelper.method37822((double)var2, var9.method24799(), var9.method24798()) * 10.0F));
          var3.method35291(0.0, -0.2F, 0.0);
          var3.method35293(Class7680.field32898.method25286(-30.0F));
          var3.method35292(var11, var11, var11);

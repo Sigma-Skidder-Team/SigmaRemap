@@ -70,8 +70,8 @@ public class Class5218 extends Module {
                     this.field23549++;
                     if (this.field23549 != 1) {
                         if (this.field23549 > 1
-                                && mc.field1339.method3094(Class79.field182).method32107() != Class8514.field37872
-                                && mc.field1339.method3094(Class79.field182).method32107() != Class8514.field37873) {
+                                && mc.field1339.method3094(Hand.field182).method32107() != Class8514.field37872
+                                && mc.field1339.method3094(Hand.field182).method32107() != Class8514.field37873) {
                             mc.field1339.field4902.field5443 = this.field23550;
                             this.field23550 = -1;
                             this.field23549 = -1;
@@ -80,7 +80,7 @@ public class Class5218 extends Module {
                         this.field23550 = mc.field1339.field4902.field5443;
                         mc.field1339.field4902.field5443 = var4;
                         mc.field1337.method23138();
-                        mc.field1337.method23140(mc.field1339, mc.field1338, Class79.field182);
+                        mc.field1337.method23140(mc.field1339, mc.field1338, Hand.field182);
                     }
                 }
             }

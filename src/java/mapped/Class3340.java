@@ -24,11 +24,11 @@ public class Class3340 extends Class3257 {
             double var12 = (double)var7.method8306();
             List var14 = var4.method7181((Entity)null, new Class6488(var8, var10, var12, var8 + 1.0, var10 + 2.0, var12 + 1.0));
             if (var14.isEmpty()) {
-               if (var4 instanceof Class1657) {
+               if (var4 instanceof ServerWorld) {
                   Class1001 var15 = new Class1001(var4, var8 + 0.5, var10, var12 + 0.5);
                   var15.method4144(false);
                   var4.method6916(var15);
-                  Class7819 var16 = ((Class1657)var4).method6968();
+                  Class7819 var16 = ((ServerWorld)var4).method6968();
                   if (var16 != null) {
                      var16.method26128();
                   }
@@ -46,7 +46,7 @@ public class Class3340 extends Class3257 {
    }
 
    @Override
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return true;
    }
 }

@@ -8,7 +8,7 @@ public abstract class Class1026 extends Class1028 {
    public static final Class9289<Boolean> field5712 = Class9361.<Boolean>method35441(Class1026.class, Class7784.field33398);
    private static final Predicate<Class1000> field5713 = var0 -> !var0.method4135()
          && var0.method3066()
-         && Class8848.method32128(var0.method4124(), Class7699.method25421());
+         && ItemStack.method32128(var0.method4124(), Class7699.method25421());
    public Class7699 field5714;
    private int field5715;
    private boolean field5716;
@@ -45,7 +45,7 @@ public abstract class Class1026 extends Class1028 {
 
    @Override
    public void method2871() {
-      if (this.field5024 instanceof Class1657 && this.method3066()) {
+      if (this.field5024 instanceof ServerWorld && this.method3066()) {
          Class7699 var3 = this.method4551();
          if (this.method4547()) {
             if (var3 != null) {
@@ -54,7 +54,7 @@ public abstract class Class1026 extends Class1028 {
                   this.field4973 = 0;
                }
             } else if (this.field5024.method6783() % 20L == 0L) {
-               Class7699 var5 = ((Class1657)this.field5024).method6957(this.method3432());
+               Class7699 var5 = ((ServerWorld)this.field5024).method6957(this.method3432());
                if (var5 != null && Class7531.method24612(this, var5)) {
                   var5.method25414(var5.method25396(), this, (BlockPos)null, true);
                }
@@ -72,7 +72,7 @@ public abstract class Class1026 extends Class1028 {
 
    @Override
    public void method2737(Class8654 var1) {
-      if (this.field5024 instanceof Class1657) {
+      if (this.field5024 instanceof ServerWorld) {
          Entity var4 = var1.method31109();
          Class7699 var5 = this.method4551();
          if (var5 != null) {
@@ -87,8 +87,8 @@ public abstract class Class1026 extends Class1028 {
             var5.method25419(this, false);
          }
 
-         if (this.method4577() && var5 == null && ((Class1657)this.field5024).method6957(this.method3432()) == null) {
-            Class8848 var6 = this.method2943(Class2106.field13736);
+         if (this.method4577() && var5 == null && ((ServerWorld)this.field5024).method6957(this.method3432()) == null) {
+            ItemStack var6 = this.method2943(Class2106.field13736);
             PlayerEntity var7 = null;
             if (!(var4 instanceof PlayerEntity)) {
                if (var4 instanceof Class1012) {
@@ -102,7 +102,7 @@ public abstract class Class1026 extends Class1028 {
                var7 = (PlayerEntity)var4;
             }
 
-            if (!var6.method32105() && Class8848.method32128(var6, Class7699.method25421()) && var7 != null) {
+            if (!var6.method32105() && ItemStack.method32128(var6, Class7699.method25421()) && var7 != null) {
                Class2023 var11 = var7.method3034(Class8254.field35497);
                int var12 = 1;
                if (var11 == null) {
@@ -112,7 +112,7 @@ public abstract class Class1026 extends Class1028 {
                   var7.method3039(Class8254.field35497);
                }
 
-               var12 = Class9679.method37775(var12, 0, 4);
+               var12 = MathHelper.method37775(var12, 0, 4);
                Class2023 var10 = new Class2023(Class8254.field35497, 120000, var12, false, false, true);
                if (!this.field5024.method6789().method17135(Class5462.field24246)) {
                   var7.method3035(var10);
@@ -174,8 +174,8 @@ public abstract class Class1026 extends Class1028 {
       this.field5715 = var1.method122("Wave");
       this.field5716 = var1.method132("CanJoinRaid");
       if (var1.method119("RaidId", 3)) {
-         if (this.field5024 instanceof Class1657) {
-            this.field5714 = ((Class1657)this.field5024).method6956().method24610(var1.method122("RaidId"));
+         if (this.field5024 instanceof ServerWorld) {
+            this.field5714 = ((ServerWorld)this.field5024).method6956().method24610(var1.method122("RaidId"));
          }
 
          if (this.field5714 != null) {
@@ -189,11 +189,11 @@ public abstract class Class1026 extends Class1028 {
 
    @Override
    public void method4246(Class1000 var1) {
-      Class8848 var4 = var1.method4124();
+      ItemStack var4 = var1.method4124();
       boolean var5 = this.method4552() && this.method4551().method25422(this.method4554()) != null;
-      if (this.method4552() && !var5 && Class8848.method32128(var4, Class7699.method25421())) {
+      if (this.method4552() && !var5 && ItemStack.method32128(var4, Class7699.method25421())) {
          Class2106 var6 = Class2106.field13736;
-         Class8848 var7 = this.method2943(var6);
+         ItemStack var7 = this.method2943(var6);
          double var8 = (double)this.method4269(var6);
          if (!var7.method32105() && (double)Math.max(this.field5054.nextFloat() - 0.1F, 0.0F) < var8) {
             this.method3302(var7);

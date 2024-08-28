@@ -24,7 +24,7 @@ public class Class9437 extends Class9436<Class9437> {
    );
    public final String field43798 = this.method36257("level-name", "world");
    public final int field43799 = this.method36259("server-port", 25565);
-   public final int field43800 = this.method36261("max-build-height", var0 -> Class9679.method37775((var0 + 8) / 16 * 16, 64, 256), 256);
+   public final int field43800 = this.method36261("max-build-height", var0 -> MathHelper.method37775((var0 + 8) / 16 * 16, 64, 256), 256);
    public final Boolean field43801 = this.method36265("announce-player-achievements");
    public final boolean field43802 = this.method36263("enable-query", false);
    public final int field43803 = this.method36259("query.port", 25565);
@@ -77,11 +77,11 @@ public class Class9437 extends Class9436<Class9437> {
       this.field43822 = this.method36259("network-compression-threshold", 256);
       this.field43823 = this.method36263("broadcast-rcon-to-ops", true);
       this.field43824 = this.method36263("broadcast-console-to-ops", true);
-      this.field43825 = this.method36261("max-world-size", var0 -> Class9679.method37775(var0, 1, 29999984), 29999984);
+      this.field43825 = this.method36261("max-world-size", var0 -> MathHelper.method37775(var0, 1, 29999984), 29999984);
       this.field43826 = this.method36263("sync-chunk-writes", true);
       this.field43827 = this.method36263("enable-jmx-monitoring", false);
       this.field43828 = this.method36263("enable-status", true);
-      this.field43829 = this.method36261("entity-broadcast-range-percentage", var0 -> Class9679.method37775(var0, 10, 1000), 100);
+      this.field43829 = this.method36261("entity-broadcast-range-percentage", var0 -> MathHelper.method37775(var0, 10, 1000), 100);
       this.field43830 = this.method36257("text-filtering-config", "");
       this.field43831 = this.method36260("player-idle-timeout", 0);
       this.field43832 = this.method36264("white-list", false);

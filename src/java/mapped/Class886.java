@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class886 extends Class884 {
    private static final Class9289<Byte> field5111 = Class9361.<Byte>method35441(Class886.class, Class7784.field33390);
    private static final Class9289<Boolean> field5112 = Class9361.<Boolean>method35441(Class886.class, Class7784.field33398);
-   private Class8848 field5113 = new Class8848(Class8514.field38144);
+   private ItemStack field5113 = new ItemStack(Class8514.field38144);
    private boolean field5114;
    public int field5115;
 
@@ -13,7 +13,7 @@ public class Class886 extends Class884 {
       super(var1, var2);
    }
 
-   public Class886(Class1655 var1, Class880 var2, Class8848 var3) {
+   public Class886(Class1655 var1, Class880 var2, ItemStack var3) {
       super(Class8992.field41093, var2, var1);
       this.field5113 = var3.method32126();
       this.field5063.method35446(field5111, (byte)Class7858.method26336(var3));
@@ -73,7 +73,7 @@ public class Class886 extends Class884 {
    }
 
    @Override
-   public Class8848 method3480() {
+   public ItemStack method3480() {
       return this.field5113.method32126();
    }
 
@@ -118,7 +118,7 @@ public class Class886 extends Class884 {
 
       this.method3434(this.method3433().method11347(-0.01, -0.1, -0.01));
       float var13 = 1.0F;
-      if (this.field5024 instanceof Class1657 && this.field5024.method6794() && Class7858.method26338(this.field5113)) {
+      if (this.field5024 instanceof ServerWorld && this.field5024.method6794() && Class7858.method26338(this.field5113)) {
          BlockPos var10 = var4.method3432();
          if (this.field5024.method7022(var10)) {
             Class906 var11 = Class8992.field41046.method33215(this.field5024);
@@ -141,7 +141,7 @@ public class Class886 extends Class884 {
    @Override
    public void method3279(PlayerEntity var1) {
       Entity var4 = this.method3460();
-      if (var4 == null || var4.method3375() == var1.method3375()) {
+      if (var4 == null || var4.getUniqueID() == var1.getUniqueID()) {
          super.method3279(var1);
       }
    }
@@ -150,7 +150,7 @@ public class Class886 extends Class884 {
    public void method2723(Class39 var1) {
       super.method2723(var1);
       if (var1.method119("Trident", 10)) {
-         this.field5113 = Class8848.method32104(var1.method130("Trident"));
+         this.field5113 = ItemStack.method32104(var1.method130("Trident"));
       }
 
       this.field5114 = var1.method132("DealtDamage");

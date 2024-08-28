@@ -27,8 +27,8 @@ public class Class5249 extends Module {
                             return;
                         }
 
-                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
-                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                         Client.getInstance().getNotificationManager().post(new Notification("AutoFish", "We catched something!", ResourcesDecrypter.doneIconPNG));
                     }
                 }

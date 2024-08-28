@@ -44,7 +44,7 @@ public class Class7049 {
       Class5488 var6 = new Class5488(var3, var2);
 
       for (Class878 var8 : var1) {
-         var8.field4855.method15671(var6);
+         var8.field4855.sendPacket(var6);
       }
 
       if (var2 == null) {

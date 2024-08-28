@@ -43,7 +43,7 @@ public class Class954 extends Class944 {
       for (int var5 = 0; var5 < 4; var5++) {
          String var6 = var2.method126("Text" + (var5 + 1));
          IFormattableTextComponent var7 = ITextComponent$Serializer.func_240643_a_(var6.isEmpty() ? "\"\"" : var6);
-         if (this.field5324 instanceof Class1657) {
+         if (this.field5324 instanceof ServerWorld) {
             try {
                this.field5356[var5] = TextComponentUtils.func_240645_a_(this.method3843((Class878)null), var7, (Entity)null, 0);
             } catch (CommandSyntaxException var9) {
@@ -116,7 +116,7 @@ public class Class954 extends Class944 {
          if (var8 != null && var8.getClickEvent() != null) {
             ClickEvent var9 = var8.getClickEvent();
             if (var9.getAction() == ClickEvent$Action.RUN_COMMAND) {
-               var1.method3396().method1403().method18836(this.method3843((Class878)var1), var9.getValue());
+               var1.method3396().getCommandManager().handleCommand(this.method3843((Class878)var1), var9.getValue());
             }
          }
       }
@@ -126,12 +126,12 @@ public class Class954 extends Class944 {
 
    public Class6619 method3843(Class878 var1) {
       String var4 = var1 != null ? var1.method2941().getString() : "Sign";
-      Object var5 = var1 != null ? var1.method2954() : new StringTextComponent("Sign");
+      Object var5 = var1 != null ? var1.getDisplayName() : new StringTextComponent("Sign");
       return new Class6619(
          Class909.field5189,
          Vector3d.method11328(this.field5325),
          Class8513.field37212,
-         (Class1657)this.field5324,
+         (ServerWorld)this.field5324,
          2,
          var4,
          (ITextComponent)var5,

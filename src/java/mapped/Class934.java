@@ -57,7 +57,7 @@ public class Class934 extends Class944 implements Class933, Class935 {
       } else {
          double var4 = var3.getPosX() - ((double)this.field5325.method8304() + 0.5);
          double var6 = var3.getPosZ() - ((double)this.field5325.method8306() + 0.5);
-         this.field5290 = (float)Class9679.method37814(var6, var4);
+         this.field5290 = (float) MathHelper.method37814(var6, var4);
          this.field5286 += 0.1F;
          if (this.field5286 < 0.5F || field5291.nextInt(40) == 0) {
             float var8 = this.field5284;
@@ -98,12 +98,12 @@ public class Class934 extends Class944 implements Class933, Class935 {
       }
 
       this.field5288 += var9 * 0.4F;
-      this.field5286 = Class9679.method37777(this.field5286, 0.0F, 1.0F);
+      this.field5286 = MathHelper.method37777(this.field5286, 0.0F, 1.0F);
       this.field5281++;
       this.field5283 = this.field5282;
       float var10 = (this.field5284 - this.field5282) * 0.4F;
       float var11 = 0.2F;
-      var10 = Class9679.method37777(var10, -0.2F, 0.2F);
+      var10 = MathHelper.method37777(var10, -0.2F, 0.2F);
       this.field5285 = this.field5285 + (var10 - this.field5285) * 0.9F;
       this.field5282 = this.field5282 + this.field5285;
    }

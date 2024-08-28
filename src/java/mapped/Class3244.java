@@ -30,11 +30,11 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       Class944 var9 = var2.method6759(var3);
       if (var9 instanceof Class945) {
          Class945 var10 = (Class945)var9;
-         Class8848 var11 = var4.method3094(var5);
+         ItemStack var11 = var4.method3094(var5);
          Optional var12 = var10.method3797(var11);
          if (var12.isPresent()) {
             if (!var2.field9020 && var10.method3798(!var4.field4919.field29609 ? var11 : var11.method32126(), ((Class4850)var12.get()).method14977())) {

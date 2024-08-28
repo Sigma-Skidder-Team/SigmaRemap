@@ -62,21 +62,21 @@ public class Class2860<T extends Entity> extends Class2855<T> {
       if (this.field17730 != 3) {
          this.field17729.field31035 = (float) (Math.PI / 2);
          if (this.field17730 != 2) {
-            this.field17722.field31035 = Class9679.method37764(var2 * 0.6662F) * var3;
-            this.field17723.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * var3;
-            this.field17724.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * var3;
-            this.field17725.field31035 = Class9679.method37764(var2 * 0.6662F) * var3;
+            this.field17722.field31035 = MathHelper.method37764(var2 * 0.6662F) * var3;
+            this.field17723.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * var3;
+            this.field17724.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * var3;
+            this.field17725.field31035 = MathHelper.method37764(var2 * 0.6662F) * var3;
             if (this.field17730 != 1) {
-               this.field17727.field31035 = 1.7278761F + 0.47123894F * Class9679.method37764(var2) * var3;
+               this.field17727.field31035 = 1.7278761F + 0.47123894F * MathHelper.method37764(var2) * var3;
             } else {
-               this.field17727.field31035 = 1.7278761F + (float) (Math.PI / 4) * Class9679.method37764(var2) * var3;
+               this.field17727.field31035 = 1.7278761F + (float) (Math.PI / 4) * MathHelper.method37764(var2) * var3;
             }
          } else {
-            this.field17722.field31035 = Class9679.method37764(var2 * 0.6662F) * var3;
-            this.field17723.field31035 = Class9679.method37764(var2 * 0.6662F + 0.3F) * var3;
-            this.field17724.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI + 0.3F) * var3;
-            this.field17725.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * var3;
-            this.field17727.field31035 = 1.7278761F + (float) (Math.PI / 10) * Class9679.method37764(var2) * var3;
+            this.field17722.field31035 = MathHelper.method37764(var2 * 0.6662F) * var3;
+            this.field17723.field31035 = MathHelper.method37764(var2 * 0.6662F + 0.3F) * var3;
+            this.field17724.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI + 0.3F) * var3;
+            this.field17725.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * var3;
+            this.field17727.field31035 = 1.7278761F + (float) (Math.PI / 10) * MathHelper.method37764(var2) * var3;
          }
       }
    }

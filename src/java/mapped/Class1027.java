@@ -89,12 +89,12 @@ public class Class1027 extends Class1026 implements Class1022 {
             } else if (this.field5054.nextFloat() < 0.5F
                && this.method4232() != null
                && !this.method3033(Class8254.field35467)
-               && this.method4232().method3277(this) > 121.0) {
+               && this.method4232().getDistanceSq(this) > 121.0) {
                var7 = Class8137.field34990;
             }
 
             if (var7 != null) {
-               this.method2944(Class2106.field13731, Class9741.method38187(new Class8848(Class8514.field37971), var7));
+               this.method2944(Class2106.field13731, Class9741.method38187(new ItemStack(Class8514.field37971), var7));
                this.field5721 = this.method3090().method32137();
                this.method4567(true);
                if (!this.method3245()) {
@@ -117,8 +117,8 @@ public class Class1027 extends Class1026 implements Class1022 {
             }
          } else if (this.field5721-- <= 0) {
             this.method4567(false);
-            Class8848 var3 = this.method3090();
-            this.method2944(Class2106.field13731, Class8848.field39973);
+            ItemStack var3 = this.method3090();
+            this.method2944(Class2106.field13731, ItemStack.field39973);
             if (var3.method32107() == Class8514.field37971) {
                List<Class2023> var4 = Class9741.method38176(var3);
                if (var4 != null) {
@@ -185,7 +185,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          double var6 = var1.getPosX() + var5.field18048 - this.getPosX();
          double var8 = var1.method3442() - 1.1F - this.getPosY();
          double var10 = var1.getPosZ() + var5.field18050 - this.getPosZ();
-         float var12 = Class9679.method37766(var6 * var6 + var10 * var10);
+         float var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
          Class8812 var13 = Class8137.field35003;
          if (!(var1 instanceof Class1026)) {
             if (var12 >= 8.0F && !var1.method3033(Class8254.field35468)) {
@@ -206,7 +206,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          }
 
          Class896 var14 = new Class896(this.field5024, this);
-         var14.method3511(Class9741.method38187(new Class8848(Class8514.field38115), var13));
+         var14.method3511(Class9741.method38187(new ItemStack(Class8514.field38115), var13));
          var14.field5032 -= -20.0F;
          var14.method3462(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.method3245()) {

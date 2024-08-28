@@ -10,19 +10,19 @@ public class Class3287 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       Class8711 var7 = method11735(var1, var2, this.field18798 != Class9479.field44064 ? Class1985.field12962 : Class1985.field12963);
       if (var7.method31417() != Class2100.field13689) {
          if (var7.method31417() != Class2100.field13690) {
-            return Class6794.<Class8848>method20698(var6);
+            return Class6794.<ItemStack>method20698(var6);
          } else {
             Class8711 var8 = var7;
             BlockPos var9 = var8.method31423();
             Direction var10 = var8.method31424();
             BlockPos var11 = var9.method8349(var10);
             if (!var1.method6785(var2, var9) || !var2.method2936(var11, var10, var6)) {
-               return Class6794.<Class8848>method20699(var6);
+               return Class6794.<ItemStack>method20699(var6);
             } else if (this.field18798 == Class9479.field44064) {
                Class7380 var15 = var1.method6738(var9);
                if (var15.method23383() instanceof Class3405) {
@@ -30,21 +30,21 @@ public class Class3287 extends Class3257 {
                   if (var16 != Class9479.field44064) {
                      var2.method2913(Class8876.field40098.method172(this));
                      var2.method2863(!var16.method25067(Class8953.field40470) ? Class6067.field26429 : Class6067.field26431, 1.0F, 1.0F);
-                     Class8848 var14 = Class8482.method29979(var6, var2, new Class8848(var16.method25050()));
+                     ItemStack var14 = Class8482.method29979(var6, var2, new ItemStack(var16.method25050()));
                      if (!var1.field9020) {
-                        Class9551.field44474.method15152((Class878)var2, new Class8848(var16.method25050()));
+                        Class9551.field44474.method15152((Class878)var2, new ItemStack(var16.method25050()));
                      }
 
-                     return Class6794.<Class8848>method20700(var14, var1.method6714());
+                     return Class6794.<ItemStack>method20700(var14, var1.method6714());
                   }
                }
 
-               return Class6794.<Class8848>method20699(var6);
+               return Class6794.<ItemStack>method20699(var6);
             } else {
                Class7380 var12 = var1.method6738(var9);
                BlockPos var13 = var12.method23383() instanceof Class3449 && this.field18798 == Class9479.field44066 ? var9 : var11;
                if (!this.method11825(var2, var1, var13, var8)) {
-                  return Class6794.<Class8848>method20699(var6);
+                  return Class6794.<ItemStack>method20699(var6);
                } else {
                   this.method11824(var1, var6, var13);
                   if (var2 instanceof Class878) {
@@ -52,20 +52,20 @@ public class Class3287 extends Class3257 {
                   }
 
                   var2.method2913(Class8876.field40098.method172(this));
-                  return Class6794.<Class8848>method20700(this.method11823(var6, var2), var1.method6714());
+                  return Class6794.<ItemStack>method20700(this.method11823(var6, var2), var1.method6714());
                }
             }
          }
       } else {
-         return Class6794.<Class8848>method20698(var6);
+         return Class6794.<ItemStack>method20698(var6);
       }
    }
 
-   public Class8848 method11823(Class8848 var1, PlayerEntity var2) {
-      return var2.field4919.field29609 ? var1 : new Class8848(Class8514.field37882);
+   public ItemStack method11823(ItemStack var1, PlayerEntity var2) {
+      return var2.field4919.field29609 ? var1 : new ItemStack(Class8514.field37882);
    }
 
-   public void method11824(Class1655 var1, Class8848 var2, BlockPos var3) {
+   public void method11824(Class1655 var1, ItemStack var2, BlockPos var3) {
    }
 
    public boolean method11825(PlayerEntity var1, Class1655 var2, BlockPos var3, Class8711 var4) {

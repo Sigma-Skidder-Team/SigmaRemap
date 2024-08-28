@@ -34,9 +34,9 @@ public class Class8884 {
       float var15 = (float)(var1 - var7);
       float var16 = (float)(var3 - var9);
       float var17 = (float)(var5 - var11);
-      if (!this.field40201.method32023(Class9679.method37771(var15))
-         || !this.field40202.method32023(Class9679.method37771(var16))
-         || !this.field40203.method32023(Class9679.method37771(var17))) {
+      if (!this.field40201.method32023(MathHelper.method37771(var15))
+         || !this.field40202.method32023(MathHelper.method37771(var16))
+         || !this.field40203.method32023(MathHelper.method37771(var17))) {
          return false;
       } else {
          return this.field40204.method32024((double)(var15 * var15 + var17 * var17))

@@ -34,7 +34,7 @@ public class Class9332 {
       float var7 = 1.0F / var1;
       float var8 = 1.0F / var2;
       float var9 = 1.0F / var3;
-      float var10 = Class9679.method37817(var7 * var8 * var9);
+      float var10 = MathHelper.method37817(var7 * var8 * var9);
       Class8892.method32364(var6).method32828(Class8967.method32817(var10 * var7, var10 * var8, var10 * var9));
    }
 

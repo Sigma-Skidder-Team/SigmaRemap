@@ -14,7 +14,7 @@ public class Class3214 extends Class3213 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       this.method11603(var1, var2, var3);
       return Class2274.method9002(var2.field9020);
    }
@@ -41,9 +41,9 @@ public class Class3214 extends Class3213 {
                   float var11 = (var2.field9016.nextFloat() - 0.5F) * 0.2F;
                   float var12 = (var2.field9016.nextFloat() - 0.5F) * 0.2F;
                   float var13 = (var2.field9016.nextFloat() - 0.5F) * 0.2F;
-                  double var14 = Class9679.method37822(var9, (double)var7.method8304(), (double)var3.method8304()) + (var2.field9016.nextDouble() - 0.5) + 0.5;
-                  double var16 = Class9679.method37822(var9, (double)var7.getY(), (double)var3.getY()) + var2.field9016.nextDouble() - 0.5;
-                  double var18 = Class9679.method37822(var9, (double)var7.method8306(), (double)var3.method8306()) + (var2.field9016.nextDouble() - 0.5) + 0.5;
+                  double var14 = MathHelper.method37822(var9, (double)var7.method8304(), (double)var3.method8304()) + (var2.field9016.nextDouble() - 0.5) + 0.5;
+                  double var16 = MathHelper.method37822(var9, (double)var7.getY(), (double)var3.getY()) + var2.field9016.nextDouble() - 0.5;
+                  double var18 = MathHelper.method37822(var9, (double)var7.method8306(), (double)var3.method8306()) + (var2.field9016.nextDouble() - 0.5) + 0.5;
                   var2.method6746(Class7940.field34090, var14, var16, var18, (double)var11, (double)var12, (double)var13);
                }
             }

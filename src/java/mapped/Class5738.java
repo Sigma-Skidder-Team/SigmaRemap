@@ -26,16 +26,16 @@ public class Class5738 extends Class5715<Class904> {
          method17922(var13, var11, var12, var6, 0.0F, 1, 0, 0);
          var4.method35295();
          int var14 = var9.method2967() != Class2205.field14418 ? -1 : 1;
-         Class8848 var15 = var9.method3090();
+         ItemStack var15 = var9.method3090();
          if (var15.method32107() != Class8514.field37906) {
             var14 = -var14;
          }
 
          float var16 = var9.method3137(var3);
-         float var17 = Class9679.method37763(Class9679.method37765(var16) * (float) Math.PI);
-         float var18 = Class9679.method37821(var3, var9.field4966, var9.field4965) * (float) (Math.PI / 180.0);
-         double var19 = (double)Class9679.method37763(var18);
-         double var21 = (double)Class9679.method37764(var18);
+         float var17 = MathHelper.method37763(MathHelper.method37765(var16) * (float) Math.PI);
+         float var18 = MathHelper.method37821(var3, var9.field4966, var9.field4965) * (float) (Math.PI / 180.0);
+         double var19 = (double) MathHelper.method37763(var18);
+         double var21 = (double) MathHelper.method37764(var18);
          double var23 = (double)var14 * 0.35;
          double var25 = 0.8;
          double var27;
@@ -46,24 +46,24 @@ public class Class5738 extends Class5715<Class904> {
             double var33 = this.field25097.field40020.field44669;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
-            var35 = var35.method11350(-Class9679.method37821(var3, var9.field5034, var9.field5032) * (float) (Math.PI / 180.0));
-            var35 = var35.method11351(-Class9679.method37821(var3, var9.field5033, var9.field5031) * (float) (Math.PI / 180.0));
+            var35 = var35.method11350(-MathHelper.method37821(var3, var9.field5034, var9.field5032) * (float) (Math.PI / 180.0));
+            var35 = var35.method11351(-MathHelper.method37821(var3, var9.field5033, var9.field5031) * (float) (Math.PI / 180.0));
             var35 = var35.method11351(var17 * 0.5F);
             var35 = var35.method11350(-var17 * 0.7F);
-            var27 = Class9679.method37822((double)var3, var9.field5025, var9.getPosX()) + var35.field18048;
-            var29 = Class9679.method37822((double)var3, var9.field5026, var9.getPosY()) + var35.field18049;
-            var31 = Class9679.method37822((double)var3, var9.field5027, var9.getPosZ()) + var35.field18050;
+            var27 = MathHelper.method37822((double)var3, var9.field5025, var9.getPosX()) + var35.field18048;
+            var29 = MathHelper.method37822((double)var3, var9.field5026, var9.getPosY()) + var35.field18049;
+            var31 = MathHelper.method37822((double)var3, var9.field5027, var9.getPosZ()) + var35.field18050;
             var36 = var9.method3393();
          } else {
-            var27 = Class9679.method37822((double)var3, var9.field5025, var9.getPosX()) - var21 * var23 - var19 * 0.8;
+            var27 = MathHelper.method37822((double)var3, var9.field5025, var9.getPosX()) - var21 * var23 - var19 * 0.8;
             var29 = var9.field5026 + (double)var9.method3393() + (var9.getPosY() - var9.field5026) * (double)var3 - 0.45;
-            var31 = Class9679.method37822((double)var3, var9.field5027, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
+            var31 = MathHelper.method37822((double)var3, var9.field5027, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
             var36 = !var9.method3336() ? 0.0F : -0.1875F;
          }
 
-         double var49 = Class9679.method37822((double)var3, var1.field5025, var1.getPosX());
-         double var37 = Class9679.method37822((double)var3, var1.field5026, var1.getPosY()) + 0.25;
-         double var39 = Class9679.method37822((double)var3, var1.field5027, var1.getPosZ());
+         double var49 = MathHelper.method37822((double)var3, var1.field5025, var1.getPosX());
+         double var37 = MathHelper.method37822((double)var3, var1.field5026, var1.getPosY()) + 0.25;
+         double var39 = MathHelper.method37822((double)var3, var1.field5027, var1.getPosZ());
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);

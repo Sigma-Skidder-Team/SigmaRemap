@@ -51,7 +51,7 @@ public class Class962 extends Class944 implements Class935 {
          for (Entity var8 : var6) {
             if (var8 instanceof Class1017) {
                Class1017 var9 = (Class1017)var8;
-               if (var1.method3431().method11342(var8.method3431()) <= 16.0) {
+               if (var1.getPositionVec().method11342(var8.getPositionVec()) <= 16.0) {
                   if (this.method3920()) {
                      var9.method4426(400);
                   } else {

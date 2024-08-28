@@ -2,12 +2,12 @@ package mapped;
 
 public class Class1125 extends Class851<Class5827> {
    private static final ResourceLocation field6161 = new ResourceLocation("textures/gui/container/horse.png");
-   private final Class1068 field6162;
+   private final AbstractHorseEntity field6162;
    private float field6163;
    private float field6164;
 
-   public Class1125(Class5827 var1, Class974 var2, Class1068 var3) {
-      super(var1, var2, var3.method2954());
+   public Class1125(Class5827 var1, Class974 var2, AbstractHorseEntity var3) {
+      super(var1, var2, var3.getDisplayName());
       this.field6162 = var3;
       this.field4567 = false;
    }

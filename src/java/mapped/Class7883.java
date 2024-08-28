@@ -28,7 +28,7 @@ public class Class7883 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(Class1657 var1, Class880 var2) {
+   public void method26425(ServerWorld var1, Class880 var2) {
       var2.method2992().method21408(Class8830.field39838, this.method26431(var2));
    }
 
@@ -47,12 +47,12 @@ public class Class7883 extends Class7882<Class880> {
    }
 
    private int method26433(Class880 var1, Class880 var2, Class880 var3) {
-      return Class9679.method37769(var2.method3277(var1) - var3.method3277(var1));
+      return MathHelper.method37769(var2.getDistanceSq(var1) - var3.getDistanceSq(var1));
    }
 
    private boolean method26434(Class880 var1, Class880 var2) {
       float var5 = (Float)field33831.get(var2.method3204());
-      return var2.method3277(var1) <= (double)(var5 * var5);
+      return var2.getDistanceSq(var1) <= (double)(var5 * var5);
    }
 
    private boolean method26435(Class880 var1) {

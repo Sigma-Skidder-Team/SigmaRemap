@@ -20,7 +20,7 @@ public class Class6337 extends Class6333 {
       }
 
       this.field27852 = this.field27852 + this.field27851;
-      this.field27856 = Class9679.method37777((float)this.field27852 / 40.0F, 0.0F, 1.0F);
+      this.field27856 = MathHelper.method37777((float)this.field27852 / 40.0F, 0.0F, 1.0F);
    }
 
    public void method19277() {

@@ -87,7 +87,7 @@ public class Class1055 extends Class1047 {
       }
 
       if (!this.method3255()) {
-         this.field5831 = Class9679.method37771(Class9679.method37763(this.field5829)) * (float) Math.PI * 0.25F;
+         this.field5831 = MathHelper.method37771(MathHelper.method37763(this.field5829)) * (float) Math.PI * 0.25F;
          if (!this.field5024.field9020) {
             double var5 = this.method3433().field18049;
             if (!this.method3033(Class8254.field35491)) {
@@ -109,7 +109,7 @@ public class Class1055 extends Class1047 {
             this.field5835 *= 0.99F;
          } else {
             float var3 = this.field5829 / (float) Math.PI;
-            this.field5831 = Class9679.method37763(var3 * var3 * (float) Math.PI) * (float) Math.PI * 0.25F;
+            this.field5831 = MathHelper.method37763(var3 * var3 * (float) Math.PI) * (float) Math.PI * 0.25F;
             if (!((double)var3 > 0.75)) {
                this.field5835 *= 0.8F;
             } else {
@@ -123,12 +123,12 @@ public class Class1055 extends Class1047 {
          }
 
          Vector3d var7 = this.method3433();
-         float var4 = Class9679.method37766(method3234(var7));
+         float var4 = MathHelper.method37766(method3234(var7));
          this.field4965 = this.field4965
-            + (-((float)Class9679.method37814(var7.field18048, var7.field18050)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
+            + (-((float) MathHelper.method37814(var7.field18048, var7.field18050)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
          this.field5031 = this.field4965;
          this.field5827 = (float)((double)this.field5827 + Math.PI * (double)this.field5835 * 1.5);
-         this.field5825 = this.field5825 + (-((float)Class9679.method37814((double)var4, var7.field18049)) * (180.0F / (float)Math.PI) - this.field5825) * 0.1F;
+         this.field5825 = this.field5825 + (-((float) MathHelper.method37814((double)var4, var7.field18049)) * (180.0F / (float)Math.PI) - this.field5825) * 0.1F;
       }
    }
 
@@ -154,7 +154,7 @@ public class Class1055 extends Class1047 {
       for (int var4 = 0; var4 < 30; var4++) {
          Vector3d var5 = this.method4837(new Vector3d((double)this.field5054.nextFloat() * 0.6 - 0.3, -1.0, (double)this.field5054.nextFloat() * 0.6 - 0.3));
          Vector3d var6 = var5.method11344(0.3 + (double)(this.field5054.nextFloat() * 2.0F));
-         ((Class1657)this.field5024)
+         ((ServerWorld)this.field5024)
             .method6939(
                Class7940.field34095, var3.field18048, var3.field18049 + 0.5, var3.field18050, 0, var6.field18048, var6.field18049, var6.field18050, 0.1F
             );

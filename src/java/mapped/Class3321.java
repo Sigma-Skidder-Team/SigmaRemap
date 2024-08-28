@@ -15,7 +15,7 @@ public class Class3321 extends Class3257 {
    }
 
    @Override
-   public Class2274 method11716(Class8848 var1, PlayerEntity var2, Class880 var3, Class79 var4) {
+   public Class2274 method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
       if (var3 instanceof Class1019) {
          Class1019 var7 = (Class1019)var3;
          if (var7.method3066() && !var7.method4519() && var7.method4517() != this.field18831) {

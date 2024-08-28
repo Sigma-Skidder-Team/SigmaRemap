@@ -16,7 +16,7 @@ public class Class4497 {
    private static final DataFixer field21710 = method14180();
 
    private static DataFixer method14180() {
-      DataFixerBuilder var2 = new DataFixerBuilder(Class9246.method34773().getWorldVersion());
+      DataFixerBuilder var2 = new DataFixerBuilder(SharedConstants.method34773().getWorldVersion());
       method14182(var2);
       return var2.build(Util.method38491());
    }

@@ -61,7 +61,7 @@ public class Class3201 extends Class3200 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          Class7380 var11 = this.method11510(var1, var2, var3);
          float var10 = !var11.<Boolean>method23463(field18501) ? 0.5F : 0.6F;

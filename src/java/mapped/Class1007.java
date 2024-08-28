@@ -53,10 +53,10 @@ public class Class1007 extends Class1006 implements Class1008 {
       this.method3043(this.method3075());
       this.field5052 = true;
       this.field5077 = true;
-      if (!(var2 instanceof Class1657)) {
+      if (!(var2 instanceof ServerWorld)) {
          this.field5638 = null;
       } else {
-         this.field5638 = ((Class1657)var2).method6968();
+         this.field5638 = ((ServerWorld)var2).method6968();
       }
 
       this.field5639 = new Class8942(this);
@@ -82,12 +82,12 @@ public class Class1007 extends Class1006 implements Class1008 {
       int var6 = this.field5622 - var1 - 1 & 63;
       double[] var7 = new double[3];
       double var8 = this.field5621[var5][0];
-      double var10 = Class9679.method37793(this.field5621[var6][0] - var8);
+      double var10 = MathHelper.method37793(this.field5621[var6][0] - var8);
       var7[0] = var8 + var10 * (double)var2;
       var8 = this.field5621[var5][1];
       var10 = this.field5621[var6][1] - var8;
       var7[1] = var8 + var10 * (double)var2;
-      var7[2] = Class9679.method37822((double)var2, this.field5621[var5][2], this.field5621[var6][2]);
+      var7[2] = MathHelper.method37822((double)var2, this.field5621[var5][2], this.field5621[var6][2]);
       return var7;
    }
 
@@ -96,8 +96,8 @@ public class Class1007 extends Class1006 implements Class1008 {
       if (this.field5024.field9020) {
          this.method3043(this.method3042());
          if (!this.method3245()) {
-            float var3 = Class9679.method37764(this.field5633 * (float) (Math.PI * 2));
-            float var4 = Class9679.method37764(this.field5632 * (float) (Math.PI * 2));
+            float var3 = MathHelper.method37764(this.field5633 * (float) (Math.PI * 2));
+            float var4 = MathHelper.method37764(this.field5632 * (float) (Math.PI * 2));
             if (var4 <= -0.3F && var3 >= -0.3F) {
                this.field5024
                   .method6745(
@@ -133,7 +133,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       if (!this.method3044()) {
          this.method4320();
          Vector3d var42 = this.method3433();
-         float var44 = 0.2F / (Class9679.method37766(method3234(var42)) * 10.0F + 1.0F);
+         float var44 = 0.2F / (MathHelper.method37766(method3234(var42)) * 10.0F + 1.0F);
          var44 *= (float)Math.pow(2.0, var42.field18049);
          if (!this.field5639.method32672().method23358()) {
             if (!this.field5634) {
@@ -145,7 +145,7 @@ public class Class1007 extends Class1006 implements Class1008 {
             this.field5633 += 0.1F;
          }
 
-         this.field5031 = Class9679.method37792(this.field5031);
+         this.field5031 = MathHelper.method37792(this.field5031);
          if (!this.method4305()) {
             if (this.field5622 < 0) {
                for (int var5 = 0; var5 < this.field5621.length; var5++) {
@@ -175,21 +175,21 @@ public class Class1007 extends Class1006 implements Class1008 {
                   double var13 = var6.field18050 - this.getPosZ();
                   double var15 = var9 * var9 + var11 * var11 + var13 * var13;
                   float var17 = var47.method23364();
-                  double var18 = (double)Class9679.method37766(var9 * var9 + var13 * var13);
+                  double var18 = (double) MathHelper.method37766(var9 * var9 + var13 * var13);
                   if (var18 > 0.0) {
-                     var11 = Class9679.method37778(var11 / var18, (double)(-var17), (double)var17);
+                     var11 = MathHelper.method37778(var11 / var18, (double)(-var17), (double)var17);
                   }
 
                   this.method3434(this.method3433().method11339(0.0, var11 * 0.01, 0.0));
-                  this.field5031 = Class9679.method37792(this.field5031);
-                  double var20 = Class9679.method37778(
-                     Class9679.method37793(180.0 - Class9679.method37814(var9, var13) * 180.0F / (float)Math.PI - (double)this.field5031), -50.0, 50.0
+                  this.field5031 = MathHelper.method37792(this.field5031);
+                  double var20 = MathHelper.method37778(
+                     MathHelper.method37793(180.0 - MathHelper.method37814(var9, var13) * 180.0F / (float)Math.PI - (double)this.field5031), -50.0, 50.0
                   );
                   Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).method11333();
                   Vector3d var23 = new Vector3d(
-                        (double)Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)),
+                        (double) MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)),
                         this.method3433().field18049,
-                        (double)(-Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)))
+                        (double)(-MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)))
                      )
                      .method11333();
                   float var24 = Math.max(((float)var23.method11334(var22) + 0.5F) / 1.5F, 0.0F);
@@ -214,7 +214,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                   double var7 = this.getPosX() + (this.field4986 - this.getPosX()) / (double)this.field4985;
                   double var52 = this.getPosY() + (this.field4987 - this.getPosY()) / (double)this.field4985;
                   double var53 = this.getPosZ() + (this.field4988 - this.getPosZ()) / (double)this.field4985;
-                  double var54 = Class9679.method37793(this.field4989 - (double)this.field5031);
+                  double var54 = MathHelper.method37793(this.field4989 - (double)this.field5031);
                   this.field5031 = (float)((double)this.field5031 + var54 / (double)this.field4985);
                   this.field5032 = (float)((double)this.field5032 + (this.field4990 - (double)this.field5032) / (double)this.field4985);
                   this.field4985--;
@@ -233,11 +233,11 @@ public class Class1007 extends Class1006 implements Class1008 {
             }
 
             float var51 = (float)(this.method4317(5, 1.0F)[1] - this.method4317(10, 1.0F)[1]) * 10.0F * (float) (Math.PI / 180.0);
-            float var30 = Class9679.method37764(var51);
-            float var31 = Class9679.method37763(var51);
+            float var30 = MathHelper.method37764(var51);
+            float var31 = MathHelper.method37763(var51);
             float var32 = this.field5031 * (float) (Math.PI / 180.0);
-            float var33 = Class9679.method37763(var32);
-            float var34 = Class9679.method37764(var32);
+            float var33 = MathHelper.method37763(var32);
+            float var34 = MathHelper.method37764(var32);
             this.method4318(this.field5626, (double)(var33 * 0.5F), 0.0, (double)(-var34 * 0.5F));
             this.method4318(this.field5630, (double)(var34 * 4.5F), 2.0, (double)(var33 * 4.5F));
             this.method4318(this.field5631, (double)(var34 * -4.5F), 2.0, (double)(var33 * -4.5F));
@@ -252,8 +252,8 @@ public class Class1007 extends Class1006 implements Class1008 {
                this.method4322(this.field5024.method6770(this, this.field5625.method3389().method19664(1.0), Class8088.field34761));
             }
 
-            float var35 = Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
-            float var36 = Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
+            float var35 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
+            float var36 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
             float var37 = this.method4319();
             this.method4318(this.field5624, (double)(var35 * 6.5F * var30), (double)(var37 + var31 * 6.5F), (double)(-var36 * 6.5F * var30));
             this.method4318(this.field5625, (double)(var35 * 5.5F * var30), (double)(var37 + var31 * 5.5F), (double)(-var36 * 5.5F * var30));
@@ -275,8 +275,8 @@ public class Class1007 extends Class1006 implements Class1008 {
 
                double[] var40 = this.method4317(12 + var38 * 2, 1.0F);
                float var41 = this.field5031 * (float) (Math.PI / 180.0) + this.method4323(var40[0] - var55[0]) * (float) (Math.PI / 180.0);
-               float var56 = Class9679.method37763(var41);
-               float var57 = Class9679.method37764(var41);
+               float var56 = MathHelper.method37763(var41);
+               float var57 = MathHelper.method37764(var41);
                float var58 = 1.5F;
                float var59 = (float)(var38 + 1) * 2.0F;
                this.method4318(
@@ -355,7 +355,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          double var5 = Double.MAX_VALUE;
 
          for (Class1001 var8 : var3) {
-            double var9 = var8.method3277(this);
+            double var9 = var8.getDistanceSq(this);
             if (var9 < var5) {
                var5 = var9;
                var4 = var8;
@@ -394,16 +394,16 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    private float method4323(double var1) {
-      return (float)Class9679.method37793(var1);
+      return (float) MathHelper.method37793(var1);
    }
 
    private boolean method4324(Class6488 var1) {
-      int var4 = Class9679.method37769(var1.field28449);
-      int var5 = Class9679.method37769(var1.field28450);
-      int var6 = Class9679.method37769(var1.field28451);
-      int var7 = Class9679.method37769(var1.field28452);
-      int var8 = Class9679.method37769(var1.field28453);
-      int var9 = Class9679.method37769(var1.field28454);
+      int var4 = MathHelper.method37769(var1.field28449);
+      int var5 = MathHelper.method37769(var1.field28450);
+      int var6 = MathHelper.method37769(var1.field28451);
+      int var7 = MathHelper.method37769(var1.field28452);
+      int var8 = MathHelper.method37769(var1.field28453);
+      int var9 = MathHelper.method37769(var1.field28454);
       boolean var10 = false;
       boolean var11 = false;
 
@@ -515,7 +515,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
       if (!this.field5024.field9020) {
          if (this.field5635 > 150 && this.field5635 % 5 == 0 && var6) {
-            this.method4327(Class9679.method37767((float)var7 * 0.08F));
+            this.method4327(MathHelper.method37767((float)var7 * 0.08F));
          }
 
          if (this.field5635 == 1 && !this.method3245()) {
@@ -528,7 +528,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       this.field4965 = this.field5031;
       if (this.field5635 == 200 && !this.field5024.field9020) {
          if (var6) {
-            this.method4327(Class9679.method37767((float)var7 * 0.2F));
+            this.method4327(MathHelper.method37767((float)var7 * 0.2F));
          }
 
          if (this.field5638 != null) {
@@ -556,17 +556,17 @@ public class Class1007 extends Class1006 implements Class1008 {
             if (var3 >= 12) {
                if (var3 >= 20) {
                   int var5 = var3 - 20;
-                  var6 = Class9679.method37767(20.0F * Class9679.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
-                  var7 = Class9679.method37767(20.0F * Class9679.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
+                  var6 = MathHelper.method37767(20.0F * MathHelper.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
+                  var7 = MathHelper.method37767(20.0F * MathHelper.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
                } else {
                   int var8 = var3 - 12;
-                  var6 = Class9679.method37767(40.0F * Class9679.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
-                  var7 = Class9679.method37767(40.0F * Class9679.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
+                  var6 = MathHelper.method37767(40.0F * MathHelper.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
+                  var7 = MathHelper.method37767(40.0F * MathHelper.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
                   var4 += 10;
                }
             } else {
-               var6 = Class9679.method37767(60.0F * Class9679.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
-               var7 = Class9679.method37767(60.0F * Class9679.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
+               var6 = MathHelper.method37767(60.0F * MathHelper.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
+               var7 = MathHelper.method37767(60.0F * MathHelper.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
             }
 
             int var9 = Math.max(
@@ -607,7 +607,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    public int method4329(double var1, double var3, double var5) {
       float var9 = 10000.0F;
       int var10 = 0;
-      Class7176 var11 = new Class7176(Class9679.method37769(var1), Class9679.method37769(var3), Class9679.method37769(var5));
+      Class7176 var11 = new Class7176(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
       byte var12 = 0;
       if (this.field5638 == null || this.field5638.method26125() == 0) {
          var12 = 12;
@@ -776,7 +776,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       double var10;
       if (var7 == Class9598.field44899 || var7 == Class9598.field44900) {
          BlockPos var8 = this.field5024.method7006(Class101.field300, Class2909.field17994);
-         float var9 = Math.max(Class9679.method37766(var8.method8319(this.method3431(), true)) / 4.0F, 1.0F);
+         float var9 = Math.max(MathHelper.method37766(var8.method8319(this.getPositionVec(), true)) / 4.0F, 1.0F);
          var10 = (double)((float)var1 / var9);
       } else if (!var6.method23358()) {
          if (var1 != 6) {
@@ -797,7 +797,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       Vector3d var11;
       if (var5 == Class9598.field44899 || var5 == Class9598.field44900) {
          BlockPos var12 = this.field5024.method7006(Class101.field300, Class2909.field17994);
-         float var13 = Math.max(Class9679.method37766(var12.method8319(this.method3431(), true)) / 4.0F, 1.0F);
+         float var13 = Math.max(MathHelper.method37766(var12.method8319(this.getPositionVec(), true)) / 4.0F, 1.0F);
          float var8 = 6.0F / var13;
          float var9 = this.field5032;
          float var10 = 1.5F;

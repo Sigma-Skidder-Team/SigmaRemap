@@ -85,7 +85,7 @@ public class Class8194 {
             var0.method20179(new TranslationTextComponent("commands.recipe.give.success.multiple", var2.size(), var1.size()), true);
          } else {
             var0.method20179(
-               new TranslationTextComponent("commands.recipe.give.success.single", var2.size(), ((Class878)var1.iterator().next()).method2954()), true
+               new TranslationTextComponent("commands.recipe.give.success.single", var2.size(), ((Class878)var1.iterator().next()).getDisplayName()), true
             );
          }
 
@@ -107,7 +107,7 @@ public class Class8194 {
             var0.method20179(new TranslationTextComponent("commands.recipe.take.success.multiple", var2.size(), var1.size()), true);
          } else {
             var0.method20179(
-               new TranslationTextComponent("commands.recipe.take.success.single", var2.size(), ((Class878)var1.iterator().next()).method2954()), true
+               new TranslationTextComponent("commands.recipe.take.success.single", var2.size(), ((Class878)var1.iterator().next()).getDisplayName()), true
             );
          }
 

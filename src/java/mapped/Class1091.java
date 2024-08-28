@@ -100,7 +100,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public void method4258() {
       this.field5024.method6820().method22503("hoglinBrain");
-      this.method2992().method21432((Class1657)this.field5024, this);
+      this.method2992().method21432((ServerWorld)this.field5024, this);
       this.field5024.method6820().method22505();
       Class9069.method33784(this);
       if (!this.method5087()) {
@@ -109,7 +109,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
          this.field5978++;
          if (this.field5978 > 300) {
             this.method5090(Class6067.field26655);
-            this.method5083((Class1657)this.field5024);
+            this.method5083((ServerWorld)this.field5024);
          }
       }
    }
@@ -168,7 +168,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
       Class2274 var5 = super.method4285(var1, var2);
       if (var5.method9000()) {
          this.method4278();
@@ -202,7 +202,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       return this.field5594;
    }
 
-   private void method5083(Class1657 var1) {
+   private void method5083(ServerWorld var1) {
       Class1093 var4 = this.<Class1093>method4292(Class8992.field41106, true);
       if (var4 != null) {
          var4.method3035(new Class2023(Class8254.field35475, 200, 0));
@@ -210,7 +210,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return var1.method32107() == Class8514.field37348;
    }
 
@@ -267,7 +267,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Nullable
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       Class1091 var5 = Class8992.field41037.method33215(var1);
       if (var5 != null) {
          var5.method4278();

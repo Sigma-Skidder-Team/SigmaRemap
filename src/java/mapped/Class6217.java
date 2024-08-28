@@ -2,8 +2,8 @@ package mapped;
 
 public abstract class Class6217 extends Class6218 {
    @Override
-   public Class8848 method19192(Class2956 var1, Class8848 var2) {
-      Class1657 var5 = var1.method11326();
+   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+      ServerWorld var5 = var1.method11326();
       Class2955 var6 = Class3357.method11934(var1);
       Direction var7 = var1.method11324().<Direction>method23463(Class3357.field18899);
       Class882 var8 = this.method19191(var5, var6, var2);
@@ -18,7 +18,7 @@ public abstract class Class6217 extends Class6218 {
       var1.method11326().method6999(1002, var1.method11323(), 0);
    }
 
-   public abstract Class882 method19191(Class1655 var1, Class2955 var2, Class8848 var3);
+   public abstract Class882 method19191(Class1655 var1, Class2955 var2, ItemStack var3);
 
    public float method19194() {
       return 6.0F;

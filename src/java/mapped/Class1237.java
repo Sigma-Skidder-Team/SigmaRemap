@@ -14,14 +14,14 @@ public class Class1237 extends Class1236 {
       this.field6587 = var1;
       this.field6585 = (double)var6;
       this.field6586 = (double)var7;
-      this.field6584 = (double)((Class9679.method37777((float)var5, var6, var7) - var6) / (var7 - var6));
+      this.field6584 = (double)((MathHelper.method37777((float)var5, var6, var7) - var6) / (var7 - var6));
       this.method5813();
    }
 
    @Override
    public void method5812() {
       if (Class1343.method6456(this.field6587).field6482) {
-         Class1343.method6457(this.field6587, (int)Class9679.method37822(Class9679.method37778(this.field6584, 0.0, 1.0), this.field6585, this.field6586));
+         Class1343.method6457(this.field6587, (int) MathHelper.method37822(MathHelper.method37778(this.field6584, 0.0, 1.0), this.field6585, this.field6586));
       }
    }
 

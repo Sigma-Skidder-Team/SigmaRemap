@@ -33,7 +33,7 @@ public class Class6587 {
             var1.method1328(new TranslationTextComponent("gameMode.changed", var5), Util.field45724);
          }
 
-         var0.method20179(new TranslationTextComponent("commands.gamemode.success.other", var1.method2954(), var5), true);
+         var0.method20179(new TranslationTextComponent("commands.gamemode.success.other", var1.getDisplayName(), var5), true);
       } else {
          var0.method20179(new TranslationTextComponent("commands.gamemode.success.self", var5), true);
       }

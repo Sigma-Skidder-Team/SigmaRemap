@@ -22,7 +22,7 @@ public class Class5285 extends Module {
     private void method16583(Class4430 var1) {
         if (this.method15996()) {
             if (var1.method13977() == mc.field1299.field44639.field13070.field34875 && mc.field1339.method3337()) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10044));
+                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10044));
             }
         }
     }
@@ -30,9 +30,9 @@ public class Class5285 extends Module {
     @EventTarget
     private void method16584(Class4402 var1) {
         if (this.method15996()) {
-            if (this.field23757 && var1.method13932() instanceof Class5583 && this.method15974("AACP")) {
-                Class5583 var4 = (Class5583) var1.method13932();
-                if (var4.method17547() == Class1865.field10043) {
+            if (this.field23757 && var1.method13932() instanceof CEntityActionPacket && this.method15974("AACP")) {
+                CEntityActionPacket var4 = (CEntityActionPacket) var1.method13932();
+                if (var4.getAction() == Class1865.field10043) {
                     var1.method13900(true);
                 }
             }
@@ -47,12 +47,12 @@ public class Class5285 extends Module {
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
                     if (mc.field1339.method3337()) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10043));
+                        mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10043));
                     }
                 } else if (!this.field23757 && var4) {
                     this.field23757 = !this.field23757;
                     if (mc.field1339.method3337()) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10044));
+                        mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10044));
                     }
                 }
             }

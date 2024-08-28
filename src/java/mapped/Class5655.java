@@ -25,7 +25,7 @@ public class Class5655 extends Class5651<Class1052, Class2827<Class1052>> {
 
    public void method17842(Class1052 var1, Class9332 var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
-      float var8 = 4.3F * Class9679.method37763(0.6F * var3);
+      float var8 = 4.3F * MathHelper.method37763(0.6F * var3);
       var2.method35293(Class7680.field32900.method25286(var8));
       if (!var1.method3250()) {
          var2.method35291(0.2F, 0.1F, 0.0);

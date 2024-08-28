@@ -11,7 +11,7 @@ public class Class2742 extends Class2736 {
 
    @Override
    public boolean method10803() {
-      Class1657 var3 = (Class1657)this.field17258.field5024;
+      ServerWorld var3 = (ServerWorld)this.field17258.field5024;
       BlockPos var4 = this.field17258.method3432();
       return !var3.method6952(var4) ? super.method10803() : false;
    }
@@ -19,7 +19,7 @@ public class Class2742 extends Class2736 {
    @Nullable
    @Override
    public Vector3d method10943() {
-      Class1657 var3 = (Class1657)this.field17258.field5024;
+      ServerWorld var3 = (ServerWorld)this.field17258.field5024;
       BlockPos var4 = this.field17258.method3432();
       Class2002 var5 = Class2002.method8390(var4);
       Class2002 var6 = Class6983.method21579(var3, var5, 2);

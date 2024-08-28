@@ -137,7 +137,7 @@ public class Class7689 implements Class7690 {
    }
 
    public static double method25313(double var0) {
-      return var0 - (double)Class9679.method37770(var0 / 3.3554432E7 + 0.5) * 3.3554432E7;
+      return var0 - (double) MathHelper.method37770(var0 / 3.3554432E7 + 0.5) * 3.3554432E7;
    }
 
    @Override

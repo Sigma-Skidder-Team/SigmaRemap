@@ -21,7 +21,7 @@ public class Class8535 {
 
    public static int method30366() {
       RenderSystem.method27808(RenderSystem::method27804);
-      if (!Class9246.field42545) {
+      if (!SharedConstants.field42545) {
          return Class7414.method23810();
       } else {
          int[] var2 = new int[ThreadLocalRandom.current().nextInt(15) + 1];

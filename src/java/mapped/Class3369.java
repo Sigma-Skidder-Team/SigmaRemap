@@ -51,7 +51,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       return !this.method11960(var2, var1, var6, var4, true) ? Class2274.field14820 : Class2274.method9002(var2.field9020);
    }
 

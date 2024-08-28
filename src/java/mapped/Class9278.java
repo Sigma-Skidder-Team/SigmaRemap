@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class9278 {
    private static final Logger field42666 = LogManager.getLogger();
-   private final Class1657 field42667;
+   private final ServerWorld field42667;
    private final Entity field42668;
    private final int field42669;
    private final boolean field42670;
@@ -31,16 +31,16 @@ public class Class9278 {
    private boolean field42682;
    private boolean field42683;
 
-   public Class9278(Class1657 var1, Entity var2, int var3, boolean var4, Consumer<Packet<?>> var5) {
+   public Class9278(ServerWorld var1, Entity var2, int var3, boolean var4, Consumer<Packet<?>> var5) {
       this.field42667 = var1;
       this.field42671 = var5;
       this.field42668 = var2;
       this.field42669 = var3;
       this.field42670 = var4;
       this.method34974();
-      this.field42675 = Class9679.method37767(var2.field5031 * 256.0F / 360.0F);
-      this.field42676 = Class9679.method37767(var2.field5032 * 256.0F / 360.0F);
-      this.field42677 = Class9679.method37767(var2.method3142() * 256.0F / 360.0F);
+      this.field42675 = MathHelper.method37767(var2.field5031 * 256.0F / 360.0F);
+      this.field42676 = MathHelper.method37767(var2.field5032 * 256.0F / 360.0F);
+      this.field42677 = MathHelper.method37767(var2.method3142() * 256.0F / 360.0F);
       this.field42683 = var2.method3226();
    }
 
@@ -53,7 +53,7 @@ public class Class9278 {
 
       if (this.field42668 instanceof Class997 && this.field42679 % 10 == 0) {
          Class997 var4 = (Class997)this.field42668;
-         Class8848 var5 = var4.method4090();
+         ItemStack var5 = var4.method4090();
          if (var5.method32107() instanceof Class3316) {
             Class7529 var6 = Class3316.method11861(var5, this.field42667);
 
@@ -61,7 +61,7 @@ public class Class9278 {
                var6.method24594(var8, var5);
                Packet var9 = ((Class3316)var5.method32107()).method11858(var5, this.field42667, var8);
                if (var9 != null) {
-                  var8.field4855.method15671(var9);
+                  var8.field4855.sendPacket(var9);
                }
             }
          }
@@ -72,9 +72,9 @@ public class Class9278 {
       if (this.field42679 % this.field42669 == 0 || this.field42668.field5078 || this.field42668.method3210().method35447()) {
          if (!this.field42668.method3328()) {
             this.field42680++;
-            int var22 = Class9679.method37767(this.field42668.field5031 * 256.0F / 360.0F);
-            int var25 = Class9679.method37767(this.field42668.field5032 * 256.0F / 360.0F);
-            Vector3d var27 = this.field42668.method3431().method11336(Class5476.method17232(this.field42672, this.field42673, this.field42674));
+            int var22 = MathHelper.method37767(this.field42668.field5031 * 256.0F / 360.0F);
+            int var25 = MathHelper.method37767(this.field42668.field5032 * 256.0F / 360.0F);
+            Vector3d var27 = this.field42668.getPositionVec().method11336(Class5476.method17232(this.field42672, this.field42673, this.field42674));
             boolean var28 = var27.method11349() >= 7.6293945E-6F;
             Object var29 = null;
             boolean var30 = var28 || this.field42679 % 60 == 0;
@@ -137,8 +137,8 @@ public class Class9278 {
 
             this.field42682 = false;
          } else {
-            int var21 = Class9679.method37767(this.field42668.field5031 * 256.0F / 360.0F);
-            int var24 = Class9679.method37767(this.field42668.field5032 * 256.0F / 360.0F);
+            int var21 = MathHelper.method37767(this.field42668.field5031 * 256.0F / 360.0F);
+            int var24 = MathHelper.method37767(this.field42668.field5032 * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
             if (var26) {
                this.field42671.accept(new Class5479(this.field42668.method3205(), (byte)var21, (byte)var24, this.field42668.method3226()));
@@ -151,7 +151,7 @@ public class Class9278 {
             this.field42682 = true;
          }
 
-         int var23 = Class9679.method37767(this.field42668.method3142() * 256.0F / 360.0F);
+         int var23 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
          if (Math.abs(var23 - this.field42677) >= 1) {
             this.field42671.accept(new Class5516(this.field42668, (byte)var23));
             this.field42677 = var23;
@@ -173,7 +173,7 @@ public class Class9278 {
    }
 
    public void method34971(Class878 var1) {
-      this.method34972(var1.field4855::method15671);
+      this.method34972(var1.field4855::sendPacket);
       this.field42668.method3400(var1);
       var1.method2812(this.field42668);
    }
@@ -184,7 +184,7 @@ public class Class9278 {
       }
 
       Packet var4 = this.field42668.method2835();
-      this.field42677 = Class9679.method37767(this.field42668.method3142() * 256.0F / 360.0F);
+      this.field42677 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
       var1.accept(var4);
       if (!this.field42668.method3210().method35456()) {
          var1.accept(new Class5553(this.field42668.method3205(), this.field42668.method3210(), true));
@@ -211,7 +211,7 @@ public class Class9278 {
          ArrayList var12 = Lists.newArrayList();
 
          for (Class2106 var10 : Class2106.values()) {
-            Class8848 var11 = ((Class880)this.field42668).method2943(var10);
+            ItemStack var11 = ((Class880)this.field42668).method2943(var10);
             if (!var11.method32105()) {
                var12.add(Pair.of(var10, var11.method32126()));
             }
@@ -235,7 +235,7 @@ public class Class9278 {
       }
 
       if (this.field42668.method3328()) {
-         var1.accept(new Class5485(this.field42668.method3421()));
+         var1.accept(new Class5485(this.field42668.getRidingEntity()));
       }
 
       if (this.field42668 instanceof Class1006) {
@@ -275,7 +275,7 @@ public class Class9278 {
    private void method34976(Packet<?> var1) {
       this.field42671.accept(var1);
       if (this.field42668 instanceof Class878) {
-         ((Class878)this.field42668).field4855.method15671(var1);
+         ((Class878)this.field42668).field4855.sendPacket(var1);
       }
    }
 }

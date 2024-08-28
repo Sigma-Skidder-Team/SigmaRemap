@@ -27,15 +27,15 @@ public class Class6761 extends Class6762 {
    @Override
    public Class7176 method20615() {
       return this.method20641(
-         Class9679.method37769(this.field29476.method3389().field28449),
-         Class9679.method37769(this.field29476.method3389().field28450 + 0.5),
-         Class9679.method37769(this.field29476.method3389().field28451)
+         MathHelper.method37769(this.field29476.method3389().field28449),
+         MathHelper.method37769(this.field29476.method3389().field28450 + 0.5),
+         MathHelper.method37769(this.field29476.method3389().field28451)
       );
    }
 
    @Override
    public Class7175 method20616(double var1, double var3, double var5) {
-      return new Class7175(this.method20641(Class9679.method37769(var1), Class9679.method37769(var3 + 0.5), Class9679.method37769(var5)));
+      return new Class7175(this.method20641(MathHelper.method37769(var1), MathHelper.method37769(var3 + 0.5), MathHelper.method37769(var5)));
    }
 
    @Override

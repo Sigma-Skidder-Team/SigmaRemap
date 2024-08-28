@@ -35,12 +35,12 @@ public class Class8181 extends AbstractSpliterator<Class6408> {
       this.field35186 = var2;
       this.field35187 = var3;
       this.field35194 = var4;
-      int var7 = Class9679.method37769(var3.field28449 - 1.0E-7) - 1;
-      int var8 = Class9679.method37769(var3.field28452 + 1.0E-7) + 1;
-      int var9 = Class9679.method37769(var3.field28450 - 1.0E-7) - 1;
-      int var10 = Class9679.method37769(var3.field28453 + 1.0E-7) + 1;
-      int var11 = Class9679.method37769(var3.field28451 - 1.0E-7) - 1;
-      int var12 = Class9679.method37769(var3.field28454 + 1.0E-7) + 1;
+      int var7 = MathHelper.method37769(var3.field28449 - 1.0E-7) - 1;
+      int var8 = MathHelper.method37769(var3.field28452 + 1.0E-7) + 1;
+      int var9 = MathHelper.method37769(var3.field28450 - 1.0E-7) - 1;
+      int var10 = MathHelper.method37769(var3.field28453 + 1.0E-7) + 1;
+      int var11 = MathHelper.method37769(var3.field28451 - 1.0E-7) - 1;
+      int var12 = MathHelper.method37769(var3.field28454 + 1.0E-7) + 1;
       this.field35189 = new Class8893(var7, var9, var11, var8, var10, var12);
    }
 
@@ -121,10 +121,10 @@ public class Class8181 extends AbstractSpliterator<Class6408> {
    }
 
    public static boolean method28478(Class7522 var0, Class6488 var1) {
-      double var4 = (double)Class9679.method37769(var0.method24530());
-      double var6 = (double)Class9679.method37769(var0.method24531());
-      double var8 = (double)Class9679.method37774(var0.method24532());
-      double var10 = (double)Class9679.method37774(var0.method24533());
+      double var4 = (double) MathHelper.method37769(var0.method24530());
+      double var6 = (double) MathHelper.method37769(var0.method24531());
+      double var8 = (double) MathHelper.method37774(var0.method24532());
+      double var10 = (double) MathHelper.method37774(var0.method24533());
       return var1.field28449 > var4
          && var1.field28449 < var8
          && var1.field28451 > var6

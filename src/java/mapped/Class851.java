@@ -26,11 +26,11 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    public int field4734;
    public int field4735;
    private boolean field4736;
-   private Class8848 field4737 = Class8848.field39973;
+   private ItemStack field4737 = ItemStack.field39973;
    private int field4738;
    private int field4739;
    private long field4740;
-   private Class8848 field4741 = Class8848.field39973;
+   private ItemStack field4741 = ItemStack.field39973;
    private long field4742;
    public final Set<Class5839> field4743 = Sets.newHashSet();
    public boolean field4744;
@@ -41,7 +41,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    private long field4749;
    private int field4750;
    private boolean field4751;
-   private Class8848 field4752 = Class8848.field39973;
+   private ItemStack field4752 = ItemStack.field39973;
 
    public Class851(T var1, Class974 var2, ITextComponent var3) {
       super(var3);
@@ -99,14 +99,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
       this.method2617(var1, var2, var3);
       Class974 var18 = this.field4562.field1339.field4902;
-      Class8848 var19 = !this.field4737.method32105() ? this.field4737 : var18.method4057();
+      ItemStack var19 = !this.field4737.method32105() ? this.field4737 : var18.method4057();
       if (!var19.method32105()) {
          byte var20 = 8;
          int var22 = !this.field4737.method32105() ? 16 : 8;
          String var15 = null;
          if (!this.field4737.method32105() && this.field4736) {
             var19 = var19.method32126();
-            var19.method32180(Class9679.method37773((float)var19.method32179() / 2.0F));
+            var19.method32180(MathHelper.method37773((float)var19.method32179() / 2.0F));
          } else if (this.field4744 && this.field4743.size() > 1) {
             var19 = var19.method32126();
             var19.method32180(this.field4748);
@@ -122,7 +122,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          float var21 = (float)(Util.method38487() - this.field4740) / 100.0F;
          if (var21 >= 1.0F) {
             var21 = 1.0F;
-            this.field4741 = Class8848.field39973;
+            this.field4741 = ItemStack.field39973;
          }
 
          int var23 = this.field4731.field25580 - this.field4738;
@@ -142,7 +142,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       }
    }
 
-   private void method2616(Class8848 var1, int var2, int var3, String var4) {
+   private void method2616(ItemStack var1, int var2, int var3, String var4) {
       RenderSystem.translatef(0.0F, 0.0F, 32.0F);
       this.method5703(200);
       this.field4563.field847 = 200.0F;
@@ -154,7 +154,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    public void method2617(Class9332 var1, int var2, int var3) {
       this.field4568.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
-      this.field4568.method38805(var1, this.field4728.method2954(), (float)this.field4725, (float)this.field4726, 4210752);
+      this.field4568.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
    }
 
    public abstract void method2618(Class9332 var1, float var2, int var3, int var4);
@@ -162,10 +162,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    private void method2619(Class9332 var1, Class5839 var2) {
       int var5 = var2.field25580;
       int var6 = var2.field25581;
-      Class8848 var7 = var2.method18265();
+      ItemStack var7 = var2.method18265();
       boolean var8 = false;
       boolean var9 = var2 == this.field4730 && !this.field4737.method32105() && !this.field4736;
-      Class8848 var10 = this.field4562.field1339.field4902.method4057();
+      ItemStack var10 = this.field4562.field1339.field4902.method4057();
       String var11 = null;
       if (var2 == this.field4730 && !this.field4737.method32105() && this.field4736 && !var7.method32105()) {
          var7 = var7.method32126();
@@ -217,14 +217,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    private void method2620() {
-      Class8848 var3 = this.field4562.field1339.field4902.method4057();
+      ItemStack var3 = this.field4562.field1339.field4902.method4057();
       if (!var3.method32105() && this.field4744) {
          if (this.field4745 != 2) {
             this.field4748 = var3.method32179();
 
             for (Class5839 var5 : this.field4743) {
-               Class8848 var6 = var3.method32126();
-               Class8848 var7 = var5.method18265();
+               ItemStack var6 = var3.method32126();
+               ItemStack var7 = var5.method18265();
                int var8 = !var7.method32105() ? var7.method32179() : 0;
                Class5812.method18149(this.field4743, this.field4745, var6, var8);
                int var9 = Math.min(var6.method32113(), var5.method18270(var6));
@@ -315,7 +315,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                                  var17 = Class2259.field14698;
                               }
                            } else {
-                              this.field4752 = var9 != null && var9.method18266() ? var9.method18265().method32126() : Class8848.field39973;
+                              this.field4752 = var9 != null && var9.method18266() ? var9.method18265().method32126() : ItemStack.field39973;
                               var17 = Class2259.field14695;
                            }
 
@@ -327,7 +327,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                   }
                } else if (var9 != null && var9.method18266()) {
                   this.field4730 = var9;
-                  this.field4737 = Class8848.field39973;
+                  this.field4737 = ItemStack.field39973;
                   this.field4736 = var5 == 1;
                } else {
                   this.field4730 = null;
@@ -364,7 +364,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
       Class5839 var12 = this.method2621(var1, var3);
-      Class8848 var13 = this.field4562.field1339.field4902.method4057();
+      ItemStack var13 = this.field4562.field1339.field4902.method4057();
       if (this.field4730 != null && this.field4562.field1299.field44625) {
          if (var5 == 0 || var5 == 1) {
             if (!this.field4737.method32105()) {
@@ -414,7 +414,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          var12 = -999;
       }
 
-      if (this.field4751 && var8 != null && var5 == 0 && this.field4727.method18111(Class8848.field39973, var8)) {
+      if (this.field4751 && var8 != null && var5 == 0 && this.field4727.method18111(ItemStack.field39973, var8)) {
          if (!method2476()) {
             this.method2626(var8, var12, var5, Class2259.field14700);
          } else if (!this.field4752.method32105()) {
@@ -456,23 +456,23 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                   this.method2626(var8, var12, 0, Class2259.field14694);
                   if (!this.field4562.field1339.field4902.method4057().method32105()) {
                      this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
-                     this.field4738 = Class9679.method37769(var1 - (double)var9);
-                     this.field4739 = Class9679.method37769(var3 - (double)var10);
+                     this.field4738 = MathHelper.method37769(var1 - (double)var9);
+                     this.field4739 = MathHelper.method37769(var3 - (double)var10);
                      this.field4731 = this.field4730;
                      this.field4741 = this.field4737;
                      this.field4740 = Util.method38487();
                   } else {
-                     this.field4741 = Class8848.field39973;
+                     this.field4741 = ItemStack.field39973;
                   }
                } else if (!this.field4737.method32105()) {
-                  this.field4738 = Class9679.method37769(var1 - (double)var9);
-                  this.field4739 = Class9679.method37769(var3 - (double)var10);
+                  this.field4738 = MathHelper.method37769(var1 - (double)var9);
+                  this.field4739 = MathHelper.method37769(var3 - (double)var10);
                   this.field4731 = this.field4730;
                   this.field4741 = this.field4737;
                   this.field4740 = Util.method38487();
                }
 
-               this.field4737 = Class8848.field39973;
+               this.field4737 = ItemStack.field39973;
                this.field4730 = null;
             }
          } else if (this.field4744 && !this.field4743.isEmpty()) {
@@ -491,7 +491,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                         || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 344)
                   );
                if (var13) {
-                  this.field4752 = var8 != null && var8.method18266() ? var8.method18265().method32126() : Class8848.field39973;
+                  this.field4752 = var8 != null && var8.method18266() ? var8.method18265().method32126() : ItemStack.field39973;
                }
 
                this.method2626(var8, var12, var5, !var13 ? Class2259.field14694 : Class2259.field14695);

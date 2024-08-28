@@ -18,7 +18,7 @@ public class Class4900 extends Class4874<Class4481> {
    }
 
    public void method15143(Class878 var1, Vector3d var2) {
-      this.method15053(var1, var2x -> var2x.method14144(var1.method2798(), var2, var1.getPosX(), var1.getPosY(), var1.getPosZ()));
+      this.method15053(var1, var2x -> var2x.method14144(var1.getServerWorld(), var2, var1.getPosX(), var1.getPosY(), var1.getPosZ()));
    }
 
    // $VF: synthetic method

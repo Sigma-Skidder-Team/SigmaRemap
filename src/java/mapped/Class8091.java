@@ -11,7 +11,7 @@ public class Class8091 extends Class8092 {
 
    @Override
    public void method28037() {
-      if (!this.field34810.method3176()) {
+      if (!this.field34810.isSleeping()) {
          super.method28037();
       }
    }

@@ -16,7 +16,7 @@ public class Class9689 {
    private final UUID field45305;
 
    public Class9689(String var1, double var2, Class2045 var4) {
-      this(Class9679.method37811(ThreadLocalRandom.current()), () -> var1, var2, var4);
+      this(MathHelper.method37811(ThreadLocalRandom.current()), () -> var1, var2, var4);
    }
 
    public Class9689(UUID var1, String var2, double var3, Class2045 var5) {

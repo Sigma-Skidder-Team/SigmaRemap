@@ -24,7 +24,7 @@ public class Class5271 extends Module {
         this.field23700 = -1;
         double var3 = this.field23703[0];
         int var5 = this.field23703.length;
-        double var6 = mc.field1339.method3431().field18049 - (double) ((int) mc.field1339.method3431().field18049);
+        double var6 = mc.field1339.getPositionVec().field18049 - (double) ((int) mc.field1339.getPositionVec().field18049);
 
         for (int var8 = 1; var8 < var5; var8++) {
             double var9 = this.field23703[var8] - var6;
@@ -33,8 +33,8 @@ public class Class5271 extends Module {
             }
         }
 
-        this.field23702 = (double) ((int) mc.field1339.method3431().field18049) + var3;
-        mc.field1339.method3215(mc.field1339.method3431().field18048, this.field23702, mc.field1339.method3431().field18050);
+        this.field23702 = (double) ((int) mc.field1339.getPositionVec().field18049) + var3;
+        mc.field1339.method3215(mc.field1339.getPositionVec().field18048, this.field23702, mc.field1339.getPositionVec().field18050);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Class5271 extends Module {
         this.field23700 = -1;
         double var4 = this.field23703[0];
         int var6 = this.field23703.length;
-        double var7 = mc.field1339.method3431().field18049 - (double) ((int) mc.field1339.method3431().field18049);
+        double var7 = mc.field1339.getPositionVec().field18049 - (double) ((int) mc.field1339.getPositionVec().field18049);
 
         for (int var9 = 1; var9 < var6; var9++) {
             double var10 = this.field23703[var9] - var7;
@@ -60,8 +60,8 @@ public class Class5271 extends Module {
             }
         }
 
-        this.field23702 = (double) ((int) mc.field1339.method3431().field18049) + var4;
-        mc.field1339.method3215(mc.field1339.method3431().field18048, this.field23702, mc.field1339.method3431().field18050);
+        this.field23702 = (double) ((int) mc.field1339.getPositionVec().field18049) + var4;
+        mc.field1339.method3215(mc.field1339.getPositionVec().field18048, this.field23702, mc.field1339.getPositionVec().field18050);
     }
 
     @EventTarget
@@ -89,7 +89,7 @@ public class Class5271 extends Module {
         var1.method13995(0.0);
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
-                mc.field1339.method3215(mc.field1339.method3431().field18048, this.field23702, mc.field1339.method3431().field18050);
+                mc.field1339.method3215(mc.field1339.getPositionVec().field18048, this.field23702, mc.field1339.getPositionVec().field18050);
                 double var4 = !mc.field1299.field44637.method8509() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
                 Class9567.method37088(var1, var4);
                 this.field23700 = 0;

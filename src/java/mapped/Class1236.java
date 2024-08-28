@@ -53,7 +53,7 @@ public abstract class Class1236 extends Class1197 {
 
    private void method5817(double var1) {
       double var5 = this.field6584;
-      this.field6584 = Class9679.method37778(var1, 0.0, 1.0);
+      this.field6584 = MathHelper.method37778(var1, 0.0, 1.0);
       if (var5 != this.field6584) {
          this.method5812();
       }

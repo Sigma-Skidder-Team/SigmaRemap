@@ -23,7 +23,7 @@ public class BlockPos extends Class1998 {
       .stable();
    private static final Logger field13031 = LogManager.getLogger();
    public static final BlockPos field13032 = new BlockPos(0, 0, 0);
-   private static final int field13033 = 1 + Class9679.method37803(Class9679.method37800(30000000));
+   private static final int field13033 = 1 + MathHelper.method37803(MathHelper.method37800(30000000));
    private static final int field13034 = field13033;
    private static final int field13035 = 64 - field13033 - field13034;
    private static final long field13036 = (1L << field13033) - 1L;
@@ -259,12 +259,12 @@ public class BlockPos extends Class1998 {
 
    public static Stream<BlockPos> method8362(Class6488 var0) {
       return method8363(
-         Class9679.method37769(var0.field28449),
-         Class9679.method37769(var0.field28450),
-         Class9679.method37769(var0.field28451),
-         Class9679.method37769(var0.field28452),
-         Class9679.method37769(var0.field28453),
-         Class9679.method37769(var0.field28454)
+         MathHelper.method37769(var0.field28449),
+         MathHelper.method37769(var0.field28450),
+         MathHelper.method37769(var0.field28451),
+         MathHelper.method37769(var0.field28452),
+         MathHelper.method37769(var0.field28453),
+         MathHelper.method37769(var0.field28454)
       );
    }
 

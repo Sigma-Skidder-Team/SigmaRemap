@@ -57,7 +57,7 @@ public class Class5948 extends Class5942<Class958> {
          this.field25943.method22680(var3, var17, var5, var6);
          BlockPos var19 = var1.method3774();
          float var16 = ((float)Math.floorMod((long)(var19.method8304() * 7 + var19.getY() * 9 + var19.method8306() * 13) + var12, 100L) + var2) / 100.0F;
-         this.field25941.field31035 = (-0.0125F + 0.01F * Class9679.method37764((float) (Math.PI * 2) * var16)) * (float) Math.PI;
+         this.field25941.field31035 = (-0.0125F + 0.01F * MathHelper.method37764((float) (Math.PI * 2) * var16)) * (float) Math.PI;
          this.field25941.field31033 = -32.0F;
          method18478(var3, var4, var5, var6, this.field25941, Class8968.field40513, true, var9);
          var3.method35295();

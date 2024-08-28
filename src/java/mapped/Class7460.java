@@ -8,7 +8,7 @@ public class Class7460 implements Class7458 {
 
    @Override
    public int method24123() {
-      UUID var3 = this.field32082.method3375();
+      UUID var3 = this.field32082.getUniqueID();
       long var4 = var3.getLeastSignificantBits();
       return (int)(var4 & 2147483647L);
    }

@@ -11,6 +11,6 @@ public class Class121 implements Predicate<Class880> {
    }
 
    public boolean test(Class880 var1) {
-      return (var1 instanceof PlayerEntity || var1 instanceof Class1055) && var1.method3277(this.field432) > 9.0;
+      return (var1 instanceof PlayerEntity || var1 instanceof Class1055) && var1.getDistanceSq(this.field432) > 9.0;
    }
 }

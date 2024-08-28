@@ -25,7 +25,7 @@ public class Class7437 implements Class7436 {
       this.field32003 = var1;
       this.field32004 = var2;
       this.field32005 = var3;
-      this.field32006 = Class9679.method37777(var4, 0.01F, 4.0F);
+      this.field32006 = MathHelper.method37777(var4, 0.01F, 4.0F);
    }
 
    @Override

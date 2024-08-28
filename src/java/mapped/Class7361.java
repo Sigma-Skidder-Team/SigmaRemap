@@ -52,7 +52,7 @@ public abstract class Class7361 implements Class7373 {
 
    @Override
    public float method23367() {
-      float var3 = Class9679.method37766(Entity.method3234(this.field31519.method3433())) + 1.0F;
+      float var3 = MathHelper.method37766(Entity.method3234(this.field31519.method3433())) + 1.0F;
       float var4 = Math.min(var3, 40.0F);
       return 0.7F / var4 / var3;
    }

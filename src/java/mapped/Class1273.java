@@ -112,7 +112,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       int var8 = this.field6790 + this.field6785 / 2;
       int var9 = var8 - var7;
       int var10 = var8 + var7;
-      int var11 = Class9679.method37769(var3 - (double)this.field6787) - this.field6795 + (int)this.method6044() - 4;
+      int var11 = MathHelper.method37769(var3 - (double)this.field6787) - this.field6795 + (int)this.method6044() - 4;
       int var12 = var11 / this.field6783;
       return var1 < (double)this.method6048() && var1 >= (double)var9 && var1 <= (double)var10 && var12 >= 0 && var11 >= 0 && var12 < this.method6031()
          ? this.method2468().get(var12)
@@ -248,7 +248,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       if (var17 > 0) {
          RenderSystem.method27862();
          int var18 = (int)((float)((this.field6788 - this.field6787) * (this.field6788 - this.field6787)) / (float)this.method6036());
-         var18 = Class9679.method37775(var18, 32, this.field6788 - this.field6787 - 8);
+         var18 = MathHelper.method37775(var18, 32, this.field6788 - this.field6787 - 8);
          int var20 = (int)this.method6044() * (this.field6788 - this.field6787 - var18) / var17 + this.field6787;
          if (var20 < this.field6787) {
             var20 = this.field6787;
@@ -303,7 +303,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    }
 
    public void method6045(double var1) {
-      this.field6792 = Class9679.method37778(var1, 0.0, (double)this.method6046());
+      this.field6792 = MathHelper.method37778(var1, 0.0, (double)this.method6046());
    }
 
    public int method6046() {
@@ -360,7 +360,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
                if (!(var3 > (double)this.field6788)) {
                   double var12 = (double)Math.max(1, this.method6046());
                   int var14 = this.field6788 - this.field6787;
-                  int var15 = Class9679.method37775((int)((float)(var14 * var14) / (float)this.method6036()), 32, var14 - 8);
+                  int var15 = MathHelper.method37775((int)((float)(var14 * var14) / (float)this.method6036()), 32, var14 - 8);
                   double var16 = Math.max(1.0, var12 / (double)(var14 - var15));
                   this.method6045(this.method6044() + var8 * var16);
                } else {
@@ -422,7 +422,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          int var6 = this.method2468().indexOf(this.method6023());
 
          while (true) {
-            int var7 = Class9679.method37775(var6 + var5, 0, this.method6031() - 1);
+            int var7 = MathHelper.method37775(var6 + var5, 0, this.method6031() - 1);
             if (var6 == var7) {
                break;
             }

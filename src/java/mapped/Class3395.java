@@ -34,9 +34,9 @@ public class Class3395 extends Block {
 
    private static int method12007(Class8711 var0, Vector3d var1) {
       Direction var4 = var0.method31424();
-      double var5 = Math.abs(Class9679.method37808(var1.field18048) - 0.5);
-      double var7 = Math.abs(Class9679.method37808(var1.field18049) - 0.5);
-      double var9 = Math.abs(Class9679.method37808(var1.field18050) - 0.5);
+      double var5 = Math.abs(MathHelper.method37808(var1.field18048) - 0.5);
+      double var7 = Math.abs(MathHelper.method37808(var1.field18049) - 0.5);
+      double var9 = Math.abs(MathHelper.method37808(var1.field18050) - 0.5);
       Class113 var11 = var4.method544();
       double var12;
       if (var11 != Class113.field414) {
@@ -49,7 +49,7 @@ public class Class3395 extends Block {
          var12 = Math.max(var5, var9);
       }
 
-      return Math.max(1, Class9679.method37774(15.0 * Class9679.method37778((0.5 - var12) / 0.5, 0.0, 1.0)));
+      return Math.max(1, MathHelper.method37774(15.0 * MathHelper.method37778((0.5 - var12) / 0.5, 0.0, 1.0)));
    }
 
    private static void method12008(Class1660 var0, Class7380 var1, int var2, BlockPos var3, int var4) {
@@ -58,7 +58,7 @@ public class Class3395 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19032) != 0) {
          var2.method6725(var3, var1.method23465(field19032, Integer.valueOf(0)), 3);
       }

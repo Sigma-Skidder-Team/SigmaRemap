@@ -24,7 +24,7 @@ public class Class3349 extends Class3348 {
 
    @Override
    public int method11514(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
-      return Class9679.method37775(Class941.method3763(var2, var3), 0, 15);
+      return MathHelper.method37775(Class941.method3763(var2, var3), 0, 15);
    }
 
    @Override

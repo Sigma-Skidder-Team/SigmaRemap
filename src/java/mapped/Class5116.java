@@ -29,7 +29,7 @@ public interface Class5116 extends Class5104 {
 
    void method15705(Class5607 var1);
 
-   void method15706(Class5616 var1);
+   void method15706(SChatPacket var1);
 
    void method15707(Class5549 var1);
 

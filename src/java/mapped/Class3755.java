@@ -16,8 +16,8 @@ public class Class3755<E extends Class880, T extends Entity> extends Class3676<E
    }
 
    @Override
-   public boolean method12508(Class1657 var1, E var2) {
-      Entity var5 = var2.method3421();
+   public boolean method12508(ServerWorld var1, E var2) {
+      Entity var5 = var2.getRidingEntity();
       Entity var6 = var2.method2992().<Entity>method21410(Class8830.field39830).orElse((Entity)null);
       if (var5 == null && var6 == null) {
          return false;
@@ -32,7 +32,7 @@ public class Class3755<E extends Class880, T extends Entity> extends Class3676<E
    }
 
    @Override
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       var2.method2759();
       var2.method2992().method21405(Class8830.field39830);
    }

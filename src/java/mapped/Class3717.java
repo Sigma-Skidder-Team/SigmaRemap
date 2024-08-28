@@ -44,7 +44,7 @@ public class Class3717 extends Class3676<Class1042> {
       );
    }
 
-   public boolean method12508(Class1657 var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, Class1042 var2) {
       if (this.method12606(var2)) {
          if (this.field19796 <= 0) {
             return true;
@@ -57,7 +57,7 @@ public class Class3717 extends Class3676<Class1042> {
       }
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       this.field19797 = false;
       this.field19798 = var3;
       PlayerEntity var7 = this.method12607(var2).get();
@@ -65,11 +65,11 @@ public class Class3717 extends Class3676<Class1042> {
       Class6983.method21574(var2, var7);
    }
 
-   public boolean method12499(Class1657 var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
       return this.method12606(var2) && !this.field19797;
    }
 
-   public void method12504(Class1657 var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
       PlayerEntity var7 = this.method12607(var2).get();
       Class6983.method21574(var2, var7);
       if (!this.method12609(var2, var7)) {
@@ -80,7 +80,7 @@ public class Class3717 extends Class3676<Class1042> {
       }
    }
 
-   public void method12506(Class1657 var1, Class1042 var2, long var3) {
+   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       this.field19796 = method12610(var1);
       var2.method2992().method21405(Class8830.field39828);
       var2.method2992().method21405(Class8830.field39824);
@@ -88,26 +88,26 @@ public class Class3717 extends Class3676<Class1042> {
    }
 
    private void method12604(Class1042 var1, Class880 var2) {
-      for (Class8848 var6 : this.method12605(var1)) {
-         Class6983.method21578(var1, var6, var2.method3431());
+      for (ItemStack var6 : this.method12605(var1)) {
+         Class6983.method21578(var1, var6, var2.getPositionVec());
       }
    }
 
-   private List<Class8848> method12605(Class1042 var1) {
+   private List<ItemStack> method12605(Class1042 var1) {
       if (!var1.method3005()) {
          Class8395 var4 = var1.method4674().method26571();
          if (!field19795.containsKey(var4)) {
-            return ImmutableList.of(new Class8848(Class8514.field37841));
+            return ImmutableList.of(new ItemStack(Class8514.field37841));
          } else {
             Class7318 var5 = var1.field5024.method6715().method1411().method1058(field19795.get(var4));
-            Class9464 var6 = new Class9464((Class1657)var1.field5024)
-               .method36454(Class9525.field44335, var1.method3431())
+            Class9464 var6 = new Class9464((ServerWorld)var1.field5024)
+               .method36454(Class9525.field44335, var1.getPositionVec())
                .method36454(Class9525.field44330, var1)
                .method36450(var1.method3013());
             return var5.method23182(var6.method36460(Class8524.field38287));
          }
       } else {
-         return ImmutableList.of(new Class8848(Class8514.field37334));
+         return ImmutableList.of(new ItemStack(Class8514.field37334));
       }
    }
 
@@ -129,7 +129,7 @@ public class Class3717 extends Class3676<Class1042> {
       return var6.method8316(var5, 5.0);
    }
 
-   private static int method12610(Class1657 var0) {
+   private static int method12610(ServerWorld var0) {
       return 600 + var0.field9016.nextInt(6001);
    }
 }

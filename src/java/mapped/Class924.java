@@ -16,7 +16,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private static final int[] field5244 = new int[]{0};
    private static final int[] field5245 = new int[]{2, 1};
    private static final int[] field5246 = new int[]{1};
-   public Class25<Class8848> field5247 = Class25.<Class8848>method68(3, Class8848.field39973);
+   public Class25<ItemStack> field5247 = Class25.<ItemStack>method68(3, ItemStack.field39973);
    private int field5248;
    private int field5249;
    private int field5250;
@@ -111,11 +111,11 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       Class3257 var5 = var1.method11581();
       if (!method3641(var5)) {
          var0.put(var5, var2);
-      } else if (Class9246.field42545) {
+      } else if (SharedConstants.field42545) {
          throw (IllegalStateException) Util.method38516(
             new IllegalStateException(
                "A developer tried to explicitly make fire resistant item "
-                  + var5.method11731((Class8848)null).getString()
+                  + var5.method11731((ItemStack)null).getString()
                   + " a furnace fuel. That will not work!"
             )
          );
@@ -129,7 +129,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5247 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5247 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
       Class7920.method26567(var2, this.field5247);
       this.field5248 = var2.method121("BurnTime");
       this.field5250 = var2.method121("CookTime");
@@ -164,7 +164,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
 
       if (!this.field5324.field9020) {
-         Class8848 var5 = this.field5247.get(1);
+         ItemStack var5 = this.field5247.get(1);
          if (this.method3644() || !var5.method32105() && !this.field5247.get(0).method32105()) {
             Class4843 var6 = this.field5324.method6816().method1030(this.field5254, this, this.field5324).orElse(null);
             if (!this.method3644() && this.method3648(var6)) {
@@ -177,7 +177,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
                      var5.method32182(1);
                      if (var5.method32105()) {
                         Class3257 var8 = var7.method11722();
-                        this.field5247.set(1, var8 != null ? new Class8848(var8) : Class8848.field39973);
+                        this.field5247.set(1, var8 != null ? new ItemStack(var8) : ItemStack.field39973);
                      }
                   }
                }
@@ -195,7 +195,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
                this.field5250 = 0;
             }
          } else if (!this.method3644() && this.field5250 > 0) {
-            this.field5250 = Class9679.method37775(this.field5250 - 2, 0, this.field5251);
+            this.field5250 = MathHelper.method37775(this.field5250 - 2, 0, this.field5251);
          }
 
          if (var3 != this.method3644()) {
@@ -212,9 +212,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    public boolean method3648(Class4843<?> var1) {
       if (!this.field5247.get(0).method32105() && var1 != null) {
-         Class8848 var4 = var1.method14966();
+         ItemStack var4 = var1.method14966();
          if (!var4.method32105()) {
-            Class8848 var5 = this.field5247.get(2);
+            ItemStack var5 = this.field5247.get(2);
             if (var5.method32105()) {
                return true;
             } else if (var5.method32132(var4)) {
@@ -232,9 +232,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    private void method3649(Class4843<?> var1) {
       if (var1 != null && this.method3648(var1)) {
-         Class8848 var4 = this.field5247.get(0);
-         Class8848 var5 = var1.method14966();
-         Class8848 var6 = this.field5247.get(2);
+         ItemStack var4 = this.field5247.get(0);
+         ItemStack var5 = var1.method14966();
+         ItemStack var6 = this.field5247.get(2);
          if (!var6.method32105()) {
             if (var6.method32107() == var5.method32107()) {
                var6.method32181(1);
@@ -250,14 +250,14 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
          if (var4.method32107() == Blocks.field36453.method11581()
             && !this.field5247.get(1).method32105()
             && this.field5247.get(1).method32107() == Class8514.field37882) {
-            this.field5247.set(1, new Class8848(Class8514.field37883));
+            this.field5247.set(1, new ItemStack(Class8514.field37883));
          }
 
          var4.method32182(1);
       }
    }
 
-   public int method3650(Class8848 var1) {
+   public int method3650(ItemStack var1) {
       if (!var1.method32105()) {
          Class3257 var4 = var1.method32107();
          return method3640().getOrDefault(var4, 0);
@@ -270,7 +270,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       return this.field5324.method6816().method1030(this.field5254, this, this.field5324).<Integer>map(Class4847::method14977).orElse(200);
    }
 
-   public static boolean method3652(Class8848 var0) {
+   public static boolean method3652(ItemStack var0) {
       return method3640().containsKey(var0.method32107());
    }
 
@@ -284,12 +284,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public boolean method3654(int var1, Class8848 var2, Direction var3) {
+   public boolean method3654(int var1, ItemStack var2, Direction var3) {
       return this.method3633(var1, var2);
    }
 
    @Override
-   public boolean method3655(int var1, Class8848 var2, Direction var3) {
+   public boolean method3655(int var1, ItemStack var2, Direction var3) {
       if (var3 == Direction.field672 && var1 == 1) {
          Class3257 var6 = var2.method32107();
          if (var6 != Class8514.field37883 && var6 != Class8514.field37882) {
@@ -307,7 +307,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public boolean method3617() {
-      for (Class8848 var4 : this.field5247) {
+      for (ItemStack var4 : this.field5247) {
          if (!var4.method32105()) {
             return false;
          }
@@ -317,24 +317,24 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public Class8848 method3618(int var1) {
+   public ItemStack method3618(int var1) {
       return this.field5247.get(var1);
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       return Class7920.method26563(this.field5247, var1, var2);
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       return Class7920.method26564(this.field5247, var1);
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
-      Class8848 var5 = this.field5247.get(var1);
-      boolean var6 = !var2.method32105() && var2.method32132(var5) && Class8848.method32127(var2, var5);
+   public void method3621(int var1, ItemStack var2) {
+      ItemStack var5 = this.field5247.get(var1);
+      boolean var6 = !var2.method32105() && var2.method32132(var5) && ItemStack.method32127(var2, var5);
       this.field5247.set(var1, var2);
       if (var2.method32179() > this.method3630()) {
          var2.method32180(this.method3630());
@@ -356,12 +356,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public boolean method3633(int var1, Class8848 var2) {
+   public boolean method3633(int var1, ItemStack var2) {
       if (var1 != 2) {
          if (var1 != 1) {
             return true;
          } else {
-            Class8848 var5 = this.field5247.get(1);
+            ItemStack var5 = this.field5247.get(1);
             return method3652(var2) || var2.method32107() == Class8514.field37882 && var5.method32107() != Class8514.field37882;
          }
       } else {
@@ -393,7 +393,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public void method3656(PlayerEntity var1) {
-      List var4 = this.method3657(var1.field5024, var1.method3431());
+      List var4 = this.method3657(var1.field5024, var1.getPositionVec());
       var1.method2778(var4);
       this.field5253.clear();
    }
@@ -414,8 +414,8 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    private static void method3658(Class1655 var0, Vector3d var1, int var2, float var3) {
-      int var6 = Class9679.method37767((float)var2 * var3);
-      float var7 = Class9679.method37807((float)var2 * var3);
+      int var6 = MathHelper.method37767((float)var2 * var3);
+      float var7 = MathHelper.method37807((float)var2 * var3);
       if (var7 != 0.0F && Math.random() < (double)var7) {
          var6++;
       }
@@ -429,7 +429,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public void method3659(Class6207 var1) {
-      for (Class8848 var5 : this.field5247) {
+      for (ItemStack var5 : this.field5247) {
          var1.method19117(var5);
       }
    }

@@ -24,7 +24,7 @@ public class Class3742 extends Class3676<Class1042> {
       this.field19871 = var5;
    }
 
-   public boolean method12508(Class1657 var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, Class1042 var2) {
       Optional var5 = var2.method2992().<List<Class9378>>method21410(this.field19870);
       Optional var6 = var2.method2992().<Class9378>method21410(this.field19871);
       if (var5.isPresent() && var6.isPresent()) {
@@ -33,14 +33,14 @@ public class Class3742 extends Class3676<Class1042> {
             this.field19876 = (Class9378)var7.get(var1.method6814().nextInt(var7.size()));
             return this.field19876 != null
                && var1.method6813() == this.field19876.method35578()
-               && ((Class9378)var6.get()).method35579().method8317(var2.method3431(), (double)this.field19874);
+               && ((Class9378)var6.get()).method35579().method8317(var2.getPositionVec(), (double)this.field19874);
          }
       }
 
       return false;
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       if (var3 > this.field19875 && this.field19876 != null) {
          var2.method2992().method21406(Class8830.field39824, new Class8999(this.field19876.method35579(), this.field19872, this.field19873));
          this.field19875 = var3 + 100L;

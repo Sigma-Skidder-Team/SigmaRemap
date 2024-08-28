@@ -22,7 +22,7 @@ public class Class3343 extends Class3251 {
 
    @Override
    public Class7380 method11495(Class5909 var1) {
-      return this.method11579().method23465(field18855, Integer.valueOf(Class9679.method37769((double)(var1.method18352() * 16.0F / 360.0F) + 0.5) & 15));
+      return this.method11579().method23465(field18855, Integer.valueOf(MathHelper.method37769((double)(var1.method18352() * 16.0F / 360.0F) + 0.5) & 15));
    }
 
    @Override

@@ -6,7 +6,7 @@ public class Class5561 implements Packet<Class5110> {
    private static String[] field24675;
    private String field24676;
    private int field24677;
-   private Class2153 field24678;
+   private ChatVisibility field24678;
    private boolean field24679;
    private int field24680;
    private Class2205 field24681;
@@ -14,7 +14,7 @@ public class Class5561 implements Packet<Class5110> {
    public Class5561() {
    }
 
-   public Class5561(String var1, int var2, Class2153 var3, boolean var4, int var5, Class2205 var6) {
+   public Class5561(String var1, int var2, ChatVisibility var3, boolean var4, int var5, Class2205 var6) {
       this.field24676 = var1;
       this.field24677 = var2;
       this.field24678 = var3;
@@ -27,7 +27,7 @@ public class Class5561 implements Packet<Class5110> {
    public void method17175(PacketBuffer var1) throws IOException {
       this.field24676 = var1.method35728(16);
       this.field24677 = var1.readByte();
-      this.field24678 = var1.<Class2153>method35712(Class2153.class);
+      this.field24678 = var1.<ChatVisibility>method35712(ChatVisibility.class);
       this.field24679 = var1.readBoolean();
       this.field24680 = var1.readUnsignedByte();
       this.field24681 = var1.<Class2205>method35712(Class2205.class);
@@ -47,7 +47,7 @@ public class Class5561 implements Packet<Class5110> {
       var1.method15613(this);
    }
 
-   public Class2153 method17481() {
+   public ChatVisibility method17481() {
       return this.field24678;
    }
 

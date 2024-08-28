@@ -52,7 +52,7 @@ public class Class8071 {
       );
    }
 
-   private static int method27788(Class1657 var0) {
+   private static int method27788(ServerWorld var0) {
       return (int)(var0.method6784() % 24000L);
    }
 
@@ -62,7 +62,7 @@ public class Class8071 {
    }
 
    public static int method27790(Class6619 var0, int var1) {
-      for (Class1657 var5 : var0.method20177().method1320()) {
+      for (ServerWorld var5 : var0.method20177().method1320()) {
          var5.method6896((long)var1);
       }
 
@@ -71,7 +71,7 @@ public class Class8071 {
    }
 
    public static int method27791(Class6619 var0, int var1) {
-      for (Class1657 var5 : var0.method20177().method1320()) {
+      for (ServerWorld var5 : var0.method20177().method1320()) {
          var5.method6896(var5.method6784() + (long)var1);
       }
 

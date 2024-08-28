@@ -24,7 +24,7 @@ public class Class6763 extends Class6762 {
    public Class7176 method20615() {
       int var3;
       if (this.method20649() && this.field29476.method3250()) {
-         var3 = Class9679.method37769(this.field29476.getPosY());
+         var3 = MathHelper.method37769(this.field29476.getPosY());
          Mutable var4 = new Mutable(this.field29476.getPosX(), (double)var3, this.field29476.getPosZ());
 
          for (Block var5 = this.field29475.method6738(var4).method23383();
@@ -34,7 +34,7 @@ public class Class6763 extends Class6762 {
             var4.method8373(this.field29476.getPosX(), (double)(++var3), this.field29476.getPosZ());
          }
       } else {
-         var3 = Class9679.method37769(this.field29476.getPosY() + 0.5);
+         var3 = MathHelper.method37769(this.field29476.getPosY() + 0.5);
       }
 
       BlockPos var10 = this.field29476.method3432();
@@ -59,7 +59,7 @@ public class Class6763 extends Class6762 {
 
    @Override
    public Class7175 method20616(double var1, double var3, double var5) {
-      return new Class7175(super.method20641(Class9679.method37769(var1), Class9679.method37769(var3), Class9679.method37769(var5)));
+      return new Class7175(super.method20641(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5)));
    }
 
    @Override

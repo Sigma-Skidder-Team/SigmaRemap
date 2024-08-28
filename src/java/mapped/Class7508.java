@@ -29,7 +29,7 @@ public class Class7508 {
    }
 
    private static int method24478(Class6619 var0, Collection<Class878> var1, ITextComponent var2) {
-      UUID var5 = var0.method20173() != null ? var0.method20173().method3375() : Util.field45724;
+      UUID var5 = var0.method20173() != null ? var0.method20173().getUniqueID() : Util.field45724;
       Entity var6 = var0.method20173();
       Consumer var7;
       if (!(var6 instanceof Class878)) {
@@ -43,12 +43,12 @@ public class Class7508 {
          var7 = var2x -> var8.method1328(
                new TranslationTextComponent("commands.message.display.outgoing", var2x, var2)
                   .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}),
-               var8.method3375()
+               var8.getUniqueID()
             );
       }
 
       for (Class878 var9 : var1) {
-         var7.accept(var9.method2954());
+         var7.accept(var9.getDisplayName());
          var9.method1328(
             new TranslationTextComponent("commands.message.display.incoming", var0.method20169(), var2)
                .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC}),

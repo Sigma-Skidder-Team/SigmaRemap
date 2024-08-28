@@ -35,28 +35,28 @@ public class Class9217 {
       double var3 = (double)var0.method8304() + 0.5 - Minecraft.getInstance().field1339.getPosX();
       double var5 = (double)var0.getY() + 0.5 - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393());
       double var7 = (double)var0.method8306() + 0.5 - Minecraft.getInstance().field1339.getPosZ();
-      double var9 = (double)Class9679.method37766(var3 * var3 + var7 * var7);
+      double var9 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       Minecraft.getInstance().field1339.field5031 = Minecraft.getInstance().field1339.field5031
-         + Class9679.method37792(var11 - Minecraft.getInstance().field1339.field5031);
+         + MathHelper.method37792(var11 - Minecraft.getInstance().field1339.field5031);
       Minecraft.getInstance().field1339.field5032 = Minecraft.getInstance().field1339.field5032
-         + Class9679.method37792(var12 - Minecraft.getInstance().field1339.field5032);
+         + MathHelper.method37792(var12 - Minecraft.getInstance().field1339.field5032);
    }
 
    public static void method34540(BlockPos var0) {
       double var3 = (double)var0.method8304() + 0.5 - Minecraft.getInstance().field1339.getPosX();
       double var5 = (double)var0.getY() + 0.5 - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393());
       double var7 = (double)var0.method8306() + 0.5 - Minecraft.getInstance().field1339.getPosZ();
-      double var9 = (double)Class9679.method37766(var3 * var3 + var7 * var7);
+      double var9 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       Minecraft.getInstance()
          .getClientPlayNetHandler()
          .sendPacket(
             new Class5606(
-               Minecraft.getInstance().field1339.field5031 + Class9679.method37792(var11 - Minecraft.getInstance().field1339.field5031),
-               Minecraft.getInstance().field1339.field5032 + Class9679.method37792(var12 - Minecraft.getInstance().field1339.field5032),
+               Minecraft.getInstance().field1339.field5031 + MathHelper.method37792(var11 - Minecraft.getInstance().field1339.field5031),
+               Minecraft.getInstance().field1339.field5032 + MathHelper.method37792(var12 - Minecraft.getInstance().field1339.field5032),
                Minecraft.getInstance().field1339.field5036
             )
          );
@@ -66,12 +66,12 @@ public class Class9217 {
       double var3 = (double)var0.method8304() + 0.5 - Minecraft.getInstance().field1339.getPosX();
       double var5 = (double)var0.getY() - 0.25 - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393());
       double var7 = (double)var0.method8306() + 0.5 - Minecraft.getInstance().field1339.getPosZ();
-      double var9 = (double)Class9679.method37766(var3 * var3 + var7 * var7);
+      double var9 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().field1339.field5031 + Class9679.method37792(var11 - Minecraft.getInstance().field1339.field5031),
-         Minecraft.getInstance().field1339.field5032 + Class9679.method37792(var12 - Minecraft.getInstance().field1339.field5032)
+         Minecraft.getInstance().field1339.field5031 + MathHelper.method37792(var11 - Minecraft.getInstance().field1339.field5031),
+         Minecraft.getInstance().field1339.field5032 + MathHelper.method37792(var12 - Minecraft.getInstance().field1339.field5032)
       };
    }
 
@@ -104,12 +104,12 @@ public class Class9217 {
          - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393())
          + (double)var6;
       double var11 = (double)var0.method8306() + 0.5 - Minecraft.getInstance().field1339.getPosZ() + (double)var5;
-      double var13 = (double)Class9679.method37766(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().field1339.field5031 + Class9679.method37792(var15 - Minecraft.getInstance().field1339.field5031),
-         Minecraft.getInstance().field1339.field5032 + Class9679.method37792(var16 - Minecraft.getInstance().field1339.field5032)
+         Minecraft.getInstance().field1339.field5031 + MathHelper.method37792(var15 - Minecraft.getInstance().field1339.field5031),
+         Minecraft.getInstance().field1339.field5032 + MathHelper.method37792(var16 - Minecraft.getInstance().field1339.field5032)
       };
    }
 
@@ -158,12 +158,12 @@ public class Class9217 {
          - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393())
          + (double)var6;
       double var11 = (double)var0.method8306() + 0.5 - Minecraft.getInstance().field1339.getPosZ() + (double)var5;
-      double var13 = (double)Class9679.method37766(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         Minecraft.getInstance().field1339.field5031 + Class9679.method37792(var15 - Minecraft.getInstance().field1339.field5031),
-         Minecraft.getInstance().field1339.field5032 + Class9679.method37792(var16 - Minecraft.getInstance().field1339.field5032)
+         Minecraft.getInstance().field1339.field5031 + MathHelper.method37792(var15 - Minecraft.getInstance().field1339.field5031),
+         Minecraft.getInstance().field1339.field5032 + MathHelper.method37792(var16 - Minecraft.getInstance().field1339.field5032)
       };
    }
 
@@ -191,7 +191,7 @@ public class Class9217 {
          - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393())
          + 1.0;
       double var12 = (double)var0.getY() - 0.02 - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393());
-      double var14 = (double)Class9679.method37766(var6 * var6 + var8 * var8);
+      double var14 = (double) MathHelper.method37766(var6 * var6 + var8 * var8);
       float var16 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       float var17 = (float)(-(Math.atan2(var12, var14) * 180.0 / Math.PI));
       return var17 - var16;
@@ -283,11 +283,11 @@ public class Class9217 {
    }
 
    private static float method34557(float var0, float var1) {
-      return Class9679.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F));
+      return MathHelper.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F));
    }
 
    private static float method34558(float var0, float var1, float var2) {
-      return Class9679.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F) + (var2 - 0.5F) * (var2 - 0.5F));
+      return MathHelper.method37765((var0 - 0.5F) * (var0 - 0.5F) + (var1 - 0.5F) * (var1 - 0.5F) + (var2 - 0.5F) * (var2 - 0.5F));
    }
 
    public static Block method34559(PlayerEntity var0) {
@@ -371,12 +371,12 @@ public class Class9217 {
             - (Minecraft.getInstance().field1339.getPosY() + (double) Minecraft.getInstance().field1339.method3393())
             + var7;
          double var13 = (double)var2.method31423().method8306() - Minecraft.getInstance().field1339.getPosZ() + var5;
-         double var15 = (double)Class9679.method37766(var9 * var9 + var13 * var13);
+         double var15 = (double) MathHelper.method37766(var9 * var9 + var13 * var13);
          float var17 = (float)(Math.atan2(var13, var9) * 180.0 / Math.PI) - 90.0F;
          float var18 = (float)(-(Math.atan2(var11, var15) * 180.0 / Math.PI));
          return new float[]{
-            Minecraft.getInstance().field1339.field5031 + Class9679.method37792(var17 - Minecraft.getInstance().field1339.field5031),
-            Minecraft.getInstance().field1339.field5032 + Class9679.method37792(var18 - Minecraft.getInstance().field1339.field5032)
+            Minecraft.getInstance().field1339.field5031 + MathHelper.method37792(var17 - Minecraft.getInstance().field1339.field5031),
+            Minecraft.getInstance().field1339.field5032 + MathHelper.method37792(var18 - Minecraft.getInstance().field1339.field5032)
          };
       } else {
          return null;
@@ -387,8 +387,8 @@ public class Class9217 {
       Vector3d var3 = new Vector3d(field42414.field1339.field6119, field42414.field1339.field6120 - 0.8F, field42414.field1339.field6121);
       var0 = (float)Math.toRadians((double)var0);
       float var4 = 0.0F;
-      float var5 = -Class9679.method37763(var0) * Class9679.method37764(var4);
-      float var6 = Class9679.method37764(var0) * Class9679.method37764(var4);
+      float var5 = -MathHelper.method37763(var0) * MathHelper.method37764(var4);
+      float var6 = MathHelper.method37764(var0) * MathHelper.method37764(var4);
       float var7 = 2.3F;
       Vector3d var8 = new Vector3d(
          field42414.field1339.field6119 + (double)(var5 * var7),
@@ -405,9 +405,9 @@ public class Class9217 {
       );
       var0 = (float)Math.toRadians((double)var0);
       var1 = (float)Math.toRadians((double)var1);
-      float var6 = -Class9679.method37763(var0) * Class9679.method37764(var1);
-      float var7 = -Class9679.method37763(var1);
-      float var8 = Class9679.method37764(var0) * Class9679.method37764(var1);
+      float var6 = -MathHelper.method37763(var0) * MathHelper.method37764(var1);
+      float var7 = -MathHelper.method37763(var1);
+      float var8 = MathHelper.method37764(var0) * MathHelper.method37764(var1);
       if (var2 == 0.0F) {
          var2 = field42414.field1337.method23135();
       }
@@ -425,9 +425,9 @@ public class Class9217 {
       Vector3d var6 = new Vector3d(var3.method13909(), (double)field42414.field1339.method3393() + var3.method13911(), var3.method13913());
       var0 = (float)Math.toRadians((double)var0);
       var1 = (float)Math.toRadians((double)var1);
-      float var7 = -Class9679.method37763(var0) * Class9679.method37764(var1);
-      float var8 = -Class9679.method37763(var1);
-      float var9 = Class9679.method37764(var0) * Class9679.method37764(var1);
+      float var7 = -MathHelper.method37763(var0) * MathHelper.method37764(var1);
+      float var8 = -MathHelper.method37763(var1);
+      float var9 = MathHelper.method37764(var0) * MathHelper.method37764(var1);
       if (var2 == 0.0F) {
          var2 = field42414.field1337.method23135();
       }
@@ -451,9 +451,9 @@ public class Class9217 {
       );
       var0 = (float)Math.toRadians((double)var0);
       var1 = (float)Math.toRadians((double)var1);
-      float var11 = -Class9679.method37763(var0) * Class9679.method37764(var1);
-      float var12 = -Class9679.method37763(var1);
-      float var13 = Class9679.method37764(var0) * Class9679.method37764(var1);
+      float var11 = -MathHelper.method37763(var0) * MathHelper.method37764(var1);
+      float var12 = -MathHelper.method37763(var1);
+      float var13 = MathHelper.method37764(var0) * MathHelper.method37764(var1);
       if (var2 == 0.0F) {
          var2 = field42414.field1337.method23135();
       }
@@ -485,9 +485,9 @@ public class Class9217 {
       );
       var2 = (float)Math.toRadians((double)var2);
       var3 = (float)Math.toRadians((double)var3);
-      float var7 = -Class9679.method37763(var2) * Class9679.method37764(var3);
-      float var8 = -Class9679.method37763(var3);
-      float var9 = Class9679.method37764(var2) * Class9679.method37764(var3);
+      float var7 = -MathHelper.method37763(var2) * MathHelper.method37764(var3);
+      float var8 = -MathHelper.method37763(var3);
+      float var9 = MathHelper.method37764(var2) * MathHelper.method37764(var3);
       float var10 = field42414.field1337.method23135();
       Vector3d var11 = new Vector3d(
          field42414.field1339.getPosX() + (double)(var7 * var10),
@@ -603,15 +603,15 @@ public class Class9217 {
             (double)var2.field33646.method8304() + 0.5, (double)var2.field33646.getY() + 0.5, (double)var2.field33646.method8306() + 0.5
          );
          float var8 = (var6 + 90.0F) * (float) (Math.PI / 180.0);
-         double var9 = (double)(-Class9679.method37763(var8)) / 2.1;
-         double var11 = (double)Class9679.method37764(var8) / 2.1;
+         double var9 = (double)(-MathHelper.method37763(var8)) / 2.1;
+         double var11 = (double) MathHelper.method37764(var8) / 2.1;
          var7 = var7.method11339(var9, 0.0, var11);
          float[] var13 = Class9142.method34144(var7.field18048, var7.field18050, var7.field18049);
          float var14 = var13[0];
          float var15 = var13[1];
          var8 = (var6 - 90.0F) * (float) (Math.PI / 180.0);
-         var9 = (double)(-Class9679.method37763(var8)) / 2.1;
-         var11 = (double)Class9679.method37764(var8) / 2.1;
+         var9 = (double)(-MathHelper.method37763(var8)) / 2.1;
+         var11 = (double) MathHelper.method37764(var8) / 2.1;
          var7 = new Vector3d(
             (double)var2.field33646.method8304() + 0.5, (double)var2.field33646.getY() + 0.5, (double)var2.field33646.method8306() + 0.5
          );
@@ -619,15 +619,15 @@ public class Class9217 {
          float[] var16 = Class9142.method34144(var7.field18048, var7.field18050, var7.field18049);
          float var17 = var16[0];
          float var18 = var16[1];
-         float var19 = Math.abs(Class9142.method34142(Class9679.method37792(var0), Class9679.method37792(var14)));
-         float var20 = Math.abs(Class9142.method34142(Class9679.method37792(var0), Class9679.method37792(var17)));
+         float var19 = Math.abs(Class9142.method34142(MathHelper.method37792(var0), MathHelper.method37792(var14)));
+         float var20 = Math.abs(Class9142.method34142(MathHelper.method37792(var0), MathHelper.method37792(var17)));
          return !(var19 < var20) ? new float[]{var17, var18} : new float[]{var14, var15};
       }
    }
 
    public static Direction method34580(BlockPos var0) {
       Direction var3 = Direction.field673;
-      float var4 = Class9679.method37792(method34581(var0, Direction.field673)[0]);
+      float var4 = MathHelper.method37792(method34581(var0, Direction.field673)[0]);
       if (var4 >= 45.0F && var4 <= 135.0F) {
          var3 = Direction.EAST;
       } else if ((!(var4 >= 135.0F) || !(var4 <= 180.0F)) && (!(var4 <= -135.0F) || !(var4 >= -180.0F))) {
@@ -640,7 +640,7 @@ public class Class9217 {
          var3 = Direction.SOUTH;
       }
 
-      if (Class9679.method37792(method34581(var0, Direction.field673)[1]) > 75.0F || Class9679.method37792(method34581(var0, Direction.field673)[1]) < -75.0F) {
+      if (MathHelper.method37792(method34581(var0, Direction.field673)[1]) > 75.0F || MathHelper.method37792(method34581(var0, Direction.field673)[1]) < -75.0F) {
          var3 = Direction.field673;
       }
 
@@ -651,7 +651,7 @@ public class Class9217 {
       double var4 = (double)var0.method8304() + 0.5 - field42414.field1339.getPosX() + (double)var1.method539() / 2.0;
       double var6 = (double)var0.method8306() + 0.5 - field42414.field1339.getPosZ() + (double)var1.method541() / 2.0;
       double var8 = field42414.field1339.getPosY() + (double)field42414.field1339.method3393() - ((double)var0.getY() + 0.5);
-      double var10 = (double)Class9679.method37766(var4 * var4 + var6 * var6);
+      double var10 = (double) MathHelper.method37766(var4 * var4 + var6 * var6);
       float var12 = (float)(Math.atan2(var6, var4) * 180.0 / Math.PI) - 90.0F;
       float var13 = (float)(Math.atan2(var8, var10) * 180.0 / Math.PI);
       if (var12 < 0.0F) {
@@ -669,12 +669,12 @@ public class Class9217 {
       float var9 = var5 * 2.0F;
       Vector3d var10 = new Vector3d((double)var6, (double)var7, (double)var8);
       if (!var1.method3398()) {
-         double var11 = (double)(Class9679.method37766(var1.method3278(var10)) / var9);
+         double var11 = (double)(MathHelper.method37766(var1.method3278(var10)) / var9);
          if (var11 <= 1.0) {
             double var13 = var1.getPosX() - (double)var6;
             double var15 = var1.method3442() - (double)var7;
             double var17 = var1.getPosZ() - (double)var8;
-            double var19 = (double)Class9679.method37766(var13 * var13 + var15 * var15 + var17 * var17);
+            double var19 = (double) MathHelper.method37766(var13 * var13 + var15 * var15 + var17 * var17);
             if (var19 != 0.0) {
                var13 /= var19;
                var15 /= var19;

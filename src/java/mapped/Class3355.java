@@ -39,7 +39,7 @@ public class Class3355 extends Class3241 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       Class944 var7 = var2.method6759(var3);
       if (var7 instanceof Class969) {
          Class969 var8 = (Class969)var7;
@@ -87,7 +87,7 @@ public class Class3355 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       Class944 var9 = var2.method6759(var3);
       if (var9 instanceof Class969 && var4.method2979()) {
          var4.method2770((Class969)var9);
@@ -109,7 +109,7 @@ public class Class3355 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       Class944 var8 = var1.method6759(var2);
       if (var8 instanceof Class969) {
          Class969 var9 = (Class969)var8;

@@ -28,7 +28,7 @@ public class Class3746 extends Class3676<Class1042> {
       var6.method21406(Class8830.field39841, var2);
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       Class6947<Class1042> var7 = var2.method2992();
       var7.method21410(this.field19886)
          .ifPresent(
@@ -61,7 +61,7 @@ public class Class3746 extends Class3676<Class1042> {
          );
    }
 
-   private boolean method12702(Class1657 var1, Class1042 var2) {
+   private boolean method12702(ServerWorld var1, Class1042 var2) {
       Optional var5 = var2.method2992().<Long>method21410(Class8830.field39841);
       return !var5.isPresent() ? false : var1.method6783() - (Long)var5.get() > (long)this.field19890;
    }
@@ -70,11 +70,11 @@ public class Class3746 extends Class3676<Class1042> {
       return var2.method35579().method8321(var1.method3432()) > this.field19889;
    }
 
-   private boolean method12704(Class1657 var1, Class9378 var2) {
+   private boolean method12704(ServerWorld var1, Class9378 var2) {
       return var2.method35578() != var1.method6813();
    }
 
-   private boolean method12705(Class1657 var1, Class1042 var2, Class9378 var3) {
+   private boolean method12705(ServerWorld var1, Class1042 var2, Class9378 var3) {
       return var3.method35578() == var1.method6813() && var3.method35579().method8321(var2.method3432()) <= this.field19888;
    }
 }

@@ -272,11 +272,11 @@ public class Class1105 extends Class1009 {
    }
 
    public float method5308(float var1) {
-      return Class9679.method37821(var1, this.field6069, this.field6068);
+      return MathHelper.method37821(var1, this.field6069, this.field6068);
    }
 
    public float method5309(float var1) {
-      return Class9679.method37821(var1, this.field6072, this.field6071);
+      return MathHelper.method37821(var1, this.field6072, this.field6071);
    }
 
    public float method5310(float var1) {

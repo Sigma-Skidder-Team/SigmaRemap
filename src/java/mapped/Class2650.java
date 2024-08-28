@@ -28,7 +28,7 @@ public class Class2650 extends Class2647 {
    @Override
    public boolean method10803() {
       return !this.field17002.method5129()
-         && !this.field17002.method3176()
+         && !this.field17002.isSleeping()
          && !this.field17002.method3336()
          && !this.field17002.method5131()
          && super.method10803();

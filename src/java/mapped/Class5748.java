@@ -36,7 +36,7 @@ public class Class5748 extends Class5651<Class1054, Class2827<Class1054>> {
    }
 
    public void method17842(Class1054 var1, Class9332 var2, float var3, float var4, float var5) {
-      var2.method35291(0.0, (double)(Class9679.method37764(var3 * 0.05F) * 0.08F), 0.0);
+      var2.method35291(0.0, (double)(MathHelper.method37764(var3 * 0.05F) * 0.08F), 0.0);
       super.method17842(var1, var2, var3, var4, var5);
    }
 }

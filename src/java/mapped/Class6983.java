@@ -54,18 +54,18 @@ public class Class6983 {
       var0.method2992().method21406(Class8830.field39824, var6);
    }
 
-   public static void method21578(Class880 var0, Class8848 var1, Vector3d var2) {
+   public static void method21578(Class880 var0, ItemStack var1, Vector3d var2) {
       double var5 = var0.method3442() - 0.3F;
       Class1000 var7 = new Class1000(var0.field5024, var0.getPosX(), var5, var0.getPosZ(), var1);
       float var8 = 0.3F;
-      Vector3d var9 = var2.method11336(var0.method3431());
+      Vector3d var9 = var2.method11336(var0.getPositionVec());
       var9 = var9.method11333().method11344(0.3F);
       var7.method3434(var9);
       var7.method4131();
       var0.field5024.method6916(var7);
    }
 
-   public static Class2002 method21579(Class1657 var0, Class2002 var1, int var2) {
+   public static Class2002 method21579(ServerWorld var0, Class2002 var1, int var2) {
       int var5 = var0.method6955(var1);
       return Class2002.method8427(var1, var2).filter(var2x -> var0.method6955(var2x) < var5).min(Comparator.comparingInt(var0::method6955)).orElse(var1);
    }
@@ -89,8 +89,8 @@ public class Class6983 {
    public static boolean method21582(Class880 var0, Class880 var1, double var2) {
       Optional var6 = var0.method2992().<Class880>method21410(Class8830.field39826);
       if (var6.isPresent()) {
-         double var7 = var0.method3278(((Class880)var6.get()).method3431());
-         double var9 = var0.method3278(var1.method3431());
+         double var7 = var0.method3278(((Class880)var6.get()).getPositionVec());
+         double var9 = var0.method3278(var1.getPositionVec());
          return var9 > var7 + var2 * var2;
       } else {
          return false;
@@ -107,14 +107,14 @@ public class Class6983 {
    }
 
    public static Class880 method21585(Class880 var0, Class880 var1, Class880 var2) {
-      Vector3d var5 = var1.method3431();
-      Vector3d var6 = var2.method3431();
+      Vector3d var5 = var1.getPositionVec();
+      Vector3d var6 = var2.getPositionVec();
       return !(var0.method3278(var5) < var0.method3278(var6)) ? var2 : var1;
    }
 
    public static Optional<Class880> method21586(Class880 var0, Class8830<UUID> var1) {
       Optional<UUID> var4 = var0.method2992().method21410(var1);
-      return var4.map(var1x -> (Class880)((Class1657)var0.field5024).method6942(var1x));
+      return var4.map(var1x -> (Class880)((ServerWorld)var0.field5024).method6942(var1x));
    }
 
    public static Stream<Class1042> method21587(Class1042 var0, Predicate<Class1042> var1) {

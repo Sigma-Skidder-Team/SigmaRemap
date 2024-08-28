@@ -5,19 +5,19 @@ import java.io.IOException;
 public class Class5570 implements Packet<Class5110> {
    private static String[] field24707;
    private Class8711 field24708;
-   private Class79 field24709;
+   private Hand field24709;
 
    public Class5570() {
    }
 
-   public Class5570(Class79 var1, Class8711 var2) {
+   public Class5570(Hand var1, Class8711 var2) {
       this.field24709 = var1;
       this.field24708 = var2;
    }
 
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
-      this.field24709 = var1.<Class79>method35712(Class79.class);
+      this.field24709 = var1.<Hand>method35712(Hand.class);
       this.field24708 = var1.method35735();
    }
 
@@ -31,7 +31,7 @@ public class Class5570 implements Packet<Class5110> {
       var1.method15630(this);
    }
 
-   public Class79 method17497() {
+   public Hand method17497() {
       return this.field24709;
    }
 

@@ -12,7 +12,7 @@ public class Class7894 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(Class1657 var1, Class880 var2) {
+   public void method26425(ServerWorld var1, Class880 var2) {
       Class6947<?> var5 = var2.method2992();
       Class8654 var6 = var2.method3047();
       if (var6 == null) {

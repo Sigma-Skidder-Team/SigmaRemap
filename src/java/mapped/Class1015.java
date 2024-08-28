@@ -115,7 +115,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    @Override
    public void method2871() {
       if (this.field5683 == null
-         || !this.field5683.method8317(this.method3431(), 3.46)
+         || !this.field5683.method8317(this.getPositionVec(), 3.46)
          || !this.field5024.method6738(this.field5683).method23448(Blocks.JUKEBOX)) {
          this.field5682 = false;
          this.field5683 = null;
@@ -143,7 +143,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       this.field5680 = this.field5677;
       this.field5679 = this.field5678;
       this.field5678 = (float)((double)this.field5678 + (double)(!this.field5036 && !this.method3328() ? 4 : -1) * 0.3);
-      this.field5678 = Class9679.method37777(this.field5678, 0.0F, 1.0F);
+      this.field5678 = MathHelper.method37777(this.field5678, 0.0F, 1.0F);
       if (!this.field5036 && this.field5681 < 1.0F) {
          this.field5681 = 1.0F;
       }
@@ -178,8 +178,8 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (!this.method4393() && field5675.contains(var5.method32107())) {
          if (!var1.field4919.field29609) {
             var5.method32182(1);
@@ -234,7 +234,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return false;
    }
 
@@ -265,7 +265,7 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    @Nullable
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       return null;
    }
 
@@ -356,7 +356,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public int method4414() {
-      return Class9679.method37775(this.field5063.<Integer>method35445(field5672), 0, 4);
+      return MathHelper.method37775(this.field5063.<Integer>method35445(field5672), 0, 4);
    }
 
    public void method4415(int var1) {

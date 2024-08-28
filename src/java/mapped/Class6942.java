@@ -50,7 +50,7 @@ public class Class6942 extends Class6941 {
    }
 
    private void method21378(Class2338 var1, Class878 var2, List<ResourceLocation> var3) {
-      var2.field4855.method15671(new Class5572(var1, var3, Collections.<ResourceLocation>emptyList(), this.method21374()));
+      var2.field4855.sendPacket(new Class5572(var1, var3, Collections.<ResourceLocation>emptyList(), this.method21374()));
    }
 
    public Class39 method21379() {
@@ -100,6 +100,6 @@ public class Class6942 extends Class6941 {
    }
 
    public void method21382(Class878 var1) {
-      var1.field4855.method15671(new Class5572(Class2338.field15982, this.field30089, this.field30090, this.method21374()));
+      var1.field4855.sendPacket(new Class5572(Class2338.field15982, this.field30089, this.field30090, this.method21374()));
    }
 }

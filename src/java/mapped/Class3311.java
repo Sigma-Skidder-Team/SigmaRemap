@@ -24,10 +24,10 @@ public class Class3311 extends Class3257 {
    @Override
    public Class2274 method11707(Class5911 var1) {
       Class1655 var4 = var1.method18360();
-      if (!(var4 instanceof Class1657)) {
+      if (!(var4 instanceof ServerWorld)) {
          return Class2274.field14818;
       } else {
-         Class8848 var5 = var1.method18357();
+         ItemStack var5 = var1.method18357();
          BlockPos var6 = var1.method18345();
          Direction var7 = var1.method18354();
          Class7380 var8 = var4.method6738(var6);
@@ -53,7 +53,7 @@ public class Class3311 extends Class3257 {
 
          Class8992 var10 = this.method11855(var5.method32142());
          if (var10.method33200(
-               (Class1657)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.field673
+               (ServerWorld)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.field673
             )
             != null) {
             var5.method32182(1);
@@ -64,37 +64,37 @@ public class Class3311 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       Class8711 var7 = method11735(var1, var2, Class1985.field12963);
       if (var7.method31417() == Class2100.field13690) {
-         if (var1 instanceof Class1657) {
+         if (var1 instanceof ServerWorld) {
             Class8711 var8 = var7;
             BlockPos var9 = var8.method31423();
             if (var1.method6738(var9).method23383() instanceof Class3404) {
                if (var1.method6785(var2, var9) && var2.method2936(var9, var8.method31424(), var6)) {
                   Class8992 var10 = this.method11855(var6.method32142());
-                  if (var10.method33200((Class1657)var1, var6, var2, var9, Class2202.field14403, false, false) != null) {
+                  if (var10.method33200((ServerWorld)var1, var6, var2, var9, Class2202.field14403, false, false) != null) {
                      if (!var2.field4919.field29609) {
                         var6.method32182(1);
                      }
 
                      var2.method2913(Class8876.field40098.method172(this));
-                     return Class6794.<Class8848>method20697(var6);
+                     return Class6794.<ItemStack>method20697(var6);
                   } else {
-                     return Class6794.<Class8848>method20698(var6);
+                     return Class6794.<ItemStack>method20698(var6);
                   }
                } else {
-                  return Class6794.<Class8848>method20699(var6);
+                  return Class6794.<ItemStack>method20699(var6);
                }
             } else {
-               return Class6794.<Class8848>method20698(var6);
+               return Class6794.<ItemStack>method20698(var6);
             }
          } else {
-            return Class6794.<Class8848>method20696(var6);
+            return Class6794.<ItemStack>method20696(var6);
          }
       } else {
-         return Class6794.<Class8848>method20698(var6);
+         return Class6794.<ItemStack>method20698(var6);
       }
    }
 
@@ -126,7 +126,7 @@ public class Class3311 extends Class3257 {
       return this.field18820;
    }
 
-   public Optional<Class1006> method11856(PlayerEntity var1, Class1006 var2, Class8992<? extends Class1006> var3, Class1657 var4, Vector3d var5, Class8848 var6) {
+   public Optional<Class1006> method11856(PlayerEntity var1, Class1006 var2, Class8992<? extends Class1006> var3, ServerWorld var4, Vector3d var5, ItemStack var6) {
       if (this.method11851(var6.method32142(), var3)) {
          Object var9;
          if (!(var2 instanceof Class1045)) {

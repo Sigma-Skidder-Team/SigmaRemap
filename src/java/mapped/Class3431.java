@@ -27,7 +27,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field19194)) {
          this.method12094(var2, var3, var1);
       }

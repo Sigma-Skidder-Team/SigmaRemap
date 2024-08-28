@@ -35,10 +35,10 @@ public class Class3294 extends Class3292 {
                PlayerEntity var11 = var1.method18358();
                int var12 = var5.method7034();
                if (var11 instanceof Class878 && var10.getY() >= var12) {
-                  Class5616 var13 = new Class5616(
+                  SChatPacket var13 = new SChatPacket(
                      new TranslationTextComponent("build.tooHigh", var12).mergeStyle(TextFormatting.RED), ChatType.GAME_INFO, Util.field45724
                   );
-                  ((Class878)var11).field4855.method15671(var13);
+                  ((Class878)var11).field4855.sendPacket(var13);
                }
                break;
             }

@@ -258,7 +258,7 @@ public class Class822 extends Class798 {
                               } else if (this.method2370(var3)) {
                                  this.field4490 = new TranslationTextComponent("mco.upload.uploading", this.field4484.method8644());
                                  Class9696 var9 = new Class9696(
-                                    var3, this.field4485, this.field4486, var7, this.field4562.method1533(), Class9246.method34773().getName(), this.field4487
+                                    var3, this.field4485, this.field4486, var7, this.field4562.method1533(), SharedConstants.method34773().getName(), this.field4487
                                  );
                                  var9.method37965(var3x -> {
                                     if (var3x.field38749 >= 200 && var3x.field38749 < 300) {

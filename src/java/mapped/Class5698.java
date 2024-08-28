@@ -10,8 +10,8 @@ public class Class5698 extends Class5651<Class1081, Class2890<Class1081>> {
 
    public void method17857(Class1081 var1, Class9332 var2, float var3) {
       float var6 = var1.method5019(var3);
-      float var7 = 1.0F + Class9679.method37763(var6 * 100.0F) * var6 * 0.01F;
-      var6 = Class9679.method37777(var6, 0.0F, 1.0F);
+      float var7 = 1.0F + MathHelper.method37763(var6 * 100.0F) * var6 * 0.01F;
+      var6 = MathHelper.method37777(var6, 0.0F, 1.0F);
       var6 *= var6;
       var6 *= var6;
       float var8 = (1.0F + var6 * 0.4F) * var7;
@@ -21,7 +21,7 @@ public class Class5698 extends Class5651<Class1081, Class2890<Class1081>> {
 
    public float method17879(Class1081 var1, float var2) {
       float var5 = var1.method5019(var2);
-      return (int)(var5 * 10.0F) % 2 != 0 ? Class9679.method37777(var5, 0.5F, 1.0F) : 0.0F;
+      return (int)(var5 * 10.0F) % 2 != 0 ? MathHelper.method37777(var5, 0.5F, 1.0F) : 0.0F;
    }
 
    public ResourceLocation method17843(Class1081 var1) {

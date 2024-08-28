@@ -15,7 +15,7 @@ public class Class3624 extends Class3625 {
    private boolean field19632 = true;
 
    public Class3624(ITextComponent var1, Class2303 var2, Class2300 var3) {
-      super(Class9679.method37812(), var1, var2, var3);
+      super(MathHelper.method37812(), var1, var2, var3);
    }
 
    @Override
@@ -85,20 +85,20 @@ public class Class3624 extends Class3625 {
          Class5472 var4 = new Class5472(var1, this);
 
          for (Class878 var6 : this.field19630) {
-            var6.field4855.method15671(var4);
+            var6.field4855.sendPacket(var4);
          }
       }
    }
 
    public void method12263(Class878 var1) {
       if (this.field19630.add(var1) && this.field19632) {
-         var1.field4855.method15671(new Class5472(Class2151.field14064, this));
+         var1.field4855.sendPacket(new Class5472(Class2151.field14064, this));
       }
    }
 
    public void method12265(Class878 var1) {
       if (this.field19630.remove(var1) && this.field19632) {
-         var1.field4855.method15671(new Class5472(Class2151.field14065, this));
+         var1.field4855.sendPacket(new Class5472(Class2151.field14065, this));
       }
    }
 
@@ -119,7 +119,7 @@ public class Class3624 extends Class3625 {
          this.field19632 = var1;
 
          for (Class878 var5 : this.field19630) {
-            var5.field4855.method15671(new Class5472(!var1 ? Class2151.field14065 : Class2151.field14064, this));
+            var5.field4855.sendPacket(new Class5472(!var1 ? Class2151.field14065 : Class2151.field14064, this));
          }
       }
    }

@@ -14,7 +14,7 @@ public class Class3367 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       Class944 var9 = var2.method6759(var3);
       if (!(var9 instanceof Class964)) {
          return Class2274.field14820;
@@ -24,7 +24,7 @@ public class Class3367 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (!var1.field9020 && var4 != null) {
          Class944 var8 = var1.method6759(var2);
          if (var8 instanceof Class964) {
@@ -50,7 +50,7 @@ public class Class3367 extends Class3241 {
 
    @Override
    public void method11506(Class7380 var1, Class1655 var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (var2 instanceof Class1657) {
+      if (var2 instanceof ServerWorld) {
          Class944 var9 = var2.method6759(var3);
          if (var9 instanceof Class964) {
             Class964 var10 = (Class964)var9;
@@ -58,7 +58,7 @@ public class Class3367 extends Class3241 {
             boolean var12 = var10.method3971();
             if (var11 && !var12) {
                var10.method3972(true);
-               this.method11953((Class1657)var2, var10);
+               this.method11953((ServerWorld)var2, var10);
             } else if (!var11 && var12) {
                var10.method3972(false);
             }
@@ -66,7 +66,7 @@ public class Class3367 extends Class3241 {
       }
    }
 
-   private void method11953(Class1657 var1, Class964 var2) {
+   private void method11953(ServerWorld var1, Class964 var2) {
       switch (Class8113.field34871[var2.method3950().ordinal()]) {
          case 1:
             var2.method3964(false);

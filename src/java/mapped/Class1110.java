@@ -35,7 +35,7 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    public void method5336(int var1) {
-      this.field5063.method35446(field6087, Class9679.method37775(var1, 0, 64));
+      this.field5063.method35446(field6087, MathHelper.method37775(var1, 0, 64));
    }
 
    private void method5337() {
@@ -70,8 +70,8 @@ public class Class1110 extends Class1111 implements Class1008 {
    public void tick() {
       super.tick();
       if (this.field5024.field9020) {
-         float var3 = Class9679.method37764((float)(this.method3205() * 3 + this.field5055) * 0.13F + (float) Math.PI);
-         float var4 = Class9679.method37764((float)(this.method3205() * 3 + this.field5055 + 1) * 0.13F + (float) Math.PI);
+         float var3 = MathHelper.method37764((float)(this.method3205() * 3 + this.field5055) * 0.13F + (float) Math.PI);
+         float var4 = MathHelper.method37764((float)(this.method3205() * 3 + this.field5055 + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {
             this.field5024
                .method6745(
@@ -87,8 +87,8 @@ public class Class1110 extends Class1111 implements Class1008 {
          }
 
          int var5 = this.method5338();
-         float var6 = Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
-         float var7 = Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var6 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var7 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
          float var8 = (0.3F + var3 * 0.45F) * ((float)var5 * 0.2F + 1.0F);
          this.field5024
             .method6746(

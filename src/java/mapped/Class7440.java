@@ -22,13 +22,13 @@ public class Class7440 {
       var0.method28817(var1, 2);
    }
 
-   public static Collection<Class8262> method24030(Collection<Class8363> var0, BlockPos var1, Class80 var2, Class1657 var3, Class7879 var4, int var5) {
+   public static Collection<Class8262> method24030(Collection<Class8363> var0, BlockPos var1, Class80 var2, ServerWorld var3, Class7879 var4, int var5) {
       Class6101 var8 = new Class6101(var0, var1, var2, var3, var4, var5);
       var8.method18857();
       return var8.method18856();
    }
 
-   public static Collection<Class8262> method24031(Collection<Class4871> var0, BlockPos var1, Class80 var2, Class1657 var3, Class7879 var4, int var5) {
+   public static Collection<Class8262> method24031(Collection<Class4871> var0, BlockPos var1, Class80 var2, ServerWorld var3, Class7879 var4, int var5) {
       return method24030(method24032(var0), var1, var2, var3, var4, var5);
    }
 
@@ -41,7 +41,7 @@ public class Class7440 {
       });
       return var3.keySet().stream().<Class8363>flatMap(var1 -> {
          Collection<Class4871> var4 = var3.get(var1);
-         Consumer<Class1657> var5 = Class7936.method26707(var1);
+         Consumer<ServerWorld> var5 = Class7936.method26707(var1);
          MutableInt var6 = new MutableInt();
          return Streams.stream(Iterables.partition(var4, 100)).map(var4x -> new Class8363(var1 + ":" + var6.incrementAndGet(), var4, var5));
       }).collect(Collectors.toList());
@@ -60,7 +60,7 @@ public class Class7440 {
    }
 
    private static void method24034(Class8262 var0, Block var1) {
-      Class1657 var4 = var0.method28808();
+      ServerWorld var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, -1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
@@ -77,18 +77,18 @@ public class Class7440 {
    }
 
    private static void method24035(Class8262 var0, String var1) {
-      Class1657 var4 = var0.method28808();
+      ServerWorld var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, 1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
       var4.method6730(var7, Blocks.field37061.method11579().method23395(var0.method28821()));
       Class7380 var8 = var4.method6738(var7);
-      Class8848 var9 = method24036(var0.method28806(), var0.method28818(), var1);
+      ItemStack var9 = method24036(var0.method28806(), var0.method28818(), var1);
       Class3354.method11919(var4, var7, var8, var9);
    }
 
-   private static Class8848 method24036(String var0, boolean var1, String var2) {
-      Class8848 var5 = new Class8848(Class8514.field38047);
+   private static ItemStack method24036(String var0, boolean var1, String var2) {
+      ItemStack var5 = new ItemStack(Class8514.field38047);
       Class41 var6 = new Class41();
       StringBuffer var7 = new StringBuffer();
       Arrays.<String>stream(var0.split("\\.")).forEach(var1x -> var7.append(var1x).append('\n'));
@@ -102,19 +102,19 @@ public class Class7440 {
       return var5;
    }
 
-   private static void method24037(Class1657 var0, TextFormatting var1, String var2) {
+   private static void method24037(ServerWorld var0, TextFormatting var1, String var2) {
       var0.method6914(var0x -> true).forEach(var2x -> var2x.method1328(new StringTextComponent(var2).mergeStyle(var1), Util.field45724));
    }
 
-   public static void method24038(Class1657 var0) {
+   public static void method24038(ServerWorld var0) {
       Class7393.method23611(var0);
    }
 
-   private static void method24039(Class1657 var0, BlockPos var1, String var2) {
+   private static void method24039(ServerWorld var0, BlockPos var1, String var2) {
       Class7393.method23610(var0, var1, var2, -2130771968, Integer.MAX_VALUE);
    }
 
-   public static void method24040(Class1657 var0, BlockPos var1, Class7879 var2, int var3) {
+   public static void method24040(ServerWorld var0, BlockPos var1, Class7879 var2, int var3) {
       var2.method26416();
       BlockPos var6 = var1.method8336(-var3, 0, -var3);
       BlockPos var7 = var1.method8336(var3, 0, var3);

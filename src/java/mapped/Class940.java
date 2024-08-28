@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class Class940 extends Class939 implements Class930, Class935 {
    private static final int[] field5304 = IntStream.range(0, 27).toArray();
-   private Class25<Class8848> field5305 = Class25.<Class8848>method68(27, Class8848.field39973);
+   private Class25<ItemStack> field5305 = Class25.<ItemStack>method68(27, ItemStack.field39973);
    private int field5306;
    private Class2126 field5307 = Class2126.field13872;
    private float field5308;
@@ -212,7 +212,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    public void method3753(Class39 var1) {
-      this.field5305 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5305 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
       if (!this.method3741(var1) && var1.method119("Items", 9)) {
          Class7920.method26567(var1, this.field5305);
       }
@@ -227,12 +227,12 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public Class25<Class8848> method3724() {
+   public Class25<ItemStack> method3724() {
       return this.field5305;
    }
 
    @Override
-   public void method3725(Class25<Class8848> var1) {
+   public void method3725(Class25<ItemStack> var1) {
       this.field5305 = var1;
    }
 
@@ -242,17 +242,17 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public boolean method3654(int var1, Class8848 var2, Direction var3) {
+   public boolean method3654(int var1, ItemStack var2, Direction var3) {
       return !(Block.method11537(var2.method32107()) instanceof Class3368);
    }
 
    @Override
-   public boolean method3655(int var1, Class8848 var2, Direction var3) {
+   public boolean method3655(int var1, ItemStack var2, Direction var3) {
       return true;
    }
 
    public float method3755(float var1) {
-      return Class9679.method37821(var1, this.field5309, this.field5308);
+      return MathHelper.method37821(var1, this.field5309, this.field5308);
    }
 
    @Nullable

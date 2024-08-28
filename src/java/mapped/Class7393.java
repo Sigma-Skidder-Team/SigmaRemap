@@ -9,7 +9,7 @@ public class Class7393 {
    private static String[] field31651;
    private static final Logger field31652 = LogManager.getLogger();
 
-   public static void method23610(Class1657 var0, BlockPos var1, String var2, int var3, int var4) {
+   public static void method23610(ServerWorld var0, BlockPos var1, String var2, int var3, int var4) {
       PacketBuffer var7 = new PacketBuffer(Unpooled.buffer());
       var7.method35708(var1);
       var7.writeInt(var3);
@@ -18,27 +18,27 @@ public class Class7393 {
       method23625(var0, var7, Class5532.field24551);
    }
 
-   public static void method23611(Class1657 var0) {
+   public static void method23611(ServerWorld var0) {
       PacketBuffer var3 = new PacketBuffer(Unpooled.buffer());
       method23625(var0, var3, Class5532.field24552);
    }
 
-   public static void method23612(Class1657 var0, Class7481 var1) {
+   public static void method23612(ServerWorld var0, Class7481 var1) {
    }
 
-   public static void method23613(Class1657 var0, BlockPos var1) {
+   public static void method23613(ServerWorld var0, BlockPos var1) {
       method23616(var0, var1);
    }
 
-   public static void method23614(Class1657 var0, BlockPos var1) {
+   public static void method23614(ServerWorld var0, BlockPos var1) {
       method23616(var0, var1);
    }
 
-   public static void method23615(Class1657 var0, BlockPos var1) {
+   public static void method23615(ServerWorld var0, BlockPos var1) {
       method23616(var0, var1);
    }
 
-   private static void method23616(Class1657 var0, BlockPos var1) {
+   private static void method23616(ServerWorld var0, BlockPos var1) {
    }
 
    public static void method23617(Class1655 var0, Class1006 var1, Class8238 var2, float var3) {
@@ -51,11 +51,11 @@ public class Class7393 {
    }
 
    public static void method23620(Class1655 var0, Class1006 var1, Class6603 var2) {
-      if (!(var0 instanceof Class1657)) {
+      if (!(var0 instanceof ServerWorld)) {
       }
    }
 
-   public static void method23621(Class1657 var0, Collection<Class7699> var1) {
+   public static void method23621(ServerWorld var0, Collection<Class7699> var1) {
    }
 
    public static void method23622(Class880 var0) {
@@ -67,11 +67,11 @@ public class Class7393 {
    public static void method23624(Class962 var0) {
    }
 
-   private static void method23625(Class1657 var0, PacketBuffer var1, ResourceLocation var2) {
+   private static void method23625(ServerWorld var0, PacketBuffer var1, ResourceLocation var2) {
       Class5532 var5 = new Class5532(var2, var1);
 
       for (PlayerEntity var7 : var0.method6970().method6870()) {
-         ((Class878)var7).field4855.method15671(var5);
+         ((Class878)var7).field4855.sendPacket(var5);
       }
    }
 }

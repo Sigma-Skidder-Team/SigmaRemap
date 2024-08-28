@@ -45,7 +45,7 @@ public class Class6688 implements Class6687 {
    }
 
    private void method20403(boolean var1, String var2) {
-      if (Class9246.field42545) {
+      if (SharedConstants.field42545) {
          field29301.debug("Narrating: {}", var2.replaceAll("\n", "\\\\n"));
       }
 

@@ -8,7 +8,7 @@ import java.util.Random;
 public enum Class1940 {
    field12604 {
       @Override
-      public void method8204(Class1657 var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
          BlockPos var8 = new BlockPos(0, 128, 0);
 
          for (Class1001 var10 : var3) {
@@ -20,7 +20,7 @@ public enum Class1940 {
    },
    field12605 {
       @Override
-      public void method8204(Class1657 var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
          if (var4 >= 100) {
             var2.method26113(field12606);
          } else if (var4 == 0 || var4 == 50 || var4 == 51 || var4 == 52 || var4 >= 95) {
@@ -30,7 +30,7 @@ public enum Class1940 {
    },
    field12606 {
       @Override
-      public void method8204(Class1657 var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
          byte var8 = 40;
          boolean var9 = var4 % 40 == 0;
          boolean var10 = var4 % 40 == 39;
@@ -76,7 +76,7 @@ public enum Class1940 {
    },
    field12607 {
       @Override
-      public void method8204(Class1657 var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
          if (var4 < 100) {
             if (var4 < 80) {
                if (var4 != 0) {
@@ -105,7 +105,7 @@ public enum Class1940 {
    },
    field12608 {
       @Override
-      public void method8204(Class1657 var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
 
       }
    };
@@ -115,5 +115,5 @@ public enum Class1940 {
    private Class1940() {
    }
 
-   public abstract void method8204(Class1657 var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5);
+   public abstract void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5);
 }

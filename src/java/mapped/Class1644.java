@@ -49,7 +49,7 @@ public class Class1644 extends Class314 {
 
    @Override
    public boolean method1277() {
-      field1208.info("Starting integrated minecraft server version " + Class9246.method34773().getName());
+      field1208.info("Starting integrated minecraft server version " + SharedConstants.method34773().getName());
       this.method1351(true);
       this.method1358(true);
       this.method1360(true);
@@ -72,7 +72,7 @@ public class Class1644 extends Class314 {
       if (!var4 && this.field8921) {
          var5.method22503("autoSave");
          field1208.info("Saving and pausing game...");
-         this.method1367().method19467();
+         this.getPlayerList().method19467();
          this.method1291(false, false, false);
          var5.method22505();
       }
@@ -80,9 +80,9 @@ public class Class1644 extends Class314 {
       if (!this.field8921) {
          super.method1310(var1);
          int var6 = Math.max(2, this.field8920.field1299.field44574 + -1);
-         if (var6 != this.method1367().method19478()) {
-            field1208.info("Changing view distance to {}, from {}", var6, this.method1367().method19478());
-            this.method1367().method19487(var6);
+         if (var6 != this.getPlayerList().method19478()) {
+            field1208.info("Changing view distance to {}, from {}", var6, this.getPlayerList().method19478());
+            this.getPlayerList().method19487(var6);
          }
       }
    }
@@ -160,13 +160,13 @@ public class Class1644 extends Class314 {
          this.field1223 = var3;
          this.field8922 = new Class384(this.method1362(), var3 + "");
          this.field8922.start();
-         this.method1367().method19480(var1);
-         this.method1367().method19482(var2);
-         int var6 = this.method1418(this.field8920.field1339.method2906());
+         this.getPlayerList().method19480(var1);
+         this.getPlayerList().method19482(var2);
+         int var6 = this.method1418(this.field8920.field1339.getGameProfile());
          this.field8920.field1339.method5399(var6);
 
-         for (Class878 var8 : this.method1367().method19488()) {
-            this.method1403().method18837(var8);
+         for (Class878 var8 : this.getPlayerList().method19488()) {
+            this.getCommandManager().method18837(var8);
          }
 
          return true;
@@ -188,9 +188,9 @@ public class Class1644 extends Class314 {
    public void method1296(boolean var1) {
       if (!Class9299.field42967.method20245() || this.method1295()) {
          this.method1635(() -> {
-            for (Class878 var4 : Lists.newArrayList(this.method1367().method19488())) {
-               if (!var4.method3375().equals(this.field8923)) {
-                  this.method1367().method19450(var4);
+            for (Class878 var4 : Lists.newArrayList(this.getPlayerList().method19488())) {
+               if (!var4.getUniqueID().equals(this.field8923)) {
+                  this.getPlayerList().method19450(var4);
                }
             }
          });
@@ -216,7 +216,7 @@ public class Class1644 extends Class314 {
    @Override
    public void method1370(Class1894 var1) {
       super.method1370(var1);
-      this.method1367().method19480(var1);
+      this.getPlayerList().method19480(var1);
    }
 
    @Override
@@ -254,12 +254,12 @@ public class Class1644 extends Class314 {
    }
 
    private void method6490() {
-      for (Class1657 var4 : this.method1320()) {
+      for (ServerWorld var4 : this.method1320()) {
          this.method6491(var4);
       }
    }
 
-   private void method6491(Class1657 var1) {
+   private void method6491(ServerWorld var1) {
       if (!Class7944.method26887()) {
          this.method6494(var1);
       }
@@ -281,13 +281,13 @@ public class Class1644 extends Class314 {
       return this.field8927;
    }
 
-   private void method6493(Class1657 var1) {
+   private void method6493(ServerWorld var1) {
       if (var1.method6792(1.0F) > 0.0F || var1.method6794()) {
          var1.method6892(6000, 0, false, false);
       }
    }
 
-   private void method6494(Class1657 var1) {
+   private void method6494(ServerWorld var1) {
       if (this.method1286() == Class1894.field11103) {
          long var4 = var1.method6784();
          long var6 = var4 % 24000L;

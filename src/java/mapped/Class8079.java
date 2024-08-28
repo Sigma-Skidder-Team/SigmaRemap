@@ -80,7 +80,7 @@ public class Class8079 implements IAmbientSoundHandler {
                   double var14 = var8 - this.field34720.getPosX();
                   double var16 = var10 - this.field34720.method3442();
                   double var18 = var12 - this.field34720.getPosZ();
-                  double var20 = (double)Class9679.method37766(var14 * var14 + var16 * var16 + var18 * var18);
+                  double var20 = (double) MathHelper.method37766(var14 * var14 + var16 * var16 + var18 * var18);
                   double var22 = var20 + var1.method27076();
                   Class6339 var24 = Class6339.method19298(
                      var1.method27073(),

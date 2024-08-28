@@ -14,8 +14,8 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(Class8514.field38170);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(Class8514.field38170);
    }
 
    @Override
@@ -33,7 +33,7 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>method23463(field19342);
       if (var7 < 3 && var4.nextInt(5) == 0 && var2.method7021(var3.method8311(), 0) >= 9) {
          var2.method6725(var3, var1.method23465(field19342, Integer.valueOf(var7 + 1)), 2);
@@ -55,7 +55,7 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       int var9 = var1.<Integer>method23463(field19342);
       boolean var10 = var9 == 3;
       if (!var10 && var4.method3094(var5).method32107() == Class8514.field37934) {
@@ -64,7 +64,7 @@ public class Class3484 extends Class3194 implements Class3196 {
          return super.method11505(var1, var2, var3, var4, var5, var6);
       } else {
          int var11 = 1 + var2.field9016.nextInt(2);
-         method11557(var2, var3, new Class8848(Class8514.field38170, var11 + (!var10 ? 0 : 1)));
+         method11557(var2, var3, new ItemStack(Class8514.field38170, var11 + (!var10 ? 0 : 1)));
          var2.method6742((PlayerEntity)null, var3, Class6067.field27144, Class2266.field14732, 1.0F, 0.8F + var2.field9016.nextFloat() * 0.4F);
          var2.method6725(var3, var1.method23465(field19342, Integer.valueOf(1)), 2);
          return Class2274.method9002(var2.field9020);
@@ -87,7 +87,7 @@ public class Class3484 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       int var7 = Math.min(3, var4.<Integer>method23463(field19342) + 1);
       var1.method6725(var3, var4.method23465(field19342, Integer.valueOf(var7)), 2);
    }

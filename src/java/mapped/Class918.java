@@ -61,7 +61,7 @@ public class Class918 extends Class916 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
       return this.field5234.method3572(var1);
    }
 

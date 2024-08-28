@@ -25,13 +25,13 @@ public class Class6898 extends Class6896 {
    @Override
    public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
       int var11 = var3 + 2;
-      int var12 = Class9679.method37769((double)var11 * 0.618);
+      int var12 = MathHelper.method37769((double)var11 * 0.618);
       if (!var7.field22414) {
          method21069(var1, var4.method8313());
       }
 
       double var13 = 1.0;
-      int var15 = Math.min(1, Class9679.method37769(1.382 + Math.pow(1.0 * (double)var11 / 13.0, 2.0)));
+      int var15 = Math.min(1, MathHelper.method37769(1.382 + Math.pow(1.0 * (double)var11 / 13.0, 2.0)));
       int var16 = var4.getY() + var12;
       int var17 = var11 - 5;
       List<Class8765> var18 = Lists.newArrayList();
@@ -104,9 +104,9 @@ public class Class6898 extends Class6896 {
    }
 
    private int method21078(BlockPos var1) {
-      int var4 = Class9679.method37772(var1.method8304());
-      int var5 = Class9679.method37772(var1.getY());
-      int var6 = Class9679.method37772(var1.method8306());
+      int var4 = MathHelper.method37772(var1.method8304());
+      int var5 = MathHelper.method37772(var1.getY());
+      int var6 = MathHelper.method37772(var1.method8306());
       return Math.max(var4, Math.max(var5, var6));
    }
 
@@ -144,7 +144,7 @@ public class Class6898 extends Class6896 {
       if (!((float)var2 < (float)var1 * 0.3F)) {
          float var5 = (float)var1 / 2.0F;
          float var6 = var5 - (float)var2;
-         float var7 = Class9679.method37765(var5 * var5 - var6 * var6);
+         float var7 = MathHelper.method37765(var5 * var5 - var6 * var6);
          if (var6 != 0.0F) {
             if (Math.abs(var6) >= var5) {
                return 0.0F;

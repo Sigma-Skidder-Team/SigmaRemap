@@ -20,12 +20,12 @@ public class Class6805<T> implements Class6802<T> {
    private final Function<T, ResourceLocation> field29620;
    private final Set<Class8269<T>> field29621 = Sets.newHashSet();
    private final TreeSet<Class8269<T>> field29622 = Sets.newTreeSet(Class8269.method28873());
-   private final Class1657 field29623;
+   private final ServerWorld field29623;
    private final Queue<Class8269<T>> field29624 = Queues.newArrayDeque();
    private final List<Class8269<T>> field29625 = Lists.newArrayList();
    private final Consumer<Class8269<T>> field29626;
 
-   public Class6805(Class1657 var1, Predicate<T> var2, Function<T, ResourceLocation> var3, Consumer<Class8269<T>> var4) {
+   public Class6805(ServerWorld var1, Predicate<T> var2, Function<T, ResourceLocation> var3, Consumer<Class8269<T>> var4) {
       this.field29619 = var2;
       this.field29620 = var3;
       this.field29623 = var1;

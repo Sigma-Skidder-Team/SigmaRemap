@@ -13,7 +13,7 @@ public class Class5740 extends Class5715<Class1004> {
       var4.method35291(0.0, 0.5, 0.0);
       if ((float)var1.method4184() - var3 + 1.0F < 10.0F) {
          float var9 = 1.0F - ((float)var1.method4184() - var3 + 1.0F) / 10.0F;
-         var9 = Class9679.method37777(var9, 0.0F, 1.0F);
+         var9 = MathHelper.method37777(var9, 0.0F, 1.0F);
          var9 *= var9;
          var9 *= var9;
          float var10 = 1.0F + var9 * 0.3F;

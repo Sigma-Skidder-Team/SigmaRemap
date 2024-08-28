@@ -29,11 +29,11 @@ public class Class3736 extends Class3676<Class1018> {
       this.field19856 = var2;
    }
 
-   public boolean method12508(Class1657 var1, Class1018 var2) {
+   public boolean method12508(ServerWorld var1, Class1018 var2) {
       return var2.method4507() && this.method12666(var2).isPresent();
    }
 
-   public void method12502(Class1657 var1, Class1018 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1018 var2, long var3) {
       Class1018 var7 = this.method12666(var2).get();
       var2.method2992().method21406(Class8830.field39829, var7);
       var7.method2992().method21406(Class8830.field39829, var2);
@@ -42,7 +42,7 @@ public class Class3736 extends Class3676<Class1018> {
       this.field19857 = var3 + (long)var8;
    }
 
-   public boolean method12499(Class1657 var1, Class1018 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1018 var2, long var3) {
       if (!this.method12665(var2)) {
          return false;
       } else {
@@ -51,7 +51,7 @@ public class Class3736 extends Class3676<Class1018> {
       }
    }
 
-   public void method12504(Class1657 var1, Class1018 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1018 var2, long var3) {
       Class1018 var7 = this.method12664(var2);
       Class6983.method21569(var2, var7, this.field19856);
       if (var2.method3213(var7, 3.0) && var3 >= this.field19857) {
@@ -61,7 +61,7 @@ public class Class3736 extends Class3676<Class1018> {
       }
    }
 
-   public void method12506(Class1657 var1, Class1018 var2, long var3) {
+   public void method12506(ServerWorld var1, Class1018 var2, long var3) {
       var2.method2992().method21405(Class8830.field39829);
       var2.method2992().method21405(Class8830.field39824);
       var2.method2992().method21405(Class8830.field39825);

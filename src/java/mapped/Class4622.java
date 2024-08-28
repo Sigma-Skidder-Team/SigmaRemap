@@ -10,9 +10,9 @@ public class Class4622 extends Class4566 {
       this.field22044 = var8;
       this.field22045 = var10;
       this.field22046 = var12;
-      this.field22058 = Class9679.method37783(this.field22054, 0.7176471F, 0.8745098F);
-      this.field22059 = Class9679.method37783(this.field22054, 0.0F, 0.0F);
-      this.field22060 = Class9679.method37783(this.field22054, 0.8235294F, 0.9764706F);
+      this.field22058 = MathHelper.method37783(this.field22054, 0.7176471F, 0.8745098F);
+      this.field22059 = MathHelper.method37783(this.field22054, 0.0F, 0.0F);
+      this.field22060 = MathHelper.method37783(this.field22054, 0.8235294F, 0.9764706F);
       this.field22035 *= 0.75F;
       this.field22056 = (int)(20.0 / ((double)this.field22054.nextFloat() * 0.8 + 0.2));
       this.field22139 = false;
@@ -60,6 +60,6 @@ public class Class4622 extends Class4566 {
 
    @Override
    public float method14509(float var1) {
-      return this.field22035 * Class9679.method37777(((float)this.field22055 + var1) / (float)this.field22056 * 32.0F, 0.0F, 1.0F);
+      return this.field22035 * MathHelper.method37777(((float)this.field22055 + var1) / (float)this.field22056 * 32.0F, 0.0F, 1.0F);
    }
 }

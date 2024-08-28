@@ -11,7 +11,7 @@ public class Class3684 extends Class3676<Class1006> {
       this.field19700 = var1;
    }
 
-   public boolean method12508(Class1657 var1, Class1006 var2) {
+   public boolean method12508(ServerWorld var1, Class1006 var2) {
       Class880 var5 = this.method12524(var2);
       return !this.method12523(var2) && Class6983.method21583(var2, var5) && Class6983.method21581(var2, var5);
    }
@@ -20,10 +20,10 @@ public class Class3684 extends Class3676<Class1006> {
       return var1.method3093(var1x -> var1x instanceof Class3262 && var1.method4234((Class3262)var1x));
    }
 
-   public void method12502(Class1657 var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
       Class880 var7 = this.method12524(var2);
       Class6983.method21574(var2, var7);
-      var2.method2820(Class79.field182);
+      var2.swingArm(Hand.field182);
       var2.method3114(var7);
       var2.method2992().method21407(Class8830.field39827, true, (long)this.field19700);
    }

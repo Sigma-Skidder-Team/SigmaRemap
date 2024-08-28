@@ -30,7 +30,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class1657 extends Class1655 implements Class1658 {
+public class ServerWorld extends Class1655 implements Class1658 {
    public static final BlockPos field9038 = new BlockPos(100, 50, 0);
    private static final Logger field8997 = LogManager.getLogger();
    private final Int2ObjectMap<Entity> field9039 = new Int2ObjectLinkedOpenHashMap();
@@ -60,7 +60,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    private final Class7480 field9059;
    private final boolean field9060;
 
-   public Class1657(
+   public ServerWorld(
       Class314 var1,
       Executor var2,
       Class1814 var3,
@@ -86,7 +86,7 @@ public class Class1657 extends Class1655 implements Class1658 {
          var1.method1435(),
          var2,
          var8,
-         var1.method1367().method19478(),
+         var1.getPlayerList().method19478(),
          var1.method1434(),
          var7,
          () -> var1.method1317().method6945()
@@ -181,7 +181,7 @@ public class Class1657 extends Class1655 implements Class1658 {
             this.field9015 = (float)((double)this.field9015 + 0.01);
          }
 
-         this.field9015 = Class9679.method37777(this.field9015, 0.0F, 1.0F);
+         this.field9015 = MathHelper.method37777(this.field9015, 0.0F, 1.0F);
          this.field9012 = this.field9013;
          if (!this.field9018.method20043()) {
             this.field9013 = (float)((double)this.field9013 - 0.01);
@@ -189,26 +189,26 @@ public class Class1657 extends Class1655 implements Class1658 {
             this.field9013 = (float)((double)this.field9013 + 0.01);
          }
 
-         this.field9013 = Class9679.method37777(this.field9013, 0.0F, 1.0F);
+         this.field9013 = MathHelper.method37777(this.field9013, 0.0F, 1.0F);
       }
 
       if (this.field9012 != this.field9013) {
-         this.field9045.method1367().method19457(new Class5534(Class5534.field24567, this.field9013), this.method6813());
+         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24567, this.field9013), this.method6813());
       }
 
       if (this.field9014 != this.field9015) {
-         this.field9045.method1367().method19457(new Class5534(Class5534.field24568, this.field9015), this.method6813());
+         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24568, this.field9015), this.method6813());
       }
 
       if (var5 != this.method6795()) {
          if (!var5) {
-            this.field9045.method1367().method19456(new Class5534(Class5534.field24561, 0.0F));
+            this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24561, 0.0F));
          } else {
-            this.field9045.method1367().method19456(new Class5534(Class5534.field24562, 0.0F));
+            this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24562, 0.0F));
          }
 
-         this.field9045.method1367().method19456(new Class5534(Class5534.field24567, this.field9013));
-         this.field9045.method1367().method19456(new Class5534(Class5534.field24568, this.field9015));
+         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24567, this.field9013));
+         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24568, this.field9015));
       }
 
       if (this.field9048 && this.field9042.stream().noneMatch(var0 -> !var0.method2800() && !var0.method2909())) {
@@ -256,7 +256,7 @@ public class Class1657 extends Class1655 implements Class1658 {
          while (var15.hasNext()) {
             Entry var18 = (Entry)var15.next();
             Entity var17 = (Entity)var18.getValue();
-            Entity var20 = var17.method3421();
+            Entity var20 = var17.getRidingEntity();
             if (!this.field9045.method1354() && (var17 instanceof Class1018 || var17 instanceof Class1047)) {
                var17.method2904();
             }
@@ -330,7 +330,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    private void method6898() {
-      this.field9042.stream().filter(Class880::method3176).collect(Collectors.toList()).forEach(var0 -> var0.method2757(false, false));
+      this.field9042.stream().filter(Class880::isSleeping).collect(Collectors.toList()).forEach(var0 -> var0.stopSleepInBed(false, false));
    }
 
    public void method6899(Class1674 var1, int var2) {
@@ -433,7 +433,7 @@ public class Class1657 extends Class1655 implements Class1658 {
 
          for (Class878 var6 : this.field9042) {
             if (!var6.method2800()) {
-               if (var6.method3176()) {
+               if (var6.isSleeping()) {
                   var4++;
                }
             } else {
@@ -500,7 +500,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    public void method6908(Entity var1, Entity var2) {
-      if (var2.field5041 || var2.method3421() != var1) {
+      if (var2.field5041 || var2.getRidingEntity() != var1) {
          var2.method2759();
       } else if (var2 instanceof PlayerEntity || this.method6883().method7351(var2)) {
          var2.method3274(var2.getPosX(), var2.getPosY(), var2.getPosZ());
@@ -527,9 +527,9 @@ public class Class1657 extends Class1655 implements Class1658 {
    public void method6909(Entity var1) {
       if (var1.method3406()) {
          this.method6820().method22503("chunkCheck");
-         int var4 = Class9679.method37769(var1.getPosX() / 16.0);
-         int var5 = Class9679.method37769(var1.getPosY() / 16.0);
-         int var6 = Class9679.method37769(var1.getPosZ() / 16.0);
+         int var4 = MathHelper.method37769(var1.getPosX() / 16.0);
+         int var5 = MathHelper.method37769(var1.getPosY() / 16.0);
+         int var6 = MathHelper.method37769(var1.getPosZ() / 16.0);
          if (!var1.field5071 || var1.field5072 != var4 || var1.field5073 != var5 || var1.field5074 != var6) {
             if (var1.field5071 && this.method6843(var1.field5072, var1.field5074)) {
                this.method6824(var1.field5072, var1.field5074).method7133(var1, var1.field5073);
@@ -587,7 +587,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       while (var7.hasNext()) {
          Entity var8 = (Entity)var7.next();
          if ((var1 == null || var8.method3204() == var1)
-            && var6.method7345(Class9679.method37769(var8.getPosX()) >> 4, Class9679.method37769(var8.getPosZ()) >> 4)
+            && var6.method7345(MathHelper.method37769(var8.getPosX()) >> 4, MathHelper.method37769(var8.getPosZ()) >> 4)
             && var2.test(var8)) {
             var5.add(var8);
          }
@@ -664,9 +664,9 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    private void method6923(Class878 var1) {
-      Entity var4 = this.field9040.get(var1.method3375());
+      Entity var4 = this.field9040.get(var1.getUniqueID());
       if (var4 != null) {
-         field8997.warn("Force-added player with duplicate UUID {}", var1.method3375().toString());
+         field8997.warn("Force-added player with duplicate UUID {}", var1.getUniqueID().toString());
          var4.method3200();
          this.method6934((Class878)var4);
       }
@@ -674,7 +674,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       this.field9042.add(var1);
       this.method6902();
       Class1670 var5 = this.method6724(
-         Class9679.method37769(var1.getPosX() / 16.0), Class9679.method37769(var1.getPosZ() / 16.0), Class9176.field42145, true
+         MathHelper.method37769(var1.getPosX() / 16.0), MathHelper.method37769(var1.getPosZ() / 16.0), Class9176.field42145, true
       );
       if (var5 instanceof Class1674) {
          var5.method7063(var1);
@@ -687,7 +687,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       if (!var1.field5041) {
          if (!this.method6926(var1)) {
             Class1670 var4 = this.method6724(
-               Class9679.method37769(var1.getPosX() / 16.0), Class9679.method37769(var1.getPosZ() / 16.0), Class9176.field42145, var1.field5023
+               MathHelper.method37769(var1.getPosX() / 16.0), MathHelper.method37769(var1.getPosZ() / 16.0), Class9176.field42145, var1.field5023
             );
             if (var4 instanceof Class1674) {
                var4.method7063(var1);
@@ -715,7 +715,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    private boolean method6926(Entity var1) {
-      UUID var4 = var1.method3375();
+      UUID var4 = var1.getUniqueID();
       Entity var5 = this.method6927(var4);
       if (var5 != null) {
          field8997.warn(
@@ -740,7 +740,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       } else {
          if (this.field9044) {
             for (Entity var6 : this.field9041) {
-               if (var6.method3375().equals(var1)) {
+               if (var6.getUniqueID().equals(var1)) {
                   return var6;
                }
             }
@@ -785,7 +785,7 @@ public class Class1657 extends Class1655 implements Class1658 {
          }
       }
 
-      this.field9040.remove(var1.method3375());
+      this.field9040.remove(var1.getUniqueID());
       this.method6883().method7377(var1);
       if (var1 instanceof Class878) {
          Class878 var8 = (Class878)var1;
@@ -807,7 +807,7 @@ public class Class1657 extends Class1655 implements Class1658 {
             }
          }
 
-         this.field9040.put(var1.method3375(), var1);
+         this.field9040.put(var1.getUniqueID(), var1);
          this.method6883().method7378(var1);
          if (var1 instanceof Class1006) {
             this.field9053.add(((Class1006)var1).method4230());
@@ -842,13 +842,13 @@ public class Class1657 extends Class1655 implements Class1658 {
 
    @Override
    public void method6803(int var1, BlockPos var2, int var3) {
-      for (Class878 var7 : this.field9045.method1367().method19488()) {
+      for (Class878 var7 : this.field9045.getPlayerList().method19488()) {
          if (var7 != null && var7.field5024 == this && var7.method3205() != var1) {
             double var8 = (double)var2.method8304() - var7.getPosX();
             double var10 = (double)var2.getY() - var7.getPosY();
             double var12 = (double)var2.method8306() - var7.getPosZ();
             if (var8 * var8 + var10 * var10 + var12 * var12 < 1024.0) {
-               var7.field4855.method15671(new Class5524(var1, var2, var3));
+               var7.field4855.sendPacket(new Class5524(var1, var2, var3));
             }
          }
       }
@@ -857,7 +857,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    @Override
    public void method6743(PlayerEntity var1, double var2, double var4, double var6, Class9455 var8, Class2266 var9, float var10, float var11) {
       this.field9045
-         .method1367()
+         .getPlayerList()
          .method19466(
             var1,
             var2,
@@ -872,7 +872,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    @Override
    public void method6744(PlayerEntity var1, Entity var2, Class9455 var3, Class2266 var4, float var5, float var6) {
       this.field9045
-         .method1367()
+         .getPlayerList()
          .method19466(
             var1,
             var2.getPosX(),
@@ -886,13 +886,13 @@ public class Class1657 extends Class1655 implements Class1658 {
 
    @Override
    public void method6801(int var1, BlockPos var2, int var3) {
-      this.field9045.method1367().method19456(new Class5481(var1, var2, var3, true));
+      this.field9045.getPlayerList().method19456(new Class5481(var1, var2, var3, true));
    }
 
    @Override
    public void method6869(PlayerEntity var1, int var2, BlockPos var3, int var4) {
       this.field9045
-         .method1367()
+         .getPlayerList()
          .method19466(
             var1,
             (double)var3.method8304(),
@@ -940,7 +940,7 @@ public class Class1657 extends Class1655 implements Class1658 {
 
       for (Class878 var17 : this.field9042) {
          if (var17.method3276(var4, var6, var8) < 4096.0) {
-            var17.field4855.method15671(new Class5515(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
+            var17.field4855.sendPacket(new Class5515(var4, var6, var8, var10, var15.method25791(), var15.method25788().get(var17)));
          }
       }
 
@@ -957,7 +957,7 @@ public class Class1657 extends Class1655 implements Class1658 {
          Class6808 var3 = (Class6808)this.field9055.removeFirst();
          if (this.method6936(var3)) {
             this.field9045
-               .method1367()
+               .getPlayerList()
                .method19466(
                   (PlayerEntity)null,
                   (double)var3.method20740().method8304(),
@@ -1020,12 +1020,12 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    private boolean method6941(Class878 var1, boolean var2, double var3, double var5, double var7, Packet<?> var9) {
-      if (var1.method2798() == this) {
+      if (var1.getServerWorld() == this) {
          BlockPos var12 = var1.method3432();
          if (!var12.method8317(new Vector3d(var3, var5, var7), !var2 ? 32.0 : 512.0)) {
             return false;
          } else {
-            var1.field4855.method15671(var9);
+            var1.field4855.sendPacket(var9);
             return true;
          }
       } else {
@@ -1102,7 +1102,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       this.field9018.method20041(var1, var2);
       this.method6883().method7375(Class8561.field38480, var5, 11, Class2341.field16010);
       this.method6883().method7374(Class8561.field38480, new Class7481(var1), 11, Class2341.field16010);
-      this.method6715().method1367().method19456(new Class5525(var1, var2));
+      this.method6715().getPlayerList().method19456(new Class5525(var1, var2));
    }
 
    public BlockPos method6947() {
@@ -1267,12 +1267,12 @@ public class Class1657 extends Class1655 implements Class1658 {
 
       for (Entity var6 : var1) {
          ITextComponent var7 = var6.method3380();
-         ITextComponent var8 = var6.method2954();
+         ITextComponent var8 = var6.getDisplayName();
          var4.method33938(
             var6.getPosX(),
             var6.getPosY(),
             var6.getPosZ(),
-            var6.method3375(),
+            var6.getUniqueID(),
             Class2348.field16074.method9181(var6.method3204()),
             var6.method3066(),
             var8.getString(),
@@ -1336,7 +1336,7 @@ public class Class1657 extends Class1655 implements Class1658 {
    }
 
    @Override
-   public Class1657 method6970() {
+   public ServerWorld method6970() {
       return this;
    }
 
@@ -1372,7 +1372,7 @@ public class Class1657 extends Class1655 implements Class1658 {
       }
    }
 
-   public static void method6973(Class1657 var0) {
+   public static void method6973(ServerWorld var0) {
       BlockPos var3 = field9038;
       int var4 = var3.method8304();
       int var5 = var3.getY() - 2;

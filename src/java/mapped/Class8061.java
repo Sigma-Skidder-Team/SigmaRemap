@@ -27,7 +27,7 @@ public class Class8061 {
                               0.0F,
                               0,
                               false,
-                              ((Class6619)var0x.getSource()).method20177().method1367().method19488()
+                              ((Class6619)var0x.getSource()).method20177().getPlayerList().method19488()
                            )
                      ))
                   .then(
@@ -41,7 +41,7 @@ public class Class8061 {
                                     0.0F,
                                     0,
                                     false,
-                                    ((Class6619)var0x.getSource()).method20177().method1367().method19488()
+                                    ((Class6619)var0x.getSource()).method20177().getPlayerList().method19488()
                                  )
                            ))
                         .then(
@@ -59,7 +59,7 @@ public class Class8061 {
                                                          FloatArgumentType.getFloat(var0x, "speed"),
                                                          IntegerArgumentType.getInteger(var0x, "count"),
                                                          false,
-                                                         ((Class6619)var0x.getSource()).method20177().method1367().method19488()
+                                                         ((Class6619)var0x.getSource()).method20177().getPlayerList().method19488()
                                                       )
                                                 ))
                                              .then(
@@ -73,7 +73,7 @@ public class Class8061 {
                                                                FloatArgumentType.getFloat(var0x, "speed"),
                                                                IntegerArgumentType.getInteger(var0x, "count"),
                                                                true,
-                                                               ((Class6619)var0x.getSource()).method20177().method1367().method19488()
+                                                               ((Class6619)var0x.getSource()).method20177().getPlayerList().method19488()
                                                             )
                                                       ))
                                                    .then(
@@ -103,7 +103,7 @@ public class Class8061 {
                                                             FloatArgumentType.getFloat(var0x, "speed"),
                                                             IntegerArgumentType.getInteger(var0x, "count"),
                                                             false,
-                                                            ((Class6619)var0x.getSource()).method20177().method1367().method19488()
+                                                            ((Class6619)var0x.getSource()).method20177().getPlayerList().method19488()
                                                          )
                                                    ))
                                                 .then(

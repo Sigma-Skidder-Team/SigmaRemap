@@ -18,8 +18,8 @@ public class Class335 implements Runnable {
       int var4 = Class5254.method16395().field1339.field4902.field5443;
       Class5254.method16396().field1339.field4902.field5443 = this.field1460;
       Class5254.method16397().field1337.method23138();
-      Class5254.method16400().field1337.method23139(Class5254.method16398().field1339, Class5254.method16399().field1338, Class79.field182, var3);
-      Class5254.method16401().field1339.method2820(Class79.field182);
+      Class5254.method16400().field1337.method23139(Class5254.method16398().field1339, Class5254.method16399().field1338, Hand.field182, var3);
+      Class5254.method16401().field1339.swingArm(Hand.field182);
       Class5254.method16402().field1339.field4902.field5443 = var4;
    }
 }

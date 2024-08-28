@@ -27,9 +27,9 @@ public class Class6668 {
    }
 
    public Class8907 method20324(double var1, double var3, double var5) {
-      int var9 = Class9679.method37769(var1) >> 2;
-      int var10 = Class9679.method37769(var3) >> 2;
-      int var11 = Class9679.method37769(var5) >> 2;
+      int var9 = MathHelper.method37769(var1) >> 2;
+      int var10 = MathHelper.method37769(var3) >> 2;
+      int var11 = MathHelper.method37769(var5) >> 2;
       return this.method20326(var9, var10, var11);
    }
 

@@ -26,11 +26,11 @@ public class Class3732<E extends Class1034> extends Class3676<E> {
       this.field19844 = var2;
    }
 
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       return var2.method3091().method32105();
    }
 
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       Class6947 var7 = var2.method2992();
       Optional var8 = var7.<Integer>method21410(Class8830.field39852);
       if (var8.isPresent()) {

@@ -38,7 +38,7 @@ public class Class1037 extends Class1038 implements Class1022 {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (this.method2943(Class2106.field13732).method32105() && this.field5054.nextFloat() < 0.03F) {
-         this.method2944(Class2106.field13732, new Class8848(Class8514.field38146));
+         this.method2944(Class2106.field13732, new ItemStack(Class8514.field38146));
          this.field5605[Class2106.field13732.method8773()] = 2.0F;
       }
 
@@ -91,8 +91,8 @@ public class Class1037 extends Class1038 implements Class1022 {
    }
 
    @Override
-   public Class8848 method4644() {
-      return Class8848.field39973;
+   public ItemStack method4644() {
+      return ItemStack.field39973;
    }
 
    @Override
@@ -100,15 +100,15 @@ public class Class1037 extends Class1038 implements Class1022 {
       if ((double)this.field5054.nextFloat() > 0.9) {
          int var4 = this.field5054.nextInt(16);
          if (var4 >= 10) {
-            this.method2944(Class2106.field13731, new Class8848(Class8514.field37906));
+            this.method2944(Class2106.field13731, new ItemStack(Class8514.field37906));
          } else {
-            this.method2944(Class2106.field13731, new Class8848(Class8514.field38144));
+            this.method2944(Class2106.field13731, new ItemStack(Class8514.field38144));
          }
       }
    }
 
    @Override
-   public boolean method4250(Class8848 var1, Class8848 var2) {
+   public boolean method4250(ItemStack var1, ItemStack var2) {
       if (var2.method32107() != Class8514.field38146) {
          if (var2.method32107() != Class8514.field38144) {
             return var1.method32107() != Class8514.field38144 ? super.method4250(var1, var2) : true;
@@ -189,11 +189,11 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      Class886 var5 = new Class886(this.field5024, this, new Class8848(Class8514.field38144));
+      Class886 var5 = new Class886(this.field5024, this, new ItemStack(Class8514.field38144));
       double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.method3440(0.3333333333333333) - var5.getPosY();
       double var10 = var1.getPosZ() - this.getPosZ();
-      double var12 = (double)Class9679.method37766(var6 * var6 + var10 * var10);
+      double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
       var5.method3462(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.field5024.method6997().method8905() * 4));
       this.method2863(Class6067.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.field5024.method6916(var5);

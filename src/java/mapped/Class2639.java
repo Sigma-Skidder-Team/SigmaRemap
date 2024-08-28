@@ -28,7 +28,7 @@ public class Class2639 extends Class2595 {
    public void method10805() {
       Class880 var3 = this.field16963.method4232();
       double var4 = 64.0;
-      if (var3.method3277(this.field16963) < 4096.0 && this.field16963.method3135(var3)) {
+      if (var3.getDistanceSq(this.field16963) < 4096.0 && this.field16963.method3135(var3)) {
          Class1655 var6 = this.field16963.field5024;
          this.field16964++;
          if (this.field16964 == 10 && !this.field16963.method3245()) {

@@ -13,8 +13,8 @@ public class Class5177 extends Module {
     @EventTarget
     private void method16119(Class4396 var1) {
         if (this.method15996()) {
-            if (var1.method13898() instanceof Class5616) {
-                Class5616 var4 = (Class5616) var1.method13898();
+            if (var1.method13898() instanceof SChatPacket) {
+                SChatPacket var4 = (SChatPacket) var1.method13898();
                 if (this.method16121(this.method16120(var4.method17648().getString()))) {
                     var1.method13900(true);
                 }

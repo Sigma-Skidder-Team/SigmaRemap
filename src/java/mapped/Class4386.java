@@ -331,11 +331,11 @@ public class Class4386 {
    }
 
    private float method13773(Class6340 var1) {
-      return Class9679.method37777(var1.method19286(), 0.5F, 2.0F);
+      return MathHelper.method37777(var1.method19286(), 0.5F, 2.0F);
    }
 
    private float method13774(Class6340 var1) {
-      return Class9679.method37777(var1.method19285() * this.method13757(var1.method19282()), 0.0F, 1.0F);
+      return MathHelper.method37777(var1.method19285() * this.method13757(var1.method19282()), 0.0F, 1.0F);
    }
 
    public void method13775() {

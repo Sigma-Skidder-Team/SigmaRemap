@@ -23,7 +23,7 @@ public class Class2764 extends Class2595 {
 
          for (Class1018 var8 : var3) {
             if (var8.method4767() >= 0) {
-               double var9 = this.field17333.method3277(var8);
+               double var9 = this.field17333.getDistanceSq(var8);
                if (!(var9 > var5)) {
                   var5 = var9;
                   var4 = var8;
@@ -50,7 +50,7 @@ public class Class2764 extends Class2595 {
          if (!this.field17334.method3066()) {
             return false;
          } else {
-            double var3 = this.field17333.method3277(this.field17334);
+            double var3 = this.field17333.getDistanceSq(this.field17334);
             return !(var3 < 9.0) && !(var3 > 256.0);
          }
       } else {

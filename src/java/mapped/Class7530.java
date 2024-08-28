@@ -38,7 +38,7 @@ public abstract class Class7530 {
       if (this.method24607()) {
          Class39 var4 = new Class39();
          var4.method99("data", this.method24592(new Class39()));
-         var4.method102("DataVersion", Class9246.method34773().getWorldVersion());
+         var4.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
 
          try {
             Class8799.method31767(var4, var1);

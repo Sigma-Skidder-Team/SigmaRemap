@@ -26,7 +26,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method6812().method36878() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().method8905()) {
          while (var2.method6738(var3).method23448(this)) {
             var3 = var3.method8313();
@@ -95,8 +95,8 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return Class8848.field39973;
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return ItemStack.field39973;
    }
 
    @Override

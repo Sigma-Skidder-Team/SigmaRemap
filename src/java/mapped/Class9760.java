@@ -15,7 +15,7 @@ public class Class9760 extends DataFix {
    private static final int[] field45663 = new int[]{0, 10, 50, 100, 150};
 
    public static int method38367(int var0) {
-      return field45663[Class9679.method37775(var0 - 1, 0, field45663.length - 1)];
+      return field45663[MathHelper.method37775(var0 - 1, 0, field45663.length - 1)];
    }
 
    public Class9760(Schema var1, boolean var2) {
@@ -45,7 +45,7 @@ public class Class9760 extends DataFix {
                              .flatMap(var1xx -> var1xx.getOptionalTyped(var7))
                              .map(var1xx -> var1xx.getAllTyped(var9).size())
                         .orElse(0);
-                     var7x = Class9679.method37775(var9x / 2, 1, 5);
+                     var7x = MathHelper.method37775(var9x / 2, 1, 5);
                      if (var7x > 1) {
                         var8x = method38368(var3xx, var7x);
                      }

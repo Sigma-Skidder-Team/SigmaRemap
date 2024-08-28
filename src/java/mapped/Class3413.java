@@ -38,8 +38,8 @@ public class Class3413 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
-      Class8848 var9 = var4.method3094(var5);
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.method3094(var5);
       if (!var9.method32105()) {
          int var10 = var1.<Integer>method23463(field19100);
          Class3257 var11 = var9.method32107();
@@ -49,7 +49,7 @@ public class Class3413 extends Block {
                   if (var11 == Class8514.field37971 && Class9741.method38185(var9) == Class8137.field34977) {
                      if (var10 < 3 && !var2.field9020) {
                         if (!var4.field4919.field29609) {
-                           Class8848 var17 = new Class8848(Class8514.field37972);
+                           ItemStack var17 = new ItemStack(Class8514.field37972);
                            var4.method2911(Class8876.field40143);
                            var4.method3095(var5, var17);
                            if (var4 instanceof Class878) {
@@ -75,7 +75,7 @@ public class Class3413 extends Block {
 
                      if (var10 > 0 && var11 instanceof Class3301) {
                         if (Class958.method3889(var9) > 0 && !var2.field9020) {
-                           Class8848 var16 = var9.method32126();
+                           ItemStack var16 = var9.method32126();
                            var16.method32180(1);
                            Class958.method3892(var16);
                            var4.method2911(Class8876.field40145);
@@ -101,7 +101,7 @@ public class Class3413 extends Block {
                      } else if (var10 > 0 && var11 instanceof Class3292) {
                         Block var15 = ((Class3292)var11).method11845();
                         if (var15 instanceof Class3368 && !var2.method6714()) {
-                           Class8848 var13 = new Class8848(Blocks.field36896, 1);
+                           ItemStack var13 = new ItemStack(Blocks.field36896, 1);
                            if (var9.method32141()) {
                               var13.method32148(var9.method32142().method79());
                            }
@@ -120,7 +120,7 @@ public class Class3413 extends Block {
                } else {
                   if (var10 > 0 && !var2.field9020) {
                      if (!var4.field4919.field29609) {
-                        Class8848 var12 = Class9741.method38187(new Class8848(Class8514.field37971), Class8137.field34977);
+                        ItemStack var12 = Class9741.method38187(new ItemStack(Class8514.field37971), Class8137.field34977);
                         var4.method2911(Class8876.field40143);
                         var9.method32182(1);
                         if (!var9.method32105()) {
@@ -147,11 +147,11 @@ public class Class3413 extends Block {
                   if (!var4.field4919.field29609) {
                      var9.method32182(1);
                      if (!var9.method32105()) {
-                        if (!var4.field4902.method4045(new Class8848(Class8514.field37883))) {
-                           var4.method2882(new Class8848(Class8514.field37883), false);
+                        if (!var4.field4902.method4045(new ItemStack(Class8514.field37883))) {
+                           var4.method2882(new ItemStack(Class8514.field37883), false);
                         }
                      } else {
-                        var4.method3095(var5, new Class8848(Class8514.field37883));
+                        var4.method3095(var5, new ItemStack(Class8514.field37883));
                      }
                   }
 
@@ -165,7 +165,7 @@ public class Class3413 extends Block {
          } else {
             if (var10 < 3 && !var2.field9020) {
                if (!var4.field4919.field29609) {
-                  var4.method3095(var5, new Class8848(Class8514.field37882));
+                  var4.method3095(var5, new ItemStack(Class8514.field37882));
                }
 
                var4.method2911(Class8876.field40142);
@@ -181,7 +181,7 @@ public class Class3413 extends Block {
    }
 
    public void method12051(Class1655 var1, BlockPos var2, Class7380 var3, int var4) {
-      var1.method6725(var2, var3.method23465(field19100, Integer.valueOf(Class9679.method37775(var4, 0, 3))), 2);
+      var1.method6725(var2, var3.method23465(field19100, Integer.valueOf(MathHelper.method37775(var4, 0, 3))), 2);
       var1.method6806(var2, this);
    }
 

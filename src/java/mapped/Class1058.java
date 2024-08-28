@@ -72,9 +72,9 @@ public class Class1058 extends Class1056 implements Class1011 {
       }
 
       if (method3234(this.method3433()) > 2.5000003E-7F && this.field5054.nextInt(5) == 0) {
-         int var3 = Class9679.method37769(this.getPosX());
-         int var4 = Class9679.method37769(this.getPosY() - 0.2F);
-         int var5 = Class9679.method37769(this.getPosZ());
+         int var3 = MathHelper.method37769(this.getPosX());
+         int var4 = MathHelper.method37769(this.getPosY() - 0.2F);
+         int var5 = MathHelper.method37769(this.getPosZ());
          Class7380 var6 = this.field5024.method6738(new BlockPos(var3, var4, var5));
          if (!var6.method23393()) {
             this.field5024
@@ -91,7 +91,7 @@ public class Class1058 extends Class1056 implements Class1011 {
       }
 
       if (!this.field5024.field9020) {
-         this.method4366((Class1657)this.field5024, true);
+         this.method4366((ServerWorld)this.field5024, true);
       }
    }
 
@@ -115,7 +115,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    public void method2723(Class39 var1) {
       super.method2723(var1);
       this.method4870(var1.method132("PlayerCreated"));
-      this.method4365((Class1657)this.field5024, var1);
+      this.method4365((ServerWorld)this.field5024, var1);
    }
 
    @Override
@@ -221,8 +221,8 @@ public class Class1058 extends Class1056 implements Class1011 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       Class3257 var6 = var5.method32107();
       if (var6 == Class8514.field37801) {
          float var7 = this.method3042();

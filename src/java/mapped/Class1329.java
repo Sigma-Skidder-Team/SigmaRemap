@@ -234,7 +234,7 @@ public class Class1329 extends Screen {
          return false;
       } else {
          TranslationTextComponent var6 = new TranslationTextComponent("selectWorld.edit.backupCreated", var0.method7990());
-         TranslationTextComponent var7 = new TranslationTextComponent("selectWorld.edit.backupSize", Class9679.method37774((double)var3 / 1048576.0));
+         TranslationTextComponent var7 = new TranslationTextComponent("selectWorld.edit.backupSize", MathHelper.method37774((double)var3 / 1048576.0));
          Minecraft.getInstance().method1566().method5914(new Class7603(Class1906.field11197, var6, var7));
          return true;
       }

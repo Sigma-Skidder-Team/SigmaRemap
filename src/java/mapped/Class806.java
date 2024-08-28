@@ -699,7 +699,7 @@ public class Class806 extends Class798 {
       boolean var11 = this.method2045((double)var2, (double)var3);
       boolean var12 = var7 && var6;
       if (var12) {
-         float var13 = 0.25F + (1.0F + Class9679.method37763((float)this.field4283 * 0.5F)) * 0.25F;
+         float var13 = 0.25F + (1.0F + MathHelper.method37763((float)this.field4283 * 0.5F)) * 0.25F;
          int var14 = 0xFF000000 | (int)(var13 * 64.0F) << 16 | (int)(var13 * 64.0F) << 8 | (int)(var13 * 64.0F) << 0;
          this.method5688(var1, var4 - 2, var5 - 2, var4 + 18, var5 + 18, var14, var14);
          var14 = 0xFF000000 | (int)(var13 * 255.0F) << 16 | (int)(var13 * 255.0F) << 8 | (int)(var13 * 255.0F) << 0;
@@ -718,7 +718,7 @@ public class Class806 extends Class798 {
       if (var15) {
          int var16 = (Math.min(var10, 6) - 1) * 8;
          int var17 = (int)(
-            Math.max(0.0F, Math.max(Class9679.method37763((float)(10 + this.field4283) * 0.57F), Class9679.method37764((float)this.field4283 * 0.35F))) * -6.0F
+            Math.max(0.0F, Math.max(MathHelper.method37763((float)(10 + this.field4283) * 0.57F), MathHelper.method37764((float)this.field4283 * 0.35F))) * -6.0F
          );
          this.field4562.getTextureManager().bindTexture(field4230);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -924,7 +924,7 @@ public class Class806 extends Class798 {
       if (var4 && var8) {
          int var14 = !var11
             ? (int)(
-               Math.max(0.0F, Math.max(Class9679.method37763((float)(10 + this.field4283) * 0.57F), Class9679.method37764((float)this.field4283 * 0.35F)))
+               Math.max(0.0F, Math.max(MathHelper.method37763((float)(10 + this.field4283) * 0.57F), MathHelper.method37764((float)this.field4283 * 0.35F)))
                   * -6.0F
             )
             : 0;

@@ -19,7 +19,7 @@ public class Class1044 extends Class1043 {
             0,
             new Class2596<Class1044>(
                this,
-               Class9741.method38187(new Class8848(Class8514.field37971), Class8137.field34983),
+               Class9741.method38187(new ItemStack(Class8514.field37971), Class8137.field34983),
                Class6067.field27217,
                var1 -> this.field5024.method6741() && !var1.method3342()
             )
@@ -27,7 +27,7 @@ public class Class1044 extends Class1043 {
       this.field5600
          .method20002(
             0,
-            new Class2596<Class1044>(this, new Class8848(Class8514.field37891), Class6067.field27222, var1 -> this.field5024.method6740() && var1.method3342())
+            new Class2596<Class1044>(this, new ItemStack(Class8514.field37891), Class6067.field27222, var1 -> this.field5024.method6740() && var1.method3342())
          );
       this.field5600.method20002(1, new Class2781(this));
       this.field5600.method20002(1, new Class2770<Class1038>(this, Class1038.class, 8.0F, 0.5, 0.5));
@@ -48,7 +48,7 @@ public class Class1044 extends Class1043 {
 
    @Nullable
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       return null;
    }
 
@@ -58,17 +58,17 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (var5.method32107() != Class8514.field38034 && this.method3066() && !this.method4741() && !this.method3005()) {
-         if (var2 == Class79.field182) {
+         if (var2 == Hand.field182) {
             var1.method2911(Class8876.field40139);
          }
 
          if (!this.method4742().isEmpty()) {
             if (!this.field5024.field9020) {
                this.method4683(var1);
-               this.method4872(var1, this.method2954(), 1);
+               this.method4872(var1, this.getDisplayName(), 1);
             }
 
             return Class2274.method9002(this.field5024.field9020);
@@ -148,7 +148,7 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public Class9455 method3059(Class8848 var1) {
+   public Class9455 method3059(ItemStack var1) {
       Class3257 var4 = var1.method32107();
       return var4 != Class8514.field37891 ? Class6067.field27219 : Class6067.field27218;
    }

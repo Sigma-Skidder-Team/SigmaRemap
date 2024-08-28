@@ -52,10 +52,10 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
       if (!var9) {
          this.field17772.field31037 = 0.0F;
       } else {
-         this.field17772.field31036 = 0.35F * Class9679.method37763(0.6F * var4);
-         this.field17772.field31037 = 0.35F * Class9679.method37763(0.6F * var4);
-         this.field17776.field31035 = -0.75F * Class9679.method37763(0.3F * var4);
-         this.field17777.field31035 = 0.75F * Class9679.method37763(0.3F * var4);
+         this.field17772.field31036 = 0.35F * MathHelper.method37763(0.6F * var4);
+         this.field17772.field31037 = 0.35F * MathHelper.method37763(0.6F * var4);
+         this.field17776.field31035 = -0.75F * MathHelper.method37763(0.3F * var4);
+         this.field17777.field31035 = 0.75F * MathHelper.method37763(0.3F * var4);
       }
 
       if (var10) {
@@ -82,9 +82,9 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
          this.field17774.field31037 = 0.5707964F;
          this.field17775.field31037 = -0.5707964F;
          if (var12) {
-            this.field17772.field31035 = (float) (Math.PI / 2) + 0.2F * Class9679.method37763(var4 * 0.6F);
-            this.field17776.field31035 = -0.4F - 0.2F * Class9679.method37763(var4 * 0.6F);
-            this.field17777.field31035 = -0.4F - 0.2F * Class9679.method37763(var4 * 0.6F);
+            this.field17772.field31035 = (float) (Math.PI / 2) + 0.2F * MathHelper.method37763(var4 * 0.6F);
+            this.field17776.field31035 = -0.4F - 0.2F * MathHelper.method37763(var4 * 0.6F);
+            this.field17777.field31035 = -0.4F - 0.2F * MathHelper.method37763(var4 * 0.6F);
          }
 
          if (var13) {
@@ -95,19 +95,19 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
       }
 
       if (this.field17780 > 0.0F) {
-         this.field17774.field31035 = -0.6F * Class9679.method37763(var4 * 0.15F);
-         this.field17775.field31035 = 0.6F * Class9679.method37763(var4 * 0.15F);
-         this.field17776.field31035 = 0.3F * Class9679.method37763(var4 * 0.25F);
-         this.field17777.field31035 = -0.3F * Class9679.method37763(var4 * 0.25F);
+         this.field17774.field31035 = -0.6F * MathHelper.method37763(var4 * 0.15F);
+         this.field17775.field31035 = 0.6F * MathHelper.method37763(var4 * 0.15F);
+         this.field17776.field31035 = 0.3F * MathHelper.method37763(var4 * 0.25F);
+         this.field17777.field31035 = -0.3F * MathHelper.method37763(var4 * 0.25F);
          this.field17772.field31035 = Class9530.method36832(this.field17772.field31035, (float) (Math.PI / 2), this.field17780);
       }
 
       if (this.field17781 > 0.0F) {
          this.field17772.field31035 = Class9530.method36832(this.field17772.field31035, 2.0561945F, this.field17781);
-         this.field17774.field31035 = -0.5F * Class9679.method37763(var4 * 0.5F);
-         this.field17775.field31035 = 0.5F * Class9679.method37763(var4 * 0.5F);
-         this.field17776.field31035 = 0.5F * Class9679.method37763(var4 * 0.5F);
-         this.field17777.field31035 = -0.5F * Class9679.method37763(var4 * 0.5F);
+         this.field17774.field31035 = -0.5F * MathHelper.method37763(var4 * 0.5F);
+         this.field17775.field31035 = 0.5F * MathHelper.method37763(var4 * 0.5F);
+         this.field17776.field31035 = 0.5F * MathHelper.method37763(var4 * 0.5F);
+         this.field17777.field31035 = -0.5F * MathHelper.method37763(var4 * 0.5F);
       }
    }
 }

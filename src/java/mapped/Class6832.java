@@ -33,7 +33,7 @@ public class Class6832 extends Class6829 {
             return;
          }
 
-         float var11 = (float)(Class9679.method37814(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
+         float var11 = (float)(MathHelper.method37814(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
          this.field29707.field5031 = this.method20816(this.field29707.field5031, var11, 90.0F);
          float var12;
          if (!this.field29707.method3226()) {
@@ -43,8 +43,8 @@ public class Class6832 extends Class6829 {
          }
 
          this.field29707.method3113(var12);
-         double var13 = (double)Class9679.method37766(var3 * var3 + var7 * var7);
-         float var15 = (float)(-(Class9679.method37814(var5, var13) * 180.0F / (float)Math.PI));
+         double var13 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
+         float var15 = (float)(-(MathHelper.method37814(var5, var13) * 180.0F / (float)Math.PI));
          this.field29707.field5032 = this.method20816(this.field29707.field5032, var15, (float)this.field29718);
          this.field29707.method4244(!(var5 > 0.0) ? -var12 : var12);
       }

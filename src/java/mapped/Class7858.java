@@ -5,7 +5,6 @@ import com.google.common.collect.Maps;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -16,7 +15,7 @@ import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public class Class7858 {
-   public static int method26311(Class6069 var0, Class8848 var1) {
+   public static int method26311(Class6069 var0, ItemStack var1) {
       if (!var1.method32105()) {
          ResourceLocation var4 = Class2348.field16073.method9181(var0);
          Class41 var5 = var1.method32147();
@@ -25,7 +24,7 @@ public class Class7858 {
             Class39 var7 = var5.method153(var6);
             ResourceLocation var8 = ResourceLocation.method8289(var7.method126("id"));
             if (var8 != null && var8.equals(var4)) {
-               return Class9679.method37775(var7.method122("lvl"), 0, 255);
+               return MathHelper.method37775(var7.method122("lvl"), 0, 255);
             }
          }
 
@@ -35,7 +34,7 @@ public class Class7858 {
       }
    }
 
-   public static Map<Class6069, Integer> method26312(Class8848 var0) {
+   public static Map<Class6069, Integer> method26312(ItemStack var0) {
       Class41 var3 = var0.method32107() != Class8514.field38070 ? var0.method32147() : Class3290.method11830(var0);
       return method26313(var3);
    }
@@ -53,7 +52,7 @@ public class Class7858 {
       return var3;
    }
 
-   public static void method26314(Map<Class6069, Integer> var0, Class8848 var1) {
+   public static void method26314(Map<Class6069, Integer> var0, ItemStack var1) {
       Class41 var4 = new Class41();
 
       for (Entry var6 : var0.entrySet()) {
@@ -79,7 +78,7 @@ public class Class7858 {
       }
    }
 
-   private static void method26315(Class8493 var0, Class8848 var1) {
+   private static void method26315(Class8493 var0, ItemStack var1) {
       if (!var1.method32105()) {
          Class41 var4 = var1.method32147();
 
@@ -91,19 +90,19 @@ public class Class7858 {
       }
    }
 
-   private static void method26316(Class8493 var0, Iterable<Class8848> var1) {
-      for (Class8848 var5 : var1) {
+   private static void method26316(Class8493 var0, Iterable<ItemStack> var1) {
+      for (ItemStack var5 : var1) {
          method26315(var0, var5);
       }
    }
 
-   public static int method26317(Iterable<Class8848> var0, Class8654 var1) {
+   public static int method26317(Iterable<ItemStack> var0, Class8654 var1) {
       MutableInt var4 = new MutableInt();
       method26316((var2, var3) -> var4.add(var2.method18814(var3, var1)), var0);
       return var4.intValue();
    }
 
-   public static float method26318(Class8848 var0, Class7809 var1) {
+   public static float method26318(ItemStack var0, Class7809 var1) {
       MutableFloat var4 = new MutableFloat();
       method26315((var2, var3) -> var4.add(var2.method18815(var3, var1)), var0);
       return var4.floatValue();
@@ -137,11 +136,11 @@ public class Class7858 {
    }
 
    public static int method26322(Class6069 var0, Class880 var1) {
-      Collection<Class8848> var4 = var0.method18811(var1).values();
+      Collection<ItemStack> var4 = var0.method18811(var1).values();
       if (var4 != null) {
          int var5 = 0;
 
-         for (Class8848 var7 : var4) {
+         for (ItemStack var7 : var4) {
             int var8 = method26311(var0, var7);
             if (var8 > var5) {
                var5 = var8;
@@ -174,11 +173,11 @@ public class Class7858 {
       return method26322(Class8122.field34915, var0);
    }
 
-   public static int method26328(Class8848 var0) {
+   public static int method26328(ItemStack var0) {
       return method26311(Class8122.field34923, var0);
    }
 
-   public static int method26329(Class8848 var0) {
+   public static int method26329(ItemStack var0) {
       return method26311(Class8122.field34924, var0);
    }
 
@@ -198,39 +197,39 @@ public class Class7858 {
       return method26322(Class8122.field34907, var0) > 0;
    }
 
-   public static boolean method26334(Class8848 var0) {
+   public static boolean method26334(ItemStack var0) {
       return method26311(Class8122.field34906, var0) > 0;
    }
 
-   public static boolean method26335(Class8848 var0) {
+   public static boolean method26335(ItemStack var0) {
       return method26311(Class8122.field34933, var0) > 0;
    }
 
-   public static int method26336(Class8848 var0) {
+   public static int method26336(ItemStack var0) {
       return method26311(Class8122.field34925, var0);
    }
 
-   public static int method26337(Class8848 var0) {
+   public static int method26337(ItemStack var0) {
       return method26311(Class8122.field34927, var0);
    }
 
-   public static boolean method26338(Class8848 var0) {
+   public static boolean method26338(ItemStack var0) {
       return method26311(Class8122.field34928, var0) > 0;
    }
 
    @Nullable
-   public static Entry<Class2106, Class8848> method26339(Class6069 var0, Class880 var1) {
+   public static Entry<Class2106, ItemStack> method26339(Class6069 var0, Class880 var1) {
       return method26340(var0, var1, var0x -> true);
    }
 
    @Nullable
-   public static Entry<Class2106, Class8848> method26340(Class6069 var0, Class880 var1, Predicate<Class8848> var2) {
-      Map<Class2106, Class8848> var5 = var0.method18811(var1);
+   public static Entry<Class2106, ItemStack> method26340(Class6069 var0, Class880 var1, Predicate<ItemStack> var2) {
+      Map<Class2106, ItemStack> var5 = var0.method18811(var1);
       if (!var5.isEmpty()) {
          ArrayList var6 = Lists.newArrayList();
 
-         for (Entry<Class2106, Class8848> var8 : var5.entrySet()) {
-            Class8848 var9 = (Class8848)var8.getValue();
+         for (Entry<Class2106, ItemStack> var8 : var5.entrySet()) {
+            ItemStack var9 = (ItemStack)var8.getValue();
             if (!var9.method32105() && method26311(var0, var9) > 0 && var2.test(var9)) {
                var6.add(var8);
             }
@@ -242,7 +241,7 @@ public class Class7858 {
       }
    }
 
-   public static int method26341(Random var0, int var1, int var2, Class8848 var3) {
+   public static int method26341(Random var0, int var1, int var2, ItemStack var3) {
       Class3257 var6 = var3.method32107();
       int var7 = var6.method11736();
       if (var7 > 0) {
@@ -261,11 +260,11 @@ public class Class7858 {
       }
    }
 
-   public static Class8848 method26342(Random var0, Class8848 var1, int var2, boolean var3) {
+   public static ItemStack method26342(Random var0, ItemStack var1, int var2, boolean var3) {
       List<Class6694> var6 = method26343(var0, var1, var2, var3);
       boolean var7 = var1.method32107() == Class8514.field37900;
       if (var7) {
-         var1 = new Class8848(Class8514.field38070);
+         var1 = new ItemStack(Class8514.field38070);
       }
 
       for (Class6694 var9 : var6) {
@@ -279,7 +278,7 @@ public class Class7858 {
       return var1;
    }
 
-   public static List<Class6694> method26343(Random var0, Class8848 var1, int var2, boolean var3) {
+   public static List<Class6694> method26343(Random var0, ItemStack var1, int var2, boolean var3) {
       ArrayList var6 = Lists.newArrayList();
       Class3257 var7 = var1.method32107();
       int var8 = var7.method11736();
@@ -288,7 +287,7 @@ public class Class7858 {
       } else {
          var2 = var2 + 1 + var0.nextInt(var8 / 4 + 1) + var0.nextInt(var8 / 4 + 1);
          float var9 = (var0.nextFloat() + var0.nextFloat() - 1.0F) * 0.15F;
-         var2 = Class9679.method37775(Math.round((float)var2 + (float)var2 * var9), 1, Integer.MAX_VALUE);
+         var2 = MathHelper.method37775(Math.round((float)var2 + (float)var2 * var9), 1, Integer.MAX_VALUE);
          List var10 = method26346(var2, var1, var3);
          if (!var10.isEmpty()) {
             var6.add(Class8879.<Class6691>method32314(var0, var10));
@@ -328,7 +327,7 @@ public class Class7858 {
       return true;
    }
 
-   public static List<Class6694> method26346(int var0, Class8848 var1, boolean var2) {
+   public static List<Class6694> method26346(int var0, ItemStack var1, boolean var2) {
       ArrayList var5 = Lists.newArrayList();
       Class3257 var6 = var1.method32107();
       boolean var7 = var1.method32107() == Class8514.field37900;

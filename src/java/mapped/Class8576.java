@@ -102,11 +102,11 @@ public class Class8576 {
       );
    }
 
-   public boolean method30650(Class1657 var1, double var2, double var4, double var6) {
+   public boolean method30650(ServerWorld var1, double var2, double var4, double var6) {
       return this.method30651(var1, (float)var2, (float)var4, (float)var6);
    }
 
-   public boolean method30651(Class1657 var1, float var2, float var3, float var4) {
+   public boolean method30651(ServerWorld var1, float var2, float var3, float var4) {
       if (!this.field38560.method32023(var2)) {
          return false;
       } else if (this.field38561.method32023(var3)) {

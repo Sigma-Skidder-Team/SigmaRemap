@@ -8,7 +8,7 @@ public class Class7017 implements Class7016 {
    private int field30318;
 
    @Override
-   public int method21742(Class1657 var1, boolean var2, boolean var3) {
+   public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (var3 && var1.method6789().method17135(Class5462.field24226)) {
          this.field30318--;
          if (this.field30318 <= 0) {
@@ -52,7 +52,7 @@ public class Class7017 implements Class7016 {
       }
    }
 
-   private int method21746(Class1657 var1, BlockPos var2) {
+   private int method21746(ServerWorld var1, BlockPos var2) {
       byte var5 = 48;
       if (var1.method6951().method6663(Class4913.field22766.method15182(), var2, 48, Class2093.field13636) > 4L) {
          List var6 = var1.<Class1098>method7182(Class1098.class, new Class6488(var2).method19663(48.0, 8.0, 48.0));
@@ -64,13 +64,13 @@ public class Class7017 implements Class7016 {
       return 0;
    }
 
-   private int method21747(Class1657 var1, BlockPos var2) {
+   private int method21747(ServerWorld var1, BlockPos var2) {
       byte var5 = 16;
       List var6 = var1.<Class1098>method7182(Class1098.class, new Class6488(var2).method19663(16.0, 8.0, 16.0));
       return var6.size() >= 1 ? 0 : this.method21748(var2, var1);
    }
 
-   private int method21748(BlockPos var1, Class1657 var2) {
+   private int method21748(BlockPos var1, ServerWorld var2) {
       Class1098 var5 = Class8992.field41012.method33215(var2);
       if (var5 != null) {
          var5.method4276(var2, var2.method6807(var1), Class2202.field14391, (Class5093)null, (Class39)null);

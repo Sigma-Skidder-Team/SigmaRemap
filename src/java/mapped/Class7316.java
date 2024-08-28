@@ -29,7 +29,7 @@ public class Class7316 extends PlayerController {
    }
 
    @Override
-   public Class2274 method23140(PlayerEntity var1, Class1655 var2, Class79 var3) {
+   public Class2274 method23140(PlayerEntity var1, Class1655 var2, Hand var3) {
       this.field31371 = true;
       Class2274 var6 = super.method23140(var1, var2, var3);
       this.field31371 = false;
@@ -37,7 +37,7 @@ public class Class7316 extends PlayerController {
    }
 
    @Override
-   public Class2274 method23139(ClientPlayerEntity var1, Class1656 var2, Class79 var3, Class8711 var4) {
+   public Class2274 method23139(ClientPlayerEntity var1, Class1656 var2, Hand var3, Class8711 var4) {
       this.field31371 = true;
       this.field31372 = var4.method31423();
       Class2274 var7 = super.method23139(var1, var2, var3, var4);
@@ -46,13 +46,13 @@ public class Class7316 extends PlayerController {
    }
 
    @Override
-   public Class2274 method23142(PlayerEntity var1, Entity var2, Class79 var3) {
+   public Class2274 method23142(PlayerEntity var1, Entity var2, Hand var3) {
       this.field31373 = var2;
       return super.method23142(var1, var2, var3);
    }
 
    @Override
-   public Class2274 method23143(PlayerEntity var1, Entity var2, Class8709 var3, Class79 var4) {
+   public Class2274 method23143(PlayerEntity var1, Entity var2, Class8709 var3, Hand var4) {
       this.field31373 = var2;
       return super.method23143(var1, var2, var3, var4);
    }

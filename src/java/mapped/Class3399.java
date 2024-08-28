@@ -117,7 +117,7 @@ public class Class3399 extends Class3397 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       var2.method6860().method20726(var3, this, method12024(var2.field9016));
       if (var2.method6789().method17135(Class5462.field24223)) {
          if (!var1.method23443(var2, var3)) {

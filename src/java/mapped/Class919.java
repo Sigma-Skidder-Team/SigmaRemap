@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public abstract class Class919 extends Class916 implements Class920, Class949 {
-   private Class25<Class8848> field5236 = Class25.<Class8848>method68(36, Class8848.field39973);
+   private Class25<ItemStack> field5236 = Class25.<ItemStack>method68(36, ItemStack.field39973);
    private boolean field5237 = true;
    private ResourceLocation field5238;
    private long field5239;
@@ -32,7 +32,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
 
    @Override
    public boolean method3617() {
-      for (Class8848 var4 : this.field5236) {
+      for (ItemStack var4 : this.field5236) {
          if (!var4.method32105()) {
             return false;
          }
@@ -42,31 +42,31 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    }
 
    @Override
-   public Class8848 method3618(int var1) {
+   public ItemStack method3618(int var1) {
       this.method3624((PlayerEntity)null);
       return this.field5236.get(var1);
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       this.method3624((PlayerEntity)null);
       return Class7920.method26563(this.field5236, var1, var2);
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       this.method3624((PlayerEntity)null);
-      Class8848 var4 = this.field5236.get(var1);
+      ItemStack var4 = this.field5236.get(var1);
       if (!var4.method32105()) {
-         this.field5236.set(var1, Class8848.field39973);
+         this.field5236.set(var1, ItemStack.field39973);
          return var4;
       } else {
-         return Class8848.field39973;
+         return ItemStack.field39973;
       }
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
       this.method3624((PlayerEntity)null);
       this.field5236.set(var1, var2);
       if (!var2.method32105() && var2.method32179() > this.method3630()) {
@@ -75,7 +75,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    }
 
    @Override
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       if (var1 >= 0 && var1 < this.method3629()) {
          this.method3621(var1, var2);
          return true;
@@ -90,12 +90,12 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
 
    @Override
    public boolean method3623(PlayerEntity var1) {
-      return !this.field5041 ? !(var1.method3277(this) > 64.0) : false;
+      return !this.field5041 ? !(var1.getDistanceSq(this) > 64.0) : false;
    }
 
    @Nullable
    @Override
-   public Entity method2745(Class1657 var1) {
+   public Entity method2745(ServerWorld var1) {
       this.field5237 = false;
       return super.method2745(var1);
    }
@@ -125,7 +125,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    @Override
    public void method2723(Class39 var1) {
       super.method2723(var1);
-      this.field5236 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5236 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
       if (!var1.method119("LootTable", 8)) {
          Class7920.method26567(var1, this.field5236);
       } else {
@@ -135,7 +135,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
       var1.method2766(this);
       if (var1.field5024.field9020) {
          return Class2274.field14818;
@@ -164,7 +164,7 @@ public abstract class Class919 extends Class916 implements Class920, Class949 {
          }
 
          this.field5238 = null;
-         Class9464 var5 = new Class9464((Class1657)this.field5024).method36454(Class9525.field44335, this.method3431()).method36451(this.field5239);
+         Class9464 var5 = new Class9464((ServerWorld)this.field5024).method36454(Class9525.field44335, this.getPositionVec()).method36451(this.field5239);
          if (var1 != null) {
             var5.method36453(var1.method2978()).method36454(Class9525.field44330, var1);
          }

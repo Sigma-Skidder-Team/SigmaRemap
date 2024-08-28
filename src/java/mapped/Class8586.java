@@ -243,8 +243,8 @@ public class Class8586 extends SimpleChannelInboundHandler<Packet<?>> {
    }
 
    public void method30699() {
-      this.field38657 = Class9679.method37821(0.75F, (float)this.field38655, this.field38657);
-      this.field38656 = Class9679.method37821(0.75F, (float)this.field38654, this.field38656);
+      this.field38657 = MathHelper.method37821(0.75F, (float)this.field38655, this.field38657);
+      this.field38656 = MathHelper.method37821(0.75F, (float)this.field38654, this.field38656);
       this.field38655 = 0;
       this.field38654 = 0;
    }

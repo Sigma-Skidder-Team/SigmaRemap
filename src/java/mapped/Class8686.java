@@ -69,7 +69,7 @@ public class Class8686 {
    }
 
    private static int method31295(Class6619 var0, BlockPos var1, Class164 var2, Class2047 var3, Predicate<Class9632> var4) throws CommandSyntaxException {
-      Class1657 var7 = var0.method20172();
+      ServerWorld var7 = var0.method20172();
       if (var4 != null && !var4.test(new Class9632(var7, var1, true))) {
          throw field39214.create();
       } else {

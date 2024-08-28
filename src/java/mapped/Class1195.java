@@ -24,7 +24,7 @@ public class Class1195 extends Class1193 implements Class1196 {
 
    private float method5719() {
       long var3 = this.field6472 - Util.method38487() + 5000L;
-      return Class9679.method37777((float)var3 / 2000.0F, 0.0F, 1.0F);
+      return MathHelper.method37777((float)var3 / 2000.0F, 0.0F, 1.0F);
    }
 
    public void method5720(Class9332 var1, float var2) {
@@ -34,7 +34,7 @@ public class Class1195 extends Class1193 implements Class1196 {
             int var6 = this.field6471.method1580().method8045() / 2;
             int var7 = this.method5702();
             this.method5703(-90);
-            int var8 = Class9679.method37767((float)this.field6471.method1580().method8046() - 22.0F * var5);
+            int var8 = MathHelper.method37767((float)this.field6471.method1580().method8046() - 22.0F * var5);
             Class8548 var9 = this.field6473.method27575();
             this.method5721(var1, var5, var6, var8, var9);
             this.method5703(var7);

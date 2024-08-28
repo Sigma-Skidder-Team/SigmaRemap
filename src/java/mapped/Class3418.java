@@ -83,7 +83,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          var2.method7179(var3, true);
       }
@@ -95,7 +95,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19127) == 0
          && var4.nextInt(3) == 0
          && var2.method7007(var3.method8311())
@@ -138,7 +138,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       int var7 = this.method12066(var1, var3);
       int var8 = this.method12067(var1, var3);
       int var9 = var7 + var8 + 1;

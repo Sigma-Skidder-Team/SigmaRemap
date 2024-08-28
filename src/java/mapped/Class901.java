@@ -13,7 +13,7 @@ public abstract class Class901 extends Class882 {
       this(var1, var14);
       this.method3273(var2, var4, var6, this.field5031, this.field5032);
       this.method3216();
-      double var17 = (double)Class9679.method37766(var8 * var8 + var10 * var10 + var12 * var12);
+      double var17 = (double) MathHelper.method37766(var8 * var8 + var10 * var10 + var12 * var12);
       if (var17 != 0.0) {
          this.field5141 = var8 / var17 * 0.1;
          this.field5142 = var10 / var17 * 0.1;
@@ -167,7 +167,7 @@ public abstract class Class901 extends Class882 {
       int var4 = var3 != null ? var3.method3205() : 0;
       return new Class5487(
          this.method3205(),
-         this.method3375(),
+         this.getUniqueID(),
          this.getPosX(),
          this.getPosY(),
          this.getPosZ(),

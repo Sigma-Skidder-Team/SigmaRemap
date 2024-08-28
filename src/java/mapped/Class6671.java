@@ -91,10 +91,10 @@ public class Class6671 {
    }
 
    public boolean method20328(Class878 var1, Entity var2) {
-      return this.method20329(var1.method2798(), var1.method3431(), var2);
+      return this.method20329(var1.getServerWorld(), var1.getPositionVec(), var2);
    }
 
-   public boolean method20329(Class1657 var1, Vector3d var2, Entity var3) {
+   public boolean method20329(ServerWorld var1, Vector3d var2, Entity var3) {
       if (this != field29242) {
          if (var3 == null) {
             return false;
@@ -118,7 +118,7 @@ public class Class6671 {
                   } else if (this.field29250.method34996(var3)) {
                      if (!this.field29251.method31429(var3)) {
                         return false;
-                     } else if (this.field29252.method20329(var1, var2, var3.method3421())) {
+                     } else if (this.field29252.method20329(var1, var2, var3.getRidingEntity())) {
                         if (!this.field29253.method20329(var1, var2, !(var3 instanceof Class1006) ? null : ((Class1006)var3).method4232())) {
                            return false;
                         } else {
@@ -213,9 +213,9 @@ public class Class6671 {
    }
 
    public static Class7812 method20332(Class878 var0, Entity var1) {
-      return new Class9464(var0.method2798())
+      return new Class9464(var0.getServerWorld())
          .method36454(Class9525.field44330, var1)
-         .method36454(Class9525.field44335, var0.method3431())
+         .method36454(Class9525.field44335, var0.getPositionVec())
          .method36450(var0.method3013())
          .method36460(Class8524.field38290);
    }

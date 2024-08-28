@@ -11,7 +11,7 @@ import com.google.gson.stream.JsonReader;
 import com.mojang.datafixers.DataFixer;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
@@ -172,7 +172,7 @@ public class Class8287 extends Class8286 {
 
       JsonObject var9 = new JsonObject();
       var9.add("stats", var7);
-      var9.addProperty("DataVersion", Class9246.method34773().getWorldVersion());
+      var9.addProperty("DataVersion", SharedConstants.method34773().getWorldVersion());
       return var9.toString();
    }
 
@@ -195,6 +195,6 @@ public class Class8287 extends Class8286 {
          }
       }
 
-      var1.field4855.method15671(new Class5548(var5));
+      var1.field4855.sendPacket(new Class5548(var5));
    }
 }

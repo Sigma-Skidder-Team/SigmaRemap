@@ -21,17 +21,17 @@ public class Class3272 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public Class2103 method11727(Class8848 var1) {
+   public Class2103 method11727(ItemStack var1) {
       return Class2103.field13711;
    }
 
    @Override
-   public int method11728(Class8848 var1) {
+   public int method11728(ItemStack var1) {
       return 72000;
    }
 
    @Override
-   public void method11729(Class8848 var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          int var8 = this.method11728(var1) - var4;
@@ -59,10 +59,10 @@ public class Class3272 extends Class3257 implements Class3260 {
                if (var9 > 0) {
                   float var18 = var7.field5031;
                   float var11 = var7.field5032;
-                  float var12 = -Class9679.method37763(var18 * (float) (Math.PI / 180.0)) * Class9679.method37764(var11 * (float) (Math.PI / 180.0));
-                  float var13 = -Class9679.method37763(var11 * (float) (Math.PI / 180.0));
-                  float var14 = Class9679.method37764(var18 * (float) (Math.PI / 180.0)) * Class9679.method37764(var11 * (float) (Math.PI / 180.0));
-                  float var15 = Class9679.method37765(var12 * var12 + var13 * var13 + var14 * var14);
+                  float var12 = -MathHelper.method37763(var18 * (float) (Math.PI / 180.0)) * MathHelper.method37764(var11 * (float) (Math.PI / 180.0));
+                  float var13 = -MathHelper.method37763(var11 * (float) (Math.PI / 180.0));
+                  float var14 = MathHelper.method37764(var18 * (float) (Math.PI / 180.0)) * MathHelper.method37764(var11 * (float) (Math.PI / 180.0));
+                  float var15 = MathHelper.method37765(var12 * var12 + var13 * var13 + var14 * var14);
                   float var16 = 3.0F * ((1.0F + (float)var9) / 4.0F);
                   var12 *= var16 / var15;
                   var13 *= var16 / var15;
@@ -93,28 +93,28 @@ public class Class3272 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       if (var6.method32117() < var6.method32119() - 1) {
          if (Class7858.method26337(var6) > 0 && !var2.method3253()) {
-            return Class6794.<Class8848>method20699(var6);
+            return Class6794.<ItemStack>method20699(var6);
          } else {
             var2.method3154(var3);
-            return Class6794.<Class8848>method20697(var6);
+            return Class6794.<ItemStack>method20697(var6);
          }
       } else {
-         return Class6794.<Class8848>method20699(var6);
+         return Class6794.<ItemStack>method20699(var6);
       }
    }
 
    @Override
-   public boolean method11713(Class8848 var1, Class880 var2, Class880 var3) {
+   public boolean method11713(ItemStack var1, Class880 var2, Class880 var3) {
       var1.method32121(1, var3, var0 -> var0.method3184(Class2106.field13731));
       return true;
    }
 
    @Override
-   public boolean method11714(Class8848 var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
       if ((double)var3.method23405(var2, var4) != 0.0) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }

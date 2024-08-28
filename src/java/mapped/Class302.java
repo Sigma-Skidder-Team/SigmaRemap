@@ -385,9 +385,9 @@ public class Class302 implements Class268 {
                double var17 = Math.min(1.0, var9x - var3);
                double var19 = Math.min(1.0, var11 - var5x);
                double var21 = Math.min(1.0, var13 - var7x);
-               int var23 = Math.max(2, Class9679.method37774(var17 / 0.25));
-               int var24 = Math.max(2, Class9679.method37774(var19 / 0.25));
-               int var25 = Math.max(2, Class9679.method37774(var21 / 0.25));
+               int var23 = Math.max(2, MathHelper.method37774(var17 / 0.25));
+               int var24 = Math.max(2, MathHelper.method37774(var19 / 0.25));
+               int var25 = Math.max(2, MathHelper.method37774(var21 / 0.25));
 
                for (int var26 = 0; var26 < var23; var26++) {
                   for (int var27 = 0; var27 < var24; var27++) {

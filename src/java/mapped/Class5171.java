@@ -35,7 +35,7 @@ public class Class5171 extends Module {
         );
         if (!var2.method3342()) {
             float[][] var6 = field23459.get(var2);
-            if (var6 != null && var2.method3066() && var2 != mc.field1339 && !var2.method3176()) {
+            if (var6 != null && var2.method3066() && var2 != mc.field1339 && !var2.isSleeping()) {
                 GL11.glPushMatrix();
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);

@@ -22,7 +22,7 @@ public class Class4474 extends Class4457 {
       return new Class4474(Class4876.method15064(Class9551.field44498), Class9587.field44822, Class8576.field38559);
    }
 
-   public boolean method14133(Class1657 var1, double var2, double var4, double var6) {
+   public boolean method14133(ServerWorld var1, double var2, double var4, double var6) {
       return this.field21664.method30650(var1, var2, var4, var6);
    }
 

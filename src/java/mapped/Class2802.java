@@ -74,15 +74,15 @@ public class Class2802<T extends Entity> extends Class2803<T> implements Class28
       if (!var9) {
          this.field17447.field31037 = 0.0F;
       } else {
-         this.field17447.field31037 = 0.3F * Class9679.method37763(0.45F * var4);
+         this.field17447.field31037 = 0.3F * MathHelper.method37763(0.45F * var4);
          this.field17447.field31035 = 0.4F;
       }
 
       this.field17452.field31033 = 3.0F;
       this.field17452.field31034 = -1.0F;
       this.field17452.field31035 = -0.75F;
-      this.field17453.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
-      this.field17454.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
+      this.field17453.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
+      this.field17454.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
       this.field17453.field31036 = 0.0F;
       this.field17454.field31036 = 0.0F;
    }

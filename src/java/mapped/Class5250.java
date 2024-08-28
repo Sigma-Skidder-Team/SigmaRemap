@@ -62,8 +62,8 @@ public class Class5250 extends Module {
                             && var4.method31423().getY() == this.field23625.method3774().getY()
                             && var4.method31423().method8306() == this.field23625.method3774().method8306()) {
                         this.field23621 = true;
-                        mc.getClientPlayNetHandler().sendPacket(new Class5570(Class79.field182, var4));
-                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new Class5570(Hand.field182, var4));
+                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                         this.field23624.method27120();
                     }
                 }
@@ -145,7 +145,7 @@ public class Class5250 extends Module {
 
                             for (Class5839 var7 : var4.field4727.field25468) {
                                 if (var7.method18266() && var7.field25579 < var4.field4727.method18165() * 9) {
-                                    Class8848 var8 = var7.method18265();
+                                    ItemStack var8 = var7.method18265();
                                     if (!this.method16369(var8)) {
                                         if (!this.field23621) {
                                             if ((float) this.field23623.method27121() < this.method15977("First Item") * 1000.0F) {
@@ -267,7 +267,7 @@ public class Class5250 extends Module {
         return false;
     }
 
-    private boolean method16369(Class8848 var1) {
+    private boolean method16369(ItemStack var1) {
         Class3257 var4 = var1.method32107();
         if (!this.method15974("Ignore Junk")) {
             return false;

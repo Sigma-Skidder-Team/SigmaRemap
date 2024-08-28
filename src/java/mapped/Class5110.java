@@ -1,7 +1,7 @@
 package mapped;
 
 public interface Class5110 extends Class5104 {
-   void method15610(Class5511 var1);
+   void handleAnimation(CAnimateHandPacket var1);
 
    void method15611(Class5522 var1);
 
@@ -21,7 +21,7 @@ public interface Class5110 extends Class5104 {
 
    void method15619(Class5527 var1);
 
-   void method15620(Class5505 var1);
+   void processUseEntity(CUseEntityPacket var1);
 
    void method15621(Class5600 var1);
 
@@ -31,7 +31,7 @@ public interface Class5110 extends Class5104 {
 
    void method15624(Class5492 var1);
 
-   void method15625(Class5583 var1);
+   void processEntityAction(CEntityActionPacket var1);
 
    void method15626(Class5471 var1);
 

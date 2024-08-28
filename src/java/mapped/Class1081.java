@@ -148,7 +148,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    public float method5019(float var1) {
-      return Class9679.method37821(var1, (float)this.field5941, (float)this.field5942) / (float)(this.field5943 - 2);
+      return MathHelper.method37821(var1, (float)this.field5941, (float)this.field5942) / (float)(this.field5943 - 2);
    }
 
    public int method5020() {
@@ -160,14 +160,14 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public void method3353(Class1657 var1, Class906 var2) {
+   public void method3353(ServerWorld var1, Class906 var2) {
       super.method3353(var1, var2);
       this.field5063.method35446(field5939, true);
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (var5.method32107() != Class8514.field37794) {
          return super.method4285(var1, var2);
       } else {

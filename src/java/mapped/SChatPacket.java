@@ -5,16 +5,16 @@ import java.util.UUID;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class5616 implements Packet<Class5116> {
+public class SChatPacket implements Packet<Class5116> {
    private static String[] field24918;
    private ITextComponent field24919;
    private ChatType field24920;
    private UUID field24921;
 
-   public Class5616() {
+   public SChatPacket() {
    }
 
-   public Class5616(ITextComponent var1, ChatType var2, UUID var3) {
+   public SChatPacket(ITextComponent var1, ChatType var2, UUID var3) {
       this.field24919 = var1;
       this.field24920 = var2;
       this.field24921 = var3;

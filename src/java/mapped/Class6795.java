@@ -67,7 +67,7 @@ public class Class6795 {
                }
             } else {
                Class880 var9 = (Class880)var8;
-               Class8848 var10 = var9.method3090();
+               ItemStack var10 = var9.method3090();
                if (var10.method32105()) {
                   if (var1.size() == 1) {
                      throw field29599.create(var9.method2941().getString());
@@ -86,7 +86,7 @@ public class Class6795 {
                var0.method20179(new TranslationTextComponent("commands.enchant.success.multiple", var2.method18820(var3), var1.size()), true);
             } else {
                var0.method20179(
-                  new TranslationTextComponent("commands.enchant.success.single", var2.method18820(var3), ((Entity)var1.iterator().next()).method2954()),
+                  new TranslationTextComponent("commands.enchant.success.single", var2.method18820(var3), ((Entity)var1.iterator().next()).getDisplayName()),
                   true
                );
             }

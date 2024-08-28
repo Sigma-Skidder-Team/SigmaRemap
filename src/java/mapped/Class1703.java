@@ -23,7 +23,7 @@ public class Class1703 extends Class1702 {
    private static final List<Class9176> field9272 = Class9176.method34292();
    private final Class9307 field9273;
    private final Class5646 field9274;
-   private final Class1657 field9275;
+   private final ServerWorld field9275;
    private final Thread field9276;
    private final Class195 field9277;
    private final Class320 field9278;
@@ -38,7 +38,7 @@ public class Class1703 extends Class1702 {
    private Class7307 field9287;
 
    public Class1703(
-      Class1657 var1,
+      ServerWorld var1,
       Class1814 var2,
       DataFixer var3,
       Class8761 var4,
@@ -259,7 +259,7 @@ public class Class1703 extends Class1702 {
 
    @Override
    public boolean method7351(Entity var1) {
-      long var4 = Class7481.method24353(Class9679.method37769(var1.getPosX()) >> 4, Class9679.method37769(var1.getPosZ()) >> 4);
+      long var4 = Class7481.method24353(MathHelper.method37769(var1.getPosX()) >> 4, MathHelper.method37769(var1.getPosZ()) >> 4);
       return this.method7364(var4, Class8641::method31041);
    }
 
@@ -469,7 +469,7 @@ public class Class1703 extends Class1702 {
    }
 
    // $VF: synthetic method
-   public static Class1657 method7395(Class1703 var0) {
+   public static ServerWorld method7395(Class1703 var0) {
       return var0.field9275;
    }
 

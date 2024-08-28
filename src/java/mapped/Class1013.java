@@ -129,7 +129,7 @@ public abstract class Class1013 extends Class1018 {
 
    public void method4399(PlayerEntity var1) {
       this.method4379(true);
-      this.method4398(var1.method3375());
+      this.method4398(var1.getUniqueID());
       if (var1 instanceof Class878) {
          Class9551.field44488.method15115((Class878)var1, this);
       }

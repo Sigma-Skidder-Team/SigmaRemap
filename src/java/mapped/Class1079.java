@@ -19,7 +19,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    private final int[] field5932 = new int[2];
    private final int[] field5933 = new int[2];
    private int field5934;
-   private final Class3624 field5935 = (Class3624)new Class3624(this.method2954(), Class2303.field15725, Class2300.field15703).method12281(true);
+   private final Class3624 field5935 = (Class3624)new Class3624(this.getDisplayName(), Class2303.field15725, Class2300.field15703).method12281(true);
    private static final Predicate<Class880> field5936 = var0 -> var0.method3089() != Class7809.field33506 && var0.method3170();
    private static final Class8522 field5937 = new Class8522().method30203(20.0).method30209(field5936);
 
@@ -61,14 +61,14 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
       super.method2723(var1);
       this.method5013(var1.method122("Invul"));
       if (this.method3381()) {
-         this.field5935.method12284(this.method2954());
+         this.field5935.method12284(this.getDisplayName());
       }
    }
 
    @Override
    public void method3379(ITextComponent var1) {
       super.method3379(var1);
-      this.field5935.method12284(this.method2954());
+      this.field5935.method12284(this.getDisplayName());
    }
 
    @Override
@@ -109,7 +109,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
 
       this.method3434(var3);
       if (method3234(var3) > 0.05) {
-         this.field5031 = (float)Class9679.method37814(var3.field18050, var3.field18048) * (180.0F / (float)Math.PI) - 90.0F;
+         this.field5031 = (float) MathHelper.method37814(var3.field18050, var3.field18048) * (180.0F / (float)Math.PI) - 90.0F;
       }
 
       super.method2871();
@@ -135,9 +135,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
             double var17 = var10.getPosX() - var11;
             double var19 = var10.method3442() - var13;
             double var21 = var10.getPosZ() - var15;
-            double var23 = (double)Class9679.method37766(var17 * var17 + var21 * var21);
-            float var25 = (float)(Class9679.method37814(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
-            float var26 = (float)(-(Class9679.method37814(var19, var23) * 180.0F / (float)Math.PI));
+            double var23 = (double) MathHelper.method37766(var17 * var17 + var21 * var21);
+            float var25 = (float)(MathHelper.method37814(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
+            float var26 = (float)(-(MathHelper.method37814(var19, var23) * 180.0F / (float)Math.PI));
             this.field5928[var34] = this.method5007(this.field5928[var34], var26, 40.0F);
             this.field5929[var34] = this.method5007(this.field5929[var34], var25, 10.0F);
          }
@@ -204,9 +204,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                   if (var5 > 15) {
                      float var6 = 10.0F;
                      float var7 = 5.0F;
-                     double var8 = Class9679.method37784(this.field5054, this.getPosX() - 10.0, this.getPosX() + 10.0);
-                     double var10 = Class9679.method37784(this.field5054, this.getPosY() - 5.0, this.getPosY() + 5.0);
-                     double var12 = Class9679.method37784(this.field5054, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
+                     double var8 = MathHelper.method37784(this.field5054, this.getPosX() - 10.0, this.getPosX() + 10.0);
+                     double var10 = MathHelper.method37784(this.field5054, this.getPosY() - 5.0, this.getPosY() + 5.0);
+                     double var12 = MathHelper.method37784(this.field5054, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
                      this.method5009(var3 + 1, var8, var10, var12, true);
                      this.field5933[var3 - 1] = 0;
                   }
@@ -231,7 +231,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                   }
                } else {
                   Entity var26 = this.field5024.method6774(var23);
-                  if (var26 == null || !var26.method3066() || this.method3277(var26) > 900.0 || !this.method3135(var26)) {
+                  if (var26 == null || !var26.method3066() || this.getDistanceSq(var26) > 900.0 || !this.method3135(var26)) {
                      this.method5015(var3, 0);
                   } else if (var26 instanceof PlayerEntity && ((PlayerEntity)var26).field4919.field29606) {
                      this.method5015(var3, 0);
@@ -253,9 +253,9 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
          if (this.field5934 > 0) {
             this.field5934--;
             if (this.field5934 == 0 && this.field5024.method6789().method17135(Class5462.field24224)) {
-               int var21 = Class9679.method37769(this.getPosY());
-               int var24 = Class9679.method37769(this.getPosX());
-               int var28 = Class9679.method37769(this.getPosZ());
+               int var21 = MathHelper.method37769(this.getPosY());
+               int var24 = MathHelper.method37769(this.getPosX());
+               int var28 = MathHelper.method37769(this.getPosZ());
                boolean var30 = false;
 
                for (int var32 = -1; var32 <= 1; var32++) {
@@ -329,7 +329,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    private double method5004(int var1) {
       if (var1 > 0) {
          float var4 = (this.field4965 + (float)(180 * (var1 - 1))) * (float) (Math.PI / 180.0);
-         float var5 = Class9679.method37764(var4);
+         float var5 = MathHelper.method37764(var4);
          return this.getPosX() + (double)var5 * 1.3;
       } else {
          return this.getPosX();
@@ -343,7 +343,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    private double method5006(int var1) {
       if (var1 > 0) {
          float var4 = (this.field4965 + (float)(180 * (var1 - 1))) * (float) (Math.PI / 180.0);
-         float var5 = Class9679.method37763(var4);
+         float var5 = MathHelper.method37763(var4);
          return this.getPosZ() + (double)var5 * 1.3;
       } else {
          return this.getPosZ();
@@ -351,7 +351,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    private float method5007(float var1, float var2, float var3) {
-      float var6 = Class9679.method37792(var2 - var1);
+      float var6 = MathHelper.method37792(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

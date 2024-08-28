@@ -25,7 +25,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, Class8848 var6) {
+   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (!var1.field9020 && var5 instanceof Class962) {
          Class962 var9 = (Class962)var5;
@@ -54,12 +54,12 @@ public class Class3366 extends Class3241 {
    }
 
    public static void method11944(Class1655 var0, BlockPos var1) {
-      method11557(var0, var1, new Class8848(Class8514.field38174, 3));
+      method11557(var0, var1, new ItemStack(Class8514.field38174, 3));
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
-      Class8848 var9 = var4.method3094(var5);
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.method3094(var5);
       int var10 = var1.<Integer>method23463(field18936);
       boolean var11 = false;
       if (var10 >= 5) {
@@ -68,11 +68,11 @@ public class Class3366 extends Class3241 {
                var9.method32182(1);
                var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), Class6067.field26418, Class2266.field14734, 1.0F, 1.0F);
                if (!var9.method32105()) {
-                  if (!var4.field4902.method4045(new Class8848(Class8514.field38177))) {
-                     var4.method2882(new Class8848(Class8514.field38177), false);
+                  if (!var4.field4902.method4045(new ItemStack(Class8514.field38177))) {
+                     var4.method2882(new ItemStack(Class8514.field38177), false);
                   }
                } else {
-                  var4.method3095(var5, new Class8848(Class8514.field38177));
+                  var4.method3095(var5, new ItemStack(Class8514.field38177));
                }
 
                var11 = true;
@@ -169,9 +169,9 @@ public class Class3366 extends Class3241 {
    private void method11950(Class1655 var1, double var2, double var4, double var6, double var8, double var10) {
       var1.method6746(
          Class7940.field34108,
-         Class9679.method37822(var1.field9016.nextDouble(), var2, var4),
+         MathHelper.method37822(var1.field9016.nextDouble(), var2, var4),
          var10,
-         Class9679.method37822(var1.field9016.nextDouble(), var6, var8),
+         MathHelper.method37822(var1.field9016.nextDouble(), var6, var8),
          0.0,
          0.0,
          0.0
@@ -205,7 +205,7 @@ public class Class3366 extends Class3241 {
          Class944 var7 = var1.method6759(var2);
          if (var7 instanceof Class962) {
             Class962 var8 = (Class962)var7;
-            Class8848 var9 = new Class8848(this);
+            ItemStack var9 = new ItemStack(this);
             int var10 = var3.<Integer>method23463(field18936);
             boolean var11 = !var8.method3913();
             if (!var11 && var10 == 0) {
@@ -231,7 +231,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public List<Class8848> method11697(Class7380 var1, Class9464 var2) {
+   public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
       Entity var5 = var2.<Entity>method36459(Class9525.field44330);
       if (var5 instanceof Class1004 || var5 instanceof Class1081 || var5 instanceof Class902 || var5 instanceof Class1079 || var5 instanceof Class993) {
          Class944 var6 = var2.<Class944>method36459(Class9525.field44337);

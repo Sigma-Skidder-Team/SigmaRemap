@@ -48,7 +48,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       super.method2723(var1);
       this.method4890(var1.method122("Variant"));
       if (var1.method119("DecorItem", 10)) {
-         this.field5890.method3621(1, Class8848.method32104(var1.method130("DecorItem")));
+         this.field5890.method3621(1, ItemStack.method32104(var1.method130("DecorItem")));
       }
 
       this.method4903();
@@ -83,7 +83,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    public int method4889() {
-      return Class9679.method37775(this.field5063.<Integer>method35445(field5872), 0, 3);
+      return MathHelper.method37775(this.field5063.<Integer>method35445(field5872), 0, 3);
    }
 
    public void method4890(int var1) {
@@ -98,8 +98,8 @@ public class Class1064 extends Class1066 implements Class1022 {
    @Override
    public void method3307(Entity var1) {
       if (this.method3409(var1)) {
-         float var4 = Class9679.method37764(this.field4965 * (float) (Math.PI / 180.0));
-         float var5 = Class9679.method37763(this.field4965 * (float) (Math.PI / 180.0));
+         float var4 = MathHelper.method37764(this.field4965 * (float) (Math.PI / 180.0));
+         float var5 = MathHelper.method37763(this.field4965 * (float) (Math.PI / 180.0));
          float var6 = 0.3F;
          var1.method3215(
             this.getPosX() + (double)(0.3F * var5), this.getPosY() + this.method3310() + var1.method2894(), this.getPosZ() - (double)(0.3F * var4)
@@ -118,12 +118,12 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return field5869.test(var1);
    }
 
    @Override
-   public boolean method4892(PlayerEntity var1, Class8848 var2) {
+   public boolean method4892(PlayerEntity var1, ItemStack var2) {
       int var5 = 0;
       int var6 = 0;
       float var7 = 0.0F;
@@ -267,7 +267,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Override
-   public boolean method4900(Class8848 var1) {
+   public boolean method4900(ItemStack var1) {
       Class3257 var4 = var1.method32107();
       return Class5985.field26075.method24917(var4);
    }
@@ -300,7 +300,7 @@ public class Class1064 extends Class1066 implements Class1022 {
    }
 
    @Nullable
-   private static Class112 method4905(Class8848 var0) {
+   private static Class112 method4905(ItemStack var0) {
       Block var3 = Block.method11537(var0.method32107());
       return !(var3 instanceof Class3422) ? null : ((Class3422)var3).method12077();
    }
@@ -321,7 +321,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       return var1 != this && var1 instanceof Class1064 && this.method4961() && ((Class1064)var1).method4961();
    }
 
-   public Class1064 method4389(Class1657 var1, Class1045 var2) {
+   public Class1064 method4389(ServerWorld var1, Class1045 var2) {
       Class1064 var5 = this.method4908();
       this.method4962(var2, var5);
       Class1064 var6 = (Class1064)var2;
@@ -344,7 +344,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       double var5 = var1.getPosX() - this.getPosX();
       double var7 = var1.method3440(0.3333333333333333) - var4.getPosY();
       double var9 = var1.getPosZ() - this.getPosZ();
-      float var11 = Class9679.method37766(var5 * var5 + var9 * var9) * 0.2F;
+      float var11 = MathHelper.method37766(var5 * var5 + var9 * var9) * 0.2F;
       var4.method3462(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
       if (!this.method3245()) {
          this.field5024

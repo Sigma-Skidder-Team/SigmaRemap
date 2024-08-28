@@ -87,7 +87,7 @@ public class Class7755 {
          + this.field33319 * this.field33319
          + this.field33320 * this.field33320;
       if (!((double)var3 < 1.0E-5)) {
-         float var4 = Class9679.method37815(var3);
+         float var4 = MathHelper.method37815(var3);
          this.field33317 *= var4;
          this.field33318 *= var4;
          this.field33319 *= var4;

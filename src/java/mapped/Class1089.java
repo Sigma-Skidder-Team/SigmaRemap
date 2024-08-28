@@ -42,7 +42,7 @@ public class Class1089 extends Class1018 {
       this.field5968 = this.field5965;
       this.field5967 = this.field5966;
       this.field5966 = (float)((double)this.field5966 + (double)(!this.field5036 ? 4 : -1) * 0.3);
-      this.field5966 = Class9679.method37777(this.field5966, 0.0F, 1.0F);
+      this.field5966 = MathHelper.method37777(this.field5966, 0.0F, 1.0F);
       if (!this.field5036 && this.field5969 < 1.0F) {
          this.field5969 = 1.0F;
       }
@@ -86,12 +86,12 @@ public class Class1089 extends Class1018 {
       this.method2863(Class6067.field26454, 0.15F, 1.0F);
    }
 
-   public Class1089 method4389(Class1657 var1, Class1045 var2) {
+   public Class1089 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41014.method33215(var1);
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return field5964.test(var1);
    }
 
@@ -124,8 +124,8 @@ public class Class1089 extends Class1018 {
    @Override
    public void method3307(Entity var1) {
       super.method3307(var1);
-      float var4 = Class9679.method37763(this.field4965 * (float) (Math.PI / 180.0));
-      float var5 = Class9679.method37764(this.field4965 * (float) (Math.PI / 180.0));
+      float var4 = MathHelper.method37763(this.field4965 * (float) (Math.PI / 180.0));
+      float var5 = MathHelper.method37764(this.field4965 * (float) (Math.PI / 180.0));
       float var6 = 0.1F;
       float var7 = 0.0F;
       var1.method3215(this.getPosX() + (double)(0.1F * var4), this.method3440(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));

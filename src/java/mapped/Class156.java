@@ -16,7 +16,7 @@ public class Class156 implements Class122 {
    }
 
    public boolean test(Class7812 var1) {
-      Class1657 var4 = var1.method26090();
+      ServerWorld var4 = var1.method26090();
       long var5 = var4.method6784();
       if (this.field510 != null) {
          var5 %= this.field510;

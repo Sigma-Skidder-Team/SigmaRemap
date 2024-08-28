@@ -45,7 +45,7 @@ public class Class1078 extends Class1066 {
    }
 
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41057.method33215(var1);
    }
 }

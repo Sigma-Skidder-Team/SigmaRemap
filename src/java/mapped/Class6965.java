@@ -8,7 +8,7 @@ import java.util.function.Function;
 public interface Class6965 {
    CompletableFuture<Either<Class1670, Class7022>> method21487(
       Class9176 var1,
-      Class1657 var2,
+      ServerWorld var2,
       Class5646 var3,
       Class8761 var4,
       Class195 var5,

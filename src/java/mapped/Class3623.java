@@ -2,7 +2,6 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 import net.minecraft.util.text.ITextComponent;
@@ -31,7 +30,7 @@ public class Class3623 extends Class3624 {
    @Override
    public void method12263(Class878 var1) {
       super.method12263(var1);
-      this.field19626.add(var1.method3375());
+      this.field19626.add(var1.getUniqueID());
    }
 
    public void method12264(UUID var1) {
@@ -41,7 +40,7 @@ public class Class3623 extends Class3624 {
    @Override
    public void method12265(Class878 var1) {
       super.method12265(var1);
-      this.field19626.remove(var1.method3375());
+      this.field19626.remove(var1.getUniqueID());
    }
 
    @Override
@@ -60,12 +59,12 @@ public class Class3623 extends Class3624 {
 
    public void method12269(int var1) {
       this.field19627 = var1;
-      this.method12278(Class9679.method37777((float)var1 / (float)this.field19628, 0.0F, 1.0F));
+      this.method12278(MathHelper.method37777((float)var1 / (float)this.field19628, 0.0F, 1.0F));
    }
 
    public void method12270(int var1) {
       this.field19628 = var1;
-      this.method12278(Class9679.method37777((float)this.field19627 / (float)var1, 0.0F, 1.0F));
+      this.method12278(MathHelper.method37777((float)this.field19627 / (float)var1, 0.0F, 1.0F));
    }
 
    public final ITextComponent method12271() {
@@ -85,7 +84,7 @@ public class Class3623 extends Class3624 {
          boolean var8 = false;
 
          for (Class878 var10 : var1) {
-            if (var10.method3375().equals(var7)) {
+            if (var10.getUniqueID().equals(var7)) {
                var8 = true;
                break;
             }
@@ -100,7 +99,7 @@ public class Class3623 extends Class3624 {
          boolean var17 = false;
 
          for (UUID var21 : this.field19626) {
-            if (var14.method3375().equals(var21)) {
+            if (var14.getUniqueID().equals(var21)) {
                var17 = true;
                break;
             }
@@ -113,7 +112,7 @@ public class Class3623 extends Class3624 {
 
       for (UUID var15 : var4) {
          for (Class878 var20 : this.method12288()) {
-            if (var20.method3375().equals(var15)) {
+            if (var20.getUniqueID().equals(var15)) {
                this.method12265(var20);
                break;
             }
@@ -170,7 +169,7 @@ public class Class3623 extends Class3624 {
    }
 
    public void method12275(Class878 var1) {
-      if (this.field19626.contains(var1.method3375())) {
+      if (this.field19626.contains(var1.getUniqueID())) {
          this.method12263(var1);
       }
    }

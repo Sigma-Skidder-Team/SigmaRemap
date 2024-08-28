@@ -12,13 +12,13 @@ public class Class3271 extends Class3257 implements Class3260 {
       super(var1);
    }
 
-   public static boolean method11789(Class8848 var0) {
+   public static boolean method11789(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return var3 != null && (var3.method118("LodestoneDimension") || var3.method118("LodestonePos"));
    }
 
    @Override
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return method11789(var1) || super.method11732(var1);
    }
 
@@ -27,7 +27,7 @@ public class Class3271 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public void method11724(Class8848 var1, Class1655 var2, Entity var3, int var4, boolean var5) {
+   public void method11724(ItemStack var1, Class1655 var2, Entity var3, int var4, boolean var5) {
       if (!var2.field9020 && method11789(var1)) {
          Class39 var8 = var1.method32143();
          if (var8.method118("LodestoneTracked") && !var8.method132("LodestoneTracked")) {
@@ -38,7 +38,7 @@ public class Class3271 extends Class3257 implements Class3260 {
          if (var9.isPresent()
             && var9.get() == var2.method6813()
             && var8.method118("LodestonePos")
-            && !((Class1657)var2).method6951().method6664(Class4913.field22771, Class8354.method29283(var8.method130("LodestonePos")))) {
+            && !((ServerWorld)var2).method6951().method6664(Class4913.field22771, Class8354.method29283(var8.method130("LodestonePos")))) {
             var8.method133("LodestonePos");
          }
       }
@@ -53,10 +53,10 @@ public class Class3271 extends Class3257 implements Class3260 {
       } else {
          var5.method6742((PlayerEntity)null, var4, Class6067.field26749, Class2266.field14735, 1.0F, 1.0F);
          PlayerEntity var6 = var1.method18358();
-         Class8848 var7 = var1.method18357();
+         ItemStack var7 = var1.method18357();
          boolean var8 = !var6.field4919.field29609 && var7.method32179() == 1;
          if (!var8) {
-            Class8848 var9 = new Class8848(Class8514.field37905, 1);
+            ItemStack var9 = new ItemStack(Class8514.field37905, 1);
             Class39 var10 = !var7.method32141() ? new Class39() : var7.method32142().method79();
             var9.method32148(var10);
             if (!var6.field4919.field29609) {
@@ -85,7 +85,7 @@ public class Class3271 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public String method11720(Class8848 var1) {
+   public String method11720(ItemStack var1) {
       return !method11789(var1) ? super.method11720(var1) : "item.minecraft.lodestone_compass";
    }
 }

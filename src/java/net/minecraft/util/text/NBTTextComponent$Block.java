@@ -45,7 +45,7 @@ public class NBTTextComponent$Block extends NBTTextComponent {
    @Override
    public Stream<Class39> func_218673_a(Class6619 p_218673_1_) {
       if (this.field_218685_f != null) {
-         Class1657 blockpos = p_218673_1_.method20172();
+         ServerWorld blockpos = p_218673_1_.method20172();
          BlockPos tileentity = this.field_218685_f.method23230(p_218673_1_);
          if (blockpos.method6763(tileentity)) {
             Class944 var6 = blockpos.method6759(tileentity);

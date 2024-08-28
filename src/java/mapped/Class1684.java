@@ -87,7 +87,7 @@ public class Class1684 implements Class1683 {
    @Override
    public Class8907 method7005(int var1, int var2, int var3) {
       int var6 = var1 & field9155;
-      int var7 = Class9679.method37775(var2, 0, field9156);
+      int var7 = MathHelper.method37775(var2, 0, field9156);
       int var8 = var3 & field9155;
       return this.field9158[var7 << field9152 + field9152 | var8 << field9152 | var6];
    }

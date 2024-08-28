@@ -212,12 +212,12 @@ public class Class1088 extends Class1018 {
 
    @Nullable
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41096.method33215(var1);
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return var1.method32107() == Blocks.SEAGRASS.method11581();
    }
 
@@ -255,7 +255,7 @@ public class Class1088 extends Class1018 {
          this.method3265(0.1F, var1);
          this.move(Class2107.field13742, this.method3433());
          this.method3434(this.method3433().method11344(0.9));
-         if (this.method4232() == null && (!this.method5049() || !this.method5042().method8317(this.method3431(), 20.0))) {
+         if (this.method4232() == null && (!this.method5049() || !this.method5042().method8317(this.getPositionVec(), 20.0))) {
             this.method3434(this.method3433().method11339(0.0, -0.005, 0.0));
          }
       } else {
@@ -269,7 +269,7 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public void method3353(Class1657 var1, Class906 var2) {
+   public void method3353(ServerWorld var1, Class906 var2) {
       this.method2741(Class8654.field38993, Float.MAX_VALUE);
    }
 

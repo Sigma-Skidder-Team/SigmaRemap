@@ -13,7 +13,6 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nullable;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BooleanSupplier;
@@ -102,7 +101,7 @@ public class Class1652<R> implements AutoCloseable {
       if (var3 != null) {
          Dynamic<T> var6 = new Dynamic<>(var2, var3);
          int var7 = method6653(var6);
-         int var8 = Class9246.method34773().getWorldVersion();
+         int var8 = SharedConstants.method34773().getWorldVersion();
          boolean var9 = var7 != var8;
          Dynamic<T> var10 = this.field8985.update(this.field8986.method8778(), var6, var7, var8);
          OptionalDynamic<T> var11 = var10.get("Sections");
@@ -155,7 +154,7 @@ public class Class1652<R> implements AutoCloseable {
          var2,
          var2.createMap(
             ImmutableMap.of(
-               var2.createString("Sections"), var2.createMap(var5), var2.createString("DataVersion"), var2.createInt(Class9246.method34773().getWorldVersion())
+               var2.createString("Sections"), var2.createMap(var5), var2.createString("DataVersion"), var2.createInt(SharedConstants.method34773().getWorldVersion())
             )
          )
       );

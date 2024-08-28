@@ -35,7 +35,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7021(var3, 0) >= 9) {
          float var7 = Class3480.method12182(this, var2, var3);
          if (var4.nextInt((int)(25.0F / var7) + 1) == 0) {
@@ -73,9 +73,9 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
       Class3257 var6 = this.method12184();
-      return var6 != null ? new Class8848(var6) : Class8848.field39973;
+      return var6 != null ? new ItemStack(var6) : ItemStack.field39973;
    }
 
    @Override
@@ -89,8 +89,8 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
-      int var7 = Math.min(7, var4.<Integer>method23463(field19347) + Class9679.method37782(var1.field9016, 2, 5));
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+      int var7 = Math.min(7, var4.<Integer>method23463(field19347) + MathHelper.method37782(var1.field9016, 2, 5));
       Class7380 var8 = var4.method23465(field19347, Integer.valueOf(var7));
       var1.method6725(var3, var8, 2);
       if (var7 == 7) {

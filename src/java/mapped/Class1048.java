@@ -158,7 +158,7 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public boolean method2980(Class8848 var1) {
+   public boolean method2980(ItemStack var1) {
       Class2106 var4 = Class1006.method4271(var1);
       return !this.method2943(var4).method32105() ? false : var4 == Class2106.field13731 && super.method2980(var1);
    }
@@ -166,7 +166,7 @@ public class Class1048 extends Class1047 {
    @Override
    public void method4246(Class1000 var1) {
       if (this.method2943(Class2106.field13731).method32105()) {
-         Class8848 var4 = var1.method4124();
+         ItemStack var4 = var1.method4124();
          if (this.method4252(var4)) {
             this.method3134(var1);
             this.method2944(Class2106.field13731, var4);
@@ -202,8 +202,8 @@ public class Class1048 extends Class1047 {
 
          if (this.field5024.field9020 && this.method3250() && this.method3433().method11349() > 0.03) {
             Vector3d var3 = this.method3281(0.0F);
-            float var4 = Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
-            float var5 = Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
+            float var4 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
+            float var5 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
             float var6 = 1.2F - this.field5054.nextFloat() * 0.7F;
 
             for (int var7 = 0; var7 < 2; var7++) {
@@ -253,8 +253,8 @@ public class Class1048 extends Class1047 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (!var5.method32105() && var5.method32107().method11743(Class5985.field26114)) {
          if (!this.field5024.field9020) {
             this.method2863(Class6067.field26502, 1.0F, 1.0F);
@@ -313,7 +313,7 @@ public class Class1048 extends Class1047 {
 
    public boolean method4785() {
       BlockPos var3 = this.method4230().method21643();
-      return var3 == null ? false : var3.method8317(this.method3431(), 12.0);
+      return var3 == null ? false : var3.method8317(this.getPositionVec(), 12.0);
    }
 
    @Override

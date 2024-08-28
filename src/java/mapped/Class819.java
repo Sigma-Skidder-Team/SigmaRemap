@@ -274,7 +274,7 @@ public class Class819 extends Class798 {
 
       if (var6) {
          if (var6) {
-            float var15 = 0.9F + 0.1F * Class9679.method37764((float)this.field4472 * 0.2F);
+            float var15 = 0.9F + 0.1F * MathHelper.method37764((float)this.field4472 * 0.2F);
             RenderSystem.method27889(var15, var15, var15, 1.0F);
          }
       } else {

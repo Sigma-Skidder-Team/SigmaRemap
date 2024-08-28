@@ -27,7 +27,7 @@ public class Class7019 implements Class7016 {
    }
 
    @Override
-   public int method21742(Class1657 var1, boolean var2, boolean var3) {
+   public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (var1.method6789().method17135(Class5462.field24253)) {
          if (--this.field30324 <= 0) {
             this.field30324 = 1200;
@@ -37,7 +37,7 @@ public class Class7019 implements Class7016 {
                this.field30325 = 24000;
                if (var1.method6789().method17135(Class5462.field24226)) {
                   int var6 = this.field30326;
-                  this.field30326 = Class9679.method37775(this.field30326 + 25, 25, 75);
+                  this.field30326 = MathHelper.method37775(this.field30326 + 25, 25, 75);
                   this.field30323.method20065(this.field30326);
                   if (this.field30322.nextInt(100) <= var6) {
                      if (!this.method21750(var1)) {
@@ -63,7 +63,7 @@ public class Class7019 implements Class7016 {
       }
    }
 
-   private boolean method21750(Class1657 var1) {
+   private boolean method21750(ServerWorld var1) {
       Class878 var4 = var1.method6915();
       if (var4 != null) {
          if (this.field30322.nextInt(10) != 0) {
@@ -87,7 +87,7 @@ public class Class7019 implements Class7016 {
                      this.method21751(var1, var11, 4);
                   }
 
-                  this.field30323.method20066(var11.method3375());
+                  this.field30323.method20066(var11.getUniqueID());
                   var11.method4755(48000);
                   var11.method4758(var9);
                   var11.method4288(var9, 16);
@@ -102,7 +102,7 @@ public class Class7019 implements Class7016 {
       }
    }
 
-   private void method21751(Class1657 var1, Class1044 var2, int var3) {
+   private void method21751(ServerWorld var1, Class1044 var2, int var3) {
       BlockPos var6 = this.method21752(var1, var2.method3432(), var3);
       if (var6 != null) {
          Class1065 var7 = Class8992.field41094.method33201(var1, (Class39)null, (ITextComponent)null, (PlayerEntity)null, var6, Class2202.field14398, false, false);

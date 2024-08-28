@@ -79,7 +79,7 @@ public class Class906 extends Entity {
       }
 
       if (this.field5171 >= 0) {
-         if (this.field5024 instanceof Class1657) {
+         if (this.field5024 instanceof ServerWorld) {
             if (!this.field5174) {
                double var4 = 3.0;
                List<Entity> var6 = this.field5024
@@ -97,7 +97,7 @@ public class Class906 extends Entity {
                   );
 
                for (Entity var8 : var6) {
-                  var8.method3353((Class1657)this.field5024, this);
+                  var8.method3353((ServerWorld)this.field5024, this);
                }
 
                if (this.field5175 != null) {

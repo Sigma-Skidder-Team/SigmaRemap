@@ -60,7 +60,7 @@ public class Class3206 extends Class3198 implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (this.field19004 != Class8649.field38967) {
          var1 = var1.method23459(field18594);
          var2.method6725(var3, var1, 2);

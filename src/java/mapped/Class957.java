@@ -87,11 +87,11 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    public float method3874(float var1) {
-      return Class9679.method37777(((float)this.field5372 + var1) / 200.0F, 0.0F, 1.0F);
+      return MathHelper.method37777(((float)this.field5372 + var1) / 200.0F, 0.0F, 1.0F);
    }
 
    public float method3875(float var1) {
-      return 1.0F - Class9679.method37777(((float)this.field5373 - var1) / 40.0F, 0.0F, 1.0F);
+      return 1.0F - MathHelper.method37777(((float)this.field5373 - var1) / 40.0F, 0.0F, 1.0F);
    }
 
    @Nullable
@@ -124,10 +124,10 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    public void method3877(Entity var1) {
-      if (this.field5324 instanceof Class1657 && !this.method3873()) {
+      if (this.field5324 instanceof ServerWorld && !this.method3873()) {
          this.field5373 = 100;
          if (this.field5374 == null && this.field5324.method6813() == Class1655.field9001) {
-            this.method3879((Class1657)this.field5324);
+            this.method3879((ServerWorld)this.field5324);
          }
 
          if (this.field5374 != null) {
@@ -163,7 +163,7 @@ public class Class957 extends Class956 implements Class935 {
       return var3.method8311();
    }
 
-   private void method3879(Class1657 var1) {
+   private void method3879(ServerWorld var1) {
       Vector3d var4 = new Vector3d((double)this.method3774().method8304(), 0.0, (double)this.method3774().method8306()).method11333();
       Vector3d var5 = var4.method11344(1024.0);
 
@@ -215,7 +215,7 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    private static Class1674 method3881(Class1655 var0, Vector3d var1) {
-      return var0.method6824(Class9679.method37769(var1.field18048 / 16.0), Class9679.method37769(var1.field18050 / 16.0));
+      return var0.method6824(MathHelper.method37769(var1.field18048 / 16.0), MathHelper.method37769(var1.field18050 / 16.0));
    }
 
    @Nullable
@@ -243,7 +243,7 @@ public class Class957 extends Class956 implements Class935 {
       return var7;
    }
 
-   private void method3883(Class1657 var1, BlockPos var2) {
+   private void method3883(ServerWorld var1, BlockPos var2) {
       Class2898.field17964.method11216(Class4701.method14745(this.method3774(), false)).method26521(var1, var1.method6883().method7370(), new Random(), var2);
    }
 

@@ -67,7 +67,7 @@ public class Class1003 extends Entity {
 
       double var3 = 8.0;
       if (this.field5561 < this.field5555 - 20 + this.method3205() % 100) {
-         if (this.field5560 == null || this.field5560.method3277(this) > 64.0) {
+         if (this.field5560 == null || this.field5560.getDistanceSq(this) > 64.0) {
             this.field5560 = this.field5024.method7185(this, 8.0);
          }
 
@@ -152,9 +152,9 @@ public class Class1003 extends Entity {
       if (!this.field5024.field9020 && this.field5557 == 0 && var1.field4910 == 0) {
          var1.field4910 = 2;
          var1.method2751(this, 1);
-         Entry var4 = Class7858.method26340(Class8122.field34932, var1, Class8848::method32116);
+         Entry var4 = Class7858.method26340(Class8122.field34932, var1, ItemStack::method32116);
          if (var4 != null) {
-            Class8848 var5 = (Class8848)var4.getValue();
+            ItemStack var5 = (ItemStack)var4.getValue();
             if (!var5.method32105() && var5.method32116()) {
                int var6 = Math.min(this.method4176(this.field5559), var5.method32117());
                this.field5559 = this.field5559 - this.method4175(var6);

@@ -44,7 +44,7 @@ public class Class9819 {
                   this.field45880.getClientPlayNetHandler().sendPacket(new Class5493(0, (short)-1, false));
                   this.field45880.getClientPlayNetHandler().sendPacket(new Class5612(var5));
                   if (var6 != null) {
-                     this.field45880.getClientPlayNetHandler().sendPacket(new Class5497(var6.method3375()));
+                     this.field45880.getClientPlayNetHandler().sendPacket(new Class5497(var6.getUniqueID()));
                   }
 
                   this.field45880.getClientPlayNetHandler().sendPacket(new Class5471(0.98F, 0.98F, false, false));
@@ -59,7 +59,7 @@ public class Class9819 {
                         );
                         List<Class8472> var6x = Class8901.method32447(var5x, var4x);
                         Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Successfully teleported !"));
-                        Entity var7 = this.field45880.field1339.method3421();
+                        Entity var7 = this.field45880.field1339.getRidingEntity();
 
                         for (Class8472 var9x : var6x) {
                            if (var7 != null) {

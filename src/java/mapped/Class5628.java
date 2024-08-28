@@ -146,12 +146,12 @@ public class Class5628 {
       double var8 = var0 - field24949.field1339.getPosX();
       double var10 = var2 - (field24949.field1339.getPosY() + (double)field24949.field1339.method3393());
       double var12 = var4 - field24949.field1339.getPosZ();
-      double var14 = (double)Class9679.method37766(var8 * var8 + var12 * var12);
+      double var14 = (double) MathHelper.method37766(var8 * var8 + var12 * var12);
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       return new float[]{
-         field24949.field1339.field5031 + Class9679.method37792(var16 - field24949.field1339.field5031),
-         field24949.field1339.field5032 + Class9679.method37792(var17 - field24949.field1339.field5032)
+         field24949.field1339.field5031 + MathHelper.method37792(var16 - field24949.field1339.field5031),
+         field24949.field1339.field5032 + MathHelper.method37792(var17 - field24949.field1339.field5032)
       };
    }
 
@@ -390,7 +390,7 @@ public class Class5628 {
    }
 
    public static float method17702(float var0, float var1, float var2) {
-      float var5 = Class9679.method37792(var1 - var0);
+      float var5 = MathHelper.method37792(var1 - var0);
       if (var5 > var2) {
          var5 = var2;
       }
@@ -419,7 +419,7 @@ public class Class5628 {
 
    public static int method17705() {
       for (Class6589 var3 : field24949.getClientPlayNetHandler().method15790()) {
-         if (var3.method19966().getId().equals(field24949.field1339.method3375()) && !field24949.method1529()) {
+         if (var3.method19966().getId().equals(field24949.field1339.getUniqueID()) && !field24949.method1529()) {
             return var3.method19969();
          }
       }
@@ -498,7 +498,7 @@ public class Class5628 {
          Class6488 var17 = var16.method3389().method19664(var8);
          Optional var18 = var17.method19680(var2, var3);
          if (!var18.isPresent()) {
-            if (method17715(var1.method3431(), var17)) {
+            if (method17715(var1.getPositionVec(), var17)) {
                var14 = var16;
                break;
             }
@@ -576,10 +576,10 @@ public class Class5628 {
    public static Vector3d method17721(float var0, float var1) {
       float var4 = var0 * (float) (Math.PI / 180.0);
       float var5 = -var1 * (float) (Math.PI / 180.0);
-      float var6 = Class9679.method37764(var5);
-      float var7 = Class9679.method37763(var5);
-      float var8 = Class9679.method37764(var4);
-      float var9 = Class9679.method37763(var4);
+      float var6 = MathHelper.method37764(var5);
+      float var7 = MathHelper.method37763(var5);
+      float var8 = MathHelper.method37764(var4);
+      float var9 = MathHelper.method37763(var4);
       return new Vector3d((double)(var7 * var8), (double)(-var9), (double)(var6 * var8));
    }
 
@@ -626,10 +626,10 @@ public class Class5628 {
 
    public static boolean method17729() {
       Class6488 var2 = field24949.field1339.field5035.method19667(0.0, -1.0, 0.0);
-      if (field24949.field1339.method3421() != null) {
-         double var4 = field24949.field1339.method3421().field5025 - field24949.field1339.method3421().getPosX();
-         double var6 = field24949.field1339.method3421().field5027 - field24949.field1339.method3421().getPosZ();
-         var2 = field24949.field1339.method3421().field5035.method19662(Math.abs(var4), 1.0, Math.abs(var6));
+      if (field24949.field1339.getRidingEntity() != null) {
+         double var4 = field24949.field1339.getRidingEntity().field5025 - field24949.field1339.getRidingEntity().getPosX();
+         double var6 = field24949.field1339.getRidingEntity().field5027 - field24949.field1339.getRidingEntity().getPosZ();
+         var2 = field24949.field1339.getRidingEntity().field5035.method19662(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
       Stream var3 = field24949.field1338.method7055(field24949.field1339, var2);
@@ -679,8 +679,8 @@ public class Class5628 {
    }
 
    public static void method17733() {
-      field24949.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
-      field24949.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field183));
+      field24949.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+      field24949.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
    }
 
    public static void method17734() {
@@ -693,11 +693,11 @@ public class Class5628 {
       Client.getInstance().getEventManager().call(var5);
       if (!var5.isCancelled()) {
          if (var4 && var1) {
-            field24949.field1339.method2820(Class79.field182);
+            field24949.field1339.swingArm(Hand.field182);
          }
 
-         field24949.getClientPlayNetHandler().sendPacket(new Class5505(var5.method13935(), field24949.field1339.method3331()));
-         if (Class7858.method26311(Class6069.method18810(12), field24949.field1339.method3094(Class79.field182)) > 0) {
+         field24949.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var5.method13935(), field24949.field1339.method3331()));
+         if (Class7858.method26311(Class6069.method18810(12), field24949.field1339.method3094(Hand.field182)) > 0) {
             field24949.field1291.method1195(var5.method13935(), Class7940.field34065);
          }
 
@@ -715,7 +715,7 @@ public class Class5628 {
 
          field24949.field1339.method2975();
          if (!var4 && var1) {
-            field24949.field1339.method2820(Class79.field182);
+            field24949.field1339.swingArm(Hand.field182);
          }
 
          var5.method13938();
@@ -1037,7 +1037,7 @@ public class Class5628 {
                return false;
             } else if (!var2 && !(var0 instanceof PlayerEntity)) {
                return false;
-            } else if (field24949.field1339.method3421() != null && field24949.field1339.method3421().equals(var0)) {
+            } else if (field24949.field1339.getRidingEntity() != null && field24949.field1339.getRidingEntity().equals(var0)) {
                return false;
             } else {
                return !var0.method3362()
@@ -1095,7 +1095,7 @@ public class Class5628 {
    }
 
    public static float method17753(float var0) {
-      float var3 = Class9679.method37792(field24949.field1339.field5031);
+      float var3 = MathHelper.method37792(field24949.field1339.field5031);
       float var4 = 180.0F;
       float var5 = 0.0F;
       MovementInput var6 = field24949.field1339.field6131;
@@ -1128,10 +1128,10 @@ public class Class5628 {
       }
 
       for (float var9 = 0.0F; var9 < 360.0F; var9 += 45.0F) {
-         float var10 = Class9679.method37794(var0 + var9, var3);
+         float var10 = MathHelper.method37794(var0 + var9, var3);
          if (Math.abs(var10) < Math.abs(var4)) {
             var4 = var10;
-            var5 = Class9679.method37792(var0 + var9);
+            var5 = MathHelper.method37792(var0 + var9);
          }
       }
 
@@ -1184,9 +1184,9 @@ public class Class5628 {
       double var4 = var1.field18048 - var0.field18048;
       double var6 = (var1.field18049 - var0.field18049) * -1.0;
       double var8 = var1.field18050 - var0.field18050;
-      double var10 = (double)Class9679.method37766(var4 * var4 + var8 * var8);
+      double var10 = (double) MathHelper.method37766(var4 * var4 + var8 * var8);
       return new float[]{
-         (float)Class9679.method37793(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float)Class9679.method37793(Math.toDegrees(Math.atan2(var6, var10)))
+         (float) MathHelper.method37793(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float) MathHelper.method37793(Math.toDegrees(Math.atan2(var6, var10)))
       };
    }
 
@@ -1216,7 +1216,7 @@ public class Class5628 {
             .iterator();
          if (var10.hasNext()) {
             Vector3d var11 = field24949.field1339
-               .method3431()
+               .getPositionVec()
                .method11338(field24949.field1339.method3233(new Vector3d((double)var9.method539(), 0.0, (double)var9.method541())));
             return new Class9629<Direction, Vector3d>(var9, var11);
          }

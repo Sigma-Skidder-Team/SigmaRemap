@@ -23,9 +23,9 @@ public class Class5679 extends Class5676<Class1033> {
          for (int var11 = 0; var11 < var9.length; var11++) {
             var4.method35294();
             var4.method35291(
-               var9[var11].field18048 + (double)Class9679.method37764((float)var11 + var10 * 0.5F) * 0.025,
-               var9[var11].field18049 + (double)Class9679.method37764((float)var11 + var10 * 0.75F) * 0.0125,
-               var9[var11].field18050 + (double)Class9679.method37764((float)var11 + var10 * 0.7F) * 0.025
+               var9[var11].field18048 + (double) MathHelper.method37764((float)var11 + var10 * 0.5F) * 0.025,
+               var9[var11].field18049 + (double) MathHelper.method37764((float)var11 + var10 * 0.75F) * 0.0125,
+               var9[var11].field18050 + (double) MathHelper.method37764((float)var11 + var10 * 0.7F) * 0.025
             );
             super.method17853(var1, var2, var3, var4, var5, var6);
             var4.method35295();

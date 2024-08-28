@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class997 extends Class995 {
    private static final Logger field5491 = LogManager.getLogger();
-   private static final Class9289<Class8848> field5492 = Class9361.<Class8848>method35441(Class997.class, Class7784.field33396);
+   private static final Class9289<ItemStack> field5492 = Class9361.<ItemStack>method35441(Class997.class, Class7784.field33396);
    private static final Class9289<Integer> field5493 = Class9361.<Integer>method35441(Class997.class, Class7784.field33391);
    private float field5494 = 1.0F;
    private boolean field5495;
@@ -27,7 +27,7 @@ public class Class997 extends Class995 {
 
    @Override
    public void method2850() {
-      this.method3210().method35442(field5492, Class8848.field39973);
+      this.method3210().method35442(field5492, ItemStack.field39973);
       this.method3210().method35442(field5493, 0);
    }
 
@@ -171,8 +171,8 @@ public class Class997 extends Class995 {
 
    private void method4088(Entity var1, boolean var2) {
       if (!this.field5495) {
-         Class8848 var5 = this.method4090();
-         this.method4091(Class8848.field39973);
+         ItemStack var5 = this.method4090();
+         this.method4091(ItemStack.field39973);
          if (this.field5024.method6789().method17135(Class5462.field24229)) {
             if (var1 instanceof PlayerEntity) {
                PlayerEntity var6 = (PlayerEntity)var1;
@@ -199,7 +199,7 @@ public class Class997 extends Class995 {
       }
    }
 
-   private void method4089(Class8848 var1) {
+   private void method4089(ItemStack var1) {
       if (var1.method32107() == Class8514.field37955) {
          Class7529 var4 = Class3316.method11861(var1, this.field5024);
          var4.method24602(this.field5488, this.method3205());
@@ -209,15 +209,15 @@ public class Class997 extends Class995 {
       var1.method32166((Entity)null);
    }
 
-   public Class8848 method4090() {
-      return this.method3210().<Class8848>method35445(field5492);
+   public ItemStack method4090() {
+      return this.method3210().<ItemStack>method35445(field5492);
    }
 
-   public void method4091(Class8848 var1) {
+   public void method4091(ItemStack var1) {
       this.method4092(var1, true);
    }
 
-   public void method4092(Class8848 var1, boolean var2) {
+   public void method4092(ItemStack var1, boolean var2) {
       if (!var1.method32105()) {
          var1 = var1.method32126();
          var1.method32180(1);
@@ -235,7 +235,7 @@ public class Class997 extends Class995 {
    }
 
    @Override
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       if (var1 != 0) {
          return false;
       } else {
@@ -247,7 +247,7 @@ public class Class997 extends Class995 {
    @Override
    public void method3155(Class9289<?> var1) {
       if (var1.equals(field5492)) {
-         Class8848 var4 = this.method4090();
+         ItemStack var4 = this.method4090();
          if (!var4.method32105() && var4.method32167() != this) {
             var4.method32166(this);
          }
@@ -288,13 +288,13 @@ public class Class997 extends Class995 {
       super.method2723(var1);
       Class39 var4 = var1.method130("Item");
       if (var4 != null && !var4.method134()) {
-         Class8848 var5 = Class8848.method32104(var4);
+         ItemStack var5 = ItemStack.method32104(var4);
          if (var5.method32105()) {
             field5491.warn("Unable to load item from: {}", var4);
          }
 
-         Class8848 var6 = this.method4090();
-         if (!var6.method32105() && !Class8848.method32128(var5, var6)) {
+         ItemStack var6 = this.method4090();
+         if (!var6.method32105() && !ItemStack.method32128(var5, var6)) {
             this.method4089(var6);
          }
 
@@ -311,8 +311,8 @@ public class Class997 extends Class995 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       boolean var6 = !this.method4090().method32105();
       boolean var7 = !var5.method32105();
       if (!this.field5495) {

@@ -46,7 +46,7 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11333() {
-      double var3 = (double)Class9679.method37766(this.field18048 * this.field18048 + this.field18049 * this.field18049 + this.field18050 * this.field18050);
+      double var3 = (double) MathHelper.method37766(this.field18048 * this.field18048 + this.field18049 * this.field18049 + this.field18050 * this.field18050);
       return !(var3 < 1.0E-4) ? new Vector3d(this.field18048 / var3, this.field18049 / var3, this.field18050 / var3) : field18047;
    }
 
@@ -86,7 +86,7 @@ public class Vector3d implements Class2955 {
       double var4 = var1.field18048 - this.field18048;
       double var6 = var1.field18049 - this.field18049;
       double var8 = var1.field18050 - this.field18050;
-      return (double)Class9679.method37766(var4 * var4 + var6 * var6 + var8 * var8);
+      return (double) MathHelper.method37766(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public double method11342(Vector3d var1) {
@@ -120,7 +120,7 @@ public class Vector3d implements Class2955 {
    }
 
    public double method11348() {
-      return (double)Class9679.method37766(this.field18048 * this.field18048 + this.field18049 * this.field18049 + this.field18050 * this.field18050);
+      return (double) MathHelper.method37766(this.field18048 * this.field18048 + this.field18049 * this.field18049 + this.field18050 * this.field18050);
    }
 
    public double method11349() {
@@ -161,8 +161,8 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11350(float var1) {
-      float var4 = Class9679.method37764(var1);
-      float var5 = Class9679.method37763(var1);
+      float var4 = MathHelper.method37764(var1);
+      float var5 = MathHelper.method37763(var1);
       double var6 = this.field18048;
       double var8 = this.field18049 * (double)var4 + this.field18050 * (double)var5;
       double var10 = this.field18050 * (double)var4 - this.field18049 * (double)var5;
@@ -170,8 +170,8 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11351(float var1) {
-      float var4 = Class9679.method37764(var1);
-      float var5 = Class9679.method37763(var1);
+      float var4 = MathHelper.method37764(var1);
+      float var5 = MathHelper.method37763(var1);
       double var6 = this.field18048 * (double)var4 + this.field18050 * (double)var5;
       double var8 = this.field18049;
       double var10 = this.field18050 * (double)var4 - this.field18048 * (double)var5;
@@ -179,8 +179,8 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11352(float var1) {
-      float var4 = Class9679.method37764(var1);
-      float var5 = Class9679.method37763(var1);
+      float var4 = MathHelper.method37764(var1);
+      float var5 = MathHelper.method37763(var1);
       double var6 = this.field18048 * (double)var4 + this.field18049 * (double)var5;
       double var8 = this.field18049 * (double)var4 - this.field18048 * (double)var5;
       double var10 = this.field18050;
@@ -192,17 +192,17 @@ public class Vector3d implements Class2955 {
    }
 
    public static Vector3d method11354(float var0, float var1) {
-      float var4 = Class9679.method37764(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var5 = Class9679.method37763(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var6 = -Class9679.method37764(-var0 * (float) (Math.PI / 180.0));
-      float var7 = Class9679.method37763(-var0 * (float) (Math.PI / 180.0));
+      float var4 = MathHelper.method37764(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var5 = MathHelper.method37763(-var1 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var6 = -MathHelper.method37764(-var0 * (float) (Math.PI / 180.0));
+      float var7 = MathHelper.method37763(-var0 * (float) (Math.PI / 180.0));
       return new Vector3d((double)(var5 * var6), (double)var7, (double)(var4 * var6));
    }
 
    public Vector3d method11355(EnumSet<Class113> var1) {
-      double var4 = !var1.contains(Class113.field413) ? this.field18048 : (double)Class9679.method37769(this.field18048);
-      double var6 = !var1.contains(Class113.field414) ? this.field18049 : (double)Class9679.method37769(this.field18049);
-      double var8 = !var1.contains(Class113.field415) ? this.field18050 : (double)Class9679.method37769(this.field18050);
+      double var4 = !var1.contains(Class113.field413) ? this.field18048 : (double) MathHelper.method37769(this.field18048);
+      double var6 = !var1.contains(Class113.field414) ? this.field18049 : (double) MathHelper.method37769(this.field18049);
+      double var8 = !var1.contains(Class113.field415) ? this.field18050 : (double) MathHelper.method37769(this.field18050);
       return new Vector3d(var4, var6, var8);
    }
 

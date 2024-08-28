@@ -228,7 +228,7 @@ public class Class7848 {
                var0.method20179(new TranslationTextComponent(var2.method9040() + ".many.to.many.success", var3.size(), var1.size()), true);
             } else {
                var0.method20179(
-                  new TranslationTextComponent(var2.method9040() + ".many.to.one.success", var3.size(), ((Class878)var1.iterator().next()).method2954()), true
+                  new TranslationTextComponent(var2.method9040() + ".many.to.one.success", var3.size(), ((Class878)var1.iterator().next()).getDisplayName()), true
                );
             }
          } else if (var1.size() != 1) {
@@ -238,7 +238,7 @@ public class Class7848 {
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  var2.method9040() + ".one.to.one.success", ((Class7952)var3.iterator().next()).method27035(), ((Class878)var1.iterator().next()).method2954()
+                  var2.method9040() + ".one.to.one.success", ((Class7952)var3.iterator().next()).method27035(), ((Class878)var1.iterator().next()).getDisplayName()
                ),
                true
             );
@@ -250,7 +250,7 @@ public class Class7848 {
             throw new Class2468(new TranslationTextComponent(var2.method9040() + ".many.to.many.failure", var3.size(), var1.size()));
          } else {
             throw new Class2468(
-               new TranslationTextComponent(var2.method9040() + ".many.to.one.failure", var3.size(), ((Class878)var1.iterator().next()).method2954())
+               new TranslationTextComponent(var2.method9040() + ".many.to.one.failure", var3.size(), ((Class878)var1.iterator().next()).getDisplayName())
             );
          }
       } else if (var1.size() != 1) {
@@ -260,7 +260,7 @@ public class Class7848 {
       } else {
          throw new Class2468(
             new TranslationTextComponent(
-               var2.method9040() + ".one.to.one.failure", ((Class7952)var3.iterator().next()).method27035(), ((Class878)var1.iterator().next()).method2954()
+               var2.method9040() + ".one.to.one.failure", ((Class7952)var3.iterator().next()).method27035(), ((Class878)var1.iterator().next()).getDisplayName()
             )
          );
       }
@@ -281,7 +281,7 @@ public class Class7848 {
             } else {
                var0.method20179(
                   new TranslationTextComponent(
-                     var2.method9040() + ".criterion.to.one.success", var4, var3.method27035(), ((Class878)var1.iterator().next()).method2954()
+                     var2.method9040() + ".criterion.to.one.success", var4, var3.method27035(), ((Class878)var1.iterator().next()).getDisplayName()
                   ),
                   true
                );
@@ -293,7 +293,7 @@ public class Class7848 {
          } else {
             throw new Class2468(
                new TranslationTextComponent(
-                  var2.method9040() + ".criterion.to.one.failure", var4, var3.method27035(), ((Class878)var1.iterator().next()).method2954()
+                  var2.method9040() + ".criterion.to.one.failure", var4, var3.method27035(), ((Class878)var1.iterator().next()).getDisplayName()
                )
             );
          }

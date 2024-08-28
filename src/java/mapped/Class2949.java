@@ -62,7 +62,7 @@ public class Class2949 extends Class2898<Class4712> {
          if (var1.method7007(var6)) {
             Class7380 var8 = var1.method6738(var6.method8311());
             if (var8.method23448(Blocks.NETHERRACK) || var8.method23448(Blocks.field36891)) {
-               int var9 = Class9679.method37782(var2, 1, 8);
+               int var9 = MathHelper.method37782(var2, 1, 8);
                if (var2.nextInt(6) == 0) {
                   var9 *= 2;
                }
@@ -83,7 +83,7 @@ public class Class2949 extends Class2898<Class4712> {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.method8313())) {
                var0.method6725(
-                  var2, Blocks.field37086.method11579().method23465(Class3452.field19267, Integer.valueOf(Class9679.method37782(var1, var4, var5))), 2
+                  var2, Blocks.field37086.method11579().method23465(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
                );
                break;
             }

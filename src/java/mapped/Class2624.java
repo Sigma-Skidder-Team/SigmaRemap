@@ -16,7 +16,7 @@ public class Class2624 extends Class2595 {
    public boolean method10803() {
       this.field16920 = this.field16919.method4232();
       if (this.field16920 instanceof PlayerEntity) {
-         double var3 = this.field16920.method3277(this.field16919);
+         double var3 = this.field16920.getDistanceSq(this.field16919);
          return !(var3 > 256.0) ? Class1010.method4362(this.field16919, (PlayerEntity)this.field16920) : false;
       } else {
          return false;

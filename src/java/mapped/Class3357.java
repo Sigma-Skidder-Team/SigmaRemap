@@ -22,7 +22,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          Class944 var9 = var2.method6759(var3);
          if (var9 instanceof Class971) {
@@ -40,12 +40,12 @@ public class Class3357 extends Class3241 {
       }
    }
 
-   public void method11932(Class1657 var1, BlockPos var2) {
+   public void method11932(ServerWorld var1, BlockPos var2) {
       Class2957 var5 = new Class2957(var1, var2);
       Class971 var6 = var5.<Class971>method11325();
       int var7 = var6.method4022();
       if (var7 >= 0) {
-         Class8848 var8 = var6.method3618(var7);
+         ItemStack var8 = var6.method3618(var7);
          Class6226 var9 = this.method11933(var8);
          if (var9 != Class6226.field27722) {
             var6.method3621(var7, var9.method19196(var5, var8));
@@ -55,7 +55,7 @@ public class Class3357 extends Class3241 {
       }
    }
 
-   public Class6226 method11933(Class8848 var1) {
+   public Class6226 method11933(ItemStack var1) {
       return field18901.get(var1.method32107());
    }
 
@@ -72,7 +72,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       this.method11932(var2, var3);
    }
 
@@ -87,7 +87,7 @@ public class Class3357 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
          Class944 var8 = var1.method6759(var2);
          if (var8 instanceof Class971) {

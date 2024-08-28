@@ -21,12 +21,12 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41068.method33215(var1);
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return false;
    }
 
@@ -66,7 +66,7 @@ public class Class1096 extends Class1018 implements Class1011 {
    @Override
    public void method2723(Class39 var1) {
       super.method2723(var1);
-      this.method4365((Class1657)this.field5024, var1);
+      this.method4365((ServerWorld)this.field5024, var1);
    }
 
    @Override
@@ -143,9 +143,9 @@ public class Class1096 extends Class1018 implements Class1011 {
 
          this.field6011 = this.field6012;
          if (!this.method5183()) {
-            this.field6012 = Class9679.method37777(this.field6012 - 1.0F, 0.0F, 6.0F);
+            this.field6012 = MathHelper.method37777(this.field6012 - 1.0F, 0.0F, 6.0F);
          } else {
-            this.field6012 = Class9679.method37777(this.field6012 + 1.0F, 0.0F, 6.0F);
+            this.field6012 = MathHelper.method37777(this.field6012 + 1.0F, 0.0F, 6.0F);
          }
       }
 
@@ -154,7 +154,7 @@ public class Class1096 extends Class1018 implements Class1011 {
       }
 
       if (!this.field5024.field9020) {
-         this.method4366((Class1657)this.field5024, true);
+         this.method4366((ServerWorld)this.field5024, true);
       }
    }
 
@@ -188,7 +188,7 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    public float method5185(float var1) {
-      return Class9679.method37821(var1, this.field6011, this.field6012) / 6.0F;
+      return MathHelper.method37821(var1, this.field6011, this.field6012) / 6.0F;
    }
 
    @Override

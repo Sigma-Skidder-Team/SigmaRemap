@@ -14,7 +14,7 @@ public class Class9136 {
             Class6619 var3 = (Class6619)var0x.getSource();
             boolean var4 = false;
 
-            for (Class1657 var6 : var3.method20177().method1320()) {
+            for (ServerWorld var6 : var3.method20177().method1320()) {
                if (var6 != null && !var6.field9047) {
                   var6.field9047 = true;
                   var4 = true;

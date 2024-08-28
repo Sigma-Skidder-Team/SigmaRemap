@@ -9,9 +9,9 @@ public class Class4567 extends Class4566 {
       this.field22045 *= 0.01F;
       this.field22046 *= 0.01F;
       this.field22045 += 0.2;
-      this.field22058 = Math.max(0.0F, Class9679.method37763(((float)var8 + 0.0F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
-      this.field22059 = Math.max(0.0F, Class9679.method37763(((float)var8 + 0.33333334F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
-      this.field22060 = Math.max(0.0F, Class9679.method37763(((float)var8 + 0.6666667F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field22058 = Math.max(0.0F, MathHelper.method37763(((float)var8 + 0.0F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field22059 = Math.max(0.0F, MathHelper.method37763(((float)var8 + 0.33333334F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field22060 = Math.max(0.0F, MathHelper.method37763(((float)var8 + 0.6666667F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
       this.field22035 *= 1.5F;
       this.field22056 = 6;
    }
@@ -23,7 +23,7 @@ public class Class4567 extends Class4566 {
 
    @Override
    public float method14509(float var1) {
-      return this.field22035 * Class9679.method37777(((float)this.field22055 + var1) / (float)this.field22056 * 32.0F, 0.0F, 1.0F);
+      return this.field22035 * MathHelper.method37777(((float)this.field22055 + var1) / (float)this.field22056 * 32.0F, 0.0F, 1.0F);
    }
 
    @Override

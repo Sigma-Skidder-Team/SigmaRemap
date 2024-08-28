@@ -49,11 +49,11 @@ public class Class1106 extends Class1105 {
       short var3 = 1200;
       if ((this.field5055 + this.method3205()) % 1200 == 0) {
          Class7144 var4 = Class8254.field35470;
-         List<Class878> var5 = ((Class1657)this.field5024).method6914(var1 -> this.method3277(var1) < 2500.0 && var1.field4857.method33865());
+         List<Class878> var5 = ((ServerWorld)this.field5024).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
 
          for (Class878 var10 : var5) {
             if (!var10.method3033(var4) || var10.method3034(var4).method8629() < 2 || var10.method3034(var4).method8628() < 1200) {
-               var10.field4855.method15671(new Class5534(Class5534.field24570, !this.method3245() ? 1.0F : 0.0F));
+               var10.field4855.sendPacket(new Class5534(Class5534.field24570, !this.method3245() ? 1.0F : 0.0F));
                var10.method3035(new Class2023(var4, 6000, 2));
             }
          }

@@ -24,9 +24,9 @@ public class Class2002 extends Class1998 {
 
    public static Class2002 method8392(Entity var0) {
       return new Class2002(
-         method8396(Class9679.method37769(var0.getPosX())),
-         method8396(Class9679.method37769(var0.getPosY())),
-         method8396(Class9679.method37769(var0.getPosZ()))
+         method8396(MathHelper.method37769(var0.getPosX())),
+         method8396(MathHelper.method37769(var0.getPosY())),
+         method8396(MathHelper.method37769(var0.getPosZ()))
       );
    }
 

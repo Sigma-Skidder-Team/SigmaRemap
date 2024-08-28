@@ -88,6 +88,6 @@ public enum Class2223 {
    }
 
    public static Class2223 method8957(byte var0) {
-      return values()[Class9679.method37775(var0, 0, values().length - 1)];
+      return values()[MathHelper.method37775(var0, 0, values().length - 1)];
    }
 }

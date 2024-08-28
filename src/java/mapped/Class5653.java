@@ -17,7 +17,7 @@ public class Class5653 extends Class5651<Class1114, Class2811> {
 
    public void method17842(Class1114 var1, Class9332 var2, float var3, float var4, float var5) {
       if (!var1.method5364()) {
-         var2.method35291(0.0, (double)(Class9679.method37764(var3 * 0.3F) * 0.1F), 0.0);
+         var2.method35291(0.0, (double)(MathHelper.method37764(var3 * 0.3F) * 0.1F), 0.0);
       } else {
          var2.method35291(0.0, -0.1F, 0.0);
       }

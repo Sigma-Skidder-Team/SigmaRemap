@@ -184,7 +184,7 @@ public interface Class1682 {
    default PlayerEntity method7196(UUID var1) {
       for (int var4 = 0; var4 < this.method6870().size(); var4++) {
          PlayerEntity var5 = this.method6870().get(var4);
-         if (var1.equals(var5.method3375())) {
+         if (var1.equals(var5.getUniqueID())) {
             return var5;
          }
       }

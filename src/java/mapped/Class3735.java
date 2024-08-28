@@ -23,7 +23,7 @@ public class Class3735 extends Class3676<Class1006> {
       );
    }
 
-   public boolean method12508(Class1657 var1, Class1006 var2) {
+   public boolean method12508(ServerWorld var1, Class1006 var2) {
       if (this.field19850 <= 0) {
          Class6947<?> var5 = var2.method2992();
          Class8999 var6 = var5.method21410(Class8830.field39824).get();
@@ -45,7 +45,7 @@ public class Class3735 extends Class3676<Class1006> {
       }
    }
 
-   public boolean method12499(Class1657 var1, Class1006 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1006 var2, long var3) {
       if (this.field19851 != null && this.field19852 != null) {
          Optional var7 = var2.method2992().<Class8999>method21410(Class8830.field39824);
          Class6990 var8 = var2.method4230();
@@ -55,7 +55,7 @@ public class Class3735 extends Class3676<Class1006> {
       }
    }
 
-   public void method12506(Class1657 var1, Class1006 var2, long var3) {
+   public void method12506(ServerWorld var1, Class1006 var2, long var3) {
       if (var2.method2992().method21404(Class8830.field39824)
          && !this.method12663(var2, var2.method2992().<Class8999>method21410(Class8830.field39824).get())
          && var2.method4230().method21677()) {
@@ -68,12 +68,12 @@ public class Class3735 extends Class3676<Class1006> {
       this.field19851 = null;
    }
 
-   public void method12502(Class1657 var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
       var2.method2992().method21406(Class8830.field39831, this.field19851);
       var2.method4230().method21656(this.field19851, (double)this.field19853);
    }
 
-   public void method12504(Class1657 var1, Class1006 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1006 var2, long var3) {
       Class8238 var7 = var2.method4230().method21657();
       Class6947<?> var8 = var2.method2992();
       if (this.field19851 != var7) {

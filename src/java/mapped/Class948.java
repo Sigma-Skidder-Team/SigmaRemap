@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class948 extends Class944 implements Class946, Class949 {
    private final Class920 field5333 = new Class989(this);
    private final Class8202 field5334 = new Class8205(this);
-   private Class8848 field5335 = Class8848.field39973;
+   private ItemStack field5335 = ItemStack.field39973;
    private int field5336;
    private int field5337;
 
@@ -15,7 +15,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
       super(Class4387.field21449);
    }
 
-   public Class8848 method3805() {
+   public ItemStack method3805() {
       return this.field5335;
    }
 
@@ -24,7 +24,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
       return var3 == Class8514.field38047 || var3 == Class8514.field38048;
    }
 
-   public void method3807(Class8848 var1) {
+   public void method3807(ItemStack var1) {
       this.method3809(var1, (PlayerEntity)null);
    }
 
@@ -34,7 +34,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
       Class3354.method11921(this.method3734(), this.method3774(), this.method3775(), false);
    }
 
-   public void method3809(Class8848 var1, PlayerEntity var2) {
+   public void method3809(ItemStack var1, PlayerEntity var2) {
       this.field5335 = this.method3813(var1, var2);
       this.field5336 = 0;
       this.field5337 = Class3285.method11819(this.field5335);
@@ -42,7 +42,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    private void method3810(int var1) {
-      int var4 = Class9679.method37775(var1, 0, this.field5337 - 1);
+      int var4 = MathHelper.method37775(var1, 0, this.field5337 - 1);
       if (var4 != this.field5336) {
          this.field5336 = var4;
          this.method3622();
@@ -56,11 +56,11 @@ public class Class948 extends Class944 implements Class946, Class949 {
 
    public int method3812() {
       float var3 = this.field5337 <= 1 ? 1.0F : (float)this.method3811() / ((float)this.field5337 - 1.0F);
-      return Class9679.method37767(var3 * 14.0F) + (!this.method3806() ? 0 : 1);
+      return MathHelper.method37767(var3 * 14.0F) + (!this.method3806() ? 0 : 1);
    }
 
-   private Class8848 method3813(Class8848 var1, PlayerEntity var2) {
-      if (this.field5324 instanceof Class1657 && var1.method32107() == Class8514.field38048) {
+   private ItemStack method3813(ItemStack var1, PlayerEntity var2) {
+      if (this.field5324 instanceof ServerWorld && var1.method32107() == Class8514.field38048) {
          Class3285.method11820(var1, this.method3814(var2), var2);
       }
 
@@ -72,7 +72,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
       Object var5;
       if (var1 != null) {
          var4 = var1.method2941().getString();
-         var5 = var1.method2954();
+         var5 = var1.getDisplayName();
       } else {
          var4 = "Lectern";
          var5 = new StringTextComponent("Lectern");
@@ -80,7 +80,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
 
       Vector3d var6 = Vector3d.method11328(this.field5325);
       return new Class6619(
-         Class909.field5189, var6, Class8513.field37212, (Class1657)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.method6715(), var1
+         Class909.field5189, var6, Class8513.field37212, (ServerWorld)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.method6715(), var1
       );
    }
 
@@ -93,13 +93,13 @@ public class Class948 extends Class944 implements Class946, Class949 {
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
       if (!var2.method119("Book", 10)) {
-         this.field5335 = Class8848.field39973;
+         this.field5335 = ItemStack.field39973;
       } else {
-         this.field5335 = this.method3813(Class8848.method32104(var2.method130("Book")), (PlayerEntity)null);
+         this.field5335 = this.method3813(ItemStack.method32104(var2.method130("Book")), (PlayerEntity)null);
       }
 
       this.field5337 = Class3285.method11819(this.field5335);
-      this.field5336 = Class9679.method37775(var2.method122("Page"), 0, this.field5337 - 1);
+      this.field5336 = MathHelper.method37775(var2.method122("Page"), 0, this.field5337 - 1);
    }
 
    @Override
@@ -115,7 +115,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
 
    @Override
    public void method3625() {
-      this.method3807(Class8848.field39973);
+      this.method3807(ItemStack.field39973);
    }
 
    @Override
@@ -129,7 +129,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    // $VF: synthetic method
-   public static Class8848 method3815(Class948 var0) {
+   public static ItemStack method3815(Class948 var0) {
       return var0.field5335;
    }
 
@@ -139,7 +139,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    // $VF: synthetic method
-   public static Class8848 method3817(Class948 var0, Class8848 var1) {
+   public static ItemStack method3817(Class948 var0, ItemStack var1) {
       return var0.field5335 = var1;
    }
 

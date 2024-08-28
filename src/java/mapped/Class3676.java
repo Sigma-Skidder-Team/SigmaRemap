@@ -28,7 +28,7 @@ public abstract class Class3676<E extends Class880> {
       return this.field19685;
    }
 
-   public final boolean method12501(Class1657 var1, E var2, long var3) {
+   public final boolean method12501(ServerWorld var1, E var2, long var3) {
       if (this.method12509((E)var2) && this.method12508(var1, (E)var2)) {
          this.field19685 = Class2092.field13633;
          int var7 = this.field19687 + var1.method6814().nextInt(this.field19688 + 1 - this.field19687);
@@ -40,10 +40,10 @@ public abstract class Class3676<E extends Class880> {
       }
    }
 
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
    }
 
-   public final void method12503(Class1657 var1, E var2, long var3) {
+   public final void method12503(ServerWorld var1, E var2, long var3) {
       if (!this.method12507(var3) && this.method12499(var1, (E)var2, var3)) {
          this.method12504(var1, (E)var2, var3);
       } else {
@@ -51,18 +51,18 @@ public abstract class Class3676<E extends Class880> {
       }
    }
 
-   public void method12504(Class1657 var1, E var2, long var3) {
+   public void method12504(ServerWorld var1, E var2, long var3) {
    }
 
-   public final void method12505(Class1657 var1, E var2, long var3) {
+   public final void method12505(ServerWorld var1, E var2, long var3) {
       this.field19685 = Class2092.field13632;
       this.method12506(var1, (E)var2, var3);
    }
 
-   public void method12506(Class1657 var1, E var2, long var3) {
+   public void method12506(ServerWorld var1, E var2, long var3) {
    }
 
-   public boolean method12499(Class1657 var1, E var2, long var3) {
+   public boolean method12499(ServerWorld var1, E var2, long var3) {
       return false;
    }
 
@@ -70,7 +70,7 @@ public abstract class Class3676<E extends Class880> {
       return var1 > this.field19686;
    }
 
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       return true;
    }
 

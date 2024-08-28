@@ -17,7 +17,7 @@ public class Class7884 extends Class7882<Class1091> {
       );
    }
 
-   public void method26425(Class1657 var1, Class1091 var2) {
+   public void method26425(ServerWorld var1, Class1091 var2) {
       Class6947<?> var5 = var2.method2992();
       var5.method21408(Class8830.field39870, this.method26439(var1, var2));
       Optional var6 = Optional.empty();
@@ -43,7 +43,7 @@ public class Class7884 extends Class7882<Class1091> {
       var5.method21406(Class8830.field39867, var8.size());
    }
 
-   private Optional<BlockPos> method26439(Class1657 var1, Class1091 var2) {
+   private Optional<BlockPos> method26439(ServerWorld var1, Class1091 var2) {
       return BlockPos.method8357(var2.method3432(), 8, 4, var1x -> var1.method6738(var1x).method23446(Class7645.field32806));
    }
 }

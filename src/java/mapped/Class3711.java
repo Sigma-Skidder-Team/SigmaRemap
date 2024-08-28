@@ -9,11 +9,11 @@ public class Class3711 extends Class3676<Class1042> {
       super(ImmutableMap.of());
    }
 
-   public boolean method12499(Class1657 var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
       return method12592(var2) || method12591(var2);
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       if (method12592(var2) || method12591(var2)) {
          Class6947 var7 = var2.method2992();
          if (!var7.method21430(Class8890.field40225)) {
@@ -28,7 +28,7 @@ public class Class3711 extends Class3676<Class1042> {
       }
    }
 
-   public void method12504(Class1657 var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
       if (var3 % 100L == 0L) {
          var2.method4716(var1, var3, 3);
       }

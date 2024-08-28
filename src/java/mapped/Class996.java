@@ -30,7 +30,7 @@ public class Class996 extends Class995 {
 
    @Override
    public void method3215(double var1, double var3, double var5) {
-      super.method3215((double)Class9679.method37769(var1) + 0.5, (double)Class9679.method37769(var3) + 0.5, (double)Class9679.method37769(var5) + 0.5);
+      super.method3215((double) MathHelper.method37769(var1) + 0.5, (double) MathHelper.method37769(var3) + 0.5, (double) MathHelper.method37769(var5) + 0.5);
    }
 
    @Override
@@ -76,7 +76,7 @@ public class Class996 extends Class995 {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
       if (this.field5024.field9020) {
          return Class2274.field14818;
       } else {

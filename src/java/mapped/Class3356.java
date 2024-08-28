@@ -44,7 +44,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020 && var2.method6759(var3) == null) {
          var2.method6728(var3, false);
          return Class2274.field14819;
@@ -54,9 +54,9 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public List<Class8848> method11697(Class7380 var1, Class9464 var2) {
+   public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
       Class955 var5 = this.method11930(var2.method36457(), new BlockPos(var2.<Vector3d>method36458(Class9525.field44335)));
-      return var5 != null ? var5.method3864().method23434(var2) : Collections.<Class8848>emptyList();
+      return var5 != null ? var5.method3864().method23434(var2) : Collections.<ItemStack>emptyList();
    }
 
    @Override
@@ -77,8 +77,8 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return Class8848.field39973;
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return ItemStack.field39973;
    }
 
    @Override

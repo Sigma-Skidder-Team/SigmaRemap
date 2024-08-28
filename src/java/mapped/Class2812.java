@@ -92,7 +92,7 @@ public class Class2812<T extends Entity> extends Class2803<T> {
 
    @Override
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      this.field17502.field31037 = -0.2F + 0.4F * Class9679.method37763(var4 * 0.2F);
-      this.field17503.field31037 = 0.2F - 0.4F * Class9679.method37763(var4 * 0.2F);
+      this.field17502.field31037 = -0.2F + 0.4F * MathHelper.method37763(var4 * 0.2F);
+      this.field17503.field31037 = 0.2F - 0.4F * MathHelper.method37763(var4 * 0.2F);
    }
 }

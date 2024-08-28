@@ -81,7 +81,7 @@ public class Class1040 extends Class1038 implements Class1041 {
          int var3 = this.method4670();
          this.field5771 -= var3;
          if (this.field5771 <= 0) {
-            this.method4669((Class1657)this.field5024);
+            this.method4669((ServerWorld)this.field5024);
          }
       }
 
@@ -89,8 +89,8 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (var5.method32107() != Class8514.field37872) {
          return super.method4285(var1, var2);
       } else if (!this.method3033(Class8254.field35484)) {
@@ -101,7 +101,7 @@ public class Class1040 extends Class1038 implements Class1041 {
          }
 
          if (!this.field5024.field9020) {
-            this.method4668(var1.method3375(), this.field5054.nextInt(2401) + 3600);
+            this.method4668(var1.getUniqueID(), this.field5054.nextInt(2401) + 3600);
          }
 
          return Class2274.field14818;
@@ -150,11 +150,11 @@ public class Class1040 extends Class1038 implements Class1041 {
       }
    }
 
-   private void method4669(Class1657 var1) {
+   private void method4669(ServerWorld var1) {
       Class1042 var4 = this.<Class1042>method4292(Class8992.field41098, false);
 
       for (Class2106 var8 : Class2106.values()) {
-         Class8848 var9 = this.method2943(var8);
+         ItemStack var9 = this.method2943(var8);
          if (!var9.method32105()) {
             if (!Class7858.method26334(var9)) {
                double var10 = (double)this.method4269(var8);
@@ -245,8 +245,8 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public Class8848 method4644() {
-      return Class8848.field39973;
+   public ItemStack method4644() {
+      return ItemStack.field39973;
    }
 
    public void method4671(Class39 var1) {

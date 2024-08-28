@@ -19,12 +19,12 @@ public class Class5106 implements Class5105 {
       switch (Class9334.field43314[var1.method17508().ordinal()]) {
          case 1:
             this.field23207.method30690(Class1858.field9904);
-            if (var1.method17509() != Class9246.method34773().getProtocolVersion()) {
+            if (var1.method17509() != SharedConstants.method34773().getProtocolVersion()) {
                TranslationTextComponent var4;
                if (var1.method17509() < 754) {
-                  var4 = new TranslationTextComponent("multiplayer.disconnect.outdated_client", Class9246.method34773().getName());
+                  var4 = new TranslationTextComponent("multiplayer.disconnect.outdated_client", SharedConstants.method34773().getName());
                } else {
-                  var4 = new TranslationTextComponent("multiplayer.disconnect.incompatible", Class9246.method34773().getName());
+                  var4 = new TranslationTextComponent("multiplayer.disconnect.incompatible", SharedConstants.method34773().getName());
                }
 
                this.field23207.method30693(new Class5490(var4));

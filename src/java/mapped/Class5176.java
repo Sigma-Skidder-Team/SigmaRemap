@@ -15,7 +15,7 @@ public class Class5176 extends Module {
     private int field23469 = -1;
     private int field23470;
     private int field23471;
-    private Class79 field23472;
+    private Hand field23472;
     private BlockFly field23473 = null;
     private boolean field23474;
     private boolean field23475 = false;
@@ -166,9 +166,9 @@ public class Class5176 extends Module {
 
                         mc.field1337.method23139(mc.field1339, mc.field1338, this.field23472, var20);
                         if (!this.method16004().method15974("NoSwing")) {
-                            mc.field1339.method2820(this.field23472);
+                            mc.field1339.swingArm(this.field23472);
                         } else {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5511(this.field23472));
+                            mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(this.field23472));
                         }
 
                         if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
@@ -178,13 +178,13 @@ public class Class5176 extends Module {
                 } else {
                     this.field23470++;
                     var1.method13908(true);
-                    this.field23472 = Class79.field182;
-                    if (BlockFly.method16733(mc.field1339.method3094(Class79.field183).method32107())
+                    this.field23472 = Hand.field182;
+                    if (BlockFly.method16733(mc.field1339.method3094(Hand.field183).method32107())
                             && (
                             mc.field1339.method3094(this.field23472).method32105()
                                     || !BlockFly.method16733(mc.field1339.method3094(this.field23472).method32107())
                     )) {
-                        this.field23472 = Class79.field183;
+                        this.field23472 = Hand.field183;
                     }
 
                     double var5 = var1.method13909();
@@ -203,13 +203,13 @@ public class Class5176 extends Module {
 
                     if (!Class9217.method34578(
                             new BlockPos(
-                                    mc.field1339.method3431().method11320(),
-                                    mc.field1339.method3431().method11321() - 1.0,
-                                    mc.field1339.method3431().method11322()
+                                    mc.field1339.getPositionVec().method11320(),
+                                    mc.field1339.getPositionVec().method11321() - 1.0,
+                                    mc.field1339.getPositionVec().method11322()
                             )
                     )) {
-                        var5 = mc.field1339.method3431().method11320();
-                        var7 = mc.field1339.method3431().method11322();
+                        var5 = mc.field1339.getPositionVec().method11320();
+                        var7 = mc.field1339.getPositionVec().method11322();
                     }
 
                     BlockPos var11 = new BlockPos(var5, var9 - 1.0, var7);
@@ -261,7 +261,7 @@ public class Class5176 extends Module {
             }
 
             if (this.method16004().method15974("No Sprint")) {
-                mc.field1339.method3098(false);
+                mc.field1339.setSprinting(false);
             }
 
             if (mc.field1339.field5036) {
@@ -294,7 +294,7 @@ public class Class5176 extends Module {
                     break;
                 case "Cubecraft":
                     double var6 = 0.2;
-                    float var8 = this.method16118(Class9679.method37792(mc.field1339.field5031));
+                    float var8 = this.method16118(MathHelper.method37792(mc.field1339.field5031));
                     if (mc.field1299.field44636.method8509()) {
                         mc.field1284.field40360 = 1.0F;
                     } else if (mc.field1339.field5036) {

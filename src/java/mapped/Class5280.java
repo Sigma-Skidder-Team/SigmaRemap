@@ -145,8 +145,8 @@ public class Class5280 extends Module {
                     float var6 = (float) Math.toRadians(mc.field1339.field5032);
                     double var7 = 0.2F;
                     double var9 = mc.field1339.field5035.method19675() / 2.0;
-                    double var11 = (double) Class9679.method37764(var5) * var9;
-                    double var13 = (double) Class9679.method37763(var5) * var9;
+                    double var11 = (double) MathHelper.method37764(var5) * var9;
+                    double var13 = (double) MathHelper.method37763(var5) * var9;
                     double var15 = mc.field1339.field5048
                             + (mc.field1339.getPosX() - mc.field1339.field5048) * (double) mc.field1284.field40356;
                     double var17 = mc.field1339.field5049

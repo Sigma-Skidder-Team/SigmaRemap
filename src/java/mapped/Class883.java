@@ -11,9 +11,9 @@ public class Class883 extends Class882 {
       this(Class8992.field41048, var1);
       super.method3459(var2);
       this.method3215(
-         var2.getPosX() - (double)(var2.method3429() + 1.0F) * 0.5 * (double)Class9679.method37763(var2.field4965 * (float) (Math.PI / 180.0)),
+         var2.getPosX() - (double)(var2.method3429() + 1.0F) * 0.5 * (double) MathHelper.method37763(var2.field4965 * (float) (Math.PI / 180.0)),
          var2.method3442() - 0.1F,
-         var2.getPosZ() + (double)(var2.method3429() + 1.0F) * 0.5 * (double)Class9679.method37764(var2.field4965 * (float) (Math.PI / 180.0))
+         var2.getPosZ() + (double)(var2.method3429() + 1.0F) * 0.5 * (double) MathHelper.method37764(var2.field4965 * (float) (Math.PI / 180.0))
       );
    }
 

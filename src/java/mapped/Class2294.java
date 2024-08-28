@@ -29,6 +29,6 @@ public enum Class2294 {
    }
 
    public static Class2294 method9053(int var0) {
-      return field15249[Class9679.method37788(var0, field15249.length)];
+      return field15249[MathHelper.normalizeAngle(var0, field15249.length)];
    }
 }

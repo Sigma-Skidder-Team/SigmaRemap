@@ -214,7 +214,7 @@ public class Class9498 {
       float[] var16 = Class9664.method37720(var0.get("rotate"), 3, new float[3]);
 
       for (int var17 = 0; var17 < var16.length; var17++) {
-         var16[var17] = var16[var17] / 180.0F * Class9679.field45210;
+         var16[var17] = var16[var17] / 180.0F * MathHelper.field45210;
       }
 
       if (var12) {

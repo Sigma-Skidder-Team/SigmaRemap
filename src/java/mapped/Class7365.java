@@ -71,7 +71,7 @@ public class Class7365 extends Class7362 {
                var13.method8373(var5, var11, var7);
             }
 
-            var11 = (double)(Class9679.method37769(var11) + 1);
+            var11 = (double)(MathHelper.method37769(var11) + 1);
             this.field31529 = new Class999(this.field31519.field5024, var5, var11, var7);
             this.field31529.method4113(this.field31519);
             this.field31529.method4097(5.0F);

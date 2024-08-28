@@ -296,9 +296,9 @@ public class Class7448 implements Class7443 {
       if (this.field32024 == 2) {
          return this.field32027;
       } else {
-         int var11 = Class9679.method37769(var2);
-         int var12 = Class9679.method37769(var4);
-         int var13 = Class9679.method37769(var6);
+         int var11 = MathHelper.method37769(var2);
+         int var12 = MathHelper.method37769(var4);
+         int var13 = MathHelper.method37769(var6);
          int var14 = 0;
          int var15 = 0;
          int var16 = 0;
@@ -324,8 +324,8 @@ public class Class7448 implements Class7443 {
    }
 
    private int method24072(Class8907 var1, BlockPos var2) {
-      double var5 = (double)Class9679.method37777(var1.method32503(var2), 0.0F, 1.0F);
-      double var7 = (double)Class9679.method37777(var1.method32516(), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.method37777(var1.method32503(var2), 0.0F, 1.0F);
+      double var7 = (double) MathHelper.method37777(var1.method32516(), 0.0F, 1.0F);
       var7 *= var5;
       int var9 = (int)((1.0 - var5) * (double)(this.field32030 - 1));
       int var10 = (int)((1.0 - var7) * (double)(this.field32031 - 1));

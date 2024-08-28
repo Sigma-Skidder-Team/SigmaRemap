@@ -45,7 +45,7 @@ public class Class8044 {
    public void method27628() {
       try {
          Class39 var3 = new Class39();
-         var3.method102("DataVersion", Class9246.method34773().getWorldVersion());
+         var3.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
 
          for (int var4 = 0; var4 < 9; var4++) {
             var3.method99(String.valueOf(var4), this.method27629(var4).method9284());

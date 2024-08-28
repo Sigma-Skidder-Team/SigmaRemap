@@ -59,7 +59,7 @@ public class Class1645 extends Class314 implements Class1646 {
       var3.setDaemon(true);
       var3.setUncaughtExceptionHandler(new Class6030(field1208));
       var3.start();
-      field1208.info("Starting minecraft server version " + Class9246.method34773().getName());
+      field1208.info("Starting minecraft server version " + SharedConstants.method34773().getName());
       if (Runtime.getRuntime().maxMemory() / 1024L / 1024L < 512L) {
          field1208.warn("To start the server with more ram, launch it as \"java -Xmx1024M -Xms1024M -jar minecraft_server.jar\"");
       }
@@ -153,7 +153,7 @@ public class Class1645 extends Class314 implements Class1646 {
             var12.start();
          }
 
-         Class8514.field37222.method11737(Class7401.field31670, Class25.<Class8848>method67());
+         Class8514.field37222.method11737(Class7401.field31670, Class25.<ItemStack>method67());
          if (var4.field43827) {
             Class9126.method34052(this);
          }
@@ -268,8 +268,8 @@ public class Class1645 extends Class314 implements Class1646 {
 
    @Override
    public void method1347(Class7998 var1) {
-      var1.method27298("whitelist_enabled", this.method1367().method19476());
-      var1.method27298("whitelist_count", this.method1367().method19469().length);
+      var1.method27298("whitelist_enabled", this.getPlayerList().method19476());
+      var1.method27298("whitelist_count", this.getPlayerList().method19469().length);
       super.method1347(var1);
    }
 
@@ -280,7 +280,7 @@ public class Class1645 extends Class314 implements Class1646 {
    public void method6500() {
       while (!this.field8929.isEmpty()) {
          Class9335 var3 = this.field8929.remove(0);
-         this.method1403().method18836(var3.field43317, var3.field43316);
+         this.getCommandManager().handleCommand(var3.field43317, var3.field43316);
       }
    }
 
@@ -299,8 +299,8 @@ public class Class1645 extends Class314 implements Class1646 {
       return this.method6498().field43813;
    }
 
-   public Class6394 method1367() {
-      return (Class6394)super.method1367();
+   public Class6394 getPlayerList() {
+      return (Class6394)super.getPlayerList();
    }
 
    @Override
@@ -350,14 +350,14 @@ public class Class1645 extends Class314 implements Class1646 {
    }
 
    @Override
-   public boolean method1378(Class1657 var1, BlockPos var2, PlayerEntity var3) {
+   public boolean method1378(ServerWorld var1, BlockPos var2, PlayerEntity var3) {
       if (var1.method6813() == Class1655.field8999) {
-         if (!this.method1367().method19470().method14440()) {
-            if (!this.method1367().method19464(var3.method2906())) {
+         if (!this.getPlayerList().method19470().method14440()) {
+            if (!this.getPlayerList().canSendCommands(var3.getGameProfile())) {
                if (this.method1377() > 0) {
                   BlockPos var6 = var1.method6947();
-                  int var7 = Class9679.method37772(var2.method8304() - var6.method8304());
-                  int var8 = Class9679.method37772(var2.method8306() - var6.method8306());
+                  int var7 = MathHelper.method37772(var2.method8304() - var6.method8304());
+                  int var8 = MathHelper.method37772(var2.method8306() - var6.method8306());
                   int var9 = Math.max(var7, var8);
                   return var9 <= this.method1377();
                } else {
@@ -493,7 +493,7 @@ public class Class1645 extends Class314 implements Class1646 {
    @Override
    public String method6509(String var1) {
       this.field8931.method3578();
-      this.method1635(() -> this.method1403().method18836(this.field8931.method3580(), var1));
+      this.method1635(() -> this.getCommandManager().handleCommand(this.field8931.method3580(), var1));
       return this.field8931.method3579();
    }
 
@@ -530,7 +530,7 @@ public class Class1645 extends Class314 implements Class1646 {
    @Nullable
    @Override
    public IChatFilter method1438(Class878 var1) {
-      return this.field8935 == null ? null : this.field8935.func_244566_a(var1.method2906());
+      return this.field8935 == null ? null : this.field8935.func_244566_a(var1.getGameProfile());
    }
 
    // $VF: synthetic method

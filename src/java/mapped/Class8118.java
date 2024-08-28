@@ -41,7 +41,7 @@ public class Class8118 implements Class8117 {
    @Override
    public double method28109() {
       double var3 = (double)(Util.method38487() - this.field34890) / this.field34891;
-      return !(var3 < 1.0) ? this.field34888 : Class9679.method37822(var3, this.field34887, this.field34888);
+      return !(var3 < 1.0) ? this.field34888 : MathHelper.method37822(var3, this.field34887, this.field34888);
    }
 
    @Override

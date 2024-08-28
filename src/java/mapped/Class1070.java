@@ -104,7 +104,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public boolean method4978() {
-      return !(this.method3421() instanceof Class1070) ? this.field5063.<Boolean>method35445(field5906) : ((Class1070)this.method3421()).method4978();
+      return !(this.getRidingEntity() instanceof Class1070) ? this.field5063.<Boolean>method35445(field5906) : ((Class1070)this.getRidingEntity()).method4978();
    }
 
    @Override
@@ -116,7 +116,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    public double method3310() {
       float var3 = Math.min(0.25F, this.field4960);
       float var4 = this.field4961;
-      return (double)this.method3430() - 0.19 + (double)(0.12F * Class9679.method37764(var4 * 1.5F) * 2.0F * var3);
+      return (double)this.method3430() - 0.19 + (double)(0.12F * MathHelper.method37764(var4 * 1.5F) * 2.0F * var3);
    }
 
    @Override
@@ -321,12 +321,12 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       }
    }
 
-   public Class1070 method4389(Class1657 var1, Class1045 var2) {
+   public Class1070 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41088.method33215(var1);
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return field5903.test(var1);
    }
 
@@ -339,7 +339,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
       boolean var5 = this.method4381(var1.method3094(var2));
       if (!var5 && this.method4943() && !this.method3329() && !var1.method2851()) {
          if (!this.field5024.field9020) {
@@ -366,7 +366,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
             return var6;
          } else {
-            Class8848 var7 = var1.method3094(var2);
+            ItemStack var7 = var1.method3094(var2);
             return var7.method32107() != Class8514.field37886 ? Class2274.field14820 : var7.method32125(var1, this, var2);
          }
       }
@@ -393,7 +393,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
          } else {
             Class1006 var10 = Class8992.field41110.method33215(var1.method6970());
             var8 = this.method4987(var1, var2, var10, new Class5096(Class1038.method4661(this.field5054), false));
-            var10.method2944(Class2106.field13731, new Class8848(Class8514.field38065));
+            var10.method2944(Class2106.field13731, new ItemStack(Class8514.field38065));
             this.method4942((Class2266)null);
          }
 

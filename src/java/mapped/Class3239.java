@@ -45,11 +45,11 @@ public class Class3239 extends Class3238 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          return Class3329.method11880(var4, var2, var3);
       } else {
-         Class8848 var9 = var4.method3094(var5);
+         ItemStack var9 = var4.method3094(var5);
          return var9.method32107() != Class8514.field38087 ? Class2274.field14820 : Class2274.field14818;
       }
    }

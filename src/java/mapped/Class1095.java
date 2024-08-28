@@ -62,7 +62,7 @@ public class Class1095 extends Class1018 {
          .method20002(
             4,
             new Class2770<PlayerEntity>(
-               this, PlayerEntity.class, 16.0F, 1.6, 1.4, var1 -> field6000.test(var1) && !this.method5151(var1.method3375()) && !this.method5133()
+               this, PlayerEntity.class, 16.0F, 1.6, 1.4, var1 -> field6000.test(var1) && !this.method5151(var1.getUniqueID()) && !this.method5133()
             )
          );
       this.field5600
@@ -82,11 +82,11 @@ public class Class1095 extends Class1018 {
       this.field5600.method20002(12, new Class2614(this, PlayerEntity.class, 24.0F));
       this.field5600.method20002(13, new Class2694(this));
       this.field5601
-         .method20002(3, new Class2714(Class880.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.method3375())));
+         .method20002(3, new Class2714(Class880.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.getUniqueID())));
    }
 
    @Override
-   public Class9455 method3060(Class8848 var1) {
+   public Class9455 method3060(ItemStack var1) {
       return Class6067.field26592;
    }
 
@@ -94,7 +94,7 @@ public class Class1095 extends Class1018 {
    public void method2871() {
       if (!this.field5024.field9020 && this.method3066() && this.method3138()) {
          this.field6008++;
-         Class8848 var3 = this.method2943(Class2106.field13731);
+         ItemStack var3 = this.method2943(Class2106.field13731);
          if (this.method5122(var3)) {
             if (this.field6008 <= 600) {
                if (this.field6008 > 560 && this.field5054.nextFloat() < 0.1F) {
@@ -102,7 +102,7 @@ public class Class1095 extends Class1018 {
                   this.field5024.method6786(this, (byte)45);
                }
             } else {
-               Class8848 var4 = var3.method32111(this.field5024, this);
+               ItemStack var4 = var3.method32111(this.field5024, this);
                if (!var4.method32105()) {
                   this.method2944(Class2106.field13731, var4);
                }
@@ -118,7 +118,7 @@ public class Class1095 extends Class1018 {
          }
       }
 
-      if (this.method3176() || this.method2896()) {
+      if (this.isSleeping() || this.method2896()) {
          this.field4981 = false;
          this.field4982 = 0.0F;
          this.field4984 = 0.0F;
@@ -135,35 +135,35 @@ public class Class1095 extends Class1018 {
       return this.method3044();
    }
 
-   private boolean method5122(Class8848 var1) {
-      return var1.method32107().method11744() && this.method4232() == null && this.field5036 && !this.method3176();
+   private boolean method5122(ItemStack var1) {
+      return var1.method32107().method11744() && this.method4232() == null && this.field5036 && !this.isSleeping();
    }
 
    @Override
    public void method4270(Class9755 var1) {
       if (this.field5054.nextFloat() < 0.2F) {
          float var4 = this.field5054.nextFloat();
-         Class8848 var5;
+         ItemStack var5;
          if (!(var4 < 0.05F)) {
             if (!(var4 < 0.2F)) {
                if (!(var4 < 0.4F)) {
                   if (!(var4 < 0.6F)) {
                      if (!(var4 < 0.8F)) {
-                        var5 = new Class8848(Class8514.field37839);
+                        var5 = new ItemStack(Class8514.field37839);
                      } else {
-                        var5 = new Class8848(Class8514.field37890);
+                        var5 = new ItemStack(Class8514.field37890);
                      }
                   } else {
-                     var5 = new Class8848(Class8514.field37842);
+                     var5 = new ItemStack(Class8514.field37842);
                   }
                } else {
-                  var5 = !this.field5054.nextBoolean() ? new Class8848(Class8514.field38081) : new Class8848(Class8514.field38080);
+                  var5 = !this.field5054.nextBoolean() ? new ItemStack(Class8514.field38081) : new ItemStack(Class8514.field38080);
                }
             } else {
-               var5 = new Class8848(Class8514.field37904);
+               var5 = new ItemStack(Class8514.field37904);
             }
          } else {
-            var5 = new Class8848(Class8514.field38049);
+            var5 = new ItemStack(Class8514.field38049);
          }
 
          this.method2944(Class2106.field13731, var5);
@@ -175,7 +175,7 @@ public class Class1095 extends Class1018 {
       if (var1 != 45) {
          super.method2866(var1);
       } else {
-         Class8848 var4 = this.method2943(Class2106.field13731);
+         ItemStack var4 = this.method2943(Class2106.field13731);
          if (!var4.method32105()) {
             for (int var5 = 0; var5 < 8; var5++) {
                Vector3d var6 = new Vector3d(((double)this.field5054.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0)
@@ -204,7 +204,7 @@ public class Class1095 extends Class1018 {
          .method21849(Class9173.field42110, 2.0);
    }
 
-   public Class1095 method4389(Class1657 var1, Class1045 var2) {
+   public Class1095 method4389(ServerWorld var1, Class1045 var2) {
       Class1095 var5 = Class8992.field41033.method33215(var1);
       var5.method5126(!this.field5054.nextBoolean() ? ((Class1095)var2).method5125() : this.method5125());
       return var5;
@@ -230,7 +230,7 @@ public class Class1095 extends Class1018 {
          this.method4770(-24000);
       }
 
-      if (var1 instanceof Class1657) {
+      if (var1 instanceof ServerWorld) {
          this.method5124();
       }
 
@@ -251,7 +251,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method4501(PlayerEntity var1, Class8848 var2) {
+   public void method4501(PlayerEntity var1, ItemStack var2) {
       if (this.method4381(var2)) {
          this.method2863(this.method3060(var2), 1.0F, 1.0F);
       }
@@ -300,7 +300,7 @@ public class Class1095 extends Class1018 {
       }
 
       var1.method99("Trusted", var5);
-      var1.method115("Sleeping", this.method3176());
+      var1.method115("Sleeping", this.isSleeping());
       var1.method109("Type", this.method5125().method567());
       var1.method115("Sitting", this.method5129());
       var1.method115("Crouching", this.method3336());
@@ -319,7 +319,7 @@ public class Class1095 extends Class1018 {
       this.method5126(Class186.method569(var1.method126("Type")));
       this.method5130(var1.method132("Sitting"));
       this.method5143(var1.method132("Crouching"));
-      if (this.field5024 instanceof Class1657) {
+      if (this.field5024 instanceof ServerWorld) {
          this.method5124();
       }
    }
@@ -349,7 +349,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public boolean method3176() {
+   public boolean isSleeping() {
       return this.method5137(32);
    }
 
@@ -370,38 +370,38 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public boolean method2980(Class8848 var1) {
+   public boolean method2980(ItemStack var1) {
       Class2106 var4 = Class1006.method4271(var1);
       return !this.method2943(var4).method32105() ? false : var4 == Class2106.field13731 && super.method2980(var1);
    }
 
    @Override
-   public boolean method4252(Class8848 var1) {
+   public boolean method4252(ItemStack var1) {
       Class3257 var4 = var1.method32107();
-      Class8848 var5 = this.method2943(Class2106.field13731);
+      ItemStack var5 = this.method2943(Class2106.field13731);
       return var5.method32105() || this.field6008 > 0 && var4.method11744() && !var5.method32107().method11744();
    }
 
-   private void method5138(Class8848 var1) {
+   private void method5138(ItemStack var1) {
       if (!var1.method32105() && !this.field5024.field9020) {
          Class1000 var4 = new Class1000(
             this.field5024, this.getPosX() + this.method3320().field18048, this.getPosY() + 1.0, this.getPosZ() + this.method3320().field18050, var1
          );
          var4.method4134(40);
-         var4.method4129(this.method3375());
+         var4.method4129(this.getUniqueID());
          this.method2863(Class6067.field26597, 1.0F, 1.0F);
          this.field5024.method6916(var4);
       }
    }
 
-   private void method5139(Class8848 var1) {
+   private void method5139(ItemStack var1) {
       Class1000 var4 = new Class1000(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var1);
       this.field5024.method6916(var4);
    }
 
    @Override
    public void method4246(Class1000 var1) {
-      Class8848 var4 = var1.method4124();
+      ItemStack var4 = var1.method4124();
       if (this.method4252(var4)) {
          int var5 = var4.method32179();
          if (var5 > 1) {
@@ -427,7 +427,7 @@ public class Class1095 extends Class1018 {
             this.method5148();
          }
 
-         if (var3 || this.method3176()) {
+         if (var3 || this.isSleeping()) {
             this.method5130(false);
          }
 
@@ -457,13 +457,13 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return var1.method32107() == Class8514.field38170;
    }
 
    @Override
    public void method4284(PlayerEntity var1, Class1006 var2) {
-      ((Class1095)var2).method5128(var1.method3375());
+      ((Class1095)var2).method5128(var1.getUniqueID());
    }
 
    public boolean method5140() {
@@ -496,11 +496,11 @@ public class Class1095 extends Class1018 {
    }
 
    public float method5146(float var1) {
-      return Class9679.method37821(var1, this.field6005, this.field6004) * 0.11F * (float) Math.PI;
+      return MathHelper.method37821(var1, this.field6005, this.field6004) * 0.11F * (float) Math.PI;
    }
 
    public float method5147(float var1) {
-      return Class9679.method37821(var1, this.field6007, this.field6006);
+      return MathHelper.method37821(var1, this.field6007, this.field6006);
    }
 
    @Override
@@ -514,7 +514,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public int method3067(float var1, float var2) {
-      return Class9679.method37773((var1 - 5.0F) * var2);
+      return MathHelper.method37773((var1 - 5.0F) * var2);
    }
 
    private void method5148() {
@@ -531,7 +531,7 @@ public class Class1095 extends Class1018 {
    }
 
    private boolean method5150() {
-      return !this.method3176() && !this.method5129() && !this.method5131();
+      return !this.isSleeping() && !this.method5129() && !this.method5131();
    }
 
    @Override
@@ -547,7 +547,7 @@ public class Class1095 extends Class1018 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      if (!this.method3176()) {
+      if (!this.isSleeping()) {
          if (!this.field5024.method6740() && this.field5054.nextFloat() < 0.1F) {
             List var3 = this.field5024.<Entity>method6772(PlayerEntity.class, this.method3389().method19663(16.0, 16.0, 16.0), Class8088.field34763);
             if (var3.isEmpty()) {
@@ -579,10 +579,10 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method3052(Class8654 var1) {
-      Class8848 var4 = this.method2943(Class2106.field13731);
+      ItemStack var4 = this.method2943(Class2106.field13731);
       if (!var4.method32105()) {
          this.method3302(var4);
-         this.method2944(Class2106.field13731, Class8848.field39973);
+         this.method2944(Class2106.field13731, ItemStack.field39973);
       }
 
       super.method3052(var1);
@@ -732,8 +732,8 @@ public class Class1095 extends Class1018 {
             return false;
          } else {
             for (UUID var4 : method5174(Class1095.this)) {
-               if (var4 != null && Class1095.this.field5024 instanceof Class1657) {
-                  Entity var5 = ((Class1657)Class1095.this.field5024).method6942(var4);
+               if (var4 != null && Class1095.this.field5024 instanceof ServerWorld) {
+                  Entity var5 = ((ServerWorld)Class1095.this.field5024).method6942(var4);
                   if (var5 instanceof Class880) {
                      Class880 var6 = (Class880)var5;
                      this.field17202 = var6;

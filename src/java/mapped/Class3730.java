@@ -17,11 +17,11 @@ public class Class3730 extends Class3676<Class1006> {
       this.field19834 = var1;
    }
 
-   public boolean method12508(Class1657 var1, Class1006 var2) {
+   public boolean method12508(ServerWorld var1, Class1006 var2) {
       return var2.method3005() && this.method12648(var1, var2);
    }
 
-   public void method12502(Class1657 var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
       super.method12502(var1, var2, var3);
       this.method12652(var2).ifPresent(var3x -> {
          this.field19835 = var3x;
@@ -32,7 +32,7 @@ public class Class3730 extends Class3676<Class1006> {
       });
    }
 
-   public void method12506(Class1657 var1, Class1006 var2, long var3) {
+   public void method12506(ServerWorld var1, Class1006 var2, long var3) {
       super.method12506(var1, var2, var3);
       this.field19835 = null;
       this.field19836 = 0;
@@ -40,7 +40,7 @@ public class Class3730 extends Class3676<Class1006> {
       this.field19838 = 0;
    }
 
-   public boolean method12499(Class1657 var1, Class1006 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1006 var2, long var3) {
       return var2.method3005()
          && this.field19835 != null
          && this.method12651(var1, this.field19835)
@@ -53,7 +53,7 @@ public class Class3730 extends Class3676<Class1006> {
       return false;
    }
 
-   public void method12504(Class1657 var1, Class1006 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1006 var2, long var3) {
       if (this.method12649(var1, var2)) {
          if (this.field19838 <= 0) {
             if (this.method12650(var1, var2)) {
@@ -73,21 +73,21 @@ public class Class3730 extends Class3676<Class1006> {
       var1.method2992().method21406(Class8830.field39824, new Class8999(var2, this.field19834, 0));
    }
 
-   private boolean method12648(Class1657 var1, Class1006 var2) {
+   private boolean method12648(ServerWorld var1, Class1006 var2) {
       return this.method12649(var1, var2) || this.method12652(var2).isPresent();
    }
 
-   private boolean method12649(Class1657 var1, Class1006 var2) {
+   private boolean method12649(ServerWorld var1, Class1006 var2) {
       BlockPos var5 = var2.method3432();
       BlockPos var6 = var5.method8313();
       return this.method12651(var1, var5) || this.method12651(var1, var6);
    }
 
-   private boolean method12650(Class1657 var1, Class1006 var2) {
+   private boolean method12650(ServerWorld var1, Class1006 var2) {
       return this.method12651(var1, var2.method3432());
    }
 
-   private boolean method12651(Class1657 var1, BlockPos var2) {
+   private boolean method12651(ServerWorld var1, BlockPos var2) {
       return var1.method6738(var2).method23446(Class7645.field32770);
    }
 
@@ -95,11 +95,11 @@ public class Class3730 extends Class3676<Class1006> {
       return var1.method2992().<BlockPos>method21410(Class8830.field39834);
    }
 
-   private boolean method12653(Class1657 var1, Class1006 var2) {
+   private boolean method12653(ServerWorld var1, Class1006 var2) {
       return !this.method12649(var1, var2) && this.field19836 <= 0;
    }
 
-   private boolean method12654(Class1657 var1, Class1006 var2) {
+   private boolean method12654(ServerWorld var1, Class1006 var2) {
       return this.method12649(var1, var2) && this.field19837 <= 0;
    }
 }

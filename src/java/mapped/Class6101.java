@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class Class6101 {
    private static final Logger field27347 = LogManager.getLogger();
    private final BlockPos field27348;
-   private final Class1657 field27349;
+   private final ServerWorld field27349;
    private final Class7879 field27350;
    private final int field27351;
    private final List<Class8262> field27352 = Lists.newArrayList();
@@ -23,7 +23,7 @@ public class Class6101 {
    private int field27356 = 0;
    private Mutable field27357;
 
-   public Class6101(Collection<Class8363> var1, BlockPos var2, Class80 var3, Class1657 var4, Class7879 var5, int var6) {
+   public Class6101(Collection<Class8363> var1, BlockPos var2, Class80 var3, ServerWorld var4, Class7879 var5, int var6) {
       this.field27357 = var2.method8354();
       this.field27348 = var2;
       this.field27349 = var4;

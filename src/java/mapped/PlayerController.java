@@ -10,7 +10,7 @@ public class PlayerController {
    public final Minecraft field31358;
    public final ClientPlayNetHandler field31359;
    private BlockPos field31360 = new BlockPos(-1, -1, -1);
-   private Class8848 field31361 = Class8848.field39973;
+   private ItemStack field31361 = ItemStack.field39973;
    public float field31362;
    private float field31363;
    public int field31364;
@@ -155,7 +155,7 @@ public class PlayerController {
                }
 
                this.field31363++;
-               this.field31358.method1567().method37026(this.field31358.field1338, var1, var5, Class9679.method37777(this.field31362, 0.0F, 1.0F));
+               this.field31358.method1567().method37026(this.field31358.field1338, var1, var5, MathHelper.method37777(this.field31362, 0.0F, 1.0F));
                if (this.field31362 >= 1.0F) {
                   this.field31365 = false;
                   this.method23160(Class2070.field13486, var1, var2);
@@ -192,11 +192,11 @@ public class PlayerController {
    }
 
    private boolean method23137(BlockPos var1) {
-      Class8848 var4 = this.field31358.field1339.method3090();
+      ItemStack var4 = this.field31358.field1339.method3090();
       boolean var5 = this.field31361.method32105() && var4.method32105();
       if (!this.field31361.method32105() && !var4.method32105()) {
          var5 = var4.method32107() == this.field31361.method32107()
-            && Class8848.method32127(var4, this.field31361)
+            && ItemStack.method32127(var4, this.field31361)
             && (var4.method32115() || var4.method32117() == this.field31361.method32117());
       }
 
@@ -211,11 +211,11 @@ public class PlayerController {
       }
    }
 
-   public Class2274 method23139(ClientPlayerEntity var1, Class1656 var2, Class79 var3, Class8711 var4) {
+   public Class2274 method23139(ClientPlayerEntity var1, Class1656 var2, Hand var3, Class8711 var4) {
       this.method23138();
       BlockPos var7 = var4.method31423();
       if (this.field31358.field1338.method6810().method24523(var7)) {
-         Class8848 var8 = var1.method3094(var3);
+         ItemStack var8 = var1.method3094(var3);
          if (this.field31366 == Class1894.field11105) {
             this.field31359.sendPacket(new Class5570(var3, var4));
             return Class2274.field14818;
@@ -252,15 +252,15 @@ public class PlayerController {
       }
    }
 
-   public Class2274 method23140(PlayerEntity var1, Class1655 var2, Class79 var3) {
+   public Class2274 method23140(PlayerEntity var1, Class1655 var2, Hand var3) {
       if (this.field31366 != Class1894.field11105) {
          this.method23138();
          this.field31359.sendPacket(new Class5555(var3));
-         Class8848 var6 = var1.method3094(var3);
+         ItemStack var6 = var1.method3094(var3);
          if (!var1.method2976().method19635(var6.method32107())) {
             int var7 = var6.method32179();
             Class6794 var8 = var6.method32110(var2, var1, var3);
-            Class8848 var9 = (Class8848)var8.method20695();
+            ItemStack var9 = (ItemStack)var8.method20695();
             if (var9 != var6) {
                var1.method3095(var3, var9);
             }
@@ -284,27 +284,27 @@ public class PlayerController {
 
    public void method23141(PlayerEntity var1, Entity var2) {
       this.method23138();
-      this.field31359.sendPacket(new Class5505(var2, var1.method3331()));
+      this.field31359.sendPacket(new CUseEntityPacket(var2, var1.method3331()));
       if (this.field31366 != Class1894.field11105) {
          var1.method2817(var2);
          var1.method2975();
       }
    }
 
-   public Class2274 method23142(PlayerEntity var1, Entity var2, Class79 var3) {
+   public Class2274 method23142(PlayerEntity var1, Entity var2, Hand var3) {
       this.method23138();
-      this.field31359.sendPacket(new Class5505(var2, var3, var1.method3331()));
+      this.field31359.sendPacket(new CUseEntityPacket(var2, var3, var1.method3331()));
       return this.field31366 != Class1894.field11105 ? var1.method2893(var2, var3) : Class2274.field14820;
    }
 
-   public Class2274 method23143(PlayerEntity var1, Entity var2, Class8709 var3, Class79 var4) {
+   public Class2274 method23143(PlayerEntity var1, Entity var2, Class8709 var3, Hand var4) {
       this.method23138();
       Vector3d var7 = var3.method31419().method11337(var2.getPosX(), var2.getPosY(), var2.getPosZ());
-      this.field31359.sendPacket(new Class5505(var2, var4, var7, var1.method3331()));
+      this.field31359.sendPacket(new CUseEntityPacket(var2, var4, var7, var1.method3331()));
       return this.field31366 != Class1894.field11105 ? var2.method3397(var1, var7, var4) : Class2274.field14820;
    }
 
-   public Class8848 method23144(int var1, int var2, int var3, Class2259 var4, PlayerEntity var5) {
+   public ItemStack method23144(int var1, int var2, int var3, Class2259 var4, PlayerEntity var5) {
       return Class7789.method25869(var1, var2, var3, var4, var5);
    }
 
@@ -316,13 +316,13 @@ public class PlayerController {
       this.field31359.sendPacket(new Class5533(var1, var2));
    }
 
-   public void method23147(Class8848 var1, int var2) {
+   public void method23147(ItemStack var1, int var2) {
       if (this.field31366.method8157()) {
          this.field31359.sendPacket(new Class5514(var2, var1));
       }
    }
 
-   public void method23148(Class8848 var1) {
+   public void method23148(ItemStack var1) {
       if (this.field31366.method8157() && !var1.method32105()) {
          this.field31359.sendPacket(new Class5514(-1, var1));
       }
@@ -351,7 +351,7 @@ public class PlayerController {
    }
 
    public boolean method23154() {
-      return this.field31358.field1339.method3328() && this.field31358.field1339.method3421() instanceof Class1068;
+      return this.field31358.field1339.method3328() && this.field31358.field1339.getRidingEntity() instanceof AbstractHorseEntity;
    }
 
    public boolean method23155() {
@@ -376,7 +376,7 @@ public class PlayerController {
 
    private void method23160(Class2070 var1, BlockPos var2, Direction var3) {
       ClientPlayerEntity var6 = this.field31358.field1339;
-      this.field31368.put(Pair.of(var2, var1), var6.method3431());
+      this.field31368.put(Pair.of(var2, var1), var6.getPositionVec());
       this.field31359.sendPacket(new Class5492(var1, var2, var3));
    }
 

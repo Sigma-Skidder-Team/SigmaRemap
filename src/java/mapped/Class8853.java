@@ -271,15 +271,15 @@ public class Class8853 {
          float var7 = var3.method3429() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof Class1007) {
-            double var10 = -Class9679.method37822((double)var4, var3.field5048, var3.getPosX());
-            double var12 = -Class9679.method37822((double)var4, var3.field5049, var3.getPosY());
-            double var14 = -Class9679.method37822((double)var4, var3.field5050, var3.getPosZ());
+            double var10 = -MathHelper.method37822((double)var4, var3.field5048, var3.getPosX());
+            double var12 = -MathHelper.method37822((double)var4, var3.field5049, var3.getPosY());
+            double var14 = -MathHelper.method37822((double)var4, var3.field5050, var3.getPosZ());
 
             for (Class908 var19 : ((Class1007)var3).method4332()) {
                var1.method35294();
-               double var20 = var10 + Class9679.method37822((double)var4, var19.field5048, var19.getPosX());
-               double var22 = var12 + Class9679.method37822((double)var4, var19.field5049, var19.getPosY());
-               double var24 = var14 + Class9679.method37822((double)var4, var19.field5050, var19.getPosZ());
+               double var20 = var10 + MathHelper.method37822((double)var4, var19.field5048, var19.getPosX());
+               double var22 = var12 + MathHelper.method37822((double)var4, var19.field5049, var19.getPosY());
+               double var24 = var14 + MathHelper.method37822((double)var4, var19.field5050, var19.getPosZ());
                var1.method35291(var20, var22, var24);
                this.method32221(var1, var2, var19, 0.25F, 1.0F, 0.0F);
                var1.method35295();
@@ -389,15 +389,15 @@ public class Class8853 {
             }
          }
 
-         double var10 = Class9679.method37822((double)var4, var2.field5048, var2.getPosX());
-         double var12 = Class9679.method37822((double)var4, var2.field5049, var2.getPosY());
-         double var14 = Class9679.method37822((double)var4, var2.field5050, var2.getPosZ());
-         int var16 = Class9679.method37769(var10 - (double)var9);
-         int var17 = Class9679.method37769(var10 + (double)var9);
-         int var18 = Class9679.method37769(var12 - (double)var9);
-         int var19 = Class9679.method37769(var12);
-         int var20 = Class9679.method37769(var14 - (double)var9);
-         int var21 = Class9679.method37769(var14 + (double)var9);
+         double var10 = MathHelper.method37822((double)var4, var2.field5048, var2.getPosX());
+         double var12 = MathHelper.method37822((double)var4, var2.field5049, var2.getPosY());
+         double var14 = MathHelper.method37822((double)var4, var2.field5050, var2.getPosZ());
+         int var16 = MathHelper.method37769(var10 - (double)var9);
+         int var17 = MathHelper.method37769(var10 + (double)var9);
+         int var18 = MathHelper.method37769(var12 - (double)var9);
+         int var19 = MathHelper.method37769(var12);
+         int var20 = MathHelper.method37769(var14 - (double)var9);
+         int var21 = MathHelper.method37769(var14 + (double)var9);
          Class8892 var22 = var0.method35296();
          Class5422 var23 = var1.method25597(field40010);
 
@@ -463,7 +463,7 @@ public class Class8853 {
    }
 
    public double method32228(Entity var1) {
-      return this.field40017.method37504().method11342(var1.method3431());
+      return this.field40017.method37504().method11342(var1.getPositionVec());
    }
 
    public double method32229(double var1, double var3, double var5) {

@@ -99,7 +99,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       if (!method11496(var4) && var1.method6738(var3.method8313()).method23446(Class7645.field32783)) {
          byte var7 = 5;
          byte var8 = 1;

@@ -23,16 +23,16 @@ public class Class5216 extends Module {
             byte var6 = 4;
             int var7 = var4.nextInt(var6 - var5) + var5;
             if (mc.field1299.field44643.method8509() && this.field23548 >= var7) {
-                mc.field1339.method2820(Class79.field182);
+                mc.field1339.swingArm(Hand.field182);
                 this.field23548 = 0;
                 if (Class5628.method17711(mc.field1339.field5031, mc.field1339.field5032, 4.6F, 0.0) != null) {
                     mc.getClientPlayNetHandler()
                             .sendPacket(
-                                    new Class5505(
+                                    new CUseEntityPacket(
                                             Class5628.method17711(mc.field1339.field5031, mc.field1339.field5032, 4.6F, 0.0), mc.field1339.method3331()
                                     )
                             );
-                    mc.field1339.method2820(Class79.field182);
+                    mc.field1339.swingArm(Hand.field182);
                 }
             }
         }

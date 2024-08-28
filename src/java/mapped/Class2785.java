@@ -52,7 +52,7 @@ public class Class2785 extends Class2595 {
       this.field17407.method4227().method28040(this.field17410, 10.0F, (float)this.field17407.method4259());
       this.field17407.method4230().method21655(this.field17410, this.field17412);
       this.field17411++;
-      if (this.field17411 >= 60 && this.field17407.method3277(this.field17410) < 9.0) {
+      if (this.field17411 >= 60 && this.field17407.getDistanceSq(this.field17410) < 9.0) {
          this.method10979();
       }
    }
@@ -64,9 +64,9 @@ public class Class2785 extends Class2595 {
       Class1018 var6 = null;
 
       for (Class1018 var8 : var3) {
-         if (this.field17407.method4386(var8) && this.field17407.method3277(var8) < var4) {
+         if (this.field17407.method4386(var8) && this.field17407.getDistanceSq(var8) < var4) {
             var6 = var8;
-            var4 = this.field17407.method3277(var8);
+            var4 = this.field17407.getDistanceSq(var8);
          }
       }
 
@@ -74,6 +74,6 @@ public class Class2785 extends Class2595 {
    }
 
    public void method10979() {
-      this.field17407.method4509((Class1657)this.field17409, this.field17410);
+      this.field17407.method4509((ServerWorld)this.field17409, this.field17410);
    }
 }

@@ -21,15 +21,15 @@ public class Class2730<T extends Class1026> extends Class2595 {
          && !this.field17241.method3329()
          && this.field17241.method4552()
          && !this.field17241.method4551().method25388()
-         && !((Class1657)this.field17241.field5024).method6952(this.field17241.method3432());
+         && !((ServerWorld)this.field17241.field5024).method6952(this.field17241.method3432());
    }
 
    @Override
    public boolean method10806() {
       return this.field17241.method4552()
          && !this.field17241.method4551().method25388()
-         && this.field17241.field5024 instanceof Class1657
-         && !((Class1657)this.field17241.field5024).method6952(this.field17241.method3432());
+         && this.field17241.field5024 instanceof ServerWorld
+         && !((ServerWorld)this.field17241.field5024).method6952(this.field17241.method3432());
    }
 
    @Override

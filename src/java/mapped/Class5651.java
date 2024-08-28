@@ -30,13 +30,13 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
       if (!Class7944.method26921() || !Class8981.field40609) {
          var3.method35294();
          Vector3d var8 = var5.method2986(var2);
-         double var9 = (double)(Class9679.method37821(var2, var1.field4965, var1.field4966) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
+         double var9 = (double)(MathHelper.method37821(var2, var1.field4965, var1.field4966) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
          Vector3d var11 = var1.method3394();
          double var12 = Math.cos(var9) * var11.field18050 + Math.sin(var9) * var11.field18048;
          double var14 = Math.sin(var9) * var11.field18050 - Math.cos(var9) * var11.field18048;
-         double var16 = Class9679.method37822((double)var2, var1.field5025, var1.getPosX()) + var12;
-         double var18 = Class9679.method37822((double)var2, var1.field5026, var1.getPosY()) + var11.field18049;
-         double var20 = Class9679.method37822((double)var2, var1.field5027, var1.getPosZ()) + var14;
+         double var16 = MathHelper.method37822((double)var2, var1.field5025, var1.getPosX()) + var12;
+         double var18 = MathHelper.method37822((double)var2, var1.field5026, var1.getPosY()) + var11.field18049;
+         double var20 = MathHelper.method37822((double)var2, var1.field5027, var1.getPosZ()) + var14;
          var3.method35291(var12, var11.field18049, var14);
          float var22 = (float)(var8.field18048 - var16);
          float var23 = (float)(var8.field18049 - var18);
@@ -44,7 +44,7 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
          float var25 = 0.025F;
          Class5422 var26 = var4.method25597(Class4520.method14327());
          Class9367 var27 = var3.method35296().method32361();
-         float var28 = Class9679.method37815(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
+         float var28 = MathHelper.method37815(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
          float var30 = var22 * var28;
          BlockPos var31 = new BlockPos(var1.method3286(var2));
@@ -86,8 +86,8 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
 
       for (int var16 = 0; var16 < 24; var16++) {
          float var17 = (float)var16 / 23.0F;
-         int var18 = (int)Class9679.method37821(var17, (float)var5, (float)var6);
-         int var19 = (int)Class9679.method37821(var17, (float)var7, (float)var8);
+         int var18 = (int) MathHelper.method37821(var17, (float)var5, (float)var6);
+         int var19 = (int) MathHelper.method37821(var17, (float)var7, (float)var8);
          int var20 = Class1699.method7321(var18, var19);
          method17849(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16, false, var11, var12);
          method17849(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16 + 1, true, var11, var12);

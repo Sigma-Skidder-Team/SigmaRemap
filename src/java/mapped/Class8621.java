@@ -117,12 +117,12 @@ public class Class8621 {
                continue;
             }
 
-            double var25 = (double)Class9679.method37766(var21);
+            double var25 = (double) MathHelper.method37766(var21);
             var23 = new Vector3d(var14.getPosX() + var15 / var25 * 2.0, var14.getPosY() + var17 / var25 * 2.0, var14.getPosZ() + var19 / var25 * 2.0);
             var24 = var7;
          }
 
-         var14.field4855.method15671(new Class5475(var2, var3, var23, var24, var6));
+         var14.field4855.sendPacket(new Class5475(var2, var3, var23, var24, var6));
          var12++;
       }
 
@@ -130,7 +130,7 @@ public class Class8621 {
          if (var1.size() != 1) {
             var0.method20179(new TranslationTextComponent("commands.playsound.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.playsound.success.single", var2, ((Class878)var1.iterator().next()).method2954()), true);
+            var0.method20179(new TranslationTextComponent("commands.playsound.success.single", var2, ((Class878)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var12;

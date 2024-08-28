@@ -2,7 +2,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class1076 extends Class1068 {
+public class Class1076 extends AbstractHorseEntity {
    private final Class2669 field5919 = new Class2669(this);
    private boolean field5920;
    private int field5921;
@@ -139,20 +139,20 @@ public class Class1076 extends Class1068 {
 
    @Nullable
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41079.method33215(var1);
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (this.method4932()) {
          if (!this.method3005()) {
             if (!var1.method2851()) {
                if (!this.method3329()) {
                   if (!var5.method32105()) {
                      if (var5.method32107() == Class8514.field37886 && !this.method4943()) {
-                        this.method4952(var1);
+                        this.openGUI(var1);
                         return Class2274.method9002(this.field5024.field9020);
                      }
 
@@ -168,7 +168,7 @@ public class Class1076 extends Class1068 {
                   return super.method4285(var1, var2);
                }
             } else {
-               this.method4952(var1);
+               this.openGUI(var1);
                return Class2274.method9002(this.field5024.field9020);
             }
          } else {

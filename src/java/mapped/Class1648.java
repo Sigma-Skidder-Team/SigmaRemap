@@ -32,8 +32,8 @@ public class Class1648 implements AutoCloseable {
       }
 
       var3 = Class8354.method29289(this.field8948, Class2108.field13750, var3, Math.max(1493, var6));
-      if (var6 < Class9246.method34773().getWorldVersion()) {
-         var3.method102("DataVersion", Class9246.method34773().getWorldVersion());
+      if (var6 < SharedConstants.method34773().getWorldVersion()) {
+         var3.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
       }
 
       return var3;

@@ -119,7 +119,7 @@ public class Class9271 {
    private static void method34925(
       Class8513 var0,
       double var1,
-      Class1657 var3,
+      ServerWorld var3,
       Random var4,
       double var5,
       double var7,
@@ -197,7 +197,7 @@ public class Class9271 {
       }
    }
 
-   private static double method34926(Collection<? extends Entity> var0, Class1657 var1, Class9169[] var2, int var3, boolean var4) {
+   private static double method34926(Collection<? extends Entity> var0, ServerWorld var1, Class9169[] var2, int var3, boolean var4) {
       double var7 = 0.0;
       int var9 = 0;
       HashMap var10 = Maps.newHashMap();
@@ -216,9 +216,9 @@ public class Class9271 {
          }
 
          var12.method3384(
-            (double)Class9679.method37769(Class9169.method34254(var13)) + 0.5,
+            (double) MathHelper.method37769(Class9169.method34254(var13)) + 0.5,
             (double)var13.method34250(var1, var3),
-            (double)Class9679.method37769(Class9169.method34256(var13)) + 0.5
+            (double) MathHelper.method37769(Class9169.method34256(var13)) + 0.5
          );
          double var15 = Double.MAX_VALUE;
 

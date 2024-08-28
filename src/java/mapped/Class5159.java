@@ -125,8 +125,8 @@ public class Class5159 extends Module {
         if (this.method15996()) {
             Packet var4 = var1.method13898();
             if (!(var4 instanceof Class5473)) {
-                if (var4 instanceof Class5616) {
-                    Class5616 var5 = (Class5616) var4;
+                if (var4 instanceof SChatPacket) {
+                    SChatPacket var5 = (SChatPacket) var4;
                     String var6 = var5.method17648().getString();
                     if (this.field23420 > 0 && (var6.contains("Now leaving: §") || var6.contains("Now entering: §"))) {
                         this.field23420--;

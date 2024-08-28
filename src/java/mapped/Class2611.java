@@ -49,7 +49,7 @@ public class Class2611 extends Class2595 {
    public boolean method10806() {
       return this.field16873 != null
          && !this.field16875.method21664()
-         && this.field16871.method3277(this.field16873) > (double)(this.field16877 * this.field16877);
+         && this.field16871.getDistanceSq(this.field16873) > (double)(this.field16877 * this.field16877);
    }
 
    @Override

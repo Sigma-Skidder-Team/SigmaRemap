@@ -17,9 +17,9 @@ public class Class8597 {
    private static int field38686 = Integer.MIN_VALUE;
 
    public static int method30743(Class1655 var0, Entity var1, int var2) {
-      int var5 = Class9679.method37769(var1.getPosX()) >> 4;
-      int var6 = Class9679.method37769(var1.getPosY()) >> 4;
-      int var7 = Class9679.method37769(var1.getPosZ()) >> 4;
+      int var5 = MathHelper.method37769(var1.getPosX()) >> 4;
+      int var6 = MathHelper.method37769(var1.getPosY()) >> 4;
+      int var7 = MathHelper.method37769(var1.getPosZ()) >> 4;
       var6 = Class7944.method26830(var6, 0, 15);
       Class1674 var8 = var0.method6824(var5, var7);
       int var9 = var5 - var2;

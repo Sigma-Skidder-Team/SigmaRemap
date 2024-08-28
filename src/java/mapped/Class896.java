@@ -32,7 +32,7 @@ public class Class896 extends Class890 implements Class889 {
    public void method3466(Class8711 var1) {
       super.method3466(var1);
       if (!this.field5024.field9020) {
-         Class8848 var4 = this.method3509();
+         ItemStack var4 = this.method3509();
          Class8812 var5 = Class9741.method38185(var4);
          List var6 = Class9741.method38176(var4);
          boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
@@ -54,7 +54,7 @@ public class Class896 extends Class890 implements Class889 {
    public void method3464(Class8710 var1) {
       super.method3464(var1);
       if (!this.field5024.field9020) {
-         Class8848 var4 = this.method3509();
+         ItemStack var4 = this.method3509();
          Class8812 var5 = Class9741.method38185(var4);
          List var6 = Class9741.method38176(var4);
          boolean var7 = var5 == Class8137.field34977 && var6.isEmpty();
@@ -81,7 +81,7 @@ public class Class896 extends Class890 implements Class889 {
       List<Class880> var4 = this.field5024.method6772(Class880.class, var3, field5131);
       if (!var4.isEmpty()) {
          for (Class880 var6 : var4) {
-            double var7 = this.method3277(var6);
+            double var7 = this.getDistanceSq(var6);
             if (var7 < 16.0 && var6.method3124()) {
                var6.method2741(Class8654.method31124(var6, this.method3460()), 1.0F);
             }
@@ -95,7 +95,7 @@ public class Class896 extends Class890 implements Class889 {
       if (!var6.isEmpty()) {
          for (Class880 var8 : var6) {
             if (var8.method3169()) {
-               double var9 = this.method3277(var8);
+               double var9 = this.getDistanceSq(var8);
                if (var9 < 16.0) {
                   double var11 = 1.0 - Math.sqrt(var9) / 4.0;
                   if (var8 == var2) {
@@ -119,7 +119,7 @@ public class Class896 extends Class890 implements Class889 {
       }
    }
 
-   private void method3519(Class8848 var1, Class8812 var2) {
+   private void method3519(ItemStack var1, Class8812 var2) {
       Class999 var5 = new Class999(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ());
       Entity var6 = this.method3460();
       if (var6 instanceof Class880) {

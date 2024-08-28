@@ -54,17 +54,17 @@ public class Class5189 extends Module {
                         break;
                     case "Ninja":
                         float var15 = (float) Math.toRadians((double) (var4.method3142() - 180.0F));
-                        double var16 = var4.method3431().field18048 - (double) (Class9679.method37763(var15) * var7);
-                        double var17 = var4.method3431().field18050 + (double) (Class9679.method37764(var15) * var7);
-                        var1.method13993(var16 - mc.field1339.method3431().field18048);
-                        var1.method13997(var17 - mc.field1339.method3431().field18050);
+                        double var16 = var4.getPositionVec().field18048 - (double) (MathHelper.method37763(var15) * var7);
+                        double var17 = var4.getPositionVec().field18050 + (double) (MathHelper.method37764(var15) * var7);
+                        var1.method13993(var16 - mc.field1339.getPositionVec().field18048);
+                        var1.method13997(var17 - mc.field1339.getPositionVec().field18050);
                         break;
                     case "Random":
                         float var10 = (float) (Math.random() * 2.0 * Math.PI);
-                        double var11 = var4.method3431().field18048 - (double) (Class9679.method37763(var10) * var7);
-                        double var13 = var4.method3431().field18050 + (double) (Class9679.method37764(var10) * var7);
-                        var1.method13993(var11 - mc.field1339.method3431().field18048);
-                        var1.method13997(var13 - mc.field1339.method3431().field18050);
+                        double var11 = var4.getPositionVec().field18048 - (double) (MathHelper.method37763(var10) * var7);
+                        double var13 = var4.getPositionVec().field18050 + (double) (MathHelper.method37764(var10) * var7);
+                        var1.method13993(var11 - mc.field1339.getPositionVec().field18048);
+                        var1.method13997(var13 - mc.field1339.getPositionVec().field18050);
                 }
             }
         }
@@ -76,8 +76,8 @@ public class Class5189 extends Module {
         double var13 = mc.field1339.getPosZ() - var1.getPosZ();
         double var15 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
         double var17 = (var15 + var9) * Math.PI / 180.0;
-        double var19 = var1.method3431().field18048 - Math.sin(var17) * var4;
-        double var21 = var1.method3431().field18050 + Math.cos(var17) * var4;
+        double var19 = var1.getPositionVec().field18048 - Math.sin(var17) * var4;
+        double var21 = var1.getPositionVec().field18050 + Math.cos(var17) * var4;
         var11 = var19 - mc.field1339.getPosX();
         var13 = var21 - mc.field1339.getPosZ();
         double var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
@@ -89,8 +89,8 @@ public class Class5189 extends Module {
             this.field23495 *= -1;
             var9 *= -1.0;
             var17 = (var15 + var9) * Math.PI / 180.0;
-            var19 = var1.method3431().field18048 - Math.sin(var17) * var4;
-            var21 = var1.method3431().field18050 + Math.cos(var17) * var4;
+            var19 = var1.getPositionVec().field18048 - Math.sin(var17) * var4;
+            var21 = var1.getPositionVec().field18050 + Math.cos(var17) * var4;
             var11 = var19 - mc.field1339.getPosX();
             var13 = var21 - mc.field1339.getPosZ();
             var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
@@ -100,9 +100,9 @@ public class Class5189 extends Module {
         }
 
         Vector3d var26 = new Vector3d(
-                mc.field1339.method3431().field18048 + var6.method13992(),
-                mc.field1339.method3431().field18049 + var6.method13994(),
-                mc.field1339.method3431().field18050 + var6.method13996()
+                mc.field1339.getPositionVec().field18048 + var6.method13992(),
+                mc.field1339.getPositionVec().field18049 + var6.method13994(),
+                mc.field1339.getPositionVec().field18050 + var6.method13996()
         );
         String var27 = this.getStringSettingValueByName("AntiVoid");
         if (!var27.equals("None")) {
@@ -119,9 +119,9 @@ public class Class5189 extends Module {
                 Class9567.method37088(var6, var2);
                 if (var27.equals("Smart")) {
                     var26 = new Vector3d(
-                            mc.field1339.method3431().field18048 + var6.method13992(),
-                            mc.field1339.method3431().field18049 + var6.method13994(),
-                            mc.field1339.method3431().field18050 + var6.method13996()
+                            mc.field1339.getPositionVec().field18048 + var6.method13992(),
+                            mc.field1339.getPositionVec().field18049 + var6.method13994(),
+                            mc.field1339.getPositionVec().field18050 + var6.method13996()
                     );
                     if (this.method16153(var26) && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
                         Class9567.method37088(var6, 0.0);
@@ -134,9 +134,9 @@ public class Class5189 extends Module {
     }
 
     private boolean method16153(Vector3d var1) {
-        if (!(mc.field1339.method3431().field18049 < 1.0)) {
+        if (!(mc.field1339.getPositionVec().field18049 < 1.0)) {
             Class6488 var4 = new Class6488(var1.method11339(-0.15, 0.0, -0.15), var1.method11339(0.15, (double) mc.field1339.method3430(), 0.15));
-            var4 = var4.method19662(0.0, -mc.field1339.method3431().field18049, 0.0);
+            var4 = var4.method19662(0.0, -mc.field1339.getPositionVec().field18049, 0.0);
             return mc.field1338.method7055(mc.field1339, var4).count() == 0L;
         } else {
             return true;

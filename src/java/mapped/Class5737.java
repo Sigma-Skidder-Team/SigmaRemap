@@ -54,24 +54,24 @@ public class Class5737 extends Class5715<Class998> {
             float var37 = var13 + (float)(var34 * 16);
             float var38 = var14 + (float)((var35 + 1) * 16);
             float var39 = var14 + (float)(var35 * 16);
-            int var40 = Class9679.method37769(var3.getPosX());
-            int var41 = Class9679.method37769(var3.getPosY() + (double)((var38 + var39) / 2.0F / 16.0F));
-            int var42 = Class9679.method37769(var3.getPosZ());
+            int var40 = MathHelper.method37769(var3.getPosX());
+            int var41 = MathHelper.method37769(var3.getPosY() + (double)((var38 + var39) / 2.0F / 16.0F));
+            int var42 = MathHelper.method37769(var3.getPosZ());
             Direction var43 = var3.method3386();
             if (var43 == Direction.NORTH) {
-               var40 = Class9679.method37769(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
+               var40 = MathHelper.method37769(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.WEST) {
-               var42 = Class9679.method37769(var3.getPosZ() - (double)((var36 + var37) / 2.0F / 16.0F));
+               var42 = MathHelper.method37769(var3.getPosZ() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.SOUTH) {
-               var40 = Class9679.method37769(var3.getPosX() - (double)((var36 + var37) / 2.0F / 16.0F));
+               var40 = MathHelper.method37769(var3.getPosX() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.EAST) {
-               var42 = Class9679.method37769(var3.getPosZ() + (double)((var36 + var37) / 2.0F / 16.0F));
+               var42 = MathHelper.method37769(var3.getPosZ() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             int var44 = Class264.method944(var3.field5024, new BlockPos(var40, var41, var42));

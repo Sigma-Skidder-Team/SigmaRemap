@@ -29,7 +29,7 @@ public class Class3696<E extends Class880, T extends Class880> extends Class3676
    }
 
    @Override
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       return this.field19735.test((E)var2) && this.method12552((E)var2);
    }
 
@@ -43,13 +43,13 @@ public class Class3696<E extends Class880, T extends Class880> extends Class3676
    }
 
    @Override
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       Class6947<?> var7 = var2.method2992();
       var7.method21410(Class8830.field39819).ifPresent(
             var3x -> var3x.stream()
                   .filter(var1xx -> this.field19732.equals(var1xx.method3204()))
                   .map(var0 -> (T) var0)
-                  .filter(var2xx -> var2xx.method3277(var2) <= (double)this.field19733)
+                  .filter(var2xx -> var2xx.getDistanceSq(var2) <= (double)this.field19733)
                   .filter(this.field19734)
                   .findFirst()
                   .ifPresent(var2xx -> {

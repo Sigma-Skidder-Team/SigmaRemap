@@ -60,8 +60,8 @@ public class Class2874<T extends Entity> extends Class2855<T> {
       this.field17796.field31035 = this.field17789.field31035;
       this.field17796.field31036 = this.field17789.field31036;
       this.field17790.field31035 = (float) (Math.PI / 2);
-      this.field17791.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
-      this.field17792.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17791.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17792.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
       this.field17793.field31037 = var4;
       this.field17794.field31037 = -var4;
    }

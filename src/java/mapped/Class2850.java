@@ -36,16 +36,16 @@ public class Class2850 extends Class2828 {
    }
 
    public void method11177(float var1, float var2, float var3, float var4) {
-      float var7 = (Class9679.method37763(var1 * 0.02F) * 0.1F + 1.25F) * var4;
+      float var7 = (MathHelper.method37763(var1 * 0.02F) * 0.1F + 1.25F) * var4;
       this.field17656.field31036 = (float) Math.PI + var7;
       this.field17657.field31036 = -var7;
       this.field17658.field31036 = var7;
       this.field17659.field31036 = -var7;
       this.field17660.field31036 = var7 - var7 * 2.0F * var2;
       this.field17661.field31036 = var7 - var7 * 2.0F * var3;
-      this.field17658.field31032 = Class9679.method37763(var7);
-      this.field17659.field31032 = Class9679.method37763(var7);
-      this.field17660.field31032 = Class9679.method37763(var7);
-      this.field17661.field31032 = Class9679.method37763(var7);
+      this.field17658.field31032 = MathHelper.method37763(var7);
+      this.field17659.field31032 = MathHelper.method37763(var7);
+      this.field17660.field31032 = MathHelper.method37763(var7);
+      this.field17661.field31032 = MathHelper.method37763(var7);
    }
 }

@@ -17,7 +17,7 @@ public class Class2760 extends Class2595 {
       if (!this.field17319.method3005()) {
          if (!this.field17319.method5045()) {
             return this.field17319.method3013().nextInt(700) == 0
-               ? !Class1088.method5056(this.field17319).method8317(this.field17319.method3431(), 64.0)
+               ? !Class1088.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 64.0)
                : false;
          } else {
             return true;
@@ -41,13 +41,13 @@ public class Class2760 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return !Class1088.method5056(this.field17319).method8317(this.field17319.method3431(), 7.0) && !this.field17321 && this.field17322 <= 600;
+      return !Class1088.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 7.0) && !this.field17321 && this.field17322 <= 600;
    }
 
    @Override
    public void method10805() {
       BlockPos var3 = Class1088.method5056(this.field17319);
-      boolean var4 = var3.method8317(this.field17319.method3431(), 16.0);
+      boolean var4 = var3.method8317(this.field17319.getPositionVec(), 16.0);
       if (var4) {
          this.field17322++;
       }

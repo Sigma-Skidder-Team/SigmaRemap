@@ -184,7 +184,7 @@ public class Class1705 extends Class1702 {
 
    @Override
    public boolean method7351(Entity var1) {
-      return this.method7345(Class9679.method37769(var1.getPosX()) >> 4, Class9679.method37769(var1.getPosZ()) >> 4);
+      return this.method7345(MathHelper.method37769(var1.getPosX()) >> 4, MathHelper.method37769(var1.getPosZ()) >> 4);
    }
 
    // $VF: synthetic method

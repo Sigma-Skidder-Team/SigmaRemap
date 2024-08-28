@@ -69,14 +69,14 @@ public class Class5345 extends Module {
         double var4 = var1.getPosX() - mc.field1339.getPosX() + Math.cos((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
         double var6 = var1.getPosY() - 1.6 - this.field23895 + (double) var1.method3393() - mc.field1339.getPosY();
         double var8 = var1.getPosZ() - mc.field1339.getPosZ() + Math.sin((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
-        double var10 = Class9679.method37766(var4 * var4 + var8 * var8);
+        double var10 = MathHelper.method37766(var4 * var4 + var8 * var8);
         float var12 = this.method16767(mc.field1339.field5031, (float) (Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
         float var13 = this.method16767(mc.field1339.field5032, (float) (-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
         return new float[]{var12, var13};
     }
 
     private float method16767(float var1, float var2, float var3) {
-        float var6 = Class9679.method37792(var2 - var1);
+        float var6 = MathHelper.method37792(var2 - var1);
         if (var6 > var3) {
             var6 = var3;
         }

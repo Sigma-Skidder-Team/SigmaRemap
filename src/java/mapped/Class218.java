@@ -43,7 +43,7 @@ public class Class218<T extends Class880 & Class1041, M extends Class2827<T> & C
             ResourceLocation var20 = this.method818("profession", Class2348.field16090.method9181(var15));
             method824(var18, var20, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             if (var15 != Class8395.field36022) {
-               ResourceLocation var21 = this.method818("profession_level", (ResourceLocation)field858.get(Class9679.method37775(var13.method26572(), 1, field858.size())));
+               ResourceLocation var21 = this.method818("profession_level", (ResourceLocation)field858.get(MathHelper.method37775(var13.method26572(), 1, field858.size())));
                method824(var18, var21, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             }
          }

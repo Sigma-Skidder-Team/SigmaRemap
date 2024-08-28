@@ -13,7 +13,7 @@ public class Class3600 implements Comparator<Class7481> {
       this.field19554 = var1;
       this.field19555 = var2;
       this.field19556 = var3;
-      this.field19557 = 1.0 - Class9679.method37778(Math.abs(var5) / (Math.PI / 2), 0.0, 1.0);
+      this.field19557 = 1.0 - MathHelper.method37778(Math.abs(var5) / (Math.PI / 2), 0.0, 1.0);
    }
 
    public int compare(Class7481 var1, Class7481 var2) {
@@ -26,7 +26,7 @@ public class Class3600 implements Comparator<Class7481> {
       int var4 = var1.field32174 - this.field19554;
       int var5 = var1.field32175 - this.field19555;
       int var6 = var4 * var4 + var5 * var5;
-      double var7 = Class9679.method37814((double)var5, (double)var4);
+      double var7 = MathHelper.method37814((double)var5, (double)var4);
       double var9 = Math.abs(var7 - this.field19556);
       if (var9 > Math.PI) {
          var9 = (Math.PI * 2) - var9;

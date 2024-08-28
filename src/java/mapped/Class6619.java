@@ -24,7 +24,7 @@ public class Class6619 implements Class6618 {
    public static final SimpleCommandExceptionType field29123 = new SimpleCommandExceptionType(new TranslationTextComponent("permissions.requires.entity"));
    private final Class909 field29124;
    private final Vector3d field29125;
-   private final Class1657 field29126;
+   private final ServerWorld field29126;
    private final int field29127;
    private final String field29128;
    private final ITextComponent field29129;
@@ -35,7 +35,7 @@ public class Class6619 implements Class6618 {
    private final Class2062 field29134;
    private final Class8513 field29135;
 
-   public Class6619(Class909 var1, Vector3d var2, Class8513 var3, Class1657 var4, int var5, String var6, ITextComponent var7, Class314 var8, Entity var9) {
+   public Class6619(Class909 var1, Vector3d var2, Class8513 var3, ServerWorld var4, int var5, String var6, ITextComponent var7, Class314 var8, Entity var9) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, Class2062.field13441);
    }
@@ -44,7 +44,7 @@ public class Class6619 implements Class6618 {
       Class909 var1,
       Vector3d var2,
       Class8513 var3,
-      Class1657 var4,
+      ServerWorld var4,
       int var5,
       String var6,
       ITextComponent var7,
@@ -77,7 +77,7 @@ public class Class6619 implements Class6618 {
             this.field29126,
             this.field29127,
             var1.method2941().getString(),
-            var1.method2954(),
+            var1.getDisplayName(),
             this.field29130,
             var1,
             this.field29131,
@@ -225,7 +225,7 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20166(Class1657 var1) {
+   public Class6619 method20166(ServerWorld var1) {
       if (var1 != this.field29126) {
          double var4 = Class9535.method36872(this.field29126.method6812(), var1.method6812());
          Vector3d var6 = new Vector3d(this.field29125.field18048 * var4, this.field29125.field18049, this.field29125.field18050 * var4);
@@ -257,9 +257,9 @@ public class Class6619 implements Class6618 {
       double var5 = var1.field18048 - var4.field18048;
       double var7 = var1.field18049 - var4.field18049;
       double var9 = var1.field18050 - var4.field18050;
-      double var11 = (double)Class9679.method37766(var5 * var5 + var9 * var9);
-      float var13 = Class9679.method37792((float)(-(Class9679.method37814(var7, var11) * 180.0F / (float)Math.PI)));
-      float var14 = Class9679.method37792((float)(Class9679.method37814(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
+      double var11 = (double) MathHelper.method37766(var5 * var5 + var9 * var9);
+      float var13 = MathHelper.method37792((float)(-(MathHelper.method37814(var7, var11) * 180.0F / (float)Math.PI)));
+      float var14 = MathHelper.method37792((float)(MathHelper.method37814(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
       return this.method20159(new Class8513(var13, var14));
    }
 
@@ -280,7 +280,7 @@ public class Class6619 implements Class6618 {
       return this.field29125;
    }
 
-   public Class1657 method20172() {
+   public ServerWorld method20172() {
       return this.field29126;
    }
 
@@ -331,8 +331,8 @@ public class Class6619 implements Class6618 {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method20169(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
       if (this.field29130.method1413().method17135(Class5462.field24236)) {
-         for (Class878 var6 : this.field29130.method1367().method19488()) {
-            if (var6 != this.field29124 && this.field29130.method1367().method19464(var6.method2906())) {
+         for (Class878 var6 : this.field29130.getPlayerList().method19488()) {
+            if (var6 != this.field29124 && this.field29130.getPlayerList().canSendCommands(var6.getGameProfile())) {
                var6.method1328(var4, Util.field45724);
             }
          }

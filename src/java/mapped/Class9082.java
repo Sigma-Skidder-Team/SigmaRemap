@@ -39,10 +39,10 @@ public class Class9082 implements ArgumentType<ResourceLocation> {
       return new Class9082();
    }
 
-   public static Class1657 method33873(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ServerWorld method33873(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
       Class8705 var5 = Class8705.<Class1655>method31395(Class2348.field16067, var4);
-      Class1657 var6 = ((Class6619)var0.getSource()).method20177().method1318(var5);
+      ServerWorld var6 = ((Class6619)var0.getSource()).method20177().method1318(var5);
       if (var6 != null) {
          return var6;
       } else {

@@ -236,8 +236,8 @@ public class Class289 extends Class290 implements Class288 {
                   var16.method36195(),
                   var16.method36196(),
                   var16.method36197(),
-                  Class9679.method37803(var14),
-                  Class9679.method37803(var27)
+                  MathHelper.method37803(var14),
+                  MathHelper.method37803(var27)
                );
                var14 = var27;
             }
@@ -249,7 +249,7 @@ public class Class289 extends Class290 implements Class288 {
       }
 
       int var23 = Math.min(var12, var14);
-      int var24 = Class9679.method37803(var23);
+      int var24 = MathHelper.method37803(var23);
       if (var24 < 0) {
          var24 = 0;
       }
@@ -557,12 +557,12 @@ public class Class289 extends Class290 implements Class288 {
          var5 = 16;
       }
 
-      var5 = Class9679.method37800(var5);
+      var5 = MathHelper.method37800(var5);
       if (var5 > 16) {
          Class7944.method26815("Sprite size: " + var5);
       }
 
-      int var6 = Class9679.method37803(var5);
+      int var6 = MathHelper.method37803(var5);
       if (var6 < 4) {
          var6 = 4;
       }
@@ -585,7 +585,7 @@ public class Class289 extends Class290 implements Class288 {
                   var11.close();
                   if (var12 != null) {
                      int var13 = var12.width;
-                     int var14 = Class9679.method37800(var13);
+                     int var14 = MathHelper.method37800(var13);
                      if (!var6.containsKey(var14)) {
                         var6.put(var14, 1);
                      } else {

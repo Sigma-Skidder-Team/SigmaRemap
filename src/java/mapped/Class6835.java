@@ -25,13 +25,13 @@ public class Class6835 extends Class6829 {
          double var4 = this.field29708 - this.field29722.getPosX();
          double var6 = this.field29709 - this.field29722.getPosY();
          double var8 = this.field29710 - this.field29722.getPosZ();
-         double var10 = (double)Class9679.method37766(var4 * var4 + var6 * var6 + var8 * var8);
+         double var10 = (double) MathHelper.method37766(var4 * var4 + var6 * var6 + var8 * var8);
          var6 /= var10;
-         float var12 = (float)(Class9679.method37814(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
+         float var12 = (float)(MathHelper.method37814(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
          this.field29722.field5031 = this.method20816(this.field29722.field5031, var12, 90.0F);
          this.field29722.field4965 = this.field29722.field5031;
          float var13 = (float)(this.field29711 * this.field29722.method3086(Class9173.field42108));
-         float var14 = Class9679.method37821(0.125F, this.field29722.method2918(), var13);
+         float var14 = MathHelper.method37821(0.125F, this.field29722.method2918(), var13);
          this.field29722.method3113(var14);
          this.field29722
             .method3434(this.field29722.method3433().method11339((double)var14 * var4 * 0.005, (double)var14 * var6 * 0.1, (double)var14 * var8 * 0.005));

@@ -11,26 +11,26 @@ public class Class3710 extends Class3676<Class1042> {
       this.field19776 = var1;
    }
 
-   public boolean method12508(Class1657 var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, Class1042 var2) {
       PlayerEntity var5 = var2.method4740();
-      return var2.method3066() && var5 != null && !var2.method3250() && !var2.field5039 && var2.method3277(var5) <= 16.0 && var5.field4905 != null;
+      return var2.method3066() && var5 != null && !var2.method3250() && !var2.field5039 && var2.getDistanceSq(var5) <= 16.0 && var5.field4905 != null;
    }
 
-   public boolean method12499(Class1657 var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
       return this.method12508(var1, var2);
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       this.method12590(var2);
    }
 
-   public void method12506(Class1657 var1, Class1042 var2, long var3) {
+   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       Class6947 var7 = var2.method2992();
       var7.method21405(Class8830.field39824);
       var7.method21405(Class8830.field39825);
    }
 
-   public void method12504(Class1657 var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
       this.method12590(var2);
    }
 

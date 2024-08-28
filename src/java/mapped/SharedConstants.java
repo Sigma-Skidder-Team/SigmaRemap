@@ -6,7 +6,7 @@ import io.netty.util.ResourceLeakDetector;
 import io.netty.util.ResourceLeakDetector.Level;
 import java.time.Duration;
 
-public class Class9246 {
+public class SharedConstants {
    private static String[] field42541;
    public static final Level field42542 = Level.DISABLED;
    public static final long field42543 = Duration.ofMillis(300L).toNanos();
@@ -15,7 +15,7 @@ public class Class9246 {
    public static final char[] field42546 = new char[]{'/', '\n', '\r', '\t', '\u0000', '\f', '`', '?', '*', '\\', '<', '>', '|', '"', ':'};
    private static GameVersion field42547;
 
-   public static boolean method34771(char var0) {
+   public static boolean isAllowedCharacter(char var0) {
       return var0 != 167 && var0 >= ' ' && var0 != 127;
    }
 
@@ -23,7 +23,7 @@ public class Class9246 {
       StringBuilder var3 = new StringBuilder();
 
       for (char var7 : var0.toCharArray()) {
-         if (method34771(var7)) {
+         if (isAllowedCharacter(var7)) {
             var3.append(var7);
          }
       }

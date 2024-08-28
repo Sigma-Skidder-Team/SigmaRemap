@@ -21,7 +21,7 @@ public class Class8915 {
             float var10 = (float)var9.field18048;
             float var11 = (float)var9.field18049;
             float var12 = (float)var9.field18050;
-            float var13 = Class9679.method37777(Class9679.method37764(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
+            float var13 = MathHelper.method37777(MathHelper.method37764(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             Class6668 var14 = var2.method6822();
             Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
             Vector3d var16 = Class8430.method29626(
@@ -32,7 +32,7 @@ public class Class8915 {
             field40349 = (float)var16.method11321();
             field40350 = (float)var16.method11322();
             if (var3 >= 4) {
-               float var17 = !(Class9679.method37763(var2.method6750(var1)) > 0.0F) ? 1.0F : -1.0F;
+               float var17 = !(MathHelper.method37763(var2.method6750(var1)) > 0.0F) ? 1.0F : -1.0F;
                Class7680 var18 = new Class7680(var17, 0.0F, 0.0F);
                float var21 = var0.method37516().method25279(var18);
                if (var21 < 0.0F) {
@@ -92,16 +92,16 @@ public class Class8915 {
          int var40 = field40352 >> 16 & 0xFF;
          int var41 = field40352 >> 8 & 0xFF;
          int var43 = field40352 & 0xFF;
-         float var45 = Class9679.method37777((float)(var19 - field40353) / 5000.0F, 0.0F, 1.0F);
-         float var48 = Class9679.method37821(var45, (float)var40, (float)var32);
-         float var54 = Class9679.method37821(var45, (float)var41, (float)var38);
-         float var55 = Class9679.method37821(var45, (float)var43, (float)var39);
+         float var45 = MathHelper.method37777((float)(var19 - field40353) / 5000.0F, 0.0F, 1.0F);
+         float var48 = MathHelper.method37821(var45, (float)var40, (float)var32);
+         float var54 = MathHelper.method37821(var45, (float)var41, (float)var38);
+         float var55 = MathHelper.method37821(var45, (float)var43, (float)var39);
          field40348 = var48 / 255.0F;
          field40349 = var54 / 255.0F;
          field40350 = var55 / 255.0F;
          if (field40351 != var25) {
             field40351 = var25;
-            field40352 = Class9679.method37767(var48) << 16 | Class9679.method37767(var54) << 8 | Class9679.method37767(var55);
+            field40352 = MathHelper.method37767(var48) << 16 | MathHelper.method37767(var54) << 8 | MathHelper.method37767(var55);
             field40353 = var19;
          }
       }
@@ -219,7 +219,7 @@ public class Class8915 {
             if (!var7.method23486(Class8953.field40470)) {
                if (var8 instanceof Class880 && ((Class880)var8).method3033(Class8254.field35481)) {
                   int var12 = ((Class880)var8).method3034(Class8254.field35481).method8628();
-                  float var13 = Class9679.method37821(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
+                  float var13 = MathHelper.method37821(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != Class2040.field13337) {
                      var10 = var13 * 0.25F;
                      var11 = var13;

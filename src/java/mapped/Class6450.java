@@ -220,7 +220,7 @@ public class Class6450 {
             if (var11 > 32768) {
                 throw field28361.create(32768, var11);
             } else {
-                Class1657 var12 = var0.method20172();
+                ServerWorld var12 = var0.method20172();
                 if (var12.method7018(var1, var2) && var12.method7018(var3, var9)) {
                     List var13 = Lists.newArrayList();
                     List<Class6202> var14 = Lists.newArrayList();

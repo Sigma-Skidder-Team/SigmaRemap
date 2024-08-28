@@ -20,7 +20,7 @@ public class Class3689 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, Class880 var2) {
       if (var1.method6783() - this.field19712 < 20L) {
          return false;
       } else {
@@ -32,7 +32,7 @@ public class Class3689 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       this.field19711 = 0;
       this.field19712 = var1.method6783() + (long)var1.method6814().nextInt(20);
       Class1046 var7 = (Class1046)var2;

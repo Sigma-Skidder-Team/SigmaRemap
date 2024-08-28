@@ -14,7 +14,7 @@ public class Class3725 extends Class3676<Class1042> {
       super(ImmutableMap.of(Class8830.field39825, Class2217.field14485, Class8830.field39824, Class2217.field14485));
    }
 
-   public boolean method12508(Class1657 var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, Class1042 var2) {
       if (var2.field5055 % 10 == 0 && (this.field19816 == 0L || this.field19816 + 160L <= (long)var2.field5055)) {
          if (var2.method4752().method3634(Class8514.field37934) > 0) {
             this.field19818 = this.method12625(var1, var2);
@@ -27,11 +27,11 @@ public class Class3725 extends Class3676<Class1042> {
       }
    }
 
-   public boolean method12499(Class1657 var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
       return this.field19817 < 80 && this.field19818.isPresent();
    }
 
-   private Optional<BlockPos> method12625(Class1657 var1, Class1042 var2) {
+   private Optional<BlockPos> method12625(ServerWorld var1, Class1042 var2) {
       Mutable var5 = new Mutable();
       Optional var6 = Optional.empty();
       int var7 = 0;
@@ -52,15 +52,15 @@ public class Class3725 extends Class3676<Class1042> {
       return var6;
    }
 
-   private boolean method12626(BlockPos var1, Class1657 var2) {
+   private boolean method12626(BlockPos var1, ServerWorld var2) {
       Class7380 var5 = var2.method6738(var1);
       Block var6 = var5.method23383();
       return var6 instanceof Class3480 && !((Class3480)var6).method12179(var5);
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       this.method12627(var2);
-      var2.method2944(Class2106.field13731, new Class8848(Class8514.field37934));
+      var2.method2944(Class2106.field13731, new ItemStack(Class8514.field37934));
       this.field19815 = var3;
       this.field19817 = 0;
    }
@@ -73,20 +73,20 @@ public class Class3725 extends Class3676<Class1042> {
       });
    }
 
-   public void method12506(Class1657 var1, Class1042 var2, long var3) {
-      var2.method2944(Class2106.field13731, Class8848.field39973);
+   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
+      var2.method2944(Class2106.field13731, ItemStack.field39973);
       this.field19816 = (long)var2.field5055;
    }
 
-   public void method12504(Class1657 var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
       BlockPos var7 = this.field19818.get();
-      if (var3 >= this.field19815 && var7.method8317(var2.method3431(), 1.0)) {
-         Class8848 var8 = Class8848.field39973;
+      if (var3 >= this.field19815 && var7.method8317(var2.getPositionVec(), 1.0)) {
+         ItemStack var8 = ItemStack.field39973;
          Class927 var9 = var2.method4752();
          int var10 = var9.method3629();
 
          for (int var11 = 0; var11 < var10; var11++) {
-            Class8848 var12 = var9.method3618(var11);
+            ItemStack var12 = var9.method3618(var11);
             if (var12.method32107() == Class8514.field37934) {
                var8 = var12;
                break;

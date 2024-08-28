@@ -79,7 +79,7 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = method12085(var2, var3);
       Class7380 var8 = var1.method23465(field19184, Integer.valueOf(var7)).method23465(field19186, Boolean.valueOf(this.method12084(var2, var3, var7)));
       if (var8.<Integer>method23463(field19184) != 7) {

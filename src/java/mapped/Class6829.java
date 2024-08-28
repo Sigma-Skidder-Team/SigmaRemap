@@ -62,7 +62,7 @@ public class Class6829 {
                return;
             }
 
-            float var11 = (float)(Class9679.method37814(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
+            float var11 = (float)(MathHelper.method37814(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
             this.field29707.field5031 = this.method20816(this.field29707.field5031, var11, 90.0F);
             this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Class9173.field42108)));
             BlockPos var20 = this.field29707.method3432();
@@ -83,7 +83,7 @@ public class Class6829 {
          float var4 = (float)this.field29711 * var3;
          float var5 = this.field29712;
          float var6 = this.field29713;
-         float var7 = Class9679.method37765(var5 * var5 + var6 * var6);
+         float var7 = MathHelper.method37765(var5 * var5 + var6 * var6);
          if (var7 < 1.0F) {
             var7 = 1.0F;
          }
@@ -91,8 +91,8 @@ public class Class6829 {
          var7 = var4 / var7;
          var5 *= var7;
          var6 *= var7;
-         float var8 = Class9679.method37763(this.field29707.field5031 * (float) (Math.PI / 180.0));
-         float var9 = Class9679.method37764(this.field29707.field5031 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.method37763(this.field29707.field5031 * (float) (Math.PI / 180.0));
+         float var9 = MathHelper.method37764(this.field29707.field5031 * (float) (Math.PI / 180.0));
          float var10 = var5 * var9 - var6 * var8;
          float var27 = var6 * var9 + var5 * var8;
          if (!this.method20815(var10, var27)) {
@@ -114,9 +114,9 @@ public class Class6829 {
          if (var6 != null
             && var6.method20621(
                   this.field29707.field5024,
-                  Class9679.method37769(this.field29707.getPosX() + (double)var1),
-                  Class9679.method37769(this.field29707.getPosY()),
-                  Class9679.method37769(this.field29707.getPosZ() + (double)var2)
+                  MathHelper.method37769(this.field29707.getPosX() + (double)var1),
+                  MathHelper.method37769(this.field29707.getPosY()),
+                  MathHelper.method37769(this.field29707.getPosZ() + (double)var2)
                )
                != Class2163.field14186) {
             return false;
@@ -127,7 +127,7 @@ public class Class6829 {
    }
 
    public float method20816(float var1, float var2, float var3) {
-      float var6 = Class9679.method37792(var2 - var1);
+      float var6 = MathHelper.method37792(var2 - var1);
       if (var6 > var3) {
          var6 = var3;
       }

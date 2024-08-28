@@ -22,7 +22,7 @@ public class Class9145 {
       Class314 var5 = var0.method20177();
       var5.method1370(var1);
       if (var5.method1380()) {
-         for (Class878 var7 : var5.method1367().method19488()) {
+         for (Class878 var7 : var5.getPlayerList().method19488()) {
             if (var7.field4857.method33863() != var1) {
                var7.method2799(var1);
                var4++;

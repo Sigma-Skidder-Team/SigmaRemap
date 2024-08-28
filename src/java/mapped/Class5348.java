@@ -122,9 +122,9 @@ public class Class5348 extends Module {
     }
 
     private double method16785() {
-        if (!(mc.field1339.method3431().field18049 < 1.0)) {
+        if (!(mc.field1339.getPositionVec().field18049 < 1.0)) {
             if (!mc.field1339.field5036) {
-                Class6488 var3 = mc.field1339.field5035.method19662(0.0, -mc.field1339.method3431().field18049, 0.0);
+                Class6488 var3 = mc.field1339.field5035.method19662(0.0, -mc.field1339.getPositionVec().field18049, 0.0);
                 Iterator var4 = mc.field1338.method7055(mc.field1339, var3).iterator();
                 double var5 = -1.0;
                 BlockPos var7 = null;

@@ -192,7 +192,7 @@ public class Class8641 {
    }
 
    private void method31052(Packet<?> var1, boolean var2) {
-      this.field38914.method6576(this.field38907, var2).forEach(var1x -> var1x.field4855.method15671(var1));
+      this.field38914.method6576(this.field38907, var2).forEach(var1x -> var1x.field4855.sendPacket(var1));
    }
 
    public CompletableFuture<Either<Class1670, Class7022>> method31053(Class9176 var1, Class1649 var2) {
@@ -314,7 +314,7 @@ public class Class8641 {
    }
 
    public static Class77 method31063(int var0) {
-      return field38898[Class9679.method37775(33 - var0 + 1, 0, field38898.length - 1)];
+      return field38898[MathHelper.method37775(33 - var0 + 1, 0, field38898.length - 1)];
    }
 
    public boolean method31064() {

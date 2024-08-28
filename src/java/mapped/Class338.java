@@ -48,7 +48,7 @@ public class Class338 implements Runnable {
             Class5357.method16847(this.field1478, Class5357.method16846(this.field1478) + 1);
          }
       } else if (!this.field1478.method15974("No swing")) {
-         Class5357.method16848().field1339.method2820(Class79.field182);
+         Class5357.method16848().field1339.swingArm(Hand.field182);
       }
 
       if (Class5357.field23948 != null && Class5357.method16844(this.field1478).method36817() && this.field1478.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {

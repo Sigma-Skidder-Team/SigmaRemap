@@ -65,7 +65,7 @@ public class Class8039 {
 
    public ITextComponent method27600() {
       if (this.field34541.isEmpty()) {
-         return new TranslationTextComponent("death.attack.generic", this.field34542.method2954());
+         return new TranslationTextComponent("death.attack.generic", this.field34542.getDisplayName());
       } else {
          Class9569 var3 = this.method27602();
          Class9569 var4 = this.field34541.get(this.field34541.size() - 1);
@@ -75,23 +75,23 @@ public class Class8039 {
          if (var3 != null && var4.method37101() == Class8654.field39002) {
             ITextComponent var8 = var3.method37105();
             if (var3.method37101() == Class8654.field39002 || var3.method37101() == Class8654.field39004) {
-               var7 = new TranslationTextComponent("death.fell.accident." + this.method27603(var3), this.field34542.method2954());
+               var7 = new TranslationTextComponent("death.fell.accident." + this.method27603(var3), this.field34542.getDisplayName());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method37101().method31109();
-               Class8848 var10 = !(var11 instanceof Class880) ? Class8848.field39973 : ((Class880)var11).method3090();
+               ItemStack var10 = !(var11 instanceof Class880) ? ItemStack.field39973 : ((Class880)var11).method3090();
                if (!var10.method32105() && var10.method32152()) {
-                  var7 = new TranslationTextComponent("death.fell.assist.item", this.field34542.method2954(), var8, var10.method32173());
+                  var7 = new TranslationTextComponent("death.fell.assist.item", this.field34542.getDisplayName(), var8, var10.method32173());
                } else {
-                  var7 = new TranslationTextComponent("death.fell.assist", this.field34542.method2954(), var8);
+                  var7 = new TranslationTextComponent("death.fell.assist", this.field34542.getDisplayName(), var8);
                }
             } else if (var5 == null) {
-               var7 = new TranslationTextComponent("death.fell.killer", this.field34542.method2954());
+               var7 = new TranslationTextComponent("death.fell.killer", this.field34542.getDisplayName());
             } else {
-               Class8848 var9 = !(var6 instanceof Class880) ? Class8848.field39973 : ((Class880)var6).method3090();
+               ItemStack var9 = !(var6 instanceof Class880) ? ItemStack.field39973 : ((Class880)var6).method3090();
                if (!var9.method32105() && var9.method32152()) {
-                  var7 = new TranslationTextComponent("death.fell.finish.item", this.field34542.method2954(), var5, var9.method32173());
+                  var7 = new TranslationTextComponent("death.fell.finish.item", this.field34542.getDisplayName(), var5, var9.method32173());
                } else {
-                  var7 = new TranslationTextComponent("death.fell.finish", this.field34542.method2954(), var5);
+                  var7 = new TranslationTextComponent("death.fell.finish", this.field34542.getDisplayName(), var5);
                }
             }
          } else {

@@ -60,7 +60,7 @@ public class Class2704 extends Class2699 {
 
    public void method10919() {
       double var3 = this.method10914();
-      Class6488 var5 = Class6488.method19657(this.field17153.method3431()).method19663(var3, 10.0, var3);
+      Class6488 var5 = Class6488.method19657(this.field17153.getPositionVec()).method19663(var3, 10.0, var3);
       List var6 = this.field17153.field5024.method7183(this.field17153.getClass(), var5);
       Iterator var7 = var6.iterator();
 

@@ -15,26 +15,26 @@ public class Class3420 extends Block {
             if (this != Blocks.EMERALD_ORE) {
                if (this != Blocks.field36455) {
                   if (this != Blocks.field36722) {
-                     return this != Blocks.field36421 ? 0 : Class9679.method37782(var1, 0, 1);
+                     return this != Blocks.field36421 ? 0 : MathHelper.method37782(var1, 0, 1);
                   } else {
-                     return Class9679.method37782(var1, 2, 5);
+                     return MathHelper.method37782(var1, 2, 5);
                   }
                } else {
-                  return Class9679.method37782(var1, 2, 5);
+                  return MathHelper.method37782(var1, 2, 5);
                }
             } else {
-               return Class9679.method37782(var1, 3, 7);
+               return MathHelper.method37782(var1, 3, 7);
             }
          } else {
-            return Class9679.method37782(var1, 3, 7);
+            return MathHelper.method37782(var1, 3, 7);
          }
       } else {
-         return Class9679.method37782(var1, 0, 2);
+         return MathHelper.method37782(var1, 0, 2);
       }
    }
 
    @Override
-   public void method11965(Class7380 var1, Class1657 var2, BlockPos var3, Class8848 var4) {
+   public void method11965(Class7380 var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
       if (Class7858.method26311(Class8122.field34916, var4) == 0) {
          int var7 = this.method12068(var2.field9016);

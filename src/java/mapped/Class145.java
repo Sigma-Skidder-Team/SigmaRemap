@@ -18,12 +18,12 @@ public class Class145 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       if (!var1.method32115()) {
          field487.warn("Couldn't set damage of loot item {}", var1);
       } else {
          float var5 = 1.0F - this.field488.method20924(var2.method26088());
-         var1.method32118(Class9679.method37767(var5 * (float)var1.method32119()));
+         var1.method32118(MathHelper.method37767(var5 * (float)var1.method32119()));
       }
 
       return var1;

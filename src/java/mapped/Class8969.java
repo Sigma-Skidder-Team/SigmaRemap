@@ -601,7 +601,7 @@ public class Class8969 {
 
       var1.method99("entities", var14);
       var1.method99("size", this.method32915(this.field40547.method8304(), this.field40547.getY(), this.field40547.method8306()));
-      var1.method102("DataVersion", Class9246.method34773().getWorldVersion());
+      var1.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
       return var1;
    }
 

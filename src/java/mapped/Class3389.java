@@ -32,9 +32,9 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
-      Class8848 var9 = var4.method3094(var5);
-      if (var5 == Class79.field182 && !method11984(var9) && method11984(var4.method3094(Class79.field183))) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.method3094(var5);
+      if (var5 == Hand.field182 && !method11984(var9) && method11984(var4.method3094(Hand.field183))) {
          return Class2274.field14820;
       } else if (method11984(var9) && method11985(var1)) {
          method11989(var2, var3, var1);
@@ -76,7 +76,7 @@ public class Class3389 extends Block {
       }
    }
 
-   private static boolean method11984(Class8848 var0) {
+   private static boolean method11984(ItemStack var0) {
       return var0.method32107() == Class8514.field37446;
    }
 
@@ -174,7 +174,7 @@ public class Class3389 extends Block {
    }
 
    public static int method11990(Class7380 var0, int var1) {
-      return Class9679.method37767((float)(var0.<Integer>method23463(field19000) - 0) / 4.0F * (float)var1);
+      return MathHelper.method37767((float)(var0.<Integer>method23463(field19000) - 0) / 4.0F * (float)var1);
    }
 
    @Override

@@ -37,8 +37,8 @@ public class Class5364 extends Module {
                 }
             }
 
-            if (var4 instanceof Class5616) {
-                Class5616 var10 = (Class5616) var4;
+            if (var4 instanceof SChatPacket) {
+                SChatPacket var10 = (SChatPacket) var4;
             }
 
             if (var4 instanceof Class5503) {

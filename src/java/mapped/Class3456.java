@@ -33,7 +33,7 @@ public class Class3456 extends Class3194 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       var1.method6725(var2.method8311(), this.method11579().method23465(field19276, Class84.field209), 3);
    }
 
@@ -66,7 +66,7 @@ public class Class3456 extends Class3194 {
    }
 
    @Override
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, Class8848 var6) {
+   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       super.method11562(var1, var2, var3, Blocks.AIR.method11579(), var5, var6);
    }
 
@@ -94,6 +94,6 @@ public class Class3456 extends Class3194 {
 
    @Override
    public long method11691(Class7380 var1, BlockPos var2) {
-      return Class9679.method37810(var2.method8304(), var2.method8340(var1.method23463(field19276) != Class84.field210 ? 1 : 0).getY(), var2.method8306());
+      return MathHelper.method37810(var2.method8304(), var2.method8340(var1.method23463(field19276) != Class84.field210 ? 1 : 0).getY(), var2.method8306());
    }
 }

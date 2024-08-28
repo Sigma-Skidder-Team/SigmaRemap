@@ -20,7 +20,7 @@ public class Class2927 extends Class2898<Class4709> {
       if (var9 == null) {
          return false;
       } else {
-         int var11 = Class9679.method37782(var3, 4, 13);
+         int var11 = MathHelper.method37782(var3, 4, 13);
          if (var3.nextInt(12) == 0) {
             var11 *= 2;
          }
@@ -54,7 +54,7 @@ public class Class2927 extends Class2898<Class4709> {
 
       for (int var12 = -var11; var12 <= var11; var12++) {
          for (int var13 = -var11; var13 <= var11; var13++) {
-            boolean var14 = var6 && Class9679.method37772(var12) == var11 && Class9679.method37772(var13) == var11;
+            boolean var14 = var6 && MathHelper.method37772(var12) == var11 && MathHelper.method37772(var13) == var11;
 
             for (int var15 = 0; var15 < var5; var15++) {
                var9.method8378(var4, var12, var15, var13);
@@ -155,7 +155,7 @@ public class Class2927 extends Class2898<Class4709> {
    private static void method11262(BlockPos var0, Class1660 var1, Random var2) {
       Mutable var5 = var0.method8354().method8379(Direction.field672);
       if (var1.method7007(var5)) {
-         int var6 = Class9679.method37782(var2, 1, 5);
+         int var6 = MathHelper.method37782(var2, 1, 5);
          if (var2.nextInt(7) == 0) {
             var6 *= 2;
          }

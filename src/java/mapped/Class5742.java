@@ -21,7 +21,7 @@ public class Class5742 extends Class5712<Class1005, Class2892> {
       var2.method35293(Class7680.field32900.method25286(180.0F - var4));
       float var8 = (float)(var1.field5024.method6783() - var1.field5584) + var5;
       if (var8 < 5.0F) {
-         var2.method35293(Class7680.field32900.method25286(Class9679.method37763(var8 / 1.5F * (float) Math.PI) * 3.0F));
+         var2.method35293(Class7680.field32900.method25286(MathHelper.method37763(var8 / 1.5F * (float) Math.PI) * 3.0F));
       }
    }
 

@@ -118,7 +118,7 @@ public class Class5282 extends Module {
                 var5.remove();
             } else if (!this.method15974("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                 var5.remove();
-            } else if (mc.field1339.method3421() != null && mc.field1339.method3421().equals(var6)) {
+            } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var6)) {
                 var5.remove();
             } else if (var6.method3362()) {
                 var5.remove();

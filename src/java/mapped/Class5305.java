@@ -106,7 +106,7 @@ public class Class5305 extends Module {
             double var6 = var1.getPosX() - mc.field1339.getPosX();
             double var8 = var1.getPosY() - mc.field1339.getPosY() - (double) mc.field1339.method3430() + 0.4F;
             double var10 = var1.getPosZ() - mc.field1339.getPosZ();
-            double var12 = Class9679.method37766(var6 * var6 + var10 * var10);
+            double var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
             float var14 = Class9142.method34135(mc.field1339.field5031, (float) (Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
             float var15 = Class9142.method34135(mc.field1339.field5032, (float) (-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
             return this.method16673(mc.field1339.field5031, var14) <= var5 && this.method16673(mc.field1339.field5032, var15) <= var5;
@@ -158,7 +158,7 @@ public class Class5305 extends Module {
                         && var5.method18266()
                         && var5.method18265().method32107() instanceof Class3292
                         && ((Class3292) var5.method18265().method32107()).method11845() instanceof Class3368) {
-                    Class8848 var6 = var5.method18265();
+                    ItemStack var6 = var5.method18265();
                     List var7 = this.method16678(var6);
                     int var8 = Math.max(-1, Math.min(1, this.method16670()));
                     if (var8 != 0 || this.field23841 != -1) {
@@ -189,7 +189,7 @@ public class Class5305 extends Module {
         }
     }
 
-    private void method16676(int var1, int var2, List<Class8848> var3, String var4, boolean var5) {
+    private void method16676(int var1, int var2, List<ItemStack> var3, String var4, boolean var5) {
         byte var8 = 12;
         int var9 = ResourceRegistry.JelloLightFont25.method23952();
         int var10 = Math.round(16.0F * Class3192.method11417());
@@ -217,7 +217,7 @@ public class Class5305 extends Module {
         RenderSystem.method27820();
 
         for (int var14 = 0; var14 < var3.size(); var14++) {
-            Class8848 var15 = var3.get(var14);
+            ItemStack var15 = var3.get(var14);
             int var16 = var2 + var9 + var8 + var14 / 9 * (var10 + var11);
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
             RenderSystem.method27821();
@@ -248,7 +248,7 @@ public class Class5305 extends Module {
         }
 
         for (int var23 = 0; var23 < var3.size(); var23++) {
-            Class8848 var24 = var3.get(var23);
+            ItemStack var24 = var3.get(var23);
             int var25 = var2 + var9 + var8 + var23 / 9 * (var10 + var11);
             int var27 = var1 + var8 + var23 % 9 * (var10 + var11);
             if (var23 == this.field23841 && var5) {
@@ -296,7 +296,7 @@ public class Class5305 extends Module {
         }
     }
 
-    public List<String> method16677(Class8848 var1) {
+    public List<String> method16677(ItemStack var1) {
         List<ITextComponent> var4 = var1.method32153(mc.field1339, !mc.field1299.field44588 ? Class2215.field14480 : Class2215.field14481);
         List var5 = Lists.newArrayList();
 
@@ -307,22 +307,22 @@ public class Class5305 extends Module {
         return var5;
     }
 
-    private List<Class8848> method16678(Class8848 var1) {
-        List<Class8848> var4 = new ArrayList();
+    private List<ItemStack> method16678(ItemStack var1) {
+        List<ItemStack> var4 = new ArrayList();
         Class39 var5 = var1.method32142();
         if (var5 != null && var5.method119("BlockEntityTag", 10)) {
             Class39 var6 = var5.method130("BlockEntityTag");
             Peek.method18338(var6);
             if (var6.method119("Items", 9)) {
-                Class25<Class8848> var7 = Class25.method68(27, Class8848.field39973);
+                Class25<ItemStack> var7 = Class25.method68(27, ItemStack.field39973);
                 Class7920.method26567(var6, var7);
 
-                for (Class8848 var9 : var7) {
+                for (ItemStack var9 : var7) {
                     if (!var9.method32105()) {
                         boolean var10 = true;
 
-                        for (Class8848 var12 : var4) {
-                            if (var9.method32132(var12) && Class8848.method32127(var12, var9)) {
+                        for (ItemStack var12 : var4) {
+                            if (var9.method32132(var12) && ItemStack.method32127(var12, var9)) {
                                 var12.method32180(var9.method32179() + var12.method32179());
                                 var10 = false;
                             }

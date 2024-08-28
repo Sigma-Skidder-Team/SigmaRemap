@@ -140,11 +140,11 @@ public class Class1010 extends Class1009 implements Class1011 {
       }
 
       this.method4356(var4);
-      this.method4365((Class1657)this.field5024, var1);
+      this.method4365((ServerWorld)this.field5024, var1);
    }
 
    private boolean method4352(PlayerEntity var1) {
-      Class8848 var4 = var1.field4902.field5440.get(3);
+      ItemStack var4 = var1.field4902.field5440.get(3);
       if (var4.method32107() != Blocks.field36589.method11581()) {
          Vector3d var5 = var1.method3281(1.0F).method11333();
          Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.method3442() - var1.method3442(), this.getPosZ() - var1.getPosZ());
@@ -181,7 +181,7 @@ public class Class1010 extends Class1009 implements Class1011 {
 
       this.field4981 = false;
       if (!this.field5024.field9020) {
-         this.method4366((Class1657)this.field5024, true);
+         this.method4366((ServerWorld)this.field5024, true);
       }
 
       super.method2871();

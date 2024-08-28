@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 public class Class7936 {
    private static final Collection<Class4871> field34024 = Lists.newArrayList();
    private static final Set<String> field34025 = Sets.newHashSet();
-   private static final Map<String, Consumer<Class1657>> field34026 = Maps.newHashMap();
+   private static final Map<String, Consumer<ServerWorld>> field34026 = Maps.newHashMap();
    private static final Collection<Class4871> field34027 = Sets.newHashSet();
 
    public static Collection<Class4871> method26703(String var0) {
@@ -34,7 +34,7 @@ public class Class7936 {
    }
 
    @Nullable
-   public static Consumer<Class1657> method26707(String var0) {
+   public static Consumer<ServerWorld> method26707(String var0) {
       return field34026.get(var0);
    }
 

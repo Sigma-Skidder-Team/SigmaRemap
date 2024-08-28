@@ -21,7 +21,7 @@ public class Class9410 {
                         Entity var4 = ((Class6619)var0x.getSource()).method20173();
                         Class314 var5 = ((Class6619)var0x.getSource()).method20177();
                         if (var4 == null) {
-                           var5.method1367().method19484(method36044(var0x, var3), ChatType.SYSTEM, Util.field45724);
+                           var5.getPlayerList().method19484(method36044(var0x, var3), ChatType.SYSTEM, Util.field45724);
                         } else {
                            if (var4 instanceof Class878) {
                               IChatFilter var6 = ((Class878)var4).method2837();
@@ -29,7 +29,7 @@ public class Class9410 {
                                  var6.func_244432_a(var3)
                                     .thenAcceptAsync(
                                        var3x -> var3x.ifPresent(
-                                             var3xx -> var5.method1367().method19484(method36044(var0x, var3xx), ChatType.CHAT, var4.method3375())
+                                             var3xx -> var5.getPlayerList().method19484(method36044(var0x, var3xx), ChatType.CHAT, var4.getUniqueID())
                                           ),
                                        var5
                                     );
@@ -37,7 +37,7 @@ public class Class9410 {
                               }
                            }
 
-                           var5.method1367().method19484(method36044(var0x, var3), ChatType.CHAT, var4.method3375());
+                           var5.getPlayerList().method19484(method36044(var0x, var3), ChatType.CHAT, var4.getUniqueID());
                         }
 
                         return 1;

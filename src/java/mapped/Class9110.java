@@ -70,21 +70,21 @@ public class Class9110 {
    public double method33973(Vector3d var1) {
       double var4 = var1.field18048 - this.method33969() - 0.5;
       double var6 = var1.field18050 - this.method33971() - 0.5;
-      return (double)Class9679.method37766(var4 * var4 + var6 * var6);
+      return (double) MathHelper.method37766(var4 * var4 + var6 * var6);
    }
 
    public float method33974(Entity var1) {
       double var4 = var1.getPosX() - this.method33969();
       double var6 = var1.getPosY() - this.method33970();
       double var8 = var1.getPosZ() - this.method33971();
-      return Class9679.method37766(var4 * var4 + var6 * var6 + var8 * var8);
+      return MathHelper.method37766(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public float method33975(Class9110 var1) {
       double var4 = var1.method33969() - this.method33969();
       double var6 = var1.method33970() - this.method33970();
       double var8 = var1.method33971() - this.method33971();
-      return Class9679.method37766(var4 * var4 + var6 * var6 + var8 * var8);
+      return MathHelper.method37766(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public double method33976(Class9110 var1) {

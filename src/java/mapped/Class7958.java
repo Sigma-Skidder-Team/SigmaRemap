@@ -121,7 +121,7 @@ public class Class7958 {
                            field34206.warn("Chunk {} has invalid position {}", var18, var24);
                         }
 
-                        boolean var25 = var37 < Class9246.method34773().getWorldVersion();
+                        boolean var25 = var37 < SharedConstants.method34773().getWorldVersion();
                         if (this.field34209) {
                            var25 = var25 || var23.method118("Heightmaps");
                            var23.method133("Heightmaps");

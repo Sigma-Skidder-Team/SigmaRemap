@@ -56,8 +56,8 @@ public class Class3458 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
-      Class8848 var9 = var4.method3094(var5);
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.method3094(var5);
       Class3257 var10 = var9.method32107();
       if (var10 != Class8514.field37794 && var10 != Class8514.field38046) {
          return super.method11505(var1, var2, var3, var4, var5, var6);

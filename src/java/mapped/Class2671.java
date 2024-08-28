@@ -20,7 +20,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
       if (this.field17055.method4552()
          && !this.field17055.method4551().method25388()
          && this.field17055.method4570()
-         && !Class8848.method32128(this.field17055.method2943(Class2106.field13736), Class7699.method25421())) {
+         && !ItemStack.method32128(this.field17055.method2943(Class2106.field13736), Class7699.method25421())) {
          Class1026 var4 = var3.method25422(this.field17055.method4554());
          if (var4 == null || !var4.method3066()) {
             List var5 = this.field17055
@@ -39,7 +39,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17055.method4230().method21643().method8317(this.field17055.method3431(), 1.414)) {
+      if (this.field17055.method4230().method21643().method8317(this.field17055.getPositionVec(), 1.414)) {
          List var3 = this.field17055
             .field5024
             .<Class1000>method6772(Class1000.class, this.field17055.method3389().method19663(4.0, 4.0, 4.0), Class1026.method4566());

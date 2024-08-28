@@ -109,10 +109,10 @@ public class Class5368 extends Module {
     private void method16900(Class4402 var1) {
         if (mc.getClientPlayNetHandler() != null) {
             if (this.field23984) {
-                if (var1.method13932() instanceof Class5583
+                if (var1.method13932() instanceof CEntityActionPacket
                         || var1.method13932() instanceof Class5603
-                        || var1.method13932() instanceof Class5505
-                        || var1.method13932() instanceof Class5511
+                        || var1.method13932() instanceof CUseEntityPacket
+                        || var1.method13932() instanceof CAnimateHandPacket
                         || var1.method13932() instanceof Class5555) {
                     if (this.method15974("Instant")) {
                         this.field23983.add(var1.method13932());

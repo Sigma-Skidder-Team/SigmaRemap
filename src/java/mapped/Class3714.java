@@ -15,12 +15,12 @@ public class Class3714<E extends Class880> extends Class3676<E> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       return this.field19783.test((E)var2);
    }
 
    @Override
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       var2.method2992().method21405(this.field19784);
    }
 }

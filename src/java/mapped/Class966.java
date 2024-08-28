@@ -85,7 +85,7 @@ public class Class966 extends Class944 implements Class935 {
 
       if (!this.field5324.field9020) {
          for (Class880 var5 : this.field5419) {
-            if (var5.method3066() && !var5.field5041 && var3.method8317(var5.method3431(), 32.0)) {
+            if (var5.method3066() && !var5.field5041 && var3.method8317(var5.getPositionVec(), 32.0)) {
                var5.method2992().method21406(Class8830.field39840, this.field5324.method6783());
             }
          }
@@ -96,7 +96,7 @@ public class Class966 extends Class944 implements Class935 {
       BlockPos var3 = this.method3774();
 
       for (Class880 var5 : this.field5419) {
-         if (var5.method3066() && !var5.field5041 && var3.method8317(var5.method3431(), 32.0) && var5.method3204().method33228(Class8613.field38735)) {
+         if (var5.method3066() && !var5.field5041 && var3.method8317(var5.getPositionVec(), 32.0) && var5.method3204().method33228(Class8613.field38735)) {
             return true;
          }
       }
@@ -114,20 +114,20 @@ public class Class966 extends Class944 implements Class935 {
       if (var1.field9020) {
          BlockPos var4 = this.method3774();
          MutableInt var5 = new MutableInt(16700985);
-         int var6 = (int)this.field5419.stream().filter(var1x -> var4.method8317(var1x.method3431(), 48.0)).count();
+         int var6 = (int)this.field5419.stream().filter(var1x -> var4.method8317(var1x.getPositionVec(), 48.0)).count();
          this.field5419
             .stream()
             .filter(this::method3996)
             .forEach(
                var4x -> {
                   float var7 = 1.0F;
-                  float var8 = Class9679.method37766(
+                  float var8 = MathHelper.method37766(
                      (var4x.getPosX() - (double)var4.method8304()) * (var4x.getPosX() - (double)var4.method8304())
                         + (var4x.getPosZ() - (double)var4.method8306()) * (var4x.getPosZ() - (double)var4.method8306())
                   );
                   double var9 = (double)((float)var4.method8304() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.method8304());
                   double var11 = (double)((float)var4.method8306() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.method8306());
-                  int var13 = Class9679.method37775((var6 - 21) / -2, 3, 15);
+                  int var13 = MathHelper.method37775((var6 - 21) / -2, 3, 15);
 
                   for (int var14 = 0; var14 < var13; var14++) {
                      int var15 = var5.addAndGet(5);
@@ -144,7 +144,7 @@ public class Class966 extends Class944 implements Class935 {
    private boolean method3996(Class880 var1) {
       return var1.method3066()
          && !var1.field5041
-         && this.method3774().method8317(var1.method3431(), 48.0)
+         && this.method3774().method8317(var1.getPositionVec(), 48.0)
          && var1.method3204().method33228(Class8613.field38735);
    }
 

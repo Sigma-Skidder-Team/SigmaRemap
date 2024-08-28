@@ -22,7 +22,7 @@ public class Class6887 extends Class6886 {
       super.method21002(var1);
       if (this.field29849.contains(var1.method36053())) {
          this.field29848
-            .method1367()
+            .getPlayerList()
             .method19456(new Class5556(Class2073.field13503, var1.method36053().method29336(), var1.method36054(), var1.method36050()));
       }
 
@@ -32,7 +32,7 @@ public class Class6887 extends Class6886 {
    @Override
    public void method21003(String var1) {
       super.method21003(var1);
-      this.field29848.method1367().method19456(new Class5556(Class2073.field13504, (String)null, var1, 0));
+      this.field29848.getPlayerList().method19456(new Class5556(Class2073.field13504, (String)null, var1, 0));
       this.method21022();
    }
 
@@ -40,7 +40,7 @@ public class Class6887 extends Class6886 {
    public void method21004(String var1, Class8375 var2) {
       super.method21004(var1, var2);
       if (this.field29849.contains(var2)) {
-         this.field29848.method1367().method19456(new Class5556(Class2073.field13504, var2.method29336(), var1, 0));
+         this.field29848.getPlayerList().method19456(new Class5556(Class2073.field13504, var2.method29336(), var1, 0));
       }
 
       this.method21022();
@@ -54,7 +54,7 @@ public class Class6887 extends Class6886 {
          if (this.method21027(var5) <= 0) {
             this.method21026(var5);
          } else {
-            this.field29848.method1367().method19456(new Class5615(var1, var2));
+            this.field29848.getPlayerList().method19456(new Class5615(var1, var2));
          }
       }
 
@@ -62,7 +62,7 @@ public class Class6887 extends Class6886 {
          if (!this.field29849.contains(var2)) {
             this.method21024(var2);
          } else {
-            this.field29848.method1367().method19456(new Class5615(var1, var2));
+            this.field29848.getPlayerList().method19456(new Class5615(var1, var2));
          }
       }
 
@@ -74,7 +74,7 @@ public class Class6887 extends Class6886 {
       if (!super.method20993(var1, var2)) {
          return false;
       } else {
-         this.field29848.method1367().method19456(new Class5581(var2, Arrays.<String>asList(var1), 3));
+         this.field29848.getPlayerList().method19456(new Class5581(var2, Arrays.<String>asList(var1), 3));
          this.method21022();
          return true;
       }
@@ -83,7 +83,7 @@ public class Class6887 extends Class6886 {
    @Override
    public void method20995(String var1, Class8218 var2) {
       super.method20995(var1, var2);
-      this.field29848.method1367().method19456(new Class5581(var2, Arrays.<String>asList(var1), 4));
+      this.field29848.getPlayerList().method19456(new Class5581(var2, Arrays.<String>asList(var1), 4));
       this.method21022();
    }
 
@@ -97,7 +97,7 @@ public class Class6887 extends Class6886 {
    public void method21000(Class8375 var1) {
       super.method21000(var1);
       if (this.field29849.contains(var1)) {
-         this.field29848.method1367().method19456(new Class5576(var1, 2));
+         this.field29848.getPlayerList().method19456(new Class5576(var1, 2));
       }
 
       this.method21022();
@@ -116,21 +116,21 @@ public class Class6887 extends Class6886 {
    @Override
    public void method21005(Class8218 var1) {
       super.method21005(var1);
-      this.field29848.method1367().method19456(new Class5581(var1, 0));
+      this.field29848.getPlayerList().method19456(new Class5581(var1, 0));
       this.method21022();
    }
 
    @Override
    public void method21006(Class8218 var1) {
       super.method21006(var1);
-      this.field29848.method1367().method19456(new Class5581(var1, 2));
+      this.field29848.getPlayerList().method19456(new Class5581(var1, 2));
       this.method21022();
    }
 
    @Override
    public void method21007(Class8218 var1) {
       super.method21007(var1);
-      this.field29848.method1367().method19456(new Class5581(var1, 1));
+      this.field29848.getPlayerList().method19456(new Class5581(var1, 1));
       this.method21022();
    }
 
@@ -165,9 +165,9 @@ public class Class6887 extends Class6886 {
    public void method21024(Class8375 var1) {
       List<Packet<?>> var4 = this.method21023(var1);
 
-      for (Class878 var6 : this.field29848.method1367().method19488()) {
+      for (Class878 var6 : this.field29848.getPlayerList().method19488()) {
          for (Packet var8 : var4) {
-            var6.field4855.method15671(var8);
+            var6.field4855.sendPacket(var8);
          }
       }
 
@@ -190,9 +190,9 @@ public class Class6887 extends Class6886 {
    public void method21026(Class8375 var1) {
       List<Packet<?>> var4 = this.method21025(var1);
 
-      for (Class878 var6 : this.field29848.method1367().method19488()) {
+      for (Class878 var6 : this.field29848.getPlayerList().method19488()) {
          for (Packet var8 : var4) {
-            var6.field4855.method15671(var8);
+            var6.field4855.sendPacket(var8);
          }
       }
 

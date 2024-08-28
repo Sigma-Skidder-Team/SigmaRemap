@@ -30,7 +30,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var2.field9020) {
          if (!var4.method2800()) {
             Class944 var9 = var2.method6759(var3);
@@ -78,7 +78,7 @@ public class Class3368 extends Class3241 {
       if (var7 instanceof Class940) {
          Class940 var8 = (Class940)var7;
          if (!var1.field9020 && var4.method2801() && !var8.method3617()) {
-            Class8848 var9 = method11958(this.method11957());
+            ItemStack var9 = method11958(this.method11957());
             Class39 var10 = var8.method3754(new Class39());
             if (!var10.method134()) {
                var9.method32164("BlockEntityTag", var10);
@@ -100,7 +100,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public List<Class8848> method11697(Class7380 var1, Class9464 var2) {
+   public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
       Class944 var5 = var2.<Class944>method36459(Class9525.field44337);
       if (var5 instanceof Class940) {
          Class940 var6 = (Class940)var5;
@@ -115,7 +115,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
          Class944 var8 = var1.method6759(var2);
          if (var8 instanceof Class940) {
@@ -137,7 +137,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11583(Class8848 var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11583(ItemStack var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11583(var1, var2, var3, var4);
       Class39 var7 = var1.method32145("BlockEntityTag");
       if (var7 != null) {
@@ -146,12 +146,12 @@ public class Class3368 extends Class3241 {
          }
 
          if (var7.method119("Items", 9)) {
-            Class25<Class8848> var8 = Class25.method68(27, Class8848.field39973);
+            Class25<ItemStack> var8 = Class25.method68(27, ItemStack.field39973);
             Class7920.method26567(var7, var8);
             int var9 = 0;
             int var10 = 0;
 
-            for (Class8848 var12 : var8) {
+            for (ItemStack var12 : var8) {
                if (!var12.method32105()) {
                   var10++;
                   if (var9 <= 4) {
@@ -192,8 +192,8 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      Class8848 var6 = super.method11569(var1, var2, var3);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      ItemStack var6 = super.method11569(var1, var2, var3);
       Class940 var7 = (Class940)var1.method6759(var2);
       Class39 var8 = var7.method3754(new Class39());
       if (!var8.method134()) {
@@ -260,8 +260,8 @@ public class Class3368 extends Class3241 {
       return this.field18941;
    }
 
-   public static Class8848 method11958(Class112 var0) {
-      return new Class8848(method11956(var0));
+   public static ItemStack method11958(Class112 var0) {
+      return new ItemStack(method11956(var0));
    }
 
    @Override

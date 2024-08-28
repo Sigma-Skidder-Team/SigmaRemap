@@ -23,25 +23,25 @@ public class Class5215 extends Module {
     @EventTarget
     public void method16240(Class4432 var1) {
         if (this.method15996()) {
-            if (mc.field1299.field44636.method8509() && !mc.field1339.method3421().field5036) {
+            if (mc.field1299.field44636.method8509() && !mc.field1339.getRidingEntity().field5036) {
             }
 
             MovementInput var4 = mc.field1339.field6131;
             float var5 = var4.field43908;
             float var6 = var4.field43907;
-            if (!mc.field1339.method3421().field5037
-                    && !mc.field1339.method3421().field5036
-                    && Class5628.method17730(mc.field1339.method3421(), 5.0F)
-                    && !mc.field1339.method3421().method3250()
-                    && mc.field1338.method6738(mc.field1339.method3421().method3432()).method23383() != Blocks.WATER) {
+            if (!mc.field1339.getRidingEntity().field5037
+                    && !mc.field1339.getRidingEntity().field5036
+                    && Class5628.method17730(mc.field1339.getRidingEntity(), 5.0F)
+                    && !mc.field1339.getRidingEntity().method3250()
+                    && mc.field1338.method6738(mc.field1339.getRidingEntity().method3432()).method23383() != Blocks.WATER) {
                 var1.method13984(-2.0);
             }
 
-            if (mc.field1339.method3421().method3250()) {
-                if (mc.field1339.method3421().field5037) {
+            if (mc.field1339.getRidingEntity().method3250()) {
+                if (mc.field1339.getRidingEntity().field5037) {
                     var1.method13984(-1.0);
                 } else {
-                    double var13 = Math.floor(mc.field1339.method3421().getPosY()) + 0.7725465413369861 - mc.field1339.method3421().getPosY();
+                    double var13 = Math.floor(mc.field1339.getRidingEntity().getPosY()) + 0.7725465413369861 - mc.field1339.getRidingEntity().getPosY();
                     var1.method13984(var13 / 2.0);
                 }
             }
@@ -55,8 +55,8 @@ public class Class5215 extends Module {
                 double var10 = Math.sin(Math.toRadians(var7));
                 this.field23546 = 2.75F;
                 float var12 = this.field23546;
-                if (mc.field1339.method3421() instanceof Class1074) {
-                    Class1074 var15 = (Class1074) mc.field1339.method3421();
+                if (mc.field1339.getRidingEntity() instanceof Class1074) {
+                    Class1074 var15 = (Class1074) mc.field1339.getRidingEntity();
                     if (var15.field5036 && mc.field1299.field44636.method8509()) {
                         mc.field1339.field6140 = 1.0F;
                     }
@@ -64,8 +64,8 @@ public class Class5215 extends Module {
 
                 var1.method13982(var8 * (double) var12);
                 var1.method13986(var10 * (double) var12);
-                if (this.field23547 < 2 || !mc.field1339.method3421().field5036) {
-                    mc.field1339.method3421().field5051 = 0.0F;
+                if (this.field23547 < 2 || !mc.field1339.getRidingEntity().field5036) {
+                    mc.field1339.getRidingEntity().field5051 = 0.0F;
                 }
             }
         }
@@ -82,16 +82,16 @@ public class Class5215 extends Module {
     @EventTarget
     public void method16242(Class4402 var1) {
         if (var1.method13932() instanceof Class5483
-                && mc.field1339.method3421() != null
+                && mc.field1339.getRidingEntity() != null
                 && this.field23547++ > 2
-                && mc.field1339.method3421().field5036) {
-            mc.field1339.method3421().field5051 = 1.0F;
+                && mc.field1339.getRidingEntity().field5036) {
+            mc.field1339.getRidingEntity().field5051 = 1.0F;
         }
     }
 
     @EventTarget
     public void method16243(Class4421 var1) {
-        mc.field1339.method3421().field5051 = 0.0F;
+        mc.field1339.getRidingEntity().field5051 = 0.0F;
         this.field23547 = 0;
     }
 }

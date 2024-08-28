@@ -40,7 +40,7 @@ public class Class7317 {
    }
 
    public static int method23169(int var0) {
-      int var3 = Class9679.method37800(var0);
+      int var3 = MathHelper.method37800(var0);
       return var0 != var3 ? var3 / 2 : var3;
    }
 
@@ -49,11 +49,11 @@ public class Class7317 {
    }
 
    public static float method23171(float var0) {
-      return var0 * 180.0F / Class9679.field45210;
+      return var0 * 180.0F / MathHelper.field45210;
    }
 
    public static float method23172(float var0) {
-      return var0 / 180.0F * Class9679.field45210;
+      return var0 / 180.0F * MathHelper.field45210;
    }
 
    public static float method23173(double var0) {

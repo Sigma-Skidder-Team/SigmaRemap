@@ -106,7 +106,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       this.field5691 = var1.method122("TicksSincePollination");
       this.field5692 = var1.method122("CannotEnterHiveTicks");
       this.field5693 = var1.method122("CropsGrownSincePollination");
-      this.method4365((Class1657)this.field5024, var1);
+      this.method4365((ServerWorld)this.field5024, var1);
    }
 
    @Override
@@ -161,9 +161,9 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    private void method4419(Class1655 var1, double var2, double var4, double var6, double var8, double var10, Class7436 var12) {
       var1.method6746(
          var12,
-         Class9679.method37822(var1.field9016.nextDouble(), var2, var4),
+         MathHelper.method37822(var1.field9016.nextDouble(), var2, var4),
          var10,
-         Class9679.method37822(var1.field9016.nextDouble(), var6, var8),
+         MathHelper.method37822(var1.field9016.nextDouble(), var6, var8),
          0.0,
          0.0,
          0.0
@@ -229,7 +229,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    public float method4427(float var1) {
-      return Class9679.method37821(var1, this.field5689, this.field5688);
+      return MathHelper.method37821(var1, this.field5689, this.field5688);
    }
 
    private void method4428() {
@@ -256,7 +256,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
       if (var3) {
          this.field5690++;
-         if (this.field5690 % 5 == 0 && this.field5054.nextInt(Class9679.method37775(1200 - this.field5690, 1, 1200)) == 0) {
+         if (this.field5690 % 5 == 0 && this.field5054.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
             this.method2741(Class8654.field39005, this.method3042());
          }
       }
@@ -266,7 +266,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       }
 
       if (!this.field5024.field9020) {
-         this.method4366((Class1657)this.field5024, false);
+         this.method4366((ServerWorld)this.field5024, false);
       }
    }
 
@@ -356,7 +356,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
             this.field5695--;
          }
 
-         boolean var3 = this.method4369() && !this.method4440() && this.method4232() != null && this.method4232().method3277(this) < 4.0;
+         boolean var3 = this.method4369() && !this.method4440() && this.method4232() != null && this.method4232().getDistanceSq(this) < 4.0;
          this.method4443(var3);
          if (this.field5055 % 20 == 0 && !this.method4437()) {
             this.field5697 = null;
@@ -436,7 +436,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return var1.method32107().method11743(Class5985.field26107);
    }
 
@@ -468,7 +468,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       return 0.4F;
    }
 
-   public Class1017 method4389(Class1657 var1, Class1045 var2) {
+   public Class1017 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41009.method33215(var1);
    }
 

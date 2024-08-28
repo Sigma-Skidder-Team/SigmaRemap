@@ -25,7 +25,7 @@ public class Class1998 implements Comparable<Class1998> {
    }
 
    public Class1998(double var1, double var3, double var5) {
-      this(Class9679.method37769(var1), Class9679.method37769(var3), Class9679.method37769(var5));
+      this(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
    }
 
    @Override

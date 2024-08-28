@@ -26,13 +26,13 @@ public class Class2905 extends Class2898<Class4712> {
 
          for (int var10 = 0; var10 < var8; var10++) {
             float var11 = (1.0F - (float)var10 / (float)var8) * (float)var9;
-            int var12 = Class9679.method37773(var11);
+            int var12 = MathHelper.method37773(var11);
 
             for (int var13 = -var12; var13 <= var12; var13++) {
-               float var14 = (float)Class9679.method37772(var13) - 0.25F;
+               float var14 = (float) MathHelper.method37772(var13) - 0.25F;
 
                for (int var15 = -var12; var15 <= var12; var15++) {
-                  float var16 = (float)Class9679.method37772(var15) - 0.25F;
+                  float var16 = (float) MathHelper.method37772(var15) - 0.25F;
                   if ((var13 == 0 && var15 == 0 || !(var14 * var14 + var16 * var16 > var11 * var11))
                      && (var13 != -var12 && var13 != var12 && var15 != -var12 && var15 != var12 || !(var3.nextFloat() > 0.75F))) {
                      Class7380 var17 = var1.method6738(var4.method8336(var13, var10, var15));

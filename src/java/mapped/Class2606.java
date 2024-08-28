@@ -72,9 +72,9 @@ public class Class2606 extends Class2605 {
          this.field16851,
          Vector3d.method11329(Class1110.method5349(this.field16851))
             .method11339(
-               (double)(this.field16854 * Class9679.method37764(this.field16853)),
+               (double)(this.field16854 * MathHelper.method37764(this.field16853)),
                (double)(-4.0F + this.field16855),
-               (double)(this.field16854 * Class9679.method37763(this.field16853))
+               (double)(this.field16854 * MathHelper.method37763(this.field16853))
             )
       );
    }

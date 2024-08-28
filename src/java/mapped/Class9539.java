@@ -34,10 +34,10 @@ public class Class9539 {
    }
 
    public boolean method36911(Class878 var1, Class8654 var2) {
-      return this.method36912(var1.method2798(), var1.method3431(), var2);
+      return this.method36912(var1.getServerWorld(), var1.getPositionVec(), var2);
    }
 
-   public boolean method36912(Class1657 var1, Vector3d var2, Class8654 var3) {
+   public boolean method36912(ServerWorld var1, Vector3d var2, Class8654 var3) {
       if (this != field44409) {
          if (this.field44410 != null && this.field44410 != var3.method31129()) {
             return false;

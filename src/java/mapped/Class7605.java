@@ -9,7 +9,7 @@ public class Class7605 {
    public double method24911(double var1, double var3) {
       this.field32647 += var1;
       double var7 = this.field32647 - this.field32648;
-      double var9 = Class9679.method37822(0.5, this.field32649, var7);
+      double var9 = MathHelper.method37822(0.5, this.field32649, var7);
       double var11 = Math.signum(var7);
       if (var11 * var7 > var11 * this.field32649) {
          var7 = var9;

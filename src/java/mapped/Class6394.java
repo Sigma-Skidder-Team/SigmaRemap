@@ -114,7 +114,7 @@ public class Class6394 extends Class6395 {
 
    @Override
    public boolean method19441(GameProfile var1) {
-      return !this.method19476() || this.method19464(var1) || this.method19468().method14448(var1);
+      return !this.method19476() || this.canSendCommands(var1) || this.method19468().method14448(var1);
    }
 
    public Class1645 method19444() {

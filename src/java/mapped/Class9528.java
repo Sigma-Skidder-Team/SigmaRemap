@@ -38,8 +38,8 @@ public class Class9528 {
          if (var6 != null) {
             this.field44347
                .getClientPlayNetHandler()
-               .sendPacket(new Class5505(var6.method31416(), Class79.field182, var6.method31419(), this.field44347.field1339.method3331()));
-            this.field44347.getClientPlayNetHandler().sendPacket(new Class5505(var6.method31416(), Class79.field182, this.field44347.field1339.method3331()));
+               .sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, var6.method31419(), this.field44347.field1339.method3331()));
+            this.field44347.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, this.field44347.field1339.method3331()));
          }
       }
 
@@ -172,7 +172,7 @@ public class Class9528 {
             var24.remove();
          } else if (!this.field44346.method15974("Monsters") && var9 instanceof Class1009) {
             var24.remove();
-         } else if (this.field44347.field1339.method3421() != null && this.field44347.field1339.method3421().equals(var9)) {
+         } else if (this.field44347.field1339.getRidingEntity() != null && this.field44347.field1339.getRidingEntity().equals(var9)) {
             var24.remove();
          } else if (var9.method3362()) {
             var24.remove();

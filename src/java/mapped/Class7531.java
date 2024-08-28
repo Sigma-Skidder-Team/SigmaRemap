@@ -9,11 +9,11 @@ import javax.annotation.Nullable;
 
 public class Class7531 extends Class7530 {
    private final Map<Integer, Class7699> field32332 = Maps.newHashMap();
-   private final Class1657 field32333;
+   private final ServerWorld field32333;
    private int field32334;
    private int field32335;
 
-   public Class7531(Class1657 var1) {
+   public Class7531(ServerWorld var1) {
       super(method24615(var1.method6812()));
       this.field32333 = var1;
       this.field32334 = 1;
@@ -85,12 +85,12 @@ public class Class7531 extends Class7530 {
                var13 = new BlockPos(var8);
             }
 
-            Class7699 var14 = this.method24614(var1.method2798(), var13);
+            Class7699 var14 = this.method24614(var1.getServerWorld(), var13);
             boolean var15 = false;
             if (var14.method25395()) {
                if (var14.method25400() >= var14.method25399()) {
                   var1.method3040(Class8254.field35497);
-                  var1.field4855.method15671(new Class5464(var1, (byte)43));
+                  var1.field4855.sendPacket(new Class5464(var1, (byte)43));
                } else {
                   var15 = true;
                }
@@ -104,7 +104,7 @@ public class Class7531 extends Class7530 {
 
             if (var15) {
                var14.method25401(var1);
-               var1.field4855.method15671(new Class5464(var1, (byte)43));
+               var1.field4855.sendPacket(new Class5464(var1, (byte)43));
                if (!var14.method25390()) {
                   var1.method2911(Class8876.field40173);
                   Class9551.field44499.method15062(var1);
@@ -117,7 +117,7 @@ public class Class7531 extends Class7530 {
       }
    }
 
-   private Class7699 method24614(Class1657 var1, BlockPos var2) {
+   private Class7699 method24614(ServerWorld var1, BlockPos var2) {
       Class7699 var5 = var1.method6957(var2);
       return var5 == null ? new Class7699(this.method24616(), var1, var2) : var5;
    }

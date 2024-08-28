@@ -80,7 +80,7 @@ public class Class7194 extends Class7195<Class4728> {
       double var15,
       BitSet var17
    ) {
-      double var20 = 1.5 + (double)(Class9679.method37763((float) (Math.PI / 2)) * var14);
+      double var20 = 1.5 + (double)(MathHelper.method37763((float) (Math.PI / 2)) * var14);
       double var22 = var20 * var15;
       this.method22608(var1, var2, var3, var5, var6, var7, var8 + 1.0, var10, var12, var20, var22, var17);
    }
@@ -110,12 +110,12 @@ public class Class7194 extends Class7195<Class4728> {
       float var28 = 0.0F;
 
       for (int var29 = var17; var29 < var18; var29++) {
-         double var30 = 1.5 + (double)(Class9679.method37763((float) Math.PI * (float)var29 / (float)var18) * var14);
+         double var30 = 1.5 + (double)(MathHelper.method37763((float) Math.PI * (float)var29 / (float)var18) * var14);
          double var32 = var30 * var19;
-         float var34 = Class9679.method37764(var16);
-         var8 += (double)(Class9679.method37764(var15) * var34);
-         var10 += (double)Class9679.method37763(var16);
-         var12 += (double)(Class9679.method37763(var15) * var34);
+         float var34 = MathHelper.method37764(var16);
+         var8 += (double)(MathHelper.method37764(var15) * var34);
+         var10 += (double) MathHelper.method37763(var16);
+         var12 += (double)(MathHelper.method37763(var15) * var34);
          var16 *= !var26 ? 0.7F : 0.92F;
          var16 += var28 * 0.1F;
          var15 += var27 * 0.1F;

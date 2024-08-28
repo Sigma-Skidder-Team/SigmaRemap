@@ -23,7 +23,7 @@ public class Class9333 {
       double var3 = (double)var0 / 4096.0;
       var3 *= 0.995;
       double var5 = var3 * 2.0 - 1.0;
-      var5 = Class9679.method37778(var5, -1.0, 1.0);
-      return (double)Class9679.method37766(1.0 - var5 * var5);
+      var5 = MathHelper.method37778(var5, -1.0, 1.0);
+      return (double) MathHelper.method37766(1.0 - var5 * var5);
    }
 }

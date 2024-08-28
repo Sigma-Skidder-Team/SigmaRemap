@@ -81,7 +81,7 @@ public class Class3410 extends Block {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7020(Class1977.field12882, var3) > 11) {
          method11554(var1, var2, var3);
          var2.method6728(var3, false);

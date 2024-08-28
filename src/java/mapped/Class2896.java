@@ -47,7 +47,7 @@ public class Class2896 extends Class2797<Class1100> {
       this.field17934.field31034 = 2.0F;
       this.field17935.field31033 = 1.0F;
       this.field17934.field31033 = 1.0F;
-      this.field17935.field31036 = 0.47123894F + Class9679.method37764(var4 * 0.8F) * (float) Math.PI * 0.05F;
+      this.field17935.field31036 = 0.47123894F + MathHelper.method37764(var4 * 0.8F) * (float) Math.PI * 0.05F;
       this.field17934.field31036 = -this.field17935.field31036;
       this.field17934.field31037 = -0.47123894F;
       this.field17934.field31035 = 0.47123894F;

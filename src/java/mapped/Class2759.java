@@ -59,7 +59,7 @@ public class Class2759 extends Class2595 {
    public void method10805() {
       Class880 var3 = this.field17314.method4232();
       if (var3 != null) {
-         if (!(this.field17314.method3277(var3) > (double)this.field17315)) {
+         if (!(this.field17314.getDistanceSq(var3) > (double)this.field17315)) {
             this.field17314.method4304(true);
          } else {
             this.field17314.method4227().method28040(var3, 30.0F, 30.0F);

@@ -54,7 +54,7 @@ public class Class895 extends Class890 {
             }
          } else {
             Class878 var7 = (Class878)var4;
-            if (var7.field4855.method15589().method30707() && var7.field5024 == this.field5024 && !var7.method3176()) {
+            if (var7.field4855.method15589().method30707() && var7.field5024 == this.field5024 && !var7.isSleeping()) {
                if (this.field5054.nextFloat() < 0.05F && this.field5024.method6789().method17135(Class5462.field24226)) {
                   Class1104 var6 = Class8992.field41026.method33215(this.field5024);
                   var6.method5298(true);
@@ -88,7 +88,7 @@ public class Class895 extends Class890 {
 
    @Nullable
    @Override
-   public Entity method2745(Class1657 var1) {
+   public Entity method2745(ServerWorld var1) {
       Entity var4 = this.method3460();
       if (var4 != null && var4.field5024.method6813() != var1.method6813()) {
          this.method3459((Entity)null);

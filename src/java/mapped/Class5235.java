@@ -39,8 +39,8 @@ public class Class5235 extends Module {
     @EventTarget
     private void method16319(Class4396 var1) {
         if (this.method15996()) {
-            if (var1.method13898() instanceof Class5616) {
-                Class5616 var4 = (Class5616) var1.method13898();
+            if (var1.method13898() instanceof SChatPacket) {
+                SChatPacket var4 = (SChatPacket) var1.method13898();
                 if (var4.method17648().getString().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
                     var1.method13900(true);
                 }
@@ -63,9 +63,9 @@ public class Class5235 extends Module {
             if (!var1.method13921()) {
                 if (field23588 != null) {
                     if (this.method15974("No Swing") && !this.method15974("Mineplex")) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                     } else if (!this.method15974("No Swing")) {
-                        mc.field1339.method2820(Class79.field182);
+                        mc.field1339.swingArm(Hand.field182);
                     }
 
                     Class8711 var7 = new Class8711(
@@ -78,7 +78,7 @@ public class Class5235 extends Module {
                             field23588,
                             false
                     );
-                    mc.getClientPlayNetHandler().sendPacket(new Class5570(Class79.field182, var7));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5570(Hand.field182, var7));
                 }
             } else {
                 List var8 = this.method16321(!this.method15974("Mineplex") ? mc.field1337.method23135() : 6.0F);

@@ -35,8 +35,8 @@ public class Class8032 extends Class8033 {
       int var7 = var2.method8321(var3);
       float var8 = var4.nextFloat();
       return (double)var8
-         <= Class9679.method37779(
-            (double)this.field34515, (double)this.field34516, Class9679.method37813((double)var7, (double)this.field34517, (double)this.field34518)
+         <= MathHelper.method37779(
+            (double)this.field34515, (double)this.field34516, MathHelper.method37813((double)var7, (double)this.field34517, (double)this.field34518)
          );
    }
 

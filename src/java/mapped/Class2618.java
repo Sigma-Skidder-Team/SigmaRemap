@@ -28,7 +28,7 @@ public class Class2618 extends Class2595 {
    @Override
    public boolean method10806() {
       if (this.field16895.method3066()) {
-         return this.field16894.method3277(this.field16895) > (double)(this.field16897 * this.field16897)
+         return this.field16894.getDistanceSq(this.field16895) > (double)(this.field16897 * this.field16897)
             ? false
             : this.field16898 > 0 && this.method10825(this.field16895);
       } else {
@@ -57,8 +57,8 @@ public class Class2618 extends Class2595 {
    }
 
    private boolean method10825(PlayerEntity var1) {
-      for (Class79 var7 : Class79.values()) {
-         Class8848 var8 = var1.method3094(var7);
+      for (Hand var7 : Hand.values()) {
+         ItemStack var8 = var1.method3094(var7);
          if (this.field16894.method4393() && var8.method32107() == Class8514.field37935) {
             return true;
          }

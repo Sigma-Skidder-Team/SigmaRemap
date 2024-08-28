@@ -42,7 +42,7 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       boolean var7 = this.method11981(var2, var3, var1);
       List var8 = field18988.get(var2);
 

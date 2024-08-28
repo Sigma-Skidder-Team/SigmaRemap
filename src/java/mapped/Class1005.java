@@ -21,8 +21,8 @@ public class Class1005 extends Class880 {
    public static final Class9289<Class7087> field5578 = Class9361.<Class7087>method35441(Class1005.class, Class7784.field33400);
    public static final Class9289<Class7087> field5579 = Class9361.<Class7087>method35441(Class1005.class, Class7784.field33400);
    private static final Predicate<Entity> field5580 = var0 -> var0 instanceof Class916 && ((Class916)var0).method3602() == Class2177.field14287;
-   private final Class25<Class8848> field5581 = Class25.<Class8848>method68(2, Class8848.field39973);
-   private final Class25<Class8848> field5582 = Class25.<Class8848>method68(4, Class8848.field39973);
+   private final Class25<ItemStack> field5581 = Class25.<ItemStack>method68(2, ItemStack.field39973);
+   private final Class25<ItemStack> field5582 = Class25.<ItemStack>method68(4, ItemStack.field39973);
    private boolean field5583;
    public long field5584;
    private int field5585;
@@ -74,29 +74,29 @@ public class Class1005 extends Class880 {
    }
 
    @Override
-   public Iterable<Class8848> method2946() {
+   public Iterable<ItemStack> method2946() {
       return this.field5581;
    }
 
    @Override
-   public Iterable<Class8848> method2947() {
+   public Iterable<ItemStack> method2947() {
       return this.field5582;
    }
 
    @Override
-   public Class8848 method2943(Class2106 var1) {
+   public ItemStack method2943(Class2106 var1) {
       switch (Class7259.field31147[var1.method8772().ordinal()]) {
          case 1:
             return this.field5581.get(var1.method8773());
          case 2:
             return this.field5582.get(var1.method8773());
          default:
-            return Class8848.field39973;
+            return ItemStack.field39973;
       }
    }
 
    @Override
-   public void method2944(Class2106 var1, Class8848 var2) {
+   public void method2944(Class2106 var1, ItemStack var2) {
       switch (Class7259.field31147[var1.method8772().ordinal()]) {
          case 1:
             this.method3023(var2);
@@ -109,7 +109,7 @@ public class Class1005 extends Class880 {
    }
 
    @Override
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       Class2106 var5;
       if (var1 != 98) {
          if (var1 != 99) {
@@ -146,7 +146,7 @@ public class Class1005 extends Class880 {
    }
 
    @Override
-   public boolean method2980(Class8848 var1) {
+   public boolean method2980(ItemStack var1) {
       Class2106 var4 = Class1006.method4271(var1);
       return this.method2943(var4).method32105() && !this.method4189(var4);
    }
@@ -156,7 +156,7 @@ public class Class1005 extends Class880 {
       super.method2724(var1);
       Class41 var4 = new Class41();
 
-      for (Class8848 var6 : this.field5582) {
+      for (ItemStack var6 : this.field5582) {
          Class39 var7 = new Class39();
          if (!var6.method32105()) {
             var6.method32112(var7);
@@ -168,7 +168,7 @@ public class Class1005 extends Class880 {
       var1.method99("ArmorItems", var4);
       Class41 var9 = new Class41();
 
-      for (Class8848 var11 : this.field5581) {
+      for (ItemStack var11 : this.field5581) {
          Class39 var8 = new Class39();
          if (!var11.method32105()) {
             var11.method32112(var8);
@@ -197,7 +197,7 @@ public class Class1005 extends Class880 {
          Class41 var4 = var1.method131("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field5582.size(); var5++) {
-            this.field5582.set(var5, Class8848.method32104(var4.method153(var5)));
+            this.field5582.set(var5, ItemStack.method32104(var4.method153(var5)));
          }
       }
 
@@ -205,7 +205,7 @@ public class Class1005 extends Class880 {
          Class41 var6 = var1.method131("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field5581.size(); var8++) {
-            this.field5581.set(var8, Class8848.method32104(var6.method153(var8)));
+            this.field5581.set(var8, ItemStack.method32104(var6.method153(var8)));
          }
       }
 
@@ -279,15 +279,15 @@ public class Class1005 extends Class880 {
 
       for (int var4 = 0; var4 < var3.size(); var4++) {
          Entity var5 = (Entity)var3.get(var4);
-         if (this.method3277(var5) <= 0.2) {
+         if (this.getDistanceSq(var5) <= 0.2) {
             var5.method3101(this);
          }
       }
    }
 
    @Override
-   public Class2274 method3397(PlayerEntity var1, Vector3d var2, Class79 var3) {
-      Class8848 var6 = var1.method3094(var3);
+   public Class2274 method3397(PlayerEntity var1, Vector3d var2, Hand var3) {
+      ItemStack var6 = var1.method3094(var3);
       if (this.method4203() || var6.method32107() == Class8514.field38088) {
          return Class2274.field14820;
       } else if (var1.method2800()) {
@@ -344,14 +344,14 @@ public class Class1005 extends Class880 {
       return (this.field5585 & 1 << var1.method8774()) != 0 || var1.method8772() == Class1969.field12836 && !this.method4199();
    }
 
-   private boolean method4190(PlayerEntity var1, Class2106 var2, Class8848 var3, Class79 var4) {
-      Class8848 var7 = this.method2943(var2);
+   private boolean method4190(PlayerEntity var1, Class2106 var2, ItemStack var3, Hand var4) {
+      ItemStack var7 = this.method2943(var2);
       if (!var7.method32105() && (this.field5585 & 1 << var2.method8774() + 8) != 0) {
          return false;
       } else if (var7.method32105() && (this.field5585 & 1 << var2.method8774() + 16) != 0) {
          return false;
       } else if (var1.field4919.field29609 && var7.method32105() && !var3.method32105()) {
-         Class8848 var9 = var3.method32126();
+         ItemStack var9 = var3.method32126();
          var9.method32180(1);
          this.method2944(var2, var9);
          return true;
@@ -360,7 +360,7 @@ public class Class1005 extends Class880 {
          var1.method3095(var4, var7);
          return true;
       } else if (var7.method32105()) {
-         Class8848 var8 = var3.method32126();
+         ItemStack var8 = var3.method32126();
          var8.method32180(1);
          this.method2944(var2, var8);
          var3.method32182(1);
@@ -447,8 +447,8 @@ public class Class1005 extends Class880 {
    }
 
    private void method4191() {
-      if (this.field5024 instanceof Class1657) {
-         ((Class1657)this.field5024)
+      if (this.field5024 instanceof ServerWorld) {
+         ((ServerWorld)this.field5024)
             .method6939(
                new Class7439(Class7940.field34051, Blocks.field36400.method11579()),
                this.getPosX(),
@@ -475,7 +475,7 @@ public class Class1005 extends Class880 {
    }
 
    private void method4193(Class8654 var1) {
-      Block.method11557(this.field5024, this.method3432(), new Class8848(Class8514.field38082));
+      Block.method11557(this.field5024, this.method3432(), new ItemStack(Class8514.field38082));
       this.method4194(var1);
    }
 
@@ -484,18 +484,18 @@ public class Class1005 extends Class880 {
       this.method3052(var1);
 
       for (int var4 = 0; var4 < this.field5581.size(); var4++) {
-         Class8848 var5 = this.field5581.get(var4);
+         ItemStack var5 = this.field5581.get(var4);
          if (!var5.method32105()) {
             Block.method11557(this.field5024, this.method3432().method8311(), var5);
-            this.field5581.set(var4, Class8848.field39973);
+            this.field5581.set(var4, ItemStack.field39973);
          }
       }
 
       for (int var6 = 0; var6 < this.field5582.size(); var6++) {
-         Class8848 var7 = this.field5582.get(var6);
+         ItemStack var7 = this.field5582.get(var6);
          if (!var7.method32105()) {
             Block.method11557(this.field5024, this.method3432().method8311(), var7);
-            this.field5582.set(var6, Class8848.field39973);
+            this.field5582.set(var6, ItemStack.field39973);
          }
       }
    }
@@ -734,7 +734,7 @@ public class Class1005 extends Class880 {
    }
 
    @Override
-   public void method3353(Class1657 var1, Class906 var2) {
+   public void method3353(ServerWorld var1, Class906 var2) {
    }
 
    @Override
@@ -775,7 +775,7 @@ public class Class1005 extends Class880 {
       if (!this.method4203()) {
          return super.method3287(var1);
       } else {
-         Class6488 var4 = this.method4217(false).method32097(this.method3431());
+         Class6488 var4 = this.method4217(false).method32097(this.getPositionVec());
          BlockPos var5 = this.method3432();
          int var6 = Integer.MIN_VALUE;
 

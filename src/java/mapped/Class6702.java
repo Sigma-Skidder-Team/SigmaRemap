@@ -28,7 +28,7 @@ public class Class6702 extends Class6698 {
 
    @Override
    public Class7380 method20424(Random var1, BlockPos var2) {
-      double var5 = Class9679.method37778(
+      double var5 = MathHelper.method37778(
          (1.0 + Class8907.field40314.method25315((double)var2.method8304() / 48.0, (double)var2.method8306() / 48.0, false)) / 2.0, 0.0, 0.9999
       );
       return field29339[(int)(var5 * (double)field29339.length)];

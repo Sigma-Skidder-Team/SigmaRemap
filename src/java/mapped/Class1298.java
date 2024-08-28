@@ -99,7 +99,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    public int method6157(double var1, double var3) {
       int var7 = this.field6876 + this.field6871 / 2 - this.method6167() / 2;
       int var8 = this.field6876 + this.field6871 / 2 + this.method6167() / 2;
-      int var9 = Class9679.method37769(var3 - (double)this.field6873) - this.field6884 + (int)this.field6880 - 4;
+      int var9 = MathHelper.method37769(var3 - (double)this.field6873) - this.field6884 + (int)this.field6880 - 4;
       int var10 = var9 / this.field6877;
       return var1 < (double)this.method6170() && var1 >= (double)var7 && var1 <= (double)var8 && var10 >= 0 && var9 >= 0 && var10 < this.method6147()
          ? var10
@@ -107,7 +107,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
    }
 
    public void method6158() {
-      this.field6880 = Class9679.method37778(this.field6880, 0.0, (double)this.method6159());
+      this.field6880 = MathHelper.method37778(this.field6880, 0.0, (double)this.method6159());
    }
 
    public int method6159() {
@@ -198,7 +198,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
          int var15 = this.method6159();
          if (var15 > 0) {
             int var16 = (int)((float)((this.field6874 - this.field6873) * (this.field6874 - this.field6873)) / (float)this.method6150());
-            var16 = Class9679.method37775(var16, 32, this.field6874 - this.field6873 - 8);
+            var16 = MathHelper.method37775(var16, 32, this.field6874 - this.field6873 - 8);
             int var17 = (int)this.field6880 * (this.field6874 - this.field6873 - var16) / var15 + this.field6873;
             if (var17 < this.field6873) {
                var17 = this.field6873;
@@ -283,7 +283,7 @@ public abstract class Class1298 extends Class1150 implements Class1190 {
                   }
 
                   int var14 = (int)((float)((this.field6874 - this.field6873) * (this.field6874 - this.field6873)) / (float)this.method6150());
-                  var14 = Class9679.method37775(var14, 32, this.field6874 - this.field6873 - 8);
+                  var14 = MathHelper.method37775(var14, 32, this.field6874 - this.field6873 - 8);
                   double var15 = var12 / (double)(this.field6874 - this.field6873 - var14);
                   if (var15 < 1.0) {
                      var15 = 1.0;

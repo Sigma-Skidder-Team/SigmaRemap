@@ -21,11 +21,11 @@ public class Class6839 extends Class6829 {
             if (this.field29727.method4232() != null) {
                double var6 = this.field29727.method4232().getPosX() - this.field29727.getPosX();
                double var8 = this.field29727.method4232().getPosZ() - this.field29727.getPosZ();
-               this.field29727.field5031 = -((float)Class9679.method37814(var6, var8)) * (180.0F / (float)Math.PI);
+               this.field29727.field5031 = -((float) MathHelper.method37814(var6, var8)) * (180.0F / (float)Math.PI);
                this.field29727.field4965 = this.field29727.field5031;
             } else {
                Vector3d var10 = this.field29727.method3433();
-               this.field29727.field5031 = -((float)Class9679.method37814(var10.field18048, var10.field18050)) * (180.0F / (float)Math.PI);
+               this.field29727.field5031 = -((float) MathHelper.method37814(var10.field18048, var10.field18050)) * (180.0F / (float)Math.PI);
                this.field29727.field4965 = this.field29727.field5031;
             }
          } else {

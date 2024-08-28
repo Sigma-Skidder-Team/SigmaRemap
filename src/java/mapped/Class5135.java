@@ -174,7 +174,7 @@ public class Class5135 implements Class5119 {
          Class7176 var12 = var0.method28695(var11);
          if (!(method15906(var12.method22531(), var1, var3, var5) > 80.0F)) {
             float var13 = (float)var11 / (float)var0.method28698() * 0.33F;
-            int var14 = var11 != 0 ? Class9679.method37818(var13, 0.9F, 0.9F) : 0;
+            int var14 = var11 != 0 ? MathHelper.method37818(var13, 0.9F, 0.9F) : 0;
             int var15 = var14 >> 16 & 0xFF;
             int var16 = var14 >> 8 & 0xFF;
             int var17 = var14 & 0xFF;

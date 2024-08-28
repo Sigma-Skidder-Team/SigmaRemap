@@ -42,7 +42,7 @@ public class Class1328 extends Screen {
    @Override
    public void method1923(Class9332 var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      String var7 = Class9679.method37775(this.field7026.method22745(), 0, 100) + "%";
+      String var7 = MathHelper.method37775(this.field7026.method22745(), 0, 100) + "%";
       long var8 = Util.method38487();
       if (var8 - this.field7027 > 2000L) {
          this.field7027 = var8;

@@ -183,11 +183,11 @@ public enum Class2133 {
          case 6:
             return -method8826(var1, 0);
          case 7:
-            return Class9679.field45210;
+            return MathHelper.field45210;
          case 8:
-            return Class9679.method37763(method8826(var1, 0));
+            return MathHelper.method37763(method8826(var1, 0));
          case 9:
-            return Class9679.method37764(method8826(var1, 0));
+            return MathHelper.method37764(method8826(var1, 0));
          case 10:
             return Class7317.method23165(method8826(var1, 0));
          case 11:
@@ -197,7 +197,7 @@ public enum Class2133 {
          case 13:
             return (float)Math.atan((double)method8826(var1, 0));
          case 14:
-            return (float)Class9679.method37814((double)method8826(var1, 0), (double)method8826(var1, 1));
+            return (float) MathHelper.method37814((double)method8826(var1, 0), (double)method8826(var1, 1));
          case 15:
             return Class7317.method23172(method8826(var1, 0));
          case 16:
@@ -207,17 +207,17 @@ public enum Class2133 {
          case 18:
             return this.method8825(var1);
          case 19:
-            return Class9679.method37777(method8826(var1, 0), method8826(var1, 1), method8826(var1, 2));
+            return MathHelper.method37777(method8826(var1, 0), method8826(var1, 1), method8826(var1, 2));
          case 20:
-            return Class9679.method37771(method8826(var1, 0));
+            return MathHelper.method37771(method8826(var1, 0));
          case 21:
             return (float)Math.exp((double)method8826(var1, 0));
          case 22:
-            return (float)Class9679.method37767(method8826(var1, 0));
+            return (float) MathHelper.method37767(method8826(var1, 0));
          case 23:
-            return (float)Class9679.method37773(method8826(var1, 0));
+            return (float) MathHelper.method37773(method8826(var1, 0));
          case 24:
-            return Class9679.method37807(method8826(var1, 0));
+            return MathHelper.method37807(method8826(var1, 0));
          case 25:
             return (float)Math.log((double)method8826(var1, 0));
          case 26:
@@ -229,11 +229,11 @@ public enum Class2133 {
          case 29:
             return Math.signum(method8826(var1, 0));
          case 30:
-            return Class9679.method37765(method8826(var1, 0));
+            return MathHelper.method37765(method8826(var1, 0));
          case 31:
             float var6 = method8826(var1, 0);
             float var7 = method8826(var1, 1);
-            return var6 - var7 * (float)Class9679.method37767(var6 / var7);
+            return var6 - var7 * (float) MathHelper.method37767(var6 / var7);
          case 32:
             Minecraft var8 = Minecraft.getInstance();
             Class1656 var9 = var8.field1338;

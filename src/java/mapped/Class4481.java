@@ -18,7 +18,7 @@ public class Class4481 extends Class4457 {
       return new Class4481(Class9587.field44822, Class8576.field38559, Class8576.field38559, var0);
    }
 
-   public boolean method14144(Class1657 var1, Vector3d var2, double var3, double var5, double var7) {
+   public boolean method14144(ServerWorld var1, Vector3d var2, double var3, double var5, double var7) {
       if (this.field21673.method30650(var1, var2.field18048, var2.field18049, var2.field18050)) {
          return this.field21674.method30650(var1, var3, var5, var7)
             ? this.field21675.method32328(var2.field18048, var2.field18049, var2.field18050, var3, var5, var7)

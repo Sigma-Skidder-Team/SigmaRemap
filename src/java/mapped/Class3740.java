@@ -31,12 +31,12 @@ public class Class3740<E extends Class880> extends Class3676<E> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       return this.field19864.test((E)var2) && this.field19865.method12508(var1, (E)var2);
    }
 
    @Override
-   public boolean method12499(Class1657 var1, E var2, long var3) {
+   public boolean method12499(ServerWorld var1, E var2, long var3) {
       return this.field19866 && this.field19864.test((E)var2) && this.field19865.method12499(var1, (E)var2, var3);
    }
 
@@ -46,17 +46,17 @@ public class Class3740<E extends Class880> extends Class3676<E> {
    }
 
    @Override
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       this.field19865.method12502(var1, (E)var2, var3);
    }
 
    @Override
-   public void method12504(Class1657 var1, E var2, long var3) {
+   public void method12504(ServerWorld var1, E var2, long var3) {
       this.field19865.method12504(var1, (E)var2, var3);
    }
 
    @Override
-   public void method12506(Class1657 var1, E var2, long var3) {
+   public void method12506(ServerWorld var1, E var2, long var3) {
       this.field19865.method12506(var1, (E)var2, var3);
    }
 

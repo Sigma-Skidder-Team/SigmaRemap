@@ -136,7 +136,7 @@ public abstract class Class2348<T> implements Codec<T>, Keyable, Class2347<T> {
       var0.forEach(var1 -> {
          if (var1.method9190().isEmpty()) {
             field16031.error("Registry '{}' was empty after loading", var0.method9181(var1));
-            if (Class9246.field42545) {
+            if (SharedConstants.field42545) {
                throw new IllegalStateException("Registry: '" + var0.method9181(var1) + "' is empty, not allowed, fix me!");
             }
          }

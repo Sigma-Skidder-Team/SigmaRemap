@@ -48,14 +48,14 @@ public class Class2636 extends Class2628 {
             int var4 = var3.<Integer>method23463(Class3484.field19342);
             var3.method23465(Class3484.field19342, Integer.valueOf(1));
             int var5 = 1 + this.field16957.field5024.field9016.nextInt(2) + (var4 != 3 ? 0 : 1);
-            Class8848 var6 = this.field16957.method2943(Class2106.field13731);
+            ItemStack var6 = this.field16957.method2943(Class2106.field13731);
             if (var6.method32105()) {
-               this.field16957.method2944(Class2106.field13731, new Class8848(Class8514.field38170));
+               this.field16957.method2944(Class2106.field13731, new ItemStack(Class8514.field38170));
                var5--;
             }
 
             if (var5 > 0) {
-               Block.method11557(this.field16957.field5024, this.field16933, new Class8848(Class8514.field38170, var5));
+               Block.method11557(this.field16957.field5024, this.field16933, new ItemStack(Class8514.field38170, var5));
             }
 
             this.field16957.method2863(Class6067.field27144, 1.0F, 1.0F);
@@ -66,7 +66,7 @@ public class Class2636 extends Class2628 {
 
    @Override
    public boolean method10803() {
-      return !this.field16957.method3176() && super.method10803();
+      return !this.field16957.isSleeping() && super.method10803();
    }
 
    @Override

@@ -23,11 +23,11 @@ public class Class3690<T> extends Class3676<Class1046> {
    }
 
    public static Class3690<? extends Entity> method12539(Class8830<? extends Entity> var0, float var1, int var2, boolean var3) {
-      return new Class3690<>(var0, var1, var2, var3, Entity::method3431);
+      return new Class3690<>(var0, var1, var2, var3, Entity::getPositionVec);
    }
 
-   public boolean method12508(Class1657 var1, Class1046 var2) {
-      return !this.method12541(var2) ? var2.method3431().method11340(this.method12540(var2), (double)this.field19716) : false;
+   public boolean method12508(ServerWorld var1, Class1046 var2) {
+      return !this.method12541(var2) ? var2.getPositionVec().method11340(this.method12540(var2), (double)this.field19716) : false;
    }
 
    private Vector3d method12540(Class1046 var1) {
@@ -38,8 +38,8 @@ public class Class3690<T> extends Class3676<Class1046> {
       if (var1.method2992().method21404(Class8830.field39824)) {
          Class8999 var4 = var1.method2992().<Class8999>method21410(Class8830.field39824).get();
          if (var4.method33252() == this.field19715) {
-            Vector3d var5 = var4.method33251().method26356().method11336(var1.method3431());
-            Vector3d var6 = this.method12540(var1).method11336(var1.method3431());
+            Vector3d var5 = var4.method33251().method26356().method11336(var1.getPositionVec());
+            Vector3d var6 = this.method12540(var1).method11336(var1.getPositionVec());
             return var5.method11334(var6) < 0.0;
          } else {
             return false;
@@ -49,7 +49,7 @@ public class Class3690<T> extends Class3676<Class1046> {
       }
    }
 
-   public void method12502(Class1657 var1, Class1046 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1046 var2, long var3) {
       method12542(var2, this.method12540(var2), this.field19715);
    }
 

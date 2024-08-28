@@ -294,14 +294,14 @@ public class Class1674 implements Class1670 {
    @Override
    public void method7063(Entity var1) {
       this.field9126 = true;
-      int var4 = Class9679.method37769(var1.getPosX() / 16.0);
-      int var5 = Class9679.method37769(var1.getPosZ() / 16.0);
+      int var4 = MathHelper.method37769(var1.getPosX() / 16.0);
+      int var5 = MathHelper.method37769(var1.getPosZ() / 16.0);
       if (var4 != this.field9132.field32174 || var5 != this.field9132.field32175) {
          field9110.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field9132.field32174, this.field9132.field32175, var1);
          var1.field5041 = true;
       }
 
-      int var6 = Class9679.method37769(var1.getPosY() / 16.0);
+      int var6 = MathHelper.method37769(var1.getPosY() / 16.0);
       if (var6 < 0) {
          var6 = 0;
       }
@@ -447,10 +447,10 @@ public class Class1674 implements Class1670 {
    }
 
    public void method7138(Entity var1, Class6488 var2, List<Entity> var3, Predicate<? super Entity> var4) {
-      int var7 = Class9679.method37769((var2.field28450 - 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28453 + 2.0) / 16.0);
-      var7 = Class9679.method37775(var7, 0, this.field9120.length - 1);
-      var8 = Class9679.method37775(var8, 0, this.field9120.length - 1);
+      int var7 = MathHelper.method37769((var2.field28450 - 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28453 + 2.0) / 16.0);
+      var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
+      var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          Class51 var10 = this.field9120[var9];
@@ -477,10 +477,10 @@ public class Class1674 implements Class1670 {
    }
 
    public <T extends Entity> void method7139(Class8992<?> var1, Class6488 var2, List<? super T> var3, Predicate<? super T> var4) {
-      int var7 = Class9679.method37769((var2.field28450 - 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28453 + 2.0) / 16.0);
-      var7 = Class9679.method37775(var7, 0, this.field9120.length - 1);
-      var8 = Class9679.method37775(var8, 0, this.field9120.length - 1);
+      int var7 = MathHelper.method37769((var2.field28450 - 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28453 + 2.0) / 16.0);
+      var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
+      var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(Entity.class)) {
@@ -492,10 +492,10 @@ public class Class1674 implements Class1670 {
    }
 
    public <T extends Entity> void method7140(Class<? extends T> var1, Class6488 var2, List<T> var3, Predicate<? super T> var4) {
-      int var7 = Class9679.method37769((var2.field28450 - 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28453 + 2.0) / 16.0);
-      var7 = Class9679.method37775(var7, 0, this.field9120.length - 1);
-      var8 = Class9679.method37775(var8, 0, this.field9120.length - 1);
+      int var7 = MathHelper.method37769((var2.field28450 - 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28453 + 2.0) / 16.0);
+      var7 = MathHelper.method37775(var7, 0, this.field9120.length - 1);
+      var8 = MathHelper.method37775(var8, 0, this.field9120.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
          for (Entity var11 : this.field9120[var9].method176(var1)) {
@@ -760,7 +760,7 @@ public class Class1674 implements Class1670 {
       }
    }
 
-   public void method7151(Class1657 var1) {
+   public void method7151(ServerWorld var1) {
       if (this.field9124 == Class6804.<Block>method20727()) {
          this.field9124 = new Class6801<>(
                  Class2348.field16072::method9181, var1.method6860().method20729(this.field9132, true, false), var1.method6783()

@@ -67,7 +67,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
             this.field17129++;
          }
 
-         double var6 = this.field17125.method3277(var3);
+         double var6 = this.field17125.getDistanceSq(var3);
          boolean var8 = (var6 > (double)this.field17128 || this.field17129 < 5) && this.field17130 == 0;
          if (!var8) {
             this.field17131 = 0;
@@ -86,7 +86,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                if (this.field17126 != Class2229.field14615) {
                   if (this.field17126 == Class2229.field14616 && var4) {
                      this.field17125.method4530(var3, 1.0F);
-                     Class8848 var9 = this.field17125.method3094(Class9456.method36389(this.field17125, Class8514.field38148));
+                     ItemStack var9 = this.field17125.method3094(Class9456.method36389(this.field17125, Class8514.field38148));
                      Class3261.method11756(var9, false);
                      this.field17126 = Class2229.field14613;
                   }
@@ -102,7 +102,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                }
 
                int var11 = this.field17125.method3160();
-               Class8848 var10 = this.field17125.method3158();
+               ItemStack var10 = this.field17125.method3158();
                if (var11 >= Class3261.method11767(var10)) {
                   this.field17125.method3161();
                   this.field17126 = Class2229.field14615;

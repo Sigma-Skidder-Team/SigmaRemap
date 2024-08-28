@@ -48,7 +48,7 @@ public class Class7803 {
       return new Class9764(var3, var5);
    }
 
-   public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, Class1657 var3) {
+   public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, ServerWorld var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
       var3.method6730(var6, Blocks.COMMAND_BLOCK.method11579());
       Class969 var7 = (Class969)var3.method6759(var6);
@@ -57,7 +57,7 @@ public class Class7803 {
       var3.method6730(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
    }
 
-   public static void method26055(String var0, BlockPos var1, BlockPos var2, Class80 var3, Class1657 var4) {
+   public static void method26055(String var0, BlockPos var1, BlockPos var2, Class80 var3, ServerWorld var4) {
       Class9764 var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
       var4.method6730(var1, Blocks.field37113.method11579());
@@ -69,7 +69,7 @@ public class Class7803 {
       var8.method3976(true);
    }
 
-   public static Class964 method26056(String var0, BlockPos var1, Class80 var2, int var3, Class1657 var4, boolean var5) {
+   public static Class964 method26056(String var0, BlockPos var1, Class80 var2, int var3, ServerWorld var4, boolean var5) {
       BlockPos var8 = method26063(var0, var4).method32886();
       Class9764 var9 = method26059(var1, var8, var2);
       BlockPos var10;
@@ -99,7 +99,7 @@ public class Class7803 {
       return var11;
    }
 
-   private static void method26057(BlockPos var0, Class1657 var1) {
+   private static void method26057(BlockPos var0, ServerWorld var1) {
       Class7481 var4 = new Class7481(var0);
 
       for (int var5 = -1; var5 < 4; var5++) {
@@ -111,7 +111,7 @@ public class Class7803 {
       }
    }
 
-   public static void method26058(Class9764 var0, int var1, Class1657 var2) {
+   public static void method26058(Class9764 var0, int var1, ServerWorld var2) {
       Class9764 var5 = new Class9764(
          var0.field45678 - 2, var0.field45679 - 3, var0.field45680 - 3, var0.field45681 + 3, var0.field45682 + 20, var0.field45683 + 3
       );
@@ -136,19 +136,19 @@ public class Class7803 {
       return var7;
    }
 
-   public static Optional<BlockPos> method26060(BlockPos var0, int var1, Class1657 var2) {
+   public static Optional<BlockPos> method26060(BlockPos var0, int var1, ServerWorld var2) {
       return method26062(var0, var1, var2).stream().filter(var2x -> method26067(var2x, var0, var2)).findFirst();
    }
 
    @Nullable
-   public static BlockPos method26061(BlockPos var0, int var1, Class1657 var2) {
+   public static BlockPos method26061(BlockPos var0, int var1, ServerWorld var2) {
       Comparator var5 = Comparator.<BlockPos>comparingInt(var1x -> var1x.method8321(var0));
       Collection var6 = method26062(var0, var1, var2);
       Optional var7 = var6.stream().min(var5);
       return (BlockPos)var7.orElse((BlockPos)null);
    }
 
-   public static Collection<BlockPos> method26062(BlockPos var0, int var1, Class1657 var2) {
+   public static Collection<BlockPos> method26062(BlockPos var0, int var1, ServerWorld var2) {
       ArrayList var5 = Lists.newArrayList();
       Class6488 var6 = new Class6488(var0);
       var6 = var6.method19664((double)var1);
@@ -168,7 +168,7 @@ public class Class7803 {
       return var5;
    }
 
-   private static Class8969 method26063(String var0, Class1657 var1) {
+   private static Class8969 method26063(String var0, ServerWorld var1) {
       Class8761 var4 = var1.method6938();
       Class8969 var5 = var4.method31604(new ResourceLocation(var0));
       if (var5 == null) {
@@ -185,7 +185,7 @@ public class Class7803 {
       }
    }
 
-   private static Class964 method26064(String var0, BlockPos var1, Class80 var2, Class1657 var3, boolean var4) {
+   private static Class964 method26064(String var0, BlockPos var1, Class80 var2, ServerWorld var3, boolean var4) {
       var3.method6730(var1, Blocks.field37113.method11579());
       Class964 var7 = (Class964)var3.method6759(var1);
       var7.method3951(Class104.field319);
@@ -219,7 +219,7 @@ public class Class7803 {
       }
    }
 
-   private static void method26066(int var0, BlockPos var1, Class1657 var2) {
+   private static void method26066(int var0, BlockPos var1, ServerWorld var2) {
       Class7380 var5 = null;
       Class9733 var6 = Class9733.method38132(var2.method6867().<Class8907>method32453(Class2348.field16106));
       if (!(var6 instanceof Class9733)) {
@@ -246,7 +246,7 @@ public class Class7803 {
       var2.method6964(var1, var5.method23383());
    }
 
-   private static boolean method26067(BlockPos var0, BlockPos var1, Class1657 var2) {
+   private static boolean method26067(BlockPos var0, BlockPos var1, ServerWorld var2) {
       Class964 var5 = (Class964)var2.method6759(var0);
       Class6488 var6 = method26052(var5).method19664(1.0);
       return var6.method19673(Vector3d.method11328(var1));

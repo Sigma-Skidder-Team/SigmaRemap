@@ -25,15 +25,15 @@ public class Class2683 extends Class2595 {
    @Override
    public boolean method10806() {
       BlockPos var3 = this.field17097.method4777();
-      return !new BlockPos((double)var3.method8304(), this.field17097.getPosY(), (double)var3.method8306()).method8317(this.field17097.method3431(), 4.0)
+      return !new BlockPos((double)var3.method8304(), this.field17097.getPosY(), (double)var3.method8306()).method8317(this.field17097.getPositionVec(), 4.0)
          && !this.field17098
          && this.field17097.method3351() >= 100;
    }
 
    @Override
    public void method10804() {
-      if (this.field17097.field5024 instanceof Class1657) {
-         Class1657 var3 = (Class1657)this.field17097.field5024;
+      if (this.field17097.field5024 instanceof ServerWorld) {
+         ServerWorld var3 = (ServerWorld)this.field17097.field5024;
          this.field17098 = false;
          this.field17097.method4230().method21666();
          BlockPos var4 = this.field17097.method3432();
@@ -59,7 +59,7 @@ public class Class2683 extends Class2595 {
    @Override
    public void method10807() {
       BlockPos var3 = this.field17097.method4777();
-      if (new BlockPos((double)var3.method8304(), this.field17097.getPosY(), (double)var3.method8306()).method8317(this.field17097.method3431(), 4.0)
+      if (new BlockPos((double)var3.method8304(), this.field17097.getPosY(), (double)var3.method8306()).method8317(this.field17097.getPositionVec(), 4.0)
          || this.field17098) {
          this.field17097.method4779(false);
       }

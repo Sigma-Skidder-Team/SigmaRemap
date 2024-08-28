@@ -19,7 +19,7 @@ public class Class5944 extends Class5942<Class966> {
       float var10 = 0.0F;
       float var11 = 0.0F;
       if (var1.field5417) {
-         float var12 = Class9679.method37763(var9 / (float) Math.PI) / (4.0F + var9 / 3.0F);
+         float var12 = MathHelper.method37763(var9 / (float) Math.PI) / (4.0F + var9 / 3.0F);
          if (var1.field5418 != Direction.NORTH) {
             if (var1.field5418 != Direction.SOUTH) {
                if (var1.field5418 != Direction.EAST) {

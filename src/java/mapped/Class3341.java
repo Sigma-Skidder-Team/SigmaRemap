@@ -41,15 +41,15 @@ public class Class3341 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       Class8711 var7 = method11735(var1, var2, Class1985.field12962);
       if (var7.method31417() == Class2100.field13690 && var1.method6738(var7.method31423()).method23448(Blocks.field36650)) {
-         return Class6794.<Class8848>method20698(var6);
+         return Class6794.<ItemStack>method20698(var6);
       } else {
          var2.method3154(var3);
-         if (var1 instanceof Class1657) {
-            BlockPos var8 = ((Class1657)var1).method6883().method7370().method17820((Class1657)var1, Class2961.field18067, var2.method3432(), 100, false);
+         if (var1 instanceof ServerWorld) {
+            BlockPos var8 = ((ServerWorld)var1).method6883().method7370().method17820((ServerWorld)var1, Class2961.field18067, var2.method3432(), 100, false);
             if (var8 != null) {
                Class897 var9 = new Class897(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ());
                var9.method3522(var6);
@@ -76,11 +76,11 @@ public class Class3341 extends Class3257 {
 
                var2.method2913(Class8876.field40098.method172(this));
                var2.method3081(var3, true);
-               return Class6794.<Class8848>method20696(var6);
+               return Class6794.<ItemStack>method20696(var6);
             }
          }
 
-         return Class6794.<Class8848>method20697(var6);
+         return Class6794.<ItemStack>method20697(var6);
       }
    }
 }

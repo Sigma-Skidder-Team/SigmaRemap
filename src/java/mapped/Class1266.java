@@ -46,7 +46,7 @@ public class Class1266 extends Class1193 {
             }
 
             double var9 = this.method5944();
-            int var11 = Class9679.method37774((double)this.method5942() / var9);
+            int var11 = MathHelper.method37774((double)this.method5942() / var9);
             RenderSystem.pushMatrix();
             RenderSystem.translatef(2.0F, 8.0F, 0.0F);
             RenderSystem.scaled(var9, var9, 1.0);
@@ -135,14 +135,14 @@ public class Class1266 extends Class1193 {
    }
 
    private boolean method5927() {
-      return this.field6699.field1299.field44582 == Class2153.field14077;
+      return this.field6699.field1299.field44582 == ChatVisibility.HIDDEN;
    }
 
    private static double method5928(int var0) {
       double var3 = (double)var0 / 200.0;
       var3 = 1.0 - var3;
       var3 *= 10.0;
-      var3 = Class9679.method37778(var3, 0.0, 1.0);
+      var3 = MathHelper.method37778(var3, 0.0, 1.0);
       return var3 * var3;
    }
 
@@ -169,7 +169,7 @@ public class Class1266 extends Class1193 {
          this.method5941(var2);
       }
 
-      int var7 = Class9679.method37769((double)this.method5942() / this.method5944());
+      int var7 = MathHelper.method37769((double)this.method5942() / this.method5944());
       List<Class9125> var8 = Class6885.method20971(var1, var7, this.field6699.field1294);
       boolean var9 = this.method5940();
 
@@ -237,9 +237,9 @@ public class Class1266 extends Class1193 {
       if (this.method5940() && !this.field6699.field1299.field44662 && !this.method5927() && !this.field6703.isEmpty()) {
          double var7 = var1 - 2.0;
          double var9 = (double)this.field6699.method1580().method8046() - var3 - 40.0;
-         if (var7 <= (double)Class9679.method37769((double)this.method5942() / this.method5944())
+         if (var7 <= (double) MathHelper.method37769((double)this.method5942() / this.method5944())
             && var9 < 0.0
-            && var9 > (double)Class9679.method37769(-9.0 * this.method5944())) {
+            && var9 > (double) MathHelper.method37769(-9.0 * this.method5944())) {
             this.method5930(this.field6703.remove());
             this.field6706 = System.currentTimeMillis();
             return true;
@@ -256,11 +256,11 @@ public class Class1266 extends Class1193 {
       if (this.method5940() && !this.field6699.field1299.field44662 && !this.method5927()) {
          double var7 = var1 - 2.0;
          double var9 = (double)this.field6699.method1580().method8046() - var3 - 40.0;
-         var7 = (double)Class9679.method37769(var7 / this.method5944());
-         var9 = (double)Class9679.method37769(var9 / (this.method5944() * (this.field6699.field1299.field44584 + 1.0)));
+         var7 = (double) MathHelper.method37769(var7 / this.method5944());
+         var9 = (double) MathHelper.method37769(var9 / (this.method5944() * (this.field6699.field1299.field44584 + 1.0)));
          if (!(var7 < 0.0) && !(var9 < 0.0)) {
             int var11 = Math.min(this.method5947(), this.field6702.size());
-            if (var7 <= (double)Class9679.method37769((double)this.method5942() / this.method5944()) && var9 < (double)(9 * var11 + var11)) {
+            if (var7 <= (double) MathHelper.method37769((double)this.method5942() / this.method5944()) && var9 < (double)(9 * var11 + var11)) {
                int var12 = (int)(var9 / 9.0 + (double)this.field6704);
                if (var12 >= 0 && var12 < this.field6702.size()) {
                   Class9500 var13 = this.field6702.get(var12);
@@ -290,7 +290,7 @@ public class Class1266 extends Class1193 {
       int var3 = method5945(this.field6699.field1299.field44596);
       Class1815 var4 = Minecraft.getInstance().method1580();
       int var5 = (int)((double)(var4.method8041() - 3) / var4.method8049());
-      return Class9679.method37775(var3, 0, var5);
+      return MathHelper.method37775(var3, 0, var5);
    }
 
    public int method5943() {
@@ -306,13 +306,13 @@ public class Class1266 extends Class1193 {
    public static int method5945(double var0) {
       short var4 = 320;
       byte var5 = 40;
-      return Class9679.method37769(var0 * 280.0 + 40.0);
+      return MathHelper.method37769(var0 * 280.0 + 40.0);
    }
 
    public static int method5946(double var0) {
       short var4 = 180;
       byte var5 = 20;
-      return Class9679.method37769(var0 * 160.0 + 20.0);
+      return MathHelper.method37769(var0 * 160.0 + 20.0);
    }
 
    public int method5947() {

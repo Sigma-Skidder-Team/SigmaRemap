@@ -26,7 +26,7 @@ public class Class3487 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       Class3456 var7 = (Class3456)(this != Blocks.FERN ? Blocks.TALL_GRASS : Blocks.field36802);
       if (var7.method11579().method23443(var1, var3) && var1.method7007(var3.method8311())) {
          var7.method12129(var1, var3, 2);

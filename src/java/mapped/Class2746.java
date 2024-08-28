@@ -35,7 +35,7 @@ public class Class2746 extends Class2595 {
          this.field17278--;
          Class880 var3 = this.field17279.method4232();
          this.field17279.method4227().method28040(var3, 180.0F, 180.0F);
-         double var4 = this.field17279.method3277(var3);
+         double var4 = this.field17279.getDistanceSq(var3);
          if (!(var4 < 400.0)) {
             this.field17279.method4233((Class880)null);
          } else if (this.field17278 <= 0) {

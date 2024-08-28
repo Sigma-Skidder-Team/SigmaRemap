@@ -15,8 +15,8 @@ public class Class913 extends Class911 {
    }
 
    @Override
-   public Class1657 method3567() {
-      return (Class1657)this.field5203.field5324;
+   public ServerWorld method3567() {
+      return (ServerWorld)this.field5203.field5324;
    }
 
    @Override

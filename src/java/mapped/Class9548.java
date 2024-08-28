@@ -130,7 +130,7 @@ public class Class9548 {
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.effect.give.success.single", var2.method22295(), ((Entity)var1.iterator().next()).method2954(), var9 / 20
+                  "commands.effect.give.success.single", var2.method22295(), ((Entity)var1.iterator().next()).getDisplayName(), var9 / 20
                ),
                true
             );
@@ -156,7 +156,7 @@ public class Class9548 {
             var0.method20179(new TranslationTextComponent("commands.effect.clear.everything.success.multiple", var1.size()), true);
          } else {
             var0.method20179(
-               new TranslationTextComponent("commands.effect.clear.everything.success.single", ((Entity)var1.iterator().next()).method2954()), true
+               new TranslationTextComponent("commands.effect.clear.everything.success.single", ((Entity)var1.iterator().next()).getDisplayName()), true
             );
          }
 
@@ -181,7 +181,7 @@ public class Class9548 {
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.effect.clear.specific.success.single", var2.method22295(), ((Entity)var1.iterator().next()).method2954()
+                  "commands.effect.clear.specific.success.single", var2.method22295(), ((Entity)var1.iterator().next()).getDisplayName()
                ),
                true
             );

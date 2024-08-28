@@ -51,7 +51,7 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (this.method12116(var2) && method12114(var2, var3)) {
          int var7 = var1.<Integer>method23463(field19243);
          if (var7 >= 2) {
@@ -94,7 +94,7 @@ public class Class3441 extends Block {
    }
 
    @Override
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, Class8848 var6) {
+   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
       this.method12113(var1, var3, var4);
    }

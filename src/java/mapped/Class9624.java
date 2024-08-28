@@ -28,12 +28,12 @@ public class Class9624 {
       this.field45017 = var4;
       this.method37501(var2.method3136(var5), var2.method3282(var5));
       this.method37502(
-         Class9679.method37822((double)var5, var2.field5025, var2.getPosX()),
-         Class9679.method37822((double)var5, var2.field5026, var2.getPosY()) + (double)Class9679.method37821(var5, this.field45019, this.field45018),
-         Class9679.method37822((double)var5, var2.field5027, var2.getPosZ())
+         MathHelper.method37822((double)var5, var2.field5025, var2.getPosX()),
+         MathHelper.method37822((double)var5, var2.field5026, var2.getPosY()) + (double) MathHelper.method37821(var5, this.field45019, this.field45018),
+         MathHelper.method37822((double)var5, var2.field5027, var2.getPosZ())
       );
       if (!var3) {
-         if (var2 instanceof Class880 && ((Class880)var2).method3176()) {
+         if (var2 instanceof Class880 && ((Class880)var2).isSleeping()) {
             Direction var8 = ((Class880)var2).method3179();
             this.method37501(var8 == null ? 0.0F : var8.method551() - 180.0F, 0.0F);
             this.method37500(0.0, 0.3, 0.0);

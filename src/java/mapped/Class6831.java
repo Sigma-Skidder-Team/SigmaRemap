@@ -21,30 +21,30 @@ public class Class6831 extends Class6829 {
       float var3 = (float)(Class1110.method5339(this.field29717).field18048 - this.field29717.getPosX());
       float var4 = (float)(Class1110.method5339(this.field29717).field18049 - this.field29717.getPosY());
       float var5 = (float)(Class1110.method5339(this.field29717).field18050 - this.field29717.getPosZ());
-      double var6 = (double)Class9679.method37765(var3 * var3 + var5 * var5);
-      double var8 = 1.0 - (double)Class9679.method37771(var4 * 0.7F) / var6;
+      double var6 = (double) MathHelper.method37765(var3 * var3 + var5 * var5);
+      double var8 = 1.0 - (double) MathHelper.method37771(var4 * 0.7F) / var6;
       var3 = (float)((double)var3 * var8);
       var5 = (float)((double)var5 * var8);
-      var6 = (double)Class9679.method37765(var3 * var3 + var5 * var5);
-      double var10 = (double)Class9679.method37765(var3 * var3 + var5 * var5 + var4 * var4);
+      var6 = (double) MathHelper.method37765(var3 * var3 + var5 * var5);
+      double var10 = (double) MathHelper.method37765(var3 * var3 + var5 * var5 + var4 * var4);
       float var12 = this.field29717.field5031;
-      float var13 = (float)Class9679.method37814((double)var5, (double)var3);
-      float var14 = Class9679.method37792(this.field29717.field5031 + 90.0F);
-      float var15 = Class9679.method37792(var13 * (180.0F / (float)Math.PI));
-      this.field29717.field5031 = Class9679.method37798(var14, var15, 4.0F) - 90.0F;
+      float var13 = (float) MathHelper.method37814((double)var5, (double)var3);
+      float var14 = MathHelper.method37792(this.field29717.field5031 + 90.0F);
+      float var15 = MathHelper.method37792(var13 * (180.0F / (float)Math.PI));
+      this.field29717.field5031 = MathHelper.method37798(var14, var15, 4.0F) - 90.0F;
       this.field29717.field4965 = this.field29717.field5031;
-      if (!(Class9679.method37795(var12, this.field29717.field5031) < 3.0F)) {
-         this.field29716 = Class9679.method37797(this.field29716, 0.2F, 0.025F);
+      if (!(MathHelper.method37795(var12, this.field29717.field5031) < 3.0F)) {
+         this.field29716 = MathHelper.method37797(this.field29716, 0.2F, 0.025F);
       } else {
-         this.field29716 = Class9679.method37797(this.field29716, 1.8F, 0.005F * (1.8F / this.field29716));
+         this.field29716 = MathHelper.method37797(this.field29716, 1.8F, 0.005F * (1.8F / this.field29716));
       }
 
-      float var16 = (float)(-(Class9679.method37814((double)(-var4), var6) * 180.0F / (float)Math.PI));
+      float var16 = (float)(-(MathHelper.method37814((double)(-var4), var6) * 180.0F / (float)Math.PI));
       this.field29717.field5032 = var16;
       float var17 = this.field29717.field5031 + 90.0F;
-      double var18 = (double)(this.field29716 * Class9679.method37764(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
-      double var20 = (double)(this.field29716 * Class9679.method37763(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
-      double var22 = (double)(this.field29716 * Class9679.method37763(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
+      double var18 = (double)(this.field29716 * MathHelper.method37764(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
+      double var20 = (double)(this.field29716 * MathHelper.method37763(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
+      double var22 = (double)(this.field29716 * MathHelper.method37763(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
       Vector3d var24 = this.field29717.method3433();
       this.field29717.method3434(var24.method11338(new Vector3d(var18, var22, var20).method11336(var24).method11344(0.2)));
    }

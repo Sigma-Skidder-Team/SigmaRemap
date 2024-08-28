@@ -27,13 +27,13 @@ public class Class5487 implements Packet<Class5116> {
       this.field24362 = var3;
       this.field24363 = var5;
       this.field24364 = var7;
-      this.field24368 = Class9679.method37767(var9 * 256.0F / 360.0F);
-      this.field24369 = Class9679.method37767(var10 * 256.0F / 360.0F);
+      this.field24368 = MathHelper.method37767(var9 * 256.0F / 360.0F);
+      this.field24369 = MathHelper.method37767(var10 * 256.0F / 360.0F);
       this.field24370 = var11;
       this.field24371 = var12;
-      this.field24365 = (int)(Class9679.method37778(var13.field18048, -3.9, 3.9) * 8000.0);
-      this.field24366 = (int)(Class9679.method37778(var13.field18049, -3.9, 3.9) * 8000.0);
-      this.field24367 = (int)(Class9679.method37778(var13.field18050, -3.9, 3.9) * 8000.0);
+      this.field24365 = (int)(MathHelper.method37778(var13.field18048, -3.9, 3.9) * 8000.0);
+      this.field24366 = (int)(MathHelper.method37778(var13.field18049, -3.9, 3.9) * 8000.0);
+      this.field24367 = (int)(MathHelper.method37778(var13.field18050, -3.9, 3.9) * 8000.0);
    }
 
    public Class5487(Entity var1) {
@@ -43,7 +43,7 @@ public class Class5487 implements Packet<Class5116> {
    public Class5487(Entity var1, int var2) {
       this(
          var1.method3205(),
-         var1.method3375(),
+         var1.getUniqueID(),
          var1.getPosX(),
          var1.getPosY(),
          var1.getPosZ(),
@@ -58,7 +58,7 @@ public class Class5487 implements Packet<Class5116> {
    public Class5487(Entity var1, Class8992<?> var2, int var3, BlockPos var4) {
       this(
          var1.method3205(),
-         var1.method3375(),
+         var1.getUniqueID(),
          (double)var4.method8304(),
          (double)var4.getY(),
          (double)var4.method8306(),

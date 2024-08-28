@@ -203,7 +203,7 @@ public class HypixelFly extends Module {
             boolean var21 = var19 < 1.0E-4;
             if (this.method15974("No Collision") && this.field23560 > var10) {
                 List<Vector3d> var22 = new ArrayList();
-                float var23 = Class9679.method37792(Class9567.method37086());
+                float var23 = MathHelper.method37792(Class9567.method37086());
                 if (var23 > 0.0F && var23 < 90.0F) {
                     var22.add(new Vector3d(1.0, 0.0, 0.0));
                     var22.add(new Vector3d(0.0, 0.0, 1.0));

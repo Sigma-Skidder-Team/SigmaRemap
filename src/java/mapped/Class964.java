@@ -65,13 +65,13 @@ public class Class964 extends Class944 {
       this.method3937(var2.method126("name"));
       this.field5396 = var2.method126("author");
       this.field5397 = var2.method126("metadata");
-      int var5 = Class9679.method37775(var2.method122("posX"), -48, 48);
-      int var6 = Class9679.method37775(var2.method122("posY"), -48, 48);
-      int var7 = Class9679.method37775(var2.method122("posZ"), -48, 48);
+      int var5 = MathHelper.method37775(var2.method122("posX"), -48, 48);
+      int var6 = MathHelper.method37775(var2.method122("posY"), -48, 48);
+      int var7 = MathHelper.method37775(var2.method122("posZ"), -48, 48);
       this.field5398 = new BlockPos(var5, var6, var7);
-      int var8 = Class9679.method37775(var2.method122("sizeX"), 0, 48);
-      int var9 = Class9679.method37775(var2.method122("sizeY"), 0, 48);
-      int var10 = Class9679.method37775(var2.method122("sizeZ"), 0, 48);
+      int var8 = MathHelper.method37775(var2.method122("sizeX"), 0, 48);
+      int var9 = MathHelper.method37775(var2.method122("sizeY"), 0, 48);
+      int var10 = MathHelper.method37775(var2.method122("sizeZ"), 0, 48);
       this.field5399 = new BlockPos(var8, var9, var10);
 
       try {
@@ -354,7 +354,7 @@ public class Class964 extends Class944 {
    public boolean method3964(boolean var1) {
       if (this.field5402 == Class104.field318 && !this.field5324.field9020 && this.field5395 != null) {
          BlockPos var4 = this.method3774().method8337(this.field5398);
-         Class1657 var5 = (Class1657)this.field5324;
+         ServerWorld var5 = (ServerWorld)this.field5324;
          Class8761 var6 = var5.method6938();
 
          Class8969 var7;
@@ -380,7 +380,7 @@ public class Class964 extends Class944 {
       }
    }
 
-   public boolean method3965(Class1657 var1) {
+   public boolean method3965(ServerWorld var1) {
       return this.method3967(var1, true);
    }
 
@@ -388,7 +388,7 @@ public class Class964 extends Class944 {
       return var0 != 0L ? new Random(var0) : new Random(Util.method38487());
    }
 
-   public boolean method3967(Class1657 var1, boolean var2) {
+   public boolean method3967(ServerWorld var1, boolean var2) {
       if (this.field5402 == Class104.field319 && this.field5395 != null) {
          Class8761 var5 = var1.method6938();
 
@@ -405,7 +405,7 @@ public class Class964 extends Class944 {
       }
    }
 
-   public boolean method3968(Class1657 var1, boolean var2, Class8969 var3) {
+   public boolean method3968(ServerWorld var1, boolean var2, Class8969 var3) {
       BlockPos var6 = this.method3774();
       if (!Class9001.method33256(var3.method32888())) {
          this.field5396 = var3.method32888();
@@ -425,7 +425,7 @@ public class Class964 extends Class944 {
       } else {
          Class9463 var11 = new Class9463().method36425(this.field5400).method36426(this.field5401).method36428(this.field5403).method36429((Class7481)null);
          if (this.field5407 < 1.0F) {
-            var11.method36433().method36434(new Class7094(Class9679.method37777(this.field5407, 0.0F, 1.0F))).method36431(method3966(this.field5408));
+            var11.method36433().method36434(new Class7094(MathHelper.method37777(this.field5407, 0.0F, 1.0F))).method36431(method3966(this.field5408));
          }
 
          BlockPos var10 = var6.method8337(this.field5398);
@@ -436,7 +436,7 @@ public class Class964 extends Class944 {
 
    public void method3969() {
       if (this.field5395 != null) {
-         Class1657 var3 = (Class1657)this.field5324;
+         ServerWorld var3 = (ServerWorld)this.field5324;
          Class8761 var4 = var3.method6938();
          var4.method31613(this.field5395);
       }
@@ -444,7 +444,7 @@ public class Class964 extends Class944 {
 
    public boolean method3970() {
       if (this.field5402 == Class104.field319 && !this.field5324.field9020 && this.field5395 != null) {
-         Class1657 var3 = (Class1657)this.field5324;
+         ServerWorld var3 = (ServerWorld)this.field5324;
          Class8761 var4 = var3.method6938();
 
          try {

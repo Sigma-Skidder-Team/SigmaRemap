@@ -12,14 +12,14 @@ public class Class8891 {
    }
 
    private static void method32359(Class2334 var0, boolean var1) {
-      Class9679.field45216 = var1;
+      MathHelper.field45216 = var1;
       double var4;
       double var6;
       switch (Class8364.field35918[var0.ordinal()]) {
          case 1:
          case 2:
-            var4 = (double)(-Class9679.field45210);
-            var6 = (double)Class9679.field45210;
+            var4 = (double)(-MathHelper.field45210);
+            var6 = (double) MathHelper.field45210;
             break;
          case 3:
          case 4:
@@ -39,11 +39,11 @@ public class Class8891 {
          switch (Class8364.field35918[var0.ordinal()]) {
             case 1:
                var12 = (float)Math.sin(var10);
-               var13 = Class9679.method37763((float)var10);
+               var13 = MathHelper.method37763((float)var10);
                break;
             case 2:
                var12 = (float)Math.cos(var10);
-               var13 = Class9679.method37764((float)var10);
+               var13 = MathHelper.method37764((float)var10);
                break;
             case 3:
                var12 = (float)Math.asin(var10);

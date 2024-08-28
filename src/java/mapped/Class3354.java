@@ -66,7 +66,7 @@ public class Class3354 extends Class3241 {
    @Override
    public Class7380 method11495(Class5909 var1) {
       Class1655 var4 = var1.method18360();
-      Class8848 var5 = var1.method18357();
+      ItemStack var5 = var1.method18357();
       Class39 var6 = var5.method32142();
       PlayerEntity var7 = var1.method18358();
       boolean var8 = false;
@@ -122,7 +122,7 @@ public class Class3354 extends Class3241 {
       return new Class948();
    }
 
-   public static boolean method11919(Class1655 var0, BlockPos var1, Class7380 var2, Class8848 var3) {
+   public static boolean method11919(Class1655 var0, BlockPos var1, Class7380 var2, ItemStack var3) {
       if (var2.<Boolean>method23463(field18882)) {
          return false;
       } else {
@@ -134,7 +134,7 @@ public class Class3354 extends Class3241 {
       }
    }
 
-   private static void method11920(Class1655 var0, BlockPos var1, Class7380 var2, Class8848 var3) {
+   private static void method11920(Class1655 var0, BlockPos var1, Class7380 var2, ItemStack var3) {
       Class944 var6 = var0.method6759(var1);
       if (var6 instanceof Class948) {
          Class948 var7 = (Class948)var6;
@@ -165,7 +165,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       method11923(var2, var3, var1, false);
    }
 
@@ -189,7 +189,7 @@ public class Class3354 extends Class3241 {
       if (var6 instanceof Class948) {
          Class948 var7 = (Class948)var6;
          Direction var8 = var1.<Direction>method23463(field18880);
-         Class8848 var9 = var7.method3805().method32126();
+         ItemStack var9 = var7.method3805().method32126();
          float var10 = 0.25F * (float)var8.method539();
          float var11 = 0.25F * (float)var8.method541();
          Class1000 var12 = new Class1000(
@@ -234,7 +234,7 @@ public class Class3354 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (var1.<Boolean>method23463(field18882)) {
          if (!var2.field9020) {
             this.method11926(var2, var3, var4);
@@ -242,7 +242,7 @@ public class Class3354 extends Class3241 {
 
          return Class2274.method9002(var2.field9020);
       } else {
-         Class8848 var9 = var4.method3094(var5);
+         ItemStack var9 = var4.method3094(var5);
          return !var9.method32105() && !var9.method32107().method11743(Class5985.field26120) ? Class2274.field14819 : Class2274.field14820;
       }
    }

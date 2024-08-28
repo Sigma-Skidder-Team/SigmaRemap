@@ -14,8 +14,8 @@ public class Class5647 extends Class5646 {
    private static final List<Class7380> field24992 = StreamSupport.<Block>stream(Class2348.field16072.spliterator(), false)
       .<Class7380>flatMap(var0 -> var0.method11577().method35392().stream())
       .collect(Collectors.<Class7380>toList());
-   private static final int field24993 = Class9679.method37773(Class9679.method37765((float)field24992.size()));
-   private static final int field24994 = Class9679.method37773((float)field24992.size() / (float)field24993);
+   private static final int field24993 = MathHelper.method37773(MathHelper.method37765((float)field24992.size()));
+   private static final int field24994 = MathHelper.method37773((float)field24992.size() / (float)field24993);
    public static final Class7380 field24995 = Blocks.AIR.method11579();
    public static final Class7380 field24996 = Blocks.field36765.method11579();
    private final Class2348<Class8907> field24997;
@@ -86,7 +86,7 @@ public class Class5647 extends Class5646 {
          var0 /= 2;
          var1 /= 2;
          if (var0 <= field24993 && var1 <= field24994) {
-            int var5 = Class9679.method37772(var0 * field24993 + var1);
+            int var5 = MathHelper.method37772(var0 * field24993 + var1);
             if (var5 < field24992.size()) {
                var4 = field24992.get(var5);
             }

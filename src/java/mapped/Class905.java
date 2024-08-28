@@ -47,7 +47,7 @@ public class Class905 extends Class882 {
    public void method2724(Class39 var1) {
       super.method2724(var1);
       if (this.field5163 != null) {
-         var1.method104("Target", this.field5163.method3375());
+         var1.method104("Target", this.field5163.getUniqueID());
       }
 
       if (this.field5164 != null) {
@@ -98,7 +98,7 @@ public class Class905 extends Class882 {
       double var9 = (double)var6.getY() + var4;
       double var11 = (double)var6.method8306() + 0.5;
       Direction var13 = null;
-      if (!var6.method8317(this.method3431(), 2.0)) {
+      if (!var6.method8317(this.getPositionVec(), 2.0)) {
          BlockPos var22 = this.method3432();
          ArrayList var23 = Lists.newArrayList();
          if (var1 != Class113.field413) {
@@ -143,7 +143,7 @@ public class Class905 extends Class882 {
       double var14 = var7 - this.getPosX();
       double var16 = var9 - this.getPosY();
       double var18 = var11 - this.getPosZ();
-      double var20 = (double)Class9679.method37766(var14 * var14 + var16 * var16 + var18 * var18);
+      double var20 = (double) MathHelper.method37766(var14 * var14 + var16 * var16 + var18 * var18);
       if (var20 != 0.0) {
          this.field5166 = var14 / var20 * 0.15;
          this.field5167 = var16 / var20 * 0.15;
@@ -170,7 +170,7 @@ public class Class905 extends Class882 {
       super.tick();
       if (!this.field5024.field9020) {
          if (this.field5163 == null && this.field5169 != null) {
-            this.field5163 = ((Class1657)this.field5024).method6942(this.field5169);
+            this.field5163 = ((ServerWorld)this.field5024).method6942(this.field5169);
             if (this.field5163 == null) {
                this.field5169 = null;
             }
@@ -181,9 +181,9 @@ public class Class905 extends Class882 {
                this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
             }
          } else {
-            this.field5166 = Class9679.method37778(this.field5166 * 1.025, -1.0, 1.0);
-            this.field5167 = Class9679.method37778(this.field5167 * 1.025, -1.0, 1.0);
-            this.field5168 = Class9679.method37778(this.field5168 * 1.025, -1.0, 1.0);
+            this.field5166 = MathHelper.method37778(this.field5166 * 1.025, -1.0, 1.0);
+            this.field5167 = MathHelper.method37778(this.field5167 * 1.025, -1.0, 1.0);
+            this.field5168 = MathHelper.method37778(this.field5168 * 1.025, -1.0, 1.0);
             Vector3d var3 = this.method3433();
             this.method3434(
                var3.method11339((this.field5166 - var3.field18048) * 0.2, (this.field5167 - var3.field18049) * 0.2, (this.field5168 - var3.field18050) * 0.2)
@@ -276,7 +276,7 @@ public class Class905 extends Class882 {
    @Override
    public void method3466(Class8711 var1) {
       super.method3466(var1);
-      ((Class1657)this.field5024).method6939(Class7940.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
+      ((ServerWorld)this.field5024).method6939(Class7940.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
       this.method2863(Class6067.field27046, 1.0F, 1.0F);
    }
 
@@ -295,7 +295,7 @@ public class Class905 extends Class882 {
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.field5024.field9020) {
          this.method2863(Class6067.field27047, 1.0F, 1.0F);
-         ((Class1657)this.field5024).method6939(Class7940.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
+         ((ServerWorld)this.field5024).method6939(Class7940.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.method2904();
       }
 

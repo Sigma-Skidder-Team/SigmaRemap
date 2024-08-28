@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.collect.Sets;
 
 import javax.annotation.Nullable;
-import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Class1043 extends Class1045 implements Class1059, Class1060 {
@@ -102,7 +101,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public void method4747(Class8848 var1) {
+   public void method4747(ItemStack var1) {
       if (!this.field5024.field9020 && this.field5593 > -this.method4236() + 20) {
          this.field5593 = -this.method4236();
          this.method2863(this.method4749(!var1.method32105()), this.method3099(), this.method3100());
@@ -145,7 +144,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Nullable
    @Override
-   public Entity method2745(Class1657 var1) {
+   public Entity method2745(ServerWorld var1) {
       this.method4684();
       return super.method2745(var1);
    }
@@ -179,7 +178,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       if (!super.method2963(var1, var2)) {
          int var5 = var1 - 300;
          if (var5 >= 0 && var5 < this.field5797.method3629()) {
@@ -223,7 +222,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Override
    public Vector3d method2986(float var1) {
-      float var4 = Class9679.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
+      float var4 = MathHelper.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
       Vector3d var5 = new Vector3d(0.0, this.method3389().method19677() - 1.0, 0.2);
       return this.method3288(var1).method11338(var5.method11351(-var4));
    }

@@ -99,7 +99,7 @@ public class Class9299 {
    public static Class6636 field42843 = new Class6636("net.minecraftforge.event.ForgeEventFactory");
    public static Class6631 field42844 = new Class6631(field42843, "canEntityDespawn");
    public static Class6631 field42845 = new Class6631(
-      field42843, "fireChunkWatch", new Class[]{boolean.class, boolean.class, Class878.class, Class7481.class, Class1657.class}
+      field42843, "fireChunkWatch", new Class[]{boolean.class, boolean.class, Class878.class, Class7481.class, ServerWorld.class}
    );
    public static Class6631 field42846 = new Class6631(field42843, "getMaxSpawnPackSize");
    public static Class6631 field42847 = new Class6631(field42843, "getMobGriefingEvent");
@@ -172,7 +172,7 @@ public class Class9299 {
    public static Class6631 field42912 = new Class6631(field42909, "getFontRenderer");
    public static Class6631 field42913 = new Class6631(field42909, "getItemStackTileEntityRenderer");
    public static Class6631 field42914 = new Class6631(field42909, "getRGBDurabilityForDisplay");
-   public static Class6631 field42915 = new Class6631(field42909, "isDamageable", new Class[]{Class8848.class});
+   public static Class6631 field42915 = new Class6631(field42909, "isDamageable", new Class[]{ItemStack.class});
    public static Class6631 field42916 = new Class6631(field42909, "isShield");
    public static Class6631 field42917 = new Class6631(field42909, "onEntitySwing");
    public static Class6631 field42918 = new Class6631(field42909, "shouldCauseReequipAnimation");

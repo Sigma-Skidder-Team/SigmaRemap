@@ -203,7 +203,7 @@ public class Class9037 {
 
    private static int method33490(Class6619 var0, String var1, int var2, int var3, int var4) {
       if (var2 <= 48 && var3 <= 48 && var4 <= 48) {
-         Class1657 var7 = var0.method20172();
+         ServerWorld var7 = var0.method20172();
          BlockPos var8 = new BlockPos(var0.method20171());
          BlockPos var9 = new BlockPos(var8.method8304(), var0.method20172().method7006(Class101.field296, var8).getY(), var8.method8306() + 3);
          Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Class80.field185, var7);
@@ -227,7 +227,7 @@ public class Class9037 {
    private static int method33491(Class6619 var0, String var1) throws CommandSyntaxException {
       Class8711 var4 = (Class8711)var0.method20175().method3289(10.0, 1.0F, false);
       BlockPos var5 = var4.method31423();
-      Class1657 var6 = var0.method20172();
+      ServerWorld var6 = var0.method20172();
       Optional var7 = Class7803.method26060(var5, 15, var6);
       if (!var7.isPresent()) {
          var7 = Class7803.method26060(var5, 200, var6);
@@ -257,7 +257,7 @@ public class Class9037 {
 
    private static int method33492(Class6619 var0) {
       BlockPos var3 = new BlockPos(var0.method20171());
-      Class1657 var4 = var0.method20172();
+      ServerWorld var4 = var0.method20172();
       BlockPos var5 = Class7803.method26061(var3, 15, var4);
       if (var5 != null) {
          Class7440.method24038(var4);
@@ -271,7 +271,7 @@ public class Class9037 {
 
    private static int method33493(Class6619 var0) {
       BlockPos var3 = new BlockPos(var0.method20171());
-      Class1657 var4 = var0.method20172();
+      ServerWorld var4 = var0.method20172();
       Collection<BlockPos> var5 = Class7803.method26062(var3, 200, var4);
       if (!var5.isEmpty()) {
          Class7440.method24038(var4);
@@ -285,7 +285,7 @@ public class Class9037 {
       }
    }
 
-   private static void method33494(Class1657 var0, BlockPos var1, Class9494 var2) {
+   private static void method33494(ServerWorld var0, BlockPos var1, Class9494 var2) {
       Class964 var5 = (Class964)var0.method6759(var1);
       String var6 = var5.method3935();
       Class4871 var7 = Class7936.method26709(var6);
@@ -301,7 +301,7 @@ public class Class9037 {
       Class7440.method24029(var8, var10, Class7879.field33820);
    }
 
-   private static void method33495(Class1657 var0, Class9494 var1) {
+   private static void method33495(ServerWorld var0, Class9494 var1) {
       if (var1.method36678()) {
          method33507(var0, "GameTest done! " + var1.method36677() + " tests were run", TextFormatting.WHITE);
          if (!var1.method36675()) {
@@ -317,19 +317,19 @@ public class Class9037 {
    }
 
    private static int method33496(Class6619 var0, int var1) {
-      Class1657 var4 = var0.method20172();
+      ServerWorld var4 = var0.method20172();
       Class7440.method24038(var4);
       BlockPos var5 = new BlockPos(
          var0.method20171().field18048,
          (double)var0.method20172().method7006(Class101.field296, new BlockPos(var0.method20171())).getY(),
          var0.method20171().field18050
       );
-      Class7440.method24040(var4, var5, Class7879.field33820, Class9679.method37775(var1, 0, 1024));
+      Class7440.method24040(var4, var5, Class7879.field33820, MathHelper.method37775(var1, 0, 1024));
       return 1;
    }
 
    private static int method33497(Class6619 var0, Class4871 var1, int var2) {
-      Class1657 var5 = var0.method20172();
+      ServerWorld var5 = var0.method20172();
       BlockPos var6 = new BlockPos(var0.method20171());
       int var7 = var0.method20172().method7006(Class101.field296, var6).getY();
       BlockPos var8 = new BlockPos(var6.method8304(), var7, var6.method8306() + 3);
@@ -341,7 +341,7 @@ public class Class9037 {
       return 1;
    }
 
-   private static void method33498(Class4871 var0, Class1657 var1) {
+   private static void method33498(Class4871 var0, ServerWorld var1) {
       Consumer var4 = Class7936.method26707(var0.method15038());
       if (var4 != null) {
          var4.accept(var1);
@@ -388,7 +388,7 @@ public class Class9037 {
    private static void method33502(Class6619 var0, Collection<Class4871> var1, int var2, int var3) {
       BlockPos var6 = new BlockPos(var0.method20171());
       BlockPos var7 = new BlockPos(var6.method8304(), var0.method20172().method7006(Class101.field296, var6).getY(), var6.method8306() + 3);
-      Class1657 var8 = var0.method20172();
+      ServerWorld var8 = var0.method20172();
       Class80 var9 = Class7803.method26051(var2);
       Collection var10 = Class7440.method24031(var1, var7, var9, var8, Class7879.field33820, var3);
       Class9494 var11 = new Class9494(var10);
@@ -402,7 +402,7 @@ public class Class9037 {
 
    private static int method33504(Class6619 var0) {
       BlockPos var3 = new BlockPos(var0.method20171());
-      Class1657 var4 = var0.method20172();
+      ServerWorld var4 = var0.method20172();
       BlockPos var5 = Class7803.method26061(var3, 15, var4);
       if (var5 != null) {
          Class964 var6 = (Class964)var4.method6759(var5);
@@ -459,12 +459,12 @@ public class Class9037 {
       }
    }
 
-   private static void method33507(Class1657 var0, String var1, TextFormatting var2) {
+   private static void method33507(ServerWorld var0, String var1, TextFormatting var2) {
       var0.method6914(var0x -> true).forEach(var2x -> var2x.method1328(new StringTextComponent(var2 + var1), Util.field45724));
    }
 
    // $VF: synthetic method
-   public static void method33536(Class1657 var0, Class9494 var1) {
+   public static void method33536(ServerWorld var0, Class9494 var1) {
       method33495(var0, var1);
    }
 }

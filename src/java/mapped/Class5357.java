@@ -160,7 +160,7 @@ public class Class5357 extends Module {
         field23951 = new Class7461(mc.field1339.field5031, mc.field1339.field5032);
         this.field23957 = -1.0F;
         this.field23938
-                .method36814(mc.field1339.method3094(Class79.field182).method32107() instanceof Class3267 && mc.field1299.field44642.method8509());
+                .method36814(mc.field1339.method3094(Hand.field182).method32107() instanceof Class3267 && mc.field1299.field44642.method8509());
         this.field23959 = false;
         this.field23946 = -1;
         this.field23938.field44349.clear();
@@ -296,8 +296,8 @@ public class Class5357 extends Module {
     @EventTarget
     public void method16822(Class4415 var1) {
         if (field23949 != null && !this.method15974("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
-            float var4 = Class9679.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.method1562());
-            float var5 = Class9679.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.method1562());
+            float var4 = MathHelper.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.method1562());
+            float var5 = MathHelper.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.method1562());
             mc.field1339.field5031 = var4;
             mc.field1339.field5032 = var5;
         }

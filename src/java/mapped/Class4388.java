@@ -204,14 +204,14 @@ public class Class4388 {
       if (!var0.method3005()) {
          return false;
       } else {
-         Entity var3 = var0.method3421();
+         Entity var3 = var0.getRidingEntity();
          return var3 instanceof Class1034 && ((Class1034)var3).method3005() || var3 instanceof Class1091 && ((Class1091)var3).method3005();
       }
    }
 
    public static void method13814(Class1034 var0, Class1000 var1) {
       method13844(var0);
-      Class8848 var4;
+      ItemStack var4;
       if (var1.method4124().method32107() != Class8514.field37969) {
          var0.method2751(var1, 1);
          var4 = method13816(var1);
@@ -238,17 +238,17 @@ public class Class4388 {
       }
    }
 
-   private static void method13815(Class1034 var0, Class8848 var1) {
+   private static void method13815(Class1034 var0, ItemStack var1) {
       if (method13878(var0)) {
-         var0.method3302(var0.method3094(Class79.field183));
+         var0.method3302(var0.method3094(Hand.field183));
       }
 
       var0.method4626(var1);
    }
 
-   private static Class8848 method13816(Class1000 var0) {
-      Class8848 var3 = var0.method4124();
-      Class8848 var4 = var3.method32106(1);
+   private static ItemStack method13816(Class1000 var0) {
+      ItemStack var3 = var0.method4124();
+      ItemStack var4 = var3.method32106(1);
       if (!var3.method32105()) {
          var0.method4125(var3);
       } else {
@@ -259,14 +259,14 @@ public class Class4388 {
    }
 
    public static void method13817(Class1034 var0, boolean var1) {
-      Class8848 var4 = var0.method3094(Class79.field183);
-      var0.method3095(Class79.field183, Class8848.field39973);
+      ItemStack var4 = var0.method3094(Hand.field183);
+      var0.method3095(Hand.field183, ItemStack.field39973);
       if (!var0.method4635()) {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
-            Class8848 var6 = var0.method3090();
+            ItemStack var6 = var0.method3090();
             if (!method13827(var6.method32107())) {
-               method13820(var0, Collections.<Class8848>singletonList(var6));
+               method13820(var0, Collections.<ItemStack>singletonList(var6));
             } else {
                method13819(var0, var6);
             }
@@ -289,16 +289,16 @@ public class Class4388 {
    public static void method13818(Class1034 var0) {
       if (method13868(var0) && !var0.method3091().method32105()) {
          var0.method3302(var0.method3091());
-         var0.method3095(Class79.field183, Class8848.field39973);
+         var0.method3095(Hand.field183, ItemStack.field39973);
       }
    }
 
-   private static void method13819(Class1034 var0, Class8848 var1) {
-      Class8848 var4 = var0.method4612(var1);
-      method13821(var0, Collections.<Class8848>singletonList(var4));
+   private static void method13819(Class1034 var0, ItemStack var1) {
+      ItemStack var4 = var0.method4612(var1);
+      method13821(var0, Collections.<ItemStack>singletonList(var4));
    }
 
-   private static void method13820(Class1034 var0, List<Class8848> var1) {
+   private static void method13820(Class1034 var0, List<ItemStack> var1) {
       Optional var4 = var0.method2992().<PlayerEntity>method21410(Class8830.field39822);
       if (!var4.isPresent()) {
          method13821(var0, var1);
@@ -307,28 +307,28 @@ public class Class4388 {
       }
    }
 
-   private static void method13821(Class1034 var0, List<Class8848> var1) {
+   private static void method13821(Class1034 var0, List<ItemStack> var1) {
       method13823(var0, var1, method13863(var0));
    }
 
-   private static void method13822(Class1034 var0, PlayerEntity var1, List<Class8848> var2) {
-      method13823(var0, var2, var1.method3431());
+   private static void method13822(Class1034 var0, PlayerEntity var1, List<ItemStack> var2) {
+      method13823(var0, var2, var1.getPositionVec());
    }
 
-   private static void method13823(Class1034 var0, List<Class8848> var1, Vector3d var2) {
+   private static void method13823(Class1034 var0, List<ItemStack> var1, Vector3d var2) {
       if (!var1.isEmpty()) {
-         var0.method2820(Class79.field183);
+         var0.swingArm(Hand.field183);
 
-         for (Class8848 var6 : var1) {
+         for (ItemStack var6 : var1) {
             Class6983.method21578(var0, var6, var2.method11339(0.0, 1.0, 0.0));
          }
       }
    }
 
-   private static List<Class8848> method13824(Class1034 var0) {
+   private static List<ItemStack> method13824(Class1034 var0) {
       Class7318 var3 = var0.field5024.method6715().method1411().method1058(Class8793.field39609);
       return var3.method23182(
-         new Class9464((Class1657)var0.field5024)
+         new Class9464((ServerWorld)var0.field5024)
             .method36454(Class9525.field44330, var0)
             .method36450(var0.field5024.field9016)
             .method36460(Class8524.field38288)
@@ -339,7 +339,7 @@ public class Class4388 {
       return var1.method3204() == Class8992.field41037 ? new Random(var0.field5024.method6783()).nextFloat() < 0.1F : false;
    }
 
-   public static boolean method13826(Class1034 var0, Class8848 var1) {
+   public static boolean method13826(Class1034 var0, ItemStack var1) {
       Class3257 var4 = var1.method32107();
       if (!var4.method11743(Class5985.field26108)) {
          if (method13876(var0) && var0.method2992().method21404(Class8830.field39826)) {
@@ -370,7 +370,7 @@ public class Class4388 {
          return false;
       } else {
          Class1006 var4 = (Class1006)var1;
-         return !var4.method3005() || !var4.method3066() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.method3421() == null;
+         return !var4.method3005() || !var4.method3066() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
       }
    }
 
@@ -426,12 +426,12 @@ public class Class4388 {
       });
    }
 
-   public static Class2274 method13833(Class1034 var0, PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public static Class2274 method13833(Class1034 var0, PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (!method13834(var0, var5)) {
          return Class2274.field14820;
       } else {
-         Class8848 var6 = var5.method32106(1);
+         ItemStack var6 = var5.method32106(1);
          method13815(var0, var6);
          method13867(var0);
          method13844(var0);
@@ -439,7 +439,7 @@ public class Class4388 {
       }
    }
 
-   public static boolean method13834(Class1034 var0, Class8848 var1) {
+   public static boolean method13834(Class1034 var0, ItemStack var1) {
       return !method13876(var0) && !method13868(var0) && var0.method4635() && method13869(var1.method32107());
    }
 
@@ -539,7 +539,7 @@ public class Class4388 {
    }
 
    public static boolean method13843(Class880 var0) {
-      for (Class8848 var4 : var0.method2947()) {
+      for (ItemStack var4 : var0.method2947()) {
          Class3257 var5 = var4.method32107();
          if (var5 instanceof Class3279 && ((Class3279)var5).method11806() == Class2114.field13776) {
             return true;
@@ -577,7 +577,7 @@ public class Class4388 {
    public static void method13849(Class1035 var0, Class880 var1) {
       if (method13871(var1)) {
          var0.method2992().method21405(Class8830.field39841);
-         var0.method2992().method21407(Class8830.field39849, var1.method3375(), 600L);
+         var0.method2992().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
          if (var1.method3204() == Class8992.field41037 && var0.method4618()) {
             method13861(var0);
          }
@@ -671,7 +671,7 @@ public class Class4388 {
 
    private static Vector3d method13863(Class1034 var0) {
       Vector3d var3 = Class8037.method27583(var0, 4, 2);
-      return var3 != null ? var3 : var0.method3431();
+      return var3 != null ? var3 : var0.getPositionVec();
    }
 
    private static boolean method13864(Class1034 var0) {

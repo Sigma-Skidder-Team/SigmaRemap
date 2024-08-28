@@ -23,20 +23,20 @@ public class Class8588 {
 
    public void method30722(Class878 var1) {
       var1.method2781(this.field38665);
-      Class7812 var4 = new Class9464(var1.method2798())
+      Class7812 var4 = new Class9464(var1.getServerWorld())
          .method36454(Class9525.field44330, var1)
-         .method36454(Class9525.field44335, var1.method3431())
+         .method36454(Class9525.field44335, var1.getPositionVec())
          .method36450(var1.method3013())
          .method36460(Class8524.field38289);
       boolean var5 = false;
 
       for (ResourceLocation var9 : this.field38666) {
-         for (Class8848 var11 : var1.field4856.method1411().method1058(var9).method23182(var4)) {
+         for (ItemStack var11 : var1.field4856.method1411().method1058(var9).method23182(var4)) {
             if (!var1.method2945(var11)) {
                Class1000 var12 = var1.method2882(var11, false);
                if (var12 != null) {
                   var12.method4132();
-                  var12.method4127(var1.method3375());
+                  var12.method4127(var1.getUniqueID());
                }
             } else {
                var1.field5024
@@ -64,7 +64,7 @@ public class Class8588 {
       }
 
       Class314 var13 = var1.field4856;
-      this.field38668.method34115(var13.method1397()).ifPresent(var2 -> var13.method1397().method22825(var2, var1.method3423().method20162().method20163(2)));
+      this.field38668.method34115(var13.method1397()).ifPresent(var2 -> var13.method1397().method22825(var2, var1.getCommandSource().method20162().method20163(2)));
    }
 
    @Override

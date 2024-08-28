@@ -42,7 +42,7 @@ public class Class9574 {
    public Class2340 field44579 = Class2340.field16005;
    public List<String> field44580 = Lists.newArrayList();
    public List<String> field44581 = Lists.newArrayList();
-   public Class2153 field44582 = Class2153.field14075;
+   public ChatVisibility field44582 = ChatVisibility.FULL;
    public double field44583 = 1.0;
    public double field44584 = 0.0;
    public double field44585 = 0.5;
@@ -536,7 +536,7 @@ public class Class9574 {
                }
 
                if ("chatVisibility".equals(var4)) {
-                  this.field44582 = Class2153.method8867(Integer.parseInt(var5));
+                  this.field44582 = ChatVisibility.getValue(Integer.parseInt(var5));
                }
 
                if ("chatOpacity".equals(var4)) {
@@ -715,7 +715,7 @@ public class Class9574 {
    public void method37146() {
       if (!Class9299.field42770.method20214() || !Class9299.method35056(Class9299.field42770)) {
          try (PrintWriter var1 = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.field44660), StandardCharsets.UTF_8))) {
-            var1.println("version:" + Class9246.method34773().getWorldVersion());
+            var1.println("version:" + SharedConstants.method34773().getWorldVersion());
             var1.println("autoJump:" + Class5805.field25351.method18080(this));
             var1.println("autoSuggestions:" + Class5805.field25352.method18080(this));
             var1.println("chatColors:" + Class5805.field25354.method18080(this));
@@ -764,7 +764,7 @@ public class Class9574 {
             var1.println("incompatibleResourcePacks:" + field44570.toJson(this.field44581));
             var1.println("lastServer:" + this.field44667);
             var1.println("lang:" + this.field44676);
-            var1.println("chatVisibility:" + this.field44582.method8865());
+            var1.println("chatVisibility:" + this.field44582.getId());
             var1.println("chatOpacity:" + this.field44583);
             var1.println("chatLineSpacing:" + this.field44584);
             var1.println("textBackgroundOpacity:" + this.field44585);
@@ -1236,7 +1236,7 @@ public class Class9574 {
 
       if (var1 == Class5805.field25431) {
          this.field44719 = !this.field44719;
-         Class9679.field45216 = this.field44719;
+         MathHelper.field45216 = this.field44719;
       }
 
       if (var1 == Class5805.field25432) {
@@ -1968,7 +1968,7 @@ public class Class9574 {
 
                if (var4[0].equals("ofFastMath") && var4.length >= 2) {
                   this.field44719 = Boolean.valueOf(var4[1]);
-                  Class9679.field45216 = this.field44719;
+                  MathHelper.field45216 = this.field44719;
                }
 
                if (var4[0].equals("ofFastRender") && var4.length >= 2) {

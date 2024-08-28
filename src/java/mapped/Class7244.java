@@ -31,7 +31,7 @@ public class Class7244 implements Class7243 {
       int var5 = this.method22741();
       if (Util.method38487() > this.field31100) {
          this.field31100 += 500L;
-         field31096.info(new TranslationTextComponent("menu.preparingSpawn", Class9679.method37775(var5, 0, 100)).getString());
+         field31096.info(new TranslationTextComponent("menu.preparingSpawn", MathHelper.method37775(var5, 0, 100)).getString());
       }
    }
 
@@ -42,6 +42,6 @@ public class Class7244 implements Class7243 {
    }
 
    public int method22741() {
-      return Class9679.method37767((float)this.field31098 * 100.0F / (float)this.field31097);
+      return MathHelper.method37767((float)this.field31098 * 100.0F / (float)this.field31097);
    }
 }

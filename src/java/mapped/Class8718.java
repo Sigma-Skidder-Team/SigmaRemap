@@ -31,21 +31,21 @@ public final class Class8718 {
       double var13 = var1 + this.field39337;
       double var15 = var3 + this.field39338;
       double var17 = var5 + this.field39339;
-      int var19 = Class9679.method37769(var13);
-      int var20 = Class9679.method37769(var15);
-      int var21 = Class9679.method37769(var17);
+      int var19 = MathHelper.method37769(var13);
+      int var20 = MathHelper.method37769(var15);
+      int var21 = MathHelper.method37769(var17);
       double var22 = var13 - (double)var19;
       double var24 = var15 - (double)var20;
       double var26 = var17 - (double)var21;
-      double var28 = Class9679.method37825(var22);
-      double var30 = Class9679.method37825(var24);
-      double var32 = Class9679.method37825(var26);
+      double var28 = MathHelper.method37825(var22);
+      double var30 = MathHelper.method37825(var24);
+      double var32 = MathHelper.method37825(var26);
       double var34;
       if (var7 == 0.0) {
          var34 = 0.0;
       } else {
          double var36 = Math.min(var9, var24);
-         var34 = (double)Class9679.method37769(var36 / var7) * var7;
+         var34 = (double) MathHelper.method37769(var36 / var7) * var7;
       }
 
       return this.method31447(var19, var20, var21, var22, var24 - var34, var26, var28, var30, var32);
@@ -75,6 +75,6 @@ public final class Class8718 {
       double var34 = method31445(this.method31446(var22 + 1), var4 - 1.0, var6, var8 - 1.0);
       double var36 = method31445(this.method31446(var20 + 1), var4, var6 - 1.0, var8 - 1.0);
       double var38 = method31445(this.method31446(var23 + 1), var4 - 1.0, var6 - 1.0, var8 - 1.0);
-      return Class9679.method37824(var10, var12, var14, var24, var26, var28, var30, var32, var34, var36, var38);
+      return MathHelper.method37824(var10, var12, var14, var24, var26, var28, var30, var32, var34, var36, var38);
    }
 }

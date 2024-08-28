@@ -98,7 +98,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
       boolean var5 = this.method4381(var1.method3094(var2));
       if (!var5 && this.method4943() && !this.method3329() && !var1.method2851()) {
          if (!this.field5024.field9020) {
@@ -111,7 +111,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
          if (var6.method9000()) {
             return var6;
          } else {
-            Class8848 var7 = var1.method3094(var2);
+            ItemStack var7 = var1.method3094(var2);
             return var7.method32107() != Class8514.field37886 ? Class2274.field14820 : var7.method32125(var1, this, var2);
          }
       }
@@ -176,12 +176,12 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method3353(Class1657 var1, Class906 var2) {
+   public void method3353(ServerWorld var1, Class906 var2) {
       if (var1.method6997() == Class2197.field14351) {
          super.method3353(var1, var2);
       } else {
          Class1063 var5 = Class8992.field41110.method33215(var1);
-         var5.method2944(Class2106.field13731, new Class8848(Class8514.field37815));
+         var5.method2944(Class2106.field13731, new ItemStack(Class8514.field37815));
          var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
          var5.method4302(this.method4305());
          var5.method4308(this.method3005());
@@ -216,12 +216,12 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       return this.field5915.method19690(this.method3013());
    }
 
-   public Class1072 method4389(Class1657 var1, Class1045 var2) {
+   public Class1072 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41064.method33215(var1);
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return field5914.test(var1);
    }
 

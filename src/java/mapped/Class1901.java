@@ -74,6 +74,6 @@ public enum Class1901 implements Class1902 {
    }
 
    public static Class1901 method8167(int var0, int var1) {
-      return field11175.get(method8165(Class9679.method37788(var0, 360), Class9679.method37788(var1, 360)));
+      return field11175.get(method8165(MathHelper.normalizeAngle(var0, 360), MathHelper.normalizeAngle(var1, 360)));
    }
 }

@@ -78,7 +78,7 @@ public class Class8651 {
       method31095("dimension", Class9082.class, new Class2591(Class9082::method33872));
       method31095("time", Class8127.class, new Class2591(Class8127::method28154));
       method31095("uuid", Class9728.class, new Class2591(Class9728::method38110));
-      if (Class9246.field42545) {
+      if (SharedConstants.field42545) {
          method31095("test_argument", Class9418.class, new Class2591(Class9418::method36138));
          method31095("test_class", Class9210.class, new Class2591(Class9210::method34510));
       }

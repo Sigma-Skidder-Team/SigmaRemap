@@ -21,7 +21,7 @@ public class Class6995 extends Class6990 {
 
    @Override
    public Vector3d method21667() {
-      return this.field30243.method3431();
+      return this.field30243.getPositionVec();
    }
 
    @Override
@@ -40,9 +40,9 @@ public class Class6995 extends Class6990 {
          if (!this.method21668()) {
             if (this.field30245 != null && !this.field30245.method28693()) {
                Vector3d var3 = this.field30245.method28703(this.field30243);
-               if (Class9679.method37769(this.field30243.getPosX()) == Class9679.method37769(var3.field18048)
-                  && Class9679.method37769(this.field30243.getPosY()) == Class9679.method37769(var3.field18049)
-                  && Class9679.method37769(this.field30243.getPosZ()) == Class9679.method37769(var3.field18050)) {
+               if (MathHelper.method37769(this.field30243.getPosX()) == MathHelper.method37769(var3.field18048)
+                  && MathHelper.method37769(this.field30243.getPosY()) == MathHelper.method37769(var3.field18049)
+                  && MathHelper.method37769(this.field30243.getPosZ()) == MathHelper.method37769(var3.field18050)) {
                   this.field30245.method28691();
                }
             }
@@ -60,9 +60,9 @@ public class Class6995 extends Class6990 {
 
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
-      int var8 = Class9679.method37769(var1.field18048);
-      int var9 = Class9679.method37769(var1.field18049);
-      int var10 = Class9679.method37769(var1.field18050);
+      int var8 = MathHelper.method37769(var1.field18048);
+      int var9 = MathHelper.method37769(var1.field18049);
+      int var10 = MathHelper.method37769(var1.field18050);
       double var11 = var2.field18048 - var1.field18048;
       double var13 = var2.field18049 - var1.field18049;
       double var15 = var2.field18050 - var1.field18050;
@@ -98,9 +98,9 @@ public class Class6995 extends Class6990 {
          int var33 = !(var11 < 0.0) ? 1 : -1;
          int var34 = !(var13 < 0.0) ? 1 : -1;
          int var35 = !(var15 < 0.0) ? 1 : -1;
-         int var36 = Class9679.method37769(var2.field18048);
-         int var37 = Class9679.method37769(var2.field18049);
-         int var38 = Class9679.method37769(var2.field18050);
+         int var36 = MathHelper.method37769(var2.field18048);
+         int var37 = MathHelper.method37769(var2.field18049);
+         int var38 = MathHelper.method37769(var2.field18050);
          int var39 = var36 - var8;
          int var40 = var37 - var9;
          int var41 = var38 - var10;

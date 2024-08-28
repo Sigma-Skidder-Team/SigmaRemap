@@ -13,11 +13,11 @@ public class Class3688 extends Class3676<Class1042> {
       this.field19707 = var2;
    }
 
-   public boolean method12508(Class1657 var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, Class1042 var2) {
       return !var1.method6952(var2.method3432());
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       Class1653 var7 = var1.method6951();
       int var8 = var7.method6677(Class2002.method8390(var2.method3432()));
       Vector3d var9 = null;

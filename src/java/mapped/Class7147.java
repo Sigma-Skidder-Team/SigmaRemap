@@ -16,7 +16,7 @@ public final class Class7147 extends Class7144 {
    public void method22289(Class880 var1, int var2) {
       if (var1 instanceof Class878 && !var1.method2800()) {
          Class878 var5 = (Class878)var1;
-         Class1657 var6 = var5.method2798();
+         ServerWorld var6 = var5.getServerWorld();
          if (var6.method6997() == Class2197.field14351) {
             return;
          }

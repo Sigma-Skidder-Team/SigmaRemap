@@ -31,7 +31,7 @@ public class Class863 extends Class851<Class5819> {
       int var8 = (this.field4565 - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
       int var9 = this.field4727.method18174();
-      int var10 = Class9679.method37775((18 * var9 + 20 - 1) / 20, 0, 18);
+      int var10 = MathHelper.method37775((18 * var9 + 20 - 1) / 20, 0, 18);
       if (var10 > 0) {
          this.method5696(var1, var7 + 60, var8 + 44, 176, 29, var10, 4);
       }

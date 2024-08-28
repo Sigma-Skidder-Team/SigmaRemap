@@ -4,8 +4,8 @@ public final class Class6219 extends Class6218 {
    private static String[] field27718;
 
    @Override
-   public Class8848 method19192(Class2956 var1, Class8848 var2) {
-      Class1657 var5 = var1.method11326();
+   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+      ServerWorld var5 = var1.method11326();
       BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
       Class1004 var7 = new Class1004(var5, (double)var6.method8304() + 0.5, (double)var6.getY(), (double)var6.method8306() + 0.5, (Class880)null);
       var5.method6916(var7);

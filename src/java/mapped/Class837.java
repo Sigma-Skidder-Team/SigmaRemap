@@ -91,7 +91,7 @@ public class Class837 extends Screen {
 
          while (var12.hasNext()) {
             Class8705 var13 = (Class8705)var12.next();
-            int var14 = Class9679.method37767(this.field4627.method27064(var13) * (float)(var8 - var7));
+            int var14 = MathHelper.method37767(this.field4627.method27064(var13) * (float)(var8 - var7));
             method5686(var1, var7 + var11, var9, var7 + var11 + var14, var10, field4625.getInt(var13));
             var11 += var14;
          }
@@ -101,7 +101,7 @@ public class Class837 extends Screen {
          method5690(
             var1,
             this.field4568,
-            Class9679.method37767(this.field4627.method27065() * 100.0F) + "%",
+            MathHelper.method37767(this.field4627.method27065() * 100.0F) + "%",
             this.field4564 / 2,
             var9 + (var10 - var9) / 2 - 4,
             10526880

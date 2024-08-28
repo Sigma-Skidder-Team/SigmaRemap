@@ -19,7 +19,7 @@ public class Class6837 extends Class6829 {
          );
          double var4 = var3.method11348();
          var3 = var3.method11333();
-         if (!this.method20820(var3, Class9679.method37774(var4))) {
+         if (!this.method20820(var3, MathHelper.method37774(var4))) {
             this.field29714 = Class2335.field15966;
          } else {
             this.field29724.method3434(this.field29724.method3433().method11338(var3.method11344(0.1)));

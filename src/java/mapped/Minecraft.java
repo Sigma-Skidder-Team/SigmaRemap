@@ -304,7 +304,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       this.setLoadingGui(
          new Class1272(
             this, this.field1313.method586(Util.method38492(), this, field1276, var10), var1x -> Util.method38514(var1x, this::method1458, () -> {
-                  if (Class9246.field42545) {
+                  if (SharedConstants.field42545) {
                      this.method1471();
                   }
                }), false
@@ -319,7 +319,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    private String method1455() {
       StringBuilder var1 = new StringBuilder(Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
       var1.append(" ");
-      var1.append(Class9246.method34773().getName());
+      var1.append(SharedConstants.method34773().getName());
       ClientPlayNetHandler var2 = this.getClientPlayNetHandler();
       if (var2 != null && var2.method15589().method30707()) {
          var1.append(" - ");
@@ -428,14 +428,14 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    }
 
    private void method1461() {
-      Class7013 var1 = new Class7013<Class8848>(
+      Class7013 var1 = new Class7013<ItemStack>(
          var0 -> var0.method32153((PlayerEntity)null, Class2215.field14480)
                .stream()
                .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
                .filter(var0x -> !var0x.isEmpty()),
          var0 -> Stream.<ResourceLocation>of(Class2348.field16075.method9181(var0.method32107()))
       );
-      Class7012 var2 = new Class7012<Class8848>(var0 -> Class5985.method18561().method27138(var0.method32107()).stream());
+      Class7012 var2 = new Class7012<ItemStack>(var0 -> Class5985.method18561().method27138(var0.method32107()).stream());
       Class25 var3 = Class25.method67();
 
       for (Class3257 var5 : Class2348.field16075) {
@@ -575,13 +575,13 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
          }
       }
 
-      Class25<Class8848> var15 = Class25.method67();
+      Class25<ItemStack> var15 = Class25.method67();
 
       for (Class3257 var19 : Class2348.field16075) {
          var15.clear();
          var19.method11737(Class7401.field31670, var15);
 
-         for (Class8848 var22 : var15) {
+         for (ItemStack var22 : var15) {
             String var10 = var22.method32134();
             String var11 = new TranslationTextComponent(var10).getString();
             if (var11.toLowerCase(Locale.ROOT).equals(var19.method11719())) {
@@ -955,7 +955,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       double var10 = 0.0;
 
       for (Class2012 var13 : var3) {
-         int var14 = Class9679.method37769(var13.field13082 / 4.0) + 1;
+         int var14 = MathHelper.method37769(var13.field13082 / 4.0) + 1;
          var6.method17063(6, Class9337.field43342);
          int var15 = var13.method8536();
          int var16 = var15 >> 16 & 0xFF;
@@ -965,8 +965,8 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
          for (int var19 = var14; var19 >= 0; var19--) {
             float var20 = (float)((var10 + var13.field13082 * (double)var19 / (double)var14) * (float) (Math.PI * 2) / 100.0);
-            float var21 = Class9679.method37763(var20) * 160.0F;
-            float var22 = Class9679.method37764(var20) * 160.0F * 0.5F;
+            float var21 = MathHelper.method37763(var20) * 160.0F;
+            float var22 = MathHelper.method37764(var20) * 160.0F * 0.5F;
             var6.method17025((double)((float)var8 + var21), (double)((float)var9 - var22), 0.0).method17026(var16, var17, var18, 255).method17031();
          }
 
@@ -975,8 +975,8 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
          for (int var32 = var14; var32 >= 0; var32--) {
             float var36 = (float)((var10 + var13.field13082 * (double)var32 / (double)var14) * (float) (Math.PI * 2) / 100.0);
-            float var37 = Class9679.method37763(var36) * 160.0F;
-            float var38 = Class9679.method37764(var36) * 160.0F * 0.5F;
+            float var37 = MathHelper.method37763(var36) * 160.0F;
+            float var38 = MathHelper.method37764(var36) * 160.0F * 0.5F;
             if (!(var38 > 0.0F)) {
                var6.method17025((double)((float)var8 + var37), (double)((float)var9 - var38), 0.0)
                   .method17026(var16 >> 1, var17 >> 1, var18 >> 1, 255)
@@ -1068,7 +1068,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                Direction var4 = var2.method31424();
                if (this.field1337.method23134(var3, var4)) {
                   this.field1291.method1207(var3, var4);
-                  this.field1339.method2820(Class79.field182);
+                  this.field1339.swingArm(Hand.field182);
                }
             }
          } else {
@@ -1121,7 +1121,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                      this.field1339.method2975();
                }
 
-               this.field1339.method2820(Class79.field182);
+               this.field1339.swingArm(Hand.field182);
             }
          }
       }
@@ -1138,8 +1138,8 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                   field1271.warn("Null returned as 'hitResult', this shouldn't happen!");
                }
 
-               for (Class79 var5 : Class79.values()) {
-                  Class8848 var6 = this.field1339.method3094(var5);
+               for (Hand var5 : Hand.values()) {
+                  ItemStack var6 = this.field1339.method3094(var5);
                   if (this.field1346 != null) {
                      switch (Class9158.field42043[this.field1346.method31417().ordinal()]) {
                         case 1:
@@ -1152,7 +1152,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
                            if (var9.method9000()) {
                               if (var9.method9001()) {
-                                 this.field1339.method2820(var5);
+                                 this.field1339.swingArm(var5);
                               }
 
                               return;
@@ -1164,7 +1164,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                            Class2274 var12 = this.field1337.method23139(this.field1339, this.field1338, var5, var10);
                            if (var12.method9000()) {
                               if (var12.method9001()) {
-                                 this.field1339.method2820(var5);
+                                 this.field1339.swingArm(var5);
                                  if (!var6.method32105() && (var6.method32179() != var11 || this.field1337.method23152())) {
                                     this.field1295.field806.method37593(var5);
                                  }
@@ -1183,7 +1183,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                      Class2274 var13 = this.field1337.method23140(this.field1339, this.field1338, var5);
                      if (var13.method9000()) {
                         if (var13.method9001()) {
-                           this.field1339.method2820(var5);
+                           this.field1339.swingArm(var5);
                         }
 
                         this.field1295.field806.method37593(var5);
@@ -1226,10 +1226,10 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       if (this.field1355 == null && this.field1339 != null) {
          if (this.field1339.method3044() && !(this.field1355 instanceof Class827)) {
             this.displayGuiScreen((Screen)null);
-         } else if (this.field1339.method3176() && this.field1338 != null) {
+         } else if (this.field1339.isSleeping() && this.field1338 != null) {
             this.displayGuiScreen(new Class1332());
          }
-      } else if (this.field1355 != null && this.field1355 instanceof Class1332 && !this.field1339.method3176()) {
+      } else if (this.field1355 != null && this.field1355 instanceof Class1332 && !this.field1339.isSleeping()) {
          this.displayGuiScreen((Screen)null);
       }
 
@@ -1315,9 +1315,9 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
          if (!this.field1349 && this.field1338 != null) {
             this.field1338
                .method6852(
-                  Class9679.method37769(this.field1339.getPosX()),
-                  Class9679.method37769(this.field1339.getPosY()),
-                  Class9679.method37769(this.field1339.getPosZ())
+                  MathHelper.method37769(this.field1339.getPosX()),
+                  MathHelper.method37769(this.field1339.getPosY()),
+                  MathHelper.method37769(this.field1339.getPosZ())
                );
          }
 
@@ -1403,11 +1403,11 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
       while (this.field1299.field44641.method8511()) {
          if (!this.field1339.method2800() && this.field1339.method2881(Screen.method2475())) {
-            this.field1339.method2820(Class79.field182);
+            this.field1339.swingArm(Hand.field182);
          }
       }
 
-      boolean var5 = this.field1299.field44582 != Class2153.field14077;
+      boolean var5 = this.field1299.field44582 != ChatVisibility.HIDDEN;
       if (var5) {
          while (this.field1299.field44645.method8511()) {
             this.method1473("");
@@ -1765,7 +1765,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    public boolean method1511(UUID var1) {
       return this.method1512()
          ? this.field1335.method37606(var1)
-         : (this.field1339 == null || !var1.equals(this.field1339.method3375())) && !var1.equals(Util.field45724);
+         : (this.field1339 == null || !var1.equals(this.field1339.getUniqueID())) && !var1.equals(Util.field45724);
    }
 
    public boolean method1512() {
@@ -1805,7 +1805,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             boolean var2 = this.field1339.field4919.field29609;
             Class944 var3 = null;
             Class2100 var4 = this.field1346.method31417();
-            Class8848 var5;
+            ItemStack var5;
             if (var4 == Class2100.field13690) {
                BlockPos var6 = ((Class8711)this.field1346).method31423();
                Class7380 var7 = this.field1338.method6738(var6);
@@ -1829,14 +1829,14 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
 
                Entity var9 = ((Class8709)this.field1346).method31416();
                if (var9 instanceof Class998) {
-                  var5 = new Class8848(Class8514.field37871);
+                  var5 = new ItemStack(Class8514.field37871);
                } else if (var9 instanceof Class996) {
-                  var5 = new Class8848(Class8514.field38087);
+                  var5 = new ItemStack(Class8514.field38087);
                } else if (var9 instanceof Class997) {
                   Class997 var12 = (Class997)var9;
-                  Class8848 var16 = var12.method4090();
+                  ItemStack var16 = var12.method4090();
                   if (var16.method32105()) {
-                     var5 = new Class8848(Class8514.field38050);
+                     var5 = new ItemStack(Class8514.field38050);
                   } else {
                      var5 = var16.method32126();
                   }
@@ -1863,20 +1863,20 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                         var17 = Class8514.field37885;
                   }
 
-                  var5 = new Class8848(var17);
+                  var5 = new ItemStack(var17);
                } else if (var9 instanceof Class1002) {
-                  var5 = new Class8848(((Class1002)var9).method4147());
+                  var5 = new ItemStack(((Class1002)var9).method4147());
                } else if (var9 instanceof Class1005) {
-                  var5 = new Class8848(Class8514.field38082);
+                  var5 = new ItemStack(Class8514.field38082);
                } else if (var9 instanceof Class1001) {
-                  var5 = new Class8848(Class8514.field38108);
+                  var5 = new ItemStack(Class8514.field38108);
                } else {
                   Class3311 var14 = Class3311.method11853(var9.method3204());
                   if (var14 == null) {
                      return;
                   }
 
-                  var5 = new Class8848(var14);
+                  var5 = new ItemStack(var14);
                }
             }
 
@@ -1898,7 +1898,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                int var15 = var11.method4036(var5);
                if (var2) {
                   var11.method4033(var5);
-                  this.field1337.method23147(this.field1339.method3094(Class79.field182), 36 + var11.field5443);
+                  this.field1337.method23147(this.field1339.method3094(Hand.field182), 36 + var11.field5443);
                } else if (var15 != -1) {
                   if (Class974.method4035(var15)) {
                      var11.field5443 = var15;
@@ -1911,7 +1911,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   private Class8848 method1520(Class8848 var1, Class944 var2) {
+   private ItemStack method1520(ItemStack var1, Class944 var2) {
       Class39 var3 = var2.method3646(new Class39());
       if (var1.method32107() instanceof Class3299 && var3.method118("SkullOwner")) {
          Class39 var6 = var3.method130("SkullOwner");

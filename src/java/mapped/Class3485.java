@@ -39,7 +39,7 @@ public class Class3485 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       this.field19346.get().method26521(var1, var1.method6883().method7370(), var2, var3);
    }
 }

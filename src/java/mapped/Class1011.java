@@ -23,7 +23,7 @@ public interface Class1011 {
       }
    }
 
-   default void method4365(Class1657 var1, Class39 var2) {
+   default void method4365(ServerWorld var1, Class39 var2) {
       this.method4347(var2.method122("AngerTime"));
       if (var2.method106("AngryAt")) {
          UUID var5 = var2.method105("AngryAt");
@@ -43,14 +43,14 @@ public interface Class1011 {
       }
    }
 
-   default void method4366(Class1657 var1, boolean var2) {
+   default void method4366(ServerWorld var1, boolean var2) {
       Class880 var5 = this.method4232();
       UUID var6 = this.method4350();
       if ((var5 == null || var5.method3044()) && var6 != null && var1.method6942(var6) instanceof Class1006) {
          this.method4372();
       } else {
-         if (var5 != null && !Objects.equals(var6, var5.method3375())) {
-            this.method4349(var5.method3375());
+         if (var5 != null && !Objects.equals(var6, var5.getUniqueID())) {
+            this.method4349(var5.getUniqueID());
             this.method4346();
          }
 
@@ -67,7 +67,7 @@ public interface Class1011 {
       if (!Class8088.field34762.test(var1)) {
          return false;
       } else {
-         return var1.method3204() == Class8992.field41111 && this.method4368(var1.field5024) ? true : var1.method3375().equals(this.method4350());
+         return var1.method3204() == Class8992.field41111 && this.method4368(var1.field5024) ? true : var1.getUniqueID().equals(this.method4350());
       }
    }
 
@@ -80,7 +80,7 @@ public interface Class1011 {
    }
 
    default void method4370(PlayerEntity var1) {
-      if (var1.field5024.method6789().method17135(Class5462.field24254) && var1.method3375().equals(this.method4350())) {
+      if (var1.field5024.method6789().method17135(Class5462.field24254) && var1.getUniqueID().equals(this.method4350())) {
          this.method4372();
       }
    }

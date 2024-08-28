@@ -36,7 +36,7 @@ public class Class5335 extends Class5325 {
                                             var6.remove();
                                         } else if (!this.method15974("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
                                             var6.remove();
-                                        } else if (mc.field1339.method3421() != null && mc.field1339.method3421().equals(var7)) {
+                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var7)) {
                                             var6.remove();
                                         } else if (!var7.method3362()) {
                                             if (var7 instanceof PlayerEntity

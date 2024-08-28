@@ -33,7 +33,7 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>method23463(field19354);
       if (var7 < 3 && var4.nextInt(10) == 0) {
          var1 = var1.method23465(field19354, Integer.valueOf(var7 + 1));
@@ -42,8 +42,8 @@ public class Class3489 extends Class3194 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(Class8514.field37970);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(Class8514.field37970);
    }
 
    @Override

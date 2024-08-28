@@ -4,13 +4,13 @@ import java.util.EnumSet;
 
 public class Class2762 extends Class2595 {
    private static String[] field17324;
-   private final Class1068 field17325;
+   private final AbstractHorseEntity field17325;
    private final double field17326;
    private double field17327;
    private double field17328;
    private double field17329;
 
-   public Class2762(Class1068 var1, double var2) {
+   public Class2762(AbstractHorseEntity var1, double var2) {
       this.field17325 = var1;
       this.field17326 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));

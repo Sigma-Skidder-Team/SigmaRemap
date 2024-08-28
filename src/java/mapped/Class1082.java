@@ -47,13 +47,13 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    public void method2871() {
       boolean var3 = this.method4310();
       if (var3) {
-         Class8848 var4 = this.method2943(Class2106.field13736);
+         ItemStack var4 = this.method2943(Class2106.field13736);
          if (!var4.method32105()) {
             if (var4.method32115()) {
                var4.method32118(var4.method32117() + this.field5054.nextInt(2));
                if (var4.method32117() >= var4.method32119()) {
                   this.method3184(Class2106.field13736);
-                  this.method2944(Class2106.field13736, Class8848.field39973);
+                  this.method2944(Class2106.field13736, ItemStack.field39973);
                }
             }
 
@@ -71,8 +71,8 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method2868() {
       super.method2868();
-      if (this.method3421() instanceof Class1046) {
-         Class1046 var3 = (Class1046)this.method3421();
+      if (this.getRidingEntity() instanceof Class1046) {
+         Class1046 var3 = (Class1046)this.getRidingEntity();
          this.field4965 = var3.field4965;
       }
    }
@@ -80,7 +80,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      this.method2944(Class2106.field13731, new Class8848(Class8514.field37796));
+      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37796));
    }
 
    @Nullable
@@ -96,7 +96,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
          if (var10 == 10 && var9 == 31 && this.field5054.nextFloat() < 0.25F) {
-            this.method2944(Class2106.field13736, new Class8848(!(this.field5054.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+            this.method2944(Class2106.field13736, new ItemStack(!(this.field5054.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
             this.field5607[Class2106.field13736.method8773()] = 0.0F;
          }
       }
@@ -108,7 +108,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       if (this.field5024 != null && !this.field5024.field9020) {
          this.field5600.method20003(this.field5947);
          this.field5600.method20003(this.field5946);
-         Class8848 var3 = this.method3094(Class9456.method36389(this, Class8514.field37796));
+         ItemStack var3 = this.method3094(Class9456.method36389(this, Class8514.field37796));
          if (var3.method32107() != Class8514.field37796) {
             this.field5600.method20002(4, this.field5947);
          } else {
@@ -125,18 +125,18 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      Class8848 var5 = this.method2983(this.method3094(Class9456.method36389(this, Class8514.field37796)));
+      ItemStack var5 = this.method2983(this.method3094(Class9456.method36389(this, Class8514.field37796)));
       Class884 var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
-      double var13 = (double)Class9679.method37766(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
       var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.field5024.method6997().method8905() * 4));
       this.method2863(Class6067.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.field5024.method6916(var6);
    }
 
-   public Class884 method5032(Class8848 var1, float var2) {
+   public Class884 method5032(ItemStack var1, float var2) {
       return Class9456.method36390(this, var1, var2);
    }
 
@@ -152,7 +152,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public void method2944(Class2106 var1, Class8848 var2) {
+   public void method2944(Class2106 var1, ItemStack var2) {
       super.method2944(var1, var2);
       if (!this.field5024.field9020) {
          this.method5031();

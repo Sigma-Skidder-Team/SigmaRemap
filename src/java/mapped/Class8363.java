@@ -6,9 +6,9 @@ import java.util.function.Consumer;
 public class Class8363 {
    private final String field35914;
    private final Collection<Class4871> field35915;
-   private final Consumer<Class1657> field35916;
+   private final Consumer<ServerWorld> field35916;
 
-   public Class8363(String var1, Collection<Class4871> var2, Consumer<Class1657> var3) {
+   public Class8363(String var1, Collection<Class4871> var2, Consumer<ServerWorld> var3) {
       if (!var2.isEmpty()) {
          this.field35914 = var1;
          this.field35915 = var2;
@@ -26,7 +26,7 @@ public class Class8363 {
       return this.field35915;
    }
 
-   public void method29303(Class1657 var1) {
+   public void method29303(ServerWorld var1) {
       if (this.field35916 != null) {
          this.field35916.accept(var1);
       }

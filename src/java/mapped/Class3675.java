@@ -10,7 +10,7 @@ public class Class3675 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12499(Class1657 var1, Class880 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class880 var2, long var3) {
       return true;
    }
 }

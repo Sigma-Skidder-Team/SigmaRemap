@@ -107,12 +107,12 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (var5.method32107() == Class8514.field37883 && this.method3066()) {
          this.method2863(Class6067.field26430, 1.0F, 1.0F);
          var5.method32182(1);
-         Class8848 var6 = this.method4796();
+         ItemStack var6 = this.method4796();
          this.method4795(var6);
          if (!this.field5024.field9020) {
             Class9551.field44474.method15152((Class878)var1, var6);
@@ -133,13 +133,13 @@ public abstract class Class1049 extends Class1047 {
       }
    }
 
-   public void method4795(Class8848 var1) {
+   public void method4795(ItemStack var1) {
       if (this.method3381()) {
          var1.method32150(this.method3380());
       }
    }
 
-   public abstract Class8848 method4796();
+   public abstract ItemStack method4796();
 
    public boolean method4797() {
       return true;

@@ -61,7 +61,7 @@ public class Class8456 {
             new TranslationTextComponent("commands.debug.stopped", String.format(Locale.ROOT, "%.2f", var6), var4.method25633(), String.format("%.2f", var7)),
             true
          );
-         return Class9679.method37767(var7);
+         return MathHelper.method37767(var7);
       } else {
          throw field36264.create();
       }
@@ -74,7 +74,7 @@ public class Class8456 {
       try {
          Path var5 = var3.method1316("debug").toPath();
          Files.createDirectories(var5);
-         if (!Class9246.field42545 && field36266 != null) {
+         if (!SharedConstants.field42545 && field36266 != null) {
             Path var21 = var5.resolve(var4 + ".zip");
 
             try (FileSystem var7 = field36266.newFileSystem(var21, ImmutableMap.of("create", "true"))) {

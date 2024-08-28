@@ -17,7 +17,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
-import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -63,10 +62,10 @@ public class Class7653 implements Class7651 {
       HashMap var2 = Maps.newHashMap();
       var2.put("X-Minecraft-Username", Minecraft.getInstance().method1533().method21526());
       var2.put("X-Minecraft-UUID", Minecraft.getInstance().method1533().method21525());
-      var2.put("X-Minecraft-Version", Class9246.method34773().getName());
-      var2.put("X-Minecraft-Version-ID", Class9246.method34773().getId());
-      var2.put("X-Minecraft-Pack-Format", String.valueOf(Class9246.method34773().getPackVersion()));
-      var2.put("User-Agent", "Minecraft Java/" + Class9246.method34773().getName());
+      var2.put("X-Minecraft-Version", SharedConstants.method34773().getName());
+      var2.put("X-Minecraft-Version-ID", SharedConstants.method34773().getId());
+      var2.put("X-Minecraft-Pack-Format", String.valueOf(SharedConstants.method34773().getPackVersion()));
+      var2.put("User-Agent", "Minecraft Java/" + SharedConstants.method34773().getName());
       return var2;
    }
 
@@ -200,7 +199,7 @@ public class Class7653 implements Class7651 {
          var4 = method25155(var1, () -> method25157(var5));
       }
 
-      if (var4 == null && Class9246.field42545) {
+      if (var4 == null && SharedConstants.field42545) {
          File var6 = this.field32845.method27016("../resourcepacks/programmer_art");
          if (var6 != null && var6.isDirectory()) {
             var4 = method25155(var1, () -> method25156(var6));

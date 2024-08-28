@@ -43,10 +43,10 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998((T)var1, var2, var3, var4, var5, var6);
-      this.field17774.field31035 = Class9679.method37764(var2 * 0.6662F * 0.6F) * 0.5F * var3;
-      this.field17775.field31035 = Class9679.method37764(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field17776.field31037 = Class9679.method37764(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field17777.field31037 = Class9679.method37764(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field17774.field31035 = MathHelper.method37764(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field17775.field31035 = MathHelper.method37764(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field17776.field31037 = MathHelper.method37764(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field17777.field31037 = MathHelper.method37764(var2 * 0.6662F * 0.6F) * 0.5F * var3;
       this.field17776.field31035 = 0.0F;
       this.field17777.field31035 = 0.0F;
       this.field17776.field31036 = 0.0F;
@@ -58,13 +58,13 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
          float var9 = !var1.method5047() ? 1.0F : 4.0F;
          float var10 = !var1.method5047() ? 1.0F : 2.0F;
          float var11 = 5.0F;
-         this.field17776.field31036 = Class9679.method37764(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
+         this.field17776.field31036 = MathHelper.method37764(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
          this.field17776.field31037 = 0.0F;
-         this.field17777.field31036 = Class9679.method37764(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
+         this.field17777.field31036 = MathHelper.method37764(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
          this.field17777.field31037 = 0.0F;
-         this.field17774.field31036 = Class9679.method37764(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
+         this.field17774.field31036 = MathHelper.method37764(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
          this.field17774.field31035 = 0.0F;
-         this.field17775.field31036 = Class9679.method37764(var2 * 5.0F) * 3.0F * var3;
+         this.field17775.field31036 = MathHelper.method37764(var2 * 5.0F) * 3.0F * var3;
          this.field17775.field31035 = 0.0F;
       }
 

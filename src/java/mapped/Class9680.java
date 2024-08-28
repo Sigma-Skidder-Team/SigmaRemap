@@ -772,7 +772,7 @@ public class Class9680 {
 
    public static int method37862(float var0) {
       if (field45242 != null) {
-         int var3 = (int)Math.round((double)((Class9679.method37763(var0) + 1.0F) * (float)(field45242.method24074() - 1)) / 2.0);
+         int var3 = (int)Math.round((double)((MathHelper.method37763(var0) + 1.0F) * (float)(field45242.method24074() - 1)) / 2.0);
          return field45242.method24066(var3);
       } else {
          return -1;
@@ -1008,7 +1008,7 @@ public class Class9680 {
       }
    }
 
-   private static int method37879(Class3311 var0, Class8848 var1, int var2, int var3) {
+   private static int method37879(Class3311 var0, ItemStack var1, int var2, int var3) {
       if (field45259 == null && field45260 == null) {
          return var3;
       } else {
@@ -1036,7 +1036,7 @@ public class Class9680 {
       }
    }
 
-   public static int method37880(Class8848 var0, int var1, int var2) {
+   public static int method37880(ItemStack var0, int var1, int var2) {
       if (var0 != null) {
          Class3257 var5 = var0.method32107();
          if (var5 != null) {

@@ -15,7 +15,7 @@ public class Class7015 implements Class7016 {
    private int field30316;
 
    @Override
-   public int method21742(Class1657 var1, boolean var2, boolean var3) {
+   public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (!var1.method6740() && var2) {
          float var6 = var1.method7001(0.0F);
          if ((double)var6 == 0.5) {
@@ -55,16 +55,16 @@ public class Class7015 implements Class7016 {
       }
    }
 
-   private boolean method21743(Class1657 var1) {
+   private boolean method21743(ServerWorld var1) {
       for (PlayerEntity var5 : var1.method6870()) {
          if (!var5.method2800()) {
             BlockPos var6 = var5.method3432();
             if (var1.method6952(var6) && var1.method7003(var6).method32527() != Class100.field289) {
                for (int var7 = 0; var7 < 10; var7++) {
                   float var8 = var1.field9016.nextFloat() * (float) (Math.PI * 2);
-                  this.field30314 = var6.method8304() + Class9679.method37767(Class9679.method37764(var8) * 32.0F);
+                  this.field30314 = var6.method8304() + MathHelper.method37767(MathHelper.method37764(var8) * 32.0F);
                   this.field30315 = var6.getY();
-                  this.field30316 = var6.method8306() + Class9679.method37767(Class9679.method37763(var8) * 32.0F);
+                  this.field30316 = var6.method8306() + MathHelper.method37767(MathHelper.method37763(var8) * 32.0F);
                   if (this.method21745(var1, new BlockPos(this.field30314, this.field30315, this.field30316)) != null) {
                      this.field30313 = 0;
                      this.field30312 = 20;
@@ -80,7 +80,7 @@ public class Class7015 implements Class7016 {
       return false;
    }
 
-   private void method21744(Class1657 var1) {
+   private void method21744(ServerWorld var1) {
       Vector3d var4 = this.method21745(var1, new BlockPos(this.field30314, this.field30315, this.field30316));
       if (var4 != null) {
          Class1038 var5;
@@ -98,7 +98,7 @@ public class Class7015 implements Class7016 {
    }
 
    @Nullable
-   private Vector3d method21745(Class1657 var1, BlockPos var2) {
+   private Vector3d method21745(ServerWorld var1, BlockPos var2) {
       for (int var5 = 0; var5 < 10; var5++) {
          int var6 = var2.method8304() + var1.field9016.nextInt(16) - 8;
          int var7 = var2.method8306() + var1.field9016.nextInt(16) - 8;

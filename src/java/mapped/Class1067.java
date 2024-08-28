@@ -42,16 +42,16 @@ public class Class1067 extends Class1066 {
    @Override
    public boolean method4386(Class1018 var1) {
       if (var1 != this) {
-         return !(var1 instanceof Class1067) && !(var1 instanceof Class1074) ? false : this.method4961() && ((Class1068)var1).method4961();
+         return !(var1 instanceof Class1067) && !(var1 instanceof Class1074) ? false : this.method4961() && ((AbstractHorseEntity)var1).method4961();
       } else {
          return false;
       }
    }
 
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
       Class8992 var5 = !(var2 instanceof Class1074) ? Class8992.field41019 : Class8992.field41057;
-      Class1068 var6 = (Class1068)var5.method33215(var1);
+      AbstractHorseEntity var6 = (AbstractHorseEntity)var5.method33215(var1);
       this.method4962(var2, var6);
       return var6;
    }

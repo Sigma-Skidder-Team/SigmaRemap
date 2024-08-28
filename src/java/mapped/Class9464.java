@@ -8,13 +8,13 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class9464 {
-   private final Class1657 field43974;
+   private final ServerWorld field43974;
    private final Map<Class9821<?>, Object> field43975 = Maps.newIdentityHashMap();
    private final Map<ResourceLocation, Class9100> field43976 = Maps.newHashMap();
    private Random field43977;
    private float field43978;
 
-   public Class9464(Class1657 var1) {
+   public Class9464(ServerWorld var1) {
       this.field43974 = var1;
    }
 
@@ -70,7 +70,7 @@ public class Class9464 {
       }
    }
 
-   public Class1657 method36457() {
+   public ServerWorld method36457() {
       return this.field43974;
    }
 

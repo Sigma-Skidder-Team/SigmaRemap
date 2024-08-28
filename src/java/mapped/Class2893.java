@@ -54,7 +54,7 @@ public class Class2893 extends Class2892 {
 
    public void method10997(Class1005 var1, float var2, float var3, float var4) {
       this.field17917.field31035 = 0.0F;
-      this.field17917.field31036 = (float) (Math.PI / 180.0) * -Class9679.method37827(var4, var1.field5033, var1.field5031);
+      this.field17917.field31036 = (float) (Math.PI / 180.0) * -MathHelper.method37827(var4, var1.field5033, var1.field5031);
       this.field17917.field31037 = 0.0F;
    }
 

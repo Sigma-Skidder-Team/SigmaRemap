@@ -11,7 +11,7 @@ public interface Class933 {
       return this.method3380() != null;
    }
 
-   default ITextComponent method2954() {
+   default ITextComponent getDisplayName() {
       return this.method2941();
    }
 

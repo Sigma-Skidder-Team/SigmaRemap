@@ -77,7 +77,7 @@ public class Class9774 {
          }
       }
 
-      Dynamic<T> var9 = var1.update(Class8239.field35400, var5, var2, Class9246.method34773().getWorldVersion());
+      Dynamic<T> var9 = var1.update(Class8239.field35400, var5, var2, SharedConstants.method34773().getWorldVersion());
       DataResult<Class7846> var10 = Class7846.field33650.parse(var9);
       return Pair.of(
          var10.resultOrPartial(Util.method38529("WorldGenSettings: ", field45713::error))
@@ -166,7 +166,7 @@ public class Class9774 {
          Class39 var5 = var4.method130("Data");
          var5.method133("Player");
          int var6 = var5.method119("DataVersion", 99) ? var5.method122("DataVersion") : -1;
-         Dynamic<Class30> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(Class8063.field34602, var5), var6, Class9246.method34773().getWorldVersion());
+         Dynamic<Class30> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(Class8063.field34602, var5), var6, SharedConstants.method34773().getWorldVersion());
          return var7.get("DataPacks").result().map(Class9774::method38457).orElse(Class7818.field33531);
       } catch (Exception var8) {
          field45713.error("Exception reading {}", var0, var8);
@@ -182,7 +182,7 @@ public class Class9774 {
             Class39 var8 = var7.method119("Player", 10) ? var7.method130("Player") : null;
             var7.method133("Player");
             int var9 = var7.method119("DataVersion", 99) ? var7.method122("DataVersion") : -1;
-            Dynamic var10 = var3.update(Class2108.field13748.method8778(), new Dynamic(var0, var7), var9, Class9246.method34773().getWorldVersion());
+            Dynamic var10 = var3.update(Class2108.field13748.method8778(), new Dynamic(var0, var7), var9, SharedConstants.method34773().getWorldVersion());
             Pair var11 = method38456(var10, var3, var9);
             Class8519 var12 = Class8519.method30181(var10);
             Class8898 var13 = Class8898.method32425(var10, var1);
@@ -202,7 +202,7 @@ public class Class9774 {
             var8.method133("Player");
             int var9 = var8.method119("DataVersion", 99) ? var8.method122("DataVersion") : -1;
             Dynamic<Class30> var10 = var4.update(
-               Class2108.field13748.method8778(), new Dynamic(Class8063.field34602, var8), var9, Class9246.method34773().getWorldVersion()
+               Class2108.field13748.method8778(), new Dynamic(Class8063.field34602, var8), var9, SharedConstants.method34773().getWorldVersion()
             );
             Class8519 var11 = Class8519.method30181(var10);
             int var12 = var11.method30182();

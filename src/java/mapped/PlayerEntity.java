@@ -63,7 +63,7 @@ public abstract class PlayerEntity extends Class880 {
    private int field4925;
    private final GameProfile field4926;
    private boolean field4927;
-   private Class8848 field4928 = Class8848.field39973;
+   private ItemStack field4928 = ItemStack.field39973;
    private final Class6462 field4929 = this.method2733();
    public Class904 field4930;
 
@@ -84,7 +84,7 @@ public abstract class PlayerEntity extends Class880 {
          if (this.method2935()) {
             return false;
          } else {
-            Class8848 var6 = this.method3090();
+            ItemStack var6 = this.method3090();
             return var6.method32105() || !var6.method32175(var1.method6817(), new Class9632(var1, var2, false));
          }
       } else {
@@ -122,7 +122,7 @@ public abstract class PlayerEntity extends Class880 {
          this.field4910--;
       }
 
-      if (!this.method3176()) {
+      if (!this.isSleeping()) {
          if (this.field4917 > 0) {
             this.field4917++;
             if (this.field4917 >= 110) {
@@ -136,7 +136,7 @@ public abstract class PlayerEntity extends Class880 {
          }
 
          if (!this.field5024.field9020 && this.field5024.method6740()) {
-            this.method2757(false, true);
+            this.stopSleepInBed(false, true);
          }
       }
 
@@ -159,21 +159,21 @@ public abstract class PlayerEntity extends Class880 {
             this.method2911(Class8876.field40109);
          }
 
-         if (!this.method3176()) {
+         if (!this.isSleeping()) {
             this.method2911(Class8876.field40108);
          }
       }
 
-      double var4 = Class9679.method37778(this.getPosX(), -2.9999999E7, 2.9999999E7);
-      double var6 = Class9679.method37778(this.getPosZ(), -2.9999999E7, 2.9999999E7);
+      double var4 = MathHelper.method37778(this.getPosX(), -2.9999999E7, 2.9999999E7);
+      double var6 = MathHelper.method37778(this.getPosZ(), -2.9999999E7, 2.9999999E7);
       if (var4 != this.getPosX() || var6 != this.getPosZ()) {
          this.method3215(var4, this.getPosY(), var6);
       }
 
       this.field4958++;
-      Class8848 var8 = this.method3090();
-      if (!Class8848.method32128(this.field4928, var8)) {
-         if (!Class8848.method32131(this.field4928, var8)) {
+      ItemStack var8 = this.method3090();
+      if (!ItemStack.method32128(this.field4928, var8)) {
+         if (!ItemStack.method32131(this.field4928, var8)) {
             this.method2975();
          }
 
@@ -203,7 +203,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    private void method2855() {
-      Class8848 var3 = this.method2943(Class2106.field13736);
+      ItemStack var3 = this.method2943(Class2106.field13736);
       if (var3.method32107() == Class8514.field37792 && !this.method3263(Class8953.field40469)) {
          this.method3035(new Class2023(Class8254.field35479, 200, 0, false, false, true));
       }
@@ -260,7 +260,7 @@ public abstract class PlayerEntity extends Class880 {
       if (this.method3314(Class2090.field13622)) {
          Class2090 var3;
          if (!this.method3165()) {
-            if (!this.method3176()) {
+            if (!this.isSleeping()) {
                if (!this.method2951()) {
                   if (!this.method3130()) {
                      if (this.method3331() && !this.field4919.field29607) {
@@ -375,7 +375,7 @@ public abstract class PlayerEntity extends Class880 {
    public void method2868() {
       if (this.method2852() && this.method3328()) {
          this.method2759();
-         this.method3330(false);
+         this.setSneaking(false);
       } else {
          double var3 = this.getPosX();
          double var5 = this.getPosY();
@@ -429,7 +429,7 @@ public abstract class PlayerEntity extends Class880 {
       this.method3113((float)this.method3086(Class9173.field42108));
       float var3;
       if (this.field5036 && !this.method3044() && !this.method2951()) {
-         var3 = Math.min(0.1F, Class9679.method37766(method3234(this.method3433())));
+         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
       } else {
          var3 = 0.0F;
       }
@@ -437,8 +437,8 @@ public abstract class PlayerEntity extends Class880 {
       this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
       if (this.method3042() > 0.0F && !this.method2800()) {
          Class6488 var4;
-         if (this.method3328() && !this.method3421().field5041) {
-            var4 = this.method3389().method19666(this.method3421().method3389()).method19663(1.0, 0.0, 1.0);
+         if (this.method3328() && !this.getRidingEntity().field5041) {
+            var4 = this.method3389().method19666(this.getRidingEntity().method3389()).method19663(1.0, 0.0, 1.0);
          } else {
             var4 = this.method3389().method19663(1.0, 0.5, 1.0);
          }
@@ -455,7 +455,7 @@ public abstract class PlayerEntity extends Class880 {
 
       this.method2872(this.method2969());
       this.method2872(this.method2971());
-      if (!this.field5024.field9020 && (this.field5045 > 0.5F || this.method3250()) || this.field4919.field29607 || this.method3176()) {
+      if (!this.field5024.field9020 && (this.field5045 > 0.5F || this.method3250()) || this.field4919.field29607 || this.isSleeping()) {
          this.method2949();
       }
    }
@@ -514,9 +514,9 @@ public abstract class PlayerEntity extends Class880 {
          this.method3435(0.0, 0.1, 0.0);
       } else {
          this.method3435(
-            (double)(-Class9679.method37764((this.field4954 + this.field5031) * (float) (Math.PI / 180.0)) * 0.1F),
+            (double)(-MathHelper.method37764((this.field4954 + this.field5031) * (float) (Math.PI / 180.0)) * 0.1F),
             0.1F,
-            (double)(-Class9679.method37763((this.field4954 + this.field5031) * (float) (Math.PI / 180.0)) * 0.1F)
+            (double)(-MathHelper.method37763((this.field4954 + this.field5031) * (float) (Math.PI / 180.0)) * 0.1F)
          );
       }
 
@@ -538,7 +538,7 @@ public abstract class PlayerEntity extends Class880 {
 
    public void method2878() {
       for (int var3 = 0; var3 < this.field4902.method3629(); var3++) {
-         Class8848 var4 = this.field4902.method3618(var3);
+         ItemStack var4 = this.field4902.method3618(var3);
          if (!var4.method32105() && Class7858.method26335(var4)) {
             this.field4902.method3620(var3);
          }
@@ -574,30 +574,30 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Nullable
-   public Class1000 method2882(Class8848 var1, boolean var2) {
+   public Class1000 method2882(ItemStack var1, boolean var2) {
       return this.method2836(var1, false, var2);
    }
 
    @Nullable
-   public Class1000 method2836(Class8848 var1, boolean var2, boolean var3) {
+   public Class1000 method2836(ItemStack var1, boolean var2, boolean var3) {
       if (!var1.method32105()) {
          if (this.field5024.field9020 && Class8005.method27372().method18582() >= Class5989.field26151.method18582()) {
-            this.method2820(Class79.field182);
+            this.swingArm(Hand.field182);
          }
 
          double var6 = this.method3442() - 0.3F;
          Class1000 var8 = new Class1000(this.field5024, this.getPosX(), var6, this.getPosZ(), var1);
          var8.method4134(40);
          if (var3) {
-            var8.method4129(this.method3375());
+            var8.method4129(this.getUniqueID());
          }
 
          if (!var2) {
             float var9 = 0.3F;
-            float var10 = Class9679.method37763(this.field5032 * (float) (Math.PI / 180.0));
-            float var11 = Class9679.method37764(this.field5032 * (float) (Math.PI / 180.0));
-            float var12 = Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0));
-            float var13 = Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0));
+            float var10 = MathHelper.method37763(this.field5032 * (float) (Math.PI / 180.0));
+            float var11 = MathHelper.method37764(this.field5032 * (float) (Math.PI / 180.0));
+            float var12 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0));
+            float var13 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0));
             float var14 = this.field5054.nextFloat() * (float) (Math.PI * 2);
             float var15 = 0.02F * this.field5054.nextFloat();
             var8.method3435(
@@ -608,7 +608,7 @@ public abstract class PlayerEntity extends Class880 {
          } else {
             float var16 = this.field5054.nextFloat() * 0.5F;
             float var17 = this.field5054.nextFloat() * (float) (Math.PI * 2);
-            var8.method3435((double)(-Class9679.method37763(var17) * var16), 0.2F, (double)(Class9679.method37764(var17) * var16));
+            var8.method3435((double)(-MathHelper.method37763(var17) * var16), 0.2F, (double)(MathHelper.method37764(var17) * var16));
          }
 
          return var8;
@@ -621,7 +621,7 @@ public abstract class PlayerEntity extends Class880 {
       float var4 = this.field4902.method4049(var1);
       if (var4 > 1.0F) {
          int var5 = Class7858.method26327(this);
-         Class8848 var6 = this.method3090();
+         ItemStack var6 = this.method3090();
          if (var5 > 0 && !var6.method32105()) {
             var4 += (float)(var5 * var5 + 1);
          }
@@ -702,7 +702,7 @@ public abstract class PlayerEntity extends Class880 {
    @Override
    public void method2724(Class39 var1) {
       super.method2724(var1);
-      var1.method102("DataVersion", Class9246.method34773().getWorldVersion());
+      var1.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
       var1.method99("Inventory", this.field4902.method4050(new Class41()));
       var1.method102("SelectedItemSlot", this.field4902.field5443);
       var1.method101("SleepTimer", (short)this.field4917);
@@ -804,17 +804,17 @@ public abstract class PlayerEntity extends Class880 {
          }
 
          if (var1 >= 3.0F) {
-            int var4 = 1 + Class9679.method37767(var1);
-            Class79 var5 = this.method3149();
+            int var4 = 1 + MathHelper.method37767(var1);
+            Hand var5 = this.method3149();
             this.field5001.method32121(var4, this, var1x -> var1x.method3185(var5));
             if (this.field5001.method32105()) {
-               if (var5 != Class79.field182) {
-                  this.method2944(Class2106.field13732, Class8848.field39973);
+               if (var5 != Hand.field182) {
+                  this.method2944(Class2106.field13732, ItemStack.field39973);
                } else {
-                  this.method2944(Class2106.field13731, Class8848.field39973);
+                  this.method2944(Class2106.field13731, ItemStack.field39973);
                }
 
-               this.field5001 = Class8848.field39973;
+               this.field5001 = ItemStack.field39973;
                this.method2863(Class6067.field27036, 0.8F, 0.8F + this.field5024.field9016.nextFloat() * 0.4F);
             }
          }
@@ -865,7 +865,7 @@ public abstract class PlayerEntity extends Class880 {
    public void method2892(Class965 var1) {
    }
 
-   public void method2768(Class1068 var1, Class920 var2) {
+   public void method2768(AbstractHorseEntity var1, Class920 var2) {
    }
 
    public OptionalInt method2766(Class949 var1) {
@@ -875,13 +875,13 @@ public abstract class PlayerEntity extends Class880 {
    public void method2767(int var1, Class46 var2, int var3, int var4, boolean var5, boolean var6) {
    }
 
-   public void method2769(Class8848 var1, Class79 var2) {
+   public void method2769(ItemStack var1, Hand var2) {
    }
 
-   public Class2274 method2893(Entity var1, Class79 var2) {
+   public Class2274 method2893(Entity var1, Hand var2) {
       if (!this.method2800()) {
-         Class8848 var5 = this.method3094(var2);
-         Class8848 var6 = var5.method32126();
+         ItemStack var5 = this.method3094(var2);
+         ItemStack var6 = var5.method32126();
          Class2274 var7 = var1.method3304(this, var2);
          if (!var7.method9000()) {
             if (!var5.method32105() && var1 instanceof Class880) {
@@ -892,7 +892,7 @@ public abstract class PlayerEntity extends Class880 {
                Class2274 var8 = var5.method32125(this, (Class880)var1, var2);
                if (var8.method9000()) {
                   if (var5.method32105() && !this.field4919.field29609) {
-                     this.method3095(var2, Class8848.field39973);
+                     this.method3095(var2, ItemStack.field39973);
                   }
 
                   return var8;
@@ -929,7 +929,7 @@ public abstract class PlayerEntity extends Class880 {
 
    @Override
    public boolean method2896() {
-      return super.method2896() || this.method3176();
+      return super.method2896() || this.isSleeping();
    }
 
    @Override
@@ -1042,7 +1042,7 @@ public abstract class PlayerEntity extends Class880 {
             boolean var11 = false;
             double var12 = (double)(this.field5043 - this.field5042);
             if (var7 && !var10 && !var8 && this.field5036 && var12 < (double)this.method2918()) {
-               Class8848 var14 = this.method3094(Class79.field182);
+               ItemStack var14 = this.method3094(Hand.field182);
                if (var14.method32107() instanceof Class3267) {
                   var11 = true;
                }
@@ -1071,21 +1071,21 @@ public abstract class PlayerEntity extends Class880 {
                if (var9 > 0) {
                   if (!(var1 instanceof Class880)) {
                      var1.method3280(
-                        (double)(-Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F),
+                        (double)(-MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F),
                         0.1,
-                        (double)(Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F)
+                        (double)(MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)) * (float)var9 * 0.5F)
                      );
                   } else {
                      ((Class880)var1)
                         .method3058(
                            (float)var9 * 0.5F,
-                           (double)Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)),
-                           (double)(-Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)))
+                           (double) MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)),
+                           (double)(-MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)))
                         );
                   }
 
                   this.method3434(this.method3433().method11347(0.6, 1.0, 0.6));
-                  this.method3098(false);
+                  this.setSprinting(false);
                }
 
                if (var11) {
@@ -1096,11 +1096,11 @@ public abstract class PlayerEntity extends Class880 {
                         && var21 != var1
                         && !this.method3345(var21)
                         && (!(var21 instanceof Class1005) || !((Class1005)var21).method4203())
-                        && this.method3277(var21) < 9.0) {
+                        && this.getDistanceSq(var21) < 9.0) {
                         var21.method3058(
                            0.4F,
-                           (double)Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)),
-                           (double)(-Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)))
+                           (double) MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)),
+                           (double)(-MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)))
                         );
                         var21.method2741(Class8654.method31117(this), var19);
                      }
@@ -1112,7 +1112,7 @@ public abstract class PlayerEntity extends Class880 {
                }
 
                if (var1 instanceof Class878 && var1.field5039) {
-                  ((Class878)var1).field4855.method15671(new Class5590(var1));
+                  ((Class878)var1).field4855.sendPacket(new Class5590(var1));
                   var1.field5039 = false;
                   var1.method3434(var17);
                }
@@ -1147,7 +1147,7 @@ public abstract class PlayerEntity extends Class880 {
                }
 
                Class7858.method26321(this, var1);
-               Class8848 var29 = this.method3090();
+               ItemStack var29 = this.method3090();
                Object var30 = var1;
                if (var1 instanceof Class908) {
                   var30 = ((Class908)var1).field5186;
@@ -1156,7 +1156,7 @@ public abstract class PlayerEntity extends Class880 {
                if (!this.field5024.field9020 && !var29.method32105() && var30 instanceof Class880) {
                   var29.method32122((Class880)var30, this);
                   if (var29.method32105()) {
-                     this.method3095(Class79.field182, Class8848.field39973);
+                     this.method3095(Hand.field182, ItemStack.field39973);
                   }
                }
 
@@ -1167,9 +1167,9 @@ public abstract class PlayerEntity extends Class880 {
                      var1.method3221(var16 * 4);
                   }
 
-                  if (this.field5024 instanceof Class1657 && var31 > 2.0F) {
+                  if (this.field5024 instanceof ServerWorld && var31 > 2.0F) {
                      int var22 = (int)((double)var31 * 0.5);
-                     ((Class1657)this.field5024)
+                     ((ServerWorld)this.field5024)
                         .method6939(Class7940.field34055, var1.getPosX(), var1.method3440(0.5), var1.getPosZ(), var22, 0.1, 0.0, 0.1, 0.2);
                   }
                }
@@ -1205,10 +1205,10 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public void method2902() {
-      double var3 = (double)(-Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0)));
-      double var5 = (double)Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0));
-      if (this.field5024 instanceof Class1657) {
-         ((Class1657)this.field5024)
+      double var3 = (double)(-MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)));
+      double var5 = (double) MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0));
+      if (this.field5024 instanceof ServerWorld) {
+         ((ServerWorld)this.field5024)
             .method6939(Class7940.field34096, this.getPosX() + var3, this.method3440(0.5), this.getPosZ() + var5, 0, var3, 0.0, var5, 0.0);
       }
    }
@@ -1229,7 +1229,7 @@ public abstract class PlayerEntity extends Class880 {
       return false;
    }
 
-   public GameProfile method2906() {
+   public GameProfile getGameProfile() {
       return this.field4926;
    }
 
@@ -1239,10 +1239,10 @@ public abstract class PlayerEntity extends Class880 {
       return Either.right(Class2341.field16010);
    }
 
-   public void method2757(boolean var1, boolean var2) {
+   public void stopSleepInBed(boolean var1, boolean var2) {
       super.method2907();
-      if (this.field5024 instanceof Class1657 && var2) {
-         ((Class1657)this.field5024).method6902();
+      if (this.field5024 instanceof ServerWorld && var2) {
+         ((ServerWorld)this.field5024).method6902();
       }
 
       this.field4917 = !var1 ? 100 : 0;
@@ -1250,10 +1250,10 @@ public abstract class PlayerEntity extends Class880 {
 
    @Override
    public void method2907() {
-      this.method2757(true, true);
+      this.stopSleepInBed(true, true);
    }
 
-   public static Optional<Vector3d> method2908(Class1657 var0, BlockPos var1, float var2, boolean var3, boolean var4) {
+   public static Optional<Vector3d> method2908(ServerWorld var0, BlockPos var1, float var2, boolean var3, boolean var4) {
       Class7380 var7 = var0.method6738(var1);
       Block var8 = var7.method23383();
       if (var8 instanceof Class3389 && var7.<Integer>method23463(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
@@ -1277,7 +1277,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public boolean method2909() {
-      return this.method3176() && this.field4917 >= 100;
+      return this.isSleeping() && this.field4917 >= 100;
    }
 
    public int method2910() {
@@ -1386,16 +1386,16 @@ public abstract class PlayerEntity extends Class880 {
                   if (!this.method3063()) {
                      if (!this.field5036) {
                         if (!this.method3165()) {
-                           int var9 = Math.round(Class9679.method37766(var1 * var1 + var5 * var5) * 100.0F);
+                           int var9 = Math.round(MathHelper.method37766(var1 * var1 + var5 * var5) * 100.0F);
                            if (var9 > 25) {
                               this.method2912(Class8876.field40116, var9);
                            }
                         } else {
-                           int var10 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+                           int var10 = Math.round(MathHelper.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
                            this.method2912(Class8876.field40122, var10);
                         }
                      } else {
-                        int var11 = Math.round(Class9679.method37766(var1 * var1 + var5 * var5) * 100.0F);
+                        int var11 = Math.round(MathHelper.method37766(var1 * var1 + var5 * var5) * 100.0F);
                         if (var11 > 0) {
                            if (!this.method3337()) {
                               if (!this.method3336()) {
@@ -1415,21 +1415,21 @@ public abstract class PlayerEntity extends Class880 {
                      this.method2912(Class8876.field40115, (int)Math.round(var3 * 100.0));
                   }
                } else {
-                  int var12 = Math.round(Class9679.method37766(var1 * var1 + var5 * var5) * 100.0F);
+                  int var12 = Math.round(MathHelper.method37766(var1 * var1 + var5 * var5) * 100.0F);
                   if (var12 > 0) {
                      this.method2912(Class8876.field40113, var12);
                      this.method2931(0.01F * (float)var12 * 0.01F);
                   }
                }
             } else {
-               int var13 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+               int var13 = Math.round(MathHelper.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
                if (var13 > 0) {
                   this.method2912(Class8876.field40117, var13);
                   this.method2931(0.01F * (float)var13 * 0.01F);
                }
             }
          } else {
-            int var14 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+            int var14 = Math.round(MathHelper.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
             if (var14 > 0) {
                this.method2912(Class8876.field40123, var14);
                this.method2931(0.01F * (float)var14 * 0.01F);
@@ -1440,13 +1440,13 @@ public abstract class PlayerEntity extends Class880 {
 
    private void method2920(double var1, double var3, double var5) {
       if (this.method3328()) {
-         int var9 = Math.round(Class9679.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
+         int var9 = Math.round(MathHelper.method37766(var1 * var1 + var3 * var3 + var5 * var5) * 100.0F);
          if (var9 > 0) {
-            Entity var10 = this.method3421();
+            Entity var10 = this.getRidingEntity();
             if (!(var10 instanceof Class916)) {
                if (!(var10 instanceof Class1002)) {
                   if (!(var10 instanceof Class1072)) {
-                     if (!(var10 instanceof Class1068)) {
+                     if (!(var10 instanceof AbstractHorseEntity)) {
                         if (var10 instanceof Class1070) {
                            this.method2912(Class8876.field40124, var9);
                         }
@@ -1479,9 +1479,9 @@ public abstract class PlayerEntity extends Class880 {
       }
    }
 
-   public boolean method2922() {
+   public boolean tryToStartFallFlying() {
       if (!this.field5036 && !this.method3165() && !this.method3250() && !this.method3033(Class8254.field35491)) {
-         Class8848 var3 = this.method2943(Class2106.field13735);
+         ItemStack var3 = this.method2943(Class2106.field13735);
          if (var3.method32107() == Class8514.field38120 && Class3256.method11698(var3)) {
             this.method2923();
             return true;
@@ -1495,7 +1495,7 @@ public abstract class PlayerEntity extends Class880 {
       this.method3349(7, true);
    }
 
-   public void method2924() {
+   public void stopFallFlying() {
       this.method3349(7, true);
       this.method3349(7, false);
    }
@@ -1513,7 +1513,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public void method2927(Class1657 var1, Class880 var2) {
+   public void method2927(ServerWorld var1, Class880 var2) {
       this.method2913(Class8876.field40102.method172(var2.method3204()));
    }
 
@@ -1527,7 +1527,7 @@ public abstract class PlayerEntity extends Class880 {
    public void method2781(int var1) {
       this.method2876(var1);
       this.field4922 = this.field4922 + (float)var1 / (float)this.method2930();
-      this.field4921 = Class9679.method37775(this.field4921 + var1, 0, Integer.MAX_VALUE);
+      this.field4921 = MathHelper.method37775(this.field4921 + var1, 0, Integer.MAX_VALUE);
 
       while (this.field4922 < 0.0F) {
          float var4 = this.field4922 * (float)this.method2930();
@@ -1551,7 +1551,7 @@ public abstract class PlayerEntity extends Class880 {
       return this.field4923;
    }
 
-   public void method2728(Class8848 var1, int var2) {
+   public void method2728(ItemStack var1, int var2) {
       this.field4920 -= var2;
       if (this.field4920 < 0) {
          this.field4920 = 0;
@@ -1608,7 +1608,7 @@ public abstract class PlayerEntity extends Class880 {
       return this.field4919.field29610;
    }
 
-   public boolean method2936(BlockPos var1, Direction var2, Class8848 var3) {
+   public boolean method2936(BlockPos var1, Direction var2, ItemStack var3) {
       if (!this.field4919.field29610) {
          BlockPos var6 = var1.method8349(var2.method536());
          Class9632 var7 = new Class9632(this.field5024, var6, false);
@@ -1659,10 +1659,10 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public Class8848 method2943(Class2106 var1) {
+   public ItemStack method2943(Class2106 var1) {
       if (var1 != Class2106.field13731) {
          if (var1 != Class2106.field13732) {
-            return var1.method8772() != Class1969.field12837 ? Class8848.field39973 : this.field4902.field5440.get(var1.method8773());
+            return var1.method8772() != Class1969.field12837 ? ItemStack.field39973 : this.field4902.field5440.get(var1.method8773());
          } else {
             return this.field4902.field5441.get(0);
          }
@@ -1672,7 +1672,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public void method2944(Class2106 var1, Class8848 var2) {
+   public void method2944(Class2106 var1, ItemStack var2) {
       if (var1 != Class2106.field13731) {
          if (var1 != Class2106.field13732) {
             if (var1.method8772() == Class1969.field12837) {
@@ -1689,18 +1689,18 @@ public abstract class PlayerEntity extends Class880 {
       }
    }
 
-   public boolean method2945(Class8848 var1) {
+   public boolean method2945(ItemStack var1) {
       this.method3023(var1);
       return this.field4902.method4045(var1);
    }
 
    @Override
-   public Iterable<Class8848> method2946() {
-      return Lists.newArrayList(new Class8848[]{this.method3090(), this.method3091()});
+   public Iterable<ItemStack> method2946() {
+      return Lists.newArrayList(new ItemStack[]{this.method3090(), this.method3091()});
    }
 
    @Override
-   public Iterable<Class8848> method2947() {
+   public Iterable<ItemStack> method2947() {
       return this.field4902.field5440;
    }
 
@@ -1737,7 +1737,7 @@ public abstract class PlayerEntity extends Class880 {
             }
 
             var1x.method3215(this.getPosX(), this.getPosY() + 0.7F, this.getPosZ());
-            ((Class1657)this.field5024).method6917(var1x);
+            ((ServerWorld)this.field5024).method6917(var1x);
          });
       }
    }
@@ -1762,13 +1762,13 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDisplayName() {
       IFormattableTextComponent var3 = Class8218.method28577(this.method3344(), this.method2941());
       return this.method2955(var3);
    }
 
    private IFormattableTextComponent method2955(IFormattableTextComponent var1) {
-      String var4 = this.method2906().getName();
+      String var4 = this.getGameProfile().getName();
       return var1.modifyStyle(
          var2 -> var2.setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tell " + var4 + " "))
                .setHoverEvent(this.method3388())
@@ -1778,7 +1778,7 @@ public abstract class PlayerEntity extends Class880 {
 
    @Override
    public String method2956() {
-      return this.method2906().getName();
+      return this.getGameProfile().getName();
    }
 
    @Override
@@ -1827,7 +1827,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       if (var1 >= 0 && var1 < this.field4902.field5439.size()) {
          this.field4902.method3621(var1, var2);
          return true;
@@ -1927,7 +1927,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public float method2974(float var1) {
-      return Class9679.method37777(((float)this.field4958 + var1) / this.method2973(), 0.0F, 1.0F);
+      return MathHelper.method37777(((float)this.field4958 + var1) / this.method2973(), 0.0F, 1.0F);
    }
 
    public void method2975() {
@@ -1952,7 +1952,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public boolean method2980(Class8848 var1) {
+   public boolean method2980(ItemStack var1) {
       Class2106 var4 = Class1006.method4271(var1);
       return this.method2943(var4).method32105();
    }
@@ -1968,31 +1968,31 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    @Override
-   public Class8848 method2983(Class8848 var1) {
+   public ItemStack method2983(ItemStack var1) {
       if (!(var1.method32107() instanceof Class3262)) {
-         return Class8848.field39973;
+         return ItemStack.field39973;
       } else {
          Predicate var4 = ((Class3262)var1.method32107()).method11751();
-         Class8848 var5 = Class3262.method11774(this, var4);
+         ItemStack var5 = Class3262.method11774(this, var4);
          if (!var5.method32105()) {
             return var5;
          } else {
             var4 = ((Class3262)var1.method32107()).method11752();
 
             for (int var6 = 0; var6 < this.field4902.method3629(); var6++) {
-               Class8848 var7 = this.field4902.method3618(var6);
+               ItemStack var7 = this.field4902.method3618(var6);
                if (var4.test(var7)) {
                   return var7;
                }
             }
 
-            return !this.field4919.field29609 ? Class8848.field39973 : new Class8848(Class8514.field37797);
+            return !this.field4919.field29609 ? ItemStack.field39973 : new ItemStack(Class8514.field37797);
          }
       }
    }
 
    @Override
-   public Class8848 method2984(Class1655 var1, Class8848 var2) {
+   public ItemStack method2984(Class1655 var1, ItemStack var2) {
       this.method2932().method37570(var2.method32107(), var2);
       this.method2913(Class8876.field40098.method172(var2.method32107()));
       var1.method6743(
@@ -2020,8 +2020,8 @@ public abstract class PlayerEntity extends Class880 {
    @Override
    public Vector3d method2986(float var1) {
       double var4 = 0.22 * (this.method2967() != Class2205.field14418 ? 1.0 : -1.0);
-      float var6 = Class9679.method37821(var1 * 0.5F, this.field5032, this.field5034) * (float) (Math.PI / 180.0);
-      float var7 = Class9679.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
+      float var6 = MathHelper.method37821(var1 * 0.5F, this.field5032, this.field5034) * (float) (Math.PI / 180.0);
+      float var7 = MathHelper.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
       if (this.method3165() || this.method3130()) {
          Vector3d var8 = this.method3281(var1);
          Vector3d var9 = this.method3433();

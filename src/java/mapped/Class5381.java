@@ -180,12 +180,12 @@ public class Class5381 extends Module {
    }
 
    public boolean method16952(Class6488 var1, Class8649 var2) {
-      int var5 = Class9679.method37769(var1.field28449);
-      int var6 = Class9679.method37774(var1.field28452);
-      int var7 = Class9679.method37769(var1.field28450);
-      int var8 = Class9679.method37774(var1.field28453);
-      int var9 = Class9679.method37769(var1.field28451);
-      int var10 = Class9679.method37774(var1.field28454);
+      int var5 = MathHelper.method37769(var1.field28449);
+      int var6 = MathHelper.method37774(var1.field28452);
+      int var7 = MathHelper.method37769(var1.field28450);
+      int var8 = MathHelper.method37774(var1.field28453);
+      int var9 = MathHelper.method37769(var1.field28451);
+      int var10 = MathHelper.method37774(var1.field28454);
       Class116 var11 = Class116.method330(var2);
       return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(mc.field1338.method6738(var1x)));
    }

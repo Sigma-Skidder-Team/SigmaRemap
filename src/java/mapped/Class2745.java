@@ -19,7 +19,7 @@ public class Class2745 extends Class2595 {
       if (!this.field17274.method3329()) {
          this.field17275 = this.field17274.method4232();
          if (this.field17275 != null) {
-            double var3 = this.field17274.method3277(this.field17275);
+            double var3 = this.field17274.getDistanceSq(this.field17275);
             if (var3 < 4.0 || var3 > 16.0) {
                return false;
             } else {

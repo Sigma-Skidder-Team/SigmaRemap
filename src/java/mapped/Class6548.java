@@ -9,6 +9,6 @@ public abstract class Class6548 implements Class6549 {
 
    @Override
    public int method19892(float var1) {
-      return Math.max(Class9679.method37767((float)this.field28906.field22265 + (float)this.field28906.field22266 * var1), 0);
+      return Math.max(MathHelper.method37767((float)this.field28906.field22265 + (float)this.field28906.field22266 * var1), 0);
    }
 }

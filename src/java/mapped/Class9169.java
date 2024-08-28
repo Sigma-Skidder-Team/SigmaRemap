@@ -20,7 +20,7 @@ public class Class9169 {
    }
 
    public float method34247() {
-      return Class9679.method37766(this.field42089 * this.field42089 + this.field42090 * this.field42090);
+      return MathHelper.method37766(this.field42089 * this.field42089 + this.field42090 * this.field42090);
    }
 
    public void method34248(Class9169 var1) {
@@ -81,8 +81,8 @@ public class Class9169 {
    }
 
    public void method34252(Random var1, double var2, double var4, double var6, double var8) {
-      this.field42089 = Class9679.method37784(var1, var2, var6);
-      this.field42090 = Class9679.method37784(var1, var4, var8);
+      this.field42089 = MathHelper.method37784(var1, var2, var6);
+      this.field42090 = MathHelper.method37784(var1, var4, var8);
    }
 
    // $VF: synthetic method

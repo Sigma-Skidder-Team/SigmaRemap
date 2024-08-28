@@ -30,7 +30,7 @@ public class Class1251 extends Class1197 implements Class1253<Class120> {
 
    @Override
    public void method5830(Iterator<Class120> var1, int var2, int var3, int var4, int var5) {
-      Class8848[] var8 = ((Class120)var1.next()).method332();
+      ItemStack[] var8 = ((Class120)var1.next()).method332();
       if (var8.length != 0) {
          this.field6626.add(new Class8834(this, 3 + var5 * 7, 3 + var4 * 7, var8));
       }
@@ -60,7 +60,7 @@ public class Class1251 extends Class1197 implements Class1253<Class120> {
          RenderSystem.scalef(0.42F, 0.42F, 1.0F);
          Class1263.method5908(this.field6627)
             .method1555()
-            .method793(var10.field39894[Class9679.method37767(Class1263.method5910(this.field6627) / 30.0F) % var10.field39894.length], var12, var13);
+            .method793(var10.field39894[MathHelper.method37767(Class1263.method5910(this.field6627) / 30.0F) % var10.field39894.length], var12, var13);
          RenderSystem.popMatrix();
       }
 

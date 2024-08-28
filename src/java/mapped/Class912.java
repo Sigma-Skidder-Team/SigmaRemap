@@ -9,8 +9,8 @@ public class Class912 extends Class911 {
    }
 
    @Override
-   public Class1657 method3567() {
-      return (Class1657)this.field5201.field5024;
+   public ServerWorld method3567() {
+      return (ServerWorld)this.field5201.field5024;
    }
 
    @Override
@@ -21,7 +21,7 @@ public class Class912 extends Class911 {
 
    @Override
    public Vector3d method3573() {
-      return this.field5201.method3431();
+      return this.field5201.getPositionVec();
    }
 
    public Class918 method3577() {
@@ -32,12 +32,12 @@ public class Class912 extends Class911 {
    public Class6619 method3574() {
       return new Class6619(
          this,
-         this.field5201.method3431(),
+         this.field5201.getPositionVec(),
          this.field5201.method3321(),
          this.method3567(),
          2,
          this.method3565().getString(),
-         this.field5201.method2954(),
+         this.field5201.getDisplayName(),
          this.method3567().method6715(),
          this.field5201
       );

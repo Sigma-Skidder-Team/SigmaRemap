@@ -31,12 +31,12 @@ public class Class2738 extends Class2737 {
       Mutable var5 = new Mutable();
 
       for (BlockPos var7 : BlockPos.method8364(
-         Class9679.method37769(this.field17258.getPosX() - 3.0),
-         Class9679.method37769(this.field17258.getPosY() - 6.0),
-         Class9679.method37769(this.field17258.getPosZ() - 3.0),
-         Class9679.method37769(this.field17258.getPosX() + 3.0),
-         Class9679.method37769(this.field17258.getPosY() + 6.0),
-         Class9679.method37769(this.field17258.getPosZ() + 3.0)
+         MathHelper.method37769(this.field17258.getPosX() - 3.0),
+         MathHelper.method37769(this.field17258.getPosY() - 6.0),
+         MathHelper.method37769(this.field17258.getPosZ() - 3.0),
+         MathHelper.method37769(this.field17258.getPosX() + 3.0),
+         MathHelper.method37769(this.field17258.getPosY() + 6.0),
+         MathHelper.method37769(this.field17258.getPosZ() + 3.0)
       )) {
          if (!var3.equals(var7)) {
             Block var8 = this.field17258.field5024.method6738(var5.method8377(var7, Direction.field672)).method23383();

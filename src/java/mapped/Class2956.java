@@ -16,5 +16,5 @@ public interface Class2956 extends Class2955 {
 
    <T extends Class944> T method11325();
 
-   Class1657 method11326();
+   ServerWorld method11326();
 }

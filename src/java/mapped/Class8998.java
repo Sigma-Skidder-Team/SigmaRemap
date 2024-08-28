@@ -35,14 +35,14 @@ public class Class8998 {
 
    public void method33239(Packet<?> var1) {
       for (Class878 var5 : this.field41151) {
-         var5.field4855.method15671(var1);
+         var5.field4855.sendPacket(var1);
       }
    }
 
    public void method33240(Packet<?> var1) {
       this.method33239(var1);
       if (this.field41148 instanceof Class878) {
-         ((Class878)this.field41148).field4855.method15671(var1);
+         ((Class878)this.field41148).field4855.sendPacket(var1);
       }
    }
 
@@ -60,7 +60,7 @@ public class Class8998 {
 
    public void method33243(Class878 var1) {
       if (var1 != this.field41148) {
-         Vector3d var4 = var1.method3431().method11336(this.field41147.method34975());
+         Vector3d var4 = var1.getPositionVec().method11336(this.field41147.method34975());
          int var5 = Math.min(this.method33245(), (Class1649.method6634(this.field41152) - 1) * 16);
          boolean var6 = var4.field18048 >= (double)(-var5)
             && var4.field18048 <= (double)var5

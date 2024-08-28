@@ -124,7 +124,7 @@ public class Class8031 {
          throw field34511.create(32768, var7);
       } else {
         List<BlockPos> var8 = Lists.newArrayList();
-         Class1657 var9 = var0.method20172();
+         ServerWorld var9 = var0.method20172();
          int var10 = 0;
 
          for (BlockPos var12 : BlockPos.method8364(var1.field45678, var1.field45679, var1.field45680, var1.field45681, var1.field45682, var1.field45683)) {

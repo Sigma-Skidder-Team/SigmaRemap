@@ -91,7 +91,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
       int var4 = this.field6427 >= this.field6428 ? this.field6428 : this.field6427;
       int var5 = this.field6427 >= this.field6428 ? this.field6427 : this.field6428;
       int var6 = this.field6420 - this.field6419.length() - (var4 - var5);
-      String var7 = Class9246.method34772(var1);
+      String var7 = SharedConstants.method34772(var1);
       int var8 = var7.length();
       if (var6 < var8) {
          var7 = var7.substring(0, var6);
@@ -208,7 +208,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
    }
 
    public void method5650(int var1) {
-      this.field6427 = Class9679.method37775(var1, 0, this.field6419.length());
+      this.field6427 = MathHelper.method37775(var1, 0, this.field6419.length());
    }
 
    public void method5651() {
@@ -304,7 +304,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
    @Override
    public boolean method1932(char var1, int var2) {
       if (this.method5653()) {
-         if (!Class9246.method34771(var1)) {
+         if (!SharedConstants.isAllowedCharacter(var1)) {
             return false;
          } else {
             if (this.field6424) {
@@ -332,7 +332,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
          }
 
          if (this.method5746() && var8 && var5 == 0) {
-            int var9 = Class9679.method37769(var1) - this.field6477;
+            int var9 = MathHelper.method37769(var1) - this.field6477;
             if (this.field6422) {
                var9 -= 4;
             }
@@ -515,7 +515,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
 
    public void method5668(int var1) {
       int var4 = this.field6419.length();
-      this.field6428 = Class9679.method37775(var1, 0, var4);
+      this.field6428 = MathHelper.method37775(var1, 0, var4);
       if (this.field6418 != null) {
          if (this.field6426 > var4) {
             this.field6426 = var4;
@@ -536,7 +536,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
             this.field6426 = this.field6426 + (this.field6428 - var7);
          }
 
-         this.field6426 = Class9679.method37775(this.field6426, 0, var4);
+         this.field6426 = MathHelper.method37775(this.field6426, 0, var4);
       }
    }
 

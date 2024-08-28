@@ -75,8 +75,8 @@ public class Class6137 {
                                                    for (Entity var5 : Class8700.method31349(var0x, "targets")) {
                                                       var3x.add(
                                                          ((Class6619)var0x.getSource())
-                                                            .method20166((Class1657)var5.field5024)
-                                                            .method20158(var5.method3431())
+                                                            .method20166((ServerWorld)var5.field5024)
+                                                            .method20158(var5.getPositionVec())
                                                             .method20159(var5.method3321())
                                                       );
                                                    }
@@ -105,7 +105,7 @@ public class Class6137 {
                                     ArrayList var3x = Lists.newArrayList();
 
                                     for (Entity var5 : Class8700.method31349(var0x, "targets")) {
-                                       var3x.add(((Class6619)var0x.getSource()).method20158(var5.method3431()));
+                                       var3x.add(((Class6619)var0x.getSource()).method20158(var5.getPositionVec()));
                                     }
 
                                     return var3x;
@@ -569,7 +569,7 @@ public class Class6137 {
    }
 
    private static boolean method18968(Class6619 var0, Class122 var1) {
-      Class1657 var4 = var0.method20172();
+      ServerWorld var4 = var0.method20172();
       Class9464 var5 = new Class9464(var4).method36454(Class9525.field44335, var0.method20171()).method36455(Class9525.field44330, var0.method20173());
       return var1.test(var5.method36460(Class8524.field38283));
    }
@@ -624,7 +624,7 @@ public class Class6137 {
       );
    }
 
-   private static OptionalInt method18975(Class1657 var0, BlockPos var1, BlockPos var2, BlockPos var3, boolean var4) throws CommandSyntaxException {
+   private static OptionalInt method18975(ServerWorld var0, BlockPos var1, BlockPos var2, BlockPos var3, boolean var4) throws CommandSyntaxException {
       Class9764 var7 = new Class9764(var1, var2);
       Class9764 var8 = new Class9764(var3, var3.method8337(var7.method38397()));
       BlockPos var9 = new BlockPos(var8.field45678 - var7.field45678, var8.field45679 - var7.field45679, var8.field45680 - var7.field45680);

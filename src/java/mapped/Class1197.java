@@ -102,7 +102,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
          this.method5745(),
          this.field6477 + this.field6475 / 2,
          this.field6478 + (this.field6476 - 8) / 2,
-         var10 | Class9679.method37773(this.field6484 * 255.0F) << 24
+         var10 | MathHelper.method37773(this.field6484 * 255.0F) << 24
       );
    }
 

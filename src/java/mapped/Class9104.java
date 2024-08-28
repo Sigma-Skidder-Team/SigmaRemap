@@ -11,7 +11,7 @@ public class Class9104 {
    );
    public static final Class7909<?, ?> field41634 = method33941(
       "end_gateway",
-      Class2898.field17964.method11216(Class4701.method14745(Class1657.field9038, true)).method26510(Class6272.field27775.method19244(Class4716.field22361))
+      Class2898.field17964.method11216(Class4701.method14745(ServerWorld.field9038, true)).method26510(Class6272.field27775.method19244(Class4716.field22361))
    );
    public static final Class7909<?, ?> field41635 = method33941("end_gateway_delayed", Class2898.field17964.method11216(Class4701.method14746()));
    public static final Class7909<?, ?> field41636 = method33941(

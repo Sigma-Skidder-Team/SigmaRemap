@@ -84,9 +84,9 @@ public abstract class Class884 extends Class882 {
       boolean var3 = this.method3493();
       Vector3d var4 = this.method3433();
       if (this.field5034 == 0.0F && this.field5033 == 0.0F) {
-         float var5 = Class9679.method37766(method3234(var4));
-         this.field5031 = (float)(Class9679.method37814(var4.field18048, var4.field18050) * 180.0F / (float)Math.PI);
-         this.field5032 = (float)(Class9679.method37814(var4.field18049, (double)var5) * 180.0F / (float)Math.PI);
+         float var5 = MathHelper.method37766(method3234(var4));
+         this.field5031 = (float)(MathHelper.method37814(var4.field18048, var4.field18050) * 180.0F / (float)Math.PI);
+         this.field5032 = (float)(MathHelper.method37814(var4.field18049, (double)var5) * 180.0F / (float)Math.PI);
          this.field5033 = this.field5031;
          this.field5034 = this.field5032;
       }
@@ -96,7 +96,7 @@ public abstract class Class884 extends Class882 {
       if (!var6.method23393() && !var3) {
          Class6408 var7 = var6.method23414(this.field5024, var32);
          if (!var7.method19516()) {
-            Vector3d var8 = this.method3431();
+            Vector3d var8 = this.getPositionVec();
 
             for (Class6488 var23 : var7.method19521()) {
                if (var23.method19668(var32).method19673(var8)) {
@@ -125,7 +125,7 @@ public abstract class Class884 extends Class882 {
          this.field5101++;
       } else {
          this.field5101 = 0;
-         Vector3d var33 = this.method3431();
+         Vector3d var33 = this.getPositionVec();
          Vector3d var34 = var33.method11338(var4);
          Object var35 = this.field5024.method7036(new Class6809(var33, var34, Class2271.field14774, Class1985.field12962, this));
          if (((Class8710)var35).method31417() != Class2100.field13689) {
@@ -181,14 +181,14 @@ public abstract class Class884 extends Class882 {
          double var16 = this.getPosX() + var10;
          double var18 = this.getPosY() + var12;
          double var20 = this.getPosZ() + var14;
-         float var22 = Class9679.method37766(method3234(var4));
+         float var22 = MathHelper.method37766(method3234(var4));
          if (!var3) {
-            this.field5031 = (float)(Class9679.method37814(var10, var14) * 180.0F / (float)Math.PI);
+            this.field5031 = (float)(MathHelper.method37814(var10, var14) * 180.0F / (float)Math.PI);
          } else {
-            this.field5031 = (float)(Class9679.method37814(-var10, -var14) * 180.0F / (float)Math.PI);
+            this.field5031 = (float)(MathHelper.method37814(-var10, -var14) * 180.0F / (float)Math.PI);
          }
 
-         this.field5032 = (float)(Class9679.method37814(var12, (double)var22) * 180.0F / (float)Math.PI);
+         this.field5032 = (float)(MathHelper.method37814(var12, (double)var22) * 180.0F / (float)Math.PI);
          this.field5032 = method3469(this.field5034, this.field5032);
          this.field5031 = method3469(this.field5033, this.field5031);
          float var27 = 0.99F;
@@ -214,7 +214,7 @@ public abstract class Class884 extends Class882 {
    }
 
    private boolean method3472() {
-      return this.field5100 && this.field5024.method7051(new Class6488(this.method3431(), this.method3431()).method19664(0.06));
+      return this.field5100 && this.field5024.method7051(new Class6488(this.getPositionVec(), this.getPositionVec()).method19664(0.06));
    }
 
    private void method3473() {
@@ -256,7 +256,7 @@ public abstract class Class884 extends Class882 {
       super.method3465(var1);
       Entity var4 = var1.method31416();
       float var5 = (float)this.method3433().method11348();
-      int var6 = Class9679.method37774(Class9679.method37778((double)var5 * this.field5105, 0.0, 2.147483647E9));
+      int var6 = MathHelper.method37774(MathHelper.method37778((double)var5 * this.field5105, 0.0, 2.147483647E9));
       if (this.method3489() > 0) {
          if (this.field5108 == null) {
             this.field5108 = new IntOpenHashSet(5);
@@ -333,7 +333,7 @@ public abstract class Class884 extends Class882 {
 
             this.method3478(var13);
             if (var7 != null && var13 != var7 && var13 instanceof PlayerEntity && var7 instanceof Class878 && !this.method3245()) {
-               ((Class878)var7).field4855.method15671(new Class5534(Class5534.field24566, 0.0F));
+               ((Class878)var7).field4855.sendPacket(new Class5534(Class5534.field24566, 0.0F));
             }
 
             if (!var4.method3066() && this.field5109 != null) {
@@ -458,7 +458,7 @@ public abstract class Class884 extends Class882 {
       if (!this.field5024.field9020 && (this.field5100 || this.method3493()) && this.field5103 <= 0) {
          boolean var4 = this.field5102 == Class2192.field14332
             || this.field5102 == Class2192.field14333 && var1.field4919.field29609
-            || this.method3493() && this.method3460().method3375() == var1.method3375();
+            || this.method3493() && this.method3460().getUniqueID() == var1.getUniqueID();
          if (this.field5102 == Class2192.field14332 && !var1.field4902.method4045(this.method3480())) {
             var4 = false;
          }
@@ -470,7 +470,7 @@ public abstract class Class884 extends Class882 {
       }
    }
 
-   public abstract Class8848 method3480();
+   public abstract ItemStack method3480();
 
    @Override
    public boolean method2940() {

@@ -215,20 +215,20 @@ public class Class5323 extends Module {
                                 mc.field1339.field4902.field5443 = this.field23871;
                                 Vector3d var7 = Class9217.method34572(Direction.field673, this.field23870);
                                 Class8711 var8 = new Class8711(var7, Direction.field673, this.field23870, false);
-                                Class2274 var9 = mc.field1337.method23139(mc.field1339, mc.field1338, Class79.field182, var8);
-                                mc.field1339.method2820(Class79.field182);
+                                Class2274 var9 = mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var8);
+                                mc.field1339.swingArm(Hand.field182);
                                 if (var9 == Class2274.field14818) {
                                     this.field23873++;
-                                    mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10040));
+                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10040));
                                     mc.field1339.field6131.field43914 = true;
                                     mc.field1339.field4902.field5443 = this.field23872;
                                     Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.method8311());
                                     Class8711 var11 = new Class8711(var10, Direction.field673, this.field23870.method8311(), false);
-                                    mc.field1337.method23139(mc.field1339, mc.field1338, Class79.field182, var11);
-                                    mc.field1339.method2820(Class79.field182);
+                                    mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var11);
+                                    mc.field1339.swingArm(Hand.field182);
                                     mc.field1339.field6131.field43914 = false;
-                                    mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10041));
-                                    mc.field1337.method23139(mc.field1339, mc.field1338, Class79.field182, var11);
+                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10041));
+                                    mc.field1337.method23139(mc.field1339, mc.field1338, Hand.field182, var11);
                                 }
                             }
                         } else {
@@ -260,7 +260,7 @@ public class Class5323 extends Module {
             if (var1.method13898() instanceof Class5501) {
                 Class5501 var4 = (Class5501) var1.method13898();
                 int var5 = var4.method17304();
-                Class8848 var6 = var4.method17305();
+                ItemStack var6 = var4.method17305();
                 int var7 = var4.method17303();
                 if (this.field23874 == var7 && var5 == 0 && var6.method32107() != Class8514.field37222 && !this.field23877) {
                     var1.method13900(true);
@@ -268,7 +268,7 @@ public class Class5323 extends Module {
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {
-                        Class8848 var10 = mc.field1339.field4904.method18131(var9).method18265();
+                        ItemStack var10 = mc.field1339.field4904.method18131(var9).method18265();
                         if (var10.method32105()) {
                             var8 = var9;
                             break;
@@ -299,7 +299,7 @@ public class Class5323 extends Module {
                 var1.method13900(true);
             }
 
-            if (var1.method13932() instanceof Class5505) {
+            if (var1.method13932() instanceof CUseEntityPacket) {
                 float var4 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[0];
                 float var5 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[1];
             }

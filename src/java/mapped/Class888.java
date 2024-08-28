@@ -3,7 +3,7 @@ package mapped;
 import java.util.OptionalInt;
 
 public class Class888 extends Class882 implements Class889 {
-   private static final Class9289<Class8848> field5120 = Class9361.<Class8848>method35441(Class888.class, Class7784.field33396);
+   private static final Class9289<ItemStack> field5120 = Class9361.<ItemStack>method35441(Class888.class, Class7784.field33396);
    private static final Class9289<OptionalInt> field5121 = Class9361.<OptionalInt>method35441(Class888.class, Class7784.field33407);
    private static final Class9289<Boolean> field5122 = Class9361.<Boolean>method35441(Class888.class, Class7784.field33398);
    private int field5123;
@@ -14,7 +14,7 @@ public class Class888 extends Class882 implements Class889 {
       super(var1, var2);
    }
 
-   public Class888(Class1655 var1, double var2, double var4, double var6, Class8848 var8) {
+   public Class888(Class1655 var1, double var2, double var4, double var6, ItemStack var8) {
       super(Class8992.field41032, var1);
       this.field5123 = 0;
       this.method3215(var2, var4, var6);
@@ -28,30 +28,30 @@ public class Class888 extends Class882 implements Class889 {
       this.field5124 = 10 * var11 + this.field5054.nextInt(6) + this.field5054.nextInt(7);
    }
 
-   public Class888(Class1655 var1, Entity var2, double var3, double var5, double var7, Class8848 var9) {
+   public Class888(Class1655 var1, Entity var2, double var3, double var5, double var7, ItemStack var9) {
       this(var1, var3, var5, var7, var9);
       this.method3459(var2);
    }
 
-   public Class888(Class1655 var1, Class8848 var2, Class880 var3) {
+   public Class888(Class1655 var1, ItemStack var2, Class880 var3) {
       this(var1, var3, var3.getPosX(), var3.getPosY(), var3.getPosZ(), var2);
       this.field5063.method35446(field5121, OptionalInt.of(var3.method3205()));
       this.field5125 = var3;
    }
 
-   public Class888(Class1655 var1, Class8848 var2, double var3, double var5, double var7, boolean var9) {
+   public Class888(Class1655 var1, ItemStack var2, double var3, double var5, double var7, boolean var9) {
       this(var1, var3, var5, var7, var2);
       this.field5063.method35446(field5122, var9);
    }
 
-   public Class888(Class1655 var1, Class8848 var2, Entity var3, double var4, double var6, double var8, boolean var10) {
+   public Class888(Class1655 var1, ItemStack var2, Entity var3, double var4, double var6, double var8, boolean var10) {
       this(var1, var2, var4, var6, var8, var10);
       this.method3459(var3);
    }
 
    @Override
    public void method2850() {
-      this.field5063.method35442(field5120, Class8848.field39973);
+      this.field5063.method35442(field5120, ItemStack.field39973);
       this.field5063.method35442(field5121, OptionalInt.empty());
       this.field5063.method35442(field5122, false);
    }
@@ -166,7 +166,7 @@ public class Class888 extends Class882 implements Class889 {
    }
 
    private boolean method3505() {
-      Class8848 var3 = this.field5063.<Class8848>method35445(field5120);
+      ItemStack var3 = this.field5063.<ItemStack>method35445(field5120);
       Class39 var4 = !var3.method32105() ? var3.method32145("Fireworks") : null;
       Class41 var5 = var4 == null ? null : var4.method131("Explosions", 10);
       return var5 != null && !var5.isEmpty();
@@ -174,7 +174,7 @@ public class Class888 extends Class882 implements Class889 {
 
    private void method3506() {
       float var3 = 0.0F;
-      Class8848 var4 = this.field5063.<Class8848>method35445(field5120);
+      ItemStack var4 = this.field5063.<ItemStack>method35445(field5120);
       Class39 var5 = !var4.method32105() ? var4.method32145("Fireworks") : null;
       Class41 var6 = var5 == null ? null : var5.method131("Explosions", 10);
       if (var6 != null && !var6.isEmpty()) {
@@ -187,10 +187,10 @@ public class Class888 extends Class882 implements Class889 {
          }
 
          double var7 = 5.0;
-         Vector3d var9 = this.method3431();
+         Vector3d var9 = this.getPositionVec();
 
          for (Class880 var11 : this.field5024.<Class880>method7182(Class880.class, this.method3389().method19664(5.0))) {
-            if (var11 != this.field5125 && !(this.method3277(var11) > 25.0)) {
+            if (var11 != this.field5125 && !(this.getDistanceSq(var11) > 25.0)) {
                boolean var12 = false;
 
                for (int var13 = 0; var13 < 2; var13++) {
@@ -223,7 +223,7 @@ public class Class888 extends Class882 implements Class889 {
    public void method2866(byte var1) {
       if (var1 == 17 && this.field5024.field9020) {
          if (this.method3505()) {
-            Class8848 var4 = this.field5063.<Class8848>method35445(field5120);
+            ItemStack var4 = this.field5063.<ItemStack>method35445(field5120);
             Class39 var5 = !var4.method32105() ? var4.method32145("Fireworks") : null;
             Vector3d var6 = this.method3433();
             this.field5024.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.field18048, var6.field18049, var6.field18050, var5);
@@ -251,7 +251,7 @@ public class Class888 extends Class882 implements Class889 {
       super.method2724(var1);
       var1.method102("Life", this.field5123);
       var1.method102("LifeTime", this.field5124);
-      Class8848 var4 = this.field5063.<Class8848>method35445(field5120);
+      ItemStack var4 = this.field5063.<ItemStack>method35445(field5120);
       if (!var4.method32105()) {
          var1.method99("FireworksItem", var4.method32112(new Class39()));
       }
@@ -264,7 +264,7 @@ public class Class888 extends Class882 implements Class889 {
       super.method2723(var1);
       this.field5123 = var1.method122("Life");
       this.field5124 = var1.method122("LifeTime");
-      Class8848 var4 = Class8848.method32104(var1.method130("FireworksItem"));
+      ItemStack var4 = ItemStack.method32104(var1.method130("FireworksItem"));
       if (!var4.method32105()) {
          this.field5063.method35446(field5120, var4);
       }
@@ -275,9 +275,9 @@ public class Class888 extends Class882 implements Class889 {
    }
 
    @Override
-   public Class8848 method3509() {
-      Class8848 var3 = this.field5063.<Class8848>method35445(field5120);
-      return !var3.method32105() ? var3 : new Class8848(Class8514.field38068);
+   public ItemStack method3509() {
+      ItemStack var3 = this.field5063.<ItemStack>method35445(field5120);
+      return !var3.method32105() ? var3 : new ItemStack(Class8514.field38068);
    }
 
    @Override

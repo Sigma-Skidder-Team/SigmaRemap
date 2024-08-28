@@ -51,9 +51,9 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    public void method2871() {
       super.method2871();
       if (!this.field5024.field9020) {
-         int var3 = Class9679.method37769(this.getPosX());
-         int var4 = Class9679.method37769(this.getPosY());
-         int var5 = Class9679.method37769(this.getPosZ());
+         int var3 = MathHelper.method37769(this.getPosX());
+         int var4 = MathHelper.method37769(this.getPosY());
+         int var5 = MathHelper.method37769(this.getPosZ());
          if (this.field5024.method7003(new BlockPos(var3, 0, var5)).method32503(new BlockPos(var3, var4, var5)) > 1.0F) {
             this.method2741(Class8654.field38994, 1.0F);
          }
@@ -65,9 +65,9 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
          Class7380 var6 = Blocks.SNOW.method11579();
 
          for (int var7 = 0; var7 < 4; var7++) {
-            var3 = Class9679.method37769(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
-            var4 = Class9679.method37769(this.getPosY());
-            var5 = Class9679.method37769(this.getPosZ() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
+            var3 = MathHelper.method37769(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
+            var4 = MathHelper.method37769(this.getPosY());
+            var5 = MathHelper.method37769(this.getPosZ() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
             BlockPos var8 = new BlockPos(var3, var4, var5);
             if (this.field5024.method6738(var8).method23393()
                && this.field5024.method7003(var8).method32503(var8) < 0.8F
@@ -85,7 +85,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       double var8 = var1.getPosX() - this.getPosX();
       double var10 = var6 - var5.getPosY();
       double var12 = var1.getPosZ() - this.getPosZ();
-      float var14 = Class9679.method37766(var8 * var8 + var12 * var12) * 0.2F;
+      float var14 = MathHelper.method37766(var8 * var8 + var12 * var12) * 0.2F;
       var5.method3462(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
       this.method2863(Class6067.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.field5024.method6916(var5);
@@ -97,8 +97,8 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (var5.method32107() == Class8514.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.field5024.field9020) {
@@ -116,7 +116,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       this.field5024.method6744((PlayerEntity)null, this, Class6067.field27115, var1, 1.0F, 1.0F);
       if (!this.field5024.method6714()) {
          this.method4532(false);
-         this.method3303(new Class8848(Class8514.field37439), 1.7F);
+         this.method3303(new ItemStack(Class8514.field37439), 1.7F);
       }
    }
 

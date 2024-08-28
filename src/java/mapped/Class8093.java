@@ -23,7 +23,7 @@ public class Class8093 extends Class8092 {
          this.field34812.field5032 = this.method28049(this.field34812.field5032, this.method28047() + 10.0F, this.field34814);
       }
 
-      float var3 = Class9679.method37792(this.field34812.field4967 - this.field34812.field4965);
+      float var3 = MathHelper.method37792(this.field34812.field4967 - this.field34812.field4965);
       if (!(var3 < (float)(-this.field34820))) {
          if (var3 > (float)this.field34820) {
             this.field34812.field4965 += 4.0F;

@@ -99,7 +99,7 @@ public class Class8429 {
       if (!this.field36110) {
          return this.method29620(var1);
       } else if (this.field36118 != null) {
-         Class878 var10 = var1.method20177().method1367().method19465(this.field36118);
+         Class878 var10 = var1.method20177().getPlayerList().method19465(this.field36118);
          return (List<? extends Entity>)(var10 != null ? Lists.newArrayList(new Class878[]{var10}) : Collections.emptyList());
       } else if (this.field36119 == null) {
          Vector3d var9 = this.field36114.apply(var1.method20171());
@@ -107,7 +107,7 @@ public class Class8429 {
          if (!this.field36117) {
             ArrayList var12 = Lists.newArrayList();
             if (!this.method29614()) {
-               for (Class1657 var8 : var1.method20177().method1320()) {
+               for (ServerWorld var8 : var1.method20177().method1320()) {
                   this.method29618(var12, var8, var9, var11);
                }
             } else {
@@ -121,7 +121,7 @@ public class Class8429 {
                : Collections.emptyList());
          }
       } else {
-         for (Class1657 var5 : var1.method20177().method1320()) {
+         for (ServerWorld var5 : var1.method20177().method1320()) {
             Entity var6 = var5.method6942(this.field36119);
             if (var6 != null) {
                return Lists.newArrayList(new Entity[]{var6});
@@ -132,7 +132,7 @@ public class Class8429 {
       }
    }
 
-   private void method29618(List<Entity> var1, Class1657 var2, Vector3d var3, Predicate<Entity> var4) {
+   private void method29618(List<Entity> var1, ServerWorld var2, Vector3d var3, Predicate<Entity> var4) {
       if (this.field36115 == null) {
          var1.addAll(var2.method6912(this.field36120, var4));
       } else {
@@ -153,7 +153,7 @@ public class Class8429 {
    public List<Class878> method29620(Class6619 var1) throws CommandSyntaxException {
       this.method29615(var1);
       if (this.field36118 != null) {
-         Class878 var10 = var1.method20177().method1367().method19465(this.field36118);
+         Class878 var10 = var1.method20177().getPlayerList().method19465(this.field36118);
          return (List<Class878>)(var10 != null ? Lists.newArrayList(new Class878[]{var10}) : Collections.<Class878>emptyList());
       } else if (this.field36119 == null) {
          Vector3d var9 = this.field36114.apply(var1.method20171());
@@ -172,7 +172,7 @@ public class Class8429 {
             if (!this.method29614()) {
                var6 = Lists.newArrayList();
 
-               for (Class878 var8 : var1.method20177().method1367().method19488()) {
+               for (Class878 var8 : var1.method20177().getPlayerList().method19488()) {
                   if (var5.test(var8)) {
                      var6.add(var8);
                   }
@@ -184,7 +184,7 @@ public class Class8429 {
             return this.<Class878>method29622(var9, (List<Class878>)var6);
          }
       } else {
-         Class878 var4 = var1.method20177().method1367().method19489(this.field36119);
+         Class878 var4 = var1.method20177().getPlayerList().method19489(this.field36119);
          return (List<Class878>)(var4 != null ? Lists.newArrayList(new Class878[]{var4}) : Collections.<Class878>emptyList());
       }
    }
@@ -212,6 +212,6 @@ public class Class8429 {
    }
 
    public static IFormattableTextComponent method29623(List<? extends Entity> var0) {
-      return TextComponentUtils.func_240649_b_(var0, Entity::method2954);
+      return TextComponentUtils.func_240649_b_(var0, Entity::getDisplayName);
    }
 }

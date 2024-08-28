@@ -34,7 +34,7 @@ public class Class6089 extends Class6069 {
          Mutable var8 = new Mutable();
 
          for (BlockPos var10 : BlockPos.method8359(var2.method8335((double)(-var7), -1.0, (double)(-var7)), var2.method8335((double)var7, -1.0, (double)var7))) {
-            if (var10.method8317(var0.method3431(), (double)var7)) {
+            if (var10.method8317(var0.getPositionVec(), (double)var7)) {
                var8.method8372(var10.method8304(), var10.getY() + 1, var10.method8306());
                Class7380 var11 = var1.method6738(var8);
                if (var11.method23393()) {
@@ -44,7 +44,7 @@ public class Class6089 extends Class6069 {
                      && var6.method23443(var1, var10)
                      && var1.method7049(var6, var10, Class4832.method14947())) {
                      var1.method6730(var10, var6);
-                     var1.method6860().method20726(var10, Blocks.field36889, Class9679.method37782(var0.method3013(), 60, 120));
+                     var1.method6860().method20726(var10, Blocks.field36889, MathHelper.method37782(var0.method3013(), 60, 120));
                   }
                }
             }

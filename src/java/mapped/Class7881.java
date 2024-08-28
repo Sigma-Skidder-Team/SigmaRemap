@@ -25,7 +25,7 @@ public class Class7881 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(Class1657 var1, Class880 var2) {
+   public void method26425(ServerWorld var1, Class880 var2) {
       Class6947<?> var5 = var2.method2992();
       var5.method21408(Class8830.field39870, method26426(var1, var2));
       Optional var6 = Optional.empty();
@@ -103,11 +103,11 @@ public class Class7881 extends Class7882<Class880> {
       var5.method21406(Class8830.field39867, var13);
    }
 
-   private static Optional<BlockPos> method26426(Class1657 var0, Class880 var1) {
+   private static Optional<BlockPos> method26426(ServerWorld var0, Class880 var1) {
       return BlockPos.method8357(var1.method3432(), 8, 4, var1x -> method26427(var0, var1x));
    }
 
-   private static boolean method26427(Class1657 var0, BlockPos var1) {
+   private static boolean method26427(ServerWorld var0, BlockPos var1) {
       Class7380 var4 = var0.method6738(var1);
       boolean var5 = var4.method23446(Class7645.field32774);
       return var5 && var4.method23448(Blocks.field37068) ? Class3244.method11655(var4) : var5;

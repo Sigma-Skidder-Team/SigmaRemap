@@ -38,13 +38,13 @@ public class Class870 extends Screen {
 
    public void method2690(Class7502 var1) {
       this.field4821 = var1;
-      this.field4822 = Class9679.method37775(this.field4822, 0, var1.method24459());
+      this.field4822 = MathHelper.method37775(this.field4822, 0, var1.method24459());
       this.method2694();
       this.field4824 = -1;
    }
 
    public boolean method2691(int var1) {
-      int var4 = Class9679.method37775(var1, 0, this.field4821.method24459() - 1);
+      int var4 = MathHelper.method37775(var1, 0, this.field4821.method24459() - 1);
       if (var4 == this.field4822) {
          return false;
       } else {
@@ -189,8 +189,8 @@ public class Class870 extends Screen {
    @Nullable
    public Style method2695(double var1, double var3) {
       if (!this.field4823.isEmpty()) {
-         int var7 = Class9679.method37769(var1 - (double)((this.field4564 - 192) / 2) - 36.0);
-         int var8 = Class9679.method37769(var3 - 2.0 - 30.0);
+         int var7 = MathHelper.method37769(var1 - (double)((this.field4564 - 192) / 2) - 36.0);
+         int var8 = MathHelper.method37769(var3 - 2.0 - 30.0);
          if (var7 >= 0 && var8 >= 0) {
             int var9 = Math.min(14, this.field4823.size());
             if (var7 <= 114 && var8 < 9 * var9 + var9) {

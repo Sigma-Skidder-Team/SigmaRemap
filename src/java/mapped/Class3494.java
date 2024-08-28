@@ -11,7 +11,7 @@ public class Class3494 extends Class3194 {
    @Override
    public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
       super.method11523(var1, var2, var3, var4);
-      if (var2 instanceof Class1657 && var4 instanceof Class1002) {
+      if (var2 instanceof ServerWorld && var4 instanceof Class1002) {
          var2.method7180(new BlockPos(var3), true, var4);
       }
    }

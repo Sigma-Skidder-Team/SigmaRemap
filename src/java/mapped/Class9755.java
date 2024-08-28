@@ -37,11 +37,11 @@ public class Class9755 {
       if (var1 != Class2197.field14351) {
          boolean var9 = var1 == Class2197.field14354;
          float var10 = 0.75F;
-         float var11 = Class9679.method37777(((float)var2 + -72000.0F) / 1440000.0F, 0.0F, 1.0F) * 0.25F;
+         float var11 = MathHelper.method37777(((float)var2 + -72000.0F) / 1440000.0F, 0.0F, 1.0F) * 0.25F;
          var10 += var11;
          float var12 = 0.0F;
-         var12 += Class9679.method37777((float)var4 / 3600000.0F, 0.0F, 1.0F) * (!var9 ? 0.75F : 1.0F);
-         var12 += Class9679.method37777(var6 * 0.25F, 0.0F, var11);
+         var12 += MathHelper.method37777((float)var4 / 3600000.0F, 0.0F, 1.0F) * (!var9 ? 0.75F : 1.0F);
+         var12 += MathHelper.method37777(var6 * 0.25F, 0.0F, var11);
          if (var1 == Class2197.field14352) {
             var12 *= 0.5F;
          }

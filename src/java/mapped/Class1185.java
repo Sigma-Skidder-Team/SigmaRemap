@@ -40,7 +40,7 @@ public class Class1185 extends Class1178<Class1185> {
       this.field6396 = var1.field1294.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
       this.field6397 = var1.field1294.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
       Class9645 var8 = var1.method1578();
-      if (!var1.field1339.method2906().getId().equals(var3) && !var8.method37608(var3)) {
+      if (!var1.field1339.getGameProfile().getId().equals(var3) && !var8.method37608(var3)) {
          this.field6394 = new Class1244(this, 0, 0, 20, 20, 0, 38, 20, Class1147.field6215, 256, 256, var4x -> {
             var8.method37604(var3);
             this.method5618(true, new TranslationTextComponent("gui.socialInteractions.hidden_in_chat", var4));

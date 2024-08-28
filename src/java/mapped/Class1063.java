@@ -62,7 +62,7 @@ public class Class1063 extends Class1038 implements Class1011 {
          this.method4875();
       }
 
-      this.method4366((Class1657)this.field5024, true);
+      this.method4366((ServerWorld)this.field5024, true);
       if (this.method4232() != null) {
          this.method4876();
       }
@@ -97,7 +97,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    private void method4877() {
       double var3 = this.method3086(Class9173.field42106);
-      Class6488 var5 = Class6488.method19657(this.method3431()).method19663(var3, 10.0, var3);
+      Class6488 var5 = Class6488.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
       this.field5024
          .<Class1063>method7183(Class1063.class, var5)
          .stream()
@@ -148,7 +148,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    @Override
    public void method2723(Class39 var1) {
       super.method2723(var1);
-      this.method4365((Class1657)this.field5024, var1);
+      this.method4365((ServerWorld)this.field5024, var1);
    }
 
    @Override
@@ -183,12 +183,12 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new Class8848(Class8514.field37815));
+      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37815));
    }
 
    @Override
-   public Class8848 method4644() {
-      return Class8848.field39973;
+   public ItemStack method4644() {
+      return ItemStack.field39973;
    }
 
    @Override

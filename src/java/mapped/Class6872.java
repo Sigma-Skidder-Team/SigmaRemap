@@ -31,11 +31,11 @@ public class Class6872 implements Class6870 {
 
    @Override
    public int method20914(Random var1) {
-      return Class9679.method37782(var1, Class9679.method37767(this.field29803), Class9679.method37767(this.field29804));
+      return MathHelper.method37782(var1, MathHelper.method37767(this.field29803), MathHelper.method37767(this.field29804));
    }
 
    public float method20924(Random var1) {
-      return Class9679.method37783(var1, this.field29803, this.field29804);
+      return MathHelper.method37783(var1, this.field29803, this.field29804);
    }
 
    public boolean method20925(int var1) {

@@ -71,8 +71,8 @@ public class Class8972 {
 
    public double method32931(double var1, double var3) {
       double var7 = (var1 + var3) * field40559;
-      int var9 = Class9679.method37769(var1 + var7);
-      int var10 = Class9679.method37769(var3 + var7);
+      int var9 = MathHelper.method37769(var1 + var7);
+      int var10 = MathHelper.method37769(var3 + var7);
       double var11 = (double)(var9 + var10) * field40560;
       double var13 = (double)var9 - var11;
       double var15 = (double)var10 - var11;
@@ -106,9 +106,9 @@ public class Class8972 {
    public double method32932(double var1, double var3, double var5) {
       double var9 = 0.3333333333333333;
       double var11 = (var1 + var3 + var5) * 0.3333333333333333;
-      int var13 = Class9679.method37769(var1 + var11);
-      int var14 = Class9679.method37769(var3 + var11);
-      int var15 = Class9679.method37769(var5 + var11);
+      int var13 = MathHelper.method37769(var1 + var11);
+      int var14 = MathHelper.method37769(var3 + var11);
+      int var15 = MathHelper.method37769(var5 + var11);
       double var16 = 0.16666666666666666;
       double var18 = (double)(var13 + var14 + var15) * 0.16666666666666666;
       double var20 = (double)var13 - var18;

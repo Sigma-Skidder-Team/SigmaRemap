@@ -35,7 +35,7 @@ public class Class7600 implements Class7601 {
 
       if (this.field32629) {
          Class1193.method5686(var1, 3, 28, 157, 29, -1);
-         float var7 = (float)Class9679.method37779((double)this.field32627, (double)this.field32628, (double)((float)(var3 - this.field32626) / 100.0F));
+         float var7 = (float) MathHelper.method37779((double)this.field32627, (double)this.field32628, (double)((float)(var3 - this.field32626) / 100.0F));
          int var8;
          if (!(this.field32628 >= this.field32627)) {
             var8 = -11206656;

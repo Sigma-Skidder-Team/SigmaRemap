@@ -22,7 +22,7 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var4.nextInt(3) == 0 && var2.method7007(var3.method8311()) && var2.method7021(var3.method8311(), 0) >= 9) {
          this.method12079(var2, var3);
       }
@@ -47,8 +47,8 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(Class8514.field37357);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(Class8514.field37357);
    }
 
    @Override
@@ -62,7 +62,7 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       this.method12079(var1, var3);
    }
 

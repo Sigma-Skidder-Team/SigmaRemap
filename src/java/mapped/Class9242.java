@@ -72,8 +72,8 @@ public class Class9242 {
    }
 
    public void method34759(double var1, double var3) {
-      int var7 = Class9679.method37769(var1);
-      int var8 = Class9679.method37769(var3);
+      int var7 = MathHelper.method37769(var1);
+      int var8 = MathHelper.method37769(var3);
 
       for (int var9 = 0; var9 < this.field42526; var9++) {
          int var10 = this.field42526 * 16;
@@ -108,8 +108,8 @@ public class Class9242 {
       int var5 = var1.getY() >> 4;
       int var6 = var1.method8306() >> 4;
       if (var5 >= 0 && var5 < this.field42525) {
-         var4 = Class9679.method37788(var4, this.field42526);
-         var6 = Class9679.method37788(var6, this.field42527);
+         var4 = MathHelper.normalizeAngle(var4, this.field42526);
+         var6 = MathHelper.normalizeAngle(var6, this.field42527);
          return this.field42528[this.method34757(var4, var5, var6)];
       } else {
          return null;

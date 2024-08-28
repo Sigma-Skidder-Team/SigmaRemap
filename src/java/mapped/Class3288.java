@@ -15,9 +15,9 @@ public class Class3288 extends Class3287 {
    }
 
    @Override
-   public void method11824(Class1655 var1, Class8848 var2, BlockPos var3) {
-      if (var1 instanceof Class1657) {
-         this.method11827((Class1657)var1, var2, var3);
+   public void method11824(Class1655 var1, ItemStack var2, BlockPos var3) {
+      if (var1 instanceof ServerWorld) {
+         this.method11827((ServerWorld)var1, var2, var3);
       }
    }
 
@@ -26,7 +26,7 @@ public class Class3288 extends Class3287 {
       var2.method6742(var1, var3, Class6067.field26427, Class2266.field14734, 1.0F, 1.0F);
    }
 
-   private void method11827(Class1657 var1, Class8848 var2, BlockPos var3) {
+   private void method11827(ServerWorld var1, ItemStack var2, BlockPos var3) {
       Entity var6 = this.field18799.method33200(var1, var2, (PlayerEntity)null, var3, Class2202.field14402, true, false);
       if (var6 != null) {
          ((Class1049)var6).method4794(true);
@@ -34,7 +34,7 @@ public class Class3288 extends Class3287 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       if (this.field18799 == Class8992.field41095) {
          Class39 var7 = var1.method32142();
          if (var7 != null && var7.method119("BucketVariantTag", 3)) {

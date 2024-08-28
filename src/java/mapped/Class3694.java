@@ -14,7 +14,7 @@ public class Class3694 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       Class6947<?> var7 = var2.method2992();
       Class7864 var8 = var7.<Class7864>method21410(Class8830.field39825).get();
       var7.method21406(Class8830.field39824, new Class8999(var8, this.field19726, this.field19727));

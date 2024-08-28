@@ -39,7 +39,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = this.method12158(var1);
       if (var7 > 0) {
          this.method12153(var2, var3, var1, var7);

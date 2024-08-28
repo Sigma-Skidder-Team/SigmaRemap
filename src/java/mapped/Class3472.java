@@ -26,7 +26,7 @@ public abstract class Class3472 extends Class3471 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (method12160(var1, var2, var3)) {
          if (var2.method7015(var3.method8311()) >= 9) {
             Class7380 var7 = this.method11579();

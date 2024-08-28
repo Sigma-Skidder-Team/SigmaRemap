@@ -20,7 +20,7 @@ public class Class2608 extends Class2595 {
       if (!this.field16860.method3329()) {
          if (!this.field16860.field5024.method6740()) {
             if (this.field16860.method3013().nextInt(this.field16861) == 0) {
-               Class1657 var3 = (Class1657)this.field16860.field5024;
+               ServerWorld var3 = (ServerWorld)this.field16860.field5024;
                BlockPos var4 = this.field16860.method3432();
                if (var3.method6954(var4, 6)) {
                   Vector3d var5 = Class8037.method27584(this.field16860, 15, 7, var1 -> (double)(-var3.method6955(Class2002.method8390(var1))));
@@ -49,9 +49,9 @@ public class Class2608 extends Class2595 {
    public void method10805() {
       if (this.field16862 != null) {
          Class6990 var3 = this.field16860.method4230();
-         if (var3.method21664() && !this.field16862.method8317(this.field16860.method3431(), 10.0)) {
+         if (var3.method21664() && !this.field16862.method8317(this.field16860.getPositionVec(), 10.0)) {
             Vector3d var4 = Vector3d.method11330(this.field16862);
-            Vector3d var5 = this.field16860.method3431();
+            Vector3d var5 = this.field16860.getPositionVec();
             Vector3d var6 = var5.method11336(var4);
             var4 = var6.method11344(0.4).method11338(var4);
             Vector3d var7 = var4.method11336(var5).method11333().method11344(10.0).method11338(var5);

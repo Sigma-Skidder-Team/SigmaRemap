@@ -36,9 +36,9 @@ public class Class6997 extends Class6990 {
          if (!this.method21668()) {
             if (this.field30245 != null && !this.field30245.method28693()) {
                Vector3d var3 = this.field30245.method28703(this.field30243);
-               if (Class9679.method37769(this.field30243.getPosX()) == Class9679.method37769(var3.field18048)
-                  && Class9679.method37769(this.field30243.getPosY()) == Class9679.method37769(var3.field18049)
-                  && Class9679.method37769(this.field30243.getPosZ()) == Class9679.method37769(var3.field18050)) {
+               if (MathHelper.method37769(this.field30243.getPosX()) == MathHelper.method37769(var3.field18048)
+                  && MathHelper.method37769(this.field30243.getPosY()) == MathHelper.method37769(var3.field18049)
+                  && MathHelper.method37769(this.field30243.getPosZ()) == MathHelper.method37769(var3.field18050)) {
                   this.field30245.method28691();
                }
             }

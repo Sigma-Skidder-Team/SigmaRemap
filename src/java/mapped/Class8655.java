@@ -24,6 +24,6 @@ public class Class8655 extends Class8654 {
             var0 -> var0.setClickEvent(new ClickEvent(ClickEvent$Action.OPEN_URL, "https://bugs.mojang.com/browse/MCPE-28723"))
                   .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new StringTextComponent("MCPE-28723")))
          );
-      return new TranslationTextComponent("death.attack.badRespawnPoint.message", var1.method2954(), var4);
+      return new TranslationTextComponent("death.attack.badRespawnPoint.message", var1.getDisplayName(), var4);
    }
 }

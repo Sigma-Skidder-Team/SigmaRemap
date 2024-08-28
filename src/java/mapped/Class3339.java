@@ -11,14 +11,14 @@ public class Class3339 extends Class3257 {
    }
 
    @Override
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return true;
    }
 
    @Override
    public boolean method11706(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4) {
       if (!var2.field9020) {
-         this.method11886(var4, var1, var2, var3, false, var4.method3094(Class79.field182));
+         this.method11886(var4, var1, var2, var3, false, var4.method3094(Hand.field182));
       }
 
       return false;
@@ -36,7 +36,7 @@ public class Class3339 extends Class3257 {
       return Class2274.method9002(var5.field9020);
    }
 
-   private void method11886(PlayerEntity var1, Class7380 var2, Class1660 var3, BlockPos var4, boolean var5, Class8848 var6) {
+   private void method11886(PlayerEntity var1, Class7380 var2, Class1660 var3, BlockPos var4, boolean var5, ItemStack var6) {
       if (var1.method2979()) {
          Block var9 = var2.method23383();
          Class9348 var10 = var9.method11577();

@@ -59,7 +59,7 @@ public class Class7366 extends Class7361 {
 
    @Override
    public float method23367() {
-      float var3 = Class9679.method37766(Entity.method3234(this.field31519.method3433())) + 1.0F;
+      float var3 = MathHelper.method37766(Entity.method3234(this.field31519.method3433())) + 1.0F;
       float var4 = Math.min(var3, 40.0F);
       return var4 / var3;
    }

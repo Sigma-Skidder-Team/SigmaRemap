@@ -26,7 +26,7 @@ public class Class2778 extends Class2595 {
             if (var3 == null) {
                return true;
             } else {
-               return this.field17376.method3277(var3) < 144.0 && var3.method3014() != null ? false : this.field17376.method4402();
+               return this.field17376.getDistanceSq(var3) < 144.0 && var3.method3014() != null ? false : this.field17376.method4402();
             }
          } else {
             return false;

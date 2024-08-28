@@ -57,7 +57,7 @@ public abstract class Class7574 {
       if (this.method24791()) {
          Class1655 var3 = this.method24786();
          BlockPos var4 = this.method24787();
-         if (var3 instanceof Class1657) {
+         if (var3 instanceof ServerWorld) {
             if (this.field32516 == -1) {
                this.method24793();
             }
@@ -87,7 +87,7 @@ public abstract class Class7574 {
                   ? (double)var4.method8306() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
                   : var15.method158(2);
                if (var3.method7051(((Class8992)var14.get()).method33219(var17, var19, var21))) {
-                  Class1657 var23 = (Class1657)var3;
+                  ServerWorld var23 = (ServerWorld)var3;
                   if (Class6914.method21122((Class8992)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
                      Entity var24 = Class8992.method33223(var13, var3, var6x -> {
                         var6x.method3273(var17, var19, var21, var6x.field5031, var6x.field5032);

@@ -66,7 +66,7 @@ public class Class5281 extends Module {
         double var5 = var0.getPosZ() - mc.field1339.getPosZ();
         double var7 = mc.field1339.getPosY() + (double) mc.field1339.method3393() - (var0.getPosY() + (double) var0.method3393());
         float var9 = (float) Math.toDegrees(Math.atan2(var5, var3)) - 90.0F;
-        double var10 = Class9679.method37766(var3 * var3 + var5 * var5);
+        double var10 = MathHelper.method37766(var3 * var3 + var5 * var5);
         float var12 = (float) (-(Math.atan2(var7, var10) * 180.0 / Math.PI));
         return new float[]{var9, -var12};
     }
@@ -87,23 +87,23 @@ public class Class5281 extends Module {
             var11 = Math.toDegrees(-Math.atan(var7 / var9));
         }
 
-        return Class9679.method37792(-(var0 - (float) var11));
+        return MathHelper.method37792(-(var0 - (float) var11));
     }
 
     public static float method16565(float var0, Entity var1, double var2) {
         double var6 = var1.getPosX() - mc.field1339.getPosX();
         double var8 = var1.getPosZ() - mc.field1339.getPosZ();
         double var10 = var2 - 2.2 + (double) var1.method3393() - mc.field1339.getPosY();
-        double var12 = Class9679.method37766(var6 * var6 + var8 * var8);
+        double var12 = MathHelper.method37766(var6 * var6 + var8 * var8);
         double var14 = -Math.toDegrees(Math.atan(var10 / var12));
-        return -Class9679.method37792(var0 - (float) var14) - 2.5F;
+        return -MathHelper.method37792(var0 - (float) var14) - 2.5F;
     }
 
     @Override
     public void isInDevelopment() {
         this.field23739 = 0.0;
         this.field23751 = new Animation(1000, 100000, Direction.FORWARDS);
-        this.field23745 = Class9679.method37792(mc.field1339.field5031);
+        this.field23745 = MathHelper.method37792(mc.field1339.field5031);
         this.field23745 = 39.0F;
         this.field23746 = mc.field1339.field5032;
         double var3 = mc.field1339.getPosX();
@@ -190,11 +190,11 @@ public class Class5281 extends Module {
     public void method16558(Class4402 var1) {
         Packet var4 = var1.method13932();
         if (this.method15996() && mc.field1339 != null) {
-            if (!(var4 instanceof Class5505)) {
+            if (!(var4 instanceof CUseEntityPacket)) {
                 if (!(var4 instanceof Class5603)) {
                     if (!(var4 instanceof Class5539)) {
                         if (!(var4 instanceof Class5555)) {
-                            if (!(var4 instanceof Class5511)) {
+                            if (!(var4 instanceof CAnimateHandPacket)) {
                                 if (!(var4 instanceof Class5570)) {
                                     if (!(var4 instanceof Class5492)) {
                                         if (!(var4 instanceof Class5482)) {
@@ -227,7 +227,7 @@ public class Class5281 extends Module {
                             }
                         } else {
                             Class5555 var15 = (Class5555) var4;
-                            if (var15.method17472() != Class79.field183) {
+                            if (var15.method17472() != Hand.field183) {
                             }
                         }
                     } else {
@@ -240,8 +240,8 @@ public class Class5281 extends Module {
                     Class8906.method32487(var10 + var8);
                 }
             } else {
-                Class5505 var18 = (Class5505) var4;
-                Entity var6 = var18.method17315(mc.field1338);
+                CUseEntityPacket var18 = (CUseEntityPacket) var4;
+                Entity var6 = var18.getEntityFromWorld(mc.field1338);
                 if (var6 != null) {
                     var6.method2941().getString();
                 } else {
@@ -313,7 +313,7 @@ public class Class5281 extends Module {
                             Class5588.class,
                             Class5547.class,
                             Class5549.class,
-                            Class5616.class,
+                            SChatPacket.class,
                             Class5516.class,
                             Class5590.class
                     )
@@ -341,7 +341,7 @@ public class Class5281 extends Module {
                                     if (!(var6 instanceof Class1005) && !(var6 instanceof PlayerEntity)) {
                                         if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
-                                        } else if (mc.field1339.method3421() != null && mc.field1339.method3421().equals(var6)) {
+                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var6)) {
                                             var5.remove();
                                         } else if (!var6.method3362()) {
                                             if (var6 instanceof PlayerEntity && Class8781.method31662((PlayerEntity) var6)) {
@@ -393,7 +393,7 @@ public class Class5281 extends Module {
                                     if (!(var7 instanceof Class1005)) {
                                         if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();
-                                        } else if (mc.field1339.method3421() != null && mc.field1339.method3421().equals(var7)) {
+                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var7)) {
                                             var6.remove();
                                         } else if (!var7.method3362()) {
                                             if (var5 == null || mc.field1339.method3275(var7) < mc.field1339.method3275(var5)) {

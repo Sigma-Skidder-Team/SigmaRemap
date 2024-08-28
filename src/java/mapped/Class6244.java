@@ -5,9 +5,9 @@ public final class Class6244 extends Class6218 {
    private final Class6218 field27735 = new Class6218();
 
    @Override
-   public Class8848 method19192(Class2956 var1, Class8848 var2) {
+   public ItemStack method19192(Class2956 var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
-      Class1657 var6 = var1.method11326();
+      ServerWorld var6 = var1.method11326();
       double var7 = var1.method11320() + (double)var5.method539() * 1.125;
       double var9 = Math.floor(var1.method11321()) + (double)var5.method540();
       double var11 = var1.method11322() + (double)var5.method541() * 1.125;

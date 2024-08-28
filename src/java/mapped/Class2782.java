@@ -23,8 +23,8 @@ public class Class2782 extends Class2595 {
    public boolean method10803() {
       this.field17389 = this.field17388.method4232();
       if (this.field17389 != null) {
-         if (!(this.field17389.method3277(this.field17388) > (double)(this.field17394 * this.field17394))) {
-            Vector3d var3 = Class8037.method27587(this.field17388, 16, 7, this.field17389.method3431());
+         if (!(this.field17389.getDistanceSq(this.field17388) > (double)(this.field17394 * this.field17394))) {
+            Vector3d var3 = Class8037.method27587(this.field17388, 16, 7, this.field17389.getPositionVec());
             if (var3 != null) {
                this.field17390 = var3.field18048;
                this.field17391 = var3.field18049;
@@ -45,7 +45,7 @@ public class Class2782 extends Class2595 {
    public boolean method10806() {
       return !this.field17388.method4230().method21664()
          && this.field17389.method3066()
-         && this.field17389.method3277(this.field17388) < (double)(this.field17394 * this.field17394);
+         && this.field17389.getDistanceSq(this.field17388) < (double)(this.field17394 * this.field17394);
    }
 
    @Override

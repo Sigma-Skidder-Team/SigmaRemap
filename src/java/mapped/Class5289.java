@@ -139,10 +139,10 @@ public class Class5289 extends Module {
     }
 
     public void method16608(Entity var1, double var2, double var4, double var6, float var8, Class9332 var9, Class7733 var10) {
-        double var13 = Class9679.method37822(var8, var1.field5048, var1.getPosX());
-        double var15 = Class9679.method37822(var8, var1.field5049, var1.getPosY());
-        double var17 = Class9679.method37822(var8, var1.field5050, var1.getPosZ());
-        float var19 = Class9679.method37821(var8, var1.field5033, var1.field5031);
+        double var13 = MathHelper.method37822(var8, var1.field5048, var1.getPosX());
+        double var15 = MathHelper.method37822(var8, var1.field5049, var1.getPosY());
+        double var17 = MathHelper.method37822(var8, var1.field5050, var1.getPosZ());
+        float var19 = MathHelper.method37821(var8, var1.field5033, var1.field5031);
         mc.field1287.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
     }
 

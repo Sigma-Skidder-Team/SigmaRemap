@@ -66,7 +66,7 @@ public abstract class Class7249 implements Class7251 {
 
    public PlayerEntity method22768(UUID var1) {
       for (PlayerEntity var5 : this.method22766()) {
-         if (var5.method3375().equals(var1)) {
+         if (var5.getUniqueID().equals(var1)) {
             return var5;
          }
       }

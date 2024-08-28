@@ -23,9 +23,9 @@ public abstract class Class231<T extends Class880, M extends Class2894<T>> exten
             float var18 = var14.nextFloat();
             float var19 = var14.nextFloat();
             float var20 = var14.nextFloat();
-            float var21 = Class9679.method37821(var18, var17.field45150, var17.field45153) / 16.0F;
-            float var22 = Class9679.method37821(var19, var17.field45151, var17.field45154) / 16.0F;
-            float var23 = Class9679.method37821(var20, var17.field45152, var17.field45155) / 16.0F;
+            float var21 = MathHelper.method37821(var18, var17.field45150, var17.field45153) / 16.0F;
+            float var22 = MathHelper.method37821(var19, var17.field45151, var17.field45154) / 16.0F;
+            float var23 = MathHelper.method37821(var20, var17.field45152, var17.field45155) / 16.0F;
             var1.method35291((double)var21, (double)var22, (double)var23);
             var18 = -1.0F * (var18 * 2.0F - 1.0F);
             var19 = -1.0F * (var19 * 2.0F - 1.0F);

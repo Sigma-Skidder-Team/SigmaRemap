@@ -22,7 +22,7 @@ public class Class3365 extends Class3241 {
 
    @Override
    public void method11523(Class7380 var1, Class1655 var2, BlockPos var3, Entity var4) {
-      if (var2 instanceof Class1657
+      if (var2 instanceof ServerWorld
          && !var4.method3328()
          && !var4.method3329()
          && var4.method3367()
@@ -32,7 +32,7 @@ public class Class3365 extends Class3241 {
             Class9477.field44045
          )) {
          Class8705 var7 = var2.method6813() != Class1655.field9001 ? Class1655.field9001 : Class1655.field8999;
-         Class1657 var8 = ((Class1657)var2).method6715().method1318(var7);
+         ServerWorld var8 = ((ServerWorld)var2).method6715().method1318(var7);
          if (var8 == null) {
             return;
          }
@@ -50,8 +50,8 @@ public class Class3365 extends Class3241 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return Class8848.field39973;
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return ItemStack.field39973;
    }
 
    @Override

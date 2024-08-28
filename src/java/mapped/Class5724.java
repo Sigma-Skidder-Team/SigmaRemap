@@ -14,7 +14,7 @@ public class Class5724 extends Class5715<Class1000> {
       this.field25099 = 0.75F;
    }
 
-   private int method17910(Class8848 var1) {
+   private int method17910(ItemStack var1) {
       byte var4 = 1;
       if (var1.method32179() <= 48) {
          if (var1.method32179() <= 32) {
@@ -37,14 +37,14 @@ public class Class5724 extends Class5715<Class1000> {
 
    public void method17853(Class1000 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
       var4.method35294();
-      Class8848 var9 = var1.method4124();
+      ItemStack var9 = var1.method4124();
       int var10 = !var9.method32105() ? Class3257.method11701(var9.method32107()) + var9.method32117() : 187;
       this.field25130.setSeed((long)var10);
       Class7202 var11 = this.field25129.method788(var9, var1.field5024, (Class880)null);
       boolean var12 = var11.method22621();
       int var13 = this.method17910(var9);
       float var14 = 0.25F;
-      float var15 = Class9679.method37763(((float)var1.method4130() + var3) / 10.0F + var1.field5520) * 0.1F + 0.1F;
+      float var15 = MathHelper.method37763(((float)var1.method4130() + var3) / 10.0F + var1.field5520) * 0.1F + 0.1F;
       if (!this.method17912()) {
          var15 = 0.0F;
       }

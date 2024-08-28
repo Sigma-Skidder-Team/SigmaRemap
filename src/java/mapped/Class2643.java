@@ -44,7 +44,7 @@ public class Class2643 extends Class2642 {
    public boolean method10806() {
       return this.field16982 <= this.method10852()
          && !this.method10850()
-         && this.field16975.method8317(this.field16974.method3431(), 2.0)
+         && this.field16975.method8317(this.field16974.getPositionVec(), 2.0)
          && this.method10853(this.field16974.field5024.method6997());
    }
 
@@ -60,7 +60,7 @@ public class Class2643 extends Class2642 {
       if (this.field16974.method3013().nextInt(20) == 0) {
          this.field16974.field5024.method6999(1019, this.field16975, 0);
          if (!this.field16974.field4947) {
-            this.field16974.method2820(this.field16974.method3149());
+            this.field16974.swingArm(this.field16974.method3149());
          }
       }
 

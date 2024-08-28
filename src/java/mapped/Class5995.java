@@ -5,7 +5,7 @@ import java.util.UUID;
 public class Class5995 {
    private static String[] field26171;
 
-   public static Class1657 method18604() {
+   public static ServerWorld method18604() {
       Minecraft var2 = Class7944.method26860();
       Class1656 var3 = var2.field1338;
       if (var3 == null) {
@@ -32,12 +32,12 @@ public class Class5995 {
    }
 
    public static Entity method18605(UUID var0) {
-      Class1657 var3 = method18604();
+      ServerWorld var3 = method18604();
       return var3 != null ? var3.method6942(var0) : null;
    }
 
    public static Class944 method18606(BlockPos var0) {
-      Class1657 var3 = method18604();
+      ServerWorld var3 = method18604();
       if (var3 != null) {
          Class1670 var4 = var3.method6883().method7346(var0.method8304() >> 4, var0.method8306() >> 4, Class9176.field42145, false);
          return var4 != null ? var4.method6759(var0) : null;

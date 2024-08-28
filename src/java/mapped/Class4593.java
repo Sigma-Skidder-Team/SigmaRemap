@@ -39,12 +39,12 @@ public class Class4593 extends Class4587 {
 
       float var7 = ((float)this.field22084 + var3) / 3.0F;
       var7 *= var7;
-      double var8 = Class9679.method37822((double)var3, this.field22083.field5048, this.field22083.getPosX());
-      double var10 = Class9679.method37822((double)var3, this.field22083.field5049, this.field22083.getPosY()) + 0.5;
-      double var12 = Class9679.method37822((double)var3, this.field22083.field5050, this.field22083.getPosZ());
-      double var14 = Class9679.method37822((double)var7, this.field22082.getPosX(), var8);
-      double var16 = Class9679.method37822((double)var7, this.field22082.getPosY(), var10);
-      double var18 = Class9679.method37822((double)var7, this.field22082.getPosZ(), var12);
+      double var8 = MathHelper.method37822((double)var3, this.field22083.field5048, this.field22083.getPosX());
+      double var10 = MathHelper.method37822((double)var3, this.field22083.field5049, this.field22083.getPosY()) + 0.5;
+      double var12 = MathHelper.method37822((double)var3, this.field22083.field5050, this.field22083.getPosZ());
+      double var14 = MathHelper.method37822((double)var7, this.field22082.getPosX(), var8);
+      double var16 = MathHelper.method37822((double)var7, this.field22082.getPosY(), var10);
+      double var18 = MathHelper.method37822((double)var7, this.field22082.getPosZ(), var12);
       Class7735 var20 = this.field22081.method26536();
       Vector3d var21 = var2.method37504();
       this.field22085

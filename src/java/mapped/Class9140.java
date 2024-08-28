@@ -3,7 +3,7 @@ package mapped;
 public class Class9140 {
    private static String[] field41995;
    public static Minecraft field41996 = Minecraft.getInstance();
-   private static final int field41997 = 1 + Class9679.method37803(Class9679.method37800(30000000));
+   private static final int field41997 = 1 + MathHelper.method37803(MathHelper.method37800(30000000));
    private static final int field41998 = field41997;
    private static final int field41999 = 64 - field41997 - field41998;
    private static final int field42000 = 0 + field41998;
@@ -25,7 +25,7 @@ public class Class9140 {
    public static void method34123(float var0, float var1, float var2, float var3) {
       float var6 = var0 * var0 + var1 * var1 + var2 * var2;
       if (var6 >= 1.0E-4F) {
-         var6 = Class9679.method37765(var6);
+         var6 = MathHelper.method37765(var6);
          if (var6 < 1.0F) {
             var6 = 1.0F;
          }
@@ -34,8 +34,8 @@ public class Class9140 {
          var0 *= var6;
          var1 *= var6;
          var2 *= var6;
-         float var7 = Class9679.method37763(field41996.field1339.field5031 * (float) (Math.PI / 180.0));
-         float var8 = Class9679.method37764(field41996.field1339.field5031 * (float) (Math.PI / 180.0));
+         float var7 = MathHelper.method37763(field41996.field1339.field5031 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.method37764(field41996.field1339.field5031 * (float) (Math.PI / 180.0));
          field42005 += (double)(var0 * var8 - var2 * var7);
          field42006 += (double)var1;
          field42007 += (double)(var2 * var8 + var0 * var7);
@@ -78,12 +78,12 @@ public class Class9140 {
    }
 
    public static boolean method34125(Class6488 var0, Class8649 var1) {
-      int var4 = Class9679.method37769(var0.field28449);
-      int var5 = Class9679.method37774(var0.field28452);
-      int var6 = Class9679.method37769(var0.field28450);
-      int var7 = Class9679.method37774(var0.field28453);
-      int var8 = Class9679.method37769(var0.field28451);
-      int var9 = Class9679.method37774(var0.field28454);
+      int var4 = MathHelper.method37769(var0.field28449);
+      int var5 = MathHelper.method37774(var0.field28452);
+      int var6 = MathHelper.method37769(var0.field28450);
+      int var7 = MathHelper.method37774(var0.field28453);
+      int var8 = MathHelper.method37769(var0.field28451);
+      int var9 = MathHelper.method37774(var0.field28454);
       if (!field41996.field1338.method7019(var4, var6, var8, var5, var7, var9)) {
          return false;
       } else {

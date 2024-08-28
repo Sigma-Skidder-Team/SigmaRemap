@@ -28,8 +28,8 @@ public class Class4582 extends Class4566 {
       this.field22040 = this.field22043;
       if (this.field22055++ < this.field22056) {
          float var3 = 0.6F;
-         this.field22044 = this.field22044 + (double)(0.6F * Class9679.method37764(this.field22031));
-         this.field22046 = this.field22046 + (double)(0.6F * Class9679.method37763(this.field22031));
+         this.field22044 = this.field22044 + (double)(0.6F * MathHelper.method37764(this.field22031));
+         this.field22046 = this.field22046 + (double)(0.6F * MathHelper.method37763(this.field22031));
          this.field22044 *= 0.07;
          this.field22046 *= 0.07;
          this.method14511(this.field22044, this.field22045, this.field22046);

@@ -12,18 +12,18 @@ public class Class5211 extends Module {
 
     @Override
     public void method15965() {
-        mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10041));
+        mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10041));
     }
 
     @EventTarget
     public void method16229(Class4399 var1) {
         if (this.method15996()) {
             if (!var1.method13921()) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10041));
-                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10040));
+                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10041));
+                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10040));
             } else {
-                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10040));
-                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10041));
+                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10040));
+                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10041));
             }
         }
     }

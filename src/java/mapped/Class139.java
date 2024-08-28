@@ -24,12 +24,12 @@ public class Class139 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Object var5 = var2.method26081(this.field468.field14001);
       if (var5 instanceof Class933) {
          Class933 var6 = (Class933)var5;
          if (var6.method3381()) {
-            var1.method32150(var6.method2954());
+            var1.method32150(var6.getDisplayName());
          }
       }
 

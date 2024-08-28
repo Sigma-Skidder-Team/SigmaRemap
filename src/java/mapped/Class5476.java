@@ -15,7 +15,7 @@ public class Class5476 implements Packet<Class5116> {
    public boolean field24330;
 
    public static long method17229(double var0) {
-      return Class9679.method37770(var0 * 4096.0);
+      return MathHelper.method37770(var0 * 4096.0);
    }
 
    public static double method17230(long var0) {

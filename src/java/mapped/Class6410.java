@@ -17,6 +17,6 @@ public final class Class6410 extends Class6408 {
    @Override
    public int method19523(Class113 var1, double var2) {
       int var6 = this.field28033.method26732(var1);
-      return Class9679.method37775(Class9679.method37769(var2 * (double)var6), -1, var6);
+      return MathHelper.method37775(MathHelper.method37769(var2 * (double)var6), -1, var6);
    }
 }

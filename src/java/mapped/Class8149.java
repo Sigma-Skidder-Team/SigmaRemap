@@ -407,8 +407,8 @@ public class Class8149 {
    }
 
    private boolean method28274(Entity var1, Class1663 var2) {
-      if (var1 instanceof Class1068) {
-         Class1068 var5 = (Class1068)var1;
+      if (var1 instanceof AbstractHorseEntity) {
+         AbstractHorseEntity var5 = (AbstractHorseEntity)var1;
          if (this.field35059 != null) {
             Class2224 var6 = this.method28275(var5);
             if (!Class7944.method26943(var6, this.field35059)) {
@@ -430,7 +430,7 @@ public class Class8149 {
       }
    }
 
-   private Class2224 method28275(Class1068 var1) {
+   private Class2224 method28275(AbstractHorseEntity var1) {
       if (!(var1 instanceof Class1074)) {
          if (!(var1 instanceof Class1067)) {
             if (!(var1 instanceof Class1078)) {

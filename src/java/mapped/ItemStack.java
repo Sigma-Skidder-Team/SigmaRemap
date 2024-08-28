@@ -30,17 +30,17 @@ import net.minecraft.util.text.event.HoverEvent$ItemHover;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public final class Class8848 {
-   public static final Codec<Class8848> field39971 = RecordCodecBuilder.create(
+public final class ItemStack {
+   public static final Codec<ItemStack> field39971 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class2348.field16075.fieldOf("id").forGetter(var0x -> var0x.field39978),
                Codec.INT.fieldOf("Count").forGetter(var0x -> var0x.field39976),
                Class39.field79.optionalFieldOf("tag").forGetter(var0x -> Optional.<Class39>ofNullable(var0x.field39979))
             )
-            .apply(var0, Class8848::new)
+            .apply(var0, ItemStack::new)
    );
    private static final Logger field39972 = LogManager.getLogger();
-   public static final Class8848 field39973 = new Class8848((Class3257)null);
+   public static final ItemStack field39973 = new ItemStack((Class3257)null);
    public static final DecimalFormat field39974 = Util.<DecimalFormat>method38508(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
@@ -57,16 +57,16 @@ public final class Class8848 {
    private Class9632 field39984;
    private boolean field39985;
 
-   public Class8848(Class3303 var1) {
+   public ItemStack(Class3303 var1) {
       this(var1, 1);
    }
 
-   private Class8848(Class3303 var1, int var2, Optional<Class39> var3) {
+   private ItemStack(Class3303 var1, int var2, Optional<Class39> var3) {
       this(var1, var2);
       var3.ifPresent(this::method32148);
    }
 
-   public Class8848(Class3303 var1, int var2) {
+   public ItemStack(Class3303 var1, int var2) {
       this.field39978 = var1 != null ? var1.method11581() : null;
       this.field39976 = var2;
       if (this.field39978 != null && this.field39978.method11712()) {
@@ -81,7 +81,7 @@ public final class Class8848 {
       this.field39980 = this.method32105();
    }
 
-   private Class8848(Class39 var1) {
+   private ItemStack(Class39 var1) {
       this.field39978 = Class2348.field16075.method9184(new ResourceLocation(var1.method126("id")));
       this.field39976 = var1.method120("Count");
       if (var1.method119("tag", 10)) {
@@ -96,9 +96,9 @@ public final class Class8848 {
       this.method32103();
    }
 
-   public static Class8848 method32104(Class39 var0) {
+   public static ItemStack method32104(Class39 var0) {
       try {
-         return new Class8848(var0);
+         return new ItemStack(var0);
       } catch (RuntimeException var4) {
          field39972.debug("Tried to load invalid item: {}", var0, var4);
          return field39973;
@@ -113,9 +113,9 @@ public final class Class8848 {
       }
    }
 
-   public Class8848 method32106(int var1) {
+   public ItemStack method32106(int var1) {
       int var4 = Math.min(var1, this.field39976);
-      Class8848 var5 = this.method32126();
+      ItemStack var5 = this.method32126();
       var5.method32180(var4);
       this.method32182(var4);
       return var5;
@@ -146,11 +146,11 @@ public final class Class8848 {
       return this.method32107().method11708(this, var1);
    }
 
-   public Class6794<Class8848> method32110(Class1655 var1, PlayerEntity var2, Class79 var3) {
+   public Class6794<ItemStack> method32110(Class1655 var1, PlayerEntity var2, Hand var3) {
       return this.method32107().method11700(var1, var2, var3);
    }
 
-   public Class8848 method32111(Class1655 var1, Class880 var2) {
+   public ItemStack method32111(Class1655 var1, Class880 var2) {
       return this.method32107().method11709(this, var1, var2);
    }
 
@@ -262,13 +262,13 @@ public final class Class8848 {
       return this.method32107().method11715(var1);
    }
 
-   public Class2274 method32125(PlayerEntity var1, Class880 var2, Class79 var3) {
+   public Class2274 method32125(PlayerEntity var1, Class880 var2, Hand var3) {
       return this.method32107().method11716(this, var1, var2, var3);
    }
 
-   public Class8848 method32126() {
+   public ItemStack method32126() {
       if (!this.method32105()) {
-         Class8848 var3 = new Class8848(this.method32107(), this.field39976);
+         ItemStack var3 = new ItemStack(this.method32107(), this.field39976);
          var3.method32178(this.method32177());
          if (this.field39979 != null) {
             var3.field39979 = this.field39979.method79();
@@ -280,7 +280,7 @@ public final class Class8848 {
       }
    }
 
-   public static boolean method32127(Class8848 var0, Class8848 var1) {
+   public static boolean method32127(ItemStack var0, ItemStack var1) {
       if (var0.method32105() && var1.method32105()) {
          return true;
       } else if (var0.method32105() || var1.method32105()) {
@@ -290,7 +290,7 @@ public final class Class8848 {
       }
    }
 
-   public static boolean method32128(Class8848 var0, Class8848 var1) {
+   public static boolean method32128(ItemStack var0, ItemStack var1) {
       if (var0.method32105() && var1.method32105()) {
          return true;
       } else {
@@ -298,7 +298,7 @@ public final class Class8848 {
       }
    }
 
-   private boolean method32129(Class8848 var1) {
+   private boolean method32129(ItemStack var1) {
       if (this.field39976 != var1.field39976) {
          return false;
       } else if (this.method32107() == var1.method32107()) {
@@ -308,7 +308,7 @@ public final class Class8848 {
       }
    }
 
-   public static boolean method32130(Class8848 var0, Class8848 var1) {
+   public static boolean method32130(ItemStack var0, ItemStack var1) {
       if (var0 == var1) {
          return true;
       } else {
@@ -316,7 +316,7 @@ public final class Class8848 {
       }
    }
 
-   public static boolean method32131(Class8848 var0, Class8848 var1) {
+   public static boolean method32131(ItemStack var0, ItemStack var1) {
       if (var0 == var1) {
          return true;
       } else {
@@ -324,11 +324,11 @@ public final class Class8848 {
       }
    }
 
-   public boolean method32132(Class8848 var1) {
+   public boolean method32132(ItemStack var1) {
       return !var1.method32105() && this.method32107() == var1.method32107();
    }
 
-   public boolean method32133(Class8848 var1) {
+   public boolean method32133(ItemStack var1) {
       return !this.method32115() ? this.method32132(var1) : !var1.method32105() && this.method32107() == var1.method32107();
    }
 
@@ -442,7 +442,7 @@ public final class Class8848 {
       return this.method32107().method11731(this);
    }
 
-   public Class8848 method32150(ITextComponent var1) {
+   public ItemStack method32150(ITextComponent var1) {
       Class39 var4 = this.method32144("display");
       if (var1 == null) {
          var4.method133("Name");

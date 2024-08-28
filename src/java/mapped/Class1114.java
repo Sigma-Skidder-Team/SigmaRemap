@@ -84,7 +84,7 @@ public class Class1114 extends Class1113 {
          this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
       } else {
          this.method3434(Vector3d.field18047);
-         this.method3446(this.getPosX(), (double)Class9679.method37769(this.getPosY()) + 1.0 - (double)this.method3430(), this.getPosZ());
+         this.method3446(this.getPosX(), (double) MathHelper.method37769(this.getPosY()) + 1.0 - (double)this.method3430(), this.getPosZ());
       }
    }
 
@@ -98,7 +98,7 @@ public class Class1114 extends Class1113 {
             this.field6095 = null;
          }
 
-         if (this.field6095 == null || this.field5054.nextInt(30) == 0 || this.field6095.method8317(this.method3431(), 2.0)) {
+         if (this.field6095 == null || this.field5054.nextInt(30) == 0 || this.field6095.method8317(this.getPositionVec(), 2.0)) {
             this.field6095 = new BlockPos(
                this.getPosX() + (double)this.field5054.nextInt(7) - (double)this.field5054.nextInt(7),
                this.getPosY() + (double)this.field5054.nextInt(6) - 2.0,
@@ -116,8 +116,8 @@ public class Class1114 extends Class1113 {
             (Math.signum(var10) * 0.5 - var12.field18050) * 0.1F
          );
          this.method3434(var13);
-         float var14 = (float)(Class9679.method37814(var13.field18050, var13.field18048) * 180.0F / (float)Math.PI) - 90.0F;
-         float var15 = Class9679.method37792(var14 - this.field5031);
+         float var14 = (float)(MathHelper.method37814(var13.field18050, var13.field18048) * 180.0F / (float)Math.PI) - 90.0F;
+         float var15 = MathHelper.method37792(var14 - this.field5031);
          this.field4984 = 0.5F;
          this.field5031 += var15;
          if (this.field5054.nextInt(100) == 0 && this.field5024.method6738(var4).method23400(this.field5024, var4)) {

@@ -20,7 +20,7 @@ public class Class2602 extends Class2595 {
 
       for (Class1002 var6 : var3) {
          Entity var7 = var6.method3407();
-         if (var7 instanceof PlayerEntity && (Class9679.method37771(((PlayerEntity)var7).field4982) > 0.0F || Class9679.method37771(((PlayerEntity)var7).field4984) > 0.0F)
+         if (var7 instanceof PlayerEntity && (MathHelper.method37771(((PlayerEntity)var7).field4982) > 0.0F || MathHelper.method37771(((PlayerEntity)var7).field4984) > 0.0F)
             )
           {
             var4 = true;
@@ -28,7 +28,7 @@ public class Class2602 extends Class2595 {
          }
       }
 
-      return this.field16846 != null && (Class9679.method37771(this.field16846.field4982) > 0.0F || Class9679.method37771(this.field16846.field4984) > 0.0F)
+      return this.field16846 != null && (MathHelper.method37771(this.field16846.field4982) > 0.0F || MathHelper.method37771(this.field16846.field4984) > 0.0F)
          || var4;
    }
 
@@ -41,7 +41,7 @@ public class Class2602 extends Class2595 {
    public boolean method10806() {
       return this.field16846 != null
          && this.field16846.method3328()
-         && (Class9679.method37771(this.field16846.field4982) > 0.0F || Class9679.method37771(this.field16846.field4984) > 0.0F);
+         && (MathHelper.method37771(this.field16846.field4982) > 0.0F || MathHelper.method37771(this.field16846.field4984) > 0.0F);
    }
 
    @Override
@@ -64,7 +64,7 @@ public class Class2602 extends Class2595 {
 
    @Override
    public void method10805() {
-      boolean var3 = Class9679.method37771(this.field16846.field4982) > 0.0F || Class9679.method37771(this.field16846.field4984) > 0.0F;
+      boolean var3 = MathHelper.method37771(this.field16846.field4982) > 0.0F || MathHelper.method37771(this.field16846.field4984) > 0.0F;
       float var4 = this.field16847 != Class1987.field12972 ? 0.015F : (!var3 ? 0.0F : 0.01F);
       this.field16845.method3265(var4, new Vector3d((double)this.field16845.field4982, (double)this.field16845.field4983, (double)this.field16845.field4984));
       this.field16845.move(Class2107.field13742, this.field16845.method3433());

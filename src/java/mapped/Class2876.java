@@ -138,7 +138,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
       this.field17827.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17828.field31036 = this.field17831.field31036 - (float) (Math.PI / 12);
       this.field17829.field31036 = this.field17831.field31036 + (float) (Math.PI / 12);
-      this.field17832 = Class9679.method37763(var1.method5103(var9) * (float) Math.PI);
+      this.field17832 = MathHelper.method37763(var1.method5103(var9) * (float) Math.PI);
       this.field17822.field31035 = (this.field17832 * 50.0F - 21.0F) * (float) (Math.PI / 180.0);
       this.field17823.field31035 = (this.field17832 * 50.0F - 21.0F) * (float) (Math.PI / 180.0);
       this.field17820.field31035 = this.field17832 * 50.0F * (float) (Math.PI / 180.0);
@@ -149,6 +149,6 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
 
    public void method10997(T var1, float var2, float var3, float var4) {
       super.method10997((T)var1, var2, var3, var4);
-      this.field17832 = Class9679.method37763(var1.method5103(var4) * (float) Math.PI);
+      this.field17832 = MathHelper.method37763(var1.method5103(var4) * (float) Math.PI);
    }
 }

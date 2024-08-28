@@ -36,14 +36,14 @@ public class Class3336 extends Class3257 {
       }
    }
 
-   public static boolean method11883(Class8848 var0, Class1655 var1, BlockPos var2) {
+   public static boolean method11883(ItemStack var0, Class1655 var1, BlockPos var2) {
       Class7380 var5 = var1.method6738(var2);
       if (var5.method23383() instanceof Class3196) {
          Class3196 var6 = (Class3196)var5.method23383();
          if (var6.method11486(var1, var2, var5, var1.field9020)) {
-            if (var1 instanceof Class1657) {
+            if (var1 instanceof ServerWorld) {
                if (var6.method11487(var1, var1.field9016, var2, var5)) {
-                  var6.method11488((Class1657)var1, var1.field9016, var2, var5);
+                  var6.method11488((ServerWorld)var1, var1.field9016, var2, var5);
                }
 
                var0.method32182(1);
@@ -56,9 +56,9 @@ public class Class3336 extends Class3257 {
       return false;
    }
 
-   public static boolean method11884(Class8848 var0, Class1655 var1, BlockPos var2, Direction var3) {
+   public static boolean method11884(ItemStack var0, Class1655 var1, BlockPos var2, Direction var3) {
       if (var1.method6738(var2).method23448(Blocks.WATER) && var1.method6739(var2).method23477() == 8) {
-         if (!(var1 instanceof Class1657)) {
+         if (!(var1 instanceof ServerWorld)) {
             return true;
          } else {
             label110:
@@ -94,7 +94,7 @@ public class Class3336 extends Class3257 {
                   if (var12.method23448(Blocks.WATER) && var1.method6739(var7).method23477() == 8) {
                      var1.method6725(var7, var8, 3);
                   } else if (var12.method23448(Blocks.SEAGRASS) && field18735.nextInt(10) == 0) {
-                     ((Class3196) Blocks.SEAGRASS).method11488((Class1657)var1, field18735, var7, var12);
+                     ((Class3196) Blocks.SEAGRASS).method11488((ServerWorld)var1, field18735, var7, var12);
                   }
                }
             }

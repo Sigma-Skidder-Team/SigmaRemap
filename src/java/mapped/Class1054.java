@@ -54,8 +54,8 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public Class8848 method4796() {
-      return new Class8848(Class8514.field37892);
+   public ItemStack method4796() {
+      return new ItemStack(Class8514.field37892);
    }
 
    @Override
@@ -122,7 +122,7 @@ public class Class1054 extends Class1049 {
       int var4 = this.method4828();
       if (var1 instanceof Class878 && var4 > 0 && var1.method2741(Class8654.method31115(this), (float)(1 + var4))) {
          if (!this.method3245()) {
-            ((Class878)var1).field4855.method15671(new Class5534(Class5534.field24569, 0.0F));
+            ((Class878)var1).field4855.sendPacket(new Class5534(Class5534.field24569, 0.0F));
          }
 
          var1.method3035(new Class2023(Class8254.field35485, 60 * var4, 0));

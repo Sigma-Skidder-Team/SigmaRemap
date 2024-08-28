@@ -16,7 +16,7 @@ public class Class154 implements Class122 {
    }
 
    public boolean test(Class7812 var1) {
-      Class1657 var4 = var1.method26090();
+      ServerWorld var4 = var1.method26090();
       return this.field504 != null && this.field504 != var4.method6795() ? false : this.field505 == null || this.field505 == var4.method6794();
    }
 

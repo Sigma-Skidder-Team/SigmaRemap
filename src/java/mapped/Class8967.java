@@ -84,7 +84,7 @@ public final class Class8967 {
       if (!(field40495 * var1 * var1 < var5 * var5)) {
          return Pair.of(field40497, field40496);
       } else {
-         float var6 = Class9679.method37815(var1 * var1 + var5 * var5);
+         float var6 = MathHelper.method37815(var1 * var1 + var5 * var5);
          return Pair.of(var6 * var1, var6 * var5);
       }
    }
@@ -99,7 +99,7 @@ public final class Class8967 {
          var6 = var7;
       }
 
-      float var10 = Class9679.method37815(var6 * var6 + var5 * var5);
+      float var10 = MathHelper.method37815(var6 * var6 + var5 * var5);
       var6 *= var10;
       var5 *= var10;
       return Pair.of(var5, var6);

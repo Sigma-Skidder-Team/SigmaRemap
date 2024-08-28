@@ -44,7 +44,7 @@ public abstract class Class932 extends Class944 implements Class920, Class949, C
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDisplayName() {
       return this.method2941();
    }
 
@@ -57,7 +57,7 @@ public abstract class Class932 extends Class944 implements Class920, Class949, C
    public abstract ITextComponent method3686();
 
    public boolean method3696(PlayerEntity var1) {
-      return method3697(var1, this.field5279, this.method2954());
+      return method3697(var1, this.field5279, this.getDisplayName());
    }
 
    public static boolean method3697(PlayerEntity var0, Class7969 var1, ITextComponent var2) {

@@ -5,9 +5,9 @@ import java.util.Optional;
 
 public class Class3634 {
    private static String[] field19667;
-   private final Class1657 field19668;
+   private final ServerWorld field19668;
 
-   public Class3634(Class1657 var1) {
+   public Class3634(ServerWorld var1) {
       this.field19668 = var1;
    }
 
@@ -85,7 +85,7 @@ public class Class3634 {
       }
 
       if (var6 == -1.0) {
-         var8 = new BlockPos(var1.method8304(), Class9679.method37775(var1.getY(), 70, this.field19668.method6998() - 10), var1.method8306())
+         var8 = new BlockPos(var1.method8304(), MathHelper.method37775(var1.getY(), 70, this.field19668.method6998() - 10), var1.method8306())
             .method8353();
          Direction var24 = var5.method537();
          if (!var12.method24523(var8)) {

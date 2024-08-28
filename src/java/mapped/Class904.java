@@ -44,15 +44,15 @@ public class Class904 extends Class882 {
       this(var2, var1, var3, var4);
       float var7 = var1.field5032;
       float var8 = var1.field5031;
-      float var9 = Class9679.method37764(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var10 = Class9679.method37763(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var11 = -Class9679.method37764(-var7 * (float) (Math.PI / 180.0));
-      float var12 = Class9679.method37763(-var7 * (float) (Math.PI / 180.0));
+      float var9 = MathHelper.method37764(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var10 = MathHelper.method37763(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var11 = -MathHelper.method37764(-var7 * (float) (Math.PI / 180.0));
+      float var12 = MathHelper.method37763(-var7 * (float) (Math.PI / 180.0));
       double var13 = var1.getPosX() - (double)var10 * 0.3;
       double var15 = var1.method3442();
       double var17 = var1.getPosZ() - (double)var9 * 0.3;
       this.method3273(var13, var15, var17, var8, var7);
-      Vector3d var19 = new Vector3d((double)(-var10), (double)Class9679.method37777(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
+      Vector3d var19 = new Vector3d((double)(-var10), (double) MathHelper.method37777(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
       double var20 = var19.method11348();
       var19 = var19.method11347(
          0.6 / var20 + 0.5 + this.field5054.nextGaussian() * 0.0045,
@@ -60,8 +60,8 @@ public class Class904 extends Class882 {
          0.6 / var20 + 0.5 + this.field5054.nextGaussian() * 0.0045
       );
       this.method3434(var19);
-      this.field5031 = (float)(Class9679.method37814(var19.field18048, var19.field18050) * 180.0F / (float)Math.PI);
-      this.field5032 = (float)(Class9679.method37814(var19.field18049, (double)Class9679.method37766(method3234(var19))) * 180.0F / (float)Math.PI);
+      this.field5031 = (float)(MathHelper.method37814(var19.field18048, var19.field18050) * 180.0F / (float)Math.PI);
+      this.field5032 = (float)(MathHelper.method37814(var19.field18049, (double) MathHelper.method37766(method3234(var19))) * 180.0F / (float)Math.PI);
       this.field5033 = this.field5031;
       this.field5034 = this.field5032;
    }
@@ -82,7 +82,7 @@ public class Class904 extends Class882 {
       if (field5152.equals(var1)) {
          this.field5149 = this.method3210().<Boolean>method35445(field5152);
          if (this.field5149) {
-            this.method3435(this.method3433().field18048, (double)(-0.4F * Class9679.method37783(this.field5148, 0.6F, 1.0F)), this.method3433().field18050);
+            this.method3435(this.method3433().field18048, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.method3433().field18050);
          }
       }
 
@@ -101,7 +101,7 @@ public class Class904 extends Class882 {
 
    @Override
    public void tick() {
-      this.field5148.setSeed(this.method3375().getLeastSignificantBits() ^ this.field5024.method6783());
+      this.field5148.setSeed(this.getUniqueID().getLeastSignificantBits() ^ this.field5024.method6783());
       super.tick();
       PlayerEntity var3 = this.method3544();
       if (var3 != null) {
@@ -201,11 +201,11 @@ public class Class904 extends Class882 {
    }
 
    private boolean method3534(PlayerEntity var1) {
-      Class8848 var4 = var1.method3090();
-      Class8848 var5 = var1.method3091();
+      ItemStack var4 = var1.method3090();
+      ItemStack var5 = var1.method3091();
       boolean var6 = var4.method32107() == Class8514.field37906;
       boolean var7 = var5.method32107() == Class8514.field37906;
-      if (!var1.field5041 && var1.method3066() && (var6 || var7) && !(this.method3277(var1) > 1024.0)) {
+      if (!var1.field5041 && var1.method3066() && (var6 || var7) && !(this.getDistanceSq(var1) > 1024.0)) {
          return false;
       } else {
          this.method2904();
@@ -243,7 +243,7 @@ public class Class904 extends Class882 {
    }
 
    private void method3537(BlockPos var1) {
-      Class1657 var4 = (Class1657)this.field5024;
+      ServerWorld var4 = (ServerWorld)this.field5024;
       int var5 = 1;
       BlockPos var6 = var1.method8311();
       if (this.field5054.nextFloat() < 0.25F && this.field5024.method6796(var6)) {
@@ -257,7 +257,7 @@ public class Class904 extends Class882 {
       if (this.field5154 <= 0) {
          if (this.field5156 <= 0) {
             if (this.field5155 <= 0) {
-               this.field5155 = Class9679.method37782(this.field5054, 100, 600);
+               this.field5155 = MathHelper.method37782(this.field5054, 100, 600);
                this.field5155 = this.field5155 - this.field5162 * 20 * 5;
             } else {
                this.field5155 -= var5;
@@ -275,11 +275,11 @@ public class Class904 extends Class882 {
                }
 
                if (this.field5054.nextFloat() < var9) {
-                  float var10 = Class9679.method37783(this.field5054, 0.0F, 360.0F) * (float) (Math.PI / 180.0);
-                  float var11 = Class9679.method37783(this.field5054, 25.0F, 60.0F);
-                  double var12 = this.getPosX() + (double)(Class9679.method37763(var10) * var11 * 0.1F);
-                  double var14 = (double)((float)Class9679.method37769(this.getPosY()) + 1.0F);
-                  double var16 = this.getPosZ() + (double)(Class9679.method37764(var10) * var11 * 0.1F);
+                  float var10 = MathHelper.method37783(this.field5054, 0.0F, 360.0F) * (float) (Math.PI / 180.0);
+                  float var11 = MathHelper.method37783(this.field5054, 25.0F, 60.0F);
+                  double var12 = this.getPosX() + (double)(MathHelper.method37763(var10) * var11 * 0.1F);
+                  double var14 = (double)((float) MathHelper.method37769(this.getPosY()) + 1.0F);
+                  double var16 = this.getPosZ() + (double)(MathHelper.method37764(var10) * var11 * 0.1F);
                   Class7380 var18 = var4.method6738(new BlockPos(var12, var14 - 1.0, var16));
                   if (var18.method23448(Blocks.WATER)) {
                      var4.method6939(Class7940.field34099, var12, var14, var16, 2 + this.field5054.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
@@ -287,8 +287,8 @@ public class Class904 extends Class882 {
                }
 
                if (this.field5155 <= 0) {
-                  this.field5157 = Class9679.method37783(this.field5054, 0.0F, 360.0F);
-                  this.field5156 = Class9679.method37782(this.field5054, 20, 80);
+                  this.field5157 = MathHelper.method37783(this.field5054, 0.0F, 360.0F);
+                  this.field5156 = MathHelper.method37782(this.field5054, 20, 80);
                }
             }
          } else {
@@ -318,15 +318,15 @@ public class Class904 extends Class882 {
                   (double)this.method3429(),
                   0.2F
                );
-               this.field5154 = Class9679.method37782(this.field5054, 20, 40);
+               this.field5154 = MathHelper.method37782(this.field5054, 20, 40);
                this.method3210().method35446(field5152, true);
             } else {
                this.field5157 = (float)((double)this.field5157 + this.field5054.nextGaussian() * 4.0);
                float var21 = this.field5157 * (float) (Math.PI / 180.0);
-               float var22 = Class9679.method37763(var21);
-               float var23 = Class9679.method37764(var21);
+               float var22 = MathHelper.method37763(var21);
+               float var23 = MathHelper.method37764(var21);
                double var24 = this.getPosX() + (double)(var22 * (float)this.field5156 * 0.1F);
-               double var25 = (double)((float)Class9679.method37769(this.getPosY()) + 1.0F);
+               double var25 = (double)((float) MathHelper.method37769(this.getPosY()) + 1.0F);
                double var26 = this.getPosZ() + (double)(var23 * (float)this.field5156 * 0.1F);
                Class7380 var27 = var4.method6738(new BlockPos(var24, var25 - 1.0, var26));
                if (var27.method23448(Blocks.WATER)) {
@@ -407,23 +407,23 @@ public class Class904 extends Class882 {
    public void method2723(Class39 var1) {
    }
 
-   public int method3542(Class8848 var1) {
+   public int method3542(ItemStack var1) {
       PlayerEntity var4 = this.method3544();
       if (!this.field5024.field9020 && var4 != null) {
          int var5 = 0;
          if (this.field5159 == null) {
             if (this.field5154 > 0) {
-               Class9464 var6 = new Class9464((Class1657)this.field5024)
-                  .method36454(Class9525.field44335, this.method3431())
+               Class9464 var6 = new Class9464((ServerWorld)this.field5024)
+                  .method36454(Class9525.field44335, this.getPositionVec())
                   .method36454(Class9525.field44338, var1)
                   .method36454(Class9525.field44330, this)
                   .method36450(this.field5054)
                   .method36453((float)this.field5161 + var4.method2978());
                Class7318 var7 = this.field5024.method6715().method1411().method1058(Class8793.field39591);
-               List<Class8848> var8 = var7.method23182(var6.method36460(Class8524.field38285));
+               List<ItemStack> var8 = var7.method23182(var6.method36460(Class8524.field38285));
                Class9551.field44494.method15124((Class878)var4, var1, this, var8);
 
-               for (Class8848 var10 : var8) {
+               for (ItemStack var10 : var8) {
                   Class1000 var11 = new Class1000(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var10);
                   double var12 = var4.getPosX() - this.getPosX();
                   double var14 = var4.getPosY() - this.getPosY();
@@ -444,7 +444,7 @@ public class Class904 extends Class882 {
             }
          } else {
             this.method3543();
-            Class9551.field44494.method15124((Class878)var4, var1, this, Collections.<Class8848>emptyList());
+            Class9551.field44494.method15124((Class878)var4, var1, this, Collections.<ItemStack>emptyList());
             this.field5024.method6786(this, (byte)31);
             var5 = !(this.field5159 instanceof Class1000) ? 5 : 3;
          }

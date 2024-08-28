@@ -27,9 +27,9 @@ public class Class2937 extends Class2898<Class4712> {
 
       for (int var9 = 0; var9 < var3 * var3; var9++) {
          var8.method8374(var2)
-            .method8381(Class9679.method37782(var1, -var3, var3), Class9679.method37782(var1, -var4, var4), Class9679.method37782(var1, -var3, var3));
+            .method8381(MathHelper.method37782(var1, -var3, var3), MathHelper.method37782(var1, -var4, var4), MathHelper.method37782(var1, -var3, var3));
          if (method11279(var0, var8) && !method11281(var0, var8)) {
-            int var10 = Class9679.method37782(var1, 1, var5);
+            int var10 = MathHelper.method37782(var1, 1, var5);
             if (var1.nextInt(6) == 0) {
                var10 *= 2;
             }
@@ -64,7 +64,7 @@ public class Class2937 extends Class2898<Class4712> {
          if (var0.method7007(var2)) {
             if (var8 == var3 || !var0.method7007(var2.method8311())) {
                var0.method6725(
-                  var2, Blocks.field37088.method11579().method23465(Class3452.field19267, Integer.valueOf(Class9679.method37782(var1, var4, var5))), 2
+                  var2, Blocks.field37088.method11579().method23465(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
                );
                break;
             }

@@ -88,30 +88,30 @@ public interface Class1665 {
       Vector3d var5 = var0.method20745();
       Vector3d var6 = var0.method20744();
       if (!var5.equals(var6)) {
-         double var7 = Class9679.method37822(-1.0E-7, var6.field18048, var5.field18048);
-         double var9 = Class9679.method37822(-1.0E-7, var6.field18049, var5.field18049);
-         double var11 = Class9679.method37822(-1.0E-7, var6.field18050, var5.field18050);
-         double var13 = Class9679.method37822(-1.0E-7, var5.field18048, var6.field18048);
-         double var15 = Class9679.method37822(-1.0E-7, var5.field18049, var6.field18049);
-         double var17 = Class9679.method37822(-1.0E-7, var5.field18050, var6.field18050);
-         int var19 = Class9679.method37769(var13);
-         int var20 = Class9679.method37769(var15);
-         int var21 = Class9679.method37769(var17);
+         double var7 = MathHelper.method37822(-1.0E-7, var6.field18048, var5.field18048);
+         double var9 = MathHelper.method37822(-1.0E-7, var6.field18049, var5.field18049);
+         double var11 = MathHelper.method37822(-1.0E-7, var6.field18050, var5.field18050);
+         double var13 = MathHelper.method37822(-1.0E-7, var5.field18048, var6.field18048);
+         double var15 = MathHelper.method37822(-1.0E-7, var5.field18049, var6.field18049);
+         double var17 = MathHelper.method37822(-1.0E-7, var5.field18050, var6.field18050);
+         int var19 = MathHelper.method37769(var13);
+         int var20 = MathHelper.method37769(var15);
+         int var21 = MathHelper.method37769(var17);
          Mutable var22 = new Mutable(var19, var20, var21);
          Object var23 = var1.apply(var0, var22);
          if (var23 == null) {
             double var24 = var7 - var13;
             double var26 = var9 - var15;
             double var28 = var11 - var17;
-            int var30 = Class9679.method37826(var24);
-            int var31 = Class9679.method37826(var26);
-            int var32 = Class9679.method37826(var28);
+            int var30 = MathHelper.method37826(var24);
+            int var31 = MathHelper.method37826(var26);
+            int var32 = MathHelper.method37826(var28);
             double var33 = var30 != 0 ? (double)var30 / var24 : Double.MAX_VALUE;
             double var35 = var31 != 0 ? (double)var31 / var26 : Double.MAX_VALUE;
             double var37 = var32 != 0 ? (double)var32 / var28 : Double.MAX_VALUE;
-            double var39 = var33 * (var30 <= 0 ? Class9679.method37808(var13) : 1.0 - Class9679.method37808(var13));
-            double var41 = var35 * (var31 <= 0 ? Class9679.method37808(var15) : 1.0 - Class9679.method37808(var15));
-            double var43 = var37 * (var32 <= 0 ? Class9679.method37808(var17) : 1.0 - Class9679.method37808(var17));
+            double var39 = var33 * (var30 <= 0 ? MathHelper.method37808(var13) : 1.0 - MathHelper.method37808(var13));
+            double var41 = var35 * (var31 <= 0 ? MathHelper.method37808(var15) : 1.0 - MathHelper.method37808(var15));
+            double var43 = var37 * (var32 <= 0 ? MathHelper.method37808(var17) : 1.0 - MathHelper.method37808(var17));
 
             while (var39 <= 1.0 || var41 <= 1.0 || var43 <= 1.0) {
                if (!(var39 < var41)) {

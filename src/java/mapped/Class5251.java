@@ -34,8 +34,8 @@ public class Class5251 extends Module {
     private void method16372(Class4396 var1) {
         if (mc.field1339 != null) {
             Packet var4 = var1.method13898();
-            if (var4 instanceof Class5616) {
-                Class5616 var5 = (Class5616) var4;
+            if (var4 instanceof SChatPacket) {
+                SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString().replaceAll("§.", "");
                 if (var5.method17650() != ChatType.SYSTEM && var5.method17650() != ChatType.CHAT) {
                     return;

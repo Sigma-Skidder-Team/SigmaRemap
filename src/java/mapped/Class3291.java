@@ -18,11 +18,11 @@ public class Class3291 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       var2.method2769(var6, var3);
       var2.method2913(Class8876.field40098.method172(this));
-      return Class6794.<Class8848>method20700(var6, var1.method6714());
+      return Class6794.<ItemStack>method20700(var6, var1.method6714());
    }
 
    public static boolean method11833(Class39 var0) {

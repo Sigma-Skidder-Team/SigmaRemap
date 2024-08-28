@@ -14,33 +14,33 @@ public class Class3316 extends Class3314 {
       super(var1);
    }
 
-   public static Class8848 method11859(Class1655 var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
-      Class8848 var8 = new Class8848(Class8514.field37955);
+   public static ItemStack method11859(Class1655 var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
+      ItemStack var8 = new ItemStack(Class8514.field37955);
       method11863(var8, var0, var1, var2, var3, var4, var5, var0.method6813());
       return var8;
    }
 
    @Nullable
-   public static Class7529 method11860(Class8848 var0, Class1655 var1) {
+   public static Class7529 method11860(ItemStack var0, Class1655 var1) {
       return var1.method6798(method11864(method11862(var0)));
    }
 
    @Nullable
-   public static Class7529 method11861(Class8848 var0, Class1655 var1) {
+   public static Class7529 method11861(ItemStack var0, Class1655 var1) {
       Class7529 var4 = method11860(var0, var1);
-      if (var4 == null && var1 instanceof Class1657) {
+      if (var4 == null && var1 instanceof ServerWorld) {
          var4 = method11863(var0, var1, var1.method6788().method20029(), var1.method6788().method20031(), 3, false, false, var1.method6813());
       }
 
       return var4;
    }
 
-   public static int method11862(Class8848 var0) {
+   public static int method11862(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return var3 != null && var3.method119("map", 99) ? var3.method122("map") : 0;
    }
 
-   private static Class7529 method11863(Class8848 var0, Class1655 var1, int var2, int var3, int var4, boolean var5, boolean var6, Class8705<Class1655> var7) {
+   private static Class7529 method11863(ItemStack var0, Class1655 var1, int var2, int var3, int var4, boolean var5, boolean var6, Class8705<Class1655> var7) {
       int var10 = var1.method6800();
       Class7529 var11 = new Class7529(method11864(var10));
       var11.method24589(var2, var3, var4, var5, var6, var7);
@@ -58,8 +58,8 @@ public class Class3316 extends Class3314 {
          int var6 = 1 << var3.field32321;
          int var7 = var3.field32316;
          int var8 = var3.field32317;
-         int var9 = Class9679.method37769(var2.getPosX() - (double)var7) / var6 + 64;
-         int var10 = Class9679.method37769(var2.getPosZ() - (double)var8) / var6 + 64;
+         int var9 = MathHelper.method37769(var2.getPosX() - (double)var7) / var6 + 64;
+         int var10 = MathHelper.method37769(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
          if (var1.method6812().method36876()) {
             var11 /= 2;
@@ -188,7 +188,7 @@ public class Class3316 extends Class3314 {
       return var0[var2 * var1 + var3 * var1 * 128 * var1].method32515() >= 0.0F;
    }
 
-   public static void method11868(Class1657 var0, Class8848 var1) {
+   public static void method11868(ServerWorld var0, ItemStack var1) {
       Class7529 var4 = method11861(var1, var0);
       if (var4 != null && var0.method6813() == var4.field32318) {
          int var5 = 1 << var4.field32321;
@@ -253,7 +253,7 @@ public class Class3316 extends Class3314 {
                   } else {
                      var14 = Class7210.field30962;
                      if (var12 > 7 && var16 % 2 == 0) {
-                        var13 = (var15 + (int)(Class9679.method37763((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
+                        var13 = (var15 + (int)(MathHelper.method37763((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
                         if (var13 != 3) {
                            if (var13 == 4) {
                               var13 = 0;
@@ -289,7 +289,7 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public void method11724(Class8848 var1, Class1655 var2, Entity var3, int var4, boolean var5) {
+   public void method11724(ItemStack var1, Class1655 var2, Entity var3, int var4, boolean var5) {
       if (!var2.field9020) {
          Class7529 var8 = method11861(var1, var2);
          if (var8 != null) {
@@ -307,12 +307,12 @@ public class Class3316 extends Class3314 {
 
    @Nullable
    @Override
-   public Packet<?> method11858(Class8848 var1, Class1655 var2, PlayerEntity var3) {
+   public Packet<?> method11858(ItemStack var1, Class1655 var2, PlayerEntity var3) {
       return method11861(var1, var2).method24597(var1, var2, var3);
    }
 
    @Override
-   public void method11725(Class8848 var1, Class1655 var2, PlayerEntity var3) {
+   public void method11725(ItemStack var1, Class1655 var2, PlayerEntity var3) {
       Class39 var6 = var1.method32142();
       if (var6 != null && var6.method119("map_scale_direction", 99)) {
          method11869(var1, var2, var6.method122("map_scale_direction"));
@@ -323,7 +323,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   public static void method11869(Class8848 var0, Class1655 var1, int var2) {
+   public static void method11869(ItemStack var0, Class1655 var1, int var2) {
       Class7529 var5 = method11861(var0, var1);
       if (var5 != null) {
          method11863(
@@ -331,7 +331,7 @@ public class Class3316 extends Class3314 {
             var1,
             var5.field32316,
             var5.field32317,
-            Class9679.method37775(var5.field32321 + var2, 0, 4),
+            MathHelper.method37775(var5.field32321 + var2, 0, 4),
             var5.field32319,
             var5.field32320,
             var5.field32318
@@ -339,7 +339,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   public static void method11870(Class1655 var0, Class8848 var1) {
+   public static void method11870(Class1655 var0, ItemStack var1) {
       Class7529 var4 = method11861(var1, var0);
       if (var4 != null) {
          Class7529 var5 = method11863(var1, var0, 0, 0, var4.field32321, var4.field32319, var4.field32320, var4.field32318);
@@ -348,7 +348,7 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       Class7529 var7 = var2 != null ? method11861(var1, var2) : null;
       if (var7 != null && var7.field32323) {
          var3.add(new TranslationTextComponent("filled_map.locked", method11862(var1)).mergeStyle(TextFormatting.GRAY));
@@ -365,7 +365,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   public static int method11871(Class8848 var0) {
+   public static int method11871(ItemStack var0) {
       Class39 var3 = var0.method32145("display");
       if (var3 != null && var3.method119("MapColor", 99)) {
          int var4 = var3.method122("MapColor");

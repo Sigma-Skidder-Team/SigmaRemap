@@ -35,7 +35,7 @@ public abstract class Class2699 extends Class2595 {
                return false;
             } else {
                double var6 = this.method10914();
-               if (!(this.field17153.method3277(var3) > var6 * var6)) {
+               if (!(this.field17153.getDistanceSq(var3) > var6 * var6)) {
                   if (this.field17154) {
                      if (!this.field17153.method4231().method35460(var3)) {
                         if (++this.field17158 > this.field17160) {
@@ -117,8 +117,8 @@ public abstract class Class2699 extends Class2595 {
       if (var4 != null) {
          Class7176 var5 = var4.method28694();
          if (var5 != null) {
-            int var6 = var5.field30847 - Class9679.method37769(var1.getPosX());
-            int var7 = var5.field30849 - Class9679.method37769(var1.getPosZ());
+            int var6 = var5.field30847 - MathHelper.method37769(var1.getPosX());
+            int var7 = var5.field30849 - MathHelper.method37769(var1.getPosZ());
             return (double)(var6 * var6 + var7 * var7) <= 2.25;
          } else {
             return false;

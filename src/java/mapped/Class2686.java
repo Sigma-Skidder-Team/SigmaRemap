@@ -39,7 +39,7 @@ public class Class2686 extends Class2595 {
          if (this.field17107 && this.field17103.field5024.method6740()) {
             return false;
          } else {
-            Class1657 var3 = (Class1657)this.field17103.field5024;
+            ServerWorld var3 = (ServerWorld)this.field17103.field5024;
             BlockPos var4 = this.field17103.method3432();
             if (!var3.method6954(var4, 6)) {
                return false;
@@ -101,7 +101,7 @@ public class Class2686 extends Class2595 {
    @Override
    public boolean method10806() {
       return !this.field17103.method4230().method21664()
-         ? !this.field17106.method8317(this.field17103.method3431(), (double)(this.field17103.method3429() + (float)this.field17109))
+         ? !this.field17106.method8317(this.field17103.getPositionVec(), (double)(this.field17103.method3429() + (float)this.field17109))
          : false;
    }
 
@@ -112,7 +112,7 @@ public class Class2686 extends Class2595 {
 
    @Override
    public void method10807() {
-      if (this.field17103.method4230().method21664() || this.field17106.method8317(this.field17103.method3431(), (double)this.field17109)) {
+      if (this.field17103.method4230().method21664() || this.field17106.method8317(this.field17103.getPositionVec(), (double)this.field17109)) {
          this.field17108.add(this.field17106);
       }
    }

@@ -20,7 +20,7 @@ public class Class4486 extends Class4457 {
       return new Class4486(Class9587.field44822, var0, Class7340.field31445, Class8576.field38559, Class8634.field38839);
    }
 
-   public boolean method14153(Class7380 var1, BlockPos var2, Class1657 var3, Class8848 var4) {
+   public boolean method14153(Class7380 var1, BlockPos var2, ServerWorld var3, ItemStack var4) {
       if (this.field21682 != null && !var1.method23448(this.field21682)) {
          return false;
       } else if (this.field21683.method23258(var1)) {

@@ -44,7 +44,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public float field6141;
    public float field6142;
    private boolean field6143;
-   private Class79 field6144;
+   private Hand field6144;
    private boolean field6145;
    private boolean field6146 = true;
    private int field6147;
@@ -148,14 +148,14 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          boolean var5 = this.method3337();
          if (var5 != this.field6127) {
             Class1865 var6 = !var5 ? Class1865.field10044 : Class1865.field10043;
-            this.connection.sendPacket(new Class5583(this, var6));
+            this.connection.sendPacket(new CEntityActionPacket(this, var6));
             this.field6127 = var5;
          }
 
          boolean var31 = this.method3331();
          if (var31 != this.field6126) {
             Class1865 var7 = !var31 ? Class1865.field10041 : Class1865.field10040;
-            this.connection.sendPacket(new Class5583(this, var7));
+            this.connection.sendPacket(new CEntityActionPacket(this, var7));
             this.field6126 = var31;
          }
 
@@ -225,7 +225,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       this.connection.sendPacket(new Class5492(var4, BlockPos.field13032, Direction.field672));
       return this.field4902
             .method3619(this.field4902.field5443, var1 && !this.field4902.method4028().method32105() ? this.field4902.method4028().method32179() : 1)
-         != Class8848.field39973;
+         != ItemStack.field39973;
    }
 
    public void method5389(String var1) {
@@ -233,9 +233,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2820(Class79 var1) {
-      super.method2820(var1);
-      this.connection.sendPacket(new Class5511(var1));
+   public void swingArm(Hand var1) {
+      super.swingArm(var1);
+      this.connection.sendPacket(new CAnimateHandPacket(var1));
    }
 
    @Override
@@ -257,7 +257,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5390() {
-      this.field4902.method4056(Class8848.field39973);
+      this.field4902.method4056(ItemStack.field39973);
       super.method2772();
       this.field6132.displayGuiScreen((Screen)null);
    }
@@ -310,11 +310,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method5392() {
-      this.connection.sendPacket(new Class5583(this, Class1865.field10045, Class9679.method37767(this.method5406() * 100.0F)));
+      this.connection.sendPacket(new CEntityActionPacket(this, Class1865.field10045, MathHelper.method37767(this.method5406() * 100.0F)));
    }
 
    public void method5393() {
-      this.connection.sendPacket(new Class5583(this, Class1865.field10047));
+      this.connection.sendPacket(new CEntityActionPacket(this, Class1865.field10047));
    }
 
    public void method5394(String var1) {
@@ -402,8 +402,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method3098(boolean var1) {
-      super.method3098(var1);
+   public void setSprinting(boolean var1) {
+      super.setSprinting(var1);
       this.field6134 = 0;
    }
 
@@ -451,8 +451,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method3154(Class79 var1) {
-      Class8848 var4 = this.method3094(var1);
+   public void method3154(Hand var1) {
+      ItemStack var4 = this.method3094(var1);
       if (!var4.method32105() && !this.method3148()) {
          super.method3154(var1);
          this.field6143 = true;
@@ -472,7 +472,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public Class79 method3149() {
+   public Hand method3149() {
       return this.field6144;
    }
 
@@ -481,7 +481,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       super.method3155(var1);
       if (field4934.equals(var1)) {
          boolean var4 = (this.field5063.<Byte>method35445(field4934) & 1) > 0;
-         Class79 var5 = (this.field5063.<Byte>method35445(field4934) & 2) <= 0 ? Class79.field182 : Class79.field183;
+         Hand var5 = (this.field5063.<Byte>method35445(field4934) & 2) <= 0 ? Hand.field182 : Hand.field183;
          if (var4 && !this.field6143) {
             this.method3154(var5);
          } else if (!var4 && this.field6143) {
@@ -495,8 +495,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public boolean method5405() {
-      Entity var3 = this.method3421();
-      return this.method3328() && var3 instanceof Class1077 && ((Class1077)var3).method4967();
+      Entity var3 = this.getRidingEntity();
+      return this.method3328() && var3 instanceof IJumpingMount && ((IJumpingMount)var3).canJump();
    }
 
    public float method5406() {
@@ -529,7 +529,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2769(Class8848 var1, Class79 var2) {
+   public void method2769(ItemStack var1, Hand var2) {
       Class3257 var5 = var1.method32107();
       if (var5 == Class8514.field38047) {
          this.field6132.displayGuiScreen(new Class828(this, var1, var2));
@@ -592,7 +592,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       this.field6125 = !this.field4919.field29607
          && !this.method2951()
          && this.method3314(Class2090.field13624)
-         && (this.method3331() || !this.method3176() && !this.method3314(Class2090.field13619));
+         && (this.method3331() || !this.isSleeping() && !this.method3314(Class2090.field13619));
       this.field6131.method36336(this.method5407());
       this.field6132.method1567().method37023(this.field6131);
       if (this.method3148() && !this.method3328()) {
@@ -635,7 +635,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          if (this.field6133 <= 0 && !this.field6132.field1299.field44638.method8509()) {
             this.field6133 = 7;
          } else {
-            this.method3098(true);
+            this.setSprinting(true);
          }
       }
 
@@ -646,7 +646,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          && !this.method3148()
          && !this.method3033(Class8254.field35481)
          && this.field6132.field1299.field44638.method8509()) {
-         this.method3098(true);
+         this.setSprinting(true);
       }
 
       if (this.method3337()) {
@@ -654,10 +654,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          boolean var9 = var8 || this.field5037 || this.method3250() && !this.method3256();
          if (!this.method2951()) {
             if (var9) {
-               this.method3098(false);
+               this.setSprinting(false);
             }
          } else if (!this.field5036 && !this.field6131.field43914 && var8 || !this.method3250()) {
-            this.method3098(false);
+            this.setSprinting(false);
          }
       }
 
@@ -684,9 +684,9 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (this.field6131.field43913 && !var11 && !var3 && !this.field4919.field29607 && !this.method3328() && !this.method3063()) {
-         Class8848 var12 = this.method2943(Class2106.field13735);
-         if (var12.method32107() == Class8514.field38120 && Class3256.method11698(var12) && this.method2922()) {
-            this.connection.sendPacket(new Class5583(this, Class1865.field10048));
+         ItemStack var12 = this.method2943(Class2106.field13735);
+         if (var12.method32107() == Class8514.field38120 && Class3256.method11698(var12) && this.tryToStartFallFlying()) {
+            this.connection.sendPacket(new CEntityActionPacket(this, Class1865.field10048));
          }
       }
 
@@ -698,11 +698,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.method3263(Class8953.field40469)) {
          if (this.field6149 > 0) {
             this.method3263(Class8953.field40469);
-            this.field6149 = Class9679.method37775(this.field6149 - 10, 0, 600);
+            this.field6149 = MathHelper.method37775(this.field6149 - 10, 0, 600);
          }
       } else {
          int var13 = !this.method2800() ? 1 : 10;
-         this.field6149 = Class9679.method37775(this.field6149 + var13, 0, 600);
+         this.field6149 = MathHelper.method37775(this.field6149 + var13, 0, 600);
       }
 
       if (this.field4919.field29607 && this.isCurrentViewEntity()) {
@@ -723,7 +723,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.method5405()) {
          this.field6140 = 0.0F;
       } else {
-         Class1077 var15 = (Class1077)this.method3421();
+         IJumpingMount var15 = (IJumpingMount)this.getRidingEntity();
          if (this.field6139 < 0) {
             this.field6139++;
             if (this.field6139 == 0) {
@@ -733,7 +733,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
          if (var3 && !this.field6131.field43913) {
             this.field6139 = -10;
-            var15.method4966(Class9679.method37767(this.method5406() * 100.0F));
+            var15.method4966(MathHelper.method37767(this.method5406() * 100.0F));
             this.method5392();
          } else if (!var3 && this.field6131.field43913) {
             this.field6139 = 0;
@@ -800,8 +800,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void method2868() {
       super.method2868();
       this.field6145 = false;
-      if (this.method3421() instanceof Class1002) {
-         Class1002 var3 = (Class1002)this.method3421();
+      if (this.getRidingEntity() instanceof Class1002) {
+         Class1002 var3 = (Class1002)this.getRidingEntity();
          var3.method4173(this.field6131.field43911, this.field6131.field43912, this.field6131.field43909, this.field6131.field43910);
          this.field6145 = this.field6145 | (this.field6131.field43911 || this.field6131.field43912 || this.field6131.field43909 || this.field6131.field43910);
       }
@@ -836,7 +836,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    public void updateAutoJump(float var1, float var2) {
       if (this.method5413()) {
-         Vector3d var5 = this.method3431();
+         Vector3d var5 = this.getPositionVec();
          Vector3d var6 = var5.method11339((double)var1, 0.0, (double)var2);
          Vector3d var7 = new Vector3d((double)var1, 0.0, (double)var2);
          float var8 = this.method2918();
@@ -845,8 +845,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             Class8513 var10 = this.field6131.method36337();
             float var11 = var8 * var10.field37220;
             float var12 = var8 * var10.field37221;
-            float var13 = Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0));
-            float var14 = Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0));
+            float var13 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0));
+            float var14 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0));
             var7 = new Vector3d((double)(var11 * var14 - var12 * var13), var7.field18049, (double)(var12 * var14 + var11 * var13));
             var9 = (float)var7.method11349();
             if (var9 <= 0.001F) {
@@ -854,7 +854,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
          }
 
-         float var42 = Class9679.method37815(var9);
+         float var42 = MathHelper.method37815(var9);
          Vector3d var43 = var7.method11344((double)var42);
          Vector3d var44 = this.method3322();
          float var45 = (float)(var44.field18048 * var43.field18048 + var44.field18050 * var43.field18050);
@@ -955,8 +955,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          float var3 = 600.0F;
          float var4 = 100.0F;
          if (!((float)this.field6149 >= 600.0F)) {
-            float var5 = Class9679.method37777((float)this.field6149 / 100.0F, 0.0F, 1.0F);
-            float var6 = !((float)this.field6149 < 100.0F) ? Class9679.method37777(((float)this.field6149 - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
+            float var5 = MathHelper.method37777((float)this.field6149 / 100.0F, 0.0F, 1.0F);
+            float var6 = !((float)this.field6149 < 100.0F) ? MathHelper.method37777(((float)this.field6149 - 100.0F) / 500.0F, 0.0F, 1.0F) : 0.0F;
             return var5 * 0.6F + var6 * 0.39999998F;
          } else {
             return 1.0F;
@@ -996,8 +996,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.field6132.field1299.method37173().method8246()) {
          return super.method2986(var1);
       } else {
-         float var4 = Class9679.method37821(var1 * 0.5F, this.field5031, this.field5033) * (float) (Math.PI / 180.0);
-         float var5 = Class9679.method37821(var1 * 0.5F, this.field5032, this.field5034) * (float) (Math.PI / 180.0);
+         float var4 = MathHelper.method37821(var1 * 0.5F, this.field5031, this.field5033) * (float) (Math.PI / 180.0);
+         float var5 = MathHelper.method37821(var1 * 0.5F, this.field5032, this.field5034) * (float) (Math.PI / 180.0);
          double var6 = this.method2967() != Class2205.field14418 ? 1.0 : -1.0;
          Vector3d var8 = new Vector3d(0.39 * var6, -0.6, 0.3);
          return var8.method11350(-var5).method11351(-var4).method11338(this.method3286(var1));

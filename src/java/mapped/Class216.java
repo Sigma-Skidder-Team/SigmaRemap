@@ -38,7 +38,7 @@ public class Class216 implements Class215 {
       return this.field848;
    }
 
-   public void method780(Class7202 var1, Class8848 var2, int var3, int var4, Class9332 var5, Class5422 var6) {
+   public void method780(Class7202 var1, ItemStack var2, int var3, int var4, Class9332 var5, Class5422 var6) {
       boolean var9 = Class7944.method26969().method1114();
       boolean var10 = Class7944.method26894() && var9;
       if (var10) {
@@ -61,7 +61,7 @@ public class Class216 implements Class215 {
       }
    }
 
-   public void method781(Class8848 var1, Class2327 var2, boolean var3, Class9332 var4, Class7733 var5, int var6, int var7, Class7202 var8) {
+   public void method781(ItemStack var1, Class2327 var2, boolean var3, Class9332 var4, Class7733 var5, int var6, int var7, Class7202 var8) {
       if (!var1.method32105()) {
          var4.method35294();
          boolean var11 = var2 == Class2327.field15930 || var2 == Class2327.field15931 || var2 == Class2327.field15932;
@@ -200,7 +200,7 @@ public class Class216 implements Class215 {
          : Class7802.method26050(var0.method25597(!var2 ? Class4520.method14337() : Class4520.method14335()), var0.method25597(var1));
    }
 
-   private void method787(Class9332 var1, Class5422 var2, List<Class8557> var3, Class8848 var4, int var5, int var6) {
+   private void method787(Class9332 var1, Class5422 var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
       boolean var9 = !var4.method32105();
       Class8892 var10 = var1.method35296();
       boolean var11 = Class8564.method30588();
@@ -231,7 +231,7 @@ public class Class216 implements Class215 {
       }
    }
 
-   public Class7202 method788(Class8848 var1, Class1655 var2, Class880 var3) {
+   public Class7202 method788(ItemStack var1, Class1655 var2, Class880 var3) {
       Class3257 var6 = var1.method32107();
       Class7202 var7;
       if (var6 != Class8514.field38144) {
@@ -250,22 +250,22 @@ public class Class216 implements Class215 {
       return var9 != null ? var9 : this.field848.method29496().method1024();
    }
 
-   public void method789(Class8848 var1, Class2327 var2, int var3, int var4, Class9332 var5, Class7733 var6) {
+   public void method789(ItemStack var1, Class2327 var2, int var3, int var4, Class9332 var5, Class7733 var6) {
       this.method790((Class880)null, var1, var2, false, var5, var6, (Class1655)null, var3, var4);
    }
 
-   public void method790(Class880 var1, Class8848 var2, Class2327 var3, boolean var4, Class9332 var5, Class7733 var6, Class1655 var7, int var8, int var9) {
+   public void method790(Class880 var1, ItemStack var2, Class2327 var3, boolean var4, Class9332 var5, Class7733 var6, Class1655 var7, int var8, int var9) {
       if (!var2.method32105()) {
          Class7202 var12 = this.method788(var2, var7, var1);
          this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
       }
    }
 
-   public void method791(Class8848 var1, int var2, int var3) {
+   public void method791(ItemStack var1, int var2, int var3) {
       this.method792(var1, var2, var3, this.method788(var1, (Class1655)null, (Class880)null));
    }
 
-   public void method792(Class8848 var1, int var2, int var3, Class7202 var4) {
+   public void method792(ItemStack var1, int var2, int var3, Class7202 var4) {
       field852 = true;
       RenderSystem.pushMatrix();
       this.field849.bindTexture(Class289.field1102);
@@ -300,19 +300,19 @@ public class Class216 implements Class215 {
       field852 = false;
    }
 
-   public void method793(Class8848 var1, int var2, int var3) {
+   public void method793(ItemStack var1, int var2, int var3) {
       this.method796(Minecraft.getInstance().field1339, var1, var2, var3);
    }
 
-   public void method794(Class8848 var1, int var2, int var3) {
+   public void method794(ItemStack var1, int var2, int var3) {
       this.method796((Class880)null, var1, var2, var3);
    }
 
-   public void method795(Class880 var1, Class8848 var2, int var3, int var4) {
+   public void method795(Class880 var1, ItemStack var2, int var3, int var4) {
       this.method796(var1, var2, var3, var4);
    }
 
-   private void method796(Class880 var1, Class8848 var2, int var3, int var4) {
+   private void method796(Class880 var1, ItemStack var2, int var3, int var4) {
       if (!var2.method32105()) {
          this.field847 += 50.0F;
 
@@ -333,11 +333,11 @@ public class Class216 implements Class215 {
       }
    }
 
-   public void method797(Class9834 var1, Class8848 var2, int var3, int var4) {
+   public void method797(Class9834 var1, ItemStack var2, int var3, int var4) {
       this.method798(var1, var2, var3, var4, (String)null);
    }
 
-   public void method798(Class9834 var1, Class8848 var2, int var3, int var4, String var5) {
+   public void method798(Class9834 var1, ItemStack var2, int var3, int var4, String var5) {
       if (!var2.method32105()) {
          Class9332 var8 = new Class9332();
          if (var2.method32179() != 1 || var5 != null) {
@@ -370,7 +370,7 @@ public class Class216 implements Class215 {
             float var12 = (float)var2.method32119();
             float var13 = Math.max(0.0F, (var12 - var11) / var12);
             int var14 = Math.round(13.0F - var11 * 13.0F / var12);
-            int var15 = Class9679.method37818(var13 / 3.0F, 1.0F, 1.0F);
+            int var15 = MathHelper.method37818(var13 / 3.0F, 1.0F, 1.0F);
             if (Class9299.field42910.method20214() && Class9299.field42914.method20214()) {
                double var16 = Class9299.method35068(var2.method32107(), Class9299.field42910, var2);
                int var18 = Class9299.method35065(var2.method32107(), Class9299.field42914, var2);
@@ -399,7 +399,7 @@ public class Class216 implements Class215 {
             RenderSystem.method27938();
             Class9352 var23 = Class9352.method35409();
             Class5425 var24 = var23.method35411();
-            this.method799(var24, var3, var4 + Class9679.method37767(16.0F * (1.0F - var22)), 16, Class9679.method37773(16.0F * var22), 255, 255, 255, 127);
+            this.method799(var24, var3, var4 + MathHelper.method37767(16.0F * (1.0F - var22)), 16, MathHelper.method37773(16.0F * var22), 255, 255, 255, 127);
             RenderSystem.method27861();
             RenderSystem.enableDepthTest();
          }

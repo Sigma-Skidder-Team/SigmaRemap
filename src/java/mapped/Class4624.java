@@ -309,7 +309,7 @@ public class Class4624 {
    private String method14586(Class6754<?> var1) throws Class2435 {
       var1.method20590("sid", this.field22145);
       var1.method20590("user", this.field22146);
-      var1.method20590("version", Class9246.method34773().getName());
+      var1.method20590("version", SharedConstants.method34773().getName());
 
       try {
          int var4 = var1.method20594();

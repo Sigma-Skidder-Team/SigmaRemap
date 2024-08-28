@@ -164,8 +164,8 @@ public class Class5162 extends Module {
                 this.field23430 = mc.field1339.field4902.field5443;
                 mc.field1339.field4902.field5443 = var3;
                 mc.field1337.method23138();
-                mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field183));
-                mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+                mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
+                mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
             }
         } else {
             if (var3 < 0 || this.field23428 <= 3 || mc.field1339.method3042() > this.method15977("Health")) {
@@ -173,8 +173,8 @@ public class Class5162 extends Module {
             }
 
             mc.getClientPlayNetHandler().sendPacket(new Class5539(var3));
-            mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field183));
-            mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+            mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
+            mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
             if (var5) {
                 mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13488, BlockPos.field13032, Direction.field672));
             }
@@ -185,7 +185,7 @@ public class Class5162 extends Module {
     }
 
     private int method16062(int var1) {
-        Class8848 var4 = Class7789.method25866(13);
+        ItemStack var4 = Class7789.method25866(13);
         if (var4.method32107() == Class8514.field37836 && var4.method32179() <= 64 - var1) {
             return 13;
         } else {

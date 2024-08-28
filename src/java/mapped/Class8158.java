@@ -248,7 +248,7 @@ public class Class8158 {
             var6 = ((Class27)var5).size();
          }
       } else {
-         var6 = Class9679.method37769(((Class31)var5).method87());
+         var6 = MathHelper.method37769(((Class31)var5).method87());
       }
 
       var0.method20179(var1.method22314(var5), false);
@@ -258,7 +258,7 @@ public class Class8158 {
    private static int method28322(Class6619 var0, Class7151 var1, Class9670 var2, double var3) throws CommandSyntaxException {
       Class30 var7 = method28320(var2, var1);
       if (var7 instanceof Class31) {
-         int var8 = Class9679.method37769(((Class31)var7).method87() * var3);
+         int var8 = MathHelper.method37769(((Class31)var7).method87() * var3);
          var0.method20179(var1.method22315(var2, var3, var8), false);
          return var8;
       } else {

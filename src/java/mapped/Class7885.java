@@ -17,7 +17,7 @@ public class Class7885 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(Class1657 var1, Class880 var2) {
+   public void method26425(ServerWorld var1, Class880 var2) {
       method26441(var2);
    }
 

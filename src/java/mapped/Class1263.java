@@ -43,13 +43,13 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
       float var20 = (float)(this.field6681 + var16 * 25);
       float var21 = (float)(var6 + 50);
       if (var20 > var21) {
-         this.field6681 = (int)((float)this.field6681 - var7 * (float)Class9679.method37773((var20 - var21) / var7));
+         this.field6681 = (int)((float)this.field6681 - var7 * (float) MathHelper.method37773((var20 - var21) / var7));
       }
 
       float var22 = (float)this.field6681;
       float var23 = (float)(var6 - 100);
       if (var22 < var23) {
-         this.field6681 = (int)((float)this.field6681 - var7 * (float)Class9679.method37773((var22 - var23) / var7));
+         this.field6681 = (int)((float)this.field6681 - var7 * (float) MathHelper.method37773((var22 - var23) / var7));
       }
 
       this.field6679 = true;
@@ -115,7 +115,7 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
          RenderSystem.translatef(0.0F, 0.0F, 170.0F);
          int var7 = this.field6678.size() > 16 ? 5 : 4;
          int var8 = Math.min(this.field6678.size(), var7);
-         int var9 = Class9679.method37773((float)this.field6678.size() / (float)var7);
+         int var9 = MathHelper.method37773((float)this.field6678.size() / (float)var7);
          byte var10 = 24;
          byte var11 = 4;
          byte var12 = 82;

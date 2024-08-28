@@ -30,7 +30,7 @@ public class Class6762 extends Class6764 {
    @Override
    public Class7176 method20615() {
       Mutable var3 = new Mutable();
-      int var4 = Class9679.method37769(this.field29476.getPosY());
+      int var4 = MathHelper.method37769(this.field29476.getPosY());
       Class7380 var5 = this.field29475.method6738(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
       if (!this.field29476.method3107(var5.method23449().method23472())) {
          if (this.method20649() && this.field29476.method3250()) {
@@ -54,7 +54,7 @@ public class Class6762 extends Class6764 {
 
             var4 = var6.method8311().getY();
          } else {
-            var4 = Class9679.method37769(this.field29476.getPosY() + 0.5);
+            var4 = MathHelper.method37769(this.field29476.getPosY() + 0.5);
          }
       } else {
          while (this.field29476.method3107(var5.method23449().method23472())) {
@@ -92,7 +92,7 @@ public class Class6762 extends Class6764 {
 
    @Override
    public Class7175 method20616(double var1, double var3, double var5) {
-      return new Class7175(this.method20641(Class9679.method37769(var1), Class9679.method37769(var3), Class9679.method37769(var5)));
+      return new Class7175(this.method20641(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5)));
    }
 
    @Override
@@ -102,7 +102,7 @@ public class Class6762 extends Class6764 {
       Class2163 var7 = this.method20632(this.field29476, var2.field30847, var2.field30848 + 1, var2.field30849);
       Class2163 var8 = this.method20632(this.field29476, var2.field30847, var2.field30848, var2.field30849);
       if (this.field29476.method4223(var7) >= 0.0F && var8 != Class2163.field14206) {
-         var6 = Class9679.method37767(Math.max(1.0F, this.field29476.field5051));
+         var6 = MathHelper.method37767(Math.max(1.0F, this.field29476.field5051));
       }
 
       double var9 = method20626(this.field29475, new BlockPos(var2.field30847, var2.field30848, var2.field30849));
@@ -177,7 +177,7 @@ public class Class6762 extends Class6764 {
          (double)var1.field30849 - this.field29476.getPosZ()
       );
       Class6488 var5 = this.field29476.method3389();
-      int var6 = Class9679.method37774(var4.method11348() / var5.method19675());
+      int var6 = MathHelper.method37774(var4.method11348() / var5.method19675());
       var4 = var4.method11344((double)(1.0F / (float)var6));
 
       for (int var7 = 1; var7 <= var6; var7++) {

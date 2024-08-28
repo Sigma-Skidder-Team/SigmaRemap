@@ -16,10 +16,10 @@ public class Class8788 {
    private void method31719(long var1, double var3) {
       this.field39526 = var1;
       double var7 = var3 - this.field39524;
-      var7 = Class9679.method37790(var7 + 0.5, 1.0) - 0.5;
+      var7 = MathHelper.method37790(var7 + 0.5, 1.0) - 0.5;
       this.field39525 += var7 * 0.1;
       this.field39525 *= 0.8;
-      this.field39524 = Class9679.method37790(this.field39524 + this.field39525, 1.0);
+      this.field39524 = MathHelper.method37790(this.field39524 + this.field39525, 1.0);
    }
 
    // $VF: synthetic method

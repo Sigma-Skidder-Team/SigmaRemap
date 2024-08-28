@@ -49,7 +49,7 @@ public final class Class8088 {
    public static Predicate<Entity> method27982(Entity var0) {
       return var1 -> {
          while (var1.method3328()) {
-            var1 = var1.method3421();
+            var1 = var1.getRidingEntity();
             if (var1 == var0) {
                return false;
             }

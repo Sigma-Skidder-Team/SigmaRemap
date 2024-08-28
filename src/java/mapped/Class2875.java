@@ -127,7 +127,7 @@ public class Class2875 extends Class2827<Class1007> {
    @Override
    public void method11016(Class9332 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       var1.method35294();
-      float var11 = Class9679.method37821(this.field17818, this.field17817.field5632, this.field17817.field5633);
+      float var11 = MathHelper.method37821(this.field17818, this.field17817.field5632, this.field17817.field5633);
       this.field17799.field31035 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2))) + 1.0) * 0.2F;
       float var12 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2) - 1.0F)) + 1.0);
       var12 = (var12 * var12 + var12 * 2.0F) * 0.05F;
@@ -138,16 +138,16 @@ public class Class2875 extends Class2827<Class1007> {
       float var15 = -12.0F;
       float var16 = 1.5F;
       double[] var17 = this.field17817.method4317(6, this.field17818);
-      float var18 = Class9679.method37829(this.field17817.method4317(5, this.field17818)[0] - this.field17817.method4317(10, this.field17818)[0]);
-      float var19 = Class9679.method37829(this.field17817.method4317(5, this.field17818)[0] + (double)(var18 / 2.0F));
+      float var18 = MathHelper.method37829(this.field17817.method4317(5, this.field17818)[0] - this.field17817.method4317(10, this.field17818)[0]);
+      float var19 = MathHelper.method37829(this.field17817.method4317(5, this.field17818)[0] + (double)(var18 / 2.0F));
       float var20 = var11 * (float) (Math.PI * 2);
 
       for (int var21 = 0; var21 < 5; var21++) {
          double[] var22 = this.field17817.method4317(5 - var21, this.field17818);
          float var23 = (float)Math.cos((double)((float)var21 * 0.45F + var20)) * 0.15F;
-         this.field17798.field31036 = Class9679.method37829(var22[0] - var17[0]) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field17798.field31036 = MathHelper.method37829(var22[0] - var17[0]) * (float) (Math.PI / 180.0) * 1.5F;
          this.field17798.field31035 = var23 + this.field17817.method4333(var21, var17, var22) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-         this.field17798.field31037 = -Class9679.method37829(var22[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field17798.field31037 = -MathHelper.method37829(var22[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
          this.field17798.field31033 = var14;
          this.field17798.field31034 = var15;
          this.field17798.field31032 = var13;
@@ -161,9 +161,9 @@ public class Class2875 extends Class2827<Class1007> {
       this.field17797.field31034 = var15;
       this.field17797.field31032 = var13;
       double[] var31 = this.field17817.method4317(0, this.field17818);
-      this.field17797.field31036 = Class9679.method37829(var31[0] - var17[0]) * (float) (Math.PI / 180.0);
-      this.field17797.field31035 = Class9679.method37829((double)this.field17817.method4333(6, var17, var31)) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-      this.field17797.field31037 = -Class9679.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
+      this.field17797.field31036 = MathHelper.method37829(var31[0] - var17[0]) * (float) (Math.PI / 180.0);
+      this.field17797.field31035 = MathHelper.method37829((double)this.field17817.method4333(6, var17, var31)) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
+      this.field17797.field31037 = -MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
       this.field17797.method22680(var1, var2, var3, var4);
       var1.method35294();
       var1.method35291(0.0, 1.0, 0.0);
@@ -197,9 +197,9 @@ public class Class2875 extends Class2827<Class1007> {
       for (int var24 = 0; var24 < 12; var24++) {
          var31 = this.field17817.method4317(12 + var24, this.field17818);
          var34 = (float)((double)var34 + Math.sin((double)((float)var24 * 0.45F + var20)) * 0.05F);
-         this.field17798.field31036 = (Class9679.method37829(var31[0] - var17[0]) * 1.5F + 180.0F) * (float) (Math.PI / 180.0);
+         this.field17798.field31036 = (MathHelper.method37829(var31[0] - var17[0]) * 1.5F + 180.0F) * (float) (Math.PI / 180.0);
          this.field17798.field31035 = var34 + (float)(var31[1] - var17[1]) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-         this.field17798.field31037 = Class9679.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field17798.field31037 = MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
          this.field17798.field31033 = var14;
          this.field17798.field31034 = var15;
          this.field17798.field31032 = var13;

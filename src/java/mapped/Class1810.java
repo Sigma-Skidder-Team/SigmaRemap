@@ -18,7 +18,7 @@ public class Class1810 implements AutoCloseable {
    private static final Logger field9760 = LogManager.getLogger();
    private static final Class6811 field9761 = new Class6811(
       new TranslationTextComponent("resourcePack.broken_assets").mergeStyle(new TextFormatting[]{TextFormatting.RED, TextFormatting.ITALIC}),
-      Class9246.method34773().getPackVersion()
+      SharedConstants.method34773().getPackVersion()
    );
    private final String field9762;
    private final Supplier<Class303> field9763;

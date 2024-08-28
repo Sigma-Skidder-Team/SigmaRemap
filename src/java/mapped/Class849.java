@@ -251,17 +251,17 @@ public class Class849 extends Screen {
       float var7 = !this.field4717 ? 1.0F : (float)(Util.method38487() - this.field4718) / 1000.0F;
       Class7414.method23710();
       method5686(var1, 0, 0, this.field4564, this.field4565, -1);
-      this.field4716.method13754(var4, Class9679.method37777(var7, 0.0F, 1.0F));
+      this.field4716.method13754(var4, MathHelper.method37777(var7, 0.0F, 1.0F));
       short var8 = 274;
       int var9 = this.field4564 / 2 - 137;
       byte var10 = 30;
       this.field4562.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
       RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
-      RenderSystem.method27889(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float)Class9679.method37773(Class9679.method37777(var7, 0.0F, 1.0F)));
+      RenderSystem.method27889(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.method37777(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.field4564, this.field4565, 0.0F, 0.0F, 16, 128, 16, 128);
-      float var11 = !this.field4717 ? 1.0F : Class9679.method37777(var7 - 1.0F, 0.0F, 1.0F);
-      int var12 = Class9679.method37773(var11 * 255.0F) << 24;
+      float var11 = !this.field4717 ? 1.0F : MathHelper.method37777(var7 - 1.0F, 0.0F, 1.0F);
+      int var12 = MathHelper.method37773(var11 * 255.0F) << 24;
       if ((var12 & -67108864) != 0) {
          this.field4562.getTextureManager().bindTexture(field4710);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, var11);
@@ -291,14 +291,14 @@ public class Class849 extends Screen {
             RenderSystem.translatef((float)(this.field4564 / 2 + 90), 70.0F, 0.0F);
             RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
-               - Class9679.method37771(Class9679.method37763((float)(Util.method38487() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
+               - MathHelper.method37771(MathHelper.method37763((float)(Util.method38487() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
             var13 = var13 * 100.0F / (float)(this.field4568.method38820(this.field4708) + 32);
             RenderSystem.scalef(var13, var13, var13);
             method5690(var1, this.field4568, this.field4708, 0, -8, 16776960 | var12);
             RenderSystem.popMatrix();
          }
 
-         String var17 = "Minecraft " + Class9246.method34773().getName();
+         String var17 = "Minecraft " + SharedConstants.method34773().getName();
          if (!this.field4562.method1513()) {
             var17 = var17 + (!"release".equalsIgnoreCase(this.field4562.method1466()) ? "/" + this.field4562.method1466() : "");
          } else {

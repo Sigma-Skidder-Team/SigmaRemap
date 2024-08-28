@@ -286,14 +286,14 @@ public class Class6947<E extends Class880> {
       return var3;
    }
 
-   public void method21432(Class1657 var1, E var2) {
+   public void method21432(ServerWorld var1, E var2) {
       this.method21434();
       this.method21433(var1, (E)var2);
       this.method21436(var1, (E)var2);
       this.method21437(var1, (E)var2);
    }
 
-   private void method21433(Class1657 var1, E var2) {
+   private void method21433(ServerWorld var1, E var2) {
       for (Class7882 var6 : this.field30101.values()) {
          var6.method26429(var1, var2);
       }
@@ -311,7 +311,7 @@ public class Class6947<E extends Class880> {
       }
    }
 
-   public void method21435(Class1657 var1, E var2) {
+   public void method21435(ServerWorld var1, E var2) {
       long var5 = var2.field5024.method6783();
 
       for (Class3676 var8 : this.method21416()) {
@@ -319,7 +319,7 @@ public class Class6947<E extends Class880> {
       }
    }
 
-   private void method21436(Class1657 var1, E var2) {
+   private void method21436(ServerWorld var1, E var2) {
       long var5 = var1.method6783();
 
       for (Map<Class8890, Set<Class3676<? super E>>> var8 : this.field30102.values()) {
@@ -336,7 +336,7 @@ public class Class6947<E extends Class880> {
       }
    }
 
-   private void method21437(Class1657 var1, E var2) {
+   private void method21437(ServerWorld var1, E var2) {
       long var5 = var1.method6783();
 
       for (Class3676 var8 : this.method21416()) {

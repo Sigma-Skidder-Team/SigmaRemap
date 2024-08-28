@@ -32,7 +32,7 @@ public class Class8508 {
    }
 
    private static int method30140(Class6619 var0, Collection<GameProfile> var1, ITextComponent var2) throws CommandSyntaxException {
-      Class4528 var5 = var0.method20177().method1367().method19461();
+      Class4528 var5 = var0.method20177().getPlayerList().method19461();
       int var6 = 0;
 
       for (GameProfile var8 : var1) {
@@ -41,9 +41,9 @@ public class Class8508 {
             var5.method14436(var9);
             var6++;
             var0.method20179(new TranslationTextComponent("commands.ban.success", TextComponentUtils.getDisplayName(var8), var9.method20683()), true);
-            Class878 var10 = var0.method20177().method1367().method19489(var8.getId());
+            Class878 var10 = var0.method20177().getPlayerList().method19489(var8.getId());
             if (var10 != null) {
-               var10.field4855.method15658(new TranslationTextComponent("multiplayer.disconnect.banned"));
+               var10.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.banned"));
             }
          }
       }

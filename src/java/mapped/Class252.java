@@ -11,8 +11,8 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
          int var14 = Class5712.method17883(var4, 0.0F);
 
          for (int var15 = 0; var15 < 2; var15++) {
-            float var16 = Class9679.method37821(var7, var4.field5033, var4.field5031) - Class9679.method37821(var7, var4.field4966, var4.field4965);
-            float var17 = Class9679.method37821(var7, var4.field5034, var4.field5032);
+            float var16 = MathHelper.method37821(var7, var4.field5033, var4.field5031) - MathHelper.method37821(var7, var4.field4966, var4.field4965);
+            float var17 = MathHelper.method37821(var7, var4.field5034, var4.field5032);
             var1.method35294();
             var1.method35293(Class7680.field32900.method25286(var16));
             var1.method35293(Class7680.field32898.method25286(var17));

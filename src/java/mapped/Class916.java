@@ -170,7 +170,7 @@ public abstract class Class916 extends Entity {
          while (var29.hasNext()) {
             Class2090 var30 = (Class2090)var29.next();
             double var25 = (double)var1.method2981(var30).field39969;
-            int var31 = Class9679.method37774(var10 - (double)var7.getY() + var25);
+            int var31 = MathHelper.method37774(var10 - (double)var7.getY() + var25);
             double var27 = Class4527.method14427(var7, var31, var1x -> this.field5024.method6738(var1x).method23414(this.field5024, var1x));
             if (var10 + var25 <= var27) {
                var1.method3211(var30);
@@ -216,7 +216,7 @@ public abstract class Class916 extends Entity {
    public void method3586(Class8654 var1) {
       this.method2904();
       if (this.field5024.method6789().method17135(Class5462.field24229)) {
-         Class8848 var4 = new Class8848(Class8514.field37885);
+         ItemStack var4 = new ItemStack(Class8514.field37885);
          if (this.method3381()) {
             var4.method32150(this.method3380());
          }
@@ -266,9 +266,9 @@ public abstract class Class916 extends Entity {
             this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
          }
 
-         int var3 = Class9679.method37769(this.getPosX());
-         int var4 = Class9679.method37769(this.getPosY());
-         int var5 = Class9679.method37769(this.getPosZ());
+         int var3 = MathHelper.method37769(this.getPosX());
+         int var4 = MathHelper.method37769(this.getPosY());
+         int var5 = MathHelper.method37769(this.getPosZ());
          if (this.field5024.method6738(new BlockPos(var3, var4 - 1, var5)).method23446(Class7645.field32766)) {
             var4--;
          }
@@ -289,13 +289,13 @@ public abstract class Class916 extends Entity {
          double var16 = this.field5025 - this.getPosX();
          double var18 = this.field5027 - this.getPosZ();
          if (var16 * var16 + var18 * var18 > 0.001) {
-            this.field5031 = (float)(Class9679.method37814(var18, var16) * 180.0 / Math.PI);
+            this.field5031 = (float)(MathHelper.method37814(var18, var16) * 180.0 / Math.PI);
             if (this.field5220) {
                this.field5031 += 180.0F;
             }
          }
 
-         double var20 = (double)Class9679.method37792(this.field5031 - this.field5033);
+         double var20 = (double) MathHelper.method37792(this.field5031 - this.field5033);
          if (var20 < -170.0 || var20 >= 170.0) {
             this.field5031 += 180.0F;
             this.field5220 = !this.field5220;
@@ -340,7 +340,7 @@ public abstract class Class916 extends Entity {
          double var8 = this.getPosX() + (this.field5223 - this.getPosX()) / (double)this.field5222;
          double var10 = this.getPosY() + (this.field5224 - this.getPosY()) / (double)this.field5222;
          double var12 = this.getPosZ() + (this.field5225 - this.getPosZ()) / (double)this.field5222;
-         double var14 = Class9679.method37793(this.field5226 - (double)this.field5031);
+         double var14 = MathHelper.method37793(this.field5226 - (double)this.field5031);
          this.field5031 = (float)((double)this.field5031 + var14 / (double)this.field5222);
          this.field5032 = (float)((double)this.field5032 + (this.field5227 - (double)this.field5032) / (double)this.field5222);
          this.field5222--;
@@ -359,7 +359,7 @@ public abstract class Class916 extends Entity {
    public void method3590() {
       double var3 = this.method3588();
       Vector3d var5 = this.method3433();
-      this.method3435(Class9679.method37778(var5.field18048, -var3, var3), var5.field18049, Class9679.method37778(var5.field18050, -var3, var3));
+      this.method3435(MathHelper.method37778(var5.field18048, -var3, var3), var5.field18049, MathHelper.method37778(var5.field18050, -var3, var3));
       if (this.field5036) {
          this.method3434(this.method3433().method11344(0.5));
       }
@@ -467,15 +467,15 @@ public abstract class Class916 extends Entity {
       var17 = this.method3433();
       this.move(
          Class2107.field13742,
-         new Vector3d(Class9679.method37778(var76 * var17.field18048, -var77, var77), 0.0, Class9679.method37778(var76 * var17.field18050, -var77, var77))
+         new Vector3d(MathHelper.method37778(var76 * var17.field18048, -var77, var77), 0.0, MathHelper.method37778(var76 * var17.field18050, -var77, var77))
       );
       if (var20.getY() != 0
-         && Class9679.method37769(this.getPosX()) - var1.method8304() == var20.method8304()
-         && Class9679.method37769(this.getPosZ()) - var1.method8306() == var20.method8306()) {
+         && MathHelper.method37769(this.getPosX()) - var1.method8304() == var20.method8304()
+         && MathHelper.method37769(this.getPosZ()) - var1.method8306() == var20.method8306()) {
          this.method3215(this.getPosX(), this.getPosY() + (double)var20.getY(), this.getPosZ());
       } else if (var21.getY() != 0
-         && Class9679.method37769(this.getPosX()) - var1.method8304() == var21.method8304()
-         && Class9679.method37769(this.getPosZ()) - var1.method8306() == var21.method8306()) {
+         && MathHelper.method37769(this.getPosX()) - var1.method8304() == var21.method8304()
+         && MathHelper.method37769(this.getPosZ()) - var1.method8306() == var21.method8306()) {
          this.method3215(this.getPosX(), this.getPosY() + (double)var21.getY(), this.getPosZ());
       }
 
@@ -492,8 +492,8 @@ public abstract class Class916 extends Entity {
          this.method3215(this.getPosX(), var52.field18049, this.getPosZ());
       }
 
-      int var58 = Class9679.method37769(this.getPosX());
-      int var59 = Class9679.method37769(this.getPosZ());
+      int var58 = MathHelper.method37769(this.getPosX());
+      int var59 = MathHelper.method37769(this.getPosZ());
       if (var58 != var1.method8304() || var59 != var1.method8306()) {
          Vector3d var78 = this.method3433();
          double var80 = Math.sqrt(method3234(var78));
@@ -544,9 +544,9 @@ public abstract class Class916 extends Entity {
 
    @Nullable
    public Vector3d method3594(double var1, double var3, double var5, double var7) {
-      int var11 = Class9679.method37769(var1);
-      int var12 = Class9679.method37769(var3);
-      int var13 = Class9679.method37769(var5);
+      int var11 = MathHelper.method37769(var1);
+      int var12 = MathHelper.method37769(var3);
+      int var13 = MathHelper.method37769(var5);
       if (this.field5024.method6738(new BlockPos(var11, var12 - 1, var13)).method23446(Class7645.field32766)) {
          var12--;
       }
@@ -571,11 +571,11 @@ public abstract class Class916 extends Entity {
          var21 /= var23;
          var1 += var19 * var7;
          var5 += var21 * var7;
-         if (var17.getY() != 0 && Class9679.method37769(var1) - var11 == var17.method8304() && Class9679.method37769(var5) - var13 == var17.method8306()) {
+         if (var17.getY() != 0 && MathHelper.method37769(var1) - var11 == var17.method8304() && MathHelper.method37769(var5) - var13 == var17.method8306()) {
             var3 += (double)var17.getY();
          } else if (var18.getY() != 0
-            && Class9679.method37769(var1) - var11 == var18.method8304()
-            && Class9679.method37769(var5) - var13 == var18.method8306()) {
+            && MathHelper.method37769(var1) - var11 == var18.method8304()
+            && MathHelper.method37769(var5) - var13 == var18.method8306()) {
             var3 += (double)var18.getY();
          }
 
@@ -585,9 +585,9 @@ public abstract class Class916 extends Entity {
 
    @Nullable
    public Vector3d method3595(double var1, double var3, double var5) {
-      int var9 = Class9679.method37769(var1);
-      int var10 = Class9679.method37769(var3);
-      int var11 = Class9679.method37769(var5);
+      int var9 = MathHelper.method37769(var1);
+      int var10 = MathHelper.method37769(var3);
+      int var11 = MathHelper.method37769(var5);
       if (this.field5024.method6738(new BlockPos(var9, var10 - 1, var11)).method23446(Class7645.field32766)) {
          var10--;
       }
@@ -667,7 +667,7 @@ public abstract class Class916 extends Entity {
          double var6 = var1.getPosZ() - this.getPosZ();
          double var8 = var4 * var4 + var6 * var6;
          if (var8 >= 1.0E-4F) {
-            var8 = (double)Class9679.method37766(var8);
+            var8 = (double) MathHelper.method37766(var8);
             var4 /= var8;
             var6 /= var8;
             double var10 = 1.0 / var8;
@@ -691,9 +691,9 @@ public abstract class Class916 extends Entity {
                double var14 = var1.getPosZ() - this.getPosZ();
                Vector3d var16 = new Vector3d(var12, 0.0, var14).method11333();
                Vector3d var17 = new Vector3d(
-                     (double)Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)),
+                     (double) MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)),
                      0.0,
-                     (double)Class9679.method37763(this.field5031 * (float) (Math.PI / 180.0))
+                     (double) MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0))
                   )
                   .method11333();
                double var18 = Math.abs(var16.method11334(var17));

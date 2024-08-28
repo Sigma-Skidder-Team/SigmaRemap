@@ -115,7 +115,7 @@ public class ViaVersionLoader {
                boolean var8 = false;
 
                while (var7.hasNext()) {
-                  Class8848 var9 = (Class8848)var7.next();
+                  ItemStack var9 = (ItemStack)var7.next();
                   if (var9.method32107() instanceof Class3267) {
                      var8 = true;
                   }
@@ -190,7 +190,7 @@ public class ViaVersionLoader {
                   Client.getInstance().getModuleManager().method14662(Class5156.class).method15996()
                      || Class8005.method27349() == Class5989.field26129.method18582()
                )) {
-               if (!(((Class8848)var6.getSecond()).method32107() instanceof Class3334)) {
+               if (!(((ItemStack)var6.getSecond()).method32107() instanceof Class3334)) {
                   Entity var7 = this.mc.field1338.method6774(var4.method17561());
                   if (field31493.contains(var7)) {
                      field31493.remove(var7);
@@ -278,10 +278,10 @@ public class ViaVersionLoader {
 
             if (!this.mc.field1299.field44638.method8509()) {
                if (this.mc.field1339.field4982 == 0.0F && this.mc.field1339.field4984 == 0.0F) {
-                  this.mc.field1339.method3098(false);
+                  this.mc.field1339.setSprinting(false);
                }
             } else {
-               this.mc.field1339.method3098(true);
+               this.mc.field1339.setSprinting(true);
             }
 
             var7 *= !this.mc.field1339.method3337() ? 1.0F : (!this.mc.field1339.field5036 ? 1.3F : 1.5F);
@@ -350,9 +350,9 @@ public class ViaVersionLoader {
          if (var1.method13948() != 1.0F) {
             if (Class4399.field21496 - this.mc.field1339.field4967 == 0.0F) {
                if (this.field31499) {
-                  var1.method13949(Class9679.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4965));
-                  var1.method13950(Class9679.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4967));
-                  var1.method13952(Class9679.method37821(var1.method13948(), Class4399.field21499, var1.method13953().field5032));
+                  var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4965));
+                  var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4967));
+                  var1.method13952(MathHelper.method37821(var1.method13948(), Class4399.field21499, var1.method13953().field5032));
                   var1.method13951(var1.method13945() - var1.method13944());
                   var1.method13953().field5034 = Class4399.field21499;
                   var1.method13953().field5033 = Class4399.field21498;
@@ -361,9 +361,9 @@ public class ViaVersionLoader {
                   this.field31499 = !this.field31499;
                }
             } else {
-               var1.method13949(Class9679.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
-               var1.method13950(Class9679.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
-               var1.method13952(Class9679.method37821(var1.method13948(), Class4399.field21499, Class4399.field21497));
+               var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
+               var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
+               var1.method13952(MathHelper.method37821(var1.method13948(), Class4399.field21499, Class4399.field21497));
                var1.method13951(var1.method13945() - var1.method13944());
                this.field31499 = true;
             }

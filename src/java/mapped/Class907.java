@@ -89,7 +89,7 @@ public class Class907 extends Entity {
                Class8711 var9 = this.field5024
                   .method7036(
                      new Class6809(
-                        new Vector3d(this.field5025, this.field5026, this.field5027), this.method3431(), Class2271.field14774, Class1985.field12963, this
+                        new Vector3d(this.field5025, this.field5026, this.field5027), this.getPositionVec(), Class2271.field14774, Class1985.field12963, this
                      )
                   );
                if (var9.method31417() != Class2100.field13689 && this.field5024.method6739(var9.method31423()).method23486(Class8953.field40469)) {
@@ -116,7 +116,7 @@ public class Class907 extends Entity {
                         ((Class3213)var3).method11600(this.field5024, var18, this);
                      }
                   } else {
-                     boolean var10 = var19.method23441(new Class5910(this.field5024, var18, Direction.field672, Class8848.field39973, Direction.field673));
+                     boolean var10 = var19.method23441(new Class5910(this.field5024, var18, Direction.field672, ItemStack.field39973, Direction.field673));
                      boolean var11 = Class3213.method11598(this.field5024.method6738(var18.method8313())) && (!var5 || !var6);
                      boolean var12 = this.field5176.method23443(this.field5024, var18) && !var11;
                      if (var10 && var12) {
@@ -167,14 +167,14 @@ public class Class907 extends Entity {
    @Override
    public boolean method2921(float var1, float var2) {
       if (this.field5180) {
-         int var5 = Class9679.method37773(var1 - 1.0F);
+         int var5 = MathHelper.method37773(var1 - 1.0F);
          if (var5 > 0) {
             List<Entity> var6 = Lists.newArrayList(this.field5024.method7181(this, this.method3389()));
             boolean var7 = this.field5176.method23446(Class7645.field32765);
             Class8654 var8 = !var7 ? Class8654.field39009 : Class8654.field39008;
 
             for (Entity var10 : var6) {
-               var10.method2741(var8, (float)Math.min(Class9679.method37767((float)var5 * this.field5182), this.field5181));
+               var10.method2741(var8, (float)Math.min(MathHelper.method37767((float)var5 * this.field5182), this.field5181));
             }
 
             if (var7 && (double)this.field5054.nextFloat() < 0.05F + (double)var5 * 0.05) {

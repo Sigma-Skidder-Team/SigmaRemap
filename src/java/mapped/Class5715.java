@@ -56,7 +56,7 @@ public abstract class Class5715<T extends Entity> {
 
    public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
       if (Class9299.field42994.method20241()) {
-         Object var9 = Class9299.method35087(Class9299.field42994, var1, var1.method2954(), this, var4, var5, var6, var3);
+         Object var9 = Class9299.method35087(Class9299.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
          Class9299.method35086(var9);
          Object var10 = Class9299.method35070(var9, Class9299.field42810);
          if (var10 != Class9561.field44533 && (var10 == Class9561.field44532 || this.method17852((T)var1))) {
@@ -64,7 +64,7 @@ public abstract class Class5715<T extends Entity> {
             this.method17893((T)var1, var11, var4, var5, var6);
          }
       } else if (this.method17852((T)var1)) {
-         this.method17893((T)var1, var1.method2954(), var4, var5, var6);
+         this.method17893((T)var1, var1.getDisplayName(), var4, var5, var6);
       }
    }
 

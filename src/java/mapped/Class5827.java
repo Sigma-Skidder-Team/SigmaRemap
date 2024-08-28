@@ -3,9 +3,9 @@ package mapped;
 public class Class5827 extends Class5812 {
    private static String[] field25531;
    private final Class920 field25532;
-   private final Class1068 field25533;
+   private final AbstractHorseEntity field25533;
 
-   public Class5827(int var1, Class974 var2, Class920 var3, Class1068 var4) {
+   public Class5827(int var1, Class974 var2, Class920 var3, AbstractHorseEntity var4) {
       super((Class8298<?>)null, var1);
       this.field25532 = var3;
       this.field25533 = var4;
@@ -37,17 +37,17 @@ public class Class5827 extends Class5812 {
    }
 
    @Override
-   public Class8848 method18112(PlayerEntity var1, int var2) {
-      Class8848 var5 = Class8848.field39973;
+   public ItemStack method18112(PlayerEntity var1, int var2) {
+      ItemStack var5 = ItemStack.field39973;
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
-         Class8848 var7 = var6.method18265();
+         ItemStack var7 = var6.method18265();
          var5 = var7.method32126();
          int var8 = this.field25532.method3629();
          if (var2 >= var8) {
             if (this.method18131(1).method18259(var7) && !this.method18131(1).method18266()) {
                if (!this.method18142(var7, 1, 2, false)) {
-                  return Class8848.field39973;
+                  return ItemStack.field39973;
                }
             } else if (!this.method18131(0).method18259(var7)) {
                if (var8 <= 2 || !this.method18142(var7, 2, var8, false)) {
@@ -55,29 +55,29 @@ public class Class5827 extends Class5812 {
                   int var10 = var9 + 9;
                   if (var2 >= var9 && var2 < var10) {
                      if (!this.method18142(var7, var8, var9, false)) {
-                        return Class8848.field39973;
+                        return ItemStack.field39973;
                      }
                   } else if (var2 >= var8 && var2 < var9) {
                      if (!this.method18142(var7, var9, var10, false)) {
-                        return Class8848.field39973;
+                        return ItemStack.field39973;
                      }
                   } else if (!this.method18142(var7, var9, var9, false)) {
-                     return Class8848.field39973;
+                     return ItemStack.field39973;
                   }
 
-                  return Class8848.field39973;
+                  return ItemStack.field39973;
                }
             } else if (!this.method18142(var7, 0, 1, false)) {
-               return Class8848.field39973;
+               return ItemStack.field39973;
             }
          } else if (!this.method18142(var7, var8, this.field25468.size(), true)) {
-            return Class8848.field39973;
+            return ItemStack.field39973;
          }
 
          if (!var7.method32105()) {
             var6.method18268();
          } else {
-            var6.method18267(Class8848.field39973);
+            var6.method18267(ItemStack.field39973);
          }
       }
 

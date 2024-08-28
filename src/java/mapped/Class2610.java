@@ -34,7 +34,7 @@ public class Class2610 extends Class2595 {
    }
 
    private boolean method10818() {
-      Class1657 var3 = (Class1657)this.field16865.field5024;
+      ServerWorld var3 = (ServerWorld)this.field16865.field5024;
       BlockPos var4 = this.field16865.method3432();
       Optional var5 = var3.method6951()
          .method6673(var0 -> var0 == Class4913.field22766, this::method10819, Class2093.field13637, var4, 48, Class1026.method4565(this.field16865));
@@ -51,13 +51,13 @@ public class Class2610 extends Class2595 {
       return this.field16865.method4230().method21664()
          ? false
          : this.field16865.method4232() == null
-            && !this.field16867.method8317(this.field16865.method3431(), (double)(this.field16865.method3429() + (float)this.field16869))
+            && !this.field16867.method8317(this.field16865.getPositionVec(), (double)(this.field16865.method3429() + (float)this.field16869))
             && !this.field16870;
    }
 
    @Override
    public void method10807() {
-      if (this.field16867.method8317(this.field16865.method3431(), (double)this.field16869)) {
+      if (this.field16867.method8317(this.field16865.getPositionVec(), (double)this.field16869)) {
          this.field16868.add(this.field16867);
       }
    }

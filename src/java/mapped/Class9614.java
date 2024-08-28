@@ -31,7 +31,7 @@ public class Class9614 {
       .put(Class8992.field41035, Class1099.method5268().method21850())
       .put(Class8992.field41036, Class1105.method5300().method21850())
       .put(Class8992.field41037, Class1091.method5080().method21850())
-      .put(Class8992.field41038, Class1068.method4951().method21850())
+      .put(Class8992.field41038, AbstractHorseEntity.method4951().method21850())
       .put(Class8992.field41039, Class1038.method4653().method21850())
       .put(Class8992.field41040, Class1033.method4610().method21850())
       .put(Class8992.field41041, Class1058.method4863().method21850())
@@ -97,7 +97,7 @@ public class Class9614 {
          .filter(var0 -> !method37376((Class8992<?>)var0))
          .<ResourceLocation>map(Class2348.field16074::method9181)
          .forEach(var0 -> {
-            if (!Class9246.field42545) {
+            if (!SharedConstants.field42545) {
                field44942.error("Entity {} has no attributes", var0);
             } else {
                throw new IllegalStateException("Entity " + var0 + " has no attributes");

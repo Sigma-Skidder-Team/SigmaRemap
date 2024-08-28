@@ -98,8 +98,8 @@ public class Class8515 {
 
       float var19 = var4 - var2;
       float var20 = var5 - var3;
-      float var21 = Class9679.method37771(var19) * (var9 / 16.0F);
-      float var22 = Class9679.method37771(var20) * (var10 / 16.0F);
+      float var21 = MathHelper.method37771(var19) * (var9 / 16.0F);
+      float var22 = MathHelper.method37771(var20) * (var10 / 16.0F);
       float var23 = 0.0F;
       float var24 = 0.0F;
       float var25 = -1.0F;

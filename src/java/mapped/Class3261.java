@@ -20,21 +20,21 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public Predicate<Class8848> method11751() {
+   public Predicate<ItemStack> method11751() {
       return field18749;
    }
 
    @Override
-   public Predicate<Class8848> method11752() {
+   public Predicate<ItemStack> method11752() {
       return field18748;
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       if (!method11755(var6)) {
          if (var2.method2983(var6).method32105()) {
-            return Class6794.<Class8848>method20699(var6);
+            return Class6794.<ItemStack>method20699(var6);
          } else {
             if (!method11755(var6)) {
                this.field18746 = false;
@@ -42,17 +42,17 @@ public class Class3261 extends Class3262 implements Class3260 {
                var2.method3154(var3);
             }
 
-            return Class6794.<Class8848>method20697(var6);
+            return Class6794.<ItemStack>method20697(var6);
          }
       } else {
          method11763(var1, var2, var3, var6, method11770(var6), 1.0F);
          method11756(var6, false);
-         return Class6794.<Class8848>method20697(var6);
+         return Class6794.<ItemStack>method20697(var6);
       }
    }
 
    @Override
-   public void method11729(Class8848 var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
       int var7 = this.method11728(var1) - var4;
       float var8 = method11769(var7, var1);
       if (var8 >= 1.0F && !method11755(var1) && method11753(var3, var1)) {
@@ -71,12 +71,12 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static boolean method11753(Class880 var0, Class8848 var1) {
+   private static boolean method11753(Class880 var0, ItemStack var1) {
       int var4 = Class7858.method26311(Class8122.field34929, var1);
       int var5 = var4 != 0 ? 3 : 1;
       boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).field4919.field29609;
-      Class8848 var7 = var0.method2983(var1);
-      Class8848 var8 = var7.method32126();
+      ItemStack var7 = var0.method2983(var1);
+      ItemStack var8 = var7.method32126();
 
       for (int var9 = 0; var9 < var5; var9++) {
          if (var9 > 0) {
@@ -84,7 +84,7 @@ public class Class3261 extends Class3262 implements Class3260 {
          }
 
          if (var7.method32105() && var6) {
-            var7 = new Class8848(Class8514.field37797);
+            var7 = new ItemStack(Class8514.field37797);
             var8 = var7.method32126();
          }
 
@@ -96,12 +96,12 @@ public class Class3261 extends Class3262 implements Class3260 {
       return true;
    }
 
-   private static boolean method11754(Class880 var0, Class8848 var1, Class8848 var2, boolean var3, boolean var4) {
+   private static boolean method11754(Class880 var0, ItemStack var1, ItemStack var2, boolean var3, boolean var4) {
       if (var2.method32105()) {
          return false;
       } else {
          boolean var7 = var4 && var2.method32107() instanceof Class3308;
-         Class8848 var8;
+         ItemStack var8;
          if (!var7 && !var4 && !var3) {
             var8 = var2.method32106(1);
             if (var2.method32105() && var0 instanceof PlayerEntity) {
@@ -116,17 +116,17 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   public static boolean method11755(Class8848 var0) {
+   public static boolean method11755(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return var3 != null && var3.method132("Charged");
    }
 
-   public static void method11756(Class8848 var0, boolean var1) {
+   public static void method11756(ItemStack var0, boolean var1) {
       Class39 var4 = var0.method32143();
       var4.method115("Charged", var1);
    }
 
-   private static void method11757(Class8848 var0, Class8848 var1) {
+   private static void method11757(ItemStack var0, ItemStack var1) {
       Class39 var4 = var0.method32143();
       Class41 var5;
       if (!var4.method119("ChargedProjectiles", 9)) {
@@ -141,7 +141,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       var4.method99("ChargedProjectiles", var5);
    }
 
-   private static List<Class8848> method11758(Class8848 var0) {
+   private static List<ItemStack> method11758(ItemStack var0) {
       ArrayList var3 = Lists.newArrayList();
       Class39 var4 = var0.method32142();
       if (var4 != null && var4.method119("ChargedProjectiles", 9)) {
@@ -149,7 +149,7 @@ public class Class3261 extends Class3262 implements Class3260 {
          if (var5 != null) {
             for (int var6 = 0; var6 < var5.size(); var6++) {
                Class39 var7 = var5.method153(var6);
-               var3.add(Class8848.method32104(var7));
+               var3.add(ItemStack.method32104(var7));
             }
          }
       }
@@ -157,7 +157,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return var3;
    }
 
-   private static void method11759(Class8848 var0) {
+   private static void method11759(ItemStack var0) {
       Class39 var3 = var0.method32142();
       if (var3 != null) {
          Class41 var4 = var3.method131("ChargedProjectiles", 9);
@@ -166,12 +166,12 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   public static boolean method11760(Class8848 var0, Class3257 var1) {
+   public static boolean method11760(ItemStack var0, Class3257 var1) {
       return method11758(var0).stream().anyMatch(var1x -> var1x.method32107() == var1);
    }
 
    private static void method11761(
-      Class1655 var0, Class880 var1, Class79 var2, Class8848 var3, Class8848 var4, float var5, boolean var6, float var7, float var8, float var9
+           Class1655 var0, Class880 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.field9020) {
          boolean var12 = var4.method32107() == Class8514.field38068;
@@ -203,7 +203,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static Class884 method11762(Class1655 var0, Class880 var1, Class8848 var2, Class8848 var3) {
+   private static Class884 method11762(Class1655 var0, Class880 var1, ItemStack var2, ItemStack var3) {
       Class3308 var6 = (Class3308)(!(var3.method32107() instanceof Class3308) ? Class8514.field37797 : var3.method32107());
       Class884 var7 = var6.method11850(var0, var3, var1);
       if (var1 instanceof PlayerEntity) {
@@ -220,12 +220,12 @@ public class Class3261 extends Class3262 implements Class3260 {
       return var7;
    }
 
-   public static void method11763(Class1655 var0, Class880 var1, Class79 var2, Class8848 var3, float var4, float var5) {
+   public static void method11763(Class1655 var0, Class880 var1, Hand var2, ItemStack var3, float var4, float var5) {
       List var8 = method11758(var3);
       float[] var9 = method11764(var1.method3013());
 
       for (int var10 = 0; var10 < var8.size(); var10++) {
-         Class8848 var11 = (Class8848)var8.get(var10);
+         ItemStack var11 = (ItemStack)var8.get(var10);
          boolean var12 = var1 instanceof PlayerEntity && ((PlayerEntity)var1).field4919.field29609;
          if (!var11.method32105()) {
             if (var10 != 0) {
@@ -255,7 +255,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       return 1.0F / (field18735.nextFloat() * 0.5F + 1.8F) + var3;
    }
 
-   private static void method11766(Class1655 var0, Class880 var1, Class8848 var2) {
+   private static void method11766(Class1655 var0, Class880 var1, ItemStack var2) {
       if (var1 instanceof Class878) {
          Class878 var5 = (Class878)var1;
          if (!var0.field9020) {
@@ -269,7 +269,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11704(Class1655 var1, Class880 var2, Class8848 var3, int var4) {
+   public void method11704(Class1655 var1, Class880 var2, ItemStack var3, int var4) {
       if (!var1.field9020) {
          int var7 = Class7858.method26311(Class8122.field34930, var3);
          Class9455 var8 = this.method11768(var7);
@@ -293,17 +293,17 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public int method11728(Class8848 var1) {
+   public int method11728(ItemStack var1) {
       return method11767(var1) + 3;
    }
 
-   public static int method11767(Class8848 var0) {
+   public static int method11767(ItemStack var0) {
       int var3 = Class7858.method26311(Class8122.field34930, var0);
       return var3 != 0 ? 25 - 5 * var3 : 25;
    }
 
    @Override
-   public Class2103 method11727(Class8848 var1) {
+   public Class2103 method11727(ItemStack var1) {
       return Class2103.field13712;
    }
 
@@ -320,7 +320,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static float method11769(int var0, Class8848 var1) {
+   private static float method11769(int var0, ItemStack var1) {
       float var4 = (float)var0 / (float)method11767(var1);
       if (var4 > 1.0F) {
          var4 = 1.0F;
@@ -330,10 +330,10 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       List var7 = method11758(var1);
       if (method11755(var1) && !var7.isEmpty()) {
-         Class8848 var8 = (Class8848)var7.get(0);
+         ItemStack var8 = (ItemStack)var7.get(0);
          var3.add(new TranslationTextComponent("item.minecraft.crossbow.projectile").appendString(" ").append(var8.method32173()));
          if (var4.method8944() && var8.method32107() == Class8514.field38068) {
             ArrayList var9 = Lists.newArrayList();
@@ -349,7 +349,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       }
    }
 
-   private static float method11770(Class8848 var0) {
+   private static float method11770(ItemStack var0) {
       return var0.method32107() == Class8514.field38148 && method11760(var0, Class8514.field38068) ? 1.6F : 3.15F;
    }
 

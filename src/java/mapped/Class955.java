@@ -48,7 +48,7 @@ public class Class955 extends Class944 implements Class935 {
          var1 = 1.0F;
       }
 
-      return Class9679.method37821(var1, this.field5367, this.field5366);
+      return MathHelper.method37821(var1, this.field5367, this.field5366);
    }
 
    public float method3850(float var1) {

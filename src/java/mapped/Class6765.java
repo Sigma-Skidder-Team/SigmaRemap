@@ -13,9 +13,9 @@ public class Class6765 extends Class6764 {
    @Override
    public Class7176 method20615() {
       return super.method20641(
-         Class9679.method37769(this.field29476.method3389().field28449),
-         Class9679.method37769(this.field29476.method3389().field28450 + 0.5),
-         Class9679.method37769(this.field29476.method3389().field28451)
+         MathHelper.method37769(this.field29476.method3389().field28449),
+         MathHelper.method37769(this.field29476.method3389().field28450 + 0.5),
+         MathHelper.method37769(this.field29476.method3389().field28451)
       );
    }
 
@@ -23,9 +23,9 @@ public class Class6765 extends Class6764 {
    public Class7175 method20616(double var1, double var3, double var5) {
       return new Class7175(
          super.method20641(
-            Class9679.method37769(var1 - (double)(this.field29476.method3429() / 2.0F)),
-            Class9679.method37769(var3 + 0.5),
-            Class9679.method37769(var5 - (double)(this.field29476.method3429() / 2.0F))
+            MathHelper.method37769(var1 - (double)(this.field29476.method3429() / 2.0F)),
+            MathHelper.method37769(var3 + 0.5),
+            MathHelper.method37769(var5 - (double)(this.field29476.method3429() / 2.0F))
          )
       );
    }

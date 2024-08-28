@@ -157,7 +157,7 @@ public class Class1656 extends Class1655 {
    }
 
    public void method6838(Entity var1, Entity var2) {
-      if (var2.field5041 || var2.method3421() != var1) {
+      if (var2.field5041 || var2.getRidingEntity() != var1) {
          var2.method2759();
       } else if (var2 instanceof PlayerEntity || this.method6883().method7351(var2)) {
          var2.method3274(var2.getPosX(), var2.getPosY(), var2.getPosZ());
@@ -180,9 +180,9 @@ public class Class1656 extends Class1655 {
    private void method6839(Entity var1) {
       if (var1.method3406()) {
          this.method6820().method22503("chunkCheck");
-         int var4 = Class9679.method37769(var1.getPosX() / 16.0);
-         int var5 = Class9679.method37769(var1.getPosY() / 16.0);
-         int var6 = Class9679.method37769(var1.getPosZ() / 16.0);
+         int var4 = MathHelper.method37769(var1.getPosX() / 16.0);
+         int var5 = MathHelper.method37769(var1.getPosY() / 16.0);
+         int var6 = MathHelper.method37769(var1.getPosZ() / 16.0);
          if (!var1.field5071 || var1.field5072 != var4 || var1.field5073 != var5 || var1.field5074 != var6) {
             if (var1.field5071 && this.method6843(var1.field5072, var1.field5074)) {
                this.method6824(var1.field5072, var1.field5074).method7133(var1, var1.field5073);
@@ -246,7 +246,7 @@ public class Class1656 extends Class1655 {
          this.method6848(var1);
          this.field9025.put(var1, var2);
          this.method6883()
-            .method7346(Class9679.method37769(var2.getPosX() / 16.0), Class9679.method37769(var2.getPosZ() / 16.0), Class9176.field42145, true)
+            .method7346(MathHelper.method37769(var2.getPosX() / 16.0), MathHelper.method37769(var2.getPosZ() / 16.0), Class9176.field42145, true)
             .method7063(var2);
          if (Class9299.field42836.method20214()) {
             Class9299.method35070(var2, Class9299.field42836);
@@ -288,8 +288,8 @@ public class Class1656 extends Class1655 {
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Entity var6 = (Entity)var5.getValue();
-         int var7 = Class9679.method37769(var6.getPosX() / 16.0);
-         int var8 = Class9679.method37769(var6.getPosZ() / 16.0);
+         int var7 = MathHelper.method37769(var6.getPosX() / 16.0);
+         int var8 = MathHelper.method37769(var6.getPosZ() / 16.0);
          if (var7 == var1.method7072().field32174 && var8 == var1.method7072().field32175) {
             var1.method7063(var6);
          }
@@ -316,7 +316,7 @@ public class Class1656 extends Class1655 {
       Random var7 = new Random();
       boolean var8 = false;
       if (this.field9030.field1337.method23157() == Class1894.field11103) {
-         for (Class8848 var10 : this.field9030.field1339.method2946()) {
+         for (ItemStack var10 : this.field9030.field1339.method2946()) {
             if (var10.method32107() == Blocks.field36765.method11581()) {
                var8 = true;
                break;
@@ -421,9 +421,9 @@ public class Class1656 extends Class1655 {
    private void method6856(double var1, double var3, double var5, double var7, double var9, Class7436 var11) {
       this.method6746(
          var11,
-         Class9679.method37822(this.field9016.nextDouble(), var1, var3),
+         MathHelper.method37822(this.field9016.nextDouble(), var1, var3),
          var9,
-         Class9679.method37822(this.field9016.nextDouble(), var5, var7),
+         MathHelper.method37822(this.field9016.nextDouble(), var5, var7),
          0.0,
          0.0,
          0.0
@@ -673,8 +673,8 @@ public class Class1656 extends Class1655 {
 
    public float method6872(float var1) {
       float var4 = this.method7001(var1);
-      float var5 = 1.0F - (Class9679.method37764(var4 * (float) (Math.PI * 2)) * 2.0F + 0.2F);
-      var5 = Class9679.method37777(var5, 0.0F, 1.0F);
+      float var5 = 1.0F - (MathHelper.method37764(var4 * (float) (Math.PI * 2)) * 2.0F + 0.2F);
+      var5 = MathHelper.method37777(var5, 0.0F, 1.0F);
       var5 = 1.0F - var5;
       var5 = (float)((double)var5 * (1.0 - (double)(this.method6792(var1) * 5.0F) / 16.0));
       var5 = (float)((double)var5 * (1.0 - (double)(this.method6790(var1) * 5.0F) / 16.0));
@@ -683,8 +683,8 @@ public class Class1656 extends Class1655 {
 
    public Vector3d method6873(BlockPos var1, float var2) {
       float var5 = this.method7001(var2);
-      float var6 = Class9679.method37764(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
-      var6 = Class9679.method37777(var6, 0.0F, 1.0F);
+      float var6 = MathHelper.method37764(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
+      var6 = MathHelper.method37777(var6, 0.0F, 1.0F);
       Class8907 var7 = this.method7003(var1);
       int var8 = var7.method32498();
       float var9 = (float)(var8 >> 16 & 0xFF) / 255.0F;
@@ -728,8 +728,8 @@ public class Class1656 extends Class1655 {
 
    public Vector3d method6874(float var1) {
       float var4 = this.method7001(var1);
-      float var5 = Class9679.method37764(var4 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
-      var5 = Class9679.method37777(var5, 0.0F, 1.0F);
+      float var5 = MathHelper.method37764(var4 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
+      var5 = MathHelper.method37777(var5, 0.0F, 1.0F);
       float var6 = 1.0F;
       float var7 = 1.0F;
       float var8 = 1.0F;
@@ -759,8 +759,8 @@ public class Class1656 extends Class1655 {
 
    public float method6875(float var1) {
       float var4 = this.method7001(var1);
-      float var5 = 1.0F - (Class9679.method37764(var4 * (float) (Math.PI * 2)) * 2.0F + 0.25F);
-      var5 = Class9679.method37777(var5, 0.0F, 1.0F);
+      float var5 = 1.0F - (MathHelper.method37764(var4 * (float) (Math.PI * 2)) * 2.0F + 0.25F);
+      var5 = MathHelper.method37777(var5, 0.0F, 1.0F);
       return var5 * var5 * 0.5F;
    }
 

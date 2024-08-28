@@ -43,7 +43,7 @@ public class Class2667 extends Class2661 {
 
    private List<BlockPos> method10882() {
       BlockPos var3 = this.field17022.method3432();
-      Class1653 var4 = ((Class1657)this.field17022.field5024).method6951();
+      Class1653 var4 = ((ServerWorld)this.field17022.field5024).method6951();
       Stream<Class9343> var5 = var4.method6666(var0 -> var0 == Class4913.field22768 || var0 == Class4913.field22769, var3, 20, Class2093.field13637);
       return var5.map(Class9343::method35355)
          .filter(var1 -> Class1017.method4494(this.field17022, var1))

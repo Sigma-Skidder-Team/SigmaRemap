@@ -38,10 +38,10 @@ public class Class2688 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class8848 var3 = this.field17115.method2943(Class2106.field13731);
+      ItemStack var3 = this.field17115.method2943(Class2106.field13731);
       if (!var3.method32105()) {
          this.method10906(var3);
-         this.field17115.method2944(Class2106.field13731, Class8848.field39973);
+         this.field17115.method2944(Class2106.field13731, ItemStack.field39973);
          this.field17114 = this.field17115.field5055 + Class1048.method4787(this.field17115).nextInt(100);
       }
    }
@@ -51,39 +51,39 @@ public class Class2688 extends Class2595 {
       List var3 = this.field17115
          .field5024
          .<Class1000>method6772(Class1000.class, this.field17115.method3389().method19663(8.0, 8.0, 8.0), Class1048.field5808);
-      Class8848 var4 = this.field17115.method2943(Class2106.field13731);
+      ItemStack var4 = this.field17115.method2943(Class2106.field13731);
       if (var4.method32105()) {
          if (!var3.isEmpty()) {
             this.field17115.method4230().method21655((Entity)var3.get(0), 1.2F);
          }
       } else {
          this.method10906(var4);
-         this.field17115.method2944(Class2106.field13731, Class8848.field39973);
+         this.field17115.method2944(Class2106.field13731, ItemStack.field39973);
       }
    }
 
-   private void method10906(Class8848 var1) {
+   private void method10906(ItemStack var1) {
       if (!var1.method32105()) {
          double var4 = this.field17115.method3442() - 0.3F;
          Class1000 var6 = new Class1000(this.field17115.field5024, this.field17115.getPosX(), var4, this.field17115.getPosZ(), var1);
          var6.method4134(40);
-         var6.method4129(this.field17115.method3375());
+         var6.method4129(this.field17115.getUniqueID());
          float var7 = 0.3F;
          float var8 = Class1048.method4788(this.field17115).nextFloat() * (float) (Math.PI * 2);
          float var9 = 0.02F * Class1048.method4789(this.field17115).nextFloat();
          var6.method3435(
             (double)(
                0.3F
-                     * -Class9679.method37763(this.field17115.field5031 * (float) (Math.PI / 180.0))
-                     * Class9679.method37764(this.field17115.field5032 * (float) (Math.PI / 180.0))
-                  + Class9679.method37764(var8) * var9
+                     * -MathHelper.method37763(this.field17115.field5031 * (float) (Math.PI / 180.0))
+                     * MathHelper.method37764(this.field17115.field5032 * (float) (Math.PI / 180.0))
+                  + MathHelper.method37764(var8) * var9
             ),
-            (double)(0.3F * Class9679.method37763(this.field17115.field5032 * (float) (Math.PI / 180.0)) * 1.5F),
+            (double)(0.3F * MathHelper.method37763(this.field17115.field5032 * (float) (Math.PI / 180.0)) * 1.5F),
             (double)(
                0.3F
-                     * Class9679.method37764(this.field17115.field5031 * (float) (Math.PI / 180.0))
-                     * Class9679.method37764(this.field17115.field5032 * (float) (Math.PI / 180.0))
-                  + Class9679.method37763(var8) * var9
+                     * MathHelper.method37764(this.field17115.field5031 * (float) (Math.PI / 180.0))
+                     * MathHelper.method37764(this.field17115.field5032 * (float) (Math.PI / 180.0))
+                  + MathHelper.method37763(var8) * var9
             )
          );
          this.field17115.field5024.method6916(var6);

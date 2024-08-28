@@ -93,7 +93,7 @@ public class Class6850 {
    }
 
    public boolean method20831(double var1) {
-      return this.field29762 != null && this.field29762.method29310(Class9679.method37778(var1, -1.0, 1.0));
+      return this.field29762 != null && this.field29762.method29310(MathHelper.method37778(var1, -1.0, 1.0));
    }
 
    public boolean method20832(double var1, double var3, int var5) {
@@ -110,7 +110,7 @@ public class Class6850 {
                var5 = Math.max(var5, this.field29750.method38820(var7.getText()));
             }
 
-            int var8 = Class9679.method37775(
+            int var8 = MathHelper.method37775(
                this.field29749.method5673(var4.getRange().getStart()), 0, this.field29749.method5673(0) + this.field29749.method5667() - var5
             );
             int var9 = !this.field29755 ? 72 : this.field29748.field4565 - 12;
@@ -253,7 +253,7 @@ public class Class6850 {
 
       if (!var7.isEmpty()) {
          this.field29757.addAll(var7);
-         this.field29758 = Class9679.method37775(
+         this.field29758 = MathHelper.method37775(
             this.field29749.method5673(var5.startPos), 0, this.field29749.method5673(0) + this.field29749.method5667() - var8
          );
          this.field29759 = var8;

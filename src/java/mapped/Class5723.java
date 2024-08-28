@@ -64,7 +64,7 @@ public class Class5723 extends Class5715<Class1001> {
 
    public static float method17909(Class1001 var0, float var1) {
       float var4 = (float)var0.field5523 + var1;
-      float var5 = Class9679.method37763(var4 * 0.2F) / 2.0F + 0.5F;
+      float var5 = MathHelper.method37763(var4 * 0.2F) / 2.0F + 0.5F;
       var5 = (var5 * var5 + var5) * 0.4F;
       return var5 - 1.4F;
    }

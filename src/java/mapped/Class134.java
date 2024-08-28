@@ -24,7 +24,7 @@ public class Class134 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       Random var5 = var2.method26088();
       Class6069 var6;
       if (!this.field455.isEmpty()) {
@@ -47,12 +47,12 @@ public class Class134 extends Class128 {
       return method391(var1, var6, var5);
    }
 
-   private static Class8848 method391(Class8848 var0, Class6069 var1, Random var2) {
-      int var5 = Class9679.method37782(var2, var1.method18813(), var1.method18809());
+   private static ItemStack method391(ItemStack var0, Class6069 var1, Random var2) {
+      int var5 = MathHelper.method37782(var2, var1.method18813(), var1.method18809());
       if (var0.method32107() != Class8514.field37900) {
          var0.method32162(var1, var5);
       } else {
-         var0 = new Class8848(Class8514.field38070);
+         var0 = new ItemStack(Class8514.field38070);
          Class3290.method11831(var0, new Class6694(var1, var5));
       }
 

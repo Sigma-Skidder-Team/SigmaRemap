@@ -41,7 +41,7 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       var1.method23449().method23482(var2, var3, var4);
    }
 
@@ -72,8 +72,8 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public List<Class8848> method11697(Class7380 var1, Class9464 var2) {
-      return Collections.<Class8848>emptyList();
+   public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
+      return Collections.<ItemStack>emptyList();
    }
 
    @Override

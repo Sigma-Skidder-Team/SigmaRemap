@@ -8,7 +8,7 @@ public class Class3274 extends Class3257 {
    }
 
    @Override
-   public Class8848 method11709(Class8848 var1, Class1655 var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
       if (var3 instanceof Class878) {
          Class878 var6 = (Class878)var3;
          Class9551.field44490.method15174(var6, var1);
@@ -23,21 +23,21 @@ public class Class3274 extends Class3257 {
          var3.method3030();
       }
 
-      return !var1.method32105() ? var1 : new Class8848(Class8514.field37882);
+      return !var1.method32105() ? var1 : new ItemStack(Class8514.field37882);
    }
 
    @Override
-   public int method11728(Class8848 var1) {
+   public int method11728(ItemStack var1) {
       return 32;
    }
 
    @Override
-   public Class2103 method11727(Class8848 var1) {
+   public Class2103 method11727(ItemStack var1) {
       return Class2103.field13708;
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
       return Class8482.method29977(var1, var2, var3);
    }
 }

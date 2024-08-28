@@ -9,12 +9,12 @@ public class Class3323 extends Class3257 {
    }
 
    @Override
-   public Class8848 method11742() {
+   public ItemStack method11742() {
       return Class9741.method38187(super.method11742(), Class8137.field34977);
    }
 
    @Override
-   public Class8848 method11709(Class8848 var1, Class1655 var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
       PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
       if (var6 instanceof Class878) {
          Class9551.field44490.method15174((Class878)var6, var1);
@@ -39,11 +39,11 @@ public class Class3323 extends Class3257 {
 
       if (var6 == null || !var6.field4919.field29609) {
          if (var1.method32105()) {
-            return new Class8848(Class8514.field37972);
+            return new ItemStack(Class8514.field37972);
          }
 
          if (var6 != null) {
-            var6.field4902.method4045(new Class8848(Class8514.field37972));
+            var6.field4902.method4045(new ItemStack(Class8514.field37972));
          }
       }
 
@@ -51,41 +51,41 @@ public class Class3323 extends Class3257 {
    }
 
    @Override
-   public int method11728(Class8848 var1) {
+   public int method11728(ItemStack var1) {
       return 32;
    }
 
    @Override
-   public Class2103 method11727(Class8848 var1) {
+   public Class2103 method11727(ItemStack var1) {
       return Class2103.field13708;
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
       return Class8482.method29977(var1, var2, var3);
    }
 
    @Override
-   public String method11720(Class8848 var1) {
+   public String method11720(ItemStack var1) {
       return Class9741.method38185(var1).method31815(this.method11719() + ".effect.");
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       Class9741.method38189(var1, var3, 1.0F);
    }
 
    @Override
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return super.method11732(var1) || !Class9741.method38176(var1).isEmpty();
    }
 
    @Override
-   public void method11737(Class7401 var1, Class25<Class8848> var2) {
+   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
       if (this.method11738(var1)) {
          for (Class8812 var6 : Class2348.field16076) {
             if (var6 != Class8137.field34976) {
-               var2.add(Class9741.method38187(new Class8848(this), var6));
+               var2.add(Class9741.method38187(new ItemStack(this), var6));
             }
          }
       }

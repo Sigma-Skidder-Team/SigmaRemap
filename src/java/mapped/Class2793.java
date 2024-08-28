@@ -20,7 +20,7 @@ public class Class2793<T extends Class1038> extends Class2794<T> {
    public void method10997(T var1, float var2, float var3, float var4) {
       this.field17440 = Class2278.field14836;
       this.field17439 = Class2278.field14836;
-      Class8848 var7 = var1.method3094(Class79.field182);
+      ItemStack var7 = var1.method3094(Hand.field182);
       if (var7.method32107() == Class8514.field38144 && var1.method4307()) {
          if (var1.method2967() != Class2205.field14418) {
             this.field17439 = Class2278.field14840;
@@ -46,13 +46,13 @@ public class Class2793<T extends Class1038> extends Class2794<T> {
 
       if (this.field17442 > 0.0F) {
          this.field17435.field31035 = this.method11006(this.field17442, this.field17435.field31035, (float) (-Math.PI * 4.0 / 5.0))
-            + this.field17442 * 0.35F * Class9679.method37763(0.1F * var4);
+            + this.field17442 * 0.35F * MathHelper.method37763(0.1F * var4);
          this.field17436.field31035 = this.method11006(this.field17442, this.field17436.field31035, (float) (-Math.PI * 4.0 / 5.0))
-            - this.field17442 * 0.35F * Class9679.method37763(0.1F * var4);
+            - this.field17442 * 0.35F * MathHelper.method37763(0.1F * var4);
          this.field17435.field31037 = this.method11006(this.field17442, this.field17435.field31037, -0.15F);
          this.field17436.field31037 = this.method11006(this.field17442, this.field17436.field31037, 0.15F);
-         this.field17438.field31035 = this.field17438.field31035 - this.field17442 * 0.55F * Class9679.method37763(0.1F * var4);
-         this.field17437.field31035 = this.field17437.field31035 + this.field17442 * 0.55F * Class9679.method37763(0.1F * var4);
+         this.field17438.field31035 = this.field17438.field31035 - this.field17442 * 0.55F * MathHelper.method37763(0.1F * var4);
+         this.field17437.field31035 = this.field17437.field31035 + this.field17442 * 0.55F * MathHelper.method37763(0.1F * var4);
          this.field17432.field31035 = 0.0F;
       }
    }

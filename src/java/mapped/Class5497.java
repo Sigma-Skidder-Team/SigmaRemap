@@ -30,7 +30,7 @@ public class Class5497 implements Packet<Class5110> {
    }
 
    @Nullable
-   public Entity method17283(Class1657 var1) {
+   public Entity method17283(ServerWorld var1) {
       return var1.method6942(this.field24400);
    }
 }

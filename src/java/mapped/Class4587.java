@@ -50,7 +50,7 @@ public abstract class Class4587 {
       this.field22045 = var10 + (Math.random() * 2.0 - 1.0) * 0.4F;
       this.field22046 = var12 + (Math.random() * 2.0 - 1.0) * 0.4F;
       float var16 = (float)(Math.random() + Math.random() + 1.0) * 0.15F;
-      float var17 = Class9679.method37766(this.field22044 * this.field22044 + this.field22045 * this.field22045 + this.field22046 * this.field22046);
+      float var17 = MathHelper.method37766(this.field22044 * this.field22044 + this.field22045 * this.field22045 + this.field22046 * this.field22046);
       this.field22044 = this.field22044 / (double)var17 * (double)var16 * 0.4F;
       this.field22045 = this.field22045 / (double)var17 * (double)var16 * 0.4F + 0.1F;
       this.field22046 = this.field22046 / (double)var17 * (double)var16 * 0.4F;
@@ -223,18 +223,18 @@ public abstract class Class4587 {
 
    private boolean method14525(double var1, double var3, double var5) {
       if (!(this.field22052 > 1.0F) && !(this.field22053 > 1.0F)) {
-         int var9 = Class9679.method37769(this.field22041);
-         int var10 = Class9679.method37769(this.field22042);
-         int var11 = Class9679.method37769(this.field22043);
+         int var9 = MathHelper.method37769(this.field22041);
+         int var10 = MathHelper.method37769(this.field22042);
+         int var11 = MathHelper.method37769(this.field22043);
          this.field22064.method8384(var9, var10, var11);
          Class7380 var12 = this.field22037.method6738(this.field22064);
          if (var12.method23393()) {
             double var13 = !(var1 > 0.0) ? (!(var1 < 0.0) ? this.field22041 : this.field22047.field28449) : this.field22047.field28452;
             double var15 = !(var3 > 0.0) ? (!(var3 < 0.0) ? this.field22042 : this.field22047.field28450) : this.field22047.field28453;
             double var17 = !(var5 > 0.0) ? (!(var5 < 0.0) ? this.field22043 : this.field22047.field28451) : this.field22047.field28454;
-            int var19 = Class9679.method37769(var13 + var1);
-            int var20 = Class9679.method37769(var15 + var3);
-            int var21 = Class9679.method37769(var17 + var5);
+            int var19 = MathHelper.method37769(var13 + var1);
+            int var20 = MathHelper.method37769(var15 + var3);
+            int var21 = MathHelper.method37769(var17 + var5);
             if (var19 != var9 || var20 != var10 || var21 != var11) {
                this.field22064.method8384(var19, var20, var21);
                Class7380 var22 = this.field22037.method6738(this.field22064);

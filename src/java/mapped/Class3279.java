@@ -22,13 +22,13 @@ public class Class3279 extends Class3257 implements Class3255 {
    public final Class2115 field18785;
    private final Multimap<Class4869, Class9689> field18786;
 
-   public static boolean method11804(Class2956 var0, Class8848 var1) {
+   public static boolean method11804(Class2956 var0, ItemStack var1) {
       BlockPos var4 = var0.method11323().method8349(var0.method11324().<Direction>method23463(Class3357.field18899));
       List var5 = var0.method11326().<Entity>method6772(Class880.class, new Class6488(var4), Class8088.field34763.and(new Class165(var1)));
       if (!var5.isEmpty()) {
          Class880 var6 = (Class880)var5.get(0);
          Class2106 var7 = Class1006.method4271(var1);
-         Class8848 var8 = var1.method32106(1);
+         ItemStack var8 = var1.method32106(1);
          var6.method2944(var7, var8);
          if (var6 instanceof Class1006) {
             ((Class1006)var6).method4279(var7, 2.0F);
@@ -74,21 +74,21 @@ public class Class3279 extends Class3257 implements Class3255 {
    }
 
    @Override
-   public boolean method11699(Class8848 var1, Class8848 var2) {
+   public boolean method11699(ItemStack var1, ItemStack var2) {
       return this.field18785.method8789().test(var2) || super.method11699(var1, var2);
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       Class2106 var7 = Class1006.method4271(var6);
-      Class8848 var8 = var2.method2943(var7);
+      ItemStack var8 = var2.method2943(var7);
       if (!var8.method32105()) {
-         return Class6794.<Class8848>method20699(var6);
+         return Class6794.<ItemStack>method20699(var6);
       } else {
          var2.method2944(var7, var6.method32126());
          var6.method32180(0);
-         return Class6794.<Class8848>method20700(var6, var1.method6714());
+         return Class6794.<ItemStack>method20700(var6, var1.method6714());
       }
    }
 

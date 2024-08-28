@@ -43,14 +43,14 @@ public class Class2680 extends Class2595 {
       }
    }
 
-   public boolean method10898(Class8848 var1) {
+   public boolean method10898(ItemStack var1) {
       return this.field17089.test(var1);
    }
 
    @Override
    public boolean method10806() {
       if (this.method10899()) {
-         if (!(this.field17079.method3277(this.field17086) < 36.0)) {
+         if (!(this.field17079.getDistanceSq(this.field17086) < 36.0)) {
             this.field17081 = this.field17086.getPosX();
             this.field17082 = this.field17086.getPosY();
             this.field17083 = this.field17086.getPosZ();
@@ -94,7 +94,7 @@ public class Class2680 extends Class2595 {
    @Override
    public void method10805() {
       this.field17079.method4227().method28040(this.field17086, (float)(this.field17079.method4260() + 20), (float)this.field17079.method4259());
-      if (!(this.field17079.method3277(this.field17086) < 6.25)) {
+      if (!(this.field17079.getDistanceSq(this.field17086) < 6.25)) {
          this.field17079.method4230().method21655(this.field17086, this.field17080);
       } else {
          this.field17079.method4230().method21666();

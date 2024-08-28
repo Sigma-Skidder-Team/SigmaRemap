@@ -18,7 +18,7 @@ public class Class5596 implements Packet<Class5116> {
 
    public Class5596(PlayerEntity var1) {
       this.field24833 = var1.method3205();
-      this.field24834 = var1.method2906().getId();
+      this.field24834 = var1.getGameProfile().getId();
       this.field24835 = var1.getPosX();
       this.field24836 = var1.getPosY();
       this.field24837 = var1.getPosZ();

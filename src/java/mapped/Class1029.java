@@ -32,7 +32,7 @@ public class Class1029 extends Class1026 {
    @Override
    public void method4240() {
       boolean var3 = !(this.method3407() instanceof Class1006) || this.method3407().method3204().method33228(Class8613.field38735);
-      boolean var4 = !(this.method3421() instanceof Class1002);
+      boolean var4 = !(this.getRidingEntity() instanceof Class1002);
       this.field5600.method20010(Class2240.field14657, var3);
       this.field5600.method20010(Class2240.field14659, var3 && var4);
       this.field5600.method20010(Class2240.field14658, var3);
@@ -103,7 +103,7 @@ public class Class1029 extends Class1026 {
          if (!this.method2896()) {
             double var3 = this.method4232() == null ? 0.3 : 0.35;
             double var5 = this.method3085(Class9173.field42108).method38660();
-            this.method3085(Class9173.field42108).method38661(Class9679.method37822(0.1, var5, var3));
+            this.method3085(Class9173.field42108).method38661(MathHelper.method37822(0.1, var5, var3));
          } else {
             this.method3085(Class9173.field42108).method38661(0.0);
          }
@@ -113,12 +113,12 @@ public class Class1029 extends Class1026 {
             Class6488 var8 = this.method3389().method19664(0.2);
 
             for (BlockPos var10 : BlockPos.method8364(
-               Class9679.method37769(var8.field28449),
-               Class9679.method37769(var8.field28450),
-               Class9679.method37769(var8.field28451),
-               Class9679.method37769(var8.field28452),
-               Class9679.method37769(var8.field28453),
-               Class9679.method37769(var8.field28454)
+               MathHelper.method37769(var8.field28449),
+               MathHelper.method37769(var8.field28450),
+               MathHelper.method37769(var8.field28451),
+               MathHelper.method37769(var8.field28452),
+               MathHelper.method37769(var8.field28453),
+               MathHelper.method37769(var8.field28454)
             )) {
                Class7380 var11 = this.field5024.method6738(var10);
                Block var12 = var11.method23383();

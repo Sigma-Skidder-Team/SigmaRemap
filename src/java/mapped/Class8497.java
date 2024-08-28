@@ -38,7 +38,7 @@ public final class Class8497 {
 
       this.field37169 = var13.build();
       this.field37170 = var2.<Map<Class7481, String>>method1632(() -> {
-         Class1657 var6 = var2.method1318(var10);
+         ServerWorld var6 = var2.method1318(var10);
          if (var6 == null) {
             return ImmutableMap.of();
          } else {

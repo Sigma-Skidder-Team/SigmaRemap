@@ -13,7 +13,7 @@ public class Class2666 extends Class2661 {
    public boolean method10860() {
       if (this.field17022.method4432()
          && Class1017.method4452(this.field17022)
-         && Class1017.method4453(this.field17022).method8317(this.field17022.method3431(), 2.0)) {
+         && Class1017.method4453(this.field17022).method8317(this.field17022.getPositionVec(), 2.0)) {
          Class944 var3 = this.field17022.field5024.method6759(Class1017.method4453(this.field17022));
          if (var3 instanceof Class962) {
             Class962 var4 = (Class962)var3;

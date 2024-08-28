@@ -111,7 +111,7 @@ public class Class6610 implements Class6608, Class6611 {
    public Class6610(Class8898 var1, Class7846 var2, Lifecycle var3) {
       this(
          (DataFixer)null,
-         Class9246.method34773().getWorldVersion(),
+         SharedConstants.method34773().getWorldVersion(),
          (Class39)null,
          false,
          0,
@@ -204,11 +204,11 @@ public class Class6610 implements Class6608, Class6611 {
       var2.method99("ServerBrands", var6);
       var2.method115("WasModded", this.field29092);
       Class39 var7 = new Class39();
-      var7.method109("Name", Class9246.method34773().getName());
-      var7.method102("Id", Class9246.method34773().getWorldVersion());
-      var7.method115("Snapshot", !Class9246.method34773().isStable());
+      var7.method109("Name", SharedConstants.method34773().getName());
+      var7.method102("Id", SharedConstants.method34773().getWorldVersion());
+      var7.method115("Snapshot", !SharedConstants.method34773().isStable());
       var2.method99("Version", var7);
-      var2.method102("DataVersion", Class9246.method34773().getWorldVersion());
+      var2.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
       Class6713<Class30> var8 = Class6713.method20491(Class8063.field34602, var1);
       Class7846.field33650
          .encodeStart(var8, this.field29065)
@@ -286,7 +286,7 @@ public class Class6610 implements Class6608, Class6611 {
 
    private void method20082() {
       if (!this.field29075 && this.field29076 != null) {
-         if (this.field29074 < Class9246.method34773().getWorldVersion()) {
+         if (this.field29074 < SharedConstants.method34773().getWorldVersion()) {
             if (this.field29073 == null) {
                throw (NullPointerException) Util.method38516(
                   new NullPointerException("Fixer Upper not set inside LevelData, and the player tag is not upgraded.")

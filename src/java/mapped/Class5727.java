@@ -7,8 +7,8 @@ public abstract class Class5727<T extends Class884> extends Class5715<T> {
 
    public void method17853(T var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
       var4.method35294();
-      var4.method35293(Class7680.field32900.method25286(Class9679.method37821(var3, var1.field5033, var1.field5031) - 90.0F));
-      var4.method35293(Class7680.field32902.method25286(Class9679.method37821(var3, var1.field5034, var1.field5032)));
+      var4.method35293(Class7680.field32900.method25286(MathHelper.method37821(var3, var1.field5033, var1.field5031) - 90.0F));
+      var4.method35293(Class7680.field32902.method25286(MathHelper.method37821(var3, var1.field5034, var1.field5032)));
       boolean var9 = false;
       float var10 = 0.0F;
       float var11 = 0.5F;
@@ -21,7 +21,7 @@ public abstract class Class5727<T extends Class884> extends Class5715<T> {
       float var18 = 0.05625F;
       float var19 = (float)var1.field5103 - var3;
       if (var19 > 0.0F) {
-         float var20 = -Class9679.method37763(var19 * 3.0F) * var19;
+         float var20 = -MathHelper.method37763(var19 * 3.0F) * var19;
          var4.method35293(Class7680.field32902.method25286(var20));
       }
 

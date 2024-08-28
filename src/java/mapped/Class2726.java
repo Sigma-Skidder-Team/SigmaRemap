@@ -12,7 +12,7 @@ public class Class2726 extends Class2595 {
    @Override
    public boolean method10803() {
       Class880 var3 = this.field17232.method3014();
-      return this.field17232.method3250() && var3 != null ? this.field17232.method3277(var3) < 100.0 : false;
+      return this.field17232.method3250() && var3 != null ? this.field17232.getDistanceSq(var3) < 100.0 : false;
    }
 
    @Override

@@ -69,22 +69,22 @@ public class Class2888<T extends Class1070> extends Class2803<T> {
       }
 
       float var9 = 1.5F;
-      this.field17894.field31037 = 0.1F * Class9679.method37763(var2 * 1.5F) * 4.0F * var3;
+      this.field17894.field31037 = 0.1F * MathHelper.method37763(var2 * 1.5F) * 4.0F * var3;
       this.field17894.field31033 = 2.0F;
-      this.field17894.field31033 = this.field17894.field31033 - 2.0F * Class9679.method37764(var2 * 1.5F) * 2.0F * var3;
-      this.field17893.field31035 = Class9679.method37763(var2 * 1.5F * 0.5F) * 2.0F * var3;
-      this.field17892.field31035 = Class9679.method37763(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
-      this.field17893.field31037 = (float) (Math.PI / 18) * Class9679.method37764(var2 * 1.5F * 0.5F) * var3;
-      this.field17892.field31037 = (float) (Math.PI / 18) * Class9679.method37764(var2 * 1.5F * 0.5F + (float) Math.PI) * var3;
-      this.field17893.field31033 = 8.0F + 2.0F * Class9679.method37763(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
-      this.field17892.field31033 = 8.0F + 2.0F * Class9679.method37763(var2 * 1.5F * 0.5F) * 2.0F * var3;
+      this.field17894.field31033 = this.field17894.field31033 - 2.0F * MathHelper.method37764(var2 * 1.5F) * 2.0F * var3;
+      this.field17893.field31035 = MathHelper.method37763(var2 * 1.5F * 0.5F) * 2.0F * var3;
+      this.field17892.field31035 = MathHelper.method37763(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
+      this.field17893.field31037 = (float) (Math.PI / 18) * MathHelper.method37764(var2 * 1.5F * 0.5F) * var3;
+      this.field17892.field31037 = (float) (Math.PI / 18) * MathHelper.method37764(var2 * 1.5F * 0.5F + (float) Math.PI) * var3;
+      this.field17893.field31033 = 8.0F + 2.0F * MathHelper.method37763(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
+      this.field17892.field31033 = 8.0F + 2.0F * MathHelper.method37763(var2 * 1.5F * 0.5F) * 2.0F * var3;
       this.field17895.field31037 = -1.2217305F;
       this.field17896.field31037 = -1.134464F;
       this.field17897.field31037 = -0.87266463F;
       this.field17898.field31037 = 0.87266463F;
       this.field17899.field31037 = 1.134464F;
       this.field17900.field31037 = 1.2217305F;
-      float var10 = Class9679.method37764(var2 * 1.5F + (float) Math.PI) * var3;
+      float var10 = MathHelper.method37764(var2 * 1.5F + (float) Math.PI) * var3;
       this.field17895.field31037 += var10 * 1.3F;
       this.field17896.field31037 += var10 * 1.2F;
       this.field17897.field31037 += var10 * 0.6F;
@@ -93,12 +93,12 @@ public class Class2888<T extends Class1070> extends Class2803<T> {
       this.field17900.field31037 += var10 * 1.3F;
       float var11 = 1.0F;
       float var12 = 1.0F;
-      this.field17895.field31037 = this.field17895.field31037 + 0.05F * Class9679.method37763(var4 * 1.0F * -0.4F);
-      this.field17896.field31037 = this.field17896.field31037 + 0.1F * Class9679.method37763(var4 * 1.0F * 0.2F);
-      this.field17897.field31037 = this.field17897.field31037 + 0.1F * Class9679.method37763(var4 * 1.0F * 0.4F);
-      this.field17898.field31037 = this.field17898.field31037 + 0.1F * Class9679.method37763(var4 * 1.0F * 0.4F);
-      this.field17899.field31037 = this.field17899.field31037 + 0.1F * Class9679.method37763(var4 * 1.0F * 0.2F);
-      this.field17900.field31037 = this.field17900.field31037 + 0.05F * Class9679.method37763(var4 * 1.0F * -0.4F);
+      this.field17895.field31037 = this.field17895.field31037 + 0.05F * MathHelper.method37763(var4 * 1.0F * -0.4F);
+      this.field17896.field31037 = this.field17896.field31037 + 0.1F * MathHelper.method37763(var4 * 1.0F * 0.2F);
+      this.field17897.field31037 = this.field17897.field31037 + 0.1F * MathHelper.method37763(var4 * 1.0F * 0.4F);
+      this.field17898.field31037 = this.field17898.field31037 + 0.1F * MathHelper.method37763(var4 * 1.0F * 0.4F);
+      this.field17899.field31037 = this.field17899.field31037 + 0.1F * MathHelper.method37763(var4 * 1.0F * 0.2F);
+      this.field17900.field31037 = this.field17900.field31037 + 0.05F * MathHelper.method37763(var4 * 1.0F * -0.4F);
    }
 
    public void method11205(Class7219 var1, float var2, float var3, float var4) {

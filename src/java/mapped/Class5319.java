@@ -24,7 +24,7 @@ public class Class5319 extends Module {
         this.field23865 = new Vector3d(mc.field1339.getPosX(), mc.field1339.getPosY(), mc.field1339.getPosZ());
         this.field23866 = mc.field1339.field5031;
         this.field23867 = mc.field1339.field5032;
-        field23863 = new Class1116(mc.field1338, mc.field1339.method2906());
+        field23863 = new Class1116(mc.field1338, mc.field1339.getGameProfile());
         field23863.field4902 = mc.field1339.field4902;
         field23863.method3269(this.field23865.field18048, this.field23865.field18049, this.field23865.field18050, this.field23866, this.field23867);
         field23863.field4967 = mc.field1339.field4967;
@@ -46,10 +46,10 @@ public class Class5319 extends Module {
     @EventTarget
     private void method16710(Class4402 var1) {
         if (this.method15996()) {
-            if (mc.field1339 != null && var1.method13932() instanceof Class5583
+            if (mc.field1339 != null && var1.method13932() instanceof CEntityActionPacket
                     || var1.method13932() instanceof Class5603
-                    || var1.method13932() instanceof Class5505
-                    || var1.method13932() instanceof Class5511
+                    || var1.method13932() instanceof CUseEntityPacket
+                    || var1.method13932() instanceof CAnimateHandPacket
                     || var1.method13932() instanceof Class5555) {
                 this.field23864.add(var1.method13932());
                 var1.method13900(true);

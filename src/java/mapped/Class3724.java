@@ -30,12 +30,12 @@ public class Class3724<E extends Class880> extends Class3676<E> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       return this.field19811.test((E)var2) && this.method12623((E)var2).method3213(var2, (double)this.field19812);
    }
 
    @Override
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       Class6983.method21576(var2, this.method12623((E)var2), this.field19813, 0);
    }
 

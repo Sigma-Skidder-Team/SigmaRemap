@@ -2662,7 +2662,7 @@ public class Class8981 {
                         method33023(field40701, 15);
                 }
 
-                Class8848 var3 = field40591.field1339 != null ? field40591.field1339.method3090() : null;
+                ItemStack var3 = field40591.field1339 != null ? field40591.field1339.method3090() : null;
                 Class3257 var4 = var3 != null ? var3.method32107() : null;
                 int var5 = -1;
                 Block var6 = null;
@@ -2676,7 +2676,7 @@ public class Class8981 {
                 }
 
                 int var7 = var6 != null ? var6.method11579().method23392() : 0;
-                Class8848 var8 = field40591.field1339 != null ? field40591.field1339.method3091() : null;
+                ItemStack var8 = field40591.field1339 != null ? field40591.field1339.method3091() : null;
                 Class3257 var9 = var8 != null ? var8.method32107() : null;
                 int var10 = -1;
                 Block var11 = null;
@@ -3212,7 +3212,7 @@ public class Class8981 {
             field40650 = field40650 * var7 + field40649 * (1.0F - var7);
             Entity var8 = var1.method37509();
             if (var8 != null) {
-                field40611 = var8 instanceof Class880 && ((Class880) var8).method3176();
+                field40611 = var8 instanceof Class880 && ((Class880) var8).isSleeping();
                 field40659 = (float) var1.method37504().method11321();
                 field40656 = field40591.method1554().method32208(var8, var2);
                 float var9 = (float) field40644 * 0.01F;
@@ -4563,11 +4563,11 @@ public class Class8981 {
         return field40812.method34918(var0);
     }
 
-    public static void method33147(Class8848 var0) {
+    public static void method33147(ItemStack var0) {
         field40618 = method33152(var0);
     }
 
-    public static void method33148(Class8848 var0) {
+    public static void method33148(ItemStack var0) {
         field40619 = method33152(var0);
     }
 
@@ -4583,7 +4583,7 @@ public class Class8981 {
         return field40613 && field40614;
     }
 
-    private static boolean method33152(Class8848 var0) {
+    private static boolean method33152(ItemStack var0) {
         if (var0 == null) {
             return false;
         } else {
@@ -4605,8 +4605,8 @@ public class Class8981 {
         }
     }
 
-    public static boolean method33153(Class79 var0) {
-        return var0 == Class79.field182 && field40615 ? true : var0 == Class79.field183 && field40616;
+    public static boolean method33153(Hand var0) {
+        return var0 == Hand.field182 && field40615 ? true : var0 == Hand.field183 && field40616;
     }
 
     public static boolean method33154() {

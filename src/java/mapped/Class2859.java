@@ -63,7 +63,7 @@ public class Class2859<T extends Class1012> extends Class2858<T> {
 
    public void method10997(T var1, float var2, float var3, float var4) {
       if (!var1.method4369()) {
-         this.field17719.field31036 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
+         this.field17719.field31036 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
       } else {
          this.field17719.field31036 = 0.0F;
       }
@@ -78,10 +78,10 @@ public class Class2859<T extends Class1012> extends Class2858<T> {
          this.field17716.method22679(0.5F, 16.0F, 7.0F);
          this.field17717.method22679(-2.5F, 16.0F, -4.0F);
          this.field17718.method22679(0.5F, 16.0F, -4.0F);
-         this.field17715.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
-         this.field17716.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-         this.field17717.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-         this.field17718.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
+         this.field17715.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+         this.field17716.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+         this.field17717.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+         this.field17718.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
       } else {
          this.field17721.method22679(-1.0F, 16.0F, -3.0F);
          this.field17721.field31035 = (float) (Math.PI * 2.0 / 5.0);

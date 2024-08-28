@@ -37,7 +37,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4258() {
       if (!this.method4305() && Class8100.method28053(this)) {
-         boolean var3 = ((Class1657)this.field5024).method6958(this.method3432());
+         boolean var3 = ((ServerWorld)this.field5024).method6958(this.method3432());
          ((Class6991)this.method4230()).method21682(var3);
       }
 
@@ -95,7 +95,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4551() == null) {
-         this.method2944(Class2106.field13731, new Class8848(Class8514.field37823));
+         this.method2944(Class2106.field13731, new ItemStack(Class8514.field37823));
       }
    }
 
@@ -135,7 +135,7 @@ public class Class1030 extends Class1025 {
 
    @Override
    public void method4545(int var1, boolean var2) {
-      Class8848 var5 = new Class8848(Class8514.field37823);
+      ItemStack var5 = new ItemStack(Class8514.field37823);
       Class7699 var6 = this.method4551();
       byte var7 = 1;
       if (var1 > var6.method25435(Class2197.field14353)) {

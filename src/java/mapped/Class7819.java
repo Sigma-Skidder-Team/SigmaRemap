@@ -21,7 +21,7 @@ public class Class7819 {
       )
       .method12282(true)
       .method12283(true);
-   private final Class1657 field33538;
+   private final ServerWorld field33538;
    private final List<Integer> field33539 = Lists.newArrayList();
    private final Class9803 field33540;
    private int field33541;
@@ -37,7 +37,7 @@ public class Class7819 {
    private int field33551;
    private List<Class1001> field33552;
 
-   public Class7819(Class1657 var1, long var2, Class39 var4) {
+   public Class7819(ServerWorld var1, long var2, Class39 var4) {
       this.field33538 = var1;
       if (!var4.method119("DragonKilled", 99)) {
          this.field33545 = true;
@@ -158,7 +158,7 @@ public class Class7819 {
       List var4 = this.field33538.method6913();
       if (!var4.isEmpty()) {
          Class1007 var5 = (Class1007)var4.get(0);
-         this.field33547 = var5.method3375();
+         this.field33547 = var5.getUniqueID();
          field33535.info("Found that there's a dragon still alive ({})", var5);
          this.field33545 = false;
          if (!var3) {
@@ -179,7 +179,7 @@ public class Class7819 {
       List var3 = this.field33538.method6913();
       if (!var3.isEmpty()) {
          field33535.debug("Haven't seen our dragon, but found another one to use.");
-         this.field33547 = ((Class1007)var3.get(0)).method3375();
+         this.field33547 = ((Class1007)var3.get(0)).getUniqueID();
       } else {
          field33535.debug("Haven't seen the dragon, respawning it");
          this.method26123();
@@ -306,7 +306,7 @@ public class Class7819 {
    }
 
    public void method26119(Class1007 var1) {
-      if (var1.method3375().equals(this.field33547)) {
+      if (var1.getUniqueID().equals(this.field33547)) {
          this.field33537.method12278(0.0F);
          this.field33537.method12287(false);
          this.method26122(true);
@@ -323,8 +323,8 @@ public class Class7819 {
    private void method26120() {
       if (!this.field33539.isEmpty()) {
          int var3 = this.field33539.remove(this.field33539.size() - 1);
-         int var4 = Class9679.method37769(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
-         int var5 = Class9679.method37769(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
+         int var4 = MathHelper.method37769(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
+         int var5 = MathHelper.method37769(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
          this.method26121(new BlockPos(var4, 75, var5));
       }
    }
@@ -353,16 +353,16 @@ public class Class7819 {
       var3.method4336().method32671(Class9598.field44896);
       var3.method3273(0.0, 128.0, 0.0, this.field33538.field9016.nextFloat() * 360.0F, 0.0F);
       this.field33538.method6916(var3);
-      this.field33547 = var3.method3375();
+      this.field33547 = var3.getUniqueID();
       return var3;
    }
 
    public void method26124(Class1007 var1) {
-      if (var1.method3375().equals(this.field33547)) {
+      if (var1.getUniqueID().equals(this.field33547)) {
          this.field33537.method12278(var1.method3042() / var1.method3075());
          this.field33541 = 0;
          if (var1.method3381()) {
-            this.field33537.method12284(var1.method2954());
+            this.field33537.method12284(var1.getDisplayName());
          }
       }
    }

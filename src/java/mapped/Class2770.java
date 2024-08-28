@@ -52,9 +52,9 @@ public class Class2770<T extends Class880> extends Class2595 {
             this.field17349.method3389().method19663((double)this.field17353, 3.0, (double)this.field17353)
          );
       if (this.field17352 != null) {
-         Vector3d var3 = Class8037.method27590(this.field17349, 16, 7, this.field17352.method3431());
+         Vector3d var3 = Class8037.method27590(this.field17349, 16, 7, this.field17352.getPositionVec());
          if (var3 != null) {
-            if (!(this.field17352.method3276(var3.field18048, var3.field18049, var3.field18050) < this.field17352.method3277(this.field17349))) {
+            if (!(this.field17352.method3276(var3.field18048, var3.field18049, var3.field18050) < this.field17352.getDistanceSq(this.field17349))) {
                this.field17354 = this.field17355.method21648(var3.field18048, var3.field18049, var3.field18050, 0);
                return this.field17354 != null;
             } else {
@@ -85,7 +85,7 @@ public class Class2770<T extends Class880> extends Class2595 {
 
    @Override
    public void method10805() {
-      if (!(this.field17349.method3277(this.field17352) < 49.0)) {
+      if (!(this.field17349.getDistanceSq(this.field17352) < 49.0)) {
          this.field17349.method4230().method21645(this.field17350);
       } else {
          this.field17349.method4230().method21645(this.field17351);

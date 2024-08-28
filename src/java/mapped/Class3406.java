@@ -19,7 +19,7 @@ public class Class3406 extends Block implements Class3405 {
       } else {
          var4.method3354(var1.<Boolean>method23463(field19084));
          if (!var2.field9020) {
-            Class1657 var8 = (Class1657)var2;
+            ServerWorld var8 = (ServerWorld)var2;
 
             for (int var9 = 0; var9 < 2; var9++) {
                var8.method6939(
@@ -55,7 +55,7 @@ public class Class3406 extends Block implements Class3405 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       method12045(var2, var3.method8311(), method12047(var2, var3));
    }
 

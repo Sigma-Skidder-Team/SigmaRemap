@@ -43,7 +43,7 @@ public class Class2783 extends Class2595 {
             this.field17399 = 0;
          }
 
-         double var5 = this.field17396.method3277(var3);
+         double var5 = this.field17396.getDistanceSq(var3);
          if (var5 < 4.0) {
             if (!var4) {
                return;
@@ -75,7 +75,7 @@ public class Class2783 extends Class2595 {
                }
 
                if (this.field17397 > 1) {
-                  float var13 = Class9679.method37765(Class9679.method37766(var5)) * 0.5F;
+                  float var13 = MathHelper.method37765(MathHelper.method37766(var5)) * 0.5F;
                   if (!this.field17396.method3245()) {
                      this.field17396.field5024.method6869((PlayerEntity)null, 1018, this.field17396.method3432(), 0);
                   }

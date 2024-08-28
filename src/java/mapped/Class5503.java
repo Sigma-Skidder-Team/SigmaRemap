@@ -19,7 +19,7 @@ public class Class5503 implements Packet<Class5116> {
       this.field24429 = var1;
 
       for (Class878 var8 : var2) {
-         this.field24430.add(new Class8790(var8.method2906(), var8.field4891, var8.field4857.method33863(), var8.method2819()));
+         this.field24430.add(new Class8790(var8.getGameProfile(), var8.field4891, var8.field4857.method33863(), var8.method2819()));
       }
    }
 
@@ -27,7 +27,7 @@ public class Class5503 implements Packet<Class5116> {
       this.field24429 = var1;
 
       for (Class878 var6 : var2) {
-         this.field24430.add(new Class8790(var6.method2906(), var6.field4891, var6.field4857.method33863(), var6.method2819()));
+         this.field24430.add(new Class8790(var6.getGameProfile(), var6.field4891, var6.field4857.method33863(), var6.method2819()));
       }
    }
 

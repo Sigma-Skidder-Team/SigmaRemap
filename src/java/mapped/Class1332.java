@@ -44,6 +44,6 @@ public class Class1332 extends Class1331 {
 
    private void method6348() {
       ClientPlayNetHandler var3 = this.field4562.field1339.connection;
-      var3.sendPacket(new Class5583(this.field4562.field1339, Class1865.field10042));
+      var3.sendPacket(new CEntityActionPacket(this.field4562.field1339, Class1865.field10042));
    }
 }

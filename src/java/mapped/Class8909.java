@@ -44,7 +44,7 @@ public class Class8909 {
          while (var8 > 0) {
             int var9 = Math.min(var1.method502().method11710(), var8);
             var8 -= var9;
-            Class8848 var10 = var1.method503(var9, false);
+            ItemStack var10 = var1.method503(var9, false);
             boolean var11 = var7.field4902.method4045(var10);
             if (var11 && var10.method32105()) {
                var10.method32180(1);
@@ -69,7 +69,7 @@ public class Class8909 {
                Class1000 var12 = var7.method2882(var10, false);
                if (var12 != null) {
                   var12.method4132();
-                  var12.method4127(var7.method3375());
+                  var12.method4127(var7.getUniqueID());
                }
             }
          }
@@ -80,7 +80,7 @@ public class Class8909 {
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.give.success.single", var3, var1.method503(var3, false).method32173(), ((Class878)var2.iterator().next()).method2954()
+               "commands.give.success.single", var3, var1.method503(var3, false).method32173(), ((Class878)var2.iterator().next()).getDisplayName()
             ),
             true
          );

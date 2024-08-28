@@ -50,17 +50,17 @@ public class Class5297 extends Module {
                 mc.getClientPlayNetHandler()
                         .sendPacket(
                                 new Class5605(
-                                        mc.field1339.method3431().field18048,
-                                        mc.field1339.method3431().field18049 - 1.0E-14,
-                                        mc.field1339.method3431().field18050,
+                                        mc.field1339.getPositionVec().field18048,
+                                        mc.field1339.getPositionVec().field18049 - 1.0E-14,
+                                        mc.field1339.getPositionVec().field18050,
                                         false
                                 )
                         );
                 mc.field1339
                         .method3215(
-                                mc.field1339.method3431().field18048,
-                                mc.field1339.method3431().field18049 - 2.8,
-                                mc.field1339.method3431().field18050
+                                mc.field1339.getPositionVec().field18048,
+                                mc.field1339.getPositionVec().field18049 - 2.8,
+                                mc.field1339.getPositionVec().field18050
                         );
                 mc.field1299.field44637.field13071 = false;
                 mc.field1339.field5036 = false;

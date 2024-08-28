@@ -183,7 +183,7 @@ public abstract class Class995 extends Entity {
    public abstract void method4084();
 
    @Override
-   public Class1000 method3303(Class8848 var1, float var2) {
+   public Class1000 method3303(ItemStack var1, float var2) {
       Class1000 var5 = new Class1000(
          this.field5024,
          this.getPosX() + (double)((float)this.field5489.method539() * 0.15F),
@@ -227,7 +227,7 @@ public abstract class Class995 extends Entity {
          }
       }
 
-      float var4 = Class9679.method37792(this.field5031);
+      float var4 = MathHelper.method37792(this.field5031);
       switch (Class9399.field43617[var1.ordinal()]) {
          case 1:
             return var4 + 180.0F;
@@ -246,7 +246,7 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public void method3353(Class1657 var1, Class906 var2) {
+   public void method3353(ServerWorld var1, Class906 var2) {
    }
 
    @Override

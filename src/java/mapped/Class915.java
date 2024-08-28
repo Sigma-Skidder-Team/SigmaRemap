@@ -29,13 +29,13 @@ public class Class915 extends Entity {
 
    public void method3581(Class880 var1) {
       this.field5211 = var1;
-      this.field5212 = var1 != null ? var1.method3375() : null;
+      this.field5212 = var1 != null ? var1.getUniqueID() : null;
    }
 
    @Nullable
    public Class880 method3582() {
-      if (this.field5211 == null && this.field5212 != null && this.field5024 instanceof Class1657) {
-         Entity var3 = ((Class1657)this.field5024).method6942(this.field5212);
+      if (this.field5211 == null && this.field5212 != null && this.field5024 instanceof ServerWorld) {
+         Entity var3 = ((ServerWorld)this.field5024).method6942(this.field5212);
          if (var3 instanceof Class880) {
             this.field5211 = (Class880)var3;
          }

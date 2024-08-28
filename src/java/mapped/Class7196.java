@@ -66,15 +66,15 @@ public class Class7196 extends Class7195<Class4728> {
       float var27 = 0.0F;
 
       for (int var28 = var17; var28 < var18; var28++) {
-         double var29 = 1.5 + (double)(Class9679.method37763((float)var28 * (float) Math.PI / (float)var18) * var14);
+         double var29 = 1.5 + (double)(MathHelper.method37763((float)var28 * (float) Math.PI / (float)var18) * var14);
          double var31 = var29 * var19;
          var29 *= (double)var24.nextFloat() * 0.25 + 0.75;
          var31 *= (double)var24.nextFloat() * 0.25 + 0.75;
-         float var33 = Class9679.method37764(var16);
-         float var34 = Class9679.method37763(var16);
-         var8 += (double)(Class9679.method37764(var15) * var33);
+         float var33 = MathHelper.method37764(var16);
+         float var34 = MathHelper.method37763(var16);
+         var8 += (double)(MathHelper.method37764(var15) * var33);
          var10 += (double)var34;
-         var12 += (double)(Class9679.method37763(var15) * var33);
+         var12 += (double)(MathHelper.method37763(var15) * var33);
          var16 *= 0.7F;
          var16 += var27 * 0.05F;
          var15 += var36 * 0.05F;

@@ -82,17 +82,17 @@ public class Class2820 extends Class2803<Class1105> {
             .method11333()
             .method11351((float) (Math.PI / 2));
          double var18 = var16.method11334(var17);
-         this.field17573.field31032 = Class9679.method37765((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
+         this.field17573.field31032 = MathHelper.method37765((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
       }
 
       this.field17573.field31039 = true;
       float var20 = var1.method5308(var9);
-      this.field17575[0].field31036 = Class9679.method37763(var20) * (float) Math.PI * 0.05F;
-      this.field17575[1].field31036 = Class9679.method37763(var20) * (float) Math.PI * 0.1F;
+      this.field17575[0].field31036 = MathHelper.method37763(var20) * (float) Math.PI * 0.05F;
+      this.field17575[1].field31036 = MathHelper.method37763(var20) * (float) Math.PI * 0.1F;
       this.field17575[1].field31032 = -1.5F;
       this.field17575[1].field31033 = 0.5F;
       this.field17575[1].field31034 = 14.0F;
-      this.field17575[2].field31036 = Class9679.method37763(var20) * (float) Math.PI * 0.15F;
+      this.field17575[2].field31036 = MathHelper.method37763(var20) * (float) Math.PI * 0.15F;
       this.field17575[2].field31032 = 0.5F;
       this.field17575[2].field31033 = 0.5F;
       this.field17575[2].field31034 = 6.0F;
@@ -103,9 +103,9 @@ public class Class2820 extends Class2803<Class1105> {
          this.field17574[var5].field31035 = (float) Math.PI * field17566[var5];
          this.field17574[var5].field31036 = (float) Math.PI * field17567[var5];
          this.field17574[var5].field31037 = (float) Math.PI * field17568[var5];
-         this.field17574[var5].field31032 = field17569[var5] * (1.0F + Class9679.method37764(var1 * 1.5F + (float)var5) * 0.01F - var2);
-         this.field17574[var5].field31033 = 16.0F + field17570[var5] * (1.0F + Class9679.method37764(var1 * 1.5F + (float)var5) * 0.01F - var2);
-         this.field17574[var5].field31034 = field17571[var5] * (1.0F + Class9679.method37764(var1 * 1.5F + (float)var5) * 0.01F - var2);
+         this.field17574[var5].field31032 = field17569[var5] * (1.0F + MathHelper.method37764(var1 * 1.5F + (float)var5) * 0.01F - var2);
+         this.field17574[var5].field31033 = 16.0F + field17570[var5] * (1.0F + MathHelper.method37764(var1 * 1.5F + (float)var5) * 0.01F - var2);
+         this.field17574[var5].field31034 = field17571[var5] * (1.0F + MathHelper.method37764(var1 * 1.5F + (float)var5) * 0.01F - var2);
       }
    }
 }

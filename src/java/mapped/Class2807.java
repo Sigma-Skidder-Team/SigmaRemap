@@ -38,11 +38,11 @@ public class Class2807<T extends Entity> extends Class2803<T> {
    @Override
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       for (int var9 = 0; var9 < this.field17476.length; var9++) {
-         this.field17476[var9].field31036 = Class9679.method37764(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
+         this.field17476[var9].field31036 = MathHelper.method37764(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
             * (float) Math.PI
             * 0.01F
             * (float)(1 + Math.abs(var9 - 2));
-         this.field17476[var9].field31032 = Class9679.method37763(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
+         this.field17476[var9].field31032 = MathHelper.method37763(var4 * 0.9F + (float)var9 * 0.15F * (float) Math.PI)
             * (float) Math.PI
             * 0.1F
             * (float)Math.abs(var9 - 2);

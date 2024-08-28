@@ -97,8 +97,8 @@ public class Class1108 extends Class1006 implements Class1008 {
          for (int var4 = 0; var4 < var3 * 8; var4++) {
             float var5 = this.field5054.nextFloat() * (float) (Math.PI * 2);
             float var6 = this.field5054.nextFloat() * 0.5F + 0.5F;
-            float var7 = Class9679.method37763(var5) * (float)var3 * 0.5F * var6;
-            float var8 = Class9679.method37764(var5) * (float)var3 * 0.5F * var6;
+            float var7 = MathHelper.method37763(var5) * (float)var3 * 0.5F * var6;
+            float var8 = MathHelper.method37764(var5) * (float)var3 * 0.5F * var6;
             this.field5024.method6746(this.method5321(), this.getPosX() + (double)var7, this.getPosY(), this.getPosZ() + (double)var8, 0.0, 0.0, 0.0);
          }
 
@@ -198,7 +198,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    public void method5324(Class880 var1) {
       if (this.method3066()) {
          int var4 = this.method5319();
-         if (this.method3277(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
+         if (this.getDistanceSq(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method3135(var1)
             && var1.method2741(Class8654.method31115(this), this.method5326())) {
             this.method2863(Class6067.field27072, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);

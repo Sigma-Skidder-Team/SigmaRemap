@@ -19,14 +19,14 @@ public abstract class Class7882<E extends Class880> {
       this(20);
    }
 
-   public final void method26429(Class1657 var1, E var2) {
+   public final void method26429(ServerWorld var1, E var2) {
       if (--this.field33829 <= 0L) {
          this.field33829 = (long)this.field33828;
          this.method26425(var1, (E)var2);
       }
    }
 
-   public abstract void method26425(Class1657 var1, E var2);
+   public abstract void method26425(ServerWorld var1, E var2);
 
    public abstract Set<Class8830<?>> method26424();
 

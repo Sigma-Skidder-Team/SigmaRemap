@@ -53,8 +53,8 @@ public class Class5229 extends Module {
             }
 
             float var8 = (float) Math.toRadians(mc.field1339.field5031 + 90.0F);
-            double var9 = Class9679.method37764(var8) * (float) var7;
-            double var11 = Class9679.method37763(var8) * (float) var7;
+            double var9 = MathHelper.method37764(var8) * (float) var7;
+            double var11 = MathHelper.method37763(var8) * (float) var7;
             mc.field1339
                     .method3215(mc.field1339.getPosX() + var9, mc.field1339.getPosY(), mc.field1339.getPosZ() + var11);
         }

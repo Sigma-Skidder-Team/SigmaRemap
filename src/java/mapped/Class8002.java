@@ -60,7 +60,7 @@ public class Class8002 {
       if (Class1655.method6717(var7)) {
          Class39 var8 = var3.method79();
          var8.method109("id", var1.toString());
-         Class1657 var9 = var0.method20172();
+         ServerWorld var9 = var0.method20172();
          Entity var10 = Class8992.method33223(var8, var9, var1x -> {
             var1x.method3273(var2.field18048, var2.field18049, var2.field18050, var1x.field5031, var1x.field5032);
             return var1x;
@@ -72,7 +72,7 @@ public class Class8002 {
             }
 
             if (var9.method6928(var10)) {
-               var0.method20179(new TranslationTextComponent("commands.summon.success", var10.method2954()), true);
+               var0.method20179(new TranslationTextComponent("commands.summon.success", var10.getDisplayName()), true);
                return 1;
             } else {
                throw field34404.create();

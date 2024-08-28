@@ -65,20 +65,20 @@ public class Class6991 extends Class6990 {
 
    private int method21678() {
       if (this.field30243.method3250() && this.method21675()) {
-         int var3 = Class9679.method37769(this.field30243.getPosY());
+         int var3 = MathHelper.method37769(this.field30243.getPosY());
          Block var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)var3, this.field30243.getPosZ())).method23383();
          int var5 = 0;
 
          while (var4 == Blocks.WATER) {
             var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)(++var3), this.field30243.getPosZ())).method23383();
             if (++var5 > 16) {
-               return Class9679.method37769(this.field30243.getPosY());
+               return MathHelper.method37769(this.field30243.getPosY());
             }
          }
 
          return var3;
       } else {
-         return Class9679.method37769(this.field30243.getPosY() + 0.5);
+         return MathHelper.method37769(this.field30243.getPosY() + 0.5);
       }
    }
 
@@ -102,8 +102,8 @@ public class Class6991 extends Class6990 {
 
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
-      int var8 = Class9679.method37769(var1.field18048);
-      int var9 = Class9679.method37769(var1.field18050);
+      int var8 = MathHelper.method37769(var1.field18048);
+      int var9 = MathHelper.method37769(var1.field18050);
       double var10 = var2.field18048 - var1.field18048;
       double var12 = var2.field18050 - var1.field18050;
       double var14 = var10 * var10 + var12 * var12;
@@ -115,7 +115,7 @@ public class Class6991 extends Class6990 {
          var12 *= var16;
          var3 += 2;
          var5 += 2;
-         if (!this.method21679(var8, Class9679.method37769(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
+         if (!this.method21679(var8, MathHelper.method37769(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
             return false;
          } else {
             var3 -= 2;
@@ -136,8 +136,8 @@ public class Class6991 extends Class6990 {
             var24 /= var12;
             int var26 = !(var10 < 0.0) ? 1 : -1;
             int var27 = !(var12 < 0.0) ? 1 : -1;
-            int var28 = Class9679.method37769(var2.field18048);
-            int var29 = Class9679.method37769(var2.field18050);
+            int var28 = MathHelper.method37769(var2.field18048);
+            int var29 = MathHelper.method37769(var2.field18050);
             int var30 = var28 - var8;
             int var31 = var29 - var9;
 
@@ -152,7 +152,7 @@ public class Class6991 extends Class6990 {
                   var30 = var28 - var8;
                }
 
-               if (!this.method21679(var8, Class9679.method37769(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
+               if (!this.method21679(var8, MathHelper.method37769(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
                   return false;
                }
             }

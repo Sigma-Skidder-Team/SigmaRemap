@@ -8,8 +8,8 @@ public class Class3333 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       var1.method6743(
          (PlayerEntity)null,
          var2.getPosX(),
@@ -32,6 +32,6 @@ public class Class3333 extends Class3257 {
          var6.method32182(1);
       }
 
-      return Class6794.<Class8848>method20700(var6, var1.method6714());
+      return Class6794.<ItemStack>method20700(var6, var1.method6714());
    }
 }

@@ -23,7 +23,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19267) < 25 && var4.nextDouble() < this.field19268) {
          BlockPos var7 = var3.method8349(this.field19256);
          if (this.method12127(var2.method6738(var7))) {
@@ -65,7 +65,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       BlockPos var7 = var3.method8349(this.field19256);
       int var8 = Math.min(var4.<Integer>method23463(field19267) + 1, 25);
       int var9 = this.method12128(var2);

@@ -10,7 +10,7 @@ public class Class3377 extends Class3231 {
    }
 
    @Override
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, Class8848 var6) {
+   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (Class7858.method26311(Class8122.field34916, var6) == 0) {
          if (var1.method6812().method36877()) {
@@ -26,7 +26,7 @@ public class Class3377 extends Class3231 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7020(Class1977.field12882, var3) > 11 - var1.method23387(var2, var3)) {
          this.method11968(var1, var2, var3);
       }

@@ -189,16 +189,16 @@ public class Block extends Class3390 implements Class3303 {
    public void method11551(Class1660 var1, BlockPos var2, Class7380 var3) {
    }
 
-   public static List<Class8848> method11552(Class7380 var0, Class1657 var1, BlockPos var2, Class944 var3) {
+   public static List<ItemStack> method11552(Class7380 var0, ServerWorld var1, BlockPos var2, Class944 var3) {
       Class9464 var6 = new Class9464(var1)
          .method36450(var1.field9016)
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
-         .method36454(Class9525.field44338, Class8848.field39973)
+         .method36454(Class9525.field44338, ItemStack.field39973)
          .method36455(Class9525.field44337, var3);
       return var0.method23434(var6);
    }
 
-   public static List<Class8848> method11553(Class7380 var0, Class1657 var1, BlockPos var2, Class944 var3, Entity var4, Class8848 var5) {
+   public static List<ItemStack> method11553(Class7380 var0, ServerWorld var1, BlockPos var2, Class944 var3, Entity var4, ItemStack var5) {
       Class9464 var8 = new Class9464(var1)
          .method36450(var1.field9016)
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
@@ -209,27 +209,27 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public static void method11554(Class7380 var0, Class1655 var1, BlockPos var2) {
-      if (var1 instanceof Class1657) {
-         method11552(var0, (Class1657)var1, var2, (Class944)null).forEach(var2x -> method11557(var1, var2, var2x));
-         var0.method23433((Class1657)var1, var2, Class8848.field39973);
+      if (var1 instanceof ServerWorld) {
+         method11552(var0, (ServerWorld)var1, var2, (Class944)null).forEach(var2x -> method11557(var1, var2, var2x));
+         var0.method23433((ServerWorld)var1, var2, ItemStack.field39973);
       }
    }
 
    public static void method11555(Class7380 var0, Class1660 var1, BlockPos var2, Class944 var3) {
-      if (var1 instanceof Class1657) {
-         method11552(var0, (Class1657)var1, var2, var3).forEach(var2x -> method11557((Class1657)var1, var2, var2x));
-         var0.method23433((Class1657)var1, var2, Class8848.field39973);
+      if (var1 instanceof ServerWorld) {
+         method11552(var0, (ServerWorld)var1, var2, var3).forEach(var2x -> method11557((ServerWorld)var1, var2, var2x));
+         var0.method23433((ServerWorld)var1, var2, ItemStack.field39973);
       }
    }
 
-   public static void method11556(Class7380 var0, Class1655 var1, BlockPos var2, Class944 var3, Entity var4, Class8848 var5) {
-      if (var1 instanceof Class1657) {
-         method11553(var0, (Class1657)var1, var2, var3, var4, var5).forEach(var2x -> method11557(var1, var2, var2x));
-         var0.method23433((Class1657)var1, var2, var5);
+   public static void method11556(Class7380 var0, Class1655 var1, BlockPos var2, Class944 var3, Entity var4, ItemStack var5) {
+      if (var1 instanceof ServerWorld) {
+         method11553(var0, (ServerWorld)var1, var2, var3, var4, var5).forEach(var2x -> method11557(var1, var2, var2x));
+         var0.method23433((ServerWorld)var1, var2, var5);
       }
    }
 
-   public static void method11557(Class1655 var0, BlockPos var1, Class8848 var2) {
+   public static void method11557(Class1655 var0, BlockPos var1, ItemStack var2) {
       if (!var0.field9020 && !var2.method32105() && var0.method6789().method17135(Class5462.field24228)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
@@ -241,7 +241,7 @@ public class Block extends Class3390 implements Class3303 {
       }
    }
 
-   public void method11558(Class1657 var1, BlockPos var2, int var3) {
+   public void method11558(ServerWorld var1, BlockPos var2, int var3) {
       if (var1.method6789().method17135(Class5462.field24228)) {
          while (var3 > 0) {
             int var6 = Class1003.method4179(var3);
@@ -266,13 +266,13 @@ public class Block extends Class3390 implements Class3303 {
       return this.method11579();
    }
 
-   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, Class8848 var6) {
+   public void method11562(Class1655 var1, PlayerEntity var2, BlockPos var3, Class7380 var4, Class944 var5, ItemStack var6) {
       var2.method2913(Class8876.field40096.method172(this));
       var2.method2931(0.005F);
       method11556(var4, var1, var3, var5, var2, var6);
    }
 
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
    }
 
    public boolean method11564() {
@@ -299,12 +299,12 @@ public class Block extends Class3390 implements Class3303 {
       var2.method3434(var2.method3433().method11347(1.0, 0.0, 1.0));
    }
 
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(this);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(this);
    }
 
-   public void method11570(Class7401 var1, Class25<Class8848> var2) {
-      var2.add(new Class8848(this));
+   public void method11570(Class7401 var1, Class25<ItemStack> var2) {
+      var2.add(new ItemStack(this));
    }
 
    public float method11571() {
@@ -370,7 +370,7 @@ public class Block extends Class3390 implements Class3303 {
       return "Block{" + Class2348.field16072.method9181(this) + "}";
    }
 
-   public void method11583(Class8848 var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11583(ItemStack var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
    }
 
    @Override

@@ -89,7 +89,7 @@ public class Class5265 extends PremiumModule {
             Class8853 var4 = Minecraft.getInstance().method1554();
             Class5743 var5 = new Class5743(var4);
             short var6 = 150;
-            UUID var7 = this.field23693.method3375();
+            UUID var7 = this.field23693.getUniqueID();
             if (!(this.field23693 instanceof Class1087)) {
                 if (!(this.field23693 instanceof Class1038)) {
                     if (!(this.field23693 instanceof Class1010)) {
@@ -242,7 +242,7 @@ public class Class5265 extends PremiumModule {
         int var5 = 0;
 
         while (var4.hasNext()) {
-            Class8848 var6 = (Class8848) var4.next();
+            ItemStack var6 = (ItemStack) var4.next();
             Class3192.method11480(var6, var1, this.field23683 + this.field23685 / 2 - var5 * 35, 1.0F);
             if (++var5 == 2) {
                 var1 -= 35;

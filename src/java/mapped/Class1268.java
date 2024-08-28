@@ -28,7 +28,7 @@ public class Class1268 extends Class1193 {
     private boolean field6722;
     public float field6723 = 1.0F;
     private int field6724;
-    private Class8848 field6725 = Class8848.field39973;
+    private ItemStack field6725 = ItemStack.field39973;
     public final Class1262 field6726;
     private final Class1269 field6727;
     private final Class1195 field6728;
@@ -90,12 +90,12 @@ public class Class1268 extends Class1193 {
         }
 
         Client.getInstance().method19926();
-        Class8848 var6 = this.field6716.field1339.field4902.method4052(3);
+        ItemStack var6 = this.field6716.field1339.field4902.method4052(3);
         if (this.field6716.field1299.method37173().method8246() && var6.method32107() == Blocks.field36589.method11581()) {
             this.method5978();
         }
 
-        float var7 = Class9679.method37821(var2, this.field6716.field1339.field6142, this.field6716.field1339.field6141);
+        float var7 = MathHelper.method37821(var2, this.field6716.field1339.field6142, this.field6716.field1339.field6141);
         if (var7 > 0.0F && !this.field6716.field1339.method3033(Class8254.field35475)) {
             this.method5981(var7);
         }
@@ -186,7 +186,7 @@ public class Class1268 extends Class1193 {
                     RenderSystem.method27938();
                     int var22 = 16777215;
                     if (this.field6722) {
-                        var22 = Class9679.method37818(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
+                        var22 = MathHelper.method37818(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
                     }
 
                     int var11 = var18 << 24 & 0xFF000000;
@@ -213,7 +213,7 @@ public class Class1268 extends Class1193 {
                     var19 = (int) (var16 * 255.0F / (float) this.field6736);
                 }
 
-                var19 = Class9679.method37775(var19, 0, 255);
+                var19 = MathHelper.method37775(var19, 0, 255);
                 if (var19 > 8) {
                     RenderSystem.pushMatrix();
                     RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), 0.0F);
@@ -397,9 +397,9 @@ public class Class1268 extends Class1193 {
                         this.method5696(var1, var12, var13, 141, 166, 24, 24);
                         if (var10.method8628() <= 200) {
                             int var15 = 10 - var10.method8628() / 20;
-                            var14 = Class9679.method37777((float) var10.method8628() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
-                                    + Class9679.method37764((float) var10.method8628() * (float) Math.PI / 5.0F)
-                                    * Class9679.method37777((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
+                            var14 = MathHelper.method37777((float) var10.method8628() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
+                                    + MathHelper.method37764((float) var10.method8628() * (float) Math.PI / 5.0F)
+                                    * MathHelper.method37777((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
                         }
                     } else {
                         this.method5696(var1, var12, var13, 165, 166, 24, 24);
@@ -429,7 +429,7 @@ public class Class1268 extends Class1193 {
         if (var5 != null) {
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6712);
-            Class8848 var6 = var5.method3091();
+            ItemStack var6 = var5.method3091();
             Class2205 var7 = var5.method2967().method8920();
             int var8 = this.field6741 / 2;
             int var9 = this.method5702();
@@ -661,7 +661,7 @@ public class Class1268 extends Class1193 {
     private Class880 method5973() {
         PlayerEntity var3 = this.method5972();
         if (var3 != null) {
-            Entity var4 = var3.method3421();
+            Entity var4 = var3.getRidingEntity();
             if (var4 == null) {
                 return null;
             }
@@ -695,7 +695,7 @@ public class Class1268 extends Class1193 {
     private void method5976(Class9332 var1) {
         PlayerEntity var4 = this.method5972();
         if (var4 != null) {
-            int var5 = Class9679.method37773(var4.method3042());
+            int var5 = MathHelper.method37773(var4.method3042());
             boolean var6 = this.field6740 > (long) this.field6719 && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
             long var7 = Util.method38487();
             if (var5 < this.field6737 && var4.field5061 > 0) {
@@ -721,8 +721,8 @@ public class Class1268 extends Class1193 {
             int var13 = this.field6741 / 2 + 91;
             int var14 = this.field6742 - 39;
             float var15 = (float) var4.method3086(Class9173.field42105);
-            int var16 = Class9679.method37773(var4.method2959());
-            int var17 = Class9679.method37773((var15 + (float) var16) / 2.0F / 10.0F);
+            int var16 = MathHelper.method37773(var4.method2959());
+            int var17 = MathHelper.method37773((var15 + (float) var16) / 2.0F / 10.0F);
             int var18 = Math.max(10 - (var17 - 2), 3);
             int var19 = var14 - (var17 - 1) * var18 - 10;
             int var20 = var14 - 10;
@@ -730,7 +730,7 @@ public class Class1268 extends Class1193 {
             int var22 = var4.method3070();
             int var23 = -1;
             if (var4.method3033(Class8254.field35476)) {
-                var23 = this.field6719 % Class9679.method37773(var15 + 5.0F);
+                var23 = this.field6719 % MathHelper.method37773(var15 + 5.0F);
             }
 
             this.field6716.method1574().method22503("armor");
@@ -754,7 +754,7 @@ public class Class1268 extends Class1193 {
 
             this.field6716.method1574().method22506("health");
 
-            for (int var33 = Class9679.method37773((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
+            for (int var33 = MathHelper.method37773((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
                 byte var35 = 16;
                 if (!var4.method3033(Class8254.field35485)) {
                     if (var4.method3033(Class8254.field35486)) {
@@ -769,7 +769,7 @@ public class Class1268 extends Class1193 {
                     var26 = 1;
                 }
 
-                int var27 = Class9679.method37773((float) (var33 + 1) / 10.0F) - 1;
+                int var27 = MathHelper.method37773((float) (var33 + 1) / 10.0F) - 1;
                 int var28 = var12 + var33 % 10 * 8;
                 int var29 = var14 - var27 * var18;
                 if (var5 <= 4) {
@@ -851,8 +851,8 @@ public class Class1268 extends Class1193 {
             if (var4.method3263(Class8953.field40469) || var40 < var38) {
                 int var42 = this.method5975(var36) - 1;
                 var20 -= var42 * 10;
-                int var44 = Class9679.method37774((double) (var40 - 2) * 10.0 / (double) var38);
-                int var46 = Class9679.method37774((double) var40 * 10.0 / (double) var38) - var44;
+                int var44 = MathHelper.method37774((double) (var40 - 2) * 10.0 / (double) var38);
+                int var46 = MathHelper.method37774((double) var40 * 10.0 / (double) var38) - var44;
 
                 for (int var31 = 0; var31 < var44 + var46; var31++) {
                     if (var31 >= var44) {
@@ -926,7 +926,7 @@ public class Class1268 extends Class1193 {
 
     private void method5979(Entity var1) {
         if (var1 != null) {
-            float var4 = Class9679.method37777(1.0F - var1.method3267(), 0.0F, 1.0F);
+            float var4 = MathHelper.method37777(1.0F - var1.method3267(), 0.0F, 1.0F);
             this.field6723 = (float) ((double) this.field6723 + (double) (var4 - this.field6723) * 0.01);
         }
     }
@@ -1003,7 +1003,7 @@ public class Class1268 extends Class1193 {
         RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
-    private void method5982(int var1, int var2, float var3, PlayerEntity var4, Class8848 var5) {
+    private void method5982(int var1, int var2, float var3, PlayerEntity var4, ItemStack var5) {
         if (!var5.method32105()) {
             float var8 = (float) var5.method32177() - var3;
             if (var8 > 0.0F) {
@@ -1047,7 +1047,7 @@ public class Class1268 extends Class1193 {
         }
 
         if (this.field6716.field1339 != null) {
-            Class8848 var4 = this.field6716.field1339.field4902.method4028();
+            ItemStack var4 = this.field6716.field1339.field4902.method4028();
             boolean var5 = true;
             if (Class9299.field42924.method20214()) {
                 ITextComponent var6 = (ITextComponent) Class9299.method35070(var4, Class9299.field42924, var4.method32149());

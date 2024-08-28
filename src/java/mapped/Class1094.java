@@ -118,7 +118,7 @@ public class Class1094 extends Class1018 {
 
          if (this.method5114() == 99 && this.field5991 == 0) {
             Class880 var3 = this.method4232();
-            if (var3 != null && this.method3277(var3) < 16.0) {
+            if (var3 != null && this.getDistanceSq(var3) < 16.0) {
                this.method5106(var3.getPosX(), var3.getPosZ());
                this.field5596.method20813(var3.getPosX(), var3.getPosY(), var3.getPosZ(), this.field5596.method20812());
                this.method5105();
@@ -152,7 +152,7 @@ public class Class1094 extends Class1018 {
    }
 
    private void method5106(double var1, double var3) {
-      this.field5031 = (float)(Class9679.method37814(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
+      this.field5031 = (float)(MathHelper.method37814(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    private void method5107() {
@@ -251,7 +251,7 @@ public class Class1094 extends Class1018 {
       return var1 == Class8514.field38052 || var1 == Class8514.field38057 || var1 == Blocks.DANDELION.method11581();
    }
 
-   public Class1094 method4389(Class1657 var1, Class1045 var2) {
+   public Class1094 method4389(ServerWorld var1, Class1045 var2) {
       Class1094 var5 = Class8992.field41071.method33215(var1);
       int var6 = this.method5116(var1);
       if (this.field5054.nextInt(20) != 0) {
@@ -267,7 +267,7 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return this.method5113(var1.method32107());
    }
 

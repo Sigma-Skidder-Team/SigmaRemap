@@ -8,8 +8,8 @@ public class Class3338 extends Class3257 {
    }
 
    @Override
-   public Class8848 method11709(Class8848 var1, Class1655 var2, Class880 var3) {
-      Class8848 var6 = super.method11709(var1, var2, var3);
+   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
+      ItemStack var6 = super.method11709(var1, var2, var3);
       if (!var2.field9020) {
          double var7 = var3.getPosX();
          double var9 = var3.getPosY();
@@ -17,7 +17,7 @@ public class Class3338 extends Class3257 {
 
          for (int var13 = 0; var13 < 16; var13++) {
             double var14 = var3.getPosX() + (var3.method3013().nextDouble() - 0.5) * 16.0;
-            double var16 = Class9679.method37778(var3.getPosY() + (double)(var3.method3013().nextInt(16) - 8), 0.0, (double)(var2.method6998() - 1));
+            double var16 = MathHelper.method37778(var3.getPosY() + (double)(var3.method3013().nextInt(16) - 8), 0.0, (double)(var2.method6998() - 1));
             double var18 = var3.getPosZ() + (var3.method3013().nextDouble() - 0.5) * 16.0;
             if (var3.method3328()) {
                var3.method2759();

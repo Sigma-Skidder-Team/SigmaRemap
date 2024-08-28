@@ -36,7 +36,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private volatile Long2ObjectLinkedOpenHashMap<Class8641> field8953 = this.field8952.clone();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8954 = new Long2ObjectLinkedOpenHashMap();
    private final LongSet field8955 = new LongOpenHashSet();
-   private final Class1657 field8956;
+   private final ServerWorld field8956;
    private final Class195 field8957;
    private final Class318<Runnable> field8958;
    private final Class5646 field8959;
@@ -59,7 +59,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private int field8976;
 
    public Class1649(
-      Class1657 var1,
+      ServerWorld var1,
       Class1814 var2,
       DataFixer var3,
       Class8761 var4,
@@ -104,8 +104,8 @@ public class Class1649 extends Class1648 implements Class1650 {
       int var5;
       int var6;
       if (!var2) {
-         var5 = Class9679.method37769(var1.getPosX() / 16.0);
-         var6 = Class9679.method37769(var1.getPosZ() / 16.0);
+         var5 = MathHelper.method37769(var1.getPosX() / 16.0);
+         var6 = MathHelper.method37769(var1.getPosZ() / 16.0);
       } else {
          Class2002 var7 = var1.method2832();
          var5 = var7.method8410();
@@ -627,7 +627,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6563(int var1) {
-      int var4 = Class9679.method37775(var1 + 1, 3, 64);
+      int var4 = MathHelper.method37775(var1 + 1, 3, 64);
       if (var4 != this.field8976) {
          int var5 = this.field8976;
          this.field8976 = var4;
@@ -755,8 +755,8 @@ public class Class1649 extends Class1648 implements Class1650 {
    public void method6573(Class878 var1, boolean var2) {
       boolean var5 = this.method6572(var1);
       boolean var6 = this.field8972.method20901(var1);
-      int var7 = Class9679.method37769(var1.getPosX()) >> 4;
-      int var8 = Class9679.method37769(var1.getPosZ()) >> 4;
+      int var7 = MathHelper.method37769(var1.getPosX()) >> 4;
+      int var8 = MathHelper.method37769(var1.getPosZ()) >> 4;
       if (!var2) {
          Class2002 var9 = var1.method2832();
          this.field8972.method20898(var9.method8423().method24352(), var1);
@@ -782,7 +782,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private Class2002 method6574(Class878 var1) {
       Class2002 var4 = Class2002.method8392(var1);
       var1.method2833(var4);
-      var1.field4855.method15671(new Class5579(var4.method8410(), var4.method8412()));
+      var1.field4855.sendPacket(new Class5579(var4.method8410(), var4.method8412()));
       return var4;
    }
 
@@ -798,8 +798,8 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
       }
 
-      int var26 = Class9679.method37769(var1.getPosX()) >> 4;
-      int var27 = Class9679.method37769(var1.getPosZ()) >> 4;
+      int var26 = MathHelper.method37769(var1.getPosX()) >> 4;
+      int var27 = MathHelper.method37769(var1.getPosZ()) >> 4;
       Class2002 var6 = var1.method2832();
       Class2002 var7 = Class2002.method8392(var1);
       long var8 = var6.method8423().method24352();
@@ -993,13 +993,13 @@ public class Class1649 extends Class1648 implements Class1650 {
 
       if (!var6.isEmpty()) {
          for (Entity var13 : var6) {
-            var1.field4855.method15671(new Class5593(var13, ((Class1006)var13).method4297()));
+            var1.field4855.sendPacket(new Class5593(var13, ((Class1006)var13).method4297()));
          }
       }
 
       if (!var7.isEmpty()) {
          for (Entity var14 : var7) {
-            var1.field4855.method15671(new Class5485(var14));
+            var1.field4855.sendPacket(new Class5485(var14));
          }
       }
    }
@@ -1013,7 +1013,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    // $VF: synthetic method
-   public static Class1657 method6633(Class1649 var0) {
+   public static ServerWorld method6633(Class1649 var0) {
       return var0.field8956;
    }
 

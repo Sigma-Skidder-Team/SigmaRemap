@@ -93,7 +93,7 @@ public class Class9453 {
                Class5805.field25333
                   .method18089(
                      this.field43915.field1299,
-                     Class9679.method37778(
+                     MathHelper.method37778(
                         (double)(this.field43915.field1299.field44574 + (Screen.method2476() ? -1 : 1)),
                         Class5805.field25333.method18086(),
                         Class5805.field25333.method18087()
@@ -217,16 +217,16 @@ public class Class9453 {
                if (var1) {
                   if (var2) {
                      this.field43915.field1339.connection.method15799().method14178(var8.method3205(), var3 -> {
-                        this.method36344(var9, var8.method3431(), var3);
+                        this.method36344(var9, var8.getPositionVec(), var3);
                         this.method36339("debug.inspect.server.entity");
                      });
                   } else {
                      Class39 var10 = var8.method3294(new Class39());
-                     this.method36344(var9, var8.method3431(), var10);
+                     this.method36344(var9, var8.getPositionVec(), var10);
                      this.method36339("debug.inspect.client.entity");
                   }
                } else {
-                  this.method36344(var9, var8.method3431(), (Class39)null);
+                  this.method36344(var9, var8.getPositionVec(), (Class39)null);
                   this.method36339("debug.inspect.client.entity");
                }
          }
@@ -509,7 +509,7 @@ public class Class9453 {
 
          if (var7 >= 1000L) {
             if (this.field43920 != 0L) {
-               this.method36340("debug.crash.warning", Class9679.method37773((float)var5 / 1000.0F));
+               this.method36340("debug.crash.warning", MathHelper.method37773((float)var5 / 1000.0F));
             } else {
                this.method36339("debug.crash.message");
             }

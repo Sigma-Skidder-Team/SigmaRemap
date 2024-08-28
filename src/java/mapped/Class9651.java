@@ -138,7 +138,7 @@ public class Class9651 {
          method37647(
             var0,
             var6,
-            (Class1657)var2.field5024,
+            (ServerWorld)var2.field5024,
             var2.getPosX(),
             var2.getPosY(),
             var2.getPosZ(),
@@ -150,17 +150,17 @@ public class Class9651 {
       }
 
       if (var1.size() != 1) {
-         var0.method20179(new TranslationTextComponent("commands.teleport.success.entity.multiple", var1.size(), var2.method2954()), true);
+         var0.method20179(new TranslationTextComponent("commands.teleport.success.entity.multiple", var1.size(), var2.getDisplayName()), true);
       } else {
          var0.method20179(
-            new TranslationTextComponent("commands.teleport.success.entity.single", ((Entity)var1.iterator().next()).method2954(), var2.method2954()), true
+            new TranslationTextComponent("commands.teleport.success.entity.single", ((Entity)var1.iterator().next()).getDisplayName(), var2.getDisplayName()), true
          );
       }
 
       return var1.size();
    }
 
-   private static int method37646(Class6619 var0, Collection<? extends Entity> var1, Class1657 var2, Class7329 var3, Class7329 var4, Class8502 var5) throws CommandSyntaxException {
+   private static int method37646(Class6619 var0, Collection<? extends Entity> var1, ServerWorld var2, Class7329 var3, Class7329 var4, Class8502 var5) throws CommandSyntaxException {
       Vector3d var8 = var3.method23228(var0);
       Class8513 var9 = var4 != null ? var4.method23229(var0) : null;
       EnumSet var10 = EnumSet.<Class2033>noneOf(Class2033.class);
@@ -204,7 +204,7 @@ public class Class9651 {
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.teleport.success.location.single", ((Entity)var1.iterator().next()).method2954(), var8.field18048, var8.field18049, var8.field18050
+               "commands.teleport.success.location.single", ((Entity)var1.iterator().next()).getDisplayName(), var8.field18048, var8.field18049, var8.field18050
             ),
             true
          );
@@ -214,14 +214,14 @@ public class Class9651 {
    }
 
    private static void method37647(
-           Class6619 var0, Entity var1, Class1657 var2, double var3, double var5, double var7, Set<Class2033> var9, float var10, float var11, Class8502 var12
+           Class6619 var0, Entity var1, ServerWorld var2, double var3, double var5, double var7, Set<Class2033> var9, float var10, float var11, Class8502 var12
    ) throws CommandSyntaxException {
       BlockPos var15 = new BlockPos(var3, var5, var7);
       if (Class1655.method6717(var15)) {
          if (!(var1 instanceof Class878)) {
-            float var16 = Class9679.method37792(var10);
-            float var17 = Class9679.method37792(var11);
-            var17 = Class9679.method37777(var17, -90.0F, 90.0F);
+            float var16 = MathHelper.method37792(var10);
+            float var17 = MathHelper.method37792(var11);
+            var17 = MathHelper.method37777(var17, -90.0F, 90.0F);
             if (var2 != var1.field5024) {
                var1.method3200();
                Entity var18 = var1;
@@ -243,8 +243,8 @@ public class Class9651 {
             Class7481 var19 = new Class7481(new BlockPos(var3, var5, var7));
             var2.method6883().method7374(Class8561.field38486, var19, 1, var1.method3205());
             var1.method2759();
-            if (((Class878)var1).method3176()) {
-               ((Class878)var1).method2757(true, true);
+            if (((Class878)var1).isSleeping()) {
+               ((Class878)var1).stopSleepInBed(true, true);
             }
 
             if (var2 != var1.field5024) {

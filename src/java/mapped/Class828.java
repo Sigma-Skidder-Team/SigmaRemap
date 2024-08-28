@@ -18,7 +18,7 @@ public class Class828 extends Screen {
    private static final Class9125 field4576 = Class9125.method34038("_", Style.EMPTY.setFormatting(TextFormatting.BLACK));
    private static final Class9125 field4577 = Class9125.method34038("_", Style.EMPTY.setFormatting(TextFormatting.GRAY));
    private final PlayerEntity field4578;
-   private final Class8848 field4579;
+   private final ItemStack field4579;
    private boolean field4580;
    private boolean field4581;
    private int field4582;
@@ -39,12 +39,12 @@ public class Class828 extends Screen {
    private Class1206 field4593;
    private Class1206 field4594;
    private Class1206 field4595;
-   private final Class79 field4596;
+   private final Hand field4596;
    private Class8398 field4597 = Class8398.method29485();
    private ITextComponent field4598 = StringTextComponent.EMPTY;
    private final ITextComponent field4599;
 
-   public Class828(PlayerEntity var1, Class8848 var2, Class79 var3) {
+   public Class828(PlayerEntity var1, ItemStack var2, Hand var3) {
       super(Class6688.field29300);
       this.field4578 = var1;
       this.field4579 = var2;
@@ -177,11 +177,11 @@ public class Class828 extends Screen {
          }
 
          if (var1) {
-            this.field4579.method32164("author", Class40.method150(this.field4578.method2906().getName()));
+            this.field4579.method32164("author", Class40.method150(this.field4578.getGameProfile().getName()));
             this.field4579.method32164("title", Class40.method150(this.field4585.trim()));
          }
 
-         int var5 = this.field4596 != Class79.field182 ? 40 : this.field4578.field4902.field5443;
+         int var5 = this.field4596 != Hand.field182 ? 40 : this.field4578.field4902.field5443;
          this.field4562.getClientPlayNetHandler().sendPacket(new Class5551(this.field4579, var1, var5));
       }
    }
@@ -216,7 +216,7 @@ public class Class828 extends Screen {
    public boolean method1932(char var1, int var2) {
       if (!super.method1932(var1, var2)) {
          if (!this.field4581) {
-            if (!Class9246.method34771(var1)) {
+            if (!SharedConstants.isAllowedCharacter(var1)) {
                return false;
             } else {
                this.field4586.method33835(Character.toString(var1));

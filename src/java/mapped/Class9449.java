@@ -19,7 +19,7 @@ public class Class9449 {
       this.field43903 = var4;
    }
 
-   public boolean method36328(Class1657 var1, BlockPos var2) {
+   public boolean method36328(ServerWorld var1, BlockPos var2) {
       if (this == field43899) {
          return true;
       } else if (var1.method6763(var2)) {

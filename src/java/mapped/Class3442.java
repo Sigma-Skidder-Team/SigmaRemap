@@ -22,7 +22,7 @@ public class Class3442 extends Block {
       return field19247.containsKey(var0.method23383());
    }
 
-   private void method12120(Class1657 var1, BlockPos var2) {
+   private void method12120(ServerWorld var1, BlockPos var2) {
       Class1107 var5 = Class8992.field41077.method33215(var1);
       var5.method3273((double)var2.method8304() + 0.5, (double)var2.getY(), (double)var2.method8306() + 0.5, 0.0F, 0.0F);
       var1.method6916(var5);
@@ -30,7 +30,7 @@ public class Class3442 extends Block {
    }
 
    @Override
-   public void method11965(Class7380 var1, Class1657 var2, BlockPos var3, Class8848 var4) {
+   public void method11965(Class7380 var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
       if (var2.method6789().method17135(Class5462.field24228) && Class7858.method26311(Class8122.field34916, var4) == 0) {
          this.method12120(var2, var3);
@@ -39,8 +39,8 @@ public class Class3442 extends Block {
 
    @Override
    public void method11560(Class1655 var1, BlockPos var2, Class7782 var3) {
-      if (var1 instanceof Class1657) {
-         this.method12120((Class1657)var1, var2);
+      if (var1 instanceof ServerWorld) {
+         this.method12120((ServerWorld)var1, var2);
       }
    }
 

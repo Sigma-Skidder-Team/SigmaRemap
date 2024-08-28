@@ -23,7 +23,7 @@ public class Class7887 extends Class7882<Class1006> {
       return ImmutableSet.of(Class8830.field39834);
    }
 
-   public void method26425(Class1657 var1, Class1006 var2) {
+   public void method26425(ServerWorld var1, Class1006 var2) {
       if (var2.method3005()) {
          this.field33837 = 0;
          this.field33838 = var1.method6783() + (long)var1.method6814().nextInt(20);

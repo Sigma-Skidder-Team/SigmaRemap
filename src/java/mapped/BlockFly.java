@@ -129,7 +129,7 @@ public class BlockFly extends Class5325 {
 
         for (int var4 = 0; var4 < 45; var4++) {
             if (mc.field1339.field4904.method18131(var4).method18266()) {
-                Class8848 var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
                 Class3257 var6 = var5.method32107();
                 if (method16733(var6)) {
                     var3 += var5.field39976;
@@ -222,7 +222,7 @@ public class BlockFly extends Class5325 {
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.field1339.field4904.method18131(var5).method18266()) {
                     Class3257 var6 = mc.field1339.field4904.method18131(var5).method18265().method32107();
-                    Class8848 var7 = mc.field1339.field4904.method18131(var5).method18265();
+                    ItemStack var7 = mc.field1339.field4904.method18131(var5).method18265();
                     if (method16733(var6) && var7.field39976 > var4) {
                         var4 = var7.field39976;
                         var3 = var5;
@@ -249,7 +249,7 @@ public class BlockFly extends Class5325 {
         return false;
     }
 
-    public boolean method16739(Class79 var1) {
+    public boolean method16739(Hand var1) {
         if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
             return this.method16735() != 0;
         } else return method16733(mc.field1339.method3094(var1).method32107());

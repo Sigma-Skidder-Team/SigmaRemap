@@ -13,7 +13,7 @@ public class Class7888 extends Class7882<Class1045> {
       return ImmutableSet.of(Class8830.field39846, Class8830.field39819);
    }
 
-   public void method26425(Class1657 var1, Class1045 var2) {
+   public void method26425(ServerWorld var1, Class1045 var2) {
       var2.method2992().<List<Class880>>method21410(Class8830.field39819).ifPresent(var2x -> this.method26448(var2, (List<Class880>)var2x));
    }
 

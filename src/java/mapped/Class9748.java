@@ -12,7 +12,6 @@ import java.util.Map.Entry;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -114,13 +113,13 @@ public class Class9748 {
          }, var0 -> var0.method30299() == null, new TranslationTextComponent("argument.entity.options.dz.description"));
          method38218(
             "x_rotation",
-            var0 -> var0.method30285(Class9795.method38632(var0.method30277(), true, Class9679::method37792)),
+            var0 -> var0.method30285(Class9795.method38632(var0.method30277(), true, MathHelper::method37792)),
             var0 -> var0.method30284() == Class9795.field45809,
             new TranslationTextComponent("argument.entity.options.x_rotation.description")
          );
          method38218(
             "y_rotation",
-            var0 -> var0.method30287(Class9795.method38632(var0.method30277(), true, Class9679::method37792)),
+            var0 -> var0.method30287(Class9795.method38632(var0.method30277(), true, MathHelper::method37792)),
             var0 -> var0.method30286() == Class9795.field45809,
             new TranslationTextComponent("argument.entity.options.y_rotation.description")
          );
@@ -288,7 +287,7 @@ public class Class9748 {
             var0.method30278(var2 -> {
                Class39 var5 = var2.method3294(new Class39());
                if (var2 instanceof Class878) {
-                  Class8848 var6 = ((Class878)var2).field4902.method4028();
+                  ItemStack var6 = ((Class878)var2).field4902.method4028();
                   if (!var6.method32105()) {
                      var5.method99("SelectedItem", var6.method32112(new Class39()));
                   }
@@ -434,13 +433,13 @@ public class Class9748 {
                ResourceLocation var4 = ResourceLocation.method8294(var0.method30277());
                var0.method30278(
                   var2 -> {
-                     if (var2.field5024 instanceof Class1657) {
-                        Class1657 var5 = (Class1657)var2.field5024;
+                     if (var2.field5024 instanceof ServerWorld) {
+                        ServerWorld var5 = (ServerWorld)var2.field5024;
                         Class122 var6 = var5.method6715().method1412().method1052(var4);
                         if (var6 != null) {
                            Class7812 var7 = new Class9464(var5)
                               .method36454(Class9525.field44330, var2)
-                              .method36454(Class9525.field44335, var2.method3431())
+                              .method36454(Class9525.field44335, var2.getPositionVec())
                               .method36460(Class8524.field38284);
                            return var3 ^ var6.test(var7);
                         } else {

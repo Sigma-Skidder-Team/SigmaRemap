@@ -46,11 +46,11 @@ public class Class2881<T extends Class1079> extends Class2803<T> {
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      float var9 = Class9679.method37764(var4 * 0.1F);
+      float var9 = MathHelper.method37764(var4 * 0.1F);
       this.field17863[1].field31035 = (0.065F + 0.05F * var9) * (float) Math.PI;
       this.field17863[2]
          .method22679(
-            -2.0F, 6.9F + Class9679.method37764(this.field17863[1].field31035) * 10.0F, -0.5F + Class9679.method37763(this.field17863[1].field31035) * 10.0F
+            -2.0F, 6.9F + MathHelper.method37764(this.field17863[1].field31035) * 10.0F, -0.5F + MathHelper.method37763(this.field17863[1].field31035) * 10.0F
          );
       this.field17863[2].field31035 = (0.265F + 0.1F * var9) * (float) Math.PI;
       this.field17864[0].field31036 = var5 * (float) (Math.PI / 180.0);

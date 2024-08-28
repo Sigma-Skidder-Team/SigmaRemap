@@ -14,7 +14,7 @@ public class Class9214 implements GameSession {
       this.field42400 = var3.method15790().size();
       this.field42401 = !var3.method15589().method30702();
       this.field42402 = var1.method6997().method8909();
-      Class6589 var6 = var3.method15792(var2.method3375());
+      Class6589 var6 = var3.method15792(var2.getUniqueID());
       if (var6 == null) {
          this.field42403 = "unknown";
       } else {

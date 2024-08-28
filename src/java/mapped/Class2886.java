@@ -35,27 +35,27 @@ public class Class2886<T extends Entity> extends Class2803<T> {
       float var9 = var4 * (float) Math.PI * -0.1F;
 
       for (int var10 = 0; var10 < 4; var10++) {
-         this.field17884[var10].field31033 = -2.0F + Class9679.method37764(((float)(var10 * 2) + var4) * 0.25F);
-         this.field17884[var10].field31032 = Class9679.method37764(var9) * 9.0F;
-         this.field17884[var10].field31034 = Class9679.method37763(var9) * 9.0F;
+         this.field17884[var10].field31033 = -2.0F + MathHelper.method37764(((float)(var10 * 2) + var4) * 0.25F);
+         this.field17884[var10].field31032 = MathHelper.method37764(var9) * 9.0F;
+         this.field17884[var10].field31034 = MathHelper.method37763(var9) * 9.0F;
          var9++;
       }
 
       var9 = (float) (Math.PI / 4) + var4 * (float) Math.PI * 0.03F;
 
       for (int var13 = 4; var13 < 8; var13++) {
-         this.field17884[var13].field31033 = 2.0F + Class9679.method37764(((float)(var13 * 2) + var4) * 0.25F);
-         this.field17884[var13].field31032 = Class9679.method37764(var9) * 7.0F;
-         this.field17884[var13].field31034 = Class9679.method37763(var9) * 7.0F;
+         this.field17884[var13].field31033 = 2.0F + MathHelper.method37764(((float)(var13 * 2) + var4) * 0.25F);
+         this.field17884[var13].field31032 = MathHelper.method37764(var9) * 7.0F;
+         this.field17884[var13].field31034 = MathHelper.method37763(var9) * 7.0F;
          var9++;
       }
 
       var9 = 0.47123894F + var4 * (float) Math.PI * -0.05F;
 
       for (int var14 = 8; var14 < 12; var14++) {
-         this.field17884[var14].field31033 = 11.0F + Class9679.method37764(((float)var14 * 1.5F + var4) * 0.5F);
-         this.field17884[var14].field31032 = Class9679.method37764(var9) * 5.0F;
-         this.field17884[var14].field31034 = Class9679.method37763(var9) * 5.0F;
+         this.field17884[var14].field31033 = 11.0F + MathHelper.method37764(((float)var14 * 1.5F + var4) * 0.5F);
+         this.field17884[var14].field31032 = MathHelper.method37764(var9) * 5.0F;
+         this.field17884[var14].field31034 = MathHelper.method37763(var9) * 5.0F;
          var9++;
       }
 

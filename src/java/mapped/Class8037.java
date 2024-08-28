@@ -57,13 +57,13 @@ public class Class8037 {
 
    @Nullable
    public static Vector3d method27590(Class1046 var0, int var1, int var2, Vector3d var3) {
-      Vector3d var6 = var0.method3431().method11336(var3);
+      Vector3d var6 = var0.getPositionVec().method11336(var3);
       return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method4771, false, 0, 0, true);
    }
 
    @Nullable
    public static Vector3d method27591(Class1046 var0, int var1, int var2, Vector3d var3) {
-      Vector3d var6 = var0.method3431().method11336(var3);
+      Vector3d var6 = var0.getPositionVec().method11336(var3);
       return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method4771, true, 0, 0, true);
    }
 
@@ -88,7 +88,7 @@ public class Class8037 {
       if (!var0.method4291()) {
          var17 = false;
       } else {
-         var17 = var0.method4289().method8317(var0.method3431(), (double)(var0.method4290() + (float)var1) + 1.0);
+         var17 = var0.method4289().method8317(var0.getPositionVec(), (double)(var0.method4290() + (float)var1) + 1.0);
       }
 
       boolean var18 = false;
@@ -151,9 +151,9 @@ public class Class8037 {
    @Nullable
    private static BlockPos method27593(Random var0, int var1, int var2, int var3, Vector3d var4, double var5) {
       if (var4 != null && !(var5 >= Math.PI)) {
-         double var12 = Class9679.method37814(var4.field18050, var4.field18048) - (float) (Math.PI / 2);
+         double var12 = MathHelper.method37814(var4.field18050, var4.field18048) - (float) (Math.PI / 2);
          double var14 = var12 + (double)(2.0F * var0.nextFloat() - 1.0F) * var5;
-         double var16 = Math.sqrt(var0.nextDouble()) * (double)Class9679.field45205 * (double)var1;
+         double var16 = Math.sqrt(var0.nextDouble()) * (double) MathHelper.field45205 * (double)var1;
          double var18 = -var16 * Math.sin(var14);
          double var20 = var16 * Math.cos(var14);
          if (!(Math.abs(var18) > (double)var1) && !(Math.abs(var20) > (double)var1)) {

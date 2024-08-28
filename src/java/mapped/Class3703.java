@@ -10,12 +10,12 @@ public class Class3703 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, Class880 var2) {
-      return !var2.method2992().method21430(Class8890.field40223) && var2.method3176();
+   public boolean method12508(ServerWorld var1, Class880 var2) {
+      return !var2.method2992().method21430(Class8890.field40223) && var2.isSleeping();
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       var2.method2907();
    }
 }

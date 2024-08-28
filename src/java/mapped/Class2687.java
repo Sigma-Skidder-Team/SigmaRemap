@@ -35,7 +35,7 @@ public class Class2687 extends Class2595 {
       Vector3d var3;
       if (Class1017.method4478(this.field17112) && !Class1017.method4458(this.field17112, Class1017.method4453(this.field17112), 22)) {
          Vector3d var4 = Vector3d.method11328(Class1017.method4453(this.field17112));
-         var3 = var4.method11336(this.field17112.method3431()).method11333();
+         var3 = var4.method11336(this.field17112.getPositionVec()).method11333();
       } else {
          var3 = this.field17112.method3281(0.0F);
       }

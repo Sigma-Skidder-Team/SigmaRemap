@@ -17,7 +17,7 @@ public class Class3318 extends Class3257 {
    public Class2274 method11707(Class5911 var1) {
       Class1655 var4 = var1.method18360();
       if (!var4.field9020) {
-         Class8848 var5 = var1.method18357();
+         ItemStack var5 = var1.method18357();
          Vector3d var6 = var1.method18355();
          Direction var7 = var1.method18354();
          Class888 var8 = new Class888(
@@ -36,11 +36,11 @@ public class Class3318 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
       if (!var2.method3165()) {
-         return Class6794.<Class8848>method20698(var2.method3094(var3));
+         return Class6794.<ItemStack>method20698(var2.method3094(var3));
       } else {
-         Class8848 var6 = var2.method3094(var3);
+         ItemStack var6 = var2.method3094(var3);
          if (!var1.field9020) {
             var1.method6916(new Class888(var1, var6, var2));
             if (!var2.field4919.field29609) {
@@ -48,12 +48,12 @@ public class Class3318 extends Class3257 {
             }
          }
 
-         return Class6794.<Class8848>method20700(var2.method3094(var3), var1.method6714());
+         return Class6794.<ItemStack>method20700(var2.method3094(var3), var1.method6714());
       }
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       Class39 var7 = var1.method32145("Fireworks");
       if (var7 != null) {
          if (var7.method119("Flight", 99)) {

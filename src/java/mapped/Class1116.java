@@ -40,7 +40,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
          double var4 = this.getPosX() + (this.field4986 - this.getPosX()) / (double)this.field4985;
          double var6 = this.getPosY() + (this.field4987 - this.getPosY()) / (double)this.field4985;
          double var8 = this.getPosZ() + (this.field4988 - this.getPosZ()) / (double)this.field4985;
-         this.field5031 = (float)((double)this.field5031 + Class9679.method37793(this.field4989 - (double)this.field5031) / (double)this.field4985);
+         this.field5031 = (float)((double)this.field5031 + MathHelper.method37793(this.field4989 - (double)this.field5031) / (double)this.field4985);
          this.field5032 = (float)((double)this.field5032 + (this.field4990 - (double)this.field5032) / (double)this.field4985);
          this.field4985--;
          this.method3215(var4, var6, var8);
@@ -48,7 +48,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
       }
 
       if (this.field4992 > 0) {
-         this.field4967 = (float)((double)this.field4967 + Class9679.method37793(this.field4991 - (double)this.field4967) / (double)this.field4992);
+         this.field4967 = (float)((double)this.field4967 + MathHelper.method37793(this.field4991 - (double)this.field4967) / (double)this.field4992);
          this.field4992--;
       }
 
@@ -56,7 +56,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
       this.method3084();
       float var3;
       if (this.field5036 && !this.method3044()) {
-         var3 = Math.min(0.1F, Class9679.method37766(method3234(this.method3433())));
+         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.method3433())));
       } else {
          var3 = 0.0F;
       }

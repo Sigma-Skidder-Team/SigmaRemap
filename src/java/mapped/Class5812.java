@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class Class5812 {
-   private final Class25<Class8848> field25467 = Class25.<Class8848>method67();
+   private final Class25<ItemStack> field25467 = Class25.<ItemStack>method67();
    public final List<Class5839> field25468 = Lists.newArrayList();
    private final List<Class4923> field25469 = Lists.newArrayList();
    private final Class8298<?> field25470;
@@ -57,7 +57,7 @@ public abstract class Class5812 {
    public Class5839 method18124(Class5839 var1) {
       var1.field25579 = this.field25468.size();
       this.field25468.add(var1);
-      this.field25467.add(Class8848.field39973);
+      this.field25467.add(ItemStack.field39973);
       return var1;
    }
 
@@ -84,7 +84,7 @@ public abstract class Class5812 {
       this.field25476.remove(var1);
    }
 
-   public Class25<Class8848> method18129() {
+   public Class25<ItemStack> method18129() {
       Class25 var3 = Class25.method67();
 
       for (int var4 = 0; var4 < this.field25468.size(); var4++) {
@@ -96,10 +96,10 @@ public abstract class Class5812 {
 
    public void method18130() {
       for (int var3 = 0; var3 < this.field25468.size(); var3++) {
-         Class8848 var4 = this.field25468.get(var3).method18265();
-         Class8848 var5 = this.field25467.get(var3);
-         if (!Class8848.method32128(var5, var4)) {
-            Class8848 var6 = var4.method32126();
+         ItemStack var4 = this.field25468.get(var3).method18265();
+         ItemStack var5 = this.field25467.get(var3);
+         if (!ItemStack.method32128(var5, var4)) {
+            ItemStack var6 = var4.method32126();
             this.field25467.set(var3, var6);
 
             for (Class876 var8 : this.field25476) {
@@ -126,12 +126,12 @@ public abstract class Class5812 {
       return this.field25468.get(var1);
    }
 
-   public Class8848 method18112(PlayerEntity var1, int var2) {
+   public ItemStack method18112(PlayerEntity var1, int var2) {
       Class5839 var5 = this.field25468.get(var2);
-      return var5 == null ? Class8848.field39973 : var5.method18265();
+      return var5 == null ? ItemStack.field39973 : var5.method18265();
    }
 
-   public Class8848 method18132(int var1, int var2, Class2259 var3, PlayerEntity var4) {
+   public ItemStack method18132(int var1, int var2, Class2259 var3, PlayerEntity var4) {
       try {
          return this.method18133(var1, var2, var3, var4);
       } catch (Exception var10) {
@@ -147,8 +147,8 @@ public abstract class Class5812 {
       }
    }
 
-   private Class8848 method18133(int var1, int var2, Class2259 var3, PlayerEntity var4) {
-      Class8848 var7 = Class8848.field39973;
+   private ItemStack method18133(int var1, int var2, Class2259 var3, PlayerEntity var4) {
+      ItemStack var7 = ItemStack.field39973;
       Class974 var8 = var4.field4902;
       if (var3 != Class2259.field14699) {
          if (this.field25474 != 0) {
@@ -157,13 +157,13 @@ public abstract class Class5812 {
             if (var1 != -999) {
                if (var3 != Class2259.field14695) {
                   if (var1 < 0) {
-                     return Class8848.field39973;
+                     return ItemStack.field39973;
                   }
 
                   Class5839 var24 = this.field25468.get(var1);
                   if (var24 != null) {
-                     Class8848 var31 = var24.method18265();
-                     Class8848 var36 = var8.method4057();
+                     ItemStack var31 = var24.method18265();
+                     ItemStack var36 = var8.method4057();
                      if (!var31.method32105()) {
                         var7 = var31.method32126();
                      }
@@ -178,7 +178,7 @@ public abstract class Class5812 {
                                        var36.method32181(var40);
                                        var31 = var24.method18272(var40);
                                        if (var31.method32105()) {
-                                          var24.method18267(Class8848.field39973);
+                                          var24.method18267(ItemStack.field39973);
                                        }
 
                                        var24.method18264(var4, var8.method4057());
@@ -206,13 +206,13 @@ public abstract class Class5812 {
                               int var42 = var2 != 0 ? (var31.method32179() + 1) / 2 : var31.method32179();
                               var8.method4056(var24.method18272(var42));
                               if (var31.method32105()) {
-                                 var24.method18267(Class8848.field39973);
+                                 var24.method18267(ItemStack.field39973);
                               }
 
                               var24.method18264(var4, var8.method4057());
                            } else {
-                              var24.method18267(Class8848.field39973);
-                              var8.method4056(Class8848.field39973);
+                              var24.method18267(ItemStack.field39973);
+                              var8.method4056(ItemStack.field39973);
                            }
                         }
                      } else if (!var36.method32105() && var24.method18259(var36)) {
@@ -228,17 +228,17 @@ public abstract class Class5812 {
                   }
                } else {
                   if (var1 < 0) {
-                     return Class8848.field39973;
+                     return ItemStack.field39973;
                   }
 
                   Class5839 var23 = this.field25468.get(var1);
                   if (var23 == null || !var23.method18273(var4)) {
-                     return Class8848.field39973;
+                     return ItemStack.field39973;
                   }
 
-                  for (Class8848 var30 = this.method18112(var4, var1);
-                     !var30.method32105() && Class8848.method32130(var23.method18265(), var30);
-                     var30 = this.method18112(var4, var1)
+                  for (ItemStack var30 = this.method18112(var4, var1);
+                       !var30.method32105() && ItemStack.method32130(var23.method18265(), var30);
+                       var30 = this.method18112(var4, var1)
                   ) {
                      var7 = var30.method32126();
                   }
@@ -246,7 +246,7 @@ public abstract class Class5812 {
             } else if (!var8.method4057().method32105()) {
                if (var2 == 0) {
                   var4.method2882(var8.method4057(), true);
-                  var8.method4056(Class8848.field39973);
+                  var8.method4056(ItemStack.field39973);
                }
 
                if (var2 == 1) {
@@ -257,20 +257,20 @@ public abstract class Class5812 {
             if (var3 == Class2259.field14697 && var4.field4919.field29609 && var8.method4057().method32105() && var1 >= 0) {
                Class5839 var21 = this.field25468.get(var1);
                if (var21 != null && var21.method18266()) {
-                  Class8848 var28 = var21.method18265().method32126();
+                  ItemStack var28 = var21.method18265().method32126();
                   var28.method32180(var28.method32113());
                   var8.method4056(var28);
                }
             } else if (var3 == Class2259.field14698 && var8.method4057().method32105() && var1 >= 0) {
                Class5839 var20 = this.field25468.get(var1);
                if (var20 != null && var20.method18266() && var20.method18273(var4)) {
-                  Class8848 var27 = var20.method18272(var2 != 0 ? var20.method18265().method32179() : 1);
+                  ItemStack var27 = var20.method18272(var2 != 0 ? var20.method18265().method32179() : 1);
                   var20.method18264(var4, var27);
                   var4.method2882(var27, true);
                }
             } else if (var3 == Class2259.field14700 && var1 >= 0) {
                Class5839 var19 = this.field25468.get(var1);
-               Class8848 var26 = var8.method4057();
+               ItemStack var26 = var8.method4057();
                if (!var26.method32105() && (var19 == null || !var19.method18266() || !var19.method18273(var4))) {
                   int var34 = var2 != 0 ? this.field25468.size() - 1 : 0;
                   int var37 = var2 != 0 ? -1 : 1;
@@ -279,13 +279,13 @@ public abstract class Class5812 {
                      for (int var45 = var34; var45 >= 0 && var45 < this.field25468.size() && var26.method32179() < var26.method32113(); var45 += var37) {
                         Class5839 var46 = this.field25468.get(var45);
                         if (var46.method18266() && method18148(var46, var26, true) && var46.method18273(var4) && this.method18111(var26, var46)) {
-                           Class8848 var47 = var46.method18265();
+                           ItemStack var47 = var46.method18265();
                            if (var44 != 0 || var47.method32179() != var47.method32113()) {
                               int var48 = Math.min(var26.method32113() - var26.method32179(), var47.method32179());
-                              Class8848 var18 = var46.method18272(var48);
+                              ItemStack var18 = var46.method18272(var48);
                               var26.method32181(var48);
                               if (var18.method32105()) {
-                                 var46.method18267(Class8848.field39973);
+                                 var46.method18267(ItemStack.field39973);
                               }
 
                               var46.method18264(var4, var18);
@@ -299,8 +299,8 @@ public abstract class Class5812 {
             }
          } else {
             Class5839 var22 = this.field25468.get(var1);
-            Class8848 var29 = var8.method3618(var2);
-            Class8848 var35 = var22.method18265();
+            ItemStack var29 = var8.method3618(var2);
+            ItemStack var35 = var22.method18265();
             if (!var29.method32105() || !var35.method32105()) {
                if (!var29.method32105()) {
                   if (!var35.method32105()) {
@@ -322,7 +322,7 @@ public abstract class Class5812 {
                      int var39 = var22.method18270(var29);
                      if (var29.method32179() <= var39) {
                         var22.method18267(var29);
-                        var8.method3621(var2, Class8848.field39973);
+                        var8.method3621(var2, ItemStack.field39973);
                      } else {
                         var22.method18267(var29.method32106(var39));
                      }
@@ -330,7 +330,7 @@ public abstract class Class5812 {
                } else if (var22.method18273(var4)) {
                   var8.method3621(var2, var35);
                   var22.method18262(var35.method32179());
-                  var22.method18267(Class8848.field39973);
+                  var22.method18267(ItemStack.field39973);
                   var22.method18264(var4, var35);
                }
             }
@@ -347,17 +347,17 @@ public abstract class Class5812 {
                      this.method18147();
                   } else {
                      if (!this.field25475.isEmpty()) {
-                        Class8848 var10 = var8.method4057().method32126();
+                        ItemStack var10 = var8.method4057().method32126();
                         int var11 = var8.method4057().method32179();
 
                         for (Class5839 var13 : this.field25475) {
-                           Class8848 var14 = var8.method4057();
+                           ItemStack var14 = var8.method4057();
                            if (var13 != null
                               && method18148(var13, var14, true)
                               && var13.method18259(var14)
                               && (this.field25473 == 2 || var14.method32179() >= this.field25475.size())
                               && this.method18150(var13)) {
-                              Class8848 var15 = var10.method32126();
+                              ItemStack var15 = var10.method32126();
                               int var16 = !var13.method18266() ? 0 : var13.method18265().method32179();
                               method18149(this.field25475, this.field25473, var15, var16);
                               int var17 = Math.min(var15.method32113(), var13.method18270(var15));
@@ -378,7 +378,7 @@ public abstract class Class5812 {
                   }
                } else {
                   Class5839 var25 = this.field25468.get(var1);
-                  Class8848 var33 = var8.method4057();
+                  ItemStack var33 = var8.method4057();
                   if (var25 != null
                      && method18148(var25, var33, true)
                      && var25.method18259(var33)
@@ -404,11 +404,11 @@ public abstract class Class5812 {
       return var7;
    }
 
-   public static boolean method18134(Class8848 var0, Class8848 var1) {
-      return var0.method32107() == var1.method32107() && Class8848.method32127(var0, var1);
+   public static boolean method18134(ItemStack var0, ItemStack var1) {
+      return var0.method32107() == var1.method32107() && ItemStack.method32127(var0, var1);
    }
 
-   public boolean method18111(Class8848 var1, Class5839 var2) {
+   public boolean method18111(ItemStack var1, Class5839 var2) {
       return true;
    }
 
@@ -416,7 +416,7 @@ public abstract class Class5812 {
       Class974 var4 = var1.field4902;
       if (!var4.method4057().method32105()) {
          var1.method2882(var4.method4057(), false);
-         var4.method4056(Class8848.field39973);
+         var4.method4056(ItemStack.field39973);
       }
    }
 
@@ -436,13 +436,13 @@ public abstract class Class5812 {
       this.method18130();
    }
 
-   public void method18136(int var1, Class8848 var2) {
+   public void method18136(int var1, ItemStack var2) {
       this.method18131(var1).method18267(var2);
    }
 
-   public void method18137(List<Class8848> var1) {
+   public void method18137(List<ItemStack> var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         this.method18131(var4).method18267((Class8848)var1.get(var4));
+         this.method18131(var4).method18267((ItemStack)var1.get(var4));
       }
    }
 
@@ -469,7 +469,7 @@ public abstract class Class5812 {
 
    public abstract boolean method18103(PlayerEntity var1);
 
-   public boolean method18142(Class8848 var1, int var2, int var3, boolean var4) {
+   public boolean method18142(ItemStack var1, int var2, int var3, boolean var4) {
       boolean var7 = false;
       int var8 = var2;
       if (var4) {
@@ -479,7 +479,7 @@ public abstract class Class5812 {
       if (var1.method32114()) {
          while (!var1.method32105() && (!var4 ? var8 < var3 : var8 >= var2)) {
             Class5839 var9 = this.field25468.get(var8);
-            Class8848 var10 = var9.method18265();
+            ItemStack var10 = var9.method18265();
             if (!var10.method32105() && method18134(var1, var10)) {
                int var11 = var10.method32179() + var1.method32179();
                if (var11 > var1.method32113()) {
@@ -514,7 +514,7 @@ public abstract class Class5812 {
 
          while (!var4 ? var8 < var3 : var8 >= var2) {
             Class5839 var13 = this.field25468.get(var8);
-            Class8848 var14 = var13.method18265();
+            ItemStack var14 = var13.method18265();
             if (var14.method32105() && var13.method18259(var1)) {
                if (var1.method32179() <= var13.method18269()) {
                   var13.method18267(var1.method32106(var1.method32179()));
@@ -563,17 +563,17 @@ public abstract class Class5812 {
       this.field25475.clear();
    }
 
-   public static boolean method18148(Class5839 var0, Class8848 var1, boolean var2) {
+   public static boolean method18148(Class5839 var0, ItemStack var1, boolean var2) {
       boolean var5 = var0 == null || !var0.method18266();
-      return !var5 && var1.method32132(var0.method18265()) && Class8848.method32127(var0.method18265(), var1)
+      return !var5 && var1.method32132(var0.method18265()) && ItemStack.method32127(var0.method18265(), var1)
          ? var0.method18265().method32179() + (!var2 ? var1.method32179() : 0) <= var1.method32113()
          : var5;
    }
 
-   public static void method18149(Set<Class5839> var0, int var1, Class8848 var2, int var3) {
+   public static void method18149(Set<Class5839> var0, int var1, ItemStack var2, int var3) {
       switch (var1) {
          case 0:
-            var2.method32180(Class9679.method37767((float)var2.method32179() / (float)var0.size()));
+            var2.method32180(MathHelper.method37767((float)var2.method32179() / (float)var0.size()));
             break;
          case 1:
             var2.method32180(1);
@@ -599,7 +599,7 @@ public abstract class Class5812 {
          float var4 = 0.0F;
 
          for (int var5 = 0; var5 < var0.method3629(); var5++) {
-            Class8848 var6 = var0.method3618(var5);
+            ItemStack var6 = var0.method3618(var5);
             if (!var6.method32105()) {
                var4 += (float)var6.method32179() / (float)Math.min(var0.method3630(), var6.method32113());
                var3++;
@@ -607,7 +607,7 @@ public abstract class Class5812 {
          }
 
          var4 /= (float)var0.method3629();
-         return Class9679.method37767(var4 * 14.0F) + (var3 <= 0 ? 0 : 1);
+         return MathHelper.method37767(var4 * 14.0F) + (var3 <= 0 ? 0 : 1);
       } else {
          return 0;
       }

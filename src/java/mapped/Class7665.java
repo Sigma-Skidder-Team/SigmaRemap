@@ -7,7 +7,7 @@ public abstract class Class7665 {
    @Nullable
    public abstract Class7909<Class4733, ?> method25186(Random var1, boolean var2);
 
-   public boolean method25182(Class1657 var1, Class5646 var2, BlockPos var3, Class7380 var4, Random var5) {
+   public boolean method25182(ServerWorld var1, Class5646 var2, BlockPos var3, Class7380 var4, Random var5) {
       Class7909 var8 = this.method25186(var5, this.method25187(var1, var3));
       if (var8 != null) {
          var1.method6725(var3, Blocks.AIR.method11579(), 4);

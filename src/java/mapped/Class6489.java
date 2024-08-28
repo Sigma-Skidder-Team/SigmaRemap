@@ -25,7 +25,7 @@ public class Class6489 extends Class6490 {
    public Set<Class8189> method19688(BlockPos var1, Class7380 var2, Class8982 var3) {
       HashSet var6 = new HashSet();
       Class8711 var7 = new Class8711(new Vector3d(0.0, 0.0, 0.0), Direction.field673, var1, false);
-      Class5909 var8 = new Class5909(this.field28457.field1338, this.field28457.field1339, Class79.field182, new Class8848(var2.method23383()), var7);
+      Class5909 var8 = new Class5909(this.field28457.field1338, this.field28457.field1339, Hand.field182, new ItemStack(var2.method23383()), var7);
       var8.field25717 = var1;
       var8.field25718 = false;
       Class7380 var9 = var2.method23383().method11495(var8);

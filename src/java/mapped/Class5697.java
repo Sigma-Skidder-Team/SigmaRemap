@@ -18,8 +18,8 @@ public class Class5697 extends Class5651<Class1015, Class2814> {
    }
 
    public float method17871(Class1015 var1, float var2) {
-      float var5 = Class9679.method37821(var2, var1.field5680, var1.field5677);
-      float var6 = Class9679.method37821(var2, var1.field5679, var1.field5678);
-      return (Class9679.method37763(var5) + 1.0F) * var6;
+      float var5 = MathHelper.method37821(var2, var1.field5680, var1.field5677);
+      float var6 = MathHelper.method37821(var2, var1.field5679, var1.field5678);
+      return (MathHelper.method37763(var5) + 1.0F) * var6;
    }
 }

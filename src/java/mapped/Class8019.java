@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -128,7 +127,7 @@ public class Class8019 {
                }
 
                var6 = this.field34448
-                  .update(Class2108.field13756.method8778(), var6, var6.get("DataVersion").asInt(0), Class9246.method34773().getWorldVersion());
+                  .update(Class2108.field13756.method8778(), var6, var6.get("DataVersion").asInt(0), SharedConstants.method34773().getWorldVersion());
                var6 = var6.remove("DataVersion");
                Map<ResourceLocation, Class2006> var7 =field34446.getAdapter(field34447).fromJsonTree((JsonElement)var6.getValue());
                if (var7 == null) {
@@ -188,7 +187,7 @@ public class Class8019 {
       }
 
       JsonElement var38 = field34446.toJsonTree(var3);
-      var38.getAsJsonObject().addProperty("DataVersion", Class9246.method34773().getWorldVersion());
+      var38.getAsJsonObject().addProperty("DataVersion", SharedConstants.method34773().getWorldVersion());
 
       try (
          FileOutputStream var39 = new FileOutputStream(this.field34450);
@@ -214,7 +213,7 @@ public class Class8019 {
                this.field34449
                   .method19484(
                      new TranslationTextComponent(
-                        "chat.type.advancement." + var1.method27027().method34938().method8241(), this.field34455.method2954(), var1.method27035()
+                        "chat.type.advancement." + var1.method27027().method34938().method8241(), this.field34455.getDisplayName(), var1.method27035()
                      ),
                      ChatType.SYSTEM,
                      Util.field45724
@@ -302,7 +301,7 @@ public class Class8019 {
          }
 
          if (this.field34457 || !var4.isEmpty() || !var5.isEmpty() || !var6.isEmpty()) {
-            var1.field4855.method15671(new Class5563(this.field34457, var5, var6, var4));
+            var1.field4855.sendPacket(new Class5563(this.field34457, var5, var6, var4));
             this.field34453.clear();
             this.field34454.clear();
          }
@@ -320,7 +319,7 @@ public class Class8019 {
       }
 
       if (var4 != this.field34456) {
-         this.field34455.field4855.method15671(new Class5513(this.field34456 != null ? this.field34456.method27033() : null));
+         this.field34455.field4855.sendPacket(new Class5513(this.field34456 != null ? this.field34456.method27033() : null));
       }
    }
 

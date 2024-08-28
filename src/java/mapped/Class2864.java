@@ -57,10 +57,10 @@ public class Class2864<T extends Class1095> extends Class2855<T> {
    public void method10997(T var1, float var2, float var3, float var4) {
       this.field17754.field31035 = (float) (Math.PI / 2);
       this.field17759.field31035 = -0.05235988F;
-      this.field17755.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
-      this.field17756.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17757.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17758.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17755.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17756.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17757.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17758.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
       this.field17750.method22679(-1.0F, 16.5F, -3.0F);
       this.field17750.field31036 = 0.0F;
       this.field17750.field31037 = var1.method5146(var4);
@@ -73,7 +73,7 @@ public class Class2864<T extends Class1095> extends Class2855<T> {
       this.field17755.method22679(-5.0F, 17.5F, 7.0F);
       this.field17756.method22679(-1.0F, 17.5F, 7.0F);
       if (!var1.method3336()) {
-         if (!var1.method3176()) {
+         if (!var1.isSleeping()) {
             if (var1.method5129()) {
                this.field17754.field31035 = (float) (Math.PI / 6);
                this.field17754.method22679(0.0F, 9.0F, -3.0F);
@@ -131,19 +131,19 @@ public class Class2864<T extends Class1095> extends Class2855<T> {
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      if (!var1.method3176() && !var1.method5131() && !var1.method3336()) {
+      if (!var1.isSleeping() && !var1.method5131() && !var1.method3336()) {
          this.field17750.field31035 = var6 * (float) (Math.PI / 180.0);
          this.field17750.field31036 = var5 * (float) (Math.PI / 180.0);
       }
 
-      if (var1.method3176()) {
+      if (var1.isSleeping()) {
          this.field17750.field31035 = 0.0F;
          this.field17750.field31036 = (float) (-Math.PI * 2.0 / 3.0);
-         this.field17750.field31037 = Class9679.method37764(var4 * 0.027F) / 22.0F;
+         this.field17750.field31037 = MathHelper.method37764(var4 * 0.027F) / 22.0F;
       }
 
       if (var1.method3336()) {
-         float var9 = Class9679.method37764(var4) * 0.01F;
+         float var9 = MathHelper.method37764(var4) * 0.01F;
          this.field17754.field31036 = var9;
          this.field17755.field31037 = var9;
          this.field17756.field31037 = var9;
@@ -154,10 +154,10 @@ public class Class2864<T extends Class1095> extends Class2855<T> {
       if (var1.method5131()) {
          float var10 = 0.1F;
          this.field17760 += 0.67F;
-         this.field17755.field31035 = Class9679.method37764(this.field17760 * 0.4662F) * 0.1F;
-         this.field17756.field31035 = Class9679.method37764(this.field17760 * 0.4662F + (float) Math.PI) * 0.1F;
-         this.field17757.field31035 = Class9679.method37764(this.field17760 * 0.4662F + (float) Math.PI) * 0.1F;
-         this.field17758.field31035 = Class9679.method37764(this.field17760 * 0.4662F) * 0.1F;
+         this.field17755.field31035 = MathHelper.method37764(this.field17760 * 0.4662F) * 0.1F;
+         this.field17756.field31035 = MathHelper.method37764(this.field17760 * 0.4662F + (float) Math.PI) * 0.1F;
+         this.field17757.field31035 = MathHelper.method37764(this.field17760 * 0.4662F + (float) Math.PI) * 0.1F;
+         this.field17758.field31035 = MathHelper.method37764(this.field17760 * 0.4662F) * 0.1F;
       }
    }
 }

@@ -40,7 +40,7 @@ public class Class9569 {
 
    @Nullable
    public ITextComponent method37105() {
-      return this.method37101().method31109() != null ? this.method37101().method31109().method2954() : null;
+      return this.method37101().method31109() != null ? this.method37101().method31109().getDisplayName() : null;
    }
 
    public float method37106() {

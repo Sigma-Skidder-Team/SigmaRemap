@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class941 extends Class939 implements Class942, Class935 {
-   private Class25<Class8848> field5312 = Class25.<Class8848>method68(27, Class8848.field39973);
+   private Class25<ItemStack> field5312 = Class25.<ItemStack>method68(27, ItemStack.field39973);
    public float field5313;
    public float field5314;
    public int field5315;
@@ -31,7 +31,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    @Override
    public void method3645(Class7380 var1, Class39 var2) {
       super.method3645(var1, var2);
-      this.field5312 = Class25.<Class8848>method68(this.method3629(), Class8848.field39973);
+      this.field5312 = Class25.<ItemStack>method68(this.method3629(), ItemStack.field39973);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5312);
       }
@@ -172,18 +172,18 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public Class25<Class8848> method3724() {
+   public Class25<ItemStack> method3724() {
       return this.field5312;
    }
 
    @Override
-   public void method3725(Class25<Class8848> var1) {
+   public void method3725(Class25<ItemStack> var1) {
       this.field5312 = var1;
    }
 
    @Override
    public float method3762(float var1) {
-      return Class9679.method37821(var1, this.field5314, this.field5313);
+      return MathHelper.method37821(var1, this.field5314, this.field5313);
    }
 
    public static int method3763(Class1665 var0, BlockPos var1) {

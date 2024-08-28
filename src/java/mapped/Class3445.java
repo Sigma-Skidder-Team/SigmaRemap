@@ -30,8 +30,8 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(this.method12124());
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(this.method12124());
    }
 
    @Override
@@ -46,7 +46,7 @@ public abstract class Class3445 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       Optional var7 = this.method12126(var1, var3, var4);
       if (var7.isPresent()) {
          Class7380 var8 = var1.method6738((BlockPos)var7.get());

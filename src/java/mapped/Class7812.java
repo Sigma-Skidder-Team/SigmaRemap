@@ -13,7 +13,7 @@ public class Class7812 {
    private static String[] field33511;
    private final Random field33512;
    private final float field33513;
-   private final Class1657 field33514;
+   private final ServerWorld field33514;
    private final Function<ResourceLocation, Class7318> field33515;
    private final Set<Class7318> field33516 = Sets.newLinkedHashSet();
    private final Function<ResourceLocation, Class122> field33517;
@@ -24,7 +24,7 @@ public class Class7812 {
    Class7812(
            Random var1,
            float var2,
-           Class1657 var3,
+           ServerWorld var3,
            Function<ResourceLocation, Class7318> var4,
            Function<ResourceLocation, Class122> var5,
            Map<Class9821<?>, Object> var6,
@@ -43,7 +43,7 @@ public class Class7812 {
       return this.field33519.containsKey(var1);
    }
 
-   public void method26080(ResourceLocation var1, Consumer<Class8848> var2) {
+   public void method26080(ResourceLocation var1, Consumer<ItemStack> var2) {
       Class9100 var5 = this.field33520.get(var1);
       if (var5 != null) {
          var5.method33936(this, var2);
@@ -87,7 +87,7 @@ public class Class7812 {
       return this.field33513;
    }
 
-   public Class1657 method26090() {
+   public ServerWorld method26090() {
       return this.field33514;
    }
 }

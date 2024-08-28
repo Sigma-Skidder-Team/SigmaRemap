@@ -35,8 +35,8 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
-      Class8848 var9 = var4.method3094(var5);
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.method3094(var5);
       boolean var10 = var9.method32107() instanceof Class3321 && var4.field4919.field29610;
       if (!var2.field9020) {
          Class944 var11 = var2.method6759(var3);

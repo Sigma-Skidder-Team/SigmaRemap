@@ -19,14 +19,14 @@ public class Class3700 extends Class3676<Class1046> {
       this.field19753 = var4;
    }
 
-   public boolean method12508(Class1657 var1, Class1046 var2) {
+   public boolean method12508(ServerWorld var1, Class1046 var2) {
       Optional var5 = var2.method2992().<Class9378>method21410(this.field19751);
       return var5.isPresent()
          && var1.method6813() == ((Class9378)var5.get()).method35578()
-         && ((Class9378)var5.get()).method35579().method8317(var2.method3431(), (double)this.field19753);
+         && ((Class9378)var5.get()).method35579().method8317(var2.getPositionVec(), (double)this.field19753);
    }
 
-   public void method12502(Class1657 var1, Class1046 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1046 var2, long var3) {
       if (var3 > this.field19755) {
          Class6947<?> var7 = var2.method2992();
          Optional<Class9378> var8 = var7.method21410(this.field19751);

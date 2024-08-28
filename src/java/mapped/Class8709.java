@@ -5,7 +5,7 @@ public class Class8709 extends Class8710 {
    private final Entity field39315;
 
    public Class8709(Entity var1) {
-      this(var1, var1.method3431());
+      this(var1, var1.getPositionVec());
    }
 
    public Class8709(Entity var1, Vector3d var2) {

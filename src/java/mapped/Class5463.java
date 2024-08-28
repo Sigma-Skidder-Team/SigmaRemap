@@ -215,7 +215,7 @@ public class Class5463 {
                      var29 != var1.method37509()
                         || var23
                         || var1.method37511()
-                        || var1.method37509() instanceof Class880 && ((Class880)var1.method37509()).method3176()
+                        || var1.method37509() instanceof Class880 && ((Class880)var1.method37509()).isSleeping()
                   )
                   && (!(var29 instanceof ClientPlayerEntity) || var1.method37509() == var29)) {
                   var20.field1000 = var29;

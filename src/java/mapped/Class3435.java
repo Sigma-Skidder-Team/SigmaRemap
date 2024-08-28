@@ -48,7 +48,7 @@ public class Class3435 extends Class3433 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (!var1.field9020) {
          this.method12102(var1, var2, var3);
       }
@@ -88,7 +88,7 @@ public class Class3435 extends Class3433 {
             Class944 var11 = var1.method6759(var8);
             if (var11 instanceof Class955) {
                Class955 var12 = (Class955)var11;
-               if (var12.method3846() && (var12.method3849(0.0F) < 0.5F || var1.method6783() == var12.method3867() || ((Class1657)var1).method6901())) {
+               if (var12.method3846() && (var12.method3849(0.0F) < 0.5F || var1.method6783() == var12.method3867() || ((ServerWorld)var1).method6901())) {
                   var10 = 2;
                }
             }

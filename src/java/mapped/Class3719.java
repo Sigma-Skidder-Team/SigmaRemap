@@ -10,12 +10,12 @@ public class Class3719 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, Class880 var2) {
       return var1.field9016.nextInt(20) == 0;
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       Class6947 var7 = var2.method2992();
       Class7699 var8 = var1.method6957(var2.method3432());
       if (var8 == null || var8.method25391() || var8.method25393()) {

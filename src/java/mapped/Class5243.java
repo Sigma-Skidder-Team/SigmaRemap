@@ -23,7 +23,7 @@ public class Class5243 extends Module {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(BlockFly.class);
             Module var5 = var4.field23879;
             if (var5 == null || !var5.method15996() || !(var5 instanceof Class5204) || var5.method15974("Haphe (AACAP)")) {
-                mc.field1339.method3098(mc.field1339.field4984 > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().method14662(BlockFly.class)).method16732());
+                mc.field1339.setSprinting(mc.field1339.field4984 > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().method14662(BlockFly.class)).method16732());
             }
         }
     }
@@ -55,7 +55,7 @@ public class Class5243 extends Module {
                     }
 
                     if (this.field23606 && !mc.field1339.method3337()) {
-                        mc.field1339.method3098(true);
+                        mc.field1339.setSprinting(true);
                     }
                 }
             } else {

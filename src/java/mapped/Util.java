@@ -67,7 +67,7 @@ public class Util {
    }
 
    private static ExecutorService method38490(String var0) {
-      int var3 = Class9679.method37775(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
+      int var3 = MathHelper.method37775(Runtime.getRuntime().availableProcessors() - 1, 1, 7);
       Object var4;
       if (var3 > 0) {
          var4 = new ForkJoinPool(var3, var1 -> {
@@ -149,7 +149,7 @@ public class Util {
 
    @Nullable
    public static Type<?> method38500(TypeReference var0, String var1) {
-      return Class9246.field42544 ? method38501(var0, var1) : null;
+      return SharedConstants.field42544 ? method38501(var0, var1) : null;
    }
 
    @Nullable
@@ -157,10 +157,10 @@ public class Util {
       Type var4 = null;
 
       try {
-         var4 = Class4497.method14181().getSchema(DataFixUtils.makeKey(Class9246.method34773().getWorldVersion())).getChoiceType(var0, var1);
+         var4 = Class4497.method14181().getSchema(DataFixUtils.makeKey(SharedConstants.method34773().getWorldVersion())).getChoiceType(var0, var1);
       } catch (IllegalArgumentException var6) {
          field45725.error("No data fixer registered for {}", var1);
-         if (Class9246.field42545) {
+         if (SharedConstants.field42545) {
             throw var6;
          }
       }
@@ -299,7 +299,7 @@ public class Util {
    }
 
    public static <T extends Throwable> T method38516(T var0) {
-      if (Class9246.field42545) {
+      if (SharedConstants.field42545) {
          field45725.error("Trying to throw a fatal exception, pausing in IDE", var0);
 
          while (true) {

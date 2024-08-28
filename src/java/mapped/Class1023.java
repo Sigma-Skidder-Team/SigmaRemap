@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public interface Class1023 extends Class1022 {
    void method4535(boolean var1);
 
-   void method4536(Class880 var1, Class8848 var2, Class882 var3, float var4);
+   void method4536(Class880 var1, ItemStack var2, Class882 var3, float var4);
 
    @Nullable
    Class880 method4232();
@@ -13,8 +13,8 @@ public interface Class1023 extends Class1022 {
    void method4537();
 
    default void method4538(Class880 var1, float var2) {
-      Class79 var5 = Class9456.method36389(var1, Class8514.field38148);
-      Class8848 var6 = var1.method3094(var5);
+      Hand var5 = Class9456.method36389(var1, Class8514.field38148);
+      ItemStack var6 = var1.method3094(var5);
       if (var1.method3092(Class8514.field38148)) {
          Class3261.method11763(var1.field5024, var1, var5, var6, var2, (float)(14 - var1.field5024.method6997().method8905() * 4));
       }
@@ -25,7 +25,7 @@ public interface Class1023 extends Class1022 {
    default void method4539(Class880 var1, Class880 var2, Class882 var3, float var4, float var5) {
       double var8 = var2.getPosX() - var1.getPosX();
       double var10 = var2.getPosZ() - var1.getPosZ();
-      double var12 = (double)Class9679.method37766(var8 * var8 + var10 * var10);
+      double var12 = (double) MathHelper.method37766(var8 * var8 + var10 * var10);
       double var14 = var2.method3440(0.3333333333333333) - var3.getPosY() + var12 * 0.2F;
       Class7680 var16 = this.method4540(var1, new Vector3d(var8, var14, var10), var4);
       var3.method3462(

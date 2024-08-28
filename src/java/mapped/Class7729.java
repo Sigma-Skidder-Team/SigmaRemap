@@ -65,7 +65,7 @@ public class Class7729 {
 
    public static void method25570() {
       if (field33186) {
-         if (Class9246.field42545) {
+         if (SharedConstants.field42545) {
             method25569().forEach(var0 -> field33187.error("Missing translations: " + var0));
             Class6099.method18844();
          }

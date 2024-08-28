@@ -42,8 +42,8 @@ public class Class7529 extends Class7530 {
 
    public void method24590(double var1, double var3, int var5) {
       int var8 = 128 * (1 << var5);
-      int var9 = Class9679.method37769((var1 + 64.0) / (double)var8);
-      int var10 = Class9679.method37769((var3 + 64.0) / (double)var8);
+      int var9 = MathHelper.method37769((var1 + 64.0) / (double)var8);
+      int var10 = MathHelper.method37769((var3 + 64.0) / (double)var8);
       this.field32316 = var9 * var8 + var8 / 2 - 64;
       this.field32317 = var10 * var8 + var8 / 2 - 64;
    }
@@ -55,7 +55,7 @@ public class Class7529 extends Class7530 {
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
       this.field32316 = var1.method122("xCenter");
       this.field32317 = var1.method122("zCenter");
-      this.field32321 = (byte)Class9679.method37775(var1.method120("scale"), 0, 4);
+      this.field32321 = (byte) MathHelper.method37775(var1.method120("scale"), 0, 4);
       this.field32319 = !var1.method119("trackingPosition", 1) || var1.method132("trackingPosition");
       this.field32320 = var1.method132("unlimitedTracking");
       this.field32323 = var1.method132("locked");
@@ -137,7 +137,7 @@ public class Class7529 extends Class7530 {
       this.method24605();
    }
 
-   public void method24594(PlayerEntity var1, Class8848 var2) {
+   public void method24594(PlayerEntity var1, ItemStack var2) {
       if (!this.field32325.containsKey(var1)) {
          Class8541 var5 = new Class8541(this, var1);
          this.field32325.put(var1, var5);
@@ -212,7 +212,7 @@ public class Class7529 extends Class7530 {
       }
    }
 
-   public static void method24595(Class8848 var0, BlockPos var1, String var2, Class2223 var3) {
+   public static void method24595(ItemStack var0, BlockPos var1, String var2, Class2223 var3) {
       Class41 var6;
       if (var0.method32141() && var0.method32142().method119("Decorations", 9)) {
          var6 = var0.method32142().method131("Decorations", 10);
@@ -289,7 +289,7 @@ public class Class7529 extends Class7530 {
    }
 
    @Nullable
-   public Packet<?> method24597(Class8848 var1, Class1665 var2, PlayerEntity var3) {
+   public Packet<?> method24597(ItemStack var1, Class1665 var2, PlayerEntity var3) {
       Class8541 var6 = this.field32325.get(var3);
       return var6 != null ? var6.method30388(var1) : null;
    }

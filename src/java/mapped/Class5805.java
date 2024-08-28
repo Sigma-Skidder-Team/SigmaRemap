@@ -9,7 +9,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class Class5805 {
    public static final Class5807 field25315 = new Class5807("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.field44606, (var0, var1) -> {
-      var0.field44606 = Class9679.method37775((int)var1.doubleValue(), 0, 7);
+      var0.field44606 = MathHelper.method37775((int)var1.doubleValue(), 0, 7);
       Minecraft.getInstance().field1287.method868();
    }, (var0, var1) -> {
       double var4 = var1.method18090(var0);
@@ -92,7 +92,7 @@ public abstract class Class5805 {
       1.0,
       0.0F,
       var0 -> Math.pow((double)var0.field44671, 2.0),
-      (var0, var1) -> var0.field44671 = Class9679.method37766(var1),
+      (var0, var1) -> var0.field44671 = MathHelper.method37766(var1),
       (var0, var1) -> {
          var1.method17950(Minecraft.getInstance().field1294.method38828(field25324, 200));
          double var4 = var1.method18083(var1.method18090(var0));
@@ -215,8 +215,8 @@ public abstract class Class5805 {
    );
    public static final Class5804 field25339 = new Class5804(
       "options.chat.visibility",
-      (var0, var1) -> var0.field44582 = Class2153.method8867((var0.field44582.method8865() + var1) % 3),
-      (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.field44582.method8866()))
+      (var0, var1) -> var0.field44582 = ChatVisibility.getValue((var0.field44582.getId() + var1) % 3),
+      (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.field44582.getResourceKey()))
    );
    private static final ITextComponent field25340 = new TranslationTextComponent("options.graphics.fast.tooltip");
    private static final ITextComponent field25341 = new TranslationTextComponent(
@@ -254,7 +254,7 @@ public abstract class Class5805 {
    });
    public static final Class5804 field25344 = new Class5804(
       "options.guiScale",
-      (var0, var1) -> var0.field44673 = Class9679.method37788(
+      (var0, var1) -> var0.field44673 = MathHelper.normalizeAngle(
             var0.field44673 + var1, Minecraft.getInstance().method1580().method8036(0, Minecraft.getInstance().method1469()) + 1
          ),
       (var0, var1) -> var0.field44673 != 0 ? var1.method17956(var0.field44673) : var1.method17955(new TranslationTextComponent("options.guiScale.auto"))

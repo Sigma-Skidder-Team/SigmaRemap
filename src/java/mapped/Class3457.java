@@ -25,7 +25,7 @@ public class Class3457 extends Class3456 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
-      method11557(var1, var3, new Class8848(this));
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+      method11557(var1, var3, new ItemStack(this));
    }
 }

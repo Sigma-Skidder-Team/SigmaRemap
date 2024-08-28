@@ -19,9 +19,9 @@ public class Class5590 implements Packet<Class5116> {
    public Class5590(int var1, Vector3d var2) {
       this.field24800 = var1;
       double var5 = 3.9;
-      double var7 = Class9679.method37778(var2.field18048, -3.9, 3.9);
-      double var9 = Class9679.method37778(var2.field18049, -3.9, 3.9);
-      double var11 = Class9679.method37778(var2.field18050, -3.9, 3.9);
+      double var7 = MathHelper.method37778(var2.field18048, -3.9, 3.9);
+      double var9 = MathHelper.method37778(var2.field18049, -3.9, 3.9);
+      double var11 = MathHelper.method37778(var2.field18050, -3.9, 3.9);
       this.field24801 = (int)(var7 * 8000.0);
       this.field24802 = (int)(var9 * 8000.0);
       this.field24803 = (int)(var11 * 8000.0);

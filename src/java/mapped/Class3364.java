@@ -9,7 +9,7 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
       Class39 var8 = var5.method32143();
       if (var8.method118("BlockEntityTag")) {
@@ -21,7 +21,7 @@ public class Class3364 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var1.<Boolean>method23463(field18931)) {
          return Class2274.field14820;
       } else {
@@ -32,7 +32,7 @@ public class Class3364 extends Class3241 {
       }
    }
 
-   public void method11941(Class1660 var1, BlockPos var2, Class7380 var3, Class8848 var4) {
+   public void method11941(Class1660 var1, BlockPos var2, Class7380 var3, ItemStack var4) {
       Class944 var7 = var1.method6759(var2);
       if (var7 instanceof Class947) {
          ((Class947)var7).method3804(var4.method32126());
@@ -45,7 +45,7 @@ public class Class3364 extends Class3241 {
          Class944 var5 = var1.method6759(var2);
          if (var5 instanceof Class947) {
             Class947 var6 = (Class947)var5;
-            Class8848 var7 = var6.method3803();
+            ItemStack var7 = var6.method3803();
             if (!var7.method32105()) {
                var1.method6999(1010, var2, 0);
                var6.method3625();
@@ -53,7 +53,7 @@ public class Class3364 extends Class3241 {
                double var9 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
                double var11 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.060000002F + 0.6;
                double var13 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
-               Class8848 var15 = var7.method32126();
+               ItemStack var15 = var7.method32126();
                Class1000 var16 = new Class1000(
                   var1, (double)var2.method8304() + var9, (double)var2.getY() + var11, (double)var2.method8306() + var13, var15
                );

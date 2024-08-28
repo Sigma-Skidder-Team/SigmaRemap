@@ -38,10 +38,10 @@ public class Class5109 implements Class5108 {
    public void method15599() {
       if (this.field23217 != Class2241.field14666) {
          if (this.field23217 == Class2241.field14667) {
-            Class878 var3 = this.field23215.method1367().method19489(this.field23219.getId());
+            Class878 var3 = this.field23215.getPlayerList().method19489(this.field23219.getId());
             if (var3 == null) {
                this.field23217 = Class2241.field14666;
-               this.field23215.method1367().method19445(this.field23216, this.field23222);
+               this.field23215.getPlayerList().method19445(this.field23216, this.field23222);
                this.field23222 = null;
             }
          }
@@ -74,7 +74,7 @@ public class Class5109 implements Class5108 {
          this.field23219 = this.method15603(this.field23219);
       }
 
-      ITextComponent var3 = this.field23215.method1367().method19451(this.field23216.method30700(), this.field23219);
+      ITextComponent var3 = this.field23215.getPlayerList().method19451(this.field23216.method30700(), this.field23219);
       if (var3 == null) {
          this.field23217 = Class2241.field14668;
          if (this.field23215.method1392() >= 0 && !this.field23216.method30702()) {
@@ -82,12 +82,12 @@ public class Class5109 implements Class5108 {
          }
 
          this.field23216.method30693(new Class5598(this.field23219));
-         Class878 var4 = this.field23215.method1367().method19489(this.field23219.getId());
+         Class878 var4 = this.field23215.getPlayerList().method19489(this.field23219.getId());
          if (var4 == null) {
-            this.field23215.method1367().method19445(this.field23216, this.field23215.method1367().method19452(this.field23219));
+            this.field23215.getPlayerList().method19445(this.field23216, this.field23215.getPlayerList().method19452(this.field23219));
          } else {
             this.field23217 = Class2241.field14667;
-            this.field23222 = this.field23215.method1367().method19452(this.field23219);
+            this.field23222 = this.field23215.getPlayerList().method19452(this.field23219);
          }
       } else {
          this.method15600(var3);

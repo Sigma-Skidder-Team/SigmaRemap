@@ -1492,9 +1492,9 @@ public class Class7944 {
          long var9 = var7;
          long var11 = 0L;
 
-         for (int var13 = Class9679.method37788(var4 - 1, var3.length);
-            var13 != var5 && (double)var11 < 1.0E9;
-            var13 = Class9679.method37788(var13 - 1, var3.length)
+         for (int var13 = MathHelper.normalizeAngle(var4 - 1, var3.length);
+              var13 != var5 && (double)var11 < 1.0E9;
+              var13 = MathHelper.normalizeAngle(var13 - 1, var3.length)
          ) {
             long var16 = var3[var13];
             if (var16 > var9) {

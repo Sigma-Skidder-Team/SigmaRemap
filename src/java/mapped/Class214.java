@@ -45,7 +45,7 @@ public class Class214 implements Class215, AutoCloseable {
    private float field821 = 1.0F;
    private float field822;
    private float field823;
-   private Class8848 field824;
+   private ItemStack field824;
    private int field825;
    private float field826;
    private float field827;
@@ -302,7 +302,7 @@ public class Class214 implements Class215, AutoCloseable {
          if (var3) {
             var6 = this.field802.field1299.field44669;
             if (Class7944.method26940()) {
-               var6 *= (double)Class9679.method37821(var2, this.field811, this.field810);
+               var6 *= (double) MathHelper.method37821(var2, this.field811, this.field810);
             }
          }
 
@@ -360,7 +360,7 @@ public class Class214 implements Class215, AutoCloseable {
          }
 
          var6 /= (float)var5.field4953;
-         var6 = Class9679.method37763(var6 * var6 * var6 * var6 * (float) Math.PI);
+         var6 = MathHelper.method37763(var6 * var6 * var6 * var6 * (float) Math.PI);
          float var10 = var5.field4954;
          var1.method35293(Class7680.field32900.method25286(-var10));
          var1.method35293(Class7680.field32902.method25286(-var6 * 14.0F));
@@ -373,14 +373,14 @@ public class Class214 implements Class215, AutoCloseable {
          PlayerEntity var5 = (PlayerEntity)this.field802.method1550();
          float var6 = var5.field5043 - var5.field5042;
          float var7 = -(var5.field5043 + var6 * var2);
-         float var8 = Class9679.method37821(var2, var5.field4908, var5.field4909);
+         float var8 = MathHelper.method37821(var2, var5.field4908, var5.field4909);
          var1.method35291(
-            (double)(Class9679.method37763(var7 * (float) Math.PI) * var8 * 0.5F),
-            (double)(-Math.abs(Class9679.method37764(var7 * (float) Math.PI) * var8)),
+            (double)(MathHelper.method37763(var7 * (float) Math.PI) * var8 * 0.5F),
+            (double)(-Math.abs(MathHelper.method37764(var7 * (float) Math.PI) * var8)),
             0.0
          );
-         var1.method35293(Class7680.field32902.method25286(Class9679.method37763(var7 * (float) Math.PI) * var8 * 3.0F));
-         var1.method35293(Class7680.field32898.method25286(Math.abs(Class9679.method37764(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
+         var1.method35293(Class7680.field32902.method25286(MathHelper.method37763(var7 * (float) Math.PI) * var8 * 3.0F));
+         var1.method35293(Class7680.field32898.method25286(Math.abs(MathHelper.method37764(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
       }
    }
 
@@ -403,7 +403,7 @@ public class Class214 implements Class215, AutoCloseable {
                this.method745(var1, var3);
             }
 
-            var10 = this.field802.method1550() instanceof Class880 && ((Class880)this.field802.method1550()).method3176();
+            var10 = this.field802.method1550() instanceof Class880 && ((Class880)this.field802.method1550()).isSleeping();
             if (this.field802.field1299.method37173().method8246()
                && !var10
                && !this.field802.field1299.field44662
@@ -490,7 +490,7 @@ public class Class214 implements Class215, AutoCloseable {
 
    public static float method750(Class880 var0, float var1) {
       int var4 = var0.method3034(Class8254.field35482).method8628();
-      return var4 <= 200 ? 0.7F + Class9679.method37763(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
+      return var4 <= 200 ? 0.7F + MathHelper.method37763(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
 
    public void method751(float var1, long var2, boolean var4) {
@@ -557,7 +557,7 @@ public class Class214 implements Class215, AutoCloseable {
          if (var4 && this.field802.field1338 != null) {
             this.field802.method1574().method22506("gui");
             if (this.field802.field1339 != null) {
-               float var11 = Class9679.method37821(var1, this.field802.field1339.field6142, this.field802.field1339.field6141);
+               float var11 = MathHelper.method37821(var1, this.field802.field1339.field6142, this.field802.field1339.field6141);
                if (var11 > 0.0F && this.field802.field1339.method3033(Class8254.field35475) && this.field802.field1299.field44670 < 1.0F) {
                   this.method765(var11 * (1.0F - this.field802.field1299.field44670));
                }
@@ -692,7 +692,7 @@ public class Class214 implements Class215, AutoCloseable {
          Entity var3 = this.field802.method1550();
          boolean var4 = var3 instanceof PlayerEntity && !this.field802.field1299.field44662;
          if (var4 && !((PlayerEntity)var3).field4919.field29610) {
-            Class8848 var5 = ((Class880)var3).method3090();
+            ItemStack var5 = ((Class880)var3).method3090();
             Class8710 var6 = this.field802.field1346;
             if (var6 != null && var6.method31417() == Class2100.field13690) {
                BlockPos var7 = ((Class8711)var6).method31423();
@@ -752,14 +752,14 @@ public class Class214 implements Class215, AutoCloseable {
          this.method745(var10, var1);
       }
 
-      float var12 = Class9679.method37821(var1, this.field802.field1339.field6142, this.field802.field1339.field6141)
+      float var12 = MathHelper.method37821(var1, this.field802.field1339.field6142, this.field802.field1339.field6141)
          * this.field802.field1299.field44670
          * this.field802.field1299.field44670;
       if (var12 > 0.0F) {
          int var13 = !this.field802.field1339.method3033(Class8254.field35475) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
          var14 *= var14;
-         Class7680 var15 = new Class7680(0.0F, Class9679.field45205 / 2.0F, Class9679.field45205 / 2.0F);
+         Class7680 var15 = new Class7680(0.0F, MathHelper.field45205 / 2.0F, MathHelper.field45205 / 2.0F);
          var10.method35293(var15.method25286(((float)this.field809 + var1) * (float)var13));
          var10.method35292(1.0F / var14, 1.0F, 1.0F);
          float var16 = -((float)this.field809 + var1) * (float)var13;
@@ -1010,7 +1010,7 @@ public class Class214 implements Class215, AutoCloseable {
       return Class1990.field12992;
    }
 
-   public void method763(Class8848 var1) {
+   public void method763(ItemStack var1) {
       this.field824 = var1;
       this.field825 = 40;
       this.field826 = this.field804.nextFloat() * 2.0F - 1.0F;
@@ -1035,15 +1035,15 @@ public class Class214 implements Class215, AutoCloseable {
          Class9332 var14 = new Class9332();
          var14.method35294();
          var14.method35291(
-            (double)((float)(var1 / 2) + var12 * Class9679.method37771(Class9679.method37763(var11 * 2.0F))),
-            (double)((float)(var2 / 2) + var13 * Class9679.method37771(Class9679.method37763(var11 * 2.0F))),
+            (double)((float)(var1 / 2) + var12 * MathHelper.method37771(MathHelper.method37763(var11 * 2.0F))),
+            (double)((float)(var2 / 2) + var13 * MathHelper.method37771(MathHelper.method37763(var11 * 2.0F))),
             -50.0
          );
-         float var15 = 50.0F + 175.0F * Class9679.method37763(var11);
+         float var15 = 50.0F + 175.0F * MathHelper.method37763(var11);
          var14.method35292(var15, -var15, var15);
-         var14.method35293(Class7680.field32900.method25286(900.0F * Class9679.method37771(Class9679.method37763(var11))));
-         var14.method35293(Class7680.field32898.method25286(6.0F * Class9679.method37764(var7 * 8.0F)));
-         var14.method35293(Class7680.field32902.method25286(6.0F * Class9679.method37764(var7 * 8.0F)));
+         var14.method35293(Class7680.field32900.method25286(900.0F * MathHelper.method37771(MathHelper.method37763(var11))));
+         var14.method35293(Class7680.field32898.method25286(6.0F * MathHelper.method37764(var7 * 8.0F)));
+         var14.method35293(Class7680.field32902.method25286(6.0F * MathHelper.method37764(var7 * 8.0F)));
          Class7735 var16 = this.field808.method26536();
          this.field802.method1555().method789(this.field824, Class2327.field15932, 15728880, Class213.field798, var14, var16);
          var14.method35295();
@@ -1058,7 +1058,7 @@ public class Class214 implements Class215, AutoCloseable {
    private void method765(float var1) {
       int var4 = this.field802.method1580().method8045();
       int var5 = this.field802.method1580().method8046();
-      double var6 = Class9679.method37822((double)var1, 2.0, 1.0);
+      double var6 = MathHelper.method37822((double)var1, 2.0, 1.0);
       float var8 = 0.2F * var1;
       float var9 = 0.4F * var1;
       float var10 = 0.2F * var1;
@@ -1088,7 +1088,7 @@ public class Class214 implements Class215, AutoCloseable {
    }
 
    public float method766(float var1) {
-      return Class9679.method37821(var1, this.field813, this.field812);
+      return MathHelper.method37821(var1, this.field813, this.field812);
    }
 
    public float method767() {

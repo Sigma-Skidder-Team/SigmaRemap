@@ -163,7 +163,7 @@ public class Class8958 {
          int var10 = var7.method27066();
          if (var10 > 0) {
             int var11 = var7.method27067() + var7.method27068();
-            field40474.info("{}% completed ({} / {} chunks)...", Class9679.method37767((float)var11 / (float)var10 * 100.0F), var11, var10);
+            field40474.info("{}% completed ({} / {} chunks)...", MathHelper.method37767((float)var11 / (float)var10 * 100.0F), var11, var10);
          }
 
          if (!var3.getAsBoolean()) {

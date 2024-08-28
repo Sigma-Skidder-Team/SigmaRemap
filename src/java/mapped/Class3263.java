@@ -10,14 +10,14 @@ public class Class3263 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public void method11729(Class8848 var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
          boolean var8 = var7.field4919.field29609 || Class7858.method26311(Class8122.field34922, var1) > 0;
-         Class8848 var9 = var7.method2983(var1);
+         ItemStack var9 = var7.method2983(var1);
          if (!var9.method32105() || var8) {
             if (var9.method32105()) {
-               var9 = new Class8848(Class8514.field37797);
+               var9 = new ItemStack(Class8514.field37797);
             }
 
             int var10 = this.method11728(var1) - var4;
@@ -88,29 +88,29 @@ public class Class3263 extends Class3262 implements Class3260 {
    }
 
    @Override
-   public int method11728(Class8848 var1) {
+   public int method11728(ItemStack var1) {
       return 72000;
    }
 
    @Override
-   public Class2103 method11727(Class8848 var1) {
+   public Class2103 method11727(ItemStack var1) {
       return Class2103.field13710;
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       boolean var7 = !var2.method2983(var6).method32105();
       if (!var2.field4919.field29609 && !var7) {
-         return Class6794.<Class8848>method20699(var6);
+         return Class6794.<ItemStack>method20699(var6);
       } else {
          var2.method3154(var3);
-         return Class6794.<Class8848>method20697(var6);
+         return Class6794.<ItemStack>method20697(var6);
       }
    }
 
    @Override
-   public Predicate<Class8848> method11752() {
+   public Predicate<ItemStack> method11752() {
       return field18748;
    }
 

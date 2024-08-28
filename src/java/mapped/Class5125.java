@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -240,7 +239,7 @@ public class Class5125 implements Class5119 {
    }
 
    private String method15842(Class6986 var1, BlockPos var2) {
-      float var5 = Class9679.method37766(var2.method8320(var1.field30221.method11320(), var1.field30221.method11321(), var1.field30221.method11322(), true));
+      float var5 = MathHelper.method37766(var2.method8320(var1.field30221.method11320(), var1.field30221.method11321(), var1.field30221.method11322(), true));
       double var6 = (double)Math.round(var5 * 10.0F) / 10.0;
       return var2.method8323() + " (dist " + var6 + ")";
    }
@@ -273,6 +272,6 @@ public class Class5125 implements Class5119 {
    }
 
    private void method15847() {
-      Class8023.method27454(this.field23306.method1550(), 8).ifPresent(var1 -> this.field23309 = var1.method3375());
+      Class8023.method27454(this.field23306.method1550(), 8).ifPresent(var1 -> this.field23309 = var1.getUniqueID());
    }
 }

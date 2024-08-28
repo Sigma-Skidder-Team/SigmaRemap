@@ -95,11 +95,11 @@ public class Class1034 extends Class1035 implements Class1023 {
       this.field5746.method3674().forEach(this::method3302);
    }
 
-   public Class8848 method4612(Class8848 var1) {
+   public ItemStack method4612(ItemStack var1) {
       return this.field5746.method3676(var1);
    }
 
-   public boolean method4613(Class8848 var1) {
+   public boolean method4613(ItemStack var1) {
       return this.field5746.method3677(var1);
    }
 
@@ -159,14 +159,14 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4635()) {
-         this.method4616(Class2106.field13736, new Class8848(Class8514.field37860));
-         this.method4616(Class2106.field13735, new Class8848(Class8514.field37861));
-         this.method4616(Class2106.field13734, new Class8848(Class8514.field37862));
-         this.method4616(Class2106.field13733, new Class8848(Class8514.field37863));
+         this.method4616(Class2106.field13736, new ItemStack(Class8514.field37860));
+         this.method4616(Class2106.field13735, new ItemStack(Class8514.field37861));
+         this.method4616(Class2106.field13734, new ItemStack(Class8514.field37862));
+         this.method4616(Class2106.field13733, new ItemStack(Class8514.field37863));
       }
    }
 
-   private void method4616(Class2106 var1, Class8848 var2) {
+   private void method4616(Class2106 var1, ItemStack var2) {
       if (this.field5024.field9016.nextFloat() < 0.1F) {
          this.method2944(var1, var2);
       }
@@ -188,7 +188,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
       Class2274 var5 = super.method4285(var1, var2);
       if (!var5.method9000()) {
          if (!this.field5024.field9020) {
@@ -241,7 +241,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public void method4258() {
       this.field5024.method6820().method22503("piglinBrain");
-      this.method2992().method21432((Class1657)this.field5024, this);
+      this.method2992().method21432((ServerWorld)this.field5024, this);
       this.field5024.method6820().method22505();
       Class4388.method13812(this);
       super.method4258();
@@ -253,14 +253,14 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method4619(Class1657 var1) {
+   public void method4619(ServerWorld var1) {
       Class4388.method13818(this);
       this.field5746.method3674().forEach(this::method3302);
       super.method4619(var1);
    }
 
-   private Class8848 method4620() {
-      return !((double)this.field5054.nextFloat() < 0.5) ? new Class8848(Class8514.field37815) : new Class8848(Class8514.field38148);
+   private ItemStack method4620() {
+      return !((double)this.field5054.nextFloat() < 0.5) ? new ItemStack(Class8514.field37815) : new ItemStack(Class8514.field38148);
    }
 
    private boolean method4621() {
@@ -322,7 +322,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method4536(Class880 var1, Class8848 var2, Class882 var3, float var4) {
+   public void method4536(Class880 var1, ItemStack var2, Class882 var3, float var4) {
       this.method4539(this, var1, var3, var4, 1.6F);
    }
 
@@ -331,11 +331,11 @@ public class Class1034 extends Class1035 implements Class1023 {
       return var1 == Class8514.field38148;
    }
 
-   public void method4625(Class8848 var1) {
+   public void method4625(ItemStack var1) {
       this.method4248(Class2106.field13731, var1);
    }
 
-   public void method4626(Class8848 var1) {
+   public void method4626(ItemStack var1) {
       if (var1.method32107() != Class4388.field21458) {
          this.method4248(Class2106.field13732, var1);
       } else {
@@ -345,18 +345,18 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public boolean method4253(Class8848 var1) {
+   public boolean method4253(ItemStack var1) {
       return this.field5024.method6789().method17135(Class5462.field24224) && this.method4280() && Class4388.method13826(this, var1);
    }
 
-   public boolean method4627(Class8848 var1) {
+   public boolean method4627(ItemStack var1) {
       Class2106 var4 = Class1006.method4271(var1);
-      Class8848 var5 = this.method2943(var4);
+      ItemStack var5 = this.method2943(var4);
       return this.method4250(var1, var5);
    }
 
    @Override
-   public boolean method4250(Class8848 var1, Class8848 var2) {
+   public boolean method4250(ItemStack var1, ItemStack var2) {
       if (Class7858.method26334(var2)) {
          return false;
       } else {

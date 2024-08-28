@@ -109,7 +109,7 @@ public class Class3199 extends Class3198 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var1.<Boolean>method23463(field18486)) {
          Direction var9 = var4.method3386();
          if (var1.<Direction>method23463(field18484) == var9.method536()) {

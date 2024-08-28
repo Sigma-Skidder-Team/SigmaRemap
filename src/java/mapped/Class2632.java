@@ -70,9 +70,9 @@ public class Class2632 extends Class2628 {
             this.field16946.method3435(var7.field18048, 0.3, var7.field18050);
             if (!var3.field9020) {
                double var8 = 0.08;
-               ((Class1657)var3)
+               ((ServerWorld)var3)
                   .method6939(
-                     new Class7438(Class7940.field34082, new Class8848(Class8514.field37904)),
+                     new Class7438(Class7940.field34082, new ItemStack(Class8514.field37904)),
                      (double)var5.method8304() + 0.5,
                      (double)var5.getY() + 0.7,
                      (double)var5.method8306() + 0.5,
@@ -100,7 +100,7 @@ public class Class2632 extends Class2628 {
                   double var16 = var6.nextGaussian() * 0.02;
                   double var10 = var6.nextGaussian() * 0.02;
                   double var12 = var6.nextGaussian() * 0.02;
-                  ((Class1657)var3)
+                  ((ServerWorld)var3)
                      .method6939(
                         Class7940.field34089,
                         (double)var5.method8304() + 0.5,

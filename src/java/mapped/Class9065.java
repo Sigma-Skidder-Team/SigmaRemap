@@ -9,7 +9,7 @@ public class Class9065 {
    private static final ResourceLocation field41484 = new ResourceLocation("damaged");
    private static final ResourceLocation field41485 = new ResourceLocation("damage");
    private static final Class8176 field41486 = (var0, var1, var2) -> !var0.method32116() ? 0.0F : 1.0F;
-   private static final Class8176 field41487 = (var0, var1, var2) -> Class9679.method37777((float)var0.method32117() / (float)var0.method32119(), 0.0F, 1.0F);
+   private static final Class8176 field41487 = (var0, var1, var2) -> MathHelper.method37777((float)var0.method32117() / (float)var0.method32119(), 0.0F, 1.0F);
    private static final Map<Class3257, Map<ResourceLocation, Class8176>> field41488 = Maps.newHashMap();
 
    private static Class8176 method33750(ResourceLocation var0, Class8176 var1) {

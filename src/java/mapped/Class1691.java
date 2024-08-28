@@ -15,7 +15,7 @@ public class Class1691 implements Class1658 {
    private final int field9202;
    private final int field9203;
    private final int field9204;
-   private final Class1657 field9205;
+   private final ServerWorld field9205;
    private final long field9206;
    private final Class6612 field9207;
    private final Random field9208;
@@ -27,8 +27,8 @@ public class Class1691 implements Class1658 {
    private final Class7481 field9214;
    private final Class7480 field9215;
 
-   public Class1691(Class1657 var1, List<Class1670> var2) {
-      int var5 = Class9679.method37769(Math.sqrt((double)var2.size()));
+   public Class1691(ServerWorld var1, List<Class1670> var2) {
+      int var5 = MathHelper.method37769(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
          Class7481 var6 = ((Class1670)var2.get(var2.size() / 2)).method7072();
          this.field9201 = var2;
@@ -148,7 +148,7 @@ public class Class1691 implements Class1658 {
       if (!var7.method23393()) {
          if (var2) {
             Class944 var8 = !var7.method23383().method11998() ? null : this.method6759(var1);
-            Block.method11556(var7, this.field9205, var1, var8, var3, Class8848.field39973);
+            Block.method11556(var7, this.field9205, var1, var8, var3, ItemStack.field39973);
          }
 
          return this.method6726(var1, Blocks.AIR.method11579(), 3, var4);
@@ -230,8 +230,8 @@ public class Class1691 implements Class1658 {
 
    @Override
    public boolean method6916(Entity var1) {
-      int var4 = Class9679.method37769(var1.getPosX() / 16.0);
-      int var5 = Class9679.method37769(var1.getPosZ() / 16.0);
+      int var4 = MathHelper.method37769(var1.getPosX() / 16.0);
+      int var5 = MathHelper.method37769(var1.getPosZ() / 16.0);
       this.method6824(var4, var5).method7063(var1);
       return true;
    }
@@ -253,7 +253,7 @@ public class Class1691 implements Class1658 {
 
    @Deprecated
    @Override
-   public Class1657 method6970() {
+   public ServerWorld method6970() {
       return this.field9205;
    }
 

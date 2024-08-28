@@ -98,13 +98,13 @@ public class Class9752 {
       Class5591 var4 = new Class5591(Class2301.field15714, (ITextComponent)null);
 
       for (Class878 var6 : var1) {
-         var6.field4855.method15671(var4);
+         var6.field4855.sendPacket(var4);
       }
 
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.title.cleared.multiple", var1.size()), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.title.cleared.single", ((Class878)var1.iterator().next()).method2954()), true);
+         var0.method20179(new TranslationTextComponent("commands.title.cleared.single", ((Class878)var1.iterator().next()).getDisplayName()), true);
       }
 
       return var1.size();
@@ -114,13 +114,13 @@ public class Class9752 {
       Class5591 var4 = new Class5591(Class2301.field15715, (ITextComponent)null);
 
       for (Class878 var6 : var1) {
-         var6.field4855.method15671(var4);
+         var6.field4855.sendPacket(var4);
       }
 
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.title.reset.multiple", var1.size()), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.title.reset.single", ((Class878)var1.iterator().next()).method2954()), true);
+         var0.method20179(new TranslationTextComponent("commands.title.reset.single", ((Class878)var1.iterator().next()).getDisplayName()), true);
       }
 
       return var1.size();
@@ -128,7 +128,7 @@ public class Class9752 {
 
    private static int method38312(Class6619 var0, Collection<Class878> var1, ITextComponent var2, Class2301 var3) throws CommandSyntaxException {
       for (Class878 var7 : var1) {
-         var7.field4855.method15671(new Class5591(var3, TextComponentUtils.func_240645_a_(var0, var2, var7, 0)));
+         var7.field4855.sendPacket(new Class5591(var3, TextComponentUtils.func_240645_a_(var0, var2, var7, 0)));
       }
 
       if (var1.size() != 1) {
@@ -136,7 +136,7 @@ public class Class9752 {
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.title.show." + var3.name().toLowerCase(Locale.ROOT) + ".single", ((Class878)var1.iterator().next()).method2954()
+               "commands.title.show." + var3.name().toLowerCase(Locale.ROOT) + ".single", ((Class878)var1.iterator().next()).getDisplayName()
             ),
             true
          );
@@ -149,13 +149,13 @@ public class Class9752 {
       Class5591 var7 = new Class5591(var2, var3, var4);
 
       for (Class878 var9 : var1) {
-         var9.field4855.method15671(var7);
+         var9.field4855.sendPacket(var7);
       }
 
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.title.times.multiple", var1.size()), true);
       } else {
-         var0.method20179(new TranslationTextComponent("commands.title.times.single", ((Class878)var1.iterator().next()).method2954()), true);
+         var0.method20179(new TranslationTextComponent("commands.title.times.single", ((Class878)var1.iterator().next()).getDisplayName()), true);
       }
 
       return var1.size();

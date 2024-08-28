@@ -38,15 +38,15 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
    }
 
    public ResourceLocation method17843(AbstractClientPlayerEntity var1) {
-      boolean var4 = field25166.containsKey(var1.method2906().getId()) && field25166.get(var1.method2906().getId()).equals(new ResourceLocation(""));
-      if (!var4 && field25166.containsKey(var1.method2906().getId())) {
-         return field25166.get(var1.method2906().getId());
+      boolean var4 = field25166.containsKey(var1.getGameProfile().getId()) && field25166.get(var1.getGameProfile().getId()).equals(new ResourceLocation(""));
+      if (!var4 && field25166.containsKey(var1.getGameProfile().getId())) {
+         return field25166.get(var1.getGameProfile().getId());
       } else {
          if (!var1.method5368() && !var4) {
-            field25166.put(var1.method2906().getId(), new ResourceLocation(""));
-            Minecraft.getInstance().method1549().method38346(var1.method2906(), (var1x, var2, var3) -> {
+            field25166.put(var1.getGameProfile().getId(), new ResourceLocation(""));
+            Minecraft.getInstance().method1549().method38346(var1.getGameProfile(), (var1x, var2, var3) -> {
                if (var1x == Type.SKIN) {
-                  field25166.put(var1.method2906().getId(), var2);
+                  field25166.put(var1.getGameProfile().getId(), var2);
                }
             }, true);
          }

@@ -73,7 +73,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var1.<Boolean>method23463(field18510)) {
          this.method11519(var1, var2, var3);
          this.method11520(var4, var2, var3, true);
@@ -122,7 +122,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18510)) {
          if (!this.field18527) {
             var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(false)), 3);

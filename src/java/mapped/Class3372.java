@@ -35,13 +35,13 @@ public class Class3372 extends Class3241 {
             if (var5 > 0) {
                float var8 = !(var6 < (float) Math.PI) ? (float) (Math.PI * 2) : 0.0F;
                var6 += (var8 - var6) * 0.2F;
-               var5 = Math.round((float)var5 * Class9679.method37764(var6));
+               var5 = Math.round((float)var5 * MathHelper.method37764(var6));
             }
          } else {
             var5 = 15 - var5;
          }
 
-         var5 = Class9679.method37775(var5, 0, 15);
+         var5 = MathHelper.method37775(var5, 0, 15);
          if (var0.<Integer>method23463(field18963) != var5) {
             var1.method6725(var2, var0.method23465(field18963, Integer.valueOf(var5)), 3);
          }
@@ -49,7 +49,7 @@ public class Class3372 extends Class3241 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var4.method2935()) {
          return super.method11505(var1, var2, var3, var4, var5, var6);
       } else if (!var2.field9020) {

@@ -139,7 +139,7 @@ public class Class1162 extends Class1161 {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableAlphaTest();
          Class1193.method5699(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
-         float var21 = 0.5F + (1.0F + Class9679.method37763((float)Class806.method2124(this.field6317) * 0.25F)) * 0.25F;
+         float var21 = 0.5F + (1.0F + MathHelper.method37763((float)Class806.method2124(this.field6317) * 0.25F)) * 0.25F;
          int var22 = 0xFF000000 | (int)(127.0F * var21) << 16 | (int)(255.0F * var21) << 8 | (int)(127.0F * var21);
          Class1193.method5691(var2, Class806.method2125(this.field6317), Class806.method2126(), var3 + 10 + 40 + 75, var4 + 12, var22);
       }

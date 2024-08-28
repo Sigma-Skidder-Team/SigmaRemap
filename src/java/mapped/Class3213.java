@@ -21,7 +21,7 @@ public class Class3213 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (method11598(var2.method6738(var3.method8313())) && var3.getY() >= 0) {
          Class907 var7 = new Class907(var2, (double)var3.method8304() + 0.5, (double)var3.getY(), (double)var3.method8306() + 0.5, var2.method6738(var3));
          this.method11596(var7);

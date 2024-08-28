@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class Class6204 implements Class6205 {
          List<GameProfile> var5 = Lists.newArrayList();
 
          for (Class878 var7 : var4) {
-            var5.add(var7.method2906());
+            var5.add(var7.getGameProfile());
          }
 
          return var5;

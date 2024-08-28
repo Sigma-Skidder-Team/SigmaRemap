@@ -10,7 +10,7 @@ public class Class9142 {
    public static long field42015;
 
    public static float method34135(float var0, float var1, float var2) {
-      float var5 = Class9679.method37792(var1 - var0);
+      float var5 = MathHelper.method37792(var1 - var0);
       if (var5 > var2) {
          var5 = var2;
       }
@@ -27,7 +27,7 @@ public class Class9142 {
       double var10 = var9[0] - var1;
       double var12 = var0.getPosY() - (double)field42012.field1339.method3393() - 0.02F + (double)var0.method3393() - var3;
       double var14 = var9[2] - var5;
-      double var16 = (double)Class9679.method37766(var10 * var10 + var14 * var14);
+      double var16 = (double) MathHelper.method37766(var10 * var10 + var14 * var14);
       float var18 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var14, var10) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var19 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var12, var16) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var18, var19};
@@ -47,7 +47,7 @@ public class Class9142 {
       double var15 = var9 - var1;
       double var17 = var13 - (double)field42012.field1339.method3393() - 0.02F + (double)var0.method3393() - var3;
       double var19 = var11 - var5;
-      double var21 = (double)Class9679.method37766(var15 * var15 + var19 * var19);
+      double var21 = (double) MathHelper.method37766(var15 * var15 + var19 * var19);
       float var23 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var19, var15) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var24 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var17, var21) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var23, var24};
@@ -57,7 +57,7 @@ public class Class9142 {
       double var9 = var0.getPosX() - var1 + 0.25 - Math.random() * 0.5;
       double var11 = var0.getPosY() - (double)field42012.field1339.method3393() - 0.02F + (double)var0.method3393() - var3 - Math.random();
       double var13 = var0.getPosZ() - var5 + 0.25 - Math.random() * 0.5;
-      double var15 = (double)Class9679.method37766(var9 * var9 + var13 * var13);
+      double var15 = (double) MathHelper.method37766(var9 * var9 + var13 * var13);
       float var17 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var13, var9) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var18 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var11, var15) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var17, var18};
@@ -70,7 +70,7 @@ public class Class9142 {
       double var15 = var0.getPosX() - var1 + var9;
       double var17 = var0.getPosY() - var3 - (double)field42012.field1339.method3393() + (double)var0.method3393() - 0.02F - 0.6F - var11;
       double var19 = var0.getPosZ() - var5 + var13;
-      double var21 = (double)Class9679.method37766(var15 * var15 + var19 * var19);
+      double var21 = (double) MathHelper.method37766(var15 * var15 + var19 * var19);
       float var23 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var19, var15) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var24 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var17, var21) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var23, var24};
@@ -86,7 +86,7 @@ public class Class9142 {
             double var17 = var0.getPosX() - var1 + var11;
             double var19 = var0.getPosY() - var3 - (double)field42012.field1339.method3393() + (double)var0.method3393() - 0.02F - 0.6F - var13;
             double var21 = var0.getPosZ() - var5 + var15;
-            double var23 = (double)Class9679.method37766(var17 * var17 + var21 * var21);
+            double var23 = (double) MathHelper.method37766(var17 * var17 + var21 * var21);
             field42013 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var21, var17) * 180.0 / Math.PI) - 90.0F, 360.0F);
             field42014 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var19, var23) * 180.0 / Math.PI)), 360.0F);
             return new float[]{field42013, field42014};
@@ -119,7 +119,7 @@ public class Class9142 {
       double var8 = var0 - field42012.field1339.getPosX();
       double var10 = var2 - field42012.field1339.getPosZ();
       double var12 = var4 - field42012.field1339.getPosY() - 1.2;
-      double var14 = (double)Class9679.method37766(var8 * var8 + var10 * var10);
+      double var14 = (double) MathHelper.method37766(var8 * var8 + var10 * var10);
       float var16 = (float)(Math.atan2(var10, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var12, var14) * 180.0 / Math.PI));
       return new float[]{var16, var17};
@@ -129,7 +129,7 @@ public class Class9142 {
       double var4 = var1.field18048 - var0.field18048;
       double var6 = var1.field18050 - var0.field18050;
       double var8 = var1.field18049 - var0.field18049;
-      double var10 = (double)Class9679.method37766(var4 * var4 + var6 * var6);
+      double var10 = (double) MathHelper.method37766(var4 * var4 + var6 * var6);
       float var12 = method34135(0.0F, (float)(Math.atan2(var6, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var13 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var8, var10) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var12, var13};
@@ -156,7 +156,7 @@ public class Class9142 {
       double var30 = var7 + (double)field42012.field1339.method3393() - (var13 + (double)var0.method3430());
       double var32 = (double)field42012.field1339.method3275(var0);
       float var34 = (float)Math.toDegrees(Math.atan2(var28, var26)) - 90.0F;
-      double var35 = (double)Class9679.method37766(var26 * var26 + var28 * var28);
+      double var35 = (double) MathHelper.method37766(var26 * var26 + var28 * var28);
       float var37 = (float)(-(Math.atan2(var30, var35) * 180.0 / Math.PI)) + (float)var32 * 0.14F;
       return new float[]{var34, -var37};
    }
@@ -167,7 +167,7 @@ public class Class9142 {
    }
 
    public static Class7461 method34148(Vector3d var0) {
-      float[] var3 = method34145(field42012.field1339.method3431().method11339(0.0, (double)field42012.field1339.method3393(), 0.0), var0);
+      float[] var3 = method34145(field42012.field1339.getPositionVec().method11339(0.0, (double)field42012.field1339.method3393(), 0.0), var0);
       return new Class7461(var3[0], var3[1]);
    }
 
@@ -199,7 +199,7 @@ public class Class9142 {
             double var14 = var8 - field42012.field1339.getPosX();
             double var16 = var12 - (double)field42012.field1339.method3393() - 0.02F - field42012.field1339.getPosY();
             double var18 = var10 - field42012.field1339.getPosZ();
-            double var20 = (double)Class9679.method37766(var14 * var14 + var18 * var18);
+            double var20 = (double) MathHelper.method37766(var14 * var14 + var18 * var18);
             float var22 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var18, var14) * 180.0 / Math.PI) - 90.0F, 360.0F);
             float var23 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var16, var20) * 180.0 / Math.PI)), 360.0F);
             boolean var24 = method34149(new Vector3d(var8, var12, var10));
@@ -244,7 +244,7 @@ public class Class9142 {
                var14 = var8 - field42012.field1339.getPosX();
                var16 = var12 - (double)field42012.field1339.method3393() - 0.02 - field42012.field1339.getPosY();
                var18 = var10 - field42012.field1339.getPosZ();
-               var20 = (double)Class9679.method37766(var14 * var14 + var18 * var18);
+               var20 = (double) MathHelper.method37766(var14 * var14 + var18 * var18);
                var22 = method34135(field42012.field1339.field5031, (float)(Math.atan2(var18, var14) * 180.0 / Math.PI) - 90.0F, 360.0F);
                var23 = method34135(field42012.field1339.field5032, (float)(-(Math.atan2(var16, var20) * 180.0 / Math.PI)), 360.0F);
                var24 = method34149(new Vector3d(var8, var12, var10));
@@ -276,11 +276,11 @@ public class Class9142 {
          var11 = Math.toDegrees(-Math.atan(var7 / var9));
       }
 
-      return Class9679.method37792(-(var0 - (float)var11));
+      return MathHelper.method37792(-(var0 - (float)var11));
    }
 
    public static float method34152(float var0, float var1) {
-      return Class9679.method37792(-(var0 - var1));
+      return MathHelper.method37792(-(var0 - var1));
    }
 
    private double method34153(double var1, double var3) {
@@ -291,8 +291,8 @@ public class Class9142 {
       double var6 = var1.getPosX() - field42012.field1339.getPosX();
       double var8 = var1.getPosZ() - field42012.field1339.getPosZ();
       double var10 = var2 - 2.2 + (double)var1.method3393() - field42012.field1339.getPosY();
-      double var12 = (double)Class9679.method37766(var6 * var6 + var8 * var8);
+      double var12 = (double) MathHelper.method37766(var6 * var6 + var8 * var8);
       double var14 = -Math.toDegrees(Math.atan(var10 / var12));
-      return -Class9679.method37792(var0 - (float)var14) - 2.5F;
+      return -MathHelper.method37792(var0 - (float)var14) - 2.5F;
    }
 }

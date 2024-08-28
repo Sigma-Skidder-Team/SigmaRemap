@@ -31,8 +31,8 @@ public class Class5462 {
    public static final Class9221<Class7466> field24237 = method17127("reducedDebugInfo", Class2155.field14137, Class7466.method24179(false, (var0, var1) -> {
       byte var4 = (byte)(!var1.method24174() ? 23 : 22);
 
-      for (Class878 var6 : var0.method1367().method19488()) {
-         var6.field4855.method15671(new Class5464(var6, var4));
+      for (Class878 var6 : var0.getPlayerList().method19488()) {
+         var6.field4855.sendPacket(new Class5464(var6, var4));
       }
    }));
    public static final Class9221<Class7466> field24238 = method17127("spectatorsGenerateChunks", Class2155.field14131, Class7466.method24178(true));
@@ -46,8 +46,8 @@ public class Class5462 {
    public static final Class9221<Class7466> field24246 = method17127("disableRaids", Class2155.field14132, Class7466.method24178(false));
    public static final Class9221<Class7466> field24247 = method17127("doInsomnia", Class2155.field14133, Class7466.method24178(true));
    public static final Class9221<Class7466> field24248 = method17127("doImmediateRespawn", Class2155.field14131, Class7466.method24179(false, (var0, var1) -> {
-      for (Class878 var5 : var0.method1367().method19488()) {
-         var5.field4855.method15671(new Class5534(Class5534.field24571, !var1.method24174() ? 0.0F : 1.0F));
+      for (Class878 var5 : var0.getPlayerList().method19488()) {
+         var5.field4855.sendPacket(new Class5534(Class5534.field24571, !var1.method24174() ? 0.0F : 1.0F));
       }
    }));
    public static final Class9221<Class7466> field24249 = method17127("drowningDamage", Class2155.field14131, Class7466.method24178(true));

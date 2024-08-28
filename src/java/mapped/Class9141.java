@@ -17,7 +17,7 @@ public class Class9141 {
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("pardon-ip").requires(var0x -> var0x.method20129(3)))
             .then(
                Class6099.method18840("target", StringArgumentType.word())
-                  .suggests((var0x, var1) -> Class6618.method20149(((Class6619)var0x.getSource()).method20177().method1367().method19462().method14432(), var1))
+                  .suggests((var0x, var1) -> Class6618.method20149(((Class6619)var0x.getSource()).method20177().getPlayerList().method19462().method14432(), var1))
                   .executes(var0x -> method34131((Class6619)var0x.getSource(), StringArgumentType.getString(var0x, "target")))
             )
       );
@@ -26,7 +26,7 @@ public class Class9141 {
    private static int method34131(Class6619 var0, String var1) throws CommandSyntaxException {
       Matcher var4 = Class8345.field35870.matcher(var1);
       if (var4.matches()) {
-         Class4532 var5 = var0.method20177().method1367().method19462();
+         Class4532 var5 = var0.method20177().getPlayerList().method19462();
          if (var5.method14450(var1)) {
             var5.method14438(var1);
             var0.method20179(new TranslationTextComponent("commands.pardonip.success", var1), true);

@@ -24,11 +24,11 @@ public class Class147 extends Class128 {
    }
 
    @Override
-   public Class8848 method371(Class8848 var1, Class7812 var2) {
+   public ItemStack method371(ItemStack var1, Class7812 var2) {
       if (var1.method32107() == Class8514.field38060) {
          Entity var5 = var2.method26081(this.field490.method8717());
          if (var5 instanceof PlayerEntity) {
-            GameProfile var6 = ((PlayerEntity)var5).method2906();
+            GameProfile var6 = ((PlayerEntity)var5).getGameProfile();
             var1.method32143().method99("SkullOwner", Class8354.method29279(new Class39(), var6));
          }
       }

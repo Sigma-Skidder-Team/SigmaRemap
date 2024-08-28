@@ -35,7 +35,7 @@ public class Class903 extends Class901 {
          var6.method4101(new Class2023(Class8254.field35473, 1, 1));
          if (!var5.isEmpty()) {
             for (Class880 var8 : var5) {
-               double var9 = this.method3277(var8);
+               double var9 = this.getDistanceSq(var8);
                if (var9 < 16.0) {
                   var6.method3215(var8.getPosX(), var8.getPosY(), var8.getPosZ());
                   break;

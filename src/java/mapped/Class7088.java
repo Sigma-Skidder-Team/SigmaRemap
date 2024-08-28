@@ -261,7 +261,7 @@ public class Class7088 {
                "commands.bossbar.get.players.some",
                var1.method12271(),
                var1.method12288().size(),
-               TextComponentUtils.func_240649_b_(var1.method12288(), PlayerEntity::method2954)
+               TextComponentUtils.func_240649_b_(var1.method12288(), PlayerEntity::getDisplayName)
             ),
             true
          );
@@ -346,7 +346,7 @@ public class Class7088 {
          if (!var1.method12288().isEmpty()) {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.bossbar.set.players.success.some", var1.method12271(), var2.size(), TextComponentUtils.func_240649_b_(var2, PlayerEntity::method2954)
+                  "commands.bossbar.set.players.success.some", var1.method12271(), var2.size(), TextComponentUtils.func_240649_b_(var2, PlayerEntity::getDisplayName)
                ),
                true
             );

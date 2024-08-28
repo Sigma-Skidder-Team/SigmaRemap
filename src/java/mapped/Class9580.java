@@ -11,6 +11,6 @@ public final class Class9580 {
    }
 
    public float method37196(Class6619 var1) {
-      return Class9679.method37792(!this.field44786 ? this.field44785 : this.field44785 + var1.method20176().field37221);
+      return MathHelper.method37792(!this.field44786 ? this.field44785 : this.field44785 + var1.method20176().field37221);
    }
 }

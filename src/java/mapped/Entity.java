@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 public abstract class Entity implements Class933, Class909 {
    public static final Logger field5012 = LogManager.getLogger();
    private static final AtomicInteger field5013 = new AtomicInteger();
-   private static final List<Class8848> field5014 = Collections.<Class8848>emptyList();
+   private static final List<ItemStack> field5014 = Collections.<ItemStack>emptyList();
    private static final Class6488 field5015 = new Class6488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
    private static double field5016 = 1.0;
    private final Class8992<?> field5017;
@@ -96,7 +96,7 @@ public abstract class Entity implements Class933, Class909 {
    public int field5081;
    public BlockPos field5082;
    private boolean field5083;
-   public UUID field5084 = Class9679.method37811(this.field5054);
+   public UUID field5084 = MathHelper.method37811(this.field5054);
    public String field5085 = this.field5084.toString();
    public boolean field5086;
    private final Set<String> field5087 = Sets.newHashSet();
@@ -259,10 +259,10 @@ public abstract class Entity implements Class933, Class909 {
       double var9 = var1 * 0.15;
       this.field5032 = (float)((double)this.field5032 + var7);
       this.field5031 = (float)((double)this.field5031 + var9);
-      this.field5032 = Class9679.method37777(this.field5032, -90.0F, 90.0F);
+      this.field5032 = MathHelper.method37777(this.field5032, -90.0F, 90.0F);
       this.field5034 = (float)((double)this.field5034 + var7);
       this.field5033 = (float)((double)this.field5033 + var9);
-      this.field5034 = Class9679.method37777(this.field5034, -90.0F, 90.0F);
+      this.field5034 = MathHelper.method37777(this.field5034, -90.0F, 90.0F);
       if (this.field5022 != null) {
          this.field5022.method3309(this);
       }
@@ -278,7 +278,7 @@ public abstract class Entity implements Class933, Class909 {
 
    public void method3000() {
       this.field5024.method6820().method22503("entityBaseTick");
-      if (this.method3328() && this.method3421().field5041) {
+      if (this.method3328() && this.getRidingEntity().field5041) {
          this.method2759();
       }
 
@@ -403,8 +403,8 @@ public abstract class Entity implements Class933, Class909 {
 
    public void move(Class2107 var1, Vector3d var2) {
       if (Minecraft.getInstance().field1339 != null
-         && Minecraft.getInstance().field1339.method3421() != null
-         && Minecraft.getInstance().field1339.method3421().method3205() == this.method3205()) {
+         && Minecraft.getInstance().field1339.getRidingEntity() != null
+         && Minecraft.getInstance().field1339.getRidingEntity().method3205() == this.method3205()) {
          Class4432 var5 = new Class4432(var2.field18048, var2.field18049, var2.field18050);
          Client.getInstance().getEventManager().call(var5);
          if (var5.isCancelled()) {
@@ -441,7 +441,7 @@ public abstract class Entity implements Class933, Class909 {
 
          this.field5024.method6820().method22505();
          this.field5024.method6820().method22503("rest");
-         this.field5037 = !Class9679.method37787(var2.field18048, var25.field18048) || !Class9679.method37787(var2.field18050, var25.field18050);
+         this.field5037 = !MathHelper.method37787(var2.field18048, var25.field18048) || !MathHelper.method37787(var2.field18050, var25.field18050);
          this.field5038 = var2.field18049 != var25.field18049;
          this.field5036 = this.field5038 && var2.field18049 < 0.0;
          BlockPos var6 = this.method3228();
@@ -473,8 +473,8 @@ public abstract class Entity implements Class933, Class909 {
                var12 = 0.0;
             }
 
-            this.field5043 = (float)((double)this.field5043 + (double)Class9679.method37766(method3234(var25)) * 0.6);
-            this.field5044 = (float)((double)this.field5044 + (double)Class9679.method37766(var10 * var10 + var12 * var12 + var14 * var14) * 0.6);
+            this.field5043 = (float)((double)this.field5043 + (double) MathHelper.method37766(method3234(var25)) * 0.6);
+            this.field5044 = (float)((double)this.field5044 + (double) MathHelper.method37766(var10 * var10 + var12 * var12 + var14 * var14) * 0.6);
             if (this.field5044 > this.field5046 && !var7.method23393()) {
                this.field5046 = this.method3238();
                if (!this.method3250()) {
@@ -483,7 +483,7 @@ public abstract class Entity implements Class933, Class909 {
                   Entity var16 = this.method3329() && this.method3407() != null ? this.method3407() : this;
                   float var17 = var16 == this ? 0.35F : 0.4F;
                   Vector3d var18 = var16.method3433();
-                  float var19 = Class9679.method37766(
+                  float var19 = MathHelper.method37766(
                         var18.field18048 * var18.field18048 * 0.2F + var18.field18049 * var18.field18049 + var18.field18050 * var18.field18050 * 0.2F
                      )
                      * var17;
@@ -526,9 +526,9 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public BlockPos method3228() {
-      int var3 = Class9679.method37769(this.field5028.field18048);
-      int var4 = Class9679.method37769(this.field5028.field18049 - 0.2F);
-      int var5 = Class9679.method37769(this.field5028.field18050);
+      int var3 = MathHelper.method37769(this.field5028.field18048);
+      int var4 = MathHelper.method37769(this.field5028.field18049 - 0.2F);
+      int var5 = MathHelper.method37769(this.field5028.field18050);
       BlockPos var6 = new BlockPos(var3, var4, var5);
       if (this.field5024.method6738(var6).method23393()) {
          BlockPos var7 = var6.method8313();
@@ -597,7 +597,7 @@ public abstract class Entity implements Class933, Class909 {
 
    private double method3232(Class113 var1, double var2) {
       int var6 = var1.ordinal();
-      double var7 = Class9679.method37778(var2 + this.field5089[var6], -0.51, 0.51);
+      double var7 = MathHelper.method37778(var2 + this.field5089[var6], -0.51, 0.51);
       var2 = var7 - this.field5089[var6];
       this.field5089[var6] = var7;
       return var2;
@@ -905,7 +905,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method3258() {
-      if (!(this.method3421() instanceof Class1002)) {
+      if (!(this.getRidingEntity() instanceof Class1002)) {
          if (!this.method3426(Class8953.field40469, 0.014)) {
             this.field5057 = false;
          } else {
@@ -926,7 +926,7 @@ public abstract class Entity implements Class933, Class909 {
       this.field5059 = this.method3263(Class8953.field40469);
       this.field5060 = null;
       double var3 = this.method3442() - 0.11111111F;
-      Entity var5 = this.method3421();
+      Entity var5 = this.getRidingEntity();
       if (var5 instanceof Class1002) {
          Class1002 var6 = (Class1002)var5;
          if (!var6.method3256() && var6.method3389().field28453 >= var3 && var6.method3389().field28450 <= var3) {
@@ -953,7 +953,7 @@ public abstract class Entity implements Class933, Class909 {
       Entity var3 = this.method3329() && this.method3407() != null ? this.method3407() : this;
       float var4 = var3 != this ? 0.9F : 0.2F;
       Vector3d var5 = var3.method3433();
-      float var6 = Class9679.method37766(
+      float var6 = MathHelper.method37766(
             var5.field18048 * var5.field18048 * 0.2F + var5.field18049 * var5.field18049 + var5.field18050 * var5.field18050 * 0.2F
          )
          * var4;
@@ -967,7 +967,7 @@ public abstract class Entity implements Class933, Class909 {
          this.method2863(this.method2860(), var6, 1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.4F);
       }
 
-      float var7 = (float)Class9679.method37769(this.getPosY());
+      float var7 = (float) MathHelper.method37769(this.getPosY());
 
       for (int var8 = 0; (float)var8 < 1.0F + this.field5091.field39968 * 20.0F; var8++) {
          double var9 = (this.field5054.nextDouble() * 2.0 - 1.0) * (double)this.field5091.field39968;
@@ -1009,9 +1009,9 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method3262() {
-      int var3 = Class9679.method37769(this.getPosX());
-      int var4 = Class9679.method37769(this.getPosY() - 0.2F);
-      int var5 = Class9679.method37769(this.getPosZ());
+      int var3 = MathHelper.method37769(this.getPosX());
+      int var4 = MathHelper.method37769(this.getPosY() - 0.2F);
+      int var5 = MathHelper.method37769(this.getPosZ());
       BlockPos var6 = new BlockPos(var3, var4, var5);
       Class7380 var7 = this.field5024.method6738(var6);
       if (var7.method23397() != Class1855.field9885) {
@@ -1046,8 +1046,8 @@ public abstract class Entity implements Class933, Class909 {
       double var5 = var0.method11349();
       if (!(var5 < 1.0E-7)) {
          Vector3d var7 = (!(var5 > 1.0) ? var0 : var0.method11333()).method11344((double)var1);
-         float var8 = Class9679.method37763(var2 * (float) (Math.PI / 180.0));
-         float var9 = Class9679.method37764(var2 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.method37763(var2 * (float) (Math.PI / 180.0));
+         float var9 = MathHelper.method37764(var2 * (float) (Math.PI / 180.0));
          return new Vector3d(
             var7.field18048 * (double)var9 - var7.field18050 * (double)var8, var7.field18049, var7.field18050 * (double)var9 + var7.field18048 * (double)var8
          );
@@ -1061,7 +1061,7 @@ public abstract class Entity implements Class933, Class909 {
       if (!this.field5024.method7017(var3)) {
          return 0.0F;
       } else {
-         var3.method8308(Class9679.method37769(this.method3442()));
+         var3.method8308(MathHelper.method37769(this.method3442()));
          return this.field5024.method7009(var3);
       }
    }
@@ -1073,14 +1073,14 @@ public abstract class Entity implements Class933, Class909 {
    public void method3269(double var1, double var3, double var5, float var7, float var8) {
       this.method3270(var1, var3, var5);
       this.field5031 = var7 % 360.0F;
-      this.field5032 = Class9679.method37777(var8, -90.0F, 90.0F) % 360.0F;
+      this.field5032 = MathHelper.method37777(var8, -90.0F, 90.0F) % 360.0F;
       this.field5033 = this.field5031;
       this.field5034 = this.field5032;
    }
 
    public void method3270(double var1, double var3, double var5) {
-      double var9 = Class9679.method37778(var1, -3.0E7, 3.0E7);
-      double var11 = Class9679.method37778(var5, -3.0E7, 3.0E7);
+      double var9 = MathHelper.method37778(var1, -3.0E7, 3.0E7);
+      double var11 = MathHelper.method37778(var5, -3.0E7, 3.0E7);
       this.field5025 = var9;
       this.field5026 = var3;
       this.field5027 = var11;
@@ -1120,7 +1120,7 @@ public abstract class Entity implements Class933, Class909 {
       float var4 = (float)(this.getPosX() - var1.getPosX());
       float var5 = (float)(this.getPosY() - var1.getPosY());
       float var6 = (float)(this.getPosZ() - var1.getPosZ());
-      return Class9679.method37765(var4 * var4 + var5 * var5 + var6 * var6);
+      return MathHelper.method37765(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
    public double method3276(double var1, double var3, double var5) {
@@ -1130,8 +1130,8 @@ public abstract class Entity implements Class933, Class909 {
       return var9 * var9 + var11 * var11 + var13 * var13;
    }
 
-   public double method3277(Entity var1) {
-      return this.method3278(var1.method3431());
+   public double getDistanceSq(Entity var1) {
+      return this.method3278(var1.getPositionVec());
    }
 
    public double method3278(Vector3d var1) {
@@ -1148,9 +1148,9 @@ public abstract class Entity implements Class933, Class909 {
       if (!this.method3416(var1) && !var1.field5052 && !this.field5052) {
          double var4 = var1.getPosX() - this.getPosX();
          double var6 = var1.getPosZ() - this.getPosZ();
-         double var8 = Class9679.method37780(var4, var6);
+         double var8 = MathHelper.method37780(var4, var6);
          if (var8 >= 0.01F) {
-            var8 = (double)Class9679.method37766(var8);
+            var8 = (double) MathHelper.method37766(var8);
             var4 /= var8;
             var6 /= var8;
             double var10 = 1.0 / var8;
@@ -1198,20 +1198,20 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public float method3282(float var1) {
-      return var1 != 1.0F ? Class9679.method37821(var1, this.field5034, this.field5032) : this.field5032;
+      return var1 != 1.0F ? MathHelper.method37821(var1, this.field5034, this.field5032) : this.field5032;
    }
 
    public float method3136(float var1) {
-      return var1 != 1.0F ? Class9679.method37821(var1, this.field5033, this.field5031) : this.field5031;
+      return var1 != 1.0F ? MathHelper.method37821(var1, this.field5033, this.field5031) : this.field5031;
    }
 
    public final Vector3d method3283(float var1, float var2) {
       float var5 = var1 * (float) (Math.PI / 180.0);
       float var6 = -var2 * (float) (Math.PI / 180.0);
-      float var7 = Class9679.method37764(var6);
-      float var8 = Class9679.method37763(var6);
-      float var9 = Class9679.method37764(var5);
-      float var10 = Class9679.method37763(var5);
+      float var7 = MathHelper.method37764(var6);
+      float var8 = MathHelper.method37763(var6);
+      float var9 = MathHelper.method37764(var5);
+      float var10 = MathHelper.method37763(var5);
       return new Vector3d((double)(var8 * var9), (double)(-var10), (double)(var7 * var9));
    }
 
@@ -1225,9 +1225,9 @@ public abstract class Entity implements Class933, Class909 {
 
    public final Vector3d method3286(float var1) {
       if (var1 != 1.0F) {
-         double var4 = Class9679.method37822((double)var1, this.field5025, this.getPosX());
-         double var6 = Class9679.method37822((double)var1, this.field5026, this.getPosY()) + (double)this.method3393();
-         double var8 = Class9679.method37822((double)var1, this.field5027, this.getPosZ());
+         double var4 = MathHelper.method37822((double)var1, this.field5025, this.getPosX());
+         double var6 = MathHelper.method37822((double)var1, this.field5026, this.getPosY()) + (double)this.method3393();
+         double var8 = MathHelper.method37822((double)var1, this.field5027, this.getPosZ());
          return new Vector3d(var4, var6, var8);
       } else {
          return new Vector3d(this.getPosX(), this.method3442(), this.getPosZ());
@@ -1239,9 +1239,9 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public final Vector3d method3288(float var1) {
-      double var4 = Class9679.method37822((double)var1, this.field5025, this.getPosX());
-      double var6 = Class9679.method37822((double)var1, this.field5026, this.getPosY());
-      double var8 = Class9679.method37822((double)var1, this.field5027, this.getPosZ());
+      double var4 = MathHelper.method37822((double)var1, this.field5025, this.getPosX());
+      double var6 = MathHelper.method37822((double)var1, this.field5026, this.getPosY());
+      double var8 = MathHelper.method37822((double)var1, this.field5027, this.getPosZ());
       return new Vector3d(var4, var6, var8);
    }
 
@@ -1316,7 +1316,7 @@ public abstract class Entity implements Class933, Class909 {
          var1.method115("OnGround", this.field5036);
          var1.method115("Invulnerable", this.field5083);
          var1.method102("PortalCooldown", this.field5079);
-         var1.method104("UUID", this.method3375());
+         var1.method104("UUID", this.getUniqueID());
          ITextComponent var11 = this.method3380();
          if (var11 != null) {
             var1.method109("CustomName", ITextComponent$Serializer.toJson(var11));
@@ -1486,16 +1486,16 @@ public abstract class Entity implements Class933, Class909 {
 
    @Nullable
    public Class1000 method3301(Class3303 var1, int var2) {
-      return this.method3303(new Class8848(var1), (float)var2);
+      return this.method3303(new ItemStack(var1), (float)var2);
    }
 
    @Nullable
-   public Class1000 method3302(Class8848 var1) {
+   public Class1000 method3302(ItemStack var1) {
       return this.method3303(var1, 0.0F);
    }
 
    @Nullable
-   public Class1000 method3303(Class8848 var1, float var2) {
+   public Class1000 method3303(ItemStack var1, float var2) {
       if (!var1.method32105()) {
          if (!this.field5024.field9020) {
             Class1000 var5 = new Class1000(this.field5024, this.getPosX(), this.getPosY() + (double)var2, this.getPosZ(), var1);
@@ -1525,7 +1525,7 @@ public abstract class Entity implements Class933, Class909 {
       }
    }
 
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
       return Class2274.field14820;
    }
 
@@ -1541,7 +1541,7 @@ public abstract class Entity implements Class933, Class909 {
       this.method3434(Vector3d.field18047);
       this.tick();
       if (this.method3328()) {
-         this.method3421().method3307(this);
+         this.getRidingEntity().method3307(this);
       }
    }
 
@@ -1623,7 +1623,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method3316(Entity var1) {
-      if (var1.method3421() != this) {
+      if (var1.getRidingEntity() != this) {
          throw new IllegalStateException("Use x.startRiding(y), not y.addPassenger(x)");
       } else {
          if (!this.field5024.field9020 && var1 instanceof PlayerEntity && !(this.method3407() instanceof PlayerEntity)) {
@@ -1635,7 +1635,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method3317(Entity var1) {
-      if (var1.method3421() != this) {
+      if (var1.getRidingEntity() != this) {
          this.field5020.remove(var1);
          var1.field5021 = 60;
       } else {
@@ -1685,9 +1685,9 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public void method3324() {
-      if (this.field5024 instanceof Class1657) {
+      if (this.field5024 instanceof ServerWorld) {
          int var3 = this.method2858();
-         Class1657 var4 = (Class1657)this.field5024;
+         ServerWorld var4 = (ServerWorld)this.field5024;
          if (!this.field5080) {
             if (this.field5081 > 0) {
                this.field5081 -= 4;
@@ -1699,7 +1699,7 @@ public abstract class Entity implements Class933, Class909 {
          } else {
             Class314 var5 = var4.method6715();
             Class8705 var6 = this.field5024.method6813() != Class1655.field9000 ? Class1655.field9000 : Class1655.field8999;
-            Class1657 var7 = var5.method1318(var6);
+            ServerWorld var7 = var5.method1318(var6);
             if (var7 != null && var5.method1312() && !this.method3328() && this.field5081++ >= var3) {
                this.field5024.method6820().method22503("portal");
                this.field5081 = var3;
@@ -1733,19 +1733,19 @@ public abstract class Entity implements Class933, Class909 {
    public void method3069() {
    }
 
-   public Iterable<Class8848> method2946() {
+   public Iterable<ItemStack> method2946() {
       return field5014;
    }
 
-   public Iterable<Class8848> method2947() {
+   public Iterable<ItemStack> method2947() {
       return field5014;
    }
 
-   public Iterable<Class8848> method3326() {
+   public Iterable<ItemStack> method3326() {
       return Iterables.concat(this.method2946(), this.method2947());
    }
 
-   public void method2944(Class2106 var1, Class8848 var2) {
+   public void method2944(Class2106 var1, ItemStack var2) {
    }
 
    public boolean method3327() {
@@ -1754,7 +1754,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public boolean method3328() {
-      return this.method3421() != null;
+      return this.getRidingEntity() != null;
    }
 
    public boolean method3329() {
@@ -1765,7 +1765,7 @@ public abstract class Entity implements Class933, Class909 {
       return true;
    }
 
-   public void method3330(boolean var1) {
+   public void setSneaking(boolean var1) {
       this.method3349(1, var1);
    }
 
@@ -1797,7 +1797,7 @@ public abstract class Entity implements Class933, Class909 {
       return this.method3348(3);
    }
 
-   public void method3098(boolean var1) {
+   public void setSprinting(boolean var1) {
       this.method3349(3, var1);
    }
 
@@ -1883,7 +1883,7 @@ public abstract class Entity implements Class933, Class909 {
       this.field5063.method35446(field5065, var1);
    }
 
-   public void method3353(Class1657 var1, Class906 var2) {
+   public void method3353(ServerWorld var1, Class906 var2) {
       this.method2966(this.field5056 + 1);
       if (this.field5056 == 0) {
          this.method3221(8);
@@ -1917,7 +1917,7 @@ public abstract class Entity implements Class933, Class909 {
       this.field5045 = 0.0F;
    }
 
-   public void method2927(Class1657 var1, Class880 var2) {
+   public void method2927(ServerWorld var1, Class880 var2) {
    }
 
    public void pushOutOfBlocks(double var1, double var3, double var5) {
@@ -2042,8 +2042,8 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Nullable
-   public Entity method2745(Class1657 var1) {
-      if (this.field5024 instanceof Class1657 && !this.field5041) {
+   public Entity method2745(ServerWorld var1) {
+      if (this.field5024 instanceof ServerWorld && !this.field5041) {
          this.field5024.method6820().method22503("changeDimension");
          this.method3200();
          this.field5024.method6820().method22503("reposition");
@@ -2057,13 +2057,13 @@ public abstract class Entity implements Class933, Class909 {
                var5.method3434(var4.field45666);
                var1.method6918(var5);
                if (var1.method6813() == Class1655.field9001) {
-                  Class1657.method6973(var1);
+                  ServerWorld.method6973(var1);
                }
             }
 
             this.method3366();
             this.field5024.method6820().method22505();
-            ((Class1657)this.field5024).method6904();
+            ((ServerWorld)this.field5024).method6904();
             var1.method6904();
             this.field5024.method6820().method22505();
             return var5;
@@ -2080,7 +2080,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Nullable
-   public Class9761 method2744(Class1657 var1) {
+   public Class9761 method2744(ServerWorld var1) {
       boolean var4 = this.field5024.method6813() == Class1655.field9001 && var1.method6813() == Class1655.field8999;
       boolean var5 = var1.method6813() == Class1655.field9001;
       if (!var4 && !var5) {
@@ -2095,7 +2095,7 @@ public abstract class Entity implements Class933, Class909 {
             double var14 = Math.min(2.9999872E7, var7.method24533() - 16.0);
             double var16 = Class9535.method36872(this.field5024.method6812(), var1.method6812());
             BlockPos var18 = new BlockPos(
-               Class9679.method37778(this.getPosX() * var16, var8, var12), this.getPosY(), Class9679.method37778(this.getPosZ() * var16, var10, var14)
+               MathHelper.method37778(this.getPosX() * var16, var8, var12), this.getPosY(), MathHelper.method37778(this.getPosZ() * var16, var10, var14)
             );
             return this.method2747(var1, var18, var19).<Class9761>map(var2 -> {
                Class7380 var5x = this.field5024.method6738(this.field5082);
@@ -2118,7 +2118,7 @@ public abstract class Entity implements Class933, Class909 {
          if (!var5) {
             var6 = var1.method7006(Class101.field300, var1.method6947());
          } else {
-            var6 = Class1657.field9038;
+            var6 = ServerWorld.field9038;
          }
 
          return new Class9761(
@@ -2131,10 +2131,10 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public Vector3d method3145(Class113 var1, Class9502 var2) {
-      return Class7473.method24206(var2, var1, this.method3431(), this.method2981(this.method3212()));
+      return Class7473.method24206(var2, var1, this.getPositionVec(), this.method2981(this.method3212()));
    }
 
-   public Optional<Class9502> method2747(Class1657 var1, BlockPos var2, boolean var3) {
+   public Optional<Class9502> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       return var1.method6937().method12331(var2, var3);
    }
 
@@ -2165,12 +2165,12 @@ public abstract class Entity implements Class933, Class909 {
       var1.method32807("Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
       var1.method32807(
          "Entity's Block location",
-         Class8965.method32805(Class9679.method37769(this.getPosX()), Class9679.method37769(this.getPosY()), Class9679.method37769(this.getPosZ()))
+         Class8965.method32805(MathHelper.method37769(this.getPosX()), MathHelper.method37769(this.getPosY()), MathHelper.method37769(this.getPosZ()))
       );
       Vector3d var4 = this.method3433();
       var1.method32807("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", var4.field18048, var4.field18049, var4.field18050));
       var1.method32806("Entity's Passengers", () -> this.method3408().toString());
-      var1.method32806("Entity's Vehicle", () -> this.method3421().toString());
+      var1.method32806("Entity's Vehicle", () -> this.getRidingEntity().toString());
    }
 
    public boolean method3373() {
@@ -2182,7 +2182,7 @@ public abstract class Entity implements Class933, Class909 {
       this.field5085 = this.field5084.toString();
    }
 
-   public UUID method3375() {
+   public UUID getUniqueID() {
       return this.field5084;
    }
 
@@ -2207,7 +2207,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Override
-   public ITextComponent method2954() {
+   public ITextComponent getDisplayName() {
       return Class8218.method28577(this.method3344(), this.method2941())
          .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.method3376()));
    }
@@ -2236,17 +2236,17 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public final void method3384(double var1, double var3, double var5) {
-      if (this.field5024 instanceof Class1657) {
+      if (this.field5024 instanceof ServerWorld) {
          Class7481 var9 = new Class7481(new BlockPos(var1, var3, var5));
-         ((Class1657)this.field5024).method6883().method7374(Class8561.field38486, var9, 0, this.method3205());
+         ((ServerWorld)this.field5024).method6883().method7374(Class8561.field38486, var9, 0, this.method3205());
          this.field5024.method6824(var9.field32174, var9.field32175);
          this.method2793(var1, var3, var5);
       }
    }
 
    public void method2793(double var1, double var3, double var5) {
-      if (this.field5024 instanceof Class1657) {
-         Class1657 var9 = (Class1657)this.field5024;
+      if (this.field5024 instanceof ServerWorld) {
+         ServerWorld var9 = (ServerWorld)this.field5024;
          this.method3273(var1, var3, var5, this.field5031, this.field5032);
          this.method3412().forEach(var1x -> {
             var9.method6909(var1x);
@@ -2315,7 +2315,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public HoverEvent method3388() {
-      return new HoverEvent(HoverEvent$Action.SHOW_ENTITY, new HoverEvent$EntityHover(this.method3204(), this.method3375(), this.method2941()));
+      return new HoverEvent(HoverEvent$Action.SHOW_ENTITY, new HoverEvent$EntityHover(this.method3204(), this.getUniqueID(), this.method2941()));
    }
 
    public boolean method2749(Class878 var1) {
@@ -2358,7 +2358,7 @@ public abstract class Entity implements Class933, Class909 {
       return new Vector3d(0.0, (double)this.method3393(), (double)(this.method3429() * 0.4F));
    }
 
-   public boolean method2963(int var1, Class8848 var2) {
+   public boolean method2963(int var1, ItemStack var2) {
       return false;
    }
 
@@ -2375,7 +2375,7 @@ public abstract class Entity implements Class933, Class909 {
       return this.field5024.method6715();
    }
 
-   public Class2274 method3397(PlayerEntity var1, Vector3d var2, Class79 var3) {
+   public Class2274 method3397(PlayerEntity var1, Vector3d var2, Hand var3) {
       return Class2274.field14820;
    }
 
@@ -2398,7 +2398,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public float method3402(Class80 var1) {
-      float var4 = Class9679.method37792(this.field5031);
+      float var4 = MathHelper.method37792(this.field5031);
       switch (Class9228.field42477[var1.ordinal()]) {
          case 1:
             return var4 + 180.0F;
@@ -2412,7 +2412,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public float method3403(Class2089 var1) {
-      float var4 = Class9679.method37792(this.field5031);
+      float var4 = MathHelper.method37792(this.field5031);
       switch (Class9228.field42478[var1.ordinal()]) {
          case 1:
             return -var4;
@@ -2503,7 +2503,7 @@ public abstract class Entity implements Class933, Class909 {
       Entity var3 = this;
 
       while (var3.method3328()) {
-         var3 = var3.method3421();
+         var3 = var3.getRidingEntity();
       }
 
       return var3;
@@ -2534,8 +2534,8 @@ public abstract class Entity implements Class933, Class909 {
 
    public static Vector3d method3419(double var0, double var2, float var4) {
       double var7 = (var0 + var2 + 1.0E-5F) / 2.0;
-      float var9 = -Class9679.method37763(var4 * (float) (Math.PI / 180.0));
-      float var10 = Class9679.method37764(var4 * (float) (Math.PI / 180.0));
+      float var9 = -MathHelper.method37763(var4 * (float) (Math.PI / 180.0));
+      float var10 = MathHelper.method37764(var4 * (float) (Math.PI / 180.0));
       float var11 = Math.max(Math.abs(var9), Math.abs(var10));
       return new Vector3d((double)var9 * var7 / (double)var11, 0.0, (double)var10 * var7 / (double)var11);
    }
@@ -2545,7 +2545,7 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    @Nullable
-   public Entity method3421() {
+   public Entity getRidingEntity() {
       return this.field5022;
    }
 
@@ -2561,15 +2561,15 @@ public abstract class Entity implements Class933, Class909 {
       return 1;
    }
 
-   public Class6619 method3423() {
+   public Class6619 getCommandSource() {
       return new Class6619(
          this,
-         this.method3431(),
+         this.getPositionVec(),
          this.method3321(),
-         !(this.field5024 instanceof Class1657) ? null : (Class1657)this.field5024,
+         !(this.field5024 instanceof ServerWorld) ? null : (ServerWorld)this.field5024,
          this.method2807(),
          this.method2941().getString(),
-         this.method2954(),
+         this.getDisplayName(),
          this.field5024.method6715(),
          this
       );
@@ -2603,9 +2603,9 @@ public abstract class Entity implements Class933, Class909 {
       double var6 = var2.field18048 - var5.field18048;
       double var8 = var2.field18049 - var5.field18049;
       double var10 = var2.field18050 - var5.field18050;
-      double var12 = (double)Class9679.method37766(var6 * var6 + var10 * var10);
-      this.field5032 = Class9679.method37792((float)(-(Class9679.method37814(var8, var12) * 180.0F / (float)Math.PI)));
-      this.field5031 = Class9679.method37792((float)(Class9679.method37814(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
+      double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
+      this.field5032 = MathHelper.method37792((float)(-(MathHelper.method37814(var8, var12) * 180.0F / (float)Math.PI)));
+      this.field5031 = MathHelper.method37792((float)(MathHelper.method37814(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
       this.method3143(this.field5031);
       this.field5034 = this.field5032;
       this.field5033 = this.field5031;
@@ -2613,12 +2613,12 @@ public abstract class Entity implements Class933, Class909 {
 
    public boolean method3426(Class7608<Class7631> var1, double var2) {
       Class6488 var6 = this.method3389().method19679(0.001);
-      int var7 = Class9679.method37769(var6.field28449);
-      int var8 = Class9679.method37774(var6.field28452);
-      int var9 = Class9679.method37769(var6.field28450);
-      int var10 = Class9679.method37774(var6.field28453);
-      int var11 = Class9679.method37769(var6.field28451);
-      int var12 = Class9679.method37774(var6.field28454);
+      int var7 = MathHelper.method37769(var6.field28449);
+      int var8 = MathHelper.method37774(var6.field28452);
+      int var9 = MathHelper.method37769(var6.field28450);
+      int var10 = MathHelper.method37774(var6.field28453);
+      int var11 = MathHelper.method37769(var6.field28451);
+      int var12 = MathHelper.method37774(var6.field28454);
       if (!this.field5024.method7019(var7, var9, var11, var8, var10, var12)) {
          return false;
       } else {
@@ -2700,7 +2700,7 @@ public abstract class Entity implements Class933, Class909 {
       return this.field5017.method33221();
    }
 
-   public Vector3d method3431() {
+   public Vector3d getPositionVec() {
       return this.field5028;
    }
 
@@ -2763,9 +2763,9 @@ public abstract class Entity implements Class933, Class909 {
    public void method3446(double var1, double var3, double var5) {
       if (this.field5028.field18048 != var1 || this.field5028.field18049 != var3 || this.field5028.field18050 != var5) {
          this.field5028 = new Vector3d(var1, var3, var5);
-         int var9 = Class9679.method37769(var1);
-         int var10 = Class9679.method37769(var3);
-         int var11 = Class9679.method37769(var5);
+         int var9 = MathHelper.method37769(var1);
+         int var10 = MathHelper.method37769(var3);
+         int var11 = MathHelper.method37769(var5);
          if (var9 != this.field5029.method8304() || var10 != this.field5029.getY() || var11 != this.field5029.method8306()) {
             this.field5029 = new BlockPos(var9, var10, var11);
          }

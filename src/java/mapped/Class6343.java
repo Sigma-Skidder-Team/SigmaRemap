@@ -24,7 +24,7 @@ public class Class6343 extends Class6333 {
          if (!((double)var3 >= 1.0E-7)) {
             this.field27856 = 0.0F;
          } else {
-            this.field27856 = Class9679.method37777(var3 / 4.0F, 0.0F, 1.0F);
+            this.field27856 = MathHelper.method37777(var3 / 4.0F, 0.0F, 1.0F);
          }
 
          if (this.field27872 >= 20) {

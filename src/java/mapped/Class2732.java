@@ -18,8 +18,8 @@ public class Class2732 extends Class2595 {
             float var3 = this.field17250.field5031 * (float) (Math.PI / 180.0);
             int var4 = 0;
             int var5 = 0;
-            float var6 = -Class9679.method37763(var3);
-            float var7 = Class9679.method37764(var3);
+            float var6 = -MathHelper.method37763(var3);
+            float var7 = MathHelper.method37764(var3);
             if ((double)Math.abs(var6) > 0.5) {
                var4 = (int)((float)var4 + var6 / Math.abs(var6));
             }

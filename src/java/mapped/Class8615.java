@@ -72,7 +72,7 @@ public class Class8615 {
          if (var1.size() != 1) {
             var0.method20179(new TranslationTextComponent("commands.tag.add.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.add.success.single", var2, ((Entity)var1.iterator().next()).method2954()), true);
+            var0.method20179(new TranslationTextComponent("commands.tag.add.success.single", var2, ((Entity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var5;
@@ -94,7 +94,7 @@ public class Class8615 {
          if (var1.size() != 1) {
             var0.method20179(new TranslationTextComponent("commands.tag.remove.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.remove.success.single", var2, ((Entity)var1.iterator().next()).method2954()), true);
+            var0.method20179(new TranslationTextComponent("commands.tag.remove.success.single", var2, ((Entity)var1.iterator().next()).getDisplayName()), true);
          }
 
          return var5;
@@ -123,11 +123,11 @@ public class Class8615 {
          Entity var7 = (Entity)var1.iterator().next();
          if (!var4.isEmpty()) {
             var0.method20179(
-               new TranslationTextComponent("commands.tag.list.single.success", var7.method2954(), var4.size(), TextComponentUtils.makeGreenSortedList(var4)),
+               new TranslationTextComponent("commands.tag.list.single.success", var7.getDisplayName(), var4.size(), TextComponentUtils.makeGreenSortedList(var4)),
                false
             );
          } else {
-            var0.method20179(new TranslationTextComponent("commands.tag.list.single.empty", var7.method2954()), false);
+            var0.method20179(new TranslationTextComponent("commands.tag.list.single.empty", var7.getDisplayName()), false);
          }
       }
 

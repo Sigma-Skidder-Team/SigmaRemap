@@ -31,7 +31,7 @@ public abstract class Class6990 {
    public Class6990(Class1006 var1, Class1655 var2) {
       this.field30243 = var1;
       this.field30244 = var2;
-      int var5 = Class9679.method37769(var1.method3086(Class9173.field42106) * 16.0);
+      int var5 = MathHelper.method37769(var1.method3086(Class9173.field42106) * 16.0);
       this.field30261 = this.method21644(var5);
    }
 
@@ -180,8 +180,8 @@ public abstract class Class6990 {
                Vector3d var4 = this.field30245.method28703(this.field30243);
                if (var3.field18049 > var4.field18049
                   && !this.field30243.method3226()
-                  && Class9679.method37769(var3.field18048) == Class9679.method37769(var4.field18048)
-                  && Class9679.method37769(var3.field18050) == Class9679.method37769(var4.field18050)) {
+                  && MathHelper.method37769(var3.field18048) == MathHelper.method37769(var4.field18048)
+                  && MathHelper.method37769(var3.field18050) == MathHelper.method37769(var4.field18050)) {
                   this.field30245.method28691();
                }
             }

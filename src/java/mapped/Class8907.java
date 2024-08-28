@@ -222,8 +222,8 @@ public final class Class8907 {
    }
 
    private int method32511() {
-      double var3 = (double)Class9679.method37777(Class7035.method21842(this.field40315), 0.0F, 1.0F);
-      double var5 = (double)Class9679.method37777(Class7035.method21843(this.field40315), 0.0F, 1.0F);
+      double var3 = (double) MathHelper.method37777(Class7035.method21842(this.field40315), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.method37777(Class7035.method21843(this.field40315), 0.0F, 1.0F);
       return Class6406.method19509(var3, var5);
    }
 
@@ -232,8 +232,8 @@ public final class Class8907 {
    }
 
    private int method32513() {
-      double var3 = (double)Class9679.method37777(Class7035.method21842(this.field40315), 0.0F, 1.0F);
-      double var5 = (double)Class9679.method37777(Class7035.method21843(this.field40315), 0.0F, 1.0F);
+      double var3 = (double) MathHelper.method37777(Class7035.method21842(this.field40315), 0.0F, 1.0F);
+      double var5 = (double) MathHelper.method37777(Class7035.method21843(this.field40315), 0.0F, 1.0F);
       return Class9441.method36292(var3, var5);
    }
 

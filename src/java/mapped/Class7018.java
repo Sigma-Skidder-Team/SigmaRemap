@@ -7,7 +7,7 @@ public class Class7018 implements Class7016 {
    private int field30320;
 
    @Override
-   public int method21742(Class1657 var1, boolean var2, boolean var3) {
+   public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (!var2) {
          return 0;
       } else if (var1.method6789().method17135(Class5462.field24252)) {
@@ -79,7 +79,7 @@ public class Class7018 implements Class7016 {
       }
    }
 
-   private boolean method21749(Class1657 var1, BlockPos var2, Random var3, boolean var4) {
+   private boolean method21749(ServerWorld var1, BlockPos var2, Random var3, boolean var4) {
       Class7380 var7 = var1.method6738(var2);
       if (Class8170.method28428(var1, var2, var7, var7.method23449(), Class8992.field41067)) {
          if (Class1028.method4572(Class8992.field41067, var1, Class2202.field14406, var2, var3)) {

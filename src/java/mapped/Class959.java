@@ -40,7 +40,7 @@ public class Class959 extends Class944 implements Class935 {
    public Class39 method3646(Class39 var1) {
       super.method3646(var1);
       if (this.field5387 != null) {
-         var1.method104("Target", this.field5387.method3375());
+         var1.method104("Target", this.field5387.getUniqueID());
       }
 
       return var1;
@@ -189,7 +189,7 @@ public class Class959 extends Class944 implements Class935 {
 
    private void method3899() {
       if (this.field5388 != null) {
-         if (this.field5387 == null || !this.field5387.method3375().equals(this.field5388)) {
+         if (this.field5387 == null || !this.field5387.getUniqueID().equals(this.field5388)) {
             this.field5387 = this.method3901();
             if (this.field5387 == null) {
                this.field5388 = null;
@@ -209,13 +209,13 @@ public class Class959 extends Class944 implements Class935 {
 
    @Nullable
    private Class880 method3901() {
-      List var3 = this.field5324.<Class880>method6772(Class880.class, this.method3900(), var1 -> var1.method3375().equals(this.field5388));
+      List var3 = this.field5324.<Class880>method6772(Class880.class, this.method3900(), var1 -> var1.getUniqueID().equals(this.field5388));
       return var3.size() != 1 ? null : (Class880)var3.get(0);
    }
 
    private void method3902() {
       Random var3 = this.field5324.field9016;
-      double var4 = (double)(Class9679.method37763((float)(this.field5382 + 35) * 0.1F) / 2.0F + 0.5F);
+      double var4 = (double)(MathHelper.method37763((float)(this.field5382 + 35) * 0.1F) / 2.0F + 0.5F);
       var4 = (var4 * var4 + var4) * 0.3F;
       Vector3d var6 = new Vector3d(
          (double)this.field5325.method8304() + 0.5, (double)this.field5325.getY() + 1.5 + var4, (double)this.field5325.method8306() + 0.5

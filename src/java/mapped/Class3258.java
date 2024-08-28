@@ -15,11 +15,11 @@ public class Class3258 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       Class39 var7 = var6.method32142();
       if (!var2.field4919.field29609) {
-         var2.method3095(var3, Class8848.field39973);
+         var2.method3095(var3, ItemStack.field39973);
       }
 
       if (var7 != null && var7.method119("Recipes", 9)) {
@@ -33,7 +33,7 @@ public class Class3258 extends Class3257 {
                Optional var13 = var10.method1035(new ResourceLocation(var12));
                if (!var13.isPresent()) {
                   field18744.error("Invalid recipe: {}", var12);
-                  return Class6794.<Class8848>method20699(var6);
+                  return Class6794.<ItemStack>method20699(var6);
                }
 
                var9.add(var13.get());
@@ -43,10 +43,10 @@ public class Class3258 extends Class3257 {
             var2.method2913(Class8876.field40098.method172(this));
          }
 
-         return Class6794.<Class8848>method20700(var6, var1.method6714());
+         return Class6794.<ItemStack>method20700(var6, var1.method6714());
       } else {
          field18744.error("Tag not valid: {}", var7);
-         return Class6794.<Class8848>method20699(var6);
+         return Class6794.<ItemStack>method20699(var6);
       }
    }
 }

@@ -197,7 +197,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
 
          if (var2) {
             Class944 var9 = !var7.method23383().method11998() ? null : this.method6759(var1);
-            Block.method11556(var7, this, var1, var9, var3, Class8848.field39973);
+            Block.method11556(var7, this, var1, var9, var3, ItemStack.field39973);
          }
 
          return this.method6726(var1, var8.method23484(), 3, var4);
@@ -581,7 +581,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    public void method6766() {
       double var3 = 1.0 - (double)(this.method6792(1.0F) * 5.0F) / 16.0;
       double var5 = 1.0 - (double)(this.method6790(1.0F) * 5.0F) / 16.0;
-      double var7 = 0.5 + 2.0 * Class9679.method37778((double)Class9679.method37764(this.method7001(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
+      double var7 = 0.5 + 2.0 * MathHelper.method37778((double) MathHelper.method37764(this.method7001(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
       this.field9009 = (int)((1.0 - var7 * var3 * var5) * 11.0);
    }
 
@@ -613,10 +613,10 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    public List<Entity> method6770(Entity var1, Class6488 var2, Predicate<? super Entity> var3) {
       this.method6820().method22508("getEntities");
       ArrayList var6 = Lists.newArrayList();
-      int var7 = Class9679.method37769((var2.field28449 - 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28452 + 2.0) / 16.0);
-      int var9 = Class9679.method37769((var2.field28451 - 2.0) / 16.0);
-      int var10 = Class9679.method37769((var2.field28454 + 2.0) / 16.0);
+      int var7 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28452 + 2.0) / 16.0);
+      int var9 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
+      int var10 = MathHelper.method37769((var2.field28454 + 2.0) / 16.0);
       Class1702 var11 = this.method6883();
 
       for (int var12 = var7; var12 <= var8; var12++) {
@@ -633,10 +633,10 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
 
    public <T extends Entity> List<T> method6771(Class8992<T> var1, Class6488 var2, Predicate<? super T> var3) {
       this.method6820().method22508("getEntities");
-      int var6 = Class9679.method37769((var2.field28449 - 2.0) / 16.0);
-      int var7 = Class9679.method37774((var2.field28452 + 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28451 - 2.0) / 16.0);
-      int var9 = Class9679.method37774((var2.field28454 + 2.0) / 16.0);
+      int var6 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
 
       for (int var11 = var6; var11 < var7; var11++) {
@@ -654,10 +654,10 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    @Override
    public <T extends Entity> List<T> method6772(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
       this.method6820().method22508("getEntities");
-      int var6 = Class9679.method37769((var2.field28449 - 2.0) / 16.0);
-      int var7 = Class9679.method37774((var2.field28452 + 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28451 - 2.0) / 16.0);
-      int var9 = Class9679.method37774((var2.field28454 + 2.0) / 16.0);
+      int var6 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       Class1702 var11 = this.method6883();
 
@@ -676,10 +676,10 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    @Override
    public <T extends Entity> List<T> method6773(Class<? extends T> var1, Class6488 var2, Predicate<? super T> var3) {
       this.method6820().method22508("getLoadedEntities");
-      int var6 = Class9679.method37769((var2.field28449 - 2.0) / 16.0);
-      int var7 = Class9679.method37774((var2.field28452 + 2.0) / 16.0);
-      int var8 = Class9679.method37769((var2.field28451 - 2.0) / 16.0);
-      int var9 = Class9679.method37774((var2.field28454 + 2.0) / 16.0);
+      int var6 = MathHelper.method37769((var2.field28449 - 2.0) / 16.0);
+      int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
+      int var8 = MathHelper.method37769((var2.field28451 - 2.0) / 16.0);
+      int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
       Class1702 var11 = this.method6883();
 
@@ -819,7 +819,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    }
 
    public float method6790(float var1) {
-      return Class9679.method37821(var1, this.field9014, this.field9015) * this.method6792(var1);
+      return MathHelper.method37821(var1, this.field9014, this.field9015) * this.method6792(var1);
    }
 
    public void method6791(float var1) {
@@ -828,7 +828,7 @@ public abstract class Class1655 implements Class1660, AutoCloseable {
    }
 
    public float method6792(float var1) {
-      return Class9679.method37821(var1, this.field9012, this.field9013);
+      return MathHelper.method37821(var1, this.field9012, this.field9013);
    }
 
    public void method6793(float var1) {

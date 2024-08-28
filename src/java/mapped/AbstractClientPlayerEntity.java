@@ -38,13 +38,13 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    @Override
    public boolean method2800() {
-      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.method2906().getId());
+      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getGameProfile().getId());
       return var3 != null && var3.method19967() == Class1894.field11105;
    }
 
    @Override
    public boolean method2801() {
-      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.method2906().getId());
+      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getGameProfile().getId());
       return var3 != null && var3.method19967() == Class1894.field11103;
    }
 
@@ -55,7 +55,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    @Nullable
    public Class6589 method5369() {
       if (this.field6096 == null) {
-         this.field6096 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.method3375());
+         this.field6096 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getUniqueID());
       }
 
       return this.field6096;
@@ -68,7 +68,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public ResourceLocation method5371() {
       Class6589 var3 = this.method5369();
-      return var3 != null ? var3.method19973() : Class7209.method22637(this.method3375());
+      return var3 != null ? var3.method19973() : Class7209.method22637(this.getUniqueID());
    }
 
    @Nullable
@@ -123,7 +123,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public String method5377() {
       Class6589 var3 = this.method5369();
-      return var3 != null ? var3.method19972() : Class7209.method22638(this.method3375());
+      return var3 != null ? var3.method19972() : Class7209.method22638(this.getUniqueID());
    }
 
    public float method5378() {

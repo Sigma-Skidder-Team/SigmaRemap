@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class9081 {
    private static final Logger field41569 = LogManager.getLogger();
-   public Class1657 field41570;
+   public ServerWorld field41570;
    public Class878 field41571;
    private Class1894 field41572 = Class1894.field11101;
    private Class1894 field41573 = Class1894.field11101;
@@ -19,7 +19,7 @@ public class Class9081 {
    private int field41580;
    private int field41581 = -1;
 
-   public Class9081(Class1657 var1) {
+   public Class9081(ServerWorld var1) {
       this.field41570 = var1;
    }
 
@@ -32,7 +32,7 @@ public class Class9081 {
       this.field41572 = var1;
       var1.method8155(this.field41571.field4919);
       this.field41571.method2797();
-      this.field41571.field4856.method1367().method19456(new Class5503(Class2176.field14282, this.field41571));
+      this.field41571.field4856.getPlayerList().method19456(new Class5503(Class2176.field14282, this.field41571));
       this.field41570.method6902();
    }
 
@@ -115,13 +115,13 @@ public class Class9081 {
                         this.field41570.method6803(this.field41571.method3205(), this.field41576, -1);
                         this.field41571
                            .field4855
-                           .method15671(
+                           .sendPacket(
                               new Class5585(this.field41576, this.field41570.method6738(this.field41576), var2, true, "aborted mismatched destroying")
                            );
                      }
 
                      this.field41570.method6803(this.field41571.method3205(), var1, -1);
-                     this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, true, "aborted destroying"));
+                     this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, true, "aborted destroying"));
                   }
                } else {
                   if (var1.equals(this.field41576)) {
@@ -145,11 +145,11 @@ public class Class9081 {
                      }
                   }
 
-                  this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, true, "stopped destroying"));
+                  this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, true, "stopped destroying"));
                }
             } else {
                if (!this.field41570.method6785(this.field41571, var1)) {
-                  this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, false, "may not interact"));
+                  this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, false, "may not interact"));
                   return;
                }
 
@@ -159,7 +159,7 @@ public class Class9081 {
                }
 
                if (this.field41571.method2848(this.field41570, var1, this.field41572)) {
-                  this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, false, "block action restricted"));
+                  this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, false, "block action restricted"));
                   return;
                }
 
@@ -177,7 +177,7 @@ public class Class9081 {
                   if (this.field41574) {
                      this.field41571
                         .field4855
-                        .method15671(
+                        .sendPacket(
                            new Class5585(
                               this.field41576,
                               this.field41570.method6738(this.field41576),
@@ -192,23 +192,23 @@ public class Class9081 {
                   this.field41576 = var1.method8353();
                   int var20 = (int)(var18 * 10.0F);
                   this.field41570.method6803(this.field41571.method3205(), var1, var20);
-                  this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, true, "actual start of destroying"));
+                  this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, true, "actual start of destroying"));
                   this.field41581 = var20;
                }
             }
          } else {
-            this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, false, "too high"));
+            this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, false, "too high"));
          }
       } else {
-         this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, false, "too far"));
+         this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, false, "too far"));
       }
    }
 
    public void method33869(BlockPos var1, Class2070 var2, String var3) {
       if (!this.method33870(var1)) {
-         this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, false, var3));
+         this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, false, var3));
       } else {
-         this.field41571.field4855.method15671(new Class5585(var1, this.field41570.method6738(var1), var2, true, var3));
+         this.field41571.field4855.sendPacket(new Class5585(var1, this.field41570.method6738(var1), var2, true, var3));
       }
    }
 
@@ -230,8 +230,8 @@ public class Class9081 {
             }
 
             if (!this.method33866()) {
-               Class8848 var8 = this.field41571.method3090();
-               Class8848 var9 = var8.method32126();
+               ItemStack var8 = this.field41571.method3090();
+               ItemStack var9 = var8.method32126();
                boolean var10 = this.field41571.method2884(var4);
                var8.method32123(this.field41570, var4, var1, this.field41571);
                if (var7 && var10) {
@@ -248,13 +248,13 @@ public class Class9081 {
       }
    }
 
-   public Class2274 method33859(Class878 var1, Class1655 var2, Class8848 var3, Class79 var4) {
+   public Class2274 method33859(Class878 var1, Class1655 var2, ItemStack var3, Hand var4) {
       if (this.field41572 != Class1894.field11105) {
          if (!var1.method2976().method19635(var3.method32107())) {
             int var7 = var3.method32179();
             int var8 = var3.method32117();
             Class6794 var9 = var3.method32110(var2, var1, var4);
-            Class8848 var10 = (Class8848)var9.method20695();
+            ItemStack var10 = (ItemStack)var9.method20695();
             if (var10 == var3 && var10.method32179() == var7 && var10.method32137() <= 0 && var10.method32117() == var8) {
                return var9.method20694();
             } else if (var9.method20694() == Class2274.field14821 && var10.method32137() > 0 && !var1.method3148()) {
@@ -269,7 +269,7 @@ public class Class9081 {
                }
 
                if (var10.method32105()) {
-                  var1.method3095(var4, Class8848.field39973);
+                  var1.method3095(var4, ItemStack.field39973);
                }
 
                if (!var1.method3148()) {
@@ -286,7 +286,7 @@ public class Class9081 {
       }
    }
 
-   public Class2274 method33860(Class878 var1, Class1655 var2, Class8848 var3, Class79 var4, Class8711 var5) {
+   public Class2274 method33860(Class878 var1, Class1655 var2, ItemStack var3, Hand var4, Class8711 var5) {
       BlockPos var8 = var5.method31423();
       Class7380 var9 = var2.method6738(var8);
       if (this.field41572 == Class1894.field11105) {
@@ -300,7 +300,7 @@ public class Class9081 {
       } else {
          boolean var10 = !var1.method3090().method32105() || !var1.method3091().method32105();
          boolean var11 = var1.method2851() && var10;
-         Class8848 var12 = var3.method32126();
+         ItemStack var12 = var3.method32126();
          if (!var11) {
             Class2274 var13 = var9.method23435(var2, var1, var4, var5);
             if (var13.method9000()) {
@@ -331,7 +331,7 @@ public class Class9081 {
       }
    }
 
-   public void method33871(Class1657 var1) {
+   public void method33871(ServerWorld var1) {
       this.field41570 = var1;
    }
 }

@@ -33,12 +33,12 @@ public class Class2727 extends Class2595 {
 
    private void method10938() {
       Iterable<BlockPos> var3 = BlockPos.method8364(
-         Class9679.method37769(this.field17234.getPosX() - 1.0),
-         Class9679.method37769(this.field17234.getPosY()),
-         Class9679.method37769(this.field17234.getPosZ() - 1.0),
-         Class9679.method37769(this.field17234.getPosX() + 1.0),
-         Class9679.method37769(this.field17234.getPosY() + 8.0),
-         Class9679.method37769(this.field17234.getPosZ() + 1.0)
+         MathHelper.method37769(this.field17234.getPosX() - 1.0),
+         MathHelper.method37769(this.field17234.getPosY()),
+         MathHelper.method37769(this.field17234.getPosZ() - 1.0),
+         MathHelper.method37769(this.field17234.getPosX() + 1.0),
+         MathHelper.method37769(this.field17234.getPosY() + 8.0),
+         MathHelper.method37769(this.field17234.getPosZ() + 1.0)
       );
       BlockPos var4 = null;
 

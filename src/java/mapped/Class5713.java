@@ -42,8 +42,8 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          var4.field17919.field31039 = var1.method2962(Class2318.field15881);
          var4.field17920.field31039 = var1.method2962(Class2318.field15882);
          var4.field17441 = var1.method3336();
-         Class2278 var5 = method17888(var1, Class79.field182);
-         Class2278 var6 = method17888(var1, Class79.field183);
+         Class2278 var5 = method17888(var1, Hand.field182);
+         Class2278 var6 = method17888(var1, Hand.field183);
          if (var5.method9003()) {
             var6 = !var1.method3091().method32105() ? Class2278.field14837 : Class2278.field14836;
          }
@@ -62,8 +62,8 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       }
    }
 
-   private static Class2278 method17888(AbstractClientPlayerEntity var0, Class79 var1) {
-      Class8848 var4 = var0.method3094(var1);
+   private static Class2278 method17888(AbstractClientPlayerEntity var0, Hand var1) {
+      ItemStack var4 = var0.method3094(var1);
       if (var4.method32105()) {
          return Class2278.field14836;
       } else {
@@ -149,7 +149,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          } else {
             super.method17842(var1, var2, var3, var4, var5);
             float var9 = !var1.method3250() ? -90.0F : -90.0F - var1.field5032;
-            float var10 = Class9679.method37821(var8, 0.0F, var9);
+            float var10 = MathHelper.method37821(var8, 0.0F, var9);
             var2.method35293(Class7680.field32898.method25286(var10));
             if (var1.method3166()) {
                var2.method35291(0.0, -1.0, 0.3F);
@@ -158,7 +158,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       } else {
          super.method17842(var1, var2, var3, var4, var5);
          float var21 = (float)var1.method3167() + var5;
-         float var22 = Class9679.method37777(var21 * var21 / 100.0F, 0.0F, 1.0F);
+         float var22 = MathHelper.method37777(var21 * var21 / 100.0F, 0.0F, 1.0F);
          if (!var1.method3130()) {
             var2.method35293(Class7680.field32898.method25286(var22 * (-90.0F - var1.field5032)));
          }

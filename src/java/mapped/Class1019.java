@@ -159,15 +159,15 @@ public class Class1019 extends Class1018 implements Class1020 {
    public float method4514(float var1) {
       if (this.field5707 > 4 && this.field5707 <= 36) {
          float var4 = ((float)(this.field5707 - 4) - var1) / 32.0F;
-         return (float) (Math.PI / 5) + 0.21991149F * Class9679.method37763(var4 * 28.7F);
+         return (float) (Math.PI / 5) + 0.21991149F * MathHelper.method37763(var4 * 28.7F);
       } else {
          return this.field5707 <= 0 ? this.field5032 * (float) (Math.PI / 180.0) : (float) (Math.PI / 5);
       }
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (var5.method32107() != Class8514.field37956) {
          return super.method4285(var1, var2);
       } else if (!this.field5024.field9020 && this.method4516()) {
@@ -282,7 +282,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       }
    }
 
-   public Class1019 method4389(Class1657 var1, Class1045 var2) {
+   public Class1019 method4389(ServerWorld var1, Class1045 var2) {
       Class1019 var5 = (Class1019)var2;
       Class1019 var6 = Class8992.field41074.method33215(var1);
       var6.method4518(this.method4522(this, var5));
@@ -311,8 +311,8 @@ public class Class1019 extends Class1018 implements Class1020 {
       return this.field5024
          .method6816()
          .<Class926, Class4842>method1030(Class7207.field30935, var7, this.field5024)
-         .<Class8848>map(var1x -> var1x.method14962(var7))
-         .<Class3257>map(Class8848::method32107)
+         .<ItemStack>map(var1x -> var1x.method14962(var7))
+         .<Class3257>map(ItemStack::method32107)
          .filter(Class3321.class::isInstance)
          .<Class3321>map(Class3321.class::cast)
          .<Class112>map(Class3321::method11876)
@@ -321,8 +321,8 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    private static Class926 method4523(Class112 var0, Class112 var1) {
       Class926 var4 = new Class926(new Class5835((Class8298)null, -1), 2, 1);
-      var4.method3621(0, new Class8848(Class3321.method11877(var0)));
-      var4.method3621(1, new Class8848(Class3321.method11877(var1)));
+      var4.method3621(0, new ItemStack(Class3321.method11877(var0)));
+      var4.method3621(1, new ItemStack(Class3321.method11877(var1)));
       return var4;
    }
 

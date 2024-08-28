@@ -17,7 +17,7 @@ public class Class8463 {
       this.field36281 = var3;
    }
 
-   public boolean method29762(Class1657 var1, BlockPos var2) {
+   public boolean method29762(ServerWorld var1, BlockPos var2) {
       if (this != field36278) {
          if (var1.method6763(var2)) {
             Class7379 var5 = var1.method6739(var2);

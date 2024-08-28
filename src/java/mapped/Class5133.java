@@ -4,7 +4,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -286,6 +285,6 @@ public class Class5133 implements Class5119 {
    }
 
    private void method15892() {
-      Class8023.method27454(this.field23330.method1550(), 8).ifPresent(var1 -> this.field23333 = var1.method3375());
+      Class8023.method27454(this.field23330.method1550(), 8).ifPresent(var1 -> this.field23333 = var1.getUniqueID());
    }
 }

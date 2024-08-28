@@ -33,12 +33,12 @@ public class EntityDesync extends Command {
                   var3.method20327("Remounted entity " + this.field25711.method3204().method33211().getUnformattedComponentText());
                   this.field25711 = null;
                } else {
-                  Entity var6 = mc.field1339.method3421();
+                  Entity var6 = mc.field1339.getRidingEntity();
                   if (var6 == null) {
                      throw new CommandException("You must be riding an entity to use this command");
                   }
 
-                  this.field25711 = mc.field1339.method3421();
+                  this.field25711 = mc.field1339.getRidingEntity();
                   this.field25711.field5071 = true;
                   mc.field1339.method2759();
                   var3.method20327("Dismounted entity " + this.field25711.method3204().method33211().getUnformattedComponentText());

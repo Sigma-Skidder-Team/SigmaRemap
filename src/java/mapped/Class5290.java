@@ -98,7 +98,7 @@ public class Class5290 extends Module {
     private void method16616(boolean var1) {
         for (Class2106 var7 : Class2106.values()) {
             if (mc.field1339.field4904.method18131(8 - var7.method8773()).method18266()) {
-                Class8848 var8 = mc.field1339.field4904.method18131(8 - var7.method8773()).method18265();
+                ItemStack var8 = mc.field1339.field4904.method18131(8 - var7.method8773()).method18265();
                 if (Class7789.method25872(var8) && (!this.field23799 || var7 != Class2106.field13735)) {
                     continue;
                 }
@@ -106,7 +106,7 @@ public class Class5290 extends Module {
 
             for (int var12 = 9; var12 < 45; var12++) {
                 if (mc.field1339.field4904.method18131(var12).method18266()) {
-                    Class8848 var9 = mc.field1339.field4904.method18131(var12).method18265();
+                    ItemStack var9 = mc.field1339.field4904.method18131(var12).method18265();
                     if (var9.method32107() instanceof Class3256
                             && this.field23799
                             && !(mc.field1339.field4902.method3618(36 + Class2106.field13735.method8773()).method32107() instanceof Class3256)) {
@@ -125,7 +125,7 @@ public class Class5290 extends Module {
                             this.field23796.method27120();
                             field23798 = true;
                             if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10048));
+                                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10048));
                                 mc.field1339.method3349(7, true);
                             }
 
@@ -175,7 +175,7 @@ public class Class5290 extends Module {
     private boolean method16618(Class2106 var1) {
         for (int var4 = 9; var4 < 45; var4++) {
             if (mc.field1339.field4904.method18131(var4).method18266()) {
-                Class8848 var5 = mc.field1339.field4904.method18131(var4).method18265();
+                ItemStack var5 = mc.field1339.field4904.method18131(var4).method18265();
                 Class3257 var6 = var5.method32107();
                 if (var6 instanceof Class3279) {
                     Class3279 var7 = (Class3279) var6;

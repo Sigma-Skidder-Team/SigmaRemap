@@ -230,7 +230,7 @@ public final class Class8354 {
    }
 
    public static Class39 method29289(DataFixer var0, Class2108 var1, Class39 var2, int var3) {
-      return method29290(var0, var1, var2, var3, Class9246.method34773().getWorldVersion());
+      return method29290(var0, var1, var2, var3, SharedConstants.method34773().getWorldVersion());
    }
 
    public static Class39 method29290(DataFixer var0, Class2108 var1, Class39 var2, int var3, int var4) {

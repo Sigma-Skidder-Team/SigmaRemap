@@ -401,14 +401,14 @@ public class Class8992<T extends Entity> {
    }
 
    @Nullable
-   public Entity method33200(Class1657 var1, Class8848 var2, PlayerEntity var3, BlockPos var4, Class2202 var5, boolean var6, boolean var7) {
+   public Entity method33200(ServerWorld var1, ItemStack var2, PlayerEntity var3, BlockPos var4, Class2202 var5, boolean var6, boolean var7) {
       return this.method33201(
          var1, var2 != null ? var2.method32142() : null, var2 != null && var2.method32152() ? var2.method32149() : null, var3, var4, var5, var6, var7
       );
    }
 
    @Nullable
-   public T method33201(Class1657 var1, Class39 var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
+   public T method33201(ServerWorld var1, Class39 var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
       Entity var11 = this.method33202(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11 != null) {
          var1.method6995(var11);
@@ -418,7 +418,7 @@ public class Class8992<T extends Entity> {
    }
 
    @Nullable
-   public T method33202(Class1657 var1, Class39 var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
+   public T method33202(ServerWorld var1, Class39 var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
       Entity var11 = this.method33215(var1);
       if (var11 != null) {
          double var12;
@@ -433,7 +433,7 @@ public class Class8992<T extends Entity> {
             (double)var5.method8304() + 0.5,
             (double)var5.getY() + var12,
             (double)var5.method8306() + 0.5,
-            Class9679.method37792(var1.field9016.nextFloat() * 360.0F),
+            MathHelper.method37792(var1.field9016.nextFloat() * 360.0F),
             0.0F
          );
          if (var11 instanceof Class1006) {
@@ -468,9 +468,9 @@ public class Class8992<T extends Entity> {
    public static void method33204(Class1655 var0, PlayerEntity var1, Entity var2, Class39 var3) {
       if (var3 != null && var3.method119("EntityTag", 10)) {
          Class314 var6 = var0.method6715();
-         if (var6 != null && var2 != null && (var0.field9020 || !var2.method3404() || var1 != null && var6.method1367().method19464(var1.method2906()))) {
+         if (var6 != null && var2 != null && (var0.field9020 || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
             Class39 var7 = var2.method3294(new Class39());
-            UUID var8 = var2.method3375();
+            UUID var8 = var2.getUniqueID();
             var7.method140(var3.method130("EntityTag"));
             var2.method3374(var8);
             var2.method3295(var7);

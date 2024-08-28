@@ -27,12 +27,12 @@ public class Class6344 extends Class6333 {
 
    @Override
    public void method19269() {
-      if (!this.field27875.field5041 && this.field27874.method3328() && this.field27874.method3421() == this.field27875) {
-         float var3 = Class9679.method37766(Entity.method3234(this.field27875.method3433()));
+      if (!this.field27875.field5041 && this.field27874.method3328() && this.field27874.getRidingEntity() == this.field27875) {
+         float var3 = MathHelper.method37766(Entity.method3234(this.field27875.method3433()));
          if (!((double)var3 >= 0.01)) {
             this.field27856 = 0.0F;
          } else {
-            this.field27856 = 0.0F + Class9679.method37777(var3, 0.0F, 1.0F) * 0.75F;
+            this.field27856 = 0.0F + MathHelper.method37777(var3, 0.0F, 1.0F) * 0.75F;
          }
       } else {
          this.method19271();

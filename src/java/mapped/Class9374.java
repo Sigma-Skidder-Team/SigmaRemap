@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import java.util.ArrayList;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -57,8 +57,8 @@ public class Class9374 {
          }
       }
 
-      this.field43511 = Class9679.method37800(this.field43511);
-      this.field43512 = Class9679.method37800(this.field43512);
+      this.field43511 = MathHelper.method37800(this.field43511);
+      this.field43512 = MathHelper.method37800(this.field43512);
    }
 
    public void method35562(Class7327 var1) {
@@ -86,10 +86,10 @@ public class Class9374 {
    }
 
    private boolean method35565(Class6485 var1) {
-      int var4 = Class9679.method37800(this.field43511);
-      int var5 = Class9679.method37800(this.field43512);
-      int var6 = Class9679.method37800(this.field43511 + var1.field28433);
-      int var7 = Class9679.method37800(this.field43512 + var1.field28434);
+      int var4 = MathHelper.method37800(this.field43511);
+      int var5 = MathHelper.method37800(this.field43512);
+      int var6 = MathHelper.method37800(this.field43511 + var1.field28433);
+      int var7 = MathHelper.method37800(this.field43512 + var1.field28434);
       boolean var8 = var6 <= this.field43513;
       boolean var9 = var7 <= this.field43514;
       if (!var8 && !var9) {

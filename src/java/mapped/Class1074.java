@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class Class1074 extends Class1068 {
+public class Class1074 extends AbstractHorseEntity {
    private static final UUID field5916 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
    private static final Class9289<Integer> field5917 = Class9361.<Integer>method35441(Class1074.class, Class7784.field33391);
 
@@ -33,11 +33,11 @@ public class Class1074 extends Class1068 {
       }
    }
 
-   public Class8848 method4990() {
+   public ItemStack method4990() {
       return this.method2943(Class2106.field13735);
    }
 
-   private void method4991(Class8848 var1) {
+   private void method4991(ItemStack var1) {
       this.method2944(Class2106.field13735, var1);
       this.method4279(Class2106.field13735, 0.0F);
    }
@@ -47,7 +47,7 @@ public class Class1074 extends Class1068 {
       super.method2723(var1);
       this.method4992(var1.method122("Variant"));
       if (var1.method119("ArmorItem", 10)) {
-         Class8848 var4 = Class8848.method32104(var1.method130("ArmorItem"));
+         ItemStack var4 = ItemStack.method32104(var1.method130("ArmorItem"));
          if (!var4.method32105() && this.method4900(var4)) {
             this.field5890.method3621(1, var4);
          }
@@ -85,7 +85,7 @@ public class Class1074 extends Class1068 {
       }
    }
 
-   private void method4997(Class8848 var1) {
+   private void method4997(ItemStack var1) {
       this.method4991(var1);
       if (!this.field5024.field9020) {
          this.method3085(Class9173.field42113).method38671(field5916);
@@ -100,9 +100,9 @@ public class Class1074 extends Class1068 {
 
    @Override
    public void method4902(Class920 var1) {
-      Class8848 var4 = this.method4990();
+      ItemStack var4 = this.method4990();
       super.method4902(var1);
-      Class8848 var5 = this.method4990();
+      ItemStack var5 = this.method4990();
       if (this.field5055 > 20 && this.method4900(var5) && var4 != var5) {
          this.method2863(Class6067.field26669, 0.5F, 1.0F);
       }
@@ -147,11 +147,11 @@ public class Class1074 extends Class1068 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (!this.method3005()) {
          if (this.method4932() && var1.method2851()) {
-            this.method4952(var1);
+            this.openGUI(var1);
             return Class2274.method9002(this.field5024.field9020);
          }
 
@@ -177,7 +177,7 @@ public class Class1074 extends Class1068 {
 
          boolean var7 = !this.method3005() && !this.method4943() && var5.method32107() == Class8514.field37886;
          if (this.method4900(var5) || var7) {
-            this.method4952(var1);
+            this.openGUI(var1);
             return Class2274.method9002(this.field5024.field9020);
          }
       }
@@ -193,15 +193,15 @@ public class Class1074 extends Class1068 {
    @Override
    public boolean method4386(Class1018 var1) {
       if (var1 != this) {
-         return !(var1 instanceof Class1067) && !(var1 instanceof Class1074) ? false : this.method4961() && ((Class1068)var1).method4961();
+         return !(var1 instanceof Class1067) && !(var1 instanceof Class1074) ? false : this.method4961() && ((AbstractHorseEntity)var1).method4961();
       } else {
          return false;
       }
    }
 
    @Override
-   public Class1045 method4389(Class1657 var1, Class1045 var2) {
-      Class1068 var6;
+   public Class1045 method4389(ServerWorld var1, Class1045 var2) {
+      AbstractHorseEntity var6;
       if (!(var2 instanceof Class1067)) {
          Class1074 var5 = (Class1074)var2;
          var6 = Class8992.field41038.method33215(var1);
@@ -244,7 +244,7 @@ public class Class1074 extends Class1068 {
    }
 
    @Override
-   public boolean method4900(Class8848 var1) {
+   public boolean method4900(ItemStack var1) {
       return var1.method32107() instanceof Class3275;
    }
 

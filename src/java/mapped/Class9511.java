@@ -166,7 +166,7 @@ public class Class9511 {
                         if (!this.field44285.field1339.method2800()) {
                            this.field44285.field1339.field4902.method4039((double)var16);
                         } else if (!this.field44285.field1298.method5992().method5725()) {
-                           float var17 = Class9679.method37777(this.field44285.field1339.field4919.method20714() + var16 * 0.005F, 0.0F, 0.2F);
+                           float var17 = MathHelper.method37777(this.field44285.field1339.field4919.method20714() + var16 * 0.005F, 0.0F, 0.2F);
                            this.field44285.field1339.field4919.method20715(var17);
                         } else {
                            this.field44285.field1298.method5992().method5726((double)(-var16));

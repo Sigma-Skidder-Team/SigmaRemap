@@ -78,7 +78,7 @@ public class Class5295 extends Module {
                     }
                 } else {
                     this.field23811++;
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                 }
             }
         }
@@ -112,7 +112,7 @@ public class Class5295 extends Module {
 
         for (int var8 = 9; var8 < 45; var8++) {
             if (mc.field1339.field4904.method18131(var8).method18266()) {
-                Class8848 var9 = mc.field1339.field4904.method18131(var8).method18265();
+                ItemStack var9 = mc.field1339.field4904.method18131(var8).method18265();
                 if (var9.method32107() instanceof Class3323) {
                     List<Class2023> var10 = Class7789.method25858(var9);
                     int var11 = this.method16633(var10);
@@ -181,8 +181,8 @@ public class Class5295 extends Module {
                     var1.method13916(var9[1]);
                 } else {
                     mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.field1339.field5036));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field183));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
                     mc.field1339.field4902.field5443 = var7;
                     mc.field1337.method23138();
                     Class5357.field23954 = 1;

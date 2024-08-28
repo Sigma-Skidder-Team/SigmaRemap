@@ -22,7 +22,7 @@ public class Class2724 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return super.method10806() && (this.field17219 || this.field17217.method3277(this.field17217.method4232()) > 9.0);
+      return super.method10806() && (this.field17219 || this.field17217.getDistanceSq(this.field17217.method4232()) > 9.0);
    }
 
    @Override

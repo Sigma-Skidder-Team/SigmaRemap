@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 public class Class9725 {
    private static final Logger field45421 = LogManager.getLogger();
 
-   public static Class1672 method38087(Class1657 var0, Class8761 var1, Class1653 var2, Class7481 var3, Class39 var4) {
+   public static Class1672 method38087(ServerWorld var0, Class8761 var1, Class1653 var2, Class7481 var3, Class39 var4) {
       Class5646 var7 = var0.method6883().method7370();
       Class1685 var8 = var7.method17824();
       Class39 var9 = var4.method130("Level");
@@ -179,11 +179,11 @@ public class Class9725 {
       }
    }
 
-   public static Class39 method38088(Class1657 var0, Class1670 var1) {
+   public static Class39 method38088(ServerWorld var0, Class1670 var1) {
       Class7481 var4 = var1.method7072();
       Class39 var5 = new Class39();
       Class39 var6 = new Class39();
-      var5.method102("DataVersion", Class9246.method34773().getWorldVersion());
+      var5.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
       var5.method99("Level", var6);
       var6.method102("xPos", var4.field32174);
       var6.method102("zPos", var4.field32175);

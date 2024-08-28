@@ -158,7 +158,7 @@ public class Class7473 {
          var11 = 0.5;
       } else {
          float var13 = (float)var10.method8322(var1) + var3.field39968 / 2.0F;
-         var11 = Class9679.method37778(Class9679.method37813(var2.method11356(var1) - (double)var13, 0.0, var6), 0.0, 1.0);
+         var11 = MathHelper.method37778(MathHelper.method37813(var2.method11356(var1) - (double)var13, 0.0, var6), 0.0, 1.0);
       }
 
       double var14;
@@ -166,7 +166,7 @@ public class Class7473 {
          var14 = 0.0;
       } else {
          Class113 var16 = Class113.field414;
-         var14 = Class9679.method37778(Class9679.method37813(var2.method11356(var16) - (double)var10.method8322(var16), 0.0, var8), 0.0, 1.0);
+         var14 = MathHelper.method37778(MathHelper.method37813(var2.method11356(var16) - (double)var10.method8322(var16), 0.0, var8), 0.0, 1.0);
       }
 
       Class113 var19 = var1 != Class113.field413 ? Class113.field413 : Class113.field415;
@@ -174,7 +174,7 @@ public class Class7473 {
       return new Vector3d(var11, var14, var17);
    }
 
-   public static Class9761 method24207(Class1657 var0, Class9502 var1, Class113 var2, Vector3d var3, Class8847 var4, Vector3d var5, float var6, float var7) {
+   public static Class9761 method24207(ServerWorld var0, Class9502 var1, Class113 var2, Vector3d var3, Class8847 var4, Vector3d var5, float var6, float var7) {
       BlockPos var10 = var1.field44253;
       Class7380 var11 = var0.method6738(var10);
       Class113 var12 = var11.<Class113>method23463(Class8820.field39712);

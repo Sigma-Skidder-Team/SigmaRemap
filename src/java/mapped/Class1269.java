@@ -67,7 +67,7 @@ public class Class1269 extends Class1193 implements Class1270 {
             int var23 = var22 / 2;
             float var24 = 1.0F;
             int var25 = this.field6744.field1294.method38821(var14);
-            int var26 = Class9679.method37769(Class9679.method37779(255.0, 75.0, (double)((float)(Util.method38487() - var12.method33994()) / 3000.0F)));
+            int var26 = MathHelper.method37769(MathHelper.method37779(255.0, 75.0, (double)((float)(Util.method38487() - var12.method33994()) / 3000.0F)));
             int var27 = var26 << 16 | var26 << 8 | var26;
             RenderSystem.pushMatrix();
             RenderSystem.translatef(

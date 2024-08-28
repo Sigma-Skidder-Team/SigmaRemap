@@ -26,7 +26,7 @@ public class Class3748<E extends Class1006> extends Class3676<E> {
       this.field19895 = var2;
    }
 
-   public void method12502(Class1657 var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
       BlockPos var7 = method12709(var2);
       boolean var8 = var7.method8316(var2.method3432(), (double)this.field19894);
       if (!var8) {

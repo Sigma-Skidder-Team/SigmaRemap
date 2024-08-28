@@ -14,7 +14,7 @@ public class Class2766 extends Class2595 {
    @Override
    public boolean method10803() {
       return this.field17340.method4232() != null && !this.field17340.method4228().method20811() && Class1100.method5279(this.field17340).nextInt(7) == 0
-         ? this.field17340.method3277(this.field17340.method4232()) > 4.0
+         ? this.field17340.getDistanceSq(this.field17340.method4232()) > 4.0
          : false;
    }
 
@@ -44,7 +44,7 @@ public class Class2766 extends Class2595 {
    public void method10805() {
       Class880 var3 = this.field17340.method4232();
       if (!this.field17340.method3389().method19670(var3.method3389())) {
-         double var4 = this.field17340.method3277(var3);
+         double var4 = this.field17340.getDistanceSq(var3);
          if (var4 < 9.0) {
             Vector3d var6 = var3.method3286(1.0F);
             Class1100.method5281(this.field17340).method20813(var6.field18048, var6.field18049, var6.field18050, 1.0);

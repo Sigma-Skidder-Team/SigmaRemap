@@ -87,7 +87,7 @@ public class Class5298 extends Module {
         this.field23821 = mc.field1339.field5031;
         this.field23822 = mc.field1339.field5032;
         String var3 = mc.field1339.method2941().getString();
-        GameProfile var4 = new GameProfile(mc.field1339.method2906().getId(), var3);
+        GameProfile var4 = new GameProfile(mc.field1339.getGameProfile().getId(), var3);
         field23814 = new Class1116(mc.field1338, var4);
         field23814.field4902 = mc.field1339.field4902;
         field23814.method3269(this.field23815, this.field23816, this.field23817, this.field23821, this.field23822);
@@ -277,13 +277,13 @@ public class Class5298 extends Module {
     @EventTarget
     private void method16648(Class4402 var1) {
         if (this.method15996()) {
-            if (var1.method13932() instanceof Class5511) {
-                field23814.method2820(Class79.field182);
+            if (var1.method13932() instanceof CAnimateHandPacket) {
+                field23814.swingArm(Hand.field182);
             }
 
-            if (var1.method13932() instanceof Class5505) {
-                Class5505 var4 = (Class5505) var1.method13932();
-                if (var4.method17315(mc.field1338) == null) {
+            if (var1.method13932() instanceof CUseEntityPacket) {
+                CUseEntityPacket var4 = (CUseEntityPacket) var1.method13932();
+                if (var4.getEntityFromWorld(mc.field1338) == null) {
                     var1.method13900(true);
                 }
             }

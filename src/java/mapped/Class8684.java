@@ -306,7 +306,7 @@ public class Class8684 {
    }
 
    public static boolean method31278(int var0) {
-      int var3 = Class9679.method37800(var0);
+      int var3 = MathHelper.method37800(var0);
       return var3 == var0;
    }
 

@@ -150,7 +150,7 @@ public class Class1331 extends Screen {
    public void method6345(int var1) {
       int var4 = this.field7047 + var1;
       int var5 = this.field4562.field1298.method5989().method5934().size();
-      var4 = Class9679.method37775(var4, 0, var5);
+      var4 = MathHelper.method37775(var4, 0, var5);
       if (var4 != this.field7047) {
          if (var4 != var5) {
             if (this.field7047 == var5) {

@@ -49,7 +49,7 @@ public class Class3257 implements Class3303 {
       this.field18740 = Class5643.method17788(var1);
    }
 
-   public void method11704(Class1655 var1, Class880 var2, Class8848 var3, int var4) {
+   public void method11704(Class1655 var1, Class880 var2, ItemStack var3, int var4) {
    }
 
    public boolean method11705(Class39 var1) {
@@ -69,25 +69,25 @@ public class Class3257 implements Class3303 {
       return Class2274.field14820;
    }
 
-   public float method11708(Class8848 var1, Class7380 var2) {
+   public float method11708(ItemStack var1, Class7380 var2) {
       return 1.0F;
    }
 
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
       if (!this.method11744()) {
-         return Class6794.<Class8848>method20698(var2.method3094(var3));
+         return Class6794.<ItemStack>method20698(var2.method3094(var3));
       } else {
-         Class8848 var6 = var2.method3094(var3);
+         ItemStack var6 = var2.method3094(var3);
          if (!var2.method2933(this.method11745().method36160())) {
-            return Class6794.<Class8848>method20699(var6);
+            return Class6794.<ItemStack>method20699(var6);
          } else {
             var2.method3154(var3);
-            return Class6794.<Class8848>method20697(var6);
+            return Class6794.<ItemStack>method20697(var6);
          }
       }
    }
 
-   public Class8848 method11709(Class8848 var1, Class1655 var2, Class880 var3) {
+   public ItemStack method11709(ItemStack var1, Class1655 var2, Class880 var3) {
       return !this.method11744() ? var1 : var3.method2984(var2, var1);
    }
 
@@ -103,11 +103,11 @@ public class Class3257 implements Class3303 {
       return this.field18739 > 0;
    }
 
-   public boolean method11713(Class8848 var1, Class880 var2, Class880 var3) {
+   public boolean method11713(ItemStack var1, Class880 var2, Class880 var3) {
       return false;
    }
 
-   public boolean method11714(Class8848 var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, Class1655 var2, Class7380 var3, BlockPos var4, Class880 var5) {
       return false;
    }
 
@@ -115,7 +115,7 @@ public class Class3257 implements Class3303 {
       return false;
    }
 
-   public Class2274 method11716(Class8848 var1, PlayerEntity var2, Class880 var3, Class79 var4) {
+   public Class2274 method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
       return Class2274.field14820;
    }
 
@@ -140,7 +140,7 @@ public class Class3257 implements Class3303 {
       return this.method11718();
    }
 
-   public String method11720(Class8848 var1) {
+   public String method11720(ItemStack var1) {
       return this.method11719();
    }
 
@@ -157,21 +157,21 @@ public class Class3257 implements Class3303 {
       return this.field18741 != null;
    }
 
-   public void method11724(Class8848 var1, Class1655 var2, Entity var3, int var4, boolean var5) {
+   public void method11724(ItemStack var1, Class1655 var2, Entity var3, int var4, boolean var5) {
    }
 
-   public void method11725(Class8848 var1, Class1655 var2, PlayerEntity var3) {
+   public void method11725(ItemStack var1, Class1655 var2, PlayerEntity var3) {
    }
 
    public boolean method11726() {
       return false;
    }
 
-   public Class2103 method11727(Class8848 var1) {
+   public Class2103 method11727(ItemStack var1) {
       return !var1.method32107().method11744() ? Class2103.field13706 : Class2103.field13707;
    }
 
-   public int method11728(Class8848 var1) {
+   public int method11728(ItemStack var1) {
       if (!var1.method32107().method11744()) {
          return 0;
       } else {
@@ -179,21 +179,21 @@ public class Class3257 implements Class3303 {
       }
    }
 
-   public void method11729(Class8848 var1, Class1655 var2, Class880 var3, int var4) {
+   public void method11729(ItemStack var1, Class1655 var2, Class880 var3, int var4) {
    }
 
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
    }
 
-   public ITextComponent method11731(Class8848 var1) {
+   public ITextComponent method11731(ItemStack var1) {
       return new TranslationTextComponent(this.method11720(var1));
    }
 
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return var1.method32163();
    }
 
-   public Class1978 method11733(Class8848 var1) {
+   public Class1978 method11733(ItemStack var1) {
       if (!var1.method32163()) {
          return this.field18737;
       } else {
@@ -210,7 +210,7 @@ public class Class3257 implements Class3303 {
       }
    }
 
-   public boolean method11734(Class8848 var1) {
+   public boolean method11734(ItemStack var1) {
       return this.method11710() == 1 && this.method11712();
    }
 
@@ -218,10 +218,10 @@ public class Class3257 implements Class3303 {
       float var5 = var1.field5032;
       float var6 = var1.field5031;
       Vector3d var7 = var1.method3286(1.0F);
-      float var8 = Class9679.method37764(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var9 = Class9679.method37763(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var10 = -Class9679.method37764(-var5 * (float) (Math.PI / 180.0));
-      float var11 = Class9679.method37763(-var5 * (float) (Math.PI / 180.0));
+      float var8 = MathHelper.method37764(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var9 = MathHelper.method37763(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var10 = -MathHelper.method37764(-var5 * (float) (Math.PI / 180.0));
+      float var11 = MathHelper.method37763(-var5 * (float) (Math.PI / 180.0));
       float var12 = var9 * var10;
       float var13 = var8 * var10;
       double var14 = 5.0;
@@ -233,9 +233,9 @@ public class Class3257 implements Class3303 {
       return 0;
    }
 
-   public void method11737(Class7401 var1, Class25<Class8848> var2) {
+   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
       if (this.method11738(var1)) {
-         var2.add(new Class8848(this));
+         var2.add(new ItemStack(this));
       }
    }
 
@@ -249,7 +249,7 @@ public class Class3257 implements Class3303 {
       return this.field18736;
    }
 
-   public boolean method11699(Class8848 var1, Class8848 var2) {
+   public boolean method11699(ItemStack var1, ItemStack var2) {
       return false;
    }
 
@@ -257,12 +257,12 @@ public class Class3257 implements Class3303 {
       return ImmutableMultimap.of();
    }
 
-   public boolean method11741(Class8848 var1) {
+   public boolean method11741(ItemStack var1) {
       return var1.method32107() == Class8514.field38148;
    }
 
-   public Class8848 method11742() {
-      return new Class8848(this);
+   public ItemStack method11742() {
+      return new ItemStack(this);
    }
 
    public boolean method11743(Class7608<Class3257> var1) {

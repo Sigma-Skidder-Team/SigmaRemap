@@ -90,7 +90,7 @@ public class Class2353<K> implements Class2347<K> {
    }
 
    private int method9276(K var1) {
-      return (Class9679.method37819(System.identityHashCode(var1)) & 2147483647) % this.field16158.length;
+      return (MathHelper.method37819(System.identityHashCode(var1)) & 2147483647) % this.field16158.length;
    }
 
    private int method9277(K var1, int var2) {

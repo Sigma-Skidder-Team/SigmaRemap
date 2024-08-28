@@ -12,7 +12,7 @@ public class Class7250 extends Class7249 {
    @Override
    public boolean method22751(Entity var1) {
       if (var1 != null) {
-         String var4 = var1.method2954().getString();
+         String var4 = var1.getDisplayName().getString();
          String var5 = var1.method3380() != null ? var1.method3380().getString() : null;
          String var6 = var1.method2941().getString();
          if (var1.method3342() && !var4.startsWith("§c") && var4.endsWith("§r") && (var5 == null || var5.equals(var6))) {

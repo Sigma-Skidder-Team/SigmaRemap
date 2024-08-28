@@ -74,15 +74,15 @@ public class Class2024 implements Comparable<Class2024> {
    }
 
    public boolean method8653() {
-      return this.method8654() || !Class9246.method34773().isStable() && !this.field13144.method30186() || this.method8655();
+      return this.method8654() || !SharedConstants.method34773().isStable() && !this.field13144.method30186() || this.method8655();
    }
 
    public boolean method8654() {
-      return this.field13144.method30185() > Class9246.method34773().getWorldVersion();
+      return this.field13144.method30185() > SharedConstants.method34773().getWorldVersion();
    }
 
    public boolean method8655() {
-      return this.field13144.method30185() < Class9246.method34773().getWorldVersion();
+      return this.field13144.method30185() < SharedConstants.method34773().getWorldVersion();
    }
 
    public boolean method8656() {

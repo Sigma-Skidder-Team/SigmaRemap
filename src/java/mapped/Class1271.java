@@ -14,7 +14,7 @@ public class Class1271 extends Class1193 {
    private final int field6751;
    private final Class7952 field6752;
    private final Class9272 field6753;
-   private final Class8848 field6754;
+   private final ItemStack field6754;
    private final ITextComponent field6755;
    private final Class1194 field6756;
    private final Map<Class7952, Class1194> field6757 = Maps.newLinkedHashMap();
@@ -80,8 +80,8 @@ public class Class1271 extends Class1193 {
          this.field6748.getTextureManager().bindTexture(var4);
       }
 
-      int var5 = Class9679.method37769(this.field6758);
-      int var6 = Class9679.method37769(this.field6759);
+      int var5 = MathHelper.method37769(this.field6758);
+      int var6 = MathHelper.method37769(this.field6759);
       int var7 = var5 % 16;
       int var8 = var6 % 16;
 
@@ -107,10 +107,10 @@ public class Class1271 extends Class1193 {
    public void method6006(Class9332 var1, int var2, int var3, int var4, int var5) {
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, 0.0F, 200.0F);
-      method5686(var1, 0, 0, 234, 113, Class9679.method37767(this.field6764 * 255.0F) << 24);
+      method5686(var1, 0, 0, 234, 113, MathHelper.method37767(this.field6764 * 255.0F) << 24);
       boolean var8 = false;
-      int var9 = Class9679.method37769(this.field6758);
-      int var10 = Class9679.method37769(this.field6759);
+      int var9 = MathHelper.method37769(this.field6758);
+      int var10 = MathHelper.method37769(this.field6759);
       if (var2 > 0 && var2 < 234 && var3 > 0 && var3 < 113) {
          for (Class1194 var12 : this.field6757.values()) {
             if (var12.method5714(var9, var10, var2, var3)) {
@@ -123,9 +123,9 @@ public class Class1271 extends Class1193 {
 
       RenderSystem.popMatrix();
       if (!var8) {
-         this.field6764 = Class9679.method37777(this.field6764 - 0.04F, 0.0F, 1.0F);
+         this.field6764 = MathHelper.method37777(this.field6764 - 0.04F, 0.0F, 1.0F);
       } else {
-         this.field6764 = Class9679.method37777(this.field6764 + 0.02F, 0.0F, 0.3F);
+         this.field6764 = MathHelper.method37777(this.field6764 + 0.02F, 0.0F, 0.3F);
       }
    }
 
@@ -152,11 +152,11 @@ public class Class1271 extends Class1193 {
 
    public void method6009(double var1, double var3) {
       if (this.field6762 - this.field6760 > 234) {
-         this.field6758 = Class9679.method37778(this.field6758 + var1, (double)(-(this.field6762 - 234)), 0.0);
+         this.field6758 = MathHelper.method37778(this.field6758 + var1, (double)(-(this.field6762 - 234)), 0.0);
       }
 
       if (this.field6763 - this.field6761 > 113) {
-         this.field6759 = Class9679.method37778(this.field6759 + var3, (double)(-(this.field6763 - 113)), 0.0);
+         this.field6759 = MathHelper.method37778(this.field6759 + var3, (double)(-(this.field6763 - 113)), 0.0);
       }
    }
 

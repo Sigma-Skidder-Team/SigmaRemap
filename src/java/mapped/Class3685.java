@@ -17,7 +17,7 @@ public class Class3685<E extends Class1006> extends Class3676<E> {
       this(var0 -> false);
    }
 
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       if (!method12528(var2)) {
          if (!this.method12529((E)var2)) {
             if (!this.method12526((E)var2)) {

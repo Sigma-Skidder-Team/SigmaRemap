@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class Class8262 {
    private final Class4871 field35509;
    private BlockPos field35510;
-   private final Class1657 field35511;
+   private final ServerWorld field35511;
    private final Collection<Class8405> field35512 = Lists.newArrayList();
    private final int field35513;
    private final Collection<Class8803> field35514 = Lists.newCopyOnWriteArrayList();
@@ -25,7 +25,7 @@ public class Class8262 {
    private final Class80 field35521;
    private Throwable field35522;
 
-   public Class8262(Class4871 var1, Class80 var2, Class1657 var3) {
+   public Class8262(Class4871 var1, Class80 var2, ServerWorld var3) {
       this.field35509 = var1;
       this.field35511 = var3;
       this.field35513 = var1.method15036();
@@ -102,7 +102,7 @@ public class Class8262 {
       return this.field35510;
    }
 
-   public Class1657 method28808() {
+   public ServerWorld method28808() {
       return this.field35511;
    }
 

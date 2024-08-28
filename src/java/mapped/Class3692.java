@@ -21,7 +21,7 @@ public class Class3692<E extends Class880> extends Class3676<E> {
    }
 
    @Override
-   public boolean method12499(Class1657 var1, E var2, long var3) {
+   public boolean method12499(ServerWorld var1, E var2, long var3) {
       return this.field19723.method22841().filter(var0 -> var0.method12500() == Class2092.field13633).anyMatch(var4 -> var4.method12499(var1, (E)var2, var3));
    }
 
@@ -31,18 +31,18 @@ public class Class3692<E extends Class880> extends Class3676<E> {
    }
 
    @Override
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       this.field19721.method8219(this.field19723);
       this.field19722.method8780(this.field19723, var1, (E)var2, var3);
    }
 
    @Override
-   public void method12504(Class1657 var1, E var2, long var3) {
+   public void method12504(ServerWorld var1, E var2, long var3) {
       this.field19723.method22841().filter(var0 -> var0.method12500() == Class2092.field13633).forEach(var4 -> var4.method12503(var1, (E)var2, var3));
    }
 
    @Override
-   public void method12506(Class1657 var1, E var2, long var3) {
+   public void method12506(ServerWorld var1, E var2, long var3) {
       this.field19723.method22841().filter(var0 -> var0.method12500() == Class2092.field13633).forEach(var4 -> var4.method12505(var1, (E)var2, var3));
       this.field19720.forEach(var2.method2992()::method21405);
    }

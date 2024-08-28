@@ -33,18 +33,18 @@ public class Class7395 {
    }
 
    private void method23627() {
-      this.field31657.field4965 = Class9679.method37796(this.field31657.field4965, this.field31657.field4967, (float)this.field31657.method4260());
+      this.field31657.field4965 = MathHelper.method37796(this.field31657.field4965, this.field31657.field4967, (float)this.field31657.method4260());
    }
 
    private void method23628() {
-      this.field31657.field4967 = Class9679.method37796(this.field31657.field4967, this.field31657.field4965, (float)this.field31657.method4260());
+      this.field31657.field4967 = MathHelper.method37796(this.field31657.field4967, this.field31657.field4965, (float)this.field31657.method4260());
    }
 
    private void method23629() {
       int var3 = this.field31658 - 10;
-      float var4 = Class9679.method37777((float)var3 / 10.0F, 0.0F, 1.0F);
+      float var4 = MathHelper.method37777((float)var3 / 10.0F, 0.0F, 1.0F);
       float var5 = (float)this.field31657.method4260() * (1.0F - var4);
-      this.field31657.field4965 = Class9679.method37796(this.field31657.field4965, this.field31657.field4967, var5);
+      this.field31657.field4965 = MathHelper.method37796(this.field31657.field4965, this.field31657.field4967, var5);
    }
 
    private boolean method23630() {

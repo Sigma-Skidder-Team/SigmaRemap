@@ -31,7 +31,7 @@ public final class Class5645 extends Class5646 {
    private static final float[] field24965 = Util.<float[]>method38508(new float[25], var0 -> {
       for (int var3 = -2; var3 <= 2; var3++) {
          for (int var4 = -2; var4 <= 2; var4++) {
-            float var5 = 10.0F / Class9679.method37765((float)(var3 * var3 + var4 * var4) + 0.2F);
+            float var5 = 10.0F / MathHelper.method37765((float)(var3 * var3 + var4 * var4) + 0.2F);
             var0[var3 + 2 + (var4 + 2) * 5] = var5;
          }
       }
@@ -144,7 +144,7 @@ public final class Class5645 extends Class5646 {
          var21 /= 2.0;
       }
 
-      return Class9679.method37779(var14 / 512.0, var16 / 512.0, (var18 / 10.0 + 1.0) / 2.0);
+      return MathHelper.method37779(var14 / 512.0, var16 / 512.0, (var18 / 10.0 + 1.0) / 2.0);
    }
 
    private double[] method17794(int var1, int var2) {
@@ -230,12 +230,12 @@ public final class Class5645 extends Class5646 {
 
          if (var66 > 0.0) {
             double var61 = ((double)(this.field24970 - var52) - var38) / var66;
-            var53 = Class9679.method37779(var65, var53, var61);
+            var53 = MathHelper.method37779(var65, var53, var61);
          }
 
          if (var42 > 0.0) {
             double var68 = ((double)var52 - var44) / var42;
-            var53 = Class9679.method37779(var40, var53, var68);
+            var53 = MathHelper.method37779(var40, var53, var68);
          }
 
          var1[var52] = var53;
@@ -290,7 +290,7 @@ public final class Class5645 extends Class5646 {
 
          for (int var33 = this.field24967 - 1; var33 >= 0; var33--) {
             double var34 = (double)var33 / (double)this.field24967;
-            double var36 = Class9679.method37824(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
+            double var36 = MathHelper.method37824(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
             int var38 = var16 * this.field24967 + var33;
             Class7380 var39 = this.method17800(var36, var38);
             if (var3 != null) {
@@ -460,24 +460,24 @@ public final class Class5645 extends Class5646 {
                   }
 
                   double var44 = (double)var40 / (double)this.field24967;
-                  double var46 = Class9679.method37822(var44, var24, var32);
-                  double var48 = Class9679.method37822(var44, var28, var36);
-                  double var50 = Class9679.method37822(var44, var26, var34);
-                  double var52 = Class9679.method37822(var44, var30, var38);
+                  double var46 = MathHelper.method37822(var44, var24, var32);
+                  double var48 = MathHelper.method37822(var44, var28, var36);
+                  double var50 = MathHelper.method37822(var44, var26, var34);
+                  double var52 = MathHelper.method37822(var44, var30, var38);
 
                   for (int var54 = 0; var54 < this.field24968; var54++) {
                      int var55 = var11 + var20 * this.field24968 + var54;
                      int var56 = var55 & 15;
                      double var57 = (double)var54 / (double)this.field24968;
-                     double var59 = Class9679.method37822(var57, var46, var48);
-                     double var61 = Class9679.method37822(var57, var50, var52);
+                     double var59 = MathHelper.method37822(var57, var46, var48);
+                     double var61 = MathHelper.method37822(var57, var50, var52);
 
                      for (int var63 = 0; var63 < this.field24968; var63++) {
                         int var64 = var12 + var80 * this.field24968 + var63;
                         int var65 = var64 & 15;
                         double var66 = (double)var63 / (double)this.field24968;
-                        double var68 = Class9679.method37822(var66, var59, var61);
-                        double var70 = Class9679.method37778(var68 / 200.0, -1.0, 1.0);
+                        double var68 = MathHelper.method37822(var66, var59, var61);
+                        double var70 = MathHelper.method37778(var68 / 200.0, -1.0, 1.0);
                         var70 = var70 / 2.0 - var70 * var70 * var70 / 24.0;
 
                         while (var18.hasNext()) {
@@ -543,7 +543,7 @@ public final class Class5645 extends Class5646 {
       double var7 = (double)var1 + 0.5;
       double var9 = var7 * var7;
       double var11 = Math.pow(Math.E, -(var9 / 16.0 + var5 / 16.0));
-      double var13 = -var7 * Class9679.method37816(var9 / 2.0 + var5 / 2.0) / 2.0;
+      double var13 = -var7 * MathHelper.method37816(var9 / 2.0 + var5 / 2.0) / 2.0;
       return var13 * var11;
    }
 

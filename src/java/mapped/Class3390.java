@@ -80,7 +80,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       return Class2274.field14820;
    }
 
@@ -144,21 +144,21 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public List<Class8848> method11697(Class7380 var1, Class9464 var2) {
+   public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
       ResourceLocation var5 = this.method11999();
       if (var5 != Class8793.field39533) {
          Class7812 var6 = var2.method36454(Class9525.field44336, var1).method36460(Class8524.field38292);
-         Class1657 var7 = var6.method26090();
+         ServerWorld var7 = var6.method26090();
          Class7318 var8 = var7.method6715().method1411().method1058(var5);
          return var8.method23182(var6);
       } else {
-         return Collections.<Class8848>emptyList();
+         return Collections.<ItemStack>emptyList();
       }
    }
 
    @Deprecated
    public long method11691(Class7380 var1, BlockPos var2) {
-      return Class9679.method37809(var2);
+      return MathHelper.method37809(var2);
    }
 
    @Deprecated
@@ -222,12 +222,12 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       this.method11522(var1, var2, var3, var4);
    }
 
    @Deprecated
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
    }
 
    @Deprecated
@@ -242,7 +242,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public void method11965(Class7380 var1, Class1657 var2, BlockPos var3, Class8848 var4) {
+   public void method11965(Class7380 var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
    }
 
    @Deprecated

@@ -59,20 +59,20 @@ public class Class1090 extends Class1018 {
    public void method4258() {
       if (!this.method4228().method20811()) {
          this.method3211(Class2090.field13619);
-         this.method3098(false);
+         this.setSprinting(false);
       } else {
          double var3 = this.method4228().method20812();
          if (var3 != 0.6) {
             if (var3 != 1.33) {
                this.method3211(Class2090.field13619);
-               this.method3098(false);
+               this.setSprinting(false);
             } else {
                this.method3211(Class2090.field13619);
-               this.method3098(true);
+               this.setSprinting(true);
             }
          } else {
             this.method3211(Class2090.field13624);
-            this.method3098(false);
+            this.setSprinting(false);
          }
       }
    }
@@ -127,9 +127,9 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
-      if ((this.field5975 == null || this.field5975.method10900()) && !this.method5072() && this.method4381(var5) && var1.method3277(this) < 9.0) {
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
+      if ((this.field5975 == null || this.field5975.method10900()) && !this.method5072() && this.method4381(var5) && var1.getDistanceSq(this) < 9.0) {
          this.method4501(var1, var5);
          if (!this.field5024.field9020) {
             if (this.field5054.nextInt(3) != 0) {
@@ -186,12 +186,12 @@ public class Class1090 extends Class1018 {
       }
    }
 
-   public Class1090 method4389(Class1657 var1, Class1045 var2) {
+   public Class1090 method4389(ServerWorld var1, Class1045 var2) {
       return Class8992.field41059.method33215(var1);
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return field5972.test(var1);
    }
 

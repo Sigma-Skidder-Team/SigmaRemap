@@ -17,7 +17,7 @@ public class Class3219 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!method11609(var1, var2, var3)) {
          var2.method6730(var3, Blocks.NETHERRACK.method11579());
       }
@@ -34,7 +34,7 @@ public class Class3219 extends Block implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       Class7380 var7 = var1.method6738(var3);
       BlockPos var8 = var3.method8311();
       if (!var7.method23448(Blocks.field37083)) {

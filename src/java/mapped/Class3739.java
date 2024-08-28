@@ -25,11 +25,11 @@ public class Class3739 extends Class3676<Class1046> {
       );
    }
 
-   public boolean method12508(Class1657 var1, Class1046 var2) {
+   public boolean method12508(ServerWorld var1, Class1046 var2) {
       return var1.method6814().nextInt(10) == 0 && this.method12691(var2);
    }
 
-   public void method12502(Class1657 var1, Class1046 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1046 var2, long var3) {
       Class880 var7 = this.method12688(var2);
       if (var7 == null) {
          Optional var8 = this.method12684(var2);
@@ -43,7 +43,7 @@ public class Class3739 extends Class3676<Class1046> {
       }
    }
 
-   private void method12681(Class1657 var1, Class1046 var2, Class880 var3) {
+   private void method12681(ServerWorld var1, Class1046 var2, Class880 var3) {
       for (int var6 = 0; var6 < 10; var6++) {
          Vector3d var7 = Class8037.method27583(var2, 20, 8);
          if (var7 != null && var1.method6952(new BlockPos(var7))) {

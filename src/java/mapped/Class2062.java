@@ -30,7 +30,7 @@ public enum Class2062 {
    }
 
    public Vector3d method8711(Entity var1) {
-      return this.field13445.apply(var1.method3431(), var1);
+      return this.field13445.apply(var1.getPositionVec(), var1);
    }
 
    public Vector3d method8712(Class6619 var1) {

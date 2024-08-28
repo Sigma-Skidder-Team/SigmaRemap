@@ -22,8 +22,8 @@ public class Class8055 {
       return this.field34590;
    }
 
-   public Class8848 method27662() {
-      Class8848[] var3 = this.field34588.method332();
-      return var3[Class9679.method37767(Class9235.method34740(this.field34591) / 30.0F) % var3.length];
+   public ItemStack method27662() {
+      ItemStack[] var3 = this.field34588.method332();
+      return var3[MathHelper.method37767(Class9235.method34740(this.field34591) / 30.0F) % var3.length];
    }
 }

@@ -167,8 +167,8 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(var2 * var2 * (float) Math.PI);
-        float var7 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(var2 * var2 * (float) Math.PI);
+        float var7 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -182,8 +182,8 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(100.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-50.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(var2 * (float) Math.PI);
-        float var7 = Class9679.method37763(var2 * (float) Math.PI);
+        float var6 = MathHelper.method37763(var2 * (float) Math.PI);
+        float var7 = MathHelper.method37763(var2 * (float) Math.PI);
         this.method16023(var6 * -10.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -30.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * 109.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -197,8 +197,8 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(var2 * var2 * (float) Math.PI);
-        float var7 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(var2 * var2 * (float) Math.PI);
+        float var7 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -212,7 +212,7 @@ public class Class5156 extends Module {
         var3.method35291(0.56F, -0.52F, -0.72F);
         var3.method35291(0.56F, -0.22F, -0.71999997F);
         this.method16023(45.0F, 0.0F, 1.0F, 0.0F, var3);
-        float var6 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(0.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var6 * -9.0F, 1.0F, 0.0F, 0.0F, var3);
         this.method16023(-9.0F, 0.0F, 0.0F, 1.0F, var3);
@@ -226,7 +226,7 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.method16023(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
         float var7 = 1.2F;
@@ -238,7 +238,7 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.method16023(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
@@ -250,8 +250,8 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(var2 * var2 * (float) Math.PI);
-        float var7 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(var2 * var2 * (float) Math.PI);
+        float var7 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -265,7 +265,7 @@ public class Class5156 extends Module {
         var3.method35291(0.0, (double) (var1 * -0.2F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F - var6 * 0.3F;
         var3.method35292(var7, var7, var7);
@@ -273,7 +273,7 @@ public class Class5156 extends Module {
 
     private void method16032(float var1, float var2, Class9332 var3) {
         var3.method35291(0.56, -0.52, -0.72);
-        float var6 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -282,7 +282,7 @@ public class Class5156 extends Module {
     }
 
     private void method16033(float var1, float var2, Class9332 var3) {
-        float var6 = Class9679.method37763(Class9679.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
         var3.method35291(0.48F, -0.55F, -0.71999997F);
         var3.method35291(0.0, (double) (var6 * -0.2F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);

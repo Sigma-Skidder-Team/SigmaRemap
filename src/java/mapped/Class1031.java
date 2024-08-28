@@ -65,9 +65,9 @@ public abstract class Class1031 extends Class1025 {
          double var4 = Class2031.method8666(var3)[0];
          double var6 = Class2031.method8666(var3)[1];
          double var8 = Class2031.method8666(var3)[2];
-         float var10 = this.field4965 * (float) (Math.PI / 180.0) + Class9679.method37764((float)this.field5055 * 0.6662F) * 0.25F;
-         float var11 = Class9679.method37764(var10);
-         float var12 = Class9679.method37763(var10);
+         float var10 = this.field4965 * (float) (Math.PI / 180.0) + MathHelper.method37764((float)this.field5055 * 0.6662F) * 0.25F;
+         float var11 = MathHelper.method37764(var10);
+         float var12 = MathHelper.method37763(var10);
          this.field5024
             .method6746(
                Class7940.field34068,

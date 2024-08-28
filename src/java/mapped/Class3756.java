@@ -13,7 +13,7 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, Class880 var2) {
       if (var2.method3328()) {
          return false;
       } else {
@@ -29,7 +29,7 @@ public class Class3756 extends Class3676<Class880> {
             }
 
             Class7380 var8 = var1.method6738(var6.method35579());
-            return var6.method35579().method8317(var2.method3431(), 2.0)
+            return var6.method35579().method8317(var2.getPositionVec(), 2.0)
                && var8.method23383().method11540(Class7645.field32770)
                && !var8.<Boolean>method23463(Class3250.field18714);
          } else {
@@ -39,7 +39,7 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12499(Class1657 var1, Class880 var2, long var3) {
+   public boolean method12499(ServerWorld var1, Class880 var2, long var3) {
       Optional var7 = var2.method2992().<Class9378>method21410(Class8830.field39813);
       if (!var7.isPresent()) {
          return false;
@@ -47,12 +47,12 @@ public class Class3756 extends Class3676<Class880> {
          BlockPos var8 = ((Class9378)var7.get()).method35579();
          return var2.method2992().method21430(Class8890.field40223)
             && var2.getPosY() > (double)var8.getY() + 0.4
-            && var8.method8317(var2.method3431(), 1.14);
+            && var8.method8317(var2.getPositionVec(), 1.14);
       }
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       if (var3 > this.field19915) {
          Class3697.method12561(var1, var2, (Class7176)null, (Class7176)null);
          var2.method2753(var2.method2992().<Class9378>method21410(Class8830.field39813).get().method35579());
@@ -65,8 +65,8 @@ public class Class3756 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12506(Class1657 var1, Class880 var2, long var3) {
-      if (var2.method3176()) {
+   public void method12506(ServerWorld var1, Class880 var2, long var3) {
+      if (var2.isSleeping()) {
          var2.method2907();
          this.field19915 = var3 + 40L;
       }

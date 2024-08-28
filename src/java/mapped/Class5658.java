@@ -33,9 +33,9 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
    }
 
    private Vector3d method17861(Class880 var1, double var2, float var4) {
-      double var7 = Class9679.method37822((double)var4, var1.field5048, var1.getPosX());
-      double var9 = Class9679.method37822((double)var4, var1.field5049, var1.getPosY()) + var2;
-      double var11 = Class9679.method37822((double)var4, var1.field5050, var1.getPosZ());
+      double var7 = MathHelper.method37822((double)var4, var1.field5048, var1.getPosX());
+      double var9 = MathHelper.method37822((double)var4, var1.field5049, var1.getPosY()) + var2;
+      double var11 = MathHelper.method37822((double)var4, var1.field5050, var1.getPosZ());
       return new Vector3d(var7, var9, var11);
    }
 
@@ -66,22 +66,22 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          int var25 = 128 - (int)(var22 * 64.0F);
          float var26 = 0.2F;
          float var27 = 0.282F;
-         float var28 = Class9679.method37764(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
-         float var29 = Class9679.method37763(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
-         float var30 = Class9679.method37764(var21 + (float) (Math.PI / 4)) * 0.282F;
-         float var31 = Class9679.method37763(var21 + (float) (Math.PI / 4)) * 0.282F;
-         float var32 = Class9679.method37764(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
-         float var33 = Class9679.method37763(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
-         float var34 = Class9679.method37764(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
-         float var35 = Class9679.method37763(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
-         float var36 = Class9679.method37764(var21 + (float) Math.PI) * 0.2F;
-         float var37 = Class9679.method37763(var21 + (float) Math.PI) * 0.2F;
-         float var38 = Class9679.method37764(var21 + 0.0F) * 0.2F;
-         float var39 = Class9679.method37763(var21 + 0.0F) * 0.2F;
-         float var40 = Class9679.method37764(var21 + (float) (Math.PI / 2)) * 0.2F;
-         float var41 = Class9679.method37763(var21 + (float) (Math.PI / 2)) * 0.2F;
-         float var42 = Class9679.method37764(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
-         float var43 = Class9679.method37763(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
+         float var28 = MathHelper.method37764(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
+         float var29 = MathHelper.method37763(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
+         float var30 = MathHelper.method37764(var21 + (float) (Math.PI / 4)) * 0.282F;
+         float var31 = MathHelper.method37763(var21 + (float) (Math.PI / 4)) * 0.282F;
+         float var32 = MathHelper.method37764(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
+         float var33 = MathHelper.method37763(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
+         float var34 = MathHelper.method37764(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
+         float var35 = MathHelper.method37763(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
+         float var36 = MathHelper.method37764(var21 + (float) Math.PI) * 0.2F;
+         float var37 = MathHelper.method37763(var21 + (float) Math.PI) * 0.2F;
+         float var38 = MathHelper.method37764(var21 + 0.0F) * 0.2F;
+         float var39 = MathHelper.method37763(var21 + 0.0F) * 0.2F;
+         float var40 = MathHelper.method37764(var21 + (float) (Math.PI / 2)) * 0.2F;
+         float var41 = MathHelper.method37763(var21 + (float) (Math.PI / 2)) * 0.2F;
+         float var42 = MathHelper.method37764(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
+         float var43 = MathHelper.method37763(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
          float var44 = 0.0F;
          float var45 = 0.4999F;
          float var46 = -1.0F + var12;

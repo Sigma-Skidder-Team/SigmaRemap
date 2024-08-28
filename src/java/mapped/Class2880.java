@@ -45,8 +45,8 @@ public class Class2880<T extends Class1058> extends Class2803<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       this.field17856.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17856.field31035 = var6 * (float) (Math.PI / 180.0);
-      this.field17860.field31035 = -1.5F * Class9679.method37830(var2, 13.0F) * var3;
-      this.field17861.field31035 = 1.5F * Class9679.method37830(var2, 13.0F) * var3;
+      this.field17860.field31035 = -1.5F * MathHelper.method37830(var2, 13.0F) * var3;
+      this.field17861.field31035 = 1.5F * MathHelper.method37830(var2, 13.0F) * var3;
       this.field17860.field31036 = 0.0F;
       this.field17861.field31036 = 0.0F;
    }
@@ -56,15 +56,15 @@ public class Class2880<T extends Class1058> extends Class2803<T> {
       if (var7 <= 0) {
          int var8 = var1.method4868();
          if (var8 <= 0) {
-            this.field17858.field31035 = (-0.2F + 1.5F * Class9679.method37830(var2, 13.0F)) * var3;
-            this.field17859.field31035 = (-0.2F - 1.5F * Class9679.method37830(var2, 13.0F)) * var3;
+            this.field17858.field31035 = (-0.2F + 1.5F * MathHelper.method37830(var2, 13.0F)) * var3;
+            this.field17859.field31035 = (-0.2F - 1.5F * MathHelper.method37830(var2, 13.0F)) * var3;
          } else {
-            this.field17858.field31035 = -0.8F + 0.025F * Class9679.method37830((float)var8, 70.0F);
+            this.field17858.field31035 = -0.8F + 0.025F * MathHelper.method37830((float)var8, 70.0F);
             this.field17859.field31035 = 0.0F;
          }
       } else {
-         this.field17858.field31035 = -2.0F + 1.5F * Class9679.method37830((float)var7 - var4, 10.0F);
-         this.field17859.field31035 = -2.0F + 1.5F * Class9679.method37830((float)var7 - var4, 10.0F);
+         this.field17858.field31035 = -2.0F + 1.5F * MathHelper.method37830((float)var7 - var4, 10.0F);
+         this.field17859.field31035 = -2.0F + 1.5F * MathHelper.method37830((float)var7 - var4, 10.0F);
       }
    }
 

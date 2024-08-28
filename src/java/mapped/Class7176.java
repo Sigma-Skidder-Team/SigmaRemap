@@ -44,7 +44,7 @@ public class Class7176 {
       float var4 = (float)(var1.field30847 - this.field30847);
       float var5 = (float)(var1.field30848 - this.field30848);
       float var6 = (float)(var1.field30849 - this.field30849);
-      return Class9679.method37765(var4 * var4 + var5 * var5 + var6 * var6);
+      return MathHelper.method37765(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
    public float method22528(Class7176 var1) {

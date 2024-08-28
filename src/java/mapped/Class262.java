@@ -13,7 +13,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
       this.field923.method22684(16, 16);
       this.field923.field31032 = 8.0f;
       this.field923.field31034 = 8.0f;
-      this.field923.field31036 = Class9679.field45210 / 4.0f;
+      this.field923.field31036 = MathHelper.field45210 / 4.0f;
       int[][] nArrayArray = new int[][]{null, null, {16, 16, 0, 0}, {16, 16, 0, 0}, null, null};
       this.field923.method22691(nArrayArray, -10.0f, 0.0f, 0.0f, 20.0f, 16.0f, 0.0f, 0.0f);
       int[][] nArrayArray2 = new int[][]{null, null, null, null, {16, 16, 0, 0}, {16, 16, 0, 0}};

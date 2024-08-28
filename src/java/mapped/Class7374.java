@@ -24,7 +24,7 @@ public class Class7374 extends Class7361 {
             double var5 = this.field31557.getPosZ();
             double var7 = var3 - this.field31519.getPosX();
             double var9 = var5 - this.field31519.getPosZ();
-            double var11 = (double)Class9679.method37766(var7 * var7 + var9 * var9);
+            double var11 = (double) MathHelper.method37766(var7 * var7 + var9 * var9);
             double var13 = Math.min(0.4F + var11 / 80.0 - 1.0, 10.0);
             this.field31556 = new Vector3d(var3, this.field31557.getPosY() + var13, var5);
          }
@@ -37,7 +37,7 @@ public class Class7374 extends Class7361 {
          }
 
          double var34 = 64.0;
-         if (!(this.field31557.method3277(this.field31519) < 4096.0)) {
+         if (!(this.field31557.getDistanceSq(this.field31519) < 4096.0)) {
             if (this.field31554 > 0) {
                this.field31554--;
             }
@@ -52,9 +52,9 @@ public class Class7374 extends Class7361 {
                )
                .method11333();
             Vector3d var16 = new Vector3d(
-                  (double)Class9679.method37763(this.field31519.field5031 * (float) (Math.PI / 180.0)),
+                  (double) MathHelper.method37763(this.field31519.field5031 * (float) (Math.PI / 180.0)),
                   0.0,
-                  (double)(-Class9679.method37764(this.field31519.field5031 * (float) (Math.PI / 180.0)))
+                  (double)(-MathHelper.method37764(this.field31519.field5031 * (float) (Math.PI / 180.0)))
                )
                .method11333();
             float var17 = (float)var16.method11334(var15);
@@ -155,13 +155,13 @@ public class Class7374 extends Class7361 {
       this.field31557 = var1;
       int var4 = this.field31519.method4328();
       int var5 = this.field31519.method4329(this.field31557.getPosX(), this.field31557.getPosY(), this.field31557.getPosZ());
-      int var6 = Class9679.method37769(this.field31557.getPosX());
-      int var7 = Class9679.method37769(this.field31557.getPosZ());
+      int var6 = MathHelper.method37769(this.field31557.getPosX());
+      int var7 = MathHelper.method37769(this.field31557.getPosZ());
       double var8 = (double)var6 - this.field31519.getPosX();
       double var10 = (double)var7 - this.field31519.getPosZ();
-      double var12 = (double)Class9679.method37766(var8 * var8 + var10 * var10);
+      double var12 = (double) MathHelper.method37766(var8 * var8 + var10 * var10);
       double var14 = Math.min(0.4F + var12 / 80.0 - 1.0, 10.0);
-      int var16 = Class9679.method37769(this.field31557.getPosY() + var14);
+      int var16 = MathHelper.method37769(this.field31557.getPosY() + var14);
       Class7176 var17 = new Class7176(var6, var16, var7);
       this.field31555 = this.field31519.method4330(var4, var5, var17);
       if (this.field31555 != null) {

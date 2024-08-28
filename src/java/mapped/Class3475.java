@@ -175,9 +175,9 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       int var9 = var1.<Integer>method23463(field19326);
-      Class8848 var10 = var4.method3094(var5);
+      ItemStack var10 = var4.method3094(var5);
       if (var9 < 8 && field19327.containsKey(var10.method32107())) {
          if (var9 < 7 && !var2.field9020) {
             Class7380 var11 = method12168(var1, var2, var3, var10);
@@ -196,7 +196,7 @@ public class Class3475 extends Block implements Class3476 {
       }
    }
 
-   public static Class7380 method12165(Class7380 var0, Class1657 var1, Class8848 var2, BlockPos var3) {
+   public static Class7380 method12165(Class7380 var0, ServerWorld var1, ItemStack var2, BlockPos var3) {
       int var6 = var0.<Integer>method23463(field19326);
       if (var6 < 7 && field19327.containsKey(var2.method32107())) {
          Class7380 var7 = method12168(var0, var1, var3, var2);
@@ -214,7 +214,7 @@ public class Class3475 extends Block implements Class3476 {
          double var8 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.060000002F + 0.6;
          double var10 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
          Class1000 var12 = new Class1000(
-            var1, (double)var2.method8304() + var6, (double)var2.getY() + var8, (double)var2.method8306() + var10, new Class8848(Class8514.field37934)
+            var1, (double)var2.method8304() + var6, (double)var2.getY() + var8, (double)var2.method8306() + var10, new ItemStack(Class8514.field37934)
          );
          var12.method4131();
          var1.method6916(var12);
@@ -231,7 +231,7 @@ public class Class3475 extends Block implements Class3476 {
       return var5;
    }
 
-   private static Class7380 method12168(Class7380 var0, Class1660 var1, BlockPos var2, Class8848 var3) {
+   private static Class7380 method12168(Class7380 var0, Class1660 var1, BlockPos var2, ItemStack var3) {
       int var6 = var0.<Integer>method23463(field19326);
       float var7 = field19327.getFloat(var3.method32107());
       if ((var6 != 0 || !(var7 > 0.0F)) && !(var1.method6814().nextDouble() < (double)var7)) {
@@ -249,7 +249,7 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19326) == 7) {
          var2.method6725(var3, var1.method23459(field19326), 3);
          var2.method6742((PlayerEntity)null, var3, Class6067.field26466, Class2266.field14732, 1.0F, 1.0F);
@@ -281,7 +281,7 @@ public class Class3475 extends Block implements Class3476 {
       int var6 = var1.<Integer>method23463(field19326);
       return (Class930)(var6 != 8
          ? (Class930)(var6 >= 7 ? new Class976() : new Class975(var1, var2, var3))
-         : new Class929(var1, var2, var3, new Class8848(Class8514.field37934)));
+         : new Class929(var1, var2, var3, new ItemStack(Class8514.field37934)));
    }
 
    // $VF: synthetic method
@@ -290,7 +290,7 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    // $VF: synthetic method
-   public static Class7380 method12172(Class7380 var0, Class1660 var1, BlockPos var2, Class8848 var3) {
+   public static Class7380 method12172(Class7380 var0, Class1660 var1, BlockPos var2, ItemStack var3) {
       return method12168(var0, var1, var2, var3);
    }
 }

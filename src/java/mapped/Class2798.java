@@ -30,7 +30,7 @@ public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
    public void method10997(T var1, float var2, float var3, float var4) {
       this.field17440 = Class2278.field14836;
       this.field17439 = Class2278.field14836;
-      Class8848 var7 = var1.method3094(Class79.field182);
+      ItemStack var7 = var1.method3094(Hand.field182);
       if (var7.method32107() == Class8514.field37796 && var1.method4307()) {
          if (var1.method2967() != Class2205.field14418) {
             this.field17439 = Class2278.field14839;
@@ -44,10 +44,10 @@ public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998((T)var1, var2, var3, var4, var5, var6);
-      Class8848 var9 = var1.method3090();
+      ItemStack var9 = var1.method3090();
       if (var1.method4307() && (var9.method32105() || var9.method32107() != Class8514.field37796)) {
-         float var10 = Class9679.method37763(this.field17600 * (float) Math.PI);
-         float var11 = Class9679.method37763((1.0F - (1.0F - this.field17600) * (1.0F - this.field17600)) * (float) Math.PI);
+         float var10 = MathHelper.method37763(this.field17600 * (float) Math.PI);
+         float var11 = MathHelper.method37763((1.0F - (1.0F - this.field17600) * (1.0F - this.field17600)) * (float) Math.PI);
          this.field17435.field31037 = 0.0F;
          this.field17436.field31037 = 0.0F;
          this.field17435.field31036 = -(0.1F - var10 * 0.6F);

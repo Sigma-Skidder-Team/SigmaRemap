@@ -41,11 +41,11 @@ public class Class2723<T extends Class1028> extends Class2595 {
          List<Class1028> var5 = this.method10931();
          if (this.field17212.method4579() && var5.isEmpty()) {
             this.field17212.method4580(false);
-         } else if (var3 && this.field17212.method4574().method8317(this.field17212.method3431(), 10.0)) {
+         } else if (var3 && this.field17212.method4574().method8317(this.field17212.getPositionVec(), 10.0)) {
             this.field17212.method4578();
          } else {
             Vector3d var6 = Vector3d.method11330(this.field17212.method4574());
-            Vector3d var7 = this.field17212.method3431();
+            Vector3d var7 = this.field17212.getPositionVec();
             Vector3d var8 = var7.method11336(var6);
             var6 = var8.method11351(90.0F).method11344(0.4).method11338(var6);
             Vector3d var9 = var6.method11336(var7).method11333().method11344(10.0).method11338(var7);

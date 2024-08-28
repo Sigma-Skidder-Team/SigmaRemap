@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class Class945 extends Class944 implements Class946, Class935 {
-   private final Class25<Class8848> field5329 = Class25.<Class8848>method68(4, Class8848.field39973);
+   private final Class25<ItemStack> field5329 = Class25.<ItemStack>method68(4, ItemStack.field39973);
    private final int[] field5330 = new int[4];
    private final int[] field5331 = new int[4];
 
@@ -21,7 +21,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
          if (!var3) {
             for (int var5 = 0; var5 < this.field5329.size(); var5++) {
                if (this.field5330[var5] > 0) {
-                  this.field5330[var5] = Class9679.method37775(this.field5330[var5] - 2, 0, this.field5331[var5]);
+                  this.field5330[var5] = MathHelper.method37775(this.field5330[var5] - 2, 0, this.field5331[var5]);
                }
             }
          } else {
@@ -34,19 +34,19 @@ public class Class945 extends Class944 implements Class946, Class935 {
 
    private void method3793() {
       for (int var3 = 0; var3 < this.field5329.size(); var3++) {
-         Class8848 var4 = this.field5329.get(var3);
+         ItemStack var4 = this.field5329.get(var3);
          if (!var4.method32105()) {
             this.field5330[var3]++;
             if (this.field5330[var3] >= this.field5331[var3]) {
                Class927 var6 = new Class927(var4);
-               Class8848 var7 = this.field5324
+               ItemStack var7 = this.field5324
                   .method6816()
                   .<Class920, Class4850>method1030(Class7207.field30939, var6, this.field5324)
-                  .<Class8848>map(var1 -> var1.method14962(var6))
+                  .<ItemStack>map(var1 -> var1.method14962(var6))
                   .orElse(var4);
                BlockPos var8 = this.method3774();
                Class7236.method22725(this.field5324, (double)var8.method8304(), (double)var8.getY(), (double)var8.method8306(), var7);
-               this.field5329.set(var3, Class8848.field39973);
+               this.field5329.set(var3, ItemStack.field39973);
                this.method3799();
             }
          }
@@ -88,7 +88,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
       }
    }
 
-   public Class25<Class8848> method3795() {
+   public Class25<ItemStack> method3795() {
       return this.field5329;
    }
 
@@ -133,15 +133,15 @@ public class Class945 extends Class944 implements Class946, Class935 {
       return this.method3796(new Class39());
    }
 
-   public Optional<Class4850> method3797(Class8848 var1) {
-      return !this.field5329.stream().noneMatch(Class8848::method32105)
+   public Optional<Class4850> method3797(ItemStack var1) {
+      return !this.field5329.stream().noneMatch(ItemStack::method32105)
          ? this.field5324.method6816().<Class920, Class4850>method1030(Class7207.field30939, new Class927(var1), this.field5324)
          : Optional.<Class4850>empty();
    }
 
-   public boolean method3798(Class8848 var1, int var2) {
+   public boolean method3798(ItemStack var1, int var2) {
       for (int var5 = 0; var5 < this.field5329.size(); var5++) {
-         Class8848 var6 = this.field5329.get(var5);
+         ItemStack var6 = this.field5329.get(var5);
          if (var6.method32105()) {
             this.field5331[var5] = var2;
             this.field5330[var5] = 0;

@@ -58,7 +58,7 @@ public class Class5371 extends Module {
             } else if (!((float) this.field23990.method27121() > this.method15977("Lag duration") * 1000.0F)) {
                 if (!(var1.method13932() instanceof Class5603)) {
                     if (!(var1.method13932() instanceof Class5600) && !(var1.method13932() instanceof Class5493)) {
-                        if (!(var1.method13932() instanceof Class5505) && !(var1.method13932() instanceof Class5511)) {
+                        if (!(var1.method13932() instanceof CUseEntityPacket) && !(var1.method13932() instanceof CAnimateHandPacket)) {
                             if (!(var1.method13932() instanceof Class5555) && !(var1.method13932() instanceof Class5492) && !(var1.method13932() instanceof Class5570)
                             ) {
                                 return;

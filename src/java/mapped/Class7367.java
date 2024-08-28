@@ -13,7 +13,7 @@ public class Class7367 extends Class7361 {
    @Override
    public void method23360() {
       if (this.field31533 == null) {
-         this.field31533 = this.field31519.method3431();
+         this.field31533 = this.field31519.getPositionVec();
       }
    }
 

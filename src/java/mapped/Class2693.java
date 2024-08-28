@@ -17,7 +17,7 @@ public class Class2693 extends Class2692 {
    @Override
    public boolean method10803() {
       return this.field17133.field4982 == 0.0F && this.field17133.field4983 == 0.0F && this.field17133.field4984 == 0.0F
-         ? this.method10912() || this.field17133.method3176()
+         ? this.method10912() || this.field17133.isSleeping()
          : false;
    }
 

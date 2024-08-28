@@ -67,8 +67,8 @@ public class Class5258 extends PremiumModule {
                     mc.field1337.method23138();
                 }
 
-                mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
-                mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+                mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
+                mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                 field23649 = -1;
                 this.field23650 = null;
                 mc.field1339.field4902.field5443 = this.field23648;
@@ -98,8 +98,8 @@ public class Class5258 extends PremiumModule {
                     }
 
                     if (this.field23650 != null) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
-                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
+                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                     }
                 }
             }
@@ -109,7 +109,7 @@ public class Class5258 extends PremiumModule {
     public int method16424() {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.field1339.field4904.method18131(var3).method18266()) {
-                Class8848 var4 = mc.field1339.field4904.method18131(var3).method18265();
+                ItemStack var4 = mc.field1339.field4904.method18131(var3).method18265();
                 if (var4.method32107() == Class8514.field37883) {
                     return var3 - 36;
                 }
@@ -119,7 +119,7 @@ public class Class5258 extends PremiumModule {
         if (Client.getInstance().method19939().method31333() > 1) {
             for (int var5 = 9; var5 < 36; var5++) {
                 if (mc.field1339.field4904.method18131(var5).method18266()) {
-                    Class8848 var6 = mc.field1339.field4904.method18131(var5).method18265();
+                    ItemStack var6 = mc.field1339.field4904.method18131(var5).method18265();
                     if (var6.method32107() == Class8514.field37883) {
                         if (Class8005.method27349() <= Class5989.field26136.method18582()) {
                             mc.getClientPlayNetHandler().sendPacket(new Class5564(Class2175.field14279));

@@ -18,12 +18,12 @@ public class Class6752 {
                Class6099.method18840("targets", Class7713.method25483())
                   .suggests(
                      (var0x, var1) -> {
-                        Class6395 var4 = ((Class6619)var0x.getSource()).method20177().method1367();
+                        Class6395 var4 = ((Class6619)var0x.getSource()).method20177().getPlayerList();
                         return Class6618.method20148(
                            var4.method19488()
                               .stream()
-                              .filter(var1x -> !var4.method19464(var1x.method2906()))
-                              .<String>map(var0xx -> var0xx.method2906().getName()),
+                              .filter(var1x -> !var4.canSendCommands(var1x.getGameProfile()))
+                              .<String>map(var0xx -> var0xx.getGameProfile().getName()),
                            var1
                         );
                      }
@@ -34,11 +34,11 @@ public class Class6752 {
    }
 
    private static int method20582(Class6619 var0, Collection<GameProfile> var1) throws CommandSyntaxException {
-      Class6395 var4 = var0.method20177().method1367();
+      Class6395 var4 = var0.method20177().getPlayerList();
       int var5 = 0;
 
       for (GameProfile var7 : var1) {
-         if (!var4.method19464(var7)) {
+         if (!var4.canSendCommands(var7)) {
             var4.method19430(var7);
             var5++;
             var0.method20179(new TranslationTextComponent("commands.op.success", ((GameProfile)var1.iterator().next()).getName()), true);

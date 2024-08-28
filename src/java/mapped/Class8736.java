@@ -134,7 +134,7 @@ public class Class8736 {
    }
 
    private boolean method31528(float var1, float var2, float var3) {
-      float var6 = Class9679.method37771(var1 - var2);
+      float var6 = MathHelper.method37771(var1 - var2);
       return var6 < var3;
    }
 }

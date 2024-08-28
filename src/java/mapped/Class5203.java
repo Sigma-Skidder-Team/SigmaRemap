@@ -46,8 +46,8 @@ public class Class5203 extends Module {
     @EventTarget
     private void method16199(Class4402 var1) {
         if (this.method15996()) {
-            if (var1.method13932() instanceof Class5505) {
-                Class5505 var4 = (Class5505) var1.method13932();
+            if (var1.method13932() instanceof CUseEntityPacket) {
+                CUseEntityPacket var4 = (CUseEntityPacket) var1.method13932();
                 Class1968 var5 = var4.method17316();
                 if (var5 != Class1968.field12833) {
                 }

@@ -11,7 +11,7 @@ public class Class5731 extends Class5715<Class1003> {
    }
 
    public int method17858(Class1003 var1, BlockPos var2) {
-      return Class9679.method37775(super.method17858(var1, var2) + 7, 0, 15);
+      return MathHelper.method37775(super.method17858(var1, var2) + 7, 0, 15);
    }
 
    public void method17853(Class1003 var1, float var2, float var3, Class9332 var4, Class7733 var5, int var6) {
@@ -30,9 +30,9 @@ public class Class5731 extends Class5715<Class1003> {
          var18 = Class9680.method37861(var18);
       }
 
-      int var19 = (int)((Class9679.method37763(var18 + 0.0F) + 1.0F) * 0.5F * 255.0F);
+      int var19 = (int)((MathHelper.method37763(var18 + 0.0F) + 1.0F) * 0.5F * 255.0F);
       short var20 = 255;
-      int var21 = (int)((Class9679.method37763(var18 + (float) (Math.PI * 4.0 / 3.0)) + 1.0F) * 0.1F * 255.0F);
+      int var21 = (int)((MathHelper.method37763(var18 + (float) (Math.PI * 4.0 / 3.0)) + 1.0F) * 0.1F * 255.0F);
       var4.method35291(0.0, 0.1F, 0.0);
       var4.method35293(this.field25097.method32230());
       var4.method35293(Class7680.field32900.method25286(180.0F));

@@ -5,7 +5,7 @@ import java.util.UUID;
 import java.util.function.IntPredicate;
 import org.apache.commons.lang3.math.NumberUtils;
 
-public class Class9679 {
+public class MathHelper {
    public static final float field45205 = method37765(2.0F);
    private static final int field45206 = 12;
    private static final int field45207 = 4095;
@@ -170,7 +170,7 @@ public class Class9679 {
       return Math.abs(var2 - var0) < 1.0E-5F;
    }
 
-   public static int method37788(int var0, int var1) {
+   public static int normalizeAngle(int var0, int var1) {
       return Math.floorMod(var0, var1);
    }
 

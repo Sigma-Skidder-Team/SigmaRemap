@@ -25,7 +25,7 @@ public class Class8274 implements RunningGame {
    }
 
    public GameVersion getVersion() {
-      return Class9246.method34773();
+      return SharedConstants.method34773();
    }
 
    public Language getSelectedLanguage() {

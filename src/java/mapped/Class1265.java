@@ -230,13 +230,13 @@ public class Class1265 extends Class1193 {
 
          var6.method19989(this.field6696);
          var6.method19981(var10);
-         int var14 = Class9679.method37773((float)Math.max(var10, var6.method19982()) / 2.0F);
-         int var15 = Math.max(Class9679.method37773((float)(var10 / 2)), Math.max(Class9679.method37773((float)(var6.method19982() / 2)), 10));
+         int var14 = MathHelper.method37773((float)Math.max(var10, var6.method19982()) / 2.0F);
+         int var15 = Math.max(MathHelper.method37773((float)(var10 / 2)), Math.max(MathHelper.method37773((float)(var6.method19982() / 2)), 10));
          boolean var16 = var6.method19986() > (long)this.field6693.method5990() && (var6.method19986() - (long)this.field6693.method5990()) / 3L % 2L == 1L;
          if (var14 > 0) {
-            int var17 = Class9679.method37767(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
+            int var17 = MathHelper.method37767(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));
             if (var17 <= 3) {
-               float var18 = Class9679.method37777((float)var10 / 20.0F, 0.0F, 1.0F);
+               float var18 = MathHelper.method37777((float)var10 / 20.0F, 0.0F, 1.0F);
                int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;
                String var20 = "" + (float)var10 / 2.0F;
                if (var5 - this.field6692.field1294.method38820(var20 + "hp") >= var4) {

@@ -32,8 +32,8 @@ public class Class4526 {
    }
 
    private void method14401() {
-      this.field21833.method32806("Minecraft Version", () -> Class9246.method34773().getName());
-      this.field21833.method32806("Minecraft Version ID", () -> Class9246.method34773().getId());
+      this.field21833.method32806("Minecraft Version", () -> SharedConstants.method34773().getName());
+      this.field21833.method32806("Minecraft Version ID", () -> SharedConstants.method34773().getId());
       this.field21833
          .method32806(
             "Operating System", () -> System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version")

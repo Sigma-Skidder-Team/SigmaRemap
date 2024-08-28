@@ -16,12 +16,12 @@ public class Class7893 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(Class1657 var1, Class880 var2) {
+   public void method26425(ServerWorld var1, Class880 var2) {
       List<Class878> var5 = var1.method6870()
          .stream()
          .filter(Class8088.field34763)
          .filter(var1x -> var2.method3213(var1x, 16.0))
-         .sorted(Comparator.comparingDouble(var2::method3277))
+         .sorted(Comparator.comparingDouble(var2::getDistanceSq))
          .collect(Collectors.toList());
       Class6947 var6 = var2.method2992();
       var6.method21406(Class8830.field39821, var5);

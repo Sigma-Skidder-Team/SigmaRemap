@@ -21,7 +21,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!this.method11667(var2, var3, var1)) {
          boolean var7 = var1.<Boolean>method23463(field18708);
          boolean var8 = this.method11661(var2, var3, var1);
@@ -133,7 +133,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, Class8848 var5) {
+   public void method11563(Class1655 var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
       if (this.method11661(var1, var2, var3)) {
          var1.method6860().method20726(var2, this, 1);
       }

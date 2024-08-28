@@ -3,7 +3,7 @@ package mapped;
 public final class Class7182 {
    public static String method22535(Class2023 var0, float var1) {
       if (!var0.method8642()) {
-         int var4 = Class9679.method37767((float)var0.method8628() * var1);
+         int var4 = MathHelper.method37767((float)var0.method8628() * var1);
          return Class9001.method33254(var4);
       } else {
          return "**:**";

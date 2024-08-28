@@ -27,7 +27,7 @@ public class Class4584 extends Class4583 {
    @Override
    public int method14499(float var1) {
       float var4 = ((float)this.field22055 + var1) / (float)this.field22056;
-      var4 = Class9679.method37777(var4, 0.0F, 1.0F);
+      var4 = MathHelper.method37777(var4, 0.0F, 1.0F);
       int var5 = super.method14499(var1);
       int var6 = var5 & 0xFF;
       int var7 = var5 >> 16 & 0xFF;

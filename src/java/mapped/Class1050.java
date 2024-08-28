@@ -75,7 +75,7 @@ public abstract class Class1050 extends Class1049 {
    }
 
    public boolean method4807() {
-      return this.method3277(this.field5810) <= 121.0;
+      return this.getDistanceSq(this.field5810) <= 121.0;
    }
 
    public void method4808() {

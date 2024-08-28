@@ -67,7 +67,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    private String field1222;
    private int field1223 = -1;
    public final Class8905 field1224;
-   private final Map<Class8705<Class1655>, Class1657> field1225 = Maps.newLinkedHashMap();
+   private final Map<Class8705<Class1655>, ServerWorld> field1225 = Maps.newLinkedHashMap();
    private Class6395 field1226;
    private volatile boolean field1227 = true;
    private boolean field1228;
@@ -205,7 +205,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          var15 = var13.method36413();
       }
 
-      Class1657 var16 = new Class1657(this, this.field1265, this.field1211, var4, Class1655.field8999, var14, var1, (Class5646)var15, var6, var9, var11, true);
+      ServerWorld var16 = new ServerWorld(this, this.field1265, this.field1211, var4, Class1655.field8999, var14, var1, (Class5646)var15, var6, var9, var11, true);
       this.field1225.put(Class1655.field8999, var16);
       Class8250 var17 = var16.method6945();
       this.method1276(var17);
@@ -233,7 +233,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          var4.method20071(true);
       }
 
-      this.method1367().method19447(var16);
+      this.getPlayerList().method19447(var16);
       if (this.field1269.method20093() != null) {
          this.method1414().method29606(this.field1269.method20093());
       }
@@ -245,14 +245,14 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
             Class9535 var23 = ((Class9459)var29.getValue()).method36412();
             Class5646 var24 = ((Class9459)var29.getValue()).method36413();
             Class6609 var25 = new Class6609(this.field1269, var4);
-            Class1657 var26 = new Class1657(this, this.field1265, this.field1211, var25, var22, var23, var1, var24, var6, var9, ImmutableList.of(), false);
+            ServerWorld var26 = new ServerWorld(this, this.field1265, this.field1211, var25, var22, var23, var1, var24, var6, var9, ImmutableList.of(), false);
             var18.method24543(new Class7048(var26.method6810()));
             this.field1225.put(var22, var26);
          }
       }
    }
 
-   private static void method1282(Class1657 var0, Class6608 var1, boolean var2, boolean var3, boolean var4) {
+   private static void method1282(ServerWorld var0, Class6608 var1, boolean var2, boolean var3, boolean var4) {
       Class5646 var7 = var0.method6883().method7370();
       if (var4) {
          if (!var3) {
@@ -322,7 +322,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    private void method1284(Class7243 var1) {
-      Class1657 var4 = this.method1317();
+      ServerWorld var4 = this.method1317();
       field1208.info("Preparing start region for dimension {}", var4.method6813().method31399());
       BlockPos var5 = var4.method6947();
       var1.method22736(new Class7481(var5));
@@ -339,7 +339,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       this.field1253 = Util.method38487() + 10L;
       this.method1299();
 
-      for (Class1657 var8 : this.field1225.values()) {
+      for (ServerWorld var8 : this.field1225.values()) {
          Class7536 var9 = var8.method6945().<Class7536>method28768(Class7536::new, "chunks");
          if (var9 != null) {
             LongIterator var10 = var9.method24638().iterator();
@@ -389,7 +389,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    public boolean method1291(boolean var1, boolean var2, boolean var3) {
       boolean var6 = false;
 
-      for (Class1657 var8 : this.method1320()) {
+      for (ServerWorld var8 : this.method1320()) {
          if (!var1) {
             field1208.info("Saving chunks for level '{}'/{}", var8, var8.method6813().method31399());
          }
@@ -398,11 +398,11 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          var6 = true;
       }
 
-      Class1657 var9 = this.method1317();
+      ServerWorld var9 = this.method1317();
       Class6608 var10 = this.field1269.method20098();
       var10.method20068(var9.method6810().method24556());
       this.field1269.method20094(this.method1414().method29605());
-      this.field1211.method8001(this.field1224, this.field1269, this.method1367().method19479());
+      this.field1211.method8001(this.field1224, this.field1269, this.getPlayerList().method19479());
       return var6;
    }
 
@@ -425,7 +425,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
 
       field1208.info("Saving worlds");
 
-      for (Class1657 var4 : this.method1320()) {
+      for (ServerWorld var4 : this.method1320()) {
          if (var4 != null) {
             var4.field9047 = false;
          }
@@ -433,7 +433,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
 
       this.method1291(false, true, false);
 
-      for (Class1657 var9 : this.method1320()) {
+      for (ServerWorld var9 : this.method1320()) {
          if (var9 != null) {
             try {
                var9.close();
@@ -484,7 +484,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          if (this.method1277()) {
             this.field1253 = Util.method38487();
             this.field1219.method31701(new StringTextComponent(this.field1235));
-            this.field1219.method31705(new Class9226(Class9246.method34773().getName(), Class9246.method34773().getProtocolVersion()));
+            this.field1219.method31705(new Class9226(SharedConstants.method34773().getName(), SharedConstants.method34773().getProtocolVersion()));
             this.method1304(this.field1219);
 
             while (this.field1227) {
@@ -574,7 +574,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          return true;
       } else {
          if (this.method1298()) {
-            for (Class1657 var4 : this.method1320()) {
+            for (ServerWorld var4 : this.method1320()) {
                if (var4.method6883().method7362()) {
                   return true;
                }
@@ -641,10 +641,10 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          this.field1251 = var4;
          this.field1219.method31703(new Class9762(this.method1323(), this.method1322()));
          GameProfile[] var10 = new GameProfile[Math.min(this.method1322(), 12)];
-         int var11 = Class9679.method37782(this.field1220, 0, this.method1322() - var10.length);
+         int var11 = MathHelper.method37782(this.field1220, 0, this.method1322() - var10.length);
 
          for (int var12 = 0; var12 < var10.length; var12++) {
-            var10[var12] = this.field1226.method19488().get(var11 + var12).method2906();
+            var10[var12] = this.field1226.method19488().get(var11 + var12).getGameProfile();
          }
 
          Collections.shuffle(Arrays.<GameProfile>asList(var10));
@@ -683,7 +683,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       this.method1397().method22823();
       this.field1216.method22506("levels");
 
-      for (Class1657 var5 : this.method1320()) {
+      for (ServerWorld var5 : this.method1320()) {
          this.field1216.method22504(() -> var5 + " " + var5.method6813().method31399());
          if (this.field1229 % 20 == 0) {
             this.field1216.method22503("timeSync");
@@ -710,7 +710,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       this.method1371().method33401();
       this.field1216.method22506("players");
       this.field1226.method19455();
-      if (Class9246.field42545) {
+      if (SharedConstants.field42545) {
          Class7879.field33820.method26417();
       }
 
@@ -743,12 +743,12 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       return new File(this.method1307(), var1);
    }
 
-   public final Class1657 method1317() {
+   public final ServerWorld method1317() {
       return this.field1225.get(Class1655.field8999);
    }
 
    @Nullable
-   public Class1657 method1318(Class8705<Class1655> var1) {
+   public ServerWorld method1318(Class8705<Class1655> var1) {
       return this.field1225.get(var1);
    }
 
@@ -756,12 +756,12 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       return this.field1225.keySet();
    }
 
-   public Iterable<Class1657> method1320() {
+   public Iterable<ServerWorld> method1320() {
       return this.field1225.values();
    }
 
    public String method1321() {
-      return Class9246.method34773().getName();
+      return SharedConstants.method34773().getName();
    }
 
    public int method1322() {
@@ -854,7 +854,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       if (var2 || !this.field1269.method20048()) {
          this.field1269.method20085(!this.field1269.method20045() ? var1 : Class2197.field14354);
          this.method1338();
-         this.method1367().method19488().forEach(this::method1340);
+         this.getPlayerList().method19488().forEach(this::method1340);
       }
    }
 
@@ -863,19 +863,19 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    private void method1338() {
-      for (Class1657 var4 : this.method1320()) {
+      for (ServerWorld var4 : this.method1320()) {
          var4.method6767(this.method1341(), this.method1354());
       }
    }
 
    public void method1339(boolean var1) {
       this.field1269.method20086(var1);
-      this.method1367().method19488().forEach(this::method1340);
+      this.getPlayerList().method19488().forEach(this::method1340);
    }
 
    private void method1340(Class878 var1) {
-      Class6612 var4 = var1.method2798().method6788();
-      var1.field4855.method15671(new Class5535(var4.method20047(), var4.method20048()));
+      Class6612 var4 = var1.getServerWorld().method6788();
+      var1.field4855.sendPacket(new Class5535(var4.method20047(), var4.method20048()));
    }
 
    public boolean method1341() {
@@ -916,10 +916,10 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       var1.method27298("uses_auth", this.field1231);
       var1.method27298("gui_state", !this.method1373() ? "disabled" : "enabled");
       var1.method27298("run_time", (Util.method38487() - var1.method27303()) / 60L * 1000L);
-      var1.method27298("avg_tick_ms", (int)(Class9679.method37785(this.field1238) * 1.0E-6));
+      var1.method27298("avg_tick_ms", (int)(MathHelper.method37785(this.field1238) * 1.0E-6));
       int var4 = 0;
 
-      for (Class1657 var6 : this.method1320()) {
+      for (ServerWorld var6 : this.method1320()) {
          if (var6 != null) {
             var1.method27298("world[" + var4 + "][dimension]", var6.method6813().method31399());
             var1.method27298("world[" + var4 + "][mode]", this.field1269.method20067());
@@ -1002,7 +1002,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       return this.field1228;
    }
 
-   public Class6395 method1367() {
+   public Class6395 getPlayerList() {
       return this.field1226;
    }
 
@@ -1043,7 +1043,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       return 16;
    }
 
-   public boolean method1378(Class1657 var1, BlockPos var2, PlayerEntity var3) {
+   public boolean method1378(ServerWorld var1, BlockPos var2, PlayerEntity var3) {
       return false;
    }
 
@@ -1113,7 +1113,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       return this.field1221;
    }
 
-   public int method1395(Class1657 var1) {
+   public int method1395(ServerWorld var1) {
       return var1 == null ? 10 : var1.method6789().method17136(Class5462.field24239);
    }
 
@@ -1143,8 +1143,8 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
             this.field1257.method1264(var1);
             this.field1269.method20092(method1400(this.field1257));
             var2.method7339();
-            this.method1367().method19467();
-            this.method1367().method19490();
+            this.getPlayerList().method19467();
+            this.getPlayerList().method19490();
             this.field1261.method22826(this.field1267.method7330());
             this.field1268.method31605(this.field1267.method7337());
          }, this);
@@ -1198,12 +1198,12 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
 
    public void method1401(Class6619 var1) {
       if (this.method1415()) {
-         Class6395 var4 = var1.method20177().method1367();
+         Class6395 var4 = var1.method20177().getPlayerList();
          Class4531 var5 = var4.method19468();
 
          for (Class878 var7 : Lists.newArrayList(var4.method19488())) {
-            if (!var5.method14448(var7.method2906())) {
-               var7.field4855.method15658(new TranslationTextComponent("multiplayer.disconnect.not_whitelisted"));
+            if (!var5.method14448(var7.getGameProfile())) {
+               var7.field4855.disconnect(new TranslationTextComponent("multiplayer.disconnect.not_whitelisted"));
             }
          }
       }
@@ -1213,12 +1213,12 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
       return this.field1257;
    }
 
-   public Class6099 method1403() {
+   public Class6099 getCommandManager() {
       return this.field1267.method7335();
    }
 
    public Class6619 method1404() {
-      Class1657 var3 = this.method1317();
+      ServerWorld var3 = this.method1317();
       return new Class6619(
          this,
          var3 != null ? Vector3d.method11329(var3.method6947()) : Vector3d.field18047,
@@ -1291,16 +1291,16 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
    }
 
    public int method1418(GameProfile var1) {
-      if (!this.method1367().method19464(var1)) {
+      if (!this.getPlayerList().canSendCommands(var1)) {
          return 0;
       } else {
-         Class6790 var4 = this.method1367().method19470().method14437(var1);
+         Class6790 var4 = this.getPlayerList().method19470().method14437(var1);
          if (var4 == null) {
             if (!this.method1421(var1)) {
                if (!this.method1334()) {
                   return this.method1288();
                } else {
-                  return !this.method1367().method19491() ? 0 : 4;
+                  return !this.getPlayerList().method19491() ? 0 : 4;
                }
             } else {
                return 4;
@@ -1328,7 +1328,7 @@ public abstract class Class314 extends Class317<Class567> implements Class315, C
          ResourceLocation var7 = ((Class8705)var6.getKey()).method31399();
          Path var8 = var4.resolve(var7.method8293()).resolve(var7.method8292());
          Files.createDirectories(var8);
-         ((Class1657)var6.getValue()).method6960(var8);
+         ((ServerWorld)var6.getValue()).method6960(var8);
       }
 
       this.method1425(var1.resolve("gamerules.txt"));

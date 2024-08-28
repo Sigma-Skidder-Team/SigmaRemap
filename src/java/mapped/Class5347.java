@@ -73,7 +73,7 @@ public class Class5347 extends Module {
                     this.field23897 = 0;
                     this.field23900.clear();
                     this.field23899 = this.field23899 - (float) ((int) this.field23899);
-                    Entity var5 = mc.field1339.method3421() == null ? mc.field1339 : mc.field1339.method3421();
+                    Entity var5 = mc.field1339.getRidingEntity() == null ? mc.field1339 : mc.field1339.getRidingEntity();
                     this.field23901 = new Thread(() -> {
                         try {
                             int var5x = 0;
@@ -110,7 +110,7 @@ public class Class5347 extends Module {
     }
 
     public void method16773(List<Class8472> var1, boolean var2) {
-        Entity var5 = mc.field1339.method3421();
+        Entity var5 = mc.field1339.getRidingEntity();
         Class8472 var6 = null;
 
         for (Class8472 var8 : var1) {
@@ -204,7 +204,7 @@ public class Class5347 extends Module {
                                             var7.remove();
                                         } else if (!this.method15974("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                             var7.remove();
-                                        } else if (mc.field1339.method3421() != null && mc.field1339.method3421().equals(var8)) {
+                                        } else if (mc.field1339.getRidingEntity() != null && mc.field1339.getRidingEntity().equals(var8)) {
                                             var7.remove();
                                         } else if (!var8.method3362()) {
                                             if (var8 instanceof PlayerEntity

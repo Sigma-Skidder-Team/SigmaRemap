@@ -20,7 +20,7 @@ public class Class7154 implements Class7151 {
    @Override
    public void method22311(Class39 var1) throws CommandSyntaxException {
       if (!(this.field30733 instanceof PlayerEntity)) {
-         UUID var4 = this.field30733.method3375();
+         UUID var4 = this.field30733.getUniqueID();
          this.field30733.method3295(var1);
          this.field30733.method3374(var4);
       } else {
@@ -35,16 +35,16 @@ public class Class7154 implements Class7151 {
 
    @Override
    public ITextComponent method22313() {
-      return new TranslationTextComponent("commands.data.entity.modified", this.field30733.method2954());
+      return new TranslationTextComponent("commands.data.entity.modified", this.field30733.getDisplayName());
    }
 
    @Override
    public ITextComponent method22314(Class30 var1) {
-      return new TranslationTextComponent("commands.data.entity.query", this.field30733.method2954(), var1.method82());
+      return new TranslationTextComponent("commands.data.entity.query", this.field30733.getDisplayName(), var1.method82());
    }
 
    @Override
    public ITextComponent method22315(Class9670 var1, double var2, int var4) {
-      return new TranslationTextComponent("commands.data.entity.get", var1, this.field30733.method2954(), String.format(Locale.ROOT, "%.2f", var2), var4);
+      return new TranslationTextComponent("commands.data.entity.get", var1, this.field30733.getDisplayName(), String.format(Locale.ROOT, "%.2f", var2), var4);
    }
 }

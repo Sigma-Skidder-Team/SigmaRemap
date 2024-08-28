@@ -90,7 +90,7 @@ public class Class9195 {
       );
    }
 
-   private static int method34455(Class6619 var0, BlockPos var1, int var2, Class8848 var3) throws CommandSyntaxException {
+   private static int method34455(Class6619 var0, BlockPos var1, int var2, ItemStack var3) throws CommandSyntaxException {
       Class944 var6 = var0.method20172().method6759(var1);
       if (var6 instanceof Class920) {
          Class920 var7 = (Class920)var6;
@@ -109,7 +109,7 @@ public class Class9195 {
       }
    }
 
-   private static int method34456(Class6619 var0, Collection<? extends Entity> var1, int var2, Class8848 var3) throws CommandSyntaxException {
+   private static int method34456(Class6619 var0, Collection<? extends Entity> var1, int var2, ItemStack var3) throws CommandSyntaxException {
       ArrayList var6 = Lists.newArrayListWithCapacity(var1.size());
 
       for (Entity var8 : var1) {
@@ -130,7 +130,7 @@ public class Class9195 {
             var0.method20179(new TranslationTextComponent("commands.replaceitem.entity.success.multiple", var6.size(), var3.method32173()), true);
          } else {
             var0.method20179(
-               new TranslationTextComponent("commands.replaceitem.entity.success.single", ((Entity)var6.iterator().next()).method2954(), var3.method32173()),
+               new TranslationTextComponent("commands.replaceitem.entity.success.single", ((Entity)var6.iterator().next()).getDisplayName(), var3.method32173()),
                true
             );
          }

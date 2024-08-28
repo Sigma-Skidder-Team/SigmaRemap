@@ -21,6 +21,6 @@ public class Class4568 extends Class4566 {
 
    @Override
    public float method14509(float var1) {
-      return 7.1F * Class9679.method37763(((float)this.field22055 + var1 - 1.0F) * 0.25F * (float) Math.PI);
+      return 7.1F * MathHelper.method37763(((float)this.field22055 + var1 - 1.0F) * 0.25F * (float) Math.PI);
    }
 }

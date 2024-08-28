@@ -17,7 +17,7 @@ public class Class2001 extends BlockPos {
    }
 
    public Class2001(double var1, double var3, double var5) {
-      this(Class9679.method37769(var1), Class9679.method37769(var3), Class9679.method37769(var5));
+      this(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
    }
 
    public Class2001(int var1, int var2, int var3, int var4) {
@@ -51,7 +51,7 @@ public class Class2001 extends BlockPos {
    }
 
    public void method8385(double var1, double var3, double var5) {
-      this.method8384(Class9679.method37769(var1), Class9679.method37769(var3), Class9679.method37769(var5));
+      this.method8384(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
    }
 
    @Override

@@ -112,7 +112,7 @@ public abstract class Class5646 {
    }
 
    @Nullable
-   public BlockPos method17820(Class1657 var1, Class2961<?> var2, BlockPos var3, int var4, boolean var5) {
+   public BlockPos method17820(ServerWorld var1, Class2961<?> var2, BlockPos var3, int var4, boolean var5) {
       if (this.field24985.method7205(var2)) {
          if (var2 != Class2961.field18067) {
             Class8483 var16 = this.field24987.method38381(var2);

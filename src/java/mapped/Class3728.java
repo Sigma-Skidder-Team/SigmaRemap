@@ -13,11 +13,11 @@ public class Class3728 extends Class3676<Class1042> {
       this.field19826 = var1;
    }
 
-   public boolean method12508(Class1657 var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, Class1042 var2) {
       return !var2.method3005() ? var2.method4674().method26571() == Class8395.field36011 : false;
    }
 
-   public void method12502(Class1657 var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       BlockPos var7 = var2.method2992().<Class9378>method21410(Class8830.field39815).get().method35579();
       Optional var8 = var1.method6951().method6676(var7);
       if (var8.isPresent()) {
@@ -42,7 +42,7 @@ public class Class3728 extends Class3676<Class1042> {
       }
    }
 
-   private void method12636(Class1657 var1, Class1042 var2, Class1042 var3, BlockPos var4, boolean var5) {
+   private void method12636(ServerWorld var1, Class1042 var2, Class1042 var3, BlockPos var4, boolean var5) {
       this.method12638(var2);
       if (!var5) {
          Class6983.method21577(var3, var4, this.field19826, 1);

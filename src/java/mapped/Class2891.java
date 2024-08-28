@@ -43,9 +43,9 @@ public class Class2891<T extends Entity> extends Class2802<T> {
       super.method10998((T)var1, var2, var3, var4, var5, var6);
       this.field17455.method22679(0.0F, -2.0F, 0.0F);
       float var9 = 0.01F * (float)(var1.method3205() % 10);
-      this.field17455.field31035 = Class9679.method37763((float)var1.field5055 * var9) * 4.5F * (float) (Math.PI / 180.0);
+      this.field17455.field31035 = MathHelper.method37763((float)var1.field5055 * var9) * 4.5F * (float) (Math.PI / 180.0);
       this.field17455.field31036 = 0.0F;
-      this.field17455.field31037 = Class9679.method37764((float)var1.field5055 * var9) * 2.5F * (float) (Math.PI / 180.0);
+      this.field17455.field31037 = MathHelper.method37764((float)var1.field5055 * var9) * 2.5F * (float) (Math.PI / 180.0);
       if (this.field17911) {
          this.field17455.method22679(0.0F, 1.0F, -1.5F);
          this.field17455.field31035 = -0.9F;

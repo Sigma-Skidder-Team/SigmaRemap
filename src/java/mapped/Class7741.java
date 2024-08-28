@@ -14,7 +14,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ObjectUtils;
@@ -164,7 +163,7 @@ public class Class7741 implements Class7740 {
       var6.append("// ");
       var6.append(method25643());
       var6.append("\n\n");
-      var6.append("Version: ").append(Class9246.method34773().getId()).append('\n');
+      var6.append("Version: ").append(SharedConstants.method34773().getId()).append('\n');
       var6.append("Time span: ").append(var1 / 1000000L).append(" ms\n");
       var6.append("Tick span: ").append(var3).append(" ticks\n");
       var6.append("// This is approximately ")

@@ -49,7 +49,7 @@ public abstract class Class939 extends Class932 {
          }
 
          this.field5302 = null;
-         Class9464 var5 = new Class9464((Class1657)this.field5324)
+         Class9464 var5 = new Class9464((ServerWorld)this.field5324)
             .method36454(Class9525.field44335, Vector3d.method11328(this.field5325))
             .method36451(this.field5303);
          if (var1 != null) {
@@ -68,19 +68,19 @@ public abstract class Class939 extends Class932 {
    @Override
    public boolean method3617() {
       this.method3743((PlayerEntity)null);
-      return this.method3724().stream().allMatch(Class8848::method32105);
+      return this.method3724().stream().allMatch(ItemStack::method32105);
    }
 
    @Override
-   public Class8848 method3618(int var1) {
+   public ItemStack method3618(int var1) {
       this.method3743((PlayerEntity)null);
       return this.method3724().get(var1);
    }
 
    @Override
-   public Class8848 method3619(int var1, int var2) {
+   public ItemStack method3619(int var1, int var2) {
       this.method3743((PlayerEntity)null);
-      Class8848 var5 = Class7920.method26563(this.method3724(), var1, var2);
+      ItemStack var5 = Class7920.method26563(this.method3724(), var1, var2);
       if (!var5.method32105()) {
          this.method3622();
       }
@@ -89,13 +89,13 @@ public abstract class Class939 extends Class932 {
    }
 
    @Override
-   public Class8848 method3620(int var1) {
+   public ItemStack method3620(int var1) {
       this.method3743((PlayerEntity)null);
       return Class7920.method26564(this.method3724(), var1);
    }
 
    @Override
-   public void method3621(int var1, Class8848 var2) {
+   public void method3621(int var1, ItemStack var2) {
       this.method3743((PlayerEntity)null);
       this.method3724().set(var1, var2);
       if (var2.method32179() > this.method3630()) {
@@ -120,9 +120,9 @@ public abstract class Class939 extends Class932 {
       this.method3724().clear();
    }
 
-   public abstract Class25<Class8848> method3724();
+   public abstract Class25<ItemStack> method3724();
 
-   public abstract void method3725(Class25<Class8848> var1);
+   public abstract void method3725(Class25<ItemStack> var1);
 
    @Override
    public boolean method3696(PlayerEntity var1) {

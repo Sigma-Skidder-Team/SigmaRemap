@@ -27,11 +27,11 @@ public class Class5725 extends Class5715<Class1002> {
       }
 
       if (var9 > 0.0F) {
-         var4.method35293(Class7680.field32898.method25286(Class9679.method37763(var9) * var9 * var10 / 10.0F * (float)var1.method4170()));
+         var4.method35293(Class7680.field32898.method25286(MathHelper.method37763(var9) * var9 * var10 / 10.0F * (float)var1.method4170()));
       }
 
       float var11 = var1.method4168(var3);
-      if (!Class9679.method37786(var11, 0.0F)) {
+      if (!MathHelper.method37786(var11, 0.0F)) {
          var4.method35293(new Class8661(new Class7680(1.0F, 0.0F, 1.0F), var1.method4168(var3), true));
       }
 

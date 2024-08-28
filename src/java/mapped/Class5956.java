@@ -27,7 +27,7 @@ public class Class5956 extends Class5942<Class959> {
       float var9 = (float)var1.field5382 + var2;
       if (var1.method3903()) {
          float var10 = var1.method3907(var2) * (180.0F / (float)Math.PI);
-         float var11 = Class9679.method37763(var9 * 0.1F) / 2.0F + 0.5F;
+         float var11 = MathHelper.method37763(var9 * 0.1F) / 2.0F + 0.5F;
          var11 = var11 * var11 + var11;
          var3.method35294();
          var3.method35291(0.5, (double)(0.3F + var11 * 0.2F), 0.5);

@@ -82,9 +82,9 @@ public enum Class2309 {
       this.field15826 = var8 + (double)Class5280.method16540().field1339.method3393() - 0.1F;
       this.field15827 = var10;
       float var12 = Math.min(20.0F, (float)(72000 - Class5280.method16541().field1339.method3159()) + Class5280.method16542().method1562()) / 20.0F;
-      this.field15828 = -Class9679.method37763(var4) * Class9679.method37764(var5) * this.field15823 * var12;
-      this.field15829 = -Class9679.method37763(var5) * this.field15823 * var12;
-      this.field15830 = Class9679.method37764(var4) * Class9679.method37764(var5) * this.field15823 * var12;
+      this.field15828 = -MathHelper.method37763(var4) * MathHelper.method37764(var5) * this.field15823 * var12;
+      this.field15829 = -MathHelper.method37763(var5) * this.field15823 * var12;
+      this.field15830 = MathHelper.method37764(var4) * MathHelper.method37764(var5) * this.field15823 * var12;
       this.field15831 = null;
       this.field15832 = null;
       var3.add(new Class9110(this.field15825, this.field15826, this.field15827));

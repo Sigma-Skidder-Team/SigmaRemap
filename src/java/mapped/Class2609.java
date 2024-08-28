@@ -26,6 +26,6 @@ public class Class2609 extends Class2608 {
    }
 
    private boolean method10816() {
-      return !this.field16863.method3176() && !this.field16863.method5129() && !Class1095.method5168(this.field16863) && this.field16863.method4232() == null;
+      return !this.field16863.isSleeping() && !this.field16863.method5129() && !Class1095.method5168(this.field16863) && this.field16863.method4232() == null;
    }
 }

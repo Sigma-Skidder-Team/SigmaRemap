@@ -43,14 +43,14 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          method11610(var1, var2, var3);
       }
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>method23463(field18644);
       if (!method11612(var2, var3) && !var2.method6796(var3.method8311())) {
          if (var7 <= 0) {

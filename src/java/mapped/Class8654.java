@@ -176,7 +176,7 @@ public class Class8654 {
       Class880 var4 = var1.method3074();
       String var5 = "death.attack." + this.field39022;
       String var6 = var5 + ".player";
-      return var4 == null ? new TranslationTextComponent(var5, var1.method2954()) : new TranslationTextComponent(var6, var1.method2954(), var4.method2954());
+      return var4 == null ? new TranslationTextComponent(var5, var1.getDisplayName()) : new TranslationTextComponent(var6, var1.getDisplayName(), var4.getDisplayName());
    }
 
    public boolean method31141() {

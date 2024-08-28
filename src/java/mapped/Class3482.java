@@ -32,7 +32,7 @@ public class Class3482 extends Class3480 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var4.nextInt(3) != 0) {
          super.method11484(var1, var2, var3, var4);
       }

@@ -34,7 +34,7 @@ public class Class2725 extends Class2595 {
       if (var3 != null) {
          if (!var3.method2800()) {
             if (!this.field17220.method4402()) {
-               if (!(this.field17220.method3277(var3) < (double)(this.field17227 * this.field17227))) {
+               if (!(this.field17220.getDistanceSq(var3) < (double)(this.field17227 * this.field17227))) {
                   this.field17221 = var3;
                   return true;
                } else {
@@ -54,7 +54,7 @@ public class Class2725 extends Class2595 {
    @Override
    public boolean method10806() {
       if (!this.field17224.method21664()) {
-         return !this.field17220.method4402() ? !(this.field17220.method3277(this.field17221) <= (double)(this.field17226 * this.field17226)) : false;
+         return !this.field17220.method4402() ? !(this.field17220.getDistanceSq(this.field17221) <= (double)(this.field17226 * this.field17226)) : false;
       } else {
          return false;
       }
@@ -80,7 +80,7 @@ public class Class2725 extends Class2595 {
       if (--this.field17225 <= 0) {
          this.field17225 = 10;
          if (!this.field17220.method4296() && !this.field17220.method3328()) {
-            if (!(this.field17220.method3277(this.field17221) >= 144.0)) {
+            if (!(this.field17220.getDistanceSq(this.field17221) >= 144.0)) {
                this.field17224.method21655(this.field17221, this.field17223);
             } else {
                this.method10934();

@@ -7,7 +7,6 @@ import it.unimi.dsi.fastutil.ints.IntListIterator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
             this.field6661.method18220(this.field6659);
             if (!this.field6659.method19123(var2, (IntList)null)) {
                this.method5869();
-               var1.field4855.method15671(new Class5589(var1.field4905.field25471, var2));
+               var1.field4855.sendPacket(new Class5589(var1.field4905.field25471, var2));
             } else {
                this.method5871(var2, var3);
             }
@@ -51,7 +50,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    }
 
    public void method5870(int var1) {
-      Class8848 var4 = this.field6661.method18131(var1).method18265();
+      ItemStack var4 = this.field6661.method18131(var1).method18265();
       if (!var4.method32105()) {
          for (; var4.method32179() > 0; this.field6661.method18131(var1).method18272(1)) {
             int var5 = this.field6660.method4043(var4);
@@ -59,7 +58,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
                var5 = this.field6660.method4032();
             }
 
-            Class8848 var6 = var4.method32126();
+            ItemStack var6 = var4.method32126();
             var6.method32180(1);
             if (!this.field6660.method4046(var5, var6)) {
                field6658.error("Can't find any space for item in the inventory");
@@ -74,7 +73,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       if (var5) {
          for (int var7 = 0; var7 < this.field6661.method18225() * this.field6661.method18224() + 1; var7++) {
             if (var7 != this.field6661.method18223()) {
-               Class8848 var8 = this.field6661.method18131(var7).method18265();
+               ItemStack var8 = this.field6661.method18131(var7).method18265();
                if (!var8.method32105() && Math.min(var6, var8.method32113()) < var8.method32179() + 1) {
                   return;
                }
@@ -106,7 +105,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    @Override
    public void method5830(Iterator<Integer> var1, int var2, int var3, int var4, int var5) {
       Class5839 var8 = this.field6661.method18131(var2);
-      Class8848 var9 = Class6207.method19127((Integer)var1.next());
+      ItemStack var9 = Class6207.method19127((Integer)var1.next());
       if (!var9.method32105()) {
          for (int var10 = 0; var10 < var3; var10++) {
             this.method5873(var8, var9);
@@ -122,7 +121,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
             for (int var7 = 0; var7 < this.field6661.method18224() * this.field6661.method18225() + 1; var7++) {
                if (var7 != this.field6661.method18223()) {
-                  Class8848 var8 = this.field6661.method18131(var7).method18265();
+                  ItemStack var8 = this.field6661.method18131(var7).method18265();
                   if (!var8.method32105() && var6 > var8.method32179()) {
                      var6 = var8.method32179();
                   }
@@ -140,10 +139,10 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       return var6;
    }
 
-   public void method5873(Class5839 var1, Class8848 var2) {
+   public void method5873(Class5839 var1, ItemStack var2) {
       int var5 = this.field6660.method4037(var2);
       if (var5 != -1) {
-         Class8848 var6 = this.field6660.method3618(var5).method32126();
+         ItemStack var6 = this.field6660.method3618(var5).method32126();
          if (!var6.method32105()) {
             if (var6.method32179() <= 1) {
                this.field6660.method3620(var5);
@@ -162,16 +161,16 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    }
 
    private boolean method5874() {
-      List<Class8848> var3 = Lists.newArrayList();
+      List<ItemStack> var3 = Lists.newArrayList();
       int var4 = this.method5875();
 
       for (int var5 = 0; var5 < this.field6661.method18224() * this.field6661.method18225() + 1; var5++) {
          if (var5 != this.field6661.method18223()) {
-            Class8848 var6 = this.field6661.method18131(var5).method18265().method32126();
+            ItemStack var6 = this.field6661.method18131(var5).method18265().method32126();
             if (!var6.method32105()) {
                int var7 = this.field6660.method4043(var6);
                if (var7 == -1 && var3.size() <= var4) {
-                  for (Class8848 var9 : var3) {
+                  for (ItemStack var9 : var3) {
                      if (var9.method32132(var6) && var9.method32179() != var9.method32113() && var9.method32179() + var6.method32179() <= var9.method32113()) {
                         var9.method32181(var6.method32179());
                         var6.method32180(0);
@@ -199,7 +198,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    private int method5875() {
       int var3 = 0;
 
-      for (Class8848 var5 : this.field6660.field5439) {
+      for (ItemStack var5 : this.field6660.field5439) {
          if (var5.method32105()) {
             var3++;
          }

@@ -10,7 +10,7 @@ public class Class3695 extends Class3676<Class880> {
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       Class6947 var7 = var2.method2992();
       Class7699 var8 = var1.method6957(var2.method3432());
       if (var8 == null) {

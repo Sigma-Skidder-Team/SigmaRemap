@@ -95,7 +95,7 @@ public class Class9830 {
       Class9764 var11 = Class9764.method38389(var8, 0, var9, var10.method8304(), 0, var10.method8306());
       BlockPos var12 = new BlockPos(Math.min(var8, var10.method8304()), 0, Math.min(var9, var10.method8306()));
       List var13 = method38793(var1, var12.method8304(), var12.method8306());
-      int var14 = Class9679.method37782(var1, 4, 8);
+      int var14 = MathHelper.method37782(var1, 4, 8);
 
       for (int var15 = 0; var15 < var14; var15++) {
          if (!var13.isEmpty()) {
@@ -115,14 +115,14 @@ public class Class9830 {
 
    private static List<BlockPos> method38793(Random var0, int var1, int var2) {
       ArrayList var5 = Lists.newArrayList();
-      var5.add(new BlockPos(var1 - 16 + Class9679.method37782(var0, 1, 8), 90, var2 + 16 + Class9679.method37782(var0, 1, 7)));
-      var5.add(new BlockPos(var1 - 16 + Class9679.method37782(var0, 1, 8), 90, var2 + Class9679.method37782(var0, 1, 7)));
-      var5.add(new BlockPos(var1 - 16 + Class9679.method37782(var0, 1, 8), 90, var2 - 16 + Class9679.method37782(var0, 4, 8)));
-      var5.add(new BlockPos(var1 + Class9679.method37782(var0, 1, 7), 90, var2 + 16 + Class9679.method37782(var0, 1, 7)));
-      var5.add(new BlockPos(var1 + Class9679.method37782(var0, 1, 7), 90, var2 - 16 + Class9679.method37782(var0, 4, 6)));
-      var5.add(new BlockPos(var1 + 16 + Class9679.method37782(var0, 1, 7), 90, var2 + 16 + Class9679.method37782(var0, 3, 8)));
-      var5.add(new BlockPos(var1 + 16 + Class9679.method37782(var0, 1, 7), 90, var2 + Class9679.method37782(var0, 1, 7)));
-      var5.add(new BlockPos(var1 + 16 + Class9679.method37782(var0, 1, 7), 90, var2 - 16 + Class9679.method37782(var0, 4, 8)));
+      var5.add(new BlockPos(var1 - 16 + MathHelper.method37782(var0, 1, 8), 90, var2 + 16 + MathHelper.method37782(var0, 1, 7)));
+      var5.add(new BlockPos(var1 - 16 + MathHelper.method37782(var0, 1, 8), 90, var2 + MathHelper.method37782(var0, 1, 7)));
+      var5.add(new BlockPos(var1 - 16 + MathHelper.method37782(var0, 1, 8), 90, var2 - 16 + MathHelper.method37782(var0, 4, 8)));
+      var5.add(new BlockPos(var1 + MathHelper.method37782(var0, 1, 7), 90, var2 + 16 + MathHelper.method37782(var0, 1, 7)));
+      var5.add(new BlockPos(var1 + MathHelper.method37782(var0, 1, 7), 90, var2 - 16 + MathHelper.method37782(var0, 4, 6)));
+      var5.add(new BlockPos(var1 + 16 + MathHelper.method37782(var0, 1, 7), 90, var2 + 16 + MathHelper.method37782(var0, 3, 8)));
+      var5.add(new BlockPos(var1 + 16 + MathHelper.method37782(var0, 1, 7), 90, var2 + MathHelper.method37782(var0, 1, 7)));
+      var5.add(new BlockPos(var1 + 16 + MathHelper.method37782(var0, 1, 7), 90, var2 - 16 + MathHelper.method37782(var0, 4, 8)));
       return var5;
    }
 

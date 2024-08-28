@@ -52,7 +52,7 @@ public class Class1036 extends Class1035 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new Class8848(Class8514.field37818));
+      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37818));
    }
 
    @Override
@@ -76,14 +76,14 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public boolean method4253(Class8848 var1) {
+   public boolean method4253(ItemStack var1) {
       return var1.method32107() != Class8514.field37818 ? false : super.method4253(var1);
    }
 
    @Override
    public void method4258() {
       this.field5024.method6820().method22503("piglinBruteBrain");
-      this.method2992().method21432((Class1657)this.field5024, this);
+      this.method2992().method21432((ServerWorld)this.field5024, this);
       this.field5024.method6820().method22505();
       Class9743.method38199(this);
       Class9743.method38205(this);

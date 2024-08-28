@@ -393,7 +393,7 @@ public class Class3222 extends Block {
 
    public static int method11629(int var0) {
       Class7680 var3 = field18657[var0];
-      return Class9679.method37805(var3.method25269(), var3.method25270(), var3.method25271());
+      return MathHelper.method37805(var3.method25269(), var3.method25270(), var3.method25271());
    }
 
    private void method11630(Class1655 var1, Random var2, BlockPos var3, Class7680 var4, Direction var5, Direction var6, float var7, float var8) {
@@ -477,7 +477,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
       if (!var4.field4919.field29610) {
          return Class2274.field14820;
       } else {
@@ -510,8 +510,8 @@ public class Class3222 extends Block {
       for (int var2 = 0; var2 <= 15; var2++) {
          float var3 = (float)var2 / 15.0F;
          float var4 = var3 * 0.6F + (!(var3 > 0.0F) ? 0.3F : 0.4F);
-         float var5 = Class9679.method37777(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
-         float var6 = Class9679.method37777(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
+         float var5 = MathHelper.method37777(var3 * var3 * 0.7F - 0.5F, 0.0F, 1.0F);
+         float var6 = MathHelper.method37777(var3 * var3 * 0.6F - 0.7F, 0.0F, 1.0F);
          field18657[var2] = new Class7680(var4, var5, var6);
       }
    }

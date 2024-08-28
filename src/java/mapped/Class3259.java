@@ -8,8 +8,8 @@ public class Class3259 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       if (var2.field4930 == null) {
          var1.method6743(
             (PlayerEntity)null,
@@ -46,7 +46,7 @@ public class Class3259 extends Class3257 implements Class3260 {
          );
       }
 
-      return Class6794.<Class8848>method20700(var6, var1.method6714());
+      return Class6794.<ItemStack>method20700(var6, var1.method6714());
    }
 
    @Override

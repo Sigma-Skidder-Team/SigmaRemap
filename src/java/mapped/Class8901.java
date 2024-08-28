@@ -139,7 +139,7 @@ public class Class8901 {
    }
 
    public static boolean method32449(int var0, int var1, int var2, boolean var3) {
-      Class6488 var6 = field40291.field1339.method3421() != null ? field40291.field1339.method3421().method3389() : field40291.field1339.method3389();
+      Class6488 var6 = field40291.field1339.getRidingEntity() != null ? field40291.field1339.getRidingEntity().method3389() : field40291.field1339.method3389();
       Class6488 var7 = new Class6488(
          (double)((float)var0 + 0.5F) - var6.method19676() / 2.0,
          (double)var1,

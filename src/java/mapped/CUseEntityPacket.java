@@ -3,31 +3,31 @@ package mapped;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class Class5505 implements Packet<Class5110> {
+public class CUseEntityPacket implements Packet<Class5110> {
    private static String[] field24438;
    private int field24439;
    private Class1968 field24440;
    private Vector3d field24441;
-   private Class79 field24442;
+   private Hand field24442;
    private boolean field24443;
 
-   public Class5505() {
+   public CUseEntityPacket() {
    }
 
-   public Class5505(Entity var1, boolean var2) {
+   public CUseEntityPacket(Entity var1, boolean var2) {
       this.field24439 = var1.method3205();
       this.field24440 = Class1968.field12833;
       this.field24443 = var2;
    }
 
-   public Class5505(Entity var1, Class79 var2, boolean var3) {
+   public CUseEntityPacket(Entity var1, Hand var2, boolean var3) {
       this.field24439 = var1.method3205();
       this.field24440 = Class1968.field12832;
       this.field24442 = var2;
       this.field24443 = var3;
    }
 
-   public Class5505(Entity var1, Class79 var2, Vector3d var3, boolean var4) {
+   public CUseEntityPacket(Entity var1, Hand var2, Vector3d var3, boolean var4) {
       this.field24439 = var1.method3205();
       this.field24440 = Class1968.field12834;
       this.field24442 = var2;
@@ -44,7 +44,7 @@ public class Class5505 implements Packet<Class5110> {
       }
 
       if (this.field24440 == Class1968.field12832 || this.field24440 == Class1968.field12834) {
-         this.field24442 = var1.<Class79>method35712(Class79.class);
+         this.field24442 = var1.<Hand>method35712(Hand.class);
       }
 
       this.field24443 = var1.readBoolean();
@@ -68,11 +68,11 @@ public class Class5505 implements Packet<Class5110> {
    }
 
    public void method17180(Class5110 var1) {
-      var1.method15620(this);
+      var1.processUseEntity(this);
    }
 
    @Nullable
-   public Entity method17315(Class1655 var1) {
+   public Entity getEntityFromWorld(Class1655 var1) {
       return var1.method6774(this.field24439);
    }
 
@@ -81,7 +81,7 @@ public class Class5505 implements Packet<Class5110> {
    }
 
    @Nullable
-   public Class79 method17317() {
+   public Hand getHand() {
       return this.field24442;
    }
 
@@ -89,7 +89,7 @@ public class Class5505 implements Packet<Class5110> {
       return this.field24441;
    }
 
-   public boolean method17319() {
+   public boolean func_241792_e_() {
       return this.field24443;
    }
 }

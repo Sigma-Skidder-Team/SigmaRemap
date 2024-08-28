@@ -76,9 +76,9 @@ public final class Class7680 {
    }
 
    public void method25274(float var1, float var2) {
-      this.field32903 = Class9679.method37777(this.field32903, var1, var2);
-      this.field32904 = Class9679.method37777(this.field32904, var1, var2);
-      this.field32905 = Class9679.method37777(this.field32905, var1, var2);
+      this.field32903 = MathHelper.method37777(this.field32903, var1, var2);
+      this.field32904 = MathHelper.method37777(this.field32904, var1, var2);
+      this.field32905 = MathHelper.method37777(this.field32905, var1, var2);
    }
 
    public void method25275(float var1, float var2, float var3) {
@@ -112,7 +112,7 @@ public final class Class7680 {
    public boolean method25280() {
       float var3 = this.field32903 * this.field32903 + this.field32904 * this.field32904 + this.field32905 * this.field32905;
       if (!((double)var3 < 1.0E-5)) {
-         float var4 = Class9679.method37815(var3);
+         float var4 = MathHelper.method37815(var3);
          this.field32903 *= var4;
          this.field32904 *= var4;
          this.field32905 *= var4;

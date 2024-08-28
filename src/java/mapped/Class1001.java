@@ -33,9 +33,9 @@ public class Class1001 extends Entity {
    @Override
    public void tick() {
       this.field5523++;
-      if (this.field5024 instanceof Class1657) {
+      if (this.field5024 instanceof ServerWorld) {
          BlockPos var3 = this.method3432();
-         if (((Class1657)this.field5024).method6968() != null && this.field5024.method6738(var3).method23393()) {
+         if (((ServerWorld)this.field5024).method6968() != null && this.field5024.method6738(var3).method23393()) {
             this.field5024.method6730(var3, Class3397.method12009(this.field5024, var3));
          }
       }
@@ -95,8 +95,8 @@ public class Class1001 extends Entity {
    }
 
    private void method4141(Class8654 var1) {
-      if (this.field5024 instanceof Class1657) {
-         Class7819 var4 = ((Class1657)this.field5024).method6968();
+      if (this.field5024 instanceof ServerWorld) {
+         Class7819 var4 = ((ServerWorld)this.field5024).method6968();
          if (var4 != null) {
             var4.method26126(this, var1);
          }

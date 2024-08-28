@@ -22,17 +22,17 @@ public class Class3285 extends Class3257 {
       }
    }
 
-   public static int method11818(Class8848 var0) {
+   public static int method11818(ItemStack var0) {
       return var0.method32142().method122("generation");
    }
 
-   public static int method11819(Class8848 var0) {
+   public static int method11819(ItemStack var0) {
       Class39 var3 = var0.method32142();
       return var3 == null ? 0 : var3.method131("pages", 8).size();
    }
 
    @Override
-   public ITextComponent method11731(Class8848 var1) {
+   public ITextComponent method11731(ItemStack var1) {
       if (var1.method32141()) {
          Class39 var4 = var1.method32142();
          String var5 = var4.method126("title");
@@ -45,7 +45,7 @@ public class Class3285 extends Class3257 {
    }
 
    @Override
-   public void method11730(Class8848 var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
+   public void method11730(ItemStack var1, Class1655 var2, List<ITextComponent> var3, Class2216 var4) {
       if (var1.method32141()) {
          Class39 var7 = var1.method32142();
          String var8 = var7.method126("author");
@@ -70,14 +70,14 @@ public class Class3285 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       var2.method2769(var6, var3);
       var2.method2913(Class8876.field40098.method172(this));
-      return Class6794.<Class8848>method20700(var6, var1.method6714());
+      return Class6794.<ItemStack>method20700(var6, var1.method6714());
    }
 
-   public static boolean method11820(Class8848 var0, Class6619 var1, PlayerEntity var2) {
+   public static boolean method11820(ItemStack var0, Class6619 var1, PlayerEntity var2) {
       Class39 var5 = var0.method32142();
       if (var5 != null && !var5.method132("resolved")) {
          var5.method115("resolved", true);
@@ -109,7 +109,7 @@ public class Class3285 extends Class3257 {
    }
 
    @Override
-   public boolean method11732(Class8848 var1) {
+   public boolean method11732(ItemStack var1) {
       return true;
    }
 }

@@ -76,7 +76,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15726(Class5499 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1337 = new Class7314(this.field23272, this);
       if (!this.field23269.method30702()) {
          Class8384.method29379();
@@ -99,7 +99,7 @@ public class ClientPlayNetHandler implements Class5116 {
          this.field23272.field1339 = this.field23272.field1337.createPlayer(this.field23273, new Class8286(), new Class6943());
          this.field23272.field1339.field5031 = -180.0F;
          if (this.field23272.method1531() != null) {
-            this.field23272.method1531().method6489(this.field23272.field1339.method3375());
+            this.field23272.method1531().method6489(this.field23272.field1339.getUniqueID());
          }
       }
 
@@ -123,7 +123,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15692(Class5487 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       double var4 = var1.method17258();
       double var6 = var1.method17259();
       double var8 = var1.method17260();
@@ -265,7 +265,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                                );
                                                             }
                                                          } else {
-                                                            var11 = new Class888(this.field23273, var4, var6, var8, Class8848.field39973);
+                                                            var11 = new Class888(this.field23273, var4, var6, var8, ItemStack.field39973);
                                                          }
                                                       } else {
                                                          var11 = new Class897(this.field23273, var4, var6, var8);
@@ -353,7 +353,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15693(Class5520 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       double var4 = var1.method17354();
       double var6 = var1.method17355();
       double var8 = var1.method17356();
@@ -367,7 +367,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15696(Class5470 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class998 var4 = new Class998(this.field23273, var1.method17196(), var1.method17197(), var1.method17198());
       var4.method3206(var1.method17194());
       var4.method3374(var1.method17195());
@@ -376,7 +376,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15739(Class5590 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17565());
       if (var4 != null) {
          var4.method3325((double)var1.method17566() / 8000.0, (double)var1.method17567() / 8000.0, (double)var1.method17568() / 8000.0);
@@ -385,7 +385,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15738(Class5553 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17470());
       if (var4 != null && var1.method17469() != null) {
          var4.method3210().method35454(var1.method17469());
@@ -394,7 +394,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15697(Class5596 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       double var4 = var1.method17594();
       double var6 = var1.method17595();
       double var8 = var1.method17596();
@@ -413,7 +413,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15751(Class5595 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17585());
       if (var4 != null) {
          double var5 = var1.method17586();
@@ -431,7 +431,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15736(Class5608 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       if (Class974.method4035(var1.method17633())) {
          this.field23272.field1339.field4902.field5443 = var1.method17633();
       }
@@ -439,7 +439,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15727(Class5476 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17233(this.field23273);
       if (var4 != null && !var4.method3418()) {
          if (!var1.method17237()) {
@@ -462,7 +462,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15735(Class5516 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17346(this.field23273);
       if (var4 != null) {
          float var5 = (float)(var1.method17347() * 360) / 256.0F;
@@ -472,7 +472,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15732(Class5484 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
 
       for (int var4 = 0; var4 < var1.method17251().length; var4++) {
          int var5 = var1.method17251()[var4];
@@ -482,7 +482,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15728(Class5473 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.field1339;
       Vector3d var5 = var4.method3433();
       boolean var6 = var1.method17220().contains(Class2033.field13198);
@@ -524,7 +524,7 @@ public class ClientPlayNetHandler implements Class5116 {
          var4.field5050 = var4.field5050 + var1.method17216();
       }
 
-      if (var4.field5055 > 0 && var4.method3421() != null) {
+      if (var4.field5055 > 0 && var4.getRidingEntity() != null) {
          var4.method2895();
       }
 
@@ -554,14 +554,14 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15707(Class5549 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = 19 | (!var1.method17462() ? 0 : 128);
       var1.method17461((var2, var3) -> this.field23273.method6725(var2, var3, var4));
    }
 
    @Override
    public void method15723(Class5526 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17378();
       int var5 = var1.method17379();
       Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Class8907>method32453(Class2348.field16106), var1.method17384()) : null;
@@ -587,7 +587,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15724(Class5567 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17492();
       int var5 = var1.method17493();
       Class1705 var6 = this.field23273.method6883();
@@ -604,7 +604,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15705(Class5607 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23273.method6851(var1.method17632(), var1.method17631());
    }
 
@@ -631,7 +631,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15750(Class5467 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17186());
       Object var5 = (Class880)this.field23273.method6774(var1.method17187());
       if (var5 == null) {
@@ -670,7 +670,7 @@ public class ClientPlayNetHandler implements Class5116 {
             this.field23273.method6848(var1.method17186());
          } else {
             Class1000 var6 = (Class1000)var4;
-            Class8848 var7 = var6.method4124();
+            ItemStack var7 = var6.method4124();
             var7.method32182(var1.method17188());
             if (var7.method32105()) {
                this.field23273.method6848(var1.method17186());
@@ -680,14 +680,14 @@ public class ClientPlayNetHandler implements Class5116 {
    }
 
    @Override
-   public void method15706(Class5616 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+   public void method15706(SChatPacket var1) {
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1298.method5988(var1.method17650(), var1.method17648(), var1.method17651());
    }
 
    @Override
    public void method15698(Class5469 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17192());
       if (var4 != null) {
          if (var1.method17193() != 0) {
@@ -703,25 +703,25 @@ public class ClientPlayNetHandler implements Class5116 {
                      }
                   } else {
                      PlayerEntity var5 = (PlayerEntity)var4;
-                     var5.method2757(false, false);
+                     var5.stopSleepInBed(false, false);
                   }
                } else {
                   var4.method3069();
                }
             } else {
                Class880 var6 = (Class880)var4;
-               var6.method2820(Class79.field183);
+               var6.swingArm(Hand.field183);
             }
          } else {
             Class880 var7 = (Class880)var4;
-            var7.method2820(Class79.field182);
+            var7.swingArm(Hand.field182);
          }
       }
    }
 
    @Override
    public void method15694(Class5582 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       double var4 = var1.method17538();
       double var6 = var1.method17539();
       double var8 = var1.method17540();
@@ -765,20 +765,20 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15746(Class5577 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1338.method6833(var1.method17514());
       this.field23272.field1338.method6834(var1.method17515());
    }
 
    @Override
    public void method15745(Class5525 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1338.method6882(var1.method17372(), var1.method17373());
    }
 
    @Override
    public void method15719(Class5485 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17253());
       if (var4 != null) {
          boolean var5 = var4.method3417(this.field23272.field1339);
@@ -800,27 +800,27 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15718(Class5593 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17577());
       if (var4 instanceof Class1006) {
          ((Class1006)var4).method4299(var1.method17578());
       }
    }
 
-   private static Class8848 method15785(PlayerEntity var0) {
-      for (Class79 var6 : Class79.values()) {
-         Class8848 var7 = var0.method3094(var6);
+   private static ItemStack method15785(PlayerEntity var0) {
+      for (Hand var6 : Hand.values()) {
+         ItemStack var7 = var0.method3094(var6);
          if (var7.method32107() == Class8514.field38126) {
             return var7;
          }
       }
 
-      return new Class8848(Class8514.field38126);
+      return new ItemStack(Class8514.field38126);
    }
 
    @Override
    public void method15717(Class5464 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17178(this.field23273);
       if (var4 != null) {
          if (var1.method17179() != 21) {
@@ -842,7 +842,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15742(Class5592 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1339.method5391(var1.method17574());
       this.field23272.field1339.method2932().method37578(var1.method17575());
       this.field23272.field1339.method2932().method37579(var1.method17576());
@@ -850,13 +850,13 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15741(Class5507 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1339.method5402(var1.method17321(), var1.method17322(), var1.method17323());
    }
 
    @Override
    public void method15734(Class5545 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class8705 var4 = var1.method17433();
       Class9535 var5 = var1.method17432();
       ClientPlayerEntity var6 = this.field23272.field1339;
@@ -910,7 +910,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15720(Class5515 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class7782 var4 = new Class7782(
          this.field23272.field1338, (Entity)null, var1.method17341(), var1.method17342(), var1.method17343(), var1.method17344(), var1.method17345()
       );
@@ -922,11 +922,11 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15712(Class5508 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17326());
-      if (var4 instanceof Class1068) {
+      if (var4 instanceof AbstractHorseEntity) {
          ClientPlayerEntity var5 = this.field23272.field1339;
-         Class1068 var6 = (Class1068)var4;
+         AbstractHorseEntity var6 = (AbstractHorseEntity)var4;
          Class927 var7 = new Class927(var1.method17325());
          Class5827 var8 = new Class5827(var1.method17324(), var5.field4902, var7, var6);
          var5.field4905 = var8;
@@ -936,15 +936,15 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15776(Class5498 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class7541.method24653(var1.method17285(), this.field23272, var1.method17284(), var1.method17286());
    }
 
    @Override
    public void method15714(Class5501 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.field1339;
-      Class8848 var5 = var1.method17305();
+      ItemStack var5 = var1.method17305();
       int var6 = var1.method17304();
       this.field23272.method1567().method37028(var5);
       if (var1.method17303() != -1) {
@@ -957,7 +957,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
             if (var1.method17303() == 0 && var1.method17304() >= 36 && var6 < 45) {
                if (!var5.method32105()) {
-                  Class8848 var9 = var4.field4904.method18131(var6).method18265();
+                  ItemStack var9 = var4.field4904.method18131(var6).method18265();
                   if (var9.method32105() || var9.method32179() < var5.method32179()) {
                      var5.method32178(5);
                   }
@@ -977,7 +977,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15709(Class5542 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Object var4 = null;
       ClientPlayerEntity var5 = this.field23272.field1339;
       if (var1.method17421() != 0) {
@@ -995,7 +995,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15711(Class5614 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.field1339;
       if (var1.method17644() != 0) {
          if (var1.method17644() == var4.field4905.field25471) {
@@ -1008,7 +1008,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15702(Class5491 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Object var4 = this.field23273.method6759(var1.method17271());
       if (!(var4 instanceof Class954)) {
          var4 = new Class954();
@@ -1020,7 +1020,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15703(Class5610 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       BlockPos var4 = var1.method17636();
       Class944 var5 = this.field23272.field1338.method6759(var4);
       int var6 = var1.method17637();
@@ -1048,7 +1048,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15713(Class5480 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.field1339;
       if (var4.field4905 != null && var4.field4905.field25471 == var1.method17239()) {
          var4.field4905.method18138(var1.method17240(), var1.method17241());
@@ -1057,38 +1057,38 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15740(Class5588 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17561());
       if (var4 != null) {
-         var1.method17562().forEach(var1x -> var4.method2944((Class2106)var1x.getFirst(), (Class8848)var1x.getSecond()));
+         var1.method17562().forEach(var1x -> var4.method2944((Class2106)var1x.getFirst(), (ItemStack)var1x.getSecond()));
       }
    }
 
    @Override
    public void method15710(Class5586 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1339.method5390();
    }
 
    @Override
    public void method15704(Class5495 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1338.method6787(var1.method17278(), var1.method17281(), var1.method17279(), var1.method17280());
    }
 
    @Override
    public void method15701(Class5524 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1338.method6803(var1.method17369(), var1.method17370(), var1.method17371());
    }
 
    @Override
    public void method15721(Class5534 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.field1339;
       Class9385 var5 = var1.method17397();
       float var6 = var1.method17398();
-      int var7 = Class9679.method37767(var6 + 0.5F);
+      int var7 = MathHelper.method37767(var6 + 0.5F);
       if (var5 != Class5534.field24560) {
          if (var5 != Class5534.field24561) {
             if (var5 != Class5534.field24562) {
@@ -1206,7 +1206,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15708(Class5609 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class194 var4 = this.field23272.field1295.method756();
       String var5 = Class3316.method11864(var1.method17634());
       Class7529 var6 = this.field23272.field1338.method6798(var5);
@@ -1228,7 +1228,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15725(Class5481 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       if (!var1.method17242()) {
          this.field23272.field1338.method6999(var1.method17243(), var1.method17245(), var1.method17244());
       } else {
@@ -1238,13 +1238,13 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15765(Class5563 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23277.method31508(var1);
    }
 
    @Override
    public void method15766(Class5513 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ResourceLocation var4 = var1.method17335();
       if (var4 != null) {
          Class7952 var5 = this.field23277.method31509().method28599(var4);
@@ -1256,25 +1256,25 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15768(Class5617 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23283 = new CommandDispatcher(var1.method17658());
    }
 
    @Override
    public void method15769(Class5488 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.method1546().method1013(var1.method17268(), var1.method17269());
    }
 
    @Override
    public void method15770(Class5543 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23278.method20137(var1.method17424(), var1.method17425());
    }
 
    @Override
    public void method15771(Class5512 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23284.method1039(var1.method17331());
       Class7010 var4 = this.field23272.<Class9266>method1557(Class266.field1032);
       var4.method21735();
@@ -1286,7 +1286,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15772(Class5602 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Vector3d var4 = var1.method17624(this.field23273);
       if (var4 != null) {
          this.field23272.field1339.method2787(var1.method17623(), var4);
@@ -1295,7 +1295,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15773(Class5510 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       if (!this.field23280.method14176(var1.method17328(), var1.method17329())) {
          field23267.debug("Got unhandled response to tag query {}", var1.method17328());
       }
@@ -1303,7 +1303,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15699(Class5548 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
 
       for (Entry var5 : var1.method17459().entrySet()) {
          Class9007 var6 = (Class9007)var5.getKey();
@@ -1318,7 +1318,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15700(Class5572 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class6943 var4 = this.field23272.field1339.method5397();
       var4.method21373(var1.method17501());
       Class2338 var5 = var1.method17502();
@@ -1355,7 +1355,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15753(Class5537 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17407());
       if (var4 instanceof Class880) {
          Class7144 var5 = Class7144.method22287(var1.method17408());
@@ -1369,7 +1369,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15754(Class5611 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class8933 var4 = var1.method17639();
       Multimap var5 = Class8384.method29380(var4);
       if (var5.isEmpty()) {
@@ -1378,7 +1378,7 @@ public class ClientPlayNetHandler implements Class5116 {
             var4.method32661();
          }
 
-         this.field23272.<Class8848>method1557(Class266.field1031).method21736();
+         this.field23272.<ItemStack>method1557(Class266.field1031).method21736();
       } else {
          field23267.warn("Incomplete server tags, disconnecting. Missing: {}", var5);
          this.field23269.method30701(new TranslationTextComponent("multiplayer.disconnect.missing_tags"));
@@ -1387,7 +1387,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15755(Class5565 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       if (var1.field24693 == Class1900.field11157) {
          Entity var4 = this.field23273.method6774(var1.field24694);
          if (var4 == this.field23272.field1339) {
@@ -1402,14 +1402,14 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15756(Class5535 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23274.method20050(var1.method17400());
       this.field23274.method20051(var1.method17399());
    }
 
    @Override
    public void method15757(Class5560 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17480(this.field23273);
       if (var4 != null) {
          this.field23272.method1551(var4);
@@ -1418,13 +1418,13 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15758(Class5474 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       var1.method17221(this.field23273.method6810());
    }
 
    @Override
    public void method15759(Class5591 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class2301 var4 = var1.method17569();
       ITextComponent var5 = null;
       ITextComponent var6 = null;
@@ -1456,7 +1456,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15733(Class5518 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17349(this.field23273);
       if (var4 instanceof Class880) {
          ((Class880)var4).method3039(var1.method17350());
@@ -1465,7 +1465,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15731(Class5503 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
 
       for (Class8790 var5 : var1.method17307()) {
          if (var1.method17308() == Class2176.field14285) {
@@ -1507,7 +1507,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15730(Class5599 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.field1339;
       var4.field4919.field29607 = var1.method17603();
       var4.field4919.field29609 = var1.method17605();
@@ -1519,7 +1519,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15747(Class5584 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272
          .field1338
          .method6743(
@@ -1536,7 +1536,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15748(Class5546 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17443());
       if (var4 != null) {
          this.field23272.field1338.method6744(this.field23272.field1339, var4, var1.method17441(), var1.method17442(), var1.method17444(), var1.method17445());
@@ -1545,7 +1545,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15749(Class5475 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272
          .method1546()
          .method1000(
@@ -1650,13 +1650,13 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15762(Class5472 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1298.method5995().method5955(var1);
    }
 
    @Override
    public void method15763(Class5574 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       if (var1.method17507() != 0) {
          this.field23272.field1339.method2976().method19638(var1.method17506(), var1.method17507());
       } else {
@@ -1666,7 +1666,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15764(Class5536 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23272.field1339.method3415();
       if (var4 != this.field23272.field1339 && var4.method3418()) {
          var4.method3269(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
@@ -1676,8 +1676,8 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15775(Class5509 var1) {
-      Class8802.method31780(var1, this, this.field23272);
-      Class8848 var4 = this.field23272.field1339.method3094(var1.method17327());
+      PacketThreadUtil.method31780(var1, this, this.field23272);
+      ItemStack var4 = this.field23272.field1339.method3094(var1.method17327());
       if (var4.method32107() == Class8514.field38048) {
          this.field23272.displayGuiScreen(new Class870(new Class7501(var4)));
       }
@@ -1685,7 +1685,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15715(Class5532 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       ResourceLocation var4 = var1.method17393();
       PacketBuffer var5 = null;
 
@@ -1914,7 +1914,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15695(Class5576 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class6886 var4 = this.field23273.method6805();
       String var5 = var1.method17510();
       if (var1.method17512() != 0) {
@@ -1936,7 +1936,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15744(Class5556 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class6886 var4 = this.field23273.method6805();
       String var5 = var1.method17474();
       switch (Class8047.field34567[var1.method17476().ordinal()]) {
@@ -1952,7 +1952,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15737(Class5615 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class6886 var4 = this.field23273.method6805();
       String var5 = var1.method17647();
       Class8375 var6 = var5 != null ? var4.method20975(var5) : null;
@@ -1961,7 +1961,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15743(Class5581 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class6886 var4 = this.field23273.method6805();
       Class8218 var5;
       if (var1.method17528() != 0) {
@@ -2007,7 +2007,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15729(Class5547 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       if (var1.method17455() == 0) {
          double var4 = (double)(var1.method17454() * var1.method17451());
          double var6 = (double)(var1.method17454() * var1.method17452());
@@ -2049,7 +2049,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15752(Class5550 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.method6774(var1.method17463());
       if (var4 != null) {
          if (!(var4 instanceof Class880)) {
@@ -2076,7 +2076,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15767(Class5589 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class5812 var4 = this.field23272.field1339.field4905;
       if (var4.field25471 == var1.method17564() && var4.method18140(this.field23272.field1339)) {
          this.field23284.method1035(var1.method17563()).ifPresent(var2 -> {
@@ -2090,7 +2090,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15774(Class5523 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17360();
       int var5 = var1.method17361();
       Class196 var6 = this.field23273.method6883().method7348();
@@ -2106,7 +2106,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15777(Class5504 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       Class5812 var4 = this.field23272.field1339.field4905;
       if (var1.method17309() == var4.field25471 && var4 instanceof Class5826) {
          ((Class5826)var4).method18216(new Class46(var1.method17310().method166()));
@@ -2119,20 +2119,20 @@ public class ClientPlayNetHandler implements Class5116 {
 
    @Override
    public void method15778(Class5502 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23281 = var1.method17306();
       this.field23273.method6883().method7403(var1.method17306());
    }
 
    @Override
    public void method15779(Class5579 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23273.method6883().method7402(var1.method17522(), var1.method17523());
    }
 
    @Override
    public void method15780(Class5585 var1) {
-      Class8802.method31780(var1, this, this.field23272);
+      PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.field1337.method23161(this.field23273, var1.method17557(), var1.method17556(), var1.method17559(), var1.method17558());
    }
 

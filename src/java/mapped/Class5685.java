@@ -1,6 +1,6 @@
 package mapped;
 
-public abstract class Class5685<T extends Class1068, M extends Class2856<T>> extends Class5651<T, M> {
+public abstract class Class5685<T extends AbstractHorseEntity, M extends Class2856<T>> extends Class5651<T, M> {
    private final float field25052;
 
    public Class5685(Class8853 var1, M var2, float var3) {

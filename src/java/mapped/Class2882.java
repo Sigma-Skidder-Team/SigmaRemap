@@ -40,7 +40,7 @@ public class Class2882<T extends Class1108> extends Class2803<T> {
    }
 
    public void method10997(T var1, float var2, float var3, float var4) {
-      float var7 = Class9679.method37821(var4, var1.field6084, var1.field6083);
+      float var7 = MathHelper.method37821(var4, var1.field6084, var1.field6083);
       if (var7 < 0.0F) {
          var7 = 0.0F;
       }

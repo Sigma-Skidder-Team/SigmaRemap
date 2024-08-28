@@ -9,7 +9,7 @@ public class Class8321 {
    private final int field35748;
 
    public Class8321(int var1, int var2) {
-      this(var1, var2, new long[Class9679.method37804(var2 * var1, 64) / 64]);
+      this(var1, var2, new long[MathHelper.method37804(var2 * var1, 64) / 64]);
    }
 
    public Class8321(int var1, int var2, long[] var3) {
@@ -18,7 +18,7 @@ public class Class8321 {
       this.field35746 = var1;
       this.field35745 = var3;
       this.field35747 = (1L << var1) - 1L;
-      int var6 = Class9679.method37804(var2 * var1, 64) / 64;
+      int var6 = MathHelper.method37804(var2 * var1, 64) / 64;
       if (var3.length != var6) {
          throw new IllegalArgumentException("Invalid length given for storage, got: " + var3.length + " but expected: " + var6);
       }

@@ -18,7 +18,7 @@ public class Class5256 extends PremiumModule {
     @EventTarget
     public void method16416(TickEvent var1) {
         if (this.method15996()) {
-            if (mc.field1339.method3421() != null) {
+            if (mc.field1339.getRidingEntity() != null) {
                 float var4 = Class9567.method37086();
                 float var5 = this.method15977("Speed");
                 double var6 = Math.cos(Math.toRadians(var4)) * (double) var5;
@@ -28,7 +28,7 @@ public class Class5256 extends PremiumModule {
                     var8 = 0.0;
                 }
 
-                Entity var10 = mc.field1339.method3421();
+                Entity var10 = mc.field1339.getRidingEntity();
                 var10.field5031 = mc.field1339.field5031;
                 var10.method3435(var6, !mc.field1339.field4981 ? (!this.field23643 ? 0.0 : (double) (-var5)) : (double) var5, var8);
             }
@@ -38,8 +38,8 @@ public class Class5256 extends PremiumModule {
     @EventTarget
     private void method16417(Class4430 var1) {
         if (this.method15996()) {
-            if (mc.field1339.method3421() != null) {
-                if (!mc.field1339.method3421().field5036) {
+            if (mc.field1339.getRidingEntity() != null) {
+                if (!mc.field1339.getRidingEntity().field5036) {
                     if (var1.method13977() == mc.field1299.field44637.field13070.field34875) {
                         var1.method13900(true);
                         this.field23643 = true;
@@ -56,8 +56,8 @@ public class Class5256 extends PremiumModule {
                 this.field23643 = false;
             }
 
-            if (mc.field1339.method3421() != null) {
-                if (!mc.field1339.method3421().field5036) {
+            if (mc.field1339.getRidingEntity() != null) {
+                if (!mc.field1339.getRidingEntity().field5036) {
                     if (var1.method13973() == mc.field1299.field44637.field13070.field34875) {
                         var1.method13900(true);
                         this.field23643 = false;

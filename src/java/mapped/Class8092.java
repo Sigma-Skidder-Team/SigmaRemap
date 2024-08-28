@@ -49,7 +49,7 @@ public class Class8092 {
       }
 
       if (!this.field34812.method4230().method21664()) {
-         this.field34812.field4967 = Class9679.method37796(this.field34812.field4967, this.field34812.field4965, (float)this.field34812.method4260());
+         this.field34812.field4967 = MathHelper.method37796(this.field34812.field4967, this.field34812.field4965, (float)this.field34812.method4260());
       }
    }
 
@@ -77,19 +77,19 @@ public class Class8092 {
       double var3 = this.field34816 - this.field34812.getPosX();
       double var5 = this.field34817 - this.field34812.method3442();
       double var7 = this.field34818 - this.field34812.getPosZ();
-      double var9 = (double)Class9679.method37766(var3 * var3 + var7 * var7);
-      return (float)(-(Class9679.method37814(var5, var9) * 180.0F / (float)Math.PI));
+      double var9 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
+      return (float)(-(MathHelper.method37814(var5, var9) * 180.0F / (float)Math.PI));
    }
 
    public float method28048() {
       double var3 = this.field34816 - this.field34812.getPosX();
       double var5 = this.field34818 - this.field34812.getPosZ();
-      return (float)(Class9679.method37814(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
+      return (float)(MathHelper.method37814(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    public float method28049(float var1, float var2, float var3) {
-      float var6 = Class9679.method37794(var1, var2);
-      float var7 = Class9679.method37777(var6, -var3, var3);
+      float var6 = MathHelper.method37794(var1, var2);
+      float var7 = MathHelper.method37777(var6, -var3, var3);
       return var1 + var7;
    }
 

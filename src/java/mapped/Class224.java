@@ -10,7 +10,7 @@ public class Class224 extends Class223<Class1079, Class2881<Class1079>> {
 
    @Override
    public float method831(float var1) {
-      return Class9679.method37764(var1 * 0.02F) * 3.0F;
+      return MathHelper.method37764(var1 * 0.02F) * 3.0F;
    }
 
    @Override

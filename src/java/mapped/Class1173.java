@@ -71,7 +71,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
             } else {
                Class1193.method5699(var1, var4, var3, 32.0F, (float)var18, 32, 32, 256, 256);
                if (!this.field6353.method8654()) {
-                  if (!Class9246.method34773().isStable()) {
+                  if (!SharedConstants.method34773().isStable()) {
                      Class1193.method5699(var1, var4, var3, 64.0F, (float)var18, 32, 32, 256, 256);
                      if (var17) {
                         this.field6352.method6421(ImmutableList.of(Class1276.method6076().func_241878_f(), Class1276.method6077().func_241878_f()));
@@ -156,7 +156,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
          } else {
             TranslationTextComponent var3 = new TranslationTextComponent("selectWorld.backupQuestion");
             TranslationTextComponent var4 = new TranslationTextComponent(
-               "selectWorld.backupWarning", this.field6353.method8651(), Class9246.method34773().getName()
+               "selectWorld.backupWarning", this.field6353.method8651(), SharedConstants.method34773().getName()
             );
             this.field6351.displayGuiScreen(new Class1315(this.field6352, (var1, var2) -> {
                if (var1) {

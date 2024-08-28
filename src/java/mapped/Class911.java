@@ -107,7 +107,7 @@ public abstract class Class911 implements Class909 {
                      this.field5195++;
                   }
                });
-               var4.method1403().method18836(var5, this.field5198);
+               var4.getCommandManager().handleCommand(var5, this.field5198);
             } catch (Throwable var8) {
                Class4526 var6 = Class4526.method14413(var8, "Executing command block");
                Class8965 var7 = var6.method14410("Command to be executed");
@@ -147,7 +147,7 @@ public abstract class Class911 implements Class909 {
       }
    }
 
-   public abstract Class1657 method3567();
+   public abstract ServerWorld method3567();
 
    public abstract void method3568();
 

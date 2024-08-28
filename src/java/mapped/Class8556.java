@@ -64,7 +64,7 @@ public class Class8556<T> implements Class8555<T> {
          if (this.field38454 > 4) {
             if (this.field38454 >= 9) {
                this.field38453 = this.field38446;
-               this.field38454 = Class9679.method37802(this.field38448.method9270());
+               this.field38454 = MathHelper.method37802(this.field38448.method9270());
             } else {
                this.field38453 = new Class7834<T>(this.field38448, this.field38454, this, this.field38449, this.field38450);
             }
@@ -151,7 +151,7 @@ public class Class8556<T> implements Class8555<T> {
 
    public void method30502(Class41 var1, long[] var2) {
       this.method30490();
-      int var5 = Math.max(4, Class9679.method37802(var1.size()));
+      int var5 = Math.max(4, MathHelper.method37802(var1.size()));
       if (var5 != this.field38454) {
          this.method30493(var5);
       }
@@ -201,7 +201,7 @@ public class Class8556<T> implements Class8555<T> {
       Class41 var14 = new Class41();
       var6.method26248(var14);
       var1.method99(var2, var14);
-      int var15 = Math.max(4, Class9679.method37802(var14.size()));
+      int var15 = Math.max(4, MathHelper.method37802(var14.size()));
       Class7776 var12 = new Class7776(var15, 4096);
 
       for (int var13 = 0; var13 < var9.length; var13++) {

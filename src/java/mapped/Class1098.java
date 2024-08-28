@@ -126,20 +126,20 @@ public class Class1098 extends Class1013 {
    public void method4258() {
       if (!this.method4228().method20811()) {
          this.method3211(Class2090.field13619);
-         this.method3098(false);
+         this.setSprinting(false);
       } else {
          double var3 = this.method4228().method20812();
          if (var3 != 0.6) {
             if (var3 != 1.33) {
                this.method3211(Class2090.field13619);
-               this.method3098(false);
+               this.setSprinting(false);
             } else {
                this.method3211(Class2090.field13619);
-               this.method3098(true);
+               this.setSprinting(true);
             }
          } else {
             this.method3211(Class2090.field13624);
-            this.method3098(false);
+            this.setSprinting(false);
          }
       }
    }
@@ -185,7 +185,7 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public void method4501(PlayerEntity var1, Class8848 var2) {
+   public void method4501(PlayerEntity var1, ItemStack var2) {
       if (this.method4381(var2)) {
          this.method2863(Class6067.field26436, 1.0F, 1.0F);
       }
@@ -243,18 +243,18 @@ public class Class1098 extends Class1013 {
    }
 
    public float method5264(float var1) {
-      return Class9679.method37821(var1, this.field6045, this.field6044);
+      return MathHelper.method37821(var1, this.field6045, this.field6044);
    }
 
    public float method5265(float var1) {
-      return Class9679.method37821(var1, this.field6047, this.field6046);
+      return MathHelper.method37821(var1, this.field6047, this.field6046);
    }
 
    public float method5266(float var1) {
-      return Class9679.method37821(var1, this.field6049, this.field6048);
+      return MathHelper.method37821(var1, this.field6049, this.field6048);
    }
 
-   public Class1098 method4389(Class1657 var1, Class1045 var2) {
+   public Class1098 method4389(ServerWorld var1, Class1045 var2) {
       Class1098 var5 = Class8992.field41012.method33215(var1);
       if (var2 instanceof Class1098) {
          if (!this.field5054.nextBoolean()) {
@@ -301,8 +301,8 @@ public class Class1098 extends Class1013 {
          this.method5251(this.field5054.nextInt(11));
       }
 
-      Class1657 var8 = var1.method6970();
-      if (var8 instanceof Class1657 && var8.method6893().method24345(this.method3432(), true, Class2961.field18066).method17117()) {
+      ServerWorld var8 = var1.method6970();
+      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.method3432(), true, Class2961.field18066).method17117()) {
          this.method5251(10);
          this.method4278();
       }
@@ -311,8 +311,8 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       Class3257 var6 = var5.method32107();
       if (!this.field5024.field9020) {
          if (!this.method4393()) {
@@ -371,7 +371,7 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return field6036.test(var1);
    }
 

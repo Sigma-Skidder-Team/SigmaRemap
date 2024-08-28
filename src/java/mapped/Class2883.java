@@ -81,9 +81,9 @@ public class Class2883 extends Class2803<Class1002> {
    public void method11201(Class1002 var1, int var2, float var3) {
       float var6 = var1.method4152(var2, var3);
       Class7219 var7 = this.field17871[var2];
-      var7.field31035 = (float)Class9679.method37779((float) (-Math.PI / 3), (float) (-Math.PI / 12), (double)((Class9679.method37763(-var6) + 1.0F) / 2.0F));
-      var7.field31036 = (float)Class9679.method37779(
-         (float) (-Math.PI / 4), (float) (Math.PI / 4), (double)((Class9679.method37763(-var6 + 1.0F) + 1.0F) / 2.0F)
+      var7.field31035 = (float) MathHelper.method37779((float) (-Math.PI / 3), (float) (-Math.PI / 12), (double)((MathHelper.method37763(-var6) + 1.0F) / 2.0F));
+      var7.field31036 = (float) MathHelper.method37779(
+         (float) (-Math.PI / 4), (float) (Math.PI / 4), (double)((MathHelper.method37763(-var6 + 1.0F) + 1.0F) / 2.0F)
       );
       if (var2 == 1) {
          var7.field31036 = (float) Math.PI - var7.field31036;

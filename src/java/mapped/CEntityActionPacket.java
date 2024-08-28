@@ -2,20 +2,20 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class5583 implements Packet<Class5110> {
+public class CEntityActionPacket implements Packet<Class5110> {
    private static String[] field24772;
    private int field24773;
    private Class1865 field24774;
    private int field24775;
 
-   public Class5583() {
+   public CEntityActionPacket() {
    }
 
-   public Class5583(Entity var1, Class1865 var2) {
+   public CEntityActionPacket(Entity var1, Class1865 var2) {
       this(var1, var2, 0);
    }
 
-   public Class5583(Entity var1, Class1865 var2, int var3) {
+   public CEntityActionPacket(Entity var1, Class1865 var2, int var3) {
       this.field24773 = var1.method3205();
       this.field24774 = var2;
       this.field24775 = var3;
@@ -36,14 +36,14 @@ public class Class5583 implements Packet<Class5110> {
    }
 
    public void method17180(Class5110 var1) {
-      var1.method15625(this);
+      var1.processEntityAction(this);
    }
 
-   public Class1865 method17547() {
+   public Class1865 getAction() {
       return this.field24774;
    }
 
-   public int method17548() {
+   public int getAuxData() {
       return this.field24775;
    }
 }

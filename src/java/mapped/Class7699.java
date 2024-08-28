@@ -29,7 +29,7 @@ public class Class7699 {
    private final Set<UUID> field32975 = Sets.newHashSet();
    private long field32976;
    private BlockPos field32977;
-   private final Class1657 field32978;
+   private final ServerWorld field32978;
    private boolean field32979;
    private final int field32980;
    private float field32981;
@@ -45,7 +45,7 @@ public class Class7699 {
    private int field32991;
    private Optional<BlockPos> field32992 = Optional.<BlockPos>empty();
 
-   public Class7699(int var1, Class1657 var2, BlockPos var3) {
+   public Class7699(int var1, ServerWorld var2, BlockPos var3) {
       this.field32980 = var1;
       this.field32978 = var2;
       this.field32983 = true;
@@ -56,7 +56,7 @@ public class Class7699 {
       this.field32990 = Class2305.field15739;
    }
 
-   public Class7699(Class1657 var1, Class39 var2) {
+   public Class7699(ServerWorld var1, Class39 var2) {
       this.field32978 = var1;
       this.field32980 = var2.method122("Id");
       this.field32979 = var2.method132("Started");
@@ -151,7 +151,7 @@ public class Class7699 {
    public void method25401(PlayerEntity var1) {
       if (var1.method3033(Class8254.field35497)) {
          this.field32982 = this.field32982 + var1.method3034(Class8254.field35497).method8629() + 1;
-         this.field32982 = Class9679.method37775(this.field32982, 0, this.method25399());
+         this.field32982 = MathHelper.method37775(this.field32982, 0, this.method25399());
       }
 
       var1.method3040(Class8254.field35497);
@@ -251,7 +251,7 @@ public class Class7699 {
                   }
 
                   this.field32987--;
-                  this.field32985.method12278(Class9679.method37777((float)(300 - this.field32987) / 300.0F, 0.0F, 1.0F));
+                  this.field32985.method12278(MathHelper.method37777((float)(300 - this.field32987) / 300.0F, 0.0F, 1.0F));
                }
             }
 
@@ -369,7 +369,7 @@ public class Class7699 {
             if (var7.field5041 || var7.field5024.method6813() != this.field32978.method6813() || this.field32977.method8318(var8) >= 12544.0) {
                var4.add(var7);
             } else if (var7.field5055 > 600) {
-               if (this.field32978.method6942(var7.method3375()) == null) {
+               if (this.field32978.method6942(var7.getUniqueID()) == null) {
                   var4.add(var7);
                }
 
@@ -395,16 +395,16 @@ public class Class7699 {
       Collection var6 = this.field32985.method12288();
 
       for (Class878 var8 : this.field32978.method6870()) {
-         Vector3d var9 = var8.method3431();
+         Vector3d var9 = var8.getPositionVec();
          Vector3d var10 = Vector3d.method11328(var1);
-         float var11 = Class9679.method37766(
+         float var11 = MathHelper.method37766(
             (var10.field18048 - var9.field18048) * (var10.field18048 - var9.field18048)
                + (var10.field18050 - var9.field18050) * (var10.field18050 - var9.field18050)
          );
          double var12 = var9.field18048 + (double)(13.0F / var11) * (var10.field18048 - var9.field18048);
          double var14 = var9.field18050 + (double)(13.0F / var11) * (var10.field18050 - var9.field18050);
          if (var11 <= 64.0F || var6.contains(var8)) {
-            var8.field4855.method15671(new Class5584(Class6067.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
+            var8.field4855.sendPacket(new Class5584(Class6067.field26992, Class2266.field14734, var12, var8.getPosY(), var14, 64.0F, 1.0F));
          }
       }
    }
@@ -477,7 +477,7 @@ public class Class7699 {
    }
 
    public void method25415() {
-      this.field32985.method12278(Class9679.method37777(this.method25416() / this.field32981, 0.0F, 1.0F));
+      this.field32985.method12278(MathHelper.method37777(this.method25416() / this.field32981, 0.0F, 1.0F));
    }
 
    public float method25416() {
@@ -520,8 +520,8 @@ public class Class7699 {
       this.field32978.method6956().method24605();
    }
 
-   public static Class8848 method25421() {
-      Class8848 var2 = new Class8848(Class8514.field38092);
+   public static ItemStack method25421() {
+      ItemStack var2 = new ItemStack(Class8514.field38092);
       Class39 var3 = var2.method32144("BlockEntityTag");
       Class41 var4 = new Class7291()
          .method23058(Class2154.field14107, Class112.field395)
@@ -552,10 +552,10 @@ public class Class7699 {
       for (int var7 = 0; var7 < var2; var7++) {
          float var8 = this.field32978.field9016.nextFloat() * (float) (Math.PI * 2);
          int var9 = this.field32977.method8304()
-            + Class9679.method37767(Class9679.method37764(var8) * 32.0F * (float)var5)
+            + MathHelper.method37767(MathHelper.method37764(var8) * 32.0F * (float)var5)
             + this.field32978.field9016.nextInt(5);
          int var10 = this.field32977.method8306()
-            + Class9679.method37767(Class9679.method37763(var8) * 32.0F * (float)var5)
+            + MathHelper.method37767(MathHelper.method37763(var8) * 32.0F * (float)var5)
             + this.field32978.field9016.nextInt(5);
          int var11 = this.field32978.method6736(Class101.field296, var9, var10);
          var6.method8372(var9, var11, var10);
@@ -591,7 +591,7 @@ public class Class7699 {
       Class1026 var7 = null;
 
       for (Class1026 var9 : var6) {
-         if (var9.method3375().equals(var2.method3375())) {
+         if (var9.getUniqueID().equals(var2.getUniqueID())) {
             var7 = var9;
             break;
          }
@@ -731,6 +731,6 @@ public class Class7699 {
    }
 
    public void method25437(Entity var1) {
-      this.field32975.add(var1.method3375());
+      this.field32975.add(var1.getUniqueID());
    }
 }

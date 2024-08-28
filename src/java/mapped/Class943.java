@@ -110,6 +110,6 @@ public class Class943 extends Class944 implements Class942, Class935 {
 
    @Override
    public float method3762(float var1) {
-      return Class9679.method37821(var1, this.field5319, this.field5318);
+      return MathHelper.method37821(var1, this.field5319, this.field5318);
    }
 }

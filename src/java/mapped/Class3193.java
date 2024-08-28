@@ -20,13 +20,13 @@ public class Class3193 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7015(var3.method8311()) >= 9 && var4.nextInt(7) == 0) {
          this.method11485(var2, var3, var1, var4);
       }
    }
 
-   public void method11485(Class1657 var1, BlockPos var2, Class7380 var3, Random var4) {
+   public void method11485(ServerWorld var1, BlockPos var2, Class7380 var3, Random var4) {
       if (var3.<Integer>method23463(field18467) != 0) {
          this.field18469.method25182(var1, var1.method6883().method7370(), var2, var3, var4);
       } else {
@@ -45,7 +45,7 @@ public class Class3193 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       this.method11485(var1, var3, var4, var2);
    }
 

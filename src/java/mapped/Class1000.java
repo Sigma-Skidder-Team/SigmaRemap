@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Class1000 extends Entity {
-   private static final Class9289<Class8848> field5514 = Class9361.<Class8848>method35441(Class1000.class, Class7784.field33396);
+   private static final Class9289<ItemStack> field5514 = Class9361.<ItemStack>method35441(Class1000.class, Class7784.field33396);
    private int field5515;
    private int field5516;
    private int field5517 = 5;
@@ -28,7 +28,7 @@ public class Class1000 extends Entity {
       this.method3435(this.field5054.nextDouble() * 0.2 - 0.1, 0.2, this.field5054.nextDouble() * 0.2 - 0.1);
    }
 
-   public Class1000(Class1655 var1, double var2, double var4, double var6, Class8848 var8) {
+   public Class1000(Class1655 var1, double var2, double var4, double var6, ItemStack var8) {
       this(var1, var2, var4, var6);
       this.method4125(var8);
    }
@@ -48,7 +48,7 @@ public class Class1000 extends Entity {
 
    @Override
    public void method2850() {
-      this.method3210().method35442(field5514, Class8848.field39973);
+      this.method3210().method35442(field5514, ItemStack.field39973);
    }
 
    @Override
@@ -98,9 +98,9 @@ public class Class1000 extends Entity {
             }
          }
 
-         boolean var9 = Class9679.method37769(this.field5025) != Class9679.method37769(this.getPosX())
-            || Class9679.method37769(this.field5026) != Class9679.method37769(this.getPosY())
-            || Class9679.method37769(this.field5027) != Class9679.method37769(this.getPosZ());
+         boolean var9 = MathHelper.method37769(this.field5025) != MathHelper.method37769(this.getPosX())
+            || MathHelper.method37769(this.field5026) != MathHelper.method37769(this.getPosY())
+            || MathHelper.method37769(this.field5027) != MathHelper.method37769(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.field5055 % var10 == 0) {
             if (this.field5024.method6739(this.method3432()).method23486(Class8953.field40470) && !this.method3249()) {
@@ -157,13 +157,13 @@ public class Class1000 extends Entity {
    }
 
    private boolean method4118() {
-      Class8848 var3 = this.method4124();
+      ItemStack var3 = this.method4124();
       return this.method3066() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.method32179() < var3.method32113();
    }
 
    private void method4119(Class1000 var1) {
-      Class8848 var4 = this.method4124();
-      Class8848 var5 = var1.method4124();
+      ItemStack var4 = this.method4124();
+      ItemStack var5 = var1.method4124();
       if (Objects.equals(this.method4126(), var1.method4126()) && method4120(var4, var5)) {
          if (var5.method32179() >= var4.method32179()) {
             method4123(var1, var5, this, var4);
@@ -173,7 +173,7 @@ public class Class1000 extends Entity {
       }
    }
 
-   public static boolean method4120(Class8848 var0, Class8848 var1) {
+   public static boolean method4120(ItemStack var0, ItemStack var1) {
       if (var1.method32107() != var0.method32107()) {
          return false;
       } else if (var1.method32179() + var0.method32179() <= var1.method32113()) {
@@ -183,20 +183,20 @@ public class Class1000 extends Entity {
       }
    }
 
-   public static Class8848 method4121(Class8848 var0, Class8848 var1, int var2) {
+   public static ItemStack method4121(ItemStack var0, ItemStack var1, int var2) {
       int var5 = Math.min(Math.min(var0.method32113(), var2) - var0.method32179(), var1.method32179());
-      Class8848 var6 = var0.method32126();
+      ItemStack var6 = var0.method32126();
       var6.method32181(var5);
       var1.method32182(var5);
       return var6;
    }
 
-   private static void method4122(Class1000 var0, Class8848 var1, Class8848 var2) {
-      Class8848 var5 = method4121(var1, var2, 64);
+   private static void method4122(Class1000 var0, ItemStack var1, ItemStack var2) {
+      ItemStack var5 = method4121(var1, var2, 64);
       var0.method4125(var5);
    }
 
-   private static void method4123(Class1000 var0, Class8848 var1, Class1000 var2, Class8848 var3) {
+   private static void method4123(Class1000 var0, ItemStack var1, Class1000 var2, ItemStack var3) {
       method4122(var0, var1, var3);
       var0.field5516 = Math.max(var0.field5516, var2.field5516);
       var0.field5515 = Math.min(var0.field5515, var2.field5515);
@@ -266,7 +266,7 @@ public class Class1000 extends Entity {
       }
 
       Class39 var4 = var1.method130("Item");
-      this.method4125(Class8848.method32104(var4));
+      this.method4125(ItemStack.method32104(var4));
       if (this.method4124().method32105()) {
          this.method2904();
       }
@@ -275,10 +275,10 @@ public class Class1000 extends Entity {
    @Override
    public void method3279(PlayerEntity var1) {
       if (!this.field5024.field9020) {
-         Class8848 var4 = this.method4124();
+         ItemStack var4 = this.method4124();
          Class3257 var5 = var4.method32107();
          int var6 = var4.method32179();
-         if (this.field5516 == 0 && (this.field5519 == null || this.field5519.equals(var1.method3375())) && var1.field4902.method4045(var4)) {
+         if (this.field5516 == 0 && (this.field5519 == null || this.field5519.equals(var1.getUniqueID())) && var1.field4902.method4045(var4)) {
             var1.method2751(this, var6);
             if (var4.method32105()) {
                this.method2904();
@@ -304,7 +304,7 @@ public class Class1000 extends Entity {
 
    @Nullable
    @Override
-   public Entity method2745(Class1657 var1) {
+   public Entity method2745(ServerWorld var1) {
       Entity var4 = super.method2745(var1);
       if (!this.field5024.field9020 && var4 instanceof Class1000) {
          ((Class1000)var4).method4117();
@@ -313,11 +313,11 @@ public class Class1000 extends Entity {
       return var4;
    }
 
-   public Class8848 method4124() {
-      return this.method3210().<Class8848>method35445(field5514);
+   public ItemStack method4124() {
+      return this.method3210().<ItemStack>method35445(field5514);
    }
 
-   public void method4125(Class8848 var1) {
+   public void method4125(ItemStack var1) {
       this.method3210().method35446(field5514, var1);
    }
 

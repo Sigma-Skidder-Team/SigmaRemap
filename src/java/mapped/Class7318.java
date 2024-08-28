@@ -18,7 +18,7 @@ public class Class7318 {
    private final Class7538 field31382;
    private final Class8894[] field31383;
    private final Class127[] field31384;
-   private final BiFunction<Class8848, Class7812, Class8848> field31385;
+   private final BiFunction<ItemStack, Class7812, ItemStack> field31385;
 
    public Class7318(Class7538 var1, Class8894[] var2, Class127[] var3) {
       this.field31382 = var1;
@@ -27,13 +27,13 @@ public class Class7318 {
       this.field31385 = Class8585.method30686(var3);
    }
 
-   public static Consumer<Class8848> method23179(Consumer<Class8848> var0) {
+   public static Consumer<ItemStack> method23179(Consumer<ItemStack> var0) {
       return var1 -> {
          if (var1.method32179() >= var1.method32113()) {
             int var4 = var1.method32179();
 
             while (var4 > 0) {
-               Class8848 var5 = var1.method32126();
+               ItemStack var5 = var1.method32126();
                var5.method32180(Math.min(var1.method32113(), var4));
                var4 -= var5.method32179();
                var0.accept(var5);
@@ -44,7 +44,7 @@ public class Class7318 {
       };
    }
 
-   public void method23180(Class7812 var1, Consumer<Class8848> var2) {
+   public void method23180(Class7812 var1, Consumer<ItemStack> var2) {
       if (!var1.method26082(this)) {
          field31379.warn("Detected infinite loop in loot tables");
       } else {
@@ -58,11 +58,11 @@ public class Class7318 {
       }
    }
 
-   public void method23181(Class7812 var1, Consumer<Class8848> var2) {
+   public void method23181(Class7812 var1, Consumer<ItemStack> var2) {
       this.method23180(var1, method23179(var2));
    }
 
-   public List<Class8848> method23182(Class7812 var1) {
+   public List<ItemStack> method23182(Class7812 var1) {
       ArrayList var4 = Lists.newArrayList();
       this.method23181(var1, var4::add);
       return var4;
@@ -83,12 +83,12 @@ public class Class7318 {
    }
 
    public void method23185(Class920 var1, Class7812 var2) {
-      List<Class8848> var5 = this.method23182(var2);
+      List<ItemStack> var5 = this.method23182(var2);
       Random var6 = var2.method26088();
       List<Integer> var7 = this.method23187(var1, var6);
       this.method23186(var5, var7.size(), var6);
 
-      for (Class8848 var9 : var5) {
+      for (ItemStack var9 : var5) {
          if (var7.isEmpty()) {
             field31379.warn("Tried to over-fill a container");
             return;
@@ -97,17 +97,17 @@ public class Class7318 {
          if (!var9.method32105()) {
             var1.method3621((Integer)var7.remove(var7.size() - 1), var9);
          } else {
-            var1.method3621((Integer)var7.remove(var7.size() - 1), Class8848.field39973);
+            var1.method3621((Integer)var7.remove(var7.size() - 1), ItemStack.field39973);
          }
       }
    }
 
-   private void method23186(List<Class8848> var1, int var2, Random var3) {
+   private void method23186(List<ItemStack> var1, int var2, Random var3) {
       ArrayList var6 = Lists.newArrayList();
       Iterator var7 = var1.iterator();
 
       while (var7.hasNext()) {
-         Class8848 var8 = (Class8848)var7.next();
+         ItemStack var8 = (ItemStack)var7.next();
          if (!var8.method32105()) {
             if (var8.method32179() > 1) {
                var6.add(var8);
@@ -119,9 +119,9 @@ public class Class7318 {
       }
 
       while (var2 - var1.size() - var6.size() > 0 && !var6.isEmpty()) {
-         Class8848 var11 = (Class8848)var6.remove(Class9679.method37782(var3, 0, var6.size() - 1));
-         int var9 = Class9679.method37782(var3, 1, var11.method32179() / 2);
-         Class8848 var10 = var11.method32106(var9);
+         ItemStack var11 = (ItemStack)var6.remove(MathHelper.method37782(var3, 0, var6.size() - 1));
+         int var9 = MathHelper.method37782(var3, 1, var11.method32179() / 2);
+         ItemStack var10 = var11.method32106(var9);
          if (var11.method32179() > 1 && var3.nextBoolean()) {
             var6.add(var11);
          } else {

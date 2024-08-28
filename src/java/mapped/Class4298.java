@@ -60,9 +60,9 @@ public class Class4298 extends Class4278 {
          }
 
          GameProfile var20 = new GameProfile(var8, this.field20826.method34217());
-         if (this.field20828 == null || !this.field20828.method2954().getString().equals(this.field20826.method34217())) {
+         if (this.field20828 == null || !this.field20828.getDisplayName().getString().equals(this.field20826.method34217())) {
             this.field20828 = new Class1118(field20825, new GameProfile(var8, this.field20826.method34217()));
-            this.field20828.field6096 = new Class6589(new Class8790(var20, 0, Class1894.field11103, this.field20828.method2954()));
+            this.field20828.field6096 = new Class6589(new Class8790(var20, 0, Class1894.field11103, this.field20828.getDisplayName()));
          }
 
          this.field20828.method3374(var8);

@@ -46,7 +46,7 @@ public class Class834 extends Screen {
             var1 -> this.field4562.displayGuiScreen(new Class1305(this, this.field4562.field1339.method5396()))
          )
       );
-      String var5 = !Class9246.method34773().isStable() ? "https://aka.ms/snapshotfeedback?ref=game" : "https://aka.ms/javafeedback?ref=game";
+      String var5 = !SharedConstants.method34773().isStable() ? "https://aka.ms/snapshotfeedback?ref=game" : "https://aka.ms/javafeedback?ref=game";
       this.<Class1206>method2455(
          new Class1206(
             this.field4564 / 2 - 102,

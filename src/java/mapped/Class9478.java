@@ -208,7 +208,7 @@ public class Class9478 {
       Pattern var6 = Pattern.compile(".*-([0-9]+)$");
       int var7 = 1;
 
-      for (char var11 : Class9246.field42546) {
+      for (char var11 : SharedConstants.field42546) {
          var1 = var1.replace(var11, '_');
       }
 

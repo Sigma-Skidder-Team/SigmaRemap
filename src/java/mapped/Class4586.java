@@ -14,13 +14,13 @@ public abstract class Class4586 extends Class4587 {
    @Override
    public void method14510(Class5422 var1, Class9624 var2, float var3) {
       Vector3d var6 = var2.method37504();
-      float var7 = (float)(Class9679.method37822((double)var3, this.field22038, this.field22041) - var6.method11320());
-      float var8 = (float)(Class9679.method37822((double)var3, this.field22039, this.field22042) - var6.method11321());
-      float var9 = (float)(Class9679.method37822((double)var3, this.field22040, this.field22043) - var6.method11322());
+      float var7 = (float)(MathHelper.method37822((double)var3, this.field22038, this.field22041) - var6.method11320());
+      float var8 = (float)(MathHelper.method37822((double)var3, this.field22039, this.field22042) - var6.method11321());
+      float var9 = (float)(MathHelper.method37822((double)var3, this.field22040, this.field22043) - var6.method11322());
       Class8661 var10;
       if (this.field22062 != 0.0F) {
          var10 = new Class8661(var2.method37508());
-         float var11 = Class9679.method37821(var3, this.field22063, this.field22062);
+         float var11 = MathHelper.method37821(var3, this.field22063, this.field22062);
          var10.method31182(Class7680.field32902.method25285(var11));
       } else {
          var10 = var2.method37508();

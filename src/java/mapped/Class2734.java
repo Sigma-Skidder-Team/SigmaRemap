@@ -23,16 +23,16 @@ public class Class2734 extends Class2595 {
    public void method10805() {
       Random var3 = this.field17254.method3013();
       Class1655 var4 = this.field17254.field5024;
-      int var5 = Class9679.method37769(this.field17254.getPosX() - 2.0 + var3.nextDouble() * 4.0);
-      int var6 = Class9679.method37769(this.field17254.getPosY() + var3.nextDouble() * 3.0);
-      int var7 = Class9679.method37769(this.field17254.getPosZ() - 2.0 + var3.nextDouble() * 4.0);
+      int var5 = MathHelper.method37769(this.field17254.getPosX() - 2.0 + var3.nextDouble() * 4.0);
+      int var6 = MathHelper.method37769(this.field17254.getPosY() + var3.nextDouble() * 3.0);
+      int var7 = MathHelper.method37769(this.field17254.getPosZ() - 2.0 + var3.nextDouble() * 4.0);
       BlockPos var8 = new BlockPos(var5, var6, var7);
       Class7380 var9 = var4.method6738(var8);
       Block var10 = var9.method23383();
       Vector3d var11 = new Vector3d(
-         (double)Class9679.method37769(this.field17254.getPosX()) + 0.5,
+         (double) MathHelper.method37769(this.field17254.getPosX()) + 0.5,
          (double)var6 + 0.5,
-         (double)Class9679.method37769(this.field17254.getPosZ()) + 0.5
+         (double) MathHelper.method37769(this.field17254.getPosZ()) + 0.5
       );
       Vector3d var12 = new Vector3d((double)var5 + 0.5, (double)var6 + 0.5, (double)var7 + 0.5);
       Class8711 var13 = var4.method7036(new Class6809(var11, var12, Class2271.field14775, Class1985.field12962, this.field17254));

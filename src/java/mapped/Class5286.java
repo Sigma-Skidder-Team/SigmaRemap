@@ -88,8 +88,8 @@ public class Class5286 extends Module {
                 var1.method13995(this.field23759 + this.field23760 - mc.field1339.getPosY());
                 double var10 = this.getStringSettingValueByName("Mode").equals("AAC") ? 0.301 : Class9567.method37075();
                 float var6 = this.field23761 * (float) (Math.PI / 180.0);
-                var1.method13993((double) (-Class9679.method37763(var6)) * var10);
-                var1.method13997((double) Class9679.method37764(var6) * var10);
+                var1.method13993((double) (-MathHelper.method37763(var6)) * var10);
+                var1.method13997((double) MathHelper.method37764(var6) * var10);
                 this.field23758++;
             } else if (this.field23758 == 3) {
                 if (Class5628.method17730(mc.field1339, 0.001F)) {

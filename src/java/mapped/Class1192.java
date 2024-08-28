@@ -52,17 +52,17 @@ public class Class1192 extends Class1191 {
             this.field6438.field1355.method1923(var1, 0, 0, var4);
          }
 
-         int var13 = Class9679.method37773((1.0F - Class9679.method37777(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
+         int var13 = MathHelper.method37773((1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var13 << 24);
-         var14 = 1.0F - Class9679.method37777(var11 - 1.0F, 0.0F, 1.0F);
+         var14 = 1.0F - MathHelper.method37777(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field6441) {
          if (this.field6438.field1355 != null && var12 < 1.0F) {
             this.field6438.field1355.method1923(var1, var2, var3, var4);
          }
 
-         int var27 = Class9679.method37774(Class9679.method37778((double)var12, 0.15, 1.0) * 255.0);
+         int var27 = MathHelper.method37774(MathHelper.method37778((double)var12, 0.15, 1.0) * 255.0);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var27 << 24);
-         var14 = Class9679.method37777(var12, 0.0F, 1.0F);
+         var14 = MathHelper.method37777(var12, 0.0F, 1.0F);
       } else {
          method5686(var1, 0, 0, var7, var8, this.field6445 | 0xFF000000);
          var14 = 1.0F;
@@ -98,10 +98,10 @@ public class Class1192 extends Class1191 {
       RenderSystem.disableBlend();
       int var23 = (int)((double)this.field6438.method1580().method8046() * 0.8325);
       float var24 = this.field6439.method29224();
-      this.field6442 = Class9679.method37777(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
+      this.field6442 = MathHelper.method37777(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       Class9299.field42771.method20217();
       if (var11 < 1.0F) {
-         this.method5678(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - Class9679.method37777(var11, 0.0F, 1.0F));
+         this.method5678(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - MathHelper.method37777(var11, 0.0F, 1.0F));
       }
 
       if (var11 >= 2.0F) {
@@ -125,7 +125,7 @@ public class Class1192 extends Class1191 {
    }
 
    private void method5678(Class9332 var1, int var2, int var3, int var4, int var5, float var6) {
-      int var9 = Class9679.method37773((float)(var4 - var2 - 2) * this.field6442);
+      int var9 = MathHelper.method37773((float)(var4 - var2 - 2) * this.field6442);
       int var10 = Math.round(var6 * 255.0F);
       if (this.field6446 != this.field6445) {
          int var11 = this.field6446 >> 16 & 0xFF;

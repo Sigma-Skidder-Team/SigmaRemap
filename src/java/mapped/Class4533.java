@@ -40,12 +40,12 @@ public class Class4533 {
             if (var1 == null) {
                var0.method20179(new TranslationTextComponent("commands.spectate.success.stopped"), false);
             } else {
-               var0.method20179(new TranslationTextComponent("commands.spectate.success.started", var1.method2954()), false);
+               var0.method20179(new TranslationTextComponent("commands.spectate.success.started", var1.getDisplayName()), false);
             }
 
             return 1;
          } else {
-            throw field21848.create(var2.method2954());
+            throw field21848.create(var2.getDisplayName());
          }
       } else {
          throw field21847.create();

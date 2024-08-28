@@ -94,7 +94,7 @@ public class Class965 extends Class944 {
       return this.method3646(new Class39());
    }
 
-   public void method3988(Class1657 var1, int var2, boolean var3) {
+   public void method3988(ServerWorld var1, int var2, boolean var3) {
       Class5646 var6 = var1.method6883().method7370();
       Class8761 var7 = var1.method6938();
       Class7480 var8 = var1.method6893();

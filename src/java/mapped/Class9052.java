@@ -18,12 +18,12 @@ public class Class9052 {
       if (this.field41441 != null) {
          if (!var3.method12189().method36383().equals(this.field41441.method19279()) && var3.method12192()) {
             this.field41440.method1546().method1009(this.field41441);
-            this.field41442 = Class9679.method37782(this.field41439, 0, var3.method12190() / 2);
+            this.field41442 = MathHelper.method37782(this.field41439, 0, var3.method12190() / 2);
          }
 
          if (!this.field41440.method1546().method1010(this.field41441)) {
             this.field41441 = null;
-            this.field41442 = Math.min(this.field41442, Class9679.method37782(this.field41439, var3.method12190(), var3.method12191()));
+            this.field41442 = Math.min(this.field41442, MathHelper.method37782(this.field41439, var3.method12190(), var3.method12191()));
          }
       }
 

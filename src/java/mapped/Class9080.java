@@ -8,7 +8,7 @@ public class Class9080 extends Class9081 {
    private int field41567;
    private int field41568;
 
-   public Class9080(Class1657 var1) {
+   public Class9080(ServerWorld var1) {
       super(var1);
    }
 
@@ -20,7 +20,7 @@ public class Class9080 extends Class9081 {
       long var5 = var3 / 24000L + 1L;
       if (!this.field41565 && this.field41568 > 20) {
          this.field41565 = true;
-         this.field41571.field4855.method15671(new Class5534(Class5534.field24565, 0.0F));
+         this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 0.0F));
       }
 
       this.field41566 = var3 > 120500L;
@@ -36,19 +36,19 @@ public class Class9080 extends Class9081 {
          } else if (var3 != 100L) {
             if (var3 != 175L) {
                if (var3 == 250L) {
-                  this.field41571.field4855.method15671(new Class5534(Class5534.field24565, 103.0F));
+                  this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 103.0F));
                }
             } else {
-               this.field41571.field4855.method15671(new Class5534(Class5534.field24565, 102.0F));
+               this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 102.0F));
             }
          } else {
-            this.field41571.field4855.method15671(new Class5534(Class5534.field24565, 101.0F));
+            this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 101.0F));
          }
       } else if (var5 <= 6L) {
          if (var5 != 6L) {
             this.field41571.method1328(new TranslationTextComponent("demo.day." + var5), Util.field45724);
          } else {
-            this.field41571.field4855.method15671(new Class5534(Class5534.field24565, 104.0F));
+            this.field41571.field4855.sendPacket(new Class5534(Class5534.field24565, 104.0F));
          }
       }
    }
@@ -70,7 +70,7 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public Class2274 method33859(Class878 var1, Class1655 var2, Class8848 var3, Class79 var4) {
+   public Class2274 method33859(Class878 var1, Class1655 var2, ItemStack var3, Hand var4) {
       if (!this.field41566) {
          return super.method33859(var1, var2, var3, var4);
       } else {
@@ -80,7 +80,7 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public Class2274 method33860(Class878 var1, Class1655 var2, Class8848 var3, Class79 var4, Class8711 var5) {
+   public Class2274 method33860(Class878 var1, Class1655 var2, ItemStack var3, Hand var4, Class8711 var5) {
       if (!this.field41566) {
          return super.method33860(var1, var2, var3, var4, var5);
       } else {

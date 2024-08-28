@@ -48,8 +48,8 @@ public class Class2594 extends Class2595 {
          }
 
          if (var4 != null) {
-            int var5 = Class9679.method37769(var4.field18048);
-            int var6 = Class9679.method37769(var4.field18050);
+            int var5 = MathHelper.method37769(var4.field18048);
+            int var6 = MathHelper.method37769(var4.field18050);
             byte var7 = 34;
             if (!this.field16812.field5024.method7019(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
                var4 = null;

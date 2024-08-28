@@ -50,9 +50,9 @@ public class Class2890<T extends Entity> extends Class2803<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       this.field17904.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17904.field31035 = var6 * (float) (Math.PI / 180.0);
-      this.field17907.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
-      this.field17908.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17909.field31035 = Class9679.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17910.field31035 = Class9679.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17907.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17908.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17909.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17910.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
    }
 }

@@ -17,7 +17,7 @@ public class Class7890 extends Class7882<Class880> {
    }
 
    @Override
-   public void method26425(Class1657 var1, Class880 var2) {
+   public void method26425(ServerWorld var1, Class880 var2) {
       Class6947<?> var5 = var2.method2992();
       Optional var6 = Optional.empty();
       ArrayList var7 = Lists.newArrayList();

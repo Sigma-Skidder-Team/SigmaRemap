@@ -14,11 +14,11 @@ public class Class3305 extends Class3257 {
    }
 
    @Override
-   public Class6794<Class8848> method11700(Class1655 var1, PlayerEntity var2, Class79 var3) {
-      Class8848 var6 = var2.method3094(var3);
+   public Class6794<ItemStack> method11700(Class1655 var1, PlayerEntity var2, Hand var3) {
+      ItemStack var6 = var2.method3094(var3);
       Class8711 var7 = method11735(var1, var2, Class1985.field12964);
       if (var7.method31417() == Class2100.field13689) {
-         return Class6794.<Class8848>method20698(var6);
+         return Class6794.<ItemStack>method20698(var6);
       } else {
          Vector3d var8 = var2.method3281(1.0F);
          double var9 = 5.0;
@@ -29,13 +29,13 @@ public class Class3305 extends Class3257 {
             for (Entity var14 : var11) {
                Class6488 var15 = var14.method3389().method19664((double)var14.method3319());
                if (var15.method19673(var12)) {
-                  return Class6794.<Class8848>method20698(var6);
+                  return Class6794.<ItemStack>method20698(var6);
                }
             }
          }
 
          if (var7.method31417() != Class2100.field13690) {
-            return Class6794.<Class8848>method20698(var6);
+            return Class6794.<ItemStack>method20698(var6);
          } else {
             Class1002 var16 = new Class1002(var1, var7.method31419().field18048, var7.method31419().field18049, var7.method31419().field18050);
             var16.method4171(this.field18812);
@@ -49,9 +49,9 @@ public class Class3305 extends Class3257 {
                }
 
                var2.method2913(Class8876.field40098.method172(this));
-               return Class6794.<Class8848>method20700(var6, var1.method6714());
+               return Class6794.<ItemStack>method20700(var6, var1.method6714());
             } else {
-               return Class6794.<Class8848>method20699(var6);
+               return Class6794.<ItemStack>method20699(var6);
             }
          }
       }

@@ -17,10 +17,10 @@ public class Class9155 {
       float var14 = var4.method7471();
       float var15 = (var12.field45939[0] + var12.field45939[0] + var12.field45939[2] + var12.field45939[2]) / 4.0F;
       float var16 = (var12.field45939[1] + var12.field45939[1] + var12.field45939[3] + var12.field45939[3]) / 4.0F;
-      var12.field45939[0] = Class9679.method37821(var14, var12.field45939[0], var15);
-      var12.field45939[2] = Class9679.method37821(var14, var12.field45939[2], var15);
-      var12.field45939[1] = Class9679.method37821(var14, var12.field45939[1], var16);
-      var12.field45939[3] = Class9679.method37821(var14, var12.field45939[3], var16);
+      var12.field45939[0] = MathHelper.method37821(var14, var12.field45939[0], var15);
+      var12.field45939[2] = MathHelper.method37821(var14, var12.field45939[2], var15);
+      var12.field45939[1] = MathHelper.method37821(var14, var12.field45939[1], var16);
+      var12.field45939[3] = MathHelper.method37821(var14, var12.field45939[3], var16);
       boolean var17 = !Class9299.field42868.method20214() ? var8 : false;
       int[] var18 = this.method34177(var12, var4, var5, this.method34178(var1, var2), var6.method8166(), var7, var17);
       Direction var19 = method34184(var18);
@@ -72,7 +72,7 @@ public class Class9155 {
       }
 
       float var21 = (float)Math.toRadians((double)var0.field45940);
-      Class7680 var22 = new Class7680(Class9679.method37764(var21), Class9679.method37763(var21), 0.0F);
+      Class7680 var22 = new Class7680(MathHelper.method37764(var21), MathHelper.method37763(var21), 0.0F);
       Class8967 var23 = new Class8967(var6);
       var22.method25282(var23);
       int var24 = Math.floorMod(-((int)Math.round(Math.toDegrees(Math.atan2((double)var22.method25270(), (double)var22.method25269())) / 90.0)) * 90, 360);
@@ -262,7 +262,7 @@ public class Class9155 {
             float var17 = Float.intBitsToFloat(var5[var16]);
             float var18 = Float.intBitsToFloat(var5[var16 + 1]);
             float var19 = Float.intBitsToFloat(var5[var16 + 2]);
-            if (Class9679.method37786(var24, var17) && Class9679.method37786(var13, var18) && Class9679.method37786(var14, var19)) {
+            if (MathHelper.method37786(var24, var17) && MathHelper.method37786(var13, var18) && MathHelper.method37786(var14, var19)) {
                var1[var22 + 4] = var5[var16 + 4];
                var1[var22 + 4 + 1] = var5[var16 + 4 + 1];
             }

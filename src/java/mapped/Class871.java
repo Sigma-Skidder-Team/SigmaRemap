@@ -18,7 +18,7 @@ public class Class871 extends Class851<Class5822> {
    public float field4837;
    public float field4838;
    public float field4839;
-   private Class8848 field4840 = Class8848.field39973;
+   private ItemStack field4840 = ItemStack.field39973;
 
    public Class871(Class5822 var1, Class974 var2, ITextComponent var3) {
       super(var1, var2, var3);
@@ -72,15 +72,15 @@ public class Class871 extends Class851<Class5822> {
       var1.method35292(5.0F, 5.0F, 5.0F);
       var1.method35293(Class7680.field32902.method25286(180.0F));
       var1.method35293(Class7680.field32898.method25286(20.0F));
-      float var12 = Class9679.method37821(var2, this.field4839, this.field4838);
+      float var12 = MathHelper.method37821(var2, this.field4839, this.field4838);
       var1.method35291((double)((1.0F - var12) * 0.2F), (double)((1.0F - var12) * 0.1F), (double)((1.0F - var12) * 0.25F));
       float var13 = -(1.0F - var12) * 90.0F - 90.0F;
       var1.method35293(Class7680.field32900.method25286(var13));
       var1.method35293(Class7680.field32898.method25286(180.0F));
-      float var14 = Class9679.method37821(var2, this.field4835, this.field4834) + 0.25F;
-      float var15 = Class9679.method37821(var2, this.field4835, this.field4834) + 0.75F;
-      var14 = (var14 - (float)Class9679.method37768((double)var14)) * 1.6F - 0.3F;
-      var15 = (var15 - (float)Class9679.method37768((double)var15)) * 1.6F - 0.3F;
+      float var14 = MathHelper.method37821(var2, this.field4835, this.field4834) + 0.25F;
+      float var15 = MathHelper.method37821(var2, this.field4835, this.field4834) + 0.75F;
+      var14 = (var14 - (float) MathHelper.method37768((double)var14)) * 1.6F - 0.3F;
+      var15 = (var15 - (float) MathHelper.method37768((double)var15)) * 1.6F - 0.3F;
       if (var14 < 0.0F) {
          var14 = 0.0F;
       }
@@ -200,8 +200,8 @@ public class Class871 extends Class851<Class5822> {
    }
 
    public void method2700() {
-      Class8848 var3 = this.field4727.method18131(0).method18265();
-      if (!Class8848.method32128(var3, this.field4840)) {
+      ItemStack var3 = this.field4727.method18131(0).method18265();
+      if (!ItemStack.method32128(var3, this.field4840)) {
          this.field4840 = var3;
 
          do {
@@ -226,10 +226,10 @@ public class Class871 extends Class851<Class5822> {
          this.field4838 += 0.2F;
       }
 
-      this.field4838 = Class9679.method37777(this.field4838, 0.0F, 1.0F);
+      this.field4838 = MathHelper.method37777(this.field4838, 0.0F, 1.0F);
       float var7 = (this.field4836 - this.field4834) * 0.4F;
       float var6 = 0.2F;
-      var7 = Class9679.method37777(var7, -0.2F, 0.2F);
+      var7 = MathHelper.method37777(var7, -0.2F, 0.2F);
       this.field4837 = this.field4837 + (var7 - this.field4837) * 0.9F;
       this.field4834 = this.field4834 + this.field4837;
    }

@@ -93,7 +93,7 @@ public class Class5219 extends Module {
                 Vector3d var7 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
                 BlockPos var8 = new BlockPos(mc.field1339.method3432()).method8336(0, -1, 0);
                 Class8711 var9 = new Class8711(var7, Direction.field673, var8, false);
-                Class5570 var10 = new Class5570(Class79.field182, var9);
+                Class5570 var10 = new Class5570(Hand.field182, var9);
                 mc.getClientPlayNetHandler().sendPacket(var10);
                 this.field23555 += var4 / 4.0;
                 if (mc.field1339.field5037) {

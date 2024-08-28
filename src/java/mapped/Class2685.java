@@ -23,9 +23,9 @@ public class Class2685 extends Class2595 {
    public void method10805() {
       Random var3 = this.field17102.method3013();
       Class1655 var4 = this.field17102.field5024;
-      int var5 = Class9679.method37769(this.field17102.getPosX() - 1.0 + var3.nextDouble() * 2.0);
-      int var6 = Class9679.method37769(this.field17102.getPosY() + var3.nextDouble() * 2.0);
-      int var7 = Class9679.method37769(this.field17102.getPosZ() - 1.0 + var3.nextDouble() * 2.0);
+      int var5 = MathHelper.method37769(this.field17102.getPosX() - 1.0 + var3.nextDouble() * 2.0);
+      int var6 = MathHelper.method37769(this.field17102.getPosY() + var3.nextDouble() * 2.0);
+      int var7 = MathHelper.method37769(this.field17102.getPosZ() - 1.0 + var3.nextDouble() * 2.0);
       BlockPos var8 = new BlockPos(var5, var6, var7);
       Class7380 var9 = var4.method6738(var8);
       BlockPos var10 = var8.method8313();

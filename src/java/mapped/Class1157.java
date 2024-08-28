@@ -48,7 +48,7 @@ public class Class1157 extends Class1156 {
          });
       }
 
-      boolean var13 = this.field6298.field33193 != Class9246.method34773().getProtocolVersion();
+      boolean var13 = this.field6298.field33193 != SharedConstants.method34773().getProtocolVersion();
       this.field6297.field1294.method38801(var1, this.field6298.field33188, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
       List var14 = this.field6297.field1294.method38828(this.field6298.field33191, var5 - 32 - 2);
 

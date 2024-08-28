@@ -261,12 +261,12 @@ public class Class9567 {
       if (!(var8 > var5)) {
          var4 = var3;
       } else {
-         var4 += !(Class9679.method37792(var3 - var4) > 0.0F) ? -var5 : var5;
+         var4 += !(MathHelper.method37792(var3 - var4) > 0.0F) ? -var5 : var5;
       }
 
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
-      var0.method13993((double)(-Class9679.method37763(var9)) * var1);
-      var0.method13997((double)Class9679.method37764(var9) * var1);
+      var0.method13993((double)(-MathHelper.method37763(var9)) * var1);
+      var0.method13997((double) MathHelper.method37764(var9) * var1);
       Class5628.method17724(var0.method13992());
       Class5628.method17726(var0.method13996());
       return var4;
@@ -277,12 +277,12 @@ public class Class9567 {
       if (!(var7 > var4)) {
          var3 = var2;
       } else {
-         var3 += !(Class9679.method37792(var2 - var3) > 0.0F) ? -var4 : var4;
+         var3 += !(MathHelper.method37792(var2 - var3) > 0.0F) ? -var4 : var4;
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);
-      Class5628.method17724((double)(-Class9679.method37763(var8)) * var0);
-      Class5628.method17726((double)Class9679.method37764(var8) * var0);
+      Class5628.method17724((double)(-MathHelper.method37763(var8)) * var0);
+      Class5628.method17726((double) MathHelper.method37764(var8) * var0);
       return var3;
    }
 
@@ -292,8 +292,8 @@ public class Class9567 {
       float var10 = 0.6F;
       double var11 = !var0 ? (double)field44554.field1339.field4969 : (double)(field44554.field1339.method2918() * (0.21600002F / (var10 * var10 * var10)));
       Vector3d var13 = (!(var8 > 1.0) ? var7 : var7.method11333()).method11344(var11);
-      float var14 = Class9679.method37763(field44554.field1339.field5031 * (float) (Math.PI / 180.0));
-      float var15 = Class9679.method37764(field44554.field1339.field5031 * (float) (Math.PI / 180.0));
+      float var14 = MathHelper.method37763(field44554.field1339.field5031 * (float) (Math.PI / 180.0));
+      float var15 = MathHelper.method37764(field44554.field1339.field5031 * (float) (Math.PI / 180.0));
       return new Vector3d(
          var13.field18048 * (double)var15 - var13.field18050 * (double)var14,
          var13.field18049,

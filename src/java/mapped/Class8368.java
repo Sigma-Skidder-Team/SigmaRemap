@@ -155,7 +155,7 @@ public class Class8368 {
       if (!this.field35920.method36784(var5, var6)) {
          return false;
       } else {
-         this.field35923 = Class9679.method37775(
+         this.field35923 = MathHelper.method37775(
             (int)((double)this.field35923 - var1), 0, Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0)
          );
          return true;
@@ -198,14 +198,14 @@ public class Class8368 {
       int var5 = this.field35923 + Class6850.method20847(this.field35928) - 1;
       if (this.field35924 >= var4) {
          if (this.field35924 > var5) {
-            this.field35923 = Class9679.method37775(
+            this.field35923 = MathHelper.method37775(
                this.field35924 + Class6850.method20853(this.field35928) - Class6850.method20847(this.field35928),
                0,
                Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0)
             );
          }
       } else {
-         this.field35923 = Class9679.method37775(this.field35924, 0, Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0));
+         this.field35923 = MathHelper.method37775(this.field35924, 0, Math.max(this.field35922.size() - Class6850.method20847(this.field35928), 0));
       }
    }
 

@@ -76,7 +76,7 @@ public class Class9160 {
                var2.method8306(),
                var3,
                var9,
-               ((Class878)var1.iterator().next()).method2954()
+               ((Class878)var1.iterator().next()).getDisplayName()
             ),
             true
          );

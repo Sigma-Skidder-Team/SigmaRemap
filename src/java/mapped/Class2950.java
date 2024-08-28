@@ -43,7 +43,7 @@ public class Class2950 extends Class2898<Class4705> {
       for (int var26 = -var19; var26 < var19; var26++) {
          for (int var28 = -var19; var28 < var19; var28++) {
             for (int var29 = -1; var29 > -var17; var29--) {
-               int var30 = !var14 ? var19 : Class9679.method37773((float)var19 * (1.0F - (float)Math.pow((double)var29, 2.0) / ((float)var17 * 8.0F)));
+               int var30 = !var14 ? var19 : MathHelper.method37773((float)var19 * (1.0F - (float)Math.pow((double)var29, 2.0) / ((float)var17 * 8.0F)));
                int var24 = this.method11302(var3, -var29, var17, var18);
                if (var26 < var24) {
                   this.method11295(var1, var3, var4, var17, var26, var29, var28, var24, var30, var14, var13, var10, var8, var9);
@@ -176,7 +176,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private double method11298(int var1, int var2, BlockPos var3, int var4, Random var5) {
-      float var8 = 10.0F * Class9679.method37777(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
+      float var8 = 10.0F * MathHelper.method37777(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
       return (double)var8 + Math.pow((double)(var1 - var3.method8304()), 2.0) + Math.pow((double)(var2 - var3.method8306()), 2.0) - Math.pow((double)var4, 2.0);
    }
 
@@ -194,19 +194,19 @@ public class Class2950 extends Class2898<Class4705> {
          var8 = (1.0F - (float)var9 / ((float)var3 * var7 * 0.4F)) * (float)var4;
       }
 
-      return Class9679.method37773(var8 / 2.0F);
+      return MathHelper.method37773(var8 / 2.0F);
    }
 
    private int method11301(int var1, int var2, int var3) {
       float var6 = 1.0F;
       float var7 = (1.0F - (float)Math.pow((double)var1, 2.0) / ((float)var2 * 1.0F)) * (float)var3;
-      return Class9679.method37773(var7 / 2.0F);
+      return MathHelper.method37773(var7 / 2.0F);
    }
 
    private int method11302(Random var1, int var2, int var3, int var4) {
       float var7 = 1.0F + var1.nextFloat() / 2.0F;
       float var8 = (1.0F - (float)var2 / ((float)var3 * var7)) * (float)var4;
-      return Class9679.method37773(var8 / 2.0F);
+      return MathHelper.method37773(var8 / 2.0F);
    }
 
    private boolean method11303(Block var1) {

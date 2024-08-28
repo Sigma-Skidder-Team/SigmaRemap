@@ -81,7 +81,7 @@ public class Class1012 extends Class1013 implements Class1011 {
          this.method4383(Class112.method315(var1.method122("CollarColor")));
       }
 
-      this.method4365((Class1657)this.field5024, var1);
+      this.method4365((ServerWorld)this.field5024, var1);
    }
 
    @Override
@@ -123,7 +123,7 @@ public class Class1012 extends Class1013 implements Class1011 {
       }
 
       if (!this.field5024.field9020) {
-         this.method4366((Class1657)this.field5024, true);
+         this.method4366((ServerWorld)this.field5024, true);
       }
    }
 
@@ -155,7 +155,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
                if (this.field5664 > 0.4F) {
                   float var3 = (float)this.getPosY();
-                  int var4 = (int)(Class9679.method37763((this.field5664 - 0.4F) * (float) Math.PI) * 7.0F);
+                  int var4 = (int)(MathHelper.method37763((this.field5664 - 0.4F) * (float) Math.PI) * 7.0F);
                   Vector3d var5 = this.method3433();
 
                   for (int var6 = 0; var6 < var4; var6++) {
@@ -204,11 +204,11 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public float method4376(float var1) {
-      return Math.min(0.5F + Class9679.method37821(var1, this.field5665, this.field5664) / 2.0F * 0.5F, 1.0F);
+      return Math.min(0.5F + MathHelper.method37821(var1, this.field5665, this.field5664) / 2.0F * 0.5F, 1.0F);
    }
 
    public float method4377(float var1, float var2) {
-      float var5 = (Class9679.method37821(var1, this.field5665, this.field5664) + var2) / 1.8F;
+      float var5 = (MathHelper.method37821(var1, this.field5665, this.field5664) + var2) / 1.8F;
       if (!(var5 < 0.0F)) {
          if (var5 > 1.0F) {
             var5 = 1.0F;
@@ -217,11 +217,11 @@ public class Class1012 extends Class1013 implements Class1011 {
          var5 = 0.0F;
       }
 
-      return Class9679.method37763(var5 * (float) Math.PI) * Class9679.method37763(var5 * (float) Math.PI * 11.0F) * 0.15F * (float) Math.PI;
+      return MathHelper.method37763(var5 * (float) Math.PI) * MathHelper.method37763(var5 * (float) Math.PI * 11.0F) * 0.15F * (float) Math.PI;
    }
 
    public float method4378(float var1) {
-      return Class9679.method37821(var1, this.field5661, this.field5660) * 0.15F * (float) Math.PI;
+      return MathHelper.method37821(var1, this.field5661, this.field5660) * 0.15F * (float) Math.PI;
    }
 
    @Override
@@ -273,8 +273,8 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       Class3257 var6 = var5.method32107();
       if (!this.field5024.field9020) {
          if (!this.method4393()) {
@@ -360,7 +360,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    @Override
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       Class3257 var4 = var1.method32107();
       return var4.method11744() && var4.method11745().method36159();
    }
@@ -404,7 +404,7 @@ public class Class1012 extends Class1013 implements Class1011 {
       this.field5063.method35446(field5657, var1.method309());
    }
 
-   public Class1012 method4389(Class1657 var1, Class1045 var2) {
+   public Class1012 method4389(ServerWorld var1, Class1045 var2) {
       Class1012 var5 = Class8992.field41105.method33215(var1);
       UUID var6 = this.method4397();
       if (var6 != null) {
@@ -451,7 +451,7 @@ public class Class1012 extends Class1013 implements Class1011 {
          if (var1 instanceof PlayerEntity && var2 instanceof PlayerEntity && !((PlayerEntity)var2).method2742((PlayerEntity)var1)) {
             return false;
          } else {
-            return var1 instanceof Class1068 && ((Class1068)var1).method4932() ? false : !(var1 instanceof Class1013) || !((Class1013)var1).method4393();
+            return var1 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var1).method4932() ? false : !(var1 instanceof Class1013) || !((Class1013)var1).method4393();
          }
       } else {
          Class1012 var5 = (Class1012)var1;

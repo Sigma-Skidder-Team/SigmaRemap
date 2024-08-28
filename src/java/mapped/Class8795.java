@@ -73,7 +73,7 @@ public class Class8795 {
             int var7 = this.field39613.size() - 1;
             Class9510 var8 = this.field39613.get(var7);
             Class2317 var9 = var8.field44279;
-            double var10 = var8.field44271.method33973(this.field39612.field1339.method3431());
+            double var10 = var8.field44271.method33973(this.field39612.field1339.getPositionVec());
             double var12 = 0.25;
             boolean var14 = false;
             if (this.field39618 != null) {
@@ -126,7 +126,7 @@ public class Class8795 {
                var7 = this.field39613.size() - 1;
                var8 = this.field39613.get(var7);
                var9 = var8.field44279;
-               float var18 = Class9142.method34145(this.field39612.field1339.method3431(), var8.field44271.method33972())[0];
+               float var18 = Class9142.method34145(this.field39612.field1339.getPositionVec(), var8.field44271.method33972())[0];
                float var19 = Class9142.method34145(new Vector3d(0.0, 0.0, 0.0), this.field39612.field1339.method3433().method11333())[0];
                float var20 = Math.abs(Class5628.method17756(var19, var18));
                if (!this.field39612.field1339.field5036 && var20 > 60.0F
@@ -143,12 +143,12 @@ public class Class8795 {
                Class5628.method17726(this.field39612.field1339.method3433().field18050 * 0.5);
             }
 
-            float var43 = Class9142.method34145(this.field39612.field1339.method3431(), var8.field44271.method33972())[0];
+            float var43 = Class9142.method34145(this.field39612.field1339.getPositionVec(), var8.field44271.method33972())[0];
             this.field39614 = var43;
             double var21 = Math.cos(Math.toRadians((double)(this.field39612.field1339.field5031 - var43)));
             double var23 = Math.sin(Math.toRadians((double)(this.field39612.field1339.field5031 - var43)));
             boolean var25 = Class8627.method30924(var8);
-            this.field39612.field1339.method3098(var8.field44281.isEmpty());
+            this.field39612.field1339.setSprinting(var8.field44281.isEmpty());
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
             boolean var28 = !this.field39612.field1339.field5036 && this.field39612.field1339.field5037 && var9 == Class2317.field15874;
             if (!var28) {
@@ -197,7 +197,7 @@ public class Class8795 {
                   }
                   break;
                case 2:
-                  this.field39612.field1339.method3098(true);
+                  this.field39612.field1339.setSprinting(true);
                   if (var25 && var33 && var34) {
                      this.field39612.field1339.method2914();
                      var9 = Class2317.field15873;
@@ -223,7 +223,7 @@ public class Class8795 {
                Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(var35);
                Client.getInstance().getModuleManager().method14662(Fly.class).setState(var36);
                if (!var17 || !var16) {
-                  if (var8.field44271.method33972().method11341(this.field39612.field1339.method3431()) > 10.0) {
+                  if (var8.field44271.method33972().method11341(this.field39612.field1339.getPositionVec()) > 10.0) {
                      this.method31738();
                   }
                }
@@ -268,7 +268,7 @@ public class Class8795 {
 
             for (long var8 : var6.field44281) {
                BlockPos var10 = BlockPos.method8331(var8);
-               if (this.field39612.field1339.method3431().method11343((double)var10.method8304(), (double)var10.getY(), (double)var10.method8306()) < 9.0
+               if (this.field39612.field1339.getPositionVec().method11343((double)var10.method8304(), (double)var10.getY(), (double)var10.method8306()) < 9.0
                   && !Class9110.method33985(var10)
                   && !this.field39612.field1338.method6738(var10).method23393()) {
                   var4.add(var10);
@@ -297,7 +297,7 @@ public class Class8795 {
                float[] var11 = Class9217.method34542(this.field39616, var13);
                var1.method13918(var11[0]);
                var1.method13916(var11[1]);
-               this.field39612.field1339.method2820(Class79.field182);
+               this.field39612.field1339.swingArm(Hand.field182);
                this.field39612.field1337.method23134(this.field39616, Class9217.method34580(this.field39616));
             } else {
                this.field39616 = (BlockPos)var4.get(0);

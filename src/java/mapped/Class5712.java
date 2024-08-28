@@ -50,18 +50,18 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          this.field25086.field17600 = this.method17885((T)var1, var3);
          this.field25086.field17601 = var1.method3328();
          if (Class9299.field42838.method20214()) {
-            this.field25086.field17601 = var1.method3328() && var1.method3421() != null && Class9299.method35064(var1.method3421(), Class9299.field42838);
+            this.field25086.field17601 = var1.method3328() && var1.getRidingEntity() != null && Class9299.method35064(var1.getRidingEntity(), Class9299.field42838);
          }
 
          this.field25086.field17602 = var1.method3005();
-         float var9 = Class9679.method37827(var3, var1.field4966, var1.field4965);
-         float var10 = Class9679.method37827(var3, var1.field4968, var1.field4967);
+         float var9 = MathHelper.method37827(var3, var1.field4966, var1.field4965);
+         float var10 = MathHelper.method37827(var3, var1.field4968, var1.field4967);
          float var11 = var10 - var9;
-         if (this.field25086.field17601 && var1.method3421() instanceof Class880) {
-            Class880 var12 = (Class880)var1.method3421();
-            var9 = Class9679.method37827(var3, var12.field4966, var12.field4965);
+         if (this.field25086.field17601 && var1.getRidingEntity() instanceof Class880) {
+            Class880 var12 = (Class880)var1.getRidingEntity();
+            var9 = MathHelper.method37827(var3, var12.field4966, var12.field4965);
             var11 = var10 - var9;
-            float var13 = Class9679.method37792(var11);
+            float var13 = MathHelper.method37792(var11);
             if (var13 < -85.0F) {
                var13 = -85.0F;
             }
@@ -78,7 +78,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             var11 = var10 - var9;
          }
 
-         float var31 = Class9679.method37821(var3, var1.field5034, var1.field5032);
+         float var31 = MathHelper.method37821(var3, var1.field5034, var1.field5032);
          Class4410 var33 = new Class4410(var9, var10, var11, var31, var3, var1);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
@@ -106,7 +106,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          float var35 = 0.0F;
          float var16 = 0.0F;
          if (!var1.method3328() && var1.method3066()) {
-            var35 = Class9679.method37821(var3, var1.field4959, var1.field4960);
+            var35 = MathHelper.method37821(var3, var1.field4959, var1.field4960);
             var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
             if (var1.method3005()) {
                var16 *= 3.0F;
@@ -262,7 +262,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          }
       } else {
          float var12 = ((float)var1.field4955 + var5 - 1.0F) / 20.0F * 1.6F;
-         var12 = Class9679.method37765(var12);
+         var12 = MathHelper.method37765(var12);
          if (var12 > 1.0F) {
             var12 = 1.0F;
          }

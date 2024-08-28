@@ -50,7 +50,7 @@ public final class Class8170 {
       return Class1962.field12770.method8225(0L, var0.method8304(), var0.getY(), var0.method8306(), var1.method7077());
    }
 
-   public static void method28417(Class1657 var0, Class1674 var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
+   public static void method28417(ServerWorld var0, Class1674 var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
       var0.method6820().method22503("spawner");
 
       for (Class179 var11 : field35151) {
@@ -68,14 +68,14 @@ public final class Class8170 {
       var0.method6820().method22505();
    }
 
-   public static void method28418(Class179 var0, Class1657 var1, Class1674 var2, Class8145 var3, Class8940 var4) {
+   public static void method28418(Class179 var0, ServerWorld var1, Class1674 var2, Class8145 var3, Class8940 var4) {
       BlockPos var7 = method28427(var1, var2);
       if (var7.getY() >= 1) {
          method28419(var0, var1, var2, var7, var3, var4);
       }
    }
 
-   public static void method28419(Class179 var0, Class1657 var1, Class1670 var2, BlockPos var3, Class8145 var4, Class8940 var5) {
+   public static void method28419(Class179 var0, ServerWorld var1, Class1670 var2, BlockPos var3, Class8145 var4, Class8940 var5) {
       Class7480 var8 = var1.method6893();
       Class5646 var9 = var1.method6883().method7370();
       int var10 = var3.getY();
@@ -90,7 +90,7 @@ public final class Class8170 {
             byte var17 = 6;
             Class6692 var18 = null;
             Class5093 var19 = null;
-            int var20 = Class9679.method37773(var1.field9016.nextFloat() * 4.0F);
+            int var20 = MathHelper.method37773(var1.field9016.nextFloat() * 4.0F);
             int var21 = 0;
 
             for (int var22 = 0; var22 < var20; var22++) {
@@ -141,7 +141,7 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28420(Class1657 var0, Class1670 var1, Mutable var2, double var3) {
+   private static boolean method28420(ServerWorld var0, Class1670 var1, Mutable var2, double var3) {
       if (!(var3 <= 576.0)) {
          if (var0.method6947().method8317(new Vector3d((double)var2.method8304() + 0.5, (double)var2.getY(), (double)var2.method8306() + 0.5), 24.0)) {
             return false;
@@ -154,7 +154,7 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28421(Class1657 var0, Class179 var1, Class7480 var2, Class5646 var3, Class6692 var4, Mutable var5, double var6) {
+   private static boolean method28421(ServerWorld var0, Class179 var1, Class7480 var2, Class5646 var3, Class6692 var4, Mutable var5, double var6) {
       Class8992 var10 = var4.field29311;
       if (var10.method33209() != Class179.field628) {
          if (!var10.method33208() && var6 > (double)(var10.method33209().method522() * var10.method33209().method522())) {
@@ -177,7 +177,7 @@ public final class Class8170 {
    }
 
    @Nullable
-   private static Class1006 method28422(Class1657 var0, Class8992<?> var1) {
+   private static Class1006 method28422(ServerWorld var0, Class8992<?> var1) {
       try {
          Entity var4 = var1.method33215(var0);
          if (!(var4 instanceof Class1006)) {
@@ -191,14 +191,14 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28423(Class1657 var0, Class1006 var1, double var2) {
+   private static boolean method28423(ServerWorld var0, Class1006 var1, double var2) {
       return var2 > (double)(var1.method3204().method33209().method522() * var1.method3204().method33209().method522()) && var1.method4254(var2)
          ? false
          : var1.method4265(var0, Class2202.field14391) && var1.method4266(var0);
    }
 
    @Nullable
-   private static Class6692 method28424(Class1657 var0, Class7480 var1, Class5646 var2, Class179 var3, Random var4, BlockPos var5) {
+   private static Class6692 method28424(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, Random var4, BlockPos var5) {
       Class8907 var8 = var0.method7003(var5);
       if (var3 == Class179.field627 && var8.method32527() == Class100.field287 && var4.nextFloat() < 0.98F) {
          return null;
@@ -208,11 +208,11 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28425(Class1657 var0, Class7480 var1, Class5646 var2, Class179 var3, Class6692 var4, BlockPos var5) {
+   private static boolean method28425(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, Class6692 var4, BlockPos var5) {
       return method28426(var0, var1, var2, var3, var5, (Class8907)null).contains(var4);
    }
 
-   private static List<Class6692> method28426(Class1657 var0, Class7480 var1, Class5646 var2, Class179 var3, BlockPos var4, Class8907 var5) {
+   private static List<Class6692> method28426(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, BlockPos var4, Class8907 var5) {
       return var3 == Class179.field623
             && var0.method6738(var4.method8313()).method23383() == Blocks.NETHER_BRICKS
             && var1.method24345(var4, false, Class2961.field18070).method17117()
@@ -295,8 +295,8 @@ public final class Class8170 {
                   BlockPos var21 = method28431(var0, var11.field29311, var14, var15);
                   if (var11.field29311.method33206() && method28429(Class6914.method21120(var11.field29311), var0, var21, var11.field29311)) {
                      float var22 = var11.field29311.method33213();
-                     double var23 = Class9679.method37778((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
-                     double var25 = Class9679.method37778((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
+                     double var23 = MathHelper.method37778((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
+                     double var25 = MathHelper.method37778((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
                      if (!var0.method7051(var11.field29311.method33219(var23, (double)var21.getY(), var25))
                         || !Class6914.method21122(
                            var11.field29311, var0, Class2202.field14392, new BlockPos(var23, (double)var21.getY(), var25), var0.method6814()

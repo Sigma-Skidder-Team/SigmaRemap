@@ -179,7 +179,7 @@ public class Class4591 extends Class4588 {
                double var19 = (double)var17 + (this.field22054.nextDouble() - this.field22054.nextDouble()) * 0.5;
                double var21 = (double)var16 + (this.field22054.nextDouble() - this.field22054.nextDouble()) * 0.5;
                double var23 = (double)var18 + (this.field22054.nextDouble() - this.field22054.nextDouble()) * 0.5;
-               double var25 = (double)Class9679.method37766(var19 * var19 + var21 * var21 + var23 * var23) / var1 + this.field22054.nextGaussian() * 0.05;
+               double var25 = (double) MathHelper.method37766(var19 * var19 + var21 * var21 + var23 * var23) / var1 + this.field22054.nextGaussian() * 0.05;
                this.method14528(var10, var12, var14, var19 / var25, var21 / var25, var23 / var25, var4, var5, var6, var7);
                if (var16 != -var3 && var16 != var3 && var17 != -var3 && var17 != var3) {
                   var18 += var3 * 2 - 1;
@@ -206,8 +206,8 @@ public class Class4591 extends Class4588 {
             double var28 = var3[var25][1];
 
             for (double var30 = 0.25; var30 <= 1.0; var30 += 0.25) {
-               double var32 = Class9679.method37822(var30, var21, var26) * var1;
-               double var34 = Class9679.method37822(var30, var23, var28) * var1;
+               double var32 = MathHelper.method37822(var30, var21, var26) * var1;
+               double var34 = MathHelper.method37822(var30, var23, var28) * var1;
                double var36 = var32 * Math.sin(var19);
                var32 *= Math.cos(var19);
 

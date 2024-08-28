@@ -145,10 +145,10 @@ public class Class6061 {
       float var10 = var5.method7463();
       float var11 = (var9 + var10) / 2.0F;
       float var12 = var5.method7471();
-      float var13 = Class9679.method37821(var12, var6, var8);
-      float var14 = Class9679.method37821(var12, var7, var8);
-      float var15 = Class9679.method37821(var12, var9, var11);
-      float var16 = Class9679.method37821(var12, var10, var11);
+      float var13 = MathHelper.method37821(var12, var6, var8);
+      float var14 = MathHelper.method37821(var12, var7, var8);
+      float var15 = MathHelper.method37821(var12, var9, var11);
+      float var16 = MathHelper.method37821(var12, var10, var11);
       float var17 = 1.0F;
       Class4427 var18 = new Class4427(0.9F);
       Client.getInstance().getEventManager().call(var18);

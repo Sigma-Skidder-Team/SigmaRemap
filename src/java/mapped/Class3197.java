@@ -38,7 +38,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.field9016.nextInt(5) == 0) {
          int var7 = var1.<Integer>method23463(field18479);
          if (var7 < 2) {
@@ -106,7 +106,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       var1.method6725(var3, var4.method23465(field18479, Integer.valueOf(var4.<Integer>method23463(field18479) + 1)), 2);
    }
 

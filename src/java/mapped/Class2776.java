@@ -22,7 +22,7 @@ public class Class2776 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return this.field17369 != null && this.field17369.method2951() && this.field17367.method3277(this.field17369) < 256.0;
+      return this.field17369 != null && this.field17369.method2951() && this.field17367.getDistanceSq(this.field17369) < 256.0;
    }
 
    @Override
@@ -39,7 +39,7 @@ public class Class2776 extends Class2595 {
    @Override
    public void method10805() {
       this.field17367.method4227().method28040(this.field17369, (float)(this.field17367.method4260() + 20), (float)this.field17367.method4259());
-      if (!(this.field17367.method3277(this.field17369) < 6.25)) {
+      if (!(this.field17367.getDistanceSq(this.field17369) < 6.25)) {
          this.field17367.method4230().method21655(this.field17369, this.field17368);
       } else {
          this.field17367.method4230().method21666();

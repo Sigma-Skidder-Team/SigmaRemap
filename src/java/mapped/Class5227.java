@@ -55,11 +55,11 @@ public class Class5227 extends Module {
                 for (int var8 : var12.method17251()) {
                     Entity var9 = mc.field1338.method6774(var8);
                     if (var9 != null && var9 instanceof PlayerEntity) {
-                        this.field23572.remove(var9.method3375());
+                        this.field23572.remove(var9.getUniqueID());
 
                         this.field23572
                                 .put(
-                                        var9.method3375(),
+                                        var9.getUniqueID(),
                                         new Class8351(
                                                 var9.method2941().getUnformattedComponentText() + " Unspawn",
                                                 (int) var9.getPosX(),

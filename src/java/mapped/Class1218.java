@@ -181,7 +181,7 @@ public class Class1218 extends Class1206 implements Class1219 {
       if (!var6) {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
-         float var21 = 0.85F + 0.15F * Class9679.method37764((float)this.field6546 * 0.2F);
+         float var21 = 0.85F + 0.15F * MathHelper.method37764((float)this.field6546 * 0.2F);
          RenderSystem.method27889(var21, var21, var21, 1.0F);
       }
 

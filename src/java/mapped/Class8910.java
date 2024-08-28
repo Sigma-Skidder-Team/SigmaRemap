@@ -117,7 +117,7 @@ public class Class8910 {
 
    private static int method32557(Class6619 var0, Class878 var1, Class2319 var2) {
       int var5 = Class2319.method9097(var2).applyAsInt(var1);
-      var0.method20179(new TranslationTextComponent("commands.experience.query." + var2.field15895, var1.method2954(), var5), false);
+      var0.method20179(new TranslationTextComponent("commands.experience.query." + var2.field15895, var1.getDisplayName(), var5), false);
       return var5;
    }
 
@@ -131,7 +131,7 @@ public class Class8910 {
       } else {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.experience.add." + var3.field15895 + ".success.single", var2, ((Class878)var1.iterator().next()).method2954()
+               "commands.experience.add." + var3.field15895 + ".success.single", var2, ((Class878)var1.iterator().next()).getDisplayName()
             ),
             true
          );
@@ -155,7 +155,7 @@ public class Class8910 {
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.experience.set." + var3.field15895 + ".success.single", var2, ((Class878)var1.iterator().next()).method2954()
+                  "commands.experience.set." + var3.field15895 + ".success.single", var2, ((Class878)var1.iterator().next()).getDisplayName()
                ),
                true
             );

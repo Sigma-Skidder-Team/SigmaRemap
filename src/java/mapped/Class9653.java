@@ -46,7 +46,7 @@ public class Class9653 {
                                                       var1x,
                                                       Class8303.method29036(var1x, "loot_table"),
                                                       Class6849.method20827(var1x, "pos"),
-                                                      Class8848.field39973,
+                                                      ItemStack.field39973,
                                                       var1
                                                    )
                                              ))
@@ -108,7 +108,7 @@ public class Class9653 {
                      Class6099.method18839("mine")
                         .then(
                            ((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class6099.method18840("pos", Class6849.method20826())
-                                       .executes(var1x -> method37672(var1x, Class6849.method20827(var1x, "pos"), Class8848.field39973, var1)))
+                                       .executes(var1x -> method37672(var1x, Class6849.method20827(var1x, "pos"), ItemStack.field39973, var1)))
                                     .then(
                                        Class6099.method18840("tool", Class8722.method31481())
                                           .executes(
@@ -242,11 +242,11 @@ public class Class9653 {
       }
    }
 
-   private static int method37661(Class6619 var0, BlockPos var1, List<Class8848> var2, Class7946 var3) throws CommandSyntaxException {
+   private static int method37661(Class6619 var0, BlockPos var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
       Class920 var6 = method37660(var0, var1);
       ArrayList var7 = Lists.newArrayListWithCapacity(var2.size());
 
-      for (Class8848 var9 : var2) {
+      for (ItemStack var9 : var2) {
          if (method37662(var6, var9.method32126())) {
             var6.method3622();
             var7.add(var9);
@@ -257,11 +257,11 @@ public class Class9653 {
       return var7.size();
    }
 
-   private static boolean method37662(Class920 var0, Class8848 var1) {
+   private static boolean method37662(Class920 var0, ItemStack var1) {
       boolean var4 = false;
 
       for (int var5 = 0; var5 < var0.method3629() && !var1.method32105(); var5++) {
-         Class8848 var6 = var0.method3618(var5);
+         ItemStack var6 = var0.method3618(var5);
          if (var0.method3633(var5, var1)) {
             if (var6.method32105()) {
                var0.method3621(var5, var1);
@@ -282,7 +282,7 @@ public class Class9653 {
       return var4;
    }
 
-   private static int method37663(Class6619 var0, BlockPos var1, int var2, int var3, List<Class8848> var4, Class7946 var5) throws CommandSyntaxException {
+   private static int method37663(Class6619 var0, BlockPos var1, int var2, int var3, List<ItemStack> var4, Class7946 var5) throws CommandSyntaxException {
       Class920 var8 = method37660(var0, var1);
       int var9 = var8.method3629();
       if (var2 >= 0 && var2 < var9) {
@@ -290,7 +290,7 @@ public class Class9653 {
 
          for (int var11 = 0; var11 < var3; var11++) {
             int var12 = var2 + var11;
-            Class8848 var13 = var11 >= var4.size() ? Class8848.field39973 : (Class8848)var4.get(var11);
+            ItemStack var13 = var11 >= var4.size() ? ItemStack.field39973 : (ItemStack)var4.get(var11);
             if (var8.method3633(var12, var13)) {
                var8.method3621(var12, var13);
                var10.add(var13);
@@ -304,17 +304,17 @@ public class Class9653 {
       }
    }
 
-   private static boolean method37664(Class8848 var0, Class8848 var1) {
+   private static boolean method37664(ItemStack var0, ItemStack var1) {
       return var0.method32107() == var1.method32107()
          && var0.method32117() == var1.method32117()
          && var0.method32179() <= var0.method32113()
          && Objects.equals(var0.method32142(), var1.method32142());
    }
 
-   private static int method37665(Collection<Class878> var0, List<Class8848> var1, Class7946 var2) throws CommandSyntaxException {
+   private static int method37665(Collection<Class878> var0, List<ItemStack> var1, Class7946 var2) throws CommandSyntaxException {
       ArrayList var5 = Lists.newArrayListWithCapacity(var1.size());
 
-      for (Class8848 var7 : var1) {
+      for (ItemStack var7 : var1) {
          for (Class878 var9 : var0) {
             if (var9.field4902.method4045(var7.method32126())) {
                var5.add(var7);
@@ -326,16 +326,16 @@ public class Class9653 {
       return var5.size();
    }
 
-   private static void method37666(Entity var0, List<Class8848> var1, int var2, int var3, List<Class8848> var4) {
+   private static void method37666(Entity var0, List<ItemStack> var1, int var2, int var3, List<ItemStack> var4) {
       for (int var7 = 0; var7 < var3; var7++) {
-         Class8848 var8 = var7 >= var1.size() ? Class8848.field39973 : (Class8848)var1.get(var7);
+         ItemStack var8 = var7 >= var1.size() ? ItemStack.field39973 : (ItemStack)var1.get(var7);
          if (var0.method2963(var2 + var7, var8.method32126())) {
             var4.add(var8);
          }
       }
    }
 
-   private static int method37667(Collection<? extends Entity> var0, int var1, int var2, List<Class8848> var3, Class7946 var4) throws CommandSyntaxException {
+   private static int method37667(Collection<? extends Entity> var0, int var1, int var2, List<ItemStack> var3, Class7946 var4) throws CommandSyntaxException {
       ArrayList var7 = Lists.newArrayListWithCapacity(var3.size());
 
       for (Entity var9 : var0) {
@@ -353,8 +353,8 @@ public class Class9653 {
       return var7.size();
    }
 
-   private static int method37668(Class6619 var0, Vector3d var1, List<Class8848> var2, Class7946 var3) throws CommandSyntaxException {
-      Class1657 var6 = var0.method20172();
+   private static int method37668(Class6619 var0, Vector3d var1, List<ItemStack> var2, Class7946 var3) throws CommandSyntaxException {
+      ServerWorld var6 = var0.method20172();
       var2.forEach(var2x -> {
          Class1000 var5 = new Class1000(var6, var1.field18048, var1.field18049, var1.field18050, var2x.method32126());
          var5.method4131();
@@ -364,36 +364,36 @@ public class Class9653 {
       return var2.size();
    }
 
-   private static void method37669(Class6619 var0, List<Class8848> var1) {
+   private static void method37669(Class6619 var0, List<ItemStack> var1) {
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.drop.success.multiple", var1.size()), false);
       } else {
-         Class8848 var4 = (Class8848)var1.get(0);
+         ItemStack var4 = (ItemStack)var1.get(0);
          var0.method20179(new TranslationTextComponent("commands.drop.success.single", var4.method32179(), var4.method32173()), false);
       }
    }
 
-   private static void method37670(Class6619 var0, List<Class8848> var1, ResourceLocation var2) {
+   private static void method37670(Class6619 var0, List<ItemStack> var1, ResourceLocation var2) {
       if (var1.size() != 1) {
          var0.method20179(new TranslationTextComponent("commands.drop.success.multiple_with_table", var1.size(), var2), false);
       } else {
-         Class8848 var5 = (Class8848)var1.get(0);
+         ItemStack var5 = (ItemStack)var1.get(0);
          var0.method20179(new TranslationTextComponent("commands.drop.success.single_with_table", var5.method32179(), var5.method32173(), var2), false);
       }
    }
 
-   private static Class8848 method37671(Class6619 var0, Class2106 var1) throws CommandSyntaxException {
+   private static ItemStack method37671(Class6619 var0, Class2106 var1) throws CommandSyntaxException {
       Entity var4 = var0.method20174();
       if (!(var4 instanceof Class880)) {
-         throw field45129.create(var4.method2954());
+         throw field45129.create(var4.getDisplayName());
       } else {
          return ((Class880)var4).method2943(var1);
       }
    }
 
-   private static int method37672(CommandContext<Class6619> var0, BlockPos var1, Class8848 var2, Class8914 var3) throws CommandSyntaxException {
+   private static int method37672(CommandContext<Class6619> var0, BlockPos var1, ItemStack var2, Class8914 var3) throws CommandSyntaxException {
       Class6619 var6 = (Class6619)var0.getSource();
-      Class1657 var7 = var6.method20172();
+      ServerWorld var7 = var6.method20172();
       Class7380 var8 = var7.method6738(var1);
       Class944 var9 = var7.method6759(var1);
       Class9464 var10 = new Class9464(var7)
@@ -425,7 +425,7 @@ public class Class9653 {
          List var10 = var9.method23182(var7.method36460(Class8524.field38286));
          return var2.method32583(var0, var10, var2x -> method37670(var6, var2x, var5));
       } else {
-         throw field45130.create(var1.method2954());
+         throw field45130.create(var1.getDisplayName());
       }
    }
 
@@ -437,7 +437,7 @@ public class Class9653 {
       return method37676(var0, var1, var6.method36460(Class8524.field38282), var2);
    }
 
-   private static int method37675(CommandContext<Class6619> var0, ResourceLocation var1, BlockPos var2, Class8848 var3, Class8914 var4) throws CommandSyntaxException {
+   private static int method37675(CommandContext<Class6619> var0, ResourceLocation var1, BlockPos var2, ItemStack var3, Class8914 var4) throws CommandSyntaxException {
       Class6619 var7 = (Class6619)var0.getSource();
       Class7812 var8 = new Class9464(var7.method20172())
          .method36454(Class9525.field44335, Vector3d.method11328(var2))

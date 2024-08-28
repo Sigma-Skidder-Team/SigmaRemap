@@ -50,7 +50,7 @@ public class Class7224 implements Class7222 {
          float var7 = (float)(var6 >> 16 & 0xFF) / 255.0F;
          float var8 = (float)(var6 >> 8 & 0xFF) / 255.0F;
          float var9 = (float)(var6 & 0xFF) / 255.0F;
-         Class1193.method5686(var1, 1, 1, 15, 15, Class9679.method37805(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
+         Class1193.method5686(var1, 1, 1, 15, 15, MathHelper.method37805(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
       }
 
       Minecraft.getInstance().getTextureManager().bindTexture(this.field31057);

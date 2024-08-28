@@ -86,19 +86,19 @@ public class Class1690 extends Class1685 {
       int var6 = var2 / 2;
       int var7 = var1 % 2;
       int var8 = var2 % 2;
-      float var9 = 100.0F - Class9679.method37765((float)(var1 * var1 + var2 * var2)) * 8.0F;
-      var9 = Class9679.method37777(var9, -100.0F, 80.0F);
+      float var9 = 100.0F - MathHelper.method37765((float)(var1 * var1 + var2 * var2)) * 8.0F;
+      var9 = MathHelper.method37777(var9, -100.0F, 80.0F);
 
       for (int var10 = -12; var10 <= 12; var10++) {
          for (int var11 = -12; var11 <= 12; var11++) {
             long var12 = (long)(var5 + var10);
             long var14 = (long)(var6 + var11);
             if (var12 * var12 + var14 * var14 > 4096L && var0.method32931((double)var12, (double)var14) < -0.9F) {
-               float var16 = (Class9679.method37771((float)var12) * 3439.0F + Class9679.method37771((float)var14) * 147.0F) % 13.0F + 9.0F;
+               float var16 = (MathHelper.method37771((float)var12) * 3439.0F + MathHelper.method37771((float)var14) * 147.0F) % 13.0F + 9.0F;
                float var17 = (float)(var7 - var10 * 2);
                float var18 = (float)(var8 - var11 * 2);
-               float var19 = 100.0F - Class9679.method37765(var17 * var17 + var18 * var18) * var16;
-               var19 = Class9679.method37777(var19, -100.0F, 80.0F);
+               float var19 = 100.0F - MathHelper.method37765(var17 * var17 + var18 * var18) * var16;
+               var19 = MathHelper.method37777(var19, -100.0F, 80.0F);
                var9 = Math.max(var9, var19);
             }
          }

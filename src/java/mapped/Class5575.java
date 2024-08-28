@@ -12,7 +12,7 @@ public class Class5575 implements Packet<Class5105> {
    }
 
    public Class5575(String var1, int var2, Class1858 var3) {
-      this.field24725 = Class9246.method34773().getProtocolVersion();
+      this.field24725 = SharedConstants.method34773().getProtocolVersion();
       this.field24726 = var1;
       this.field24727 = var2;
       this.field24728 = var3;

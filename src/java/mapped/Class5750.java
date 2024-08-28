@@ -20,7 +20,7 @@ public class Class5750 extends Class5651<Class1053, Class2816<Class1053>> {
          var9 = 1.7F;
       }
 
-      float var10 = var8 * 4.3F * Class9679.method37763(var9 * 0.6F * var3);
+      float var10 = var8 * 4.3F * MathHelper.method37763(var9 * 0.6F * var3);
       var2.method35293(Class7680.field32900.method25286(var10));
       var2.method35291(0.0, 0.0, -0.4F);
       if (!var1.method3250()) {

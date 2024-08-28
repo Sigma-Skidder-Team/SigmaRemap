@@ -23,7 +23,7 @@ public class Class914 implements Class909 {
    }
 
    public Class6619 method3580() {
-      Class1657 var3 = this.field5206.method1317();
+      ServerWorld var3 = this.field5206.method1317();
       return new Class6619(this, Vector3d.method11329(var3.method6947()), Class8513.field37212, var3, 4, "Rcon", field5204, this.field5206, (Entity)null);
    }
 

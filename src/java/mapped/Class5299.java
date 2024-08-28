@@ -26,10 +26,10 @@ public class Class5299 extends Module {
         if (!mc.field1339.field5037) {
             this.field23832 = false;
         } else if (!mc.field1339.field5036) {
-            if (mc.field1339.method3431().field18049 != (double) ((int) mc.field1339.method3431().field18049)) {
+            if (mc.field1339.getPositionVec().field18049 != (double) ((int) mc.field1339.getPositionVec().field18049)) {
                 if (var1.method13994() < 0.0
-                        && mc.field1339.method3431().field18049 + var1.method13994() < (double) ((int) mc.field1339.method3431().field18049)) {
-                    var1.method13995((double) ((int) mc.field1339.method3431().field18049) - mc.field1339.method3431().field18049);
+                        && mc.field1339.getPositionVec().field18049 + var1.method13994() < (double) ((int) mc.field1339.getPositionVec().field18049)) {
+                    var1.method13995((double) ((int) mc.field1339.getPositionVec().field18049) - mc.field1339.getPositionVec().field18049);
                     this.field23832 = true;
                 }
             } else if (this.method15974("AutoJump") || mc.field1299.field44636.method8509()) {

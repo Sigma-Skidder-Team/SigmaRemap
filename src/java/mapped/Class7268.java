@@ -29,7 +29,7 @@ public class Class7268 {
    }
 
    public CommandDispatcher<Class6619> method22822() {
-      return this.field31181.method1403().method18842();
+      return this.field31181.getCommandManager().method18842();
    }
 
    public void method22823() {

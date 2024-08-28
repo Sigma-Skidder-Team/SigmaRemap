@@ -5,8 +5,8 @@ public class Class9413 {
 
    private static int method36061(float var0) {
       float var3 = var0 / 3.0F;
-      var3 = Class9679.method37777(var3, -1.0F, 1.0F);
-      return Class9679.method37818(0.62222224F - var3 * 0.05F, 0.5F + var3 * 0.1F, 1.0F);
+      var3 = MathHelper.method37777(var3, -1.0F, 1.0F);
+      return MathHelper.method37818(0.62222224F - var3 * 0.05F, 0.5F + var3 * 0.1F, 1.0F);
    }
 
    public static Class8907 method36062(float var0, float var1, float var2, boolean var3) {

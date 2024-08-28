@@ -52,12 +52,12 @@ public class Class7369 extends Class7361 {
          double var5 = 64.0;
          PlayerEntity var7 = this.field31519.field5024.method7190(field31539, (double)var3.method8304(), (double)var3.getY(), (double)var3.method8306());
          if (var7 != null) {
-            var5 = var3.method8319(var7.method3431(), true) / 512.0;
+            var5 = var3.method8319(var7.getPositionVec(), true) / 512.0;
          }
 
          if (var7 != null
             && !var7.field4919.field29606
-            && (this.field31519.method3013().nextInt(Class9679.method37772((int)var5) + 2) == 0 || this.field31519.method3013().nextInt(var4 + 2) == 0)) {
+            && (this.field31519.method3013().nextInt(MathHelper.method37772((int)var5) + 2) == 0 || this.field31519.method3013().nextInt(var4 + 2) == 0)) {
             this.method23374(var7);
             return;
          }

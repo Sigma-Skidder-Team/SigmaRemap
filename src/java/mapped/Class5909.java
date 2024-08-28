@@ -5,7 +5,7 @@ public class Class5909 extends Class5911 {
    public BlockPos field25717;
    public boolean field25718 = true;
 
-   public Class5909(PlayerEntity var1, Class79 var2, Class8848 var3, Class8711 var4) {
+   public Class5909(PlayerEntity var1, Hand var2, ItemStack var3, Class8711 var4) {
       this(var1.field5024, var1, var2, var3, var4);
    }
 
@@ -13,7 +13,7 @@ public class Class5909 extends Class5911 {
       this(var1.method18360(), var1.method18358(), var1.method18359(), var1.method18357(), var1.method18353());
    }
 
-   public Class5909(Class1655 var1, PlayerEntity var2, Class79 var3, Class8848 var4, Class8711 var5) {
+   public Class5909(Class1655 var1, PlayerEntity var2, Hand var3, ItemStack var4, Class8711 var5) {
       super(var1, var2, var3, var4, var5);
       this.field25717 = var5.method31423().method8349(var5.method31424());
       this.field25718 = var1.method6738(var5.method31423()).method23441(this);

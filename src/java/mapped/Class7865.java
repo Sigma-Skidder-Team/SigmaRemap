@@ -14,7 +14,7 @@ public class Class7865 implements Class7864 {
 
    @Override
    public Vector3d method26356() {
-      return !this.field33678 ? this.field33677.method3431() : this.field33677.method3431().method11339(0.0, (double)this.field33677.method3393(), 0.0);
+      return !this.field33678 ? this.field33677.getPositionVec() : this.field33677.getPositionVec().method11339(0.0, (double)this.field33677.method3393(), 0.0);
    }
 
    @Override

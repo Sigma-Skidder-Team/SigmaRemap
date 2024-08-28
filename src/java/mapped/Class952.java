@@ -33,9 +33,9 @@ public class Class952 implements Class949 {
    @Override
    public ITextComponent method2954() {
       if (!this.field5349.method3381()) {
-         return (ITextComponent)(!this.field5350.method3381() ? new TranslationTextComponent("container.chestDouble") : this.field5350.method2954());
+         return (ITextComponent)(!this.field5350.method3381() ? new TranslationTextComponent("container.chestDouble") : this.field5350.getDisplayName());
       } else {
-         return this.field5349.method2954();
+         return this.field5349.getDisplayName();
       }
    }
 }

@@ -214,7 +214,7 @@ public class Class9176 {
    }
 
    public CompletableFuture<Either<Class1670, Class7022>> method34300(
-      Class1657 var1,
+      ServerWorld var1,
       Class5646 var2,
       Class8761 var3,
       Class195 var4,
@@ -225,7 +225,7 @@ public class Class9176 {
    }
 
    public CompletableFuture<Either<Class1670, Class7022>> method34301(
-      Class1657 var1, Class8761 var2, Class195 var3, Function<Class1670, CompletableFuture<Either<Class1670, Class7022>>> var4, Class1670 var5
+           ServerWorld var1, Class8761 var2, Class195 var3, Function<Class1670, CompletableFuture<Either<Class1670, Class7022>>> var4, Class1670 var5
    ) {
       return this.field42152.method34754(this, var1, var2, var3, var4, var5);
    }

@@ -81,7 +81,7 @@ public class Class2756 extends Class2754 {
 
       Vector3d var9 = this.field17298.method3433();
       if (var9.field18049 * var9.field18049 < 0.03F && this.field17298.field5032 != 0.0F) {
-         this.field17298.field5032 = Class9679.method37828(this.field17298.field5032, 0.0F, 0.2F);
+         this.field17298.field5032 = MathHelper.method37828(this.field17298.field5032, 0.0F, 0.2F);
       } else {
          double var5 = Math.sqrt(Entity.method3234(var9));
          double var7 = Math.signum(-var9.field18049) * Math.acos(var5 / var9.method11348()) * 180.0F / (float)Math.PI;

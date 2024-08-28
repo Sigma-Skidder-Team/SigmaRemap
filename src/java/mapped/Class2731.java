@@ -32,7 +32,7 @@ public class Class2731 extends Class2595 {
       }
    }
 
-   private boolean method10942(Class8848 var1) {
+   private boolean method10942(ItemStack var1) {
       return this.field17248.contains(var1.method32107());
    }
 
@@ -51,7 +51,7 @@ public class Class2731 extends Class2595 {
    @Override
    public void method10805() {
       this.field17244.method4227().method28040(this.field17246, (float)(this.field17244.method4260() + 20), (float)this.field17244.method4259());
-      if (!(this.field17244.method3277(this.field17246) < 6.25)) {
+      if (!(this.field17244.getDistanceSq(this.field17246) < 6.25)) {
          this.field17244.method4230().method21655(this.field17246, this.field17245);
       } else {
          this.field17244.method4230().method21666();

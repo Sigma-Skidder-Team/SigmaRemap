@@ -344,7 +344,7 @@ public class Class1002 extends Entity {
             this.field5552 += 0.05F;
          }
 
-         this.field5552 = Class9679.method37777(this.field5552, 0.0F, 1.0F);
+         this.field5552 = MathHelper.method37777(this.field5552, 0.0F, 1.0F);
          this.field5554 = this.field5553;
          this.field5553 = 10.0F * (float)Math.sin((double)(0.5F * (float)this.field5024.method6783())) * this.field5552;
       }
@@ -375,7 +375,7 @@ public class Class1002 extends Entity {
          double var3 = this.getPosX() + (this.field5536 - this.getPosX()) / (double)this.field5535;
          double var5 = this.getPosY() + (this.field5537 - this.getPosY()) / (double)this.field5535;
          double var7 = this.getPosZ() + (this.field5538 - this.getPosZ()) / (double)this.field5535;
-         double var9 = Class9679.method37793(this.field5539 - (double)this.field5031);
+         double var9 = MathHelper.method37793(this.field5539 - (double)this.field5031);
          this.field5031 = (float)((double)this.field5031 + var9 / (double)this.field5535);
          this.field5032 = (float)((double)this.field5032 + (this.field5540 - (double)this.field5032) / (double)this.field5535);
          this.field5535--;
@@ -392,7 +392,7 @@ public class Class1002 extends Entity {
    public float method4152(int var1, float var2) {
       return !this.method4161(var1)
          ? 0.0F
-         : (float)Class9679.method37779((double)this.field5531[var1] - (float) (Math.PI / 8), (double)this.field5531[var1], (double)var2);
+         : (float) MathHelper.method37779((double)this.field5531[var1] - (float) (Math.PI / 8), (double)this.field5531[var1], (double)var2);
    }
 
    private Class2096 method4153() {
@@ -417,12 +417,12 @@ public class Class1002 extends Entity {
 
    public float method4154() {
       Class6488 var3 = this.method3389();
-      int var4 = Class9679.method37769(var3.field28449);
-      int var5 = Class9679.method37774(var3.field28452);
-      int var6 = Class9679.method37769(var3.field28453);
-      int var7 = Class9679.method37774(var3.field28453 - this.field5549);
-      int var8 = Class9679.method37769(var3.field28451);
-      int var9 = Class9679.method37774(var3.field28454);
+      int var4 = MathHelper.method37769(var3.field28449);
+      int var5 = MathHelper.method37774(var3.field28452);
+      int var6 = MathHelper.method37769(var3.field28453);
+      int var7 = MathHelper.method37774(var3.field28453 - this.field5549);
+      int var8 = MathHelper.method37769(var3.field28451);
+      int var9 = MathHelper.method37774(var3.field28454);
       Mutable var10 = new Mutable();
 
       label45:
@@ -454,12 +454,12 @@ public class Class1002 extends Entity {
    public float method4155() {
       Class6488 var3 = this.method3389();
       Class6488 var4 = new Class6488(var3.field28449, var3.field28450 - 0.001, var3.field28451, var3.field28452, var3.field28450, var3.field28454);
-      int var5 = Class9679.method37769(var4.field28449) - 1;
-      int var6 = Class9679.method37774(var4.field28452) + 1;
-      int var7 = Class9679.method37769(var4.field28450) - 1;
-      int var8 = Class9679.method37774(var4.field28453) + 1;
-      int var9 = Class9679.method37769(var4.field28451) - 1;
-      int var10 = Class9679.method37774(var4.field28454) + 1;
+      int var5 = MathHelper.method37769(var4.field28449) - 1;
+      int var6 = MathHelper.method37774(var4.field28452) + 1;
+      int var7 = MathHelper.method37769(var4.field28450) - 1;
+      int var8 = MathHelper.method37774(var4.field28453) + 1;
+      int var9 = MathHelper.method37769(var4.field28451) - 1;
+      int var10 = MathHelper.method37774(var4.field28454) + 1;
       Class6408 var11 = Class8022.method27428(var4);
       float var12 = 0.0F;
       int var13 = 0;
@@ -491,12 +491,12 @@ public class Class1002 extends Entity {
 
    private boolean method4156() {
       Class6488 var3 = this.method3389();
-      int var4 = Class9679.method37769(var3.field28449);
-      int var5 = Class9679.method37774(var3.field28452);
-      int var6 = Class9679.method37769(var3.field28450);
-      int var7 = Class9679.method37774(var3.field28450 + 0.001);
-      int var8 = Class9679.method37769(var3.field28451);
-      int var9 = Class9679.method37774(var3.field28454);
+      int var4 = MathHelper.method37769(var3.field28449);
+      int var5 = MathHelper.method37774(var3.field28452);
+      int var6 = MathHelper.method37769(var3.field28450);
+      int var7 = MathHelper.method37774(var3.field28450 + 0.001);
+      int var8 = MathHelper.method37769(var3.field28451);
+      int var9 = MathHelper.method37774(var3.field28454);
       boolean var10 = false;
       this.field5545 = Double.MIN_VALUE;
       Mutable var11 = new Mutable();
@@ -522,12 +522,12 @@ public class Class1002 extends Entity {
    private Class2096 method4157() {
       Class6488 var3 = this.method3389();
       double var4 = var3.field28453 + 0.001;
-      int var6 = Class9679.method37769(var3.field28449);
-      int var7 = Class9679.method37774(var3.field28452);
-      int var8 = Class9679.method37769(var3.field28453);
-      int var9 = Class9679.method37774(var4);
-      int var10 = Class9679.method37769(var3.field28451);
-      int var11 = Class9679.method37774(var3.field28454);
+      int var6 = MathHelper.method37769(var3.field28449);
+      int var7 = MathHelper.method37774(var3.field28452);
+      int var8 = MathHelper.method37769(var3.field28453);
+      int var9 = MathHelper.method37774(var4);
+      int var10 = MathHelper.method37769(var3.field28451);
+      int var11 = MathHelper.method37774(var3.field28454);
       boolean var12 = false;
       Mutable var13 = new Mutable();
 
@@ -625,9 +625,9 @@ public class Class1002 extends Entity {
          this.method3434(
             this.method3433()
                .method11339(
-                  (double)(Class9679.method37763(-this.field5031 * (float) (Math.PI / 180.0)) * var3),
+                  (double)(MathHelper.method37763(-this.field5031 * (float) (Math.PI / 180.0)) * var3),
                   0.0,
-                  (double)(Class9679.method37764(this.field5031 * (float) (Math.PI / 180.0)) * var3)
+                  (double)(MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)) * var3)
                )
          );
          this.method4151(this.field5542 && !this.field5541 || this.field5543, this.field5541 && !this.field5542 || this.field5543);
@@ -667,7 +667,7 @@ public class Class1002 extends Entity {
 
    @Override
    public Vector3d method3420(Class880 var1) {
-      Vector3d var4 = method3419((double)(this.method3429() * Class9679.field45205), (double)var1.method3429(), this.field5031);
+      Vector3d var4 = method3419((double)(this.method3429() * MathHelper.field45205), (double)var1.method3429(), this.field5031);
       double var5 = this.getPosX() + var4.field18048;
       double var7 = this.getPosZ() + var4.field18050;
       BlockPos var9 = new BlockPos(var5, this.method3389().field28453, var7);
@@ -698,8 +698,8 @@ public class Class1002 extends Entity {
 
    public void method4160(Entity var1) {
       var1.method3144(this.field5031);
-      float var4 = Class9679.method37792(var1.field5031 - this.field5031);
-      float var5 = Class9679.method37777(var4, -105.0F, 105.0F);
+      float var4 = MathHelper.method37792(var1.field5031 - this.field5031);
+      float var5 = MathHelper.method37777(var4, -105.0F, 105.0F);
       var1.field5033 += var5 - var4;
       var1.field5031 += var5 - var4;
       var1.method3143(var1.field5031);
@@ -723,7 +723,7 @@ public class Class1002 extends Entity {
    }
 
    @Override
-   public Class2274 method3304(PlayerEntity var1, Class79 var2) {
+   public Class2274 method3304(PlayerEntity var1, Hand var2) {
       if (!var1.method2851()) {
          if (!(this.field5533 < 60.0F)) {
             return Class2274.field14820;
@@ -801,7 +801,7 @@ public class Class1002 extends Entity {
    }
 
    public float method4168(float var1) {
-      return Class9679.method37821(var1, this.field5554, this.field5553);
+      return MathHelper.method37821(var1, this.field5554, this.field5553);
    }
 
    public void method4169(int var1) {

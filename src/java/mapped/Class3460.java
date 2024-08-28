@@ -26,8 +26,8 @@ public class Class3460 extends Block {
    }
 
    @Override
-   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Class79 var5, Class8711 var6) {
-      Class8848 var9 = var4.method3094(var5);
+   public Class2274 method11505(Class7380 var1, Class1655 var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+      ItemStack var9 = var4.method3094(var5);
       Class3257 var10 = var9.method32107();
       Block var11 = !(var10 instanceof Class3292) ? Blocks.AIR : field19289.getOrDefault(((Class3292)var10).method11845(), Blocks.AIR);
       boolean var12 = var11 == Blocks.AIR;
@@ -36,7 +36,7 @@ public class Class3460 extends Block {
          return Class2274.field14819;
       } else {
          if (!var13) {
-            Class8848 var14 = new Class8848(this.field19291);
+            ItemStack var14 = new ItemStack(this.field19291);
             if (!var9.method32105()) {
                if (!var4.method2945(var14)) {
                   var4.method2882(var14, false);
@@ -59,8 +59,8 @@ public class Class3460 extends Block {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return this.field19291 != Blocks.AIR ? new Class8848(this.field19291) : super.method11569(var1, var2, var3);
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return this.field19291 != Blocks.AIR ? new ItemStack(this.field19291) : super.method11569(var1, var2, var3);
    }
 
    @Override

@@ -25,8 +25,8 @@ public class Class3626 extends Class3625 {
    @Override
    public float method12291() {
       long var3 = Util.method38487() - this.field19643;
-      float var5 = Class9679.method37777((float)var3 / 100.0F, 0.0F, 1.0F);
-      return Class9679.method37821(var5, this.field19635, this.field19642);
+      float var5 = MathHelper.method37777((float)var3 / 100.0F, 0.0F, 1.0F);
+      return MathHelper.method37821(var5, this.field19635, this.field19642);
    }
 
    public void method12297(Class5472 var1) {

@@ -214,7 +214,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    public Vector3d method23421(Class1665 var1, BlockPos var2) {
       Class2260 var5 = this.method23383().method11994();
       if (var5 != Class2260.field14702) {
-         long var6 = Class9679.method37810(var2.method8304(), 0, var2.method8306());
+         long var6 = MathHelper.method37810(var2.method8304(), 0, var2.method8306());
          return new Vector3d(
             ((double)((float)(var6 & 15L) / 15.0F) - 0.5) * 0.5,
             var5 != Class2260.field14704 ? 0.0 : ((double)((float)(var6 >> 4 & 15L) / 15.0F) - 1.0) * 0.2,
@@ -265,11 +265,11 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       this.method23383().method11513(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23430(Class1657 var1, BlockPos var2, Random var3) {
+   public void method23430(ServerWorld var1, BlockPos var2, Random var3) {
       this.method23383().method11522(this.method23457(), var1, var2, var3);
    }
 
-   public void method23431(Class1657 var1, BlockPos var2, Random var3) {
+   public void method23431(ServerWorld var1, BlockPos var2, Random var3) {
       this.method23383().method11484(this.method23457(), var1, var2, var3);
    }
 
@@ -277,15 +277,15 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       this.method23383().method11523(this.method23457(), var1, var2, var3);
    }
 
-   public void method23433(Class1657 var1, BlockPos var2, Class8848 var3) {
+   public void method23433(ServerWorld var1, BlockPos var2, ItemStack var3) {
       this.method23383().method11965(this.method23457(), var1, var2, var3);
    }
 
-   public List<Class8848> method23434(Class9464 var1) {
+   public List<ItemStack> method23434(Class9464 var1) {
       return this.method23383().method11697(this.method23457(), var1);
    }
 
-   public Class2274 method23435(Class1655 var1, PlayerEntity var2, Class79 var3, Class8711 var4) {
+   public Class2274 method23435(Class1655 var1, PlayerEntity var2, Hand var3, Class8711 var4) {
       return this.method23383().method11505(this.method23457(), var1, var4.method31423(), var2, var3, var4);
    }
 

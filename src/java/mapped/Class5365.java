@@ -15,7 +15,7 @@ public class Class5365 extends Module {
     private int field23972 = -1;
     private int field23973;
     private int field23974;
-    private Class79 field23975;
+    private Hand field23975;
     private BlockFly field23976 = null;
     private boolean field23977;
     private boolean field23978 = false;
@@ -139,15 +139,15 @@ public class Class5365 extends Module {
                             this.field23976.method16734();
                         }
 
-                        Class8848 var15 = mc.field1339.method3094(Class79.field182);
-                        new Class5911(mc.field1339, Class79.field182, var13);
+                        ItemStack var15 = mc.field1339.method3094(Hand.field182);
+                        new Class5911(mc.field1339, Hand.field182, var13);
                         int var17 = var15.method32179();
                         mc.field1337.method23139(mc.field1339, mc.field1338, this.field23975, var13);
                         this.field23971 = null;
                         if (!this.method16004().method15974("NoSwing")) {
-                            mc.field1339.method2820(this.field23975);
+                            mc.field1339.swingArm(this.field23975);
                         } else {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5511(this.field23975));
+                            mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(this.field23975));
                         }
 
                         if (this.method16004().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.method16004().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
@@ -159,13 +159,13 @@ public class Class5365 extends Module {
                 this.field23973++;
                 this.field23980--;
                 var1.method13908(true);
-                this.field23975 = Class79.field182;
-                if (BlockFly.method16733(mc.field1339.method3094(Class79.field183).method32107())
+                this.field23975 = Hand.field182;
+                if (BlockFly.method16733(mc.field1339.method3094(Hand.field183).method32107())
                         && (
                         mc.field1339.method3094(this.field23975).method32105()
                                 || !BlockFly.method16733(mc.field1339.method3094(this.field23975).method32107())
                 )) {
-                    this.field23975 = Class79.field183;
+                    this.field23975 = Hand.field183;
                 }
 
                 double var4 = var1.method13909();
@@ -188,13 +188,13 @@ public class Class5365 extends Module {
 
                 if (!Class9217.method34578(
                         new BlockPos(
-                                mc.field1339.method3431().method11320(),
-                                mc.field1339.method3431().method11321() - 1.0,
-                                mc.field1339.method3431().method11322()
+                                mc.field1339.getPositionVec().method11320(),
+                                mc.field1339.getPositionVec().method11321() - 1.0,
+                                mc.field1339.getPositionVec().method11322()
                         )
                 )) {
-                    var4 = mc.field1339.method3431().method11320();
-                    var6 = mc.field1339.method3431().method11322();
+                    var4 = mc.field1339.getPositionVec().method11320();
+                    var6 = mc.field1339.getPositionVec().method11322();
                 }
 
                 BlockPos var18 = new BlockPos(var4, var8 - 1.0, var6);
@@ -231,7 +231,7 @@ public class Class5365 extends Module {
             }
 
             if (this.method16004().method15974("No Sprint")) {
-                mc.field1339.method3098(false);
+                mc.field1339.setSprinting(false);
             }
 
             if (mc.field1339.field5036) {
@@ -264,7 +264,7 @@ public class Class5365 extends Module {
                     break;
                 case "Cubecraft":
                     double var6 = 0.2;
-                    float var8 = this.method16894(Class9679.method37792(mc.field1339.field5031));
+                    float var8 = this.method16894(MathHelper.method37792(mc.field1339.field5031));
                     if (mc.field1299.field44636.method8509()) {
                         mc.field1284.field40360 = 1.0F;
                     } else if (mc.field1339.field5036) {

@@ -29,18 +29,18 @@ public class Class3738 extends Class3676<Class880> {
    }
 
    @Override
-   public boolean method12508(Class1657 var1, Class880 var2) {
+   public boolean method12508(ServerWorld var1, Class880 var2) {
       return var2.method2992().<List<Class880>>method21410(Class8830.field39819).get().stream().anyMatch(this.field19861);
    }
 
    @Override
-   public void method12502(Class1657 var1, Class880 var2, long var3) {
+   public void method12502(ServerWorld var1, Class880 var2, long var3) {
       Class6947<?> var7 = var2.method2992();
       var7.<List<Class880>>method21410(Class8830.field39819)
          .ifPresent(
             var3x -> var3x.stream()
                   .filter(this.field19861)
-                  .filter(var2xx -> var2xx.method3277(var2) <= (double)this.field19862)
+                  .filter(var2xx -> var2xx.getDistanceSq(var2) <= (double)this.field19862)
                   .findFirst()
                   .ifPresent(var1xx -> var7.method21406(Class8830.field39825, new Class7865(var1xx, true)))
          );

@@ -162,7 +162,7 @@ public class Class1057 extends Class1056 implements Class1008 {
          }
       } else {
          var3 = null;
-         float var17 = this.method3421().field5031;
+         float var17 = this.getRidingEntity().field5031;
          this.field5031 = var17;
          this.field4965 = var17;
          this.field4966 = var17;
@@ -173,10 +173,10 @@ public class Class1057 extends Class1056 implements Class1008 {
       this.field5845 = this.field5846;
       if (!(this.field5846 > var18)) {
          if (this.field5846 < var18) {
-            this.field5846 = Class9679.method37777(this.field5846 + 0.05F, 0.0F, var18);
+            this.field5846 = MathHelper.method37777(this.field5846 + 0.05F, 0.0F, var18);
          }
       } else {
-         this.field5846 = Class9679.method37777(this.field5846 - 0.05F, var18, 1.0F);
+         this.field5846 = MathHelper.method37777(this.field5846 - 0.05F, var18, 1.0F);
       }
 
       if (var3 != null) {
@@ -189,8 +189,8 @@ public class Class1057 extends Class1056 implements Class1008 {
          }
 
          this.method3274((double)var3.method8304() + 0.5, (double)var3.getY(), (double)var3.method8306() + 0.5);
-         double var7 = 0.5 - (double)Class9679.method37763((0.5F + this.field5846) * (float) Math.PI) * 0.5;
-         double var9 = 0.5 - (double)Class9679.method37763((0.5F + this.field5845) * (float) Math.PI) * 0.5;
+         double var7 = 0.5 - (double) MathHelper.method37763((0.5F + this.field5846) * (float) Math.PI) * 0.5;
+         double var9 = 0.5 - (double) MathHelper.method37763((0.5F + this.field5845) * (float) Math.PI) * 0.5;
          Direction var11 = this.method4848().method536();
          this.method3391(
             new Class6488(
@@ -381,7 +381,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public float method4853(float var1) {
-      return Class9679.method37821(var1, this.field5845, this.field5846);
+      return MathHelper.method37821(var1, this.field5845, this.field5846);
    }
 
    public int method4854() {

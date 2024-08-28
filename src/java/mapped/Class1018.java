@@ -96,13 +96,13 @@ public abstract class Class1018 extends Class1045 {
       return 1 + this.field5024.field9016.nextInt(3);
    }
 
-   public boolean method4381(Class8848 var1) {
+   public boolean method4381(ItemStack var1) {
       return var1.method32107() == Class8514.field37842;
    }
 
    @Override
-   public Class2274 method4285(PlayerEntity var1, Class79 var2) {
-      Class8848 var5 = var1.method3094(var2);
+   public Class2274 method4285(PlayerEntity var1, Hand var2) {
+      ItemStack var5 = var1.method3094(var2);
       if (this.method4381(var5)) {
          int var6 = this.method4767();
          if (!this.field5024.field9020 && var6 == 0 && this.method4502()) {
@@ -125,7 +125,7 @@ public abstract class Class1018 extends Class1045 {
       return super.method4285(var1, var2);
    }
 
-   public void method4501(PlayerEntity var1, Class8848 var2) {
+   public void method4501(PlayerEntity var1, ItemStack var2) {
       if (!var1.field4919.field29609) {
          var2.method32182(1);
       }
@@ -138,7 +138,7 @@ public abstract class Class1018 extends Class1045 {
    public void method4503(PlayerEntity var1) {
       this.field5702 = 600;
       if (var1 != null) {
-         this.field5703 = var1.method3375();
+         this.field5703 = var1.getUniqueID();
       }
 
       this.field5024.method6786(this, (byte)18);
@@ -178,7 +178,7 @@ public abstract class Class1018 extends Class1045 {
       }
    }
 
-   public void method4509(Class1657 var1, Class1018 var2) {
+   public void method4509(ServerWorld var1, Class1018 var2) {
       Class1045 var5 = this.method4389(var1, var2);
       if (var5 != null) {
          Class878 var6 = this.method4506();

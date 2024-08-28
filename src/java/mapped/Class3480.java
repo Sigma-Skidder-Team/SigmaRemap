@@ -57,7 +57,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7021(var3, 0) >= 9) {
          int var7 = this.method12177(var1);
          if (var7 < this.method12176()) {
@@ -80,7 +80,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    public int method12181(Class1655 var1) {
-      return Class9679.method37782(var1.field9016, 2, 5);
+      return MathHelper.method37782(var1.field9016, 2, 5);
    }
 
    public static float method12182(Block var0, Class1665 var1, BlockPos var2) {
@@ -146,8 +146,8 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new Class8848(this.method12183());
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return new ItemStack(this.method12183());
    }
 
    @Override
@@ -161,7 +161,7 @@ public class Class3480 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       this.method12180(var1, var3, var4);
    }
 

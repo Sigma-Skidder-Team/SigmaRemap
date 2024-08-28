@@ -14,7 +14,7 @@ public class Class8658 {
                      .requires(var0x -> var0x.method20129(3)))
                   .executes(
                      var0x -> {
-                        Class6395 var3 = ((Class6619)var0x.getSource()).method20177().method1367();
+                        Class6395 var3 = ((Class6619)var0x.getSource()).method20177().getPlayerList();
                         return method31160(
                            (Class6619)var0x.getSource(),
                            Lists.newArrayList(Iterables.concat(var3.method19461().method14443(), var3.method19462().method14443()))
@@ -25,14 +25,14 @@ public class Class8658 {
                   Class6099.method18839("ips")
                      .executes(
                         var0x -> method31160(
-                              (Class6619)var0x.getSource(), ((Class6619)var0x.getSource()).method20177().method1367().method19462().method14443()
+                              (Class6619)var0x.getSource(), ((Class6619)var0x.getSource()).method20177().getPlayerList().method19462().method14443()
                            )
                      )
                ))
             .then(
                Class6099.method18839("players")
                   .executes(
-                     var0x -> method31160((Class6619)var0x.getSource(), ((Class6619)var0x.getSource()).method20177().method1367().method19461().method14443())
+                     var0x -> method31160((Class6619)var0x.getSource(), ((Class6619)var0x.getSource()).method20177().getPlayerList().method19461().method14443())
                   )
             )
       );

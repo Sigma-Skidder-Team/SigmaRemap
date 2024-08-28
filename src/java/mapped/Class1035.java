@@ -69,7 +69,7 @@ public abstract class Class1035 extends Class1009 {
 
       if (this.field5751 > 300) {
          this.method4630();
-         this.method4619((Class1657)this.field5024);
+         this.method4619((ServerWorld)this.field5024);
       }
    }
 
@@ -77,7 +77,7 @@ public abstract class Class1035 extends Class1009 {
       return !this.field5024.method6812().method36880() && !this.method4633() && !this.method4305();
    }
 
-   public void method4619(Class1657 var1) {
+   public void method4619(ServerWorld var1) {
       Class1063 var4 = this.<Class1063>method4292(Class8992.field41110, true);
       if (var4 != null) {
          var4.method3035(new Class2023(Class8254.field35475, 200, 0));

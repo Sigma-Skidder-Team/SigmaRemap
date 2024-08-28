@@ -16,7 +16,7 @@ public class Class3479 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var4.nextInt(25) == 0) {
          int var7 = 5;
          byte var8 = 4;
@@ -57,7 +57,7 @@ public class Class3479 extends Class3194 implements Class3196 {
       return var7.method23446(Class7645.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
    }
 
-   public boolean method12174(Class1657 var1, BlockPos var2, Class7380 var3, Random var4) {
+   public boolean method12174(ServerWorld var1, BlockPos var2, Class7380 var3, Random var4) {
       var1.method6728(var2, false);
       Class7909 var7;
       if (this != Blocks.BROWN_MUSHROOM) {
@@ -90,7 +90,7 @@ public class Class3479 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11488(Class1657 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
       this.method12174(var1, var3, var4, var2);
    }
 }

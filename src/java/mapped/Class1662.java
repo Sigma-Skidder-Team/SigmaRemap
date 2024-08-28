@@ -21,12 +21,12 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default Stream<Class7380> method7004(Class6488 var1) {
-      int var4 = Class9679.method37769(var1.field28449);
-      int var5 = Class9679.method37769(var1.field28452);
-      int var6 = Class9679.method37769(var1.field28450);
-      int var7 = Class9679.method37769(var1.field28453);
-      int var8 = Class9679.method37769(var1.field28451);
-      int var9 = Class9679.method37769(var1.field28454);
+      int var4 = MathHelper.method37769(var1.field28449);
+      int var5 = MathHelper.method37769(var1.field28452);
+      int var6 = MathHelper.method37769(var1.field28450);
+      int var7 = MathHelper.method37769(var1.field28453);
+      int var8 = MathHelper.method37769(var1.field28451);
+      int var9 = MathHelper.method37769(var1.field28454);
       return !this.method7019(var4, var6, var8, var5, var7, var9) ? Stream.<Class7380>empty() : this.method7035(var1);
    }
 
@@ -110,12 +110,12 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default boolean method7014(Class6488 var1) {
-      int var4 = Class9679.method37769(var1.field28449);
-      int var5 = Class9679.method37774(var1.field28452);
-      int var6 = Class9679.method37769(var1.field28450);
-      int var7 = Class9679.method37774(var1.field28453);
-      int var8 = Class9679.method37769(var1.field28451);
-      int var9 = Class9679.method37774(var1.field28454);
+      int var4 = MathHelper.method37769(var1.field28449);
+      int var5 = MathHelper.method37774(var1.field28452);
+      int var6 = MathHelper.method37769(var1.field28450);
+      int var7 = MathHelper.method37774(var1.field28453);
+      int var8 = MathHelper.method37769(var1.field28451);
+      int var9 = MathHelper.method37774(var1.field28454);
       Mutable var10 = new Mutable();
 
       for (int var11 = var4; var11 < var5; var11++) {

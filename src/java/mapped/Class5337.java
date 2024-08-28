@@ -32,7 +32,7 @@ public class Class5337 extends Class5325 {
     }
 
     private double method16753() {
-        return Class9679.method37763((float) Math.toRadians(90.0F - mc.field1339.field5032)) * 10.0F;
+        return MathHelper.method37763((float) Math.toRadians(90.0F - mc.field1339.field5032)) * 10.0F;
     }
 
     private void method16754(double var1, double var3, double var5, double var7) {

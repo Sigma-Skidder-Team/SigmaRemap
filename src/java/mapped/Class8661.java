@@ -160,7 +160,7 @@ public final class Class8661 {
          this.field39033 = 0.0F;
          this.field39034 = 0.0F;
       } else {
-         float var4 = Class9679.method37815(var3);
+         float var4 = MathHelper.method37815(var3);
          this.field39031 *= var4;
          this.field39032 *= var4;
          this.field39033 *= var4;

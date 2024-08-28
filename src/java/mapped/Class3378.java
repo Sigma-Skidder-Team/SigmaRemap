@@ -12,12 +12,12 @@ public class Class3378 extends Class3377 {
    }
 
    @Override
-   public void method11484(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       this.method11522(var1, var2, var3, var4);
    }
 
    @Override
-   public void method11522(Class7380 var1, Class1657 var2, BlockPos var3, Random var4) {
+   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
       if ((var4.nextInt(3) == 0 || this.method11970(var2, var3, 4))
          && var2.method7015(var3) > 11 - var1.<Integer>method23463(field18978) - var1.method23387(var2, var3)
          && this.method11969(var1, var2, var3)) {
@@ -27,11 +27,11 @@ public class Class3378 extends Class3377 {
             var7.method8377(var3, var11);
             Class7380 var12 = var2.method6738(var7);
             if (var12.method23448(this) && !this.method11969(var12, var2, var7)) {
-               var2.method6860().method20726(var7, this, Class9679.method37782(var4, 20, 40));
+               var2.method6860().method20726(var7, this, MathHelper.method37782(var4, 20, 40));
             }
          }
       } else {
-         var2.method6860().method20726(var3, this, Class9679.method37782(var4, 20, 40));
+         var2.method6860().method20726(var3, this, MathHelper.method37782(var4, 20, 40));
       }
    }
 
@@ -77,7 +77,7 @@ public class Class3378 extends Class3377 {
    }
 
    @Override
-   public Class8848 method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return Class8848.field39973;
+   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+      return ItemStack.field39973;
    }
 }

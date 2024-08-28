@@ -30,7 +30,7 @@ public class Class5209 extends Module {
                     this.method15999(false);
                 }
             } else if (!mc.field1339.method3165()) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5583(mc.field1339, Class1865.field10048));
+                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.field1339, Class1865.field10048));
                 mc.field1339.method3349(7, true);
             }
         }
@@ -115,7 +115,7 @@ public class Class5209 extends Module {
                         mc.getClientPlayNetHandler().sendPacket(new Class5539(var5));
                     }
 
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Class79.field182));
+                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
                     if (var5 != mc.field1339.field4902.field5443) {
                         mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.field1339.field4902.field5443));
                     }

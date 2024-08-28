@@ -56,7 +56,7 @@ public class Class8250 {
          File var5 = this.method28766(var2);
          if (var5.exists()) {
             Class7530 var6 = (Class7530)var1.get();
-            Class39 var7 = this.method28771(var2, Class9246.method34773().getWorldVersion());
+            Class39 var7 = this.method28771(var2, SharedConstants.method34773().getWorldVersion());
             var6.method24591(var7.method130("data"));
             return (T)var6;
          }

@@ -21,7 +21,7 @@ public class Class3733<E extends Class1006> extends Class3676<E> {
       this(var0 -> true, var1);
    }
 
-   public boolean method12508(Class1657 var1, E var2) {
+   public boolean method12508(ServerWorld var1, E var2) {
       if (!this.field19846.test((E)var2)) {
          return false;
       } else {
@@ -30,7 +30,7 @@ public class Class3733<E extends Class1006> extends Class3676<E> {
       }
    }
 
-   public void method12502(Class1657 var1, E var2, long var3) {
+   public void method12502(ServerWorld var1, E var2, long var3) {
       this.field19847.apply((E)var2).ifPresent(var2x -> this.method12659((E)var2, var2x));
    }
 

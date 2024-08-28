@@ -119,7 +119,7 @@ public class Class2647 extends Class2595 {
       double var6 = this.method10859(var1);
       if (var2 <= var6 && this.field16998 <= 0) {
          this.method10855();
-         this.field16990.method2820(Class79.field182);
+         this.field16990.swingArm(Hand.field182);
          this.field16990.method3114(var1);
       }
    }

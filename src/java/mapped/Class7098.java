@@ -24,7 +24,7 @@ public class Class7098 extends Class7092 {
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       Class101 var9;
-      if (!(var1 instanceof Class1657)) {
+      if (!(var1 instanceof ServerWorld)) {
          var9 = this.field30536;
       } else if (this.field30536 != Class101.field295) {
          if (this.field30536 != Class101.field297) {

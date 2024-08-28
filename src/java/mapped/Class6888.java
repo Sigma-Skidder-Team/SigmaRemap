@@ -68,7 +68,7 @@ public class Class6888 implements ArgumentType<Class8420> {
          case "/=":
             return (var0x, var1) -> {
                if (var1 != 0) {
-                  return Class9679.method37781(var0x, var1);
+                  return MathHelper.method37781(var0x, var1);
                } else {
                   throw field29853.create();
                }
@@ -76,7 +76,7 @@ public class Class6888 implements ArgumentType<Class8420> {
          case "%=":
             return (var0x, var1) -> {
                if (var1 != 0) {
-                  return Class9679.method37788(var0x, var1);
+                  return MathHelper.normalizeAngle(var0x, var1);
                } else {
                   throw field29853.create();
                }

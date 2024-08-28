@@ -20,7 +20,7 @@ public class Class2694 extends Class2692 {
    public boolean method10803() {
       return this.field17133.method3014() == null
          && this.field17133.method3013().nextFloat() < 0.02F
-         && !this.field17133.method3176()
+         && !this.field17133.isSleeping()
          && this.field17133.method4232() == null
          && this.field17133.method4230().method21664()
          && !this.method10911()
