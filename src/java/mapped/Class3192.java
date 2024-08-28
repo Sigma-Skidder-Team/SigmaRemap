@@ -615,6 +615,10 @@ public class Class3192 {
    }
 
    public static void method11448(float var0, float var1, float var2, float var3, Texture var4, int var5) {
+      if (var4 == null) {
+         System.out.println("[Class3192] Texture is null???");
+         return;
+      }
       method11452(var0, var1, var2, var3, var4, var5, 0.0F, 0.0F, (float)var4.getImageWidth(), (float)var4.getImageHeight(), true);
       method11452(var0, var1, var2, var3, var4, var5, 0.0F, 0.0F, (float)var4.getImageWidth(), (float)var4.getImageHeight(), false);
    }
