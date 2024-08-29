@@ -38,7 +38,7 @@ public class NetworkManager {
         if (this.field38418 != null && this.field38418.method36703()) {
             return this.field38418;
         } else {
-            this.field38418 = new Class9507("001", false);
+            this.field38418 = new Class9507("001"/*, false*/);
             return this.field38418;
         }
     }

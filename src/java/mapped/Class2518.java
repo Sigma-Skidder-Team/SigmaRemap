@@ -15,14 +15,14 @@ public class Class2518 extends JComponent {
    private int field16659;
    private final String[] field16660 = new String[11];
    private final MinecraftServer field16661;
-   private final Timer field16662;
+   private final javax.swing.Timer field16662; // wtf
 
    public Class2518(MinecraftServer var1) {
       this.field16661 = var1;
       this.setPreferredSize(new Dimension(456, 246));
       this.setMinimumSize(new Dimension(456, 246));
       this.setMaximumSize(new Dimension(456, 246));
-      this.field16662 = new Timer(500, var1x -> this.method10562());
+      this.field16662 = new javax.swing.Timer(500, var1x -> this.method10562());
       this.field16662.start();
       this.setBackground(Color.BLACK);
    }
