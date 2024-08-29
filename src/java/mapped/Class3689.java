@@ -26,8 +26,8 @@ public class Class3689 extends Class3676<Class880> {
       } else {
          Class1046 var5 = (Class1046)var2;
          Class1653 var6 = var1.method6951();
-         Optional var7 = var6.method6671(Class4913.field22766.method15182(), var2.method3432(), 48, Class2093.field13637);
-         return var7.isPresent() && !(((BlockPos)var7.get()).method8318(var5.method3432()) <= 4.0);
+         Optional var7 = var6.method6671(Class4913.field22766.method15182(), var2.getPosition(), 48, Class2093.field13637);
+         return var7.isPresent() && !(((BlockPos)var7.get()).method8318(var5.getPosition()) <= 4.0);
       }
    }
 
@@ -50,7 +50,7 @@ public class Class3689 extends Class3676<Class880> {
             return false;
          }
       };
-      Stream var10 = var8.method6668(Class4913.field22766.method15182(), var9, var2.method3432(), 48, Class2093.field13637);
+      Stream var10 = var8.method6668(Class4913.field22766.method15182(), var9, var2.getPosition(), 48, Class2093.field13637);
       Class8238 var11 = var7.method4230().method21649(var10, Class4913.field22766.method15183());
       if (var11 != null && var11.method28708()) {
          BlockPos var12 = var11.method28712();

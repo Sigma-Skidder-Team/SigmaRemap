@@ -23,8 +23,8 @@ public class Class9449 {
       if (this == field43899) {
          return true;
       } else if (var1.method6763(var2)) {
-         Class7380 var5 = var1.method6738(var2);
-         Block var6 = var5.method23383();
+         BlockState var5 = var1.getBlockState(var2);
+         Block var6 = var5.getBlock();
          if (this.field43900 != null && !this.field43900.method24917(var6)) {
             return false;
          } else if (this.field43901 != null && var6 != this.field43901) {
@@ -33,8 +33,8 @@ public class Class9449 {
             return false;
          } else {
             if (this.field43903 != Class8811.field39645) {
-               Class944 var7 = var1.method6759(var2);
-               if (var7 == null || !this.field43903.method31810(var7.method3646(new Class39()))) {
+               TileEntity var7 = var1.getTileEntity(var2);
+               if (var7 == null || !this.field43903.method31810(var7.write(new CompoundNBT()))) {
                   return false;
                }
             }
@@ -53,7 +53,7 @@ public class Class9449 {
          Block var5 = null;
          if (var3.has("block")) {
             ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var3, "block"));
-            var5 = Registry.field16072.method9184(var6);
+            var5 = Registry.BLOCK.method9184(var6);
          }
 
          Class7608 var8 = null;
@@ -76,7 +76,7 @@ public class Class9449 {
       if (this != field43899) {
          JsonObject var3 = new JsonObject();
          if (this.field43901 != null) {
-            var3.addProperty("block", Registry.field16072.method9181(this.field43901).toString());
+            var3.addProperty("block", Registry.BLOCK.getKey(this.field43901).toString());
          }
 
          if (this.field43900 != null) {

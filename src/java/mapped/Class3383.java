@@ -17,14 +17,14 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       for (Direction var11 : Direction.values()) {
          var2.method6733(var3.method8349(var11), this);
       }
    }
 
    @Override
-   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5) {
          for (Direction var11 : Direction.values()) {
             var2.method6733(var3.method8349(var11), this);
@@ -33,16 +33,16 @@ public class Class3383 extends Class3381 {
    }
 
    @Override
-   public int method11514(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
       return var1.<Boolean>method23463(field18987) && Direction.field673 != var4 ? 15 : 0;
    }
 
-   public boolean method11981(World var1, BlockPos var2, Class7380 var3) {
-      return var1.method6778(var2.method8313(), Direction.field672);
+   public boolean method11981(World var1, BlockPos var2, BlockState var3) {
+      return var1.method6778(var2.method8313(), Direction.DOWN);
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       boolean var7 = this.method11981(var2, var3, var1);
       List var8 = field18988.get(var2);
 
@@ -58,40 +58,40 @@ public class Class3383 extends Class3381 {
          var2.method6725(var3, var1.method23465(field18987, Boolean.valueOf(false)), 3);
          if (method11982(var2, var3, true)) {
             var2.method6999(1502, var3, 0);
-            var2.method6860().method20726(var3, var2.method6738(var3).method23383(), 160);
+            var2.method6860().method20726(var3, var2.getBlockState(var3).getBlock(), 160);
          }
       }
    }
 
    @Override
-   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var1.<Boolean>method23463(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
          var2.method6860().method20726(var3, this, 2);
       }
    }
 
    @Override
-   public int method11515(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
-      return var4 != Direction.field672 ? 0 : var1.method23402(var2, var3, var4);
+   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
+      return var4 != Direction.DOWN ? 0 : var1.method23402(var2, var3, var4);
    }
 
    @Override
-   public boolean method11516(Class7380 var1) {
+   public boolean method11516(BlockState var1) {
       return true;
    }
 
    @Override
-   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
+   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18987)) {
-         double var7 = (double)var3.method8304() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
+         double var7 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.getY() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
-         double var11 = (double)var3.method8306() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
+         double var11 = (double)var3.getZ() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          var2.method6746(this.field18984, var7, var9, var11, 0.0, 0.0, 0.0);
       }
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18987);
    }
 

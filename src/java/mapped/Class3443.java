@@ -27,45 +27,45 @@ public class Class3443 extends Block {
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       return this.method11579()
-         .method23465(field19254, Boolean.valueOf(this != var4.method6738(var5.method8313()).method23383()))
-         .method23465(field19253, Boolean.valueOf(this != var4.method6738(var5.method8311()).method23383()))
-         .method23465(field19249, Boolean.valueOf(this != var4.method6738(var5.method8341()).method23383()))
-         .method23465(field19250, Boolean.valueOf(this != var4.method6738(var5.method8347()).method23383()))
-         .method23465(field19251, Boolean.valueOf(this != var4.method6738(var5.method8343()).method23383()))
-         .method23465(field19252, Boolean.valueOf(this != var4.method6738(var5.method8345()).method23383()));
+         .method23465(field19254, Boolean.valueOf(this != var4.getBlockState(var5.method8313()).getBlock()))
+         .method23465(field19253, Boolean.valueOf(this != var4.getBlockState(var5.method8311()).getBlock()))
+         .method23465(field19249, Boolean.valueOf(this != var4.getBlockState(var5.method8341()).getBlock()))
+         .method23465(field19250, Boolean.valueOf(this != var4.getBlockState(var5.method8347()).getBlock()))
+         .method23465(field19251, Boolean.valueOf(this != var4.getBlockState(var5.method8343()).getBlock()))
+         .method23465(field19252, Boolean.valueOf(this != var4.getBlockState(var5.method8345()).getBlock()));
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return !var3.method23448(this) ? super.method11491(var1, var2, var3, var4, var5, var6) : var1.method23465(field19255.get(var2), Boolean.valueOf(false));
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field19255.get(var2.method252(Direction.NORTH)), var1.<Boolean>method23463(field19249))
          .method23465(field19255.get(var2.method252(Direction.SOUTH)), var1.<Boolean>method23463(field19251))
          .method23465(field19255.get(var2.method252(Direction.EAST)), var1.<Boolean>method23463(field19250))
          .method23465(field19255.get(var2.method252(Direction.WEST)), var1.<Boolean>method23463(field19252))
          .method23465(field19255.get(var2.method252(Direction.field673)), var1.<Boolean>method23463(field19253))
-         .method23465(field19255.get(var2.method252(Direction.field672)), var1.<Boolean>method23463(field19254));
+         .method23465(field19255.get(var2.method252(Direction.DOWN)), var1.<Boolean>method23463(field19254));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23465(field19255.get(var2.method8750(Direction.NORTH)), var1.<Boolean>method23463(field19249))
          .method23465(field19255.get(var2.method8750(Direction.SOUTH)), var1.<Boolean>method23463(field19251))
          .method23465(field19255.get(var2.method8750(Direction.EAST)), var1.<Boolean>method23463(field19250))
          .method23465(field19255.get(var2.method8750(Direction.WEST)), var1.<Boolean>method23463(field19252))
          .method23465(field19255.get(var2.method8750(Direction.field673)), var1.<Boolean>method23463(field19253))
-         .method23465(field19255.get(var2.method8750(Direction.field672)), var1.<Boolean>method23463(field19254));
+         .method23465(field19255.get(var2.method8750(Direction.DOWN)), var1.<Boolean>method23463(field19254));
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19253, field19254, field19249, field19250, field19251, field19252);
    }
 }

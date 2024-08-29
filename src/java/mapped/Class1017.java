@@ -24,7 +24,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    private Class2665 field5700;
    private int field5701;
 
-   public Class1017(Class8992<? extends Class1017> var1, World var2) {
+   public Class1017(EntityType<? extends Class1017> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6832(this, 20, true);
       this.field5595 = new Class8094(this, this);
@@ -44,7 +44,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.method6738(var1).method23393() ? 0.0F : 10.0F;
+      return !var2.getBlockState(var1).isAir() ? 0.0F : 10.0F;
    }
 
    @Override
@@ -70,14 +70,14 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method4432()) {
-         var1.method99("HivePos", Class8354.method29284(this.method4433()));
+         var1.put("HivePos", Class8354.method29284(this.method4433()));
       }
 
       if (this.method4422()) {
-         var1.method99("FlowerPos", Class8354.method29284(this.method4421()));
+         var1.put("FlowerPos", Class8354.method29284(this.method4421()));
       }
 
       var1.method115("HasNectar", this.method4438());
@@ -89,15 +89,15 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.field5697 = null;
-      if (var1.method118("HivePos")) {
-         this.field5697 = Class8354.method29283(var1.method130("HivePos"));
+      if (var1.contains("HivePos")) {
+         this.field5697 = Class8354.method29283(var1.getCompound("HivePos"));
       }
 
       this.field5696 = null;
-      if (var1.method118("FlowerPos")) {
-         this.field5696 = Class8354.method29283(var1.method130("FlowerPos"));
+      if (var1.contains("FlowerPos")) {
+         this.field5696 = Class8354.method29283(var1.getCompound("FlowerPos"));
       }
 
       super.method2723(var1);
@@ -106,7 +106,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       this.field5691 = var1.method122("TicksSincePollination");
       this.field5692 = var1.method122("CannotEnterHiveTicks");
       this.field5693 = var1.method122("CropsGrownSincePollination");
-      this.method4365((ServerWorld)this.field5024, var1);
+      this.method4365((ServerWorld)this.world, var1);
    }
 
    @Override
@@ -117,8 +117,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
          if (var1 instanceof Class880) {
             ((Class880)var1).method3079(((Class880)var1).method3078() + 1);
             byte var5 = 0;
-            if (this.field5024.method6997() != Class2197.field14353) {
-               if (this.field5024.method6997() == Class2197.field14354) {
+            if (this.world.method6997() != Class2197.field14353) {
+               if (this.world.method6997() == Class2197.field14354) {
                   var5 = 18;
                }
             } else {
@@ -144,7 +144,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       if (this.method4438() && this.method4434() < 10 && this.field5054.nextFloat() < 0.05F) {
          for (int var3 = 0; var3 < this.field5054.nextInt(2) + 1; var3++) {
             this.method4419(
-               this.field5024,
+               this.world,
                this.getPosX() - 0.3F,
                this.getPosX() + 0.3F,
                this.getPosZ() - 0.3F,
@@ -173,7 +173,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    private void method4420(BlockPos var1) {
       Vector3d var4 = Vector3d.method11330(var1);
       byte var5 = 0;
-      BlockPos var6 = this.method3432();
+      BlockPos var6 = this.getPosition();
       int var7 = (int)var4.field18049 - var6.getY();
       if (var7 <= 2) {
          if (var7 < -2) {
@@ -217,7 +217,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    private boolean method4425() {
       if (this.field5692 <= 0 && !Class2663.method10870(this.field5698) && !this.method4440() && this.method4232() == null) {
-         boolean var3 = this.method4424() || this.field5024.method6795() || this.field5024.method6741() || this.method4438();
+         boolean var3 = this.method4424() || this.world.method6795() || this.world.method6741() || this.method4438();
          return var3 && !this.method4430();
       } else {
          return false;
@@ -265,8 +265,8 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
          this.field5691++;
       }
 
-      if (!this.field5024.field9020) {
-         this.method4366((ServerWorld)this.field5024, false);
+      if (!this.world.field9020) {
+         this.method4366((ServerWorld)this.world, false);
       }
    }
 
@@ -278,7 +278,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       if (this.field5697 == null) {
          return false;
       } else {
-         Class944 var3 = this.field5024.method6759(this.field5697);
+         TileEntity var3 = this.world.getTileEntity(this.field5697);
          return var3 instanceof Class962 && ((Class962)var3).method3912();
       }
    }
@@ -309,7 +309,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    private boolean method4431(BlockPos var1) {
-      Class944 var4 = this.field5024.method6759(var1);
+      TileEntity var4 = this.world.getTileEntity(var1);
       return !(var4 instanceof Class962) ? false : !((Class962)var4).method3914();
    }
 
@@ -343,7 +343,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (this.field5692 > 0) {
             this.field5692--;
          }
@@ -368,7 +368,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
       if (!this.method4432()) {
          return false;
       } else {
-         Class944 var3 = this.field5024.method6759(this.field5697);
+         TileEntity var3 = this.world.getTileEntity(this.field5697);
          return var3 != null && var3.method3786() == Class4387.field21453;
       }
    }
@@ -437,15 +437,15 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.method32107().method11743(Class5985.field26107);
+      return var1.getItem().method11743(Class5985.field26107);
    }
 
    private boolean method4448(BlockPos var1) {
-      return this.field5024.method6763(var1) && this.field5024.method6738(var1).method23383().method11540(Class7645.field32773);
+      return this.world.method6763(var1) && this.world.getBlockState(var1).getBlock().method11540(Class7645.field32773);
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
    }
 
    @Override
@@ -469,7 +469,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    public Class1017 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41009.method33215(var1);
+      return EntityType.field41009.method33215(var1);
    }
 
    @Override
@@ -483,7 +483,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    @Override
-   public void method2761(double var1, boolean var3, Class7380 var4, BlockPos var5) {
+   public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
    }
 
    @Override
@@ -500,7 +500,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
          Entity var5 = var1.method31109();
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             Class2663.method10871(this.field5698);
          }
 
@@ -526,7 +526,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    private boolean method4450(BlockPos var1, int var2) {
-      return var1.method8316(this.method3432(), (double)var2);
+      return var1.method8316(this.getPosition(), (double)var2);
    }
 
    // $VF: synthetic method

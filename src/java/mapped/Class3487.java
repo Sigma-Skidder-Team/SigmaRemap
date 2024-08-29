@@ -11,22 +11,22 @@ public class Class3487 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19351;
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
       return true;
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return true;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       Class3456 var7 = (Class3456)(this != Blocks.FERN ? Blocks.TALL_GRASS : Blocks.field36802);
       if (var7.method11579().method23443(var1, var3) && var1.method7007(var3.method8311())) {
          var7.method12129(var1, var3, 2);

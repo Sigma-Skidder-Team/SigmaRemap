@@ -23,12 +23,12 @@ public class Class7153 implements Class7151 {
    }
 
    @Override
-   public void method22311(Class39 var1) {
+   public void method22311(CompoundNBT var1) {
       this.field30729.method32749(this.field30730, var1);
    }
 
    @Override
-   public Class39 method22312() {
+   public CompoundNBT method22312() {
       return this.field30729.method32748(this.field30730);
    }
 

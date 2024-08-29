@@ -8,7 +8,7 @@ public class Class1138 extends Class1135 {
    private Class1295 field6201;
    private Class1206 field6202;
 
-   public Class1138(Screen var1, Class9574 var2) {
+   public Class1138(Screen var1, GameSettings var2) {
       super(var1, var2, new TranslationTextComponent("controls.title"));
    }
 
@@ -37,7 +37,7 @@ public class Class1138 extends Class1135 {
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
       );
    }
 

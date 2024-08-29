@@ -13,7 +13,7 @@ public class Class1048 extends Class1047 {
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
    public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.method3066() && var0.method3250();
 
-   public Class1048(Class8992<? extends Class1048> var1, World var2) {
+   public Class1048(EntityType<? extends Class1048> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6836(this);
       this.field5595 = new Class8093(this, 10);
@@ -22,7 +22,7 @@ public class Class1048 extends Class1047 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       this.method3352(this.method3350());
       this.field5032 = 0.0F;
       return super.method4276(var1, var2, var3, var4, var5);
@@ -64,23 +64,23 @@ public class Class1048 extends Class1047 {
    @Override
    public void method2850() {
       super.method2850();
-      this.field5063.method35442(field5804, BlockPos.field13032);
+      this.field5063.method35442(field5804, BlockPos.ZERO);
       this.field5063.method35442(field5805, false);
       this.field5063.method35442(field5806, 2400);
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method102("TreasurePosX", this.method4777().method8304());
+      var1.method102("TreasurePosX", this.method4777().getX());
       var1.method102("TreasurePosY", this.method4777().getY());
-      var1.method102("TreasurePosZ", this.method4777().method8306());
+      var1.method102("TreasurePosZ", this.method4777().getZ());
       var1.method115("GotFish", this.method4778());
       var1.method102("Moistness", this.method4780());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       int var4 = var1.method122("TreasurePosX");
       int var5 = var1.method122("TreasurePosY");
       int var6 = var1.method122("TreasurePosZ");
@@ -160,18 +160,18 @@ public class Class1048 extends Class1047 {
    @Override
    public boolean method2980(ItemStack var1) {
       Class2106 var4 = Class1006.method4271(var1);
-      return !this.method2943(var4).method32105() ? false : var4 == Class2106.field13731 && super.method2980(var1);
+      return !this.method2943(var4).isEmpty() ? false : var4 == Class2106.field13731 && super.method2980(var1);
    }
 
    @Override
    public void method4246(ItemEntity var1) {
-      if (this.method2943(Class2106.field13731).method32105()) {
+      if (this.method2943(Class2106.field13731).isEmpty()) {
          ItemStack var4 = var1.method4124();
          if (this.method4252(var4)) {
             this.method3134(var1);
             this.method2944(Class2106.field13731, var4);
             this.field5605[Class2106.field13731.method8773()] = 2.0F;
-            this.method2751(var1, var4.method32179());
+            this.method2751(var1, var4.getCount());
             var1.method2904();
          }
       }
@@ -200,14 +200,14 @@ public class Class1048 extends Class1047 {
             this.method4781(2400);
          }
 
-         if (this.field5024.field9020 && this.method3250() && this.method3433().method11349() > 0.03) {
+         if (this.world.field9020 && this.method3250() && this.method3433().method11349() > 0.03) {
             Vector3d var3 = this.method3281(0.0F);
-            float var4 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
-            float var5 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
+            float var4 = MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
+            float var5 = MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0)) * 0.3F;
             float var6 = 1.2F - this.field5054.nextFloat() * 0.7F;
 
             for (int var7 = 0; var7 < 2; var7++) {
-               this.field5024
+               this.world
                   .method6746(
                      Class7940.field34105,
                      this.getPosX() - var3.field18048 * (double)var6 + (double)var4,
@@ -217,7 +217,7 @@ public class Class1048 extends Class1047 {
                      0.0,
                      0.0
                   );
-               this.field5024
+               this.world
                   .method6746(
                      Class7940.field34105,
                      this.getPosX() - var3.field18048 * (double)var6 - (double)var4,
@@ -248,30 +248,30 @@ public class Class1048 extends Class1047 {
          double var5 = this.field5054.nextGaussian() * 0.01;
          double var7 = this.field5054.nextGaussian() * 0.01;
          double var9 = this.field5054.nextGaussian() * 0.01;
-         this.field5024.method6746(var1, this.method3438(1.0), this.method3441() + 0.2, this.method3445(1.0), var5, var7, var9);
+         this.world.method6746(var1, this.method3438(1.0), this.method3441() + 0.2, this.method3445(1.0), var5, var7, var9);
       }
    }
 
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (!var5.method32105() && var5.method32107().method11743(Class5985.field26114)) {
-         if (!this.field5024.field9020) {
+      if (!var5.isEmpty() && var5.getItem().method11743(Class5985.field26114)) {
+         if (!this.world.field9020) {
             this.method2863(Class6067.field26502, 1.0F, 1.0F);
          }
 
          this.method4779(true);
-         if (!var1.field4919.field29609) {
+         if (!var1.abilities.isCreativeMode) {
             var5.method32182(1);
          }
 
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       } else {
          return super.method4285(var1, var2);
       }
    }
 
-   public static boolean method4784(Class8992<Class1048> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4784(EntityType<Class1048> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var3.getY() > 45 && var3.getY() < var1.method6776()) {
          Optional var7 = var1.method7178(var3);
          return (

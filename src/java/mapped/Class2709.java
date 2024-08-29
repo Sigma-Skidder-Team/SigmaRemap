@@ -43,7 +43,7 @@ public class Class2709<T extends Class880> extends Class2699 {
    public void method10922() {
       if (this.field17188 != PlayerEntity.class && this.field17188 != ServerPlayerEntity.class) {
          this.field17190 = this.field17153
-            .field5024
+            .world
             .<Class880>method7192(
                this.field17188,
                this.field17191,
@@ -55,7 +55,7 @@ public class Class2709<T extends Class880> extends Class2699 {
             );
       } else {
          this.field17190 = this.field17153
-            .field5024
+            .world
             .method7189(this.field17191, this.field17153, this.field17153.getPosX(), this.field17153.method3442(), this.field17153.getPosZ());
       }
    }

@@ -16,7 +16,7 @@ public class Class850 extends MainMenuScreen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 }

@@ -24,11 +24,11 @@ public class Class2747 extends Class2595 {
          return false;
       } else {
          if (this.field17281.method3327()) {
-            BlockPos var3 = this.method10957(this.field17281.field5024, this.field17281, 5, 4);
+            BlockPos var3 = this.method10957(this.field17281.world, this.field17281, 5, 4);
             if (var3 != null) {
-               this.field17283 = (double)var3.method8304();
+               this.field17283 = (double)var3.getX();
                this.field17284 = (double)var3.getY();
-               this.field17285 = (double)var3.method8306();
+               this.field17285 = (double)var3.getZ();
                return true;
             }
          }
@@ -71,10 +71,10 @@ public class Class2747 extends Class2595 {
 
    @Nullable
    public BlockPos method10957(Class1665 var1, Entity var2, int var3, int var4) {
-      BlockPos var7 = var2.method3432();
-      int var8 = var7.method8304();
+      BlockPos var7 = var2.getPosition();
+      int var8 = var7.getX();
       int var9 = var7.getY();
-      int var10 = var7.method8306();
+      int var10 = var7.getZ();
       float var11 = (float)(var3 * var3 * var4 * 2);
       BlockPos var12 = null;
       Mutable var13 = new Mutable();

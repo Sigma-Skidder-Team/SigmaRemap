@@ -3,7 +3,7 @@ package mapped;
 import java.util.Random;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class3289 extends Class3257 {
+public class Class3289 extends Item {
    private static String[] field18800;
 
    public Class3289(Class5643 var1) {
@@ -13,20 +13,20 @@ public class Class3289 extends Class3257 {
    @Override
    public ActionResultType method11707(Class5911 var1) {
       Direction var4 = var1.method18354();
-      if (var4 != Direction.field672) {
+      if (var4 != Direction.DOWN) {
          World var5 = var1.method18360();
          Class5909 var6 = new Class5909(var1);
          BlockPos var7 = var6.method18345();
          ItemStack var8 = var1.method18357();
          Vector3d var9 = Vector3d.method11330(var7);
-         Class6488 var10 = Class8992.field41006.method33221().method32098(var9.method11320(), var9.method11321(), var9.method11322());
+         Class6488 var10 = EntityType.field41006.method33221().method32098(var9.method11320(), var9.method11321(), var9.method11322());
          if (var5.method7054((Entity)null, var10, var0 -> true) && var5.method7181((Entity)null, var10).isEmpty()) {
             if (var5 instanceof ServerWorld) {
                ServerWorld var11 = (ServerWorld)var5;
-               Class1005 var12 = Class8992.field41006
+               ArmorStandEntity var12 = EntityType.field41006
                   .method33202(var11, var8.method32142(), (ITextComponent)null, var1.method18358(), var7, Class2202.field14403, true, true);
                if (var12 == null) {
-                  return ActionResultType.field14821;
+                  return ActionResultType.FAIL;
                }
 
                var11.method6995(var12);
@@ -42,14 +42,14 @@ public class Class3289 extends Class3257 {
             var8.method32182(1);
             return ActionResultType.method9002(var5.field9020);
          } else {
-            return ActionResultType.field14821;
+            return ActionResultType.FAIL;
          }
       } else {
-         return ActionResultType.field14821;
+         return ActionResultType.FAIL;
       }
    }
 
-   private void method11828(Class1005 var1, Random var2) {
+   private void method11828(ArmorStandEntity var1, Random var2) {
       Class7087 var5 = var1.method4211();
       float var6 = var2.nextFloat() * 5.0F;
       float var7 = var2.nextFloat() * 20.0F - 10.0F;

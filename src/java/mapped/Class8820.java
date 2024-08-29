@@ -40,7 +40,7 @@ public class Class8820 {
    public static final Class8551 field39718 = Class8551.method30480("south");
    public static final Class8551 field39719 = Class8551.method30480("west");
    public static final Class8553 field39720 = Class8553.method30486(
-      "facing", Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.field673, Direction.field672
+      "facing", Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.field673, Direction.DOWN
    );
    public static final Class8553 field39721 = Class8553.method30485("facing", var0 -> var0 != Direction.field673);
    public static final Class8553 field39722 = Class8553.method30485("facing", Class76.field161);

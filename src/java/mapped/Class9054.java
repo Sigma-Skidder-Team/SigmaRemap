@@ -33,15 +33,15 @@ public final class Class9054<E> implements Codec<Supplier<E>> {
    }
 
    public <T> DataResult<T> encode(Supplier<E> var1, DynamicOps<T> var2, T var3) {
-      return !(var2 instanceof Class6713)
+      return !(var2 instanceof WorldGenSettingsExport)
          ? this.field41444.encode(var1.get(), var2, var3)
-         : ((Class6713)var2).method20492(var1.get(), var3, this.field41443, this.field41444);
+         : ((WorldGenSettingsExport)var2).method20492(var1.get(), var3, this.field41443, this.field41444);
    }
 
    public <T> DataResult<Pair<Supplier<E>, T>> decode(DynamicOps<T> var1, T var2) {
-      return !(var1 instanceof Class6711)
+      return !(var1 instanceof WorldSettingsImport)
          ? this.field41444.decode(var1, var2).map(var0 -> var0.mapFirst(var0x -> () -> var0x))
-         : ((Class6711)var1).<E>method20473(var2, this.field41443, this.field41444, this.field41445);
+         : ((WorldSettingsImport)var1).<E>method20473(var2, this.field41443, this.field41444, this.field41445);
    }
 
    @Override

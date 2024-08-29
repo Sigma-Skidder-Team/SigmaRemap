@@ -12,12 +12,12 @@ import org.apache.logging.log4j.Logger;
 
 public class Class1770 implements Class1768 {
    private static final Logger field9586 = LogManager.getLogger();
-   private final Class191 field9587;
+   private final IResourceManager field9587;
    private final byte[] field9588;
    private final String field9589;
    private final Map<ResourceLocation, Class1806> field9590 = Maps.newHashMap();
 
-   public Class1770(Class191 var1, byte[] var2, String var3) {
+   public Class1770(IResourceManager var1, byte[] var2, String var3) {
       this.field9587 = var1;
       this.field9588 = var2;
       this.field9589 = var3;

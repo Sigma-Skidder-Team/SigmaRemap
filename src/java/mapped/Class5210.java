@@ -16,7 +16,7 @@ public class Class5210 extends Module {
 
     public Class5210() {
         super(ModuleCategory.MOVEMENT, "OldAAC", "Speed for old version of AAC");
-        this.method15972(new Class6004("Auto Jump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
     }
 
     @Override

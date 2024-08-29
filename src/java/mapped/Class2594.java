@@ -26,7 +26,7 @@ public class Class2594 extends Class2595 {
       int var6 = var5.nextInt(1025) - 512;
       int var7 = var5.nextInt(9) - 4;
       int var8 = var5.nextInt(1025) - 512;
-      if ((double)var7 + this.field16812.getPosY() > (double)(this.field16812.field5024.method6776() - 1)) {
+      if ((double)var7 + this.field16812.getPosY() > (double)(this.field16812.world.method6776() - 1)) {
          var7 = 0;
       }
 
@@ -48,10 +48,10 @@ public class Class2594 extends Class2595 {
          }
 
          if (var4 != null) {
-            int var5 = MathHelper.method37769(var4.field18048);
-            int var6 = MathHelper.method37769(var4.field18050);
+            int var5 = MathHelper.floor(var4.field18048);
+            int var6 = MathHelper.floor(var4.field18050);
             byte var7 = 34;
-            if (!this.field16812.field5024.method7019(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
+            if (!this.field16812.world.method7019(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
                var4 = null;
             }
          }

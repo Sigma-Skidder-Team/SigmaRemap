@@ -34,12 +34,12 @@ public class Class8090 {
    public int field34789 = 0;
    public ResourceLocation field34790 = null;
    public Map field34791 = null;
-   public Class1713 field34792 = null;
-   public Map<String, Class1713> field34793 = null;
-   public Class7202 field34794 = null;
-   public Map<String, Class7202> field34795 = null;
-   public Class7202 field34796 = null;
-   public Map<String, Class7202> field34797 = null;
+   public TextureAtlasSprite field34792 = null;
+   public Map<String, TextureAtlasSprite> field34793 = null;
+   public IBakedModel field34794 = null;
+   public Map<String, IBakedModel> field34795 = null;
+   public IBakedModel field34796 = null;
+   public Map<String, IBakedModel> field34797 = null;
    private int field34798 = 0;
    private int field34799 = 0;
    public static final int field34800 = 0;
@@ -156,9 +156,9 @@ public class Class8090 {
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
-            Class3257 var9 = this.method27999(var8);
+            Item var9 = this.method27999(var8);
             if (var9 != null) {
-               int var10 = Class3257.method11701(var9);
+               int var10 = Item.method11701(var9);
                if (var10 >= 0) {
                   var5.add(new Integer(var10));
                } else {
@@ -180,9 +180,9 @@ public class Class8090 {
       }
    }
 
-   private Class3257 method27999(String var1) {
+   private Item method27999(String var1) {
       ResourceLocation var4 = new ResourceLocation(var1);
-      return Registry.field16075.method9193(var4) ? Registry.field16075.method9184(var4) : null;
+      return Registry.ITEM.method9193(var4) ? Registry.ITEM.method9184(var4) : null;
    }
 
    private static String method28000(String var0, String var1, String var2, String var3, String var4, int var5, Map<String, String> var6, boolean var7) {
@@ -512,7 +512,7 @@ public class Class8090 {
          return false;
       } else if (this.field34770 != 0) {
          if (this.field34770 == 4 && this.field34771 == null) {
-            this.field34771 = new int[]{Class3257.method11701(Class8514.field38120)};
+            this.field34771 = new int[]{Item.method11701(Items.field38120)};
          }
 
          if (this.field34770 == 1 || this.field34770 == 3 || this.field34770 == 4) {
@@ -542,16 +542,16 @@ public class Class8090 {
    }
 
    private int[] method28015() {
-      Class3257 var3 = this.method27999(this.field34768);
+      Item var3 = this.method27999(this.field34768);
       if (var3 != null) {
-         int var4 = Class3257.method11701(var3);
+         int var4 = Item.method11701(var3);
          return var4 >= 0 ? new int[]{var4} : null;
       } else {
          return null;
       }
    }
 
-   public void method28016(Class289 var1) {
+   public void method28016(AtlasTexture var1) {
       if (this.field34772 != null) {
          this.field34790 = this.method28018(this.field34772);
          if (this.field34770 == 1) {
@@ -570,24 +570,24 @@ public class Class8090 {
             this.field34791.put(var5, var7);
             if (this.field34770 == 1) {
                ResourceLocation var8 = this.method28019(var7);
-               Class1713 var9 = var1.method1119(var8);
+               TextureAtlasSprite var9 = var1.method1119(var8);
                this.field34793.put(var5, var9);
             }
          }
       }
    }
 
-   public void method28017(Class289 var1) {
+   public void method28017(AtlasTexture var1) {
       if (this.field34792 != null) {
-         this.field34792 = var1.method1098(this.field34792.method7465());
+         this.field34792 = var1.getSprite(this.field34792.method7465());
       }
 
       if (this.field34793 != null) {
          for (String var5 : this.field34793.keySet()) {
-            Class1713 var6 = (Class1713)this.field34793.get(var5);
+            TextureAtlasSprite var6 = (TextureAtlasSprite)this.field34793.get(var5);
             if (var6 != null) {
                ResourceLocation var7 = var6.method7465();
-               Class1713 var8 = var1.method1098(var7);
+               TextureAtlasSprite var8 = var1.getSprite(var7);
                if (var8 == null || var8 instanceof Class1714) {
                   Class7944.method26811("Missing CIT sprite: " + var7 + ", properties: " + this.field34769);
                }
@@ -627,7 +627,7 @@ public class Class8090 {
       return new ResourceLocation(var1.method8293(), var4);
    }
 
-   public void method28020(Class289 var1, Class8451 var2) {
+   public void method28020(AtlasTexture var1, Class8451 var2) {
       if (this.field34772 != null || this.field34773 != null) {
          String[] var5 = this.method28025();
          boolean var6 = this.method28022();
@@ -638,9 +638,9 @@ public class Class8090 {
                String var10 = Class9402.method35762(var8, "texture.");
                if (this.method28021(var10)) {
                   String[] var11 = new String[]{var9};
-                  Class7202 var12 = method28023(var1, var2, var11, var6);
+                  IBakedModel var12 = method28023(var1, var2, var11, var6);
                   if (this.field34795 == null) {
-                     this.field34795 = new HashMap<String, Class7202>();
+                     this.field34795 = new HashMap<String, IBakedModel>();
                   }
 
                   String var13 = "item/" + var10;
@@ -659,7 +659,7 @@ public class Class8090 {
       return true;
    }
 
-   private static Class7202 method28023(Class289 var0, Class8451 var1, String[] var2, boolean var3) {
+   private static IBakedModel method28023(AtlasTexture var0, Class8451 var1, String[] var2, boolean var3) {
       String[] var6 = new String[var2.length];
 
       for (int var7 = 0; var7 < var6.length; var7++) {
@@ -672,15 +672,15 @@ public class Class8090 {
       return method28028(var0, var10, var3);
    }
 
-   public static Class1713 method28024(Class7826 var0) {
-      Class289 var3 = Minecraft.getInstance().method1570().method1027(var0.method26196());
-      return var3.method1098(var0.method26197());
+   public static TextureAtlasSprite method28024(Class7826 var0) {
+      AtlasTexture var3 = Minecraft.getInstance().getModelManager().getAtlasTexture(var0.method26196());
+      return var3.getSprite(var0.method26197());
    }
 
    private String[] method28025() {
       if (this.field34770 == 1 && this.field34771.length == 1) {
-         Class3257 var3 = Class3257.method11702(this.field34771[0]);
-         boolean var4 = var3 == Class8514.field37971 || var3 == Class8514.field38115 || var3 == Class8514.field38118;
+         Item var3 = Item.method11702(this.field34771[0]);
+         boolean var4 = var3 == Items.field37971 || var3 == Items.field38115 || var3 == Items.field38118;
          if (var4 && this.field34776 != null && this.field34776.method36839() > 0) {
             Class7589 var12 = this.field34776.method36840(0);
             int var13 = var12.method24846();
@@ -756,10 +756,10 @@ public class Class8090 {
       return Class7496.method24427(var6);
    }
 
-   private static Class7202 method28028(Class289 var0, Class7496 var1, boolean var2) {
+   private static IBakedModel method28028(AtlasTexture var0, Class7496 var1, boolean var2) {
       Class1901 var5 = Class1901.field11159;
       Class7826 var6 = var1.method24436("particle");
-      Class1713 var7 = var6.method26198();
+      TextureAtlasSprite var7 = var6.method26198();
       Class9071 var8 = new Class9071(var1, Class6391.field27973, false).method33812(var7);
 
       for (Class9726 var10 : var1.method24428()) {
@@ -770,7 +770,7 @@ public class Class8090 {
             }
 
             Class7826 var14 = var1.method24436(var13.field42068);
-            Class1713 var15 = var14.method26198();
+            TextureAtlasSprite var15 = var14.method26198();
             Class8557 var16 = method28029(var10, var13, var15, var12, var5);
             if (var13.field42066 != null) {
                var8.method33810(Direction.method531(var5.method8166().method21548(), var13.field42066), var16);
@@ -783,7 +783,7 @@ public class Class8090 {
       return var8.method33813();
    }
 
-   private static Class8557 method28029(Class9726 var0, Class9163 var1, Class1713 var2, Direction var3, Class1901 var4) {
+   private static Class8557 method28029(Class9726 var0, Class9163 var1, TextureAtlasSprite var2, Direction var3, Class1901 var4) {
       Class9155 var7 = new Class9155();
       return var7.method34175(var0.field45423, var0.field45424, var1, var2, var3, var4, var0.field45426, var0.field45427, var2.method7465());
    }
@@ -840,8 +840,8 @@ public class Class8090 {
       return (float)this.field34799;
    }
 
-   public Class7202 method28032(ResourceLocation var1, boolean var2) {
-      Class7202 var5;
+   public IBakedModel method28032(ResourceLocation var1, boolean var2) {
+      IBakedModel var5;
       Map var6;
       if (!var2) {
          var5 = this.field34794;
@@ -853,7 +853,7 @@ public class Class8090 {
 
       if (var1 != null && var6 != null) {
          String var7 = var1.method8292();
-         Class7202 var8 = (Class7202)var6.get(var7);
+         IBakedModel var8 = (IBakedModel)var6.get(var7);
          if (var8 != null) {
             return var8;
          }
@@ -879,8 +879,8 @@ public class Class8090 {
    }
 
    public void method28034() {
-      Class280 var3 = Class7944.method26825();
-      Class7202 var4 = var3.method1024();
+      ModelManager var3 = Class7944.method26825();
+      IBakedModel var4 = var3.getMissingModel();
       if (this.field34774 != null) {
          ResourceLocation var5 = method28036(this.field34774);
          Class1997 var6 = new Class1997(var5, "inventory");
@@ -898,10 +898,10 @@ public class Class8090 {
             if (this.method28021(var8)) {
                ResourceLocation var9 = method28036(var7);
                Class1997 var10 = new Class1997(var9, "inventory");
-               Class7202 var11 = var3.method1023(var10);
+               IBakedModel var11 = var3.method1023(var10);
                if (var11 != var4) {
                   if (this.field34797 == null) {
-                     this.field34797 = new HashMap<String, Class7202>();
+                     this.field34797 = new HashMap<String, IBakedModel>();
                   }
 
                   String var12 = "item/" + var8;

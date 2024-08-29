@@ -1,21 +1,21 @@
 package mapped;
 
-public class Class917 extends Class916 {
+public class Class917 extends AbstractMinecartEntity {
    private static String[] field5231;
 
-   public Class917(Class8992<?> var1, World var2) {
+   public Class917(EntityType<?> var1, World var2) {
       super(var1, var2);
    }
 
    public Class917(World var1, double var2, double var4, double var6) {
-      super(Class8992.field41050, var1, var2, var4, var6);
+      super(EntityType.field41050, var1, var2, var4, var6);
    }
 
    @Override
    public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       if (!var1.method2851()) {
          if (!this.method3329()) {
-            if (this.field5024.field9020) {
+            if (this.world.field9020) {
                return ActionResultType.field14818;
             } else {
                return !var1.method3311(this) ? ActionResultType.field14820 : ActionResultType.field14819;
@@ -45,7 +45,7 @@ public class Class917 extends Class916 {
    }
 
    @Override
-   public Class2177 method3602() {
-      return Class2177.field14287;
+   public MinecartType getMinecartType() {
+      return MinecartType.MINECART;
    }
 }

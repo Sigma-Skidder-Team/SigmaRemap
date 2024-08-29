@@ -75,7 +75,7 @@ public class Class6137 {
                                                    for (Entity var5 : Class8700.method31349(var0x, "targets")) {
                                                       var3x.add(
                                                          ((Class6619)var0x.getSource())
-                                                            .method20166((ServerWorld)var5.field5024)
+                                                            .method20166((ServerWorld)var5.world)
                                                             .method20158(var5.getPositionVec())
                                                             .method20159(var5.method3321())
                                                       );
@@ -349,7 +349,7 @@ public class Class6137 {
    private static Class6619 method18962(Class6619 var0, Class7151 var1, Class9670 var2, IntFunction<Class30> var3, boolean var4) {
       return var0.method20161((var4x, var5, var6) -> {
          try {
-            Class39 var9 = var1.method22312();
+            CompoundNBT var9 = var1.method22312();
             int var10 = var4 ? var6 : (var5 ? 1 : 0);
             var2.method37730(var9, () -> (Class30)var3.apply(var10));
             var1.method22311(var9);
@@ -639,24 +639,24 @@ public class Class6137 {
                for (int var14 = var7.field45678; var14 <= var7.field45681; var14++) {
                   BlockPos var15 = new BlockPos(var14, var13, var12);
                   BlockPos var16 = var15.method8337(var9);
-                  Class7380 var17 = var0.method6738(var15);
+                  BlockState var17 = var0.getBlockState(var15);
                   if (!var4 || !var17.method23448(Blocks.AIR)) {
-                     if (var17 != var0.method6738(var16)) {
+                     if (var17 != var0.getBlockState(var16)) {
                         return OptionalInt.empty();
                      }
 
-                     Class944 var18 = var0.method6759(var15);
-                     Class944 var19 = var0.method6759(var16);
+                     TileEntity var18 = var0.getTileEntity(var15);
+                     TileEntity var19 = var0.getTileEntity(var16);
                      if (var18 != null) {
                         if (var19 == null) {
                            return OptionalInt.empty();
                         }
 
-                        Class39 var20 = var18.method3646(new Class39());
+                        CompoundNBT var20 = var18.write(new CompoundNBT());
                         var20.method133("x");
                         var20.method133("y");
                         var20.method133("z");
-                        Class39 var21 = var19.method3646(new Class39());
+                        CompoundNBT var21 = var19.write(new CompoundNBT());
                         var21.method133("x");
                         var21.method133("y");
                         var21.method133("z");

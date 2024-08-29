@@ -17,7 +17,7 @@ public class Class5185 extends Module {
     public int field23487;
     public int field23488;
     public int field23489;
-    public Class8711 field23490;
+    public BlockRayTraceResult field23490;
     public Thread field23491;
     public Class9823 field23492;
     private List<Class9510> field23485;
@@ -44,10 +44,10 @@ public class Class5185 extends Module {
                 int var4 = Class5628.method17688(Class1979.field12901.field12910, 0.14F);
                 GL11.glPushMatrix();
                 GL11.glDisable(2929);
-                BlockPos var5 = this.field23490.method31423();
-                double var6 = (double) var5.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+                BlockPos var5 = this.field23490.getPos();
+                double var6 = (double) var5.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                 double var8 = (double) var5.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                double var10 = (double) var5.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                double var10 = (double) var5.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var12 = new Class9388(var6, var8, var10, var6 + 1.0, var8 + 1.0, var10 + 1.0);
                 Class3192.method11459(var12, var4);
                 GL11.glEnable(2929);

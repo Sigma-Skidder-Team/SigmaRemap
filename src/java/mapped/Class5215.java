@@ -23,7 +23,7 @@ public class Class5215 extends Module {
     @EventTarget
     public void method16240(Class4432 var1) {
         if (this.method15996()) {
-            if (mc.gameSettings.field44636.method8509() && !mc.player.getRidingEntity().field5036) {
+            if (mc.gameSettings.field44636.isKeyDown() && !mc.player.getRidingEntity().field5036) {
             }
 
             MovementInput var4 = mc.player.field6131;
@@ -33,7 +33,7 @@ public class Class5215 extends Module {
                     && !mc.player.getRidingEntity().field5036
                     && Class5628.method17730(mc.player.getRidingEntity(), 5.0F)
                     && !mc.player.getRidingEntity().method3250()
-                    && mc.world.method6738(mc.player.getRidingEntity().method3432()).method23383() != Blocks.WATER) {
+                    && mc.world.getBlockState(mc.player.getRidingEntity().getPosition()).getBlock() != Blocks.WATER) {
                 var1.method13984(-2.0);
             }
 
@@ -57,7 +57,7 @@ public class Class5215 extends Module {
                 float var12 = this.field23546;
                 if (mc.player.getRidingEntity() instanceof Class1074) {
                     Class1074 var15 = (Class1074) mc.player.getRidingEntity();
-                    if (var15.field5036 && mc.gameSettings.field44636.method8509()) {
+                    if (var15.field5036 && mc.gameSettings.field44636.isKeyDown()) {
                         mc.player.field6140 = 1.0F;
                     }
                 }

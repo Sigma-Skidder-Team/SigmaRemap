@@ -16,8 +16,8 @@ public class Class5157 extends Module {
 
     public Class5157() {
         super(ModuleCategory.COMBAT, "NoGround", "NoGround criticals");
-        this.method15972(new Class6005("Offset", "The way you will fake no ground", 0, "Vanilla", "OldHypixel"));
-        this.method15972(new Class6004("Avoid Fall Damage", "Avoid fall damages.", true));
+        this.registerSetting(new ModeSetting("Offset", "The way you will fake no ground", 0, "Vanilla", "OldHypixel"));
+        this.registerSetting(new BooleanSetting("Avoid Fall Damage", "Avoid fall damages.", true));
     }
 
     @Override
@@ -68,8 +68,8 @@ public class Class5157 extends Module {
 
                 double var4 = this.field23411 ? 1.0E-14 : 0.0;
                 boolean var6 = false;
-                boolean var7 = mc.field1346 != null && mc.field1346.method31417() == Class2100.field13690;
-                boolean var8 = mc.field1337.method23158() || mc.gameSettings.field44643.method8509() && var7;
+                boolean var7 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
+                boolean var8 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var7;
                 if (!var8 && !Class5381.method16953()) {
                     switch (this.field23410) {
                         case 0:

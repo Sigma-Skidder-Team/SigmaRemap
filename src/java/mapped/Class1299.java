@@ -32,12 +32,12 @@ public class Class1299 extends Class1298 {
    }
 
    public void method6174() {
-      this.field6886 = Class8981.method32982();
+      this.field6886 = Shaders.method32982();
       this.field6887 = 0;
       int var3 = 0;
 
       for (int var4 = this.field6886.size(); var3 < var4; var3++) {
-         if (((String)this.field6886.get(var3)).equals(Class8981.field40887)) {
+         if (((String)this.field6886.get(var3)).equals(Shaders.field40887)) {
             this.field6887 = var3;
             break;
          }
@@ -55,7 +55,7 @@ public class Class1299 extends Class1298 {
          return false;
       } else {
          String var9 = (String)this.field6886.get(var1);
-         Class4671 var10 = Class8981.method32954(var9);
+         Class4671 var10 = Shaders.method32954(var9);
          if (this.method6176(var10, var1)) {
             this.method6175(var1);
             return true;
@@ -68,8 +68,8 @@ public class Class1299 extends Class1298 {
    private void method6175(int var1) {
       this.field6887 = var1;
       this.field6889 = this.field6888;
-      Class8981.method32952((String)this.field6886.get(var1));
-      Class8981.method33033();
+      Shaders.method32952((String)this.field6886.get(var1));
+      Shaders.method33033();
       this.field6890.method2569();
    }
 
@@ -86,8 +86,8 @@ public class Class1299 extends Class1298 {
                int var10 = Class7944.method26931(var9, var8);
                if (var10 < 0) {
                   String var11 = ("HD_U_" + var8).replace('_', ' ');
-                  String var12 = Class9088.method33883("of.message.shaders.nv1", var11);
-                  String var13 = Class9088.method33883("of.message.shaders.nv2");
+                  String var12 = I18n.format("of.message.shaders.nv1", var11);
+                  String var13 = I18n.format("of.message.shaders.nv2");
                   BooleanConsumer var14 = var2x -> {
                      if (var2x) {
                         this.method6175(var2);
@@ -95,7 +95,7 @@ public class Class1299 extends Class1298 {
 
                      this.field6870.displayGuiScreen(this.field6890);
                   };
-                  Class829 var15 = new Class829(var14, new StringTextComponent(var12), new StringTextComponent(var13));
+                  ConfirmScreen var15 = new ConfirmScreen(var14, new StringTextComponent(var12), new StringTextComponent(var13));
                   this.field6870.displayGuiScreen(var15);
                   return false;
                } else {

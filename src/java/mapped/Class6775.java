@@ -4,9 +4,9 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class6775 extends Class6773 {
-   private static final Class7380 field29495 = Blocks.field36730.method11579();
-   private static final Class7380 field29549 = Blocks.field36731.method11579();
-   private static final Class7380 field29550 = Blocks.field36794.method11579();
+   private static final BlockState field29495 = Blocks.field36730.method11579();
+   private static final BlockState field29549 = Blocks.field36731.method11579();
+   private static final BlockState field29550 = Blocks.field36794.method11579();
 
    public Class6775(Codec<Class8278> var1) {
       super(var1);
@@ -21,19 +21,19 @@ public class Class6775 extends Class6773 {
       int var5,
       int var6,
       double var7,
-      Class7380 var9,
-      Class7380 var10,
+      BlockState var9,
+      BlockState var10,
       int var11,
       long var12,
       Class8278 var14
    ) {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
-      Class7380 var19 = field29495;
+      BlockState var19 = field29495;
       Class8277 var20 = var3.method32507().method24283();
-      Class7380 var21 = var20.method28935();
-      Class7380 var22 = var20.method28934();
-      Class7380 var23 = var21;
+      BlockState var21 = var20.method28935();
+      BlockState var22 = var20.method28934();
+      BlockState var23 = var21;
       int var24 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
       boolean var25 = Math.cos(var7 / 3.0 * Math.PI) > 0.0;
       int var26 = -1;
@@ -44,9 +44,9 @@ public class Class6775 extends Class6773 {
       for (int var30 = var6; var30 >= 0; var30--) {
          if (var28 < 15) {
             var29.method8372(var17, var30, var18);
-            Class7380 var31 = var2.method6738(var29);
-            if (!var31.method23393()) {
-               if (var31.method23448(var9.method23383())) {
+            BlockState var31 = var2.getBlockState(var29);
+            if (!var31.isAir()) {
+               if (var31.method23448(var9.getBlock())) {
                   if (var26 != -1) {
                      if (var26 > 0) {
                         var26--;
@@ -68,7 +68,7 @@ public class Class6775 extends Class6773 {
                         var23 = var9;
                      }
 
-                     if (var30 < var11 && (var19 == null || var19.method23393())) {
+                     if (var30 < var11 && (var19 == null || var19.isAir())) {
                         var19 = var10;
                      }
 
@@ -83,7 +83,7 @@ public class Class6775 extends Class6773 {
                            var2.method7061(var29, var22, false);
                            var27 = true;
                         } else {
-                           Class7380 var32;
+                           BlockState var32;
                            if (var30 < 64 || var30 > 127) {
                               var32 = field29549;
                            } else if (!var25) {

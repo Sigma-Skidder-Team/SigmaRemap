@@ -6,8 +6,8 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 public class Class7095 extends Class7092 {
-   public static final Codec<Class7095> field30525 = Class7380.field31585
-      .xmap(Class7377::method23383, Block::method11579)
+   public static final Codec<Class7095> field30525 = BlockState.field31585
+      .xmap(Class7377::getBlock, Block::method11579)
       .listOf()
       .fieldOf("blocks")
       .xmap(Class7095::new, var0 -> var0.field30529)
@@ -24,7 +24,7 @@ public class Class7095 extends Class7092 {
    @Nullable
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
-      return !this.field30529.contains(var5.field35531.method23383()) ? var5 : null;
+      return !this.field30529.contains(var5.field35531.getBlock()) ? var5 : null;
    }
 
    @Override

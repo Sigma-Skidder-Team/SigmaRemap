@@ -4,8 +4,8 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class945 extends Class944 implements Class946, Class935 {
-   private final Class25<ItemStack> field5329 = Class25.<ItemStack>method68(4, ItemStack.EMPTY);
+public class Class945 extends TileEntity implements Class946, Class935 {
+   private final NonNullList<ItemStack> field5329 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    private final int[] field5330 = new int[4];
    private final int[] field5331 = new int[4];
 
@@ -35,7 +35,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
    private void method3793() {
       for (int var3 = 0; var3 < this.field5329.size(); var3++) {
          ItemStack var4 = this.field5329.get(var3);
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             this.field5330[var3]++;
             if (this.field5330[var3] >= this.field5331[var3]) {
                Class927 var6 = new Class927(var4);
@@ -44,8 +44,8 @@ public class Class945 extends Class944 implements Class946, Class935 {
                   .<Class920, Class4850>method1030(Class7207.field30939, var6, this.field5324)
                   .<ItemStack>map(var1 -> var1.method14962(var6))
                   .orElse(var4);
-               BlockPos var8 = this.method3774();
-               Class7236.method22725(this.field5324, (double)var8.method8304(), (double)var8.getY(), (double)var8.method8306(), var7);
+               BlockPos var8 = this.getPos();
+               Class7236.method22725(this.field5324, (double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), var7);
                this.field5329.set(var3, ItemStack.EMPTY);
                this.method3799();
             }
@@ -56,7 +56,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
    private void method3794() {
       World var3 = this.method3734();
       if (var3 != null) {
-         BlockPos var4 = this.method3774();
+         BlockPos var4 = this.getPos();
          Random var5 = var3.field9016;
          if (var5.nextFloat() < 0.11F) {
             for (int var6 = 0; var6 < var5.nextInt(2) + 2; var6++) {
@@ -67,15 +67,15 @@ public class Class945 extends Class944 implements Class946, Class935 {
          int var17 = this.method3775().<Direction>method23463(Class3244.field18701).method534();
 
          for (int var7 = 0; var7 < this.field5329.size(); var7++) {
-            if (!this.field5329.get(var7).method32105() && var5.nextFloat() < 0.2F) {
+            if (!this.field5329.get(var7).isEmpty() && var5.nextFloat() < 0.2F) {
                Direction var8 = Direction.method547(Math.floorMod(var7 + var17, 4));
                float var9 = 0.3125F;
-               double var10 = (double)var4.method8304()
+               double var10 = (double)var4.getX()
                   + 0.5
                   - (double)((float)var8.method539() * 0.3125F)
                   + (double)((float)var8.method537().method539() * 0.3125F);
                double var12 = (double)var4.getY() + 0.5;
-               double var14 = (double)var4.method8306()
+               double var14 = (double)var4.getZ()
                   + 0.5
                   - (double)((float)var8.method541() * 0.3125F)
                   + (double)((float)var8.method537().method541() * 0.3125F);
@@ -88,12 +88,12 @@ public class Class945 extends Class944 implements Class946, Class935 {
       }
    }
 
-   public Class25<ItemStack> method3795() {
+   public NonNullList<ItemStack> method3795() {
       return this.field5329;
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5329.clear();
       Class7920.method26567(var2, this.field5329);
@@ -109,15 +109,15 @@ public class Class945 extends Class944 implements Class946, Class935 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
+   public CompoundNBT write(CompoundNBT var1) {
       this.method3796(var1);
       var1.method111("CookingTimes", this.field5330);
       var1.method111("CookingTotalTimes", this.field5331);
       return var1;
    }
 
-   private Class39 method3796(Class39 var1) {
-      super.method3646(var1);
+   private CompoundNBT method3796(CompoundNBT var1) {
+      super.write(var1);
       Class7920.method26566(var1, this.field5329, true);
       return var1;
    }
@@ -129,12 +129,12 @@ public class Class945 extends Class944 implements Class946, Class935 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3796(new Class39());
+   public CompoundNBT method3777() {
+      return this.method3796(new CompoundNBT());
    }
 
    public Optional<Class4850> method3797(ItemStack var1) {
-      return !this.field5329.stream().noneMatch(ItemStack::method32105)
+      return !this.field5329.stream().noneMatch(ItemStack::isEmpty)
          ? this.field5324.method6816().<Class920, Class4850>method1030(Class7207.field30939, new Class927(var1), this.field5324)
          : Optional.<Class4850>empty();
    }
@@ -142,7 +142,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
    public boolean method3798(ItemStack var1, int var2) {
       for (int var5 = 0; var5 < this.field5329.size(); var5++) {
          ItemStack var6 = this.field5329.get(var5);
-         if (var6.method32105()) {
+         if (var6.isEmpty()) {
             this.field5331[var5] = var2;
             this.field5330[var5] = 0;
             this.field5329.set(var5, var1.method32106(1));
@@ -156,7 +156,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
 
    private void method3799() {
       this.method3622();
-      this.method3734().method6731(this.method3774(), this.method3775(), this.method3775(), 3);
+      this.method3734().method6731(this.getPos(), this.method3775(), this.method3775(), 3);
    }
 
    @Override
@@ -167,7 +167,7 @@ public class Class945 extends Class944 implements Class946, Class935 {
    public void method3800() {
       if (this.field5324 != null) {
          if (!this.field5324.field9020) {
-            Class7236.method22724(this.field5324, this.method3774(), this.method3795());
+            Class7236.method22724(this.field5324, this.getPos(), this.method3795());
          }
 
          this.method3799();

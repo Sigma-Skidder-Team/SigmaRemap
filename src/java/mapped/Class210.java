@@ -94,7 +94,7 @@ public class Class210 extends Class208<Class7587> {
       int var8 = Class2002.method8408(var1);
       if (Class7587.method24836(this.field776).get(var5) == var8 + 1) {
          long var9;
-         for (var9 = var1; !this.method698(var9) && this.method722(var8); var9 = Class2002.method8394(var9, Direction.field672)) {
+         for (var9 = var1; !this.method698(var9) && this.method722(var8); var9 = Class2002.method8394(var9, Direction.DOWN)) {
             var8--;
          }
 

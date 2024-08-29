@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class1047 extends Class1046 {
-   public Class1047(Class8992<? extends Class1047> var1, World var2) {
+   public Class1047(EntityType<? extends Class1047> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
    }
@@ -28,7 +28,7 @@ public abstract class Class1047 extends Class1046 {
 
    @Override
    public int method2937(PlayerEntity var1) {
-      return 1 + this.field5024.field9016.nextInt(3);
+      return 1 + this.world.field9016.nextInt(3);
    }
 
    public void method4775(int var1) {

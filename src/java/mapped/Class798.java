@@ -13,10 +13,10 @@ public abstract class Class798 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       for (Class1197 var4 : this.field4566) {
          if (var4 instanceof Class1219) {
-            ((Class1219)var4).method1919();
+            ((Class1219)var4).tick();
          }
       }
    }

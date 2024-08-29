@@ -14,11 +14,11 @@ public class Class816 extends Class798 {
    @Override
    public void method1921() {
       this.method2321();
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       if ((!this.method2319() || !this.method2320() || !field4443) && !field4439.method36014()) {
          field4439.method36026();
       } else if (field4443 && this.method2319()) {

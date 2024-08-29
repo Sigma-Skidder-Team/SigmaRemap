@@ -11,15 +11,15 @@ public enum Class2200 {
    field14381("none", Class6200::new);
 
    private final String field14382;
-   private final Function<Class9557, ? extends Class6196> field14383;
+   private final Function<Tutorial, ? extends Class6196> field14383;
    private static final Class2200[] field14384 = new Class2200[]{field14376, field14377, field14378, field14379, field14380, field14381};
 
-   private <T extends Class6196> Class2200(String var3, Function<Class9557, T> var4) {
+   private <T extends Class6196> Class2200(String var3, Function<Tutorial, T> var4) {
       this.field14382 = var3;
       this.field14383 = var4;
    }
 
-   public Class6196 method8915(Class9557 var1) {
+   public Class6196 method8915(Tutorial var1) {
       return this.field14383.apply(var1);
    }
 

@@ -9,11 +9,11 @@ public class Class5815 extends Class5812 {
    private final Class920 field25484 = new Class982(this, 2);
    private final Class8786 field25485;
 
-   public Class5815(int var1, Class974 var2) {
+   public Class5815(int var1, PlayerInventory var2) {
       this(var1, var2, Class8786.field39521);
    }
 
-   public Class5815(int var1, Class974 var2, Class8786 var3) {
+   public Class5815(int var1, PlayerInventory var2, Class8786 var3) {
       super(Class8298.field35662, var1);
       this.field25485 = var3;
       this.method18124(new Class5838(this, this.field25484, 0, 49, 19));
@@ -42,14 +42,14 @@ public class Class5815 extends Class5812 {
    private void method18166() {
       ItemStack var3 = this.field25484.method3618(0);
       ItemStack var4 = this.field25484.method3618(1);
-      boolean var5 = !var3.method32105() || !var4.method32105();
-      boolean var6 = !var3.method32105() && !var4.method32105();
+      boolean var5 = !var3.isEmpty() || !var4.isEmpty();
+      boolean var6 = !var3.isEmpty() && !var4.isEmpty();
       if (!var5) {
          this.field25483.method3621(0, ItemStack.EMPTY);
       } else {
-         boolean var7 = !var3.method32105() && var3.method32107() != Class8514.field38070 && !var3.method32163()
-            || !var4.method32105() && var4.method32107() != Class8514.field38070 && !var4.method32163();
-         if (var3.method32179() > 1 || var4.method32179() > 1 || !var6 && var7) {
+         boolean var7 = !var3.isEmpty() && var3.getItem() != Items.field38070 && !var3.method32163()
+            || !var4.isEmpty() && var4.getItem() != Items.field38070 && !var4.method32163();
+         if (var3.getCount() > 1 || var4.getCount() > 1 || !var6 && var7) {
             this.field25483.method3621(0, ItemStack.EMPTY);
             this.method18130();
             return;
@@ -59,17 +59,17 @@ public class Class5815 extends Class5812 {
          int var13;
          ItemStack var14;
          if (!var6) {
-            boolean var9 = !var3.method32105();
+            boolean var9 = !var3.isEmpty();
             var13 = !var9 ? var4.method32117() : var3.method32117();
             var14 = !var9 ? var4 : var3;
          } else {
-            if (var3.method32107() != var4.method32107()) {
+            if (var3.getItem() != var4.getItem()) {
                this.field25483.method3621(0, ItemStack.EMPTY);
                this.method18130();
                return;
             }
 
-            Class3257 var15 = var3.method32107();
+            Item var15 = var3.getItem();
             int var10 = var15.method11711() - var3.method32117();
             int var11 = var15.method11711() - var4.method32117();
             int var12 = var10 + var11 + var15.method11711() * 5 / 100;
@@ -124,8 +124,8 @@ public class Class5815 extends Class5812 {
          .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
       Class7858.method26314(var7, var6);
       var6.method32170(0);
-      if (var6.method32107() == Class8514.field38070 && var7.size() == 0) {
-         var6 = new ItemStack(Class8514.field37900);
+      if (var6.getItem() == Items.field38070 && var7.size() == 0) {
+         var6 = new ItemStack(Items.field37900);
          if (var1.method32152()) {
             var6.method32150(var1.method32149());
          }
@@ -160,7 +160,7 @@ public class Class5815 extends Class5812 {
          ItemStack var9 = this.field25484.method3618(1);
          if (var2 != 2) {
             if (var2 != 0 && var2 != 1) {
-               if (!var8.method32105() && !var9.method32105()) {
+               if (!var8.isEmpty() && !var9.isEmpty()) {
                   if (var2 >= 3 && var2 < 30) {
                      if (!this.method18142(var7, 30, 39, false)) {
                         return ItemStack.EMPTY;
@@ -182,13 +182,13 @@ public class Class5815 extends Class5812 {
             var6.method18260(var7, var5);
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 

@@ -332,14 +332,14 @@ public class Class6886 {
       }
    }
 
-   public Class41 method21012() {
-      Class41 var3 = new Class41();
+   public ListNBT method21012() {
+      ListNBT var3 = new ListNBT();
       this.field29842
          .values()
          .stream()
          .map(Map::values)
          .forEach(var1 -> var1.stream().filter(var0x -> var0x.method36053() != null).forEach(var1x -> {
-               Class39 var4 = new Class39();
+               CompoundNBT var4 = new CompoundNBT();
                var4.method109("Name", var1x.method36054());
                var4.method109("Objective", var1x.method36053().method29336());
                var4.method102("Score", var1x.method36050());
@@ -349,9 +349,9 @@ public class Class6886 {
       return var3;
    }
 
-   public void method21013(Class41 var1) {
+   public void method21013(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         Class39 var5 = var1.method153(var4);
+         CompoundNBT var5 = var1.method153(var4);
          Class8375 var6 = this.method20975(var5.method126("Objective"));
          String var7 = var5.method126("Name");
          if (var7.length() > 40) {
@@ -360,7 +360,7 @@ public class Class6886 {
 
          Class9411 var8 = this.method20980(var7, var6);
          var8.method36052(var5.method122("Score"));
-         if (var5.method118("Locked")) {
+         if (var5.contains("Locked")) {
             var8.method36057(var5.method132("Locked"));
          }
       }

@@ -17,9 +17,9 @@ public class Class9140 {
    public static float field42008;
 
    public static long method34122(BlockPos var0) {
-      return ((long)var0.method8304() & field42002) << field42001
+      return ((long)var0.getX() & field42002) << field42001
          | ((long)var0.getY() & field42003) << field42000
-         | ((long)var0.method8306() & field42004) << 0;
+         | ((long)var0.getZ() & field42004) << 0;
    }
 
    public static void method34123(float var0, float var1, float var2, float var3) {
@@ -34,8 +34,8 @@ public class Class9140 {
          var0 *= var6;
          var1 *= var6;
          var2 *= var6;
-         float var7 = MathHelper.method37763(field41996.player.field5031 * (float) (Math.PI / 180.0));
-         float var8 = MathHelper.method37764(field41996.player.field5031 * (float) (Math.PI / 180.0));
+         float var7 = MathHelper.sin(field41996.player.field5031 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.cos(field41996.player.field5031 * (float) (Math.PI / 180.0));
          field42005 += (double)(var0 * var8 - var2 * var7);
          field42006 += (double)var1;
          field42007 += (double)(var2 * var8 + var0 * var7);
@@ -78,11 +78,11 @@ public class Class9140 {
    }
 
    public static boolean method34125(Class6488 var0, Class8649 var1) {
-      int var4 = MathHelper.method37769(var0.field28449);
+      int var4 = MathHelper.floor(var0.field28449);
       int var5 = MathHelper.method37774(var0.field28452);
-      int var6 = MathHelper.method37769(var0.field28450);
+      int var6 = MathHelper.floor(var0.field28450);
       int var7 = MathHelper.method37774(var0.field28453);
-      int var8 = MathHelper.method37769(var0.field28451);
+      int var8 = MathHelper.floor(var0.field28451);
       int var9 = MathHelper.method37774(var0.field28454);
       if (!field41996.world.method7019(var4, var6, var8, var5, var7, var9)) {
          return false;
@@ -90,8 +90,8 @@ public class Class9140 {
          for (int var10 = var4; var10 < var5; var10++) {
             for (int var11 = var6; var11 < var7; var11++) {
                for (int var12 = var8; var12 < var9; var12++) {
-                  Class7380 var13 = field41996.world.method6738(new BlockPos(var10, var11, var12));
-                  Block var14 = var13.method23383();
+                  BlockState var13 = field41996.world.getBlockState(new BlockPos(var10, var11, var12));
+                  Block var14 = var13.getBlock();
                   if (var13.method23384() == var1) {
                      return true;
                   }

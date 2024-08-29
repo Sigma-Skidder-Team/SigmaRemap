@@ -6,7 +6,7 @@ public class Class868 extends Class851<Class5813> implements Class867<Class5813>
    private static final ResourceLocation field4815 = new ResourceLocation("textures/gui/container/generic_54.png");
    private final int field4816;
 
-   public Class868(Class5813 var1, Class974 var2, ITextComponent var3) {
+   public Class868(Class5813 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.field4567 = false;
       short var6 = 222;

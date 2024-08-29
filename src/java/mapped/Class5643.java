@@ -3,8 +3,8 @@ package mapped;
 public class Class5643 {
    private int field24956 = 64;
    private int field24957;
-   private Class3257 field24958;
-   private Class7401 field24959;
+   private Item field24958;
+   private ItemGroup field24959;
    private Class1978 field24960 = Class1978.field12885;
    private Class9427 field24961;
    private boolean field24962;
@@ -33,12 +33,12 @@ public class Class5643 {
       return this;
    }
 
-   public Class5643 method17778(Class3257 var1) {
+   public Class5643 method17778(Item var1) {
       this.field24958 = var1;
       return this;
    }
 
-   public Class5643 method17779(Class7401 var1) {
+   public Class5643 method17779(ItemGroup var1) {
       this.field24959 = var1;
       return this;
    }
@@ -54,7 +54,7 @@ public class Class5643 {
    }
 
    // $VF: synthetic method
-   public static Class7401 method17782(Class5643 var0) {
+   public static ItemGroup method17782(Class5643 var0) {
       return var0.field24959;
    }
 
@@ -64,7 +64,7 @@ public class Class5643 {
    }
 
    // $VF: synthetic method
-   public static Class3257 method17784(Class5643 var0) {
+   public static Item method17784(Class5643 var0) {
       return var0.field24958;
    }
 

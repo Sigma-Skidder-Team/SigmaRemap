@@ -19,7 +19,7 @@ public class Class1164 extends Class1155<Class1164> {
          .method38800(
             var1,
             var13,
-            (float)(Class1284.method6105(this.field6322) / 2 - this.field6322.field6848.field4568.method38820(var13) / 2),
+            (float)(Class1284.method6105(this.field6322) / 2 - this.field6322.field6848.field4568.getStringWidth(var13) / 2),
             (float)(var3 + 1),
             16777215,
             true

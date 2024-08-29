@@ -56,7 +56,7 @@ public class Class811 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4351 = new Class1288(this);
 
       try {
@@ -76,7 +76,7 @@ public class Class811 extends Class798 {
       );
       this.field4348.field6482 = this.field4350 >= 0 && this.field4350 < this.field4349.size();
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 6, this.field4565 - 32, 153, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field4345))
+         new Class1206(this.field4564 / 2 + 6, this.field4565 - 32, 153, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4345))
       );
       this.field4352 = this.<Class1153>method2456(
          new Class1153(new TranslationTextComponent("mco.upload.select.world.title"), this.field4564 / 2, 13, 16777215)
@@ -97,7 +97,7 @@ public class Class811 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    private void method2212() {
@@ -179,17 +179,17 @@ public class Class811 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2226(Class811 var0) {
+   public static FontRenderer method2226(Class811 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2227(Class811 var0) {
+   public static FontRenderer method2227(Class811 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2228(Class811 var0) {
+   public static FontRenderer method2228(Class811 var0) {
       return var0.field4568;
    }
 

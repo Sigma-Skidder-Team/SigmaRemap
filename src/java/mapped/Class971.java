@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Class971 extends Class939 {
    private static final Random field5435 = new Random();
-   private Class25<ItemStack> field5436 = Class25.<ItemStack>method68(9, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5436 = NonNullList.<ItemStack>method68(9, ItemStack.EMPTY);
 
    public Class971(Class4387<?> var1) {
       super(var1);
@@ -28,7 +28,7 @@ public class Class971 extends Class939 {
       int var4 = 1;
 
       for (int var5 = 0; var5 < this.field5436.size(); var5++) {
-         if (!this.field5436.get(var5).method32105() && field5435.nextInt(var4++) == 0) {
+         if (!this.field5436.get(var5).isEmpty() && field5435.nextInt(var4++) == 0) {
             var3 = var5;
          }
       }
@@ -38,7 +38,7 @@ public class Class971 extends Class939 {
 
    public int method4023(ItemStack var1) {
       for (int var4 = 0; var4 < this.field5436.size(); var4++) {
-         if (this.field5436.get(var4).method32105()) {
+         if (this.field5436.get(var4).isEmpty()) {
             this.method3621(var4, var1);
             return var4;
          }
@@ -53,17 +53,17 @@ public class Class971 extends Class939 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5436 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5436 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5436);
       }
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       if (!this.method3742(var1)) {
          Class7920.method26565(var1, this.field5436);
       }
@@ -72,17 +72,17 @@ public class Class971 extends Class939 {
    }
 
    @Override
-   public Class25<ItemStack> method3724() {
+   public NonNullList<ItemStack> method3724() {
       return this.field5436;
    }
 
    @Override
-   public void method3725(Class25<ItemStack> var1) {
+   public void method3725(NonNullList<ItemStack> var1) {
       this.field5436 = var1;
    }
 
    @Override
-   public Class5812 method3690(int var1, Class974 var2) {
+   public Class5812 method3690(int var1, PlayerInventory var2) {
       return new Class5817(var1, var2, this);
    }
 

@@ -21,7 +21,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7952 var5 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Class8514.field37807,
+            Items.field37807,
             new TranslationTextComponent("advancements.story.mine_stone.title"),
             new TranslationTextComponent("advancements.story.mine_stone.description"),
             (ResourceLocation)null,
@@ -35,7 +35,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7952 var6 = Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Class8514.field37812,
+            Items.field37812,
             new TranslationTextComponent("advancements.story.upgrade_tools.title"),
             new TranslationTextComponent("advancements.story.upgrade_tools.description"),
             (ResourceLocation)null,
@@ -44,12 +44,12 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("stone_pickaxe", Class4491.method14164(Class8514.field37812))
+         .method27312("stone_pickaxe", Class4491.method14164(Items.field37812))
          .method27317(var1, "story/upgrade_tools");
       Class7952 var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Class8514.field37801,
+            Items.field37801,
             new TranslationTextComponent("advancements.story.smelt_iron.title"),
             new TranslationTextComponent("advancements.story.smelt_iron.description"),
             (ResourceLocation)null,
@@ -58,12 +58,12 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("iron", Class4491.method14164(Class8514.field37801))
+         .method27312("iron", Class4491.method14164(Items.field37801))
          .method27317(var1, "story/smelt_iron");
       Class7952 var8 = Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Class8514.field37822,
+            Items.field37822,
             new TranslationTextComponent("advancements.story.iron_tools.title"),
             new TranslationTextComponent("advancements.story.iron_tools.description"),
             (ResourceLocation)null,
@@ -72,12 +72,12 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("iron_pickaxe", Class4491.method14164(Class8514.field37822))
+         .method27312("iron_pickaxe", Class4491.method14164(Items.field37822))
          .method27317(var1, "story/iron_tools");
       Class7952 var9 = Class7999.method27304()
          .method27305(var8)
          .method27308(
-            Class8514.field37800,
+            Items.field37800,
             new TranslationTextComponent("advancements.story.mine_diamond.title"),
             new TranslationTextComponent("advancements.story.mine_diamond.description"),
             (ResourceLocation)null,
@@ -86,12 +86,12 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("diamond", Class4491.method14164(Class8514.field37800))
+         .method27312("diamond", Class4491.method14164(Items.field37800))
          .method27317(var1, "story/mine_diamond");
       Class7952 var10 = Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Class8514.field37884,
+            Items.field37884,
             new TranslationTextComponent("advancements.story.lava_bucket.title"),
             new TranslationTextComponent("advancements.story.lava_bucket.description"),
             (ResourceLocation)null,
@@ -100,12 +100,12 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("lava_bucket", Class4491.method14164(Class8514.field37884))
+         .method27312("lava_bucket", Class4491.method14164(Items.field37884))
          .method27317(var1, "story/lava_bucket");
       Class7952 var11 = Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Class8514.field37853,
+            Items.field37853,
             new TranslationTextComponent("advancements.story.obtain_armor.title"),
             new TranslationTextComponent("advancements.story.obtain_armor.description"),
             (ResourceLocation)null,
@@ -115,15 +115,15 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             false
          )
          .method27314(Class9014.field41221)
-         .method27312("iron_helmet", Class4491.method14164(Class8514.field37852))
-         .method27312("iron_chestplate", Class4491.method14164(Class8514.field37853))
-         .method27312("iron_leggings", Class4491.method14164(Class8514.field37854))
-         .method27312("iron_boots", Class4491.method14164(Class8514.field37855))
+         .method27312("iron_helmet", Class4491.method14164(Items.field37852))
+         .method27312("iron_chestplate", Class4491.method14164(Items.field37853))
+         .method27312("iron_leggings", Class4491.method14164(Items.field37854))
+         .method27312("iron_boots", Class4491.method14164(Items.field37855))
          .method27317(var1, "story/obtain_armor");
       Class7999.method27304()
          .method27305(var9)
          .method27308(
-            Class8514.field38070,
+            Items.field38070,
             new TranslationTextComponent("advancements.story.enchant_item.title"),
             new TranslationTextComponent("advancements.story.enchant_item.description"),
             (ResourceLocation)null,
@@ -151,7 +151,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var11)
          .method27308(
-            Class8514.field38119,
+            Items.field38119,
             new TranslationTextComponent("advancements.story.deflect_arrow.title"),
             new TranslationTextComponent("advancements.story.deflect_arrow.description"),
             (ResourceLocation)null,
@@ -167,7 +167,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var9)
          .method27308(
-            Class8514.field37857,
+            Items.field37857,
             new TranslationTextComponent("advancements.story.shiny_gear.title"),
             new TranslationTextComponent("advancements.story.shiny_gear.description"),
             (ResourceLocation)null,
@@ -177,15 +177,15 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             false
          )
          .method27314(Class9014.field41221)
-         .method27312("diamond_helmet", Class4491.method14164(Class8514.field37856))
-         .method27312("diamond_chestplate", Class4491.method14164(Class8514.field37857))
-         .method27312("diamond_leggings", Class4491.method14164(Class8514.field37858))
-         .method27312("diamond_boots", Class4491.method14164(Class8514.field37859))
+         .method27312("diamond_helmet", Class4491.method14164(Items.field37856))
+         .method27312("diamond_chestplate", Class4491.method14164(Items.field37857))
+         .method27312("diamond_leggings", Class4491.method14164(Items.field37858))
+         .method27312("diamond_boots", Class4491.method14164(Items.field37859))
          .method27317(var1, "story/shiny_gear");
       Class7952 var13 = Class7999.method27304()
          .method27305(var12)
          .method27308(
-            Class8514.field37794,
+            Items.field37794,
             new TranslationTextComponent("advancements.story.enter_the_nether.title"),
             new TranslationTextComponent("advancements.story.enter_the_nether.description"),
             (ResourceLocation)null,
@@ -194,12 +194,12 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("entered_nether", Class4488.method14156(World.field9000))
+         .method27312("entered_nether", Class4488.method14156(World.THE_NETHER))
          .method27317(var1, "story/enter_the_nether");
       Class7999.method27304()
          .method27305(var13)
          .method27308(
-            Class8514.field37872,
+            Items.field37872,
             new TranslationTextComponent("advancements.story.cure_zombie_villager.title"),
             new TranslationTextComponent("advancements.story.cure_zombie_villager.description"),
             (ResourceLocation)null,
@@ -213,7 +213,7 @@ public class Class2839 implements Consumer<Consumer<Class7952>> {
       Class7952 var14 = Class7999.method27304()
          .method27305(var13)
          .method27308(
-            Class8514.field37979,
+            Items.field37979,
             new TranslationTextComponent("advancements.story.follow_ender_eye.title"),
             new TranslationTextComponent("advancements.story.follow_ender_eye.description"),
             (ResourceLocation)null,

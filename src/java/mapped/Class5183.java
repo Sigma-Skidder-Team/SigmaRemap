@@ -11,11 +11,11 @@ import org.lwjgl.opengl.GL11;
 
 public class Class5183 extends Module {
     public boolean field23481 = false;
-    public Class7735 field23482 = Class7733.method25596(mc.method1581().field33890, new Class5425(256));
+    public Class7735 field23482 = Class7733.method25596(mc.getRenderTypeBuffers().field33890, new BufferBuilder(256));
 
     public Class5183() {
         super(ModuleCategory.RENDER, "Fill", "Fill ESP");
-        this.method15972(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
+        this.registerSetting(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
     }
 
     @EventTarget
@@ -70,11 +70,11 @@ public class Class5183 extends Module {
             }
         }
 
-        this.field23482.method25603(Class4520.method14309(Class289.field1102));
-        this.field23482.method25603(Class4520.method14310(Class289.field1102));
-        this.field23482.method25603(Class4520.method14312(Class289.field1102));
-        this.field23482.method25603(Class4520.method14319(Class289.field1102));
-        this.field23482.method25603(Class4520.method14345());
+        this.field23482.finish(RenderType.getEntitySolid(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23482.finish(RenderType.getEntityCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23482.finish(RenderType.getEntityCutoutNoCull(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23482.finish(RenderType.getEntitySmoothCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23482.finish(RenderType.method14345());
         this.field23482.method25602();
         GL11.glDepthFunc(515);
         GL11.glPolygonMode(1032, 6914);

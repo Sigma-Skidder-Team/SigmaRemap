@@ -4,13 +4,13 @@ import java.util.function.Predicate;
 
 public class Class4833 implements Class4832 {
    private static String[] field22606;
-   public static final Class4832 field22607 = new Class4834(false, -Double.MAX_VALUE, Class8514.field37222, var0 -> false);
+   public static final Class4832 field22607 = new Class4834(false, -Double.MAX_VALUE, Items.field37222, var0 -> false);
    private final boolean field22608;
    private final double field22609;
-   private final Class3257 field22610;
+   private final Item field22610;
    private final Predicate<Class7631> field22611;
 
-   public Class4833(boolean var1, double var2, Class3257 var4, Predicate<Class7631> var5) {
+   public Class4833(boolean var1, double var2, Item var4, Predicate<Class7631> var5) {
       this.field22608 = var1;
       this.field22609 = var2;
       this.field22610 = var4;
@@ -22,13 +22,13 @@ public class Class4833 implements Class4832 {
       this(
          var1.method3335(),
          var1.getPosY(),
-         !(var1 instanceof Class880) ? Class8514.field37222 : ((Class880)var1).method3090().method32107(),
+         !(var1 instanceof Class880) ? Items.field37222 : ((Class880)var1).method3090().getItem(),
          !(var1 instanceof Class880) ? var0 -> false : ((Class880)var1)::method3107
       );
    }
 
    @Override
-   public boolean method14951(Class3257 var1) {
+   public boolean method14951(Item var1) {
       return this.field22610 == var1;
    }
 

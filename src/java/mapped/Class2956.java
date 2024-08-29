@@ -12,9 +12,9 @@ public interface Class2956 extends Class2955 {
 
    BlockPos method11323();
 
-   Class7380 method11324();
+   BlockState method11324();
 
-   <T extends Class944> T method11325();
+   <T extends TileEntity> T method11325();
 
    ServerWorld method11326();
 }

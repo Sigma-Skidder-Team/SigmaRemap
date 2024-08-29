@@ -2,21 +2,21 @@ package mapped;
 
 public class Class7880 {
    private static String[] field33822;
-   private static Class7202 field33823 = null;
+   private static IBakedModel field33823 = null;
 
    public static void method26418() {
-      field33823 = Class7944.method26860().method1553().method806().method38153(Blocks.SNOW.method11579());
+      field33823 = Class7944.method26860().getBlockRendererDispatcher().getBlockModelShapes().method38153(Blocks.SNOW.method11579());
    }
 
-   public static Class7202 method26419() {
+   public static IBakedModel method26419() {
       return field33823;
    }
 
-   public static Class7380 method26420() {
+   public static BlockState method26420() {
       return Blocks.SNOW.method11579();
    }
 
-   public static boolean method26421(Class1663 var0, Class7380 var1, BlockPos var2) {
+   public static boolean method26421(Class1663 var0, BlockState var1, BlockPos var2) {
       if (var0 instanceof Class1665) {
          return method26423(var0, var1, var2) ? method26422(var0, var2) : false;
       } else {
@@ -26,16 +26,16 @@ public class Class7880 {
 
    private static boolean method26422(Class1665 var0, BlockPos var1) {
       Block var4 = Blocks.SNOW;
-      if (var0.method6738(var1.method8341()).method23383() == var4
-         || var0.method6738(var1.method8343()).method23383() == var4
-         || var0.method6738(var1.method8345()).method23383() == var4
-         || var0.method6738(var1.method8347()).method23383() == var4) {
-         Class7380 var5 = var0.method6738(var1.method8313());
+      if (var0.getBlockState(var1.method8341()).getBlock() == var4
+         || var0.getBlockState(var1.method8343()).getBlock() == var4
+         || var0.getBlockState(var1.method8345()).getBlock() == var4
+         || var0.getBlockState(var1.method8347()).getBlock() == var4) {
+         BlockState var5 = var0.getBlockState(var1.method8313());
          if (var5.method23409(var0, var1)) {
             return true;
          }
 
-         Block var6 = var5.method23383();
+         Block var6 = var5.getBlock();
          if (var6 instanceof Class3421) {
             return var5.<Class99>method23463(Class3421.field19132) == Class99.field270;
          }
@@ -48,9 +48,9 @@ public class Class7880 {
       return false;
    }
 
-   private static boolean method26423(Class1665 var0, Class7380 var1, BlockPos var2) {
+   private static boolean method26423(Class1665 var0, BlockState var1, BlockPos var2) {
       if (!var1.method23409(var0, var2)) {
-         Block var5 = var1.method23383();
+         Block var5 = var1.getBlock();
          if (var5 == Blocks.SNOW_BLOCK) {
             return false;
          } else if (!(var5 instanceof Class3194)

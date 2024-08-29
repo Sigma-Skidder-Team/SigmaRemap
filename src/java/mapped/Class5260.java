@@ -23,18 +23,18 @@ public class Class5260 extends PremiumModule {
 
     public Class5260() {
         super("InvManager", "Drops all useless items from your inventory", ModuleCategory.ITEM);
-        this.method15972(new Class6005("Mode", "The way it will move items in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
-        this.method15972(new Class6009<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
-        this.method15972(new Class6005("Clean Type", "Clean type", 0, "Skywars", "All"));
-        this.method15972(new Class6004("Fake Items", "Bypass for fake items (AAC).", false));
-        this.method15972(new Class6004("Cleaner", "Cleans your inventory.", true));
-        this.method15972(new Class6004("Sword", "Keeps only sword as weapon.", true));
-        this.method15972(new Class6005("Tools", "How tools are handled.", 0, "Keep", "Organize", "Throw"));
-        this.method15972(new Class6004("Archery", "Cleans bows and arrows.", true));
-        this.method15972(new Class6004("Food", "Cleans food. Keeps Golden Apples.", false));
-        this.method15972(new Class6004("Heads", "Cleans Heads.", false));
-        this.method15972(new Class6004("Auto Shield", "Automatically equip shields for 1.9+.", false));
+        this.registerSetting(new ModeSetting("Mode", "The way it will move items in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
+        this.registerSetting(new Class6009<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
+        this.registerSetting(new ModeSetting("Clean Type", "Clean type", 0, "Skywars", "All"));
+        this.registerSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
+        this.registerSetting(new BooleanSetting("Cleaner", "Cleans your inventory.", true));
+        this.registerSetting(new BooleanSetting("Sword", "Keeps only sword as weapon.", true));
+        this.registerSetting(new ModeSetting("Tools", "How tools are handled.", 0, "Keep", "Organize", "Throw"));
+        this.registerSetting(new BooleanSetting("Archery", "Cleans bows and arrows.", true));
+        this.registerSetting(new BooleanSetting("Food", "Cleans food. Keeps Golden Apples.", false));
+        this.registerSetting(new BooleanSetting("Heads", "Cleans Heads.", false));
+        this.registerSetting(new BooleanSetting("Auto Shield", "Automatically equip shields for 1.9+.", false));
     }
 
     public static boolean method16431(ItemStack var0) {
@@ -44,18 +44,18 @@ public class Class5260 extends PremiumModule {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                if (method16433(var6) > var3 && (var6.method32107() instanceof Class3267 || !var4.method15974("Sword"))) {
+                if (method16433(var6) > var3 && (var6.getItem() instanceof Class3267 || !var4.method15974("Sword"))) {
                     return false;
                 }
             }
         }
 
-        return var0.method32107() instanceof Class3267 || !var4.method15974("Sword");
+        return var0.getItem() instanceof Class3267 || !var4.method15974("Sword");
     }
 
     public static float method16433(ItemStack var0) {
         float var3 = 0.0F;
-        Class3257 var4 = var0.method32107();
+        Item var4 = var0.getItem();
         if (var4 instanceof Class3264) {
             Class3264 var5 = (Class3264) var4;
             var3 += (float) var5.method11711();
@@ -69,13 +69,13 @@ public class Class5260 extends PremiumModule {
         return var3 + (float) Class7858.method26311(Class8122.field34908, var0) * 1.25F + (float) Class7858.method26311(Class8122.field34912, var0) * 0.01F;
     }
 
-    public static int method16437(Class3257 var0) {
+    public static int method16437(Item var0) {
         int var3 = 0;
 
         for (int var4 = 0; var4 < 45; var4++) {
             if (mc.player.field4904.method18131(var4).method18266()) {
                 ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
-                if (var5.method32107() == var0) {
+                if (var5.getItem() == var0) {
                     var3 += var5.field39976;
                 }
             }
@@ -85,14 +85,14 @@ public class Class5260 extends PremiumModule {
     }
 
     public static boolean method16442(ItemStack var0) {
-        Class3257 var3 = var0.method32107();
+        Item var3 = var0.getItem();
         if (var3 instanceof Class3268) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.field4904.method18131(var5).method18266()) {
                     ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                    if (method16445(var6) > var4 && var6.method32107() instanceof Class3268) {
+                    if (method16445(var6) > var4 && var6.getItem() instanceof Class3268) {
                         return false;
                     }
                 }
@@ -105,14 +105,14 @@ public class Class5260 extends PremiumModule {
     }
 
     public static boolean method16443(ItemStack var0) {
-        Class3257 var3 = var0.method32107();
+        Item var3 = var0.getItem();
         if (var3 instanceof Class3270) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.field4904.method18131(var5).method18266()) {
                     ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                    if (method16445(var6) > var4 && var6.method32107() instanceof Class3270) {
+                    if (method16445(var6) > var4 && var6.getItem() instanceof Class3270) {
                         return false;
                     }
                 }
@@ -125,14 +125,14 @@ public class Class5260 extends PremiumModule {
     }
 
     public static boolean method16444(ItemStack var0) {
-        Class3257 var3 = var0.method32107();
+        Item var3 = var0.getItem();
         if (var3 instanceof Class3265) {
             float var4 = method16445(var0);
 
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.field4904.method18131(var5).method18266()) {
                     ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                    if (method16445(var6) > var4 && var6.method32107() instanceof Class3265 && !method16431(var0)) {
+                    if (method16445(var6) > var4 && var6.getItem() instanceof Class3265 && !method16431(var0)) {
                         return false;
                     }
                 }
@@ -145,7 +145,7 @@ public class Class5260 extends PremiumModule {
     }
 
     public static float method16445(ItemStack var0) {
-        Class3257 var3 = var0.method32107();
+        Item var3 = var0.getItem();
         if (var3 instanceof Class3264) {
             String var4 = var3.method11717().getString().toLowerCase();
             Class3264 var5 = (Class3264) var3;
@@ -182,7 +182,7 @@ public class Class5260 extends PremiumModule {
 
     @Override
     public void isInDevelopment() {
-        this.field23659 = mc.currentScreen instanceof Class859;
+        this.field23659 = mc.currentScreen instanceof InventoryScreen;
         this.field23660 = false;
     }
 
@@ -194,9 +194,9 @@ public class Class5260 extends PremiumModule {
 
         if (this.method15996() && !Class5290.field23798) {
             String var4 = this.getStringSettingValueByName("Mode");
-            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof Class859) {
+            if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) {
                 long var5 = (long) (this.method15977("Delay") * 20.0F);
-                if (mc.currentScreen instanceof Class859) {
+                if (mc.currentScreen instanceof InventoryScreen) {
                     this.field23659 = false;
                 }
 
@@ -206,7 +206,7 @@ public class Class5260 extends PremiumModule {
                     Class7789.method25870(mc.player.field4904.field25471, 45, 0, Class2259.field14694, mc.player, true);
                     this.field23658.method27120();
                 } else {
-                    if (mc.currentScreen == null || mc.currentScreen instanceof Class859 || mc.currentScreen instanceof ChatScreen) {
+                    if (mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen) {
                         if (this.field23658.method27121() > var5 && field23654 >= 36) {
                             if (mc.player.field4904.method18131(field23654).method18266()) {
                                 if (!method16431(mc.player.field4904.method18131(field23654).method18265())) {
@@ -251,9 +251,9 @@ public class Class5260 extends PremiumModule {
                         }
                     }
 
-                    if (!this.field23659 && !(mc.currentScreen instanceof Class859) && this.field23658.method27121() > 0L && !this.field23660) {
+                    if (!this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && this.field23658.method27121() > 0L && !this.field23660) {
                         this.field23659 = true;
-                        mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new Class5482(-1));
                     }
                 }
             }
@@ -264,7 +264,7 @@ public class Class5260 extends PremiumModule {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                if (method16431(var6) && method16433(var6) > 0.0F && (var6.method32107() instanceof Class3267 || !this.method15974("Sword"))) {
+                if (method16431(var6) && method16433(var6) > 0.0F && (var6.getItem() instanceof Class3267 || !this.method15974("Sword"))) {
                     this.method16446(var2);
                     Class7789.method25873(var5, var1 - 36);
                     this.field23658.method27120();
@@ -275,7 +275,7 @@ public class Class5260 extends PremiumModule {
     }
 
     public boolean method16434(ItemStack var1, int var2) {
-        Class3257 var5 = var1.method32107();
+        Item var5 = var1.getItem();
         if (var1.method32149().getString().toLowerCase().contains("(right click)")
                 || var1.method32149().getString().toLowerCase().contains("(clique direito)")
                 || var1.method32149().getString().toLowerCase().contains("(click derecho)")) {
@@ -317,15 +317,15 @@ public class Class5260 extends PremiumModule {
             }
 
             if (var5 instanceof Class3292
-                    && (this.method16436() > (int) this.method15977("Block Cap") || BlockFly.field23883.contains(((Class3292) var5).method11845()))) {
+                    && (this.method16436() > (int) this.method15977("Block Cap") || BlockFly.blocksToNotPlace.contains(((Class3292) var5).method11845()))) {
                 return true;
-            } else if (var5 == Class8514.field37883 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
-                return method16437(Class8514.field37883) > 1;
-            } else if (var5 == Class8514.field37882 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
-                return method16437(Class8514.field37882) > 1;
+            } else if (var5 == Items.field37883 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
+                return method16437(Items.field37883) > 1;
+            } else if (var5 == Items.field37882 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
+                return method16437(Items.field37882) > 1;
             } else if (var5 instanceof Class3323 && Class7789.method25874(var1)) {
                 return true;
-            } else if (var5 == Class8514.field37873) {
+            } else if (var5 == Items.field37873) {
                 return false;
             } else if (var5.method11744() && this.method15974("Food") && var5.method11745() != Class8672.field39078) {
                 return true;
@@ -334,7 +334,7 @@ public class Class5260 extends PremiumModule {
             } else if ((var5 instanceof Class3263 || var5 instanceof Class3308) && this.method15974("Archery")) {
                 return true;
             } else {
-                return var5 instanceof Class3299 && this.method15974("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
+                return var5 instanceof SkullItem && this.method15974("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
                         || var5.method11717().getString().toLowerCase().contains("stick")
                         || var5.method11717().getString().toLowerCase().contains("egg")
                         || var5.method11717().getString().toLowerCase().contains("string")
@@ -358,8 +358,8 @@ public class Class5260 extends PremiumModule {
                         || var5.method11717().getString().toLowerCase().contains("record")
                         || var5.method11717().getString().toLowerCase().contains("snowball")
                         || var5 instanceof Class3328
-                        || var5 == Class8514.field37901
-                        || var5 == Class8514.field37840
+                        || var5 == Items.field37901
+                        || var5 == Items.field37840
                         || var5.method11717().getString().toLowerCase().contains("piston");
             }
         } else {
@@ -377,8 +377,8 @@ public class Class5260 extends PremiumModule {
         for (int var4 = 0; var4 < 45; var4++) {
             if (mc.player.field4904.method18131(var4).method18266()) {
                 ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
-                Class3257 var6 = var5.method32107();
-                if (var5.method32107() instanceof Class3292 && !BlockFly.field23883.contains(((Class3292) var6).method11845())) {
+                Item var6 = var5.getItem();
+                if (var5.getItem() instanceof Class3292 && !BlockFly.blocksToNotPlace.contains(((Class3292) var6).method11845())) {
                     var3 += var5.field39976;
                 }
             }
@@ -472,7 +472,7 @@ public class Class5260 extends PremiumModule {
         if (!mc.player.field4904.method18131(45).method18266()) {
             for (int var4 = 9; var4 < 45; var4++) {
                 ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
-                if (var5.method32107() instanceof Class3334) {
+                if (var5.getItem() instanceof Class3334) {
                     this.method16446(var1);
                     this.field23658.method27120();
                     Class7789.method25870(mc.player.field4904.field25471, var4, 0, Class2259.field14694, mc.player, true);
@@ -484,8 +484,8 @@ public class Class5260 extends PremiumModule {
     }
 
     private void method16446(boolean var1) {
-        if (var1 && this.field23659 && !(mc.currentScreen instanceof Class859) && Class8005.method27349() <= Class5989.field26136.method18582()) {
-            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && Class8005.method27349() <= Class5989.field26136.method18582()) {
+            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23659 = false;
         }
     }

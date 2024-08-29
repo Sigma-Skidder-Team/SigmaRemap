@@ -8,14 +8,14 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5389 extends Module {
    public Class5389() {
       super(ModuleCategory.PLAYER, "FastEat", "Allows you to eat faster");
-      this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Hypixel").method18631("Hypixel"));
-      this.method15972(new Class6009<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel").method18631("Hypixel"));
+      this.registerSetting(new Class6009<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
    @EventTarget
    public void method16976(TickEvent var1) {
       if (this.method15996() && mc.player != null) {
-         if (mc.player.method3148()) {
+         if (mc.player.isHandActive()) {
             ItemStack var4 = mc.player.method3158();
             if (var4 != null
                && (var4.method32138() == Class2103.field13708 || var4.method32138() == Class2103.field13707)
@@ -26,14 +26,14 @@ public class Class5389 extends Module {
                      int var7 = mc.player.method3159() + 2;
 
                      for (int var8 = 0; var8 < var7; var8++) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5603(mc.player.field5036));
+                        mc.getConnection().sendPacket(new Class5603(mc.player.field5036));
                         mc.player.method3161();
                      }
                      break;
                   case "Hypixel":
-                     mc.getClientPlayNetHandler()
-                        .sendPacket(new Class5539(mc.player.field4902.field5443 + 1 >= 9 ? 0 : mc.player.field4902.field5443 + 1));
-                     mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+                     mc.getConnection()
+                        .sendPacket(new Class5539(mc.player.inventory.currentItem + 1 >= 9 ? 0 : mc.player.inventory.currentItem + 1));
+                     mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
                }
             }
          }

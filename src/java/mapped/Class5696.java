@@ -14,7 +14,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
       var0.put(Class2293.field15240, new ResourceLocation("textures/entity/panda/aggressive_panda.png"));
    });
 
-   public Class5696(Class8853 var1) {
+   public Class5696(EntityRendererManager var1) {
       super(var1, new Class2867<Class1097>(9, 0.0F), 0.9F);
       this.method17880(new Class256(this));
    }
@@ -38,7 +38,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
                      float var13 = 270.0F + 90.0F * var12;
                      float var14 = 270.0F + 90.0F * ((float)var9 - 24.0F) / 7.0F;
                      float var15 = this.method17876(var13, var14, var9, var5, 32.0F);
-                     var2.method35291(0.0, (double)(var11 * ((360.0F - var15) / 90.0F)), 0.0);
+                     var2.translate(0.0, (double)(var11 * ((360.0F - var15) / 90.0F)), 0.0);
                      var2.method35293(Class7680.field32898.method25286(-var15));
                   }
                } else {
@@ -46,7 +46,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
                   float var23 = 180.0F + 90.0F * var20;
                   float var26 = 180.0F + 90.0F * ((float)var9 - 16.0F) / 7.0F;
                   float var29 = this.method17876(var23, var26, var9, var5, 24.0F);
-                  var2.method35291(0.0, (double)(var11 + var11 * (270.0F - var29) / 90.0F), 0.0);
+                  var2.translate(0.0, (double)(var11 + var11 * (270.0F - var29) / 90.0F), 0.0);
                   var2.method35293(Class7680.field32898.method25286(-var29));
                }
             } else {
@@ -54,28 +54,28 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
                float var24 = 90.0F + 90.0F * var21;
                float var27 = 90.0F + 90.0F * ((float)var9 - 8.0F) / 7.0F;
                float var30 = this.method17876(var24, var27, var9, var5, 16.0F);
-               var2.method35291(0.0, (double)(var11 + 0.2F + (var11 - 0.2F) * (var30 - 90.0F) / 90.0F), 0.0);
+               var2.translate(0.0, (double)(var11 + 0.2F + (var11 - 0.2F) * (var30 - 90.0F) / 90.0F), 0.0);
                var2.method35293(Class7680.field32898.method25286(-var30));
             }
          } else {
             float var22 = (float)(90 * var8) / 7.0F;
             float var25 = (float)(90 * var9) / 7.0F;
             float var28 = this.method17876(var22, var25, var9, var5, 8.0F);
-            var2.method35291(0.0, (double)((var11 + 0.2F) * (var28 / 90.0F)), 0.0);
+            var2.translate(0.0, (double)((var11 + 0.2F) * (var28 / 90.0F)), 0.0);
             var2.method35293(Class7680.field32898.method25286(-var28));
          }
       }
 
       float var16 = var1.method5220(var5);
       if (var16 > 0.0F) {
-         var2.method35291(0.0, (double)(0.8F * var16), 0.0);
+         var2.translate(0.0, (double)(0.8F * var16), 0.0);
          var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var16, var1.field5032, var1.field5032 + 90.0F)));
-         var2.method35291(0.0, (double)(-1.0F * var16), 0.0);
+         var2.translate(0.0, (double)(-1.0F * var16), 0.0);
          if (var1.method5214()) {
             float var17 = (float)(Math.cos((double)var1.field5055 * 1.25) * Math.PI * 0.05F);
             var2.method35293(Class7680.field32900.method25286(var17));
             if (var1.method3005()) {
-               var2.method35291(0.0, 0.8F, 0.55F);
+               var2.translate(0.0, 0.8F, 0.55F);
             }
          }
       }
@@ -83,7 +83,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
       float var18 = var1.method5221(var5);
       if (var18 > 0.0F) {
          float var19 = !var1.method3005() ? 1.3F : 0.5F;
-         var2.method35291(0.0, (double)(var19 * var18), 0.0);
+         var2.translate(0.0, (double)(var19 * var18), 0.0);
          var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var18, var1.field5032, var1.field5032 + 180.0F)));
       }
    }

@@ -16,12 +16,12 @@ import org.apache.commons.lang3.mutable.MutableInt;
 
 public class Class7858 {
    public static int method26311(Class6069 var0, ItemStack var1) {
-      if (!var1.method32105()) {
-         ResourceLocation var4 = Registry.field16073.method9181(var0);
-         Class41 var5 = var1.method32147();
+      if (!var1.isEmpty()) {
+         ResourceLocation var4 = Registry.field16073.getKey(var0);
+         ListNBT var5 = var1.method32147();
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
-            Class39 var7 = var5.method153(var6);
+            CompoundNBT var7 = var5.method153(var6);
             ResourceLocation var8 = ResourceLocation.method8289(var7.method126("id"));
             if (var8 != null && var8.equals(var4)) {
                return MathHelper.method37775(var7.method122("lvl"), 0, 255);
@@ -35,15 +35,15 @@ public class Class7858 {
    }
 
    public static Map<Class6069, Integer> method26312(ItemStack var0) {
-      Class41 var3 = var0.method32107() != Class8514.field38070 ? var0.method32147() : Class3290.method11830(var0);
+      ListNBT var3 = var0.getItem() != Items.field38070 ? var0.method32147() : Class3290.method11830(var0);
       return method26313(var3);
    }
 
-   public static Map<Class6069, Integer> method26313(Class41 var0) {
+   public static Map<Class6069, Integer> method26313(ListNBT var0) {
       Map<Class6069, Integer> var3 = Maps.newLinkedHashMap();
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
-         Class39 var5 = var0.method153(var4);
+         CompoundNBT var5 = var0.method153(var4);
          Registry.field16073.method9187(ResourceLocation.method8289(var5.method126("id"))).ifPresent(var2 -> {
             Integer var5x = var3.put(var2, var5.method122("lvl"));
          });
@@ -53,25 +53,25 @@ public class Class7858 {
    }
 
    public static void method26314(Map<Class6069, Integer> var0, ItemStack var1) {
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (Entry var6 : var0.entrySet()) {
          Class6069 var7 = (Class6069)var6.getKey();
          if (var7 != null) {
             int var8 = (Integer)var6.getValue();
-            Class39 var9 = new Class39();
-            var9.method109("id", String.valueOf(Registry.field16073.method9181(var7)));
+            CompoundNBT var9 = new CompoundNBT();
+            var9.method109("id", String.valueOf(Registry.field16073.getKey(var7)));
             var9.method101("lvl", (short)var8);
             var4.add(var9);
-            if (var1.method32107() == Class8514.field38070) {
+            if (var1.getItem() == Items.field38070) {
                Class3290.method11831(var1, new Class6694(var7, var8));
             }
          }
       }
 
       if (!var4.isEmpty()) {
-         if (var1.method32107() != Class8514.field38070) {
-            var1.method32164("Enchantments", var4);
+         if (var1.getItem() != Items.field38070) {
+            var1.setTagInfo("Enchantments", var4);
          }
       } else {
          var1.method32146("Enchantments");
@@ -79,8 +79,8 @@ public class Class7858 {
    }
 
    private static void method26315(Class8493 var0, ItemStack var1) {
-      if (!var1.method32105()) {
-         Class41 var4 = var1.method32147();
+      if (!var1.isEmpty()) {
+         ListNBT var4 = var1.method32147();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             String var6 = var4.method153(var5).method126("id");
@@ -230,7 +230,7 @@ public class Class7858 {
 
          for (Entry<Class2106, ItemStack> var8 : var5.entrySet()) {
             ItemStack var9 = (ItemStack)var8.getValue();
-            if (!var9.method32105() && method26311(var0, var9) > 0 && var2.test(var9)) {
+            if (!var9.isEmpty() && method26311(var0, var9) > 0 && var2.test(var9)) {
                var6.add(var8);
             }
          }
@@ -242,7 +242,7 @@ public class Class7858 {
    }
 
    public static int method26341(Random var0, int var1, int var2, ItemStack var3) {
-      Class3257 var6 = var3.method32107();
+      Item var6 = var3.getItem();
       int var7 = var6.method11736();
       if (var7 > 0) {
          if (var2 > 15) {
@@ -262,9 +262,9 @@ public class Class7858 {
 
    public static ItemStack method26342(Random var0, ItemStack var1, int var2, boolean var3) {
       List<Class6694> var6 = method26343(var0, var1, var2, var3);
-      boolean var7 = var1.method32107() == Class8514.field37900;
+      boolean var7 = var1.getItem() == Items.field37900;
       if (var7) {
-         var1 = new ItemStack(Class8514.field38070);
+         var1 = new ItemStack(Items.field38070);
       }
 
       for (Class6694 var9 : var6) {
@@ -280,7 +280,7 @@ public class Class7858 {
 
    public static List<Class6694> method26343(Random var0, ItemStack var1, int var2, boolean var3) {
       ArrayList var6 = Lists.newArrayList();
-      Class3257 var7 = var1.method32107();
+      Item var7 = var1.getItem();
       int var8 = var7.method11736();
       if (var8 <= 0) {
          return var6;
@@ -329,8 +329,8 @@ public class Class7858 {
 
    public static List<Class6694> method26346(int var0, ItemStack var1, boolean var2) {
       ArrayList var5 = Lists.newArrayList();
-      Class3257 var6 = var1.method32107();
-      boolean var7 = var1.method32107() == Class8514.field37900;
+      Item var6 = var1.getItem();
+      boolean var7 = var1.getItem() == Items.field37900;
 
       for (Class6069 var9 : Registry.field16073) {
          if ((!var9.method18824() || var2) && var9.method18827() && (var9.field27308.method8990(var6) || var7)) {

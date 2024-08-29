@@ -7,13 +7,13 @@ public class Class4665 implements Class4664 {
    private final ResourceLocation field22207;
    private final String field22208;
    private final Class120 field22209;
-   private final Class3257 field22210;
+   private final Item field22210;
    private final int field22211;
    private final Class7999 field22212;
    private final ResourceLocation field22213;
    private final Class6504<?> field22214;
 
-   public Class4665(ResourceLocation var1, Class6504<?> var2, String var3, Class120 var4, Class3257 var5, int var6, Class7999 var7, ResourceLocation var8) {
+   public Class4665(ResourceLocation var1, Class6504<?> var2, String var3, Class120 var4, Item var5, int var6, Class7999 var7, ResourceLocation var8) {
       this.field22207 = var1;
       this.field22214 = var2;
       this.field22208 = var3;
@@ -31,7 +31,7 @@ public class Class4665 implements Class4664 {
       }
 
       var1.add("ingredient", this.field22209.method336());
-      var1.addProperty("result", Registry.field16075.method9181(this.field22210).toString());
+      var1.addProperty("result", Registry.ITEM.getKey(this.field22210).toString());
       var1.addProperty("count", this.field22211);
    }
 

@@ -161,7 +161,7 @@ public class MusicManager {
                     }
                 }
 
-                float var10 = 60.0F / (float) Minecraft.method1586();
+                float var10 = 60.0F / (float) Minecraft.getFps();
 
                 for (int var6 = 0; var6 < var4.length; var6++) {
                     double var7 = this.field32165.get(var6) - var4[var6];
@@ -294,7 +294,7 @@ public class MusicManager {
         }
 
         try {
-            if (this.field32154 && this.field32152 != null && this.field32149 != null && this.field32160 == null && !field32143.method1544()) {
+            if (this.field32154 && this.field32152 != null && this.field32149 != null && this.field32160 == null && !field32143.isGamePaused()) {
                 if (this.field32153 != null) {
                     this.field32153.release();
                 }

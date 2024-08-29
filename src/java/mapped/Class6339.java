@@ -4,7 +4,7 @@ public class Class6339 extends Class6338 {
    private static String[] field27866;
 
    public Class6339(Class9455 var1, Class2266 var2, float var3, float var4, BlockPos var5) {
-      this(var1, var2, var3, var4, (double)var5.method8304() + 0.5, (double)var5.getY() + 0.5, (double)var5.method8306() + 0.5);
+      this(var1, var2, var3, var4, (double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5);
    }
 
    public static Class6339 method19292(Class9455 var0, float var1) {

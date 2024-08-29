@@ -117,15 +117,15 @@ public class Class8503 {
       }
    }
 
-   private static Class8557[] method30094(int var0, int var1, Class1713[] var2, int var3, Class8557 var4, Class8391 var5) {
+   private static Class8557[] method30094(int var0, int var1, TextureAtlasSprite[] var2, int var3, Class8557 var4, Class8391 var5) {
       return method30098(Class1988.field12980, var0, Class1988.field12976, var1, var2, var3, var4, var5);
    }
 
-   private static Class8557[] method30095(int var0, int var1, Class1713[] var2, int var3, Class8557 var4, Class8391 var5) {
+   private static Class8557[] method30095(int var0, int var1, TextureAtlasSprite[] var2, int var3, Class8557 var4, Class8391 var5) {
       return method30098(Class1988.field12974, var0, Class1988.field12978, var1, var2, var3, var4, var5);
    }
 
-   private static Class8557[] method30096(int var0, int var1, int var2, int var3, Class1713[] var4, int var5, Class8557 var6, Class8391 var7) {
+   private static Class8557[] method30096(int var0, int var1, int var2, int var3, TextureAtlasSprite[] var4, int var5, Class8557 var6, Class8391 var7) {
       if (var0 != var1) {
          if (var2 != var3) {
             if (var0 != var2) {
@@ -149,19 +149,19 @@ public class Class8503 {
       }
    }
 
-   private static Class8557[] method30097(int var0, Class1713[] var1, Class8557 var2, Class8391 var3) {
-      Class1713 var6 = var1[var0];
+   private static Class8557[] method30097(int var0, TextureAtlasSprite[] var1, Class8557 var2, Class8391 var3) {
+      TextureAtlasSprite var6 = var1[var0];
       return Class9619.method37444(var6, var2, var3);
    }
 
-   private static Class8557[] method30098(Class1988 var0, int var1, Class1988 var2, int var3, Class1713[] var4, int var5, Class8557 var6, Class8391 var7) {
+   private static Class8557[] method30098(Class1988 var0, int var1, Class1988 var2, int var3, TextureAtlasSprite[] var4, int var5, Class8557 var6, Class8391 var7) {
       Class8557 var10 = method30101(var4[var1], var0, var5, var6, var7);
       Class8557 var11 = method30101(var4[var3], var2, var5, var6, var7);
       return var7.method29430(var10, var11);
    }
 
    private static Class8557[] method30099(
-      Class1988 var0, int var1, Class1988 var2, int var3, Class1988 var4, int var5, Class1713[] var6, int var7, Class8557 var8, Class8391 var9
+           Class1988 var0, int var1, Class1988 var2, int var3, Class1988 var4, int var5, TextureAtlasSprite[] var6, int var7, Class8557 var8, Class8391 var9
    ) {
       Class8557 var12 = method30101(var6[var1], var0, var7, var8, var9);
       Class8557 var13 = method30101(var6[var3], var2, var7, var8, var9);
@@ -178,7 +178,7 @@ public class Class8503 {
       int var5,
       Class1988 var6,
       int var7,
-      Class1713[] var8,
+      TextureAtlasSprite[] var8,
       int var9,
       Class8557 var10,
       Class8391 var11
@@ -190,7 +190,7 @@ public class Class8503 {
       return var11.method29432(var14, var15, var16, var17);
    }
 
-   private static Class8557 method30101(Class1713 var0, Class1988 var1, int var2, Class8557 var3, Class8391 var4) {
+   private static Class8557 method30101(TextureAtlasSprite var0, Class1988 var1, int var2, Class8557 var3, Class8391 var4) {
       switch (Class9383.field43534[var1.ordinal()]) {
          case 1:
             return method30102(var0, var1, 0, 0, 16, 8, var2, var3, var4);
@@ -213,7 +213,7 @@ public class Class8503 {
       }
    }
 
-   private static Class8557 method30102(Class1713 var0, Class1988 var1, int var2, int var3, int var4, int var5, int var6, Class8557 var7, Class8391 var8) {
+   private static Class8557 method30102(TextureAtlasSprite var0, Class1988 var1, int var2, int var3, int var4, int var5, int var6, Class8557 var7, Class8391 var8) {
       Map[][] var11 = Class9619.method37468();
       if (var11 != null) {
          int var12 = var0.method7475();
@@ -245,9 +245,9 @@ public class Class8503 {
       }
    }
 
-   private static Class8557 method30103(Class8557 var0, Class1713 var1, int var2, int var3, int var4, int var5, int var6) {
+   private static Class8557 method30103(Class8557 var0, TextureAtlasSprite var1, int var2, int var3, int var4, int var5, int var6) {
       int[] var9 = (int[])var0.method30511().clone();
-      Class1713 var10 = var0.method30516();
+      TextureAtlasSprite var10 = var0.method30516();
 
       for (int var11 = 0; var11 < 4; var11++) {
          method30104(var9, var11, var10, var1, var2, var3, var4, var5, var6);
@@ -256,7 +256,7 @@ public class Class8503 {
       return new Class8557(var9, var0.method30513(), var0.method30514(), var1, var0.method30515());
    }
 
-   private static void method30104(int[] var0, int var1, Class1713 var2, Class1713 var3, int var4, int var5, int var6, int var7, int var8) {
+   private static void method30104(int[] var0, int var1, TextureAtlasSprite var2, TextureAtlasSprite var3, int var4, int var5, int var6, int var7, int var8) {
       int var11 = var0.length / 4;
       int var12 = var11 * var1;
       float var13 = Float.intBitsToFloat(var0[var12 + 4]);

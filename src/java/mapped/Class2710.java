@@ -19,7 +19,7 @@ public class Class2710 extends Class2709<PlayerEntity> {
 
    @Override
    public boolean method10803() {
-      this.field17193 = this.field17192.field5024.method7188(this.field17196, this.field17192);
+      this.field17193 = this.field17192.world.method7188(this.field17196, this.field17192);
       return this.field17193 != null;
    }
 

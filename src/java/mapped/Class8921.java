@@ -5,12 +5,12 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Class8921 {
    private static String[] field40381;
    private final String field40382;
-   private final Class7740 field40383;
-   private final Class7740 field40384;
+   private final IProfileResult field40383;
+   private final IProfileResult field40384;
    private final AtomicLong field40385;
    private final AtomicLong field40386;
 
-   public Class8921(String var1, Class7740 var2, Class7740 var3, AtomicLong var4, AtomicLong var5) {
+   public Class8921(String var1, IProfileResult var2, IProfileResult var3, AtomicLong var4, AtomicLong var5) {
       this.field40382 = var1;
       this.field40383 = var2;
       this.field40384 = var3;
@@ -19,12 +19,12 @@ public class Class8921 {
    }
 
    // $VF: synthetic method
-   public static Class7740 method32598(Class8921 var0) {
+   public static IProfileResult method32598(Class8921 var0) {
       return var0.field40383;
    }
 
    // $VF: synthetic method
-   public static Class7740 method32599(Class8921 var0) {
+   public static IProfileResult method32599(Class8921 var0) {
       return var0.field40384;
    }
 

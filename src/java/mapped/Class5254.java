@@ -27,12 +27,12 @@ public class Class5254 extends PremiumModule {
 
     public Class5254() {
         super("AutoCrystal", "Automatically detonates crystals", ModuleCategory.WORLD);
-        this.method15972(new Class6005("Mode", "Mode", 0, "Single", "Switch"));
-        this.method15972(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-        this.method15972(new Class6009<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
-        this.method15972(new Class6004("Players", "Hit players", true));
-        this.method15972(new Class6004("Animals/Monsters", "Hit animals and monsters", false));
-        this.method15972(new Class6004("Invisible", "Hit invisible entites", true));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch"));
+        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("Players", "Hit players", true));
+        this.registerSetting(new BooleanSetting("Animals/Monsters", "Hit animals and monsters", false));
+        this.registerSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
     }
 
     public static BlockPos method16376() {
@@ -168,12 +168,12 @@ public class Class5254 extends PremiumModule {
 
             this.field23633 = (Entity) var4.get(0);
             if ((float) this.field23636 >= 20.0F / this.method15977("CPS")) {
-                Class1001 var5 = mc.world
+                EnderCrystalEntity var5 = mc.world
                         .method6772(
-                                Entity.class, this.field23633.field5035.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof Class1001
+                                Entity.class, this.field23633.field5035.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof EnderCrystalEntity
                         )
                         .stream()
-                        .map(var0 -> (Class1001) var0)
+                        .map(var0 -> (EnderCrystalEntity) var0)
                         .filter(var0 -> var0.method3275(mc.player) < 6.0F)
                         .filter(var1x -> (double) var1x.method3275(this.field23633) < 3.6)
                         .min(Comparator.comparing(var1x -> method16380(var1x.getPosX(), var1x.getPosY(), var1x.getPosZ(), this.field23633)))
@@ -201,7 +201,7 @@ public class Class5254 extends PremiumModule {
                         .stream()
                         .max(
                                 Comparator.comparing(
-                                        var1x -> method16380(var1x.method8304(), var1x.getY(), var1x.method8306(), this.field23633)
+                                        var1x -> method16380(var1x.getX(), var1x.getY(), var1x.getZ(), this.field23633)
                                 )
                         )
                         .orElse(null);
@@ -224,9 +224,9 @@ public class Class5254 extends PremiumModule {
         GL11.glDisable(2929);
 
         for (BlockPos var6 : this.field23637) {
-            double var7 = (double) var6.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+            double var7 = (double) var6.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
             double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-            double var11 = (double) var6.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+            double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
             Class9388 var13 = new Class9388(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
             Class3192.method11459(var13, var4);
         }
@@ -246,7 +246,7 @@ public class Class5254 extends PremiumModule {
     }
 
     private List<BlockPos> method16377() {
-        Class25 var3 = Class25.method67();
+        NonNullList var3 = NonNullList.create();
         var3.addAll(this.method16379(method16376(), 6.0F, 6, false, true, 0).stream().filter(this::method16378).collect(Collectors.toList()));
         return var3;
     }
@@ -255,19 +255,19 @@ public class Class5254 extends PremiumModule {
         BlockPos var4 = var1.method8336(0, 1, 0);
         BlockPos var5 = var1.method8336(0, 2, 0);
         return (
-                mc.world.method6738(var1).method23383() == Blocks.BEDROCK
-                        || mc.world.method6738(var1).method23383() == Blocks.field36527
+                mc.world.getBlockState(var1).getBlock() == Blocks.BEDROCK
+                        || mc.world.getBlockState(var1).getBlock() == Blocks.field36527
         )
-                && mc.world.method6738(var4).method23383() == Blocks.AIR
-                && mc.world.method6738(var5).method23383() == Blocks.AIR
+                && mc.world.getBlockState(var4).getBlock() == Blocks.AIR
+                && mc.world.getBlockState(var5).getBlock() == Blocks.AIR
                 && mc.world.method7182(Entity.class, new Class6488(var4)).isEmpty();
     }
 
     public List<BlockPos> method16379(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {
         ArrayList var9 = new ArrayList();
-        int var10 = var1.method8304();
+        int var10 = var1.getX();
         int var11 = var1.getY();
-        int var12 = var1.method8306();
+        int var12 = var1.getZ();
 
         for (int var13 = var10 - (int) var2; (float) var13 <= (float) var10 + var2; var13++) {
             for (int var14 = var12 - (int) var2; (float) var14 <= (float) var12 + var2; var14++) {
@@ -303,7 +303,7 @@ public class Class5254 extends PremiumModule {
                         if (((Class880) var6).method3042() != 0.0F) {
                             if (!(mc.player.method3275(var6) > var1)) {
                                 if (mc.player.method3026((Class880) var6)) {
-                                    if (!(var6 instanceof Class1005)) {
+                                    if (!(var6 instanceof ArmorStandEntity)) {
                                         if (!this.method15974("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
                                         } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
@@ -354,7 +354,7 @@ public class Class5254 extends PremiumModule {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.field4904.method18131(var3).method18266()) {
                 ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
-                if (var4.method32107() == Class8514.field38108) {
+                if (var4.getItem() == Items.END_CRYSTAL) {
                     return var3 - 36;
                 }
             }
@@ -363,13 +363,13 @@ public class Class5254 extends PremiumModule {
         for (int var5 = 9; var5 < 36; var5++) {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                if (var6.method32107() == Class8514.field38108) {
+                if (var6.getItem() == Items.END_CRYSTAL) {
                     if (Class8005.method27349() <= Class5989.field26136.method18582()) {
-                        mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
                     Class7789.method25873(var5, 8);
-                    mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
+                    mc.getConnection().sendPacket(new Class5482(-1));
                     return 5;
                 }
             }

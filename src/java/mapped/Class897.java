@@ -8,18 +8,18 @@ public class Class897 extends Entity implements Class889 {
    private int field5136;
    private boolean field5137;
 
-   public Class897(Class8992<? extends Class897> var1, World var2) {
+   public Class897(EntityType<? extends Class897> var1, World var2) {
       super(var1, var2);
    }
 
    public Class897(World var1, double var2, double var4, double var6) {
-      this(Class8992.field41030, var1);
+      this(EntityType.field41030, var1);
       this.field5136 = 0;
       this.method3215(var2, var4, var6);
    }
 
    public void method3522(ItemStack var1) {
-      if (var1.method32107() != Class8514.field37979 || var1.method32141()) {
+      if (var1.getItem() != Items.field37979 || var1.method32141()) {
          this.method3210().method35446(field5132, Util.<ItemStack>method38508(var1.copy(), var0 -> var0.method32180(1)));
       }
    }
@@ -31,7 +31,7 @@ public class Class897 extends Entity implements Class889 {
    @Override
    public ItemStack method3509() {
       ItemStack var3 = this.method3523();
-      return !var3.method32105() ? var3 : new ItemStack(Class8514.field37979);
+      return !var3.isEmpty() ? var3 : new ItemStack(Items.field37979);
    }
 
    @Override
@@ -51,9 +51,9 @@ public class Class897 extends Entity implements Class889 {
    }
 
    public void method3524(BlockPos var1) {
-      double var4 = (double)var1.method8304();
+      double var4 = (double)var1.getX();
       int var6 = var1.getY();
-      double var7 = (double)var1.method8306();
+      double var7 = (double)var1.getZ();
       double var9 = var4 - this.getPosX();
       double var11 = var7 - this.getPosZ();
       float var13 = MathHelper.method37766(var9 * var9 + var11 * var11);
@@ -93,7 +93,7 @@ public class Class897 extends Entity implements Class889 {
       float var10 = MathHelper.method37766(method3234(var3));
       this.field5032 = Class882.method3469(this.field5034, (float)(MathHelper.method37814(var3.field18049, (double)var10) * 180.0F / (float)Math.PI));
       this.field5031 = Class882.method3469(this.field5033, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          double var12 = this.field5133 - var4;
          double var14 = this.field5135 - var8;
          float var16 = (float)Math.sqrt(var12 * var12 + var14 * var14);
@@ -112,7 +112,7 @@ public class Class897 extends Entity implements Class889 {
 
       float var11 = 0.25F;
       if (!this.method3250()) {
-         this.field5024
+         this.world
             .method6746(
                Class7940.field34090,
                var4 - var3.field18048 * 0.25 + this.field5054.nextDouble() * 0.6 - 0.3,
@@ -124,7 +124,7 @@ public class Class897 extends Entity implements Class889 {
             );
       } else {
          for (int var23 = 0; var23 < 4; var23++) {
-            this.field5024
+            this.world
                .method6746(
                   Class7940.field34052,
                   var4 - var3.field18048 * 0.25,
@@ -137,34 +137,34 @@ public class Class897 extends Entity implements Class889 {
          }
       }
 
-      if (this.field5024.field9020) {
+      if (this.world.field9020) {
          this.method3446(var4, var6, var8);
       } else {
          this.method3215(var4, var6, var8);
          this.field5136++;
-         if (this.field5136 > 80 && !this.field5024.field9020) {
+         if (this.field5136 > 80 && !this.world.field9020) {
             this.method2863(Class6067.field26543, 1.0F, 1.0F);
             this.method2904();
             if (!this.field5137) {
-               this.field5024.method6999(2003, this.method3432(), 0);
+               this.world.method6999(2003, this.getPosition(), 0);
             } else {
-               this.field5024.method6916(new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
+               this.world.method6916(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
             }
          }
       }
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       ItemStack var4 = this.method3523();
-      if (!var4.method32105()) {
-         var1.method99("Item", var4.method32112(new Class39()));
+      if (!var4.isEmpty()) {
+         var1.put("Item", var4.method32112(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method2723(Class39 var1) {
-      ItemStack var4 = ItemStack.method32104(var1.method130("Item"));
+   public void method2723(CompoundNBT var1) {
+      ItemStack var4 = ItemStack.method32104(var1.getCompound("Item"));
       this.method3522(var4);
    }
 

@@ -15,18 +15,18 @@ public class Class4555 extends AbstractIterator {
    public Object computeNext() {
       if (this.field21966 != null) {
          if (!this.field21966.equals(this.field21967.field105)) {
-            int var3 = this.field21966.method8304();
+            int var3 = this.field21966.getX();
             int var4 = this.field21966.getY();
-            int var5 = this.field21966.method8306();
-            if (var3 >= this.field21967.field105.method8304()) {
-               if (var5 >= this.field21967.field105.method8306()) {
+            int var5 = this.field21966.getZ();
+            if (var3 >= this.field21967.field105.getX()) {
+               if (var5 >= this.field21967.field105.getZ()) {
                   if (var4 < this.field21967.field105.getY()) {
-                     var3 = this.field21967.field104.method8304();
-                     var5 = this.field21967.field104.method8306();
+                     var3 = this.field21967.field104.getX();
+                     var5 = this.field21967.field104.getZ();
                      var4++;
                   }
                } else {
-                  var3 = this.field21967.field104.method8304();
+                  var3 = this.field21967.field104.getX();
                   var5++;
                }
             } else {
@@ -39,7 +39,7 @@ public class Class4555 extends AbstractIterator {
             return (Class2001)this.endOfData();
          }
       } else {
-         this.field21966 = new Class2001(this.field21967.field104.method8304(), this.field21967.field104.getY(), this.field21967.field104.method8306(), 3);
+         this.field21966 = new Class2001(this.field21967.field104.getX(), this.field21967.field104.getY(), this.field21967.field104.getZ(), 3);
          return this.field21966;
       }
    }

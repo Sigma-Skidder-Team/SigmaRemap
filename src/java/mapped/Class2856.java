@@ -159,7 +159,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       }
 
       if (var3 > 0.2F) {
-         var11 += MathHelper.method37764(var2 * 0.4F) * 0.15F * var3;
+         var11 += MathHelper.cos(var2 * 0.4F) * 0.15F * var3;
       }
 
       float var12 = var1.method4963(var4);
@@ -174,16 +174,16 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       this.field17693.field31035 = (float) (Math.PI / 6) + var11;
       this.field17693.field31036 = var10 * (float) (Math.PI / 180.0);
       float var18 = !var1.method3250() ? 1.0F : 0.2F;
-      float var19 = MathHelper.method37764(var18 * var2 * 0.6662F + (float) Math.PI);
+      float var19 = MathHelper.cos(var18 * var2 * 0.6662F + (float) Math.PI);
       float var20 = var19 * 0.8F * var3;
-      float var21 = (1.0F - Math.max(var13, var12)) * ((float) (Math.PI / 6) + var11 + var15 * MathHelper.method37763(var17) * 0.05F);
-      this.field17693.field31035 = var13 * ((float) (Math.PI / 12) + var11) + var12 * (2.1816616F + MathHelper.method37763(var17) * 0.05F) + var21;
+      float var21 = (1.0F - Math.max(var13, var12)) * ((float) (Math.PI / 6) + var11 + var15 * MathHelper.sin(var17) * 0.05F);
+      this.field17693.field31035 = var13 * ((float) (Math.PI / 12) + var11) + var12 * (2.1816616F + MathHelper.sin(var17) * 0.05F) + var21;
       this.field17693.field31036 = var13 * var10 * (float) (Math.PI / 180.0) + (1.0F - Math.max(var13, var12)) * this.field17693.field31036;
       this.field17693.field31033 = var13 * -4.0F + var12 * 11.0F + (1.0F - Math.max(var13, var12)) * this.field17693.field31033;
       this.field17693.field31034 = var13 * -4.0F + var12 * -12.0F + (1.0F - Math.max(var13, var12)) * this.field17693.field31034;
       this.field17692.field31035 = var13 * (float) (-Math.PI / 4) + var14 * this.field17692.field31035;
       float var22 = (float) (Math.PI / 12) * var13;
-      float var23 = MathHelper.method37764(var17 * 0.6F + (float) Math.PI);
+      float var23 = MathHelper.cos(var17 * 0.6F + (float) Math.PI);
       this.field17696.field31033 = 2.0F * var13 + 14.0F * var14;
       this.field17696.field31034 = -6.0F * var13 - 10.0F * var14;
       this.field17697.field31033 = this.field17696.field31033;
@@ -200,7 +200,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       if (!var16) {
          this.field17702.field31036 = 0.0F;
       } else {
-         this.field17702.field31036 = MathHelper.method37764(var17 * 0.7F);
+         this.field17702.field31036 = MathHelper.cos(var17 * 0.7F);
       }
 
       this.field17698.field31033 = this.field17694.field31033;

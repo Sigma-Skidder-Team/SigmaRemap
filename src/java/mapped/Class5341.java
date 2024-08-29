@@ -31,7 +31,7 @@ public class Class5341 extends Class5325 {
                 new Class5233(),
                 new Class5353()
         );
-        this.method15972(new Class6004("Lag back checker", "Disable speed when you get lag back", true));
+        this.registerSetting(new BooleanSetting("Lag back checker", "Disable speed when you get lag back", true));
         field23893 = 0;
     }
 

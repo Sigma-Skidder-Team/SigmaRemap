@@ -13,10 +13,10 @@ public interface Class6196 {
    default void method19101(double var1, double var3) {
    }
 
-   default void method19102(Class1656 var1, Class8710 var2) {
+   default void method19102(ClientWorld var1, RayTraceResult var2) {
    }
 
-   default void method19103(Class1656 var1, BlockPos var2, Class7380 var3, float var4) {
+   default void method19103(ClientWorld var1, BlockPos var2, BlockState var3, float var4) {
    }
 
    default void method19099() {

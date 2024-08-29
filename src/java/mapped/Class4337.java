@@ -16,15 +16,15 @@ public class Class4337 extends Class4305 {
    public Class4337(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       int var9 = 0;
-      this.method13230(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, Class7925.field33934));
-      this.method13230(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, Class7925.field33935));
-      this.method13230(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, Class7925.field33936));
-      this.method13230(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, Class7925.field33937));
+      this.method13230(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.singlePlayer));
+      this.method13230(this.field21191 = new Class4254(this, "Multiplayer", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.multiplayer));
+      this.method13230(this.field21189 = new Class4254(this, "Options", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.options));
+      this.method13230(this.field21188 = new Class4254(this, "Language", this.method13497(var9++), this.method13496(), 114, 140, ClassicDecryption.language));
       this.method13230(
-         this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, Class7925.field33938)
+         this.field21190 = new Class4254(this, "Accounts", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.accounts)
       );
-      this.method13230(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, Class7925.field33942));
-      this.method13230(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, Class7925.field33939));
+      this.method13230(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.agora));
+      this.method13230(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.exit));
       this.field21186.method13251((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().currentScreen)));
       this.field21191.method13251((var1x, var2x) -> this.method13493(new Class1317(Minecraft.getInstance().currentScreen)));
       this.field21189.method13251((var1x, var2x) -> this.method13493(new Class1129(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
@@ -32,7 +32,7 @@ public class Class4337 extends Class4305 {
       this.field21188
          .method13251(
             (var1x, var2x) -> this.method13493(
-                  new Class1136(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().method1541())
+                  new Class1136(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings, Minecraft.getInstance().getLanguageManager())
                )
          );
       this.field21187.method13251((var0, var1x) -> Minecraft.getInstance().shutdown());
@@ -49,7 +49,7 @@ public class Class4337 extends Class4305 {
    }
 
    public void method13495() {
-      Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
+      Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
    }
 
    private int method13496() {
@@ -76,7 +76,7 @@ public class Class4337 extends Class4305 {
    @Override
    public void method13027(float var1) {
       this.method13225();
-      Class3192.method11455((float)(this.field20895 + (this.method13267() - 300) / 2), (float)(this.field20896 + 30), 300.0F, 97.0F, Class7925.field33941);
+      Class3192.method11455((float)(this.field20895 + (this.method13267() - 300) / 2), (float)(this.field20896 + 30), 300.0F, 97.0F, ClassicDecryption.big);
       super.method13027(var1);
    }
 }

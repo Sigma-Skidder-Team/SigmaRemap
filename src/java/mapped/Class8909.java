@@ -45,15 +45,15 @@ public class Class8909 {
             int var9 = Math.min(var1.method502().method11710(), var8);
             var8 -= var9;
             ItemStack var10 = var1.method503(var9, false);
-            boolean var11 = var7.field4902.method4045(var10);
-            if (var11 && var10.method32105()) {
+            boolean var11 = var7.inventory.method4045(var10);
+            if (var11 && var10.isEmpty()) {
                var10.method32180(1);
                ItemEntity var13 = var7.method2882(var10, false);
                if (var13 != null) {
                   var13.method4137();
                }
 
-               var7.field5024
+               var7.world
                   .method6743(
                      (PlayerEntity)null,
                      var7.getPosX(),

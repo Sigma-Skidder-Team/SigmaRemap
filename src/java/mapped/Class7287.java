@@ -190,7 +190,7 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44857, var0);
    }
 
-   public static Class7287 method23029(Class3257 var0) {
+   public static Class7287 method23029(Item var0) {
       return new Class7287().method22991(Class9588.field44827, method23043(var0));
    }
 
@@ -253,7 +253,7 @@ public class Class7287 {
       return new Class7287().method22991(Class9588.field44859, method23042(var0, "_log_lit")).method22991(Class9588.field44853, method23042(var0, "_fire"));
    }
 
-   public static Class7287 method23038(Class3257 var0) {
+   public static Class7287 method23038(Item var0) {
       return new Class7287().method22991(Class9588.field44858, method23043(var0));
    }
 
@@ -266,22 +266,22 @@ public class Class7287 {
    }
 
    public static ResourceLocation method23041(Block var0) {
-      ResourceLocation var3 = Registry.field16072.method9181(var0);
+      ResourceLocation var3 = Registry.BLOCK.getKey(var0);
       return new ResourceLocation(var3.method8293(), "block/" + var3.method8292());
    }
 
    public static ResourceLocation method23042(Block var0, String var1) {
-      ResourceLocation var4 = Registry.field16072.method9181(var0);
+      ResourceLocation var4 = Registry.BLOCK.getKey(var0);
       return new ResourceLocation(var4.method8293(), "block/" + var4.method8292() + var1);
    }
 
-   public static ResourceLocation method23043(Class3257 var0) {
-      ResourceLocation var3 = Registry.field16075.method9181(var0);
+   public static ResourceLocation method23043(Item var0) {
+      ResourceLocation var3 = Registry.ITEM.getKey(var0);
       return new ResourceLocation(var3.method8293(), "item/" + var3.method8292());
    }
 
-   public static ResourceLocation method23044(Class3257 var0, String var1) {
-      ResourceLocation var4 = Registry.field16075.method9181(var0);
+   public static ResourceLocation method23044(Item var0, String var1) {
+      ResourceLocation var4 = Registry.ITEM.getKey(var0);
       return new ResourceLocation(var4.method8293(), "item/" + var4.method8292() + var1);
    }
 }

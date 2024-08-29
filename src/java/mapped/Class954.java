@@ -8,7 +8,7 @@ import net.minecraft.util.text.event.ClickEvent$Action;
 import javax.annotation.Nullable;
 import java.util.function.Function;
 
-public class Class954 extends Class944 {
+public class Class954 extends TileEntity {
    private final ITextComponent[] field5356 = new ITextComponent[]{
       StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY, StringTextComponent.EMPTY
    };
@@ -22,8 +22,8 @@ public class Class954 extends Class944 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
 
       for (int var4 = 0; var4 < 4; var4++) {
          String var5 = ITextComponent$Serializer.toJson(this.field5356[var4]);
@@ -35,7 +35,7 @@ public class Class954 extends Class944 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       this.field5357 = false;
       super.method3645(var1, var2);
       this.field5360 = Class112.method316(var2.method126("Color"), Class112.field401);
@@ -82,8 +82,8 @@ public class Class954 extends Class944 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      return this.write(new CompoundNBT());
    }
 
    @Override
@@ -150,7 +150,7 @@ public class Class954 extends Class944 {
       } else {
          this.field5360 = var1;
          this.method3622();
-         this.field5324.method6731(this.method3774(), this.method3775(), this.method3775(), 3);
+         this.field5324.method6731(this.getPos(), this.method3775(), this.method3775(), 3);
          return true;
       }
    }

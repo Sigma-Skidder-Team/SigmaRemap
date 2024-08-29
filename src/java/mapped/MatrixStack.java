@@ -15,7 +15,7 @@ public class MatrixStack {
       var0.add(new Class8892(var3, var4));
    });
 
-   public void method35291(double var1, double var3, double var5) {
+   public void translate(double var1, double var3, double var5) {
       Class8892 var9 = this.field43311.getLast();
       Class8892.method32363(var9).method35521((float)var1, (float)var3, (float)var5);
    }
@@ -44,7 +44,7 @@ public class MatrixStack {
       Class8892.method32364(var4).method32829(var1);
    }
 
-   public void method35294() {
+   public void push() {
       Class8892 var3 = this.field43311.getLast();
       Class8892 var4 = this.field43310.pollLast();
       if (var4 != null) {

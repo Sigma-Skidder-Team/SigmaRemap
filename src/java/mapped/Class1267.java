@@ -17,7 +17,7 @@ public class Class1267 extends Class1193 {
 
    public void method5953(MatrixStack var1) {
       if (!this.field6710.isEmpty()) {
-         int var4 = this.field6709.method1580().getScaledWidth();
+         int var4 = this.field6709.getMainWindow().getScaledWidth();
          byte var5 = 12;
 
          for (Class3626 var7 : this.field6710.values()) {
@@ -26,12 +26,12 @@ public class Class1267 extends Class1193 {
             this.field6709.getTextureManager().bindTexture(field6708);
             this.method5954(var1, var8, var5, var7);
             ITextComponent var9 = var7.method12290();
-            int var10 = this.field6709.field1294.method38821(var9);
+            int var10 = this.field6709.fontRenderer.method38821(var9);
             int var11 = var4 / 2 - var10 / 2;
             int var12 = var5 - 9;
-            this.field6709.field1294.method38803(var1, var9, (float)var11, (float)var12, 16777215);
+            this.field6709.fontRenderer.method38803(var1, var9, (float)var11, (float)var12, 16777215);
             var5 += 19;
-            if (var5 >= this.field6709.method1580().getScaledHeight() / 3) {
+            if (var5 >= this.field6709.getMainWindow().getScaledHeight() / 3) {
                break;
             }
          }
@@ -71,7 +71,7 @@ public class Class1267 extends Class1193 {
       this.field6710.clear();
    }
 
-   public boolean method5957() {
+   public boolean shouldPlayEndBossMusic() {
       if (!this.field6710.isEmpty()) {
          for (Class3625 var4 : this.field6710.values()) {
             if (var4.method12295()) {

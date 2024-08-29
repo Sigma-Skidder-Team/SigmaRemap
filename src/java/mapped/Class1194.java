@@ -27,20 +27,20 @@ public class Class1194 extends Class1193 {
       this.field6458 = var3;
       this.field6459 = var4;
       this.field6463 = var2;
-      this.field6460 = LanguageMap.getInstance().func_241870_a(var2.field1294.method38825(var4.method34934(), 163));
+      this.field6460 = LanguageMap.getInstance().func_241870_a(var2.fontRenderer.method38825(var4.method34934(), 163));
       this.field6467 = MathHelper.method37767(var4.method34939() * 28.0F);
       this.field6468 = MathHelper.method37767(var4.method34940() * 27.0F);
       int var7 = var3.method27031();
       int var8 = String.valueOf(var7).length();
-      int var9 = var7 <= 1 ? 0 : var2.field1294.method38820("  ") + var2.field1294.method38820("0") * var8 * 2 + var2.field1294.method38820("/");
-      int var10 = 29 + var2.field1294.method38822(this.field6460) + var9;
+      int var9 = var7 <= 1 ? 0 : var2.fontRenderer.getStringWidth("  ") + var2.fontRenderer.getStringWidth("0") * var8 * 2 + var2.fontRenderer.getStringWidth("/");
+      int var10 = 29 + var2.fontRenderer.method38822(this.field6460) + var9;
       this.field6462 = LanguageMap.getInstance()
          .func_244260_a(
             this.method5705(TextComponentUtils.func_240648_a_(var4.method34935().deepCopy(), Style.EMPTY.setFormatting(var4.method34938().method8244())), var10)
          );
 
       for (Class9125 var12 : this.field6462) {
-         var10 = Math.max(var10, var2.field1294.method38822(var12));
+         var10 = Math.max(var10, var2.fontRenderer.method38822(var12));
       }
 
       this.field6461 = var10 + 3 + 5;
@@ -51,7 +51,7 @@ public class Class1194 extends Class1193 {
    }
 
    private List<ITextProperties> method5705(ITextComponent var1, int var2) {
-      CharacterManager var5 = this.field6463.field1294.method38830();
+      CharacterManager var5 = this.field6463.fontRenderer.method38830();
       List var6 = null;
       float var7 = Float.MAX_VALUE;
 
@@ -123,7 +123,7 @@ public class Class1194 extends Class1193 {
          this.method5696(
             var1, var2 + this.field6467 + 3, var3 + this.field6468, this.field6459.method34938().method8242(), 128 + var7.method8737() * 26, 26, 26
          );
-         this.field6463.method1555().method794(this.field6459.method34936(), var2 + this.field6467 + 8, var3 + this.field6468 + 5);
+         this.field6463.getItemRenderer().method794(this.field6459.method34936(), var2 + this.field6467 + 8, var3 + this.field6468 + 5);
       }
 
       for (Class1194 var9 : this.field6465) {
@@ -142,7 +142,7 @@ public class Class1194 extends Class1193 {
    public void method5711(MatrixStack var1, int var2, int var3, float var4, int var5, int var6) {
       boolean var9 = var5 + var2 + this.field6467 + this.field6461 + 26 >= this.field6457.method6013().field4564;
       String var10 = this.field6466 != null ? this.field6466.method8497() : null;
-      int var11 = var10 != null ? this.field6463.field1294.method38820(var10) : 0;
+      int var11 = var10 != null ? this.field6463.fontRenderer.getStringWidth(var10) : 0;
       boolean var12 = 113 - var3 - this.field6468 - 26 <= 6 + this.field6462.size() * 9;
       float var13 = this.field6466 != null ? this.field6466.method8496() : 0.0F;
       int var14 = MathHelper.method37767(var13 * (float)this.field6461);
@@ -199,32 +199,32 @@ public class Class1194 extends Class1193 {
       this.method5696(var1, var20 + var14, var19, 200 - var18, var16.method8737() * 26, var18, 26);
       this.method5696(var1, var2 + this.field6467 + 3, var3 + this.field6468, this.field6459.method34938().method8242(), 128 + var17.method8737() * 26, 26, 26);
       if (!var9) {
-         this.field6463.field1294.method38802(var1, this.field6460, (float)(var2 + this.field6467 + 32), (float)(var3 + this.field6468 + 9), -1);
+         this.field6463.fontRenderer.method38802(var1, this.field6460, (float)(var2 + this.field6467 + 32), (float)(var3 + this.field6468 + 9), -1);
          if (var10 != null) {
             this.field6463
-               .field1294
-               .method38799(var1, var10, (float)(var2 + this.field6467 + this.field6461 - var11 - 5), (float)(var3 + this.field6468 + 9), -1);
+               .fontRenderer
+               .drawStringWithShadow(var1, var10, (float)(var2 + this.field6467 + this.field6461 - var11 - 5), (float)(var3 + this.field6468 + 9), -1);
          }
       } else {
-         this.field6463.field1294.method38802(var1, this.field6460, (float)(var20 + 5), (float)(var3 + this.field6468 + 9), -1);
+         this.field6463.fontRenderer.method38802(var1, this.field6460, (float)(var20 + 5), (float)(var3 + this.field6468 + 9), -1);
          if (var10 != null) {
-            this.field6463.field1294.method38799(var1, var10, (float)(var2 + this.field6467 - var11), (float)(var3 + this.field6468 + 9), -1);
+            this.field6463.fontRenderer.drawStringWithShadow(var1, var10, (float)(var2 + this.field6467 - var11), (float)(var3 + this.field6468 + 9), -1);
          }
       }
 
       if (!var12) {
          for (int var22 = 0; var22 < this.field6462.size(); var22++) {
             this.field6463
-               .field1294
+               .fontRenderer
                .method38804(var1, this.field6462.get(var22), (float)(var20 + 5), (float)(var3 + this.field6468 + 9 + 17 + var22 * 9), -5592406);
          }
       } else {
          for (int var23 = 0; var23 < this.field6462.size(); var23++) {
-            this.field6463.field1294.method38804(var1, this.field6462.get(var23), (float)(var20 + 5), (float)(var19 + 26 - var21 + 7 + var23 * 9), -5592406);
+            this.field6463.fontRenderer.method38804(var1, this.field6462.get(var23), (float)(var20 + 5), (float)(var19 + 26 - var21 + 7 + var23 * 9), -5592406);
          }
       }
 
-      this.field6463.method1555().method794(this.field6459.method34936(), var2 + this.field6467 + 8, var3 + this.field6468 + 5);
+      this.field6463.getItemRenderer().method794(this.field6459.method34936(), var2 + this.field6467 + 8, var3 + this.field6468 + 5);
    }
 
    public void method5712(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {

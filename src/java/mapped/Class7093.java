@@ -19,7 +19,7 @@ public class Class7093 extends Class7092 {
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       Random var9 = new Random(MathHelper.method37809(var5.field35530));
-      Class7380 var10 = var1.method6738(var5.field35530);
+      BlockState var10 = var1.getBlockState(var5.field35530);
       UnmodifiableIterator var11 = this.field30522.iterator();
 
       while (var11.hasNext()) {

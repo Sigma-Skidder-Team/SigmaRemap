@@ -32,14 +32,14 @@ public class Class9528 {
 
    public void method36815(Entity var1, float var2, float var3) {
       if (this.field44346.method15974("Interact autoblock")) {
-         Class8709 var6 = Class5628.method17714(
+         EntityRayTraceResult var6 = Class5628.method17714(
             !this.field44346.method15974("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.field44346.method15977("Range")
          );
          if (var6 != null) {
             this.field44347
-               .getClientPlayNetHandler()
-               .sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, var6.method31419(), this.field44347.player.method3331()));
-            this.field44347.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var6.method31416(), Hand.field182, this.field44347.player.method3331()));
+               .getConnection()
+               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.method31419(), this.field44347.player.method3331()));
+            this.field44347.getConnection().sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, this.field44347.player.method3331()));
          }
       }
 
@@ -54,7 +54,7 @@ public class Class9528 {
 
    public boolean method36817() {
       return !this.field44346.getStringSettingValueByName("Autoblock Mode").equals("None")
-         && this.field44347.player.method3090().method32107() instanceof Class3267
+         && this.field44347.player.method3090().getItem() instanceof Class3267
          && !this.method36813();
    }
 
@@ -160,7 +160,7 @@ public class Class9528 {
             var24.remove();
          } else if (!this.field44347.player.method3026((Class880)var9)) {
             var24.remove();
-         } else if (var9 instanceof Class1005) {
+         } else if (var9 instanceof ArmorStandEntity) {
             var24.remove();
          } else if (!this.field44346.method15974("Players") && var9 instanceof PlayerEntity) {
             var24.remove();

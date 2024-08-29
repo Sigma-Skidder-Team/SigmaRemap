@@ -97,7 +97,7 @@ public class Class8998 {
       int var4 = this.field41149;
 
       for (Entity var6 : var3) {
-         int var7 = var6.method3204().method33225() * 16;
+         int var7 = var6.getType().method33225() * 16;
          if (var7 > var4) {
             var4 = var7;
          }

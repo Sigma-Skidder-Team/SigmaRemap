@@ -37,21 +37,21 @@ public class Class358 extends Thread {
          }
 
          Class9267.method34901(this.field1590)
-            .method30692(new Class5102(Class9267.method34901(this.field1590), this.field1588, Class9267.method34902(this.field1590), var0 -> {
+            .setNetHandler(new ClientLoginNetHandler(Class9267.method34901(this.field1590), this.field1588, Class9267.method34902(this.field1590), var0 -> {
             }));
          if (Class9267.method34899(this.field1590)) {
             return;
          }
 
-         Class9267.method34901(this.field1590).method30693(new Class5575(this.field1586, this.field1587, Class1858.field9904));
+         Class9267.method34901(this.field1590).sendPacket(new CHandshakePacket(this.field1586, this.field1587, ProtocolType.LOGIN));
          if (Class9267.method34899(this.field1590)) {
             return;
          }
 
-         Class9267.method34901(this.field1590).method30693(new Class5500(this.field1588.method1533().getProfile()));
-         this.field1588.method1527(this.field1589.method18922(this.field1586));
+         Class9267.method34901(this.field1590).sendPacket(new CLoginStartPacket(this.field1588.getSession().getProfile()));
+         this.field1588.setServerData(this.field1589.method18922(this.field1586));
       } catch (UnknownHostException var7) {
-         this.field1588.method1539().method25150();
+         this.field1588.getPackFinder().clearResourcePack();
          if (Class9267.method34899(this.field1590)) {
             return;
          }
@@ -59,12 +59,12 @@ public class Class358 extends Thread {
          Class9267.method34903().error("Couldn't connect to world", var7);
          Class801 var9 = new Class801(
             Class9267.method34902(this.field1590),
-            Class7127.field30664,
+            DialogTexts.field30664,
             new TranslationTextComponent("disconnect.genericReason", "Unknown host '" + this.field1586 + "'")
          );
          this.field1588.execute(() -> field1588.displayGuiScreen(var9));
       } catch (Exception var8) {
-         this.field1588.method1539().method25150();
+         this.field1588.getPackFinder().clearResourcePack();
          if (Class9267.method34899(this.field1590)) {
             return;
          }
@@ -77,7 +77,7 @@ public class Class358 extends Thread {
          }
 
          Class801 var10 = new Class801(
-            Class9267.method34902(this.field1590), Class7127.field30664, new TranslationTextComponent("disconnect.genericReason", var5)
+            Class9267.method34902(this.field1590), DialogTexts.field30664, new TranslationTextComponent("disconnect.genericReason", var5)
          );
          this.field1588.execute(() -> field1588.displayGuiScreen(var10));
       }

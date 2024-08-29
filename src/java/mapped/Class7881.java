@@ -45,7 +45,7 @@ public class Class7881 extends Class7882<Class880> {
                if (!(var17 instanceof Class1034)) {
                   if (!(var17 instanceof PlayerEntity)) {
                      if (var6.isPresent() || !(var17 instanceof Class1084) && !(var17 instanceof Class1079)) {
-                        if (!var10.isPresent() && Class4388.method13880(var17.method3204())) {
+                        if (!var10.isPresent() && Class4388.method13880(var17.getType())) {
                            var10 = Optional.<Class880>of(var17);
                         }
                      } else {
@@ -57,7 +57,7 @@ public class Class7881 extends Class7882<Class880> {
                         var11 = Optional.<PlayerEntity>of(var22);
                      }
 
-                     if (!var12.isPresent() && !var22.method2800() && Class4388.method13875(var22)) {
+                     if (!var12.isPresent() && !var22.isSpectator() && Class4388.method13875(var22)) {
                         var12 = Optional.<PlayerEntity>of(var22);
                      }
                   }
@@ -104,11 +104,11 @@ public class Class7881 extends Class7882<Class880> {
    }
 
    private static Optional<BlockPos> method26426(ServerWorld var0, Class880 var1) {
-      return BlockPos.method8357(var1.method3432(), 8, 4, var1x -> method26427(var0, var1x));
+      return BlockPos.method8357(var1.getPosition(), 8, 4, var1x -> method26427(var0, var1x));
    }
 
    private static boolean method26427(ServerWorld var0, BlockPos var1) {
-      Class7380 var4 = var0.method6738(var1);
+      BlockState var4 = var0.getBlockState(var1);
       boolean var5 = var4.method23446(Class7645.field32774);
       return var5 && var4.method23448(Blocks.field37068) ? Class3244.method11655(var4) : var5;
    }

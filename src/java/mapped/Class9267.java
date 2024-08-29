@@ -16,14 +16,14 @@ public class Class9267 {
 
    public void method34896(Class6128 var1, String var2, int var3) {
       Minecraft var6 = Minecraft.getInstance();
-      var6.method1560(true);
-      Class9229.method34711(Class9088.method33883("mco.connect.success"));
+      var6.setConnectedToRealms(true);
+      Class9229.method34711(I18n.format("mco.connect.success"));
       new Class358(this, "Realms-connect-task", var2, var3, var6, var1).start();
    }
 
    public void method34897() {
       this.field42632 = true;
-      if (this.field42633 != null && this.field42633.method30707()) {
+      if (this.field42633 != null && this.field42633.isChannelOpen()) {
          this.field42633.method30701(new TranslationTextComponent("disconnect.genericReason"));
          this.field42633.method30713();
       }
@@ -31,10 +31,10 @@ public class Class9267 {
 
    public void method34898() {
       if (this.field42633 != null) {
-         if (!this.field42633.method30707()) {
+         if (!this.field42633.isChannelOpen()) {
             this.field42633.method30713();
          } else {
-            this.field42633.method30698();
+            this.field42633.tick();
          }
       }
    }

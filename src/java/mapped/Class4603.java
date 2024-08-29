@@ -4,13 +4,13 @@ public class Class4603 extends Class4601 {
    private static String[] field22095;
    private boolean field22104;
    private boolean field22105;
-   private final Class302 field22106;
+   private final ParticleManager field22106;
    private float field22107;
    private float field22108;
    private float field22109;
    private boolean field22110;
 
-   public Class4603(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12, Class302 var14, Class8975 var15) {
+   public Class4603(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, ParticleManager var14, Class8975 var15) {
       super(var1, var2, var4, var6, var15, -0.004F);
       this.field22044 = var8;
       this.field22045 = var10;

@@ -34,10 +34,10 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
-                  .method18291(Class4695.method14724(Class8514.field37909).method18299(60))
-                  .method18291(Class4695.method14724(Class8514.field37910).method18299(25))
-                  .method18291(Class4695.method14724(Class8514.field37911).method18299(2))
-                  .method18291(Class4695.method14724(Class8514.field37912).method18299(13))
+                  .method18291(Class4695.method14724(Items.field37909).method18299(60))
+                  .method18291(Class4695.method14724(Items.field37910).method18299(25))
+                  .method18291(Class4695.method14724(Items.field37911).method18299(2))
+                  .method18291(Class4695.method14724(Items.field37912).method18299(13))
             )
       );
       var1.accept(
@@ -46,21 +46,21 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18291(Class4695.method14724(Blocks.LILY_PAD).method18299(17))
-                  .method18291(Class4695.method14724(Class8514.field37847).method18299(10).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))
-                  .method18291(Class4695.method14724(Class8514.field37890).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37935).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37847).method18299(10).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))
+                  .method18291(Class4695.method14724(Items.field37890).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37935).method18299(10))
                   .method18291(
-                     Class4695.method14724(Class8514.field37971)
+                     Class4695.method14724(Items.field37971)
                         .method18299(10)
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:water"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:water"))))
                   )
-                  .method18291(Class4695.method14724(Class8514.field37838).method18299(5))
-                  .method18291(Class4695.method14724(Class8514.field37906).method18299(2).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))
-                  .method18291(Class4695.method14724(Class8514.field37836).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37835).method18299(5))
-                  .method18291(Class4695.method14724(Class8514.field37915).method18299(1).method18296(Class140.method420(Class6871.method20919(10))))
+                  .method18291(Class4695.method14724(Items.field37838).method18299(5))
+                  .method18291(Class4695.method14724(Items.field37906).method18299(2).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))
+                  .method18291(Class4695.method14724(Items.field37836).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37835).method18299(5))
+                  .method18291(Class4695.method14724(Items.field37915).method18299(1).method18296(Class140.method420(Class6871.method20919(10))))
                   .method18291(Class4695.method14724(Blocks.TRIPWIRE_HOOK).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37965).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37965).method18299(10))
                   .method18291(
                      Class4695.method14724(Blocks.field37009)
                         .method18297(
@@ -80,20 +80,20 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
          Class7318.method23188()
             .method18320(
                Class8894.method32373()
-                  .method18291(Class4695.method14724(Class8514.field38088))
-                  .method18291(Class4695.method14724(Class8514.field37886))
+                  .method18291(Class4695.method14724(Items.field38088))
+                  .method18291(Class4695.method14724(Items.field37886))
                   .method18291(
-                     Class4695.method14724(Class8514.field37796)
+                     Class4695.method14724(Items.field37796)
                         .method18296(Class145.method443(Class6872.method20921(0.0F, 0.25F)))
                         .method18296(Class143.method439(Class6871.method20919(30)).method18311())
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field37906)
+                     Class4695.method14724(Items.field37906)
                         .method18296(Class145.method443(Class6872.method20921(0.0F, 0.25F)))
                         .method18296(Class143.method439(Class6871.method20919(30)).method18311())
                   )
-                  .method18291(Class4695.method14724(Class8514.field37900).method18296(Class143.method439(Class6871.method20919(30)).method18311()))
-                  .method18291(Class4695.method14724(Class8514.field38146))
+                  .method18291(Class4695.method14724(Items.field37900).method18296(Class143.method439(Class6871.method20919(30)).method18311()))
+                  .method18291(Class4695.method14724(Items.field38146))
             )
       );
    }

@@ -18,7 +18,7 @@ public class Class5126 implements Class5119 {
       double var11 = (double) Util.nanoTime();
       if (var11 - this.field23311 > 3.0E9) {
          this.field23311 = var11;
-         Class1644 var13 = this.field23310.method1531();
+         IntegratedServer var13 = this.field23310.getIntegratedServer();
          if (var13 == null) {
             this.field23313 = null;
          } else {
@@ -29,8 +29,8 @@ public class Class5126 implements Class5119 {
       if (this.field23313 != null) {
          RenderSystem.enableBlend();
          RenderSystem.method27938();
-         RenderSystem.method27893(2.0F);
-         RenderSystem.method27862();
+         RenderSystem.lineWidth(2.0F);
+         RenderSystem.disableTexture();
          RenderSystem.depthMask(false);
          Map var26 = (Map)Class8497.method30086(this.field23313).getNow((Map)null);
          double var14 = this.field23310.gameRenderer.getActiveRenderInfo().method37504().field18049 * 0.85;
@@ -46,7 +46,7 @@ public class Class5126 implements Class5119 {
             byte var21 = 0;
 
             for (String var25 : var20) {
-               Class8023.method27461(var25, (double)((var18.field32174 << 4) + 8), var14 + (double)var21, (double)((var18.field32175 << 4) + 8), -1, 0.15F);
+               DebugRenderer.method27461(var25, (double)((var18.field32174 << 4) + 8), var14 + (double)var21, (double)((var18.field32175 << 4) + 8), -1, 0.15F);
                var21 -= 2;
             }
          }

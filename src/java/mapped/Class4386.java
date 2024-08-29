@@ -17,8 +17,8 @@ public class Class4386 {
    private static final Marker field21400 = MarkerManager.getMarker("SOUNDS");
    private static final Logger field21401 = LogManager.getLogger();
    private static final Set<ResourceLocation> field21402 = Sets.newHashSet();
-   private final Class274 field21403;
-   private final Class9574 field21404;
+   private final SoundHandler field21403;
+   private final GameSettings field21404;
    private boolean field21405;
    private final Class7993 field21406 = new Class7993();
    private final Class9675 field21407 = this.field21406.method27287();
@@ -35,7 +35,7 @@ public class Class4386 {
    private final List<Class6341> field21418 = Lists.newArrayList();
    private final List<Class6647> field21419 = Lists.newArrayList();
 
-   public Class4386(Class274 var1, Class9574 var2, Class191 var3) {
+   public Class4386(SoundHandler var1, GameSettings var2, IResourceManager var3) {
       this.field21403 = var1;
       this.field21404 = var2;
       this.field21408 = new Class6672(var3);
@@ -47,7 +47,7 @@ public class Class4386 {
       for (Class9455 var4 : Registry.field16069) {
          ResourceLocation var5 = var4.method36383();
          if (this.field21403.method997(var5) == null) {
-            field21401.warn("Missing sound for event: {}", Registry.field16069.method9181(var4));
+            field21401.warn("Missing sound for event: {}", Registry.field16069.getKey(var4));
             field21402.add(var5);
          }
       }
@@ -245,7 +245,7 @@ public class Class4386 {
          ResourceLocation var5 = var1.method19279();
          if (var4 != null) {
             Class6647 var6 = var1.method19281();
-            if (var6 != Class274.field1051) {
+            if (var6 != SoundHandler.field1051) {
                float var7 = var1.method19285();
                float var8 = Math.max(var7, 1.0F) * (float)var6.method20298();
                Class2266 var9 = var1.method19282();

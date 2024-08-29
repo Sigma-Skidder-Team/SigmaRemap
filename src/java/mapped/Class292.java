@@ -14,9 +14,9 @@ public class Class292 extends Class290 {
    }
 
    @Override
-   public void method1090(Class191 var1) throws IOException {
+   public void method1090(IResourceManager var1) throws IOException {
       this.method1132();
-      InputStream var4 = Class8981.method33138(this.field1134);
+      InputStream var4 = Shaders.method33138(this.field1134);
       if (var4 == null) {
          throw new FileNotFoundException("Shader texture not found: " + this.field1134);
       } else {
@@ -34,7 +34,7 @@ public class Class292 extends Class290 {
    public static Class9620 method1144(String var0, Class9620 var1) {
       String var4 = var0 + ".mcmeta";
       String var5 = "texture";
-      InputStream var6 = Class8981.method33138(var4);
+      InputStream var6 = Shaders.method33138(var4);
       if (var6 != null) {
          BufferedReader var7 = new BufferedReader(new InputStreamReader(var6));
 

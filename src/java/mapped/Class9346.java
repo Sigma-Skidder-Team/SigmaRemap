@@ -12,10 +12,10 @@ public class Class9346 {
    private float field43392;
    private int field43393 = 1;
 
-   public Class9346(Class39 var1) {
-      this.field43384 = ItemStack.method32104(var1.method130("buy"));
-      this.field43385 = ItemStack.method32104(var1.method130("buyB"));
-      this.field43386 = ItemStack.method32104(var1.method130("sell"));
+   public Class9346(CompoundNBT var1) {
+      this.field43384 = ItemStack.method32104(var1.getCompound("buy"));
+      this.field43385 = ItemStack.method32104(var1.getCompound("buyB"));
+      this.field43386 = ItemStack.method32104(var1.getCompound("sell"));
       this.field43387 = var1.method122("uses");
       if (!var1.method119("maxUses", 99)) {
          this.field43388 = 4;
@@ -67,10 +67,10 @@ public class Class9346 {
    }
 
    public ItemStack method35366() {
-      int var3 = this.field43384.method32179();
+      int var3 = this.field43384.getCount();
       ItemStack var4 = this.field43384.copy();
       int var5 = Math.max(0, MathHelper.method37767((float)(var3 * this.field43391) * this.field43392));
-      var4.method32180(MathHelper.method37775(var3 + var5 + this.field43390, 1, this.field43384.method32107().method11710()));
+      var4.method32180(MathHelper.method37775(var3 + var5 + this.field43390, 1, this.field43384.getItem().method11710()));
       return var4;
    }
 
@@ -150,11 +150,11 @@ public class Class9346 {
       return this.field43389;
    }
 
-   public Class39 method35386() {
-      Class39 var3 = new Class39();
-      var3.method99("buy", this.field43384.method32112(new Class39()));
-      var3.method99("sell", this.field43386.method32112(new Class39()));
-      var3.method99("buyB", this.field43385.method32112(new Class39()));
+   public CompoundNBT method35386() {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.put("buy", this.field43384.method32112(new CompoundNBT()));
+      var3.put("sell", this.field43386.method32112(new CompoundNBT()));
+      var3.put("buyB", this.field43385.method32112(new CompoundNBT()));
       var3.method102("uses", this.field43387);
       var3.method102("maxUses", this.field43388);
       var3.method115("rewardExp", this.field43389);
@@ -167,17 +167,17 @@ public class Class9346 {
 
    public boolean method35387(ItemStack var1, ItemStack var2) {
       return this.method35388(var1, this.method35366())
-         && var1.method32179() >= this.method35366().method32179()
+         && var1.getCount() >= this.method35366().getCount()
          && this.method35388(var2, this.field43385)
-         && var2.method32179() >= this.field43385.method32179();
+         && var2.getCount() >= this.field43385.getCount();
    }
 
    private boolean method35388(ItemStack var1, ItemStack var2) {
-      if (var2.method32105() && var1.method32105()) {
+      if (var2.isEmpty() && var1.isEmpty()) {
          return true;
       } else {
          ItemStack var5 = var1.copy();
-         if (var5.method32107().method11712()) {
+         if (var5.getItem().method11712()) {
             var5.method32118(var5.method32117());
          }
 
@@ -188,9 +188,9 @@ public class Class9346 {
 
    public boolean method35389(ItemStack var1, ItemStack var2) {
       if (this.method35387(var1, var2)) {
-         var1.method32182(this.method35366().method32179());
-         if (!this.method35367().method32105()) {
-            var2.method32182(this.method35367().method32179());
+         var1.method32182(this.method35366().getCount());
+         if (!this.method35367().isEmpty()) {
+            var2.method32182(this.method35367().getCount());
          }
 
          return true;

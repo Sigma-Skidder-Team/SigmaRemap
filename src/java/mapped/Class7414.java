@@ -250,7 +250,7 @@ public class Class7414 {
             field31729.field40553 = var0;
             field31729.field40554 = var1;
             if (Class7944.method26921()) {
-               Class8981.field40772.method12249(var0, var1, var0, var1);
+               Shaders.field40772.method12249(var0, var1, var0, var1);
             }
 
             GL11.glBlendFunc(var0, var1);
@@ -269,7 +269,7 @@ public class Class7414 {
             field31729.field40553 = var2;
             field31729.field40554 = var3;
             if (Class7944.method26921()) {
-               Class8981.field40772.method12249(var0, var1, var2, var3);
+               Shaders.field40772.method12249(var0, var1, var2, var3);
             }
 
             method23762(var0, var1, var2, var3);
@@ -840,7 +840,7 @@ public class Class7414 {
          field31731.field44793 = var0;
          method23786(2917, var0);
          if (Class7944.method26921()) {
-            Class8981.method33046(var0);
+            Shaders.method33046(var0);
          }
       }
    }
@@ -856,7 +856,7 @@ public class Class7414 {
          field31731.field44794 = var0;
          GL11.glFogf(2914, var0);
          if (Class7944.method26921()) {
-            Class8981.method33124(var0);
+            Shaders.method33124(var0);
          }
       }
    }
@@ -1360,14 +1360,14 @@ public class Class7414 {
       RenderSystem.method27808(RenderSystem::method27803);
       GL11.glDrawArrays(var0, var1, var2);
       if (Class7944.method26921() && !field31755) {
-         int var5 = Class8981.field40848.method26491();
+         int var5 = Shaders.field40848.method26491();
          if (var5 > 1) {
             for (int var6 = 1; var6 < var5; var6++) {
-               Class8981.field40773.method12251(var6);
+               Shaders.field40773.method12251(var6);
                GL11.glDrawArrays(var0, var1, var2);
             }
 
-            Class8981.field40773.method12251(0);
+            Shaders.field40773.method12251(0);
          }
       }
    }
@@ -1556,14 +1556,14 @@ public class Class7414 {
    public static void method23882(int var0, IntBuffer var1, IntBuffer var2) {
       GL14.glMultiDrawArrays(var0, var1, var2);
       if (Class7944.method26921() && !field31755) {
-         int var5 = Class8981.field40848.method26491();
+         int var5 = Shaders.field40848.method26491();
          if (var5 > 1) {
             for (int var6 = 1; var6 < var5; var6++) {
-               Class8981.field40773.method12251(var6);
+               Shaders.field40773.method12251(var6);
                GL14.glMultiDrawArrays(var0, var1, var2);
             }
 
-            Class8981.field40773.method12251(0);
+            Shaders.field40773.method12251(0);
          }
       }
    }
@@ -1575,14 +1575,14 @@ public class Class7414 {
    public static void method23884(IntBuffer var0) {
       GL11.glCallLists(var0);
       if (Class7944.method26921() && !field31755) {
-         int var3 = Class8981.field40848.method26491();
+         int var3 = Shaders.field40848.method26491();
          if (var3 > 1) {
             for (int var4 = 1; var4 < var3; var4++) {
-               Class8981.field40773.method12251(var4);
+               Shaders.field40773.method12251(var4);
                GL11.glCallLists(var0);
             }
 
-            Class8981.field40773.method12251(0);
+            Shaders.field40773.method12251(0);
          }
       }
    }

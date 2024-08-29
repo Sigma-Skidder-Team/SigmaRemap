@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public enum Class2150 {
    field14055(new TranslationTextComponent("gameMode.creative"), "/gamemode creative", new ItemStack(Blocks.field36395)),
-   field14056(new TranslationTextComponent("gameMode.survival"), "/gamemode survival", new ItemStack(Class8514.field37820)),
-   field14057(new TranslationTextComponent("gameMode.adventure"), "/gamemode adventure", new ItemStack(Class8514.field38056)),
-   field14058(new TranslationTextComponent("gameMode.spectator"), "/gamemode spectator", new ItemStack(Class8514.field37979));
+   field14056(new TranslationTextComponent("gameMode.survival"), "/gamemode survival", new ItemStack(Items.field37820)),
+   field14057(new TranslationTextComponent("gameMode.adventure"), "/gamemode adventure", new ItemStack(Items.field38056)),
+   field14058(new TranslationTextComponent("gameMode.spectator"), "/gamemode spectator", new ItemStack(Items.field37979));
 
    public static final Class2150[] field14059 = values();
    public final ITextComponent field14060;
@@ -23,7 +23,7 @@ public enum Class2150 {
       this.field14062 = var5;
    }
 
-   private void method8855(Class216 var1, int var2, int var3) {
+   private void method8855(ItemRenderer var1, int var2, int var3) {
       var1.method793(this.field14062, var2, var3);
    }
 
@@ -84,7 +84,7 @@ public enum Class2150 {
    }
 
    // $VF: synthetic method
-   public static void method8864(Class2150 var0, Class216 var1, int var2, int var3) {
+   public static void method8864(Class2150 var0, ItemRenderer var1, int var2, int var3) {
       var0.method8855(var1, var2, var3);
    }
 }

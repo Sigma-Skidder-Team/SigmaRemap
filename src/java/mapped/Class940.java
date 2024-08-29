@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class Class940 extends Class939 implements Class930, Class935 {
    private static final int[] field5304 = IntStream.range(0, 27).toArray();
-   private Class25<ItemStack> field5305 = Class25.<ItemStack>method68(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5305 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5306;
    private Class2126 field5307 = Class2126.field13872;
    private float field5308;
@@ -67,7 +67,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
       return this.field5307;
    }
 
-   public Class6488 method3747(Class7380 var1) {
+   public Class6488 method3747(BlockState var1) {
       return this.method3748(var1.<Direction>method23463(Class3368.field18939));
    }
 
@@ -86,8 +86,8 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    private void method3750() {
-      Class7380 var3 = this.field5324.method6738(this.method3774());
-      if (var3.method23383() instanceof Class3368) {
+      BlockState var3 = this.field5324.getBlockState(this.getPos());
+      if (var3.getBlock() instanceof Class3368) {
          Direction var4 = var3.<Direction>method23463(Class3368.field18939);
          Class6488 var5 = this.method3749(var4).method19668(this.field5325);
          List var6 = this.field5324.method7181((Entity)null, var5);
@@ -163,18 +163,18 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    private void method3752() {
-      this.method3775().method23424(this.method3734(), this.method3774(), 3);
+      this.method3775().method23424(this.method3734(), this.getPos(), 3);
    }
 
    @Override
    public void method3631(PlayerEntity var1) {
-      if (!var1.method2800()) {
+      if (!var1.isSpectator()) {
          if (this.field5306 < 0) {
             this.field5306 = 0;
          }
 
          this.field5306++;
-         this.field5324.method6787(this.field5325, this.method3775().method23383(), 1, this.field5306);
+         this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
          if (this.field5306 == 1) {
             this.field5324
                .method6742((PlayerEntity)null, this.field5325, Class6067.field27045, Class2266.field14732, 0.5F, this.field5324.field9016.nextFloat() * 0.1F + 0.9F);
@@ -184,9 +184,9 @@ public class Class940 extends Class939 implements Class930, Class935 {
 
    @Override
    public void method3632(PlayerEntity var1) {
-      if (!var1.method2800()) {
+      if (!var1.isSpectator()) {
          this.field5306--;
-         this.field5324.method6787(this.field5325, this.method3775().method23383(), 1, this.field5306);
+         this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
          if (this.field5306 <= 0) {
             this.field5324
                .method6742((PlayerEntity)null, this.field5325, Class6067.field27044, Class2266.field14732, 0.5F, this.field5324.field9016.nextFloat() * 0.1F + 0.9F);
@@ -200,25 +200,25 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.method3753(var2);
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       return this.method3754(var1);
    }
 
-   public void method3753(Class39 var1) {
-      this.field5305 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+   public void method3753(CompoundNBT var1) {
+      this.field5305 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var1) && var1.method119("Items", 9)) {
          Class7920.method26567(var1, this.field5305);
       }
    }
 
-   public Class39 method3754(Class39 var1) {
+   public CompoundNBT method3754(CompoundNBT var1) {
       if (!this.method3742(var1)) {
          Class7920.method26566(var1, this.field5305, false);
       }
@@ -227,12 +227,12 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public Class25<ItemStack> method3724() {
+   public NonNullList<ItemStack> method3724() {
       return this.field5305;
    }
 
    @Override
-   public void method3725(Class25<ItemStack> var1) {
+   public void method3725(NonNullList<ItemStack> var1) {
       this.field5305 = var1;
    }
 
@@ -243,7 +243,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
 
    @Override
    public boolean method3654(int var1, ItemStack var2, Direction var3) {
-      return !(Block.method11537(var2.method32107()) instanceof Class3368);
+      return !(Block.method11537(var2.getItem()) instanceof Class3368);
    }
 
    @Override
@@ -258,7 +258,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    @Nullable
    public Class112 method3756() {
       if (this.field5311) {
-         this.field5310 = Class3368.method11955(this.method3775().method23383());
+         this.field5310 = Class3368.method11955(this.method3775().getBlock());
          this.field5311 = false;
       }
 
@@ -266,7 +266,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public Class5812 method3690(int var1, Class974 var2) {
+   public Class5812 method3690(int var1, PlayerInventory var2) {
       return new Class5814(var1, var2, this);
    }
 

@@ -98,7 +98,7 @@ public class Class6671 {
       if (this != field29242) {
          if (var3 == null) {
             return false;
-         } else if (this.field29243.method32624(var3.method3204())) {
+         } else if (this.field29243.method32624(var3.getType())) {
             if (var2 != null) {
                if (!this.field29244.method32328(var2.field18048, var2.field18049, var2.field18050, var3.getPosX(), var3.getPosY(), var3.getPosZ())) {
                   return false;

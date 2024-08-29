@@ -13,7 +13,7 @@ public class Class4212 extends Class4209 {
       super(Class7792.field33457, var1, var2, 64, var3, 12, 10, 15);
    }
 
-   public Class4212(Class8761 var1, Class39 var2) {
+   public Class4212(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33457, var2);
       this.field20523 = var2.method132("placedMainChest");
       this.field20524 = var2.method132("placedHiddenChest");
@@ -22,7 +22,7 @@ public class Class4212 extends Class4209 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("placedMainChest", this.field20523);
       var1.method115("placedHiddenChest", this.field20524);
@@ -89,10 +89,10 @@ public class Class4212 extends Class4209 {
          this.method12928(var1, var5, 4, 9, 10, 4, 9, 10, false, var4, field20527);
          this.method12928(var1, var5, 7, 9, 10, 7, 9, 10, false, var4, field20527);
          this.method12928(var1, var5, 5, 9, 7, 6, 9, 7, false, var4, field20527);
-         Class7380 var17 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
-         Class7380 var18 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
-         Class7380 var12 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
-         Class7380 var13 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+         BlockState var17 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
+         BlockState var18 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
+         BlockState var12 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+         BlockState var13 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
          this.method12923(var1, var13, 5, 9, 6, var5);
          this.method12923(var1, var13, 6, 9, 6, var5);
          this.method12923(var1, var12, 5, 9, 8, var5);
@@ -176,7 +176,7 @@ public class Class4212 extends Class4209 {
             8,
             var5
          );
-         Class7380 var21 = Blocks.REDSTONE_WIRE
+         BlockState var21 = Blocks.REDSTONE_WIRE
             .method11579()
             .method23465(Class3222.field18647, Class98.field266)
             .method23465(Class3222.field18649, Class98.field266);
@@ -310,7 +310,7 @@ public class Class4212 extends Class4209 {
          this.method12923(var1, Blocks.field36618.method11579(), 8, -2, 11, var5);
          this.method12923(var1, Blocks.field36618.method11579(), 9, -2, 11, var5);
          this.method12923(var1, Blocks.field36618.method11579(), 10, -2, 11, var5);
-         Class7380 var15 = Blocks.LEVER
+         BlockState var15 = Blocks.LEVER
             .method11579()
             .method23465(Class3201.field18484, Direction.NORTH)
             .method23465(Class3201.field18500, Class103.field314);

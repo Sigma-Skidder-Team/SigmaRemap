@@ -46,7 +46,7 @@ public abstract class Class2699 extends Class2595 {
                      }
                   }
 
-                  if (var3 instanceof PlayerEntity && ((PlayerEntity)var3).field4919.field29606) {
+                  if (var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.field29606) {
                      return false;
                   } else {
                      this.field17153.method4233(var3);
@@ -84,7 +84,7 @@ public abstract class Class2699 extends Class2595 {
    public boolean method10915(Class880 var1, Class8522 var2) {
       if (var1 != null) {
          if (var2.method30210(this.field17153, var1)) {
-            if (this.field17153.method4287(var1.method3432())) {
+            if (this.field17153.method4287(var1.getPosition())) {
                if (this.field17155) {
                   if (--this.field17157 <= 0) {
                      this.field17156 = 0;
@@ -117,8 +117,8 @@ public abstract class Class2699 extends Class2595 {
       if (var4 != null) {
          Class7176 var5 = var4.method28694();
          if (var5 != null) {
-            int var6 = var5.field30847 - MathHelper.method37769(var1.getPosX());
-            int var7 = var5.field30849 - MathHelper.method37769(var1.getPosZ());
+            int var6 = var5.field30847 - MathHelper.floor(var1.getPosX());
+            int var7 = var5.field30849 - MathHelper.floor(var1.getPosZ());
             return (double)(var6 * var6 + var7 * var7) <= 2.25;
          } else {
             return false;

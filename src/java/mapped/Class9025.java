@@ -2,15 +2,15 @@ package mapped;
 
 public class Class9025 {
    private static String[] field41287;
-   public static final Class4520 field41288 = Class4520.method14300();
-   public static final Class4520 field41289 = Class4520.method14301();
-   public static final Class4520 field41290 = Class4520.method14302();
-   public static final Class4520 field41291 = Class4520.method14304();
-   public static final Class4520 field41292 = Class4520.method14307();
-   public static final Class4520 field41293 = Class4520.method14327();
-   public static final Class4520 field41294 = Class4520.method14328();
-   public static final Class4520 field41295 = Class4520.method14334();
-   public static final Class4520 field41296 = Class4520.method14336();
-   public static final Class4520 field41297 = Class4520.method14341();
-   public static final Class4520 field41298 = Class4520.method14345();
+   public static final RenderType field41288 = RenderType.method14300();
+   public static final RenderType field41289 = RenderType.method14301();
+   public static final RenderType field41290 = RenderType.method14302();
+   public static final RenderType field41291 = RenderType.method14304();
+   public static final RenderType field41292 = RenderType.method14307();
+   public static final RenderType field41293 = RenderType.method14327();
+   public static final RenderType field41294 = RenderType.method14328();
+   public static final RenderType field41295 = RenderType.method14334();
+   public static final RenderType field41296 = RenderType.method14336();
+   public static final RenderType field41297 = RenderType.method14341();
+   public static final RenderType field41298 = RenderType.method14345();
 }

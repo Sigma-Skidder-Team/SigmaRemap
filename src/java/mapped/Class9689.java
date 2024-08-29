@@ -79,8 +79,8 @@ public class Class9689 {
          + '}';
    }
 
-   public Class39 method37934() {
-      Class39 var3 = new Class39();
+   public CompoundNBT method37934() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method109("Name", this.method37931());
       var3.method108("Amount", this.field45302);
       var3.method102("Operation", this.field45303.method8685());
@@ -89,7 +89,7 @@ public class Class9689 {
    }
 
    @Nullable
-   public static Class9689 method37935(Class39 var0) {
+   public static Class9689 method37935(CompoundNBT var0) {
       try {
          UUID var3 = var0.method105("UUID");
          Class2045 var4 = Class2045.method8686(var0.method122("Operation"));

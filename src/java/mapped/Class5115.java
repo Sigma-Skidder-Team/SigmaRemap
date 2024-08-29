@@ -19,7 +19,7 @@ public class Class5115 implements Class5114 {
    }
 
    @Override
-   public NetworkManager method15589() {
+   public NetworkManager getNetworkManager() {
       return this.field23265;
    }
 
@@ -27,7 +27,7 @@ public class Class5115 implements Class5114 {
    public void method15691(Class5566 var1) {
       if (!this.field23266) {
          this.field23266 = true;
-         this.field23265.method30693(new Class5552(this.field23264.method1387()));
+         this.field23265.sendPacket(new Class5552(this.field23264.method1387()));
       } else {
          this.field23265.method30701(field23263);
       }
@@ -35,7 +35,7 @@ public class Class5115 implements Class5114 {
 
    @Override
    public void method15690(Class5587 var1) {
-      this.field23265.method30693(new Class5489(var1.method17560()));
+      this.field23265.sendPacket(new Class5489(var1.method17560()));
       this.field23265.method30701(field23263);
    }
 }

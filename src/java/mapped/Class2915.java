@@ -10,7 +10,7 @@ public class Class2915 extends Class2914 {
    }
 
    @Override
-   public boolean method11249(Class1660 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11249(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
       int var7 = var2.nextInt(3) + 3;
       int var8 = var2.nextInt(3) + 3;
       int var9 = var2.nextInt(3) + 3;
@@ -20,8 +20,8 @@ public class Class2915 extends Class2914 {
       for (int var12 = 0; var12 <= var8; var12++) {
          for (int var13 = 0; var13 <= var7; var13++) {
             for (int var14 = 0; var14 <= var9; var14++) {
-               var11.method8372(var12 + var3.method8304(), var13 + var3.getY(), var14 + var3.method8306());
-               var11.method8380(Direction.field672, var10);
+               var11.method8372(var12 + var3.getX(), var13 + var3.getY(), var14 + var3.getZ());
+               var11.method8380(Direction.DOWN, var10);
                if ((var12 != 0 && var12 != var8 || var13 != 0 && var13 != var7)
                   && (var14 != 0 && var14 != var9 || var13 != 0 && var13 != var7)
                   && (var12 != 0 && var12 != var8 || var14 != 0 && var14 != var9)

@@ -20,14 +20,14 @@ public class VanillaFly extends Module {
 
     public VanillaFly() {
         super(ModuleCategory.MOVEMENT, "Vanilla", "Regular vanilla fly");
-        this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
-        this.method15972(new Class6004("Kick bypass", "Bypass vanilla kick for flying", true));
+        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("Kick bypass", "Bypass vanilla kick for flying", true));
     }
 
     @Override
     public void isInDevelopment() {
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23995 = false;
             }
         } else {
@@ -82,26 +82,26 @@ public class VanillaFly extends Module {
                         double var6 = var1.method13911();
                        List<Double> var8 = new ArrayList();
                         if (!(var6 - var4 > 9.0)) {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getConnection().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
                         } else {
                             while (var6 > var4 + 9.0) {
                                 var6 -= 9.0;
                                 var8.add(var6);
-                                mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var6, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new Class5605(var1.method13909(), var6, var1.method13913(), true));
                             }
 
                             for (Double var10 : var8) {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var10, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new Class5605(var1.method13909(), var10, var1.method13913(), true));
                             }
 
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getConnection().sendPacket(new Class5605(var1.method13909(), var4, var1.method13913(), true));
                             Collections.reverse(var8);
 
                             for (Double var12 : var8) {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var12, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new Class5605(var1.method13909(), var12, var1.method13913(), true));
                             }
 
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var1.method13909(), var1.method13911(), var1.method13913(), true));
+                            mc.getConnection().sendPacket(new Class5605(var1.method13909(), var1.method13911(), var1.method13913(), true));
                         }
 
                         this.field23996 = 0;

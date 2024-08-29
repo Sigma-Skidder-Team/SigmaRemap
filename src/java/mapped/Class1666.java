@@ -9,12 +9,12 @@ public enum Class1666 implements Class1665 {
 
    @Nullable
    @Override
-   public Class944 method6759(BlockPos var1) {
+   public TileEntity getTileEntity(BlockPos var1) {
       return null;
    }
 
    @Override
-   public Class7380 method6738(BlockPos var1) {
+   public BlockState getBlockState(BlockPos var1) {
       return Blocks.AIR.method11579();
    }
 

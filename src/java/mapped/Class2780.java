@@ -18,9 +18,9 @@ public class Class2780 extends Class2595 {
    @Override
    public boolean method10803() {
       if (!this.field17382.method4296() && !this.field17382.method4914()) {
-         List<Entity> var3 = this.field17382.field5024.method6770(this.field17382, this.field17382.method3389().method19663(9.0, 4.0, 9.0), var0 -> {
-            Class8992 var3x = var0.method3204();
-            return var3x == Class8992.field41047 || var3x == Class8992.field41094;
+         List<Entity> var3 = this.field17382.world.method6770(this.field17382, this.field17382.method3389().method19663(9.0, 4.0, 9.0), var0 -> {
+            EntityType var3x = var0.getType();
+            return var3x == EntityType.field41047 || var3x == EntityType.field41094;
          });
          Class1064 var4 = null;
          double var5 = Double.MAX_VALUE;
@@ -98,7 +98,7 @@ public class Class2780 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (this.field17382.method4914() && !(this.field17382.method4297() instanceof Class996)) {
+      if (this.field17382.method4914() && !(this.field17382.method4297() instanceof LeashKnotEntity)) {
          Class1064 var3 = this.field17382.method4915();
          double var4 = (double)this.field17382.method3275(var3);
          float var6 = 2.0F;

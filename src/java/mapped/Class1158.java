@@ -19,12 +19,12 @@ public class Class1158 extends Class1156 {
 
    @Override
    public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
-      this.field6307.field1294.method38805(var1, field6304, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
-      this.field6307.field1294.method38801(var1, this.field6308.method34207(), (float)(var4 + 32 + 3), (float)(var3 + 12), 8421504);
+      this.field6307.fontRenderer.method38805(var1, field6304, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
+      this.field6307.fontRenderer.method38801(var1, this.field6308.method34207(), (float)(var4 + 32 + 3), (float)(var3 + 12), 8421504);
       if (!this.field6307.gameSettings.field44587) {
-         this.field6307.field1294.method38801(var1, this.field6308.method34208(), (float)(var4 + 32 + 3), (float)(var3 + 12 + 11), 3158064);
+         this.field6307.fontRenderer.method38801(var1, this.field6308.method34208(), (float)(var4 + 32 + 3), (float)(var3 + 12 + 11), 3158064);
       } else {
-         this.field6307.field1294.method38805(var1, field6305, (float)(var4 + 32 + 3), (float)(var3 + 12 + 11), 3158064);
+         this.field6307.fontRenderer.method38805(var1, field6305, (float)(var4 + 32 + 3), (float)(var3 + 12 + 11), 3158064);
       }
    }
 

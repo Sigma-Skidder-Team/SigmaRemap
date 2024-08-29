@@ -2,7 +2,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class960 extends Class944 implements Class935 {
+public class Class960 extends TileEntity implements Class935 {
    private final Class7574 field5390 = new Class7573(this);
 
    public Class960() {
@@ -10,14 +10,14 @@ public class Class960 extends Class944 implements Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5390.method24794(var2);
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       this.field5390.method24795(var1);
       return var1;
    }
@@ -34,8 +34,8 @@ public class Class960 extends Class944 implements Class935 {
    }
 
    @Override
-   public Class39 method3777() {
-      Class39 var3 = this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      CompoundNBT var3 = this.write(new CompoundNBT());
       var3.method133("SpawnPotentials");
       return var3;
    }

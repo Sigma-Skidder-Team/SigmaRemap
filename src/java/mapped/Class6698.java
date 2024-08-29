@@ -8,5 +8,5 @@ public abstract class Class6698 {
 
    public abstract Class9654<?> method20423();
 
-   public abstract Class7380 method20424(Random var1, BlockPos var2);
+   public abstract BlockState method20424(Random var1, BlockPos var2);
 }

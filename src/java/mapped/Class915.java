@@ -11,12 +11,12 @@ public class Class915 extends Entity {
    private Class880 field5211;
    private UUID field5212;
 
-   public Class915(Class8992<? extends Class915> var1, World var2) {
+   public Class915(EntityType<? extends Class915> var1, World var2) {
       super(var1, var2);
    }
 
    public Class915(World var1, double var2, double var4, double var6, float var8, int var9, Class880 var10) {
-      this(Class8992.field41028, var1);
+      this(EntityType.field41028, var1);
       this.field5207 = var9;
       this.method3581(var10);
       this.field5031 = var8 * (180.0F / (float)Math.PI);
@@ -34,8 +34,8 @@ public class Class915 extends Entity {
 
    @Nullable
    public Class880 method3582() {
-      if (this.field5211 == null && this.field5212 != null && this.field5024 instanceof ServerWorld) {
-         Entity var3 = ((ServerWorld)this.field5024).method6942(this.field5212);
+      if (this.field5211 == null && this.field5212 != null && this.world instanceof ServerWorld) {
+         Entity var3 = ((ServerWorld)this.world).method6942(this.field5212);
          if (var3 instanceof Class880) {
             this.field5211 = (Class880)var3;
          }
@@ -45,7 +45,7 @@ public class Class915 extends Entity {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.field5207 = var1.method122("Warmup");
       if (var1.method106("Owner")) {
          this.field5212 = var1.method105("Owner");
@@ -53,7 +53,7 @@ public class Class915 extends Entity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       var1.method102("Warmup", this.field5207);
       if (this.field5212 != null) {
          var1.method104("Owner", this.field5212);
@@ -63,16 +63,16 @@ public class Class915 extends Entity {
    @Override
    public void tick() {
       super.tick();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (--this.field5207 < 0) {
             if (this.field5207 == -8) {
-               for (Class880 var16 : this.field5024.<Class880>method7182(Class880.class, this.method3389().method19663(0.2, 0.0, 0.2))) {
+               for (Class880 var16 : this.world.<Class880>method7182(Class880.class, this.method3389().method19663(0.2, 0.0, 0.2))) {
                   this.method3583(var16);
                }
             }
 
             if (!this.field5208) {
-               this.field5024.method6786(this, (byte)4);
+               this.world.method6786(this, (byte)4);
                this.field5208 = true;
             }
 
@@ -90,7 +90,7 @@ public class Class915 extends Entity {
                double var10 = (this.field5054.nextDouble() * 2.0 - 1.0) * 0.3;
                double var12 = 0.3 + this.field5054.nextDouble() * 0.3;
                double var14 = (this.field5054.nextDouble() * 2.0 - 1.0) * 0.3;
-               this.field5024.method6746(Class7940.field34054, var4, var6 + 1.0, var8, var10, var12, var14);
+               this.world.method6746(Class7940.field34054, var4, var6 + 1.0, var8, var10, var12, var14);
             }
          }
       }
@@ -117,7 +117,7 @@ public class Class915 extends Entity {
       if (var1 == 4) {
          this.field5210 = true;
          if (!this.method3245()) {
-            this.field5024
+            this.world
                .method6745(
                   this.getPosX(),
                   this.getPosY(),

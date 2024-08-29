@@ -8,18 +8,18 @@ public class Class5825 extends Class5823 {
    private Class4846 field25523;
    private final List<Class4846> field25524;
 
-   public Class5825(int var1, Class974 var2) {
+   public Class5825(int var1, PlayerInventory var2) {
       this(var1, var2, Class8786.field39521);
    }
 
-   public Class5825(int var1, Class974 var2, Class8786 var3) {
+   public Class5825(int var1, PlayerInventory var2, Class8786 var3) {
       super(Class8298.field35668, var1, var2, var3);
-      this.field25522 = var2.field5444.field5024;
+      this.field25522 = var2.field5444.world;
       this.field25524 = this.field25522.method6816().<Class920, Class4846>method1031(Class7207.field30941);
    }
 
    @Override
-   public boolean method18191(Class7380 var1) {
+   public boolean method18191(BlockState var1) {
       return var1.method23448(Blocks.field37062);
    }
 
@@ -30,7 +30,7 @@ public class Class5825 extends Class5823 {
 
    @Override
    public ItemStack method18190(PlayerEntity var1, ItemStack var2) {
-      var2.method32136(var1.field5024, var1, var2.method32179());
+      var2.method32136(var1.world, var1, var2.getCount());
       this.field25512.method3638(var1);
       this.method18200(0);
       this.method18200(1);

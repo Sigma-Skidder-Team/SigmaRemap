@@ -11,8 +11,8 @@ public abstract class Class6292<DC extends Class4716> extends Class6291<DC> {
 
    @Override
    public Stream<BlockPos> method19240(Class9010 var1, Random var2, DC var3, BlockPos var4) {
-      int var7 = var4.method8304();
-      int var8 = var4.method8306();
+      int var7 = var4.getX();
+      int var8 = var4.getZ();
       int var9 = var1.method33296(this.method19255((DC)var3), var7, var8);
       return var9 <= 0 ? Stream.<BlockPos>of() : Stream.<BlockPos>of(new BlockPos(var7, var9, var8));
    }

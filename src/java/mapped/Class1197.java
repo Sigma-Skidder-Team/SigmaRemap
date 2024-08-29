@@ -85,7 +85,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
 
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
       Minecraft var7 = Minecraft.getInstance();
-      Class9834 var8 = var7.field1294;
+      FontRenderer var8 = var7.fontRenderer;
       var7.getTextureManager().bindTexture(field6474);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, this.field6484);
       int var9 = this.method5729(this.method5737());
@@ -124,7 +124,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
          if (this.method5735(var5)) {
             boolean var8 = this.method5736(var1, var3);
             if (var8) {
-               this.method5739(Minecraft.getInstance().method1546());
+               this.method5739(Minecraft.getInstance().getSoundHandler());
                this.method5732(var1, var3);
                return true;
             }
@@ -200,7 +200,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
    public void method5738(MatrixStack var1, int var2, int var3) {
    }
 
-   public void method5739(Class274 var1) {
+   public void method5739(SoundHandler var1) {
       var1.method1000(Class6339.method19292(Class6067.field27176, 1.0F));
    }
 

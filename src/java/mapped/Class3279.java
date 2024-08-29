@@ -7,7 +7,7 @@ import com.google.common.collect.Multimap;
 import java.util.List;
 import java.util.UUID;
 
-public class Class3279 extends Class3257 implements Class3255 {
+public class Class3279 extends Item implements Class3255 {
    private static final UUID[] field18779 = new UUID[]{
       UUID.fromString("845DB27C-C624-495F-8C9F-6020A9A58B6B"),
       UUID.fromString("D8499B04-0E66-4726-AB29-64469D734E0D"),
@@ -83,7 +83,7 @@ public class Class3279 extends Class3257 implements Class3255 {
       ItemStack var6 = var2.getHeldItem(var3);
       Class2106 var7 = Class1006.method4271(var6);
       ItemStack var8 = var2.method2943(var7);
-      if (!var8.method32105()) {
+      if (!var8.isEmpty()) {
          return Class6794.<ItemStack>method20699(var6);
       } else {
          var2.method2944(var7, var6.copy());

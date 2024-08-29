@@ -43,19 +43,19 @@ public class NBTTextComponent$Block extends NBTTextComponent {
    }
 
    @Override
-   public Stream<Class39> func_218673_a(Class6619 p_218673_1_) {
+   public Stream<CompoundNBT> func_218673_a(Class6619 p_218673_1_) {
       if (this.field_218685_f != null) {
          ServerWorld blockpos = p_218673_1_.method20172();
          BlockPos tileentity = this.field_218685_f.method23230(p_218673_1_);
          if (blockpos.method6763(tileentity)) {
-            Class944 var6 = blockpos.method6759(tileentity);
+            TileEntity var6 = blockpos.getTileEntity(tileentity);
             if (var6 != null) {
-               return Stream.<Class39>of(var6.method3646(new Class39()));
+               return Stream.<CompoundNBT>of(var6.write(new CompoundNBT()));
             }
          }
       }
 
-      return Stream.<Class39>empty();
+      return Stream.<CompoundNBT>empty();
    }
 
    @Override

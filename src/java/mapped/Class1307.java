@@ -26,8 +26,8 @@ public class Class1307 extends Screen {
    }
 
    @Override
-   public void method2467(Minecraft var1, int var2, int var3) {
-      super.method2467(var1, var2, var3);
+   public void init(Minecraft var1, int var2, int var3) {
+      super.init(var1, var2, var3);
       UnmodifiableIterator var6 = this.field6909.iterator();
 
       while (var6.hasNext()) {

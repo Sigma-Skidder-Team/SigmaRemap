@@ -114,7 +114,7 @@ public class Class806 extends Class798 {
          return true;
       } else {
          for (Class6128 var4 : this.field4281) {
-            if (var4.field27449.equals(this.field4562.method1533().getPlayerID())) {
+            if (var4.field27449.equals(this.field4562.getSession().getPlayerID())) {
                return false;
             }
          }
@@ -163,10 +163,10 @@ public class Class806 extends Class798 {
          this.method2024();
          this.method2025();
          if (!this.field4271) {
-            this.field4562.method1560(false);
+            this.field4562.setConnectedToRealms(false);
          }
 
-         this.field4562.field1302.method36347(true);
+         this.field4562.keyboardListener.method36347(true);
          if (method2013()) {
             field4262.method36019();
          }
@@ -222,7 +222,7 @@ public class Class806 extends Class798 {
             }
          })
       );
-      this.field4276 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, this.field4565 - 32, 90, 20, Class7127.field30663, var1 -> {
+      this.field4276 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, this.field4565 - 32, 90, 20, DialogTexts.field30663, var1 -> {
          if (!this.field4286) {
             this.field4562.displayGuiScreen(this.field4272);
          }
@@ -298,8 +298,8 @@ public class Class806 extends Class798 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4286 = false;
       this.field4283++;
       this.field4296--;
@@ -349,7 +349,7 @@ public class Class806 extends Class798 {
          if (field4262.method36017(Class2310.field15835)) {
             this.field4282 = field4262.method36021();
             if (this.field4282 > 0 && this.field4270.tryAcquire(1)) {
-               Class9229.method34711(Class9088.method33883("mco.configure.world.invite.narration", this.field4282));
+               Class9229.method34711(I18n.format("mco.configure.world.invite.narration", this.field4282));
             }
          }
 
@@ -422,7 +422,7 @@ public class Class806 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
       this.method2030();
    }
 
@@ -432,10 +432,10 @@ public class Class806 extends Class798 {
          String var4 = "https://aka.ms/ExtendJavaRealms?subscriptionId="
             + var3.field27444
             + "&profileId="
-            + this.field4562.method1533().getPlayerID()
+            + this.field4562.getSession().getPlayerID()
             + "&ref="
             + (!var3.field27453 ? "expiredRealm" : "expiredTrial");
-         this.field4562.field1302.method36350(var4);
+         this.field4562.keyboardListener.method36350(var4);
          Util.getOSType().method8181(var4);
       }
    }
@@ -476,14 +476,14 @@ public class Class806 extends Class798 {
    }
 
    private void method2031(Class6128 var1) {
-      if (this.field4562.method1533().getPlayerID().equals(var1.field27449) || field4263) {
+      if (this.field4562.getSession().getPlayerID().equals(var1.field27449) || field4263) {
          this.method2033();
          this.field4562.displayGuiScreen(new Class815(this, var1.field27443));
       }
    }
 
    private void method2032(Class6128 var1) {
-      if (var1 != null && !this.field4562.method1533().getPlayerID().equals(var1.field27449)) {
+      if (var1 != null && !this.field4562.getSession().getPlayerID().equals(var1.field27449)) {
          this.method2033();
          TranslationTextComponent var4 = new TranslationTextComponent("mco.configure.world.leave.question.line1");
          TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.leave.question.line2");
@@ -699,7 +699,7 @@ public class Class806 extends Class798 {
       boolean var11 = this.method2045((double)var2, (double)var3);
       boolean var12 = var7 && var6;
       if (var12) {
-         float var13 = 0.25F + (1.0F + MathHelper.method37763((float)this.field4283 * 0.5F)) * 0.25F;
+         float var13 = 0.25F + (1.0F + MathHelper.sin((float)this.field4283 * 0.5F)) * 0.25F;
          int var14 = 0xFF000000 | (int)(var13 * 64.0F) << 16 | (int)(var13 * 64.0F) << 8 | (int)(var13 * 64.0F) << 0;
          this.method5688(var1, var4 - 2, var5 - 2, var4 + 18, var5 + 18, var14, var14);
          var14 = 0xFF000000 | (int)(var13 * 255.0F) << 16 | (int)(var13 * 255.0F) << 8 | (int)(var13 * 255.0F) << 0;
@@ -718,7 +718,7 @@ public class Class806 extends Class798 {
       if (var15) {
          int var16 = (Math.min(var10, 6) - 1) * 8;
          int var17 = (int)(
-            Math.max(0.0F, Math.max(MathHelper.method37763((float)(10 + this.field4283) * 0.57F), MathHelper.method37764((float)this.field4283 * 0.35F))) * -6.0F
+            Math.max(0.0F, Math.max(MathHelper.sin((float)(10 + this.field4283) * 0.57F), MathHelper.cos((float)this.field4283 * 0.35F))) * -6.0F
          );
          this.field4562.getTextureManager().bindTexture(field4230);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -771,7 +771,7 @@ public class Class806 extends Class798 {
    }
 
    private boolean method2047(Class6128 var1) {
-      return var1.field27449 != null && var1.field27449.equals(this.field4562.method1533().getPlayerID());
+      return var1.field27449 != null && var1.field27449.equals(this.field4562.getSession().getPlayerID());
    }
 
    private boolean method2048(Class6128 var1) {
@@ -924,7 +924,7 @@ public class Class806 extends Class798 {
       if (var4 && var8) {
          int var14 = !var11
             ? (int)(
-               Math.max(0.0F, Math.max(MathHelper.method37763((float)(10 + this.field4283) * 0.57F), MathHelper.method37764((float)this.field4283 * 0.35F)))
+               Math.max(0.0F, Math.max(MathHelper.sin((float)(10 + this.field4283) * 0.57F), MathHelper.cos((float)this.field4283 * 0.35F)))
                   * -6.0F
             )
             : 0;
@@ -958,11 +958,11 @@ public class Class806 extends Class798 {
 
    public Class806 method2060() {
       Class806 var3 = new Class806(this.field4272);
-      var3.method2467(this.field4562, this.field4564, this.field4565);
+      var3.init(this.field4562, this.field4564, this.field4565);
       return var3;
    }
 
-   public static void method2061(Class191 var0) {
+   public static void method2061(IResourceManager var0) {
       Collection<ResourceLocation> var3 = var0.method583("textures/gui/images", var0x -> var0x.endsWith(".png"));
       field4261 = var3.stream().filter(var0x -> var0x.method8293().equals("realms")).collect(ImmutableList.toImmutableList());
    }
@@ -1209,7 +1209,7 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2125(Class806 var0) {
+   public static FontRenderer method2125(Class806 var0) {
       return var0.field4568;
    }
 
@@ -1259,17 +1259,17 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2135(Class806 var0) {
+   public static FontRenderer method2135(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2136(Class806 var0) {
+   public static FontRenderer method2136(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2137(Class806 var0) {
+   public static FontRenderer method2137(Class806 var0) {
       return var0.field4568;
    }
 
@@ -1304,12 +1304,12 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2144(Class806 var0) {
+   public static FontRenderer method2144(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2145(Class806 var0) {
+   public static FontRenderer method2145(Class806 var0) {
       return var0.field4568;
    }
 
@@ -1319,12 +1319,12 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2147(Class806 var0) {
+   public static FontRenderer method2147(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2148(Class806 var0) {
+   public static FontRenderer method2148(Class806 var0) {
       return var0.field4568;
    }
 
@@ -1334,32 +1334,32 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2150(Class806 var0) {
+   public static FontRenderer method2150(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2151(Class806 var0) {
+   public static FontRenderer method2151(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2152(Class806 var0) {
+   public static FontRenderer method2152(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2153(Class806 var0) {
+   public static FontRenderer method2153(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2154(Class806 var0) {
+   public static FontRenderer method2154(Class806 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2155(Class806 var0) {
+   public static FontRenderer method2155(Class806 var0) {
       return var0.field4568;
    }
 
@@ -1419,7 +1419,7 @@ public class Class806 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2167(Class806 var0) {
+   public static FontRenderer method2167(Class806 var0) {
       return var0.field4568;
    }
 }

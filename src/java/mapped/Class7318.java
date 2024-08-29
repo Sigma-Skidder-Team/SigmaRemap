@@ -29,13 +29,13 @@ public class Class7318 {
 
    public static Consumer<ItemStack> method23179(Consumer<ItemStack> var0) {
       return var1 -> {
-         if (var1.method32179() >= var1.method32113()) {
-            int var4 = var1.method32179();
+         if (var1.getCount() >= var1.method32113()) {
+            int var4 = var1.getCount();
 
             while (var4 > 0) {
                ItemStack var5 = var1.copy();
                var5.method32180(Math.min(var1.method32113(), var4));
-               var4 -= var5.method32179();
+               var4 -= var5.getCount();
                var0.accept(var5);
             }
          } else {
@@ -94,7 +94,7 @@ public class Class7318 {
             return;
          }
 
-         if (!var9.method32105()) {
+         if (!var9.isEmpty()) {
             var1.method3621((Integer)var7.remove(var7.size() - 1), var9);
          } else {
             var1.method3621((Integer)var7.remove(var7.size() - 1), ItemStack.EMPTY);
@@ -108,8 +108,8 @@ public class Class7318 {
 
       while (var7.hasNext()) {
          ItemStack var8 = (ItemStack)var7.next();
-         if (!var8.method32105()) {
-            if (var8.method32179() > 1) {
+         if (!var8.isEmpty()) {
+            if (var8.getCount() > 1) {
                var6.add(var8);
                var7.remove();
             }
@@ -120,15 +120,15 @@ public class Class7318 {
 
       while (var2 - var1.size() - var6.size() > 0 && !var6.isEmpty()) {
          ItemStack var11 = (ItemStack)var6.remove(MathHelper.method37782(var3, 0, var6.size() - 1));
-         int var9 = MathHelper.method37782(var3, 1, var11.method32179() / 2);
+         int var9 = MathHelper.method37782(var3, 1, var11.getCount() / 2);
          ItemStack var10 = var11.method32106(var9);
-         if (var11.method32179() > 1 && var3.nextBoolean()) {
+         if (var11.getCount() > 1 && var3.nextBoolean()) {
             var6.add(var11);
          } else {
             var1.add(var11);
          }
 
-         if (var10.method32179() > 1 && var3.nextBoolean()) {
+         if (var10.getCount() > 1 && var3.nextBoolean()) {
             var6.add(var10);
          } else {
             var1.add(var10);
@@ -143,7 +143,7 @@ public class Class7318 {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         if (var1.method3618(var6).method32105()) {
+         if (var1.method3618(var6).isEmpty()) {
             var5.add(var6);
          }
       }

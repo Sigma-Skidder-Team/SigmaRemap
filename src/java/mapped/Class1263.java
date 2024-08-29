@@ -12,12 +12,12 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
    private int field6680;
    private int field6681;
    private Minecraft field6682;
-   private Class9266 field6683;
+   private RecipeList field6683;
    private Class4843<?> field6684;
    private float field6685;
    private boolean field6686;
 
-   public void method5901(Minecraft var1, Class9266 var2, int var3, int var4, int var5, int var6, float var7) {
+   public void method5901(Minecraft var1, RecipeList var2, int var3, int var4, int var5, int var6, float var7) {
       this.field6682 = var1;
       this.field6683 = var2;
       if (var1.player.field4905 instanceof Class5831) {
@@ -75,7 +75,7 @@ public class Class1263 extends Class1193 implements Class1190, Class1152 {
       return false;
    }
 
-   public Class9266 method5902() {
+   public RecipeList method5902() {
       return this.field6683;
    }
 

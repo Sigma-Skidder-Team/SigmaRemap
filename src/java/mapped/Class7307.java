@@ -11,7 +11,7 @@ public class Class7307 {
    private final Class7672 field31329;
    private final Object2IntMap<Class179> field31330;
    private BlockPos field31331;
-   private Class8992<?> field31332;
+   private EntityType<?> field31332;
    private double field31333;
 
    public Class7307(int var1, Object2IntOpenHashMap<Class179> var2, Class7672 var3) {
@@ -21,7 +21,7 @@ public class Class7307 {
       this.field31330 = Object2IntMaps.unmodifiable(var2);
    }
 
-   private boolean method23088(Class8992<?> var1, BlockPos var2, Class1670 var3) {
+   private boolean method23088(EntityType<?> var1, BlockPos var2, Class1670 var3) {
       this.field31331 = var2;
       this.field31332 = var1;
       Class7763 var6 = Class8170.method28437(var2, var3).method32499().method31969(var1);
@@ -37,8 +37,8 @@ public class Class7307 {
    }
 
    private void method23089(Class1006 var1, Class1670 var2) {
-      Class8992 var5 = var1.method3204();
-      BlockPos var6 = var1.method3432();
+      EntityType var5 = var1.getType();
+      BlockPos var6 = var1.getPosition();
       double var8;
       if (var6.equals(this.field31331) && var5 == this.field31332) {
          var8 = this.field31333;
@@ -79,7 +79,7 @@ public class Class7307 {
    }
 
    // $VF: synthetic method
-   public static boolean method23095(Class7307 var0, Class8992 var1, BlockPos var2, Class1670 var3) {
+   public static boolean method23095(Class7307 var0, EntityType var1, BlockPos var2, Class1670 var3) {
       return var0.method23088(var1, var2, var3);
    }
 }

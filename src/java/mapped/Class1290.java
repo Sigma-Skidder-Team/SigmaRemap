@@ -61,7 +61,7 @@ public class Class1290 extends Class1286<Class1166> {
    public void method6109(int var1) {
       this.method6108(var1);
       if (var1 != -1) {
-         Class9229.method34711(Class9088.method33883("narrator.select", Class824.method2434(this.field6854).field27450.get(var1).method18875()));
+         Class9229.method34711(I18n.format("narrator.select", Class824.method2434(this.field6854).field27450.get(var1).method18875()));
       }
 
       this.method6117(var1);

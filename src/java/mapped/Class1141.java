@@ -25,7 +25,7 @@ public class Class1141 extends Class1140 {
    };
    private Class9046 field6207 = new Class9046(this, new Class7548());
 
-   public Class1141(Screen var1, Class9574 var2) {
+   public Class1141(Screen var1, GameSettings var2) {
       super(var1, var2, new TranslationTextComponent("options.chat.title"), field6206);
    }
 }

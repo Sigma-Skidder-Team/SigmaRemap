@@ -12,9 +12,9 @@ import java.util.UUID;
 public class Class9387 {
    private static Map<String, Class7978> field43550 = new HashMap<String, Class7978>();
    private static boolean field43551 = false;
-   private static Class264 field43552;
+   private static WorldRenderer field43552;
    private static Class7460 field43553 = new Class7460();
-   private static Class8086 field43554;
+   private static TileEntityRendererDispatcher field43554;
    private static Class7459 field43555 = new Class7459();
    private static boolean field43556 = false;
    public static final String field43557 = ".png";
@@ -34,8 +34,8 @@ public class Class9387 {
    public static void method35629(Entity var0, World var1) {
       if (var1 != null) {
          Class9361 var4 = var0.method3210();
-         var4.field43438 = var0.method3432();
-         var4.field43437 = var1.method7003(var4.field43438);
+         var4.field43438 = var0.getPosition();
+         var4.field43437 = var1.getBiome(var4.field43438);
          if (var0 instanceof Class1014) {
             Class1014 var5 = (Class1014)var0;
             method35631(var5, false);
@@ -75,13 +75,13 @@ public class Class9387 {
                var5.field6106 = null;
             }
          } else {
-            Class39 var9 = var5.method2969();
-            if (var9 != null && var9.method118("UUID") && Class7944.equals(var9.method105("UUID"), var6)) {
+            CompoundNBT var9 = var5.method2969();
+            if (var9 != null && var9.contains("UUID") && Class7944.equals(var9.method105("UUID"), var6)) {
                var5.field6105 = var0;
             }
 
-            Class39 var11 = var5.method2971();
-            if (var11 != null && var11.method118("UUID") && Class7944.equals(var11.method105("UUID"), var6)) {
+            CompoundNBT var11 = var5.method2971();
+            if (var11 != null && var11.contains("UUID") && Class7944.equals(var11.method105("UUID"), var6)) {
                var5.field6106 = var0;
             }
          }
@@ -89,8 +89,8 @@ public class Class9387 {
    }
 
    public static void method35632(World var0, World var1) {
-      if (var1 instanceof Class1656) {
-         Class1656 var4 = (Class1656)var1;
+      if (var1 instanceof ClientWorld) {
+         ClientWorld var4 = (ClientWorld)var1;
 
          for (Entity var6 : var4.method6835()) {
             method35629(var6, var1);
@@ -98,7 +98,7 @@ public class Class9387 {
       }
 
       field43553.method24132((Entity)null);
-      field43555.method24130((Class944)null);
+      field43555.method24130((TileEntity)null);
    }
 
    public static ResourceLocation method35633(ResourceLocation var0) {
@@ -156,7 +156,7 @@ public class Class9387 {
    private static Class7458 method35635() {
       if (field43552.field1000 == null) {
          if (field43554.field34750 != null) {
-            Class944 var2 = field43554.field34750;
+            TileEntity var2 = field43554.field34750;
             if (var2.method3734() != null) {
                field43555.method24130(var2);
                return field43555;
@@ -321,7 +321,7 @@ public class Class9387 {
 
    private static void method35645() {
       field43552 = Class7944.method26874();
-      field43554 = Class8086.field34743;
+      field43554 = TileEntityRendererDispatcher.instance;
       String[] var2 = new String[]{"optifine/random/", "optifine/mob/"};
       String[] var3 = new String[]{".png", ".properties"};
       String[] var4 = Class9772.method38437(var2, var3);

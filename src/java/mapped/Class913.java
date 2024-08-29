@@ -21,7 +21,7 @@ public class Class913 extends Class911 {
 
    @Override
    public void method3568() {
-      Class7380 var3 = this.field5203.field5324.method6738(this.field5203.field5325);
+      BlockState var3 = this.field5203.field5324.getBlockState(this.field5203.field5325);
       this.method3567().method6731(this.field5203.field5325, var3, var3, 3);
    }
 

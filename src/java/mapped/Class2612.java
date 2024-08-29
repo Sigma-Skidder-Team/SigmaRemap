@@ -43,7 +43,7 @@ public class Class2612 extends Class2595 {
 
          if (this.field16886 != PlayerEntity.class) {
             this.field16882 = this.field16881
-               .field5024
+               .world
                .<Class880>method7192(
                   this.field16886,
                   this.field16887,
@@ -55,7 +55,7 @@ public class Class2612 extends Class2595 {
                );
          } else {
             this.field16882 = this.field16881
-               .field5024
+               .world
                .method7189(this.field16887, this.field16881, this.field16881.getPosX(), this.field16881.method3442(), this.field16881.getPosZ());
          }
 

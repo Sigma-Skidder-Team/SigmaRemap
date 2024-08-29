@@ -33,17 +33,17 @@ public class Class2727 extends Class2595 {
 
    private void method10938() {
       Iterable<BlockPos> var3 = BlockPos.method8364(
-         MathHelper.method37769(this.field17234.getPosX() - 1.0),
-         MathHelper.method37769(this.field17234.getPosY()),
-         MathHelper.method37769(this.field17234.getPosZ() - 1.0),
-         MathHelper.method37769(this.field17234.getPosX() + 1.0),
-         MathHelper.method37769(this.field17234.getPosY() + 8.0),
-         MathHelper.method37769(this.field17234.getPosZ() + 1.0)
+         MathHelper.floor(this.field17234.getPosX() - 1.0),
+         MathHelper.floor(this.field17234.getPosY()),
+         MathHelper.floor(this.field17234.getPosZ() - 1.0),
+         MathHelper.floor(this.field17234.getPosX() + 1.0),
+         MathHelper.floor(this.field17234.getPosY() + 8.0),
+         MathHelper.floor(this.field17234.getPosZ() + 1.0)
       );
       BlockPos var4 = null;
 
       for (BlockPos var6 : var3) {
-         if (this.method10939(this.field17234.field5024, var6)) {
+         if (this.method10939(this.field17234.world, var6)) {
             var4 = var6;
             break;
          }
@@ -53,7 +53,7 @@ public class Class2727 extends Class2595 {
          var4 = new BlockPos(this.field17234.getPosX(), this.field17234.getPosY() + 8.0, this.field17234.getPosZ());
       }
 
-      this.field17234.method4230().method21654((double)var4.method8304(), (double)(var4.getY() + 1), (double)var4.method8306(), 1.0);
+      this.field17234.method4230().method21654((double)var4.getX(), (double)(var4.getY() + 1), (double)var4.getZ(), 1.0);
    }
 
    @Override
@@ -64,7 +64,7 @@ public class Class2727 extends Class2595 {
    }
 
    private boolean method10939(Class1662 var1, BlockPos var2) {
-      Class7380 var5 = var1.method6738(var2);
+      BlockState var5 = var1.getBlockState(var2);
       return (var1.method6739(var2).method23474() || var5.method23448(Blocks.field37013)) && var5.method23440(var1, var2, Class1947.field12614);
    }
 }

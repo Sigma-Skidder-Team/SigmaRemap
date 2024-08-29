@@ -11,11 +11,11 @@ import java.util.Set;
 public class Class1282 extends Class1274<Class1171> {
    private static String[] field6837;
    public final List<Class49<Block>> field6838;
-   public final List<Class49<Class3257>> field6839;
+   public final List<Class49<Item>> field6839;
    private final int[] field6840;
    public int field6841;
-   public final List<Class3257> field6842;
-   public final Comparator<Class3257> field6843;
+   public final List<Item> field6842;
+   public final Comparator<Item> field6843;
    public Class49<?> field6844;
    public int field6845;
    public final Class1305 field6846;
@@ -34,7 +34,7 @@ public class Class1282 extends Class1274<Class1171> {
       this.method6021(true, 20);
       Set var5 = Sets.newIdentityHashSet();
 
-      for (Class3257 var7 : Registry.field16075) {
+      for (Item var7 : Registry.ITEM) {
          boolean var8 = false;
 
          for (Class49 var10 : this.field6839) {
@@ -48,7 +48,7 @@ public class Class1282 extends Class1274<Class1171> {
          }
       }
 
-      for (Block var13 : Registry.field16072) {
+      for (Block var13 : Registry.BLOCK) {
          boolean var14 = false;
 
          for (Class49 var16 : this.field6838) {
@@ -62,7 +62,7 @@ public class Class1282 extends Class1274<Class1171> {
          }
       }
 
-      var5.remove(Class8514.field37222);
+      var5.remove(Items.field37222);
       this.field6842 = Lists.newArrayList(var5);
 
       for (int var12 = 0; var12 < this.field6842.size(); var12++) {
@@ -71,7 +71,7 @@ public class Class1282 extends Class1274<Class1171> {
    }
 
    @Override
-   public void method6038(MatrixStack var1, int var2, int var3, Class9352 var4) {
+   public void method6038(MatrixStack var1, int var2, int var3, Tessellator var4) {
       if (!this.field6782.mouseHelper.method36736()) {
          this.field6841 = -1;
       }
@@ -123,7 +123,7 @@ public class Class1282 extends Class1274<Class1171> {
 
       if (this.field6841 >= 0) {
          this.method6102(this.method6098(this.field6841));
-         this.field6782.method1546().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
+         this.field6782.getSoundHandler().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
       }
    }
 
@@ -164,7 +164,7 @@ public class Class1282 extends Class1274<Class1171> {
                return;
             }
 
-            Class3257 var8 = this.field6842.get(this.method2468().indexOf(var6));
+            Item var8 = this.field6842.get(this.method2468().indexOf(var6));
             this.method6100(var1, this.method6101(var8), var2, var3);
          }
       }
@@ -183,7 +183,7 @@ public class Class1282 extends Class1274<Class1171> {
       }
    }
 
-   public ITextComponent method6101(Class3257 var1) {
+   public ITextComponent method6101(Item var1) {
       return var1.method11717();
    }
 

@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 public class Class9463 {
    private Class2089 field43962 = Class2089.field13614;
    private Class80 field43963 = Class80.field185;
-   private BlockPos field43964 = BlockPos.field13032;
+   private BlockPos field43964 = BlockPos.ZERO;
    private boolean field43965;
    private Class7481 field43966;
    private Class9764 field43967;

@@ -19,7 +19,7 @@ public final class Class6307 extends WindowAdapter {
    public void windowClosing(WindowEvent var1) {
       if (!Class2517.access$000(this.field27791).getAndSet(true)) {
          this.field27792.setTitle("Minecraft server - shutting down!");
-         this.field27793.method1296(true);
+         this.field27793.initiateShutdown(true);
          Class2517.access$100(this.field27791);
       }
    }

@@ -9,22 +9,22 @@ public class Class3391 extends Block {
    }
 
    @Override
-   public Class1855 method11526(Class7380 var1) {
-      return Class1855.field9885;
+   public BlockRenderType method11526(BlockState var1) {
+      return BlockRenderType.field9885;
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19016;
    }
 
    @Override
-   public float method11636(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public float method11636(BlockState var1, Class1665 var2, BlockPos var3) {
       return 1.0F;
    }
 
    @Override
-   public Class2315 method11689(Class7380 var1) {
+   public Class2315 method11689(BlockState var1) {
       return Class2315.field15863;
    }
 }

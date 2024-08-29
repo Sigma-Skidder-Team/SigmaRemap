@@ -38,9 +38,9 @@ public class Class1335 extends Screen {
    private boolean field7074;
    private boolean field7075;
    public boolean field7076;
-   public Class7818 field7077;
+   public DatapackCodec field7077;
    private Path field7078;
-   private Class313 field7079;
+   private ResourcePackList field7079;
    private boolean field7080;
    private Class1206 field7081;
    private Class1206 field7082;
@@ -55,7 +55,7 @@ public class Class1335 extends Screen {
    private Class5462 field7091 = new Class5462();
    public final Class1221 field7092;
 
-   public Class1335(Screen var1, Class8898 var2, Class7846 var3, Path var4, Class7818 var5, Class8905 var6) {
+   public Class1335(Screen var1, WorldSettings var2, DimensionGeneratorSettings var3, Path var4, DatapackCodec var5, Class8905 var6) {
       this(var1, var5, new Class1221(var6, var3, Class5970.method18504(var3), OptionalLong.of(var3.method26259())));
       this.field7090 = var2.method32426();
       this.field7074 = var2.method32430();
@@ -79,13 +79,13 @@ public class Class1335 extends Screen {
    }
 
    public static Class1335 method6353(Screen var0) {
-      Class8905 var3 = Class8904.method32457();
+      Class8905 var3 = DynamicRegistries.func_239770_b_();
       return new Class1335(
          var0,
-         Class7818.field33531,
+         DatapackCodec.field33531,
          new Class1221(
             var3,
-            Class7846.method26257(
+            DimensionGeneratorSettings.method26257(
                var3.<Class9535>method32453(Registry.field16066),
                var3.<Biome>method32453(Registry.BIOME_KEY),
                var3.<Class9309>method32453(Registry.field16099)
@@ -96,23 +96,23 @@ public class Class1335 extends Screen {
       );
    }
 
-   private Class1335(Screen var1, Class7818 var2, Class1221 var3) {
+   private Class1335(Screen var1, DatapackCodec var2, Class1221 var3) {
       super(new TranslationTextComponent("selectWorld.create"));
       this.field7067 = var1;
-      this.field7090 = Class9088.method33883("selectWorld.newWorld");
+      this.field7090 = I18n.format("selectWorld.newWorld");
       this.field7077 = var2;
       this.field7092 = var3;
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field7068.method5633();
-      this.field7092.method1919();
+      this.field7092.tick();
    }
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field7068 = new Class1302(this, this.field4568, this.field4564 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7068.method5635(this.field7090);
       this.field7068.method5631(var1 -> {
@@ -171,7 +171,7 @@ public class Class1335 extends Screen {
          new Class1206(var3, this.field4565 - 28, 150, 20, new TranslationTextComponent("selectWorld.create"), var1 -> this.method6356())
       );
       this.field7081.field6482 = !this.field7090.isEmpty();
-      this.<Class1206>method2455(new Class1206(var4, this.field4565 - 28, 150, 20, Class7127.field30659, var1 -> this.method6361()));
+      this.<Class1206>method2455(new Class1206(var4, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6361()));
       this.method6359();
       this.method5536(this.field7068);
       this.method6358(this.field7070);
@@ -204,21 +204,21 @@ public class Class1335 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    private void method6356() {
-      this.field4562.method1508(new Class1310(new TranslationTextComponent("createWorld.preparing")));
+      this.field4562.forcedScreenTick(new DirtMessageScreen(new TranslationTextComponent("createWorld.preparing")));
       if (this.method6368()) {
          this.method6362();
-         Class7846 var3 = this.field7092.method5785(this.field7076);
-         Class8898 var5;
+         DimensionGeneratorSettings var3 = this.field7092.method5785(this.field7076);
+         WorldSettings var5;
          if (var3.method26267()) {
             Class5462 var4 = new Class5462();
             var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
-            var5 = new Class8898(this.field7068.method5636().trim(), Class1894.field11105, false, Class2197.field14351, true, var4, Class7818.field33531);
+            var5 = new WorldSettings(this.field7068.method5636().trim(), Class1894.field11105, false, Class2197.field14351, true, var4, DatapackCodec.field33531);
          } else {
-            var5 = new Class8898(
+            var5 = new WorldSettings(
                this.field7068.method5636().trim(),
                Class2079.method8735(this.field7070),
                this.field7076,
@@ -229,7 +229,7 @@ public class Class1335 extends Screen {
             );
          }
 
-         this.field4562.method1500(this.field7069, var5, this.field7092.method5789(), var3);
+         this.field4562.createWorld(this.field7069, var5, this.field7092.method5789(), var3);
       }
    }
 
@@ -292,7 +292,7 @@ public class Class1335 extends Screen {
       if (!this.field7080) {
          this.field7084.method5743(new TranslationTextComponent("selectWorld.moreWorldOptions"));
       } else {
-         this.field7084.method5743(Class7127.field30658);
+         this.field7084.method5743(DialogTexts.field30658);
       }
 
       this.field7085.field6483 = !this.field7080;
@@ -380,7 +380,7 @@ public class Class1335 extends Screen {
             this.field7078 = Files.createTempDirectory("mcworld-");
          } catch (IOException var4) {
             field7060.warn("Failed to create temporary dir", var4);
-            Class7603.method24910(this.field4562, this.field7069);
+            SystemToast.method24910(this.field4562, this.field7069);
             this.method6361();
          }
       }
@@ -393,18 +393,18 @@ public class Class1335 extends Screen {
       if (var3 != null) {
          this.field4562
             .displayGuiScreen(
-               new Class1336(this, (Class313)var3.getSecond(), this::method6365, (File)var3.getFirst(), new TranslationTextComponent("dataPack.title"))
+               new Class1336(this, (ResourcePackList)var3.getSecond(), this::method6365, (File)var3.getFirst(), new TranslationTextComponent("dataPack.title"))
             );
       }
    }
 
-   private void method6365(Class313 var1) {
-      ImmutableList var4 = ImmutableList.copyOf(var1.method1269());
+   private void method6365(ResourcePackList var1) {
+      ImmutableList var4 = ImmutableList.copyOf(var1.func_232621_d_());
       List var5 = var1.method1267().stream().filter(var1x -> !var4.contains(var1x)).collect(ImmutableList.toImmutableList());
-      Class7818 var6 = new Class7818(var4, var5);
+      DatapackCodec var6 = new DatapackCodec(var4, var5);
       if (!var4.equals(this.field7077.method26104())) {
-         this.field4562.method1641(() -> this.field4562.displayGuiScreen(new Class1310(new TranslationTextComponent("dataPack.validation.working"))));
-         Class1701.method7338(var1.method1273(), Class2085.field13577, 2, Util.method38492(), this.field4562)
+         this.field4562.method1641(() -> this.field4562.displayGuiScreen(new DirtMessageScreen(new TranslationTextComponent("dataPack.validation.working"))));
+         DataPackRegistries.func_240961_a_(var1.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), this.field4562)
             .handle(
                (var2, var3) -> {
                   if (var3 == null) {
@@ -420,10 +420,10 @@ public class Class1335 extends Screen {
                         .method1641(
                            () -> this.field4562
                                  .displayGuiScreen(
-                                    new Class829(
+                                    new ConfirmScreen(
                                        var1xx -> {
                                           if (!var1xx) {
-                                             this.field7077 = Class7818.field33531;
+                                             this.field7077 = DatapackCodec.field33531;
                                              this.field4562.displayGuiScreen(this);
                                           } else {
                                              this.method6364();
@@ -476,15 +476,15 @@ public class Class1335 extends Screen {
    private boolean method6368() {
       if (this.field7078 != null) {
          try (
-                 Class1814 var3 = this.field4562.getSaveLoader().method38468(this.field7069);
+                 SaveFormat.LevelSave var3 = this.field4562.getSaveLoader().getLevelSave(this.field7069);
                  Stream var5 = Files.walk(this.field7078);
          ) {
-            Path var7 = var3.method7991(Class5137.field23352);
+            Path var7 = var3.resolveFilePath(FolderName.DATAPACKS);
             Files.createDirectories(var7);
             var5.filter(var1 -> !var1.equals(this.field7078)).forEach(var2 -> method6367(this.field7078, var7, (Path) var2));
          } catch (IOException | Class2469 var35) {
             field7060.warn("Failed to copy datapacks to world {}", this.field7069, var35);
-            Class7603.method24910(this.field4562, this.field7069);
+            SystemToast.method24910(this.field4562, this.field7069);
             this.method6361();
             return false;
          }
@@ -515,7 +515,7 @@ public class Class1335 extends Screen {
          });
       } catch (IOException | Class2469 var18) {
          field7060.warn("Failed to copy datapacks from world {}", var0, var18);
-         Class7603.method24910(var1, var0.toString());
+         SystemToast.method24910(var1, var0.toString());
          return null;
       }
 
@@ -523,18 +523,18 @@ public class Class1335 extends Screen {
    }
 
    @Nullable
-   private Pair<File, Class313> method6370() {
+   private Pair<File, ResourcePackList> method6370() {
       Path var3 = this.method6363();
       if (var3 == null) {
          return null;
       } else {
          File var4 = var3.toFile();
          if (this.field7079 == null) {
-            this.field7079 = new Class313(new Class7650(), new Class7652(var4, Class7725.field33170));
-            this.field7079.method1262();
+            this.field7079 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var4, IPackNameDecorator.PLAIN));
+            this.field7079.reloadPacksFromFinders();
          }
 
-         this.field7079.method1264(this.field7077.method26104());
+         this.field7079.setEnabledPacks(this.field7077.method26104());
          return Pair.of(var4, this.field7079);
       }
    }

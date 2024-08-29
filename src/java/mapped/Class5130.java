@@ -12,15 +12,15 @@ public class Class5130 implements Class5119 {
 
    @Override
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
-      Class1656 var11 = this.field23321.world;
+      ClientWorld var11 = this.field23321.world;
       RenderSystem.pushMatrix();
       RenderSystem.disableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.enableDepthTest();
       BlockPos var12 = new BlockPos(var3, 0.0, var7);
-      Class9352 var13 = Class9352.method35409();
-      Class5425 var14 = var13.method35411();
-      var14.method17063(5, Class9337.field43342);
+      Tessellator var13 = Tessellator.getInstance();
+      BufferBuilder var14 = var13.getBuffer();
+      var14.begin(5, DefaultVertexFormats.POSITION_COLOR);
 
       for (int var15 = -32; var15 <= 32; var15 += 16) {
          for (int var16 = -32; var16 <= 32; var16 += 16) {
@@ -36,7 +36,7 @@ public class Class5130 implements Class5119 {
                      int var25 = var21.field32174 * 16 + var23;
                      int var26 = var21.field32175 * 16 + var24;
                      float var27 = (float)((double)((float)var11.method6736(var20, var25, var26) + (float)var20.ordinal() * 0.09375F) - var5);
-                     Class264.method900(
+                     WorldRenderer.method900(
                         var14,
                         (double)((float)var25 + 0.25F) - var3,
                         (double)var27,
@@ -55,7 +55,7 @@ public class Class5130 implements Class5119 {
          }
       }
 
-      var13.method35410();
+      var13.draw();
       RenderSystem.enableTexture();
       RenderSystem.popMatrix();
    }

@@ -16,7 +16,7 @@ public class Class2670 extends Class2595 {
    public Class2670(Class1046 var1, double var2) {
       this.field17048 = var1;
       this.field17052 = var2;
-      this.field17053 = var1.field5024;
+      this.field17053 = var1.world;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }
 
@@ -54,11 +54,11 @@ public class Class2670 extends Class2595 {
    @Nullable
    private Vector3d method10889() {
       Random var3 = this.field17048.method3013();
-      BlockPos var4 = this.field17048.method3432();
+      BlockPos var4 = this.field17048.getPosition();
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = var4.method8336(var3.nextInt(20) - 10, 2 - var3.nextInt(8), var3.nextInt(20) - 10);
-         if (this.field17053.method6738(var6).method23448(Blocks.WATER)) {
+         if (this.field17053.getBlockState(var6).method23448(Blocks.WATER)) {
             return Vector3d.method11330(var6);
          }
       }

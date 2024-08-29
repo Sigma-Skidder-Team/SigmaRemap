@@ -24,7 +24,7 @@ public class Class2759 extends Class2595 {
          && this.field17314.method4579()
          && this.field17314.method4232() != null
          && !this.field17314.method4307()
-         && (var3 == null || var3.method3204() != Class8992.field41111);
+         && (var3 == null || var3.getType() != EntityType.PLAYER);
    }
 
    @Override
@@ -33,7 +33,7 @@ public class Class2759 extends Class2595 {
       this.field17314.method4230().method21666();
 
       for (Class1026 var4 : this.field17314
-         .field5024
+         .world
          .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.method3389().method19663(8.0, 8.0, 8.0))) {
          var4.method4233(this.field17314.method4232());
       }
@@ -45,7 +45,7 @@ public class Class2759 extends Class2595 {
       Class880 var3 = this.field17314.method4232();
       if (var3 != null) {
          for (Class1026 var5 : this.field17314
-            .field5024
+            .world
             .<Class1026>method7195(Class1026.class, this.field17316, this.field17314, this.field17314.method3389().method19663(8.0, 8.0, 8.0))) {
             var5.method4233(var3);
             var5.method4304(true);

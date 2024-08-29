@@ -34,8 +34,8 @@ public class Class5374 extends Module {
     @HigherPriority
     private void method16922(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
-            boolean var4 = mc.field1346 != null && mc.field1346.method31417() == Class2100.field13690;
-            boolean var5 = mc.field1337.method23158() || mc.gameSettings.field44643.method8509() && var4;
+            boolean var4 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
+            boolean var5 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var4;
             if (Client.getInstance().method19939().method31329() > 0 && !var5) {
                 this.field23997 -= 1.0E-14;
                 if (this.field23997 < 0.0 || Class5330.field23887 == 0) {

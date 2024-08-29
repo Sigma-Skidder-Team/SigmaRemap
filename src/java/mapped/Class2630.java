@@ -22,11 +22,11 @@ public class Class2630 extends Class2628 {
    @Override
    public void method10805() {
       super.method10805();
-      BlockPos var3 = this.field16941.method3432();
+      BlockPos var3 = this.field16941.getPosition();
       if (!this.field16941.method3250() && this.method10838()) {
          if (Class1088.method5059(this.field16941) >= 1) {
             if (Class1088.method5059(this.field16941) > 200) {
-               World var4 = this.field16941.field5024;
+               World var4 = this.field16941.world;
                var4.method6742((PlayerEntity)null, var3, Class6067.field27172, Class2266.field14732, 0.3F, 0.9F + var4.field9016.nextFloat() * 0.2F);
                var4.method6725(
                   this.field16933.method8311(),

@@ -82,14 +82,14 @@ public class Class7440 {
       BlockPos var6 = new BlockPos(-1, 1, -1);
       BlockPos var7 = Class8969.method32905(var5.method8337(var6), Class2089.field13614, var0.method28821(), var5);
       var4.method6730(var7, Blocks.field37061.method11579().method23395(var0.method28821()));
-      Class7380 var8 = var4.method6738(var7);
+      BlockState var8 = var4.getBlockState(var7);
       ItemStack var9 = method24036(var0.method28806(), var0.method28818(), var1);
       Class3354.method11919(var4, var7, var8, var9);
    }
 
    private static ItemStack method24036(String var0, boolean var1, String var2) {
-      ItemStack var5 = new ItemStack(Class8514.field38047);
-      Class41 var6 = new Class41();
+      ItemStack var5 = new ItemStack(Items.field38047);
+      ListNBT var6 = new ListNBT();
       StringBuffer var7 = new StringBuffer();
       Arrays.<String>stream(var0.split("\\.")).forEach(var1x -> var7.append(var1x).append('\n'));
       if (!var1) {
@@ -97,8 +97,8 @@ public class Class7440 {
       }
 
       var7.append("-------------------\n");
-      var6.add(Class40.method150(var7.toString() + var2));
-      var5.method32164("pages", var6);
+      var6.add(StringNBT.valueOf(var7.toString() + var2));
+      var5.setTagInfo("pages", var6);
       return var5;
    }
 
@@ -118,9 +118,9 @@ public class Class7440 {
       var2.method26416();
       BlockPos var6 = var1.method8336(-var3, 0, -var3);
       BlockPos var7 = var1.method8336(var3, 0, var3);
-      BlockPos.method8360(var6, var7).filter(var1x -> var0.method6738(var1x).method23448(Blocks.field37113)).forEach(var1x -> {
-         Class964 var4 = (Class964)var0.method6759(var1x);
-         BlockPos var5 = var4.method3774();
+      BlockPos.method8360(var6, var7).filter(var1x -> var0.getBlockState(var1x).method23448(Blocks.field37113)).forEach(var1x -> {
+         Class964 var4 = (Class964)var0.getTileEntity(var1x);
+         BlockPos var5 = var4.getPos();
          Class9764 var6x = Class7803.method26053(var4);
          Class7803.method26058(var6x, var5.getY(), var0);
       });

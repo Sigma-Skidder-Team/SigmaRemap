@@ -20,7 +20,7 @@ public class Class5278 extends Module {
 
     public Class5278() {
         super(ModuleCategory.RENDER, "2D Esp", "You know what it is");
-        this.method15972(new Class6004("Show Health", "Shows a health bar", true));
+        this.registerSetting(new BooleanSetting("Show Health", "Shows a health bar", true));
     }
 
     public static Color method16516(float[] var0, Color[] var1, float var2) {
@@ -248,7 +248,7 @@ public class Class5278 extends Module {
             this.field23727 = var5;
         }
 
-        this.field23727 = this.field23727 + ((double) var5 - this.field23727) / ((double) Minecraft.method1586() * 0.7);
+        this.field23727 = this.field23727 + ((double) var5 - this.field23727) / ((double) Minecraft.getFps() * 0.7);
         var4 = (float) ((double) var4 * this.field23727);
         RenderSystem.scalef(var4, var4, var4);
     }

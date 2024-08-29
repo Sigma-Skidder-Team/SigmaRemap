@@ -7,7 +7,7 @@ public class Class4058 extends Class4057 {
    private static Map<String, Integer> field20390 = null;
 
    public Class4058() {
-      super(Class8992.field41033, "fox", 0.4F);
+      super(EntityType.field41033, "fox", 0.4F);
    }
 
    @Override
@@ -54,7 +54,7 @@ public class Class4058 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5650 var6 = new Class5650(var5);
       var6.field25086 = (Class2864<Class1095>)var1;
       var6.field25098 = var2;

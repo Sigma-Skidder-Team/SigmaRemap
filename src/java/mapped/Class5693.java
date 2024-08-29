@@ -4,7 +4,7 @@ public class Class5693 extends Class5651<Class1079, Class2881<Class1079>> {
    private static final ResourceLocation field25062 = new ResourceLocation("textures/entity/wither/wither_invulnerable.png");
    private static final ResourceLocation field25063 = new ResourceLocation("textures/entity/wither/wither.png");
 
-   public Class5693(Class8853 var1) {
+   public Class5693(EntityRendererManager var1) {
       super(var1, new Class2881<Class1079>(0.0F), 1.0F);
       this.method17880(new Class224(this));
    }

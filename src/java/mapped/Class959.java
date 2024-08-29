@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class959 extends Class944 implements Class935 {
+public class Class959 extends TileEntity implements Class935 {
    private static final Block[] field5381 = new Block[]{Blocks.field36767, Blocks.field36768, Blocks.field36776, Blocks.field36769};
    public int field5382;
    private float field5383;
@@ -27,7 +27,7 @@ public class Class959 extends Class944 implements Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       if (!var2.method106("Target")) {
          this.field5388 = null;
@@ -37,8 +37,8 @@ public class Class959 extends Class944 implements Class935 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       if (this.field5387 != null) {
          var1.method104("Target", this.field5387.getUniqueID());
       }
@@ -53,8 +53,8 @@ public class Class959 extends Class944 implements Class935 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      return this.write(new CompoundNBT());
    }
 
    @Override
@@ -110,7 +110,7 @@ public class Class959 extends Class944 implements Class935 {
                if ((var18 > 1 || var7 > 1 || var8 > 1)
                   && (var15 == 0 && (var7 == 2 || var8 == 2) || var16 == 0 && (var18 == 2 || var8 == 2) || var17 == 0 && (var18 == 2 || var7 == 2))) {
                   BlockPos var9 = this.field5325.method8336(var15, var16, var17);
-                  Class7380 var10 = this.field5324.method6738(var9);
+                  BlockState var10 = this.field5324.getBlockState(var9);
 
                   for (Block var14 : field5381) {
                      if (var10.method23448(var14)) {
@@ -129,16 +129,16 @@ public class Class959 extends Class944 implements Class935 {
    private void method3897() {
       int var3 = this.field5386.size();
       int var4 = var3 / 7 * 16;
-      int var5 = this.field5325.method8304();
+      int var5 = this.field5325.getX();
       int var6 = this.field5325.getY();
-      int var7 = this.field5325.method8306();
+      int var7 = this.field5325.getZ();
       Class6488 var8 = new Class6488((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
          .method19664((double)var4)
          .method19662(0.0, (double)this.field5324.method7034(), 0.0);
       List<PlayerEntity> var9 = this.field5324.<PlayerEntity>method7182(PlayerEntity.class, var8);
       if (!var9.isEmpty()) {
          for (PlayerEntity var11 : var9) {
-            if (this.field5325.method8316(var11.method3432(), (double)var4) && var11.method3253()) {
+            if (this.field5325.method8316(var11.getPosition(), (double)var4) && var11.method3253()) {
                var11.method3035(new Class2023(Class8254.field35495, 260, 0, true, true));
             }
          }
@@ -153,7 +153,7 @@ public class Class959 extends Class944 implements Class935 {
             this.field5387 = this.method3901();
             this.field5388 = null;
          } else if (this.field5387 != null) {
-            if (!this.field5387.method3066() || !this.field5325.method8316(this.field5387.method3432(), 8.0)) {
+            if (!this.field5387.method3066() || !this.field5325.method8316(this.field5387.getPosition(), 8.0)) {
                this.field5387 = null;
             }
          } else {
@@ -182,7 +182,7 @@ public class Class959 extends Class944 implements Class935 {
       }
 
       if (var3 != this.field5387) {
-         Class7380 var6 = this.method3775();
+         BlockState var6 = this.method3775();
          this.field5324.method6731(this.field5325, var6, var6, 2);
       }
    }
@@ -201,9 +201,9 @@ public class Class959 extends Class944 implements Class935 {
    }
 
    private Class6488 method3900() {
-      int var3 = this.field5325.method8304();
+      int var3 = this.field5325.getX();
       int var4 = this.field5325.getY();
-      int var5 = this.field5325.method8306();
+      int var5 = this.field5325.getZ();
       return new Class6488((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).method19664(8.0);
    }
 
@@ -215,10 +215,10 @@ public class Class959 extends Class944 implements Class935 {
 
    private void method3902() {
       Random var3 = this.field5324.field9016;
-      double var4 = (double)(MathHelper.method37763((float)(this.field5382 + 35) * 0.1F) / 2.0F + 0.5F);
+      double var4 = (double)(MathHelper.sin((float)(this.field5382 + 35) * 0.1F) / 2.0F + 0.5F);
       var4 = (var4 * var4 + var4) * 0.3F;
       Vector3d var6 = new Vector3d(
-         (double)this.field5325.method8304() + 0.5, (double)this.field5325.getY() + 1.5 + var4, (double)this.field5325.method8306() + 0.5
+         (double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 1.5 + var4, (double)this.field5325.getZ() + 0.5
       );
 
       for (BlockPos var8 : this.field5386) {
@@ -228,7 +228,7 @@ public class Class959 extends Class944 implements Class935 {
             float var11 = -0.5F + var3.nextFloat();
             BlockPos var12 = var8.method8338(this.field5325);
             Vector3d var13 = new Vector3d((double)var9, (double)var10, (double)var11)
-               .method11339((double)var12.method8304(), (double)var12.getY(), (double)var12.method8306());
+               .method11339((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
             this.field5324
                .method6746(Class7940.field34104, var6.field18048, var6.field18049, var6.field18050, var13.field18048, var13.field18049, var13.field18050);
          }

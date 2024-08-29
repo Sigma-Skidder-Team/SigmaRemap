@@ -14,12 +14,12 @@ public class Class3301 extends Class3298 {
    }
 
    public static void method11848(ItemStack var0, List<ITextComponent> var1) {
-      Class39 var4 = var0.method32145("BlockEntityTag");
-      if (var4 != null && var4.method118("Patterns")) {
-         Class41 var5 = var4.method131("Patterns", 10);
+      CompoundNBT var4 = var0.method32145("BlockEntityTag");
+      if (var4 != null && var4.contains("Patterns")) {
+         ListNBT var5 = var4.method131("Patterns", 10);
 
          for (int var6 = 0; var6 < var5.size() && var6 < 6; var6++) {
-            Class39 var7 = var5.method153(var6);
+            CompoundNBT var7 = var5.method153(var6);
             Class112 var8 = Class112.method315(var7.method122("Color"));
             Class2154 var9 = Class2154.method8872(var7.method126("Pattern"));
             if (var9 != null) {

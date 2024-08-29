@@ -11,7 +11,7 @@ public class Class8814 {
    private static final Logger field39652 = LogManager.getLogger();
 
    public static void method31820(
-      Class8904 var0,
+      DynamicRegistries var0,
       Class4700 var1,
       Class6989 var2,
       Class5646 var3,
@@ -68,7 +68,7 @@ public class Class8814 {
    }
 
    public static void method31821(
-      Class8904 var0, Class4193 var1, int var2, Class6989 var3, Class5646 var4, Class8761 var5, List<? super Class4193> var6, Random var7
+           DynamicRegistries var0, Class4193 var1, int var2, Class6989 var3, Class5646 var4, Class8761 var5, List<? super Class4193> var6, Random var7
    ) {
       Class2349 var10 = var0.<Class9369>method32453(Registry.field16105);
       Class9777 var11 = new Class9777(var10, var2, var3, var4, var5, var6, var7);

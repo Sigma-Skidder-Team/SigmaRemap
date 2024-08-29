@@ -5,19 +5,19 @@ import java.util.stream.Collectors;
 
 public class Class7828 {
    private static String[] field33612;
-   private final Map<Class4520, Class5425> field33613 = Class4520.method14349()
+   private final Map<RenderType, BufferBuilder> field33613 = RenderType.method14349()
       .stream()
-      .collect(Collectors.toMap(var0 -> (Class4520)var0, var0 -> new Class5425(var0.method14350())));
+      .collect(Collectors.toMap(var0 -> (RenderType)var0, var0 -> new BufferBuilder(var0.method14350())));
 
-   public Class5425 method26203(Class4520 var1) {
+   public BufferBuilder method26203(RenderType var1) {
       return this.field33613.get(var1);
    }
 
    public void method26204() {
-      this.field33613.values().forEach(Class5425::method17071);
+      this.field33613.values().forEach(BufferBuilder::method17071);
    }
 
    public void method26205() {
-      this.field33613.values().forEach(Class5425::method17072);
+      this.field33613.values().forEach(BufferBuilder::method17072);
    }
 }

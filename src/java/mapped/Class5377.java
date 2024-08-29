@@ -38,9 +38,9 @@ public class Class5377 extends Module {
 
     public Class5377() {
         super(ModuleCategory.RENDER, "NameTags", "Render better name tags");
-        this.method15972(new Class6004("Magnify", "Scales nametags to keep them readable", true));
-        this.method15972(new Class6004("Furnaces", "Shows furnaces info once open", true));
-        this.method15972(new Class6004("Mob Owners", "Shows mob owners", true));
+        this.registerSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
+        this.registerSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
+        this.registerSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
         this.method16005(false);
         field24004 = this;
     }
@@ -81,7 +81,7 @@ public class Class5377 extends Module {
 
                 while (var4.hasNext()) {
                     Entry var5 = (Entry) var4.next();
-                    if (!(mc.world.method6738((BlockPos) var5.getKey()).method23383() instanceof Class3353)) {
+                    if (!(mc.world.getBlockState((BlockPos) var5.getKey()).getBlock() instanceof Class3353)) {
                         var4.remove();
                     }
 
@@ -108,8 +108,8 @@ public class Class5377 extends Module {
         if (this.method15996()) {
             if (var1.method13932() instanceof Class5570) {
                 Class5570 var4 = (Class5570) var1.method13932();
-                if (mc.world.method6738(var4.method17498().method31423()).method23383() instanceof Class3353) {
-                    this.field24001 = var4.method17498().method31423();
+                if (mc.world.getBlockState(var4.method17498().getPos()).getBlock() instanceof Class3353) {
+                    this.field24001 = var4.method17498().getPos();
                 }
             }
 
@@ -123,7 +123,7 @@ public class Class5377 extends Module {
                 if (mc.currentScreen instanceof Class856) {
                     Class856 var6 = (Class856) mc.currentScreen;
                     var5.field30453 = var6.method2628().method18131(0).method18265();
-                    var5.field30454 = new ItemStack(var6.method2628().method18131(1).method18265().method32107());
+                    var5.field30454 = new ItemStack(var6.method2628().method18131(1).method18265().getItem());
                     var5.field30454.field39976 = var6.method2628().method18131(1).method18265().field39976;
                     var5.field30455 = var6.method2628().method18131(2).method18265();
                 }
@@ -151,13 +151,13 @@ public class Class5377 extends Module {
                 }
 
                 if (var6.method17304() == 0) {
-                    var5.field30453 = new ItemStack(var6.method17305().method32107());
+                    var5.field30453 = new ItemStack(var6.method17305().getItem());
                     var5.field30453.field39976 = var6.method17305().field39976;
                 } else if (var6.method17304() == 1) {
-                    var5.field30454 = new ItemStack(var6.method17305().method32107());
+                    var5.field30454 = new ItemStack(var6.method17305().getItem());
                     var5.field30454.field39976 = var6.method17305().field39976;
                 } else if (var6.method17304() == 2) {
-                    var5.field30455 = new ItemStack(var6.method17305().method32107());
+                    var5.field30455 = new ItemStack(var6.method17305().getItem());
                     var5.field30455.field39976 = var6.method17305().field39976;
                 }
             }
@@ -299,9 +299,9 @@ public class Class5377 extends Module {
             var7 = var2.field30453.field39976 + " " + var2.field30453.method32149();
         }
 
-        float var8 = (float) ((double) var1.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320() + 0.5);
+        float var8 = (float) ((double) var1.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320() + 0.5);
         float var9 = (float) ((double) var1.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.0);
-        float var10 = (float) ((double) var1.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322() + 0.5);
+        float var10 = (float) ((double) var1.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322() + 0.5);
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -365,7 +365,7 @@ public class Class5377 extends Module {
     public void method16933(double var1, double var3, double var5, Entity var7, float var8, String var9) {
         ClientResource var12 = ResourceRegistry.JelloLightFont25;
         String var13 = var9 == null ? var7.getName().getString().replaceAll("§.", "") : var9;
-        if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(mc.method1533().getUsername())) {
+        if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(mc.getSession().getUsername())) {
             var13 = Client.getInstance().getModuleManager().method14662(Class5364.class).getStringSettingValueByName("Username");
         }
 

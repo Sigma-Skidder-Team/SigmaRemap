@@ -4,11 +4,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {
-   public Class5713(Class8853 var1) {
+   public Class5713(EntityRendererManager var1) {
       this(var1, false);
    }
 
-   public Class5713(Class8853 var1, boolean var2) {
+   public Class5713(EntityRendererManager var1, boolean var2) {
       super(var1, new Class2894<AbstractClientPlayerEntity>(0.0F, var2), 0.5F);
       this.method17880(new Class255(this, new Class2797(0.5F), new Class2797(1.0F)));
       this.method17880(new Class242<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>>(this));
@@ -33,7 +33,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
 
    private void method17887(AbstractClientPlayerEntity var1) {
       Class2894 var4 = this.method17881();
-      if (!var1.method2800()) {
+      if (!var1.isSpectator()) {
          var4.method11009(true);
          var4.field17433.field31039 = var1.method2962(Class2318.field15885);
          var4.field17923.field31039 = var1.method2962(Class2318.field15880);
@@ -42,10 +42,10 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          var4.field17919.field31039 = var1.method2962(Class2318.field15881);
          var4.field17920.field31039 = var1.method2962(Class2318.field15882);
          var4.field17441 = var1.method3336();
-         Class2278 var5 = method17888(var1, Hand.field182);
+         Class2278 var5 = method17888(var1, Hand.MAIN_HAND);
          Class2278 var6 = method17888(var1, Hand.field183);
          if (var5.method9003()) {
-            var6 = !var1.method3091().method32105() ? Class2278.field14837 : Class2278.field14836;
+            var6 = !var1.method3091().isEmpty() ? Class2278.field14837 : Class2278.field14836;
          }
 
          if (var1.method2967() != Class2205.field14418) {
@@ -64,7 +64,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
 
    private static Class2278 method17888(AbstractClientPlayerEntity var0, Hand var1) {
       ItemStack var4 = var0.getHeldItem(var1);
-      if (var4.method32105()) {
+      if (var4.isEmpty()) {
          return Class2278.field14836;
       } else {
          if (var0.method3149() == var1 && var0.method3159() > 0) {
@@ -84,7 +84,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             if (var5 == Class2103.field13712 && var1 == var0.method3149()) {
                return Class2278.field14841;
             }
-         } else if (!var0.field4947 && var4.method32107() == Class8514.field38148 && Class3261.method11755(var4)) {
+         } else if (!var0.field4947 && var4.getItem() == Items.field38148 && Class3261.method11755(var4)) {
             return Class2278.field14842;
          }
 
@@ -103,7 +103,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
 
    public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
       double var8 = this.field25097.method32228(var1);
-      var3.method35294();
+      var3.push();
       if (var8 < 100.0) {
          Class6886 var10 = var1.method2953();
          Class8375 var11 = var10.method20989(2);
@@ -112,7 +112,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             super.method17893(
                var1, new StringTextComponent(Integer.toString(var12.method36050())).appendString(" ").append(var11.method29338()), var3, var4, var5
             );
-            var3.method35291(0.0, 0.25875F, 0.0);
+            var3.translate(0.0, 0.25875F, 0.0);
          }
       }
 
@@ -136,9 +136,9 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       var9.field17442 = 0.0F;
       var9.method10998(var4, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       var5.field31035 = 0.0F;
-      var5.method22680(var1, var2.method25597(Class4520.method14309(var4.method5371())), var3, Class213.field798);
+      var5.method22680(var1, var2.method25597(RenderType.getEntitySolid(var4.method5371())), var3, Class213.field798);
       var6.field31035 = 0.0F;
-      var6.method22680(var1, var2.method25597(Class4520.method14318(var4.method5371())), var3, Class213.field798);
+      var6.method22680(var1, var2.method25597(RenderType.method14318(var4.method5371())), var3, Class213.field798);
    }
 
    public void method17842(AbstractClientPlayerEntity var1, MatrixStack var2, float var3, float var4, float var5) {
@@ -152,7 +152,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             float var10 = MathHelper.method37821(var8, 0.0F, var9);
             var2.method35293(Class7680.field32898.method25286(var10));
             if (var1.method3166()) {
-               var2.method35291(0.0, -1.0, 0.3F);
+               var2.translate(0.0, -1.0, 0.3F);
             }
          }
       } else {

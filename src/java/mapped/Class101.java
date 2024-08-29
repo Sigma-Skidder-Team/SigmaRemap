@@ -16,13 +16,13 @@ public enum Class101 implements Class83 {
    field300(
       "MOTION_BLOCKING_NO_LEAVES",
       Class2029.field13171,
-      var0 -> (var0.method23384().method31087() || !var0.method23449().method23474()) && !(var0.method23383() instanceof Class3465)
+      var0 -> (var0.method23384().method31087() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
    );
 
    public static final Codec<Class101> field301 = Class83.<Class101>method258(Class101::values, Class101::method286);
    private final String field302;
    private final Class2029 field303;
-   private final Predicate<Class7380> field304;
+   private final Predicate<BlockState> field304;
    private static final Map<String, Class101> field305 = Util.<Map<String, Class101>>method38508(Maps.newHashMap(), var0 -> {
       for (Class101 var6 : values()) {
          var0.put(var6.field302, var6);
@@ -30,7 +30,7 @@ public enum Class101 implements Class83 {
    });
    private static final Class101[] field306 = new Class101[]{field295, field296, field297, field298, field299, field300};
 
-   private Class101(String var3, Class2029 var4, Predicate<Class7380> var5) {
+   private Class101(String var3, Class2029 var4, Predicate<BlockState> var5) {
       this.field302 = var3;
       this.field303 = var4;
       this.field304 = var5;
@@ -53,7 +53,7 @@ public enum Class101 implements Class83 {
       return field305.get(var0);
    }
 
-   public Predicate<Class7380> method287() {
+   public Predicate<BlockState> method287() {
       return this.field304;
    }
 

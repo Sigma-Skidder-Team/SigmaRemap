@@ -12,13 +12,13 @@ public class Class4227 extends Class4167 {
       this.field20444 = var2;
    }
 
-   public Class4227(Class8761 var1, Class39 var2) {
+   public Class4227(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33440, var2);
       this.field20558 = var2.method132("Mob");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Mob", this.field20558);
    }
@@ -42,11 +42,11 @@ public class Class4227 extends Class4167 {
       this.method12927(var1, var5, 0, 5, 3, 0, 5, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 6, 5, 3, 6, 5, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 1, 5, 8, 5, 5, 8, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
-      Class7380 var10 = Blocks.NETHER_BRICK_FENCE
+      BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .method11579()
          .method23465(Class3239.field18683, Boolean.valueOf(true))
          .method23465(Class3239.field18681, Boolean.valueOf(true));
-      Class7380 var11 = Blocks.NETHER_BRICK_FENCE
+      BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .method11579()
          .method23465(Class3239.field18680, Boolean.valueOf(true))
          .method23465(Class3239.field18682, Boolean.valueOf(true));
@@ -98,9 +98,9 @@ public class Class4227 extends Class4167 {
          if (var5.method38396(var12)) {
             this.field20558 = true;
             var1.method6725(var12, Blocks.field36532.method11579(), 2);
-            Class944 var13 = var1.method6759(var12);
+            TileEntity var13 = var1.getTileEntity(var12);
             if (var13 instanceof Class960) {
-               ((Class960)var13).method3911().method24790(Class8992.field41010);
+               ((Class960)var13).method3911().method24790(EntityType.field41010);
             }
          }
       }

@@ -112,12 +112,12 @@ public class Class8576 {
       } else if (this.field38561.method32023(var3)) {
          if (!this.field38562.method32023(var4)) {
             return false;
-         } else if (this.field38565 != null && this.field38565 != var1.method6813()) {
+         } else if (this.field38565 != null && this.field38565 != var1.getDimensionKey()) {
             return false;
          } else {
             BlockPos var7 = new BlockPos((double)var2, (double)var3, (double)var4);
             boolean var8 = var1.method6763(var7);
-            Optional var9 = var1.method6867().<Biome>method32453(Registry.BIOME_KEY).method9182(var1.method7003(var7));
+            Optional var9 = var1.method6867().<Biome>method32453(Registry.BIOME_KEY).method9182(var1.getBiome(var7));
             if (!var9.isPresent()) {
                return false;
             } else if (this.field38563 == null || var8 && this.field38563 == var9.get()) {

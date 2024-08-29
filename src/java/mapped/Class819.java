@@ -37,14 +37,14 @@ public class Class819 extends Class798 {
    public void method1921() {
       this.field4469 = this.field4564 / 2 - 150;
       this.field4470 = this.field4564 / 2 + 190;
-      this.<Class1206>method2455(new Class1206(this.field4470 - 80 + 8, method1929(13) - 5, 70, 20, Class7127.field30663, var1 -> this.method2336()));
+      this.<Class1206>method2455(new Class1206(this.field4470 - 80 + 8, method1929(13) - 5, 70, 20, DialogTexts.field30663, var1 -> this.method2336()));
       if (this.field4465 != null) {
          this.method2334();
       } else {
          this.method2337(this.field4466);
       }
 
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       Class9229.method34711(
          Stream.<ITextComponent>concat(Stream.of(this.field4467), Stream.of(this.field4468))
             .<CharSequence>map(ITextComponent::getString)
@@ -86,7 +86,7 @@ public class Class819 extends Class798 {
                         new TranslationTextComponent("mco.configure.world.switch.slot"),
                         new TranslationTextComponent("mco.configure.world.switch.slot.subtitle"),
                         10526880,
-                        Class7127.field30659,
+                        DialogTexts.GUI_CANCEL,
                         this::method2338,
                         () -> {
                            this.field4562.displayGuiScreen(this);
@@ -124,7 +124,7 @@ public class Class819 extends Class798 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field4472++;
    }
 
@@ -179,7 +179,7 @@ public class Class819 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -274,7 +274,7 @@ public class Class819 extends Class798 {
 
       if (var6) {
          if (var6) {
-            float var15 = 0.9F + 0.1F * MathHelper.method37764((float)this.field4472 * 0.2F);
+            float var15 = 0.9F + 0.1F * MathHelper.cos((float)this.field4472 * 0.2F);
             RenderSystem.method27889(var15, var15, var15, 1.0F);
          }
       } else {

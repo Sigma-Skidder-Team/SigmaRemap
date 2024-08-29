@@ -12,15 +12,15 @@ public class Class8080 implements IAmbientSoundHandler {
 
    @Override
    public void tick() {
-      World var3 = this.field34730.field5024;
-      Class7380 var4 = var3.method7004(this.field34730.method3389().method19663(0.0, -0.4F, 0.0).method19679(0.001))
+      World var3 = this.field34730.world;
+      BlockState var4 = var3.method7004(this.field34730.method3389().method19663(0.0, -0.4F, 0.0).method19679(0.001))
          .filter(var0 -> var0.method23448(Blocks.field37013))
          .findFirst()
-         .orElse((Class7380)null);
+         .orElse((BlockState)null);
       if (var4 == null) {
          this.field34731 = false;
       } else {
-         if (!this.field34731 && !this.field34732 && var4.method23448(Blocks.field37013) && !this.field34730.method2800()) {
+         if (!this.field34731 && !this.field34732 && var4.method23448(Blocks.field37013) && !this.field34730.isSpectator()) {
             boolean var5 = var4.<Boolean>method23463(Class3406.field19084);
             if (!var5) {
                this.field34730.method2863(Class6067.field26423, 1.0F, 1.0F);

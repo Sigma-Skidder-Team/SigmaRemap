@@ -11,7 +11,7 @@ public class Class5450 extends Class5444<Class4712> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
+   public void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
       Class80 var10 = Class80.method254(this.field24201);
       byte var11 = 5;
       byte var12 = 5;
@@ -65,7 +65,7 @@ public class Class5450 extends Class5444<Class4712> {
                if (var13) {
                   for (int var16 = var9 - 1; var16 > 1; var16--) {
                      BlockPos var17 = new BlockPos(var10, var16, var11);
-                     if (!var1.method7007(var17) && !var1.method6738(var17).method23384().method31085()) {
+                     if (!var1.method7007(var17) && !var1.getBlockState(var17).method23384().method31085()) {
                         break;
                      }
 

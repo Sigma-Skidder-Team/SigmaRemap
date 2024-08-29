@@ -9,7 +9,7 @@ public class Class4215 extends Class4213 {
       super(Class7792.field33464, 1, var1, var2, 2, 2, 2);
    }
 
-   public Class4215(Class8761 var1, Class39 var2) {
+   public Class4215(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33464, var2);
    }
 
@@ -17,7 +17,7 @@ public class Class4215 extends Class4213 {
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method13007(var1, var5, 1, 8, 0, 14, 8, 14, field20528);
       byte var10 = 7;
-      Class7380 var11 = field20529;
+      BlockState var11 = field20529;
       this.method12927(var1, var5, 0, 7, 0, 0, 7, 15, var11, var11, false);
       this.method12927(var1, var5, 15, 7, 0, 15, 7, 15, var11, var11, false);
       this.method12927(var1, var5, 1, 7, 0, 15, 7, 0, var11, var11, false);

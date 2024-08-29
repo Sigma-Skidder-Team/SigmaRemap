@@ -12,11 +12,11 @@ public class Class7291 {
       return this;
    }
 
-   public Class41 method23059() {
-      Class41 var3 = new Class41();
+   public ListNBT method23059() {
+      ListNBT var3 = new ListNBT();
 
       for (Pair var5 : this.field31275) {
-         Class39 var6 = new Class39();
+         CompoundNBT var6 = new CompoundNBT();
          var6.method109("Pattern", Class2154.method8874((Class2154)var5.getLeft()));
          var6.method102("Color", ((Class112)var5.getRight()).method309());
          var3.add(var6);

@@ -3,11 +3,11 @@ package mapped;
 import java.nio.file.Path;
 import java.util.function.Function;
 
-public class Class4455 extends Class4441<Class3257> {
+public class Class4455 extends Class4441<Item> {
    private final Function<Class7610<Block>, Class6879> field21632;
 
    public Class4455(Class9068 var1, Class4454 var2) {
-      super(var1, Registry.field16075);
+      super(var1, Registry.ITEM);
       this.field21632 = var2::method14015;
    }
 
@@ -54,110 +54,110 @@ public class Class4455 extends Class4441<Class3257> {
       this.method14089(Class7645.field32807, Class5985.field26112);
       this.method14014(Class5985.field26094)
          .method31560(
-            Class8514.field38092,
-            Class8514.field38093,
-            Class8514.field38094,
-            Class8514.field38095,
-            Class8514.field38096,
-            Class8514.field38097,
-            Class8514.field38098,
-            Class8514.field38099,
-            Class8514.field38100,
-            Class8514.field38101,
-            Class8514.field38102,
-            Class8514.field38103,
-            Class8514.field38104,
-            Class8514.field38105,
-            Class8514.field38106,
-            Class8514.field38107
+            Items.field38092,
+            Items.field38093,
+            Items.field38094,
+            Items.field38095,
+            Items.field38096,
+            Items.field38097,
+            Items.field38098,
+            Items.field38099,
+            Items.field38100,
+            Items.field38101,
+            Items.field38102,
+            Items.field38103,
+            Items.field38104,
+            Items.field38105,
+            Items.field38106,
+            Items.field38107
          );
       this.method14014(Class5985.field26113)
-         .method31560(Class8514.field37889, Class8514.field38121, Class8514.field38122, Class8514.field38123, Class8514.field38124, Class8514.field38125);
+         .method31560(Items.field37889, Items.field38121, Items.field38122, Items.field38123, Items.field38124, Items.field38125);
       this.method14014(Class5985.field26114)
-         .method31560(Class8514.field37909, Class8514.field37913, Class8514.field37910, Class8514.field37914, Class8514.field37912, Class8514.field37911);
+         .method31560(Items.field37909, Items.field37913, Items.field37910, Items.field37914, Items.field37912, Items.field37911);
       this.method14089(Class7645.field32788, Class5985.field26115);
       this.method14014(Class5985.field26117)
          .method31560(
-            Class8514.field38131,
-            Class8514.field38132,
-            Class8514.field38133,
-            Class8514.field38134,
-            Class8514.field38135,
-            Class8514.field38136,
-            Class8514.field38137,
-            Class8514.field38138,
-            Class8514.field38139,
-            Class8514.field38140,
-            Class8514.field38141,
-            Class8514.field38142
+            Items.field38131,
+            Items.field38132,
+            Items.field38133,
+            Items.field38134,
+            Items.field38135,
+            Items.field38136,
+            Items.field38137,
+            Items.field38138,
+            Items.field38139,
+            Items.field38140,
+            Items.field38141,
+            Items.field38142
          );
-      this.method14014(Class5985.field26116).method31559(Class5985.field26117).method31558(Class8514.field38143);
-      this.method14014(Class5985.field26118).method31560(Class8514.field37798, Class8514.field37799);
-      this.method14014(Class5985.field26119).method31560(Class8514.field37797, Class8514.field38117, Class8514.field38116);
-      this.method14014(Class5985.field26120).method31560(Class8514.field38048, Class8514.field38047);
+      this.method14014(Class5985.field26116).method31559(Class5985.field26117).method31558(Items.field38143);
+      this.method14014(Class5985.field26118).method31560(Items.field37798, Items.field37799);
+      this.method14014(Class5985.field26119).method31560(Items.field37797, Items.field38117, Items.field38116);
+      this.method14014(Class5985.field26120).method31560(Items.field38048, Items.field38047);
       this.method14014(Class5985.field26121)
-         .method31560(Class8514.field37803, Class8514.field38049, Class8514.field37800, Class8514.field37802, Class8514.field37801);
-      this.method14014(Class5985.field26108).method31558(Class8514.field37445).method31558(Class8514.field38169).method31558(Class8514.field38172);
+         .method31560(Items.field37803, Items.field38049, Items.field37800, Items.field37802, Items.field37801);
+      this.method14014(Class5985.field26108).method31558(Items.field37445).method31558(Items.field38169).method31558(Items.field38172);
       this.method14014(Class5985.field26109)
          .method31559(Class5985.field26110)
          .method31560(
-            Class8514.field37358,
-            Class8514.field38188,
-            Class8514.field37540,
-            Class8514.field37802,
-            Class8514.field38167,
-            Class8514.field37907,
-            Class8514.field38057,
-            Class8514.field37980,
-            Class8514.field37872,
-            Class8514.field37873,
-            Class8514.field37860,
-            Class8514.field37861,
-            Class8514.field37862,
-            Class8514.field37863,
-            Class8514.field38084,
-            Class8514.field37815,
-            Class8514.field37817,
-            Class8514.field37816,
-            Class8514.field37818,
-            Class8514.field37819
+            Items.field37358,
+            Items.field38188,
+            Items.field37540,
+            Items.field37802,
+            Items.field38167,
+            Items.field37907,
+            Items.field38057,
+            Items.field37980,
+            Items.field37872,
+            Items.field37873,
+            Items.field37860,
+            Items.field37861,
+            Items.field37862,
+            Items.field37863,
+            Items.field38084,
+            Items.field37815,
+            Items.field37817,
+            Items.field37816,
+            Items.field37818,
+            Items.field37819
          );
       this.method14014(Class5985.field26111)
          .method31560(
-            Class8514.field37266,
-            Class8514.field37274,
-            Class8514.field37290,
-            Class8514.field37282,
-            Class8514.field37265,
-            Class8514.field37273,
-            Class8514.field37289,
-            Class8514.field37281,
-            Class8514.field37243,
-            Class8514.field37244,
-            Class8514.field37366,
-            Class8514.field37367,
-            Class8514.field37419,
-            Class8514.field37420,
-            Class8514.field37436,
-            Class8514.field37437,
-            Class8514.field37454,
-            Class8514.field37455,
-            Class8514.field37480,
-            Class8514.field37481,
-            Class8514.field37505,
-            Class8514.field37506,
-            Class8514.field37533,
-            Class8514.field37534,
-            Class8514.field37786,
-            Class8514.field37787,
-            Class8514.field37880,
-            Class8514.field37881
+            Items.field37266,
+            Items.field37274,
+            Items.field37290,
+            Items.field37282,
+            Items.field37265,
+            Items.field37273,
+            Items.field37289,
+            Items.field37281,
+            Items.field37243,
+            Items.field37244,
+            Items.field37366,
+            Items.field37367,
+            Items.field37419,
+            Items.field37420,
+            Items.field37436,
+            Items.field37437,
+            Items.field37454,
+            Items.field37455,
+            Items.field37480,
+            Items.field37481,
+            Items.field37505,
+            Items.field37506,
+            Items.field37533,
+            Items.field37534,
+            Items.field37786,
+            Items.field37787,
+            Items.field37880,
+            Items.field37881
          );
-      this.method14014(Class5985.field26122).method31560(Class8514.field37236, Class8514.field38185);
-      this.method14014(Class5985.field26123).method31560(Class8514.field37236, Class8514.field38185);
+      this.method14014(Class5985.field26122).method31560(Items.field37236, Items.field38185);
+      this.method14014(Class5985.field26123).method31560(Items.field37236, Items.field38185);
    }
 
-   public void method14089(Class7610<Block> var1, Class7610<Class3257> var2) {
+   public void method14089(Class7610<Block> var1, Class7610<Item> var2) {
       Class6879 var5 = this.method14015(var2);
       Class6879 var6 = this.field21632.apply(var1);
       var6.method20948().forEach(var5::method20943);

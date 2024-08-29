@@ -20,7 +20,7 @@ public final class Class8934 implements Class8933 {
    }
 
    @Override
-   public Class7984<Class3257> method32658() {
+   public Class7984<Item> method32658() {
       return this.field40421;
    }
 
@@ -30,7 +30,7 @@ public final class Class8934 implements Class8933 {
    }
 
    @Override
-   public Class7984<Class8992<?>> method32660() {
+   public Class7984<EntityType<?>> method32660() {
       return this.field40423;
    }
 }

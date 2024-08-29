@@ -7,12 +7,12 @@ import java.util.Map.Entry;
 public class Class8657 {
    private final Map<ResourceLocation, Class6648> field39026 = Maps.newHashMap();
 
-   private void method31155(ResourceLocation var1, Class9304 var2, Class191 var3) {
+   private void method31155(ResourceLocation var1, Class9304 var2, IResourceManager var3) {
       Class6648 var6 = this.field39026.get(var1);
       boolean var7 = var6 == null;
       if (var7 || var2.method35114()) {
          if (!var7) {
-            Class274.method1015().debug("Replaced sound event location {}", var1);
+            SoundHandler.method1015().debug("Replaced sound event location {}", var1);
          }
 
          var6 = new Class6648(var1, var2.method35115());
@@ -24,7 +24,7 @@ public class Class8657 {
          Object var11;
          switch (Class7682.field32910[var9.method20295().ordinal()]) {
             case 1:
-               if (!Class274.method1016(var9, var1, var3)) {
+               if (! SoundHandler.method1016(var9, var1, var3)) {
                   continue;
                }
 
@@ -51,7 +51,7 @@ public class Class8657 {
    }
 
    // $VF: synthetic method
-   public static void method31157(Class8657 var0, ResourceLocation var1, Class9304 var2, Class191 var3) {
+   public static void method31157(Class8657 var0, ResourceLocation var1, Class9304 var2, IResourceManager var3) {
       var0.method31155(var1, var2, var3);
    }
 

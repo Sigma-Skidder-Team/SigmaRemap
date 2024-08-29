@@ -9,33 +9,33 @@ public class Class3219 extends Block implements Class3196 {
       super(var1);
    }
 
-   private static boolean method11609(Class7380 var0, Class1662 var1, BlockPos var2) {
+   private static boolean method11609(BlockState var0, Class1662 var1, BlockPos var2) {
       BlockPos var5 = var2.method8311();
-      Class7380 var6 = var1.method6738(var5);
+      BlockState var6 = var1.getBlockState(var5);
       int var7 = Class200.method649(var1, var0, var2, var6, var5, Direction.field673, var6.method23387(var1, var5));
       return var7 < var1.method7033();
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!method11609(var1, var2, var3)) {
          var2.method6730(var3, Blocks.NETHERRACK.method11579());
       }
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
-      return var1.method6738(var2.method8311()).method23393();
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+      return var1.getBlockState(var2.method8311()).isAir();
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return true;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
-      Class7380 var7 = var1.method6738(var3);
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
+      BlockState var7 = var1.getBlockState(var3);
       BlockPos var8 = var3.method8311();
       if (!var7.method23448(Blocks.field37083)) {
          if (var7.method23448(Blocks.field37074)) {

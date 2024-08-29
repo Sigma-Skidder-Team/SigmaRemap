@@ -9,10 +9,10 @@ public final class Class8088 {
    public static final Predicate<Class880> field34758 = Class880::method3066;
    public static final Predicate<Entity> field34759 = var0 -> var0.method3066() && !var0.method3329() && !var0.method3328();
    public static final Predicate<Entity> field34760 = var0 -> var0 instanceof Class920 && var0.method3066();
-   public static final Predicate<Entity> field34761 = var0 -> !(var0 instanceof PlayerEntity) || !var0.method2800() && !((PlayerEntity)var0).method2801();
+   public static final Predicate<Entity> field34761 = var0 -> !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative();
    public static final Predicate<Entity> field34762 = var0 -> !(var0 instanceof PlayerEntity)
-         || !var0.method2800() && !((PlayerEntity)var0).method2801() && var0.field5024.method6997() != Class2197.field14351;
-   public static final Predicate<Entity> field34763 = var0 -> !var0.method2800();
+         || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() && var0.world.method6997() != Class2197.field14351;
+   public static final Predicate<Entity> field34763 = var0 -> !var0.isSpectator();
 
    public static Predicate<Entity> method27980(double var0, double var2, double var4, double var6) {
       double var10 = var6 * var6;
@@ -27,7 +27,7 @@ public final class Class8088 {
             var3x -> {
                if (!var3x.method3140()) {
                   return false;
-               } else if (!var0.field5024.field9020 || var3x instanceof PlayerEntity && ((PlayerEntity)var3x).method2905()) {
+               } else if (!var0.world.field9020 || var3x instanceof PlayerEntity && ((PlayerEntity)var3x).method2905()) {
                   Class8219 var6 = var3x.method3344();
                   Class2212 var7 = var6 != null ? var6.method28586() : Class2212.field14462;
                   if (var7 == Class2212.field14463) {

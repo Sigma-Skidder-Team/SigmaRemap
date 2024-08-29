@@ -209,7 +209,7 @@ public class Class9535 {
       if (var3.isPresent()) {
          int var4 = ((Number)var3.get()).intValue();
          if (var4 == -1) {
-            return DataResult.success(World.field9000);
+            return DataResult.success(World.THE_NETHER);
          }
 
          if (var4 == 0) {
@@ -262,7 +262,7 @@ public class Class9535 {
    public static File method36874(RegistryKey<World> var0, File var1) {
       if (var0 != World.field8999) {
          if (var0 != World.THE_END) {
-            return var0 != World.field9000
+            return var0 != World.THE_NETHER
                ? new File(var1, "dimensions/" + var0.method31399().method8293() + "/" + var0.method31399().method8292())
                : new File(var1, "DIM-1");
          } else {

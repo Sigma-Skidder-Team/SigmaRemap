@@ -6,12 +6,12 @@ public final class Class300 extends Class299 {
    private static String[] field1158;
 
    @Override
-   public void method1080() {
+   public void tick() {
       Class8389.method29394();
    }
 
    @Override
-   public void method1090(Class191 var1) throws IOException {
+   public void method1090(IResourceManager var1) throws IOException {
    }
 
    @Override

@@ -15,11 +15,11 @@ public class Class6603 {
    private static final Class2625 field29040 = new Class2626(Integer.MAX_VALUE, new Class2761());
    private final Map<Class2240, Class2625> field29041 = new EnumMap<Class2240, Class2625>(Class2240.class);
    private final Set<Class2625> field29042 = Sets.newLinkedHashSet();
-   private final Supplier<Class7165> field29043;
+   private final Supplier<IProfiler> field29043;
    private final EnumSet<Class2240> field29044 = EnumSet.<Class2240>noneOf(Class2240.class);
    private int field29045 = 3;
 
-   public Class6603(Supplier<Class7165> var1) {
+   public Class6603(Supplier<IProfiler> var1) {
       this.field29043 = var1;
    }
 
@@ -33,7 +33,7 @@ public class Class6603 {
    }
 
    public void method20004() {
-      Class7165 var3 = this.field29043.get();
+      IProfiler var3 = this.field29043.get();
       var3.startSection("goalCleanup");
       if (this.field29042.size() > 0) {
          for (Class2625 var5 : this.field29042) {

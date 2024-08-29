@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4081 extends Class4057 {
    public Class4081() {
-      super(Class8992.field41014, "chicken", 0.3F);
+      super(EntityType.field41014, "chicken", 0.3F);
    }
 
    @Override
@@ -55,7 +55,7 @@ public class Class4081 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5745 var6 = new Class5745(var5);
       var6.field25086 = (Class2874<Class1089>)var1;
       var6.field25098 = var2;

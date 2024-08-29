@@ -10,7 +10,7 @@ public class FogRenderer {
    private static long field40353 = -1L;
    public static boolean field40354 = false;
 
-   public static void method32584(Class9624 var0, float var1, Class1656 var2, int var3, float var4) {
+   public static void method32584(Class9624 var0, float var1, ClientWorld var2, int var3, float var4) {
       Class7379 var7 = var0.method37512();
       if (!var7.method23486(Class8953.field40469)) {
          if (!var7.method23486(Class8953.field40470)) {
@@ -21,8 +21,8 @@ public class FogRenderer {
             float var10 = (float)var9.field18048;
             float var11 = (float)var9.field18049;
             float var12 = (float)var9.field18050;
-            float var13 = MathHelper.method37777(MathHelper.method37764(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
-            Class6668 var14 = var2.method6822();
+            float var13 = MathHelper.method37777(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
+            Class6668 var14 = var2.getBiomeManager();
             Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
             Vector3d var16 = Class8430.method29626(
                var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.method11327(var14.method20326(var3x, var4x, var5).method32509()), var13)
@@ -32,7 +32,7 @@ public class FogRenderer {
             field40349 = (float)var16.method11321();
             field40350 = (float)var16.method11322();
             if (var3 >= 4) {
-               float var17 = !(MathHelper.method37763(var2.method6750(var1)) > 0.0F) ? 1.0F : -1.0F;
+               float var17 = !(MathHelper.sin(var2.method6750(var1)) > 0.0F) ? 1.0F : -1.0F;
                Class7680 var18 = new Class7680(var17, 0.0F, 0.0F);
                float var21 = var0.method37516().method25279(var18);
                if (var21 < 0.0F) {
@@ -79,7 +79,7 @@ public class FogRenderer {
          }
       } else {
          long var19 = Util.milliTime();
-         int var25 = var2.method7003(new BlockPos(var0.method37504())).method32521();
+         int var25 = var2.getBiome(new BlockPos(var0.method37504())).method32521();
          if (field40353 < 0L) {
             field40351 = var25;
             field40352 = var25;
@@ -135,7 +135,7 @@ public class FogRenderer {
 
       if (!var7.method23486(Class8953.field40469)) {
          if (var0.method37509() instanceof Class880 && ((Class880)var0.method37509()).method3033(Class8254.field35482)) {
-            float var27 = Class214.method750((Class880)var0.method37509(), var1);
+            float var27 = GameRenderer.method750((Class880)var0.method37509(), var1);
             float var33 = Math.min(1.0F / field40348, Math.min(1.0F / field40349, 1.0F / field40350));
             if (Float.isInfinite(var33)) {
                var33 = Math.nextAfter(var33, 0.0);
@@ -190,7 +190,7 @@ public class FogRenderer {
          field40350 = Class9299.method35067(var31, Class9299.field42803);
       }
 
-      Class8981.method33048(field40348, field40349, field40350, 0.0F);
+      Shaders.method33048(field40348, field40349, field40350, 0.0F);
       RenderSystem.method27875(field40348, field40349, field40350, 0.0F);
    }
 
@@ -263,8 +263,8 @@ public class FogRenderer {
             if (var8 instanceof ClientPlayerEntity) {
                ClientPlayerEntity var16 = (ClientPlayerEntity)var8;
                var14 -= var16.method5416() * var16.method5416() * 0.03F;
-               Biome var17 = var16.field5024.method7003(var16.method3432());
-               if (var17.method32527() == Class100.field288) {
+               Biome var17 = var16.world.getBiome(var16.getPosition());
+               if (var17.getCategory() == Class100.field288) {
                   var14 += 0.005F;
                }
             }
@@ -280,7 +280,7 @@ public class FogRenderer {
    public static void method32588() {
       RenderSystem.method27847(2918, field40348, field40349, field40350, 1.0F);
       if (Class7944.method26921()) {
-         Class8981.method33047(field40348, field40349, field40350);
+         Shaders.method33047(field40348, field40349, field40350);
       }
    }
 }

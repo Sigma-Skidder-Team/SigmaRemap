@@ -53,7 +53,7 @@ public class Class1052 extends Class1050 {
       return var0.method8237() & 0xFF | (var0.method8238() & 0xFF) << 8 | (var1.method309() & 0xFF) << 16 | (var2.method309() & 0xFF) << 24;
    }
 
-   public Class1052(Class8992<? extends Class1052> var1, World var2) {
+   public Class1052(EntityType<? extends Class1052> var1, World var2) {
       super(var1, var2);
    }
 
@@ -82,13 +82,13 @@ public class Class1052 extends Class1050 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Variant", this.method4818());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4817(var1.method122("Variant"));
    }
@@ -109,13 +109,13 @@ public class Class1052 extends Class1050 {
    @Override
    public void method4795(ItemStack var1) {
       super.method4795(var1);
-      Class39 var4 = var1.method32143();
+      CompoundNBT var4 = var1.getOrCreateTag();
       var4.method102("BucketVariantTag", this.method4818());
    }
 
    @Override
    public ItemStack method4796() {
-      return new ItemStack(Class8514.field37895);
+      return new ItemStack(Items.field37895);
    }
 
    @Override
@@ -176,7 +176,7 @@ public class Class1052 extends Class1050 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var5 != null && var5.method119("BucketVariantTag", 3)) {
          this.method4817(var5.method122("BucketVariantTag"));

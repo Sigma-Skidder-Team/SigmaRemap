@@ -19,14 +19,14 @@ public class Class5120 implements Class5119 {
    @Override
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
       Class9624 var11 = this.field23291.gameRenderer.getActiveRenderInfo();
-      Class1656 var12 = this.field23291.world;
+      ClientWorld var12 = this.field23291.world;
       Class9535 var13 = var12.method6812();
       BlockPos var14 = new BlockPos(var11.method37504().field18048, 0.0, var11.method37504().field18050);
-      Class5422 var15 = var2.method25597(Class4520.method14345());
+      Class5422 var15 = var2.method25597(RenderType.method14345());
       if (this.field23292.containsKey(var13)) {
          for (Class9764 var17 : this.field23292.get(var13).values()) {
             if (var14.method8316(var17.method38401(), 500.0)) {
-               Class264.method899(
+               WorldRenderer.method899(
                   var1,
                   var15,
                   (double)var17.field45678 - var3,
@@ -54,7 +54,7 @@ public class Class5120 implements Class5119 {
             Boolean var20 = this.field23294.get(var13).get(var18);
             if (var14.method8316(var19.method38401(), 500.0)) {
                if (!var20) {
-                  Class264.method899(
+                  WorldRenderer.method899(
                      var1,
                      var15,
                      (double)var19.field45678 - var3,
@@ -72,7 +72,7 @@ public class Class5120 implements Class5119 {
                      1.0F
                   );
                } else {
-                  Class264.method899(
+                  WorldRenderer.method899(
                      var1,
                      var15,
                      (double)var19.field45678 - var3,

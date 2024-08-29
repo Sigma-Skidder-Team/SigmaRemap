@@ -9,9 +9,9 @@ import java.util.List;
 public class Class5335 extends Class5325 {
     public Class5335() {
         super(ModuleCategory.COMBAT, "Aimbot", "Automatically aim at players", new Class5383(), new Class5345(), new Class5350());
-        this.method15972(new Class6004("Players", "Aim at players", true));
-        this.method15972(new Class6004("Animals/Monsters", "Aim at animals and monsters", false));
-        this.method15972(new Class6004("Invisible", "Aim at invisible entites", true));
+        this.registerSetting(new BooleanSetting("Players", "Aim at players", true));
+        this.registerSetting(new BooleanSetting("Animals/Monsters", "Aim at animals and monsters", false));
+        this.registerSetting(new BooleanSetting("Invisible", "Aim at invisible entites", true));
     }
 
     public Entity method16750(float var1) {
@@ -27,7 +27,7 @@ public class Class5335 extends Class5325 {
                         if (((Class880) var7).method3042() != 0.0F) {
                             if (!(mc.player.method3275(var7) > var1)) {
                                 if (mc.player.method3026((Class880) var7)) {
-                                    if (!(var7 instanceof Class1005)) {
+                                    if (!(var7 instanceof ArmorStandEntity)) {
                                         if (!this.method15974("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
                                         } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {

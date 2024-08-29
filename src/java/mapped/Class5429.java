@@ -3,21 +3,21 @@ package mapped;
 public class Class5429 implements Class5422 {
    private static String[] field24163;
    private final Class5422 field24164;
-   private final Class1713 field24165;
+   private final TextureAtlasSprite field24165;
 
-   public Class5429(Class5422 var1, Class1713 var2) {
+   public Class5429(Class5422 var1, TextureAtlasSprite var2) {
       this.field24164 = var1;
       this.field24165 = var2;
    }
 
    @Override
-   public Class5422 method17025(double var1, double var3, double var5) {
-      return this.field24164.method17025(var1, var3, var5);
+   public Class5422 pos(double var1, double var3, double var5) {
+      return this.field24164.pos(var1, var3, var5);
    }
 
    @Override
-   public Class5422 method17026(int var1, int var2, int var3, int var4) {
-      return this.field24164.method17026(var1, var2, var3, var4);
+   public Class5422 color(int var1, int var2, int var3, int var4) {
+      return this.field24164.color(var1, var2, var3, var4);
    }
 
    @Override
@@ -41,8 +41,8 @@ public class Class5429 implements Class5422 {
    }
 
    @Override
-   public void method17031() {
-      this.field24164.method17031();
+   public void endVertex() {
+      this.field24164.endVertex();
    }
 
    @Override

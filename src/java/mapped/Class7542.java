@@ -3,7 +3,7 @@ package mapped;
 public class Class7542 {
    private static String[] field32355;
 
-   public static boolean method24657(Class7380 var0, Class9727[] var1) {
+   public static boolean method24657(BlockState var0, Class9727[] var1) {
       if (var1 == null) {
          return true;
       } else {
@@ -62,7 +62,7 @@ public class Class7542 {
       }
    }
 
-   public static boolean method24661(Class1713 var0, Class1713[] var1) {
+   public static boolean method24661(TextureAtlasSprite var0, TextureAtlasSprite[] var1) {
       if (var1 == null) {
          return true;
       } else {

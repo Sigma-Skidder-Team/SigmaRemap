@@ -16,15 +16,15 @@ public class Class4839 extends Class4837 {
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          ItemStack var8 = var1.method3618(var7);
-         if (!var8.method32105()) {
-            if (!(var8.method32107() instanceof Class3277)) {
-               if (!(var8.method32107() instanceof Class3321)) {
+         if (!var8.isEmpty()) {
+            if (!(var8.getItem() instanceof Class3277)) {
+               if (!(var8.getItem() instanceof Class3321)) {
                   return false;
                }
 
                var6.add(var8);
             } else {
-               if (!var5.method32105()) {
+               if (!var5.isEmpty()) {
                   return false;
                }
 
@@ -33,7 +33,7 @@ public class Class4839 extends Class4837 {
          }
       }
 
-      return !var5.method32105() && !var6.isEmpty();
+      return !var5.isEmpty() && !var6.isEmpty();
    }
 
    public ItemStack method14962(Class926 var1) {
@@ -42,8 +42,8 @@ public class Class4839 extends Class4837 {
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
          ItemStack var7 = var1.method3618(var6);
-         if (!var7.method32105()) {
-            Class3257 var8 = var7.method32107();
+         if (!var7.isEmpty()) {
+            Item var8 = var7.getItem();
             if (!(var8 instanceof Class3277)) {
                if (!(var8 instanceof Class3321)) {
                   return ItemStack.EMPTY;
@@ -51,7 +51,7 @@ public class Class4839 extends Class4837 {
 
                var4.add((Class3321)var8);
             } else {
-               if (!var5.method32105()) {
+               if (!var5.isEmpty()) {
                   return ItemStack.EMPTY;
                }
 
@@ -60,7 +60,7 @@ public class Class4839 extends Class4837 {
          }
       }
 
-      return !var5.method32105() && !var4.isEmpty() ? Class3277.method11803(var5, var4) : ItemStack.EMPTY;
+      return !var5.isEmpty() && !var4.isEmpty() ? Class3277.method11803(var5, var4) : ItemStack.EMPTY;
    }
 
    @Override

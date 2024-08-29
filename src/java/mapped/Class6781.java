@@ -5,9 +5,9 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6781 extends Class6768<Class8278> {
-   private static final Class7380 field29573 = Blocks.field37012.method11579();
-   private static final Class7380 field29490 = Blocks.GRAVEL.method11579();
-   private static final Class7380 field29574 = Blocks.SOUL_SAND.method11579();
+   private static final BlockState field29573 = Blocks.field37012.method11579();
+   private static final BlockState field29490 = Blocks.GRAVEL.method11579();
+   private static final BlockState field29574 = Blocks.SOUL_SAND.method11579();
    public long field29575;
    public Class7689 field29576;
 
@@ -23,8 +23,8 @@ public class Class6781 extends Class6768<Class8278> {
       int var5,
       int var6,
       double var7,
-      Class7380 var9,
-      Class7380 var10,
+      BlockState var9,
+      BlockState var10,
       int var11,
       long var12,
       Class8278 var14
@@ -38,14 +38,14 @@ public class Class6781 extends Class6768<Class8278> {
       int var24 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
       Mutable var25 = new Mutable();
       int var26 = -1;
-      Class7380 var27 = var14.method28934();
-      Class7380 var28 = var14.method28935();
+      BlockState var27 = var14.method28934();
+      BlockState var28 = var14.method28935();
 
       for (int var29 = 127; var29 >= 0; var29--) {
          var25.method8372(var18, var29, var19);
-         Class7380 var30 = var2.method6738(var25);
-         if (!var30.method23393()) {
-            if (var30.method23448(var9.method23383())) {
+         BlockState var30 = var2.getBlockState(var25);
+         if (!var30.isAir()) {
+            if (var30.method23448(var9.getBlock())) {
                if (var26 != -1) {
                   if (var26 > 0) {
                      var26--;

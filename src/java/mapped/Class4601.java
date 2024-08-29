@@ -10,7 +10,7 @@ public class Class4601 extends Class4566 {
    private float field22101;
    private boolean field22102;
 
-   public Class4601(Class1656 var1, double var2, double var4, double var6, Class8975 var8, float var9) {
+   public Class4601(ClientWorld var1, double var2, double var4, double var6, Class8975 var8, float var9) {
       super(var1, var2, var4, var6);
       this.field22096 = var8;
       this.field22097 = var9;

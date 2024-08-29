@@ -52,14 +52,14 @@ public class Class2893 extends Class2892 {
       this.field17433.field31039 = false;
    }
 
-   public void method10997(Class1005 var1, float var2, float var3, float var4) {
+   public void method10997(ArmorStandEntity var1, float var2, float var3, float var4) {
       this.field17917.field31035 = 0.0F;
       this.field17917.field31036 = (float) (Math.PI / 180.0) * -MathHelper.method37827(var4, var1.field5033, var1.field5031);
       this.field17917.field31037 = 0.0F;
    }
 
    @Override
-   public void method10998(Class1005 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void method10998(ArmorStandEntity var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998(var1, var2, var3, var4, var5, var6);
       this.field17436.field31039 = var1.method4199();
       this.field17435.field31039 = var1.method4199();

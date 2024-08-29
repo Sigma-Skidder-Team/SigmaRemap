@@ -4,12 +4,12 @@ import java.util.function.Predicate;
 
 public class Class7038 {
    private static String[] field30367;
-   private static final Class7833<Class7380> field30368 = new Class7836<Class7380>(Block.field18610, Blocks.AIR.method11579());
+   private static final Class7833<BlockState> field30368 = new Class7836<BlockState>(Block.field18610, Blocks.AIR.method11579());
    private final int field30369;
    private short field30370;
    private short field30371;
    private short field30372;
-   private final Class8556<Class7380> field30373;
+   private final Class8556<BlockState> field30373;
    public static final ThreadLocal<Class8870> field30374 = new ThreadLocal<Class8870>();
 
    public Class7038(int var1) {
@@ -21,12 +21,12 @@ public class Class7038 {
       this.field30370 = var2;
       this.field30371 = var3;
       this.field30372 = var4;
-      this.field30373 = new Class8556<Class7380>(
+      this.field30373 = new Class8556<BlockState>(
          field30368, Block.field18610, Class8354::method29285, Class8354::method29287, Blocks.AIR.method11579()
       );
    }
 
-   public Class7380 method21852(int var1, int var2, int var3) {
+   public BlockState method21852(int var1, int var2, int var3) {
       return this.field30373.method30498(var1, var2, var3);
    }
 
@@ -42,12 +42,12 @@ public class Class7038 {
       this.field30373.method30491();
    }
 
-   public Class7380 method21856(int var1, int var2, int var3, Class7380 var4) {
+   public BlockState method21856(int var1, int var2, int var3, BlockState var4) {
       return this.method21857(var1, var2, var3, var4, true);
    }
 
-   public Class7380 method21857(int var1, int var2, int var3, Class7380 var4, boolean var5) {
-      Class7380 var8;
+   public BlockState method21857(int var1, int var2, int var3, BlockState var4, boolean var5) {
+      BlockState var8;
       if (!var5) {
          var8 = this.field30373.method30495(var1, var2, var3, var4);
       } else {
@@ -56,7 +56,7 @@ public class Class7038 {
 
       Class7379 var9 = var8.method23449();
       Class7379 var10 = var4.method23449();
-      if (!var8.method23393()) {
+      if (!var8.isAir()) {
          this.field30370--;
          if (var8.method23450()) {
             this.field30371--;
@@ -67,7 +67,7 @@ public class Class7038 {
          this.field30372--;
       }
 
-      if (!var4.method23393()) {
+      if (!var4.isAir()) {
          this.field30370++;
          if (var4.method23450()) {
             this.field30371++;
@@ -129,7 +129,7 @@ public class Class7038 {
       this.field30372 = 0;
       this.field30373.method30506((var1, var2) -> {
          Class7379 var5x = var1.method23449();
-         if (!var1.method23393()) {
+         if (!var1.isAir()) {
             this.field30370 = (short)(this.field30370 + var2);
             if (var1.method23450()) {
                this.field30371 = (short)(this.field30371 + var2);
@@ -145,7 +145,7 @@ public class Class7038 {
       });
    }
 
-   public Class8556<Class7380> method21865() {
+   public Class8556<BlockState> method21865() {
       return this.field30373;
    }
 
@@ -163,7 +163,7 @@ public class Class7038 {
       return 2 + this.field30373.method30504();
    }
 
-   public boolean method21869(Predicate<Class7380> var1) {
+   public boolean method21869(Predicate<BlockState> var1) {
       return this.field30373.method30505(var1);
    }
 

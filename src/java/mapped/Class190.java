@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public enum Class190 implements Class191 {
+public enum Class190 implements IResourceManager {
    field721;
 
    private static final Class190[] field722 = new Class190[]{field721};
@@ -42,7 +42,7 @@ public enum Class190 implements Class191 {
    }
 
    @Override
-   public Stream<Class303> method584() {
-      return Stream.<Class303>of();
+   public Stream<IResourcePack> method584() {
+      return Stream.<IResourcePack>of();
    }
 }

@@ -5,13 +5,13 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6199 implements Class6196 {
    private static final ITextComponent field27665 = new TranslationTextComponent("tutorial.punch_tree.title");
-   private static final ITextComponent field27666 = new TranslationTextComponent("tutorial.punch_tree.description", Class9557.method37037("attack"));
-   private final Class9557 field27667;
-   private Class7600 field27668;
+   private static final ITextComponent field27666 = new TranslationTextComponent("tutorial.punch_tree.description", Tutorial.createKeybindComponent("attack"));
+   private final Tutorial field27667;
+   private TutorialToast field27668;
    private int field27669;
    private int field27670;
 
-   public Class6199(Class9557 var1) {
+   public Class6199(Tutorial var1) {
       this.field27667 = var1;
    }
 
@@ -22,7 +22,7 @@ public class Class6199 implements Class6196 {
          if (this.field27669 == 1) {
             ClientPlayerEntity var3 = this.field27667.method37035().player;
             if (var3 != null) {
-               if (var3.field4902.method4059(Class5985.field26085)) {
+               if (var3.inventory.method4059(Class5985.field26085)) {
                   this.field27667.method37034(Class2200.field14380);
                   return;
                }
@@ -35,8 +35,8 @@ public class Class6199 implements Class6196 {
          }
 
          if ((this.field27669 >= 600 || this.field27670 > 3) && this.field27668 == null) {
-            this.field27668 = new Class7600(Class2130.field13897, field27665, field27666, true);
-            this.field27667.method37035().method1566().method5914(this.field27668);
+            this.field27668 = new TutorialToast(TutorialToast.Icons.field13897, field27665, field27666, true);
+            this.field27667.method37035().getToastGui().method5914(this.field27668);
          }
       } else {
          this.field27667.method37034(Class2200.field14381);
@@ -52,7 +52,7 @@ public class Class6199 implements Class6196 {
    }
 
    @Override
-   public void method19103(Class1656 var1, BlockPos var2, Class7380 var3, float var4) {
+   public void method19103(ClientWorld var1, BlockPos var2, BlockState var3, float var4) {
       boolean var7 = var3.method23446(Class7645.field32751);
       if (var7 && var4 > 0.0F) {
          if (this.field27668 != null) {
@@ -73,7 +73,7 @@ public class Class6199 implements Class6196 {
 
    @Override
    public void method19104(ItemStack var1) {
-      if (Class5985.field26085.method24917(var1.method32107())) {
+      if (Class5985.field26085.method24917(var1.getItem())) {
          this.field27667.method37034(Class2200.field14380);
       }
    }

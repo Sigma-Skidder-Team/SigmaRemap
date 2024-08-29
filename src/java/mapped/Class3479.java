@@ -11,18 +11,18 @@ public class Class3479 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19332;
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var4.nextInt(25) == 0) {
          int var7 = 5;
          byte var8 = 4;
 
          for (BlockPos var10 : BlockPos.method8359(var3.method8336(-4, -1, -4), var3.method8336(4, 1, 4))) {
-            if (var2.method6738(var10).method23448(this)) {
+            if (var2.getBlockState(var10).method23448(this)) {
                if (--var7 <= 0) {
                   return;
                }
@@ -46,18 +46,18 @@ public class Class3479 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
       return var1.method23409(var2, var3);
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockPos var6 = var3.method8313();
-      Class7380 var7 = var2.method6738(var6);
+      BlockState var7 = var2.getBlockState(var6);
       return var7.method23446(Class7645.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
    }
 
-   public boolean method12174(ServerWorld var1, BlockPos var2, Class7380 var3, Random var4) {
+   public boolean method12174(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {
       var1.method6728(var2, false);
       Class7909 var7;
       if (this != Blocks.BROWN_MUSHROOM) {
@@ -80,17 +80,17 @@ public class Class3479 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
       return true;
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return (double)var2.nextFloat() < 0.4;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       this.method12174(var1, var3, var4, var2);
    }
 }

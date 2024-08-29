@@ -5,15 +5,15 @@ import java.util.Locale;
 import java.util.Map;
 
 public class Class9115 {
-   private static final Map<Class8992, Integer> field41879 = new HashMap<Class8992, Integer>();
+   private static final Map<EntityType, Integer> field41879 = new HashMap<EntityType, Integer>();
    private static final Map<String, Integer> field41880 = new HashMap<String, Integer>();
    private static final Map<String, Integer> field41881 = new HashMap<String, Integer>();
 
    public static int method33998(Entity var0) {
-      return var0 != null ? method33999(var0.method3204()) : -1;
+      return var0 != null ? method33999(var0.getType()) : -1;
    }
 
-   public static int method33999(Class8992 var0) {
+   public static int method33999(EntityType var0) {
       Integer var3 = field41879.get(var0);
       return var3 != null ? var3 : -1;
    }
@@ -30,9 +30,9 @@ public class Class9115 {
    }
 
    static {
-      for (Class8992 var7 : Registry.field16074) {
-         int var8 = Registry.field16074.method9171(var7);
-         ResourceLocation var9 = Registry.field16074.method9181(var7);
+      for (EntityType var7 : Registry.ENTITY_TYPE) {
+         int var8 = Registry.ENTITY_TYPE.method9171(var7);
+         ResourceLocation var9 = Registry.ENTITY_TYPE.getKey(var7);
          String var10 = var9.toString();
          String var11 = var9.method8292();
          if (field41879.containsKey(var7)) {

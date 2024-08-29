@@ -38,13 +38,13 @@ public abstract class Class4844 implements Class4843<Class920> {
    }
 
    @Override
-   public ItemStack method14966() {
+   public ItemStack getRecipeOutput() {
       return this.field22619;
    }
 
    @Override
-   public Class25<Class120> method14969() {
-      Class25 var3 = Class25.method67();
+   public NonNullList<Class120> method14969() {
+      NonNullList var3 = NonNullList.create();
       var3.add(this.field22618);
       return var3;
    }

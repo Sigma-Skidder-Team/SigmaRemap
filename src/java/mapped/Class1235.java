@@ -17,13 +17,13 @@ public class Class1235 extends Class1234 {
    public void method5813() {
       Object var3 = (float)this.field6584 != (float)this.method5729(false)
          ? new StringTextComponent((int)(this.field6584 * 100.0) + "%")
-         : Class7127.field30657;
+         : DialogTexts.field30657;
       this.method5743(new TranslationTextComponent("soundCategory." + this.field6583.method8995()).appendString(": ").append((ITextComponent)var3));
    }
 
    @Override
    public void method5812() {
       this.field6582.method37148(this.field6583, (float)this.field6584);
-      this.field6582.method37146();
+      this.field6582.saveOptions();
    }
 }

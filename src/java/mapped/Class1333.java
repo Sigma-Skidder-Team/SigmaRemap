@@ -24,13 +24,13 @@ public class Class1333 extends ChatScreen {
             if (!var1.equals("/reloadChunks")) {
                return false;
             } else {
-               this.field4562.worldRenderer.method868();
+               this.field4562.worldRenderer.loadRenderers();
                return true;
             }
          } else {
             if (Class7944.method26921()) {
-               Class8981.method33033();
-               Class8981.method32953();
+               Shaders.method33033();
+               Shaders.method32953();
             }
 
             return true;

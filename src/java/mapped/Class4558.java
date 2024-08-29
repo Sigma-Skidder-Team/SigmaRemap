@@ -14,16 +14,16 @@ public class Class4558 implements Iterator<BlockPos> {
    private static final int field21993 = 2;
 
    public Class4558(BlockPos var1, BlockPos var2, int var3, int var4) {
-      boolean var7 = var1.method8304() > var2.method8304();
+      boolean var7 = var1.getX() > var2.getX();
       boolean var8 = var1.getY() > var2.getY();
-      boolean var9 = var1.method8306() > var2.method8306();
+      boolean var9 = var1.getZ() > var2.getZ();
       var1 = this.method14498(var1, var7, var8, var9);
       var2 = this.method14498(var2, var7, var8, var9);
       this.field21988 = !var7 ? 1 : -1;
       this.field21989 = !var8 ? 1 : -1;
       this.field21990 = !var9 ? 1 : -1;
       Vector3d var10 = new Vector3d(
-         (double)(var2.method8304() - var1.method8304()), (double)(var2.getY() - var1.getY()), (double)(var2.method8306() - var1.method8306())
+         (double)(var2.getX() - var1.getX()), (double)(var2.getY() - var1.getY()), (double)(var2.getZ() - var1.getZ())
       );
       Vector3d var11 = var10.method11333();
       Vector3d var12 = new Vector3d(1.0, 0.0, 0.0);
@@ -37,42 +37,42 @@ public class Class4558 implements Iterator<BlockPos> {
       double var25 = Math.abs(var23);
       if (var25 >= var20 && var25 >= var15) {
          this.field21987 = 2;
-         BlockPos var37 = new BlockPos(var1.method8306(), var1.getY() - var3, var1.method8304() - var4);
-         BlockPos var39 = new BlockPos(var2.method8306(), var1.getY() + var3 + 1, var1.method8304() + var4 + 1);
-         int var41 = var2.method8306() - var1.method8306();
+         BlockPos var37 = new BlockPos(var1.getZ(), var1.getY() - var3, var1.getX() - var4);
+         BlockPos var39 = new BlockPos(var2.getZ(), var1.getY() + var3 + 1, var1.getX() + var4 + 1);
+         int var41 = var2.getZ() - var1.getZ();
          double var43 = (double)(var2.getY() - var1.getY()) / (1.0 * (double)var41);
-         double var45 = (double)(var2.method8304() - var1.method8304()) / (1.0 * (double)var41);
+         double var45 = (double)(var2.getX() - var1.getX()) / (1.0 * (double)var41);
          this.field21985 = new Class4545(var37, var39, var43, var45);
       } else if (var20 >= var15 && var20 >= var25) {
          this.field21987 = 1;
-         BlockPos var36 = new BlockPos(var1.getY(), var1.method8304() - var3, var1.method8306() - var4);
-         BlockPos var38 = new BlockPos(var2.getY(), var1.method8304() + var3 + 1, var1.method8306() + var4 + 1);
+         BlockPos var36 = new BlockPos(var1.getY(), var1.getX() - var3, var1.getZ() - var4);
+         BlockPos var38 = new BlockPos(var2.getY(), var1.getX() + var3 + 1, var1.getZ() + var4 + 1);
          int var40 = var2.getY() - var1.getY();
-         double var42 = (double)(var2.method8304() - var1.method8304()) / (1.0 * (double)var40);
-         double var44 = (double)(var2.method8306() - var1.method8306()) / (1.0 * (double)var40);
+         double var42 = (double)(var2.getX() - var1.getX()) / (1.0 * (double)var40);
+         double var44 = (double)(var2.getZ() - var1.getZ()) / (1.0 * (double)var40);
          this.field21985 = new Class4545(var36, var38, var42, var44);
       } else {
          this.field21987 = 0;
-         BlockPos var27 = new BlockPos(var1.method8304(), var1.getY() - var3, var1.method8306() - var4);
-         BlockPos var28 = new BlockPos(var2.method8304(), var1.getY() + var3 + 1, var1.method8306() + var4 + 1);
-         int var29 = var2.method8304() - var1.method8304();
+         BlockPos var27 = new BlockPos(var1.getX(), var1.getY() - var3, var1.getZ() - var4);
+         BlockPos var28 = new BlockPos(var2.getX(), var1.getY() + var3 + 1, var1.getZ() + var4 + 1);
+         int var29 = var2.getX() - var1.getX();
          double var30 = (double)(var2.getY() - var1.getY()) / (1.0 * (double)var29);
-         double var32 = (double)(var2.method8306() - var1.method8306()) / (1.0 * (double)var29);
+         double var32 = (double)(var2.getZ() - var1.getZ()) / (1.0 * (double)var29);
          this.field21985 = new Class4545(var27, var28, var30, var32);
       }
    }
 
    private BlockPos method14498(BlockPos var1, boolean var2, boolean var3, boolean var4) {
       if (var2) {
-         var1 = new BlockPos(-var1.method8304(), var1.getY(), var1.method8306());
+         var1 = new BlockPos(-var1.getX(), var1.getY(), var1.getZ());
       }
 
       if (var3) {
-         var1 = new BlockPos(var1.method8304(), -var1.getY(), var1.method8306());
+         var1 = new BlockPos(var1.getX(), -var1.getY(), var1.getZ());
       }
 
       if (var4) {
-         var1 = new BlockPos(var1.method8304(), var1.getY(), -var1.method8306());
+         var1 = new BlockPos(var1.getX(), var1.getY(), -var1.getZ());
       }
 
       return var1;
@@ -87,16 +87,16 @@ public class Class4558 implements Iterator<BlockPos> {
       BlockPos var3 = this.field21985.next();
       switch (this.field21987) {
          case 0:
-            this.field21986.method8384(var3.method8304() * this.field21988, var3.getY() * this.field21989, var3.method8306() * this.field21990);
+            this.field21986.method8384(var3.getX() * this.field21988, var3.getY() * this.field21989, var3.getZ() * this.field21990);
             return this.field21986;
          case 1:
-            this.field21986.method8384(var3.getY() * this.field21988, var3.method8304() * this.field21989, var3.method8306() * this.field21990);
+            this.field21986.method8384(var3.getY() * this.field21988, var3.getX() * this.field21989, var3.getZ() * this.field21990);
             return this.field21986;
          case 2:
-            this.field21986.method8384(var3.method8306() * this.field21988, var3.getY() * this.field21989, var3.method8304() * this.field21990);
+            this.field21986.method8384(var3.getZ() * this.field21988, var3.getY() * this.field21989, var3.getX() * this.field21990);
             return this.field21986;
          default:
-            this.field21986.method8384(var3.method8304() * this.field21988, var3.getY() * this.field21989, var3.method8306() * this.field21990);
+            this.field21986.method8384(var3.getX() * this.field21988, var3.getY() * this.field21989, var3.getZ() * this.field21990);
             return this.field21986;
       }
    }

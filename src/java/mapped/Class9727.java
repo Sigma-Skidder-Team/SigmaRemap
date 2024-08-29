@@ -28,7 +28,7 @@ public class Class9727 {
       return this.field45429;
    }
 
-   public boolean method38105(Class7380 var1) {
+   public boolean method38105(BlockState var1) {
       return var1.method23490() == this.field45428 ? Class7542.method24660(var1.method23491(), this.field45429) : false;
    }
 

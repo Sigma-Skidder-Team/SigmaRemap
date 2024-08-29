@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Class194 implements AutoCloseable {
    private static final ResourceLocation field730 = new ResourceLocation("textures/map/map_icons.png");
-   private static final Class4520 field731 = Class4520.method14339(field730);
+   private static final RenderType field731 = RenderType.method14339(field730);
    private final TextureManager field732;
    private final Map<String, Class1695> field733 = Maps.newHashMap();
 
@@ -62,7 +62,7 @@ public class Class194 implements AutoCloseable {
    }
 
    // $VF: synthetic method
-   public static Class4520 method599() {
+   public static RenderType method599() {
       return field731;
    }
 }

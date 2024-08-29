@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -13,12 +13,12 @@ public class Class5245 extends Module {
 
     public Class5245() {
         super(ModuleCategory.COMBAT, "Gomme", "AntiKB for GommeHD");
-        this.method15972(new Class6009<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
     }
 
     @EventTarget
-    private void method16350(Class4418 var1) {
+    private void method16350(WorldLoadEvent var1) {
         this.field23610 = 0;
     }
 

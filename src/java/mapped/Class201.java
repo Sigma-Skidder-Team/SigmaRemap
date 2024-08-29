@@ -30,9 +30,9 @@ public final class Class201 extends Class200<Class7585, Class209> {
                Direction var11 = Direction.method548(var8, var9, var10);
                if (var11 != null) {
                   MutableInt var12 = new MutableInt();
-                  Class7380 var13 = this.method647(var3, var12);
+                  BlockState var13 = this.method647(var3, var12);
                   if (var12.getValue() < 15) {
-                     Class7380 var14 = this.method647(var1, (MutableInt)null);
+                     BlockState var14 = this.method647(var1, (MutableInt)null);
                      Class6408 var15 = this.method648(var14, var1, var11);
                      Class6408 var16 = this.method648(var13, var3, var11.method536());
                      return !Class8022.method27444(var15, var16) ? var5 + Math.max(1, var12.getValue()) : 15;

@@ -41,7 +41,7 @@ public class Class5322 extends Module {
                     Class5605 var9 = new Class5605(
                             mc.player.getPosX(), mc.player.getPosY() + var7, mc.player.getPosZ(), true
                     );
-                    mc.getClientPlayNetHandler().sendPacket(var9);
+                    mc.getConnection().sendPacket(var9);
                 }
 
                 mc.player.field6120 = 0.0;
@@ -53,7 +53,7 @@ public class Class5322 extends Module {
                     for (int var10 = 0; var10 < this.field23869.size(); var10++) {
                         Class8897 var11 = this.field23869.get(var10);
                         if (var11.method32423()) {
-                            mc.getClientPlayNetHandler().sendPacket(var11.method32424());
+                            mc.getConnection().sendPacket(var11.method32424());
                             this.field23869.remove(var10);
                         }
                     }

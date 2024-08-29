@@ -18,12 +18,12 @@ public class Class5162 extends Module {
 
     public Class5162() {
         super(ModuleCategory.ITEM, "AutoSoup", "Automatically eats soup when low life");
-        this.method15972(new Class6009<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
-        this.method15972(new Class6009<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
-        this.method15972(new Class6009<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));
-        this.method15972(new Class6005("Refill mode", "Refill mode", 0, "Basic", "FakeInv", "OpenInv"));
-        this.method15972(new Class6005("Soup mode", "Soup Mode", 0, "Instant", "Legit"));
-        this.method15972(new Class6005("Bowls", "Bowls managing", 0, "Drop", "Stack"));
+        this.registerSetting(new Class6009<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));
+        this.registerSetting(new ModeSetting("Refill mode", "Refill mode", 0, "Basic", "FakeInv", "OpenInv"));
+        this.registerSetting(new ModeSetting("Soup mode", "Soup Mode", 0, "Instant", "Legit"));
+        this.registerSetting(new ModeSetting("Bowls", "Bowls managing", 0, "Drop", "Stack"));
     }
 
     @Override
@@ -42,20 +42,20 @@ public class Class5162 extends Module {
             this.field23431++;
             String var4 = this.getStringSettingValueByName("Refill mode");
             if (!this.field23432) {
-                if (this.method16063(Class8514.field37837) == 0) {
-                    if (var4.equals("OpenInv") && !(mc.currentScreen instanceof Class859)) {
+                if (this.method16063(Items.field37837) == 0) {
+                    if (var4.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
                         return;
                     }
 
-                    if (this.method16064(Class8514.field37837) > 0 && this.field23428 > 3) {
+                    if (this.method16064(Items.field37837) > 0 && this.field23428 > 3) {
                         this.method16059();
                     }
 
                     return;
                 }
-            } else if (var4.equals("OpenInv") && !(mc.currentScreen instanceof Class859)) {
+            } else if (var4.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
                 this.field23432 = false;
-            } else if (this.method16063(Class8514.field37222) != 0) {
+            } else if (this.method16063(Items.field37222) != 0) {
                 this.method16060();
             } else {
                 this.field23432 = false;
@@ -81,14 +81,14 @@ public class Class5162 extends Module {
     private void method16059() {
         this.field23432 = true;
         if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
-                && !(mc.currentScreen instanceof Class859)
+                && !(mc.currentScreen instanceof InventoryScreen)
                 && Class8005.method27349() <= Class5989.field26136.method18582()) {
-            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
             this.field23433 = true;
         }
 
         if (this.getStringSettingValueByName("Bowls").equals("Stack")) {
-            int var3 = this.method16063(Class8514.field37836);
+            int var3 = this.method16063(Items.field37836);
             if (var3 > 0) {
                 int var4 = this.method16062(var3);
                 if (var4 > 0) {
@@ -108,7 +108,7 @@ public class Class5162 extends Module {
         if (this.field23431 >= var3 && Client.getInstance().method19939().method31333() >= var3) {
             while (this.field23429 < 36) {
                 boolean var4 = false;
-                if (Class7789.method25866(this.field23429).method32107() == Class8514.field37837
+                if (Class7789.method25866(this.field23429).getItem() == Items.field37837
                         && Math.random() * 100.0 > (double) this.method15977("Refill accuracy")) {
                     Class7789.method25870(mc.player.field4904.field25471, this.field23429, 0, Class2259.field14695, mc.player, true);
                     this.field23431 = 0;
@@ -116,7 +116,7 @@ public class Class5162 extends Module {
                 }
 
                 this.field23429++;
-                if (this.method16063(Class8514.field37222) != 0) {
+                if (this.method16063(Items.field37222) != 0) {
                     if (!var4 || var3 <= 0) {
                         continue;
                     }
@@ -138,7 +138,7 @@ public class Class5162 extends Module {
         int var3 = -1;
 
         for (int var4 = 36; var4 < 45; var4++) {
-            if (mc.player.field4904.method18131(var4).method18265().method32107() == Class8514.field37837
+            if (mc.player.field4904.method18131(var4).method18265().getItem() == Items.field37837
                     && Client.getInstance().method19940().method33238(var4) > 100L) {
                 var3 = var4 - 36;
                 break;
@@ -149,11 +149,11 @@ public class Class5162 extends Module {
         if (!this.getStringSettingValueByName("Soup mode").equals("Instant")) {
             if (this.field23430 >= 0) {
                 if (var5) {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13488, BlockPos.field13032, Direction.field672));
+                    mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13488, BlockPos.ZERO, Direction.DOWN));
                 }
 
-                mc.player.field4902.field5443 = this.field23430;
-                mc.field1337.method23138();
+                mc.player.inventory.currentItem = this.field23430;
+                mc.playerController.method23138();
                 this.field23428 = 0;
                 this.field23430 = -1;
             } else {
@@ -161,56 +161,56 @@ public class Class5162 extends Module {
                     return;
                 }
 
-                this.field23430 = mc.player.field4902.field5443;
-                mc.player.field4902.field5443 = var3;
-                mc.field1337.method23138();
-                mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
-                mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                this.field23430 = mc.player.inventory.currentItem;
+                mc.player.inventory.currentItem = var3;
+                mc.playerController.method23138();
+                mc.getConnection().sendPacket(new Class5555(Hand.field183));
+                mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
             }
         } else {
             if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.method15977("Health")) {
                 return;
             }
 
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(var3));
-            mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
-            mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+            mc.getConnection().sendPacket(new Class5539(var3));
+            mc.getConnection().sendPacket(new Class5555(Hand.field183));
+            mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
             if (var5) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13488, BlockPos.field13032, Direction.field672));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13488, BlockPos.ZERO, Direction.DOWN));
             }
 
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+            mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
             this.field23428 = 0;
         }
     }
 
     private int method16062(int var1) {
         ItemStack var4 = Class7789.method25866(13);
-        if (var4.method32107() == Class8514.field37836 && var4.method32179() <= 64 - var1) {
+        if (var4.getItem() == Items.field37836 && var4.getCount() <= 64 - var1) {
             return 13;
         } else {
             for (int var5 = 9; var5 < 36; var5++) {
                 var4 = Class7789.method25866(var5);
-                if (var4.method32107() == Class8514.field37836 && var4.method32179() <= 64 - var1) {
+                if (var4.getItem() == Items.field37836 && var4.getCount() <= 64 - var1) {
                     return var5;
                 }
             }
 
             var4 = Class7789.method25866(13);
-            if (var4.method32107() == Class8514.field37836 && var4.method32179() < 64) {
+            if (var4.getItem() == Items.field37836 && var4.getCount() < 64) {
                 return 13;
             } else {
                 for (int var12 = 9; var12 < 36; var12++) {
                     var4 = Class7789.method25866(var12);
-                    if (var4.method32107() == Class8514.field37836 && var4.method32179() < 64) {
+                    if (var4.getItem() == Items.field37836 && var4.getCount() < 64) {
                         return var12;
                     }
                 }
 
                 var4 = Class7789.method25866(13);
-                if (var4.method32107() == Class8514.field37222) {
+                if (var4.getItem() == Items.field37222) {
                     for (int var13 = 36; var13 < 45; var13++) {
-                        if (mc.player.field4904.method18131(var13).method18265().method32107() == Class8514.field37836) {
+                        if (mc.player.field4904.method18131(var13).method18265().getItem() == Items.field37836) {
                             Class7789.method25873(13, var13 - 36);
                             return 13;
                         }
@@ -219,9 +219,9 @@ public class Class5162 extends Module {
 
                 for (int var14 = 9; var14 < 36; var14++) {
                     var4 = Class7789.method25866(var14);
-                    if (var4.method32107() == Class8514.field37222) {
+                    if (var4.getItem() == Items.field37222) {
                         for (int var6 = 36; var6 < 45; var6++) {
-                            if (mc.player.field4904.method18131(var6).method18265().method32107() == Class8514.field37836) {
+                            if (mc.player.field4904.method18131(var6).method18265().getItem() == Items.field37836) {
                                 Class7789.method25873(var14, var6 - 36);
                                 return -1;
                             }
@@ -230,7 +230,7 @@ public class Class5162 extends Module {
                 }
 
                 for (int var15 = 36; var15 < 45; var15++) {
-                    if (mc.player.field4904.method18131(var15).method18265().method32107() == Class8514.field37836) {
+                    if (mc.player.field4904.method18131(var15).method18265().getItem() == Items.field37836) {
                         Class7789.method25873(13, var15 - 36);
                         return -1;
                     }
@@ -241,11 +241,11 @@ public class Class5162 extends Module {
         }
     }
 
-    private int method16063(Class3257 var1) {
+    private int method16063(Item var1) {
         int var4 = 0;
 
         for (int var5 = 36; var5 < 45; var5++) {
-            if (mc.player.field4904.method18131(var5).method18265().method32107() == var1) {
+            if (mc.player.field4904.method18131(var5).method18265().getItem() == var1) {
                 var4++;
             }
         }
@@ -253,11 +253,11 @@ public class Class5162 extends Module {
         return var4;
     }
 
-    private int method16064(Class3257 var1) {
+    private int method16064(Item var1) {
         int var4 = 0;
 
         for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.player.field4904.method18131(var5).method18265().method32107() == var1) {
+            if (mc.player.field4904.method18131(var5).method18265().getItem() == var1) {
                 var4++;
             }
         }

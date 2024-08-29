@@ -10,7 +10,7 @@ public class Mutable extends BlockPos {
    }
 
    public Mutable(double var1, double var3, double var5) {
-      this(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
+      this(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
    @Override
@@ -46,11 +46,11 @@ public class Mutable extends BlockPos {
    }
 
    public Mutable method8373(double var1, double var3, double var5) {
-      return this.method8372(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
+      return this.method8372(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
    public Mutable method8374(Class1998 var1) {
-      return this.method8372(var1.method8304(), var1.getY(), var1.method8306());
+      return this.method8372(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public Mutable method8375(long var1) {
@@ -66,11 +66,11 @@ public class Mutable extends BlockPos {
    }
 
    public Mutable method8377(Class1998 var1, Direction var2) {
-      return this.method8372(var1.method8304() + var2.method539(), var1.getY() + var2.method540(), var1.method8306() + var2.method541());
+      return this.method8372(var1.getX() + var2.method539(), var1.getY() + var2.method540(), var1.getZ() + var2.method541());
    }
 
    public Mutable method8378(Class1998 var1, int var2, int var3, int var4) {
-      return this.method8372(var1.method8304() + var2, var1.getY() + var3, var1.method8306() + var4);
+      return this.method8372(var1.getX() + var2, var1.getY() + var3, var1.getZ() + var4);
    }
 
    public Mutable method8379(Direction var1) {
@@ -79,26 +79,26 @@ public class Mutable extends BlockPos {
 
    public Mutable method8380(Direction var1, int var2) {
       return this.method8372(
-         this.method8304() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.method8306() + var1.method541() * var2
+         this.getX() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.getZ() + var1.method541() * var2
       );
    }
 
    public Mutable method8381(int var1, int var2, int var3) {
-      return this.method8372(this.method8304() + var1, this.getY() + var2, this.method8306() + var3);
+      return this.method8372(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
    public Mutable method8382(Class1998 var1) {
-      return this.method8372(this.method8304() + var1.method8304(), this.getY() + var1.getY(), this.method8306() + var1.method8306());
+      return this.method8372(this.getX() + var1.getX(), this.getY() + var1.getY(), this.getZ() + var1.getZ());
    }
 
    public Mutable method8383(Class113 var1, int var2, int var3) {
       switch (Class4503.field21731[var1.ordinal()]) {
          case 1:
-            return this.method8372(MathHelper.method37775(this.method8304(), var2, var3), this.getY(), this.method8306());
+            return this.method8372(MathHelper.method37775(this.getX(), var2, var3), this.getY(), this.getZ());
          case 2:
-            return this.method8372(this.method8304(), MathHelper.method37775(this.getY(), var2, var3), this.method8306());
+            return this.method8372(this.getX(), MathHelper.method37775(this.getY(), var2, var3), this.getZ());
          case 3:
-            return this.method8372(this.method8304(), this.getY(), MathHelper.method37775(this.method8306(), var2, var3));
+            return this.method8372(this.getX(), this.getY(), MathHelper.method37775(this.getZ(), var2, var3));
          default:
             throw new IllegalStateException("Unable to clamp axis " + var1);
       }

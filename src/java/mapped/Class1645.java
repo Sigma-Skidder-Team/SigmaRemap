@@ -36,15 +36,15 @@ public class Class1645 extends MinecraftServer implements Class1646 {
    public Class1645(
       Thread var1,
       Class8905 var2,
-      Class1814 var3,
-      Class313 var4,
-      Class1701 var5,
-      Class6611 var6,
+      SaveFormat.LevelSave var3,
+      ResourcePackList var4,
+      DataPackRegistries var5,
+      IServerConfiguration var6,
       Class6816 var7,
       DataFixer var8,
       MinecraftSessionService var9,
       GameProfileRepository var10,
-      Class8805 var11,
+      PlayerProfileCache var11,
       Class8216 var12
    ) {
       super(var1, var2, var3, var6, var4, Proxy.NO_PROXY, var8, var5, var9, var10, var11, var12);
@@ -59,7 +59,7 @@ public class Class1645 extends MinecraftServer implements Class1646 {
       var3.setDaemon(true);
       var3.setUncaughtExceptionHandler(new Class6030(field1208));
       var3.start();
-      field1208.info("Starting minecraft server version " + SharedConstants.method34773().getName());
+      field1208.info("Starting minecraft server version " + SharedConstants.getVersion().getName());
       if (Runtime.getRuntime().maxMemory() / 1024L / 1024L < 512L) {
          field1208.warn("To start the server with more ram, launch it as \"java -Xmx1024M -Xms1024M -jar minecraft_server.jar\"");
       }
@@ -96,7 +96,7 @@ public class Class1645 extends MinecraftServer implements Class1646 {
       field1208.info("Starting Minecraft server on {}:{}", this.method1293().isEmpty() ? "*" : this.method1293(), this.method1330());
 
       try {
-         this.method1371().method33398(var5, this.method1330());
+         this.getNetworkSystem().method33398(var5, this.method1330());
       } catch (IOException var13) {
          field1208.warn("**** FAILED TO BIND TO PORT!");
          field1208.warn("The exception was: {}", var13.toString());
@@ -123,9 +123,9 @@ public class Class1645 extends MinecraftServer implements Class1646 {
          this.method1368(new Class6394(this, this.field1224, this.field1212));
          long var7 = Util.nanoTime();
          this.method1365(var4.field43800);
-         Class968.method4002(this.method1386());
-         Class968.method4003(this.method1384());
-         Class8805.method31788(this.method1350());
+         SkullTileEntity.setProfileCache(this.method1386());
+         SkullTileEntity.setSessionService(this.method1384());
+         PlayerProfileCache.setOnlineMode(this.method1350());
          field1208.info("Preparing level \"{}\"", this.method6511());
          this.method1279();
          long var9 = Util.nanoTime() - var7;
@@ -153,7 +153,7 @@ public class Class1645 extends MinecraftServer implements Class1646 {
             var12.start();
          }
 
-         Class8514.field37222.method11737(Class7401.field31670, Class25.<ItemStack>method67());
+         Items.field37222.fillItemGroup(ItemGroup.SEARCH, NonNullList.<ItemStack>create());
          if (var4.field43827) {
             Class9126.method34052(this);
          }
@@ -223,10 +223,10 @@ public class Class1645 extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public Class4526 method1326(Class4526 var1) {
+   public CrashReport method1326(CrashReport var1) {
       var1 = super.method1326(var1);
-      var1.method14409().method32806("Is Modded", () -> this.method1327().orElse("Unknown (can't tell)"));
-      var1.method14409().method32806("Type", () -> "Dedicated Server (map_server.txt)");
+      var1.getCategory().addDetail("Is Modded", () -> this.method1327().orElse("Unknown (can't tell)"));
+      var1.getCategory().addDetail("Type", () -> "Dedicated Server (map_server.txt)");
       return var1;
    }
 
@@ -267,10 +267,10 @@ public class Class1645 extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public void method1347(Class7998 var1) {
-      var1.method27298("whitelist_enabled", this.getPlayerList().method19476());
-      var1.method27298("whitelist_count", this.getPlayerList().method19469().length);
-      super.method1347(var1);
+   public void fillSnooper(Snooper var1) {
+      var1.addClientStat("whitelist_enabled", this.getPlayerList().method19476());
+      var1.addClientStat("whitelist_count", this.getPlayerList().method19469().length);
+      super.fillSnooper(var1);
    }
 
    public void method6499(String var1, Class6619 var2) {
@@ -304,7 +304,7 @@ public class Class1645 extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public boolean method1369() {
+   public boolean getPublic() {
       return true;
    }
 
@@ -351,13 +351,13 @@ public class Class1645 extends MinecraftServer implements Class1646 {
 
    @Override
    public boolean method1378(ServerWorld var1, BlockPos var2, PlayerEntity var3) {
-      if (var1.method6813() == World.field8999) {
+      if (var1.getDimensionKey() == World.field8999) {
          if (!this.getPlayerList().method19470().method14440()) {
             if (!this.getPlayerList().canSendCommands(var3.getGameProfile())) {
                if (this.method1377() > 0) {
                   BlockPos var6 = var1.method6947();
-                  int var7 = MathHelper.method37772(var2.method8304() - var6.method8304());
-                  int var8 = MathHelper.method37772(var2.method8306() - var6.method8306());
+                  int var7 = MathHelper.method37772(var2.getX() - var6.getX());
+                  int var8 = MathHelper.method37772(var2.getZ() - var6.getZ());
                   int var9 = Math.max(var7, var8);
                   return var9 <= this.method1377();
                } else {

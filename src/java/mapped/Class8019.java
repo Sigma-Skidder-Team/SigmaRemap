@@ -127,7 +127,7 @@ public class Class8019 {
                }
 
                var6 = this.field34448
-                  .update(Class2108.field13756.method8778(), var6, var6.get("DataVersion").asInt(0), SharedConstants.method34773().getWorldVersion());
+                  .update(Class2108.field13756.method8778(), var6, var6.get("DataVersion").asInt(0), SharedConstants.getVersion().getWorldVersion());
                var6 = var6.remove("DataVersion");
                Map<ResourceLocation, Class2006> var7 =field34446.getAdapter(field34447).fromJsonTree((JsonElement)var6.getValue());
                if (var7 == null) {
@@ -187,7 +187,7 @@ public class Class8019 {
       }
 
       JsonElement var38 = field34446.toJsonTree(var3);
-      var38.getAsJsonObject().addProperty("DataVersion", SharedConstants.method34773().getWorldVersion());
+      var38.getAsJsonObject().addProperty("DataVersion", SharedConstants.getVersion().getWorldVersion());
 
       try (
          FileOutputStream var39 = new FileOutputStream(this.field34450);
@@ -209,7 +209,7 @@ public class Class8019 {
          var5 = true;
          if (!var7 && var6.method8489()) {
             var1.method27028().method30722(this.field34455);
-            if (var1.method27027() != null && var1.method27027().method34942() && this.field34455.field5024.method6789().method17135(Class5462.field24245)) {
+            if (var1.method27027() != null && var1.method27027().method34942() && this.field34455.world.method6789().method17135(Class5462.field24245)) {
                this.field34449
                   .method19484(
                      new TranslationTextComponent(

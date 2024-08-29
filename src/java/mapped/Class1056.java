@@ -3,7 +3,7 @@ package mapped;
 import javax.annotation.Nullable;
 
 public abstract class Class1056 extends Class1046 {
-   public Class1056(Class8992<? extends Class1056> var1, World var2) {
+   public Class1056(EntityType<? extends Class1056> var1, World var2) {
       super(var1, var2);
    }
 

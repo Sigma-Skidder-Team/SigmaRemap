@@ -64,11 +64,11 @@ public class Class2806<T extends Entity> extends Class2803<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = ((float)(var1.method3205() * 3) + var4) * 0.13F;
       float var10 = 16.0F;
-      this.field17466.field31037 = MathHelper.method37764(var9) * 16.0F * (float) (Math.PI / 180.0);
-      this.field17467.field31037 = MathHelper.method37764(var9) * 16.0F * (float) (Math.PI / 180.0);
+      this.field17466.field31037 = MathHelper.cos(var9) * 16.0F * (float) (Math.PI / 180.0);
+      this.field17467.field31037 = MathHelper.cos(var9) * 16.0F * (float) (Math.PI / 180.0);
       this.field17468.field31037 = -this.field17466.field31037;
       this.field17469.field31037 = -this.field17467.field31037;
-      this.field17470.field31035 = -(5.0F + MathHelper.method37764(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
-      this.field17471.field31035 = -(5.0F + MathHelper.method37764(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
+      this.field17470.field31035 = -(5.0F + MathHelper.cos(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
+      this.field17471.field31035 = -(5.0F + MathHelper.cos(var9 * 2.0F) * 5.0F) * (float) (Math.PI / 180.0);
    }
 }

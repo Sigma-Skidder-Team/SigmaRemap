@@ -61,12 +61,12 @@ public class Class8564 {
       }
    }
 
-   public static Class1713 method30592(Class1713 var0) {
+   public static TextureAtlasSprite method30592(TextureAtlasSprite var0) {
       if (field38505) {
-         Class1713 var3 = var0.field9352;
+         TextureAtlasSprite var3 = var0.field9352;
          if (field38507) {
             if (var3 == null) {
-               var3 = var0.method7466().method1098(field38510);
+               var3 = var0.method7466().getSprite(field38510);
             }
 
             return var3;
@@ -158,7 +158,7 @@ public class Class8564 {
       }
    }
 
-   public static void method30600(Class289 var0, Set<ResourceLocation> var1) {
+   public static void method30600(AtlasTexture var0, Set<ResourceLocation> var1) {
       if (field38504) {
          for (ResourceLocation var5 : var1) {
             method30601(var0, var5);
@@ -166,14 +166,14 @@ public class Class8564 {
       }
    }
 
-   private static void method30601(Class289 var0, ResourceLocation var1) {
+   private static void method30601(AtlasTexture var0, ResourceLocation var1) {
       String var4 = method30589();
       if (var4 != null && !var1.method8292().endsWith(var4)) {
          ResourceLocation var5 = new ResourceLocation(var1.method8293(), var1.method8292() + var4);
          ResourceLocation var6 = var0.method1096(var5);
          if (Class7944.method26866(var6)) {
-            Class1713 var7 = var0.method1119(var1);
-            Class1713 var8 = var0.method1119(var5);
+            TextureAtlasSprite var7 = var0.method1119(var1);
+            TextureAtlasSprite var8 = var0.method1119(var5);
             var8.field9353 = true;
             var7.field9352 = var8;
             var0.method1119(field38510);
@@ -181,17 +181,17 @@ public class Class8564 {
       }
    }
 
-   public static void method30602(Class289 var0) {
-      for (Class1713 var4 : var0.method1120()) {
+   public static void method30602(AtlasTexture var0) {
+      for (TextureAtlasSprite var4 : var0.method1120()) {
          method30603(var4, var0);
       }
    }
 
-   private static void method30603(Class1713 var0, Class289 var1) {
+   private static void method30603(TextureAtlasSprite var0, AtlasTexture var1) {
       if (var0.field9352 != null) {
-         Class1713 var4 = var1.method1107(var0.method7465());
+         TextureAtlasSprite var4 = var1.method1107(var0.method7465());
          if (var4 != null) {
-            Class1713 var5 = var1.method1107(var0.field9352.method7465());
+            TextureAtlasSprite var5 = var1.method1107(var0.field9352.method7465());
             if (var5 != null) {
                var5.field9353 = true;
                var4.field9352 = var5;

@@ -6,12 +6,12 @@ public class Class5610 implements Packet<Class5116> {
    private static String[] field24901;
    private BlockPos field24902;
    private int field24903;
-   private Class39 field24904;
+   private CompoundNBT field24904;
 
    public Class5610() {
    }
 
-   public Class5610(BlockPos var1, int var2, Class39 var3) {
+   public Class5610(BlockPos var1, int var2, CompoundNBT var3) {
       this.field24902 = var1;
       this.field24903 = var2;
       this.field24904 = var3;
@@ -43,7 +43,7 @@ public class Class5610 implements Packet<Class5116> {
       return this.field24903;
    }
 
-   public Class39 method17638() {
+   public CompoundNBT method17638() {
       return this.field24904;
    }
 }

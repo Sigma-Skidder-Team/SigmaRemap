@@ -12,13 +12,13 @@ public abstract class Class939 extends Class932 {
    }
 
    public static void method3740(Class1665 var0, Random var1, BlockPos var2, ResourceLocation var3) {
-      Class944 var6 = var0.method6759(var2);
+      TileEntity var6 = var0.getTileEntity(var2);
       if (var6 instanceof Class939) {
          ((Class939)var6).method3744(var3, var1.nextLong());
       }
    }
 
-   public boolean method3741(Class39 var1) {
+   public boolean method3741(CompoundNBT var1) {
       if (!var1.method119("LootTable", 8)) {
          return false;
       } else {
@@ -28,7 +28,7 @@ public abstract class Class939 extends Class932 {
       }
    }
 
-   public boolean method3742(Class39 var1) {
+   public boolean method3742(CompoundNBT var1) {
       if (this.field5302 != null) {
          var1.method109("LootTable", this.field5302.toString());
          if (this.field5303 != 0L) {
@@ -68,7 +68,7 @@ public abstract class Class939 extends Class932 {
    @Override
    public boolean method3617() {
       this.method3743((PlayerEntity)null);
-      return this.method3724().stream().allMatch(ItemStack::method32105);
+      return this.method3724().stream().allMatch(ItemStack::isEmpty);
    }
 
    @Override
@@ -81,7 +81,7 @@ public abstract class Class939 extends Class932 {
    public ItemStack method3619(int var1, int var2) {
       this.method3743((PlayerEntity)null);
       ItemStack var5 = Class7920.method26563(this.method3724(), var1, var2);
-      if (!var5.method32105()) {
+      if (!var5.isEmpty()) {
          this.method3622();
       }
 
@@ -98,7 +98,7 @@ public abstract class Class939 extends Class932 {
    public void method3621(int var1, ItemStack var2) {
       this.method3743((PlayerEntity)null);
       this.method3724().set(var1, var2);
-      if (var2.method32179() > this.method3630()) {
+      if (var2.getCount() > this.method3630()) {
          var2.method32180(this.method3630());
       }
 
@@ -107,9 +107,9 @@ public abstract class Class939 extends Class932 {
 
    @Override
    public boolean method3623(PlayerEntity var1) {
-      return this.field5324.method6759(this.field5325) == this
+      return this.field5324.getTileEntity(this.field5325) == this
          ? !(
-            var1.method3276((double)this.field5325.method8304() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.method8306() + 0.5)
+            var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
                > 64.0
          )
          : false;
@@ -120,18 +120,18 @@ public abstract class Class939 extends Class932 {
       this.method3724().clear();
    }
 
-   public abstract Class25<ItemStack> method3724();
+   public abstract NonNullList<ItemStack> method3724();
 
-   public abstract void method3725(Class25<ItemStack> var1);
+   public abstract void method3725(NonNullList<ItemStack> var1);
 
    @Override
    public boolean method3696(PlayerEntity var1) {
-      return super.method3696(var1) && (this.field5302 == null || !var1.method2800());
+      return super.method3696(var1) && (this.field5302 == null || !var1.isSpectator());
    }
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, Class974 var2, PlayerEntity var3) {
+   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       if (!this.method3696(var3)) {
          return null;
       } else {

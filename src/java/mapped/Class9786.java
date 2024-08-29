@@ -12,13 +12,13 @@ public final class Class9786 {
       .registerTypeAdapter(Class7498.class, new Class2574(this))
       .registerTypeAdapter(Class9350.class, new Class2570())
       .create();
-   private Class9348<Block, Class7380> field45756;
+   private Class9348<Block, BlockState> field45756;
 
-   public Class9348<Block, Class7380> method38572() {
+   public Class9348<Block, BlockState> method38572() {
       return this.field45756;
    }
 
-   public void method38573(Class9348<Block, Class7380> var1) {
+   public void method38573(Class9348<Block, BlockState> var1) {
       this.field45756 = var1;
    }
 }

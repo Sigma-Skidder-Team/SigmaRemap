@@ -18,17 +18,17 @@ public class Class5219 extends Module {
 
     public Class5219() {
         super(ModuleCategory.MOVEMENT, "Mineplex", "Speed for Mineplex");
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you.", true));
-        this.method15972(new Class6004("OnGround", "OnGround Speed.", true));
-        this.method15972(new Class6009<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("OnGround", "OnGround Speed.", true));
+        this.registerSetting(new Class6009<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
     }
 
     @Override
     public void method15965() {
         Class9567.method37090(Class9567.method37075() * 0.7);
-        if (mc.player.field4902.field5443 != this.field23554) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
-            this.field23554 = mc.player.field4902.field5443;
+        if (mc.player.inventory.currentItem != this.field23554) {
+            mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+            this.field23554 = mc.player.inventory.currentItem;
         }
     }
 
@@ -91,10 +91,10 @@ public class Class5219 extends Module {
                 }
 
                 Vector3d var7 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-                BlockPos var8 = new BlockPos(mc.player.method3432()).method8336(0, -1, 0);
-                Class8711 var9 = new Class8711(var7, Direction.field673, var8, false);
-                Class5570 var10 = new Class5570(Hand.field182, var9);
-                mc.getClientPlayNetHandler().sendPacket(var10);
+                BlockPos var8 = new BlockPos(mc.player.getPosition()).method8336(0, -1, 0);
+                BlockRayTraceResult var9 = new BlockRayTraceResult(var7, Direction.field673, var8, false);
+                Class5570 var10 = new Class5570(Hand.MAIN_HAND, var9);
+                mc.getConnection().sendPacket(var10);
                 this.field23555 += var4 / 4.0;
                 if (mc.player.field5037) {
                     this.field23555 /= 2.0;
@@ -129,9 +129,9 @@ public class Class5219 extends Module {
 
             var1.method14003(0.0);
             var1.method14002(0.4199998);
-            if (mc.player.field4902.field5443 != this.field23554) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
-                this.field23554 = mc.player.field4902.field5443;
+            if (mc.player.inventory.currentItem != this.field23554) {
+                mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+                this.field23554 = mc.player.inventory.currentItem;
             }
         }
     }
@@ -156,15 +156,15 @@ public class Class5219 extends Module {
     }
 
     private int method16254() {
-        if (mc.player.method3090().method32105()) {
-            this.field23554 = mc.player.field4902.field5443;
+        if (mc.player.method3090().isEmpty()) {
+            this.field23554 = mc.player.inventory.currentItem;
             return this.field23554;
         } else {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.player.field4904.method18131(var3).method18265().method32105()) {
-                    if (mc.player.field4902.field5443 != var4 && this.field23554 != var4) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5539(var4));
+                if (mc.player.field4904.method18131(var3).method18265().isEmpty()) {
+                    if (mc.player.inventory.currentItem != var4 && this.field23554 != var4) {
+                        mc.getConnection().sendPacket(new Class5539(var4));
                         this.field23554 = var4;
                     }
 
@@ -173,10 +173,10 @@ public class Class5219 extends Module {
             }
 
             Class7789.method25870(mc.player.field4904.field25471, 42, 0, Class2259.field14695, mc.player, true);
-            if (mc.player.field4904.method18131(42).method18265().method32105()
-                    && mc.player.field4902.field5443 != 6
+            if (mc.player.field4904.method18131(42).method18265().isEmpty()
+                    && mc.player.inventory.currentItem != 6
                     && this.field23554 != 6) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5539(6));
+                mc.getConnection().sendPacket(new Class5539(6));
                 this.field23554 = 6;
                 return 6;
             } else {

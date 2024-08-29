@@ -16,7 +16,7 @@ public class Class7501 implements Class7502 {
    }
 
    private static List<String> method24458(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       return (List<String>)(var3 != null && Class3285.method11817(var3)
          ? Class870.method2696(var3)
          : ImmutableList.of(ITextComponent$Serializer.toJson(new TranslationTextComponent("book.invalid.tag").mergeStyle(TextFormatting.DARK_RED))));

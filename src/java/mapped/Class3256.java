@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3256 extends Class3257 implements Class3255 {
+public class Class3256 extends Item implements Class3255 {
    private static String[] field18731;
 
    public Class3256(Class5643 var1) {
@@ -14,7 +14,7 @@ public class Class3256 extends Class3257 implements Class3255 {
 
    @Override
    public boolean method11699(ItemStack var1, ItemStack var2) {
-      return var2.method32107() == Class8514.field38145;
+      return var2.getItem() == Items.field38145;
    }
 
    @Override
@@ -22,7 +22,7 @@ public class Class3256 extends Class3257 implements Class3255 {
       ItemStack var6 = var2.getHeldItem(var3);
       Class2106 var7 = Class1006.method4271(var6);
       ItemStack var8 = var2.method2943(var7);
-      if (!var8.method32105()) {
+      if (!var8.isEmpty()) {
          return Class6794.<ItemStack>method20699(var6);
       } else {
          var2.method2944(var7, var6.copy());

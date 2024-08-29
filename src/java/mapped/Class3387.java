@@ -15,7 +15,7 @@ public class Class3387 extends Class3386 implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       switch (Class9607.field44929[var1.<Class113>method23463(field18994).ordinal()]) {
          case 1:
          default:
@@ -29,14 +29,14 @@ public class Class3387 extends Class3386 implements Class3207 {
 
    @Nullable
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       Class7379 var4 = var1.method18360().method6739(var1.method18345());
       boolean var5 = var4.method23472() == Class9479.field44066;
       return super.method11495(var1).method23465(field18995, Boolean.valueOf(var5));
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method23463(field18995)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
@@ -45,17 +45,17 @@ public class Class3387 extends Class3386 implements Class3207 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18995).method24737(field18994);
    }
 
    @Override
-   public Class7379 method11498(Class7380 var1) {
+   public Class7379 method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18995) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

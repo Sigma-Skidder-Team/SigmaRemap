@@ -30,7 +30,7 @@ public abstract class Class7631 {
       return this.field32710;
    }
 
-   public abstract Class3257 method25050();
+   public abstract Item method25050();
 
    public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
    }
@@ -66,7 +66,7 @@ public abstract class Class7631 {
 
    public abstract float method25062(Class7379 var1);
 
-   public abstract Class7380 method25063(Class7379 var1);
+   public abstract BlockState method25063(Class7379 var1);
 
    public abstract boolean method25064(Class7379 var1);
 

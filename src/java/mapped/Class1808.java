@@ -38,7 +38,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    private final Class8144 field9758;
    private final Class8144 field9759;
 
-   public Class1808(Class191 var1, String var2) throws IOException {
+   public Class1808(IResourceManager var1, String var2) throws IOException {
       ResourceLocation var5 = new ResourceLocation("shaders/program/" + var2 + ".json");
       this.field9753 = var2;
       Class1783 var6 = null;
@@ -134,7 +134,7 @@ public class Class1808 implements Class1809, AutoCloseable {
       this.method7935();
    }
 
-   public static Class8144 method7931(Class191 var0, Class1853 var1, String var2) throws IOException {
+   public static Class8144 method7931(IResourceManager var0, Class1853 var1, String var2) throws IOException {
       Class8144 var5 = var1.method8097().get(var2);
       if (var5 == null) {
          ResourceLocation var6 = new ResourceLocation("shaders/program/" + var2 + var1.method8095());

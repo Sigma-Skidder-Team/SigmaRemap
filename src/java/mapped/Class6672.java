@@ -11,10 +11,10 @@ import java.util.concurrent.CompletionException;
 
 public class Class6672 {
    private static String[] field29256;
-   private final Class191 field29257;
+   private final IResourceManager field29257;
    private final Map<ResourceLocation, CompletableFuture<Class9216>> field29258 = Maps.newHashMap();
 
-   public Class6672(Class191 var1) {
+   public Class6672(IResourceManager var1) {
       this.field29257 = var1;
    }
 
@@ -30,7 +30,7 @@ public class Class6672 {
             } catch (IOException var64) {
                throw new CompletionException(var64);
             }
-         }, Util.method38492()));
+         }, Util.getServerExecutor()));
    }
 
    public CompletableFuture<Class1798> method20334(ResourceLocation var1, boolean var2) {
@@ -42,7 +42,7 @@ public class Class6672 {
          } catch (IOException var7) {
             throw new CompletionException(var7);
          }
-      }, Util.method38492());
+      }, Util.getServerExecutor());
    }
 
    public void method20335() {

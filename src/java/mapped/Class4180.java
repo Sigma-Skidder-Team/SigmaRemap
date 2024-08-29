@@ -17,7 +17,7 @@ public abstract class Class4180 extends Class4178 {
       super(var1, var2);
    }
 
-   public Class4180(Class7792 var1, Class39 var2) {
+   public Class4180(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field20455 = new BlockPos(var2.method122("TPX"), var2.method122("TPY"), var2.method122("TPZ"));
    }
@@ -31,10 +31,10 @@ public abstract class Class4180 extends Class4178 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
-      var1.method102("TPX", this.field20455.method8304());
+   public void method12897(CompoundNBT var1) {
+      var1.method102("TPX", this.field20455.getX());
       var1.method102("TPY", this.field20455.getY());
-      var1.method102("TPZ", this.field20455.method8306());
+      var1.method102("TPZ", this.field20455.getZ());
    }
 
    @Override
@@ -55,11 +55,11 @@ public abstract class Class4180 extends Class4178 {
             if (var18.field35532 != null) {
                String var19 = var18.field35532.method126("final_state");
                Class8268 var13 = new Class8268(new StringReader(var19), false);
-               Class7380 var14 = Blocks.AIR.method11579();
+               BlockState var14 = Blocks.AIR.method11579();
 
                try {
                   var13.method28840(true);
-                  Class7380 var15 = var13.method28837();
+                  BlockState var15 = var13.method28837();
                   if (var15 != null) {
                      var14 = var15;
                   } else {

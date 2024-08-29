@@ -25,13 +25,13 @@ public class Class1341 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field7119.method5633();
    }
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field7119 = new Class1189(this.field4568, this.field4564 / 2 - 100, 22, 200, 20, this.field7119, new TranslationTextComponent("selectWorld.search"));
       this.field7119.method5631(var1 -> this.field7120.method6066(() -> var1, false));
       this.field7120 = new Class1276(
@@ -90,7 +90,7 @@ public class Class1341 extends Screen {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 82, this.field4565 - 28, 72, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field7113))
+         new Class1206(this.field4564 / 2 + 82, this.field4565 - 28, 72, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field7113))
       );
       this.method6422(false);
       this.method5536(this.field7119);

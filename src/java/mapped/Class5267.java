@@ -23,7 +23,7 @@ public class Class5267 extends PremiumModule {
     @Override
     public void isInDevelopment() {
         this.field23696 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
             this.field23699 = false;
         } else {
             mc.gameSettings.field44637.field13071 = false;
@@ -49,7 +49,7 @@ public class Class5267 extends PremiumModule {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
-            mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, -150.0, var7, false));
+            mc.getConnection().sendPacket(new Class5605(var3, -150.0, var7, false));
             Class9567.method37090(0.0);
             Class5628.method17725(0.0);
             this.field23696 = -3;
@@ -92,8 +92,8 @@ public class Class5267 extends PremiumModule {
                     Class9567.method37088(var1, 0.28);
                 }
             } else {
-                var1.method13995(!mc.gameSettings.field44636.method8509() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
-                Class9567.method37088(var1, !mc.gameSettings.field44636.method8509() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
+                var1.method13995(!mc.gameSettings.field44636.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
+                Class9567.method37088(var1, !mc.gameSettings.field44636.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
             }
 
             Class5628.method17725(var1.method13994());

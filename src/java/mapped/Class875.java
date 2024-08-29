@@ -6,7 +6,7 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    private static String[] field4850;
    private ResourceLocation field4851;
 
-   public Class875(T var1, Class974 var2, ITextComponent var3, ResourceLocation var4) {
+   public Class875(T var1, PlayerInventory var2, ITextComponent var3, ResourceLocation var4) {
       super((T)var1, var2, var3);
       this.field4851 = var4;
    }
@@ -53,7 +53,7 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    }
 
    @Override
-   public void method2718(Class5812 var1, Class25<ItemStack> var2) {
+   public void method2718(Class5812 var1, NonNullList<ItemStack> var2) {
       this.method2720(var1, 0, var1.method18131(0).method18265());
    }
 

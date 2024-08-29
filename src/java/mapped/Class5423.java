@@ -14,16 +14,16 @@ public class Class5423 implements Class5422 {
    }
 
    @Override
-   public Class5422 method17025(double var1, double var3, double var5) {
-      this.field24106.method17025(var1, var3, var5);
-      this.field24107.method17025(var1, var3, var5);
+   public Class5422 pos(double var1, double var3, double var5) {
+      this.field24106.pos(var1, var3, var5);
+      this.field24107.pos(var1, var3, var5);
       return this;
    }
 
    @Override
-   public Class5422 method17026(int var1, int var2, int var3, int var4) {
-      this.field24106.method17026(var1, var2, var3, var4);
-      this.field24107.method17026(var1, var2, var3, var4);
+   public Class5422 color(int var1, int var2, int var3, int var4) {
+      this.field24106.color(var1, var2, var3, var4);
+      this.field24107.color(var1, var2, var3, var4);
       return this;
    }
 
@@ -77,25 +77,25 @@ public class Class5423 implements Class5422 {
    }
 
    @Override
-   public void method17031() {
-      this.field24106.method17031();
-      this.field24107.method17031();
+   public void endVertex() {
+      this.field24106.endVertex();
+      this.field24107.endVertex();
    }
 
    @Override
-   public void method17042(Class1713 var1) {
+   public void method17042(TextureAtlasSprite var1) {
       this.field24106.method17042(var1);
       this.field24107.method17042(var1);
    }
 
    @Override
-   public void method17043(Class1713 var1) {
+   public void method17043(TextureAtlasSprite var1) {
       this.field24106.method17043(var1);
       this.field24107.method17043(var1);
    }
 
    @Override
-   public void method17044(Class4520 var1) {
+   public void method17044(RenderType var1) {
       this.field24106.method17044(var1);
       this.field24107.method17044(var1);
    }

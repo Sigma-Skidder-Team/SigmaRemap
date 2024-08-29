@@ -42,15 +42,15 @@ public class Class7529 extends Class7530 {
 
    public void method24590(double var1, double var3, int var5) {
       int var8 = 128 * (1 << var5);
-      int var9 = MathHelper.method37769((var1 + 64.0) / (double)var8);
-      int var10 = MathHelper.method37769((var3 + 64.0) / (double)var8);
+      int var9 = MathHelper.floor((var1 + 64.0) / (double)var8);
+      int var10 = MathHelper.floor((var3 + 64.0) / (double)var8);
       this.field32316 = var9 * var8 + var8 / 2 - 64;
       this.field32317 = var10 * var8 + var8 / 2 - 64;
    }
 
    @Override
-   public void method24591(Class39 var1) {
-      this.field32318 = (RegistryKey<World>)Class9535.method36867(new Dynamic(Class8063.field34602, var1.method116("dimension")))
+   public void method24591(CompoundNBT var1) {
+      this.field32318 = (RegistryKey<World>)Class9535.method36867(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("dimension")))
          .resultOrPartial(field32315::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
       this.field32316 = var1.method122("xCenter");
@@ -64,7 +64,7 @@ public class Class7529 extends Class7530 {
          this.field32322 = new byte[16384];
       }
 
-      Class41 var4 = var1.method131("banners", 10);
+      ListNBT var4 = var1.method131("banners", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          Class7468 var6 = Class7468.method24183(var4.method153(var5));
@@ -73,14 +73,14 @@ public class Class7529 extends Class7530 {
             var6.method24186(),
             (Class1660)null,
             var6.method24189(),
-            (double)var6.method24185().method8304(),
-            (double)var6.method24185().method8306(),
+            (double)var6.method24185().getX(),
+            (double)var6.method24185().getZ(),
             180.0,
             var6.method24187()
          );
       }
 
-      Class41 var8 = var1.method131("frames", 10);
+      ListNBT var8 = var1.method131("frames", 10);
 
       for (int var9 = 0; var9 < var8.size(); var9++) {
          Class6674 var7 = Class6674.method20349(var8.method153(var9));
@@ -89,8 +89,8 @@ public class Class7529 extends Class7530 {
             MapDecorationType.field14517,
             (Class1660)null,
             "frame-" + var7.method20353(),
-            (double)var7.method20351().method8304(),
-            (double)var7.method20351().method8306(),
+            (double)var7.method20351().getX(),
+            (double)var7.method20351().getZ(),
             (double)var7.method20352(),
             (ITextComponent)null
          );
@@ -98,11 +98,11 @@ public class Class7529 extends Class7530 {
    }
 
    @Override
-   public Class39 method24592(Class39 var1) {
+   public CompoundNBT method24592(CompoundNBT var1) {
       ResourceLocation.field13020
-         .encodeStart(Class8063.field34602, this.field32318.method31399())
+         .encodeStart(NBTDynamicOps.INSTANCE, this.field32318.method31399())
          .resultOrPartial(field32315::error)
-         .ifPresent(var1x -> var1.method99("dimension", var1x));
+         .ifPresent(var1x -> var1.put("dimension", var1x));
       var1.method102("xCenter", this.field32316);
       var1.method102("zCenter", this.field32317);
       var1.method100("scale", this.field32321);
@@ -110,20 +110,20 @@ public class Class7529 extends Class7530 {
       var1.method115("trackingPosition", this.field32319);
       var1.method115("unlimitedTracking", this.field32320);
       var1.method115("locked", this.field32323);
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (Class7468 var6 : this.field32326.values()) {
          var4.add(var6.method24188());
       }
 
-      var1.method99("banners", var4);
-      Class41 var8 = new Class41();
+      var1.put("banners", var4);
+      ListNBT var8 = new ListNBT();
 
       for (Class6674 var7 : this.field32328.values()) {
          var8.add(var7.method20350());
       }
 
-      var1.method99("frames", var8);
+      var1.put("frames", var8);
       return var1;
    }
 
@@ -144,18 +144,18 @@ public class Class7529 extends Class7530 {
          this.field32324.add(var5);
       }
 
-      if (!var1.field4902.method4058(var2)) {
+      if (!var1.inventory.method4058(var2)) {
          this.field32327.remove(var1.getName().getString());
       }
 
       for (int var9 = 0; var9 < this.field32324.size(); var9++) {
          Class8541 var6 = this.field32324.get(var9);
          String var7 = var6.field38390.getName().getString();
-         if (!var6.field38390.field5041 && (var6.field38390.field4902.method4058(var2) || var2.method32165())) {
-            if (!var2.method32165() && var6.field38390.field5024.method6813() == this.field32318 && this.field32319) {
+         if (!var6.field38390.field5041 && (var6.field38390.inventory.method4058(var2) || var2.method32165())) {
+            if (!var2.method32165() && var6.field38390.world.getDimensionKey() == this.field32318 && this.field32319) {
                this.method24596(
                   MapDecorationType.field14516,
-                  var6.field38390.field5024,
+                  var6.field38390.world,
                   var7,
                   var6.field38390.getPosX(),
                   var6.field38390.getPosZ(),
@@ -171,7 +171,7 @@ public class Class7529 extends Class7530 {
       }
 
       if (var2.method32165() && this.field32319) {
-         Class997 var10 = var2.method32167();
+         ItemFrameEntity var10 = var2.method32167();
          BlockPos var12 = var10.method4085();
          Class6674 var14 = this.field32328.get(Class6674.method20355(var12));
          if (var14 != null && var10.method3205() != var14.method20353() && this.field32328.containsKey(var14.method20354())) {
@@ -181,26 +181,26 @@ public class Class7529 extends Class7530 {
          Class6674 var8 = new Class6674(var12, var10.method3386().method534() * 90, var10.method3205());
          this.method24596(
             MapDecorationType.field14517,
-            var1.field5024,
+            var1.world,
             "frame-" + var10.method3205(),
-            (double)var12.method8304(),
-            (double)var12.method8306(),
+            (double)var12.getX(),
+            (double)var12.getZ(),
             (double)(var10.method3386().method534() * 90),
             (ITextComponent)null
          );
          this.field32328.put(var8.method20354(), var8);
       }
 
-      Class39 var11 = var2.method32142();
+      CompoundNBT var11 = var2.method32142();
       if (var11 != null && var11.method119("Decorations", 9)) {
-         Class41 var13 = var11.method131("Decorations", 10);
+         ListNBT var13 = var11.method131("Decorations", 10);
 
          for (int var15 = 0; var15 < var13.size(); var15++) {
-            Class39 var16 = var13.method153(var15);
+            CompoundNBT var16 = var13.method153(var15);
             if (!this.field32327.containsKey(var16.method126("id"))) {
                this.method24596(
                   MapDecorationType.method8957(var16.method120("type")),
-                  var1.field5024,
+                  var1.world,
                   var16.method126("id"),
                   var16.method125("x"),
                   var16.method125("z"),
@@ -213,23 +213,23 @@ public class Class7529 extends Class7530 {
    }
 
    public static void method24595(ItemStack var0, BlockPos var1, String var2, MapDecorationType var3) {
-      Class41 var6;
+      ListNBT var6;
       if (var0.method32141() && var0.method32142().method119("Decorations", 9)) {
          var6 = var0.method32142().method131("Decorations", 10);
       } else {
-         var6 = new Class41();
-         var0.method32164("Decorations", var6);
+         var6 = new ListNBT();
+         var0.setTagInfo("Decorations", var6);
       }
 
-      Class39 var7 = new Class39();
+      CompoundNBT var7 = new CompoundNBT();
       var7.method100("type", var3.method8953());
       var7.method109("id", var2);
-      var7.method108("x", (double)var1.method8304());
-      var7.method108("z", (double)var1.method8306());
+      var7.method108("x", (double)var1.getX());
+      var7.method108("z", (double)var1.getZ());
       var7.method108("rot", 180.0);
       var6.add(var7);
       if (var3.method8955()) {
-         Class39 var8 = var0.method32144("display");
+         CompoundNBT var8 = var0.method32144("display");
          var8.method102("MapColor", var3.method8956());
       }
    }
@@ -245,7 +245,7 @@ public class Class7529 extends Class7530 {
       if (var14 >= -63.0F && var15 >= -63.0F && var14 <= 63.0F && var15 <= 63.0F) {
          var8 += !(var8 < 0.0) ? 8.0 : -8.0;
          var20 = (byte)((int)(var8 * 16.0 / 360.0));
-         if (this.field32318 == World.field9000 && var2 != null) {
+         if (this.field32318 == World.THE_NETHER && var2 != null) {
             int var22 = (int)(var2.getWorldInfo().method20034() / 10L);
             var20 = (byte)(var22 * var22 * 34187121 + var22 * 121 >> 15 & 15);
          }
@@ -314,8 +314,8 @@ public class Class7529 extends Class7530 {
    }
 
    public void method24600(Class1660 var1, BlockPos var2) {
-      double var5 = (double)var2.method8304() + 0.5;
-      double var7 = (double)var2.method8306() + 0.5;
+      double var5 = (double)var2.getX() + 0.5;
+      double var7 = (double)var2.getZ() + 0.5;
       int var9 = 1 << this.field32321;
       double var10 = (var5 - (double)this.field32316) / (double)var9;
       double var12 = (var7 - (double)this.field32317) / (double)var9;
@@ -352,7 +352,7 @@ public class Class7529 extends Class7530 {
 
       while (var6.hasNext()) {
          Class7468 var7 = (Class7468)var6.next();
-         if (var7.method24185().method8304() == var2 && var7.method24185().method8306() == var3) {
+         if (var7.method24185().getX() == var2 && var7.method24185().getZ() == var3) {
             Class7468 var8 = Class7468.method24184(var1, var7.method24185());
             if (!var7.equals(var8)) {
                var6.remove();

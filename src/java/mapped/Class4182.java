@@ -14,7 +14,7 @@ public class Class4182 extends Class4180 {
       this.method12946(var1);
    }
 
-   public Class4182(Class8761 var1, Class39 var2) {
+   public Class4182(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33479, var2);
       this.field20458 = new ResourceLocation(var2.method126("Template"));
       this.field20459 = Class80.valueOf(var2.method126("Rot"));
@@ -28,7 +28,7 @@ public class Class4182 extends Class4180 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20458.toString());
       var1.method109("Rot", this.field20459.name());

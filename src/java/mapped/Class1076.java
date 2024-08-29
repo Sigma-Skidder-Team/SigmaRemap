@@ -7,7 +7,7 @@ public class Class1076 extends AbstractHorseEntity {
    private boolean field5920;
    private int field5921;
 
-   public Class1076(Class8992<? extends Class1076> var1, World var2) {
+   public Class1076(EntityType<? extends Class1076> var1, World var2) {
       super(var1, var2);
    }
 
@@ -99,14 +99,14 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method115("SkeletonTrap", this.method5000());
       var1.method102("SkeletonTrapTime", this.field5921);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5001(var1.method132("SkeletonTrap"));
       this.field5921 = var1.method122("SkeletonTrapTime");
@@ -140,7 +140,7 @@ public class Class1076 extends AbstractHorseEntity {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41079.method33215(var1);
+      return EntityType.field41079.method33215(var1);
    }
 
    @Override
@@ -150,10 +150,10 @@ public class Class1076 extends AbstractHorseEntity {
          if (!this.method3005()) {
             if (!var1.method2851()) {
                if (!this.method3329()) {
-                  if (!var5.method32105()) {
-                     if (var5.method32107() == Class8514.field37886 && !this.method4943()) {
+                  if (!var5.isEmpty()) {
+                     if (var5.getItem() == Items.field37886 && !this.method4943()) {
                         this.openGUI(var1);
-                        return ActionResultType.method9002(this.field5024.field9020);
+                        return ActionResultType.method9002(this.world.field9020);
                      }
 
                      ActionResultType var6 = var5.method32125(var1, this, var2);
@@ -163,13 +163,13 @@ public class Class1076 extends AbstractHorseEntity {
                   }
 
                   this.method4920(var1);
-                  return ActionResultType.method9002(this.field5024.field9020);
+                  return ActionResultType.method9002(this.world.field9020);
                } else {
                   return super.method4285(var1, var2);
                }
             } else {
                this.openGUI(var1);
-               return ActionResultType.method9002(this.field5024.field9020);
+               return ActionResultType.method9002(this.world.field9020);
             }
          } else {
             return super.method4285(var1, var2);

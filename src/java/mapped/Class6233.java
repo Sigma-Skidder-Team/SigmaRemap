@@ -18,13 +18,13 @@ public class Class6233 extends Class6230 {
    }
 
    private static boolean method19206(ServerWorld var0, BlockPos var1) {
-      Class7380 var4 = var0.method6738(var1);
+      BlockState var4 = var0.getBlockState(var1);
       if (var4.method23446(Class7645.field32794)) {
          int var5 = var4.<Integer>method23463(Class3366.field18936);
          if (var5 >= 5) {
             var0.method6742((PlayerEntity)null, var1, Class6067.field26398, Class2266.field14732, 1.0F, 1.0F);
             Class3366.method11944(var0, var1);
-            ((Class3366)var4.method23383()).method11946(var0, var4, var1, (PlayerEntity)null, Class2084.field13572);
+            ((Class3366)var4.getBlock()).method11946(var0, var4, var1, (PlayerEntity)null, Class2084.field13572);
             return true;
          }
       }

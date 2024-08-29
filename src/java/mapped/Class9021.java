@@ -67,7 +67,7 @@ public class Class9021 {
       }
    }
 
-   public SocketAddress method33399() {
+   public SocketAddress addLocalEndpoint() {
       ChannelFuture var4;
       synchronized (this.field41279) {
          var4 = ((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel(LocalServerChannel.class))
@@ -101,12 +101,12 @@ public class Class9021 {
          while (var4.hasNext()) {
             NetworkManager var5 = (NetworkManager)var4.next();
             if (!var5.method30708()) {
-               if (var5.method30707()) {
+               if (var5.isChannelOpen()) {
                   try {
-                     var5.method30698();
+                     var5.tick();
                   } catch (Exception var9) {
                      if (var5.method30702()) {
-                        throw new Class2506(Class4526.method14413(var9, "Ticking memory connection"));
+                        throw new ReportedException(CrashReport.makeCrashReport(var9, "Ticking memory connection"));
                      }
 
                      field41274.warn("Failed to handle packet for {}", var5.method30700(), var9);

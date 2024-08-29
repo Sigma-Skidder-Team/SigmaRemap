@@ -16,14 +16,14 @@ public interface Class1011 {
 
    void method4346();
 
-   default void method4364(Class39 var1) {
+   default void method4364(CompoundNBT var1) {
       var1.method102("AngerTime", this.method4348());
       if (this.method4350() != null) {
          var1.method104("AngryAt", this.method4350());
       }
    }
 
-   default void method4365(ServerWorld var1, Class39 var2) {
+   default void method4365(ServerWorld var1, CompoundNBT var2) {
       this.method4347(var2.method122("AngerTime"));
       if (var2.method106("AngryAt")) {
          UUID var5 = var2.method105("AngryAt");
@@ -34,7 +34,7 @@ public interface Class1011 {
                this.method3017((Class1006)var6);
             }
 
-            if (var6.method3204() == Class8992.field41111) {
+            if (var6.getType() == EntityType.PLAYER) {
                this.method3016((PlayerEntity)var6);
             }
          }
@@ -54,7 +54,7 @@ public interface Class1011 {
             this.method4346();
          }
 
-         if (this.method4348() > 0 && (var5 == null || var5.method3204() != Class8992.field41111 || !var2)) {
+         if (this.method4348() > 0 && (var5 == null || var5.getType() != EntityType.PLAYER || !var2)) {
             this.method4347(this.method4348() - 1);
             if (this.method4348() == 0) {
                this.method4372();
@@ -67,7 +67,7 @@ public interface Class1011 {
       if (!Class8088.field34762.test(var1)) {
          return false;
       } else {
-         return var1.method3204() == Class8992.field41111 && this.method4368(var1.field5024) ? true : var1.getUniqueID().equals(this.method4350());
+         return var1.getType() == EntityType.PLAYER && this.method4368(var1.world) ? true : var1.getUniqueID().equals(this.method4350());
       }
    }
 
@@ -80,7 +80,7 @@ public interface Class1011 {
    }
 
    default void method4370(PlayerEntity var1) {
-      if (var1.field5024.method6789().method17135(Class5462.field24254) && var1.getUniqueID().equals(this.method4350())) {
+      if (var1.world.method6789().method17135(Class5462.field24254) && var1.getUniqueID().equals(this.method4350())) {
          this.method4372();
       }
    }

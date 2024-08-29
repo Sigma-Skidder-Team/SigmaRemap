@@ -77,19 +77,19 @@ public class Class2783 extends Class2595 {
                if (this.field17397 > 1) {
                   float var13 = MathHelper.method37765(MathHelper.method37766(var5)) * 0.5F;
                   if (!this.field17396.method3245()) {
-                     this.field17396.field5024.method6869((PlayerEntity)null, 1018, this.field17396.method3432(), 0);
+                     this.field17396.world.method6869((PlayerEntity)null, 1018, this.field17396.getPosition(), 0);
                   }
 
                   for (int var14 = 0; var14 < 1; var14++) {
                      Class900 var15 = new Class900(
-                        this.field17396.field5024,
+                        this.field17396.world,
                         this.field17396,
                         var7 + this.field17396.method3013().nextGaussian() * (double)var13,
                         var9,
                         var11 + this.field17396.method3013().nextGaussian() * (double)var13
                      );
                      var15.method3215(var15.getPosX(), this.field17396.method3440(0.5) + 0.5, var15.getPosZ());
-                     this.field17396.field5024.method6916(var15);
+                     this.field17396.world.method6916(var15);
                   }
                }
             }

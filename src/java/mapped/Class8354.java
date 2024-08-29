@@ -18,7 +18,7 @@ public final class Class8354 {
    private static final Logger field35896 = LogManager.getLogger();
 
    @Nullable
-   public static GameProfile method29278(Class39 var0) {
+   public static GameProfile method29278(CompoundNBT var0) {
       String var3 = null;
       UUID var4 = null;
       if (var0.method119("Name", 8)) {
@@ -32,13 +32,13 @@ public final class Class8354 {
       try {
          GameProfile var5 = new GameProfile(var4, var3);
          if (var0.method119("Properties", 10)) {
-            Class39 var6 = var0.method130("Properties");
+            CompoundNBT var6 = var0.getCompound("Properties");
 
             for (String var8 : var6.method97()) {
-               Class41 var9 = var6.method131(var8, 10);
+               ListNBT var9 = var6.method131(var8, 10);
 
                for (int var10 = 0; var10 < var9.size(); var10++) {
-                  Class39 var11 = var9.method153(var10);
+                  CompoundNBT var11 = var9.method153(var10);
                   String var12 = var11.method126("Value");
                   if (var11.method119("Signature", 8)) {
                      var5.getProperties().put(var8, new Property(var8, var12, var11.method126("Signature")));
@@ -55,7 +55,7 @@ public final class Class8354 {
       }
    }
 
-   public static Class39 method29279(Class39 var0, GameProfile var1) {
+   public static CompoundNBT method29279(CompoundNBT var0, GameProfile var1) {
       if (!Class9001.method33256(var1.getName())) {
          var0.method109("Name", var1.getName());
       }
@@ -65,13 +65,13 @@ public final class Class8354 {
       }
 
       if (!var1.getProperties().isEmpty()) {
-         Class39 var4 = new Class39();
+         CompoundNBT var4 = new CompoundNBT();
 
          for (String var6 : var1.getProperties().keySet()) {
-            Class41 var7 = new Class41();
+            ListNBT var7 = new ListNBT();
 
             for (Property var9 : var1.getProperties().get(var6)) {
-               Class39 var10 = new Class39();
+               CompoundNBT var10 = new CompoundNBT();
                var10.method109("Value", var9.getValue());
                if (var9.hasSignature()) {
                   var10.method109("Signature", var9.getSignature());
@@ -80,10 +80,10 @@ public final class Class8354 {
                var7.add(var10);
             }
 
-            var4.method99(var6, var7);
+            var4.put(var6, var7);
          }
 
-         var0.method99("Properties", var4);
+         var0.put("Properties", var4);
       }
 
       return var0;
@@ -99,10 +99,10 @@ public final class Class8354 {
          return false;
       } else if (!var0.getClass().equals(var1.getClass())) {
          return false;
-      } else if (!(var0 instanceof Class39)) {
-         if (var0 instanceof Class41 && var2) {
-            Class41 var11 = (Class41)var0;
-            Class41 var12 = (Class41)var1;
+      } else if (!(var0 instanceof CompoundNBT)) {
+         if (var0 instanceof ListNBT && var2) {
+            ListNBT var11 = (ListNBT)var0;
+            ListNBT var12 = (ListNBT)var1;
             if (var11.isEmpty()) {
                return var12.isEmpty();
             } else {
@@ -128,8 +128,8 @@ public final class Class8354 {
             return var0.equals(var1);
          }
       } else {
-         Class39 var5 = (Class39)var0;
-         Class39 var6 = (Class39)var1;
+         CompoundNBT var5 = (CompoundNBT)var0;
+         CompoundNBT var6 = (CompoundNBT)var1;
 
          for (String var8 : var5.method97()) {
             Class30 var9 = var5.method116(var8);
@@ -161,27 +161,27 @@ public final class Class8354 {
       }
    }
 
-   public static BlockPos method29283(Class39 var0) {
+   public static BlockPos method29283(CompoundNBT var0) {
       return new BlockPos(var0.method122("X"), var0.method122("Y"), var0.method122("Z"));
    }
 
-   public static Class39 method29284(BlockPos var0) {
-      Class39 var3 = new Class39();
-      var3.method102("X", var0.method8304());
+   public static CompoundNBT method29284(BlockPos var0) {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.method102("X", var0.getX());
       var3.method102("Y", var0.getY());
-      var3.method102("Z", var0.method8306());
+      var3.method102("Z", var0.getZ());
       return var3;
    }
 
-   public static Class7380 method29285(Class39 var0) {
+   public static BlockState method29285(CompoundNBT var0) {
       if (!var0.method119("Name", 8)) {
          return Blocks.AIR.method11579();
       } else {
-         Block var3 = Registry.field16072.method9184(new ResourceLocation(var0.method126("Name")));
-         Class7380 var4 = var3.method11579();
+         Block var3 = Registry.BLOCK.method9184(new ResourceLocation(var0.method126("Name")));
+         BlockState var4 = var3.method11579();
          if (var0.method119("Properties", 10)) {
-            Class39 var5 = var0.method130("Properties");
-            Class9348 var6 = var3.method11577();
+            CompoundNBT var5 = var0.getCompound("Properties");
+            Class9348 var6 = var3.getStateContainer();
 
             for (String var8 : var5.method97()) {
                Class8550 var9 = var6.method35396(var8);
@@ -195,7 +195,7 @@ public final class Class8354 {
       }
    }
 
-   private static <S extends Class7378<?, S>, T extends Comparable<T>> S method29286(S var0, Class8550<T> var1, String var2, Class39 var3, Class39 var4) {
+   private static <S extends Class7378<?, S>, T extends Comparable<T>> S method29286(S var0, Class8550<T> var1, String var2, CompoundNBT var3, CompoundNBT var4) {
       Optional<T> var7 = var1.method30476(var3.method126(var2));
       if (!var7.isPresent()) {
          field35896.warn("Unable to read property: {} with value: {} for blockstate: {}", var2, var3.method126(var2), var4.toString());
@@ -205,12 +205,12 @@ public final class Class8354 {
       }
    }
 
-   public static Class39 method29287(Class7380 var0) {
-      Class39 var3 = new Class39();
-      var3.method109("Name", Registry.field16072.method9181(var0.method23383()).toString());
+   public static CompoundNBT method29287(BlockState var0) {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.method109("Name", Registry.BLOCK.getKey(var0.getBlock()).toString());
       ImmutableMap var4 = var0.method23468();
       if (!var4.isEmpty()) {
-         Class39 var5 = new Class39();
+         CompoundNBT var5 = new CompoundNBT();
          UnmodifiableIterator var6 = var4.entrySet().iterator();
 
          while (var6.hasNext()) {
@@ -219,7 +219,7 @@ public final class Class8354 {
             var5.method109(var8.method30472(), method29288(var8, (Comparable<?>)var7.getValue()));
          }
 
-         var3.method99("Properties", var5);
+         var3.put("Properties", var5);
       }
 
       return var3;
@@ -229,11 +229,11 @@ public final class Class8354 {
       return var0.method30475((T)var1);
    }
 
-   public static Class39 method29289(DataFixer var0, Class2108 var1, Class39 var2, int var3) {
-      return method29290(var0, var1, var2, var3, SharedConstants.method34773().getWorldVersion());
+   public static CompoundNBT method29289(DataFixer var0, Class2108 var1, CompoundNBT var2, int var3) {
+      return method29290(var0, var1, var2, var3, SharedConstants.getVersion().getWorldVersion());
    }
 
-   public static Class39 method29290(DataFixer var0, Class2108 var1, Class39 var2, int var3, int var4) {
-      return (Class39)var0.update(var1.method8778(), new Dynamic(Class8063.field34602, var2), var3, var4).getValue();
+   public static CompoundNBT method29290(DataFixer var0, Class2108 var1, CompoundNBT var2, int var3, int var4) {
+      return (CompoundNBT)var0.update(var1.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var2), var3, var4).getValue();
    }
 }

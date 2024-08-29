@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class Class8928 {
    private static String[] field40406;
-   private static final Map<Block, Class4520> field40407 = Util.<Map<Block, Class4520>>method38508(Maps.newHashMap(), var0 -> {
-      Class4520 var3 = Class4520.method14343();
+   private static final Map<Block, RenderType> field40407 = Util.<Map<Block, RenderType>>method38508(Maps.newHashMap(), var0 -> {
+      RenderType var3 = RenderType.method14343();
       var0.put(Blocks.TRIPWIRE, var3);
-      Class4520 var4 = Class4520.method14301();
+      RenderType var4 = RenderType.method14301();
       var0.put(Blocks.field36395, var4);
       var0.put(Blocks.IRON_BARS, var4);
       var0.put(Blocks.GLASS_PANE, var4);
@@ -21,7 +21,7 @@ public class Class8928 {
       var0.put(Blocks.field36450, var4);
       var0.put(Blocks.field36448, var4);
       var0.put(Blocks.field36451, var4);
-      Class4520 var5 = Class4520.method14302();
+      RenderType var5 = RenderType.method14302();
       var0.put(Blocks.field36406, var5);
       var0.put(Blocks.SPRUCE_SAPLING, var5);
       var0.put(Blocks.BIRCH_SAPLING, var5);
@@ -209,7 +209,7 @@ public class Class8928 {
       var0.put(Blocks.field37128, var5);
       var0.put(Blocks.field37107, var5);
       var0.put(Blocks.field37108, var5);
-      Class4520 var6 = Class4520.method14304();
+      RenderType var6 = RenderType.method14304();
       var0.put(Blocks.ICE, var6);
       var0.put(Blocks.field36588, var6);
       var0.put(Blocks.field36593, var6);
@@ -249,50 +249,50 @@ public class Class8928 {
       var0.put(Blocks.field36889, var6);
       var0.put(Blocks.field37013, var6);
    });
-   private static final Map<Class7631, Class4520> field40408 = Util.<Map<Class7631, Class4520>>method38508(Maps.newHashMap(), var0 -> {
-      Class4520 var3 = Class4520.method14304();
+   private static final Map<Class7631, RenderType> field40408 = Util.<Map<Class7631, RenderType>>method38508(Maps.newHashMap(), var0 -> {
+      RenderType var3 = RenderType.method14304();
       var0.put(Class9479.field44065, var3);
       var0.put(Class9479.field44066, var3);
    });
    private static boolean field40409;
 
-   public static Class4520 method32630(Class7380 var0) {
-      Block var3 = var0.method23383();
+   public static RenderType method32630(BlockState var0) {
+      Block var3 = var0.getBlock();
       if (!(var3 instanceof Class3465)) {
-         Class4520 var4 = field40407.get(var3);
-         return var4 == null ? Class4520.method14300() : var4;
+         RenderType var4 = field40407.get(var3);
+         return var4 == null ? RenderType.method14300() : var4;
       } else {
-         return !field40409 ? Class4520.method14300() : Class4520.method14301();
+         return !field40409 ? RenderType.method14300() : RenderType.method14301();
       }
    }
 
-   public static Class4520 method32631(Class7380 var0) {
-      Block var3 = var0.method23383();
+   public static RenderType method32631(BlockState var0) {
+      Block var3 = var0.getBlock();
       if (!(var3 instanceof Class3465)) {
-         Class4520 var4 = field40407.get(var3);
+         RenderType var4 = field40407.get(var3);
          if (var4 == null) {
-            return Class4520.method14300();
+            return RenderType.method14300();
          } else {
-            return var4 != Class4520.method14304() ? var4 : Class4520.method14306();
+            return var4 != RenderType.method14304() ? var4 : RenderType.method14306();
          }
       } else {
-         return !field40409 ? Class4520.method14300() : Class4520.method14301();
+         return !field40409 ? RenderType.method14300() : RenderType.method14301();
       }
    }
 
-   public static Class4520 method32632(Class7380 var0, boolean var1) {
-      Class4520 var4 = method32630(var0);
-      if (var4 != Class4520.method14304()) {
+   public static RenderType method32632(BlockState var0, boolean var1) {
+      RenderType var4 = method32630(var0);
+      if (var4 != RenderType.method14304()) {
          return Class8624.method30907();
-      } else if (Minecraft.method1517()) {
+      } else if (Minecraft.isFabulousGraphicsEnabled()) {
          return !var1 ? Class8624.method30908() : Class8624.method30909();
       } else {
          return Class8624.method30909();
       }
    }
 
-   public static Class4520 method32633(ItemStack var0, boolean var1) {
-      Class3257 var4 = var0.method32107();
+   public static RenderType method32633(ItemStack var0, boolean var1) {
+      Item var4 = var0.getItem();
       if (!(var4 instanceof Class3292)) {
          return !var1 ? Class8624.method30908() : Class8624.method30909();
       } else {
@@ -301,9 +301,9 @@ public class Class8928 {
       }
    }
 
-   public static Class4520 method32634(Class7379 var0) {
-      Class4520 var3 = field40408.get(var0.method23472());
-      return var3 == null ? Class4520.method14300() : var3;
+   public static RenderType method32634(Class7379 var0) {
+      RenderType var3 = field40408.get(var0.method23472());
+      return var3 == null ? RenderType.method14300() : var3;
    }
 
    public static void method32635(boolean var0) {

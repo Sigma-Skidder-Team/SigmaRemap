@@ -18,7 +18,7 @@ public class SetStewEffectSerializer extends LootFunctionSerializer<Class133> {
 
          for (Class7144 var8 : Class133.method390(var2).keySet()) {
             JsonObject var9 = new JsonObject();
-            ResourceLocation var10 = Registry.field16071.method9181(var8);
+            ResourceLocation var10 = Registry.field16071.getKey(var8);
             if (var10 == null) {
                throw new IllegalArgumentException("Don't know how to serialize mob effect " + var8);
             }

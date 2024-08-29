@@ -1,11 +1,11 @@
 package mapped;
 
-public class Class3317<T extends Entity & Class1071> extends Class3257 {
+public class Class3317<T extends Entity & Class1071> extends Item {
    private static String[] field18825;
-   private final Class8992<T> field18826;
+   private final EntityType<T> field18826;
    private final int field18827;
 
-   public Class3317(Class5643 var1, Class8992<T> var2, int var3) {
+   public Class3317(Class5643 var1, EntityType<T> var2, int var3) {
       super(var1);
       this.field18826 = var2;
       this.field18827 = var3;
@@ -16,15 +16,15 @@ public class Class3317<T extends Entity & Class1071> extends Class3257 {
       ItemStack var6 = var2.getHeldItem(var3);
       if (!var1.field9020) {
          Entity var7 = var2.getRidingEntity();
-         if (var2.method3328() && var7 instanceof Class1071 && var7.method3204() == this.field18826) {
+         if (var2.method3328() && var7 instanceof Class1071 && var7.getType() == this.field18826) {
             Class1071 var8 = (Class1071)var7;
             if (var8.method4982()) {
                var6.method32121(this.field18827, var2, var1x -> var1x.method3185(var3));
-               if (!var6.method32105()) {
+               if (!var6.isEmpty()) {
                   return Class6794.<ItemStack>method20696(var6);
                }
 
-               ItemStack var9 = new ItemStack(Class8514.field37906);
+               ItemStack var9 = new ItemStack(Items.field37906);
                var9.method32148(var6.method32142());
                return Class6794.<ItemStack>method20696(var9);
             }

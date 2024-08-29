@@ -7,7 +7,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    private final Class5818 field4817;
    private final Class876 field4818 = new Class1121(this);
 
-   public Class869(Class5818 var1, Class974 var2, ITextComponent var3) {
+   public Class869(Class5818 var1, PlayerInventory var2, ITextComponent var3) {
       this.field4817 = var1;
    }
 
@@ -39,7 +39,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
          super.method2679();
       } else {
          this.<Class1206>method2455(
-            new Class1206(this.field4564 / 2 - 100, 196, 98, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen((Screen)null))
+            new Class1206(this.field4564 / 2 - 100, 196, 98, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen((Screen)null))
          );
          this.<Class1206>method2455(
             new Class1206(this.field4564 / 2 + 2, 196, 98, 20, new TranslationTextComponent("lectern.take_book"), var1 -> this.method2683(3))
@@ -68,11 +68,11 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    }
 
    private void method2683(int var1) {
-      this.field4562.field1337.method23146(this.field4817.field25471, var1);
+      this.field4562.playerController.method23146(this.field4817.field25471, var1);
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 

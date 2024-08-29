@@ -41,7 +41,7 @@ public class Class7887 extends Class7882<Class1006> {
                return false;
             }
          };
-         Stream var7 = var5.method6668(Class4913.field22766.method15182(), var6, var2.method3432(), 48, Class2093.field13637);
+         Stream var7 = var5.method6668(Class4913.field22766.method15182(), var6, var2.getPosition(), 48, Class2093.field13637);
          Class8238 var8 = var2.method4230().method21649(var7, Class4913.field22766.method15183());
          if (var8 != null && var8.method28708()) {
             BlockPos var9 = var8.method28712();

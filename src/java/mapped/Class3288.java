@@ -7,9 +7,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 import java.util.List;
 
 public class Class3288 extends Class3287 {
-   private final Class8992<?> field18799;
+   private final EntityType<?> field18799;
 
-   public Class3288(Class8992<?> var1, Class7631 var2, Class5643 var3) {
+   public Class3288(EntityType<?> var1, Class7631 var2, Class5643 var3) {
       super(var2, var3);
       this.field18799 = var1;
    }
@@ -35,8 +35,8 @@ public class Class3288 extends Class3287 {
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
-      if (this.field18799 == Class8992.field41095) {
-         Class39 var7 = var1.method32142();
+      if (this.field18799 == EntityType.field41095) {
+         CompoundNBT var7 = var1.method32142();
          if (var7 != null && var7.method119("BucketVariantTag", 3)) {
             int var8 = var7.method122("BucketVariantTag");
             TextFormatting[] var9 = new TextFormatting[]{TextFormatting.ITALIC, TextFormatting.GRAY};

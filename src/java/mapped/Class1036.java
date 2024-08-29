@@ -33,7 +33,7 @@ public class Class1036 extends Class1035 {
       }
    );
 
-   public Class1036(Class8992<? extends Class1036> var1, World var2) {
+   public Class1036(EntityType<? extends Class1036> var1, World var2) {
       super(var1, var2);
       this.field5594 = 20;
    }
@@ -44,7 +44,7 @@ public class Class1036 extends Class1035 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class9743.method38193(this);
       this.method4270(var2);
       return super.method4276(var1, var2, var3, var4, var5);
@@ -52,7 +52,7 @@ public class Class1036 extends Class1035 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37818));
+      this.method2944(Class2106.field13731, new ItemStack(Items.field37818));
    }
 
    @Override
@@ -77,14 +77,14 @@ public class Class1036 extends Class1035 {
 
    @Override
    public boolean method4253(ItemStack var1) {
-      return var1.method32107() != Class8514.field37818 ? false : super.method4253(var1);
+      return var1.getItem() != Items.field37818 ? false : super.method4253(var1);
    }
 
    @Override
    public void method4258() {
-      this.field5024.method6820().startSection("piglinBruteBrain");
-      this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().endSection();
+      this.world.method6820().startSection("piglinBruteBrain");
+      this.method2992().method21432((ServerWorld)this.world, this);
+      this.world.method6820().endSection();
       Class9743.method38199(this);
       Class9743.method38205(this);
       super.method4258();
@@ -98,7 +98,7 @@ public class Class1036 extends Class1035 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class9743.method38204(this, (Class880)var1.method31109());
          }
@@ -125,7 +125,7 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field26943, 0.15F, 1.0F);
    }
 

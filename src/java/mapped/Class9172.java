@@ -21,7 +21,7 @@ public class Class9172 {
    private static Class20 field42103 = null;
    private static boolean field42104;
 
-   public static int method34259(Class7380 var0) {
+   public static int method34259(BlockState var0) {
       int var3 = var0.method23490();
       int var4 = var0.method23491();
       Class9590 var5 = method34262(var3, var4);
@@ -32,7 +32,7 @@ public class Class9172 {
       return field42102;
    }
 
-   public static int method34261(Class7380 var0) {
+   public static int method34261(BlockState var0) {
       if (field42102) {
          int var3 = var0.method23490();
          int var4 = var0.method23491();
@@ -76,14 +76,14 @@ public class Class9172 {
    public static void method34264() {
       if (field42104) {
          field42104 = false;
-         method34265(Class8981.method32955());
+         method34265(Shaders.method32955());
       }
    }
 
    public static void method34265(Class4671 var0) {
       method34276();
       if (var0 != null && !(var0 instanceof Class4670)) {
-         if (Class9299.field42965.method20214() && Minecraft.getInstance().method1537() == null) {
+         if (Class9299.field42965.method20214() && Minecraft.getInstance().getResourceManager() == null) {
             Class7944.method26810("[Shaders] Delayed loading of block mappings after resources are loaded");
             field42104 = true;
          } else {
@@ -273,7 +273,7 @@ public class Class9172 {
                   return;
                }
 
-               Class7380 var15 = var14.method11579();
+               BlockState var15 = var14.method11579();
                Collection var16 = var15.method23461();
                LinkedHashMap var17 = new LinkedHashMap();
                JsonObject var18 = (JsonObject)var11.get("Properties");
@@ -307,7 +307,7 @@ public class Class9172 {
                   var2.set(var26, var27);
                }
 
-               Class9727 var28 = method34273(var15.method23383(), var15.method23490(), var17);
+               Class9727 var28 = method34273(var15.getBlock(), var15.method23490(), var17);
                method34272((List<Class9590>)var27, var8, var9, var28);
             } catch (Exception var25) {
                Class7944.method26811("Error parsing: " + var0);
@@ -338,10 +338,10 @@ public class Class9172 {
    }
 
    private static Class9727 method34273(Block var0, int var1, Map<Class8550, Comparable> var2) {
-      ArrayList<Class7380> var5 = new ArrayList();
+      ArrayList<BlockState> var5 = new ArrayList();
       Set<Class8550> var6 = var2.keySet();
 
-      for (Class7380 var8 : Class9716.method38070(var0)) {
+      for (BlockState var8 : Class9716.method38070(var0)) {
          boolean var9 = true;
 
          for (Class8550 var11 : var6) {
@@ -365,7 +365,7 @@ public class Class9172 {
 
       LinkedHashSet<Integer> var14 = new LinkedHashSet();
 
-      for (Class7380 var17 : var5) {
+      for (BlockState var17 : var5) {
          var14.add(var17.method23491());
       }
 
@@ -375,12 +375,12 @@ public class Class9172 {
    }
 
    private static void method34274() {
-      for (ResourceLocation var3 : Registry.field16072.method9190()) {
-         Block var4 = Registry.field16072.method9184(var3);
+      for (ResourceLocation var3 : Registry.BLOCK.method9190()) {
+         Block var4 = Registry.BLOCK.method9184(var3);
          int var5 = var4.method11579().method23490();
          Class9590[] var6 = method34263(var5);
          if (var6 != null) {
-            for (Class7380 var8 : Class9716.method38070(var4)) {
+            for (BlockState var8 : Class9716.method38070(var4)) {
                int var9 = var8.method23491();
                Class9590 var10 = method34262(var5, var9);
                if (var10 == null) {
@@ -403,16 +403,16 @@ public class Class9172 {
       field42103 = null;
    }
 
-   public static int method34277(Class7380 var0) {
+   public static int method34277(BlockState var0) {
       if (!field42102) {
-         return var0.method23397().ordinal();
+         return var0.getRenderType().ordinal();
       } else {
-         Block var3 = var0.method23383();
+         Block var3 = var0.getBlock();
          if (var3 instanceof Class3404) {
             return 1;
          } else {
-            Class1855 var4 = var0.method23397();
-            return var4 != Class1855.field9886 && var4 != Class1855.field9887 ? var4.ordinal() : var4.ordinal() + 1;
+            BlockRenderType var4 = var0.getRenderType();
+            return var4 != BlockRenderType.field9886 && var4 != BlockRenderType.MODEL ? var4.ordinal() : var4.ordinal() + 1;
          }
       }
    }

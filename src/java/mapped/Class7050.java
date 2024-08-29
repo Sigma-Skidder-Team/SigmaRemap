@@ -20,12 +20,12 @@ public class Class7050 {
             if (!var0.method8293().equals("minecraft") || !var0.method8292().startsWith("textures/gui/")) {
                return var0;
             } else if (field30439 != null) {
-               Class1656 var4 = field30438.world;
+               ClientWorld var4 = field30438.world;
                if (var4 == null) {
                   return var0;
-               } else if (var3 instanceof Class861) {
-                  return method21964(Class2295.field15265, field30438.player.method3432(), var4, var0, var3);
-               } else if (!(var3 instanceof Class859)) {
+               } else if (var3 instanceof CreativeScreen) {
+                  return method21964(Class2295.field15265, field30438.player.getPosition(), var4, var0, var3);
+               } else if (!(var3 instanceof InventoryScreen)) {
                   BlockPos var5 = field30439.method23163();
                   if (var5 != null) {
                      if (var3 instanceof Class1124) {
@@ -82,7 +82,7 @@ public class Class7050 {
 
                   return var0;
                } else {
-                  return method21964(Class2295.field15266, field30438.player.method3432(), var4, var0, var3);
+                  return method21964(Class2295.field15266, field30438.player.getPosition(), var4, var0, var3);
                }
             } else {
                return var0;
@@ -131,10 +131,10 @@ public class Class7050 {
       field30440 = (Class8149[][])null;
       if (Class7944.method26974()) {
          ArrayList var2 = new ArrayList();
-         Class303[] var3 = Class7944.method26869();
+         IResourcePack[] var3 = Class7944.method26869();
 
          for (int var4 = var3.length - 1; var4 >= 0; var4--) {
-            Class303 var5 = var3[var4];
+            IResourcePack var5 = var3[var4];
             method21968(var5, var2);
          }
 
@@ -162,7 +162,7 @@ public class Class7050 {
       }
    }
 
-   private static void method21968(Class303 var0, List<List<Class8149>> var1) {
+   private static void method21968(IResourcePack var0, List<List<Class8149>> var1) {
       String[] var4 = Class9772.method38438(var0, "optifine/gui/container/", ".properties", (String[])null);
       Arrays.sort(var4);
 
@@ -172,7 +172,7 @@ public class Class7050 {
 
          try {
             ResourceLocation var7 = new ResourceLocation(var6);
-            InputStream var8 = var0.method1223(Class1946.field12610, var7);
+            InputStream var8 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var7);
             if (var8 == null) {
                Class7944.method26811("CustomGuis file not found: " + var6);
             } else {

@@ -20,7 +20,7 @@ public class Class5258 extends PremiumModule {
 
     public Class5258() {
         super("AutoMLG", "Automatically places water when falling", ModuleCategory.ITEM);
-        this.method15972(new Class6004("Cubecraft", "Cubecraft bypass", true));
+        this.registerSetting(new BooleanSetting("Cubecraft", "Cubecraft bypass", true));
         field23649 = -1;
     }
 
@@ -50,28 +50,28 @@ public class Class5258 extends PremiumModule {
     @EventTarget
     @LowerPriority
     private void method16423(Class4399 var1) {
-        if (this.method15996() && mc.field1337.method23150()) {
+        if (this.method15996() && mc.playerController.method23150()) {
             if (var1.method13921() && field23649 >= 0) {
                 field23649++;
                 float[] var4 = Class9142.method34144(
-                        (double) this.field23650.method8304() + 0.5, (double) this.field23650.method8306() + 0.5, (double) this.field23650.getY() + 0.5
+                        (double) this.field23650.getX() + 0.5, (double) this.field23650.getZ() + 0.5, (double) this.field23650.getY() + 0.5
                 );
                 var1.method13918(var4[0]);
                 var1.method13916(var4[1]);
             }
 
             if (field23649 == (!this.method15974("Cubecraft") ? 3 : 5)) {
-                if (mc.player.field4902.field5443 != this.field23647) {
-                    this.field23648 = mc.player.field4902.field5443;
-                    mc.player.field4902.field5443 = this.field23647;
-                    mc.field1337.method23138();
+                if (mc.player.inventory.currentItem != this.field23647) {
+                    this.field23648 = mc.player.inventory.currentItem;
+                    mc.player.inventory.currentItem = this.field23647;
+                    mc.playerController.method23138();
                 }
 
-                mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
-                mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+                mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
                 field23649 = -1;
                 this.field23650 = null;
-                mc.player.field4902.field5443 = this.field23648;
+                mc.player.inventory.currentItem = this.field23648;
             }
 
             int var7 = this.method16424();
@@ -82,13 +82,13 @@ public class Class5258 extends PremiumModule {
                 BlockPos var5 = this.method16425();
                 if (var5 != null) {
                     if (var1.method13921() && field23649 == -1) {
-                        float[] var6 = Class9142.method34144((double) var5.method8304() + 0.5, (double) var5.method8306() + 0.5, (double) var5.getY() + 0.5);
+                        float[] var6 = Class9142.method34144((double) var5.getX() + 0.5, (double) var5.getZ() + 0.5, (double) var5.getY() + 0.5);
                         var1.method13918(var6[0]);
                         var1.method13916(var6[1]);
-                        if (var7 != mc.player.field4902.field5443) {
-                            this.field23648 = mc.player.field4902.field5443;
-                            mc.player.field4902.field5443 = var7;
-                            mc.field1337.method23138();
+                        if (var7 != mc.player.inventory.currentItem) {
+                            this.field23648 = mc.player.inventory.currentItem;
+                            mc.player.inventory.currentItem = var7;
+                            mc.playerController.method23138();
                         }
 
                         this.field23647 = var7;
@@ -98,8 +98,8 @@ public class Class5258 extends PremiumModule {
                     }
 
                     if (this.field23650 != null) {
-                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
-                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                        mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+                        mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
                     }
                 }
             }
@@ -110,7 +110,7 @@ public class Class5258 extends PremiumModule {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.field4904.method18131(var3).method18266()) {
                 ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
-                if (var4.method32107() == Class8514.field37883) {
+                if (var4.getItem() == Items.field37883) {
                     return var3 - 36;
                 }
             }
@@ -120,13 +120,13 @@ public class Class5258 extends PremiumModule {
             for (int var5 = 9; var5 < 36; var5++) {
                 if (mc.player.field4904.method18131(var5).method18266()) {
                     ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                    if (var6.method32107() == Class8514.field37883) {
+                    if (var6.getItem() == Items.field37883) {
                         if (Class8005.method27349() <= Class5989.field26136.method18582()) {
-                            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                         }
 
                         Class7789.method25873(var5, 6);
-                        mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new Class5482(-1));
                         return 6;
                     }
                 }
@@ -156,9 +156,9 @@ public class Class5258 extends PremiumModule {
                     && (
                     var12 == null
                             || mc.player
-                            .method3276((double) var12.method8304() + 0.5 - var3, var12.getY() + 1, (double) var12.method8306() + 0.5 - var7)
+                            .method3276((double) var12.getX() + 0.5 - var3, var12.getY() + 1, (double) var12.getZ() + 0.5 - var7)
                             > mc.player
-                            .method3276((double) var15.method8304() + 0.5 - var3, var15.getY() + 1, (double) var15.method8306() + 0.5 - var7)
+                            .method3276((double) var15.getX() + 0.5 - var3, var15.getY() + 1, (double) var15.getZ() + 0.5 - var7)
             )) {
                 var12 = var15;
             }
@@ -181,9 +181,9 @@ public class Class5258 extends PremiumModule {
                         && (
                         var12 == null
                                 || mc.player
-                                .method3276((double) var12.method8304() + 0.5 - var3, var12.getY() + 1, (double) var12.method8306() + 0.5 - var7)
+                                .method3276((double) var12.getX() + 0.5 - var3, var12.getY() + 1, (double) var12.getZ() + 0.5 - var7)
                                 > mc.player
-                                .method3276((double) var22.method8304() + 0.5 - var3, var22.getY() + 1, (double) var22.method8306() + 0.5 - var7)
+                                .method3276((double) var22.getX() + 0.5 - var3, var22.getY() + 1, (double) var22.getZ() + 0.5 - var7)
                 )) {
                     var12 = var22;
                 }

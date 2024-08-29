@@ -17,7 +17,7 @@ public class ChatScreen extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field7047 = this.field4562.ingameGUI.getChatGUI().method5934().size();
       this.field7048 = new Class1303(this, this.field4568, 4, this.field4565 - 12, this.field4564 - 4, 12, new TranslationTextComponent("chat.editBox"));
       this.field7048.method5657(256);
@@ -31,21 +31,21 @@ public class ChatScreen extends Screen {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
+   public void resize(Minecraft var1, int var2, int var3) {
       String var6 = this.field7048.method5636();
-      this.method2467(var1, var2, var3);
+      this.init(var1, var2, var3);
       this.method6346(var6);
       this.field7050.method20835();
    }
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
       this.field4562.ingameGUI.getChatGUI().method5936();
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field7048.method5633();
    }
 
@@ -183,7 +183,7 @@ public class ChatScreen extends Screen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 

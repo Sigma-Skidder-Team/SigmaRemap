@@ -28,7 +28,7 @@ public class Class1691 implements Class1658 {
    private final Class7480 field9215;
 
    public Class1691(ServerWorld var1, List<Class1670> var2) {
-      int var5 = MathHelper.method37769(Math.sqrt((double)var2.size()));
+      int var5 = MathHelper.floor(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
          Class7481 var6 = ((Class1670)var2.get(var2.size() / 2)).method7072();
          this.field9201 = var2;
@@ -102,8 +102,8 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class7380 method6738(BlockPos var1) {
-      return this.method6824(var1.method8304() >> 4, var1.method8306() >> 4).method6738(var1);
+   public BlockState getBlockState(BlockPos var1) {
+      return this.method6824(var1.getX() >> 4, var1.getZ() >> 4).getBlockState(var1);
    }
 
    @Override
@@ -123,7 +123,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class6668 method6822() {
+   public Class6668 getBiomeManager() {
       return this.field9212;
    }
 
@@ -144,10 +144,10 @@ public class Class1691 implements Class1658 {
 
    @Override
    public boolean method6729(BlockPos var1, boolean var2, Entity var3, int var4) {
-      Class7380 var7 = this.method6738(var1);
-      if (!var7.method23393()) {
+      BlockState var7 = this.getBlockState(var1);
+      if (!var7.isAir()) {
          if (var2) {
-            Class944 var8 = !var7.method23383().method11998() ? null : this.method6759(var1);
+            TileEntity var8 = !var7.getBlock().isTileEntityProvider() ? null : this.getTileEntity(var1);
             Block.method11556(var7, this.field9205, var1, var8, var3, ItemStack.EMPTY);
          }
 
@@ -159,17 +159,17 @@ public class Class1691 implements Class1658 {
 
    @Nullable
    @Override
-   public Class944 method6759(BlockPos var1) {
+   public TileEntity getTileEntity(BlockPos var1) {
       Class1670 var4 = this.method7011(var1);
-      Class944 var5 = var4.method6759(var1);
+      TileEntity var5 = var4.getTileEntity(var1);
       if (var5 == null) {
-         Class39 var6 = var4.method7086(var1);
-         Class7380 var7 = var4.method6738(var1);
+         CompoundNBT var6 = var4.method7086(var1);
+         BlockState var7 = var4.getBlockState(var1);
          if (var6 != null) {
             if (!"DUMMY".equals(var6.method126("id"))) {
-               var5 = Class944.method3772(var7, var6);
+               var5 = TileEntity.method3772(var7, var6);
             } else {
-               Block var8 = var7.method23383();
+               Block var8 = var7.getBlock();
                if (!(var8 instanceof Class3245)) {
                   return null;
                }
@@ -183,7 +183,7 @@ public class Class1691 implements Class1658 {
             }
          }
 
-         if (var7.method23383() instanceof Class3245) {
+         if (var7.getBlock() instanceof Class3245) {
             field9200.warn("Tried to access a block entity before it was created. {}", var1);
          }
 
@@ -194,23 +194,23 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public boolean method6726(BlockPos var1, Class7380 var2, int var3, int var4) {
+   public boolean method6726(BlockPos var1, BlockState var2, int var3, int var4) {
       Class1670 var7 = this.method7011(var1);
-      Class7380 var8 = var7.method7061(var1, var2, false);
+      BlockState var8 = var7.method7061(var1, var2, false);
       if (var8 != null) {
          this.field9205.method6727(var1, var8, var2);
       }
 
-      Block var9 = var2.method23383();
-      if (!var9.method11998()) {
-         if (var8 != null && var8.method23383().method11998()) {
+      Block var9 = var2.getBlock();
+      if (!var9.isTileEntityProvider()) {
+         if (var8 != null && var8.getBlock().isTileEntityProvider()) {
             var7.method7081(var1);
          }
       } else if (var7.method7080().method34303() != Class2076.field13525) {
-         Class39 var10 = new Class39();
-         var10.method102("x", var1.method8304());
+         CompoundNBT var10 = new CompoundNBT();
+         var10.method102("x", var1.getX());
          var10.method102("y", var1.getY());
-         var10.method102("z", var1.method8306());
+         var10.method102("z", var1.getZ());
          var10.method109("id", "DUMMY");
          var7.method7085(var10);
       } else {
@@ -230,8 +230,8 @@ public class Class1691 implements Class1658 {
 
    @Override
    public boolean method6916(Entity var1) {
-      int var4 = MathHelper.method37769(var1.getPosX() / 16.0);
-      int var5 = MathHelper.method37769(var1.getPosZ() / 16.0);
+      int var4 = MathHelper.floor(var1.getPosX() / 16.0);
+      int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
       this.method6824(var4, var5).method7063(var1);
       return true;
    }
@@ -258,7 +258,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class8904 method6867() {
+   public DynamicRegistries method6867() {
       return this.field9205.method6867();
    }
 
@@ -269,7 +269,7 @@ public class Class1691 implements Class1658 {
 
    @Override
    public Class9755 method6807(BlockPos var1) {
-      if (this.method6843(var1.method8304() >> 4, var1.method8306() >> 4)) {
+      if (this.method6843(var1.getX() >> 4, var1.getZ() >> 4)) {
          return new Class9755(this.field9205.method6997(), this.field9205.method6784(), 0L, this.field9205.method7000());
       } else {
          throw new RuntimeException("We are asking a region for a chunk out of bound");
@@ -329,8 +329,8 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public boolean method6815(BlockPos var1, Predicate<Class7380> var2) {
-      return var2.test(this.method6738(var1));
+   public boolean method6815(BlockPos var1, Predicate<BlockState> var2) {
+      return var2.test(this.getBlockState(var1));
    }
 
    @Override

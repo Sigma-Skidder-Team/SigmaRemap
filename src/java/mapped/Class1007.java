@@ -28,7 +28,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    public boolean field5634;
    public int field5635;
    public float field5636;
-   public Class1001 field5637;
+   public EnderCrystalEntity field5637;
    private final Class7819 field5638;
    private final Class8942 field5639;
    private int field5640 = 100;
@@ -37,8 +37,8 @@ public class Class1007 extends Class1006 implements Class1008 {
    private final int[] field5643 = new int[24];
    private final Class8662 field5644 = new Class8662();
 
-   public Class1007(Class8992<? extends Class1007> var1, World var2) {
-      super(Class8992.field41024, var2);
+   public Class1007(EntityType<? extends Class1007> var1, World var2) {
+      super(EntityType.field41024, var2);
       this.field5624 = new Class908(this, "head", 1.0F, 1.0F);
       this.field5625 = new Class908(this, "neck", 3.0F, 3.0F);
       this.field5626 = new Class908(this, "body", 5.0F, 3.0F);
@@ -93,13 +93,13 @@ public class Class1007 extends Class1006 implements Class1008 {
 
    @Override
    public void method2871() {
-      if (this.field5024.field9020) {
+      if (this.world.field9020) {
          this.method3043(this.method3042());
          if (!this.method3245()) {
-            float var3 = MathHelper.method37764(this.field5633 * (float) (Math.PI * 2));
-            float var4 = MathHelper.method37764(this.field5632 * (float) (Math.PI * 2));
+            float var3 = MathHelper.cos(this.field5633 * (float) (Math.PI * 2));
+            float var4 = MathHelper.cos(this.field5632 * (float) (Math.PI * 2));
             if (var4 <= -0.3F && var3 >= -0.3F) {
-               this.field5024
+               this.world
                   .method6745(
                      this.getPosX(),
                      this.getPosY(),
@@ -113,7 +113,7 @@ public class Class1007 extends Class1006 implements Class1008 {
             }
 
             if (!this.field5639.method32672().method23358() && --this.field5640 < 0) {
-               this.field5024
+               this.world
                   .method6745(
                      this.getPosX(),
                      this.getPosY(),
@@ -160,7 +160,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
             this.field5621[this.field5622][0] = (double)this.field5031;
             this.field5621[this.field5622][1] = this.getPosY();
-            if (!this.field5024.field9020) {
+            if (!this.world.field9020) {
                Class7373 var47 = this.field5639.method32672();
                var47.method23360();
                if (this.field5639.method32672() != var47) {
@@ -187,9 +187,9 @@ public class Class1007 extends Class1006 implements Class1008 {
                   );
                   Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).method11333();
                   Vector3d var23 = new Vector3d(
-                        (double) MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0)),
+                        (double) MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0)),
                         this.method3433().field18049,
-                        (double)(-MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0)))
+                        (double)(-MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0)))
                      )
                      .method11333();
                   float var24 = Math.max(((float)var23.method11334(var22) + 0.5F) / 1.5F, 0.0F);
@@ -233,27 +233,27 @@ public class Class1007 extends Class1006 implements Class1008 {
             }
 
             float var51 = (float)(this.method4317(5, 1.0F)[1] - this.method4317(10, 1.0F)[1]) * 10.0F * (float) (Math.PI / 180.0);
-            float var30 = MathHelper.method37764(var51);
-            float var31 = MathHelper.method37763(var51);
+            float var30 = MathHelper.cos(var51);
+            float var31 = MathHelper.sin(var51);
             float var32 = this.field5031 * (float) (Math.PI / 180.0);
-            float var33 = MathHelper.method37763(var32);
-            float var34 = MathHelper.method37764(var32);
+            float var33 = MathHelper.sin(var32);
+            float var34 = MathHelper.cos(var32);
             this.method4318(this.field5626, (double)(var33 * 0.5F), 0.0, (double)(-var34 * 0.5F));
             this.method4318(this.field5630, (double)(var34 * 4.5F), 2.0, (double)(var33 * 4.5F));
             this.method4318(this.field5631, (double)(var34 * -4.5F), 2.0, (double)(var33 * -4.5F));
-            if (!this.field5024.field9020 && this.field4952 == 0) {
+            if (!this.world.field9020 && this.field4952 == 0) {
                this.method4321(
-                  this.field5024.method6770(this, this.field5630.method3389().method19663(4.0, 2.0, 4.0).method19667(0.0, -2.0, 0.0), Class8088.field34761)
+                  this.world.method6770(this, this.field5630.method3389().method19663(4.0, 2.0, 4.0).method19667(0.0, -2.0, 0.0), Class8088.field34761)
                );
                this.method4321(
-                  this.field5024.method6770(this, this.field5631.method3389().method19663(4.0, 2.0, 4.0).method19667(0.0, -2.0, 0.0), Class8088.field34761)
+                  this.world.method6770(this, this.field5631.method3389().method19663(4.0, 2.0, 4.0).method19667(0.0, -2.0, 0.0), Class8088.field34761)
                );
-               this.method4322(this.field5024.method6770(this, this.field5624.method3389().method19664(1.0), Class8088.field34761));
-               this.method4322(this.field5024.method6770(this, this.field5625.method3389().method19664(1.0), Class8088.field34761));
+               this.method4322(this.world.method6770(this, this.field5624.method3389().method19664(1.0), Class8088.field34761));
+               this.method4322(this.world.method6770(this, this.field5625.method3389().method19664(1.0), Class8088.field34761));
             }
 
-            float var35 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
-            float var36 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
+            float var35 = MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
+            float var36 = MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0) - this.field5636 * 0.01F);
             float var37 = this.method4319();
             this.method4318(this.field5624, (double)(var35 * 6.5F * var30), (double)(var37 + var31 * 6.5F), (double)(-var36 * 6.5F * var30));
             this.method4318(this.field5625, (double)(var35 * 5.5F * var30), (double)(var37 + var31 * 5.5F), (double)(-var36 * 5.5F * var30));
@@ -275,8 +275,8 @@ public class Class1007 extends Class1006 implements Class1008 {
 
                double[] var40 = this.method4317(12 + var38 * 2, 1.0F);
                float var41 = this.field5031 * (float) (Math.PI / 180.0) + this.method4323(var40[0] - var55[0]) * (float) (Math.PI / 180.0);
-               float var56 = MathHelper.method37763(var41);
-               float var57 = MathHelper.method37764(var41);
+               float var56 = MathHelper.sin(var41);
+               float var57 = MathHelper.cos(var41);
                float var58 = 1.5F;
                float var59 = (float)(var38 + 1) * 2.0F;
                this.method4318(
@@ -287,7 +287,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                );
             }
 
-            if (!this.field5024.field9020) {
+            if (!this.world.field9020) {
                this.field5634 = this.method4324(this.field5624.method3389())
                   | this.method4324(this.field5625.method3389())
                   | this.method4324(this.field5626.method3389());
@@ -311,7 +311,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          float var43 = (this.field5054.nextFloat() - 0.5F) * 8.0F;
          float var46 = (this.field5054.nextFloat() - 0.5F) * 4.0F;
          float var49 = (this.field5054.nextFloat() - 0.5F) * 8.0F;
-         this.field5024
+         this.world
             .method6746(
                Class7940.field34070,
                this.getPosX() + (double)var43,
@@ -350,11 +350,11 @@ public class Class1007 extends Class1006 implements Class1008 {
       }
 
       if (this.field5054.nextInt(10) == 0) {
-         List<Class1001> var3 = this.field5024.<Class1001>method7182(Class1001.class, this.method3389().method19664(32.0));
-         Class1001 var4 = null;
+         List<EnderCrystalEntity> var3 = this.world.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, this.method3389().method19664(32.0));
+         EnderCrystalEntity var4 = null;
          double var5 = Double.MAX_VALUE;
 
-         for (Class1001 var8 : var3) {
+         for (EnderCrystalEntity var8 : var3) {
             double var9 = var8.getDistanceSq(this);
             if (var9 < var5) {
                var5 = var9;
@@ -398,12 +398,12 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    private boolean method4324(Class6488 var1) {
-      int var4 = MathHelper.method37769(var1.field28449);
-      int var5 = MathHelper.method37769(var1.field28450);
-      int var6 = MathHelper.method37769(var1.field28451);
-      int var7 = MathHelper.method37769(var1.field28452);
-      int var8 = MathHelper.method37769(var1.field28453);
-      int var9 = MathHelper.method37769(var1.field28454);
+      int var4 = MathHelper.floor(var1.field28449);
+      int var5 = MathHelper.floor(var1.field28450);
+      int var6 = MathHelper.floor(var1.field28451);
+      int var7 = MathHelper.floor(var1.field28452);
+      int var8 = MathHelper.floor(var1.field28453);
+      int var9 = MathHelper.floor(var1.field28454);
       boolean var10 = false;
       boolean var11 = false;
 
@@ -411,11 +411,11 @@ public class Class1007 extends Class1006 implements Class1008 {
          for (int var13 = var5; var13 <= var8; var13++) {
             for (int var14 = var6; var14 <= var9; var14++) {
                BlockPos var15 = new BlockPos(var12, var13, var14);
-               Class7380 var16 = this.field5024.method6738(var15);
-               Block var17 = var16.method23383();
-               if (!var16.method23393() && var16.method23384() != Class8649.field38945) {
-                  if (this.field5024.method6789().method17135(Class5462.field24224) && !Class7645.field32791.method24917(var17)) {
-                     var11 = this.field5024.method6728(var15, false) || var11;
+               BlockState var16 = this.world.getBlockState(var15);
+               Block var17 = var16.getBlock();
+               if (!var16.isAir() && var16.method23384() != Class8649.field38945) {
+                  if (this.world.method6789().method17135(Class5462.field24224) && !Class7645.field32791.method24917(var17)) {
+                     var11 = this.world.method6728(var15, false) || var11;
                   } else {
                      var10 = true;
                   }
@@ -428,7 +428,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          BlockPos var18 = new BlockPos(
             var4 + this.field5054.nextInt(var7 - var4 + 1), var5 + this.field5054.nextInt(var8 - var5 + 1), var6 + this.field5054.nextInt(var9 - var6 + 1)
          );
-         this.field5024.method6999(2008, var18, 0);
+         this.world.method6999(2008, var18, 0);
       }
 
       return var10;
@@ -501,32 +501,32 @@ public class Class1007 extends Class1006 implements Class1008 {
          float var3 = (this.field5054.nextFloat() - 0.5F) * 8.0F;
          float var4 = (this.field5054.nextFloat() - 0.5F) * 4.0F;
          float var5 = (this.field5054.nextFloat() - 0.5F) * 8.0F;
-         this.field5024
+         this.world
             .method6746(
                Class7940.field34069, this.getPosX() + (double)var3, this.getPosY() + 2.0 + (double)var4, this.getPosZ() + (double)var5, 0.0, 0.0, 0.0
             );
       }
 
-      boolean var6 = this.field5024.method6789().method17135(Class5462.field24227);
+      boolean var6 = this.world.method6789().method17135(Class5462.field24227);
       short var7 = 500;
       if (this.field5638 != null && !this.field5638.method26127()) {
          var7 = 12000;
       }
 
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (this.field5635 > 150 && this.field5635 % 5 == 0 && var6) {
             this.method4327(MathHelper.method37767((float)var7 * 0.08F));
          }
 
          if (this.field5635 == 1 && !this.method3245()) {
-            this.field5024.method6801(1028, this.method3432(), 0);
+            this.world.method6801(1028, this.getPosition(), 0);
          }
       }
 
       this.move(Class2107.field13742, new Vector3d(0.0, 0.1F, 0.0));
       this.field5031 += 20.0F;
       this.field4965 = this.field5031;
-      if (this.field5635 == 200 && !this.field5024.field9020) {
+      if (this.field5635 == 200 && !this.world.field9020) {
          if (var6) {
             this.method4327(MathHelper.method37767((float)var7 * 0.2F));
          }
@@ -543,7 +543,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       while (var1 > 0) {
          int var4 = ExperienceOrbEntity.method4179(var1);
          var1 -= var4;
-         this.field5024.method6916(new ExperienceOrbEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var4));
+         this.world.method6916(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), var4));
       }
    }
 
@@ -556,21 +556,21 @@ public class Class1007 extends Class1006 implements Class1008 {
             if (var3 >= 12) {
                if (var3 >= 20) {
                   int var5 = var3 - 20;
-                  var6 = MathHelper.method37767(20.0F * MathHelper.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
-                  var7 = MathHelper.method37767(20.0F * MathHelper.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
+                  var6 = MathHelper.method37767(20.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
+                  var7 = MathHelper.method37767(20.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 4) * (float)var5)));
                } else {
                   int var8 = var3 - 12;
-                  var6 = MathHelper.method37767(40.0F * MathHelper.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
-                  var7 = MathHelper.method37767(40.0F * MathHelper.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
+                  var6 = MathHelper.method37767(40.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
+                  var7 = MathHelper.method37767(40.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 8) * (float)var8)));
                   var4 += 10;
                }
             } else {
-               var6 = MathHelper.method37767(60.0F * MathHelper.method37764(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
-               var7 = MathHelper.method37767(60.0F * MathHelper.method37763(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
+               var6 = MathHelper.method37767(60.0F * MathHelper.cos(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
+               var7 = MathHelper.method37767(60.0F * MathHelper.sin(2.0F * ((float) -Math.PI + (float) (Math.PI / 12) * (float)var3)));
             }
 
             int var9 = Math.max(
-               this.field5024.method6776() + 10, this.field5024.method7006(Class101.field300, new BlockPos(var6, 0, var7)).getY() + var4
+               this.world.method6776() + 10, this.world.method7006(Class101.field300, new BlockPos(var6, 0, var7)).getY() + var4
             );
             this.field5642[var3] = new Class7176(var6, var9, var7);
          }
@@ -607,7 +607,7 @@ public class Class1007 extends Class1006 implements Class1008 {
    public int method4329(double var1, double var3, double var5) {
       float var9 = 10000.0F;
       int var10 = 0;
-      Class7176 var11 = new Class7176(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
+      Class7176 var11 = new Class7176(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
       byte var12 = 0;
       if (this.field5638 == null || this.field5638.method26125() == 0) {
          var12 = 12;
@@ -724,15 +724,15 @@ public class Class1007 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("DragonPhase", this.field5639.method32672().method23368().method37259());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method118("DragonPhase")) {
+      if (var1.contains("DragonPhase")) {
          this.field5639.method32671(Class9598.method37260(var1.method122("DragonPhase")));
       }
    }
@@ -775,7 +775,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       Class9598 var7 = var6.method23368();
       double var10;
       if (var7 == Class9598.field44899 || var7 == Class9598.field44900) {
-         BlockPos var8 = this.field5024.method7006(Class101.field300, Class2909.field17994);
+         BlockPos var8 = this.world.method7006(Class101.field300, Class2909.field17994);
          float var9 = Math.max(MathHelper.method37766(var8.method8319(this.getPositionVec(), true)) / 4.0F, 1.0F);
          var10 = (double)((float)var1 / var9);
       } else if (!var6.method23358()) {
@@ -796,7 +796,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       Class9598 var5 = var4.method23368();
       Vector3d var11;
       if (var5 == Class9598.field44899 || var5 == Class9598.field44900) {
-         BlockPos var12 = this.field5024.method7006(Class101.field300, Class2909.field17994);
+         BlockPos var12 = this.world.method7006(Class101.field300, Class2909.field17994);
          float var13 = Math.max(MathHelper.method37766(var12.method8319(this.getPositionVec(), true)) / 4.0F, 1.0F);
          float var8 = 6.0F / var13;
          float var9 = this.field5032;
@@ -817,10 +817,10 @@ public class Class1007 extends Class1006 implements Class1008 {
       return var11;
    }
 
-   public void method4335(Class1001 var1, BlockPos var2, Class8654 var3) {
+   public void method4335(EnderCrystalEntity var1, BlockPos var2, Class8654 var3) {
       PlayerEntity var6;
       if (!(var3.method31109() instanceof PlayerEntity)) {
-         var6 = this.field5024.method7190(field5620, (double)var2.method8304(), (double)var2.getY(), (double)var2.method8306());
+         var6 = this.world.method7190(field5620, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
       } else {
          var6 = (PlayerEntity)var3.method31109();
       }
@@ -834,7 +834,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
    @Override
    public void method3155(Class9289<?> var1) {
-      if (field5619.equals(var1) && this.field5024.field9020) {
+      if (field5619.equals(var1) && this.world.field9020) {
          this.field5639.method32671(Class9598.method37260(this.method3210().<Integer>method35445(field5619)));
       }
 

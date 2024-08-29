@@ -4,12 +4,12 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class Class1090 extends Class1018 {
-   private static final Class120 field5972 = Class120.method339(Class8514.field37909, Class8514.field37910);
+   private static final Class120 field5972 = Class120.method339(Items.field37909, Items.field37910);
    private static final Class9289<Boolean> field5973 = Class9361.<Boolean>method35441(Class1090.class, Class7784.field33398);
    private Class2775<PlayerEntity> field5974;
    private Class2681 field5975;
 
-   public Class1090(Class8992<? extends Class1090> var1, World var2) {
+   public Class1090(EntityType<? extends Class1090> var1, World var2) {
       super(var1, var2);
       this.method5077();
    }
@@ -24,13 +24,13 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method115("Trusting", this.method5072());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5073(var1.method132("Trusting"));
    }
@@ -131,18 +131,18 @@ public class Class1090 extends Class1018 {
       ItemStack var5 = var1.getHeldItem(var2);
       if ((this.field5975 == null || this.field5975.method10900()) && !this.method5072() && this.method4381(var5) && var1.getDistanceSq(this) < 9.0) {
          this.method4501(var1, var5);
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             if (this.field5054.nextInt(3) != 0) {
                this.method5076(false);
-               this.field5024.method6786(this, (byte)40);
+               this.world.method6786(this, (byte)40);
             } else {
                this.method5073(true);
                this.method5076(true);
-               this.field5024.method6786(this, (byte)41);
+               this.world.method6786(this, (byte)41);
             }
          }
 
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       } else {
          return super.method4285(var1, var2);
       }
@@ -171,7 +171,7 @@ public class Class1090 extends Class1018 {
          double var6 = this.field5054.nextGaussian() * 0.02;
          double var8 = this.field5054.nextGaussian() * 0.02;
          double var10 = this.field5054.nextGaussian() * 0.02;
-         this.field5024.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
+         this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
       }
    }
 
@@ -187,7 +187,7 @@ public class Class1090 extends Class1018 {
    }
 
    public Class1090 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41059.method33215(var1);
+      return EntityType.field41059.method33215(var1);
    }
 
    @Override
@@ -195,19 +195,19 @@ public class Class1090 extends Class1018 {
       return field5972.test(var1);
    }
 
-   public static boolean method5078(Class8992<Class1090> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5078(EntityType<Class1090> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var4.nextInt(3) != 0;
    }
 
    @Override
    public boolean method4266(Class1662 var1) {
       if (var1.method7050(this) && !var1.method7014(this.method3389())) {
-         BlockPos var4 = this.method3432();
+         BlockPos var4 = this.getPosition();
          if (var4.getY() < var1.method6776()) {
             return false;
          }
 
-         Class7380 var5 = var1.method6738(var4.method8313());
+         BlockState var5 = var1.getBlockState(var4.method8313());
          if (var5.method23448(Blocks.field36395) || var5.method23446(Class7645.field32767)) {
             return true;
          }
@@ -218,7 +218,7 @@ public class Class1090 extends Class1018 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(1.0F);
       }

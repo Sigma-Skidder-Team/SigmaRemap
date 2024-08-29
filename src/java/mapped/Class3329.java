@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3329 extends Class3257 {
+public class Class3329 extends Item {
    private static String[] field18837;
 
    public Class3329(Class5643 var1) {
@@ -11,7 +11,7 @@ public class Class3329 extends Class3257 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Block var6 = var4.method6738(var5).method23383();
+      Block var6 = var4.getBlockState(var5).getBlock();
       if (!var6.method11540(Class7645.field32771)) {
          return ActionResultType.field14820;
       } else {
@@ -25,12 +25,12 @@ public class Class3329 extends Class3257 {
    }
 
    public static ActionResultType method11880(PlayerEntity var0, World var1, BlockPos var2) {
-      Class996 var5 = null;
+      LeashKnotEntity var5 = null;
       boolean var6 = false;
       double var7 = 7.0;
-      int var9 = var2.method8304();
+      int var9 = var2.getX();
       int var10 = var2.getY();
-      int var11 = var2.method8306();
+      int var11 = var2.getZ();
 
       for (Class1006 var13 : var1.<Class1006>method7182(
          Class1006.class,
@@ -38,7 +38,7 @@ public class Class3329 extends Class3257 {
       )) {
          if (var13.method4297() == var0) {
             if (var5 == null) {
-               var5 = Class996.method4087(var1, var2);
+               var5 = LeashKnotEntity.method4087(var1, var2);
             }
 
             var13.method4298(var5, true);

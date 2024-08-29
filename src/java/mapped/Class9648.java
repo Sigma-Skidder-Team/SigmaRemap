@@ -31,7 +31,7 @@ public class Class9648 {
    }
 
    public boolean method37625(BlockPos var1) {
-      return var1.method8304() >> 4 == this.field45109 >> 4 && var1.method8306() >> 4 == this.field45110 >> 4;
+      return var1.getX() >> 4 == this.field45109 >> 4 && var1.getZ() >> 4 == this.field45110 >> 4;
    }
 
    public int method37626() {

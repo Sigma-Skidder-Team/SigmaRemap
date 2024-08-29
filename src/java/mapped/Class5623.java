@@ -19,7 +19,7 @@ public class Class5623 extends MessageToByteEncoder<Packet<?>> {
    }
 
    public void encode(ChannelHandlerContext var1, Packet<?> var2, ByteBuf var3) throws Exception {
-      Class1858 var6 = var1.channel().attr(NetworkManager.field38642).get();
+      ProtocolType var6 = var1.channel().attr(NetworkManager.field38642).get();
       if (var6 == null) {
          throw new RuntimeException("ConnectionProtocol unknown: " + var2);
       } else {

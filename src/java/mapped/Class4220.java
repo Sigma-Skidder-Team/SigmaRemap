@@ -9,7 +9,7 @@ public class Class4220 extends Class4213 {
       super(Class7792.field33468, 1, var1, var2, 1, 2, 2);
    }
 
-   public Class4220(Class8761 var1, Class39 var2) {
+   public Class4220(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33468, var2);
    }
 
@@ -20,8 +20,8 @@ public class Class4220 extends Class4213 {
       Class9312 var12 = Class9312.method35191(var10)[Direction.field673.method533()];
       Class9312 var13 = Class9312.method35191(var11)[Direction.field673.method533()];
       if (Class9312.method35192(this.field20539) / 25 > 0) {
-         this.method13006(var1, var5, 0, 8, Class9312.method35193(var10)[Direction.field672.method533()]);
-         this.method13006(var1, var5, 0, 0, Class9312.method35193(var11)[Direction.field672.method533()]);
+         this.method13006(var1, var5, 0, 8, Class9312.method35193(var10)[Direction.DOWN.method533()]);
+         this.method13006(var1, var5, 0, 0, Class9312.method35193(var11)[Direction.DOWN.method533()]);
       }
 
       if (Class9312.method35191(var13)[Direction.field673.method533()] == null) {
@@ -33,7 +33,7 @@ public class Class4220 extends Class4213 {
       }
 
       for (int var14 = 1; var14 <= 7; var14++) {
-         Class7380 var15 = field20529;
+         BlockState var15 = field20529;
          if (var14 == 2 || var14 == 6) {
             var15 = field20528;
          }
@@ -45,7 +45,7 @@ public class Class4220 extends Class4213 {
       }
 
       for (int var16 = 1; var16 <= 7; var16++) {
-         Class7380 var17 = field20530;
+         BlockState var17 = field20530;
          if (var16 == 2 || var16 == 6) {
             var17 = field20532;
          }

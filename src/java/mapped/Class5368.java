@@ -32,8 +32,8 @@ public class Class5368 extends Module {
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             this.field23984 = false;
-            mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, var5 + 0.2, var7, false));
-            mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, var5 + 0.1, var7, false));
+            mc.getConnection().sendPacket(new Class5605(var3, var5 + 0.2, var7, false));
+            mc.getConnection().sendPacket(new Class5605(var3, var5 + 0.1, var7, false));
             this.field23984 = true;
             this.field23985.method27120();
             this.field23985.method27118();
@@ -53,7 +53,7 @@ public class Class5368 extends Module {
             int var3 = this.field23983.size();
 
             for (int var4 = 0; var4 < var3; var4++) {
-                mc.getClientPlayNetHandler().sendPacket(this.field23983.get(var4));
+                mc.getConnection().sendPacket(this.field23983.get(var4));
             }
 
             Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Disabler canceled"));
@@ -93,7 +93,7 @@ public class Class5368 extends Module {
                 int var4 = this.field23983.size();
 
                 for (int var5 = 0; var5 < var4; var5++) {
-                    mc.getClientPlayNetHandler().sendPacket(this.field23983.get(var5));
+                    mc.getConnection().sendPacket(this.field23983.get(var5));
                 }
 
                 this.field23983.clear();
@@ -107,7 +107,7 @@ public class Class5368 extends Module {
 
     @EventTarget
     private void method16900(Class4402 var1) {
-        if (mc.getClientPlayNetHandler() != null) {
+        if (mc.getConnection() != null) {
             if (this.field23984) {
                 if (var1.method13932() instanceof CEntityActionPacket
                         || var1.method13932() instanceof Class5603
@@ -135,12 +135,12 @@ public class Class5368 extends Module {
                     } else {
                         Class5473 var4 = (Class5473) var1.method13898();
                         var1.method13900(true);
-                        mc.getClientPlayNetHandler()
+                        mc.getConnection()
                                 .sendPacket(new Class5604(var4.field24297, var4.field24298, var4.field24299, var4.field24300, var4.field24301, false));
                         int var5 = this.field23983.size();
 
                         for (int var6 = 0; var6 < var5; var6++) {
-                            mc.getClientPlayNetHandler().sendPacket(this.field23983.get(var6));
+                            mc.getConnection().sendPacket(this.field23983.get(var6));
                         }
 
                         this.field23983.clear();

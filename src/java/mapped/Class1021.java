@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1021 extends Class1056 implements Class1020, Class1022 {
    private static final Class9289<Byte> field5709 = Class9361.<Byte>method35441(Class1021.class, Class7784.field33390);
 
-   public Class1021(Class8992<? extends Class1021> var1, World var2) {
+   public Class1021(EntityType<? extends Class1021> var1, World var2) {
       super(var1, var2);
    }
 
@@ -29,15 +29,15 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method115("Pumpkin", this.method4531());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      if (var1.method118("Pumpkin")) {
+      if (var1.contains("Pumpkin")) {
          this.method4532(var1.method132("Pumpkin"));
       }
    }
@@ -50,29 +50,29 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.field5024.field9020) {
-         int var3 = MathHelper.method37769(this.getPosX());
-         int var4 = MathHelper.method37769(this.getPosY());
-         int var5 = MathHelper.method37769(this.getPosZ());
-         if (this.field5024.method7003(new BlockPos(var3, 0, var5)).method32503(new BlockPos(var3, var4, var5)) > 1.0F) {
+      if (!this.world.field9020) {
+         int var3 = MathHelper.floor(this.getPosX());
+         int var4 = MathHelper.floor(this.getPosY());
+         int var5 = MathHelper.floor(this.getPosZ());
+         if (this.world.getBiome(new BlockPos(var3, 0, var5)).method32503(new BlockPos(var3, var4, var5)) > 1.0F) {
             this.method2741(Class8654.field38994, 1.0F);
          }
 
-         if (!this.field5024.method6789().method17135(Class5462.field24224)) {
+         if (!this.world.method6789().method17135(Class5462.field24224)) {
             return;
          }
 
-         Class7380 var6 = Blocks.SNOW.method11579();
+         BlockState var6 = Blocks.SNOW.method11579();
 
          for (int var7 = 0; var7 < 4; var7++) {
-            var3 = MathHelper.method37769(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
-            var4 = MathHelper.method37769(this.getPosY());
-            var5 = MathHelper.method37769(this.getPosZ() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
+            var3 = MathHelper.floor(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
+            var4 = MathHelper.floor(this.getPosY());
+            var5 = MathHelper.floor(this.getPosZ() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
             BlockPos var8 = new BlockPos(var3, var4, var5);
-            if (this.field5024.method6738(var8).method23393()
-               && this.field5024.method7003(var8).method32503(var8) < 0.8F
-               && var6.method23443(this.field5024, var8)) {
-               this.field5024.method6730(var8, var6);
+            if (this.world.getBlockState(var8).isAir()
+               && this.world.getBiome(var8).method32503(var8) < 0.8F
+               && var6.method23443(this.world, var8)) {
+               this.world.method6730(var8, var6);
             }
          }
       }
@@ -80,7 +80,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      Class894 var5 = new Class894(this.field5024, this);
+      Class894 var5 = new Class894(this.world, this);
       double var6 = var1.method3442() - 1.1F;
       double var8 = var1.getPosX() - this.getPosX();
       double var10 = var6 - var5.getPosY();
@@ -88,7 +88,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       float var14 = MathHelper.method37766(var8 * var8 + var12 * var12) * 0.2F;
       var5.method3462(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
       this.method2863(Class6067.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.field5024.method6916(var5);
+      this.world.method6916(var5);
    }
 
    @Override
@@ -99,13 +99,13 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.method32107() == Class8514.field37956 && this.method4516()) {
+      if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       } else {
          return ActionResultType.field14820;
       }
@@ -113,10 +113,10 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.field5024.method6744((PlayerEntity)null, this, Class6067.field27115, var1, 1.0F, 1.0F);
-      if (!this.field5024.method6714()) {
+      this.world.method6744((PlayerEntity)null, this, Class6067.field27115, var1, 1.0F, 1.0F);
+      if (!this.world.method6714()) {
          this.method4532(false);
-         this.method3303(new ItemStack(Class8514.field37439), 1.7F);
+         this.method3303(new ItemStack(Items.field37439), 1.7F);
       }
    }
 

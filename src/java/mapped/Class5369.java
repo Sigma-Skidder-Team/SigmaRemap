@@ -13,17 +13,17 @@ public class Class5369 extends Module {
 
     public Class5369() {
         super(ModuleCategory.MOVEMENT, "Reloaded", "A fly for AnticheatReloaded");
-        this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
-        this.method15972(new Class6004("Offset", "Offset while flying", false));
-        this.method15972(new Class6004("NoFall", "Avoid getting fall damage when flying down", true));
+        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
+        this.registerSetting(new BooleanSetting("Offset", "Offset while flying", false));
+        this.registerSetting(new BooleanSetting("NoFall", "Avoid getting fall damage when flying down", true));
     }
 
     @Override
     public void isInDevelopment() {
         this.field23987 = mc.player.getPosY();
         this.field23986 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23988 = false;
             }
         } else {
@@ -79,7 +79,7 @@ public class Class5369 extends Module {
                     var4 -= this.method15977("Speed") / 2.0F;
                 }
 
-                if (mc.gameSettings.field44636.method8509()) {
+                if (mc.gameSettings.field44636.isKeyDown()) {
                     var4 += this.method15977("Speed") / 2.0F;
                 }
 

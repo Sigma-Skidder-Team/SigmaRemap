@@ -15,7 +15,7 @@ public class Class2850 extends Class2828 {
    private final List<Class7219> field17663;
 
    public Class2850() {
-      super(Class4520::method14309);
+      super(RenderType::getEntitySolid);
       this.field17658 = new Class7219(64, 32, 0, 10).method22673(0.0F, -4.0F, -0.99F, 5.0F, 8.0F, 1.0F);
       this.field17659 = new Class7219(64, 32, 12, 10).method22673(0.0F, -4.0F, -0.01F, 5.0F, 8.0F, 1.0F);
       this.field17660 = new Class7219(64, 32, 24, 10).method22673(0.0F, -4.0F, 0.0F, 5.0F, 8.0F, 0.005F);
@@ -36,16 +36,16 @@ public class Class2850 extends Class2828 {
    }
 
    public void method11177(float var1, float var2, float var3, float var4) {
-      float var7 = (MathHelper.method37763(var1 * 0.02F) * 0.1F + 1.25F) * var4;
+      float var7 = (MathHelper.sin(var1 * 0.02F) * 0.1F + 1.25F) * var4;
       this.field17656.field31036 = (float) Math.PI + var7;
       this.field17657.field31036 = -var7;
       this.field17658.field31036 = var7;
       this.field17659.field31036 = -var7;
       this.field17660.field31036 = var7 - var7 * 2.0F * var2;
       this.field17661.field31036 = var7 - var7 * 2.0F * var3;
-      this.field17658.field31032 = MathHelper.method37763(var7);
-      this.field17659.field31032 = MathHelper.method37763(var7);
-      this.field17660.field31032 = MathHelper.method37763(var7);
-      this.field17661.field31032 = MathHelper.method37763(var7);
+      this.field17658.field31032 = MathHelper.sin(var7);
+      this.field17659.field31032 = MathHelper.sin(var7);
+      this.field17660.field31032 = MathHelper.sin(var7);
+      this.field17661.field31032 = MathHelper.sin(var7);
    }
 }

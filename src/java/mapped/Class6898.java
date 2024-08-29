@@ -25,13 +25,13 @@ public class Class6898 extends Class6896 {
    @Override
    public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
       int var11 = var3 + 2;
-      int var12 = MathHelper.method37769((double)var11 * 0.618);
+      int var12 = MathHelper.floor((double)var11 * 0.618);
       if (!var7.field22414) {
          method21069(var1, var4.method8313());
       }
 
       double var13 = 1.0;
-      int var15 = Math.min(1, MathHelper.method37769(1.382 + Math.pow(1.0 * (double)var11 / 13.0, 2.0)));
+      int var15 = Math.min(1, MathHelper.floor(1.382 + Math.pow(1.0 * (double)var11 / 13.0, 2.0)));
       int var16 = var4.getY() + var12;
       int var17 = var11 - 5;
       List<Class8765> var18 = Lists.newArrayList();
@@ -49,11 +49,11 @@ public class Class6898 extends Class6896 {
                BlockPos var31 = var4.method8335(var27, (double)(var17 - 1), var29);
                BlockPos var32 = var31.method8339(5);
                if (this.method21077(var1, var2, var31, var32, false, var5, var6, var7)) {
-                  int var33 = var4.method8304() - var31.method8304();
-                  int var34 = var4.method8306() - var31.method8306();
+                  int var33 = var4.getX() - var31.getX();
+                  int var34 = var4.getZ() - var31.getZ();
                   double var35 = (double)var31.getY() - Math.sqrt((double)(var33 * var33 + var34 * var34)) * 0.381;
                   int var37 = !(var35 > (double)var16) ? (int)var35 : var16;
-                  BlockPos var38 = new BlockPos(var4.method8304(), var37, var4.method8306());
+                  BlockPos var38 = new BlockPos(var4.getX(), var37, var4.getZ());
                   if (this.method21077(var1, var2, var38, var31, false, var5, var6, var7)) {
                      var18.add(new Class8765(var31, var38.getY()));
                   }
@@ -79,11 +79,11 @@ public class Class6898 extends Class6896 {
       if (!var5 && Objects.equals(var3, var4)) {
          return true;
       } else {
-         BlockPos var11 = var4.method8336(-var3.method8304(), -var3.getY(), -var3.method8306());
+         BlockPos var11 = var4.method8336(-var3.getX(), -var3.getY(), -var3.getZ());
          int var12 = this.method21078(var11);
-         float var13 = (float)var11.method8304() / (float)var12;
+         float var13 = (float)var11.getX() / (float)var12;
          float var14 = (float)var11.getY() / (float)var12;
-         float var15 = (float)var11.method8306() / (float)var12;
+         float var15 = (float)var11.getZ() / (float)var12;
 
          for (int var16 = 0; var16 <= var12; var16++) {
             BlockPos var17 = var3.method8335(
@@ -104,16 +104,16 @@ public class Class6898 extends Class6896 {
    }
 
    private int method21078(BlockPos var1) {
-      int var4 = MathHelper.method37772(var1.method8304());
+      int var4 = MathHelper.method37772(var1.getX());
       int var5 = MathHelper.method37772(var1.getY());
-      int var6 = MathHelper.method37772(var1.method8306());
+      int var6 = MathHelper.method37772(var1.getZ());
       return Math.max(var4, Math.max(var5, var6));
    }
 
    private Class113 method21079(BlockPos var1, BlockPos var2) {
       Class113 var5 = Class113.field414;
-      int var6 = Math.abs(var2.method8304() - var1.method8304());
-      int var7 = Math.abs(var2.method8306() - var1.method8306());
+      int var6 = Math.abs(var2.getX() - var1.getX());
+      int var7 = Math.abs(var2.getZ() - var1.getZ());
       int var8 = Math.max(var6, var7);
       if (var8 > 0) {
          if (var6 != var8) {
@@ -133,7 +133,7 @@ public class Class6898 extends Class6896 {
    private void method21081(Class1679 var1, Random var2, int var3, BlockPos var4, List<Class8765> var5, Set<BlockPos> var6, Class9764 var7, Class4733 var8) {
       for (Class8765 var12 : var5) {
          int var13 = var12.method31621();
-         BlockPos var14 = new BlockPos(var4.method8304(), var13, var4.method8306());
+         BlockPos var14 = new BlockPos(var4.getX(), var13, var4.getZ());
          if (!var14.equals(Class8765.method31622(var12).method35437()) && this.method21080(var3, var13 - var4.getY())) {
             this.method21077(var1, var2, var14, Class8765.method31622(var12).method35437(), true, var6, var7, var8);
          }

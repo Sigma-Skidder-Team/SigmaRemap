@@ -7,7 +7,7 @@ public class Class908 extends Entity {
    private final Class8847 field5188;
 
    public Class908(Class1007 var1, String var2, float var3, float var4) {
-      super(var1.method3204(), var1.field5024);
+      super(var1.getType(), var1.world);
       this.field5188 = Class8847.method32101(var3, var4);
       this.method3385();
       this.field5186 = var1;
@@ -19,11 +19,11 @@ public class Class908 extends Entity {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
    }
 
    @Override

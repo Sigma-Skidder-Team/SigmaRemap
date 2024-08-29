@@ -20,17 +20,17 @@ import java.util.stream.Collectors;
 
 public class Class1042 extends Class1043 implements Class1062, Class1041 {
    private static final Class9289<Class7921> field5776 = Class9361.<Class7921>method35441(Class1042.class, Class7784.field33406);
-   public static final Map<Class3257, Integer> field5777 = ImmutableMap.of(
-      Class8514.field37843, 4, Class8514.field38053, 1, Class8514.field38052, 1, Class8514.field38111, 1
+   public static final Map<Item, Integer> field5777 = ImmutableMap.of(
+      Items.field37843, 4, Items.field38053, 1, Items.field38052, 1, Items.field38111, 1
    );
-   private static final Set<Class3257> field5778 = ImmutableSet.of(
-      Class8514.field37843,
-      Class8514.field38053,
-      Class8514.field38052,
-      Class8514.field37842,
-      Class8514.field37841,
-      Class8514.field38111,
-      new Class3257[]{Class8514.field38112}
+   private static final Set<Item> field5778 = ImmutableSet.of(
+      Items.field37843,
+      Items.field38053,
+      Items.field38052,
+      Items.field37842,
+      Items.field37841,
+      Items.field38111,
+      new Item[]{Items.field38112}
    );
    private int field5779;
    private boolean field5780;
@@ -99,11 +99,11 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       (BiPredicate<Class1042, Class4913>)(var0, var1) -> var1 == Class4913.field22767
    );
 
-   public Class1042(Class8992<? extends Class1042> var1, World var2) {
+   public Class1042(EntityType<? extends Class1042> var1, World var2) {
       this(var1, var2, Class9564.field44542);
    }
 
-   public Class1042(Class8992<? extends Class1042> var1, World var2, Class9564 var3) {
+   public Class1042(EntityType<? extends Class1042> var1, World var2, Class9564 var3) {
       super(var1, var2);
       ((Class6991)this.method4230()).method21682(true);
       this.method4230().method21674(true);
@@ -156,14 +156,14 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       var1.method21415(ImmutableSet.of(Class8890.field40219));
       var1.method21424(Class8890.field40220);
       var1.method21419(Class8890.field40220);
-      var1.method21422(this.field5024.method6784(), this.field5024.method6783());
+      var1.method21422(this.world.method6784(), this.world.method6783());
    }
 
    @Override
    public void method4679() {
       super.method4679();
-      if (this.field5024 instanceof ServerWorld) {
-         this.method4677((ServerWorld)this.field5024);
+      if (this.world instanceof ServerWorld) {
+         this.method4677((ServerWorld)this.world);
       }
    }
 
@@ -177,9 +177,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public void method4258() {
-      this.field5024.method6820().startSection("villagerBrain");
-      this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().endSection();
+      this.world.method6820().startSection("villagerBrain");
+      this.method2992().method21432((ServerWorld)this.world, this);
+      this.world.method6820().endSection();
       if (this.field5790) {
          this.field5790 = false;
       }
@@ -196,16 +196,16 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          }
       }
 
-      if (this.field5781 != null && this.field5024 instanceof ServerWorld) {
-         ((ServerWorld)this.field5024).method6959(Class8214.field35289, this.field5781, this);
-         this.field5024.method6786(this, (byte)14);
+      if (this.field5781 != null && this.world instanceof ServerWorld) {
+         ((ServerWorld)this.world).method6959(Class8214.field35289, this.field5781, this);
+         this.world.method6786(this, (byte)14);
          this.field5781 = null;
       }
 
       if (!this.method4305() && this.field5054.nextInt(100) == 0) {
-         Class7699 var3 = ((ServerWorld)this.field5024).method6957(this.method3432());
+         Class7699 var3 = ((ServerWorld)this.world).method6957(this.getPosition());
          if (var3 != null && var3.method25433() && !var3.method25388()) {
-            this.field5024.method6786(this, (byte)42);
+            this.world.method6786(this, (byte)42);
          }
       }
 
@@ -229,12 +229,12 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.method32107() == Class8514.field38034 || !this.method3066() || this.method4741() || this.isSleeping()) {
+      if (var5.getItem() == Items.field38034 || !this.method3066() || this.method4741() || this.isSleeping()) {
          return super.method4285(var1, var2);
       } else if (!this.method3005()) {
          boolean var6 = this.method4742().isEmpty();
-         if (var2 == Hand.field182) {
-            if (var6 && !this.field5024.field9020) {
+         if (var2 == Hand.MAIN_HAND) {
+            if (var6 && !this.world.field9020) {
                this.method4681();
             }
 
@@ -242,23 +242,23 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          }
 
          if (!var6) {
-            if (!this.field5024.field9020 && !this.field5796.isEmpty()) {
+            if (!this.world.field9020 && !this.field5796.isEmpty()) {
                this.method4682(var1);
             }
 
-            return ActionResultType.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.world.field9020);
          } else {
-            return ActionResultType.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.world.field9020);
          }
       } else {
          this.method4681();
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       }
    }
 
    private void method4681() {
       this.method4739(40);
-      if (!this.field5024.method6714()) {
+      if (!this.world.method6714()) {
          this.method2863(Class6067.field27193, this.method3099(), this.method3100());
       }
    }
@@ -302,7 +302,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          var4.method35372();
       }
 
-      this.field5787 = this.field5024.method6783();
+      this.field5787 = this.world.method6783();
       this.field5788++;
    }
 
@@ -317,14 +317,14 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    private boolean method4689() {
-      return this.field5788 == 0 || this.field5788 < 2 && this.field5024.method6783() > this.field5787 + 2400L;
+      return this.field5788 == 0 || this.field5788 < 2 && this.world.method6783() > this.field5787 + 2400L;
    }
 
    public boolean method4690() {
       long var3 = this.field5787 + 12000L;
-      long var5 = this.field5024.method6783();
+      long var5 = this.world.method6783();
       boolean var7 = var5 > var3;
-      long var8 = this.field5024.method6784();
+      long var8 = this.world.method6784();
       if (this.field5789 > 0L) {
          long var10 = this.field5789 / 24000L;
          long var12 = var8 / 24000L;
@@ -373,7 +373,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
          for (Class9346 var8 : this.method4742()) {
             double var9 = 0.3 + 0.0625 * (double)var13;
-            int var11 = (int)Math.floor(var9 * (double)var8.method35365().method32179());
+            int var11 = (int)Math.floor(var9 * (double)var8.method35365().getCount());
             var8.method35376(-Math.max(var11, 1));
          }
       }
@@ -386,14 +386,14 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       Class7921.field33913
-         .encodeStart(Class8063.field34602, this.method4674())
+         .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
          .resultOrPartial(field5012::error)
-         .ifPresent(var1x -> var1.method99("VillagerData", var1x));
+         .ifPresent(var1x -> var1.put("VillagerData", var1x));
       var1.method100("FoodLevel", this.field5782);
-      var1.method99("Gossips", (Class30)this.field5783.method25528(Class8063.field34602).getValue());
+      var1.put("Gossips", (Class30)this.field5783.method25528(NBTDynamicOps.INSTANCE).getValue());
       var1.method102("Xp", this.field5786);
       var1.method103("LastRestock", this.field5787);
       var1.method103("LastGossipDecay", this.field5785);
@@ -404,23 +404,23 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.method119("VillagerData", 10)) {
-         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(Class8063.field34602, var1.method116("VillagerData")));
+         DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
          var4.resultOrPartial(field5012::error).ifPresent(this::method4695);
       }
 
       if (var1.method119("Offers", 10)) {
-         this.field5796 = new Class46(var1.method130("Offers"));
+         this.field5796 = new Class46(var1.getCompound("Offers"));
       }
 
       if (var1.method119("FoodLevel", 1)) {
          this.field5782 = var1.method120("FoodLevel");
       }
 
-      Class41 var5 = var1.method131("Gossips", 10);
-      this.field5783.method25529(new Dynamic(Class8063.field34602, var5));
+      ListNBT var5 = var1.method131("Gossips", 10);
+      this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var5));
       if (var1.method119("Xp", 3)) {
          this.field5786 = var1.method122("Xp");
       }
@@ -428,12 +428,12 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       this.field5787 = var1.method123("LastRestock");
       this.field5785 = var1.method123("LastGossipDecay");
       this.method4281(true);
-      if (this.field5024 instanceof ServerWorld) {
-         this.method4677((ServerWorld)this.field5024);
+      if (this.world instanceof ServerWorld) {
+         this.method4677((ServerWorld)this.world);
       }
 
       this.field5788 = var1.method122("RestocksToday");
-      if (var1.method118("AssignProfessionWhenSpawned")) {
+      if (var1.contains("AssignProfessionWhenSpawned")) {
          this.field5790 = var1.method132("AssignProfessionWhenSpawned");
       }
    }
@@ -496,16 +496,16 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       }
 
       if (var1.method35385()) {
-         this.field5024.method6916(new ExperienceOrbEntity(this.field5024, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
+         this.world.method6916(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
       }
    }
 
    @Override
    public void method3017(Class880 var1) {
-      if (var1 != null && this.field5024 instanceof ServerWorld) {
-         ((ServerWorld)this.field5024).method6959(Class8214.field35287, var1, this);
+      if (var1 != null && this.world instanceof ServerWorld) {
+         ((ServerWorld)this.world).method6959(Class8214.field35287, var1, this);
          if (this.method3066() && var1 instanceof PlayerEntity) {
-            this.field5024.method6786(this, (byte)13);
+            this.world.method6786(this, (byte)13);
          }
       }
 
@@ -532,18 +532,18 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    private void method4698(Entity var1) {
-      if (this.field5024 instanceof ServerWorld) {
+      if (this.world instanceof ServerWorld) {
          Optional var4 = this.field5011.<List<Class880>>method21410(Class8830.field39819);
          if (var4.isPresent()) {
-            ServerWorld var5 = (ServerWorld)this.field5024;
+            ServerWorld var5 = (ServerWorld)this.world;
             ((List)var4.get()).stream().filter(var0 -> var0 instanceof Class1062).forEach(var2 -> var5.method6959(Class8214.field35288, var1, (Class1062)var2));
          }
       }
    }
 
    public void method4699(Class8830<Class9378> var1) {
-      if (this.field5024 instanceof ServerWorld) {
-         MinecraftServer var4 = ((ServerWorld)this.field5024).method6715();
+      if (this.world instanceof ServerWorld) {
+         MinecraftServer var4 = ((ServerWorld)this.world).method6715();
          this.field5011.<Class9378>method21410(var1).ifPresent(var3 -> {
             ServerWorld var6 = var4.method1318(var3.method35578());
             if (var6 != null) {
@@ -572,10 +572,10 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       if (this.method4701() && this.method4711() != 0) {
          for (int var3 = 0; var3 < this.method4752().method3629(); var3++) {
             ItemStack var4 = this.method4752().method3618(var3);
-            if (!var4.method32105()) {
-               Integer var5 = field5777.get(var4.method32107());
+            if (!var4.isEmpty()) {
+               Integer var5 = field5777.get(var4.getItem());
                if (var5 != null) {
-                  int var6 = var4.method32179();
+                  int var6 = var4.getCount();
 
                   for (int var7 = var6; var7 > 0; var7--) {
                      this.field5782 = (byte)(this.field5782 + var5);
@@ -619,7 +619,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public ITextComponent method3358() {
-      return new TranslationTextComponent(this.method3204().method33210() + '.' + Registry.field16090.method9181(this.method4674().method26571()).method8292());
+      return new TranslationTextComponent(this.getType().method33210() + '.' + Registry.field16090.getKey(this.method4674().method26571()).method8292());
    }
 
    @Override
@@ -645,13 +645,13 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       if (var3 == Class2202.field14395) {
          this.method4695(this.method4674().method26574(Class8395.field36011));
       }
 
       if (var3 == Class2202.field14404 || var3 == Class2202.field14403 || var3 == Class2202.field14393 || var3 == Class2202.field14405) {
-         this.method4695(this.method4674().method26573(Class9564.method37068(var1.method7178(this.method3432()))));
+         this.method4695(this.method4674().method26573(Class9564.method37068(var1.method7178(this.getPosition()))));
       }
 
       if (var3 == Class2202.field14394) {
@@ -671,11 +671,11 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
             var7 = this.method4674().method26570();
          }
       } else {
-         var7 = Class9564.method37068(var1.method7178(this.method3432()));
+         var7 = Class9564.method37068(var1.method7178(this.getPosition()));
       }
 
-      Class1042 var8 = new Class1042(Class8992.field41098, var1, var7);
-      var8.method4276(var1, var1.method6807(var8.method3432()), Class2202.field14395, (Class5093)null, (Class39)null);
+      Class1042 var8 = new Class1042(EntityType.field41098, var1, var7);
+      var8.method4276(var1, var1.method6807(var8.getPosition()), Class2202.field14395, (Class5093)null, (CompoundNBT)null);
       return var8;
    }
 
@@ -685,9 +685,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          super.method3353(var1, var2);
       } else {
          field5012.info("Villager {} was struck by lightning {}.", this, var2);
-         Class1027 var5 = Class8992.field41101.method33215(var1);
+         Class1027 var5 = EntityType.field41101.method33215(var1);
          var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, this.field5032);
-         var5.method4276(var1, var1.method6807(var5.method3432()), Class2202.field14399, (Class5093)null, (Class39)null);
+         var5.method4276(var1, var1.method6807(var5.getPosition()), Class2202.field14399, (Class5093)null, (CompoundNBT)null);
          var5.method4302(this.method4305());
          if (this.method3381()) {
             var5.method3379(this.method3380());
@@ -712,10 +712,10 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          }
 
          this.method3134(var1);
-         this.method2751(var1, var4.method32179());
+         this.method2751(var1, var4.getCount());
          ItemStack var7 = var5.method3676(var4);
-         if (!var7.method32105()) {
-            var4.method32180(var7.method32179());
+         if (!var7.isEmpty()) {
+            var4.method32180(var7.getCount());
          } else {
             var1.method2904();
          }
@@ -724,7 +724,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public boolean method4253(ItemStack var1) {
-      Class3257 var4 = var1.method32107();
+      Item var4 = var1.getItem();
       return (field5778.contains(var4) || this.method4674().method26571().method29458().contains(var4)) && this.method4752().method3677(var1);
    }
 
@@ -742,7 +742,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    public boolean method4712() {
-      return this.method4752().method3635(ImmutableSet.of(Class8514.field37841, Class8514.field38053, Class8514.field38052, Class8514.field38112));
+      return this.method4752().method3635(ImmutableSet.of(Items.field37841, Items.field38053, Items.field38052, Items.field38112));
    }
 
    @Override
@@ -768,7 +768,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    private void method4715() {
-      long var3 = this.field5024.method6783();
+      long var3 = this.world.method6783();
       if (this.field5785 != 0L) {
          if (var3 >= this.field5785 + 24000L) {
             this.field5783.method25521();
@@ -794,20 +794,20 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    public boolean method4717(long var1) {
-      return this.method4726(this.field5024.method6783()) ? !this.field5011.method21404(Class8830.field39842) : false;
+      return this.method4726(this.world.method6783()) ? !this.field5011.method21404(Class8830.field39842) : false;
    }
 
    @Nullable
    private Class1058 method4718(ServerWorld var1) {
-      BlockPos var4 = this.method3432();
+      BlockPos var4 = this.getPosition();
 
       for (int var5 = 0; var5 < 10; var5++) {
          double var6 = (double)(var1.field9016.nextInt(16) - 8);
          double var8 = (double)(var1.field9016.nextInt(16) - 8);
          BlockPos var10 = this.method4719(var4, var6, var8);
          if (var10 != null) {
-            Class1058 var11 = Class8992.field41041
-               .method33202(var1, (Class39)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14396, false, false);
+            Class1058 var11 = EntityType.field41041
+               .method33202(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14396, false, false);
             if (var11 != null) {
                if (var11.method4265(var1, Class2202.field14396) && var11.method4266(var1)) {
                   var1.method6995(var11);
@@ -826,14 +826,14 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    private BlockPos method4719(BlockPos var1, double var2, double var4) {
       byte var8 = 6;
       BlockPos var9 = var1.method8335(var2, 6.0, var4);
-      Class7380 var10 = this.field5024.method6738(var9);
+      BlockState var10 = this.world.getBlockState(var9);
 
       for (int var11 = 6; var11 >= -6; var11--) {
          BlockPos var12 = var9;
-         Class7380 var13 = var10;
+         BlockState var13 = var10;
          var9 = var9.method8313();
-         var10 = this.field5024.method6738(var9);
-         if ((var13.method23393() || var13.method23384().method31085()) && var10.method23384().method31090()) {
+         var10 = this.world.getBlockState(var9);
+         if ((var13.isAir() || var13.method23384().method31085()) && var10.method23384().method31090()) {
             return var12;
          }
       }
@@ -880,7 +880,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    public void method4725(Class30 var1) {
-      this.field5783.method25529(new Dynamic(Class8063.field34602, var1));
+      this.field5783.method25529(new Dynamic(NBTDynamicOps.INSTANCE, var1));
    }
 
    @Override
@@ -892,7 +892,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public void method2753(BlockPos var1) {
       super.method2753(var1);
-      this.field5011.method21406(Class8830.field39843, this.field5024.method6783());
+      this.field5011.method21406(Class8830.field39843, this.world.method6783());
       this.field5011.method21405(Class8830.field39824);
       this.field5011.method21405(Class8830.field39841);
    }
@@ -900,7 +900,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public void method2907() {
       super.method2907();
-      this.field5011.method21406(Class8830.field39844, this.field5024.method6783());
+      this.field5011.method21406(Class8830.field39844, this.world.method6783());
    }
 
    private boolean method4726(long var1) {

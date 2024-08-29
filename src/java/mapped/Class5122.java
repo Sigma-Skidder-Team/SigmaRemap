@@ -25,7 +25,7 @@ public class Class5122 implements Class5119 {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       this.method15819(var3, var5, var7);
       RenderSystem.enableTexture();
       RenderSystem.disableBlend();
@@ -46,6 +46,6 @@ public class Class5122 implements Class5119 {
       BlockPos var4 = var0.method8422();
       BlockPos var5 = var4.method8335(-1.0, -1.0, -1.0);
       BlockPos var6 = var4.method8335(1.0, 1.0, 1.0);
-      Class8023.method27455(var5, var6, 0.2F, 1.0F, 0.2F, 0.15F);
+      DebugRenderer.method27455(var5, var6, 0.2F, 1.0F, 0.2F, 0.15F);
    }
 }

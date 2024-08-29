@@ -68,18 +68,18 @@ public class JSONUtils {
       return !var0.has(var1) ? var2 : method32762(var0.get(var1), var1);
    }
 
-   public static Class3257 method32765(JsonElement var0, String var1) {
+   public static Item method32765(JsonElement var0, String var1) {
       if (!var0.isJsonPrimitive()) {
          throw new JsonSyntaxException("Expected " + var1 + " to be an item, was " + toString(var0));
       } else {
          String var4 = var0.getAsString();
-         return Registry.field16075
+         return Registry.ITEM
             .method9187(new ResourceLocation(var4))
             .orElseThrow(() -> new JsonSyntaxException("Expected " + var1 + " to be an item, was unknown string '" + var4 + "'"));
       }
    }
 
-   public static Class3257 method32766(JsonObject var0, String var1) {
+   public static Item method32766(JsonObject var0, String var1) {
       if (!var0.has(var1)) {
          throw new JsonSyntaxException("Missing " + var1 + ", expected to find an item");
       } else {

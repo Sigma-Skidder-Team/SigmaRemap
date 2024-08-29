@@ -185,9 +185,9 @@ public enum Class2133 {
          case 7:
             return MathHelper.field45210;
          case 8:
-            return MathHelper.method37763(method8826(var1, 0));
+            return MathHelper.sin(method8826(var1, 0));
          case 9:
-            return MathHelper.method37764(method8826(var1, 0));
+            return MathHelper.cos(method8826(var1, 0));
          case 10:
             return Class7317.method23165(method8826(var1, 0));
          case 11:
@@ -236,12 +236,12 @@ public enum Class2133 {
             return var6 - var7 * (float) MathHelper.method37767(var6 / var7);
          case 32:
             Minecraft var8 = Minecraft.getInstance();
-            Class1656 var9 = var8.world;
+            ClientWorld var9 = var8.world;
             if (var9 == null) {
                return 0.0F;
             }
 
-            return (float)(var9.method6783() % 24000L) + var8.method1562();
+            return (float)(var9.method6783() % 24000L) + var8.getRenderPartialTicks();
          case 33:
             int var10 = (var1.length - 1) / 2;
 

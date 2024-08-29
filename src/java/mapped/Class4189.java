@@ -14,9 +14,9 @@ public class Class4189 extends Class4188 {
       this.field20444 = new Class9764(var3, 50, var4, var3 + 7 + var2.nextInt(6), 54 + var2.nextInt(6), var4 + 7 + var2.nextInt(6));
    }
 
-   public Class4189(Class8761 var1, Class39 var2) {
+   public Class4189(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33427, var2);
-      Class41 var5 = var2.method131("Entrances", 11);
+      ListNBT var5 = var2.method131("Entrances", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          this.field20480.add(new Class9764(var5.method157(var6)));
@@ -230,14 +230,14 @@ public class Class4189 extends Class4188 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (Class9764 var6 : this.field20480) {
          var4.add(var6.method38402());
       }
 
-      var1.method99("Entrances", var4);
+      var1.put("Entrances", var4);
    }
 }

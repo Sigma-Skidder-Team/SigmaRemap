@@ -14,12 +14,12 @@ public class Class5430 implements Class5422 {
    }
 
    @Override
-   public Class5422 method17025(double var1, double var3, double var5) {
+   public Class5422 pos(double var1, double var3, double var5) {
       return this;
    }
 
    @Override
-   public Class5422 method17026(int var1, int var2, int var3, int var4) {
+   public Class5422 color(int var1, int var2, int var3, int var4) {
       return this;
    }
 
@@ -44,6 +44,6 @@ public class Class5430 implements Class5422 {
    }
 
    @Override
-   public void method17031() {
+   public void endVertex() {
    }
 }

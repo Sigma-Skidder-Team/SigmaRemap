@@ -28,7 +28,7 @@ public class Class821 extends Class798 {
       if (var1.field16474 != -1) {
          this.field4477 = new StringTextComponent("Realms (" + var1.field16474 + "):");
          String var4 = "mco.errorMessage." + var1.field16474;
-         this.field4478 = (ITextComponent)(!Class9088.method33884(var4) ? ITextComponent.func_244388_a(var1.field16475) : new TranslationTextComponent(var4));
+         this.field4478 = (ITextComponent)(! I18n.method33884(var4) ? ITextComponent.func_244388_a(var1.field16475) : new TranslationTextComponent(var4));
       } else {
          this.field4477 = new StringTextComponent("An error occurred (" + var1.field16472 + "):");
          this.field4478 = new StringTextComponent(var1.field16473);

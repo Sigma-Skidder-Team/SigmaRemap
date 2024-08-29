@@ -2,7 +2,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class3314 extends Class3257 {
+public class Class3314 extends Item {
    private static String[] field18824;
 
    public Class3314(Class5643 var1) {

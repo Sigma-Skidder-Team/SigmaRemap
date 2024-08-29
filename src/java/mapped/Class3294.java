@@ -15,7 +15,7 @@ public class Class3294 extends Class3292 {
    public Class5909 method11836(Class5909 var1) {
       BlockPos var4 = var1.method18345();
       World var5 = var1.method18360();
-      Class7380 var6 = var5.method6738(var4);
+      BlockState var6 = var5.getBlockState(var4);
       Block var7 = this.method11845();
       if (!var6.method23448(var7)) {
          return Class3428.method12085(var5, var4) != 7 ? var1 : null;
@@ -43,7 +43,7 @@ public class Class3294 extends Class3292 {
                break;
             }
 
-            var6 = var5.method6738(var10);
+            var6 = var5.getBlockState(var10);
             if (!var6.method23448(this.method11845())) {
                if (var6.method23441(var1)) {
                   return Class5909.method18344(var1, var10, var8);

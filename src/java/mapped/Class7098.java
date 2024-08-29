@@ -36,9 +36,9 @@ public class Class7098 extends Class7092 {
          var9 = Class101.field296;
       }
 
-      int var10 = var1.method6736(var9, var5.field35530.method8304(), var5.field35530.method8306()) + this.field30537;
+      int var10 = var1.method6736(var9, var5.field35530.getX(), var5.field35530.getZ()) + this.field30537;
       int var11 = var4.field35530.getY();
-      return new Class8266(new BlockPos(var5.field35530.method8304(), var10 + var11, var5.field35530.method8306()), var5.field35531, var5.field35532);
+      return new Class8266(new BlockPos(var5.field35530.getX(), var10 + var11, var5.field35530.getZ()), var5.field35531, var5.field35532);
    }
 
    @Override

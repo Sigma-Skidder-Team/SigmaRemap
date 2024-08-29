@@ -29,7 +29,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       Class8830.field39864
    );
 
-   public Class1091(Class8992<? extends Class1091> var1, World var2) {
+   public Class1091(EntityType<? extends Class1091> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -52,7 +52,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    public boolean method3114(Entity var1) {
       if (var1 instanceof Class880) {
          this.field5977 = 10;
-         this.field5024.method6786(this, (byte)4);
+         this.world.method6786(this, (byte)4);
          this.method2863(Class6067.field26654, 1.0F, this.method3100());
          Class9069.method33785(this, (Class880)var1);
          return Class1092.method5091(this, (Class880)var1);
@@ -71,7 +71,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class9069.method33793(this, (Class880)var1.method31109());
          }
@@ -99,9 +99,9 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public void method4258() {
-      this.field5024.method6820().startSection("hoglinBrain");
-      this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().endSection();
+      this.world.method6820().startSection("hoglinBrain");
+      this.method2992().method21432((ServerWorld)this.world, this);
+      this.world.method6820().endSection();
       Class9069.method33784(this);
       if (!this.method5087()) {
          this.field5978 = 0;
@@ -109,7 +109,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
          this.field5978++;
          if (this.field5978 > 300) {
             this.method5090(Class6067.field26655);
-            this.method5083((ServerWorld)this.field5024);
+            this.method5083((ServerWorld)this.world);
          }
       }
    }
@@ -134,13 +134,13 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       }
    }
 
-   public static boolean method5081(Class8992<Class1091> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return !var1.method6738(var3.method8313()).method23448(Blocks.field36891);
+   public static boolean method5081(EntityType<Class1091> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+      return !var1.getBlockState(var3.method8313()).method23448(Blocks.field36891);
    }
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       if (var1.method6814().nextFloat() < 0.2F) {
          this.method4308(true);
       }
@@ -156,7 +156,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
       if (!Class9069.method33790(this, var1)) {
-         return !var2.method6738(var1.method8313()).method23448(Blocks.field37083) ? 0.0F : 10.0F;
+         return !var2.getBlockState(var1.method8313()).method23448(Blocks.field37083) ? 0.0F : 10.0F;
       } else {
          return -1.0F;
       }
@@ -203,7 +203,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    private void method5083(ServerWorld var1) {
-      Class1093 var4 = this.<Class1093>method4292(Class8992.field41106, true);
+      Class1093 var4 = this.<Class1093>method4292(EntityType.field41106, true);
       if (var4 != null) {
          var4.method3035(new Class2023(Class8254.field35475, 200, 0));
       }
@@ -211,7 +211,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.method32107() == Class8514.field37348;
+      return var1.getItem() == Items.field37348;
    }
 
    public boolean method5084() {
@@ -225,7 +225,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method5086()) {
          var1.method115("IsImmuneToZombification", true);
@@ -238,7 +238,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5085(var1.method132("IsImmuneToZombification"));
       this.field5978 = var1.method122("TimeInOverworld");
@@ -254,7 +254,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    public boolean method5087() {
-      return !this.field5024.method6812().method36880() && !this.method5086() && !this.method4305();
+      return !this.world.method6812().method36880() && !this.method5086() && !this.method4305();
    }
 
    private void method5088(boolean var1) {
@@ -268,7 +268,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      Class1091 var5 = Class8992.field41037.method33215(var1);
+      Class1091 var5 = EntityType.field41037.method33215(var1);
       if (var5 != null) {
          var5.method4278();
       }
@@ -288,7 +288,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public Class9455 method4241() {
-      return !this.field5024.field9020 ? Class9069.method33798(this).orElse((Class9455)null) : null;
+      return !this.world.field9020 ? Class9069.method33798(this).orElse((Class9455)null) : null;
    }
 
    @Override
@@ -312,7 +312,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field26659, 0.15F, 1.0F);
    }
 

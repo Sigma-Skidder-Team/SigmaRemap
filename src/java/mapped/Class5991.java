@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextProperties;
 public interface Class5991 {
    Class5991 field26162 = new Class5992();
 
-   static Class5991 method18584(Class9834 var0, ITextProperties var1, int var2) {
+   static Class5991 method18584(FontRenderer var0, ITextProperties var1, int var2) {
       return method18587(
          var0,
          var0.method38828(var1, var2)
@@ -19,7 +19,7 @@ public interface Class5991 {
       );
    }
 
-   static Class5991 method18585(Class9834 var0, ITextProperties var1, int var2, int var3) {
+   static Class5991 method18585(FontRenderer var0, ITextProperties var1, int var2, int var3) {
       return method18587(
          var0,
          var0.method38828(var1, var2)
@@ -30,7 +30,7 @@ public interface Class5991 {
       );
    }
 
-   static Class5991 method18586(Class9834 var0, ITextComponent... var1) {
+   static Class5991 method18586(FontRenderer var0, ITextComponent... var1) {
       return method18587(
          var0,
          Arrays.<ITextComponent>stream(var1)
@@ -40,7 +40,7 @@ public interface Class5991 {
       );
    }
 
-   static Class5991 method18587(Class9834 var0, List<Class9806> var1) {
+   static Class5991 method18587(FontRenderer var0, List<Class9806> var1) {
       return !var1.isEmpty() ? new Class5993(var1, var0) : field26162;
    }
 

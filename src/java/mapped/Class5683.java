@@ -7,7 +7,7 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
       .<ResourceLocation>map(var0 -> new ResourceLocation("textures/" + var0.method26197().method8292() + ".png"))
       .<ResourceLocation>toArray(ResourceLocation[]::new);
 
-   public Class5683(Class8853 var1) {
+   public Class5683(EntityRendererManager var1) {
       super(var1, new Class2887<Class1057>(), 0.0F);
       this.method17880(new Class246(this));
    }
@@ -19,9 +19,9 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
          BlockPos var7 = var1.method4855();
          double var8 = (double)((float)var5 - var2) / 6.0;
          var8 *= var8;
-         double var10 = (double)(var6.method8304() - var7.method8304()) * var8;
+         double var10 = (double)(var6.getX() - var7.getX()) * var8;
          double var12 = (double)(var6.getY() - var7.getY()) * var8;
-         double var14 = (double)(var6.method8306() - var7.method8306()) * var8;
+         double var14 = (double)(var6.getZ() - var7.getZ()) * var8;
          return new Vector3d(-var10, -var12, -var14);
       } else {
          return super.method17867(var1, var2);
@@ -50,8 +50,8 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
 
    public void method17842(Class1057 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4 + 180.0F, var5);
-      var2.method35291(0.0, 0.5, 0.0);
+      var2.translate(0.0, 0.5, 0.0);
       var2.method35293(var1.method4848().method536().method532());
-      var2.method35291(0.0, -0.5, 0.0);
+      var2.translate(0.0, -0.5, 0.0);
    }
 }

@@ -33,7 +33,7 @@ public class Class8052 {
             }
 
             int var9 = 0;
-            Class289 var10 = Class8684.method31267();
+            AtlasTexture var10 = Class8684.method31267();
 
             for (int var11 = 0; var11 < var8.length; var11++) {
                String var12 = var8[var11].trim();
@@ -44,7 +44,7 @@ public class Class8052 {
                   } else {
                      String var14 = var13[0].trim();
                      String var15 = var13[1].trim();
-                     Class1713 var16 = var10.method1106("minecraft:block/" + var14);
+                     TextureAtlasSprite var16 = var10.method1106("minecraft:block/" + var14);
                      if (var16 == null) {
                         Class7944.method26811("Natural Textures: Texture not found: \"" + var2 + "\" line: " + var12);
                      } else {
@@ -85,7 +85,7 @@ public class Class8052 {
    }
 
    public static Class8557 method27655(BlockPos var0, Class8557 var1) {
-      Class1713 var4 = var1.method30516();
+      TextureAtlasSprite var4 = var1.method30516();
       if (var4 != null) {
          Class8736 var5 = method27656(var4);
          if (var5 != null) {
@@ -114,8 +114,8 @@ public class Class8052 {
       }
    }
 
-   public static Class8736 method27656(Class1713 var0) {
-      if (!(var0 instanceof Class1713)) {
+   public static Class8736 method27656(TextureAtlasSprite var0) {
+      if (!(var0 instanceof TextureAtlasSprite)) {
          return null;
       } else {
          int var3 = var0.method7475();

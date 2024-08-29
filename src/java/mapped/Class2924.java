@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Class2924 extends Class2898<Class4712> {
    private static final Class166 field17998 = Class166.method497(Blocks.SAND);
-   private final Class7380 field17999 = Blocks.field36847.method11579();
-   private final Class7380 field18000 = Blocks.SANDSTONE.method11579();
-   private final Class7380 field18001 = Blocks.WATER.method11579();
+   private final BlockState field17999 = Blocks.field36847.method11579();
+   private final BlockState field18000 = Blocks.SANDSTONE.method11579();
+   private final BlockState field18001 = Blocks.WATER.method11579();
 
    public Class2924(Codec<Class4712> var1) {
       super(var1);
@@ -21,7 +21,7 @@ public class Class2924 extends Class2898<Class4712> {
          var4 = var4.method8313();
       }
 
-      if (!field17998.test(var1.method6738(var4))) {
+      if (!field17998.test(var1.getBlockState(var4))) {
          return false;
       } else {
          for (int var8 = -2; var8 <= 2; var8++) {

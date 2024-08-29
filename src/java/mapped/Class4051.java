@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class4051 extends Class4057 {
-   public Class4051(Class8992 var1, String var2, float var3) {
+   public Class4051(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 

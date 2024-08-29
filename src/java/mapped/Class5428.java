@@ -19,7 +19,7 @@ public class Class5428 extends Class5424 {
    }
 
    @Override
-   public Class5422 method17025(double var1, double var3, double var5) {
+   public Class5422 pos(double var1, double var3, double var5) {
       this.field24158 = var1;
       this.field24159 = var3;
       this.field24160 = var5;
@@ -27,7 +27,7 @@ public class Class5428 extends Class5424 {
    }
 
    @Override
-   public Class5422 method17026(int var1, int var2, int var3, int var4) {
+   public Class5422 color(int var1, int var2, int var3, int var4) {
       return this;
    }
 
@@ -71,18 +71,18 @@ public class Class5428 extends Class5424 {
       float var14
    ) {
       this.field24157
-         .method17025((double)var1, (double)var2, (double)var3)
-         .method17026(this.field24109, this.field24110, this.field24111, this.field24112)
+         .pos((double)var1, (double)var2, (double)var3)
+         .color(this.field24109, this.field24110, this.field24111, this.field24112)
          .method17027(var8, var9)
-         .method17031();
+         .endVertex();
    }
 
    @Override
-   public void method17031() {
+   public void endVertex() {
       this.field24157
-         .method17025(this.field24158, this.field24159, this.field24160)
-         .method17026(this.field24109, this.field24110, this.field24111, this.field24112)
+         .pos(this.field24158, this.field24159, this.field24160)
+         .color(this.field24109, this.field24110, this.field24111, this.field24112)
          .method17027(this.field24161, this.field24162)
-         .method17031();
+         .endVertex();
    }
 }

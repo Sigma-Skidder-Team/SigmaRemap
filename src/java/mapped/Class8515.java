@@ -36,7 +36,7 @@ public class Class8515 {
 
    public void method30159(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       float var11 = 0.0625F;
-      var1.method35291((double)(this.field38202 * var11), (double)(this.field38203 * var11), (double)(this.field38204 * var11));
+      var1.translate((double)(this.field38202 * var11), (double)(this.field38203 * var11), (double)(this.field38204 * var11));
       float var12 = this.field38209;
       float var13 = this.field38211;
       float var14 = this.field38210;
@@ -70,7 +70,7 @@ public class Class8515 {
          var7,
          var8
       );
-      var1.method35291((double)(-this.field38202 * var11), (double)(-this.field38203 * var11), (double)(-this.field38204 * var11));
+      var1.translate((double)(-this.field38202 * var11), (double)(-this.field38203 * var11), (double)(-this.field38204 * var11));
    }
 
    public static void method30160(

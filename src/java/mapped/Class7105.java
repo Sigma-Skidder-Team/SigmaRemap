@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class Class7105 {
    private static final List<Class9127<Class8812>> field30617 = Lists.newArrayList();
-   private static final List<Class9127<Class3257>> field30618 = Lists.newArrayList();
+   private static final List<Class9127<Item>> field30618 = Lists.newArrayList();
    private static final List<Class120> field30619 = Lists.newArrayList();
    private static final Predicate<ItemStack> field30620 = var0 -> {
       for (Class120 var4 : field30619) {
@@ -63,7 +63,7 @@ public class Class7105 {
    }
 
    public static boolean method22137(ItemStack var0, ItemStack var1) {
-      Class3257 var4 = var0.method32107();
+      Item var4 = var0.getItem();
       int var5 = 0;
 
       for (int var6 = field30618.size(); var5 < var6; var5++) {
@@ -91,9 +91,9 @@ public class Class7105 {
    }
 
    public static ItemStack method22139(ItemStack var0, ItemStack var1) {
-      if (!var1.method32105()) {
+      if (!var1.isEmpty()) {
          Class8812 var4 = Class9741.method38185(var1);
-         Class3257 var5 = var1.method32107();
+         Item var5 = var1.getItem();
          int var6 = 0;
 
          for (int var7 = field30618.size(); var6 < var7; var6++) {
@@ -117,89 +117,89 @@ public class Class7105 {
    }
 
    public static void method22140() {
-      method22142(Class8514.field37971);
-      method22142(Class8514.field38115);
-      method22142(Class8514.field38118);
-      method22141(Class8514.field37971, Class8514.field37840, Class8514.field38115);
-      method22141(Class8514.field38115, Class8514.field38114, Class8514.field38118);
-      method22143(Class8137.field34977, Class8514.field37980, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37968, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field38080, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37975, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37973, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37936, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37976, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37908, Class8137.field34979);
-      method22143(Class8137.field34977, Class8514.field37887, Class8137.field34978);
-      method22143(Class8137.field34977, Class8514.field37970, Class8137.field34980);
-      method22143(Class8137.field34980, Class8514.field38057, Class8137.field34981);
-      method22143(Class8137.field34981, Class8514.field37887, Class8137.field34982);
-      method22143(Class8137.field34981, Class8514.field37974, Class8137.field34983);
-      method22143(Class8137.field34982, Class8514.field37974, Class8137.field34984);
-      method22143(Class8137.field34983, Class8514.field37887, Class8137.field34984);
-      method22143(Class8137.field34980, Class8514.field37976, Class8137.field34988);
-      method22143(Class8137.field34988, Class8514.field37887, Class8137.field34989);
-      method22143(Class8137.field34980, Class8514.field38080, Class8137.field34985);
-      method22143(Class8137.field34985, Class8514.field37887, Class8137.field34986);
-      method22143(Class8137.field34985, Class8514.field37908, Class8137.field34987);
-      method22143(Class8137.field34985, Class8514.field37974, Class8137.field34993);
-      method22143(Class8137.field34986, Class8514.field37974, Class8137.field34994);
-      method22143(Class8137.field34993, Class8514.field37887, Class8137.field34994);
-      method22143(Class8137.field34993, Class8514.field37908, Class8137.field34995);
-      method22143(Class8137.field34980, Class8514.field37792, Class8137.field34996);
-      method22143(Class8137.field34996, Class8514.field37887, Class8137.field34997);
-      method22143(Class8137.field34996, Class8514.field37908, Class8137.field34998);
-      method22143(Class8137.field34990, Class8514.field37974, Class8137.field34993);
-      method22143(Class8137.field34991, Class8514.field37974, Class8137.field34994);
-      method22143(Class8137.field34980, Class8514.field37936, Class8137.field34990);
-      method22143(Class8137.field34990, Class8514.field37887, Class8137.field34991);
-      method22143(Class8137.field34990, Class8514.field37908, Class8137.field34992);
-      method22143(Class8137.field34980, Class8514.field37912, Class8137.field34999);
-      method22143(Class8137.field34999, Class8514.field37887, Class8137.field35000);
-      method22143(Class8137.field34980, Class8514.field37980, Class8137.field35001);
-      method22143(Class8137.field35001, Class8514.field37908, Class8137.field35002);
-      method22143(Class8137.field35001, Class8514.field37974, Class8137.field35003);
-      method22143(Class8137.field35002, Class8514.field37974, Class8137.field35004);
-      method22143(Class8137.field35003, Class8514.field37908, Class8137.field35004);
-      method22143(Class8137.field35005, Class8514.field37974, Class8137.field35003);
-      method22143(Class8137.field35006, Class8514.field37974, Class8137.field35003);
-      method22143(Class8137.field35007, Class8514.field37974, Class8137.field35004);
-      method22143(Class8137.field34980, Class8514.field37973, Class8137.field35005);
-      method22143(Class8137.field35005, Class8514.field37887, Class8137.field35006);
-      method22143(Class8137.field35005, Class8514.field37908, Class8137.field35007);
-      method22143(Class8137.field34980, Class8514.field37968, Class8137.field35008);
-      method22143(Class8137.field35008, Class8514.field37887, Class8137.field35009);
-      method22143(Class8137.field35008, Class8514.field37908, Class8137.field35010);
-      method22143(Class8137.field34980, Class8514.field37975, Class8137.field35011);
-      method22143(Class8137.field35011, Class8514.field37887, Class8137.field35012);
-      method22143(Class8137.field35011, Class8514.field37908, Class8137.field35013);
-      method22143(Class8137.field34977, Class8514.field37974, Class8137.field35014);
-      method22143(Class8137.field35014, Class8514.field37887, Class8137.field35015);
-      method22143(Class8137.field34980, Class8514.field38145, Class8137.field35017);
-      method22143(Class8137.field35017, Class8514.field37887, Class8137.field35018);
+      method22142(Items.field37971);
+      method22142(Items.field38115);
+      method22142(Items.field38118);
+      method22141(Items.field37971, Items.field37840, Items.field38115);
+      method22141(Items.field38115, Items.field38114, Items.field38118);
+      method22143(Class8137.field34977, Items.field37980, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37968, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field38080, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37975, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37973, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37936, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37976, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37908, Class8137.field34979);
+      method22143(Class8137.field34977, Items.field37887, Class8137.field34978);
+      method22143(Class8137.field34977, Items.field37970, Class8137.field34980);
+      method22143(Class8137.field34980, Items.field38057, Class8137.field34981);
+      method22143(Class8137.field34981, Items.field37887, Class8137.field34982);
+      method22143(Class8137.field34981, Items.field37974, Class8137.field34983);
+      method22143(Class8137.field34982, Items.field37974, Class8137.field34984);
+      method22143(Class8137.field34983, Items.field37887, Class8137.field34984);
+      method22143(Class8137.field34980, Items.field37976, Class8137.field34988);
+      method22143(Class8137.field34988, Items.field37887, Class8137.field34989);
+      method22143(Class8137.field34980, Items.field38080, Class8137.field34985);
+      method22143(Class8137.field34985, Items.field37887, Class8137.field34986);
+      method22143(Class8137.field34985, Items.field37908, Class8137.field34987);
+      method22143(Class8137.field34985, Items.field37974, Class8137.field34993);
+      method22143(Class8137.field34986, Items.field37974, Class8137.field34994);
+      method22143(Class8137.field34993, Items.field37887, Class8137.field34994);
+      method22143(Class8137.field34993, Items.field37908, Class8137.field34995);
+      method22143(Class8137.field34980, Items.field37792, Class8137.field34996);
+      method22143(Class8137.field34996, Items.field37887, Class8137.field34997);
+      method22143(Class8137.field34996, Items.field37908, Class8137.field34998);
+      method22143(Class8137.field34990, Items.field37974, Class8137.field34993);
+      method22143(Class8137.field34991, Items.field37974, Class8137.field34994);
+      method22143(Class8137.field34980, Items.field37936, Class8137.field34990);
+      method22143(Class8137.field34990, Items.field37887, Class8137.field34991);
+      method22143(Class8137.field34990, Items.field37908, Class8137.field34992);
+      method22143(Class8137.field34980, Items.field37912, Class8137.field34999);
+      method22143(Class8137.field34999, Items.field37887, Class8137.field35000);
+      method22143(Class8137.field34980, Items.field37980, Class8137.field35001);
+      method22143(Class8137.field35001, Items.field37908, Class8137.field35002);
+      method22143(Class8137.field35001, Items.field37974, Class8137.field35003);
+      method22143(Class8137.field35002, Items.field37974, Class8137.field35004);
+      method22143(Class8137.field35003, Items.field37908, Class8137.field35004);
+      method22143(Class8137.field35005, Items.field37974, Class8137.field35003);
+      method22143(Class8137.field35006, Items.field37974, Class8137.field35003);
+      method22143(Class8137.field35007, Items.field37974, Class8137.field35004);
+      method22143(Class8137.field34980, Items.field37973, Class8137.field35005);
+      method22143(Class8137.field35005, Items.field37887, Class8137.field35006);
+      method22143(Class8137.field35005, Items.field37908, Class8137.field35007);
+      method22143(Class8137.field34980, Items.field37968, Class8137.field35008);
+      method22143(Class8137.field35008, Items.field37887, Class8137.field35009);
+      method22143(Class8137.field35008, Items.field37908, Class8137.field35010);
+      method22143(Class8137.field34980, Items.field37975, Class8137.field35011);
+      method22143(Class8137.field35011, Items.field37887, Class8137.field35012);
+      method22143(Class8137.field35011, Items.field37908, Class8137.field35013);
+      method22143(Class8137.field34977, Items.field37974, Class8137.field35014);
+      method22143(Class8137.field35014, Items.field37887, Class8137.field35015);
+      method22143(Class8137.field34980, Items.field38145, Class8137.field35017);
+      method22143(Class8137.field35017, Items.field37887, Class8137.field35018);
    }
 
-   private static void method22141(Class3257 var0, Class3257 var1, Class3257 var2) {
+   private static void method22141(Item var0, Item var1, Item var2) {
       if (var0 instanceof Class3323) {
          if (var2 instanceof Class3323) {
-            field30618.add(new Class9127<Class3257>(var0, Class120.method339(var1), var2));
+            field30618.add(new Class9127<Item>(var0, Class120.method339(var1), var2));
          } else {
-            throw new IllegalArgumentException("Expected a potion, got: " + Registry.field16075.method9181(var2));
+            throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var2));
          }
       } else {
-         throw new IllegalArgumentException("Expected a potion, got: " + Registry.field16075.method9181(var0));
+         throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var0));
       }
    }
 
-   private static void method22142(Class3257 var0) {
+   private static void method22142(Item var0) {
       if (var0 instanceof Class3323) {
          field30619.add(Class120.method339(var0));
       } else {
-         throw new IllegalArgumentException("Expected a potion, got: " + Registry.field16075.method9181(var0));
+         throw new IllegalArgumentException("Expected a potion, got: " + Registry.ITEM.getKey(var0));
       }
    }
 
-   private static void method22143(Class8812 var0, Class3257 var1, Class8812 var2) {
+   private static void method22143(Class8812 var0, Item var1, Class8812 var2) {
       field30617.add(new Class9127<Class8812>(var0, Class120.method339(var1), var2));
    }
 }

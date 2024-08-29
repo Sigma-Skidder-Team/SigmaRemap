@@ -53,35 +53,35 @@ public class Class6942 extends Class6941 {
       var2.field4855.sendPacket(new Class5572(var1, var3, Collections.<ResourceLocation>emptyList(), this.method21374()));
    }
 
-   public Class39 method21379() {
-      Class39 var3 = new Class39();
+   public CompoundNBT method21379() {
+      CompoundNBT var3 = new CompoundNBT();
       this.method21374().method34693(var3);
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (ResourceLocation var6 : this.field30089) {
-         var4.add(Class40.method150(var6.toString()));
+         var4.add(StringNBT.valueOf(var6.toString()));
       }
 
-      var3.method99("recipes", var4);
-      Class41 var8 = new Class41();
+      var3.put("recipes", var4);
+      ListNBT var8 = new ListNBT();
 
       for (ResourceLocation var7 : this.field30090) {
-         var8.add(Class40.method150(var7.toString()));
+         var8.add(StringNBT.valueOf(var7.toString()));
       }
 
-      var3.method99("toBeDisplayed", var8);
+      var3.put("toBeDisplayed", var8);
       return var3;
    }
 
-   public void method21380(Class39 var1, Class282 var2) {
+   public void method21380(CompoundNBT var1, Class282 var2) {
       this.method21373(Class9223.method34692(var1));
-      Class41 var5 = var1.method131("recipes", 8);
+      ListNBT var5 = var1.method131("recipes", 8);
       this.method21381(var5, this::method21358, var2);
-      Class41 var6 = var1.method131("toBeDisplayed", 8);
+      ListNBT var6 = var1.method131("toBeDisplayed", 8);
       this.method21381(var6, this::method21366, var2);
    }
 
-   private void method21381(Class41 var1, Consumer<Class4843<?>> var2, Class282 var3) {
+   private void method21381(ListNBT var1, Consumer<Class4843<?>> var2, Class282 var3) {
       for (int var6 = 0; var6 < var1.size(); var6++) {
          String var7 = var1.method160(var6);
 

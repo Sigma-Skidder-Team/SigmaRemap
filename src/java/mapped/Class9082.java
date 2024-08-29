@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9082 implements ArgumentType<ResourceLocation> {
-   private static final Collection<String> field41582 = Stream.<RegistryKey>of(World.field8999, World.field9000)
+   private static final Collection<String> field41582 = Stream.<RegistryKey>of(World.field8999, World.THE_NETHER)
       .<String>map(var0 -> var0.method31399().toString())
       .collect(Collectors.<String>toList());
    private static final DynamicCommandExceptionType field41583 = new DynamicCommandExceptionType(

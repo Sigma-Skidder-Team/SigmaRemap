@@ -39,7 +39,7 @@ public class Class8588 {
                   var12.method4127(var1.getUniqueID());
                }
             } else {
-               var1.field5024
+               var1.world
                   .method6743(
                      (PlayerEntity)null,
                      var1.getPosX(),

@@ -17,7 +17,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    public int field4725;
    public int field4726;
    public final T field4727;
-   public final Class974 field4728;
+   public final PlayerInventory field4728;
    public Class5839 field4729;
    private Class5839 field4730;
    private Class5839 field4731;
@@ -43,7 +43,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    private boolean field4751;
    private ItemStack field4752 = ItemStack.EMPTY;
 
-   public Class851(T var1, Class974 var2, ITextComponent var3) {
+   public Class851(T var1, PlayerInventory var2, ITextComponent var3) {
       super(var3);
       this.field4727 = (T)var1;
       this.field4728 = var2;
@@ -98,19 +98,19 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       }
 
       this.method2617(var1, var2, var3);
-      Class974 var18 = this.field4562.player.field4902;
-      ItemStack var19 = !this.field4737.method32105() ? this.field4737 : var18.method4057();
-      if (!var19.method32105()) {
+      PlayerInventory var18 = this.field4562.player.inventory;
+      ItemStack var19 = !this.field4737.isEmpty() ? this.field4737 : var18.method4057();
+      if (!var19.isEmpty()) {
          byte var20 = 8;
-         int var22 = !this.field4737.method32105() ? 16 : 8;
+         int var22 = !this.field4737.isEmpty() ? 16 : 8;
          String var15 = null;
-         if (!this.field4737.method32105() && this.field4736) {
+         if (!this.field4737.isEmpty() && this.field4736) {
             var19 = var19.copy();
-            var19.method32180(MathHelper.method37773((float)var19.method32179() / 2.0F));
+            var19.method32180(MathHelper.method37773((float)var19.getCount() / 2.0F));
          } else if (this.field4744 && this.field4743.size() > 1) {
             var19 = var19.copy();
             var19.method32180(this.field4748);
-            if (var19.method32105()) {
+            if (var19.isEmpty()) {
                var15 = "" + TextFormatting.YELLOW + "0";
             }
          }
@@ -118,7 +118,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          this.method2616(var19, var2 - var7 - 8, var3 - var8 - var22, var15);
       }
 
-      if (!this.field4741.method32105()) {
+      if (!this.field4741.isEmpty()) {
          float var21 = (float)(Util.milliTime() - this.field4740) / 100.0F;
          if (var21 >= 1.0F) {
             var21 = 1.0F;
@@ -137,7 +137,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    public void method2615(MatrixStack var1, int var2, int var3) {
-      if (this.field4562.player.field4902.method4057().method32105() && this.field4729 != null && this.field4729.method18266()) {
+      if (this.field4562.player.inventory.method4057().isEmpty() && this.field4729 != null && this.field4729.method18266()) {
          this.method2457(var1, this.field4729.method18265(), var2, var3);
       }
    }
@@ -147,7 +147,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       this.method5703(200);
       this.field4563.field847 = 200.0F;
       this.field4563.method793(var1, var2, var3);
-      this.field4563.method798(this.field4568, var1, var2, var3 - (!this.field4737.method32105() ? 8 : 0), var4);
+      this.field4563.method798(this.field4568, var1, var2, var3 - (!this.field4737.isEmpty() ? 8 : 0), var4);
       this.method5703(0);
       this.field4563.field847 = 0.0F;
    }
@@ -164,13 +164,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       int var6 = var2.field25581;
       ItemStack var7 = var2.method18265();
       boolean var8 = false;
-      boolean var9 = var2 == this.field4730 && !this.field4737.method32105() && !this.field4736;
-      ItemStack var10 = this.field4562.player.field4902.method4057();
+      boolean var9 = var2 == this.field4730 && !this.field4737.isEmpty() && !this.field4736;
+      ItemStack var10 = this.field4562.player.inventory.method4057();
       String var11 = null;
-      if (var2 == this.field4730 && !this.field4737.method32105() && this.field4736 && !var7.method32105()) {
+      if (var2 == this.field4730 && !this.field4737.isEmpty() && this.field4736 && !var7.isEmpty()) {
          var7 = var7.copy();
-         var7.method32180(var7.method32179() / 2);
-      } else if (this.field4744 && this.field4743.contains(var2) && !var10.method32105()) {
+         var7.method32180(var7.getCount() / 2);
+      } else if (this.field4744 && this.field4743.contains(var2) && !var10.isEmpty()) {
          if (this.field4743.size() == 1) {
             return;
          }
@@ -178,9 +178,9 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          if (Class5812.method18148(var2, var10, true) && this.field4727.method18150(var2)) {
             var7 = var10.copy();
             var8 = true;
-            Class5812.method18149(this.field4743, this.field4745, var7, !var2.method18265().method32105() ? var2.method18265().method32179() : 0);
+            Class5812.method18149(this.field4743, this.field4745, var7, !var2.method18265().isEmpty() ? var2.method18265().getCount() : 0);
             int var12 = Math.min(var7.method32113(), var2.method18270(var7));
-            if (var7.method32179() > var12) {
+            if (var7.getCount() > var12) {
                var11 = TextFormatting.YELLOW.toString() + var12;
                var7.method32180(var12);
             }
@@ -192,10 +192,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
       this.method5703(100);
       this.field4563.field847 = 100.0F;
-      if (var7.method32105() && var2.method18274()) {
+      if (var7.isEmpty() && var2.method18274()) {
          Pair var14 = var2.method18271();
          if (var14 != null) {
-            Class1713 var13 = this.field4562.method1542((ResourceLocation)var14.getFirst()).apply((ResourceLocation)var14.getSecond());
+            TextureAtlasSprite var13 = this.field4562.getAtlasSpriteGetter((ResourceLocation)var14.getFirst()).apply((ResourceLocation)var14.getSecond());
             this.field4562.getTextureManager().bindTexture(var13.method7466().method1100());
             method5695(var1, var5, var6, this.method5702(), 16, 16, var13);
             var9 = true;
@@ -217,22 +217,22 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    private void method2620() {
-      ItemStack var3 = this.field4562.player.field4902.method4057();
-      if (!var3.method32105() && this.field4744) {
+      ItemStack var3 = this.field4562.player.inventory.method4057();
+      if (!var3.isEmpty() && this.field4744) {
          if (this.field4745 != 2) {
-            this.field4748 = var3.method32179();
+            this.field4748 = var3.getCount();
 
             for (Class5839 var5 : this.field4743) {
                ItemStack var6 = var3.copy();
                ItemStack var7 = var5.method18265();
-               int var8 = !var7.method32105() ? var7.method32179() : 0;
+               int var8 = !var7.isEmpty() ? var7.getCount() : 0;
                Class5812.method18149(this.field4743, this.field4745, var6, var8);
                int var9 = Math.min(var6.method32113(), var5.method18270(var6));
-               if (var6.method32179() > var9) {
+               if (var6.getCount() > var9) {
                   var6.method32180(var9);
                }
 
-               this.field4748 = this.field4748 - (var6.method32179() - var8);
+               this.field4748 = this.field4748 - (var6.getCount() - var8);
             }
          } else {
             this.field4748 = var3.method32113();
@@ -257,7 +257,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       if (super.method1958(var1, var3, var5)) {
          return true;
       } else {
-         boolean var8 = this.field4562.gameSettings.field44644.method8520(var5);
+         boolean var8 = this.field4562.gameSettings.keyBindPickBlock.method8520(var5);
          Class5839 var9 = this.method2621(var1, var3);
          long var10 = Util.milliTime();
          this.field4751 = this.field4733 == var9 && var10 - this.field4749 < 250L && this.field4750 == var5;
@@ -277,21 +277,21 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                var15 = -999;
             }
 
-            if (this.field4562.gameSettings.field44625 && var14 && this.field4562.player.field4902.method4057().method32105()) {
+            if (this.field4562.gameSettings.touchscreen && var14 && this.field4562.player.inventory.method4057().isEmpty()) {
                this.field4562.displayGuiScreen((Screen)null);
                return true;
             }
 
             if (var15 != -1) {
-               if (!this.field4562.gameSettings.field44625) {
+               if (!this.field4562.gameSettings.touchscreen) {
                   if (!this.field4744) {
-                     if (!this.field4562.player.field4902.method4057().method32105()) {
+                     if (!this.field4562.player.inventory.method4057().isEmpty()) {
                         this.field4744 = true;
                         this.field4746 = var5;
                         this.field4743.clear();
                         if (var5 != 0) {
                            if (var5 != 1) {
-                              if (this.field4562.gameSettings.field44644.method8520(var5)) {
+                              if (this.field4562.gameSettings.keyBindPickBlock.method8520(var5)) {
                                  this.field4745 = 2;
                               }
                            } else {
@@ -301,13 +301,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                            this.field4745 = 0;
                         }
                      } else {
-                        if (this.field4562.gameSettings.field44644.method8520(var5)) {
+                        if (this.field4562.gameSettings.keyBindPickBlock.method8520(var5)) {
                            this.method2626(var9, var15, var5, Class2259.field14697);
                         } else {
                            boolean var16 = var15 != -999
                               && (
-                                 Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 340)
-                                    || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 344)
+                                 Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 340)
+                                    || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                               );
                            Class2259 var17 = Class2259.field14694;
                            if (!var16) {
@@ -343,14 +343,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    private void method2622(int var1) {
-      if (this.field4729 != null && this.field4562.player.field4902.method4057().method32105()) {
-         if (this.field4562.gameSettings.field44640.method8520(var1)) {
+      if (this.field4729 != null && this.field4562.player.inventory.method4057().isEmpty()) {
+         if (this.field4562.gameSettings.keyBindSwapHands.method8520(var1)) {
             this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
             return;
          }
 
          for (int var4 = 0; var4 < 9; var4++) {
-            if (this.field4562.gameSettings.field44655[var4].method8520(var1)) {
+            if (this.field4562.gameSettings.keyBindsHotbar[var4].method8520(var1)) {
                this.method2626(this.field4729, this.field4729.field25579, var4, Class2259.field14696);
             }
          }
@@ -364,11 +364,11 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public boolean method2516(double var1, double var3, int var5, double var6, double var8) {
       Class5839 var12 = this.method2621(var1, var3);
-      ItemStack var13 = this.field4562.player.field4902.method4057();
-      if (this.field4730 != null && this.field4562.gameSettings.field44625) {
+      ItemStack var13 = this.field4562.player.inventory.method4057();
+      if (this.field4730 != null && this.field4562.gameSettings.touchscreen) {
          if (var5 == 0 || var5 == 1) {
-            if (!this.field4737.method32105()) {
-               if (this.field4737.method32179() > 1 && var12 != null && Class5812.method18148(var12, this.field4737, false)) {
+            if (!this.field4737.isEmpty()) {
+               if (this.field4737.getCount() > 1 && var12 != null && Class5812.method18148(var12, this.field4737, false)) {
                   long var14 = Util.milliTime();
                   if (this.field4732 != var12) {
                      this.field4732 = var12;
@@ -381,14 +381,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                      this.field4737.method32182(1);
                   }
                }
-            } else if (var12 != this.field4730 && !this.field4730.method18265().method32105()) {
+            } else if (var12 != this.field4730 && !this.field4730.method18265().isEmpty()) {
                this.field4737 = this.field4730.method18265().copy();
             }
          }
       } else if (this.field4744
          && var12 != null
-         && !var13.method32105()
-         && (var13.method32179() > this.field4743.size() || this.field4745 == 2)
+         && !var13.isEmpty()
+         && (var13.getCount() > this.field4743.size() || this.field4745 == 2)
          && Class5812.method18148(var12, var13, true)
          && var12.method18259(var13)
          && this.field4727.method18150(var12)) {
@@ -417,7 +417,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       if (this.field4751 && var8 != null && var5 == 0 && this.field4727.method18111(ItemStack.EMPTY, var8)) {
          if (!method2476()) {
             this.method2626(var8, var12, var5, Class2259.field14700);
-         } else if (!this.field4752.method32105()) {
+         } else if (!this.field4752.isEmpty()) {
             for (Class5839 var18 : this.field4727.field25468) {
                if (var18 != null
                   && var18.method18273(this.field4562.player)
@@ -444,29 +444,29 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
             return true;
          }
 
-         if (this.field4730 != null && this.field4562.gameSettings.field44625) {
+         if (this.field4730 != null && this.field4562.gameSettings.touchscreen) {
             if (var5 == 0 || var5 == 1) {
-               if (this.field4737.method32105() && var8 != this.field4730) {
+               if (this.field4737.isEmpty() && var8 != this.field4730) {
                   this.field4737 = this.field4730.method18265();
                }
 
                boolean var16 = Class5812.method18148(var8, this.field4737, false);
-               if (var12 != -1 && !this.field4737.method32105() && var16) {
+               if (var12 != -1 && !this.field4737.isEmpty() && var16) {
                   this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
                   this.method2626(var8, var12, 0, Class2259.field14694);
-                  if (!this.field4562.player.field4902.method4057().method32105()) {
+                  if (!this.field4562.player.inventory.method4057().isEmpty()) {
                      this.method2626(this.field4730, this.field4730.field25579, var5, Class2259.field14694);
-                     this.field4738 = MathHelper.method37769(var1 - (double)var9);
-                     this.field4739 = MathHelper.method37769(var3 - (double)var10);
+                     this.field4738 = MathHelper.floor(var1 - (double)var9);
+                     this.field4739 = MathHelper.floor(var3 - (double)var10);
                      this.field4731 = this.field4730;
                      this.field4741 = this.field4737;
                      this.field4740 = Util.milliTime();
                   } else {
                      this.field4741 = ItemStack.EMPTY;
                   }
-               } else if (!this.field4737.method32105()) {
-                  this.field4738 = MathHelper.method37769(var1 - (double)var9);
-                  this.field4739 = MathHelper.method37769(var3 - (double)var10);
+               } else if (!this.field4737.isEmpty()) {
+                  this.field4738 = MathHelper.floor(var1 - (double)var9);
+                  this.field4739 = MathHelper.floor(var3 - (double)var10);
                   this.field4731 = this.field4730;
                   this.field4741 = this.field4737;
                   this.field4740 = Util.milliTime();
@@ -483,12 +483,12 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
             }
 
             this.method2626((Class5839)null, -999, Class5812.method18145(2, this.field4745), Class2259.field14699);
-         } else if (!this.field4562.player.field4902.method4057().method32105()) {
-            if (!this.field4562.gameSettings.field44644.method8520(var5)) {
+         } else if (!this.field4562.player.inventory.method4057().isEmpty()) {
+            if (!this.field4562.gameSettings.keyBindPickBlock.method8520(var5)) {
                boolean var13 = var12 != -999
                   && (
-                     Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 340)
-                        || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 344)
+                     Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 340)
+                        || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                   );
                if (var13) {
                   this.field4752 = var8 != null && var8.method18266() ? var8.method18265().copy() : ItemStack.EMPTY;
@@ -501,7 +501,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          }
       }
 
-      if (this.field4562.player.field4902.method4057().method32105()) {
+      if (this.field4562.player.inventory.method4057().isEmpty()) {
          this.field4749 = 0L;
       }
 
@@ -526,7 +526,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          var2 = var1.field25579;
       }
 
-      this.field4562.field1337.method23144(this.field4727.field25471, var2, var3, var4, this.field4562.player);
+      this.field4562.playerController.method23144(this.field4727.field25471, var2, var3, var4, this.field4562.player);
    }
 
    @Override
@@ -535,9 +535,9 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          if (!this.field4562.gameSettings.field44639.method8519(var1, var2)) {
             this.method2627(var1, var2);
             if (this.field4729 != null && this.field4729.method18266()) {
-               if (!this.field4562.gameSettings.field44644.method8519(var1, var2)) {
-                  if (this.field4562.gameSettings.field44641.method8519(var1, var2)) {
-                     this.method2626(this.field4729, this.field4729.field25579, !method2475() ? 0 : 1, Class2259.field14698);
+               if (!this.field4562.gameSettings.keyBindPickBlock.method8519(var1, var2)) {
+                  if (this.field4562.gameSettings.keyBindDrop.method8519(var1, var2)) {
+                     this.method2626(this.field4729, this.field4729.field25579, ! hasControlDown() ? 0 : 1, Class2259.field14698);
                   }
                } else {
                   this.method2626(this.field4729, this.field4729.field25579, 0, Class2259.field14697);
@@ -555,14 +555,14 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    public boolean method2627(int var1, int var2) {
-      if (this.field4562.player.field4902.method4057().method32105() && this.field4729 != null) {
-         if (this.field4562.gameSettings.field44640.method8519(var1, var2)) {
+      if (this.field4562.player.inventory.method4057().isEmpty() && this.field4729 != null) {
+         if (this.field4562.gameSettings.keyBindSwapHands.method8519(var1, var2)) {
             this.method2626(this.field4729, this.field4729.field25579, 40, Class2259.field14696);
             return true;
          }
 
          for (int var5 = 0; var5 < 9; var5++) {
-            if (this.field4562.gameSettings.field44655[var5].method8519(var1, var2)) {
+            if (this.field4562.gameSettings.keyBindsHotbar[var5].method8519(var1, var2)) {
                this.method2626(this.field4729, this.field4729.field25579, var5, Class2259.field14696);
                return true;
             }
@@ -580,13 +580,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       if (!this.field4562.player.method3066() || this.field4562.player.field5041) {
          this.field4562.player.method2772();
       }

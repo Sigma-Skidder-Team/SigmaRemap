@@ -38,7 +38,7 @@ public class Class1218 extends Class1206 implements Class1219 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field6546++;
       Class6128 var3 = this.field6543.get();
       if (var3 != null) {
@@ -181,7 +181,7 @@ public class Class1218 extends Class1206 implements Class1219 {
       if (!var6) {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
-         float var21 = 0.85F + 0.15F * MathHelper.method37764((float)this.field6546 * 0.2F);
+         float var21 = 0.85F + 0.15F * MathHelper.cos((float)this.field6546 * 0.2F);
          RenderSystem.method27889(var21, var21, var21, 1.0F);
       }
 
@@ -199,6 +199,6 @@ public class Class1218 extends Class1206 implements Class1219 {
       }
 
       method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
-      method5690(var1, var19.field1294, var7, var2 + 40, var3 + 66, 16777215);
+      method5690(var1, var19.fontRenderer, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

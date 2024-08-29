@@ -7,11 +7,11 @@ public final class Class8177 implements Class8176 {
    private long field35171;
 
    @Override
-   public float method28467(ItemStack var1, Class1656 var2, Class880 var3) {
+   public float method28467(ItemStack var1, ClientWorld var2, Class880 var3) {
       Object var6 = var3 == null ? var1.method32168() : var3;
       if (var6 != null) {
-         if (var2 == null && ((Entity)var6).field5024 instanceof Class1656) {
-            var2 = (Class1656)((Entity)var6).field5024;
+         if (var2 == null && ((Entity)var6).world instanceof ClientWorld) {
+            var2 = (ClientWorld)((Entity)var6).world;
          }
 
          if (var2 != null) {

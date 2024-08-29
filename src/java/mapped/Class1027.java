@@ -12,7 +12,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    private Class2712<Class1026> field5722;
    private Class2711<PlayerEntity> field5723;
 
-   public Class1027(Class8992<? extends Class1027> var1, World var2) {
+   public Class1027(EntityType<? extends Class1027> var1, World var2) {
       super(var1, var2);
    }
 
@@ -20,7 +20,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    public void method4219() {
       super.method4219();
       this.field5722 = new Class2712<Class1026>(
-         this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.method3204() != Class8992.field41101
+         this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.field41101
       );
       this.field5723 = new Class2711<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<Class880>)null);
       this.field5600.method20002(1, new Class2603(this));
@@ -68,7 +68,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
    @Override
    public void method2871() {
-      if (!this.field5024.field9020 && this.method3066()) {
+      if (!this.world.field9020 && this.method3066()) {
          this.field5722.method10927();
          if (this.field5722.method10926() > 0) {
             this.field5723.method10925(false);
@@ -94,11 +94,11 @@ public class Class1027 extends Class1026 implements Class1022 {
             }
 
             if (var7 != null) {
-               this.method2944(Class2106.field13731, Class9741.method38187(new ItemStack(Class8514.field37971), var7));
+               this.method2944(Class2106.field13731, Class9741.method38187(new ItemStack(Items.field37971), var7));
                this.field5721 = this.method3090().method32137();
                this.method4567(true);
                if (!this.method3245()) {
-                  this.field5024
+                  this.world
                      .method6743(
                         (PlayerEntity)null,
                         this.getPosX(),
@@ -119,7 +119,7 @@ public class Class1027 extends Class1026 implements Class1022 {
             this.method4567(false);
             ItemStack var3 = this.method3090();
             this.method2944(Class2106.field13731, ItemStack.EMPTY);
-            if (var3.method32107() == Class8514.field37971) {
+            if (var3.getItem() == Items.field37971) {
                List<Class2023> var4 = Class9741.method38176(var3);
                if (var4 != null) {
                   for (Class2023 var6 : var4) {
@@ -132,7 +132,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          }
 
          if (this.field5054.nextFloat() < 7.5E-4F) {
-            this.field5024.method6786(this, (byte)15);
+            this.world.method6786(this, (byte)15);
          }
       }
 
@@ -150,7 +150,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          super.method2866(var1);
       } else {
          for (int var4 = 0; var4 < this.field5054.nextInt(35) + 10; var4++) {
-            this.field5024
+            this.world
                .method6746(
                   Class7940.field34100,
                   this.getPosX() + this.field5054.nextGaussian() * 0.13F,
@@ -205,12 +205,12 @@ public class Class1027 extends Class1026 implements Class1022 {
             this.method4233((Class880)null);
          }
 
-         Class896 var14 = new Class896(this.field5024, this);
-         var14.method3511(Class9741.method38187(new ItemStack(Class8514.field38115), var13));
+         Class896 var14 = new Class896(this.world, this);
+         var14.method3511(Class9741.method38187(new ItemStack(Items.field38115), var13));
          var14.field5032 -= -20.0F;
          var14.method3462(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.method3245()) {
-            this.field5024
+            this.world
                .method6743(
                   (PlayerEntity)null,
                   this.getPosX(),
@@ -223,7 +223,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                );
          }
 
-         this.field5024.method6916(var14);
+         this.world.method6916(var14);
       }
    }
 

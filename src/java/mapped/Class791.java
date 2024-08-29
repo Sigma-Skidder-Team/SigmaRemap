@@ -64,7 +64,7 @@ public class Class791 extends Class789 {
       if (var8) {
          method1905(new Class817(this.field4139, this.field4140, this.field4138));
       } else if (var9) {
-         if (this.field4138.field27449.equals(Minecraft.getInstance().method1533().getPlayerID())) {
+         if (this.field4138.field27449.equals(Minecraft.getInstance().getSession().getPlayerID())) {
             method1905(new Class819(this.field4139, this.field4140, this.field4138.field27443, this.field4138.field27455 == Class2049.field13370));
          } else {
             method1905(
@@ -87,7 +87,7 @@ public class Class791 extends Class789 {
                         try {
                            if (var2) {
                               Function var5x = var1x -> {
-                                 Minecraft.getInstance().method1539().method25150();
+                                 Minecraft.getInstance().getPackFinder().clearResourcePack();
                                  field4133.error(var1x);
                                  method1905(new Class821(new StringTextComponent("Failed to download resource pack!"), this.field4139));
                                  return null;
@@ -95,7 +95,7 @@ public class Class791 extends Class789 {
 
                               try {
                                  Minecraft.getInstance()
-                                    .method1539()
+                                    .getPackFinder()
                                     .method25148(var16.field27440, var16.field27441)
                                     .thenRun(() -> this.method1906(new Class797(this.field4139, new Class793(this.field4139, this.field4138, var16))))
                                     .exceptionally(var5x);

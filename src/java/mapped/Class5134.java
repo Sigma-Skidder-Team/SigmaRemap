@@ -26,23 +26,23 @@ public class Class5134 implements Class5119 {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      RenderSystem.method27862();
-      Class9352 var11 = Class9352.method35409();
-      Class5425 var12 = var11.method35411();
-      var12.method17063(5, Class9337.field43342);
+      RenderSystem.disableTexture();
+      Tessellator var11 = Tessellator.getInstance();
+      BufferBuilder var12 = var11.getBuffer();
+      var12.begin(5, DefaultVertexFormats.POSITION_COLOR);
 
       for (int var13 = 0; var13 < this.field23335.size(); var13++) {
          BlockPos var14 = this.field23335.get(var13);
          Float var15 = this.field23336.get(var13);
          float var16 = var15 / 2.0F;
-         Class264.method900(
+         WorldRenderer.method900(
             var12,
-            (double)((float)var14.method8304() + 0.5F - var16) - var3,
+            (double)((float)var14.getX() + 0.5F - var16) - var3,
             (double)((float)var14.getY() + 0.5F - var16) - var5,
-            (double)((float)var14.method8306() + 0.5F - var16) - var7,
-            (double)((float)var14.method8304() + 0.5F + var16) - var3,
+            (double)((float)var14.getZ() + 0.5F - var16) - var7,
+            (double)((float)var14.getX() + 0.5F + var16) - var3,
             (double)((float)var14.getY() + 0.5F + var16) - var5,
-            (double)((float)var14.method8306() + 0.5F + var16) - var7,
+            (double)((float)var14.getZ() + 0.5F + var16) - var7,
             this.field23338.get(var13),
             this.field23339.get(var13),
             this.field23340.get(var13),
@@ -50,7 +50,7 @@ public class Class5134 implements Class5119 {
          );
       }
 
-      var11.method35410();
+      var11.draw();
       RenderSystem.enableTexture();
       RenderSystem.popMatrix();
    }

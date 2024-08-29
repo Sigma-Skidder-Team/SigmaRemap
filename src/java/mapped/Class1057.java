@@ -18,7 +18,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    private BlockPos field5847 = null;
    private int field5848;
 
-   public Class1057(Class8992<? extends Class1057> var1, World var2) {
+   public Class1057(EntityType<? extends Class1057> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -69,7 +69,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    @Override
    public void method2850() {
       super.method2850();
-      this.field5063.method35442(field5841, Direction.field672);
+      this.field5063.method35442(field5841, Direction.DOWN);
       this.field5063.method35442(field5842, Optional.<BlockPos>empty());
       this.field5063.method35442(field5843, (byte)0);
       this.field5063.method35442(field5844, (byte)16);
@@ -85,12 +85,12 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5063.method35446(field5841, Direction.method546(var1.method120("AttachFace")));
       this.field5063.method35446(field5843, var1.method120("Peek"));
       this.field5063.method35446(field5844, var1.method120("Color"));
-      if (!var1.method118("APX")) {
+      if (!var1.contains("APX")) {
          this.field5063.method35446(field5842, Optional.<BlockPos>empty());
       } else {
          int var4 = var1.method122("APX");
@@ -101,16 +101,16 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method100("AttachFace", (byte)this.field5063.<Direction>method35445(field5841).method533());
       var1.method100("Peek", this.field5063.<Byte>method35445(field5843));
       var1.method100("Color", this.field5063.<Byte>method35445(field5844));
       BlockPos var4 = this.method4849();
       if (var4 != null) {
-         var1.method102("APX", var4.method8304());
+         var1.method102("APX", var4.getX());
          var1.method102("APY", var4.getY());
-         var1.method102("APZ", var4.method8306());
+         var1.method102("APZ", var4.getZ());
       }
    }
 
@@ -118,21 +118,21 @@ public class Class1057 extends Class1056 implements Class1008 {
    public void tick() {
       super.tick();
       BlockPos var3 = this.field5063.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
-      if (var3 == null && !this.field5024.field9020) {
-         var3 = this.method3432();
+      if (var3 == null && !this.world.field9020) {
+         var3 = this.getPosition();
          this.field5063.method35446(field5842, Optional.<BlockPos>of(var3));
       }
 
       if (!this.method3328()) {
-         if (!this.field5024.field9020) {
-            Class7380 var4 = this.field5024.method6738(var3);
-            if (!var4.method23393()) {
+         if (!this.world.field9020) {
+            BlockState var4 = this.world.getBlockState(var3);
+            if (!var4.isAir()) {
                if (!var4.method23448(Blocks.MOVING_PISTON)) {
                   if (!var4.method23448(Blocks.PISTON_HEAD)) {
                      this.method4846();
                   } else {
                      Direction var5 = var4.<Direction>method23463(Class3436.field19198);
-                     if (!this.field5024.method7007(var3.method8349(var5))) {
+                     if (!this.world.method7007(var3.method8349(var5))) {
                         this.method4846();
                      } else {
                         var3 = var3.method8349(var5);
@@ -141,7 +141,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                   }
                } else {
                   Direction var19 = var4.<Direction>method23463(Class3435.field19198);
-                  if (!this.field5024.method7007(var3.method8349(var19))) {
+                  if (!this.world.method7007(var3.method8349(var19))) {
                      this.method4846();
                   } else {
                      var3 = var3.method8349(var19);
@@ -180,7 +180,7 @@ public class Class1057 extends Class1056 implements Class1008 {
       }
 
       if (var3 != null) {
-         if (this.field5024.field9020) {
+         if (this.world.field9020) {
             if (this.field5848 > 0 && this.field5847 != null) {
                this.field5848--;
             } else {
@@ -188,9 +188,9 @@ public class Class1057 extends Class1056 implements Class1008 {
             }
          }
 
-         this.method3274((double)var3.method8304() + 0.5, (double)var3.getY(), (double)var3.method8306() + 0.5);
-         double var7 = 0.5 - (double) MathHelper.method37763((0.5F + this.field5846) * (float) Math.PI) * 0.5;
-         double var9 = 0.5 - (double) MathHelper.method37763((0.5F + this.field5845) * (float) Math.PI) * 0.5;
+         this.method3274((double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5);
+         double var7 = 0.5 - (double) MathHelper.sin((0.5F + this.field5846) * (float) Math.PI) * 0.5;
+         double var9 = 0.5 - (double) MathHelper.sin((0.5F + this.field5845) * (float) Math.PI) * 0.5;
          Direction var11 = this.method4848().method536();
          this.method3391(
             new Class6488(
@@ -205,7 +205,7 @@ public class Class1057 extends Class1056 implements Class1008 {
          );
          double var12 = var7 - var9;
          if (var12 > 0.0) {
-            List<Entity> var14 = this.field5024.method7181(this, this.method3389());
+            List<Entity> var14 = this.world.method7181(this, this.method3389());
             if (!var14.isEmpty()) {
                for (Entity var16 : var14) {
                   if (!(var16 instanceof Class1057) && !var16.field5052) {
@@ -255,20 +255,20 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    private boolean method4845(BlockPos var1, Direction var2) {
-      return this.field5024.method6764(var1.method8349(var2), this, var2.method536())
-         && this.field5024.method7053(this, Class8919.method32596(var1, var2.method536()));
+      return this.world.method6764(var1.method8349(var2), this, var2.method536())
+         && this.world.method7053(this, Class8919.method32596(var1, var2.method536()));
    }
 
    public boolean method4846() {
       if (!this.method4305() && this.method3066()) {
-         BlockPos var3 = this.method3432();
+         BlockPos var3 = this.getPosition();
 
          for (int var4 = 0; var4 < 5; var4++) {
             BlockPos var5 = var3.method8336(8 - this.field5054.nextInt(17), 8 - this.field5054.nextInt(17), 8 - this.field5054.nextInt(17));
             if (var5.getY() > 0
-               && this.field5024.method7007(var5)
-               && this.field5024.method6810().method24523(var5)
-               && this.field5024.method7053(this, new Class6488(var5))) {
+               && this.world.method7007(var5)
+               && this.world.method6810().method24523(var5)
+               && this.world.method7053(this, new Class6488(var5))) {
                Direction var6 = this.method4844(var5);
                if (var6 != null) {
                   this.field5063.method35446(field5841, var6);
@@ -299,7 +299,7 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Override
    public void method3155(Class9289<?> var1) {
-      if (field5842.equals(var1) && this.field5024.field9020 && !this.method3328()) {
+      if (field5842.equals(var1) && this.world.field9020 && !this.method3328()) {
          BlockPos var4 = this.method4849();
          if (var4 != null) {
             if (this.field5847 != null) {
@@ -308,7 +308,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                this.field5847 = var4;
             }
 
-            this.method3274((double)var4.method8304() + 0.5, (double)var4.getY(), (double)var4.method8306() + 0.5);
+            this.method3274((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
          }
       }
 
@@ -367,7 +367,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public void method4852(int var1) {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.method3085(Class9173.field42113).method38670(field5840);
          if (var1 != 0) {
             this.method2863(Class6067.field27052, 1.0F, 1.0F);

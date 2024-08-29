@@ -5,17 +5,17 @@ import java.util.function.Function;
 import net.minecraft.util.text.ITextComponent;
 
 public abstract class Class4680 implements Class4681 {
-   private final Class1810 field22255;
+   private final ResourcePackInfo field22255;
    public final Class8719 field22256;
 
-   public Class4680(Class8719 var1, Class1810 var2) {
+   public Class4680(Class8719 var1, ResourcePackInfo var2) {
       this.field22256 = var1;
       this.field22255 = var2;
    }
 
-   public abstract List<Class1810> method14672();
+   public abstract List<ResourcePackInfo> method14672();
 
-   public abstract List<Class1810> method14673();
+   public abstract List<ResourcePackInfo> method14673();
 
    @Override
    public ResourceLocation method14677() {
@@ -38,23 +38,23 @@ public abstract class Class4680 implements Class4681 {
    }
 
    @Override
-   public Class7725 method14681() {
+   public IPackNameDecorator method14681() {
       return this.field22255.method7955();
    }
 
    @Override
    public boolean method14682() {
-      return this.field22255.method7953();
+      return this.field22255.isOrderLocked();
    }
 
    @Override
    public boolean method14683() {
-      return this.field22255.method7952();
+      return this.field22255.isAlwaysEnabled();
    }
 
    public void method14684() {
       this.method14672().remove(this.field22255);
-      this.field22255.method7954().method8249(this.method14673(), this.field22255, Function.<Class1810>identity(), true);
+      this.field22255.method7954().method8249(this.method14673(), this.field22255, Function.<ResourcePackInfo>identity(), true);
       Class8719.method31455(this.field22256).run();
    }
 
@@ -70,7 +70,7 @@ public abstract class Class4680 implements Class4681 {
    public boolean method14686() {
       List var3 = this.method14672();
       int var4 = var3.indexOf(this.field22255);
-      return var4 > 0 && !((Class1810)var3.get(var4 - 1)).method7953();
+      return var4 > 0 && !((ResourcePackInfo)var3.get(var4 - 1)).isOrderLocked();
    }
 
    @Override
@@ -82,7 +82,7 @@ public abstract class Class4680 implements Class4681 {
    public boolean method14688() {
       List var3 = this.method14672();
       int var4 = var3.indexOf(this.field22255);
-      return var4 >= 0 && var4 < var3.size() - 1 && !((Class1810)var3.get(var4 + 1)).method7953();
+      return var4 >= 0 && var4 < var3.size() - 1 && !((ResourcePackInfo)var3.get(var4 + 1)).isOrderLocked();
    }
 
    @Override

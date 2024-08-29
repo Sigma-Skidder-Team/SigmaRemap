@@ -15,7 +15,7 @@ public class Class2002 extends Class1998 {
    }
 
    public static Class2002 method8390(BlockPos var0) {
-      return new Class2002(method8396(var0.method8304()), method8396(var0.getY()), method8396(var0.method8306()));
+      return new Class2002(method8396(var0.getX()), method8396(var0.getY()), method8396(var0.getZ()));
    }
 
    public static Class2002 method8391(Class7481 var0, int var1) {
@@ -24,9 +24,9 @@ public class Class2002 extends Class1998 {
 
    public static Class2002 method8392(Entity var0) {
       return new Class2002(
-         method8396(MathHelper.method37769(var0.getPosX())),
-         method8396(MathHelper.method37769(var0.getPosY())),
-         method8396(MathHelper.method37769(var0.getPosZ()))
+         method8396(MathHelper.floor(var0.getPosX())),
+         method8396(MathHelper.floor(var0.getPosY())),
+         method8396(MathHelper.floor(var0.getPosZ()))
       );
    }
 
@@ -51,9 +51,9 @@ public class Class2002 extends Class1998 {
    }
 
    public static short method8398(BlockPos var0) {
-      int var3 = method8397(var0.method8304());
+      int var3 = method8397(var0.getX());
       int var4 = method8397(var0.getY());
-      int var5 = method8397(var0.method8306());
+      int var5 = method8397(var0.getZ());
       return (short)(var3 << 8 | var5 << 4 | var4 << 0);
    }
 
@@ -102,7 +102,7 @@ public class Class2002 extends Class1998 {
    }
 
    public int method8410() {
-      return this.method8304();
+      return this.getX();
    }
 
    public int method8411() {
@@ -110,7 +110,7 @@ public class Class2002 extends Class1998 {
    }
 
    public int method8412() {
-      return this.method8306();
+      return this.getZ();
    }
 
    public int method8413() {

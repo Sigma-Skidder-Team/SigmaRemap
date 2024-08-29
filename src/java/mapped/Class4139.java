@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4139 extends Class4057 {
    public Class4139() {
-      super(Class8992.field41049, "magma_cube", 0.5F);
+      super(EntityType.field41049, "magma_cube", 0.5F);
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class4139 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5652 var6 = new Class5652(var5);
       var6.field25086 = (Class2882<Class1109>)var1;
       var6.field25098 = var2;

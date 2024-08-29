@@ -34,13 +34,13 @@ public class Class7671 {
    private static final Pattern field32875 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)");
    private final StringReader field32876;
 
-   public static Class39 method25188(String var0) throws CommandSyntaxException {
+   public static CompoundNBT method25188(String var0) throws CommandSyntaxException {
       return new Class7671(new StringReader(var0)).method25189();
    }
 
    @VisibleForTesting
-   public Class39 method25189() throws CommandSyntaxException {
-      Class39 var3 = this.method25195();
+   public CompoundNBT method25189() throws CommandSyntaxException {
+      CompoundNBT var3 = this.method25195();
       this.field32876.skipWhitespace();
       if (!this.field32876.canRead()) {
          return var3;
@@ -74,7 +74,7 @@ public class Class7671 {
             throw field32865.createWithContext(this.field32876);
          }
       } else {
-         return Class40.method150(this.field32876.readQuotedString());
+         return StringNBT.valueOf(this.field32876.readQuotedString());
       }
    }
 
@@ -118,7 +118,7 @@ public class Class7671 {
       } catch (NumberFormatException var5) {
       }
 
-      return Class40.method150(var1);
+      return StringNBT.valueOf(var1);
    }
 
    public Class30 method25193() throws CommandSyntaxException {
@@ -141,9 +141,9 @@ public class Class7671 {
          : this.method25196();
    }
 
-   public Class39 method25195() throws CommandSyntaxException {
+   public CompoundNBT method25195() throws CommandSyntaxException {
       this.method25200('{');
-      Class39 var3 = new Class39();
+      CompoundNBT var3 = new CompoundNBT();
       this.field32876.skipWhitespace();
 
       while (this.field32876.canRead() && this.field32876.peek() != '}') {
@@ -155,7 +155,7 @@ public class Class7671 {
          }
 
          this.method25200(':');
-         var3.method99(var5, this.method25193());
+         var3.put(var5, this.method25193());
          if (!this.method25199()) {
             break;
          }
@@ -175,7 +175,7 @@ public class Class7671 {
       if (!this.field32876.canRead()) {
          throw field32865.createWithContext(this.field32876);
       } else {
-         Class41 var3 = new Class41();
+         ListNBT var3 = new ListNBT();
          Class7052 var4 = null;
 
          while (this.field32876.peek() != ']') {

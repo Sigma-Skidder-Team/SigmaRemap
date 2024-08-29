@@ -4,14 +4,14 @@ public class Class8557 {
    public int[] field38456;
    public final int field38457;
    public Direction field38458;
-   public Class1713 field38459;
+   public TextureAtlasSprite field38459;
    private final boolean field38460;
    private int[] field38461 = null;
    private Class9190 field38462;
    private boolean field38463;
    private Class8557 field38464;
 
-   public Class8557(int[] var1, int var2, Direction var3, Class1713 var4, boolean var5) {
+   public Class8557(int[] var1, int var2, Direction var3, TextureAtlasSprite var4, boolean var5) {
       this.field38456 = var1;
       this.field38457 = var2;
       this.field38458 = var3;
@@ -45,7 +45,7 @@ public class Class8557 {
       return this.field38460;
    }
 
-   public Class1713 method30516() {
+   public TextureAtlasSprite method30516() {
       if (this.field38459 == null) {
          this.field38459 = method30521(this.method30511());
       }
@@ -61,7 +61,7 @@ public class Class8557 {
       return this.field38461;
    }
 
-   private static int[] method30518(int[] var0, Class1713 var1) {
+   private static int[] method30518(int[] var0, TextureAtlasSprite var1) {
       int[] var4 = (int[])var0.clone();
       int var5 = var4.length / 4;
 
@@ -82,11 +82,11 @@ public class Class8557 {
       Class9299.method35055(Class9299.field42963, var1, this);
    }
 
-   public Class1713 method30520() {
+   public TextureAtlasSprite method30520() {
       return this.field38459;
    }
 
-   private static Class1713 method30521(int[] var0) {
+   private static TextureAtlasSprite method30521(int[] var0) {
       float var3 = 1.0F;
       float var4 = 1.0F;
       float var5 = 0.0F;
@@ -110,10 +110,10 @@ public class Class8557 {
 
    public void method30522() {
       if (!Class7944.method26921()) {
-         if (this.field38456.length == Class9337.field43339) {
+         if (this.field38456.length == DefaultVertexFormats.field43339) {
             this.field38456 = method30524(this.field38456);
          }
-      } else if (this.field38456.length == Class9337.field43338) {
+      } else if (this.field38456.length == DefaultVertexFormats.field43338) {
          this.field38456 = method30523(this.field38456);
       }
    }

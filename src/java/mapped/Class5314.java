@@ -12,19 +12,19 @@ public class Class5314 extends Module {
 
     public Class5314() {
         super(ModuleCategory.GUI, "Info HUD", "Shows a bunch of usefull stuff");
-        this.method15972(new Class6005("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
-        this.method15972(new Class6004("Show Player", "Renders a miniature version of your character", true));
-        this.method15972(new Class6004("Show Armor", "Shows your armor's status", true));
+        this.registerSetting(new ModeSetting("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
+        this.registerSetting(new BooleanSetting("Show Player", "Renders a miniature version of your character", true));
+        this.registerSetting(new BooleanSetting("Show Armor", "Shows your armor's status", true));
         this.method16005(false);
     }
 
     @EventTarget
     private void method16692(Class4415 var1) {
         if (this.method15996() && mc.player != null) {
-            if (!Minecraft.getInstance().gameSettings.field44662) {
+            if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 if (!(mc.currentScreen instanceof ChatScreen)) {
                     float var4 = mc.player.field5031 % 360.0F - this.field23851 % 360.0F;
-                    this.field23851 = this.field23851 + var4 / (float) Minecraft.method1586() * 1.5F;
+                    this.field23851 = this.field23851 + var4 / (float) Minecraft.getFps() * 1.5F;
                     boolean var5 = false;
                     int var6 = 14;
                     if (this.method15974("Show Player")) {
@@ -73,9 +73,9 @@ public class Class5314 extends Module {
     public int method16695(int var1, int var2) {
         int var5 = 0;
 
-        for (int var6 = 0; var6 < mc.player.field4902.field5440.size(); var6++) {
-            ItemStack var7 = mc.player.field4902.field5440.get(var6);
-            if (!(var7.method32107() instanceof Class3280)) {
+        for (int var6 = 0; var6 < mc.player.inventory.field5440.size(); var6++) {
+            ItemStack var7 = mc.player.inventory.field5440.get(var6);
+            if (!(var7.getItem() instanceof Class3280)) {
                 var5++;
                 int var8 = var2 - 32 * var5;
                 Class3192.method11479(var7, var1, var8, 32, 32);

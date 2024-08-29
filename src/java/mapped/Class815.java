@@ -49,7 +49,7 @@ public class Class815 extends Class813 {
 
       this.field4424 = this.field4564 / 2 - 187;
       this.field4425 = this.field4564 / 2 + 190;
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4426 = this.<Class1206>method2455(
          new Class1206(
             this.method2273(0, 3),
@@ -130,7 +130,7 @@ public class Class815 extends Class813 {
                   )
          )
       );
-      this.<Class1206>method2455(new Class1206(this.field4425 - 80 + 8, method1929(13) - 5, 70, 20, Class7127.field30663, var1 -> this.method2275()));
+      this.<Class1206>method2455(new Class1206(this.field4425 - 80 + 8, method1929(13) - 5, 70, 20, DialogTexts.field30663, var1 -> this.method2275()));
       this.field4430.field6482 = true;
       if (this.field4422 != null) {
          this.method2277();
@@ -186,8 +186,8 @@ public class Class815 extends Class813 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4434++;
       this.field4435--;
       if (this.field4435 < 0) {
@@ -203,7 +203,7 @@ public class Class815 extends Class813 {
       super.method1923(var1, var2, var3, var4);
       if (this.field4422 != null) {
          String var7 = this.field4422.method18907();
-         int var8 = this.field4568.method38820(var7);
+         int var8 = this.field4568.getStringWidth(var7);
          int var9 = this.field4422.field27447 != Class2261.field14706 ? 8388479 : 10526880;
          int var10 = this.field4568.method38821(field4413);
          method5691(var1, this.field4568, field4413, this.field4564 / 2, 12, 16777215);
@@ -235,7 +235,7 @@ public class Class815 extends Class813 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -329,7 +329,7 @@ public class Class815 extends Class813 {
                         new TranslationTextComponent("mco.configure.world.switch.slot"),
                         new TranslationTextComponent("mco.configure.world.switch.slot.subtitle"),
                         10526880,
-                        Class7127.field30659,
+                        DialogTexts.GUI_CANCEL,
                         () -> this.field4562.displayGuiScreen(this.method2298()),
                         () -> this.field4562.displayGuiScreen(this.method2298())
                      );

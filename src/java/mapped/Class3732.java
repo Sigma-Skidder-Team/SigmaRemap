@@ -27,7 +27,7 @@ public class Class3732<E extends Class1034> extends Class3676<E> {
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
-      return var2.method3091().method32105();
+      return var2.method3091().isEmpty();
    }
 
    public void method12502(ServerWorld var1, E var2, long var3) {

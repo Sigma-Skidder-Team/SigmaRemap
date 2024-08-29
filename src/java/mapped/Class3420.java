@@ -34,7 +34,7 @@ public class Class3420 extends Block {
    }
 
    @Override
-   public void method11965(Class7380 var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
+   public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
       if (Class7858.method26311(Class8122.field34916, var4) == 0) {
          int var7 = this.method12068(var2.field9016);

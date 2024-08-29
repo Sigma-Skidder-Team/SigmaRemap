@@ -16,14 +16,14 @@ public class Class1275 extends Class1274<Class1175> {
    }
 
    @Override
-   public void method6038(MatrixStack var1, int var2, int var3, Class9352 var4) {
+   public void method6038(MatrixStack var1, int var2, int var3, Tessellator var4) {
       IFormattableTextComponent var7 = new StringTextComponent("").append(this.field6804).mergeStyle(TextFormatting.UNDERLINE, TextFormatting.BOLD);
       this.field6782
-         .field1294
+         .fontRenderer
          .method38805(
             var1,
             var7,
-            (float)(var2 + this.field6785 / 2 - this.field6782.field1294.method38821(var7) / 2),
+            (float)(var2 + this.field6785 / 2 - this.field6782.fontRenderer.method38821(var7) / 2),
             (float)Math.min(this.field6787 + 3, var3),
             16777215
          );

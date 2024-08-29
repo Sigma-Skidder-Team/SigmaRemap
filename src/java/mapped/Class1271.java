@@ -9,7 +9,7 @@ import java.util.Map;
 public class Class1271 extends Class1193 {
    private static String[] field6747;
    private final Minecraft field6748;
-   private final Class1130 field6749;
+   private final AdvancementsScreen field6749;
    private final Class2166 field6750;
    private final int field6751;
    private final Class7952 field6752;
@@ -27,7 +27,7 @@ public class Class1271 extends Class1193 {
    private float field6764;
    private boolean field6765;
 
-   public Class1271(Minecraft var1, Class1130 var2, Class2166 var3, int var4, Class7952 var5, Class9272 var6) {
+   public Class1271(Minecraft var1, AdvancementsScreen var2, Class2166 var3, int var4, Class7952 var5, Class9272 var6) {
       this.field6748 = var1;
       this.field6749 = var2;
       this.field6750 = var3;
@@ -52,7 +52,7 @@ public class Class1271 extends Class1193 {
       this.field6750.method8886(var1, this, var2, var3, var4, this.field6751);
    }
 
-   public void method6004(int var1, int var2, Class216 var3) {
+   public void method6004(int var1, int var2, ItemRenderer var3) {
       this.field6750.method8887(var1, var2, this.field6751, var3, this.field6754);
    }
 
@@ -80,8 +80,8 @@ public class Class1271 extends Class1193 {
          this.field6748.getTextureManager().bindTexture(var4);
       }
 
-      int var5 = MathHelper.method37769(this.field6758);
-      int var6 = MathHelper.method37769(this.field6759);
+      int var5 = MathHelper.floor(this.field6758);
+      int var6 = MathHelper.floor(this.field6759);
       int var7 = var5 % 16;
       int var8 = var6 % 16;
 
@@ -109,8 +109,8 @@ public class Class1271 extends Class1193 {
       RenderSystem.translatef(0.0F, 0.0F, 200.0F);
       method5686(var1, 0, 0, 234, 113, MathHelper.method37767(this.field6764 * 255.0F) << 24);
       boolean var8 = false;
-      int var9 = MathHelper.method37769(this.field6758);
-      int var10 = MathHelper.method37769(this.field6759);
+      int var9 = MathHelper.floor(this.field6758);
+      int var10 = MathHelper.floor(this.field6759);
       if (var2 > 0 && var2 < 234 && var3 > 0 && var3 < 113) {
          for (Class1194 var12 : this.field6757.values()) {
             if (var12.method5714(var9, var10, var2, var3)) {
@@ -134,7 +134,7 @@ public class Class1271 extends Class1193 {
    }
 
    @Nullable
-   public static Class1271 method6008(Minecraft var0, Class1130 var1, int var2, Class7952 var3) {
+   public static Class1271 method6008(Minecraft var0, AdvancementsScreen var1, int var2, Class7952 var3) {
       if (var3.method27027() == null) {
          return null;
       } else {
@@ -188,7 +188,7 @@ public class Class1271 extends Class1193 {
       return this.field6757.get(var1);
    }
 
-   public Class1130 method6013() {
+   public AdvancementsScreen method6013() {
       return this.field6749;
    }
 }

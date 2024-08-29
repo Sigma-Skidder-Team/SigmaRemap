@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public abstract class Class4587 {
    private static final Class6488 field22036 = new Class6488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
-   public final Class1656 field22037;
+   public final ClientWorld field22037;
    public double field22038;
    public double field22039;
    public double field22040;
@@ -34,7 +34,7 @@ public abstract class Class4587 {
    public float field22063;
    private Class2001 field22064 = new Class2001();
 
-   public Class4587(Class1656 var1, double var2, double var4, double var6) {
+   public Class4587(ClientWorld var1, double var2, double var4, double var6) {
       this.field22037 = var1;
       this.method14519(0.2F, 0.2F);
       this.method14520(var2, var4, var6);
@@ -44,7 +44,7 @@ public abstract class Class4587 {
       this.field22056 = (int)(4.0F / (this.field22054.nextFloat() * 0.9F + 0.1F));
    }
 
-   public Class4587(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class4587(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this(var1, var2, var4, var6);
       this.field22044 = var8 + (Math.random() * 2.0 - 1.0) * 0.4F;
       this.field22045 = var10 + (Math.random() * 2.0 - 1.0) * 0.4F;
@@ -206,7 +206,7 @@ public abstract class Class4587 {
 
    public int method14499(float var1) {
       BlockPos var4 = new BlockPos(this.field22041, this.field22042, this.field22043);
-      return !this.field22037.method7017(var4) ? 0 : Class264.method944(this.field22037, var4);
+      return !this.field22037.method7017(var4) ? 0 : WorldRenderer.method944(this.field22037, var4);
    }
 
    public boolean method14522() {
@@ -223,22 +223,22 @@ public abstract class Class4587 {
 
    private boolean method14525(double var1, double var3, double var5) {
       if (!(this.field22052 > 1.0F) && !(this.field22053 > 1.0F)) {
-         int var9 = MathHelper.method37769(this.field22041);
-         int var10 = MathHelper.method37769(this.field22042);
-         int var11 = MathHelper.method37769(this.field22043);
+         int var9 = MathHelper.floor(this.field22041);
+         int var10 = MathHelper.floor(this.field22042);
+         int var11 = MathHelper.floor(this.field22043);
          this.field22064.method8384(var9, var10, var11);
-         Class7380 var12 = this.field22037.method6738(this.field22064);
-         if (var12.method23393()) {
+         BlockState var12 = this.field22037.getBlockState(this.field22064);
+         if (var12.isAir()) {
             double var13 = !(var1 > 0.0) ? (!(var1 < 0.0) ? this.field22041 : this.field22047.field28449) : this.field22047.field28452;
             double var15 = !(var3 > 0.0) ? (!(var3 < 0.0) ? this.field22042 : this.field22047.field28450) : this.field22047.field28453;
             double var17 = !(var5 > 0.0) ? (!(var5 < 0.0) ? this.field22043 : this.field22047.field28451) : this.field22047.field28454;
-            int var19 = MathHelper.method37769(var13 + var1);
-            int var20 = MathHelper.method37769(var15 + var3);
-            int var21 = MathHelper.method37769(var17 + var5);
+            int var19 = MathHelper.floor(var13 + var1);
+            int var20 = MathHelper.floor(var15 + var3);
+            int var21 = MathHelper.floor(var17 + var5);
             if (var19 != var9 || var20 != var10 || var21 != var11) {
                this.field22064.method8384(var19, var20, var21);
-               Class7380 var22 = this.field22037.method6738(this.field22064);
-               if (!var22.method23393()) {
+               BlockState var22 = this.field22037.getBlockState(this.field22064);
+               if (!var22.isAir()) {
                   return true;
                }
             }

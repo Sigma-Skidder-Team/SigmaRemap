@@ -40,14 +40,14 @@ public final class Class1696 implements AutoCloseable {
    }
 
    @Nullable
-   public Class39 method7296(Class7481 var1) throws IOException {
+   public CompoundNBT method7296(Class7481 var1) throws IOException {
       Class1692 var4 = this.method7295(var1);
 
-      Class39 var7;
+      CompoundNBT var7;
       try (DataInputStream var5 = var4.method7247(var1)) {
          if (var5 == null) {
             Object var9 = null;
-            return (Class39)var9;
+            return (CompoundNBT)var9;
          }
 
          var7 = Class8799.method31771(var5);
@@ -56,7 +56,7 @@ public final class Class1696 implements AutoCloseable {
       return var7;
    }
 
-   public void method7297(Class7481 var1, Class39 var2) throws IOException {
+   public void method7297(Class7481 var1, CompoundNBT var2) throws IOException {
       Class1692 var5 = this.method7295(var1);
 
       try (DataOutputStream var6 = var5.method7258(var1)) {

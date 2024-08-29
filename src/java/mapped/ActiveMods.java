@@ -27,9 +27,9 @@ public class ActiveMods extends Module {
 
     public ActiveMods() {
         super(ModuleCategory.GUI, "ActiveMods", "Renders active mods");
-        this.method15972(new Class6005("Size", "The font size", 0, "Normal", "Small", "Tiny"));
-        this.method15972(new Class6004("Animations", "Scale in animation", true));
-        this.method15972(new Class6004("Sound", "Toggle sound", true));
+        this.registerSetting(new ModeSetting("Size", "The font size", 0, "Normal", "Small", "Tiny"));
+        this.registerSetting(new BooleanSetting("Animations", "Scale in animation", true));
+        this.registerSetting(new BooleanSetting("Sound", "Toggle sound", true));
         this.method15989().get("Size").method18616(var1 -> this.setFontSize());
         this.method16005(false);
     }
@@ -119,7 +119,7 @@ public class ActiveMods extends Module {
                 }
             }
 
-            if (!Minecraft.getInstance().gameSettings.field44662) {
+            if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 byte var20 = 10;
                 byte var21 = 1;
                 int var6 = Minecraft.getInstance().mainWindow.method8043();

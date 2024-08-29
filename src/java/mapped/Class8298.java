@@ -35,7 +35,7 @@ public class Class8298<T extends Class5812> {
       this.field35672 = var1;
    }
 
-   public T method29013(int var1, Class974 var2) {
+   public T method29013(int var1, PlayerInventory var2) {
       return this.field35672.method29030(var1, var2);
    }
 }

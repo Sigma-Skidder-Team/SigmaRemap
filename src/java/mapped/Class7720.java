@@ -246,7 +246,7 @@ public class Class7720 {
             Class7414.method23836(360.0F * (var13 + var4 * this.field33136), this.field33137[0], this.field33137[1], this.field33137[2]);
          }
 
-         Class9352 var21 = Class9352.method35409();
+         Tessellator var21 = Tessellator.getInstance();
          Class7414.method23836(90.0F, 1.0F, 0.0F, 0.0F);
          Class7414.method23836(-90.0F, 0.0F, 0.0F, 1.0F);
          this.method25518(var21, 4);
@@ -282,11 +282,11 @@ public class Class7720 {
    }
 
    private float method25515(World var1) {
-      Entity var4 = Minecraft.getInstance().method1550();
+      Entity var4 = Minecraft.getInstance().getRenderViewEntity();
       if (var4 != null) {
-         BlockPos var5 = var4.method3432();
+         BlockPos var5 = var4.getPosition();
          if (this.field33143 != null) {
-            Biome var6 = var1.method7003(var5);
+            Biome var6 = var1.getBiome(var5);
             if (var6 == null) {
                return 0.0F;
             }
@@ -341,16 +341,16 @@ public class Class7720 {
       }
    }
 
-   private void method25518(Class9352 var1, int var2) {
-      Class5425 var5 = var1.method35411();
+   private void method25518(Tessellator var1, int var2) {
+      BufferBuilder var5 = var1.getBuffer();
       float var6 = (float)(var2 % 3) / 3.0F;
       float var7 = (float)(var2 / 3) / 2.0F;
-      var5.method17063(7, Class9337.field43344);
-      var5.method17025(-100.0, -100.0, -100.0).method17027(var6, var7).method17031();
-      var5.method17025(-100.0, -100.0, 100.0).method17027(var6, var7 + 0.5F).method17031();
-      var5.method17025(100.0, -100.0, 100.0).method17027(var6 + 0.33333334F, var7 + 0.5F).method17031();
-      var5.method17025(100.0, -100.0, -100.0).method17027(var6 + 0.33333334F, var7).method17031();
-      var1.method35410();
+      var5.begin(7, DefaultVertexFormats.field43344);
+      var5.pos(-100.0, -100.0, -100.0).method17027(var6, var7).endVertex();
+      var5.pos(-100.0, -100.0, 100.0).method17027(var6, var7 + 0.5F).endVertex();
+      var5.pos(100.0, -100.0, 100.0).method17027(var6 + 0.33333334F, var7 + 0.5F).endVertex();
+      var5.pos(100.0, -100.0, -100.0).method17027(var6 + 0.33333334F, var7).endVertex();
+      var1.draw();
    }
 
    public boolean method25519(World var1, int var2) {

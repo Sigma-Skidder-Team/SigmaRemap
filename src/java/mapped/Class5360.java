@@ -40,7 +40,7 @@ public class Class5360 extends Module {
                     var1.method13908(true);
                 }
 
-                if (mc.field1337.method23158() && mc.player.field5036) {
+                if (mc.playerController.getIsHittingBlock() && mc.player.field5036) {
                     this.field23966 = 0;
                     var1.method13912(mc.player.getPosY());
                     var1.method13920(true);

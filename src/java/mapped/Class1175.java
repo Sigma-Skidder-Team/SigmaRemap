@@ -26,19 +26,19 @@ public class Class1175 extends Class1155<Class1175> {
    }
 
    private static Class9125 method5598(Minecraft var0, ITextComponent var1) {
-      int var4 = var0.field1294.method38821(var1);
+      int var4 = var0.fontRenderer.method38821(var1);
       if (var4 <= 157) {
          return var1.func_241878_f();
       } else {
          ITextProperties var5 = ITextProperties.func_240655_a_(
-            var0.field1294.method38825(var1, 157 - var0.field1294.method38820("...")), ITextProperties.func_240652_a_("...")
+            var0.fontRenderer.method38825(var1, 157 - var0.fontRenderer.getStringWidth("...")), ITextProperties.func_240652_a_("...")
          );
          return LanguageMap.getInstance().func_241870_a(var5);
       }
    }
 
    private static Class5991 method5599(Minecraft var0, ITextComponent var1) {
-      return Class5991.method18585(var0.field1294, var1, 157, 2);
+      return Class5991.method18585(var0.fontRenderer, var1, 157, 2);
    }
 
    @Override
@@ -54,7 +54,7 @@ public class Class1175 extends Class1155<Class1175> {
       Class1193.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       Class9125 var14 = this.field6364;
       Class5991 var15 = this.field6365;
-      if (this.method5600() && (this.field6361.gameSettings.field44625 || var9)) {
+      if (this.method5600() && (this.field6361.gameSettings.touchscreen || var9)) {
          this.field6361.getTextureManager().bindTexture(Class1275.method6064());
          Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -96,7 +96,7 @@ public class Class1175 extends Class1155<Class1175> {
          }
       }
 
-      this.field6361.field1294.method38802(var1, var14, (float)(var4 + 32 + 2), (float)(var3 + 1), 16777215);
+      this.field6361.fontRenderer.method38802(var1, var14, (float)(var4 + 32 + 2), (float)(var3 + 1), 16777215);
       var15.method18590(var1, var4 + 32 + 2, var3 + 12, 10, 8421504);
    }
 
@@ -113,7 +113,7 @@ public class Class1175 extends Class1155<Class1175> {
             Class2064 var12 = this.field6363.method14678();
             if (!var12.method8720()) {
                ITextComponent var13 = var12.method8723();
-               this.field6361.displayGuiScreen(new Class829(var1x -> {
+               this.field6361.displayGuiScreen(new ConfirmScreen(var1x -> {
                   this.field6361.displayGuiScreen(this.field6362);
                   if (var1x) {
                      this.field6363.method14675();

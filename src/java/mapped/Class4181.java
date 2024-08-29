@@ -16,7 +16,7 @@ public class Class4181 extends Class4180 {
       this.method12945(var1);
    }
 
-   public Class4181(Class8761 var1, Class39 var2) {
+   public Class4181(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33478, var2);
       this.field20456 = new ResourceLocation(var2.method126("Template"));
       this.field20457 = var2.method132("isBeached");
@@ -25,7 +25,7 @@ public class Class4181 extends Class4180 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20456.toString());
       var1.method115("isBeached", this.field20457);
@@ -63,23 +63,23 @@ public class Class4181 extends Class4180 {
       int var11 = 0;
       BlockPos var12 = this.field20453.method32886();
       Class101 var13 = !this.field20457 ? Class101.field297 : Class101.field295;
-      int var14 = var12.method8304() * var12.method8306();
+      int var14 = var12.getX() * var12.getZ();
       if (var14 != 0) {
-         BlockPos var15 = this.field20455.method8336(var12.method8304() - 1, 0, var12.method8306() - 1);
+         BlockPos var15 = this.field20455.method8336(var12.getX() - 1, 0, var12.getZ() - 1);
 
          for (BlockPos var17 : BlockPos.method8359(this.field20455, var15)) {
-            int var18 = var1.method6736(var13, var17.method8304(), var17.method8306());
+            int var18 = var1.method6736(var13, var17.getX(), var17.getZ());
             var11 += var18;
             var10 = Math.min(var10, var18);
          }
 
          var11 /= var14;
       } else {
-         var11 = var1.method6736(var13, this.field20455.method8304(), this.field20455.method8306());
+         var11 = var1.method6736(var13, this.field20455.getX(), this.field20455.getZ());
       }
 
       int var20 = !this.field20457 ? var11 : var10 - var12.getY() / 2 - var4.nextInt(3);
-      this.field20455 = new BlockPos(this.field20455.method8304(), var20, this.field20455.method8306());
+      this.field20455 = new BlockPos(this.field20455.getX(), var20, this.field20455.getZ());
       return super.method12896(var1, var2, var3, var4, var5, var6, var7);
    }
 }

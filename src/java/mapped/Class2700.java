@@ -18,8 +18,8 @@ public class Class2700 extends Class2699 {
    @Override
    public boolean method10803() {
       Class6488 var3 = this.field17162.method3389().method19663(10.0, 8.0, 10.0);
-      List<Class1042> var4 = this.field17162.field5024.<Class1042>method7195(Class1042.class, this.field17164, this.field17162, var3);
-      List<PlayerEntity> var5 = this.field17162.field5024.method7194(this.field17164, this.field17162, var3);
+      List<Class1042> var4 = this.field17162.world.<Class1042>method7195(Class1042.class, this.field17164, this.field17162, var3);
+      List<PlayerEntity> var5 = this.field17162.world.method7194(this.field17164, this.field17162, var3);
 
       for (Class880 var7 : var4) {
          Class1042 var8 = (Class1042)var7;
@@ -34,7 +34,7 @@ public class Class2700 extends Class2699 {
 
       return this.field17163 == null
          ? false
-         : !(this.field17163 instanceof PlayerEntity) || !this.field17163.method2800() && !((PlayerEntity)this.field17163).method2801();
+         : !(this.field17163 instanceof PlayerEntity) || !this.field17163.isSpectator() && !((PlayerEntity)this.field17163).isCreative();
    }
 
    @Override

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5161 extends Module {
     public Class5161() {
         super(ModuleCategory.MOVEMENT, "Vanilla", "Vanilla speed");
-        this.method15972(new Class6009<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
     }
 
     @EventTarget

@@ -47,20 +47,20 @@ public enum Class2230 implements Class2234 {
       Blocks.DARK_OAK_WALL_SIGN
    ) {
       @Override
-      public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          return var1;
       }
    },
    field14619() {
       @Override
-      public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-         return var1.method23439(var2, var4.method6738(var6), var4, var5, var6);
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+         return var1.method23439(var2, var4.getBlockState(var6), var4, var5, var6);
       }
    },
    field14620(Blocks.CHEST, Blocks.TRAPPED_CHEST) {
       @Override
-      public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-         if (var3.method23448(var1.method23383())
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+         if (var3.method23448(var1.getBlock())
                  && var2.method544().method324()
                  && var1.method23463(Class3348.field18866) == Class111.field379
                  && var3.method23463(Class3348.field18866) == Class111.field379) {
@@ -71,8 +71,8 @@ public enum Class2230 implements Class2234 {
                var4.method6725(var6, var3.method23465(Class3348.field18866, var10.method308()), 18);
                if (var9 == Direction.NORTH || var9 == Direction.EAST
                ) {
-                  Class944 var11 = var4.method6759(var5);
-                  Class944 var12 = var4.method6759(var6);
+                  TileEntity var11 = var4.getTileEntity(var5);
+                  TileEntity var12 = var4.getTileEntity(var6);
                   if (var11 instanceof Class941 && var12 instanceof Class941) {
                      Class941.method3764((Class941)var11, (Class941)var12);
                   }
@@ -88,8 +88,8 @@ public enum Class2230 implements Class2234 {
    field14621(true, Blocks.field36450, Blocks.field36448, Blocks.field36451, Blocks.field36449, Blocks.field36446, Blocks.field36447) {
       private final ThreadLocal<List<ObjectSet<BlockPos>>> field14625 = ThreadLocal.withInitial(() -> Lists.newArrayListWithCapacity(7));
       @Override
-      public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-         Class7380 var9 = var1.method23439(var2, var4.method6738(var6), var4, var5, var6);
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+         BlockState var9 = var1.method23439(var2, var4.getBlockState(var6), var4, var5, var6);
          if (var1 != var9) {
             int var10 = var9.method23463(Class8820.field39747);
             List<ObjectSet<BlockPos>> var11 = this.field14625.get();
@@ -116,13 +116,13 @@ public enum Class2230 implements Class2234 {
             ObjectSet<BlockPos> var9 = var5.get(var6);
 
              for (BlockPos var11 : var8) {
-                 Class7380 var12 = var1.method6738(var11);
+                 BlockState var12 = var1.getBlockState(var11);
                  if (var12.method23463(Class8820.field39747) >= var7) {
                      var1.method6725(var11, var12.method23465(Class8820.field39747, Integer.valueOf(var7)), 18);
                      if (var6 != 7) {
                          for (Direction var16 : field14623) {
                              var4.method8377(var11, var16);
-                             Class7380 var17 = var1.method6738(var4);
+                             BlockState var17 = var1.getBlockState(var4);
                              if (var17.method23462(Class8820.field39747) && var12.method23463(Class8820.field39747) > var6) {
                                  var9.add(var4.method8353());
                              }
@@ -137,9 +137,9 @@ public enum Class2230 implements Class2234 {
    },
    field14622(Blocks.MELON_STEM, Blocks.PUMPKIN_STEM) {
       @Override
-      public Class7380 method8970(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var1.method23463(Class3486.field19347) == 7) {
-            Class3462 var9 = ((Class3486)var1.method23383()).method12185();
+            Class3462 var9 = ((Class3486)var1.getBlock()).method12185();
             if (var3.method23448(var9)) {
                return var9.method12147().method11579().method23465(Class3198.field18484, var2);
             }

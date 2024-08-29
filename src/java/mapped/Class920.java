@@ -33,23 +33,23 @@ public interface Class920 extends Class946 {
       return true;
    }
 
-   default int method3634(Class3257 var1) {
+   default int method3634(Item var1) {
       int var4 = 0;
 
       for (int var5 = 0; var5 < this.method3629(); var5++) {
          ItemStack var6 = this.method3618(var5);
-         if (var6.method32107().equals(var1)) {
-            var4 += var6.method32179();
+         if (var6.getItem().equals(var1)) {
+            var4 += var6.getCount();
          }
       }
 
       return var4;
    }
 
-   default boolean method3635(Set<Class3257> var1) {
+   default boolean method3635(Set<Item> var1) {
       for (int var4 = 0; var4 < this.method3629(); var4++) {
          ItemStack var5 = this.method3618(var4);
-         if (var1.contains(var5.method32107()) && var5.method32179() > 0) {
+         if (var1.contains(var5.getItem()) && var5.getCount() > 0) {
             return true;
          }
       }

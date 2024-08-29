@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class Class1647 implements AutoCloseable {
    private final Framebuffer field8936;
-   private final Class191 field8937;
+   private final IResourceManager field8937;
    private final String field8938;
    public final List<Class1706> field8939 = Lists.newArrayList();
    private final Map<String, Framebuffer> field8940 = Maps.newHashMap();
@@ -29,7 +29,7 @@ public class Class1647 implements AutoCloseable {
    private float field8945;
    private float field8946;
 
-   public Class1647(TextureManager var1, Class191 var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
+   public Class1647(TextureManager var1, IResourceManager var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
       this.field8937 = var2;
       this.field8936 = var3;
       this.field8945 = 0.0F;
@@ -256,7 +256,7 @@ public class Class1647 implements AutoCloseable {
 
    public void method6522(String var1, int var2, int var3) {
       Framebuffer var6 = new Framebuffer(var2, var3, true, Minecraft.IS_RUNNING_ON_MAC);
-      var6.method29115(0.0F, 0.0F, 0.0F, 0.0F);
+      var6.setFramebufferColor(0.0F, 0.0F, 0.0F, 0.0F);
       this.field8940.put(var1, var6);
       if (var2 == this.field8943 && var3 == this.field8944) {
          this.field8941.add(var6);
@@ -296,7 +296,7 @@ public class Class1647 implements AutoCloseable {
       }
 
       for (Framebuffer var8 : this.field8941) {
-         var8.method29103(var1, var2, Minecraft.IS_RUNNING_ON_MAC);
+         var8.resize(var1, var2, Minecraft.IS_RUNNING_ON_MAC);
       }
    }
 

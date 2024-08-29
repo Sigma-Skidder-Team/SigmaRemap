@@ -16,10 +16,10 @@ public class Class5178 extends Module {
 
     public Class5178() {
         super(ModuleCategory.MOVEMENT, "NCP", "Longjump for NoCheatPlus.");
-        this.method15972(new Class6009<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
-        this.method15972(new Class6005("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
-        this.method15972(new Class6005("Speed Mode", "The way you will speed", 0, "Basic", "Funcraft", "Hypixel"));
+        this.registerSetting(new Class6009<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
+        this.registerSetting(new ModeSetting("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
+        this.registerSetting(new ModeSetting("Speed Mode", "The way you will speed", 0, "Basic", "Funcraft", "Hypixel"));
     }
 
     @Override
@@ -146,15 +146,15 @@ public class Class5178 extends Module {
                     Class5628.method17749(true);
                 }
 
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(
                                 new Class5605(mc.player.getPosX(), mc.player.getPosY() + 0.425, mc.player.getPosZ(), false)
                         );
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(
                                 new Class5605(mc.player.getPosX(), mc.player.getPosY() + 0.425 + 0.396, mc.player.getPosZ(), false)
                         );
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(
                                 new Class5605(
                                         mc.player.getPosX(), mc.player.getPosY() + 0.425 + 0.396 - 0.122, mc.player.getPosZ(), false

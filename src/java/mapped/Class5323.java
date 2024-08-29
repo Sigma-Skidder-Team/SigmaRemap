@@ -27,7 +27,7 @@ public class Class5323 extends Module {
     public void isInDevelopment() {
         this.field23870 = null;
 
-        for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.field1337.method23135()))) {
+        for (BlockPos var4 : Class9217.method34545(Class9217.method34561(mc.playerController.method23135()))) {
             if (!(Class9217.method34550(mc.player, var4) < 2.0F)
                     && Class9217.method34535(mc.player, var4)
                     && (double) var4.getY() >= mc.player.getPosY() - 2.0
@@ -39,27 +39,27 @@ public class Class5323 extends Module {
         }
 
         this.field23872 = Class7789.method25843(
-                Class8514.field37669,
-                Class8514.field37665,
-                Class8514.field37666,
-                Class8514.field37663,
-                Class8514.field37661,
-                Class8514.field37667,
-                Class8514.field37657,
-                Class8514.field37662,
-                Class8514.field37659,
-                Class8514.field37656,
-                Class8514.field37655,
-                Class8514.field37660,
-                Class8514.field37664,
-                Class8514.field37668,
-                Class8514.field37653,
-                Class8514.field37654,
-                Class8514.field37658
+                Items.field37669,
+                Items.field37665,
+                Items.field37666,
+                Items.field37663,
+                Items.field37661,
+                Items.field37667,
+                Items.field37657,
+                Items.field37662,
+                Items.field37659,
+                Items.field37656,
+                Items.field37655,
+                Items.field37660,
+                Items.field37664,
+                Items.field37668,
+                Items.field37653,
+                Items.field37654,
+                Items.field37658
         );
-        this.field23871 = Class7789.method25843(Class8514.field37545);
+        this.field23871 = Class7789.method25843(Items.field37545);
         if (this.field23871 == -1) {
-            this.field23871 = Class7789.method25822(Class8514.field37545);
+            this.field23871 = Class7789.method25822(Items.field37545);
             if (this.field23871 != -1) {
                 if (this.field23871 >= 36 && this.field23871 <= 44) {
                     this.field23871 %= 9;
@@ -71,23 +71,23 @@ public class Class5323 extends Module {
 
         if (this.field23872 == -1) {
             this.field23872 = Class7789.method25823(
-                    Class8514.field37669,
-                    Class8514.field37665,
-                    Class8514.field37666,
-                    Class8514.field37663,
-                    Class8514.field37661,
-                    Class8514.field37667,
-                    Class8514.field37657,
-                    Class8514.field37662,
-                    Class8514.field37659,
-                    Class8514.field37656,
-                    Class8514.field37655,
-                    Class8514.field37660,
-                    Class8514.field37664,
-                    Class8514.field37668,
-                    Class8514.field37653,
-                    Class8514.field37654,
-                    Class8514.field37658
+                    Items.field37669,
+                    Items.field37665,
+                    Items.field37666,
+                    Items.field37663,
+                    Items.field37661,
+                    Items.field37667,
+                    Items.field37657,
+                    Items.field37662,
+                    Items.field37659,
+                    Items.field37656,
+                    Items.field37655,
+                    Items.field37660,
+                    Items.field37664,
+                    Items.field37668,
+                    Items.field37653,
+                    Items.field37654,
+                    Items.field37658
             );
             if (this.field23872 != -1) {
                 if (this.field23872 >= 36 && this.field23872 <= 44) {
@@ -102,10 +102,10 @@ public class Class5323 extends Module {
     }
 
     public boolean method16717(BlockPos var1) {
-        Class7380 var4 = mc.world.method6738(var1);
-        Class7380 var5 = mc.world.method6738(var1.method8311());
-        Class7380 var6 = mc.world.method6738(var1.method8339(2));
-        return var4.method23410() && var5.method23393() && var6.method23393();
+        BlockState var4 = mc.world.getBlockState(var1);
+        BlockState var5 = mc.world.getBlockState(var1.method8311());
+        BlockState var6 = mc.world.getBlockState(var1.method8339(2));
+        return var4.method23410() && var5.isAir() && var6.isAir();
     }
 
     @Override
@@ -118,9 +118,9 @@ public class Class5323 extends Module {
             if (this.field23870 != null) {
                 GL11.glAlphaFunc(516, 0.0F);
                 BlockPos var4 = this.field23870;
-                double var5 = (double) var4.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+                double var5 = (double) var4.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                 double var7 = (double) var4.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                double var9 = (double) var4.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                double var9 = (double) var4.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class3192.method11459(
                         new Class9388(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), Class5628.method17688(Class1979.field12903.field12910, 0.3F)
                 );
@@ -211,24 +211,24 @@ public class Class5323 extends Module {
                                 float var5 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[1];
                                 var1.method13918(var4);
                                 var1.method13916(var5);
-                                int var6 = mc.player.field4902.field5443;
-                                mc.player.field4902.field5443 = this.field23871;
+                                int var6 = mc.player.inventory.currentItem;
+                                mc.player.inventory.currentItem = this.field23871;
                                 Vector3d var7 = Class9217.method34572(Direction.field673, this.field23870);
-                                Class8711 var8 = new Class8711(var7, Direction.field673, this.field23870, false);
-                                ActionResultType var9 = mc.field1337.method23139(mc.player, mc.world, Hand.field182, var8);
-                                mc.player.swingArm(Hand.field182);
+                                BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.field673, this.field23870, false);
+                                ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var8);
+                                mc.player.swingArm(Hand.MAIN_HAND);
                                 if (var9 == ActionResultType.field14818) {
                                     this.field23873++;
-                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
+                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
                                     mc.player.field6131.field43914 = true;
-                                    mc.player.field4902.field5443 = this.field23872;
+                                    mc.player.inventory.currentItem = this.field23872;
                                     Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.method8311());
-                                    Class8711 var11 = new Class8711(var10, Direction.field673, this.field23870.method8311(), false);
-                                    mc.field1337.method23139(mc.player, mc.world, Hand.field182, var11);
-                                    mc.player.swingArm(Hand.field182);
+                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.field673, this.field23870.method8311(), false);
+                                    mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
+                                    mc.player.swingArm(Hand.MAIN_HAND);
                                     mc.player.field6131.field43914 = false;
-                                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
-                                    mc.field1337.method23139(mc.player, mc.world, Hand.field182, var11);
+                                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
+                                    mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                 }
                             }
                         } else {
@@ -262,14 +262,14 @@ public class Class5323 extends Module {
                 int var5 = var4.method17304();
                 ItemStack var6 = var4.method17305();
                 int var7 = var4.method17303();
-                if (this.field23874 == var7 && var5 == 0 && var6.method32107() != Class8514.field37222 && !this.field23877) {
+                if (this.field23874 == var7 && var5 == 0 && var6.getItem() != Items.field37222 && !this.field23877) {
                     var1.method13900(true);
-                    mc.getClientPlayNetHandler().sendPacket(new Class5594(var7, var5, 1, Class2259.field14695, var6, this.field23875++));
+                    mc.getConnection().sendPacket(new Class5594(var7, var5, 1, Class2259.field14695, var6, this.field23875++));
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {
                         ItemStack var10 = mc.player.field4904.method18131(var9).method18265();
-                        if (var10.method32105()) {
+                        if (var10.isEmpty()) {
                             var8 = var9;
                             break;
                         }
@@ -278,7 +278,7 @@ public class Class5323 extends Module {
                     if (var8 != -1) {
                         mc.player.field4904.method18131(var8).method18267(var6);
                         if (var8 >= 36) {
-                            mc.player.field4902.field5443 = var8 % 9;
+                            mc.player.inventory.currentItem = var8 % 9;
                         }
                     }
 

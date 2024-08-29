@@ -10,7 +10,7 @@ public class Class5313 extends Module {
 
     public Class5313() {
         super(ModuleCategory.RENDER, "Fullbright", "Makes you see in the dark");
-        this.method15972(new Class6005("Type", "Fullbright type", 0, "Normal"));
+        this.registerSetting(new ModeSetting("Type", "Fullbright type", 0, "Normal"));
     }
 
     @Override

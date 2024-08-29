@@ -12,7 +12,7 @@ public class Class1203 extends Class1202 {
    @Override
    public void method5759() {
       Class872.method2710(this.field6503)
-         .getClientPlayNetHandler()
+         .getConnection()
          .sendPacket(new Class5597(Class7144.method22288(Class872.method2708(this.field6503)), Class7144.method22288(Class872.method2709(this.field6503))));
       Class872.method2712(this.field6503).player.connection.sendPacket(new Class5482(Class872.method2711(this.field6503).player.field4905.field25471));
       Class872.method2713(this.field6503).displayGuiScreen((Screen)null);
@@ -20,6 +20,6 @@ public class Class1203 extends Class1202 {
 
    @Override
    public void method5738(MatrixStack var1, int var2, int var3) {
-      this.field6503.method2459(var1, Class7127.field30658, var2, var3);
+      this.field6503.method2459(var1, DialogTexts.field30658, var2, var3);
    }
 }

@@ -34,8 +34,8 @@ public class Class9390 {
       return 31 * this.field43580.hashCode() + this.field43581.hashCode();
    }
 
-   public static Class9390 method35649(Class7380 var0, Class7498 var1, Collection<Class8550<?>> var2) {
-      Class9348 var5 = var0.method23383().method11577();
+   public static Class9390 method35649(BlockState var0, Class7498 var1, Collection<Class8550<?>> var2) {
+      Class9348 var5 = var0.getBlock().getStateContainer();
       List var6 = var1.method24447()
          .stream()
          .filter(var2x -> var2x.method35408(var5).test(var0))
@@ -45,12 +45,12 @@ public class Class9390 {
       return new Class9390(var6, var7);
    }
 
-   public static Class9390 method35650(Class7380 var0, Class7495 var1, Collection<Class8550<?>> var2) {
+   public static Class9390 method35650(BlockState var0, Class7495 var1, Collection<Class8550<?>> var2) {
       List var5 = method35651(var0, var2);
       return new Class9390(ImmutableList.of(var1), var5);
    }
 
-   private static List<Object> method35651(Class7380 var0, Collection<Class8550<?>> var1) {
+   private static List<Object> method35651(BlockState var0, Collection<Class8550<?>> var1) {
       return var1.stream().map(var0::method23463).collect(ImmutableList.toImmutableList());
    }
 }

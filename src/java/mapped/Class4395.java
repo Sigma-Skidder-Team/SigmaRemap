@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 public class Class4395 {
    private static String[] field21479;
 
-   public static void method13895(Class5425 var0) {
+   public static void method13895(BufferBuilder var0) {
       if (RenderSystem.method27803()) {
          Pair var3 = var0.method17070();
          Class9105 var4 = (Class9105)var3.getFirst();

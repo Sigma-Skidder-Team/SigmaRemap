@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
-import com.mentalfrostbyte.jello.event.impl.Class4429;
+import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.timer.Timer;
@@ -30,24 +30,24 @@ public class Class5236 extends Module {
     }
 
     @EventTarget
-    private void method16324(Class4429 var1) {
+    private void method16324(ClickEvent var1) {
         if (this.method15996() && (mc.player.method3331() || !this.method16004().method15974("Sneak"))) {
-            if (var1.method13976() == Class2116.field13791) {
-                Class8711 var4 = Class9217.method34567(
+            if (var1.method13976() == ClickEvent.Button.RIGHT) {
+                BlockRayTraceResult var4 = Class9217.method34567(
                         mc.player.field5031, mc.player.field5032, this.method16004().method15977("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
-                    var5 = var4.method31423();
+                    var5 = var4.getPos();
                 }
 
                 if (var5 == null) {
                     return;
                 }
 
-                double var6 = (double) var5.method8304() + 0.5;
+                double var6 = (double) var5.getX() + 0.5;
                 double var8 = var5.getY() + 1;
-                double var10 = (double) var5.method8306() + 0.5;
+                double var10 = (double) var5.getZ() + 0.5;
                 double var12 = mc.player.getPosX() - var6;
                 double var14 = mc.player.getPosZ() - var10;
                 double var16 = mc.player.getPosY() - var8;
@@ -70,7 +70,7 @@ public class Class5236 extends Module {
                     double var37 = 0.3;
                     Class6488 var39 = new Class6488(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
                     if (mc.world.method7055(mc.player, var39).count() == 0L) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5605(var30, var34, var32, true));
+                        mc.getConnection().sendPacket(new Class5605(var30, var34, var32, true));
                     }
 
                     this.field23589.add(new Class8472(var30, var34, var32));

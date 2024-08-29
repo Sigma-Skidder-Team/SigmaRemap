@@ -36,12 +36,12 @@ public class Class2935 extends Class2898<Class4708> {
          for (BlockPos var15 : BlockPos.method8355(
             var3,
             var12,
-            var4.method8304() - var11,
+            var4.getX() - var11,
             var4.getY(),
-            var4.method8306() - var11,
-            var4.method8304() + var11,
+            var4.getZ() - var11,
+            var4.getX() + var11,
             var4.getY(),
-            var4.method8306() + var11
+            var4.getZ() + var11
          )) {
             int var16 = var9 - var15.method8321(var4);
             if (var16 >= 0) {
@@ -59,7 +59,7 @@ public class Class2935 extends Class2898<Class4708> {
       boolean var8 = false;
 
       for (BlockPos var10 : BlockPos.method8364(
-         var3.method8304() - var5, var3.getY(), var3.method8306() - var5, var3.method8304() + var5, var3.getY(), var3.method8306() + var5
+         var3.getX() - var5, var3.getY(), var3.getZ() - var5, var3.getX() + var5, var3.getY(), var3.getZ() + var5
       )) {
          int var11 = var10.method8321(var3);
          BlockPos var12 = !method11276(var1, var2, var10) ? method11275(var1, var10.method8354(), var11) : method11273(var1, var2, var10.method8354(), var11);
@@ -68,7 +68,7 @@ public class Class2935 extends Class2898<Class4708> {
 
             for (Mutable var14 = var12.method8354(); var13 >= 0; var13--) {
                if (!method11276(var1, var2, var14)) {
-                  if (!var1.method6738(var14).method23448(Blocks.BASALT)) {
+                  if (!var1.getBlockState(var14).method23448(Blocks.BASALT)) {
                      break;
                   }
 
@@ -93,7 +93,7 @@ public class Class2935 extends Class2898<Class4708> {
             return var2;
          }
 
-         var2.method8379(Direction.field672);
+         var2.method8379(Direction.DOWN);
       }
 
       return null;
@@ -103,9 +103,9 @@ public class Class2935 extends Class2898<Class4708> {
       if (!method11276(var0, var1, var2)) {
          return false;
       } else {
-         Class7380 var5 = var0.method6738(var2.method8379(Direction.field672));
+         BlockState var5 = var0.getBlockState(var2.method8379(Direction.DOWN));
          var2.method8379(Direction.field673);
-         return !var5.method23393() && !field18005.contains(var5.method23383());
+         return !var5.isAir() && !field18005.contains(var5.getBlock());
       }
    }
 
@@ -113,9 +113,9 @@ public class Class2935 extends Class2898<Class4708> {
    private static BlockPos method11275(Class1660 var0, Mutable var1, int var2) {
       while (var1.getY() < var0.method7034() && var2 > 0) {
          var2--;
-         Class7380 var5 = var0.method6738(var1);
-         if (!field18005.contains(var5.method23383())) {
-            if (!var5.method23393()) {
+         BlockState var5 = var0.getBlockState(var1);
+         if (!field18005.contains(var5.getBlock())) {
+            if (!var5.isAir()) {
                var1.method8379(Direction.field673);
                continue;
             }
@@ -130,7 +130,7 @@ public class Class2935 extends Class2898<Class4708> {
    }
 
    private static boolean method11276(Class1660 var0, int var1, BlockPos var2) {
-      Class7380 var5 = var0.method6738(var2);
-      return var5.method23393() || var5.method23448(Blocks.LAVA) && var2.getY() <= var1;
+      BlockState var5 = var0.getBlockState(var2);
+      return var5.isAir() || var5.method23448(Blocks.LAVA) && var2.getY() <= var1;
    }
 }

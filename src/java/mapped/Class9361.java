@@ -25,7 +25,7 @@ public class Class9361 {
    private boolean field43435 = true;
    private boolean field43436;
    public Biome field43437 = Class8708.field39311;
-   public BlockPos field43438 = BlockPos.field13032;
+   public BlockPos field43438 = BlockPos.ZERO;
 
    public Class9361(Entity var1) {
       this.field43432 = var1;
@@ -100,10 +100,10 @@ public class Class9361 {
       try {
          var4 = this.field43433.get(var1.method35015());
       } catch (Throwable var11) {
-         Class4526 var6 = Class4526.method14413(var11, "Getting synched entity data");
-         Class8965 var7 = var6.method14410("Synched entity data");
-         var7.method32807("Data ID", var1);
-         throw new Class2506(var6);
+         CrashReport var6 = CrashReport.makeCrashReport(var11, "Getting synched entity data");
+         CrashReportCategory var7 = var6.makeCategory("Synched entity data");
+         var7.addDetail("Data ID", var1);
+         throw new ReportedException(var6);
       } finally {
          this.field43434.readLock().unlock();
       }

@@ -65,7 +65,7 @@ public class Class6128 extends Class6109 {
       int var5 = 0;
 
       for (String var7 : var1.field27420) {
-         if (!var7.equals(Minecraft.getInstance().method1533().getPlayerID())) {
+         if (!var7.equals(Minecraft.getInstance().getSession().getPlayerID())) {
             String var8 = "";
 
             try {
@@ -286,7 +286,7 @@ public class Class6128 extends Class6109 {
       return this.field27445 + " (" + this.field27451.get(var1).method18901(var1) + ")";
    }
 
-   public Class7730 method18922(String var1) {
-      return new Class7730(this.field27445, var1, false);
+   public ServerData method18922(String var1) {
+      return new ServerData(this.field27445, var1, false);
    }
 }

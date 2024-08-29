@@ -21,8 +21,8 @@ public class Class9482 {
       });
    }
 
-   private static Collection<String> method36606(Class313 var0, Class6611 var1, Collection<String> var2) {
-      var0.method1262();
+   private static Collection<String> method36606(ResourcePackList var0, IServerConfiguration var1, Collection<String> var2) {
+      var0.reloadPacksFromFinders();
       ArrayList var5 = Lists.newArrayList(var2);
       List var6 = var1.method20091().method26105();
 
@@ -40,9 +40,9 @@ public class Class9482 {
          (LiteralArgumentBuilder)((LiteralArgumentBuilder)Class6099.method18839("reload").requires(var0x -> var0x.method20129(2))).executes(var0x -> {
             Class6619 var3 = (Class6619)var0x.getSource();
             MinecraftServer var4 = var3.method20177();
-            Class313 var5 = var4.method1402();
-            Class6611 var6 = var4.method1436();
-            Collection var7 = var5.method1269();
+            ResourcePackList var5 = var4.method1402();
+            IServerConfiguration var6 = var4.method1436();
+            Collection var7 = var5.func_232621_d_();
             Collection var8 = method36606(var5, var6, var7);
             var3.method20179(new TranslationTextComponent("commands.reload.success"), true);
             method36605(var8, var3);

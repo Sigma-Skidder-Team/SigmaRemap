@@ -77,8 +77,8 @@ public class Class7156 {
    public void method22328(int var1, int var2) {
       Class7414.method23699();
       Class7414.method23780();
-      Class9352 var5 = Class9352.method35409();
-      Class5425 var6 = var5.method35411();
+      Tessellator var5 = Tessellator.getInstance();
+      BufferBuilder var6 = var5.getBuffer();
       Class7944.method26861().bindTexture(this.field30738);
       Class7414.method23843(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = (float)(16 * this.field30740);
@@ -108,11 +108,11 @@ public class Class7156 {
             var11 = 0.0F;
       }
 
-      var6.method17063(7, Class9337.field43346);
-      var6.method17025(0.0, (double)var2, 0.0).method17027(var10, var11 + var9).method17026(255, 255, 255, 255).method17031();
-      var6.method17025((double)var1, (double)var2, 0.0).method17027(var10 + var8, var11 + var9).method17026(255, 255, 255, 255).method17031();
-      var6.method17025((double)var1, 0.0, 0.0).method17027(var10 + var8, var11).method17026(255, 255, 255, 255).method17031();
-      var6.method17025(0.0, 0.0, 0.0).method17027(var10, var11).method17026(255, 255, 255, 255).method17031();
-      var5.method35410();
+      var6.begin(7, DefaultVertexFormats.field43346);
+      var6.pos(0.0, (double)var2, 0.0).method17027(var10, var11 + var9).color(255, 255, 255, 255).endVertex();
+      var6.pos((double)var1, (double)var2, 0.0).method17027(var10 + var8, var11 + var9).color(255, 255, 255, 255).endVertex();
+      var6.pos((double)var1, 0.0, 0.0).method17027(var10 + var8, var11).color(255, 255, 255, 255).endVertex();
+      var6.pos(0.0, 0.0, 0.0).method17027(var10, var11).color(255, 255, 255, 255).endVertex();
+      var5.draw();
    }
 }

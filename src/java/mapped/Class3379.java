@@ -9,11 +9,11 @@ public class Class3379 extends Class3231 {
    }
 
    private static boolean method11971(Entity var0) {
-      return var0 instanceof Class880 || var0 instanceof Class916 || var0 instanceof Class1004 || var0 instanceof Class1002;
+      return var0 instanceof Class880 || var0 instanceof AbstractMinecartEntity || var0 instanceof Class1004 || var0 instanceof BoatEntity;
    }
 
    @Override
-   public Class6408 method11502(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field18980;
    }
 
@@ -30,7 +30,7 @@ public class Class3379 extends Class3231 {
    }
 
    @Override
-   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
+   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (this.method11972(var3, var4)) {
          this.method11973(var4, var3);
          this.method11974(var4);
@@ -47,8 +47,8 @@ public class Class3379 extends Class3231 {
          if (var2.method3433().field18049 >= -0.08) {
             return false;
          } else {
-            double var5 = Math.abs((double)var1.method8304() + 0.5 - var2.getPosX());
-            double var7 = Math.abs((double)var1.method8306() + 0.5 - var2.getPosZ());
+            double var5 = Math.abs((double)var1.getX() + 0.5 - var2.getPosX());
+            double var7 = Math.abs((double)var1.getZ() + 0.5 - var2.getPosZ());
             double var9 = 0.4375 + (double)(var2.method3429() / 2.0F);
             return var5 + 1.0E-7 > var9 || var7 + 1.0E-7 > var9;
          }
@@ -58,8 +58,8 @@ public class Class3379 extends Class3231 {
    }
 
    private void method11973(Entity var1, BlockPos var2) {
-      if (var1 instanceof ServerPlayerEntity && var1.field5024.method6783() % 20L == 0L) {
-         CriteriaTriggers.field44500.method15057((ServerPlayerEntity)var1, var1.field5024.method6738(var2));
+      if (var1 instanceof ServerPlayerEntity && var1.world.method6783() % 20L == 0L) {
+         CriteriaTriggers.field44500.method15057((ServerPlayerEntity)var1, var1.world.getBlockState(var2));
       }
    }
 
@@ -96,11 +96,11 @@ public class Class3379 extends Class3231 {
    }
 
    private static void method11978(Entity var0, int var1) {
-      if (var0.field5024.field9020) {
-         Class7380 var4 = Blocks.field37119.method11579();
+      if (var0.world.field9020) {
+         BlockState var4 = Blocks.field37119.method11579();
 
          for (int var5 = 0; var5 < var1; var5++) {
-            var0.field5024.method6746(new Class7439(Class7940.field34051, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);
+            var0.world.method6746(new Class7439(Class7940.field34051, var4), var0.getPosX(), var0.getPosY(), var0.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

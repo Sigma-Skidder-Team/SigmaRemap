@@ -97,17 +97,17 @@ public class Class3717 extends Class3676<Class1042> {
       if (!var1.method3005()) {
          Class8395 var4 = var1.method4674().method26571();
          if (!field19795.containsKey(var4)) {
-            return ImmutableList.of(new ItemStack(Class8514.field37841));
+            return ImmutableList.of(new ItemStack(Items.field37841));
          } else {
-            Class7318 var5 = var1.field5024.method6715().method1411().method1058(field19795.get(var4));
-            Class9464 var6 = new Class9464((ServerWorld)var1.field5024)
+            Class7318 var5 = var1.world.method6715().method1411().method1058(field19795.get(var4));
+            Class9464 var6 = new Class9464((ServerWorld)var1.world)
                .method36454(Class9525.field44335, var1.getPositionVec())
                .method36454(Class9525.field44330, var1)
                .method36450(var1.method3013());
             return var5.method23182(var6.method36460(Class8524.field38287));
          }
       } else {
-         return ImmutableList.of(new ItemStack(Class8514.field37334));
+         return ImmutableList.of(new ItemStack(Items.field37334));
       }
    }
 
@@ -124,8 +124,8 @@ public class Class3717 extends Class3676<Class1042> {
    }
 
    private boolean method12609(Class1042 var1, PlayerEntity var2) {
-      BlockPos var5 = var2.method3432();
-      BlockPos var6 = var1.method3432();
+      BlockPos var5 = var2.getPosition();
+      BlockPos var6 = var1.getPosition();
       return var6.method8316(var5, 5.0);
    }
 

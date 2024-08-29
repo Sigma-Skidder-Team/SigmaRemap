@@ -14,7 +14,7 @@ public class Class6168 extends Class6166 {
    }
 
    @Override
-   public void method19061(Class1660 var1, BlockPos var2, Class7380 var3, Random var4) {
+   public void method19061(Class1660 var1, BlockPos var2, BlockState var3, Random var4) {
       var1.method6725(var2, var3, 2);
    }
 }

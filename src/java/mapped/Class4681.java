@@ -11,7 +11,7 @@ public interface Class4681 {
 
    ITextComponent method14680();
 
-   Class7725 method14681();
+   IPackNameDecorator method14681();
 
    default ITextComponent method14690() {
       return this.method14681().method25544(this.method14680());

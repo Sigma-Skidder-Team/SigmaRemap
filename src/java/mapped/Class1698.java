@@ -22,7 +22,7 @@ public class Class1698 implements AutoCloseable {
       Class7414.method23747(34962, this.field9242);
    }
 
-   public void method7303(Class5425 var1) {
+   public void method7303(BufferBuilder var1) {
       if (RenderSystem.method27803()) {
          this.method7305(var1);
       } else {
@@ -30,7 +30,7 @@ public class Class1698 implements AutoCloseable {
       }
    }
 
-   public CompletableFuture<Void> method7304(Class5425 var1) {
+   public CompletableFuture<Void> method7304(BufferBuilder var1) {
       if (RenderSystem.method27803()) {
          this.method7305(var1);
          return CompletableFuture.<Void>completedFuture((Void)null);
@@ -39,7 +39,7 @@ public class Class1698 implements AutoCloseable {
       }
    }
 
-   private void method7305(Class5425 var1) {
+   private void method7305(BufferBuilder var1) {
       Pair var4 = var1.method17070();
       this.field9247 = 0;
       Class9105 var5 = (Class9105)var4.getFirst();
@@ -63,7 +63,7 @@ public class Class1698 implements AutoCloseable {
 
    public void method7306(Class9367 var1, int var2) {
       RenderSystem.pushMatrix();
-      RenderSystem.method27879();
+      RenderSystem.loadIdentity();
       RenderSystem.method27888(var1);
       if (this.field9247 > 0) {
          var2 = this.field9247;

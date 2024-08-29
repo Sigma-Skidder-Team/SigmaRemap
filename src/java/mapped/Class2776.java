@@ -16,7 +16,7 @@ public class Class2776 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      this.field17369 = this.field17367.field5024.method7188(Class1048.method4790(), this.field17367);
+      this.field17369 = this.field17367.world.method7188(Class1048.method4790(), this.field17367);
       return this.field17369 == null ? false : this.field17369.method2951() && this.field17367.method4232() != this.field17369;
    }
 
@@ -45,7 +45,7 @@ public class Class2776 extends Class2595 {
          this.field17367.method4230().method21666();
       }
 
-      if (this.field17369.method2951() && this.field17369.field5024.field9016.nextInt(6) == 0) {
+      if (this.field17369.method2951() && this.field17369.world.field9016.nextInt(6) == 0) {
          this.field17369.method3035(new Class2023(Class8254.field35496, 100));
       }
    }

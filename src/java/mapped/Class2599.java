@@ -11,14 +11,14 @@ public class Class2599 extends Class2598 {
 
    @Override
    public boolean method10803() {
-      return super.method10803() && this.field16837.method3090().method32107() == Class8514.field38144;
+      return super.method10803() && this.field16837.method3090().getItem() == Items.field38144;
    }
 
    @Override
    public void method10804() {
       super.method10804();
       this.field16837.method4304(true);
-      this.field16837.method3154(Hand.field182);
+      this.field16837.method3154(Hand.MAIN_HAND);
    }
 
    @Override

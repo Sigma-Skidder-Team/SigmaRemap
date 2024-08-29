@@ -96,7 +96,7 @@ public class Class7582 {
    private static void method24818(int var0, int var1, int var2, int var3, int var4, long var5, long var7) {
       if (!Class7944.method26921() || var0 != 33352) {
          Minecraft var11 = Minecraft.getInstance();
-         if ((var11 == null || var11.method1580() == null || !var11.method1580().method8053()) && Class9084.method33877(var2)) {
+         if ((var11 == null || var11.getMainWindow() == null || !var11.getMainWindow().method8053()) && Class9084.method33877(var2)) {
             String var12 = method24815(var0);
             String var13 = method24816(var1);
             String var14 = method24817(var3);
@@ -119,7 +119,7 @@ public class Class7582 {
                   var20 = var15;
                }
 
-               String var21 = Class9088.method33883("of.message.openglError", var2, var20);
+               String var21 = I18n.format("of.message.openglError", var2, var20);
                Minecraft.getInstance().ingameGUI.getChatGUI().method5930(new StringTextComponent(var21));
             }
          }

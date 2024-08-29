@@ -19,7 +19,7 @@ public class Class2894<T extends Class880> extends Class2797<T> {
    private final boolean field17926;
 
    public Class2894(float var1, boolean var2) {
-      super(Class4520::method14318, var1, 0.0F, 64, 64);
+      super(RenderType::method14318, var1, 0.0F, 64, 64);
       this.field17926 = var2;
       this.field17925 = new Class7219(this, 24, 0);
       this.field17925.method22675(-3.0F, -6.0F, -1.0F, 6.0F, 6.0F, 1.0F, var1);
@@ -89,7 +89,7 @@ public class Class2894<T extends Class880> extends Class2797<T> {
       this.field17919.method22669(this.field17436);
       this.field17920.method22669(this.field17435);
       this.field17923.method22669(this.field17434);
-      if (!var1.method2943(Class2106.field13735).method32105()) {
+      if (!var1.method2943(Class2106.field13735).isEmpty()) {
          if (!var1.method3336()) {
             this.field17924.field31034 = -1.1F;
             this.field17924.field31033 = -0.85F;

@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4102 extends Class4057 {
    public Class4102() {
-      super(Class8992.field41070, "puffer_fish_big", 0.2F);
+      super(EntityType.field41070, "puffer_fish_big", 0.2F);
    }
 
    @Override
@@ -89,8 +89,8 @@ public class Class4102 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
-      Object var6 = var5.method32232().get(Class8992.field41070);
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
+      Object var6 = var5.method32232().get(EntityType.field41070);
       if (var6 instanceof Class5748) {
          if (((Class5715)var6).method17898() == null) {
             Class5748 var7 = new Class5748(var5);

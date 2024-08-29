@@ -110,7 +110,7 @@ public class Class8368 {
          }
 
          Class6850.method20850(this.field35928)
-            .method38799(
+            .drawStringWithShadow(
                var1,
                var14.getText(),
                (float)(this.field35920.method36780() + 1),
@@ -144,13 +144,13 @@ public class Class8368 {
    public boolean method29310(double var1) {
       int var5 = (int)(
          Class6850.method20852(this.field35928).mouseHelper.method36738()
-            * (double)Class6850.method20852(this.field35928).method1580().getScaledWidth()
-            / (double)Class6850.method20852(this.field35928).method1580().method8043()
+            * (double)Class6850.method20852(this.field35928).getMainWindow().getScaledWidth()
+            / (double)Class6850.method20852(this.field35928).getMainWindow().method8043()
       );
       int var6 = (int)(
          Class6850.method20852(this.field35928).mouseHelper.method36739()
-            * (double)Class6850.method20852(this.field35928).method1580().getScaledHeight()
-            / (double)Class6850.method20852(this.field35928).method1580().method8044()
+            * (double)Class6850.method20852(this.field35928).getMainWindow().getScaledHeight()
+            / (double)Class6850.method20852(this.field35928).getMainWindow().method8044()
       );
       if (!this.field35920.method36784(var5, var6)) {
          return false;
@@ -244,8 +244,8 @@ public class Class8368 {
       Suggestion var3 = this.field35922.get(this.field35924);
       Message var4 = var3.getTooltip();
       return var4 == null
-         ? Class9088.method33883("narration.suggestion", this.field35924 + 1, this.field35922.size(), var3.getText())
-         : Class9088.method33883("narration.suggestion.tooltip", this.field35924 + 1, this.field35922.size(), var3.getText(), var4.getString());
+         ? I18n.format("narration.suggestion", this.field35924 + 1, this.field35922.size(), var3.getText())
+         : I18n.format("narration.suggestion.tooltip", this.field35924 + 1, this.field35922.size(), var3.getText(), var4.getString());
    }
 
    public void method29316() {

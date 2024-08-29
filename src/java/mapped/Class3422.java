@@ -15,17 +15,17 @@ public class Class3422 extends Block {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19151;
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var1.method23443(var4, var5) ? super.method11491(var1, var2, var3, var4, var5, var6) : Blocks.AIR.method11579();
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       return !var2.method7007(var3.method8313());
    }
 }

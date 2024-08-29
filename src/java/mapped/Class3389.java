@@ -32,13 +32,13 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
-      if (var5 == Hand.field182 && !method11984(var9) && method11984(var4.getHeldItem(Hand.field183))) {
+      if (var5 == Hand.MAIN_HAND && !method11984(var9) && method11984(var4.getHeldItem(Hand.field183))) {
          return ActionResultType.field14820;
       } else if (method11984(var9) && method11985(var1)) {
          method11989(var2, var3, var1);
-         if (!var4.field4919.field29609) {
+         if (!var4.abilities.isCreativeMode) {
             var9.method32182(1);
          }
 
@@ -53,13 +53,13 @@ public class Class3389 extends Block {
          } else {
             if (!var2.field9020) {
                ServerPlayerEntity var10 = (ServerPlayerEntity)var4;
-               if (var10.method2827() != var2.method6813() || !var10.method2825().equals(var3)) {
-                  var10.method2829(var2.method6813(), var3, 0.0F, false, true);
+               if (var10.method2827() != var2.getDimensionKey() || !var10.method2825().equals(var3)) {
+                  var10.method2829(var2.getDimensionKey(), var3, 0.0F, false, true);
                   var2.method6743(
                      (PlayerEntity)null,
-                     (double)var3.method8304() + 0.5,
+                     (double)var3.getX() + 0.5,
                      (double)var3.getY() + 0.5,
-                     (double)var3.method8306() + 0.5,
+                     (double)var3.getZ() + 0.5,
                      Class6067.field27015,
                      Class2266.field14732,
                      1.0F,
@@ -77,10 +77,10 @@ public class Class3389 extends Block {
    }
 
    private static boolean method11984(ItemStack var0) {
-      return var0.method32107() == Class8514.field37446;
+      return var0.getItem() == Items.field37446;
    }
 
-   private static boolean method11985(Class7380 var0) {
+   private static boolean method11985(BlockState var0) {
       return var0.<Integer>method23463(field19000) < 4;
    }
 
@@ -103,7 +103,7 @@ public class Class3389 extends Block {
       }
    }
 
-   private void method11987(Class7380 var1, World var2, BlockPos var3) {
+   private void method11987(BlockState var1, World var2, BlockPos var3) {
       var2.method6728(var3, false);
       boolean var6 = Class76.field161.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
       boolean var7 = var6 || var2.method6739(var3.method8311()).method23486(Class8953.field40469);
@@ -112,9 +112,9 @@ public class Class3389 extends Block {
          (Entity)null,
          Class8654.method31128(),
          var8,
-         (double)var3.method8304() + 0.5,
+         (double)var3.getX() + 0.5,
          (double)var3.getY() + 0.5,
-         (double)var3.method8306() + 0.5,
+         (double)var3.getZ() + 0.5,
          5.0F,
          true,
          Class2141.field14016
@@ -125,13 +125,13 @@ public class Class3389 extends Block {
       return var0.method6812().method36882();
    }
 
-   public static void method11989(World var0, BlockPos var1, Class7380 var2) {
+   public static void method11989(World var0, BlockPos var1, BlockState var2) {
       var0.method6725(var1, var2.method23465(field19000, Integer.valueOf(var2.<Integer>method23463(field19000) + 1)), 3);
       var0.method6743(
          (PlayerEntity)null,
-         (double)var1.method8304() + 0.5,
+         (double)var1.getX() + 0.5,
          (double)var1.getY() + 0.5,
-         (double)var1.method8306() + 0.5,
+         (double)var1.getZ() + 0.5,
          Class6067.field27013,
          Class2266.field14732,
          1.0F,
@@ -140,14 +140,14 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
+   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19000) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.method6743(
                (PlayerEntity)null,
-               (double)var3.method8304() + 0.5,
+               (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,
-               (double)var3.method8306() + 0.5,
+               (double)var3.getZ() + 0.5,
                Class6067.field27012,
                Class2266.field14732,
                1.0F,
@@ -155,39 +155,39 @@ public class Class3389 extends Block {
             );
          }
 
-         double var7 = (double)var3.method8304() + 0.5 + (0.5 - var4.nextDouble());
+         double var7 = (double)var3.getX() + 0.5 + (0.5 - var4.nextDouble());
          double var9 = (double)var3.getY() + 1.0;
-         double var11 = (double)var3.method8306() + 0.5 + (0.5 - var4.nextDouble());
+         double var11 = (double)var3.getZ() + 0.5 + (0.5 - var4.nextDouble());
          double var13 = (double)var4.nextFloat() * 0.04;
          var2.method6746(Class7940.field34118, var7, var9, var11, 0.0, var13, 0.0);
       }
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19000);
    }
 
    @Override
-   public boolean method11648(Class7380 var1) {
+   public boolean method11648(BlockState var1) {
       return true;
    }
 
-   public static int method11990(Class7380 var0, int var1) {
+   public static int method11990(BlockState var0, int var1) {
       return MathHelper.method37767((float)(var0.<Integer>method23463(field19000) - 0) / 4.0F * (float)var1);
    }
 
    @Override
-   public int method11649(Class7380 var1, World var2, BlockPos var3) {
+   public int method11649(BlockState var1, World var2, BlockPos var3) {
       return method11990(var1, 15);
    }
 
-   public static Optional<Vector3d> method11991(Class8992<?> var0, Class1668 var1, BlockPos var2) {
+   public static Optional<Vector3d> method11991(EntityType<?> var0, Class1668 var1, BlockPos var2) {
       Optional var5 = method11992(var0, var1, var2, true);
       return !var5.isPresent() ? method11992(var0, var1, var2, false) : var5;
    }
 
-   private static Optional<Vector3d> method11992(Class8992<?> var0, Class1668 var1, BlockPos var2, boolean var3) {
+   private static Optional<Vector3d> method11992(EntityType<?> var0, Class1668 var1, BlockPos var2, boolean var3) {
       Mutable var6 = new Mutable();
       UnmodifiableIterator var7 = field19002.iterator();
 
@@ -204,7 +204,7 @@ public class Class3389 extends Block {
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

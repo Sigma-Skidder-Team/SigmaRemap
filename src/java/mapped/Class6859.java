@@ -72,7 +72,7 @@ public class Class6859 {
       String var4 = Class8819.method31850() + "/" + var1;
 
       try {
-         byte[] var5 = Class7615.method24949(var4, Minecraft.getInstance().method1535());
+         byte[] var5 = Class7615.method24949(var4, Minecraft.getInstance().getProxy());
          return Class1806.method7879(new ByteArrayInputStream(var5));
       } catch (IOException var6) {
          Class7944.method26811("Error loading item texture " + var1 + ": " + var6.getClass().getName() + ": " + var6.getMessage());
@@ -84,7 +84,7 @@ public class Class6859 {
       String var4 = Class8819.method31850() + "/" + var1;
 
       try {
-         byte[] var5 = Class7615.method24949(var4, Minecraft.getInstance().method1535());
+         byte[] var5 = Class7615.method24949(var4, Minecraft.getInstance().getProxy());
          String var6 = new String(var5, "ASCII");
          JsonParser var7 = new JsonParser();
          JsonObject var8 = (JsonObject)var7.parse(var6);

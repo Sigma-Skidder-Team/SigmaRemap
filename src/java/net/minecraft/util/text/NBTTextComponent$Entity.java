@@ -44,12 +44,12 @@ public class NBTTextComponent$Entity extends NBTTextComponent {
    }
 
    @Override
-   public Stream<Class39> func_218673_a(Class6619 p_218673_1_) throws CommandSyntaxException {
+   public Stream<CompoundNBT> func_218673_a(Class6619 p_218673_1_) throws CommandSyntaxException {
       if (this.field_218689_f != null) {
          List<? extends Entity> var4 = this.field_218689_f.method29617(p_218673_1_);
          return var4.stream().map(Class8811::method31813);
       } else {
-         return Stream.<Class39>empty();
+         return Stream.<CompoundNBT>empty();
       }
    }
 

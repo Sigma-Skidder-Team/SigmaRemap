@@ -4,11 +4,11 @@ public class Class5814 extends Class5812 {
    private static String[] field25481;
    private final Class920 field25482;
 
-   public Class5814(int var1, Class974 var2) {
+   public Class5814(int var1, PlayerInventory var2) {
       this(var1, var2, new Class927(27));
    }
 
-   public Class5814(int var1, Class974 var2, Class920 var3) {
+   public Class5814(int var1, PlayerInventory var2, Class920 var3) {
       super(Class8298.field35667, var1);
       method18122(var3, 27);
       this.field25482 = var3;
@@ -53,7 +53,7 @@ public class Class5814 extends Class5812 {
             return ItemStack.EMPTY;
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);

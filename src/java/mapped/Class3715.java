@@ -6,12 +6,12 @@ import java.util.function.Predicate;
 
 public class Class3715 extends Class3676<Class880> {
    private static String[] field19785;
-   private final Class8992<?> field19786;
+   private final EntityType<?> field19786;
    private final int field19787;
    private final Predicate<Class880> field19788;
    private final Predicate<Class880> field19789;
 
-   public Class3715(Class8992<?> var1, int var2, Predicate<Class880> var3, Predicate<Class880> var4) {
+   public Class3715(EntityType<?> var1, int var2, Predicate<Class880> var3, Predicate<Class880> var4) {
       super(ImmutableMap.of(Class8830.field39825, Class2217.field14486, Class8830.field39828, Class2217.field14485, Class8830.field39819, Class2217.field14484));
       this.field19786 = var1;
       this.field19787 = var2 * var2;
@@ -19,7 +19,7 @@ public class Class3715 extends Class3676<Class880> {
       this.field19789 = var3;
    }
 
-   public Class3715(Class8992<?> var1, int var2) {
+   public Class3715(EntityType<?> var1, int var2) {
       this(var1, var2, var0 -> true, var0 -> true);
    }
 
@@ -46,7 +46,7 @@ public class Class3715 extends Class3676<Class880> {
    }
 
    private boolean method12597(Class880 var1) {
-      return this.field19786.equals(var1.method3204()) && this.field19788.test(var1);
+      return this.field19786.equals(var1.getType()) && this.field19788.test(var1);
    }
 
    private List<Class880> method12598(Class880 var1) {

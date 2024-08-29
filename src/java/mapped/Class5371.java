@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4402;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.timer.Timer;
@@ -16,11 +16,11 @@ public class Class5371 extends Module {
 
     public Class5371() {
         super(ModuleCategory.WORLD, "FakeLag", "Other players will see you lagging !");
-        this.method15972(new Class6009<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
-        this.method15972(new Class6004("Combat", "Delay combat packets", true));
-        this.method15972(new Class6004("Blocks", "Delay blocks packets", true));
-        this.method15972(new Class6004("Ping", "Delay ping packets", true));
+        this.registerSetting(new Class6009<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("Combat", "Delay combat packets", true));
+        this.registerSetting(new BooleanSetting("Blocks", "Delay blocks packets", true));
+        this.registerSetting(new BooleanSetting("Ping", "Delay ping packets", true));
         this.field23990.method27118();
     }
 
@@ -34,12 +34,12 @@ public class Class5371 extends Module {
     @Override
     public void method15965() {
         for (Packet var4 : this.field23989) {
-            mc.getClientPlayNetHandler().method15589().method30695(var4);
+            mc.getConnection().getNetworkManager().method30695(var4);
         }
     }
 
     @EventTarget
-    private void method16910(Class4418 var1) {
+    private void method16910(WorldLoadEvent var1) {
         if (this.method15996()) {
             this.field23989.clear();
             this.field23991 = false;
@@ -49,7 +49,7 @@ public class Class5371 extends Module {
 
     @EventTarget
     private void method16911(Class4402 var1) {
-        if (this.method15996() && mc.getClientPlayNetHandler() != null) {
+        if (this.method15996() && mc.getConnection() != null) {
             if (!this.field23991) {
                 if ((float) this.field23990.method27121() > this.method15977("Delay") * 1000.0F) {
                     this.field23991 = true;
@@ -59,7 +59,7 @@ public class Class5371 extends Module {
                 if (!(var1.method13932() instanceof Class5603)) {
                     if (!(var1.method13932() instanceof Class5600) && !(var1.method13932() instanceof Class5493)) {
                         if (!(var1.method13932() instanceof CUseEntityPacket) && !(var1.method13932() instanceof CAnimateHandPacket)) {
-                            if (!(var1.method13932() instanceof Class5555) && !(var1.method13932() instanceof Class5492) && !(var1.method13932() instanceof Class5570)
+                            if (!(var1.method13932() instanceof Class5555) && !(var1.method13932() instanceof CPlayerDiggingPacket) && !(var1.method13932() instanceof Class5570)
                             ) {
                                 return;
                             }
@@ -82,7 +82,7 @@ public class Class5371 extends Module {
                 this.field23990.method27120();
 
                 for (Packet var5 : this.field23989) {
-                    mc.getClientPlayNetHandler().method15589().method30695(var5);
+                    mc.getConnection().getNetworkManager().method30695(var5);
                 }
 
                 this.field23989.clear();

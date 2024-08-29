@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1084 extends Class1082 {
    private static String[] field5949;
 
-   public Class1084(Class8992<? extends Class1084> var1, World var2) {
+   public Class1084(EntityType<? extends Class1084> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14190, 8.0F);
    }
@@ -44,14 +44,14 @@ public class Class1084 extends Class1082 {
          Class1081 var7 = (Class1081)var6;
          if (var7.method5026()) {
             var7.method5027();
-            this.method3300(Class8514.field38059);
+            this.method3300(Items.field38059);
          }
       }
    }
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37810));
+      this.method2944(Class2106.field13731, new ItemStack(Items.field37810));
    }
 
    @Override
@@ -60,7 +60,7 @@ public class Class1084 extends Class1082 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class5093 var8 = super.method4276(var1, var2, var3, var4, var5);
       this.method3085(Class9173.field42110).method38661(4.0);
       this.method5031();

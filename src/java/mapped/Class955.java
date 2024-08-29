@@ -3,8 +3,8 @@ package mapped;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class955 extends Class944 implements Class935 {
-   private Class7380 field5361;
+public class Class955 extends TileEntity implements Class935 {
+   private BlockState field5361;
    private Direction field5362;
    private boolean field5363;
    private boolean field5364;
@@ -18,7 +18,7 @@ public class Class955 extends Class944 implements Class935 {
       super(Class4387.field21430);
    }
 
-   public Class955(Class7380 var1, Direction var2, boolean var3, boolean var4) {
+   public Class955(BlockState var1, Direction var2, boolean var3, boolean var4) {
       this();
       this.field5361 = var1;
       this.field5362 = var2;
@@ -27,8 +27,8 @@ public class Class955 extends Class944 implements Class935 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      return this.write(new CompoundNBT());
    }
 
    public boolean method3846() {
@@ -67,8 +67,8 @@ public class Class955 extends Class944 implements Class935 {
       return !this.field5363 ? 1.0F - var1 : var1 - 1.0F;
    }
 
-   private Class7380 method3854() {
-      return !this.method3846() && this.method3848() && this.field5361.method23383() instanceof Class3435
+   private BlockState method3854() {
+      return !this.method3846() && this.method3848() && this.field5361.getBlock() instanceof Class3435
          ? Blocks.PISTON_HEAD
             .method11579()
             .method23465(Class3436.field19212, Boolean.valueOf(this.field5366 > 0.25F))
@@ -80,7 +80,7 @@ public class Class955 extends Class944 implements Class935 {
    private void method3855(float var1) {
       Direction var4 = this.method3860();
       double var5 = (double)(var1 - this.field5366);
-      Class6408 var7 = this.method3854().method23414(this.field5324, this.method3774());
+      Class6408 var7 = this.method3854().method23414(this.field5324, this.getPos());
       if (!var7.method19516()) {
          Class6488 var8 = this.method3862(var7.method19514());
          List var9 = this.field5324.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
@@ -208,9 +208,9 @@ public class Class955 extends Class944 implements Class935 {
    private Class6488 method3862(Class6488 var1) {
       double var4 = (double)this.method3853(this.field5366);
       return var1.method19667(
-         (double)this.field5325.method8304() + var4 * (double)this.field5362.method539(),
+         (double)this.field5325.getX() + var4 * (double)this.field5362.method539(),
          (double)this.field5325.getY() + var4 * (double)this.field5362.method540(),
-         (double)this.field5325.method8306() + var4 * (double)this.field5362.method541()
+         (double)this.field5325.getZ() + var4 * (double)this.field5362.method541()
       );
    }
 
@@ -228,7 +228,7 @@ public class Class955 extends Class944 implements Class935 {
       }
    }
 
-   public Class7380 method3864() {
+   public BlockState method3864() {
       return this.field5361;
    }
 
@@ -238,8 +238,8 @@ public class Class955 extends Class944 implements Class935 {
          this.field5367 = this.field5366;
          this.field5324.method6762(this.field5325);
          this.method3765();
-         if (this.field5324.method6738(this.field5325).method23448(Blocks.MOVING_PISTON)) {
-            Class7380 var3;
+         if (this.field5324.getBlockState(this.field5325).method23448(Blocks.MOVING_PISTON)) {
+            BlockState var3;
             if (!this.field5364) {
                var3 = Block.method11542(this.field5361, this.field5324, this.field5325);
             } else {
@@ -247,7 +247,7 @@ public class Class955 extends Class944 implements Class935 {
             }
 
             this.field5324.method6725(this.field5325, var3, 3);
-            this.field5324.method6735(this.field5325, var3.method23383(), this.field5325);
+            this.field5324.method6735(this.field5325, var3.getBlock(), this.field5325);
          }
       }
    }
@@ -269,15 +269,15 @@ public class Class955 extends Class944 implements Class935 {
       } else {
          this.field5324.method6762(this.field5325);
          this.method3765();
-         if (this.field5361 != null && this.field5324.method6738(this.field5325).method23448(Blocks.MOVING_PISTON)) {
-            Class7380 var4 = Block.method11542(this.field5361, this.field5324, this.field5325);
-            if (!var4.method23393()) {
+         if (this.field5361 != null && this.field5324.getBlockState(this.field5325).method23448(Blocks.MOVING_PISTON)) {
+            BlockState var4 = Block.method11542(this.field5361, this.field5324, this.field5325);
+            if (!var4.isAir()) {
                if (var4.method23462(Class8820.field39710) && var4.<Boolean>method23463(Class8820.field39710)) {
                   var4 = var4.method23465(Class8820.field39710, Boolean.valueOf(false));
                }
 
                this.field5324.method6725(this.field5325, var4, 67);
-               this.field5324.method6735(this.field5325, var4.method23383(), this.field5325);
+               this.field5324.method6735(this.field5325, var4.getBlock(), this.field5325);
             } else {
                this.field5324.method6725(this.field5325, this.field5361, 84);
                Block.method11543(this.field5361, var4, this.field5324, this.field5325, 3);
@@ -287,9 +287,9 @@ public class Class955 extends Class944 implements Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5361 = Class8354.method29285(var2.method130("blockState"));
+      this.field5361 = Class8354.method29285(var2.getCompound("blockState"));
       this.field5362 = Direction.method546(var2.method122("facing"));
       this.field5366 = var2.method124("progress");
       this.field5367 = this.field5366;
@@ -298,9 +298,9 @@ public class Class955 extends Class944 implements Class935 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
-      var1.method99("blockState", Class8354.method29287(this.field5361));
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
+      var1.put("blockState", Class8354.method29287(this.field5361));
       var1.method102("facing", this.field5362.method533());
       var1.method107("progress", this.field5367);
       var1.method115("extending", this.field5363);
@@ -320,7 +320,7 @@ public class Class955 extends Class944 implements Class935 {
       if ((double)this.field5366 < 1.0 && var6 == this.method3860()) {
          return var5;
       } else {
-         Class7380 var7;
+         BlockState var7;
          if (!this.method3848()) {
             var7 = this.field5361;
          } else {

@@ -31,7 +31,7 @@ public class Class4340 extends Class4339 {
    }
 
    public void method13519(String var1, Class1998 var2, int var3) {
-      String var6 = "waypoint x" + var2.method8304() + " z" + var2.method8306();
+      String var6 = "waypoint x" + var2.getX() + " z" + var2.getZ();
       if (this.field21204.method13221(var6) == null) {
          Class4355 var7 = new Class4355(
             this, var6, this.field20895, this.method13241().get(0).method13241().size() * this.field21210, this.field20897, this.field21210, var1, var2, var3
@@ -41,13 +41,13 @@ public class Class4340 extends Class4339 {
          this.method13230(var7);
          var7.method13251((var2x, var3x) -> {
             Class4251 var6x = (Class4251)this.method13258();
-            var6x.field20614.method13077(var7.field21292.method8304(), var7.field21292.method8306());
+            var6x.field20614.method13077(var7.field21292.getX(), var7.field21292.getZ());
          });
          var7.method13036(
             var3x -> {
                Client.getInstance()
                   .getWaypointsManager()
-                  .method29993(new Class8351(var7.field21291, var7.field21292.method8304(), var7.field21292.method8306(), var7.field21293));
+                  .method29993(new Class8351(var7.field21291, var7.field21292.getX(), var7.field21292.getZ(), var7.field21293));
                this.field21204.method13237(var7);
                this.field21209.remove(var3x);
             }
@@ -99,7 +99,7 @@ public class Class4340 extends Class4339 {
                Client.getInstance()
                   .getWaypointsManager()
                   .method29989()
-                  .add(new Class8351(var9.field21291, var9.field21292.method8304(), var9.field21292.method8306(), var9.field21293));
+                  .add(new Class8351(var9.field21291, var9.field21292.getX(), var9.field21292.getZ(), var9.field21293));
             }
 
             Collections.reverse(Client.getInstance().getWaypointsManager().method29989());
@@ -112,7 +112,7 @@ public class Class4340 extends Class4339 {
 
    @Override
    public void method13027(float var1) {
-      float var4 = Math.min(1.0F, 0.21F * (60.0F / (float) Minecraft.method1586()));
+      float var4 = Math.min(1.0F, 0.21F * (60.0F / (float) Minecraft.getFps()));
 
       for (Class4355 var6 : this.field21209) {
          if (!var6.method13216()) {

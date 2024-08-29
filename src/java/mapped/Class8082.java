@@ -6,10 +6,10 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public class Class8082 implements MapLike<Class30> {
-   public final Class39 field34734;
-   public final Class8063 field34735;
+   public final CompoundNBT field34734;
+   public final NBTDynamicOps field34735;
 
-   public Class8082(Class8063 var1, Class39 var2) {
+   public Class8082(NBTDynamicOps var1, CompoundNBT var2) {
       this.field34735 = var1;
       this.field34734 = var2;
    }

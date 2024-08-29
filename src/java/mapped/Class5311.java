@@ -17,14 +17,14 @@ public class Class5311 extends Module {
 
     public Class5311() {
         super(ModuleCategory.MOVEMENT, "Cubecraft", "Fly for Cubecraft");
-        this.method15972(new Class6004("Damage", "Allows you to go infinitly up", false));
+        this.registerSetting(new BooleanSetting("Damage", "Allows you to go infinitly up", false));
     }
 
     @Override
     public void isInDevelopment() {
         this.field23845 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23846 = false;
             }
         } else {
@@ -91,11 +91,11 @@ public class Class5311 extends Module {
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
                                 if (Class8005.method27349() > Class5989.field26129.method18582()) {
-                                    if (mc.gameSettings.field44636.method8509() && !this.field23846) {
+                                    if (mc.gameSettings.field44636.isKeyDown() && !this.field23846) {
                                         var1.method13995(0.0625);
                                         Class9567.method37088(var1, 0.0);
                                         this.field23845 = 1;
-                                    } else if (this.field23846 && !mc.gameSettings.field44636.method8509()) {
+                                    } else if (this.field23846 && !mc.gameSettings.field44636.isKeyDown()) {
                                         var1.method13995(-0.225);
                                         Class9567.method37088(var1, 0.0);
                                         this.field23845 = 1;
@@ -109,7 +109,7 @@ public class Class5311 extends Module {
 
                                 this.field23845--;
                             }
-                        } else if (mc.gameSettings.field44636.method8509() && !this.field23846) {
+                        } else if (mc.gameSettings.field44636.isKeyDown() && !this.field23846) {
                             var1.method13995(0.0625);
                         }
                     }
@@ -118,7 +118,7 @@ public class Class5311 extends Module {
                         var1.method13995(0.0);
                         Class9567.method37088(var1, 0.0);
                         if (mc.player.field5045 > 4.0F) {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                            mc.getConnection().sendPacket(new Class5603(true));
                             this.field23848 = true;
                         }
                     } else {
@@ -139,10 +139,10 @@ public class Class5311 extends Module {
                     double var16 = mc.player.getPosX();
                     double var10 = mc.player.getPosY() + 0.022;
                     double var12 = mc.player.getPosZ();
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12, false));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12 + 0.07, false));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10, var12, false));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var16, var10 + 3.0, var12, false));
+                    mc.getConnection().sendPacket(new Class5605(var16, var10, var12, false));
+                    mc.getConnection().sendPacket(new Class5605(var16, var10, var12 + 0.07, false));
+                    mc.getConnection().sendPacket(new Class5605(var16, var10, var12, false));
+                    mc.getConnection().sendPacket(new Class5605(var16, var10 + 3.0, var12, false));
                 }
 
                 Class5628.method17725(var1.method13994());
@@ -175,7 +175,7 @@ public class Class5311 extends Module {
 
     @EventTarget
     public void method16690(Class4396 var1) {
-        if (mc.world != null && mc.getClientPlayNetHandler() != null && Class5628.method17718()) {
+        if (mc.world != null && mc.getConnection() != null && Class5628.method17718()) {
             Packet var4 = var1.method13898();
             if (!(var4 instanceof Class5473)) {
                 if (var4 instanceof Class5590) {

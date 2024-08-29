@@ -36,11 +36,11 @@ public class Class6197 implements Class6196 {
    );
    private static final ITextComponent field27646 = new TranslationTextComponent("tutorial.find_tree.title");
    private static final ITextComponent field27647 = new TranslationTextComponent("tutorial.find_tree.description");
-   private final Class9557 field27648;
-   private Class7600 field27649;
+   private final Tutorial field27648;
+   private TutorialToast field27649;
    private int field27650;
 
-   public Class6197(Class9557 var1) {
+   public Class6197(Tutorial var1) {
       this.field27648 = var1;
    }
 
@@ -52,7 +52,7 @@ public class Class6197 implements Class6196 {
             ClientPlayerEntity var3 = this.field27648.method37035().player;
             if (var3 != null) {
                for (Block var5 : field27645) {
-                  if (var3.field4902.method4058(new ItemStack(var5))) {
+                  if (var3.inventory.method4058(new ItemStack(var5))) {
                      this.field27648.method37034(Class2200.field14380);
                      return;
                   }
@@ -66,8 +66,8 @@ public class Class6197 implements Class6196 {
          }
 
          if (this.field27650 >= 6000 && this.field27649 == null) {
-            this.field27649 = new Class7600(Class2130.field13897, field27646, field27647, false);
-            this.field27648.method37035().method1566().method5914(this.field27649);
+            this.field27649 = new TutorialToast(TutorialToast.Icons.field13897, field27646, field27647, false);
+            this.field27648.method37035().getToastGui().method5914(this.field27649);
          }
       } else {
          this.field27648.method37034(Class2200.field14381);
@@ -83,10 +83,10 @@ public class Class6197 implements Class6196 {
    }
 
    @Override
-   public void method19102(Class1656 var1, Class8710 var2) {
-      if (var2.method31417() == Class2100.field13690) {
-         Class7380 var5 = var1.method6738(((Class8711)var2).method31423());
-         if (field27645.contains(var5.method23383())) {
+   public void method19102(ClientWorld var1, RayTraceResult var2) {
+      if (var2.getType() == RayTraceResult.Type.BLOCK) {
+         BlockState var5 = var1.getBlockState(((BlockRayTraceResult)var2).getPos());
+         if (field27645.contains(var5.getBlock())) {
             this.field27648.method37034(Class2200.field14378);
          }
       }
@@ -95,7 +95,7 @@ public class Class6197 implements Class6196 {
    @Override
    public void method19104(ItemStack var1) {
       for (Block var5 : field27645) {
-         if (var1.method32107() == var5.method11581()) {
+         if (var1.getItem() == var5.method11581()) {
             this.field27648.method37034(Class2200.field14380);
             return;
          }

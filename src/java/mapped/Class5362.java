@@ -94,33 +94,33 @@ public class Class5362 extends Module {
     public void method16865(Class4399 var1) {
         if (this.method15996()) {
             if (mc.player != null && mc.world != null) {
-                for (BlockPos var5 : Class9217.method34545(Class9217.method34561(mc.field1337.method23135()))) {
+                for (BlockPos var5 : Class9217.method34545(Class9217.method34561(mc.playerController.method23135()))) {
                     if (Class9217.method34535(mc.player, var5)) {
-                        Class7380 var6 = mc.world.method6738(var5);
-                        if (var6.method23383() instanceof Class3480 || var6.method23383() instanceof Class3481 || var6.method23383() instanceof Class3483) {
-                            ItemStack var14 = mc.player.getHeldItem(Hand.field182);
-                            if (var14 != null && var14.method32107() instanceof Class3321) {
+                        BlockState var6 = mc.world.getBlockState(var5);
+                        if (var6.getBlock() instanceof Class3480 || var6.getBlock() instanceof Class3481 || var6.getBlock() instanceof Class3483) {
+                            ItemStack var14 = mc.player.getHeldItem(Hand.MAIN_HAND);
+                            if (var14 != null && var14.getItem() instanceof Class3321) {
                                 if (var6.<Integer>method23463(Class8820.field39742) != 7) {
-                                    float[] var18 = Class9217.method34542(var5, Direction.field672);
+                                    float[] var18 = Class9217.method34542(var5, Direction.DOWN);
                                     var1.method13918(var18[0]);
                                     var1.method13916(var18[1]);
                                     var1.method13922(new Class1358(this, var18));
                                     return;
                                 }
                             } else if (var6.<Integer>method23463(Class8820.field39742) == 7) {
-                                float[] var17 = Class9217.method34542(var5, Direction.field672);
+                                float[] var17 = Class9217.method34542(var5, Direction.DOWN);
                                 var1.method13918(var17[0]);
                                 var1.method13916(var17[1]);
                                 var1.method13922(new Class532(this, var5));
                                 mc.world.method7179(var5, false);
                                 return;
                             }
-                        } else if (!(var6.method23383() instanceof Class3221)) {
-                            if (!(var6.method23383() instanceof Class3408)) {
-                                if (var6.method23383() instanceof Class3448) {
-                                    Class7380 var7 = mc.world.method6738(var5.method8313());
-                                    Class7380 var8 = mc.world.method6738(var5.method8311());
-                                    if (!(var7.method23383() instanceof Class3448) && var8.method23383() instanceof Class3448) {
+                        } else if (!(var6.getBlock() instanceof Class3221)) {
+                            if (!(var6.getBlock() instanceof Class3408)) {
+                                if (var6.getBlock() instanceof Class3448) {
+                                    BlockState var7 = mc.world.getBlockState(var5.method8313());
+                                    BlockState var8 = mc.world.getBlockState(var5.method8311());
+                                    if (!(var7.getBlock() instanceof Class3448) && var8.getBlock() instanceof Class3448) {
                                         float[] var9 = Class9217.method34541(var5.method8311());
                                         var1.method13918(var9[0]);
                                         var1.method13916(var9[1]);
@@ -129,9 +129,9 @@ public class Class5362 extends Module {
                                     }
                                 }
                             } else {
-                                Class7380 var12 = mc.world.method6738(var5.method8313());
-                                Class7380 var15 = mc.world.method6738(var5.method8311());
-                                if (!(var12.method23383() instanceof Class3408) && var15.method23383() instanceof Class3408) {
+                                BlockState var12 = mc.world.getBlockState(var5.method8313());
+                                BlockState var15 = mc.world.getBlockState(var5.method8311());
+                                if (!(var12.getBlock() instanceof Class3408) && var15.getBlock() instanceof Class3408) {
                                     float[] var19 = Class9217.method34541(var5.method8311());
                                     var1.method13918(var19[0]);
                                     var1.method13916(var19[1]);
@@ -139,36 +139,36 @@ public class Class5362 extends Module {
                                     mc.world.method7179(var5.method8311(), false);
                                 }
                             }
-                        } else if (mc.field1347 == 0) {
-                            Class7380 var13 = mc.world.method6738(var5.method8311());
-                            int var16 = Class7789.method25843(Class8514.field37841);
+                        } else if (mc.rightClickDelayTimer == 0) {
+                            BlockState var13 = mc.world.getBlockState(var5.method8311());
+                            int var16 = Class7789.method25843(Items.field37841);
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Class8514.field38052);
+                                var16 = Class7789.method25843(Items.field38052);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Class8514.field38053);
+                                var16 = Class7789.method25843(Items.field38053);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Class8514.field38112);
+                                var16 = Class7789.method25843(Items.field38112);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Class8514.field37960);
+                                var16 = Class7789.method25843(Items.field37960);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Class8514.field37959);
+                                var16 = Class7789.method25843(Items.field37959);
                             }
 
-                            if (var16 != -1 && var13.method23383() instanceof AirBlock) {
+                            if (var16 != -1 && var13.getBlock() instanceof AirBlock) {
                                 float[] var20 = Class9217.method34542(var5, Direction.field673);
                                 var1.method13918(var20[0]);
                                 var1.method13916(var20[1]);
                                 var1.method13922(new Class649(this, var16, var20));
-                                mc.field1347 = 2;
-                                Class7380 var11 = Blocks.field36539.method11579();
+                                mc.rightClickDelayTimer = 2;
+                                BlockState var11 = Blocks.field36539.method11579();
                                 mc.world.method6730(var5.method8311(), var11);
                                 return;
                             }

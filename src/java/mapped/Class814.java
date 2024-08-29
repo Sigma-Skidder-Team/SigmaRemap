@@ -13,7 +13,7 @@ public class Class814 extends Class813 {
    private Class1153 field4384;
    private ITextComponent field4385 = new TranslationTextComponent("mco.reset.world.title");
    private ITextComponent field4386 = new TranslationTextComponent("mco.reset.world.warning");
-   private ITextComponent field4387 = Class7127.field30659;
+   private ITextComponent field4387 = DialogTexts.GUI_CANCEL;
    private int field4388 = 16711680;
    private static final ResourceLocation field4389 = new ResourceLocation("realms", "textures/gui/realms/slot_frame.png");
    private static final ResourceLocation field4390 = new ResourceLocation("realms", "textures/gui/realms/upload.png");
@@ -114,7 +114,7 @@ public class Class814 extends Class813 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override

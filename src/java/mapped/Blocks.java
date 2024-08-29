@@ -706,7 +706,7 @@ public class Blocks {
             .method26623(0.5F)
             .method26619(Class8447.field36206)
             .method26615()
-            .method26629((var0, var1, var2, var3) -> var3 == Class8992.field41068)
+            .method26629((var0, var1, var2, var3) -> var3 == EntityType.field41068)
       )
    );
    public static final Block SNOW_BLOCK = register(
@@ -1924,7 +1924,7 @@ public class Blocks {
             .method26623(0.5F)
             .method26619(Class8447.field36206)
             .method26615()
-            .method26629((var0, var1, var2, var3) -> var3 == Class8992.field41068)
+            .method26629((var0, var1, var2, var3) -> var3 == EntityType.field41068)
       )
    );
    public static final Block field36890 = register(
@@ -2856,20 +2856,20 @@ public class Blocks {
    );
    public static final Block field37149 = register("quartz_bricks", new Block(AbstractBlock.method26613(field36724)));
 
-   private static ToIntFunction<Class7380> method30011(int var0) {
+   private static ToIntFunction<BlockState> method30011(int var0) {
       return var1 -> !var1.<Boolean>method23463(Class8820.field39699) ? 0 : var0;
    }
 
-   private static Boolean method30012(Class7380 var0, Class1665 var1, BlockPos var2, Class8992<?> var3) {
+   private static Boolean method30012(BlockState var0, Class1665 var1, BlockPos var2, EntityType<?> var3) {
       return false;
    }
 
-   private static Boolean method30013(Class7380 var0, Class1665 var1, BlockPos var2, Class8992<?> var3) {
+   private static Boolean method30013(BlockState var0, Class1665 var1, BlockPos var2, EntityType<?> var3) {
       return true;
    }
 
-   private static Boolean method30014(Class7380 var0, Class1665 var1, BlockPos var2, Class8992<?> var3) {
-      return var3 == Class8992.field41059 || var3 == Class8992.field41062;
+   private static Boolean method30014(BlockState var0, Class1665 var1, BlockPos var2, EntityType<?> var3) {
+      return var3 == EntityType.field41059 || var3 == EntityType.field41062;
    }
 
    private static Class3250 method30015(Class112 var0) {
@@ -2896,11 +2896,11 @@ public class Blocks {
       return new Class3386(AbstractBlock.method26612(Class8649.field38957, var1 -> var0).method26623(2.0F).method26619(Class8447.field36225));
    }
 
-   private static boolean method30018(Class7380 var0, Class1665 var1, BlockPos var2) {
+   private static boolean method30018(BlockState var0, Class1665 var1, BlockPos var2) {
       return true;
    }
 
-   private static boolean method30019(Class7380 var0, Class1665 var1, BlockPos var2) {
+   private static boolean method30019(BlockState var0, Class1665 var1, BlockPos var2) {
       return false;
    }
 
@@ -2933,7 +2933,7 @@ public class Blocks {
 
    private static Class3368 method30022(Class112 var0, AbstractBlock var1) {
       Class8609 var4 = (var0x, var1x, var2) -> {
-         Class944 var5 = var1x.method6759(var2);
+         TileEntity var5 = var1x.getTileEntity(var2);
          if (var5 instanceof Class940) {
             Class940 var6 = (Class940)var5;
             return var6.method3757();
@@ -2952,7 +2952,7 @@ public class Blocks {
    }
 
    private static Block register(String var0, Block var1) {
-      return Registry.<Block>method9194(Registry.field16072, var0, var1);
+      return Registry.<Block>method9194(Registry.BLOCK, var0, var1);
    }
 
    public static void method30025() {
@@ -2960,11 +2960,11 @@ public class Blocks {
    }
 
    static {
-      for (Block var7 : Registry.field16072) {
-         UnmodifiableIterator var8 = var7.method11577().method35392().iterator();
+      for (Block var7 : Registry.BLOCK) {
+         UnmodifiableIterator var8 = var7.getStateContainer().getValidStates().iterator();
 
          while (var8.hasNext()) {
-            Class7380 var9 = (Class7380)var8.next();
+            BlockState var9 = (BlockState)var8.next();
             Block.field18610.method9269(var9);
          }
 

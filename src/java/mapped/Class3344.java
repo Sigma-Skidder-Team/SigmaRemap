@@ -9,17 +9,17 @@ public class Class3344 extends Class3343 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
-      Class944 var8 = var1.method6759(var2);
-      if (var8 instanceof Class968) {
-         method11898(var1, var2, (Class968)var8);
+      TileEntity var8 = var1.getTileEntity(var2);
+      if (var8 instanceof SkullTileEntity) {
+         method11898(var1, var2, (SkullTileEntity)var8);
       }
    }
 
-   public static void method11898(World var0, BlockPos var1, Class968 var2) {
+   public static void method11898(World var0, BlockPos var1, SkullTileEntity var2) {
       if (!var0.field9020) {
-         Class7380 var5 = var2.method3775();
+         BlockState var5 = var2.method3775();
          boolean var6 = var5.method23448(Blocks.field36703) || var5.method23448(Blocks.field36704);
          if (var6 && var1.getY() >= 0 && var0.method6997() != Class2197.field14351) {
             Class9803 var7 = method11900();
@@ -33,12 +33,12 @@ public class Class3344 extends Class3343 {
                   }
                }
 
-               Class1079 var13 = Class8992.field41102.method33215(var0);
+               Class1079 var13 = EntityType.field41102.method33215(var0);
                BlockPos var14 = var8.method33881(1, 2, 0).method37551();
                var13.method3273(
-                  (double)var14.method8304() + 0.5,
+                  (double)var14.getX() + 0.5,
                   (double)var14.getY() + 0.55,
-                  (double)var14.method8306() + 0.5,
+                  (double)var14.getZ() + 0.5,
                   var8.method33879().method544() != Class113.field413 ? 90.0F : 0.0F,
                   0.0F
                );
@@ -62,7 +62,7 @@ public class Class3344 extends Class3343 {
    }
 
    public static boolean method11899(World var0, BlockPos var1, ItemStack var2) {
-      return var2.method32107() == Class8514.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.field9020
+      return var2.getItem() == Items.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.field9020
          ? method11901().method38656(var0, var1) != null
          : false;
    }

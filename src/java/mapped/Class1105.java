@@ -18,7 +18,7 @@ public class Class1105 extends Class1009 {
    private boolean field6075;
    public Class2736 field6076;
 
-   public Class1105(Class8992<? extends Class1105> var1, World var2) {
+   public Class1105(EntityType<? extends Class1105> var1, World var2) {
       super(var1, var2);
       this.field5594 = 10;
       this.method4224(Class2163.field14191, 0.0F);
@@ -95,10 +95,10 @@ public class Class1105 extends Class1009 {
    @Nullable
    public Class880 method5306() {
       if (this.method5305()) {
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             return this.method4232();
          } else if (this.field6073 == null) {
-            Entity var3 = this.field5024.method6774(this.field5063.<Integer>method35445(field6067));
+            Entity var3 = this.world.method6774(this.field5063.<Integer>method35445(field6067));
             if (!(var3 instanceof Class880)) {
                return null;
             } else {
@@ -160,7 +160,7 @@ public class Class1105 extends Class1009 {
    @Override
    public void method2871() {
       if (this.method3066()) {
-         if (this.field5024.field9020) {
+         if (this.world.field9020) {
             this.field6069 = this.field6068;
             if (this.method3250()) {
                if (!this.method5301()) {
@@ -174,10 +174,10 @@ public class Class1105 extends Class1009 {
                this.field6070 = 2.0F;
                Vector3d var3 = this.method3433();
                if (var3.field18049 > 0.0 && this.field6075 && !this.method3245()) {
-                  this.field5024.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
+                  this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
                }
 
-               this.field6075 = var3.field18049 < 0.0 && this.field5024.method6765(this.method3432().method8313(), this);
+               this.field6075 = var3.field18049 < 0.0 && this.world.method6765(this.getPosition().method8313(), this);
             }
 
             this.field6068 = this.field6068 + this.field6070;
@@ -196,7 +196,7 @@ public class Class1105 extends Class1009 {
                Vector3d var17 = this.method3281(0.0F);
 
                for (int var4 = 0; var4 < 2; var4++) {
-                  this.field5024
+                  this.world
                      .method6746(
                         Class7940.field34052,
                         this.method3438(0.5) - var17.field18048 * 1.5,
@@ -230,7 +230,7 @@ public class Class1105 extends Class1009 {
 
                   while (var15 < var13) {
                      var15 += 1.8 - var5 + this.field5054.nextDouble() * (1.7 - var5);
-                     this.field5024
+                     this.world
                         .method6746(
                            Class7940.field34052,
                            this.getPosX() + var7 * var15,
@@ -288,7 +288,7 @@ public class Class1105 extends Class1009 {
       return var1.method7050(this);
    }
 
-   public static boolean method5311(Class8992<? extends Class1105> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5311(EntityType<? extends Class1105> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Class2197.field14351
          && (var2 == Class2202.field14393 || var1.method6739(var3).method23486(Class8953.field40469));

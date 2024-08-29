@@ -13,7 +13,7 @@ public class Class7490 extends Class7487 {
       var0 -> var0.group(Class7909.field33883.fieldOf("feature").forGetter(var0x -> var0x.field32191), method24379()).apply(var0, Class7490::new)
    );
    private final Supplier<Class7909<?, ?>> field32191;
-   private final Class39 field32192;
+   private final CompoundNBT field32192;
 
    public Class7490(Supplier<Class7909<?, ?>> var1, Class109 var2) {
       super(var2);
@@ -21,8 +21,8 @@ public class Class7490 extends Class7487 {
       this.field32192 = this.method24414();
    }
 
-   private Class39 method24414() {
-      Class39 var3 = new Class39();
+   private CompoundNBT method24414() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method109("name", "minecraft:bottom");
       var3.method109("final_state", "minecraft:air");
       var3.method109("pool", "minecraft:empty");
@@ -32,7 +32,7 @@ public class Class7490 extends Class7487 {
    }
 
    public BlockPos method24415(Class8761 var1, Class80 var2) {
-      return BlockPos.field13032;
+      return BlockPos.ZERO;
    }
 
    @Override
@@ -41,7 +41,7 @@ public class Class7490 extends Class7487 {
       var7.add(
          new Class8266(
             var2,
-            Blocks.field37114.method11579().method23465(Class3249.field18712, Class182.method526(Direction.field672, Direction.SOUTH)),
+            Blocks.field37114.method11579().method23465(Class3249.field18712, Class182.method526(Direction.DOWN, Direction.SOUTH)),
             this.field32192
          )
       );
@@ -52,12 +52,12 @@ public class Class7490 extends Class7487 {
    public Class9764 method24375(Class8761 var1, BlockPos var2, Class80 var3) {
       BlockPos var6 = this.method24415(var1, var3);
       return new Class9764(
-         var2.method8304(),
+         var2.getX(),
          var2.getY(),
-         var2.method8306(),
-         var2.method8304() + var6.method8304(),
+         var2.getZ(),
+         var2.getX() + var6.getX(),
          var2.getY() + var6.getY(),
-         var2.method8306() + var6.method8306()
+         var2.getZ() + var6.getZ()
       );
    }
 
@@ -75,6 +75,6 @@ public class Class7490 extends Class7487 {
 
    @Override
    public String toString() {
-      return "Feature[" + Registry.field16112.method9181(this.field32191.get().method26518()) + "]";
+      return "Feature[" + Registry.field16112.getKey(this.field32191.get().method26518()) + "]";
    }
 }

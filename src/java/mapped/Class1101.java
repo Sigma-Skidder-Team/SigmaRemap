@@ -6,7 +6,7 @@ public class Class1101 extends Class1009 {
    private static String[] field6056;
    private static final Class9289<Byte> field6057 = Class9361.<Byte>method35441(Class1101.class, Class7784.field33390);
 
-   public Class1101(Class8992<? extends Class1101> var1, World var2) {
+   public Class1101(EntityType<? extends Class1101> var1, World var2) {
       super(var1, var2);
    }
 
@@ -42,7 +42,7 @@ public class Class1101 extends Class1009 {
    @Override
    public void tick() {
       super.tick();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.method5290(this.field5037);
       }
    }
@@ -67,7 +67,7 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field27122, 0.15F, 1.0F);
    }
 
@@ -77,7 +77,7 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public void method2928(Class7380 var1, Vector3d var2) {
+   public void method2928(BlockState var1, Vector3d var2) {
       if (!var1.method23448(Blocks.COBWEB)) {
          super.method2928(var1, var2);
       }
@@ -110,12 +110,12 @@ public class Class1101 extends Class1009 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var1.method6814().nextInt(100) == 0) {
-         Class1085 var8 = Class8992.field41078.method33215(this.field5024);
+         Class1085 var8 = EntityType.field41078.method33215(this.world);
          var8.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.field5031, 0.0F);
-         var8.method4276(var1, var2, var3, (Class5093)null, (Class39)null);
+         var8.method4276(var1, var2, var3, (Class5093)null, (CompoundNBT)null);
          var8.method3311(this);
       }
 

@@ -9,7 +9,7 @@ public class Class4223 extends Class4213 {
       super(Class7792.field33465, 1, var1, var2, 2, 1, 1);
    }
 
-   public Class4223(Class8761 var1, Class39 var2) {
+   public Class4223(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33465, var2);
    }
 
@@ -18,8 +18,8 @@ public class Class4223 extends Class4213 {
       Class9312 var10 = Class9312.method35191(this.field20539)[Direction.EAST.method533()];
       Class9312 var11 = this.field20539;
       if (Class9312.method35192(this.field20539) / 25 > 0) {
-         this.method13006(var1, var5, 8, 0, Class9312.method35193(var10)[Direction.field672.method533()]);
-         this.method13006(var1, var5, 0, 0, Class9312.method35193(var11)[Direction.field672.method533()]);
+         this.method13006(var1, var5, 8, 0, Class9312.method35193(var10)[Direction.DOWN.method533()]);
+         this.method13006(var1, var5, 0, 0, Class9312.method35193(var11)[Direction.DOWN.method533()]);
       }
 
       if (Class9312.method35191(var11)[Direction.field673.method533()] == null) {

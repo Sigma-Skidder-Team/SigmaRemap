@@ -23,7 +23,7 @@ public class Class8812 {
    }
 
    public String method31815(String var1) {
-      return var1 + (this.field39648 != null ? this.field39648 : Registry.field16076.method9181(this).method8292());
+      return var1 + (this.field39648 != null ? this.field39648 : Registry.field16076.getKey(this).method8292());
    }
 
    public List<Class2023> method31816() {

@@ -43,7 +43,7 @@ public class Class1470 implements Runnable {
             Error var12 = new Error("Watchdog");
 
             for (ThreadInfo var16 : var10) {
-               if (var16.getThreadId() == this.field7908.method1391().getId()) {
+               if (var16.getThreadId() == this.field7908.getExecutionThread().getId()) {
                   var12.setStackTrace(var16.getStackTrace());
                }
 
@@ -51,24 +51,24 @@ public class Class1470 implements Runnable {
                var11.append("\n");
             }
 
-            Class4526 var18 = new Class4526("Watching Server", var12);
+            CrashReport var18 = new CrashReport("Watching Server", var12);
             this.field7908.method1326(var18);
-            Class8965 var19 = var18.method14410("Thread Dump");
-            var19.method32807("Threads", var11);
-            Class8965 var20 = var18.method14410("Performance stats");
-            var20.method32806("Random tick rate", () -> this.field7908.method1436().method20046().<Class7464>method17128(Class5462.field24235).toString());
-            var20.method32806(
+            CrashReportCategory var19 = var18.makeCategory("Thread Dump");
+            var19.addDetail("Threads", var11);
+            CrashReportCategory var20 = var18.makeCategory("Performance stats");
+            var20.addDetail("Random tick rate", () -> this.field7908.method1436().method20046().<Class7464>method17128(Class5462.field24235).toString());
+            var20.addDetail(
                "Level stats",
                () -> Streams.stream(this.field7908.method1320())
-                     .<CharSequence>map(var0 -> var0.method6813() + ": " + var0.method6971())
+                     .<CharSequence>map(var0 -> var0.getDimensionKey() + ": " + var0.method6971())
                      .collect(Collectors.joining(",\n"))
             );
-            Class7729.method25572("Crash report:\n" + var18.method14406());
+            Bootstrap.printToSYSOUT("Crash report:\n" + var18.getCompleteReport());
             File var21 = new File(
                new File(this.field7908.method1307(), "crash-reports"),
                "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-server.txt"
             );
-            if (var18.method14408(var21)) {
+            if (var18.saveToFile(var21)) {
                field7907.error("This crash report has been saved to: {}", var21.getAbsolutePath());
             } else {
                field7907.error("We were unable to save this crash report to disk.");

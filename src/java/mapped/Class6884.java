@@ -29,7 +29,7 @@ public class Class6884 {
    public JsonObject method20960(JsonSerializationContext var1) {
       JsonObject var4 = new JsonObject();
       var4.addProperty("name", this.field29832);
-      var4.addProperty("attribute", Registry.field16087.method9181(this.field29833).toString());
+      var4.addProperty("attribute", Registry.field16087.getKey(this.field29833).toString());
       var4.addProperty("operation", method20962(this.field29834));
       var4.add("amount", var1.serialize(this.field29835));
       if (this.field29836 != null) {

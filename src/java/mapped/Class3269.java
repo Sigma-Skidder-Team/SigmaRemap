@@ -27,7 +27,7 @@ public class Class3269 extends Class3264 {
          Blocks.field36448
       }
    );
-   public static final Map<Block, Class7380> field18767 = Maps.newHashMap(
+   public static final Map<Block, BlockState> field18767 = Maps.newHashMap(
       ImmutableMap.of(
          Blocks.field36395,
          Blocks.FARMLAND.method11579(),
@@ -48,8 +48,8 @@ public class Class3269 extends Class3264 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      if (var1.method18354() != Direction.field672 && var4.method6738(var5.method8311()).method23393()) {
-         Class7380 var6 = field18767.get(var4.method6738(var5).method23383());
+      if (var1.method18354() != Direction.DOWN && var4.getBlockState(var5.method8311()).isAir()) {
+         BlockState var6 = field18767.get(var4.getBlockState(var5).getBlock());
          if (var6 != null) {
             PlayerEntity var7 = var1.method18358();
             var4.method6742(var7, var5, Class6067.field26651, Class2266.field14732, 1.0F, 1.0F);

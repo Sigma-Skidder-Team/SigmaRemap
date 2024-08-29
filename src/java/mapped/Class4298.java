@@ -21,7 +21,7 @@ public class Class4298 extends Class4278 {
    public String field20822 = null;
    private AbstractClientPlayerEntity field20823;
    private Minecraft field20824 = Minecraft.getInstance();
-   private static Class1656 field20825;
+   private static ClientWorld field20825;
    public Account account;
    private Class291 field20827;
    private Class1118 field20828;
@@ -31,7 +31,7 @@ public class Class4298 extends Class4278 {
       this.field20822 = var7;
    }
 
-   public Class7165 method13180() {
+   public IProfiler method13180() {
       Class7991 var3 = new Class7991(this);
       return new Class7168(() -> 0L, var3, false);
    }
@@ -56,7 +56,7 @@ public class Class4298 extends Class4278 {
          UUID var8 = UUID.fromString(this.account.getKnownUUID().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.account.getKnownUUID());
          if (field20825 == null) {
             Class6606 var9 = new Class6606(Class2197.field14353, false, false);
-            field20825 = new Class1656(this.field20824.getClientPlayNetHandler(), var9, World.field8999, Class9535.field44374, 1, this::method13180, null, false, 0L);
+            field20825 = new ClientWorld(this.field20824.getConnection(), var9, World.field8999, Class9535.field44374, 1, this::method13180, null, false, 0L);
          }
 
          GameProfile var20 = new GameProfile(var8, this.account.getKnownName());
@@ -73,28 +73,28 @@ public class Class4298 extends Class4278 {
          float var12 = (float)(System.currentTimeMillis() % 30000L) / 4774.648F;
          var12 = (float)Math.sin((double)var12);
          new Class2894(0.0F, false);
-         new Class5713(this.field20824.method1554());
-         Class7735 var15 = Minecraft.getInstance().method1581().method26536();
+         new Class5713(this.field20824.getRenderManager());
+         Class7735 var15 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
          new MatrixStack();
          RenderSystem.pushMatrix();
-         this.field20824.method1554().method32215(false);
+         this.field20824.getRenderManager().method32215(false);
          Class7516.method24503();
          RenderSystem.method27820();
          RenderSystem.enableDepthTest();
          GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
-         if (this.field20824.method1554().field40017 == null) {
-            this.field20824.method1554().field40017 = new Class9624();
+         if (this.field20824.getRenderManager().field40017 == null) {
+            this.field20824.getRenderManager().field40017 = new Class9624();
          }
 
          this.field20828.field4960 = var10 * 0.5F;
-         Class859.method2635(0, 390, 160, 0.0F, 0.0F, this.field20828);
-         this.field20824.method1554().method32215(true);
+         InventoryScreen.method2635(0, 390, 160, 0.0F, 0.0F, this.field20828);
+         this.field20824.getRenderManager().method32215(true);
          RenderSystem.popMatrix();
          RenderSystem.popMatrix();
          Class7516.method24499();
          RenderSystem.method27868();
          RenderSystem.method27860(33985);
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          RenderSystem.method27860(33984);
          GL11.glDisable(2929);
          if (this.account.method34228() != null) {

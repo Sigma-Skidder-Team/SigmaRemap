@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Class4075 extends Class4071 {
    public Class4075() {
-      super(Class8992.field41057, "mule", 0.75F);
+      super(EntityType.field41057, "mule", 0.75F);
    }
 
    @Override
@@ -37,7 +37,7 @@ public class Class4075 extends Class4071 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5687 var6 = new Class5687(var5, 0.92F);
       var6.field25086 = (Class2827)var1;
       var6.field25098 = var2;

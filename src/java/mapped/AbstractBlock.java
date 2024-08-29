@@ -6,10 +6,10 @@ import java.util.function.ToIntFunction;
 public class AbstractBlock {
    private static String[] field33963;
    private Class8649 field33964;
-   private Function<Class7380, Class7210> field33965;
+   private Function<BlockState, Class7210> field33965;
    private boolean field33966 = true;
    private Class8447 field33967 = Class8447.field36204;
-   private ToIntFunction<Class7380> field33968 = var0 -> 0;
+   private ToIntFunction<BlockState> field33968 = var0 -> 0;
    private float field33969;
    private float field33970;
    private boolean field33971;
@@ -20,7 +20,7 @@ public class AbstractBlock {
    private ResourceLocation field33976;
    private boolean field33977 = true;
    private boolean field33978;
-   private Class9817<Class8992<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.field673) && var0.method23392() < 14;
+   private Class9817<EntityType<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.field673) && var0.method23392() < 14;
    private Class8609 field33980 = (var0, var1x, var2x) -> var0.method23384().method31090() && var0.method23456(var1x, var2x);
    private Class8609 field33981 = (var1x, var2x, var3) -> this.field33964.method31087() && var1x.method23456(var2x, var3);
    private Class8609 field33982 = this.field33981;
@@ -32,7 +32,7 @@ public class AbstractBlock {
       this(var1, var1x -> var2);
    }
 
-   private AbstractBlock(Class8649 var1, Function<Class7380, Class7210> var2) {
+   private AbstractBlock(Class8649 var1, Function<BlockState, Class7210> var2) {
       this.field33964 = var1;
       this.field33965 = var2;
    }
@@ -49,7 +49,7 @@ public class AbstractBlock {
       return new AbstractBlock(var0, var1);
    }
 
-   public static AbstractBlock method26612(Class8649 var0, Function<Class7380, Class7210> var1) {
+   public static AbstractBlock method26612(Class8649 var0, Function<BlockState, Class7210> var1) {
       return new AbstractBlock(var0, var1);
    }
 
@@ -103,7 +103,7 @@ public class AbstractBlock {
       return this;
    }
 
-   public AbstractBlock method26620(ToIntFunction<Class7380> var1) {
+   public AbstractBlock method26620(ToIntFunction<BlockState> var1) {
       this.field33968 = var1;
       return this;
    }
@@ -148,7 +148,7 @@ public class AbstractBlock {
       return this;
    }
 
-   public AbstractBlock method26629(Class9817<Class8992<?>> var1) {
+   public AbstractBlock method26629(Class9817<EntityType<?>> var1) {
       this.field33979 = var1;
       return this;
    }

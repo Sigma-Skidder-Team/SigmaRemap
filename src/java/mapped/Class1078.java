@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1078 extends Class1066 {
    private static String[] field5922;
 
-   public Class1078(Class8992<? extends Class1078> var1, World var2) {
+   public Class1078(EntityType<? extends Class1078> var1, World var2) {
       super(var1, var2);
    }
 
@@ -46,6 +46,6 @@ public class Class1078 extends Class1066 {
 
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41057.method33215(var1);
+      return EntityType.field41057.method33215(var1);
    }
 }

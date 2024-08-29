@@ -12,9 +12,9 @@ public class Class9647 {
    }
 
    public static double method37621(BlockPos var0) {
-      double var3 = method37622(field45107.player).field43722 - (double)var0.method8304();
+      double var3 = method37622(field45107.player).field43722 - (double)var0.getX();
       double var5 = method37622(field45107.player).field43723 - (double)var0.getY();
-      double var7 = method37622(field45107.player).field43724 - (double)var0.method8306();
+      double var7 = method37622(field45107.player).field43724 - (double)var0.getZ();
       return var3 * var3 + var5 * var5 + var7 * var7;
    }
 
@@ -37,9 +37,9 @@ public class Class9647 {
 
    public static Class9425 method37624(BlockPos var0) {
       return new Class9425(
-         (double)var0.method8304() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
+         (double)var0.getX() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
          (double)var0.getY() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
-         (double)var0.method8306() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
+         (double)var0.getZ() - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
       );
    }
 }

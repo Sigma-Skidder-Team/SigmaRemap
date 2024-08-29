@@ -53,7 +53,7 @@ public class Class9160 {
    }
 
    private static int method34195(Class6619 var0, Collection<ServerPlayerEntity> var1, BlockPos var2, float var3) {
-      RegistryKey var6 = var0.method20172().method6813();
+      RegistryKey var6 = var0.method20172().getDimensionKey();
 
       for (ServerPlayerEntity var8 : var1) {
          var8.method2829(var6, var2, var3, true, false);
@@ -63,7 +63,7 @@ public class Class9160 {
       if (var1.size() != 1) {
          var0.method20179(
             new TranslationTextComponent(
-               "commands.spawnpoint.success.multiple", var2.method8304(), var2.getY(), var2.method8306(), var3, var9, var1.size()
+               "commands.spawnpoint.success.multiple", var2.getX(), var2.getY(), var2.getZ(), var3, var9, var1.size()
             ),
             true
          );
@@ -71,9 +71,9 @@ public class Class9160 {
          var0.method20179(
             new TranslationTextComponent(
                "commands.spawnpoint.success.single",
-               var2.method8304(),
+               var2.getX(),
                var2.getY(),
-               var2.method8306(),
+               var2.getZ(),
                var3,
                var9,
                ((ServerPlayerEntity)var1.iterator().next()).getDisplayName()

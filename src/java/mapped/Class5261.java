@@ -26,9 +26,9 @@ public class Class5261 extends PremiumModule {
     public Class5261() {
         super("RearView", "See behind you", ModuleCategory.GUI);
         this.field23662 = new Animation(230, 200, Direction.BACKWARDS);
-        this.method15972(new Class6004("Show in GUI", "Makes the Rear View visible in guis", false));
-        this.method15972(new Class6004("Smart Visibility", "Only pops up when a player is behind you", false));
-        this.method15972(new Class6009<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
+        this.registerSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
+        this.registerSetting(new Class6009<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
         this.method16005(false);
     }
 
@@ -74,7 +74,7 @@ public class Class5261 extends PremiumModule {
     public void method16450(Class4415 var1) {
         if (field23663 != null) {
             if (this.method15996()) {
-                if (!Minecraft.getInstance().gameSettings.field44662) {
+                if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     if (!this.method15974("Smart Visibility")) {
                         this.field23662.changeDirection(mc.currentScreen != null && !this.method15974("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
                     } else {
@@ -114,9 +114,9 @@ public class Class5261 extends PremiumModule {
                     );
                     RenderSystem.popMatrix();
                     RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
-                    RenderSystem.method27878(5889);
-                    RenderSystem.method27879();
-                    RenderSystem.method27882(
+                    RenderSystem.matrixMode(5889);
+                    RenderSystem.loadIdentity();
+                    RenderSystem.ortho(
                             0.0,
                             (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
                             (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
@@ -124,8 +124,8 @@ public class Class5261 extends PremiumModule {
                             1000.0,
                             3000.0
                     );
-                    RenderSystem.method27878(5888);
-                    RenderSystem.method27879();
+                    RenderSystem.matrixMode(5888);
+                    RenderSystem.loadIdentity();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
                     GL11.glScaled(
                             1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348,
@@ -133,7 +133,7 @@ public class Class5261 extends PremiumModule {
                             1.0
                     );
                     field23663.unbindFramebuffer();
-                    mc.method1464().bindFramebuffer(true);
+                    mc.getFramebuffer().bindFramebuffer(true);
                 }
             }
         }
@@ -144,11 +144,11 @@ public class Class5261 extends PremiumModule {
         RenderSystem.method27870(true, true, true, false);
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
-        RenderSystem.method27878(5889);
-        RenderSystem.method27879();
-        RenderSystem.method27882(0.0, (double) var2 + var4, var3, 0.0, 1000.0, 3000.0);
-        RenderSystem.method27878(5888);
-        RenderSystem.method27879();
+        RenderSystem.matrixMode(5889);
+        RenderSystem.loadIdentity();
+        RenderSystem.ortho(0.0, (double) var2 + var4, var3, 0.0, 1000.0, 3000.0);
+        RenderSystem.matrixMode(5888);
+        RenderSystem.loadIdentity();
         RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
         RenderSystem.method27869(0, 0, var2 + (int) var4, var3 - (int) var6);
         RenderSystem.enableTexture();
@@ -162,14 +162,14 @@ public class Class5261 extends PremiumModule {
         float var11 = (float) var3;
         float var12 = (float) var1.field35732 / (float) var1.field35730;
         float var13 = (float) var1.field35733 / (float) var1.field35731;
-        Class9352 var14 = RenderSystem.method27937();
-        Class5425 var15 = var14.method35411();
-        var15.method17063(7, Class9337.field43346);
-        var15.method17025(var4, (double) var11 + var6, 0.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, 255).method17031();
-        var15.method17025((double) var10 + var4, (double) var11 + var6, 0.0).method17027(var12, 0.0F).method17026(255, 255, 255, 255).method17031();
-        var15.method17025((double) var10 + var4, var6, 0.0).method17027(var12, var13).method17026(255, 255, 255, 255).method17031();
-        var15.method17025(var4, var6, 0.0).method17027(0.0F, var13).method17026(255, 255, 255, 255).method17031();
-        var14.method35410();
+        Tessellator var14 = RenderSystem.method27937();
+        BufferBuilder var15 = var14.getBuffer();
+        var15.begin(7, DefaultVertexFormats.field43346);
+        var15.pos(var4, (double) var11 + var6, 0.0).method17027(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
+        var15.pos((double) var10 + var4, (double) var11 + var6, 0.0).method17027(var12, 0.0F).color(255, 255, 255, 255).endVertex();
+        var15.pos((double) var10 + var4, var6, 0.0).method17027(var12, var13).color(255, 255, 255, 255).endVertex();
+        var15.pos(var4, var6, 0.0).method17027(0.0F, var13).color(255, 255, 255, 255).endVertex();
+        var14.draw();
         var1.method29111();
         RenderSystem.depthMask(true);
         RenderSystem.method27870(true, true, true, true);
@@ -186,8 +186,8 @@ public class Class5261 extends PremiumModule {
                     field23663.bindFramebuffer(true);
                     RenderSystem.enableTexture();
                     RenderSystem.method27822();
-                    int var4 = mc.gameSettings.field44576;
-                    int var5 = Math.min(Minecraft.method1586(), var4);
+                    int var4 = mc.gameSettings.framerateLimit;
+                    int var5 = Math.min(Minecraft.getFps(), var4);
                     var5 = Math.max(var5, 60);
                     long var6 = Util.nanoTime() - var1.field21555;
                     float var8 = mc.player.field5031;
@@ -207,7 +207,7 @@ public class Class5261 extends PremiumModule {
                     mc.gameSettings.field44669 = var9;
                     mc.player.field5031 = var8;
                     RenderSystem.popMatrix();
-                    mc.method1464().bindFramebuffer(true);
+                    mc.getFramebuffer().bindFramebuffer(true);
                 }
             } else {
                 this.isInDevelopment();
@@ -217,9 +217,9 @@ public class Class5261 extends PremiumModule {
 
     @Override
     public void isInDevelopment() {
-        Class3192.method11469(mc.method1464());
+        Class3192.method11469(mc.getFramebuffer());
         field23663 = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true, Minecraft.IS_RUNNING_ON_MAC);
-        field23663.method29115(1.0F, 1.0F, 1.0F, 1.0F);
+        field23663.setFramebufferColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     @Override

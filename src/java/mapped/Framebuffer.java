@@ -25,10 +25,10 @@ public class Framebuffer {
       this.field35738[1] = 1.0F;
       this.field35738[2] = 1.0F;
       this.field35738[3] = 0.0F;
-      this.method29103(var1, var2, var4);
+      this.resize(var1, var2, var4);
    }
 
-   public void method29103(int var1, int var2, boolean var3) {
+   public void resize(int var1, int var2, boolean var3) {
       if (RenderSystem.method27803()) {
          this.method29104(var1, var2, var3);
       } else {
@@ -191,7 +191,7 @@ public class Framebuffer {
       }
    }
 
-   public void method29115(float var1, float var2, float var3, float var4) {
+   public void setFramebufferColor(float var1, float var2, float var3, float var4) {
       this.field35738[0] = var1;
       this.field35738[1] = var2;
       this.field35738[2] = var3;
@@ -237,14 +237,14 @@ public class Framebuffer {
       float var7 = (float)var2;
       float var8 = (float)this.field35732 / (float)this.field35730;
       float var9 = (float)this.field35733 / (float)this.field35731;
-      Class9352 var10 = RenderSystem.method27937();
-      Class5425 var11 = var10.method35411();
-      var11.method17063(7, Class9337.field43346);
-      var11.method17025(0.0, (double)var7, 0.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, 255).method17031();
-      var11.method17025((double)var6, (double)var7, 0.0).method17027(var8, 0.0F).method17026(255, 255, 255, 255).method17031();
-      var11.method17025((double)var6, 0.0, 0.0).method17027(var8, var9).method17026(255, 255, 255, 255).method17031();
-      var11.method17025(0.0, 0.0, 0.0).method17027(0.0F, var9).method17026(255, 255, 255, 255).method17031();
-      var10.method35410();
+      Tessellator var10 = RenderSystem.method27937();
+      BufferBuilder var11 = var10.getBuffer();
+      var11.begin(7, DefaultVertexFormats.field43346);
+      var11.pos(0.0, (double)var7, 0.0).method17027(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
+      var11.pos((double)var6, (double)var7, 0.0).method17027(var8, 0.0F).color(255, 255, 255, 255).endVertex();
+      var11.pos((double)var6, 0.0, 0.0).method17027(var8, var9).color(255, 255, 255, 255).endVertex();
+      var11.pos(0.0, 0.0, 0.0).method17027(0.0F, var9).color(255, 255, 255, 255).endVertex();
+      var10.draw();
       this.method29111();
       Class7414.method23713(true);
       Class7414.method23822(true, true, true, true);

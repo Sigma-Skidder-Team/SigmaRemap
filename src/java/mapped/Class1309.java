@@ -8,7 +8,7 @@ public class Class1309 extends Screen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return true;
    }
 }

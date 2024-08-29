@@ -19,7 +19,7 @@ public class Class7888 extends Class7882<Class1045> {
 
    private void method26448(Class1045 var1, List<Class880> var2) {
       Optional var5 = var2.stream()
-         .filter(var1x -> var1x.method3204() == var1.method3204())
+         .filter(var1x -> var1x.getType() == var1.getType())
          .<Class1045>map(var0 -> (Class1045)var0)
          .filter(var0 -> !var0.method3005())
          .findFirst();

@@ -24,7 +24,7 @@ public class Class8389 {
    public static void method29393() {
       field35971 = null;
       field35972 = 0;
-      Class303[] var2 = Class7944.method26869();
+      IResourcePack[] var2 = Class7944.method26869();
       field35971 = method29395(var2);
       method29394();
    }
@@ -55,11 +55,11 @@ public class Class8389 {
       }
    }
 
-   private static Class9200[] method29395(Class303[] var0) {
+   private static Class9200[] method29395(IResourcePack[] var0) {
       ArrayList<Class9200> var3 = new ArrayList();
 
       for (int var4 = 0; var4 < var0.length; var4++) {
-         Class303 var5 = var0[var4];
+         IResourcePack var5 = var0[var4];
          Class9200[] var6 = method29396(var5);
          if (var6 != null) {
             var3.addAll(Arrays.asList(var6));
@@ -69,7 +69,7 @@ public class Class8389 {
       return var3.toArray(new Class9200[var3.size()]);
    }
 
-   private static Class9200[] method29396(Class303 var0) {
+   private static Class9200[] method29396(IResourcePack var0) {
       String[] var3 = Class9772.method38438(var0, "optifine/anim/", ".properties", (String[])null);
       if (var3.length <= 0) {
          return null;
@@ -82,7 +82,7 @@ public class Class8389 {
 
             try {
                ResourceLocation var7 = new ResourceLocation(var6);
-               InputStream var8 = var0.method1223(Class1946.field12610, var7);
+               InputStream var8 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var7);
                Class20 var9 = new Class20();
                var9.load(var8);
                var8.close();
@@ -174,7 +174,7 @@ public class Class8389 {
    }
 
    private static byte[] method29399(String var0, int var1) {
-      Class9574 var4 = Class7944.method26928();
+      GameSettings var4 = Class7944.method26928();
 
       try {
          ResourceLocation var5 = new ResourceLocation(var0);

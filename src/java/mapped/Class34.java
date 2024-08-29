@@ -68,17 +68,17 @@ public class Class34 extends Class31 {
 
    @Override
    public int method84() {
-      return MathHelper.method37769(this.field69);
+      return MathHelper.floor(this.field69);
    }
 
    @Override
    public short method85() {
-      return (short)(MathHelper.method37769(this.field69) & 65535);
+      return (short)(MathHelper.floor(this.field69) & 65535);
    }
 
    @Override
    public byte method86() {
-      return (byte)(MathHelper.method37769(this.field69) & 0xFF);
+      return (byte)(MathHelper.floor(this.field69) & 0xFF);
    }
 
    @Override

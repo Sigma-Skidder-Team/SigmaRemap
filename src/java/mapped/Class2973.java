@@ -7,11 +7,11 @@ import java.util.List;
 
 public class Class2973 extends Structure<Class4712> {
    private static final List<Class6692> field18086 = ImmutableList.of(
-      new Class6692(Class8992.field41010, 10, 2, 3),
-      new Class6692(Class8992.field41110, 5, 4, 4),
-      new Class6692(Class8992.field41103, 8, 5, 5),
-      new Class6692(Class8992.field41078, 2, 5, 5),
-      new Class6692(Class8992.field41049, 3, 4, 4)
+      new Class6692(EntityType.field41010, 10, 2, 3),
+      new Class6692(EntityType.field41110, 5, 4, 4),
+      new Class6692(EntityType.field41103, 8, 5, 5),
+      new Class6692(EntityType.field41078, 2, 5, 5),
+      new Class6692(EntityType.field41049, 3, 4, 4)
    );
 
    public Class2973(Codec<Class4712> var1) {

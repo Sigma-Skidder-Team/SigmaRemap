@@ -2,12 +2,12 @@ package mapped;
 
 public class Class929 extends Class927 implements Class930 {
    private static String[] field5260;
-   private final Class7380 field5266;
+   private final BlockState field5266;
    private final Class1660 field5267;
    private final BlockPos field5268;
    private boolean field5269;
 
-   public Class929(Class7380 var1, Class1660 var2, BlockPos var3, ItemStack var4) {
+   public Class929(BlockState var1, Class1660 var2, BlockPos var3, ItemStack var4) {
       super(var4);
       this.field5266 = var1;
       this.field5267 = var2;
@@ -21,7 +21,7 @@ public class Class929 extends Class927 implements Class930 {
 
    @Override
    public int[] method3653(Direction var1) {
-      return var1 != Direction.field672 ? new int[0] : new int[]{0};
+      return var1 != Direction.DOWN ? new int[0] : new int[]{0};
    }
 
    @Override
@@ -31,7 +31,7 @@ public class Class929 extends Class927 implements Class930 {
 
    @Override
    public boolean method3655(int var1, ItemStack var2, Direction var3) {
-      return !this.field5269 && var3 == Direction.field672 && var2.method32107() == Class8514.field37934;
+      return !this.field5269 && var3 == Direction.DOWN && var2.getItem() == Items.field37934;
    }
 
    @Override

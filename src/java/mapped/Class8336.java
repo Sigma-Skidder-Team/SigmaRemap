@@ -4,10 +4,10 @@ import java.util.concurrent.CompletableFuture;
 
 public class Class8336 implements Class8335 {
    private static String[] field35840;
-   private final Class2507 field35841;
+   private final SimpleReloadableResourceManager.FailedPackException field35841;
    private final CompletableFuture<Class2341> field35842;
 
-   public Class8336(Class2507 var1) {
+   public Class8336(SimpleReloadableResourceManager.FailedPackException var1) {
       this.field35841 = var1;
       this.field35842 = new CompletableFuture<Class2341>();
       this.field35842.completeExceptionally(var1);

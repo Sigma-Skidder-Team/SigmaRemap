@@ -25,7 +25,7 @@ public class Class809 extends Class798 {
    @Override
    public void method1921() {
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field4335))
+         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4335))
       );
    }
 

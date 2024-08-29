@@ -11,7 +11,7 @@ public class Class1311 extends Screen {
    private int field6922;
 
    public Class1311(Runnable var1, ITextComponent var2, ITextComponent var3) {
-      this(var1, var2, var3, Class7127.field30663);
+      this(var1, var2, var3, DialogTexts.field30663);
    }
 
    public Class1311(Runnable var1, ITextComponent var2, ITextComponent var3, ITextComponent var4) {
@@ -37,8 +37,8 @@ public class Class1311 extends Screen {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       if (--this.field6922 == 0) {
          for (Class1197 var4 : this.field4566) {
             var4.field6482 = true;

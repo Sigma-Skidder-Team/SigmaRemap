@@ -13,8 +13,8 @@ public class Class6299 extends Class6272<Class4722> {
       if (var2.nextInt(var3.field22381) != 0) {
          return Stream.<BlockPos>empty();
       } else {
-         int var7 = var2.nextInt(16) + var4.method8304();
-         int var8 = var2.nextInt(16) + var4.method8306();
+         int var7 = var2.nextInt(16) + var4.getX();
+         int var8 = var2.nextInt(16) + var4.getZ();
          int var9 = var2.nextInt(var1.method33297());
          return Stream.<BlockPos>of(new BlockPos(var7, var9, var8));
       }

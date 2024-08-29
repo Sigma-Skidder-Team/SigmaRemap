@@ -58,7 +58,7 @@ public class Class4313 extends Class4307 {
       int var6 = var5.method27099();
 
       for (int var7 = 0; var7 < var6; var7++) {
-         Class7730 var8 = var5.method27096(var7);
+         ServerData var8 = var5.method27096(var7);
          if (!var4.contains(var8.field33189)) {
             var4.add(var8.field33189);
          }

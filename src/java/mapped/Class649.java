@@ -14,9 +14,9 @@ public class Class649 implements Runnable {
 
    @Override
    public void run() {
-      Class5362.method16871().getClientPlayNetHandler().sendPacket(new Class5539(this.field3251));
-      Class5362.method16872().getClientPlayNetHandler().sendPacket(new Class5570(Hand.field182, Class9217.method34567(this.field3252[0], this.field3252[1], 4.5F)));
-      Class5362.method16873().getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
-      Class5362.method16875().getClientPlayNetHandler().sendPacket(new Class5539(Class5362.method16874().player.field4902.field5443));
+      Class5362.method16871().getConnection().sendPacket(new Class5539(this.field3251));
+      Class5362.method16872().getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(this.field3252[0], this.field3252[1], 4.5F)));
+      Class5362.method16873().getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
+      Class5362.method16875().getConnection().sendPacket(new Class5539(Class5362.method16874().player.inventory.currentItem));
    }
 }

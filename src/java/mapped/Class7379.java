@@ -43,7 +43,7 @@ public final class Class7379 extends Class7378<Class7631, Class7379> {
          for (int var6 = -1; var6 <= 1; var6++) {
             BlockPos var7 = var2.method8336(var5, 0, var6);
             Class7379 var8 = var1.method6739(var7);
-            if (!var8.method23472().method25066(this.method23472()) && !var1.method6738(var7).method23409(var1, var7)) {
+            if (!var8.method23472().method25066(this.method23472()) && !var1.getBlockState(var7).method23409(var1, var7)) {
                return true;
             }
          }
@@ -72,7 +72,7 @@ public final class Class7379 extends Class7378<Class7631, Class7379> {
       return this.method23472().method25056(var1, var2, this);
    }
 
-   public Class7380 method23484() {
+   public BlockState method23484() {
       return this.method23472().method25063(this);
    }
 

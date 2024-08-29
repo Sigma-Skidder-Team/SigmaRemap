@@ -159,27 +159,27 @@ public class Class9805 {
       this.method38669();
    }
 
-   public Class39 method38678() {
-      Class39 var3 = new Class39();
-      var3.method109("Name", Registry.field16087.method9181(this.field45827).toString());
+   public CompoundNBT method38678() {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.method109("Name", Registry.field16087.getKey(this.field45827).toString());
       var3.method108("Base", this.field45831);
       if (!this.field45830.isEmpty()) {
-         Class41 var4 = new Class41();
+         ListNBT var4 = new ListNBT();
 
          for (Class9689 var6 : this.field45830) {
             var4.add(var6.method37934());
          }
 
-         var3.method99("Modifiers", var4);
+         var3.put("Modifiers", var4);
       }
 
       return var3;
    }
 
-   public void method38679(Class39 var1) {
+   public void method38679(CompoundNBT var1) {
       this.field45831 = var1.method125("Base");
       if (var1.method119("Modifiers", 9)) {
-         Class41 var4 = var1.method131("Modifiers", 10);
+         ListNBT var4 = var1.method131("Modifiers", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             Class9689 var6 = Class9689.method37935(var4.method153(var5));

@@ -36,7 +36,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
    public static <T extends Class880> void method824(
            Class2827<T> var0, ResourceLocation var1, MatrixStack var2, Class7733 var3, int var4, T var5, float var6, float var7, float var8
    ) {
-      Class5422 var11 = var3.method25597(Class4520.method14312(var1));
+      Class5422 var11 = var3.method25597(RenderType.getEntityCutoutNoCull(var1));
       var0.method11016(var2, var11, var4, Class5712.method17883(var5, 0.0F), var6, var7, var8, 1.0F);
    }
 

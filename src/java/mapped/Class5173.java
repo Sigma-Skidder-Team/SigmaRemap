@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4402;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -18,12 +18,12 @@ public class Class5173 extends Module {
 
     public Class5173() {
         super(ModuleCategory.EXPLOIT, "PingSpoof", "Makes you lagggy.");
-        this.method15972(new Class6009<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
-        this.method15972(new Class6004("Inv Bypass", "Avoid inventory glitchs on some servers", false));
+        this.registerSetting(new Class6009<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
+        this.registerSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
     }
 
     @EventTarget
-    public void method16100(Class4418 var1) {
+    public void method16100(WorldLoadEvent var1) {
         if (!this.method15996()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
             if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
@@ -44,7 +44,7 @@ public class Class5173 extends Module {
         }
 
         this.field23462++;
-        if (mc.player != null && mc.method1528() != null) {
+        if (mc.player != null && mc.getCurrentServerData() != null) {
             if (mc.player.field5055 <= 1) {
                 this.field23461.clear();
             }
@@ -55,8 +55,8 @@ public class Class5173 extends Module {
                 for (int var5 = 0; var5 < var7; var5++) {
                     Class8772 var6 = this.field23461.get(var5);
                     if (var6.method31641()) {
-                        mc.getClientPlayNetHandler().method15589();
-                        NetworkManager.method30691(var6.method31642(), mc.getClientPlayNetHandler().method15589().field38650);
+                        mc.getConnection().getNetworkManager();
+                        NetworkManager.method30691(var6.method31642(), mc.getConnection().getNetworkManager().field38650);
                         this.field23461.remove(var5);
                         var7--;
                         var5--;
@@ -84,7 +84,7 @@ public class Class5173 extends Module {
             }
         }
 
-        if (mc.method1528() != null) {
+        if (mc.getCurrentServerData() != null) {
             Packet var7 = var1.method13898();
             if (!(var7 instanceof Class5554)) {
                 if (!(var7 instanceof Class5542)) {

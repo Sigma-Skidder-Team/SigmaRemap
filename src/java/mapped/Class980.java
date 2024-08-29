@@ -12,13 +12,13 @@ public class Class980 extends Class927 {
    }
 
    @Override
-   public void method3682(Class41 var1) {
+   public void method3682(ListNBT var1) {
       for (int var4 = 0; var4 < this.method3629(); var4++) {
          this.method3621(var4, ItemStack.EMPTY);
       }
 
       for (int var7 = 0; var7 < var1.size(); var7++) {
-         Class39 var5 = var1.method153(var7);
+         CompoundNBT var5 = var1.method153(var7);
          int var6 = var5.method120("Slot") & 255;
          if (var6 >= 0 && var6 < this.method3629()) {
             this.method3621(var6, ItemStack.method32104(var5));
@@ -27,13 +27,13 @@ public class Class980 extends Class927 {
    }
 
    @Override
-   public Class41 method3683() {
-      Class41 var3 = new Class41();
+   public ListNBT method3683() {
+      ListNBT var3 = new ListNBT();
 
       for (int var4 = 0; var4 < this.method3629(); var4++) {
          ItemStack var5 = this.method3618(var4);
-         if (!var5.method32105()) {
-            Class39 var6 = new Class39();
+         if (!var5.isEmpty()) {
+            CompoundNBT var6 = new CompoundNBT();
             var6.method100("Slot", (byte)var4);
             var5.method32112(var6);
             var3.add(var6);

@@ -13,11 +13,11 @@ public class Class4703 implements Class4698 {
       var0 -> var0.group(
                Class6698.field29330.fieldOf("state_provider").forGetter(var0x -> var0x.field22306),
                Class6166.field27591.fieldOf("block_placer").forGetter(var0x -> var0x.field22307),
-               Class7380.field31585
+               BlockState.field31585
                   .listOf()
                   .fieldOf("whitelist")
-                  .forGetter(var0x -> var0x.field22308.stream().<Class7380>map(Block::method11579).collect(Collectors.toList())),
-               Class7380.field31585.listOf().fieldOf("blacklist").forGetter(var0x -> ImmutableList.copyOf(var0x.field22309)),
+                  .forGetter(var0x -> var0x.field22308.stream().<BlockState>map(Block::method11579).collect(Collectors.toList())),
+               BlockState.field31585.listOf().fieldOf("blacklist").forGetter(var0x -> ImmutableList.copyOf(var0x.field22309)),
                Codec.INT.fieldOf("tries").orElse(128).forGetter(var0x -> var0x.field22310),
                Codec.INT.fieldOf("xspread").orElse(7).forGetter(var0x -> var0x.field22311),
                Codec.INT.fieldOf("yspread").orElse(3).forGetter(var0x -> var0x.field22312),
@@ -31,7 +31,7 @@ public class Class4703 implements Class4698 {
    public final Class6698 field22306;
    public final Class6166 field22307;
    public final Set<Block> field22308;
-   public final Set<Class7380> field22309;
+   public final Set<BlockState> field22309;
    public final int field22310;
    public final int field22311;
    public final int field22312;
@@ -43,8 +43,8 @@ public class Class4703 implements Class4698 {
    private Class4703(
       Class6698 var1,
       Class6166 var2,
-      List<Class7380> var3,
-      List<Class7380> var4,
+      List<BlockState> var3,
+      List<BlockState> var4,
       int var5,
       int var6,
       int var7,
@@ -56,7 +56,7 @@ public class Class4703 implements Class4698 {
       this(
          var1,
          var2,
-         var3.stream().<Block>map(Class7377::method23383).collect(Collectors.<Block>toSet()),
+         var3.stream().<Block>map(Class7377::getBlock).collect(Collectors.<Block>toSet()),
          ImmutableSet.copyOf(var4),
          var5,
          var6,
@@ -72,7 +72,7 @@ public class Class4703 implements Class4698 {
            Class6698 var1,
            Class6166 var2,
            Set<Block> var3,
-           Set<Class7380> var4,
+           Set<BlockState> var4,
            int var5,
            int var6,
            int var7,

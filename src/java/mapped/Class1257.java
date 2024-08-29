@@ -14,7 +14,7 @@ public class Class1257 extends Class1255 {
    }
 
    @Override
-   public Set<Class3257> method5866() {
+   public Set<Item> method5866() {
       return Class924.method3640().keySet();
    }
 }

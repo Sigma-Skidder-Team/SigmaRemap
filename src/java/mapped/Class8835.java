@@ -22,22 +22,22 @@ public class Class8835 {
                Codec.FLOAT.optionalFieldOf("creature_spawn_probability", 0.1F).forGetter(var0x -> var0x.field39901),
                Codec.simpleMap(
                      Class179.field629,
-                     Class6692.field29310.listOf().promotePartial(Util.method38529("Spawn data: ", field39898::error)),
+                     Class6692.field29310.listOf().promotePartial(Util.func_240982_a_("Spawn data: ", field39898::error)),
                      Class83.method260(Class179.values())
                   )
                   .fieldOf("spawners")
                   .forGetter(var0x -> var0x.field39902),
-               Codec.simpleMap(Registry.field16074, Class7763.field33334, Registry.field16074).fieldOf("spawn_costs").forGetter(var0x -> var0x.field39903),
+               Codec.simpleMap(Registry.ENTITY_TYPE, Class7763.field33334, Registry.ENTITY_TYPE).fieldOf("spawn_costs").forGetter(var0x -> var0x.field39903),
                Codec.BOOL.fieldOf("player_spawn_friendly").orElse(false).forGetter(Class8835::method31971)
             )
             .apply(var0, Class8835::new)
    );
    private final float field39901;
    private final Map<Class179, List<Class6692>> field39902;
-   private final Map<Class8992<?>, Class7763> field39903;
+   private final Map<EntityType<?>, Class7763> field39903;
    private final boolean field39904;
 
-   public Class8835(float var1, Map<Class179, List<Class6692>> var2, Map<Class8992<?>, Class7763> var3, boolean var4) {
+   public Class8835(float var1, Map<Class179, List<Class6692>> var2, Map<EntityType<?>, Class7763> var3, boolean var4) {
       this.field39901 = var1;
       this.field39902 = var2;
       this.field39903 = var3;
@@ -49,7 +49,7 @@ public class Class8835 {
    }
 
    @Nullable
-   public Class7763 method31969(Class8992<?> var1) {
+   public Class7763 method31969(EntityType<?> var1) {
       return this.field39903.get(var1);
    }
 

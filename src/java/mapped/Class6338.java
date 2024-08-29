@@ -30,12 +30,12 @@ public abstract class Class6338 implements Class6340 {
    }
 
    @Override
-   public Class6648 method19280(Class274 var1) {
+   public Class6648 method19280(SoundHandler var1) {
       Class6648 var4 = var1.method997(this.field27855);
       if (var4 != null) {
          this.field27853 = var4.method20290();
       } else {
-         this.field27853 = Class274.field1051;
+         this.field27853 = SoundHandler.field1051;
       }
 
       return var4;

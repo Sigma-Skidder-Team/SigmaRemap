@@ -22,13 +22,13 @@ public class Class2607 extends Class2605 {
       if (var3 != null) {
          if (!var3.method3066()) {
             return false;
-         } else if (!(var3 instanceof PlayerEntity) || !((PlayerEntity)var3).method2800() && !((PlayerEntity)var3).method2801()) {
+         } else if (!(var3 instanceof PlayerEntity) || !((PlayerEntity)var3).isSpectator() && !((PlayerEntity)var3).isCreative()) {
             if (!this.method10803()) {
                return false;
             } else {
                if (this.field16858.field5055 % 20 == 0) {
                   List<Class1098> var4 = this.field16858
-                     .field5024
+                     .world
                      .method6772(Class1098.class, this.field16858.method3389().method19664(16.0), Class8088.field34757);
                   if (!var4.isEmpty()) {
                      for (Class1098 var6 : var4) {
@@ -71,7 +71,7 @@ public class Class2607 extends Class2605 {
          this.field16858.method3114(var3);
          Class1110.method5352(this.field16858, Class2143.field14028);
          if (!this.field16858.method3245()) {
-            this.field16858.field5024.method6999(1039, this.field16858.method3432(), 0);
+            this.field16858.world.method6999(1039, this.field16858.getPosition(), 0);
          }
       }
    }

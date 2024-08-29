@@ -17,14 +17,14 @@ public class Class5282 extends Module {
 
     public Class5282() {
         super(ModuleCategory.COMBAT, "BowAimbot", "Automatically aims at players while using a bow");
-        this.method15972(new Class6005("Sort mode", "Sort mode", 0, "Angle", "Range"));
-        this.method15972(new Class6009<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
-        this.method15972(new Class6004("Silent", "Server-sided rotations.", false));
-        this.method15972(new Class6004("Teams", "Target team", true));
-        this.method15972(new Class6004("Players", "Target players", true));
-        this.method15972(new Class6004("Animals/Monsters", "Target animals and monsters", false));
-        this.method15972(new Class6004("Anti-Bot", "Doesn't target bots", true));
-        this.method15972(new Class6004("Invisible", "Target invisible entites", true));
+        this.registerSetting(new ModeSetting("Sort mode", "Sort mode", 0, "Angle", "Range"));
+        this.registerSetting(new Class6009<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("Silent", "Server-sided rotations.", false));
+        this.registerSetting(new BooleanSetting("Teams", "Target team", true));
+        this.registerSetting(new BooleanSetting("Players", "Target players", true));
+        this.registerSetting(new BooleanSetting("Animals/Monsters", "Target animals and monsters", false));
+        this.registerSetting(new BooleanSetting("Anti-Bot", "Doesn't target bots", true));
+        this.registerSetting(new BooleanSetting("Invisible", "Target invisible entites", true));
     }
 
     // $VF: synthetic method
@@ -65,7 +65,7 @@ public class Class5282 extends Module {
     @EventTarget
     private void method16569(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
-            if (!(mc.player.method3158().method32107() instanceof Class3263)) {
+            if (!(mc.player.method3158().getItem() instanceof Class3263)) {
                 this.field23754.clear();
             } else {
                 this.field23754 = this.method16571(this.method16004().method15977("Range"));
@@ -108,7 +108,7 @@ public class Class5282 extends Module {
                 var5.remove();
             } else if (!mc.player.method3026((Class880) var6)) {
                 var5.remove();
-            } else if (var6 instanceof Class1005) {
+            } else if (var6 instanceof ArmorStandEntity) {
                 var5.remove();
             } else if (!this.method15974("Players") && var6 instanceof PlayerEntity) {
                 var5.remove();

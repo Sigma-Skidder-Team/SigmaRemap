@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-public abstract class Class308 implements Class303 {
+public abstract class Class308 implements IResourcePack {
    private static final Logger field1196 = LogManager.getLogger();
    public final File field1197;
 
@@ -17,7 +17,7 @@ public abstract class Class308 implements Class303 {
       this.field1197 = var1;
    }
 
-   private static String method1252(Class1946 var0, ResourceLocation var1) {
+   private static String method1252(ResourcePackType var0, ResourceLocation var1) {
       return String.format("%s/%s/%s", var0.method8205(), var1.method8293(), var1.method8292());
    }
 
@@ -26,12 +26,12 @@ public abstract class Class308 implements Class303 {
    }
 
    @Override
-   public InputStream method1223(Class1946 var1, ResourceLocation var2) throws IOException {
+   public InputStream getResourceStream(ResourcePackType var1, ResourceLocation var2) throws IOException {
       return this.method1254(method1252(var1, var2));
    }
 
    @Override
-   public boolean method1225(Class1946 var1, ResourceLocation var2) {
+   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
       return this.method1255(method1252(var1, var2));
    }
 

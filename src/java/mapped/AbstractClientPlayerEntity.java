@@ -13,7 +13,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    public float field6097;
    public float field6098;
    public float field6099;
-   public final Class1656 field6100;
+   public final ClientWorld field6100;
    private ResourceLocation field6101 = null;
    private long field6102 = 0L;
    private boolean field6103 = false;
@@ -25,7 +25,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    public float field6109;
    private static final ResourceLocation field6110 = new ResourceLocation("textures/entity/elytra.png");
 
-   public AbstractClientPlayerEntity(Class1656 var1, GameProfile var2) {
+   public AbstractClientPlayerEntity(ClientWorld var1, GameProfile var2) {
       super(var1, var1.method6880(), var1.method6881(), var2);
       this.field6100 = var1;
       this.field6104 = var2.getName();
@@ -37,14 +37,14 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    }
 
    @Override
-   public boolean method2800() {
-      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getGameProfile().getId());
+   public boolean isSpectator() {
+      Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
       return var3 != null && var3.method19967() == Class1894.field11105;
    }
 
    @Override
-   public boolean method2801() {
-      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getGameProfile().getId());
+   public boolean isCreative() {
+      Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
       return var3 != null && var3.method19967() == Class1894.field11103;
    }
 
@@ -55,7 +55,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    @Nullable
    public Class6589 method5369() {
       if (this.field6096 == null) {
-         this.field6096 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getUniqueID());
+         this.field6096 = Minecraft.getInstance().getConnection().method15792(this.getUniqueID());
       }
 
       return this.field6096;
@@ -128,16 +128,16 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    public float method5378() {
       float var3 = 1.0F;
-      if (this.field4919.field29607) {
+      if (this.abilities.field29607) {
          var3 *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.method3086(Class9173.field42108) / (double)this.field4919.method20716() + 1.0) / 2.0));
-      if (this.field4919.method20716() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
+      var3 = (float)((double)var3 * ((this.method3086(Class9173.field42108) / (double)this.abilities.method20716() + 1.0) / 2.0));
+      if (this.abilities.method20716() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
          var3 = 1.0F;
       }
 
-      if (this.method3148() && this.method3158().method32107() instanceof Class3263) {
+      if (this.isHandActive() && this.method3158().getItem() instanceof Class3263) {
          int var4 = this.method3160();
          float var5 = (float)var4 / 20.0F;
          if (!(var5 > 1.0F)) {

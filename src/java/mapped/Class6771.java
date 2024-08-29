@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6771 extends Class6768<Class8278> {
-   public static final Class7380 field29539 = Blocks.PACKED_ICE.method11579();
-   public static final Class7380 field29540 = Blocks.SNOW_BLOCK.method11579();
-   private static final Class7380 field29541 = Blocks.AIR.method11579();
-   private static final Class7380 field29490 = Blocks.GRAVEL.method11579();
-   private static final Class7380 field29542 = Blocks.ICE.method11579();
+   public static final BlockState field29539 = Blocks.PACKED_ICE.method11579();
+   public static final BlockState field29540 = Blocks.SNOW_BLOCK.method11579();
+   private static final BlockState field29541 = Blocks.AIR.method11579();
+   private static final BlockState field29490 = Blocks.GRAVEL.method11579();
+   private static final BlockState field29542 = Blocks.ICE.method11579();
    private Class7691 field29543;
    private Class7691 field29544;
    private long field29545;
@@ -27,8 +27,8 @@ public class Class6771 extends Class6768<Class8278> {
       int var5,
       int var6,
       double var7,
-      Class7380 var9,
-      Class7380 var10,
+      BlockState var9,
+      BlockState var10,
       int var11,
       long var12,
       Class8278 var14
@@ -62,10 +62,10 @@ public class Class6771 extends Class6768<Class8278> {
       int var25 = var4 & 15;
       int var26 = var5 & 15;
       Class8277 var27 = var3.method32507().method24283();
-      Class7380 var28 = var27.method28935();
-      Class7380 var29 = var27.method28934();
-      Class7380 var30 = var28;
-      Class7380 var31 = var29;
+      BlockState var28 = var27.method28935();
+      BlockState var29 = var27.method28934();
+      BlockState var30 = var28;
+      BlockState var31 = var29;
       int var32 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
       int var33 = -1;
       int var34 = 0;
@@ -74,9 +74,9 @@ public class Class6771 extends Class6768<Class8278> {
 
       for (int var37 = Math.max(var6, (int)var17 + 1); var37 >= 0; var37--) {
          var21.method8372(var25, var37, var26);
-         if (var2.method6738(var21).method23393() && var37 < (int)var17 && var1.nextDouble() > 0.01) {
+         if (var2.getBlockState(var21).isAir() && var37 < (int)var17 && var1.nextDouble() > 0.01) {
             var2.method7061(var21, field29539, false);
-         } else if (var2.method6738(var21).method23384() == Class8649.field38941
+         } else if (var2.getBlockState(var21).method23384() == Class8649.field38941
             && var37 > (int)var19
             && var37 < var11
             && var19 != 0.0
@@ -84,9 +84,9 @@ public class Class6771 extends Class6768<Class8278> {
             var2.method7061(var21, field29539, false);
          }
 
-         Class7380 var44 = var2.method6738(var21);
-         if (!var44.method23393()) {
-            if (var44.method23448(var9.method23383())) {
+         BlockState var44 = var2.getBlockState(var21);
+         if (!var44.isAir()) {
+            if (var44.method23448(var9.getBlock())) {
                if (var33 != -1) {
                   if (var33 > 0) {
                      var33--;
@@ -107,7 +107,7 @@ public class Class6771 extends Class6768<Class8278> {
                      var30 = var9;
                   }
 
-                  if (var37 < var11 && (var31 == null || var31.method23393())) {
+                  if (var37 < var11 && (var31 == null || var31.isAir())) {
                      if (!(var3.method32503(var21.method8372(var4, var37, var5)) < 0.15F)) {
                         var31 = var10;
                      } else {

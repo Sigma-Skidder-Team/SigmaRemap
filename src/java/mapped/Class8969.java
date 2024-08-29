@@ -13,7 +13,7 @@ import java.util.Random;
 public class Class8969 {
    private final List<Class7285> field40545 = Lists.newArrayList();
    private final List<Class9559> field40546 = Lists.newArrayList();
-   private BlockPos field40547 = BlockPos.field13032;
+   private BlockPos field40547 = BlockPos.ZERO;
    private String field40548 = "?";
 
    public BlockPos method32886() {
@@ -29,29 +29,29 @@ public class Class8969 {
    }
 
    public void method32889(World var1, BlockPos var2, BlockPos var3, boolean var4, Block var5) {
-      if (var3.method8304() >= 1 && var3.getY() >= 1 && var3.method8306() >= 1) {
+      if (var3.getX() >= 1 && var3.getY() >= 1 && var3.getZ() >= 1) {
          BlockPos var8 = var2.method8337(var3).method8336(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
          ArrayList var10 = Lists.newArrayList();
          ArrayList var11 = Lists.newArrayList();
          BlockPos var12 = new BlockPos(
-            Math.min(var2.method8304(), var8.method8304()), Math.min(var2.getY(), var8.getY()), Math.min(var2.method8306(), var8.method8306())
+            Math.min(var2.getX(), var8.getX()), Math.min(var2.getY(), var8.getY()), Math.min(var2.getZ(), var8.getZ())
          );
          BlockPos var13 = new BlockPos(
-            Math.max(var2.method8304(), var8.method8304()), Math.max(var2.getY(), var8.getY()), Math.max(var2.method8306(), var8.method8306())
+            Math.max(var2.getX(), var8.getX()), Math.max(var2.getY(), var8.getY()), Math.max(var2.getZ(), var8.getZ())
          );
          this.field40547 = var3;
 
          for (BlockPos var15 : BlockPos.method8359(var12, var13)) {
             BlockPos var16 = var15.method8338(var12);
-            Class7380 var17 = var1.method6738(var15);
-            if (var5 == null || var5 != var17.method23383()) {
-               Class944 var18 = var1.method6759(var15);
+            BlockState var17 = var1.getBlockState(var15);
+            if (var5 == null || var5 != var17.getBlock()) {
+               TileEntity var18 = var1.getTileEntity(var15);
                Class8266 var19;
                if (var18 == null) {
-                  var19 = new Class8266(var16, var17, (Class39)null);
+                  var19 = new Class8266(var16, var17, (CompoundNBT)null);
                } else {
-                  Class39 var20 = var18.method3646(new Class39());
+                  CompoundNBT var20 = var18.write(new CompoundNBT());
                   var20.method133("x");
                   var20.method133("y");
                   var20.method133("z");
@@ -75,7 +75,7 @@ public class Class8969 {
 
    private static void method32890(Class8266 var0, List<Class8266> var1, List<Class8266> var2, List<Class8266> var3) {
       if (var0.field35532 == null) {
-         if (!var0.field35531.method23383().method11582() && var0.field35531.method23456(Class1666.field9078, BlockPos.field13032)) {
+         if (!var0.field35531.getBlock().method11582() && var0.field35531.method23456(Class1666.field9078, BlockPos.ZERO)) {
             var1.add(var0);
          } else {
             var3.add(var0);
@@ -87,8 +87,8 @@ public class Class8969 {
 
    private static List<Class8266> method32891(List<Class8266> var0, List<Class8266> var1, List<Class8266> var2) {
       Comparator var5 = Comparator.<Class8266>comparingInt(var0x -> var0x.field35530.getY())
-         .thenComparingInt(var0x -> var0x.field35530.method8304())
-         .thenComparingInt(var0x -> var0x.field35530.method8306());
+         .thenComparingInt(var0x -> var0x.field35530.getX())
+         .thenComparingInt(var0x -> var0x.field35530.getZ());
       var0.sort(var5);
       var2.sort(var5);
       var1.sort(var5);
@@ -105,15 +105,15 @@ public class Class8969 {
 
       for (Entity var8 : var6) {
          Vector3d var9 = new Vector3d(
-            var8.getPosX() - (double)var2.method8304(), var8.getPosY() - (double)var2.getY(), var8.getPosZ() - (double)var2.method8306()
+            var8.getPosX() - (double)var2.getX(), var8.getPosY() - (double)var2.getY(), var8.getPosZ() - (double)var2.getZ()
          );
-         Class39 var10 = new Class39();
+         CompoundNBT var10 = new CompoundNBT();
          var8.method3293(var10);
          BlockPos var11;
-         if (!(var8 instanceof Class998)) {
+         if (!(var8 instanceof PaintingEntity)) {
             var11 = new BlockPos(var9);
          } else {
-            var11 = ((Class998)var8).method4085().method8338(var2);
+            var11 = ((PaintingEntity)var8).method4085().method8338(var2);
          }
 
          this.field40546.add(new Class9559(var9, var11, var10.method79()));
@@ -166,9 +166,9 @@ public class Class8969 {
       } else {
          List<Class8266> var9 = var4.method36446(this.field40545, var2).method22980();
          if ((!var9.isEmpty() || !var4.method36440() && !this.field40546.isEmpty())
-            && this.field40547.method8304() >= 1
+            && this.field40547.getX() >= 1
             && this.field40547.getY() >= 1
-            && this.field40547.method8306() >= 1) {
+            && this.field40547.getZ() >= 1) {
             Class9764 var10 = var4.method36441();
             List<BlockPos> var11 = Lists.newArrayListWithCapacity(!var4.method36445() ? 0 : var9.size());
             List<Pair> var12 = Lists.newArrayListWithCapacity(var9.size());
@@ -183,27 +183,27 @@ public class Class8969 {
                BlockPos var21 = var20.field35530;
                if (var10 == null || var10.method38396(var21)) {
                   Class7379 var22 = !var4.method36445() ? null : var1.method6739(var21);
-                  Class7380 var23 = var20.field35531.method23396(var4.method36436()).method23395(var4.method36437());
+                  BlockState var23 = var20.field35531.method23396(var4.method36436()).method23395(var4.method36437());
                   if (var20.field35532 != null) {
-                     Class944 var24 = var1.method6759(var21);
+                     TileEntity var24 = var1.getTileEntity(var21);
                      Class946.method3802(var24);
                      var1.method6725(var21, Blocks.field36765.method11579(), 20);
                   }
 
                   if (var1.method6725(var21, var23, var6)) {
-                     var13 = Math.min(var13, var21.method8304());
+                     var13 = Math.min(var13, var21.getX());
                      var14 = Math.min(var14, var21.getY());
-                     var15 = Math.min(var15, var21.method8306());
-                     var16 = Math.max(var16, var21.method8304());
+                     var15 = Math.min(var15, var21.getZ());
+                     var16 = Math.max(var16, var21.getX());
                      var17 = Math.max(var17, var21.getY());
-                     var18 = Math.max(var18, var21.method8306());
+                     var18 = Math.max(var18, var21.getZ());
                      var12.add(Pair.of(var21, var20.field35532));
                      if (var20.field35532 != null) {
-                        Class944 var39 = var1.method6759(var21);
+                        TileEntity var39 = var1.getTileEntity(var21);
                         if (var39 != null) {
-                           var20.field35532.method102("x", var21.method8304());
+                           var20.field35532.method102("x", var21.getX());
                            var20.field35532.method102("y", var21.getY());
-                           var20.field35532.method102("z", var21.method8306());
+                           var20.field35532.method102("z", var21.getZ());
                            if (var39 instanceof Class939) {
                               var20.field35532.method103("LootTableSeed", var5.nextLong());
                            }
@@ -214,8 +214,8 @@ public class Class8969 {
                         }
                      }
 
-                     if (var22 != null && var23.method23383() instanceof Class3449) {
-                        ((Class3449)var23.method23383()).method11532(var1, var21, var23, var22);
+                     if (var22 != null && var23.getBlock() instanceof Class3449) {
+                        ((Class3449)var23.getBlock()).method11532(var1, var21, var23, var22);
                         if (!var22.method23473()) {
                            var11.add(var21);
                         }
@@ -246,8 +246,8 @@ public class Class8969 {
                   }
 
                   if (var40.method23473()) {
-                     Class7380 var44 = var1.method6738(var33);
-                     Block var47 = var44.method23383();
+                     BlockState var44 = var1.getBlockState(var33);
+                     Block var47 = var44.getBlock();
                      if (var47 instanceof Class3449) {
                         ((Class3449)var47).method11532(var1, var33, var44, var40);
                         var28 = true;
@@ -266,7 +266,7 @@ public class Class8969 {
 
                   for (Pair var48 : var12) {
                      BlockPos var49 = (BlockPos)var48.getFirst();
-                     var31.method26718(var49.method8304() - var34, var49.getY() - var37, var49.method8306() - var41, true, true);
+                     var31.method26718(var49.getX() - var34, var49.getY() - var37, var49.getZ() - var41, true, true);
                   }
 
                   method32900(var1, var6, var31, var34, var37, var41);
@@ -275,17 +275,17 @@ public class Class8969 {
                for (Pair var35 : var12) {
                   BlockPos var38 = (BlockPos)var35.getFirst();
                   if (!var4.method36442()) {
-                     Class7380 var42 = var1.method6738(var38);
-                     Class7380 var46 = Block.method11542(var42, var1, var38);
+                     BlockState var42 = var1.getBlockState(var38);
+                     BlockState var46 = Block.method11542(var42, var1, var38);
                      if (var42 != var46) {
                         var1.method6725(var38, var46, var6 & -2 | 16);
                      }
 
-                     var1.method6964(var38, var46.method23383());
+                     var1.method6964(var38, var46.getBlock());
                   }
 
                   if (var35.getSecond() != null) {
-                     Class944 var43 = var1.method6759(var38);
+                     TileEntity var43 = var1.getTileEntity(var38);
                      if (var43 != null) {
                         var43.method3622();
                      }
@@ -308,14 +308,14 @@ public class Class8969 {
       var2.method26740((var5x, var6, var7, var8) -> {
          BlockPos var11 = new BlockPos(var3 + var6, var4 + var7, var5 + var8);
          BlockPos var12 = var11.method8349(var5x);
-         Class7380 var13 = var0.method6738(var11);
-         Class7380 var14 = var0.method6738(var12);
-         Class7380 var15 = var13.method23439(var5x, var14, var0, var11, var12);
+         BlockState var13 = var0.getBlockState(var11);
+         BlockState var14 = var0.getBlockState(var12);
+         BlockState var15 = var13.method23439(var5x, var14, var0, var11, var12);
          if (var13 != var15) {
             var0.method6725(var11, var15, var1 & -2);
          }
 
-         Class7380 var16 = var14.method23439(var5x.method536(), var15, var0, var12, var11);
+         BlockState var16 = var14.method23439(var5x.method536(), var15, var0, var12, var11);
          if (var14 != var16) {
             var0.method6725(var12, var16, var1 & -2);
          }
@@ -346,14 +346,14 @@ public class Class8969 {
       for (Class9559 var11 : this.field40546) {
          BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
          if (var6 == null || var6.method38396(var12)) {
-            Class39 var13 = var11.field44529.method79();
+            CompoundNBT var13 = var11.field44529.method79();
             Vector3d var14 = method32906(var11.field44527, var3, var4, var5);
-            Vector3d var15 = var14.method11339((double)var2.method8304(), (double)var2.getY(), (double)var2.method8306());
-            Class41 var16 = new Class41();
+            Vector3d var15 = var14.method11339((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+            ListNBT var16 = new ListNBT();
             var16.add(Class34.method93(var15.field18048));
             var16.add(Class34.method93(var15.field18049));
             var16.add(Class34.method93(var15.field18050));
-            var13.method99("Pos", var16);
+            var13.put("Pos", var16);
             var13.method133("UUID");
             method32903(var1, var13).ifPresent(var6x -> {
                float var9 = var6x.method3403(var3);
@@ -369,9 +369,9 @@ public class Class8969 {
       }
    }
 
-   private static Optional<Entity> method32903(Class1659 var0, Class39 var1) {
+   private static Optional<Entity> method32903(Class1659 var0, CompoundNBT var1) {
       try {
-         return Class8992.method33217(var1, var0.method6970());
+         return EntityType.method33217(var1, var0.method6970());
       } catch (Exception var5) {
          return Optional.<Entity>empty();
       }
@@ -381,16 +381,16 @@ public class Class8969 {
       switch (Class9051.field41436[var1.ordinal()]) {
          case 1:
          case 2:
-            return new BlockPos(this.field40547.method8306(), this.field40547.getY(), this.field40547.method8304());
+            return new BlockPos(this.field40547.getZ(), this.field40547.getY(), this.field40547.getX());
          default:
             return this.field40547;
       }
    }
 
    public static BlockPos method32905(BlockPos var0, Class2089 var1, Class80 var2, BlockPos var3) {
-      int var6 = var0.method8304();
+      int var6 = var0.getX();
       int var7 = var0.getY();
-      int var8 = var0.method8306();
+      int var8 = var0.getZ();
       boolean var9 = true;
       switch (Class9051.field41437[var1.ordinal()]) {
          case 1:
@@ -403,8 +403,8 @@ public class Class8969 {
             var9 = false;
       }
 
-      int var10 = var3.method8304();
-      int var11 = var3.method8306();
+      int var10 = var3.getX();
+      int var11 = var3.getZ();
       switch (Class9051.field41436[var2.ordinal()]) {
          case 1:
             return new BlockPos(var10 - var11 + var8, var7, var10 + var11 - var6);
@@ -433,8 +433,8 @@ public class Class8969 {
             var12 = false;
       }
 
-      int var13 = var3.method8304();
-      int var14 = var3.method8306();
+      int var13 = var3.getX();
+      int var14 = var3.getZ();
       switch (Class9051.field41436[var2.ordinal()]) {
          case 1:
             return new Vector3d((double)(var13 - var14) + var10, var8, (double)(var13 + var14 + 1) - var6);
@@ -448,7 +448,7 @@ public class Class8969 {
    }
 
    public BlockPos method32907(BlockPos var1, Class2089 var2, Class80 var3) {
-      return method32908(var1, var2, var3, this.method32886().method8304(), this.method32886().method8306());
+      return method32908(var1, var2, var3, this.method32886().getX(), this.method32886().getZ());
    }
 
    public static BlockPos method32908(BlockPos var0, Class2089 var1, Class80 var2, int var3, int var4) {
@@ -480,11 +480,11 @@ public class Class8969 {
 
    public Class9764 method32910(BlockPos var1, Class80 var2, BlockPos var3, Class2089 var4) {
       BlockPos var7 = this.method32904(var2);
-      int var8 = var3.method8304();
-      int var9 = var3.method8306();
-      int var10 = var7.method8304() - 1;
+      int var8 = var3.getX();
+      int var9 = var3.getZ();
+      int var10 = var7.getX() - 1;
       int var11 = var7.getY() - 1;
-      int var12 = var7.method8306() - 1;
+      int var12 = var7.getZ() - 1;
       Class9764 var13 = new Class9764(0, 0, 0, 0, 0, 0);
       switch (Class9051.field41436[var2.ordinal()]) {
          case 1:
@@ -509,12 +509,12 @@ public class Class8969 {
          case 3:
       }
 
-      var13.method38393(var1.method8304(), var1.getY(), var1.method8306());
+      var13.method38393(var1.getX(), var1.getY(), var1.getZ());
       return var13;
    }
 
    private void method32911(Class80 var1, int var2, int var3, Class9764 var4, Direction var5, Direction var6) {
-      BlockPos var9 = BlockPos.field13032;
+      BlockPos var9 = BlockPos.ZERO;
       if (var1 == Class80.field186 || var1 == Class80.field188) {
          var9 = var9.method8350(var1.method252(var5), var3);
       } else if (var1 != Class80.field187) {
@@ -523,10 +523,10 @@ public class Class8969 {
          var9 = var9.method8350(var6, var2);
       }
 
-      var4.method38393(var9.method8304(), 0, var9.method8306());
+      var4.method38393(var9.getX(), 0, var9.getZ());
    }
 
-   public Class39 method32912(Class39 var1) {
+   public CompoundNBT method32912(CompoundNBT var1) {
       if (!this.field40545.isEmpty()) {
          List<Class2354> var4 = Lists.newArrayList();
          Class2354 var5 = new Class2354();
@@ -536,17 +536,17 @@ public class Class8969 {
             var4.add(new Class2354());
          }
 
-         Class41 var16 = new Class41();
+         ListNBT var16 = new ListNBT();
          List var7 = this.field40545.get(0).method22980();
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             Class8266 var9 = (Class8266)var7.get(var8);
-            Class39 var10 = new Class39();
-            var10.method99("pos", this.method32915(var9.field35530.method8304(), var9.field35530.getY(), var9.field35530.method8306()));
+            CompoundNBT var10 = new CompoundNBT();
+            var10.put("pos", this.method32915(var9.field35530.getX(), var9.field35530.getY(), var9.field35530.getZ()));
             int var11 = var5.method9281(var9.field35531);
             var10.method102("state", var11);
             if (var9.field35532 != null) {
-               var10.method99("nbt", var9.field35532);
+               var10.put("nbt", var9.field35532);
             }
 
             var16.add(var10);
@@ -557,86 +557,86 @@ public class Class8969 {
             }
          }
 
-         var1.method99("blocks", var16);
+         var1.put("blocks", var16);
          if (var4.size() != 1) {
-            Class41 var19 = new Class41();
+            ListNBT var19 = new ListNBT();
 
             for (Class2354 var23 : var4) {
-               Class41 var25 = new Class41();
+               ListNBT var25 = new ListNBT();
 
-               for (Class7380 var27 : var23) {
+               for (BlockState var27 : var23) {
                   var25.add(Class8354.method29287(var27));
                }
 
                var19.add(var25);
             }
 
-            var1.method99("palettes", var19);
+            var1.put("palettes", var19);
          } else {
-            Class41 var20 = new Class41();
+            ListNBT var20 = new ListNBT();
 
-            for (Class7380 var24 : var5) {
+            for (BlockState var24 : var5) {
                var20.add(Class8354.method29287(var24));
             }
 
-            var1.method99("palette", var20);
+            var1.put("palette", var20);
          }
       } else {
-         var1.method99("blocks", new Class41());
-         var1.method99("palette", new Class41());
+         var1.put("blocks", new ListNBT());
+         var1.put("palette", new ListNBT());
       }
 
-      Class41 var14 = new Class41();
+      ListNBT var14 = new ListNBT();
 
       for (Class9559 var17 : this.field40546) {
-         Class39 var18 = new Class39();
-         var18.method99("pos", this.method32916(var17.field44527.field18048, var17.field44527.field18049, var17.field44527.field18050));
-         var18.method99("blockPos", this.method32915(var17.field44528.method8304(), var17.field44528.getY(), var17.field44528.method8306()));
+         CompoundNBT var18 = new CompoundNBT();
+         var18.put("pos", this.method32916(var17.field44527.field18048, var17.field44527.field18049, var17.field44527.field18050));
+         var18.put("blockPos", this.method32915(var17.field44528.getX(), var17.field44528.getY(), var17.field44528.getZ()));
          if (var17.field44529 != null) {
-            var18.method99("nbt", var17.field44529);
+            var18.put("nbt", var17.field44529);
          }
 
          var14.add(var18);
       }
 
-      var1.method99("entities", var14);
-      var1.method99("size", this.method32915(this.field40547.method8304(), this.field40547.getY(), this.field40547.method8306()));
-      var1.method102("DataVersion", SharedConstants.method34773().getWorldVersion());
+      var1.put("entities", var14);
+      var1.put("size", this.method32915(this.field40547.getX(), this.field40547.getY(), this.field40547.getZ()));
+      var1.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
       return var1;
    }
 
-   public void method32913(Class39 var1) {
+   public void method32913(CompoundNBT var1) {
       this.field40545.clear();
       this.field40546.clear();
-      Class41 var4 = var1.method131("size", 3);
+      ListNBT var4 = var1.method131("size", 3);
       this.field40547 = new BlockPos(var4.method156(0), var4.method156(1), var4.method156(2));
-      Class41 var5 = var1.method131("blocks", 10);
+      ListNBT var5 = var1.method131("blocks", 10);
       if (!var1.method119("palettes", 9)) {
          this.method32914(var1.method131("palette", 10), var5);
       } else {
-         Class41 var6 = var1.method131("palettes", 9);
+         ListNBT var6 = var1.method131("palettes", 9);
 
          for (int var7 = 0; var7 < var6.size(); var7++) {
             this.method32914(var6.method154(var7), var5);
          }
       }
 
-      Class41 var14 = var1.method131("entities", 10);
+      ListNBT var14 = var1.method131("entities", 10);
 
       for (int var15 = 0; var15 < var14.size(); var15++) {
-         Class39 var8 = var14.method153(var15);
-         Class41 var9 = var8.method131("pos", 6);
+         CompoundNBT var8 = var14.method153(var15);
+         ListNBT var9 = var8.method131("pos", 6);
          Vector3d var10 = new Vector3d(var9.method158(0), var9.method158(1), var9.method158(2));
-         Class41 var11 = var8.method131("blockPos", 3);
+         ListNBT var11 = var8.method131("blockPos", 3);
          BlockPos var12 = new BlockPos(var11.method156(0), var11.method156(1), var11.method156(2));
-         if (var8.method118("nbt")) {
-            Class39 var13 = var8.method130("nbt");
+         if (var8.contains("nbt")) {
+            CompoundNBT var13 = var8.getCompound("nbt");
             this.field40546.add(new Class9559(var10, var12, var13));
          }
       }
    }
 
-   private void method32914(Class41 var1, Class41 var2) {
+   private void method32914(ListNBT var1, ListNBT var2) {
       Class2354 var5 = new Class2354();
 
       for (int var6 = 0; var6 < var1.size(); var6++) {
@@ -648,15 +648,15 @@ public class Class8969 {
       ArrayList var8 = Lists.newArrayList();
 
       for (int var9 = 0; var9 < var2.size(); var9++) {
-         Class39 var10 = var2.method153(var9);
-         Class41 var11 = var10.method131("pos", 3);
+         CompoundNBT var10 = var2.method153(var9);
+         ListNBT var11 = var10.method131("pos", 3);
          BlockPos var12 = new BlockPos(var11.method156(0), var11.method156(1), var11.method156(2));
-         Class7380 var13 = var5.method9282(var10.method122("state"));
-         Class39 var14;
-         if (!var10.method118("nbt")) {
+         BlockState var13 = var5.method9282(var10.method122("state"));
+         CompoundNBT var14;
+         if (!var10.contains("nbt")) {
             var14 = null;
          } else {
-            var14 = var10.method130("nbt");
+            var14 = var10.getCompound("nbt");
          }
 
          Class8266 var15 = new Class8266(var12, var13, var14);
@@ -667,8 +667,8 @@ public class Class8969 {
       this.field40545.add(new Class7285(var17));
    }
 
-   private Class41 method32915(int... var1) {
-      Class41 var4 = new Class41();
+   private ListNBT method32915(int... var1) {
+      ListNBT var4 = new ListNBT();
 
       for (int var8 : var1) {
          var4.add(Class36.method95(var8));
@@ -677,8 +677,8 @@ public class Class8969 {
       return var4;
    }
 
-   private Class41 method32916(double... var1) {
-      Class41 var4 = new Class41();
+   private ListNBT method32916(double... var1) {
+      ListNBT var4 = new ListNBT();
 
       for (double var8 : var1) {
          var4.add(Class34.method93(var8));

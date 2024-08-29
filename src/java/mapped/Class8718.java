@@ -31,9 +31,9 @@ public final class Class8718 {
       double var13 = var1 + this.field39337;
       double var15 = var3 + this.field39338;
       double var17 = var5 + this.field39339;
-      int var19 = MathHelper.method37769(var13);
-      int var20 = MathHelper.method37769(var15);
-      int var21 = MathHelper.method37769(var17);
+      int var19 = MathHelper.floor(var13);
+      int var20 = MathHelper.floor(var15);
+      int var21 = MathHelper.floor(var17);
       double var22 = var13 - (double)var19;
       double var24 = var15 - (double)var20;
       double var26 = var17 - (double)var21;
@@ -45,7 +45,7 @@ public final class Class8718 {
          var34 = 0.0;
       } else {
          double var36 = Math.min(var9, var24);
-         var34 = (double) MathHelper.method37769(var36 / var7) * var7;
+         var34 = (double) MathHelper.floor(var36 / var7) * var7;
       }
 
       return this.method31447(var19, var20, var21, var22, var24 - var34, var26, var28, var30, var32);

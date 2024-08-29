@@ -33,6 +33,6 @@ public class Class1225 extends Class1206 {
 
    @Override
    public IFormattableTextComponent method5634() {
-      return Class7127.method22238(this.field6571, this.field6572.method24174()).appendString("\n").appendString(this.field6573);
+      return DialogTexts.method22238(this.field6571, this.field6572.method24174()).appendString("\n").appendString(this.field6573);
    }
 }

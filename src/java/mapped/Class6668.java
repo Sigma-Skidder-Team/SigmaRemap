@@ -23,20 +23,20 @@ public class Class6668 {
    }
 
    public Biome method20323(BlockPos var1) {
-      return this.field29241.method8225(this.field29240, var1.method8304(), var1.getY(), var1.method8306(), this.field29239);
+      return this.field29241.method8225(this.field29240, var1.getX(), var1.getY(), var1.getZ(), this.field29239);
    }
 
    public Biome method20324(double var1, double var3, double var5) {
-      int var9 = MathHelper.method37769(var1) >> 2;
-      int var10 = MathHelper.method37769(var3) >> 2;
-      int var11 = MathHelper.method37769(var5) >> 2;
+      int var9 = MathHelper.floor(var1) >> 2;
+      int var10 = MathHelper.floor(var3) >> 2;
+      int var11 = MathHelper.floor(var5) >> 2;
       return this.method20326(var9, var10, var11);
    }
 
-   public Biome method20325(BlockPos var1) {
-      int var4 = var1.method8304() >> 2;
+   public Biome getBiomeAtPosition(BlockPos var1) {
+      int var4 = var1.getX() >> 2;
       int var5 = var1.getY() >> 2;
-      int var6 = var1.method8306() >> 2;
+      int var6 = var1.getZ() >> 2;
       return this.method20326(var4, var5, var6);
    }
 

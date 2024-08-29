@@ -48,7 +48,7 @@ public class Class5147 implements Class5146 {
    }
 
    public JsonElement get() {
-      Class9348 var3 = this.field23370.method11577();
+      Class9348 var3 = this.field23370.getStateContainer();
       this.field23371.forEach(var1 -> var1.method15929(var3));
       JsonArray var4 = new JsonArray();
       this.field23371.stream().<JsonElement>map(Class5144::get).forEach(var4::add);

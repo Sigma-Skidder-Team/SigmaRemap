@@ -28,8 +28,8 @@ public class Class4255 extends Class4247 {
       int var4 = this.method13267() / 2 + this.field20895;
       int var5 = this.method13269() / 2 + this.field20896;
       Class3192.method11439(
-         Class7925.field33945,
-         (float)(this.field20895 + (this.method13267() - Class7925.field33945.method23942(this.field20912)) / 2),
+         ClassicDecryption.regular25,
+         (float)(this.field20895 + (this.method13267() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
          (float)(this.field20896 + this.method13269() - 50),
          this.field20912,
          !this.method13298() ? -14869219 : -319475

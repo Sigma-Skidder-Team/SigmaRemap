@@ -13,7 +13,7 @@ public class Class8338 extends Class8337<Class8921> {
    private static final Logger field35853 = LogManager.getLogger();
    private final Stopwatch field35854 = Stopwatch.createUnstarted();
 
-   public Class8338(Class191 var1, List<Class268> var2, Executor var3, Executor var4, CompletableFuture<Class2341> var5) {
+   public Class8338(IResourceManager var1, List<Class268> var2, Executor var3, Executor var4, CompletableFuture<Class2341> var5) {
       super(var3, var4, var1, var2, (var1x, var2x, var3x, var4x, var5x) -> {
          AtomicLong var8 = new AtomicLong();
          AtomicLong var9 = new AtomicLong();
@@ -40,8 +40,8 @@ public class Class8338 extends Class8337<Class8921> {
       field35853.info("Resource reload finished after " + this.field35854.elapsed(TimeUnit.MILLISECONDS) + " ms");
 
       for (Class8921 var6 : var1) {
-         Class7740 var7 = Class8921.method32598(var6);
-         Class7740 var8 = Class8921.method32599(var6);
+         IProfileResult var7 = Class8921.method32598(var6);
+         IProfileResult var8 = Class8921.method32599(var6);
          int var9 = (int)((double)Class8921.method32600(var6).get() / 1000000.0);
          int var10 = (int)((double)Class8921.method32601(var6).get() / 1000000.0);
          int var11 = var9 + var10;

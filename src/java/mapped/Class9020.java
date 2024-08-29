@@ -93,8 +93,8 @@ public class Class9020 {
       });
    }
 
-   public Class41 method33389() {
-      Class41 var3 = new Class41();
+   public ListNBT method33389() {
+      ListNBT var3 = new ListNBT();
 
       for (Class9805 var5 : this.field41271.values()) {
          var3.add(var5.method38678());
@@ -103,11 +103,11 @@ public class Class9020 {
       return var3;
    }
 
-   public void method33390(Class41 var1) {
+   public void method33390(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         Class39 var5 = var1.method153(var4);
+         CompoundNBT var5 = var1.method153(var4);
          String var6 = var5.method126("Name");
-         Util.<Class4869>method38514(Registry.field16087.method9187(ResourceLocation.method8289(var6)), var2 -> {
+         Util.<Class4869>acceptOrElse(Registry.field16087.method9187(ResourceLocation.method8289(var6)), var2 -> {
             Class9805 var5x = this.method33380(var2);
             if (var5x != null) {
                var5x.method38679(var5);

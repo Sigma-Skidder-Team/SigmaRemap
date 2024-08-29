@@ -40,7 +40,7 @@ public class Class807 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4317 = new Class1289(this);
       if (field4313 != -1) {
          this.field4317.method6045((double)field4313);
@@ -62,7 +62,7 @@ public class Class807 extends Class798 {
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 - 100, this.field4565 - 35, 85, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field4314))
+         new Class1206(this.field4564 - 100, this.field4565 - 35, 85, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4314))
       );
       this.<Class1289>method2456(this.field4317);
       this.field4325 = this.<Class1153>method2456(new Class1153(new TranslationTextComponent("mco.configure.world.backup"), this.field4564 / 2, 12, 16777215));
@@ -266,12 +266,12 @@ public class Class807 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2196(Class807 var0) {
+   public static FontRenderer method2196(Class807 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2197(Class807 var0) {
+   public static FontRenderer method2197(Class807 var0) {
       return var0.field4568;
    }
 

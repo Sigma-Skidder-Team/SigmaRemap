@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -14,7 +13,7 @@ public class Class2917 extends Class2914 {
    }
 
    @Override
-   public boolean method11249(Class1660 var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11249(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
       if (!this.method11250(var1, var2, var3, var4)) {
          return false;
       } else {

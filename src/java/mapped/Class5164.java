@@ -10,8 +10,8 @@ public class Class5164 extends Module {
 
     public Class5164() {
         super(ModuleCategory.MISC, "Spammer", "Spam a message");
-        this.method15972(new Class6011("Message", "The message sent.", "Use Sigma Client, it's free ! %r"));
-        this.method15972(new Class6009<Float>("Messages delay", "Delay between messages", 3.0F, Float.class, 0.1F, 10.0F, 0.1F));
+        this.registerSetting(new Class6011("Message", "The message sent.", "Use Sigma Client, it's free ! %r"));
+        this.registerSetting(new Class6009<Float>("Messages delay", "Delay between messages", 3.0F, Float.class, 0.1F, 10.0F, 0.1F));
     }
 
     @EventTarget

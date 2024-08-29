@@ -45,9 +45,9 @@ public class MainMenuScreen extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       if (this.method2594()) {
-         this.field4713.method1919();
+         this.field4713.tick();
       }
    }
 
@@ -58,7 +58,7 @@ public class MainMenuScreen extends Screen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 
@@ -70,15 +70,15 @@ public class MainMenuScreen extends Screen {
    @Override
    public void method1921() {
       if (this.field4708 == null) {
-         this.field4708 = this.field4562.method1576().method990();
+         this.field4708 = this.field4562.getSplashes().method990();
       }
 
-      this.field4714 = this.field4568.method38820("Copyright Mojang AB. Do not distribute!");
+      this.field4714 = this.field4568.getStringWidth("Copyright Mojang AB. Do not distribute!");
       this.field4715 = this.field4564 - this.field4714 - 2;
       byte var3 = 24;
       int var4 = this.field4565 / 4 + 48;
       Class1206 var5 = null;
-      if (!this.field4562.method1513()) {
+      if (!this.field4562.isDemo()) {
          this.method2596(var4, 24);
          if (Class9299.field42976.method20241()) {
             var5 = Class9561.method37053(this, var4, 24);
@@ -100,7 +100,7 @@ public class MainMenuScreen extends Screen {
             Class1206.field6474,
             256,
             256,
-            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field4562.gameSettings, this.field4562.method1541())),
+            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field4562.gameSettings, this.field4562.getLanguageManager())),
             new TranslationTextComponent("narrator.button.language")
          )
       );
@@ -133,7 +133,7 @@ public class MainMenuScreen extends Screen {
             new TranslationTextComponent("narrator.button.accessibility")
          )
       );
-      this.field4562.method1560(false);
+      this.field4562.setConnectedToRealms(false);
       if (this.field4562.gameSettings.field44620 && !this.field4712) {
          Class810 var6 = new Class810();
          this.field4713 = var6.method2210(this);
@@ -141,7 +141,7 @@ public class MainMenuScreen extends Screen {
       }
 
       if (this.method2594()) {
-         this.field4713.method2467(this.field4562, this.field4564, this.field4565);
+         this.field4713.init(this.field4562, this.field4564, this.field4565);
       }
 
       if (Class9299.field42978.method20214()) {
@@ -161,7 +161,7 @@ public class MainMenuScreen extends Screen {
             if (!var1x.field6482) {
                this.method2461(
                   var2x,
-                  this.field4562.field1294.method38828(new TranslationTextComponent("title.multiplayer.disabled"), Math.max(this.field4564 / 2 - 43, 170)),
+                  this.field4562.fontRenderer.method38828(new TranslationTextComponent("title.multiplayer.disabled"), Math.max(this.field4564 / 2 - 43, 170)),
                   var3,
                   var4
                );
@@ -187,10 +187,10 @@ public class MainMenuScreen extends Screen {
       boolean var5 = this.method2598();
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.playdemo"), var2x -> {
          if (!var5) {
-            Class8905 var5x = Class8904.method32457();
-            this.field4562.method1500("Demo_World", MinecraftServer.field1210, var5x, Class7846.method26256(var5x));
+            Class8905 var5x = DynamicRegistries.func_239770_b_();
+            this.field4562.createWorld("Demo_World", MinecraftServer.field1210, var5x, DimensionGeneratorSettings.method26256(var5x));
          } else {
-            this.field4562.method1499("Demo_World");
+            this.field4562.loadWorld("Demo_World");
          }
       }));
       this.field4709 = this.<Class1206>method2455(
@@ -203,22 +203,22 @@ public class MainMenuScreen extends Screen {
             var1x -> {
                SaveFormat var4 = this.field4562.getSaveLoader();
 
-               try (Class1814 var5x = var4.method38468("Demo_World")) {
+               try (SaveFormat.LevelSave var5x = var4.getLevelSave("Demo_World")) {
                   Class2024 var7 = var5x.method7997();
                   if (var7 != null) {
                      this.field4562
                         .displayGuiScreen(
-                           new Class829(
+                           new ConfirmScreen(
                               this::method2600,
                               new TranslationTextComponent("selectWorld.deleteQuestion"),
                               new TranslationTextComponent("selectWorld.deleteWarning", var7.method8644()),
                               new TranslationTextComponent("selectWorld.deleteButton"),
-                              Class7127.field30659
+                              DialogTexts.GUI_CANCEL
                            )
                         );
                   }
                } catch (IOException var18) {
-                  Class7603.method24908(this.field4562, "Demo_World");
+                  SystemToast.func_238535_a_(this.field4562, "Demo_World");
                   field4703.warn("Failed to access demo world", var18);
                }
             }
@@ -228,10 +228,10 @@ public class MainMenuScreen extends Screen {
    }
 
    private boolean method2598() {
-      try (Class1814 var3 = this.field4562.getSaveLoader().method38468("Demo_World")) {
+      try (SaveFormat.LevelSave var3 = this.field4562.getSaveLoader().getLevelSave("Demo_World")) {
          return var3.method7997() != null;
       } catch (IOException var17) {
-         Class7603.method24908(this.field4562, "Demo_World");
+         SystemToast.func_238535_a_(this.field4562, "Demo_World");
          field4703.warn("Failed to read demo world data", var17);
          return false;
       }
@@ -291,22 +291,22 @@ public class MainMenuScreen extends Screen {
             RenderSystem.translatef((float)(this.field4564 / 2 + 90), 70.0F, 0.0F);
             RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
-               - MathHelper.method37771(MathHelper.method37763((float)(Util.milliTime() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
-            var13 = var13 * 100.0F / (float)(this.field4568.method38820(this.field4708) + 32);
+               - MathHelper.method37771(MathHelper.sin((float)(Util.milliTime() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
+            var13 = var13 * 100.0F / (float)(this.field4568.getStringWidth(this.field4708) + 32);
             RenderSystem.scalef(var13, var13, var13);
             method5690(var1, this.field4568, this.field4708, 0, -8, 16776960 | var12);
             RenderSystem.popMatrix();
          }
 
-         String var17 = "Minecraft " + SharedConstants.method34773().getName();
-         if (!this.field4562.method1513()) {
-            var17 = var17 + (!"release".equalsIgnoreCase(this.field4562.method1466()) ? "/" + this.field4562.method1466() : "");
+         String var17 = "Minecraft " + SharedConstants.getVersion().getName();
+         if (!this.field4562.isDemo()) {
+            var17 = var17 + (!"release".equalsIgnoreCase(this.field4562.getVersionType()) ? "/" + this.field4562.getVersionType() : "");
          } else {
             var17 = var17 + " Demo";
          }
 
-         if (this.field4562.method1457()) {
-            var17 = var17 + Class9088.method33883("menu.modded");
+         if (this.field4562.isModdedClient()) {
+            var17 = var17 + I18n.format("menu.modded");
          }
 
          if (!Class9299.field42762.method20245()) {
@@ -322,7 +322,7 @@ public class MainMenuScreen extends Screen {
                      var1,
                      this.field4568,
                      var4x,
-                     this.field4564 - this.field4568.method38820(var4x),
+                     this.field4564 - this.field4568.getStringWidth(var4x),
                      this.field4565 - (10 + (var3x + 1) * 10),
                      16777215 | var12
                   );
@@ -360,7 +360,7 @@ public class MainMenuScreen extends Screen {
                && var1 < (double)(this.field4715 + this.field4714)
                && var3 > (double)(this.field4565 - 10)
                && var3 < (double)this.field4565) {
-               this.field4562.displayGuiScreen(new Class1342(false, Runnables.doNothing()));
+               this.field4562.displayGuiScreen(new WinGameScreen(false, Runnables.doNothing()));
             }
 
             return false;
@@ -379,10 +379,10 @@ public class MainMenuScreen extends Screen {
 
    private void method2600(boolean var1) {
       if (var1) {
-         try (Class1814 var4 = this.field4562.getSaveLoader().method38468("Demo_World")) {
-            var4.method8003();
+         try (SaveFormat.LevelSave var4 = this.field4562.getSaveLoader().getLevelSave("Demo_World")) {
+            var4.deleteSave();
          } catch (IOException var17) {
-            Class7603.method24909(this.field4562, "Demo_World");
+            SystemToast.func_238538_b_(this.field4562, "Demo_World");
             field4703.warn("Failed to delete demo world", var17);
          }
       }

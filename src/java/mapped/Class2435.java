@@ -26,7 +26,7 @@ public class Class2435 extends Exception {
    public String toString() {
       if (this.field16474 != -1) {
          String var3 = "mco.errorMessage." + this.field16474;
-         String var4 = Class9088.method33883(var3);
+         String var4 = I18n.format(var3);
          return (!var4.equals(var3) ? var4 : this.field16475) + " - " + this.field16474;
       } else {
          return "Realms (" + this.field16472 + ") " + this.field16473;

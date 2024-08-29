@@ -25,10 +25,10 @@ public class Class2952 extends Class2898<Class4712> {
          for (Integer var15 : var10) {
             var11.method8372(var13, 0, var15);
             BlockPos var16 = var1.method7006(Class101.field300, var11);
-            if (var1.method7007(var16) || var1.method6738(var16).method23414(var1, var16).method19516()) {
+            if (var1.method7007(var16) || var1.getBlockState(var16).method23414(var1, var16).method19516()) {
                var1.method6725(var16, Blocks.CHEST.method11579(), 2);
                Class939.method3740(var1, var3, var16, Class8793.field39534);
-               Class7380 var17 = Blocks.TORCH.method11579();
+               BlockState var17 = Blocks.TORCH.method11579();
 
                for (Direction var19 : Class76.field161) {
                   BlockPos var20 = var16.method8349(var19);

@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3330 extends Class3257 {
+public class Class3330 extends Item {
    private static String[] field18838;
 
    public Class3330(Class5643 var1) {
@@ -12,12 +12,12 @@ public class Class3330 extends Class3257 {
       if (var3 instanceof Class1069 && var3.method3066()) {
          Class1069 var7 = (Class1069)var3;
          if (!var7.method4943() && var7.method4901()) {
-            if (!var2.field5024.field9020) {
+            if (!var2.world.field9020) {
                var7.method4942(Class2266.field14734);
                var1.method32182(1);
             }
 
-            return ActionResultType.method9002(var2.field5024.field9020);
+            return ActionResultType.method9002(var2.world.field9020);
          }
       }
 

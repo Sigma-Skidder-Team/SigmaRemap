@@ -120,7 +120,7 @@ public class Class7248 extends Class7249 {
    }
 
    public boolean method22756(Entity var1) {
-      if (!field31119.world.method6738(var1.method3432()).method23410()) {
+      if (!field31119.world.getBlockState(var1.getPosition()).method23410()) {
          Class6488 var4 = new Class6488(
             var1.field5035.field28449,
             var1.field5035.field28450 - 0.5,
@@ -131,7 +131,7 @@ public class Class7248 extends Class7249 {
          );
 
          for (BlockPos var6 : method22757(var1)) {
-            Class6408 var7 = field31119.world.method6738(var6).method23412(field31119.world, var6);
+            Class6408 var7 = field31119.world.getBlockState(var6).method23412(field31119.world, var6);
             if (!var7.method19516() && var4.method19670(var7.method19514().method19668(var6))) {
                return true;
             }

@@ -72,13 +72,13 @@ public abstract class Class3614 {
    public abstract void method12236();
 
    public void method12245() {
-      if (Class8981.method32984(this.field19598) != 0) {
+      if (Shaders.method32984(this.field19598) != 0) {
          this.method12243();
       }
    }
 
    public static final void method12246() {
-      Class8981.method33171();
+      Shaders.method33171();
    }
 
    @Override

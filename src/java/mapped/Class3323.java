@@ -3,7 +3,7 @@ package mapped;
 import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class3323 extends Class3257 {
+public class Class3323 extends Item {
    public Class3323(Class5643 var1) {
       super(var1);
    }
@@ -32,18 +32,18 @@ public class Class3323 extends Class3257 {
 
       if (var6 != null) {
          var6.method2913(Class8876.field40098.method172(this));
-         if (!var6.field4919.field29609) {
+         if (!var6.abilities.isCreativeMode) {
             var1.method32182(1);
          }
       }
 
-      if (var6 == null || !var6.field4919.field29609) {
-         if (var1.method32105()) {
-            return new ItemStack(Class8514.field37972);
+      if (var6 == null || !var6.abilities.isCreativeMode) {
+         if (var1.isEmpty()) {
+            return new ItemStack(Items.field37972);
          }
 
          if (var6 != null) {
-            var6.field4902.method4045(new ItemStack(Class8514.field37972));
+            var6.inventory.method4045(new ItemStack(Items.field37972));
          }
       }
 
@@ -67,7 +67,7 @@ public class Class3323 extends Class3257 {
 
    @Override
    public String method11720(ItemStack var1) {
-      return Class9741.method38185(var1).method31815(this.method11719() + ".effect.");
+      return Class9741.method38185(var1).method31815(this.getTranslationKey() + ".effect.");
    }
 
    @Override
@@ -81,7 +81,7 @@ public class Class3323 extends Class3257 {
    }
 
    @Override
-   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
+   public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (this.method11738(var1)) {
          for (Class8812 var6 : Registry.field16076) {
             if (var6 != Class8137.field34976) {

@@ -21,7 +21,7 @@ public class Class6645 implements Class6646<Class6647> {
    public Class6647 method20290() {
       Class6648 var3 = (Class6648)Class8657.method31158(this.field29210).get(this.field29208);
       if (var3 == null) {
-         return Class274.field1051;
+         return SoundHandler.field1051;
       } else {
          Class6647 var4 = var3.method20290();
          return new Class6647(

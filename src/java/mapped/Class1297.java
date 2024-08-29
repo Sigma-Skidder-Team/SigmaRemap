@@ -10,12 +10,12 @@ import java.util.UUID;
 
 public class Class1297 extends Class1293<Class1185> {
    private static String[] field6863;
-   private final Class1147 field6864;
+   private final SocialInteractionsScreen field6864;
    private final Minecraft field6865;
    private final List<Class1185> field6866 = Lists.newArrayList();
    private String field6867;
 
-   public Class1297(Class1147 var1, Minecraft var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class1297(SocialInteractionsScreen var1, Minecraft var2, int var3, int var4, int var5, int var6, int var7) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6864 = var1;
       this.field6865 = var2;
@@ -25,7 +25,7 @@ public class Class1297 extends Class1293<Class1185> {
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      double var7 = this.field6865.method1580().method8049();
+      double var7 = this.field6865.getMainWindow().method8049();
       RenderSystem.enableScissor(
          (int)((double)this.method6053() * var7),
          (int)((double)(this.field6786 - this.field6788) * var7),
@@ -77,7 +77,7 @@ public class Class1297 extends Class1293<Class1185> {
          }
       }
 
-      if ((var2 == Class2332.field15951 || this.field6865.method1578().method37606(var5))
+      if ((var2 == Class2332.field15951 || this.field6865.func_244599_aA().func_244756_c(var5))
          && (Strings.isNullOrEmpty(this.field6867) || var1.method19966().getName().toLowerCase(Locale.ROOT).contains(this.field6867))) {
          Class1185 var8 = new Class1185(this.field6865, this.field6864, var1.method19966().getId(), var1.method19966().getName(), var1::method19973);
          this.method6030(var8);

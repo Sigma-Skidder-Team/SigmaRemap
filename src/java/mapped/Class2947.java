@@ -42,13 +42,13 @@ public class Class2947 extends Class2898<Class4712> {
       Class9764 var14 = new Class9764(var13.method24356(), 0, var13.method24357(), var13.method24358(), 256, var13.method24359());
       Class9463 var15 = new Class9463().method36426(var8).method36430(var14).method36431(var3).method36434(Class7095.field30528);
       BlockPos var16 = var11.method32904(var8);
-      int var17 = var3.nextInt(16 - var16.method8304());
-      int var18 = var3.nextInt(16 - var16.method8306());
+      int var17 = var3.nextInt(16 - var16.getX());
+      int var18 = var3.nextInt(16 - var16.getZ());
       int var19 = 256;
 
-      for (int var20 = 0; var20 < var16.method8304(); var20++) {
-         for (int var21 = 0; var21 < var16.method8306(); var21++) {
-            var19 = Math.min(var19, var1.method6736(Class101.field297, var4.method8304() + var20 + var17, var4.method8306() + var21 + var18));
+      for (int var20 = 0; var20 < var16.getX(); var20++) {
+         for (int var21 = 0; var21 < var16.getZ(); var21++) {
+            var19 = Math.min(var19, var1.method6736(Class101.field297, var4.getX() + var20 + var17, var4.getZ() + var21 + var18));
          }
       }
 

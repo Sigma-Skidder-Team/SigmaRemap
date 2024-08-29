@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -22,12 +22,12 @@ public class Class5227 extends Module {
 
     public Class5227() {
         super(ModuleCategory.RENDER, "Waypoints", "Renders waypoints you added in Jello maps");
-        this.method15972(new Class6004("Unspawn Positions", "Adds a waypoint when a player unspawns", false));
+        this.registerSetting(new BooleanSetting("Unspawn Positions", "Adds a waypoint when a player unspawns", false));
         this.method16005(false);
     }
 
     @EventTarget
-    public void method16274(Class4418 var1) {
+    public void method16274(WorldLoadEvent var1) {
         this.field23572.clear();
     }
 
@@ -110,8 +110,8 @@ public class Class5227 extends Module {
                 double var7 = Math.sqrt(Class9647.method37621(var6));
                 if (!(var7 > 300.0)) {
                     if (mc.world.method7011(var6) != null && var5.field35894) {
-                        int var9 = var6.method8304() % 16;
-                        int var10 = var6.method8306() % 16;
+                        int var9 = var6.getX() % 16;
+                        int var10 = var6.getZ() % 16;
                         if (var10 < 0) {
                             var10 += 16;
                         }

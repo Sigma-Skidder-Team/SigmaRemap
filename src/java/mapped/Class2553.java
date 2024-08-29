@@ -47,7 +47,7 @@ public class Class2553 implements JsonDeserializer<Class7496> {
    }
 
    private Map<String, Either<Class7826, String>> method10744(JsonObject var1) {
-      ResourceLocation var4 = Class289.field1102;
+      ResourceLocation var4 = AtlasTexture.LOCATION_BLOCKS_TEXTURE;
       HashMap var5 = Maps.newHashMap();
       if (var1.has("textures")) {
          JsonObject var6 = JSONUtils.method32782(var1, "textures");

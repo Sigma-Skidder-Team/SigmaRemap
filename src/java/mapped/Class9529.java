@@ -27,35 +27,35 @@ public class Class9529 {
       this.field44351[3] = 1.0F;
    }
 
-   public void method36827(Class1663 var1, Class7380 var2, BlockPos var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
+   public void method36827(Class1663 var1, BlockState var2, BlockPos var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
       BlockPos var10 = !var6.get(0) ? var3 : var3.method8349(var4);
       Class2208 var11 = Class2208.method8926(var4);
       Class2001 var12 = this.field44353;
       Class4049 var13 = Class7551.method24699();
       var12.method8386(var10, Class2208.method8928(var11)[0]);
-      Class7380 var14 = var1.method6738(var12);
+      BlockState var14 = var1.getBlockState(var12);
       int var15 = Class4049.method12821(var14, var1, var12);
       float var16 = Class4049.method12820(var14, var1, var12);
       var12.method8386(var10, Class2208.method8928(var11)[1]);
-      Class7380 var17 = var1.method6738(var12);
+      BlockState var17 = var1.getBlockState(var12);
       int var18 = Class4049.method12821(var17, var1, var12);
       float var19 = Class4049.method12820(var17, var1, var12);
       var12.method8386(var10, Class2208.method8928(var11)[2]);
-      Class7380 var20 = var1.method6738(var12);
+      BlockState var20 = var1.getBlockState(var12);
       int var21 = Class4049.method12821(var20, var1, var12);
       float var22 = Class4049.method12820(var20, var1, var12);
       var12.method8386(var10, Class2208.method8928(var11)[3]);
-      Class7380 var23 = var1.method6738(var12);
+      BlockState var23 = var1.getBlockState(var12);
       int var24 = Class4049.method12821(var23, var1, var12);
       float var25 = Class4049.method12820(var23, var1, var12);
       var12.method8387(var10, Class2208.method8928(var11)[0], var4);
-      boolean var26 = var1.method6738(var12).method23387(var1, var12) == 0;
+      boolean var26 = var1.getBlockState(var12).method23387(var1, var12) == 0;
       var12.method8387(var10, Class2208.method8928(var11)[1], var4);
-      boolean var27 = var1.method6738(var12).method23387(var1, var12) == 0;
+      boolean var27 = var1.getBlockState(var12).method23387(var1, var12) == 0;
       var12.method8387(var10, Class2208.method8928(var11)[2], var4);
-      boolean var28 = var1.method6738(var12).method23387(var1, var12) == 0;
+      boolean var28 = var1.getBlockState(var12).method23387(var1, var12) == 0;
       var12.method8387(var10, Class2208.method8928(var11)[3], var4);
-      boolean var29 = var1.method6738(var12).method23387(var1, var12) == 0;
+      boolean var29 = var1.getBlockState(var12).method23387(var1, var12) == 0;
       float var31;
       int var32;
       if (!var28 && !var26) {
@@ -63,7 +63,7 @@ public class Class9529 {
          var32 = var15;
       } else {
          var12.method8387(var10, Class2208.method8928(var11)[0], Class2208.method8928(var11)[2]);
-         Class7380 var30 = var1.method6738(var12);
+         BlockState var30 = var1.getBlockState(var12);
          var31 = Class4049.method12820(var30, var1, var12);
          var32 = Class4049.method12821(var30, var1, var12);
       }
@@ -75,7 +75,7 @@ public class Class9529 {
          var66 = var15;
       } else {
          var12.method8387(var10, Class2208.method8928(var11)[0], Class2208.method8928(var11)[3]);
-         Class7380 var33 = var1.method6738(var12);
+         BlockState var33 = var1.getBlockState(var12);
          var34 = Class4049.method12820(var33, var1, var12);
          var66 = Class4049.method12821(var33, var1, var12);
       }
@@ -87,7 +87,7 @@ public class Class9529 {
          var67 = var15;
       } else {
          var12.method8387(var10, Class2208.method8928(var11)[1], Class2208.method8928(var11)[2]);
-         Class7380 var35 = var1.method6738(var12);
+         BlockState var35 = var1.getBlockState(var12);
          var36 = Class4049.method12820(var35, var1, var12);
          var67 = Class4049.method12821(var35, var1, var12);
       }
@@ -99,19 +99,19 @@ public class Class9529 {
          var68 = var15;
       } else {
          var12.method8387(var10, Class2208.method8928(var11)[1], Class2208.method8928(var11)[3]);
-         Class7380 var37 = var1.method6738(var12);
+         BlockState var37 = var1.getBlockState(var12);
          var38 = Class4049.method12820(var37, var1, var12);
          var68 = Class4049.method12821(var37, var1, var12);
       }
 
       int var69 = Class4049.method12821(var2, var1, var3);
       var12.method8386(var3, var4);
-      Class7380 var39 = var1.method6738(var12);
+      BlockState var39 = var1.getBlockState(var12);
       if (var6.get(0) || !var39.method23409(var1, var12)) {
          var69 = Class4049.method12821(var39, var1, var12);
       }
 
-      float var40 = !var6.get(0) ? Class4049.method12820(var1.method6738(var3), var1, var3) : Class4049.method12820(var1.method6738(var10), var1, var10);
+      float var40 = !var6.get(0) ? Class4049.method12820(var1.getBlockState(var3), var1, var3) : Class4049.method12820(var1.getBlockState(var10), var1, var10);
       Class1974 var41 = Class1974.method8256(var4);
       if (var6.get(1) && Class2208.method8929(var11)) {
          float var70 = (var25 + var16 + var34 + var40) * 0.25F;

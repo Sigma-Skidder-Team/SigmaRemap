@@ -17,7 +17,7 @@ public class PacketThreadUtil {
       } else {
          var2.execute(() -> {
             method31781(var0);
-            if (!var1.method15589().method30707()) {
+            if (!var1.getNetworkManager().isChannelOpen()) {
                field39629.debug("Ignoring packet due to disconnection: " + var0);
             } else {
                var0.method17180(var1);

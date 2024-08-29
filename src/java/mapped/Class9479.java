@@ -15,7 +15,7 @@ public class Class9479 {
 
    static {
       for (Class7631 var7 : Registry.field16070) {
-         UnmodifiableIterator var8 = var7.method25047().method35392().iterator();
+         UnmodifiableIterator var8 = var7.method25047().getValidStates().iterator();
 
          while (var8.hasNext()) {
             Class7379 var9 = (Class7379)var8.next();

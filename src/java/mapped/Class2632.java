@@ -17,7 +17,7 @@ public class Class2632 extends Class2628 {
 
    @Override
    public boolean method10803() {
-      if (this.field16946.field5024.method6789().method17135(Class5462.field24224)) {
+      if (this.field16946.world.method6789().method17135(Class5462.field24224)) {
          if (this.field16930 <= 0) {
             if (!this.method10841()) {
                this.field16930 = this.method10833(this.field16928);
@@ -36,7 +36,7 @@ public class Class2632 extends Class2628 {
    }
 
    private boolean method10841() {
-      return this.field16933 != null && this.method10840(this.field16928.field5024, this.field16933) ? true : this.method10839();
+      return this.field16933 != null && this.method10840(this.field16928.world, this.field16933) ? true : this.method10839();
    }
 
    @Override
@@ -60,8 +60,8 @@ public class Class2632 extends Class2628 {
    @Override
    public void method10805() {
       super.method10805();
-      World var3 = this.field16946.field5024;
-      BlockPos var4 = this.field16946.method3432();
+      World var3 = this.field16946.world;
+      BlockPos var4 = this.field16946.getPosition();
       BlockPos var5 = this.method10844(var4, var3);
       Random var6 = this.field16946.method3013();
       if (this.method10838() && var5 != null) {
@@ -72,10 +72,10 @@ public class Class2632 extends Class2628 {
                double var8 = 0.08;
                ((ServerWorld)var3)
                   .method6939(
-                     new Class7438(Class7940.field34082, new ItemStack(Class8514.field37904)),
-                     (double)var5.method8304() + 0.5,
+                     new Class7438(Class7940.field34082, new ItemStack(Items.field37904)),
+                     (double)var5.getX() + 0.5,
                      (double)var5.getY() + 0.7,
-                     (double)var5.method8306() + 0.5,
+                     (double)var5.getZ() + 0.5,
                      3,
                      ((double)var6.nextFloat() - 0.5) * 0.08,
                      ((double)var6.nextFloat() - 0.5) * 0.08,
@@ -103,9 +103,9 @@ public class Class2632 extends Class2628 {
                   ((ServerWorld)var3)
                      .method6939(
                         Class7940.field34089,
-                        (double)var5.method8304() + 0.5,
+                        (double)var5.getX() + 0.5,
                         (double)var5.getY(),
-                        (double)var5.method8306() + 0.5,
+                        (double)var5.getZ() + 0.5,
                         1,
                         var16,
                         var10,
@@ -124,7 +124,7 @@ public class Class2632 extends Class2628 {
 
    @Nullable
    private BlockPos method10844(BlockPos var1, Class1665 var2) {
-      if (var2.method6738(var1).method23448(this.field16945)) {
+      if (var2.getBlockState(var1).method23448(this.field16945)) {
          return var1;
       } else {
          BlockPos[] var5 = new BlockPos[]{
@@ -132,7 +132,7 @@ public class Class2632 extends Class2628 {
          };
 
          for (BlockPos var9 : var5) {
-            if (var2.method6738(var9).method23448(this.field16945)) {
+            if (var2.getBlockState(var9).method23448(this.field16945)) {
                return var9;
             }
          }
@@ -143,11 +143,11 @@ public class Class2632 extends Class2628 {
 
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
-      Class1670 var5 = var1.method6724(var2.method8304() >> 4, var2.method8306() >> 4, Class9176.field42145, false);
+      Class1670 var5 = var1.method6724(var2.getX() >> 4, var2.getZ() >> 4, Class9176.field42145, false);
       return var5 == null
          ? false
-         : var5.method6738(var2).method23448(this.field16945)
-            && var5.method6738(var2.method8311()).method23393()
-            && var5.method6738(var2.method8339(2)).method23393();
+         : var5.getBlockState(var2).method23448(this.field16945)
+            && var5.getBlockState(var2.method8311()).isAir()
+            && var5.getBlockState(var2.method8339(2)).isAir();
    }
 }

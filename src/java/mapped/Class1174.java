@@ -12,15 +12,15 @@ public class Class1174 extends Class1155<Class1174> {
       Class9537 var13 = Class1324.method6302(this.field6359.field6849)
          .method38129()
          .get(Class1324.method6302(this.field6359.field6849).method38129().size() - var2 - 1);
-      Class7380 var14 = var13.method36906();
-      Class3257 var15 = var14.method23383().method11581();
-      if (var15 == Class8514.field37222) {
+      BlockState var14 = var13.method36906();
+      Item var15 = var14.getBlock().method11581();
+      if (var15 == Items.field37222) {
          if (!var14.method23448(Blocks.WATER)) {
             if (var14.method23448(Blocks.LAVA)) {
-               var15 = Class8514.field37884;
+               var15 = Items.field37884;
             }
          } else {
-            var15 = Class8514.field37883;
+            var15 = Items.field37883;
          }
       }
 
@@ -30,18 +30,18 @@ public class Class1174 extends Class1155<Class1174> {
       String var17;
       if (var2 != 0) {
          if (var2 != Class1324.method6302(this.field6359.field6849).method38129().size() - 1) {
-            var17 = Class9088.method33883("createWorld.customize.flat.layer", var13.method36905());
+            var17 = I18n.format("createWorld.customize.flat.layer", var13.method36905());
          } else {
-            var17 = Class9088.method33883("createWorld.customize.flat.layer.bottom", var13.method36905());
+            var17 = I18n.format("createWorld.customize.flat.layer.bottom", var13.method36905());
          }
       } else {
-         var17 = Class9088.method33883("createWorld.customize.flat.layer.top", var13.method36905());
+         var17 = I18n.format("createWorld.customize.flat.layer.top", var13.method36905());
       }
 
       this.field6359
          .field6849
          .field4568
-         .method38801(var1, var17, (float)(var4 + 2 + 213 - this.field6359.field6849.field4568.method38820(var17)), (float)(var3 + 3), 16777215);
+         .method38801(var1, var17, (float)(var4 + 2 + 213 - this.field6359.field6849.field4568.getStringWidth(var17)), (float)(var3 + 3), 16777215);
    }
 
    @Override
@@ -57,7 +57,7 @@ public class Class1174 extends Class1155<Class1174> {
    private void method5596(MatrixStack var1, int var2, int var3, ItemStack var4) {
       this.method5597(var1, var2 + 1, var3 + 1);
       RenderSystem.method27867();
-      if (!var4.method32105()) {
+      if (!var4.isEmpty()) {
          this.field6359.field6849.field4563.method791(var4, var2 + 2, var3 + 2);
       }
 

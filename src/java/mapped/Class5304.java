@@ -18,9 +18,9 @@ public class Class5304 extends Module {
 
     public Class5304() {
         super(ModuleCategory.PLAYER, "AntiVoid", "Avoids you from falling in the void");
-        this.method15972(new Class6004("Void", "Catch only above void", true));
-        this.method15972(new Class6009<Float>("Fall Distance", "Fall distance before catching you", 8.0F, Float.class, 2.0F, 15.0F, 0.5F));
-        this.method15972(new Class6005("Mode", "AntiVoid method", 0, "Hypixel", "Motion", "Cubecraft", "Legit"));
+        this.registerSetting(new BooleanSetting("Void", "Catch only above void", true));
+        this.registerSetting(new Class6009<Float>("Fall Distance", "Fall distance before catching you", 8.0F, Float.class, 2.0F, 15.0F, 0.5F));
+        this.registerSetting(new ModeSetting("Mode", "AntiVoid method", 0, "Hypixel", "Motion", "Cubecraft", "Legit"));
     }
 
     @Override
@@ -118,7 +118,7 @@ public class Class5304 extends Module {
 
         switch (var1) {
             case "Hypixel":
-                mc.getClientPlayNetHandler().sendPacket(new Class5605(0.0, -999.0, 0.0, true));
+                mc.getConnection().sendPacket(new Class5605(0.0, -999.0, 0.0, true));
                 break;
             case "Motion":
                 var2.method13995(0.1);
@@ -126,7 +126,7 @@ public class Class5304 extends Module {
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;
-                mc.getClientPlayNetHandler().sendPacket(new Class5605(var5, var13, var9, false));
+                mc.getConnection().sendPacket(new Class5605(var5, var13, var9, false));
                 Client.getInstance().getModuleManager().method14662(Fly.class).method15999(false);
                 break;
             case "Legit":

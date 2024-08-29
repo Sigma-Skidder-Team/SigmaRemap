@@ -20,7 +20,7 @@ public class Class5348 extends Module {
     @Override
     public void isInDevelopment() {
         this.field23902 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
             this.field23904 = false;
         } else {
             mc.gameSettings.field44637.field13071 = false;
@@ -99,8 +99,8 @@ public class Class5348 extends Module {
                 var1.method13920(true);
                 var1.method13908(true);
                 this.field23903 = !this.field23904
-                        ? (!mc.gameSettings.field44636.method8509() ? 1 : 3)
-                        : (!mc.gameSettings.field44636.method8509() ? 2 : 1);
+                        ? (!mc.gameSettings.field44636.isKeyDown() ? 1 : 3)
+                        : (!mc.gameSettings.field44636.isKeyDown() ? 2 : 1);
             }
         }
     }
@@ -138,7 +138,7 @@ public class Class5348 extends Module {
                 }
 
                 if (var7 != null) {
-                    Block var9 = mc.world.method6738(var7).method23383();
+                    Block var9 = mc.world.getBlockState(var7).getBlock();
                     if (var9 instanceof Class3410) {
                         var5 = (double) ((int) var5) - 1.0E-4;
                     }

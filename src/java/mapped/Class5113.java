@@ -15,11 +15,11 @@ public class Class5113 implements Class5112 {
    private boolean field23257;
    private long field23258;
    public final NetworkManager field23259;
-   public final Class7730 field23260;
+   public final ServerData field23260;
    public final Runnable field23261;
    public final Class9118 field23262;
 
-   public Class5113(Class9118 var1, NetworkManager var2, Class7730 var3, Runnable var4) {
+   public Class5113(Class9118 var1, NetworkManager var2, ServerData var3, Runnable var4) {
       this.field23262 = var1;
       this.field23259 = var2;
       this.field23260 = var3;
@@ -81,7 +81,7 @@ public class Class5113 implements Class5112 {
          }
 
          this.field23258 = Util.milliTime();
-         this.field23259.method30693(new Class5587(this.field23258));
+         this.field23259.sendPacket(new Class5587(this.field23258));
          this.field23256 = true;
       } else {
          this.field23259.method30701(new TranslationTextComponent("multiplayer.status.unrequested"));
@@ -107,7 +107,7 @@ public class Class5113 implements Class5112 {
    }
 
    @Override
-   public NetworkManager method15589() {
+   public NetworkManager getNetworkManager() {
       return this.field23259;
    }
 }

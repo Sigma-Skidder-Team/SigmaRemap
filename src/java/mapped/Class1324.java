@@ -59,12 +59,12 @@ public class Class1324 extends Screen {
             this.method6296();
          })
       );
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, Class7127.field30658, var1 -> {
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field7001.accept(this.field7002);
          this.field4562.displayGuiScreen(this.field7000);
          this.field7002.method38131();
       }));
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, Class7127.field30659, var1 -> {
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field4562.displayGuiScreen(this.field7000);
          this.field7002.method38131();
       }));

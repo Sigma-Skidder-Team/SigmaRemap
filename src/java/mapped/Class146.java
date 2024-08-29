@@ -19,13 +19,13 @@ public class Class146 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      if (!var1.method32105()) {
-         Class25 var5 = Class25.method67();
+      if (!var1.isEmpty()) {
+         NonNullList var5 = NonNullList.create();
          this.field489.forEach(var2x -> var2x.method14697(var2, var2xx -> var2xx.method19893(Class7318.method23179(var5::add), var2)));
-         Class39 var6 = new Class39();
+         CompoundNBT var6 = new CompoundNBT();
          Class7920.method26565(var6, var5);
-         Class39 var7 = var1.method32143();
-         var7.method99("BlockEntityTag", var6.method140(var7.method130("BlockEntityTag")));
+         CompoundNBT var7 = var1.getOrCreateTag();
+         var7.put("BlockEntityTag", var6.method140(var7.getCompound("BlockEntityTag")));
          return var1;
       } else {
          return var1;

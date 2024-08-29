@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4103 extends Class4057 {
    public Class4103() {
-      super(Class8992.field41045, "lead_knot", 0.0F);
+      super(EntityType.field41045, "lead_knot", 0.0F);
    }
 
    @Override
@@ -27,7 +27,7 @@ public class Class4103 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5739 var6 = new Class5739(var5);
       if (Class9299.field43067.method20238()) {
          Class9299.method35082(var6, Class9299.field43067, var1);

@@ -23,10 +23,10 @@ public class Class6998 extends Class6997 {
       if (this.field30243 instanceof Class1088) {
          Class1088 var4 = (Class1088)this.field30243;
          if (Class1088.method5064(var4)) {
-            return this.field30244.method6738(var1).method23448(Blocks.WATER);
+            return this.field30244.getBlockState(var1).method23448(Blocks.WATER);
          }
       }
 
-      return !this.field30244.method6738(var1.method8313()).method23393();
+      return !this.field30244.getBlockState(var1.method8313()).isAir();
    }
 }

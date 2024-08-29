@@ -9,7 +9,7 @@ public interface Class7373 {
 
    void method23360();
 
-   void method23361(Class1001 var1, BlockPos var2, Class8654 var3, PlayerEntity var4);
+   void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4);
 
    void method23362();
 

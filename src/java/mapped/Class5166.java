@@ -8,9 +8,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5166 extends Module {
    public Class5166() {
       super(ModuleCategory.COMBAT, "Basic", "Places block underneath");
-      this.method15972(new Class6004("Explosions", "Cancels Explosions knockback", true));
-      this.method15972(new Class6009<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
-      this.method15972(new Class6009<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.registerSetting(new BooleanSetting("Explosions", "Cancels Explosions knockback", true));
+      this.registerSetting(new Class6009<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.registerSetting(new Class6009<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
    @EventTarget

@@ -8,7 +8,7 @@ public class Class3296 extends Class3292 {
    }
 
    @Override
-   public String method11719() {
+   public String getTranslationKey() {
       return this.method11718();
    }
 }

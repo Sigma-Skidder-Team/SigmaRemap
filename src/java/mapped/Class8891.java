@@ -39,11 +39,11 @@ public class Class8891 {
          switch (Class8364.field35918[var0.ordinal()]) {
             case 1:
                var12 = (float)Math.sin(var10);
-               var13 = MathHelper.method37763((float)var10);
+               var13 = MathHelper.sin((float)var10);
                break;
             case 2:
                var12 = (float)Math.cos(var10);
-               var13 = MathHelper.method37764((float)var10);
+               var13 = MathHelper.cos((float)var10);
                break;
             case 3:
                var12 = (float)Math.asin(var10);

@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.File;
 
 public class Class2024 implements Comparable<Class2024> {
-   private final Class8898 field13143;
+   private final WorldSettings field13143;
    private final Class8519 field13144;
    private final String field13145;
    private final boolean field13146;
@@ -14,7 +14,7 @@ public class Class2024 implements Comparable<Class2024> {
    private final File field13148;
    private ITextComponent field13149;
 
-   public Class2024(Class8898 var1, Class8519 var2, String var3, boolean var4, boolean var5, File var6) {
+   public Class2024(WorldSettings var1, Class8519 var2, String var3, boolean var4, boolean var5, File var6) {
       this.field13143 = var1;
       this.field13144 = var2;
       this.field13145 = var3;
@@ -74,15 +74,15 @@ public class Class2024 implements Comparable<Class2024> {
    }
 
    public boolean method8653() {
-      return this.method8654() || !SharedConstants.method34773().isStable() && !this.field13144.method30186() || this.method8655();
+      return this.method8654() || !SharedConstants.getVersion().isStable() && !this.field13144.method30186() || this.method8655();
    }
 
    public boolean method8654() {
-      return this.field13144.method30185() > SharedConstants.method34773().getWorldVersion();
+      return this.field13144.method30185() > SharedConstants.getVersion().getWorldVersion();
    }
 
    public boolean method8655() {
-      return this.field13144.method30185() < SharedConstants.method34773().getWorldVersion();
+      return this.field13144.method30185() < SharedConstants.getVersion().getWorldVersion();
    }
 
    public boolean method8656() {

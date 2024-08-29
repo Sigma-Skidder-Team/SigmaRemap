@@ -21,7 +21,7 @@ public abstract class Class4209 extends Class4178 {
       }
    }
 
-   public Class4209(Class7792 var1, Class39 var2) {
+   public Class4209(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field20516 = var2.method122("Width");
       this.field20517 = var2.method122("Height");
@@ -30,7 +30,7 @@ public abstract class Class4209 extends Class4178 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       var1.method102("Width", this.field20516);
       var1.method102("Height", this.field20517);
       var1.method102("Depth", this.field20518);

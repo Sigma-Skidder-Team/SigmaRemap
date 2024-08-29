@@ -11,14 +11,14 @@ public class Class2954 {
    private final Class1263 field18033 = new Class1263();
    private Minecraft field18034;
    private final List<Class1259> field18035 = Lists.newArrayList();
-   private List<Class9266> field18036;
+   private List<RecipeList> field18036;
    private Class1249 field18037;
    private Class1249 field18038;
    private int field18039;
    private int field18040;
    private Class6941 field18041;
    private Class4843<?> field18042;
-   private Class9266 field18043;
+   private RecipeList field18043;
 
    public Class2954() {
       for (int var3 = 0; var3 < 20; var3++) {
@@ -45,7 +45,7 @@ public class Class2954 {
       this.field18035.add(var1);
    }
 
-   public void method11308(List<Class9266> var1, boolean var2) {
+   public void method11308(List<RecipeList> var1, boolean var2) {
       this.field18036 = var1;
       this.field18039 = (int)Math.ceil((double)var1.size() / 20.0);
       if (this.field18039 <= this.field18040 || var2) {
@@ -63,7 +63,7 @@ public class Class2954 {
          if (var3 + var4 >= this.field18036.size()) {
             var5.field6483 = false;
          } else {
-            Class9266 var6 = this.field18036.get(var3 + var4);
+            RecipeList var6 = this.field18036.get(var3 + var4);
             var5.method5752(var6, this);
             var5.field6483 = true;
          }
@@ -80,8 +80,8 @@ public class Class2954 {
    public void method11311(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
       if (this.field18039 > 1) {
          String var9 = this.field18040 + 1 + "/" + this.field18039;
-         int var10 = this.field18034.field1294.method38820(var9);
-         this.field18034.field1294.method38801(var1, var9, (float)(var2 - var10 / 2 + 73), (float)(var3 + 141), -1);
+         int var10 = this.field18034.fontRenderer.getStringWidth(var9);
+         this.field18034.fontRenderer.method38801(var1, var9, (float)(var2 - var10 / 2 + 73), (float)(var3 + 141), -1);
       }
 
       this.field18032 = null;
@@ -110,7 +110,7 @@ public class Class2954 {
    }
 
    @Nullable
-   public Class9266 method11314() {
+   public RecipeList method11314() {
       return this.field18043;
    }
 

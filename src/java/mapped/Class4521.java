@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public final class Class4521 extends Class4520 {
+public final class Class4521 extends RenderType {
    private static final ObjectOpenCustomHashSet<Class4521> field21821 = new ObjectOpenCustomHashSet(Class2042.field13345);
    private final Class9484 field21822;
    private final int field21823;
-   private final Optional<Class4520> field21824;
+   private final Optional<RenderType> field21824;
    private final boolean field21825;
    private Map<ResourceLocation, Class4521> field21826 = new HashMap<ResourceLocation, Class4521>();
 
@@ -20,8 +20,8 @@ public final class Class4521 extends Class4520 {
       );
       this.field21822 = var7;
       this.field21824 = Class9484.method36617(var7) != Class2041.field13342
-         ? Optional.<Class4520>empty()
-         : Class9484.method36618(var7).method14290().<Class4520>map(var1x -> method14330(var1x, Class9484.method36619(var7)));
+         ? Optional.<RenderType>empty()
+         : Class9484.method36618(var7).method14290().<RenderType>map(var1x -> method14330(var1x, Class9484.method36619(var7)));
       this.field21825 = Class9484.method36617(var7) == Class2041.field13341;
       this.field21823 = Class8589.method30729(super.hashCode(), var7);
    }
@@ -31,7 +31,7 @@ public final class Class4521 extends Class4520 {
    }
 
    @Override
-   public Optional<Class4520> method14353() {
+   public Optional<RenderType> method14353() {
       return this.field21824;
    }
 

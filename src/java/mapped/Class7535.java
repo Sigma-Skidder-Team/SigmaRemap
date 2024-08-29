@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class Class7535 extends Class7530 {
    private static final Logger field32340 = LogManager.getLogger();
    private Class6886 field32341;
-   private Class39 field32342;
+   private CompoundNBT field32342;
 
    public Class7535() {
       super("scoreboard");
@@ -23,12 +23,12 @@ public class Class7535 extends Class7530 {
    }
 
    @Override
-   public void method24591(Class39 var1) {
+   public void method24591(CompoundNBT var1) {
       if (this.field32341 != null) {
          this.method24633(var1.method131("Objectives", 10));
          this.field32341.method21013(var1.method131("PlayerScores", 10));
          if (var1.method119("DisplaySlots", 10)) {
-            this.method24632(var1.method130("DisplaySlots"));
+            this.method24632(var1.getCompound("DisplaySlots"));
          }
 
          if (var1.method119("Teams", 9)) {
@@ -39,9 +39,9 @@ public class Class7535 extends Class7530 {
       }
    }
 
-   public void method24630(Class41 var1) {
+   public void method24630(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         Class39 var5 = var1.method153(var4);
+         CompoundNBT var5 = var1.method153(var4);
          String var6 = var5.method126("Name");
          if (var6.length() > 16) {
             var6 = var6.substring(0, 16);
@@ -104,13 +104,13 @@ public class Class7535 extends Class7530 {
       }
    }
 
-   public void method24631(Class8218 var1, Class41 var2) {
+   public void method24631(Class8218 var1, ListNBT var2) {
       for (int var5 = 0; var5 < var2.size(); var5++) {
          this.field32341.method20993(var2.method160(var5), var1);
       }
    }
 
-   public void method24632(Class39 var1) {
+   public void method24632(CompoundNBT var1) {
       for (int var4 = 0; var4 < 19; var4++) {
          if (var1.method119("slot_" + var4, 8)) {
             String var5 = var1.method126("slot_" + var4);
@@ -120,9 +120,9 @@ public class Class7535 extends Class7530 {
       }
    }
 
-   public void method24633(Class41 var1) {
+   public void method24633(ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         Class39 var5 = var1.method153(var4);
+         CompoundNBT var5 = var1.method153(var4);
          Class9008.method33278(var5.method126("CriteriaName")).ifPresent(var2 -> {
             String var5x = var5.method126("Name");
             if (var5x.length() > 16) {
@@ -137,11 +137,11 @@ public class Class7535 extends Class7530 {
    }
 
    @Override
-   public Class39 method24592(Class39 var1) {
+   public CompoundNBT method24592(CompoundNBT var1) {
       if (this.field32341 != null) {
-         var1.method99("Objectives", this.method24636());
-         var1.method99("PlayerScores", this.field32341.method21012());
-         var1.method99("Teams", this.method24634());
+         var1.put("Objectives", this.method24636());
+         var1.put("PlayerScores", this.field32341.method21012());
+         var1.put("Teams", this.method24634());
          this.method24635(var1);
          return var1;
       } else {
@@ -150,11 +150,11 @@ public class Class7535 extends Class7530 {
       }
    }
 
-   public Class41 method24634() {
-      Class41 var3 = new Class41();
+   public ListNBT method24634() {
+      ListNBT var3 = new ListNBT();
 
       for (Class8218 var5 : this.field32341.method20997()) {
-         Class39 var6 = new Class39();
+         CompoundNBT var6 = new CompoundNBT();
          var6.method109("Name", var5.method28567());
          var6.method109("DisplayName", ITextComponent$Serializer.toJson(var5.method28568()));
          if (var5.method28591().getColorIndex() >= 0) {
@@ -168,21 +168,21 @@ public class Class7535 extends Class7530 {
          var6.method109("NameTagVisibility", var5.method28582().field14559);
          var6.method109("DeathMessageVisibility", var5.method28583().field14559);
          var6.method109("CollisionRule", var5.method28586().field14467);
-         Class41 var7 = new Class41();
+         ListNBT var7 = new ListNBT();
 
          for (String var9 : var5.method28575()) {
-            var7.add(Class40.method150(var9));
+            var7.add(StringNBT.valueOf(var9));
          }
 
-         var6.method99("Players", var7);
+         var6.put("Players", var7);
          var3.add(var6);
       }
 
       return var3;
    }
 
-   public void method24635(Class39 var1) {
-      Class39 var4 = new Class39();
+   public void method24635(CompoundNBT var1) {
+      CompoundNBT var4 = new CompoundNBT();
       boolean var5 = false;
 
       for (int var6 = 0; var6 < 19; var6++) {
@@ -194,16 +194,16 @@ public class Class7535 extends Class7530 {
       }
 
       if (var5) {
-         var1.method99("DisplaySlots", var4);
+         var1.put("DisplaySlots", var4);
       }
    }
 
-   public Class41 method24636() {
-      Class41 var3 = new Class41();
+   public ListNBT method24636() {
+      ListNBT var3 = new ListNBT();
 
       for (Class8375 var5 : this.field32341.method20982()) {
          if (var5.method29337() != null) {
-            Class39 var6 = new Class39();
+            CompoundNBT var6 = new CompoundNBT();
             var6.method109("Name", var5.method29336());
             var6.method109("CriteriaName", var5.method29337().method33280());
             var6.method109("DisplayName", ITextComponent$Serializer.toJson(var5.method29338()));

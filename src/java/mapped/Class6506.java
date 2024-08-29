@@ -7,7 +7,7 @@ import com.google.gson.JsonParseException;
 public class Class6506 implements Class6504<Class4854> {
    public Class4854 method19700(ResourceLocation var1, JsonObject var2) {
       String var5 = JSONUtils.method32764(var2, "group", "");
-      Class25 var6 = method19703(JSONUtils.method32785(var2, "ingredients"));
+      NonNullList var6 = method19703(JSONUtils.method32785(var2, "ingredients"));
       if (!var6.isEmpty()) {
          if (var6.size() <= 9) {
             ItemStack var7 = Class4852.method14987(JSONUtils.method32782(var2, "result"));
@@ -20,8 +20,8 @@ public class Class6506 implements Class6504<Class4854> {
       }
    }
 
-   private static Class25<Class120> method19703(JsonArray var0) {
-      Class25 var3 = Class25.method67();
+   private static NonNullList<Class120> method19703(JsonArray var0) {
+      NonNullList var3 = NonNullList.create();
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
          Class120 var5 = Class120.method344(var0.get(var4));
@@ -36,7 +36,7 @@ public class Class6506 implements Class6504<Class4854> {
    public Class4854  method19699(ResourceLocation var1, PacketBuffer var2) {
       String var5 = var2.method35728(32767);
       int var6 = var2.method35714();
-      Class25 var7 = Class25.<Class120>method68(var6, Class120.field427);
+      NonNullList var7 = NonNullList.<Class120>method68(var6, Class120.field427);
 
       for (int var8 = 0; var8 < var7.size(); var8++) {
          var7.set(var8, Class120.method343(var2));

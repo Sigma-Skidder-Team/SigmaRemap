@@ -48,7 +48,7 @@ public class Class1313 extends Screen {
 
       Block var9;
       try {
-         var9 = Registry.field16072.method9187(new ResourceLocation(var8)).orElse((Block)null);
+         var9 = Registry.BLOCK.method9187(new ResourceLocation(var8)).orElse((Block)null);
       } catch (Exception var11) {
          field6925.error("Error while parsing flat world string => {}", var11.getMessage());
          return null;
@@ -122,13 +122,13 @@ public class Class1313 extends Screen {
       }
 
       var4.append(";");
-      var4.append(var0.method9181(var1.method38127()));
+      var4.append(var0.getKey(var1.method38127()));
       return var4.toString();
    }
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field6928 = new TranslationTextComponent("createWorld.customize.presets.share");
       this.field6929 = new TranslationTextComponent("createWorld.customize.presets.list");
       this.field6932 = new Class1189(this.field4568, 50, 40, this.field4564 - 100, 20, this.field6928);
@@ -147,7 +147,7 @@ public class Class1313 extends Screen {
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field6927))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6927))
       );
       this.method6205(this.field6930.method6023() != null);
    }
@@ -158,9 +158,9 @@ public class Class1313 extends Screen {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
+   public void resize(Minecraft var1, int var2, int var3) {
       String var6 = this.field6932.method5636();
-      this.method2467(var1, var2, var3);
+      this.init(var1, var2, var3);
       this.field6932.method5635(var6);
    }
 
@@ -171,7 +171,7 @@ public class Class1313 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -189,9 +189,9 @@ public class Class1313 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field6932.method5633();
-      super.method1919();
+      super.tick();
    }
 
    public void method6205(boolean var1) {
@@ -286,7 +286,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.water_world"),
-         Class8514.field37883,
+         Items.field37883,
          Class9495.field44145,
          Arrays.<Structure<?>>asList(Structure.field18069, Structure.field18065, Structure.field18068),
          false,
@@ -327,7 +327,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.bottomless_pit"),
-         Class8514.field37839,
+         Items.field37839,
          Class9495.field44122,
          Arrays.<Structure<?>>asList(Structure.field18073),
          false,
@@ -352,7 +352,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.redstone_ready"),
-         Class8514.field37887,
+         Items.field37887,
          Class9495.field44123,
          Collections.<Structure<?>>emptyList(),
          false,

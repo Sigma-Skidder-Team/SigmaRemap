@@ -8,10 +8,10 @@ public abstract class Class2827<T extends Entity> extends Class2828 {
    public boolean field17602 = true;
 
    public Class2827() {
-      this(Class4520::method14312);
+      this(RenderType::getEntityCutoutNoCull);
    }
 
-   public Class2827(Function<ResourceLocation, Class4520> var1) {
+   public Class2827(Function<ResourceLocation, RenderType> var1) {
       super(var1);
    }
 

@@ -24,18 +24,18 @@ public class Class800 extends Class798 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field4177.method5633();
-      super.method1919();
+      super.tick();
    }
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4176 = new Class1153(new TranslationTextComponent("mco.reset.world.generate"), this.field4564 / 2, 17, 16777215);
       this.<Class1153>method2456(this.field4176);
       this.field4177 = new Class1189(
-         this.field4562.field1294, this.field4564 / 2 - 100, method1929(2), 200, 20, (Class1189)null, new TranslationTextComponent("mco.reset.world.seed")
+         this.field4562.fontRenderer, this.field4564 / 2 - 100, method1929(2), 200, 20, (Class1189)null, new TranslationTextComponent("mco.reset.world.seed")
       );
       this.field4177.method5657(32);
       this.<Class1189>method2456(this.field4177);
@@ -59,14 +59,14 @@ public class Class800 extends Class798 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 8, method1929(12), 97, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field4175))
+         new Class1206(this.field4564 / 2 + 8, method1929(12), 97, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4175))
       );
       this.method1930();
    }
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -93,6 +93,6 @@ public class Class800 extends Class798 {
    }
 
    private ITextComponent method1940() {
-      return Class7127.method22238(new TranslationTextComponent("selectWorld.mapFeatures"), this.field4178);
+      return DialogTexts.method22238(new TranslationTextComponent("selectWorld.mapFeatures"), this.field4178);
    }
 }

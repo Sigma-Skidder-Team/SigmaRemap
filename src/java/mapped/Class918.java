@@ -3,18 +3,18 @@ package mapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-public class Class918 extends Class916 {
+public class Class918 extends AbstractMinecartEntity {
    private static final Class9289<String> field5232 = Class9361.<String>method35441(Class918.class, Class7784.field33393);
    private static final Class9289<ITextComponent> field5233 = Class9361.<ITextComponent>method35441(Class918.class, Class7784.field33394);
    private final Class911 field5234 = new Class912(this);
    private int field5235;
 
-   public Class918(Class8992<? extends Class918> var1, World var2) {
+   public Class918(EntityType<? extends Class918> var1, World var2) {
       super(var1, var2);
    }
 
    public Class918(World var1, double var2, double var4, double var6) {
-      super(Class8992.field41052, var1, var2, var4, var6);
+      super(EntityType.field41052, var1, var2, var4, var6);
    }
 
    @Override
@@ -25,7 +25,7 @@ public class Class918 extends Class916 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5234.method3561(var1);
       this.method3210().method35446(field5232, this.method3614().method3563());
@@ -33,18 +33,18 @@ public class Class918 extends Class916 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       this.field5234.method3560(var1);
    }
 
    @Override
-   public Class2177 method3602() {
-      return Class2177.field14293;
+   public MinecartType getMinecartType() {
+      return MinecartType.COMMAND_BLOCK;
    }
 
    @Override
-   public Class7380 method3604() {
+   public BlockState method3604() {
       return Blocks.COMMAND_BLOCK.method11579();
    }
 
@@ -55,7 +55,7 @@ public class Class918 extends Class916 {
    @Override
    public void method3589(int var1, int var2, int var3, boolean var4) {
       if (var4 && this.field5055 - this.field5235 >= 4) {
-         this.method3614().method3564(this.field5024);
+         this.method3614().method3564(this.world);
          this.field5235 = this.field5055;
       }
    }

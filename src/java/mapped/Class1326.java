@@ -72,8 +72,8 @@ public class Class1326 extends Class1325 {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
-      super.method2482(var1, var2, var3);
+   public void resize(Minecraft var1, int var2, int var3) {
+      super.resize(var1, var2, var3);
       this.method6306();
       this.method6315();
       this.method6317();
@@ -88,7 +88,7 @@ public class Class1326 extends Class1325 {
    @Override
    public void method6308(Class911 var1) {
       this.field4562
-         .getClientPlayNetHandler()
+         .getConnection()
          .sendPacket(
             new Class5578(new BlockPos(var1.method3573()), this.field7010.method5636(), this.field7021, var1.method3571(), this.field7022, this.field7023)
          );

@@ -10,7 +10,7 @@ public class Class9229 {
 
    public static void method34711(String var0) {
       NarratorChatListener var3 = NarratorChatListener.INSTANCE;
-      var3.method20406();
+      var3.clear();
       var3.method20400(ChatType.SYSTEM, new StringTextComponent(method34712(var0)), Util.DUMMY_UUID);
    }
 

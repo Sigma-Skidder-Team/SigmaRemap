@@ -27,16 +27,16 @@ public final class Class4556 extends AbstractIterator<Mutable> {
       this.field21970 = this.field21980.method8354().method8379(this.field21979);
       this.field21971 = 4 * this.field21981;
       this.field21972 = -1;
-      this.field21975 = this.field21970.method8304();
+      this.field21975 = this.field21970.getX();
       this.field21976 = this.field21970.getY();
-      this.field21977 = this.field21970.method8306();
+      this.field21977 = this.field21970.getZ();
    }
 
    public Mutable computeNext() {
       this.field21970.method8372(this.field21975, this.field21976, this.field21977).method8379(this.field21969[(this.field21972 + 4) % 4]);
-      this.field21975 = this.field21970.method8304();
+      this.field21975 = this.field21970.getX();
       this.field21976 = this.field21970.getY();
-      this.field21977 = this.field21970.method8306();
+      this.field21977 = this.field21970.getZ();
       if (this.field21974 >= this.field21973) {
          if (this.field21972 >= this.field21971) {
             return (Mutable)this.endOfData();

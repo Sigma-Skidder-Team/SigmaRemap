@@ -1,35 +1,35 @@
 package mapped;
 
-public class Class992 extends Class916 {
+public class Class992 extends AbstractMinecartEntity {
    private static String[] field5478;
    private final Class7574 field5479 = new Class7575(this);
 
-   public Class992(Class8992<? extends Class992> var1, World var2) {
+   public Class992(EntityType<? extends Class992> var1, World var2) {
       super(var1, var2);
    }
 
    public Class992(World var1, double var2, double var4, double var6) {
-      super(Class8992.field41055, var1, var2, var4, var6);
+      super(EntityType.field41055, var1, var2, var4, var6);
    }
 
    @Override
-   public Class2177 method3602() {
-      return Class2177.field14291;
+   public MinecartType getMinecartType() {
+      return MinecartType.field14291;
    }
 
    @Override
-   public Class7380 method3604() {
+   public BlockState method3604() {
       return Blocks.field36532.method11579();
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5479.method24794(var1);
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       this.field5479.method24795(var1);
    }

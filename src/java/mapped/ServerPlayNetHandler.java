@@ -69,7 +69,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public ServerPlayNetHandler(MinecraftServer var1, NetworkManager var2, ServerPlayerEntity var3) {
       this.server = var1;
       this.netManager = var2;
-      var2.method30692(this);
+      var2.setNetHandler(this);
       this.player = var3;
       var3.field4855 = this;
       IChatFilter var6 = var3.method2837();
@@ -161,7 +161,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public NetworkManager method15589() {
+   public NetworkManager getNetworkManager() {
       return this.netManager;
    }
 
@@ -178,7 +178,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    private <T> void method15659(T var1, Consumer<T> var2, BiFunction<IChatFilter, T, CompletableFuture<Optional<T>>> var3) {
       MinecraftServer var6 = this.player.getServerWorld().method6715();
       Consumer<T> var7 = var2x -> {
-         if (!this.method15589().method30707()) {
+         if (!this.getNetworkManager().isChannelOpen()) {
             LOGGER.debug("Ignoring packet due to disconnection");
          } else {
             var2.accept(var2x);
@@ -253,7 +253,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                   var22,
                   var24
                );
-               this.netManager.method30693(new Class5536(var4));
+               this.netManager.sendPacket(new Class5536(var4));
                return;
             }
 
@@ -282,7 +282,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             boolean var32 = var5.method7053(var4, var4.method3389().method19679(0.0625));
             if (var30 && (var31 || !var32)) {
                var4.method3269(var6, var8, var10, var18, var19);
-               this.netManager.method30693(new Class5536(var4));
+               this.netManager.sendPacket(new Class5536(var4));
                return;
             }
 
@@ -299,7 +299,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private boolean method15664(Entity var1) {
-      return var1.field5024.method7035(var1.method3389().method19664(0.0625).method19662(0.0, -0.55, 0.0)).allMatch(Class7377::method23393);
+      return var1.world.method7035(var1.method3389().method19664(0.0625).method19662(0.0, -0.55, 0.0)).allMatch(Class7377::isAir);
    }
 
    @Override
@@ -358,7 +358,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          .getCommandManager()
          .method18842()
          .getCompletionSuggestions(var5)
-         .thenAccept(var2 -> this.netManager.method30693(new Class5543(var1.method17485(), var2)));
+         .thenAccept(var2 -> this.netManager.sendPacket(new Class5543(var1.method17485(), var2)));
    }
 
    @Override
@@ -372,7 +372,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          Class911 var4 = null;
          Class969 var5 = null;
          BlockPos var6 = var1.method17516();
-         Class944 var7 = this.player.field5024.method6759(var6);
+         TileEntity var7 = this.player.world.getTileEntity(var6);
          if (var7 instanceof Class969) {
             var5 = (Class969)var7;
             var4 = var5.method4009();
@@ -382,30 +382,30 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          boolean var9 = var1.method17518();
          if (var4 != null) {
             Class2037 var10 = var5.method4020();
-            Direction var11 = this.player.field5024.method6738(var6).<Direction>method23463(Class3355.field18893);
+            Direction var11 = this.player.world.getBlockState(var6).<Direction>method23463(Class3355.field18893);
             switch (Class9703.field45356[var1.method17521().ordinal()]) {
                case 1:
-                  Class7380 var12 = Blocks.field36888.method11579();
+                  BlockState var12 = Blocks.field36888.method11579();
                   this.player
-                     .field5024
+                     .world
                      .method6725(var6, var12.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
                   break;
                case 2:
-                  Class7380 var13 = Blocks.field36887.method11579();
+                  BlockState var13 = Blocks.field36887.method11579();
                   this.player
-                     .field5024
+                     .world
                      .method6725(var6, var13.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
                   break;
                case 3:
                default:
-                  Class7380 var14 = Blocks.COMMAND_BLOCK.method11579();
+                  BlockState var14 = Blocks.COMMAND_BLOCK.method11579();
                   this.player
-                     .field5024
+                     .world
                      .method6725(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
             }
 
             var7.method3779();
-            this.player.field5024.method6761(var6, var7);
+            this.player.world.method6761(var6, var7);
             var4.method3562(var8);
             var4.method3570(var9);
             if (!var9) {
@@ -430,7 +430,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.server.method1361()) {
          if (this.player.method2979()) {
-            Class911 var4 = var1.method17387(this.player.field5024);
+            Class911 var4 = var1.method17387(this.player.world);
             if (var4 != null) {
                var4.method3562(var1.method17388());
                var4.method3570(var1.method17389());
@@ -452,12 +452,12 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void method15643(Class5568 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      this.player.field4902.method4034(var1.method17494());
+      this.player.inventory.method4034(var1.method17494());
       this.player
          .field4855
-         .sendPacket(new Class5501(-2, this.player.field4902.field5443, this.player.field4902.method3618(this.player.field4902.field5443)));
-      this.player.field4855.sendPacket(new Class5501(-2, var1.method17494(), this.player.field4902.method3618(var1.method17494())));
-      this.player.field4855.sendPacket(new Class5608(this.player.field4902.field5443));
+         .sendPacket(new Class5501(-2, this.player.inventory.currentItem, this.player.inventory.method3618(this.player.inventory.currentItem)));
+      this.player.field4855.sendPacket(new Class5501(-2, var1.method17494(), this.player.inventory.method3618(var1.method17494())));
+      this.player.field4855.sendPacket(new Class5608(this.player.inventory.currentItem));
    }
 
    @Override
@@ -485,8 +485,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
          BlockPos var4 = var1.method17609();
-         Class7380 var5 = this.player.field5024.method6738(var4);
-         Class944 var6 = this.player.field5024.method6759(var4);
+         BlockState var5 = this.player.world.getBlockState(var4);
+         TileEntity var6 = this.player.world.getTileEntity(var4);
          if (var6 instanceof Class964) {
             Class964 var7 = (Class964)var6;
             var7.method3951(var1.method17611());
@@ -502,36 +502,36 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             var7.method3956(var1.method17621());
             var7.method3958(var1.method17622());
             if (!var7.method3936()) {
-               this.player.method2785(new TranslationTextComponent("structure_block.invalid_structure_name", var1.method17612()), false);
+               this.player.sendStatusMessage(new TranslationTextComponent("structure_block.invalid_structure_name", var1.method17612()), false);
             } else {
                String var8 = var7.method3934();
                if (var1.method17610() != Class1897.field11139) {
                   if (var1.method17610() != Class1897.field11140) {
                      if (var1.method17610() == Class1897.field11141) {
                         if (!var7.method3959()) {
-                           this.player.method2785(new TranslationTextComponent("structure_block.size_failure"), false);
+                           this.player.sendStatusMessage(new TranslationTextComponent("structure_block.size_failure"), false);
                         } else {
-                           this.player.method2785(new TranslationTextComponent("structure_block.size_success", var8), false);
+                           this.player.sendStatusMessage(new TranslationTextComponent("structure_block.size_success", var8), false);
                         }
                      }
                   } else if (var7.method3970()) {
                      if (!var7.method3965(this.player.getServerWorld())) {
-                        this.player.method2785(new TranslationTextComponent("structure_block.load_prepare", var8), false);
+                        this.player.sendStatusMessage(new TranslationTextComponent("structure_block.load_prepare", var8), false);
                      } else {
-                        this.player.method2785(new TranslationTextComponent("structure_block.load_success", var8), false);
+                        this.player.sendStatusMessage(new TranslationTextComponent("structure_block.load_success", var8), false);
                      }
                   } else {
-                     this.player.method2785(new TranslationTextComponent("structure_block.load_not_found", var8), false);
+                     this.player.sendStatusMessage(new TranslationTextComponent("structure_block.load_not_found", var8), false);
                   }
                } else if (!var7.method3963()) {
-                  this.player.method2785(new TranslationTextComponent("structure_block.save_failure", var8), false);
+                  this.player.sendStatusMessage(new TranslationTextComponent("structure_block.save_failure", var8), false);
                } else {
-                  this.player.method2785(new TranslationTextComponent("structure_block.save_success", var8), false);
+                  this.player.sendStatusMessage(new TranslationTextComponent("structure_block.save_success", var8), false);
                }
             }
 
             var7.method3622();
-            this.player.field5024.method6731(var4, var5, var5, 3);
+            this.player.world.method6731(var4, var5, var5, 3);
          }
       }
    }
@@ -541,8 +541,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
          BlockPos var4 = var1.method17426();
-         Class7380 var5 = this.player.field5024.method6738(var4);
-         Class944 var6 = this.player.field5024.method6759(var4);
+         BlockState var5 = this.player.world.getBlockState(var4);
+         TileEntity var6 = this.player.world.getTileEntity(var4);
          if (var6 instanceof Class965) {
             Class965 var7 = (Class965)var6;
             var7.method3983(var1.method17427());
@@ -551,7 +551,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             var7.method3986(var1.method17430());
             var7.method3987(var1.method17431());
             var7.method3622();
-            this.player.field5024.method6731(var4, var5, var5, 3);
+            this.player.world.method6731(var4, var5, var5, 3);
          }
       }
    }
@@ -561,7 +561,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method2979()) {
          BlockPos var4 = var1.method17189();
-         Class944 var5 = this.player.field5024.method6759(var4);
+         TileEntity var5 = this.player.world.getTileEntity(var4);
          if (var5 instanceof Class965) {
             Class965 var6 = (Class965)var5;
             var6.method3988(this.player.getServerWorld(), var1.method17190(), var1.method17191());
@@ -584,8 +584,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void method15648(Class5551 var1) {
       ItemStack var4 = var1.method17465();
-      if (var4.method32107() == Class8514.field38047) {
-         Class39 var5 = var4.method32142();
+      if (var4.getItem() == Items.field38047) {
+         CompoundNBT var5 = var4.method32142();
          if (Class3291.method11833(var5)) {
             ArrayList var6 = Lists.newArrayList();
             boolean var7 = var1.method17466();
@@ -593,14 +593,14 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                var6.add(var5.method126("title"));
             }
 
-            Class41 var8 = var5.method131("pages", 8);
+            ListNBT var8 = var5.method131("pages", 8);
 
             for (int var9 = 0; var9 < var8.size(); var9++) {
                var6.add(var8.method160(var9));
             }
 
             int var10 = var1.method17467();
-            if (Class974.method4035(var10) || var10 == 40) {
+            if (PlayerInventory.isHotbar(var10) || var10 == 40) {
                this.method15661(
                   var6, !var7 ? var2 -> this.method15665(var2, var10) : var2 -> this.method15666(var2.get(0), var2.subList(1, var2.size()), var10)
                );
@@ -610,35 +610,35 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private void method15665(List<String> var1, int var2) {
-      ItemStack var5 = this.player.field4902.method3618(var2);
-      if (var5.method32107() == Class8514.field38047) {
-         Class41 var6 = new Class41();
-         var1.stream().<Class40>map(Class40::method150).forEach(var6::add);
-         var5.method32164("pages", var6);
+      ItemStack var5 = this.player.inventory.method3618(var2);
+      if (var5.getItem() == Items.field38047) {
+         ListNBT var6 = new ListNBT();
+         var1.stream().<StringNBT>map(StringNBT::valueOf).forEach(var6::add);
+         var5.setTagInfo("pages", var6);
       }
    }
 
    private void method15666(String var1, List<String> var2, int var3) {
-      ItemStack var6 = this.player.field4902.method3618(var3);
-      if (var6.method32107() == Class8514.field38047) {
-         ItemStack var7 = new ItemStack(Class8514.field38048);
-         Class39 var8 = var6.method32142();
+      ItemStack var6 = this.player.inventory.method3618(var3);
+      if (var6.getItem() == Items.field38047) {
+         ItemStack var7 = new ItemStack(Items.field38048);
+         CompoundNBT var8 = var6.method32142();
          if (var8 != null) {
             var7.method32148(var8.method79());
          }
 
-         var7.method32164("author", Class40.method150(this.player.getName().getString()));
-         var7.method32164("title", Class40.method150(var1));
-         Class41 var9 = new Class41();
+         var7.setTagInfo("author", StringNBT.valueOf(this.player.getName().getString()));
+         var7.setTagInfo("title", StringNBT.valueOf(var1));
+         ListNBT var9 = new ListNBT();
 
          for (String var11 : var2) {
             StringTextComponent var12 = new StringTextComponent(var11);
             String var13 = ITextComponent$Serializer.toJson(var12);
-            var9.add(Class40.method150(var13));
+            var9.add(StringNBT.valueOf(var13));
          }
 
-         var7.method32164("pages", var9);
-         this.player.field4902.method3621(var3, var7);
+         var7.setTagInfo("pages", var9);
+         this.player.inventory.method3621(var3, var7);
       }
    }
 
@@ -648,7 +648,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (this.player.method3424(2)) {
          Entity var4 = this.player.getServerWorld().method6774(var1.method17479());
          if (var4 != null) {
-            Class39 var5 = var4.method3294(new Class39());
+            CompoundNBT var5 = var4.method3294(new CompoundNBT());
             this.player.field4855.sendPacket(new Class5510(var1.method17478(), var5));
          }
       }
@@ -658,8 +658,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void method15650(Class5486 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (this.player.method3424(2)) {
-         Class944 var4 = this.player.getServerWorld().method6759(var1.method17255());
-         Class39 var5 = var4 == null ? null : var4.method3646(new Class39());
+         TileEntity var4 = this.player.getServerWorld().getTileEntity(var1.method17255());
+         CompoundNBT var5 = var4 == null ? null : var4.write(new CompoundNBT());
          this.player.field4855.sendPacket(new Class5510(var1.method17254(), var5));
       }
    }
@@ -752,7 +752,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                         this.field23250 = var23 >= -0.03125
                            && this.player.field4857.method33863() != Class1894.field11105
                            && !this.server.method1359()
-                           && !this.player.field4919.field29608
+                           && !this.player.abilities.allowFlying
                            && !this.player.method3033(Class8254.field35491)
                            && !this.player.method3165()
                            && this.method15664(this.player);
@@ -830,30 +830,30 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15624(Class5492 var1) {
+   public void method15624(CPlayerDiggingPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       BlockPos var4 = var1.method17272();
       this.player.markPlayerActive();
-      Class2070 var5 = var1.method17274();
+      CPlayerDiggingPacket.Action var5 = var1.method17274();
       switch (Class9703.field45357[var5.ordinal()]) {
          case 1:
-            if (!this.player.method2800()) {
+            if (!this.player.isSpectator()) {
                ItemStack var6 = this.player.getHeldItem(Hand.field183);
-               this.player.method3095(Hand.field183, this.player.getHeldItem(Hand.field182));
-               this.player.method3095(Hand.field182, var6);
+               this.player.method3095(Hand.field183, this.player.getHeldItem(Hand.MAIN_HAND));
+               this.player.method3095(Hand.MAIN_HAND, var6);
                this.player.method3162();
             }
 
             return;
          case 2:
-            if (!this.player.method2800()) {
-               this.player.method2881(false);
+            if (!this.player.isSpectator()) {
+               this.player.drop(false);
             }
 
             return;
          case 3:
-            if (!this.player.method2800()) {
-               this.player.method2881(true);
+            if (!this.player.isSpectator()) {
+               this.player.drop(true);
             }
 
             return;
@@ -871,10 +871,10 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private static boolean method15670(ServerPlayerEntity var0, ItemStack var1) {
-      if (var1.method32105()) {
+      if (var1.isEmpty()) {
          return false;
       } else {
-         Class3257 var4 = var1.method32107();
+         Item var4 = var1.getItem();
          return (var4 instanceof Class3292 || var4 instanceof Class3287) && !var0.method2976().method19635(var4);
       }
    }
@@ -885,15 +885,15 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       ServerWorld var4 = this.player.getServerWorld();
       Hand var5 = var1.method17497();
       ItemStack var6 = this.player.getHeldItem(var5);
-      Class8711 var7 = var1.method17498();
-      BlockPos var8 = var7.method31423();
-      Direction var9 = var7.method31424();
+      BlockRayTraceResult var7 = var1.method17498();
+      BlockPos var8 = var7.getPos();
+      Direction var9 = var7.getFace();
       this.player.markPlayerActive();
       if (var8.getY() >= this.server.method1364()) {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
          this.player.field4855.sendPacket(new SChatPacket(var10, ChatType.GAME_INFO, Util.DUMMY_UUID));
       } else if (this.targetPos == null
-         && this.player.method3276((double)var8.method8304() + 0.5, (double)var8.getY() + 0.5, (double)var8.method8306() + 0.5) < 64.0
+         && this.player.method3276((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
          ActionResultType var12 = this.player.field4857.method33860(this.player, var4, var6, var5, var7);
          if (var9 == Direction.field673 && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
@@ -915,7 +915,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       Hand var5 = var1.method17472();
       ItemStack var6 = this.player.getHeldItem(var5);
       this.player.markPlayerActive();
-      if (!var6.method32105()) {
+      if (!var6.isEmpty()) {
          ActionResultType var7 = this.player.field4857.method33859(this.player, var4, var6, var5);
          if (var7.isSuccess()) {
             this.player.swing(var5, true);
@@ -926,7 +926,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void method15632(Class5497 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      if (this.player.method2800()) {
+      if (this.player.isSpectator()) {
          for (ServerWorld var5 : this.server.method1320()) {
             Entity var6 = var1.method17283(var5);
             if (var6 != null) {
@@ -945,8 +945,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void method15634(Class5538 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       Entity var4 = this.player.getRidingEntity();
-      if (var4 instanceof Class1002) {
-         ((Class1002)var4).method4151(var1.method17414(), var1.method17415());
+      if (var4 instanceof BoatEntity) {
+         ((BoatEntity)var4).method4151(var1.method17414(), var1.method17415());
       }
    }
 
@@ -970,7 +970,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
 
       if (this.method15657()) {
          LOGGER.info("Stopping singleplayer server as player logged out");
-         this.server.method1296(false);
+         this.server.initiateShutdown(false);
       }
    }
 
@@ -994,22 +994,22 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       try {
          this.netManager.method30694(var1, var2);
       } catch (Throwable var8) {
-         Class4526 var9 = Class4526.method14413(var8, "Sending packet");
-         Class8965 var7 = var9.method14410("Packet being sent");
-         var7.method32806("Packet class", () -> var1.getClass().getCanonicalName());
-         throw new Class2506(var9);
+         CrashReport var9 = CrashReport.makeCrashReport(var8, "Sending packet");
+         CrashReportCategory var7 = var9.makeCategory("Packet being sent");
+         var7.addDetail("Packet class", () -> var1.getClass().getCanonicalName());
+         throw new ReportedException(var9);
       }
    }
 
    @Override
    public void method15627(Class5539 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      if (var1.method17416() >= 0 && var1.method17416() < Class974.method4029()) {
-         if (this.player.field4902.field5443 != var1.method17416() && this.player.method3149() == Hand.field182) {
+      if (var1.method17416() >= 0 && var1.method17416() < PlayerInventory.method4029()) {
+         if (this.player.inventory.currentItem != var1.method17416() && this.player.method3149() == Hand.MAIN_HAND) {
             this.player.method3162();
          }
 
-         this.player.field4902.field5443 = var1.method17416();
+         this.player.inventory.currentItem = var1.method17416();
          this.player.markPlayerActive();
       } else {
          LOGGER.warn("{} tried to set an invalid carried item", this.player.getName().getString());
@@ -1198,17 +1198,17 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
       if (this.player.field4905.field25471 == var1.method17579() && this.player.field4905.method18140(this.player)) {
-         if (!this.player.method2800()) {
+         if (!this.player.isSpectator()) {
             ItemStack var4 = this.player.field4905.method18132(var1.method17580(), var1.method17581(), var1.method17584(), this.player);
             if (!ItemStack.method32128(var1.method17583(), var4)) {
                this.field23233.put(this.player.field4905.field25471, var1.method17582());
                this.player.field4855.sendPacket(new Class5542(var1.method17579(), var1.method17582(), false));
                this.player.field4905.method18141(this.player, false);
-               Class25 var5 = Class25.method67();
+               NonNullList var5 = NonNullList.create();
 
                for (int var6 = 0; var6 < this.player.field4905.field25468.size(); var6++) {
                   ItemStack var7 = this.player.field4905.field25468.get(var6).method18265();
-                  var5.add(!var7.method32105() ? var7 : ItemStack.EMPTY);
+                  var5.add(!var7.isEmpty() ? var7 : ItemStack.EMPTY);
                }
 
                this.player.method2718(this.player.field4905, var5);
@@ -1220,7 +1220,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                this.player.field4890 = false;
             }
          } else {
-            Class25 var8 = Class25.method67();
+            NonNullList var8 = NonNullList.create();
 
             for (int var9 = 0; var9 < this.player.field4905.field25468.size(); var9++) {
                var8.add(this.player.field4905.field25468.get(var9).method18265());
@@ -1235,7 +1235,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void method15617(Class5613 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      if (!this.player.method2800()
+      if (!this.player.isSpectator()
          && this.player.field4905.field25471 == var1.method17641()
          && this.player.field4905.method18140(this.player)
          && this.player.field4905 instanceof Class5828) {
@@ -1250,7 +1250,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void method15615(Class5533 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      if (this.player.field4905.field25471 == var1.method17395() && this.player.field4905.method18140(this.player) && !this.player.method2800()
+      if (this.player.field4905.field25471 == var1.method17395() && this.player.field4905.method18140(this.player) && !this.player.isSpectator()
          )
        {
          this.player.field4905.method18104(this.player, var1.method17396());
@@ -1264,23 +1264,23 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (this.player.field4857.method33866()) {
          boolean var4 = var1.method17336() < 0;
          ItemStack var5 = var1.method17337();
-         Class39 var6 = var5.method32145("BlockEntityTag");
-         if (!var5.method32105() && var6 != null && var6.method118("x") && var6.method118("y") && var6.method118("z")) {
+         CompoundNBT var6 = var5.method32145("BlockEntityTag");
+         if (!var5.isEmpty() && var6 != null && var6.contains("x") && var6.contains("y") && var6.contains("z")) {
             BlockPos var7 = new BlockPos(var6.method122("x"), var6.method122("y"), var6.method122("z"));
-            Class944 var8 = this.player.field5024.method6759(var7);
+            TileEntity var8 = this.player.world.getTileEntity(var7);
             if (var8 != null) {
-               Class39 var9 = var8.method3646(new Class39());
+               CompoundNBT var9 = var8.write(new CompoundNBT());
                var9.method133("x");
                var9.method133("y");
                var9.method133("z");
-               var5.method32164("BlockEntityTag", var9);
+               var5.setTagInfo("BlockEntityTag", var9);
             }
          }
 
          boolean var10 = var1.method17336() >= 1 && var1.method17336() <= 45;
-         boolean var11 = var5.method32105() || var5.method32117() >= 0 && var5.method32179() <= 64 && !var5.method32105();
+         boolean var11 = var5.isEmpty() || var5.method32117() >= 0 && var5.getCount() <= 64 && !var5.isEmpty();
          if (var10 && var11) {
-            if (!var5.method32105()) {
+            if (!var5.isEmpty()) {
                this.player.field4904.method18136(var1.method17336(), var5);
             } else {
                this.player.field4904.method18136(var1.method17336(), ItemStack.EMPTY);
@@ -1302,7 +1302,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (var4 == var1.method17275()
          && this.field23233.getOrDefault(var4, (short)(var1.method17276() + 1)) == var1.method17276()
          && !this.player.field4905.method18140(this.player)
-         && !this.player.method2800()) {
+         && !this.player.isSpectator()) {
          this.player.field4905.method18141(this.player, true);
       }
    }
@@ -1318,8 +1318,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       ServerWorld var5 = this.player.getServerWorld();
       BlockPos var6 = var1.method17351();
       if (var5.method7017(var6)) {
-         Class7380 var7 = var5.method6738(var6);
-         Class944 var8 = var5.method6759(var6);
+         BlockState var7 = var5.getBlockState(var6);
+         TileEntity var8 = var5.getTileEntity(var6);
          if (!(var8 instanceof Class954)) {
             return;
          }
@@ -1353,7 +1353,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void method15623(Class5612 var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      this.player.field4919.field29607 = var1.method17640() && this.player.field4919.field29608;
+      this.player.abilities.field29607 = var1.method17640() && this.player.abilities.allowFlying;
    }
 
    @Override

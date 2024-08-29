@@ -25,7 +25,7 @@ public abstract class Class5444<C extends Class4698> {
       this.field24197 = var4;
    }
 
-   public abstract void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, C var7);
+   public abstract void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, C var7);
 
    public Class9764 method17110() {
       return this.field24197;
@@ -40,7 +40,7 @@ public abstract class Class5444<C extends Class4698> {
          if (!this.field24196.isEmpty()) {
             Class9764 var10 = this.field24196.get(0).field20444;
             Class1998 var11 = var10.method38401();
-            BlockPos var12 = new BlockPos(var11.method8304(), var10.field45679, var11.method8306());
+            BlockPos var12 = new BlockPos(var11.getX(), var10.field45679, var11.getZ());
             Iterator var13 = this.field24196.iterator();
 
             while (var13.hasNext()) {
@@ -63,22 +63,22 @@ public abstract class Class5444<C extends Class4698> {
       }
    }
 
-   public Class39 method17114(int var1, int var2) {
-      Class39 var5 = new Class39();
+   public CompoundNBT method17114(int var1, int var2) {
+      CompoundNBT var5 = new CompoundNBT();
       if (this.method17117()) {
-         var5.method109("id", Registry.field16114.method9181(this.method17125()).toString());
+         var5.method109("id", Registry.field16114.getKey(this.method17125()).toString());
          var5.method102("ChunkX", var1);
          var5.method102("ChunkZ", var2);
          var5.method102("references", this.field24200);
-         var5.method99("BB", this.field24197.method38402());
-         Class41 var6 = new Class41();
+         var5.put("BB", this.field24197.method38402());
+         ListNBT var6 = new ListNBT();
          synchronized (this.field24196) {
             for (Class4178 var9 : this.field24196) {
                var6.add(var9.method12914());
             }
          }
 
-         var5.method99("Children", var6);
+         var5.put("Children", var6);
          return var5;
       } else {
          var5.method109("id", "INVALID");

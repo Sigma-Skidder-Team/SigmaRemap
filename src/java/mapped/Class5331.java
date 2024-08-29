@@ -7,7 +7,7 @@ import java.util.List;
 public class Class5331 extends Class5325 {
     public Class5331() {
         super(ModuleCategory.ITEM, "AutoGapple", "Automatically eat golden apples", new Class5218(), new Class5264());
-        this.method15972(new Class6009<Float>("Health", "Maximum health before eating gapple.", 7.0F, Float.class, 0.5F, 10.0F, 0.5F));
+        this.registerSetting(new Class6009<Float>("Health", "Maximum health before eating gapple.", 7.0F, Float.class, 0.5F, 10.0F, 0.5F));
     }
 
     public int method16749(boolean var1) {
@@ -16,7 +16,7 @@ public class Class5331 extends Class5325 {
                 ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
                 if (var5 != null) {
                     if (!var1) {
-                        if (var5.method32107() == Class8514.field37872 || var5.method32107() == Class8514.field37873) {
+                        if (var5.getItem() == Items.field37872 || var5.getItem() == Items.field37873) {
                             return var4 - 36;
                         }
                     } else {
@@ -37,7 +37,7 @@ public class Class5331 extends Class5325 {
             if (mc.player.field4904.method18131(var9).method18266()) {
                 ItemStack var10 = mc.player.field4904.method18131(var9).method18265();
                 if (!var1) {
-                    if (var10.method32107() == Class8514.field37872 || var10.method32107() == Class8514.field37873) {
+                    if (var10.getItem() == Items.field37872 || var10.getItem() == Items.field37873) {
                         Class7789.method25873(var9, 4);
                         return -1;
                     }

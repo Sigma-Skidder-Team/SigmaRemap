@@ -4,12 +4,12 @@ import net.minecraft.util.text.*;
 
 import java.util.List;
 
-public class Class3285 extends Class3257 {
+public class Class3285 extends Item {
    public Class3285(Class5643 var1) {
       super(var1);
    }
 
-   public static boolean method11817(Class39 var0) {
+   public static boolean method11817(CompoundNBT var0) {
       if (Class3291.method11833(var0)) {
          if (var0.method119("title", 8)) {
             String var3 = var0.method126("title");
@@ -27,14 +27,14 @@ public class Class3285 extends Class3257 {
    }
 
    public static int method11819(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       return var3 == null ? 0 : var3.method131("pages", 8).size();
    }
 
    @Override
    public ITextComponent method11731(ItemStack var1) {
       if (var1.method32141()) {
-         Class39 var4 = var1.method32142();
+         CompoundNBT var4 = var1.method32142();
          String var5 = var4.method126("title");
          if (!Class9001.method33256(var5)) {
             return new StringTextComponent(var5);
@@ -47,7 +47,7 @@ public class Class3285 extends Class3257 {
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       if (var1.method32141()) {
-         Class39 var7 = var1.method32142();
+         CompoundNBT var7 = var1.method32142();
          String var8 = var7.method126("author");
          if (!Class9001.method33256(var8)) {
             var3.add(new TranslationTextComponent("book.byAuthor", var8).mergeStyle(TextFormatting.GRAY));
@@ -61,7 +61,7 @@ public class Class3285 extends Class3257 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
+      BlockState var6 = var4.getBlockState(var5);
       if (!var6.method23448(Blocks.field37061)) {
          return ActionResultType.field14820;
       } else {
@@ -78,13 +78,13 @@ public class Class3285 extends Class3257 {
    }
 
    public static boolean method11820(ItemStack var0, Class6619 var1, PlayerEntity var2) {
-      Class39 var5 = var0.method32142();
+      CompoundNBT var5 = var0.method32142();
       if (var5 != null && !var5.method132("resolved")) {
          var5.method115("resolved", true);
          if (!method11817(var5)) {
             return false;
          } else {
-            Class41 var6 = var5.method131("pages", 8);
+            ListNBT var6 = var5.method131("pages", 8);
 
             for (int var7 = 0; var7 < var6.size(); var7++) {
                String var8 = var6.method160(var7);
@@ -97,10 +97,10 @@ public class Class3285 extends Class3257 {
                   var9 = new StringTextComponent(var8);
                }
 
-               var6.set(var7, (Class30)Class40.method150(ITextComponent$Serializer.toJson((ITextComponent)var9)));
+               var6.set(var7, (Class30) StringNBT.valueOf(ITextComponent$Serializer.toJson((ITextComponent)var9)));
             }
 
-            var5.method99("pages", var6);
+            var5.put("pages", var6);
             return true;
          }
       } else {

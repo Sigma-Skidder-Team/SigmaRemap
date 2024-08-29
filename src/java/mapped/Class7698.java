@@ -23,7 +23,7 @@ public class Class7698 {
       this.field32966[this.field32967] = 0L;
    }
 
-   public static void method25373(Class5425 var0) {
+   public static void method25373(BufferBuilder var0) {
       var0.field24132 = new Class7698();
    }
 
@@ -37,9 +37,9 @@ public class Class7698 {
       this.field32967--;
    }
 
-   public static void method25376(Class7380 var0, Class5422 var1) {
-      if (var1 instanceof Class5425) {
-         Class5425 var4 = (Class5425)var1;
+   public static void method25376(BlockState var0, Class5422 var1) {
+      if (var1 instanceof BufferBuilder) {
+         BufferBuilder var4 = (BufferBuilder)var1;
          int var5 = Class9172.method34259(var0);
          int var6 = Class9172.method34261(var0);
          int var7 = Class9172.method34277(var0);
@@ -50,18 +50,18 @@ public class Class7698 {
    }
 
    public static void method25377(Class5422 var0) {
-      if (var0 instanceof Class5425) {
-         Class5425 var3 = (Class5425)var0;
+      if (var0 instanceof BufferBuilder) {
+         BufferBuilder var3 = (BufferBuilder)var0;
          var3.field24132.method25375();
       }
    }
 
-   public static boolean method25378(boolean var0, Class5425 var1) {
+   public static boolean method25378(boolean var0, BufferBuilder var1) {
       var1.field24132.method25375();
       return var0;
    }
 
-   public static void method25379(Class5425 var0) {
+   public static void method25379(BufferBuilder var0) {
       Class7698 var3 = var0.field24132;
       Class7831 var4 = var0.method17089();
       var3.field32958 = var4.method26216() / 4;
@@ -73,13 +73,13 @@ public class Class7698 {
       var3.field32961 = 8;
    }
 
-   public static void method25380(Class5425 var0) {
+   public static void method25380(BufferBuilder var0) {
       if (var0.method17081() == 0) {
          method25379(var0);
       }
    }
 
-   public static void method25381(Class5425 var0) {
+   public static void method25381(BufferBuilder var0) {
       Class7698 var3 = var0.field24132;
       if (var3.field32958 == 16) {
          if (var0.method17080() == 7 && var0.method17081() % 4 == 0) {
@@ -94,7 +94,7 @@ public class Class7698 {
       }
    }
 
-   public static void method25382(Class5425 var0, int[] var1) {
+   public static void method25382(BufferBuilder var0, int[] var1) {
       if (var0.method17081() == 0) {
          method25379(var0);
       }
@@ -110,7 +110,7 @@ public class Class7698 {
       }
    }
 
-   public static void method25383(Class5425 var0, ByteBuffer var1) {
+   public static void method25383(BufferBuilder var0, ByteBuffer var1) {
       if (var0.method17081() == 0) {
          method25379(var0);
       }
@@ -129,14 +129,14 @@ public class Class7698 {
       }
    }
 
-   public static void method25384(Class5425 var0) {
+   public static void method25384(BufferBuilder var0) {
       Class7698 var3 = var0.field24132;
       if (var3.field32958 == 16 && var0.method17080() == 7 && var0.method17081() % 4 == 0) {
          var3.method25385(var0, var0.method17085() - 4 * var3.field32958);
       }
    }
 
-   public void method25385(Class5425 var1, int var2) {
+   public void method25385(BufferBuilder var1, int var2) {
       var2 += var1.method17091();
       FloatBuffer var5 = var1.method17083();
       IntBuffer var6 = var1.method17084();
@@ -236,7 +236,7 @@ public class Class7698 {
       var5.put(var2 + 3 * this.field32958 + 9 + 1, var61);
    }
 
-   public static void method25386(Class5425 var0) {
+   public static void method25386(BufferBuilder var0) {
       if (var0.method17089().method26223() && var0.method17080() == 7 && var0.method17081() % 4 == 0) {
          Class7698 var3 = var0.field24132;
          method25379(var0);
@@ -255,19 +255,19 @@ public class Class7698 {
             Class7414.method23854(var0, var1, var2);
          } else {
             ((Buffer)var4).position(36);
-            GL20.glVertexAttribPointer(Class8981.field40671, 2, 5126, false, var7, var4);
+            GL20.glVertexAttribPointer(Shaders.field40671, 2, 5126, false, var7, var4);
             ((Buffer)var4).position(44);
-            GL20.glVertexAttribPointer(Class8981.field40672, 4, 5122, false, var7, var4);
+            GL20.glVertexAttribPointer(Shaders.field40672, 4, 5122, false, var7, var4);
             ((Buffer)var4).position(52);
-            GL20.glVertexAttribPointer(Class8981.field40670, 3, 5122, false, var7, var4);
+            GL20.glVertexAttribPointer(Shaders.field40670, 3, 5122, false, var7, var4);
             ((Buffer)var4).position(0);
-            GL20.glEnableVertexAttribArray(Class8981.field40671);
-            GL20.glEnableVertexAttribArray(Class8981.field40672);
-            GL20.glEnableVertexAttribArray(Class8981.field40670);
+            GL20.glEnableVertexAttribArray(Shaders.field40671);
+            GL20.glEnableVertexAttribArray(Shaders.field40672);
+            GL20.glEnableVertexAttribArray(Shaders.field40670);
             Class7414.method23854(var0, var1, var2);
-            GL20.glDisableVertexAttribArray(Class8981.field40671);
-            GL20.glDisableVertexAttribArray(Class8981.field40672);
-            GL20.glDisableVertexAttribArray(Class8981.field40670);
+            GL20.glDisableVertexAttribArray(Shaders.field40671);
+            GL20.glDisableVertexAttribArray(Shaders.field40672);
+            GL20.glDisableVertexAttribArray(Shaders.field40670);
          }
       }
    }

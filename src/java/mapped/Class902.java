@@ -4,16 +4,16 @@ public class Class902 extends Class901 {
    private static String[] field5144;
    private static final Class9289<Boolean> field5145 = Class9361.<Boolean>method35441(Class902.class, Class7784.field33398);
 
-   public Class902(Class8992<? extends Class902> var1, World var2) {
+   public Class902(EntityType<? extends Class902> var1, World var2) {
       super(var1, var2);
    }
 
    public Class902(World var1, Class880 var2, double var3, double var5, double var7) {
-      super(Class8992.field41104, var2, var3, var5, var7, var1);
+      super(EntityType.field41104, var2, var3, var5, var7, var1);
    }
 
    public Class902(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      super(Class8992.field41104, var2, var4, var6, var8, var10, var12, var1);
+      super(EntityType.field41104, var2, var4, var6, var8, var10, var12, var1);
    }
 
    @Override
@@ -27,15 +27,15 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, Class7380 var4, Class7379 var5, float var6) {
+   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, Class7379 var5, float var6) {
       return this.method3532() && Class1079.method5002(var4) ? Math.min(0.8F, var6) : var6;
    }
 
    @Override
-   public void method3465(Class8709 var1) {
+   public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.field5024.field9020) {
-         Entity var4 = var1.method31416();
+      if (!this.world.field9020) {
+         Entity var4 = var1.getEntity();
          Entity var5 = this.method3460();
          boolean var6;
          if (!(var5 instanceof Class880)) {
@@ -54,8 +54,8 @@ public class Class902 extends Class901 {
 
          if (var6 && var4 instanceof Class880) {
             byte var8 = 0;
-            if (this.field5024.method6997() != Class2197.field14353) {
-               if (this.field5024.method6997() == Class2197.field14354) {
+            if (this.world.method6997() != Class2197.field14353) {
+               if (this.world.method6997() == Class2197.field14354) {
                   var8 = 40;
                }
             } else {
@@ -70,11 +70,11 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public void method3464(Class8710 var1) {
+   public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.field5024.field9020) {
-         Class2141 var4 = !this.field5024.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
-         this.field5024.method6756(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0F, false, var4);
+      if (!this.world.field9020) {
+         Class2141 var4 = !this.world.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+         this.world.method6756(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0F, false, var4);
          this.method2904();
       }
    }

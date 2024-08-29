@@ -19,7 +19,7 @@ public class Class6225 extends Class6218 {
       BlockPos var13 = var1.method11323().method8349(var5);
       double var14;
       if (!var6.method6739(var13).method23486(Class8953.field40469)) {
-         if (!var6.method6738(var13).method23393() || !var6.method6739(var13.method8313()).method23486(Class8953.field40469)) {
+         if (!var6.getBlockState(var13).isAir() || !var6.method6739(var13.method8313()).method23486(Class8953.field40469)) {
             return this.field27720.method19196(var1, var2);
          }
 
@@ -28,7 +28,7 @@ public class Class6225 extends Class6218 {
          var14 = 1.0;
       }
 
-      Class1002 var16 = new Class1002(var6, var7, var9 + var14, var11);
+      BoatEntity var16 = new BoatEntity(var6, var7, var9 + var14, var11);
       var16.method4171(this.field27721);
       var16.field5031 = var5.method551();
       var6.method6916(var16);

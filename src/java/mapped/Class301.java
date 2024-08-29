@@ -49,7 +49,7 @@ public class Class301 implements Class268 {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, Class191 var2, Class7165 var3, Class7165 var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       CompletableFuture<Map<ResourceLocation, Class6879>> var9 = this.field1163.method38419(var2, var5);
       CompletableFuture<Map> var10 = CompletableFuture.supplyAsync(
             () -> var2.method583("functions", var0x -> var0x.endsWith(".mcfunction")), var5
@@ -99,7 +99,7 @@ public class Class301 implements Class268 {
       }, var6);
    }
 
-   private static List<String> method1181(Class191 var0, ResourceLocation var1) {
+   private static List<String> method1181(IResourceManager var0, ResourceLocation var1) {
       try (Class1783 var4 = var0.method580(var1)) {
          return IOUtils.readLines(var4.method7763(), StandardCharsets.UTF_8);
       } catch (IOException var18) {

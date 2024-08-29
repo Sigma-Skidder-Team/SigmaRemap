@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3281 extends Class3257 {
+public class Class3281 extends Item {
    private static String[] field18789;
 
    public Class3281(Class5643 var1) {
@@ -12,14 +12,14 @@ public class Class3281 extends Class3257 {
       PlayerEntity var4 = var1.method18358();
       World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
-      Class7380 var7 = var5.method6738(var6);
+      BlockState var7 = var5.getBlockState(var6);
       if (!Class3244.method11656(var7)) {
          BlockPos var8 = var6.method8349(var1.method18354());
          if (!Class3397.method12012(var5, var8, var1.method18350())) {
-            return ActionResultType.field14821;
+            return ActionResultType.FAIL;
          } else {
             var5.method6742(var4, var8, Class6067.field26587, Class2266.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);
-            Class7380 var9 = Class3397.method12009(var5, var8);
+            BlockState var9 = Class3397.method12009(var5, var8);
             var5.method6725(var8, var9, 11);
             ItemStack var10 = var1.method18357();
             if (var4 instanceof ServerPlayerEntity) {

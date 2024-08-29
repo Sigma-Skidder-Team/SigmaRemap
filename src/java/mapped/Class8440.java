@@ -306,7 +306,7 @@ public class Class8440 {
                      }
                   } else {
                      String var23 = var19.substring(var22.length());
-                     if (Class8981.method33145(var23)) {
+                     if (Shaders.method33145(var23)) {
                         if (!var21) {
                            var8.method36406(var23);
                         } else {
@@ -490,7 +490,7 @@ public class Class8440 {
             }
          }
 
-         if (Class8981.method33169()) {
+         if (Shaders.method33169()) {
             String var26 = var14.replace("gl_TextureMatrix[1]", "gl_TextureMatrix[2]");
             var26 = var26.replace("gl_MultiTexCoord1", "gl_MultiTexCoord2");
             if (!var26.equals(var14)) {
@@ -625,7 +625,7 @@ public class Class8440 {
             String var6 = var5[0];
             String var7 = var5[1];
             if (var6.equals("alphaTest")) {
-               Class7906 var8 = Class8981.method33146(var7);
+               Class7906 var8 = Shaders.method33146(var7);
                if (var8 != null) {
                   String var9 = var0.getProperty(var4).trim();
                   Class7675 var10 = method29679(var9);
@@ -674,7 +674,7 @@ public class Class8440 {
             String var6 = var5[0];
             String var7 = var5[1];
             if (var6.equals("blend")) {
-               Class7906 var8 = Class8981.method33146(var7);
+               Class7906 var8 = Shaders.method33146(var7);
                if (var8 != null) {
                   String var9 = var0.getProperty(var4).trim();
                   Class8069 var10 = method29681(var9);
@@ -732,7 +732,7 @@ public class Class8440 {
             String var6 = var5[0];
             String var7 = var5[1];
             if (var6.equals("scale")) {
-               Class7906 var8 = Class8981.method33146(var7);
+               Class7906 var8 = Shaders.method33146(var7);
                if (var8 != null) {
                   String var9 = var0.getProperty(var4).trim();
                   Class7125 var10 = method29683(var9);
@@ -778,10 +778,10 @@ public class Class8440 {
             String var7 = var5[1];
             String var8 = var5[2];
             if (var6.equals("flip")) {
-               Class7906 var9 = Class8981.method33146(var7);
+               Class7906 var9 = Shaders.method33146(var7);
                if (var9 != null) {
                   Boolean[] var10 = var9.method26495();
-                  int var11 = Class8981.method33028(var8);
+                  int var11 = Shaders.method33028(var8);
                   if (var11 >= 0 && var11 < var10.length) {
                      String var12 = var0.getProperty(var4).trim();
                      Boolean var13 = Class7944.method26902(var12, (Boolean)null);

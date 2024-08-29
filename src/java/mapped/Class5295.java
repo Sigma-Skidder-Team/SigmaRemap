@@ -18,13 +18,13 @@ public class Class5295 extends Module {
 
     public Class5295() {
         super(ModuleCategory.ITEM, "AutoPotion", "Automatically throws potion to regen or speed up");
-        this.method15972(new Class6009<Float>("Health", "Maximum health before healing.", 6.0F, Float.class, 0.5F, 10.0F, 0.5F));
-        this.method15972(new Class6004("Predict", "Predicts where to pot when moving.", true));
-        this.method15972(new Class6004("Instant", "Instant potting (more packets).", false));
-        this.method15972(new Class6004("Speed", "Uses Speed pots.", true));
-        this.method15972(new Class6004("Regen", "Uses Regen pots.", true));
-        this.method15972(new Class6004("Custom potion", "Allow the use of custom potions", false));
-        this.method15972(new Class6004("In fight", "Allows using autopot with killaura", true));
+        this.registerSetting(new Class6009<Float>("Health", "Maximum health before healing.", 6.0F, Float.class, 0.5F, 10.0F, 0.5F));
+        this.registerSetting(new BooleanSetting("Predict", "Predicts where to pot when moving.", true));
+        this.registerSetting(new BooleanSetting("Instant", "Instant potting (more packets).", false));
+        this.registerSetting(new BooleanSetting("Speed", "Uses Speed pots.", true));
+        this.registerSetting(new BooleanSetting("Regen", "Uses Regen pots.", true));
+        this.registerSetting(new BooleanSetting("Custom potion", "Allow the use of custom potions", false));
+        this.registerSetting(new BooleanSetting("In fight", "Allows using autopot with killaura", true));
     }
 
     @Override
@@ -56,8 +56,8 @@ public class Class5295 extends Module {
 
                 if (this.field23811 != 1) {
                     if (this.field23811 >= 2) {
-                        mc.player.field4902.field5443 = this.field23810;
-                        mc.field1337.method23138();
+                        mc.player.inventory.currentItem = this.field23810;
+                        mc.playerController.method23138();
                         this.field23811 = 0;
                     }
 
@@ -78,7 +78,7 @@ public class Class5295 extends Module {
                     }
                 } else {
                     this.field23811++;
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                    mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
                 }
             }
         }
@@ -113,7 +113,7 @@ public class Class5295 extends Module {
         for (int var8 = 9; var8 < 45; var8++) {
             if (mc.player.field4904.method18131(var8).method18266()) {
                 ItemStack var9 = mc.player.field4904.method18131(var8).method18265();
-                if (var9.method32107() instanceof Class3323) {
+                if (var9.getItem() instanceof Class3323) {
                     List<Class2023> var10 = Class7789.method25858(var9);
                     int var11 = this.method16633(var10);
                     if (var10 != null && !var10.isEmpty() && (this.method15974("Custom potion") || var11 == 1)) {
@@ -169,22 +169,22 @@ public class Class5295 extends Module {
                 }
             } else {
                 this.field23808 = 0;
-                int var7 = mc.player.field4902.field5443;
+                int var7 = mc.player.inventory.currentItem;
                 boolean var8 = Client.getInstance().getModuleManager().method14662(Class5332.class).method15996()
                         && Client.getInstance().getModuleManager().method14662(Class5332.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 float[] var9 = this.method16630();
-                mc.player.field4902.field5443 = var6 - 36;
-                mc.field1337.method23138();
+                mc.player.inventory.currentItem = var6 - 36;
+                mc.playerController.method23138();
                 if (!this.method15974("Instant")) {
                     this.field23811 = 1;
                     var1.method13918(var9[0]);
                     var1.method13916(var9[1]);
                 } else {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.field5036));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
-                    mc.player.field4902.field5443 = var7;
-                    mc.field1337.method23138();
+                    mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], !var8 && mc.player.field5036));
+                    mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                    mc.getConnection().sendPacket(new Class5555(Hand.field183));
+                    mc.player.inventory.currentItem = var7;
+                    mc.playerController.method23138();
                     Class5357.field23954 = 1;
                 }
 

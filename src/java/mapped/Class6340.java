@@ -6,7 +6,7 @@ public interface Class6340 {
    ResourceLocation method19279();
 
    @Nullable
-   Class6648 method19280(Class274 var1);
+   Class6648 method19280(SoundHandler var1);
 
    Class6647 method19281();
 

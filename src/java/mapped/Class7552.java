@@ -20,12 +20,12 @@ public class Class7552 {
       return new Class7552();
    }
 
-   public Class7552 method24701(Class8992<?> var1) {
+   public Class7552 method24701(EntityType<?> var1) {
       this.field32377 = Class8924.method32627(var1);
       return this;
    }
 
-   public Class7552 method24702(Class7608<Class8992<?>> var1) {
+   public Class7552 method24702(Class7608<EntityType<?>> var1) {
       this.field32377 = Class8924.method32628(var1);
       return this;
    }

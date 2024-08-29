@@ -54,13 +54,13 @@ public class Class8896 {
       }
    }
 
-   public Class7380 method32385(String var1, Class7380 var2) {
+   public BlockState method32385(String var1, BlockState var2) {
       Class9727[] var5 = this.method32386(var1);
       if (var5 != null) {
          if (var5.length == 1) {
             Class9727 var6 = var5[0];
             int var7 = var6.method38103();
-            Block var8 = Registry.field16072.method9172(var7);
+            Block var8 = Registry.BLOCK.method9172(var7);
             return var8.method11579();
          } else {
             return var2;
@@ -95,7 +95,7 @@ public class Class8896 {
 
                for (int var11 = 0; var11 < var9.length; var11++) {
                   Block var12 = var9[var11];
-                  int var13 = Registry.field16072.method9171(var12);
+                  int var13 = Registry.BLOCK.method9171(var12);
                   int[] var14 = null;
                   if (var8.length > 0) {
                      var14 = this.method32390(var12, var8);
@@ -156,7 +156,7 @@ public class Class8896 {
       if (var2.length <= 0) {
          return null;
       } else {
-         Class7380 var5 = var1.method11579();
+         BlockState var5 = var1.method11579();
          Collection var6 = var5.method23461();
          HashMap var7 = new HashMap();
 
@@ -206,7 +206,7 @@ public class Class8896 {
 
             for (int var22 = 0; var22 < var21; var22++) {
                try {
-                  Class7380 var24 = Class9716.method38069(var1, var22);
+                  BlockState var24 = Class9716.method38069(var1, var22);
                   if (this.method32395(var24, var7)) {
                      var20.add(var22);
                   }
@@ -283,7 +283,7 @@ public class Class8896 {
       }
    }
 
-   public boolean method32395(Class7380 var1, Map<Class8550, List<Comparable>> var2) {
+   public boolean method32395(BlockState var1, Map<Class8550, List<Comparable>> var2) {
       for (Class8550 var6 : var2.keySet()) {
          List var7 = (List)var2.get(var6);
          Comparable var8 = var1.<Comparable>method23463(var6);
@@ -462,7 +462,7 @@ public class Class8896 {
    public Direction method32401(String var1) {
       var1 = var1.toLowerCase();
       if (var1.equals("bottom") || var1.equals("down")) {
-         return Direction.field672;
+         return Direction.DOWN;
       } else if (var1.equals("top") || var1.equals("up")) {
          return Direction.field673;
       } else if (var1.equals("north")) {
@@ -603,15 +603,15 @@ public class Class8896 {
       }
    }
 
-   public Class4520 method32410(String var1, Class4520 var2) {
+   public RenderType method32410(String var1, RenderType var2) {
       if (var1 == null) {
          return var2;
       } else {
          var1 = var1.toLowerCase().trim();
-         Class4520[] var5 = Class4520.field21819;
+         RenderType[] var5 = RenderType.field21819;
 
          for (int var6 = 0; var6 < var5.length; var6++) {
-            Class4520 var7 = var5[var6];
+            RenderType var7 = var5[var6];
             if (var1.equals(var7.method14234().toLowerCase())) {
                return var7;
             }
@@ -745,7 +745,7 @@ public class Class8896 {
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
          ResourceLocation var8 = new ResourceLocation(var7);
-         Class3257 var9 = Class8365.method29304(var8);
+         Item var9 = Class8365.method29304(var8);
          if (var9 != null) {
             int var10 = Class8365.method29305(var9);
             if (var10 >= 0) {
@@ -770,9 +770,9 @@ public class Class8896 {
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
          ResourceLocation var8 = new ResourceLocation(var7);
-         Class8992 var9 = Class7926.method26598(var8);
+         EntityType var9 = Class7926.method26598(var8);
          if (var9 != null) {
-            int var10 = Registry.field16074.method9171(var9);
+            int var10 = Registry.ENTITY_TYPE.method9171(var9);
             if (var10 >= 0) {
                var4.add(new Integer(var10));
             } else {

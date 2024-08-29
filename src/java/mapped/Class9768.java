@@ -36,7 +36,7 @@ public class Class9768<T> {
       this.field45707 = var3;
    }
 
-   public CompletableFuture<Map<ResourceLocation, Class6879>> method38419(Class191 var1, Executor var2) {
+   public CompletableFuture<Map<ResourceLocation, Class6879>> method38419(IResourceManager var1, Executor var2) {
       return CompletableFuture.<Map<ResourceLocation, Class6879>>supplyAsync(
          () -> {
             Map<ResourceLocation, Class6879> var4 = Maps.newHashMap();

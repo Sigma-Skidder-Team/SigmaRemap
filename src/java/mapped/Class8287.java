@@ -71,21 +71,21 @@ public class Class8287 extends Class8286 {
             var5.setLenient(false);
             JsonElement var7 = Streams.parse(var5);
             if (!var7.isJsonNull()) {
-               Class39 var8 = method28966(var7.getAsJsonObject());
+               CompoundNBT var8 = method28966(var7.getAsJsonObject());
                if (!var8.method119("DataVersion", 99)) {
                   var8.method102("DataVersion", 1343);
                }
 
                var8 = Class8354.method29289(var1, Class2108.field13754, var8, var8.method122("DataVersion"));
                if (var8.method119("stats", 10)) {
-                  Class39 var9 = var8.method130("stats");
+                  CompoundNBT var9 = var8.getCompound("stats");
 
                   for (String var11 : var9.method97()) {
                      if (var9.method119(var11, 10)) {
-                        Util.<Class49<?>>method38514(
+                        Util.<Class49<?>>acceptOrElse(
                            Registry.field16088.method9187(new ResourceLocation(var11)),
                            var3 -> {
-                              Class39 var6x = var9.method130(var11);
+                              CompoundNBT var6x = var9.getCompound(var11);
 
                               for (String var8x : var6x.method97()) {
                                  if (!var6x.method119(var8x, 99)) {
@@ -93,7 +93,7 @@ public class Class8287 extends Class8286 {
                                        "Invalid statistic value in {}: Don't know what {} is for key {}", this.field35593, var6x.method116(var8x), var8x
                                     );
                                  } else {
-                                    Util.method38514(
+                                    Util.acceptOrElse(
                                        this.method28965(var3, var8x),
                                        var3x -> this.field35590.put(var3x, var6x.method122(var8x)),
                                        () -> field35591.warn("Invalid statistic in {}: Don't know what {} is", this.field35593, var8x)
@@ -136,8 +136,8 @@ public class Class8287 extends Class8286 {
       return Optional.<ResourceLocation>ofNullable(ResourceLocation.method8289(var2)).<T>flatMap(var1.method171()::method9187).<Class9007<T>>map(var1::method172);
    }
 
-   private static Class39 method28966(JsonObject var0) {
-      Class39 var3 = new Class39();
+   private static CompoundNBT method28966(JsonObject var0) {
+      CompoundNBT var3 = new CompoundNBT();
 
       for (Entry var5 : var0.entrySet()) {
          JsonElement var6 = (JsonElement)var5.getValue();
@@ -149,7 +149,7 @@ public class Class8287 extends Class8286 {
                }
             }
          } else {
-            var3.method99((String)var5.getKey(), method28966(var6.getAsJsonObject()));
+            var3.put((String)var5.getKey(), method28966(var6.getAsJsonObject()));
          }
       }
 
@@ -167,17 +167,17 @@ public class Class8287 extends Class8286 {
       JsonObject var7 = new JsonObject();
 
       for (Entry<Class49<?>, JsonObject> var10 : var3.entrySet()) {
-         var7.add(Registry.field16088.method9181(var10.getKey()).toString(), var10.getValue());
+         var7.add(Registry.field16088.getKey(var10.getKey()).toString(), var10.getValue());
       }
 
       JsonObject var9 = new JsonObject();
       var9.add("stats", var7);
-      var9.addProperty("DataVersion", SharedConstants.method34773().getWorldVersion());
+      var9.addProperty("DataVersion", SharedConstants.getVersion().getWorldVersion());
       return var9.toString();
    }
 
    private static <T> ResourceLocation method28968(Class9007<T> var0) {
-      return var0.method33275().method171().method9181(var0.method33276());
+      return var0.method33275().method171().getKey(var0.method33276());
    }
 
    public void method28969() {

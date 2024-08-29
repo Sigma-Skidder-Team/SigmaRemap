@@ -17,7 +17,7 @@ public class Class7225 implements Class7226, Class7222 {
    private final List<Class7222> field31063 = Lists.newArrayList();
 
    public Class7225() {
-      this(field31060.sortedCopy(Minecraft.getInstance().getClientPlayNetHandler().method15790()));
+      this(field31060.sortedCopy(Minecraft.getInstance().getConnection().method15790()));
    }
 
    public Class7225(Collection<Class6589> var1) {

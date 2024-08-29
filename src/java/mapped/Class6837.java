@@ -32,7 +32,7 @@ public class Class6837 extends Class6829 {
 
       for (int var6 = 1; var6 < var2; var6++) {
          var5 = var5.method19669(var1);
-         if (!this.field29724.field5024.method7053(this.field29724, var5)) {
+         if (!this.field29724.world.method7053(this.field29724, var5)) {
             return false;
          }
       }

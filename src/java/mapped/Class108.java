@@ -53,7 +53,7 @@ public enum Class108 implements Class83 {
       return this.field364;
    }
 
-   public static Class108 method300(Class7380 var0) {
+   public static Class108 method300(BlockState var0) {
       if (!var0.method23448(Blocks.CLAY)) {
          if (var0.method23448(Blocks.field36521)) {
             return field353;

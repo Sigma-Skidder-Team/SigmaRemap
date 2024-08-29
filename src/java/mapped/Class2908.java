@@ -48,14 +48,14 @@ public class Class2908 extends Class2898<Class4738> {
    }
 
    private static boolean method11247(Class1660 var0, BlockPos var1, Class4738 var2) {
-      Class7380 var5 = var0.method6738(var1);
-      if (var5.method23448(var2.method14874().method23383())) {
+      BlockState var5 = var0.getBlockState(var1);
+      if (var5.method23448(var2.method14874().getBlock())) {
          return false;
-      } else if (field17991.contains(var5.method23383())) {
+      } else if (field17991.contains(var5.getBlock())) {
          return false;
       } else {
          for (Direction var9 : field17992) {
-            boolean var10 = var0.method6738(var1.method8349(var9)).method23393();
+            boolean var10 = var0.getBlockState(var1.method8349(var9)).isAir();
             if (var10 && var9 != Direction.field673 || !var10 && var9 == Direction.field673) {
                return false;
             }

@@ -32,7 +32,7 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
    }
 
    public boolean method10962() {
-      return this.field17304.method3092(Class8514.field37796);
+      return this.field17304.method3092(Items.field37796);
    }
 
    @Override
@@ -107,9 +107,9 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
             this.field17304.method4262(var3, 30.0F, 30.0F);
          }
 
-         if (!this.field17304.method3148()) {
+         if (!this.field17304.isHandActive()) {
             if (--this.field17308 <= 0 && this.field17309 >= -60) {
-               this.field17304.method3154(Class9456.method36389(this.field17304, Class8514.field37796));
+               this.field17304.method3154(Class9456.method36389(this.field17304, Items.field37796));
             }
          } else if (!var6 && this.field17309 < -60) {
             this.field17304.method3162();

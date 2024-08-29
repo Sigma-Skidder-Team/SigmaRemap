@@ -49,7 +49,7 @@ public class Class3265 extends Class3264 {
    }
 
    @Override
-   public float method11708(ItemStack var1, Class7380 var2) {
+   public float method11708(ItemStack var1, BlockState var2) {
       Class8649 var5 = var2.method23384();
       return !field18756.contains(var5) ? super.method11708(var1, var2) : this.field18752;
    }
@@ -58,8 +58,8 @@ public class Class3265 extends Class3264 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
-      Block var7 = field18758.get(var6.method23383());
+      BlockState var6 = var4.getBlockState(var5);
+      Block var7 = field18758.get(var6.getBlock());
       if (var7 == null) {
          return ActionResultType.field14820;
       } else {

@@ -18,7 +18,7 @@ public class Class6342 extends Class6333 {
    @Override
    public void method19269() {
       if (!this.field27868.field5041 && this.field27869 >= 0) {
-         if (!this.field27868.method3256()) {
+         if (!this.field27868.canSwim()) {
             this.field27869 -= 2;
          } else {
             this.field27869++;

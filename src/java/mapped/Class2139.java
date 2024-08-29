@@ -11,7 +11,7 @@ public enum Class2139 {
       this.field14005 = var3;
    }
 
-   public void method8832(Class274 var1) {
+   public void method8832(SoundHandler var1) {
       var1.method1000(Class6339.method19293(this.field14005, 1.0F, 1.0F));
    }
 }

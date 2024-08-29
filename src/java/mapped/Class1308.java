@@ -26,7 +26,7 @@ public class Class1308 extends Screen {
             this.field4562.mouseHelper.grabMouse();
          })
       );
-      Class9574 var4 = this.field4562.gameSettings;
+      GameSettings var4 = this.field4562.gameSettings;
       this.field6914 = Class5991.method18586(
          this.field4568,
          new TranslationTextComponent(

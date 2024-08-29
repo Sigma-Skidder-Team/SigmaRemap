@@ -37,25 +37,25 @@ public class Class5281 extends Module {
 
     public Class5281() {
         super(ModuleCategory.MISC, "Test", "A mod for testing things");
-        this.method15972(new Class6000("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
-        this.method15972(
-                new Class6004("Test Checkbox", "A test checkbox", true)
+        this.registerSetting(new Class6000("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
+        this.registerSetting(
+                new BooleanSetting("Test Checkbox", "A test checkbox", true)
                         .method18616(var0 -> Client.getInstance().getLogger().info("Changed checkbox: " + var0.method18619()))
         );
-        this.method15972(
+        this.registerSetting(
                 new Class6009<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
                         .method18616(var0 -> Client.getInstance().getLogger().info("Changed slider: " + var0.method18619()))
         );
-        this.method15972(
+        this.registerSetting(
                 new Class6002("Test Type", "A test type button", 0, "hello", "goodbye")
                         .method18616(var0 -> Client.getInstance().getLogger().info("Changed type: " + var0.method18619()))
         );
-        this.method15972(
+        this.registerSetting(
                 new Class6007(
                         "Test Suboptions",
                         "A test suboption",
                         false,
-                        new Class6004("Test Checkbox", "A test checkbox", true),
+                        new BooleanSetting("Test Checkbox", "A test checkbox", true),
                         new Class6009<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
                 )
         );
@@ -151,7 +151,7 @@ public class Class5281 extends Module {
     }
 
     @EventTarget
-    public void method16552(Class4401 var1) {
+    public void method16552(StopUseItemEvent var1) {
         if (!this.method15996()) {
         }
     }
@@ -164,7 +164,7 @@ public class Class5281 extends Module {
 
     @EventTarget
     @LowestPriority
-    public void method16554(Class4418 var1) {
+    public void method16554(WorldLoadEvent var1) {
     }
 
     @EventTarget
@@ -176,7 +176,7 @@ public class Class5281 extends Module {
 
     @EventTarget
     @LowestPriority
-    public void method16556(Class4429 var1) {
+    public void method16556(ClickEvent var1) {
         if (!this.method15996() || mc.currentScreen != null) {
         }
     }
@@ -196,7 +196,7 @@ public class Class5281 extends Module {
                         if (!(var4 instanceof Class5555)) {
                             if (!(var4 instanceof CAnimateHandPacket)) {
                                 if (!(var4 instanceof Class5570)) {
-                                    if (!(var4 instanceof Class5492)) {
+                                    if (!(var4 instanceof CPlayerDiggingPacket)) {
                                         if (!(var4 instanceof Class5482)) {
                                             if (!(var4 instanceof CClientStatusPacket)) {
                                                 if (!(var4 instanceof Class5522)) {
@@ -217,8 +217,8 @@ public class Class5281 extends Module {
                                             }
                                         }
                                     } else {
-                                        Class5492 var13 = (Class5492) var4;
-                                        if (var13.method17274() != Class2070.field13489) {
+                                        CPlayerDiggingPacket var13 = (CPlayerDiggingPacket) var4;
+                                        if (var13.method17274() != CPlayerDiggingPacket.Action.field13489) {
                                         }
                                     }
                                 } else {
@@ -338,7 +338,7 @@ public class Class5281 extends Module {
                         if (((Class880) var6).method3042() != 0.0F) {
                             if (!(mc.player.method3275(var6) > var1)) {
                                 if (mc.player.method3026((Class880) var6)) {
-                                    if (!(var6 instanceof Class1005) && !(var6 instanceof PlayerEntity)) {
+                                    if (!(var6 instanceof ArmorStandEntity) && !(var6 instanceof PlayerEntity)) {
                                         if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
@@ -390,7 +390,7 @@ public class Class5281 extends Module {
                         if (((Class880) var7).method3042() != 0.0F) {
                             if (!(mc.player.method3275(var7) > var1)) {
                                 if (mc.player.method3026((Class880) var7)) {
-                                    if (!(var7 instanceof Class1005)) {
+                                    if (!(var7 instanceof ArmorStandEntity)) {
                                         if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {

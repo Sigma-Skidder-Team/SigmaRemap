@@ -14,13 +14,13 @@ public class Class4202 extends Class4194 {
       this.field20509 = var3.method38399() > 6;
    }
 
-   public Class4202(Class8761 var1, Class39 var2) {
+   public Class4202(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33448, var2);
       this.field20509 = var2.method132("Tall");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Tall", this.field20509);
    }
@@ -84,11 +84,11 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, Blocks.field36400.method11579(), 9, 5, 11, var5);
          this.method12923(var1, Blocks.field36400.method11579(), 8, 5, 11, var5);
          this.method12923(var1, Blocks.field36400.method11579(), 9, 5, 10, var5);
-         Class7380 var23 = Blocks.OAK_FENCE
+         BlockState var23 = Blocks.OAK_FENCE
             .method11579()
             .method23465(Class3239.field18683, Boolean.valueOf(true))
             .method23465(Class3239.field18681, Boolean.valueOf(true));
-         Class7380 var14 = Blocks.OAK_FENCE
+         BlockState var14 = Blocks.OAK_FENCE
             .method11579()
             .method23465(Class3239.field18680, Boolean.valueOf(true))
             .method23465(Class3239.field18682, Boolean.valueOf(true));
@@ -157,7 +157,7 @@ public class Class4202 extends Class4194 {
             }
          }
 
-         Class7380 var24 = Blocks.LADDER.method11579().method23465(Class3423.field19154, Direction.SOUTH);
+         BlockState var24 = Blocks.LADDER.method11579().method23465(Class3423.field19154, Direction.SOUTH);
          this.method12923(var1, var24, 10, 1, 13, var5);
          this.method12923(var1, var24, 10, 2, 13, var5);
          this.method12923(var1, var24, 10, 3, 13, var5);
@@ -167,13 +167,13 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, var24, 10, 7, 13, var5);
          byte var16 = 7;
          byte var17 = 7;
-         Class7380 var18 = Blocks.OAK_FENCE.method11579().method23465(Class3239.field18681, Boolean.valueOf(true));
+         BlockState var18 = Blocks.OAK_FENCE.method11579().method23465(Class3239.field18681, Boolean.valueOf(true));
          this.method12923(var1, var18, 6, 9, 7, var5);
-         Class7380 var19 = Blocks.OAK_FENCE.method11579().method23465(Class3239.field18683, Boolean.valueOf(true));
+         BlockState var19 = Blocks.OAK_FENCE.method11579().method23465(Class3239.field18683, Boolean.valueOf(true));
          this.method12923(var1, var19, 7, 9, 7, var5);
          this.method12923(var1, var18, 6, 8, 7, var5);
          this.method12923(var1, var19, 7, 8, 7, var5);
-         Class7380 var20 = var14.method23465(Class3239.field18683, Boolean.valueOf(true)).method23465(Class3239.field18681, Boolean.valueOf(true));
+         BlockState var20 = var14.method23465(Class3239.field18683, Boolean.valueOf(true)).method23465(Class3239.field18681, Boolean.valueOf(true));
          this.method12923(var1, var20, 6, 7, 7, var5);
          this.method12923(var1, var20, 7, 7, 7, var5);
          this.method12923(var1, var18, 5, 7, 7, var5);
@@ -182,7 +182,7 @@ public class Class4202 extends Class4194 {
          this.method12923(var1, var18.method23465(Class3239.field18682, Boolean.valueOf(true)), 6, 7, 8, var5);
          this.method12923(var1, var19.method23465(Class3239.field18680, Boolean.valueOf(true)), 7, 7, 6, var5);
          this.method12923(var1, var19.method23465(Class3239.field18682, Boolean.valueOf(true)), 7, 7, 8, var5);
-         Class7380 var21 = Blocks.TORCH.method11579();
+         BlockState var21 = Blocks.TORCH.method11579();
          this.method12923(var1, var21, 5, 8, 7, var5);
          this.method12923(var1, var21, 8, 8, 7, var5);
          this.method12923(var1, var21, 6, 8, 6, var5);

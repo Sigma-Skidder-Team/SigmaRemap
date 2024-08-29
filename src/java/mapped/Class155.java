@@ -21,14 +21,14 @@ public class Class155 implements ILootCondition {
          && this.field507
             .method30650(
                var1.method26090(),
-               var4.method11320() + (double)this.field508.method8304(),
+               var4.method11320() + (double)this.field508.getX(),
                var4.method11321() + (double)this.field508.getY(),
-               var4.method11322() + (double)this.field508.method8306()
+               var4.method11322() + (double)this.field508.getZ()
             );
    }
 
    public static Class7519 method467(Class8912 var0) {
-      return () -> new Class155(var0.method32580(), BlockPos.field13032);
+      return () -> new Class155(var0.method32580(), BlockPos.ZERO);
    }
 
    public static Class7519 method468(Class8912 var0, BlockPos var1) {

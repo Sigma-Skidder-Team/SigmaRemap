@@ -30,7 +30,7 @@ public final class Class385 extends Thread {
          Class8087.method27977().debug("Downloading http texture from {}", var5);
 
          try {
-            var6 = (HttpURLConnection)new URL(var5).openConnection(Minecraft.getInstance().method1535());
+            var6 = (HttpURLConnection)new URL(var5).openConnection(Minecraft.getInstance().getProxy());
             var6.setDoInput(true);
             var6.setDoOutput(false);
             var6.connect();

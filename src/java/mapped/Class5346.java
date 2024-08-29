@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
@@ -16,8 +16,8 @@ public class Class5346 extends Module {
 
     public Class5346() {
         super(ModuleCategory.RENDER, "Breadcrumbs", "Shows your taken path");
-        this.method15972(new Class6004("Fade Out", "Makes distant breadcrumbs fade out", true));
-        this.method15972(new Class6010("Color", "The crumbs color", Class1979.field12896.field12910));
+        this.registerSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
+        this.registerSetting(new Class6010("Color", "The crumbs color", Class1979.field12896.field12910));
     }
 
     @EventTarget
@@ -30,7 +30,7 @@ public class Class5346 extends Module {
     }
 
     @EventTarget
-    public void method16769(Class4418 var1) {
+    public void method16769(WorldLoadEvent var1) {
         if (this.method15996()) {
             this.field23896.clear();
         }
@@ -55,9 +55,9 @@ public class Class5346 extends Module {
     public void method16771(Class4420 var1) {
         if (this.method15996()) {
             Vector3d var4 = new Vector3d(
-                    mc.player.field5048 - (mc.player.field5048 - mc.player.getPosX()) * (double) mc.method1562(),
-                    mc.player.field5049 - (mc.player.field5049 - mc.player.getPosY()) * (double) mc.method1562(),
-                    mc.player.field5050 - (mc.player.field5050 - mc.player.getPosZ()) * (double) mc.method1562()
+                    mc.player.field5048 - (mc.player.field5048 - mc.player.getPosX()) * (double) mc.getRenderPartialTicks(),
+                    mc.player.field5049 - (mc.player.field5049 - mc.player.getPosY()) * (double) mc.getRenderPartialTicks(),
+                    mc.player.field5050 - (mc.player.field5050 - mc.player.getPosZ()) * (double) mc.getRenderPartialTicks()
             );
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(3042);

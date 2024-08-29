@@ -11,7 +11,7 @@ public class Class2721 extends Class2709<PlayerEntity> {
 
    @Override
    public boolean method10803() {
-      return this.field17207.field5024.method6997() != Class2197.field14351 ? super.method10803() : false;
+      return this.field17207.world.method6997() != Class2197.field14351 ? super.method10803() : false;
    }
 
    @Override

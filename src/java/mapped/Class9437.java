@@ -57,9 +57,9 @@ public class Class9437 extends Class9436<Class9437> {
    public final String field43830;
    public final Class9436<Class9437>.Property<Integer> field43831;
    public final Class9436<Class9437>.Property<Boolean> field43832;
-   public final Class7846 field43833;
+   public final DimensionGeneratorSettings field43833;
 
-   public Class9437(Properties var1, Class8904 var2) {
+   public Class9437(Properties var1, DynamicRegistries var2) {
       super(var1);
       if (!this.method36263("snooper-enabled", true)) {
       }
@@ -85,14 +85,14 @@ public class Class9437 extends Class9436<Class9437> {
       this.field43830 = this.method36257("text-filtering-config", "");
       this.field43831 = this.method36260("player-idle-timeout", 0);
       this.field43832 = this.method36264("white-list", false);
-      this.field43833 = Class7846.method26273(var2, var1);
+      this.field43833 = DimensionGeneratorSettings.method26273(var2, var1);
    }
 
-   public static Class9437 method36271(Class8904 var0, Path var1) {
+   public static Class9437 method36271(DynamicRegistries var0, Path var1) {
       return new Class9437(method36246(var1), var0);
    }
 
-   public Class9437 method36267(Class8904 var1, Properties var2) {
+   public Class9437 method36267(DynamicRegistries var1, Properties var2) {
       return new Class9437(var2, var1);
    }
 }

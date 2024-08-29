@@ -21,11 +21,11 @@ public class Class213 implements AutoCloseable {
 
       RenderSystem.method27860(33985);
       this.field799.method1133();
-      RenderSystem.method27878(5890);
-      RenderSystem.method27879();
+      RenderSystem.matrixMode(5890);
+      RenderSystem.loadIdentity();
       float var7 = 0.06666667F;
       RenderSystem.scalef(0.06666667F, 0.06666667F, 0.06666667F);
-      RenderSystem.method27878(5888);
+      RenderSystem.matrixMode(5888);
       this.field799.method1133();
       var3.method7895(0, 0, 0, 0, 0, var3.method7886(), var3.method7887(), false, true, false, false);
       RenderSystem.method27860(33984);
@@ -37,7 +37,7 @@ public class Class213 implements AutoCloseable {
    }
 
    public void method727() {
-      if (!Class8981.method33168()) {
+      if (! Shaders.method33168()) {
          RenderSystem.method27926(this.field799::method1131, 16);
       }
    }
@@ -59,7 +59,7 @@ public class Class213 implements AutoCloseable {
    }
 
    public void method732() {
-      if (!Class8981.method33168()) {
+      if (! Shaders.method33168()) {
          RenderSystem.method27927();
       }
    }

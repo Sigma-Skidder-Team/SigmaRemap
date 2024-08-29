@@ -65,10 +65,10 @@ public class Class6829 {
             float var11 = (float)(MathHelper.method37814(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
             this.field29707.field5031 = this.method20816(this.field29707.field5031, var11, 90.0F);
             this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Class9173.field42108)));
-            BlockPos var20 = this.field29707.method3432();
-            Class7380 var21 = this.field29707.field5024.method6738(var20);
-            Block var22 = var21.method23383();
-            Class6408 var23 = var21.method23414(this.field29707.field5024, var20);
+            BlockPos var20 = this.field29707.getPosition();
+            BlockState var21 = this.field29707.world.getBlockState(var20);
+            Block var22 = var21.getBlock();
+            Class6408 var23 = var21.method23414(this.field29707.world, var20);
             if (var16 > (double)this.field29707.field5051 && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.method3429())
                || !var23.method19516()
                   && this.field29707.getPosY() < var23.method19513(Class113.field414) + (double)var20.getY()
@@ -91,8 +91,8 @@ public class Class6829 {
          var7 = var4 / var7;
          var5 *= var7;
          var6 *= var7;
-         float var8 = MathHelper.method37763(this.field29707.field5031 * (float) (Math.PI / 180.0));
-         float var9 = MathHelper.method37764(this.field29707.field5031 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.sin(this.field29707.field5031 * (float) (Math.PI / 180.0));
+         float var9 = MathHelper.cos(this.field29707.field5031 * (float) (Math.PI / 180.0));
          float var10 = var5 * var9 - var6 * var8;
          float var27 = var6 * var9 + var5 * var8;
          if (!this.method20815(var10, var27)) {
@@ -113,10 +113,10 @@ public class Class6829 {
          Class6764 var6 = var5.method21673();
          if (var6 != null
             && var6.method20621(
-                  this.field29707.field5024,
-                  MathHelper.method37769(this.field29707.getPosX() + (double)var1),
-                  MathHelper.method37769(this.field29707.getPosY()),
-                  MathHelper.method37769(this.field29707.getPosZ() + (double)var2)
+                  this.field29707.world,
+                  MathHelper.floor(this.field29707.getPosX() + (double)var1),
+                  MathHelper.floor(this.field29707.getPosY()),
+                  MathHelper.floor(this.field29707.getPosZ() + (double)var2)
                )
                != Class2163.field14186) {
             return false;

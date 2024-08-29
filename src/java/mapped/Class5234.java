@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4429;
+import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4430;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -88,8 +88,8 @@ public class Class5234 extends Module {
             if (var1 != mc.gameSettings.field44635.field13070.field34875) {
                 if (var1 != mc.gameSettings.field44632.field13070.field34875) {
                     if (var1 != mc.gameSettings.field44634.field13070.field34875) {
-                        if (var1 != mc.gameSettings.field44643.field13070.field34875) {
-                            return var1 != mc.gameSettings.field44642.field13070.field34875 ? null : Class2132.field13913;
+                        if (var1 != mc.gameSettings.keyBindAttack.field13070.field34875) {
+                            return var1 != mc.gameSettings.keyBindUseItem.field13070.field34875 ? null : Class2132.field13913;
                         } else {
                             return Class2132.field13912;
                         }
@@ -111,7 +111,7 @@ public class Class5234 extends Module {
     private void method16304(Class4415 var1) {
         if (this.method15996() && mc.player != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-                if (!Minecraft.getInstance().gameSettings.field44662) {
+                if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     this.field23586 = var1.method13960();
                     if (Client.getInstance().getGuiManager().method33472()) {
                         for (Class2132 var7 : Class2132.values()) {
@@ -140,8 +140,8 @@ public class Class5234 extends Module {
                         }
 
                         String var12 = Class5628.method17736(var19.field13919.field13070.field34875);
-                        if (var19.field13919 != mc.gameSettings.field44643) {
-                            if (var19.field13919 == mc.gameSettings.field44642) {
+                        if (var19.field13919 != mc.gameSettings.keyBindAttack) {
+                            if (var19.field13919 == mc.gameSettings.keyBindUseItem) {
                                 var12 = "R";
                             }
                         } else {
@@ -194,7 +194,7 @@ public class Class5234 extends Module {
                             }
                         }
 
-                        if (var18.method8816().method8509() && var16.field33988.calcPercent() >= var24 && var25 < 2) {
+                        if (var18.method8816().isKeyDown() && var16.field33988.calcPercent() >= var24 && var25 < 2) {
                             var16.field33988.method25318(var24);
                         }
 
@@ -232,7 +232,7 @@ public class Class5234 extends Module {
     }
 
     @EventTarget
-    private void method16306(Class4429 var1) {
+    private void method16306(ClickEvent var1) {
         if (!this.method15996() || mc.player == null) {
         }
     }

@@ -9,7 +9,7 @@ public abstract class Class1140 extends Class1135 {
    private Class1197 field6204;
    private Class1296 field6205;
 
-   public Class1140(Screen var1, Class9574 var2, ITextComponent var3, AbstractOption[] var4) {
+   public Class1140(Screen var1, GameSettings var2, ITextComponent var3, AbstractOption[] var4) {
       super(var1, var2, var3);
       this.field6203 = var4;
    }
@@ -28,7 +28,7 @@ public abstract class Class1140 extends Class1135 {
 
    public void method5472() {
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 27, 200, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 - 27, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
       );
    }
 

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4429;
+import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -32,15 +32,15 @@ public class Class5174 extends Module {
     }
 
     @EventTarget
-    private void method16104(Class4429 var1) {
+    private void method16104(ClickEvent var1) {
         if (this.method15996() && (mc.player.method3331() || !this.method16004().method15974("Sneak"))) {
-            if (var1.method13976() == Class2116.field13791) {
-                Class8711 var4 = Class9217.method34567(
+            if (var1.method13976() == ClickEvent.Button.RIGHT) {
+                BlockRayTraceResult var4 = Class9217.method34567(
                         mc.player.field5031, mc.player.field5032, this.method16004().method15977("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
-                    var5 = var4.method31423();
+                    var5 = var4.getPos();
                 }
 
                 if (var5 == null) {
@@ -48,10 +48,10 @@ public class Class5174 extends Module {
                 }
 
                 this.field23465 = var5;
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(
                                 new Class5605(
-                                        (double) this.field23465.method8304() + 0.5, this.field23465.getY() + 1, (double) this.field23465.method8306() + 0.5, true
+                                        (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1, (double) this.field23465.getZ() + 0.5, true
                                 )
                         );
                 this.field23464 = 0;
@@ -64,9 +64,9 @@ public class Class5174 extends Module {
         if (this.method15996()) {
             if (var1.method13898() instanceof Class5473) {
                 Class5473 var4 = (Class5473) var1.method13898();
-                if (var4.field24297 == (double) this.field23465.method8304() + 0.5
+                if (var4.field24297 == (double) this.field23465.getX() + 0.5
                         && var4.field24298 == (double) (this.field23465.getY() + 1)
-                        && var4.field24299 == (double) this.field23465.method8306() + 0.5) {
+                        && var4.field24299 == (double) this.field23465.getZ() + 0.5) {
                     Client.getInstance().getNotificationManager().post(new Notification("ClickTP", "Successfully teleported"));
                     if (!this.method16004().method15974("Auto Disable")) {
                         this.field23464 = -1;
@@ -95,12 +95,12 @@ public class Class5174 extends Module {
                     mc.timer.field40360 = 2.0F;
                 }
 
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(
                                 new Class5605(
-                                        (double) this.field23465.method8304() + 0.5, this.field23465.getY() + 1, (double) this.field23465.method8306() + 0.5, true
+                                        (double) this.field23465.getX() + 0.5, this.field23465.getY() + 1, (double) this.field23465.getZ() + 0.5, true
                                 )
                         );
             }

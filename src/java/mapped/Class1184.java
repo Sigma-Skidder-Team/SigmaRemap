@@ -11,10 +11,10 @@ public class Class1184 extends Class1182 {
    public Class1184(Class1127 class1127, ITextComponent var1, List<Class9125> var2, String var3,  Class7466 var5) {
       super(class1127, var2, var1);
       this.field6387 = class1127;
-      this.field6386 = new Class1225(this, 10, 5, 44, 20, Class7127.method22237(var5.method24174()), var1x -> {
+      this.field6386 = new Class1225(this, 10, 5, 44, 20, DialogTexts.method22237(var5.method24174()), var1x -> {
          boolean var4x = !var5.method24174();
          var5.method24175(var4x, null);
-         var1x.method5743(Class7127.method22237(var5.method24174()));
+         var1x.method5743(DialogTexts.method22237(var5.method24174()));
       }, class1127, var1, var5, var3);
       this.field6382.add(this.field6386);
    }

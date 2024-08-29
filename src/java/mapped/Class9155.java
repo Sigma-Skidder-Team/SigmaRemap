@@ -5,7 +5,7 @@ public class Class9155 {
    private static final float field42035 = 1.0F / (float)Math.cos((float) (Math.PI / 4)) - 1.0F;
 
    public Class8557 method34175(
-           Class7680 var1, Class7680 var2, Class9163 var3, Class1713 var4, Direction var5, Class1902 var6, Class7360 var7, boolean var8, ResourceLocation var9
+           Class7680 var1, Class7680 var2, Class9163 var3, TextureAtlasSprite var4, Direction var5, Class1902 var6, Class7360 var7, boolean var8, ResourceLocation var9
    ) {
       Class9840 var12 = var3.field42069;
       if (var6.method8170()) {
@@ -72,15 +72,15 @@ public class Class9155 {
       }
 
       float var21 = (float)Math.toRadians((double)var0.field45940);
-      Class7680 var22 = new Class7680(MathHelper.method37764(var21), MathHelper.method37763(var21), 0.0F);
+      Class7680 var22 = new Class7680(MathHelper.cos(var21), MathHelper.sin(var21), 0.0F);
       Class8967 var23 = new Class8967(var6);
       var22.method25282(var23);
       int var24 = Math.floorMod(-((int)Math.round(Math.toDegrees(Math.atan2((double)var22.method25270(), (double)var22.method25269())) / 90.0)) * 90, 360);
       return new Class9840(new float[]{var17, var19, var18, var20}, var24);
    }
 
-   private int[] method34177(Class9840 var1, Class1713 var2, Direction var3, float[] var4, Class6979 var5, Class7360 var6, boolean var7) {
-      int var10 = !Class7944.method26921() ? Class9337.field43338 : Class9337.field43339;
+   private int[] method34177(Class9840 var1, TextureAtlasSprite var2, Direction var3, float[] var4, Class6979 var5, Class7360 var6, boolean var7) {
+      int var10 = !Class7944.method26921() ? DefaultVertexFormats.field43338 : DefaultVertexFormats.field43339;
       int[] var11 = new int[var10];
 
       for (int var12 = 0; var12 < 4; var12++) {
@@ -101,7 +101,7 @@ public class Class9155 {
       return var5;
    }
 
-   private void method34179(int[] var1, int var2, Direction var3, Class9840 var4, float[] var5, Class1713 var6, Class6979 var7, Class7360 var8, boolean var9) {
+   private void method34179(int[] var1, int var2, Direction var3, Class9840 var4, float[] var5, TextureAtlasSprite var6, Class6979 var7, Class7360 var8, boolean var9) {
       Class9827 var12 = Class2264.method8992(var3).method8993(var2);
       Class7680 var13 = new Class7680(var5[var12.field45906], var5[var12.field45907], var5[var12.field45908]);
       this.method34181(var13, var8);
@@ -110,7 +110,7 @@ public class Class9155 {
       this.method34180(var1, var2, var13, var6, var4);
    }
 
-   private void method34180(int[] var1, int var2, Class7680 var3, Class1713 var4, Class9840 var5) {
+   private void method34180(int[] var1, int var2, Class7680 var3, TextureAtlasSprite var4, Class9840 var5) {
       int var8 = var1.length / 4;
       int var9 = var2 * var8;
       var1[var9] = Float.floatToRawIntBits(var3.method25269());
@@ -192,7 +192,7 @@ public class Class9155 {
 
       for (Direction var16 : Direction.values()) {
          Class1998 var17 = var16.method556();
-         Class7680 var18 = new Class7680((float)var17.method8304(), (float)var17.getY(), (float)var17.method8306());
+         Class7680 var18 = new Class7680((float)var17.getX(), (float)var17.getY(), (float)var17.getZ());
          float var19 = var10.method25279(var18);
          if (var19 >= 0.0F && var19 > var12) {
             var12 = var19;

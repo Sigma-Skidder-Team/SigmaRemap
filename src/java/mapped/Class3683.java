@@ -16,11 +16,11 @@ public class Class3683 extends Class3676<Class1046> {
    }
 
    public boolean method12508(ServerWorld var1, Class1046 var2) {
-      return !var1.method7022(var2.method3432());
+      return !var1.method7022(var2.getPosition());
    }
 
    public void method12502(ServerWorld var1, Class1046 var2, long var3) {
-      BlockPos var7 = var2.method3432();
+      BlockPos var7 = var2.getPosition();
       List<BlockPos> var8 = BlockPos.method8360(var7.method8336(-1, -1, -1), var7.method8336(1, 1, 1))
          .map(BlockPos::method8353)
          .collect(Collectors.toList());

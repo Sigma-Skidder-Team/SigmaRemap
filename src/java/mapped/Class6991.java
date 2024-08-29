@@ -27,10 +27,10 @@ public class Class6991 extends Class6990 {
 
    @Override
    public Class8238 method21651(BlockPos var1, int var2) {
-      if (this.field30244.method6738(var1).method23393()) {
+      if (this.field30244.getBlockState(var1).isAir()) {
          BlockPos var5 = var1.method8313();
 
-         while (var5.getY() > 0 && this.field30244.method6738(var5).method23393()) {
+         while (var5.getY() > 0 && this.field30244.getBlockState(var5).isAir()) {
             var5 = var5.method8313();
          }
 
@@ -38,19 +38,19 @@ public class Class6991 extends Class6990 {
             return super.method21651(var5.method8311(), var2);
          }
 
-         while (var5.getY() < this.field30244.method7034() && this.field30244.method6738(var5).method23393()) {
+         while (var5.getY() < this.field30244.method7034() && this.field30244.getBlockState(var5).isAir()) {
             var5 = var5.method8311();
          }
 
          var1 = var5;
       }
 
-      if (!this.field30244.method6738(var1).method23384().method31086()) {
+      if (!this.field30244.getBlockState(var1).method23384().method31086()) {
          return super.method21651(var1, var2);
       } else {
          BlockPos var6 = var1.method8311();
 
-         while (var6.getY() < this.field30244.method7034() && this.field30244.method6738(var6).method23384().method31086()) {
+         while (var6.getY() < this.field30244.method7034() && this.field30244.getBlockState(var6).method23384().method31086()) {
             var6 = var6.method8311();
          }
 
@@ -60,25 +60,25 @@ public class Class6991 extends Class6990 {
 
    @Override
    public Class8238 method21652(Entity var1, int var2) {
-      return this.method21651(var1.method3432(), var2);
+      return this.method21651(var1.getPosition(), var2);
    }
 
    private int method21678() {
       if (this.field30243.method3250() && this.method21675()) {
-         int var3 = MathHelper.method37769(this.field30243.getPosY());
-         Block var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)var3, this.field30243.getPosZ())).method23383();
+         int var3 = MathHelper.floor(this.field30243.getPosY());
+         Block var4 = this.field30244.getBlockState(new BlockPos(this.field30243.getPosX(), (double)var3, this.field30243.getPosZ())).getBlock();
          int var5 = 0;
 
          while (var4 == Blocks.WATER) {
-            var4 = this.field30244.method6738(new BlockPos(this.field30243.getPosX(), (double)(++var3), this.field30243.getPosZ())).method23383();
+            var4 = this.field30244.getBlockState(new BlockPos(this.field30243.getPosX(), (double)(++var3), this.field30243.getPosZ())).getBlock();
             if (++var5 > 16) {
-               return MathHelper.method37769(this.field30243.getPosY());
+               return MathHelper.floor(this.field30243.getPosY());
             }
          }
 
          return var3;
       } else {
-         return MathHelper.method37769(this.field30243.getPosY() + 0.5);
+         return MathHelper.floor(this.field30243.getPosY() + 0.5);
       }
    }
 
@@ -102,8 +102,8 @@ public class Class6991 extends Class6990 {
 
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
-      int var8 = MathHelper.method37769(var1.field18048);
-      int var9 = MathHelper.method37769(var1.field18050);
+      int var8 = MathHelper.floor(var1.field18048);
+      int var9 = MathHelper.floor(var1.field18050);
       double var10 = var2.field18048 - var1.field18048;
       double var12 = var2.field18050 - var1.field18050;
       double var14 = var10 * var10 + var12 * var12;
@@ -115,7 +115,7 @@ public class Class6991 extends Class6990 {
          var12 *= var16;
          var3 += 2;
          var5 += 2;
-         if (!this.method21679(var8, MathHelper.method37769(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
+         if (!this.method21679(var8, MathHelper.floor(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
             return false;
          } else {
             var3 -= 2;
@@ -136,8 +136,8 @@ public class Class6991 extends Class6990 {
             var24 /= var12;
             int var26 = !(var10 < 0.0) ? 1 : -1;
             int var27 = !(var12 < 0.0) ? 1 : -1;
-            int var28 = MathHelper.method37769(var2.field18048);
-            int var29 = MathHelper.method37769(var2.field18050);
+            int var28 = MathHelper.floor(var2.field18048);
+            int var29 = MathHelper.floor(var2.field18050);
             int var30 = var28 - var8;
             int var31 = var29 - var9;
 
@@ -152,7 +152,7 @@ public class Class6991 extends Class6990 {
                   var30 = var28 - var8;
                }
 
-               if (!this.method21679(var8, MathHelper.method37769(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
+               if (!this.method21679(var8, MathHelper.floor(var1.field18049), var9, var3, var4, var5, var1, var10, var12)) {
                   return false;
                }
             }
@@ -207,9 +207,9 @@ public class Class6991 extends Class6990 {
 
    private boolean method21681(int var1, int var2, int var3, int var4, int var5, int var6, Vector3d var7, double var8, double var10) {
       for (BlockPos var15 : BlockPos.method8359(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
-         double var16 = (double)var15.method8304() + 0.5 - var7.field18048;
-         double var18 = (double)var15.method8306() + 0.5 - var7.field18050;
-         if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field30244.method6738(var15).method23440(this.field30244, var15, Class1947.field12614)) {
+         double var16 = (double)var15.getX() + 0.5 - var7.field18048;
+         double var18 = (double)var15.getZ() + 0.5 - var7.field18050;
+         if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field30244.getBlockState(var15).method23440(this.field30244, var15, Class1947.field12614)) {
             return false;
          }
       }

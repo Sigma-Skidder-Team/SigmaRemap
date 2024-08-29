@@ -15,7 +15,7 @@ public class Class2675 extends Class2672 {
    public boolean method10803() {
       if (super.method10803()) {
          int var3 = this.field17067
-            .field5024
+            .world
             .<Class1100>method7195(Class1100.class, this.field17066, this.field17067, this.field17067.method3389().method19664(16.0))
             .size();
          return Class1032.method4604(this.field17067).nextInt(8) + 1 > var3;
@@ -36,15 +36,15 @@ public class Class2675 extends Class2672 {
 
    @Override
    public void method10890() {
-      ServerWorld var3 = (ServerWorld)this.field17067.field5024;
+      ServerWorld var3 = (ServerWorld)this.field17067.world;
 
       for (int var4 = 0; var4 < 3; var4++) {
          BlockPos var5 = this.field17067
-            .method3432()
+            .getPosition()
             .method8336(-2 + Class1032.method4605(this.field17067).nextInt(5), 1, -2 + Class1032.method4606(this.field17067).nextInt(5));
-         Class1100 var6 = Class8992.field41097.method33215(this.field17067.field5024);
+         Class1100 var6 = EntityType.field41097.method33215(this.field17067.world);
          var6.method3272(var5, 0.0F, 0.0F);
-         var6.method4276(var3, this.field17067.field5024.method6807(var5), Class2202.field14396, (Class5093)null, (Class39)null);
+         var6.method4276(var3, this.field17067.world.method6807(var5), Class2202.field14396, (Class5093)null, (CompoundNBT)null);
          var6.method5277(this.field17067);
          var6.method5272(var5);
          var6.method5278(20 * (30 + Class1032.method4607(this.field17067).nextInt(90)));

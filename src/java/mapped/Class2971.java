@@ -6,7 +6,7 @@ import com.mojang.serialization.Codec;
 import java.util.List;
 
 public class Class2971 extends Structure<Class4712> {
-   private static final List<Class6692> field18085 = ImmutableList.of(new Class6692(Class8992.field41036, 1, 2, 4));
+   private static final List<Class6692> field18085 = ImmutableList.of(new Class6692(EntityType.field41036, 1, 2, 4));
 
    public Class2971(Codec<Class4712> var1) {
       super(var1);
@@ -25,7 +25,7 @@ public class Class2971 extends Structure<Class4712> {
       }
 
       for (Biome var16 : var2.method7202(var6 * 16 + 9, var1.method17807(), var7 * 16 + 9, 29)) {
-         if (var16.method32527() != Class100.field285 && var16.method32527() != Class100.field287) {
+         if (var16.getCategory() != Class100.OCEAN && var16.getCategory() != Class100.RIVER) {
             return false;
          }
       }

@@ -46,7 +46,7 @@ public class Class2567<E, T extends Class7129<E>> implements JsonDeserializer<E>
          return ((Class8367)this.field16794.getSecond()).method29306(var1, var3);
       } else if (var6 != null) {
          JsonObject var7 = new JsonObject();
-         var7.addProperty(this.field16792, this.field16790.method9181((T)var6).toString());
+         var7.addProperty(this.field16792, this.field16790.getKey((T)var6).toString());
          var6.method22239().serialize(var7, var1, var3);
          return var7;
       } else {

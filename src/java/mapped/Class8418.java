@@ -32,7 +32,7 @@ public class Class8418 {
       var0.put("TeSH", "Swamp_Hut");
    });
    private final boolean field36090;
-   private final Map<String, Long2ObjectMap<Class39>> field36091 = Maps.newHashMap();
+   private final Map<String, Long2ObjectMap<CompoundNBT>> field36091 = Maps.newHashMap();
    private final Map<String, Class7533> field36092 = Maps.newHashMap();
    private final List<String> field36093;
    private final List<String> field36094;
@@ -60,15 +60,15 @@ public class Class8418 {
       }
    }
 
-   public Class39 method29575(Class39 var1) {
-      Class39 var4 = var1.method130("Level");
+   public CompoundNBT method29575(CompoundNBT var1) {
+      CompoundNBT var4 = var1.getCompound("Level");
       Class7481 var5 = new Class7481(var4.method122("xPos"), var4.method122("zPos"));
       if (this.method29577(var5.field32174, var5.field32175)) {
          var1 = this.method29578(var1, var5);
       }
 
-      Class39 var6 = var4.method130("Structures");
-      Class39 var7 = var6.method130("References");
+      CompoundNBT var6 = var4.getCompound("Structures");
+      CompoundNBT var7 = var6.getCompound("References");
 
       for (String var9 : this.field36094) {
          Structure var10 = (Structure) Structure.field_236365_a_.get(var9.toLowerCase(Locale.ROOT));
@@ -88,9 +88,9 @@ public class Class8418 {
          }
       }
 
-      var6.method99("References", var7);
-      var4.method99("Structures", var6);
-      var1.method99("Level", var4);
+      var6.put("References", var7);
+      var4.put("Structures", var6);
+      var1.put("Level", var4);
       return var1;
    }
 
@@ -114,27 +114,27 @@ public class Class8418 {
       }
    }
 
-   private Class39 method29578(Class39 var1, Class7481 var2) {
-      Class39 var5 = var1.method130("Level");
-      Class39 var6 = var5.method130("Structures");
-      Class39 var7 = var6.method130("Starts");
+   private CompoundNBT method29578(CompoundNBT var1, Class7481 var2) {
+      CompoundNBT var5 = var1.getCompound("Level");
+      CompoundNBT var6 = var5.getCompound("Structures");
+      CompoundNBT var7 = var6.getCompound("Starts");
 
       for (String var9 : this.field36094) {
          Long2ObjectMap var10 = this.field36091.get(var9);
          if (var10 != null) {
             long var11 = var2.method24352();
             if (this.field36092.get(field36088.get(var9)).method24621(var11)) {
-               Class39 var13 = (Class39)var10.get(var11);
+               CompoundNBT var13 = (CompoundNBT)var10.get(var11);
                if (var13 != null) {
-                  var7.method99(var9, var13);
+                  var7.put(var9, var13);
                }
             }
          }
       }
 
-      var6.method99("Starts", var7);
-      var5.method99("Structures", var6);
-      var1.method99("Level", var5);
+      var6.put("Starts", var7);
+      var5.put("Structures", var6);
+      var1.put("Level", var5);
       return var1;
    }
 
@@ -144,17 +144,17 @@ public class Class8418 {
 
          while (true) {
             String var5;
-            Class39 var6;
+            CompoundNBT var6;
             while (true) {
                if (!var4.hasNext()) {
                   return;
                }
 
                var5 = (String)var4.next();
-               var6 = new Class39();
+               var6 = new CompoundNBT();
 
                try {
-                  var6 = var1.method28771(var5, 1493).method130("data").method130("Features");
+                  var6 = var1.method28771(var5, 1493).getCompound("data").getCompound("Features");
                   if (var6.method134()) {
                      continue;
                   }
@@ -164,9 +164,9 @@ public class Class8418 {
             }
 
             for (String var8 : var6.method97()) {
-               Class39 var9 = var6.method130(var8);
+               CompoundNBT var9 = var6.getCompound(var8);
                long var10 = Class7481.method24353(var9.method122("ChunkX"), var9.method122("ChunkZ"));
-               Class41 var12 = var9.method131("Children", 10);
+               ListNBT var12 = var9.method131("Children", 10);
                if (!var12.isEmpty()) {
                   String var13 = var12.method153(0).method126("id");
                   String var14 = field36089.get(var13);
@@ -188,7 +188,7 @@ public class Class8418 {
                this.field36092.put(var5, var20);
 
                for (String var16 : var6.method97()) {
-                  Class39 var21 = var6.method130(var16);
+                  CompoundNBT var21 = var6.getCompound(var16);
                   var20.method24619(Class7481.method24353(var21.method122("ChunkX"), var21.method122("ChunkZ")));
                }
 
@@ -200,7 +200,7 @@ public class Class8418 {
 
    public static Class8418 method29580(RegistryKey<World> var0, Class8250 var1) {
       if (var0 != World.field8999) {
-         if (var0 != World.field9000) {
+         if (var0 != World.THE_NETHER) {
             if (var0 != World.THE_END) {
                throw new RuntimeException(String.format("Unknown dimension type : %s", var0));
             } else {

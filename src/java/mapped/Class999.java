@@ -30,14 +30,14 @@ public class Class999 extends Entity {
    private Class880 field5512;
    private UUID field5513;
 
-   public Class999(Class8992<? extends Class999> var1, World var2) {
+   public Class999(EntityType<? extends Class999> var1, World var2) {
       super(var1, var2);
       this.field5052 = true;
       this.method4097(3.0F);
    }
 
    public Class999(World var1, double var2, double var4, double var6) {
-      this(Class8992.field41005, var1);
+      this(EntityType.field41005, var1);
       this.method3215(var2, var4, var6);
    }
 
@@ -50,7 +50,7 @@ public class Class999 extends Entity {
    }
 
    public void method4097(float var1) {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.method3210().method35446(field5498, var1);
       }
    }
@@ -128,7 +128,7 @@ public class Class999 extends Entity {
       super.tick();
       boolean var3 = this.method4107();
       float var4 = this.method4098();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (this.field5055 >= this.field5506 + this.field5505) {
             this.method2904();
             return;
@@ -171,7 +171,7 @@ public class Class999 extends Entity {
 
             var27.addAll(this.field5503);
             if (!var27.isEmpty()) {
-               List<Class880> var30 = this.field5024.<Class880>method7182(Class880.class, this.method3389());
+               List<Class880> var30 = this.world.<Class880>method7182(Class880.class, this.method3389());
                if (!var30.isEmpty()) {
                   for (Class880 var10 : var30) {
                      if (!this.field5504.containsKey(var10) && var10.method3169()) {
@@ -222,10 +222,10 @@ public class Class999 extends Entity {
             for (int var28 = 0; (float)var28 < var25; var28++) {
                float var31 = this.field5054.nextFloat() * (float) (Math.PI * 2);
                float var34 = MathHelper.method37765(this.field5054.nextFloat()) * var4;
-               float var36 = MathHelper.method37764(var31) * var34;
-               float var11 = MathHelper.method37763(var31) * var34;
+               float var36 = MathHelper.cos(var31) * var34;
+               float var11 = MathHelper.sin(var31) * var34;
                if (var24.method24011() != Class7940.field34068) {
-                  this.field5024
+                  this.world
                      .method6748(
                         var24,
                         this.getPosX() + (double)var36,
@@ -240,7 +240,7 @@ public class Class999 extends Entity {
                   int var13 = var12 >> 16 & 0xFF;
                   int var14 = var12 >> 8 & 0xFF;
                   int var15 = var12 & 0xFF;
-                  this.field5024
+                  this.world
                      .method6748(
                         var24,
                         this.getPosX() + (double)var36,
@@ -256,16 +256,16 @@ public class Class999 extends Entity {
             for (int var26 = 0; var26 < 2; var26++) {
                float var29 = this.field5054.nextFloat() * (float) (Math.PI * 2);
                float var32 = MathHelper.method37765(this.field5054.nextFloat()) * 0.2F;
-               float var35 = MathHelper.method37764(var29) * var32;
-               float var37 = MathHelper.method37763(var29) * var32;
+               float var35 = MathHelper.cos(var29) * var32;
+               float var37 = MathHelper.sin(var29) * var32;
                if (var24.method24011() != Class7940.field34068) {
-                  this.field5024.method6748(var24, this.getPosX() + (double)var35, this.getPosY(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);
+                  this.world.method6748(var24, this.getPosX() + (double)var35, this.getPosY(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);
                } else {
                   int var38 = !this.field5054.nextBoolean() ? this.method4102() : 16777215;
                   int var39 = var38 >> 16 & 0xFF;
                   int var40 = var38 >> 8 & 0xFF;
                   int var41 = var38 & 0xFF;
-                  this.field5024
+                  this.world
                      .method6748(
                         var24,
                         this.getPosX() + (double)var35,
@@ -300,8 +300,8 @@ public class Class999 extends Entity {
 
    @Nullable
    public Class880 method4114() {
-      if (this.field5512 == null && this.field5513 != null && this.field5024 instanceof ServerWorld) {
-         Entity var3 = ((ServerWorld)this.field5024).method6942(this.field5513);
+      if (this.field5512 == null && this.field5513 != null && this.world instanceof ServerWorld) {
+         Entity var3 = ((ServerWorld)this.world).method6942(this.field5513);
          if (var3 instanceof Class880) {
             this.field5512 = (Class880)var3;
          }
@@ -311,7 +311,7 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.field5055 = var1.method122("Age");
       this.field5505 = var1.method122("Duration");
       this.field5506 = var1.method122("WaitTime");
@@ -341,7 +341,7 @@ public class Class999 extends Entity {
       }
 
       if (var1.method119("Effects", 9)) {
-         Class41 var4 = var1.method131("Effects", 10);
+         ListNBT var4 = var1.method131("Effects", 10);
          this.field5503.clear();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -354,7 +354,7 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       var1.method102("Age", this.field5055);
       var1.method102("Duration", this.field5505);
       var1.method102("WaitTime", this.field5506);
@@ -373,17 +373,17 @@ public class Class999 extends Entity {
       }
 
       if (this.field5502 != Class8137.field34976 && this.field5502 != null) {
-         var1.method109("Potion", Registry.field16076.method9181(this.field5502).toString());
+         var1.method109("Potion", Registry.field16076.getKey(this.field5502).toString());
       }
 
       if (!this.field5503.isEmpty()) {
-         Class41 var4 = new Class41();
+         ListNBT var4 = new ListNBT();
 
          for (Class2023 var6 : this.field5503) {
-            var4.add(var6.method8637(new Class39()));
+            var4.add(var6.method8637(new CompoundNBT()));
          }
 
-         var1.method99("Effects", var4);
+         var1.put("Effects", var4);
       }
    }
 

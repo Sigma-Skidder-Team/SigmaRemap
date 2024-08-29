@@ -77,7 +77,7 @@ public class Class804 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4201 = new Class1291(this, this.field4201.method6121());
       this.field4205 = this.<Class1206>method2455(
          new Class1206(
@@ -89,7 +89,7 @@ public class Class804 extends Class798 {
             this.field4564 / 2 - 100, this.field4565 - 32, 100, 20, new TranslationTextComponent("mco.template.button.select"), var1 -> this.method1965()
          )
       );
-      ITextComponent var3 = this.field4209 != Class2049.field13370 ? Class7127.field30663 : Class7127.field30659;
+      ITextComponent var3 = this.field4209 != Class2049.field13370 ? DialogTexts.field30663 : DialogTexts.GUI_CANCEL;
       Class1206 var4 = new Class1206(this.field4564 / 2 + 6, this.field4565 - 32, 100, 20, var3, var1 -> this.method1964());
       this.<Class1206>method2455(var4);
       this.field4206 = this.<Class1206>method2455(
@@ -133,8 +133,8 @@ public class Class804 extends Class798 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4210--;
       if (this.field4210 < 0) {
          this.field4210 = 0;
@@ -244,12 +244,12 @@ public class Class804 extends Class798 {
       for (int var7 = 0; var7 < var4.size(); var7++) {
          Class8081 var8 = (Class8081)var4.get(var7);
          int var9 = method1929(4 + var7);
-         int var10 = var8.field34733.stream().mapToInt(var1x -> this.field4568.method38820(var1x.method18864())).sum();
+         int var10 = var8.field34733.stream().mapToInt(var1x -> this.field4568.getStringWidth(var1x.method18864())).sum();
          int var11 = this.field4564 / 2 - var10 / 2;
 
          for (Class6102 var13 : var8.field34733) {
             int var14 = !var13.method18865() ? 16777215 : 3368635;
-            int var15 = this.field4568.method38799(var1, var13.method18864(), (float)var11, (float)var9, var14);
+            int var15 = this.field4568.drawStringWithShadow(var1, var13.method18864(), (float)var11, (float)var9, var14);
             if (var13.method18865() && var2 > var11 && var2 < var15 && var3 > var9 - 3 && var3 < var9 + 8) {
                this.field4207 = new StringTextComponent(var13.method18866());
                this.field4208 = var13.method18866();
@@ -296,22 +296,22 @@ public class Class804 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method1983(Class804 var0) {
+   public static FontRenderer method1983(Class804 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method1984(Class804 var0) {
+   public static FontRenderer method1984(Class804 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method1985(Class804 var0) {
+   public static FontRenderer method1985(Class804 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method1986(Class804 var0) {
+   public static FontRenderer method1986(Class804 var0) {
       return var0.field4568;
    }
 
@@ -326,12 +326,12 @@ public class Class804 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method1989(Class804 var0) {
+   public static FontRenderer method1989(Class804 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method1990(Class804 var0) {
+   public static FontRenderer method1990(Class804 var0) {
       return var0.field4568;
    }
 

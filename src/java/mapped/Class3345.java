@@ -10,20 +10,20 @@ public class Class3345 extends Class3343 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
-      Class944 var8 = var1.method6759(var2);
-      if (var8 instanceof Class968) {
-         Class968 var9 = (Class968)var8;
+      TileEntity var8 = var1.getTileEntity(var2);
+      if (var8 instanceof SkullTileEntity) {
+         SkullTileEntity var9 = (SkullTileEntity)var8;
          GameProfile var10 = null;
          if (var5.method32141()) {
-            Class39 var11 = var5.method32142();
+            CompoundNBT var11 = var5.method32142();
             if (!var11.method119("SkullOwner", 10)) {
                if (var11.method119("SkullOwner", 8) && !StringUtils.isBlank(var11.method126("SkullOwner"))) {
                   var10 = new GameProfile((UUID)null, var11.method126("SkullOwner"));
                }
             } else {
-               var10 = Class8354.method29278(var11.method130("SkullOwner"));
+               var10 = Class8354.method29278(var11.getCompound("SkullOwner"));
             }
          }
 

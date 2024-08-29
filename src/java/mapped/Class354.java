@@ -20,12 +20,12 @@ public class Class354 extends Thread {
       while (var3 != null) {
          Either var5 = Class804.method1978(this.field1578, var3, var4);
          var3 = Class804.method1979(this.field1578)
-            .<Class6108>method1632(
+            .<Class6108>supplyAsync(
                () -> {
                   if (var5.right().isPresent()) {
                      Class804.method1980().error("Couldn't fetch templates: {}", var5.right().get());
                      if (Class804.method1981(this.field1578).method6119()) {
-                        Class804.method1982(this.field1578, Class9729.method38112(Class9088.method33883("mco.template.select.failure")));
+                        Class804.method1982(this.field1578, Class9729.method38112(I18n.format("mco.template.select.failure")));
                      }
 
                      return null;
@@ -40,9 +40,9 @@ public class Class354 extends Thread {
                         return var4x;
                      } else {
                         if (Class804.method1981(this.field1578).method6119()) {
-                           String var7 = Class9088.method33883("mco.template.select.none", "%link");
+                           String var7 = I18n.format("mco.template.select.none", "%link");
                            Class6102 var8 = Class6102.method18867(
-                              Class9088.method33883("mco.template.select.none.linkTitle"), "https://aka.ms/MinecraftRealmsContentCreator"
+                              I18n.format("mco.template.select.none.linkTitle"), "https://aka.ms/MinecraftRealmsContentCreator"
                            );
                            Class804.method1982(this.field1578, Class9729.method38112(var7, var8));
                         }

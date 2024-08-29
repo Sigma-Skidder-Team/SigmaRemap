@@ -15,15 +15,15 @@ public class Class4836 extends Class4837 {
 
       for (int var9 = 0; var9 < var1.method3629(); var9++) {
          ItemStack var10 = var1.method3618(var9);
-         if (!var10.method32105()) {
-            if (var10.method32107() == Blocks.BROWN_MUSHROOM.method11581() && !var7) {
+         if (!var10.isEmpty()) {
+            if (var10.getItem() == Blocks.BROWN_MUSHROOM.method11581() && !var7) {
                var7 = true;
-            } else if (var10.method32107() == Blocks.RED_MUSHROOM.method11581() && !var6) {
+            } else if (var10.getItem() == Blocks.RED_MUSHROOM.method11581() && !var6) {
                var6 = true;
-            } else if (var10.method32107().method11743(Class5985.field26103) && !var5) {
+            } else if (var10.getItem().method11743(Class5985.field26103) && !var5) {
                var5 = true;
             } else {
-               if (var10.method32107() != Class8514.field37836 || var8) {
+               if (var10.getItem() != Items.field37836 || var8) {
                   return false;
                }
 
@@ -40,15 +40,15 @@ public class Class4836 extends Class4837 {
 
       for (int var5 = 0; var5 < var1.method3629(); var5++) {
          ItemStack var6 = var1.method3618(var5);
-         if (!var6.method32105() && var6.method32107().method11743(Class5985.field26103)) {
+         if (!var6.isEmpty() && var6.getItem().method11743(Class5985.field26103)) {
             var4 = var6;
             break;
          }
       }
 
-      ItemStack var8 = new ItemStack(Class8514.field38149, 1);
-      if (var4.method32107() instanceof Class3292 && ((Class3292)var4.method32107()).method11845() instanceof Class3490) {
-         Class3490 var9 = (Class3490)((Class3292)var4.method32107()).method11845();
+      ItemStack var8 = new ItemStack(Items.field38149, 1);
+      if (var4.getItem() instanceof Class3292 && ((Class3292)var4.getItem()).method11845() instanceof Class3490) {
+         Class3490 var9 = (Class3490)((Class3292)var4.getItem()).method11845();
          Class7144 var7 = var9.method12186();
          Class3284.method11816(var8, var7, var9.method12187());
       }

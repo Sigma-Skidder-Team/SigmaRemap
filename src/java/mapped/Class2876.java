@@ -89,9 +89,9 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
    @Override
    public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (!this.field17602) {
-         var1.method35294();
+         var1.push();
          var1.method35292(0.6F, 0.6F, 0.6F);
-         var1.method35291(0.0, 1.0, 0.0);
+         var1.translate(0.0, 1.0, 0.0);
          ImmutableList.of(
                this.field17820,
                this.field17821,
@@ -111,15 +111,15 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
          var1.method35295();
       } else {
          float var11 = 1.5F;
-         var1.method35294();
+         var1.push();
          var1.method35292(0.56666666F, 0.56666666F, 0.56666666F);
-         var1.method35291(0.0, 1.375, 0.125);
+         var1.translate(0.0, 1.375, 0.125);
          ImmutableList.of(this.field17827, this.field17829, this.field17828, this.field17831)
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
          var1.method35295();
-         var1.method35294();
+         var1.push();
          var1.method35292(0.4F, 0.4F, 0.4F);
-         var1.method35291(0.0, 2.25, 0.0);
+         var1.translate(0.0, 2.25, 0.0);
          ImmutableList.of(
                this.field17820, this.field17821, this.field17822, this.field17823, this.field17824, this.field17825, this.field17826, this.field17830
             )
@@ -138,7 +138,7 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
       this.field17827.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17828.field31036 = this.field17831.field31036 - (float) (Math.PI / 12);
       this.field17829.field31036 = this.field17831.field31036 + (float) (Math.PI / 12);
-      this.field17832 = MathHelper.method37763(var1.method5103(var9) * (float) Math.PI);
+      this.field17832 = MathHelper.sin(var1.method5103(var9) * (float) Math.PI);
       this.field17822.field31035 = (this.field17832 * 50.0F - 21.0F) * (float) (Math.PI / 180.0);
       this.field17823.field31035 = (this.field17832 * 50.0F - 21.0F) * (float) (Math.PI / 180.0);
       this.field17820.field31035 = this.field17832 * 50.0F * (float) (Math.PI / 180.0);
@@ -149,6 +149,6 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
 
    public void method10997(T var1, float var2, float var3, float var4) {
       super.method10997((T)var1, var2, var3, var4);
-      this.field17832 = MathHelper.method37763(var1.method5103(var4) * (float) Math.PI);
+      this.field17832 = MathHelper.sin(var1.method5103(var4) * (float) Math.PI);
    }
 }

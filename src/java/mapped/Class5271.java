@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -46,7 +46,7 @@ public class Class5271 extends Module {
     }
 
     @EventTarget
-    public void method16494(Class4418 var1) {
+    public void method16494(WorldLoadEvent var1) {
         this.field23701 = 0;
         this.field23700 = -1;
         double var4 = this.field23703[0];
@@ -90,19 +90,19 @@ public class Class5271 extends Module {
         if (this.field23700 != 1) {
             if (this.field23700 > 1) {
                 mc.player.method3215(mc.player.getPositionVec().field18048, this.field23702, mc.player.getPositionVec().field18050);
-                double var4 = !mc.gameSettings.field44637.method8509() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
+                double var4 = !mc.gameSettings.field44637.isKeyDown() ? 0.405 + (double) Class9567.method37078() * 0.02 : 0.25;
                 Class9567.method37088(var1, var4);
                 this.field23700 = 0;
             }
         } else {
-            if (mc.gameSettings.field44636.method8509() && this.field23701 == 0) {
+            if (mc.gameSettings.field44636.isKeyDown() && this.field23701 == 0) {
                 var1.method13995(0.5);
                 this.field23702 = this.field23702 + var1.method13994();
                 this.field23701 = 3;
                 this.field23700 = 0;
             }
 
-            double var6 = !mc.gameSettings.field44637.method8509() ? 0.6 : 0.25;
+            double var6 = !mc.gameSettings.field44637.isKeyDown() ? 0.6 : 0.25;
             Class9567.method37088(var1, var6);
         }
 

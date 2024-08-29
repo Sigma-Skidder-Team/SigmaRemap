@@ -5,17 +5,17 @@ import java.util.List;
 import java.util.Random;
 
 public class Class7551 {
-   private final Class8396 field32369;
+   private final BlockColors field32369;
    private static final ThreadLocal<Class7217> field32370 = ThreadLocal.withInitial(Class7217::new);
    private static float field32371 = 0.2F;
    private static boolean field32372 = false;
    private static final Class4049 field32373 = new Class4049();
-   private static final Class4520[] field32374 = new Class4520[]{Class9025.field41290, Class9025.field41289, Class9025.field41291};
+   private static final RenderType[] field32374 = new RenderType[]{Class9025.field41290, Class9025.field41289, Class9025.field41291};
    private boolean field32375 = Class9299.field42864.method20245();
 
    private void method24676(
       Class1663 var1,
-      Class7380 var2,
+      BlockState var2,
       BlockPos var3,
       MatrixStack var4,
       Class5422 var5,
@@ -50,7 +50,7 @@ public class Class7551 {
 
    private void method24677(
       Class1663 var1,
-      Class7380 var2,
+      BlockState var2,
       BlockPos var3,
       Class5422 var4,
       Class8892 var5,
@@ -83,13 +83,13 @@ public class Class7551 {
    }
 
    private void method24678(
-           Class1663 var1, Class7380 var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, BitSet var10
+           Class1663 var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, BitSet var10
    ) {
       for (Class8557 var14 : var9) {
          if (var6) {
             this.method24687(var1, var2, var3, var14.method30511(), var14.method30514(), (float[])null, var10);
             BlockPos var15 = !var10.get(0) ? var3 : var3.method8349(var14.method30514());
-            var4 = Class264.method945(var1, var2, var15);
+            var4 = WorldRenderer.method945(var1, var2, var15);
          }
 
          float var16 = var1.method6877(var14.method30514(), var14.method30515());
@@ -97,20 +97,20 @@ public class Class7551 {
       }
    }
 
-   public Class7551(Class8396 var1) {
+   public Class7551(BlockColors var1) {
       this.field32369 = var1;
    }
 
    public boolean method24679(
-           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           Class1663 var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24680(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
 
    public boolean method24680(
       Class1663 var1,
-      Class7202 var2,
-      Class7380 var3,
+      IBakedModel var2,
+      BlockState var3,
       BlockPos var4,
       MatrixStack var5,
       Class5422 var6,
@@ -120,13 +120,13 @@ public class Class7551 {
       int var11,
       Class7180 var12
    ) {
-      boolean var15 = Minecraft.method1518() && Class9561.method37047(var3, var1, var4) == 0 && var2.method22620();
+      boolean var15 = Minecraft.isAmbientOcclusionEnabled() && Class9561.method37047(var3, var1, var4) == 0 && var2.method22620();
       if (this.field32375) {
          var12 = var2.method22631(var1, var4, var3, var12);
       }
 
       Vector3d var16 = var3.method23421(var1, var4);
-      var5.method35291(var16.field18048, var16.field18049, var16.field18050);
+      var5.translate(var16.field18048, var16.field18049, var16.field18050);
 
       try {
          if (Class7944.method26921()) {
@@ -152,24 +152,24 @@ public class Class7551 {
 
          return var22;
       } catch (Throwable var20) {
-         Class4526 var18 = Class4526.method14413(var20, "Tesselating block model");
-         Class8965 var19 = var18.method14410("Block model being tesselated");
-         Class8965.method32814(var19, var4, var3);
-         var19.method32807("Using AO", var15);
-         throw new Class2506(var18);
+         CrashReport var18 = CrashReport.makeCrashReport(var20, "Tesselating block model");
+         CrashReportCategory var19 = var18.makeCategory("Block model being tesselated");
+         CrashReportCategory.method32814(var19, var4, var3);
+         var19.addDetail("Using AO", var15);
+         throw new ReportedException(var18);
       }
    }
 
    public boolean method24681(
-           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           Class1663 var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24682(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
 
    public boolean method24682(
       Class1663 var1,
-      Class7202 var2,
-      Class7380 var3,
+      IBakedModel var2,
+      BlockState var3,
       BlockPos var4,
       MatrixStack var5,
       Class5422 var6,
@@ -181,7 +181,7 @@ public class Class7551 {
    ) {
       boolean var15 = false;
       Class8391 var16 = var6.method17022(var3, var4);
-      Class4520 var17 = var6.method17023();
+      RenderType var17 = var6.method17023();
 
       for (Direction var21 : Direction.field685) {
          if (!var7 || Class9716.method38063(var3, var1, var4, var21, var16)) {
@@ -205,15 +205,15 @@ public class Class7551 {
    }
 
    public boolean method24683(
-           Class1663 var1, Class7202 var2, Class7380 var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           Class1663 var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24684(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
 
    public boolean method24684(
       Class1663 var1,
-      Class7202 var2,
-      Class7380 var3,
+      IBakedModel var2,
+      BlockState var3,
       BlockPos var4,
       MatrixStack var5,
       Class5422 var6,
@@ -225,13 +225,13 @@ public class Class7551 {
    ) {
       boolean var15 = false;
       Class8391 var16 = var6.method17022(var3, var4);
-      Class4520 var17 = var6.method17023();
+      RenderType var17 = var6.method17023();
 
       for (Direction var21 : Direction.field685) {
          if (!var7 || Class9716.method38063(var3, var1, var4, var21, var16)) {
             var8.setSeed(var9);
             List var22 = !this.field32375 ? var2.method22619(var3, var21, var8) : var2.method22628(var3, var21, var8, var12);
-            int var23 = Class264.method945(var1, var3, var4.method8349(var21));
+            int var23 = WorldRenderer.method945(var1, var3, var4.method8349(var21));
             var22 = Class8464.method29766(var22, var1, var3, var4, var21, var17, var9, var16);
             this.method24688(var1, var3, var4, var23, var11, false, var5, var6, var22, var16);
             var15 = true;
@@ -249,7 +249,7 @@ public class Class7551 {
       return var15;
    }
 
-   private void method24685(Class1663 var1, Class7380 var2, BlockPos var3, MatrixStack var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
+   private void method24685(Class1663 var1, BlockState var2, BlockPos var3, MatrixStack var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
       float[] var11 = var8.method29414();
       BitSet var12 = var8.method29415();
       Class9529 var13 = var8.method29416();
@@ -286,7 +286,7 @@ public class Class7551 {
 
    private void method24686(
       Class1663 var1,
-      Class7380 var2,
+      BlockState var2,
       BlockPos var3,
       Class5422 var4,
       Class8892 var5,
@@ -320,7 +320,7 @@ public class Class7551 {
       var4.method17038(var5, var6, var4.method17047(var7, var8, var9, var10), var20, var21, var22, var4.method17048(var11, var12, var13, var14), var15, true);
    }
 
-   private void method24687(Class1663 var1, Class7380 var2, BlockPos var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
+   private void method24687(Class1663 var1, BlockState var2, BlockPos var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
       float var10 = 32.0F;
       float var11 = 32.0F;
       float var12 = 32.0F;
@@ -344,14 +344,14 @@ public class Class7551 {
       if (var6 != null) {
          var6[Direction.WEST.method533()] = var10;
          var6[Direction.EAST.method533()] = var13;
-         var6[Direction.field672.method533()] = var11;
+         var6[Direction.DOWN.method533()] = var11;
          var6[Direction.field673.method533()] = var14;
          var6[Direction.NORTH.method533()] = var12;
          var6[Direction.SOUTH.method533()] = var15;
          int var21 = Direction.field685.length;
          var6[Direction.WEST.method533() + var21] = 1.0F - var10;
          var6[Direction.EAST.method533() + var21] = 1.0F - var13;
-         var6[Direction.field672.method533() + var21] = 1.0F - var11;
+         var6[Direction.DOWN.method533() + var21] = 1.0F - var11;
          var6[Direction.field673.method533() + var21] = 1.0F - var14;
          var6[Direction.NORTH.method533() + var21] = 1.0F - var12;
          var6[Direction.SOUTH.method533() + var21] = 1.0F - var15;
@@ -387,7 +387,7 @@ public class Class7551 {
    }
 
    private void method24688(
-           Class1663 var1, Class7380 var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, Class8391 var10
+           Class1663 var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, Class8391 var10
    ) {
       BitSet var13 = var10.method29415();
       int var14 = var9.size();
@@ -397,7 +397,7 @@ public class Class7551 {
          if (var6) {
             this.method24687(var1, var2, var3, var16.method30511(), var16.method30514(), (float[])null, var13);
             BlockPos var17 = !var13.get(0) ? var3 : var3.method8349(var16.method30514());
-            var4 = Class264.method945(var1, var2, var17);
+            var4 = WorldRenderer.method945(var1, var2, var17);
          }
 
          if (var16.method30516().field9353) {
@@ -409,12 +409,12 @@ public class Class7551 {
       }
    }
 
-   public void method24689(Class8892 var1, Class5422 var2, Class7380 var3, Class7202 var4, float var5, float var6, float var7, int var8, int var9) {
+   public void method24689(Class8892 var1, Class5422 var2, BlockState var3, IBakedModel var4, float var5, float var6, float var7, int var8, int var9) {
       this.method24690(var1, var2, var3, var4, var5, var6, var7, var8, var9, Class7181.field30863);
    }
 
    public void method24690(
-      Class8892 var1, Class5422 var2, Class7380 var3, Class7202 var4, float var5, float var6, float var7, int var8, int var9, Class7180 var10
+           Class8892 var1, Class5422 var2, BlockState var3, IBakedModel var4, float var5, float var6, float var7, int var8, int var9, Class7180 var10
    ) {
       Random var13 = new Random();
       long var14 = 42L;
@@ -478,7 +478,7 @@ public class Class7551 {
 
    public static void method24695() {
       field32371 = 1.0F - Class7944.method26851() * 0.8F;
-      field32372 = Class7944.method26921() && Class8981.method33004();
+      field32372 = Class7944.method26921() && Shaders.method33004();
    }
 
    public static boolean method24696() {
@@ -487,8 +487,8 @@ public class Class7551 {
 
    private void method24697(
       Class1663 var1,
-      Class7202 var2,
-      Class7380 var3,
+      IBakedModel var2,
+      BlockState var3,
       BlockPos var4,
       MatrixStack var5,
       Class5422 var6,
@@ -502,27 +502,27 @@ public class Class7551 {
    ) {
       if (var12.method29437()) {
          for (int var17 = 0; var17 < field32374.length; var17++) {
-            Class4520 var18 = field32374[var17];
+            RenderType var18 = field32374[var17];
             Class9585 var19 = var12.method29436(var18);
             if (var19.method37213() > 0) {
                Class7828 var20 = var12.method29434();
                if (var20 != null) {
-                  Class5425 var21 = var20.method26203(var18);
+                  BufferBuilder var21 = var20.method26203(var18);
                   if (!var21.method17074()) {
-                     var21.method17063(7, Class9337.field43334);
+                     var21.begin(7, DefaultVertexFormats.field43334);
                   }
 
                   for (int var22 = 0; var22 < var19.method37213(); var22++) {
                      Class8557 var23 = var19.method37214(var22);
                      List var24 = var19.method37216(var23);
-                     Class7380 var25 = var19.method37215(var22);
+                     BlockState var25 = var19.method37215(var22);
                      if (var23.method30532() != null) {
                         var19.method37212(var23.method30532(), var25);
                      }
 
                      var12.method29411(var25, var4);
                      if (!var13) {
-                        int var26 = Class264.method945(var1, var25, var4.method8349(var23.method30514()));
+                        int var26 = WorldRenderer.method945(var1, var25, var4.method8349(var23.method30514()));
                         this.method24688(var1, var25, var4, var26, var7, false, var5, var21, var24, var12);
                      } else {
                         this.method24685(var1, var25, var4, var5, var21, var24, var7, var12);
@@ -536,9 +536,9 @@ public class Class7551 {
       }
 
       if (Class7944.method26898() && !var12.method29419() && Class7880.method26421(var1, var3, var4)) {
-         Class7202 var27 = Class7880.method26419();
-         Class7380 var28 = Class7880.method26420();
-         var5.method35291(-var14.field18048, -var14.field18049, -var14.field18050);
+         IBakedModel var27 = Class7880.method26419();
+         BlockState var28 = Class7880.method26420();
+         var5.translate(-var14.field18048, -var14.field18049, -var14.field18050);
          this.method24679(var1, var27, var28, var4, var5, var6, var8, var9, var10, var7);
       }
    }

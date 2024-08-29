@@ -14,7 +14,7 @@ public class Class3358 extends Class3357 {
    }
 
    @Override
-   public Class944 method11646(Class1665 var1) {
+   public TileEntity method11646(Class1665 var1) {
       return new Class972();
    }
 
@@ -25,13 +25,13 @@ public class Class3358 extends Class3357 {
       int var7 = var6.method4022();
       if (var7 >= 0) {
          ItemStack var8 = var6.method3618(var7);
-         if (!var8.method32105()) {
-            Direction var9 = var1.method6738(var2).<Direction>method23463(field18899);
+         if (!var8.isEmpty()) {
+            Direction var9 = var1.getBlockState(var2).<Direction>method23463(field18899);
             Class920 var10 = Class936.method3715(var1, var2.method8349(var9));
             ItemStack var12;
             if (var10 != null) {
                var12 = Class936.method3708(var6, var10, var8.copy().method32106(1), var9.method536());
-               if (!var12.method32105()) {
+               if (!var12.isEmpty()) {
                   var12 = var8.copy();
                } else {
                   var12 = var8.copy();

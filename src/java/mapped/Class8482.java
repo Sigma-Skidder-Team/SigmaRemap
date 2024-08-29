@@ -9,10 +9,10 @@ public class Class8482 {
    }
 
    public static ItemStack method29978(ItemStack var0, PlayerEntity var1, ItemStack var2, boolean var3) {
-      boolean var6 = var1.field4919.field29609;
+      boolean var6 = var1.abilities.isCreativeMode;
       if (var3 && var6) {
-         if (!var1.field4902.method4058(var2)) {
-            var1.field4902.method4045(var2);
+         if (!var1.inventory.method4058(var2)) {
+            var1.inventory.method4045(var2);
          }
 
          return var0;
@@ -21,8 +21,8 @@ public class Class8482 {
             var0.method32182(1);
          }
 
-         if (!var0.method32105()) {
-            if (!var1.field4902.method4045(var2)) {
+         if (!var0.isEmpty()) {
+            if (!var1.inventory.method4045(var2)) {
                var1.method2882(var2, false);
             }
 

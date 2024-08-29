@@ -16,8 +16,8 @@ public class Class6770 extends Class6768<Class8278> {
       int var5,
       int var6,
       double var7,
-      Class7380 var9,
-      Class7380 var10,
+      BlockState var9,
+      BlockState var10,
       int var11,
       long var12,
       Class8278 var14
@@ -30,8 +30,8 @@ public class Class6770 extends Class6768<Class8278> {
 
          for (int var22 = var6; var22 >= 0; var22--) {
             var21.method8372(var19, var22, var20);
-            if (!var2.method6738(var21).method23393()) {
-               if (var22 == 62 && !var2.method6738(var21).method23448(var10.method23383())) {
+            if (!var2.getBlockState(var21).isAir()) {
+               if (var22 == 62 && !var2.getBlockState(var21).method23448(var10.getBlock())) {
                   var2.method7061(var21, var10, false);
                }
                break;

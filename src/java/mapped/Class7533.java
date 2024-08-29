@@ -12,13 +12,13 @@ public class Class7533 extends Class7530 {
    }
 
    @Override
-   public void method24591(Class39 var1) {
+   public void method24591(CompoundNBT var1) {
       this.field32337 = new LongOpenHashSet(var1.method129("All"));
       this.field32338 = new LongOpenHashSet(var1.method129("Remaining"));
    }
 
    @Override
-   public Class39 method24592(Class39 var1) {
+   public CompoundNBT method24592(CompoundNBT var1) {
       var1.method113("All", this.field32337.toLongArray());
       var1.method113("Remaining", this.field32338.toLongArray());
       return var1;

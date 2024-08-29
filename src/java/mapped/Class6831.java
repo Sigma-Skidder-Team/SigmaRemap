@@ -42,9 +42,9 @@ public class Class6831 extends Class6829 {
       float var16 = (float)(-(MathHelper.method37814((double)(-var4), var6) * 180.0F / (float)Math.PI));
       this.field29717.field5032 = var16;
       float var17 = this.field29717.field5031 + 90.0F;
-      double var18 = (double)(this.field29716 * MathHelper.method37764(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
-      double var20 = (double)(this.field29716 * MathHelper.method37763(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
-      double var22 = (double)(this.field29716 * MathHelper.method37763(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
+      double var18 = (double)(this.field29716 * MathHelper.cos(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
+      double var20 = (double)(this.field29716 * MathHelper.sin(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
+      double var22 = (double)(this.field29716 * MathHelper.sin(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
       Vector3d var24 = this.field29717.method3433();
       this.field29717.method3434(var24.method11338(new Vector3d(var18, var22, var20).method11336(var24).method11344(0.2)));
    }

@@ -41,14 +41,14 @@ public class Class5125 implements Class5119 {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       this.method15827();
       this.method15826();
       this.method15828();
       RenderSystem.enableTexture();
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
-      if (!this.field23306.player.method2800()) {
+      if (!this.field23306.player.isSpectator()) {
          this.method15847();
       }
    }
@@ -141,7 +141,7 @@ public class Class5125 implements Class5119 {
    private static void method15834(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      Class8023.method27456(var0, var1, var2, var3, var4, var5);
+      DebugRenderer.method27456(var0, var1, var2, var3, var4, var5);
    }
 
    private void method15835(Class8974 var1, Collection<UUID> var2) {
@@ -217,21 +217,21 @@ public class Class5125 implements Class5119 {
    private static void method15839(String var0, BlockPos var1, int var2, int var3) {
       double var6 = 1.3;
       double var8 = 0.2;
-      double var10 = (double)var1.method8304() + 0.5;
+      double var10 = (double)var1.getX() + 0.5;
       double var12 = (double)var1.getY() + 1.3 + (double)var2 * 0.2;
-      double var14 = (double)var1.method8306() + 0.5;
-      Class8023.method27462(var0, var10, var12, var14, var3, 0.02F, true, 0.0F, true);
+      double var14 = (double)var1.getZ() + 0.5;
+      DebugRenderer.method27462(var0, var10, var12, var14, var3, 0.02F, true, 0.0F, true);
    }
 
    private static void method15840(Class2955 var0, int var1, String var2, int var3, float var4) {
       double var7 = 2.4;
       double var9 = 0.25;
       BlockPos var11 = new BlockPos(var0);
-      double var12 = (double)var11.method8304() + 0.5;
+      double var12 = (double)var11.getX() + 0.5;
       double var14 = var0.method11321() + 2.4 + (double)var1 * 0.25;
-      double var16 = (double)var11.method8306() + 0.5;
+      double var16 = (double)var11.getZ() + 0.5;
       float var18 = 0.5F;
-      Class8023.method27462(var2, var12, var14, var16, var3, var4, false, 0.5F, true);
+      DebugRenderer.method27462(var2, var12, var14, var16, var3, var4, false, 0.5F, true);
    }
 
    private Class9624 method15841() {
@@ -272,6 +272,6 @@ public class Class5125 implements Class5119 {
    }
 
    private void method15847() {
-      Class8023.method27454(this.field23306.method1550(), 8).ifPresent(var1 -> this.field23309 = var1.getUniqueID());
+      DebugRenderer.method27454(this.field23306.getRenderViewEntity(), 8).ifPresent(var1 -> this.field23309 = var1.getUniqueID());
    }
 }

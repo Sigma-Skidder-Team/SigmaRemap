@@ -68,7 +68,7 @@ public class Class2944 extends Class2898<Class4707> {
                   if (var15 || var16 || var17) {
                      boolean var18 = var12 == -2 || var12 == 2 || var17;
                      boolean var19 = var13 == -2 || var13 == 2 || var17;
-                     Class7380 var20 = Blocks.IRON_BARS
+                     BlockState var20 = Blocks.IRON_BARS
                         .method11579()
                         .method23465(Class3237.field18680, Boolean.valueOf(var18 && var13 != -2))
                         .method23465(Class3237.field18682, Boolean.valueOf(var18 && var13 != 2))
@@ -81,7 +81,7 @@ public class Class2944 extends Class2898<Class4707> {
          }
       }
 
-      Class1001 var22 = Class8992.field41023.method33215(var1.method6970());
+      EnderCrystalEntity var22 = EntityType.field41023.method33215(var1.method6970());
       var22.method4142(var3.method14777());
       var22.method3363(var3.method14775());
       var22.method3273((double)var4.method37626() + 0.5, (double)(var4.method37629() + 1), (double)var4.method37627() + 0.5, var2.nextFloat() * 360.0F, 0.0F);

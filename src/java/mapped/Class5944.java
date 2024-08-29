@@ -1,10 +1,10 @@
 package mapped;
 
 public class Class5944 extends Class5942<Class966> {
-   public static final Class7826 field25932 = new Class7826(Class289.field1102, new ResourceLocation("entity/bell/bell_body"));
+   public static final Class7826 field25932 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/bell/bell_body"));
    private final Class7219 field25933 = new Class7219(32, 32, 0, 0);
 
-   public Class5944(Class8086 var1) {
+   public Class5944(TileEntityRendererDispatcher var1) {
       super(var1);
       this.field25933.method22673(-3.0F, -6.0F, -3.0F, 6.0F, 7.0F, 6.0F);
       this.field25933.method22679(8.0F, 12.0F, 8.0F);
@@ -19,7 +19,7 @@ public class Class5944 extends Class5942<Class966> {
       float var10 = 0.0F;
       float var11 = 0.0F;
       if (var1.field5417) {
-         float var12 = MathHelper.method37763(var9 / (float) Math.PI) / (4.0F + var9 / 3.0F);
+         float var12 = MathHelper.sin(var9 / (float) Math.PI) / (4.0F + var9 / 3.0F);
          if (var1.field5418 != Direction.NORTH) {
             if (var1.field5418 != Direction.SOUTH) {
                if (var1.field5418 != Direction.EAST) {
@@ -39,7 +39,7 @@ public class Class5944 extends Class5942<Class966> {
 
       this.field25933.field31035 = var10;
       this.field25933.field31037 = var11;
-      Class5422 var13 = field25932.method26200(var4, Class4520::method14309);
+      Class5422 var13 = field25932.method26200(var4, RenderType::getEntitySolid);
       this.field25933.method22680(var3, var13, var5, var6);
    }
 }

@@ -11,7 +11,7 @@ public class Class5247 extends Module {
 
     public Class5247() {
         super(ModuleCategory.COMBAT, "Spartan", "AntiKB for spartan antichet");
-        this.method15972(new Class6009<Float>("Ticks", "Ticks delay", 1.0F, Float.class, 1.0F, 6.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("Ticks", "Ticks delay", 1.0F, Float.class, 1.0F, 6.0F, 1.0F));
     }
 
     @EventTarget

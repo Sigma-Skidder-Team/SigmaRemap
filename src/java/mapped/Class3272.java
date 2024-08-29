@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 
-public class Class3272 extends Class3257 implements Class3260 {
+public class Class3272 extends Item implements Class3260 {
    private final Multimap<Class4869, Class9689> field18772;
 
    public Class3272(Class5643 var1) {
@@ -16,8 +16,8 @@ public class Class3272 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public boolean method11706(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
-      return !var4.method2801();
+   public boolean method11706(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
+      return !var4.isCreative();
    }
 
    @Override
@@ -43,14 +43,14 @@ public class Class3272 extends Class3257 implements Class3260 {
                   if (var9 == 0) {
                      Class886 var10 = new Class886(var2, var7, var1);
                      var10.method3463(var7, var7.field5032, var7.field5031, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
-                     if (var7.field4919.field29609) {
+                     if (var7.abilities.isCreativeMode) {
                         var10.field5102 = Class2192.field14333;
                      }
 
                      var2.method6916(var10);
                      var2.method6744((PlayerEntity)null, var10, Class6067.field27154, Class2266.field14735, 1.0F, 1.0F);
-                     if (!var7.field4919.field29609) {
-                        var7.field4902.method4048(var1);
+                     if (!var7.abilities.isCreativeMode) {
+                        var7.inventory.method4048(var1);
                      }
                   }
                }
@@ -59,9 +59,9 @@ public class Class3272 extends Class3257 implements Class3260 {
                if (var9 > 0) {
                   float var18 = var7.field5031;
                   float var11 = var7.field5032;
-                  float var12 = -MathHelper.method37763(var18 * (float) (Math.PI / 180.0)) * MathHelper.method37764(var11 * (float) (Math.PI / 180.0));
-                  float var13 = -MathHelper.method37763(var11 * (float) (Math.PI / 180.0));
-                  float var14 = MathHelper.method37764(var18 * (float) (Math.PI / 180.0)) * MathHelper.method37764(var11 * (float) (Math.PI / 180.0));
+                  float var12 = -MathHelper.sin(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
+                  float var13 = -MathHelper.sin(var11 * (float) (Math.PI / 180.0));
+                  float var14 = MathHelper.cos(var18 * (float) (Math.PI / 180.0)) * MathHelper.cos(var11 * (float) (Math.PI / 180.0));
                   float var15 = MathHelper.method37765(var12 * var12 + var13 * var13 + var14 * var14);
                   float var16 = 3.0F * ((1.0F + (float)var9) / 4.0F);
                   var12 *= var16 / var15;
@@ -114,7 +114,7 @@ public class Class3272 extends Class3257 implements Class3260 {
    }
 
    @Override
-   public boolean method11714(ItemStack var1, World var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, Class880 var5) {
       if ((double)var3.method23405(var2, var4) != 0.0) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }

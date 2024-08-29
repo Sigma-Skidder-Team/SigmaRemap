@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class1025 extends Class1026 {
-   public Class1025(Class8992<? extends Class1025> var1, World var2) {
+   public Class1025(EntityType<? extends Class1025> var1, World var2) {
       super(var1, var2);
    }
 

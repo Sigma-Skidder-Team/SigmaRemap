@@ -31,7 +31,7 @@ public class Class2611 extends Class2595 {
    @Override
    public boolean method10803() {
       List<Class1006> var3 = this.field16871
-         .field5024
+         .world
          .method6772(Class1006.class, this.field16871.method3389().method19664((double)this.field16879), this.field16872);
       if (!var3.isEmpty()) {
          for (Class1006 var5 : var3) {

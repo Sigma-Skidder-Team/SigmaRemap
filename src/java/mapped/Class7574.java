@@ -34,23 +34,23 @@ public abstract class Class7574 {
          field32515.warn(
             "Invalid entity id '{}' at spawner {}:[{},{},{}]",
             var3,
-            this.method24786().method6813().method31399(),
-            var5.method8304(),
+            this.method24786().getDimensionKey().method31399(),
+            var5.getX(),
             var5.getY(),
-            var5.method8306()
+            var5.getZ()
          );
          return null;
       }
    }
 
-   public void method24790(Class8992<?> var1) {
-      this.field32518.method20414().method109("id", Registry.field16074.method9181(var1).toString());
+   public void method24790(EntityType<?> var1) {
+      this.field32518.method20414().method109("id", Registry.ENTITY_TYPE.getKey(var1).toString());
    }
 
    private boolean method24791() {
       BlockPos var3 = this.method24787();
       return this.method24786()
-         .method7187((double)var3.method8304() + 0.5, (double)var3.getY() + 0.5, (double)var3.method8306() + 0.5, (double)this.field32526);
+         .method7187((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, (double)this.field32526);
    }
 
    public void method24792() {
@@ -70,26 +70,26 @@ public abstract class Class7574 {
             boolean var5 = false;
 
             for (int var6 = 0; var6 < this.field32523; var6++) {
-               Class39 var13 = this.field32518.method20414();
-               Optional var14 = Class8992.method33222(var13);
+               CompoundNBT var13 = this.field32518.method20414();
+               Optional var14 = EntityType.method33222(var13);
                if (!var14.isPresent()) {
                   this.method24793();
                   return;
                }
 
-               Class41 var15 = var13.method131("Pos", 6);
+               ListNBT var15 = var13.method131("Pos", 6);
                int var16 = var15.size();
                double var17 = var16 < 1
-                  ? (double)var4.method8304() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
+                  ? (double)var4.getX() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
                   : var15.method158(0);
                double var19 = var16 < 2 ? (double)(var4.getY() + var3.field9016.nextInt(3) - 1) : var15.method158(1);
                double var21 = var16 < 3
-                  ? (double)var4.method8306() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
+                  ? (double)var4.getZ() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
                   : var15.method158(2);
-               if (var3.method7051(((Class8992)var14.get()).method33219(var17, var19, var21))) {
+               if (var3.method7051(((EntityType)var14.get()).method33219(var17, var19, var21))) {
                   ServerWorld var23 = (ServerWorld)var3;
-                  if (Class6914.method21122((Class8992)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
-                     Entity var24 = Class8992.method33223(var13, var3, var6x -> {
+                  if (Class6914.method21122((EntityType)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
+                     Entity var24 = EntityType.method33223(var13, var3, var6x -> {
                         var6x.method3273(var17, var19, var21, var6x.field5031, var6x.field5032);
                         return var6x;
                      });
@@ -101,12 +101,12 @@ public abstract class Class7574 {
                      int var25 = var3.method7182(
                            var24.getClass(),
                            new Class6488(
-                                 (double)var4.method8304(),
+                                 (double)var4.getX(),
                                  (double)var4.getY(),
-                                 (double)var4.method8306(),
-                                 (double)(var4.method8304() + 1),
+                                 (double)var4.getZ(),
+                                 (double)(var4.getX() + 1),
                                  (double)(var4.getY() + 1),
-                                 (double)(var4.method8306() + 1)
+                                 (double)(var4.getZ() + 1)
                               )
                               .method19664((double)this.field32527)
                         )
@@ -124,7 +124,7 @@ public abstract class Class7574 {
                         }
 
                         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().method119("id", 8)) {
-                           ((Class1006)var24).method4276(var23, var3.method6807(var24.method3432()), Class2202.field14393, (Class5093)null, (Class39)null);
+                           ((Class1006)var24).method4276(var23, var3.method6807(var24.getPosition()), Class2202.field14393, (Class5093)null, (CompoundNBT)null);
                         }
                      }
 
@@ -147,9 +147,9 @@ public abstract class Class7574 {
                this.method24793();
             }
          } else {
-            double var7 = (double)var4.method8304() + var3.field9016.nextDouble();
+            double var7 = (double)var4.getX() + var3.field9016.nextDouble();
             double var9 = (double)var4.getY() + var3.field9016.nextDouble();
-            double var11 = (double)var4.method8306() + var3.field9016.nextDouble();
+            double var11 = (double)var4.getZ() + var3.field9016.nextDouble();
             var3.method6746(Class7940.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
             var3.method6746(Class7940.field34074, var7, var9, var11, 0.0, 0.0, 0.0);
             if (this.field32516 > 0) {
@@ -179,11 +179,11 @@ public abstract class Class7574 {
       this.method24785(1);
    }
 
-   public void method24794(Class39 var1) {
+   public void method24794(CompoundNBT var1) {
       this.field32516 = var1.method121("Delay");
       this.field32517.clear();
       if (var1.method119("SpawnPotentials", 9)) {
-         Class41 var4 = var1.method131("SpawnPotentials", 10);
+         ListNBT var4 = var1.method131("SpawnPotentials", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             this.field32517.add(new Class6693(var4.method153(var5)));
@@ -195,7 +195,7 @@ public abstract class Class7574 {
             this.method24788(Class8879.<Class6693>method32314(this.method24786().field9016, this.field32517));
          }
       } else {
-         this.method24788(new Class6693(1, var1.method130("SpawnData")));
+         this.method24788(new Class6693(1, var1.getCompound("SpawnData")));
       }
 
       if (var1.method119("MinSpawnDelay", 99)) {
@@ -218,7 +218,7 @@ public abstract class Class7574 {
       }
    }
 
-   public Class39 method24795(Class39 var1) {
+   public CompoundNBT method24795(CompoundNBT var1) {
       ResourceLocation var4 = this.method24789();
       if (var4 == null) {
          return var1;
@@ -230,8 +230,8 @@ public abstract class Class7574 {
          var1.method101("MaxNearbyEntities", (short)this.field32525);
          var1.method101("RequiredPlayerRange", (short)this.field32526);
          var1.method101("SpawnRange", (short)this.field32527);
-         var1.method99("SpawnData", this.field32518.method20414().method79());
-         Class41 var5 = new Class41();
+         var1.put("SpawnData", this.field32518.method20414().method79());
+         ListNBT var5 = new ListNBT();
          if (!this.field32517.isEmpty()) {
             for (Class6693 var7 : this.field32517) {
                var5.add(var7.method20413());
@@ -240,7 +240,7 @@ public abstract class Class7574 {
             var5.add(this.field32518.method20413());
          }
 
-         var1.method99("SpawnPotentials", var5);
+         var1.put("SpawnPotentials", var5);
          return var1;
       }
    }
@@ -248,7 +248,7 @@ public abstract class Class7574 {
    @Nullable
    public Entity method24796() {
       if (this.field32524 == null) {
-         this.field32524 = Class8992.method33223(this.field32518.method20414(), this.method24786(), Function.<Entity>identity());
+         this.field32524 = EntityType.method33223(this.field32518.method20414(), this.method24786(), Function.<Entity>identity());
          if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().method119("id", 8) && !(this.field32524 instanceof Class1006)) {
          }
       }

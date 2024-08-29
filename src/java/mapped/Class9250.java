@@ -132,7 +132,7 @@ public class Class9250 {
          String var5 = "?";
          Class4862 var6 = var1.method12826();
          if (var6.method15003().isPresent()) {
-            var5 = ((Class8992)var6.method15003().get()).method33210();
+            var5 = ((EntityType)var6.method15003().get()).method33210();
          }
 
          if (var6.method15004().isPresent()) {

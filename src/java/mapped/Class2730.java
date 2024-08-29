@@ -21,15 +21,15 @@ public class Class2730<T extends Class1026> extends Class2595 {
          && !this.field17241.method3329()
          && this.field17241.method4552()
          && !this.field17241.method4551().method25388()
-         && !((ServerWorld)this.field17241.field5024).method6952(this.field17241.method3432());
+         && !((ServerWorld)this.field17241.world).method6952(this.field17241.getPosition());
    }
 
    @Override
    public boolean method10806() {
       return this.field17241.method4552()
          && !this.field17241.method4551().method25388()
-         && this.field17241.field5024 instanceof ServerWorld
-         && !((ServerWorld)this.field17241.field5024).method6952(this.field17241.method3432());
+         && this.field17241.world instanceof ServerWorld
+         && !((ServerWorld)this.field17241.world).method6952(this.field17241.getPosition());
    }
 
    @Override
@@ -53,7 +53,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
       if (var1.method25433()) {
          Set<Class1026> var4 = Sets.newHashSet();
          List<Class1026> var5 = this.field17241
-            .field5024
+            .world
             .method6772(
                Class1026.class, this.field17241.method3389().method19664(16.0), var1x -> !var1x.method4552() && Class7531.method24612(var1x, var1)
             );

@@ -34,7 +34,7 @@ public class Class4323 extends Class4307 {
         this.field21101.changeDirection(Direction.BACKWARDS);
         boolean var3 = false;
         boolean var4 = false;
-        ClientResource var9 = Class7925.field33946;
+        ClientResource var9 = ClassicDecryption.regular20;
         boolean var10 = false;
         String var11 = "© Sigma Prod";
         StringBuilder var10000 = new StringBuilder().append("Sigma ");
@@ -56,7 +56,7 @@ public class Class4323 extends Class4307 {
         var16.add("Omikron");
         Collections.shuffle(var16);
         String var17 = "by " + var16.get(0) + ", " + var16.get(1);
-        this.method13230(new Class4287(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, Class7925.field33947));
+        this.method13230(new Class4287(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, ClassicDecryption.regular17));
         this.method13230(
                 this.field21094 = new Class4287(
                         this,
@@ -132,7 +132,7 @@ public class Class4323 extends Class4307 {
                 (int) ((float) (-this.method13269() / 100) + this.field21105 / 100.0F) - var4,
                 0.0
         );
-        Class3192.method11455(-10.0F, -10.0F, (float) (this.method13267() + 20), (float) (this.method13269() + 20), Class7925.field33940);
+        Class3192.method11455(-10.0F, -10.0F, (float) (this.method13267() + 20), (float) (this.method13269() + 20), ClassicDecryption.mainmenubackground);
         GL11.glPopMatrix();
         this.field21103
                 .method13286(

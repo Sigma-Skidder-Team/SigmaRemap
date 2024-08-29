@@ -27,6 +27,6 @@ public class Class5399 implements Class5391 {
          var9 = 64;
       }
 
-      return new Class9346(new ItemStack(Class8514.field38049, var9), new ItemStack(Class8514.field37900), var8, 12, this.field24075, 0.2F);
+      return new Class9346(new ItemStack(Items.field38049, var9), new ItemStack(Items.field37900), var8, 12, this.field24075, 0.2F);
    }
 }

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5386 extends Module {
    public Class5386() {
       super(ModuleCategory.MOVEMENT, "Vanilla", "Spider for Vanilla");
-      this.method15972(new Class6009<Float>("Motion", "Spider motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));
+      this.registerSetting(new Class6009<Float>("Motion", "Spider motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));
    }
 
    @EventTarget

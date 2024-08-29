@@ -27,7 +27,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
       Class8830.field39827
    );
 
-   public Class1093(Class8992<? extends Class1093> var1, World var2) {
+   public Class1093(EntityType<? extends Class1093> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -85,8 +85,8 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    private static boolean method5097(Class880 var0) {
-      Class8992 var3 = var0.method3204();
-      return var3 != Class8992.field41106 && var3 != Class8992.field41017 && Class8088.field34762.test(var0);
+      EntityType var3 = var0.getType();
+      return var3 != EntityType.field41106 && var3 != EntityType.field41017 && Class8088.field34762.test(var0);
    }
 
    @Override
@@ -120,7 +120,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    public boolean method3114(Entity var1) {
       if (var1 instanceof Class880) {
          this.field5983 = 10;
-         this.field5024.method6786(this, (byte)4);
+         this.world.method6786(this, (byte)4);
          this.method2863(Class6067.field27278, 1.0F, this.method3100());
          return Class1092.method5091(this, (Class880)var1);
       } else {
@@ -148,7 +148,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class880 var6 = (Class880)var1.method31109();
             if (Class8088.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
@@ -187,16 +187,16 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    @Override
    public void method4258() {
-      this.field5024.method6820().startSection("zoglinBrain");
-      this.method2992().method21432((ServerWorld)this.field5024, this);
-      this.field5024.method6820().endSection();
+      this.world.method6820().startSection("zoglinBrain");
+      this.method2992().method21432((ServerWorld)this.world, this);
+      this.world.method6820().endSection();
       this.method5101();
    }
 
    @Override
    public void method4308(boolean var1) {
       this.method3210().method35446(field5982, var1);
-      if (!this.field5024.field9020 && var1) {
+      if (!this.world.field9020 && var1) {
          this.method3085(Class9173.field42110).method38661(0.5);
       }
    }
@@ -232,7 +232,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    @Override
    public Class9455 method4241() {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          return !this.field5011.method21404(Class8830.field39826) ? Class6067.field27276 : Class6067.field27277;
       } else {
          return null;
@@ -250,7 +250,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field27281, 0.15F, 1.0F);
    }
 
@@ -270,7 +270,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method3005()) {
          var1.method115("IsBaby", true);
@@ -278,7 +278,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.method132("IsBaby")) {
          this.method4308(true);

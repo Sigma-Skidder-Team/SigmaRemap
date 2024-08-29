@@ -4,11 +4,11 @@ public class Class8509 {
    private static String[] field37207;
 
    public static int method30144(World var0) {
-      return var0 != null ? method30145(var0.method6813()) : 0;
+      return var0 != null ? method30145(var0.getDimensionKey()) : 0;
    }
 
    public static int method30145(RegistryKey<World> var0) {
-      if (var0 != World.field9000) {
+      if (var0 != World.THE_NETHER) {
          if (var0 != World.field8999) {
             return var0 != World.THE_END ? 0 : 1;
          } else {
@@ -20,15 +20,15 @@ public class Class8509 {
    }
 
    public static boolean method30146(World var0) {
-      return var0.method6813() == World.field9000;
+      return var0.getDimensionKey() == World.THE_NETHER;
    }
 
    public static boolean method30147(World var0) {
-      RegistryKey var3 = var0.method6813();
+      RegistryKey var3 = var0.getDimensionKey();
       return method30145(var3) == 0;
    }
 
    public static boolean method30148(World var0) {
-      return var0.method6813() == World.THE_END;
+      return var0.getDimensionKey() == World.THE_END;
    }
 }

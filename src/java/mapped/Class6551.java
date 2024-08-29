@@ -4,10 +4,10 @@ import java.util.function.Consumer;
 
 public class Class6551 extends Class6548 {
    private static String[] field28909;
-   public final Class3257 field28910;
+   public final Item field28910;
    public final Class4685 field28911;
 
-   public Class6551(Class4685 var1, Class3257 var2) {
+   public Class6551(Class4685 var1, Item var2) {
       super(var1);
       this.field28911 = var1;
       this.field28910 = var2;

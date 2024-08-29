@@ -2,12 +2,12 @@ package mapped;
 
 public class Class4136 extends Class4135 {
    public Class4136() {
-      super(Class8992.field41055, "spawner_minecart", 0.5F);
+      super(EntityType.field41055, "spawner_minecart", 0.5F);
    }
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5732 var6 = new Class5732(var5);
       if (Class9299.field43144.method20238()) {
          Class9299.method35082(var6, Class9299.field43144, var1);

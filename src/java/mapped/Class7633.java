@@ -44,7 +44,7 @@ public abstract class Class7633 extends Class7631 {
                if (var14 > 0.0F) {
                   var15 = var3.method23476() - var14;
                }
-            } else if (!var1.method6738(var10).method23384().method31087()) {
+            } else if (!var1.getBlockState(var10).method23384().method31087()) {
                BlockPos var16 = var10.method8313();
                Class7379 var17 = var1.method6739(var16);
                if (this.method25069(var17)) {
@@ -81,7 +81,7 @@ public abstract class Class7633 extends Class7631 {
    }
 
    public boolean method25070(Class1665 var1, BlockPos var2, Direction var3) {
-      Class7380 var6 = var1.method6738(var2);
+      BlockState var6 = var1.getBlockState(var2);
       Class7379 var7 = var1.method6739(var2);
       if (!var7.method23472().method25066(this)) {
          if (var3 != Direction.field673) {
@@ -96,16 +96,16 @@ public abstract class Class7633 extends Class7631 {
 
    public void method25071(Class1660 var1, BlockPos var2, Class7379 var3) {
       if (!var3.method23474()) {
-         Class7380 var6 = var1.method6738(var2);
+         BlockState var6 = var1.getBlockState(var2);
          BlockPos var7 = var2.method8313();
-         Class7380 var8 = var1.method6738(var7);
+         BlockState var8 = var1.getBlockState(var7);
          Class7379 var9 = this.method25073(var1, var7, var8);
-         if (!this.method25091(var1, var2, var6, Direction.field672, var7, var8, var1.method6739(var7), var9.method23472())) {
+         if (!this.method25091(var1, var2, var6, Direction.DOWN, var7, var8, var1.method6739(var7), var9.method23472())) {
             if (var3.method23473() || !this.method25084(var1, var9.method23472(), var2, var6, var7, var8)) {
                this.method25072(var1, var2, var3, var6);
             }
          } else {
-            this.method25080(var1, var7, var8, Direction.field672, var9);
+            this.method25080(var1, var7, var8, Direction.DOWN, var9);
             if (this.method25088(var1, var2) >= 3) {
                this.method25072(var1, var2, var3, var6);
             }
@@ -113,7 +113,7 @@ public abstract class Class7633 extends Class7631 {
       }
    }
 
-   private void method25072(Class1660 var1, BlockPos var2, Class7379 var3, Class7380 var4) {
+   private void method25072(Class1660 var1, BlockPos var2, Class7379 var3, BlockState var4) {
       int var7 = var3.method23477() - this.method25092(var1);
       if (var3.<Boolean>method23463(field32712)) {
          var7 = 7;
@@ -126,7 +126,7 @@ public abstract class Class7633 extends Class7631 {
             Direction var11 = var10.getKey();
             Class7379 var12 = var10.getValue();
             BlockPos var13 = var2.method8349(var11);
-            Class7380 var14 = var1.method6738(var13);
+            BlockState var14 = var1.getBlockState(var13);
             if (this.method25091(var1, var2, var4, var11, var13, var14, var1.method6739(var13), var12.method23472())) {
                this.method25080(var1, var13, var14, var11, var12);
             }
@@ -134,13 +134,13 @@ public abstract class Class7633 extends Class7631 {
       }
    }
 
-   public Class7379 method25073(Class1662 var1, BlockPos var2, Class7380 var3) {
+   public Class7379 method25073(Class1662 var1, BlockPos var2, BlockState var3) {
       int var6 = 0;
       int var7 = 0;
 
       for (Direction var9 : Class76.field161) {
          BlockPos var10 = var2.method8349(var9);
-         Class7380 var11 = var1.method6738(var10);
+         BlockState var11 = var1.getBlockState(var10);
          Class7379 var12 = var11.method23449();
          if (var12.method23472().method25066(this) && this.method25074(var9, var1, var2, var3, var10, var11)) {
             if (var12.method23473()) {
@@ -152,7 +152,7 @@ public abstract class Class7633 extends Class7631 {
       }
 
       if (this.method25079() && var7 >= 2) {
-         Class7380 var13 = var1.method6738(var2.method8313());
+         BlockState var13 = var1.getBlockState(var2.method8313());
          Class7379 var15 = var13.method23449();
          if (var13.method23384().method31086() || this.method25086(var15)) {
             return this.method25078(false);
@@ -160,7 +160,7 @@ public abstract class Class7633 extends Class7631 {
       }
 
       BlockPos var14 = var2.method8311();
-      Class7380 var16 = var1.method6738(var14);
+      BlockState var16 = var1.getBlockState(var14);
       Class7379 var17 = var16.method23449();
       if (!var17.method23474() && var17.method23472().method25066(this) && this.method25074(Direction.field673, var1, var2, var3, var14, var16)) {
          return this.method25076(8, true);
@@ -170,9 +170,9 @@ public abstract class Class7633 extends Class7631 {
       }
    }
 
-   private boolean method25074(Direction var1, Class1665 var2, BlockPos var3, Class7380 var4, BlockPos var5, Class7380 var6) {
+   private boolean method25074(Direction var1, Class1665 var2, BlockPos var3, BlockState var4, BlockPos var5, BlockState var6) {
       Object2ByteLinkedOpenHashMap var9;
-      if (!var4.method23383().method11582() && !var6.method23383().method11582()) {
+      if (!var4.getBlock().method11582() && !var6.getBlock().method11582()) {
          var9 = field32714.get();
       } else {
          var9 = null;
@@ -217,23 +217,23 @@ public abstract class Class7633 extends Class7631 {
 
    public abstract boolean method25079();
 
-   public void method25080(Class1660 var1, BlockPos var2, Class7380 var3, Direction var4, Class7379 var5) {
-      if (!(var3.method23383() instanceof Class3449)) {
-         if (!var3.method23393()) {
+   public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, Class7379 var5) {
+      if (!(var3.getBlock() instanceof Class3449)) {
+         if (!var3.isAir()) {
             this.method25081(var1, var2, var3);
          }
 
          var1.method6725(var2, var5.method23484(), 3);
       } else {
-         ((Class3449)var3.method23383()).method11532(var1, var2, var3, var5);
+         ((Class3449)var3.getBlock()).method11532(var1, var2, var3, var5);
       }
    }
 
-   public abstract void method25081(Class1660 var1, BlockPos var2, Class7380 var3);
+   public abstract void method25081(Class1660 var1, BlockPos var2, BlockState var3);
 
    private static short method25082(BlockPos var0, BlockPos var1) {
-      int var4 = var1.method8304() - var0.method8304();
-      int var5 = var1.method8306() - var0.method8306();
+      int var4 = var1.getX() - var0.getX();
+      int var5 = var1.getZ() - var0.getZ();
       return (short)((var4 + 128 & 0xFF) << 8 | var5 + 128 & 0xFF);
    }
 
@@ -242,9 +242,9 @@ public abstract class Class7633 extends Class7631 {
       BlockPos var2,
       int var3,
       Direction var4,
-      Class7380 var5,
+      BlockState var5,
       BlockPos var6,
-      Short2ObjectMap<Pair<Class7380, Class7379>> var7,
+      Short2ObjectMap<Pair<BlockState, Class7379>> var7,
       Short2BooleanMap var8
    ) {
       int var11 = 1000;
@@ -254,15 +254,15 @@ public abstract class Class7633 extends Class7631 {
             BlockPos var14 = var2.method8349(var13);
             short var15 = method25082(var6, var14);
             Pair var16 = (Pair)var7.computeIfAbsent(var15, var2x -> {
-               Class7380 var5x = var1.method6738(var14);
+               BlockState var5x = var1.getBlockState(var14);
                return Pair.of(var5x, var5x.method23449());
             });
-            Class7380 var17 = (Class7380)var16.getFirst();
+            BlockState var17 = (BlockState)var16.getFirst();
             Class7379 var18 = (Class7379)var16.getSecond();
             if (this.method25085(var1, this.method25075(), var2, var5, var13, var14, var17, var18)) {
                boolean var19 = var8.computeIfAbsent(var15, var4x -> {
                   BlockPos var7x = var14.method8313();
-                  Class7380 var8x = var1.method6738(var7x);
+                  BlockState var8x = var1.getBlockState(var7x);
                   return this.method25084(var1, this.method25075(), var14, var17, var7x, var8x);
                });
                if (var19) {
@@ -282,15 +282,15 @@ public abstract class Class7633 extends Class7631 {
       return var11;
    }
 
-   private boolean method25084(Class1665 var1, Class7631 var2, BlockPos var3, Class7380 var4, BlockPos var5, Class7380 var6) {
-      if (this.method25074(Direction.field672, var1, var3, var4, var5, var6)) {
+   private boolean method25084(Class1665 var1, Class7631 var2, BlockPos var3, BlockState var4, BlockPos var5, BlockState var6) {
+      if (this.method25074(Direction.DOWN, var1, var3, var4, var5, var6)) {
          return !var6.method23449().method23472().method25066(this) ? this.method25090(var1, var5, var6, var2) : true;
       } else {
          return false;
       }
    }
 
-   private boolean method25085(Class1665 var1, Class7631 var2, BlockPos var3, Class7380 var4, Direction var5, BlockPos var6, Class7380 var7, Class7379 var8) {
+   private boolean method25085(Class1665 var1, Class7631 var2, BlockPos var3, BlockState var4, Direction var5, BlockPos var6, BlockState var7, Class7379 var8) {
       return !this.method25086(var8) && this.method25074(var5, var1, var3, var4, var6, var7) && this.method25090(var1, var6, var7, var2);
    }
 
@@ -314,7 +314,7 @@ public abstract class Class7633 extends Class7631 {
       return var5;
    }
 
-   public Map<Direction, Class7379> method25089(Class1662 var1, BlockPos var2, Class7380 var3) {
+   public Map<Direction, Class7379> method25089(Class1662 var1, BlockPos var2, BlockState var3) {
       int var6 = 1000;
       EnumMap var7 = Maps.newEnumMap(Direction.class);
       Short2ObjectOpenHashMap var8 = new Short2ObjectOpenHashMap();
@@ -324,16 +324,16 @@ public abstract class Class7633 extends Class7631 {
          BlockPos var12 = var2.method8349(var11);
          short var13 = method25082(var2, var12);
          Pair var14 = (Pair)var8.computeIfAbsent(var13, var2x -> {
-            Class7380 var5 = var1.method6738(var12);
+            BlockState var5 = var1.getBlockState(var12);
             return Pair.of(var5, var5.method23449());
          });
-         Class7380 var15 = (Class7380)var14.getFirst();
+         BlockState var15 = (BlockState)var14.getFirst();
          Class7379 var16 = (Class7379)var14.getSecond();
          Class7379 var17 = this.method25073(var1, var12, var15);
          if (this.method25085(var1, var17.method23472(), var2, var3, var11, var12, var15, var16)) {
             BlockPos var18 = var12.method8313();
             boolean var19 = var9.computeIfAbsent(var13, var5 -> {
-               Class7380 var8x = var1.method6738(var18);
+               BlockState var8x = var1.getBlockState(var18);
                return this.method25084(var1, this.method25075(), var12, var15, var18, var8x);
             });
             int var20;
@@ -357,8 +357,8 @@ public abstract class Class7633 extends Class7631 {
       return var7;
    }
 
-   private boolean method25090(Class1665 var1, BlockPos var2, Class7380 var3, Class7631 var4) {
-      Block var7 = var3.method23383();
+   private boolean method25090(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
+      Block var7 = var3.getBlock();
       if (!(var7 instanceof Class3449)) {
          if (!(var7 instanceof Class3461)
             && !var7.method11540(Class7645.field32790)
@@ -377,7 +377,7 @@ public abstract class Class7633 extends Class7631 {
       }
    }
 
-   public boolean method25091(Class1665 var1, BlockPos var2, Class7380 var3, Direction var4, BlockPos var5, Class7380 var6, Class7379 var7, Class7631 var8) {
+   public boolean method25091(Class1665 var1, BlockPos var2, BlockState var3, Direction var4, BlockPos var5, BlockState var6, Class7379 var7, Class7631 var8) {
       return var7.method23488(var1, var5, var8, var4) && this.method25074(var4, var1, var2, var3, var5, var6) && this.method25090(var1, var5, var6, var8);
    }
 
@@ -390,15 +390,15 @@ public abstract class Class7633 extends Class7631 {
    @Override
    public void method25052(World var1, BlockPos var2, Class7379 var3) {
       if (!var3.method23473()) {
-         Class7379 var6 = this.method25073(var1, var2, var1.method6738(var2));
+         Class7379 var6 = this.method25073(var1, var2, var1.getBlockState(var2));
          int var7 = this.method25093(var1, var2, var3, var6);
          if (!var6.method23474()) {
             if (!var6.equals(var3)) {
                var3 = var6;
-               Class7380 var8 = var6.method23484();
+               BlockState var8 = var6.method23484();
                var1.method6725(var2, var8, 2);
                var1.method6861().method20726(var2, var6.method23472(), var7);
-               var1.method6733(var2, var8.method23383());
+               var1.method6733(var2, var8.getBlock());
             }
          } else {
             var3 = var6;

@@ -31,11 +31,11 @@ public class MathHelper {
    private static final double[] field45221 = new double[257];
    private static final double[] field45222 = new double[257];
 
-   public static float method37763(float var0) {
+   public static float sin(float var0) {
       return !field45216 ? field45217[(int)(var0 * 10430.378F) & 65535] : field45215[(int)(var0 * field45213) & 4095];
    }
 
-   public static float method37764(float var0) {
+   public static float cos(float var0) {
       return !field45216 ? field45217[(int)(var0 * 10430.378F + 16384.0F) & 65535] : field45215[(int)(var0 * field45213 + 1024.0F) & 4095];
    }
 
@@ -56,7 +56,7 @@ public class MathHelper {
       return (int)(var0 + 1024.0) - 1024;
    }
 
-   public static int method37769(double var0) {
+   public static int floor(double var0) {
       int var4 = (int)var0;
       return !(var0 < (double)var4) ? var4 : var4 - 1;
    }
@@ -307,7 +307,7 @@ public class MathHelper {
    }
 
    public static long method37809(Class1998 var0) {
-      return method37810(var0.method8304(), var0.getY(), var0.method8306());
+      return method37810(var0.getX(), var0.getY(), var0.getZ());
    }
 
    public static long method37810(int var0, int var1, int var2) {

@@ -9,9 +9,9 @@ public class Class8226 {
    public final int field35335;
    public final int field35336;
    public final int field35337;
-   public final List<Class1713> field35338;
+   public final List<TextureAtlasSprite> field35338;
 
-   public Class8226(Set<ResourceLocation> var1, int var2, int var3, int var4, List<Class1713> var5) {
+   public Class8226(Set<ResourceLocation> var1, int var2, int var3, int var4, List<TextureAtlasSprite> var5) {
       this.field35334 = var1;
       this.field35335 = var2;
       this.field35336 = var3;

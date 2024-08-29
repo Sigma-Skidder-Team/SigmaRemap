@@ -2,10 +2,10 @@ package mapped;
 
 public class Class6345 extends Class6333 {
    private static String[] field27876;
-   private final Class916 field27877;
+   private final AbstractMinecartEntity field27877;
    private float field27878 = 0.0F;
 
-   public Class6345(Class916 var1) {
+   public Class6345(AbstractMinecartEntity var1) {
       super(Class6067.field26764, Class2266.field14734);
       this.field27877 = var1;
       this.field27861 = true;

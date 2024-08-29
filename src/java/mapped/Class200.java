@@ -58,7 +58,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       Arrays.fill(this.field752, null);
    }
 
-   public Class7380 method647(long var1, MutableInt var3) {
+   public BlockState method647(long var1, MutableInt var3) {
       if (var1 != Long.MAX_VALUE) {
          int var6 = Class2002.method8396(BlockPos.method8328(var1));
          int var7 = Class2002.method8396(BlockPos.method8330(var1));
@@ -71,7 +71,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
             return Blocks.BEDROCK.method11579();
          } else {
             this.field750.method8375(var1);
-            Class7380 var9 = var8.method6738(this.field750);
+            BlockState var9 = var8.getBlockState(this.field750);
             boolean var10 = var9.method23410() && var9.method23391();
             if (var3 != null) {
                var3.setValue(var9.method23387(this.field746.method7386(), this.field750));
@@ -88,11 +88,11 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       }
    }
 
-   public Class6408 method648(Class7380 var1, long var2, Direction var4) {
+   public Class6408 method648(BlockState var1, long var2, Direction var4) {
       return !var1.method23410() ? Class8022.method27425() : var1.method23388(this.field746.method7386(), this.field750.method8375(var2), var4);
    }
 
-   public static int method649(Class1665 var0, Class7380 var1, BlockPos var2, Class7380 var3, BlockPos var4, Direction var5, int var6) {
+   public static int method649(Class1665 var0, BlockState var1, BlockPos var2, BlockState var3, BlockPos var4, Direction var5, int var6) {
       boolean var9 = var1.method23410() && var1.method23391();
       boolean var10 = var3.method23410() && var3.method23391();
       if (!var9 && !var10) {

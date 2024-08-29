@@ -10,16 +10,16 @@ public class Class888 extends Class882 implements Class889 {
    private int field5124;
    public Class880 field5125;
 
-   public Class888(Class8992<? extends Class888> var1, World var2) {
+   public Class888(EntityType<? extends Class888> var1, World var2) {
       super(var1, var2);
    }
 
    public Class888(World var1, double var2, double var4, double var6, ItemStack var8) {
-      super(Class8992.field41032, var1);
+      super(EntityType.field41032, var1);
       this.field5123 = 0;
       this.method3215(var2, var4, var6);
       byte var11 = 1;
-      if (!var8.method32105() && var8.method32141()) {
+      if (!var8.isEmpty() && var8.method32141()) {
          this.field5063.method35446(field5120, var8.copy());
          var11 += var8.method32144("Fireworks").method120("Flight");
       }
@@ -81,7 +81,7 @@ public class Class888 extends Class882 implements Class889 {
       } else {
          if (this.field5125 == null) {
             this.field5063.<OptionalInt>method35445(field5121).ifPresent(var1 -> {
-               Entity var4x = this.field5024.method6774(var1);
+               Entity var4x = this.world.method6774(var1);
                if (var4x instanceof Class880) {
                   this.field5125 = (Class880)var4x;
                }
@@ -109,7 +109,7 @@ public class Class888 extends Class882 implements Class889 {
          }
       }
 
-      Class8710 var12 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var12 = Class9456.method36385(this, this::method3467);
       if (!this.field5052) {
          this.method3464(var12);
          this.field5078 = true;
@@ -117,13 +117,13 @@ public class Class888 extends Class882 implements Class889 {
 
       this.method3468();
       if (this.field5123 == 0 && !this.method3245()) {
-         this.field5024
+         this.world
             .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26577, Class2266.field14736, 3.0F, 1.0F);
       }
 
       this.field5123++;
-      if (this.field5024.field9020 && this.field5123 % 2 < 2) {
-         this.field5024
+      if (this.world.field9020 && this.field5123 % 2 < 2) {
+         this.world
             .method6746(
                Class7940.field34072,
                this.getPosX(),
@@ -135,30 +135,30 @@ public class Class888 extends Class882 implements Class889 {
             );
       }
 
-      if (!this.field5024.field9020 && this.field5123 > this.field5124) {
+      if (!this.world.field9020 && this.field5123 > this.field5124) {
          this.method3504();
       }
    }
 
    private void method3504() {
-      this.field5024.method6786(this, (byte)17);
+      this.world.method6786(this, (byte)17);
       this.method3506();
       this.method2904();
    }
 
    @Override
-   public void method3465(Class8709 var1) {
+   public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.method3504();
       }
    }
 
    @Override
-   public void method3466(Class8711 var1) {
-      BlockPos var4 = new BlockPos(var1.method31423());
-      this.field5024.method6738(var4).method23432(this.field5024, var4, this);
-      if (!this.field5024.method6714() && this.method3505()) {
+   public void method3466(BlockRayTraceResult var1) {
+      BlockPos var4 = new BlockPos(var1.getPos());
+      this.world.getBlockState(var4).method23432(this.world, var4, this);
+      if (!this.world.method6714() && this.method3505()) {
          this.method3504();
       }
 
@@ -167,16 +167,16 @@ public class Class888 extends Class882 implements Class889 {
 
    private boolean method3505() {
       ItemStack var3 = this.field5063.<ItemStack>method35445(field5120);
-      Class39 var4 = !var3.method32105() ? var3.method32145("Fireworks") : null;
-      Class41 var5 = var4 == null ? null : var4.method131("Explosions", 10);
+      CompoundNBT var4 = !var3.isEmpty() ? var3.method32145("Fireworks") : null;
+      ListNBT var5 = var4 == null ? null : var4.method131("Explosions", 10);
       return var5 != null && !var5.isEmpty();
    }
 
    private void method3506() {
       float var3 = 0.0F;
       ItemStack var4 = this.field5063.<ItemStack>method35445(field5120);
-      Class39 var5 = !var4.method32105() ? var4.method32145("Fireworks") : null;
-      Class41 var6 = var5 == null ? null : var5.method131("Explosions", 10);
+      CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;
+      ListNBT var6 = var5 == null ? null : var5.method131("Explosions", 10);
       if (var6 != null && !var6.isEmpty()) {
          var3 = 5.0F + (float)(var6.size() * 2);
       }
@@ -189,14 +189,14 @@ public class Class888 extends Class882 implements Class889 {
          double var7 = 5.0;
          Vector3d var9 = this.getPositionVec();
 
-         for (Class880 var11 : this.field5024.<Class880>method7182(Class880.class, this.method3389().method19664(5.0))) {
+         for (Class880 var11 : this.world.<Class880>method7182(Class880.class, this.method3389().method19664(5.0))) {
             if (var11 != this.field5125 && !(this.getDistanceSq(var11) > 25.0)) {
                boolean var12 = false;
 
                for (int var13 = 0; var13 < 2; var13++) {
                   Vector3d var14 = new Vector3d(var11.getPosX(), var11.method3440(0.5 * (double)var13), var11.getPosZ());
-                  Class8711 var15 = this.field5024.method7036(new Class6809(var9, var14, Class2271.field14774, Class1985.field12962, this));
-                  if (var15.method31417() == Class2100.field13689) {
+                  BlockRayTraceResult var15 = this.world.method7036(new Class6809(var9, var14, Class2271.field14774, Class1985.field12962, this));
+                  if (var15.getType() == RayTraceResult.Type.MISS) {
                      var12 = true;
                      break;
                   }
@@ -221,15 +221,15 @@ public class Class888 extends Class882 implements Class889 {
 
    @Override
    public void method2866(byte var1) {
-      if (var1 == 17 && this.field5024.field9020) {
+      if (var1 == 17 && this.world.field9020) {
          if (this.method3505()) {
             ItemStack var4 = this.field5063.<ItemStack>method35445(field5120);
-            Class39 var5 = !var4.method32105() ? var4.method32145("Fireworks") : null;
+            CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;
             Vector3d var6 = this.method3433();
-            this.field5024.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.field18048, var6.field18049, var6.field18050, var5);
+            this.world.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.field18048, var6.field18049, var6.field18050, var5);
          } else {
             for (int var7 = 0; var7 < this.field5054.nextInt(3) + 2; var7++) {
-               this.field5024
+               this.world
                   .method6746(
                      Class7940.field34089,
                      this.getPosX(),
@@ -247,29 +247,29 @@ public class Class888 extends Class882 implements Class889 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Life", this.field5123);
       var1.method102("LifeTime", this.field5124);
       ItemStack var4 = this.field5063.<ItemStack>method35445(field5120);
-      if (!var4.method32105()) {
-         var1.method99("FireworksItem", var4.method32112(new Class39()));
+      if (!var4.isEmpty()) {
+         var1.put("FireworksItem", var4.method32112(new CompoundNBT()));
       }
 
       var1.method115("ShotAtAngle", this.field5063.<Boolean>method35445(field5122));
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5123 = var1.method122("Life");
       this.field5124 = var1.method122("LifeTime");
-      ItemStack var4 = ItemStack.method32104(var1.method130("FireworksItem"));
-      if (!var4.method32105()) {
+      ItemStack var4 = ItemStack.method32104(var1.getCompound("FireworksItem"));
+      if (!var4.isEmpty()) {
          this.field5063.method35446(field5120, var4);
       }
 
-      if (var1.method118("ShotAtAngle")) {
+      if (var1.contains("ShotAtAngle")) {
          this.field5063.method35446(field5122, var1.method132("ShotAtAngle"));
       }
    }
@@ -277,7 +277,7 @@ public class Class888 extends Class882 implements Class889 {
    @Override
    public ItemStack method3509() {
       ItemStack var3 = this.field5063.<ItemStack>method35445(field5120);
-      return !var3.method32105() ? var3 : new ItemStack(Class8514.field38068);
+      return !var3.isEmpty() ? var3 : new ItemStack(Items.field38068);
    }
 
    @Override

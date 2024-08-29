@@ -16,9 +16,9 @@ import java.util.Collection;
 import java.util.OptionalInt;
 
 public final class Class4384 implements Class4383 {
-   public final Class191 field21395;
+   public final IResourceManager field21395;
 
-   public Class4384(Class191 var1) {
+   public Class4384(IResourceManager var1) {
       this.field21395 = var1;
    }
 

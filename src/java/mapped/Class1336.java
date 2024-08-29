@@ -37,7 +37,7 @@ public class Class1336 extends Screen {
    private Class1206 field7104;
    private final Map<String, ResourceLocation> field7105 = Maps.newHashMap();
 
-   public Class1336(Screen var1, Class313 var2, Consumer<Class313> var3, File var4, ITextComponent var5) {
+   public Class1336(Screen var1, ResourcePackList var2, Consumer<ResourcePackList> var3, File var4, ITextComponent var5) {
       super(var5);
       this.field7098 = var1;
       this.field7097 = new Class8719(this::method6401, this::method6406, var2, var3);
@@ -65,7 +65,7 @@ public class Class1336 extends Screen {
    @Override
    public void method1921() {
       this.field7104 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 4, this.field4565 - 48, 150, 20, Class7127.field30658, var1 -> this.method1945())
+         new Class1206(this.field4564 / 2 + 4, this.field4565 - 48, 150, 20, DialogTexts.field30658, var1 -> this.method1945())
       );
       this.<Class1206>method2455(
          new Class1206(
@@ -88,7 +88,7 @@ public class Class1336 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       if (this.field7099 != null) {
          try {
             if (this.field7099.method6640()) {
@@ -151,14 +151,14 @@ public class Class1336 extends Screen {
          }
       });
       if (var5.isTrue()) {
-         Class7603.method24910(var0, var2.toString());
+         SystemToast.method24910(var0, var2.toString());
       }
    }
 
    @Override
    public void method2486(List<Path> var1) {
       String var4 = var1.stream().<Path>map(Path::getFileName).<CharSequence>map(Path::toString).collect(Collectors.joining(", "));
-      this.field4562.displayGuiScreen(new Class829(var2 -> {
+      this.field4562.displayGuiScreen(new ConfirmScreen(var2 -> {
          if (var2) {
             method6404(this.field4562, var1, this.field7103.toPath());
             this.method6403();
@@ -168,12 +168,12 @@ public class Class1336 extends Screen {
       }, new TranslationTextComponent("pack.dropConfirm"), new StringTextComponent(var4)));
    }
 
-   private ResourceLocation method6405(TextureManager var1, Class1810 var2) {
+   private ResourceLocation method6405(TextureManager var1, ResourcePackInfo var2) {
       try (
-         Class303 var5 = var2.method7950();
-         InputStream var7 = var5.method1222("pack.png");
+              IResourcePack var5 = var2.method7950();
+              InputStream var7 = var5.method1222("pack.png");
       ) {
-         String var9 = var2.method7951();
+         String var9 = var2.getName();
          ResourceLocation var10 = new ResourceLocation(
             "minecraft", "pack/" + Util.method38533(var9, ResourceLocation::method8298) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
          );
@@ -182,14 +182,14 @@ public class Class1336 extends Screen {
          return var10;
       } catch (FileNotFoundException var43) {
       } catch (Exception var44) {
-         field7093.warn("Failed to load icon from pack {}", var2.method7951(), var44);
+         field7093.warn("Failed to load icon from pack {}", var2.getName(), var44);
       }
 
       return field7096;
    }
 
-   private ResourceLocation method6406(Class1810 var1) {
-      return this.field7105.computeIfAbsent(var1.method7951(), var2 -> this.method6405(this.field4562.getTextureManager(), var1));
+   private ResourceLocation method6406(ResourcePackInfo var1) {
+      return this.field7105.computeIfAbsent(var1.getName(), var2 -> this.method6405(this.field4562.getTextureManager(), var1));
    }
 
    // $VF: synthetic method

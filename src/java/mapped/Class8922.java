@@ -20,10 +20,10 @@ public class Class8922 {
    private Class8922() {
    }
 
-   public Class8922(Class39 var1) {
+   public Class8922(CompoundNBT var1) {
       this();
       if (var1.method119("Indices", 10)) {
-         Class39 var4 = var1.method130("Indices");
+         CompoundNBT var4 = var1.getCompound("Indices");
 
          for (int var5 = 0; var5 < this.field40391.length; var5++) {
             String var6 = String.valueOf(var5);
@@ -73,8 +73,8 @@ public class Class8922 {
          Mutable var19 = new Mutable();
 
          for (BlockPos var21 : BlockPos.method8364(var14, 0, var16, var15, var4.method7034() - 1, var17)) {
-            Class7380 var22 = var4.method6738(var21);
-            Class7380 var23 = var22;
+            BlockState var22 = var4.getBlockState(var21);
+            BlockState var23 = var22;
 
             for (Direction var27 : var18) {
                var19.method8377(var21, var27);
@@ -86,8 +86,8 @@ public class Class8922 {
       }
    }
 
-   private static Class7380 method32605(Class7380 var0, Direction var1, Class1660 var2, BlockPos var3, BlockPos var4) {
-      return field40392.getOrDefault(var0.method23383(), Class2230.field14619).method8970(var0, var1, var2.method6738(var4), var2, var3, var4);
+   private static BlockState method32605(BlockState var0, Direction var1, Class1660 var2, BlockPos var3, BlockPos var4) {
+      return field40392.getOrDefault(var0.getBlock(), Class2230.field14619).method8970(var0, var1, var2.getBlockState(var4), var2, var3, var4);
    }
 
    private void method32606(Class1674 var1) {
@@ -109,12 +109,12 @@ public class Class8922 {
                int var18 = var16 >> 8 & 15;
                int var19 = var16 >> 4 & 15;
                var4.method8372(var6.method24356() + var17, (var8 << 4) + var18, var6.method24357() + var19);
-               Class7380 var20 = (Class7380)var12.method30499(var16);
-               Class7380 var21 = var20;
+               BlockState var20 = (BlockState)var12.method30499(var16);
+               BlockState var21 = var20;
 
                for (Direction var25 : var11) {
                   var5.method8377(var4, var25);
-                  if (var4.method8304() >> 4 == var6.field32174 && var4.method8306() >> 4 == var6.field32175) {
+                  if (var4.getX() >> 4 == var6.field32174 && var4.getZ() >> 4 == var6.field32175) {
                      var21 = method32605(var21, var25, var7, var4, var5);
                   }
                }
@@ -143,9 +143,9 @@ public class Class8922 {
       return this.field40390.isEmpty();
    }
 
-   public Class39 method32608() {
-      Class39 var3 = new Class39();
-      Class39 var4 = new Class39();
+   public CompoundNBT method32608() {
+      CompoundNBT var3 = new CompoundNBT();
+      CompoundNBT var4 = new CompoundNBT();
 
       for (int var5 = 0; var5 < this.field40391.length; var5++) {
          String var6 = String.valueOf(var5);
@@ -155,7 +155,7 @@ public class Class8922 {
       }
 
       if (!var4.method134()) {
-         var3.method99("Indices", var4);
+         var3.put("Indices", var4);
       }
 
       int var8 = 0;

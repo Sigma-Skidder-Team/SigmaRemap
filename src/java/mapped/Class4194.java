@@ -11,13 +11,13 @@ public abstract class Class4194 extends Class4178 {
       super(var1, var2);
    }
 
-   public Class4194(Class7792 var1, Class39 var2) {
+   public Class4194(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field20495 = Class2213.valueOf(var2.method126("EntryDoor"));
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       var1.method109("EntryDoor", this.field20495.name());
    }
 

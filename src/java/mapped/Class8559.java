@@ -31,8 +31,8 @@ public class Class8559<T> {
       this.field38470.clear();
       this.field38469 = UnsignedLong.ZERO;
       var2.forEach(var1x -> {
-         if (var1x.getValue() instanceof Class39) {
-            this.method30538((Class39)var1x.getValue());
+         if (var1x.getValue() instanceof CompoundNBT) {
+            this.method30538((CompoundNBT)var1x.getValue());
          } else {
             field38466.warn("Invalid format of events: {}", var1x);
          }
@@ -77,8 +77,8 @@ public class Class8559<T> {
       return Collections.<String>unmodifiableSet(this.field38470.rowKeySet());
    }
 
-   private void method30538(Class39 var1) {
-      Class39 var4 = var1.method130("Callback");
+   private void method30538(CompoundNBT var1) {
+      CompoundNBT var4 = var1.getCompound("Callback");
       Class6861 var5 = this.field38467.method18798(var4);
       if (var5 != null) {
          String var6 = var1.method126("Name");
@@ -87,17 +87,17 @@ public class Class8559<T> {
       }
    }
 
-   private Class39 method30539(Class8959<T> var1) {
-      Class39 var4 = new Class39();
+   private CompoundNBT method30539(Class8959<T> var1) {
+      CompoundNBT var4 = new CompoundNBT();
       var4.method109("Name", var1.field40478);
       var4.method103("TriggerTime", var1.field40476);
-      var4.method99("Callback", this.field38467.method18797(var1.field40479));
+      var4.put("Callback", this.field38467.method18797(var1.field40479));
       return var4;
    }
 
-   public Class41 method30540() {
-      Class41 var3 = new Class41();
-      this.field38468.stream().sorted(method30534()).<Class39>map(this::method30539).forEach(var3::add);
+   public ListNBT method30540() {
+      ListNBT var3 = new ListNBT();
+      this.field38468.stream().sorted(method30534()).<CompoundNBT>map(this::method30539).forEach(var3::add);
       return var3;
    }
 }

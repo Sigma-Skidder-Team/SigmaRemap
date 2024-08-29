@@ -16,8 +16,8 @@ public class Class5199 extends Module {
 
     public Class5199() {
         super(ModuleCategory.PLAYER, "NoFall", "Avoid you from getting fall damages");
-        this.method15972(
-                new Class6005("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
+        this.registerSetting(
+                new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
                         .method18631("Hypixel", "Hypixel2")
         );
     }
@@ -126,7 +126,7 @@ public class Class5199 extends Module {
                             if (mc.player.method3433().field18049 < -0.1 && mc.player.field5045 > 3.0F) {
                                 this.field23509++;
                                 if (this.field23509 == 1.0) {
-                                    mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                                    mc.getConnection().sendPacket(new Class5603(true));
                                 } else if (this.field23509 > 1.0) {
                                     this.field23509 = 0.0;
                                 }
@@ -142,7 +142,7 @@ public class Class5199 extends Module {
                             if (!this.field23507 && mc.player.field5045 > 3.0F && this.getStringSettingValueByName("Mode").equals("AAC")) {
                                 this.field23507 = !this.field23507;
                                 Class5605 var7 = new Class5605(mc.player.getPosX(), Double.NaN, mc.player.getPosZ(), true);
-                                mc.getClientPlayNetHandler().sendPacket(var7);
+                                mc.getConnection().sendPacket(var7);
                             }
                         }
                         break;
@@ -164,9 +164,9 @@ public class Class5199 extends Module {
                             double var12 = mc.player.getPosX();
                             double var14 = mc.player.getPosY();
                             double var16 = mc.player.getPosZ();
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var12, var14 + 3.01, var16, false));
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var12, var14, var16, false));
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var12, var14, var16, true));
+                            mc.getConnection().sendPacket(new Class5605(var12, var14 + 3.01, var16, false));
+                            mc.getConnection().sendPacket(new Class5605(var12, var14, var16, false));
+                            mc.getConnection().sendPacket(new Class5605(var12, var14, var16, true));
                             System.out.println("sent");
                             this.field23510 = false;
                         }

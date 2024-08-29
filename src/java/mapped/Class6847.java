@@ -2,17 +2,17 @@ package mapped;
 
 public final class Class6847 implements Class6843 {
    @Override
-   public void method20824(Class5425 var1, TextureManager var2) {
+   public void method20824(BufferBuilder var1, TextureManager var2) {
       RenderSystem.enableBlend();
       RenderSystem.method27938();
       RenderSystem.depthMask(true);
-      var2.bindTexture(Class289.field1102);
-      var1.method17063(7, Class9337.field43340);
+      var2.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+      var1.begin(7, DefaultVertexFormats.field43340);
    }
 
    @Override
-   public void method20825(Class9352 var1) {
-      var1.method35410();
+   public void method20825(Tessellator var1) {
+      var1.draw();
    }
 
    @Override

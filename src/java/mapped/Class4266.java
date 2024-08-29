@@ -125,7 +125,7 @@ public class Class4266 extends Class4247 {
                   Class5628.method17688(Class1979.field12896.field12910, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
                Class3192.method11422();
-               var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.method1586(), 1.0F);
+               var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.getFps(), 1.0F);
                if (var11.field30490 == 1.0F) {
                   var4.remove();
                }

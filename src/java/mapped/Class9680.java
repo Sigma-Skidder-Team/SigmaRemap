@@ -53,8 +53,8 @@ public class Class9680 {
    private static int[] field45263 = null;
    private static int[] field45264 = null;
    private static int[] field45265 = null;
-   private static final Class7380 field45266 = Blocks.field36396.method11579();
-   private static final Class7380 field45267 = Blocks.WATER.method11579();
+   private static final BlockState field45266 = Blocks.field36396.method11579();
+   private static final BlockState field45267 = Blocks.WATER.method11579();
    public static Random field45268 = new Random();
    private static final Class7443 field45269 = new Class7447();
    private static final Class7443 field45270 = new Class7445();
@@ -529,9 +529,9 @@ public class Class9680 {
       field45249 = field45226 == null && field45225 == null && field45228 == null && field45227 == null && Class7944.method26906();
    }
 
-   public static int method37850(Class8557 var0, Class7380 var1, Class1663 var2, BlockPos var3, Class8391 var4) {
-      Block var7 = var1.method23383();
-      Class7380 var8 = var1;
+   public static int method37850(Class8557 var0, BlockState var1, Class1663 var2, BlockPos var3, Class8391 var4) {
+      Block var7 = var1.getBlock();
+      BlockState var8 = var1;
       if (field45230 != null) {
          if (!var0.method30512()) {
             if (var7 == Blocks.field36395) {
@@ -545,7 +545,7 @@ public class Class9680 {
 
          if (var7 instanceof Class3456 && var1.<Class84>method23463(Class3456.field19276) == Class84.field209) {
             var3 = var3.method8313();
-            var8 = var2.method6738(var3);
+            var8 = var2.getBlockState(var3);
          }
 
          Class7448 var9 = method37852(var8);
@@ -618,12 +618,12 @@ public class Class9680 {
       return var4;
    }
 
-   private static Class7448 method37852(Class7380 var0) {
+   private static Class7448 method37852(BlockState var0) {
       if (field45230 != null) {
-         if (!(var0 instanceof Class7380)) {
+         if (!(var0 instanceof BlockState)) {
             return null;
          } else {
-            Class7380 var3 = var0;
+            BlockState var3 = var0;
             int var4 = var0.method23490();
             if (var4 >= 0 && var4 < field45230.length) {
                Class7448[] var5 = field45230[var4];
@@ -648,13 +648,13 @@ public class Class9680 {
       }
    }
 
-   private static int method37853(Class7380 var0, Class1663 var1, BlockPos var2, Class7443 var3, Class2001 var4) {
+   private static int method37853(BlockState var0, Class1663 var1, BlockPos var2, Class7443 var3, Class2001 var4) {
       int var7 = 0;
       int var8 = 0;
       int var9 = 0;
-      int var10 = var2.method8304();
+      int var10 = var2.getX();
       int var11 = var2.getY();
-      int var12 = var2.method8306();
+      int var12 = var2.getZ();
       Class2001 var13 = var4;
       int var14 = Class7944.method26910();
       int var15 = var14 * 2 + 1;
@@ -676,8 +676,8 @@ public class Class9680 {
       return var20 << 16 | var21 << 8 | var22;
    }
 
-   public static int method37854(Class1663 var0, Class7380 var1, BlockPos var2, Class8391 var3) {
-      Block var6 = var1.method23383();
+   public static int method37854(Class1663 var0, BlockState var1, BlockPos var2, Class8391 var3) {
+      Block var6 = var1.getBlock();
       Object var7 = method37852(var1);
       if (var7 == null && var1.method23384() == Class8649.field38941) {
          var7 = field45273;
@@ -692,8 +692,8 @@ public class Class9680 {
       }
    }
 
-   public static Class8396 method37855() {
-      return Minecraft.getInstance().method1564();
+   public static BlockColors method37855() {
+      return Minecraft.getInstance().getBlockColors();
    }
 
    public static void method37856(Class4587 var0) {
@@ -722,7 +722,7 @@ public class Class9680 {
       }
    }
 
-   private static int method37858(Class7380 var0) {
+   private static int method37858(BlockState var0) {
       if (field45241 != null) {
          int var3 = method37860(var0, 15);
          return field45241.method24066(var3);
@@ -733,7 +733,7 @@ public class Class9680 {
 
    public static void method37859(Class4587 var0, Class1663 var1, double var2, double var4, double var6) {
       if (field45241 != null) {
-         Class7380 var10 = var1.method6738(new BlockPos(var2, var4, var6));
+         BlockState var10 = var1.getBlockState(new BlockPos(var2, var4, var6));
          int var11 = method37860(var10, 15);
          int var12 = field45241.method24066(var11);
          int var13 = var12 >> 16 & 0xFF;
@@ -746,8 +746,8 @@ public class Class9680 {
       }
    }
 
-   private static int method37860(Class7380 var0, int var1) {
-      Block var4 = var0.method23383();
+   private static int method37860(BlockState var0, int var1) {
+      Block var4 = var0.getBlock();
       if (var4 instanceof Class3222) {
          Comparable var5 = var0.<Integer>method23463(Class3222.field18651);
          if (var5 instanceof Integer) {
@@ -772,7 +772,7 @@ public class Class9680 {
 
    public static int method37862(float var0) {
       if (field45242 != null) {
-         int var3 = (int)Math.round((double)((MathHelper.method37763(var0) + 1.0F) * (float)(field45242.method24074() - 1)) / 2.0);
+         int var3 = (int)Math.round((double)((MathHelper.sin(var0) + 1.0F) * (float)(field45242.method24074() - 1)) / 2.0);
          return field45242.method24066(var3);
       } else {
          return -1;
@@ -893,9 +893,9 @@ public class Class9680 {
       }
    }
 
-   private static int method37874(Class7380 var0, Class1665 var1, BlockPos var2, Class8391 var3) {
+   private static int method37874(BlockState var0, Class1665 var1, BlockPos var2, Class8391 var3) {
       Class7448 var6 = field45245;
-      Block var7 = var0.method23383();
+      Block var7 = var0.getBlock();
       if (var7 == Blocks.PUMPKIN_STEM && field45247 != null) {
          var6 = field45247;
       }
@@ -916,7 +916,7 @@ public class Class9680 {
       }
    }
 
-   public static boolean method37875(Class1656 var0, float var1, Class1806 var2, boolean var3, float var4) {
+   public static boolean method37875(ClientWorld var0, float var1, Class1806 var2, boolean var3, float var4) {
       if (var0 != null) {
          if (field45239 != null) {
             int var7 = Class8509.method30144(var0);
@@ -1008,13 +1008,13 @@ public class Class9680 {
       }
    }
 
-   private static int method37879(Class3311 var0, ItemStack var1, int var2, int var3) {
+   private static int method37879(SpawnEggItem var0, ItemStack var1, int var2, int var3) {
       if (field45259 == null && field45260 == null) {
          return var3;
       } else {
-         Class8992 var6 = var0.method11855(var1.method32142());
+         EntityType var6 = var0.method11855(var1.method32142());
          if (var6 != null) {
-            int var7 = Registry.field16074.method9171(var6);
+            int var7 = Registry.ENTITY_TYPE.method9171(var6);
             if (var7 >= 0) {
                int[] var8 = var2 != 0 ? field45260 : field45259;
                if (var8 != null) {
@@ -1038,9 +1038,9 @@ public class Class9680 {
 
    public static int method37880(ItemStack var0, int var1, int var2) {
       if (var0 != null) {
-         Class3257 var5 = var0.method32107();
+         Item var5 = var0.getItem();
          if (var5 != null) {
-            return !(var5 instanceof Class3311) ? var2 : method37879((Class3311)var5, var0, var1, var2);
+            return !(var5 instanceof SpawnEggItem) ? var2 : method37879((SpawnEggItem)var5, var0, var1, var2);
          } else {
             return var2;
          }

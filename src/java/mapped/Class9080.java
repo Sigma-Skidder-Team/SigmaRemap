@@ -61,7 +61,7 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public void method33858(BlockPos var1, Class2070 var2, Direction var3, int var4) {
+   public void method33858(BlockPos var1, CPlayerDiggingPacket.Action var2, Direction var3, int var4) {
       if (!this.field41566) {
          super.method33858(var1, var2, var3, var4);
       } else {
@@ -80,7 +80,7 @@ public class Class9080 extends Class9081 {
    }
 
    @Override
-   public ActionResultType method33860(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4, Class8711 var5) {
+   public ActionResultType method33860(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4, BlockRayTraceResult var5) {
       if (!this.field41566) {
          return super.method33860(var1, var2, var3, var4, var5);
       } else {

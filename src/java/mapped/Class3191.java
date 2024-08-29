@@ -14,7 +14,7 @@ public class Class3191 {
       field18453, new BlockPos(3, 5, 5), field18454, new BlockPos(1, 3, 1), field18455, new BlockPos(3, 6, 7)
    );
    private static final Map<ResourceLocation, BlockPos> field18457 = ImmutableMap.of(
-      field18453, BlockPos.field13032, field18454, new BlockPos(2, -3, 4), field18455, new BlockPos(0, -3, -2)
+      field18453, BlockPos.ZERO, field18454, new BlockPos(2, -3, 4), field18455, new BlockPos(0, -3, -2)
    );
 
    public static void method11407(Class8761 var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4) {

@@ -12,7 +12,7 @@ public class Class6435 extends Class6434 {
    }
 
    @Override
-   public boolean method19540(Class7380 var1, Random var2) {
+   public boolean method19540(BlockState var1, Random var2) {
       return true;
    }
 

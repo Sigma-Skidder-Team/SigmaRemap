@@ -9,12 +9,12 @@ public class Class877 implements Class876 {
    }
 
    @Override
-   public void method2718(Class5812 var1, Class25<ItemStack> var2) {
+   public void method2718(Class5812 var1, NonNullList<ItemStack> var2) {
    }
 
    @Override
    public void method2720(Class5812 var1, int var2, ItemStack var3) {
-      this.field4853.field1337.method23147(var3, var2);
+      this.field4853.playerController.sendSlotPacket(var3, var2);
    }
 
    @Override

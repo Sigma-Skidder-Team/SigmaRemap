@@ -14,7 +14,7 @@ public class Class4861 extends Class4837 {
 
       for (int var8 = 0; var8 < var1.method3629(); var8++) {
          ItemStack var9 = var1.method3618(var8);
-         Class3257 var10 = var9.method32107();
+         Item var10 = var9.getItem();
          if (var10 instanceof Class3301) {
             Class3301 var11 = (Class3301)var10;
             if (var5 != null) {
@@ -52,7 +52,7 @@ public class Class4861 extends Class4837 {
    public ItemStack method14962(Class926 var1) {
       for (int var4 = 0; var4 < var1.method3629(); var4++) {
          ItemStack var5 = var1.method3618(var4);
-         if (!var5.method32105()) {
+         if (!var5.isEmpty()) {
             int var6 = Class958.method3889(var5);
             if (var6 > 0 && var6 <= 6) {
                ItemStack var7 = var5.copy();
@@ -65,20 +65,20 @@ public class Class4861 extends Class4837 {
       return ItemStack.EMPTY;
    }
 
-   public Class25<ItemStack> method14968(Class926 var1) {
-      Class25 var4 = Class25.<ItemStack>method68(var1.method3629(), ItemStack.EMPTY);
+   public NonNullList<ItemStack> method14968(Class926 var1) {
+      NonNullList var4 = NonNullList.<ItemStack>method68(var1.method3629(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          ItemStack var6 = var1.method3618(var5);
-         if (!var6.method32105()) {
-            if (!var6.method32107().method11723()) {
+         if (!var6.isEmpty()) {
+            if (!var6.getItem().method11723()) {
                if (var6.method32141() && Class958.method3889(var6) > 0) {
                   ItemStack var7 = var6.copy();
                   var7.method32180(1);
                   var4.set(var5, var7);
                }
             } else {
-               var4.set(var5, new ItemStack(var6.method32107().method11722()));
+               var4.set(var5, new ItemStack(var6.getItem().method11722()));
             }
          }
       }

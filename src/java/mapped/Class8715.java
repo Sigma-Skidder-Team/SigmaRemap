@@ -21,14 +21,14 @@ public class Class8715 {
    public static void method31434() {
       if (field39328) {
          field39328 = false;
-         method31435(Class8981.method32955());
+         method31435(Shaders.method32955());
       }
    }
 
    public static void method31435(Class4671 var0) {
       method31440();
       if (var0 != null) {
-         if (Class9299.field42965.method20214() && Minecraft.getInstance().method1537() == null) {
+         if (Class9299.field42965.method20214() && Minecraft.getInstance().getResourceManager() == null) {
             Class7944.method26810("[Shaders] Delayed loading of item mappings after resources are loaded");
             field39328 = true;
          } else {

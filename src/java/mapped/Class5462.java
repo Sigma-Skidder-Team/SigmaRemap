@@ -86,8 +86,8 @@ public class Class5462 {
       return (T)this.field24256.get(var1);
    }
 
-   public Class39 method17129() {
-      Class39 var3 = new Class39();
+   public CompoundNBT method17129() {
+      CompoundNBT var3 = new CompoundNBT();
       this.field24256.forEach((var1, var2) -> var3.method109(Class9221.method34675(var1), var2.method24156()));
       return var3;
    }

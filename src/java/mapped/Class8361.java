@@ -34,7 +34,7 @@ public class Class8361 implements Class8356 {
 
    @Override
    public Class30 method29293() {
-      return new Class41();
+      return new ListNBT();
    }
 
    @Override

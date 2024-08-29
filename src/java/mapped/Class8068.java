@@ -28,6 +28,6 @@ public class Class8068 {
    }
 
    private static File method27772() {
-      return new File(Minecraft.getInstance().field1303, "realms_persistence.json");
+      return new File(Minecraft.getInstance().gameDir, "realms_persistence.json");
    }
 }

@@ -57,9 +57,9 @@ public class Class2811 extends Class2803<Class1114> {
          this.field17494.method22679(0.0F, 0.0F, 0.0F);
          this.field17496.method22679(0.0F, 0.0F, 0.0F);
          this.field17497.method22679(0.0F, 0.0F, 0.0F);
-         this.field17495.field31035 = (float) (Math.PI / 4) + MathHelper.method37764(var4 * 0.1F) * 0.15F;
+         this.field17495.field31035 = (float) (Math.PI / 4) + MathHelper.cos(var4 * 0.1F) * 0.15F;
          this.field17495.field31036 = 0.0F;
-         this.field17496.field31036 = MathHelper.method37764(var4 * 1.3F) * (float) Math.PI * 0.25F;
+         this.field17496.field31036 = MathHelper.cos(var4 * 1.3F) * (float) Math.PI * 0.25F;
          this.field17497.field31036 = -this.field17496.field31036;
          this.field17498.field31036 = this.field17496.field31036 * 0.5F;
          this.field17499.field31036 = -this.field17496.field31036 * 0.5F;

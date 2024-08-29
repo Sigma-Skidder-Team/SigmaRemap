@@ -18,9 +18,9 @@ public enum Class100 implements Class83 {
    field282("the_end"),
    field283("beach"),
    field284("forest"),
-   field285("ocean"),
+   OCEAN("ocean"),
    field286("desert"),
-   field287("river"),
+   RIVER("river"),
    field288("swamp"),
    field289("mushroom"),
    field290("nether");
@@ -41,9 +41,9 @@ public enum Class100 implements Class83 {
       field282,
       field283,
       field284,
-      field285,
+           OCEAN,
       field286,
-      field287,
+           RIVER,
       field288,
       field289,
       field290

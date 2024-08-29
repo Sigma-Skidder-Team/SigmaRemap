@@ -3,15 +3,15 @@ package mapped;
 public class Class4567 extends Class4566 {
    private static String[] field22005;
 
-   public Class4567(Class1656 var1, double var2, double var4, double var6, double var8) {
+   public Class4567(ClientWorld var1, double var2, double var4, double var6, double var8) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
       this.field22044 *= 0.01F;
       this.field22045 *= 0.01F;
       this.field22046 *= 0.01F;
       this.field22045 += 0.2;
-      this.field22058 = Math.max(0.0F, MathHelper.method37763(((float)var8 + 0.0F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
-      this.field22059 = Math.max(0.0F, MathHelper.method37763(((float)var8 + 0.33333334F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
-      this.field22060 = Math.max(0.0F, MathHelper.method37763(((float)var8 + 0.6666667F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field22058 = Math.max(0.0F, MathHelper.sin(((float)var8 + 0.0F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field22059 = Math.max(0.0F, MathHelper.sin(((float)var8 + 0.33333334F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
+      this.field22060 = Math.max(0.0F, MathHelper.sin(((float)var8 + 0.6666667F) * (float) (Math.PI * 2)) * 0.65F + 0.35F);
       this.field22035 *= 1.5F;
       this.field22056 = 6;
    }

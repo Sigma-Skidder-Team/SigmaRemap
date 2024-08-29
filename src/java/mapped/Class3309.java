@@ -14,7 +14,7 @@ public class Class3309 extends Class3308 {
    }
 
    @Override
-   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
+   public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (this.method11738(var1)) {
          for (Class8812 var6 : Registry.field16076) {
             if (!var6.method31816().isEmpty()) {
@@ -31,6 +31,6 @@ public class Class3309 extends Class3308 {
 
    @Override
    public String method11720(ItemStack var1) {
-      return Class9741.method38185(var1).method31815(this.method11719() + ".effect.");
+      return Class9741.method38185(var1).method31815(this.getTranslationKey() + ".effect.");
    }
 }

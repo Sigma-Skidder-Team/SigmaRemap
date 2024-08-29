@@ -25,7 +25,7 @@ public class Class7273 {
       field31199 = new int[Direction.values().length];
 
       try {
-         field31199[Direction.field672.ordinal()] = 1;
+         field31199[Direction.DOWN.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 

@@ -2,18 +2,18 @@ package mapped;
 
 public final class Class6696 {
    private static String[] field29320;
-   private Class7380 field29321;
-   private Class7380 field29322;
+   private BlockState field29321;
+   private BlockState field29322;
    private Direction field29323;
    private int field29324;
 
-   private Class6696(Class7380 var1, Class7380 var2, Direction var3) {
+   private Class6696(BlockState var1, BlockState var2, Direction var3) {
       this.field29321 = var1;
       this.field29322 = var2;
       this.field29323 = var3;
    }
 
-   private void method20421(Class7380 var1, Class7380 var2, Direction var3) {
+   private void method20421(BlockState var1, BlockState var2, Direction var3) {
       this.field29321 = var1;
       this.field29322 = var2;
       this.field29323 = var3;
@@ -50,7 +50,7 @@ public final class Class6696 {
    }
 
    // $VF: synthetic method
-   public Class6696(Class7380 var1, Class7380 var2, Direction var3, Class9 var4) {
+   public Class6696(BlockState var1, BlockState var2, Direction var3, Class9 var4) {
       this(var1, var2, var3);
    }
 }

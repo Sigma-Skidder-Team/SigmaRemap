@@ -426,7 +426,7 @@ public class Class9215 {
       BlockPos var10 = Class8969.method32908(new BlockPos(1, 0, 0), Class2089.field13614, var8, 7, 7);
       var8 = var8.method250(var3);
       var10 = var10.method8352(var3);
-      BlockPos var11 = var2.method8336(var10.method8304(), 0, var10.method8306());
+      BlockPos var11 = var2.method8336(var10.getX(), 0, var10.getZ());
       var1.add(new Class4187(this.field42405, var9, var11, var8));
    }
 

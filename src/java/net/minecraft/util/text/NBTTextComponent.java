@@ -35,7 +35,7 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
       this.field_218678_b = p_i50782_3_;
    }
 
-   public abstract Stream<Class39> func_218673_a(Class6619 var1) throws CommandSyntaxException;
+   public abstract Stream<CompoundNBT> func_218673_a(Class6619 var1) throws CommandSyntaxException;
 
    public String func_218676_i() {
       return this.field_218679_c;

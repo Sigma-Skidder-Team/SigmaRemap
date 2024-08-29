@@ -15,18 +15,18 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public Class3257 method25050() {
-      return Class8514.field37884;
+   public Item method25050() {
+      return Items.field37884;
    }
 
    @Override
    public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
       BlockPos var7 = var2.method8311();
-      if (var1.method6738(var7).method23393() && !var1.method6738(var7).method23409(var1, var7)) {
+      if (var1.getBlockState(var7).isAir() && !var1.getBlockState(var7).method23409(var1, var7)) {
          if (var4.nextInt(100) == 0) {
-            double var8 = (double)var2.method8304() + var4.nextDouble();
+            double var8 = (double)var2.getX() + var4.nextDouble();
             double var10 = (double)var2.getY() + 1.0;
-            double var12 = (double)var2.method8306() + var4.nextDouble();
+            double var12 = (double)var2.getZ() + var4.nextDouble();
             var1.method6746(Class7940.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
             var1.method6745(
                var8, var10, var12, Class6067.field26727, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
@@ -35,9 +35,9 @@ public abstract class Class7637 extends Class7633 {
 
          if (var4.nextInt(200) == 0) {
             var1.method6745(
-               (double)var2.method8304(),
+               (double)var2.getX(),
                (double)var2.getY(),
-               (double)var2.method8306(),
+               (double)var2.getZ(),
                Class6067.field26725,
                Class2266.field14732,
                0.2F + var4.nextFloat() * 0.2F,
@@ -72,8 +72,8 @@ public abstract class Class7637 extends Class7633 {
                   return;
                }
 
-               Class7380 var10 = var1.method6738(var11);
-               if (!var10.method23393()) {
+               BlockState var10 = var1.getBlockState(var11);
+               if (!var10.isAir()) {
                   if (var10.method23384().method31087()) {
                      return;
                   }
@@ -97,7 +97,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    private boolean method25103(Class1662 var1, BlockPos var2) {
-      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.method6738(var2).method23384().method31088();
+      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).method23384().method31088();
    }
 
    @Nullable
@@ -107,7 +107,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25081(Class1660 var1, BlockPos var2, Class7380 var3) {
+   public void method25081(Class1660 var1, BlockPos var2, BlockState var3) {
       this.method25104(var1, var2);
    }
 
@@ -117,7 +117,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public Class7380 method25063(Class7379 var1) {
+   public BlockState method25063(Class7379 var1) {
       return Blocks.LAVA.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
@@ -166,11 +166,11 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25080(Class1660 var1, BlockPos var2, Class7380 var3, Direction var4, Class7379 var5) {
-      if (var4 == Direction.field672) {
+   public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, Class7379 var5) {
+      if (var4 == Direction.DOWN) {
          Class7379 var8 = var1.method6739(var2);
          if (this.method25067(Class8953.field40470) && var8.method23486(Class8953.field40469)) {
-            if (var3.method23383() instanceof Class3404) {
+            if (var3.getBlock() instanceof Class3404) {
                var1.method6725(var2, Blocks.STONE.method11579(), 3);
             }
 

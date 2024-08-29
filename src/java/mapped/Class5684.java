@@ -4,7 +4,7 @@ public class Class5684 extends Class5651<Class1112, Class2817<Class1112>> {
    private static final ResourceLocation field25050 = new ResourceLocation("textures/entity/ghast/ghast.png");
    private static final ResourceLocation field25051 = new ResourceLocation("textures/entity/ghast/ghast_shooting.png");
 
-   public Class5684(Class8853 var1) {
+   public Class5684(EntityRendererManager var1) {
       super(var1, new Class2817<Class1112>(), 1.5F);
    }
 

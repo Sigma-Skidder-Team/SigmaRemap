@@ -24,7 +24,7 @@ public class Class5495 implements Packet<Class5116> {
       this.field24392 = var1.method35707();
       this.field24393 = var1.readUnsignedByte();
       this.field24394 = var1.readUnsignedByte();
-      this.field24395 = Registry.field16072.method9172(var1.method35714());
+      this.field24395 = Registry.BLOCK.method9172(var1.method35714());
    }
 
    @Override
@@ -32,7 +32,7 @@ public class Class5495 implements Packet<Class5116> {
       var1.method35708(this.field24392);
       var1.writeByte(this.field24393);
       var1.writeByte(this.field24394);
-      var1.writeVarInt(Registry.field16072.method9171(this.field24395));
+      var1.writeVarInt(Registry.BLOCK.method9171(this.field24395));
    }
 
    public void method17180(Class5116 var1) {

@@ -17,7 +17,7 @@ public class Class2001 extends BlockPos {
    }
 
    public Class2001(double var1, double var3, double var5) {
-      this(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
+      this(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
    public Class2001(int var1, int var2, int var3, int var4) {
@@ -29,7 +29,7 @@ public class Class2001 extends BlockPos {
    }
 
    @Override
-   public int method8304() {
+   public int getX() {
       return this.field13042;
    }
 
@@ -39,7 +39,7 @@ public class Class2001 extends BlockPos {
    }
 
    @Override
-   public int method8306() {
+   public int getZ() {
       return this.field13044;
    }
 
@@ -51,7 +51,7 @@ public class Class2001 extends BlockPos {
    }
 
    public void method8385(double var1, double var3, double var5) {
-      this.method8384(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5));
+      this.method8384(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5));
    }
 
    @Override
@@ -87,15 +87,15 @@ public class Class2001 extends BlockPos {
    }
 
    public void method8386(BlockPos var1, Direction var2) {
-      this.field13042 = var1.method8304() + var2.method539();
+      this.field13042 = var1.getX() + var2.method539();
       this.field13043 = var1.getY() + var2.method540();
-      this.field13044 = var1.method8306() + var2.method541();
+      this.field13044 = var1.getZ() + var2.method541();
    }
 
    public void method8387(BlockPos var1, Direction var2, Direction var3) {
-      this.field13042 = var1.method8304() + var2.method539() + var3.method539();
+      this.field13042 = var1.getX() + var2.method539() + var3.method539();
       this.field13043 = var1.getY() + var2.method540() + var3.method540();
-      this.field13044 = var1.method8306() + var2.method541() + var3.method541();
+      this.field13044 = var1.getZ() + var2.method541() + var3.method541();
    }
 
    private void method8388() {
@@ -120,10 +120,10 @@ public class Class2001 extends BlockPos {
 
    public static Iterable<BlockPos> method8359(BlockPos var0, BlockPos var1) {
       BlockPos var4 = new BlockPos(
-         Math.min(var0.method8304(), var1.method8304()), Math.min(var0.getY(), var1.getY()), Math.min(var0.method8306(), var1.method8306())
+         Math.min(var0.getX(), var1.getX()), Math.min(var0.getY(), var1.getY()), Math.min(var0.getZ(), var1.getZ())
       );
       BlockPos var5 = new BlockPos(
-         Math.max(var0.method8304(), var1.method8304()), Math.max(var0.getY(), var1.getY()), Math.max(var0.method8306(), var1.method8306())
+         Math.max(var0.getX(), var1.getX()), Math.max(var0.getY(), var1.getY()), Math.max(var0.getZ(), var1.getZ())
       );
       return new Class50(var4, var5);
    }

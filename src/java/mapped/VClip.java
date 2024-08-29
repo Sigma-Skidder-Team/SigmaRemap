@@ -17,7 +17,7 @@ public class VClip extends Command {
             if (var2[0].method30895() != Class2193.field14336) {
                throw new CommandException("Invalid vertical distance \"" + var2[0].method30899() + "\"");
             } else {
-               mc.getClientPlayNetHandler()
+               mc.getConnection()
                   .method15728(
                      new Class5473(
                         mc.player.getPosX(),

@@ -11,7 +11,7 @@ public class Class5447 extends Class5444<Class4712> {
       this.field24205 = var6;
    }
 
-   public void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
+   public void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
       int var10 = 0;
 
       Class4196 var11;

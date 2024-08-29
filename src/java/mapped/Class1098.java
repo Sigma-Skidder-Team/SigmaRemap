@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 public class Class1098 extends Class1013 {
-   private static final Class120 field6036 = Class120.method339(Class8514.field37909, Class8514.field37910);
+   private static final Class120 field6036 = Class120.method339(Items.field37909, Items.field37910);
    private static final Class9289<Integer> field6037 = Class9361.<Integer>method35441(Class1098.class, Class7784.field33391);
    private static final Class9289<Boolean> field6038 = Class9361.<Boolean>method35441(Class1098.class, Class7784.field33398);
    private static final Class9289<Boolean> field6039 = Class9361.<Boolean>method35441(Class1098.class, Class7784.field33398);
@@ -34,7 +34,7 @@ public class Class1098 extends Class1013 {
    private float field6048;
    private float field6049;
 
-   public Class1098(Class8992<? extends Class1098> var1, World var2) {
+   public Class1098(EntityType<? extends Class1098> var1, World var2) {
       super(var1, var2);
    }
 
@@ -107,14 +107,14 @@ public class Class1098 extends Class1013 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("CatType", this.method5250());
       var1.method100("CollarColor", (byte)this.method5256().method309());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5251(var1.method122("CatType"));
       if (var1.method119("CollarColor", 99)) {
@@ -255,7 +255,7 @@ public class Class1098 extends Class1013 {
    }
 
    public Class1098 method4389(ServerWorld var1, Class1045 var2) {
-      Class1098 var5 = Class8992.field41012.method33215(var1);
+      Class1098 var5 = EntityType.field41012.method33215(var1);
       if (var2 instanceof Class1098) {
          if (!this.field5054.nextBoolean()) {
             var5.method5251(((Class1098)var2).method5250());
@@ -293,7 +293,7 @@ public class Class1098 extends Class1013 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (!(var1.method7000() > 0.9F)) {
          this.method5251(this.field5054.nextInt(10));
@@ -302,7 +302,7 @@ public class Class1098 extends Class1013 {
       }
 
       ServerWorld var8 = var1.method6970();
-      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.method3432(), true, Structure.field18066).method17117()) {
+      if (var8 instanceof ServerWorld && var8.method6893().method24345(this.getPosition(), true, Structure.field18066).method17117()) {
          this.method5251(10);
          this.method4278();
       }
@@ -313,17 +313,17 @@ public class Class1098 extends Class1013 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      Class3257 var6 = var5.method32107();
-      if (!this.field5024.field9020) {
+      Item var6 = var5.getItem();
+      if (!this.world.field9020) {
          if (!this.method4393()) {
             if (this.method4381(var5)) {
                this.method4501(var1, var5);
                if (this.field5054.nextInt(3) != 0) {
-                  this.field5024.method6786(this, (byte)6);
+                  this.world.method6786(this, (byte)6);
                } else {
                   this.method4399(var1);
                   this.method4403(true);
-                  this.field5024.method6786(this, (byte)7);
+                  this.world.method6786(this, (byte)7);
                }
 
                this.method4278();
@@ -348,7 +348,7 @@ public class Class1098 extends Class1013 {
             Class112 var7 = ((Class3321)var6).method11876();
             if (var7 != this.method5256()) {
                this.method5257(var7);
-               if (!var1.field4919.field29609) {
+               if (!var1.abilities.isCreativeMode) {
                   var5.method32182(1);
                }
 

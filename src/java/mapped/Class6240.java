@@ -6,7 +6,7 @@ public class Class6240 extends Class6230 {
    @Override
    public ItemStack method19192(Class2956 var1, ItemStack var2) {
       this.method19204(false);
-      Class3257 var5 = var2.method32107();
+      Item var5 = var2.getItem();
       if (var5 instanceof Class3292) {
          Direction var6 = var1.method11324().<Direction>method23463(Class3357.field18899);
          BlockPos var7 = var1.method11323().method8349(var6);

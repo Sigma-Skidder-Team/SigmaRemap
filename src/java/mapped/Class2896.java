@@ -30,7 +30,7 @@ public class Class2896 extends Class2797<Class1100> {
    public void method10998(Class1100 var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998(var1, var2, var3, var4, var5, var6);
       if (var1.method5275()) {
-         if (!var1.method3090().method32105()) {
+         if (!var1.method3090().isEmpty()) {
             if (var1.method2967() != Class2205.field14418) {
                this.field17436.field31035 = 3.7699115F;
             } else {
@@ -47,7 +47,7 @@ public class Class2896 extends Class2797<Class1100> {
       this.field17934.field31034 = 2.0F;
       this.field17935.field31033 = 1.0F;
       this.field17934.field31033 = 1.0F;
-      this.field17935.field31036 = 0.47123894F + MathHelper.method37764(var4 * 0.8F) * (float) Math.PI * 0.05F;
+      this.field17935.field31036 = 0.47123894F + MathHelper.cos(var4 * 0.8F) * (float) Math.PI * 0.05F;
       this.field17934.field31036 = -this.field17935.field31036;
       this.field17934.field31037 = -0.47123894F;
       this.field17934.field31035 = 0.47123894F;

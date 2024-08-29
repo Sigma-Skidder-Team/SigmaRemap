@@ -23,7 +23,7 @@ public class Class8399 extends ByteToMessageDecoder {
       if (var2.readableBytes() != 0) {
          PacketBuffer var6 = new PacketBuffer(var2);
          int var7 = var6.method35714();
-         Packet var8 = ((Class1858)var1.channel().attr(NetworkManager.field38642).get()).method8103(this.field36045, var7);
+         Packet var8 = ((ProtocolType)var1.channel().attr(NetworkManager.field38642).get()).method8103(this.field36045, var7);
          if (var8 == null) {
             throw new IOException("Bad packet id " + var7);
          }
@@ -32,7 +32,7 @@ public class Class8399 extends ByteToMessageDecoder {
          if (var6.readableBytes() > 0) {
             throw new IOException(
                "Packet "
-                  + ((Class1858)var1.channel().attr(NetworkManager.field38642).get()).method8104()
+                  + ((ProtocolType)var1.channel().attr(NetworkManager.field38642).get()).method8104()
                   + "/"
                   + var7
                   + " ("

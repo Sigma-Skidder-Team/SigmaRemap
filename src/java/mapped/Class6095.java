@@ -30,6 +30,6 @@ public class Class6095 extends Class6069 {
    }
 
    public static boolean method18833(ItemStack var0, int var1, Random var2) {
-      return var0.method32107() instanceof Class3279 && var2.nextFloat() < 0.6F ? false : var2.nextInt(var1 + 1) > 0;
+      return var0.getItem() instanceof Class3279 && var2.nextFloat() < 0.6F ? false : var2.nextInt(var1 + 1) > 0;
    }
 }

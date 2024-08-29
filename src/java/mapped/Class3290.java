@@ -3,7 +3,7 @@ package mapped;
 import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class3290 extends Class3257 {
+public class Class3290 extends Item {
    public Class3290(Class5643 var1) {
       super(var1);
    }
@@ -18,9 +18,9 @@ public class Class3290 extends Class3257 {
       return false;
    }
 
-   public static Class41 method11830(ItemStack var0) {
-      Class39 var3 = var0.method32142();
-      return var3 == null ? new Class41() : var3.method131("StoredEnchantments", 10);
+   public static ListNBT method11830(ItemStack var0) {
+      CompoundNBT var3 = var0.method32142();
+      return var3 == null ? new ListNBT() : var3.method131("StoredEnchantments", 10);
    }
 
    @Override
@@ -30,12 +30,12 @@ public class Class3290 extends Class3257 {
    }
 
    public static void method11831(ItemStack var0, Class6694 var1) {
-      Class41 var4 = method11830(var0);
+      ListNBT var4 = method11830(var0);
       boolean var5 = true;
-      ResourceLocation var6 = Registry.field16073.method9181(var1.field29316);
+      ResourceLocation var6 = Registry.field16073.getKey(var1.field29316);
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
-         Class39 var8 = var4.method153(var7);
+         CompoundNBT var8 = var4.method153(var7);
          ResourceLocation var9 = ResourceLocation.method8289(var8.method126("id"));
          if (var9 != null && var9.equals(var6)) {
             if (var8.method122("lvl") < var1.field29317) {
@@ -48,24 +48,24 @@ public class Class3290 extends Class3257 {
       }
 
       if (var5) {
-         Class39 var10 = new Class39();
+         CompoundNBT var10 = new CompoundNBT();
          var10.method109("id", String.valueOf(var6));
          var10.method101("lvl", (short)var1.field29317);
          var4.add(var10);
       }
 
-      var0.method32143().method99("StoredEnchantments", var4);
+      var0.getOrCreateTag().put("StoredEnchantments", var4);
    }
 
    public static ItemStack method11832(Class6694 var0) {
-      ItemStack var3 = new ItemStack(Class8514.field38070);
+      ItemStack var3 = new ItemStack(Items.field38070);
       method11831(var3, var0);
       return var3;
    }
 
    @Override
-   public void method11737(Class7401 var1, Class25<ItemStack> var2) {
-      if (var1 != Class7401.field31670) {
+   public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
+      if (var1 != ItemGroup.SEARCH) {
          if (var1.method23655().length != 0) {
             for (Class6069 var6 : Registry.field16073) {
                if (var1.method23657(var6.field27308)) {

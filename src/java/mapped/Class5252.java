@@ -16,13 +16,13 @@ public class Class5252 extends Module {
     private void method16373(TickEvent var1) {
         if (this.method15996()) {
             if (mc.player.method3090() != null
-                    && mc.player.method3090().method32107() instanceof Class3263
+                    && mc.player.method3090().getItem() instanceof Class3263
                     && mc.player.field5036) {
                 for (int var4 = 0; var4 < 25; var4++) {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                    mc.getConnection().sendPacket(new Class5603(true));
                 }
 
-                mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13489, BlockPos.field13032, Direction.field672));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, BlockPos.ZERO, Direction.DOWN));
             }
         }
     }

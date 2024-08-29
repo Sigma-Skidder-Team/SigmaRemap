@@ -72,7 +72,7 @@ public final class Class9223 {
       }
    }
 
-   public static Class9223 method34692(Class39 var0) {
+   public static Class9223 method34692(CompoundNBT var0) {
       EnumMap var3 = Maps.newEnumMap(Class1939.class);
       field42458.forEach((var2, var3x) -> {
          boolean var6 = var0.method132((String)var3x.getFirst());
@@ -82,7 +82,7 @@ public final class Class9223 {
       return new Class9223(var3);
    }
 
-   public void method34693(Class39 var1) {
+   public void method34693(CompoundNBT var1) {
       field42458.forEach((var2, var3) -> {
          Class9248 var6 = this.field42459.get(var2);
          var1.method115((String)var3.getFirst(), Class9248.method34789(var6));

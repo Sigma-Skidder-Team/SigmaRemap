@@ -38,9 +38,9 @@ public class Class5821 extends Class5812 {
    @Override
    public void method18113(PlayerEntity var1) {
       super.method18113(var1);
-      if (!var1.field5024.field9020) {
+      if (!var1.world.field9020) {
          ItemStack var4 = this.field25501.method18272(this.field25501.method18269());
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             var1.method2882(var4, false);
          }
       }
@@ -65,7 +65,7 @@ public class Class5821 extends Class5812 {
          ItemStack var7 = var6.method18265();
          var5 = var7.copy();
          if (var2 != 0) {
-            if (!this.field25501.method18266() && this.field25501.method18259(var7) && var7.method32179() == 1) {
+            if (!this.field25501.method18266() && this.field25501.method18259(var7) && var7.getCount() == 1) {
                if (!this.method18142(var7, 0, 1, false)) {
                   return ItemStack.EMPTY;
                }
@@ -88,13 +88,13 @@ public class Class5821 extends Class5812 {
             var6.method18260(var7, var5);
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
@@ -127,6 +127,6 @@ public class Class5821 extends Class5812 {
    }
 
    public boolean method18182() {
-      return !this.field25500.method3618(0).method32105();
+      return !this.field25500.method3618(0).isEmpty();
    }
 }

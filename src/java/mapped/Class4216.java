@@ -11,7 +11,7 @@ public class Class4216 extends Class4213 {
       this.field20543 = var3 & 1;
    }
 
-   public Class4216(Class8761 var1, Class39 var2) {
+   public Class4216(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33474, var2);
    }
 

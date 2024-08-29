@@ -6,7 +6,7 @@ public final class Class117 extends Class116 {
    }
 
    @Override
-   public boolean test(Class7380 var1) {
-      return var1 != null && var1.method23393();
+   public boolean test(BlockState var1) {
+      return var1 != null && var1.isAir();
    }
 }

@@ -67,14 +67,14 @@ public class Class3723 extends Class3676<Class1042> {
 
    private boolean method12616(Class1042 var1) {
       Class6947<Class1042> var4 = var1.method2992();
-      Optional<Class1045> var5 = var4.method21410(Class8830.field39829).filter(var0 -> var0.method3204() == Class8992.field41098);
+      Optional<Class1045> var5 = var4.method21410(Class8830.field39829).filter(var0 -> var0.getType() == EntityType.field41098);
       return !var5.isPresent()
          ? false
-         : Class6983.method21571(var4, Class8830.field39829, Class8992.field41098) && var1.method4700() && ((Class1045)var5.get()).method4700();
+         : Class6983.method21571(var4, Class8830.field39829, EntityType.field41098) && var1.method4700() && ((Class1045)var5.get()).method4700();
    }
 
    private Optional<BlockPos> method12617(ServerWorld var1, Class1042 var2) {
-      return var1.method6951().method6672(Class4913.field22766.method15182(), var2x -> this.method12618(var2, var2x), var2.method3432(), 48);
+      return var1.method6951().method6672(Class4913.field22766.method15182(), var2x -> this.method12618(var2, var2x), var2.getPosition(), 48);
    }
 
    private boolean method12618(Class1042 var1, BlockPos var2) {
@@ -98,7 +98,7 @@ public class Class3723 extends Class3676<Class1042> {
    }
 
    private void method12620(ServerWorld var1, Class1042 var2, BlockPos var3) {
-      Class9378 var6 = Class9378.method35577(var1.method6813(), var3);
+      Class9378 var6 = Class9378.method35577(var1.getDimensionKey(), var3);
       var2.method2992().method21406(Class8830.field39813, var6);
    }
 }

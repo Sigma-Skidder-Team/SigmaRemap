@@ -27,7 +27,7 @@ public class Class2768 extends Class2595 {
       Class1110.method5350(
          this.field17345,
          this.field17345
-            .field5024
+            .world
             .method7006(Class101.field299, Class1110.method5349(this.field17345))
             .method8339(10 + Class1110.method5353(this.field17345).nextInt(20))
       );
@@ -47,14 +47,14 @@ public class Class2768 extends Class2595 {
    }
 
    private void method10963() {
-      Class1110.method5350(this.field17345, this.field17345.method4232().method3432().method8339(20 + Class1110.method5356(this.field17345).nextInt(20)));
-      if (Class1110.method5349(this.field17345).getY() < this.field17345.field5024.method6776()) {
+      Class1110.method5350(this.field17345, this.field17345.method4232().getPosition().method8339(20 + Class1110.method5356(this.field17345).nextInt(20)));
+      if (Class1110.method5349(this.field17345).getY() < this.field17345.world.method6776()) {
          Class1110.method5350(
             this.field17345,
             new BlockPos(
-               Class1110.method5349(this.field17345).method8304(),
-               this.field17345.field5024.method6776() + 1,
-               Class1110.method5349(this.field17345).method8306()
+               Class1110.method5349(this.field17345).getX(),
+               this.field17345.world.method6776() + 1,
+               Class1110.method5349(this.field17345).getZ()
             )
          );
       }

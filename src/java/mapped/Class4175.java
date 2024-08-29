@@ -29,7 +29,7 @@ public class Class4175 extends Class4174 {
       }
    }
 
-   public Class4175(Class8761 var1, Class39 var2) {
+   public Class4175(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33443, var2);
    }
 }

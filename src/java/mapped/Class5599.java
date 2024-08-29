@@ -16,8 +16,8 @@ public class Class5599 implements Packet<Class5116> {
    public Class5599(Class6799 var1) {
       this.field24846 = var1.field29606;
       this.field24847 = var1.field29607;
-      this.field24848 = var1.field29608;
-      this.field24849 = var1.field29609;
+      this.field24848 = var1.allowFlying;
+      this.field24849 = var1.isCreativeMode;
       this.field24850 = var1.method20714();
       this.field24851 = var1.method20716();
    }

@@ -44,7 +44,7 @@ public class Class1653 extends Class1652<Class8377> {
       int var7 = Math.floorDiv(var3, 16) + 1;
       return Class7481.method24366(new Class7481(var2), var7).<Class9343>flatMap(var3x -> this.method6667(var1, var3x, var4)).filter(var2x -> {
          BlockPos var5 = var2x.method35355();
-         return Math.abs(var5.method8304() - var2.method8304()) <= var3 && Math.abs(var5.method8306() - var2.method8306()) <= var3;
+         return Math.abs(var5.getX() - var2.getX()) <= var3 && Math.abs(var5.getZ() - var2.getZ()) <= var3;
       });
    }
 
@@ -132,7 +132,7 @@ public class Class1653 extends Class1652<Class8377> {
 
    public void method6679(Class7481 var1, Class7038 var2) {
       Class2002 var5 = Class2002.method8391(var1, var2.method21863() >> 4);
-      Util.<Class8377>method38514(this.method6643(var5.method8425()), var3 -> var3.method29358(var3x -> {
+      Util.<Class8377>acceptOrElse(this.method6643(var5.method8425()), var3 -> var3.method29358(var3x -> {
             if (method6680(var2)) {
                this.method6681(var2, var5, var3x);
             }
@@ -152,8 +152,8 @@ public class Class1653 extends Class1652<Class8377> {
       var2.method8426()
          .forEach(
             var2x -> {
-               Class7380 var5 = var1.method21852(
-                  Class2002.method8397(var2x.method8304()), Class2002.method8397(var2x.getY()), Class2002.method8397(var2x.method8306())
+               BlockState var5 = var1.method21852(
+                  Class2002.method8397(var2x.getX()), Class2002.method8397(var2x.getY()), Class2002.method8397(var2x.getZ())
                );
                Class4913.method15187(var5).ifPresent(var2xx -> var3.accept(var2x, var2xx));
             }

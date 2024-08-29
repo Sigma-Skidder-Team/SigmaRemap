@@ -23,7 +23,7 @@ public class Class2704 extends Class2699 {
       int var3 = this.field17153.method3015();
       Class880 var4 = this.field17153.method3014();
       if (var3 != this.field17181 && var4 != null) {
-         if (var4.method3204() == Class8992.field41111 && this.field17153.field5024.method6789().method17135(Class5462.field24255)) {
+         if (var4.getType() == EntityType.PLAYER && this.field17153.world.method6789().method17135(Class5462.field24255)) {
             return false;
          } else {
             for (Class var8 : this.field17182) {
@@ -61,7 +61,7 @@ public class Class2704 extends Class2699 {
    public void method10919() {
       double var3 = this.method10914();
       Class6488 var5 = Class6488.method19657(this.field17153.getPositionVec()).method19663(var3, 10.0, var3);
-      List var6 = this.field17153.field5024.method7183(this.field17153.getClass(), var5);
+      List var6 = this.field17153.world.method7183(this.field17153.getClass(), var5);
       Iterator var7 = var6.iterator();
 
       while (true) {

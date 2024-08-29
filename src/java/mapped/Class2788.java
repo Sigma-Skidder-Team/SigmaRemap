@@ -33,7 +33,7 @@ public class Class2788 extends Class2785 {
    }
 
    private boolean method10980() {
-      BlockPos var3 = this.field17415.method3432();
+      BlockPos var3 = this.field17415.getPosition();
       Mutable var4 = new Mutable();
 
       for (int var5 = 0; var5 < 3; var5++) {
@@ -41,7 +41,7 @@ public class Class2788 extends Class2785 {
             for (int var7 = 0; var7 <= var6; var7 = var7 <= 0 ? 1 - var7 : -var7) {
                for (int var8 = var7 < var6 && var7 > -var6 ? var6 : 0; var8 <= var6; var8 = var8 <= 0 ? 1 - var8 : -var8) {
                   var4.method8378(var3, var7, var5, var8);
-                  if (this.field17409.method6738(var4).method23448(Blocks.field37009)) {
+                  if (this.field17409.getBlockState(var4).method23448(Blocks.field37009)) {
                      return true;
                   }
                }

@@ -14,11 +14,11 @@ public class Class2910 extends Class2898<Class4732> {
 
       for (int var9 = 0; var9 < 16; var9++) {
          for (int var10 = 0; var10 < 16; var10++) {
-            int var11 = var4.method8304() + var9;
-            int var12 = var4.method8306() + var10;
+            int var11 = var4.getX() + var9;
+            int var12 = var4.getZ() + var10;
             int var13 = var5.field22408;
             var8.method8372(var11, var13, var12);
-            if (var1.method6738(var8).method23393()) {
+            if (var1.getBlockState(var8).isAir()) {
                var1.method6725(var8, var5.field22409, 2);
             }
          }

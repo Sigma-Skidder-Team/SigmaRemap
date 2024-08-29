@@ -5,27 +5,27 @@ import java.util.List;
 import java.util.Random;
 
 public class Class9753 {
-   private static Class7202 field45513 = null;
-   private static Class7202 field45514 = null;
-   private static Class7202 field45515 = null;
-   private static Class7202 field45516 = null;
-   private static Class7202 field45517 = null;
-   private static Class7202 field45518 = null;
+   private static IBakedModel field45513 = null;
+   private static IBakedModel field45514 = null;
+   private static IBakedModel field45515 = null;
+   private static IBakedModel field45516 = null;
+   private static IBakedModel field45517 = null;
+   private static IBakedModel field45518 = null;
    private static List field45519 = null;
    private static List field45520 = null;
    private static List field45521 = null;
    private static List field45522 = null;
    private static List field45523 = null;
    private static List field45524 = null;
-   private static Class7202 field45525 = null;
-   private static Class7202 field45526 = null;
-   private static Class7202 field45527 = null;
-   private static Class7202 field45528 = null;
-   private static Class7202 field45529 = null;
-   private static Class7202 field45530 = null;
+   private static IBakedModel field45525 = null;
+   private static IBakedModel field45526 = null;
+   private static IBakedModel field45527 = null;
+   private static IBakedModel field45528 = null;
+   private static IBakedModel field45529 = null;
+   private static IBakedModel field45530 = null;
    private static final Random field45531 = new Random();
 
-   public static Class7202 method38321(Class7202 var0, Class7380 var1) {
+   public static IBakedModel method38321(IBakedModel var0, BlockState var1) {
       if (Class7944.method26827()) {
          List var4 = var0.method22619(var1, (Direction)null, field45531);
          if (var4 != field45519) {
@@ -54,10 +54,10 @@ public class Class9753 {
       }
    }
 
-   public static boolean method38322(Class7380 var0, Class7380 var1) {
+   public static boolean method38322(BlockState var0, BlockState var1) {
       if (var0 != var1) {
-         Block var4 = var0.method23383();
-         Block var5 = var1.method23383();
+         Block var4 = var0.getBlock();
+         Block var5 = var1.getBlock();
          return var4 == var5;
       } else {
          return true;
@@ -89,12 +89,12 @@ public class Class9753 {
       }
    }
 
-   private static List method38324(Class7202 var0) {
-      return var0 != null ? var0.method22619((Class7380)null, (Direction)null, field45531) : null;
+   private static List method38324(IBakedModel var0) {
+      return var0 != null ? var0.method22619((BlockState)null, (Direction)null, field45531) : null;
    }
 
-   public static Class7202 method38325(String var0, List var1) {
-      Class280 var4 = Class7944.method26825();
+   public static IBakedModel method38325(String var0, List var1) {
+      ModelManager var4 = Class7944.method26825();
       if (var4 == null) {
          return null;
       } else {
@@ -105,16 +105,16 @@ public class Class9753 {
                return null;
             } else {
                Class1997 var7 = new Class1997(var0 + "_leaves", "normal");
-               Class7202 var8 = var4.method1023(var7);
-               if (var8 != null && var8 != var4.method1024()) {
-                  List<Class8557> var9 = var8.method22619((Class7380)null, (Direction)null, field45531);
+               IBakedModel var8 = var4.method1023(var7);
+               if (var8 != null && var8 != var4.getMissingModel()) {
+                  List<Class8557> var9 = var8.method22619((BlockState)null, (Direction)null, field45531);
                   if (var9.size() == 0) {
                      return var8;
                   } else if (var9.size() != 6) {
                      return null;
                   } else {
                      for (Class8557 var11 : var9) {
-                        List var12 = var8.method22619((Class7380)null, var11.method30514(), field45531);
+                        List var12 = var8.method22619((BlockState)null, var11.method30514(), field45531);
                         if (var12.size() > 0) {
                            return null;
                         }
@@ -136,12 +136,12 @@ public class Class9753 {
       }
    }
 
-   private static Class7202 method38326(Class7202 var0) {
+   private static IBakedModel method38326(IBakedModel var0) {
       if (var0 == null) {
          return null;
-      } else if (var0.method22619((Class7380)null, (Direction)null, field45531).size() > 0) {
+      } else if (var0.method22619((BlockState)null, (Direction)null, field45531).size() > 0) {
          Class7944.method26811(
-            "SmartLeaves: Model is not cube, general quads: " + var0.method22619((Class7380)null, (Direction)null, field45531).size() + ", model: " + var0
+            "SmartLeaves: Model is not cube, general quads: " + var0.method22619((BlockState)null, (Direction)null, field45531).size() + ", model: " + var0
          );
          return var0;
       } else {
@@ -149,19 +149,19 @@ public class Class9753 {
 
          for (int var4 = 0; var4 < var3.length; var4++) {
             Direction var5 = var3[var4];
-            List var6 = var0.method22619((Class7380)null, var5, field45531);
+            List var6 = var0.method22619((BlockState)null, var5, field45531);
             if (var6.size() != 1) {
                Class7944.method26811("SmartLeaves: Model is not cube, side: " + var5 + ", quads: " + var6.size() + ", model: " + var0);
                return var0;
             }
          }
 
-         Class7202 var14 = Class9842.method38900(var0);
+         IBakedModel var14 = Class9842.method38900(var0);
          List[] var15 = new List[var3.length];
 
          for (int var16 = 0; var16 < var3.length; var16++) {
             Direction var7 = var3[var16];
-            List var8 = var14.method22619((Class7380)null, var7, field45531);
+            List var8 = var14.method22619((BlockState)null, var7, field45531);
             Class8557 var9 = (Class8557)var8.get(0);
             Class8557 var10 = new Class8557((int[])var9.method30511().clone(), var9.method30513(), var9.method30514(), var9.method30516(), var9.method30515());
             int[] var11 = var10.method30511();

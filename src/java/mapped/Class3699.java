@@ -17,7 +17,7 @@ public class Class3699 extends Class3676<Class880> {
    @Override
    public boolean method12508(ServerWorld var1, Class880 var2) {
       Class9378 var5 = var2.method2992().<Class9378>method21410(this.field19748).get();
-      return var1.method6813() == var5.method35578() && var5.method35579().method8317(var2.getPositionVec(), 16.0);
+      return var1.getDimensionKey() == var5.method35578() && var5.method35579().method8317(var2.getPositionVec(), 16.0);
    }
 
    @Override
@@ -36,8 +36,8 @@ public class Class3699 extends Class3676<Class880> {
    }
 
    private boolean method12576(ServerWorld var1, BlockPos var2, Class880 var3) {
-      Class7380 var6 = var1.method6738(var2);
-      return var6.method23383().method11540(Class7645.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
+      BlockState var6 = var1.getBlockState(var2);
+      return var6.getBlock().method11540(Class7645.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
    }
 
    private boolean method12577(ServerWorld var1, BlockPos var2) {

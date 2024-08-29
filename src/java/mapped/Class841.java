@@ -4,11 +4,11 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class Class841 extends Class838 {
    private Screen field4639;
-   private Class9574 field4640;
+   private GameSettings field4640;
    private Class9046 field4641 = new Class9046(this, new Class7548());
 
-   public Class841(Screen var1, Class9574 var2) {
-      super(new StringTextComponent(Class9088.method33883("of.options.otherTitle")));
+   public Class841(Screen var1, GameSettings var2) {
+      super(new StringTextComponent(I18n.format("of.options.otherTitle")));
       this.field4639 = var1;
       this.field4640 = var2;
    }
@@ -16,7 +16,7 @@ public class Class841 extends Class838 {
    @Override
    public void method1921() {
       this.field4629.clear();
-      Class5810 var3 = new Class5810(this.field4562.method1580());
+      Class5810 var3 = new Class5810(this.field4562.getMainWindow());
       AbstractOption[] var4 = new AbstractOption[]{
          AbstractOption.field25387,
          AbstractOption.field25410,
@@ -44,9 +44,9 @@ public class Class841 extends Class838 {
       }
 
       this.<Class1210>method2455(
-         new Class1210(210, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11 - 44, Class9088.method33883("of.options.other.reset"))
+         new Class1210(210, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11 - 44, I18n.format("of.options.other.reset"))
       );
-      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11, Class9088.method33883("gui.done")));
+      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11, I18n.format("gui.done")));
    }
 
    @Override
@@ -55,15 +55,15 @@ public class Class841 extends Class838 {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482) {
             if (var4.field6523 == 200) {
-               this.field4562.gameSettings.method37146();
-               this.field4562.method1580().method8032();
+               this.field4562.gameSettings.saveOptions();
+               this.field4562.getMainWindow().method8032();
                this.field4562.displayGuiScreen(this.field4639);
             }
 
             if (var4.field6523 == 210) {
-               this.field4562.gameSettings.method37146();
-               String var5 = Class9088.method33883("of.message.other.reset");
-               Class829 var6 = new Class829(this::method2568, new StringTextComponent(var5), new StringTextComponent(""));
+               this.field4562.gameSettings.saveOptions();
+               String var5 = I18n.format("of.message.other.reset");
+               ConfirmScreen var6 = new ConfirmScreen(this::method2568, new StringTextComponent(var5), new StringTextComponent(""));
                this.field4562.displayGuiScreen(var6);
             }
          }
@@ -72,8 +72,8 @@ public class Class841 extends Class838 {
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.method37146();
-      this.field4562.method1580().method8032();
+      this.field4562.gameSettings.saveOptions();
+      this.field4562.getMainWindow().method8032();
       super.onClose();
    }
 

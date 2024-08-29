@@ -16,11 +16,11 @@ public class Class1269 extends Class1193 implements Class1270 {
    }
 
    public void method5999(MatrixStack var1) {
-      if (!this.field6746 && this.field6744.gameSettings.field44623) {
-         this.field6744.method1546().method1011(this);
+      if (!this.field6746 && this.field6744.gameSettings.showSubtitles) {
+         this.field6744.getSoundHandler().method1011(this);
          this.field6746 = true;
-      } else if (this.field6746 && !this.field6744.gameSettings.field44623) {
-         this.field6744.method1546().method1012(this);
+      } else if (this.field6746 && !this.field6744.gameSettings.showSubtitles) {
+         this.field6744.getSoundHandler().method1012(this);
          this.field6746 = false;
       }
 
@@ -43,17 +43,17 @@ public class Class1269 extends Class1193 implements Class1270 {
          while (var10.hasNext()) {
             Class9113 var11 = (Class9113)var10.next();
             if (var11.method33994() + 3000L > Util.milliTime()) {
-               var9 = Math.max(var9, this.field6744.field1294.method38821(var11.method33993()));
+               var9 = Math.max(var9, this.field6744.fontRenderer.method38821(var11.method33993()));
             } else {
                var10.remove();
             }
          }
 
          var9 = var9
-            + this.field6744.field1294.method38820("<")
-            + this.field6744.field1294.method38820(" ")
-            + this.field6744.field1294.method38820(">")
-            + this.field6744.field1294.method38820(" ");
+            + this.field6744.fontRenderer.getStringWidth("<")
+            + this.field6744.fontRenderer.getStringWidth(" ")
+            + this.field6744.fontRenderer.getStringWidth(">")
+            + this.field6744.fontRenderer.getStringWidth(" ");
 
          for (Class9113 var12 : this.field6745) {
             short var13 = 255;
@@ -66,13 +66,13 @@ public class Class1269 extends Class1193 implements Class1270 {
             byte var22 = 9;
             int var23 = var22 / 2;
             float var24 = 1.0F;
-            int var25 = this.field6744.field1294.method38821(var14);
-            int var26 = MathHelper.method37769(MathHelper.method37779(255.0, 75.0, (double)((float)(Util.milliTime() - var12.method33994()) / 3000.0F)));
+            int var25 = this.field6744.fontRenderer.method38821(var14);
+            int var26 = MathHelper.floor(MathHelper.method37779(255.0, 75.0, (double)((float)(Util.milliTime() - var12.method33994()) / 3000.0F)));
             int var27 = var26 << 16 | var26 << 8 | var26;
             RenderSystem.pushMatrix();
             RenderSystem.translatef(
-               (float)this.field6744.method1580().getScaledWidth() - (float)var21 * 1.0F - 2.0F,
-               (float)(this.field6744.method1580().getScaledHeight() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
+               (float)this.field6744.getMainWindow().getScaledWidth() - (float)var21 * 1.0F - 2.0F,
+               (float)(this.field6744.getMainWindow().getScaledHeight() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
                0.0F
             );
             RenderSystem.scalef(1.0F, 1.0F, 1.0F);
@@ -81,16 +81,16 @@ public class Class1269 extends Class1193 implements Class1270 {
             if (!var20) {
                if (!(var16 > 0.0)) {
                   if (var16 < 0.0) {
-                     this.field6744.field1294.method38801(var1, "<", (float)(-var21), (float)(-var23), var27 + -16777216);
+                     this.field6744.fontRenderer.method38801(var1, "<", (float)(-var21), (float)(-var23), var27 + -16777216);
                   }
                } else {
                   this.field6744
-                     .field1294
-                     .method38801(var1, ">", (float)(var21 - this.field6744.field1294.method38820(">")), (float)(-var23), var27 + -16777216);
+                     .fontRenderer
+                     .method38801(var1, ">", (float)(var21 - this.field6744.fontRenderer.getStringWidth(">")), (float)(-var23), var27 + -16777216);
                }
             }
 
-            this.field6744.field1294.method38805(var1, var14, (float)(-var25 / 2), (float)(-var23), var27 + -16777216);
+            this.field6744.fontRenderer.method38805(var1, var14, (float)(-var25 / 2), (float)(-var23), var27 + -16777216);
             RenderSystem.popMatrix();
             var8++;
          }

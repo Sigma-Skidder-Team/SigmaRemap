@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class8528 {
    private static final Logger field38304 = LogManager.getLogger();
-   private final Class3257 field38305;
+   private final Item field38305;
    private final int field38306;
    private final List<String> field38307 = Lists.newArrayList();
    private final Map<Character, Class120> field38308 = Maps.newLinkedHashMap();
@@ -32,7 +32,7 @@ public class Class8528 {
       return new Class8528(var0, var1);
    }
 
-   public Class8528 method30249(Character var1, Class7608<Class3257> var2) {
+   public Class8528 method30249(Character var1, Class7608<Item> var2) {
       return this.method30251(var1, Class120.method342(var2));
    }
 
@@ -73,11 +73,11 @@ public class Class8528 {
    }
 
    public void method30255(Consumer<Class4664> var1) {
-      this.method30257(var1, Registry.field16075.method9181(this.field38305));
+      this.method30257(var1, Registry.ITEM.getKey(this.field38305));
    }
 
    public void method30256(Consumer<Class4664> var1, String var2) {
-      ResourceLocation var5 = Registry.field16075.method9181(this.field38305);
+      ResourceLocation var5 = Registry.ITEM.getKey(this.field38305);
       if (!new ResourceLocation(var2).equals(var5)) {
          this.method30257(var1, new ResourceLocation(var2));
       } else {

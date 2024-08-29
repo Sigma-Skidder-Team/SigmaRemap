@@ -8,7 +8,7 @@ public final class Class6232 extends Class6230 {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       BlockPos var6 = var1.method11323().method8349(var5);
       ServerWorld var7 = var1.method11326();
-      Class7380 var8 = var7.method6738(var6);
+      BlockState var8 = var7.getBlockState(var6);
       this.method19204(true);
       if (!var8.method23448(Blocks.field37124)) {
          return super.method19192(var1, var2);

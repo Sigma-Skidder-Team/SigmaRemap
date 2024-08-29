@@ -25,7 +25,7 @@ public class Class2622 extends Class2595 {
             if (this.field16914 <= 0) {
                this.field16914 = this.method10826(this.field16912);
                Predicate<Class1050> var3 = var0 -> var0.method4805() || !var0.method4800();
-               List<Class1050> var4 = this.field16912.field5024.method6772(this.field16912.getClass(),
+               List<Class1050> var4 = this.field16912.world.method6772(this.field16912.getClass(),
                        this.field16912.method3389().method19663(8.0, 8.0, 8.0), var3);
                Class1050 var5 = var4.stream().filter(Class1050::method4805).findAny().orElse(this.field16912);
                var5.method4809(var4.stream().filter(var0 -> !var0.method4800()));

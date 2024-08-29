@@ -7,12 +7,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class1129 extends Screen {
    private static final AbstractOption[] field6173 = new AbstractOption[]{AbstractOption.field25323};
    private final Screen field6174;
-   private final Class9574 field6175;
+   private final GameSettings field6175;
    private Class1206 field6176;
    private Class1226 field6177;
    private Class2197 field6178;
 
-   public Class1129(Screen var1, Class9574 var2) {
+   public Class1129(Screen var1, GameSettings var2) {
       super(new TranslationTextComponent("options.title"));
       this.field6174 = var1;
       this.field6175 = var2;
@@ -40,7 +40,7 @@ public class Class1129 extends Screen {
                AbstractOption.field25362.method18081(this.field6175),
                var1 -> {
                   AbstractOption.field25362.method18078(this.field6175);
-                  this.field6175.method37146();
+                  this.field6175.saveOptions();
                   var1.method5743(AbstractOption.field25362.method18081(this.field6175));
                }
             )
@@ -51,12 +51,12 @@ public class Class1129 extends Screen {
             new Class1206(
                this.field4564 / 2 - 155 + var3 % 2 * 160, this.field4565 / 6 - 12 + 24 * (var3 >> 1), 150, 20, this.method5431(this.field6178), var1 -> {
                   this.field6178 = Class2197.method8907(this.field6178.method8905() + 1);
-                  this.field4562.getClientPlayNetHandler().sendPacket(new Class5517(this.field6178));
+                  this.field4562.getConnection().sendPacket(new Class5517(this.field6178));
                   this.field6176.method5743(this.method5431(this.field6178));
                }
             )
          );
-         if (this.field4562.method1530() && !this.field4562.world.getWorldInfo().isHardcore()) {
+         if (this.field4562.isSingleplayer() && !this.field4562.world.getWorldInfo().isHardcore()) {
             this.field6176.method5741(this.field6176.method5740() - 20);
             this.field6177 = this.<Class1226>method2455(
                new Class1226(
@@ -64,7 +64,7 @@ public class Class1129 extends Screen {
                   this.field6176.field6478,
                   var1 -> this.field4562
                         .displayGuiScreen(
-                           new Class829(
+                           new ConfirmScreen(
                               this::method5432,
                               new TranslationTextComponent("difficulty.lock.title"),
                               new TranslationTextComponent(
@@ -130,7 +130,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.language"),
-            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field6175, this.field4562.method1541()))
+            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field6175, this.field4562.getLanguageManager()))
          )
       );
       this.<Class1206>method2455(
@@ -153,7 +153,7 @@ public class Class1129 extends Screen {
             var1 -> this.field4562
                   .displayGuiScreen(
                      new Class1336(
-                        this, this.field4562.method1538(), this::method5430, this.field4562.method1540(), new TranslationTextComponent("resourcePack.title")
+                        this, this.field4562.getResourcePackList(), this::method5430, this.field4562.getFileResourcePacks(), new TranslationTextComponent("resourcePack.title")
                      )
                   )
          )
@@ -169,26 +169,26 @@ public class Class1129 extends Screen {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 / 6 + 168, 200, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(this.field6174))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 / 6 + 168, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6174))
       );
    }
 
-   private void method5430(Class313 var1) {
-      ImmutableList var4 = ImmutableList.copyOf(this.field6175.field44580);
-      this.field6175.field44580.clear();
-      this.field6175.field44581.clear();
+   private void method5430(ResourcePackList var1) {
+      ImmutableList var4 = ImmutableList.copyOf(this.field6175.resourcePacks);
+      this.field6175.resourcePacks.clear();
+      this.field6175.incompatibleResourcePacks.clear();
 
-      for (Class1810 var6 : var1.method1270()) {
-         if (!var6.method7953()) {
-            this.field6175.field44580.add(var6.method7951());
+      for (ResourcePackInfo var6 : var1.getEnabledPacks()) {
+         if (!var6.isOrderLocked()) {
+            this.field6175.resourcePacks.add(var6.getName());
             if (!var6.method7949().method8720()) {
-               this.field6175.field44581.add(var6.method7951());
+               this.field6175.incompatibleResourcePacks.add(var6.getName());
             }
          }
       }
 
-      this.field6175.method37146();
-      ImmutableList var7 = ImmutableList.copyOf(this.field6175.field44580);
+      this.field6175.saveOptions();
+      ImmutableList var7 = ImmutableList.copyOf(this.field6175.resourcePacks);
       if (!var7.equals(var4)) {
          this.field4562.reloadResources();
       }
@@ -201,7 +201,7 @@ public class Class1129 extends Screen {
    private void method5432(boolean var1) {
       this.field4562.displayGuiScreen(this);
       if (var1 && this.field4562.world != null) {
-         this.field4562.getClientPlayNetHandler().sendPacket(new Class5494(true));
+         this.field4562.getConnection().sendPacket(new Class5494(true));
          this.field6177.method5808(true);
          this.field6177.field6482 = false;
          this.field6176.field6482 = false;
@@ -210,7 +210,7 @@ public class Class1129 extends Screen {
 
    @Override
    public void onClose() {
-      this.field6175.method37146();
+      this.field6175.saveOptions();
    }
 
    @Override

@@ -22,16 +22,16 @@ public class Class6062<C> {
       return (Class6945<C, T>)this.field26302.get(var1);
    }
 
-   public <T extends Class6861<C>> Class39 method18797(T var1) {
+   public <T extends Class6861<C>> CompoundNBT method18797(T var1) {
       Class6945<C, Class6861<C>> var4 = this.method18796(var1.getClass());
-      Class39 var5 = new Class39();
+      CompoundNBT var5 = new CompoundNBT();
       var4.method21397(var5, var1);
       var5.method109("Type", var4.method21398().toString());
       return var5;
    }
 
    @Nullable
-   public Class6861<C> method18798(Class39 var1) {
+   public Class6861<C> method18798(CompoundNBT var1) {
       ResourceLocation var4 = ResourceLocation.method8289(var1.method126("Type"));
       Class6945 var5 = this.field26301.get(var4);
       if (var5 == null) {

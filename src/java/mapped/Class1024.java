@@ -10,7 +10,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    private static final Class9289<Boolean> field5710 = Class9361.<Boolean>method35441(Class1024.class, Class7784.field33398);
    private final Class927 field5711 = new Class927(5);
 
-   public Class1024(Class8992<? extends Class1024> var1, World var2) {
+   public Class1024(EntityType<? extends Class1024> var1, World var2) {
       super(var1, var2);
    }
 
@@ -45,7 +45,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public boolean method4234(Class3262 var1) {
-      return var1 == Class8514.field38148;
+      return var1 == Items.field38148;
    }
 
    public boolean method4542() {
@@ -63,24 +63,24 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (int var5 = 0; var5 < this.field5711.method3629(); var5++) {
          ItemStack var6 = this.field5711.method3618(var5);
-         if (!var6.method32105()) {
-            var4.add(var6.method32112(new Class39()));
+         if (!var6.isEmpty()) {
+            var4.add(var6.method32112(new CompoundNBT()));
          }
       }
 
-      var1.method99("Inventory", var4);
+      var1.put("Inventory", var4);
    }
 
    @Override
    public Class2117 method4543() {
       if (!this.method4542()) {
-         if (!this.method3092(Class8514.field38148)) {
+         if (!this.method3092(Items.field38148)) {
             return !this.method4307() ? Class2117.field13801 : Class2117.field13795;
          } else {
             return Class2117.field13798;
@@ -91,13 +91,13 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      Class41 var4 = var1.method131("Inventory", 10);
+      ListNBT var4 = var1.method131("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          ItemStack var6 = ItemStack.method32104(var4.method153(var5));
-         if (!var6.method32105()) {
+         if (!var6.isEmpty()) {
             this.field5711.method3676(var6);
          }
       }
@@ -107,7 +107,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      Class7380 var5 = var2.method6738(var1.method8313());
+      BlockState var5 = var2.getBlockState(var1.method8313());
       return !var5.method23448(Blocks.field36395) && !var5.method23448(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
    }
 
@@ -118,7 +118,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       this.method4270(var2);
       this.method4273(var2);
       return super.method4276(var1, var2, var3, var4, var5);
@@ -126,7 +126,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Class8514.field38148));
+      this.method2944(Class2106.field13731, new ItemStack(Items.field38148));
    }
 
    @Override
@@ -134,7 +134,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       super.method4274(var1);
       if (this.field5054.nextInt(300) == 0) {
          ItemStack var4 = this.method3090();
-         if (var4.method32107() == Class8514.field38148) {
+         if (var4.getItem() == Items.field38148) {
             Map var5 = Class7858.method26312(var4);
             var5.putIfAbsent(Class8122.field34931, 1);
             Class7858.method26314(var5, var4);
@@ -182,13 +182,13 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
-      if (!(var4.method32107() instanceof Class3301)) {
-         Class3257 var5 = var4.method32107();
+      if (!(var4.getItem() instanceof Class3301)) {
+         Item var5 = var4.getItem();
          if (this.method4544(var5)) {
             this.method3134(var1);
             ItemStack var6 = this.field5711.method3676(var4);
-            if (!var6.method32105()) {
-               var4.method32180(var6.method32179());
+            if (!var6.isEmpty()) {
+               var4.method32180(var6.getCount());
             } else {
                var1.method2904();
             }
@@ -198,8 +198,8 @@ public class Class1024 extends Class1025 implements Class1023 {
       }
    }
 
-   private boolean method4544(Class3257 var1) {
-      return this.method4552() && var1 == Class8514.field38092;
+   private boolean method4544(Item var1) {
+      return this.method4552() && var1 == Items.field38092;
    }
 
    @Override
@@ -222,7 +222,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       Class7699 var5 = this.method4551();
       boolean var6 = this.field5054.nextFloat() <= var5.method25436();
       if (var6) {
-         ItemStack var7 = new ItemStack(Class8514.field38148);
+         ItemStack var7 = new ItemStack(Items.field38148);
          HashMap var8 = Maps.newHashMap();
          if (var1 <= var5.method25435(Class2197.field14353)) {
             if (var1 > var5.method25435(Class2197.field14352)) {

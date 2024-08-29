@@ -27,29 +27,29 @@ public class Class3361 extends Class3359 {
 
    @Override
    public String method11566() {
-      return this.method11581().method11719();
+      return this.method11581().getTranslationKey();
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      return var2.method6738(var3.method8349(var1.<Direction>method23463(field18910).method536())).method23384().method31086();
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+      return var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18910).method536())).method23384().method31086();
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == var1.<Direction>method23463(field18910).method536() && !var1.method23443(var4, var5)
          ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field18911.get(var1.<Direction>method23463(field18910));
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
-      Class7380 var4 = this.method11579();
+   public BlockState method11495(Class5909 var1) {
+      BlockState var4 = this.method11579();
       World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Direction[] var7 = var1.method18349();
@@ -68,17 +68,17 @@ public class Class3361 extends Class3359 {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field18910, var2.method252(var1.<Direction>method23463(field18910)));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23395(var2.method8749(var1.<Direction>method23463(field18910)));
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18910);
    }
 }

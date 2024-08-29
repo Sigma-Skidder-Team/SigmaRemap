@@ -4,7 +4,7 @@ import com.google.common.collect.UnmodifiableIterator;
 import java.nio.ByteBuffer;
 
 public class Class8154 {
-   public static String method28289(Class5425 var0) {
+   public static String method28289(BufferBuilder var0) {
       int var3 = var0.method17080();
       String var4 = "";
       byte var5 = -1;
@@ -36,7 +36,7 @@ public class Class8154 {
       return var6.toString();
    }
 
-   private static String method28290(int var0, Class5425 var1) {
+   private static String method28290(int var0, BufferBuilder var1) {
       StringBuffer var4 = new StringBuffer();
       ByteBuffer var5 = var1.method17082();
       Class7831 var6 = var1.method17089();

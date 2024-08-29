@@ -12,9 +12,9 @@ public class Class8472 {
    }
 
    public Class8472(BlockPos var1) {
-      this.field36296 = (double)var1.method8304();
+      this.field36296 = (double)var1.getX();
       this.field36297 = (double)var1.getY();
-      this.field36298 = (double)var1.method8306();
+      this.field36298 = (double)var1.getZ();
    }
 
    public double method29876() {

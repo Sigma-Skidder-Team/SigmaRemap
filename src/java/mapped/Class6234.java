@@ -9,10 +9,10 @@ public final class Class6234 extends Class6230 {
       this.method19204(true);
       Direction var6 = var1.method11324().<Direction>method23463(Class3357.field18899);
       BlockPos var7 = var1.method11323().method8349(var6);
-      Class7380 var8 = var5.method6738(var7);
+      BlockState var8 = var5.getBlockState(var7);
       if (!Class3397.method12012(var5, var7, var6)) {
          if (!Class3244.method11656(var8)) {
-            if (!(var8.method23383() instanceof Class3458)) {
+            if (!(var8.getBlock() instanceof Class3458)) {
                this.method19204(false);
             } else {
                Class3458.method12131(var5, var7);

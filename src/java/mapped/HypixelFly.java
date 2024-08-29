@@ -23,11 +23,11 @@ public class HypixelFly extends Module {
 
     public HypixelFly() {
         super(ModuleCategory.MOVEMENT, "Hypixel", "Fly for Hypixel");
-        this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method18631("Fast"));
-        this.method15972(new Class6009<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
-        this.method15972(new Class6004("No Collision", "Prevents block collison.", true));
-        this.method15972(new Class6009<Float>("Timer Boost", "Boost strength", 2.5F, Float.class, 1.0F, 3.0F, 0.1F));
-        this.method15972(new Class6009<Float>("Timer Duration", "Boost duration", 0.3F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method18631("Fast"));
+        this.registerSetting(new Class6009<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
+        this.registerSetting(new BooleanSetting("No Collision", "Prevents block collison.", true));
+        this.registerSetting(new Class6009<Float>("Timer Boost", "Boost strength", 2.5F, Float.class, 1.0F, 3.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Timer Duration", "Boost duration", 0.3F, Float.class, 0.1F, 1.0F, 0.01F));
     }
 
     @Override
@@ -74,7 +74,7 @@ public class HypixelFly extends Module {
 
     @EventTarget
     @Class5631
-    public void method16257(Class4418 var1) {
+    public void method16257(WorldLoadEvent var1) {
         this.field23559 = 0;
         this.field23564 = new Timer();
         this.field23565 = null;
@@ -97,7 +97,7 @@ public class HypixelFly extends Module {
     @Class5631
     @HigestPriority
     public void method16259(Class4396 var1) {
-        if (mc.getClientPlayNetHandler() != null && Class5628.method17716()) {
+        if (mc.getConnection() != null && Class5628.method17716()) {
             Packet var4 = var1.method13898();
             if (this.method15996()) {
                 if (var4 instanceof Class5473) {

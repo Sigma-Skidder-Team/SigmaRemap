@@ -29,7 +29,7 @@ public abstract class Class6764 {
    }
 
    public Class7176 method20643(BlockPos var1) {
-      return this.method20641(var1.method8304(), var1.getY(), var1.method8306());
+      return this.method20641(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public Class7176 method20641(int var1, int var2, int var3) {

@@ -6,11 +6,11 @@ public class Class5819 extends Class5812 {
    private final Class8202 field25495;
    private final Class5839 field25496;
 
-   public Class5819(int var1, Class974 var2) {
+   public Class5819(int var1, PlayerInventory var2) {
       this(var1, var2, new Class927(5), new Class8206(2));
    }
 
-   public Class5819(int var1, Class974 var2, Class920 var3, Class8202 var4) {
+   public Class5819(int var1, PlayerInventory var2, Class920 var3, Class8202 var4) {
       super(Class8298.field35658, var1);
       method18122(var3, 5);
       method18123(var4, 2);
@@ -49,7 +49,7 @@ public class Class5819 extends Class5812 {
          if ((var2 < 0 || var2 > 2) && var2 != 3 && var2 != 4) {
             if (!Class5864.method18282(var5)) {
                if (!this.field25496.method18259(var7)) {
-                  if (Class5840.method18275(var5) && var5.method32179() == 1) {
+                  if (Class5840.method18275(var5) && var5.getCount() == 1) {
                      if (!this.method18142(var7, 0, 3, false)) {
                         return ItemStack.EMPTY;
                      }
@@ -78,13 +78,13 @@ public class Class5819 extends Class5812 {
             var6.method18260(var7, var5);
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 

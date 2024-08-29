@@ -35,7 +35,7 @@ public class Class8377 {
                   )
                   .apply(var1, Class8377::new)
          )
-         .orElseGet(Util.method38529("Failed to read POI section: ", field35948::error), () -> new Class8377(var0, false, ImmutableList.of()));
+         .orElseGet(Util.func_240982_a_("Failed to read POI section: ", field35948::error), () -> new Class8377(var0, false, ImmutableList.of()));
    }
 
    public Class8377(Runnable var1) {

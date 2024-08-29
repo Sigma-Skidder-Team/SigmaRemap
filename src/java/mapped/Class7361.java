@@ -23,7 +23,7 @@ public abstract class Class7361 implements Class7373 {
    }
 
    @Override
-   public void method23361(Class1001 var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
+   public void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
    }
 
    @Override

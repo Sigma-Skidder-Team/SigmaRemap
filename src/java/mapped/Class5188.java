@@ -32,16 +32,16 @@ public class Class5188 extends Module {
                 if (!var8.method3342()) {
                     Class8513 var9 = (Class8513) var7.getValue();
                     String var10 = var8.getName().getUnformattedComponentText();
-                    int var11 = Class7925.field33952.method23942(var10) + 8;
+                    int var11 = ClassicDecryption.bold16.method23942(var10) + 8;
                     int var12 = Math.round(var9.field37220);
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
                     Class3192.method11424((float) var12, (float) var13, (float) var11, 20.0F, Class5628.method17688(Class1979.field12891.field12910, 0.5F));
                     Class3192.method11439(
-                            Class7925.field33952, (float) (var12 + 3), (float) var13, var10, Class5628.method17688(Class1979.field12891.field12910, 0.5F)
+                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, Class5628.method17688(Class1979.field12891.field12910, 0.5F)
                     );
-                    Class3192.method11439(Class7925.field33952, (float) (var12 + 3), (float) (var13 - 1), var10, Class1979.field12896.field12910);
+                    Class3192.method11439(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, Class1979.field12896.field12910);
                     GL11.glPopMatrix();
                     List var14 = Class7789.method25877(var8);
                     if (var14.size() != 0) {
@@ -53,17 +53,17 @@ public class Class5188 extends Module {
                             int var17 = var12 + var16 * var5;
                             ItemStack var18 = (ItemStack) var14.get(var16);
                             int var19 = var17 + 6;
-                            Class41 var20 = var18.method32147();
+                            ListNBT var20 = var18.method32147();
                             int var21 = var13 - Math.max(0, var20.size() - 4) * 8 - 2;
 
                             for (int var22 = 0; var22 < var20.size(); var22++) {
-                                Class39 var23 = var20.method153(var22);
+                                CompoundNBT var23 = var20.method153(var22);
                                 int var24 = var22 * 8 + 10;
                                 Registry.field16073.method9187(ResourceLocation.method8289(var23.method126("id"))).ifPresent(var1x -> {
                                     String var4x = var1x.method18820(1).getUnformattedComponentText();
                                     String var5x = "§f" + var4x.substring(0, Math.min(2, var4x.length()));
                                     int var6 = 0;
-                                    if (var23.method118("lvl")) {
+                                    if (var23.contains("lvl")) {
                                         var6 = var23.method122("lvl");
                                     }
 

@@ -4,7 +4,7 @@ public class Class5744 extends Class5651<Class1099, Class2797<Class1099>> {
    private static final ResourceLocation field25167 = new ResourceLocation("textures/entity/zombie/zombie.png");
    private final float field25168;
 
-   public Class5744(Class8853 var1, float var2) {
+   public Class5744(EntityRendererManager var1, float var2) {
       super(var1, new Class2796(), 0.5F * var2);
       this.field25168 = var2;
       this.method17880(new Class242<Class1099, Class2797<Class1099>>(this));

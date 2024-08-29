@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3266 extends Class3257 {
+public class Class3266 extends Item {
    private static String[] field18759;
    private final Class2283 field18760;
 

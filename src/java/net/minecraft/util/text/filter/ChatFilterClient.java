@@ -142,7 +142,7 @@ public class ChatFilterClient implements AutoCloseable {
       i.setRequestProperty("Content-Type", "application/json; charset=utf-8");
       i.setRequestProperty("Accept", "application/json");
       i.setRequestProperty("Authorization", "Basic " + this.field_244555_g);
-      i.setRequestProperty("User-Agent", "Minecraft server" + SharedConstants.method34773().getName());
+      i.setRequestProperty("User-Agent", "Minecraft server" + SharedConstants.getVersion().getName());
 
       try (OutputStreamWriter var6 = new OutputStreamWriter(i.getOutputStream(), StandardCharsets.UTF_8)) {
          JsonWriter var8 = new JsonWriter(var6);

@@ -13,23 +13,23 @@ public class Class6391 {
    private static String[] field27972;
    public static final Class6391 field27973 = new Class6391();
    private final List<Class7781> field27974 = Lists.newArrayList();
-   private final List<Class7202> field27975;
+   private final List<IBakedModel> field27975;
    private Class7704 field27976;
    public static ResourceLocation field27977 = null;
 
    private Class6391() {
-      this.field27975 = Collections.<Class7202>emptyList();
+      this.field27975 = Collections.<IBakedModel>emptyList();
    }
 
    public Class6391(Class8968 var1, Class7496 var2, Function<ResourceLocation, Class7495> var3, List<Class7781> var4) {
       this(var1, var2, var3, var1.method32857()::method7289, var4);
    }
 
-   public Class6391(Class8968 var1, Class7495 var2, Function<ResourceLocation, Class7495> var3, Function<Class7826, Class1713> var4, List<Class7781> var5) {
-      this.field27975 = var5.stream().<Class7202>map(var4x -> {
+   public Class6391(Class8968 var1, Class7495 var2, Function<ResourceLocation, Class7495> var3, Function<Class7826, TextureAtlasSprite> var4, List<Class7781> var5) {
+      this.field27975 = var5.stream().<IBakedModel>map(var4x -> {
          Class7495 var7 = (Class7495)var3.apply(var4x.method25780());
          return !Objects.equals(var7, var2) ? var1.method32848(var4x.method25780(), Class1901.field11159, var4) : null;
-      }).collect(Collectors.<Class7202>toList());
+      }).collect(Collectors.<IBakedModel>toList());
       Collections.reverse(this.field27975);
 
       for (int var8 = var5.size() - 1; var8 >= 0; var8--) {
@@ -42,7 +42,7 @@ public class Class6391 {
    }
 
    @Nullable
-   public Class7202 method19424(Class7202 var1, ItemStack var2, Class1656 var3, Class880 var4) {
+   public IBakedModel method19424(IBakedModel var1, ItemStack var2, ClientWorld var3, Class880 var4) {
       boolean var7 = Class7944.method26953();
       if (var7) {
          field27977 = null;
@@ -58,7 +58,7 @@ public class Class6391 {
                      field27977 = this.field27974.get(var12).method25780();
                   }
 
-                  Class7202 var13 = this.field27975.get(var12);
+                  IBakedModel var13 = this.field27975.get(var12);
                   if (var13 != null) {
                      return var13;
                   }
@@ -71,7 +71,7 @@ public class Class6391 {
          for (int var11 = 0; var11 < this.field27974.size(); var11++) {
             Class7781 var9 = this.field27974.get(var11);
             if (var9.method25781(var2, var3, var4)) {
-               Class7202 var10 = this.field27975.get(var11);
+               IBakedModel var10 = this.field27975.get(var11);
                if (var7) {
                   field27977 = var9.method25780();
                }

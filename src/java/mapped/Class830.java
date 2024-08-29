@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class830 extends Class829 {
+public class Class830 extends ConfirmScreen {
    private final ITextComponent field4606;
    private final ITextComponent field4607;
    private final String field4608;
@@ -13,8 +13,8 @@ public class Class830 extends Class829 {
 
    public Class830(BooleanConsumer var1, String var2, boolean var3) {
       super(var1, new TranslationTextComponent(!var3 ? "chat.link.confirm" : "chat.link.confirmTrusted"), new StringTextComponent(var2));
-      this.field4602 = (ITextComponent)(!var3 ? Class7127.field30660 : new TranslationTextComponent("chat.link.open"));
-      this.field4603 = !var3 ? Class7127.field30661 : Class7127.field30659;
+      this.field4602 = (ITextComponent)(!var3 ? DialogTexts.field30660 : new TranslationTextComponent("chat.link.open"));
+      this.field4603 = !var3 ? DialogTexts.field30661 : DialogTexts.GUI_CANCEL;
       this.field4607 = new TranslationTextComponent("chat.copy");
       this.field4606 = new TranslationTextComponent("chat.link.warning");
       this.field4609 = !var3;
@@ -39,7 +39,7 @@ public class Class830 extends Class829 {
    }
 
    public void method2539() {
-      this.field4562.field1302.method36350(this.field4608);
+      this.field4562.keyboardListener.method36350(this.field4608);
    }
 
    @Override

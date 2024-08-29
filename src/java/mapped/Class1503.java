@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 public class Class1503 implements Runnable {
    public final Map<BlockPos, Class8189> field8113;
-   public final Map<BlockPos, Class7380> field8114;
+   public final Map<BlockPos, BlockState> field8114;
    public final Class8982 field8115;
 
    public Class1503(Class8982 var1, Map var2, Map var3) {
@@ -22,7 +22,7 @@ public class Class1503 implements Runnable {
          }
       }
 
-      for (Entry<BlockPos, Class7380> var6 : this.field8114.entrySet()) {
+      for (Entry<BlockPos, BlockState> var6 : this.field8114.entrySet()) {
          if (var6.getValue() != null) {
             Minecraft.getInstance().world.method6730(var6.getKey(), var6.getValue());
          }

@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public abstract class Class7377 extends Class7378<Block, Class7380> {
+public abstract class Class7377 extends Class7378<Block, BlockState> {
    private final int field31564;
    private final boolean field31565;
    private final boolean field31566;
@@ -26,7 +26,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    private final Class8609 field31576;
    public Class6486 field31577;
 
-   public Class7377(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7380> var3) {
+   public Class7377(Block var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
       super(var1, var2, var3);
       AbstractBlock var6 = var1.field19013;
       this.field31564 = AbstractBlock.method26654(var6).applyAsInt(this.method23457());
@@ -45,12 +45,12 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public void method23382() {
-      if (!this.method23383().method11582()) {
+      if (!this.getBlock().method11582()) {
          this.field31577 = new Class6486(this.method23457());
       }
    }
 
-   public Block method23383() {
+   public Block getBlock() {
       return this.field31579;
    }
 
@@ -58,16 +58,16 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.field31567;
    }
 
-   public boolean method23385(Class1665 var1, BlockPos var2, Class8992<?> var3) {
-      return AbstractBlock.method26664(this.method23383().field19013).method38752(this.method23457(), var1, var2, var3);
+   public boolean method23385(Class1665 var1, BlockPos var2, EntityType<?> var3) {
+      return AbstractBlock.method26664(this.getBlock().field19013).method38752(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23386(Class1665 var1, BlockPos var2) {
-      return this.field31577 == null ? this.method23383().method11493(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
+      return this.field31577 == null ? this.getBlock().method11493(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
    }
 
    public int method23387(Class1665 var1, BlockPos var2) {
-      return this.field31577 == null ? this.method23383().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
+      return this.field31577 == null ? this.getBlock().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
    }
 
    public Class6408 method23388(Class1665 var1, BlockPos var2, Direction var3) {
@@ -77,7 +77,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public Class6408 method23389(Class1665 var1, BlockPos var2) {
-      return this.method23383().method11503(this.method23457(), var1, var2);
+      return this.getBlock().method11503(this.method23457(), var1, var2);
    }
 
    public boolean method23390() {
@@ -94,7 +94,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return !var3.method13971() ? this.field31564 : 1;
    }
 
-   public boolean method23393() {
+   public boolean isAir() {
       return this.field31566;
    }
 
@@ -102,16 +102,16 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.field31568;
    }
 
-   public Class7380 method23395(Class80 var1) {
-      return this.method23383().method11500(this.method23457(), var1);
+   public BlockState method23395(Class80 var1) {
+      return this.getBlock().method11500(this.method23457(), var1);
    }
 
-   public Class7380 method23396(Class2089 var1) {
-      return this.method23383().method11501(this.method23457(), var1);
+   public BlockState method23396(Class2089 var1) {
+      return this.getBlock().method11501(this.method23457(), var1);
    }
 
-   public Class1855 method23397() {
-      return this.method23383().method11526(this.method23457());
+   public BlockRenderType getRenderType() {
+      return this.getBlock().method11526(this.method23457());
    }
 
    public boolean method23398(Class1665 var1, BlockPos var2) {
@@ -119,7 +119,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public float method23399(Class1665 var1, BlockPos var2) {
-      return this.method23383().method11636(this.method23457(), var1, var2);
+      return this.getBlock().method11636(this.method23457(), var1, var2);
    }
 
    public boolean method23400(Class1665 var1, BlockPos var2) {
@@ -127,19 +127,19 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public boolean method23401() {
-      return this.method23383().method11516(this.method23457());
+      return this.getBlock().method11516(this.method23457());
    }
 
    public int method23402(Class1665 var1, BlockPos var2, Direction var3) {
-      return this.method23383().method11514(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11514(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23403() {
-      return this.method23383().method11648(this.method23457());
+      return this.getBlock().method11648(this.method23457());
    }
 
    public int method23404(World var1, BlockPos var2) {
-      return this.method23383().method11649(this.method23457(), var1, var2);
+      return this.getBlock().method11649(this.method23457(), var1, var2);
    }
 
    public float method23405(Class1665 var1, BlockPos var2) {
@@ -147,20 +147,20 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public float method23406(PlayerEntity var1, Class1665 var2, BlockPos var3) {
-      return this.method23383().method11997(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11997(this.method23457(), var1, var2, var3);
    }
 
    public int method23407(Class1665 var1, BlockPos var2, Direction var3) {
-      return this.method23383().method11515(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11515(this.method23457(), var1, var2, var3);
    }
 
    public Class2315 method23408() {
-      return this.method23383().method11689(this.method23457());
+      return this.getBlock().method11689(this.method23457());
    }
 
    public boolean method23409(Class1665 var1, BlockPos var2) {
       if (this.field31577 == null) {
-         Class7380 var5 = this.method23457();
+         BlockState var5 = this.method23457();
          return !var5.method23410() ? false : Block.method11550(var5.method23389(var1, var2));
       } else {
          return this.field31577.field28438;
@@ -171,8 +171,8 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.field31571;
    }
 
-   public boolean method23411(Class7380 var1, Direction var2) {
-      return this.method23383().method11634(this.method23457(), var1, var2);
+   public boolean method23411(BlockState var1, Direction var2) {
+      return this.getBlock().method11634(this.method23457(), var1, var2);
    }
 
    public Class6408 method23412(Class1665 var1, BlockPos var2) {
@@ -180,7 +180,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public Class6408 method23413(Class1665 var1, BlockPos var2, Class4832 var3) {
-      return this.method23383().method11483(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11483(this.method23457(), var1, var2, var3);
    }
 
    public Class6408 method23414(Class1665 var1, BlockPos var2) {
@@ -188,19 +188,19 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public Class6408 method23415(Class1665 var1, BlockPos var2, Class4832 var3) {
-      return this.method23383().method11502(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11502(this.method23457(), var1, var2, var3);
    }
 
    public Class6408 method23416(Class1665 var1, BlockPos var2) {
-      return this.method23383().method11995(this.method23457(), var1, var2);
+      return this.getBlock().method11995(this.method23457(), var1, var2);
    }
 
    public Class6408 method23417(Class1665 var1, BlockPos var2, Class4832 var3) {
-      return this.method23383().method11635(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11635(this.method23457(), var1, var2, var3);
    }
 
    public Class6408 method23418(Class1665 var1, BlockPos var2) {
-      return this.method23383().method11938(this.method23457(), var1, var2);
+      return this.getBlock().method11938(this.method23457(), var1, var2);
    }
 
    public final boolean method23419(Class1665 var1, BlockPos var2, Entity var3) {
@@ -212,9 +212,9 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public Vector3d method23421(Class1665 var1, BlockPos var2) {
-      Class2260 var5 = this.method23383().method11994();
+      Class2260 var5 = this.getBlock().method11994();
       if (var5 != Class2260.field14702) {
-         long var6 = MathHelper.method37810(var2.method8304(), 0, var2.method8306());
+         long var6 = MathHelper.method37810(var2.getX(), 0, var2.getZ());
          return new Vector3d(
             ((double)((float)(var6 & 15L) / 15.0F) - 0.5) * 0.5,
             var5 != Class2260.field14704 ? 0.0 : ((double)((float)(var6 >> 4 & 15L) / 15.0F) - 1.0) * 0.2,
@@ -226,11 +226,11 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public boolean method23422(World var1, BlockPos var2, int var3, int var4) {
-      return this.method23383().method11647(this.method23457(), var1, var2, var3, var4);
+      return this.getBlock().method11647(this.method23457(), var1, var2, var3, var4);
    }
 
    public void method23423(World var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
-      this.method23383().method11506(this.method23457(), var1, var2, var3, var4, var5);
+      this.getBlock().method11506(this.method23457(), var1, var2, var3, var4, var5);
    }
 
    public final void method23424(Class1660 var1, BlockPos var2, int var3) {
@@ -238,13 +238,13 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public final void method23425(Class1660 var1, BlockPos var2, int var3, int var4) {
-      this.method23383();
+      this.getBlock();
       Mutable var7 = new Mutable();
 
       for (Direction var11 : Class3390.field19003) {
          var7.method8377(var2, var11);
-         Class7380 var12 = var1.method6738(var7);
-         Class7380 var13 = var12.method23439(var11.method536(), this.method23457(), var1, var7, var2);
+         BlockState var12 = var1.getBlockState(var7);
+         BlockState var13 = var12.method23439(var11.method536(), this.method23457(), var1, var7, var2);
          Block.method11544(var12, var13, var1, var7, var3, var4);
       }
    }
@@ -254,43 +254,43 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
    }
 
    public void method23427(Class1660 var1, BlockPos var2, int var3, int var4) {
-      this.method23383().method11618(this.method23457(), var1, var2, var3, var4);
+      this.getBlock().method11618(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23428(World var1, BlockPos var2, Class7380 var3, boolean var4) {
-      this.method23383().method11589(this.method23457(), var1, var2, var3, var4);
+   public void method23428(World var1, BlockPos var2, BlockState var3, boolean var4) {
+      this.getBlock().method11589(this.method23457(), var1, var2, var3, var4);
    }
 
-   public void method23429(World var1, BlockPos var2, Class7380 var3, boolean var4) {
-      this.method23383().method11513(this.method23457(), var1, var2, var3, var4);
+   public void method23429(World var1, BlockPos var2, BlockState var3, boolean var4) {
+      this.getBlock().method11513(this.method23457(), var1, var2, var3, var4);
    }
 
    public void method23430(ServerWorld var1, BlockPos var2, Random var3) {
-      this.method23383().method11522(this.method23457(), var1, var2, var3);
+      this.getBlock().method11522(this.method23457(), var1, var2, var3);
    }
 
    public void method23431(ServerWorld var1, BlockPos var2, Random var3) {
-      this.method23383().method11484(this.method23457(), var1, var2, var3);
+      this.getBlock().method11484(this.method23457(), var1, var2, var3);
    }
 
    public void method23432(World var1, BlockPos var2, Entity var3) {
-      this.method23383().method11523(this.method23457(), var1, var2, var3);
+      this.getBlock().method11523(this.method23457(), var1, var2, var3);
    }
 
    public void method23433(ServerWorld var1, BlockPos var2, ItemStack var3) {
-      this.method23383().method11965(this.method23457(), var1, var2, var3);
+      this.getBlock().method11965(this.method23457(), var1, var2, var3);
    }
 
    public List<ItemStack> method23434(Class9464 var1) {
-      return this.method23383().method11697(this.method23457(), var1);
+      return this.getBlock().method11697(this.method23457(), var1);
    }
 
-   public ActionResultType method23435(World var1, PlayerEntity var2, Hand var3, Class8711 var4) {
-      return this.method23383().method11505(this.method23457(), var1, var4.method31423(), var2, var3, var4);
+   public ActionResultType method23435(World var1, PlayerEntity var2, Hand var3, BlockRayTraceResult var4) {
+      return this.getBlock().method11505(this.method23457(), var1, var4.getPos(), var2, var3, var4);
    }
 
    public void method23436(World var1, BlockPos var2, PlayerEntity var3) {
-      this.method23383().method11602(this.method23457(), var1, var2, var3);
+      this.getBlock().method11602(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23437(Class1665 var1, BlockPos var2) {
@@ -301,24 +301,24 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.field31574.method30847(this.method23457(), var1, var2);
    }
 
-   public Class7380 method23439(Direction var1, Class7380 var2, Class1660 var3, BlockPos var4, BlockPos var5) {
-      return this.method23383().method11491(this.method23457(), var1, var2, var3, var4, var5);
+   public BlockState method23439(Direction var1, BlockState var2, Class1660 var3, BlockPos var4, BlockPos var5) {
+      return this.getBlock().method11491(this.method23457(), var1, var2, var3, var4, var5);
    }
 
    public boolean method23440(Class1665 var1, BlockPos var2, Class1947 var3) {
-      return this.method23383().method11494(this.method23457(), var1, var2, var3);
+      return this.getBlock().method11494(this.method23457(), var1, var2, var3);
    }
 
    public boolean method23441(Class5909 var1) {
-      return this.method23383().method11497(this.method23457(), var1);
+      return this.getBlock().method11497(this.method23457(), var1);
    }
 
    public boolean method23442(Class7631 var1) {
-      return this.method23383().method11650(this.method23457(), var1);
+      return this.getBlock().method11650(this.method23457(), var1);
    }
 
    public boolean method23443(Class1662 var1, BlockPos var2) {
-      return this.method23383().method11492(this.method23457(), var1, var2);
+      return this.getBlock().method11492(this.method23457(), var1, var2);
    }
 
    public boolean method23444(Class1665 var1, BlockPos var2) {
@@ -327,39 +327,39 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
 
    @Nullable
    public Class949 method23445(World var1, BlockPos var2) {
-      return this.method23383().method11528(this.method23457(), var1, var2);
+      return this.getBlock().method11528(this.method23457(), var1, var2);
    }
 
    public boolean method23446(Class7608<Block> var1) {
-      return this.method23383().method11540(var1);
+      return this.getBlock().method11540(var1);
    }
 
    public boolean method23447(Class7608<Block> var1, Predicate<Class7377> var2) {
-      return this.method23383().method11540(var1) && var2.test(this);
+      return this.getBlock().method11540(var1) && var2.test(this);
    }
 
    public boolean method23448(Block var1) {
-      return this.method23383().method11541(var1);
+      return this.getBlock().method11541(var1);
    }
 
    public Class7379 method23449() {
-      return this.method23383().method11498(this.method23457());
+      return this.getBlock().method11498(this.method23457());
    }
 
    public boolean method23450() {
-      return this.method23383().method11499(this.method23457());
+      return this.getBlock().method11499(this.method23457());
    }
 
    public long method23451(BlockPos var1) {
-      return this.method23383().method11691(this.method23457(), var1);
+      return this.getBlock().method11691(this.method23457(), var1);
    }
 
    public Class8447 method23452() {
-      return this.method23383().method11580(this.method23457());
+      return this.getBlock().method11580(this.method23457());
    }
 
-   public void method23453(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
-      this.method23383().method11595(var1, var2, var3, var4);
+   public void method23453(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+      this.getBlock().method11595(var1, var2, var3, var4);
    }
 
    public boolean method23454(Class1665 var1, BlockPos var2, Direction var3) {
@@ -374,7 +374,7 @@ public abstract class Class7377 extends Class7378<Block, Class7380> {
       return this.field31577 == null ? Block.method11550(this.method23414(var1, var2)) : this.field31577.field28445;
    }
 
-   public abstract Class7380 method23457();
+   public abstract BlockState method23457();
 
    public boolean method23458() {
       return this.field31570;

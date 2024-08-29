@@ -3,7 +3,7 @@ package mapped;
 public class Class4602 extends Class4601 {
    private static String[] field22103;
 
-   public Class4602(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12, Class8975 var14) {
+   public Class4602(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, Class8975 var14) {
       super(var1, var2, var4, var6, var14, 0.0F);
       this.field22035 = 0.5F;
       this.method14515(1.0F);
@@ -29,7 +29,7 @@ public class Class4602 extends Class4601 {
          }
 
          this.method14511(this.field22044, this.field22045, this.field22046);
-         if (this.field22037.method6738(new BlockPos(this.field22041, this.field22042, this.field22043)).method23393()) {
+         if (this.field22037.getBlockState(new BlockPos(this.field22041, this.field22042, this.field22043)).isAir()) {
             this.field22045 -= 0.008F;
          }
 

@@ -29,7 +29,7 @@ public class Class7219 {
    private ResourceLocation field31047 = null;
    private String field31048 = null;
    private Class8486 field31049;
-   private Class264 field31050 = Class7944.method26874();
+   private WorldRenderer field31050 = Class7944.method26874();
 
    public Class7219(Class2828 var1) {
       var1.accept(this);
@@ -132,7 +132,7 @@ public class Class7219 {
 
    public void method22681(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (this.field31039 && (!this.field31040.isEmpty() || !this.field31041.isEmpty() || !this.field31042.isEmpty())) {
-         Class4520 var11 = null;
+         RenderType var11 = null;
          Class7735 var12 = null;
          if (this.field31047 != null) {
             if (this.field31050.field1020) {
@@ -150,7 +150,7 @@ public class Class7219 {
             this.field31049.method30009();
          }
 
-         var1.method35294();
+         var1.push();
          this.method22682(var1);
          this.method22683(var1.method35296(), var2, var3, var4, var5, var6, var7, var8);
          int var13 = this.field31041.size();
@@ -175,7 +175,7 @@ public class Class7219 {
    }
 
    public void method22682(MatrixStack var1) {
-      var1.method35291((double)(this.field31032 / 16.0F), (double)(this.field31033 / 16.0F), (double)(this.field31034 / 16.0F));
+      var1.translate((double)(this.field31032 / 16.0F), (double)(this.field31033 / 16.0F), (double)(this.field31034 / 16.0F));
       if (this.field31037 != 0.0F) {
          var1.method35293(Class7680.field32902.method25285(this.field31037));
       }

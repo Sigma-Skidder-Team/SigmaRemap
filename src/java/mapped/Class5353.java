@@ -21,8 +21,8 @@ public class Class5353 extends Module {
 
     public Class5353() {
         super(ModuleCategory.MOVEMENT, "TestSpeed", "Legit Sprint jumping.");
-        this.method15972(new Class6004("Sprint", "Sprints when walking", true));
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("Sprint", "Sprints when walking", true));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
     }
 
     @EventTarget
@@ -73,7 +73,7 @@ public class Class5353 extends Module {
     @LowerPriority
     public void method16798(Class4436 var1) {
         if (this.method15996() && !Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
-            if (!mc.gameSettings.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
+            if (!mc.gameSettings.field44636.isKeyDown() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
                 this.field23916 = Class9567.method37083()[0];
                 this.field23918 = 0;
                 var1.method14003(var1.method14001().method11348() * 1.05F);

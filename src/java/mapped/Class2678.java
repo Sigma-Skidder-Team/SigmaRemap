@@ -25,7 +25,7 @@ public class Class2678 extends Class2595 {
    public void method10805() {
       BlockPos var3 = this.field17074.method5271();
       if (var3 == null) {
-         var3 = this.field17074.method3432();
+         var3 = this.field17074.getPosition();
       }
 
       for (int var4 = 0; var4 < 3; var4++) {
@@ -34,13 +34,13 @@ public class Class2678 extends Class2595 {
             Class1100.method5285(this.field17074).nextInt(11) - 5,
             Class1100.method5286(this.field17074).nextInt(15) - 7
          );
-         if (this.field17074.field5024.method7007(var5)) {
+         if (this.field17074.world.method7007(var5)) {
             Class1100.method5287(this.field17074)
-               .method20813((double)var5.method8304() + 0.5, (double)var5.getY() + 0.5, (double)var5.method8306() + 0.5, 0.25);
+               .method20813((double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5, 0.25);
             if (this.field17074.method4232() == null) {
                this.field17074
                   .method4227()
-                  .method28042((double)var5.method8304() + 0.5, (double)var5.getY() + 0.5, (double)var5.method8306() + 0.5, 180.0F, 20.0F);
+                  .method28042((double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5, 180.0F, 20.0F);
             }
             break;
          }

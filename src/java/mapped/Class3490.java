@@ -17,7 +17,7 @@ public class Class3490 extends Class3194 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       Vector3d var7 = var1.method23421(var2, var3);
       return field19357.method19517(var7.field18048, var7.field18049, var7.field18050);
    }

@@ -32,29 +32,29 @@ public class Class1185 extends Class1178<Class1185> {
    public static final int field6407 = Class9470.method36520(255, 255, 255, 255);
    public static final int field6408 = Class9470.method36520(140, 255, 255, 255);
 
-   public Class1185(Minecraft var1, Class1147 var2, UUID var3, String var4, Supplier<ResourceLocation> var5) {
+   public Class1185(Minecraft var1, SocialInteractionsScreen var2, UUID var3, String var4, Supplier<ResourceLocation> var5) {
       this.field6388 = var1;
       this.field6390 = var3;
       this.field6391 = var4;
       this.field6392 = var5;
-      this.field6396 = var1.field1294.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
-      this.field6397 = var1.field1294.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
-      Class9645 var8 = var1.method1578();
+      this.field6396 = var1.fontRenderer.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
+      this.field6397 = var1.fontRenderer.method38828(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
+      FilterManager var8 = var1.func_244599_aA();
       if (!var1.player.getGameProfile().getId().equals(var3) && !var8.method37608(var3)) {
-         this.field6394 = new Class1244(this, 0, 0, 20, 20, 0, 38, 20, Class1147.field6215, 256, 256, var4x -> {
+         this.field6394 = new Class1244(this, 0, 0, 20, 20, 0, 38, 20, SocialInteractionsScreen.field6215, 256, 256, var4x -> {
             var8.method37604(var3);
             this.method5618(true, new TranslationTextComponent("gui.socialInteractions.hidden_in_chat", var4));
          }, (var3x, var4x, var5x, var6) -> {
-            this.field6398 = this.field6398 + var1.method1563();
+            this.field6398 = this.field6398 + var1.getTickLength();
             if (this.field6398 >= 10.0F) {
                var2.method5491(() -> method5621(var2, var4x, this.field6396, var5x, var6));
             }
          }, new TranslationTextComponent("gui.socialInteractions.hide"));
-         this.field6395 = new Class1245(this, 0, 0, 20, 20, 20, 38, 20, Class1147.field6215, 256, 256, var4x -> {
+         this.field6395 = new Class1245(this, 0, 0, 20, 20, 20, 38, 20, SocialInteractionsScreen.field6215, 256, 256, var4x -> {
             var8.method37605(var3);
             this.method5618(false, new TranslationTextComponent("gui.socialInteractions.shown_in_chat", var4));
          }, (var3x, var4x, var5x, var6) -> {
-            this.field6398 = this.field6398 + var1.method1563();
+            this.field6398 = this.field6398 + var1.getTickLength();
             if (this.field6398 >= 10.0F) {
                var2.method5491(() -> method5621(var2, var4x, this.field6397, var5x, var6));
             }
@@ -77,7 +77,7 @@ public class Class1185 extends Class1178<Class1185> {
       if (var16 != StringTextComponent.EMPTY) {
          Class1193.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6406);
          var17 = var3 + (var6 - 18) / 2;
-         this.field6388.field1294.method38805(var1, var16, (float)var15, (float)(var17 + 12), field6408);
+         this.field6388.fontRenderer.method38805(var1, var16, (float)var15, (float)(var17 + 12), field6408);
       } else {
          Class1193.method5686(var1, var4, var3, var4 + var5, var3 + var6, field6405);
          var17 = var3 + (var6 - 9) / 2;
@@ -88,7 +88,7 @@ public class Class1185 extends Class1178<Class1185> {
       RenderSystem.enableBlend();
       Class1193.method5698(var1, var13, var14, 24, 24, 40.0F, 8.0F, 8, 8, 64, 64);
       RenderSystem.disableBlend();
-      this.field6388.field1294.method38801(var1, this.field6391, (float)var15, (float)var17, field6407);
+      this.field6388.fontRenderer.method38801(var1, this.field6391, (float)var15, (float)var17, field6407);
       if (this.field6393) {
          Class1193.method5686(var1, var13, var14, var13 + 24, var14 + 24, field6404);
       }
@@ -139,8 +139,8 @@ public class Class1185 extends Class1178<Class1185> {
    }
 
    private ITextComponent method5620() {
-      boolean var3 = this.field6388.method1578().method37607(this.field6390);
-      boolean var4 = this.field6388.method1578().method37608(this.field6390);
+      boolean var3 = this.field6388.func_244599_aA().method37607(this.field6390);
+      boolean var4 = this.field6388.func_244599_aA().method37608(this.field6390);
       if (var4 && this.field6393) {
          return field6403;
       } else if (var3 && this.field6393) {
@@ -156,7 +156,7 @@ public class Class1185 extends Class1178<Class1185> {
       }
    }
 
-   private static void method5621(Class1147 var0, MatrixStack var1, List<Class9125> var2, int var3, int var4) {
+   private static void method5621(SocialInteractionsScreen var0, MatrixStack var1, List<Class9125> var2, int var3, int var4) {
       var0.method2461(var1, var2, var3, var4);
       var0.method5491((Runnable)null);
    }

@@ -10,8 +10,8 @@ public class Class5405 extends Class5404 {
       if (this.field24090.player == null) {
          return 0;
       } else {
-         Class7380 var7 = this.field24090.world.method6738(new BlockPos(var2, var3, var4));
-         return var7 != null ? Class9217.method34574(var7.method23383()) << 4 | Class9217.method34573(var7) : 0;
+         BlockState var7 = this.field24090.world.getBlockState(new BlockPos(var2, var3, var4));
+         return var7 != null ? Class9217.method34574(var7.getBlock()) << 4 | Class9217.method34573(var7) : 0;
       }
    }
 

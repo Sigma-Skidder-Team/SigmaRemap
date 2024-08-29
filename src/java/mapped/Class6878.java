@@ -8,10 +8,10 @@ public class Class6878 {
    @Nullable
    public static BlockPos method20940(ServerWorld var0, int var1, int var2, boolean var3) {
       Mutable var6 = new Mutable(var1, 0, var2);
-      Biome var7 = var0.method7003(var6);
+      Biome var7 = var0.getBiome(var6);
       boolean var8 = var0.method6812().method36876();
-      Class7380 var9 = var7.method32507().method24283().method28934();
-      if (var3 && !var9.method23383().method11540(Class7645.field32780)) {
+      BlockState var9 = var7.method32507().method24283().method28934();
+      if (var3 && !var9.getBlock().method11540(Class7645.field32780)) {
          return null;
       } else {
          Class1674 var10 = var0.method6824(var1 >> 4, var2 >> 4);
@@ -25,7 +25,7 @@ public class Class6878 {
             } else {
                for (int var13 = var11 + 1; var13 >= 0; var13--) {
                   var6.method8372(var1, var13, var2);
-                  Class7380 var14 = var0.method6738(var6);
+                  BlockState var14 = var0.getBlockState(var6);
                   if (!var14.method23449().method23474()) {
                      break;
                   }

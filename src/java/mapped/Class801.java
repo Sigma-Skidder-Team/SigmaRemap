@@ -18,14 +18,14 @@ public class Class801 extends Class798 {
    @Override
    public void method1921() {
       Minecraft var3 = Minecraft.getInstance();
-      var3.method1560(false);
-      var3.method1539().method25150();
+      var3.setConnectedToRealms(false);
+      var3.getPackFinder().clearResourcePack();
       Class9229.method34711(this.field4181.getString() + ": " + this.field4182.getString());
       this.field4183 = Class5991.method18584(this.field4568, this.field4182, this.field4564 - 50);
       this.field4185 = this.field4183.method18592() * 9;
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 2 + this.field4185 / 2 + 9, 200, 20, Class7127.field30663, var2 -> var3.displayGuiScreen(this.field4184)
+            this.field4564 / 2 - 100, this.field4565 / 2 + this.field4185 / 2 + 9, 200, 20, DialogTexts.field30663, var2 -> var3.displayGuiScreen(this.field4184)
          )
       );
    }

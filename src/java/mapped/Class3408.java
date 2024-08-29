@@ -13,23 +13,23 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19088;
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7007(var3.method8311())) {
          int var7 = 1;
 
-         while (var2.method6738(var3.method8340(var7)).method23448(this)) {
+         while (var2.getBlockState(var3.method8340(var7)).method23448(this)) {
             var7++;
          }
 
@@ -46,7 +46,7 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (!var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
@@ -55,9 +55,9 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      Class7380 var6 = var2.method6738(var3.method8313());
-      if (var6.method23383() == this) {
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+      BlockState var6 = var2.getBlockState(var3.method8313());
+      if (var6.getBlock() == this) {
          return true;
       } else {
          if (var6.method23448(Blocks.field36395)
@@ -69,7 +69,7 @@ public class Class3408 extends Block {
             BlockPos var7 = var3.method8313();
 
             for (Direction var9 : Class76.field161) {
-               Class7380 var10 = var2.method6738(var7.method8349(var9));
+               BlockState var10 = var2.getBlockState(var7.method8349(var9));
                Class7379 var11 = var2.method6739(var7.method8349(var9));
                if (var11.method23486(Class8953.field40469) || var10.method23448(Blocks.field36889)) {
                   return true;
@@ -82,7 +82,7 @@ public class Class3408 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19087);
    }
 }

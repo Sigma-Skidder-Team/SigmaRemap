@@ -14,7 +14,7 @@ public class Class5470 implements Packet<Class5116> {
    public Class5470() {
    }
 
-   public Class5470(Class998 var1) {
+   public Class5470(PaintingEntity var1) {
       this.field24276 = var1.method3205();
       this.field24277 = var1.getUniqueID();
       this.field24278 = var1.method4085();

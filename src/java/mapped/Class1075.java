@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class1075 extends AbstractHorseEntity {
    private static String[] field5918;
 
-   public Class1075(Class8992<? extends Class1075> var1, World var2) {
+   public Class1075(EntityType<? extends Class1075> var1, World var2) {
       super(var1, var2);
    }
 
@@ -44,7 +44,7 @@ public class Class1075 extends AbstractHorseEntity {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41108.method33215(var1);
+      return EntityType.field41108.method33215(var1);
    }
 
    @Override
@@ -54,10 +54,10 @@ public class Class1075 extends AbstractHorseEntity {
          if (!this.method3005()) {
             if (!var1.method2851()) {
                if (!this.method3329()) {
-                  if (!var5.method32105()) {
-                     if (var5.method32107() == Class8514.field37886 && !this.method4943()) {
+                  if (!var5.isEmpty()) {
+                     if (var5.getItem() == Items.field37886 && !this.method4943()) {
                         this.openGUI(var1);
-                        return ActionResultType.method9002(this.field5024.field9020);
+                        return ActionResultType.method9002(this.world.field9020);
                      }
 
                      ActionResultType var6 = var5.method32125(var1, this, var2);
@@ -67,13 +67,13 @@ public class Class1075 extends AbstractHorseEntity {
                   }
 
                   this.method4920(var1);
-                  return ActionResultType.method9002(this.field5024.field9020);
+                  return ActionResultType.method9002(this.world.field9020);
                } else {
                   return super.method4285(var1, var2);
                }
             } else {
                this.openGUI(var1);
-               return ActionResultType.method9002(this.field5024.field9020);
+               return ActionResultType.method9002(this.world.field9020);
             }
          } else {
             return super.method4285(var1, var2);

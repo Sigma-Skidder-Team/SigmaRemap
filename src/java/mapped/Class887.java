@@ -11,21 +11,21 @@ public class Class887 extends AbstractArrowEntity {
    private final Set<Class2023> field5118 = Sets.newHashSet();
    private boolean field5119;
 
-   public Class887(Class8992<? extends Class887> var1, World var2) {
+   public Class887(EntityType<? extends Class887> var1, World var2) {
       super(var1, var2);
    }
 
    public Class887(World var1, double var2, double var4, double var6) {
-      super(Class8992.field41007, var2, var4, var6, var1);
+      super(EntityType.field41007, var2, var4, var6, var1);
    }
 
    public Class887(World var1, Class880 var2) {
-      super(Class8992.field41007, var2, var1);
+      super(EntityType.field41007, var2, var1);
    }
 
    public void method3497(ItemStack var1) {
-      if (var1.method32107() != Class8514.field38117) {
-         if (var1.method32107() == Class8514.field37797) {
+      if (var1.getItem() != Items.field38117) {
+         if (var1.getItem() == Items.field37797) {
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
             this.field5063.method35446(field5116, -1);
@@ -49,7 +49,7 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    public static int method3498(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       return var3 != null && var3.method119("CustomPotionColor", 99) ? var3.method122("CustomPotionColor") : -1;
    }
 
@@ -76,9 +76,9 @@ public class Class887 extends AbstractArrowEntity {
    @Override
    public void tick() {
       super.tick();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (this.field5100 && this.field5101 != 0 && !this.field5118.isEmpty() && this.field5101 >= 600) {
-            this.field5024.method6786(this, (byte)0);
+            this.world.method6786(this, (byte)0);
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
             this.field5063.method35446(field5116, -1);
@@ -98,7 +98,7 @@ public class Class887 extends AbstractArrowEntity {
          double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
          for (int var11 = 0; var11 < var1; var11++) {
-            this.field5024.method6746(Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
+            this.world.method6746(Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
          }
       }
    }
@@ -113,10 +113,10 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.field5117 != Class8137.field34976 && this.field5117 != null) {
-         var1.method109("Potion", Registry.field16076.method9181(this.field5117).toString());
+         var1.method109("Potion", Registry.field16076.getKey(this.field5117).toString());
       }
 
       if (this.field5119) {
@@ -124,18 +124,18 @@ public class Class887 extends AbstractArrowEntity {
       }
 
       if (!this.field5118.isEmpty()) {
-         Class41 var4 = new Class41();
+         ListNBT var4 = new ListNBT();
 
          for (Class2023 var6 : this.field5118) {
-            var4.add(var6.method8637(new Class39()));
+            var4.add(var6.method8637(new CompoundNBT()));
          }
 
-         var1.method99("CustomPotionEffects", var4);
+         var1.put("CustomPotionEffects", var4);
       }
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.method119("Potion", 8)) {
          this.field5117 = Class9741.method38186(var1);
@@ -170,13 +170,13 @@ public class Class887 extends AbstractArrowEntity {
    @Override
    public ItemStack method3480() {
       if (this.field5118.isEmpty() && this.field5117 == Class8137.field34976) {
-         return new ItemStack(Class8514.field37797);
+         return new ItemStack(Items.field37797);
       } else {
-         ItemStack var3 = new ItemStack(Class8514.field38117);
+         ItemStack var3 = new ItemStack(Items.field38117);
          Class9741.method38187(var3, this.field5117);
          Class9741.method38188(var3, this.field5118);
          if (this.field5119) {
-            var3.method32143().method102("CustomPotionColor", this.method3502());
+            var3.getOrCreateTag().method102("CustomPotionColor", this.method3502());
          }
 
          return var3;
@@ -195,7 +195,7 @@ public class Class887 extends AbstractArrowEntity {
             double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
             for (int var11 = 0; var11 < 20; var11++) {
-               this.field5024.method6746(Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
+               this.world.method6746(Class7940.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
             }
          }
       }

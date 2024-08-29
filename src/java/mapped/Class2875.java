@@ -126,12 +126,12 @@ public class Class2875 extends Class2827<Class1007> {
 
    @Override
    public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      var1.method35294();
+      var1.push();
       float var11 = MathHelper.method37821(this.field17818, this.field17817.field5632, this.field17817.field5633);
       this.field17799.field31035 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2))) + 1.0) * 0.2F;
       float var12 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2) - 1.0F)) + 1.0);
       var12 = (var12 * var12 + var12 * 2.0F) * 0.05F;
-      var1.method35291(0.0, (double)(var12 - 2.0F), -3.0);
+      var1.translate(0.0, (double)(var12 - 2.0F), -3.0);
       var1.method35293(Class7680.field32898.method25286(var12 * 2.0F));
       float var13 = 0.0F;
       float var14 = 20.0F;
@@ -165,10 +165,10 @@ public class Class2875 extends Class2827<Class1007> {
       this.field17797.field31035 = MathHelper.method37829((double)this.field17817.method4333(6, var17, var31)) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
       this.field17797.field31037 = -MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
       this.field17797.method22680(var1, var2, var3, var4);
-      var1.method35294();
-      var1.method35291(0.0, 1.0, 0.0);
+      var1.push();
+      var1.translate(0.0, 1.0, 0.0);
       var1.method35293(Class7680.field32902.method25286(-var18 * 1.5F));
-      var1.method35291(0.0, -1.0, 0.0);
+      var1.translate(0.0, -1.0, 0.0);
       this.field17800.field31037 = 0.0F;
       this.field17800.method22680(var1, var2, var3, var4);
       float var33 = var11 * (float) (Math.PI * 2);

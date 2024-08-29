@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;
 
-public class Class3286 extends Class3257 {
+public class Class3286 extends Item {
    private final Class2154 field18796;
 
    public Class3286(Class2154 var1, Class5643 var2) {
@@ -25,6 +25,6 @@ public class Class3286 extends Class3257 {
    }
 
    public IFormattableTextComponent method11822() {
-      return new TranslationTextComponent(this.method11719() + ".desc");
+      return new TranslationTextComponent(this.getTranslationKey() + ".desc");
    }
 }

@@ -6,9 +6,9 @@ public class Class9244 {
    private static String[] field42533;
    private final ByteBuffer field42534;
    private final Class7831 field42535;
-   private Class1713[] field42536;
+   private TextureAtlasSprite[] field42536;
 
-   public Class9244(ByteBuffer var1, Class7831 var2, Class1713[] var3) {
+   public Class9244(ByteBuffer var1, Class7831 var2, TextureAtlasSprite[] var3) {
       this(var1, var2);
       this.field42536 = var3;
    }
@@ -29,7 +29,7 @@ public class Class9244 {
    }
 
    // $VF: synthetic method
-   public static Class1713[] method34766(Class9244 var0) {
+   public static TextureAtlasSprite[] method34766(Class9244 var0) {
       return var0.field42536;
    }
 }

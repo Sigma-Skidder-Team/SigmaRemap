@@ -16,7 +16,7 @@ public class Class2640 extends Class2595 {
    public Class2640(Class1046 var1, double var2) {
       this.field16966 = var1;
       this.field16970 = var2;
-      this.field16971 = var1.field5024;
+      this.field16971 = var1.world;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }
 
@@ -25,8 +25,8 @@ public class Class2640 extends Class2595 {
       if (this.field16966.method4232() == null) {
          if (this.field16971.method6740()) {
             if (this.field16966.method3327()) {
-               if (this.field16971.method7022(this.field16966.method3432())) {
-                  return this.field16966.method2943(Class2106.field13736).method32105() ? this.method10848() : false;
+               if (this.field16971.method7022(this.field16966.getPosition())) {
+                  return this.field16966.method2943(Class2106.field13736).isEmpty() ? this.method10848() : false;
                } else {
                   return false;
                }
@@ -66,7 +66,7 @@ public class Class2640 extends Class2595 {
    @Nullable
    public Vector3d method10849() {
       Random var3 = this.field16966.method3013();
-      BlockPos var4 = this.field16966.method3432();
+      BlockPos var4 = this.field16966.getPosition();
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = var4.method8336(var3.nextInt(20) - 10, var3.nextInt(6) - 3, var3.nextInt(20) - 10);

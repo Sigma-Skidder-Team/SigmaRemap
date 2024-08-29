@@ -28,7 +28,7 @@ public class Class1707 implements AutoCloseable {
       this.field9303 = new Class322<>(new Class7384(Class2262.values().length), Util.method38493(), "IOWorker-" + var3);
    }
 
-   public CompletableFuture<Void> method7411(Class7481 var1, Class39 var2) {
+   public CompletableFuture<Void> method7411(Class7481 var1, CompoundNBT var2) {
       return this.method7414(() -> {
          Class9713 var5 = this.field9305.computeIfAbsent(var1, var1xx -> new Class9713(var2));
          var5.field45380 = var2;
@@ -37,14 +37,14 @@ public class Class1707 implements AutoCloseable {
    }
 
    @Nullable
-   public Class39 method7412(Class7481 var1) throws IOException {
-      CompletableFuture<Class39> var4 = this.method7414(() -> {
+   public CompoundNBT method7412(Class7481 var1) throws IOException {
+      CompletableFuture<CompoundNBT> var4 = this.method7414(() -> {
          Class9713 var4x = this.field9305.get(var1);
          if (var4x != null) {
             return Either.left(Class9713.method38053(var4x));
          } else {
             try {
-               Class39 var5 = this.field9304.method7296(var1);
+               CompoundNBT var5 = this.field9304.method7296(var1);
                return Either.left(var5);
             } catch (Exception var6x) {
                field9301.warn("Failed to read chunk {}", var1, var6x);

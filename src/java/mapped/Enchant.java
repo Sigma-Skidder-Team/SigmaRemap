@@ -13,7 +13,7 @@ public class Enchant extends Command {
    public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
       if (var2.length == 2) {
          if (var2[1].method30895() == Class2193.field14336) {
-            if (!mc.field1337.method23151()) {
+            if (!mc.playerController.isNotCreative()) {
                Class6069 var6 = null;
                ItemStack var7 = mc.player.method3090().copy();
 
@@ -25,7 +25,7 @@ public class Enchant extends Command {
 
                if (var6 != null) {
                   var7.method32162(var6, var2[1].method30898());
-                  mc.getClientPlayNetHandler().sendPacket(new Class5514(36 + mc.player.field4902.field5443, var7));
+                  mc.getConnection().sendPacket(new Class5514(36 + mc.player.inventory.currentItem, var7));
                   var3.method20327("Requested server to apply " + var2[0].method30899() + " " + var2[1].method30898());
                } else {
                   throw new CommandException("Unknown enchant '" + var2[0].method30899() + "");

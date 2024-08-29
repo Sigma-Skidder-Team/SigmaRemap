@@ -85,9 +85,9 @@ public class Class9803 {
          Class1998 var9 = new Class1998(var2.method539(), var2.method540(), var2.method541());
          Class1998 var10 = var8.method8315(var9);
          return var0.method8336(
-            var9.method8304() * -var4 + var10.method8304() * var3 + var8.method8304() * var5,
+            var9.getX() * -var4 + var10.getX() * var3 + var8.getX() * var5,
             var9.getY() * -var4 + var10.getY() * var3 + var8.getY() * var5,
-            var9.method8306() * -var4 + var10.method8306() * var3 + var8.method8306() * var5
+            var9.getZ() * -var4 + var10.getZ() * var3 + var8.getZ() * var5
          );
       } else {
          throw new IllegalArgumentException("Invalid forwards & up combination");

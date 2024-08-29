@@ -6,11 +6,11 @@ public class Class5836 extends Class5812 {
    public final Class920 field25562 = new Class981(this, 2);
    private final Class921 field25563 = new Class922(this);
 
-   public Class5836(int var1, Class974 var2) {
+   public Class5836(int var1, PlayerInventory var2) {
       this(var1, var2, Class8786.field39521);
    }
 
-   public Class5836(int var1, Class974 var2, Class8786 var3) {
+   public Class5836(int var1, PlayerInventory var2, Class8786 var3) {
       super(Class8298.field35670, var1);
       this.field25560 = var3;
       this.method18124(new Class5854(this, this.field25562, 0, 15, 15));
@@ -38,8 +38,8 @@ public class Class5836 extends Class5812 {
       ItemStack var4 = this.field25562.method3618(0);
       ItemStack var5 = this.field25562.method3618(1);
       ItemStack var6 = this.field25563.method3618(2);
-      if (var6.method32105() || !var4.method32105() && !var5.method32105()) {
-         if (!var4.method32105() && !var5.method32105()) {
+      if (var6.isEmpty() || !var4.isEmpty() && !var5.isEmpty()) {
+         if (!var4.isEmpty() && !var5.isEmpty()) {
             this.method18239(var4, var5, var6);
          }
       } else {
@@ -49,22 +49,22 @@ public class Class5836 extends Class5812 {
 
    private void method18239(ItemStack var1, ItemStack var2, ItemStack var3) {
       this.field25560.method31716((var4, var5) -> {
-         Class3257 var8 = var2.method32107();
+         Item var8 = var2.getItem();
          Class7529 var9 = Class3316.method11860(var1, var4);
          if (var9 != null) {
             ItemStack var10;
-            if (var8 == Class8514.field37899 && !var9.field32323 && var9.field32321 < 4) {
+            if (var8 == Items.field37899 && !var9.field32323 && var9.field32321 < 4) {
                var10 = var1.copy();
                var10.method32180(1);
-               var10.method32143().method102("map_scale_direction", 1);
+               var10.getOrCreateTag().method102("map_scale_direction", 1);
                this.method18130();
-            } else if (var8 == Class8514.field37471 && !var9.field32323) {
+            } else if (var8 == Items.field37471 && !var9.field32323) {
                var10 = var1.copy();
                var10.method32180(1);
-               var10.method32143().method115("map_to_lock", true);
+               var10.getOrCreateTag().method115("map_to_lock", true);
                this.method18130();
             } else {
-               if (var8 != Class8514.field38056) {
+               if (var8 != Items.field38056) {
                   this.field25563.method3620(2);
                   this.method18130();
                   return;
@@ -94,12 +94,12 @@ public class Class5836 extends Class5812 {
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
          ItemStack var7 = var6.method18265();
-         Class3257 var8 = var7.method32107();
+         Item var8 = var7.getItem();
          var5 = var7.copy();
          if (var2 != 2) {
             if (var2 != 1 && var2 != 0) {
-               if (var8 != Class8514.field37955) {
-                  if (var8 != Class8514.field37899 && var8 != Class8514.field38056 && var8 != Class8514.field37471) {
+               if (var8 != Items.field37955) {
+                  if (var8 != Items.field37899 && var8 != Items.field38056 && var8 != Items.field37471) {
                      if (var2 >= 3 && var2 < 30) {
                         if (!this.method18142(var7, 30, 39, false)) {
                            return ItemStack.EMPTY;
@@ -117,7 +117,7 @@ public class Class5836 extends Class5812 {
                return ItemStack.EMPTY;
             }
          } else {
-            var8.method11725(var7, var1.field5024, var1);
+            var8.method11725(var7, var1.world, var1);
             if (!this.method18142(var7, 3, 39, true)) {
                return ItemStack.EMPTY;
             }
@@ -125,12 +125,12 @@ public class Class5836 extends Class5812 {
             var6.method18260(var7, var5);
          }
 
-         if (var7.method32105()) {
+         if (var7.isEmpty()) {
             var6.method18267(ItemStack.EMPTY);
          }
 
          var6.method18268();
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
@@ -145,7 +145,7 @@ public class Class5836 extends Class5812 {
    public void method18113(PlayerEntity var1) {
       super.method18113(var1);
       this.field25563.method3620(2);
-      this.field25560.method31716((var2, var3) -> this.method18135(var1, var1.field5024, this.field25562));
+      this.field25560.method31716((var2, var3) -> this.method18135(var1, var1.world, this.field25562));
    }
 
    // $VF: synthetic method

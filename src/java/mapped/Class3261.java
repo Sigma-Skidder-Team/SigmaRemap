@@ -33,7 +33,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (!method11755(var6)) {
-         if (var2.method2983(var6).method32105()) {
+         if (var2.method2983(var6).isEmpty()) {
             return Class6794.<ItemStack>method20699(var6);
          } else {
             if (!method11755(var6)) {
@@ -74,7 +74,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    private static boolean method11753(Class880 var0, ItemStack var1) {
       int var4 = Class7858.method26311(Class8122.field34929, var1);
       int var5 = var4 != 0 ? 3 : 1;
-      boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).field4919.field29609;
+      boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).abilities.isCreativeMode;
       ItemStack var7 = var0.method2983(var1);
       ItemStack var8 = var7.copy();
 
@@ -83,8 +83,8 @@ public class Class3261 extends Class3262 implements Class3260 {
             var7 = var8.copy();
          }
 
-         if (var7.method32105() && var6) {
-            var7 = new ItemStack(Class8514.field37797);
+         if (var7.isEmpty() && var6) {
+            var7 = new ItemStack(Items.field37797);
             var8 = var7.copy();
          }
 
@@ -97,15 +97,15 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static boolean method11754(Class880 var0, ItemStack var1, ItemStack var2, boolean var3, boolean var4) {
-      if (var2.method32105()) {
+      if (var2.isEmpty()) {
          return false;
       } else {
-         boolean var7 = var4 && var2.method32107() instanceof Class3308;
+         boolean var7 = var4 && var2.getItem() instanceof Class3308;
          ItemStack var8;
          if (!var7 && !var4 && !var3) {
             var8 = var2.method32106(1);
-            if (var2.method32105() && var0 instanceof PlayerEntity) {
-               ((PlayerEntity)var0).field4902.method4048(var2);
+            if (var2.isEmpty() && var0 instanceof PlayerEntity) {
+               ((PlayerEntity)var0).inventory.method4048(var2);
             }
          } else {
             var8 = var2.copy();
@@ -117,38 +117,38 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    public static boolean method11755(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       return var3 != null && var3.method132("Charged");
    }
 
    public static void method11756(ItemStack var0, boolean var1) {
-      Class39 var4 = var0.method32143();
+      CompoundNBT var4 = var0.getOrCreateTag();
       var4.method115("Charged", var1);
    }
 
    private static void method11757(ItemStack var0, ItemStack var1) {
-      Class39 var4 = var0.method32143();
-      Class41 var5;
+      CompoundNBT var4 = var0.getOrCreateTag();
+      ListNBT var5;
       if (!var4.method119("ChargedProjectiles", 9)) {
-         var5 = new Class41();
+         var5 = new ListNBT();
       } else {
          var5 = var4.method131("ChargedProjectiles", 10);
       }
 
-      Class39 var6 = new Class39();
+      CompoundNBT var6 = new CompoundNBT();
       var1.method32112(var6);
       var5.add(var6);
-      var4.method99("ChargedProjectiles", var5);
+      var4.put("ChargedProjectiles", var5);
    }
 
    private static List<ItemStack> method11758(ItemStack var0) {
       ArrayList var3 = Lists.newArrayList();
-      Class39 var4 = var0.method32142();
+      CompoundNBT var4 = var0.method32142();
       if (var4 != null && var4.method119("ChargedProjectiles", 9)) {
-         Class41 var5 = var4.method131("ChargedProjectiles", 10);
+         ListNBT var5 = var4.method131("ChargedProjectiles", 10);
          if (var5 != null) {
             for (int var6 = 0; var6 < var5.size(); var6++) {
-               Class39 var7 = var5.method153(var6);
+               CompoundNBT var7 = var5.method153(var6);
                var3.add(ItemStack.method32104(var7));
             }
          }
@@ -158,23 +158,23 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static void method11759(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       if (var3 != null) {
-         Class41 var4 = var3.method131("ChargedProjectiles", 9);
+         ListNBT var4 = var3.method131("ChargedProjectiles", 9);
          var4.clear();
-         var3.method99("ChargedProjectiles", var4);
+         var3.put("ChargedProjectiles", var4);
       }
    }
 
-   public static boolean method11760(ItemStack var0, Class3257 var1) {
-      return method11758(var0).stream().anyMatch(var1x -> var1x.method32107() == var1);
+   public static boolean method11760(ItemStack var0, Item var1) {
+      return method11758(var0).stream().anyMatch(var1x -> var1x.getItem() == var1);
    }
 
    private static void method11761(
            World var0, Class880 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.field9020) {
-         boolean var12 = var4.method32107() == Class8514.field38068;
+         boolean var12 = var4.getItem() == Items.field38068;
          Object var13;
          if (!var12) {
             var13 = method11762(var0, var1, var3, var4);
@@ -204,7 +204,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static AbstractArrowEntity method11762(World var0, Class880 var1, ItemStack var2, ItemStack var3) {
-      Class3308 var6 = (Class3308)(!(var3.method32107() instanceof Class3308) ? Class8514.field37797 : var3.method32107());
+      Class3308 var6 = (Class3308)(!(var3.getItem() instanceof Class3308) ? Items.field37797 : var3.getItem());
       AbstractArrowEntity var7 = var6.method11850(var0, var3, var1);
       if (var1 instanceof PlayerEntity) {
          var7.method3484(true);
@@ -226,8 +226,8 @@ public class Class3261 extends Class3262 implements Class3260 {
 
       for (int var10 = 0; var10 < var8.size(); var10++) {
          ItemStack var11 = (ItemStack)var8.get(var10);
-         boolean var12 = var1 instanceof PlayerEntity && ((PlayerEntity)var1).field4919.field29609;
-         if (!var11.method32105()) {
+         boolean var12 = var1 instanceof PlayerEntity && ((PlayerEntity)var1).abilities.isCreativeMode;
+         if (!var11.isEmpty()) {
             if (var10 != 0) {
                if (var10 != 1) {
                   if (var10 == 2) {
@@ -262,7 +262,7 @@ public class Class3261 extends Class3262 implements Class3260 {
             CriteriaTriggers.field44496.method15103(var5, var2);
          }
 
-         var5.method2913(Class8876.field40098.method172(var2.method32107()));
+         var5.method2913(Class8876.field40098.method172(var2.getItem()));
       }
 
       method11759(var2);
@@ -335,9 +335,9 @@ public class Class3261 extends Class3262 implements Class3260 {
       if (method11755(var1) && !var7.isEmpty()) {
          ItemStack var8 = (ItemStack)var7.get(0);
          var3.add(new TranslationTextComponent("item.minecraft.crossbow.projectile").appendString(" ").append(var8.method32173()));
-         if (var4.method8944() && var8.method32107() == Class8514.field38068) {
+         if (var4.method8944() && var8.getItem() == Items.field38068) {
             ArrayList var9 = Lists.newArrayList();
-            Class8514.field38068.method11730(var8, var2, var9, var4);
+            Items.field38068.method11730(var8, var2, var9, var4);
             if (!var9.isEmpty()) {
                for (int var10 = 0; var10 < var9.size(); var10++) {
                   var9.set(var10, new StringTextComponent("  ").append((ITextComponent)var9.get(var10)).mergeStyle(TextFormatting.GRAY));
@@ -350,7 +350,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static float method11770(ItemStack var0) {
-      return var0.method32107() == Class8514.field38148 && method11760(var0, Class8514.field38068) ? 1.6F : 3.15F;
+      return var0.getItem() == Items.field38148 && method11760(var0, Items.field38068) ? 1.6F : 3.15F;
    }
 
    @Override

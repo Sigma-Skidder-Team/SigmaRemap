@@ -4,16 +4,16 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {
-   private static final Map<Class8992<?>, ResourceLocation> field25036 = ImmutableMap.of(
-      Class8992.field41065,
+   private static final Map<EntityType<?>, ResourceLocation> field25036 = ImmutableMap.of(
+      EntityType.field41065,
       new ResourceLocation("textures/entity/piglin/piglin.png"),
-      Class8992.field41110,
+      EntityType.field41110,
       new ResourceLocation("textures/entity/piglin/zombified_piglin.png"),
-      Class8992.field41066,
+      EntityType.field41066,
       new ResourceLocation("textures/entity/piglin/piglin_brute.png")
    );
 
-   public Class5671(Class8853 var1, boolean var2) {
+   public Class5671(EntityRendererManager var1, boolean var2) {
       super(var1, method17863(var2), 0.5F, 1.0019531F, 1.0F, 1.0019531F);
       this.method17880(new Class255(this, new Class2797(0.5F), new Class2797(1.02F)));
    }
@@ -29,11 +29,11 @@ public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {
 
    @Override
    public ResourceLocation method17843(Class1006 var1) {
-      ResourceLocation var4 = field25036.get(var1.method3204());
+      ResourceLocation var4 = field25036.get(var1.getType());
       if (var4 != null) {
          return var4;
       } else {
-         throw new IllegalArgumentException("I don't know what texture to use for " + var1.method3204());
+         throw new IllegalArgumentException("I don't know what texture to use for " + var1.getType());
       }
    }
 

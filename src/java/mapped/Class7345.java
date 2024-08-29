@@ -18,7 +18,7 @@ public class Class7345 {
          Biome var8 = (Biome)var1.method9183(var7);
          if (var8 != null) {
             return var8;
-         } else if (!SharedConstants.field42545) {
+         } else if (!SharedConstants.developmentMode) {
             field31450.warn("Unknown biome id: ", var6);
             return var1.method9183(Class8900.method32443(0));
          } else {

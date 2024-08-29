@@ -234,7 +234,7 @@ public class Class9653 {
    }
 
    private static Class920 method37660(Class6619 var0, BlockPos var1) throws CommandSyntaxException {
-      Class944 var4 = var0.method20172().method6759(var1);
+      TileEntity var4 = var0.method20172().getTileEntity(var1);
       if (var4 instanceof Class920) {
          return (Class920)var4;
       } else {
@@ -260,18 +260,18 @@ public class Class9653 {
    private static boolean method37662(Class920 var0, ItemStack var1) {
       boolean var4 = false;
 
-      for (int var5 = 0; var5 < var0.method3629() && !var1.method32105(); var5++) {
+      for (int var5 = 0; var5 < var0.method3629() && !var1.isEmpty(); var5++) {
          ItemStack var6 = var0.method3618(var5);
          if (var0.method3633(var5, var1)) {
-            if (var6.method32105()) {
+            if (var6.isEmpty()) {
                var0.method3621(var5, var1);
                var4 = true;
                break;
             }
 
             if (method37664(var6, var1)) {
-               int var7 = var1.method32113() - var6.method32179();
-               int var8 = Math.min(var1.method32179(), var7);
+               int var7 = var1.method32113() - var6.getCount();
+               int var8 = Math.min(var1.getCount(), var7);
                var1.method32182(var8);
                var6.method32181(var8);
                var4 = true;
@@ -305,9 +305,9 @@ public class Class9653 {
    }
 
    private static boolean method37664(ItemStack var0, ItemStack var1) {
-      return var0.method32107() == var1.method32107()
+      return var0.getItem() == var1.getItem()
          && var0.method32117() == var1.method32117()
-         && var0.method32179() <= var0.method32113()
+         && var0.getCount() <= var0.method32113()
          && Objects.equals(var0.method32142(), var1.method32142());
    }
 
@@ -316,7 +316,7 @@ public class Class9653 {
 
       for (ItemStack var7 : var1) {
          for (ServerPlayerEntity var9 : var0) {
-            if (var9.field4902.method4045(var7.copy())) {
+            if (var9.inventory.method4045(var7.copy())) {
                var5.add(var7);
             }
          }
@@ -369,7 +369,7 @@ public class Class9653 {
          var0.method20179(new TranslationTextComponent("commands.drop.success.multiple", var1.size()), false);
       } else {
          ItemStack var4 = (ItemStack)var1.get(0);
-         var0.method20179(new TranslationTextComponent("commands.drop.success.single", var4.method32179(), var4.method32173()), false);
+         var0.method20179(new TranslationTextComponent("commands.drop.success.single", var4.getCount(), var4.method32173()), false);
       }
    }
 
@@ -378,7 +378,7 @@ public class Class9653 {
          var0.method20179(new TranslationTextComponent("commands.drop.success.multiple_with_table", var1.size(), var2), false);
       } else {
          ItemStack var5 = (ItemStack)var1.get(0);
-         var0.method20179(new TranslationTextComponent("commands.drop.success.single_with_table", var5.method32179(), var5.method32173(), var2), false);
+         var0.method20179(new TranslationTextComponent("commands.drop.success.single_with_table", var5.getCount(), var5.method32173(), var2), false);
       }
    }
 
@@ -394,8 +394,8 @@ public class Class9653 {
    private static int method37672(CommandContext<Class6619> var0, BlockPos var1, ItemStack var2, Class8914 var3) throws CommandSyntaxException {
       Class6619 var6 = (Class6619)var0.getSource();
       ServerWorld var7 = var6.method20172();
-      Class7380 var8 = var7.method6738(var1);
-      Class944 var9 = var7.method6759(var1);
+      BlockState var8 = var7.getBlockState(var1);
+      TileEntity var9 = var7.getTileEntity(var1);
       Class9464 var10 = new Class9464(var7)
          .method36454(Class9525.field44335, Vector3d.method11328(var1))
          .method36454(Class9525.field44336, var8)
@@ -403,7 +403,7 @@ public class Class9653 {
          .method36455(Class9525.field44330, var6.method20173())
          .method36454(Class9525.field44338, var2);
       List var11 = var8.method23434(var10);
-      return var3.method32583(var0, var11, var2x -> method37670(var6, var2x, var8.method23383().method11999()));
+      return var3.method32583(var0, var11, var2x -> method37670(var6, var2x, var8.getBlock().method11999()));
    }
 
    private static int method37673(CommandContext<Class6619> var0, Entity var1, Class8914 var2) throws CommandSyntaxException {

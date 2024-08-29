@@ -12,9 +12,9 @@ public class Class6493 extends Class6490 {
    }
 
    @Override
-   public Set<Class8189> method19687(BlockPos var1, Class7380 var2, Class8982 var3) {
+   public Set<Class8189> method19687(BlockPos var1, BlockState var2, Class8982 var3) {
       HashSet var6 = new HashSet();
-      if (Class8005.method27349() == Class5989.field26129.method18582() && this.field28457.method1528() != null) {
+      if (Class8005.method27349() == Class5989.field26129.method18582() && this.field28457.getCurrentServerData() != null) {
          var6.add(new Class8189(var1, Blocks.AIR.method11579()));
          return var6;
       } else {

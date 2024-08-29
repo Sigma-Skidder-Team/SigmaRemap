@@ -161,7 +161,7 @@ public class Class9498 {
       if (Class7944.equals(var4, "ModelBox")) {
          String var5 = Class9664.method37717(var0, "attachTo");
          int var6 = method36690(var5);
-         Class2847 var7 = new Class2847(Class4520::method14312);
+         Class2847 var7 = new Class2847(RenderType::getEntityCutoutNoCull);
          var7.field17604 = var1.width;
          var7.field17605 = var1.height;
          Class7219 var8 = method36692(var0, var7, (int[])null, (String)null);

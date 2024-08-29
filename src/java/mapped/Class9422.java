@@ -15,20 +15,20 @@ public class Class9422 {
    private static boolean field43690 = true;
    private static boolean field43691 = true;
    private static boolean field43692 = false;
-   private static Class1713 field43693 = null;
-   private static Class1713 field43694 = null;
-   private static Class1713 field43695 = null;
-   private static Class1713 field43696 = null;
-   private static Class1713 field43697 = null;
-   private static Class1713 field43698 = null;
-   private static Class1713 field43699 = null;
+   private static TextureAtlasSprite field43693 = null;
+   private static TextureAtlasSprite field43694 = null;
+   private static TextureAtlasSprite field43695 = null;
+   private static TextureAtlasSprite field43696 = null;
+   private static TextureAtlasSprite field43697 = null;
+   private static TextureAtlasSprite field43698 = null;
+   private static TextureAtlasSprite field43699 = null;
    private static boolean field43700 = false;
-   private static Class7202 field43701 = null;
-   private static Class7202 field43702 = null;
-   private static Class7202 field43703 = null;
-   private static Class7202 field43704 = null;
-   private static Class7202 field43705 = null;
-   private static Class7202 field43706 = null;
+   private static IBakedModel field43701 = null;
+   private static IBakedModel field43702 = null;
+   private static IBakedModel field43703 = null;
+   private static IBakedModel field43704 = null;
+   private static IBakedModel field43705 = null;
+   private static IBakedModel field43706 = null;
    private static boolean field43707 = false;
    private static final String field43708 = "block/grass_block_top";
    private static final String field43709 = "block/grass_block_side";
@@ -39,7 +39,7 @@ public class Class9422 {
    private static final String field43714 = "block/snow";
    private static final Random field43715 = new Random(0L);
 
-   public static void method36142(Class289 var0) {
+   public static void method36142(AtlasTexture var0) {
       field43700 = false;
       field43707 = false;
       method36144(var0);
@@ -49,7 +49,7 @@ public class Class9422 {
       if (field43700) {
          field43701 = Class7832.method26231(field43693, 0);
          if (field43692) {
-            Class7202 var2 = Class7832.method26231(field43694, -1);
+            IBakedModel var2 = Class7832.method26231(field43694, -1);
             field43701 = Class7832.method26232(var2, field43701);
          }
 
@@ -62,7 +62,7 @@ public class Class9422 {
       }
    }
 
-   private static void method36144(Class289 var0) {
+   private static void method36144(AtlasTexture var0) {
       field43685 = true;
       field43686 = true;
       field43687 = true;
@@ -121,7 +121,7 @@ public class Class9422 {
       }
    }
 
-   public static void method36145(Class289 var0) {
+   public static void method36145(AtlasTexture var0) {
       field43693 = method36146(var0, field43693.method7465());
       field43694 = method36146(var0, field43694.method7465());
       field43695 = method36146(var0, field43695.method7465());
@@ -131,8 +131,8 @@ public class Class9422 {
       field43699 = method36146(var0, field43699.method7465());
    }
 
-   private static Class1713 method36146(Class289 var0, ResourceLocation var1) {
-      Class1713 var4 = var0.method1098(var1);
+   private static TextureAtlasSprite method36146(AtlasTexture var0, ResourceLocation var1) {
+      TextureAtlasSprite var4 = var0.getSprite(var1);
       if (var4 == null || var4 instanceof Class1714) {
          Class7944.method26811("Missing BetterGrass sprite: " + var1);
       }
@@ -140,7 +140,7 @@ public class Class9422 {
       return var4;
    }
 
-   private static Class1713 method36147(Properties var0, String var1, String var2, Class289 var3) {
+   private static TextureAtlasSprite method36147(Properties var0, String var1, String var2, AtlasTexture var3) {
       String var6 = var0.getProperty(var1);
       if (var6 == null) {
          var6 = var2;
@@ -156,11 +156,11 @@ public class Class9422 {
       return var3.method1119(var8);
    }
 
-   public static List method36148(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      if (var3 == Direction.field673 || var3 == Direction.field672) {
+   public static List method36148(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
+      if (var3 == Direction.field673 || var3 == Direction.DOWN) {
          return var4;
       } else if (field43707) {
-         Block var7 = var1.method23383();
+         Block var7 = var1.getBlock();
          if (var7 instanceof Class3474) {
             return method36149(var0, var1, var2, var3, var4);
          } else if (var7 instanceof Class3411) {
@@ -177,8 +177,8 @@ public class Class9422 {
       }
    }
 
-   private static List method36149(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      Block var7 = var0.method6738(var2.method8311()).method23383();
+   private static List method36149(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
+      Block var7 = var0.getBlockState(var2.method8311()).getBlock();
       boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
@@ -199,7 +199,7 @@ public class Class9422 {
       return var4;
    }
 
-   private static List method36150(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
+   private static List method36150(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
       if (field43686) {
          if (!Class7944.method26877()) {
             return field43702.method22619(var1, var3, field43715);
@@ -211,7 +211,7 @@ public class Class9422 {
       }
    }
 
-   private static List method36151(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
+   private static List method36151(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
       Block var7 = method36154(var2, Direction.field673, var0);
       boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
@@ -225,8 +225,8 @@ public class Class9422 {
       } else if (!var8) {
          if (field43688) {
             BlockPos var9 = var2.method8313().method8349(var3);
-            Class7380 var10 = var0.method6738(var9);
-            if (var10.method23383() == Blocks.field36398) {
+            BlockState var10 = var0.getBlockState(var9);
+            if (var10.getBlock() == Blocks.field36398) {
                return field43705.method22619(var1, var3, field43715);
             }
          }
@@ -237,15 +237,15 @@ public class Class9422 {
       return var4;
    }
 
-   private static List method36152(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
+   private static List method36152(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
       Block var7 = method36154(var2, Direction.field673, var0);
       return var7 == Blocks.field36885 && field43686 && method36154(var2, var3, var0) == Blocks.field36885
          ? field43703.method22619(var1, var3, field43715)
          : var4;
    }
 
-   private static List method36153(Class1665 var0, Class7380 var1, BlockPos var2, Direction var3, List var4) {
-      Block var7 = var0.method6738(var2.method8311()).method23383();
+   private static List method36153(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
+      Block var7 = var0.getBlockState(var2.method8311()).getBlock();
       boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
@@ -268,7 +268,7 @@ public class Class9422 {
 
    private static Block method36154(BlockPos var0, Direction var1, Class1665 var2) {
       BlockPos var5 = var0.method8349(var1);
-      return var2.method6738(var5).method23383();
+      return var2.getBlockState(var5).getBlock();
    }
 
    private static boolean method36155(Properties var0, String var1, boolean var2) {

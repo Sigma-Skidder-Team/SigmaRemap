@@ -13,7 +13,7 @@ public class Class1195 extends Class1193 implements Class1196 {
       this.field6471 = var1;
    }
 
-   public void method5718(int var1) {
+   public void onHotbarSelected(int var1) {
       this.field6472 = Util.milliTime();
       if (this.field6473 == null) {
          this.field6473 = new Class8036(this);
@@ -31,10 +31,10 @@ public class Class1195 extends Class1193 implements Class1196 {
       if (this.field6473 != null) {
          float var5 = this.method5719();
          if (!(var5 <= 0.0F)) {
-            int var6 = this.field6471.method1580().getScaledWidth() / 2;
+            int var6 = this.field6471.getMainWindow().getScaledWidth() / 2;
             int var7 = this.method5702();
             this.method5703(-90);
-            int var8 = MathHelper.method37767((float)this.field6471.method1580().getScaledHeight() - 22.0F * var5);
+            int var8 = MathHelper.method37767((float)this.field6471.getMainWindow().getScaledHeight() - 22.0F * var5);
             Class8548 var9 = this.field6473.method27575();
             this.method5721(var1, var5, var6, var8, var9);
             this.method5703(var7);
@@ -56,7 +56,7 @@ public class Class1195 extends Class1193 implements Class1196 {
       }
 
       for (int var8 = 0; var8 < 9; var8++) {
-         this.method5722(var1, var8, this.field6471.method1580().getScaledWidth() / 2 - 90 + var8 * 20 + 2, (float)(var4 + 3), var2, var5.method30461(var8));
+         this.method5722(var1, var8, this.field6471.getMainWindow().getScaledWidth() / 2 - 90 + var8 * 20 + 2, (float)(var4 + 3), var2, var5.method30461(var8));
       }
 
       RenderSystem.method27868();
@@ -74,10 +74,10 @@ public class Class1195 extends Class1193 implements Class1196 {
          var6.method22699(var1, var10, var9);
          RenderSystem.popMatrix();
          if (var9 > 3 && var6.method22700()) {
-            ITextComponent var11 = this.field6471.gameSettings.field44655[var2].method8521();
+            ITextComponent var11 = this.field6471.gameSettings.keyBindsHotbar[var2].method8521();
             this.field6471
-               .field1294
-               .method38803(var1, var11, (float)(var3 + 19 - 2 - this.field6471.field1294.method38821(var11)), var4 + 6.0F + 3.0F, 16777215 + (var9 << 24));
+               .fontRenderer
+               .method38803(var1, var11, (float)(var3 + 19 - 2 - this.field6471.fontRenderer.method38821(var11)), var4 + 6.0F + 3.0F, 16777215 + (var9 << 24));
          }
       }
    }
@@ -88,12 +88,12 @@ public class Class1195 extends Class1193 implements Class1196 {
          Class7222 var5 = this.field6473.method27569();
          ITextComponent var6 = var5 != Class8036.field34536 ? var5.method22698() : this.field6473.method27570().method22702();
          if (var6 != null) {
-            int var7 = (this.field6471.method1580().getScaledWidth() - this.field6471.field1294.method38821(var6)) / 2;
-            int var8 = this.field6471.method1580().getScaledHeight() - 35;
+            int var7 = (this.field6471.getMainWindow().getScaledWidth() - this.field6471.fontRenderer.method38821(var6)) / 2;
+            int var8 = this.field6471.getMainWindow().getScaledHeight() - 35;
             RenderSystem.pushMatrix();
             RenderSystem.enableBlend();
             RenderSystem.method27938();
-            this.field6471.field1294.method38803(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
+            this.field6471.fontRenderer.method38803(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
             RenderSystem.disableBlend();
             RenderSystem.popMatrix();
          }

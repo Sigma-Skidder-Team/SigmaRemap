@@ -17,7 +17,7 @@ public class EnchantRandomlySerializer extends LootFunctionSerializer<Class134> 
          JsonArray var6 = new JsonArray();
 
          for (Class6069 var8 : Class134.method395(var2)) {
-            ResourceLocation var9 = Registry.field16073.method9181(var8);
+            ResourceLocation var9 = Registry.field16073.getKey(var8);
             if (var9 == null) {
                throw new IllegalArgumentException("Don't know how to serialize enchantment " + var8);
             }

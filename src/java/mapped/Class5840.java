@@ -29,7 +29,7 @@ public class Class5840 extends Class5839 {
    }
 
    public static boolean method18275(ItemStack var0) {
-      Class3257 var3 = var0.method32107();
-      return var3 == Class8514.field37971 || var3 == Class8514.field38115 || var3 == Class8514.field38118 || var3 == Class8514.field37972;
+      Item var3 = var0.getItem();
+      return var3 == Items.field37971 || var3 == Items.field38115 || var3 == Items.field38118 || var3 == Items.field37972;
    }
 }

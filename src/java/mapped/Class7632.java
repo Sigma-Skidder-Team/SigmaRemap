@@ -4,8 +4,8 @@ public class Class7632 extends Class7631 {
    private static String[] field32711;
 
    @Override
-   public Class3257 method25050() {
-      return Class8514.field37222;
+   public Item method25050() {
+      return Items.field37222;
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class7632 extends Class7631 {
    }
 
    @Override
-   public Class7380 method25063(Class7379 var1) {
+   public BlockState method25063(Class7379 var1) {
       return Blocks.AIR.method11579();
    }
 

@@ -78,7 +78,7 @@ public class Class6684 extends Class6679 {
 
    @Override
    public String method20361(String var1) {
-      return !var1.equals("<custom>") ? Class8981.method33144("profile." + var1, var1) : Class8043.method27621("of.general.custom", "<custom>");
+      return !var1.equals("<custom>") ? Shaders.method33144("profile." + var1, var1) : Class8043.method27621("of.general.custom", "<custom>");
    }
 
    @Override
@@ -88,14 +88,14 @@ public class Class6684 extends Class6679 {
 
    @Override
    public String method20368() {
-      String var3 = Class8981.method33144("profile.comment", (String)null);
+      String var3 = Shaders.method33144("profile.comment", (String)null);
       if (var3 == null) {
          StringBuffer var4 = new StringBuffer();
 
          for (int var5 = 0; var5 < this.field29292.length; var5++) {
             String var6 = this.field29292[var5].method36400();
             if (var6 != null) {
-               String var7 = Class8981.method33144("profile." + var6 + ".comment", (String)null);
+               String var7 = Shaders.method33144("profile." + var6 + ".comment", (String)null);
                if (var7 != null) {
                   var4.append(var7);
                   if (!var7.endsWith(". ")) {

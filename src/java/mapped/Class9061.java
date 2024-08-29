@@ -312,7 +312,7 @@ public class Class9061 {
    }
 
    private static File method33738(MinecraftServer var0) {
-      return var0.method1433(Class5137.field23349).toFile();
+      return var0.method1433(FolderName.field23349).toFile();
    }
 
    private static void method33739(File var0) {

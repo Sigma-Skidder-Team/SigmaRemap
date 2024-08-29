@@ -13,11 +13,11 @@ public class Class5189 extends Module {
 
     public Class5189() {
         super(ModuleCategory.MOVEMENT, "TargetStrafe", "Allows you to strafe arround targets with speed");
-        this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Ninja", "Random"));
-        this.method15972(new Class6009<Float>("Radius", "Radius of the circle", 2.0F, Float.class, 1.0F, 6.0F, 0.01F));
-        this.method15972(new Class6004("Only speed", "Use target strafe only when speed is enabled", true));
-        this.method15972(
-                new Class6005("AntiVoid", "The way you will avoid the void", 0, "Smart", "Halt", "Command", "None").method18616(var1 -> this.field23496 = false)
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Ninja", "Random"));
+        this.registerSetting(new Class6009<Float>("Radius", "Radius of the circle", 2.0F, Float.class, 1.0F, 6.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("Only speed", "Use target strafe only when speed is enabled", true));
+        this.registerSetting(
+                new ModeSetting("AntiVoid", "The way you will avoid the void", 0, "Smart", "Halt", "Command", "None").method18616(var1 -> this.field23496 = false)
         );
     }
 
@@ -54,15 +54,15 @@ public class Class5189 extends Module {
                         break;
                     case "Ninja":
                         float var15 = (float) Math.toRadians((double) (var4.method3142() - 180.0F));
-                        double var16 = var4.getPositionVec().field18048 - (double) (MathHelper.method37763(var15) * var7);
-                        double var17 = var4.getPositionVec().field18050 + (double) (MathHelper.method37764(var15) * var7);
+                        double var16 = var4.getPositionVec().field18048 - (double) (MathHelper.sin(var15) * var7);
+                        double var17 = var4.getPositionVec().field18050 + (double) (MathHelper.cos(var15) * var7);
                         var1.method13993(var16 - mc.player.getPositionVec().field18048);
                         var1.method13997(var17 - mc.player.getPositionVec().field18050);
                         break;
                     case "Random":
                         float var10 = (float) (Math.random() * 2.0 * Math.PI);
-                        double var11 = var4.getPositionVec().field18048 - (double) (MathHelper.method37763(var10) * var7);
-                        double var13 = var4.getPositionVec().field18050 + (double) (MathHelper.method37764(var10) * var7);
+                        double var11 = var4.getPositionVec().field18048 - (double) (MathHelper.sin(var10) * var7);
+                        double var13 = var4.getPositionVec().field18050 + (double) (MathHelper.cos(var10) * var7);
                         var1.method13993(var11 - mc.player.getPositionVec().field18048);
                         var1.method13997(var13 - mc.player.getPositionVec().field18050);
                 }

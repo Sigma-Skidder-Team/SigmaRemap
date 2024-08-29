@@ -6,18 +6,18 @@ public class Class4682 extends Class4680 {
    private static String[] field22257;
    public final Class8719 field22258;
 
-   public Class4682(Class8719 var1, Class1810 var2) {
+   public Class4682(Class8719 var1, ResourcePackInfo var2) {
       super(var1, var2);
       this.field22258 = var1;
    }
 
    @Override
-   public List<Class1810> method14672() {
+   public List<ResourcePackInfo> method14672() {
       return Class8719.method31457(this.field22258);
    }
 
    @Override
-   public List<Class1810> method14673() {
+   public List<ResourcePackInfo> method14673() {
       return Class8719.method31456(this.field22258);
    }
 

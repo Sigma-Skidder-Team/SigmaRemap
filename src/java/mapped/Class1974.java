@@ -13,7 +13,7 @@ public enum Class1974 {
    private final int field12856;
    private final int field12857;
    private static final Class1974[] field12858 = Util.<Class1974[]>method38508(new Class1974[6], var0 -> {
-      var0[Direction.field672.method533()] = field12848;
+      var0[Direction.DOWN.method533()] = field12848;
       var0[Direction.field673.method533()] = field12849;
       var0[Direction.NORTH.method533()] = field12850;
       var0[Direction.SOUTH.method533()] = field12851;

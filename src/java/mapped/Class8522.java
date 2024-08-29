@@ -50,7 +50,7 @@ public class Class8522 {
 
    public boolean method30210(Class880 var1, Class880 var2) {
       if (var1 != var2) {
-         if (!var2.method2800()) {
+         if (!var2.isSpectator()) {
             if (var2.method3066()) {
                if (!this.field38242 && var2.method3362()) {
                   return false;
@@ -63,7 +63,7 @@ public class Class8522 {
                            return false;
                         }
 
-                        if (!var1.method2996(var2.method3204())) {
+                        if (!var1.method2996(var2.getType())) {
                            return false;
                         }
                      }

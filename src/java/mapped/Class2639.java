@@ -29,10 +29,10 @@ public class Class2639 extends Class2595 {
       Class880 var3 = this.field16963.method4232();
       double var4 = 64.0;
       if (var3.getDistanceSq(this.field16963) < 4096.0 && this.field16963.method3135(var3)) {
-         World var6 = this.field16963.field5024;
+         World var6 = this.field16963.world;
          this.field16964++;
          if (this.field16964 == 10 && !this.field16963.method3245()) {
-            var6.method6869((PlayerEntity)null, 1015, this.field16963.method3432(), 0);
+            var6.method6869((PlayerEntity)null, 1015, this.field16963.getPosition(), 0);
          }
 
          if (this.field16964 == 20) {
@@ -42,7 +42,7 @@ public class Class2639 extends Class2595 {
             double var12 = var3.method3440(0.5) - (0.5 + this.field16963.method3440(0.5));
             double var14 = var3.getPosZ() - (this.field16963.getPosZ() + var9.field18050 * 4.0);
             if (!this.field16963.method3245()) {
-               var6.method6869((PlayerEntity)null, 1016, this.field16963.method3432(), 0);
+               var6.method6869((PlayerEntity)null, 1016, this.field16963.getPosition(), 0);
             }
 
             Class899 var16 = new Class899(var6, this.field16963, var10, var12, var14);

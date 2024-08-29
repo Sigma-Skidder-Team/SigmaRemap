@@ -47,7 +47,7 @@ public class Class8480 {
       if (Client.getInstance().getGuiManager().method33472() && field36354 < field36356 && field36355 < field36357) {
          if (field36352 == null) {
             try {
-               field36351 = new Class1647(mc.getTextureManager(), new Class1818(), mc.method1464(), new ResourceLocation("jelloblur"));
+               field36351 = new Class1647(mc.getTextureManager(), new Class1818(), mc.getFramebuffer(), new ResourceLocation("jelloblur"));
                field36351.method6525(mc.framebuffer.field35732, mc.framebuffer.field35733);
                field36351.field8939.get(0).method7410().method7937("Radius").method7437(35.0F);
                field36351.field8939.get(1).method7410().method7937("Radius").method7437(35.0F);
@@ -70,9 +70,9 @@ public class Class8480 {
          field36352.method29119(true);
          field36353.method29119(true);
          RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
-         RenderSystem.method27878(5889);
-         RenderSystem.method27879();
-         RenderSystem.method27882(
+         RenderSystem.matrixMode(5889);
+         RenderSystem.loadIdentity();
+         RenderSystem.ortho(
             0.0,
             (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
             (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
@@ -80,8 +80,8 @@ public class Class8480 {
             1000.0,
             3000.0
          );
-         RenderSystem.method27878(5888);
-         RenderSystem.method27879();
+         RenderSystem.matrixMode(5888);
+         RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
             1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0
@@ -108,9 +108,9 @@ public class Class8480 {
          field36352.framebufferRender(mc.framebuffer.field35732, mc.framebuffer.field35733);
          GL11.glPopMatrix();
          RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
-         RenderSystem.method27878(5889);
-         RenderSystem.method27879();
-         RenderSystem.method27882(
+         RenderSystem.matrixMode(5889);
+         RenderSystem.loadIdentity();
+         RenderSystem.ortho(
             0.0,
             (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
             (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
@@ -118,8 +118,8 @@ public class Class8480 {
             1000.0,
             3000.0
          );
-         RenderSystem.method27878(5888);
-         RenderSystem.method27879();
+         RenderSystem.matrixMode(5888);
+         RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
             1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0

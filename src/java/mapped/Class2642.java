@@ -2,7 +2,7 @@ package mapped;
 
 public abstract class Class2642 extends Class2595 {
    public Class1006 field16974;
-   public BlockPos field16975 = BlockPos.field13032;
+   public BlockPos field16975 = BlockPos.ZERO;
    public boolean field16976;
    private boolean field16977;
    private float field16978;
@@ -17,8 +17,8 @@ public abstract class Class2642 extends Class2595 {
 
    public boolean method10850() {
       if (this.field16976) {
-         Class7380 var3 = this.field16974.field5024.method6738(this.field16975);
-         if (var3.method23383() instanceof Class3461) {
+         BlockState var3 = this.field16974.world.getBlockState(this.field16975);
+         if (var3.getBlock() instanceof Class3461) {
             return var3.<Boolean>method23463(Class3461.field19294);
          } else {
             this.field16976 = false;
@@ -31,9 +31,9 @@ public abstract class Class2642 extends Class2595 {
 
    public void method10851(boolean var1) {
       if (this.field16976) {
-         Class7380 var4 = this.field16974.field5024.method6738(this.field16975);
-         if (var4.method23383() instanceof Class3461) {
-            ((Class3461)var4.method23383()).method12142(this.field16974.field5024, var4, this.field16975, var1);
+         BlockState var4 = this.field16974.world.getBlockState(this.field16975);
+         if (var4.getBlock() instanceof Class3461) {
+            ((Class3461)var4.getBlock()).method12142(this.field16974.world, var4, this.field16975, var1);
          }
       }
    }
@@ -49,18 +49,18 @@ public abstract class Class2642 extends Class2595 {
                   Class7176 var6 = var4.method28695(var5);
                   this.field16975 = new BlockPos(var6.field30847, var6.field30848 + 1, var6.field30849);
                   if (!(
-                     this.field16974.method3276((double)this.field16975.method8304(), this.field16974.getPosY(), (double)this.field16975.method8306())
+                     this.field16974.method3276((double)this.field16975.getX(), this.field16974.getPosY(), (double)this.field16975.getZ())
                         > 2.25
                   )) {
-                     this.field16976 = Class3461.method12144(this.field16974.field5024, this.field16975);
+                     this.field16976 = Class3461.method12144(this.field16974.world, this.field16975);
                      if (this.field16976) {
                         return true;
                      }
                   }
                }
 
-               this.field16975 = this.field16974.method3432().method8311();
-               this.field16976 = Class3461.method12144(this.field16974.field5024, this.field16975);
+               this.field16975 = this.field16974.getPosition().method8311();
+               this.field16976 = Class3461.method12144(this.field16974.world, this.field16975);
                return this.field16976;
             } else {
                return false;
@@ -81,14 +81,14 @@ public abstract class Class2642 extends Class2595 {
    @Override
    public void method10804() {
       this.field16977 = false;
-      this.field16978 = (float)((double)this.field16975.method8304() + 0.5 - this.field16974.getPosX());
-      this.field16979 = (float)((double)this.field16975.method8306() + 0.5 - this.field16974.getPosZ());
+      this.field16978 = (float)((double)this.field16975.getX() + 0.5 - this.field16974.getPosX());
+      this.field16979 = (float)((double)this.field16975.getZ() + 0.5 - this.field16974.getPosZ());
    }
 
    @Override
    public void method10805() {
-      float var3 = (float)((double)this.field16975.method8304() + 0.5 - this.field16974.getPosX());
-      float var4 = (float)((double)this.field16975.method8306() + 0.5 - this.field16974.getPosZ());
+      float var3 = (float)((double)this.field16975.getX() + 0.5 - this.field16974.getPosX());
+      float var4 = (float)((double)this.field16975.getZ() + 0.5 - this.field16974.getPosZ());
       float var5 = this.field16978 * var3 + this.field16979 * var4;
       if (var5 < 0.0F) {
          this.field16977 = true;

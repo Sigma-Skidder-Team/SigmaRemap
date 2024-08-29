@@ -8,7 +8,7 @@ public class Class6816 {
    private final Path field29680;
    private Class9437 field29681;
 
-   public Class6816(Class8904 var1, Path var2) {
+   public Class6816(DynamicRegistries var1, Path var2) {
       this.field29680 = var2;
       this.field29681 = Class9437.method36271(var1, var2);
    }

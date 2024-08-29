@@ -21,7 +21,7 @@ public class Class1805 implements Closeable {
       this.field9720 = var2;
    }
 
-   public static Class1805 method7875(Class191 var0, ResourceLocation var1) {
+   public static Class1805 method7875(IResourceManager var0, ResourceLocation var1) {
       try (Class1783 var4 = var0.method580(var1)) {
          Class1806 var6 = Class1806.method7879(var4.method7763());
          Class9620 var7 = null;

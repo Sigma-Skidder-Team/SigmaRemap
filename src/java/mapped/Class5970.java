@@ -29,11 +29,11 @@ public abstract class Class5970 {
             var0,
             var2 -> var0.field7092
                   .method5782(
-                     new Class7846(
+                     new DimensionGeneratorSettings(
                         var1.method26259(),
                         var1.method26260(),
                         var1.method26261(),
-                        Class7846.method26262(var0.field7092.method5789().<Class9535>method32453(Registry.field16066), var1.method26264(), new Class5648(var2))
+                        DimensionGeneratorSettings.method26262(var0.field7092.method5789().<Class9535>method32453(Registry.field16066), var1.method26264(), new Class5648(var2))
                      )
                   ),
             !(var4 instanceof Class5648)
@@ -69,7 +69,7 @@ public abstract class Class5970 {
       this.field26035 = new TranslationTextComponent("generator." + var1);
    }
 
-   private static Class7846 method18502(Class8904 var0, Class7846 var1, Class5970 var2, Biome var3) {
+   private static DimensionGeneratorSettings method18502(DynamicRegistries var0, DimensionGeneratorSettings var1, Class5970 var2, Biome var3) {
       Class1688 var6 = new Class1688(var3);
       Class2349 var7 = var0.<Class9535>method32453(Registry.field16066);
       Class2349 var8 = var0.<Class9309>method32453(Registry.field16099);
@@ -84,15 +84,15 @@ public abstract class Class5970 {
          var9 = () -> var8.method9189(Class9309.field43234);
       }
 
-      return new Class7846(
+      return new DimensionGeneratorSettings(
          var1.method26259(),
          var1.method26260(),
          var1.method26261(),
-         Class7846.method26262(var7, var1.method26264(), new Class5645(var6, var1.method26259(), var9))
+         DimensionGeneratorSettings.method26262(var7, var1.method26264(), new Class5645(var6, var1.method26259(), var9))
       );
    }
 
-   private static Biome method18503(Class8904 var0, Class7846 var1) {
+   private static Biome method18503(DynamicRegistries var0, DimensionGeneratorSettings var1) {
       return var1.method26265()
          .method17824()
          .method7201()
@@ -101,7 +101,7 @@ public abstract class Class5970 {
          .orElse(var0.<Biome>method32453(Registry.BIOME_KEY).method9189(Class9495.field44122));
    }
 
-   public static Optional<Class5970> method18504(Class7846 var0) {
+   public static Optional<Class5970> method18504(DimensionGeneratorSettings var0) {
       Class5646 var3 = var0.method26265();
       if (!(var3 instanceof Class5648)) {
          return !(var3 instanceof Class5647) ? Optional.<Class5970>empty() : Optional.<Class5970>of(field26032);
@@ -114,11 +114,11 @@ public abstract class Class5970 {
       return this.field26035;
    }
 
-   public Class7846 method18506(Class8905 var1, long var2, boolean var4, boolean var5) {
+   public DimensionGeneratorSettings method18506(Class8905 var1, long var2, boolean var4, boolean var5) {
       Class2349 var8 = var1.<Biome>method32453(Registry.BIOME_KEY);
       Class2349 var9 = var1.<Class9535>method32453(Registry.field16066);
       Class2349 var10 = var1.<Class9309>method32453(Registry.field16099);
-      return new Class7846(var2, var4, var5, Class7846.method26262(var9, Class9535.method36871(var9, var8, var10, var2), this.method18500(var8, var10, var2)));
+      return new DimensionGeneratorSettings(var2, var4, var5, DimensionGeneratorSettings.method26262(var9, Class9535.method36871(var9, var8, var10, var2), this.method18500(var8, var10, var2)));
    }
 
    public abstract Class5646 method18500(Registry<Biome> var1, Registry<Class9309> var2, long var3);

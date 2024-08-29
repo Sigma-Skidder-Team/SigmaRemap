@@ -16,11 +16,11 @@ public class Class7540 {
       float var6 = (float)(var2 >> 16 & 0xFF) / 255.0F;
       float var7 = (float)(var2 >> 8 & 0xFF) / 255.0F;
       float var8 = (float)(var2 & 0xFF) / 255.0F;
-      Class5425 var9 = Class9352.method35409().method35411();
+      BufferBuilder var9 = Tessellator.getInstance().getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27938();
-      var9.method17063(7, Class9337.field43342);
+      var9.begin(7, DefaultVertexFormats.POSITION_COLOR);
 
       for (int var10 = 0; var10 < var1.length; var10++) {
          Class7717 var11 = var1[var10];
@@ -41,10 +41,10 @@ public class Class7540 {
                var15 = var17;
             }
 
-            var9.method17040(var0, (float)var12, (float)var15, 0.0F).method17033(var6, var7, var8, var5).method17031();
-            var9.method17040(var0, (float)var14, (float)var15, 0.0F).method17033(var6, var7, var8, var5).method17031();
-            var9.method17040(var0, (float)var14, (float)var13, 0.0F).method17033(var6, var7, var8, var5).method17031();
-            var9.method17040(var0, (float)var12, (float)var13, 0.0F).method17033(var6, var7, var8, var5).method17031();
+            var9.method17040(var0, (float)var12, (float)var15, 0.0F).method17033(var6, var7, var8, var5).endVertex();
+            var9.method17040(var0, (float)var14, (float)var15, 0.0F).method17033(var6, var7, var8, var5).endVertex();
+            var9.method17040(var0, (float)var14, (float)var13, 0.0F).method17033(var6, var7, var8, var5).endVertex();
+            var9.method17040(var0, (float)var12, (float)var13, 0.0F).method17033(var6, var7, var8, var5).endVertex();
          }
       }
 

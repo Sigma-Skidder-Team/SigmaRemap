@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class5676<T extends Class1025> extends Class5651<T, Class2823<T>> {
-   public Class5676(Class8853 var1, Class2823<T> var2, float var3) {
+   public Class5676(EntityRendererManager var1, Class2823<T> var2, float var3) {
       super(var1, var2, var3);
       this.method17880(new Class235<T, Class2823<T>>(this));
    }

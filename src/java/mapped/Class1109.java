@@ -5,7 +5,7 @@ import java.util.Random;
 public class Class1109 extends Class1108 {
    private static String[] field6086;
 
-   public Class1109(Class8992<? extends Class1109> var1, World var2) {
+   public Class1109(EntityType<? extends Class1109> var1, World var2) {
       super(var1, var2);
    }
 
@@ -13,7 +13,7 @@ public class Class1109 extends Class1108 {
       return Class1009.method4343().method21849(Class9173.field42108, 0.2F);
    }
 
-   public static boolean method5335(Class8992<Class1109> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5335(EntityType<Class1109> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Class2197.field14351;
    }
 
@@ -40,7 +40,7 @@ public class Class1109 extends Class1108 {
 
    @Override
    public ResourceLocation method4242() {
-      return !this.method5320() ? this.method3204().method33212() : Class8793.field39533;
+      return !this.method5320() ? this.getType().method33212() : Class8793.field39533;
    }
 
    @Override

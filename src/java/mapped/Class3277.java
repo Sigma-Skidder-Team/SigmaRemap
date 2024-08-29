@@ -4,18 +4,18 @@ import java.util.List;
 
 public interface Class3277 {
    default boolean method11799(ItemStack var1) {
-      Class39 var4 = var1.method32145("display");
+      CompoundNBT var4 = var1.method32145("display");
       return var4 != null && var4.method119("color", 99);
    }
 
    default int method11800(ItemStack var1) {
-      Class39 var4 = var1.method32145("display");
+      CompoundNBT var4 = var1.method32145("display");
       return var4 != null && var4.method119("color", 99) ? var4.method122("color") : 10511680;
    }
 
    default void method11801(ItemStack var1) {
-      Class39 var4 = var1.method32145("display");
-      if (var4 != null && var4.method118("color")) {
+      CompoundNBT var4 = var1.method32145("display");
+      if (var4 != null && var4.contains("color")) {
          var4.method133("color");
       }
    }
@@ -30,7 +30,7 @@ public interface Class3277 {
       int var6 = 0;
       int var7 = 0;
       Class3277 var8 = null;
-      Class3257 var9 = var0.method32107();
+      Item var9 = var0.getItem();
       if (var9 instanceof Class3277) {
          var8 = (Class3277)var9;
          var4 = var0.copy();

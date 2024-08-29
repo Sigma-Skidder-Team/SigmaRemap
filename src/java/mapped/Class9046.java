@@ -44,8 +44,8 @@ public class Class9046 {
                         var13 = 16719904;
                      }
 
-                     Class9834 var14 = Minecraft.getInstance().field1294;
-                     var14.method38799(var1, var12, (float)(var9.x + 5), (float)(var9.y + 5 + var15 * 11), var13);
+                     FontRenderer var14 = Minecraft.getInstance().fontRenderer;
+                     var14.drawStringWithShadow(var1, var12, (float)(var9.x + 5), (float)(var9.y + 5 + var15 * 11), var13);
                   }
                }
             }

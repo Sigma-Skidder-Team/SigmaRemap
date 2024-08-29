@@ -39,9 +39,9 @@ public class Class5515 implements Packet<Class5116> {
       this.field24471 = var1.readFloat();
       int var4 = var1.readInt();
       this.field24472 = Lists.newArrayListWithCapacity(var4);
-      int var5 = MathHelper.method37769(this.field24468);
-      int var6 = MathHelper.method37769(this.field24469);
-      int var7 = MathHelper.method37769(this.field24470);
+      int var5 = MathHelper.floor(this.field24468);
+      int var6 = MathHelper.floor(this.field24469);
+      int var7 = MathHelper.floor(this.field24470);
 
       for (int var8 = 0; var8 < var4; var8++) {
          int var9 = var1.readByte() + var5;
@@ -62,14 +62,14 @@ public class Class5515 implements Packet<Class5116> {
       var1.writeFloat((float)this.field24470);
       var1.writeFloat(this.field24471);
       var1.writeInt(this.field24472.size());
-      int var4 = MathHelper.method37769(this.field24468);
-      int var5 = MathHelper.method37769(this.field24469);
-      int var6 = MathHelper.method37769(this.field24470);
+      int var4 = MathHelper.floor(this.field24468);
+      int var5 = MathHelper.floor(this.field24469);
+      int var6 = MathHelper.floor(this.field24470);
 
       for (BlockPos var8 : this.field24472) {
-         int var9 = var8.method8304() - var4;
+         int var9 = var8.getX() - var4;
          int var10 = var8.getY() - var5;
-         int var11 = var8.method8306() - var6;
+         int var11 = var8.getZ() - var6;
          var1.writeByte(var9);
          var1.writeByte(var10);
          var1.writeByte(var11);

@@ -17,6 +17,6 @@ public class Class1204 extends Class1202 {
 
    @Override
    public void method5738(MatrixStack var1, int var2, int var3) {
-      this.field6505.method2459(var1, Class7127.field30659, var2, var3);
+      this.field6505.method2459(var1, DialogTexts.GUI_CANCEL, var2, var3);
    }
 }

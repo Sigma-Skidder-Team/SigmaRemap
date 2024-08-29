@@ -7,11 +7,11 @@ public class Class6681 extends Class6679 {
 
    @Override
    public String method20385() {
-      return Class8981.method33144("screen." + this.method20366(), this.method20366());
+      return Shaders.method33144("screen." + this.method20366(), this.method20366());
    }
 
    @Override
    public String method20368() {
-      return Class8981.method33144("screen." + this.method20366() + ".comment", (String)null);
+      return Shaders.method33144("screen." + this.method20366() + ".comment", (String)null);
    }
 }

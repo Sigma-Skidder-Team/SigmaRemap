@@ -7,11 +7,11 @@ public abstract class Class5831 extends Class5828<Class920> {
    private final Class7207<? extends Class4847> field25554;
    private final Class1939 field25555;
 
-   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, Class1939 var3, int var4, Class974 var5) {
+   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, Class1939 var3, int var4, PlayerInventory var5) {
       this(var1, var2, var3, var4, var5, new Class927(3), new Class8206(4));
    }
 
-   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, Class1939 var3, int var4, Class974 var5, Class920 var6, Class8202 var7) {
+   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, Class1939 var3, int var4, PlayerInventory var5, Class920 var6, Class8202 var7) {
       super(var1, var4);
       this.field25554 = var2;
       this.field25555 = var3;
@@ -19,7 +19,7 @@ public abstract class Class5831 extends Class5828<Class920> {
       method18123(var7, 4);
       this.field25551 = var6;
       this.field25552 = var7;
-      this.field25553 = var5.field5444.field5024;
+      this.field25553 = var5.field5444.world;
       this.method18124(new Class5839(var6, 0, 56, 17));
       this.method18124(new Class5858(this, var6, 1, 56, 53));
       this.method18124(new Class5853(var5.field5444, var6, 2, 116, 35));
@@ -119,13 +119,13 @@ public abstract class Class5831 extends Class5828<Class920> {
             var6.method18260(var7, var5);
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 

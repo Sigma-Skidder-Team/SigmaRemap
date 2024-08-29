@@ -218,32 +218,32 @@ public class Class2023 implements Comparable<Class2023> {
       return 31 * var3 + (!this.field13138 ? 0 : 1);
    }
 
-   public Class39 method8637(Class39 var1) {
+   public CompoundNBT method8637(CompoundNBT var1) {
       var1.method100("Id", (byte)Class7144.method22288(this.method8627()));
       this.method8638(var1);
       return var1;
    }
 
-   private void method8638(Class39 var1) {
+   private void method8638(CompoundNBT var1) {
       var1.method100("Amplifier", (byte)this.method8629());
       var1.method102("Duration", this.method8628());
       var1.method115("Ambient", this.method8630());
       var1.method115("ShowParticles", this.method8631());
       var1.method115("ShowIcon", this.method8632());
       if (this.field13142 != null) {
-         Class39 var4 = new Class39();
+         CompoundNBT var4 = new CompoundNBT();
          this.field13142.method8637(var4);
-         var1.method99("HiddenEffect", var4);
+         var1.put("HiddenEffect", var4);
       }
    }
 
-   public static Class2023 method8639(Class39 var0) {
+   public static Class2023 method8639(CompoundNBT var0) {
       byte var3 = var0.method120("Id");
       Class7144 var4 = Class7144.method22287(var3);
       return var4 != null ? method8640(var4, var0) : null;
    }
 
-   private static Class2023 method8640(Class7144 var0, Class39 var1) {
+   private static Class2023 method8640(Class7144 var0, CompoundNBT var1) {
       byte var4 = var1.method120("Amplifier");
       int var5 = var1.method122("Duration");
       boolean var6 = var1.method132("Ambient");
@@ -259,7 +259,7 @@ public class Class2023 implements Comparable<Class2023> {
 
       Class2023 var9 = null;
       if (var1.method119("HiddenEffect", 10)) {
-         var9 = method8640(var0, var1.method130("HiddenEffect"));
+         var9 = method8640(var0, var1.getCompound("HiddenEffect"));
       }
 
       return new Class2023(var0, var5, var4 >= 0 ? var4 : 0, var6, var7, var8, var9);

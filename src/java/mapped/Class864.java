@@ -11,7 +11,7 @@ public class Class864 extends Class851<Class5811> {
    private int field4799;
    private boolean field4800;
 
-   public Class864(Class5811 var1, Class974 var2, ITextComponent var3) {
+   public Class864(Class5811 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       var1.method18110(this::method2676);
       this.field4724--;
@@ -54,7 +54,7 @@ public class Class864 extends Class851<Class5811> {
             int var12 = var6 + var11 % 4 * 16;
             int var13 = var7 + var11 / 4 * 18 + 2;
             if (var2 >= var12 && var2 < var12 + 16 && var3 >= var13 && var3 < var13 + 18) {
-               this.method2457(var1, ((Class4845)var9.get(var10)).method14966(), var2, var3);
+               this.method2457(var1, ((Class4845)var9.get(var10)).getRecipeOutput(), var2, var3);
             }
          }
       }
@@ -87,7 +87,7 @@ public class Class864 extends Class851<Class5811> {
          int var9 = var1 + var8 % 4 * 16;
          int var10 = var8 / 4;
          int var11 = var2 + var10 * 18 + 2;
-         this.field4562.method1555().method793(((Class4845)var6.get(var7)).method14966(), var9, var11);
+         this.field4562.getItemRenderer().method793(((Class4845)var6.get(var7)).getRecipeOutput(), var9, var11);
       }
    }
 
@@ -104,8 +104,8 @@ public class Class864 extends Class851<Class5811> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.field4562.player, var11)) {
-               Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27181, 1.0F));
-               this.field4562.field1337.method23146(this.field4727.field25471, var11);
+               Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27181, 1.0F));
+               this.field4562.playerController.method23146(this.field4727.field25471, var11);
                return true;
             }
          }

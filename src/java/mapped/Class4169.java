@@ -13,13 +13,13 @@ public class Class4169 extends Class4167 {
       this.field20431 = var2.nextInt(3) == 0;
    }
 
-   public Class4169(Class8761 var1, Class39 var2) {
+   public Class4169(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33436, var2);
       this.field20431 = var2.method132("Chest");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Chest", this.field20431);
    }
@@ -38,11 +38,11 @@ public class Class4169 extends Class4167 {
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12927(var1, var5, 0, 0, 0, 4, 1, 4, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 0, 2, 0, 4, 5, 4, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
-      Class7380 var10 = Blocks.NETHER_BRICK_FENCE
+      BlockState var10 = Blocks.NETHER_BRICK_FENCE
          .method11579()
          .method23465(Class3239.field18683, Boolean.valueOf(true))
          .method23465(Class3239.field18681, Boolean.valueOf(true));
-      Class7380 var11 = Blocks.NETHER_BRICK_FENCE
+      BlockState var11 = Blocks.NETHER_BRICK_FENCE
          .method11579()
          .method23465(Class3239.field18680, Boolean.valueOf(true))
          .method23465(Class3239.field18682, Boolean.valueOf(true));

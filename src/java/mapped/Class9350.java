@@ -23,7 +23,7 @@ public class Class9350 {
       return this.field43402;
    }
 
-   public Predicate<Class7380> method35408(Class9348<Block, Class7380> var1) {
+   public Predicate<BlockState> method35408(Class9348<Block, BlockState> var1) {
       return this.field43401.method24750(var1);
    }
 

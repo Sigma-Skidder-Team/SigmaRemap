@@ -5,8 +5,8 @@ public enum Class2132 {
    field13909(2.0F, 1.0F, Class5234.method16308().gameSettings.field44635),
    field13910(1.0F, 0.0F, Class5234.method16309().gameSettings.field44632),
    field13911(1.0F, 1.0F, Class5234.method16310().gameSettings.field44634),
-   field13912(0.0F, 2.0F, 74, Class5234.method16311().gameSettings.field44643),
-   field13913(1.02F, 2.0F, 73, Class5234.method16312().gameSettings.field44642);
+   field13912(0.0F, 2.0F, 74, Class5234.method16311().gameSettings.keyBindAttack),
+   field13913(1.02F, 2.0F, 73, Class5234.method16312().gameSettings.keyBindUseItem);
 
    public float field13914;
    public float field13915;
@@ -45,9 +45,9 @@ public enum Class2132 {
             if (this != field13910) {
                if (this != field13911) {
                   if (this != field13912) {
-                     return this != field13913 ? null : Class5234.method16318().gameSettings.field44642;
+                     return this != field13913 ? null : Class5234.method16318().gameSettings.keyBindUseItem;
                   } else {
-                     return Class5234.method16317().gameSettings.field44643;
+                     return Class5234.method16317().gameSettings.keyBindAttack;
                   }
                } else {
                   return Class5234.method16316().gameSettings.field44634;

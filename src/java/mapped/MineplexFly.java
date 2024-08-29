@@ -19,8 +19,8 @@ public class MineplexFly extends PremiumModule {
 
     public MineplexFly() {
         super("Mineplex", "Mineplex fly/longjump", ModuleCategory.MOVEMENT);
-        this.method15972(new Class6009<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
-        this.method15972(new Class6004("Fake", "Simulate a real fly", false));
+        this.registerSetting(new Class6009<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("Fake", "Simulate a real fly", false));
     }
 
     @Override
@@ -39,8 +39,8 @@ public class MineplexFly extends PremiumModule {
         double var3 = Class9567.method37075() * 0.5;
         Class9567.method37090(var3);
         if (this.field23670 != -1) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
-            this.field23670 = mc.player.field4902.field5443;
+            mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
+            this.field23670 = mc.player.inventory.currentItem;
         }
 
         mc.timer.field40360 = 1.0F;
@@ -54,7 +54,7 @@ public class MineplexFly extends PremiumModule {
     }
 
     @EventTarget
-    public void method16455(Class4418 var1) {
+    public void method16455(WorldLoadEvent var1) {
         if (this.method15996()) {
             this.field23673 = this.field23668 = this.field23670 = -1;
             this.field23669 = 0;
@@ -136,10 +136,10 @@ public class MineplexFly extends PremiumModule {
                     }
 
                     Vector3d var6 = new Vector3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-                    BlockPos var7 = new BlockPos(mc.player.method3432()).method8336(0, -1, 0);
-                    Class8711 var8 = new Class8711(var6, Direction.field673, var7, false);
-                    Class5570 var9 = new Class5570(Hand.field182, var8);
-                    mc.getClientPlayNetHandler().sendPacket(var9);
+                    BlockPos var7 = new BlockPos(mc.player.getPosition()).method8336(0, -1, 0);
+                    BlockRayTraceResult var8 = new BlockRayTraceResult(var6, Direction.field673, var7, false);
+                    Class5570 var9 = new Class5570(Hand.MAIN_HAND, var8);
+                    mc.getConnection().sendPacket(var9);
                     if (!(this.field23671 < (double) this.method15977("Boost"))) {
                         Class9567.method37088(var1, 0.0);
                         mc.player.method2914();
@@ -193,15 +193,15 @@ public class MineplexFly extends PremiumModule {
     }
 
     private int method16461() {
-        if (mc.player.method3090().method32105()) {
-            this.field23670 = mc.player.field4902.field5443;
+        if (mc.player.method3090().isEmpty()) {
+            this.field23670 = mc.player.inventory.currentItem;
             return this.field23670;
         } else {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.player.field4904.method18131(var3).method18265().method32105()) {
-                    if (mc.player.field4902.field5443 != var4 && this.field23670 != var4) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5539(var4));
+                if (mc.player.field4904.method18131(var3).method18265().isEmpty()) {
+                    if (mc.player.inventory.currentItem != var4 && this.field23670 != var4) {
+                        mc.getConnection().sendPacket(new Class5539(var4));
                         this.field23670 = var4;
                     }
 
@@ -210,10 +210,10 @@ public class MineplexFly extends PremiumModule {
             }
 
             Class7789.method25870(mc.player.field4904.field25471, 42, 0, Class2259.field14695, mc.player, true);
-            if (!mc.player.field4904.method18131(42).method18265().method32105()) {
+            if (!mc.player.field4904.method18131(42).method18265().isEmpty()) {
                 Client.getInstance().getNotificationManager().post(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
-            } else if (mc.player.field4902.field5443 != 6 && this.field23670 != 6) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5539(6));
+            } else if (mc.player.inventory.currentItem != 6 && this.field23670 != 6) {
+                mc.getConnection().sendPacket(new Class5539(6));
                 this.field23670 = 6;
                 return 6;
             }

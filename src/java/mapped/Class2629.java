@@ -12,9 +12,9 @@ public class Class2629 extends Class2628 {
    @Override
    public boolean method10803() {
       return super.method10803()
-         && !this.field16939.field5024.method6740()
+         && !this.field16939.world.method6740()
          && this.field16939.method3250()
-         && this.field16939.getPosY() >= (double)(this.field16939.field5024.method6776() - 3);
+         && this.field16939.getPosY() >= (double)(this.field16939.world.method6776() - 3);
    }
 
    @Override
@@ -25,7 +25,7 @@ public class Class2629 extends Class2628 {
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
       BlockPos var5 = var2.method8311();
-      return var1.method7007(var5) && var1.method7007(var5.method8311()) ? var1.method6738(var2).method23419(var1, var2, this.field16939) : false;
+      return var1.method7007(var5) && var1.method7007(var5.method8311()) ? var1.getBlockState(var2).method23419(var1, var2, this.field16939) : false;
    }
 
    @Override

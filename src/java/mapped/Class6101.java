@@ -84,13 +84,13 @@ public class Class6101 {
          BlockPos var8 = new BlockPos(this.field27357);
          Class964 var9 = Class7803.method26056(var7.method28820(), var8, var7.method28821(), 2, this.field27349, true);
          Class6488 var10 = Class7803.method26052(var9);
-         var7.method28802(var9.method3774());
+         var7.method28802(var9.getPos());
          this.field27353.put(var7, new BlockPos(this.field27357));
          var5 = var5.method19666(var10);
          this.field27357.method8381((int)var10.method19676() + 5, 0, 0);
          if (var4++ % this.field27351 == this.field27351 - 1) {
             this.field27357.method8381(0, 0, (int)var5.method19678() + 6);
-            this.field27357.method8307(this.field27348.method8304());
+            this.field27357.method8307(this.field27348.getX());
             var5 = new Class6488(this.field27357);
          }
       }

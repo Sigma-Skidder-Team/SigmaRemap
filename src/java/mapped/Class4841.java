@@ -11,13 +11,13 @@ public class Class4841 extends Class4837 {
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          ItemStack var8 = var1.method3618(var7);
-         if (!var8.method32105()) {
-            if (!(var8.method32107() instanceof Class3301)) {
-               if (var8.method32107() != Class8514.field38119) {
+         if (!var8.isEmpty()) {
+            if (!(var8.getItem() instanceof Class3301)) {
+               if (var8.getItem() != Items.field38119) {
                   return false;
                }
 
-               if (!var5.method32105()) {
+               if (!var5.isEmpty()) {
                   return false;
                }
 
@@ -27,7 +27,7 @@ public class Class4841 extends Class4837 {
 
                var5 = var8;
             } else {
-               if (!var6.method32105()) {
+               if (!var6.isEmpty()) {
                   return false;
                }
 
@@ -36,7 +36,7 @@ public class Class4841 extends Class4837 {
          }
       }
 
-      return !var5.method32105() && !var6.method32105();
+      return !var5.isEmpty() && !var6.isEmpty();
    }
 
    public ItemStack method14962(Class926 var1) {
@@ -45,9 +45,9 @@ public class Class4841 extends Class4837 {
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
          ItemStack var7 = var1.method3618(var6);
-         if (!var7.method32105()) {
-            if (!(var7.method32107() instanceof Class3301)) {
-               if (var7.method32107() == Class8514.field38119) {
+         if (!var7.isEmpty()) {
+            if (!(var7.getItem() instanceof Class3301)) {
+               if (var7.getItem() == Items.field38119) {
                   var5 = var7.copy();
                }
             } else {
@@ -56,11 +56,11 @@ public class Class4841 extends Class4837 {
          }
       }
 
-      if (!var5.method32105()) {
-         Class39 var8 = var4.method32145("BlockEntityTag");
-         Class39 var9 = var8 != null ? var8.method79() : new Class39();
-         var9.method102("Base", ((Class3301)var4.method32107()).method11849().method309());
-         var5.method32164("BlockEntityTag", var9);
+      if (!var5.isEmpty()) {
+         CompoundNBT var8 = var4.method32145("BlockEntityTag");
+         CompoundNBT var9 = var8 != null ? var8.method79() : new CompoundNBT();
+         var9.method102("Base", ((Class3301)var4.getItem()).method11849().method309());
+         var5.setTagInfo("BlockEntityTag", var9);
          return var5;
       } else {
          return var5;

@@ -20,7 +20,7 @@ public class Class7907<DC extends Class4716> implements Class7908<Class7907<?>> 
 
    @Override
    public String toString() {
-      return String.format("[%s %s]", Registry.field16118.method9181(this.field33879), this.field33880);
+      return String.format("[%s %s]", Registry.field16118.getKey(this.field33879), this.field33880);
    }
 
    public Class7907<?> method26510(Class7907<?> var1) {

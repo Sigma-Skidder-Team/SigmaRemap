@@ -37,8 +37,8 @@ public class Class3705 extends Class3676<Class880> {
          var2.method2992().method21407(Class8830.field39857, true, (long)this.field19767);
       }
 
-      var2.method2992().method21407(Class8830.field39856, var7.method3432(), (long)this.field19767);
-      if (var7.method3204() != Class8992.field41111 || var1.method6789().method17135(Class5462.field24254)) {
+      var2.method2992().method21407(Class8830.field39856, var7.getPosition(), (long)this.field19767);
+      if (var7.getType() != EntityType.PLAYER || var1.method6789().method17135(Class5462.field24254)) {
          var2.method2992().method21405(Class8830.field39826);
          var2.method2992().method21405(Class8830.field39849);
       }

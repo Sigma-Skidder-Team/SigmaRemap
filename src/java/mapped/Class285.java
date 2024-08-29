@@ -21,7 +21,7 @@ public class Class285 extends Class281 {
       this.field1087 = var1;
    }
 
-   public void method971(Map<ResourceLocation, JsonElement> var1, Class191 var2, Class7165 var3) {
+   public void method971(Map<ResourceLocation, JsonElement> var1, IResourceManager var2, IProfiler var3) {
       HashMap var6 = Maps.newHashMap();
       var1.forEach((var2x, var3x) -> {
          try {

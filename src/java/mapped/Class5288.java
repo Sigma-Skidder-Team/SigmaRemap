@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.Class7248;
 public class Class5288 extends Module {
     public Class5288() {
         super(ModuleCategory.COMBAT, "AntiBot", "Avoid the client to focus bots.");
-        this.method15972(new Class6005("Mode", "Mode", 0, "Advanced", "Hypixel").method18616(var1 -> this.method16603()));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Advanced", "Hypixel").method18616(var1 -> this.method16603()));
     }
 
     @Override

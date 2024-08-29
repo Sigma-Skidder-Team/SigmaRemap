@@ -15,7 +15,7 @@ public class Class862 extends Class851<Class5826> {
    private int field4792;
    private boolean field4793;
 
-   public Class862(Class5826 var1, Class974 var2, ITextComponent var3) {
+   public Class862(Class5826 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.field4721 = 276;
       this.field4725 = 107;
@@ -24,7 +24,7 @@ public class Class862 extends Class851<Class5826> {
    private void method2661() {
       this.field4727.method18204(this.field4790);
       this.field4727.method18213(this.field4790);
-      this.field4562.getClientPlayNetHandler().sendPacket(new Class5541(this.field4790));
+      this.field4562.getConnection().sendPacket(new Class5541(this.field4790));
    }
 
    @Override
@@ -148,7 +148,7 @@ public class Class862 extends Class851<Class5826> {
                this.field4563.field847 = 100.0F;
                int var19 = var10 + 2;
                this.method2665(var1, var16, var15, var11, var19);
-               if (!var17.method32105()) {
+               if (!var17.isEmpty()) {
                   this.field4563.method794(var17, var8 + 5 + 35, var19);
                   this.field4563.method797(this.field4568, var17, var8 + 5 + 35, var19);
                }
@@ -201,9 +201,9 @@ public class Class862 extends Class851<Class5826> {
 
    private void method2665(MatrixStack var1, ItemStack var2, ItemStack var3, int var4, int var5) {
       this.field4563.method794(var2, var4, var5);
-      if (var3.method32179() != var2.method32179()) {
-         this.field4563.method798(this.field4568, var3, var4, var5, var3.method32179() != 1 ? null : "1");
-         this.field4563.method798(this.field4568, var2, var4 + 14, var5, var2.method32179() != 1 ? null : "1");
+      if (var3.getCount() != var2.getCount()) {
+         this.field4563.method798(this.field4568, var3, var4, var5, var3.getCount() != 1 ? null : "1");
+         this.field4563.method798(this.field4568, var2, var4 + 14, var5, var2.getCount() != 1 ? null : "1");
          this.field4562.getTextureManager().bindTexture(field4786);
          this.method5703(this.method5702() + 300);
          method5697(var1, var4 + 7, var5 + 12, this.method5702(), 0.0F, 176.0F, 9, 2, 256, 512);

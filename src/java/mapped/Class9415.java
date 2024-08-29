@@ -79,7 +79,7 @@ public class Class9415 {
          JsonObject var3 = new JsonObject();
 
          for (Entry var5 : this.field43677.entrySet()) {
-            var3.add(Registry.field16071.method9181((Class7144)var5.getKey()).toString(), ((Class8053)var5.getValue()).method27658());
+            var3.add(Registry.field16071.getKey((Class7144)var5.getKey()).toString(), ((Class8053)var5.getValue()).method27658());
          }
 
          return var3;

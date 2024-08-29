@@ -12,8 +12,8 @@ public class Class8556<T> implements Class8555<T> {
    private final Class7833<T> field38446;
    private final Class8555<T> field38447 = (var0, var1x) -> 0;
    private final Class2352<T> field38448;
-   private final Function<Class39, T> field38449;
-   private final Function<T, Class39> field38450;
+   private final Function<CompoundNBT, T> field38449;
+   private final Function<T, CompoundNBT> field38450;
    private final T field38451;
    public Class7776 field38452;
    private Class7833<T> field38453;
@@ -32,10 +32,10 @@ public class Class8556<T> implements Class8555<T> {
                      + Arrays.<StackTraceElement>stream(var0.getStackTrace()).<CharSequence>map(Object::toString).collect(Collectors.joining("\n\tat "))
             )
             .collect(Collectors.joining("\n"));
-         Class4526 var4 = new Class4526("Writing into PalettedContainer from multiple threads", new IllegalStateException());
-         Class8965 var5 = var4.method14410("Thread dumps");
-         var5.method32807("Thread dumps", var3);
-         throw new Class2506(var4);
+         CrashReport var4 = new CrashReport("Writing into PalettedContainer from multiple threads", new IllegalStateException());
+         CrashReportCategory var5 = var4.makeCategory("Thread dumps");
+         var5.addDetail("Thread dumps", var3);
+         throw new ReportedException(var4);
       } else {
          this.field38455.lock();
       }
@@ -45,7 +45,7 @@ public class Class8556<T> implements Class8555<T> {
       this.field38455.unlock();
    }
 
-   public Class8556(Class7833<T> var1, Class2352<T> var2, Function<Class39, T> var3, Function<T, Class39> var4, T var5) {
+   public Class8556(Class7833<T> var1, Class2352<T> var2, Function<CompoundNBT, T> var3, Function<T, CompoundNBT> var4, T var5) {
       this.field38446 = var1;
       this.field38448 = var2;
       this.field38449 = var3;
@@ -149,7 +149,7 @@ public class Class8556<T> implements Class8555<T> {
       this.method30491();
    }
 
-   public void method30502(Class41 var1, long[] var2) {
+   public void method30502(ListNBT var1, long[] var2) {
       this.method30490();
       int var5 = Math.max(4, MathHelper.method37802(var1.size()));
       if (var5 != this.field38454) {
@@ -181,7 +181,7 @@ public class Class8556<T> implements Class8555<T> {
       this.method30491();
    }
 
-   public void method30503(Class39 var1, String var2, String var3) {
+   public void method30503(CompoundNBT var1, String var2, String var3) {
       this.method30490();
       Class7834 var6 = new Class7834<T>(this.field38448, this.field38454, this.field38447, this.field38449, this.field38450);
       Object var7 = this.field38451;
@@ -198,9 +198,9 @@ public class Class8556<T> implements Class8555<T> {
          var9[var10] = var8;
       }
 
-      Class41 var14 = new Class41();
+      ListNBT var14 = new ListNBT();
       var6.method26248(var14);
-      var1.method99(var2, var14);
+      var1.put(var2, var14);
       int var15 = Math.max(4, MathHelper.method37802(var14.size()));
       Class7776 var12 = new Class7776(var15, 4096);
 

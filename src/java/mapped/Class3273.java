@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3273 extends Class3257 {
+public class Class3273 extends Item {
    private static String[] field18773;
 
    public Class3273(Class5643 var1) {
@@ -11,7 +11,7 @@ public class Class3273 extends Class3257 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
+      BlockState var6 = var4.getBlockState(var5);
       boolean var7 = false;
       if (!Class3244.method11656(var6)) {
          var5 = var5.method8349(var1.method18354());
@@ -27,7 +27,7 @@ public class Class3273 extends Class3257 {
       }
 
       if (!var7) {
-         return ActionResultType.field14821;
+         return ActionResultType.FAIL;
       } else {
          var1.method18357().method32182(1);
          return ActionResultType.method9002(var4.field9020);

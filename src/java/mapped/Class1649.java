@@ -60,7 +60,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
    public Class1649(
       ServerWorld var1,
-      Class1814 var2,
+      SaveFormat.LevelSave var2,
       DataFixer var3,
       Class8761 var4,
       Executor var5,
@@ -72,9 +72,9 @@ public class Class1649 extends Class1648 implements Class1650 {
       int var11,
       boolean var12
    ) {
-      super(new File(var2.method7992(var1.method6813()), "region"), var3, var12);
+      super(new File(var2.method7992(var1.getDimensionKey()), "region"), var3, var12);
       this.field8970 = var4;
-      this.field8971 = var2.method7992(var1.method6813());
+      this.field8971 = var2.method7992(var1.getDimensionKey());
       this.field8956 = var1;
       this.field8959 = var8;
       this.field8958 = var6;
@@ -104,8 +104,8 @@ public class Class1649 extends Class1648 implements Class1650 {
       int var5;
       int var6;
       if (!var2) {
-         var5 = MathHelper.method37769(var1.getPosX() / 16.0);
-         var6 = MathHelper.method37769(var1.getPosZ() / 16.0);
+         var5 = MathHelper.floor(var1.getPosX() / 16.0);
+         var6 = MathHelper.floor(var1.getPosZ() / 16.0);
       } else {
          Class2002 var7 = var1.method2832();
          var5 = var7.method8410();
@@ -272,7 +272,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                CompletableFuture var4x;
                do {
                   var4x = var1x.method31046();
-                  this.field8958.method1639(var4x::isDone);
+                  this.field8958.driveUntil(var4x::isDone);
                } while (var4x != var1x.method31046());
 
                return (Class1670)var4x.join();
@@ -286,7 +286,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6546(BooleanSupplier var1) {
-      Class7165 var4 = this.field8956.method6820();
+      IProfiler var4 = this.field8956.method6820();
       var4.startSection("poi");
       this.field8961.method6641(var1);
       var4.endStartSection("chunk_unload");
@@ -398,9 +398,9 @@ public class Class1649 extends Class1648 implements Class1650 {
       return CompletableFuture.<Either<Class1670, Class7022>>supplyAsync(() -> {
          try {
             this.field8956.method6820().func_230035_c_("chunkLoad");
-            Class39 var4 = this.method6570(var1);
+            CompoundNBT var4 = this.method6570(var1);
             if (var4 != null) {
-               boolean var9 = var4.method119("Level", 10) && var4.method130("Level").method119("Status", 8);
+               boolean var9 = var4.method119("Level", 10) && var4.getCompound("Level").method119("Status", 8);
                if (var9) {
                   Class1672 var6 = Class9725.method38087(this.field8956, this.field8970, this.field8961, var1, var4);
                   var6.method7073(this.field8956.method6783());
@@ -410,7 +410,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
                field8950.error("Chunk file at {} is missing level data, skipping", var1);
             }
-         } catch (Class2506 var7) {
+         } catch (ReportedException var7) {
             Throwable var5 = var7.getCause();
             if (!(var5 instanceof IOException)) {
                this.method6552(var1);
@@ -449,12 +449,12 @@ public class Class1649 extends Class1648 implements Class1650 {
                      this.field8967.method22737(var5, var2);
                      return var7;
                   } catch (Exception var10) {
-                     Class4526 var8 = Class4526.method14413(var10, "Exception generating new chunk");
-                     Class8965 var9 = var8.method14410("Chunk to be generated");
-                     var9.method32807("Location", String.format("%d,%d", var5.field32174, var5.field32175));
-                     var9.method32807("Position hash", Class7481.method24353(var5.field32174, var5.field32175));
-                     var9.method32807("Generator", this.field8959);
-                     throw new Class2506(var8);
+                     CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception generating new chunk");
+                     CrashReportCategory var9 = var8.makeCategory("Chunk to be generated");
+                     var9.addDetail("Location", String.format("%d,%d", var5.field32174, var5.field32175));
+                     var9.addDetail("Position hash", Class7481.method24353(var5.field32174, var5.field32175));
+                     var9.addDetail("Generator", this.field8959);
+                     throw new ReportedException(var8);
                   }
                },
                var2xx -> {
@@ -587,7 +587,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             }
 
             this.field8956.method6820().func_230035_c_("chunkSave");
-            Class39 var6 = Class9725.method38088(this.field8956, var1);
+            CompoundNBT var6 = Class9725.method38088(this.field8956, var1);
             if (Class9299.field42773.method20241()) {
                World var7 = (World)Class9299.method35070(var1, Class9299.field42908);
                Class9299.method35085(Class9299.field42773, var1, var7 != null ? var7 : this.field8956, var6);
@@ -608,7 +608,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       if (var4 != 0) {
          return var4 == 1;
       } else {
-         Class39 var5;
+         CompoundNBT var5;
          try {
             var5 = this.method6570(var1);
             if (var5 == null) {
@@ -649,7 +649,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6564(ServerPlayerEntity var1, Class7481 var2, Packet<?>[] var3, boolean var4, boolean var5) {
-      if (var1.field5024 == this.field8956) {
+      if (var1.world == this.field8956) {
          if (Class9299.field42845.method20214()) {
             Class9299.field42845.method20217(var4, var5, var1, var2, this.field8956);
          }
@@ -736,27 +736,27 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    @Nullable
-   private Class39 method6570(Class7481 var1) throws IOException {
-      Class39 var4 = this.method6531(var1);
-      return var4 != null ? this.method6529(this.field8956.method6813(), this.field8960, var4) : null;
+   private CompoundNBT method6570(Class7481 var1) throws IOException {
+      CompoundNBT var4 = this.method6531(var1);
+      return var4 != null ? this.method6529(this.field8956.getDimensionKey(), this.field8960, var4) : null;
    }
 
    public boolean method6571(Class7481 var1) {
       long var4 = var1.method24352();
       return this.field8968.method35139(var4)
-         ? this.field8972.method20896(var4).noneMatch(var1x -> !var1x.method2800() && method6534(var1, var1x) < 16384.0)
+         ? this.field8972.method20896(var4).noneMatch(var1x -> !var1x.isSpectator() && method6534(var1, var1x) < 16384.0)
          : true;
    }
 
    private boolean method6572(ServerPlayerEntity var1) {
-      return var1.method2800() && !this.field8956.method6789().method17135(Class5462.field24238);
+      return var1.isSpectator() && !this.field8956.method6789().method17135(Class5462.field24238);
    }
 
    public void method6573(ServerPlayerEntity var1, boolean var2) {
       boolean var5 = this.method6572(var1);
       boolean var6 = this.field8972.method20901(var1);
-      int var7 = MathHelper.method37769(var1.getPosX()) >> 4;
-      int var8 = MathHelper.method37769(var1.getPosZ()) >> 4;
+      int var7 = MathHelper.floor(var1.getPosX()) >> 4;
+      int var8 = MathHelper.floor(var1.getPosZ()) >> 4;
       if (!var2) {
          Class2002 var9 = var1.method2832();
          this.field8972.method20898(var9.method8423().method24352(), var1);
@@ -798,8 +798,8 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
       }
 
-      int var26 = MathHelper.method37769(var1.getPosX()) >> 4;
-      int var27 = MathHelper.method37769(var1.getPosZ()) >> 4;
+      int var26 = MathHelper.floor(var1.getPosX()) >> 4;
+      int var27 = MathHelper.floor(var1.getPosZ()) >> 4;
       Class2002 var6 = var1.method2832();
       Class2002 var7 = Class2002.method8392(var1);
       long var8 = var6.method8423().method24352();
@@ -877,7 +877,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
    public void method6577(Entity var1) {
       if (!(var1 instanceof Class908)) {
-         Class8992 var4 = var1.method3204();
+         EntityType var4 = var1.getType();
          int var5 = var4.method33225() * 16;
          int var6 = var4.method33226();
          if (this.field8973.containsKey(var1.method3205())) {

@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public abstract class Class1009 extends Class1046 implements Class1008 {
-   public Class1009(Class8992<? extends Class1009> var1, World var2) {
+   public Class1009(EntityType<? extends Class1009> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
    }
@@ -77,11 +77,11 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
       }
    }
 
-   public static boolean method4341(Class8992<? extends Class1009> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4341(EntityType<? extends Class1009> var0, Class1659 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Class2197.field14351 && method4340(var1, var3, var4) && method4264(var0, var1, var2, var3, var4);
    }
 
-   public static boolean method4342(Class8992<? extends Class1009> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4342(EntityType<? extends Class1009> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Class2197.field14351 && method4264(var0, var1, var2, var3, var4);
    }
 
@@ -105,12 +105,12 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
 
    @Override
    public ItemStack method2983(ItemStack var1) {
-      if (!(var1.method32107() instanceof Class3262)) {
+      if (!(var1.getItem() instanceof Class3262)) {
          return ItemStack.EMPTY;
       } else {
-         Predicate var4 = ((Class3262)var1.method32107()).method11751();
+         Predicate var4 = ((Class3262)var1.getItem()).method11751();
          ItemStack var5 = Class3262.method11774(this, var4);
-         return !var5.method32105() ? var5 : new ItemStack(Class8514.field37797);
+         return !var5.isEmpty() ? var5 : new ItemStack(Items.field37797);
       }
    }
 }

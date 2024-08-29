@@ -6,9 +6,9 @@ import javax.annotation.Nullable;
 
 public class Class7480 {
    private final Class1660 field32171;
-   private final Class7846 field32172;
+   private final DimensionGeneratorSettings field32172;
 
-   public Class7480(Class1660 var1, Class7846 var2) {
+   public Class7480(Class1660 var1, DimensionGeneratorSettings var2) {
       this.field32171 = var1;
       this.field32172 = var2;
    }

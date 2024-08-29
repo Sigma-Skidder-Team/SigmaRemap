@@ -43,6 +43,6 @@ public class Class7836<T> implements Class7833<T> {
    }
 
    @Override
-   public void method26246(Class41 var1) {
+   public void method26246(ListNBT var1) {
    }
 }

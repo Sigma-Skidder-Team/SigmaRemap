@@ -44,14 +44,14 @@ public class Class5330 extends Class5325 {
         );
         Object[] var13 = mc.world.method7055(mc.player, var12).toArray();
         int var14 = var13.length;
-        Class7380 var15 = null;
+        BlockState var15 = null;
         BlockPos var16 = null;
         double var17 = 0.0;
 
         for (int var19 = 0; var19 < var14; var19++) {
             Class6408 var20 = (Class6408) var13[var19];
             BlockPos var21 = new BlockPos(var20.method19512(Class113.field413), var20.method19512(Class113.field414), var20.method19512(Class113.field415));
-            Class7380 var22 = mc.world.method6738(var21);
+            BlockState var22 = mc.world.getBlockState(var21);
             if (var15 == null || var20.method19514().field28453 > var17) {
                 var15 = var22;
                 var16 = var21;
@@ -62,14 +62,14 @@ public class Class5330 extends Class5325 {
         if (!mc.player.method3250() && !mc.player.method3264()) {
             if (var15 != null) {
                 if (!mc.player.field5036) {
-                    if (var15.method23383() instanceof Class3208) {
+                    if (var15.getBlock() instanceof Class3208) {
                         Class6408 var24 = var15.method23412(mc.world, var16);
                         if (var24.method19514().field28453 == 1.0) {
                             return Class2131.field13904;
                         }
                     }
 
-                    if (var15.method23383() instanceof Class3421) {
+                    if (var15.getBlock() instanceof Class3421) {
                         return Class2131.field13905;
                     }
 
@@ -77,8 +77,8 @@ public class Class5330 extends Class5325 {
                 }
 
                 if (var10 != var1.method13988() && var10 < 0.5) {
-                    if (!(var15.method23383() instanceof Class3208)) {
-                        if (var15.method23383() instanceof Class3421) {
+                    if (!(var15.getBlock() instanceof Class3208)) {
+                        if (var15.getBlock() instanceof Class3421) {
                             return Class2131.field13905;
                         }
                     } else {

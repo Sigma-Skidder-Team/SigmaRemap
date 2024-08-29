@@ -3,14 +3,14 @@ package mapped;
 public class Class5698 extends Class5651<Class1081, Class2890<Class1081>> {
    private static final ResourceLocation field25068 = new ResourceLocation("textures/entity/creeper/creeper.png");
 
-   public Class5698(Class8853 var1) {
+   public Class5698(EntityRendererManager var1) {
       super(var1, new Class2890<Class1081>(), 0.5F);
       this.method17880(new Class225(this));
    }
 
    public void method17857(Class1081 var1, MatrixStack var2, float var3) {
       float var6 = var1.method5019(var3);
-      float var7 = 1.0F + MathHelper.method37763(var6 * 100.0F) * var6 * 0.01F;
+      float var7 = 1.0F + MathHelper.sin(var6 * 100.0F) * var6 * 0.01F;
       var6 = MathHelper.method37777(var6, 0.0F, 1.0F);
       var6 *= var6;
       var6 *= var6;

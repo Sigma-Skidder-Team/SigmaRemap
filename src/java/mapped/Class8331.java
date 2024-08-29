@@ -156,7 +156,7 @@ public class Class8331 {
       String var5 = Class9664.method37717(var0, "part");
       method29217(var5, "Model part not specified, missing \"replace\" or \"attachTo\".");
       boolean var6 = Class9664.method37716(var0, "attach", false);
-      Class2829 var7 = new Class2829(Class4520::method14312);
+      Class2829 var7 = new Class2829(RenderType::getEntityCutoutNoCull);
       if (var1 != null) {
          var7.field17604 = var1[0];
          var7.field17605 = var1[1];

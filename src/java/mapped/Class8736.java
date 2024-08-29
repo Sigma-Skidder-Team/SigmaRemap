@@ -67,7 +67,7 @@ public class Class8736 {
       int[] var6 = var1.method30511();
       int var7 = var1.method30513();
       Direction var8 = var1.method30514();
-      Class1713 var9 = var1.method30516();
+      TextureAtlasSprite var9 = var1.method30516();
       boolean var10 = var1.method30515();
       if (!this.method31527(var1)) {
          var2 = 0;
@@ -105,7 +105,7 @@ public class Class8736 {
    }
 
    private boolean method31527(Class8557 var1) {
-      Class1713 var4 = var1.method30516();
+      TextureAtlasSprite var4 = var1.method30516();
       float var5 = var4.method7459();
       float var6 = var4.method7460();
       float var7 = var6 - var5;

@@ -75,7 +75,7 @@ public class Class1317 extends MultiplayerScreen {
    }*/
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 }

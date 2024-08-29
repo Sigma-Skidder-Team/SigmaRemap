@@ -2,16 +2,16 @@ package mapped;
 
 public class Class7459 implements Class7458 {
    private static String[] field32079;
-   private Class944 field32080;
+   private TileEntity field32080;
 
    @Override
    public int method24123() {
-      return Class7944.method26934(this.field32080.method3774(), 0);
+      return Class7944.method26934(this.field32080.getPos(), 0);
    }
 
    @Override
    public BlockPos method24124() {
-      return this.field32080.method3774();
+      return this.field32080.getPos();
    }
 
    @Override
@@ -21,7 +21,7 @@ public class Class7459 implements Class7458 {
 
    @Override
    public Biome method24125() {
-      return this.field32080.method3734().method7003(this.field32080.method3774());
+      return this.field32080.method3734().getBiome(this.field32080.getPos());
    }
 
    @Override
@@ -34,11 +34,11 @@ public class Class7459 implements Class7458 {
       return -1;
    }
 
-   public Class944 method24129() {
+   public TileEntity method24129() {
       return this.field32080;
    }
 
-   public void method24130(Class944 var1) {
+   public void method24130(TileEntity var1) {
       this.field32080 = var1;
    }
 }

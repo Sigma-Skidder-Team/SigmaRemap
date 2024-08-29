@@ -6,7 +6,7 @@ public class Class1103 extends Class1009 {
    private int field6061;
    private static final Class9289<Byte> field6062 = Class9361.<Byte>method35441(Class1103.class, Class7784.field33390);
 
-   public Class1103(Class8992<? extends Class1103> var1, World var2) {
+   public Class1103(EntityType<? extends Class1103> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, -1.0F);
       this.method4224(Class2163.field14190, 8.0F);
@@ -62,9 +62,9 @@ public class Class1103 extends Class1009 {
          this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
       }
 
-      if (this.field5024.field9020) {
+      if (this.world.field9020) {
          if (this.field5054.nextInt(24) == 0 && !this.method3245()) {
-            this.field5024
+            this.world
                .method6745(
                   this.getPosX() + 0.5,
                   this.getPosY() + 0.5,
@@ -78,7 +78,7 @@ public class Class1103 extends Class1009 {
          }
 
          for (int var3 = 0; var3 < 2; var3++) {
-            this.field5024.method6746(Class7940.field34085, this.method3438(0.5), this.method3441(), this.method3445(0.5), 0.0, 0.0, 0.0);
+            this.world.method6746(Class7940.field34085, this.method3438(0.5), this.method3441(), this.method3445(0.5), 0.0, 0.0, 0.0);
          }
       }
 

@@ -16,14 +16,14 @@ public class Class4201 extends Class4194 {
       this.field20508 = var2.nextInt(2) == 0;
    }
 
-   public Class4201(Class8761 var1, Class39 var2) {
+   public Class4201(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33455, var2);
       this.field20507 = var2.method132("Left");
       this.field20508 = var2.method132("Right");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Left", this.field20507);
       var1.method115("Right", this.field20508);
@@ -51,8 +51,8 @@ public class Class4201 extends Class4194 {
       this.method12928(var1, var5, 0, 0, 0, 4, 4, 6, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 1, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 6);
-      Class7380 var10 = Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.EAST);
-      Class7380 var11 = Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.WEST);
+      BlockState var10 = Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.EAST);
+      BlockState var11 = Blocks.WALL_TORCH.method11579().method23465(Class3382.field18985, Direction.WEST);
       this.method12930(var1, var5, var4, 0.1F, 1, 2, 1, var10);
       this.method12930(var1, var5, var4, 0.1F, 3, 2, 1, var11);
       this.method12930(var1, var5, var4, 0.1F, 1, 2, 5, var10);

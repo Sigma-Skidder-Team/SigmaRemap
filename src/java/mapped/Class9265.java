@@ -15,7 +15,7 @@ public class Class9265 {
    private Optional<Class9455> field42620 = Optional.<Class9455>empty();
    private Optional<Class7959> field42621 = Optional.<Class7959>empty();
    private Optional<Class8217> field42622 = Optional.<Class8217>empty();
-   private Optional<Class3496> field42623 = Optional.<Class3496>empty();
+   private Optional<BackgroundMusicSelector> field42623 = Optional.<BackgroundMusicSelector>empty();
 
    public Class9265 method34868(int var1) {
       this.field42612 = OptionalInt.of(var1);
@@ -72,8 +72,8 @@ public class Class9265 {
       return this;
    }
 
-   public Class9265 method34879(Class3496 var1) {
-      this.field42623 = Optional.<Class3496>of(var1);
+   public Class9265 method34879(BackgroundMusicSelector var1) {
+      this.field42623 = Optional.<BackgroundMusicSelector>of(var1);
       return this;
    }
 

@@ -104,7 +104,7 @@ public class Class7198 extends Class7194 {
          } else {
             var2.set(var15);
             var4.method8372(var8, var11, var9);
-            Class7380 var16 = var1.method6738(var4);
+            BlockState var16 = var1.getBlockState(var4);
             if (!var0.method22609(var16)) {
                return false;
             } else if (var11 == 10) {
@@ -126,7 +126,7 @@ public class Class7198 extends Class7194 {
                for (Direction var19 : Class76.field161) {
                   int var20 = var8 + var19.method539();
                   int var21 = var9 + var19.method541();
-                  if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.method6738(var4.method8372(var20, var11, var21)).method23393()) {
+                  if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.getBlockState(var4.method8372(var20, var11, var21)).isAir()) {
                      var1.method7061(var4, field30895.method23484(), false);
                      var1.method7090().method20726(var4, field30895.method23472(), 0);
                      var17 = true;

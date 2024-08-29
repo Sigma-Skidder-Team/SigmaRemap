@@ -36,9 +36,9 @@ public class Class1288 extends Class1286<Class1165> {
       this.method6108(var1);
       if (var1 != -1) {
          Class2024 var4 = (Class2024)Class811.method2223(this.field6852).get(var1);
-         String var5 = Class9088.method33883("narrator.select.list.position", var1 + 1, Class811.method2223(this.field6852).size());
+         String var5 = I18n.format("narrator.select.list.position", var1 + 1, Class811.method2223(this.field6852).size());
          String var6 = Class9229.method34715(Arrays.<String>asList(var4.method8644(), Class811.method2218(var4), Class811.method2221(var4).getString(), var5));
-         Class9229.method34711(Class9088.method33883("narrator.select", var6));
+         Class9229.method34711(I18n.format("narrator.select", var6));
       }
    }
 

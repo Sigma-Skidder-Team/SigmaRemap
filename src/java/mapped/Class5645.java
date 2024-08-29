@@ -36,7 +36,7 @@ public final class Class5645 extends Class5646 {
          }
       }
    });
-   private static final Class7380 field24966 = Blocks.AIR.method11579();
+   private static final BlockState field24966 = Blocks.AIR.method11579();
    private final int field24967;
    private final int field24968;
    private final int field24969;
@@ -49,8 +49,8 @@ public final class Class5645 extends Class5646 {
    private final Class7690 field24976;
    private final Class7689 field24977;
    private final Class8972 field24978;
-   public final Class7380 field24979;
-   public final Class7380 field24980;
+   public final BlockState field24979;
+   public final BlockState field24980;
    private final long field24981;
    public final Supplier<Class9309> field24982;
    private final int field24983;
@@ -257,17 +257,17 @@ public final class Class5645 extends Class5646 {
 
    @Override
    public int method17797(int var1, int var2, Class101 var3) {
-      return this.method17799(var1, var2, (Class7380[])null, var3.method287());
+      return this.method17799(var1, var2, (BlockState[])null, var3.method287());
    }
 
    @Override
    public Class1665 method17798(int var1, int var2) {
-      Class7380[] var5 = new Class7380[this.field24970 * this.field24967];
-      this.method17799(var1, var2, var5, (Predicate<Class7380>)null);
+      BlockState[] var5 = new BlockState[this.field24970 * this.field24967];
+      this.method17799(var1, var2, var5, (Predicate<BlockState>)null);
       return new Class1669(var5);
    }
 
-   private int method17799(int var1, int var2, Class7380[] var3, Predicate<Class7380> var4) {
+   private int method17799(int var1, int var2, BlockState[] var3, Predicate<BlockState> var4) {
       int var7 = Math.floorDiv(var1, this.field24968);
       int var8 = Math.floorDiv(var2, this.field24968);
       int var9 = Math.floorMod(var1, this.field24968);
@@ -292,7 +292,7 @@ public final class Class5645 extends Class5646 {
             double var34 = (double)var33 / (double)this.field24967;
             double var36 = MathHelper.method37824(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
             int var38 = var16 * this.field24967 + var33;
-            Class7380 var39 = this.method17800(var36, var38);
+            BlockState var39 = this.method17800(var36, var38);
             if (var3 != null) {
                var3[var38] = var39;
             }
@@ -306,8 +306,8 @@ public final class Class5645 extends Class5646 {
       return 0;
    }
 
-   public Class7380 method17800(double var1, int var3) {
-      Class7380 var6;
+   public BlockState method17800(double var1, int var3) {
+      BlockState var6;
       if (!(var1 > 0.0)) {
          if (var3 >= this.method17807()) {
             var6 = field24966;
@@ -340,7 +340,7 @@ public final class Class5645 extends Class5646 {
             int var18 = var11 + var16;
             int var19 = var2.method7071(Class101.field295, var15, var16) + 1;
             double var20 = this.field24976.method25314((double)var17 * 0.0625, (double)var18 * 0.0625, 0.0625, (double)var15 * 0.0625) * 15.0;
-            var1.method7003(var14.method8372(var10 + var15, var19, var11 + var16))
+            var1.getBiome(var14.method8372(var10 + var15, var19, var11 + var16))
                .method32514(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.method17807(), var1.method6967());
          }
       }
@@ -363,7 +363,7 @@ public final class Class5645 extends Class5646 {
             if (var12) {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
-                     var1.method7061(var5.method8372(var15.method8304(), var10 - var16, var15.method8306()), Blocks.BEDROCK.method11579(), false);
+                     var1.method7061(var5.method8372(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.method11579(), false);
                   }
                }
             }
@@ -371,7 +371,7 @@ public final class Class5645 extends Class5646 {
             if (var13) {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
-                     var1.method7061(var5.method8372(var15.method8304(), var9 + var17, var15.method8306()), Blocks.BEDROCK.method11579(), false);
+                     var1.method7061(var5.method8372(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.method11579(), false);
                   }
                }
             }
@@ -500,7 +500,7 @@ public final class Class5645 extends Class5646 {
                         }
 
                         var19.back(var7.size());
-                        Class7380 var84 = this.method17800(var70, var41);
+                        BlockState var84 = this.method17800(var70, var41);
                         if (var84 != field24966) {
                            if (var84.method23392() != 0) {
                               var17.method8372(var55, var41, var64);
@@ -591,7 +591,7 @@ public final class Class5645 extends Class5646 {
       if (!this.field24982.get().method35167()) {
          int var4 = var1.method7241();
          int var5 = var1.method7242();
-         Biome var6 = var1.method7003(new Class7481(var4, var5).method24364());
+         Biome var6 = var1.getBiome(new Class7481(var4, var5).method24364());
          Class2420 var7 = new Class2420();
          var7.method10371(var1.method6967(), var4 << 4, var5 << 4);
          Class8170.method28430(var1, var6, var4, var5, var7);

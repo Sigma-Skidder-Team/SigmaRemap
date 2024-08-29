@@ -21,7 +21,7 @@ public class Class4518 extends Class4510 {
    }
 
    public Class4518() {
-      super("texture", () -> RenderSystem.method27862(), () -> RenderSystem.enableTexture());
+      super("texture", () -> RenderSystem.disableTexture(), () -> RenderSystem.enableTexture());
       this.field21791 = Optional.<ResourceLocation>empty();
       this.field21792 = false;
       this.field21793 = false;

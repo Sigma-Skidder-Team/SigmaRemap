@@ -12,8 +12,8 @@ public class Class532 implements Runnable {
 
    @Override
    public void run() {
-      Class5362.method16868().getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, this.field2544, Direction.field673));
-      Class5362.method16869().getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13486, this.field2544, Direction.field673));
-      Class5362.method16870().getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
+      Class5362.method16868().getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, this.field2544, Direction.field673));
+      Class5362.method16869().getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, this.field2544, Direction.field673));
+      Class5362.method16870().getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

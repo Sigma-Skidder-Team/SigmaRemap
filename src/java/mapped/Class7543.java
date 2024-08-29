@@ -71,7 +71,7 @@ public class Class7543 implements Class7544 {
 
    @Nullable
    @Override
-   public Class1768 method24664(Class191 var1) {
+   public Class1768 method24664(IResourceManager var1) {
       STBTTFontinfo var4 = null;
       ByteBuffer var5 = null;
 

@@ -13,15 +13,15 @@ public class Class7451 {
    }
 
    public void method24087(Minecraft var1, float var2, float var3, float var4) {
-      Class9352 var7 = Class9352.method35409();
-      Class5425 var8 = var7.method35411();
-      RenderSystem.method27878(5889);
+      Tessellator var7 = Tessellator.getInstance();
+      BufferBuilder var8 = var7.getBuffer();
+      RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
-      RenderSystem.method27879();
-      RenderSystem.method27888(Class9367.method35511(85.0, (float)var1.method1580().getFramebufferWidth() / (float)var1.method1580().getFramebufferHeight(), 0.05F, 10.0F));
-      RenderSystem.method27878(5888);
+      RenderSystem.loadIdentity();
+      RenderSystem.method27888(Class9367.method35511(85.0, (float)var1.getMainWindow().getFramebufferWidth() / (float)var1.getMainWindow().getFramebufferHeight(), 0.05F, 10.0F));
+      RenderSystem.matrixMode(5888);
       RenderSystem.pushMatrix();
-      RenderSystem.method27879();
+      RenderSystem.loadIdentity();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
       RenderSystem.enableBlend();
@@ -42,51 +42,51 @@ public class Class7451 {
 
          for (int var14 = 0; var14 < 6; var14++) {
             var1.getTextureManager().bindTexture(this.field32058[var14]);
-            var8.method17063(7, Class9337.field43346);
+            var8.begin(7, DefaultVertexFormats.field43346);
             int var15 = Math.round(255.0F * var4) / (var10 + 1);
             if (var14 == 0) {
-               var8.method17025(-1.0, -1.0, 1.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, 1.0, 1.0).method17027(0.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, 1.0, 1.0).method17027(1.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, -1.0, 1.0).method17027(1.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
+               var8.pos(-1.0, -1.0, 1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, 1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, 1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, 1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 1) {
-               var8.method17025(1.0, -1.0, 1.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, 1.0, 1.0).method17027(0.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, 1.0, -1.0).method17027(1.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, -1.0, -1.0).method17027(1.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
+               var8.pos(1.0, -1.0, 1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, 1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, -1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, -1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 2) {
-               var8.method17025(1.0, -1.0, -1.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, 1.0, -1.0).method17027(0.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, 1.0, -1.0).method17027(1.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, -1.0, -1.0).method17027(1.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
+               var8.pos(1.0, -1.0, -1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, -1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, -1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, -1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 3) {
-               var8.method17025(-1.0, -1.0, -1.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, 1.0, -1.0).method17027(0.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, 1.0, 1.0).method17027(1.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, -1.0, 1.0).method17027(1.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
+               var8.pos(-1.0, -1.0, -1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, -1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, 1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, 1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 4) {
-               var8.method17025(-1.0, -1.0, -1.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, -1.0, 1.0).method17027(0.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, -1.0, 1.0).method17027(1.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, -1.0, -1.0).method17027(1.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
+               var8.pos(-1.0, -1.0, -1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, -1.0, 1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, 1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, -1.0, -1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
             if (var14 == 5) {
-               var8.method17025(-1.0, 1.0, 1.0).method17027(0.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(-1.0, 1.0, -1.0).method17027(0.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, 1.0, -1.0).method17027(1.0F, 1.0F).method17026(255, 255, 255, var15).method17031();
-               var8.method17025(1.0, 1.0, 1.0).method17027(1.0F, 0.0F).method17026(255, 255, 255, var15).method17031();
+               var8.pos(-1.0, 1.0, 1.0).method17027(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(-1.0, 1.0, -1.0).method17027(0.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, -1.0).method17027(1.0F, 1.0F).color(255, 255, 255, var15).endVertex();
+               var8.pos(1.0, 1.0, 1.0).method17027(1.0F, 0.0F).color(255, 255, 255, var15).endVertex();
             }
 
-            var7.method35410();
+            var7.draw();
          }
 
          RenderSystem.popMatrix();
@@ -94,9 +94,9 @@ public class Class7451 {
       }
 
       RenderSystem.method27870(true, true, true, true);
-      RenderSystem.method27878(5889);
+      RenderSystem.matrixMode(5889);
       RenderSystem.popMatrix();
-      RenderSystem.method27878(5888);
+      RenderSystem.matrixMode(5888);
       RenderSystem.popMatrix();
       RenderSystem.depthMask(true);
       RenderSystem.enableCull();

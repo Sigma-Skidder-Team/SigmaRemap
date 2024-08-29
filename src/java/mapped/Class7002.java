@@ -7,7 +7,7 @@ public class Class7002 {
    private int field30283;
    private int field30284;
 
-   private Class7002(Class264 var1, Class8066 var2, Direction var3, int var4) {
+   private Class7002(WorldRenderer var1, Class8066 var2, Direction var3, int var4) {
       this.field30281 = var2;
       this.field30282 = var3;
       this.field30284 = var4;

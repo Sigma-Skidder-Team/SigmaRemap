@@ -16,7 +16,7 @@ public class Class135 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      int var5 = this.field457.applyAsInt(var1.method32179());
+      int var5 = this.field457.applyAsInt(var1.getCount());
       var1.method32180(var5);
       return var1;
    }

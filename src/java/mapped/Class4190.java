@@ -7,14 +7,14 @@ public class Class4190 extends Class4188 {
    private final Direction field20481;
    private final boolean field20482;
 
-   public Class4190(Class8761 var1, Class39 var2) {
+   public Class4190(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33426, var2);
       this.field20482 = var2.method132("tf");
       this.field20481 = Direction.method547(var2.method122("D"));
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("tf", this.field20482);
       var1.method102("D", this.field20481.method534());
@@ -141,7 +141,7 @@ public class Class4190 extends Class4188 {
       if (this.method12919(var1, var5)) {
          return false;
       } else {
-         Class7380 var10 = this.method12967();
+         BlockState var10 = this.method12967();
          if (!this.field20482) {
             this.method12927(
                var1,
@@ -244,7 +244,7 @@ public class Class4190 extends Class4188 {
 
          for (int var11 = this.field20444.field45678; var11 <= this.field20444.field45681; var11++) {
             for (int var12 = this.field20444.field45680; var12 <= this.field20444.field45683; var12++) {
-               if (this.method12924(var1, var11, this.field20444.field45679 - 1, var12, var5).method23393()
+               if (this.method12924(var1, var11, this.field20444.field45679 - 1, var12, var5).isAir()
                   && this.method12925(var1, var11, this.field20444.field45679 - 1, var12, var5)) {
                   this.method12923(var1, var10, var11, this.field20444.field45679 - 1, var12, var5);
                }
@@ -256,7 +256,7 @@ public class Class4190 extends Class4188 {
    }
 
    private void method12971(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6) {
-      if (!this.method12924(var1, var3, var6 + 1, var5, var2).method23393()) {
+      if (!this.method12924(var1, var3, var6 + 1, var5, var2).isAir()) {
          this.method12927(var1, var2, var3, var4, var5, var3, var6, var5, this.method12967(), field20443, false);
       }
    }

@@ -2,11 +2,11 @@ package mapped;
 
 public final class Class8570 {
    private static String[] field38528;
-   private final Class7380 field38529;
-   private final Class7380 field38530;
+   private final BlockState field38529;
+   private final BlockState field38530;
    private final Direction field38531;
 
-   public Class8570(Class7380 var1, Class7380 var2, Direction var3) {
+   public Class8570(BlockState var1, BlockState var2, Direction var3) {
       this.field38529 = var1;
       this.field38530 = var2;
       this.field38531 = var3;

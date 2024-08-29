@@ -19,13 +19,13 @@ public class Class8761 {
    private static final Logger field39441 = LogManager.getLogger();
    private final Map<ResourceLocation, Class8969> field39442 = Maps.newHashMap();
    private final DataFixer field39443;
-   private Class191 field39444;
+   private IResourceManager field39444;
    private final Path field39445;
 
-   public Class8761(Class191 var1, Class1814 var2, DataFixer var3) {
+   public Class8761(IResourceManager var1, SaveFormat.LevelSave var2, DataFixer var3) {
       this.field39444 = var1;
       this.field39443 = var3;
-      this.field39445 = var2.method7991(Class5137.field23351).normalize();
+      this.field39445 = var2.resolveFilePath(FolderName.field23351).normalize();
    }
 
    public Class8969 method31603(ResourceLocation var1) {
@@ -46,7 +46,7 @@ public class Class8761 {
       });
    }
 
-   public void method31605(Class191 var1) {
+   public void method31605(IResourceManager var1) {
       this.field39444 = var1;
       this.field39442.clear();
    }
@@ -84,11 +84,11 @@ public class Class8761 {
    }
 
    private Class8969 method31608(InputStream var1) throws IOException {
-      Class39 var4 = Class8799.method31766(var1);
+      CompoundNBT var4 = Class8799.method31766(var1);
       return this.method31609(var4);
    }
 
-   public Class8969 method31609(Class39 var1) {
+   public Class8969 method31609(CompoundNBT var1) {
       if (!var1.method119("DataVersion", 99)) {
          var1.method102("DataVersion", 500);
       }
@@ -115,7 +115,7 @@ public class Class8761 {
                return false;
             }
 
-            Class39 var7 = var4.method32912(new Class39());
+            CompoundNBT var7 = var4.method32912(new CompoundNBT());
 
             try (FileOutputStream var8 = new FileOutputStream(var5.toFile())) {
                Class8799.method31768(var7, var8);

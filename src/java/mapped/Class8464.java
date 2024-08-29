@@ -7,7 +7,7 @@ public class Class8464 {
    private static String[] field36282;
    private static final List<Class8557> field36283 = ImmutableList.of();
 
-   public static Class7202 method29765(Class7202 var0, Class7380 var1, Class8391 var2) {
+   public static IBakedModel method29765(IBakedModel var0, BlockState var1, Class8391 var2) {
       if (var2.method29427()) {
          var0 = Class9753.method38321(var0, var1);
       }
@@ -16,10 +16,10 @@ public class Class8464 {
    }
 
    public static List<Class8557> method29766(
-           List<Class8557> var0, Class1663 var1, Class7380 var2, BlockPos var3, Direction var4, Class4520 var5, long var6, Class8391 var8
+           List<Class8557> var0, Class1663 var1, BlockState var2, BlockPos var3, Direction var4, RenderType var5, long var6, Class8391 var8
    ) {
       if (var4 != null) {
-         if (var8.method29427() && Class9753.method38322(var1.method6738(var3.method8349(var4)), var2)) {
+         if (var8.method29427() && Class9753.method38322(var1.getBlockState(var3.method8349(var4)), var2)) {
             return field36283;
          }
 
@@ -51,11 +51,11 @@ public class Class8464 {
       return var11;
    }
 
-   private static Class4520 method29767(Class4520 var0) {
+   private static RenderType method29767(RenderType var0) {
       return var0 != null && var0 != Class9025.field41288 ? var0 : Class9025.field41289;
    }
 
-   private static Class8557[] method29768(Class8557 var0, Class1663 var1, Class7380 var2, BlockPos var3, Direction var4, long var5, Class8391 var7) {
+   private static Class8557[] method29768(Class8557 var0, Class1663 var1, BlockState var2, BlockPos var3, Direction var4, long var5, Class8391 var7) {
       if (var7.method29418(var0)) {
          return var7.method29429(var0);
       } else {

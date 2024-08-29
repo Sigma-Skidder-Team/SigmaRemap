@@ -23,7 +23,7 @@ public class Class3684 extends Class3676<Class1006> {
    public void method12502(ServerWorld var1, Class1006 var2, long var3) {
       Class880 var7 = this.method12524(var2);
       Class6983.method21574(var2, var7);
-      var2.swingArm(Hand.field182);
+      var2.swingArm(Hand.MAIN_HAND);
       var2.method3114(var7);
       var2.method2992().method21407(Class8830.field39827, true, (long)this.field19700);
    }

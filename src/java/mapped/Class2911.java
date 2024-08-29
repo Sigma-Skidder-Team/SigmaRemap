@@ -10,33 +10,33 @@ public class Class2911 extends Class2898<Class4697> {
    }
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4697 var5) {
-      if (var5.field22289.contains(var1.method6738(var4.method8311()).method23383())) {
-         if (var5.field22286 && !var5.field22289.contains(var1.method6738(var4.method8313()).method23383())) {
+      if (var5.field22289.contains(var1.getBlockState(var4.method8311()).getBlock())) {
+         if (var5.field22286 && !var5.field22289.contains(var1.getBlockState(var4.method8313()).getBlock())) {
             return false;
          } else {
-            Class7380 var8 = var1.method6738(var4);
-            if (!var8.method23393() && !var5.field22289.contains(var8.method23383())) {
+            BlockState var8 = var1.getBlockState(var4);
+            if (!var8.isAir() && !var5.field22289.contains(var8.getBlock())) {
                return false;
             } else {
                int var9 = 0;
                int var10 = 0;
-               if (var5.field22289.contains(var1.method6738(var4.method8345()).method23383())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.method8345()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.method6738(var4.method8347()).method23383())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.method8347()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.method6738(var4.method8341()).method23383())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.method8341()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.method6738(var4.method8343()).method23383())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.method8343()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.method6738(var4.method8313()).method23383())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.method8313()).getBlock())) {
                   var10++;
                }
 

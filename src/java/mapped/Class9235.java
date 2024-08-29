@@ -38,7 +38,7 @@ public class Class9235 {
    }
 
    public void method34739(MatrixStack var1, Minecraft var2, int var3, int var4, boolean var5, float var6) {
-      if (!Screen.method2475()) {
+      if (!Screen.hasControlDown()) {
          this.field42512 += var6;
       }
 
@@ -53,13 +53,13 @@ public class Class9235 {
          }
 
          ItemStack var13 = var10.method27662();
-         Class216 var14 = var2.method1555();
+         ItemRenderer var14 = var2.getItemRenderer();
          var14.method794(var13, var11, var12);
          RenderSystem.depthFunc(516);
          Class1193.method5686(var1, var11, var12, var11 + 16, var12 + 16, 822083583);
          RenderSystem.depthFunc(515);
          if (var9 == 0) {
-            var14.method797(var2.field1294, var13, var11, var12);
+            var14.method797(var2.fontRenderer, var13, var11, var12);
          }
       }
    }

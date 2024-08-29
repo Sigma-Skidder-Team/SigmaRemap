@@ -25,7 +25,7 @@ public class Class8429 {
    private final boolean field36117;
    private final String field36118;
    private final UUID field36119;
-   private final Class8992<?> field36120;
+   private final EntityType<?> field36120;
    private final boolean field36121;
 
    public Class8429(
@@ -40,7 +40,7 @@ public class Class8429 {
       boolean var9,
       String var10,
       UUID var11,
-      Class8992<?> var12,
+      EntityType<?> var12,
       boolean var13
    ) {
       this.field36109 = var1;

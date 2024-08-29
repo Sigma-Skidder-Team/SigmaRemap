@@ -65,16 +65,16 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
       this.field17590.field31034 = -1.0F;
       this.field17590.field31035 = -0.75F;
       if (!this.field17601) {
-         this.field17593.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F;
+         this.field17593.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F;
          this.field17593.field31036 = 0.0F;
          this.field17593.field31037 = 0.0F;
-         this.field17594.field31035 = MathHelper.method37764(var2 * 0.6662F) * 2.0F * var3 * 0.5F;
+         this.field17594.field31035 = MathHelper.cos(var2 * 0.6662F) * 2.0F * var3 * 0.5F;
          this.field17594.field31036 = 0.0F;
          this.field17594.field31037 = 0.0F;
-         this.field17591.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
+         this.field17591.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
          this.field17591.field31036 = 0.0F;
          this.field17591.field31037 = 0.0F;
-         this.field17592.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
+         this.field17592.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
          this.field17592.field31036 = 0.0F;
          this.field17592.field31037 = 0.0F;
       } else {
@@ -101,12 +101,12 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
                      if (var9 == Class2117.field13800) {
                         this.field17593.field31034 = 0.0F;
                         this.field17593.field31032 = -5.0F;
-                        this.field17593.field31035 = MathHelper.method37764(var4 * 0.6662F) * 0.05F;
+                        this.field17593.field31035 = MathHelper.cos(var4 * 0.6662F) * 0.05F;
                         this.field17593.field31037 = 2.670354F;
                         this.field17593.field31036 = 0.0F;
                         this.field17594.field31034 = 0.0F;
                         this.field17594.field31032 = 5.0F;
-                        this.field17594.field31035 = MathHelper.method37764(var4 * 0.6662F) * 0.05F;
+                        this.field17594.field31035 = MathHelper.cos(var4 * 0.6662F) * 0.05F;
                         this.field17594.field31037 = (float) (-Math.PI * 3.0 / 4.0);
                         this.field17594.field31036 = 0.0F;
                      }
@@ -128,14 +128,14 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
             this.field17593.field31032 = -5.0F;
             this.field17594.field31034 = 0.0F;
             this.field17594.field31032 = 5.0F;
-            this.field17593.field31035 = MathHelper.method37764(var4 * 0.6662F) * 0.25F;
-            this.field17594.field31035 = MathHelper.method37764(var4 * 0.6662F) * 0.25F;
+            this.field17593.field31035 = MathHelper.cos(var4 * 0.6662F) * 0.25F;
+            this.field17594.field31035 = MathHelper.cos(var4 * 0.6662F) * 0.25F;
             this.field17593.field31037 = (float) (Math.PI * 3.0 / 4.0);
             this.field17594.field31037 = (float) (-Math.PI * 3.0 / 4.0);
             this.field17593.field31036 = 0.0F;
             this.field17594.field31036 = 0.0F;
          }
-      } else if (!var1.method3090().method32105()) {
+      } else if (!var1.method3090().isEmpty()) {
          Class7972.method27107(this.field17593, this.field17594, var1, this.field17600, var4);
       } else {
          Class7972.method27109(this.field17594, this.field17593, true, this.field17600, var4);

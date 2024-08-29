@@ -61,16 +61,16 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public boolean method11534(Class7380 var1) {
+   public boolean method11534(BlockState var1) {
       return true;
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return (!var1.<Boolean>method23463(field19212) ? field19232 : field19231)[var1.<Direction>method23463(field19198).ordinal()];
    }
 
-   private boolean method12108(Class7380 var1, Class7380 var2) {
+   private boolean method12108(BlockState var1, BlockState var2) {
       Block var5 = var1.method23463(field19211) != Class180.field638 ? Blocks.STICKY_PISTON : Blocks.PISTON;
       return var2.method23448(var5)
          && var2.<Boolean>method23463(Class3435.field19202)
@@ -78,10 +78,10 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
-      if (!var1.field9020 && var4.field4919.field29609) {
+   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+      if (!var1.field9020 && var4.abilities.isCreativeMode) {
          BlockPos var7 = var2.method8349(var3.<Direction>method23463(field19198).method536());
-         if (this.method12108(var3, var1.method6738(var7))) {
+         if (this.method12108(var3, var1.getBlockState(var7))) {
             var1.method7179(var7, false);
          }
       }
@@ -90,60 +90,60 @@ public class Class3436 extends Class3433 {
    }
 
    @Override
-   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var1.method23448(var4.method23383())) {
+   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var1.method23448(var4.getBlock())) {
          super.method11513(var1, var2, var3, var4, var5);
          BlockPos var8 = var3.method8349(var1.<Direction>method23463(field19198).method536());
-         if (this.method12108(var1, var2.method6738(var8))) {
+         if (this.method12108(var1, var2.getBlockState(var8))) {
             var2.method7179(var8, true);
          }
       }
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2.method536() == var1.method23463(field19198) && !var1.method23443(var4, var5)
          ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      Class7380 var6 = var2.method6738(var3.method8349(var1.<Direction>method23463(field19198).method536()));
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+      BlockState var6 = var2.getBlockState(var3.method8349(var1.<Direction>method23463(field19198).method536()));
       return this.method12108(var1, var6)
          || var6.method23448(Blocks.MOVING_PISTON) && var6.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
    }
 
    @Override
-   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (var1.method23443(var2, var3)) {
          BlockPos var9 = var3.method8349(var1.<Direction>method23463(field19198).method536());
-         var2.method6738(var9).method23423(var2, var9, var4, var5, false);
+         var2.getBlockState(var9).method23423(var2, var9, var4, var5, false);
       }
    }
 
    @Override
-   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
       return new ItemStack(var3.method23463(field19211) != Class180.field639 ? Blocks.PISTON : Blocks.STICKY_PISTON);
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field19198, var2.method252(var1.<Direction>method23463(field19198)));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23395(var2.method8749(var1.<Direction>method23463(field19198)));
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19198, field19211, field19212);
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

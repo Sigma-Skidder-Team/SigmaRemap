@@ -14,10 +14,10 @@ public class Class5526 implements Packet<Class5116> {
    private int field24514;
    private int field24515;
    private int field24516;
-   private Class39 field24517;
+   private CompoundNBT field24517;
    private int[] field24518;
    private byte[] field24519;
-   public List<Class39> field24520;
+   public List<CompoundNBT> field24520;
    public boolean field24521;
    private Map<String, Object> field24522;
 
@@ -29,11 +29,11 @@ public class Class5526 implements Packet<Class5116> {
       this.field24514 = var5.field32174;
       this.field24515 = var5.field32175;
       this.field24521 = var2 == 65535;
-      this.field24517 = new Class39();
+      this.field24517 = new CompoundNBT();
 
       for (Entry var7 : var1.method7068()) {
          if (((Class101)var7.getKey()).method284()) {
-            this.field24517.method99(((Class101)var7.getKey()).method283(), new Class42(((Class7527)var7.getValue()).method24583()));
+            this.field24517.put(((Class101)var7.getKey()).method283(), new Class42(((Class7527)var7.getValue()).method24583()));
          }
       }
 
@@ -47,10 +47,10 @@ public class Class5526 implements Packet<Class5116> {
 
       for (Entry var14 : var1.method7145().entrySet()) {
          BlockPos var8 = (BlockPos)var14.getKey();
-         Class944 var9 = (Class944)var14.getValue();
+         TileEntity var9 = (TileEntity)var14.getValue();
          int var10 = var8.getY() >> 4;
          if (this.method17381() || (var2 & 1 << var10) != 0) {
-            Class39 var11 = var9.method3777();
+            CompoundNBT var11 = var9.method3777();
             this.field24520.add(var11);
          }
       }
@@ -101,7 +101,7 @@ public class Class5526 implements Packet<Class5116> {
       var1.writeBytes(this.field24519);
       var1.writeVarInt(this.field24520.size());
 
-      for (Class39 var5 : this.field24520) {
+      for (CompoundNBT var5 : this.field24520) {
          var1.method35720(var5);
       }
    }
@@ -167,11 +167,11 @@ public class Class5526 implements Packet<Class5116> {
       return this.field24521;
    }
 
-   public Class39 method17382() {
+   public CompoundNBT method17382() {
       return this.field24517;
    }
 
-   public List<Class39> method17383() {
+   public List<CompoundNBT> method17383() {
       return this.field24520;
    }
 

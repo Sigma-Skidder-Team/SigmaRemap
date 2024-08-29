@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3333 extends Class3257 {
+public class Class3333 extends Item {
    private static String[] field18841;
 
    public Class3333(Class5643 var1) {
@@ -28,7 +28,7 @@ public class Class3333 extends Class3257 {
       }
 
       var2.method2913(Class8876.field40098.method172(this));
-      if (!var2.field4919.field29609) {
+      if (!var2.abilities.isCreativeMode) {
          var6.method32182(1);
       }
 

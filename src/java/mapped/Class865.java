@@ -20,7 +20,7 @@ public class Class865 extends Class851<Class5837> {
    private boolean field4812;
    private int field4813 = 1;
 
-   public Class865(Class5837 var1, Class974 var2, ITextComponent var3) {
+   public Class865(Class5837 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.field4803 = Class5948.method18477();
       var1.method18245(this::method2678);
@@ -60,11 +60,11 @@ public class Class865 extends Class851<Class5837> {
       this.method5696(var1, var7 + 119, var8 + 13 + var13, 232 + (!this.field4808 ? 12 : 0), 0, 12, 15);
       Class7516.method24502();
       if (this.field4804 != null && !this.field4810) {
-         Class7735 var14 = this.field4562.method1581().method26536();
-         var1.method35294();
-         var1.method35291((double)(var7 + 139), (double)(var8 + 52), 0.0);
+         Class7735 var14 = this.field4562.getRenderTypeBuffers().method26536();
+         var1.push();
+         var1.translate((double)(var7 + 139), (double)(var8 + 52), 0.0);
          var1.method35292(24.0F, -24.0F, 1.0F);
-         var1.method35291(0.5, 0.5, 0.5);
+         var1.translate(0.5, 0.5, 0.5);
          float var15 = 0.6666667F;
          var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
          this.field4803.field31035 = 0.0F;
@@ -113,22 +113,22 @@ public class Class865 extends Class851<Class5837> {
    }
 
    private void method2677(int var1, int var2, int var3) {
-      ItemStack var6 = new ItemStack(Class8514.field38099);
-      Class39 var7 = var6.method32144("BlockEntityTag");
-      Class41 var8 = new Class7291()
+      ItemStack var6 = new ItemStack(Items.field38099);
+      CompoundNBT var7 = var6.method32144("BlockEntityTag");
+      ListNBT var8 = new Class7291()
          .method23058(Class2154.field14082, Class112.field393)
          .method23058(Class2154.values()[var1], Class112.field386)
          .method23059();
-      var7.method99("Patterns", var8);
+      var7.put("Patterns", var8);
       MatrixStack var9 = new MatrixStack();
-      var9.method35294();
-      var9.method35291((double)((float)var2 + 0.5F), (double)(var3 + 16), 0.0);
+      var9.push();
+      var9.translate((double)((float)var2 + 0.5F), (double)(var3 + 16), 0.0);
       var9.method35292(6.0F, -6.0F, 1.0F);
-      var9.method35291(0.5, 0.5, 0.0);
-      var9.method35291(0.5, 0.5, 0.5);
+      var9.translate(0.5, 0.5, 0.0);
+      var9.translate(0.5, 0.5, 0.5);
       float var10 = 0.6666667F;
       var9.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-      Class7735 var11 = this.field4562.method1581().method26536();
+      Class7735 var11 = this.field4562.getRenderTypeBuffers().method26536();
       this.field4803.field31035 = 0.0F;
       this.field4803.field31033 = -32.0F;
       List var12 = Class958.method3891(Class112.field393, Class958.method3886(var6));
@@ -150,8 +150,8 @@ public class Class865 extends Class851<Class5837> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.method18104(this.field4562.player, var11)) {
-               Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27177, 1.0F));
-               this.field4562.field1337.method23146(this.field4727.field25471, var11);
+               Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27177, 1.0F));
+               this.field4562.playerController.method23146(this.field4727.field25471, var11);
                return true;
             }
          }
@@ -205,8 +205,8 @@ public class Class865 extends Class851<Class5837> {
 
    private void method2678() {
       ItemStack var3 = this.field4727.method18250().method18265();
-      if (!var3.method32105()) {
-         this.field4804 = Class958.method3891(((Class3301)var3.method32107()).method11849(), Class958.method3886(var3));
+      if (!var3.isEmpty()) {
+         this.field4804 = Class958.method3891(((Class3301)var3.getItem()).method11849(), Class958.method3886(var3));
       } else {
          this.field4804 = null;
       }
@@ -214,15 +214,15 @@ public class Class865 extends Class851<Class5837> {
       ItemStack var4 = this.field4727.method18247().method18265();
       ItemStack var5 = this.field4727.method18248().method18265();
       ItemStack var6 = this.field4727.method18249().method18265();
-      Class39 var7 = var4.method32144("BlockEntityTag");
-      this.field4810 = var7.method119("Patterns", 9) && !var4.method32105() && var7.method131("Patterns", 10).size() >= 6;
+      CompoundNBT var7 = var4.method32144("BlockEntityTag");
+      this.field4810 = var7.method119("Patterns", 9) && !var4.isEmpty() && var7.method131("Patterns", 10).size() >= 6;
       if (this.field4810) {
          this.field4804 = null;
       }
 
       if (!ItemStack.method32128(var4, this.field4805) || !ItemStack.method32128(var5, this.field4806) || !ItemStack.method32128(var6, this.field4807)) {
-         this.field4808 = !var4.method32105() && !var5.method32105() && var6.method32105() && !this.field4810;
-         this.field4809 = !this.field4810 && !var6.method32105() && !var4.method32105() && !var5.method32105();
+         this.field4808 = !var4.isEmpty() && !var5.isEmpty() && var6.isEmpty() && !this.field4810;
+         this.field4809 = !this.field4810 && !var6.isEmpty() && !var4.isEmpty() && !var5.isEmpty();
       }
 
       this.field4805 = var4.copy();

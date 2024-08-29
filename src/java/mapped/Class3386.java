@@ -10,7 +10,7 @@ public class Class3386 extends Block {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       switch (Class9779.field45746[var2.ordinal()]) {
          case 1:
          case 2:
@@ -28,12 +28,12 @@ public class Class3386 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18994);
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       return this.method11579().method23465(field18994, var1.method18354().method544());
    }
 }

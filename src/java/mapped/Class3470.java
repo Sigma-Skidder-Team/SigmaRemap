@@ -33,12 +33,12 @@ public class Class3470 extends Class3468 {
    }
 
    @Override
-   public int method12158(Class7380 var1) {
+   public int method12158(BlockState var1) {
       return var1.<Integer>method23463(field19320);
    }
 
    @Override
-   public Class7380 method12159(Class7380 var1, int var2) {
+   public BlockState method12159(BlockState var1, int var2) {
       return var1.method23465(field19320, Integer.valueOf(var2));
    }
 
@@ -48,7 +48,7 @@ public class Class3470 extends Class3468 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19320);
    }
 }

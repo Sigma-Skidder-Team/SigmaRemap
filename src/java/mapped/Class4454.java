@@ -4,7 +4,7 @@ import java.nio.file.Path;
 
 public class Class4454 extends Class4441<Block> {
    public Class4454(Class9068 var1) {
-      super(var1, Registry.field16072);
+      super(var1, Registry.BLOCK);
    }
 
    @Override

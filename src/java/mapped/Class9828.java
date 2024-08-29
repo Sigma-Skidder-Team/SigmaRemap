@@ -5,18 +5,18 @@ import java.util.function.Consumer;
 public class Class9828 {
    private final Class120 field45909;
    private final Class120 field45910;
-   private final Class3257 field45911;
+   private final Item field45911;
    private final Class7999 field45912 = Class7999.method27304();
    private final Class6504<?> field45913;
 
-   public Class9828(Class6504<?> var1, Class120 var2, Class120 var3, Class3257 var4) {
+   public Class9828(Class6504<?> var1, Class120 var2, Class120 var3, Item var4) {
       this.field45913 = var1;
       this.field45909 = var2;
       this.field45910 = var3;
       this.field45911 = var4;
    }
 
-   public static Class9828 method38783(Class120 var0, Class120 var1, Class3257 var2) {
+   public static Class9828 method38783(Class120 var0, Class120 var1, Item var2) {
       return new Class9828(Class6504.field28490, var0, var1, var2);
    }
 

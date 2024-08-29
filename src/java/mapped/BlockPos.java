@@ -18,11 +18,11 @@ public class BlockPos extends Class1998 {
    public static final Codec<BlockPos> field13030 = Codec.INT_STREAM
       .comapFlatMap(
          var0 -> Util.method38530(var0, 3).map(var0x -> new BlockPos(var0x[0], var0x[1], var0x[2])),
-         var0 -> IntStream.of(var0.method8304(), var0.getY(), var0.method8306())
+         var0 -> IntStream.of(var0.getX(), var0.getY(), var0.getZ())
       )
       .stable();
    private static final Logger field13031 = LogManager.getLogger();
-   public static final BlockPos field13032 = new BlockPos(0, 0, 0);
+   public static final BlockPos ZERO = new BlockPos(0, 0, 0);
    private static final int field13033 = 1 + MathHelper.method37803(MathHelper.method37800(30000000));
    private static final int field13034 = field13033;
    private static final int field13035 = 64 - field13033 - field13034;
@@ -49,7 +49,7 @@ public class BlockPos extends Class1998 {
    }
 
    public BlockPos(Class1998 var1) {
-      this(var1.method8304(), var1.getY(), var1.method8306());
+      this(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public static long method8314(long var0, Direction var2) {
@@ -77,7 +77,7 @@ public class BlockPos extends Class1998 {
    }
 
    public long method8332() {
-      return method8333(this.method8304(), this.getY(), this.method8306());
+      return method8333(this.getX(), this.getY(), this.getZ());
    }
 
    public static long method8333(int var0, int var1, int var2) {
@@ -94,19 +94,19 @@ public class BlockPos extends Class1998 {
    public BlockPos method8335(double var1, double var3, double var5) {
       return var1 == 0.0 && var3 == 0.0 && var5 == 0.0
          ? this
-         : new BlockPos((double)this.method8304() + var1, (double)this.getY() + var3, (double)this.method8306() + var5);
+         : new BlockPos((double)this.getX() + var1, (double)this.getY() + var3, (double)this.getZ() + var5);
    }
 
    public BlockPos method8336(int var1, int var2, int var3) {
-      return var1 == 0 && var2 == 0 && var3 == 0 ? this : new BlockPos(this.method8304() + var1, this.getY() + var2, this.method8306() + var3);
+      return var1 == 0 && var2 == 0 && var3 == 0 ? this : new BlockPos(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
    public BlockPos method8337(Class1998 var1) {
-      return this.method8336(var1.method8304(), var1.getY(), var1.method8306());
+      return this.method8336(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public BlockPos method8338(Class1998 var1) {
-      return this.method8336(-var1.method8304(), -var1.getY(), -var1.method8306());
+      return this.method8336(-var1.getX(), -var1.getY(), -var1.getZ());
    }
 
    public BlockPos method8311() {
@@ -118,11 +118,11 @@ public class BlockPos extends Class1998 {
    }
 
    public BlockPos method8313() {
-      return this.method8349(Direction.field672);
+      return this.method8349(Direction.DOWN);
    }
 
    public BlockPos method8340(int var1) {
-      return this.method8350(Direction.field672, var1);
+      return this.method8350(Direction.DOWN, var1);
    }
 
    public BlockPos method8341() {
@@ -158,12 +158,12 @@ public class BlockPos extends Class1998 {
    }
 
    public BlockPos method8349(Direction var1) {
-      return new BlockPos(this.method8304() + var1.method539(), this.getY() + var1.method540(), this.method8306() + var1.method541());
+      return new BlockPos(this.getX() + var1.method539(), this.getY() + var1.method540(), this.getZ() + var1.method541());
    }
 
    public BlockPos method8350(Direction var1, int var2) {
       return var2 != 0
-         ? new BlockPos(this.method8304() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.method8306() + var1.method541() * var2)
+         ? new BlockPos(this.getX() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.getZ() + var1.method541() * var2)
          : this;
    }
 
@@ -172,7 +172,7 @@ public class BlockPos extends Class1998 {
          int var5 = var1 != Class113.field413 ? 0 : var2;
          int var6 = var1 != Class113.field414 ? 0 : var2;
          int var7 = var1 != Class113.field415 ? 0 : var2;
-         return new BlockPos(this.method8304() + var5, this.getY() + var6, this.method8306() + var7);
+         return new BlockPos(this.getX() + var5, this.getY() + var6, this.getZ() + var7);
       } else {
          return this;
       }
@@ -184,19 +184,19 @@ public class BlockPos extends Class1998 {
          default:
             return this;
          case 2:
-            return new BlockPos(-this.method8306(), this.getY(), this.method8304());
+            return new BlockPos(-this.getZ(), this.getY(), this.getX());
          case 3:
-            return new BlockPos(-this.method8304(), this.getY(), -this.method8306());
+            return new BlockPos(-this.getX(), this.getY(), -this.getZ());
          case 4:
-            return new BlockPos(this.method8306(), this.getY(), -this.method8304());
+            return new BlockPos(this.getZ(), this.getY(), -this.getX());
       }
    }
 
    public BlockPos method8315(Class1998 var1) {
       return new BlockPos(
-         this.getY() * var1.method8306() - this.method8306() * var1.getY(),
-         this.method8306() * var1.method8304() - this.method8304() * var1.method8306(),
-         this.method8304() * var1.getY() - this.getY() * var1.method8304()
+         this.getY() * var1.getZ() - this.getZ() * var1.getY(),
+         this.getZ() * var1.getX() - this.getX() * var1.getZ(),
+         this.getX() * var1.getY() - this.getY() * var1.getX()
       );
    }
 
@@ -205,7 +205,7 @@ public class BlockPos extends Class1998 {
    }
 
    public Mutable method8354() {
-      return new Mutable(this.method8304(), this.getY(), this.method8306());
+      return new Mutable(this.getX(), this.getY(), this.getZ());
    }
 
    public static Iterable<BlockPos> method8355(Random var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -217,9 +217,9 @@ public class BlockPos extends Class1998 {
 
    public static Iterable<BlockPos> method8356(BlockPos var0, int var1, int var2, int var3) {
       int var6 = var1 + var2 + var3;
-      int var7 = var0.method8304();
+      int var7 = var0.getX();
       int var8 = var0.getY();
-      int var9 = var0.method8306();
+      int var9 = var0.getZ();
       return () -> new Class4550(var9, var6, var1, var2, var3, var7, var8);
    }
 
@@ -233,12 +233,12 @@ public class BlockPos extends Class1998 {
 
    public static Iterable<BlockPos> method8359(BlockPos var0, BlockPos var1) {
       return method8364(
-         Math.min(var0.method8304(), var1.method8304()),
+         Math.min(var0.getX(), var1.getX()),
          Math.min(var0.getY(), var1.getY()),
-         Math.min(var0.method8306(), var1.method8306()),
-         Math.max(var0.method8304(), var1.method8304()),
+         Math.min(var0.getZ(), var1.getZ()),
+         Math.max(var0.getX(), var1.getX()),
          Math.max(var0.getY(), var1.getY()),
-         Math.max(var0.method8306(), var1.method8306())
+         Math.max(var0.getZ(), var1.getZ())
       );
    }
 
@@ -259,12 +259,12 @@ public class BlockPos extends Class1998 {
 
    public static Stream<BlockPos> method8362(Class6488 var0) {
       return method8363(
-         MathHelper.method37769(var0.field28449),
-         MathHelper.method37769(var0.field28450),
-         MathHelper.method37769(var0.field28451),
-         MathHelper.method37769(var0.field28452),
-         MathHelper.method37769(var0.field28453),
-         MathHelper.method37769(var0.field28454)
+         MathHelper.floor(var0.field28449),
+         MathHelper.floor(var0.field28450),
+         MathHelper.floor(var0.field28451),
+         MathHelper.floor(var0.field28452),
+         MathHelper.floor(var0.field28453),
+         MathHelper.floor(var0.field28454)
       );
    }
 

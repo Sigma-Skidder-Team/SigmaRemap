@@ -25,7 +25,7 @@ public class Class2931 extends Class2930 {
                boolean var19 = var16 || var17;
                if (var9 >= var4 || var18 != var19) {
                   var5.method8378(var3, var12, var9, var13);
-                  if (!var1.method6738(var5).method23409(var1, var5)) {
+                  if (!var1.getBlockState(var5).method23409(var1, var5)) {
                      this.method11217(
                         var1,
                         var5,

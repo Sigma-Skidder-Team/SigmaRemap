@@ -49,7 +49,7 @@ public class Class7570 implements Class7567 {
       String var10 = var1.method34673() + ".description";
       ImmutableList var11;
       String var12;
-      if (!Class9088.method33884(var10)) {
+      if (! I18n.method33884(var10)) {
          var11 = ImmutableList.of(var6.func_241878_f(), var9.func_241878_f());
          var12 = var9.getString();
       } else {

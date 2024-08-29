@@ -57,9 +57,9 @@ public class Class8284 {
       int var6 = 0;
 
       for (ServerPlayerEntity var8 : var1) {
-         var6 += var8.field4902.method4040(var2, var3, var8.field4904.method18232());
+         var6 += var8.inventory.method4040(var2, var3, var8.field4904.method18232());
          var8.field4905.method18130();
-         var8.field4904.method18106(var8.field4902);
+         var8.field4904.method18106(var8.inventory);
          var8.method2773();
       }
 

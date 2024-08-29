@@ -16,15 +16,15 @@ public class Class803 extends Class798 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
    }
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 24, 200, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field4191)
+            this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 24, 200, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4191)
          )
       );
       this.field4193 = new Class1278(this, this.field4562);
@@ -34,7 +34,7 @@ public class Class803 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override

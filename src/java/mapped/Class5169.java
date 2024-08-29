@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -59,7 +59,7 @@ public class Class5169 extends Module {
    }
 
    @EventTarget
-   public void method16077(Class4418 var1) {
+   public void method16077(WorldLoadEvent var1) {
       this.field23451.clear();
       this.field23452.clear();
    }
@@ -77,7 +77,7 @@ public class Class5169 extends Module {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
                BlockPos var14 = new BlockPos((double)var12, (double)var11, (double)var13);
-               if (mc.world.method6738(var14).method23383() == Blocks.field36536) {
+               if (mc.world.getBlockState(var14).getBlock() == Blocks.field36536) {
                   var4.add(var14);
                }
             }
@@ -138,7 +138,7 @@ public class Class5169 extends Module {
                      for (BlockPos var6x : var15) {
                         try {
                            this.field23453 = new Class9823();
-                           Class9510 var7x = new Class9510(new Class9110(mc.player.method3432()));
+                           Class9510 var7x = new Class9510(new Class9110(mc.player.getPosition()));
                            Class9510 var8 = new Class9510(new Class9110(var6x));
                            double var9x = (double)var8.field44271.method33975(var7x.field44271);
                            int var11x = (int)Math.min(30000.0, 5000.0 + var9x * 100.0);

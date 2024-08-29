@@ -66,40 +66,40 @@ public class Class9703 {
       } catch (NoSuchFieldError var13) {
       }
 
-      field45357 = new int[Class2070.values().length];
+      field45357 = new int[CPlayerDiggingPacket.Action.values().length];
 
       try {
-         field45357[Class2070.field13490.ordinal()] = 1;
+         field45357[CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND.ordinal()] = 1;
       } catch (NoSuchFieldError var12) {
       }
 
       try {
-         field45357[Class2070.field13488.ordinal()] = 2;
+         field45357[CPlayerDiggingPacket.Action.field13488.ordinal()] = 2;
       } catch (NoSuchFieldError var11) {
       }
 
       try {
-         field45357[Class2070.field13487.ordinal()] = 3;
+         field45357[CPlayerDiggingPacket.Action.field13487.ordinal()] = 3;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field45357[Class2070.field13489.ordinal()] = 4;
+         field45357[CPlayerDiggingPacket.Action.field13489.ordinal()] = 4;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field45357[Class2070.field13484.ordinal()] = 5;
+         field45357[CPlayerDiggingPacket.Action.field13484.ordinal()] = 5;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field45357[Class2070.field13485.ordinal()] = 6;
+         field45357[CPlayerDiggingPacket.Action.field13485.ordinal()] = 6;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field45357[Class2070.field13486.ordinal()] = 7;
+         field45357[CPlayerDiggingPacket.Action.field13486.ordinal()] = 7;
       } catch (NoSuchFieldError var6) {
       }
 

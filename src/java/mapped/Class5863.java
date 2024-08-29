@@ -27,7 +27,7 @@ public class Class5863 extends Class5839 {
          while (var5 > 0) {
             int var6 = ExperienceOrbEntity.method4179(var5);
             var5 -= var6;
-            var1x.method6916(new ExperienceOrbEntity(var1x, (double)var2x.method8304(), (double)var2x.getY() + 0.5, (double)var2x.method8306() + 0.5, var6));
+            var1x.method6916(new ExperienceOrbEntity(var1x, (double)var2x.getX(), (double)var2x.getY() + 0.5, (double)var2x.getZ() + 0.5, var6));
          }
 
          var1x.method6999(1042, var2x, 0);

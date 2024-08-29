@@ -4,10 +4,10 @@ import java.util.function.Function;
 
 public abstract class Class2803<E extends Entity> extends Class2827<E> {
    public Class2803() {
-      this(Class4520::method14312);
+      this(RenderType::getEntityCutoutNoCull);
    }
 
-   public Class2803(Function<ResourceLocation, Class4520> var1) {
+   public Class2803(Function<ResourceLocation, RenderType> var1) {
       super(var1);
    }
 

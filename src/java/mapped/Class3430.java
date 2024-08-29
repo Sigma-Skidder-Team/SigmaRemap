@@ -10,7 +10,7 @@ public class Class3430 extends Class3429 {
    }
 
    @Override
-   public void method12091(Class7380 var1, World var2, BlockPos var3, Block var4) {
+   public void method12091(BlockState var1, World var2, BlockPos var3, Block var4) {
       if (var4.method11579().method23401() && new Class9435(var2, var3, var1).method36240() == 3) {
          this.method12092(var2, var3, var1, false);
       }
@@ -22,7 +22,7 @@ public class Class3430 extends Class3429 {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       switch (Class8191.field35214[var2.ordinal()]) {
          case 1:
             switch (Class8191.field35213[var1.<Class96>method23463(field19191).ordinal()]) {
@@ -95,7 +95,7 @@ public class Class3430 extends Class3429 {
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       Class96 var5 = var1.<Class96>method23463(field19191);
       switch (Class8191.field35215[var2.ordinal()]) {
          case 1:
@@ -140,7 +140,7 @@ public class Class3430 extends Class3429 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19191);
    }
 }

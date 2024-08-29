@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5376 extends Module {
     public Class5376() {
         super(ModuleCategory.WORLD, "Timer", "Speeds up the world's timer");
-        this.method15972(new Class6009<Float>("Timer", "Timer value", 0.1F, Float.class, 0.1F, 10.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Timer", "Timer value", 0.1F, Float.class, 0.1F, 10.0F, 0.1F));
     }
 
     @EventTarget

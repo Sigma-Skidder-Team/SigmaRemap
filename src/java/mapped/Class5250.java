@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.timer.Timer;
@@ -24,12 +24,12 @@ public class Class5250 extends Module {
 
     public Class5250() {
         super(ModuleCategory.ITEM, "ChestStealer", "Steals items from chest");
-        this.method15972(new Class6004("Aura", "Automatically open chests near you.", false));
-        this.method15972(new Class6004("Ignore Junk", "Ignores useless items.", true));
-        this.method15972(new Class6004("Fix ViaVersion", "Fixes ViaVersion delay.", true));
-        this.method15972(new Class6004("Close", "Automatically closes the chest when done", true));
-        this.method15972(new Class6009<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.method15972(new Class6009<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("Aura", "Automatically open chests near you.", false));
+        this.registerSetting(new BooleanSetting("Ignore Junk", "Ignores useless items.", true));
+        this.registerSetting(new BooleanSetting("Fix ViaVersion", "Fixes ViaVersion delay.", true));
+        this.registerSetting(new BooleanSetting("Close", "Automatically closes the chest when done", true));
+        this.registerSetting(new Class6009<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
         this.field23622 = new ConcurrentHashMap<Class941, Boolean>();
     }
 
@@ -57,13 +57,13 @@ public class Class5250 extends Module {
 
                 this.method16370();
                 if (this.field23625 != null && mc.currentScreen == null && this.field23624.method27121() > 1000L) {
-                    Class8711 var4 = (Class8711) Class9217.method34570(this.field23625.method3774());
-                    if (var4.method31423().method8304() == this.field23625.method3774().method8304()
-                            && var4.method31423().getY() == this.field23625.method3774().getY()
-                            && var4.method31423().method8306() == this.field23625.method3774().method8306()) {
+                    BlockRayTraceResult var4 = (BlockRayTraceResult) Class9217.method34570(this.field23625.getPos());
+                    if (var4.getPos().getX() == this.field23625.getPos().getX()
+                            && var4.getPos().getY() == this.field23625.getPos().getY()
+                            && var4.getPos().getZ() == this.field23625.getPos().getZ()) {
                         this.field23621 = true;
-                        mc.getClientPlayNetHandler().sendPacket(new Class5570(Hand.field182, var4));
-                        mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
+                        mc.getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, var4));
+                        mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                         this.field23624.method27120();
                     }
                 }
@@ -73,9 +73,9 @@ public class Class5250 extends Module {
                 for (Entry var6 : this.field23622.entrySet()) {
                     Class941 var7 = (Class941) var6.getKey();
                     boolean var8 = (Boolean) var6.getValue();
-                    float var9 = (float) var7.method3774().method8304();
-                    float var10 = (float) var7.method3774().getY() + 0.1F;
-                    float var11 = (float) var7.method3774().method8306();
+                    float var9 = (float) var7.getPos().getX();
+                    float var10 = (float) var7.getPos().getY() + 0.1F;
+                    float var11 = (float) var7.getPos().getZ();
                     if (!this.field23621
                             && (
                             this.field23625 == null
@@ -86,10 +86,10 @@ public class Class5250 extends Module {
                             && Math.sqrt(mc.player.method3276(var9, var10, var11)) < 5.0
                             && this.field23624.method27121() > 1000L
                             && mc.currentScreen == null) {
-                        Class8711 var12 = (Class8711) Class9217.method34570(var7.method3774());
-                        if (var12.method31423().method8304() == var7.method3774().method8304()
-                                && var12.method31423().getY() == var7.method3774().getY()
-                                && var12.method31423().method8306() == var7.method3774().method8306()) {
+                        BlockRayTraceResult var12 = (BlockRayTraceResult) Class9217.method34570(var7.getPos());
+                        if (var12.getPos().getX() == var7.getPos().getX()
+                                && var12.getPos().getY() == var7.getPos().getY()
+                                && var12.getPos().getZ() == var7.getPos().getZ()) {
                             this.field23625 = var7;
                             float[] var13 = Class9142.method34144((double) var9 + 0.5, (double) var11 + 0.5, (double) var10 + 0.35);
                             var1.method13918(var13[0]);
@@ -108,7 +108,7 @@ public class Class5250 extends Module {
     }
 
     @EventTarget
-    public void method16366(Class4418 var1) {
+    public void method16366(WorldLoadEvent var1) {
         if (!this.field23622.isEmpty()) {
             this.field23622.clear();
         }
@@ -268,7 +268,7 @@ public class Class5250 extends Module {
     }
 
     private boolean method16369(ItemStack var1) {
-        Class3257 var4 = var1.method32107();
+        Item var4 = var1.getItem();
         if (!this.method15974("Ignore Junk")) {
             return false;
         } else if (!(var4 instanceof Class3267)) {
@@ -282,36 +282,36 @@ public class Class5250 extends Module {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
                             && (!(var4 instanceof Class3263) || !Client.getInstance().getModuleManager().method14662(Class5260.class).method15974("Archery"))) {
-                        if (var4 == Class8514.field37883 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
+                        if (var4 == Items.field37883 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
                             return false;
                         } else {
-                            ArrayList var5 = new ArrayList<Class3257>(
+                            ArrayList var5 = new ArrayList<Item>(
                                     Arrays.asList(
-                                            Class8514.field37905,
-                                            Class8514.field37839,
-                                            Class8514.field37868,
-                                            Class8514.field37904,
-                                            Class8514.field37838,
-                                            Class8514.field37835,
-                                            Class8514.field37389,
-                                            Class8514.field37882,
-                                            Class8514.field37884,
-                                            Class8514.field37883,
-                                            Class8514.field37424,
-                                            Class8514.field38070,
-                                            Class8514.field38045,
-                                            Class8514.field37956,
-                                            Class8514.field37536,
-                                            Class8514.field37393,
-                                            Class8514.field38112,
-                                            Class8514.field37960,
-                                            Class8514.field37959,
-                                            Class8514.field37841,
-                                            Class8514.field37890,
-                                            Class8514.field37972,
-                                            Class8514.field37316,
-                                            Class8514.field37888,
-                                            Class8514.field37906
+                                            Items.field37905,
+                                            Items.field37839,
+                                            Items.field37868,
+                                            Items.field37904,
+                                            Items.field37838,
+                                            Items.field37835,
+                                            Items.field37389,
+                                            Items.field37882,
+                                            Items.field37884,
+                                            Items.field37883,
+                                            Items.field37424,
+                                            Items.field38070,
+                                            Items.field38045,
+                                            Items.field37956,
+                                            Items.field37536,
+                                            Items.field37393,
+                                            Items.field38112,
+                                            Items.field37960,
+                                            Items.field37959,
+                                            Items.field37841,
+                                            Items.field37890,
+                                            Items.field37972,
+                                            Items.field37316,
+                                            Items.field37888,
+                                            Items.field37906
                                     )
                             );
                             return var1 == null || var5.contains(var4) || var4.method11717().getString().toLowerCase().contains("seed");
@@ -331,10 +331,10 @@ public class Class5250 extends Module {
     }
 
     private void method16370() {
-        List<Class944> var3 = mc.world.field9003;
+        List<TileEntity> var3 = mc.world.field9003;
         var3.removeIf(var0 -> !(var0 instanceof Class941));
 
-        for (Class944 var5 : var3) {
+        for (TileEntity var5 : var3) {
             if (!this.field23622.containsKey((Class941) var5)) {
                 this.field23622.put((Class941) var5, false);
             }

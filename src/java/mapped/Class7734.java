@@ -5,7 +5,7 @@ import java.util.Optional;
 public class Class7734 implements Class7733 {
    private static String[] field33207;
    private final Class7735 field33208;
-   private final Class7735 field33209 = Class7733.method25595(new Class5425(256));
+   private final Class7735 field33209 = Class7733.method25595(new BufferBuilder(256));
    private int field33210 = 255;
    private int field33211 = 255;
    private int field33212 = 255;
@@ -16,14 +16,14 @@ public class Class7734 implements Class7733 {
    }
 
    @Override
-   public Class5422 method25597(Class4520 var1) {
+   public Class5422 method25597(RenderType var1) {
       if (!var1.method14354()) {
          Class5422 var8 = this.field33208.method25597(var1);
          Optional var5 = var1.method14353();
          if (!var5.isPresent()) {
             return var8;
          } else {
-            Class5422 var6 = this.field33209.method25597((Class4520)var5.get());
+            Class5422 var6 = this.field33209.method25597((RenderType)var5.get());
             Class5428 var7 = new Class5428(var6, this.field33210, this.field33211, this.field33212, this.field33213);
             return Class7802.method26050(var7, var8);
          }

@@ -10,13 +10,13 @@ public class Class3432 extends Class3429 {
       this.method11578(this.field18612.method35393().method23465(field19196, Class96.field247).method23465(field19197, Boolean.valueOf(false)));
    }
 
-   public boolean method12098(World var1, BlockPos var2, Class7380 var3, boolean var4, int var5) {
+   public boolean method12098(World var1, BlockPos var2, BlockState var3, boolean var4, int var5) {
       if (var5 >= 8) {
          return false;
       } else {
-         int var8 = var2.method8304();
+         int var8 = var2.getX();
          int var9 = var2.getY();
-         int var10 = var2.method8306();
+         int var10 = var2.getZ();
          boolean var11 = true;
          Class96 var12 = var3.<Class96>method23463(field19196);
          switch (Class8690.field39230[var12.ordinal()]) {
@@ -86,7 +86,7 @@ public class Class3432 extends Class3429 {
    }
 
    public boolean method12099(World var1, BlockPos var2, boolean var3, int var4, Class96 var5) {
-      Class7380 var8 = var1.method6738(var2);
+      BlockState var8 = var1.getBlockState(var2);
       if (!var8.method23448(this)) {
          return false;
       } else {
@@ -108,7 +108,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public void method12091(Class7380 var1, World var2, BlockPos var3, Block var4) {
+   public void method12091(BlockState var1, World var2, BlockPos var3, Block var4) {
       boolean var7 = var1.<Boolean>method23463(field19197);
       boolean var8 = var2.method6780(var3) || this.method12098(var2, var3, var1, true, 0) || this.method12098(var2, var3, var1, false, 0);
       if (var8 != var7) {
@@ -126,7 +126,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       switch (Class8690.field39231[var2.ordinal()]) {
          case 1:
             switch (Class8690.field39230[var1.<Class96>method23463(field19196).ordinal()]) {
@@ -199,7 +199,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       Class96 var5 = var1.<Class96>method23463(field19196);
       switch (Class8690.field39232[var2.ordinal()]) {
          case 1:
@@ -244,7 +244,7 @@ public class Class3432 extends Class3429 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19196, field19197);
    }
 }

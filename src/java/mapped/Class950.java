@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Class950 extends Class944 implements Class949, Class935 {
+public class Class950 extends TileEntity implements Class949, Class935 {
    public static final Class7144[][] field5338 = new Class7144[][]{
       {Class8254.field35467, Class8254.field35469}, {Class8254.field35477, Class8254.field35474}, {Class8254.field35471}, {Class8254.field35476}
    };
@@ -35,9 +35,9 @@ public class Class950 extends Class944 implements Class949, Class935 {
 
    @Override
    public void method3647() {
-      int var3 = this.field5325.method8304();
+      int var3 = this.field5325.getX();
       int var4 = this.field5325.getY();
-      int var5 = this.field5325.method8306();
+      int var5 = this.field5325.getZ();
       BlockPos var6;
       if (this.field5343 >= var4) {
          var6 = new BlockPos(var3, this.field5343 + 1, var5);
@@ -51,8 +51,8 @@ public class Class950 extends Class944 implements Class949, Class935 {
       int var8 = this.field5324.method6736(Class101.field296, var3, var5);
 
       for (int var9 = 0; var9 < 10 && var6.getY() <= var8; var9++) {
-         Class7380 var10 = this.field5324.method6738(var6);
-         Block var11 = var10.method23383();
+         BlockState var10 = this.field5324.getBlockState(var6);
+         Block var11 = var10.getBlock();
          if (!(var11 instanceof Class3235)) {
             if (var7 == null || var10.method23387(this.field5324, var6) >= 15 && var11 != Blocks.BEDROCK) {
                this.field5341.clear();
@@ -136,7 +136,7 @@ public class Class950 extends Class944 implements Class949, Class935 {
 
          for (int var9 = var1 - var6; var9 <= var1 + var6 && var8; var9++) {
             for (int var10 = var3 - var6; var10 <= var3 + var6; var10++) {
-               if (!this.field5324.method6738(new BlockPos(var9, var7, var10)).method23446(Class7645.field32801)) {
+               if (!this.field5324.getBlockState(new BlockPos(var9, var7, var10)).method23446(Class7645.field32801)) {
                   var8 = false;
                   break;
                }
@@ -198,8 +198,8 @@ public class Class950 extends Class944 implements Class949, Class935 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      return this.write(new CompoundNBT());
    }
 
    @Override
@@ -214,7 +214,7 @@ public class Class950 extends Class944 implements Class949, Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5344 = method3825(var2.method122("Primary"));
       this.field5345 = method3825(var2.method122("Secondary"));
@@ -226,8 +226,8 @@ public class Class950 extends Class944 implements Class949, Class935 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       var1.method102("Primary", Class7144.method22288(this.field5344));
       var1.method102("Secondary", Class7144.method22288(this.field5345));
       var1.method102("Levels", this.field5342);
@@ -245,10 +245,10 @@ public class Class950 extends Class944 implements Class949, Class935 {
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, Class974 var2, PlayerEntity var3) {
+   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       return !Class932.method3697(var3, this.field5347, this.method2954())
          ? null
-         : new Class5821(var1, var2, this.field5348, Class8786.method31714(this.field5324, this.method3774()));
+         : new Class5821(var1, var2, this.field5348, Class8786.method31714(this.field5324, this.getPos()));
    }
 
    @Override

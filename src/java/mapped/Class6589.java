@@ -84,7 +84,7 @@ public class Class6589 {
       synchronized (this) {
          if (!this.field29007) {
             this.field29007 = true;
-            Minecraft.getInstance().method1549().method38346(this.field29003, (var1, var2, var3) -> {
+            Minecraft.getInstance().getSkinManager().method38346(this.field29003, (var1, var2, var3) -> {
                this.field29004.put(var1, var2);
                if (var1 == Type.SKIN) {
                   this.field29008 = var3.getMetadata("model");

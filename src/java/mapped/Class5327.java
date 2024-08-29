@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5327 extends Class5325 {
     public Class5327() {
         super(ModuleCategory.MOVEMENT, "LongJump", "Makes you jump far away", new Class5178(), new Class5193(), new Class5292(), new Class5366());
-        this.method15972(new Class6004("Auto Disable", "Disable Longjump when landing", true));
-        this.method15972(new Class6004("BorderJump", "Jumps when you are close to a border", true));
-        this.method15972(new Class6004("Auto Jump", "Automatically jumps when you can", true));
+        this.registerSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
+        this.registerSetting(new BooleanSetting("BorderJump", "Jumps when you are close to a border", true));
+        this.registerSetting(new BooleanSetting("Auto Jump", "Automatically jumps when you can", true));
     }
 
     public double method16730(int var1) {

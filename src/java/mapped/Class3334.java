@@ -3,7 +3,7 @@ package mapped;
 import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class3334 extends Class3257 {
+public class Class3334 extends Item {
    public Class3334(Class5643 var1) {
       super(var1);
       Class3357.method11931(this, Class3279.field18780);
@@ -11,7 +11,7 @@ public class Class3334 extends Class3257 {
 
    @Override
    public String method11720(ItemStack var1) {
-      return var1.method32145("BlockEntityTag") == null ? super.method11720(var1) : this.method11719() + '.' + method11882(var1).method310();
+      return var1.method32145("BlockEntityTag") == null ? super.method11720(var1) : this.getTranslationKey() + '.' + method11882(var1).method310();
    }
 
    @Override
@@ -38,7 +38,7 @@ public class Class3334 extends Class3257 {
 
    @Override
    public boolean method11699(ItemStack var1, ItemStack var2) {
-      return Class5985.field26071.method24917(var2.method32107()) || super.method11699(var1, var2);
+      return Class5985.field26071.method24917(var2.getItem()) || super.method11699(var1, var2);
    }
 
    public static Class112 method11882(ItemStack var0) {

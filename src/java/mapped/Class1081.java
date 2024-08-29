@@ -12,7 +12,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    private int field5944 = 3;
    private int field5945;
 
-   public Class1081(Class8992<? extends Class1081> var1, World var2) {
+   public Class1081(EntityType<? extends Class1081> var1, World var2) {
       super(var1, var2);
    }
 
@@ -59,7 +59,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.field5063.<Boolean>method35445(field5939)) {
          var1.method115("powered", true);
@@ -71,7 +71,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5063.method35446(field5939, var1.method132("powered"));
       if (var1.method119("Fuse", 99)) {
@@ -132,7 +132,7 @@ public class Class1081 extends Class1009 implements Class1080 {
          Class1081 var7 = (Class1081)var6;
          if (var7.method5026()) {
             var7.method5027();
-            this.method3300(Class8514.field38062);
+            this.method3300(Items.field38062);
          }
       }
    }
@@ -168,10 +168,10 @@ public class Class1081 extends Class1009 implements Class1080 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.method32107() != Class8514.field37794) {
+      if (var5.getItem() != Items.field37794) {
          return super.method4285(var1, var2);
       } else {
-         this.field5024
+         this.world
             .method6743(
                var1,
                this.getPosX(),
@@ -182,21 +182,21 @@ public class Class1081 extends Class1009 implements Class1080 {
                1.0F,
                this.field5054.nextFloat() * 0.4F + 0.8F
             );
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             this.method5025();
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       }
    }
 
    private void method5022() {
-      if (!this.field5024.field9020) {
-         Class2141 var3 = !this.field5024.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+      if (!this.world.field9020) {
+         Class2141 var3 = !this.world.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
          float var4 = !this.method5016() ? 1.0F : 2.0F;
          this.field4972 = true;
-         this.field5024.method6755(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field5944 * var4, var3);
+         this.world.method6755(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field5944 * var4, var3);
          this.method2904();
          this.method5023();
       }
@@ -205,7 +205,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    private void method5023() {
       Collection<Class2023> var3 = this.method3031();
       if (!var3.isEmpty()) {
-         Class999 var4 = new Class999(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ());
+         Class999 var4 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
          var4.method4097(2.5F);
          var4.method4110(-0.5F);
          var4.method4112(10);
@@ -216,7 +216,7 @@ public class Class1081 extends Class1009 implements Class1080 {
             var4.method4101(new Class2023(var6));
          }
 
-         this.field5024.method6916(var4);
+         this.world.method6916(var4);
       }
    }
 

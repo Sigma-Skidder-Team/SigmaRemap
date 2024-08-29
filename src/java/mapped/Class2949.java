@@ -13,7 +13,7 @@ public class Class2949 extends Class2898<Class4712> {
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
       if (var1.method7007(var4)) {
-         Class7380 var8 = var1.method6738(var4.method8311());
+         BlockState var8 = var1.getBlockState(var4.method8311());
          if (!var8.method23448(Blocks.NETHERRACK) && !var8.method23448(Blocks.field36891)) {
             return false;
          } else {
@@ -37,7 +37,7 @@ public class Class2949 extends Class2898<Class4712> {
             int var9 = 0;
 
             for (Direction var13 : field18026) {
-               Class7380 var14 = var1.method6738(var7.method8377(var6, var13));
+               BlockState var14 = var1.getBlockState(var7.method8377(var6, var13));
                if (var14.method23448(Blocks.NETHERRACK) || var14.method23448(Blocks.field36891)) {
                   var9++;
                }
@@ -60,7 +60,7 @@ public class Class2949 extends Class2898<Class4712> {
       for (int var7 = 0; var7 < 100; var7++) {
          var6.method8378(var3, var2.nextInt(8) - var2.nextInt(8), var2.nextInt(2) - var2.nextInt(7), var2.nextInt(8) - var2.nextInt(8));
          if (var1.method7007(var6)) {
-            Class7380 var8 = var1.method6738(var6.method8311());
+            BlockState var8 = var1.getBlockState(var6.method8311());
             if (var8.method23448(Blocks.NETHERRACK) || var8.method23448(Blocks.field36891)) {
                int var9 = MathHelper.method37782(var2, 1, 8);
                if (var2.nextInt(6) == 0) {
@@ -91,7 +91,7 @@ public class Class2949 extends Class2898<Class4712> {
             var0.method6725(var2, Blocks.field37087.method11579(), 2);
          }
 
-         var2.method8379(Direction.field672);
+         var2.method8379(Direction.DOWN);
       }
    }
 }

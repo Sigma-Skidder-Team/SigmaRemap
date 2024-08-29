@@ -12,8 +12,8 @@ public class Class8960 {
    private final ReentrantReadWriteLock field40483 = new ReentrantReadWriteLock();
 
    public int method32731(BlockPos var1, IntSupplier var2) {
-      int var5 = var1.method8304() >> 4;
-      int var6 = var1.method8306() >> 4;
+      int var5 = var1.getX() >> 4;
+      int var6 = var1.getZ() >> 4;
       Class8676 var7 = this.field40481.get();
       if (var7.field39106 != var5 || var7.field39107 != var6) {
          var7.field39106 = var5;
@@ -21,8 +21,8 @@ public class Class8960 {
          var7.field39108 = this.method32734(var5, var6);
       }
 
-      int var8 = var1.method8304() & 15;
-      int var9 = var1.method8306() & 15;
+      int var8 = var1.getX() & 15;
+      int var9 = var1.getZ() & 15;
       int var10 = var9 << 4 | var8;
       int var11 = var7.field39108[var10];
       if (var11 == -1) {

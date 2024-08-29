@@ -120,8 +120,8 @@ public class Class5151 extends Module {
       ModuleCategory var7 = this.field23383.get(var4.field32402);
       Module var8 = Client.getInstance().getModuleManager().method14665(var7).get(var5.field32402);
       Setting var9 = this.method15968(var8).get(var6.field32402);
-      if (!(var9 instanceof Class6005)) {
-         if (!(var9 instanceof Class6004)) {
+      if (!(var9 instanceof ModeSetting)) {
+         if (!(var9 instanceof BooleanSetting)) {
             if (var9 instanceof Class6009) {
                Class6009 var10 = (Class6009)var9;
                Object var11 = var10.method18619();
@@ -138,11 +138,11 @@ public class Class5151 extends Module {
                }
             }
          } else {
-            Class6004 var13 = (Class6004)var9;
+            BooleanSetting var13 = (BooleanSetting)var9;
             var13.method18620(Boolean.valueOf(!var13.method18619()));
          }
       } else {
-         Class6005 var14 = (Class6005)var9;
+         ModeSetting var14 = (ModeSetting)var9;
          int var15 = var14.method18632();
          if (!var1) {
             var15--;
@@ -181,7 +181,7 @@ public class Class5151 extends Module {
    private void method15957(Class4415 var1) {
       if (this.method15996() && mc.player != null) {
          if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-            if (!Minecraft.getInstance().gameSettings.field44662) {
+            if (!Minecraft.getInstance().gameSettings.hideGUI) {
                this.method15958();
 
                for (Class7554 var5 : field23385) {

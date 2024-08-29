@@ -30,23 +30,23 @@ public class Class6762 extends Class6764 {
    @Override
    public Class7176 method20615() {
       Mutable var3 = new Mutable();
-      int var4 = MathHelper.method37769(this.field29476.getPosY());
-      Class7380 var5 = this.field29475.method6738(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
+      int var4 = MathHelper.floor(this.field29476.getPosY());
+      BlockState var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
       if (!this.field29476.method3107(var5.method23449().method23472())) {
          if (this.method20649() && this.field29476.method3250()) {
             while (true) {
-               if (var5.method23383() != Blocks.WATER && var5.method23449() != Class9479.field44066.method25078(false)) {
+               if (var5.getBlock() != Blocks.WATER && var5.method23449() != Class9479.field44066.method25078(false)) {
                   var4--;
                   break;
                }
 
-               var5 = this.field29475.method6738(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
+               var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
             }
          } else if (!this.field29476.method3226()) {
-            BlockPos var6 = this.field29476.method3432();
+            BlockPos var6 = this.field29476.getPosition();
 
             while (
-               (this.field29475.method6738(var6).method23393() || this.field29475.method6738(var6).method23440(this.field29475, var6, Class1947.field12614))
+               (this.field29475.getBlockState(var6).isAir() || this.field29475.getBlockState(var6).method23440(this.field29475, var6, Class1947.field12614))
                   && var6.getY() > 0
             ) {
                var6 = var6.method8313();
@@ -54,18 +54,18 @@ public class Class6762 extends Class6764 {
 
             var4 = var6.method8311().getY();
          } else {
-            var4 = MathHelper.method37769(this.field29476.getPosY() + 0.5);
+            var4 = MathHelper.floor(this.field29476.getPosY() + 0.5);
          }
       } else {
          while (this.field29476.method3107(var5.method23449().method23472())) {
-            var5 = this.field29475.method6738(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
+            var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
          }
 
          var4--;
       }
 
-      BlockPos var11 = this.field29476.method3432();
-      Class2163 var7 = this.method20632(this.field29476, var11.method8304(), var4, var11.method8306());
+      BlockPos var11 = this.field29476.getPosition();
+      Class2163 var7 = this.method20632(this.field29476, var11.getX(), var4, var11.getZ());
       if (this.field29476.method4223(var7) < 0.0F) {
          Class6488 var8 = this.field29476.method3389();
          if (this.method20622(var3.method8373(var8.field28449, (double)var4, var8.field28451))
@@ -79,7 +79,7 @@ public class Class6762 extends Class6764 {
          }
       }
 
-      Class7176 var12 = this.method20641(var11.method8304(), var4, var11.method8306());
+      Class7176 var12 = this.method20641(var11.getX(), var4, var11.getZ());
       var12.field30859 = this.method20631(this.field29476, var12.method22531());
       var12.field30858 = this.field29476.method4223(var12.field30859);
       return var12;
@@ -92,7 +92,7 @@ public class Class6762 extends Class6764 {
 
    @Override
    public Class7175 method20616(double var1, double var3, double var5) {
-      return new Class7175(this.method20641(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5)));
+      return new Class7175(this.method20641(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5)));
    }
 
    @Override
@@ -192,7 +192,7 @@ public class Class6762 extends Class6764 {
 
    public static double method20626(Class1665 var0, BlockPos var1) {
       BlockPos var4 = var1.method8313();
-      Class6408 var5 = var0.method6738(var4).method23414(var0, var4);
+      Class6408 var5 = var0.getBlockState(var4).method23414(var0, var4);
       return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
    }
 
@@ -321,7 +321,7 @@ public class Class6762 extends Class6764 {
    public Class2163 method20629(Class1665 var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet<Class2163> var13 = EnumSet.noneOf(Class2163.class);
       Class2163 var14 = Class2163.field14184;
-      BlockPos var15 = var5.method3432();
+      BlockPos var15 = var5.getPosition();
       var14 = this.method20630(var1, var2, var3, var4, var6, var7, var8, var9, var10, var13, var14, var15);
       if (var13.contains(Class2163.field14189)) {
          return Class2163.field14189;
@@ -388,8 +388,8 @@ public class Class6762 extends Class6764 {
       }
 
       if (var5 == Class2163.field14193
-         && !(var1.method6738(var4).method23383() instanceof Class3429)
-         && !(var1.method6738(var4.method8313()).method23383() instanceof Class3429)) {
+         && !(var1.getBlockState(var4).getBlock() instanceof Class3429)
+         && !(var1.getBlockState(var4.method8313()).getBlock() instanceof Class3429)) {
          var5 = Class2163.field14194;
       }
 
@@ -401,7 +401,7 @@ public class Class6762 extends Class6764 {
    }
 
    private Class2163 method20631(Class1006 var1, BlockPos var2) {
-      return this.method20632(var1, var2.method8304(), var2.getY(), var2.method8306());
+      return this.method20632(var1, var2.getX(), var2.getY(), var2.getZ());
    }
 
    private Class2163 method20632(Class1006 var1, int var2, int var3, int var4) {
@@ -420,9 +420,9 @@ public class Class6762 extends Class6764 {
    }
 
    public static Class2163 method20633(Class1665 var0, Mutable var1) {
-      int var4 = var1.method8304();
+      int var4 = var1.getX();
       int var5 = var1.getY();
-      int var6 = var1.method8306();
+      int var6 = var1.getZ();
       Class2163 var7 = method20635(var0, var1);
       if (var7 == Class2163.field14185 && var5 >= 1) {
          Class2163 var8 = method20635(var0, var1.method8372(var4, var5 - 1, var6));
@@ -454,16 +454,16 @@ public class Class6762 extends Class6764 {
    }
 
    public static Class2163 method20634(Class1665 var0, Mutable var1, Class2163 var2) {
-      int var5 = var1.method8304();
+      int var5 = var1.getX();
       int var6 = var1.getY();
-      int var7 = var1.method8306();
+      int var7 = var1.getZ();
 
       for (int var8 = -1; var8 <= 1; var8++) {
          for (int var9 = -1; var9 <= 1; var9++) {
             for (int var10 = -1; var10 <= 1; var10++) {
                if (var8 != 0 || var10 != 0) {
                   var1.method8372(var5 + var8, var6 + var9, var7 + var10);
-                  Class7380 var11 = var0.method6738(var1);
+                  BlockState var11 = var0.getBlockState(var1);
                   if (var11.method23448(Blocks.CACTUS)) {
                      return Class2163.field14197;
                   }
@@ -488,10 +488,10 @@ public class Class6762 extends Class6764 {
    }
 
    public static Class2163 method20635(Class1665 var0, BlockPos var1) {
-      Class7380 var4 = var0.method6738(var1);
-      Block var5 = var4.method23383();
+      BlockState var4 = var0.getBlockState(var1);
+      Block var5 = var4.getBlock();
       Class8649 var6 = var4.method23384();
-      if (var4.method23393()) {
+      if (var4.isAir()) {
          return Class2163.field14185;
       } else if (var4.method23446(Class7645.field32768) || var4.method23448(Blocks.LILY_PAD)) {
          return Class2163.field14188;
@@ -531,7 +531,7 @@ public class Class6762 extends Class6764 {
       }
    }
 
-   private static boolean method20636(Class7380 var0) {
+   private static boolean method20636(BlockState var0) {
       return var0.method23446(Class7645.field32798)
          || var0.method23448(Blocks.LAVA)
          || var0.method23448(Blocks.field36890)

@@ -25,7 +25,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
    public static final boolean field25095 = Boolean.getBoolean("animate.model.living");
    public float field25096 = 1.0F;
 
-   public Class5712(Class8853 var1, M var2, float var3) {
+   public Class5712(EntityRendererManager var1, M var2, float var3) {
       super(var1);
       this.field25086 = (M)var2;
       this.field25098 = var3;
@@ -46,7 +46,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             var1.field4960 = 1.0F;
          }
 
-         var4.method35294();
+         var4.push();
          this.field25086.field17600 = this.method17885((T)var1, var3);
          this.field25086.field17601 = var1.method3328();
          if (Class9299.field42838.method20214()) {
@@ -94,7 +94,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             Direction var14 = var1.method3179();
             if (var14 != null) {
                float var15 = var1.method3392(Class2090.field13619) - 0.1F;
-               var4.method35291((double)((float)(-var14.method539()) * var15), 0.0, (double)((float)(-var14.method541()) * var15));
+               var4.translate((double)((float)(-var14.method539()) * var15), 0.0, (double)((float)(-var14.method541()) * var15));
             }
          }
 
@@ -102,7 +102,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          this.method17842((T)var1, var4, var34, var9, var3);
          var4.method35292(-1.0F, -1.0F, 1.0F);
          this.method17857((T)var1, var4, var3);
-         var4.method35291(0.0, -1.501F, 0.0);
+         var4.translate(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
          if (!var1.method3328() && var1.method3066()) {
@@ -135,18 +135,18 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          Minecraft var18 = Minecraft.getInstance();
          boolean var19 = this.method17869((T)var1);
          boolean var20 = !var19 && !var1.method3343(var18.player);
-         boolean var21 = var18.method1552(var1);
-         Class4520 var22 = this.method17882((T)var1, var19, var20, var21);
+         boolean var21 = var18.isEntityGlowing(var1);
+         RenderType var22 = this.method17882((T)var1, var19, var20, var21);
          if (var22 != null) {
             Class5422 var23 = var5.method25597(var22);
             float var24 = this.method17879((T)var1, var3);
             if (var17) {
                if (var1.field4952 > 0 || var1.field4955 > 0) {
-                  Class8981.method33086(1.0F, 0.0F, 0.0F, 0.3F);
+                  Shaders.method33086(1.0F, 0.0F, 0.0F, 0.3F);
                }
 
                if (var24 > 0.0F) {
-                  Class8981.method33086(var24, var24, var24, 0.5F);
+                  Shaders.method33086(var24, var24, var24, 0.5F);
                }
             }
 
@@ -154,14 +154,14 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             this.field25086.method11016(var4, var23, var6, var25, 1.0F, 1.0F, 1.0F, (!var20 ? 1.0F : 0.15F) * this.field25096);
          }
 
-         if (!var1.method2800() && var33.method13954()) {
+         if (!var1.isSpectator() && var33.method13954()) {
             for (Class219 var37 : this.field25087) {
                var37.method820(var4, var5, var6, var1, var16, var35, var3, var34, var11, var31);
             }
          }
 
          if (Class7944.method26921()) {
-            Class8981.method33086(0.0F, 0.0F, 0.0F, 0.0F);
+            Shaders.method33086(0.0F, 0.0F, 0.0F, 0.0F);
          }
 
          if (Class9810.method38699()) {
@@ -179,7 +179,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
    }
 
    @Nullable
-   public Class4520 method17882(T var1, boolean var2, boolean var3, boolean var4) {
+   public RenderType method17882(T var1, boolean var2, boolean var3, boolean var4) {
       ResourceLocation var7 = this.method17843((T)var1);
       if (this.method17900() != null) {
          var7 = this.method17900();
@@ -187,16 +187,16 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
 
       if (!var3) {
          if (!var2) {
-            if (var1.method3340() && !Class7944.method26860().worldRenderer.method861()) {
+            if (var1.isGlowing() && !Class7944.method26860().worldRenderer.method861()) {
                return this.field25086.method11028(var7);
             } else {
-               return !var4 ? null : Class4520.method14329(var7);
+               return !var4 ? null : RenderType.method14329(var7);
             }
          } else {
             return this.field25086.method11028(var7);
          }
       } else {
-         return Class4520.method14315(var7);
+         return RenderType.method14315(var7);
       }
    }
 
@@ -245,7 +245,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
                   if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method2962(Class2318.field15879))
                      )
                    {
-                     var2.method35291(0.0, (double)(var1.method3430() + 0.1F), 0.0);
+                     var2.translate(0.0, (double)(var1.method3430() + 0.1F), 0.0);
                      var2.method35293(Class7680.field32902.method25286(180.0F));
                   }
                }
@@ -324,7 +324,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
                }
             }
 
-            return Minecraft.method1515() && var1 != var8.method1550() && var10 && !var1.method3329();
+            return Minecraft.isGuiEnabled() && var1 != var8.getRenderViewEntity() && var10 && !var1.method3329();
          }
       }
    }

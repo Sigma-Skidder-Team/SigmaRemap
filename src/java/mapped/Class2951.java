@@ -5,15 +5,15 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class Class2951 extends Class2898<Class4728> {
-   private static final Class7380 field18027 = Blocks.field37009
+   private static final BlockState field18027 = Blocks.field37009
       .method11579()
       .method23465(Class3418.field19125, Integer.valueOf(1))
       .method23465(Class3418.field19126, Class181.field642)
       .method23465(Class3418.field19127, Integer.valueOf(0));
-   private static final Class7380 field18028 = field18027.method23465(Class3418.field19126, Class181.field644)
+   private static final BlockState field18028 = field18027.method23465(Class3418.field19126, Class181.field644)
       .method23465(Class3418.field19127, Integer.valueOf(1));
-   private static final Class7380 field18029 = field18027.method23465(Class3418.field19126, Class181.field644);
-   private static final Class7380 field18030 = field18027.method23465(Class3418.field19126, Class181.field643);
+   private static final BlockState field18029 = field18027.method23465(Class3418.field19126, Class181.field644);
+   private static final BlockState field18030 = field18027.method23465(Class3418.field19126, Class181.field643);
 
    public Class2951(Codec<Class4728> var1) {
       super(var1);
@@ -29,13 +29,13 @@ public class Class2951 extends Class2898<Class4728> {
             if (var3.nextFloat() < var5.field22399) {
                int var12 = var3.nextInt(4) + 1;
 
-               for (int var13 = var4.method8304() - var12; var13 <= var4.method8304() + var12; var13++) {
-                  for (int var14 = var4.method8306() - var12; var14 <= var4.method8306() + var12; var14++) {
-                     int var15 = var13 - var4.method8304();
-                     int var16 = var14 - var4.method8306();
+               for (int var13 = var4.getX() - var12; var13 <= var4.getX() + var12; var13++) {
+                  for (int var14 = var4.getZ() - var12; var14 <= var4.getZ() + var12; var14++) {
+                     int var15 = var13 - var4.getX();
+                     int var16 = var14 - var4.getZ();
                      if (var15 * var15 + var16 * var16 <= var12 * var12) {
                         var10.method8372(var13, var1.method6736(Class101.field296, var13, var14) - 1, var14);
-                        if (method11219(var1.method6738(var10).method23383())) {
+                        if (method11219(var1.getBlockState(var10).getBlock())) {
                            var1.method6725(var10, Blocks.field36398.method11579(), 2);
                         }
                      }
@@ -50,8 +50,8 @@ public class Class2951 extends Class2898<Class4728> {
 
             if (var9.getY() - var4.getY() >= 3) {
                var1.method6725(var9, field18028, 2);
-               var1.method6725(var9.method8380(Direction.field672, 1), field18029, 2);
-               var1.method6725(var9.method8380(Direction.field672, 1), field18030, 2);
+               var1.method6725(var9.method8380(Direction.DOWN, 1), field18029, 2);
+               var1.method6725(var9.method8380(Direction.DOWN, 1), field18030, 2);
             }
          }
 

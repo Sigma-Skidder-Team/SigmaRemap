@@ -6,7 +6,7 @@ public class Class2853 extends Class2828 {
    private final Class7219 field17675;
 
    public Class2853() {
-      super(Class4520::method14309);
+      super(RenderType::getEntitySolid);
       this.field17604 = 64;
       this.field17605 = 64;
       this.field17674 = new Class7219(this, 0, 0);

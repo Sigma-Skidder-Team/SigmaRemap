@@ -27,8 +27,8 @@ public class Class1318 extends Screen {
    }
 
    private Class1894 method6256() {
-      Class1894 var3 = Minecraft.getInstance().field1337.method23157();
-      Class1894 var4 = Minecraft.getInstance().field1337.method23156();
+      Class1894 var3 = Minecraft.getInstance().playerController.method23157();
+      Class1894 var4 = Minecraft.getInstance().playerController.method23156();
       if (var4 == Class1894.field11101) {
          if (var3 != Class1894.field11103) {
             var4 = Class1894.field11103;
@@ -43,7 +43,7 @@ public class Class1318 extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.field4562.field1337.method23157()) : this.field6965;
+      this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.field4562.playerController.method23157()) : this.field6965;
 
       for (int var3 = 0; var3 < Class2150.field14059.length; var3++) {
          Class2150 var4 = Class2150.field14059[var3];
@@ -54,7 +54,7 @@ public class Class1318 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.method6259()) {
-         var1.method35294();
+         var1.push();
          RenderSystem.enableBlend();
          this.field4562.getTextureManager().bindTexture(field6962);
          int var7 = this.field4564 / 2 - 62;
@@ -87,8 +87,8 @@ public class Class1318 extends Screen {
    }
 
    private static void method6258(Minecraft var0, Optional<Class2150> var1) {
-      if (var0.field1337 != null && var0.player != null && var1.isPresent()) {
-         Optional var4 = Class2150.method8860(var0.field1337.method23157());
+      if (var0.playerController != null && var0.player != null && var1.isPresent()) {
+         Optional var4 = Class2150.method8860(var0.playerController.method23157());
          Class2150 var5 = (Class2150)var1.get();
          if (var4.isPresent() && var0.player.method3424(2) && var5 != var4.get()) {
             var0.player.method5389(Class2150.method8861(var5));
@@ -97,7 +97,7 @@ public class Class1318 extends Screen {
    }
 
    private boolean method6259() {
-      if (Class9798.method38639(this.field4562.method1580().method8039(), 292)) {
+      if (Class9798.method38639(this.field4562.getMainWindow().getHandle(), 292)) {
          return false;
       } else {
          this.method6257();
@@ -118,7 +118,7 @@ public class Class1318 extends Screen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 

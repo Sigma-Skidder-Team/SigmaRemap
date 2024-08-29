@@ -16,10 +16,10 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       Class9735.method38146().method38150(new Class8605(Class8122.field34916, Class8840.method32014(1)))
    );
    private static final Class7519 field17629 = field17628.method24518();
-   private static final Class7519 field17630 = Class159.method480(Class9735.method38146().method38147(Class8514.field37956));
+   private static final Class7519 field17630 = Class159.method480(Class9735.method38146().method38147(Items.field37956));
    private static final Class7519 field17631 = field17630.method24516(field17628);
    private static final Class7519 field17632 = field17631.method24518();
-   private static final Set<Class3257> field17633 = Stream.<Block>of(
+   private static final Set<Item> field17633 = Stream.<Block>of(
          Blocks.field36652,
          Blocks.BEACON,
          Blocks.field37007,
@@ -47,7 +47,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          Blocks.field36897,
          Blocks.field36901
       )
-      .<Class3257>map(Class3303::method11581)
+      .<Item>map(Class3303::method11581)
       .collect(ImmutableSet.toImmutableSet());
    private static final float[] field17634 = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
    private static final float[] field17635 = new float[]{0.025F, 0.027777778F, 0.03125F, 0.041666668F, 0.1F};
@@ -228,7 +228,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          );
    }
 
-   private static Class5888 method11078(Block var0, Class3257 var1) {
+   private static Class5888 method11078(Block var0, Item var1) {
       return method11063(var0, (Class5873<?>)method11059(var0, Class4695.method14724(var1).method18296(Class138.method407(Class8122.field34918))));
    }
 
@@ -248,12 +248,12 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       return method11064(
          var0,
          (Class5873<?>)method11059(
-            var0, Class4695.method14724(Class8514.field37841).method18297(Class151.method456(0.125F)).method18296(Class138.method409(Class8122.field34918, 2))
+            var0, Class4695.method14724(Items.field37841).method18297(Class151.method456(0.125F)).method18296(Class138.method409(Class8122.field34918, 2))
          )
       );
    }
 
-   private static Class5888 method11081(Block var0, Class3257 var1) {
+   private static Class5888 method11081(Block var0, Item var1) {
       return Class7318.method23188()
          .method18320(
             method11059(
@@ -299,7 +299,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          );
    }
 
-   private static Class5888 method11082(Block var0, Class3257 var1) {
+   private static Class5888 method11082(Block var0, Item var1) {
       return Class7318.method23188()
          .method18320(
             method11059(
@@ -323,7 +323,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                .method18289(Class6871.method20919(1))
                .method18297(field17632)
                .method18291(
-                  ((Class5872)method11059(var0, Class4695.method14724(Class8514.field37835).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F)))))
+                  ((Class5872)method11059(var0, Class4695.method14724(Items.field37835).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F)))))
                      .method18297(Class158.method476(Class8122.field34918, 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))
                )
          );
@@ -336,13 +336,13 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                .method18289(Class6871.method20919(1))
                .method18297(field17632)
                .method18291(
-                  ((Class5872)method11060(var0, Class4695.method14724(Class8514.field37795)))
+                  ((Class5872)method11060(var0, Class4695.method14724(Items.field37795)))
                      .method18297(Class158.method476(Class8122.field34918, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))
                )
          );
    }
 
-   private static Class5888 method11086(Block var0, Class3257 var1, Class3257 var2, Class7519 var3) {
+   private static Class5888 method11086(Block var0, Item var1, Item var2, Class7519 var3) {
       return method11059(
          var0,
          Class7318.method23188()
@@ -366,7 +366,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       Class5874 var4 = Class4695.method14724(var1)
          .method18296(Class140.method420(Class6871.method20919(2)))
          .method18297(field17630)
-         .method18303(((Class5872)method11060(var0, Class4695.method14724(Class8514.field37841))).method18297(Class151.method456(0.125F)));
+         .method18303(((Class5872)method11060(var0, Class4695.method14724(Items.field37841))).method18297(Class151.method456(0.125F)));
       return Class7318.method23188()
          .method18320(
             Class8894.method32373()
@@ -812,7 +812,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.field37077);
       this.method11096(Blocks.field37090);
       this.method11094(Blocks.FARMLAND, Blocks.field36396);
-      this.method11094(Blocks.TRIPWIRE, Class8514.field37838);
+      this.method11094(Blocks.TRIPWIRE, Items.field37838);
       this.method11094(Blocks.field36885, Blocks.field36396);
       this.method11094(Blocks.field36962, Blocks.field36961);
       this.method11094(Blocks.field37008, Blocks.field37009);
@@ -827,11 +827,11 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.field36974, var0 -> method11066(var0, Blocks.field36969));
       this.method11097(Blocks.field37083, var0 -> method11066(var0, Blocks.NETHERRACK));
       this.method11097(Blocks.field37074, var0 -> method11066(var0, Blocks.NETHERRACK));
-      this.method11097(Blocks.field36525, var0 -> method11068(var0, Class8514.field37900, Class6871.method20919(3)));
-      this.method11097(Blocks.CLAY, var0 -> method11068(var0, Class8514.field37897, Class6871.method20919(4)));
+      this.method11097(Blocks.field36525, var0 -> method11068(var0, Items.field37900, Class6871.method20919(3)));
+      this.method11097(Blocks.CLAY, var0 -> method11068(var0, Items.field37897, Class6871.method20919(4)));
       this.method11097(Blocks.ENDER_CHEST, var0 -> method11068(var0, Blocks.field36527, Class6871.method20919(8)));
-      this.method11097(Blocks.SNOW_BLOCK, var0 -> method11068(var0, Class8514.field37888, Class6871.method20919(4)));
-      this.method11098(Blocks.field36878, method11067(Class8514.field38109, Class6872.method20921(0.0F, 1.0F)));
+      this.method11097(Blocks.SNOW_BLOCK, var0 -> method11068(var0, Items.field37888, Class6871.method20919(4)));
+      this.method11098(Blocks.field36878, method11067(Items.field38109, Class6872.method20921(0.0F, 1.0F)));
       this.method11092(Blocks.POTTED_OAK_SAPLING);
       this.method11092(Blocks.POTTED_SPRUCE_SAPLING);
       this.method11092(Blocks.POTTED_BIRCH_SAPLING);
@@ -954,7 +954,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                      .method18291(
                         (Class5873<?>)method11059(
                            var0,
-                           Class4695.method14724(Class8514.field37916)
+                           Class4695.method14724(Items.field37916)
                               .method18296(
                                  Class140.method420(Class6871.method20919(3))
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3197.field18479, 2)))
@@ -992,10 +992,10 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(
          Blocks.field37115,
          var0 -> Class7318.method23188()
-               .method18320(Class8894.method32373().method18291((Class5873<?>)method11059(var0, Class4695.method14724(Class8514.field38157))))
+               .method18320(Class8894.method32373().method18291((Class5873<?>)method11059(var0, Class4695.method14724(Items.field38157))))
                .method18320(
                   Class8894.method32373()
-                     .method18291(Class4695.method14724(Class8514.field37934))
+                     .method18291(Class4695.method14724(Items.field37934))
                      .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3475.field19326, 8)))
                )
       );
@@ -1074,20 +1074,20 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.field36446, var0 -> method11085(var0, Blocks.field36406, field17634));
       this.method11097(Blocks.field36451, var0 -> method11085(var0, Blocks.DARK_OAK_SAPLING, field17634));
       Class7520 var4 = Class161.method486(Blocks.field36884).method24519(Class9178.method34325().method34327(Class3482.field19337, 3));
-      this.method11098(Blocks.field36884, method11086(Blocks.field36884, Class8514.field38111, Class8514.field38112, var4));
+      this.method11098(Blocks.field36884, method11086(Blocks.field36884, Items.field38111, Items.field38112, var4));
       Class7520 var5 = Class161.method486(Blocks.field36539).method24519(Class9178.method34325().method34327(Class3480.field19334, 7));
-      this.method11098(Blocks.field36539, method11086(Blocks.field36539, Class8514.field37842, Class8514.field37841, var5));
+      this.method11098(Blocks.field36539, method11086(Blocks.field36539, Items.field37842, Items.field37841, var5));
       Class7520 var6 = Class161.method486(Blocks.field36693).method24519(Class9178.method34325().method34327(Class3483.field19334, 7));
       this.method11098(
          Blocks.field36693,
          method11059(
             Blocks.field36693,
             Class7318.method23188()
-               .method18320(Class8894.method32373().method18291(Class4695.method14724(Class8514.field38052)))
+               .method18320(Class8894.method32373().method18291(Class4695.method14724(Items.field38052)))
                .method18320(
                   Class8894.method32373()
                      .method18297(var6)
-                     .method18291(Class4695.method14724(Class8514.field38052).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
+                     .method18291(Class4695.method14724(Items.field38052).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
                )
          )
       );
@@ -1097,14 +1097,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          method11059(
             Blocks.field36694,
             Class7318.method23188()
-               .method18320(Class8894.method32373().method18291(Class4695.method14724(Class8514.field38053)))
+               .method18320(Class8894.method32373().method18291(Class4695.method14724(Items.field38053)))
                .method18320(
                   Class8894.method32373()
                      .method18297(var7)
-                     .method18291(Class4695.method14724(Class8514.field38053).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
+                     .method18291(Class4695.method14724(Items.field38053).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
                )
                .method18320(
-                  Class8894.method32373().method18297(var7).method18291(Class4695.method14724(Class8514.field38055).method18297(Class151.method456(0.02F)))
+                  Class8894.method32373().method18297(var7).method18291(Class4695.method14724(Items.field38055).method18297(Class151.method456(0.02F)))
                )
          )
       );
@@ -1116,14 +1116,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18320(
                      Class8894.method32373()
                         .method18297(Class161.method486(Blocks.field37069).method24519(Class9178.method34325().method34327(Class3484.field19342, 3)))
-                        .method18291(Class4695.method14724(Class8514.field38170))
+                        .method18291(Class4695.method14724(Items.field38170))
                         .method18296(Class140.method420(Class6872.method20921(2.0F, 3.0F)))
                         .method18296(Class138.method408(Class8122.field34918))
                   )
                   .method18320(
                      Class8894.method32373()
                         .method18297(Class161.method486(Blocks.field37069).method24519(Class9178.method34325().method34327(Class3484.field19342, 2)))
-                        .method18291(Class4695.method14724(Class8514.field38170))
+                        .method18291(Class4695.method14724(Items.field38170))
                         .method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F)))
                         .method18296(Class138.method408(Class8122.field34918))
                   )
@@ -1131,17 +1131,17 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       );
       this.method11097(Blocks.BROWN_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.BROWN_MUSHROOM));
       this.method11097(Blocks.RED_MUSHROOM_BLOCK, var0 -> method11079(var0, Blocks.RED_MUSHROOM));
-      this.method11097(Blocks.field36420, var0 -> method11078(var0, Class8514.field37798));
-      this.method11097(Blocks.EMERALD_ORE, var0 -> method11078(var0, Class8514.field38049));
-      this.method11097(Blocks.field36722, var0 -> method11078(var0, Class8514.field38072));
-      this.method11097(Blocks.field36536, var0 -> method11078(var0, Class8514.field37800));
+      this.method11097(Blocks.field36420, var0 -> method11078(var0, Items.field37798));
+      this.method11097(Blocks.EMERALD_ORE, var0 -> method11078(var0, Items.field38049));
+      this.method11097(Blocks.field36722, var0 -> method11078(var0, Items.field38072));
+      this.method11097(Blocks.field36536, var0 -> method11078(var0, Items.field37800));
       this.method11097(
          Blocks.field36421,
          var0 -> method11063(
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Class8514.field37969)
+                  Class4695.method14724(Items.field37969)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 6.0F)))
                      .method18296(Class138.method407(Class8122.field34918))
                )
@@ -1153,18 +1153,18 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Class8514.field37917)
+                  Class4695.method14724(Items.field37917)
                      .method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F)))
                      .method18296(Class138.method407(Class8122.field34918))
                )
             )
       );
-      this.method11097(Blocks.COBWEB, var0 -> method11065(var0, (Class5873<?>)method11060(var0, Class4695.method14724(Class8514.field37838))));
+      this.method11097(Blocks.COBWEB, var0 -> method11065(var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37838))));
       this.method11097(
          Blocks.DEAD_BUSH,
          var0 -> method11064(
                var0,
-               (Class5873<?>)method11059(var0, Class4695.method14724(Class8514.field37835).method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F))))
+               (Class5873<?>)method11059(var0, Class4695.method14724(Items.field37835).method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F))))
             )
       );
       this.method11097(Blocks.field37078, Class2838::method11083);
@@ -1173,10 +1173,10 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11098(Blocks.TALL_SEAGRASS, method11087(Blocks.SEAGRASS));
       this.method11097(Blocks.field36802, var0 -> method11088(var0, Blocks.FERN));
       this.method11097(Blocks.TALL_GRASS, var0 -> method11088(var0, Blocks.GRASS));
-      this.method11097(Blocks.MELON_STEM, var0 -> method11081(var0, Class8514.field37960));
-      this.method11097(Blocks.ATTACHED_MELON_STEM, var0 -> method11082(var0, Class8514.field37960));
-      this.method11097(Blocks.PUMPKIN_STEM, var0 -> method11081(var0, Class8514.field37959));
-      this.method11097(Blocks.ATTACHED_PUMPKIN_STEM, var0 -> method11082(var0, Class8514.field37959));
+      this.method11097(Blocks.MELON_STEM, var0 -> method11081(var0, Items.field37960));
+      this.method11097(Blocks.ATTACHED_MELON_STEM, var0 -> method11082(var0, Items.field37960));
+      this.method11097(Blocks.PUMPKIN_STEM, var0 -> method11081(var0, Items.field37959));
+      this.method11097(Blocks.ATTACHED_PUMPKIN_STEM, var0 -> method11082(var0, Items.field37959));
       this.method11097(
          Blocks.field36879,
          var0 -> Class7318.method23188()
@@ -1194,7 +1194,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Class8514.field37908)
+                  Class4695.method14724(Items.field37908)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F)))
                      .method18296(Class138.method408(Class8122.field34918))
                      .method18296(Class135.method396(Class12.method58(1, 4)))
@@ -1207,7 +1207,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Class8514.field37957)
+                  Class4695.method14724(Items.field37957)
                      .method18296(Class140.method420(Class6872.method20921(3.0F, 7.0F)))
                      .method18296(Class138.method408(Class8122.field34918))
                      .method18296(Class135.method396(Class12.method60(9)))
@@ -1220,7 +1220,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Class8514.field37887)
+                  Class4695.method14724(Items.field37887)
                      .method18296(Class140.method420(Class6872.method20921(4.0F, 5.0F)))
                      .method18296(Class138.method408(Class8122.field34918))
                )
@@ -1232,7 +1232,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Class8514.field38076)
+                  Class4695.method14724(Items.field38076)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 3.0F)))
                      .method18296(Class138.method408(Class8122.field34918))
                      .method18296(Class135.method396(Class12.method58(1, 5)))
@@ -1248,7 +1248,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                      Class8894.method32373()
                         .method18289(Class6871.method20919(1))
                         .method18291(
-                           Class4695.method14724(Class8514.field37970)
+                           Class4695.method14724(Items.field37970)
                               .method18296(
                                  Class140.method420(Class6872.method20921(2.0F, 4.0F))
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3489.field19354, 3)))
@@ -1270,27 +1270,27 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                      .method18291(
                         Class4690.method14712(
                            Class4690.method14712(
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 1))),
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 2)))
                                     .method18296(Class140.method420(Class6871.method20919(2))),
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 3)))
                                     .method18296(Class140.method420(Class6871.method20919(3))),
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 4)))
                                     .method18296(Class140.method420(Class6871.method20919(4))),
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 5)))
                                     .method18296(Class140.method420(Class6871.method20919(5))),
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 6)))
                                     .method18296(Class140.method420(Class6871.method20919(6))),
-                                 Class4695.method14724(Class8514.field37888)
+                                 Class4695.method14724(Items.field37888)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 7)))
                                     .method18296(Class140.method420(Class6871.method20919(7))),
-                                 Class4695.method14724(Class8514.field37888).method18296(Class140.method420(Class6871.method20919(8)))
+                                 Class4695.method14724(Items.field37888).method18296(Class140.method420(Class6871.method20919(8)))
                               )
                               .method18297(field17629),
                            Class4690.method14712(
@@ -1326,7 +1326,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                method11060(
                   var0,
-                  Class4695.method14724(Class8514.field37868)
+                  Class4695.method14724(Items.field37868)
                      .method18297(Class158.method476(Class8122.field34918, 0.1F, 0.14285715F, 0.25F, 1.0F))
                      .method18303(Class4695.method14724(var0))
                )
@@ -1335,7 +1335,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(
          Blocks.field37067,
          var0 -> method11063(
-               var0, (Class5873<?>)method11060(var0, Class4695.method14724(Class8514.field37799).method18296(Class140.method420(Class6871.method20919(2))))
+               var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37799).method18296(Class140.method420(Class6871.method20919(2))))
             )
       );
       this.method11097(
@@ -1344,7 +1344,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                method11060(
                   var0,
-                  Class4695.method14724(Class8514.field37969)
+                  Class4695.method14724(Items.field37969)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F)))
                      .method18297(Class158.method476(Class8122.field34918, 0.1F, 0.14285715F, 0.25F, 1.0F))
                      .method18303(Class4695.method14724(var0))
@@ -1354,7 +1354,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(
          Blocks.field37068,
          var0 -> method11063(
-               var0, (Class5873<?>)method11060(var0, Class4695.method14724(Class8514.field37442).method18296(Class140.method420(Class6871.method20919(1))))
+               var0, (Class5873<?>)method11060(var0, Class4695.method14724(Items.field37442).method18296(Class140.method420(Class6871.method20919(1))))
             )
       );
       this.method11095(Blocks.field36454);
@@ -1432,12 +1432,12 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11098(Blocks.field36588, method11089());
       HashSet var8 = Sets.newHashSet();
 
-      for (Block var10 : Registry.field16072) {
+      for (Block var10 : Registry.BLOCK) {
          ResourceLocation var11 = var10.method11999();
          if (var11 != Class8793.field39533 && var8.add(var11)) {
             Class5888 var12 = this.field17636.remove(var11);
             if (var12 == null) {
-               throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", var11, Registry.field16072.method9181(var10)));
+               throw new IllegalStateException(String.format("Missing loottable '%s' for '%s'", var11, Registry.BLOCK.getKey(var10)));
             }
 
             var1.accept(var11, var12);

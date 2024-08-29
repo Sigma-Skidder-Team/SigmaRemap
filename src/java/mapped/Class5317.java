@@ -15,7 +15,7 @@ public class Class5317 extends Module {
 
     public Class5317() {
         super(ModuleCategory.COMBAT, "AAC 4", "Criticals for aac 4.*");
-        this.method15972(new Class6004("KillAura", "Criticals only if KillAura is enabled", false));
+        this.registerSetting(new BooleanSetting("KillAura", "Criticals only if KillAura is enabled", false));
     }
 
     public static boolean method16708() {
@@ -48,7 +48,7 @@ public class Class5317 extends Module {
         if (!this.method15996() || Client.getInstance().getModuleManager().method14662(Class5341.class).method15996()) {
             field23862 = 0;
         } else if (var1.method13921()) {
-            if (mc.field1337.method23158()) {
+            if (mc.playerController.getIsHittingBlock()) {
                 field23862 = 0;
             }
 

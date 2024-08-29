@@ -19,16 +19,16 @@ public class Class4883 extends Class4874<Class4491> {
       return new Class4491(var2, var7, var8, var9, var10);
    }
 
-   public void method15086(ServerPlayerEntity var1, Class974 var2, ItemStack var3) {
+   public void method15086(ServerPlayerEntity var1, PlayerInventory var2, ItemStack var3) {
       int var6 = 0;
       int var7 = 0;
       int var8 = 0;
 
       for (int var9 = 0; var9 < var2.method3629(); var9++) {
          ItemStack var10 = var2.method3618(var9);
-         if (!var10.method32105()) {
+         if (!var10.isEmpty()) {
             var8++;
-            if (var10.method32179() >= var10.method32113()) {
+            if (var10.getCount() >= var10.method32113()) {
                var6++;
             }
          } else {
@@ -39,7 +39,7 @@ public class Class4883 extends Class4874<Class4491> {
       this.method15087(var1, var2, var3, var6, var7, var8);
    }
 
-   private void method15087(ServerPlayerEntity var1, Class974 var2, ItemStack var3, int var4, int var5, int var6) {
+   private void method15087(ServerPlayerEntity var1, PlayerInventory var2, ItemStack var3, int var4, int var5, int var6) {
       this.method15053(var1, var5x -> var5x.method14165(var2, var3, var4, var5, var6));
    }
 

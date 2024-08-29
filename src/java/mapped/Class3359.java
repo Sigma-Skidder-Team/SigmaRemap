@@ -14,14 +14,14 @@ public abstract class Class3359 extends Class3241 {
    }
 
    @Override
-   public Class944 method11646(Class1665 var1) {
+   public TileEntity method11646(Class1665 var1) {
       return new Class958(this.field18904);
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
-         Class944 var8 = var1.method6759(var2);
+         TileEntity var8 = var1.getTileEntity(var2);
          if (var8 instanceof Class958) {
             ((Class958)var8).method3888(var5.method32149());
          }
@@ -29,9 +29,9 @@ public abstract class Class3359 extends Class3241 {
    }
 
    @Override
-   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      Class944 var6 = var1.method6759(var2);
-      return !(var6 instanceof Class958) ? super.method11569(var1, var2, var3) : ((Class958)var6).method3893(var3);
+   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+      TileEntity var6 = var1.getTileEntity(var2);
+      return !(var6 instanceof Class958) ? super.getItem(var1, var2, var3) : ((Class958)var6).method3893(var3);
    }
 
    public Class112 method11936() {

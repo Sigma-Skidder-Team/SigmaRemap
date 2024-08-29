@@ -7,7 +7,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class934 extends Class944 implements Class933, Class935 {
+public class Class934 extends TileEntity implements Class933, Class935 {
    public int field5281;
    public float field5282;
    public float field5283;
@@ -26,8 +26,8 @@ public class Class934 extends Class944 implements Class933, Class935 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       if (this.method3381()) {
          var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5292));
       }
@@ -36,7 +36,7 @@ public class Class934 extends Class944 implements Class933, Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       if (var2.method119("CustomName", 8)) {
          this.field5292 = ITextComponent$Serializer.func_240643_a_(var2.method126("CustomName"));
@@ -49,14 +49,14 @@ public class Class934 extends Class944 implements Class933, Class935 {
       this.field5289 = this.field5288;
       PlayerEntity var3 = this.field5324
          .method7186(
-            (double)this.field5325.method8304() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.method8306() + 0.5, 3.0, false
+            (double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5, 3.0, false
          );
       if (var3 == null) {
          this.field5290 += 0.02F;
          this.field5286 -= 0.1F;
       } else {
-         double var4 = var3.getPosX() - ((double)this.field5325.method8304() + 0.5);
-         double var6 = var3.getPosZ() - ((double)this.field5325.method8306() + 0.5);
+         double var4 = var3.getPosX() - ((double)this.field5325.getX() + 0.5);
+         double var6 = var3.getPosZ() - ((double)this.field5325.getZ() + 0.5);
          this.field5290 = (float) MathHelper.method37814(var6, var4);
          this.field5286 += 0.1F;
          if (this.field5286 < 0.5F || field5291.nextInt(40) == 0) {

@@ -11,13 +11,13 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field38081).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field38080).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37963).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37839).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37965).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field37838).method18299(10))
-                  .method18291(Class4695.method14724(Class8514.field38145).method18299(2))
+                  .method18291(Class4695.method14724(Items.field38081).method18299(10))
+                  .method18291(Class4695.method14724(Items.field38080).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37963).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37839).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37965).method18299(10))
+                  .method18291(Class4695.method14724(Items.field37838).method18299(10))
+                  .method18291(Class4695.method14724(Items.field38145).method18299(2))
             )
       );
       var1.accept(
@@ -26,10 +26,10 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37848))
-                  .method18291(Class4695.method14724(Class8514.field37849))
-                  .method18291(Class4695.method14724(Class8514.field37850))
-                  .method18291(Class4695.method14724(Class8514.field37851))
+                  .method18291(Class4695.method14724(Items.field37848))
+                  .method18291(Class4695.method14724(Items.field37849))
+                  .method18291(Class4695.method14724(Items.field37850))
+                  .method18291(Class4695.method14724(Items.field37851))
             )
       );
       var1.accept(
@@ -38,11 +38,11 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field38078))
-                  .method18291(Class4695.method14724(Class8514.field37964))
-                  .method18291(Class4695.method14724(Class8514.field37870))
-                  .method18291(Class4695.method14724(Class8514.field37962))
-                  .method18291(Class4695.method14724(Class8514.field38091))
+                  .method18291(Class4695.method14724(Items.field38078))
+                  .method18291(Class4695.method14724(Items.field37964))
+                  .method18291(Class4695.method14724(Items.field37870))
+                  .method18291(Class4695.method14724(Items.field37962))
+                  .method18291(Class4695.method14724(Items.field38091))
             )
       );
       var1.accept(
@@ -51,8 +51,8 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field38056))
-                  .method18291(Class4695.method14724(Class8514.field37899))
+                  .method18291(Class4695.method14724(Items.field38056))
+                  .method18291(Class4695.method14724(Items.field37899))
             )
       );
       var1.accept(
@@ -61,8 +61,8 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37887))
-                  .method18291(Class4695.method14724(Class8514.field37917))
+                  .method18291(Class4695.method14724(Items.field37887))
+                  .method18291(Class4695.method14724(Items.field37917))
             )
       );
       var1.accept(
@@ -71,9 +71,9 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37843))
-                  .method18291(Class4695.method14724(Class8514.field38067))
-                  .method18291(Class4695.method14724(Class8514.field37954))
+                  .method18291(Class4695.method14724(Items.field37843))
+                  .method18291(Class4695.method14724(Items.field38067))
+                  .method18291(Class4695.method14724(Items.field37954))
             )
       );
       var1.accept(
@@ -82,8 +82,8 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37909))
-                  .method18291(Class4695.method14724(Class8514.field37910))
+                  .method18291(Class4695.method14724(Items.field37909))
+                  .method18291(Class4695.method14724(Items.field37910))
             )
       );
       var1.accept(
@@ -92,98 +92,98 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37797).method18299(26))
+                  .method18291(Class4695.method14724(Items.field37797).method18299(26))
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:swiftness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:swiftness"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:slowness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:slowness"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:strength"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:strength"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:healing"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:healing"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:harming"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:harming"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:leaping"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:leaping"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:regeneration")))
+                           Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:regeneration")))
                         )
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:fire_resistance")))
+                           Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:fire_resistance")))
                         )
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:water_breathing")))
+                           Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:water_breathing")))
                         )
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:invisibility")))
+                           Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:invisibility")))
                         )
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(
-                           Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:night_vision")))
+                           Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:night_vision")))
                         )
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:weakness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:weakness"))))
                   )
                   .method18291(
-                     Class4695.method14724(Class8514.field38117)
+                     Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
-                        .method18296(Class136.method399(Util.<Class39>method38508(new Class39(), var0 -> var0.method109("Potion", "minecraft:poison"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:poison"))))
                   )
             )
       );
       var1.accept(
          Class8793.field39603,
          Class7318.method23188()
-            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Class8514.field37890)))
+            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.field37890)))
       );
       var1.accept(
          Class8793.field39604,
          Class7318.method23188()
-            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Class8514.field37900)))
+            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.field37900)))
       );
       var1.accept(
          Class8793.field39605,
          Class7318.method23188()
-            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Class8514.field37428)))
+            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.field37428)))
       );
       var1.accept(
          Class8793.field39606,
@@ -191,22 +191,22 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37317))
-                  .method18291(Class4695.method14724(Class8514.field37318))
-                  .method18291(Class4695.method14724(Class8514.field37319))
-                  .method18291(Class4695.method14724(Class8514.field37320))
-                  .method18291(Class4695.method14724(Class8514.field37321))
-                  .method18291(Class4695.method14724(Class8514.field37322))
-                  .method18291(Class4695.method14724(Class8514.field37323))
-                  .method18291(Class4695.method14724(Class8514.field37324))
-                  .method18291(Class4695.method14724(Class8514.field37325))
-                  .method18291(Class4695.method14724(Class8514.field37326))
-                  .method18291(Class4695.method14724(Class8514.field37327))
-                  .method18291(Class4695.method14724(Class8514.field37328))
-                  .method18291(Class4695.method14724(Class8514.field37329))
-                  .method18291(Class4695.method14724(Class8514.field37330))
-                  .method18291(Class4695.method14724(Class8514.field37331))
-                  .method18291(Class4695.method14724(Class8514.field37332))
+                  .method18291(Class4695.method14724(Items.field37317))
+                  .method18291(Class4695.method14724(Items.field37318))
+                  .method18291(Class4695.method14724(Items.field37319))
+                  .method18291(Class4695.method14724(Items.field37320))
+                  .method18291(Class4695.method14724(Items.field37321))
+                  .method18291(Class4695.method14724(Items.field37322))
+                  .method18291(Class4695.method14724(Items.field37323))
+                  .method18291(Class4695.method14724(Items.field37324))
+                  .method18291(Class4695.method14724(Items.field37325))
+                  .method18291(Class4695.method14724(Items.field37326))
+                  .method18291(Class4695.method14724(Items.field37327))
+                  .method18291(Class4695.method14724(Items.field37328))
+                  .method18291(Class4695.method14724(Items.field37329))
+                  .method18291(Class4695.method14724(Items.field37330))
+                  .method18291(Class4695.method14724(Items.field37331))
+                  .method18291(Class4695.method14724(Items.field37332))
             )
       );
       var1.accept(
@@ -215,10 +215,10 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37812))
-                  .method18291(Class4695.method14724(Class8514.field37813))
-                  .method18291(Class4695.method14724(Class8514.field37814))
-                  .method18291(Class4695.method14724(Class8514.field37811))
+                  .method18291(Class4695.method14724(Items.field37812))
+                  .method18291(Class4695.method14724(Items.field37813))
+                  .method18291(Class4695.method14724(Items.field37814))
+                  .method18291(Class4695.method14724(Items.field37811))
             )
       );
       var1.accept(
@@ -227,9 +227,9 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Class8514.field37813))
-                  .method18291(Class4695.method14724(Class8514.field37818))
-                  .method18291(Class4695.method14724(Class8514.field37823))
+                  .method18291(Class4695.method14724(Items.field37813))
+                  .method18291(Class4695.method14724(Items.field37818))
+                  .method18291(Class4695.method14724(Items.field37823))
             )
       );
    }

@@ -4,7 +4,7 @@ public class Class5670 extends Class5661<Class1100, Class2896> {
    private static final ResourceLocation field25034 = new ResourceLocation("textures/entity/illager/vex.png");
    private static final ResourceLocation field25035 = new ResourceLocation("textures/entity/illager/vex_charging.png");
 
-   public Class5670(Class8853 var1) {
+   public Class5670(EntityRendererManager var1) {
       super(var1, new Class2896(), 0.3F);
    }
 

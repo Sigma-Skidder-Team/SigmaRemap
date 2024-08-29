@@ -40,7 +40,7 @@ public class Class3685<E extends Class1006> extends Class3676<E> {
    }
 
    private boolean method12526(E var1) {
-      return this.method12527((E)var1).field5024 != var1.field5024;
+      return this.method12527((E)var1).world != var1.world;
    }
 
    private Class880 method12527(E var1) {
@@ -49,7 +49,7 @@ public class Class3685<E extends Class1006> extends Class3676<E> {
 
    private static <E extends Class880> boolean method12528(E var0) {
       Optional var3 = var0.method2992().<Long>method21410(Class8830.field39841);
-      return var3.isPresent() && var0.field5024.method6783() - (Long)var3.get() > 200L;
+      return var3.isPresent() && var0.world.method6783() - (Long)var3.get() > 200L;
    }
 
    private boolean method12529(E var1) {

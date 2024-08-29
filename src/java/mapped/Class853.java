@@ -8,7 +8,7 @@ public class Class853 extends Class851<Class5829> implements Class854 {
    private final Class1254 field4756 = new Class1254();
    private boolean field4757;
 
-   public Class853(Class5829 var1, Class974 var2, ITextComponent var3) {
+   public Class853(Class5829 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 
@@ -30,8 +30,8 @@ public class Class853 extends Class851<Class5829> implements Class854 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4756.method5844();
    }
 

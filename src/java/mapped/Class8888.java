@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class8888 {
    private static final Logger field40209 = LogManager.getLogger();
-   private final Class3257 field40210;
+   private final Item field40210;
    private final int field40211;
    private final List<Class120> field40212 = Lists.newArrayList();
    private final Class7999 field40213 = Class7999.method27304();
@@ -27,7 +27,7 @@ public class Class8888 {
       return new Class8888(var0, var1);
    }
 
-   public Class8888 method32343(Class7608<Class3257> var1) {
+   public Class8888 method32343(Class7608<Item> var1) {
       return this.method32346(Class120.method342(var1));
    }
 
@@ -66,11 +66,11 @@ public class Class8888 {
    }
 
    public void method32350(Consumer<Class4664> var1) {
-      this.method32352(var1, Registry.field16075.method9181(this.field40210));
+      this.method32352(var1, Registry.ITEM.getKey(this.field40210));
    }
 
    public void method32351(Consumer<Class4664> var1, String var2) {
-      ResourceLocation var5 = Registry.field16075.method9181(this.field40210);
+      ResourceLocation var5 = Registry.ITEM.getKey(this.field40210);
       if (!new ResourceLocation(var2).equals(var5)) {
          this.method32352(var1, new ResourceLocation(var2));
       } else {

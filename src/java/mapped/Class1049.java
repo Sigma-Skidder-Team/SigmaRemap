@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class Class1049 extends Class1047 {
    private static final Class9289<Boolean> field5809 = Class9361.<Boolean>method35441(Class1049.class, Class7784.field33398);
 
-   public Class1049(Class8992<? extends Class1049> var1, World var2) {
+   public Class1049(EntityType<? extends Class1049> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6830(this);
    }
@@ -24,8 +24,8 @@ public abstract class Class1049 extends Class1047 {
       return super.method4255() || this.method4793();
    }
 
-   public static boolean method4792(Class8992<? extends Class1049> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6738(var3).method23448(Blocks.WATER) && var1.method6738(var3.method8311()).method23448(Blocks.WATER);
+   public static boolean method4792(EntityType<? extends Class1049> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+      return var1.getBlockState(var3).method23448(Blocks.WATER) && var1.getBlockState(var3.method8311()).method23448(Blocks.WATER);
    }
 
    @Override
@@ -53,13 +53,13 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method115("FromBucket", this.method4793());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4794(var1.method132("FromBucket"));
    }
@@ -109,17 +109,17 @@ public abstract class Class1049 extends Class1047 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.method32107() == Class8514.field37883 && this.method3066()) {
+      if (var5.getItem() == Items.field37883 && this.method3066()) {
          this.method2863(Class6067.field26430, 1.0F, 1.0F);
          var5.method32182(1);
          ItemStack var6 = this.method4796();
          this.method4795(var6);
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var1, var6);
          }
 
-         if (!var5.method32105()) {
-            if (!var1.field4902.method4045(var6)) {
+         if (!var5.isEmpty()) {
+            if (!var1.inventory.method4045(var6)) {
                var1.method2882(var6, false);
             }
          } else {
@@ -127,7 +127,7 @@ public abstract class Class1049 extends Class1047 {
          }
 
          this.method2904();
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       } else {
          return super.method4285(var1, var2);
       }
@@ -153,6 +153,6 @@ public abstract class Class1049 extends Class1047 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
    }
 }

@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class963 extends Class944 {
+public class Class963 extends TileEntity {
    private int field5394;
 
    public Class963() {
@@ -8,14 +8,14 @@ public class Class963 extends Class944 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       var1.method102("OutputSignal", this.field5394);
       return var1;
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5394 = var2.method122("OutputSignal");
    }

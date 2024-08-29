@@ -13,9 +13,9 @@ public class Class6765 extends Class6764 {
    @Override
    public Class7176 method20615() {
       return super.method20641(
-         MathHelper.method37769(this.field29476.method3389().field28449),
-         MathHelper.method37769(this.field29476.method3389().field28450 + 0.5),
-         MathHelper.method37769(this.field29476.method3389().field28451)
+         MathHelper.floor(this.field29476.method3389().field28449),
+         MathHelper.floor(this.field29476.method3389().field28450 + 0.5),
+         MathHelper.floor(this.field29476.method3389().field28451)
       );
    }
 
@@ -23,9 +23,9 @@ public class Class6765 extends Class6764 {
    public Class7175 method20616(double var1, double var3, double var5) {
       return new Class7175(
          super.method20641(
-            MathHelper.method37769(var1 - (double)(this.field29476.method3429() / 2.0F)),
-            MathHelper.method37769(var3 + 0.5),
-            MathHelper.method37769(var5 - (double)(this.field29476.method3429() / 2.0F))
+            MathHelper.floor(var1 - (double)(this.field29476.method3429() / 2.0F)),
+            MathHelper.floor(var3 + 0.5),
+            MathHelper.floor(var5 - (double)(this.field29476.method3429() / 2.0F))
          )
       );
    }
@@ -53,8 +53,8 @@ public class Class6765 extends Class6764 {
    public Class2163 method20621(Class1665 var1, int var2, int var3, int var4) {
       BlockPos var7 = new BlockPos(var2, var3, var4);
       Class7379 var8 = var1.method6739(var7);
-      Class7380 var9 = var1.method6738(var7);
-      if (var8.method23474() && var9.method23440(var1, var7.method8313(), Class1947.field12615) && var9.method23393()) {
+      BlockState var9 = var1.getBlockState(var7);
+      if (var8.method23474() && var9.method23440(var1, var7.method8313(), Class1947.field12615) && var9.isAir()) {
          return Class2163.field14204;
       } else {
          return var8.method23486(Class8953.field40469) && var9.method23440(var1, var7, Class1947.field12615) ? Class2163.field14191 : Class2163.field14184;
@@ -71,7 +71,7 @@ public class Class6765 extends Class6764 {
    @Override
    public Class7176 method20641(int var1, int var2, int var3) {
       Class7176 var6 = null;
-      Class2163 var7 = this.method20621(this.field29476.field5024, var1, var2, var3);
+      Class2163 var7 = this.method20621(this.field29476.world, var1, var2, var3);
       float var8 = this.field29476.method4223(var7);
       if (var8 >= 0.0F) {
          var6 = super.method20641(var1, var2, var3);
@@ -92,8 +92,8 @@ public class Class6765 extends Class6764 {
          for (int var8 = var2; var8 < var2 + this.field29479; var8++) {
             for (int var9 = var3; var9 < var3 + this.field29480; var9++) {
                Class7379 var10 = this.field29475.method6739(var6.method8372(var7, var8, var9));
-               Class7380 var11 = this.field29475.method6738(var6.method8372(var7, var8, var9));
-               if (var10.method23474() && var11.method23440(this.field29475, var6.method8313(), Class1947.field12615) && var11.method23393()) {
+               BlockState var11 = this.field29475.getBlockState(var6.method8372(var7, var8, var9));
+               if (var10.method23474() && var11.method23440(this.field29475, var6.method8313(), Class1947.field12615) && var11.isAir()) {
                   return Class2163.field14204;
                }
 
@@ -104,7 +104,7 @@ public class Class6765 extends Class6764 {
          }
       }
 
-      Class7380 var12 = this.field29475.method6738(var6);
+      BlockState var12 = this.field29475.getBlockState(var6);
       return !var12.method23440(this.field29475, var6, Class1947.field12615) ? Class2163.field14184 : Class2163.field14191;
    }
 }

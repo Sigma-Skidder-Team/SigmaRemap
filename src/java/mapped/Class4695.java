@@ -4,9 +4,9 @@ import java.util.function.Consumer;
 
 public class Class4695 extends Class4686 {
    private static String[] field22280;
-   private final Class3257 field22281;
+   private final Item field22281;
 
-   public Class4695(Class3257 var1, int var2, int var3, ILootCondition[] var4, ILootFunction[] var5) {
+   public Class4695(Item var1, int var2, int var3, ILootCondition[] var4, ILootFunction[] var5) {
       super(var2, var3, var4, var5);
       this.field22281 = var1;
    }
@@ -26,7 +26,7 @@ public class Class4695 extends Class4686 {
    }
 
    // $VF: synthetic method
-   public static Class3257 method14726(Class4695 var0) {
+   public static Item method14726(Class4695 var0) {
       return var0.field22281;
    }
 }

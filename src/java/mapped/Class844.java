@@ -20,14 +20,14 @@ public class Class844 extends Class838 {
       this.field4675 = var1;
       this.field4676 = new StringTextComponent(var2);
       this.field4677 = new StringTextComponent(var3);
-      this.field4679 = Class9088.method33883("gui.done");
+      this.field4679 = I18n.format("gui.done");
    }
 
    @Override
    public void method1921() {
       this.<Class1210>method2455(new Class1210(0, this.field4564 / 2 - 100, this.field4565 / 6 + 96, this.field4679));
       this.field4678.clear();
-      this.field4678.addAll(this.field4562.field1294.method38828(this.field4677, this.field4564 - 50));
+      this.field4678.addAll(this.field4562.fontRenderer.method38828(this.field4677, this.field4564 - 50));
    }
 
    @Override
@@ -58,8 +58,8 @@ public class Class844 extends Class838 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       if (--this.field4680 == 0) {
          for (Class1197 var4 : this.field4629) {
             var4.field6482 = true;

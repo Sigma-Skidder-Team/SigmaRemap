@@ -45,7 +45,7 @@ public class Class1061 implements Class1060 {
 
    @Override
    public World method4753() {
-      return this.field5857.field5024;
+      return this.field5857.world;
    }
 
    @Override

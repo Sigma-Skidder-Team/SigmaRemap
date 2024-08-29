@@ -55,14 +55,14 @@ public class Class5109 implements Class5108 {
    }
 
    @Override
-   public NetworkManager method15589() {
+   public NetworkManager getNetworkManager() {
       return this.field23216;
    }
 
    public void method15600(ITextComponent var1) {
       try {
          field23212.info("Disconnecting {}: {}", this.method15602(), var1.getString());
-         this.field23216.method30693(new Class5490(var1));
+         this.field23216.sendPacket(new Class5490(var1));
          this.field23216.method30701(var1);
       } catch (Exception var5) {
          field23212.error("Error whilst disconnecting player", var5);
@@ -81,7 +81,7 @@ public class Class5109 implements Class5108 {
             this.field23216.method30694(new Class5521(this.field23215.method1392()), var1 -> this.field23216.method30712(this.field23215.method1392()));
          }
 
-         this.field23216.method30693(new Class5598(this.field23219));
+         this.field23216.sendPacket(new Class5598(this.field23219));
          ServerPlayerEntity var4 = this.field23215.getPlayerList().method19489(this.field23219.getId());
          if (var4 == null) {
             this.field23215.getPlayerList().method19445(this.field23216, this.field23215.getPlayerList().method19452(this.field23219));
@@ -104,12 +104,12 @@ public class Class5109 implements Class5108 {
    }
 
    @Override
-   public void method15596(Class5500 var1) {
+   public void method15596(CLoginStartPacket var1) {
       Validate.validState(this.field23217 == Class2241.field14662, "Unexpected hello packet", new Object[0]);
       this.field23219 = var1.method17302();
       if (this.field23215.method1350() && !this.field23216.method30702()) {
          this.field23217 = Class2241.field14663;
-         this.field23216.method30693(new Class5540("", this.field23215.method1329().getPublic().getEncoded(), this.field23214));
+         this.field23216.sendPacket(new Class5540("", this.field23215.method1329().getPublic().getEncoded(), this.field23214));
       } else {
          this.field23217 = Class2241.field14666;
       }

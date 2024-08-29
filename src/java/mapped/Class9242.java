@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 public class Class9242 {
    private static String[] field42522;
-   public final Class264 field42523;
+   public final WorldRenderer field42523;
    public final World field42524;
    public int field42525;
    public int field42526;
@@ -14,7 +14,7 @@ public class Class9242 {
    public Class8066[] field42528;
    private Map<Class7481, Class8836[]> field42529 = new HashMap<Class7481, Class8836[]>();
 
-   public Class9242(Class9016 var1, World var2, int var3, Class264 var4) {
+   public Class9242(Class9016 var1, World var2, int var3, WorldRenderer var4) {
       this.field42523 = var4;
       this.field42524 = var2;
       this.method34758(var3);
@@ -72,8 +72,8 @@ public class Class9242 {
    }
 
    public void method34759(double var1, double var3) {
-      int var7 = MathHelper.method37769(var1);
-      int var8 = MathHelper.method37769(var3);
+      int var7 = MathHelper.floor(var1);
+      int var8 = MathHelper.floor(var3);
 
       for (int var9 = 0; var9 < this.field42526; var9++) {
          int var10 = this.field42526 * 16;
@@ -104,9 +104,9 @@ public class Class9242 {
 
    @Nullable
    public Class8066 method34761(BlockPos var1) {
-      int var4 = var1.method8304() >> 4;
+      int var4 = var1.getX() >> 4;
       int var5 = var1.getY() >> 4;
-      int var6 = var1.method8306() >> 4;
+      int var6 = var1.getZ() >> 4;
       if (var5 >= 0 && var5 < this.field42525) {
          var4 = MathHelper.normalizeAngle(var4, this.field42526);
          var6 = MathHelper.normalizeAngle(var6, this.field42527);
@@ -118,10 +118,10 @@ public class Class9242 {
 
    private void method34762(Class8066 var1) {
       BlockPos var4 = var1.method27718();
-      int var5 = var4.method8304() >> 8 << 8;
-      int var6 = var4.method8306() >> 8 << 8;
+      int var5 = var4.getX() >> 8 << 8;
+      int var6 = var4.getZ() >> 8 << 8;
       Class7481 var7 = new Class7481(var5, var6);
-      Class4520[] var8 = Class4520.field21819;
+      RenderType[] var8 = RenderType.field21819;
       Class8836[] var9 = this.field42529.get(var7);
       if (var9 == null) {
          var9 = new Class8836[var8.length];
@@ -134,7 +134,7 @@ public class Class9242 {
       }
 
       for (int var13 = 0; var13 < var8.length; var13++) {
-         Class4520 var11 = var8[var13];
+         RenderType var11 = var8[var13];
          Class8836 var12 = var9[var13];
          if (var12 != null) {
             var1.method27711(var11).method7309(var12);

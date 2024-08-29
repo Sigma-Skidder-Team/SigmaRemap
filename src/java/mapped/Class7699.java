@@ -56,7 +56,7 @@ public class Class7699 {
       this.field32990 = Class2305.field15739;
    }
 
-   public Class7699(ServerWorld var1, Class39 var2) {
+   public Class7699(ServerWorld var1, CompoundNBT var2) {
       this.field32978 = var1;
       this.field32980 = var2.method122("Id");
       this.field32979 = var2.method132("Started");
@@ -72,7 +72,7 @@ public class Class7699 {
       this.field32990 = Class2305.method9075(var2.method126("Status"));
       this.field32975.clear();
       if (var2.method119("HeroesOfTheVillage", 9)) {
-         Class41 var5 = var2.method131("HeroesOfTheVillage", 11);
+         ListNBT var5 = var2.method131("HeroesOfTheVillage", 11);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             this.field32975.add(Class8354.method29282(var5.get(var6)));
@@ -118,7 +118,7 @@ public class Class7699 {
 
    private Predicate<ServerPlayerEntity> method25397() {
       return var1 -> {
-         BlockPos var4 = var1.method3432();
+         BlockPos var4 = var1.getPosition();
          return var1.method3066() && this.field32978.method6957(var4) == this;
       };
    }
@@ -298,7 +298,7 @@ public class Class7699 {
 
                   for (UUID var8 : this.field32975) {
                      Entity var9 = this.field32978.method6942(var8);
-                     if (var9 instanceof Class880 && !var9.method2800()) {
+                     if (var9 instanceof Class880 && !var9.isSpectator()) {
                         Class880 var10 = (Class880)var9;
                         var10.method3035(new Class2023(Class8254.field35498, 48000, this.field32982 - 1, false, false, true));
                         if (var10 instanceof ServerPlayerEntity) {
@@ -365,8 +365,8 @@ public class Class7699 {
          Set<Class1026> var5 = var3.next();
 
          for (Class1026 var7 : var5) {
-            BlockPos var8 = var7.method3432();
-            if (var7.field5041 || var7.field5024.method6813() != this.field32978.method6813() || this.field32977.method8318(var8) >= 12544.0) {
+            BlockPos var8 = var7.getPosition();
+            if (var7.field5041 || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.method8318(var8) >= 12544.0) {
                var4.add(var7);
             } else if (var7.field5055 > 600) {
                if (this.field32978.method6942(var7.getUniqueID()) == null) {
@@ -429,18 +429,18 @@ public class Class7699 {
             }
 
             this.method25414(var5, var15, var1, false);
-            if (Class2127.method8809(var11) == Class8992.field41072) {
+            if (Class2127.method8809(var11) == EntityType.field41072) {
                Class1026 var16 = null;
                if (var5 != this.method25435(Class2197.field14353)) {
                   if (var5 >= this.method25435(Class2197.field14354)) {
                      if (var13 != 0) {
-                        var16 = Class8992.field41099.method33215(this.field32978);
+                        var16 = EntityType.field41099.method33215(this.field32978);
                      } else {
-                        var16 = Class8992.field41027.method33215(this.field32978);
+                        var16 = EntityType.field41027.method33215(this.field32978);
                      }
                   }
                } else {
-                  var16 = Class8992.field41067.method33215(this.field32978);
+                  var16 = EntityType.field41067.method33215(this.field32978);
                }
 
                var13++;
@@ -467,8 +467,8 @@ public class Class7699 {
          var2.method4548(true);
          var2.method4558(0);
          if (!var4 && var3 != null) {
-            var2.method3215((double)var3.method8304() + 0.5, (double)var3.getY() + 1.0, (double)var3.method8306() + 0.5);
-            var2.method4276(this.field32978, this.field32978.method6807(var3), Class2202.field14398, (Class5093)null, (Class39)null);
+            var2.method3215((double)var3.getX() + 0.5, (double)var3.getY() + 1.0, (double)var3.getZ() + 0.5);
+            var2.method4276(this.field32978, this.field32978.method6807(var3), Class2202.field14398, (Class5093)null, (CompoundNBT)null);
             var2.method4545(var1, false);
             var2.method3061(true);
             this.field32978.method6995(var2);
@@ -521,9 +521,9 @@ public class Class7699 {
    }
 
    public static ItemStack method25421() {
-      ItemStack var2 = new ItemStack(Class8514.field38092);
-      Class39 var3 = var2.method32144("BlockEntityTag");
-      Class41 var4 = new Class7291()
+      ItemStack var2 = new ItemStack(Items.field38092);
+      CompoundNBT var3 = var2.method32144("BlockEntityTag");
+      ListNBT var4 = new Class7291()
          .method23058(Class2154.field14107, Class112.field395)
          .method23058(Class2154.field14087, Class112.field394)
          .method23058(Class2154.field14091, Class112.field393)
@@ -533,7 +533,7 @@ public class Class7699 {
          .method23058(Class2154.field14106, Class112.field394)
          .method23058(Class2154.field14112, Class112.field401)
          .method23059();
-      var3.method99("Patterns", var4);
+      var3.put("Patterns", var4);
       var2.method32156(Class2304.field15735);
       var2.method32150(new TranslationTextComponent("block.minecraft.ominous_banner").mergeStyle(TextFormatting.GOLD));
       return var2;
@@ -551,28 +551,28 @@ public class Class7699 {
 
       for (int var7 = 0; var7 < var2; var7++) {
          float var8 = this.field32978.field9016.nextFloat() * (float) (Math.PI * 2);
-         int var9 = this.field32977.method8304()
-            + MathHelper.method37767(MathHelper.method37764(var8) * 32.0F * (float)var5)
+         int var9 = this.field32977.getX()
+            + MathHelper.method37767(MathHelper.cos(var8) * 32.0F * (float)var5)
             + this.field32978.field9016.nextInt(5);
-         int var10 = this.field32977.method8306()
-            + MathHelper.method37767(MathHelper.method37763(var8) * 32.0F * (float)var5)
+         int var10 = this.field32977.getZ()
+            + MathHelper.method37767(MathHelper.sin(var8) * 32.0F * (float)var5)
             + this.field32978.field9016.nextInt(5);
          int var11 = this.field32978.method6736(Class101.field296, var9, var10);
          var6.method8372(var9, var11, var10);
          if ((!this.field32978.method6952(var6) || var1 >= 2)
             && this.field32978
                .method7019(
-                  var6.method8304() - 10,
+                  var6.getX() - 10,
                   var6.getY() - 10,
-                  var6.method8306() - 10,
-                  var6.method8304() + 10,
+                  var6.getZ() - 10,
+                  var6.getX() + 10,
                   var6.getY() + 10,
-                  var6.method8306() + 10
+                  var6.getZ() + 10
                )
             && this.field32978.method6883().method7352(new Class7481(var6))
             && (
-               Class8170.method28429(Class2068.field13472, this.field32978, var6, Class8992.field41072)
-                  || this.field32978.method6738(var6.method8313()).method23448(Blocks.SNOW) && this.field32978.method6738(var6).method23393()
+               Class8170.method28429(Class2068.field13472, this.field32978, var6, EntityType.field41072)
+                  || this.field32978.getBlockState(var6.method8313()).method23448(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()
             )) {
             return var6;
          }
@@ -675,7 +675,7 @@ public class Class7699 {
       return this.field32983;
    }
 
-   public Class39 method25434(Class39 var1) {
+   public CompoundNBT method25434(CompoundNBT var1) {
       var1.method102("Id", this.field32980);
       var1.method115("Started", this.field32979);
       var1.method115("Active", this.field32983);
@@ -687,16 +687,16 @@ public class Class7699 {
       var1.method107("TotalHealth", this.field32981);
       var1.method102("NumGroups", this.field32989);
       var1.method109("Status", this.field32990.method9074());
-      var1.method102("CX", this.field32977.method8304());
+      var1.method102("CX", this.field32977.getX());
       var1.method102("CY", this.field32977.getY());
-      var1.method102("CZ", this.field32977.method8306());
-      Class41 var4 = new Class41();
+      var1.method102("CZ", this.field32977.getZ());
+      ListNBT var4 = new ListNBT();
 
       for (UUID var6 : this.field32975) {
          var4.add(Class8354.method29281(var6));
       }
 
-      var1.method99("HeroesOfTheVillage", var4);
+      var1.put("HeroesOfTheVillage", var4);
       return var1;
    }
 

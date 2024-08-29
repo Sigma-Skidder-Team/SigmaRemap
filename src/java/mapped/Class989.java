@@ -15,7 +15,7 @@ public class Class989 implements Class920 {
 
    @Override
    public boolean method3617() {
-      return Class948.method3815(this.field5473).method32105();
+      return Class948.method3815(this.field5473).isEmpty();
    }
 
    @Override
@@ -29,7 +29,7 @@ public class Class989 implements Class920 {
          return ItemStack.EMPTY;
       } else {
          ItemStack var5 = Class948.method3815(this.field5473).method32106(var2);
-         if (Class948.method3815(this.field5473).method32105()) {
+         if (Class948.method3815(this.field5473).isEmpty()) {
             Class948.method3816(this.field5473);
          }
 
@@ -65,12 +65,12 @@ public class Class989 implements Class920 {
 
    @Override
    public boolean method3623(PlayerEntity var1) {
-      if (this.field5473.field5324.method6759(this.field5473.field5325) == this.field5473) {
+      if (this.field5473.field5324.getTileEntity(this.field5473.field5325) == this.field5473) {
          return !(
                var1.method3276(
-                     (double)this.field5473.field5325.method8304() + 0.5,
+                     (double)this.field5473.field5325.getX() + 0.5,
                      (double)this.field5473.field5325.getY() + 0.5,
-                     (double)this.field5473.field5325.method8306() + 0.5
+                     (double)this.field5473.field5325.getZ() + 0.5
                   )
                   > 64.0
             )

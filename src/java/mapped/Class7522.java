@@ -17,10 +17,10 @@ public class Class7522 {
    public static final Class7235 field32267 = new Class7235(0.0, 0.0, 0.2, 5.0, 5, 15, 6.0E7, 0L, 0.0);
 
    public boolean method24523(BlockPos var1) {
-      return (double)(var1.method8304() + 1) > this.method24530()
-         && (double)var1.method8304() < this.method24532()
-         && (double)(var1.method8306() + 1) > this.method24531()
-         && (double)var1.method8306() < this.method24533();
+      return (double)(var1.getX() + 1) > this.method24530()
+         && (double)var1.getX() < this.method24532()
+         && (double)(var1.getZ() + 1) > this.method24531()
+         && (double)var1.getZ() < this.method24533();
    }
 
    public boolean method24524(Class7481 var1) {

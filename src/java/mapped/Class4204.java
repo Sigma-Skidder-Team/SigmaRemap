@@ -12,13 +12,13 @@ public class Class4204 extends Class4194 {
       this.field20444 = var2;
    }
 
-   public Class4204(Class8761 var1, Class39 var2) {
+   public Class4204(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33449, var2);
       this.field20511 = var2.method132("Mob");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Mob", this.field20511);
    }
@@ -50,11 +50,11 @@ public class Class4204 extends Class4194 {
       this.method12927(var1, var5, 9, 1, 1, 9, 1, 3, Blocks.LAVA.method11579(), Blocks.LAVA.method11579(), false);
       this.method12928(var1, var5, 3, 1, 8, 7, 1, 12, false, var4, Class9331.method35288());
       this.method12927(var1, var5, 4, 1, 9, 6, 1, 11, Blocks.LAVA.method11579(), Blocks.LAVA.method11579(), false);
-      Class7380 var11 = Blocks.IRON_BARS
+      BlockState var11 = Blocks.IRON_BARS
          .method11579()
          .method23465(Class3237.field18680, Boolean.valueOf(true))
          .method23465(Class3237.field18682, Boolean.valueOf(true));
-      Class7380 var12 = Blocks.IRON_BARS
+      BlockState var12 = Blocks.IRON_BARS
          .method11579()
          .method23465(Class3237.field18683, Boolean.valueOf(true))
          .method23465(Class3237.field18681, Boolean.valueOf(true));
@@ -68,7 +68,7 @@ public class Class4204 extends Class4194 {
          this.method12927(var1, var5, var23, 3, 15, var23, 4, 15, var12, var12, false);
       }
 
-      Class7380 var24 = Blocks.STONE_BRICK_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+      BlockState var24 = Blocks.STONE_BRICK_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
       this.method12928(var1, var5, 4, 1, 5, 6, 1, 7, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 4, 2, 6, 6, 2, 7, false, var4, Class9331.method35288());
       this.method12928(var1, var5, 4, 3, 7, 6, 3, 7, false, var4, Class9331.method35288());
@@ -79,10 +79,10 @@ public class Class4204 extends Class4194 {
          this.method12923(var1, var24, var14, 3, 6, var5);
       }
 
-      Class7380 var25 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.NORTH);
-      Class7380 var15 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.SOUTH);
-      Class7380 var16 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.EAST);
-      Class7380 var17 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.WEST);
+      BlockState var25 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.NORTH);
+      BlockState var15 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.SOUTH);
+      BlockState var16 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.EAST);
+      BlockState var17 = Blocks.field36650.method11579().method23465(Class3400.field19053, Direction.WEST);
       boolean var18 = true;
       boolean[] var19 = new boolean[12];
 
@@ -104,7 +104,7 @@ public class Class4204 extends Class4194 {
       this.method12923(var1, var17.method23465(Class3400.field19054, Boolean.valueOf(var19[10])), 7, 3, 10, var5);
       this.method12923(var1, var17.method23465(Class3400.field19054, Boolean.valueOf(var19[11])), 7, 3, 11, var5);
       if (var18) {
-         Class7380 var26 = Blocks.field36649.method11579();
+         BlockState var26 = Blocks.field36649.method11579();
          this.method12923(var1, var26, 4, 3, 9, var5);
          this.method12923(var1, var26, 5, 3, 9, var5);
          this.method12923(var1, var26, 6, 3, 9, var5);
@@ -122,9 +122,9 @@ public class Class4204 extends Class4194 {
          if (var5.method38396(var27)) {
             this.field20511 = true;
             var1.method6725(var27, Blocks.field36532.method11579(), 2);
-            Class944 var21 = var1.method6759(var27);
+            TileEntity var21 = var1.getTileEntity(var27);
             if (var21 instanceof Class960) {
-               ((Class960)var21).method3911().method24790(Class8992.field41077);
+               ((Class960)var21).method3911().method24790(EntityType.field41077);
             }
          }
       }

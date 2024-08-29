@@ -32,9 +32,9 @@ public class Class6901 extends Class6896 {
       Direction var12 = Class76.field161.method247(var2);
       int var13 = var3 - var2.nextInt(4);
       int var14 = 2 - var2.nextInt(3);
-      int var15 = var4.method8304();
+      int var15 = var4.getX();
       int var16 = var4.getY();
-      int var17 = var4.method8306();
+      int var17 = var4.getZ();
       int var18 = var15;
       int var19 = var17;
       int var20 = var16 + var3 - 1;

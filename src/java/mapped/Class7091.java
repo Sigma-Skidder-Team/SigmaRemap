@@ -39,10 +39,10 @@ public class Class7091 extends Class7092 {
 
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
-      Block var9 = this.field30520.get(var5.field35531.method23383());
+      Block var9 = this.field30520.get(var5.field35531.getBlock());
       if (var9 != null) {
-         Class7380 var10 = var5.field35531;
-         Class7380 var11 = var9.method11579();
+         BlockState var10 = var5.field35531;
+         BlockState var11 = var9.method11579();
          if (var10.method23462(Class3421.field19131)) {
             var11 = var11.method23465(Class3421.field19131, var10.<Direction>method23463(Class3421.field19131));
          }

@@ -11,7 +11,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method23463(field18966)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
@@ -20,7 +20,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field18967;
    }
 
@@ -30,23 +30,23 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class944 method11646(Class1665 var1) {
+   public TileEntity method11646(Class1665 var1) {
       return new Class954();
    }
 
    @Override
-   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
-      boolean var10 = var9.method32107() instanceof Class3321 && var4.field4919.field29610;
+      boolean var10 = var9.getItem() instanceof Class3321 && var4.abilities.field29610;
       if (!var2.field9020) {
-         Class944 var11 = var2.method6759(var3);
+         TileEntity var11 = var2.getTileEntity(var3);
          if (!(var11 instanceof Class954)) {
             return ActionResultType.field14820;
          } else {
             Class954 var12 = (Class954)var11;
             if (var10) {
-               boolean var13 = var12.method3845(((Class3321)var9.method32107()).method11876());
-               if (var13 && !var4.method2801()) {
+               boolean var13 = var12.method3845(((Class3321)var9.getItem()).method11876());
+               if (var13 && !var4.isCreative()) {
                   var9.method32182(1);
                }
             }
@@ -59,7 +59,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(Class7380 var1) {
+   public Class7379 method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18966) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

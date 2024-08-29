@@ -6,21 +6,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Predicate;
 
-public class Class166 implements Predicate<Class7380> {
-   public static final Predicate<Class7380> field534 = var0 -> true;
-   private final Class9348<Block, Class7380> field535;
+public class Class166 implements Predicate<BlockState> {
+   public static final Predicate<BlockState> field534 = var0 -> true;
+   private final Class9348<Block, BlockState> field535;
    private final Map<Class8550<?>, Predicate<Object>> field536 = Maps.newHashMap();
 
-   private Class166(Class9348<Block, Class7380> var1) {
+   private Class166(Class9348<Block, BlockState> var1) {
       this.field535 = var1;
    }
 
    public static Class166 method497(Block var0) {
-      return new Class166(var0.method11577());
+      return new Class166(var0.getStateContainer());
    }
 
-   public boolean test(Class7380 var1) {
-      if (var1 == null || !var1.method23383().equals(this.field535.method35394())) {
+   public boolean test(BlockState var1) {
+      if (var1 == null || !var1.getBlock().equals(this.field535.method35394())) {
          return false;
       } else if (this.field536.isEmpty()) {
          return true;
@@ -35,7 +35,7 @@ public class Class166 implements Predicate<Class7380> {
       }
    }
 
-   public <T extends Comparable<T>> boolean method498(Class7380 var1, Class8550<T> var2, Predicate<Object> var3) {
+   public <T extends Comparable<T>> boolean method498(BlockState var1, Class8550<T> var2, Predicate<Object> var3) {
       Comparable var6 = var1.method23463(var2);
       return var3.test(var6);
    }

@@ -50,7 +50,7 @@ public class Class2724 extends Class2595 {
          if (this.field17218 != 0) {
             if (this.field17218 >= this.field17217.method5303()) {
                float var4 = 1.0F;
-               if (this.field17217.field5024.method6997() == Class2197.field14354) {
+               if (this.field17217.world.method6997() == Class2197.field14354) {
                   var4 += 2.0F;
                }
 
@@ -65,7 +65,7 @@ public class Class2724 extends Class2595 {
          } else {
             Class1105.method5312(this.field17217, this.field17217.method4232().method3205());
             if (!this.field17217.method3245()) {
-               this.field17217.field5024.method6786(this.field17217, (byte)21);
+               this.field17217.world.method6786(this.field17217, (byte)21);
             }
          }
 

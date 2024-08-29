@@ -19,7 +19,7 @@ public class Class4544 implements Iterator<Class8066> {
 
    public Class8066 next() {
       BlockPos var3 = this.field21895.next();
-      this.field21896.method8384(var3.method8304() << 4, var3.getY() << 4, var3.method8306() << 4);
+      this.field21896.method8384(var3.getX() << 4, var3.getY() << 4, var3.getZ() << 4);
       return this.field21894.method34761(this.field21896);
    }
 

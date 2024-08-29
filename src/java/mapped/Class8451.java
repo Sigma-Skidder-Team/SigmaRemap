@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class Class8451 {
    public static final List<String> field36258 = Lists.newArrayList("layer0", "layer1", "layer2", "layer3", "layer4");
 
-   public Class7496 method29717(Function<Class7826, Class1713> var1, Class7496 var2) {
+   public Class7496 method29717(Function<Class7826, TextureAtlasSprite> var1, Class7496 var2) {
       HashMap var5 = Maps.newHashMap();
       ArrayList var6 = Lists.newArrayList();
 
@@ -23,7 +23,7 @@ public class Class8451 {
 
          Class7826 var9 = var2.method24436(var8);
          var5.put(var8, Either.left(var9));
-         Class1713 var10 = (Class1713)var1.apply(var9);
+         TextureAtlasSprite var10 = (TextureAtlasSprite)var1.apply(var9);
          var6.addAll(this.method29718(var7, var8, var10));
       }
 
@@ -33,7 +33,7 @@ public class Class8451 {
       return var11;
    }
 
-   private List<Class9726> method29718(int var1, String var2, Class1713 var3) {
+   private List<Class9726> method29718(int var1, String var2, TextureAtlasSprite var3) {
       HashMap var6 = Maps.newHashMap();
       var6.put(Direction.SOUTH, new Class9163((Direction)null, var1, var2, new Class9840(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0)));
       var6.put(Direction.NORTH, new Class9163((Direction)null, var1, var2, new Class9840(new float[]{16.0F, 0.0F, 0.0F, 16.0F}, 0)));
@@ -43,7 +43,7 @@ public class Class8451 {
       return var7;
    }
 
-   private List<Class9726> method29719(Class1713 var1, String var2, int var3) {
+   private List<Class9726> method29719(TextureAtlasSprite var1, String var2, int var3) {
       float var6 = (float)var1.method7457();
       float var7 = (float)var1.method7458();
       ArrayList var8 = Lists.newArrayList();
@@ -131,7 +131,7 @@ public class Class8451 {
       return var8;
    }
 
-   private List<Class3635> method29720(Class1713 var1) {
+   private List<Class3635> method29720(TextureAtlasSprite var1) {
       int var4 = var1.method7457();
       int var5 = var1.method7458();
       ArrayList var6 = Lists.newArrayList();
@@ -151,7 +151,7 @@ public class Class8451 {
       return var6;
    }
 
-   private void method29721(Class2032 var1, List<Class3635> var2, Class1713 var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
+   private void method29721(Class2032 var1, List<Class3635> var2, TextureAtlasSprite var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
       boolean var12 = this.method29723(var3, var4, var5 + var1.method8668(), var6 + var1.method8669(), var7, var8) && var9;
       if (var12) {
          this.method29722(var2, var1, var5, var6);
@@ -180,7 +180,7 @@ public class Class8451 {
       }
    }
 
-   private boolean method29723(Class1713 var1, int var2, int var3, int var4, int var5, int var6) {
+   private boolean method29723(TextureAtlasSprite var1, int var2, int var3, int var4, int var5, int var6) {
       return var3 >= 0 && var4 >= 0 && var3 < var5 && var4 < var6 ? var1.method7468(var2, var3, var4) : true;
    }
 }

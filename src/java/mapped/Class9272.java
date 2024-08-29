@@ -99,14 +99,14 @@ public class Class9272 {
       if (!var0.has("item")) {
          throw new JsonSyntaxException("Unsupported icon type, currently only items are supported (add 'item' key)");
       } else {
-         Class3257 var3 = JSONUtils.method32766(var0, "item");
+         Item var3 = JSONUtils.method32766(var0, "item");
          if (var0.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
          } else {
             ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
-                  Class39 var5 = Class7671.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
+                  CompoundNBT var5 = Class7671.method25188(JSONUtils.method32762(var0.get("nbt"), "nbt"));
                   var4.method32148(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());
@@ -177,7 +177,7 @@ public class Class9272 {
 
    private JsonObject method34949() {
       JsonObject var3 = new JsonObject();
-      var3.addProperty("item", Registry.field16075.method9181(this.field42648.method32107()).toString());
+      var3.addProperty("item", Registry.ITEM.getKey(this.field42648.getItem()).toString());
       if (this.field42648.method32141()) {
          var3.addProperty("nbt", this.field42648.method32142().toString());
       }

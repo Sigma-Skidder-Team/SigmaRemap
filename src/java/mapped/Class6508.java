@@ -20,7 +20,7 @@ public class Class6508<T extends Class4844> implements Class6504<T> {
 
       String var7 = JSONUtils.method32763(var2, "result");
       int var8 = JSONUtils.method32777(var2, "count");
-      ItemStack var9 = new ItemStack(Registry.field16075.method9184(new ResourceLocation(var7)), var8);
+      ItemStack var9 = new ItemStack(Registry.ITEM.method9184(new ResourceLocation(var7)), var8);
       return this.field28493.method17789(var1, var5, var6, var9);
    }
 

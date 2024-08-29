@@ -14,7 +14,7 @@ public class Class1088 extends Class1018 {
    private int field5962;
    public static final Predicate<Class880> field5963 = var0 -> var0.method3005() && !var0.method3250();
 
-   public Class1088(Class8992<? extends Class1088> var1, World var2) {
+   public Class1088(EntityType<? extends Class1088> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14191, 0.0F);
       this.field5596 = new Class6838(this);
@@ -73,28 +73,28 @@ public class Class1088 extends Class1018 {
    @Override
    public void method2850() {
       super.method2850();
-      this.field5063.method35442(field5956, BlockPos.field13032);
+      this.field5063.method35442(field5956, BlockPos.ZERO);
       this.field5063.method35442(field5957, false);
-      this.field5063.method35442(field5959, BlockPos.field13032);
+      this.field5063.method35442(field5959, BlockPos.ZERO);
       this.field5063.method35442(field5960, false);
       this.field5063.method35442(field5961, false);
       this.field5063.method35442(field5958, false);
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      var1.method102("HomePosX", this.method5042().method8304());
+      var1.method102("HomePosX", this.method5042().getX());
       var1.method102("HomePosY", this.method5042().getY());
-      var1.method102("HomePosZ", this.method5042().method8306());
+      var1.method102("HomePosZ", this.method5042().getZ());
       var1.method115("HasEgg", this.method5045());
-      var1.method102("TravelPosX", this.method5044().method8304());
+      var1.method102("TravelPosX", this.method5044().getX());
       var1.method102("TravelPosY", this.method5044().getY());
-      var1.method102("TravelPosZ", this.method5044().method8306());
+      var1.method102("TravelPosZ", this.method5044().getZ());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       int var4 = var1.method122("HomePosX");
       int var5 = var1.method122("HomePosY");
       int var6 = var1.method122("HomePosZ");
@@ -109,13 +109,13 @@ public class Class1088 extends Class1018 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
-      this.method5041(this.method3432());
-      this.method5043(BlockPos.field13032);
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+      this.method5041(this.getPosition());
+      this.method5043(BlockPos.ZERO);
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method5053(Class8992<Class1088> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5053(EntityType<Class1088> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var3.getY() < var1.method6776() + 4 && Class3441.method12114(var1, var3) && var1.method7021(var3, 0) > 8;
    }
 
@@ -185,7 +185,7 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       Class9455 var5 = !this.method3005() ? Class6067.field27173 : Class6067.field27174;
       this.method2863(var5, 0.15F, 1.0F);
    }
@@ -213,12 +213,12 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41096.method33215(var1);
+      return EntityType.field41096.method33215(var1);
    }
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return var1.method32107() == Blocks.SEAGRASS.method11581();
+      return var1.getItem() == Blocks.SEAGRASS.method11581();
    }
 
    @Override
@@ -234,9 +234,9 @@ public class Class1088 extends Class1018 {
    public void method2871() {
       super.method2871();
       if (this.method3066() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
-         BlockPos var3 = this.method3432();
-         if (Class3441.method12114(this.field5024, var3)) {
-            this.field5024.method6999(2001, var3, Block.method11535(Blocks.SAND.method11579()));
+         BlockPos var3 = this.getPosition();
+         if (Class3441.method12114(this.world, var3)) {
+            this.world.method6999(2001, var3, Block.method11535(Blocks.SAND.method11579()));
          }
       }
    }
@@ -244,8 +244,8 @@ public class Class1088 extends Class1018 {
    @Override
    public void method4679() {
       super.method4679();
-      if (!this.method3005() && this.field5024.method6789().method17135(Class5462.field24227)) {
-         this.method3301(Class8514.field37793, 1);
+      if (!this.method3005() && this.world.method6789().method17135(Class5462.field24227)) {
+         this.method3301(Items.field37793, 1);
       }
    }
 

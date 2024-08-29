@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4402;
 import com.mentalfrostbyte.jello.event.impl.Class4417;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4434;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -18,8 +18,8 @@ public class Class5372 extends Module {
 
     public Class5372() {
         super(ModuleCategory.MOVEMENT, "NCP", "Step for NCP");
-        this.method15972(new Class6009<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 2.5F, 0.5F));
-        this.method15972(new Class6009<Float>("Timer", "Timer speed", 0.1F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 2.5F, 0.5F));
+        this.registerSetting(new Class6009<Float>("Timer", "Timer speed", 0.1F, Float.class, 0.0F, 1.0F, 0.01F));
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Class5372 extends Module {
     }
 
     @EventTarget
-    private void method16912(Class4418 var1) {
+    private void method16912(WorldLoadEvent var1) {
         this.field23994 = 0;
         this.field23993.clear();
     }
@@ -119,7 +119,7 @@ public class Class5372 extends Module {
             var1.method13900(true);
             if (this.field23994 == 0) {
                 for (Packet var5 : this.field23993) {
-                    mc.getClientPlayNetHandler().method15589().method30695(var5);
+                    mc.getConnection().getNetworkManager().method30695(var5);
                 }
 
                 this.field23993.clear();

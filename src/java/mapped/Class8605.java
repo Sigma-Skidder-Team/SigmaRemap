@@ -52,7 +52,7 @@ public class Class8605 {
       if (this != field38715) {
          JsonObject var3 = new JsonObject();
          if (this.field38717 != null) {
-            var3.addProperty("enchantment", Registry.field16073.method9181(this.field38717).toString());
+            var3.addProperty("enchantment", Registry.field16073.getKey(this.field38717).toString());
          }
 
          var3.add("levels", this.field38718.method32005());

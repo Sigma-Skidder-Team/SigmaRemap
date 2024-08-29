@@ -33,29 +33,29 @@ public class Class8683 {
 
    private static void method31253(File var0, String var1, int var2, int var3, Framebuffer var4, Consumer<ITextComponent> var5) {
       Minecraft var8 = Class7944.method26860();
-      Class1815 var9 = var8.method1580();
-      Class9574 var10 = Class7944.method26928();
+      MainWindow var9 = var8.getMainWindow();
+      GameSettings var10 = Class7944.method26928();
       int var11 = var9.getFramebufferWidth();
       int var12 = var9.getFramebufferHeight();
-      int var13 = var10.field44673;
-      int var14 = var9.method8036(var8.gameSettings.field44673, var8.gameSettings.field44617);
+      int var13 = var10.guiScale;
+      int var14 = var9.calcGuiScale(var8.gameSettings.guiScale, var8.gameSettings.forceUnicodeFont);
       int var15 = Class7944.method26975();
       boolean var16 = Class8157.method28309() && var15 > 1;
       if (var16) {
-         var10.field44673 = var14 * var15;
+         var10.guiScale = var14 * var15;
          var9.method8052(var11 * var15, var12 * var15);
          Class7414.method23832();
          Class7414.method23883(16640);
-         var8.method1464().bindFramebuffer(true);
+         var8.getFramebuffer().bindFramebuffer(true);
          Class7414.method23804();
-         var8.gameRenderer.updateCameraAndRender(var8.method1562(), System.nanoTime(), true);
+         var8.gameRenderer.updateCameraAndRender(var8.getRenderPartialTicks(), System.nanoTime(), true);
       }
 
       Class1806 var17 = method31254(var2, var3, var4);
       if (var16) {
-         var8.method1464().unbindFramebuffer();
+         var8.getFramebuffer().unbindFramebuffer();
          Class7414.method23833();
-         Class7944.method26928().field44673 = var13;
+         Class7944.method26928().guiScale = var13;
          var9.method8052(var11, var12);
       }
 

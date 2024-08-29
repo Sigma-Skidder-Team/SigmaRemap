@@ -14,7 +14,7 @@ public class Class7554 {
    public final int field32399 = 7;
 
    public Class7554(int var1) {
-      this.field32394 = Class7925.field33952;
+      this.field32394 = ClassicDecryption.bold16;
       this.field32395 = var1;
    }
 

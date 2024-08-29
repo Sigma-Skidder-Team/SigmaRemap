@@ -12,7 +12,7 @@ public class Class3395 extends Block {
    }
 
    @Override
-   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
       int var7 = method12006(var1, var2, var3, var4);
       Entity var8 = var4.method3460();
       if (var8 instanceof ServerPlayerEntity) {
@@ -22,18 +22,18 @@ public class Class3395 extends Block {
       }
    }
 
-   private static int method12006(Class1660 var0, Class7380 var1, Class8711 var2, Entity var3) {
+   private static int method12006(Class1660 var0, BlockState var1, BlockRayTraceResult var2, Entity var3) {
       int var6 = method12007(var2, var2.method31419());
       int var7 = !(var3 instanceof AbstractArrowEntity) ? 8 : 20;
-      if (!var0.method6860().method20718(var2.method31423(), var1.method23383())) {
-         method12008(var0, var1, var6, var2.method31423(), var7);
+      if (!var0.method6860().method20718(var2.getPos(), var1.getBlock())) {
+         method12008(var0, var1, var6, var2.getPos(), var7);
       }
 
       return var6;
    }
 
-   private static int method12007(Class8711 var0, Vector3d var1) {
-      Direction var4 = var0.method31424();
+   private static int method12007(BlockRayTraceResult var0, Vector3d var1) {
+      Direction var4 = var0.getFace();
       double var5 = Math.abs(MathHelper.method37808(var1.field18048) - 0.5);
       double var7 = Math.abs(MathHelper.method37808(var1.field18049) - 0.5);
       double var9 = Math.abs(MathHelper.method37808(var1.field18050) - 0.5);
@@ -52,37 +52,37 @@ public class Class3395 extends Block {
       return Math.max(1, MathHelper.method37774(15.0 * MathHelper.method37778((0.5 - var12) / 0.5, 0.0, 1.0)));
    }
 
-   private static void method12008(Class1660 var0, Class7380 var1, int var2, BlockPos var3, int var4) {
+   private static void method12008(Class1660 var0, BlockState var1, int var2, BlockPos var3, int var4) {
       var0.method6725(var3, var1.method23465(field19032, Integer.valueOf(var2)), 3);
-      var0.method6860().method20726(var3, var1.method23383(), var4);
+      var0.method6860().method20726(var3, var1.getBlock(), var4);
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19032) != 0) {
          var2.method6725(var3, var1.method23465(field19032, Integer.valueOf(0)), 3);
       }
    }
 
    @Override
-   public int method11514(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
       return var1.<Integer>method23463(field19032);
    }
 
    @Override
-   public boolean method11516(Class7380 var1) {
+   public boolean method11516(BlockState var1) {
       return true;
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19032);
    }
 
    @Override
-   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
+   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var2.method6714()
-         && !var1.method23448(var4.method23383())
+         && !var1.method23448(var4.getBlock())
          && var1.<Integer>method23463(field19032) > 0
          && !var2.method6860().method20718(var3, this)) {
          var2.method6725(var3, var1.method23465(field19032, Integer.valueOf(0)), 18);

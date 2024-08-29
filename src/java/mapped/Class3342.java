@@ -8,7 +8,7 @@ public class Class3342 extends Class3198 implements Class3255 {
    private Class9803 field18850;
    private Class9803 field18851;
    private Class9803 field18852;
-   private static final Predicate<Class7380> field18853 = var0 -> var0 != null
+   private static final Predicate<BlockState> field18853 = var0 -> var0 != null
          && (var0.method23448(Blocks.field36589) || var0.method23448(Blocks.field36590));
 
    public Class3342(AbstractBlock var1) {
@@ -17,8 +17,8 @@ public class Class3342 extends Class3198 implements Class3255 {
    }
 
    @Override
-   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var4.method23448(var1.method23383())) {
+   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var4.method23448(var1.getBlock())) {
          this.method11892(var2, var3);
       }
    }
@@ -41,9 +41,9 @@ public class Class3342 extends Class3198 implements Class3255 {
             }
 
             BlockPos var12 = var5.method33881(1, 2, 0).method37551();
-            Class1058 var15 = Class8992.field41041.method33215(var1);
+            Class1058 var15 = EntityType.field41041.method33215(var1);
             var15.method4870(true);
-            var15.method3273((double)var12.method8304() + 0.5, (double)var12.getY() + 0.05, (double)var12.method8306() + 0.5, 0.0F, 0.0F);
+            var15.method3273((double)var12.getX() + 0.5, (double)var12.getY() + 0.05, (double)var12.getZ() + 0.5, 0.0F, 0.0F);
             var1.method6916(var15);
 
             for (ServerPlayerEntity var9 : var1.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var15.method3389().method19664(5.0))) {
@@ -64,9 +64,9 @@ public class Class3342 extends Class3198 implements Class3255 {
             var1.method6999(2001, var16.method37551(), Block.method11535(var16.method37548()));
          }
 
-         Class1021 var14 = Class8992.field41082.method33215(var1);
+         Class1021 var14 = EntityType.field41082.method33215(var1);
          BlockPos var17 = var5.method33881(0, 2, 0).method37551();
-         var14.method3273((double)var17.method8304() + 0.5, (double)var17.getY() + 0.05, (double)var17.method8306() + 0.5, 0.0F, 0.0F);
+         var14.method3273((double)var17.getX() + 0.5, (double)var17.getY() + 0.05, (double)var17.getZ() + 0.5, 0.0F, 0.0F);
          var1.method6916(var14);
 
          for (ServerPlayerEntity var23 : var1.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var14.method3389().method19664(5.0))) {
@@ -81,12 +81,12 @@ public class Class3342 extends Class3198 implements Class3255 {
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       return this.method11579().method23465(field18848, var1.method18350().method536());
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18848);
    }
 

@@ -19,7 +19,7 @@ public class Class383 extends Thread {
          var3 = (HttpURLConnection)var4.openConnection();
          if (Class7944.method26928().field44622) {
             var3.setRequestProperty("OF-MC-Version", "1.16.4");
-            var3.setRequestProperty("OF-MC-Brand", "" + Class8948.method32694());
+            var3.setRequestProperty("OF-MC-Brand", "" + ClientBrandRetriever.getClientModName());
             var3.setRequestProperty("OF-Edition", "HD_U");
             var3.setRequestProperty("OF-Release", "G5");
             var3.setRequestProperty("OF-Java-Version", "" + System.getProperty("java.version"));

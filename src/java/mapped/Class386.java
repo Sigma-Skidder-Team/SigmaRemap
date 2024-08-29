@@ -11,9 +11,9 @@ public final class Class386 extends Thread {
    public void run() {
       Minecraft var3 = Minecraft.getInstance();
       if (var3 != null) {
-         Class1644 var4 = var3.method1531();
+         IntegratedServer var4 = var3.getIntegratedServer();
          if (var4 != null) {
-            var4.method1296(true);
+            var4.initiateShutdown(true);
          }
       }
    }

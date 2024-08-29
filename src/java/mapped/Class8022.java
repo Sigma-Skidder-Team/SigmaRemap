@@ -225,14 +225,14 @@ public final class Class8022 {
          Class113 var12 = var10.method9099(Class113.field414);
          Class113 var13 = var10.method9099(Class113.field415);
          Mutable var14 = new Mutable();
-         int var15 = MathHelper.method37769(var0.method19658(var11) - 1.0E-7) - 1;
-         int var16 = MathHelper.method37769(var0.method19659(var11) + 1.0E-7) + 1;
-         int var17 = MathHelper.method37769(var0.method19658(var12) - 1.0E-7) - 1;
-         int var18 = MathHelper.method37769(var0.method19659(var12) + 1.0E-7) + 1;
+         int var15 = MathHelper.floor(var0.method19658(var11) - 1.0E-7) - 1;
+         int var16 = MathHelper.floor(var0.method19659(var11) + 1.0E-7) + 1;
+         int var17 = MathHelper.floor(var0.method19658(var12) - 1.0E-7) - 1;
+         int var18 = MathHelper.floor(var0.method19659(var12) + 1.0E-7) + 1;
          double var19 = var0.method19658(var13) - 1.0E-7;
          double var21 = var0.method19659(var13) + 1.0E-7;
          boolean var23 = var2 > 0.0;
-         int var24 = !var23 ? MathHelper.method37769(var0.method19658(var13) + 1.0E-7) + 1 : MathHelper.method37769(var0.method19659(var13) - 1.0E-7) - 1;
+         int var24 = !var23 ? MathHelper.floor(var0.method19658(var13) + 1.0E-7) + 1 : MathHelper.floor(var0.method19659(var13) - 1.0E-7) - 1;
          int var25 = method27440(var2, var19, var21);
          int var26 = !var23 ? -1 : 1;
 
@@ -254,7 +254,7 @@ public final class Class8022 {
 
                   if (var30 < 3) {
                      var14.method8376(var10, var28, var29, var27);
-                     Class7380 var31 = var1.method6738(var14);
+                     BlockState var31 = var1.getBlockState(var14);
                      if ((var30 != 1 || var31.method23390()) && (var30 != 2 || var31.method23448(Blocks.MOVING_PISTON))) {
                         Class6408 var32 = var31.method23415(var1, var14, var4);
                         if (var7) {
@@ -264,7 +264,7 @@ public final class Class8022 {
                         }
 
                         var2 = var32.method19528(
-                           var13, var0.method19667((double)(-var14.method8304()), (double)(-var14.getY()), (double)(-var14.method8306())), var2
+                           var13, var0.method19667((double)(-var14.getX()), (double)(-var14.getY()), (double)(-var14.getZ())), var2
                         );
                         if (Math.abs(var2) < 1.0E-7) {
                            return 0.0;
@@ -284,7 +284,7 @@ public final class Class8022 {
    }
 
    private static int method27440(double var0, double var2, double var4) {
-      return !(var0 > 0.0) ? MathHelper.method37769(var2 + var0) - 1 : MathHelper.method37769(var4 + var0) + 1;
+      return !(var0 > 0.0) ? MathHelper.floor(var2 + var0) - 1 : MathHelper.floor(var4 + var0) + 1;
    }
 
    public static boolean method27441(Class6408 var0, Class6408 var1, Direction var2) {

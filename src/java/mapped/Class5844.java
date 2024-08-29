@@ -11,6 +11,6 @@ public class Class5844 extends Class5839 {
 
    @Override
    public boolean method18259(ItemStack var1) {
-      return var1.method32107() instanceof Class3301;
+      return var1.getItem() instanceof Class3301;
    }
 }

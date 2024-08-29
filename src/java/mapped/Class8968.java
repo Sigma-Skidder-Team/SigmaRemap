@@ -37,21 +37,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Class8968 {
-   public static final Class7826 field40508 = new Class7826(Class289.field1102, new ResourceLocation("block/fire_0"));
-   public static final Class7826 field40509 = new Class7826(Class289.field1102, new ResourceLocation("block/fire_1"));
-   public static final Class7826 field40510 = new Class7826(Class289.field1102, new ResourceLocation("block/lava_flow"));
-   public static final Class7826 field40511 = new Class7826(Class289.field1102, new ResourceLocation("block/water_flow"));
-   public static final Class7826 field40512 = new Class7826(Class289.field1102, new ResourceLocation("block/water_overlay"));
-   public static final Class7826 field40513 = new Class7826(Class289.field1102, new ResourceLocation("entity/banner_base"));
-   public static final Class7826 field40514 = new Class7826(Class289.field1102, new ResourceLocation("entity/shield_base"));
-   public static final Class7826 field40515 = new Class7826(Class289.field1102, new ResourceLocation("entity/shield_base_nopattern"));
+   public static final Class7826 field40508 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("block/fire_0"));
+   public static final Class7826 field40509 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("block/fire_1"));
+   public static final Class7826 field40510 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("block/lava_flow"));
+   public static final Class7826 field40511 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("block/water_flow"));
+   public static final Class7826 field40512 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("block/water_overlay"));
+   public static final Class7826 field40513 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/banner_base"));
+   public static final Class7826 field40514 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/shield_base"));
+   public static final Class7826 field40515 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/shield_base_nopattern"));
    public static final List<ResourceLocation> field40516 = IntStream.range(0, 10)
       .<ResourceLocation>mapToObj(var0 -> new ResourceLocation("block/destroy_stage_" + var0))
       .collect(Collectors.<ResourceLocation>toList());
    public static final List<ResourceLocation> field40517 = field40516.stream()
       .<ResourceLocation>map(var0 -> new ResourceLocation("textures/" + var0.method8292() + ".png"))
       .collect(Collectors.<ResourceLocation>toList());
-   public static final List<Class4520> field40518 = field40517.stream().<Class4520>map(Class4520::method14338).collect(Collectors.<Class4520>toList());
+   public static final List<RenderType> field40518 = field40517.stream().<RenderType>map(RenderType::method14338).collect(Collectors.<RenderType>toList());
    private static final Set<Class7826> field40519 = Util.<Set<Class7826>>method38508(Sets.newHashSet(), var0 -> {
       var0.add(field40511);
       var0.add(field40510);
@@ -71,14 +71,14 @@ public class Class8968 {
       var0.add(field40515);
 
       for (ResourceLocation var4 : field40516) {
-         var0.add(new Class7826(Class289.field1102, var4));
+         var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, var4));
       }
 
-      var0.add(new Class7826(Class289.field1102, Class5830.field25540));
-      var0.add(new Class7826(Class289.field1102, Class5830.field25541));
-      var0.add(new Class7826(Class289.field1102, Class5830.field25542));
-      var0.add(new Class7826(Class289.field1102, Class5830.field25543));
-      var0.add(new Class7826(Class289.field1102, Class5830.field25544));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25540));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25541));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25542));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25543));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25544));
       Class8624.method30910(var0::add);
    });
    private static final Logger field40520 = LogManager.getLogger();
@@ -99,38 +99,38 @@ public class Class8968 {
    public static final Class7496 field40528 = Util.<Class7496>method38508(
       Class7496.method24427("{\"gui_light\": \"side\"}"), var0 -> var0.field32207 = "block entity marker"
    );
-   private static final Class9348<Block, Class7380> field40529 = new Class7558<Block, Class7380>(Blocks.AIR)
+   private static final Class9348<Block, BlockState> field40529 = new Class7558<Block, BlockState>(Blocks.AIR)
       .method24737(Class8551.method30480("map"))
-      .method24739(Block::method11579, Class7380::new);
+      .method24739(Block::method11579, BlockState::new);
    private static final Class8451 field40530 = new Class8451();
-   private static final Map<ResourceLocation, Class9348<Block, Class7380>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
-   private final Class191 field40532;
+   private static final Map<ResourceLocation, Class9348<Block, BlockState>> field40531 = ImmutableMap.of(new ResourceLocation("item_frame"), field40529);
+   private final IResourceManager field40532;
    private Class1694 field40533;
-   private final Class8396 field40534;
+   private final BlockColors field40534;
    private final Set<ResourceLocation> field40535 = Sets.newHashSet();
    private final Class9786 field40536 = new Class9786();
    private final Map<ResourceLocation, Class7495> field40537 = Maps.newHashMap();
-   private final Map<Triple<ResourceLocation, Class6979, Boolean>, Class7202> field40538 = Maps.newHashMap();
+   private final Map<Triple<ResourceLocation, Class6979, Boolean>, IBakedModel> field40538 = Maps.newHashMap();
    private final Map<ResourceLocation, Class7495> field40539 = Maps.newHashMap();
-   private final Map<ResourceLocation, Class7202> field40540 = Maps.newHashMap();
-   private Map<ResourceLocation, Pair<Class289, Class8226>> field40541;
+   private final Map<ResourceLocation, IBakedModel> field40540 = Maps.newHashMap();
+   private Map<ResourceLocation, Pair<AtlasTexture, Class8226>> field40541;
    private int field40542 = 1;
-   private final Object2IntMap<Class7380> field40543 = Util.<Object2IntMap<Class7380>>method38508(
+   private final Object2IntMap<BlockState> field40543 = Util.<Object2IntMap<BlockState>>method38508(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
    public Map<ResourceLocation, Class7495> field40544;
 
-   public Class8968(Class191 var1, Class8396 var2, Class7165 var3, int var4) {
+   public Class8968(IResourceManager var1, BlockColors var2, IProfiler var3, int var4) {
       this(var1, var2, true);
       this.method32837(var3, var4);
    }
 
-   public Class8968(Class191 var1, Class8396 var2, boolean var3) {
+   public Class8968(IResourceManager var1, BlockColors var2, boolean var3) {
       this.field40532 = var1;
       this.field40534 = var2;
    }
 
-   public void method32837(Class7165 var1, int var2) {
+   public void method32837(IProfiler var1, int var2) {
       Class9299.field42974.method20229();
       var1.startSection("missing_model");
 
@@ -143,16 +143,16 @@ public class Class8968 {
       }
 
       var1.endStartSection("static_definitions");
-      field40531.forEach((var1x, var2x) -> var2x.method35392().forEach(var2xx -> this.method32845(Class9736.method38157(var1x, var2xx))));
+      field40531.forEach((var1x, var2x) -> var2x.getValidStates().forEach(var2xx -> this.method32845(BlockModelShapes.method38157(var1x, var2xx))));
       var1.endStartSection("blocks");
 
-      for (Block var6 : Registry.field16072) {
-         var6.method11577().method35392().forEach(var1x -> this.method32845(Class9736.method38156(var1x)));
+      for (Block var6 : Registry.BLOCK) {
+         var6.getStateContainer().getValidStates().forEach(var1x -> this.method32845(BlockModelShapes.method38156(var1x)));
       }
 
       var1.endStartSection("items");
 
-      for (ResourceLocation var16 : Registry.field16075.method9190()) {
+      for (ResourceLocation var16 : Registry.ITEM.method9190()) {
          this.method32845(new Class1997(var16, "inventory"));
       }
 
@@ -182,7 +182,7 @@ public class Class8968 {
       this.field40541 = Maps.newHashMap();
 
       for (Entry<ResourceLocation, List<Class7826>> var9 : var7.entrySet()) {
-         Class289 var10 = new Class289(var9.getKey());
+         AtlasTexture var10 = new AtlasTexture(var9.getKey());
          Class8226 var11 = var10.method1092(this.field40532, var9.getValue().stream().map(Class7826::method26197), var1, var2);
          this.field40541.put(var9.getKey(), Pair.of(var10, var11));
       }
@@ -190,11 +190,11 @@ public class Class8968 {
       var1.endSection();
    }
 
-   public Class1694 method32838(TextureManager var1, Class7165 var2) {
+   public Class1694 method32838(TextureManager var1, IProfiler var2) {
       var2.startSection("atlas");
 
       for (Pair var6 : this.field40541.values()) {
-         Class289 var7 = (Class289)var6.getFirst();
+         AtlasTexture var7 = (AtlasTexture)var6.getFirst();
          Class8226 var8 = (Class8226)var6.getSecond();
          var7.method1091(var8);
          var1.method1073(var7.method1100(), var7);
@@ -202,10 +202,10 @@ public class Class8968 {
          var7.method1101(var8);
       }
 
-      this.field40533 = new Class1694(this.field40541.values().stream().<Class289>map(Pair::getFirst).collect(Collectors.<Class289>toList()));
+      this.field40533 = new Class1694(this.field40541.values().stream().<AtlasTexture>map(Pair::getFirst).collect(Collectors.<AtlasTexture>toList()));
       var2.endStartSection("baking");
       this.field40539.keySet().forEach(var1x -> {
-         Class7202 var4 = null;
+         IBakedModel var4 = null;
 
          try {
             var4 = this.method32847(var1x, Class1901.field11159);
@@ -221,7 +221,7 @@ public class Class8968 {
       return this.field40533;
    }
 
-   private static Predicate<Class7380> method32839(Class9348<Block, Class7380> var0, String var1) {
+   private static Predicate<BlockState> method32839(Class9348<Block, BlockState> var0, String var1) {
       Map<Class8550<?>, Comparable<?>> var4 = Maps.newHashMap();
 
       for (String var6 : field40525.split(var1)) {
@@ -245,7 +245,7 @@ public class Class8968 {
 
       Block var12 = (Block)var0.method35394();
       return var2 -> {
-         if (var2 != null && var12 == var2.method23383()) {
+         if (var2 != null && var12 == var2.getBlock()) {
             for (Entry var6x : var4.entrySet()) {
                if (!Objects.equals(var2.method23463((Class8550)var6x.getKey()), var6x.getValue())) {
                   return false;
@@ -303,14 +303,14 @@ public class Class8968 {
          Class1997 var4 = (Class1997)var1;
          if (!Objects.equals(var4.method8303(), "inventory")) {
             ResourceLocation var31 = new ResourceLocation(var1.method8293(), var1.method8292());
-            Class9348<Block, Class7380> var32 = Optional.ofNullable(field40531.get(var31))
-               .orElseGet(() -> Registry.field16072.method9184(var31).method11577());
+            Class9348<Block, BlockState> var32 = Optional.ofNullable(field40531.get(var31))
+               .orElseGet(() -> Registry.BLOCK.method9184(var31).getStateContainer());
             this.field40536.method38573(var32);
             ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));
-            ImmutableList<Class7380> var8 = var32.method35392();
-            Map<Class1997, Class7380> var9 = Maps.newHashMap();
+            ImmutableList<BlockState> var8 = var32.getValidStates();
+            Map<Class1997, BlockState> var9 = Maps.newHashMap();
             var8.forEach(var2 -> {
-               Class7380 var5x = var9.put(Class9736.method38157(var31, var2), var2);
+               BlockState var5x = var9.put(BlockModelShapes.method38157(var31, var2), var2);
             });
             HashMap var10 = Maps.newHashMap();
             ResourceLocation var11 = new ResourceLocation(var1.method8293(), "blockstates/" + var1.method8292() + ".json");
@@ -347,7 +347,7 @@ public class Class8968 {
 
                for (Pair<String, Class9032> var17 : var15) {
                   Class9032 var18 = var17.getSecond();
-                  Map<Class7380, Pair<Class7495, Supplier<Class9390>>> var19 = Maps.newIdentityHashMap();
+                  Map<BlockState, Pair<Class7495, Supplier<Class9390>>> var19 = Maps.newIdentityHashMap();
                   Class7498 var20;
                   if (var18.method33450()) {
                      var20 = var18.method33451();
@@ -402,7 +402,7 @@ public class Class8968 {
             } catch (Exception var29) {
                throw new Class2494(String.format("Exception loading blockstate definition: '%s': %s", var11, var29));
             } finally {
-               Map<Class9390, Set<Class7380>> var22 = Maps.newHashMap();
+               Map<Class9390, Set<BlockState>> var22 = Maps.newHashMap();
                var9.forEach((var5x, var6x) -> {
                   Pair var9x = (Pair)var10.get(var6x);
                   if (var9x == null) {
@@ -423,8 +423,8 @@ public class Class8968 {
                   Iterator var5x = ((Set)var2).iterator();
 
                   while (var5x.hasNext()) {
-                     Class7380 var6x = (Class7380)var5x.next();
-                     if (var6x.method23397() != Class1855.field9887) {
+                     BlockState var6x = (BlockState)var5x.next();
+                     if (var6x.getRenderType() != BlockRenderType.MODEL) {
                         var5x.remove();
                         this.field40543.put(var6x, 0);
                      }
@@ -466,17 +466,17 @@ public class Class8968 {
       this.field40539.put(var1, var4);
    }
 
-   private void method32846(Iterable<Class7380> var1) {
+   private void method32846(Iterable<BlockState> var1) {
       int var4 = this.field40542++;
       var1.forEach(var2 -> this.field40543.put(var2, var4));
    }
 
    @Nullable
-   public Class7202 method32847(ResourceLocation var1, Class1902 var2) {
+   public IBakedModel method32847(ResourceLocation var1, Class1902 var2) {
       return this.method32848(var1, var2, this.field40533::method7289);
    }
 
-   public Class7202 method32848(ResourceLocation var1, Class1902 var2, Function<Class7826, Class1713> var3) {
+   public IBakedModel method32848(ResourceLocation var1, Class1902 var2, Function<Class7826, TextureAtlasSprite> var3) {
       Triple var6 = Triple.of(var1, var2.method8166(), var2.method8170());
       if (!this.field40538.containsKey(var6)) {
          if (this.field40533 != null) {
@@ -492,7 +492,7 @@ public class Class8968 {
                }
             }
 
-            Class7202 var9 = var7.method24425(this, this.field40533::method7289, var2, var1);
+            IBakedModel var9 = var7.method24425(this, this.field40533::method7289, var2, var1);
             if (Class9299.field42864.method20245()) {
                var9 = var7.method24425(this, var3, var2, var1);
             }
@@ -550,11 +550,11 @@ public class Class8968 {
       return var10;
    }
 
-   public Map<ResourceLocation, Class7202> method32850() {
+   public Map<ResourceLocation, IBakedModel> method32850() {
       return this.field40540;
    }
 
-   public Object2IntMap<Class7380> method32851() {
+   public Object2IntMap<BlockState> method32851() {
       return this.field40543;
    }
 

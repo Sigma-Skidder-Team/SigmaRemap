@@ -2,28 +2,28 @@ package mapped;
 
 import java.nio.file.Path;
 
-public class Class4453 extends Class4441<Class8992<?>> {
+public class Class4453 extends Class4441<EntityType<?>> {
    public Class4453(Class9068 var1) {
-      super(var1, Registry.field16074);
+      super(var1, Registry.ENTITY_TYPE);
    }
 
    @Override
    public void method14010() {
-      this.method14014(Class8613.field38734).method31560(Class8992.field41078, Class8992.field41087, Class8992.field41103);
+      this.method14014(Class8613.field38734).method31560(EntityType.field41078, EntityType.field41087, EntityType.field41103);
       this.method14014(Class8613.field38735)
-         .method31560(Class8992.field41027, Class8992.field41067, Class8992.field41072, Class8992.field41099, Class8992.field41040, Class8992.field41101);
-      this.method14014(Class8613.field38736).method31558(Class8992.field41009);
-      this.method14014(Class8613.field38737).method31560(Class8992.field41007, Class8992.field41084);
+         .method31560(EntityType.field41027, EntityType.field41067, EntityType.field41072, EntityType.field41099, EntityType.field41040, EntityType.field41101);
+      this.method14014(Class8613.field38736).method31558(EntityType.field41009);
+      this.method14014(Class8613.field38737).method31560(EntityType.field41007, EntityType.field41084);
       this.method14014(Class8613.field38738)
          .method31559(Class8613.field38737)
          .method31560(
-            Class8992.field41083,
-            Class8992.field41044,
-            Class8992.field41081,
-            Class8992.field41089,
-            Class8992.field41093,
-            Class8992.field41020,
-            Class8992.field41104
+            EntityType.field41083,
+            EntityType.field41044,
+            EntityType.field41081,
+            EntityType.field41089,
+            EntityType.field41093,
+            EntityType.field41020,
+            EntityType.field41104
          );
    }
 

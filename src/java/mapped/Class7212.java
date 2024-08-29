@@ -35,7 +35,7 @@ public class Class7212 {
    }
 
    private static int method22647(BlockPos var0) {
-      return method22648(var0.method8304() & 15, var0.getY() & 15, var0.method8306() & 15);
+      return method22648(var0.getX() & 15, var0.getY() & 15, var0.getZ() & 15);
    }
 
    private static int method22648(int var0, int var1, int var2) {
@@ -99,7 +99,7 @@ public class Class7212 {
             var2.add(Direction.field673);
          }
       } else {
-         var2.add(Direction.field672);
+         var2.add(Direction.DOWN);
       }
 
       int var7 = var1 >> 4 & 15;

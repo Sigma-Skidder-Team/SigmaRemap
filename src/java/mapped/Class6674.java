@@ -11,16 +11,16 @@ public class Class6674 {
       this.field29271 = var3;
    }
 
-   public static Class6674 method20349(Class39 var0) {
-      BlockPos var3 = Class8354.method29283(var0.method130("Pos"));
+   public static Class6674 method20349(CompoundNBT var0) {
+      BlockPos var3 = Class8354.method29283(var0.getCompound("Pos"));
       int var4 = var0.method122("Rotation");
       int var5 = var0.method122("EntityId");
       return new Class6674(var3, var4, var5);
    }
 
-   public Class39 method20350() {
-      Class39 var3 = new Class39();
-      var3.method99("Pos", Class8354.method29284(this.field29269));
+   public CompoundNBT method20350() {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.put("Pos", Class8354.method29284(this.field29269));
       var3.method102("Rotation", this.field29270);
       var3.method102("EntityId", this.field29271);
       return var3;
@@ -43,6 +43,6 @@ public class Class6674 {
    }
 
    public static String method20355(BlockPos var0) {
-      return "frame-" + var0.method8304() + "," + var0.getY() + "," + var0.method8306();
+      return "frame-" + var0.getX() + "," + var0.getY() + "," + var0.getZ();
    }
 }

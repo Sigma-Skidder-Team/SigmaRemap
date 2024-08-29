@@ -20,7 +20,7 @@ public class Class4187 extends Class4180 {
       this.method12966(var1);
    }
 
-   public Class4187(Class8761 var1, Class39 var2) {
+   public Class4187(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33476, var2);
       this.field20476 = var2.method126("Template");
       this.field20477 = Class80.valueOf(var2.method126("Rot"));
@@ -35,7 +35,7 @@ public class Class4187 extends Class4180 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20476);
       var1.method109("Rot", this.field20454.method36437().name());
@@ -46,7 +46,7 @@ public class Class4187 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if (var1.startsWith("Chest")) {
          Class80 var8 = this.field20454.method36437();
-         Class7380 var9 = Blocks.CHEST.method11579();
+         BlockState var9 = Blocks.CHEST.method11579();
          if ("ChestWest".equals(var1)) {
             var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.WEST));
          } else if ("ChestEast".equals(var1)) {
@@ -62,10 +62,10 @@ public class Class4187 extends Class4180 {
          Class1025 var11;
          switch (var1) {
             case "Mage":
-               var11 = Class8992.field41027.method33215(var3.method6970());
+               var11 = EntityType.field41027.method33215(var3.method6970());
                break;
             case "Warrior":
-               var11 = Class8992.field41099.method33215(var3.method6970());
+               var11 = EntityType.field41099.method33215(var3.method6970());
                break;
             default:
                return;
@@ -73,7 +73,7 @@ public class Class4187 extends Class4180 {
 
          var11.method4278();
          var11.method3272(var2, 0.0F, 0.0F);
-         var11.method4276(var3, var3.method6807(var11.method3432()), Class2202.field14394, (Class5093)null, (Class39)null);
+         var11.method4276(var3, var3.method6807(var11.getPosition()), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
          var3.method6995(var11);
          var3.method6725(var2, Blocks.AIR.method11579(), 2);
       }

@@ -3,7 +3,7 @@ package mapped;
 import java.util.function.Consumer;
 
 public class Class9067 {
-   private final Class3257 field41489;
+   private final Item field41489;
    private final Class120 field41490;
    private final int field41491;
    private final Class7999 field41492 = Class7999.method27304();
@@ -31,7 +31,7 @@ public class Class9067 {
    }
 
    public void method33772(Consumer<Class4664> var1, String var2) {
-      ResourceLocation var5 = Registry.field16075.method9181(this.field41489);
+      ResourceLocation var5 = Registry.ITEM.getKey(this.field41489);
       if (!new ResourceLocation(var2).equals(var5)) {
          this.method33773(var1, new ResourceLocation(var2));
       } else {

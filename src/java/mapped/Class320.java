@@ -4,17 +4,17 @@ public final class Class320 extends Class318<Runnable> {
    public final Class1703 field1383;
 
    public Class320(Class1703 var1, World var2) {
-      super("Chunk source main thread executor for " + var2.method6813().method31399());
+      super("Chunk source main thread executor for " + var2.getDimensionKey().method31399());
       this.field1383 = var1;
    }
 
    @Override
-   public Runnable method1440(Runnable var1) {
+   public Runnable wrapTask(Runnable var1) {
       return var1;
    }
 
    @Override
-   public boolean method1439(Runnable var1) {
+   public boolean canRun(Runnable var1) {
       return true;
    }
 
@@ -24,7 +24,7 @@ public final class Class320 extends Class318<Runnable> {
    }
 
    @Override
-   public Thread method1391() {
+   public Thread getExecutionThread() {
       return Class1703.method7394(this.field1383);
    }
 

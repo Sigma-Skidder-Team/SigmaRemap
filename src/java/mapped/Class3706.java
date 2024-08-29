@@ -18,7 +18,7 @@ public class Class3706 extends Class3676<Class1042> {
          } else {
             this.field19770 = var1.method6783();
             Class9378 var5 = var2.method2992().<Class9378>method21410(Class8830.field39814).get();
-            return var5.method35578() == var1.method6813() && var5.method35579().method8317(var2.getPositionVec(), 1.73);
+            return var5.method35578() == var1.getDimensionKey() && var5.method35579().method8317(var2.getPositionVec(), 1.73);
          }
       } else {
          return false;
@@ -45,7 +45,7 @@ public class Class3706 extends Class3676<Class1042> {
          return false;
       } else {
          Class9378 var8 = (Class9378)var7.get();
-         return var8.method35578() == var1.method6813() && var8.method35579().method8317(var2.getPositionVec(), 1.73);
+         return var8.method35578() == var1.getDimensionKey() && var8.method35579().method8317(var2.getPositionVec(), 1.73);
       }
    }
 }

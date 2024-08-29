@@ -58,11 +58,11 @@ public class Class1291 extends Class1286<Class1177> {
       this.method6108(var1);
       if (var1 != -1) {
          Class6130 var4 = Class804.method1981(this.field6855).method6120(var1);
-         String var5 = Class9088.method33883("narrator.select.list.position", var1 + 1, Class804.method1981(this.field6855).method6031());
-         String var6 = Class9088.method33883("mco.template.select.narrate.version", var4.field27466);
-         String var7 = Class9088.method33883("mco.template.select.narrate.authors", var4.field27467);
+         String var5 = I18n.format("narrator.select.list.position", var1 + 1, Class804.method1981(this.field6855).method6031());
+         String var6 = I18n.format("mco.template.select.narrate.version", var4.field27466);
+         String var7 = I18n.format("mco.template.select.narrate.authors", var4.field27467);
          String var8 = Class9229.method34715(Arrays.<String>asList(var4.field27465, var7, var4.field27471, var6, var5));
-         Class9229.method34711(Class9088.method33883("narrator.select", var8));
+         Class9229.method34711(I18n.format("narrator.select", var8));
       }
    }
 

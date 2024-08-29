@@ -306,7 +306,7 @@ public class Class9104 {
          .method11216(
             new Class8326(new Class6700(Class7700.field33031), Class6168.field27597)
                .method29191(64)
-               .method29189(ImmutableSet.of(Class7700.field33033.method23383()))
+               .method29189(ImmutableSet.of(Class7700.field33033.getBlock()))
                .method29196()
                .method29198()
          )
@@ -318,7 +318,7 @@ public class Class9104 {
          .method11216(
             new Class8326(new Class6700(Class7700.field33032), new Class6168())
                .method29191(64)
-               .method29189(ImmutableSet.of(Class7700.field33034.method23383()))
+               .method29189(ImmutableSet.of(Class7700.field33034.getBlock()))
                .method29196()
                .method29198()
          )
@@ -352,7 +352,7 @@ public class Class9104 {
          .method11216(
             new Class8326(new Class6700(Class7700.field33029), Class6168.field27597)
                .method29191(64)
-               .method29189(ImmutableSet.of(Class7700.field33013.method23383()))
+               .method29189(ImmutableSet.of(Class7700.field33013.getBlock()))
                .method29196()
                .method29198()
          )
@@ -404,7 +404,7 @@ public class Class9104 {
          .method11216(
             new Class8326(new Class6700(Class7700.field33028), Class6168.field27597)
                .method29191(64)
-               .method29189(ImmutableSet.of(Class7700.field33013.method23383()))
+               .method29189(ImmutableSet.of(Class7700.field33013.getBlock()))
                .method29195()
                .method29196()
                .method29198()

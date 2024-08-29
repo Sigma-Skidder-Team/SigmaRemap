@@ -49,22 +49,22 @@ public abstract class Class4510 {
    public static final Class4511 field21746 = new Class4511(0.1F);
    public static final Class4522 field21747 = new Class4522(false);
    public static final Class4522 field21748 = new Class4522(true);
-   public static final Class4518 field21749 = new Class4518(Class289.field1102, false, true);
-   public static final Class4518 field21750 = new Class4518(Class289.field1102, false, false);
+   public static final Class4518 field21749 = new Class4518(AtlasTexture.LOCATION_BLOCKS_TEXTURE, false, true);
+   public static final Class4518 field21750 = new Class4518(AtlasTexture.LOCATION_BLOCKS_TEXTURE, false, false);
    public static final Class4518 field21751 = new Class4518();
    public static final Class4513 field21752 = new Class4513("default_texturing", () -> {
    }, () -> {
    });
    public static final Class4513 field21753 = new Class4513("outline_texturing", () -> RenderSystem.method27924(), () -> RenderSystem.method27925());
    public static final Class4513 field21754 = new Class4513("glint_texturing", () -> method14233(8.0F), () -> {
-      RenderSystem.method27878(5890);
+      RenderSystem.matrixMode(5890);
       RenderSystem.popMatrix();
-      RenderSystem.method27878(5888);
+      RenderSystem.matrixMode(5888);
    });
    public static final Class4513 field21755 = new Class4513("entity_glint_texturing", () -> method14233(0.16F), () -> {
-      RenderSystem.method27878(5890);
+      RenderSystem.matrixMode(5890);
       RenderSystem.popMatrix();
-      RenderSystem.method27878(5888);
+      RenderSystem.matrixMode(5888);
    });
    public static final Class4506 field21756 = new Class4506(true);
    public static final Class4506 field21757 = new Class4506(false);
@@ -112,51 +112,51 @@ public abstract class Class4510 {
    }, () -> {
    });
    public static final Class4519 field21777 = new Class4519(
-      "outline_target", () -> Minecraft.getInstance().worldRenderer.method946().bindFramebuffer(false), () -> Minecraft.getInstance().method1464().bindFramebuffer(false)
+      "outline_target", () -> Minecraft.getInstance().worldRenderer.method946().bindFramebuffer(false), () -> Minecraft.getInstance().getFramebuffer().bindFramebuffer(false)
    );
    public static final Class4519 field21778 = new Class4519("translucent_target", () -> {
-      if (Minecraft.method1517()) {
+      if (Minecraft.isFabulousGraphicsEnabled()) {
          Minecraft.getInstance().worldRenderer.method947().bindFramebuffer(false);
       }
    }, () -> {
-      if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().bindFramebuffer(false);
+      if (Minecraft.isFabulousGraphicsEnabled()) {
+         Minecraft.getInstance().getFramebuffer().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21779 = new Class4519("particles_target", () -> {
-      if (Minecraft.method1517()) {
+      if (Minecraft.isFabulousGraphicsEnabled()) {
          Minecraft.getInstance().worldRenderer.method949().bindFramebuffer(false);
       }
    }, () -> {
-      if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().bindFramebuffer(false);
+      if (Minecraft.isFabulousGraphicsEnabled()) {
+         Minecraft.getInstance().getFramebuffer().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21780 = new Class4519("weather_target", () -> {
-      if (Minecraft.method1517()) {
+      if (Minecraft.isFabulousGraphicsEnabled()) {
          Minecraft.getInstance().worldRenderer.method950().bindFramebuffer(false);
       }
    }, () -> {
-      if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().bindFramebuffer(false);
+      if (Minecraft.isFabulousGraphicsEnabled()) {
+         Minecraft.getInstance().getFramebuffer().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21781 = new Class4519("clouds_target", () -> {
-      if (Minecraft.method1517()) {
+      if (Minecraft.isFabulousGraphicsEnabled()) {
          Minecraft.getInstance().worldRenderer.method951().bindFramebuffer(false);
       }
    }, () -> {
-      if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().bindFramebuffer(false);
+      if (Minecraft.isFabulousGraphicsEnabled()) {
+         Minecraft.getInstance().getFramebuffer().bindFramebuffer(false);
       }
    });
    public static final Class4519 field21782 = new Class4519("item_entity_target", () -> {
-      if (Minecraft.method1517()) {
+      if (Minecraft.isFabulousGraphicsEnabled()) {
          Minecraft.getInstance().worldRenderer.method948().bindFramebuffer(false);
       }
    }, () -> {
-      if (Minecraft.method1517()) {
-         Minecraft.getInstance().method1464().bindFramebuffer(false);
+      if (Minecraft.isFabulousGraphicsEnabled()) {
+         Minecraft.getInstance().getFramebuffer().bindFramebuffer(false);
       }
    });
    public static final Class4516 field21783 = new Class4516(OptionalDouble.of(1.0));
@@ -200,16 +200,16 @@ public abstract class Class4510 {
    }
 
    private static void method14233(float var0) {
-      RenderSystem.method27878(5890);
+      RenderSystem.matrixMode(5890);
       RenderSystem.pushMatrix();
-      RenderSystem.method27879();
+      RenderSystem.loadIdentity();
       long var3 = Util.milliTime() * 8L;
       float var5 = (float)(var3 % 110000L) / 110000.0F;
       float var6 = (float)(var3 % 30000L) / 30000.0F;
       RenderSystem.translatef(-var5, var6, 0.0F);
       RenderSystem.method27883(10.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(var0, var0, var0);
-      RenderSystem.method27878(5888);
+      RenderSystem.matrixMode(5888);
    }
 
    public String method14234() {

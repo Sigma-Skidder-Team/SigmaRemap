@@ -7,7 +7,7 @@ import java.util.Random;
 public class Class8079 implements IAmbientSoundHandler {
    private static String[] field34719;
    private final ClientPlayerEntity field34720;
-   private final Class274 field34721;
+   private final SoundHandler field34721;
    private final Class6668 field34722;
    private final Random field34723;
    private Object2ObjectArrayMap<Biome, Class6337> field34724 = new Object2ObjectArrayMap();
@@ -16,8 +16,8 @@ public class Class8079 implements IAmbientSoundHandler {
    private float field34727;
    private Biome field34728;
 
-   public Class8079(ClientPlayerEntity var1, Class274 var2, Class6668 var3) {
-      this.field34723 = var1.field5024.method6814();
+   public Class8079(ClientPlayerEntity var1, SoundHandler var2, Class6668 var3) {
+      this.field34723 = var1.world.method6814();
       this.field34720 = var1;
       this.field34721 = var2;
       this.field34722 = var3;
@@ -57,7 +57,7 @@ public class Class8079 implements IAmbientSoundHandler {
       this.field34725
          .ifPresent(
             var1 -> {
-               World var4 = this.field34720.field5024;
+               World var4 = this.field34720.world;
                int var5 = var1.method27075() * 2 + 1;
                BlockPos var6 = new BlockPos(
                   this.field34720.getPosX() + (double)this.field34723.nextInt(var5) - (double)var1.method27075(),
@@ -74,9 +74,9 @@ public class Class8079 implements IAmbientSoundHandler {
                if (!(this.field34727 >= 1.0F)) {
                   this.field34727 = Math.max(this.field34727, 0.0F);
                } else {
-                  double var8 = (double)var6.method8304() + 0.5;
+                  double var8 = (double)var6.getX() + 0.5;
                   double var10 = (double)var6.getY() + 0.5;
-                  double var12 = (double)var6.method8306() + 0.5;
+                  double var12 = (double)var6.getZ() + 0.5;
                   double var14 = var8 - this.field34720.getPosX();
                   double var16 = var10 - this.field34720.method3442();
                   double var18 = var12 - this.field34720.getPosZ();

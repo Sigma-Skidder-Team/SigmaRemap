@@ -40,7 +40,7 @@ public class Class130 extends Class128 {
 
          float var7 = (float)var6 * this.field446.method20924(var2.method26088());
          var1.method32181(Math.round(var7));
-         if (this.method378() && var1.method32179() > this.field447) {
+         if (this.method378() && var1.getCount() > this.field447) {
             var1.method32180(this.field447);
          }
       }

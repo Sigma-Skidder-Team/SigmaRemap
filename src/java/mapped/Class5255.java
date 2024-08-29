@@ -38,15 +38,15 @@ public class Class5255 extends PremiumModule {
             String[] var5 = new String[this.field23640.size()];
             var5 = this.field23640.toArray(var5);
             if (var5.length > 0) {
-                this.method15972(new Class6005("Song", "songs", 0, var5));
+                this.registerSetting(new ModeSetting("Song", "songs", 0, var5));
             }
         }
     }
 
     public static void method16410(BlockPos var0) {
-        double var3 = (double) ((float) var0.method8304() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320();
+        double var3 = (double) ((float) var0.getX() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320();
         double var5 = (double) ((float) var0.getY() + 1.0F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321();
-        double var7 = (double) ((float) var0.method8306() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322();
+        double var7 = (double) ((float) var0.getZ() + 0.5F) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -78,7 +78,7 @@ public class Class5255 extends PremiumModule {
     private void method16405(TickEvent var1) {
         if (this.method15996()) {
             if (this.field23639 != null) {
-                if (mc.field1337.method23152()) {
+                if (mc.playerController.isInCreativeMode()) {
                     Class5628.method17678("§cNoteBlockPlayer isn't available in creative mode!");
                     this.method15999(false);
                 } else {
@@ -100,15 +100,15 @@ public class Class5255 extends PremiumModule {
                                     for (Class6463 var8 : this.field23641) {
                                         if ((var6.method28780() != 3 && this.method16414(var8) == 0 || var8.method19640() == var6.method28780())
                                                 && Class2121.method8807(var8.field28402) == (float) (var6.method28782() - 33)
-                                                && Math.sqrt(mc.player.method3432().method8318(var8.field28401)) < (double) mc.field1337.method23135()) {
+                                                && Math.sqrt(mc.player.getPosition().method8318(var8.field28401)) < (double) mc.playerController.method23135()) {
                                             float[] var9 = Class9217.method34542(var8.field28401, Direction.field673);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
-                                                var9 = Class9217.method34542(var8.field28401, Direction.field672);
+                                                var9 = Class9217.method34542(var8.field28401, Direction.DOWN);
                                             }
 
-                                            mc.getClientPlayNetHandler().sendPacket(new Class5606(var9[0], var9[1], mc.player.field5036));
-                                            mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var8.field28401, Direction.field673));
-                                            mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
+                                            mc.getConnection().sendPacket(new Class5606(var9[0], var9[1], mc.player.field5036));
+                                            mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var8.field28401, Direction.field673));
+                                            mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                                             this.field23642.add(var8.field28401);
                                         }
                                     }
@@ -126,7 +126,7 @@ public class Class5255 extends PremiumModule {
     public boolean method16406(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if ((var5.field28402 == -1.0F || this.method16411(var5.field28402, var5.field28403))
-                    && Math.sqrt(mc.player.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
+                    && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
                 return false;
             }
         }
@@ -136,10 +136,10 @@ public class Class5255 extends PremiumModule {
 
     public boolean method16407(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
-            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
+            if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
                 float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                mc.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], mc.player.field5036));
-                mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13484, var5.field28401, Direction.field673));
+                mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.field5036));
+                mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var5.field28401, Direction.field673));
                 this.field23642.clear();
                 this.field23642.add(var5.field28401);
                 return true;
@@ -152,13 +152,13 @@ public class Class5255 extends PremiumModule {
     public boolean method16408(List<Class6463> var1) {
         for (Class6463 var5 : var1) {
             if (this.method16411(var5.field28402, var5.field28403)
-                    && Math.sqrt(mc.player.method3432().method8318(var5.field28401)) < (double) mc.field1337.method23135()) {
+                    && Math.sqrt(mc.player.getPosition().method8318(var5.field28401)) < (double) mc.playerController.method23135()) {
                 if (0 == 0) {
                     float[] var6 = Class9217.method34542(var5.field28401, Direction.field673);
-                    mc.player.swingArm(Hand.field182);
-                    mc.getClientPlayNetHandler().sendPacket(new Class5606(var6[0], var6[1], mc.player.field5036));
-                    mc.getClientPlayNetHandler()
-                            .sendPacket(new Class5570(Hand.field182, Class9217.method34567(var6[0], var6[1], mc.field1337.method23135() + 1.0F)));
+                    mc.player.swingArm(Hand.MAIN_HAND);
+                    mc.getConnection().sendPacket(new Class5606(var6[0], var6[1], mc.player.field5036));
+                    mc.getConnection()
+                            .sendPacket(new Class5570(Hand.MAIN_HAND, Class9217.method34567(var6[0], var6[1], mc.playerController.method23135() + 1.0F)));
                     this.field23642.clear();
                     this.field23642.add(var5.field28401);
                 }
@@ -266,7 +266,7 @@ public class Class5255 extends PremiumModule {
 
     @Override
     public void isInDevelopment() {
-        if (!mc.field1337.method23152()) {
+        if (!mc.playerController.isInCreativeMode()) {
             if (this.field23640.isEmpty()) {
                 Class5628.method17678("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
                 Class5628.method17678("§cPlaying the only integrated demo song!");
@@ -295,9 +295,9 @@ public class Class5255 extends PremiumModule {
             this.field23638 = 0;
             this.field23641.clear();
 
-            for (BlockPos var4 : Class9217.method34561(mc.field1337.method23135())) {
-                Class7380 var5 = mc.world.method6738(var4);
-                if (var5.method23383() instanceof Class3426) {
+            for (BlockPos var4 : Class9217.method34561(mc.playerController.method23135())) {
+                BlockState var5 = mc.world.getBlockState(var4);
+                if (var5.getBlock() instanceof Class3426) {
                     Class6463 var6 = new Class6463(var4);
                     if (this.method16414(var6) <= 24) {
                         this.field23641.add(new Class6463(var4));

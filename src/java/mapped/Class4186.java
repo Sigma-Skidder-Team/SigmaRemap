@@ -16,7 +16,7 @@ public class Class4186 extends Class4180 {
       this.method12965(var1);
    }
 
-   public Class4186(Class8761 var1, Class39 var2) {
+   public Class4186(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33475, var2);
       this.field20473 = var2.method126("Template");
       this.field20474 = Class80.valueOf(var2.method126("Rot"));
@@ -31,7 +31,7 @@ public class Class4186 extends Class4180 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20473);
       var1.method109("Rot", this.field20474.name());
@@ -43,13 +43,13 @@ public class Class4186 extends Class4180 {
       if (!var1.startsWith("Chest")) {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {
-               Class997 var8 = new Class997(var3.method6970(), var2, this.field20474.method252(Direction.SOUTH));
-               var8.method4092(new ItemStack(Class8514.field38120), false);
+               ItemFrameEntity var8 = new ItemFrameEntity(var3.method6970(), var2, this.field20474.method252(Direction.SOUTH));
+               var8.method4092(new ItemStack(Items.field38120), false);
                var3.method6916(var8);
             }
          } else {
-            Class1057 var9 = Class8992.field41075.method33215(var3.method6970());
-            var9.method3215((double)var2.method8304() + 0.5, (double)var2.getY() + 0.5, (double)var2.method8306() + 0.5);
+            Class1057 var9 = EntityType.field41075.method33215(var3.method6970());
+            var9.method3215((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5);
             var9.method4850(var2);
             var3.method6916(var9);
          }

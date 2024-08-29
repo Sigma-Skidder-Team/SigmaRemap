@@ -10,9 +10,9 @@ public class Class1705 extends Class1702 {
    private final Class1674 field9289;
    private final Class196 field9290;
    public volatile Class8815 field9291;
-   private final Class1656 field9292;
+   private final ClientWorld field9292;
 
-   public Class1705(Class1656 var1, int var2) {
+   public Class1705(ClientWorld var1, int var2) {
       this.field9292 = var1;
       this.field9289 = new Class1675(var1, new Class7481(0, 0));
       this.field9290 = new Class196(this, true, var1.method6812().method36875());
@@ -66,7 +66,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Nullable
-   public Class1674 method7400(int var1, int var2, Class1684 var3, PacketBuffer var4, Class39 var5, int var6, boolean var7) {
+   public Class1674 method7400(int var1, int var2, Class1684 var3, PacketBuffer var4, CompoundNBT var5, int var6, boolean var7) {
       if (!Class8815.method31828(this.field9291, var1, var2)) {
          field9288.warn("Ignoring chunk since it's not in the view range: {}, {}", var1, var2);
          return null;
@@ -174,7 +174,7 @@ public class Class1705 extends Class1702 {
 
    @Override
    public boolean method7353(BlockPos var1) {
-      return this.method7345(var1.method8304() >> 4, var1.method8306() >> 4);
+      return this.method7345(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    @Override
@@ -184,11 +184,11 @@ public class Class1705 extends Class1702 {
 
    @Override
    public boolean method7351(Entity var1) {
-      return this.method7345(MathHelper.method37769(var1.getPosX()) >> 4, MathHelper.method37769(var1.getPosZ()) >> 4);
+      return this.method7345(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
    }
 
    // $VF: synthetic method
-   public static Class1656 method7406(Class1705 var0) {
+   public static ClientWorld method7406(Class1705 var0) {
       return var0.field9292;
    }
 }

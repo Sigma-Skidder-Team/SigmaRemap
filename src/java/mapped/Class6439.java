@@ -7,7 +7,7 @@ import java.util.Random;
 public class Class6439 extends Class6434 {
    public static final Codec<Class6439> field28283 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Registry.field16072.fieldOf("block").forGetter(var0x -> var0x.field28284),
+               Registry.BLOCK.fieldOf("block").forGetter(var0x -> var0x.field28284),
                Codec.FLOAT.fieldOf("probability").forGetter(var0x -> var0x.field28285)
             )
             .apply(var0, Class6439::new)
@@ -21,7 +21,7 @@ public class Class6439 extends Class6434 {
    }
 
    @Override
-   public boolean method19540(Class7380 var1, Random var2) {
+   public boolean method19540(BlockState var1, Random var2) {
       return var1.method23448(this.field28284) && var2.nextFloat() < this.field28285;
    }
 

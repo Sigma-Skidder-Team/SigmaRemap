@@ -86,7 +86,7 @@ public class Util {
       return field45720;
    }
 
-   public static Executor method38492() {
+   public static Executor getServerExecutor() {
       return field45721;
    }
 
@@ -129,7 +129,7 @@ public class Util {
       return var3;
    }
 
-   public static void method38498(Throwable var0) {
+   public static void toRuntimeException(Throwable var0) {
       throw !(var0 instanceof RuntimeException) ? new RuntimeException(var0) : (RuntimeException)var0;
    }
 
@@ -139,8 +139,8 @@ public class Util {
          var1 = var1.getCause();
       }
 
-      if (var1 instanceof Class2506) {
-         Class7729.method25572(((Class2506)var1).method10487().method14406());
+      if (var1 instanceof ReportedException) {
+         Bootstrap.printToSYSOUT(((ReportedException)var1).getCrashReport().getCompleteReport());
          System.exit(-1);
       }
 
@@ -157,10 +157,10 @@ public class Util {
       Type var4 = null;
 
       try {
-         var4 = Class4497.method14181().getSchema(DataFixUtils.makeKey(SharedConstants.method34773().getWorldVersion())).getChoiceType(var0, var1);
+         var4 = DataFixesManager.getDataFixer().getSchema(DataFixUtils.makeKey(SharedConstants.getVersion().getWorldVersion())).getChoiceType(var0, var1);
       } catch (IllegalArgumentException var6) {
          field45725.error("No data fixer registered for {}", var1);
-         if (SharedConstants.field42545) {
+         if (SharedConstants.developmentMode) {
             throw var6;
          }
       }
@@ -284,7 +284,7 @@ public class Util {
       field45726 = var0;
    }
 
-   public static <T> Optional<T> method38514(Optional<T> var0, Consumer<T> var1, Runnable var2) {
+   public static <T> Optional<T> acceptOrElse(Optional<T> var0, Consumer<T> var1, Runnable var2) {
       if (!var0.isPresent()) {
          var2.run();
       } else {
@@ -299,7 +299,7 @@ public class Util {
    }
 
    public static <T extends Throwable> T method38516(T var0) {
-      if (SharedConstants.field42545) {
+      if (SharedConstants.developmentMode) {
          field45725.error("Trying to throw a fatal exception, pausing in IDE", var0);
 
          while (true) {
@@ -404,7 +404,7 @@ public class Util {
       return var1;
    }
 
-   public static Consumer<String> method38529(String var0, Consumer<String> var1) {
+   public static Consumer<String> func_240982_a_(String var0, Consumer<String> var1) {
       return var2 -> var1.accept(var0 + var2);
    }
 

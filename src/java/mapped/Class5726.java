@@ -2,15 +2,15 @@ package mapped;
 
 public class Class5726 extends Class5715<Class888> {
    private static String[] field25133;
-   private final Class216 field25134;
+   private final ItemRenderer field25134;
 
-   public Class5726(Class8853 var1, Class216 var2) {
+   public Class5726(EntityRendererManager var1, ItemRenderer var2) {
       super(var1);
       this.field25134 = var2;
    }
 
    public void method17853(Class888 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      var4.method35294();
+      var4.push();
       var4.method35293(this.field25097.method32230());
       var4.method35293(Class7680.field32900.method25286(180.0F));
       if (var1.method3508()) {
@@ -25,6 +25,6 @@ public class Class5726 extends Class5715<Class888> {
    }
 
    public ResourceLocation method17843(Class888 var1) {
-      return Class289.field1102;
+      return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }

@@ -25,7 +25,7 @@ public class Class5319 extends Module {
         this.field23866 = mc.player.field5031;
         this.field23867 = mc.player.field5032;
         field23863 = new Class1116(mc.world, mc.player.getGameProfile());
-        field23863.field4902 = mc.player.field4902;
+        field23863.inventory = mc.player.inventory;
         field23863.method3269(this.field23865.field18048, this.field23865.field18049, this.field23865.field18050, this.field23866, this.field23867);
         field23863.field4967 = mc.player.field4967;
         mc.world.method6846(-1, field23863);
@@ -36,7 +36,7 @@ public class Class5319 extends Module {
         int var3 = this.field23864.size();
 
         for (int var4 = 0; var4 < var3; var4++) {
-            mc.getClientPlayNetHandler().sendPacket(this.field23864.get(var4));
+            mc.getConnection().sendPacket(this.field23864.get(var4));
         }
 
         this.field23864.clear();

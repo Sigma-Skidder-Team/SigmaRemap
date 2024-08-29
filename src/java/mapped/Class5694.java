@@ -9,7 +9,7 @@ public class Class5694 extends Class5651<Class1086, Class2870<Class1086>> {
       var0.put(Class2210.field14452, new ResourceLocation("textures/entity/cow/red_mooshroom.png"));
    });
 
-   public Class5694(Class8853 var1) {
+   public Class5694(EntityRendererManager var1) {
       super(var1, new Class2870<Class1086>(), 0.7F);
       this.method17880(new Class262<Class1086>(this));
    }

@@ -12,7 +12,7 @@ public class ExperienceOrbEntity extends Entity {
    private int field5561;
 
    public ExperienceOrbEntity(World var1, double var2, double var4, double var6, int var8) {
-      this(Class8992.field41029, var1);
+      this(EntityType.field41029, var1);
       this.method3215(var2, var4, var6);
       this.field5031 = (float)(this.field5054.nextDouble() * 360.0);
       this.method3435(
@@ -21,7 +21,7 @@ public class ExperienceOrbEntity extends Entity {
       this.field5559 = var8;
    }
 
-   public ExperienceOrbEntity(Class8992<? extends ExperienceOrbEntity> var1, World var2) {
+   public ExperienceOrbEntity(EntityType<? extends ExperienceOrbEntity> var1, World var2) {
       super(var1, var2);
    }
 
@@ -52,7 +52,7 @@ public class ExperienceOrbEntity extends Entity {
          this.method4174();
       }
 
-      if (this.field5024.method6739(this.method3432()).method23486(Class8953.field40470)) {
+      if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470)) {
          this.method3435(
             (double)((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F),
             0.2F,
@@ -61,20 +61,20 @@ public class ExperienceOrbEntity extends Entity {
          this.method2863(Class6067.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
       }
 
-      if (!this.field5024.method7051(this.method3389())) {
+      if (!this.world.method7051(this.method3389())) {
          this.pushOutOfBlocks(this.getPosX(), (this.method3389().field28450 + this.method3389().field28453) / 2.0, this.getPosZ());
       }
 
       double var3 = 8.0;
       if (this.field5561 < this.field5555 - 20 + this.method3205() % 100) {
          if (this.field5560 == null || this.field5560.getDistanceSq(this) > 64.0) {
-            this.field5560 = this.field5024.method7185(this, 8.0);
+            this.field5560 = this.world.method7185(this, 8.0);
          }
 
          this.field5561 = this.field5555;
       }
 
-      if (this.field5560 != null && this.field5560.method2800()) {
+      if (this.field5560 != null && this.field5560.isSpectator()) {
          this.field5560 = null;
       }
 
@@ -94,7 +94,7 @@ public class ExperienceOrbEntity extends Entity {
       this.move(Class2107.field13742, this.method3433());
       float var10 = 0.98F;
       if (this.field5036) {
-         var10 = this.field5024.method6738(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method23383().method11571() * 0.98F;
+         var10 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571() * 0.98F;
       }
 
       this.method3434(this.method3433().method11347((double)var10, 0.98, (double)var10));
@@ -134,14 +134,14 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       var1.method101("Health", (short)this.field5558);
       var1.method101("Age", (short)this.field5556);
       var1.method101("Value", (short)this.field5559);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.field5558 = var1.method121("Health");
       this.field5556 = var1.method121("Age");
       this.field5559 = var1.method121("Value");
@@ -149,13 +149,13 @@ public class ExperienceOrbEntity extends Entity {
 
    @Override
    public void method3279(PlayerEntity var1) {
-      if (!this.field5024.field9020 && this.field5557 == 0 && var1.field4910 == 0) {
+      if (!this.world.field9020 && this.field5557 == 0 && var1.field4910 == 0) {
          var1.field4910 = 2;
          var1.method2751(this, 1);
          Entry var4 = Class7858.method26340(Class8122.field34932, var1, ItemStack::method32116);
          if (var4 != null) {
             ItemStack var5 = (ItemStack)var4.getValue();
-            if (!var5.method32105() && var5.method32116()) {
+            if (!var5.isEmpty() && var5.method32116()) {
                int var6 = Math.min(this.method4176(this.field5559), var5.method32117());
                this.field5559 = this.field5559 - this.method4175(var6);
                var5.method32118(var5.method32117() - var6);

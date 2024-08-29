@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class Class965 extends Class944 {
+public class Class965 extends TileEntity {
    private ResourceLocation field5409 = new ResourceLocation("empty");
    private ResourceLocation field5410 = new ResourceLocation("empty");
    private ResourceLocation field5411 = new ResourceLocation("empty");
@@ -62,8 +62,8 @@ public class Class965 extends Class944 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       var1.method109("name", this.field5409.toString());
       var1.method109("target", this.field5410.toString());
       var1.method109("pool", this.field5411.toString());
@@ -73,7 +73,7 @@ public class Class965 extends Class944 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5409 = new ResourceLocation(var2.method126("name"));
       this.field5410 = new ResourceLocation(var2.method126("target"));
@@ -90,8 +90,8 @@ public class Class965 extends Class944 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      return this.write(new CompoundNBT());
    }
 
    public void method3988(ServerWorld var1, int var2, boolean var3) {
@@ -99,7 +99,7 @@ public class Class965 extends Class944 {
       Class8761 var7 = var1.method6938();
       Class7480 var8 = var1.method6893();
       Random var9 = var1.method6814();
-      BlockPos var10 = this.method3774();
+      BlockPos var10 = this.getPos();
       List<Class4193> var11 = Lists.newArrayList();
       Class8969 var12 = new Class8969();
       var12.method32889(var1, var10, new BlockPos(1, 1, 1), false, (Block)null);

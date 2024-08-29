@@ -10,7 +10,7 @@ public class Class5387 extends Module {
 
    public Class5387() {
       super(ModuleCategory.MOVEMENT, "Invaded", "Speed for Invadedlands");
-      this.method15972(new Class6009<Float>("Speed", "Speed value", 3.0F, Float.class, 0.5F, 9.5F, 0.1F));
+      this.registerSetting(new Class6009<Float>("Speed", "Speed value", 3.0F, Float.class, 0.5F, 9.5F, 0.1F));
    }
 
    @Override

@@ -27,7 +27,7 @@ public class Class7573 extends Class7574 {
    public void method24788(Class6693 var1) {
       super.method24788(var1);
       if (this.method24786() != null) {
-         Class7380 var4 = this.method24786().method6738(this.method24787());
+         BlockState var4 = this.method24786().getBlockState(this.method24787());
          this.method24786().method6731(this.field32514.field5325, var4, var4, 4);
       }
    }

@@ -17,21 +17,21 @@ public class Class7468 {
       this.field32106 = var3;
    }
 
-   public static Class7468 method24183(Class39 var0) {
-      BlockPos var3 = Class8354.method29283(var0.method130("Pos"));
+   public static Class7468 method24183(CompoundNBT var0) {
+      BlockPos var3 = Class8354.method29283(var0.getCompound("Pos"));
       Class112 var4 = Class112.method316(var0.method126("Color"), Class112.field386);
-      IFormattableTextComponent var5 = !var0.method118("Name") ? null : ITextComponent$Serializer.func_240643_a_(var0.method126("Name"));
+      IFormattableTextComponent var5 = !var0.contains("Name") ? null : ITextComponent$Serializer.func_240643_a_(var0.method126("Name"));
       return new Class7468(var3, var4, var5);
    }
 
    @Nullable
    public static Class7468 method24184(Class1665 var0, BlockPos var1) {
-      Class944 var4 = var0.method6759(var1);
+      TileEntity var4 = var0.getTileEntity(var1);
       if (!(var4 instanceof Class958)) {
          return null;
       } else {
          Class958 var5 = (Class958)var4;
-         Class112 var6 = var5.method3894(() -> var0.method6738(var1));
+         Class112 var6 = var5.method3894(() -> var0.getBlockState(var1));
          ITextComponent var7 = !var5.method3381() ? null : var5.method3380();
          return new Class7468(var1, var6, var7);
       }
@@ -101,9 +101,9 @@ public class Class7468 {
       return Objects.hash(this.field32104, this.field32105, this.field32106);
    }
 
-   public Class39 method24188() {
-      Class39 var3 = new Class39();
-      var3.method99("Pos", Class8354.method29284(this.field32104));
+   public CompoundNBT method24188() {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.put("Pos", Class8354.method29284(this.field32104));
       var3.method109("Color", this.field32105.method310());
       if (this.field32106 != null) {
          var3.method109("Name", ITextComponent$Serializer.toJson(this.field32106));
@@ -113,6 +113,6 @@ public class Class7468 {
    }
 
    public String method24189() {
-      return "banner-" + this.field32104.method8304() + "," + this.field32104.getY() + "," + this.field32104.method8306();
+      return "banner-" + this.field32104.getX() + "," + this.field32104.getY() + "," + this.field32104.getZ();
    }
 }

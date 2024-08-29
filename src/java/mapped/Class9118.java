@@ -22,24 +22,24 @@ public class Class9118 {
    private static final Logger field41916 = LogManager.getLogger();
    private final List<NetworkManager> field41917 = Collections.<NetworkManager>synchronizedList(Lists.newArrayList());
 
-   public void method34003(Class7730 var1, Runnable var2) throws UnknownHostException {
+   public void method34003(ServerData var1, Runnable var2) throws UnknownHostException {
       Class9375 var5 = Class9375.method35574(var1.field33189);
       NetworkManager var6 = NetworkManager.method30703(InetAddress.getByName(var5.method35572()), var5.method35573(), false);
       this.field41917.add(var6);
       var1.field33191 = new TranslationTextComponent("multiplayer.status.pinging");
       var1.field33192 = -1L;
       var1.field33196 = null;
-      var6.method30692(new Class5113(this, var6, var1, var2));
+      var6.setNetHandler(new Class5113(this, var6, var1, var2));
 
       try {
-         var6.method30693(new Class5575(var5.method35572(), var5.method35573(), Class1858.field9903));
-         var6.method30693(new Class5566());
+         var6.sendPacket(new CHandshakePacket(var5.method35572(), var5.method35573(), ProtocolType.field9903));
+         var6.sendPacket(new Class5566());
       } catch (Throwable var8) {
          field41916.error(var8);
       }
    }
 
-   private void method34004(Class7730 var1) {
+   private void method34004(ServerData var1) {
       Class9375 var4 = Class9375.method35574(var1.field33189);
       ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field38643.method28097())).handler(new Class7272(this, var4, var1)))
             .channel(NioSocketChannel.class))
@@ -59,8 +59,8 @@ public class Class9118 {
 
          while (var4.hasNext()) {
             NetworkManager var5 = (NetworkManager)var4.next();
-            if (var5.method30707()) {
-               var5.method30698();
+            if (var5.isChannelOpen()) {
+               var5.tick();
             } else {
                var4.remove();
                var5.method30713();
@@ -75,7 +75,7 @@ public class Class9118 {
 
          while (var4.hasNext()) {
             NetworkManager var5 = (NetworkManager)var4.next();
-            if (var5.method30707()) {
+            if (var5.isChannelOpen()) {
                var4.remove();
                var5.method30701(new TranslationTextComponent("multiplayer.status.cancelled"));
             }
@@ -94,7 +94,7 @@ public class Class9118 {
    }
 
    // $VF: synthetic method
-   public static void method34010(Class9118 var0, Class7730 var1) {
+   public static void method34010(Class9118 var0, ServerData var1) {
       var0.method34004(var1);
    }
 

@@ -15,9 +15,9 @@ public class Class5248 extends Module {
 
     public Class5248() {
         super(ModuleCategory.MOVEMENT, "Cubecraft", "Speed for Cubecraft");
-        this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Hop", "YPort"));
-        this.method15972(new Class6009<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you.", false));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hop", "YPort"));
+        this.registerSetting(new Class6009<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", false));
     }
 
     @Override

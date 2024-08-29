@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class948 extends Class944 implements Class946, Class949 {
+public class Class948 extends TileEntity implements Class946, Class949 {
    private final Class920 field5333 = new Class989(this);
    private final Class8202 field5334 = new Class8205(this);
    private ItemStack field5335 = ItemStack.EMPTY;
@@ -20,8 +20,8 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    public boolean method3806() {
-      Class3257 var3 = this.field5335.method32107();
-      return var3 == Class8514.field38047 || var3 == Class8514.field38048;
+      Item var3 = this.field5335.getItem();
+      return var3 == Items.field38047 || var3 == Items.field38048;
    }
 
    public void method3807(ItemStack var1) {
@@ -31,7 +31,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    private void method3808() {
       this.field5336 = 0;
       this.field5337 = 0;
-      Class3354.method11921(this.method3734(), this.method3774(), this.method3775(), false);
+      Class3354.method11921(this.method3734(), this.getPos(), this.method3775(), false);
    }
 
    public void method3809(ItemStack var1, PlayerEntity var2) {
@@ -46,7 +46,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
       if (var4 != this.field5336) {
          this.field5336 = var4;
          this.method3622();
-         Class3354.method11922(this.method3734(), this.method3774(), this.method3775());
+         Class3354.method11922(this.method3734(), this.getPos(), this.method3775());
       }
    }
 
@@ -60,7 +60,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    private ItemStack method3813(ItemStack var1, PlayerEntity var2) {
-      if (this.field5324 instanceof ServerWorld && var1.method32107() == Class8514.field38048) {
+      if (this.field5324 instanceof ServerWorld && var1.getItem() == Items.field38048) {
          Class3285.method11820(var1, this.method3814(var2), var2);
       }
 
@@ -90,12 +90,12 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       if (!var2.method119("Book", 10)) {
          this.field5335 = ItemStack.EMPTY;
       } else {
-         this.field5335 = this.method3813(ItemStack.method32104(var2.method130("Book")), (PlayerEntity)null);
+         this.field5335 = this.method3813(ItemStack.method32104(var2.getCompound("Book")), (PlayerEntity)null);
       }
 
       this.field5337 = Class3285.method11819(this.field5335);
@@ -103,10 +103,10 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
-      if (!this.method3805().method32105()) {
-         var1.method99("Book", this.method3805().method32112(new Class39()));
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
+      if (!this.method3805().isEmpty()) {
+         var1.put("Book", this.method3805().method32112(new CompoundNBT()));
          var1.method102("Page", this.field5336);
       }
 
@@ -119,7 +119,7 @@ public class Class948 extends Class944 implements Class946, Class949 {
    }
 
    @Override
-   public Class5812 method3627(int var1, Class974 var2, PlayerEntity var3) {
+   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       return new Class5818(var1, this.field5333, this.field5334);
    }
 

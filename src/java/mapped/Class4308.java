@@ -181,7 +181,7 @@ public class Class4308 extends Class4307 {
 
    @Override
    public int method13313() {
-      return Minecraft.method1586();
+      return Minecraft.getFps();
    }
 
    @Override

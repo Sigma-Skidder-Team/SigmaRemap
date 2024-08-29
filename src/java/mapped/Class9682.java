@@ -12,8 +12,8 @@ public class Class9682 {
       Arrays.sort(this.field45276);
    }
 
-   public Integer method37908(ItemStack var1, Class1656 var2, Class880 var3) {
-      Class3257 var6 = var1.method32107();
+   public Integer method37908(ItemStack var1, ClientWorld var2, Class880 var3) {
+      Item var6 = var1.getItem();
       Class8176 var7 = Class9065.method33752(var6, this.field45275);
       if (var7 != null) {
          float var8 = var7.method28467(var1, var2, var3);

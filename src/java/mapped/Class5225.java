@@ -15,15 +15,15 @@ public class Class5225 extends Module {
 
     public Class5225() {
         super(ModuleCategory.MOVEMENT, "Spartan", "A fly for Spartan anticheat");
-        this.method15972(new Class6004("Ground Spoof", "Send on ground packets", true));
-        this.method15972(new Class6004("Fake Block", "Send on fake blockplacing packet", true));
+        this.registerSetting(new BooleanSetting("Ground Spoof", "Send on ground packets", true));
+        this.registerSetting(new BooleanSetting("Fake Block", "Send on fake blockplacing packet", true));
     }
 
     @Override
     public void isInDevelopment() {
         this.field23570 = false;
         this.field23569 = -10.0;
-        if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
             this.field23571 = false;
         } else {
             mc.gameSettings.field44637.field13071 = false;
@@ -73,22 +73,22 @@ public class Class5225 extends Module {
                             int var5 = this.method16272();
                             boolean var6 = this.method15974("Fake Block");
                             if (var5 >= 0 && var6) {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5539(var5));
+                                mc.getConnection().sendPacket(new Class5539(var5));
                             }
 
-                            if (var6 && (var5 >= 0 || mc.player.getHeldItem(Hand.field182).method32107() instanceof Class3292)) {
-                                Class8711 var7 = new Class8711(
+                            if (var6 && (var5 >= 0 || mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof Class3292)) {
+                                BlockRayTraceResult var7 = new BlockRayTraceResult(
                                         mc.player.getPositionVec().method11339(0.0, -2.0, 0.0),
                                         Direction.field673,
-                                        mc.player.method3432().method8336(0, -2, 0),
+                                        mc.player.getPosition().method8336(0, -2, 0),
                                         false
                                 );
-                                Class5570 var8 = new Class5570(Hand.field182, var7);
-                                mc.getClientPlayNetHandler().sendPacket(var8);
+                                Class5570 var8 = new Class5570(Hand.MAIN_HAND, var7);
+                                mc.getConnection().sendPacket(var8);
                             }
 
                             if (var5 >= 0 && var6) {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+                                mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
                             }
 
                             var1.method13995(this.field23569 - mc.player.getPositionVec().field18049);
@@ -96,7 +96,7 @@ public class Class5225 extends Module {
                     } else {
                         mc.player.method2914();
                         var1.method13995(mc.player.method3433().field18049);
-                        this.field23569 = !mc.gameSettings.field44636.method8509()
+                        this.field23569 = !mc.gameSettings.field44636.isKeyDown()
                                 ? (!this.field23571 ? mc.player.getPositionVec().field18049 : mc.player.getPositionVec().field18049 - 1.0)
                                 : (!this.field23571 ? mc.player.getPositionVec().field18049 + 1.0 : mc.player.getPositionVec().field18049);
                         Class9567.method37088(var1, 0.35);
@@ -106,7 +106,7 @@ public class Class5225 extends Module {
                 mc.player.method2914();
                 var1.method13995(mc.player.method3433().field18049);
                 Class9567.method37088(var1, 0.35);
-                this.field23569 = !mc.gameSettings.field44636.method8509()
+                this.field23569 = !mc.gameSettings.field44636.isKeyDown()
                         ? (!this.field23571 ? mc.player.getPositionVec().field18049 : mc.player.getPositionVec().field18049 - 1.0)
                         : (!this.field23571 ? mc.player.getPositionVec().field18049 + 1.0 : mc.player.getPositionVec().field18049);
             }
@@ -121,8 +121,8 @@ public class Class5225 extends Module {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.field4904.method18131(var3).method18266()) {
                 ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
-                if (var4.method32107() instanceof Class3292) {
-                    if (var3 - 36 == mc.player.field4902.field5443) {
+                if (var4.getItem() instanceof Class3292) {
+                    if (var3 - 36 == mc.player.inventory.currentItem) {
                         var3 = 34;
                     }
 

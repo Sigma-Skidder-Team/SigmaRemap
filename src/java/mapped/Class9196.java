@@ -32,12 +32,12 @@ public class Class9196 {
    public boolean method34464() {
       this.field42242.clear();
       this.field42243.clear();
-      Class7380 var3 = this.field42237.method6738(this.field42240);
+      BlockState var3 = this.field42237.getBlockState(this.field42240);
       if (Class3435.method12104(var3, this.field42237, this.field42240, this.field42241, false, this.field42244)) {
          if (this.method34467(this.field42240, this.field42241)) {
             for (int var4 = 0; var4 < this.field42242.size(); var4++) {
                BlockPos var5 = this.field42242.get(var4);
-               if (method34465(this.field42237.method6738(var5).method23383()) && !this.method34469(var5)) {
+               if (method34465(this.field42237.getBlockState(var5).getBlock()) && !this.method34469(var5)) {
                   return false;
                }
             }
@@ -67,9 +67,9 @@ public class Class9196 {
    }
 
    private boolean method34467(BlockPos var1, Direction var2) {
-      Class7380 var5 = this.field42237.method6738(var1);
-      Block var6 = var5.method23383();
-      if (var5.method23393()) {
+      BlockState var5 = this.field42237.getBlockState(var1);
+      Block var6 = var5.getBlock();
+      if (var5.isAir()) {
          return true;
       } else if (!Class3435.method12104(var5, this.field42237, var1, this.field42241, false, var2)) {
          return true;
@@ -85,9 +85,9 @@ public class Class9196 {
             while (method34465(var6)) {
                BlockPos var8 = var1.method8350(this.field42241.method536(), var7);
                Block var9 = var6;
-               var5 = this.field42237.method6738(var8);
-               var6 = var5.method23383();
-               if (var5.method23393()
+               var5 = this.field42237.getBlockState(var8);
+               var6 = var5.getBlock();
+               if (var5.isAir()
                   || !method34466(var9, var6)
                   || !Class3435.method12104(var5, this.field42237, var8, this.field42241, false, this.field42241.method536())
                   || var8.equals(this.field42238)) {
@@ -116,7 +116,7 @@ public class Class9196 {
 
                   for (int var12 = 0; var12 <= var11 + var16; var12++) {
                      BlockPos var13 = this.field42242.get(var12);
-                     if (method34465(this.field42237.method6738(var13).method23383()) && !this.method34469(var13)) {
+                     if (method34465(this.field42237.getBlockState(var13).getBlock()) && !this.method34469(var13)) {
                         return false;
                      }
                   }
@@ -124,8 +124,8 @@ public class Class9196 {
                   return true;
                }
 
-               var5 = this.field42237.method6738(var10);
-               if (var5.method23393()) {
+               var5 = this.field42237.getBlockState(var10);
+               if (var5.isAir()) {
                   return true;
                }
 
@@ -164,13 +164,13 @@ public class Class9196 {
    }
 
    private boolean method34469(BlockPos var1) {
-      Class7380 var4 = this.field42237.method6738(var1);
+      BlockState var4 = this.field42237.getBlockState(var1);
 
       for (Direction var8 : Direction.values()) {
          if (var8.method544() != this.field42241.method544()) {
             BlockPos var9 = var1.method8349(var8);
-            Class7380 var10 = this.field42237.method6738(var9);
-            if (method34466(var10.method23383(), var4.method23383()) && !this.method34467(var9, var8)) {
+            BlockState var10 = this.field42237.getBlockState(var9);
+            if (method34466(var10.getBlock(), var4.getBlock()) && !this.method34467(var9, var8)) {
                return false;
             }
          }

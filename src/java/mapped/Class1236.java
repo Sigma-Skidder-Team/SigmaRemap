@@ -68,12 +68,12 @@ public abstract class Class1236 extends Class1197 {
    }
 
    @Override
-   public void method5739(Class274 var1) {
+   public void method5739(SoundHandler var1) {
    }
 
    @Override
    public void method5733(double var1, double var3) {
-      super.method5739(Minecraft.getInstance().method1546());
+      super.method5739(Minecraft.getInstance().getSoundHandler());
    }
 
    public abstract void method5813();

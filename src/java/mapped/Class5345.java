@@ -11,7 +11,7 @@ public class Class5345 extends Module {
 
     public Class5345() {
         super(ModuleCategory.COMBAT, "Smooth", "Automatically aims at players");
-        this.method15972(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
     }
 
     @EventTarget
@@ -37,7 +37,7 @@ public class Class5345 extends Module {
                         var13 *= -1.0;
                     }
 
-                    double var15 = 0.05 * (double) Minecraft.method1586() * (var13 + 1.0);
+                    double var15 = 0.05 * (double) Minecraft.getFps() * (var13 + 1.0);
                     if (mc.player.field5032 > this.method16766(var4)[1]) {
                         mc.player.field5032 = (float) ((double) mc.player.field5032 - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
                     }
@@ -61,11 +61,11 @@ public class Class5345 extends Module {
     }
 
     public float[] method16766(Entity var1) {
-        if (mc.field1345 == null && this.field23894 != null) {
+        if (mc.pointedEntity == null && this.field23894 != null) {
             this.field23895 = Math.random();
         }
 
-        this.field23894 = mc.field1345;
+        this.field23894 = mc.pointedEntity;
         double var4 = var1.getPosX() - mc.player.getPosX() + Math.cos((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;
         double var6 = var1.getPosY() - 1.6 - this.field23895 + (double) var1.method3393() - mc.player.getPosY();
         double var8 = var1.getPosZ() - mc.player.getPosZ() + Math.sin((double) (var1.method3142() + 90.0F) * Math.PI / 180.0) * 0.14;

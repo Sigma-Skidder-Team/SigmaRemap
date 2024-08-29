@@ -29,7 +29,7 @@ public interface Class1071 {
             } else {
                float var7 = this.method4980();
                if (var2.field28463) {
-                  var7 += var7 * 1.15F * MathHelper.method37763((float)var2.field28464 / (float)var2.field28465 * (float) Math.PI);
+                  var7 += var7 * 1.15F * MathHelper.sin((float)var2.field28464 / (float)var2.field28465 * (float) Math.PI);
                }
 
                var1.method3113(var7);

@@ -46,19 +46,19 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       String var13 = this.field6353.method8644();
       String var14 = this.field6353.method8643() + " (" + Class1276.method6070().format(new Date(this.field6353.method8647())) + ")";
       if (StringUtils.isEmpty(var13)) {
-         var13 = Class9088.method33883("selectWorld.world") + " " + (var2 + 1);
+         var13 = I18n.format("selectWorld.world") + " " + (var2 + 1);
       }
 
       ITextComponent var15 = this.field6353.method8657();
-      this.field6351.field1294.method38801(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
-      this.field6351.field1294.method38801(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
-      this.field6351.field1294.method38805(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
+      this.field6351.fontRenderer.method38801(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
+      this.field6351.fontRenderer.method38801(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
+      this.field6351.fontRenderer.method38805(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.field6351.getTextureManager().bindTexture(this.field6356 == null ? Class1276.method6071() : this.field6354);
       RenderSystem.enableBlend();
       Class1193.method5699(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       RenderSystem.disableBlend();
-      if (this.field6351.gameSettings.field44625 || var9) {
+      if (this.field6351.gameSettings.touchscreen || var9) {
          this.field6351.getTextureManager().bindTexture(Class1276.method6072());
          Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -71,7 +71,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
             } else {
                Class1193.method5699(var1, var4, var3, 32.0F, (float)var18, 32, 32, 256, 256);
                if (!this.field6353.method8654()) {
-                  if (!SharedConstants.method34773().isStable()) {
+                  if (!SharedConstants.getVersion().isStable()) {
                      Class1193.method5699(var1, var4, var3, 64.0F, (float)var18, 32, 32, 256, 256);
                      if (var17) {
                         this.field6352.method6421(ImmutableList.of(Class1276.method6076().func_241878_f(), Class1276.method6077().func_241878_f()));
@@ -87,7 +87,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
          } else {
             Class1193.method5699(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
             if (var17) {
-               this.field6352.method6421(this.field6351.field1294.method38828(Class1276.method6073(), 175));
+               this.field6352.method6421(this.field6351.fontRenderer.method38828(Class1276.method6073(), 175));
             }
          }
       }
@@ -123,7 +123,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
             } else {
                this.field6351
                   .displayGuiScreen(
-                     new Class829(
+                     new ConfirmScreen(
                         var1 -> {
                            if (var1) {
                               try {
@@ -148,7 +148,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
                            "selectWorld.versionWarning",
                            this.field6353.method8651(),
                            new TranslationTextComponent("selectWorld.versionJoinButton"),
-                           Class7127.field30659
+                           DialogTexts.GUI_CANCEL
                         )
                      )
                   );
@@ -156,16 +156,16 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
          } else {
             TranslationTextComponent var3 = new TranslationTextComponent("selectWorld.backupQuestion");
             TranslationTextComponent var4 = new TranslationTextComponent(
-               "selectWorld.backupWarning", this.field6353.method8651(), SharedConstants.method34773().getName()
+               "selectWorld.backupWarning", this.field6353.method8651(), SharedConstants.getVersion().getName()
             );
-            this.field6351.displayGuiScreen(new Class1315(this.field6352, (var1, var2) -> {
+            this.field6351.displayGuiScreen(new ConfirmBackupScreen(this.field6352, (var1, var2) -> {
                if (var1) {
                   String var5 = this.field6353.method8643();
 
-                  try (Class1814 var6 = this.field6351.getSaveLoader().method38468(var5)) {
-                     Class1329.method6323(var6);
+                  try (SaveFormat.LevelSave var6 = this.field6351.getSaveLoader().getLevelSave(var5)) {
+                     EditWorldScreen.method6323(var6);
                   } catch (IOException var19) {
-                     Class7603.method24908(this.field6351, var5);
+                     SystemToast.func_238535_a_(this.field6351, var5);
                      Class1276.method6078().error("Failed to backup level {}", var5, var19);
                   }
                }
@@ -179,17 +179,17 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    public void method5579() {
       this.field6351
          .displayGuiScreen(
-            new Class829(
+            new ConfirmScreen(
                var1 -> {
                   if (var1) {
-                     this.field6351.displayGuiScreen(new Class1338());
+                     this.field6351.displayGuiScreen(new WorkingScreen());
                      SaveFormat var4 = this.field6351.getSaveLoader();
                      String var5 = this.field6353.method8643();
 
-                     try (Class1814 var6 = var4.method38468(var5)) {
-                        var6.method8003();
+                     try (SaveFormat.LevelSave var6 = var4.getLevelSave(var5)) {
+                        var6.deleteSave();
                      } catch (IOException var19) {
-                        Class7603.method24909(this.field6351, var5);
+                        SystemToast.func_238538_b_(this.field6351, var5);
                         Class1276.method6078().error("Failed to delete world {}", var5, var19);
                      }
 
@@ -201,7 +201,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
                new TranslationTextComponent("selectWorld.deleteQuestion"),
                new TranslationTextComponent("selectWorld.deleteWarning", this.field6353.method8644()),
                new TranslationTextComponent("selectWorld.deleteButton"),
-               Class7127.field30659
+               DialogTexts.GUI_CANCEL
             )
          );
    }
@@ -210,8 +210,8 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
       String var3 = this.field6353.method8643();
 
       try {
-         Class1814 var4 = this.field6351.getSaveLoader().method38468(var3);
-         this.field6351.displayGuiScreen(new Class1329(var3x -> {
+         SaveFormat.LevelSave var4 = this.field6351.getSaveLoader().getLevelSave(var3);
+         this.field6351.displayGuiScreen(new EditWorldScreen(var3x -> {
             try {
                var4.close();
             } catch (IOException var7) {
@@ -225,7 +225,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
             this.field6351.displayGuiScreen(this.field6352);
          }, var4));
       } catch (IOException var5) {
-         Class7603.method24908(this.field6351, var3);
+         SystemToast.func_238535_a_(this.field6351, var3);
          Class1276.method6078().error("Failed to access level {}", var3, var5);
          this.field6358.method6066(() -> this.field6352.field7119.method5636(), true);
       }
@@ -233,25 +233,25 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
 
    public void method5581() {
       this.method5583();
-      Class8905 var3 = Class8904.method32457();
+      Class8905 var3 = DynamicRegistries.func_239770_b_();
 
       try (
-              Class1814 var4 = this.field6351.getSaveLoader().method38468(this.field6353.method8643());
-              Class1811 var6 = this.field6351.method1503(var3, Minecraft::method1497, Minecraft::method1498, false, var4);
+              SaveFormat.LevelSave var4 = this.field6351.getSaveLoader().getLevelSave(this.field6353.method8643());
+              Minecraft.PackManager var6 = this.field6351.reloadDatapacks(var3, Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, var4);
       ) {
-         Class8898 var8 = var6.method7959().method20099();
-         Class7818 var9 = var8.method32432();
-         Class7846 var10 = var6.method7959().method20087();
-         Path var11 = Class1335.method6369(var4.method7991(Class5137.field23352), this.field6351);
-         if (var10.method26269()) {
+         WorldSettings var8 = var6.getServerConfiguration().method20099();
+         DatapackCodec var9 = var8.getDatapackCodec();
+         DimensionGeneratorSettings var10 = var6.getServerConfiguration().getDimensionGeneratorSettings();
+         Path var11 = Class1335.method6369(var4.resolveFilePath(FolderName.DATAPACKS), this.field6351);
+         if (var10.func_236229_j_()) {
             this.field6351
                .displayGuiScreen(
-                  new Class829(
+                  new ConfirmScreen(
                      var6x -> this.field6351.displayGuiScreen((Screen)(!var6x ? this.field6352 : new Class1335(this.field6352, var8, var10, var11, var9, var3))),
                      new TranslationTextComponent("selectWorld.recreate.customized.title"),
                      new TranslationTextComponent("selectWorld.recreate.customized.text"),
-                     Class7127.field30662,
-                     Class7127.field30659
+                     DialogTexts.GUI_PROCEED,
+                     DialogTexts.GUI_CANCEL
                   )
                );
          } else {
@@ -271,15 +271,15 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    }
 
    private void method5582() {
-      this.field6351.method1546().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
+      this.field6351.getSoundHandler().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
       if (this.field6351.getSaveLoader().method38465(this.field6353.method8643())) {
          this.method5583();
-         this.field6351.method1499(this.field6353.method8643());
+         this.field6351.loadWorld(this.field6353.method8643());
       }
    }
 
    private void method5583() {
-      this.field6351.method1508(new Class1310(new TranslationTextComponent("selectWorld.data_read")));
+      this.field6351.forcedScreenTick(new DirtMessageScreen(new TranslationTextComponent("selectWorld.data_read")));
    }
 
    @Nullable

@@ -25,11 +25,11 @@ public class Class147 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      if (var1.method32107() == Class8514.field38060) {
+      if (var1.getItem() == Items.field38060) {
          Entity var5 = var2.method26081(this.field490.method8717());
          if (var5 instanceof PlayerEntity) {
             GameProfile var6 = ((PlayerEntity)var5).getGameProfile();
-            var1.method32143().method99("SkullOwner", Class8354.method29279(new Class39(), var6));
+            var1.getOrCreateTag().put("SkullOwner", Class8354.method29279(new CompoundNBT(), var6));
          }
       }
 

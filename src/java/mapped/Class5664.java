@@ -3,7 +3,7 @@ package mapped;
 public class Class5664 extends Class5663 {
    private static final ResourceLocation field25028 = new ResourceLocation("textures/entity/zombie/husk.png");
 
-   public Class5664(Class8853 var1) {
+   public Class5664(EntityRendererManager var1) {
       super(var1);
    }
 

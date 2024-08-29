@@ -14,7 +14,7 @@ public interface Class4383 {
 
    <E> DataResult<Pair<E, OptionalInt>> method13747(DynamicOps<JsonElement> var1, RegistryKey<? extends Registry<E>> var2, RegistryKey<E> var3, Decoder<E> var4);
 
-   static Class4383 method13751(Class191 var0) {
+   static Class4383 method13751(IResourceManager var0) {
       return new Class4384(var0);
    }
 }

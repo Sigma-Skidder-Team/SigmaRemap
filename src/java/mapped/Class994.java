@@ -1,23 +1,23 @@
 package mapped;
 
-public class Class994 extends Class916 {
+public class Class994 extends AbstractMinecartEntity {
    private static final Class9289<Boolean> field5481 = Class9361.<Boolean>method35441(Class994.class, Class7784.field33398);
    private int field5482;
    public double field5483;
    public double field5484;
-   private static final Class120 field5485 = Class120.method339(Class8514.field37798, Class8514.field37799);
+   private static final Class120 field5485 = Class120.method339(Items.field37798, Items.field37799);
 
-   public Class994(Class8992<? extends Class994> var1, World var2) {
+   public Class994(EntityType<? extends Class994> var1, World var2) {
       super(var1, var2);
    }
 
    public Class994(World var1, double var2, double var4, double var6) {
-      super(Class8992.field41053, var1, var2, var4, var6);
+      super(EntityType.field41053, var1, var2, var4, var6);
    }
 
    @Override
-   public Class2177 method3602() {
-      return Class2177.field14289;
+   public MinecartType getMinecartType() {
+      return MinecartType.FURNACE;
    }
 
    @Override
@@ -29,7 +29,7 @@ public class Class994 extends Class916 {
    @Override
    public void tick() {
       super.tick();
-      if (!this.field5024.method6714()) {
+      if (!this.world.method6714()) {
          if (this.field5482 > 0) {
             this.field5482--;
          }
@@ -43,7 +43,7 @@ public class Class994 extends Class916 {
       }
 
       if (this.method4075() && this.field5054.nextInt(4) == 0) {
-         this.field5024.method6746(Class7940.field34085, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
+         this.world.method6746(Class7940.field34085, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
       }
    }
 
@@ -55,13 +55,13 @@ public class Class994 extends Class916 {
    @Override
    public void method3586(Class8654 var1) {
       super.method3586(var1);
-      if (!var1.method31131() && this.field5024.method6789().method17135(Class5462.field24229)) {
+      if (!var1.method31131() && this.world.method6789().method17135(Class5462.field24229)) {
          this.method3300(Blocks.FURNACE);
       }
    }
 
    @Override
-   public void method3591(BlockPos var1, Class7380 var2) {
+   public void method3591(BlockPos var1, BlockState var2) {
       double var5 = 1.0E-4;
       double var7 = 0.001;
       super.method3591(var1, var2);
@@ -95,7 +95,7 @@ public class Class994 extends Class916 {
    public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (field5485.test(var5) && this.field5482 + 3600 <= 32000) {
-         if (!var1.field4919.field29609) {
+         if (!var1.abilities.isCreativeMode) {
             var5.method32182(1);
          }
 
@@ -107,11 +107,11 @@ public class Class994 extends Class916 {
          this.field5484 = this.getPosZ() - var1.getPosZ();
       }
 
-      return ActionResultType.method9002(this.field5024.field9020);
+      return ActionResultType.method9002(this.world.field9020);
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method108("PushX", this.field5483);
       var1.method108("PushZ", this.field5484);
@@ -119,7 +119,7 @@ public class Class994 extends Class916 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5483 = var1.method125("PushX");
       this.field5484 = var1.method125("PushZ");
@@ -135,7 +135,7 @@ public class Class994 extends Class916 {
    }
 
    @Override
-   public Class7380 method3604() {
+   public BlockState method3604() {
       return Blocks.FURNACE
          .method11579()
          .method23465(Class3353.field18875, Direction.NORTH)

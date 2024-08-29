@@ -14,38 +14,38 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          var2.method7179(var3, true);
       }
    }
 
    @Override
-   public boolean method11499(Class7380 var1) {
+   public boolean method11499(BlockState var1) {
       return var1.<Integer>method23463(field18619) < 5;
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.method8311();
       if (var2.method7007(var7) && var7.getY() < 256) {
          int var8 = var1.<Integer>method23463(field18619);
          if (var8 < 5) {
             boolean var9 = false;
             boolean var10 = false;
-            Class7380 var11 = var2.method6738(var3.method8313());
-            Block var12 = var11.method23383();
+            BlockState var11 = var2.getBlockState(var3.method8313());
+            Block var12 = var11.getBlock();
             if (var12 == Blocks.field36651) {
                var9 = true;
             } else if (var12 != this.field18620) {
-               if (var11.method23393()) {
+               if (var11.isAir()) {
                   var9 = true;
                }
             } else {
                int var13 = 1;
 
                for (int var14 = 0; var14 < 4; var14++) {
-                  Block var15 = var2.method6738(var3.method8340(var13 + 1)).method23383();
+                  Block var15 = var2.getBlockState(var3.method8340(var13 + 1)).getBlock();
                   if (var15 != this.field18620) {
                      if (var15 == Blocks.field36651) {
                         var10 = true;
@@ -114,7 +114,7 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var2 != Direction.field673 && !var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
@@ -123,16 +123,16 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      Class7380 var6 = var2.method6738(var3.method8313());
-      if (var6.method23383() != this.field18620 && !var6.method23448(Blocks.field36651)) {
-         if (var6.method23393()) {
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+      BlockState var6 = var2.getBlockState(var3.method8313());
+      if (var6.getBlock() != this.field18620 && !var6.method23448(Blocks.field36651)) {
+         if (var6.isAir()) {
             boolean var7 = false;
 
             for (Direction var9 : Class76.field161) {
-               Class7380 var10 = var2.method6738(var3.method8349(var9));
+               BlockState var10 = var2.getBlockState(var3.method8349(var9));
                if (!var10.method23448(this.field18620)) {
-                  if (!var10.method23393()) {
+                  if (!var10.isAir()) {
                      return false;
                   }
                } else {
@@ -154,7 +154,7 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18619);
    }
 
@@ -190,8 +190,8 @@ public class Class3211 extends Block {
          for (int var12 = 0; var12 < var16; var12++) {
             Direction var13 = Class76.field161.method247(var2);
             BlockPos var14 = var1.method8339(var9).method8349(var13);
-            if (Math.abs(var14.method8304() - var3.method8304()) < var4
-               && Math.abs(var14.method8306() - var3.method8306()) < var4
+            if (Math.abs(var14.getX() - var3.getX()) < var4
+               && Math.abs(var14.getZ() - var3.getZ()) < var4
                && var0.method7007(var14)
                && var0.method7007(var14.method8313())
                && method11592(var0, var14, var13.method536())) {
@@ -209,9 +209,9 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public void method11595(World var1, Class7380 var2, Class8711 var3, Class882 var4) {
-      if (var4.method3204().method33228(Class8613.field38738)) {
-         BlockPos var7 = var3.method31423();
+   public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
+      if (var4.getType().method33228(Class8613.field38738)) {
+         BlockPos var7 = var3.getPos();
          var1.method7180(var7, true, var4);
       }
    }

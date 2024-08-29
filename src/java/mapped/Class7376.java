@@ -9,9 +9,9 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 public class Class7376 extends SimpleFileVisitor<Path> {
    public final Path field31562;
-   public final Class1814 field31563;
+   public final SaveFormat.LevelSave field31563;
 
-   public Class7376(Class1814 var1, Path var2) {
+   public Class7376(SaveFormat.LevelSave var1, Path var2) {
       this.field31563 = var1;
       this.field31562 = var2;
    }
@@ -27,8 +27,8 @@ public class Class7376 extends SimpleFileVisitor<Path> {
 
    public FileVisitResult postVisitDirectory(Path var1, IOException var2) throws IOException {
       if (var2 == null) {
-         if (var1.equals(Class1814.method8008(this.field31563))) {
-            Class1814.method8009(this.field31563).close();
+         if (var1.equals(SaveFormat.LevelSave.method8008(this.field31563))) {
+            SaveFormat.LevelSave.method8009(this.field31563).close();
             Files.deleteIfExists(this.field31562);
          }
 

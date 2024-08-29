@@ -5,7 +5,7 @@ import com.mojang.datafixers.types.Type;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public final class Class9785<T extends Class944> {
+public final class Class9785<T extends TileEntity> {
    private static String[] field45751;
    private final Supplier<? extends T> field45752;
    private final Set<Block> field45753;
@@ -15,7 +15,7 @@ public final class Class9785<T extends Class944> {
       this.field45753 = var2;
    }
 
-   public static <T extends Class944> Class9785<T> method38569(Supplier<? extends T> var0, Block... var1) {
+   public static <T extends TileEntity> Class9785<T> method38569(Supplier<? extends T> var0, Block... var1) {
       return new Class9785<T>(var0, ImmutableSet.copyOf(var1));
    }
 

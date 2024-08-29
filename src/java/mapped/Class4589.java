@@ -7,15 +7,15 @@ public class Class4589 extends Class4588 {
    private final int field22068;
    private final Class7436 field22069;
 
-   public Class4589(Class1656 var1, Entity var2, Class7436 var3) {
+   public Class4589(ClientWorld var1, Entity var2, Class7436 var3) {
       this(var1, var2, var3, 3);
    }
 
-   public Class4589(Class1656 var1, Entity var2, Class7436 var3, int var4) {
+   public Class4589(ClientWorld var1, Entity var2, Class7436 var3, int var4) {
       this(var1, var2, var3, var4, var2.method3433());
    }
 
-   private Class4589(Class1656 var1, Entity var2, Class7436 var3, int var4, Vector3d var5) {
+   private Class4589(ClientWorld var1, Entity var2, Class7436 var3, int var4, Vector3d var5) {
       super(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ(), var5.field18048, var5.field18049, var5.field18050);
       this.field22066 = var2;
       this.field22068 = var4;

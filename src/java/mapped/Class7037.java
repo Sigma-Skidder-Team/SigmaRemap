@@ -10,7 +10,7 @@ public class Class7037 {
    private Class9805 method21847(Class4869 var1) {
       Class9805 var4 = new Class9805(var1, var2 -> {
          if (this.field30366) {
-            throw new UnsupportedOperationException("Tried to change value for default attribute instance: " + Registry.field16087.method9181(var1));
+            throw new UnsupportedOperationException("Tried to change value for default attribute instance: " + Registry.field16087.getKey(var1));
          }
       });
       this.field30365.put(var1, var4);

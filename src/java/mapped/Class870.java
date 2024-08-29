@@ -66,7 +66,7 @@ public class Class870 extends Screen {
    }
 
    public void method2679() {
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 196, 200, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen((Screen)null)));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 196, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen((Screen)null)));
    }
 
    public void method2692() {
@@ -189,15 +189,15 @@ public class Class870 extends Screen {
    @Nullable
    public Style method2695(double var1, double var3) {
       if (!this.field4823.isEmpty()) {
-         int var7 = MathHelper.method37769(var1 - (double)((this.field4564 - 192) / 2) - 36.0);
-         int var8 = MathHelper.method37769(var3 - 2.0 - 30.0);
+         int var7 = MathHelper.floor(var1 - (double)((this.field4564 - 192) / 2) - 36.0);
+         int var8 = MathHelper.floor(var3 - 2.0 - 30.0);
          if (var7 >= 0 && var8 >= 0) {
             int var9 = Math.min(14, this.field4823.size());
             if (var7 <= 114 && var8 < 9 * var9 + var9) {
                int var10 = var8 / 9;
                if (var10 >= 0 && var10 < this.field4823.size()) {
                   Class9125 var11 = this.field4823.get(var10);
-                  return this.field4562.field1294.method38830().func_243239_a(var11, var7);
+                  return this.field4562.fontRenderer.method38830().func_243239_a(var11, var7);
                } else {
                   return null;
                }
@@ -212,8 +212,8 @@ public class Class870 extends Screen {
       }
    }
 
-   public static List<String> method2696(Class39 var0) {
-      Class41 var3 = var0.method131("pages", 8).method79();
+   public static List<String> method2696(CompoundNBT var0) {
+      ListNBT var3 = var0.method131("pages", 8).method79();
       Builder var4 = ImmutableList.builder();
 
       for (int var5 = 0; var5 < var3.size(); var5++) {

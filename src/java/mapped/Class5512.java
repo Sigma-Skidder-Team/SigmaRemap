@@ -49,7 +49,7 @@ public class Class5512 implements Packet<Class5116> {
    }
 
    public static <T extends Class4843<?>> void method17333(T var0, PacketBuffer var1) {
-      var1.method35732(Registry.field16086.method9181(var0.method14961()));
+      var1.method35732(Registry.field16086.getKey(var0.method14961()));
       var1.method35732(var0.method14964());
       ((Class6504<T>)var0.method14961()).method19698(var1, var0);
    }

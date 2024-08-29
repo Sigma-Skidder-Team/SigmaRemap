@@ -10,11 +10,11 @@ public abstract class Class995 extends Entity {
    public BlockPos field5488;
    public Direction field5489 = Direction.SOUTH;
 
-   public Class995(Class8992<? extends Class995> var1, World var2) {
+   public Class995(EntityType<? extends Class995> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class995(Class8992<? extends Class995> var1, World var2, BlockPos var3) {
+   public Class995(EntityType<? extends Class995> var1, World var2, BlockPos var3) {
       this(var1, var2);
       this.field5488 = var3;
    }
@@ -34,9 +34,9 @@ public abstract class Class995 extends Entity {
 
    public void method4078() {
       if (this.field5489 != null) {
-         double var3 = (double)this.field5488.method8304() + 0.5;
+         double var3 = (double)this.field5488.getX() + 0.5;
          double var5 = (double)this.field5488.getY() + 0.5;
-         double var7 = (double)this.field5488.method8306() + 0.5;
+         double var7 = (double)this.field5488.getZ() + 0.5;
          double var9 = 0.46875;
          double var11 = this.method4079(this.method4081());
          double var13 = this.method4079(this.method4082());
@@ -69,7 +69,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void tick() {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (this.getPosY() < -64.0) {
             this.method3083();
          }
@@ -85,7 +85,7 @@ public abstract class Class995 extends Entity {
    }
 
    public boolean method4080() {
-      if (!this.field5024.method7052(this)) {
+      if (!this.world.method7052(this)) {
          return false;
       } else {
          int var3 = Math.max(1, this.method4081() / 16);
@@ -99,14 +99,14 @@ public abstract class Class995 extends Entity {
                int var10 = (var3 - 1) / -2;
                int var11 = (var4 - 1) / -2;
                var7.method8374(var5).method8380(var6, var8 + var10).method8380(Direction.field673, var9 + var11);
-               Class7380 var12 = this.field5024.method6738(var7);
+               BlockState var12 = this.world.getBlockState(var7);
                if (!var12.method23384().method31086() && !Class3247.method11672(var12)) {
                   return false;
                }
             }
          }
 
-         return this.field5024.method6770(this, this.method3389(), field5486).isEmpty();
+         return this.world.method6770(this, this.method3389(), field5486).isEmpty();
       }
    }
 
@@ -121,7 +121,7 @@ public abstract class Class995 extends Entity {
          return false;
       } else {
          PlayerEntity var4 = (PlayerEntity)var1;
-         return this.field5024.method6785(var4, this.field5488) ? this.method2741(Class8654.method31117(var4), 0.0F) : true;
+         return this.world.method6785(var4, this.field5488) ? this.method2741(Class8654.method31117(var4), 0.0F) : true;
       }
    }
 
@@ -133,7 +133,7 @@ public abstract class Class995 extends Entity {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         if (!this.field5041 && !this.field5024.field9020) {
+         if (!this.field5041 && !this.world.field9020) {
             this.method2904();
             this.method3141();
             this.method4083(var1.method31109());
@@ -147,7 +147,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void move(Class2107 var1, Vector3d var2) {
-      if (!this.field5024.field9020 && !this.field5041 && var2.method11349() > 0.0) {
+      if (!this.world.field9020 && !this.field5041 && var2.method11349() > 0.0) {
          this.method2904();
          this.method4083((Entity)null);
       }
@@ -155,22 +155,22 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void method3280(double var1, double var3, double var5) {
-      if (!this.field5024.field9020 && !this.field5041 && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
+      if (!this.world.field9020 && !this.field5041 && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
          this.method2904();
          this.method4083((Entity)null);
       }
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       BlockPos var4 = this.method4085();
-      var1.method102("TileX", var4.method8304());
+      var1.method102("TileX", var4.getX());
       var1.method102("TileY", var4.getY());
-      var1.method102("TileZ", var4.method8306());
+      var1.method102("TileZ", var4.getZ());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.field5488 = new BlockPos(var1.method122("TileX"), var1.method122("TileY"), var1.method122("TileZ"));
    }
 
@@ -185,14 +185,14 @@ public abstract class Class995 extends Entity {
    @Override
    public ItemEntity method3303(ItemStack var1, float var2) {
       ItemEntity var5 = new ItemEntity(
-         this.field5024,
+         this.world,
          this.getPosX() + (double)((float)this.field5489.method539() * 0.15F),
          this.getPosY() + (double)var2,
          this.getPosZ() + (double)((float)this.field5489.method541() * 0.15F),
          var1
       );
       var5.method4131();
-      this.field5024.method6916(var5);
+      this.world.method6916(var5);
       return var5;
    }
 

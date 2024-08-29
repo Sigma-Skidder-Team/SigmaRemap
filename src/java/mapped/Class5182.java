@@ -9,7 +9,7 @@ import java.util.Random;
 public class Class5182 extends Module {
     public Class5182() {
         super(ModuleCategory.MISC, "Jargon", "Sends a randomly contructed message in chat");
-        this.method15972(new Class6005("Jargon", "A test type button", 0, "Excuse", "Techincal", "Audio"));
+        this.registerSetting(new ModeSetting("Jargon", "A test type button", 0, "Excuse", "Techincal", "Audio"));
     }
 
     public static String method16132(String[] var0) {

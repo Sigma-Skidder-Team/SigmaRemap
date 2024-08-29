@@ -9,18 +9,18 @@ public class Class5807 extends AbstractOption {
    public final float field25449;
    public final double field25450;
    public double field25451;
-   public Function<Class9574, Double> field25452;
-   public BiConsumer<Class9574, Double> field25453;
-   public BiFunction<Class9574, Class5807, ITextComponent> field25454;
+   public Function<GameSettings, Double> field25452;
+   public BiConsumer<GameSettings, Double> field25453;
+   public BiFunction<GameSettings, Class5807, ITextComponent> field25454;
 
    public Class5807(
       String var1,
       double var2,
       double var4,
       float var6,
-      Function<Class9574, Double> var7,
-      BiConsumer<Class9574, Double> var8,
-      BiFunction<Class9574, Class5807, ITextComponent> var9
+      Function<GameSettings, Double> var7,
+      BiConsumer<GameSettings, Double> var8,
+      BiFunction<GameSettings, Class5807, ITextComponent> var9
    ) {
       super(var1);
       this.field25450 = var2;
@@ -32,7 +32,7 @@ public class Class5807 extends AbstractOption {
    }
 
    @Override
-   public Class1197 method17946(Class9574 var1, int var2, int var3, int var4) {
+   public Class1197 method17946(GameSettings var1, int var2, int var3, int var4) {
       return new Class1232(var1, var2, var3, var4, 20, this);
    }
 
@@ -64,15 +64,15 @@ public class Class5807 extends AbstractOption {
       this.field25451 = (double)var1;
    }
 
-   public void method18089(Class9574 var1, double var2) {
+   public void method18089(GameSettings var1, double var2) {
       this.field25453.accept(var1, var2);
    }
 
-   public double method18090(Class9574 var1) {
+   public double method18090(GameSettings var1) {
       return this.field25452.apply(var1);
    }
 
-   public ITextComponent method18091(Class9574 var1) {
+   public ITextComponent method18091(GameSettings var1) {
       return this.field25454.apply(var1, this);
    }
 }

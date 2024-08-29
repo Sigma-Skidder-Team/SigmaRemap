@@ -5,7 +5,7 @@ public class Class2842 extends Class2828 {
    private final Class7219 field17639 = new Class7219(32, 32, 0, 6);
 
    public Class2842() {
-      super(Class4520::method14309);
+      super(RenderType::getEntitySolid);
       this.field17639.method22675(-0.5F, 2.0F, -0.5F, 1.0F, 25.0F, 1.0F, 0.0F);
       Class7219 var3 = new Class7219(32, 32, 4, 0);
       var3.method22673(-1.5F, 0.0F, -0.5F, 3.0F, 2.0F, 1.0F);

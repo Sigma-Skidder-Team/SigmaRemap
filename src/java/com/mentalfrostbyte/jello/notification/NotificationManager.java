@@ -68,8 +68,8 @@ public class NotificationManager {
 
     @EventTarget
     private void method31995(Class4415 var1) {
-        if (!Minecraft.getInstance().gameSettings.field44662) {
-            this.field39921 = Math.max(Math.round((float) (6 - Minecraft.method1586() / 10)), 1);
+        if (!Minecraft.getInstance().gameSettings.hideGUI) {
+            this.field39921 = Math.max(Math.round((float) (6 - Minecraft.getFps() / 10)), 1);
 
             for (int var4 = 0; var4 < this.field39919.size(); var4++) {
                 Notification var5 = this.field39919.get(var4);

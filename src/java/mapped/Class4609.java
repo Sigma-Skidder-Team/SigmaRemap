@@ -2,15 +2,15 @@ package mapped;
 
 public class Class4609 extends Class4566 {
    private static String[] field22116;
-   private final Class7380 field22117;
+   private final BlockState field22117;
    private BlockPos field22118;
    private final float field22119;
    private final float field22120;
 
-   public Class4609(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12, Class7380 var14) {
+   public Class4609(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, BlockState var14) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.field22117 = var14;
-      this.method14502(Minecraft.getInstance().method1553().method806().method38152(var14));
+      this.method14502(Minecraft.getInstance().getBlockRendererDispatcher().getBlockModelShapes().getTexture(var14));
       this.field22057 = 1.0F;
       this.field22058 = 0.6F;
       this.field22059 = 0.6F;
@@ -46,7 +46,7 @@ public class Class4609 extends Class4566 {
    }
 
    public void method14542(BlockPos var1) {
-      int var4 = Minecraft.getInstance().method1564().method29465(this.field22117, this.field22037, var1, 0);
+      int var4 = Minecraft.getInstance().getBlockColors().method29465(this.field22117, this.field22037, var1, 0);
       this.field22058 *= (float)(var4 >> 16 & 0xFF) / 255.0F;
       this.field22059 *= (float)(var4 >> 8 & 0xFF) / 255.0F;
       this.field22060 *= (float)(var4 & 0xFF) / 255.0F;
@@ -77,7 +77,7 @@ public class Class4609 extends Class4566 {
       int var4 = super.method14499(var1);
       int var5 = 0;
       if (this.field22037.method7017(this.field22118)) {
-         var5 = Class264.method944(this.field22037, this.field22118);
+         var5 = WorldRenderer.method944(this.field22037, this.field22118);
       }
 
       return var4 != 0 ? var4 : var5;

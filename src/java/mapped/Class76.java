@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public enum Class76 implements Iterable<Direction>, Predicate<Direction> {
    field161(new Direction[]{Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST}, new Class113[]{Class113.field413, Class113.field415}),
-   field162(new Direction[]{Direction.field673, Direction.field672}, new Class113[]{Class113.field414});
+   field162(new Direction[]{Direction.field673, Direction.DOWN}, new Class113[]{Class113.field414});
 
    private final Direction[] field163;
    private final Class113[] field164;

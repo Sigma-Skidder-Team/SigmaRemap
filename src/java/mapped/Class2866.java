@@ -47,9 +47,9 @@ public class Class2866<T extends Entity> extends Class2855<T> {
       this.field17772.field31035 = var6 * (float) (Math.PI / 180.0);
       this.field17772.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17773.field31035 = (float) (Math.PI / 2);
-      this.field17774.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
-      this.field17775.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17776.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17777.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17774.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field17775.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17776.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17777.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
    }
 }

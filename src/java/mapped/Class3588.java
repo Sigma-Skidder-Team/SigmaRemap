@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Comparator;
 
-public class Class3588 implements Comparator<Class3257> {
+public class Class3588 implements Comparator<Item> {
    private static String[] field19532;
    public final Class1282 field19533;
 
@@ -10,7 +10,7 @@ public class Class3588 implements Comparator<Class3257> {
       this.field19533 = var1;
    }
 
-   public int compare(Class3257 var1, Class3257 var2) {
+   public int compare(Item var1, Item var2) {
       int var6;
       int var7;
       if (this.field19533.field6844 != null) {
@@ -30,6 +30,6 @@ public class Class3588 implements Comparator<Class3257> {
 
       return var6 != var7
          ? this.field19533.field6845 * Integer.compare(var6, var7)
-         : this.field19533.field6845 * Integer.compare(Class3257.method11701(var1), Class3257.method11701(var2));
+         : this.field19533.field6845 * Integer.compare(Item.method11701(var1), Item.method11701(var2));
    }
 }

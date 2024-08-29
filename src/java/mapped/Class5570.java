@@ -4,13 +4,13 @@ import java.io.IOException;
 
 public class Class5570 implements Packet<IServerPlayNetHandler> {
    private static String[] field24707;
-   private Class8711 field24708;
+   private BlockRayTraceResult field24708;
    private Hand field24709;
 
    public Class5570() {
    }
 
-   public Class5570(Hand var1, Class8711 var2) {
+   public Class5570(Hand var1, BlockRayTraceResult var2) {
       this.field24709 = var1;
       this.field24708 = var2;
    }
@@ -35,7 +35,7 @@ public class Class5570 implements Packet<IServerPlayNetHandler> {
       return this.field24709;
    }
 
-   public Class8711 method17498() {
+   public BlockRayTraceResult method17498() {
       return this.field24708;
    }
 }

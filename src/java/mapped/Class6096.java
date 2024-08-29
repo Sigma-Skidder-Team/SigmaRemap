@@ -65,7 +65,7 @@ public class Class6096 extends Class6069 {
    public static double method18835(Class880 var0, double var1) {
       int var5 = Class7858.method26322(Class8122.field34899, var0);
       if (var5 > 0) {
-         var1 -= (double) MathHelper.method37769(var1 * (double)((float)var5 * 0.15F));
+         var1 -= (double) MathHelper.floor(var1 * (double)((float)var5 * 0.15F));
       }
 
       return var1;

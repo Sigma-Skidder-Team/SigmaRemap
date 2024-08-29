@@ -12,7 +12,7 @@ public class Class4168 extends Class4167 {
       this.field20444 = var3;
    }
 
-   public Class4168(Class8761 var1, Class39 var2) {
+   public Class4168(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33431, var2);
    }
 
@@ -44,12 +44,12 @@ public class Class4168 extends Class4167 {
          }
       }
 
-      Class7380 var13 = Blocks.NETHER_BRICK_FENCE
+      BlockState var13 = Blocks.NETHER_BRICK_FENCE
          .method11579()
          .method23465(Class3239.field18680, Boolean.valueOf(true))
          .method23465(Class3239.field18682, Boolean.valueOf(true));
-      Class7380 var14 = var13.method23465(Class3239.field18681, Boolean.valueOf(true));
-      Class7380 var12 = var13.method23465(Class3239.field18683, Boolean.valueOf(true));
+      BlockState var14 = var13.method23465(Class3239.field18681, Boolean.valueOf(true));
+      BlockState var12 = var13.method23465(Class3239.field18683, Boolean.valueOf(true));
       this.method12927(var1, var5, 0, 1, 1, 0, 4, 1, var14, var14, false);
       this.method12927(var1, var5, 0, 3, 4, 0, 4, 4, var14, var14, false);
       this.method12927(var1, var5, 0, 3, 14, 0, 4, 14, var14, var14, false);

@@ -23,7 +23,7 @@ public class Class8002 {
                               (Class6619)var0x.getSource(),
                               Class7822.method26156(var0x, "entity"),
                               ((Class6619)var0x.getSource()).method20171(),
-                              new Class39(),
+                              new CompoundNBT(),
                               true
                            )
                      ))
@@ -34,7 +34,7 @@ public class Class8002 {
                                     (Class6619)var0x.getSource(),
                                     Class7822.method26156(var0x, "entity"),
                                     Class6851.method20859(var0x, "pos"),
-                                    new Class39(),
+                                    new CompoundNBT(),
                                     true
                                  )
                            ))
@@ -55,20 +55,20 @@ public class Class8002 {
       );
    }
 
-   private static int method27336(Class6619 var0, ResourceLocation var1, Vector3d var2, Class39 var3, boolean var4) throws CommandSyntaxException {
+   private static int method27336(Class6619 var0, ResourceLocation var1, Vector3d var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
       BlockPos var7 = new BlockPos(var2);
       if (World.method6717(var7)) {
-         Class39 var8 = var3.method79();
+         CompoundNBT var8 = var3.method79();
          var8.method109("id", var1.toString());
          ServerWorld var9 = var0.method20172();
-         Entity var10 = Class8992.method33223(var8, var9, var1x -> {
+         Entity var10 = EntityType.method33223(var8, var9, var1x -> {
             var1x.method3273(var2.field18048, var2.field18049, var2.field18050, var1x.field5031, var1x.field5032);
             return var1x;
          });
          if (var10 != null) {
             if (var4 && var10 instanceof Class1006) {
                ((Class1006)var10)
-                  .method4276(var0.method20172(), var0.method20172().method6807(var10.method3432()), Class2202.field14404, (Class5093)null, (Class39)null);
+                  .method4276(var0.method20172(), var0.method20172().method6807(var10.getPosition()), Class2202.field14404, (Class5093)null, (CompoundNBT)null);
             }
 
             if (var9.method6928(var10)) {

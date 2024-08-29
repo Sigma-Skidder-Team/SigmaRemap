@@ -25,17 +25,17 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19348[var1.<Integer>method23463(field19347)];
    }
 
    @Override
-   public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
       return var1.method23448(Blocks.FARMLAND);
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7021(var3, 0) >= 9) {
          float var7 = Class3480.method12182(this, var2, var3);
          if (var4.nextInt((int)(25.0F / var7) + 1) == 0) {
@@ -43,8 +43,8 @@ public class Class3486 extends Class3194 implements Class3196 {
             if (var8 >= 7) {
                Direction var9 = Class76.field161.method247(var4);
                BlockPos var10 = var3.method8349(var9);
-               Class7380 var11 = var2.method6738(var10.method8313());
-               if (var2.method6738(var10).method23393()
+               BlockState var11 = var2.getBlockState(var10.method8313());
+               if (var2.getBlockState(var10).isAir()
                   && (
                      var11.method23448(Blocks.FARMLAND)
                         || var11.method23448(Blocks.field36396)
@@ -64,34 +64,34 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Nullable
-   public Class3257 method12184() {
+   public Item method12184() {
       if (this.field19349 != Blocks.PUMPKIN) {
-         return this.field19349 != Blocks.MELON ? null : Class8514.field37960;
+         return this.field19349 != Blocks.MELON ? null : Items.field37960;
       } else {
-         return Class8514.field37959;
+         return Items.field37959;
       }
    }
 
    @Override
-   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      Class3257 var6 = this.method12184();
+   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+      Item var6 = this.method12184();
       return var6 != null ? new ItemStack(var6) : ItemStack.EMPTY;
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
       return var3.<Integer>method23463(field19347) != 7;
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return true;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       int var7 = Math.min(7, var4.<Integer>method23463(field19347) + MathHelper.method37782(var1.field9016, 2, 5));
-      Class7380 var8 = var4.method23465(field19347, Integer.valueOf(var7));
+      BlockState var8 = var4.method23465(field19347, Integer.valueOf(var7));
       var1.method6725(var3, var8, 2);
       if (var7 == 7) {
          var8.method23431(var1, var3, var1.field9016);
@@ -99,7 +99,7 @@ public class Class3486 extends Class3194 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19347);
    }
 

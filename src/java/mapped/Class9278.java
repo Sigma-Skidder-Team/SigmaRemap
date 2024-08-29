@@ -51,15 +51,15 @@ public class Class9278 {
          this.field42671.accept(new Class5485(this.field42668));
       }
 
-      if (this.field42668 instanceof Class997 && this.field42679 % 10 == 0) {
-         Class997 var4 = (Class997)this.field42668;
+      if (this.field42668 instanceof ItemFrameEntity && this.field42679 % 10 == 0) {
+         ItemFrameEntity var4 = (ItemFrameEntity)this.field42668;
          ItemStack var5 = var4.method4090();
-         if (var5.method32107() instanceof Class3316) {
+         if (var5.getItem() instanceof Class3316) {
             Class7529 var6 = Class3316.method11861(var5, this.field42667);
 
             for (ServerPlayerEntity var8 : this.field42667.method6870()) {
                var6.method24594(var8, var5);
-               Packet var9 = ((Class3316)var5.method32107()).method11858(var5, this.field42667, var8);
+               Packet var9 = ((Class3316)var5.getItem()).method11858(var5, this.field42667, var8);
                if (var9 != null) {
                   var8.field4855.sendPacket(var9);
                }
@@ -212,7 +212,7 @@ public class Class9278 {
 
          for (Class2106 var10 : Class2106.values()) {
             ItemStack var11 = ((Class880)this.field42668).method2943(var10);
-            if (!var11.method32105()) {
+            if (!var11.isEmpty()) {
                var12.add(Pair.of(var10, var11.copy()));
             }
          }

@@ -80,12 +80,12 @@ public class Class5601 implements Packet<IServerPlayNetHandler> {
       var1.method35713(this.field_210392_b);
       var1.method35713(this.mode);
       var1.method35729(this.name);
-      var1.writeByte(this.field_210395_e.method8304());
+      var1.writeByte(this.field_210395_e.getX());
       var1.writeByte(this.field_210395_e.getY());
-      var1.writeByte(this.field_210395_e.method8306());
-      var1.writeByte(this.size.method8304());
+      var1.writeByte(this.field_210395_e.getZ());
+      var1.writeByte(this.size.getX());
       var1.writeByte(this.size.getY());
-      var1.writeByte(this.size.method8306());
+      var1.writeByte(this.size.getZ());
       var1.method35713(this.mirror);
       var1.method35713(this.rotation);
       var1.method35729(this.field_210399_i);

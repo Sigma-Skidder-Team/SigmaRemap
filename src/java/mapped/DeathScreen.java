@@ -42,7 +42,7 @@ public class DeathScreen extends Screen {
             new TranslationTextComponent("deathScreen.titleScreen"),
             var1 -> {
                if (!this.field4572) {
-                  Class829 var4 = new Class829(
+                  ConfirmScreen var4 = new ConfirmScreen(
                      this::method2488,
                      new TranslationTextComponent("deathScreen.quit.confirm"),
                      StringTextComponent.EMPTY,
@@ -57,7 +57,7 @@ public class DeathScreen extends Screen {
             }
          )
       );
-      if (!this.field4572 && this.field4562.method1533() == null) {
+      if (!this.field4572 && this.field4562.getSession() == null) {
          var3.field6482 = false;
       }
 
@@ -89,7 +89,7 @@ public class DeathScreen extends Screen {
          this.field4562.world.sendQuittingDisconnectingPacket();
       }
 
-      this.field4562.method1506(new Class1310(new TranslationTextComponent("menu.savingLevel")));
+      this.field4562.unloadWorld(new DirtMessageScreen(new TranslationTextComponent("menu.savingLevel")));
       this.field4562.displayGuiScreen(new MainMenuScreen());
    }
 
@@ -118,10 +118,10 @@ public class DeathScreen extends Screen {
       if (this.field4571 == null) {
          return null;
       } else {
-         int var4 = this.field4562.field1294.method38821(this.field4571);
+         int var4 = this.field4562.fontRenderer.method38821(this.field4571);
          int var5 = this.field4564 / 2 - var4 / 2;
          int var6 = this.field4564 / 2 + var4 / 2;
-         return var1 >= var5 && var1 <= var6 ? this.field4562.field1294.method38830().func_238357_a_(this.field4571, var1 - var5) : null;
+         return var1 >= var5 && var1 <= var6 ? this.field4562.fontRenderer.method38830().func_238357_a_(this.field4571, var1 - var5) : null;
       }
    }
 
@@ -139,13 +139,13 @@ public class DeathScreen extends Screen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4570++;
       if (this.field4570 == 20) {
          for (Class1197 var4 : this.field4566) {

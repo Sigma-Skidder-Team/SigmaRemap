@@ -7,14 +7,14 @@ import javax.annotation.Nullable;
 
 public class Class4666 implements Class4664 {
    private final ResourceLocation field22215;
-   private final Class3257 field22216;
+   private final Item field22216;
    private final int field22217;
    private final String field22218;
    private final List<Class120> field22219;
    private final Class7999 field22220;
    private final ResourceLocation field22221;
 
-   public Class4666(ResourceLocation var1, Class3257 var2, int var3, String var4, List<Class120> var5, Class7999 var6, ResourceLocation var7) {
+   public Class4666(ResourceLocation var1, Item var2, int var3, String var4, List<Class120> var5, Class7999 var6, ResourceLocation var7) {
       this.field22215 = var1;
       this.field22216 = var2;
       this.field22217 = var3;
@@ -38,7 +38,7 @@ public class Class4666 implements Class4664 {
 
       var1.add("ingredients", var4);
       JsonObject var7 = new JsonObject();
-      var7.addProperty("item", Registry.field16075.method9181(this.field22216).toString());
+      var7.addProperty("item", Registry.ITEM.getKey(this.field22216).toString());
       if (this.field22217 > 1) {
          var7.addProperty("count", this.field22217);
       }

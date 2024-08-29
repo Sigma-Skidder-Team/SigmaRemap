@@ -93,23 +93,23 @@ public class Class8037 {
 
       boolean var18 = false;
       double var19 = Double.NEGATIVE_INFINITY;
-      BlockPos var21 = var0.method3432();
+      BlockPos var21 = var0.getPosition();
 
       for (int var22 = 0; var22 < 10; var22++) {
          BlockPos var23 = method27593(var16, var1, var2, var3, var4, var6);
          if (var23 != null) {
-            int var24 = var23.method8304();
+            int var24 = var23.getX();
             int var25 = var23.getY();
-            int var26 = var23.method8306();
+            int var26 = var23.getZ();
             if (var0.method4291() && var1 > 1) {
                BlockPos var27 = var0.method4289();
-               if (!(var0.getPosX() > (double)var27.method8304())) {
+               if (!(var0.getPosX() > (double)var27.getX())) {
                   var24 += var16.nextInt(var1 / 2);
                } else {
                   var24 -= var16.nextInt(var1 / 2);
                }
 
-               if (!(var0.getPosZ() > (double)var27.method8306())) {
+               if (!(var0.getPosZ() > (double)var27.getZ())) {
                   var26 += var16.nextInt(var1 / 2);
                } else {
                   var26 -= var16.nextInt(var1 / 2);
@@ -118,20 +118,20 @@ public class Class8037 {
 
             BlockPos var31 = new BlockPos((double)var24 + var0.getPosX(), (double)var25 + var0.getPosY(), (double)var26 + var0.getPosZ());
             if (var31.getY() >= 0
-               && var31.getY() <= var0.field5024.method7034()
+               && var31.getY() <= var0.world.method7034()
                && (!var17 || var0.method4287(var31))
                && (!var12 || var15.method21672(var31))) {
                if (var9) {
                   var31 = method27594(
                      var31,
                      var16.nextInt(var10 + 1) + var11,
-                     var0.field5024.method7034(),
-                     var1x -> var0.field5024.method6738(var1x).method23384().method31086()
+                     var0.world.method7034(),
+                     var1x -> var0.world.getBlockState(var1x).method23384().method31086()
                   );
                }
 
-               if (var5 || !var0.field5024.method6739(var31).method23486(Class8953.field40469)) {
-                  Class2163 var28 = Class6762.method20633(var0.field5024, var31.method8354());
+               if (var5 || !var0.world.method6739(var31).method23486(Class8953.field40469)) {
+                  Class2163 var28 = Class6762.method20633(var0.world, var31.method8354());
                   if (var0.method4223(var28) == 0.0F) {
                      double var29 = var8.applyAsDouble(var31);
                      if (var29 > var19) {

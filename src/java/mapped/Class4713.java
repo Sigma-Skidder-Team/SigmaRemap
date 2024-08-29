@@ -24,7 +24,7 @@ public class Class4713 implements Class4698 {
    @Override
    public String toString() {
       return String.format(
-         "< %s [%s | %s] >", this.getClass().getSimpleName(), Registry.field16112.method9181(this.field22352.get().method26518()), this.field22353
+         "< %s [%s | %s] >", this.getClass().getSimpleName(), Registry.field16112.getKey(this.field22352.get().method26518()), this.field22353
       );
    }
 

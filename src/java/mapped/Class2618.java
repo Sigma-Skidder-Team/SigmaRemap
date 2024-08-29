@@ -13,7 +13,7 @@ public class Class2618 extends Class2595 {
 
    public Class2618(Class1012 var1, float var2) {
       this.field16894 = var1;
-      this.field16896 = var1.field5024;
+      this.field16896 = var1.world;
       this.field16897 = var2;
       this.field16899 = new Class8522().method30203((double)var2).method30204().method30205().method30207();
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658));
@@ -59,7 +59,7 @@ public class Class2618 extends Class2595 {
    private boolean method10825(PlayerEntity var1) {
       for (Hand var7 : Hand.values()) {
          ItemStack var8 = var1.getHeldItem(var7);
-         if (this.field16894.method4393() && var8.method32107() == Class8514.field37935) {
+         if (this.field16894.method4393() && var8.getItem() == Items.field37935) {
             return true;
          }
 

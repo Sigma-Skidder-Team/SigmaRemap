@@ -10,7 +10,7 @@ public class Class2920 extends Class2898<Class4703> {
    }
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4703 var5) {
-      Class7380 var8 = var5.field22306.method20424(var3, var4);
+      BlockState var8 = var5.field22306.method20424(var3, var4);
       BlockPos var9;
       if (!var5.field22315) {
          var9 = var4;
@@ -29,10 +29,10 @@ public class Class2920 extends Class2898<Class4703> {
             var3.nextInt(var5.field22313 + 1) - var3.nextInt(var5.field22313 + 1)
          );
          BlockPos var13 = var11.method8313();
-         Class7380 var14 = var1.method6738(var13);
-         if ((var1.method7007(var11) || var5.field22314 && var1.method6738(var11).method23384().method31089())
+         BlockState var14 = var1.getBlockState(var13);
+         if ((var1.method7007(var11) || var5.field22314 && var1.getBlockState(var11).method23384().method31089())
             && var8.method23443(var1, var11)
-            && (var5.field22308.isEmpty() || var5.field22308.contains(var14.method23383()))
+            && (var5.field22308.isEmpty() || var5.field22308.contains(var14.getBlock()))
             && !var5.field22309.contains(var14)
             && (
                !var5.field22316

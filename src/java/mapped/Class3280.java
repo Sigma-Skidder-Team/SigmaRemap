@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class3280 extends Class3257 {
+public class Class3280 extends Item {
    private static String[] field18787;
    private final Block field18788;
 
@@ -14,7 +14,7 @@ public class Class3280 extends Class3257 {
    }
 
    @Override
-   public String method11719() {
+   public String getTranslationKey() {
       return this.field18788.method11566();
    }
 

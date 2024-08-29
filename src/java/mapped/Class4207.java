@@ -13,7 +13,7 @@ public class Class4207 extends Class4194 {
       this.field20444 = var3;
    }
 
-   public Class4207(Class8761 var1, Class39 var2) {
+   public Class4207(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33450, var2);
    }
 
@@ -123,8 +123,8 @@ public class Class4207 extends Class4194 {
          8,
          var5
       );
-      Class7380 var12 = Blocks.IRON_DOOR.method11579().method23465(Class3461.field19293, Direction.WEST);
-      Class7380 var11 = Blocks.IRON_DOOR
+      BlockState var12 = Blocks.IRON_DOOR.method11579().method23465(Class3461.field19293, Direction.WEST);
+      BlockState var11 = Blocks.IRON_DOOR
          .method11579()
          .method23465(Class3461.field19293, Direction.WEST)
          .method23465(Class3461.field19297, Class84.field209);

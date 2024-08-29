@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5240 extends Module {
     public Class5240() {
         super(ModuleCategory.MOVEMENT, "Vanilla", "Step for Vanilla");
-        this.method15972(new Class6009<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 10.0F, 0.5F));
+        this.registerSetting(new Class6009<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 10.0F, 0.5F));
     }
 
     @EventTarget

@@ -12,5 +12,5 @@ public interface Class7495 {
    Collection<Class7826> method24424(Function<ResourceLocation, Class7495> var1, Set<Pair<String, String>> var2);
 
    @Nullable
-   Class7202 method24425(Class8968 var1, Function<Class7826, Class1713> var2, Class1902 var3, ResourceLocation var4);
+   IBakedModel method24425(Class8968 var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4);
 }

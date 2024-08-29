@@ -23,7 +23,7 @@ public class Class8693 implements ArgumentType<Class7329> {
 
    public static Class7760 method31320(CommandContext<Class6619> var0, String var1) {
       BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((Class6619)var0.getSource());
-      return new Class7760(var4.method8304(), var4.method8306());
+      return new Class7760(var4.getX(), var4.getZ());
    }
 
    public Class7329 parse(StringReader var1) throws CommandSyntaxException {

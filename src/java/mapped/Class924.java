@@ -16,7 +16,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private static final int[] field5244 = new int[]{0};
    private static final int[] field5245 = new int[]{2, 1};
    private static final int[] field5246 = new int[]{1};
-   public Class25<ItemStack> field5247 = Class25.<ItemStack>method68(3, ItemStack.EMPTY);
+   public NonNullList<ItemStack> field5247 = NonNullList.<ItemStack>method68(3, ItemStack.EMPTY);
    private int field5248;
    private int field5249;
    private int field5250;
@@ -30,13 +30,13 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       this.field5254 = var2;
    }
 
-   public static Map<Class3257, Integer> method3640() {
+   public static Map<Item, Integer> method3640() {
       LinkedHashMap var2 = Maps.newLinkedHashMap();
-      method3643(var2, Class8514.field37884, 20000);
+      method3643(var2, Items.field37884, 20000);
       method3643(var2, Blocks.field36795, 16000);
-      method3643(var2, Class8514.field37967, 2400);
-      method3643(var2, Class8514.field37798, 1600);
-      method3643(var2, Class8514.field37799, 1600);
+      method3643(var2, Items.field37967, 2400);
+      method3643(var2, Items.field37798, 1600);
+      method3643(var2, Items.field37799, 1600);
       method3642(var2, Class5985.field26085, 300);
       method3642(var2, Class5985.field26071, 300);
       method3642(var2, Class5985.field26077, 300);
@@ -64,25 +64,25 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       method3643(var2, Blocks.CRAFTING_TABLE, 300);
       method3643(var2, Blocks.field36720, 300);
       method3642(var2, Class5985.field26094, 300);
-      method3643(var2, Class8514.field37796, 300);
-      method3643(var2, Class8514.field37906, 300);
+      method3643(var2, Items.field37796, 300);
+      method3643(var2, Items.field37906, 300);
       method3643(var2, Blocks.LADDER, 300);
       method3642(var2, Class5985.field26115, 200);
-      method3643(var2, Class8514.field37806, 200);
-      method3643(var2, Class8514.field37805, 200);
-      method3643(var2, Class8514.field37809, 200);
-      method3643(var2, Class8514.field37808, 200);
-      method3643(var2, Class8514.field37807, 200);
+      method3643(var2, Items.field37806, 200);
+      method3643(var2, Items.field37805, 200);
+      method3643(var2, Items.field37809, 200);
+      method3643(var2, Items.field37808, 200);
+      method3643(var2, Items.field37807, 200);
       method3642(var2, Class5985.field26076, 200);
       method3642(var2, Class5985.field26113, 1200);
       method3642(var2, Class5985.field26070, 100);
       method3642(var2, Class5985.field26073, 100);
-      method3643(var2, Class8514.field37835, 100);
+      method3643(var2, Items.field37835, 100);
       method3642(var2, Class5985.field26083, 100);
-      method3643(var2, Class8514.field37836, 100);
+      method3643(var2, Items.field37836, 100);
       method3642(var2, Class5985.field26075, 67);
       method3643(var2, Blocks.field36963, 4001);
-      method3643(var2, Class8514.field38148, 300);
+      method3643(var2, Items.field38148, 300);
       method3643(var2, Blocks.field37009, 50);
       method3643(var2, Blocks.DEAD_BUSH, 100);
       method3643(var2, Blocks.field37053, 400);
@@ -95,23 +95,23 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       return var2;
    }
 
-   private static boolean method3641(Class3257 var0) {
+   private static boolean method3641(Item var0) {
       return Class5985.field26111.method24917(var0);
    }
 
-   private static void method3642(Map<Class3257, Integer> var0, Class7608<Class3257> var1, int var2) {
-      for (Class3257 var6 : var1.method24918()) {
+   private static void method3642(Map<Item, Integer> var0, Class7608<Item> var1, int var2) {
+      for (Item var6 : var1.method24918()) {
          if (!method3641(var6)) {
             var0.put(var6, var2);
          }
       }
    }
 
-   private static void method3643(Map<Class3257, Integer> var0, Class3303 var1, int var2) {
-      Class3257 var5 = var1.method11581();
+   private static void method3643(Map<Item, Integer> var0, Class3303 var1, int var2) {
+      Item var5 = var1.method11581();
       if (!method3641(var5)) {
          var0.put(var5, var2);
-      } else if (SharedConstants.field42545) {
+      } else if (SharedConstants.developmentMode) {
          throw (IllegalStateException) Util.method38516(
             new IllegalStateException(
                "A developer tried to explicitly make fire resistant item "
@@ -127,15 +127,15 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5247 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5247 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5247);
       this.field5248 = var2.method121("BurnTime");
       this.field5250 = var2.method121("CookTime");
       this.field5251 = var2.method121("CookTimeTotal");
       this.field5249 = this.method3650(this.field5247.get(1));
-      Class39 var5 = var2.method130("RecipesUsed");
+      CompoundNBT var5 = var2.getCompound("RecipesUsed");
 
       for (String var7 : var5.method97()) {
          this.field5253.put(new ResourceLocation(var7), var5.method122(var7));
@@ -143,15 +143,15 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       var1.method101("BurnTime", (short)this.field5248);
       var1.method101("CookTime", (short)this.field5250);
       var1.method101("CookTimeTotal", (short)this.field5251);
       Class7920.method26565(var1, this.field5247);
-      Class39 var4 = new Class39();
+      CompoundNBT var4 = new CompoundNBT();
       this.field5253.forEach((var1x, var2) -> var4.method102(var1x.toString(), var2));
-      var1.method99("RecipesUsed", var4);
+      var1.put("RecipesUsed", var4);
       return var1;
    }
 
@@ -165,18 +165,18 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
       if (!this.field5324.field9020) {
          ItemStack var5 = this.field5247.get(1);
-         if (this.method3644() || !var5.method32105() && !this.field5247.get(0).method32105()) {
+         if (this.method3644() || !var5.isEmpty() && !this.field5247.get(0).isEmpty()) {
             Class4843 var6 = this.field5324.method6816().method1030(this.field5254, this, this.field5324).orElse(null);
             if (!this.method3644() && this.method3648(var6)) {
                this.field5248 = this.method3650(var5);
                this.field5249 = this.field5248;
                if (this.method3644()) {
                   var4 = true;
-                  if (!var5.method32105()) {
-                     Class3257 var7 = var5.method32107();
+                  if (!var5.isEmpty()) {
+                     Item var7 = var5.getItem();
                      var5.method32182(1);
-                     if (var5.method32105()) {
-                        Class3257 var8 = var7.method11722();
+                     if (var5.isEmpty()) {
+                        Item var8 = var7.method11722();
                         this.field5247.set(1, var8 != null ? new ItemStack(var8) : ItemStack.EMPTY);
                      }
                   }
@@ -201,7 +201,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
          if (var3 != this.method3644()) {
             var4 = true;
             this.field5324
-               .method6725(this.field5325, this.field5324.method6738(this.field5325).method23465(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
+               .method6725(this.field5325, this.field5324.getBlockState(this.field5325).method23465(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
          }
       }
 
@@ -211,14 +211,14 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public boolean method3648(Class4843<?> var1) {
-      if (!this.field5247.get(0).method32105() && var1 != null) {
-         ItemStack var4 = var1.method14966();
-         if (!var4.method32105()) {
+      if (!this.field5247.get(0).isEmpty() && var1 != null) {
+         ItemStack var4 = var1.getRecipeOutput();
+         if (!var4.isEmpty()) {
             ItemStack var5 = this.field5247.get(2);
-            if (var5.method32105()) {
+            if (var5.isEmpty()) {
                return true;
             } else if (var5.method32132(var4)) {
-               return var5.method32179() < this.method3630() && var5.method32179() < var5.method32113() ? true : var5.method32179() < var4.method32113();
+               return var5.getCount() < this.method3630() && var5.getCount() < var5.method32113() ? true : var5.getCount() < var4.method32113();
             } else {
                return false;
             }
@@ -233,10 +233,10 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    private void method3649(Class4843<?> var1) {
       if (var1 != null && this.method3648(var1)) {
          ItemStack var4 = this.field5247.get(0);
-         ItemStack var5 = var1.method14966();
+         ItemStack var5 = var1.getRecipeOutput();
          ItemStack var6 = this.field5247.get(2);
-         if (!var6.method32105()) {
-            if (var6.method32107() == var5.method32107()) {
+         if (!var6.isEmpty()) {
+            if (var6.getItem() == var5.getItem()) {
                var6.method32181(1);
             }
          } else {
@@ -247,10 +247,10 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.method3636(var1);
          }
 
-         if (var4.method32107() == Blocks.field36453.method11581()
-            && !this.field5247.get(1).method32105()
-            && this.field5247.get(1).method32107() == Class8514.field37882) {
-            this.field5247.set(1, new ItemStack(Class8514.field37883));
+         if (var4.getItem() == Blocks.field36453.method11581()
+            && !this.field5247.get(1).isEmpty()
+            && this.field5247.get(1).getItem() == Items.field37882) {
+            this.field5247.set(1, new ItemStack(Items.field37883));
          }
 
          var4.method32182(1);
@@ -258,8 +258,8 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public int method3650(ItemStack var1) {
-      if (!var1.method32105()) {
-         Class3257 var4 = var1.method32107();
+      if (!var1.isEmpty()) {
+         Item var4 = var1.getItem();
          return method3640().getOrDefault(var4, 0);
       } else {
          return 0;
@@ -271,12 +271,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public static boolean method3652(ItemStack var0) {
-      return method3640().containsKey(var0.method32107());
+      return method3640().containsKey(var0.getItem());
    }
 
    @Override
    public int[] method3653(Direction var1) {
-      if (var1 != Direction.field672) {
+      if (var1 != Direction.DOWN) {
          return var1 != Direction.field673 ? field5246 : field5244;
       } else {
          return field5245;
@@ -290,9 +290,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public boolean method3655(int var1, ItemStack var2, Direction var3) {
-      if (var3 == Direction.field672 && var1 == 1) {
-         Class3257 var6 = var2.method32107();
-         if (var6 != Class8514.field37883 && var6 != Class8514.field37882) {
+      if (var3 == Direction.DOWN && var1 == 1) {
+         Item var6 = var2.getItem();
+         if (var6 != Items.field37883 && var6 != Items.field37882) {
             return false;
          }
       }
@@ -308,7 +308,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public boolean method3617() {
       for (ItemStack var4 : this.field5247) {
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             return false;
          }
       }
@@ -334,9 +334,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public void method3621(int var1, ItemStack var2) {
       ItemStack var5 = this.field5247.get(var1);
-      boolean var6 = !var2.method32105() && var2.method32132(var5) && ItemStack.method32127(var2, var5);
+      boolean var6 = !var2.isEmpty() && var2.method32132(var5) && ItemStack.method32127(var2, var5);
       this.field5247.set(var1, var2);
-      if (var2.method32179() > this.method3630()) {
+      if (var2.getCount() > this.method3630()) {
          var2.method32180(this.method3630());
       }
 
@@ -349,8 +349,8 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public boolean method3623(PlayerEntity var1) {
-      return this.field5324.method6759(this.field5325) == this
-         ? var1.method3276((double)this.field5325.method8304() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.method8306() + 0.5)
+      return this.field5324.getTileEntity(this.field5325) == this
+         ? var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
             <= 64.0
          : false;
    }
@@ -362,7 +362,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             return true;
          } else {
             ItemStack var5 = this.field5247.get(1);
-            return method3652(var2) || var2.method32107() == Class8514.field37882 && var5.method32107() != Class8514.field37882;
+            return method3652(var2) || var2.getItem() == Items.field37882 && var5.getItem() != Items.field37882;
          }
       } else {
          return false;
@@ -393,7 +393,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    public void method3656(PlayerEntity var1) {
-      List var4 = this.method3657(var1.field5024, var1.getPositionVec());
+      List var4 = this.method3657(var1.world, var1.getPositionVec());
       var1.method2778(var4);
       this.field5253.clear();
    }

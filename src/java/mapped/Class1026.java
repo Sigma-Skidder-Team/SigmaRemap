@@ -14,7 +14,7 @@ public abstract class Class1026 extends Class1028 {
    private boolean field5716;
    private int field5717;
 
-   public Class1026(Class8992<? extends Class1026> var1, World var2) {
+   public Class1026(EntityType<? extends Class1026> var1, World var2) {
       super(var1, var2);
    }
 
@@ -45,16 +45,16 @@ public abstract class Class1026 extends Class1028 {
 
    @Override
    public void method2871() {
-      if (this.field5024 instanceof ServerWorld && this.method3066()) {
+      if (this.world instanceof ServerWorld && this.method3066()) {
          Class7699 var3 = this.method4551();
          if (this.method4547()) {
             if (var3 != null) {
                Class880 var4 = this.method4232();
-               if (var4 != null && (var4.method3204() == Class8992.field41111 || var4.method3204() == Class8992.field41041)) {
+               if (var4 != null && (var4.getType() == EntityType.PLAYER || var4.getType() == EntityType.field41041)) {
                   this.field4973 = 0;
                }
-            } else if (this.field5024.method6783() % 20L == 0L) {
-               Class7699 var5 = ((ServerWorld)this.field5024).method6957(this.method3432());
+            } else if (this.world.method6783() % 20L == 0L) {
+               Class7699 var5 = ((ServerWorld)this.world).method6957(this.getPosition());
                if (var5 != null && Class7531.method24612(this, var5)) {
                   var5.method25414(var5.method25396(), this, (BlockPos)null, true);
                }
@@ -72,7 +72,7 @@ public abstract class Class1026 extends Class1028 {
 
    @Override
    public void method2737(Class8654 var1) {
-      if (this.field5024 instanceof ServerWorld) {
+      if (this.world instanceof ServerWorld) {
          Entity var4 = var1.method31109();
          Class7699 var5 = this.method4551();
          if (var5 != null) {
@@ -80,14 +80,14 @@ public abstract class Class1026 extends Class1028 {
                var5.method25427(this.method4554());
             }
 
-            if (var4 != null && var4.method3204() == Class8992.field41111) {
+            if (var4 != null && var4.getType() == EntityType.PLAYER) {
                var5.method25437(var4);
             }
 
             var5.method25419(this, false);
          }
 
-         if (this.method4577() && var5 == null && ((ServerWorld)this.field5024).method6957(this.method3432()) == null) {
+         if (this.method4577() && var5 == null && ((ServerWorld)this.world).method6957(this.getPosition()) == null) {
             ItemStack var6 = this.method2943(Class2106.field13736);
             PlayerEntity var7 = null;
             if (!(var4 instanceof PlayerEntity)) {
@@ -102,7 +102,7 @@ public abstract class Class1026 extends Class1028 {
                var7 = (PlayerEntity)var4;
             }
 
-            if (!var6.method32105() && ItemStack.method32128(var6, Class7699.method25421()) && var7 != null) {
+            if (!var6.isEmpty() && ItemStack.method32128(var6, Class7699.method25421()) && var7 != null) {
                Class2023 var11 = var7.method3034(Class8254.field35497);
                int var12 = 1;
                if (var11 == null) {
@@ -114,7 +114,7 @@ public abstract class Class1026 extends Class1028 {
 
                var12 = MathHelper.method37775(var12, 0, 4);
                Class2023 var10 = new Class2023(Class8254.field35497, 120000, var12, false, false, true);
-               if (!this.field5024.method6789().method17135(Class5462.field24246)) {
+               if (!this.world.method6789().method17135(Class5462.field24246)) {
                   var7.method3035(var10);
                }
             }
@@ -159,7 +159,7 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Wave", this.field5715);
       var1.method115("CanJoinRaid", this.field5716);
@@ -169,13 +169,13 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5715 = var1.method122("Wave");
       this.field5716 = var1.method132("CanJoinRaid");
       if (var1.method119("RaidId", 3)) {
-         if (this.field5024 instanceof ServerWorld) {
-            this.field5714 = ((ServerWorld)this.field5024).method6956().method24610(var1.method122("RaidId"));
+         if (this.world instanceof ServerWorld) {
+            this.field5714 = ((ServerWorld)this.world).method6956().method24610(var1.method122("RaidId"));
          }
 
          if (this.field5714 != null) {
@@ -195,13 +195,13 @@ public abstract class Class1026 extends Class1028 {
          Class2106 var6 = Class2106.field13736;
          ItemStack var7 = this.method2943(var6);
          double var8 = (double)this.method4269(var6);
-         if (!var7.method32105() && (double)Math.max(this.field5054.nextFloat() - 0.1F, 0.0F) < var8) {
+         if (!var7.isEmpty() && (double)Math.max(this.field5054.nextFloat() - 0.1F, 0.0F) < var8) {
             this.method3302(var7);
          }
 
          this.method3134(var1);
          this.method2944(var6, var4);
-         this.method2751(var1, var4.method32179());
+         this.method2751(var1, var4.getCount());
          var1.method2904();
          this.method4551().method25426(this.method4554(), this);
          this.method4576(true);
@@ -239,8 +239,8 @@ public abstract class Class1026 extends Class1028 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
-      this.method4548(this.method3204() != Class8992.field41101 || var3 != Class2202.field14391);
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+      this.method4548(this.getType() != EntityType.field41101 || var3 != Class2202.field14391);
       return super.method4276(var1, var2, var3, var4, var5);
    }
 

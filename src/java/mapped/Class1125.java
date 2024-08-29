@@ -6,7 +6,7 @@ public class Class1125 extends Class851<Class5827> {
    private float field6163;
    private float field6164;
 
-   public Class1125(Class5827 var1, Class974 var2, AbstractHorseEntity var3) {
+   public Class1125(Class5827 var1, PlayerInventory var2, AbstractHorseEntity var3) {
       super(var1, var2, var3.getDisplayName());
       this.field6162 = var3;
       this.field4567 = false;
@@ -38,7 +38,7 @@ public class Class1125 extends Class851<Class5827> {
          }
       }
 
-      Class859.method2635(var7 + 51, var8 + 60, 17, (float)(var7 + 51) - this.field6163, (float)(var8 + 75 - 50) - this.field6164, this.field6162);
+      InventoryScreen.method2635(var7 + 51, var8 + 60, 17, (float)(var7 + 51) - this.field6163, (float)(var8 + 75 - 50) - this.field6164, this.field6162);
    }
 
    @Override

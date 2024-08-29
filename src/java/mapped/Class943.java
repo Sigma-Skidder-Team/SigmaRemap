@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class943 extends Class944 implements Class942, Class935 {
+public class Class943 extends TileEntity implements Class942, Class935 {
    private static String[] field5317;
    public float field5318;
    public float field5319;
@@ -18,9 +18,9 @@ public class Class943 extends Class944 implements Class942, Class935 {
       }
 
       this.field5319 = this.field5318;
-      int var3 = this.field5325.method8304();
+      int var3 = this.field5325.getX();
       int var4 = this.field5325.getY();
-      int var5 = this.field5325.method8306();
+      int var5 = this.field5325.getZ();
       float var6 = 0.1F;
       if (this.field5320 > 0 && this.field5318 == 0.0F) {
          double var7 = (double)var3 + 0.5;
@@ -100,9 +100,9 @@ public class Class943 extends Class944 implements Class942, Class935 {
    }
 
    public boolean method3768(PlayerEntity var1) {
-      return this.field5324.method6759(this.field5325) == this
+      return this.field5324.getTileEntity(this.field5325) == this
          ? !(
-            var1.method3276((double)this.field5325.method8304() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.method8306() + 0.5)
+            var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
                > 64.0
          )
          : false;

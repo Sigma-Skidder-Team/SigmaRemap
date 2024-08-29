@@ -8,10 +8,10 @@ import java.util.Random;
 public enum Class1940 {
    field12604 {
       @Override
-      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5) {
          BlockPos var8 = new BlockPos(0, 128, 0);
 
-         for (Class1001 var10 : var3) {
+         for (EnderCrystalEntity var10 : var3) {
             var10.method4142(var8);
          }
 
@@ -20,7 +20,7 @@ public enum Class1940 {
    },
    field12605 {
       @Override
-      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5) {
          if (var4 >= 100) {
             var2.method26113(field12606);
          } else if (var4 == 0 || var4 == 50 || var4 == 51 || var4 == 52 || var4 >= 95) {
@@ -30,7 +30,7 @@ public enum Class1940 {
    },
    field12606 {
       @Override
-      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5) {
          byte var8 = 40;
          boolean var9 = var4 % 40 == 0;
          boolean var10 = var4 % 40 == 39;
@@ -66,7 +66,7 @@ public enum Class1940 {
                           .method11216(var18)
                           .method26521(var1, var1.method6883().method7370(), new Random(), new BlockPos(var13.method37626(), 45, var13.method37627()));
                } else {
-                  for (Class1001 var19 : var3) {
+                  for (EnderCrystalEntity var19 : var3) {
                      var19.method4142(new BlockPos(var13.method37626(), var13.method37629() + 1, var13.method37627()));
                   }
                }
@@ -76,7 +76,7 @@ public enum Class1940 {
    },
    field12607 {
       @Override
-      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5) {
          if (var4 < 100) {
             if (var4 < 80) {
                if (var4 != 0) {
@@ -84,7 +84,7 @@ public enum Class1940 {
                      var1.method6999(3001, new BlockPos(0, 128, 0), 0);
                   }
                } else {
-                  for (Class1001 var9 : var3) {
+                  for (EnderCrystalEntity var9 : var3) {
                      var9.method4142(new BlockPos(0, 128, 0));
                   }
                }
@@ -95,7 +95,7 @@ public enum Class1940 {
             var2.method26113(field12608);
             var2.method26130();
 
-            for (Class1001 var11 : var3) {
+            for (EnderCrystalEntity var11 : var3) {
                var11.method4142((BlockPos)null);
                var1.method6755(var11, var11.getPosX(), var11.getPosY(), var11.getPosZ(), 6.0F, Class2141.field14014);
                var11.method2904();
@@ -105,7 +105,7 @@ public enum Class1940 {
    },
    field12608 {
       @Override
-      public void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5) {
+      public void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5) {
 
       }
    };
@@ -115,5 +115,5 @@ public enum Class1940 {
    private Class1940() {
    }
 
-   public abstract void method8204(ServerWorld var1, Class7819 var2, List<Class1001> var3, int var4, BlockPos var5);
+   public abstract void method8204(ServerWorld var1, Class7819 var2, List<EnderCrystalEntity> var3, int var4, BlockPos var5);
 }

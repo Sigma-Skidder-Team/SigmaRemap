@@ -9,9 +9,9 @@ public class Class9028 {
    public Class9074 field41304;
    public Class9074 field41305;
    public byte[] field41306;
-   public Class41 field41307;
-   public Class41 field41308;
-   public Class41 field41309;
+   public ListNBT field41307;
+   public ListNBT field41308;
+   public ListNBT field41309;
    public final int field41310;
    public final int field41311;
 

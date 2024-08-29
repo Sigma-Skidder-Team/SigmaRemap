@@ -13,8 +13,8 @@ public final class Class9309 {
       var0 -> var0.group(
                Class9763.field45673.fieldOf("structures").forGetter(Class9309::method35160),
                Class9556.field44510.fieldOf("noise").forGetter(Class9309::method35161),
-               Class7380.field31585.fieldOf("default_block").forGetter(Class9309::method35162),
-               Class7380.field31585.fieldOf("default_fluid").forGetter(Class9309::method35163),
+               BlockState.field31585.fieldOf("default_block").forGetter(Class9309::method35162),
+               BlockState.field31585.fieldOf("default_fluid").forGetter(Class9309::method35163),
                Codec.intRange(-20, 276).fieldOf("bedrock_roof_position").forGetter(Class9309::method35164),
                Codec.intRange(-20, 276).fieldOf("bedrock_floor_position").forGetter(Class9309::method35165),
                Codec.intRange(0, 255).fieldOf("sea_level").forGetter(Class9309::method35166),
@@ -25,8 +25,8 @@ public final class Class9309 {
    public static final Codec<Supplier<Class9309>> field43221 = Class9054.method33671(Registry.field16099, field43220);
    private final Class9763 field43222;
    private final Class9556 field43223;
-   private final Class7380 field43224;
-   private final Class7380 field43225;
+   private final BlockState field43224;
+   private final BlockState field43225;
    private final int field43226;
    private final int field43227;
    private final int field43228;
@@ -39,7 +39,7 @@ public final class Class9309 {
    public static final RegistryKey<Class9309> field43235 = RegistryKey.<Class9309>method31395(Registry.field16099, new ResourceLocation("floating_islands"));
    private static final Class9309 field43236 = method35169(field43230, method35173(new Class9763(true), false, field43230.method31399()));
 
-   private Class9309(Class9763 var1, Class9556 var2, Class7380 var3, Class7380 var4, int var5, int var6, int var7, boolean var8) {
+   private Class9309(Class9763 var1, Class9556 var2, BlockState var3, BlockState var4, int var5, int var6, int var7, boolean var8) {
       this.field43222 = var1;
       this.field43223 = var2;
       this.field43224 = var3;
@@ -58,11 +58,11 @@ public final class Class9309 {
       return this.field43223;
    }
 
-   public Class7380 method35162() {
+   public BlockState method35162() {
       return this.field43224;
    }
 
-   public Class7380 method35163() {
+   public BlockState method35163() {
       return this.field43225;
    }
 
@@ -96,7 +96,7 @@ public final class Class9309 {
       return field43236;
    }
 
-   private static Class9309 method35171(Class9763 var0, Class7380 var1, Class7380 var2, ResourceLocation var3, boolean var4, boolean var5) {
+   private static Class9309 method35171(Class9763 var0, BlockState var1, BlockState var2, ResourceLocation var3, boolean var4, boolean var5) {
       return new Class9309(
          var0,
          new Class9556(
@@ -111,7 +111,7 @@ public final class Class9309 {
       );
    }
 
-   private static Class9309 method35172(Class9763 var0, Class7380 var1, Class7380 var2, ResourceLocation var3) {
+   private static Class9309 method35172(Class9763 var0, BlockState var1, BlockState var2, ResourceLocation var3) {
       HashMap var6 = Maps.newHashMap(Class9763.field45674);
       var6.put(Structure.field18064, new Class8483(25, 10, 34222645));
       return new Class9309(

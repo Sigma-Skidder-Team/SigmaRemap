@@ -55,11 +55,11 @@ public class Class1343 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field7138.method5633();
    }
 
@@ -111,7 +111,7 @@ public class Class1343 extends Class798 {
       }
 
       this.field7138 = new Class1189(
-         this.field4562.field1294,
+         this.field4562.fontRenderer,
          this.field7140 + 2,
          method1929(1),
          this.field7141 - 4,
@@ -179,7 +179,7 @@ public class Class1343 extends Class798 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field7142, method1929(13), this.field7141, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field7139))
+         new Class1206(this.field7142, method1929(13), this.field7141, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field7139))
       );
       this.<Class1189>method2456(this.field7138);
       this.field7162 = this.<Class1153>method2456(

@@ -312,7 +312,7 @@ public class Class6947<E extends Class880> {
    }
 
    public void method21435(ServerWorld var1, E var2) {
-      long var5 = var2.field5024.method6783();
+      long var5 = var2.world.method6783();
 
       for (Class3676 var8 : this.method21416()) {
          var8.method12505(var1, var2, var5);

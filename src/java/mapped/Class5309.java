@@ -1,27 +1,27 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4429;
+import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
 public class Class5309 extends Module {
     public Class5309() {
         super(ModuleCategory.COMBAT, "InteractRange", "Allows you to interact farer away");
-        this.method15972(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 3.0F, 8.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 3.0F, 8.0F, 0.01F));
     }
 
     @EventTarget
-    private void method16684(Class4429 var1) {
+    private void method16684(ClickEvent var1) {
         if (this.method15996()) {
             Entity var4 = Class5628.method17711(mc.player.field5031, mc.player.field5032, this.method15977("Range"), 0.0);
-            Class8711 var5 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.method15977("Range"));
-            if (var4 != null && mc.field1346.method31417() == Class2100.field13689) {
-                mc.field1346 = new Class8709(var4);
+            BlockRayTraceResult var5 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.method15977("Range"));
+            if (var4 != null && mc.objectMouseOver.getType() == RayTraceResult.Type.MISS) {
+                mc.objectMouseOver = new EntityRayTraceResult(var4);
             }
 
-            if (var4 == null && mc.field1346.method31417() == Class2100.field13689 && var5 != null) {
-                mc.field1346 = var5;
+            if (var4 == null && mc.objectMouseOver.getType() == RayTraceResult.Type.MISS && var5 != null) {
+                mc.objectMouseOver = var5;
             }
         }
     }

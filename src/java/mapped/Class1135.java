@@ -9,9 +9,9 @@ import java.util.Optional;
 public class Class1135 extends Screen {
    private static String[] field6191;
    public final Screen field6192;
-   public final Class9574 field6193;
+   public final GameSettings field6193;
 
-   public Class1135(Screen var1, Class9574 var2, ITextComponent var3) {
+   public Class1135(Screen var1, GameSettings var2, ITextComponent var3) {
       super(var3);
       this.field6192 = var1;
       this.field6193 = var2;
@@ -19,7 +19,7 @@ public class Class1135 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.method37146();
+      this.field4562.gameSettings.saveOptions();
    }
 
    @Override

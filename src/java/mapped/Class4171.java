@@ -13,7 +13,7 @@ public class Class4171 extends Class4167 {
       this.field20433 = var2.nextInt();
    }
 
-   public Class4171(Class8761 var1, Class39 var2) {
+   public Class4171(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33430, var2);
       this.field20433 = var2.method122("Seed");
    }
@@ -24,7 +24,7 @@ public class Class4171 extends Class4167 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method102("Seed", this.field20433);
    }

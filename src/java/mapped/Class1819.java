@@ -14,22 +14,22 @@ public enum Class1819 {
    field9818("append") {
       @Override
       public void method8068(Class30 var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
-         List<Class30> var6 = var2.method37728(var1, Class41::new);
+         List<Class30> var6 = var2.method37728(var1, ListNBT::new);
          var6.forEach(var1x -> {
-            if (var1x instanceof Class41) {
-               var3.forEach(var1xx -> ((Class41)var1x).add(var1xx.method79()));
+            if (var1x instanceof ListNBT) {
+               var3.forEach(var1xx -> ((ListNBT)var1x).add(var1xx.method79()));
             }
          });
       }
    },
    field9819("merge") {
       public void method8068(Class30 var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
-         List<Class30> var6 = var2.method37728(var1, Class39::new);
+         List<Class30> var6 = var2.method37728(var1, CompoundNBT::new);
          var6.forEach(var1x -> {
-            if (var1x instanceof Class39) {
+            if (var1x instanceof CompoundNBT) {
                var3.forEach(var1xx -> {
-                  if (var1xx instanceof Class39) {
-                     ((Class39)var1x).method140((Class39)var1xx);
+                  if (var1xx instanceof CompoundNBT) {
+                     ((CompoundNBT)var1x).method140((CompoundNBT)var1xx);
                   }
                });
             }

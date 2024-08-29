@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -16,7 +16,7 @@ public class Class5228 extends Module {
 
     public Class5228() {
         super(ModuleCategory.MISC, "Unstuck", "Toggle this when an anticheat freeze you mid-air");
-        this.method15972(new Class6009<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F, Float.class, 2.0F, 20.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F, Float.class, 2.0F, 20.0F, 1.0F));
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Class5228 extends Module {
     }
 
     @EventTarget
-    public void method16286(Class4418 var1) {
+    public void method16286(WorldLoadEvent var1) {
         if (this.method15996()) {
             this.field23574 = 0;
         }

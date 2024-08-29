@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 public class Class1126 extends Class851<Class5815> {
    private static final ResourceLocation field6165 = new ResourceLocation("textures/gui/container/grindstone.png");
 
-   public Class1126(Class5815 var1, Class974 var2, ITextComponent var3) {
+   public Class1126(Class5815 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 

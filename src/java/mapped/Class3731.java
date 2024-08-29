@@ -13,7 +13,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
 
    public boolean method12508(ServerWorld var1, E var2) {
       Class880 var5 = method12658(var2);
-      return var2.method3092(Class8514.field38148) && Class6983.method21583(var2, var5) && Class6983.method21580(var2, var5, 0);
+      return var2.method3092(Items.field38148) && Class6983.method21583(var2, var5) && Class6983.method21580(var2, var5, 0);
    }
 
    public boolean method12499(ServerWorld var1, E var2, long var3) {
@@ -27,11 +27,11 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
    }
 
    public void method12506(ServerWorld var1, E var2, long var3) {
-      if (var2.method3148()) {
+      if (var2.isHandActive()) {
          var2.method3162();
       }
 
-      if (var2.method3092(Class8514.field38148)) {
+      if (var2.method3092(Items.field38148)) {
          ((Class1023)var2).method4535(false);
          Class3261.method11756(var2.method3158(), false);
       }
@@ -43,7 +43,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
             if (this.field19841 != Class2276.field14828) {
                if (this.field19841 == Class2276.field14829) {
                   ((Class1022)var1).method4530(var2, 1.0F);
-                  ItemStack var5 = var1.getHeldItem(Class9456.method36389(var1, Class8514.field38148));
+                  ItemStack var5 = var1.getHeldItem(Class9456.method36389(var1, Items.field38148));
                   Class3261.method11756(var5, false);
                   this.field19841 = Class2276.field14826;
                }
@@ -54,7 +54,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
                }
             }
          } else {
-            if (!var1.method3148()) {
+            if (!var1.isHandActive()) {
                this.field19841 = Class2276.field14826;
             }
 
@@ -68,7 +68,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends Class880> exte
             }
          }
       } else {
-         var1.method3154(Class9456.method36389(var1, Class8514.field38148));
+         var1.method3154(Class9456.method36389(var1, Items.field38148));
          this.field19841 = Class2276.field14827;
          ((Class1023)var1).method4535(true);
       }

@@ -50,21 +50,21 @@ public class Class2606 extends Class2605 {
       }
 
       if (Class1110.method5339(this.field16851).field18049 < this.field16851.getPosY()
-         && !this.field16851.field5024.method7007(this.field16851.method3432().method8340(1))) {
+         && !this.field16851.world.method7007(this.field16851.getPosition().method8340(1))) {
          this.field16855 = Math.max(1.0F, this.field16855);
          this.method10813();
       }
 
       if (Class1110.method5339(this.field16851).field18049 > this.field16851.getPosY()
-         && !this.field16851.field5024.method7007(this.field16851.method3432().method8339(1))) {
+         && !this.field16851.world.method7007(this.field16851.getPosition().method8339(1))) {
          this.field16855 = Math.min(-1.0F, this.field16855);
          this.method10813();
       }
    }
 
    private void method10813() {
-      if (BlockPos.field13032.equals(Class1110.method5349(this.field16851))) {
-         Class1110.method5350(this.field16851, this.field16851.method3432());
+      if (BlockPos.ZERO.equals(Class1110.method5349(this.field16851))) {
+         Class1110.method5350(this.field16851, this.field16851.getPosition());
       }
 
       this.field16853 = this.field16853 + this.field16856 * 15.0F * (float) (Math.PI / 180.0);
@@ -72,9 +72,9 @@ public class Class2606 extends Class2605 {
          this.field16851,
          Vector3d.method11329(Class1110.method5349(this.field16851))
             .method11339(
-               (double)(this.field16854 * MathHelper.method37764(this.field16853)),
+               (double)(this.field16854 * MathHelper.cos(this.field16853)),
                (double)(-4.0F + this.field16855),
-               (double)(this.field16854 * MathHelper.method37763(this.field16853))
+               (double)(this.field16854 * MathHelper.sin(this.field16853))
             )
       );
    }

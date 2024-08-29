@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 import java.util.UUID;
 
 public class Class1116 extends AbstractClientPlayerEntity {
-   public Class1116(Class1656 var1, GameProfile var2) {
+   public Class1116(ClientWorld var1, GameProfile var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.field5052 = true;
@@ -68,9 +68,9 @@ public class Class1116 extends AbstractClientPlayerEntity {
       }
 
       this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
-      this.field5024.method6820().startSection("push");
+      this.world.method6820().startSection("push");
       this.method3126();
-      this.field5024.method6820().endSection();
+      this.world.method6820().endSection();
    }
 
    @Override
@@ -80,7 +80,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
    @Override
    public void sendMessage(ITextComponent var1, UUID var2) {
       Minecraft var5 = Minecraft.getInstance();
-      if (!var5.method1511(var2)) {
+      if (!var5.cannotSendChatMessages(var2)) {
          var5.ingameGUI.getChatGUI().method5930(var1);
       }
    }

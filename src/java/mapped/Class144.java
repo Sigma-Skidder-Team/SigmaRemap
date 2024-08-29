@@ -20,7 +20,7 @@ public class Class144 extends Class128 {
       if (var5 != null) {
          Random var6 = var2.method26088();
          float var7 = 1.0F / var5;
-         int var8 = var1.method32179();
+         int var8 = var1.getCount();
          int var9 = 0;
 
          for (int var10 = 0; var10 < var8; var10++) {

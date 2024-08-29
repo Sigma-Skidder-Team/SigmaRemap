@@ -5,7 +5,7 @@ public class Class1033 extends Class1031 implements Class1022 {
    private int field5739;
    private final Vector3d[][] field5740;
 
-   public Class1033(Class8992<? extends Class1033> var1, World var2) {
+   public Class1033(EntityType<? extends Class1033> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
       this.field5740 = new Vector3d[2][4];
@@ -38,8 +38,8 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
-      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37796));
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
+      this.method2944(Class2106.field13731, new ItemStack(Items.field37796));
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
@@ -56,7 +56,7 @@ public class Class1033 extends Class1031 implements Class1022 {
    @Override
    public void method2871() {
       super.method2871();
-      if (this.field5024.field9020 && this.method3342()) {
+      if (this.world.field9020 && this.method3342()) {
          this.field5739--;
          if (this.field5739 < 0) {
             this.field5739 = 0;
@@ -77,10 +77,10 @@ public class Class1033 extends Class1031 implements Class1022 {
             }
 
             for (int var7 = 0; var7 < 16; var7++) {
-               this.field5024.method6746(Class7940.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
+               this.world.method6746(Class7940.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
             }
 
-            this.field5024.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26695, this.method2864(), 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26695, this.method2864(), 1.0F, 1.0F, false);
          } else if (this.field4952 == this.field4953 - 1) {
             this.field5739 = 3;
 
@@ -150,15 +150,15 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Class8514.field37796)));
+      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.field37796)));
       AbstractArrowEntity var6 = Class9456.method36390(this, var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
-      var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.field5024.method6997().method8905() * 4));
+      var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
       this.method2863(Class6067.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.field5024.method6916(var6);
+      this.world.method6916(var6);
    }
 
    @Override

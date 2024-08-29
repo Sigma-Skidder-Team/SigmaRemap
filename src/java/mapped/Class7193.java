@@ -77,10 +77,10 @@ public class Class7193 extends Class7194 {
       if (!var3.get(var19)) {
          var3.set(var19);
          var5.method8372(var11, var14, var12);
-         if (!this.method22609(var1.method6738(var5))) {
+         if (!this.method22609(var1.getBlockState(var5))) {
             return false;
          } else {
-            Class7380 var20;
+            BlockState var20;
             if (var14 > 31) {
                var20 = field30894;
             } else {

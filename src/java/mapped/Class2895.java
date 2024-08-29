@@ -44,10 +44,10 @@ public class Class2895<T extends Class1006> extends Class2894<T> {
       float var9 = (float) (Math.PI / 6);
       float var10 = var4 * 0.1F + var2 * 0.5F;
       float var11 = 0.08F + var3 * 0.4F;
-      this.field17928.field31037 = (float) (-Math.PI / 6) - MathHelper.method37764(var10 * 1.2F) * var11;
-      this.field17929.field31037 = (float) (Math.PI / 6) + MathHelper.method37764(var10) * var11;
+      this.field17928.field31037 = (float) (-Math.PI / 6) - MathHelper.cos(var10 * 1.2F) * var11;
+      this.field17929.field31037 = (float) (Math.PI / 6) + MathHelper.cos(var10) * var11;
       if (!(var1 instanceof Class1035)) {
-         if (var1.method3204() == Class8992.field41110) {
+         if (var1.getType() == EntityType.field41110) {
             Class7972.method27109(this.field17436, this.field17435, var1.method4307(), this.field17600, var4);
          }
       } else {
@@ -77,15 +77,15 @@ public class Class2895<T extends Class1006> extends Class2894<T> {
             }
          } else {
             float var14 = var4 / 60.0F;
-            this.field17929.field31037 = (float) (Math.PI / 6) + (float) (Math.PI / 180.0) * MathHelper.method37763(var14 * 30.0F) * 10.0F;
-            this.field17928.field31037 = (float) (-Math.PI / 6) - (float) (Math.PI / 180.0) * MathHelper.method37764(var14 * 30.0F) * 10.0F;
-            this.field17432.field31032 = MathHelper.method37763(var14 * 10.0F);
-            this.field17432.field31033 = MathHelper.method37763(var14 * 40.0F) + 0.4F;
-            this.field17435.field31037 = (float) (Math.PI / 180.0) * (70.0F + MathHelper.method37764(var14 * 40.0F) * 10.0F);
+            this.field17929.field31037 = (float) (Math.PI / 6) + (float) (Math.PI / 180.0) * MathHelper.sin(var14 * 30.0F) * 10.0F;
+            this.field17928.field31037 = (float) (-Math.PI / 6) - (float) (Math.PI / 180.0) * MathHelper.cos(var14 * 30.0F) * 10.0F;
+            this.field17432.field31032 = MathHelper.sin(var14 * 10.0F);
+            this.field17432.field31033 = MathHelper.sin(var14 * 40.0F) + 0.4F;
+            this.field17435.field31037 = (float) (Math.PI / 180.0) * (70.0F + MathHelper.cos(var14 * 40.0F) * 10.0F);
             this.field17436.field31037 = this.field17435.field31037 * -1.0F;
-            this.field17435.field31033 = MathHelper.method37763(var14 * 40.0F) * 0.5F + 1.5F;
-            this.field17436.field31033 = MathHelper.method37763(var14 * 40.0F) * 0.5F + 1.5F;
-            this.field17434.field31033 = MathHelper.method37763(var14 * 40.0F) * 0.35F;
+            this.field17435.field31033 = MathHelper.sin(var14 * 40.0F) * 0.5F + 1.5F;
+            this.field17436.field31033 = MathHelper.sin(var14 * 40.0F) * 0.5F + 1.5F;
+            this.field17434.field31033 = MathHelper.sin(var14 * 40.0F) * 0.35F;
          }
       }
 

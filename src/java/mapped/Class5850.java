@@ -18,10 +18,10 @@ public class Class5850 extends Class5839 {
 
    @Override
    public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
-      var2.method32136(var1.field5024, var1, var2.method32179());
+      var2.method32136(var1.world, var1, var2.getCount());
       Class5811.method18117(this.field25601).method3638(var1);
       ItemStack var5 = this.field25601.field25462.method18272(1);
-      if (!var5.method32105()) {
+      if (!var5.isEmpty()) {
          Class5811.method18118(this.field25601);
       }
 

@@ -26,20 +26,20 @@ public class Class7972 {
    }
 
    public static <T extends Class1006> void method27107(Class7219 var0, Class7219 var1, T var2, float var3, float var4) {
-      float var7 = MathHelper.method37763(var3 * (float) Math.PI);
-      float var8 = MathHelper.method37763((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
+      float var7 = MathHelper.sin(var3 * (float) Math.PI);
+      float var8 = MathHelper.sin((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
       var0.field31037 = 0.0F;
       var1.field31037 = 0.0F;
       var0.field31036 = (float) (Math.PI / 20);
       var1.field31036 = (float) (-Math.PI / 20);
       if (var2.method2967() != Class2205.field14418) {
-         var0.field31035 = -0.0F + MathHelper.method37764(var4 * 0.19F) * 0.5F;
-         var1.field31035 = -1.8849558F + MathHelper.method37764(var4 * 0.09F) * 0.15F;
+         var0.field31035 = -0.0F + MathHelper.cos(var4 * 0.19F) * 0.5F;
+         var1.field31035 = -1.8849558F + MathHelper.cos(var4 * 0.09F) * 0.15F;
          var0.field31035 += var7 * 1.2F - var8 * 0.4F;
          var1.field31035 += var7 * 2.2F - var8 * 0.4F;
       } else {
-         var0.field31035 = -1.8849558F + MathHelper.method37764(var4 * 0.09F) * 0.15F;
-         var1.field31035 = -0.0F + MathHelper.method37764(var4 * 0.19F) * 0.5F;
+         var0.field31035 = -1.8849558F + MathHelper.cos(var4 * 0.09F) * 0.15F;
+         var1.field31035 = -0.0F + MathHelper.cos(var4 * 0.19F) * 0.5F;
          var0.field31035 += var7 * 2.2F - var8 * 0.4F;
          var1.field31035 += var7 * 1.2F - var8 * 0.4F;
       }
@@ -48,15 +48,15 @@ public class Class7972 {
    }
 
    public static void method27108(Class7219 var0, Class7219 var1, float var2) {
-      var0.field31037 = var0.field31037 + MathHelper.method37764(var2 * 0.09F) * 0.05F + 0.05F;
-      var1.field31037 = var1.field31037 - (MathHelper.method37764(var2 * 0.09F) * 0.05F + 0.05F);
-      var0.field31035 = var0.field31035 + MathHelper.method37763(var2 * 0.067F) * 0.05F;
-      var1.field31035 = var1.field31035 - MathHelper.method37763(var2 * 0.067F) * 0.05F;
+      var0.field31037 = var0.field31037 + MathHelper.cos(var2 * 0.09F) * 0.05F + 0.05F;
+      var1.field31037 = var1.field31037 - (MathHelper.cos(var2 * 0.09F) * 0.05F + 0.05F);
+      var0.field31035 = var0.field31035 + MathHelper.sin(var2 * 0.067F) * 0.05F;
+      var1.field31035 = var1.field31035 - MathHelper.sin(var2 * 0.067F) * 0.05F;
    }
 
    public static void method27109(Class7219 var0, Class7219 var1, boolean var2, float var3, float var4) {
-      float var7 = MathHelper.method37763(var3 * (float) Math.PI);
-      float var8 = MathHelper.method37763((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
+      float var7 = MathHelper.sin(var3 * (float) Math.PI);
+      float var8 = MathHelper.sin((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
       var1.field31037 = 0.0F;
       var0.field31037 = 0.0F;
       var1.field31036 = -(0.1F - var7 * 0.6F);

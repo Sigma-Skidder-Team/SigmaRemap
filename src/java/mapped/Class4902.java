@@ -26,7 +26,7 @@ public class Class4902 extends Class4874<Class4467> {
       HashSet var6 = Sets.newHashSet();
 
       for (Entity var8 : var2) {
-         var6.add(var8.method3204());
+         var6.add(var8.getType());
          var5.add(Class6671.method20332(var1, var8));
       }
 

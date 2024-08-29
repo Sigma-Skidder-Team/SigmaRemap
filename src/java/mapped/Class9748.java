@@ -237,10 +237,10 @@ public class Class9748 {
          }, var0 -> !var0.method30327(), new TranslationTextComponent("argument.entity.options.team.description"));
          method38218("type", var0 -> {
             var0.method30313((var1, var2) -> {
-               Class6618.method20140(Registry.field16074.method9190(), var1, String.valueOf('!'));
+               Class6618.method20140(Registry.ENTITY_TYPE.method9190(), var1, String.valueOf('!'));
                Class6618.method20140(Class8613.method30861().method27137(), var1, "!#");
                if (!var0.method30333()) {
-                  Class6618.method20141(Registry.field16074.method9190(), var1);
+                  Class6618.method20141(Registry.ENTITY_TYPE.method9190(), var1);
                   Class6618.method20140(Class8613.method30861().method27137(), var1, String.valueOf('#'));
                }
 
@@ -258,21 +258,21 @@ public class Class9748 {
 
                if (!var0.method30276()) {
                   ResourceLocation var5 = ResourceLocation.method8294(var0.method30277());
-                  Class8992 var6 = Registry.field16074.method9187(var5).orElseThrow(() -> {
+                  EntityType var6 = Registry.ENTITY_TYPE.method9187(var5).orElseThrow(() -> {
                      var0.method30277().setCursor(var3);
                      return field45506.createWithContext(var0.method30277(), var5.toString());
                   });
-                  if (Objects.equals(Class8992.field41111, var6) && !var4) {
+                  if (Objects.equals(EntityType.PLAYER, var6) && !var4) {
                      var0.method30301(false);
                   }
 
-                  var0.method30278(var2 -> Objects.equals(var6, var2.method3204()) != var4);
+                  var0.method30278(var2 -> Objects.equals(var6, var2.getType()) != var4);
                   if (!var4) {
                      var0.method30330(var6);
                   }
                } else {
                   ResourceLocation var7 = ResourceLocation.method8294(var0.method30277());
-                  var0.method30278(var2 -> var2.method3396().method1408().method32660().method27132(var7).method24917(var2.method3204()) != var4);
+                  var0.method30278(var2 -> var2.method3396().method1408().method32660().method27132(var7).method24917(var2.getType()) != var4);
                }
             }
          }, var0 -> !var0.method30332(), new TranslationTextComponent("argument.entity.options.type.description"));
@@ -283,13 +283,13 @@ public class Class9748 {
          }, var0 -> true, new TranslationTextComponent("argument.entity.options.tag.description"));
          method38218("nbt", var0 -> {
             boolean var3 = var0.method30275();
-            Class39 var4 = new Class7671(var0.method30277()).method25195();
+            CompoundNBT var4 = new Class7671(var0.method30277()).method25195();
             var0.method30278(var2 -> {
-               Class39 var5 = var2.method3294(new Class39());
+               CompoundNBT var5 = var2.method3294(new CompoundNBT());
                if (var2 instanceof ServerPlayerEntity) {
-                  ItemStack var6 = ((ServerPlayerEntity)var2).field4902.method4028();
-                  if (!var6.method32105()) {
-                     var5.method99("SelectedItem", var6.method32112(new Class39()));
+                  ItemStack var6 = ((ServerPlayerEntity)var2).inventory.method4028();
+                  if (!var6.isEmpty()) {
+                     var5.put("SelectedItem", var6.method32112(new CompoundNBT()));
                   }
                }
 
@@ -433,8 +433,8 @@ public class Class9748 {
                ResourceLocation var4 = ResourceLocation.method8294(var0.method30277());
                var0.method30278(
                   var2 -> {
-                     if (var2.field5024 instanceof ServerWorld) {
-                        ServerWorld var5 = (ServerWorld)var2.field5024;
+                     if (var2.world instanceof ServerWorld) {
+                        ServerWorld var5 = (ServerWorld)var2.world;
                         ILootCondition var6 = var5.method6715().method1412().method1052(var4);
                         if (var6 != null) {
                            LootContext var7 = new Class9464(var5)

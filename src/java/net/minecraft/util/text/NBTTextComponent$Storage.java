@@ -1,7 +1,7 @@
 package net.minecraft.util.text;
 
 import mapped.ResourceLocation;
-import mapped.Class39;
+import mapped.CompoundNBT;
 import mapped.Class6619;
 import mapped.Class9670;
 
@@ -30,9 +30,9 @@ public class NBTTextComponent$Storage extends NBTTextComponent {
    }
 
    @Override
-   public Stream<Class39> func_218673_a(Class6619 p_218673_1_) {
-      Class39 var4 = p_218673_1_.method20177().method1410().method32748(this.field_229725_e_);
-      return Stream.<Class39>of(var4);
+   public Stream<CompoundNBT> func_218673_a(Class6619 p_218673_1_) {
+      CompoundNBT var4 = p_218673_1_.method20177().method1410().method32748(this.field_229725_e_);
+      return Stream.<CompoundNBT>of(var4);
    }
 
    @Override

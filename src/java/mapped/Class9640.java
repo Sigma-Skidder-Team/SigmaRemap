@@ -16,7 +16,7 @@ public class Class9640 {
       this.field45072 = Math.min(this.field45072 + (float)var1 * var2 * 2.0F, (float)this.field45071);
    }
 
-   public void method37570(Class3257 var1, ItemStack var2) {
+   public void method37570(Item var1, ItemStack var2) {
       if (var1.method11744()) {
          Class9427 var5 = var1.method11745();
          this.method37569(var5.method36157(), var5.method36158());
@@ -24,7 +24,7 @@ public class Class9640 {
    }
 
    public void method37571(PlayerEntity var1) {
-      Class2197 var4 = var1.field5024.method6997();
+      Class2197 var4 = var1.world.method6997();
       this.field45075 = this.field45071;
       if (this.field45073 > 4.0F) {
          this.field45073 -= 4.0F;
@@ -37,7 +37,7 @@ public class Class9640 {
          }
       }
 
-      boolean var5 = var1.field5024.method6789().method17135(Class5462.field24231);
+      boolean var5 = var1.world.method6789().method17135(Class5462.field24231);
       if (var5 && this.field45072 > 0.0F && var1.method2934() && this.field45071 >= 20) {
          this.field45074++;
          if (this.field45074 >= 10) {
@@ -67,7 +67,7 @@ public class Class9640 {
       }
    }
 
-   public void method37572(Class39 var1) {
+   public void method37572(CompoundNBT var1) {
       if (var1.method119("foodLevel", 99)) {
          this.field45071 = var1.method122("foodLevel");
          this.field45074 = var1.method122("foodTickTimer");
@@ -76,7 +76,7 @@ public class Class9640 {
       }
    }
 
-   public void method37573(Class39 var1) {
+   public void method37573(CompoundNBT var1) {
       var1.method102("foodLevel", this.field45071);
       var1.method102("foodTickTimer", this.field45074);
       var1.method107("foodSaturationLevel", this.field45072);

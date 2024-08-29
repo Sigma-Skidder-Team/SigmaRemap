@@ -3,7 +3,7 @@ package mapped;
 public class Class4568 extends Class4566 {
    private static String[] field22006;
 
-   public Class4568(Class1656 var1, double var2, double var4, double var6) {
+   public Class4568(ClientWorld var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6);
       this.field22056 = 4;
    }
@@ -21,6 +21,6 @@ public class Class4568 extends Class4566 {
 
    @Override
    public float method14509(float var1) {
-      return 7.1F * MathHelper.method37763(((float)this.field22055 + var1 - 1.0F) * 0.25F * (float) Math.PI);
+      return 7.1F * MathHelper.sin(((float)this.field22055 + var1 - 1.0F) * 0.25F * (float) Math.PI);
    }
 }

@@ -67,7 +67,7 @@ public class Class322<T> implements Class321<T>, AutoCloseable, Runnable {
          if (var3 != null) {
             Thread var4;
             String var5;
-            if (!SharedConstants.field42545) {
+            if (!SharedConstants.developmentMode) {
                var4 = null;
                var5 = null;
             } else {

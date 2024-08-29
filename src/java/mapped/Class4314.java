@@ -46,7 +46,7 @@ public class Class4314 extends Class4307 {
 
    @Override
    public void method13027(float var1) {
-      Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class7925.field33940);
+      Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
       Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12908.field12910, 0.1F));
       Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, 0.95F));
       Class3192.method11440(

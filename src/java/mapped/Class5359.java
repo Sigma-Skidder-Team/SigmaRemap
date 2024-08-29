@@ -22,9 +22,9 @@ public class Class5359 extends Module {
 
     public Class5359() {
         super(ModuleCategory.RENDER, "ActiveMods", "Shows active mods");
-        this.method15972(new Class6005("Outline", "Outline", 0, "All", "Left", "Right", "None"));
-        this.method15972(new Class6005("Animation", "Animation", 0, "Smooth", "Slide", "Both", "None"));
-        this.method15972(new Class6004("Sound", "Toggle sound", true));
+        this.registerSetting(new ModeSetting("Outline", "Outline", 0, "All", "Left", "Right", "None"));
+        this.registerSetting(new ModeSetting("Animation", "Animation", 0, "Smooth", "Slide", "Both", "None"));
+        this.registerSetting(new BooleanSetting("Sound", "Toggle sound", true));
     }
 
     // $VF: synthetic method
@@ -44,8 +44,8 @@ public class Class5359 extends Module {
 
     private void method16853() {
         this.field23962.clear();
-        this.field23963 = Class7925.field33951;
-        this.field23964 = Class7925.field33952;
+        this.field23963 = ClassicDecryption.bold18;
+        this.field23964 = ClassicDecryption.bold16;
         this.field23962 = new TreeMap<Module, Animation>(new Class3598(this));
     }
 

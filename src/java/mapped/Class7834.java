@@ -9,11 +9,11 @@ public class Class7834<T> implements Class7833<T> {
    private final Class2352<T> field33626;
    private final Class2353<T> field33627;
    private final Class8555<T> field33628;
-   private final Function<Class39, T> field33629;
-   private final Function<T, Class39> field33630;
+   private final Function<CompoundNBT, T> field33629;
+   private final Function<T, CompoundNBT> field33630;
    private final int field33631;
 
-   public Class7834(Class2352<T> var1, int var2, Class8555<T> var3, Function<Class39, T> var4, Function<T, Class39> var5) {
+   public Class7834(Class2352<T> var1, int var2, Class8555<T> var3, Function<CompoundNBT, T> var4, Function<T, CompoundNBT> var5) {
       this.field33626 = var1;
       this.field33631 = var2;
       this.field33628 = var3;
@@ -88,7 +88,7 @@ public class Class7834<T> implements Class7833<T> {
    }
 
    @Override
-   public void method26246(Class41 var1) {
+   public void method26246(ListNBT var1) {
       this.field33627.method9279();
 
       for (int var4 = 0; var4 < var1.size(); var4++) {
@@ -96,7 +96,7 @@ public class Class7834<T> implements Class7833<T> {
       }
    }
 
-   public void method26248(Class41 var1) {
+   public void method26248(ListNBT var1) {
       for (int var4 = 0; var4 < this.method26247(); var4++) {
          var1.add(this.field33630.apply(this.field33627.method9172(var4)));
       }

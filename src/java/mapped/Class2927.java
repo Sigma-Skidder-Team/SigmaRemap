@@ -10,9 +10,9 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4709 var5) {
-      Block var8 = var5.field22337.method23383();
+      Block var8 = var5.field22337.getBlock();
       BlockPos var9 = null;
-      Block var10 = var1.method6738(var4.method8313()).method23383();
+      Block var10 = var1.getBlockState(var4.method8313()).getBlock();
       if (var10 == var8) {
          var9 = var4;
       }
@@ -49,7 +49,7 @@ public class Class2927 extends Class2898<Class4709> {
 
    private void method11258(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
       Mutable var9 = new Mutable();
-      Class7380 var10 = var3.field22338;
+      BlockState var10 = var3.field22338;
       int var11 = !var6 ? 0 : 1;
 
       for (int var12 = -var11; var12 <= var11; var12++) {
@@ -66,7 +66,7 @@ public class Class2927 extends Class2898<Class4709> {
                         this.method11217(var1, var9, var10);
                      }
                   } else {
-                     if (!var1.method6738(var9.method8313()).method23393()) {
+                     if (!var1.getBlockState(var9.method8313()).isAir()) {
                         var1.method7179(var9, true);
                      }
 
@@ -103,7 +103,7 @@ public class Class2927 extends Class2898<Class4709> {
                boolean var21 = var13 < var12 + 3;
                var9.method8378(var4, var15, var13, var16);
                if (method11257(var1, var9, false)) {
-                  if (var3.field22341 && !var1.method6738(var9.method8313()).method23393()) {
+                  if (var3.field22341 && !var1.getBlockState(var9.method8313()).isAir()) {
                      var1.method7179(var9, true);
                   }
 
@@ -139,8 +139,8 @@ public class Class2927 extends Class2898<Class4709> {
       }
    }
 
-   private void method11261(Class1660 var1, Random var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var1.method6738(var3.method8313()).method23448(var4.method23383())) {
+   private void method11261(Class1660 var1, Random var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var1.getBlockState(var3.method8313()).method23448(var4.getBlock())) {
          if ((double)var2.nextFloat() < 0.15) {
             this.method11217(var1, var3, var4);
             if (var5 && var2.nextInt(11) == 0) {
@@ -153,7 +153,7 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    private static void method11262(BlockPos var0, Class1660 var1, Random var2) {
-      Mutable var5 = var0.method8354().method8379(Direction.field672);
+      Mutable var5 = var0.method8354().method8379(Direction.DOWN);
       if (var1.method7007(var5)) {
          int var6 = MathHelper.method37782(var2, 1, 5);
          if (var2.nextInt(7) == 0) {

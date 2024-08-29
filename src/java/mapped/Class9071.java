@@ -10,7 +10,7 @@ public class Class9071 {
    private final Map<Direction, List<Class8557>> field41509 = Maps.newEnumMap(Direction.class);
    private final Class6391 field41510;
    private final boolean field41511;
-   private Class1713 field41512;
+   private TextureAtlasSprite field41512;
    private final boolean field41513;
    private final boolean field41514;
    private final Class9264 field41515;
@@ -41,12 +41,12 @@ public class Class9071 {
       return this;
    }
 
-   public Class9071 method33812(Class1713 var1) {
+   public Class9071 method33812(TextureAtlasSprite var1) {
       this.field41512 = var1;
       return this;
    }
 
-   public Class7202 method33813() {
+   public IBakedModel method33813() {
       if (this.field41512 != null) {
          return new Class7206(
             this.field41508, this.field41509, this.field41511, this.field41513, this.field41514, this.field41512, this.field41515, this.field41510

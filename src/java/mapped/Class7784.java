@@ -16,7 +16,7 @@ public class Class7784 {
    public static final Class6466<ITextComponent> field33394 = new Class6481();
    public static final Class6466<Optional<ITextComponent>> field33395 = new Class6484();
    public static final Class6466<ItemStack> field33396 = new Class6471();
-   public static final Class6466<Optional<Class7380>> field33397 = new Class6470();
+   public static final Class6466<Optional<BlockState>> field33397 = new Class6470();
    public static final Class6466<Boolean> field33398 = new Class6478();
    public static final Class6466<Class7436> field33399 = new Class6482();
    public static final Class6466<Class7087> field33400 = new Class6476();
@@ -24,7 +24,7 @@ public class Class7784 {
    public static final Class6466<Optional<BlockPos>> field33402 = new Class6474();
    public static final Class6466<Direction> field33403 = new Class6469();
    public static final Class6466<Optional<UUID>> field33404 = new Class6477();
-   public static final Class6466<Class39> field33405 = new Class6480();
+   public static final Class6466<CompoundNBT> field33405 = new Class6480();
    public static final Class6466<Class7921> field33406 = new Class6472();
    public static final Class6466<OptionalInt> field33407 = new Class6473();
    public static final Class6466<Class2090> field33408 = new Class6475();

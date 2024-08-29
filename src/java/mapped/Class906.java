@@ -10,7 +10,7 @@ public class Class906 extends Entity {
    private boolean field5174;
    private ServerPlayerEntity field5175;
 
-   public Class906(Class8992<? extends Class906> var1, World var2) {
+   public Class906(EntityType<? extends Class906> var1, World var2) {
       super(var1, var2);
       this.field5077 = true;
       this.field5171 = 2;
@@ -35,12 +35,12 @@ public class Class906 extends Entity {
    public void tick() {
       super.tick();
       if (this.field5171 == 2) {
-         Class2197 var3 = this.field5024.method6997();
+         Class2197 var3 = this.world.method6997();
          if (var3 == Class2197.field14353 || var3 == Class2197.field14354) {
             this.method3551(4);
          }
 
-         this.field5024
+         this.world
             .method6743(
                (PlayerEntity)null,
                this.getPosX(),
@@ -51,7 +51,7 @@ public class Class906 extends Entity {
                10000.0F,
                0.8F + this.field5054.nextFloat() * 0.2F
             );
-         this.field5024
+         this.world
             .method6743(
                (PlayerEntity)null,
                this.getPosX(),
@@ -79,10 +79,10 @@ public class Class906 extends Entity {
       }
 
       if (this.field5171 >= 0) {
-         if (this.field5024 instanceof ServerWorld) {
+         if (this.world instanceof ServerWorld) {
             if (!this.field5174) {
                double var4 = 3.0;
-               List<Entity> var6 = this.field5024
+               List<Entity> var6 = this.world
                   .method6770(
                      this,
                      new Class6488(
@@ -97,7 +97,7 @@ public class Class906 extends Entity {
                   );
 
                for (Entity var8 : var6) {
-                  var8.method3353((ServerWorld)this.field5024, this);
+                  var8.method3353((ServerWorld)this.world, this);
                }
 
                if (this.field5175 != null) {
@@ -105,24 +105,24 @@ public class Class906 extends Entity {
                }
             }
          } else {
-            this.field5024.method6809(2);
+            this.world.setTimeLightningFlash(2);
          }
       }
    }
 
    private void method3551(int var1) {
-      if (!this.field5174 && !this.field5024.field9020 && this.field5024.method6789().method17135(Class5462.field24223)) {
-         BlockPos var4 = this.method3432();
-         Class7380 var5 = Class3397.method12009(this.field5024, var4);
-         if (this.field5024.method6738(var4).method23393() && var5.method23443(this.field5024, var4)) {
-            this.field5024.method6730(var4, var5);
+      if (!this.field5174 && !this.world.field9020 && this.world.method6789().method17135(Class5462.field24223)) {
+         BlockPos var4 = this.getPosition();
+         BlockState var5 = Class3397.method12009(this.world, var4);
+         if (this.world.getBlockState(var4).isAir() && var5.method23443(this.world, var4)) {
+            this.world.method6730(var4, var5);
          }
 
          for (int var6 = 0; var6 < var1; var6++) {
             BlockPos var7 = var4.method8336(this.field5054.nextInt(3) - 1, this.field5054.nextInt(3) - 1, this.field5054.nextInt(3) - 1);
-            var5 = Class3397.method12009(this.field5024, var7);
-            if (this.field5024.method6738(var7).method23393() && var5.method23443(this.field5024, var7)) {
-               this.field5024.method6730(var7, var5);
+            var5 = Class3397.method12009(this.world, var7);
+            if (this.world.getBlockState(var7).isAir() && var5.method23443(this.world, var7)) {
+               this.world.method6730(var7, var5);
             }
          }
       }
@@ -139,11 +139,11 @@ public class Class906 extends Entity {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
    }
 
    @Override

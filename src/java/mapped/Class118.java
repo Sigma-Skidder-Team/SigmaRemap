@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.function.Predicate;
 
-public class Class118 implements Predicate<Class7380> {
+public class Class118 implements Predicate<BlockState> {
    private static String[] field424;
    private final Block field425;
 
@@ -14,7 +14,7 @@ public class Class118 implements Predicate<Class7380> {
       return new Class118(var0);
    }
 
-   public boolean test(Class7380 var1) {
+   public boolean test(BlockState var1) {
       return var1 != null && var1.method23448(this.field425);
    }
 }

@@ -8,7 +8,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class3318 extends Class3257 {
+public class Class3318 extends Item {
    public Class3318(Class5643 var1) {
       super(var1);
    }
@@ -43,7 +43,7 @@ public class Class3318 extends Class3257 {
          ItemStack var6 = var2.getHeldItem(var3);
          if (!var1.field9020) {
             var1.method6916(new Class888(var1, var6, var2));
-            if (!var2.field4919.field29609) {
+            if (!var2.abilities.isCreativeMode) {
                var6.method32182(1);
             }
          }
@@ -54,7 +54,7 @@ public class Class3318 extends Class3257 {
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
-      Class39 var7 = var1.method32145("Fireworks");
+      CompoundNBT var7 = var1.method32145("Fireworks");
       if (var7 != null) {
          if (var7.method119("Flight", 99)) {
             var3.add(
@@ -65,10 +65,10 @@ public class Class3318 extends Class3257 {
             );
          }
 
-         Class41 var8 = var7.method131("Explosions", 10);
+         ListNBT var8 = var7.method131("Explosions", 10);
          if (!var8.isEmpty()) {
             for (int var9 = 0; var9 < var8.size(); var9++) {
-               Class39 var10 = var8.method153(var9);
+               CompoundNBT var10 = var8.method153(var9);
                ArrayList var11 = Lists.newArrayList();
                Class3320.method11873(var10, var11);
                if (!var11.isEmpty()) {

@@ -53,7 +53,7 @@ public class Class9733 {
    private final Class9763 field45446;
    private final List<Class9537> field45447 = Lists.newArrayList();
    private Supplier<Biome> field45448;
-   private final Class7380[] field45449 = new Class7380[256];
+   private final BlockState[] field45449 = new BlockState[256];
    private boolean field45450;
    private boolean field45451 = false;
    private boolean field45452 = false;
@@ -92,7 +92,7 @@ public class Class9733 {
       Class9733 var5 = new Class9733(var2, this.field45445);
 
       for (Class9537 var7 : var1) {
-         var5.field45447.add(new Class9537(var7.method36905(), var7.method36906().method23383()));
+         var5.field45447.add(new Class9537(var7.method36905(), var7.method36906().getBlock()));
          var5.method38131();
       }
 
@@ -142,10 +142,10 @@ public class Class9733 {
          }
       }
 
-      Class7380[] var13 = this.method38130();
+      BlockState[] var13 = this.method38130();
 
       for (int var14 = 0; var14 < var13.length; var14++) {
-         Class7380 var15 = var13[var14];
+         BlockState var15 = var13[var14];
          if (var15 != null && !Class101.field299.method287().test(var15)) {
             this.field45449[var14] = null;
             var5.method26690(Class1993.field13007, Class2898.field17980.method11216(new Class4732(var14, var15)));
@@ -154,7 +154,7 @@ public class Class9733 {
 
       return new Class9684()
          .method37911(var3.method32500())
-         .method37912(var3.method32527())
+         .method37912(var3.getCategory())
          .method37913(var3.method32515())
          .method37914(var3.method32517())
          .method37915(var3.method32518())
@@ -181,7 +181,7 @@ public class Class9733 {
       return this.field45447;
    }
 
-   public Class7380[] method38130() {
+   public BlockState[] method38130() {
       return this.field45449;
    }
 
@@ -198,7 +198,7 @@ public class Class9733 {
 
       for (Class9537 var9 : this.field45447) {
          for (int var6 = var9.method36907(); var6 < var9.method36907() + var9.method36905(); var6++) {
-            Class7380 var7 = var9.method36906();
+            BlockState var7 = var9.method36906();
             if (!var7.method23448(Blocks.AIR)) {
                this.field45450 = false;
                this.field45449[var6] = var7;

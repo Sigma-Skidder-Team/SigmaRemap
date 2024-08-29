@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5383 extends Module {
    public Class5383() {
       super(ModuleCategory.COMBAT, "Basic", "Automatically aims at players");
-      this.method15972(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+      this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
    }
 
    @EventTarget

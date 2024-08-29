@@ -13,9 +13,9 @@ public class Class4838 extends Class4837 {
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          ItemStack var8 = var1.method3618(var7);
-         if (!var8.method32105()) {
-            if (!(Block.method11537(var8.method32107()) instanceof Class3368)) {
-               if (!(var8.method32107() instanceof Class3321)) {
+         if (!var8.isEmpty()) {
+            if (!(Block.method11537(var8.getItem()) instanceof Class3368)) {
+               if (!(var8.getItem() instanceof Class3321)) {
                   return false;
                }
 
@@ -35,12 +35,12 @@ public class Class4838 extends Class4837 {
 
    public ItemStack method14962(Class926 var1) {
       ItemStack var4 = ItemStack.EMPTY;
-      Class3321 var5 = (Class3321)Class8514.field37918;
+      Class3321 var5 = (Class3321) Items.field37918;
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
          ItemStack var7 = var1.method3618(var6);
-         if (!var7.method32105()) {
-            Class3257 var8 = var7.method32107();
+         if (!var7.isEmpty()) {
+            Item var8 = var7.getItem();
             if (!(Block.method11537(var8) instanceof Class3368)) {
                if (var8 instanceof Class3321) {
                   var5 = (Class3321)var8;

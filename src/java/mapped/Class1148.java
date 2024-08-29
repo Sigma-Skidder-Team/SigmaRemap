@@ -58,7 +58,7 @@ public class Class1148 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field6255.method5633();
       this.field6256.method5633();
       this.field6257.method5633();
@@ -89,9 +89,9 @@ public class Class1148 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
-      this.field6265 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 4 - 150, 210, 150, 20, Class7127.field30658, var1 -> this.method5500()));
-      this.field6266 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, 210, 150, 20, Class7127.field30659, var1 -> this.method5501()));
+      this.field4562.keyboardListener.method36347(true);
+      this.field6265 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method5500()));
+      this.field6266 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method5501()));
       this.field6267 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.save"), var1 -> {
             if (this.field6248.method3950() == Class104.field318) {
@@ -171,7 +171,7 @@ public class Class1148 extends Screen {
       BlockPos var3 = this.field6248.method3940();
       this.field6256 = new Class1189(this.field4568, this.field4564 / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
       this.field6256.method5657(15);
-      this.field6256.method5635(Integer.toString(var3.method8304()));
+      this.field6256.method5635(Integer.toString(var3.getX()));
       this.field4561.add(this.field6256);
       this.field6257 = new Class1189(this.field4568, this.field4564 / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
       this.field6257.method5657(15);
@@ -179,12 +179,12 @@ public class Class1148 extends Screen {
       this.field4561.add(this.field6257);
       this.field6258 = new Class1189(this.field4568, this.field4564 / 2 + 8, 80, 80, 20, new TranslationTextComponent("structure_block.position.z"));
       this.field6258.method5657(15);
-      this.field6258.method5635(Integer.toString(var3.method8306()));
+      this.field6258.method5635(Integer.toString(var3.getZ()));
       this.field4561.add(this.field6258);
       BlockPos var4 = this.field6248.method3942();
       this.field6259 = new Class1189(this.field4568, this.field4564 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
       this.field6259.method5657(15);
-      this.field6259.method5635(Integer.toString(var4.method8304()));
+      this.field6259.method5635(Integer.toString(var4.getX()));
       this.field4561.add(this.field6259);
       this.field6260 = new Class1189(this.field4568, this.field4564 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
       this.field6260.method5657(15);
@@ -192,7 +192,7 @@ public class Class1148 extends Screen {
       this.field4561.add(this.field6260);
       this.field6261 = new Class1189(this.field4568, this.field4564 / 2 + 8, 120, 80, 20, new TranslationTextComponent("structure_block.size.z"));
       this.field6261.method5657(15);
-      this.field6261.method5635(Integer.toString(var4.method8306()));
+      this.field6261.method5635(Integer.toString(var4.getZ()));
       this.field4561.add(this.field6261);
       this.field6262 = new Class1189(this.field4568, this.field4564 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.integrity"));
       this.field6262.method5657(15);
@@ -222,7 +222,7 @@ public class Class1148 extends Screen {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
+   public void resize(Minecraft var1, int var2, int var3) {
       String var6 = this.field6255.method5636();
       String var7 = this.field6256.method5636();
       String var8 = this.field6257.method5636();
@@ -233,7 +233,7 @@ public class Class1148 extends Screen {
       String var13 = this.field6262.method5636();
       String var14 = this.field6263.method5636();
       String var15 = this.field6264.method5636();
-      this.method2467(var1, var2, var3);
+      this.init(var1, var2, var3);
       this.field6255.method5635(var6);
       this.field6256.method5635(var7);
       this.field6257.method5635(var8);
@@ -248,19 +248,19 @@ public class Class1148 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    private void method5502() {
-      this.field6275.method5743(Class7127.method22237(!this.field6248.method3953()));
+      this.field6275.method5743(DialogTexts.method22237(!this.field6248.method3953()));
    }
 
    private void method5503() {
-      this.field6277.method5743(Class7127.method22237(this.field6248.method3973()));
+      this.field6277.method5743(DialogTexts.method22237(this.field6248.method3973()));
    }
 
    private void method5504() {
-      this.field6278.method5743(Class7127.method22237(this.field6248.method3975()));
+      this.field6278.method5743(DialogTexts.method22237(this.field6248.method3975()));
    }
 
    private void method5505() {
@@ -370,10 +370,10 @@ public class Class1148 extends Screen {
       float var6 = this.method5510(this.field6262.method5636());
       long var7 = this.method5509(this.field6263.method5636());
       this.field4562
-         .getClientPlayNetHandler()
+         .getConnection()
          .sendPacket(
             new Class5601(
-               this.field6248.method3774(),
+               this.field6248.getPos(),
                var1,
                this.field6248.method3950(),
                this.field6255.method5636(),
@@ -479,7 +479,7 @@ public class Class1148 extends Screen {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 }

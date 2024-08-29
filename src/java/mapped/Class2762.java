@@ -64,7 +64,7 @@ public class Class2762 extends Class2595 {
 
          this.field17325.method3315();
          this.field17325.method4896();
-         this.field17325.field5024.method6786(this.field17325, (byte)6);
+         this.field17325.world.method6786(this.field17325, (byte)6);
       }
    }
 }

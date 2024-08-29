@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Class8337<S> implements Class8335 {
    private static String[] field35843;
-   public final Class191 field35844;
+   public final IResourceManager field35844;
    public final CompletableFuture<Class2341> field35845 = new CompletableFuture<Class2341>();
    public final CompletableFuture<List<S>> field35846;
    private final Set<Class268> field35847;
@@ -21,18 +21,18 @@ public class Class8337<S> implements Class8335 {
    private final AtomicInteger field35851 = new AtomicInteger();
    private final AtomicInteger field35852 = new AtomicInteger();
 
-   public static Class8337<Void> method29228(Class191 var0, List<Class268> var1, Executor var2, Executor var3, CompletableFuture<Class2341> var4) {
+   public static Class8337<Void> method29228(IResourceManager var0, List<Class268> var1, Executor var2, Executor var3, CompletableFuture<Class2341> var4) {
       return new Class8337<Void>(
          var2,
          var3,
          var0,
          var1,
-         (var1x, var2x, var3x, var4x, var5) -> var3x.method777(var1x, var2x, Class7167.field30819, Class7167.field30819, var2, var5),
+         (var1x, var2x, var3x, var4x, var5) -> var3x.method777(var1x, var2x, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var2, var5),
          var4
       );
    }
 
-   public Class8337(Executor var1, Executor var2, Class191 var3, List<Class268> var4, Class9663<S> var5, CompletableFuture<Class2341> var6) {
+   public Class8337(Executor var1, Executor var2, IResourceManager var3, List<Class268> var4, Class9663<S> var5, CompletableFuture<Class2341> var6) {
       this.field35844 = var3;
       this.field35848 = var4.size();
       this.field35851.incrementAndGet();

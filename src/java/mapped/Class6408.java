@@ -130,16 +130,16 @@ public abstract class Class6408 {
    }
 
    @Nullable
-   public Class8711 method19525(Vector3d var1, Vector3d var2, BlockPos var3) {
+   public BlockRayTraceResult method19525(Vector3d var1, Vector3d var2, BlockPos var3) {
       if (!this.method19516()) {
          Vector3d var6 = var2.method11336(var1);
          if (!(var6.method11349() < 1.0E-7)) {
             Vector3d var7 = var1.method11338(var6.method11344(0.001));
             return !this.method19524(
-                  var7.field18048 - (double)var3.method8304(), var7.field18049 - (double)var3.getY(), var7.field18050 - (double)var3.method8306()
+                  var7.field18048 - (double)var3.getX(), var7.field18049 - (double)var3.getY(), var7.field18050 - (double)var3.getZ()
                )
                ? Class6488.method19681(this.method19521(), var1, var2, var3)
-               : new Class8711(var7, Direction.method553(var6.field18048, var6.field18049, var6.field18050).method536(), var3, true);
+               : new BlockRayTraceResult(var7, Direction.method553(var6.field18048, var6.field18049, var6.field18050).method536(), var3, true);
          } else {
             return null;
          }

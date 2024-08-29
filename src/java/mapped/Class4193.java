@@ -27,40 +27,40 @@ public class Class4193 extends Class4178 {
       this.field20444 = var6;
    }
 
-   public Class4193(Class8761 var1, Class39 var2) {
+   public Class4193(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33480, var2);
       this.field20494 = var1;
       this.field20490 = new BlockPos(var2.method122("PosX"), var2.method122("PosY"), var2.method122("PosZ"));
       this.field20491 = var2.method122("ground_level_delta");
       this.field20489 = Class7487.field32183
-         .parse(Class8063.field34602, var2.method130("pool_element"))
+         .parse(NBTDynamicOps.INSTANCE, var2.getCompound("pool_element"))
          .resultOrPartial(field20488::error)
          .orElse(Class7486.field32182);
       this.field20492 = Class80.valueOf(var2.method126("rotation"));
       this.field20444 = this.field20489.method24375(var1, this.field20490, this.field20492);
-      Class41 var5 = var2.method131("junctions", 10);
+      ListNBT var5 = var2.method131("junctions", 10);
       this.field20493.clear();
-      var5.forEach(var1x -> this.field20493.add(Class3637.method12349(new Dynamic(Class8063.field34602, var1x))));
+      var5.forEach(var1x -> this.field20493.add(Class3637.method12349(new Dynamic(NBTDynamicOps.INSTANCE, var1x))));
    }
 
    @Override
-   public void method12897(Class39 var1) {
-      var1.method102("PosX", this.field20490.method8304());
+   public void method12897(CompoundNBT var1) {
+      var1.method102("PosX", this.field20490.getX());
       var1.method102("PosY", this.field20490.getY());
-      var1.method102("PosZ", this.field20490.method8306());
+      var1.method102("PosZ", this.field20490.getZ());
       var1.method102("ground_level_delta", this.field20491);
       Class7487.field32183
-         .encodeStart(Class8063.field34602, this.field20489)
+         .encodeStart(NBTDynamicOps.INSTANCE, this.field20489)
          .resultOrPartial(field20488::error)
-         .ifPresent(var1x -> var1.method99("pool_element", var1x));
+         .ifPresent(var1x -> var1.put("pool_element", var1x));
       var1.method109("rotation", this.field20492.name());
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (Class3637 var6 : this.field20493) {
-         var4.add((Class30)var6.method12348(Class8063.field34602).getValue());
+         var4.add((Class30)var6.method12348(NBTDynamicOps.INSTANCE).getValue());
       }
 
-      var1.method99("junctions", var4);
+      var1.put("junctions", var4);
    }
 
    @Override

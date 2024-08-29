@@ -17,9 +17,9 @@ import java.util.stream.IntStream;
 public class Class9407 {
    private final Consumer<Class5146> field43642;
    private final BiConsumer<ResourceLocation, Supplier<JsonElement>> field43643;
-   private final Consumer<Class3257> field43644;
+   private final Consumer<Item> field43644;
 
-   public Class9407(Consumer<Class5146> var1, BiConsumer<ResourceLocation, Supplier<JsonElement>> var2, Consumer<Class3257> var3) {
+   public Class9407(Consumer<Class5146> var1, BiConsumer<ResourceLocation, Supplier<JsonElement>> var2, Consumer<Item> var3) {
       this.field43642 = var1;
       this.field43643 = var2;
       this.field43644 = var3;
@@ -33,23 +33,23 @@ public class Class9407 {
       this.field43643.accept(Class9060.method33724(var1.method11581()), new Class5149(var2));
    }
 
-   private void method35806(Class3257 var1, ResourceLocation var2) {
+   private void method35806(Item var1, ResourceLocation var2) {
       this.field43643.accept(Class9060.method33724(var1), new Class5149(var2));
    }
 
-   private void method35807(Class3257 var1) {
+   private void method35807(Item var1) {
       Class9756.field45623.method34808(Class9060.method33724(var1), Class7287.method23038(var1), this.field43643);
    }
 
    private void method35808(Block var1) {
-      Class3257 var4 = var1.method11581();
-      if (var4 != Class8514.field37222) {
+      Item var4 = var1.method11581();
+      if (var4 != Items.field37222) {
          Class9756.field45623.method34808(Class9060.method33724(var4), Class7287.method23039(var1), this.field43643);
       }
    }
 
    private void method35809(Block var1, String var2) {
-      Class3257 var5 = var1.method11581();
+      Item var5 = var1.method11581();
       Class9756.field45623.method34808(Class9060.method33724(var5), Class7287.method23040(Class7287.method23042(var1, var2)), this.field43643);
    }
 
@@ -79,7 +79,7 @@ public class Class9407 {
 
    private static Class3629 method35813() {
       return Class3629.<Direction>method12310(Class8820.field39720)
-         .method12320(Direction.field672, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+         .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(Direction.field673, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13819))
          .method12320(Direction.NORTH, Class5138.method15912())
          .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
@@ -1223,7 +1223,7 @@ public class Class9407 {
       return new Class7928(this, Class9060.method33723(var1), var2);
    }
 
-   private void method35869(Block var1, Class3257 var2) {
+   private void method35869(Block var1, Item var2) {
       ResourceLocation var5 = Class9756.field45566.method34805(var1, Class7287.method23029(var2), this.field43643);
       this.field43642.accept(method35829(var1, var5));
    }
@@ -1261,7 +1261,7 @@ public class Class9407 {
       ResourceLocation var8 = Class9756.field45597.method34805(var2, var5, this.field43643);
       ResourceLocation var9 = Class9756.field45593.method34805(var2, var5, this.field43643);
       ResourceLocation var10 = Class9756.field45594.method34805(var2, var5, this.field43643);
-      Class3257 var11 = var2.method11581();
+      Item var11 = var2.method11581();
       Class9756.field45623.method34808(Class9060.method33724(var11), Class7287.method23039(var1), this.field43643);
       this.field43642
          .accept(
@@ -1329,7 +1329,7 @@ public class Class9407 {
 
    private Class3629 method35879() {
       return Class3629.<Direction>method12310(Class8820.field39720)
-         .method12320(Direction.field672, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+         .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
          .method12320(Direction.field673, Class5138.method15912())
          .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
@@ -1415,7 +1415,7 @@ public class Class9407 {
       ResourceLocation var4 = Class9060.method33722(Blocks.field37064, "_ceiling");
       ResourceLocation var5 = Class9060.method33722(Blocks.field37064, "_wall");
       ResourceLocation var6 = Class9060.method33722(Blocks.field37064, "_between_walls");
-      this.method35807(Class8514.field38167);
+      this.method35807(Items.field38167);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field37064)
@@ -1559,7 +1559,7 @@ public class Class9407 {
    }
 
    private void method35889() {
-      this.method35807(Class8514.field37887);
+      this.method35807(Items.field37887);
       this.field43642
          .accept(
             Class5147.method15932(Blocks.REDSTONE_WIRE)
@@ -1631,7 +1631,7 @@ public class Class9407 {
    }
 
    private void method35890() {
-      this.method35807(Class8514.field37789);
+      this.method35807(Items.field37789);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field36719)
@@ -1669,7 +1669,7 @@ public class Class9407 {
    }
 
    private void method35892() {
-      this.method35807(Class8514.field37977);
+      this.method35807(Items.field37977);
       this.field43642
          .accept(
             Class5147.method15932(Blocks.field36647)
@@ -1784,7 +1784,7 @@ public class Class9407 {
    }
 
    private void method35894() {
-      this.method35807(Class8514.field37937);
+      this.method35807(Items.field37937);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field36591)
@@ -1843,7 +1843,7 @@ public class Class9407 {
    }
 
    private void method35900() {
-      this.method35807(Class8514.field37978);
+      this.method35807(Items.field37978);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field36648)
@@ -1887,7 +1887,7 @@ public class Class9407 {
                .method15939(
                   Class3629.<Direction>method12310(Class8820.field39720)
                      .method12320(
-                        Direction.field672,
+                        Direction.DOWN,
                         Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29862, Class2120.field13818)
                      )
                      .method12320(Direction.field673, Class5138.method15912().method15911(Class6891.field29864, var7))
@@ -2315,7 +2315,7 @@ public class Class9407 {
    }
 
    private void method35921() {
-      this.method35807(Class8514.field37916);
+      this.method35807(Items.field37916);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.COCOA)
@@ -2343,13 +2343,13 @@ public class Class9407 {
    private void method35924() {
       ResourceLocation var3 = Class9060.method33723(Blocks.field36723);
       ResourceLocation var4 = Class9060.method33722(Blocks.field36723, "_side");
-      this.method35807(Class8514.field37545);
+      this.method35807(Items.field37545);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field36723)
                .method15939(
                   Class3629.<Direction>method12310(Class8820.field39721)
-                     .method12320(Direction.field672, Class5138.method15912().method15911(Class6891.field29864, var3))
+                     .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29864, var3))
                      .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var4))
                      .method12320(
                         Direction.EAST,
@@ -2678,7 +2678,7 @@ public class Class9407 {
    }
 
    private void method35940() {
-      this.method35807(Class8514.field37788);
+      this.method35807(Items.field37788);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field36592)
@@ -2703,7 +2703,7 @@ public class Class9407 {
    }
 
    private void method35941() {
-      this.method35807(Class8514.field37315);
+      this.method35807(Items.field37315);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field37005)
@@ -2767,7 +2767,7 @@ public class Class9407 {
    }
 
    private void method35945() {
-      this.method35807(Class8514.field38170);
+      this.method35807(Items.field38170);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field37069)
@@ -2784,7 +2784,7 @@ public class Class9407 {
    }
 
    private void method35946() {
-      this.method35807(Class8514.field37838);
+      this.method35807(Items.field37838);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.TRIPWIRE)
@@ -3137,7 +3137,7 @@ public class Class9407 {
    }
 
    private void method35950() {
-      this.method35807(Class8514.field37718);
+      this.method35807(Items.field37718);
       this.field43642
          .accept(
             Class5148.method15941(Blocks.field36964)
@@ -3517,7 +3517,7 @@ public class Class9407 {
                      .method12321(var1 -> Class5138.method15912().method15911(Class6891.field29864, var6[var1]))
                )
          );
-      this.method35806(Class8514.field38197, var6[0]);
+      this.method35806(Items.field38197, var6[0]);
    }
 
    private Class5138 method35959(Class182 var1, Class5138 var2) {
@@ -3583,18 +3583,18 @@ public class Class9407 {
       this.method35851(Blocks.field36963);
       this.method35851(Blocks.ENCHANTING_TABLE);
       this.method35851(Blocks.FLOWER_POT);
-      this.method35807(Class8514.field38051);
+      this.method35807(Items.field38051);
       this.method35851(Blocks.field37119);
       this.method35851(Blocks.WATER);
       this.method35851(Blocks.LAVA);
       this.method35851(Blocks.field36764);
-      this.method35807(Class8514.field37470);
+      this.method35807(Items.field37470);
       this.method35851(Blocks.field37010);
       this.method35851(Blocks.field36692);
-      this.method35869(Blocks.field36765, Class8514.field37569);
-      this.method35807(Class8514.field37569);
-      this.method35869(Blocks.field36894, Class8514.field37651);
-      this.method35807(Class8514.field37651);
+      this.method35869(Blocks.field36765, Items.field37569);
+      this.method35807(Items.field37569);
+      this.method35869(Blocks.field36894, Items.field37651);
+      this.method35807(Items.field37651);
       this.method35870(Blocks.MOVING_PISTON, Class7287.method23042(Blocks.PISTON, "_side"));
       this.method35841(Blocks.field36420, Class7524.field32271);
       this.method35841(Blocks.field36795, Class7524.field32271);
@@ -3642,7 +3642,7 @@ public class Class9407 {
       this.method35841(Blocks.field36532, Class7524.field32271);
       this.method35841(Blocks.field36452, Class7524.field32271);
       this.method35841(Blocks.SEAGRASS, Class7524.field32287);
-      this.method35807(Class8514.field37314);
+      this.method35807(Items.field37314);
       this.method35841(Blocks.TNT, Class7524.field32275);
       this.method35841(Blocks.field37116, Class7524.field32273);
       this.method35841(Blocks.field37076, Class7524.field32271);
@@ -3960,9 +3960,9 @@ public class Class9407 {
       this.method35893(Blocks.MUSHROOM_STEM);
       this.method35853(Blocks.GRASS, Class1958.field12762);
       this.method35855(Blocks.SUGAR_CANE, Class1958.field12762);
-      this.method35807(Class8514.field37355);
+      this.method35807(Items.field37355);
       this.method35954(Blocks.field36961, Blocks.field36962, Class1958.field12762);
-      this.method35807(Class8514.field37356);
+      this.method35807(Items.field37356);
       this.method35804(Blocks.field36962);
       this.method35954(Blocks.field37086, Blocks.field37087, Class1958.field12763);
       this.method35954(Blocks.field37088, Blocks.field37089, Class1958.field12763);
@@ -4146,7 +4146,7 @@ public class Class9407 {
       this.method35857(Blocks.field37075, Blocks.field37126, Class1958.field12763);
       this.method35957(Blocks.field37077, Blocks.field37128);
       this.method35855(Blocks.field37078, Class1958.field12763);
-      this.method35807(Class8514.field37352);
+      this.method35807(Items.field37352);
       this.method35846(Class7287.method22996(Blocks.STONE)).method31166(var1 -> {
          ResourceLocation var4 = Class9756.field45537.method34805(Blocks.STONE, var1, this.field43643);
          ResourceLocation var5 = Class9756.field45538.method34805(Blocks.STONE, var1, this.field43643);
@@ -4245,7 +4245,7 @@ public class Class9407 {
       this.method35925(Blocks.field36616, Blocks.field36622);
       this.method35956();
       this.method35925(Blocks.field36615, Blocks.field36621);
-      Class3311.method11854().forEach(var1 -> this.method35806(var1, Class9060.method33721("template_spawn_egg")));
+      SpawnEggItem.method11854().forEach(var1 -> this.method35806(var1, Class9060.method33721("template_spawn_egg")));
    }
 
    // $VF: synthetic method
@@ -4294,7 +4294,7 @@ public class Class9407 {
    }
 
    // $VF: synthetic method
-   public static void method36008(Class9407 var0, Class3257 var1) {
+   public static void method36008(Class9407 var0, Item var1) {
       var0.method35807(var1);
    }
 

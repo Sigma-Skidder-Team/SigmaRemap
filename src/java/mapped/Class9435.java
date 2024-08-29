@@ -9,15 +9,15 @@ public class Class9435 {
    private final World field43777;
    private final BlockPos field43778;
    private final Class3429 field43779;
-   private Class7380 field43780;
+   private BlockState field43780;
    private final boolean field43781;
    private final List<BlockPos> field43782 = Lists.newArrayList();
 
-   public Class9435(World var1, BlockPos var2, Class7380 var3) {
+   public Class9435(World var1, BlockPos var2, BlockState var3) {
       this.field43777 = var1;
       this.field43778 = var2;
       this.field43780 = var3;
-      this.field43779 = (Class3429)var3.method23383();
+      this.field43779 = (Class3429)var3.getBlock();
       Class96 var6 = var3.<Class96>method23463(this.field43779.method12093());
       this.field43781 = this.field43779.method12088();
       this.method36234(var6);
@@ -91,13 +91,13 @@ public class Class9435 {
 
    @Nullable
    private Class9435 method36237(BlockPos var1) {
-      Class7380 var4 = this.field43777.method6738(var1);
+      BlockState var4 = this.field43777.getBlockState(var1);
       if (!Class3429.method12087(var4)) {
          BlockPos var5 = var1.method8311();
-         var4 = this.field43777.method6738(var5);
+         var4 = this.field43777.getBlockState(var5);
          if (!Class3429.method12087(var4)) {
             var5 = var1.method8313();
-            var4 = this.field43777.method6738(var5);
+            var4 = this.field43777.getBlockState(var5);
             return !Class3429.method12087(var4) ? null : new Class9435(this.field43777, var5, var4);
          } else {
             return new Class9435(this.field43777, var5, var4);
@@ -114,7 +114,7 @@ public class Class9435 {
    private boolean method36239(BlockPos var1) {
       for (int var4 = 0; var4 < this.field43782.size(); var4++) {
          BlockPos var5 = this.field43782.get(var4);
-         if (var5.method8304() == var1.method8304() && var5.method8306() == var1.method8306()) {
+         if (var5.getX() == var1.getX() && var5.getZ() == var1.getZ()) {
             return true;
          }
       }
@@ -329,7 +329,7 @@ public class Class9435 {
 
       this.method36234(var14);
       this.field43780 = this.field43780.method23465(this.field43779.method12093(), var14);
-      if (var2 || this.field43777.method6738(this.field43778) != this.field43780) {
+      if (var2 || this.field43777.getBlockState(this.field43778) != this.field43780) {
          this.field43777.method6725(this.field43778, this.field43780, 3);
 
          for (int var21 = 0; var21 < this.field43782.size(); var21++) {
@@ -346,7 +346,7 @@ public class Class9435 {
       return this;
    }
 
-   public Class7380 method36245() {
+   public BlockState method36245() {
       return this.field43780;
    }
 }

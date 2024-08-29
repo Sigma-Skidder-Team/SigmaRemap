@@ -23,7 +23,7 @@ public class Class1170 extends Class1155<Class1170> {
          var1,
          this.field6345.field6835.field4568,
          var13,
-         var4 + 2 + 213 - this.field6345.field6835.field4568.method38820(var13),
+         var4 + 2 + 213 - this.field6345.field6835.field4568.getStringWidth(var13),
          var3 + 1,
          var2 % 2 != 0 ? 9474192 : 16777215
       );

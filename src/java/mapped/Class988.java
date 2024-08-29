@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class Class988 implements Class920 {
    private static String[] field5466;
    private final Class1060 field5467;
-   private final Class25<ItemStack> field5468 = Class25.<ItemStack>method68(3, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5468 = NonNullList.<ItemStack>method68(3, ItemStack.EMPTY);
    private Class9346 field5469;
    private int field5470;
    private int field5471;
@@ -22,7 +22,7 @@ public class Class988 implements Class920 {
    @Override
    public boolean method3617() {
       for (ItemStack var4 : this.field5468) {
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             return false;
          }
       }
@@ -38,11 +38,11 @@ public class Class988 implements Class920 {
    @Override
    public ItemStack method3619(int var1, int var2) {
       ItemStack var5 = this.field5468.get(var1);
-      if (var1 == 2 && !var5.method32105()) {
-         return Class7920.method26563(this.field5468, var1, var5.method32179());
+      if (var1 == 2 && !var5.isEmpty()) {
+         return Class7920.method26563(this.field5468, var1, var5.getCount());
       } else {
          ItemStack var6 = Class7920.method26563(this.field5468, var1, var2);
-         if (!var6.method32105() && this.method4065(var1)) {
+         if (!var6.isEmpty() && this.method4065(var1)) {
             this.method4066();
          }
 
@@ -62,7 +62,7 @@ public class Class988 implements Class920 {
    @Override
    public void method3621(int var1, ItemStack var2) {
       this.field5468.set(var1, var2);
-      if (!var2.method32105() && var2.method32179() > this.method3630()) {
+      if (!var2.isEmpty() && var2.getCount() > this.method3630()) {
          var2.method32180(this.method3630());
       }
 
@@ -85,7 +85,7 @@ public class Class988 implements Class920 {
       this.field5469 = null;
       ItemStack var3;
       ItemStack var4;
-      if (!this.field5468.get(0).method32105()) {
+      if (!this.field5468.get(0).isEmpty()) {
          var3 = this.field5468.get(0);
          var4 = this.field5468.get(1);
       } else {
@@ -93,7 +93,7 @@ public class Class988 implements Class920 {
          var4 = ItemStack.EMPTY;
       }
 
-      if (!var3.method32105()) {
+      if (!var3.isEmpty()) {
          Class46 var5 = this.field5467.method4742();
          if (!var5.isEmpty()) {
             Class9346 var6 = var5.method163(var3, var4, this.field5470);

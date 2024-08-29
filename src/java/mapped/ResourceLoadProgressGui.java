@@ -30,14 +30,14 @@ public class ResourceLoadProgressGui extends LoadingGui {
       this.field6441 = false;
    }
 
-   public static void method5677(Minecraft var0) {
+   public static void loadLogoTexture(Minecraft var0) {
       var0.getTextureManager().method1073(field6435, new Class297());
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      int var7 = this.field6438.method1580().getScaledWidth();
-      int var8 = this.field6438.method1580().getScaledHeight();
+      int var7 = this.field6438.getMainWindow().getScaledWidth();
+      int var8 = this.field6438.getMainWindow().getScaledHeight();
       long var9 = Util.milliTime();
       if (this.field6441 && (this.field6439.method29225() || this.field6438.currentScreen != null) && this.field6444 == -1L) {
          this.field6444 = var9;
@@ -68,9 +68,9 @@ public class ResourceLoadProgressGui extends LoadingGui {
          var14 = 1.0F;
       }
 
-      int var28 = (int)((double)this.field6438.method1580().getScaledWidth() * 0.5);
-      int var15 = (int)((double)this.field6438.method1580().getScaledHeight() * 0.5);
-      double var16 = Math.min((double)this.field6438.method1580().getScaledWidth() * 0.75, (double)this.field6438.method1580().getScaledHeight()) * 0.25;
+      int var28 = (int)((double)this.field6438.getMainWindow().getScaledWidth() * 0.5);
+      int var15 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.5);
+      double var16 = Math.min((double)this.field6438.getMainWindow().getScaledWidth() * 0.75, (double)this.field6438.getMainWindow().getScaledHeight()) * 0.25;
       int var18 = (int)(var16 * 0.5);
       double var19 = var16 * 4.0;
       int var21 = (int)(var19 * 0.5);
@@ -96,7 +96,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       RenderSystem.method27938();
       RenderSystem.method27939();
       RenderSystem.disableBlend();
-      int var23 = (int)((double)this.field6438.method1580().getScaledHeight() * 0.8325);
+      int var23 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field6439.method29224();
       this.field6442 = MathHelper.method37777(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       Class9299.field42771.method20217();
@@ -119,7 +119,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
          }
 
          if (this.field6438.currentScreen != null) {
-            this.field6438.currentScreen.method2467(this.field6438, this.field6438.method1580().getScaledWidth(), this.field6438.method1580().getScaledHeight());
+            this.field6438.currentScreen.init(this.field6438, this.field6438.getMainWindow().getScaledWidth(), this.field6438.getMainWindow().getScaledHeight());
          }
       }
    }
@@ -151,7 +151,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    }
 
    @Override
-   public boolean method5676() {
+   public boolean isPauseScreen() {
       return true;
    }
 

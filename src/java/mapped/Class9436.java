@@ -153,7 +153,7 @@ public abstract class Class9436<T extends Class9436<T>> {
       return var3;
    }
 
-   public abstract T method36267(Class8904 var1, Properties var2);
+   public abstract T method36267(DynamicRegistries var1, Properties var2);
 
    public class Property<V> implements Supplier<V> {
       private final String field23360;
@@ -171,7 +171,7 @@ public abstract class Class9436<T extends Class9436<T>> {
          return this.field23361;
       }
 
-      public T method15917(Class8904 var1, V var2) {
+      public T method15917(DynamicRegistries var1, V var2) {
          Properties var5 = Class9436.this.method36266();
          var5.put(this.field23360, this.field23362.apply((V)var2));
          return (T)Class9436.this.method36267(var1, var5);

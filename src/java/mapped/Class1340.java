@@ -6,7 +6,7 @@ public final class Class1340 implements Class1339 {
    private long field7112 = Util.milliTime();
 
    @Override
-   public void method6416(ITextComponent var1) {
+   public void displaySavingString(ITextComponent var1) {
    }
 
    @Override

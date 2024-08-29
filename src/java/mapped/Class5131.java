@@ -26,28 +26,28 @@ public class Class5131 implements Class5119 {
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       BlockPos var11 = new BlockPos(var3, 0.0, var7);
-      Class9352 var12 = Class9352.method35409();
-      Class5425 var13 = var12.method35411();
-      var13.method17063(5, Class9337.field43342);
+      Tessellator var12 = Tessellator.getInstance();
+      BufferBuilder var13 = var12.getBuffer();
+      var13.begin(5, DefaultVertexFormats.POSITION_COLOR);
 
       for (Entry var15 : this.field23323.entrySet()) {
          BlockPos var16 = (BlockPos)var15.getKey();
          BlockPos var17 = (BlockPos)var15.getValue();
-         float var18 = (float)(var17.method8304() * 128 % 256) / 256.0F;
+         float var18 = (float)(var17.getX() * 128 % 256) / 256.0F;
          float var19 = (float)(var17.getY() * 128 % 256) / 256.0F;
-         float var20 = (float)(var17.method8306() * 128 % 256) / 256.0F;
+         float var20 = (float)(var17.getZ() * 128 % 256) / 256.0F;
          float var21 = this.field23324.get(var16);
          if (var11.method8316(var16, 160.0)) {
-            Class264.method900(
+            WorldRenderer.method900(
                var13,
-               (double)((float)var16.method8304() + 0.5F) - var3 - (double)var21,
+               (double)((float)var16.getX() + 0.5F) - var3 - (double)var21,
                (double)((float)var16.getY() + 0.5F) - var5 - (double)var21,
-               (double)((float)var16.method8306() + 0.5F) - var7 - (double)var21,
-               (double)((float)var16.method8304() + 0.5F) - var3 + (double)var21,
+               (double)((float)var16.getZ() + 0.5F) - var7 - (double)var21,
+               (double)((float)var16.getX() + 0.5F) - var3 + (double)var21,
                (double)((float)var16.getY() + 0.5F) - var5 + (double)var21,
-               (double)((float)var16.method8306() + 0.5F) - var7 + (double)var21,
+               (double)((float)var16.getZ() + 0.5F) - var7 + (double)var21,
                var18,
                var19,
                var20,
@@ -58,14 +58,14 @@ public class Class5131 implements Class5119 {
 
       for (BlockPos var23 : this.field23325) {
          if (var11.method8316(var23, 160.0)) {
-            Class264.method900(
+            WorldRenderer.method900(
                var13,
-               (double)var23.method8304() - var3,
+               (double)var23.getX() - var3,
                (double)var23.getY() - var5,
-               (double)var23.method8306() - var7,
-               (double)((float)var23.method8304() + 1.0F) - var3,
+               (double)var23.getZ() - var7,
+               (double)((float)var23.getX() + 1.0F) - var3,
                (double)((float)var23.getY() + 1.0F) - var5,
-               (double)((float)var23.method8306() + 1.0F) - var7,
+               (double)((float)var23.getZ() + 1.0F) - var7,
                1.0F,
                1.0F,
                1.0F,
@@ -74,7 +74,7 @@ public class Class5131 implements Class5119 {
          }
       }
 
-      var12.method35410();
+      var12.draw();
       RenderSystem.enableDepthTest();
       RenderSystem.enableTexture();
       RenderSystem.popMatrix();

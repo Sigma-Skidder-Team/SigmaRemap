@@ -45,7 +45,7 @@ public class Class195 extends Class196 implements AutoCloseable {
    public void method602(BlockPos var1) {
       BlockPos var4 = var1.method8353();
       this.method607(
-         var1.method8304() >> 4, var1.method8306() >> 4, Class2044.field13350, Util.method38515(() -> super.method602(var4), () -> "checkBlock " + var4)
+         var1.getX() >> 4, var1.getZ() >> 4, Class2044.field13350, Util.method38515(() -> super.method602(var4), () -> "checkBlock " + var4)
       );
    }
 

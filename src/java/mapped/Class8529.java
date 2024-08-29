@@ -24,7 +24,7 @@ public final class Class8529 {
    public static final Class4703 field38316 = new Class8326(new Class6700(Class7700.field33027), Class6168.field27597).method29191(4).method29198();
    public static final Class4703 field38317 = new Class8326(new Class6700(Class7700.field33030), Class6168.field27597)
       .method29191(64)
-      .method29189(ImmutableSet.of(Class7700.field33013.method23383()))
+      .method29189(ImmutableSet.of(Class7700.field33013.getBlock()))
       .method29196()
       .method29198();
    public static final Class4703 field38318 = new Class8326(new Class6700(Class7700.field33015), new Class6169()).method29191(64).method29196().method29198();

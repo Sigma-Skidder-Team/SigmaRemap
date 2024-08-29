@@ -42,8 +42,8 @@ public class Class7372 extends Class7361 {
    private void method23377() {
       if (this.field31551 == null || this.field31551.method28693()) {
          int var3 = this.field31519.method4328();
-         BlockPos var4 = this.field31519.field5024.method7006(Class101.field300, Class2909.field17994);
-         PlayerEntity var5 = this.field31519.field5024.method7190(field31550, (double)var4.method8304(), (double)var4.getY(), (double)var4.method8306());
+         BlockPos var4 = this.field31519.world.method7006(Class101.field300, Class2909.field17994);
+         PlayerEntity var5 = this.field31519.world.method7190(field31550, (double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
          int var6;
          if (var5 == null) {
             var6 = this.field31519.method4329(40.0, (double)var4.getY(), 0.0);
@@ -52,7 +52,7 @@ public class Class7372 extends Class7361 {
             var6 = this.field31519.method4329(-var7.field18048 * 40.0, 105.0, -var7.field18050 * 40.0);
          }
 
-         Class7176 var8 = new Class7176(var4.method8304(), var4.getY(), var4.method8306());
+         Class7176 var8 = new Class7176(var4.getX(), var4.getY(), var4.getZ());
          this.field31551 = this.field31519.method4330(var3, var6, var8);
          if (this.field31551 != null) {
             this.field31551.method28691();
@@ -69,8 +69,8 @@ public class Class7372 extends Class7361 {
       if (this.field31551 != null && !this.field31551.method28693()) {
          BlockPos var3 = this.field31551.method28704();
          this.field31551.method28691();
-         double var4 = (double)var3.method8304();
-         double var6 = (double)var3.method8306();
+         double var4 = (double)var3.getX();
+         double var6 = (double)var3.getZ();
 
          double var8;
          do {

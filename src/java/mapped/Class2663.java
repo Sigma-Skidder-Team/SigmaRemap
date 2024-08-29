@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class Class2663 extends Class2661 {
    private static String[] field17024;
-   private final Predicate<Class7380> field17025;
+   private final Predicate<BlockState> field17025;
    private int field17026;
    private int field17027;
    private boolean field17028;
@@ -34,7 +34,7 @@ public class Class2663 extends Class2661 {
    public boolean method10860() {
       if (Class1017.method4481(this.field17031) <= 0) {
          if (!this.field17031.method4438()) {
-            if (!this.field17031.field5024.method6795()) {
+            if (!this.field17031.world.method6795()) {
                if (!(Class1017.method4482(this.field17031).nextFloat() < 0.7F)) {
                   Optional var3 = this.method10867();
                   if (!var3.isPresent()) {
@@ -43,9 +43,9 @@ public class Class2663 extends Class2661 {
                      Class1017.method4473(this.field17031, (BlockPos)var3.get());
                      Class1017.method4483(this.field17031)
                         .method21654(
-                           (double)Class1017.method4469(this.field17031).method8304() + 0.5,
+                           (double)Class1017.method4469(this.field17031).getX() + 0.5,
                            (double)Class1017.method4469(this.field17031).getY() + 0.5,
-                           (double)Class1017.method4469(this.field17031).method8306() + 0.5,
+                           (double)Class1017.method4469(this.field17031).getZ() + 0.5,
                            1.2F
                         );
                      return true;
@@ -68,7 +68,7 @@ public class Class2663 extends Class2661 {
    public boolean method10861() {
       if (this.field17028) {
          if (this.field17031.method4422()) {
-            if (!this.field17031.field5024.method6795()) {
+            if (!this.field17031.world.method6795()) {
                if (!this.method10862()) {
                   if (this.field17031.field5055 % 20 == 0 && !Class1017.method4470(this.field17031, Class1017.method4469(this.field17031))) {
                      Class1017.method4473(this.field17031, null);
@@ -182,8 +182,8 @@ public class Class2663 extends Class2661 {
       return this.method10868(this.field17025, 5.0);
    }
 
-   private Optional<BlockPos> method10868(Predicate<Class7380> var1, double var2) {
-      BlockPos var6 = this.field17031.method3432();
+   private Optional<BlockPos> method10868(Predicate<BlockState> var1, double var2) {
+      BlockPos var6 = this.field17031.getPosition();
       Mutable var7 = new Mutable();
 
       for (int var8 = 0; (double)var8 <= var2; var8 = var8 <= 0 ? 1 - var8 : -var8) {
@@ -191,7 +191,7 @@ public class Class2663 extends Class2661 {
             for (int var10 = 0; var10 <= var9; var10 = var10 <= 0 ? 1 - var10 : -var10) {
                for (int var11 = var10 < var9 && var10 > -var9 ? var9 : 0; var11 <= var9; var11 = var11 <= 0 ? 1 - var11 : -var11) {
                   var7.method8378(var6, var10, var8 - 1, var11);
-                  if (var6.method8316(var7, var2) && var1.test(this.field17031.field5024.method6738(var7))) {
+                  if (var6.method8316(var7, var2) && var1.test(this.field17031.world.getBlockState(var7))) {
                      return Optional.<BlockPos>of(var7);
                   }
                }

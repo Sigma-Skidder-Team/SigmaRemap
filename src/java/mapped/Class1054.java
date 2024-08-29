@@ -10,11 +10,11 @@ public class Class1054 extends Class1049 {
       if (var0 == null) {
          return false;
       } else {
-         return !(var0 instanceof PlayerEntity) || !var0.method2800() && !((PlayerEntity)var0).method2801() ? var0.method3089() != Class7809.field33509 : false;
+         return !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() ? var0.method3089() != Class7809.field33509 : false;
       }
    };
 
-   public Class1054(Class8992<? extends Class1054> var1, World var2) {
+   public Class1054(EntityType<? extends Class1054> var1, World var2) {
       super(var1, var2);
    }
 
@@ -42,20 +42,20 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("PuffState", this.method4828());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4829(var1.method122("PuffState"));
    }
 
    @Override
    public ItemStack method4796() {
-      return new ItemStack(Class8514.field37892);
+      return new ItemStack(Items.field37892);
    }
 
    @Override
@@ -66,7 +66,7 @@ public class Class1054 extends Class1049 {
 
    @Override
    public void tick() {
-      if (!this.field5024.field9020 && this.method3066() && this.method3138()) {
+      if (!this.world.field9020 && this.method3066() && this.method3138()) {
          if (this.field5821 <= 0) {
             if (this.method4828() != 0) {
                if (this.field5822 > 60 && this.method4828() == 2) {
@@ -101,7 +101,7 @@ public class Class1054 extends Class1049 {
    public void method2871() {
       super.method2871();
       if (this.method3066() && this.method4828() > 0) {
-         for (Class1006 var4 : this.field5024.method6772(Class1006.class, this.method3389().method19664(0.3), field5823)) {
+         for (Class1006 var4 : this.world.method6772(Class1006.class, this.method3389().method19664(0.3), field5823)) {
             if (var4.method3066()) {
                this.method4830(var4);
             }

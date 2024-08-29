@@ -12,7 +12,7 @@ public class Class5656 extends Class5651<Class1094, Class2876<Class1094>> {
    private static final ResourceLocation field25016 = new ResourceLocation("textures/entity/rabbit/toast.png");
    private static final ResourceLocation field25017 = new ResourceLocation("textures/entity/rabbit/caerbannog.png");
 
-   public Class5656(Class8853 var1) {
+   public Class5656(EntityRendererManager var1) {
       super(var1, new Class2876<Class1094>(), 0.3F);
    }
 

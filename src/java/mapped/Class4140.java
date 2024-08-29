@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4140 extends Class4057 {
    public Class4140() {
-      super(Class8992.field41104, "wither_skull", 0.0F);
+      super(EntityType.field41104, "wither_skull", 0.0F);
    }
 
    @Override
@@ -27,7 +27,7 @@ public class Class4140 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5734 var6 = new Class5734(var5);
       if (Class9299.field43151.method20238()) {
          Class9299.method35082(var6, Class9299.field43151, var1);

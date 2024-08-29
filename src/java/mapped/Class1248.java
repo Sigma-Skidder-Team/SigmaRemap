@@ -31,7 +31,7 @@ public class Class1248 extends Class1200 {
       Minecraft var7 = Minecraft.getInstance();
       var7.getTextureManager().bindTexture(field6611);
       RenderSystem.enableDepthTest();
-      Class9834 var8 = var7.field1294;
+      FontRenderer var8 = var7.fontRenderer;
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, this.field6484);
       RenderSystem.enableBlend();
       RenderSystem.method27938();

@@ -20,6 +20,6 @@ public class Class6994 extends Class6991 {
 
    @Override
    public boolean method21672(BlockPos var1) {
-      return this.field30244.method6738(var1).method23448(Blocks.LAVA) || super.method21672(var1);
+      return this.field30244.getBlockState(var1).method23448(Blocks.LAVA) || super.method21672(var1);
    }
 }

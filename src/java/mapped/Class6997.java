@@ -36,9 +36,9 @@ public class Class6997 extends Class6990 {
          if (!this.method21668()) {
             if (this.field30245 != null && !this.field30245.method28693()) {
                Vector3d var3 = this.field30245.method28703(this.field30243);
-               if (MathHelper.method37769(this.field30243.getPosX()) == MathHelper.method37769(var3.field18048)
-                  && MathHelper.method37769(this.field30243.getPosY()) == MathHelper.method37769(var3.field18049)
-                  && MathHelper.method37769(this.field30243.getPosZ()) == MathHelper.method37769(var3.field18050)) {
+               if (MathHelper.floor(this.field30243.getPosX()) == MathHelper.floor(var3.field18048)
+                  && MathHelper.floor(this.field30243.getPosY()) == MathHelper.floor(var3.field18049)
+                  && MathHelper.floor(this.field30243.getPosZ()) == MathHelper.floor(var3.field18050)) {
                   this.field30245.method28691();
                }
             }
@@ -120,13 +120,13 @@ public class Class6997 extends Class6990 {
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
       Vector3d var8 = new Vector3d(var2.field18048, var2.field18049 + (double)this.field30243.method3430() * 0.5, var2.field18050);
-      return this.field30244.method7036(new Class6809(var1, var8, Class2271.field14774, Class1985.field12962, this.field30243)).method31417()
-         == Class2100.field13689;
+      return this.field30244.method7036(new Class6809(var1, var8, Class2271.field14774, Class1985.field12962, this.field30243)).getType()
+         == RayTraceResult.Type.MISS;
    }
 
    @Override
    public boolean method21672(BlockPos var1) {
-      return !this.field30244.method6738(var1).method23409(this.field30244, var1);
+      return !this.field30244.getBlockState(var1).method23409(this.field30244, var1);
    }
 
    @Override

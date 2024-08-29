@@ -5,11 +5,11 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class Class7599 {
    public static String method24888(Class1665 var0, BlockPos var1) {
-      Class944 var4 = var0.method6759(var1);
+      TileEntity var4 = var0.getTileEntity(var1);
       return method24889(var4);
    }
 
-   public static String method24889(Class944 var0) {
+   public static String method24889(TileEntity var0) {
       if (var0 instanceof Class933) {
          Class933 var3 = (Class933)var0;
          method24890(var0);
@@ -19,8 +19,8 @@ public class Class7599 {
       }
    }
 
-   public static void method24890(Class944 var0) {
-      BlockPos var3 = var0.method3774();
+   public static void method24890(TileEntity var0) {
+      BlockPos var3 = var0.getPos();
       ITextComponent var4 = method24892(var0);
       if (var4 == null) {
          Object var5 = method24891(var3);
@@ -33,11 +33,11 @@ public class Class7599 {
    }
 
    public static ITextComponent method24891(BlockPos var0) {
-      Class944 var3 = Class5995.method18606(var0);
+      TileEntity var3 = Class5995.method18606(var0);
       return var3 != null ? method24892(var3) : null;
    }
 
-   public static ITextComponent method24892(Class944 var0) {
+   public static ITextComponent method24892(TileEntity var0) {
       if (!(var0 instanceof Class933)) {
          return !(var0 instanceof Class950) ? null : (ITextComponent)Class9299.method35072(var0, Class9299.field43159);
       } else {
@@ -45,7 +45,7 @@ public class Class7599 {
       }
    }
 
-   public static boolean method24893(Class944 var0, ITextComponent var1) {
+   public static boolean method24893(TileEntity var0, ITextComponent var1) {
       if (!(var0 instanceof Class932)) {
          if (!(var0 instanceof Class958)) {
             if (!(var0 instanceof Class934)) {

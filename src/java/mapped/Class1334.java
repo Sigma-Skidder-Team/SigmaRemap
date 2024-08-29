@@ -23,16 +23,16 @@ public class Class1334 extends Screen {
       super.method1921();
       this.field7059 = Class5991.method18584(this.field4568, field7055, this.field4564 - 50);
       int var3 = (this.field7059.method18592() + 1) * 9 * 2;
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, 100 + var3, 150, 20, Class7127.field30662, var1 -> {
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, 100 + var3, 150, 20, DialogTexts.GUI_PROCEED, var1 -> {
          if (this.field7058.method5820()) {
             this.field4562.gameSettings.field44630 = true;
-            this.field4562.gameSettings.method37146();
+            this.field4562.gameSettings.saveOptions();
          }
 
          this.field4562.displayGuiScreen(new MultiplayerScreen(this.field7053));
       }));
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155 + 160, 100 + var3, 150, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field7053))
+         new Class1206(this.field4564 / 2 - 155 + 160, 100 + var3, 150, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field7053))
       );
       this.field7058 = new Class1248(this.field4564 / 2 - 155 + 80, 76 + var3, 150, 20, field7056, false);
       this.<Class1248>method2455(this.field7058);

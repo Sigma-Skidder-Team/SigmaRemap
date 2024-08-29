@@ -19,7 +19,7 @@ public class Class3756 extends Class3676<Class880> {
       } else {
          Class6947<?> var5 = var2.method2992();
          Class9378 var6 = var5.method21410(Class8830.field39813).get();
-         if (var1.method6813() == var6.method35578()) {
+         if (var1.getDimensionKey() == var6.method35578()) {
             Optional var7 = var5.<Long>method21410(Class8830.field39844);
             if (var7.isPresent()) {
                long var9 = var1.method6783() - (Long)var7.get();
@@ -28,9 +28,9 @@ public class Class3756 extends Class3676<Class880> {
                }
             }
 
-            Class7380 var8 = var1.method6738(var6.method35579());
+            BlockState var8 = var1.getBlockState(var6.method35579());
             return var6.method35579().method8317(var2.getPositionVec(), 2.0)
-               && var8.method23383().method11540(Class7645.field32770)
+               && var8.getBlock().method11540(Class7645.field32770)
                && !var8.<Boolean>method23463(Class3250.field18714);
          } else {
             return false;

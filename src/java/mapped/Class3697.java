@@ -40,9 +40,9 @@ public class Class3697 extends Class3676<Class880> {
       Class7176 var8 = var7.method28706();
       Class7176 var9 = var7.method28705();
       BlockPos var10 = var8.method22531();
-      Class7380 var11 = var1.method6738(var10);
+      BlockState var11 = var1.getBlockState(var10);
       if (var11.method23446(Class7645.field32740)) {
-         Class3461 var12 = (Class3461)var11.method23383();
+         Class3461 var12 = (Class3461)var11.getBlock();
          if (!var12.method12141(var11)) {
             var12.method12142(var1, var11, var10, true);
          }
@@ -51,9 +51,9 @@ public class Class3697 extends Class3676<Class880> {
       }
 
       BlockPos var15 = var9.method22531();
-      Class7380 var13 = var1.method6738(var15);
+      BlockState var13 = var1.getBlockState(var15);
       if (var13.method23446(Class7645.field32740)) {
-         Class3461 var14 = (Class3461)var13.method23383();
+         Class3461 var14 = (Class3461)var13.getBlock();
          if (!var14.method12141(var13)) {
             var14.method12142(var1, var13, var15, true);
             this.method12565(var1, var2, var15);
@@ -73,9 +73,9 @@ public class Class3697 extends Class3676<Class880> {
             BlockPos var9 = var8.method35579();
             if ((var2 == null || !var2.method22531().equals(var9)) && (var3 == null || !var3.method22531().equals(var9))) {
                if (!method12564(var0, var1, var8)) {
-                  Class7380 var10 = var0.method6738(var9);
+                  BlockState var10 = var0.getBlockState(var9);
                   if (var10.method23446(Class7645.field32740)) {
-                     Class3461 var11 = (Class3461)var10.method23383();
+                     Class3461 var11 = (Class3461)var10.getBlock();
                      if (var11.method12141(var10)) {
                         if (!method12562(var0, var1, var9)) {
                            var11.method12142(var0, var10, var9, false);
@@ -103,7 +103,7 @@ public class Class3697 extends Class3676<Class880> {
          ? var5.method21410(Class8830.field39818)
             .get()
             .stream()
-            .filter(var1x -> var1x.method3204() == var1.method3204())
+            .filter(var1x -> var1x.getType() == var1.getType())
             .filter(var1x -> var2.method8317(var1x.getPositionVec(), 2.0))
             .anyMatch(var2x -> method12563(var0, var2x, var2))
          : false;
@@ -129,12 +129,12 @@ public class Class3697 extends Class3676<Class880> {
    }
 
    private static boolean method12564(ServerWorld var0, Class880 var1, Class9378 var2) {
-      return var2.method35578() != var0.method6813() || !var2.method35579().method8317(var1.getPositionVec(), 2.0);
+      return var2.method35578() != var0.getDimensionKey() || !var2.method35579().method8317(var1.getPositionVec(), 2.0);
    }
 
    private void method12565(ServerWorld var1, Class880 var2, BlockPos var3) {
       Class6947<?> var6 = var2.method2992();
-      Class9378 var7 = Class9378.method35577(var1.method6813(), var3);
+      Class9378 var7 = Class9378.method35577(var1.getDimensionKey(), var3);
       if (!var6.method21410(Class8830.field39833).isPresent()) {
          var6.method21406(Class8830.field39833, Sets.newHashSet(new Class9378[]{var7}));
       } else {

@@ -61,11 +61,11 @@ public class Class7317 {
    }
 
    public static double method23174(BlockPos var0, double var1, double var3, double var5) {
-      return method23176((double)var0.method8304(), (double)var0.getY(), (double)var0.method8306(), var1, var3, var5);
+      return method23176((double)var0.getX(), (double)var0.getY(), (double)var0.getZ(), var1, var3, var5);
    }
 
    public static float method23175(BlockPos var0, float var1, float var2, float var3) {
-      return method23177((float)var0.method8304(), (float)var0.getY(), (float)var0.method8306(), var1, var2, var3);
+      return method23177((float)var0.getX(), (float)var0.getY(), (float)var0.getZ(), var1, var2, var3);
    }
 
    public static double method23176(double var0, double var2, double var4, double var6, double var8, double var10) {

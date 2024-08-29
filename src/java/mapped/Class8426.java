@@ -33,20 +33,20 @@ public class Class8426 {
       return this.field36104.values();
    }
 
-   public Class39 method29605() {
-      Class39 var3 = new Class39();
+   public CompoundNBT method29605() {
+      CompoundNBT var3 = new CompoundNBT();
 
       for (Class3623 var5 : this.field36104.values()) {
-         var3.method99(var5.method12262().toString(), var5.method12273());
+         var3.put(var5.method12262().toString(), var5.method12273());
       }
 
       return var3;
    }
 
-   public void method29606(Class39 var1) {
+   public void method29606(CompoundNBT var1) {
       for (String var5 : var1.method97()) {
          ResourceLocation var6 = new ResourceLocation(var5);
-         this.field36104.put(var6, Class3623.method12274(var1.method130(var5), var6));
+         this.field36104.put(var6, Class3623.method12274(var1.getCompound(var5), var6));
       }
    }
 

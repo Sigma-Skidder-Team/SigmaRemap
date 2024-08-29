@@ -9,7 +9,7 @@ public class Class4211 extends Class4209 {
       super(Class7792.field33462, var1, var2, 64, var3, 21, 15, 21);
    }
 
-   public Class4211(Class8761 var1, Class39 var2) {
+   public Class4211(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33462, var2);
       this.field20522[0] = var2.method132("hasPlacedChest0");
       this.field20522[1] = var2.method132("hasPlacedChest1");
@@ -18,7 +18,7 @@ public class Class4211 extends Class4209 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("hasPlacedChest0", this.field20522[0]);
       var1.method115("hasPlacedChest1", this.field20522[1]);
@@ -68,10 +68,10 @@ public class Class4211 extends Class4209 {
          }
       }
 
-      Class7380 var19 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
-      Class7380 var20 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
-      Class7380 var21 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
-      Class7380 var13 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
+      BlockState var19 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+      BlockState var20 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+      BlockState var21 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
+      BlockState var13 = Blocks.SANDSTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
       this.method12927(var1, var5, 0, 0, 0, 4, 9, 4, Blocks.SANDSTONE.method11579(), Blocks.AIR.method11579(), false);
       this.method12927(var1, var5, 1, 10, 1, 3, 10, 3, Blocks.SANDSTONE.method11579(), Blocks.SANDSTONE.method11579(), false);
       this.method12923(var1, var19, 2, 10, 0, var5);

@@ -6,7 +6,7 @@ public class Class863 extends Class851<Class5819> {
    private static final ResourceLocation field4794 = new ResourceLocation("textures/gui/container/brewing_stand.png");
    private static final int[] field4795 = new int[]{29, 24, 20, 16, 11, 6, 0};
 
-   public Class863(Class5819 var1, Class974 var2, ITextComponent var3) {
+   public Class863(Class5819 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 

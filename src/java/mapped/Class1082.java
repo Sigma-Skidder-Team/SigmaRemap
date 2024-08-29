@@ -8,7 +8,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    private final Class2758<Class1082> field5946 = new Class2758<Class1082>(this, 1.0, 20, 15.0F);
    private final Class2647 field5947 = new Class2652(this, this, 1.2, false);
 
-   public Class1082(Class8992<? extends Class1082> var1, World var2) {
+   public Class1082(EntityType<? extends Class1082> var1, World var2) {
       super(var1, var2);
       this.method5031();
    }
@@ -32,7 +32,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(this.method5030(), 0.15F, 1.0F);
    }
 
@@ -48,7 +48,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       boolean var3 = this.method4310();
       if (var3) {
          ItemStack var4 = this.method2943(Class2106.field13736);
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             if (var4.method32115()) {
                var4.method32118(var4.method32117() + this.field5054.nextInt(2));
                if (var4.method32117() >= var4.method32119()) {
@@ -80,18 +80,18 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37796));
+      this.method2944(Class2106.field13731, new ItemStack(Items.field37796));
    }
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       this.method4270(var2);
       this.method4273(var2);
       this.method5031();
       this.method4281(this.field5054.nextFloat() < 0.55F * var2.method38330());
-      if (this.method2943(Class2106.field13736).method32105()) {
+      if (this.method2943(Class2106.field13736).isEmpty()) {
          LocalDate var8 = LocalDate.now();
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
@@ -105,15 +105,15 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    public void method5031() {
-      if (this.field5024 != null && !this.field5024.field9020) {
+      if (this.world != null && !this.world.field9020) {
          this.field5600.method20003(this.field5947);
          this.field5600.method20003(this.field5946);
-         ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Class8514.field37796));
-         if (var3.method32107() != Class8514.field37796) {
+         ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Items.field37796));
+         if (var3.getItem() != Items.field37796) {
             this.field5600.method20002(4, this.field5947);
          } else {
             byte var4 = 20;
-            if (this.field5024.method6997() != Class2197.field14354) {
+            if (this.world.method6997() != Class2197.field14354) {
                var4 = 40;
             }
 
@@ -125,15 +125,15 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4530(Class880 var1, float var2) {
-      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Class8514.field37796)));
+      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.field37796)));
       AbstractArrowEntity var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
-      var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.field5024.method6997().method8905() * 4));
+      var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
       this.method2863(Class6067.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.field5024.method6916(var6);
+      this.world.method6916(var6);
    }
 
    public AbstractArrowEntity method5032(ItemStack var1, float var2) {
@@ -142,11 +142,11 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public boolean method4234(Class3262 var1) {
-      return var1 == Class8514.field37796;
+      return var1 == Items.field37796;
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5031();
    }
@@ -154,7 +154,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method2944(Class2106 var1, ItemStack var2) {
       super.method2944(var1, var2);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.method5031();
       }
    }

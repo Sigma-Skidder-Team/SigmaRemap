@@ -15,13 +15,13 @@ public class Class5487 implements Packet<Class5116> {
    private int field24367;
    private int field24368;
    private int field24369;
-   private Class8992<?> field24370;
+   private EntityType<?> field24370;
    private int field24371;
 
    public Class5487() {
    }
 
-   public Class5487(int var1, UUID var2, double var3, double var5, double var7, float var9, float var10, Class8992<?> var11, int var12, Vector3d var13) {
+   public Class5487(int var1, UUID var2, double var3, double var5, double var7, float var9, float var10, EntityType<?> var11, int var12, Vector3d var13) {
       this.field24360 = var1;
       this.field24361 = var2;
       this.field24362 = var3;
@@ -49,19 +49,19 @@ public class Class5487 implements Packet<Class5116> {
          var1.getPosZ(),
          var1.field5032,
          var1.field5031,
-         var1.method3204(),
+         var1.getType(),
          var2,
          var1.method3433()
       );
    }
 
-   public Class5487(Entity var1, Class8992<?> var2, int var3, BlockPos var4) {
+   public Class5487(Entity var1, EntityType<?> var2, int var3, BlockPos var4) {
       this(
          var1.method3205(),
          var1.getUniqueID(),
-         (double)var4.method8304(),
+         (double)var4.getX(),
          (double)var4.getY(),
-         (double)var4.method8306(),
+         (double)var4.getZ(),
          var1.field5032,
          var1.field5031,
          var2,
@@ -74,7 +74,7 @@ public class Class5487 implements Packet<Class5116> {
    public void method17175(PacketBuffer var1) throws IOException {
       this.field24360 = var1.method35714();
       this.field24361 = var1.method35717();
-      this.field24370 = Registry.field16074.method9172(var1.method35714());
+      this.field24370 = Registry.ENTITY_TYPE.method9172(var1.method35714());
       this.field24362 = var1.readDouble();
       this.field24363 = var1.readDouble();
       this.field24364 = var1.readDouble();
@@ -90,7 +90,7 @@ public class Class5487 implements Packet<Class5116> {
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24360);
       var1.method35716(this.field24361);
-      var1.writeVarInt(Registry.field16074.method9171(this.field24370));
+      var1.writeVarInt(Registry.ENTITY_TYPE.method9171(this.field24370));
       var1.writeDouble(this.field24362);
       var1.writeDouble(this.field24363);
       var1.writeDouble(this.field24364);
@@ -146,7 +146,7 @@ public class Class5487 implements Packet<Class5116> {
       return this.field24369;
    }
 
-   public Class8992<?> method17266() {
+   public EntityType<?> method17266() {
       return this.field24370;
    }
 

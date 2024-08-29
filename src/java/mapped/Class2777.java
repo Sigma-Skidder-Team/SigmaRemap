@@ -16,10 +16,10 @@ public class Class2777 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field17372.field5024.method6740()) {
+      if (this.field17372.world.method6740()) {
          if (this.field17372.method3013().nextInt(8000) == 0) {
             this.field17373 = this.field17372
-               .field5024
+               .world
                .<Class1042>method7191(
                   Class1042.class,
                   field17371,

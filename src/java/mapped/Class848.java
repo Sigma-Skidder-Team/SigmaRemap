@@ -4,7 +4,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class Class848 extends Class838 {
    private Screen field4694;
-   private Class9574 field4695;
+   private GameSettings field4695;
    private Class9046 field4696 = new Class9046(this, new Class7549());
    private String field4697 = null;
    private String field4698 = null;
@@ -13,17 +13,17 @@ public class Class848 extends Class838 {
    public static final String field4701 = "<empty>";
    public static final String field4702 = "*";
 
-   public Class848(Screen var1, Class9574 var2) {
-      super(new StringTextComponent(Class9088.method33883("of.options.shaderOptionsTitle")));
+   public Class848(Screen var1, GameSettings var2) {
+      super(new StringTextComponent(I18n.format("of.options.shaderOptionsTitle")));
       this.field4694 = var1;
       this.field4695 = var2;
    }
 
-   public Class848(Screen var1, Class9574 var2, String var3) {
+   public Class848(Screen var1, GameSettings var2, String var3) {
       this(var1, var2);
       this.field4697 = var3;
       if (var3 != null) {
-         this.field4698 = Class8981.method33144("screen." + var3, var3);
+         this.field4698 = Shaders.method33144("screen." + var3, var3);
       }
    }
 
@@ -35,8 +35,8 @@ public class Class848 extends Class838 {
       byte var6 = 20;
       byte var7 = 120;
       byte var8 = 20;
-      int var9 = Class8981.method32969(this.field4697, 2);
-      Class6679[] var10 = Class8981.method32968(this.field4697);
+      int var9 = Shaders.method32969(this.field4697, 2);
+      Class6679[] var10 = Shaders.method32968(this.field4697);
       if (var10 != null) {
          int var11 = MathHelper.method37774((double)var10.length / 9.0);
          if (var9 < var11) {
@@ -55,7 +55,7 @@ public class Class848 extends Class838 {
                int var19 = var16 - 10;
                String var20 = method2592(var13, var19);
                Object var21;
-               if (!Class8981.method32973(var13.method20366())) {
+               if (! Shaders.method32973(var13.method20366())) {
                   var21 = new Class1213(var3 + var12, var17, var18, var19, var8, var13, var20);
                } else {
                   var21 = new Class1214(var3 + var12, var17, var18, var19, var8, var13, var20);
@@ -68,9 +68,9 @@ public class Class848 extends Class838 {
       }
 
       this.<Class1210>method2455(
-         new Class1210(201, this.field4564 / 2 - var7 - 20, this.field4565 / 6 + 168 + 11, var7, var8, Class9088.method33883("controls.reset"))
+         new Class1210(201, this.field4564 / 2 - var7 - 20, this.field4565 / 6 + 168 + 11, var7, var8, I18n.format("controls.reset"))
       );
-      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 + 20, this.field4565 / 6 + 168 + 11, var7, var8, Class9088.method33883("gui.done")));
+      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 + 20, this.field4565 / 6 + 168 + 11, var7, var8, I18n.format("gui.done")));
    }
 
    public static String method2592(Class6679 var0, int var1) {
@@ -79,10 +79,10 @@ public class Class848 extends Class838 {
          Class6681 var8 = (Class6681)var0;
          return var4 + "...";
       } else {
-         Class9834 var5 = Class7944.method26860().field1294;
-         int var6 = var5.method38820(": " + Class8043.method27623()) + 5;
+         FontRenderer var5 = Class7944.method26860().fontRenderer;
+         int var6 = var5.getStringWidth(": " + Class8043.method27623()) + 5;
 
-         while (var5.method38820(var4) + var6 >= var1 && var4.length() > 0) {
+         while (var5.getStringWidth(var4) + var6 >= var1 && var4.length() > 0) {
             var4 = var4.substring(0, var4.length() - 1);
          }
 
@@ -120,7 +120,7 @@ public class Class848 extends Class838 {
             }
 
             if (var4.field6523 == 201) {
-               Class6679[] var9 = Class8981.method32980(Class8981.method32972());
+               Class6679[] var9 = Shaders.method32980(Shaders.method32972());
 
                for (int var10 = 0; var10 < var9.length; var10++) {
                   Class6679 var7 = var9[var10];
@@ -133,9 +133,9 @@ public class Class848 extends Class838 {
 
             if (var4.field6523 == 200) {
                if (this.field4699) {
-                  Class8981.method32975();
+                  Shaders.method32975();
                   this.field4699 = false;
-                  Class8981.method33033();
+                  Shaders.method33033();
                }
 
                this.field4562.displayGuiScreen(this.field4694);
@@ -147,9 +147,9 @@ public class Class848 extends Class838 {
    @Override
    public void onClose() {
       if (this.field4699) {
-         Class8981.method32975();
+         Shaders.method32975();
          this.field4699 = false;
-         Class8981.method33033();
+         Shaders.method33033();
       }
 
       super.onClose();

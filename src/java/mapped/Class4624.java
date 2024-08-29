@@ -18,8 +18,8 @@ public class Class4624 {
 
    public static Class4624 method14543() {
       Minecraft var2 = Minecraft.getInstance();
-      String var3 = var2.method1533().getUsername();
-      String var4 = var2.method1533().toString();
+      String var3 = var2.getSession().getUsername();
+      String var4 = var2.getSession().toString();
       if (!field22143) {
          field22143 = true;
          String var5 = System.getenv("realms.environment");
@@ -57,7 +57,7 @@ public class Class4624 {
       this.field22145 = var1;
       this.field22146 = var2;
       this.field22147 = var3;
-      Class9094.method33922(var3.method1535());
+      Class9094.method33922(var3.getProxy());
    }
 
    public Class6118 method14547() throws Class2435 {
@@ -234,7 +234,7 @@ public class Class4624 {
    private boolean method14574(Class6110 var1) {
       try {
          UUID var4 = UUID.fromString(var1.field27373);
-         return this.field22147.method1578().method37608(var4);
+         return this.field22147.func_244599_aA().method37608(var4);
       } catch (IllegalArgumentException var5) {
          return false;
       }
@@ -309,7 +309,7 @@ public class Class4624 {
    private String method14586(Class6754<?> var1) throws Class2435 {
       var1.method20590("sid", this.field22145);
       var1.method20590("user", this.field22146);
-      var1.method20590("version", SharedConstants.method34773().getName());
+      var1.method20590("version", SharedConstants.getVersion().getName());
 
       try {
          int var4 = var1.method20594();

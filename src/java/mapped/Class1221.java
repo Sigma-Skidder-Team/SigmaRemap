@@ -32,7 +32,7 @@ public class Class1221 implements Class1219, Class1190 {
    private static final ITextComponent field6551 = new TranslationTextComponent("generator.amplified.info");
    private static final ITextComponent field6552 = new TranslationTextComponent("selectWorld.mapFeatures.info");
    private Class5991 field6553 = Class5991.field26162;
-   private Class9834 field6554;
+   private FontRenderer field6554;
    private int field6555;
    private Class1189 field6556;
    private Class1206 field6557;
@@ -41,18 +41,18 @@ public class Class1221 implements Class1219, Class1190 {
    private Class1206 field6560;
    private Class1206 field6561;
    private Class8905 field6562;
-   private Class7846 field6563;
+   private DimensionGeneratorSettings field6563;
    private Optional<Class5970> field6564;
    private OptionalLong field6565;
 
-   public Class1221(Class8905 var1, Class7846 var2, Optional<Class5970> var3, OptionalLong var4) {
+   public Class1221(Class8905 var1, DimensionGeneratorSettings var2, Optional<Class5970> var3, OptionalLong var4) {
       this.field6562 = var1;
       this.field6563 = var2;
       this.field6564 = var3;
       this.field6565 = var4;
    }
 
-   public void method5780(Class1335 var1, Minecraft var2, Class9834 var3) {
+   public void method5780(Class1335 var1, Minecraft var2, FontRenderer var3) {
       this.field6554 = var3;
       this.field6555 = var1.field4564;
       this.field6556 = new Class1189(this.field6554, this.field6555 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterSeed"));
@@ -109,31 +109,31 @@ public class Class1221 implements Class1219, Class1190 {
                TranslationTextComponent var6x = new TranslationTextComponent("selectWorld.import_worldgen_settings.select_file");
                String var7x = TinyFileDialogs.tinyfd_openFileDialog(var6x.getString(), (CharSequence)null, (PointerBuffer)null, (CharSequence)null, false);
                if (var7x != null) {
-                  Class8905 var8 = Class8904.method32457();
-                  Class313 var9 = new Class313(new Class7650(), new Class7652(var1.method6363().toFile(), Class7725.field33172));
+                  Class8905 var8 = DynamicRegistries.func_239770_b_();
+                  ResourcePackList var9 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var1.method6363().toFile(), IPackNameDecorator.WORLD));
 
-                  Class1701 var11;
+                  DataPackRegistries var11;
                   try {
-                     MinecraftServer.method1399(var9, var1.field7077, false);
-                     CompletableFuture var10 = Class1701.method7338(var9.method1273(), Class2085.field13577, 2, Util.method38492(), var2);
-                     var2.method1639(var10::isDone);
-                     var11 = (Class1701)var10.get();
+                     MinecraftServer.func_240772_a_(var9, var1.field7077, false);
+                     CompletableFuture var10 = DataPackRegistries.func_240961_a_(var9.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), var2);
+                     var2.driveUntil(var10::isDone);
+                     var11 = (DataPackRegistries)var10.get();
                   } catch (InterruptedException | ExecutionException var27) {
                      field6549.error("Error loading data packs when importing world settings", var27);
                      TranslationTextComponent var12 = new TranslationTextComponent("selectWorld.import_worldgen_settings.failure");
                      StringTextComponent var13 = new StringTextComponent(var27.getMessage());
-                     var2.method1566().method5914(Class7603.method24902(var2, Class1906.field11198, var12, var13));
+                     var2.getToastGui().method5914(SystemToast.method24902(var2, SystemToast.Type.field11198, var12, var13));
                      var9.close();
                      return;
                   }
 
-                  Class6711<JsonElement> var30 = Class6711.method20471(JsonOps.INSTANCE, var11.method7337(), var8);
+                  WorldSettingsImport<JsonElement> var30 = WorldSettingsImport.create(JsonOps.INSTANCE, var11.getResourceManager(), var8);
                   JsonParser var31 = new JsonParser();
 
-                  DataResult<Class7846> var32;
+                  DataResult<DimensionGeneratorSettings> var32;
                   try (BufferedReader var14 = Files.newBufferedReader(Paths.get(var7x))) {
                      JsonElement var16 = var31.parse(var14);
-                     var32 = Class7846.field33650.parse(var30, var16);
+                     var32 = DimensionGeneratorSettings.field_236201_a_.parse(var30, var16);
                   } catch (JsonSyntaxException | IOException | JsonIOException var29) {
                      var32 = DataResult.error("Failed to parse file: " + var29.getMessage());
                   }
@@ -143,7 +143,7 @@ public class Class1221 implements Class1219, Class1190 {
                      String var35 = var32.error().get().message();
                      field6549.error("Error parsing world settings: {}", var35);
                      StringTextComponent var36 = new StringTextComponent(var35);
-                     var2.method1566().method5914(Class7603.method24902(var2, Class1906.field11198, var33, var36));
+                     var2.getToastGui().method5914(SystemToast.method24902(var2, SystemToast.Type.field11198, var33, var36));
                   }
 
                   var11.close();
@@ -160,7 +160,7 @@ public class Class1221 implements Class1219, Class1190 {
                            if (var34 != Lifecycle.stable()) {
                               if (var34 != Lifecycle.experimental()) {
                                  var2.displayGuiScreen(
-                                    new Class829(
+                                    new ConfirmScreen(
                                        var8x,
                                        new TranslationTextComponent("selectWorld.import_worldgen_settings.deprecated.title"),
                                        new TranslationTextComponent("selectWorld.import_worldgen_settings.deprecated.question")
@@ -168,7 +168,7 @@ public class Class1221 implements Class1219, Class1190 {
                                  );
                               } else {
                                  var2.displayGuiScreen(
-                                    new Class829(
+                                    new ConfirmScreen(
                                        var8x,
                                        new TranslationTextComponent("selectWorld.import_worldgen_settings.experimental.title"),
                                        new TranslationTextComponent("selectWorld.import_worldgen_settings.experimental.question")
@@ -188,7 +188,7 @@ public class Class1221 implements Class1219, Class1190 {
       this.field6553 = Class5991.method18584(var3, field6551, this.field6559.method5740());
    }
 
-   private void method5781(Class8905 var1, Class7846 var2) {
+   private void method5781(Class8905 var1, DimensionGeneratorSettings var2) {
       this.field6562 = var1;
       this.field6563 = var2;
       this.field6564 = Class5970.method18504(var2);
@@ -198,7 +198,7 @@ public class Class1221 implements Class1219, Class1190 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field6556.method5633();
    }
 
@@ -214,7 +214,7 @@ public class Class1221 implements Class1219, Class1190 {
       }
    }
 
-   public void method5782(Class7846 var1) {
+   public void method5782(DimensionGeneratorSettings var1) {
       this.field6563 = var1;
    }
 
@@ -230,7 +230,7 @@ public class Class1221 implements Class1219, Class1190 {
       }
    }
 
-   public Class7846 method5785(boolean var1) {
+   public DimensionGeneratorSettings method5785(boolean var1) {
       OptionalLong var4 = this.method5786();
       return this.field6563.method26274(var1, var4);
    }
@@ -277,19 +277,19 @@ public class Class1221 implements Class1219, Class1190 {
       return this.field6562;
    }
 
-   public void method5790(Class1701 var1) {
-      Class8905 var4 = Class8904.method32457();
-      Class6713<JsonElement> var5 = Class6713.method20491(JsonOps.INSTANCE, this.field6562);
-      Class6711<JsonElement> var6 = Class6711.method20471(JsonOps.INSTANCE, var1.method7337(), var4);
-      DataResult<Class7846> var7 = Class7846.field33650.encodeStart(var5, this.field6563).flatMap(var1x -> Class7846.field33650.parse(var6, var1x));
-      var7.resultOrPartial(Util.method38529("Error parsing worldgen settings after loading data packs: ", field6549::error)).ifPresent(var2 -> {
+   public void method5790(DataPackRegistries var1) {
+      Class8905 var4 = DynamicRegistries.func_239770_b_();
+      WorldGenSettingsExport<JsonElement> var5 = WorldGenSettingsExport.create(JsonOps.INSTANCE, this.field6562);
+      WorldSettingsImport<JsonElement> var6 = WorldSettingsImport.create(JsonOps.INSTANCE, var1.getResourceManager(), var4);
+      DataResult<DimensionGeneratorSettings> var7 = DimensionGeneratorSettings.field_236201_a_.encodeStart(var5, this.field6563).flatMap(var1x -> DimensionGeneratorSettings.field_236201_a_.parse(var6, var1x));
+      var7.resultOrPartial(Util.func_240982_a_("Error parsing worldgen settings after loading data packs: ", field6549::error)).ifPresent(var2 -> {
          this.field6563 = var2;
          this.field6562 = var4;
       });
    }
 
    // $VF: synthetic method
-   public static Class7846 method5801(Class1221 var0) {
+   public static DimensionGeneratorSettings method5801(Class1221 var0) {
       return var0.field6563;
    }
 

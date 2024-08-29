@@ -2,26 +2,26 @@ package mapped;
 
 import java.util.function.Supplier;
 
-public final class Class7164 implements Class7165 {
+public final class Class7164 implements IProfiler {
    private static String[] field30815;
-   public final Class7165 field30816;
-   public final Class7165 field30817;
+   public final IProfiler field30816;
+   public final IProfiler field30817;
 
-   public Class7164(Class7165 var1, Class7165 var2) {
+   public Class7164(IProfiler var1, IProfiler var2) {
       this.field30816 = var1;
       this.field30817 = var2;
    }
 
    @Override
-   public void method22501() {
-      this.field30816.method22501();
-      this.field30817.method22501();
+   public void startTick() {
+      this.field30816.startTick();
+      this.field30817.startTick();
    }
 
    @Override
-   public void method22502() {
-      this.field30816.method22502();
-      this.field30817.method22502();
+   public void endTick() {
+      this.field30816.endTick();
+      this.field30817.endTick();
    }
 
    @Override

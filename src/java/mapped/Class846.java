@@ -4,7 +4,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class Class846 extends Class838 {
    private Screen field4686;
-   private Class9574 field4687;
+   private GameSettings field4687;
    private static AbstractOption[] field4688 = new AbstractOption[]{
       AbstractOption.field25330,
       AbstractOption.field25376,
@@ -27,8 +27,8 @@ public class Class846 extends Class838 {
    };
    private Class9046 field4689 = new Class9046(this, new Class7548());
 
-   public Class846(Screen var1, Class9574 var2) {
-      super(new StringTextComponent(Class9088.method33883("of.options.qualityTitle")));
+   public Class846(Screen var1, GameSettings var2) {
+      super(new StringTextComponent(I18n.format("of.options.qualityTitle")));
       this.field4686 = var1;
       this.field4687 = var2;
    }
@@ -47,7 +47,7 @@ public class Class846 extends Class838 {
          }
       }
 
-      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11, Class9088.method33883("gui.done")));
+      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 168 + 11, I18n.format("gui.done")));
    }
 
    @Override
@@ -55,7 +55,7 @@ public class Class846 extends Class838 {
       if (var1 instanceof Class1210) {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482 && var4.field6523 == 200) {
-            this.field4562.gameSettings.method37146();
+            this.field4562.gameSettings.saveOptions();
             this.field4562.displayGuiScreen(this.field4686);
          }
       }
@@ -63,7 +63,7 @@ public class Class846 extends Class838 {
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.method37146();
+      this.field4562.gameSettings.saveOptions();
       super.onClose();
    }
 

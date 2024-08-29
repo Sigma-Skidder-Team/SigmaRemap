@@ -3,12 +3,12 @@ package mapped;
 public abstract class Class1014 extends Class1013 {
    private int field5671;
 
-   public Class1014(Class8992<? extends Class1014> var1, World var2) {
+   public Class1014(EntityType<? extends Class1014> var1, World var2) {
       super(var1, var2);
    }
 
    public boolean method4404(ServerPlayerEntity var1) {
-      Class39 var4 = new Class39();
+      CompoundNBT var4 = new CompoundNBT();
       var4.method109("id", this.method3297());
       this.method3294(var4);
       if (!var1.method2948(var4)) {

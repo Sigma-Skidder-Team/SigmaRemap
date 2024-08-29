@@ -27,8 +27,8 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class7144>> field16038 = createKey("mob_effect");
    public static final RegistryKey<Registry<Block>> field16039 = createKey("block");
    public static final RegistryKey<Registry<Class6069>> field16040 = createKey("enchantment");
-   public static final RegistryKey<Registry<Class8992<?>>> field16041 = createKey("entity_type");
-   public static final RegistryKey<Registry<Class3257>> field16042 = createKey("item");
+   public static final RegistryKey<Registry<EntityType<?>>> field16041 = createKey("entity_type");
+   public static final RegistryKey<Registry<Item>> field16042 = createKey("item");
    public static final RegistryKey<Registry<Class8812>> field16043 = createKey("potion");
    public static final RegistryKey<Registry<Class7434<?>>> field16044 = createKey("particle_type");
    public static final RegistryKey<Registry<Class4387<?>>> field16045 = createKey("block_entity_type");
@@ -58,10 +58,10 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class9455> field16069 = method9175(field16036, () -> Class6067.field26714);
    public static final Class2351<Class7631> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Registry<Class7144> field16071 = method9175(field16038, () -> Class8254.field35492);
-   public static final Class2351<Block> field16072 = method9176(field16039, "air", () -> Blocks.AIR);
+   public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);
    public static final Registry<Class6069> field16073 = method9175(field16040, () -> Class8122.field34918);
-   public static final Class2351<Class8992<?>> field16074 = method9176(field16041, "pig", () -> Class8992.field41064);
-   public static final Class2351<Class3257> field16075 = method9176(field16042, "air", () -> Class8514.field37222);
+   public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.field41064);
+   public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.field37222);
    public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
    public static final Registry<Class7434<?>> field16077 = method9175(field16044, () -> Class7940.field34051);
    public static final Registry<Class4387<?>> field16078 = method9175(field16045, () -> Class4387.field21421);
@@ -135,9 +135,9 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static <T extends Class2349<?>> void method9174(Class2349<T> var0) {
       var0.forEach(var1 -> {
          if (var1.method9190().isEmpty()) {
-            field16031.error("Registry '{}' was empty after loading", var0.method9181(var1));
-            if (SharedConstants.field42545) {
-               throw new IllegalStateException("Registry: '" + var0.method9181(var1) + "' is empty, not allowed, fix me!");
+            field16031.error("Registry '{}' was empty after loading", var0.getKey(var1));
+            if (SharedConstants.developmentMode) {
+               throw new IllegalStateException("Registry: '" + var0.getKey(var1) + "' is empty, not allowed, fix me!");
             }
          }
 
@@ -204,7 +204,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    public <U> DataResult<U> encode(T var1, DynamicOps<U> var2, U var3) {
-      ResourceLocation var6 = this.method9181((T)var1);
+      ResourceLocation var6 = this.getKey((T)var1);
       if (var6 != null) {
          return !var2.compressMaps()
             ? var2.mergeToPrimitive(var3, var2.createString(var6.toString())).setLifecycle(this.field16140)
@@ -219,7 +219,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    @Nullable
-   public abstract ResourceLocation method9181(T var1);
+   public abstract ResourceLocation getKey(T var1);
 
    public abstract Optional<RegistryKey<T>> method9182(T var1);
 

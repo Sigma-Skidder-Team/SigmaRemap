@@ -6,7 +6,7 @@ public class Class4573 extends Class4566 {
    private final double field22015;
    private final double field22016;
 
-   public Class4573(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class4573(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6);
       this.field22044 = var8;
       this.field22045 = var10;

@@ -18,7 +18,7 @@ public class Class3392 extends Block {
       var0.put(Direction.SOUTH, field19021);
       var0.put(Direction.WEST, field19022);
       var0.put(Direction.field673, field19023);
-      var0.put(Direction.field672, field19024);
+      var0.put(Direction.DOWN, field19024);
    });
    public final Class6408[] field19026;
 
@@ -65,16 +65,16 @@ public class Class3392 extends Block {
    }
 
    @Override
-   public boolean method11493(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
       return false;
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return this.field19026[this.method12002(var1)];
    }
 
-   public int method12002(Class7380 var1) {
+   public int method12002(BlockState var1) {
       int var4 = 0;
 
       for (int var5 = 0; var5 < field19018.length; var5++) {

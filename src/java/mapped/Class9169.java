@@ -55,13 +55,13 @@ public class Class9169 {
 
    public int method34250(Class1665 var1, int var2) {
       Mutable var5 = new Mutable(this.field42089, (double)(var2 + 1), this.field42090);
-      boolean var6 = var1.method6738(var5).method23393();
-      var5.method8379(Direction.field672);
-      boolean var7 = var1.method6738(var5).method23393();
+      boolean var6 = var1.getBlockState(var5).isAir();
+      var5.method8379(Direction.DOWN);
+      boolean var7 = var1.getBlockState(var5).isAir();
 
       while (var5.getY() > 0) {
-         var5.method8379(Direction.field672);
-         boolean var8 = var1.method6738(var5).method23393();
+         var5.method8379(Direction.DOWN);
+         boolean var8 = var1.getBlockState(var5).isAir();
          if (!var8 && var7 && var6) {
             return var5.getY() + 1;
          }
@@ -75,7 +75,7 @@ public class Class9169 {
 
    public boolean method34251(Class1665 var1, int var2) {
       BlockPos var5 = new BlockPos(this.field42089, (double)(this.method34250(var1, var2) - 1), this.field42090);
-      Class7380 var6 = var1.method6738(var5);
+      BlockState var6 = var1.getBlockState(var5);
       Class8649 var7 = var6.method23384();
       return var5.getY() < var2 && !var7.method31085() && var7 != Class8649.field38945;
    }

@@ -3,7 +3,7 @@ package mapped;
 public class Class5746 extends Class5651<Class1058, Class2880<Class1058>> {
    private static final ResourceLocation field25170 = new ResourceLocation("textures/entity/iron_golem/iron_golem.png");
 
-   public Class5746(Class8853 var1) {
+   public Class5746(EntityRendererManager var1) {
       super(var1, new Class2880<Class1058>(), 0.7F);
       this.method17880(new Class251(this));
       this.method17880(new Class230(this));

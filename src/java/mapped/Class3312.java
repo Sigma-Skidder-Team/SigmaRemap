@@ -1,10 +1,10 @@
 package mapped;
 
-public class Class3312 extends Class3257 {
+public class Class3312 extends Item {
    private static String[] field18821;
-   private final Class8992<? extends Class995> field18822;
+   private final EntityType<? extends Class995> field18822;
 
-   public Class3312(Class8992<? extends Class995> var1, Class5643 var2) {
+   public Class3312(EntityType<? extends Class995> var1, Class5643 var2) {
       super(var2);
       this.field18822 = var1;
    }
@@ -17,23 +17,23 @@ public class Class3312 extends Class3257 {
       PlayerEntity var7 = var1.method18358();
       ItemStack var8 = var1.method18357();
       if (var7 != null && !this.method11857(var7, var5, var8, var6)) {
-         return ActionResultType.field14821;
+         return ActionResultType.FAIL;
       } else {
          World var9 = var1.method18360();
          Object var10;
-         if (this.field18822 != Class8992.field41060) {
-            if (this.field18822 != Class8992.field41043) {
+         if (this.field18822 != EntityType.field41060) {
+            if (this.field18822 != EntityType.field41043) {
                return ActionResultType.method9002(var9.field9020);
             }
 
-            var10 = new Class997(var9, var6, var5);
+            var10 = new ItemFrameEntity(var9, var6, var5);
          } else {
-            var10 = new Class998(var9, var6, var5);
+            var10 = new PaintingEntity(var9, var6, var5);
          }
 
-         Class39 var11 = var8.method32142();
+         CompoundNBT var11 = var8.method32142();
          if (var11 != null) {
-            Class8992.method33204(var9, var7, (Entity)var10, var11);
+            EntityType.method33204(var9, var7, (Entity)var10, var11);
          }
 
          if (!((Class995)var10).method4080()) {

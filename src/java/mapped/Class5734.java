@@ -5,7 +5,7 @@ public class Class5734 extends Class5715<Class902> {
    private static final ResourceLocation field25147 = new ResourceLocation("textures/entity/wither/wither.png");
    private final Class2844 field25148 = new Class2844();
 
-   public Class5734(Class8853 var1) {
+   public Class5734(EntityRendererManager var1) {
       super(var1);
    }
 
@@ -14,7 +14,7 @@ public class Class5734 extends Class5715<Class902> {
    }
 
    public void method17853(Class902 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      var4.method35294();
+      var4.push();
       var4.method35292(-1.0F, -1.0F, 1.0F);
       float var9 = MathHelper.method37828(var1.field5033, var1.field5031, var3);
       float var10 = MathHelper.method37821(var3, var1.field5034, var1.field5032);

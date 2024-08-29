@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class956 extends Class944 {
+public class Class956 extends TileEntity {
    private static String[] field5370;
 
    public Class956(Class4387<?> var1) {

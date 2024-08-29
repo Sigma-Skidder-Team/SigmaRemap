@@ -15,7 +15,7 @@ public class Class845 extends Class838 {
    private Class1210 field4685;
 
    public Class845(Screen var1) {
-      super(new StringTextComponent(Class9088.method33883("of.options.capeOF.title")));
+      super(new StringTextComponent(I18n.format("of.options.capeOF.title")));
       this.field4681 = var1;
    }
 
@@ -24,21 +24,21 @@ public class Class845 extends Class838 {
       int var3 = 0;
       var3 += 2;
       this.<Class1210>method2455(
-         new Class1210(210, this.field4564 / 2 - 155, this.field4565 / 6 + 24 * (var3 >> 1), 150, 20, Class9088.method33883("of.options.capeOF.openEditor"))
+         new Class1210(210, this.field4564 / 2 - 155, this.field4565 / 6 + 24 * (var3 >> 1), 150, 20, I18n.format("of.options.capeOF.openEditor"))
       );
       this.<Class1210>method2455(
          new Class1210(
-            220, this.field4564 / 2 - 155 + 160, this.field4565 / 6 + 24 * (var3 >> 1), 150, 20, Class9088.method33883("of.options.capeOF.reloadCape")
+            220, this.field4564 / 2 - 155 + 160, this.field4565 / 6 + 24 * (var3 >> 1), 150, 20, I18n.format("of.options.capeOF.reloadCape")
          )
       );
       var3 += 6;
       this.field4685 = new Class1210(
-         230, this.field4564 / 2 - 100, this.field4565 / 6 + 24 * (var3 >> 1), 200, 20, Class9088.method33883("of.options.capeOF.copyEditorLink")
+         230, this.field4564 / 2 - 100, this.field4565 / 6 + 24 * (var3 >> 1), 200, 20, I18n.format("of.options.capeOF.copyEditorLink")
       );
       this.field4685.field6483 = this.field4684 != null;
       this.<Class1210>method2455(this.field4685);
       var3 += 4;
-      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 24 * (var3 >> 1), Class9088.method33883("gui.done")));
+      this.<Class1210>method2455(new Class1210(200, this.field4564 / 2 - 100, this.field4565 / 6 + 24 * (var3 >> 1), I18n.format("gui.done")));
    }
 
    @Override
@@ -52,16 +52,16 @@ public class Class845 extends Class838 {
 
             if (var4.field6523 == 210) {
                try {
-                  String var5 = this.field4562.method1533().getProfile().getName();
-                  String var6 = this.field4562.method1533().getProfile().getId().toString().replace("-", "");
-                  String var7 = this.field4562.method1533().getToken();
+                  String var5 = this.field4562.getSession().getProfile().getName();
+                  String var6 = this.field4562.getSession().getProfile().getId().toString().replace("-", "");
+                  String var7 = this.field4562.getSession().getToken();
                   Random var8 = new Random();
                   Random var9 = new Random((long)System.identityHashCode(new Object()));
                   BigInteger var10 = new BigInteger(128, var8);
                   BigInteger var11 = new BigInteger(128, var9);
                   BigInteger var12 = var10.xor(var11);
                   String var13 = var12.toString(16);
-                  this.field4562.method1548().joinServer(this.field4562.method1533().getProfile(), var7, var13);
+                  this.field4562.getSessionService().joinServer(this.field4562.getSession().getProfile(), var7, var13);
                   String var14 = "https://optifine.net/capeChange?u=" + var6 + "&n=" + var5 + "&s=" + var13;
                   boolean var15 = Class7944.method26980(new URI(var14));
                   if (var15) {
@@ -72,7 +72,7 @@ public class Class845 extends Class838 {
                   }
                } catch (InvalidCredentialsException var20) {
                   Class7944.method26964(
-                     Class9088.method33883("of.message.capeOF.error1"), Class9088.method33883("of.message.capeOF.error2", var20.getMessage())
+                     I18n.format("of.message.capeOF.error1"), I18n.format("of.message.capeOF.error2", var20.getMessage())
                   );
                   Class7944.method26811("Mojang authentication failed");
                   Class7944.method26811(var20.getClass().getName() + ": " + var20.getMessage());
@@ -92,7 +92,7 @@ public class Class845 extends Class838 {
             }
 
             if (var4.field6523 == 230 && this.field4684 != null) {
-               this.field4562.field1302.method36350(this.field4684);
+               this.field4562.keyboardListener.method36350(this.field4684);
             }
          }
       }

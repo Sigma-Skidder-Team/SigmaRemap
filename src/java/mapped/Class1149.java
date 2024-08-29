@@ -26,7 +26,7 @@ public class Class1149 extends Screen {
             this.field4562.displayGuiScreen((Screen)null);
             int var4 = Class6639.method20257();
             TranslationTextComponent var5;
-            if (!this.field4562.method1531().method1374(Class1894.method8161(this.field6286), this.field6287, var4)) {
+            if (!this.field4562.getIntegratedServer().method1374(Class1894.method8161(this.field6286), this.field6287, var4)) {
                var5 = new TranslationTextComponent("commands.publish.failed");
             } else {
                var5 = new TranslationTextComponent("commands.publish.started", var4);
@@ -37,7 +37,7 @@ public class Class1149 extends Screen {
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field6283))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6283))
       );
       this.field6285 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, 100, 150, 20, StringTextComponent.EMPTY, var1 -> {
          if (!"spectator".equals(this.field6286)) {
@@ -66,7 +66,7 @@ public class Class1149 extends Screen {
    private void method5526() {
       this.field6285
          .method5743(new TranslationTextComponent("options.generic_value", field6281, new TranslationTextComponent("selectWorld.gameMode." + this.field6286)));
-      this.field6284.method5743(Class7127.method22238(field6280, this.field6287));
+      this.field6284.method5743(DialogTexts.method22238(field6280, this.field6287));
    }
 
    @Override

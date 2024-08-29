@@ -15,7 +15,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       switch (Class9111.field41872[var1.<Class113>method23463(field19060).ordinal()]) {
          case 1:
             return field19062;
@@ -26,15 +26,15 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method6812().method36878() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().method8905()) {
-         while (var2.method6738(var3).method23448(this)) {
+         while (var2.getBlockState(var3).method23448(this)) {
             var3 = var3.method8313();
          }
 
-         if (var2.method6738(var3).method23385(var2, var3, Class8992.field41110)) {
-            Entity var7 = Class8992.field41110
-               .method33201(var2, (Class39)null, (ITextComponent)null, (PlayerEntity)null, var3.method8311(), Class2202.field14394, false, false);
+         if (var2.getBlockState(var3).method23385(var2, var3, EntityType.field41110)) {
+            Entity var7 = EntityType.field41110
+               .method33201(var2, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var3.method8311(), Class2202.field14394, false, false);
             if (var7 != null) {
                var7.method3218();
             }
@@ -43,7 +43,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       Class113 var9 = var2.method544();
       Class113 var10 = var1.<Class113>method23463(field19060);
       boolean var11 = var10 != var9 && var9.method324();
@@ -53,19 +53,19 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
+   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.method3328() && !var4.method3329() && var4.method3367()) {
          var4.method3323(var3);
       }
    }
 
    @Override
-   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
+   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(100) == 0) {
          var2.method6745(
-            (double)var3.method8304() + 0.5,
+            (double)var3.getX() + 0.5,
             (double)var3.getY() + 0.5,
-            (double)var3.method8306() + 0.5,
+            (double)var3.getZ() + 0.5,
             Class6067.field26976,
             Class2266.field14732,
             0.5F,
@@ -75,18 +75,18 @@ public class Class3401 extends Block {
       }
 
       for (int var7 = 0; var7 < 4; var7++) {
-         double var8 = (double)var3.method8304() + var4.nextDouble();
+         double var8 = (double)var3.getX() + var4.nextDouble();
          double var10 = (double)var3.getY() + var4.nextDouble();
-         double var12 = (double)var3.method8306() + var4.nextDouble();
+         double var12 = (double)var3.getZ() + var4.nextDouble();
          double var14 = ((double)var4.nextFloat() - 0.5) * 0.5;
          double var16 = ((double)var4.nextFloat() - 0.5) * 0.5;
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.5;
          int var20 = var4.nextInt(2) * 2 - 1;
-         if (!var2.method6738(var3.method8345()).method23448(this) && !var2.method6738(var3.method8347()).method23448(this)) {
-            var8 = (double)var3.method8304() + 0.5 + 0.25 * (double)var20;
+         if (!var2.getBlockState(var3.method8345()).method23448(this) && !var2.getBlockState(var3.method8347()).method23448(this)) {
+            var8 = (double)var3.getX() + 0.5 + 0.25 * (double)var20;
             var14 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          } else {
-            var12 = (double)var3.method8306() + 0.5 + 0.25 * (double)var20;
+            var12 = (double)var3.getZ() + 0.5 + 0.25 * (double)var20;
             var18 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          }
 
@@ -95,12 +95,12 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
+   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
       return ItemStack.EMPTY;
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       switch (Class9111.field41873[var2.ordinal()]) {
          case 1:
          case 2:
@@ -118,7 +118,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19060);
    }
 }

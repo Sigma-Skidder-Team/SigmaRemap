@@ -26,7 +26,7 @@ public abstract class Class281 extends Class269<Map<ResourceLocation, JsonElemen
       this.field1073 = var2;
    }
 
-   public Map<ResourceLocation, JsonElement> method970(Class191 var1, Class7165 var2) {
+   public Map<ResourceLocation, JsonElement> method970(IResourceManager var1, IProfiler var2) {
       HashMap<ResourceLocation, JsonElement> var5 = Maps.newHashMap();
       int var6 = this.field1073.length() + 1;
 

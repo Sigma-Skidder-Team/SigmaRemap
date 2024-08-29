@@ -25,7 +25,7 @@ public class Class2647 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      long var3 = this.field16990.field5024.method6783();
+      long var3 = this.field16990.world.method6783();
       if (var3 - this.field17000 >= 20L) {
          this.field17000 = var3;
          Class880 var5 = this.field16990.method4232();
@@ -53,7 +53,7 @@ public class Class2647 extends Class2595 {
          if (!var3.method3066()) {
             return false;
          } else if (this.field16992) {
-            return !this.field16990.method4287(var3.method3432()) ? false : !(var3 instanceof PlayerEntity) || !var3.method2800() && !((PlayerEntity)var3).method2801();
+            return !this.field16990.method4287(var3.getPosition()) ? false : !(var3 instanceof PlayerEntity) || !var3.isSpectator() && !((PlayerEntity)var3).isCreative();
          } else {
             return !this.field16990.method4230().method21664();
          }
@@ -119,7 +119,7 @@ public class Class2647 extends Class2595 {
       double var6 = this.method10859(var1);
       if (var2 <= var6 && this.field16998 <= 0) {
          this.method10855();
-         this.field16990.swingArm(Hand.field182);
+         this.field16990.swingArm(Hand.MAIN_HAND);
          this.field16990.method3114(var1);
       }
    }

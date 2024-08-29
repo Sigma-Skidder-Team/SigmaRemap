@@ -7,7 +7,7 @@ import com.google.gson.JsonSerializationContext;
 
 public class Class4949 implements ILootSerializer<Class158> {
    public void serialize(JsonObject var1, Class158 var2, JsonSerializationContext var3) {
-      var1.addProperty("enchantment", Registry.field16073.method9181(Class158.method478(var2)).toString());
+      var1.addProperty("enchantment", Registry.field16073.getKey(Class158.method478(var2)).toString());
       var1.add("chances", var3.serialize(Class158.method479(var2)));
    }
 

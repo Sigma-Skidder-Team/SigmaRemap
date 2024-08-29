@@ -13,10 +13,10 @@ import javax.annotation.Nullable;
 
 public class Class7498 implements Class7495 {
    private static String[] field32213;
-   private final Class9348<Block, Class7380> field32214;
+   private final Class9348<Block, BlockState> field32214;
    private final List<Class9350> field32215;
 
-   public Class7498(Class9348<Block, Class7380> var1, List<Class9350> var2) {
+   public Class7498(Class9348<Block, BlockState> var1, List<Class9350> var2) {
       this.field32214 = var1;
       this.field32215 = var2;
    }
@@ -69,11 +69,11 @@ public class Class7498 implements Class7495 {
 
    @Nullable
    @Override
-   public Class7202 method24425(Class8968 var1, Function<Class7826, Class1713> var2, Class1902 var3, ResourceLocation var4) {
+   public IBakedModel method24425(Class8968 var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
       Class8931 var7 = new Class8931();
 
       for (Class9350 var9 : this.method24447()) {
-         Class7202 var10 = var9.method35407().method24425(var1, var2, var3, var4);
+         IBakedModel var10 = var9.method35407().method24425(var1, var2, var3, var4);
          if (var10 != null) {
             var7.method32655(var9.method35408(this.field32214), var10);
          }

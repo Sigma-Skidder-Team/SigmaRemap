@@ -23,21 +23,21 @@ public class Class4368 extends Class4247 {
    @Override
    public void method13027(float var1) {
       Class3192.method11439(
-         Class7925.field33947,
+         ClassicDecryption.regular17,
          (float)(this.field20895 + 10),
          (float)(this.field20896 + 8),
          this.field21351.method15990(),
          Class5628.method17688(Class1979.field12891.field12910, !this.field21351.method15996() ? 0.5F : 0.9F)
       );
       Class3192.method11439(
-         Class7925.field33948,
+         ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 33),
          "Bind",
          Class5628.method17688(Class1979.field12891.field12910, 1.0F)
       );
       Class3192.method11439(
-         Class7925.field33948,
+         ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 52),
          Class5628.method17736(this.field21351.method15976("Keybind")),
@@ -45,7 +45,7 @@ public class Class4368 extends Class4247 {
       );
       if (this.field21351.method15989().size() > 1) {
          Class3192.method11439(
-            Class7925.field33949,
+            ClassicDecryption.regular12,
             (float)(this.field20895 + 84),
             (float)(this.field20896 + 34),
             "Settings",

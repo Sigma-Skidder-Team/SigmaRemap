@@ -2,17 +2,17 @@ package mapped;
 
 public class Class4593 extends Class4587 {
    private static String[] field22080;
-   private final Class7911 field22081;
+   private final RenderTypeBuffers field22081;
    private final Entity field22082;
    private final Entity field22083;
    private int field22084;
-   private final Class8853 field22085;
+   private final EntityRendererManager field22085;
 
-   public Class4593(Class8853 var1, Class7911 var2, Class1656 var3, Entity var4, Entity var5) {
+   public Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5) {
       this(var1, var2, var3, var4, var5, var4.method3433());
    }
 
-   private Class4593(Class8853 var1, Class7911 var2, Class1656 var3, Entity var4, Entity var5, Vector3d var6) {
+   private Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5, Vector3d var6) {
       super(var3, var4.getPosX(), var4.getPosY(), var4.getPosZ(), var6.field18048, var6.field18049, var6.field18050);
       this.field22081 = var2;
       this.field22082 = this.method14532(var4);
@@ -33,8 +33,8 @@ public class Class4593 extends Class4587 {
    public void method14510(Class5422 var1, Class9624 var2, float var3) {
       Class7906 var6 = null;
       if (Class7944.method26921()) {
-         var6 = Class8981.field40848;
-         Class8981.method33079(this.field22082);
+         var6 = Shaders.field40848;
+         Shaders.method33079(this.field22082);
       }
 
       float var7 = ((float)this.field22084 + var3) / 3.0F;
@@ -61,8 +61,8 @@ public class Class4593 extends Class4587 {
          );
       var20.method25602();
       if (Class7944.method26921()) {
-         Class8981.method33080((Entity)null);
-         Class8981.method33021(var6);
+         Shaders.method33080((Entity)null);
+         Shaders.method33021(var6);
       }
    }
 

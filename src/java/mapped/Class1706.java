@@ -15,7 +15,7 @@ public class Class1706 implements AutoCloseable {
    private final List<Integer> field9299 = Lists.newArrayList();
    private Class9367 field9300;
 
-   public Class1706(Class191 var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
+   public Class1706(IResourceManager var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
       this.field9293 = new Class1808(var1, var2);
       this.field9294 = var3;
       this.field9295 = var4;
@@ -54,17 +54,17 @@ public class Class1706 implements AutoCloseable {
       this.field9293.method7937("OutSize").method7438(var4, var5);
       this.field9293.method7937("Time").method7437(var1);
       Minecraft var10 = Minecraft.getInstance();
-      this.field9293.method7937("ScreenSize").method7438((float)var10.method1580().getFramebufferWidth(), (float)var10.method1580().getFramebufferHeight());
+      this.field9293.method7937("ScreenSize").method7438((float)var10.getMainWindow().getFramebufferWidth(), (float)var10.getMainWindow().getFramebufferHeight());
       this.field9293.method7934();
       this.field9295.method29119(Minecraft.IS_RUNNING_ON_MAC);
       this.field9295.bindFramebuffer(false);
       RenderSystem.depthFunc(519);
-      Class5425 var7 = Class9352.method35409().method35411();
-      var7.method17063(7, Class9337.field43342);
-      var7.method17025(0.0, 0.0, 500.0).method17026(255, 255, 255, 255).method17031();
-      var7.method17025((double)var4, 0.0, 500.0).method17026(255, 255, 255, 255).method17031();
-      var7.method17025((double)var4, (double)var5, 500.0).method17026(255, 255, 255, 255).method17031();
-      var7.method17025(0.0, (double)var5, 500.0).method17026(255, 255, 255, 255).method17031();
+      BufferBuilder var7 = Tessellator.getInstance().getBuffer();
+      var7.begin(7, DefaultVertexFormats.POSITION_COLOR);
+      var7.pos(0.0, 0.0, 500.0).color(255, 255, 255, 255).endVertex();
+      var7.pos((double)var4, 0.0, 500.0).color(255, 255, 255, 255).endVertex();
+      var7.pos((double)var4, (double)var5, 500.0).color(255, 255, 255, 255).endVertex();
+      var7.pos(0.0, (double)var5, 500.0).color(255, 255, 255, 255).endVertex();
       var7.method17065();
       Class4395.method13895(var7);
       RenderSystem.depthFunc(515);

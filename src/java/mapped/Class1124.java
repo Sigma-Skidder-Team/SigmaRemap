@@ -9,20 +9,20 @@ public class Class1124 extends Class875<Class5824> {
    private static final ITextComponent field6159 = new TranslationTextComponent("container.repair.expensive");
    private Class1189 field6160;
 
-   public Class1124(Class5824 var1, Class974 var2, ITextComponent var3) {
+   public Class1124(Class5824 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3, field6158);
       this.field4723 = 60;
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field6160.method5633();
    }
 
    @Override
    public void method2716() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       int var3 = (this.field4564 - this.field4721) / 2;
       int var4 = (this.field4565 - this.field4722) / 2;
       this.field6160 = new Class1189(this.field4568, var3 + 62, var4 + 24, 103, 12, new TranslationTextComponent("container.repair"));
@@ -37,16 +37,16 @@ public class Class1124 extends Class875<Class5824> {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
+   public void resize(Minecraft var1, int var2, int var3) {
       String var6 = this.field6160.method5636();
-      this.method2467(var1, var2, var3);
+      this.init(var1, var2, var3);
       this.field6160.method5635(var6);
    }
 
    @Override
    public void onClose() {
       super.onClose();
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -79,7 +79,7 @@ public class Class1124 extends Class875<Class5824> {
       if (var6 > 0) {
          int var7 = 8453920;
          Object var8;
-         if (var6 >= 40 && !this.field4562.player.field4919.field29609) {
+         if (var6 >= 40 && !this.field4562.player.abilities.isCreativeMode) {
             var8 = field6159;
             var7 = 16736352;
          } else if (this.field4727.method18131(2).method18266()) {
@@ -108,8 +108,8 @@ public class Class1124 extends Class875<Class5824> {
    @Override
    public void method2720(Class5812 var1, int var2, ItemStack var3) {
       if (var2 == 0) {
-         this.field6160.method5635(!var3.method32105() ? var3.method32149().getString() : "");
-         this.field6160.method5666(!var3.method32105());
+         this.field6160.method5635(!var3.isEmpty() ? var3.method32149().getString() : "");
+         this.field6160.method5666(!var3.isEmpty());
          this.method5534(this.field6160);
       }
    }

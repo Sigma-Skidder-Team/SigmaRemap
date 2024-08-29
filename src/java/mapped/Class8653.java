@@ -30,7 +30,7 @@ public class Class8653 extends Class8652 {
       ItemStack var5 = !(this.field38991 instanceof Class880) ? ItemStack.EMPTY : ((Class880)this.field38991).method3090();
       String var6 = "death.attack." + this.field39022;
       String var7 = var6 + ".item";
-      return !var5.method32105() && var5.method32152()
+      return !var5.isEmpty() && var5.method32152()
          ? new TranslationTextComponent(var7, var1.getDisplayName(), var4, var5.method32173())
          : new TranslationTextComponent(var6, var1.getDisplayName(), var4);
    }

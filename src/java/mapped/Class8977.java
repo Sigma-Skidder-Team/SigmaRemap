@@ -2,7 +2,7 @@ package mapped;
 
 public class Class8977 extends Class8978 {
    public Class8977() {
-      super(Class4520.method14339(new ResourceLocation("")), Class4520.method14340(new ResourceLocation("")), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+      super(RenderType.method14339(new ResourceLocation("")), RenderType.method14340(new ResourceLocation("")), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
    }
 
    @Override

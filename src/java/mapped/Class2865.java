@@ -74,8 +74,8 @@ public class Class2865<T extends Class1006 & Class1092> extends Class2855<T> {
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      this.field17763.field31037 = (float) (-Math.PI * 2.0 / 9.0) - var3 * MathHelper.method37763(var2);
-      this.field17764.field31037 = (float) (Math.PI * 2.0 / 9.0) + var3 * MathHelper.method37763(var2);
+      this.field17763.field31037 = (float) (-Math.PI * 2.0 / 9.0) - var3 * MathHelper.sin(var2);
+      this.field17764.field31037 = (float) (Math.PI * 2.0 / 9.0) + var3 * MathHelper.sin(var2);
       this.field17762.field31036 = var5 * (float) (Math.PI / 180.0);
       int var9 = ((Class1092)var1).method5082();
       float var10 = 1.0F - (float) MathHelper.method37772(10 - 2 * var9) / 10.0F;
@@ -89,8 +89,8 @@ public class Class2865<T extends Class1006 & Class1092> extends Class2855<T> {
       }
 
       float var11 = 1.2F;
-      this.field17766.field31035 = MathHelper.method37764(var2) * 1.2F * var3;
-      this.field17767.field31035 = MathHelper.method37764(var2 + (float) Math.PI) * 1.2F * var3;
+      this.field17766.field31035 = MathHelper.cos(var2) * 1.2F * var3;
+      this.field17767.field31035 = MathHelper.cos(var2 + (float) Math.PI) * 1.2F * var3;
       this.field17768.field31035 = this.field17767.field31035;
       this.field17769.field31035 = this.field17766.field31035;
    }

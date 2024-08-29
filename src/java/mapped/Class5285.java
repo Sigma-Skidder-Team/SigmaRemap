@@ -14,7 +14,7 @@ public class Class5285 extends Module {
 
     public Class5285() {
         super(ModuleCategory.PLAYER, "InvMove", "Move freely in the inventory");
-        this.method15972(new Class6004("AACP", "Bypass for AACP", true));
+        this.registerSetting(new BooleanSetting("AACP", "Bypass for AACP", true));
         this.field23757 = false;
     }
 
@@ -22,7 +22,7 @@ public class Class5285 extends Module {
     private void method16583(Class4430 var1) {
         if (this.method15996()) {
             if (var1.method13977() == mc.gameSettings.field44639.field13070.field34875 && mc.player.method3337()) {
-                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
+                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
             }
         }
     }
@@ -43,16 +43,16 @@ public class Class5285 extends Module {
     private void method16585(TickEvent var1) {
         if (this.method15996()) {
             if (this.method15974("AACP")) {
-                boolean var4 = !(mc.currentScreen instanceof Class859) || !(mc.currentScreen instanceof Class868);
+                boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof Class868);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.method3337()) {
-                        mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10043));
+                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10043));
                     }
                 } else if (!this.field23757 && var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.method3337()) {
-                        mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
+                        mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
                     }
                 }
             }
@@ -70,8 +70,8 @@ public class Class5285 extends Module {
                     return;
                 }
 
-                if (mc.currentScreen instanceof Class861) {
-                    Class861 var9 = (Class861) mc.currentScreen;
+                if (mc.currentScreen instanceof CreativeScreen) {
+                    CreativeScreen var9 = (CreativeScreen) mc.currentScreen;
                     if (var9.method2654() == 5) {
                         return;
                     }
@@ -89,7 +89,7 @@ public class Class5285 extends Module {
                     if (var7.field13070.field34875 > 0
                             && mc.gameSettings.field44637.field13070.field34875 != var7.field13070.field34875
                             && var7.field13070.field34875 > 4) {
-                        int var8 = GLFW.glfwGetKey(mc.mainWindow.method8039(), var7.field13070.field34875);
+                        int var8 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), var7.field13070.field34875);
                         var7.field13071 = var8 == 1;
                     }
                 }

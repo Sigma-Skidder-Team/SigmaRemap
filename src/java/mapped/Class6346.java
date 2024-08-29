@@ -16,7 +16,7 @@ public class Class6346 extends Class6333 {
 
    @Override
    public void method19269() {
-      if (this.field27880.field5041 || !this.field27880.method3256()) {
+      if (this.field27880.field5041 || !this.field27880.canSwim()) {
          this.method19271();
       }
    }

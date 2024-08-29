@@ -25,18 +25,18 @@ public class Class2683 extends Class2595 {
    @Override
    public boolean method10806() {
       BlockPos var3 = this.field17097.method4777();
-      return !new BlockPos((double)var3.method8304(), this.field17097.getPosY(), (double)var3.method8306()).method8317(this.field17097.getPositionVec(), 4.0)
+      return !new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).method8317(this.field17097.getPositionVec(), 4.0)
          && !this.field17098
          && this.field17097.method3351() >= 100;
    }
 
    @Override
    public void method10804() {
-      if (this.field17097.field5024 instanceof ServerWorld) {
-         ServerWorld var3 = (ServerWorld)this.field17097.field5024;
+      if (this.field17097.world instanceof ServerWorld) {
+         ServerWorld var3 = (ServerWorld)this.field17097.world;
          this.field17098 = false;
          this.field17097.method4230().method21666();
-         BlockPos var4 = this.field17097.method3432();
+         BlockPos var4 = this.field17097.getPosition();
          Structure var5 = !((double)var3.field9016.nextFloat() >= 0.5) ? Structure.field18065 : Structure.field18069;
          BlockPos var6 = var3.method6943(var5, var4, 50, false);
          if (var6 != null) {
@@ -59,7 +59,7 @@ public class Class2683 extends Class2595 {
    @Override
    public void method10807() {
       BlockPos var3 = this.field17097.method4777();
-      if (new BlockPos((double)var3.method8304(), this.field17097.getPosY(), (double)var3.method8306()).method8317(this.field17097.getPositionVec(), 4.0)
+      if (new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).method8317(this.field17097.getPositionVec(), 4.0)
          || this.field17098) {
          this.field17097.method4779(false);
       }
@@ -67,7 +67,7 @@ public class Class2683 extends Class2595 {
 
    @Override
    public void method10805() {
-      World var3 = this.field17097.field5024;
+      World var3 = this.field17097.world;
       if (this.field17097.method4785() || this.field17097.method4230().method21664()) {
          Vector3d var4 = Vector3d.method11328(this.field17097.method4777());
          Vector3d var5 = Class8037.method27588(this.field17097, 16, 1, var4, (float) (Math.PI / 8));
@@ -77,7 +77,7 @@ public class Class2683 extends Class2595 {
 
          if (var5 != null) {
             BlockPos var6 = new BlockPos(var5);
-            if (!var3.method6739(var6).method23486(Class8953.field40469) || !var3.method6738(var6).method23440(var3, var6, Class1947.field12615)) {
+            if (!var3.method6739(var6).method23486(Class8953.field40469) || !var3.getBlockState(var6).method23440(var3, var6, Class1947.field12615)) {
                var5 = Class8037.method27587(this.field17097, 8, 5, var4);
             }
          }

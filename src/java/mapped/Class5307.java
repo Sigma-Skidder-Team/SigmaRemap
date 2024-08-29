@@ -37,11 +37,11 @@ public class Class5307 extends Module {
         if (this.method15996()) {
             if (var1.method13903() != null && var1.method13902().getY() == this.field23843 - 1
                     || var1.method13902().getY() == this.field23843
-                    || var1.method13902().getY() == this.field23843 + 1 && mc.world.method6738(var1.method13902()).method23383() instanceof Class3208
-                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3465
-                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3421
-                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3415
-                    || mc.world.method6738(var1.method13902()).method23383() instanceof Class3377) {
+                    || var1.method13902().getY() == this.field23843 + 1 && mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3208
+                    || mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3465
+                    || mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3421
+                    || mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3415
+                    || mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3377) {
                 var1.method13905(null);
             }
         }

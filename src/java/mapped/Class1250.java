@@ -15,9 +15,9 @@ public class Class1250 extends Class1249 {
 
    public void method5825(Minecraft var1) {
       Class6943 var4 = var1.player.method5397();
-      List<Class9266> var5 = var4.method21387(this.field6621);
+      List<RecipeList> var5 = var4.method21387(this.field6621);
       if (var1.player.field4905 instanceof Class5828) {
-         for (Class9266 var7 : var5) {
+         for (RecipeList var7 : var5) {
             for (Class4843 var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.field4905))) {
                if (var4.method21364(var9)) {
                   this.field6622 = 15.0F;
@@ -59,14 +59,14 @@ public class Class1250 extends Class1249 {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       this.method5696(var1, var10, this.field6478, var8, var9, this.field6475, this.field6476);
       RenderSystem.enableDepthTest();
-      this.method5826(var11.method1555());
+      this.method5826(var11.getItemRenderer());
       if (this.field6622 > 0.0F) {
          RenderSystem.popMatrix();
          this.field6622 -= var4;
       }
    }
 
-   private void method5826(Class216 var1) {
+   private void method5826(ItemRenderer var1) {
       List var4 = this.field6621.method8164();
       int var5 = !this.field6616 ? 0 : -2;
       if (var4.size() != 1) {
@@ -84,10 +84,10 @@ public class Class1250 extends Class1249 {
    }
 
    public boolean method5828(Class6943 var1) {
-      List<Class9266> var4 = var1.method21387(this.field6621);
+      List<RecipeList> var4 = var1.method21387(this.field6621);
       this.field6483 = false;
       if (var4 != null) {
-         for (Class9266 var6 : var4) {
+         for (RecipeList var6 : var4) {
             if (var6.method34886() && var6.method34891()) {
                this.field6483 = true;
                break;

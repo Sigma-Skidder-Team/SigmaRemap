@@ -25,19 +25,19 @@ public class FriendManager {
 
     @EventTarget
     private void method26996(Class4430 var1) {
-        if (var1.method13977() == this.field34179.gameSettings.field44644.field13070.field34875
-                && this.field34179.field1345 != null
-                && this.field34179.field1345.getName() != null) {
+        if (var1.method13977() == this.field34179.gameSettings.keyBindPickBlock.field13070.field34875
+                && this.field34179.pointedEntity != null
+                && this.field34179.pointedEntity.getName() != null) {
             CommandManager var4 = Client.getInstance().getCommandManager();
             var4.method30236();
-            if (this.method26997(this.field34179.field1345)) {
-                this.method27005(this.field34179.field1345.getName().getUnformattedComponentText());
+            if (this.method26997(this.field34179.pointedEntity)) {
+                this.method27005(this.field34179.pointedEntity.getName().getUnformattedComponentText());
                 Class8906.method32487(
-                        var4.method30235() + " " + this.field34179.field1345.getName().getUnformattedComponentText() + " is no longer your friend."
+                        var4.method30235() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText() + " is no longer your friend."
                 );
             } else {
-                this.method27001(this.field34179.field1345.getName().getUnformattedComponentText());
-                Class8906.method32487(var4.method30235() + " " + this.field34179.field1345.getName().getUnformattedComponentText() + " is now your friend.");
+                this.method27001(this.field34179.pointedEntity.getName().getUnformattedComponentText());
+                Class8906.method32487(var4.method30235() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText() + " is now your friend.");
             }
 
             this.method27009();

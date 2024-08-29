@@ -42,12 +42,12 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
       this.field6641 = var5;
       var3.player.field4905 = var5;
       this.field6645 = var3.player.method5397();
-      this.field6648 = var3.player.field4902.method4055();
+      this.field6648 = var3.player.inventory.method4055();
       if (this.method5839()) {
          this.method5834(var4);
       }
 
-      var3.field1302.method36347(true);
+      var3.keyboardListener.method36347(true);
    }
 
    public void method5834(boolean var1) {
@@ -55,10 +55,10 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
       int var4 = (this.field6635 - 147) / 2 - this.field6634;
       int var5 = (this.field6636 - 166) / 2;
       this.field6647.method19128();
-      this.field6642.player.field4902.method4061(this.field6647);
+      this.field6642.player.inventory.method4061(this.field6647);
       this.field6641.method18220(this.field6647);
       String var6 = this.field6643 == null ? "" : this.field6643.method5636();
-      this.field6643 = new Class1189(this.field6642.field1294, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
+      this.field6643 = new Class1189(this.field6642.fontRenderer, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
       this.field6643.method5657(50);
       this.field6643.method5661(false);
       this.field6643.method5671(true);
@@ -99,7 +99,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    public void method5836() {
       this.field6643 = null;
       this.field6639 = null;
-      this.field6642.field1302.method36347(false);
+      this.field6642.keyboardListener.method36347(false);
    }
 
    public int method5837(boolean var1, int var2, int var3) {
@@ -140,15 +140,15 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    }
 
    private void method5842(boolean var1) {
-      List<Class9266> var4 = this.field6645.method21387(this.field6639.method5827());
+      List<RecipeList> var4 = this.field6645.method21387(this.field6639.method5827());
       var4.forEach(var1x -> var1x.method34888(this.field6647, this.field6641.method18224(), this.field6641.method18225(), this.field6645));
-      ArrayList<Class9266> var5 = Lists.newArrayList(var4);
+      ArrayList<RecipeList> var5 = Lists.newArrayList(var4);
       var5.removeIf(var0 -> !var0.method34886());
       var5.removeIf(var0 -> !var0.method34891());
       String var6 = this.field6643.method5636();
       if (!var6.isEmpty()) {
          ObjectLinkedOpenHashSet var7 = new ObjectLinkedOpenHashSet(
-            this.field6642.<Class9266>method1557(Class266.field1032).method21737(var6.toLowerCase(Locale.ROOT))
+            this.field6642.<RecipeList>getSearchTree(SearchTreeManager.RECIPES).method21737(var6.toLowerCase(Locale.ROOT))
          );
          var5.removeIf(var1x -> !var7.contains(var1x));
       }
@@ -180,9 +180,9 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
 
    public void method5844() {
       if (this.method5839()) {
-         if (this.field6648 != this.field6642.player.field4902.method4055()) {
+         if (this.field6648 != this.field6642.player.inventory.method4055()) {
             this.method5845();
-            this.field6648 = this.field6642.player.field4902.method4055();
+            this.field6648 = this.field6642.player.inventory.method4055();
          }
 
          this.field6643.method5633();
@@ -191,7 +191,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
 
    private void method5845() {
       this.field6647.method19128();
-      this.field6642.player.field4902.method4061(this.field6647);
+      this.field6642.player.inventory.method4061(this.field6647);
       this.field6641.method18220(this.field6647);
       this.method5842(false);
    }
@@ -207,7 +207,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
          int var8 = (this.field6636 - 166) / 2;
          this.method5696(var1, var7, var8, 1, 1, 147, 166);
          if (!this.field6643.method5746() && this.field6643.method5636().isEmpty()) {
-            method5693(var1, this.field6642.field1294, field6631, var7 + 25, var8 + 14, -1);
+            method5693(var1, this.field6642.fontRenderer, field6631, var7 + 25, var8 + 14, -1);
          } else {
             this.field6643.method1923(var1, var2, var3, var4);
          }
@@ -267,17 +267,17 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
 
    @Override
    public boolean method1958(double var1, double var3, int var5) {
-      if (this.method5839() && !this.field6642.player.method2800()) {
+      if (this.method5839() && !this.field6642.player.isSpectator()) {
          if (this.field6646.method11316(var1, var3, var5, (this.field6635 - 147) / 2 - this.field6634, (this.field6636 - 166) / 2, 147, 166)) {
             Class4843 var11 = this.field6646.method11313();
-            Class9266 var12 = this.field6646.method11314();
+            RecipeList var12 = this.field6646.method11314();
             if (var11 != null && var12 != null) {
                if (!var12.method34889(var11) && this.field6637.method34737() == var11) {
                   return false;
                }
 
                this.field6637.method34733();
-               this.field6642.field1337.method23145(this.field6642.player.field4905.field25471, var11, Screen.method2476());
+               this.field6642.playerController.method23145(this.field6642.player.field4905.field25471, var11, Screen.method2476());
                if (!this.method5855()) {
                   this.method5840(false);
                }
@@ -333,7 +333,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    @Override
    public boolean method1920(int var1, int var2, int var3) {
       this.field6649 = false;
-      if (!this.method5839() || this.field6642.player.method2800()) {
+      if (!this.method5839() || this.field6642.player.isSpectator()) {
          return false;
       } else if (var1 == 256 && !this.method5855()) {
          this.method5840(false);
@@ -343,7 +343,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
          return true;
       } else if (this.field6643.method5746() && this.field6643.method5670() && var1 != 256) {
          return true;
-      } else if (this.field6642.gameSettings.field44645.method8519(var1, var2) && !this.field6643.method5746()) {
+      } else if (this.field6642.gameSettings.keyBindChat.method8519(var1, var2) && !this.field6643.method5746()) {
          this.field6649 = true;
          this.field6643.method5654(true);
          return true;
@@ -361,7 +361,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    @Override
    public boolean method1932(char var1, int var2) {
       if (!this.field6649) {
-         if (!this.method5839() || this.field6642.player.method2800()) {
+         if (!this.method5839() || this.field6642.player.isSpectator()) {
             return false;
          } else if (!this.field6643.method1932(var1, var2)) {
             return Class1152.super.method1932(var1, var2);
@@ -390,16 +390,16 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
 
    private void method5854(String var1) {
       if ("excitedze".equals(var1)) {
-         Class267 var4 = this.field6642.method1541();
+         LanguageManager var4 = this.field6642.getLanguageManager();
          Class2019 var5 = var4.method967("en_pt");
-         if (var4.method965().compareTo(var5) == 0) {
+         if (var4.getCurrentLanguage().compareTo(var5) == 0) {
             return;
          }
 
          var4.method964(var5);
-         this.field6642.gameSettings.field44676 = var5.getCode();
+         this.field6642.gameSettings.language = var5.getCode();
          this.field6642.reloadResources();
-         this.field6642.gameSettings.method37146();
+         this.field6642.gameSettings.saveOptions();
       }
    }
 
@@ -422,7 +422,7 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    }
 
    public void method5858(Class4843<?> var1, List<Class5839> var2) {
-      ItemStack var5 = var1.method14966();
+      ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
       this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(0)).field25580, ((Class5839)var2.get(0)).field25581);
       this.method5832(this.field6641.method18224(), this.field6641.method18225(), this.field6641.method18223(), var1, var1.method14969().iterator(), 0);
@@ -438,11 +438,11 @@ public class Class1254 extends Class1193 implements Class1190, Class1152, Class1
    }
 
    public void method5859() {
-      if (this.field6642.getClientPlayNetHandler() != null) {
+      if (this.field6642.getConnection() != null) {
          Class1939 var3 = this.field6641.method18227();
          boolean var4 = this.field6645.method21374().method34686(var3);
          boolean var5 = this.field6645.method21374().method34688(var3);
-         this.field6642.getClientPlayNetHandler().sendPacket(new Class5573(var3, var4, var5));
+         this.field6642.getConnection().sendPacket(new Class5573(var3, var4, var5));
       }
    }
 }

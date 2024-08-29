@@ -130,7 +130,7 @@ public class Client {
         this.field28981.method29970();
         this.field28989 = new Class8795();
         this.field28989.method31737();
-        GLFW.glfwSetWindowTitle(mc.mainWindow.method8039(), "Sigma 5.0");
+        GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");
         long var6 = System.currentTimeMillis();
         this.method19922();
         this.logger.info("Initialized.");
@@ -202,7 +202,7 @@ public class Client {
         }
     }
 
-    public void method19925() {
+    public void endTick() {
         this.guiManager.method33460();
     }
 
@@ -383,12 +383,12 @@ public class Client {
         if (var1 != ClientMode.CLASSIC) {
             if (var1 == ClientMode.JELLO) {
                 this.method19921();
-                GLFW.glfwSetWindowTitle(mc.mainWindow.method8039(), "Jello for Sigma 5.0");
+                GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
             }
         } else {
-            Class7925.method26597();
+            ClassicDecryption.init();
             getInstance().getGuiManager().method33452();
-            GLFW.glfwSetWindowTitle(mc.mainWindow.method8039(), "Classic Sigma 5.0");
+            GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Classic Sigma 5.0");
         }
 
         if (this.moduleManager == null && Class1537.field8341 != null) {

@@ -207,7 +207,7 @@ public class Class8654 {
 
    public boolean method31146() {
       Entity var3 = this.method31109();
-      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).field4919.field29609;
+      return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.isCreativeMode;
    }
 
    @Nullable

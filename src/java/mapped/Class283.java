@@ -26,7 +26,7 @@ public class Class283 extends Class281 {
       return this.field1080.get(var1);
    }
 
-   public void method971(Map<ResourceLocation, JsonElement> var1, Class191 var2, Class7165 var3) {
+   public void method971(Map<ResourceLocation, JsonElement> var1, IResourceManager var2, IProfiler var3) {
       Builder<ResourceLocation, ILootCondition> var6 = ImmutableMap.builder();
       var1.forEach((var1x, var2x) -> {
          try {

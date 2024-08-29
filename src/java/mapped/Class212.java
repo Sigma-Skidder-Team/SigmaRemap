@@ -23,7 +23,7 @@ public final class Class212 extends Class200<Class7587, Class210> {
 
          if (var5 < 15) {
             MutableInt var8 = new MutableInt();
-            Class7380 var9 = this.method647(var3, var8);
+            BlockState var9 = this.method647(var3, var8);
             if (var8.getValue() >= 15) {
                return 15;
             } else {
@@ -41,12 +41,12 @@ public final class Class212 extends Class200<Class7587, Class210> {
                if (var1 != Long.MAX_VALUE) {
                   var20 = Direction.method548(var17, var18, var19);
                } else {
-                  var20 = Direction.field672;
+                  var20 = Direction.DOWN;
                }
 
-               Class7380 var21 = this.method647(var1, (MutableInt)null);
+               BlockState var21 = this.method647(var1, (MutableInt)null);
                if (var20 == null) {
-                  Class6408 var22 = this.method648(var21, var1, Direction.field672);
+                  Class6408 var22 = this.method648(var21, var1, Direction.DOWN);
                   if (Class8022.method27444(var22, Class8022.method27425())) {
                      return 15;
                   }
@@ -167,7 +167,7 @@ public final class Class212 extends Class200<Class7587, Class210> {
                   return var8;
                }
             }
-         } else if (var16 != Direction.field672) {
+         } else if (var16 != Direction.DOWN) {
             for (var17 = BlockPos.method8334(var17);
                !this.field748.method698(var19) && !this.field748.method724(var19);
                var17 = BlockPos.method8327(var17, 0, 16, 0)

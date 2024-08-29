@@ -1,9 +1,9 @@
 package mapped;
 
 public class Class4859 extends Class4837 {
-   private static final Class120 field22655 = Class120.method339(Class8514.field37899);
-   private static final Class120 field22656 = Class120.method339(Class8514.field37840);
-   private static final Class120 field22657 = Class120.method339(Class8514.field38069);
+   private static final Class120 field22655 = Class120.method339(Items.field37899);
+   private static final Class120 field22656 = Class120.method339(Items.field37840);
+   private static final Class120 field22657 = Class120.method339(Items.field38069);
 
    public Class4859(ResourceLocation var1) {
       super(var1);
@@ -15,7 +15,7 @@ public class Class4859 extends Class4837 {
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          ItemStack var8 = var1.method3618(var7);
-         if (!var8.method32105()) {
+         if (!var8.isEmpty()) {
             if (!field22655.test(var8)) {
                if (!field22656.test(var8)) {
                   if (!field22657.test(var8)) {
@@ -38,17 +38,17 @@ public class Class4859 extends Class4837 {
    }
 
    public ItemStack method14962(Class926 var1) {
-      ItemStack var4 = new ItemStack(Class8514.field38068, 3);
-      Class39 var5 = var4.method32144("Fireworks");
-      Class41 var6 = new Class41();
+      ItemStack var4 = new ItemStack(Items.field38068, 3);
+      CompoundNBT var5 = var4.method32144("Fireworks");
+      ListNBT var6 = new ListNBT();
       int var7 = 0;
 
       for (int var8 = 0; var8 < var1.method3629(); var8++) {
          ItemStack var9 = var1.method3618(var8);
-         if (!var9.method32105()) {
+         if (!var9.isEmpty()) {
             if (!field22656.test(var9)) {
                if (field22657.test(var9)) {
-                  Class39 var10 = var9.method32145("Explosion");
+                  CompoundNBT var10 = var9.method32145("Explosion");
                   if (var10 != null) {
                      var6.add(var10);
                   }
@@ -61,7 +61,7 @@ public class Class4859 extends Class4837 {
 
       var5.method100("Flight", (byte)var7);
       if (!var6.isEmpty()) {
-         var5.method99("Explosions", var6);
+         var5.put("Explosions", var6);
       }
 
       return var4;
@@ -73,8 +73,8 @@ public class Class4859 extends Class4837 {
    }
 
    @Override
-   public ItemStack method14966() {
-      return new ItemStack(Class8514.field38068);
+   public ItemStack getRecipeOutput() {
+      return new ItemStack(Items.field38068);
    }
 
    @Override

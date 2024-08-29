@@ -3,9 +3,9 @@ package mapped;
 public class Class6344 extends Class6333 {
    private static String[] field27873;
    private final PlayerEntity field27874;
-   private final Class916 field27875;
+   private final AbstractMinecartEntity field27875;
 
-   public Class6344(PlayerEntity var1, Class916 var2) {
+   public Class6344(PlayerEntity var1, AbstractMinecartEntity var2) {
       super(Class6067.field26763, Class2266.field14734);
       this.field27874 = var1;
       this.field27875 = var2;

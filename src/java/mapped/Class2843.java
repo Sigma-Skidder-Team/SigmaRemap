@@ -6,8 +6,8 @@ public class Class2843 extends Class2828 {
    public Class7219[] field17642 = new Class7219[4];
 
    public Class2843() {
-      super(Class4520::method14312);
-      Class8086 var3 = Class8086.field34743;
+      super(RenderType::getEntityCutoutNoCull);
+      TileEntityRendererDispatcher var3 = TileEntityRendererDispatcher.instance;
       Class5950 var4 = new Class5950(var3);
       this.field17640 = (Class7219)Class9299.field43155.method20235(var4);
       this.field17641 = (Class7219)Class9299.field43156.method20235(var4);

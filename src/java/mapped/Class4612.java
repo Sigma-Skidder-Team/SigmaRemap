@@ -5,7 +5,7 @@ public class Class4612 extends Class4566 {
    private final float field22124;
    private final Class8975 field22125;
 
-   public Class4612(Class1656 var1, double var2, double var4, double var6, float var8, float var9, float var10, Class8975 var11) {
+   public Class4612(ClientWorld var1, double var2, double var4, double var6, float var8, float var9, float var10, Class8975 var11) {
       super(var1, var2, var4, var6);
       this.field22125 = var11;
       this.field22058 = var8;

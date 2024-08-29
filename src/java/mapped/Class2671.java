@@ -24,7 +24,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
          Class1026 var4 = var3.method25422(this.field17055.method4554());
          if (var4 == null || !var4.method3066()) {
             List var5 = this.field17055
-               .field5024
+               .world
                .<ItemEntity>method6772(ItemEntity.class, this.field17055.method3389().method19663(16.0, 8.0, 16.0), Class1026.method4566());
             if (!var5.isEmpty()) {
                return this.field17055.method4230().method21655((Entity)var5.get(0), 1.15F);
@@ -41,7 +41,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
    public void method10805() {
       if (this.field17055.method4230().method21643().method8317(this.field17055.getPositionVec(), 1.414)) {
          List var3 = this.field17055
-            .field5024
+            .world
             .<ItemEntity>method6772(ItemEntity.class, this.field17055.method3389().method19663(4.0, 4.0, 4.0), Class1026.method4566());
          if (!var3.isEmpty()) {
             this.field17055.method4246((ItemEntity)var3.get(0));

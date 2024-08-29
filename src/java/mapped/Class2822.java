@@ -53,6 +53,6 @@ public class Class2822<T extends Entity> extends Class2803<T> {
          var9 = 1.5F;
       }
 
-      this.field17585.field31036 = -var9 * 0.45F * MathHelper.method37763(0.6F * var4);
+      this.field17585.field31036 = -var9 * 0.45F * MathHelper.sin(0.6F * var4);
    }
 }

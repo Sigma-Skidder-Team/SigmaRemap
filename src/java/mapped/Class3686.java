@@ -24,13 +24,13 @@ public class Class3686 extends Class3676<Class880> {
 
    @Override
    public boolean method12508(ServerWorld var1, Class880 var2) {
-      return !var1.method7022(var2.method3432());
+      return !var1.method7022(var2.getPosition());
    }
 
    @Nullable
    private Vector3d method12532(ServerWorld var1, Class880 var2) {
       Random var5 = var2.method3013();
-      BlockPos var6 = var2.method3432();
+      BlockPos var6 = var2.getPosition();
 
       for (int var7 = 0; var7 < 10; var7++) {
          BlockPos var8 = var6.method8336(var5.nextInt(20) - 10, var5.nextInt(6) - 3, var5.nextInt(20) - 10);

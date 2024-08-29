@@ -13,7 +13,7 @@ public class Class1220 extends Class1206 implements Class1219 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.method5743(new TranslationTextComponent(Class806.method2117(this.field6548) != 0 ? "mco.invites.pending" : "mco.invites.nopending"));
    }
 

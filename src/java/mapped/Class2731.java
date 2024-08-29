@@ -12,19 +12,19 @@ public class Class2731 extends Class2595 {
    private final double field17245;
    private PlayerEntity field17246;
    private int field17247;
-   private final Set<Class3257> field17248;
+   private final Set<Item> field17248;
 
-   public Class2731(Class1088 var1, double var2, Class3257 var4) {
+   public Class2731(Class1088 var1, double var2, Item var4) {
       this.field17244 = var1;
       this.field17245 = var2;
-      this.field17248 = Sets.newHashSet(new Class3257[]{var4});
+      this.field17248 = Sets.newHashSet(new Item[]{var4});
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
    }
 
    @Override
    public boolean method10803() {
       if (this.field17247 <= 0) {
-         this.field17246 = this.field17244.field5024.method7188(field17243, this.field17244);
+         this.field17246 = this.field17244.world.method7188(field17243, this.field17244);
          return this.field17246 == null ? false : this.method10942(this.field17246.method3090()) || this.method10942(this.field17246.method3091());
       } else {
          this.field17247--;
@@ -33,7 +33,7 @@ public class Class2731 extends Class2595 {
    }
 
    private boolean method10942(ItemStack var1) {
-      return this.field17248.contains(var1.method32107());
+      return this.field17248.contains(var1.getItem());
    }
 
    @Override

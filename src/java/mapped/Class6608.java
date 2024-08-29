@@ -16,10 +16,10 @@ public interface Class6608 extends Class6607 {
    int method20059();
 
    @Override
-   default void method20049(Class8965 var1) {
+   default void method20049(CrashReportCategory var1) {
       Class6607.super.method20049(var1);
-      var1.method32806("Level name", this::method20054);
-      var1.method32806(
+      var1.addDetail("Level name", this::method20054);
+      var1.addDetail(
          "Level game mode",
          () -> String.format(
                "Game mode: %s (ID %d). Hardcore: %b. Cheats: %b",
@@ -29,7 +29,7 @@ public interface Class6608 extends Class6607 {
                this.method20072()
             )
       );
-      var1.method32806(
+      var1.addDetail(
          "Level weather",
          () -> String.format(
                "Rain time: %d (now: %b), thunder time: %d (now: %b)", this.method20056(), this.method20043(), this.method20059(), this.method20042()

@@ -21,18 +21,18 @@ public class Class7478 {
                Class9319.field43263.fieldOf("surface_builder").forGetter(var0x -> var0x.field32138),
                Codec.simpleMap(
                      Class97.field261,
-                     Class6815.field29676.promotePartial(Util.method38529("Carver: ", field32135::error)),
+                     Class6815.field29676.promotePartial(Util.func_240982_a_("Carver: ", field32135::error)),
                      Class83.method260(Class97.values())
                   )
                   .fieldOf("carvers")
                   .forGetter(var0x -> var0x.field32139),
                Class7909.field33884
-                  .promotePartial(Util.method38529("Feature: ", field32135::error))
+                  .promotePartial(Util.func_240982_a_("Feature: ", field32135::error))
                   .listOf()
                   .fieldOf("features")
                   .forGetter(var0x -> var0x.field32140),
                Class9300.field43173
-                  .promotePartial(Util.method38529("Structure start: ", field32135::error))
+                  .promotePartial(Util.func_240982_a_("Structure start: ", field32135::error))
                   .fieldOf("starts")
                   .forGetter(var0x -> var0x.field32141)
             )

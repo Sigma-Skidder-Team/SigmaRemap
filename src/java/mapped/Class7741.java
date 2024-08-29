@@ -20,7 +20,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7741 implements Class7740 {
+public class Class7741 implements IProfileResult {
    private static final Logger field33237 = LogManager.getLogger();
    private static final Class6705 field33238 = new Class6704();
    private static final Splitter field33239 = Splitter.on('\u001e');
@@ -50,7 +50,7 @@ public class Class7741 implements Class7740 {
    }
 
    @Override
-   public List<Class2012> method25626(String var1) {
+   public List<DataPoint> getDataPoints(String var1) {
       String var4 = var1;
       Class6705 var5 = this.method25635("root");
       long var6 = var5.method20440();
@@ -86,18 +86,18 @@ public class Class7741 implements Class7740 {
             double var22 = (double)var20 * 100.0 / (double)var14;
             double var24 = (double)var20 * 100.0 / (double)var6;
             String var26 = var18.substring(var1.length());
-            var13.add(new Class2012(var26, var22, var24, var19.method20441()));
+            var13.add(new DataPoint(var26, var22, var24, var19.method20441()));
          }
       }
 
       if ((float)var14 > var27) {
          var13.add(
-            new Class2012("unspecified", (double)((float)var14 - var27) * 100.0 / (double)var14, (double)((float)var14 - var27) * 100.0 / (double)var6, var11)
+            new DataPoint("unspecified", (double)((float)var14 - var27) * 100.0 / (double)var14, (double)((float)var14 - var27) * 100.0 / (double)var6, var11)
          );
       }
 
       Collections.sort(var13);
-      var13.add(0, new Class2012(var4, 100.0, (double)var14 * 100.0 / (double)var6, var11));
+      var13.add(0, new DataPoint(var4, 100.0, (double)var14 * 100.0 / (double)var6, var11));
       return var13;
    }
 
@@ -163,7 +163,7 @@ public class Class7741 implements Class7740 {
       var6.append("// ");
       var6.append(method25643());
       var6.append("\n\n");
-      var6.append("Version: ").append(SharedConstants.method34773().getId()).append('\n');
+      var6.append("Version: ").append(SharedConstants.getVersion().getId()).append('\n');
       var6.append("Time span: ").append(var1 / 1000000L).append(" ms\n");
       var6.append("Tick span: ").append(var3).append(" ticks\n");
       var6.append("// This is approximately ")
@@ -195,7 +195,7 @@ public class Class7741 implements Class7740 {
    }
 
    private void method25640(int var1, String var2, StringBuilder var3) {
-      List var6 = this.method25626(var2);
+      List var6 = this.getDataPoints(var2);
       Object2LongMap<String> var7 = ((Class6705)ObjectUtils.firstNonNull(new Class6705[]{this.field33241.get(var2), field33238})).method20442();
       var7.forEach(
          (var3x, var4) -> method25639(var3, var1)
@@ -209,22 +209,22 @@ public class Class7741 implements Class7740 {
       );
       if (var6.size() >= 3) {
          for (int var8 = 1; var8 < var6.size(); var8++) {
-            Class2012 var9 = (Class2012)var6.get(var8);
+            DataPoint var9 = (DataPoint)var6.get(var8);
             method25639(var3, var1)
-               .append(var9.field13085)
+               .append(var9.name)
                .append('(')
                .append(var9.field13084)
                .append('/')
                .append(String.format(Locale.ROOT, "%.0f", (float)var9.field13084 / (float)this.field33246))
                .append(')')
                .append(" - ")
-               .append(String.format(Locale.ROOT, "%.2f", var9.field13082))
+               .append(String.format(Locale.ROOT, "%.2f", var9.relTime))
                .append("%/")
                .append(String.format(Locale.ROOT, "%.2f", var9.field13083))
                .append("%\n");
-            if (!"unspecified".equals(var9.field13085)) {
+            if (!"unspecified".equals(var9.name)) {
                try {
-                  this.method25640(var1 + 1, var2 + '\u001e' + var9.field13085, var3);
+                  this.method25640(var1 + 1, var2 + '\u001e' + var9.name, var3);
                } catch (Exception var11) {
                   var3.append("[[ EXCEPTION ").append(var11).append(" ]]");
                }

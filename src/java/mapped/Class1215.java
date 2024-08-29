@@ -13,32 +13,32 @@ public class Class1215 extends Class1210 {
    }
 
    private static String method5773(Class2160 var0) {
-      String var3 = Class9088.method33883(var0.method8877()) + ": ";
+      String var3 = I18n.format(var0.method8877()) + ": ";
       switch (Class8340.field35860[var0.ordinal()]) {
          case 1:
-            return var3 + Class842.method2574(Class8981.field40878);
+            return var3 + Class842.method2574(Shaders.field40878);
          case 2:
-            return var3 + Class842.method2573(Class8981.field40874);
+            return var3 + Class842.method2573(Shaders.field40874);
          case 3:
-            return var3 + Class842.method2573(Class8981.field40875);
+            return var3 + Class842.method2573(Shaders.field40875);
          case 4:
-            return var3 + Class842.method2578(Class8981.field40865);
+            return var3 + Class842.method2578(Shaders.field40865);
          case 5:
-            return var3 + Class842.method2578(Class8981.field40866);
+            return var3 + Class842.method2578(Shaders.field40866);
          case 6:
-            return var3 + Class842.method2579(Class8981.field40864);
+            return var3 + Class842.method2579(Shaders.field40864);
          case 7:
-            return var3 + Class842.method2573(Class8981.field40863);
+            return var3 + Class842.method2573(Shaders.field40863);
          case 8:
-            return var3 + Class8981.field40877.method27376();
+            return var3 + Shaders.field40877.method27376();
          case 9:
-            return var3 + Class8981.field40876.method27376();
+            return var3 + Shaders.field40876.method27376();
          case 10:
-            return var3 + Class842.method2573(Class8981.field40873);
+            return var3 + Class842.method2573(Shaders.field40873);
          case 11:
-            return var3 + Class842.method2573(Class8981.field40862);
+            return var3 + Class842.method2573(Shaders.field40862);
          default:
-            return var3 + Class8981.method32951(var0);
+            return var3 + Shaders.method32951(var0);
       }
    }
 

@@ -7,10 +7,10 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 public class Class8811 {
-   public static final Class8811 field39645 = new Class8811((Class39)null);
-   private final Class39 field39646;
+   public static final Class8811 field39645 = new Class8811((CompoundNBT)null);
+   private final CompoundNBT field39646;
 
-   public Class8811(Class39 var1) {
+   public Class8811(CompoundNBT var1) {
       this.field39646 = var1;
    }
 
@@ -32,7 +32,7 @@ public class Class8811 {
 
    public static Class8811 method31812(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         Class39 var3;
+         CompoundNBT var3;
          try {
             var3 = Class7671.method25188(JSONUtils.method32762(var0, "nbt"));
          } catch (CommandSyntaxException var5) {
@@ -45,12 +45,12 @@ public class Class8811 {
       }
    }
 
-   public static Class39 method31813(Entity var0) {
-      Class39 var3 = var0.method3294(new Class39());
+   public static CompoundNBT method31813(Entity var0) {
+      CompoundNBT var3 = var0.method3294(new CompoundNBT());
       if (var0 instanceof PlayerEntity) {
-         ItemStack var4 = ((PlayerEntity)var0).field4902.method4028();
-         if (!var4.method32105()) {
-            var3.method99("SelectedItem", var4.method32112(new Class39()));
+         ItemStack var4 = ((PlayerEntity)var0).inventory.method4028();
+         if (!var4.isEmpty()) {
+            var3.put("SelectedItem", var4.method32112(new CompoundNBT()));
          }
       }
 

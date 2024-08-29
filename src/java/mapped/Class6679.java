@@ -38,7 +38,7 @@ public abstract class Class6679 {
    public String method20368() {
       String var3 = Class7944.method26946(this.field29278);
       var3 = Class9402.method35762(var3, "//");
-      return Class8981.method33144("option." + this.method20366() + ".comment", var3);
+      return Shaders.method33144("option." + this.method20366() + ".comment", var3);
    }
 
    public void method20369(String var1) {
@@ -134,11 +134,11 @@ public abstract class Class6679 {
    }
 
    public String method20385() {
-      return Class8981.method33144("option." + this.field29277, this.field29277);
+      return Shaders.method33144("option." + this.field29277, this.field29277);
    }
 
    public String method20361(String var1) {
-      return Class8981.method33144("value." + this.field29277 + "." + var1, var1);
+      return Shaders.method33144("value." + this.field29277 + "." + var1, var1);
    }
 
    public String method20362(String var1) {

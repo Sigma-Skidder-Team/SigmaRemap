@@ -2,11 +2,11 @@ package mapped;
 
 public class Class4591 extends Class4588 {
    private int field22073;
-   private final Class302 field22074;
-   private Class41 field22075;
+   private final ParticleManager field22074;
+   private ListNBT field22075;
    private boolean field22076;
 
-   public Class4591(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12, Class302 var14, Class39 var15) {
+   public Class4591(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, ParticleManager var14, CompoundNBT var15) {
       super(var1, var2, var4, var6);
       this.field22044 = var8;
       this.field22045 = var10;
@@ -19,7 +19,7 @@ public class Class4591 extends Class4588 {
             this.field22056 = this.field22075.size() * 2 - 1;
 
             for (int var18 = 0; var18 < this.field22075.size(); var18++) {
-               Class39 var19 = this.field22075.method153(var18);
+               CompoundNBT var19 = this.field22075.method153(var18);
                if (var19.method132("Flicker")) {
                   this.field22076 = true;
                   this.field22056 += 15;
@@ -41,7 +41,7 @@ public class Class4591 extends Class4588 {
             var4 = true;
          } else {
             for (int var5 = 0; var5 < this.field22075.size(); var5++) {
-               Class39 var6 = this.field22075.method153(var5);
+               CompoundNBT var6 = this.field22075.method153(var5);
                if (Class2119.method8802(var6.method120("Type")) == Class2119.field13808) {
                   var4 = true;
                   break;
@@ -62,7 +62,7 @@ public class Class4591 extends Class4588 {
 
       if (this.field22073 % 2 == 0 && this.field22075 != null && this.field22073 / 2 < this.field22075.size()) {
          int var15 = this.field22073 / 2;
-         Class39 var17 = this.field22075.method153(var15);
+         CompoundNBT var17 = this.field22075.method153(var15);
          Class2119 var20 = Class2119.method8802(var17.method120("Type"));
          boolean var21 = var17.method132("Trail");
          boolean var7 = var17.method132("Flicker");

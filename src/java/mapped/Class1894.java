@@ -34,19 +34,19 @@ public enum Class1894 {
    public void method8155(Class6799 var1) {
       if (this != field11103) {
          if (this != field11105) {
-            var1.field29608 = false;
-            var1.field29609 = false;
+            var1.allowFlying = false;
+            var1.isCreativeMode = false;
             var1.field29606 = false;
             var1.field29607 = false;
          } else {
-            var1.field29608 = true;
-            var1.field29609 = false;
+            var1.allowFlying = true;
+            var1.isCreativeMode = false;
             var1.field29606 = true;
             var1.field29607 = true;
          }
       } else {
-         var1.field29608 = true;
-         var1.field29609 = true;
+         var1.allowFlying = true;
+         var1.isCreativeMode = true;
          var1.field29606 = true;
       }
 

@@ -22,7 +22,7 @@ public class Class5868 extends Class5839 {
    @Override
    public ItemStack method18272(int var1) {
       if (this.method18266()) {
-         this.field25644 = this.field25644 + Math.min(var1, this.method18265().method32179());
+         this.field25644 = this.field25644 + Math.min(var1, this.method18265().getCount());
       }
 
       return super.method18272(var1);
@@ -36,7 +36,7 @@ public class Class5868 extends Class5839 {
 
    @Override
    public void method18263(ItemStack var1) {
-      var1.method32136(this.field25643.field5024, this.field25643, this.field25644);
+      var1.method32136(this.field25643.world, this.field25643, this.field25644);
       this.field25644 = 0;
    }
 

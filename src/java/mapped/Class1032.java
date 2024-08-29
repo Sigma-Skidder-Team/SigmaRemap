@@ -7,7 +7,7 @@ public class Class1032 extends Class1031 {
    private static String[] field5736;
    private Class1019 field5737;
 
-   public Class1032(Class8992<? extends Class1032> var1, World var2) {
+   public Class1032(EntityType<? extends Class1032> var1, World var2) {
       super(var1, var2);
       this.field5594 = 10;
    }
@@ -40,7 +40,7 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
    }
 
@@ -50,7 +50,7 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
    }
 

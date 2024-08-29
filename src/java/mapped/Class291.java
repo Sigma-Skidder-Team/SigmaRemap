@@ -38,7 +38,7 @@ public class Class291 extends Class290 {
    }
 
    @Override
-   public void method1090(Class191 var1) {
+   public void method1090(IResourceManager var1) {
    }
 
    public void method1140() {

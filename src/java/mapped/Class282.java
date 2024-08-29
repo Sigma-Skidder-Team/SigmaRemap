@@ -22,7 +22,7 @@ public class Class282 extends Class281 {
       super(field1074, "recipes");
    }
 
-   public void method971(Map<ResourceLocation, JsonElement> var1, Class191 var2, Class7165 var3) {
+   public void method971(Map<ResourceLocation, JsonElement> var1, IResourceManager var2, IProfiler var3) {
       this.field1077 = false;
       Map<Class7207<?>, Builder<ResourceLocation, Class4843<?>>> var6 = Maps.newHashMap();
 
@@ -58,7 +58,7 @@ public class Class282 extends Class281 {
          .values()
          .stream()
          .flatMap(var3x -> Util.method38511(var1.method22635(var3x, var3, var2)))
-         .sorted(Comparator.comparing(var0 -> var0.method14966().method32134()))
+         .sorted(Comparator.comparing(var0 -> var0.getRecipeOutput().getTranslationKey()))
          .collect(Collectors.<T>toList());
    }
 
@@ -66,12 +66,12 @@ public class Class282 extends Class281 {
       return (Map)this.field1076.getOrDefault(var1, Collections.emptyMap());
    }
 
-   public <C extends Class920, T extends Class4843<C>> Class25<ItemStack> method1034(Class7207<T> var1, C var2, World var3) {
+   public <C extends Class920, T extends Class4843<C>> NonNullList<ItemStack> method1034(Class7207<T> var1, C var2, World var3) {
       Optional<T> var6 = this.method1030(var1, var2, var3);
       if (var6.isPresent()) {
          return ((Class4843)var6.get()).method14968(var2);
       } else {
-         Class25 var7 = Class25.<ItemStack>method68(var2.method3629(), ItemStack.EMPTY);
+         NonNullList var7 = NonNullList.<ItemStack>method68(var2.method3629(), ItemStack.EMPTY);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             var7.set(var8, var2.method3618(var8));

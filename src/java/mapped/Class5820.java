@@ -2,15 +2,15 @@ package mapped;
 
 public class Class5820 extends Class5812 {
    private static String[] field25497;
-   public final Class25<ItemStack> field25498 = Class25.<ItemStack>method67();
+   public final NonNullList<ItemStack> field25498 = NonNullList.<ItemStack>create();
 
    public Class5820(PlayerEntity var1) {
       super((Class8298<?>)null, 0);
-      Class974 var4 = var1.field4902;
+      PlayerInventory var4 = var1.inventory;
 
       for (int var5 = 0; var5 < 5; var5++) {
          for (int var6 = 0; var6 < 9; var6++) {
-            this.method18124(new Class5846(Class861.method2660(), var5 * 9 + var6, 9 + var6 * 18, 18 + var5 * 18));
+            this.method18124(new Class5846(CreativeScreen.method2660(), var5 * 9 + var6, 9 + var6 * 18, 18 + var5 * 18));
          }
       }
 
@@ -37,9 +37,9 @@ public class Class5820 extends Class5812 {
          for (int var7 = 0; var7 < 9; var7++) {
             int var8 = var7 + (var6 + var5) * 9;
             if (var8 >= 0 && var8 < this.field25498.size()) {
-               Class861.method2660().method3621(var7 + var6 * 9, this.field25498.get(var8));
+               CreativeScreen.method2660().method3621(var7 + var6 * 9, this.field25498.get(var8));
             } else {
-               Class861.method2660().method3621(var7 + var6 * 9, ItemStack.EMPTY);
+               CreativeScreen.method2660().method3621(var7 + var6 * 9, ItemStack.EMPTY);
             }
          }
       }
@@ -63,11 +63,11 @@ public class Class5820 extends Class5812 {
 
    @Override
    public boolean method18111(ItemStack var1, Class5839 var2) {
-      return var2.field25578 != Class861.method2660();
+      return var2.field25578 != CreativeScreen.method2660();
    }
 
    @Override
    public boolean method18150(Class5839 var1) {
-      return var1.field25578 != Class861.method2660();
+      return var1.field25578 != CreativeScreen.method2660();
    }
 }

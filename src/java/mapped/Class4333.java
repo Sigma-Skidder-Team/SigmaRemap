@@ -41,7 +41,7 @@ public class Class4333 extends Class4305 {
          );
       }
 
-      ClientResource var7 = !this.field20891.equals("Sigma") ? Class7925.field33945 : Class7925.field33944;
+      ClientResource var7 = !this.field20891.equals("Sigma") ? ClassicDecryption.regular25 : ClassicDecryption.regular28;
       if (!this.field20891.equals("Sigma")) {
          Class3192.method11439(
             var7,

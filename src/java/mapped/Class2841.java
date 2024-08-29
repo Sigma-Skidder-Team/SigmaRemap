@@ -30,12 +30,12 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("killed_dragon", Class4476.method14134(Class7552.method24700().method24701(Class8992.field41024)))
+         .method27312("killed_dragon", Class4476.method14134(Class7552.method24700().method24701(EntityType.field41024)))
          .method27317(var1, "end/kill_dragon");
       Class7952 var6 = Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Class8514.field37966,
+            Items.field37966,
             new TranslationTextComponent("advancements.end.enter_end_gateway.title"),
             new TranslationTextComponent("advancements.end.enter_end_gateway.description"),
             (ResourceLocation)null,
@@ -49,7 +49,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Class8514.field38108,
+            Items.END_CRYSTAL,
             new TranslationTextComponent("advancements.end.respawn_dragon.title"),
             new TranslationTextComponent("advancements.end.respawn_dragon.description"),
             (ResourceLocation)null,
@@ -58,7 +58,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("summoned_dragon", Class4456.method14090(Class7552.method24700().method24701(Class8992.field41024)))
+         .method27312("summoned_dragon", Class4456.method14090(Class7552.method24700().method24701(EntityType.field41024)))
          .method27317(var1, "end/respawn_dragon");
       Class7952 var7 = Class7999.method27304()
          .method27305(var6)
@@ -77,7 +77,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var5)
          .method27308(
-            Class8514.field38114,
+            Items.field38114,
             new TranslationTextComponent("advancements.end.dragon_breath.title"),
             new TranslationTextComponent("advancements.end.dragon_breath.description"),
             (ResourceLocation)null,
@@ -86,12 +86,12 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("dragon_breath", Class4491.method14164(Class8514.field38114))
+         .method27312("dragon_breath", Class4491.method14164(Items.field38114))
          .method27317(var1, "end/dragon_breath");
       Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Class8514.field38127,
+            Items.field38127,
             new TranslationTextComponent("advancements.end.levitate.title"),
             new TranslationTextComponent("advancements.end.levitate.description"),
             (ResourceLocation)null,
@@ -106,7 +106,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
       Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Class8514.field38120,
+            Items.field38120,
             new TranslationTextComponent("advancements.end.elytra.title"),
             new TranslationTextComponent("advancements.end.elytra.description"),
             (ResourceLocation)null,
@@ -115,7 +115,7 @@ public class Class2841 implements Consumer<Consumer<Class7952>> {
             true,
             false
          )
-         .method27312("elytra", Class4491.method14164(Class8514.field38120))
+         .method27312("elytra", Class4491.method14164(Items.field38120))
          .method27317(var1, "end/elytra");
       Class7999.method27304()
          .method27305(var5)

@@ -3,7 +3,7 @@ package mapped;
 public class Class5652 extends Class5651<Class1109, Class2882<Class1109>> {
    private static final ResourceLocation field25004 = new ResourceLocation("textures/entity/slime/magmacube.png");
 
-   public Class5652(Class8853 var1) {
+   public Class5652(EntityRendererManager var1) {
       super(var1, new Class2882<Class1109>(), 0.25F);
    }
 

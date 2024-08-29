@@ -17,7 +17,7 @@ public class Class2740 extends Class2736 {
 
       while (
          var3 != null
-            && !this.field17258.field5024.method6738(new BlockPos(var3)).method23440(this.field17258.field5024, new BlockPos(var3), Class1947.field12615)
+            && !this.field17258.world.getBlockState(new BlockPos(var3)).method23440(this.field17258.world, new BlockPos(var3), Class1947.field12615)
             && var4++ < 10
       ) {
          var3 = Class8037.method27581(this.field17258, 10, 7);

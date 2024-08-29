@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 public class Class874 extends Class851<Class5817> {
    private static final ResourceLocation field4849 = new ResourceLocation("textures/gui/container/dispenser.png");
 
-   public Class874(Class5817 var1, Class974 var2, ITextComponent var3) {
+   public Class874(Class5817 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
    }
 

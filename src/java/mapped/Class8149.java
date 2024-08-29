@@ -229,7 +229,7 @@ public class Class8149 {
    private boolean method28261(Class2295 var1, BlockPos var2, Class1662 var3) {
       if (this.field35048 == var1) {
          if (this.field35051 != null) {
-            Biome var6 = var3.method7003(var2);
+            Biome var6 = var3.getBiome(var2);
             if (!Class7542.method24662(var6, this.field35051)) {
                return false;
             }
@@ -273,7 +273,7 @@ public class Class8149 {
    }
 
    private boolean method28264(BlockPos var1, Class1663 var2) {
-      Class944 var5 = var2.method6759(var1);
+      TileEntity var5 = var2.getTileEntity(var1);
       if (var5 instanceof Class950) {
          Class950 var6 = (Class950)var5;
          if (this.field35057 != null) {
@@ -290,7 +290,7 @@ public class Class8149 {
    }
 
    private boolean method28265(BlockPos var1, Class1663 var2) {
-      Class944 var5 = var2.method6759(var1);
+      TileEntity var5 = var2.getTileEntity(var1);
       if (!(var5 instanceof Class941)) {
          if (!(var5 instanceof Class943)) {
             return false;
@@ -305,7 +305,7 @@ public class Class8149 {
    }
 
    private boolean method28266(Class941 var1, BlockPos var2, Class1663 var3) {
-      Class7380 var6 = var3.method6738(var2);
+      BlockState var6 = var3.getBlockState(var2);
       Class111 var7 = !var6.method23462(Class3348.field18866) ? Class111.field379 : var6.<Class111>method23463(Class3348.field18866);
       boolean var8 = var7 == Class111.field379;
       boolean var9 = var1 instanceof Class970;
@@ -329,7 +329,7 @@ public class Class8149 {
    }
 
    private boolean method28269(BlockPos var1, Class1663 var2) {
-      Class944 var5 = var2.method6759(var1);
+      TileEntity var5 = var2.getTileEntity(var1);
       if (var5 instanceof Class971) {
          Class971 var6 = (Class971)var5;
          if (this.field35059 != null) {
@@ -350,7 +350,7 @@ public class Class8149 {
    }
 
    private boolean method28271(BlockPos var1, Class1663 var2) {
-      Class944 var5 = var2.method6759(var1);
+      TileEntity var5 = var2.getTileEntity(var1);
       if (var5 instanceof Class940) {
          Class940 var6 = (Class940)var5;
          if (this.field35060 != null) {
@@ -367,7 +367,7 @@ public class Class8149 {
    }
 
    public boolean method28272(Class2295 var1, Entity var2, Class1662 var3) {
-      if (!this.method28261(var1, var2.method3432(), var3)) {
+      if (!this.method28261(var1, var2.getPosition(), var3)) {
          return false;
       } else {
          if (this.field35050 != null) {

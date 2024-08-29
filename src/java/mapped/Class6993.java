@@ -16,7 +16,7 @@ public class Class6993 extends Class6991 {
 
    @Override
    public Class8238 method21652(Entity var1, int var2) {
-      this.field30266 = var1.method3432();
+      this.field30266 = var1.getPosition();
       return super.method21652(var1, var2);
    }
 
@@ -24,7 +24,7 @@ public class Class6993 extends Class6991 {
    public boolean method21655(Entity var1, double var2) {
       Class8238 var6 = this.method21652(var1, 0);
       if (var6 == null) {
-         this.field30266 = var1.method3432();
+         this.field30266 = var1.getPosition();
          this.field30246 = var2;
          return true;
       } else {
@@ -39,13 +39,13 @@ public class Class6993 extends Class6991 {
             if (!this.field30266.method8317(this.field30243.getPositionVec(), (double)this.field30243.method3429())
                && (
                   !(this.field30243.getPosY() > (double)this.field30266.getY())
-                     || !new BlockPos((double)this.field30266.method8304(), this.field30243.getPosY(), (double)this.field30266.method8306())
+                     || !new BlockPos((double)this.field30266.getX(), this.field30243.getPosY(), (double)this.field30266.getZ())
                         .method8317(this.field30243.getPositionVec(), (double)this.field30243.method3429())
                )) {
                this.field30243
                   .method4228()
                   .method20813(
-                     (double)this.field30266.method8304(), (double)this.field30266.getY(), (double)this.field30266.method8306(), this.field30246
+                     (double)this.field30266.getX(), (double)this.field30266.getY(), (double)this.field30266.getZ(), this.field30246
                   );
             } else {
                this.field30266 = null;

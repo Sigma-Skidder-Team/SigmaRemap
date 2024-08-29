@@ -31,7 +31,7 @@ public abstract class Class911 implements Class909 {
       return this.field5197 != null ? this.field5197 : StringTextComponent.EMPTY;
    }
 
-   public Class39 method3560(Class39 var1) {
+   public CompoundNBT method3560(CompoundNBT var1) {
       var1.method109("Command", this.field5198);
       var1.method102("SuccessCount", this.field5195);
       var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5199));
@@ -48,7 +48,7 @@ public abstract class Class911 implements Class909 {
       return var1;
    }
 
-   public void method3561(Class39 var1) {
+   public void method3561(CompoundNBT var1) {
       this.field5198 = var1.method126("Command");
       this.field5195 = var1.method122("SuccessCount");
       if (var1.method119("CustomName", 8)) {
@@ -69,11 +69,11 @@ public abstract class Class911 implements Class909 {
          this.field5197 = null;
       }
 
-      if (var1.method118("UpdateLastExecution")) {
+      if (var1.contains("UpdateLastExecution")) {
          this.field5194 = var1.method132("UpdateLastExecution");
       }
 
-      if (this.field5194 && var1.method118("LastExecution")) {
+      if (this.field5194 && var1.contains("LastExecution")) {
          this.field5193 = var1.method123("LastExecution");
       } else {
          this.field5193 = -1L;
@@ -109,11 +109,11 @@ public abstract class Class911 implements Class909 {
                });
                var4.getCommandManager().handleCommand(var5, this.field5198);
             } catch (Throwable var8) {
-               Class4526 var6 = Class4526.method14413(var8, "Executing command block");
-               Class8965 var7 = var6.method14410("Command to be executed");
-               var7.method32806("Command", this::method3563);
-               var7.method32806("Name", () -> this.method3565().getString());
-               throw new Class2506(var6);
+               CrashReport var6 = CrashReport.makeCrashReport(var8, "Executing command block");
+               CrashReportCategory var7 = var6.makeCategory("Command to be executed");
+               var7.addDetail("Command", this::method3563);
+               var7.addDetail("Name", () -> this.method3565().getString());
+               throw new ReportedException(var6);
             }
          }
 
@@ -169,7 +169,7 @@ public abstract class Class911 implements Class909 {
             var1.method2890(this);
          }
 
-         return ActionResultType.method9002(var1.field5024.field9020);
+         return ActionResultType.method9002(var1.world.field9020);
       } else {
          return ActionResultType.field14820;
       }

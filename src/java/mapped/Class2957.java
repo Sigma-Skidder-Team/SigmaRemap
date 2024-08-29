@@ -17,7 +17,7 @@ public class Class2957 implements Class2956 {
 
    @Override
    public double method11320() {
-      return (double)this.field18046.method8304() + 0.5;
+      return (double)this.field18046.getX() + 0.5;
    }
 
    @Override
@@ -27,7 +27,7 @@ public class Class2957 implements Class2956 {
 
    @Override
    public double method11322() {
-      return (double)this.field18046.method8306() + 0.5;
+      return (double)this.field18046.getZ() + 0.5;
    }
 
    @Override
@@ -36,12 +36,12 @@ public class Class2957 implements Class2956 {
    }
 
    @Override
-   public Class7380 method11324() {
-      return this.field18045.method6738(this.field18046);
+   public BlockState method11324() {
+      return this.field18045.getBlockState(this.field18046);
    }
 
    @Override
-   public <T extends Class944> T method11325() {
-      return (T)this.field18045.method6759(this.field18046);
+   public <T extends TileEntity> T method11325() {
+      return (T)this.field18045.getTileEntity(this.field18046);
    }
 }

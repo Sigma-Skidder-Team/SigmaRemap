@@ -13,7 +13,7 @@ public class Class8601 {
       return this.field38699;
    }
 
-   public boolean method30776(Class1656 var1, float var2, int[] var3, boolean var4) {
+   public boolean method30776(ClientWorld var1, float var2, int[] var3, boolean var4) {
       if (this.field38699 == null) {
          return false;
       } else {
@@ -33,7 +33,7 @@ public class Class8601 {
                }
 
                float var10 = 1.1666666F * (var1.method6872(1.0F) - 0.2F);
-               if (var1.method6876() > 0) {
+               if (var1.getTimeLightningFlash() > 0) {
                   var10 = 1.0F;
                }
 

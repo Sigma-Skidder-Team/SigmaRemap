@@ -8,17 +8,17 @@ public class Class3467 extends Block {
    }
 
    @Override
-   public boolean method11493(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
       return true;
    }
 
    @Override
-   public Class1855 method11526(Class7380 var1) {
-      return Class1855.field9885;
+   public BlockRenderType method11526(BlockState var1) {
+      return BlockRenderType.field9885;
    }
 
    @Override
-   public float method11636(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public float method11636(BlockState var1, Class1665 var2, BlockPos var3) {
       return 1.0F;
    }
 }

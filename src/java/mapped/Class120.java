@@ -40,10 +40,10 @@ public final class Class120 implements Predicate<ItemStack> {
       } else {
          this.method333();
          if (this.field429.length == 0) {
-            return var1.method32105();
+            return var1.isEmpty();
          } else {
             for (ItemStack var7 : this.field429) {
-               if (var7.method32107() == var1.method32107()) {
+               if (var7.getItem() == var1.getItem()) {
                   return true;
                }
             }
@@ -109,10 +109,10 @@ public final class Class120 implements Predicate<ItemStack> {
    }
 
    public static Class120 method341(Stream<ItemStack> var0) {
-      return method338(var0.filter(var0x -> !var0x.method32105()).map(var0x -> new Class4827(var0x)));
+      return method338(var0.filter(var0x -> !var0x.isEmpty()).map(var0x -> new Class4827(var0x)));
    }
 
-   public static Class120 method342(Class7608<Class3257> var0) {
+   public static Class120 method342(Class7608<Item> var0) {
       return method338(Stream.of(new Class4828(var0)));
    }
 
@@ -155,7 +155,7 @@ public final class Class120 implements Predicate<ItemStack> {
          }
       } else {
          ResourceLocation var3 = new ResourceLocation(JSONUtils.method32763(var0, "item"));
-         Class3257 var4 = Registry.field16075.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
+         Item var4 = Registry.ITEM.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
          return new Class4827(new ItemStack(var4));
       }
    }

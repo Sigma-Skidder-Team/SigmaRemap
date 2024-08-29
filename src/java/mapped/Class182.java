@@ -4,10 +4,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public enum Class182 implements Class83 {
-   field647("down_east", Direction.field672, Direction.EAST),
-   field648("down_north", Direction.field672, Direction.NORTH),
-   field649("down_south", Direction.field672, Direction.SOUTH),
-   field650("down_west", Direction.field672, Direction.WEST),
+   field647("down_east", Direction.DOWN, Direction.EAST),
+   field648("down_north", Direction.DOWN, Direction.NORTH),
+   field649("down_south", Direction.DOWN, Direction.SOUTH),
+   field650("down_west", Direction.DOWN, Direction.WEST),
    field651("up_east", Direction.field673, Direction.EAST),
    field652("up_north", Direction.field673, Direction.NORTH),
    field653("up_south", Direction.field673, Direction.SOUTH),

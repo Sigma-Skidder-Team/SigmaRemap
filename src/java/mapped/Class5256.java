@@ -12,7 +12,7 @@ public class Class5256 extends PremiumModule {
 
     public Class5256() {
         super("BoatFly", "Fly with a boat", ModuleCategory.MOVEMENT);
-        this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
     }
 
     @EventTarget
@@ -69,8 +69,8 @@ public class Class5256 extends PremiumModule {
 
     @Override
     public void isInDevelopment() {
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23643 = false;
             }
         } else {

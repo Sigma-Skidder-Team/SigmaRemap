@@ -8,7 +8,7 @@ import com.google.gson.JsonSerializationContext;
 public class ApplyBonusSerializer extends LootFunctionSerializer<Class138> {
    public void serialize(JsonObject var1, Class138 var2, JsonSerializationContext var3) {
       super.serialize(var1, var2, var3);
-      var1.addProperty("enchantment", Registry.field16073.method9181(Class138.method414(var2)).toString());
+      var1.addProperty("enchantment", Registry.field16073.getKey(Class138.method414(var2)).toString());
       var1.addProperty("formula", Class138.method415(var2).method10788().toString());
       JsonObject var6 = new JsonObject();
       Class138.method415(var2).method10786(var6, var3);

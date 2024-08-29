@@ -15,15 +15,15 @@ public class Class5159 extends Module {
 
     public Class5159() {
         super(ModuleCategory.MOVEMENT, "VeltPvP", "A fly for VeltPvP");
-        this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 5.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 5.0F, 0.1F));
     }
 
     @Override
     public void isInDevelopment() {
         this.field23421 = mc.player.getPosY();
         this.field23419 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23423 = false;
             }
         } else {
@@ -68,7 +68,7 @@ public class Class5159 extends Module {
             if (this.field23419 <= 0) {
                 if (this.field23419 != -1) {
                     if (this.field23419 == 0) {
-                        if (!mc.gameSettings.field44636.method8509() && var1.method13994() > 0.0) {
+                        if (!mc.gameSettings.field44636.isKeyDown() && var1.method13994() > 0.0) {
                             var1.method13995(-Class9567.method37080());
                         }
 
@@ -76,7 +76,7 @@ public class Class5159 extends Module {
                         Class9567.method37088(var1, var4 - 0.1);
                     }
                 } else {
-                    if (!mc.gameSettings.field44636.method8509()) {
+                    if (!mc.gameSettings.field44636.isKeyDown()) {
                         var1.method13995(!this.field23423 ? Class9567.method37080() : -var4 / 2.0);
                     } else {
                         var1.method13995(!this.field23423 ? var4 / 2.0 : Class9567.method37080());

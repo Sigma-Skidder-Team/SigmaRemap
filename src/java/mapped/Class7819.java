@@ -35,9 +35,9 @@ public class Class7819 {
    private BlockPos field33549;
    private Class1940 field33550;
    private int field33551;
-   private List<Class1001> field33552;
+   private List<EnderCrystalEntity> field33552;
 
-   public Class7819(ServerWorld var1, long var2, Class39 var4) {
+   public Class7819(ServerWorld var1, long var2, CompoundNBT var4) {
       this.field33538 = var1;
       if (!var4.method119("DragonKilled", 99)) {
          this.field33545 = true;
@@ -54,7 +54,7 @@ public class Class7819 {
          }
 
          if (var4.method119("ExitPortalLocation", 10)) {
-            this.field33549 = Class8354.method29283(var4.method130("ExitPortalLocation"));
+            this.field33549 = Class8354.method29283(var4.getCompound("ExitPortalLocation"));
          }
       }
 
@@ -62,7 +62,7 @@ public class Class7819 {
          this.field33539.addAll(ContiguousSet.create(Range.closedOpen(0, 20), DiscreteDomain.integers()));
          Collections.shuffle(this.field33539, new Random(var2));
       } else {
-         Class41 var7 = var4.method131("Gateways", 3);
+         ListNBT var7 = var4.method131("Gateways", 3);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             this.field33539.add(var7.method156(var8));
@@ -79,8 +79,8 @@ public class Class7819 {
          .method37708();
    }
 
-   public Class39 method26109() {
-      Class39 var3 = new Class39();
+   public CompoundNBT method26109() {
+      CompoundNBT var3 = new CompoundNBT();
       if (this.field33547 != null) {
          var3.method104("Dragon", this.field33547);
       }
@@ -88,16 +88,16 @@ public class Class7819 {
       var3.method115("DragonKilled", this.field33545);
       var3.method115("PreviouslyKilled", this.field33546);
       if (this.field33549 != null) {
-         var3.method99("ExitPortalLocation", Class8354.method29284(this.field33549));
+         var3.put("ExitPortalLocation", Class8354.method29284(this.field33549));
       }
 
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (int var6 : this.field33539) {
          var4.add(Class36.method95(var6));
       }
 
-      var3.method99("Gateways", var4);
+      var3.put("Gateways", var4);
       return var3;
    }
 
@@ -210,7 +210,7 @@ public class Class7819 {
          for (int var4 = -8; var4 <= 8; var4++) {
             Class1674 var5 = this.field33538.method6824(var3, var4);
 
-            for (Class944 var7 : var5.method7145().values()) {
+            for (TileEntity var7 : var5.method7145().values()) {
                if (var7 instanceof Class956) {
                   return true;
                }
@@ -227,12 +227,12 @@ public class Class7819 {
          for (int var4 = -8; var4 <= 8; var4++) {
             Class1674 var5 = this.field33538.method6824(var3, var4);
 
-            for (Class944 var7 : var5.method7145().values()) {
+            for (TileEntity var7 : var5.method7145().values()) {
                if (var7 instanceof Class956) {
-                  Class9086 var8 = this.field33540.method38656(this.field33538, var7.method3774());
+                  Class9086 var8 = this.field33540.method38656(this.field33538, var7.getPos());
                   if (var8 != null) {
                      BlockPos var9 = var8.method33881(3, 3, 3).method37551();
-                     if (this.field33549 == null && var9.method8304() == 0 && var9.method8306() == 0) {
+                     if (this.field33549 == null && var9.getX() == 0 && var9.getZ() == 0) {
                         this.field33549 = var9;
                      }
 
@@ -247,7 +247,7 @@ public class Class7819 {
 
       for (int var11 = var10; var11 >= 0; var11--) {
          Class9086 var12 = this.field33540
-            .method38656(this.field33538, new BlockPos(Class2909.field17994.method8304(), var11, Class2909.field17994.method8306()));
+            .method38656(this.field33538, new BlockPos(Class2909.field17994.getX(), var11, Class2909.field17994.getZ()));
          if (var12 != null) {
             if (this.field33549 == null) {
                this.field33549 = var12.method33881(3, 3, 3).method37551();
@@ -299,7 +299,7 @@ public class Class7819 {
       this.field33542 = 0;
 
       for (Class9648 var4 : Class2944.method11286(this.field33538)) {
-         this.field33542 = this.field33542 + this.field33538.<Class1001>method7182(Class1001.class, var4.method37631()).size();
+         this.field33542 = this.field33542 + this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, var4.method37631()).size();
       }
 
       field33535.debug("Found {} end crystals still alive", this.field33542);
@@ -323,8 +323,8 @@ public class Class7819 {
    private void method26120() {
       if (!this.field33539.isEmpty()) {
          int var3 = this.field33539.remove(this.field33539.size() - 1);
-         int var4 = MathHelper.method37769(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
-         int var5 = MathHelper.method37769(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
+         int var4 = MathHelper.floor(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
+         int var5 = MathHelper.floor(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
          this.method26121(new BlockPos(var4, 75, var5));
       }
    }
@@ -339,7 +339,7 @@ public class Class7819 {
       if (this.field33549 == null) {
          this.field33549 = this.field33538.method7006(Class101.field300, Class2909.field17994).method8313();
 
-         while (this.field33538.method6738(this.field33549).method23448(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
+         while (this.field33538.getBlockState(this.field33549).method23448(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
             this.field33549 = this.field33549.method8313();
          }
       }
@@ -349,7 +349,7 @@ public class Class7819 {
 
    private Class1007 method26123() {
       this.field33538.method6722(new BlockPos(0, 128, 0));
-      Class1007 var3 = Class8992.field41024.method33215(this.field33538);
+      Class1007 var3 = EntityType.field41024.method33215(this.field33538);
       var3.method4336().method32671(Class9598.field44896);
       var3.method3273(0.0, 128.0, 0.0, this.field33538.field9016.nextFloat() * 360.0F, 0.0F);
       this.field33538.method6916(var3);
@@ -371,7 +371,7 @@ public class Class7819 {
       return this.field33542;
    }
 
-   public void method26126(Class1001 var1, Class8654 var2) {
+   public void method26126(EnderCrystalEntity var1, Class8654 var2) {
       if (this.field33550 != null && this.field33552.contains(var1)) {
          field33535.debug("Aborting respawn sequence");
          this.field33550 = null;
@@ -382,7 +382,7 @@ public class Class7819 {
          this.method26118();
          Entity var5 = this.field33538.method6942(this.field33547);
          if (var5 instanceof Class1007) {
-            ((Class1007)var5).method4335(var1, var1.method3432(), var2);
+            ((Class1007)var5).method4335(var1, var1.getPosition(), var2);
          }
       }
    }
@@ -411,7 +411,7 @@ public class Class7819 {
          BlockPos var5 = var3.method8339(1);
 
          for (Direction var7 : Class76.field161) {
-            List var8 = this.field33538.<Class1001>method7182(Class1001.class, new Class6488(var5.method8350(var7, 2)));
+            List var8 = this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, new Class6488(var5.method8350(var7, 2)));
             if (var8.isEmpty()) {
                return;
             }
@@ -424,7 +424,7 @@ public class Class7819 {
       }
    }
 
-   private void method26129(List<Class1001> var1) {
+   private void method26129(List<EnderCrystalEntity> var1) {
       if (this.field33545 && this.field33550 == null) {
          for (Class9086 var4 = this.method26115(); var4 != null; var4 = this.method26115()) {
             for (int var5 = 0; var5 < this.field33540.method38654(); var5++) {
@@ -448,7 +448,7 @@ public class Class7819 {
 
    public void method26130() {
       for (Class9648 var4 : Class2944.method11286(this.field33538)) {
-         for (Class1001 var6 : this.field33538.<Class1001>method7182(Class1001.class, var4.method37631())) {
+         for (EnderCrystalEntity var6 : this.field33538.<EnderCrystalEntity>method7182(EnderCrystalEntity.class, var4.method37631())) {
             var6.method3363(false);
             var6.method4142((BlockPos)null);
          }

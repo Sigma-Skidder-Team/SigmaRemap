@@ -17,7 +17,7 @@ public class Class9300<FC extends Class4698, F extends Structure<FC>> {
    }
 
    public Class5444<?> method35098(
-           Class8904 var1, Class5646 var2, Class1685 var3, Class8761 var4, long var5, Class7481 var7, Biome var8, int var9, Class8483 var10
+           DynamicRegistries var1, Class5646 var2, Class1685 var3, Class8761 var4, long var5, Class7481 var7, Biome var8, int var9, Class8483 var10
    ) {
       return this.field43174.method11372(var1, var2, var3, var4, var5, var7, var8, var9, new Class2420(), var10, this.field43175);
    }

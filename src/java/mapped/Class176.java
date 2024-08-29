@@ -10,20 +10,20 @@ public class Class176 implements Predicate<ItemStack> {
    private static final Dynamic2CommandExceptionType field562 = new Dynamic2CommandExceptionType(
       (var0, var1) -> new TranslationTextComponent("arguments.item.overstacked", var0, var1)
    );
-   private final Class3257 field563;
-   private final Class39 field564;
+   private final Item field563;
+   private final CompoundNBT field564;
 
-   public Class176(Class3257 var1, Class39 var2) {
+   public Class176(Item var1, CompoundNBT var2) {
       this.field563 = var1;
       this.field564 = var2;
    }
 
-   public Class3257 method502() {
+   public Item method502() {
       return this.field563;
    }
 
    public boolean test(ItemStack var1) {
-      return var1.method32107() == this.field563 && Class8354.method29280(this.field564, var1.method32142(), true);
+      return var1.getItem() == this.field563 && Class8354.method29280(this.field564, var1.method32142(), true);
    }
 
    public ItemStack method503(int var1, boolean var2) throws CommandSyntaxException {
@@ -33,14 +33,14 @@ public class Class176 implements Predicate<ItemStack> {
       }
 
       if (var2 && var1 > var5.method32113()) {
-         throw field562.create(Registry.field16075.method9181(this.field563), var5.method32113());
+         throw field562.create(Registry.ITEM.getKey(this.field563), var5.method32113());
       } else {
          return var5;
       }
    }
 
    public String method504() {
-      StringBuilder var3 = new StringBuilder(Registry.field16075.method9171(this.field563));
+      StringBuilder var3 = new StringBuilder(Registry.ITEM.method9171(this.field563));
       if (this.field564 != null) {
          var3.append(this.field564);
       }

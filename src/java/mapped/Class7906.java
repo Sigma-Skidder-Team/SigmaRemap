@@ -52,7 +52,7 @@ public class Class7906 {
       this.field33875 = 0;
       this.field33876 = 0;
       if (this.field33874 == null) {
-         this.field33874 = Class8981.method32945(8);
+         this.field33874 = Shaders.method32945(8);
       }
    }
 

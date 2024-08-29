@@ -17,7 +17,7 @@ public class Class5209 extends Module {
 
     public Class5209() {
         super(ModuleCategory.MOVEMENT, "ElytraFly", "Better elytra flying");
-        this.method15972(new Class6004("NCP", "Bypass NCP", true));
+        this.registerSetting(new BooleanSetting("NCP", "Bypass NCP", true));
     }
 
     @EventTarget
@@ -30,7 +30,7 @@ public class Class5209 extends Module {
                     this.method15999(false);
                 }
             } else if (!mc.player.method3165()) {
-                mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10048));
+                mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10048));
                 mc.player.method3349(7, true);
             }
         }
@@ -66,7 +66,7 @@ public class Class5209 extends Module {
                 var1.method13995(this.field23530);
             }
 
-            int var7 = GLFW.glfwGetKey(mc.mainWindow.method8039(), mc.gameSettings.field44637.field13070.field34875);
+            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.field44637.field13070.field34875);
             if (var7 == 1 && this.method15974("NCP")) {
                 var1.method13995(-0.9F);
             } else if (!mc.player.method3331()) {
@@ -109,15 +109,15 @@ public class Class5209 extends Module {
                     this.field23533 = var4;
                 }
             } else {
-                int var5 = Class7789.method25843(Class8514.field38068);
+                int var5 = Class7789.method25843(Items.field38068);
                 if (var5 >= 0) {
-                    if (var5 != mc.player.field4902.field5443) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5539(var5));
+                    if (var5 != mc.player.inventory.currentItem) {
+                        mc.getConnection().sendPacket(new Class5539(var5));
                     }
 
-                    mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
-                    if (var5 != mc.player.field4902.field5443) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5539(mc.player.field4902.field5443));
+                    mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                    if (var5 != mc.player.inventory.currentItem) {
+                        mc.getConnection().sendPacket(new Class5539(mc.player.inventory.currentItem));
                     }
                 }
             }

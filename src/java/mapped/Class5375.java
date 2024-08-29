@@ -14,8 +14,8 @@ public class Class5375 extends Module {
 
     public Class5375() {
         super(ModuleCategory.COMBAT, "Packet", "Packet criticals");
-        this.method15972(new Class6009<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
-        this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Hypixel"));
+        this.registerSetting(new Class6009<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel"));
     }
 
     @EventTarget
@@ -36,7 +36,7 @@ public class Class5375 extends Module {
                 }
 
                 for (int var6 = 0; var6 < var5.length; var6++) {
-                    mc.getClientPlayNetHandler()
+                    mc.getConnection()
                             .sendPacket(
                                     new Class5605(mc.player.getPosX(), mc.player.getPosY() + var5[var6], mc.player.getPosZ(), false)
                             );

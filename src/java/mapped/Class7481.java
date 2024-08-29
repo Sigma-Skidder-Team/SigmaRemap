@@ -15,8 +15,8 @@ public class Class7481 {
    }
 
    public Class7481(BlockPos var1) {
-      this.field32174 = var1.method8304() >> 4;
-      this.field32175 = var1.method8306() >> 4;
+      this.field32174 = var1.getX() >> 4;
+      this.field32175 = var1.getZ() >> 4;
    }
 
    public Class7481(long var1) {

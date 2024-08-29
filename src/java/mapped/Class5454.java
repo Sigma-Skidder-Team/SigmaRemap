@@ -7,7 +7,7 @@ public class Class5454 extends Class5444<Class4726> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(Class8904 var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4726 var7) {
+   public void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4726 var7) {
       Class8299 var10 = new Class8299();
       Class2219 var11;
       if (var7.field22393 != Class107.field337) {
@@ -64,15 +64,15 @@ public class Class5454 extends Class5444<Class4726> {
       Class8969 var13 = var3.method31603(var26);
       Class80 var14 = Util.<Class80>method38518(Class80.values(), this.field24201);
       Class2089 var15 = !(this.field24201.nextFloat() < 0.5F) ? Class2089.field13616 : Class2089.field13614;
-      BlockPos var16 = new BlockPos(var13.method32886().method8304() / 2, 0, var13.method32886().method8306() / 2);
+      BlockPos var16 = new BlockPos(var13.method32886().getX() / 2, 0, var13.method32886().getZ() / 2);
       BlockPos var17 = new Class7481(var4, var5).method24364();
       Class9764 var18 = var13.method32910(var17, var14, var16, var15);
       Class1998 var19 = var18.method38401();
-      int var20 = var19.method8304();
-      int var21 = var19.method8306();
+      int var20 = var19.getX();
+      int var21 = var19.getZ();
       int var22 = var2.method17797(var20, var21, Class4184.method12959(var11)) - 1;
       int var23 = Class2978.method11390(this.field24201, var2, var11, var10.field35676, var22, var18.method38399(), var18);
-      BlockPos var24 = new BlockPos(var17.method8304(), var23, var17.method8306());
+      BlockPos var24 = new BlockPos(var17.getX(), var23, var17.getZ());
       if (var7.field22393 == Class107.field340 || var7.field22393 == Class107.field341 || var7.field22393 == Class107.field336) {
          var10.field35674 = Class2978.method11391(var24, var6);
       }

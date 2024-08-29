@@ -14,12 +14,12 @@ public class Class3223 extends Block {
 
    @Nullable
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       return this.method11579().method23465(field18661, Boolean.valueOf(var1.method18360().method6780(var1.method18345())));
    }
 
    @Override
-   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       if (!var2.field9020) {
          boolean var9 = var1.<Boolean>method23463(field18661);
          if (var9 != var2.method6780(var3)) {
@@ -33,14 +33,14 @@ public class Class3223 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18661) && !var2.method6780(var3)) {
          var2.method6725(var3, var1.method23459(field18661), 2);
       }
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18661);
    }
 }

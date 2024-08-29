@@ -21,7 +21,7 @@ public class Class3453 extends Class3452 {
    }
 
    @Override
-   public boolean method12127(Class7380 var1) {
+   public boolean method12127(BlockState var1) {
       return Class8633.method31014(var1);
    }
 }

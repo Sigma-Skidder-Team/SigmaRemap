@@ -11,14 +11,14 @@ public class Class3407 extends Block {
    }
 
    @Override
-   public void method11589(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var4.method23448(var1.method23383())) {
+   public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var4.method23448(var1.getBlock())) {
          this.method12048(var2, var3);
       }
    }
 
    @Override
-   public void method11506(Class7380 var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
+   public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
       this.method12048(var2, var3);
       super.method11506(var1, var2, var3, var4, var5, var6);
    }
@@ -42,18 +42,18 @@ public class Class3407 extends Block {
 
          for (Direction var13 : Direction.values()) {
             BlockPos var14 = var8.method8349(var13);
-            Class7380 var15 = var1.method6738(var14);
+            BlockState var15 = var1.getBlockState(var14);
             Class7379 var16 = var1.method6739(var14);
             Class8649 var17 = var15.method23384();
             if (var16.method23486(Class8953.field40469)) {
-               if (var15.method23383() instanceof Class3405 && ((Class3405)var15.method23383()).method11533(var1, var14, var15) != Class9479.field44064) {
+               if (var15.getBlock() instanceof Class3405 && ((Class3405)var15.getBlock()).method11533(var1, var14, var15) != Class9479.field44064) {
                   var6++;
                   if (var9 < 6) {
                      var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));
                   }
-               } else if (!(var15.method23383() instanceof Class3404)) {
+               } else if (!(var15.getBlock() instanceof Class3404)) {
                   if (var17 == Class8649.field38937 || var17 == Class8649.field38940) {
-                     Class944 var18 = !var15.method23383().method11998() ? null : var1.method6759(var14);
+                     TileEntity var18 = !var15.getBlock().isTileEntityProvider() ? null : var1.getTileEntity(var14);
                      method11555(var15, var1, var14, var18);
                      var1.method6725(var14, Blocks.AIR.method11579(), 3);
                      var6++;

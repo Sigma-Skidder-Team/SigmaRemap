@@ -3,15 +3,15 @@ package mapped;
 import java.util.concurrent.CompletableFuture;
 
 public class Class9713 {
-   public Class39 field45380;
+   public CompoundNBT field45380;
    private final CompletableFuture<Void> field45381 = new CompletableFuture<Void>();
 
-   public Class9713(Class39 var1) {
+   public Class9713(CompoundNBT var1) {
       this.field45380 = var1;
    }
 
    // $VF: synthetic method
-   public static Class39 method38053(Class9713 var0) {
+   public static CompoundNBT method38053(Class9713 var0) {
       return var0.field45380;
    }
 

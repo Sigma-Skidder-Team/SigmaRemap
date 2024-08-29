@@ -8,7 +8,7 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    private boolean field4760;
    private final ResourceLocation field4761;
 
-   public Class855(T var1, Class1255 var2, Class974 var3, ITextComponent var4, ResourceLocation var5) {
+   public Class855(T var1, Class1255 var2, PlayerInventory var3, ITextComponent var4, ResourceLocation var5) {
       super((T)var1, var3, var4);
       this.field4759 = var2;
       this.field4761 = var5;
@@ -30,8 +30,8 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4759.method5844();
    }
 

@@ -14,7 +14,7 @@ public class Class5243 extends Module {
 
     public Class5243() {
         super(ModuleCategory.PLAYER, "AutoSprint", "Sprints for you");
-        this.method15972(new Class6004("Keep Sprint", "Keep Sprinting after hitting a player", true));
+        this.registerSetting(new BooleanSetting("Keep Sprint", "Keep Sprinting after hitting a player", true));
     }
 
     @EventTarget
@@ -22,7 +22,7 @@ public class Class5243 extends Module {
         if (this.method15996()) {
             Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(BlockFly.class);
             Module var5 = var4.field23879;
-            if (var5 == null || !var5.method15996() || !(var5 instanceof Class5204) || var5.method15974("Haphe (AACAP)")) {
+            if (var5 == null || !var5.method15996() || !(var5 instanceof BlockFlyAACMode) || var5.method15974("Haphe (AACAP)")) {
                 mc.player.setSprinting(mc.player.field4984 > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().method14662(BlockFly.class)).method16732());
             }
         }
@@ -32,11 +32,11 @@ public class Class5243 extends Module {
     public void method16344(Class4423 var1) {
         if (this.method15996()
                 && !(mc.player.field4984 <= 0.0F)
-                && (!mc.player.method3148() || mc.player.method3158().method32107() != Class8514.field37796)
+                && (!mc.player.isHandActive() || mc.player.method3158().getItem() != Items.field37796)
                 && !((BlockFly) Client.getInstance().getModuleManager().method14662(BlockFly.class)).method16732()) {
             Class9805 var4 = mc.player.method3085(Class9173.field42108);
             float var5 = (float) (
-                    (var4.method38660() + 0.03F + (double) (0.015F * (float) Class9567.method37078())) / (double) mc.player.field4919.method20716() + 1.0
+                    (var4.method38660() + 0.03F + (double) (0.015F * (float) Class9567.method37078())) / (double) mc.player.abilities.method20716() + 1.0
             )
                     / 2.0F;
             var1.field21557 = var5;

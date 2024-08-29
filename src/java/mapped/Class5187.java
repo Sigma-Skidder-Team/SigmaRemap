@@ -28,7 +28,7 @@ public class Class5187 extends Module {
                         double[] var12 = new double[]{0.41999998688698 * var4, 0.754 * var4};
 
                         for (double var16 : var12) {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var6, var8 + var16, var10, false));
+                            mc.getConnection().sendPacket(new Class5605(var6, var8 + var16, var10, false));
                         }
                     }
                 }

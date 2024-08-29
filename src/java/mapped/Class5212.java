@@ -12,13 +12,13 @@ public class Class5212 extends Module {
 
     public Class5212() {
         super(ModuleCategory.WORLD, "Weather", "Removes rain and changes the world's time");
-        this.method15972(new Class6004("Custom time", "Set the world time", true));
-        this.method15972(new Class6009<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method18616(var1 -> {
+        this.registerSetting(new BooleanSetting("Custom time", "Set the world time", true));
+        this.registerSetting(new Class6009<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method18616(var1 -> {
             if (this.method15974("Custom time") && this.method15996()) {
                 mc.world.method6834(-((long) this.method15977("Time")));
             }
         }));
-        this.method15972(new Class6004("Disable rain", "Disable rain", true));
+        this.registerSetting(new BooleanSetting("Disable rain", "Disable rain", true));
     }
 
     @Override

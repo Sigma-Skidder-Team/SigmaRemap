@@ -15,7 +15,7 @@ public class Class2673 extends Class2672 {
       if (super.method10803()) {
          if (this.field17062.method4232() != null) {
             return this.field17062.method4232().method3205() != this.field17061
-               ? this.field17062.field5024.method6807(this.field17062.method3432()).method38329((float)Class2197.field14353.ordinal())
+               ? this.field17062.world.method6807(this.field17062.getPosition()).method38329((float)Class2197.field14353.ordinal())
                : false;
          } else {
             return false;

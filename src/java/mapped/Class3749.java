@@ -23,7 +23,7 @@ public class Class3749 extends Class3676<Class1042> {
       } else if (var2.method4674().method26571() != Class8395.field36016) {
          return false;
       } else {
-         Mutable var5 = var2.method3432().method8354();
+         Mutable var5 = var2.getPosition().method8354();
          this.field19900.clear();
 
          for (int var6 = -1; var6 <= 1; var6++) {
@@ -48,10 +48,10 @@ public class Class3749 extends Class3676<Class1042> {
    }
 
    private boolean method12711(BlockPos var1, ServerWorld var2) {
-      Class7380 var5 = var2.method6738(var1);
-      Block var6 = var5.method23383();
-      Block var7 = var2.method6738(var1.method8313()).method23383();
-      return var6 instanceof Class3480 && ((Class3480)var6).method12179(var5) || var5.method23393() && var7 instanceof Class3221;
+      BlockState var5 = var2.getBlockState(var1);
+      Block var6 = var5.getBlock();
+      Block var7 = var2.getBlockState(var1.method8313()).getBlock();
+      return var6 instanceof Class3480 && ((Class3480)var6).method12179(var5) || var5.isAir() && var7 instanceof Class3221;
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
@@ -71,24 +71,24 @@ public class Class3749 extends Class3676<Class1042> {
    public void method12504(ServerWorld var1, Class1042 var2, long var3) {
       if (this.field19897 == null || this.field19897.method8317(var2.getPositionVec(), 1.0)) {
          if (this.field19897 != null && var3 > this.field19898) {
-            Class7380 var7 = var1.method6738(this.field19897);
-            Block var8 = var7.method23383();
-            Block var9 = var1.method6738(this.field19897.method8313()).method23383();
+            BlockState var7 = var1.getBlockState(this.field19897);
+            Block var8 = var7.getBlock();
+            Block var9 = var1.getBlockState(this.field19897.method8313()).getBlock();
             if (var8 instanceof Class3480 && ((Class3480)var8).method12179(var7)) {
                var1.method7180(this.field19897, true, var2);
             }
 
-            if (var7.method23393() && var9 instanceof Class3221 && var2.method4712()) {
+            if (var7.isAir() && var9 instanceof Class3221 && var2.method4712()) {
                Class927 var10 = var2.method4752();
 
                for (int var11 = 0; var11 < var10.method3629(); var11++) {
                   ItemStack var12 = var10.method3618(var11);
                   boolean var13 = false;
-                  if (!var12.method32105()) {
-                     if (var12.method32107() != Class8514.field37841) {
-                        if (var12.method32107() != Class8514.field38053) {
-                           if (var12.method32107() != Class8514.field38052) {
-                              if (var12.method32107() == Class8514.field38112) {
+                  if (!var12.isEmpty()) {
+                     if (var12.getItem() != Items.field37841) {
+                        if (var12.getItem() != Items.field38053) {
+                           if (var12.getItem() != Items.field38052) {
+                              if (var12.getItem() == Items.field38112) {
                                  var1.method6725(this.field19897, Blocks.field36884.method11579(), 3);
                                  var13 = true;
                               }
@@ -109,16 +109,16 @@ public class Class3749 extends Class3676<Class1042> {
                   if (var13) {
                      var1.method6743(
                         (PlayerEntity)null,
-                        (double)this.field19897.method8304(),
+                        (double)this.field19897.getX(),
                         (double)this.field19897.getY(),
-                        (double)this.field19897.method8306(),
+                        (double)this.field19897.getZ(),
                         Class6067.field26486,
                         Class2266.field14732,
                         1.0F,
                         1.0F
                      );
                      var12.method32182(1);
-                     if (var12.method32105()) {
+                     if (var12.isEmpty()) {
                         var10.method3621(var11, ItemStack.EMPTY);
                      }
                      break;

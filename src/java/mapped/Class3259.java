@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3259 extends Class3257 implements Class3260 {
+public class Class3259 extends Item implements Class3260 {
    private static String[] field18745;
 
    public Class3259(Class5643 var1) {

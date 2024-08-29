@@ -6,7 +6,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    private static final Class9289<Boolean> field6091 = Class9361.<Boolean>method35441(Class1112.class, Class7784.field33398);
    private int field6092 = 1;
 
-   public Class1112(Class8992<? extends Class1112> var1, World var2) {
+   public Class1112(EntityType<? extends Class1112> var1, World var2) {
       super(var1, var2);
       this.field5594 = 5;
       this.field5596 = new Class6837(this);
@@ -87,7 +87,7 @@ public class Class1112 extends Class1111 implements Class1008 {
       return 5.0F;
    }
 
-   public static boolean method5361(Class8992<Class1112> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5361(EntityType<Class1112> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Class2197.field14351 && var4.nextInt(20) == 0 && method4264(var0, var1, var2, var3, var4);
    }
 
@@ -97,13 +97,13 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("ExplosionPower", this.field6092);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.method119("ExplosionPower", 99)) {
          this.field6092 = var1.method122("ExplosionPower");

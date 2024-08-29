@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Class2909 extends Class2898<Class4712> {
    private static String[] field17993;
-   public static final BlockPos field17994 = BlockPos.field13032;
+   public static final BlockPos field17994 = BlockPos.ZERO;
    private final boolean field17995;
 
    public Class2909(boolean var1) {
@@ -14,8 +14,8 @@ public class Class2909 extends Class2898<Class4712> {
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
       for (BlockPos var9 : BlockPos.method8359(
-         new BlockPos(var4.method8304() - 4, var4.getY() - 1, var4.method8306() - 4),
-         new BlockPos(var4.method8304() + 4, var4.getY() + 32, var4.method8306() + 4)
+         new BlockPos(var4.getX() - 4, var4.getY() - 1, var4.getZ() - 4),
+         new BlockPos(var4.getX() + 4, var4.getY() + 32, var4.getZ() + 4)
       )) {
          boolean var10 = var9.method8316(var4, 2.5);
          if (var10 || var9.method8316(var4, 3.5)) {

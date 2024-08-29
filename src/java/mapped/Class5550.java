@@ -50,7 +50,7 @@ public class Class5550 implements Packet<Class5116> {
       var1.writeInt(this.field24647.size());
 
       for (Class7919 var5 : this.field24647) {
-         var1.method35732(Registry.field16087.method9181(var5.method26560()));
+         var1.method35732(Registry.field16087.getKey(var5.method26560()));
          var1.writeDouble(var5.method26561());
          var1.writeVarInt(var5.method26562().size());
 

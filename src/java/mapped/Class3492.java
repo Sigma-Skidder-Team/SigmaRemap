@@ -9,13 +9,13 @@ public class Class3492 extends Class3194 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19360;
    }
 
    @Override
-   public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
-      Block var6 = var1.method23383();
+   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
+      Block var6 = var1.getBlock();
       return var6 == Blocks.SAND
          || var6 == Blocks.RED_SAND
          || var6 == Blocks.field36794

@@ -2,13 +2,12 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
-import com.google.common.collect.UnmodifiableIterator;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.event.impl.Class4401;
+import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4403;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
-import com.mentalfrostbyte.jello.event.impl.Class4429;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
+import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.GameProfileRepository;
 import com.mojang.authlib.exceptions.AuthenticationException;
@@ -47,265 +46,271 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-public class Minecraft extends Class317<Runnable> implements Class315, Class1643 {
-   private static Minecraft field1270;
+public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperInfo, IWindowEventListener {
+   private static Minecraft instance;
    private static final Logger LOGGER = LogManager.getLogger();
    public static final boolean IS_RUNNING_ON_MAC = Util.getOSType() == OS.OSX;
-   public static final ResourceLocation field1273 = new ResourceLocation("default");
-   public static final ResourceLocation field1274 = new ResourceLocation("uniform");
-   public static final ResourceLocation field1275 = new ResourceLocation("alt");
-   private static final CompletableFuture<Class2341> field1276 = CompletableFuture.<Class2341>completedFuture(Class2341.field16010);
-   private static final ITextComponent field1277 = new TranslationTextComponent("multiplayer.socialInteractions.not_available");
-   private final File field1278;
-   private final PropertyMap field1279;
+   public static final ResourceLocation DEFAULT_FONT_RENDERER_NAME = new ResourceLocation("default");
+   public static final ResourceLocation UNIFORM_FONT_RENDERER_NAME = new ResourceLocation("uniform");
+   public static final ResourceLocation standardGalacticFontRenderer = new ResourceLocation("alt");
+   private static final CompletableFuture<Class2341> RESOURCE_RELOAD_INIT_TASK = CompletableFuture.<Class2341>completedFuture(Class2341.field16010);
+   private static final ITextComponent field_244596_I = new TranslationTextComponent("multiplayer.socialInteractions.not_available");
+   private final File fileResourcepacks;
+   private final PropertyMap profileProperties;
    private final TextureManager textureManager;
-   private final DataFixer field1281;
-   private final Class1700 virtualScreen;
-   public final Class1815 mainWindow;
-   public final Class8917 timer = new Class8917(20.0F, 0L);
-   private final Class7998 field1285 = new Class7998("client", this, Util.milliTime());
-   private final Class7911 field1286;
-   public final Class264 worldRenderer;
-   private final Class8853 field1288;
-   private final Class216 field1289;
-   private final Class9641 field1290;
-   public final Class302 particles;
-   private final Class266 field1292 = new Class266();
+   private final DataFixer dataFixer;
+   private final VirtualScreen virtualScreen;
+   public final MainWindow mainWindow;
+   public final Timer timer = new Timer(20.0F, 0L);
+   private final Snooper snooper = new Snooper("client", this, Util.milliTime());
+   private final RenderTypeBuffers renderTypeBuffers;
+   public final WorldRenderer worldRenderer;
+   private final EntityRendererManager renderManager;
+   private final ItemRenderer itemRenderer;
+   private final FirstPersonRenderer firstPersonRenderer;
+   public final ParticleManager particles;
+   private final SearchTreeManager searchTreeManager = new SearchTreeManager();
    public final Session session;
-   public final Class9834 field1294;
-   public final Class214 gameRenderer;
-   public final Class8023 field1296;
-   private final AtomicReference<Class7245> field1297 = new AtomicReference<Class7245>();
-   public final Class1268 ingameGUI;
-   public final Class9574 gameSettings;
-   private final Class8044 field1300;
-   public final Class9511 mouseHelper;
-   public final Class9453 field1302;
-   public final File field1303;
-   private final String field1304;
-   private final String field1305;
-   private final Proxy field1306;
+   public final FontRenderer fontRenderer;
+   public final GameRenderer gameRenderer;
+   public final DebugRenderer debugRenderer;
+   private final AtomicReference<TrackingChunkStatusListener> refChunkStatusListener = new AtomicReference<TrackingChunkStatusListener>();
+   public final IngameGui ingameGUI;
+   public final GameSettings gameSettings;
+   private final CreativeSettings creativeSettings;
+   public final MouseHelper mouseHelper;
+   public final KeyboardListener keyboardListener;
+   public final File gameDir;
+   private final String launchedVersion;
+   private final String versionType;
+   private final Proxy proxy;
    private final SaveFormat saveFormat;
-   public final Class9789 field1308 = new Class9789();
-   private final boolean field1309;
-   private final boolean field1310;
-   private final boolean field1311;
-   private final boolean field1312;
-   private final Class192 resourceManager;
-   private final Class7653 field1314;
-   public final Class313 resourcePackRepository;
-   private final Class267 field1316;
-   private final Class8396 field1317;
-   private final Class9003 field1318;
+   public final FrameTimer frameTimer = new FrameTimer();
+   private final boolean jvm64bit;
+   private final boolean isDemo;
+   private final boolean enableMultiplayer;
+   private final boolean enableChat;
+   private final IReloadableResourceManager resourceManager;
+   private final DownloadingPackFinder packFinder;
+   public final ResourcePackList resourcePackRepository;
+   private final LanguageManager languageManager;
+   private final BlockColors blockColors;
+   private final ItemColors itemColors;
    public final Framebuffer framebuffer;
-   private final Class274 soundHandler;
-   private final Class9052 field1321;
-   private final Class1654 fontResourceMananger;
-   private final Class271 field1323;
-   private final Class270 field1324;
-   private final MinecraftSessionService field1325;
-   private final SocialInteractionsService field1326;
-   private final Class9758 field1327;
-   private final Class280 modelManager;
-   private final Class217 field1329;
-   private final Class278 paintingSprites;
-   private final Class279 potionSprites;
-   private final Class1264 toastGui;
-   private final Class8274 field1333 = new Class8274(this);
-   private final Class9557 field1334;
-   private final Class9645 field1335;
-   public static byte[] field1336 = new byte[10485760];
-   public PlayerController field1337;
-   public Class1656 world;
+   private final SoundHandler soundHandler;
+   private final MusicTicker musicTicker;
+   private final FontResourceManager fontResourceMananger;
+   private final Splashes splashes;
+   private final GPUWarning warningGPU;
+   private final MinecraftSessionService sessionService;
+   private final SocialInteractionsService field_244734_au;
+   private final SkinManager skinManager;
+   private final ModelManager modelManager;
+   private final BlockRendererDispatcher blockRenderDispatcher;
+   private final PaintingSpriteUploader paintingSprites;
+   private final PotionSpriteUploader potionSprites;
+   private final ToastGui toastGui;
+   private final MinecraftGame game = new MinecraftGame(this);
+   private final Tutorial tutorial;
+   private final FilterManager field_244597_aC;
+   public static byte[] memoryReserve = new byte[10485760];
+   public PlayerController playerController;
+   public ClientWorld world;
    public ClientPlayerEntity player;
-   private Class1644 field1340;
-   private Class7730 field1341;
-   private NetworkManager field1342;
-   private boolean field1343;
-   public Entity field1344;
-   public Entity field1345;
-   public Class8710 field1346;
-   public int field1347;
-   public int field1348;
+   private IntegratedServer integratedServer;
+   private ServerData currentServerData;
+   private NetworkManager networkManager;
+   private boolean integratedServerIsRunning;
+   public Entity renderViewEntity;
+   public Entity pointedEntity;
+   public RayTraceResult objectMouseOver;
+   public int rightClickDelayTimer;
+   public int leftClickCounter;
    private boolean isGamePaused;
    private float renderPartialTicksPaused;
-   private long field1351 = Util.nanoTime();
-   private long field1352;
-   private int field1353;
+   private long startNanoTime = Util.nanoTime();
+   private long debugUpdateTime;
+   private int fpsCounter;
    public boolean skipRenderWorld;
    public Screen currentScreen;
-   public LoadingGui loadingGuiIn;
-   private boolean field1357;
-   private Thread field1358;
-   public boolean field1359 = true;
-   private volatile boolean field1360 = true;
-   private Class4526 crashReporter;
-   private static int field1362;
-   public String field1363 = "";
-   public boolean field1364;
-   public boolean field1365;
-   public boolean field1366 = true;
-   private boolean field1367;
+   public LoadingGui loadingGui;
+   private boolean connectedToRealms;
+   private Thread thread;
+   /**
+    * This is probably not the right name but the original class didn't
+    * contain it so i just made up a name
+    */
+   public boolean shouldTranslate = true;
+   private volatile boolean running = true;
+   private CrashReport crashReporter;
+   private static int debugFps;
+   public String debug = "";
+   public boolean debugWireframe;
+   public boolean debugChunkPath;
+   public boolean renderChunksMany = true;
+   private boolean isWindowFocused;
    private final Queue<Runnable> queueChunkTracking = Queues.newConcurrentLinkedQueue();
    private CompletableFuture<Void> futureRefreshResources;
-   private Class7600 field1370;
-   private Class7165 profiler = Class7167.field30819;
-   private int field1372;
-   private final Class7684 field1373 = new Class7684(Util.nanoTimeSupplier, () -> this.field1372);
-   private Class7740 profilerResult;
-   private String field1375 = "root";
+   private TutorialToast field_244598_aV;
+   private IProfiler profiler = EmptyProfiler.INSTANCE;
+   private int gameTime;
+   private final TimeTracker gameTimeTracker = new TimeTracker(Util.nanoTimeSupplier, () -> this.gameTime);
+   private IProfileResult profilerResult;
+   private String debugProfilerName = "root";
 
-   public Minecraft(Class8051 var1) {
+   public Minecraft(GameConfiguration gameConfig) {
       super("Client");
-      field1270 = this;
-      this.field1303 = var1.field34579.field35579;
-      File var2 = var1.field34579.field35581;
-      this.field1278 = var1.field34579.field35580;
-      this.field1304 = var1.field34580.field33254;
-      this.field1305 = var1.field34580.field33255;
-      this.field1279 = var1.field34577.field35342;
-      this.field1314 = new Class7653(new File(this.field1303, "server-resource-packs"), var1.field34579.method28943());
-      this.resourcePackRepository = new Class313(Minecraft::method1582, this.field1314, new Class7652(this.field1278, Class7725.field33170));
-      this.field1306 = var1.field34577.field35343;
-      YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field1306);
-      this.field1325 = var3.createMinecraftSessionService();
-      this.field1326 = this.method1456(var3, var1);
-      this.session = var1.field34577.field35340;
+      instance = this;
+      this.gameDir = gameConfig.folderInfo.gameDir;
+      File file1 = gameConfig.folderInfo.assetsDir;
+      this.fileResourcepacks = gameConfig.folderInfo.resourcePacksDir;
+      this.launchedVersion = gameConfig.gameInfo.version;
+      this.versionType = gameConfig.gameInfo.versionType;
+      this.profileProperties = gameConfig.userInfo.profileProperties;
+      this.packFinder = new DownloadingPackFinder(new File(this.gameDir, "server-resource-packs"), gameConfig.folderInfo.getAssetsIndex());
+      this.resourcePackRepository = new ResourcePackList(Minecraft::makePackInfo, this.packFinder, new FolderPackFinder(this.fileResourcepacks, IPackNameDecorator.PLAIN));
+      this.proxy = gameConfig.userInfo.proxy;
+      YggdrasilAuthenticationService yggdrasilauthenticationservice = new YggdrasilAuthenticationService(this.proxy);
+      this.sessionService = yggdrasilauthenticationservice.createMinecraftSessionService();
+      this.field_244734_au = this.func_244735_a(yggdrasilauthenticationservice, gameConfig);
+      this.session = gameConfig.userInfo.session;
       LOGGER.info("Setting user: {}", this.session.getUsername());
       LOGGER.debug("(Session ID is {})", this.session.toString());
       this.method1525();
-      this.field1310 = var1.field34580.field33253;
-      this.field1311 = !var1.field34580.field33256;
-      this.field1312 = !var1.field34580.field33257;
-      this.field1309 = method1463();
-      this.field1340 = null;
-      String var4;
-      int var5;
-      if (this.method1510() && var1.field34581.field30903 != null) {
-         var4 = var1.field34581.field30903;
-         var5 = var1.field34581.field30904;
+      this.isDemo = gameConfig.gameInfo.isDemo;
+      this.enableMultiplayer = !gameConfig.gameInfo.disableMultiplayer;
+      this.enableChat = !gameConfig.gameInfo.disableChat;
+      this.jvm64bit = isJvm64bit();
+      this.integratedServer = null;
+      String s;
+      int i;
+      if (this.isMultiplayerEnabled() && gameConfig.serverInfo.serverName != null) {
+         s = gameConfig.serverInfo.serverName;
+         i = gameConfig.serverInfo.serverPort;
       } else {
-         var4 = null;
-         var5 = 0;
+         s = null;
+         i = 0;
       }
 
-      if (System.getProperty("java.version").contains("74")) {
+      /*
+      if (System.getProperty("java.version").contains("74")) { // Wtf even is this supposed to be
          this.shutdown();
       }
+       */
 
-      KeybindTextComponent.func_240696_a_(KeyBinding::method8516);
-      this.field1281 = Class4497.method14181();
-      this.toastGui = new Class1264(this);
-      this.field1334 = new Class9557(this);
-      this.field1358 = Thread.currentThread();
-      this.gameSettings = new Class9574(this, this.field1303);
-      this.field1300 = new Class8044(this.field1303, this.field1281);
-      LOGGER.info("Backend library: {}", RenderSystem.method27898());
-      Class9790 var6;
-      if (this.gameSettings.field44593 > 0 && this.gameSettings.field44592 > 0) {
-         var6 = new Class9790(
-            this.gameSettings.field44592, this.gameSettings.field44593, var1.field34578.field45782, var1.field34578.field45783, var1.field34578.field45784
+      KeybindTextComponent.func_240696_a_(KeyBinding::getDisplayString);
+      this.dataFixer = DataFixesManager.getDataFixer();
+      this.toastGui = new ToastGui(this);
+      this.tutorial = new Tutorial(this);
+      this.thread = Thread.currentThread();
+      this.gameSettings = new GameSettings(this, this.gameDir);
+      this.creativeSettings = new CreativeSettings(this.gameDir, this.dataFixer);
+      LOGGER.info("Backend library: {}", RenderSystem.getBackendDescription());
+      ScreenSize screensize;
+      if (this.gameSettings.overrideHeight > 0 && this.gameSettings.overrideWidth > 0) {
+         screensize = new ScreenSize(
+            this.gameSettings.overrideWidth, this.gameSettings.overrideHeight, gameConfig.displayInfo.fullscreenWidth, gameConfig.displayInfo.fullscreenHeight, gameConfig.displayInfo.fullscreen
          );
       } else {
-         var6 = var1.field34578;
+         screensize = gameConfig.displayInfo;
       }
 
-      Util.nanoTimeSupplier = RenderSystem.method27900();
-      this.virtualScreen = new Class1700(this);
-      this.mainWindow = this.virtualScreen.method7329(var6, this.gameSettings.field44586, this.method1455());
-      this.method1573(true);
+      Util.nanoTimeSupplier = RenderSystem.initBackendSystem();
+      this.virtualScreen = new VirtualScreen(this);
+      this.mainWindow = this.virtualScreen.create(screensize, this.gameSettings.fullscreenResolution, this.getWindowTitle());
+      this.setGameFocused(true);
 
       try {
-         InputStream var7 = this.method1539().method25146().method1223(Class1946.field12610, new ResourceLocation("icons/icon_16x16.png"));
-         InputStream var8 = this.method1539().method25146().method1223(Class1946.field12610, new ResourceLocation("icons/icon_32x32.png"));
-         this.mainWindow.method8013(var7, var8);
+         InputStream var7 = this.getPackFinder().getVanillaPack().getResourceStream(ResourcePackType.CLIENT_RESOURCES, new ResourceLocation("icons/icon_16x16.png"));
+         InputStream var8 = this.getPackFinder().getVanillaPack().getResourceStream(ResourcePackType.CLIENT_RESOURCES, new ResourceLocation("icons/icon_32x32.png"));
+         this.mainWindow.setWindowIcon(var7, var8);
       } catch (IOException var9) {
          LOGGER.error("Couldn't set icon", var9);
       }
 
-      this.mainWindow.method8027(this.gameSettings.field44576);
-      this.mouseHelper = new Class9511(this);
-      this.mouseHelper.method36733(this.mainWindow.method8039());
-      this.field1302 = new Class9453(this);
-      this.field1302.method36348(this.mainWindow.method8039());
-      RenderSystem.method27901(this.gameSettings.field44609, false);
+      this.mainWindow.setFramerateLimit(this.gameSettings.framerateLimit);
+      this.mouseHelper = new MouseHelper(this);
+      this.mouseHelper.registerCallbacks(this.mainWindow.getHandle());
+      this.keyboardListener = new KeyboardListener(this);
+      this.keyboardListener.setupCallbacks(this.mainWindow.getHandle());
+      RenderSystem.initRenderer(this.gameSettings.glDebugVerbosity, false);
       this.framebuffer = new Framebuffer(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(), true, IS_RUNNING_ON_MAC);
-      this.framebuffer.method29115(0.0F, 0.0F, 0.0F, 0.0F);
-      this.resourceManager = new Class193(Class1946.field12610);
-      this.resourcePackRepository.method1262();
-      this.gameSettings.method37172(this.resourcePackRepository);
-      this.field1316 = new Class267(this.gameSettings.field44676);
-      this.resourceManager.method587(this.field1316);
+      this.framebuffer.setFramebufferColor(0.0F, 0.0F, 0.0F, 0.0F);
+      this.resourceManager = new SimpleReloadableResourceManager(ResourcePackType.CLIENT_RESOURCES);
+      this.resourcePackRepository.reloadPacksFromFinders();
+      this.gameSettings.fillResourcePackList(this.resourcePackRepository);
+      this.languageManager = new LanguageManager(this.gameSettings.language);
+      this.resourceManager.addReloadListener(this.languageManager);
       this.textureManager = new TextureManager(this.resourceManager);
-      this.resourceManager.method587(this.textureManager);
-      this.field1327 = new Class9758(this.textureManager, new File(var2, "skins"), this.field1325);
-      this.saveFormat = new SaveFormat(this.field1303.toPath().resolve("saves"), this.field1303.toPath().resolve("backups"), this.field1281);
-      this.soundHandler = new Class274(this.resourceManager, this.gameSettings);
-      this.resourceManager.method587(this.soundHandler);
-      this.field1323 = new Class271(this.session);
-      this.resourceManager.method587(this.field1323);
-      this.field1321 = new Class9052(this);
-      this.fontResourceMananger = new Class1654(this.textureManager);
-      this.field1294 = this.fontResourceMananger.method6707();
-      this.resourceManager.method587(this.fontResourceMananger.method6708());
-      this.method1460(this.method1469());
-      this.resourceManager.method587(new Class273());
-      this.resourceManager.method587(new Class275());
+      this.resourceManager.addReloadListener(this.textureManager);
+      this.skinManager = new SkinManager(this.textureManager, new File(file1, "skins"), this.sessionService);
+      this.saveFormat = new SaveFormat(this.gameDir.toPath().resolve("saves"), this.gameDir.toPath().resolve("backups"), this.dataFixer);
+      this.soundHandler = new SoundHandler(this.resourceManager, this.gameSettings);
+      this.resourceManager.addReloadListener(this.soundHandler);
+      this.splashes = new Splashes(this.session);
+      this.resourceManager.addReloadListener(this.splashes);
+      this.musicTicker = new MusicTicker(this);
+      this.fontResourceMananger = new FontResourceManager(this.textureManager);
+      this.fontRenderer = this.fontResourceMananger.func_238548_a_();
+      this.resourceManager.addReloadListener(this.fontResourceMananger.getReloadListener());
+      this.forceUnicodeFont(this.getForceUnicodeFont());
+      this.resourceManager.addReloadListener(new GrassColorReloadListener());
+      this.resourceManager.addReloadListener(new FoliageColorReloadListener());
       this.mainWindow.setRenderPhase("Startup");
-      RenderSystem.method27907(0, 0, this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
+      RenderSystem.setupDefaultState(0, 0, this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
       this.mainWindow.setRenderPhase("Post startup");
-      this.field1317 = Class8396.method29463();
-      this.field1318 = Class9003.method33257(this.field1317);
-      this.modelManager = new Class280(this.textureManager, this.field1317, this.gameSettings.field44600);
-      this.resourceManager.method587(this.modelManager);
-      this.field1289 = new Class216(this.textureManager, this.modelManager, this.field1318);
-      this.field1288 = new Class8853(this.textureManager, this.field1289, this.resourceManager, this.field1294, this.gameSettings);
-      this.field1290 = new Class9641(this);
-      this.resourceManager.method587(this.field1289);
-      this.field1286 = new Class7911();
-      this.gameRenderer = new Class214(this, this.resourceManager, this.field1286);
-      this.resourceManager.method587(this.gameRenderer);
-      this.field1335 = new Class9645(this, this.field1326);
-      this.field1329 = new Class217(this.modelManager.method1025(), this.field1317);
-      this.resourceManager.method587(this.field1329);
-      this.worldRenderer = new Class264(this, this.field1286);
-      this.resourceManager.method587(this.worldRenderer);
-      this.method1461();
-      this.resourceManager.method587(this.field1292);
-      this.particles = new Class302(this.world, this.textureManager);
-      this.resourceManager.method587(this.particles);
-      this.paintingSprites = new Class278(this.textureManager);
-      this.resourceManager.method587(this.paintingSprites);
-      this.potionSprites = new Class279(this.textureManager);
-      this.resourceManager.method587(this.potionSprites);
-      this.field1324 = new Class270();
-      this.resourceManager.method587(this.field1324);
+      this.blockColors = BlockColors.init();
+      this.itemColors = ItemColors.init(this.blockColors);
+      this.modelManager = new ModelManager(this.textureManager, this.blockColors, this.gameSettings.field44600);
+      this.resourceManager.addReloadListener(this.modelManager);
+      this.itemRenderer = new ItemRenderer(this.textureManager, this.modelManager, this.itemColors);
+      this.renderManager = new EntityRendererManager(this.textureManager, this.itemRenderer, this.resourceManager, this.fontRenderer, this.gameSettings);
+      this.firstPersonRenderer = new FirstPersonRenderer(this);
+      this.resourceManager.addReloadListener(this.itemRenderer);
+      this.renderTypeBuffers = new RenderTypeBuffers();
+      this.gameRenderer = new GameRenderer(this, this.resourceManager, this.renderTypeBuffers);
+      this.resourceManager.addReloadListener(this.gameRenderer);
+      this.field_244597_aC = new FilterManager(this, this.field_244734_au);
+      this.blockRenderDispatcher = new BlockRendererDispatcher(this.modelManager.method1025(), this.blockColors);
+      this.resourceManager.addReloadListener(this.blockRenderDispatcher);
+      this.worldRenderer = new WorldRenderer(this, this.renderTypeBuffers);
+      this.resourceManager.addReloadListener(this.worldRenderer);
+      this.populateSearchTreeManager();
+      this.resourceManager.addReloadListener(this.searchTreeManager);
+      this.particles = new ParticleManager(this.world, this.textureManager);
+      this.resourceManager.addReloadListener(this.particles);
+      this.paintingSprites = new PaintingSpriteUploader(this.textureManager);
+      this.resourceManager.addReloadListener(this.paintingSprites);
+      this.potionSprites = new PotionSpriteUploader(this.textureManager);
+      this.resourceManager.addReloadListener(this.potionSprites);
+      this.warningGPU = new GPUWarning();
+      this.resourceManager.addReloadListener(this.warningGPU);
       Client.getInstance().start();
-      this.ingameGUI = new Class1268(this);
-      this.field1296 = new Class8023(this);
-      RenderSystem.method27902(this::method1462);
-      if (this.gameSettings.field44626 && !this.mainWindow.method8040()) {
-         this.mainWindow.method8034();
-         this.gameSettings.field44626 = this.mainWindow.method8040();
+      this.ingameGUI = new IngameGui(this);
+      this.debugRenderer = new DebugRenderer(this);
+      RenderSystem.setErrorCallback(this::disableVSyncAfterGlError);
+      if (this.gameSettings.fullscreen && !this.mainWindow.isFullscreen()) {
+         this.mainWindow.toggleFullscreen();
+         this.gameSettings.fullscreen = this.mainWindow.isFullscreen();
       }
 
-      this.mainWindow.method8020(this.gameSettings.field44615);
-      this.mainWindow.method8051(this.gameSettings.field44608);
-      this.mainWindow.method8019();
-      this.method1481();
-      if (var4 != null) {
-         this.displayGuiScreen(new Class1314(new MainMenuScreen(), this, var4, var5));
+      this.mainWindow.setVsync(this.gameSettings.vsync);
+      this.mainWindow.setRawMouseInput(this.gameSettings.rawMouseInput);
+      this.mainWindow.setLogOnGlError();
+      this.updateWindowSize();
+      if (s != null) {
+         this.displayGuiScreen(new ConnectingScreen(new MainMenuScreen(), this, s, i));
       } else {
          this.displayGuiScreen(new MainMenuScreen(true));
       }
 
-      ResourceLoadProgressGui.method5677(this);
-      List<Class303> var10 = this.resourcePackRepository.method1273();
+      ResourceLoadProgressGui.loadLogoTexture(this);
+      List<IResourcePack> list = this.resourcePackRepository.func_232623_f_();
       this.setLoadingGui(
-         new Class1272(
-            this, this.resourceManager.method586(Util.method38492(), this, field1276, var10), var1x -> Util.method38514(var1x, this::method1458, () -> {
-                  if (SharedConstants.field42545) {
-                     this.method1471();
+         new CustomResourceLoadProgressGui(
+            this, this.resourceManager.reloadResources(Util.getServerExecutor(), this, RESOURCE_RELOAD_INIT_TASK, list), var1x -> Util.acceptOrElse(var1x, this::restoreResourcePacks, () -> {
+                  if (SharedConstants.developmentMode) {
+                     this.checkMissingData();
                   }
                }), false
          )
@@ -313,163 +318,163 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    }
 
    public void setDefaultMinecraftTitle() {
-      this.mainWindow.method8038(this.method1455());
+      this.mainWindow.setWindowTitle(this.getWindowTitle());
    }
 
-   private String method1455() {
-      StringBuilder var1 = new StringBuilder(Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
-      var1.append(" ");
-      var1.append(SharedConstants.method34773().getName());
-      ClientPlayNetHandler var2 = this.getClientPlayNetHandler();
-      if (var2 != null && var2.method15589().method30707()) {
-         var1.append(" - ");
-         if (this.field1340 != null && !this.field1340.method1369()) {
-            var1.append(Class9088.method33883("title.singleplayer"));
-         } else if (this.method1559()) {
-            var1.append(Class9088.method33883("title.multiplayer.realms"));
-         } else if (this.field1340 != null || this.field1341 != null && this.field1341.method25582()) {
-            var1.append(Class9088.method33883("title.multiplayer.lan"));
+   private String getWindowTitle() {
+      StringBuilder stringbuilder = new StringBuilder(Client.getInstance().getClientMode() == ClientMode.JELLO ? "Jello for Sigma 5.0" : "Sigma 5.0");
+      stringbuilder.append(" ");
+      stringbuilder.append(SharedConstants.getVersion().getName());
+      ClientPlayNetHandler clientplaynethandler = this.getConnection();
+      if (clientplaynethandler != null && clientplaynethandler.getNetworkManager().isChannelOpen()) {
+         stringbuilder.append(" - ");
+         if (this.integratedServer != null && !this.integratedServer.getPublic()) {
+            stringbuilder.append(I18n.format("title.singleplayer"));
+         } else if (this.isConnectedToRealms()) {
+            stringbuilder.append(I18n.format("title.multiplayer.realms"));
+         } else if (this.integratedServer != null || this.currentServerData != null && this.currentServerData.isOnLAN()) {
+            stringbuilder.append(I18n.format("title.multiplayer.lan"));
          } else {
-            var1.append(Class9088.method33883("title.multiplayer.other"));
+            stringbuilder.append(I18n.format("title.multiplayer.other"));
          }
       }
 
-      return var1.toString();
+      return stringbuilder.toString();
    }
 
-   private SocialInteractionsService method1456(YggdrasilAuthenticationService var1, Class8051 var2) {
+   private SocialInteractionsService func_244735_a(YggdrasilAuthenticationService p_244735_1_, GameConfiguration p_244735_2_) {
       try {
-         return var1.createSocialInteractionsService(var2.field34577.field35340.getToken());
+         return p_244735_1_.createSocialInteractionsService(p_244735_2_.userInfo.session.getToken());
       } catch (AuthenticationException var4) {
          LOGGER.error("Failed to verify authentication", var4);
          return new OfflineSocialInteractions();
       }
    }
 
-   public boolean method1457() {
+   public boolean isModdedClient() {
       return false;
    }
 
-   private void method1458(Throwable var1) {
-      if (this.resourcePackRepository.method1269().size() > 1) {
-         StringTextComponent var2;
-         if (var1 instanceof Class2507) {
-            var2 = new StringTextComponent(((Class2507)var1).method10488().method1228());
+   private void restoreResourcePacks(Throwable throwableIn) {
+      if (this.resourcePackRepository.func_232621_d_().size() > 1) {
+         StringTextComponent itextcomponent;
+         if (throwableIn instanceof SimpleReloadableResourceManager.FailedPackException) {
+            itextcomponent = new StringTextComponent(((SimpleReloadableResourceManager.FailedPackException)throwableIn).method10488().method1228());
          } else {
-            var2 = null;
+            itextcomponent = null;
          }
 
-         this.method1459(var1, var2);
+         this.throwResourcePackLoadError(throwableIn, itextcomponent);
       } else {
-         Util.method38498(var1);
+         Util.toRuntimeException(throwableIn);
       }
    }
 
-   public void method1459(Throwable var1, ITextComponent var2) {
-      LOGGER.info("Caught error loading resourcepacks, removing all selected resourcepacks", var1);
-      this.resourcePackRepository.method1264(Collections.<String>emptyList());
-      this.gameSettings.field44580.clear();
-      this.gameSettings.field44581.clear();
-      this.gameSettings.method37146();
+   public void throwResourcePackLoadError(Throwable throwable, ITextComponent errorMessage) {
+      LOGGER.info("Caught error loading resourcepacks, removing all selected resourcepacks", throwable);
+      this.resourcePackRepository.setEnabledPacks(Collections.emptyList());
+      this.gameSettings.resourcePacks.clear();
+      this.gameSettings.incompatibleResourcePacks.clear();
+      this.gameSettings.saveOptions();
       this.reloadResources().thenRun(() -> {
-         Class1264 var2x = this.method1566();
-         Class7603.method24907(var2x, Class1906.field11199, new TranslationTextComponent("resourcePack.load_fail"), var2);
+         ToastGui toastgui = this.getToastGui();
+         SystemToast.method24907(toastgui, SystemToast.Type.PACK_LOAD_FAILURE, new TranslationTextComponent("resourcePack.load_fail"), errorMessage);
       });
    }
 
    public void run() {
-      this.field1358 = Thread.currentThread();
+      this.thread = Thread.currentThread();
 
       try {
-         boolean var1 = false;
+         boolean flag = false;
 
-         while (this.field1360) {
+         while (this.running) {
             if (this.crashReporter != null) {
-               method1468(this.crashReporter);
+               displayCrashReport(this.crashReporter);
                return;
             }
 
             try {
-               Class9487 var7 = Class9487.method36636("Renderer");
-               boolean var3 = this.method1478();
-               this.method1479(var3, var7);
-               this.profiler.method22501();
-               this.runGameLoop(!var1);
-               Client.getInstance().method19925();
-               this.profiler.method22502();
-               this.method1480(var3, var7);
-            } catch (OutOfMemoryError var4) {
-               if (var1) {
-                  throw var4;
+               LongTickDetector longtickdetector = LongTickDetector.method36636("Renderer");
+               boolean flag1 = this.isDebugMode();
+               this.tick(flag1, longtickdetector);
+               this.profiler.startTick();
+               this.runGameLoop(!flag);
+               Client.getInstance().endTick();
+               this.profiler.endTick();
+               this.func_238210_b_(flag1, longtickdetector);
+            } catch (OutOfMemoryError outofmemoryerror) {
+               if (flag) {
+                  throw outofmemoryerror;
                }
 
-               this.method1484();
-               this.displayGuiScreen(new Class1322());
+               this.freeMemory();
+               this.displayGuiScreen(new MemoryErrorScreen());
                System.gc();
-               LOGGER.fatal("Out of memory", var4);
-               var1 = true;
+               LOGGER.fatal("Out of memory", outofmemoryerror);
+               flag = true;
             }
          }
-      } catch (Class2506 var5) {
-         this.method1521(var5.method10487());
-         this.method1484();
-         LOGGER.fatal("Reported exception thrown!", var5);
-         method1468(var5.method10487());
+      } catch (ReportedException reportedexception) {
+         this.addGraphicsAndWorldToCrashReport(reportedexception.getCrashReport());
+         this.freeMemory();
+         LOGGER.fatal("Reported exception thrown!", reportedexception);
+         displayCrashReport(reportedexception.getCrashReport());
       } catch (Throwable var6) {
-         Class4526 var2 = this.method1521(new Class4526("Unexpected error", var6));
+         CrashReport var2 = this.addGraphicsAndWorldToCrashReport(new CrashReport("Unexpected error", var6));
          LOGGER.fatal("Unreported exception thrown!", var6);
-         this.method1484();
-         method1468(var2);
+         this.freeMemory();
+         displayCrashReport(var2);
       }
    }
 
-   public void method1460(boolean var1) {
-      this.fontResourceMananger.method6706(var1 ? ImmutableMap.of(field1273, field1274) : ImmutableMap.of());
+   public void forceUnicodeFont(boolean forced) {
+      this.fontResourceMananger.method6706(forced ? ImmutableMap.of(DEFAULT_FONT_RENDERER_NAME, UNIFORM_FONT_RENDERER_NAME) : ImmutableMap.of());
    }
 
-   private void method1461() {
-      Class7013 var1 = new Class7013<ItemStack>(
-         var0 -> var0.method32153((PlayerEntity)null, Class2215.field14480)
+   private void populateSearchTreeManager() {
+      SearchTree<ItemStack> var1 = new SearchTree<ItemStack>(
+         var0 -> var0.getTooltip((PlayerEntity)null, TooltipFlags.NORMAL)
                .stream()
                .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
                .filter(var0x -> !var0x.isEmpty()),
-         var0 -> Stream.<ResourceLocation>of(Registry.field16075.method9181(var0.method32107()))
+         var0 -> Stream.<ResourceLocation>of(Registry.ITEM.getKey(var0.getItem()))
       );
-      Class7012 var2 = new Class7012<ItemStack>(var0 -> Class5985.method18561().method27138(var0.method32107()).stream());
-      Class25 var3 = Class25.method67();
+      SearchTreeReloadable<ItemStack> var2 = new SearchTreeReloadable<ItemStack>(var0 -> Class5985.method18561().method27138(var0.getItem()).stream());
+      NonNullList<ItemStack> var3 = NonNullList.create();
 
-      for (Class3257 var5 : Registry.field16075) {
-         var5.method11737(Class7401.field31670, var3);
+      for (Item var5 : Registry.ITEM) {
+         var5.fillItemGroup(ItemGroup.SEARCH, var3);
       }
 
       var3.forEach(var2x -> {
-         var1.method21734(var2x);
-         var2.method21734(var2x);
+         var1.func_217872_a(var2x);
+         var2.func_217872_a(var2x);
       });
-      Class7013 var6 = new Class7013<Class9266>(
-         var0 -> var0.method34892()
+      SearchTree<RecipeList> var6 = new SearchTree<RecipeList>(
+              recipeList ->      recipeList.getRecipes()
                .stream()
-               .<ITextComponent>flatMap(var0x -> var0x.method14966().method32153((PlayerEntity)null, Class2215.field14480).stream())
-               .<String>map(var0x -> TextFormatting.getTextWithoutFormattingCodes(var0x.getString()).trim())
-               .filter(var0x -> !var0x.isEmpty()),
-         var0 -> var0.method34892().stream().<ResourceLocation>map(var0x -> Registry.field16075.method9181(var0x.method14966().method32107()))
+               .<ITextComponent>flatMap(recipe -> recipe.getRecipeOutput().getTooltip((PlayerEntity)null, TooltipFlags.NORMAL).stream())
+               .<String>map(textComponent -> TextFormatting.getTextWithoutFormattingCodes(textComponent.getString()).trim())
+               .filter(name -> !name.isEmpty()),
+              recipeList ->      recipeList.getRecipes().stream().<ResourceLocation>map(recipe -> Registry.ITEM.getKey(recipe.getRecipeOutput().getItem()))
       );
-      this.field1292.method961(Class266.field1030, var1);
-      this.field1292.method961(Class266.field1031, var2);
-      this.field1292.method961(Class266.field1032, var6);
+      this.searchTreeManager.add(SearchTreeManager.ITEMS, var1);
+      this.searchTreeManager.add(SearchTreeManager.TAGS, var2);
+      this.searchTreeManager.add(SearchTreeManager.RECIPES, var6);
    }
 
-   private void method1462(int var1, long var2) {
-      this.gameSettings.field44615 = false;
-      this.gameSettings.method37146();
+   private void disableVSyncAfterGlError(int error, long description) {
+      this.gameSettings.vsync = false;
+      this.gameSettings.saveOptions();
    }
 
-   private static boolean method1463() {
-      String[] var0 = new String[]{"sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch"};
+   private static boolean isJvm64bit() {
+      String[] astring = new String[]{"sun.arch.data.model", "com.ibm.vm.bitmode", "os.arch"};
 
-      for (String var4 : var0) {
-         String var5 = System.getProperty(var4);
-         if (var5 != null && var5.contains("64")) {
+      for (String s : astring) {
+         String s1 = System.getProperty(s);
+         if (s1 != null && s1.contains("64")) {
             return true;
          }
       }
@@ -477,59 +482,59 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       return false;
    }
 
-   public Framebuffer method1464() {
+   public Framebuffer getFramebuffer() {
       return this.framebuffer;
    }
 
-   public String method1465() {
-      return this.field1304;
+   public String getVersion() {
+      return this.launchedVersion;
    }
 
-   public String method1466() {
-      return this.field1305;
+   public String getVersionType() {
+      return this.versionType;
    }
 
-   public void method1467(Class4526 var1) {
+   public void crashed(CrashReport var1) {
       this.crashReporter = var1;
    }
 
-   public static void method1468(Class4526 var0) {
-      File var1 = new File(getInstance().field1303, "crash-reports");
-      File var2 = new File(var1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
-      Class7729.method25572(var0.method14406());
-      if (var0.method14407() != null) {
-         Class7729.method25572("#@!@# Game crashed! Crash report saved to: #@!@# " + var0.method14407());
+   public static void displayCrashReport(CrashReport report) {
+      File file1 = new File(getInstance().gameDir, "crash-reports");
+      File file2 = new File(file1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
+      Bootstrap.printToSYSOUT(report.getCompleteReport());
+      if (report.getFile() != null) {
+         Bootstrap.printToSYSOUT("#@!@# Game crashed! Crash report saved to: #@!@# " + report.getFile());
          System.exit(-1);
-      } else if (var0.method14408(var2)) {
-         Class7729.method25572("#@!@# Game crashed! Crash report saved to: #@!@# " + var2.getAbsolutePath());
+      } else if (report.saveToFile(file2)) {
+         Bootstrap.printToSYSOUT("#@!@# Game crashed! Crash report saved to: #@!@# " + file2.getAbsolutePath());
          System.exit(-1);
       } else {
-         Class7729.method25572("#@?@# Game crashed! Crash report could not be saved. #@?@#");
+         Bootstrap.printToSYSOUT("#@?@# Game crashed! Crash report could not be saved. #@?@#");
          System.exit(-2);
       }
    }
 
-   public boolean method1469() {
-      return this.gameSettings.field44617;
+   public boolean getForceUnicodeFont() {
+      return this.gameSettings.forceUnicodeFont;
    }
 
    public CompletableFuture<Void> reloadResources() {
       if (this.futureRefreshResources != null) {
          return this.futureRefreshResources;
       } else {
-         CompletableFuture var1 = new CompletableFuture();
-         if (this.loadingGuiIn instanceof ResourceLoadProgressGui) {
+         CompletableFuture<Void> var1 = new CompletableFuture<>();
+         if (this.loadingGui instanceof ResourceLoadProgressGui) {
             this.futureRefreshResources = var1;
             return var1;
          } else {
-            this.resourcePackRepository.method1262();
-            List var2 = this.resourcePackRepository.method1273();
+            this.resourcePackRepository.reloadPacksFromFinders();
+            List<IResourcePack> var2 = this.resourcePackRepository.func_232623_f_();
             this.setLoadingGui(
-               new Class1272(
+               new CustomResourceLoadProgressGui(
                   this,
-                  this.resourceManager.method586(Util.method38492(), this, field1276, var2),
-                  var2x -> Util.method38514(var2x, this::method1458, () -> {
-                        this.worldRenderer.method868();
+                  this.resourceManager.reloadResources(Util.getServerExecutor(), this, RESOURCE_RELOAD_INIT_TASK, var2),
+                  var2x -> Util.acceptOrElse(var2x, this::restoreResourcePacks, () -> {
+                        this.worldRenderer.loadRenderers();
                         var1.complete((Void)null);
                      }),
                   true
@@ -540,58 +545,52 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   private void method1471() {
-      boolean var1 = false;
-      Class9736 var2 = this.method1553().method806();
-      Class7202 var3 = var2.method38154().method1024();
+   private void checkMissingData() {
+      boolean flag = false;
+      BlockModelShapes var2 = this.getBlockRendererDispatcher().getBlockModelShapes();
+      IBakedModel var3 = var2.getModelManager().getMissingModel();
 
-      for (Block var5 : Registry.field16072) {
-         UnmodifiableIterator var6 = var5.method11577().method35392().iterator();
-
-         while (var6.hasNext()) {
-            Class7380 var7 = (Class7380)var6.next();
-            if (var7.method23397() == Class1855.field9887) {
-               Class7202 var8 = var2.method38153(var7);
-               if (var8 == var3) {
-                  LOGGER.debug("Missing model for: {}", var7);
-                  var1 = true;
-               }
-            }
-         }
+      for (Block var5 : Registry.BLOCK) {
+          for (BlockState var7 : var5.getStateContainer().getValidStates()) {
+              if (var7.getRenderType() == BlockRenderType.MODEL) {
+                  IBakedModel var8 = var2.method38153(var7);
+                  if (var8 == var3) {
+                      LOGGER.debug("Missing model for: {}", var7);
+                      flag = true;
+                  }
+              }
+          }
       }
 
-      Class1713 var13 = var3.method22624();
+      TextureAtlasSprite var13 = var3.getParticleTexture();
 
-      for (Block var16 : Registry.field16072) {
-         UnmodifiableIterator var18 = var16.method11577().method35392().iterator();
-
-         while (var18.hasNext()) {
-            Class7380 var20 = (Class7380)var18.next();
-            Class1713 var9 = var2.method38152(var20);
-            if (!var20.method23393() && var9 == var13) {
-               LOGGER.debug("Missing particle icon for: {}", var20);
-               var1 = true;
-            }
-         }
+      for (Block var16 : Registry.BLOCK) {
+          for (BlockState var20 : var16.getStateContainer().getValidStates()) {
+              TextureAtlasSprite var9 = var2.getTexture(var20);
+              if (! var20.isAir() && var9 == var13) {
+                  LOGGER.debug("Missing particle icon for: {}", var20);
+                  flag = true;
+              }
+          }
       }
 
-      Class25<ItemStack> var15 = Class25.method67();
+      NonNullList<ItemStack> var15 = NonNullList.create();
 
-      for (Class3257 var19 : Registry.field16075) {
+      for (Item var19 : Registry.ITEM) {
          var15.clear();
-         var19.method11737(Class7401.field31670, var15);
+         var19.fillItemGroup(ItemGroup.SEARCH, var15);
 
          for (ItemStack var22 : var15) {
-            String var10 = var22.method32134();
+            String var10 = var22.getTranslationKey();
             String var11 = new TranslationTextComponent(var10).getString();
-            if (var11.toLowerCase(Locale.ROOT).equals(var19.method11719())) {
-               LOGGER.debug("Missing translation for: {} {} {}", var22, var10, var22.method32107());
+            if (var11.toLowerCase(Locale.ROOT).equals(var19.getTranslationKey())) {
+               LOGGER.debug("Missing translation for: {} {} {}", var22, var10, var22.getItem());
             }
          }
       }
 
-      var1 |= Class7541.method24656();
-      if (var1) {
+      flag |= ScreenManager.isMissingScreen();
+      if (flag) {
          throw new IllegalStateException("Your game data is foobar, fix the errors above!");
       }
    }
@@ -640,7 +639,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       if (guiScreenIn != null) {
          this.mouseHelper.ungrabMouse();
          KeyBinding.unPressAllKeys();
-         guiScreenIn.method2467(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
+         guiScreenIn.init(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
          this.skipRenderWorld = false;
          NarratorChatListener.INSTANCE.say(guiScreenIn.getNarrationMessage());
       } else {
@@ -652,7 +651,7 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
    }
 
    public void setLoadingGui(LoadingGui loadingGuiIn) {
-      this.loadingGuiIn = loadingGuiIn;
+      this.loadingGui = loadingGuiIn;
    }
 
    public void shutdownMinecraftApplet() {
@@ -717,10 +716,10 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
          this.shutdown();
       }
 
-      if (this.futureRefreshResources != null && !(this.loadingGuiIn instanceof ResourceLoadProgressGui)) {
-         CompletableFuture completablefuture = this.futureRefreshResources;
+      if (this.futureRefreshResources != null && !(this.loadingGui instanceof ResourceLoadProgressGui)) {
+         CompletableFuture<Void> completablefuture = this.futureRefreshResources;
          this.futureRefreshResources = null;
-         this.reloadResources().thenRun(() -> completablefuture.complete((Void)null));
+         this.reloadResources().thenRun(() -> completablefuture.complete(null));
       }
 
       Runnable runnable;
@@ -788,10 +787,10 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       Thread.yield();
       this.profiler.endSection();
       this.mainWindow.setRenderPhase("Post render");
-      this.field1353++;
-      boolean var11 = this.method1530()
-         && (this.currentScreen != null && this.currentScreen.method2472() || this.loadingGuiIn != null && this.loadingGuiIn.method5676())
-         && !this.field1340.method1369();
+      this.fpsCounter++;
+      boolean var11 = this.isSingleplayer()
+         && (this.currentScreen != null && this.currentScreen.isPauseScreen() || this.loadingGui != null && this.loadingGui.isPauseScreen())
+         && !this.integratedServer.getPublic();
       if (this.isGamePaused != var11) {
          if (this.isGamePaused) {
             this.renderPartialTicksPaused = this.timer.renderPartialTicks;
@@ -803,205 +802,205 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
 
       long var7 = Util.nanoTime();
-      this.field1308.method38592(var7 - this.field1351);
-      this.field1351 = var7;
+      this.frameTimer.addFrame(var7 - this.startNanoTime);
+      this.startNanoTime = var7;
       this.profiler.startSection("fpsUpdate");
 
-      while (Util.milliTime() >= this.field1352 + 1000L) {
-         field1362 = this.field1353;
-         this.field1363 = String.format(
+      while (Util.milliTime() >= this.debugUpdateTime + 1000L) {
+         debugFps = this.fpsCounter;
+         this.debug = String.format(
             "%d fps T: %s%s%s%s B: %d",
-            field1362,
-            (double)this.gameSettings.field44576 == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? "inf" : this.gameSettings.field44576,
-            this.gameSettings.field44615 ? " vsync" : "",
-            this.gameSettings.field44578.toString(),
-            this.gameSettings.field44577 == Class1904.field11184 ? "" : (this.gameSettings.field44577 == Class1904.field11185 ? " fast-clouds" : " fancy-clouds"),
-            this.gameSettings.field44606
+                 debugFps,
+            (double)this.gameSettings.framerateLimit == AbstractOption.FRAMERATE_LIMIT.getMaxValue() ? "inf" : this.gameSettings.framerateLimit,
+            this.gameSettings.vsync ? " vsync" : "",
+            this.gameSettings.graphicFanciness.toString(),
+            this.gameSettings.cloudOption == CloudOption.OFF ? "" : (this.gameSettings.cloudOption == CloudOption.FAST ? " fast-clouds" : " fancy-clouds"),
+            this.gameSettings.biomeBlendRadius
          );
-         this.field1352 += 1000L;
-         this.field1353 = 0;
-         this.field1285.method27297();
-         if (!this.field1285.method27300()) {
-            this.field1285.method27296();
+         this.debugUpdateTime += 1000L;
+         this.fpsCounter = 0;
+         this.snooper.addMemoryStatsToSnooper();
+         if (!this.snooper.isSnooperRunning()) {
+            this.snooper.start();
          }
       }
 
       this.profiler.endSection();
    }
 
-   private boolean method1478() {
-      return this.gameSettings.showDebugInfo && this.gameSettings.field44665 && !this.gameSettings.field44662;
+   private boolean isDebugMode() {
+      return this.gameSettings.showDebugInfo && this.gameSettings.showDebugProfilerChart && !this.gameSettings.hideGUI;
    }
 
-   private void method1479(boolean var1, Class9487 var2) {
-      if (var1) {
-         if (!this.field1373.method25291()) {
-            this.field1372 = 0;
-            this.field1373.method25293();
+   private void tick(boolean isDebug, LongTickDetector var2) {
+      if (isDebug) {
+         if (!this.gameTimeTracker.func_233505_a_()) {
+            this.gameTime = 0;
+            this.gameTimeTracker.func_233507_c_();
          }
 
-         this.field1372++;
+         this.gameTime++;
       } else {
-         this.field1373.method25292();
+         this.gameTimeTracker.func_233506_b_();
       }
 
-      this.profiler = Class9487.method36637(this.field1373.method25294(), var2);
+      this.profiler = LongTickDetector.func_233523_a_(this.gameTimeTracker.func_233508_d_(), var2);
    }
 
-   private void method1480(boolean var1, Class9487 var2) {
-      if (var2 != null) {
-         var2.method36635();
+   private void func_238210_b_(boolean isDebug, LongTickDetector detector) {
+      if (detector != null) {
+         detector.func_233525_b_();
       }
 
-      if (var1) {
-         this.profilerResult = this.field1373.method25295();
+      if (isDebug) {
+         this.profilerResult = this.gameTimeTracker.func_233509_e_();
       } else {
          this.profilerResult = null;
       }
 
-      this.profiler = this.field1373.method25294();
+      this.profiler = this.gameTimeTracker.func_233508_d_();
    }
 
    @Override
-   public void method1481() {
-      int var1 = this.mainWindow.method8036(this.gameSettings.field44673, this.method1469());
-      this.mainWindow.method8037((double)var1);
+   public void updateWindowSize() {
+      int i = this.mainWindow.calcGuiScale(this.gameSettings.guiScale, this.getForceUnicodeFont());
+      this.mainWindow.setGuiScale((double)i);
       if (this.currentScreen != null) {
-         this.currentScreen.method2482(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
-         Client.getInstance().getGuiManager().method33479();
+         this.currentScreen.resize(this, this.mainWindow.getScaledWidth(), this.mainWindow.getScaledHeight());
+         Client.getInstance().getGuiManager().onResize();
       }
 
-      Framebuffer var2 = this.method1464();
-      var2.method29103(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(), IS_RUNNING_ON_MAC);
-      this.gameRenderer.method740(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
-      this.mouseHelper.method36740();
+      Framebuffer framebuffer = this.getFramebuffer();
+      framebuffer.resize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight(), IS_RUNNING_ON_MAC);
+      this.gameRenderer.updateShaderGroupSize(this.mainWindow.getFramebufferWidth(), this.mainWindow.getFramebufferHeight());
+      this.mouseHelper.setIgnoreFirstMove();
    }
 
    @Override
-   public void method1482() {
-      this.mouseHelper.method36744();
+   public void ignoreFirstMove() {
+      this.mouseHelper.ignoreFirstMove();
    }
 
    private int getFramerateLimit() {
-      return this.world == null && (this.currentScreen != null || this.loadingGuiIn != null)
-         ? Math.min(120, Math.max(this.mainWindow.method8028(), 60))
-         : this.mainWindow.method8028();
+      return this.world == null && (this.currentScreen != null || this.loadingGui != null)
+         ? Math.min(120, Math.max(this.mainWindow.getLimitFramerate(), 60))
+         : this.mainWindow.getLimitFramerate();
    }
 
-   public void method1484() {
+   public void freeMemory() {
       try {
-         field1336 = new byte[0];
-         this.worldRenderer.method917();
+         memoryReserve = new byte[0];
+         this.worldRenderer.deleteAllDisplayLists();
       } catch (Throwable var3) {
       }
 
       try {
          System.gc();
-         if (this.field1343 && this.field1340 != null) {
-            this.field1340.method1296(true);
+         if (this.integratedServerIsRunning && this.integratedServer != null) {
+            this.integratedServer.initiateShutdown(true);
          }
 
-         this.method1506(new Class1310(new TranslationTextComponent("menu.savingLevel")));
+         this.unloadWorld(new DirtMessageScreen(new TranslationTextComponent("menu.savingLevel")));
       } catch (Throwable var2) {
       }
 
       System.gc();
    }
 
-   public void method1485(int var1) {
+   public void updateDebugProfilerName(int keyCount) {
       if (this.profilerResult != null) {
-         List var2 = this.profilerResult.method25626(this.field1375);
+         List var2 = this.profilerResult.getDataPoints(this.debugProfilerName);
          if (!var2.isEmpty()) {
-            Class2012 var3 = (Class2012)var2.remove(0);
-            if (var1 == 0) {
-               if (!var3.field13085.isEmpty()) {
-                  int var4 = this.field1375.lastIndexOf(30);
+            DataPoint var3 = (DataPoint)var2.remove(0);
+            if (keyCount == 0) {
+               if (!var3.name.isEmpty()) {
+                  int var4 = this.debugProfilerName.lastIndexOf(30);
                   if (var4 >= 0) {
-                     this.field1375 = this.field1375.substring(0, var4);
+                     this.debugProfilerName = this.debugProfilerName.substring(0, var4);
                   }
                }
             } else {
-               var1--;
-               if (var1 < var2.size() && !"unspecified".equals(((Class2012)var2.get(var1)).field13085)) {
-                  if (!this.field1375.isEmpty()) {
-                     this.field1375 = this.field1375 + '\u001e';
+               keyCount--;
+               if (keyCount < var2.size() && !"unspecified".equals(((DataPoint)var2.get(keyCount)).name)) {
+                  if (!this.debugProfilerName.isEmpty()) {
+                     this.debugProfilerName = this.debugProfilerName + '\u001e';
                   }
 
-                  this.field1375 = this.field1375 + ((Class2012)var2.get(var1)).field13085;
+                  this.debugProfilerName = this.debugProfilerName + ((DataPoint)var2.get(keyCount)).name;
                }
             }
          }
       }
    }
 
-   private void func_238183_a_(MatrixStack var1, Class7740 var2) {
-      List<Class2012> var3 = var2.method25626(this.field1375);
-      Class2012 var4 = (Class2012)var3.remove(0);
+   private void func_238183_a_(MatrixStack matrixStack, IProfileResult profilerResult) {
+      List<DataPoint> var3 = profilerResult.getDataPoints(this.debugProfilerName);
+      DataPoint var4 = (DataPoint)var3.remove(0);
       RenderSystem.clear(256, IS_RUNNING_ON_MAC);
-      RenderSystem.method27878(5889);
-      RenderSystem.method27879();
-      RenderSystem.method27882(0.0, (double)this.mainWindow.getFramebufferWidth(), (double)this.mainWindow.getFramebufferHeight(), 0.0, 1000.0, 3000.0);
-      RenderSystem.method27878(5888);
-      RenderSystem.method27879();
+      RenderSystem.matrixMode(5889);
+      RenderSystem.loadIdentity();
+      RenderSystem.ortho(0.0, (double)this.mainWindow.getFramebufferWidth(), (double)this.mainWindow.getFramebufferHeight(), 0.0, 1000.0, 3000.0);
+      RenderSystem.matrixMode(5888);
+      RenderSystem.loadIdentity();
       RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
-      RenderSystem.method27893(1.0F);
-      RenderSystem.method27862();
-      Class9352 var5 = Class9352.method35409();
-      Class5425 var6 = var5.method35411();
+      RenderSystem.lineWidth(1.0F);
+      RenderSystem.disableTexture();
+      Tessellator var5 = Tessellator.getInstance();
+      BufferBuilder var6 = var5.getBuffer();
       short var7 = 160;
       int var8 = this.mainWindow.getFramebufferWidth() - 160 - 10;
       int var9 = this.mainWindow.getFramebufferHeight() - 320;
       RenderSystem.enableBlend();
-      var6.method17063(7, Class9337.field43342);
-      var6.method17025((double)((float)var8 - 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).method17026(200, 0, 0, 0).method17031();
-      var6.method17025((double)((float)var8 - 176.0F), (double)(var9 + 320), 0.0).method17026(200, 0, 0, 0).method17031();
-      var6.method17025((double)((float)var8 + 176.0F), (double)(var9 + 320), 0.0).method17026(200, 0, 0, 0).method17031();
-      var6.method17025((double)((float)var8 + 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).method17026(200, 0, 0, 0).method17031();
-      var5.method35410();
+      var6.begin(7, DefaultVertexFormats.POSITION_COLOR);
+      var6.pos((double)((float)var8 - 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).color(200, 0, 0, 0).endVertex();
+      var6.pos((double)((float)var8 - 176.0F), (double)(var9 + 320), 0.0).color(200, 0, 0, 0).endVertex();
+      var6.pos((double)((float)var8 + 176.0F), (double)(var9 + 320), 0.0).color(200, 0, 0, 0).endVertex();
+      var6.pos((double)((float)var8 + 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).color(200, 0, 0, 0).endVertex();
+      var5.draw();
       RenderSystem.disableBlend();
       double var10 = 0.0;
 
-      for (Class2012 var13 : var3) {
-         int var14 = MathHelper.method37769(var13.field13082 / 4.0) + 1;
-         var6.method17063(6, Class9337.field43342);
-         int var15 = var13.method8536();
+      for (DataPoint var13 : var3) {
+         int var14 = MathHelper.floor(var13.relTime / 4.0) + 1;
+         var6.begin(6, DefaultVertexFormats.POSITION_COLOR);
+         int var15 = var13.getTextColor();
          int var16 = var15 >> 16 & 0xFF;
          int var17 = var15 >> 8 & 0xFF;
          int var18 = var15 & 0xFF;
-         var6.method17025((double)var8, (double)var9, 0.0).method17026(var16, var17, var18, 255).method17031();
+         var6.pos((double)var8, (double)var9, 0.0).color(var16, var17, var18, 255).endVertex();
 
          for (int var19 = var14; var19 >= 0; var19--) {
-            float var20 = (float)((var10 + var13.field13082 * (double)var19 / (double)var14) * (float) (Math.PI * 2) / 100.0);
-            float var21 = MathHelper.method37763(var20) * 160.0F;
-            float var22 = MathHelper.method37764(var20) * 160.0F * 0.5F;
-            var6.method17025((double)((float)var8 + var21), (double)((float)var9 - var22), 0.0).method17026(var16, var17, var18, 255).method17031();
+            float var20 = (float)((var10 + var13.relTime * (double)var19 / (double)var14) * (float) (Math.PI * 2) / 100.0);
+            float var21 = MathHelper.sin(var20) * 160.0F;
+            float var22 = MathHelper.cos(var20) * 160.0F * 0.5F;
+            var6.pos((double)((float)var8 + var21), (double)((float)var9 - var22), 0.0).color(var16, var17, var18, 255).endVertex();
          }
 
-         var5.method35410();
-         var6.method17063(5, Class9337.field43342);
+         var5.draw();
+         var6.begin(5, DefaultVertexFormats.POSITION_COLOR);
 
          for (int var32 = var14; var32 >= 0; var32--) {
-            float var36 = (float)((var10 + var13.field13082 * (double)var32 / (double)var14) * (float) (Math.PI * 2) / 100.0);
-            float var37 = MathHelper.method37763(var36) * 160.0F;
-            float var38 = MathHelper.method37764(var36) * 160.0F * 0.5F;
+            float var36 = (float)((var10 + var13.relTime * (double)var32 / (double)var14) * (float) (Math.PI * 2) / 100.0);
+            float var37 = MathHelper.sin(var36) * 160.0F;
+            float var38 = MathHelper.cos(var36) * 160.0F * 0.5F;
             if (!(var38 > 0.0F)) {
-               var6.method17025((double)((float)var8 + var37), (double)((float)var9 - var38), 0.0)
-                  .method17026(var16 >> 1, var17 >> 1, var18 >> 1, 255)
-                  .method17031();
-               var6.method17025((double)((float)var8 + var37), (double)((float)var9 - var38 + 10.0F), 0.0)
-                  .method17026(var16 >> 1, var17 >> 1, var18 >> 1, 255)
-                  .method17031();
+               var6.pos((double)((float)var8 + var37), (double)((float)var9 - var38), 0.0)
+                  .color(var16 >> 1, var17 >> 1, var18 >> 1, 255)
+                  .endVertex();
+               var6.pos((double)((float)var8 + var37), (double)((float)var9 - var38 + 10.0F), 0.0)
+                  .color(var16 >> 1, var17 >> 1, var18 >> 1, 255)
+                  .endVertex();
             }
          }
 
-         var5.method35410();
-         var10 += var13.field13082;
+         var5.draw();
+         var10 += var13.relTime;
       }
 
       DecimalFormat var23 = new DecimalFormat("##0.00");
       var23.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT));
       RenderSystem.enableTexture();
-      String var24 = Class7740.method25634(var4.field13085);
+      String var24 = IProfileResult.method25634(var4.name);
       String var25 = "";
       if (!"unspecified".equals(var24)) {
          var25 = var25 + "[0] ";
@@ -1014,90 +1013,94 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
 
       int var28 = 16777215;
-      this.field1294.method38799(var1, var25, (float)(var8 - 160), (float)(var9 - 80 - 16), 16777215);
+      this.fontRenderer.drawStringWithShadow(matrixStack, var25, (float)(var8 - 160), (float)(var9 - 80 - 16), 16777215);
       var25 = var23.format(var4.field13083) + "%";
-      this.field1294.method38799(var1, var25, (float)(var8 + 160 - this.field1294.method38820(var25)), (float)(var9 - 80 - 16), 16777215);
+      this.fontRenderer.drawStringWithShadow(matrixStack, var25, (float)(var8 + 160 - this.fontRenderer.getStringWidth(var25)), (float)(var9 - 80 - 16), 16777215);
 
       for (int var29 = 0; var29 < var3.size(); var29++) {
-         Class2012 var30 = (Class2012)var3.get(var29);
+         DataPoint var30 = (DataPoint)var3.get(var29);
          StringBuilder var31 = new StringBuilder();
-         if ("unspecified".equals(var30.field13085)) {
+         if ("unspecified".equals(var30.name)) {
             var31.append("[?] ");
          } else {
             var31.append("[").append(var29 + 1).append("] ");
          }
 
-         String var33 = var31.append(var30.field13085).toString();
-         this.field1294.method38799(var1, var33, (float)(var8 - 160), (float)(var9 + 80 + var29 * 8 + 20), var30.method8536());
-         var33 = var23.format(var30.field13082) + "%";
-         this.field1294
-            .method38799(var1, var33, (float)(var8 + 160 - 50 - this.field1294.method38820(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.method8536());
+         String var33 = var31.append(var30.name).toString();
+         this.fontRenderer.drawStringWithShadow(matrixStack, var33, (float)(var8 - 160), (float)(var9 + 80 + var29 * 8 + 20), var30.getTextColor());
+         var33 = var23.format(var30.relTime) + "%";
+         this.fontRenderer
+            .drawStringWithShadow(matrixStack, var33, (float)(var8 + 160 - 50 - this.fontRenderer.getStringWidth(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.getTextColor());
          var33 = var23.format(var30.field13083) + "%";
-         this.field1294
-            .method38799(var1, var33, (float)(var8 + 160 - this.field1294.method38820(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.method8536());
+         this.fontRenderer
+            .drawStringWithShadow(matrixStack, var33, (float)(var8 + 160 - this.fontRenderer.getStringWidth(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.getTextColor());
       }
    }
 
    public void shutdown() {
-      if (this.field1360) {
+      if (this.running) {
          Client.getInstance().shutdown();
       }
 
-      this.field1360 = false;
+      this.running = false;
    }
 
-   public boolean method1488() {
-      return this.field1360;
+   public boolean isRunning() {
+      return this.running;
    }
 
-   public void method1489(boolean var1) {
+   public void displayInGameMenu(boolean pauseOnly) {
       if (this.currentScreen == null) {
-         boolean var2 = this.method1530() && !this.field1340.method1369();
+         boolean var2 = this.isSingleplayer() && !this.integratedServer.getPublic();
          if (var2) {
-            this.displayGuiScreen(new Class834(!var1));
-            this.soundHandler.method1003();
+            this.displayGuiScreen(new IngameMenuScreen(!pauseOnly));
+            this.soundHandler.pause();
          } else {
-            this.displayGuiScreen(new Class834(true));
+            this.displayGuiScreen(new IngameMenuScreen(true));
          }
       }
    }
 
-   private void method1490(boolean var1) {
-      if (!var1) {
-         this.field1348 = 0;
+   private void sendClickBlockToController(boolean leftClick) {
+      if (!leftClick) {
+         this.leftClickCounter = 0;
       }
 
-      if (this.field1348 <= 0 && !this.player.method3148()) {
-         if (var1 && this.field1346 != null && this.field1346.method31417() == Class2100.field13690) {
-            Class8711 var2 = (Class8711)this.field1346;
-            BlockPos var3 = var2.method31423();
-            if (!this.world.method6738(var3).method23393()) {
-               Direction var4 = var2.method31424();
-               if (this.field1337.method23134(var3, var4)) {
-                  this.particles.method1207(var3, var4);
-                  this.player.swingArm(Hand.field182);
+      if (this.leftClickCounter <= 0 && !this.player.isHandActive()) {
+         if (leftClick && this.objectMouseOver != null && this.objectMouseOver.getType() == RayTraceResult.Type.BLOCK) {
+            BlockRayTraceResult var2 = (BlockRayTraceResult)this.objectMouseOver;
+            BlockPos var3 = var2.getPos();
+            if (!this.world.getBlockState(var3).isAir()) {
+               Direction var4 = var2.getFace();
+               if (this.playerController.onPlayerDamageBlock(var3, var4)) {
+                  this.particles.addBlockHitEffects(var3, var4);
+                  this.player.swingArm(Hand.MAIN_HAND);
                }
             }
          } else {
-            this.field1337.method23133();
+            this.playerController.resetBlockRemoving();
          }
       }
    }
 
-   private void method1491() {
-      Class4429 var1 = new Class4429(Class2116.field13790);
+   /**
+    * Idk this doesn't match the source code so i cba to do this rn
+    * TODO: Finish this perhaps
+    */
+   private void clickMouse() {
+      ClickEvent var1 = new ClickEvent(ClickEvent.Button.LEFT);
       Client.getInstance().getEventManager().call(var1);
       if (!var1.isCancelled()) {
-         if (this.field1348 <= 0) {
-            if (this.field1346 == null) {
+         if (this.leftClickCounter <= 0) {
+            if (this.objectMouseOver == null) {
                LOGGER.error("Null returned as 'hitResult', this shouldn't happen!");
-               if (this.field1337.method23151()) {
-                  this.field1348 = 10;
+               if (this.playerController.isNotCreative()) {
+                  this.leftClickCounter = 10;
                }
-            } else if (!this.player.method5410()) {
+            } else if (!this.player.isRowingBoat()) {
                Class4403 var2 = null;
-               if (this.field1346.method31417() == Class2100.field13691) {
-                  var2 = new Class4403(((Class8709)this.field1346).method31416(), true);
+               if (this.objectMouseOver.getType() == RayTraceResult.Type.ENTITY) {
+                  var2 = new Class4403(((EntityRayTraceResult)this.objectMouseOver).getEntity(), true);
                   Client.getInstance().getEventManager().call(var2);
                   if (var2.isCancelled()) {
                      return;
@@ -1105,56 +1108,57 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                }
 
 
-               switch (Class9158.field42043[this.field1346.method31417().ordinal()]) {
+               switch (Class9158.field42043[this.objectMouseOver.getType().ordinal()]) {
                   case 1:
-                     this.field1337.method23141(this.player, ((Class8709)this.field1346).method31416());
+                     this.playerController.method23141(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity());
                      if (var2 != null) {
                         var2.method13938();
                         Client.getInstance().getEventManager().call(var2);
                      }
                      break;
                   case 2:
-                     Class8711 var4 = (Class8711)this.field1346;
-                     BlockPos var5 = var4.method31423();
-                     if (!this.world.method6738(var5).method23393()) {
-                        this.field1337.method23132(var5, var4.method31424());
+                     BlockRayTraceResult var4 = (BlockRayTraceResult)this.objectMouseOver;
+                     BlockPos var5 = var4.getPos();
+                     if (!this.world.getBlockState(var5).isAir()) {
+                        this.playerController.clickBlock(var5, var4.getFace());
                         break;
                      }
                   case 3:
-                     if (this.field1337.method23151()) {
-                        this.field1348 = 10;
+                     if (this.playerController.isNotCreative()) {
+                        this.leftClickCounter = 10;
                      }
 
-                     this.player.method2975();
+                     this.player.resetCooldown();
                }
 
-               this.player.swingArm(Hand.field182);
+               this.player.swingArm(Hand.MAIN_HAND);
             }
          }
       }
    }
 
-   private void method1492() {
-      Class4429 var1 = new Class4429(Class2116.field13791);
+
+   private void rightClickMouse() {
+      ClickEvent var1 = new ClickEvent(ClickEvent.Button.RIGHT);
       Client.getInstance().getEventManager().call(var1);
       if (!var1.isCancelled()) {
-         if (!this.field1337.method23158()) {
-            this.field1347 = 4;
-            if (!this.player.method5410()) {
-               if (this.field1346 == null) {
+         if (!this.playerController.getIsHittingBlock()) {
+            this.rightClickDelayTimer = 4;
+            if (!this.player.isRowingBoat()) {
+               if (this.objectMouseOver == null) {
                   LOGGER.warn("Null returned as 'hitResult', this shouldn't happen!");
                }
 
                for (Hand var5 : Hand.values()) {
                   ItemStack var6 = this.player.getHeldItem(var5);
-                  if (this.field1346 != null) {
-                     switch (Class9158.field42043[this.field1346.method31417().ordinal()]) {
+                  if (this.objectMouseOver != null) {
+                     switch (Class9158.field42043[this.objectMouseOver.getType().ordinal()]) {
                         case 1:
-                           Class8709 var7 = (Class8709)this.field1346;
-                           Entity var8 = var7.method31416();
-                           ActionResultType var9 = this.field1337.method23143(this.player, var8, var7, var5);
+                           EntityRayTraceResult var7 = (EntityRayTraceResult)this.objectMouseOver;
+                           Entity var8 = var7.getEntity();
+                           ActionResultType var9 = this.playerController.interactWithEntity(this.player, var8, var7, var5);
                            if (!var9.isSuccessOrConsume()) {
-                              var9 = this.field1337.method23142(this.player, var8, var5);
+                              var9 = this.playerController.interactWithEntity(this.player, var8, var5);
                            }
 
                            if (var9.isSuccessOrConsume()) {
@@ -1166,34 +1170,34 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                            }
                            break;
                         case 2:
-                           Class8711 var10 = (Class8711)this.field1346;
-                           int var11 = var6.method32179();
-                           ActionResultType var12 = this.field1337.method23139(this.player, this.world, var5, var10);
+                           BlockRayTraceResult var10 = (BlockRayTraceResult)this.objectMouseOver;
+                           int var11 = var6.getCount();
+                           ActionResultType var12 = this.playerController.func_217292_a(this.player, this.world, var5, var10);
                            if (var12.isSuccessOrConsume()) {
                               if (var12.isSuccess()) {
                                  this.player.swingArm(var5);
-                                 if (!var6.method32105() && (var6.method32179() != var11 || this.field1337.method23152())) {
-                                    this.gameRenderer.field806.method37593(var5);
+                                 if (!var6.isEmpty() && (var6.getCount() != var11 || this.playerController.isInCreativeMode())) {
+                                    this.gameRenderer.itemRenderer.resetEquippedProgress(var5);
                                  }
                               }
 
                               return;
                            }
 
-                           if (var12 == ActionResultType.field14821) {
+                           if (var12 == ActionResultType.FAIL) {
                               return;
                            }
                      }
                   }
 
-                  if (!var6.method32105()) {
-                     ActionResultType var13 = this.field1337.method23140(this.player, this.world, var5);
+                  if (!var6.isEmpty()) {
+                     ActionResultType var13 = this.playerController.processRightClick(this.player, this.world, var5);
                      if (var13.isSuccessOrConsume()) {
                         if (var13.isSuccess()) {
                            this.player.swingArm(var5);
                         }
 
-                        this.gameRenderer.field806.method37593(var5);
+                        this.gameRenderer.itemRenderer.resetEquippedProgress(var5);
                         return;
                      }
                   }
@@ -1203,118 +1207,118 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   public Class9052 method1493() {
-      return this.field1321;
+   public MusicTicker getMusicTicker() {
+      return this.musicTicker;
    }
 
    public void runTick() {
-      if (this.field1347 > 0) {
-         this.field1347--;
+      if (this.rightClickDelayTimer > 0) {
+         this.rightClickDelayTimer--;
       }
 
       this.profiler.startSection("gui");
       if (!this.isGamePaused) {
-         this.ingameGUI.method5983();
+         this.ingameGUI.tick();
       }
 
       this.profiler.endSection();
-      this.gameRenderer.method741(1.0F);
-      this.field1334.method37025(this.world, this.field1346);
+      this.gameRenderer.getMouseOver(1.0F);
+      this.tutorial.onMouseHover(this.world, this.objectMouseOver);
       this.profiler.startSection("gameMode");
       if (!this.isGamePaused && this.world != null) {
-         this.field1337.method23136();
+         this.playerController.tick();
       }
 
       this.profiler.endStartSection("textures");
       if (this.world != null) {
-         this.textureManager.method1080();
+         this.textureManager.tick();
       }
 
       if (this.currentScreen == null && this.player != null) {
          if (this.player.getShouldBeDead() && !(this.currentScreen instanceof DeathScreen)) {
             this.displayGuiScreen((Screen)null);
          } else if (this.player.isSleeping() && this.world != null) {
-            this.displayGuiScreen(new Class1332());
+            this.displayGuiScreen(new SleepInMultiplayerScreen());
          }
-      } else if (this.currentScreen != null && this.currentScreen instanceof Class1332 && !this.player.isSleeping()) {
+      } else if (this.currentScreen != null && this.currentScreen instanceof SleepInMultiplayerScreen && !this.player.isSleeping()) {
          this.displayGuiScreen((Screen)null);
       }
 
       if (this.currentScreen != null) {
-         this.field1348 = 10000;
+         this.leftClickCounter = 10000;
       }
 
       if (this.currentScreen != null) {
-         Screen.method2483(() -> this.currentScreen.method1919(), "Ticking screen", this.currentScreen.getClass().getCanonicalName());
+         Screen.wrapScreenError(() -> this.currentScreen.tick(), "Ticking screen", this.currentScreen.getClass().getCanonicalName());
       }
 
       if (!this.gameSettings.showDebugInfo) {
-         this.ingameGUI.method5996();
+         this.ingameGUI.reset();
       }
 
-      if (this.loadingGuiIn == null && (this.currentScreen == null || this.currentScreen.field4567)) {
+      if (this.loadingGui == null && (this.currentScreen == null || this.currentScreen.field4567)) {
          this.profiler.endStartSection("Keybindings");
-         this.method1496();
-         if (this.field1348 > 0) {
-            this.field1348--;
+         this.processKeyBinds();
+         if (this.leftClickCounter > 0) {
+            this.leftClickCounter--;
          }
       }
 
       if (this.world != null) {
          this.profiler.endStartSection("gameRenderer");
          if (!this.isGamePaused) {
-            this.gameRenderer.method738();
+            this.gameRenderer.tick();
          }
 
          this.profiler.endStartSection("levelRenderer");
          if (!this.isGamePaused) {
-            this.worldRenderer.method885();
+            this.worldRenderer.tick();
          }
 
          this.profiler.endStartSection("level");
          if (!this.isGamePaused) {
-            if (this.world.method6876() > 0) {
-               this.world.method6809(this.world.method6876() - 1);
+            if (this.world.getTimeLightningFlash() > 0) {
+               this.world.setTimeLightningFlash(this.world.getTimeLightningFlash() - 1);
             }
 
-            this.world.method6836();
+            this.world.tickEntities();
          }
-      } else if (this.gameRenderer.method739() != null) {
-         this.gameRenderer.method733();
+      } else if (this.gameRenderer.getShaderGroup() != null) {
+         this.gameRenderer.stopUseShader();
       }
 
       if (!this.isGamePaused) {
-         this.field1321.method33666();
+         this.musicTicker.tick();
       }
 
-      this.soundHandler.method1006(this.isGamePaused);
+      this.soundHandler.tick(this.isGamePaused);
       if (this.world != null) {
          if (!this.isGamePaused) {
-            if (!this.gameSettings.field44605 && this.method1495()) {
+            if (!this.gameSettings.field_244601_E && this.func_244600_aM()) {
                TranslationTextComponent var1 = new TranslationTextComponent("tutorial.socialInteractions.title");
                TranslationTextComponent var2 = new TranslationTextComponent(
-                  "tutorial.socialInteractions.description", Class9557.method37037("socialInteractions")
+                  "tutorial.socialInteractions.description", Tutorial.createKeybindComponent("socialInteractions")
                );
-               this.field1370 = new Class7600(Class2130.field13900, var1, var2, true);
-               this.field1334.method37031(this.field1370, 160);
-               this.gameSettings.field44605 = true;
-               this.gameSettings.method37146();
+               this.field_244598_aV = new TutorialToast(TutorialToast.Icons.SOCIAL_INTERACTIONS, var1, var2, true);
+               this.tutorial.func_244698_a(this.field_244598_aV, 160);
+               this.gameSettings.field_244601_E = true;
+               this.gameSettings.saveOptions();
             }
 
-            this.field1334.method37033();
+            this.tutorial.tick();
 
             try {
-               this.world.method6831(() -> true);
+               this.world.tick(() -> true);
             } catch (Throwable var4) {
-               Class4526 var5 = Class4526.method14413(var4, "Exception in world tick");
+               CrashReport var5 = CrashReport.makeCrashReport(var4, "Exception in world tick");
                if (this.world == null) {
-                  Class8965 var3 = var5.method14410("Affected level");
-                  var3.method32807("Problem", "Level is null!");
+                  CrashReportCategory var3 = var5.makeCategory("Affected level");
+                  var3.addDetail("Problem", "Level is null!");
                } else {
-                  this.world.method6802(var5);
+                  this.world.fillCrashReport(var5);
                }
 
-               throw new Class2506(var5);
+               throw new ReportedException(var5);
             }
          }
 
@@ -1322,150 +1326,150 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
          if (!this.isGamePaused && this.world != null) {
             this.world
                .method6852(
-                  MathHelper.method37769(this.player.getPosX()),
-                  MathHelper.method37769(this.player.getPosY()),
-                  MathHelper.method37769(this.player.getPosZ())
+                  MathHelper.floor(this.player.getPosX()),
+                  MathHelper.floor(this.player.getPosY()),
+                  MathHelper.floor(this.player.getPosZ())
                );
          }
 
          this.profiler.endStartSection("particles");
          if (!this.isGamePaused) {
-            this.particles.method1200();
+            this.particles.tick();
          }
-      } else if (this.field1342 != null) {
+      } else if (this.networkManager != null) {
          this.profiler.endStartSection("pendingConnection");
-         this.field1342.method30698();
+         this.networkManager.tick();
       }
 
       this.profiler.endStartSection("keyboard");
-      this.field1302.method36351();
+      this.keyboardListener.tick();
       this.profiler.endSection();
    }
 
-   private boolean method1495() {
-      return !this.field1343 || this.field1340 != null && this.field1340.method1369();
+   private boolean func_244600_aM() {
+      return !this.integratedServerIsRunning || this.integratedServer != null && this.integratedServer.getPublic();
    }
 
-   private void method1496() {
-      while (this.gameSettings.field44650.method8511()) {
-         Class1966 var1 = this.gameSettings.method37173();
-         this.gameSettings.method37174(this.gameSettings.method37173().method8248());
-         if (var1.method8246() != this.gameSettings.method37173().method8246()) {
-            this.gameRenderer.method735(this.gameSettings.method37173().method8246() ? this.method1550() : null);
+   private void processKeyBinds() {
+      while (this.gameSettings.keyBindTogglePerspective.isPressed()) {
+         PointOfView var1 = this.gameSettings.getPointOfView();
+         this.gameSettings.setPointOfView(this.gameSettings.getPointOfView().method8248());
+         if (var1.func_243192_a() != this.gameSettings.getPointOfView().func_243192_a()) {
+            this.gameRenderer.loadEntityShader(this.gameSettings.getPointOfView().func_243192_a() ? this.getRenderViewEntity() : null);
          }
 
-         this.worldRenderer.method922();
+         this.worldRenderer.setDisplayListEntitiesDirty();
       }
 
-      while (this.gameSettings.field44651.method8511()) {
-         this.gameSettings.field44668 = !this.gameSettings.field44668;
+      while (this.gameSettings.keyBindSmoothCamera.isPressed()) {
+         this.gameSettings.smoothCamera = !this.gameSettings.smoothCamera;
       }
 
       for (int var4 = 0; var4 < 9; var4++) {
-         boolean var2 = this.gameSettings.field44656.method8509();
-         boolean var3 = this.gameSettings.field44657.method8509();
-         if (this.gameSettings.field44655[var4].method8511()) {
-            if (this.player.method2800()) {
-               this.ingameGUI.method5992().method5718(var4);
-            } else if (this.player.method2801() && this.currentScreen == null && (var3 || var2)) {
-               Class861.method2655(this, var4, var3, var2);
+         boolean var2 = this.gameSettings.keyBindSaveToolbar.isKeyDown();
+         boolean var3 = this.gameSettings.keyBindLoadToolbar.isKeyDown();
+         if (this.gameSettings.keyBindsHotbar[var4].isPressed()) {
+            if (this.player.isSpectator()) {
+               this.ingameGUI.getSpectatorGui().onHotbarSelected(var4);
+            } else if (this.player.isCreative() && this.currentScreen == null && (var3 || var2)) {
+               CreativeScreen.handleHotbarSnapshots(this, var4, var3, var2);
             } else {
-               this.player.field4902.field5443 = var4;
+               this.player.inventory.currentItem = var4;
             }
          }
       }
 
-      while (this.gameSettings.field44648.method8511()) {
-         if (!this.method1495()) {
-            this.player.method2785(field1277, true);
-            NarratorChatListener.INSTANCE.say(field1277.getString());
+      while (this.gameSettings.field_244602_au.isPressed()) {
+         if (!this.func_244600_aM()) {
+            this.player.sendStatusMessage(field_244596_I, true);
+            NarratorChatListener.INSTANCE.say(field_244596_I.getString());
          } else {
-            if (this.field1370 != null) {
-               this.field1334.method37032(this.field1370);
-               this.field1370 = null;
+            if (this.field_244598_aV != null) {
+               this.tutorial.func_244697_a(this.field_244598_aV);
+               this.field_244598_aV = null;
             }
 
-            this.displayGuiScreen(new Class1147());
+            this.displayGuiScreen(new SocialInteractionsScreen());
          }
       }
 
-      while (this.gameSettings.field44639.method8511()) {
-         if (this.field1337.method23154()) {
-            this.player.method5393();
+      while (this.gameSettings.field44639.isPressed()) {
+         if (this.playerController.isRidingHorse()) {
+            this.player.sendHorseInventory();
          } else {
-            this.field1334.method37027();
-            this.displayGuiScreen(new Class859(this.player));
+            this.tutorial.openInventory();
+            this.displayGuiScreen(new InventoryScreen(this.player));
          }
       }
 
-      while (this.gameSettings.field44654.method8511()) {
-         this.displayGuiScreen(new Class1130(this.player.connection.method15795()));
+      while (this.gameSettings.keyBindAdvancements.isPressed()) {
+         this.displayGuiScreen(new AdvancementsScreen(this.player.connection.getAdvancementManager()));
       }
 
-      while (this.gameSettings.field44640.method8511()) {
-         if (!this.player.method2800()) {
-            this.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13490, BlockPos.field13032, Direction.field672));
+      while (this.gameSettings.keyBindSwapHands.isPressed()) {
+         if (!this.player.isSpectator()) {
+            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, Direction.DOWN));
          }
       }
 
-      while (this.gameSettings.field44641.method8511()) {
-         if (!this.player.method2800() && this.player.method2881(Screen.method2475())) {
-            this.player.swingArm(Hand.field182);
+      while (this.gameSettings.keyBindDrop.isPressed()) {
+         if (!this.player.isSpectator() && this.player.drop(Screen.hasControlDown())) {
+            this.player.swingArm(Hand.MAIN_HAND);
          }
       }
 
-      boolean var5 = this.gameSettings.field44582 != ChatVisibility.HIDDEN;
+      boolean var5 = this.gameSettings.chatVisibility != ChatVisibility.HIDDEN;
       if (var5) {
-         while (this.gameSettings.field44645.method8511()) {
+         while (this.gameSettings.keyBindChat.isPressed()) {
             this.openChatScreen("");
          }
 
-         if (this.currentScreen == null && this.loadingGuiIn == null && this.gameSettings.field44647.method8511()) {
+         if (this.currentScreen == null && this.loadingGui == null && this.gameSettings.keyBindCommand.isPressed()) {
             this.openChatScreen("/");
          }
       }
 
-      if (this.player.method3148()) {
-         if (!this.gameSettings.field44642.method8509()) {
-            Class4401 var6 = new Class4401();
+      if (this.player.isHandActive()) {
+         if (!this.gameSettings.keyBindUseItem.isKeyDown()) {
+            StopUseItemEvent var6 = new StopUseItemEvent();
             Client.getInstance().getEventManager().call(var6);
             if (!var6.isCancelled()) {
-               this.field1337.method23149(this.player);
+               this.playerController.onStoppedUsingItem(this.player);
             }
          }
 
-         while (this.gameSettings.field44643.method8511()) {
+         while (this.gameSettings.keyBindAttack.isPressed()) {
          }
 
-         while (this.gameSettings.field44642.method8511()) {
+         while (this.gameSettings.keyBindUseItem.isPressed()) {
          }
 
-         while (this.gameSettings.field44644.method8511()) {
+         while (this.gameSettings.keyBindPickBlock.isPressed()) {
          }
       } else {
-         while (this.gameSettings.field44643.method8511()) {
-            this.method1491();
+         while (this.gameSettings.keyBindAttack.isPressed()) {
+            this.clickMouse();
          }
 
-         while (this.gameSettings.field44642.method8511()) {
-            this.method1492();
+         while (this.gameSettings.keyBindUseItem.isPressed()) {
+            this.rightClickMouse();
          }
 
-         while (this.gameSettings.field44644.method8511()) {
-            this.method1519();
+         while (this.gameSettings.keyBindPickBlock.isPressed()) {
+            this.middleClickMouse();
          }
       }
 
-      if (this.gameSettings.field44642.method8509() && this.field1347 == 0 && !this.player.method3148()) {
-         this.method1492();
+      if (this.gameSettings.keyBindUseItem.isKeyDown() && this.rightClickDelayTimer == 0 && !this.player.isHandActive()) {
+         this.rightClickMouse();
       }
 
-      this.method1490(this.currentScreen == null && this.gameSettings.field44643.method8509() && this.mouseHelper.method36741());
+      this.sendClickBlockToController(this.currentScreen == null && this.gameSettings.keyBindAttack.isKeyDown() && this.mouseHelper.isMouseGrabbed());
    }
 
-   public static Class7818 method1497(Class1814 var0) {
-      MinecraftServer.method1278(var0);
-      Class7818 var1 = var0.method7999();
+   public static DatapackCodec loadDataPackCodec(SaveFormat.LevelSave worldStorage) {
+      MinecraftServer.func_240777_a_(worldStorage);
+      DatapackCodec var1 = worldStorage.readDatapackCodec();
       if (var1 == null) {
          throw new IllegalStateException("Failed to load data pack config");
       } else {
@@ -1473,9 +1477,9 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   public static Class6611 method1498(Class1814 var0, Class8905 var1, Class191 var2, Class7818 var3) {
-      Class6711 var4 = Class6711.method20471(Class8063.field34602, var2, var1);
-      Class6611 var5 = var0.method7998(var4, var3);
+   public static IServerConfiguration loadWorld(SaveFormat.LevelSave var0, Class8905 var1, IResourceManager var2, DatapackCodec var3) {
+      WorldSettingsImport var4 = WorldSettingsImport.create(NBTDynamicOps.INSTANCE, var2, var1);
+      IServerConfiguration var5 = var0.readServerConfiguration(var4, var3);
       if (var5 == null) {
          throw new IllegalStateException("Failed to load world");
       } else {
@@ -1483,55 +1487,55 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   public void method1499(String var1) {
-      this.method1501(var1, Class8904.method32457(), Minecraft::method1497, Minecraft::method1498, false, Class2145.field14036);
+   public void loadWorld(String worldName) {
+      this.loadWorld(worldName, DynamicRegistries.func_239770_b_(), Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, WorldSelectionType.BACKUP);
    }
 
-   public void method1500(String var1, Class8898 var2, Class8905 var3, Class7846 var4) {
-      this.method1501(
+   public void createWorld(String var1, WorldSettings var2, Class8905 var3, DimensionGeneratorSettings var4) {
+      this.loadWorld(
          var1,
          var3,
-         var1x -> var2.method32432(),
+         var1x -> var2.getDatapackCodec(),
          (var3x, var4x, var5, var6) -> {
-            Class6713 var7 = Class6713.method20491(JsonOps.INSTANCE, var3);
-            Class6711 var8 = Class6711.method20471(JsonOps.INSTANCE, var5, var3);
-            DataResult var9 = Class7846.field33650
+            WorldGenSettingsExport var7 = WorldGenSettingsExport.create(JsonOps.INSTANCE, var3);
+            WorldSettingsImport var8 = WorldSettingsImport.create(JsonOps.INSTANCE, var5, var3);
+            DataResult var9 = DimensionGeneratorSettings.field_236201_a_
                .encodeStart(var7, var4)
                .setLifecycle(Lifecycle.stable())
-               .flatMap(var1xx -> Class7846.field33650.parse(var8, var1xx));
-            Class7846 var10 = (Class7846) var9.resultOrPartial(Util.method38529("Error reading worldgen settings after loading data packs: ", LOGGER::error))
+               .flatMap(var1xx -> DimensionGeneratorSettings.field_236201_a_.parse(var8, var1xx));
+            DimensionGeneratorSettings var10 = (DimensionGeneratorSettings) var9.resultOrPartial(Util.func_240982_a_("Error reading worldgen settings after loading data packs: ", LOGGER::error))
                .orElse(var4);
-            return new Class6610(var2, var10, var9.lifecycle());
+            return new ServerWorldInfo(var2, var10, var9.lifecycle());
          },
          false,
-         Class2145.field14035
+         WorldSelectionType.CREATE
       );
    }
 
-   private void method1501(
+   private void loadWorld(
       String var1,
       Class8905 var2,
-      Function<Class1814, Class7818> var3,
-      Function4<Class1814, Class8905, Class191, Class7818, Class6611> var4,
+      Function<SaveFormat.LevelSave, DatapackCodec> var3,
+      Function4<SaveFormat.LevelSave, Class8905, IResourceManager, DatapackCodec, IServerConfiguration> var4,
       boolean var5,
-      Class2145 var6
+      WorldSelectionType var6
    ) {
-      Class1814 var7;
+      SaveFormat.LevelSave var7;
       try {
-         var7 = this.saveFormat.method38468(var1);
+         var7 = this.saveFormat.getLevelSave(var1);
       } catch (IOException var21) {
          LOGGER.warn("Failed to read level {} data", var1, var21);
-         Class7603.method24908(this, var1);
+         SystemToast.func_238535_a_(this, var1);
          this.displayGuiScreen((Screen)null);
          return;
       }
 
-      Class1811 var8;
+      PackManager var8;
       try {
-         var8 = this.method1503(var2, var3, var4, var5, var7);
+         var8 = this.reloadDatapacks(var2, var3, var4, var5, var7);
       } catch (Exception var20) {
          LOGGER.warn("Failed to load datapacks, can't proceed with server load", var20);
-         this.displayGuiScreen(new Class1146(() -> this.method1501(var1, var2, var3, var4, true, var6)));
+         this.displayGuiScreen(new DatapackFailureScreen(() -> this.loadWorld(var1, var2, var3, var4, true, var6)));
 
          try {
             var7.close();
@@ -1542,50 +1546,50 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
          return;
       }
 
-      Class6611 var9 = var8.method7959();
-      boolean var10 = var9.method20087().method26269();
-      boolean var11 = var9.method20088() != Lifecycle.stable();
-      if (var6 == Class2145.field14034 || !var10 && !var11) {
+      IServerConfiguration var9 = var8.getServerConfiguration();
+      boolean var10 = var9.getDimensionGeneratorSettings().func_236229_j_();
+      boolean var11 = var9.getLifecycle() != Lifecycle.stable();
+      if (var6 == WorldSelectionType.NONE || !var10 && !var11) {
          this.unloadWorld();
-         this.field1297.set((Class7245)null);
+         this.refChunkStatusListener.set((TrackingChunkStatusListener)null);
 
          try {
-            var7.method8000(var2, var9);
-            var8.method7958().method7339();
-            YggdrasilAuthenticationService var12 = new YggdrasilAuthenticationService(this.field1306);
+            var7.saveLevel(var2, var9);
+            var8.getDataPackRegistries().updateTags();
+            YggdrasilAuthenticationService var12 = new YggdrasilAuthenticationService(this.proxy);
             MinecraftSessionService var23 = var12.createMinecraftSessionService();
             GameProfileRepository var25 = var12.createProfileRepository();
-            Class8805 var15 = new Class8805(var25, new File(this.field1303, MinecraftServer.field1209.getName()));
-            Class968.method4002(var15);
-            Class968.method4003(var23);
-            Class8805.method31788(false);
-            this.field1340 = MinecraftServer.<Class1644>method1275(
-               var8x -> new Class1644(var8x, this, var2, var7, var8.method7957(), var8.method7958(), var9, var23, var25, var15, var1xx -> {
-                     Class7245 var2xx = new Class7245(var1xx + 0);
-                     var2xx.method22742();
-                     this.field1297.set(var2xx);
-                     return new Class7242(var2xx, this.queueChunkTracking::add);
+            PlayerProfileCache var15 = new PlayerProfileCache(var25, new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
+            SkullTileEntity.setProfileCache(var15);
+            SkullTileEntity.setSessionService(var23);
+            PlayerProfileCache.setOnlineMode(false);
+            this.integratedServer = MinecraftServer.<IntegratedServer>func_240784_a_(
+               var8x -> new IntegratedServer(var8x, this, var2, var7, var8.getResourcePacks(), var8.getDataPackRegistries(), var9, var23, var25, var15, var1xx -> {
+                     TrackingChunkStatusListener var2xx = new TrackingChunkStatusListener(var1xx + 0);
+                     var2xx.startTracking();
+                     this.refChunkStatusListener.set(var2xx);
+                     return new ChainedChunkStatusListener(var2xx, this.queueChunkTracking::add);
                   })
             );
-            this.field1343 = true;
+            this.integratedServerIsRunning = true;
          } catch (Throwable var19) {
-            Class4526 var13 = Class4526.method14413(var19, "Starting integrated server");
-            Class8965 var14 = var13.method14410("Starting integrated server");
-            var14.method32807("Level ID", var1);
-            var14.method32807("Level Name", var9.method20054());
-            throw new Class2506(var13);
+            CrashReport var13 = CrashReport.makeCrashReport(var19, "Starting integrated server");
+            CrashReportCategory var14 = var13.makeCategory("Starting integrated server");
+            var14.addDetail("Level ID", var1);
+            var14.addDetail("Level Name", var9.method20054());
+            throw new ReportedException(var13);
          }
 
-         while (this.field1297.get() == null) {
+         while (this.refChunkStatusListener.get() == null) {
             Thread.yield();
          }
 
-         Class1328 var22 = new Class1328(this.field1297.get());
+         WorldLoadProgressScreen var22 = new WorldLoadProgressScreen(this.refChunkStatusListener.get());
          this.displayGuiScreen(var22);
          this.profiler.startSection("waitForServer");
 
-         while (!this.field1340.method1372()) {
-            var22.method1919();
+         while (!this.integratedServer.method1372()) {
+            var22.tick();
             this.runGameLoop(false);
 
             try {
@@ -1594,21 +1598,20 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             }
 
             if (this.crashReporter != null) {
-               method1468(this.crashReporter);
+               displayCrashReport(this.crashReporter);
                return;
             }
          }
 
          this.profiler.endSection();
-         SocketAddress var24 = this.field1340.method1371().method33399();
-         NetworkManager var26 = NetworkManager.method30704(var24);
-         var26.method30692(new Class5102(var26, this, (Screen)null, var0 -> {
-         }));
-         var26.method30693(new Class5575(var24.toString(), 0, Class1858.field9904));
-         var26.method30693(new Class5500(this.method1533().getProfile()));
-         this.field1342 = var26;
+         SocketAddress var24 = this.integratedServer.getNetworkSystem().addLocalEndpoint();
+         NetworkManager var26 = NetworkManager.provideLocalClient(var24);
+         var26.setNetHandler(new ClientLoginNetHandler(var26, this, null, var0 -> {}));
+         var26.sendPacket(new CHandshakePacket(var24.toString(), 0, ProtocolType.LOGIN));
+         var26.sendPacket(new CLoginStartPacket(this.getSession().getProfile()));
+         this.networkManager = var26;
       } else {
-         this.method1502(var6, var1, var10, () -> this.method1501(var1, var2, var3, var4, var5, Class2145.field14034));
+         this.deleteWorld(var6, var1, var10, () -> this.loadWorld(var1, var2, var3, var4, var5, WorldSelectionType.NONE));
          var8.close();
 
          try {
@@ -1619,8 +1622,8 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   private void method1502(Class2145 var1, String var2, boolean var3, Runnable var4) {
-      if (var1 == Class2145.field14036) {
+   private void deleteWorld(WorldSelectionType var1, String var2, boolean var3, Runnable var4) {
+      if (var1 == WorldSelectionType.BACKUP) {
          TranslationTextComponent var5;
          TranslationTextComponent var6;
          if (var3) {
@@ -1631,254 +1634,260 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             var6 = new TranslationTextComponent("selectWorld.backupWarning.experimental");
          }
 
-         this.displayGuiScreen(new Class1315((Screen)null, (var3x, var4x) -> {
+         this.displayGuiScreen(new ConfirmBackupScreen(null, (var3x, var4x) -> {
             if (var3x) {
-               Class1329.method6322(this.saveFormat, var2);
+               EditWorldScreen.func_241651_a_(this.saveFormat, var2);
             }
 
             var4.run();
          }, var5, var6, false));
       } else {
          this.displayGuiScreen(
-            new Class829(
+            new ConfirmScreen(
                var3x -> {
                   if (var3x) {
                      var4.run();
                   } else {
-                     this.displayGuiScreen((Screen)null);
+                     this.displayGuiScreen(null);
 
-                     try (Class1814 var4x = this.saveFormat.method38468(var2)) {
-                        var4x.method8003();
+                     try (SaveFormat.LevelSave var4x = this.saveFormat.getLevelSave(var2)) {
+                        var4x.deleteSave();
                      } catch (IOException var17) {
-                        Class7603.method24909(this, var2);
+                        SystemToast.func_238538_b_(this, var2);
                         LOGGER.error("Failed to delete world {}", var2, var17);
                      }
                   }
                },
                new TranslationTextComponent("selectWorld.backupQuestion.experimental"),
                new TranslationTextComponent("selectWorld.backupWarning.experimental"),
-               Class7127.field30662,
-               Class7127.field30659
+               DialogTexts.GUI_PROCEED,
+               DialogTexts.GUI_CANCEL
             )
          );
       }
    }
 
-   public Class1811 method1503(
-      Class8905 var1, Function<Class1814, Class7818> var2, Function4<Class1814, Class8905, Class191, Class7818, Class6611> var3, boolean var4, Class1814 var5
+   public PackManager reloadDatapacks(
+           Class8905 var1, Function<SaveFormat.LevelSave, DatapackCodec> var2, Function4<SaveFormat.LevelSave, Class8905, IResourceManager, DatapackCodec, IServerConfiguration> var3, boolean var4, SaveFormat.LevelSave var5
    ) throws InterruptedException, ExecutionException {
-      Class7818 var6 = (Class7818)var2.apply(var5);
-      Class313 var7 = new Class313(new Class7650(), new Class7652(var5.method7991(Class5137.field23352).toFile(), Class7725.field33172));
+      DatapackCodec var6 = (DatapackCodec)var2.apply(var5);
+      ResourcePackList var7 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var5.resolveFilePath(FolderName.DATAPACKS).toFile(), IPackNameDecorator.WORLD));
 
       try {
-         Class7818 var8 = MinecraftServer.method1399(var7, var6, var4);
-         CompletableFuture var9 = Class1701.method7338(var7.method1273(), Class2085.field13577, 2, Util.method38492(), this);
-         this.method1639(var9::isDone);
-         Class1701 var10 = (Class1701)var9.get();
-         Class6611 var11 = var3.apply(var5, var1, var10.method7337(), var8);
-         return new Class1811(var7, var10, var11);
+         DatapackCodec var8 = MinecraftServer.func_240772_a_(var7, var6, var4);
+         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), this);
+         this.driveUntil(var9::isDone);
+         DataPackRegistries var10 = (DataPackRegistries)var9.get();
+         IServerConfiguration var11 = var3.apply(var5, var1, var10.getResourceManager(), var8);
+         return new PackManager(var7, var10, var11);
       } catch (InterruptedException | ExecutionException var12) {
          var7.close();
          throw var12;
       }
    }
 
-   public void method1504(Class1656 var1) {
-      Class1338 var2 = new Class1338();
-      var2.method6416(new TranslationTextComponent("connect.joining"));
-      this.method1507(var2);
+   public void loadWorld(ClientWorld var1) {
+      WorkingScreen var2 = new WorkingScreen();
+      var2.displaySavingString(new TranslationTextComponent("connect.joining"));
+      this.updateScreenTick(var2);
       this.world = var1;
-      this.method1509(var1);
-      Client.getInstance().getEventManager().call(new Class4418());
-      if (!this.field1343) {
-         YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field1306);
+      this.updateWorldRenderer(var1);
+      Client.getInstance().getEventManager().call(new WorldLoadEvent());
+      if (!this.integratedServerIsRunning) {
+         YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.proxy);
          MinecraftSessionService var4 = var3.createMinecraftSessionService();
          GameProfileRepository var5 = var3.createProfileRepository();
-         Class8805 var6 = new Class8805(var5, new File(this.field1303, MinecraftServer.field1209.getName()));
-         Class968.method4002(var6);
-         Class968.method4003(var4);
-         Class8805.method31788(false);
+         PlayerProfileCache var6 = new PlayerProfileCache(var5, new File(this.gameDir, MinecraftServer.USER_CACHE_FILE.getName()));
+         SkullTileEntity.setProfileCache(var6);
+         SkullTileEntity.setSessionService(var4);
+         PlayerProfileCache.setOnlineMode(false);
       }
    }
 
    public void unloadWorld() {
-      this.method1506(new Class1338());
+      this.unloadWorld(new WorkingScreen());
    }
 
-   public void method1506(Screen var1) {
-      ClientPlayNetHandler var2 = this.getClientPlayNetHandler();
+   public void unloadWorld(Screen var1) {
+      ClientPlayNetHandler var2 = this.getConnection();
       if (var2 != null) {
-         this.method1637();
-         var2.method15782();
+         this.dropTasks();
+         var2.cleanup();
       }
 
-      Class1644 var3 = this.field1340;
-      this.field1340 = null;
-      this.gameRenderer.method755();
-      this.field1337 = null;
-      NarratorChatListener.INSTANCE.method20406();
-      this.method1507(var1);
+      IntegratedServer var3 = this.integratedServer;
+      this.integratedServer = null;
+      this.gameRenderer.resetData();
+      this.playerController = null;
+      NarratorChatListener.INSTANCE.clear();
+      this.updateScreenTick(var1);
       if (this.world != null) {
          if (var3 != null) {
             this.profiler.startSection("waitForServer");
 
-            while (!var3.method1315()) {
+            while (!var3.isThreadAlive()) {
                this.runGameLoop(false);
             }
 
             this.profiler.endSection();
          }
 
-         this.field1314.method25150();
-         this.ingameGUI.method5994();
-         this.field1341 = null;
-         this.field1343 = false;
-         this.field1333.method28909();
+         this.packFinder.clearResourcePack();
+         this.ingameGUI.resetPlayersOverlayFooterHeader();
+         this.currentServerData = null;
+         this.integratedServerIsRunning = false;
+         this.game.leaveGameSession();
       }
 
       this.world = null;
-      this.method1509((Class1656)null);
+      this.updateWorldRenderer((ClientWorld)null);
       this.player = null;
    }
 
-   private void method1507(Screen var1) {
+   private void updateScreenTick(Screen var1) {
       this.profiler.startSection("forcedTick");
-      this.soundHandler.method1004();
-      this.field1344 = null;
-      this.field1342 = null;
+      this.soundHandler.stop();
+      this.renderViewEntity = null;
+      this.networkManager = null;
       this.displayGuiScreen(var1);
       this.runGameLoop(false);
       this.profiler.endSection();
    }
 
-   public void method1508(Screen var1) {
+   public void forcedScreenTick(Screen var1) {
       this.profiler.startSection("forcedTick");
       this.displayGuiScreen(var1);
       this.runGameLoop(false);
       this.profiler.endSection();
    }
 
-   private void method1509(Class1656 var1) {
-      this.worldRenderer.method867(var1);
-      this.particles.method1205(var1);
-      Class8086.field34743.method27966(var1);
+   private void updateWorldRenderer(ClientWorld var1) {
+      this.worldRenderer.setWorldAndLoadRenderers(var1);
+      this.particles.clearEffects(var1);
+      TileEntityRendererDispatcher.instance.setWorld(var1);
       this.setDefaultMinecraftTitle();
    }
 
-   public boolean method1510() {
-      return this.field1311 && this.field1326.serversAllowed();
+   public boolean isMultiplayerEnabled() {
+      return this.enableMultiplayer && this.field_244734_au.serversAllowed();
    }
 
-   public boolean method1511(UUID var1) {
+   public boolean cannotSendChatMessages(UUID var1) {
       return this.isChatEnabled()
-         ? this.field1335.method37606(var1)
+         ? this.field_244597_aC.func_244756_c(var1)
          : (this.player == null || !var1.equals(this.player.getUniqueID())) && !var1.equals(Util.DUMMY_UUID);
    }
 
    public boolean isChatEnabled() {
-      return this.field1312 && this.field1326.chatAllowed();
+      return this.enableChat && this.field_244734_au.chatAllowed();
    }
 
-   public final boolean method1513() {
-      return this.field1310;
+   public final boolean isDemo() {
+      return this.isDemo;
    }
 
    @Nullable
-   public ClientPlayNetHandler getClientPlayNetHandler() {
+   public ClientPlayNetHandler getConnection() {
       return this.player == null ? null : this.player.connection;
    }
 
-   public static boolean method1515() {
-      return !field1270.gameSettings.field44662;
+   public static boolean isGuiEnabled() {
+      return ! instance.gameSettings.hideGUI;
    }
 
-   public static boolean method1516() {
-      return field1270.gameSettings.field44578.method8743() >= Class2087.field13604.method8743();
+   public static boolean isFancyGraphicsEnabled() {
+      return instance.gameSettings.graphicFanciness.func_238162_a_() >= GraphicsFanciness.FANCY.func_238162_a_();
    }
 
-   public static boolean method1517() {
-      return field1270.gameSettings.field44578.method8743() >= Class2087.field13605.method8743();
+   public static boolean isFabulousGraphicsEnabled() {
+      return instance.gameSettings.graphicFanciness.func_238162_a_() >= GraphicsFanciness.FABULOUS.func_238162_a_();
    }
 
-   public static boolean method1518() {
-      return field1270.gameSettings.field44579 != Class2340.field16003;
+   public static boolean isAmbientOcclusionEnabled() {
+      return instance.gameSettings.ambientOcclusionStatus != AmbientOcclusionStatus.OFF;
    }
 
-   private void method1519() {
-      Class4429 var1 = new Class4429(Class2116.field13792);
+   private void middleClickMouse() {
+      ClickEvent var1 = new ClickEvent(ClickEvent.Button.MID);
       Client.getInstance().getEventManager().call(var1);
       if (!var1.isCancelled()) {
-         if (this.field1346 != null && this.field1346.method31417() != Class2100.field13689) {
-            boolean var2 = this.player.field4919.field29609;
-            Class944 var3 = null;
-            Class2100 var4 = this.field1346.method31417();
+         if (this.objectMouseOver != null && this.objectMouseOver.getType() != RayTraceResult.Type.MISS) {
+            boolean var2 = this.player.abilities.isCreativeMode;
+            TileEntity var3 = null;
+            RayTraceResult.Type var4 = this.objectMouseOver.getType();
             ItemStack var5;
-            if (var4 == Class2100.field13690) {
-               BlockPos var6 = ((Class8711)this.field1346).method31423();
-               Class7380 var7 = this.world.method6738(var6);
-               Block var8 = var7.method23383();
-               if (var7.method23393()) {
+            if (var4 == RayTraceResult.Type.BLOCK) {
+               BlockPos var6 = ((BlockRayTraceResult)this.objectMouseOver).getPos();
+               BlockState var7 = this.world.getBlockState(var6);
+               Block var8 = var7.getBlock();
+               if (var7.isAir()) {
                   return;
                }
 
-               var5 = var8.method11569(this.world, var6, var7);
-               if (var5.method32105()) {
+               var5 = var8.getItem(this.world, var6, var7);
+               if (var5.isEmpty()) {
                   return;
                }
 
-               if (var2 && Screen.method2475() && var8.method11998()) {
-                  var3 = this.world.method6759(var6);
+               if (var2 && Screen.hasControlDown() && var8.isTileEntityProvider()) {
+                  var3 = this.world.getTileEntity(var6);
                }
             } else {
-               if (var4 != Class2100.field13691 || !var2) {
+               if (var4 != RayTraceResult.Type.ENTITY || !var2) {
                   return;
                }
 
-               Entity var9 = ((Class8709)this.field1346).method31416();
-               if (var9 instanceof Class998) {
-                  var5 = new ItemStack(Class8514.field37871);
-               } else if (var9 instanceof Class996) {
-                  var5 = new ItemStack(Class8514.field38087);
-               } else if (var9 instanceof Class997) {
-                  Class997 var12 = (Class997)var9;
+               Entity var9 = ((EntityRayTraceResult)this.objectMouseOver).getEntity();
+               if (var9 instanceof PaintingEntity) {
+                  var5 = new ItemStack(Items.PAINTING);
+               } else if (var9 instanceof LeashKnotEntity) {
+                  var5 = new ItemStack(Items.LEAD);
+               } else if (var9 instanceof ItemFrameEntity) {
+                  ItemFrameEntity var12 = (ItemFrameEntity)var9;
                   ItemStack var16 = var12.method4090();
-                  if (var16.method32105()) {
-                     var5 = new ItemStack(Class8514.field38050);
+                  if (var16.isEmpty()) {
+                     var5 = new ItemStack(Items.ITEM_FRAME);
                   } else {
                      var5 = var16.copy();
                   }
-               } else if (var9 instanceof Class916) {
-                  Class916 var13 = (Class916)var9;
-                  Class3257 var17;
-                  switch (Class9158.field42044[var13.method3602().ordinal()]) {
-                     case 1:
-                        var17 = Class8514.field37903;
+               } else if (var9 instanceof AbstractMinecartEntity) {
+                  AbstractMinecartEntity var13 = (AbstractMinecartEntity)var9;
+                  Item var17;
+                  switch (var13.getMinecartType())
+                  {
+                     case FURNACE:
+                        var17 = Items.FURNACE_MINECART;
                         break;
-                     case 2:
-                        var17 = Class8514.field37902;
+
+                     case CHEST:
+                        var17 = Items.CHEST_MINECART;
                         break;
-                     case 3:
-                        var17 = Class8514.field38073;
+
+                     case TNT:
+                        var17 = Items.TNT_MINECART;
                         break;
-                     case 4:
-                        var17 = Class8514.field38074;
+
+                     case HOPPER:
+                        var17 = Items.HOPPER_MINECART;
                         break;
-                     case 5:
-                        var17 = Class8514.field38089;
+
+                     case COMMAND_BLOCK:
+                        var17 = Items.COMMAND_BLOCK_MINECART;
                         break;
+
                      default:
-                        var17 = Class8514.field37885;
+                        var17 = Items.MINECART;
                   }
 
                   var5 = new ItemStack(var17);
-               } else if (var9 instanceof Class1002) {
-                  var5 = new ItemStack(((Class1002)var9).method4147());
-               } else if (var9 instanceof Class1005) {
-                  var5 = new ItemStack(Class8514.field38082);
-               } else if (var9 instanceof Class1001) {
-                  var5 = new ItemStack(Class8514.field38108);
+               } else if (var9 instanceof BoatEntity) {
+                  var5 = new ItemStack(((BoatEntity)var9).getItemBoat());
+               } else if (var9 instanceof ArmorStandEntity) {
+                  var5 = new ItemStack(Items.ARMOR_STAND);
+               } else if (var9 instanceof EnderCrystalEntity) {
+                  var5 = new ItemStack(Items.END_CRYSTAL);
                } else {
-                  Class3311 var14 = Class3311.method11853(var9.method3204());
+                  SpawnEggItem var14 = SpawnEggItem.getEgg(var9.getType());
                   if (var14 == null) {
                      return;
                   }
@@ -1887,30 +1896,30 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
                }
             }
 
-            if (var5.method32105()) {
+            if (var5.isEmpty()) {
                String var10 = "";
-               if (var4 == Class2100.field13690) {
-                  var10 = Registry.field16072.method9181(this.world.method6738(((Class8711)this.field1346).method31423()).method23383()).toString();
-               } else if (var4 == Class2100.field13691) {
-                  var10 = Registry.field16074.method9181(((Class8709)this.field1346).method31416().method3204()).toString();
+               if (var4 == RayTraceResult.Type.BLOCK) {
+                  var10 = Registry.BLOCK.getKey(this.world.getBlockState(((BlockRayTraceResult)this.objectMouseOver).getPos()).getBlock()).toString();
+               } else if (var4 == RayTraceResult.Type.ENTITY) {
+                  var10 = Registry.ENTITY_TYPE.getKey(((EntityRayTraceResult)this.objectMouseOver).getEntity().getType()).toString();
                }
 
                LOGGER.warn("Picking on: [{}] {} gave null item", var4, var10);
             } else {
-               Class974 var11 = this.player.field4902;
+               PlayerInventory playerinventory = this.player.inventory;
                if (var3 != null) {
-                  this.method1520(var5, var3);
+                  this.storeTEInStack(var5, var3);
                }
 
-               int var15 = var11.method4036(var5);
+               int var15 = playerinventory.getSlotFor(var5);
                if (var2) {
-                  var11.method4033(var5);
-                  this.field1337.method23147(this.player.getHeldItem(Hand.field182), 36 + var11.field5443);
+                  playerinventory.setPickedItemStack(var5);
+                  this.playerController.sendSlotPacket(this.player.getHeldItem(Hand.MAIN_HAND), 36 + playerinventory.currentItem);
                } else if (var15 != -1) {
-                  if (Class974.method4035(var15)) {
-                     var11.field5443 = var15;
+                  if (PlayerInventory.isHotbar(var15)) {
+                     playerinventory.currentItem = var15;
                   } else {
-                     this.field1337.method23159(var15);
+                     this.playerController.pickItem(var15);
                   }
                }
             }
@@ -1918,43 +1927,43 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
    }
 
-   private ItemStack method1520(ItemStack var1, Class944 var2) {
-      Class39 var3 = var2.method3646(new Class39());
-      if (var1.method32107() instanceof Class3299 && var3.method118("SkullOwner")) {
-         Class39 var6 = var3.method130("SkullOwner");
-         var1.method32143().method99("SkullOwner", var6);
+   private ItemStack storeTEInStack(ItemStack var1, TileEntity var2) {
+      CompoundNBT var3 = var2.write(new CompoundNBT());
+      if (var1.getItem() instanceof SkullItem && var3.contains("SkullOwner")) {
+         CompoundNBT var6 = var3.getCompound("SkullOwner");
+         var1.getOrCreateTag().put("SkullOwner", var6);
          return var1;
       } else {
-         var1.method32164("BlockEntityTag", var3);
-         Class39 var4 = new Class39();
-         Class41 var5 = new Class41();
-         var5.add(Class40.method150("\"(+NBT)\""));
-         var4.method99("Lore", var5);
-         var1.method32164("display", var4);
+         var1.setTagInfo("BlockEntityTag", var3);
+         CompoundNBT var4 = new CompoundNBT();
+         ListNBT var5 = new ListNBT();
+         var5.add(StringNBT.valueOf("\"(+NBT)\""));
+         var4.put("Lore", var5);
+         var1.setTagInfo("display", var4);
          return var1;
       }
    }
 
-   public Class4526 method1521(Class4526 var1) {
-      method1522(this.field1316, this.field1304, this.gameSettings, var1);
+   public CrashReport addGraphicsAndWorldToCrashReport(CrashReport var1) {
+      fillCrashReport(this.languageManager, this.launchedVersion, this.gameSettings, var1);
       if (this.world != null) {
-         this.world.method6802(var1);
+         this.world.fillCrashReport(var1);
       }
 
       return var1;
    }
 
-   public static void method1522(Class267 var0, String var1, Class9574 var2, Class4526 var3) {
-      Class8965 var4 = var3.method14409();
-      var4.method32806("Launched Version", () -> var1);
-      var4.method32806("Backend library", RenderSystem::method27898);
-      var4.method32806("Backend API", RenderSystem::method27899);
-      var4.method32806("GL Caps", RenderSystem::method27906);
-      var4.method32806("Using VBOs", () -> "Yes");
-      var4.method32806(
+   public static void fillCrashReport(LanguageManager var0, String var1, GameSettings var2, CrashReport var3) {
+      CrashReportCategory var4 = var3.getCategory();
+      var4.addDetail("Launched Version", () -> var1);
+      var4.addDetail("Backend library", RenderSystem::getBackendDescription);
+      var4.addDetail("Backend API", RenderSystem::getApiDescription);
+      var4.addDetail("GL Caps", RenderSystem::getCapsString);
+      var4.addDetail("Using VBOs", () -> "Yes");
+      var4.addDetail(
          "Is Modded",
          () -> {
-            String var0x = Class8948.method32694();
+            String var0x = ClientBrandRetriever.getClientModName();
             if (!"vanilla".equals(var0x)) {
                return "Definitely; Client brand changed to '" + var0x + "'";
             } else {
@@ -1964,26 +1973,26 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             }
          }
       );
-      var4.method32807("Type", "Client (map_client.txt)");
+      var4.addDetail("Type", "Client (map_client.txt)");
       if (var2 != null) {
-         if (field1270 != null) {
-            String var5 = field1270.method1545().method985();
+         if (instance != null) {
+            String var5 = instance.getGPUWarning().func_243499_m();
             if (var5 != null) {
-               var4.method32807("GPU Warnings", var5);
+               var4.addDetail("GPU Warnings", var5);
             }
          }
 
-         var4.method32807("Graphics mode", var2.field44578);
-         var4.method32806("Resource Packs", () -> {
+         var4.addDetail("Graphics mode", var2.graphicFanciness);
+         var4.addDetail("Resource Packs", () -> {
             StringBuilder var1x = new StringBuilder();
 
-            for (String var3x : var2.field44580) {
+            for (String var3x : var2.resourcePacks) {
                if (var1x.length() > 0) {
                   var1x.append(", ");
                }
 
                var1x.append(var3x);
-               if (var2.field44581.contains(var3x)) {
+               if (var2.incompatibleResourcePacks.contains(var3x)) {
                   var1x.append(" (incompatible)");
                }
             }
@@ -1993,47 +2002,50 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }
 
       if (var0 != null) {
-         var4.method32806("Current Language", () -> var0.method965().toString());
+         var4.addDetail("Current Language", () -> var0.getCurrentLanguage().toString());
       }
 
-      var4.method32806("CPU", Class9036::method33486);
+      var4.addDetail("CPU", PlatformDescriptors::getCpuInfo);
    }
 
    public static Minecraft getInstance() {
-      return field1270;
+      return instance;
    }
 
-   public CompletableFuture<Void> method1524() {
-      return this.<CompletableFuture<Void>>method1632(this::reloadResources).<Void>thenCompose(var0 -> (CompletionStage<Void>)var0);
+   public CompletableFuture<Void> scheduleResourcesRefresh() {
+      return this.<CompletableFuture<Void>>supplyAsync(this::reloadResources).<Void>thenCompose(var0 -> (CompletionStage<Void>)var0);
    }
 
    @Override
-   public void method1347(Class7998 var1) {
-      var1.method27298("fps", field1362);
-      var1.method27298("vsync_enabled", this.gameSettings.field44615);
-      var1.method27298("display_frequency", this.mainWindow.method8010());
-      var1.method27298("display_type", this.mainWindow.method8040() ? "fullscreen" : "windowed");
-      var1.method27298("run_time", (Util.milliTime() - var1.method27303()) / 60L * 1000L);
-      var1.method27298("current_action", this.method1526());
-      var1.method27298("language", this.gameSettings.field44676 == null ? "en_us" : this.gameSettings.field44676);
+   public void fillSnooper(Snooper snooper) {
+      snooper.addClientStat("fps", debugFps);
+      snooper.addClientStat("vsync_enabled", this.gameSettings.vsync);
+      snooper.addClientStat("display_frequency", this.mainWindow.getRefreshRate());
+      snooper.addClientStat("display_type", this.mainWindow.isFullscreen() ? "fullscreen" : "windowed");
+      snooper.addClientStat("run_time", (Util.milliTime() - snooper.getMinecraftStartTimeMillis()) / 60L * 1000L);
+      snooper.addClientStat("current_action", this.getCurrentAction());
+      snooper.addClientStat("language", this.gameSettings.language == null ? "en_us" : this.gameSettings.language);
       String var2 = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? "little" : "big";
-      var1.method27298("endianness", var2);
-      var1.method27298("subtitles", this.gameSettings.field44623);
-      var1.method27298("touch", this.gameSettings.field44625 ? "touch" : "mouse");
+      snooper.addClientStat("endianness", var2);
+      snooper.addClientStat("subtitles", this.gameSettings.showSubtitles);
+      snooper.addClientStat("touch", this.gameSettings.touchscreen ? "touch" : "mouse");
       int var3 = 0;
 
-      for (Class1810 var5 : this.resourcePackRepository.method1270()) {
-         if (!var5.method7952() && !var5.method7953()) {
-            var1.method27298("resource_pack[" + var3++ + "]", var5.method7951());
+      for (ResourcePackInfo var5 : this.resourcePackRepository.getEnabledPacks()) {
+         if (!var5.isAlwaysEnabled() && !var5.isOrderLocked()) {
+            snooper.addClientStat("resource_pack[" + var3++ + "]", var5.getName());
          }
       }
 
-      var1.method27298("resource_packs", var3);
-      if (this.field1340 != null) {
-         var1.method27298("snooper_partner", this.field1340.method1376().method27302());
+      snooper.addClientStat("resource_packs", var3);
+      if (this.integratedServer != null) {
+         snooper.addClientStat("snooper_partner", this.integratedServer.getSnooper().getUniqueID());
       }
    }
 
+   /**
+    * Idk what to call this
+    */
    private void method1525() {
       new Thread(() -> {
          int var1 = 0;
@@ -2053,14 +2065,14 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
             }
 
             GameProfile var4 = new GameProfile(UUID.fromString("53e07708-1fe7-4488-b2d2-8d1a82af37b7"), "steve");
-            this.field1325.fillProfileProperties(var4, false);
+            this.sessionService.fillProfileProperties(var4, false);
             if (var4.getProperties().containsKey("textures")) {
                var4.getProperties().get("textures").forEach(var1x -> {
                   String var2x = new String(Base64.getDecoder().decode(var1x.getValue()));
                   Pattern var3 = Pattern.compile("http://textures.minecraft.net/texture/([a-f0-9]+)");
                   Matcher var4x = var3.matcher(var2x);
                   if (var4x.find() && !var4x.group(1).equals("41b483a411e2f7c09b55e49ce0ab6f5868d223bc6c40d68ade95f71e5dff30aa")) {
-                     this.field1359 = false;
+                     this.shouldTranslate = false;
                   }
                });
             }
@@ -2068,309 +2080,356 @@ public class Minecraft extends Class317<Runnable> implements Class315, Class1643
       }).start();
    }
 
-   private String method1526() {
-      if (this.field1340 != null) {
-         return this.field1340.method1369() ? "hosting_lan" : "singleplayer";
-      } else if (this.field1341 != null) {
-         return this.field1341.method25582() ? "playing_lan" : "multiplayer";
+   private String getCurrentAction() {
+      if (this.integratedServer != null) {
+         return this.integratedServer.getPublic() ? "hosting_lan" : "singleplayer";
+      } else if (this.currentServerData != null) {
+         return this.currentServerData.isOnLAN() ? "playing_lan" : "multiplayer";
       } else {
          return "out_of_game";
       }
    }
 
-   public void method1527(Class7730 var1) {
-      this.field1341 = var1;
+   public void setServerData(ServerData var1) {
+      this.currentServerData = var1;
    }
 
    @Nullable
-   public Class7730 method1528() {
-      return this.field1341;
+   public ServerData getCurrentServerData() {
+      return this.currentServerData;
    }
 
    public boolean isIntegratedServerRunning() {
-      return this.field1343;
+      return this.integratedServerIsRunning;
    }
 
-   public boolean method1530() {
-      return this.field1343 && this.field1340 != null;
+   public boolean isSingleplayer() {
+      return this.integratedServerIsRunning && this.integratedServer != null;
    }
 
    @Nullable
-   public Class1644 method1531() {
-      return this.field1340;
+   public IntegratedServer getIntegratedServer() {
+      return this.integratedServer;
    }
 
-   public Class7998 method1532() {
-      return this.field1285;
+   public Snooper getSnooper() {
+      return this.snooper;
    }
 
-   public Session method1533() {
+   public Session getSession() {
       return this.session;
    }
 
-   public PropertyMap method1534() {
-      if (this.field1279.isEmpty()) {
-         GameProfile var1 = this.method1548().fillProfileProperties(this.session.getProfile(), false);
-         this.field1279.putAll(var1.getProperties());
+   public PropertyMap getProfileProperties() {
+      if (this.profileProperties.isEmpty()) {
+         GameProfile var1 = this.getSessionService().fillProfileProperties(this.session.getProfile(), false);
+         this.profileProperties.putAll(var1.getProperties());
       }
 
-      return this.field1279;
+      return this.profileProperties;
    }
 
-   public Proxy method1535() {
-      return this.field1306;
+   public Proxy getProxy() {
+      return this.proxy;
    }
 
    public TextureManager getTextureManager() {
       return this.textureManager;
    }
 
-   public Class191 method1537() {
+   public IResourceManager getResourceManager() {
       return this.resourceManager;
    }
 
-   public Class313 method1538() {
+   public ResourcePackList getResourcePackList() {
       return this.resourcePackRepository;
    }
 
-   public Class7653 method1539() {
-      return this.field1314;
+   public DownloadingPackFinder getPackFinder() {
+      return this.packFinder;
    }
 
-   public File method1540() {
-      return this.field1278;
+   public File getFileResourcePacks() {
+      return this.fileResourcepacks;
    }
 
-   public Class267 method1541() {
-      return this.field1316;
+   public LanguageManager getLanguageManager() {
+      return this.languageManager;
    }
 
-   public Function<ResourceLocation, Class1713> method1542(ResourceLocation var1) {
-      return this.modelManager.method1027(var1)::method1098;
+   public Function<ResourceLocation, TextureAtlasSprite> getAtlasSpriteGetter(ResourceLocation var1) {
+      return this.modelManager.getAtlasTexture(var1)::getSprite;
    }
 
-   public boolean method1543() {
-      return this.field1309;
+   public boolean isJava64bit() {
+      return this.jvm64bit;
    }
 
-   public boolean method1544() {
+   public boolean isGamePaused() {
       return this.isGamePaused;
    }
 
-   public Class270 method1545() {
-      return this.field1324;
+   public GPUWarning getGPUWarning() {
+      return this.warningGPU;
    }
 
-   public Class274 method1546() {
+   public SoundHandler getSoundHandler() {
       return this.soundHandler;
    }
 
-   public Class3496 method1547() {
-      if (this.currentScreen instanceof Class1342) {
-         return Class7751.field33273;
+   public BackgroundMusicSelector getBackgroundMusicSelector() {
+      if (this.currentScreen instanceof WinGameScreen) {
+         return BackgroundMusicTracks.CREDITS_MUSIC;
       } else if (this.player != null) {
-         if (this.player.field5024.method6813() == World.THE_END) {
-            return this.ingameGUI.method5995().method5957() ? Class7751.field33274 : Class7751.field33275;
+         if (this.player.world.getDimensionKey() == World.THE_END) {
+            return this.ingameGUI.getBossOverlay().shouldPlayEndBossMusic() ? BackgroundMusicTracks.DRAGON_FIGHT_MUSIC : BackgroundMusicTracks.END_MUSIC;
          } else {
-            Class100 var1 = this.player.field5024.method7003(this.player.method3432()).method32527();
-            if (!this.field1321.method33669(Class7751.field33276) && (!this.player.method3256() || var1 != Class100.field285 && var1 != Class100.field287)) {
-               return this.player.field5024.method6813() != World.field9000
-                     && this.player.field4919.field29609
-                     && this.player.field4919.field29608
-                  ? Class7751.field33272
-                  : this.world.method6822().method20325(this.player.method3432()).method32526().orElse(Class7751.field33277);
+            Class100 var1 = this.player.world.getBiome(this.player.getPosition()).getCategory();
+            if (!this.musicTicker.isBackgroundMusicPlaying(BackgroundMusicTracks.UNDER_WATER_MUSIC) && (!this.player.canSwim() || var1 != Class100.OCEAN && var1 != Class100.RIVER)) {
+               return this.player.world.getDimensionKey() != World.THE_NETHER
+                     && this.player.abilities.isCreativeMode
+                     && this.player.abilities.allowFlying
+                  ? BackgroundMusicTracks.CREATIVE_MODE_MUSIC
+                  : this.world.getBiomeManager().getBiomeAtPosition(this.player.getPosition()).getBackgroundMusic().orElse(BackgroundMusicTracks.WORLD_MUSIC);
             } else {
-               return Class7751.field33276;
+               return BackgroundMusicTracks.UNDER_WATER_MUSIC;
             }
          }
       } else {
-         return Class7751.field33271;
+         return BackgroundMusicTracks.MAIN_MENU_MUSIC;
       }
    }
 
-   public MinecraftSessionService method1548() {
-      return this.field1325;
+   public MinecraftSessionService getSessionService() {
+      return this.sessionService;
    }
 
-   public Class9758 method1549() {
-      return this.field1327;
+   public SkinManager getSkinManager() {
+      return this.skinManager;
    }
 
    @Nullable
-   public Entity method1550() {
-      return this.field1344;
+   public Entity getRenderViewEntity() {
+      return this.renderViewEntity;
    }
 
-   public void method1551(Entity var1) {
-      this.field1344 = var1;
-      this.gameRenderer.method735(var1);
+   public void setRenderViewEntity(Entity var1) {
+      this.renderViewEntity = var1;
+      this.gameRenderer.loadEntityShader(var1);
    }
 
-   public boolean method1552(Entity var1) {
-      return var1.method3340()
-         || this.player != null && this.player.method2800() && this.gameSettings.field44653.method8509() && var1.method3204() == Class8992.field41111;
-   }
-
-   @Override
-   public Thread method1391() {
-      return this.field1358;
+   public boolean isEntityGlowing(Entity var1) {
+      return var1.isGlowing()
+         || this.player != null && this.player.isSpectator() && this.gameSettings.keyBindSpectatorOutlines.isKeyDown() && var1.getType() == EntityType.PLAYER;
    }
 
    @Override
-   public Runnable method1440(Runnable var1) {
+   public Thread getExecutionThread() {
+      return this.thread;
+   }
+
+   @Override
+   public Runnable wrapTask(Runnable var1) {
       return var1;
    }
 
    @Override
-   public boolean method1439(Runnable var1) {
+   public boolean canRun(Runnable var1) {
       return true;
    }
 
-   public Class217 method1553() {
-      return this.field1329;
+   public BlockRendererDispatcher getBlockRendererDispatcher() {
+      return this.blockRenderDispatcher;
    }
 
-   public Class8853 method1554() {
-      return this.field1288;
+   public EntityRendererManager getRenderManager() {
+      return this.renderManager;
    }
 
-   public Class216 method1555() {
-      return this.field1289;
+   public ItemRenderer getItemRenderer() {
+      return this.itemRenderer;
    }
 
-   public Class9641 method1556() {
-      return this.field1290;
+   public FirstPersonRenderer getFirstPersonRenderer() {
+      return this.firstPersonRenderer;
    }
 
-   public <T> Class7010<T> method1557(Class9434<T> var1) {
-      return this.field1292.<T>method962(var1);
+   public <T> IMutableSearchTree<T> getSearchTree(SearchTreeManager.Key<T> var1) {
+      return this.searchTreeManager.<T>get(var1);
    }
 
-   public Class9789 method1558() {
-      return this.field1308;
+   public FrameTimer getFrameTimer() {
+      return this.frameTimer;
    }
 
-   public boolean method1559() {
-      return this.field1357;
+   public boolean isConnectedToRealms() {
+      return this.connectedToRealms;
    }
 
-   public void method1560(boolean var1) {
-      this.field1357 = var1;
+   public void setConnectedToRealms(boolean var1) {
+      this.connectedToRealms = var1;
    }
 
-   public DataFixer method1561() {
-      return this.field1281;
+   public DataFixer getDataFixer() {
+      return this.dataFixer;
    }
 
-   public float method1562() {
+   public float getRenderPartialTicks() {
       return this.timer.renderPartialTicks;
    }
 
-   public float method1563() {
-      return this.timer.field40357;
+   public float getTickLength() {
+      return this.timer.elapsedPartialTicks;
    }
 
-   public Class8396 method1564() {
-      return this.field1317;
+   public BlockColors getBlockColors() {
+      return this.blockColors;
    }
 
-   public boolean method1565() {
-      return this.player != null && this.player.method2964() || this.gameSettings.field44621;
+   public boolean isReducedDebug() {
+      return this.player != null && this.player.hasReducedDebug() || this.gameSettings.reducedDebugInfo;
    }
 
-   public Class1264 method1566() {
+   public ToastGui getToastGui() {
       return this.toastGui;
    }
 
-   public Class9557 method1567() {
-      return this.field1334;
+   public Tutorial getTutorial() {
+      return this.tutorial;
    }
 
-   public boolean method1568() {
-      return this.field1367;
+   public boolean isGameFocused() {
+      return this.isWindowFocused;
    }
 
-   public Class8044 method1569() {
-      return this.field1300;
+   public CreativeSettings getCreativeSettings() {
+      return this.creativeSettings;
    }
 
-   public Class280 method1570() {
+   public ModelManager getModelManager() {
       return this.modelManager;
    }
 
-   public Class278 method1571() {
+   public PaintingSpriteUploader getPaintingSpriteUploader() {
       return this.paintingSprites;
    }
 
-   public Class279 method1572() {
+   public PotionSpriteUploader getPotionSpriteUploader() {
       return this.potionSprites;
    }
 
    @Override
-   public void method1573(boolean var1) {
-      this.field1367 = var1;
+   public void setGameFocused(boolean var1) {
+      this.isWindowFocused = var1;
    }
 
-   public Class7165 method1574() {
+   public IProfiler getProfiler() {
       return this.profiler;
    }
 
-   public Class8274 method1575() {
-      return this.field1333;
+   public MinecraftGame getMinecraftGame() {
+      return this.game;
    }
 
-   public Class271 method1576() {
-      return this.field1323;
+   public Splashes getSplashes() {
+      return this.splashes;
    }
 
    @Nullable
-   public LoadingGui method1577() {
-      return this.loadingGuiIn;
+   public LoadingGui getLoadingGui() {
+      return this.loadingGui;
    }
 
-   public Class9645 method1578() {
-      return this.field1335;
+   public FilterManager func_244599_aA() {
+      return this.field_244597_aC;
    }
 
-   public boolean method1579() {
+   public boolean isRenderOnThread() {
       return false;
    }
 
-   public Class1815 method1580() {
+   public MainWindow getMainWindow() {
       return this.mainWindow;
    }
 
-   public Class7911 method1581() {
-      return this.field1286;
+   public RenderTypeBuffers getRenderTypeBuffers() {
+      return this.renderTypeBuffers;
    }
 
-   private static Class1810 method1582(String var0, boolean var1, Supplier<Class303> var2, Class303 var3, Class6811 var4, Class1967 var5, Class7725 var6) {
-      int var7 = var4.method20753();
-      Supplier var8 = var2;
-      if (var7 <= 3) {
-         var8 = method1583(var2);
+   private static ResourcePackInfo makePackInfo(String name, boolean isAlwaysEnabled, Supplier<IResourcePack> resourceSupplier, IResourcePack resourcePack, PackMetadataSection resourcePackMeta, ResourcePackInfo.Priority priority, IPackNameDecorator decorator)
+   {
+      int i = resourcePackMeta.getPackFormat();
+      Supplier<IResourcePack> supplier = resourceSupplier;
+
+      if (i <= 3)
+      {
+         supplier = wrapV3(resourceSupplier);
       }
 
-      if (var7 <= 4) {
-         var8 = method1584(var8);
+      if (i <= 4)
+      {
+         supplier = wrapV4(supplier);
       }
 
-      return new Class1810(var0, var1, var8, var3, var4, var5, var6);
+      return new ResourcePackInfo(name, isAlwaysEnabled, supplier, resourcePack, resourcePackMeta, priority, decorator);
    }
 
-   private static Supplier<Class303> method1583(Supplier<Class303> var0) {
-      return () -> new Class304((Class303)var0.get(), Class304.field1179);
+   private static Supplier<IResourcePack> wrapV3(Supplier<IResourcePack> var0) {
+      return () -> new LegacyResourcePackWrapper((IResourcePack)var0.get(), LegacyResourcePackWrapper.NEW_TO_LEGACY_MAP);
    }
 
-   private static Supplier<Class303> method1584(Supplier<Class303> var0) {
-      return () -> new Class305((Class303)var0.get());
+   private static Supplier<IResourcePack> wrapV4(Supplier<IResourcePack> var0) {
+      return () -> new LegacyResourcePackWrapperV4((IResourcePack)var0.get());
    }
 
-   public void method1585(int var1) {
-      this.modelManager.method1028(var1);
+   public void setMipmapLevels(int var1) {
+      this.modelManager.setMaxMipmapLevel(var1);
    }
 
-   public static int method1586() {
-      return field1362;
+   public static int getFps() {
+      return debugFps;
+   }
+
+
+   public static final class PackManager implements AutoCloseable
+   {
+      private final ResourcePackList resourcePackList;
+      private final DataPackRegistries datapackRegistries;
+      private final IServerConfiguration serverConfiguration;
+
+      private PackManager(ResourcePackList resourcePackList, DataPackRegistries datapackRegistries, IServerConfiguration serverConfiguration)
+      {
+         this.resourcePackList = resourcePackList;
+         this.datapackRegistries = datapackRegistries;
+         this.serverConfiguration = serverConfiguration;
+      }
+
+      public ResourcePackList getResourcePacks()
+      {
+         return this.resourcePackList;
+      }
+
+      public DataPackRegistries getDataPackRegistries()
+      {
+         return this.datapackRegistries;
+      }
+
+      public IServerConfiguration getServerConfiguration()
+      {
+         return this.serverConfiguration;
+      }
+
+      public void close()
+      {
+         this.resourcePackList.close();
+         this.datapackRegistries.close();
+      }
+   }
+
+   static enum WorldSelectionType
+   {
+      NONE,
+      CREATE,
+      BACKUP;
    }
 }

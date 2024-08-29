@@ -12,12 +12,12 @@ public class Class7087 {
       this.field30496 = !Float.isInfinite(var3) && !Float.isNaN(var3) ? var3 % 360.0F : 0.0F;
    }
 
-   public Class7087(Class41 var1) {
+   public Class7087(ListNBT var1) {
       this(var1.method159(0), var1.method159(1), var1.method159(2));
    }
 
-   public Class41 method22012() {
-      Class41 var3 = new Class41();
+   public ListNBT method22012() {
+      ListNBT var3 = new ListNBT();
       var3.add(Class32.method90(this.field30494));
       var3.add(Class32.method90(this.field30495));
       var3.add(Class32.method90(this.field30496));

@@ -22,11 +22,11 @@ public class Class4174 extends Class4167 {
       }
    }
 
-   public Class4174(Class7792 var1, Class39 var2) {
+   public Class4174(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
    }
 
-   public Class4174(Class8761 var1, Class39 var2) {
+   public Class4174(Class8761 var1, CompoundNBT var2) {
       this(Class7792.field33429, var2);
    }
 

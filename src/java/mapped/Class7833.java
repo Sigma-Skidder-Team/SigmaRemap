@@ -17,5 +17,5 @@ public interface Class7833<T> {
 
    int method26245();
 
-   void method26246(Class41 var1);
+   void method26246(ListNBT var1);
 }

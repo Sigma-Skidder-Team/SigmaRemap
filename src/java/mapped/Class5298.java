@@ -28,7 +28,7 @@ public class Class5298 extends Module {
 
     public Class5298() {
         super(ModuleCategory.RENDER, "Freecam", "Move client side but not server side");
-        this.method15972(new Class6009<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
     }
 
     @EventTarget
@@ -89,7 +89,7 @@ public class Class5298 extends Module {
         String var3 = mc.player.getName().getString();
         GameProfile var4 = new GameProfile(mc.player.getGameProfile().getId(), var3);
         field23814 = new Class1116(mc.world, var4);
-        field23814.field4902 = mc.player.field4902;
+        field23814.inventory = mc.player.inventory;
         field23814.method3269(this.field23815, this.field23816, this.field23817, this.field23821, this.field23822);
         field23814.field5052 = true;
         field23814.field5053 = mc.player.field5053;
@@ -98,14 +98,14 @@ public class Class5298 extends Module {
         field23814.field4965 = this.field23821;
         field23814.field4966 = this.field23821;
         mc.world.method6846(this.field23823 = (int) (Math.random() * -10000.0), field23814);
-        this.field23826 = mc.gameSettings.field44632.method8509();
-        this.field23827 = mc.gameSettings.field44634.method8509();
-        this.field23828 = mc.gameSettings.field44633.method8509();
-        this.field23829 = mc.gameSettings.field44635.method8509();
+        this.field23826 = mc.gameSettings.field44632.isKeyDown();
+        this.field23827 = mc.gameSettings.field44634.isKeyDown();
+        this.field23828 = mc.gameSettings.field44633.isKeyDown();
+        this.field23829 = mc.gameSettings.field44635.isKeyDown();
         this.field23825 = this.field23826 != this.field23827 ? (float) (!this.field23826 ? -1 : 1) : 0.0F;
         this.field23824 = this.field23828 != this.field23829 ? (float) (!this.field23828 ? -1 : 1) : 0.0F;
-        this.field23830 = mc.gameSettings.field44636.method8509();
-        this.field23831 = mc.gameSettings.field44637.method8509();
+        this.field23830 = mc.gameSettings.field44636.isKeyDown();
+        this.field23831 = mc.gameSettings.field44637.isKeyDown();
         mc.gameSettings.field44632.field13071 = false;
         mc.gameSettings.field44634.field13071 = false;
         mc.gameSettings.field44633.field13071 = false;
@@ -278,7 +278,7 @@ public class Class5298 extends Module {
     private void method16648(Class4402 var1) {
         if (this.method15996()) {
             if (var1.method13932() instanceof CAnimateHandPacket) {
-                field23814.swingArm(Hand.field182);
+                field23814.swingArm(Hand.MAIN_HAND);
             }
 
             if (var1.method13932() instanceof CUseEntityPacket) {
@@ -298,7 +298,7 @@ public class Class5298 extends Module {
     }
 
     @EventTarget
-    private void method16650(Class4418 var1) {
+    private void method16650(WorldLoadEvent var1) {
         if (this.method15996()) {
             this.setState(false);
         }

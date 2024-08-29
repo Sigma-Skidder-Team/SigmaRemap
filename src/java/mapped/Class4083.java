@@ -29,7 +29,7 @@ public class Class4083 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8086 var5 = Class8086.field34743;
+      TileEntityRendererDispatcher var5 = TileEntityRendererDispatcher.instance;
       Object var6 = var5.method27968(Class4387.field21435);
       if (var6 instanceof Class5952) {
          if (((Class5942)var6).method18463() == null) {

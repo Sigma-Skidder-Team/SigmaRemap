@@ -10,17 +10,17 @@ public class Class2476 extends Class2475 {
    @Override
    public String getMessage() {
       String var3 = ""
-         + this.field16563.method8304()
+         + this.field16563.getX()
          + ","
          + this.field16563.getY()
          + ","
-         + this.field16563.method8306()
+         + this.field16563.getZ()
          + " (relative: "
-         + this.field16564.method8304()
+         + this.field16564.getX()
          + ","
          + this.field16564.getY()
          + ","
-         + this.field16564.method8306()
+         + this.field16564.getZ()
          + ")";
       return super.getMessage() + " at " + var3 + " (t=" + 0L + ")";
    }

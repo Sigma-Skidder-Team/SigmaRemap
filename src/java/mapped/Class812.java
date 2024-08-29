@@ -53,8 +53,8 @@ public class Class812 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
-      this.field4362 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, Class7127.field30659, var1 -> {
+      this.field4562.keyboardListener.method36347(true);
+      this.field4362 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field4368 = true;
          this.method2235();
       }));
@@ -83,8 +83,8 @@ public class Class812 extends Class798 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4375++;
       if (this.field4366 != null && this.field4361.tryAcquire(1)) {
          List<ITextComponent> var3 = Lists.newArrayList();
@@ -157,21 +157,21 @@ public class Class812 extends Class798 {
       double var4 = Math.min((double)this.field4364.field30735 / (double)this.field4364.field30736, 1.0);
       this.field4367 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.method27862();
-      Class9352 var6 = Class9352.method35409();
-      Class5425 var7 = var6.method35411();
-      var7.method17063(7, Class9337.field43342);
+      RenderSystem.disableTexture();
+      Tessellator var6 = Tessellator.getInstance();
+      BufferBuilder var7 = var6.getBuffer();
+      var7.begin(7, DefaultVertexFormats.POSITION_COLOR);
       double var8 = (double)(this.field4564 / 2 - 100);
       double var10 = 0.5;
-      var7.method17025(var8 - 0.5, 95.5, 0.0).method17026(217, 210, 210, 255).method17031();
-      var7.method17025(var8 + 200.0 * var4 + 0.5, 95.5, 0.0).method17026(217, 210, 210, 255).method17031();
-      var7.method17025(var8 + 200.0 * var4 + 0.5, 79.5, 0.0).method17026(217, 210, 210, 255).method17031();
-      var7.method17025(var8 - 0.5, 79.5, 0.0).method17026(217, 210, 210, 255).method17031();
-      var7.method17025(var8, 95.0, 0.0).method17026(128, 128, 128, 255).method17031();
-      var7.method17025(var8 + 200.0 * var4, 95.0, 0.0).method17026(128, 128, 128, 255).method17031();
-      var7.method17025(var8 + 200.0 * var4, 80.0, 0.0).method17026(128, 128, 128, 255).method17031();
-      var7.method17025(var8, 80.0, 0.0).method17026(128, 128, 128, 255).method17031();
-      var6.method35410();
+      var7.pos(var8 - 0.5, 95.5, 0.0).color(217, 210, 210, 255).endVertex();
+      var7.pos(var8 + 200.0 * var4 + 0.5, 95.5, 0.0).color(217, 210, 210, 255).endVertex();
+      var7.pos(var8 + 200.0 * var4 + 0.5, 79.5, 0.0).color(217, 210, 210, 255).endVertex();
+      var7.pos(var8 - 0.5, 79.5, 0.0).color(217, 210, 210, 255).endVertex();
+      var7.pos(var8, 95.0, 0.0).color(128, 128, 128, 255).endVertex();
+      var7.pos(var8 + 200.0 * var4, 95.0, 0.0).color(128, 128, 128, 255).endVertex();
+      var7.pos(var8 + 200.0 * var4, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
+      var7.pos(var8, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
+      var6.draw();
       RenderSystem.enableTexture();
       method5690(var1, this.field4568, this.field4367 + " %", this.field4564 / 2, 84, 16777215);
    }
@@ -197,7 +197,7 @@ public class Class812 extends Class798 {
 
    private void method2239(MatrixStack var1, long var2) {
       if (var2 > 0L) {
-         int var6 = this.field4568.method38820(this.field4367);
+         int var6 = this.field4568.getStringWidth(this.field4367);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
          this.field4568.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
@@ -220,7 +220,7 @@ public class Class812 extends Class798 {
                   if (var3.method36590()) {
                      var3.method36588();
                      this.field4365 = new TranslationTextComponent("mco.download.failed");
-                     this.field4362.method5743(Class7127.field30658);
+                     this.field4362.method5743(DialogTexts.field30658);
                      return;
                   }
 
@@ -247,7 +247,7 @@ public class Class812 extends Class798 {
 
                this.field4370 = true;
                this.field4366 = new TranslationTextComponent("mco.download.done");
-               this.field4362.method5743(Class7127.field30658);
+               this.field4362.method5743(DialogTexts.field30658);
             }
          } catch (InterruptedException var11) {
             field4356.error("Could not acquire upload lock");

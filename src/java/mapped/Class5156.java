@@ -21,7 +21,7 @@ public class Class5156 extends Module {
 
     public Class5156() {
         super(ModuleCategory.PLAYER, "OldHitting", "Reverts to 1.7/1.8 hitting");
-        this.method15972(new Class6005("Animation", "Animation mode", 0, "Vanilla", "Tap", "Tap2", "Slide", "Slide2", "Scale", "Leaked", "Ninja", "Down"));
+        this.registerSetting(new ModeSetting("Animation", "Animation mode", 0, "Vanilla", "Tap", "Tap2", "Slide", "Slide2", "Scale", "Leaked", "Ninja", "Down"));
         this.method16005(true);
     }
 
@@ -31,15 +31,15 @@ public class Class5156 extends Module {
     private void method16020(Class4399 var1) {
         if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
             if (var1.method13921()) {
-                boolean var4 = mc.player.method3090() != null && mc.player.method3090().method32107() instanceof Class3267;
+                boolean var4 = mc.player.method3090() != null && mc.player.method3090().getItem() instanceof Class3267;
                 boolean var5 = Client.getInstance().getModuleManager().method14662(Class5357.class).method15988();
                 boolean var6 = true;
                 if (!mc.player.method3331()
-                        && mc.field1346.method31417() == Class2100.field13690
+                        && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
                         && !Client.getInstance().getModuleManager().method14662(Class5357.class).method15988()) {
-                    Class8711 var7 = (Class8711) mc.field1346;
-                    BlockPos var8 = var7.method31423();
-                    Block var9 = mc.world.method6738(var8).method23383();
+                    BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;
+                    BlockPos var8 = var7.getPos();
+                    Block var9 = mc.world.getBlockState(var8).getBlock();
                     ArrayList var10 = new ArrayList<Block>(
                             Arrays.asList(
                                     Blocks.CHEST,
@@ -71,7 +71,7 @@ public class Class5156 extends Module {
                     }
                 }
 
-                field23408 = mc.gameSettings.field44642.method8509() && var4 && var6 && var6 || var5;
+                field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || var5;
                 if (!field23408) {
                     if (ViaVersionLoader.field31493.contains(mc.player)) {
                         ViaVersionLoader.field31493.remove(mc.player);
@@ -104,7 +104,7 @@ public class Class5156 extends Module {
                     var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.method3205()
                             && var6.getFirst() == Class2106.field13732
                             && var6.getSecond() != null
-                            && var6.getSecond().method32107() == Class8514.field38119);
+                            && var6.getSecond().getItem() == Items.field38119);
                 }
             }
         }
@@ -116,7 +116,7 @@ public class Class5156 extends Module {
     private void method16022(Class4400 var1) {
         if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
             float var4 = var1.method13924();
-            if (var1.method13926() && var1.method13927() == Class2205.field14417 && var1.method13928().method32107() instanceof Class3334) {
+            if (var1.method13926() && var1.method13927() == Class2205.field14417 && var1.method13928().getItem() instanceof Class3334) {
                 var1.method13931(false);
             } else if (var1.method13927() != Class2205.field14417 || !field23408) {
                 if (field23408 && var1.method13926()) {
@@ -163,12 +163,12 @@ public class Class5156 extends Module {
     }
 
     private void method16024(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.48F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
+        var3.translate(0.48F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(var2 * var2 * (float) Math.PI);
-        float var7 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
+        float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -178,12 +178,12 @@ public class Class5156 extends Module {
     }
 
     private void method16025(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.48F, -0.39F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
+        var3.translate(0.48F, -0.39F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(100.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-50.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(var2 * (float) Math.PI);
-        float var7 = MathHelper.method37763(var2 * (float) Math.PI);
+        float var6 = MathHelper.sin(var2 * (float) Math.PI);
+        float var7 = MathHelper.sin(var2 * (float) Math.PI);
         this.method16023(var6 * -10.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -30.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * 109.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -193,12 +193,12 @@ public class Class5156 extends Module {
     }
 
     private void method16026(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.48F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
+        var3.translate(0.48F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(var2 * var2 * (float) Math.PI);
-        float var7 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
+        float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -208,25 +208,25 @@ public class Class5156 extends Module {
     }
 
     private void method16027(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.0, -3.5, 0.0);
-        var3.method35291(0.56F, -0.52F, -0.72F);
-        var3.method35291(0.56F, -0.22F, -0.71999997F);
+        var3.translate(0.0, -3.5, 0.0);
+        var3.translate(0.56F, -0.52F, -0.72F);
+        var3.translate(0.56F, -0.22F, -0.71999997F);
         this.method16023(45.0F, 0.0F, 1.0F, 0.0F, var3);
-        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(0.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var6 * -9.0F, 1.0F, 0.0F, 0.0F, var3);
         this.method16023(-9.0F, 0.0F, 0.0F, 1.0F, var3);
-        var3.method35291(0.0, 3.2F, 0.0);
+        var3.translate(0.0, 3.2F, 0.0);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         var3.method35292(2.7F, 2.7F, 2.7F);
     }
 
     private void method16028(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.648F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
+        var3.translate(0.648F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.method16023(-var6 * 10.0F, 1.0F, -2.0F, 3.0F, var3);
         float var7 = 1.2F;
@@ -234,11 +234,11 @@ public class Class5156 extends Module {
     }
 
     private void method16029(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.648F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
+        var3.translate(0.648F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         this.method16023(-var6 * 20.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F;
@@ -246,12 +246,12 @@ public class Class5156 extends Module {
     }
 
     private void method16030(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.48F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.6F), 0.0);
+        var3.translate(0.48F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.6F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(var2 * var2 * (float) Math.PI);
-        float var7 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(var2 * var2 * (float) Math.PI);
+        float var7 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(var6 * -20.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(var7 * -20.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(var7 * -69.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -261,19 +261,19 @@ public class Class5156 extends Module {
     }
 
     private void method16031(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.48F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var1 * -0.2F), 0.0);
+        var3.translate(0.48F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var1 * -0.2F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
-        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
         float var7 = 1.2F - var6 * 0.3F;
         var3.method35292(var7, var7, var7);
     }
 
     private void method16032(float var1, float var2, MatrixStack var3) {
-        var3.method35291(0.56, -0.52, -0.72);
-        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
+        var3.translate(0.56, -0.52, -0.72);
+        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);
@@ -282,9 +282,9 @@ public class Class5156 extends Module {
     }
 
     private void method16033(float var1, float var2, MatrixStack var3) {
-        float var6 = MathHelper.method37763(MathHelper.method37765(var2) * (float) Math.PI);
-        var3.method35291(0.48F, -0.55F, -0.71999997F);
-        var3.method35291(0.0, (double) (var6 * -0.2F), 0.0);
+        float var6 = MathHelper.sin(MathHelper.method37765(var2) * (float) Math.PI);
+        var3.translate(0.48F, -0.55F, -0.71999997F);
+        var3.translate(0.0, (double) (var6 * -0.2F), 0.0);
         this.method16023(77.0F, 0.0F, 1.0F, 0.0F, var3);
         this.method16023(-10.0F, 0.0F, 0.0F, 1.0F, var3);
         this.method16023(-80.0F, 1.0F, 0.0F, 0.0F, var3);

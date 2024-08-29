@@ -22,7 +22,7 @@ public class Class4846 implements Class4843<Class920> {
    @Override
    public ItemStack method14962(Class920 var1) {
       ItemStack var4 = this.field22628.copy();
-      Class39 var5 = var1.method3618(0).method32142();
+      CompoundNBT var5 = var1.method3618(0).method32142();
       if (var5 != null) {
          var4.method32148(var5.method79());
       }
@@ -36,7 +36,7 @@ public class Class4846 implements Class4843<Class920> {
    }
 
    @Override
-   public ItemStack method14966() {
+   public ItemStack getRecipeOutput() {
       return this.field22628;
    }
 

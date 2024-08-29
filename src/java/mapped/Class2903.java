@@ -24,12 +24,12 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    public static boolean method11229(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, var0x -> var0x.method23393() || var0x.method23446(Class7645.field32767));
+      return var0.method6815(var1, var0x -> var0x.isAir() || var0x.method23446(Class7645.field32767));
    }
 
    private static boolean method11230(Class1680 var0, BlockPos var1) {
       return var0.method6815(var1, var0x -> {
-         Block var3 = var0x.method23383();
+         Block var3 = var0x.getBlock();
          return method11219(var3) || var3 == Blocks.FARMLAND;
       });
    }
@@ -41,7 +41,7 @@ public class Class2903 extends Class2898<Class4733> {
       });
    }
 
-   public static void method11232(Class1681 var0, BlockPos var1, Class7380 var2) {
+   public static void method11232(Class1681 var0, BlockPos var1, BlockState var2) {
       var0.method6725(var1, var2, 19);
    }
 
@@ -75,7 +75,7 @@ public class Class2903 extends Class2898<Class4733> {
             var17 = var15;
          }
 
-         var14 = new BlockPos(var3.method8304(), var17, var3.method8306());
+         var14 = new BlockPos(var3.getX(), var17, var3.getZ());
       }
 
       if (var14.getY() < 1 || var14.getY() + var10 + 1 > 256) {
@@ -115,7 +115,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    @Override
-   public void method11217(Class1681 var1, BlockPos var2, Class7380 var3) {
+   public void method11217(Class1681 var1, BlockPos var2, BlockState var3) {
       method11232(var1, var2, var3);
    }
 
@@ -155,25 +155,25 @@ public class Class2903 extends Class2898<Class4733> {
 
       for (BlockPos var12 : Lists.newArrayList(var4)) {
          if (var2.method38396(var12)) {
-            var8.method26718(var12.method8304() - var2.field45678, var12.getY() - var2.field45679, var12.method8306() - var2.field45680, true, true);
+            var8.method26718(var12.getX() - var2.field45678, var12.getY() - var2.field45679, var12.getZ() - var2.field45680, true, true);
          }
       }
 
       for (BlockPos var26 : Lists.newArrayList(var3)) {
          if (var2.method38396(var26)) {
-            var8.method26718(var26.method8304() - var2.field45678, var26.getY() - var2.field45679, var26.method8306() - var2.field45680, true, true);
+            var8.method26718(var26.getX() - var2.field45678, var26.getY() - var2.field45679, var26.getZ() - var2.field45680, true, true);
          }
 
          for (Direction var16 : Direction.values()) {
             var23.method8377(var26, var16);
             if (!var3.contains(var23)) {
-               Class7380 var17 = var1.method6738(var23);
+               BlockState var17 = var1.getBlockState(var23);
                if (var17.method23462(Class8820.field39747)) {
                   ((Set)var7.get(0)).add(var23.method8353());
                   method11232(var1, var23, var17.method23465(Class8820.field39747, Integer.valueOf(1)));
                   if (var2.method38396(var23)) {
                      var8.method26718(
-                        var23.method8304() - var2.field45678, var23.getY() - var2.field45679, var23.method8306() - var2.field45680, true, true
+                        var23.getX() - var2.field45678, var23.getY() - var2.field45679, var23.getZ() - var2.field45680, true, true
                      );
                   }
                }
@@ -187,21 +187,21 @@ public class Class2903 extends Class2898<Class4733> {
 
          for (BlockPos var30 : var27) {
             if (var2.method38396(var30)) {
-               var8.method26718(var30.method8304() - var2.field45678, var30.getY() - var2.field45679, var30.method8306() - var2.field45680, true, true);
+               var8.method26718(var30.getX() - var2.field45678, var30.getY() - var2.field45679, var30.getZ() - var2.field45680, true, true);
             }
 
             for (Direction var19 : Direction.values()) {
                var23.method8377(var30, var19);
                if (!var27.contains(var23) && !var28.contains(var23)) {
-                  Class7380 var20 = var1.method6738(var23);
+                  BlockState var20 = var1.getBlockState(var23);
                   if (var20.method23462(Class8820.field39747)) {
                      int var21 = var20.<Integer>method23463(Class8820.field39747);
                      if (var21 > var25 + 1) {
-                        Class7380 var22 = var20.method23465(Class8820.field39747, Integer.valueOf(var25 + 1));
+                        BlockState var22 = var20.method23465(Class8820.field39747, Integer.valueOf(var25 + 1));
                         method11232(var1, var23, var22);
                         if (var2.method38396(var23)) {
                            var8.method26718(
-                              var23.method8304() - var2.field45678, var23.getY() - var2.field45679, var23.method8306() - var2.field45680, true, true
+                              var23.getX() - var2.field45678, var23.getY() - var2.field45679, var23.getZ() - var2.field45680, true, true
                            );
                         }
 

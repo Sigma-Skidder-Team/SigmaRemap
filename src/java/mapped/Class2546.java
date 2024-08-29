@@ -23,7 +23,7 @@ public class Class2546 implements Class2545 {
    private List<Class8442> field16783;
    private Style field16784;
    private Class1807 field16785;
-   public final Class9834 field16786;
+   public final FontRenderer field16786;
 
    private void method10740(Class8442 var1) {
       if (this.field16783 == null) {
@@ -33,7 +33,7 @@ public class Class2546 implements Class2545 {
       this.field16783.add(var1);
    }
 
-   public Class2546(Class9834 var1, Class7733 var2, float var3, float var4, int var5, boolean var6, Class9367 var7, boolean var8, int var9) {
+   public Class2546(FontRenderer var1, Class7733 var2, float var3, float var4, int var5, boolean var6, Class9367 var7, boolean var8, int var9) {
       this.field16786 = var1;
       this.field16771 = var2;
       this.field16781 = var3;
@@ -75,7 +75,7 @@ public class Class2546 implements Class2545 {
          float var18 = !var9 ? 0.0F : var7.method8701();
          float var16 = !this.field16772 ? 0.0F : var7.method8702();
          Class5422 var17 = this.field16771.method25597(var8.method32942(this.field16779));
-         Class9834.method38832(
+         FontRenderer.method38832(
             this.field16786,
             var8,
             var9,
@@ -141,7 +141,7 @@ public class Class2546 implements Class2545 {
       }
 
       if (this.field16783 != null) {
-         Class8978 var9 = Class9834.method38833(this.field16786, Style.DEFAULT_FONT).method7927();
+         Class8978 var9 = FontRenderer.method38833(this.field16786, Style.DEFAULT_FONT).method7927();
          Class5422 var10 = this.field16771.method25597(var9.method32942(this.field16779));
 
          for (Class8442 var12 : this.field16783) {
@@ -155,7 +155,7 @@ public class Class2546 implements Class2545 {
    private Class1807 method10742(Style var1) {
       if (var1 != this.field16784) {
          this.field16784 = var1;
-         this.field16785 = Class9834.method38833(this.field16786, var1.getFontId());
+         this.field16785 = FontRenderer.method38833(this.field16786, var1.getFontId());
          return this.field16785;
       } else {
          return this.field16785;

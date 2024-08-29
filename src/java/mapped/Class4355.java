@@ -66,7 +66,7 @@ public class Class4355 extends Class4247 {
          ResourceRegistry.JelloLightFont14,
          (float)(this.field20895 + 68),
          (float)(this.field20896 + 38),
-         "x:" + this.field21292.method8304() + " z:" + this.field21292.method8306(),
+         "x:" + this.field21292.getX() + " z:" + this.field21292.getZ(),
          Class5628.method17688(Class1979.field12891.field12910, 0.5F)
       );
       byte var4 = 27;

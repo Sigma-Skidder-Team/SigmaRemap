@@ -11,6 +11,6 @@ public final class Class374 extends Thread {
 
    @Override
    public void run() {
-      this.field1628.method1296(true);
+      this.field1628.initiateShutdown(true);
    }
 }

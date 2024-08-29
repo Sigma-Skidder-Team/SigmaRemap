@@ -91,13 +91,13 @@ public class Class9195 {
    }
 
    private static int method34455(Class6619 var0, BlockPos var1, int var2, ItemStack var3) throws CommandSyntaxException {
-      Class944 var6 = var0.method20172().method6759(var1);
+      TileEntity var6 = var0.method20172().getTileEntity(var1);
       if (var6 instanceof Class920) {
          Class920 var7 = (Class920)var6;
          if (var2 >= 0 && var2 < var7.method3629()) {
             var7.method3621(var2, var3);
             var0.method20179(
-               new TranslationTextComponent("commands.replaceitem.block.success", var1.method8304(), var1.getY(), var1.method8306(), var3.method32173()),
+               new TranslationTextComponent("commands.replaceitem.block.success", var1.getX(), var1.getY(), var1.getZ(), var3.method32173()),
                true
             );
             return 1;

@@ -13,7 +13,7 @@ import java.util.List;
 public class Class1260<C extends Class920> implements Class1253<Integer> {
    public static final Logger field6658 = LogManager.getLogger();
    public final Class6207 field6659 = new Class6207();
-   public Class974 field6660;
+   public PlayerInventory field6660;
    public Class5828<C> field6661;
 
    public Class1260(Class5828<C> var1) {
@@ -22,10 +22,10 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
    public void method5868(ServerPlayerEntity var1, Class4843<C> var2, boolean var3) {
       if (var2 != null && var1.method2810().method21360(var2)) {
-         this.field6660 = var1.field4902;
-         if (this.method5874() || var1.method2801()) {
+         this.field6660 = var1.inventory;
+         if (this.method5874() || var1.isCreative()) {
             this.field6659.method19128();
-            var1.field4902.method4061(this.field6659);
+            var1.inventory.method4061(this.field6659);
             this.field6661.method18220(this.field6659);
             if (!this.field6659.method19123(var2, (IntList)null)) {
                this.method5869();
@@ -34,7 +34,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
                this.method5871(var2, var3);
             }
 
-            var1.field4902.method3622();
+            var1.inventory.method3622();
          }
       }
    }
@@ -51,8 +51,8 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
    public void method5870(int var1) {
       ItemStack var4 = this.field6661.method18131(var1).method18265();
-      if (!var4.method32105()) {
-         for (; var4.method32179() > 0; this.field6661.method18131(var1).method18272(1)) {
+      if (!var4.isEmpty()) {
+         for (; var4.getCount() > 0; this.field6661.method18131(var1).method18272(1)) {
             int var5 = this.field6660.method4043(var4);
             if (var5 == -1) {
                var5 = this.field6660.method4032();
@@ -74,7 +74,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
          for (int var7 = 0; var7 < this.field6661.method18225() * this.field6661.method18224() + 1; var7++) {
             if (var7 != this.field6661.method18223()) {
                ItemStack var8 = this.field6661.method18131(var7).method18265();
-               if (!var8.method32105() && Math.min(var6, var8.method32113()) < var8.method32179() + 1) {
+               if (!var8.isEmpty() && Math.min(var6, var8.method32113()) < var8.getCount() + 1) {
                   return;
                }
             }
@@ -106,7 +106,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    public void method5830(Iterator<Integer> var1, int var2, int var3, int var4, int var5) {
       Class5839 var8 = this.field6661.method18131(var2);
       ItemStack var9 = Class6207.method19127((Integer)var1.next());
-      if (!var9.method32105()) {
+      if (!var9.isEmpty()) {
          for (int var10 = 0; var10 < var3; var10++) {
             this.method5873(var8, var9);
          }
@@ -122,8 +122,8 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
             for (int var7 = 0; var7 < this.field6661.method18224() * this.field6661.method18225() + 1; var7++) {
                if (var7 != this.field6661.method18223()) {
                   ItemStack var8 = this.field6661.method18131(var7).method18265();
-                  if (!var8.method32105() && var6 > var8.method32179()) {
-                     var6 = var8.method32179();
+                  if (!var8.isEmpty() && var6 > var8.getCount()) {
+                     var6 = var8.getCount();
                   }
                }
             }
@@ -143,15 +143,15 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       int var5 = this.field6660.method4037(var2);
       if (var5 != -1) {
          ItemStack var6 = this.field6660.method3618(var5).copy();
-         if (!var6.method32105()) {
-            if (var6.method32179() <= 1) {
+         if (!var6.isEmpty()) {
+            if (var6.getCount() <= 1) {
                this.field6660.method3620(var5);
             } else {
                this.field6660.method3619(var5, 1);
             }
 
             var6.method32180(1);
-            if (!var1.method18265().method32105()) {
+            if (!var1.method18265().isEmpty()) {
                var1.method18265().method32181(1);
             } else {
                var1.method18267(var6);
@@ -167,18 +167,18 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       for (int var5 = 0; var5 < this.field6661.method18224() * this.field6661.method18225() + 1; var5++) {
          if (var5 != this.field6661.method18223()) {
             ItemStack var6 = this.field6661.method18131(var5).method18265().copy();
-            if (!var6.method32105()) {
+            if (!var6.isEmpty()) {
                int var7 = this.field6660.method4043(var6);
                if (var7 == -1 && var3.size() <= var4) {
                   for (ItemStack var9 : var3) {
-                     if (var9.method32132(var6) && var9.method32179() != var9.method32113() && var9.method32179() + var6.method32179() <= var9.method32113()) {
-                        var9.method32181(var6.method32179());
+                     if (var9.method32132(var6) && var9.getCount() != var9.method32113() && var9.getCount() + var6.getCount() <= var9.method32113()) {
+                        var9.method32181(var6.getCount());
                         var6.method32180(0);
                         break;
                      }
                   }
 
-                  if (!var6.method32105()) {
+                  if (!var6.isEmpty()) {
                      if (var3.size() >= var4) {
                         return false;
                      }
@@ -199,7 +199,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       int var3 = 0;
 
       for (ItemStack var5 : this.field6660.field5439) {
-         if (var5.method32105()) {
+         if (var5.isEmpty()) {
             var3++;
          }
       }

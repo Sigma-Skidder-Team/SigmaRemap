@@ -2,10 +2,10 @@ package mapped;
 
 public class Class4094 extends Class4057 {
    public Class4094() {
-      super(Class8992.field41098, "villager", 0.5F);
+      super(EntityType.field41098, "villager", 0.5F);
    }
 
-   public Class4094(Class8992 var1, String var2, float var3) {
+   public Class4094(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 
@@ -63,8 +63,8 @@ public class Class4094 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class192 var5 = (Class192) Minecraft.getInstance().method1537();
-      Class8853 var6 = Minecraft.getInstance().method1554();
+      IReloadableResourceManager var5 = (IReloadableResourceManager) Minecraft.getInstance().getResourceManager();
+      EntityRendererManager var6 = Minecraft.getInstance().getRenderManager();
       Class5692 var7 = new Class5692(var6, var5);
       var7.field25086 = (Class2802<Class1042>)var1;
       var7.field25098 = var2;

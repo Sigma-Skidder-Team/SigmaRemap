@@ -13,8 +13,8 @@ public class Class7891 extends Class7882<Class1042> {
    }
 
    public void method26425(ServerWorld var1, Class1042 var2) {
-      RegistryKey var5 = var1.method6813();
-      BlockPos var6 = var2.method3432();
+      RegistryKey var5 = var1.getDimensionKey();
+      BlockPos var6 = var2.getPosition();
       ArrayList var7 = Lists.newArrayList();
       byte var8 = 4;
 
@@ -22,7 +22,7 @@ public class Class7891 extends Class7882<Class1042> {
          for (int var10 = -2; var10 <= 2; var10++) {
             for (int var11 = -4; var11 <= 4; var11++) {
                BlockPos var12 = var6.method8336(var9, var10, var11);
-               if (var2.method4674().method26571().method29459().contains(var1.method6738(var12).method23383())) {
+               if (var2.method4674().method26571().method29459().contains(var1.getBlockState(var12).getBlock())) {
                   var7.add(Class9378.method35577(var5, var12));
                }
             }

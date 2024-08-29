@@ -34,12 +34,12 @@ public class Class2789 extends Class2595 {
       BlockPos var3 = Class1044.method4763(this.field17419);
       if (var3 != null && Class1044.method4764(this.field17422).method21664()) {
          if (!this.method10981(var3, 10.0)) {
-            Class1044.method4766(this.field17422).method21654((double)var3.method8304(), (double)var3.getY(), (double)var3.method8306(), this.field17421);
+            Class1044.method4766(this.field17422).method21654((double)var3.getX(), (double)var3.getY(), (double)var3.getZ(), this.field17421);
          } else {
             Vector3d var4 = new Vector3d(
-                  (double)var3.method8304() - this.field17419.getPosX(),
+                  (double)var3.getX() - this.field17419.getPosX(),
                   (double)var3.getY() - this.field17419.getPosY(),
-                  (double)var3.method8306() - this.field17419.getPosZ()
+                  (double)var3.getZ() - this.field17419.getPosZ()
                )
                .method11333();
             Vector3d var5 = var4.method11344(10.0).method11339(this.field17419.getPosX(), this.field17419.getPosY(), this.field17419.getPosZ());

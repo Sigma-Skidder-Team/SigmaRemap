@@ -2,11 +2,11 @@ package mapped;
 
 public final class Class9447 {
    private static String[] field43895;
-   private final Class7600 field43896;
+   private final TutorialToast field43896;
    private final int field43897;
    private int field43898;
 
-   public Class9447(Class7600 var1, int var2) {
+   public Class9447(TutorialToast var1, int var2) {
       this.field43896 = var1;
       this.field43897 = var2;
    }
@@ -27,7 +27,7 @@ public final class Class9447 {
    }
 
    // $VF: synthetic method
-   public static Class7600 method36326(Class9447 var0) {
+   public static TutorialToast method36326(Class9447 var0) {
       return var0.field43896;
    }
 }

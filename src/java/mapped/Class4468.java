@@ -20,14 +20,14 @@ public class Class4468 extends Class4457 {
    public JsonObject method14092(Class8107 var1) {
       JsonObject var4 = super.method14092(var1);
       if (this.field21655 != null) {
-         var4.addProperty("block", Registry.field16072.method9181(this.field21655).toString());
+         var4.addProperty("block", Registry.BLOCK.getKey(this.field21655).toString());
       }
 
       var4.add("state", this.field21656.method23262());
       return var4;
    }
 
-   public boolean method14119(Class7380 var1) {
+   public boolean method14119(BlockState var1) {
       return this.field21655 != null && !var1.method23448(this.field21655) ? false : this.field21656.method23258(var1);
    }
 }

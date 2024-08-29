@@ -19,8 +19,8 @@ public class Class6983 {
       return var0.<List<Class880>>method21410(Class8830.field39819).filter(var1x -> var1x.contains(var1)).isPresent();
    }
 
-   public static boolean method21571(Class6947<?> var0, Class8830<? extends Class880> var1, Class8992<?> var2) {
-      return method21572(var0, var1, var1x -> var1x.method3204() == var2);
+   public static boolean method21571(Class6947<?> var0, Class8830<? extends Class880> var1, EntityType<?> var2) {
+      return method21572(var0, var1, var1x -> var1x.getType() == var2);
    }
 
    private static boolean method21572(Class6947<?> var0, Class8830<? extends Class880> var1, Predicate<Class880> var2) {
@@ -56,13 +56,13 @@ public class Class6983 {
 
    public static void method21578(Class880 var0, ItemStack var1, Vector3d var2) {
       double var5 = var0.method3442() - 0.3F;
-      ItemEntity var7 = new ItemEntity(var0.field5024, var0.getPosX(), var5, var0.getPosZ(), var1);
+      ItemEntity var7 = new ItemEntity(var0.world, var0.getPosX(), var5, var0.getPosZ(), var1);
       float var8 = 0.3F;
       Vector3d var9 = var2.method11336(var0.getPositionVec());
       var9 = var9.method11333().method11344(0.3F);
       var7.method3434(var9);
       var7.method4131();
-      var0.field5024.method6916(var7);
+      var0.world.method6916(var7);
    }
 
    public static Class2002 method21579(ServerWorld var0, Class2002 var1, int var2) {
@@ -71,7 +71,7 @@ public class Class6983 {
    }
 
    public static boolean method21580(Class1006 var0, Class880 var1, int var2) {
-      Class3257 var5 = var0.method3090().method32107();
+      Item var5 = var0.method3090().getItem();
       if (var5 instanceof Class3262 && var0.method4234((Class3262)var5)) {
          int var6 = ((Class3262)var5).method11771() - var2;
          return var0.method3213(var1, (double)var6);
@@ -114,7 +114,7 @@ public class Class6983 {
 
    public static Optional<Class880> method21586(Class880 var0, Class8830<UUID> var1) {
       Optional<UUID> var4 = var0.method2992().method21410(var1);
-      return var4.map(var1x -> (Class880)((ServerWorld)var0.field5024).method6942(var1x));
+      return var4.map(var1x -> (Class880)((ServerWorld)var0.world).method6942(var1x));
    }
 
    public static Stream<Class1042> method21587(Class1042 var0, Predicate<Class1042> var1) {

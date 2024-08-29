@@ -40,7 +40,7 @@ public class Class4448 implements Class4442 {
    @Nullable
    public static Path method14080(Path var0, String var1, Path var2) {
       try {
-         Class39 var5 = Class8799.method31766(Files.newInputStream(var0));
+         CompoundNBT var5 = Class8799.method31766(Files.newInputStream(var0));
          ITextComponent var6 = var5.method78("    ", 0);
          String var7 = var6.getString() + "\n";
          Path var8 = var2.resolve(var1 + ".snbt");

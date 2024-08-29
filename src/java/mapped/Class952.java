@@ -20,7 +20,7 @@ public class Class952 implements Class949 {
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, Class974 var2, PlayerEntity var3) {
+   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       if (this.field5349.method3696(var3) && this.field5350.method3696(var3)) {
          this.field5349.method3743(var2.field5444);
          this.field5350.method3743(var2.field5444);

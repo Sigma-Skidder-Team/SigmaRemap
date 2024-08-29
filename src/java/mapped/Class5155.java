@@ -13,7 +13,7 @@ public class Class5155 extends Module {
 
    public Class5155() {
       super(ModuleCategory.MOVEMENT, "Hypixel", "Highjump for Hypixel");
-      this.method15972(new Class6009<Float>("Motion", "Highjump motion", 0.75F, Float.class, 0.42F, 5.0F, 0.05F));
+      this.registerSetting(new Class6009<Float>("Motion", "Highjump motion", 0.75F, Float.class, 0.42F, 5.0F, 0.05F));
    }
 
    @Override

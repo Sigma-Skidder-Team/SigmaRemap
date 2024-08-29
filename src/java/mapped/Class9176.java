@@ -27,7 +27,7 @@ public class Class9176 {
    public static final Class9176 field42134 = method34290(
       "structure_starts", field42133, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          if (!var7.method7080().method34306(var0)) {
-            if (var1.method6715().method1436().method20087().method26260()) {
+            if (var1.method6715().method1436().getDimensionGeneratorSettings().method26260()) {
                var2.method17825(var1.method6867(), var1.method6893(), var7, var3, var1.method6967());
             }
 
@@ -66,7 +66,7 @@ public class Class9176 {
       0,
       field42130,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17819(var0.method6967(), var0.method6822(), var3, Class97.field259)
+      (var0, var1, var2, var3) -> var1.method17819(var0.method6967(), var0.getBiomeManager(), var3, Class97.field259)
    );
    public static final Class9176 field42140 = method34289(
       "liquid_carvers",
@@ -74,7 +74,7 @@ public class Class9176 {
       0,
       field42131,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17819(var0.method6967(), var0.method6822(), var3, Class97.field260)
+      (var0, var1, var2, var3) -> var1.method17819(var0.method6967(), var0.getBiomeManager(), var3, Class97.field260)
    );
    public static final Class9176 field42141 = method34290(
       "features", field42140, 8, field42131, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
@@ -252,6 +252,6 @@ public class Class9176 {
 
    @Override
    public String toString() {
-      return Registry.field16081.method9181(this).toString();
+      return Registry.field16081.getKey(this).toString();
    }
 }

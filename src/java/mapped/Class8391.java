@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Class8391 {
    private static String[] field35979;
-   private Class7380 field35980;
+   private BlockState field35980;
    private BlockPos field35981;
    private int field35982 = -1;
    private int field35983 = -1;
@@ -28,19 +28,19 @@ public class Class8391 {
    private Class8557[] field35998 = new Class8557[3];
    private Class8557[] field35999 = new Class8557[4];
    private Class7828 field36000 = null;
-   private Class9585[] field36001 = new Class9585[Class4520.field21819.length];
+   private Class9585[] field36001 = new Class9585[RenderType.field21819.length];
    private boolean field36002 = false;
    private Long2ByteLinkedOpenHashMap field36003 = new Long2ByteLinkedOpenHashMap();
    private static final int field36004 = -1;
    private static final int field36005 = 0;
    private static final int field36006 = 1;
 
-   public Class8391(Class7380 var1, BlockPos var2) {
+   public Class8391(BlockState var1, BlockPos var2) {
       this.field35980 = var1;
       this.field35981 = var2;
    }
 
-   public void method29411(Class7380 var1, BlockPos var2) {
+   public void method29411(BlockState var1, BlockPos var2) {
       if (this.field35980 != var1 || this.field35981 != var2) {
          this.field35980 = var1;
          this.field35981 = var2;
@@ -108,7 +108,7 @@ public class Class8391 {
       return this.field35984 == 1;
    }
 
-   public Class7380 method29420() {
+   public BlockState method29420() {
       return this.field35980;
    }
 
@@ -163,7 +163,7 @@ public class Class8391 {
 
    public boolean method29427() {
       if (this.field35985 == -1) {
-         if (Class7944.method26827() && this.field35980.method23383() instanceof Class3465) {
+         if (Class7944.method26827() && this.field35980.getBlock() instanceof Class3465) {
             this.field35985 = 1;
          } else {
             this.field35985 = 0;
@@ -223,7 +223,7 @@ public class Class8391 {
       this.field36000 = var1;
    }
 
-   public Class9585 method29436(Class4520 var1) {
+   public Class9585 method29436(RenderType var1) {
       Class9585 var4 = this.field36001[var1.method14297()];
       if (var4 == null) {
          var4 = new Class9585();

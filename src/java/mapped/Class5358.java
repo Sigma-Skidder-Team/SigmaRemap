@@ -10,10 +10,10 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 public class Class5358 extends Module {
     public Class5358() {
         super(ModuleCategory.RENDER, "Streaming", "Useful module when recording or streaming");
-        this.method15972(new Class6004("Hide skins", "Spoof all players skin", true));
-        this.method15972(new Class6004("Hide server name", "Spoof server name", false));
-        this.method15972(new Class6011("Server name", "The server name that you need to hide", "servernamehere"));
-        this.method15972(new Class6004("Hide date", "Hide date on scoreboard", false));
+        this.registerSetting(new BooleanSetting("Hide skins", "Spoof all players skin", true));
+        this.registerSetting(new BooleanSetting("Hide server name", "Spoof server name", false));
+        this.registerSetting(new Class6011("Server name", "The server name that you need to hide", "servernamehere"));
+        this.registerSetting(new BooleanSetting("Hide date", "Hide date on scoreboard", false));
     }
 
     @EventTarget

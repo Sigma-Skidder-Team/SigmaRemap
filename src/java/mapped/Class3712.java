@@ -21,7 +21,7 @@ public class Class3712 extends Class3676<Class1046> {
    }
 
    public void method12502(ServerWorld var1, Class1046 var2, long var3) {
-      BlockPos var7 = var2.method3432();
+      BlockPos var7 = var2.getPosition();
       if (!var1.method6952(var7)) {
          Class2002 var8 = Class2002.method8390(var7);
          Class2002 var9 = Class6983.method21579(var1, var8, 2);

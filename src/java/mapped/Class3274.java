@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3274 extends Class3257 {
+public class Class3274 extends Item {
    private static String[] field18774;
 
    public Class3274(Class5643 var1) {
@@ -15,7 +15,7 @@ public class Class3274 extends Class3257 {
          var6.method2913(Class8876.field40098.method172(this));
       }
 
-      if (var3 instanceof PlayerEntity && !((PlayerEntity)var3).field4919.field29609) {
+      if (var3 instanceof PlayerEntity && !((PlayerEntity)var3).abilities.isCreativeMode) {
          var1.method32182(1);
       }
 
@@ -23,7 +23,7 @@ public class Class3274 extends Class3257 {
          var3.method3030();
       }
 
-      return !var1.method32105() ? var1 : new ItemStack(Class8514.field37882);
+      return !var1.isEmpty() ? var1 : new ItemStack(Items.field37882);
    }
 
    @Override

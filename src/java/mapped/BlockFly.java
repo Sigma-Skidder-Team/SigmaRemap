@@ -18,22 +18,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BlockFly extends Class5325 {
-    public static List<Block> field23883;
+    public static List<Block> blocksToNotPlace;
     public int field23884;
     public Animation field23885 = new Animation(114, 114, Direction.BACKWARDS);
     public int field23886 = 0;
 
     public BlockFly() {
-        super(ModuleCategory.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new Class5355(), new Class5204(), new Class5365(), new Class5176());
-        this.method15972(new Class6005("ItemSpoof", "Item spoofing mode", 2, "None", "Switch", "Spoof", "LiteSpoof"));
-        this.method15972(new Class6005("Tower Mode", "Tower mode", 1, "None", "NCP", "AAC", "Vanilla"));
-        this.method15972(new Class6005("Picking mode", "The way it will move blocks in your inventory.", 0, "Basic", "FakeInv", "OpenInv"));
-        this.method15972(new Class6004("Tower while moving", "Allows you to tower while moving.", false));
-        this.method15972(new Class6004("Show Block Amount", "Shows the amount of blocks in your inventory.", true));
-        this.method15972(new Class6004("NoSwing", "Removes the swing animation.", true));
-        this.method15972(new Class6004("Intelligent Block Picker", "Always get the biggest blocks stack.", true));
-        this.method15972(new Class6004("No Sprint", "Disable sprint.", false));
-        field23883 = Arrays.asList(
+        super(ModuleCategory.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new BlockFlyNCPMode(), new BlockFlyAACMode(), new BlockFlySmoothMode(), new BlockFlyHypixelMode());
+        this.registerSetting(new ModeSetting("ItemSpoof", "Item spoofing mode", 2, "None", "Switch", "Spoof", "LiteSpoof"));
+        this.registerSetting(new ModeSetting("Tower Mode", "Tower mode", 1, "None", "NCP", "AAC", "Vanilla"));
+        this.registerSetting(new ModeSetting("Picking mode", "The way it will move blocks in your inventory.", 0, "Basic", "FakeInv", "OpenInv"));
+        this.registerSetting(new BooleanSetting("Tower while moving", "Allows you to tower while moving.", false));
+        this.registerSetting(new BooleanSetting("Show Block Amount", "Shows the amount of blocks in your inventory.", true));
+        this.registerSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", true));
+        this.registerSetting(new BooleanSetting("Intelligent Block Picker", "Always get the biggest blocks stack.", true));
+        this.registerSetting(new BooleanSetting("No Sprint", "Disable sprint.", false));
+        blocksToNotPlace = Arrays.asList(
                 Blocks.AIR,
                 Blocks.WATER,
                 Blocks.LAVA,
@@ -77,12 +77,12 @@ public class BlockFly extends Class5325 {
         );
     }
 
-    public static boolean method16733(Class3257 var0) {
+    public static boolean method16733(Item var0) {
         if (!(var0 instanceof Class3292)) {
             return false;
         } else {
             Block var3 = ((Class3292) var0).method11845();
-            return !field23883.contains(var3)
+            return ! blocksToNotPlace.contains(var3)
                     && !(var3 instanceof Class3202)
                     && !(var3 instanceof Class3194)
                     && !(var3 instanceof Class3206)
@@ -106,15 +106,15 @@ public class BlockFly extends Class5325 {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
                 if (mc.player.field4904.method18131(var3).method18266()
-                        && method16733(mc.player.field4904.method18131(var3).method18265().method32107())
+                        && method16733(mc.player.field4904.method18131(var3).method18265().getItem())
                         && mc.player.field4904.method18131(var3).method18265().field39976 != 0) {
-                    if (mc.player.field4902.field5443 == var4) {
+                    if (mc.player.inventory.currentItem == var4) {
                         return;
                     }
 
-                    mc.player.field4902.field5443 = var4;
+                    mc.player.inventory.currentItem = var4;
                     if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof") && (this.field23884 < 0 || this.field23884 != var4)) {
-                        mc.getClientPlayNetHandler().method15589().method30693(new Class5539(var4));
+                        mc.getConnection().getNetworkManager().sendPacket(new Class5539(var4));
                         this.field23884 = var4;
                     }
                     break;
@@ -130,7 +130,7 @@ public class BlockFly extends Class5325 {
         for (int var4 = 0; var4 < 45; var4++) {
             if (mc.player.field4904.method18131(var4).method18266()) {
                 ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
-                Class3257 var6 = var5.method32107();
+                Item var6 = var5.getItem();
                 if (method16733(var6)) {
                     var3 += var5.field39976;
                 }
@@ -142,7 +142,7 @@ public class BlockFly extends Class5325 {
 
     public void method16736() {
         String var3 = this.getStringSettingValueByName("Picking mode");
-        if ((!var3.equals("OpenInv") || mc.currentScreen instanceof Class859) && this.method16735() != 0) {
+        if ((!var3.equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) && this.method16735() != 0) {
             int var4 = 43;
             if (!this.method15974("Intelligent Block Picker")) {
                 if (!this.method16738()) {
@@ -150,7 +150,7 @@ public class BlockFly extends Class5325 {
 
                     for (int var6 = 9; var6 < 36; var6++) {
                         if (mc.player.field4904.method18131(var6).method18266()) {
-                            Class3257 var7 = mc.player.field4904.method18131(var6).method18265().method32107();
+                            Item var7 = mc.player.field4904.method18131(var6).method18265().getItem();
                             if (method16733(var7)) {
                                 var5 = var6;
                                 break;
@@ -166,13 +166,13 @@ public class BlockFly extends Class5325 {
                     }
 
                     if (var5 >= 0) {
-                        if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv")) {
-                            mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                        if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
+                            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                         }
 
                         this.method16740(var5, var4 - 36);
-                        if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv")) {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
+                        if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
+                            mc.getConnection().sendPacket(new Class5482(-1));
                         }
                     }
                 }
@@ -188,7 +188,7 @@ public class BlockFly extends Class5325 {
                 } else {
                     for (int var10 = 36; var10 < 45; var10++) {
                         if (mc.player.field4904.method18131(var10).method18266()) {
-                            Class3257 var12 = mc.player.field4904.method18131(var10).method18265().method32107();
+                            Item var12 = mc.player.field4904.method18131(var10).method18265().getItem();
                             if (method16733(var12)) {
                                 var4 = var10;
                                 if (mc.player.field4904.method18131(var10).method18265().field39976
@@ -202,13 +202,13 @@ public class BlockFly extends Class5325 {
                 }
 
                 if (var4 >= 0 && mc.player.field4904.method18131(var4).field25579 != var8) {
-                    if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
-                        mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
+                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
                     this.method16740(var8, var4 - 36);
-                    if (!(mc.currentScreen instanceof Class859) && var3.equals("FakeInv")) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
+                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
+                        mc.getConnection().sendPacket(new Class5482(-1));
                     }
                 }
             }
@@ -221,7 +221,7 @@ public class BlockFly extends Class5325 {
         if (this.method16735() != 0) {
             for (int var5 = 9; var5 < 45; var5++) {
                 if (mc.player.field4904.method18131(var5).method18266()) {
-                    Class3257 var6 = mc.player.field4904.method18131(var5).method18265().method32107();
+                    Item var6 = mc.player.field4904.method18131(var5).method18265().getItem();
                     ItemStack var7 = mc.player.field4904.method18131(var5).method18265();
                     if (method16733(var6) && var7.field39976 > var4) {
                         var4 = var7.field39976;
@@ -239,7 +239,7 @@ public class BlockFly extends Class5325 {
     public boolean method16738() {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.field4904.method18131(var3).method18266()) {
-                Class3257 var4 = mc.player.field4904.method18131(var3).method18265().method32107();
+                Item var4 = mc.player.field4904.method18131(var3).method18265().getItem();
                 if (method16733(var4)) {
                     return true;
                 }
@@ -252,11 +252,11 @@ public class BlockFly extends Class5325 {
     public boolean method16739(Hand var1) {
         if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
             return this.method16735() != 0;
-        } else return method16733(mc.player.getHeldItem(var1).method32107());
+        } else return method16733(mc.player.getHeldItem(var1).getItem());
     }
 
     public void method16740(int var1, int var2) {
-        mc.field1337.method23144(mc.player.field4904.field25471, var1, var2, Class2259.field14696, mc.player);
+        mc.playerController.method23144(mc.player.field4904.field25471, var1, var2, Class2259.field14696, mc.player);
     }
 
     public void method16741(Class4435 var1) {
@@ -388,14 +388,14 @@ public class BlockFly extends Class5325 {
         var3 = (float) (0.5 + 0.5 * (double) var3);
         GL11.glAlphaFunc(518, 0.1F);
         Class3192.method11439(
-                Class7925.field33954,
+                ClassicDecryption.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 5),
                 this.field23886 + " Blocks",
                 Class5628.method17688(Class1979.field12891.field12910, var3 * 0.3F)
         );
         Class3192.method11439(
-                Class7925.field33954,
+                ClassicDecryption.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 4),
                 this.field23886 + " Blocks",

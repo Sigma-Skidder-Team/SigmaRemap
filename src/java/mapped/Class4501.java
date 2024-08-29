@@ -9,14 +9,14 @@ public class Class4501 {
    private static BitSet field21728 = new BitSet();
 
    public static boolean method14213() {
-      return field21726 && !Class8981.field40609;
+      return field21726 && ! Shaders.field40609;
    }
 
    public static void method14214() {
       field21726 = Class7944.method26928().field44686;
    }
 
-   public static void method14215(Class1713 var0) {
+   public static void method14215(TextureAtlasSprite var0) {
       if (var0.method7496()) {
          int var3 = var0.method7477();
          if (var3 >= 0) {
@@ -31,7 +31,7 @@ public class Class4501 {
       }
    }
 
-   public static boolean method14217(Class1713 var0) {
+   public static boolean method14217(TextureAtlasSprite var0) {
       if (var0.method7496()) {
          int var3 = var0.method7477();
          return var3 >= 0 ? field21727.get(var3) : false;
@@ -40,7 +40,7 @@ public class Class4501 {
       }
    }
 
-   public static void method14218(Class289 var0) {
+   public static void method14218(AtlasTexture var0) {
       if (var0.method1121()) {
          field21727.clear();
       }

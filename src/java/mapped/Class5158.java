@@ -18,10 +18,10 @@ public class Class5158 extends Module {
 
     public Class5158() {
         super(ModuleCategory.MOVEMENT, "Hypixel", "Speed for Hypixel");
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you.", true));
-        this.method15972(new Class6004("Timer", "Use timer", true));
-        this.method15972(new Class6004("GroundSpeed", "Move faster on ground", true));
-        this.method15972(new Class6004("BorderJump", "Automatically jumps off edges with speed", true));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("Timer", "Use timer", true));
+        this.registerSetting(new BooleanSetting("GroundSpeed", "Move faster on ground", true));
+        this.registerSetting(new BooleanSetting("BorderJump", "Automatically jumps off edges with speed", true));
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Class5158 extends Module {
             } else if (var1.method13921()) {
                 if (this.field23417 > 3.0) {
                     this.field23417 = 0.0;
-                    mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                    mc.getConnection().sendPacket(new Class5603(true));
                 }
 
                 var1.method13920(false);
@@ -132,7 +132,7 @@ public class Class5158 extends Module {
 
                         if (this.field23417 > 3.0) {
                             this.field23417 = 0.0;
-                            mc.getClientPlayNetHandler().sendPacket(new Class5603(true));
+                            mc.getConnection().sendPacket(new Class5603(true));
                         }
                         break;
                     case 2:
@@ -187,7 +187,7 @@ public class Class5158 extends Module {
     }
 
     @EventTarget
-    public void method16041(Class4418 var1) {
+    public void method16041(WorldLoadEvent var1) {
         this.field23416 = -1.0;
     }
 

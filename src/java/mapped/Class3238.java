@@ -20,16 +20,16 @@ public class Class3238 extends Block implements Class3207 {
       .collect(Util.<Direction, Class8551>method38484());
    public final Class6408[] field18686;
    public final Class6408[] field18687;
-   private final Object2IntMap<Class7380> field18688 = new Object2IntOpenHashMap();
+   private final Object2IntMap<BlockState> field18688 = new Object2IntOpenHashMap();
 
    public Class3238(float var1, float var2, float var3, float var4, float var5, AbstractBlock var6) {
       super(var6);
       this.field18686 = this.method11639(var1, var2, var5, 0.0F, var5);
       this.field18687 = this.method11639(var1, var2, var3, 0.0F, var4);
-      UnmodifiableIterator var9 = this.field18612.method35392().iterator();
+      UnmodifiableIterator var9 = this.field18612.getValidStates().iterator();
 
       while (var9.hasNext()) {
-         Class7380 var10 = (Class7380)var9.next();
+         BlockState var10 = (BlockState)var9.next();
          this.method11641(var10);
       }
    }
@@ -73,17 +73,17 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public boolean method11493(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public boolean method11493(BlockState var1, Class1665 var2, BlockPos var3) {
       return !var1.<Boolean>method23463(field18684);
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return this.field18687[this.method11641(var1)];
    }
 
    @Override
-   public Class6408 method11502(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11502(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return this.field18686[this.method11641(var1)];
    }
 
@@ -91,7 +91,7 @@ public class Class3238 extends Block implements Class3207 {
       return 1 << var0.method534();
    }
 
-   public int method11641(Class7380 var1) {
+   public int method11641(BlockState var1) {
       return this.field18688.computeIntIfAbsent(var1, var0 -> {
          int var3 = 0;
          if (var0.<Boolean>method23463(field18680)) {
@@ -115,17 +115,17 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(Class7380 var1) {
+   public Class7379 method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18684) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       switch (Class8947.field40455[var2.ordinal()]) {
          case 1:
             return var1.method23465(field18680, var1.<Boolean>method23463(field18682))
@@ -148,7 +148,7 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       switch (Class8947.field40456[var2.ordinal()]) {
          case 1:
             return var1.method23465(field18680, var1.<Boolean>method23463(field18682)).method23465(field18682, var1.<Boolean>method23463(field18680));

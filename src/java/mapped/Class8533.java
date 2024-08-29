@@ -75,7 +75,7 @@ public class Class8533 {
    private boolean field38366;
    private boolean field38367;
    private boolean field38368;
-   private Class8992<?> field38369;
+   private EntityType<?> field38369;
    private boolean field38370;
    private boolean field38371;
    private boolean field38372;
@@ -197,19 +197,19 @@ public class Class8533 {
                   this.field38341 = 1;
                   this.field38342 = false;
                   this.field38355 = field38337;
-                  this.method30330(Class8992.field41111);
+                  this.method30330(EntityType.PLAYER);
                }
             } else {
                this.field38341 = Integer.MAX_VALUE;
                this.field38342 = false;
                this.field38355 = field38334;
-               this.method30330(Class8992.field41111);
+               this.method30330(EntityType.PLAYER);
             }
          } else {
             this.field38341 = 1;
             this.field38342 = false;
             this.field38355 = field38335;
-            this.method30330(Class8992.field41111);
+            this.method30330(EntityType.PLAYER);
          }
 
          this.field38360 = this::method30308;
@@ -563,7 +563,7 @@ public class Class8533 {
       this.field38368 = var1;
    }
 
-   public void method30330(Class8992<?> var1) {
+   public void method30330(EntityType<?> var1) {
       this.field38369 = var1;
    }
 

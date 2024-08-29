@@ -11,7 +11,7 @@ public class Class1143 extends Class1135 {
       AbstractOption.field25335, AbstractOption.field25361, AbstractOption.field25331, AbstractOption.field25357, AbstractOption.field25368
    };
 
-   public Class1143(Screen var1, Class9574 var2) {
+   public Class1143(Screen var1, GameSettings var2) {
       super(var1, var2, new TranslationTextComponent("options.mouse_settings.title"));
    }
 
@@ -25,8 +25,8 @@ public class Class1143 extends Class1135 {
       }
 
       this.field4561.add(this.field6209);
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 - 27, 200, 20, Class7127.field30658, var1 -> {
-         this.field6193.method37146();
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 - 27, 200, 20, DialogTexts.field30658, var1 -> {
+         this.field6193.saveOptions();
          this.field4562.displayGuiScreen(this.field6192);
       }));
    }

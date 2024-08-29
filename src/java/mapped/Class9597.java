@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -33,7 +32,7 @@ public class Class9597 {
       Map var10 = var3.stream()
          .collect(
             Collectors.toMap(
-               var1x -> this.field44893.method20616((double)var1x.method8304(), (double)var1x.getY(), (double)var1x.method8306()),
+               var1x -> this.field44893.method20616((double)var1x.getX(), (double)var1x.getY(), (double)var1x.getZ()),
                Function.<BlockPos>identity()
             )
          );

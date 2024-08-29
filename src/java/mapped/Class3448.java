@@ -13,17 +13,17 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public Class7379 method11498(Class7380 var1) {
+   public Class7379 method11498(BlockState var1) {
       return Class9479.field44066.method25078(false);
    }
 
    @Override
-   public boolean method11531(Class1665 var1, BlockPos var2, Class7380 var3, Class7631 var4) {
+   public boolean method11531(Class1665 var1, BlockPos var2, BlockState var3, Class7631 var4) {
       return false;
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, Class7380 var3, Class7379 var4) {
+   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, Class7379 var4) {
       return false;
    }
 }

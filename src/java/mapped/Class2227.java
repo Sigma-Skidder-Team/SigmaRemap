@@ -1,7 +1,7 @@
 package mapped;
 
 public enum Class2227 {
-   field14567(Direction.field672),
+   field14567(Direction.DOWN),
    field14568(Direction.field673),
    field14569(Direction.NORTH),
    field14570(Direction.SOUTH),
@@ -11,12 +11,12 @@ public enum Class2227 {
    field14574(Direction.NORTH, Direction.EAST),
    field14575(Direction.SOUTH, Direction.WEST),
    field14576(Direction.SOUTH, Direction.EAST),
-   field14577(Direction.field672, Direction.NORTH),
-   field14578(Direction.field672, Direction.SOUTH),
+   field14577(Direction.DOWN, Direction.NORTH),
+   field14578(Direction.DOWN, Direction.SOUTH),
    field14579(Direction.field673, Direction.NORTH),
    field14580(Direction.field673, Direction.SOUTH),
-   field14581(Direction.field672, Direction.WEST),
-   field14582(Direction.field672, Direction.EAST),
+   field14581(Direction.DOWN, Direction.WEST),
+   field14582(Direction.DOWN, Direction.EAST),
    field14583(Direction.field673, Direction.WEST),
    field14584(Direction.field673, Direction.EAST);
 

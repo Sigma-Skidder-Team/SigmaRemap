@@ -10,7 +10,7 @@ public class Class912 extends Class911 {
 
    @Override
    public ServerWorld method3567() {
-      return (ServerWorld)this.field5201.field5024;
+      return (ServerWorld)this.field5201.world;
    }
 
    @Override

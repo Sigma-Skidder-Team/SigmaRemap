@@ -10,9 +10,9 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4705 var5) {
-      var4 = new BlockPos(var4.method8304(), var2.method17807(), var4.method8306());
+      var4 = new BlockPos(var4.getX(), var2.method17807(), var4.getZ());
       boolean var8 = var3.nextDouble() > 0.7;
-      Class7380 var9 = var5.field22322;
+      BlockState var9 = var5.field22322;
       double var10 = var3.nextDouble() * 2.0 * Math.PI;
       int var12 = 11 - var3.nextInt(5);
       int var13 = 3 + var3.nextInt(3);
@@ -100,7 +100,7 @@ public class Class2950 extends Class2898<Class4705> {
             double var17 = this.method11299(var15, var16, var8, var13, var14, var6);
             if (var17 < 0.0) {
                BlockPos var19 = var3.method8336(var15, var2, var16);
-               Block var20 = var4.method6738(var19).method23383();
+               Block var20 = var4.getBlockState(var19).getBlock();
                if (this.method11303(var20) || var20 == Blocks.SNOW_BLOCK) {
                   if (!var5) {
                      this.method11217(var4, var19, Blocks.AIR.method11579());
@@ -115,7 +115,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private void method11294(Class1660 var1, BlockPos var2) {
-      if (var1.method6738(var2.method8311()).method23448(Blocks.SNOW)) {
+      if (var1.getBlockState(var2.method8311()).method23448(Blocks.SNOW)) {
          this.method11217(var1, var2.method8311(), Blocks.AIR.method11579());
       }
    }
@@ -134,11 +134,11 @@ public class Class2950 extends Class2898<Class4705> {
       int var11,
       double var12,
       boolean var14,
-      Class7380 var15
+      BlockState var15
    ) {
       double var18 = !var10
-         ? this.method11298(var5, var7, BlockPos.field13032, var8, var2)
-         : this.method11299(var5, var7, BlockPos.field13032, var9, this.method11297(var6, var4, var11), var12);
+         ? this.method11298(var5, var7, BlockPos.ZERO, var8, var2)
+         : this.method11299(var5, var7, BlockPos.ZERO, var9, this.method11297(var6, var4, var11), var12);
       if (var18 < 0.0) {
          BlockPos var20 = var3.method8336(var5, var6, var7);
          double var21 = !var10 ? (double)(-6 - var2.nextInt(3)) : -0.5;
@@ -150,8 +150,8 @@ public class Class2950 extends Class2898<Class4705> {
       }
    }
 
-   private void method11296(BlockPos var1, Class1660 var2, Random var3, int var4, int var5, boolean var6, boolean var7, Class7380 var8) {
-      Class7380 var11 = var2.method6738(var1);
+   private void method11296(BlockPos var1, Class1660 var2, Random var3, int var4, int var5, boolean var6, boolean var7, BlockState var8) {
+      BlockState var11 = var2.getBlockState(var1);
       if (var11.method23384() == Class8649.field38932
          || var11.method23448(Blocks.SNOW_BLOCK)
          || var11.method23448(Blocks.ICE)
@@ -177,12 +177,12 @@ public class Class2950 extends Class2898<Class4705> {
 
    private double method11298(int var1, int var2, BlockPos var3, int var4, Random var5) {
       float var8 = 10.0F * MathHelper.method37777(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
-      return (double)var8 + Math.pow((double)(var1 - var3.method8304()), 2.0) + Math.pow((double)(var2 - var3.method8306()), 2.0) - Math.pow((double)var4, 2.0);
+      return (double)var8 + Math.pow((double)(var1 - var3.getX()), 2.0) + Math.pow((double)(var2 - var3.getZ()), 2.0) - Math.pow((double)var4, 2.0);
    }
 
    private double method11299(int var1, int var2, BlockPos var3, int var4, int var5, double var6) {
-      return Math.pow(((double)(var1 - var3.method8304()) * Math.cos(var6) - (double)(var2 - var3.method8306()) * Math.sin(var6)) / (double)var4, 2.0)
-         + Math.pow(((double)(var1 - var3.method8304()) * Math.sin(var6) + (double)(var2 - var3.method8306()) * Math.cos(var6)) / (double)var5, 2.0)
+      return Math.pow(((double)(var1 - var3.getX()) * Math.cos(var6) - (double)(var2 - var3.getZ()) * Math.sin(var6)) / (double)var4, 2.0)
+         + Math.pow(((double)(var1 - var3.getX()) * Math.sin(var6) + (double)(var2 - var3.getZ()) * Math.cos(var6)) / (double)var5, 2.0)
          - 1.0;
    }
 
@@ -214,7 +214,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private boolean method11304(Class1665 var1, BlockPos var2) {
-      return var1.method6738(var2.method8313()).method23384() == Class8649.field38932;
+      return var1.getBlockState(var2.method8313()).method23384() == Class8649.field38932;
    }
 
    private void method11305(Class1660 var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {
@@ -224,17 +224,17 @@ public class Class2950 extends Class2898<Class4705> {
          for (int var11 = -var9; var11 <= var9; var11++) {
             for (int var12 = 0; var12 <= var4; var12++) {
                BlockPos var13 = var2.method8336(var10, var12, var11);
-               Block var14 = var1.method6738(var13).method23383();
+               Block var14 = var1.getBlockState(var13).getBlock();
                if (this.method11303(var14) || var14 == Blocks.SNOW) {
                   if (this.method11304(var1, var13)) {
                      this.method11217(var1, var13, Blocks.AIR.method11579());
                      this.method11217(var1, var13.method8311(), Blocks.AIR.method11579());
                   } else if (this.method11303(var14)) {
                      Block[] var15 = new Block[]{
-                        var1.method6738(var13.method8345()).method23383(),
-                        var1.method6738(var13.method8347()).method23383(),
-                        var1.method6738(var13.method8341()).method23383(),
-                        var1.method6738(var13.method8343()).method23383()
+                        var1.getBlockState(var13.method8345()).getBlock(),
+                        var1.getBlockState(var13.method8347()).getBlock(),
+                        var1.getBlockState(var13.method8341()).getBlock(),
+                        var1.getBlockState(var13.method8343()).getBlock()
                      };
                      int var16 = 0;
 

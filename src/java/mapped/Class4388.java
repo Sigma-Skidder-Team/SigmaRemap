@@ -8,14 +8,14 @@ import java.util.*;
 
 public class Class4388 {
    private static String[] field21457;
-   public static final Class3257 field21458 = Class8514.field37802;
+   public static final Item field21458 = Items.field37802;
    private static final Class8369 field21459 = Class8763.method31620(30, 120);
    private static final Class8369 field21460 = Class8763.method31620(10, 40);
    private static final Class8369 field21461 = Class8763.method31620(10, 30);
    private static final Class8369 field21462 = Class8763.method31620(5, 20);
    private static final Class8369 field21463 = Class8763.method31620(5, 7);
    private static final Class8369 field21464 = Class8763.method31620(5, 7);
-   private static final Set<Class3257> field21465 = ImmutableSet.of(Class8514.field37869, Class8514.field37870);
+   private static final Set<Item> field21465 = ImmutableSet.of(Items.field37869, Items.field37870);
 
    public static Class6947<?> method13798(Class1034 var0, Class6947<Class1034> var1) {
       method13800(var1);
@@ -32,7 +32,7 @@ public class Class4388 {
    }
 
    public static void method13799(Class1034 var0) {
-      int var3 = field21459.method29319(var0.field5024.field9016);
+      int var3 = field21459.method29319(var0.world.field9016);
       var0.method2992().method21407(Class8830.field39855, true, (long)var3);
    }
 
@@ -66,7 +66,7 @@ public class Class4388 {
             method13845(),
             method13807(),
             method13808(),
-            new Class3715(Class8992.field41111, 4)
+            new Class3715(EntityType.PLAYER, 4)
          )
       );
    }
@@ -99,7 +99,7 @@ public class Class4388 {
                  new Class3740<>(var0x -> !var0x.method4623(), new Class3748<>(2, 1.0F)),
                  new Class3740<>(Class1034::method4623, new Class3748<>(4, 0.6F)),
                  new Class3693<>(
-               ImmutableList.of(Pair.of(new Class3738(Class8992.field41065, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
+               ImmutableList.of(Pair.of(new Class3738(EntityType.field41065, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
             )
          ),
          Class8830.field39856
@@ -146,8 +146,8 @@ public class Class4388 {
    private static Class3693<Class1034> method13807() {
       return new Class3693<Class1034>(
          ImmutableList.of(
-            Pair.of(new Class3738(Class8992.field41111, 8.0F), 1),
-            Pair.of(new Class3738(Class8992.field41065, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.field41065, 8.0F), 1),
             Pair.of(new Class3738(8.0F), 1),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -158,7 +158,7 @@ public class Class4388 {
       return new Class3693<Class1034>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<Class880>method12551(Class8992.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<Class880>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
             Pair.of(new Class3740<Class880>(Class4388::method13874, new Class3694(0.6F, 3)), 2),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -212,16 +212,16 @@ public class Class4388 {
    public static void method13814(Class1034 var0, ItemEntity var1) {
       method13844(var0);
       ItemStack var4;
-      if (var1.method4124().method32107() != Class8514.field37969) {
+      if (var1.method4124().getItem() != Items.field37969) {
          var0.method2751(var1, 1);
          var4 = method13816(var1);
       } else {
-         var0.method2751(var1, var1.method4124().method32179());
+         var0.method2751(var1, var1.method4124().getCount());
          var4 = var1.method4124();
          var1.method2904();
       }
 
-      Class3257 var5 = var4.method32107();
+      Item var5 = var4.getItem();
       if (!method13827(var5)) {
          if (method13870(var5) && !method13864(var0)) {
             method13862(var0);
@@ -249,7 +249,7 @@ public class Class4388 {
    private static ItemStack method13816(ItemEntity var0) {
       ItemStack var3 = var0.method4124();
       ItemStack var4 = var3.method32106(1);
-      if (!var3.method32105()) {
+      if (!var3.isEmpty()) {
          var0.method4125(var3);
       } else {
          var0.method2904();
@@ -265,7 +265,7 @@ public class Class4388 {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
             ItemStack var6 = var0.method3090();
-            if (!method13827(var6.method32107())) {
+            if (!method13827(var6.getItem())) {
                method13820(var0, Collections.<ItemStack>singletonList(var6));
             } else {
                method13819(var0, var6);
@@ -274,7 +274,7 @@ public class Class4388 {
             var0.method4625(var4);
          }
       } else {
-         boolean var7 = method13869(var4.method32107());
+         boolean var7 = method13869(var4.getItem());
          if (var1 && var7) {
             method13820(var0, method13824(var0));
          } else if (!var7) {
@@ -287,7 +287,7 @@ public class Class4388 {
    }
 
    public static void method13818(Class1034 var0) {
-      if (method13868(var0) && !var0.method3091().method32105()) {
+      if (method13868(var0) && !var0.method3091().isEmpty()) {
          var0.method3302(var0.method3091());
          var0.method3095(Hand.field183, ItemStack.EMPTY);
       }
@@ -326,27 +326,27 @@ public class Class4388 {
    }
 
    private static List<ItemStack> method13824(Class1034 var0) {
-      Class7318 var3 = var0.field5024.method6715().method1411().method1058(Class8793.field39609);
+      Class7318 var3 = var0.world.method6715().method1411().method1058(Class8793.field39609);
       return var3.method23182(
-         new Class9464((ServerWorld)var0.field5024)
+         new Class9464((ServerWorld)var0.world)
             .method36454(Class9525.field44330, var0)
-            .method36450(var0.field5024.field9016)
+            .method36450(var0.world.field9016)
             .method36460(Class8524.field38288)
       );
    }
 
    private static boolean method13825(Class880 var0, Class880 var1) {
-      return var1.method3204() == Class8992.field41037 ? new Random(var0.field5024.method6783()).nextFloat() < 0.1F : false;
+      return var1.getType() == EntityType.field41037 ? new Random(var0.world.method6783()).nextFloat() < 0.1F : false;
    }
 
    public static boolean method13826(Class1034 var0, ItemStack var1) {
-      Class3257 var4 = var1.method32107();
+      Item var4 = var1.getItem();
       if (!var4.method11743(Class5985.field26108)) {
          if (method13876(var0) && var0.method2992().method21404(Class8830.field39826)) {
             return false;
          } else if (!method13869(var4)) {
             boolean var5 = var0.method4613(var1);
-            if (var4 == Class8514.field37969) {
+            if (var4 == Items.field37969) {
                return var5;
             } else if (!method13870(var4)) {
                return !method13827(var4) ? var0.method4627(var1) : method13879(var0) && var5;
@@ -361,7 +361,7 @@ public class Class4388 {
       }
    }
 
-   public static boolean method13827(Class3257 var0) {
+   public static boolean method13827(Item var0) {
       return var0.method11743(Class5985.field26109);
    }
 
@@ -416,9 +416,9 @@ public class Class4388 {
    }
 
    public static void method13832(PlayerEntity var0, boolean var1) {
-      List<Class1034> var4 = var0.field5024.method7182(Class1034.class, var0.method3389().method19664(16.0));
+      List<Class1034> var4 = var0.world.method7182(Class1034.class, var0.method3389().method19664(16.0));
       var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
-         if (!var1x.field5024.method6789().method17135(Class5462.field24255)) {
+         if (!var1x.world.method6789().method17135(Class5462.field24255)) {
             method13849(var1x, var0);
          } else {
             method13850(var1x, var0);
@@ -440,7 +440,7 @@ public class Class4388 {
    }
 
    public static boolean method13834(Class1034 var0, ItemStack var1) {
-      return !method13876(var0) && !method13868(var0) && var0.method4635() && method13869(var1.method32107());
+      return !method13876(var0) && !method13868(var0) && var0.method4635() && method13869(var1.getItem());
    }
 
    public static void method13835(Class1034 var0, Class880 var1) {
@@ -458,12 +458,12 @@ public class Class4388 {
          }
 
          method13853(var0).ifPresent(var2 -> {
-            if (var2.method3204() != var1.method3204()) {
+            if (var2.getType() != var1.getType()) {
                var4.method21405(Class8830.field39837);
             }
          });
          if (!var0.method3005()) {
-            if (var1.method3204() == Class8992.field41037 && method13859(var0)) {
+            if (var1.getType() == EntityType.field41037 && method13859(var0)) {
                method13860(var0, var1);
                method13855(var0, var1);
             } else {
@@ -480,7 +480,7 @@ public class Class4388 {
 
    public static void method13836(Class1035 var0, Class880 var1) {
       if (!var0.method2992().method21430(Class8890.field40232) && method13871(var1) && !Class6983.method21582(var0, var1, 4.0)) {
-         if (var1.method3204() == Class8992.field41111 && var0.field5024.method6789().method17135(Class5462.field24255)) {
+         if (var1.getType() == EntityType.PLAYER && var0.world.method6789().method17135(Class5462.field24255)) {
             method13850(var0, var1);
             method13847(var0);
          } else {
@@ -540,7 +540,7 @@ public class Class4388 {
 
    public static boolean method13843(Class880 var0) {
       for (ItemStack var4 : var0.method2947()) {
-         Class3257 var5 = var4.method32107();
+         Item var5 = var4.getItem();
          if (var5 instanceof Class3279 && ((Class3279)var5).method11806() == Class2114.field13776) {
             return true;
          }
@@ -560,7 +560,7 @@ public class Class4388 {
 
    public static void method13846(Class1035 var0, Class880 var1) {
       method13842(var0).forEach(var1x -> {
-         if (var1.method3204() != Class8992.field41037 || var1x.method4618() && ((Class1091)var1).method5089()) {
+         if (var1.getType() != EntityType.field41037 || var1x.method4618() && ((Class1091)var1).method5089()) {
             method13851(var1x, var1);
          }
       });
@@ -578,11 +578,11 @@ public class Class4388 {
       if (method13871(var1)) {
          var0.method2992().method21405(Class8830.field39841);
          var0.method2992().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
-         if (var1.method3204() == Class8992.field41037 && var0.method4618()) {
+         if (var1.getType() == EntityType.field41037 && var0.method4618()) {
             method13861(var0);
          }
 
-         if (var1.method3204() == Class8992.field41111 && var0.field5024.method6789().method17135(Class5462.field24255)) {
+         if (var1.getType() == EntityType.PLAYER && var0.world.method6789().method17135(Class5462.field24255)) {
             var0.method2992().method21407(Class8830.field39850, true, 600L);
          }
       }
@@ -632,8 +632,8 @@ public class Class4388 {
       Class6947<Class1034> var3 = var0.method2992();
       if (var3.method21404(Class8830.field39837)) {
          Class880 var4 = var3.method21410(Class8830.field39837).get();
-         Class8992<?> var5 = var4.method3204();
-         if (var5 != Class8992.field41037) {
+         EntityType<?> var5 = var4.getType();
+         if (var5 != EntityType.field41037) {
             return !method13880(var5) ? false : !var3.method21411(Class8830.field39865, var4);
          } else {
             return method13858(var0);
@@ -657,12 +657,12 @@ public class Class4388 {
       var0.method2992().method21405(Class8830.field39849);
       var0.method2992().method21405(Class8830.field39826);
       var0.method2992().method21405(Class8830.field39824);
-      var0.method2992().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.field5024.field9016));
+      var0.method2992().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.world.field9016));
       method13861(var0);
    }
 
    public static void method13861(Class1035 var0) {
-      var0.method2992().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.field5024.field9016));
+      var0.method2992().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.field9016));
    }
 
    private static void method13862(Class1034 var0) {
@@ -683,7 +683,7 @@ public class Class4388 {
    }
 
    private static boolean method13866(Class880 var0) {
-      return var0.method3092(Class8514.field38148);
+      return var0.method3092(Items.field38148);
    }
 
    private static void method13867(Class880 var0) {
@@ -694,11 +694,11 @@ public class Class4388 {
       return var0.method2992().method21404(Class8830.field39851);
    }
 
-   private static boolean method13869(Class3257 var0) {
+   private static boolean method13869(Item var0) {
       return var0 == field21458;
    }
 
-   private static boolean method13870(Class3257 var0) {
+   private static boolean method13870(Item var0) {
       return field21465.contains(var0);
    }
 
@@ -719,7 +719,7 @@ public class Class4388 {
    }
 
    public static boolean method13875(Class880 var0) {
-      return var0.method3204() == Class8992.field41111 && var0.method3093(Class4388::method13827);
+      return var0.getType() == EntityType.PLAYER && var0.method3093(Class4388::method13827);
    }
 
    private static boolean method13876(Class1034 var0) {
@@ -731,14 +731,14 @@ public class Class4388 {
    }
 
    private static boolean method13878(Class1034 var0) {
-      return !var0.method3091().method32105();
+      return !var0.method3091().isEmpty();
    }
 
    private static boolean method13879(Class1034 var0) {
-      return var0.method3091().method32105() || !method13827(var0.method3091().method32107());
+      return var0.method3091().isEmpty() || !method13827(var0.method3091().getItem());
    }
 
-   public static boolean method13880(Class8992 var0) {
-      return var0 == Class8992.field41110 || var0 == Class8992.field41106;
+   public static boolean method13880(EntityType var0) {
+      return var0 == EntityType.field41110 || var0 == EntityType.field41106;
    }
 }

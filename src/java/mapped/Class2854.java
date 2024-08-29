@@ -61,10 +61,10 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
       this.field17677.field31035 = var6 * (float) (Math.PI / 180.0);
       this.field17677.field31036 = var5 * (float) (Math.PI / 180.0);
       this.field17678.field31035 = (float) (Math.PI / 2);
-      this.field17679.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
-      this.field17680.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17681.field31035 = MathHelper.method37764(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17682.field31035 = MathHelper.method37764(var2 * 0.6662F) * 1.4F * var3;
+      this.field17679.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field17680.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17681.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17682.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
       boolean var9 = !var1.method3005() && var1.method4927();
       this.field17683.field31039 = var9;
       this.field17684.field31039 = var9;
@@ -79,21 +79,21 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
       } else {
          float var11 = 2.0F;
-         var1.method35294();
+         var1.push();
          float var12 = 0.7F;
          var1.method35292(0.71428573F, 0.64935064F, 0.7936508F);
-         var1.method35291(0.0, 1.3125, 0.22F);
+         var1.translate(0.0, 1.3125, 0.22F);
          this.field17677.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
          var1.method35295();
-         var1.method35294();
+         var1.push();
          float var13 = 1.1F;
          var1.method35292(0.625F, 0.45454544F, 0.45454544F);
-         var1.method35291(0.0, 2.0625, 0.0);
+         var1.translate(0.0, 2.0625, 0.0);
          this.field17678.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
          var1.method35295();
-         var1.method35294();
+         var1.push();
          var1.method35292(0.45454544F, 0.41322312F, 0.45454544F);
-         var1.method35291(0.0, 2.0625, 0.0);
+         var1.translate(0.0, 2.0625, 0.0);
          ImmutableList.of(this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684)
             .forEach(var8x -> var8x.method22681(var1, var2, var3, var4, var5, var6, var7, var8));
          var1.method35295();

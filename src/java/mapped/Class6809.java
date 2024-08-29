@@ -24,7 +24,7 @@ public class Class6809 {
       return this.field29636;
    }
 
-   public Class6408 method20746(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public Class6408 method20746(BlockState var1, Class1665 var2, BlockPos var3) {
       return this.field29638.method8998(var1, var2, var3, this.field29640);
    }
 

@@ -15,7 +15,7 @@ public class Class1323 extends Screen {
    private Biome field6998;
    private Class1206 field6999;
 
-   public Class1323(Screen var1, Class8904 var2, Consumer<Biome> var3, Biome var4) {
+   public Class1323(Screen var1, DynamicRegistries var2, Consumer<Biome> var3, Biome var4) {
       super(new TranslationTextComponent("createWorld.customize.buffet.title"));
       this.field6994 = var1;
       this.field6995 = var3;
@@ -30,15 +30,15 @@ public class Class1323 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field6997 = new Class1283(this);
       this.field4561.add(this.field6997);
-      this.field6999 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, Class7127.field30658, var1 -> {
+      this.field6999 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field6995.accept(this.field6998);
          this.field4562.displayGuiScreen(this.field6994);
       }));
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field6994))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6994))
       );
       this.field6997
          .method6024(

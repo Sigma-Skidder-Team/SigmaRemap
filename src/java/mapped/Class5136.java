@@ -28,13 +28,13 @@ public class Class5136 implements Class5119 {
       RenderSystem.enableBlend();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
       RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
-      RenderSystem.method27862();
-      Class8023.method27456(var1, 0.02F, var2.method34331(), var2.method34332(), var2.method34333(), var2.method34334());
+      RenderSystem.disableTexture();
+      DebugRenderer.method27456(var1, 0.02F, var2.method34331(), var2.method34332(), var2.method34333(), var2.method34334());
       if (!var2.field42160.isEmpty()) {
-         double var5 = (double)var1.method8304() + 0.5;
+         double var5 = (double)var1.getX() + 0.5;
          double var7 = (double)var1.getY() + 1.2;
-         double var9 = (double)var1.method8306() + 0.5;
-         Class8023.method27462(var2.field42160, var5, var7, var9, -1, 0.01F, true, 0.0F, true);
+         double var9 = (double)var1.getZ() + 0.5;
+         DebugRenderer.method27462(var2.field42160, var5, var7, var9, -1, 0.01F, true, 0.0F, true);
       }
 
       RenderSystem.enableTexture();

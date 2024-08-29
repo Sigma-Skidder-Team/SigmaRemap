@@ -21,8 +21,8 @@ public class Class5251 extends Module {
 
     public Class5251() {
         super(ModuleCategory.MISC, "Hypixel", "Gameplay for Hypixel");
-        this.method15972(new Class6004("FriendAccept", "Automatically accept friend requests", false));
-        this.method15972(new Class6004("Hide infos", "Hide scoreboard server informations & date when ingame", false));
+        this.registerSetting(new BooleanSetting("FriendAccept", "Automatically accept friend requests", false));
+        this.registerSetting(new BooleanSetting("Hide infos", "Hide scoreboard server informations & date when ingame", false));
     }
 
     @Override

@@ -22,7 +22,7 @@ public class Class8708 {
 
    public static Registry<Biome> method31404(World var0) {
       return var0 == null
-         ? Class8904.method32457().<Biome>method32453(Registry.BIOME_KEY)
+         ? DynamicRegistries.func_239770_b_().<Biome>method32453(Registry.BIOME_KEY)
          : var0.method6867().<Biome>method32453(Registry.BIOME_KEY);
    }
 
@@ -31,7 +31,7 @@ public class Class8708 {
    }
 
    public static ResourceLocation method31406(Biome var0) {
-      return method31405().method9181(var0);
+      return method31405().getKey(var0);
    }
 
    public static int method31407(Biome var0) {
@@ -80,7 +80,7 @@ public class Class8708 {
       Biome var4 = field39311;
       if (!(var0 instanceof Class1664)) {
          if (var0 instanceof Class1662) {
-            var4 = ((Class1662)var0).method7003(var1);
+            var4 = ((Class1662)var0).getBiome(var1);
          }
       } else {
          var4 = ((Class1664)var0).method7028(var1);

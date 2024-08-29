@@ -64,7 +64,7 @@ public class Class294 extends Class293 {
    }
 
    @Override
-   public void method1090(Class191 var1) throws IOException {
+   public void method1090(IResourceManager var1) throws IOException {
       Minecraft.getInstance().execute(() -> {
          if (!this.field1146) {
             try {
@@ -94,7 +94,7 @@ public class Class294 extends Class293 {
                   this.method1154();
                } else {
                   try {
-                     var3 = (HttpURLConnection)new URL(this.field1142).openConnection(Minecraft.getInstance().method1535());
+                     var3 = (HttpURLConnection)new URL(this.field1142).openConnection(Minecraft.getInstance().getProxy());
                      var3.setDoInput(true);
                      var3.setDoOutput(false);
                      var3.connect();
@@ -133,7 +133,7 @@ public class Class294 extends Class293 {
                      this.method1155();
                   }
                }
-            }, Util.method38492());
+            }, Util.getServerExecutor());
          } else {
             this.method1149(var4);
             this.method1155();
@@ -159,7 +159,7 @@ public class Class294 extends Class293 {
 
    private boolean method1153() {
       if (this.field1148) {
-         Proxy var3 = Minecraft.getInstance().method1535();
+         Proxy var3 = Minecraft.getInstance().getProxy();
          return var3.type() != Type.DIRECT && var3.type() != Type.SOCKS ? false : this.field1142.startsWith("http://");
       } else {
          return false;
@@ -168,7 +168,7 @@ public class Class294 extends Class293 {
 
    private void method1154() {
       try {
-         Class7432 var3 = Class7615.method24943(this.field1142, Minecraft.getInstance().method1535());
+         Class7432 var3 = Class7615.method24943(this.field1142, Minecraft.getInstance().getProxy());
          Class8075 var4 = Class7615.method24950(var3);
          if (var4.method27942() / 100 == 2) {
             byte[] var5 = var4.method27946();

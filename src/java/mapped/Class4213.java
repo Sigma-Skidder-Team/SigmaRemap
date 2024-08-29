@@ -5,17 +5,17 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
 public abstract class Class4213 extends Class4178 {
-   public static final Class7380 field20528 = Blocks.field36767.method11579();
-   public static final Class7380 field20529 = Blocks.field36768.method11579();
-   public static final Class7380 field20530 = Blocks.field36769.method11579();
-   public static final Class7380 field20531 = field20529;
-   public static final Class7380 field20532 = Blocks.field36776.method11579();
-   public static final Class7380 field20533 = Blocks.WATER.method11579();
+   public static final BlockState field20528 = Blocks.field36767.method11579();
+   public static final BlockState field20529 = Blocks.field36768.method11579();
+   public static final BlockState field20530 = Blocks.field36769.method11579();
+   public static final BlockState field20531 = field20529;
+   public static final BlockState field20532 = Blocks.field36776.method11579();
+   public static final BlockState field20533 = Blocks.WATER.method11579();
    public static final Set<Block> field20534 = ImmutableSet.<Block>builder()
       .add(Blocks.ICE)
       .add(Blocks.PACKED_ICE)
       .add(Blocks.field37006)
-      .add(field20533.method23383())
+      .add(field20533.getBlock())
       .build();
    public static final int field20535 = method13004(2, 0, 0);
    public static final int field20536 = method13004(2, 2, 0);
@@ -66,20 +66,20 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public Class4213(Class7792 var1, Class39 var2) {
+   public Class4213(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
    }
 
    public void method13005(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       for (int var11 = var4; var11 <= var7; var11++) {
          for (int var12 = var3; var12 <= var6; var12++) {
             for (int var13 = var5; var13 <= var8; var13++) {
-               Class7380 var14 = this.method12924(var1, var12, var11, var13, var2);
-               if (!field20534.contains(var14.method23383())) {
+               BlockState var14 = this.method12924(var1, var12, var11, var13, var2);
+               if (!field20534.contains(var14.getBlock())) {
                   if (this.method12921(var11) >= var1.method6776() && var14 != field20533) {
                      this.method12923(var1, Blocks.AIR.method11579(), var12, var11, var13, var2);
                   } else {
@@ -106,7 +106,7 @@ public abstract class Class4213 extends Class4178 {
       }
    }
 
-   public void method13007(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, Class7380 var9) {
+   public void method13007(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9) {
       for (int var12 = var4; var12 <= var7; var12++) {
          for (int var13 = var3; var13 <= var6; var13++) {
             for (int var14 = var5; var14 <= var8; var14++) {
@@ -133,10 +133,10 @@ public abstract class Class4213 extends Class4178 {
       if (!var2.method38396(new BlockPos(var8, var9, var10))) {
          return false;
       } else {
-         Class1106 var11 = Class8992.field41022.method33215(var1.method6970());
+         Class1106 var11 = EntityType.field41022.method33215(var1.method6970());
          var11.method3041(var11.method3075());
          var11.method3273((double)var8 + 0.5, (double)var9, (double)var10 + 0.5, 0.0F, 0.0F);
-         var11.method4276(var1, var1.method6807(var11.method3432()), Class2202.field14394, (Class5093)null, (Class39)null);
+         var11.method4276(var1, var1.method6807(var11.getPosition()), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
          var1.method6995(var11);
          return true;
       }

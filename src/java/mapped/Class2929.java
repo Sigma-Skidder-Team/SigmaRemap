@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class Class2929 extends Class2898<Class4712> {
    private static final Logger field18002 = LogManager.getLogger();
-   private static final Class8992<?>[] field18003 = new Class8992[]{Class8992.field41078, Class8992.field41107, Class8992.field41107, Class8992.field41085};
-   private static final Class7380 field18004 = Blocks.field37012.method11579();
+   private static final EntityType<?>[] field18003 = new EntityType[]{EntityType.field41078, EntityType.field41107, EntityType.field41107, EntityType.field41085};
+   private static final BlockState field18004 = Blocks.field37012.method11579();
 
    public Class2929(Codec<Class4712> var1) {
       super(var1);
@@ -31,7 +31,7 @@ public class Class2929 extends Class2898<Class4712> {
          for (int var19 = -1; var19 <= 4; var19++) {
             for (int var20 = var15; var20 <= var16; var20++) {
                BlockPos var21 = var4.method8336(var18, var19, var20);
-               Class8649 var22 = var1.method6738(var21).method23384();
+               Class8649 var22 = var1.getBlockState(var21).method23384();
                boolean var23 = var22.method31086();
                if (var19 == -1 && !var23) {
                   return false;
@@ -56,12 +56,12 @@ public class Class2929 extends Class2898<Class4712> {
             for (int var30 = 3; var30 >= -1; var30--) {
                for (int var32 = var15; var32 <= var16; var32++) {
                   BlockPos var34 = var4.method8336(var27, var30, var32);
-                  Class7380 var36 = var1.method6738(var34);
+                  BlockState var36 = var1.getBlockState(var34);
                   if (var27 != var10 && var30 != -1 && var32 != var15 && var27 != var11 && var30 != 4 && var32 != var16) {
                      if (!var36.method23448(Blocks.CHEST) && !var36.method23448(Blocks.field36532)) {
                         var1.method6725(var34, field18004, 2);
                      }
-                  } else if (var34.getY() >= 0 && !var1.method6738(var34.method8313()).method23384().method31086()) {
+                  } else if (var34.getY() >= 0 && !var1.getBlockState(var34.method8313()).method23384().method31086()) {
                      var1.method6725(var34, field18004, 2);
                   } else if (var36.method23384().method31086() && !var36.method23448(Blocks.CHEST)) {
                      if (var30 == -1 && var3.nextInt(4) != 0) {
@@ -76,15 +76,15 @@ public class Class2929 extends Class2898<Class4712> {
 
          for (int var28 = 0; var28 < 2; var28++) {
             for (int var31 = 0; var31 < 3; var31++) {
-               int var33 = var4.method8304() + var3.nextInt(var9 * 2 + 1) - var9;
+               int var33 = var4.getX() + var3.nextInt(var9 * 2 + 1) - var9;
                int var35 = var4.getY();
-               int var37 = var4.method8306() + var3.nextInt(var14 * 2 + 1) - var14;
+               int var37 = var4.getZ() + var3.nextInt(var14 * 2 + 1) - var14;
                BlockPos var38 = new BlockPos(var33, var35, var37);
                if (var1.method7007(var38)) {
                   int var24 = 0;
 
                   for (Direction var26 : Class76.field161) {
-                     if (var1.method6738(var38.method8349(var26)).method23384().method31086()) {
+                     if (var1.getBlockState(var38.method8349(var26)).method23384().method31086()) {
                         var24++;
                      }
                   }
@@ -99,9 +99,9 @@ public class Class2929 extends Class2898<Class4712> {
          }
 
          var1.method6725(var4, Blocks.field36532.method11579(), 2);
-         Class944 var29 = var1.method6759(var4);
+         TileEntity var29 = var1.getTileEntity(var4);
          if (!(var29 instanceof Class960)) {
-            field18002.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.method8304(), var4.getY(), var4.method8306());
+            field18002.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.getY(), var4.getZ());
          } else {
             ((Class960)var29).method3911().method24790(this.method11264(var3));
          }
@@ -112,7 +112,7 @@ public class Class2929 extends Class2898<Class4712> {
       }
    }
 
-   private Class8992<?> method11264(Random var1) {
-      return Util.<Class8992<?>>method38518(field18003, var1);
+   private EntityType<?> method11264(Random var1) {
+      return Util.<EntityType<?>>method38518(field18003, var1);
    }
 }

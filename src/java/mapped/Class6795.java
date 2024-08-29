@@ -68,7 +68,7 @@ public class Class6795 {
             } else {
                Class880 var9 = (Class880)var8;
                ItemStack var10 = var9.method3090();
-               if (var10.method32105()) {
+               if (var10.isEmpty()) {
                   if (var1.size() == 1) {
                      throw field29599.create(var9.getName().getString());
                   }
@@ -76,7 +76,7 @@ public class Class6795 {
                   var10.method32162(var2, var3);
                   var6++;
                } else if (var1.size() == 1) {
-                  throw field29600.create(var10.method32107().method11731(var10).getString());
+                  throw field29600.create(var10.getItem().method11731(var10).getString());
                }
             }
          }

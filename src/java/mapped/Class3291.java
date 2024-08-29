@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3291 extends Class3257 {
+public class Class3291 extends Item {
    public Class3291(Class5643 var1) {
       super(var1);
    }
@@ -9,7 +9,7 @@ public class Class3291 extends Class3257 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
+      BlockState var6 = var4.getBlockState(var5);
       if (!var6.method23448(Blocks.field37061)) {
          return ActionResultType.field14820;
       } else {
@@ -25,13 +25,13 @@ public class Class3291 extends Class3257 {
       return Class6794.<ItemStack>method20700(var6, var1.method6714());
    }
 
-   public static boolean method11833(Class39 var0) {
+   public static boolean method11833(CompoundNBT var0) {
       if (var0 == null) {
          return false;
       } else if (!var0.method119("pages", 9)) {
          return false;
       } else {
-         Class41 var3 = var0.method131("pages", 8);
+         ListNBT var3 = var0.method131("pages", 8);
 
          for (int var4 = 0; var4 < var3.size(); var4++) {
             String var5 = var3.method160(var4);

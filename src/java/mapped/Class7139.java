@@ -16,7 +16,7 @@ public abstract class Class7139 {
       this.method22274(var1, var2, Blocks.VINE.method11579().method23465(var3, Boolean.valueOf(true)), var4, var5);
    }
 
-   public void method22274(Class1681 var1, BlockPos var2, Class7380 var3, Set<BlockPos> var4, Class9764 var5) {
+   public void method22274(Class1681 var1, BlockPos var2, BlockState var3, Set<BlockPos> var4, Class9764 var5) {
       var1.method6725(var2, var3, 19);
       var4.add(var2);
       var5.method38392(new Class9764(var2, var2));

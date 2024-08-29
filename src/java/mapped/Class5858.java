@@ -20,6 +20,6 @@ public class Class5858 extends Class5839 {
    }
 
    public static boolean method18278(ItemStack var0) {
-      return var0.method32107() == Class8514.field37882;
+      return var0.getItem() == Items.field37882;
    }
 }

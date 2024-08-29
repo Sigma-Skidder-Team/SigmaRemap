@@ -162,7 +162,7 @@ public class Class8641 {
                   var10.method17461((var2, var3) -> this.method31050(var4, var2, var3));
                } else {
                   BlockPos var12 = var8.method8405(var7.iterator().nextShort());
-                  Class7380 var13 = var4.method6738(var12);
+                  BlockState var13 = var4.getBlockState(var12);
                   this.method31052(new Class5607(var12, var13), false);
                   this.method31050(var4, var12, var13);
                }
@@ -175,14 +175,14 @@ public class Class8641 {
       }
    }
 
-   private void method31050(World var1, BlockPos var2, Class7380 var3) {
-      if (var3.method23383().method11998()) {
+   private void method31050(World var1, BlockPos var2, BlockState var3) {
+      if (var3.getBlock().isTileEntityProvider()) {
          this.method31051(var1, var2);
       }
    }
 
    private void method31051(World var1, BlockPos var2) {
-      Class944 var5 = var1.method6759(var2);
+      TileEntity var5 = var1.getTileEntity(var2);
       if (var5 != null) {
          Class5610 var6 = var5.method3776();
          if (var6 != null) {

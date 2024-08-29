@@ -8,18 +8,18 @@ import java.util.Set;
 
 public class Class7883 extends Class7882<Class880> {
    private static String[] field33830;
-   private static final ImmutableMap<Class8992<?>, Float> field33831 = ImmutableMap.<Class8992<?>, Float> builder()
-      .put(Class8992.field41021, 8.0F)
-      .put(Class8992.field41027, 12.0F)
-      .put(Class8992.field41039, 8.0F)
-      .put(Class8992.field41040, 12.0F)
-      .put(Class8992.field41067, 15.0F)
-      .put(Class8992.field41072, 12.0F)
-      .put(Class8992.field41097, 8.0F)
-      .put(Class8992.field41099, 10.0F)
-      .put(Class8992.field41106, 10.0F)
-      .put(Class8992.field41107, 8.0F)
-      .put(Class8992.field41109, 8.0F)
+   private static final ImmutableMap<EntityType<?>, Float> field33831 = ImmutableMap.<EntityType<?>, Float> builder()
+      .put(EntityType.field41021, 8.0F)
+      .put(EntityType.field41027, 12.0F)
+      .put(EntityType.field41039, 8.0F)
+      .put(EntityType.field41040, 12.0F)
+      .put(EntityType.field41067, 15.0F)
+      .put(EntityType.field41072, 12.0F)
+      .put(EntityType.field41097, 8.0F)
+      .put(EntityType.field41099, 10.0F)
+      .put(EntityType.field41106, 10.0F)
+      .put(EntityType.field41107, 8.0F)
+      .put(EntityType.field41109, 8.0F)
       .build();
 
    @Override
@@ -47,15 +47,15 @@ public class Class7883 extends Class7882<Class880> {
    }
 
    private int method26433(Class880 var1, Class880 var2, Class880 var3) {
-      return MathHelper.method37769(var2.getDistanceSq(var1) - var3.getDistanceSq(var1));
+      return MathHelper.floor(var2.getDistanceSq(var1) - var3.getDistanceSq(var1));
    }
 
    private boolean method26434(Class880 var1, Class880 var2) {
-      float var5 = (Float)field33831.get(var2.method3204());
+      float var5 = (Float)field33831.get(var2.getType());
       return var2.getDistanceSq(var1) <= (double)(var5 * var5);
    }
 
    private boolean method26435(Class880 var1) {
-      return field33831.containsKey(var1.method3204());
+      return field33831.containsKey(var1.getType());
    }
 }

@@ -23,13 +23,13 @@ public class Class2596<T extends Class1006> extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return this.field16817.method3148();
+      return this.field16817.isHandActive();
    }
 
    @Override
    public void method10804() {
       this.field16817.method2944(Class2106.field13731, this.field16818.copy());
-      this.field16817.method3154(Hand.field182);
+      this.field16817.method3154(Hand.MAIN_HAND);
    }
 
    @Override

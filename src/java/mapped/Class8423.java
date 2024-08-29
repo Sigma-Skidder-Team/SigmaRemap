@@ -27,10 +27,10 @@ public final class Class8423<E> implements Codec<Class2350<E>> {
 
    public <T> DataResult<Pair<Class2350<E>, T>> decode(DynamicOps<T> var1, T var2) {
       DataResult<Pair<Class2350<E>, T>> var5 = this.field36097.decode(var1, var2);
-      return !(var1 instanceof Class6711)
+      return !(var1 instanceof WorldSettingsImport)
          ? var5
          : var5.flatMap(
-            var2x -> ((Class6711)var1)
+            var2x -> ((WorldSettingsImport)var1)
                   .<E>method20474(var2x.getFirst(), this.field36098, this.field36099)
                   .map(var1xx -> Pair.of(var1xx, var2x.getSecond()))
          );

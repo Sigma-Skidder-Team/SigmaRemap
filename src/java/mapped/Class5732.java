@@ -1,23 +1,23 @@
 package mapped;
 
-public class Class5732<T extends Class916> extends Class5715<T> {
+public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
    private static final ResourceLocation field25143 = new ResourceLocation("textures/entity/minecart.png");
    public final Class2827<T> field25144 = new Class2818<T>();
 
-   public Class5732(Class8853 var1) {
+   public Class5732(EntityRendererManager var1) {
       super(var1);
       this.field25098 = 0.7F;
    }
 
    public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       super.method17853((T)var1, var2, var3, var4, var5, var6);
-      var4.method35294();
+      var4.push();
       long var9 = (long)var1.method3205() * 493286711L;
       var9 = var9 * var9 * 4392167121L + var9 * 98761L;
       float var11 = (((float)(var9 >> 16 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       float var12 = (((float)(var9 >> 20 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       float var13 = (((float)(var9 >> 24 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
-      var4.method35291((double)var11, (double)var12, (double)var13);
+      var4.translate((double)var11, (double)var12, (double)var13);
       double var14 = MathHelper.method37822((double)var3, var1.field5048, var1.getPosX());
       double var16 = MathHelper.method37822((double)var3, var1.field5049, var1.getPosY());
       double var18 = MathHelper.method37822((double)var3, var1.field5050, var1.getPosZ());
@@ -35,7 +35,7 @@ public class Class5732<T extends Class916> extends Class5715<T> {
             var25 = var22;
          }
 
-         var4.method35291(var22.field18048 - var14, (var24.field18049 + var25.field18049) / 2.0 - var16, var22.field18050 - var18);
+         var4.translate(var22.field18048 - var14, (var24.field18049 + var25.field18049) / 2.0 - var16, var22.field18050 - var18);
          Vector3d var26 = var25.method11339(-var24.field18048, -var24.field18049, -var24.field18050);
          if (var26.method11348() != 0.0) {
             var26 = var26.method11333();
@@ -44,7 +44,7 @@ public class Class5732<T extends Class916> extends Class5715<T> {
          }
       }
 
-      var4.method35291(0.0, 0.375, 0.0);
+      var4.translate(0.0, 0.375, 0.0);
       var4.method35293(Class7680.field32900.method25286(180.0F - var2));
       var4.method35293(Class7680.field32902.method25286(-var23));
       float var30 = (float)var1.method3599() - var3;
@@ -54,16 +54,16 @@ public class Class5732<T extends Class916> extends Class5715<T> {
       }
 
       if (var30 > 0.0F) {
-         var4.method35293(Class7680.field32898.method25286(MathHelper.method37763(var30) * var30 * var31 / 10.0F * (float)var1.method3601()));
+         var4.method35293(Class7680.field32898.method25286(MathHelper.sin(var30) * var30 * var31 / 10.0F * (float)var1.method3601()));
       }
 
       int var33 = var1.method3605();
-      Class7380 var27 = var1.method3603();
-      if (var27.method23397() != Class1855.field9885) {
-         var4.method35294();
+      BlockState var27 = var1.method3603();
+      if (var27.getRenderType() != BlockRenderType.field9885) {
+         var4.push();
          float var28 = 0.75F;
          var4.method35292(0.75F, 0.75F, 0.75F);
-         var4.method35291(-0.5, (double)((float)(var33 - 8) / 16.0F), 0.5);
+         var4.translate(-0.5, (double)((float)(var33 - 8) / 16.0F), 0.5);
          var4.method35293(Class7680.field32900.method25286(90.0F));
          this.method17915((T)var1, var3, var27, var4, var5, var6);
          var4.method35295();
@@ -80,7 +80,7 @@ public class Class5732<T extends Class916> extends Class5715<T> {
       return field25143;
    }
 
-   public void method17915(T var1, float var2, Class7380 var3, MatrixStack var4, Class7733 var5, int var6) {
-      Minecraft.getInstance().method1553().method814(var3, var4, var5, var6, Class213.field798);
+   public void method17915(T var1, float var2, BlockState var3, MatrixStack var4, Class7733 var5, int var6) {
+      Minecraft.getInstance().getBlockRendererDispatcher().method814(var3, var4, var5, var6, Class213.field798);
    }
 }

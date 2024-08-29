@@ -31,8 +31,8 @@ public class Class9489 {
 
    private static Class4186 method36639(Class8761 var0, Class4186 var1, BlockPos var2, String var3, Class80 var4, boolean var5) {
       Class4186 var8 = new Class4186(var0, var3, var1.field20455, var4, var5);
-      BlockPos var9 = var1.field20453.method32895(var1.field20454, var2, var8.field20454, BlockPos.field13032);
-      var8.method12937(var9.method8304(), var9.getY(), var9.method8306());
+      BlockPos var9 = var1.field20453.method32895(var1.field20454, var2, var8.field20454, BlockPos.ZERO);
+      var8.method12937(var9.getX(), var9.getY(), var9.getZ());
       return var8;
    }
 

@@ -20,11 +20,11 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    private final Map<ResourceLocation, Class290> field1095 = Maps.newHashMap();
    private final Set<Class288> field1096 = Sets.newHashSet();
    private final Map<String, Integer> field1097 = Maps.newHashMap();
-   private final Class191 field1098;
+   private final IResourceManager field1098;
    private Class290 field1099;
    private ResourceLocation field1100;
 
-   public TextureManager(Class191 var1) {
+   public TextureManager(IResourceManager var1) {
       this.field1098 = var1;
    }
 
@@ -95,11 +95,11 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
 
          return Class1714.method7515();
       } catch (Throwable var9) {
-         Class4526 var6 = Class4526.method14413(var9, "Registering texture");
-         Class8965 var7 = var6.method14410("Resource location being registered");
-         var7.method32807("Resource location", var1);
-         var7.method32806("Texture object class", () -> var2.getClass().getName());
-         throw new Class2506(var6);
+         CrashReport var6 = CrashReport.makeCrashReport(var9, "Registering texture");
+         CrashReportCategory var7 = var6.makeCategory("Resource location being registered");
+         var7.addDetail("Resource location", var1);
+         var7.addDetail("Texture object class", () -> var2.getClass().getName());
+         throw new ReportedException(var6);
       }
    }
 
@@ -137,9 +137,9 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    @Override
-   public void method1080() {
+   public void tick() {
       for (Class288 var4 : this.field1096) {
-         var4.method1080();
+         var4.tick();
       }
    }
 
@@ -160,7 +160,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, Class191 var2, Class7165 var3, Class7165 var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       Class7944.method26810("*** Reloading textures ***");
       Class7944.method26815("Resource packs: " + Class7944.method26870());
       Iterator var9 = this.field1095.keySet().iterator();

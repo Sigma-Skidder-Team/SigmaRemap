@@ -61,8 +61,8 @@ public class Class4319 extends Class4307 {
             Math.min(
                1.0,
                (double)this.field21072
-                  + 0.05 * (double)(30.0F / (float) Minecraft.method1586())
-                  - (double)(this.field21072 * 0.04F * (30.0F / (float) Minecraft.method1586()))
+                  + 0.05 * (double)(30.0F / (float) Minecraft.getFps())
+                  - (double)(this.field21072 * 0.04F * (30.0F / (float) Minecraft.getFps()))
             )
          );
       }

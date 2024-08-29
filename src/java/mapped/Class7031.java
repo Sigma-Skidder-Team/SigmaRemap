@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Properties;
 
 public class Class7031 {
-   private static Class4520[] field30343 = null;
+   private static RenderType[] field30343 = null;
    public static boolean field30344 = false;
 
-   public static Class4520 method21824(Class1665 var0, Class7380 var1, BlockPos var2) {
+   public static RenderType method21824(Class1665 var0, BlockState var1, BlockPos var2) {
       if (field30343 != null) {
          if (var1.method23409(var0, var2)) {
             return null;
@@ -24,7 +24,7 @@ public class Class7031 {
    public static void method21825() {
       field30343 = null;
       field30344 = false;
-      ArrayList<Class4520> var2 = new ArrayList();
+      ArrayList<RenderType> var2 = new ArrayList();
       String var3 = "optifine/block.properties";
       Properties var4 = Class9772.method38445(var3, "CustomBlockLayers");
       if (var4 != null) {
@@ -40,12 +40,12 @@ public class Class7031 {
       }
 
       if (!var2.isEmpty()) {
-         field30343 = var2.toArray(new Class4520[var2.size()]);
+         field30343 = var2.toArray(new RenderType[var2.size()]);
          field30344 = true;
       }
    }
 
-   private static void method21826(String var0, Properties var1, List<Class4520> var2) {
+   private static void method21826(String var0, Properties var1, List<RenderType> var2) {
       Class7944.method26810("CustomBlockLayers: " + var0);
       method21827("solid", Class9025.field41288, var1, var2);
       method21827("cutout", Class9025.field41290, var1, var2);
@@ -53,7 +53,7 @@ public class Class7031 {
       method21827("translucent", Class9025.field41291, var1, var2);
    }
 
-   private static void method21827(String var0, Class4520 var1, Properties var2, List<Class4520> var3) {
+   private static void method21827(String var0, RenderType var1, Properties var2, List<RenderType> var3) {
       String var6 = "layer." + var0;
       String var7 = var2.getProperty(var6);
       if (var7 != null) {
@@ -65,7 +65,7 @@ public class Class7031 {
                int var12 = var11.method38103();
                if (var12 > 0) {
                   while (var3.size() < var12 + 1) {
-                     var3.add((Class4520)null);
+                     var3.add((RenderType)null);
                   }
 
                   if (var3.get(var12) != null) {

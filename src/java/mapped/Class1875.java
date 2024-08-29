@@ -17,7 +17,7 @@ public enum Class1875 implements Class1876 {
    field11026("is_wet");
 
    private String field11027;
-   private Class8853 field11028;
+   private EntityRendererManager field11028;
    private static final Class1875[] field11029 = values();
    private static final Class1875[] field11030 = new Class1875[]{
       field11013,
@@ -38,7 +38,7 @@ public enum Class1875 implements Class1876 {
 
    private Class1875(String var3) {
       this.field11027 = var3;
-      this.field11028 = Minecraft.getInstance().method1554();
+      this.field11028 = Minecraft.getInstance().getRenderManager();
    }
 
    public String method8136() {
@@ -47,7 +47,7 @@ public enum Class1875 implements Class1876 {
 
    @Override
    public boolean method8137() {
-      Entity var3 = Minecraft.getInstance().method1550();
+      Entity var3 = Minecraft.getInstance().getRenderViewEntity();
       if (var3 instanceof Class880) {
          Class880 var4 = (Class880)var3;
          switch (Class9308.field43219[this.ordinal()]) {
@@ -58,7 +58,7 @@ public enum Class1875 implements Class1876 {
             case 3:
                return var4.method3005();
             case 4:
-               return var4.method3340();
+               return var4.isGlowing();
             case 5:
                return var4.field4952 > 0;
             case 6:

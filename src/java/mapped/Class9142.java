@@ -34,16 +34,16 @@ public class Class9142 {
    }
 
    public static float[] method34137(Entity var0) {
-      double var3 = field42012.player.getPosX() + (field42012.player.getPosX() - field42012.player.field5048) * (double)field42012.method1562();
-      double var5 = field42012.player.getPosZ() + (field42012.player.getPosZ() - field42012.player.field5050) * (double)field42012.method1562();
-      double var7 = field42012.player.getPosY() + (field42012.player.getPosY() - field42012.player.field5049) * (double)field42012.method1562();
+      double var3 = field42012.player.getPosX() + (field42012.player.getPosX() - field42012.player.field5048) * (double)field42012.getRenderPartialTicks();
+      double var5 = field42012.player.getPosZ() + (field42012.player.getPosZ() - field42012.player.field5050) * (double)field42012.getRenderPartialTicks();
+      double var7 = field42012.player.getPosY() + (field42012.player.getPosY() - field42012.player.field5049) * (double)field42012.getRenderPartialTicks();
       return method34138(var0, var3, var7, var5);
    }
 
    public static float[] method34138(Entity var0, double var1, double var3, double var5) {
-      double var9 = var0.getPosX() + (var0.getPosX() - var0.field5048) * (double)field42012.method1562();
-      double var11 = var0.getPosZ() + (var0.getPosZ() - var0.field5050) * (double)field42012.method1562();
-      double var13 = var0.getPosY() + (var0.getPosY() - var0.field5049) * (double)field42012.method1562();
+      double var9 = var0.getPosX() + (var0.getPosX() - var0.field5048) * (double)field42012.getRenderPartialTicks();
+      double var11 = var0.getPosZ() + (var0.getPosZ() - var0.field5050) * (double)field42012.getRenderPartialTicks();
+      double var13 = var0.getPosY() + (var0.getPosY() - var0.field5049) * (double)field42012.getRenderPartialTicks();
       double var15 = var9 - var1;
       double var17 = var13 - (double)field42012.player.method3393() - 0.02F + (double)var0.method3393() - var3;
       double var19 = var11 - var5;
@@ -136,12 +136,12 @@ public class Class9142 {
    }
 
    public static float[] method34146(Class880 var0) {
-      double var3 = field42012.player.getPosX() + (field42012.player.getPosX() - field42012.player.field5048) * (double)field42012.method1562();
-      double var5 = field42012.player.getPosZ() + (field42012.player.getPosZ() - field42012.player.field5050) * (double)field42012.method1562();
-      double var7 = field42012.player.getPosY() + (field42012.player.getPosY() - field42012.player.field5049) * (double)field42012.method1562();
-      double var9 = var0.getPosX() + (var0.getPosX() - var0.field5048) * (double)field42012.method1562();
-      double var11 = var0.getPosZ() + (var0.getPosZ() - var0.field5050) * (double)field42012.method1562();
-      double var13 = var0.getPosY() + (var0.getPosY() - var0.field5049) * (double)field42012.method1562();
+      double var3 = field42012.player.getPosX() + (field42012.player.getPosX() - field42012.player.field5048) * (double)field42012.getRenderPartialTicks();
+      double var5 = field42012.player.getPosZ() + (field42012.player.getPosZ() - field42012.player.field5050) * (double)field42012.getRenderPartialTicks();
+      double var7 = field42012.player.getPosY() + (field42012.player.getPosY() - field42012.player.field5049) * (double)field42012.getRenderPartialTicks();
+      double var9 = var0.getPosX() + (var0.getPosX() - var0.field5048) * (double)field42012.getRenderPartialTicks();
+      double var11 = var0.getPosZ() + (var0.getPosZ() - var0.field5050) * (double)field42012.getRenderPartialTicks();
+      double var13 = var0.getPosY() + (var0.getPosY() - var0.field5049) * (double)field42012.getRenderPartialTicks();
       double var15 = (var9 - var0.field5048) * 0.4;
       double var17 = (var11 - var0.field5050) * 0.4;
       double var19 = (double)field42012.player.method3275(var0);
@@ -176,9 +176,9 @@ public class Class9142 {
          field42012.player.getPosX(), field42012.player.getPosY() + (double)field42012.player.method3393(), field42012.player.getPosZ()
       );
       Class6809 var4 = new Class6809(var3, var0, Class2271.field14775, Class1985.field12962, field42012.player);
-      Class8711 var5 = field42012.world.method7036(var4);
-      boolean var6 = var5.method31417() == Class2100.field13689 || var5.method31417() == Class2100.field13691;
-      Block var7 = field42012.world.method6738(var5.method31423()).method23383();
+      BlockRayTraceResult var5 = field42012.world.method7036(var4);
+      boolean var6 = var5.getType() == RayTraceResult.Type.MISS || var5.getType() == RayTraceResult.Type.ENTITY;
+      Block var7 = field42012.world.getBlockState(var5.getPos()).getBlock();
       return var6;
    }
 
@@ -208,9 +208,9 @@ public class Class9142 {
             }
 
             for (int var25 = -1; var25 < 2; var25 += 2) {
-               var8 = var0.getPosX() + (var0.getPosX() - var0.field5048) * (double)field42012.method1562();
-               var10 = var0.getPosZ() + (var0.getPosZ() - var0.field5050) * (double)field42012.method1562();
-               var12 = var0.getPosY() + 0.05 + (var0.getPosY() - var0.field5049) * (double)field42012.method1562() + var6;
+               var8 = var0.getPosX() + (var0.getPosX() - var0.field5048) * (double)field42012.getRenderPartialTicks();
+               var10 = var0.getPosZ() + (var0.getPosZ() - var0.field5050) * (double)field42012.getRenderPartialTicks();
+               var12 = var0.getPosY() + 0.05 + (var0.getPosY() - var0.field5049) * (double)field42012.getRenderPartialTicks() + var6;
                double var26 = var0.field5035.method19676() / 2.5 * (double)var25;
                double var28 = var0.field5035.method19678() / 2.5 * (double)var25;
                if (!(field42012.player.getPosX() < var8 + var26)) {

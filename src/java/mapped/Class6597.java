@@ -9,7 +9,7 @@ public class Class6597 {
       Class8634.field38839, Class8634.field38839, Class8634.field38839, Class8634.field38839, Class8634.field38839, Class8634.field38839
    );
    public static final Class6597 field29028 = new Class6597(
-      Class9735.method38146().method38147(Class8514.field38092).method38149(Class7699.method25421().method32142()).method38151(),
+      Class9735.method38146().method38147(Items.field38092).method38149(Class7699.method25421().method32142()).method38151(),
       Class8634.field38839,
       Class8634.field38839,
       Class8634.field38839,

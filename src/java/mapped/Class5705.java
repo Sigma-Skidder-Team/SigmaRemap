@@ -6,7 +6,7 @@ public class Class5705 extends Class5651<Class1017, Class2862<Class1017>> {
    private static final ResourceLocation field25077 = new ResourceLocation("textures/entity/bee/bee.png");
    private static final ResourceLocation field25078 = new ResourceLocation("textures/entity/bee/bee_nectar.png");
 
-   public Class5705(Class8853 var1) {
+   public Class5705(EntityRendererManager var1) {
       super(var1, new Class2862<Class1017>(), 0.4F);
    }
 

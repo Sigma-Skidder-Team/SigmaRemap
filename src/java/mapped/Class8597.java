@@ -17,9 +17,9 @@ public class Class8597 {
    private static int field38686 = Integer.MIN_VALUE;
 
    public static int method30743(World var0, Entity var1, int var2) {
-      int var5 = MathHelper.method37769(var1.getPosX()) >> 4;
-      int var6 = MathHelper.method37769(var1.getPosY()) >> 4;
-      int var7 = MathHelper.method37769(var1.getPosZ()) >> 4;
+      int var5 = MathHelper.floor(var1.getPosX()) >> 4;
+      int var6 = MathHelper.floor(var1.getPosY()) >> 4;
+      int var7 = MathHelper.floor(var1.getPosZ()) >> 4;
       var6 = Class7944.method26830(var6, 0, 15);
       Class1674 var8 = var0.method6824(var5, var7);
       int var9 = var5 - var2;
@@ -74,7 +74,7 @@ public class Class8597 {
                }
 
                try {
-                  Map<BlockPos, Class944> var24 = var16.method7145();
+                  Map<BlockPos, TileEntity> var24 = var16.method7145();
                   if (!var24.isEmpty()) {
                      for (BlockPos var20 : var24.keySet()) {
                         int var21 = var20.getY() >> 4;

@@ -2,10 +2,10 @@ package mapped;
 
 public class Class540 implements Runnable {
    private static String[] field2585;
-   public final Class1001 field2586;
+   public final EnderCrystalEntity field2586;
    public final Class5254 field2587;
 
-   public Class540(Class5254 var1, Class1001 var2) {
+   public Class540(Class5254 var1, EnderCrystalEntity var2) {
       this.field2587 = var1;
       this.field2586 = var2;
    }

@@ -31,18 +31,18 @@ public class Class220<T extends Class880, M extends Class2827<T>> extends Class2
             }
          }
 
-         var1.method35294();
-         var1.method35291(0.0, 0.0, 0.125);
+         var1.push();
+         var1.translate(0.0, 0.0, 0.125);
          this.method825().method11027(this.field865);
          this.field865.method10998((T)var4, var5, var6, var8, var9, var10);
-         Class5422 var16 = Class216.method782(var2, Class4520.method14308(var14), false, var13.method32159());
+         Class5422 var16 = ItemRenderer.method782(var2, RenderType.method14308(var14), false, var13.method32159());
          this.field865.method11016(var1, var16, var3, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
          var1.method35295();
       }
    }
 
    public boolean method827(ItemStack var1, T var2) {
-      return var1.method32107() == Class8514.field38120;
+      return var1.getItem() == Items.field38120;
    }
 
    public ResourceLocation method828(ItemStack var1, T var2) {

@@ -12,9 +12,9 @@ public class Class9413 {
    public static Biome method36062(float var0, float var1, float var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
-      var6.method35249(Class179.field624, new Class6692(Class8992.field41105, 8, 4, 4));
-      var6.method35249(Class179.field624, new Class6692(Class8992.field41071, 4, 2, 3));
-      var6.method35249(Class179.field624, new Class6692(Class8992.field41033, 8, 2, 4));
+      var6.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4));
+      var6.method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3));
+      var6.method35249(Class179.field624, new Class6692(EntityType.field41033, 8, 2, 4));
       if (!var3) {
          Class8468.method29839(var6);
          Class8468.method29846(var6, 100, 25, 100);
@@ -128,8 +128,8 @@ public class Class9413 {
    public static Biome method36067() {
       Class9328 var2 = new Class9328();
       Class8468.method29848(var2);
-      var2.method35249(Class179.field624, new Class6692(Class8992.field41062, 10, 1, 1))
-         .method35249(Class179.field623, new Class6692(Class8992.field41059, 2, 1, 1));
+      var2.method35249(Class179.field624, new Class6692(EntityType.field41062, 10, 1, 1))
+         .method35249(Class179.field623, new Class6692(EntityType.field41059, 2, 1, 1));
       return method36073(0.2F, 0.4F, 0.9F, false, false, true, var2);
    }
 
@@ -148,9 +148,9 @@ public class Class9413 {
    private static Biome method36071(float var0, float var1, int var2, int var3, int var4) {
       Class9328 var7 = new Class9328();
       Class8468.method29848(var7);
-      var7.method35249(Class179.field624, new Class6692(Class8992.field41062, var2, 1, var3))
-         .method35249(Class179.field623, new Class6692(Class8992.field41059, 2, 1, var4))
-         .method35249(Class179.field624, new Class6692(Class8992.field41061, 1, 1, 2));
+      var7.method35249(Class179.field624, new Class6692(EntityType.field41062, var2, 1, var3))
+         .method35249(Class179.field623, new Class6692(EntityType.field41059, 2, 1, var4))
+         .method35249(Class179.field624, new Class6692(EntityType.field41061, 1, 1, 2));
       var7.method35252();
       return method36073(var0, var1, 0.9F, false, false, false, var7);
    }
@@ -158,9 +158,9 @@ public class Class9413 {
    private static Biome method36072(float var0, float var1, int var2, int var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29848(var6);
-      var6.method35249(Class179.field624, new Class6692(Class8992.field41062, var2, 1, var3))
-         .method35249(Class179.field624, new Class6692(Class8992.field41061, 80, 1, 2))
-         .method35249(Class179.field623, new Class6692(Class8992.field41059, 2, 1, 1));
+      var6.method35249(Class179.field624, new Class6692(EntityType.field41062, var2, 1, var3))
+         .method35249(Class179.field624, new Class6692(EntityType.field41061, 80, 1, 2))
+         .method35249(Class179.field623, new Class6692(EntityType.field41059, 2, 1, 1));
       return method36073(var0, var1, 0.9F, true, false, false, var6);
    }
 
@@ -223,7 +223,7 @@ public class Class9413 {
    public static Biome method36074(float var0, float var1, Class9319<Class8278> var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
-      var6.method35249(Class179.field624, new Class6692(Class8992.field41047, 5, 4, 6));
+      var6.method35249(Class179.field624, new Class6692(EntityType.field41047, 5, 4, 6));
       Class8468.method29840(var6);
       Class7935 var7 = new Class7935().method26688(var2);
       Class8468.method29771(var7);
@@ -529,15 +529,15 @@ public class Class9413 {
    private static Class9328 method36086() {
       Class9328 var2 = new Class9328();
       Class8468.method29838(var2);
-      var2.method35249(Class179.field624, new Class6692(Class8992.field41038, 1, 2, 6))
-         .method35249(Class179.field624, new Class6692(Class8992.field41019, 1, 1, 1));
+      var2.method35249(Class179.field624, new Class6692(EntityType.field41038, 1, 2, 6))
+         .method35249(Class179.field624, new Class6692(EntityType.field41019, 1, 1, 1));
       Class8468.method29840(var2);
       return var2;
    }
 
    public static Biome method36087() {
       Class9328 var2 = method36086();
-      var2.method35249(Class179.field624, new Class6692(Class8992.field41047, 8, 4, 4));
+      var2.method35249(Class179.field624, new Class6692(EntityType.field41047, 8, 4, 4));
       return method36084(1.5F, 0.025F, 1.0F, true, false, var2);
    }
 
@@ -601,7 +601,7 @@ public class Class9413 {
    private static Biome method36092(Class9328 var0, int var1, int var2, boolean var3, Class7935 var4) {
       return new Class9684()
          .method37911(Class87.field224)
-         .method37912(Class100.field285)
+         .method37912(Class100.OCEAN)
          .method37913(!var3 ? -1.0F : -1.8F)
          .method37914(0.1F)
          .method37915(0.5F)
@@ -658,7 +658,7 @@ public class Class9413 {
    public static Biome method36094(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 3, 4, 15);
-      var3.method35249(Class179.field627, new Class6692(Class8992.field41073, 15, 1, 5));
+      var3.method35249(Class179.field627, new Class6692(EntityType.field41073, 15, 1, 5));
       boolean var4 = !var0;
       Class7935 var5 = method36093(Class9109.field41850, var0, false, var4);
       var5.method26690(Class1993.field13006, !var0 ? Class9104.field41652 : Class9104.field41653);
@@ -671,7 +671,7 @@ public class Class9413 {
    public static Biome method36095(boolean var0) {
       Class9328 var3 = new Class9328();
       Class8468.method29841(var3, 1, 4, 10);
-      var3.method35249(Class179.field626, new Class6692(Class8992.field41018, 1, 1, 2));
+      var3.method35249(Class179.field626, new Class6692(EntityType.field41018, 1, 1, 2));
       Class7935 var4 = method36093(Class9109.field41850, var0, false, true);
       var4.method26690(Class1993.field13006, !var0 ? Class9104.field41654 : Class9104.field41656);
       Class8468.method29830(var4);
@@ -688,9 +688,9 @@ public class Class9413 {
          Class8468.method29841(var3, 8, 4, 8);
       }
 
-      var3.method35249(Class179.field627, new Class6692(Class8992.field41070, 5, 1, 3))
-         .method35249(Class179.field627, new Class6692(Class8992.field41095, 25, 8, 8))
-         .method35249(Class179.field626, new Class6692(Class8992.field41018, 2, 1, 2));
+      var3.method35249(Class179.field627, new Class6692(EntityType.field41070, 5, 1, 3))
+         .method35249(Class179.field627, new Class6692(EntityType.field41095, 25, 8, 8))
+         .method35249(Class179.field626, new Class6692(EntityType.field41018, 2, 1, 2));
       Class7935 var4 = method36093(Class9109.field41857, var0, true, false);
       var4.method26690(Class1993.field13006, !var0 ? Class9104.field41658 : Class9104.field41659);
       if (var0) {
@@ -703,7 +703,7 @@ public class Class9413 {
    }
 
    public static Biome method36097() {
-      Class9328 var2 = new Class9328().method35249(Class179.field627, new Class6692(Class8992.field41070, 15, 1, 3));
+      Class9328 var2 = new Class9328().method35249(Class179.field627, new Class6692(EntityType.field41070, 15, 1, 3));
       Class8468.method29842(var2, 10, 4);
       Class7935 var3 = method36093(Class9109.field41848, false, true, false)
          .method26690(Class1993.field13006, Class9104.field41807)
@@ -716,7 +716,7 @@ public class Class9413 {
    public static Biome method36098() {
       Class9328 var2 = new Class9328();
       Class8468.method29842(var2, 5, 1);
-      var2.method35249(Class179.field623, new Class6692(Class8992.field41021, 5, 1, 1));
+      var2.method35249(Class179.field623, new Class6692(EntityType.field41021, 5, 1, 1));
       Class7935 var3 = method36093(Class9109.field41848, true, true, false).method26690(Class1993.field13006, Class9104.field41659);
       Class8468.method29830(var3);
       Class8468.method29835(var3);
@@ -725,11 +725,11 @@ public class Class9413 {
 
    public static Biome method36099(boolean var0) {
       Class9328 var3 = new Class9328()
-         .method35249(Class179.field626, new Class6692(Class8992.field41086, 1, 1, 4))
-         .method35249(Class179.field627, new Class6692(Class8992.field41073, 15, 1, 5))
-         .method35249(Class179.field624, new Class6692(Class8992.field41068, 1, 1, 2));
+         .method35249(Class179.field626, new Class6692(EntityType.field41086, 1, 1, 4))
+         .method35249(Class179.field627, new Class6692(EntityType.field41073, 15, 1, 5))
+         .method35249(Class179.field624, new Class6692(EntityType.field41068, 1, 1, 2));
       Class8468.method29840(var3);
-      var3.method35249(Class179.field623, new Class6692(Class8992.field41021, 5, 1, 1));
+      var3.method35249(Class179.field623, new Class6692(EntityType.field41021, 5, 1, 1));
       float var4 = !var0 ? 0.0F : 0.5F;
       Class7935 var5 = new Class7935().method26688(Class9109.field41847);
       var5.method26693(Class9438.field43846);
@@ -756,7 +756,7 @@ public class Class9413 {
       Class8468.method29835(var5);
       return new Class9684()
          .method37911(!var0 ? Class87.field225 : Class87.field224)
-         .method37912(Class100.field285)
+         .method37912(Class100.OCEAN)
          .method37913(!var0 ? -1.0F : -1.8F)
          .method37914(0.1F)
          .method37915(var4)
@@ -835,21 +835,21 @@ public class Class9413 {
    }
 
    public static Biome method36102(float var0, float var1) {
-      Class9328 var4 = method36101().method35249(Class179.field624, new Class6692(Class8992.field41105, 5, 4, 4)).method35252();
+      Class9328 var4 = method36101().method35249(Class179.field624, new Class6692(EntityType.field41105, 5, 4, 4)).method35252();
       return method36100(var0, var1, false, var4);
    }
 
    public static Biome method36103() {
-      Class9328 var2 = method36101().method35249(Class179.field624, new Class6692(Class8992.field41071, 4, 2, 3));
+      Class9328 var2 = method36101().method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3));
       return method36100(0.1F, 0.4F, true, var2);
    }
 
    public static Biome method36104(float var0, float var1, boolean var2, boolean var3, boolean var4, boolean var5) {
       Class9328 var8 = new Class9328();
       Class8468.method29838(var8);
-      var8.method35249(Class179.field624, new Class6692(Class8992.field41105, 8, 4, 4))
-         .method35249(Class179.field624, new Class6692(Class8992.field41071, 4, 2, 3))
-         .method35249(Class179.field624, new Class6692(Class8992.field41033, 8, 2, 4));
+      var8.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4))
+         .method35249(Class179.field624, new Class6692(EntityType.field41071, 4, 2, 3))
+         .method35249(Class179.field624, new Class6692(EntityType.field41033, 8, 2, 4));
       if (!var2 && !var3) {
          var8.method35252();
       }
@@ -957,7 +957,7 @@ public class Class9413 {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
-      var5.method35249(Class179.field623, new Class6692(Class8992.field41080, 1, 1, 1));
+      var5.method35249(Class179.field623, new Class6692(EntityType.field41080, 1, 1, 1));
       Class7935 var6 = new Class7935().method26688(Class9109.field41861);
       if (!var2) {
          var6.method26693(Class9438.field43843);
@@ -1064,10 +1064,10 @@ public class Class9413 {
 
    public static Biome method36108(float var0, float var1, float var2, int var3, boolean var4) {
       Class9328 var7 = new Class9328()
-         .method35249(Class179.field626, new Class6692(Class8992.field41086, 2, 1, 4))
-         .method35249(Class179.field627, new Class6692(Class8992.field41073, 5, 1, 5));
+         .method35249(Class179.field626, new Class6692(EntityType.field41086, 2, 1, 4))
+         .method35249(Class179.field627, new Class6692(EntityType.field41073, 5, 1, 5));
       Class8468.method29840(var7);
-      var7.method35249(Class179.field623, new Class6692(Class8992.field41021, !var4 ? 100 : 1, 1, 1));
+      var7.method35249(Class179.field623, new Class6692(EntityType.field41021, !var4 ? 100 : 1, 1, 1));
       Class7935 var8 = new Class7935().method26688(Class9109.field41850);
       var8.method26693(Class9438.field43835);
       var8.method26693(Class9438.field43858);
@@ -1090,7 +1090,7 @@ public class Class9413 {
       Class8468.method29835(var8);
       return new Class9684()
          .method37911(!var4 ? Class87.field224 : Class87.field225)
-         .method37912(Class100.field287)
+         .method37912(Class100.RIVER)
          .method37913(var0)
          .method37914(var1)
          .method37915(var2)
@@ -1112,7 +1112,7 @@ public class Class9413 {
    public static Biome method36109(float var0, float var1, float var2, float var3, int var4, boolean var5, boolean var6) {
       Class9328 var9 = new Class9328();
       if (!var6 && !var5) {
-         var9.method35249(Class179.field624, new Class6692(Class8992.field41096, 5, 2, 5));
+         var9.method35249(Class179.field624, new Class6692(EntityType.field41096, 5, 2, 5));
       }
 
       Class8468.method29840(var9);
@@ -1185,12 +1185,12 @@ public class Class9413 {
 
    public static Biome method36111() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(Class8992.field41034, 50, 4, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41110, 100, 4, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41049, 2, 4, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41025, 1, 4, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41065, 15, 4, 4))
-         .method35249(Class179.field624, new Class6692(Class8992.field41088, 60, 1, 2))
+         .method35249(Class179.field623, new Class6692(EntityType.field41034, 50, 4, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41110, 100, 4, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41049, 2, 4, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41025, 1, 4, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41065, 15, 4, 4))
+         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41855)
@@ -1226,7 +1226,7 @@ public class Class9413 {
                .method34876(Class6067.field26321)
                .method34877(new Class7959(Class6067.field26322, 6000, 8, 2.0))
                .method34878(new Class8217(Class6067.field26320, 0.0111))
-               .method34879(Class7751.method25672(Class6067.field26796))
+               .method34879(BackgroundMusicTracks.method25672(Class6067.field26796))
                .method34880()
          )
          .method37918(var2)
@@ -1238,14 +1238,14 @@ public class Class9413 {
       double var2 = 0.7;
       double var4 = 0.15;
       Class8835 var6 = new Class9328()
-         .method35249(Class179.field623, new Class6692(Class8992.field41078, 20, 5, 5))
-         .method35249(Class179.field623, new Class6692(Class8992.field41034, 50, 4, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41025, 1, 4, 4))
-         .method35249(Class179.field624, new Class6692(Class8992.field41088, 60, 1, 2))
-         .method35250(Class8992.field41078, 0.7, 0.15)
-         .method35250(Class8992.field41034, 0.7, 0.15)
-         .method35250(Class8992.field41025, 0.7, 0.15)
-         .method35250(Class8992.field41088, 0.7, 0.15)
+         .method35249(Class179.field623, new Class6692(EntityType.field41078, 20, 5, 5))
+         .method35249(Class179.field623, new Class6692(EntityType.field41034, 50, 4, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41025, 1, 4, 4))
+         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35250(EntityType.field41078, 0.7, 0.15)
+         .method35250(EntityType.field41034, 0.7, 0.15)
+         .method35250(EntityType.field41025, 0.7, 0.15)
+         .method35250(EntityType.field41088, 0.7, 0.15)
          .method35253();
       Class7935 var7 = new Class7935()
          .method26688(Class9109.field41859)
@@ -1283,7 +1283,7 @@ public class Class9413 {
                .method34876(Class6067.field26324)
                .method34877(new Class7959(Class6067.field26325, 6000, 8, 2.0))
                .method34878(new Class8217(Class6067.field26323, 0.0111))
-               .method34879(Class7751.method25672(Class6067.field26797))
+               .method34879(BackgroundMusicTracks.method25672(Class6067.field26797))
                .method34880()
          )
          .method37918(var6)
@@ -1293,9 +1293,9 @@ public class Class9413 {
 
    public static Biome method36113() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(Class8992.field41034, 40, 1, 1))
-         .method35249(Class179.field623, new Class6692(Class8992.field41049, 100, 2, 5))
-         .method35249(Class179.field624, new Class6692(Class8992.field41088, 60, 1, 2))
+         .method35249(Class179.field623, new Class6692(EntityType.field41034, 40, 1, 1))
+         .method35249(Class179.field623, new Class6692(EntityType.field41049, 100, 2, 5))
+         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41842)
@@ -1337,7 +1337,7 @@ public class Class9413 {
                .method34876(Class6067.field26315)
                .method34877(new Class7959(Class6067.field26316, 6000, 8, 2.0))
                .method34878(new Class8217(Class6067.field26314, 0.0111))
-               .method34879(Class7751.method25672(Class6067.field26795))
+               .method34879(BackgroundMusicTracks.method25672(Class6067.field26795))
                .method34880()
          )
          .method37918(var2)
@@ -1347,10 +1347,10 @@ public class Class9413 {
 
    public static Biome method36114() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(Class8992.field41110, 1, 2, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41037, 9, 3, 4))
-         .method35249(Class179.field623, new Class6692(Class8992.field41065, 5, 3, 4))
-         .method35249(Class179.field624, new Class6692(Class8992.field41088, 60, 1, 2))
+         .method35249(Class179.field623, new Class6692(EntityType.field41110, 1, 2, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41037, 9, 3, 4))
+         .method35249(Class179.field623, new Class6692(EntityType.field41065, 5, 3, 4))
+         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41843)
@@ -1387,7 +1387,7 @@ public class Class9413 {
                .method34876(Class6067.field26318)
                .method34877(new Class7959(Class6067.field26319, 6000, 8, 2.0))
                .method34878(new Class8217(Class6067.field26317, 0.0111))
-               .method34879(Class7751.method25672(Class6067.field26798))
+               .method34879(BackgroundMusicTracks.method25672(Class6067.field26798))
                .method34880()
          )
          .method37918(var2)
@@ -1397,9 +1397,9 @@ public class Class9413 {
 
    public static Biome method36115() {
       Class8835 var2 = new Class9328()
-         .method35249(Class179.field623, new Class6692(Class8992.field41025, 1, 4, 4))
-         .method35249(Class179.field624, new Class6692(Class8992.field41088, 60, 1, 2))
-         .method35250(Class8992.field41025, 1.0, 0.12)
+         .method35249(Class179.field623, new Class6692(EntityType.field41025, 1, 4, 4))
+         .method35249(Class179.field624, new Class6692(EntityType.field41088, 60, 1, 2))
+         .method35250(EntityType.field41025, 1.0, 0.12)
          .method35253();
       Class7935 var3 = new Class7935()
          .method26688(Class9109.field41862)
@@ -1438,7 +1438,7 @@ public class Class9413 {
                .method34876(Class6067.field26327)
                .method34877(new Class7959(Class6067.field26328, 6000, 8, 2.0))
                .method34878(new Class8217(Class6067.field26326, 0.0111))
-               .method34879(Class7751.method25672(Class6067.field26799))
+               .method34879(BackgroundMusicTracks.method25672(Class6067.field26799))
                .method34880()
          )
          .method37918(var2)

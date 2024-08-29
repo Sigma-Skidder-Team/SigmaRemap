@@ -4,9 +4,9 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.util.text.ITextComponent;
 
 public interface Class7151 {
-   void method22311(Class39 var1) throws CommandSyntaxException;
+   void method22311(CompoundNBT var1) throws CommandSyntaxException;
 
-   Class39 method22312() throws CommandSyntaxException;
+   CompoundNBT method22312() throws CommandSyntaxException;
 
    ITextComponent method22313();
 

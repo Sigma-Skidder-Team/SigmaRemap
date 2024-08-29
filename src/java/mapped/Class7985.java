@@ -12,7 +12,7 @@ public class Class7985 extends ChannelInitializer<Channel> {
 
    public void initChannel(Channel var1) throws Exception {
       NetworkManager var4 = new NetworkManager(Class1975.SERVERBOUND);
-      var4.method30692(new Class5107(Class9021.method33406(this.field34311), var4));
+      var4.setNetHandler(new Class5107(Class9021.method33406(this.field34311), var4));
       Class9021.method33407(this.field34311).add(var4);
       var1.pipeline().addLast("packet_handler", var4);
    }

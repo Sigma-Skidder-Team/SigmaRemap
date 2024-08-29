@@ -4,7 +4,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class Class840 extends Class838 {
    private Screen field4636;
-   private Class9574 field4637;
+   private GameSettings field4637;
    private static AbstractOption[] field4638 = new AbstractOption[]{
       AbstractOption.field25382,
       AbstractOption.field25383,
@@ -26,8 +26,8 @@ public class Class840 extends Class838 {
       AbstractOption.field25347
    };
 
-   public Class840(Screen var1, Class9574 var2) {
-      super(new StringTextComponent(Class9088.method33883("of.options.animationsTitle")));
+   public Class840(Screen var1, GameSettings var2) {
+      super(new StringTextComponent(I18n.format("of.options.animationsTitle")));
       this.field4636 = var1;
       this.field4637 = var2;
    }
@@ -49,7 +49,7 @@ public class Class840 extends Class838 {
       this.<Class1210>method2455(
          new Class1210(211, this.field4564 / 2 - 155 + 80, this.field4565 / 6 + 168 + 11, 70, 20, Class8043.method27619("of.options.animation.allOff"))
       );
-      this.<Class1211>method2455(new Class1211(200, this.field4564 / 2 + 5, this.field4565 / 6 + 168 + 11, Class9088.method33883("gui.done")));
+      this.<Class1211>method2455(new Class1211(200, this.field4564 / 2 + 5, this.field4565 / 6 + 168 + 11, I18n.format("gui.done")));
    }
 
    @Override
@@ -58,7 +58,7 @@ public class Class840 extends Class838 {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482) {
             if (var4.field6523 == 200) {
-               this.field4562.gameSettings.method37146();
+               this.field4562.gameSettings.saveOptions();
                this.field4562.displayGuiScreen(this.field4636);
             }
 
@@ -70,21 +70,21 @@ public class Class840 extends Class838 {
                this.field4562.gameSettings.method37166(false);
             }
 
-            this.field4562.method1481();
+            this.field4562.updateWindowSize();
          }
       }
    }
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.method37146();
+      this.field4562.gameSettings.saveOptions();
       super.onClose();
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4562.field1294, this.field4560, this.field4564 / 2, 15, 16777215);
+      method5691(var1, this.field4562.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 }

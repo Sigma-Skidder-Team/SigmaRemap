@@ -43,9 +43,9 @@ public class Class8268 {
    private final Map<Class8550<?>, Comparable<?>> field35545 = Maps.newHashMap();
    private final Map<String, String> field35546 = Maps.newHashMap();
    private ResourceLocation field35547 = new ResourceLocation("");
-   private Class9348<Block, Class7380> field35548;
-   private Class7380 field35549;
-   private Class39 field35550;
+   private Class9348<Block, BlockState> field35548;
+   private BlockState field35549;
+   private CompoundNBT field35550;
    private ResourceLocation field35551 = new ResourceLocation("");
    private int field35552;
    private BiFunction<SuggestionsBuilder, Class7984<Block>, CompletableFuture<Suggestions>> field35553 = field35542;
@@ -60,12 +60,12 @@ public class Class8268 {
    }
 
    @Nullable
-   public Class7380 method28837() {
+   public BlockState method28837() {
       return this.field35549;
    }
 
    @Nullable
-   public Class39 method28838() {
+   public CompoundNBT method28838() {
       return this.field35550;
    }
 
@@ -134,7 +134,7 @@ public class Class8268 {
          Class7608<Block> var6 = var2.method27135(this.field35551);
          if (var6 != null) {
             for (Block var8 : var6.method24918()) {
-               for (Class8550 var10 : var8.method11577().method35395()) {
+               for (Class8550 var10 : var8.getStateContainer().method35395()) {
                   if (!this.field35546.containsKey(var10.method30472()) && var10.method30472().startsWith(var5)) {
                      var1.suggest(var10.method30472() + '=');
                   }
@@ -156,13 +156,13 @@ public class Class8268 {
 
    private boolean method28846(Class7984<Block> var1) {
       if (this.field35549 != null) {
-         return this.field35549.method23383().method11998();
+         return this.field35549.getBlock().isTileEntityProvider();
       } else {
          if (this.field35551 != null) {
             Class7608<Block> var4 = var1.method27135(this.field35551);
             if (var4 != null) {
                for (Block var6 : var4.method24918()) {
-                  if (var6.method11998()) {
+                  if (var6.isTileEntityProvider()) {
                      return true;
                   }
                }
@@ -211,13 +211,13 @@ public class Class8268 {
          Class7608<Block> var7 = var2.method27135(this.field35551);
          if (var7 != null) {
             for (Block var9 : var7.method24918()) {
-               Class8550 var10 = var9.method11577().method35396(var3);
+               Class8550 var10 = var9.getStateContainer().method35396(var3);
                if (var10 != null) {
                   method28849(var1, var10);
                }
 
                if (!var6) {
-                  for (Class8550 var12 : var9.method11577().method35395()) {
+                  for (Class8550 var12 : var9.getStateContainer().method35395()) {
                      if (!this.field35546.containsKey(var12.method30472())) {
                         var6 = true;
                         break;
@@ -244,8 +244,8 @@ public class Class8268 {
             boolean var7 = false;
 
             for (Block var9 : var5.method24918()) {
-               var6 |= !var9.method11577().method35395().isEmpty();
-               var7 |= var9.method11998();
+               var6 |= !var9.getStateContainer().method35395().isEmpty();
+               var7 |= var9.isTileEntityProvider();
                if (var6 && var7) {
                   break;
                }
@@ -266,11 +266,11 @@ public class Class8268 {
 
    private CompletableFuture<Suggestions> method28852(SuggestionsBuilder var1, Class7984<Block> var2) {
       if (var1.getRemaining().isEmpty()) {
-         if (!this.field35549.method23383().method11577().method35395().isEmpty()) {
+         if (!this.field35549.getBlock().getStateContainer().method35395().isEmpty()) {
             var1.suggest(String.valueOf('['));
          }
 
-         if (this.field35549.method23383().method11998()) {
+         if (this.field35549.getBlock().isTileEntityProvider()) {
             var1.suggest(String.valueOf('{'));
          }
       }
@@ -287,18 +287,18 @@ public class Class8268 {
          Class6618.method20140(var2.method27137(), var1, String.valueOf('#'));
       }
 
-      Class6618.method20141(Registry.field16072.method9190(), var1);
+      Class6618.method20141(Registry.BLOCK.method9190(), var1);
       return var1.buildFuture();
    }
 
    public void method28855() throws CommandSyntaxException {
       int var3 = this.field35543.getCursor();
       this.field35547 = ResourceLocation.method8294(this.field35543);
-      Block var4 = Registry.field16072.method9187(this.field35547).orElseThrow(() -> {
+      Block var4 = Registry.BLOCK.method9187(this.field35547).orElseThrow(() -> {
          this.field35543.setCursor(var3);
          return field35536.createWithContext(this.field35543, this.field35547.toString());
       });
-      this.field35548 = var4.method11577();
+      this.field35548 = var4.getStateContainer();
       this.field35549 = var4.method11579();
    }
 
@@ -434,8 +434,8 @@ public class Class8268 {
       }
    }
 
-   public static String toString(Class7380 var0) {
-      StringBuilder var3 = new StringBuilder(Registry.field16072.method9181(var0.method23383()).toString());
+   public static String toString(BlockState var0) {
+      StringBuilder var3 = new StringBuilder(Registry.BLOCK.getKey(var0.getBlock()).toString());
       if (!var0.method23461().isEmpty()) {
          var3.append('[');
          boolean var4 = false;

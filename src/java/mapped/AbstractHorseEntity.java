@@ -11,13 +11,13 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    private static final Predicate<Class880> field5879 = var0 -> var0 instanceof AbstractHorseEntity && ((AbstractHorseEntity)var0).method4940();
    private static final Class8522 field5880 = new Class8522().method30203(16.0).method30204().method30205().method30206().method30209(field5879);
    private static final Class120 field5881 = Class120.method339(
-      Class8514.field37842,
-      Class8514.field37936,
+      Items.field37842,
+      Items.field37936,
       Blocks.field36777.method11581(),
-      Class8514.field37795,
-      Class8514.field38057,
-      Class8514.field37872,
-      Class8514.field37873
+      Items.field37795,
+      Items.field38057,
+      Items.field37872,
+      Items.field37873
    );
    private static final Class9289<Byte> field5882 = Class9361.<Byte>method35441(AbstractHorseEntity.class, Class7784.field33390);
    private static final Class9289<Optional<UUID>> field5883 = Class9361.<Optional<UUID>>method35441(AbstractHorseEntity.class, Class7784.field33404);
@@ -40,7 +40,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public boolean field5900 = true;
    public int field5901;
 
-   public AbstractHorseEntity(Class8992<? extends AbstractHorseEntity> var1, World var2) {
+   public AbstractHorseEntity(EntityType<? extends AbstractHorseEntity> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.method4948();
@@ -137,9 +137,9 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public void method4942(Class2266 var1) {
-      this.field5890.method3621(0, new ItemStack(Class8514.field37886));
+      this.field5890.method3621(0, new ItemStack(Items.field37886));
       if (var1 != null) {
-         this.field5024.method6744((PlayerEntity)null, this, Class6067.field26677, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, Class6067.field26677, var1, 0.5F, 1.0F);
       }
    }
 
@@ -172,7 +172,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (!this.method3245()) {
          Class9455 var3 = this.method4894();
          if (var3 != null) {
-            this.field5024
+            this.world
                .method6743(
                   (PlayerEntity)null,
                   this.getPosX(),
@@ -227,7 +227,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
          for (int var5 = 0; var5 < var4; var5++) {
             ItemStack var6 = var3.method3618(var5);
-            if (!var6.method32105()) {
+            if (!var6.isEmpty()) {
                this.field5890.method3621(var5, var6.copy());
             }
          }
@@ -238,8 +238,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4903() {
-      if (!this.field5024.field9020) {
-         this.method4931(4, !this.field5890.method3618(0).method32105());
+      if (!this.world.field9020) {
+         this.method4931(4, !this.field5890.method3618(0).isEmpty());
       }
    }
 
@@ -294,9 +294,9 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       if (!var2.method23384().method31085()) {
-         Class7380 var5 = this.field5024.method6738(var1.method8311());
+         BlockState var5 = this.world.getBlockState(var1.method8311());
          Class8447 var6 = var2.method23452();
          if (var5.method23448(Blocks.SNOW)) {
             var6 = var5.method23452();
@@ -345,18 +345,18 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void openGUI(PlayerEntity var1) {
-      if (!this.field5024.field9020 && (!this.method3329() || this.method3409(var1)) && this.method4932()) {
+      if (!this.world.field9020 && (!this.method3329() || this.method3409(var1)) && this.method4932()) {
          var1.method2768(this, this.field5890);
       }
    }
 
    public ActionResultType method4953(PlayerEntity var1, ItemStack var2) {
       boolean var5 = this.method4892(var1, var2);
-      if (!var1.field4919.field29609) {
+      if (!var1.abilities.isCreativeMode) {
          var2.method32182(1);
       }
 
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          return !var5 ? ActionResultType.field14820 : ActionResultType.field14818;
       } else {
          return ActionResultType.field14819;
@@ -368,17 +368,17 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       float var6 = 0.0F;
       short var7 = 0;
       byte var8 = 0;
-      Class3257 var9 = var2.method32107();
-      if (var9 != Class8514.field37842) {
-         if (var9 != Class8514.field37936) {
+      Item var9 = var2.getItem();
+      if (var9 != Items.field37842) {
+         if (var9 != Items.field37936) {
             if (var9 != Blocks.field36777.method11581()) {
-               if (var9 != Class8514.field37795) {
-                  if (var9 != Class8514.field38057) {
-                     if (var9 == Class8514.field37872 || var9 == Class8514.field37873) {
+               if (var9 != Items.field37795) {
+                  if (var9 != Items.field38057) {
+                     if (var9 == Items.field37872 || var9 == Items.field37873) {
                         var6 = 10.0F;
                         var7 = 240;
                         var8 = 10;
-                        if (!this.field5024.field9020 && this.method4932() && this.method4767() == 0 && !this.method4507()) {
+                        if (!this.world.field9020 && this.method4932() && this.method4767() == 0 && !this.method4507()) {
                            var5 = true;
                            this.method4503(var1);
                         }
@@ -387,7 +387,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                      var6 = 4.0F;
                      var7 = 60;
                      var8 = 5;
-                     if (!this.field5024.field9020 && this.method4932() && this.method4767() == 0 && !this.method4507()) {
+                     if (!this.world.field9020 && this.method4932() && this.method4767() == 0 && !this.method4507()) {
                         var5 = true;
                         this.method4503(var1);
                      }
@@ -418,8 +418,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (this.method3005() && var7 > 0) {
-         this.field5024.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
-         if (!this.field5024.field9020) {
+         this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+         if (!this.world.field9020) {
             this.method4769(var7);
          }
 
@@ -428,7 +428,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
       if (var8 > 0 && (var5 || !this.method4932()) && this.method4944() < this.method4907()) {
          var5 = true;
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             this.method4946(var8);
          }
       }
@@ -443,7 +443,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4920(PlayerEntity var1) {
       this.method4956(false);
       this.method4957(false);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          var1.field5031 = this.field5031;
          var1.field5032 = this.field5032;
          var1.method3311(this);
@@ -470,7 +470,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (this.field5890 != null) {
          for (int var3 = 0; var3 < this.field5890.method3629(); var3++) {
             ItemStack var4 = this.field5890.method3618(var3);
-            if (!var4.method32105() && !Class7858.method26335(var4)) {
+            if (!var4.isEmpty() && !Class7858.method26335(var4)) {
                this.method3302(var4);
             }
          }
@@ -484,7 +484,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       super.method2871();
-      if (!this.field5024.field9020 && this.method3066()) {
+      if (!this.world.field9020 && this.method3066()) {
          if (this.field5054.nextInt(900) == 0 && this.field4955 == 0) {
             this.method3041(1.0F);
          }
@@ -493,7 +493,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (!this.method4938()
                && !this.method3329()
                && this.field5054.nextInt(300) == 0
-               && this.field5024.method6738(this.method3432().method8313()).method23448(Blocks.field36395)) {
+               && this.world.getBlockState(this.getPosition().method8313()).method23448(Blocks.field36395)) {
                this.method4956(true);
             }
 
@@ -509,7 +509,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    public void method4916() {
       if (this.method4940() && this.method3005() && !this.method4938()) {
-         Class880 var3 = this.field5024
+         Class880 var3 = this.world
             .<AbstractHorseEntity>method7191(
                AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3389().method19664(16.0)
             );
@@ -591,7 +591,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    private void method4955() {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.field5885 = 1;
          this.method4931(64, true);
       }
@@ -633,7 +633,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          CriteriaTriggers.field44488.method15115((ServerPlayerEntity)var1, this);
       }
 
-      this.field5024.method6786(this, (byte)7);
+      this.world.method6786(this, (byte)7);
       return true;
    }
 
@@ -674,8 +674,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                this.method4937(true);
                this.field5078 = true;
                if (var6 > 0.0F) {
-                  float var12 = MathHelper.method37763(this.field5031 * (float) (Math.PI / 180.0));
-                  float var13 = MathHelper.method37764(this.field5031 * (float) (Math.PI / 180.0));
+                  float var12 = MathHelper.sin(this.field5031 * (float) (Math.PI / 180.0));
+                  float var13 = MathHelper.cos(this.field5031 * (float) (Math.PI / 180.0));
                   this.method3434(this.method3433().method11339((double)(-0.4F * var12 * this.field5892), 0.0, (double)(0.4F * var13 * this.field5892)));
                }
 
@@ -710,7 +710,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method115("EatingHaystack", this.method4938());
       var1.method115("Bred", this.method4940());
@@ -720,13 +720,13 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          var1.method104("Owner", this.method4933());
       }
 
-      if (!this.field5890.method3618(0).method32105()) {
-         var1.method99("SaddleItem", this.field5890.method3618(0).method32112(new Class39()));
+      if (!this.field5890.method3618(0).isEmpty()) {
+         var1.put("SaddleItem", this.field5890.method3618(0).method32112(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4956(var1.method132("EatingHaystack"));
       this.method4941(var1.method132("Bred"));
@@ -745,8 +745,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (var1.method119("SaddleItem", 10)) {
-         ItemStack var6 = ItemStack.method32104(var1.method130("SaddleItem"));
-         if (var6.method32107() == Class8514.field37886) {
+         ItemStack var6 = ItemStack.method32104(var1.getCompound("SaddleItem"));
+         if (var6.getItem() == Items.field37886) {
             this.field5890.method3621(0, var6);
          }
       }
@@ -836,7 +836,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          double var6 = this.field5054.nextGaussian() * 0.02;
          double var8 = this.field5054.nextGaussian() * 0.02;
          double var10 = this.field5054.nextGaussian() * 0.02;
-         this.field5024.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
+         this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
       }
    }
 
@@ -862,8 +862,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (this.field5897 > 0.0F) {
-         float var8 = MathHelper.method37763(this.field4965 * (float) (Math.PI / 180.0));
-         float var5 = MathHelper.method37764(this.field4965 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0));
+         float var5 = MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0));
          float var6 = 0.7F * this.field5897;
          float var7 = 0.15F * this.field5897;
          var1.method3215(
@@ -904,7 +904,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public boolean method4899() {
-      return !this.method2943(Class2106.field13735).method32105();
+      return !this.method2943(Class2106.field13735).isEmpty();
    }
 
    public boolean method4900(ItemStack var1) {
@@ -915,7 +915,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public boolean method2963(int var1, ItemStack var2) {
       int var5 = var1 - 400;
       if (var5 >= 0 && var5 < 2 && var5 < this.field5890.method3629()) {
-         if (var5 == 0 && var2.method32107() != Class8514.field37886) {
+         if (var5 == 0 && var2.getItem() != Items.field37886) {
             return false;
          } else if (var5 == 1 && (!this.method4898() || !this.method4900(var2))) {
             return false;
@@ -955,7 +955,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          double var14 = this.method3389().field28453 + 0.75;
 
          do {
-            double var16 = this.field5024.method7039(var11);
+            double var16 = this.world.method7039(var11);
             if ((double)var11.getY() + var16 > var14) {
                break;
             }
@@ -963,7 +963,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (Class4527.method14423(var16)) {
                Class6488 var18 = var2.method3172(var13);
                Vector3d var19 = new Vector3d(var5, (double)var11.getY() + var16, var9);
-               if (Class4527.method14424(this.field5024, var2, var18.method19669(var19))) {
+               if (Class4527.method14424(this.world, var2, var18.method19669(var19))) {
                   var2.method3211(var13);
                   return var19;
                }
@@ -998,7 +998,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(0.2F);
       }

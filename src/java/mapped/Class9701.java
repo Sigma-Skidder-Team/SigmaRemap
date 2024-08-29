@@ -19,7 +19,7 @@ public class Class9701 {
       this.field45346 = (double)var1.method3393();
    }
 
-   public void method38008(Class264 var1) {
+   public void method38008(WorldRenderer var1) {
       if (Class7944.method26971()) {
          long var4 = System.currentTimeMillis();
          if (var4 < this.field45351 + 500L) {
@@ -44,9 +44,9 @@ public class Class9701 {
          this.field45350 = var10;
          HashSet var19 = new HashSet();
          if (var10 > 0) {
-            Direction var20 = (MathHelper.method37769(var39) & 15) < 8 ? Direction.WEST : Direction.EAST;
-            Direction var21 = (MathHelper.method37769(var6) & 15) < 8 ? Direction.field672 : Direction.field673;
-            Direction var22 = (MathHelper.method37769(var8) & 15) < 8 ? Direction.NORTH : Direction.SOUTH;
+            Direction var20 = (MathHelper.floor(var39) & 15) < 8 ? Direction.WEST : Direction.EAST;
+            Direction var21 = (MathHelper.floor(var6) & 15) < 8 ? Direction.DOWN : Direction.field673;
+            Direction var22 = (MathHelper.floor(var8) & 15) < 8 ? Direction.NORTH : Direction.SOUTH;
             BlockPos var23 = new BlockPos(var39, var6, var8);
             Class8066 var24 = var1.method929(var23);
             BlockPos var25 = this.method38009(var24, var23, var20);
@@ -100,7 +100,7 @@ public class Class9701 {
       }
    }
 
-   public void method38011(Class264 var1) {
+   public void method38011(WorldRenderer var1) {
       for (BlockPos var5 : this.field45352) {
          Class8066 var6 = var1.method929(var5);
          this.method38010(var6, (Set<BlockPos>)null, (Set<BlockPos>)null);

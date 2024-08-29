@@ -64,7 +64,7 @@ public abstract class Class290 implements AutoCloseable {
       }
    }
 
-   public abstract void method1090(Class191 var1) throws IOException;
+   public abstract void method1090(IResourceManager var1) throws IOException;
 
    public void method1133() {
       if (RenderSystem.method27804()) {
@@ -74,7 +74,7 @@ public abstract class Class290 implements AutoCloseable {
       }
    }
 
-   public void method1134(TextureManager var1, Class191 var2, ResourceLocation var3, Executor var4) {
+   public void method1134(TextureManager var1, IResourceManager var2, ResourceLocation var3, Executor var4) {
       var1.method1073(var3, this);
    }
 

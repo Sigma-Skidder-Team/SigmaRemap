@@ -35,7 +35,7 @@ public class Class2680 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17087 <= 0) {
-         this.field17086 = this.field17079.field5024.method7188(field17078, this.field17079);
+         this.field17086 = this.field17079.world.method7188(field17078, this.field17079);
          return this.field17086 == null ? false : this.method10898(this.field17086.method3090()) || this.method10898(this.field17086.method3091());
       } else {
          this.field17087--;

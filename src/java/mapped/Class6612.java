@@ -27,8 +27,8 @@ public interface Class6612 {
 
    boolean method20048();
 
-   default void method20049(Class8965 var1) {
-      var1.method32806("Level spawn location", () -> Class8965.method32805(this.method20029(), this.method20030(), this.method20031()));
-      var1.method32806("Level time", () -> String.format("%d game time, %d day time", this.method20033(), this.method20034()));
+   default void method20049(CrashReportCategory var1) {
+      var1.addDetail("Level spawn location", () -> CrashReportCategory.method32805(this.method20029(), this.method20030(), this.method20031()));
+      var1.addDetail("Level time", () -> String.format("%d game time, %d day time", this.method20033(), this.method20034()));
    }
 }

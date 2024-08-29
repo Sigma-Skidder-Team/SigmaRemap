@@ -28,7 +28,7 @@ public class Class9010 {
       return ((Class1672)this.field41215.method6824(var1.field32174, var1.field32175)).method7117(var2);
    }
 
-   public Class7380 method33300(BlockPos var1) {
-      return this.field41215.method6738(var1);
+   public BlockState method33300(BlockPos var1) {
+      return this.field41215.getBlockState(var1);
    }
 }

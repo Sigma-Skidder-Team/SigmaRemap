@@ -1,16 +1,16 @@
 package mapped;
 
 public abstract class Class893 extends Class882 {
-   public Class893(Class8992<? extends Class893> var1, World var2) {
+   public Class893(EntityType<? extends Class893> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class893(Class8992<? extends Class893> var1, double var2, double var4, double var6, World var8) {
+   public Class893(EntityType<? extends Class893> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
       this.method3215(var2, var4, var6);
    }
 
-   public Class893(Class8992<? extends Class893> var1, Class880 var2, World var3) {
+   public Class893(EntityType<? extends Class893> var1, Class880 var2, World var3) {
       this(var1, var2.getPosX(), var2.method3442() - 0.1F, var2.getPosZ(), var3);
       this.method3459(var2);
    }
@@ -29,14 +29,14 @@ public abstract class Class893 extends Class882 {
    @Override
    public void tick() {
       super.tick();
-      Class8710 var3 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var3 = Class9456.method36385(this, this::method3467);
       boolean var4 = false;
-      if (var3.method31417() == Class2100.field13690) {
-         BlockPos var5 = ((Class8711)var3).method31423();
-         Class7380 var13 = this.field5024.method6738(var5);
+      if (var3.getType() == RayTraceResult.Type.BLOCK) {
+         BlockPos var5 = ((BlockRayTraceResult)var3).getPos();
+         BlockState var13 = this.world.getBlockState(var5);
          if (!var13.method23448(Blocks.field36588)) {
             if (var13.method23448(Blocks.field36886)) {
-               Class944 var14 = this.field5024.method6759(var5);
+               TileEntity var14 = this.world.getTileEntity(var5);
                if (var14 instanceof Class957 && Class957.method3871(this)) {
                   ((Class957)var14).method3877(this);
                }
@@ -49,7 +49,7 @@ public abstract class Class893 extends Class882 {
          }
       }
 
-      if (var3.method31417() != Class2100.field13689 && !var4) {
+      if (var3.getType() != RayTraceResult.Type.MISS && !var4) {
          this.method3464(var3);
       }
 
@@ -65,7 +65,7 @@ public abstract class Class893 extends Class882 {
       } else {
          for (int var15 = 0; var15 < 4; var15++) {
             float var16 = 0.25F;
-            this.field5024
+            this.world
                .method6746(
                   Class7940.field34052,
                   var6 - var17.field18048 * 0.25,

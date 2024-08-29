@@ -9,10 +9,10 @@ public class Class4071 extends Class4057 {
    private static Map<String, Integer> field20393 = method12834();
 
    public Class4071() {
-      super(Class8992.field41038, "horse", 0.75F);
+      super(EntityType.field41038, "horse", 0.75F);
    }
 
-   public Class4071(Class8992 var1, String var2, float var3) {
+   public Class4071(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 
@@ -117,7 +117,7 @@ public class Class4071 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5688 var6 = new Class5688(var5);
       var6.field25086 = (Class2856<Class1074>)var1;
       var6.field25098 = var2;

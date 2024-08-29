@@ -11,12 +11,12 @@ public class Class5923 extends Class5924 {
    }
 
    @Override
-   public Optional<Float> method18423(Class7782 var1, Class1665 var2, BlockPos var3, Class7380 var4, Class7379 var5) {
+   public Optional<Float> method18423(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, Class7379 var5) {
       return super.method18423(var1, var2, var3, var4, var5).<Float>map(var6 -> this.field25807.method3368(var1, var2, var3, var4, var5, var6));
    }
 
    @Override
-   public boolean method18424(Class7782 var1, Class1665 var2, BlockPos var3, Class7380 var4, float var5) {
+   public boolean method18424(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, float var5) {
       return this.field25807.method3369(var1, var2, var3, var4, var5);
    }
 }

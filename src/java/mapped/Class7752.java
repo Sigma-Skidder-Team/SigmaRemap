@@ -18,7 +18,7 @@ public class Class7752 {
                Class9455.field43936.optionalFieldOf("ambient_sound").forGetter(var0x -> var0x.field33287),
                Class7959.field34223.optionalFieldOf("mood_sound").forGetter(var0x -> var0x.field33288),
                Class8217.field35292.optionalFieldOf("additions_sound").forGetter(var0x -> var0x.field33289),
-               Class3496.field19366.optionalFieldOf("music").forGetter(var0x -> var0x.field33290)
+               BackgroundMusicSelector.field19366.optionalFieldOf("music").forGetter(var0x -> var0x.field33290)
             )
             .apply(var0, Class7752::new)
    );
@@ -33,7 +33,7 @@ public class Class7752 {
    private final Optional<Class9455> field33287;
    private final Optional<Class7959> field33288;
    private final Optional<Class8217> field33289;
-   private final Optional<Class3496> field33290;
+   private final Optional<BackgroundMusicSelector> field33290;
 
    public Class7752(
            int var1,
@@ -47,7 +47,7 @@ public class Class7752 {
            Optional<Class9455> var9,
            Optional<Class7959> var10,
            Optional<Class8217> var11,
-           Optional<Class3496> var12
+           Optional<BackgroundMusicSelector> var12
    ) {
       this.field33279 = var1;
       this.field33280 = var2;
@@ -107,7 +107,7 @@ public class Class7752 {
       return this.field33289;
    }
 
-   public Optional<Class3496> method25684() {
+   public Optional<BackgroundMusicSelector> method25684() {
       return this.field33290;
    }
 }

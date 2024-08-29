@@ -5,7 +5,7 @@ public abstract class Class1031 extends Class1025 {
    public int field5734;
    private Class2031 field5735 = Class2031.field13181;
 
-   public Class1031(Class8992<? extends Class1031> var1, World var2) {
+   public Class1031(EntityType<? extends Class1031> var1, World var2) {
       super(var1, var2);
    }
 
@@ -16,13 +16,13 @@ public abstract class Class1031 extends Class1025 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5734 = var1.method122("SpellTicks");
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("SpellTicks", this.field5734);
    }
@@ -37,7 +37,7 @@ public abstract class Class1031 extends Class1025 {
    }
 
    public boolean method4594() {
-      return !this.field5024.field9020 ? this.field5734 > 0 : this.field5063.<Byte>method35445(field5733) > 0;
+      return !this.world.field9020 ? this.field5734 > 0 : this.field5063.<Byte>method35445(field5733) > 0;
    }
 
    public void method4595(Class2031 var1) {
@@ -46,7 +46,7 @@ public abstract class Class1031 extends Class1025 {
    }
 
    public Class2031 method4596() {
-      return this.field5024.field9020 ? Class2031.method8664(this.field5063.<Byte>method35445(field5733)) : this.field5735;
+      return this.world.field9020 ? Class2031.method8664(this.field5063.<Byte>method35445(field5733)) : this.field5735;
    }
 
    @Override
@@ -60,15 +60,15 @@ public abstract class Class1031 extends Class1025 {
    @Override
    public void tick() {
       super.tick();
-      if (this.field5024.field9020 && this.method4594()) {
+      if (this.world.field9020 && this.method4594()) {
          Class2031 var3 = this.method4596();
          double var4 = Class2031.method8666(var3)[0];
          double var6 = Class2031.method8666(var3)[1];
          double var8 = Class2031.method8666(var3)[2];
-         float var10 = this.field4965 * (float) (Math.PI / 180.0) + MathHelper.method37764((float)this.field5055 * 0.6662F) * 0.25F;
-         float var11 = MathHelper.method37764(var10);
-         float var12 = MathHelper.method37763(var10);
-         this.field5024
+         float var10 = this.field4965 * (float) (Math.PI / 180.0) + MathHelper.cos((float)this.field5055 * 0.6662F) * 0.25F;
+         float var11 = MathHelper.cos(var10);
+         float var12 = MathHelper.sin(var10);
+         this.world
             .method6746(
                Class7940.field34068,
                this.getPosX() + (double)var11 * 0.6,
@@ -78,7 +78,7 @@ public abstract class Class1031 extends Class1025 {
                var6,
                var8
             );
-         this.field5024
+         this.world
             .method6746(
                Class7940.field34068,
                this.getPosX() - (double)var11 * 0.6,

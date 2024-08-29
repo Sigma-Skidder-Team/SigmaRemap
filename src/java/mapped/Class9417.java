@@ -40,13 +40,13 @@ public class Class9417 {
    }
 
    public static int method36133(Class6619 var0, String var1, BlockPos var2, BlockPos var3, String var4) {
-      int var7 = MathHelper.method37767(method36134(var2.method8304(), var2.method8306(), var3.method8304(), var3.method8306()));
+      int var7 = MathHelper.method37767(method36134(var2.getX(), var2.getZ(), var3.getX(), var3.getZ()));
       IFormattableTextComponent var8 = TextComponentUtils.wrapWithSquareBrackets(
-            new TranslationTextComponent("chat.coordinates", var3.method8304(), "~", var3.method8306())
+            new TranslationTextComponent("chat.coordinates", var3.getX(), "~", var3.getZ())
          )
          .modifyStyle(
             var1x -> var1x.setFormatting(TextFormatting.GREEN)
-                  .setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tp @s " + var3.method8304() + " ~ " + var3.method8306()))
+                  .setClickEvent(new ClickEvent(ClickEvent$Action.SUGGEST_COMMAND, "/tp @s " + var3.getX() + " ~ " + var3.getZ()))
                   .setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, new TranslationTextComponent("chat.coordinates.tooltip")))
          );
       var0.method20179(new TranslationTextComponent(var4, var1, var8, var7), false);

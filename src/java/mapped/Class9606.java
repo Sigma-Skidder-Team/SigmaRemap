@@ -29,12 +29,12 @@ public class Class9606 {
       method37340(var3, var4);
       method37343(var3, var4);
       method37342(var3, var4);
-      method37344(Class7380.class, var3, var4);
+      method37344(BlockState.class, var3, var4);
       long var5 = method37341(var3, var4);
       long var7 = method37340(var3, var4);
       long var9 = method37343(var3, var4);
       long var11 = method37342(var3, var4);
-      long var13 = method37344(Class7380.class, var3, var4);
+      long var13 = method37344(BlockState.class, var3, var4);
       Class7944.method26810("New: " + var5);
       Class7944.method26810("Clone: " + var7);
       Class7944.method26810("NewObj: " + var9);
@@ -67,10 +67,10 @@ public class Class9606 {
 
    private static long method37342(int var0, int var1) {
       long var4 = System.currentTimeMillis();
-      Class7380[] var6 = new Class7380[var0];
+      BlockState[] var6 = new BlockState[var0];
 
       for (int var7 = 0; var7 < var1; var7++) {
-         Class7380[] var10 = (Class7380[])var6.clone();
+         BlockState[] var10 = (BlockState[])var6.clone();
       }
 
       long var8 = System.currentTimeMillis();
@@ -81,7 +81,7 @@ public class Class9606 {
       long var4 = System.currentTimeMillis();
 
       for (int var6 = 0; var6 < var1; var6++) {
-         Class7380[] var9 = new Class7380[var0];
+         BlockState[] var9 = new BlockState[var0];
       }
 
       long var7 = System.currentTimeMillis();

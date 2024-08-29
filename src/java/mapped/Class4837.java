@@ -18,7 +18,7 @@ public abstract class Class4837 implements Class4842 {
    }
 
    @Override
-   public ItemStack method14966() {
+   public ItemStack getRecipeOutput() {
       return ItemStack.EMPTY;
    }
 }

@@ -16,7 +16,7 @@ public class Class820 extends Class798 {
    public void method1921() {
       Class9229.method34711(field4473.getString());
       TranslationTextComponent var3 = new TranslationTextComponent("mco.account.update");
-      ITextComponent var4 = Class7127.field30663;
+      ITextComponent var4 = DialogTexts.field30663;
       int var5 = Math.max(this.field4568.method38821(var3), this.field4568.method38821(var4)) + 30;
       TranslationTextComponent var6 = new TranslationTextComponent("mco.account.privacy.info");
       int var7 = (int)((double)this.field4568.method38821(var6) * 1.2);

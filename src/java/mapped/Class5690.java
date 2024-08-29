@@ -5,7 +5,7 @@ public class Class5690 extends Class5651<Class1012, Class2859<Class1012>> {
    private static final ResourceLocation field25058 = new ResourceLocation("textures/entity/wolf/wolf_tame.png");
    private static final ResourceLocation field25059 = new ResourceLocation("textures/entity/wolf/wolf_angry.png");
 
-   public Class5690(Class8853 var1) {
+   public Class5690(EntityRendererManager var1) {
       super(var1, new Class2859<Class1012>(), 0.5F);
       this.method17880(new Class221(this));
    }

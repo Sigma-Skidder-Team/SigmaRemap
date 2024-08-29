@@ -24,7 +24,7 @@ public class Class7889 extends Class7882<Class880> {
    }
 
    private boolean method26454(Class880 var1) {
-      return var1.method3204() == Class8992.field41098 && var1.method3005();
+      return var1.getType() == EntityType.field41098 && var1.method3005();
    }
 
    private List<Class880> method26455(Class880 var1) {

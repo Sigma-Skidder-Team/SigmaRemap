@@ -29,9 +29,9 @@ public class Class1262 extends Class1193 {
       }
    );
    private final Minecraft field6665;
-   private final Class9834 field6666;
-   private Class8710 field6667;
-   private Class8710 field6668;
+   private final FontRenderer field6666;
+   private RayTraceResult field6667;
+   private RayTraceResult field6668;
    private Class7481 field6669;
    private Class1674 field6670;
    private CompletableFuture<Class1674> field6671;
@@ -43,7 +43,7 @@ public class Class1262 extends Class1193 {
 
    public Class1262(Minecraft var1) {
       this.field6665 = var1;
-      this.field6666 = var1.field1294;
+      this.field6666 = var1.fontRenderer;
    }
 
    public void method5877() {
@@ -52,24 +52,24 @@ public class Class1262 extends Class1193 {
    }
 
    public void method5878(MatrixStack var1) {
-      this.field6665.method1574().startSection("debug");
+      this.field6665.getProfiler().startSection("debug");
       RenderSystem.pushMatrix();
-      Entity var4 = this.field6665.method1550();
+      Entity var4 = this.field6665.getRenderViewEntity();
       this.field6667 = var4.method3289(20.0, 0.0F, false);
       this.field6668 = var4.method3289(20.0, 0.0F, true);
       this.method5879(var1);
       this.method5880(var1);
       RenderSystem.popMatrix();
       if (this.field6665.gameSettings.field44666) {
-         int var5 = this.field6665.method1580().getScaledWidth();
-         this.method5890(var1, this.field6665.method1558(), 0, var5 / 2, true);
-         Class1644 var6 = this.field6665.method1531();
+         int var5 = this.field6665.getMainWindow().getScaledWidth();
+         this.method5890(var1, this.field6665.getFrameTimer(), 0, var5 / 2, true);
+         IntegratedServer var6 = this.field6665.getIntegratedServer();
          if (var6 != null) {
             this.method5890(var1, var6.method1419(), var5 - Math.min(var5 / 2, 240), var5 / 2, false);
          }
       }
 
-      this.field6665.method1574().endSection();
+      this.field6665.getProfiler().endSection();
    }
 
    public void method5879(MatrixStack var1) {
@@ -77,10 +77,10 @@ public class Class1262 extends Class1193 {
       if (var4 == null || System.currentTimeMillis() > this.field6675) {
          var4 = this.method5881();
          var4.add("");
-         boolean var5 = this.field6665.method1531() != null;
+         boolean var5 = this.field6665.getIntegratedServer() != null;
          var4.add(
             "Debug: Pie [shift]: "
-               + (!this.field6665.gameSettings.field44665 ? "hidden" : "visible")
+               + (!this.field6665.gameSettings.showDebugProfilerChart ? "hidden" : "visible")
                + (!var5 ? " FPS" : " FPS + TPS")
                + " [alt]: "
                + (!this.field6665.gameSettings.field44666 ? "hidden" : "visible")
@@ -97,7 +97,7 @@ public class Class1262 extends Class1193 {
          String var8 = (String)var4.get(var7);
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
-            int var10 = this.field6666.method38820(var8);
+            int var10 = this.field6666.getStringWidth(var8);
             byte var11 = 2;
             int var12 = 2 + var9 * var7;
             var6[var7] = new Class7717(1, var12 - 1, 2 + var10 + 1, var12 + var9 - 1);
@@ -124,8 +124,8 @@ public class Class1262 extends Class1193 {
          String var8 = (String)var4.get(var7);
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
-            int var10 = this.field6666.method38820(var8);
-            int var11 = this.field6665.method1580().getScaledWidth() - 2 - var10;
+            int var10 = this.field6666.getStringWidth(var8);
+            int var11 = this.field6665.getMainWindow().getScaledWidth() - 2 - var10;
             int var12 = 2 + var9 * var7;
             var6[var7] = new Class7717(var11 - 1, var12 - 1, var11 + var10 + 1, var12 + var9 - 1);
             var5[var7] = new Class9718(var11, var12);
@@ -137,16 +137,16 @@ public class Class1262 extends Class1193 {
    }
 
    public List<String> method5881() {
-      if (this.field6665.field1363 != this.field6672) {
-         StringBuffer var3 = new StringBuffer(this.field6665.field1363);
+      if (this.field6665.debug != this.field6672) {
+         StringBuffer var3 = new StringBuffer(this.field6665.debug);
          int var4 = Class7944.method26956();
-         int var5 = this.field6665.field1363.indexOf("T: ");
+         int var5 = this.field6665.debug.indexOf("T: ");
          if (var5 >= 0) {
             var3.insert(var5, "(" + var4 + " chunk updates) ");
          }
 
          int var6 = Class7944.method26955();
-         int var7 = this.field6665.field1363.indexOf(" fps ");
+         int var7 = this.field6665.debug.indexOf(" fps ");
          if (var7 >= 0) {
             var3.insert(var7, "/" + var6);
          }
@@ -175,13 +175,13 @@ public class Class1262 extends Class1193 {
             var3.append(" sh");
          }
 
-         this.field6665.field1363 = var3.toString();
-         this.field6672 = this.field6665.field1363;
+         this.field6665.debug = var3.toString();
+         this.field6672 = this.field6665.debug;
       }
 
       List var9 = this.method5882();
       StringBuilder var10 = new StringBuilder();
-      Class289 var11 = Class7944.method26969();
+      AtlasTexture var11 = Class7944.method26969();
       var10.append(", A: ");
       if (Class4501.method14213()) {
          var10.append(var11.method1118() + Class8389.method29403());
@@ -204,8 +204,8 @@ public class Class1262 extends Class1193 {
    }
 
    public List<String> method5882() {
-      Class1644 var3 = this.field6665.method1531();
-      NetworkManager var4 = this.field6665.getClientPlayNetHandler().method15589();
+      IntegratedServer var3 = this.field6665.getIntegratedServer();
+      NetworkManager var4 = this.field6665.getConnection().getNetworkManager();
       float var5 = var4.method30715();
       float var6 = var4.method30714();
       String var7;
@@ -215,28 +215,28 @@ public class Class1262 extends Class1193 {
          var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field6665.player.method5395(), var5, var6);
       }
 
-      BlockPos var8 = this.field6665.method1550().method3432();
-      String var9 = SharedConstants.method34773().getName();
-      if (!this.field6665.method1530()) {
+      BlockPos var8 = this.field6665.getRenderViewEntity().getPosition();
+      String var9 = SharedConstants.getVersion().getName();
+      if (!this.field6665.isSingleplayer()) {
          var9 = Class5989.method18569(Class8005.method27349()).method18580();
       }
 
-      if (this.field6665.method1565()) {
+      if (this.field6665.isReducedDebug()) {
          return Lists.newArrayList(
             new String[]{
-               "Minecraft " + var9 + " (" + this.field6665.method1465() + "/" + Class8948.method32694() + ")",
-               this.field6665.field1363,
+               "Minecraft " + var9 + " (" + this.field6665.getVersion() + "/" + ClientBrandRetriever.getClientModName() + ")",
+               this.field6665.debug,
                var7,
                this.field6665.worldRenderer.method871(),
                this.field6665.worldRenderer.method873(),
                "P: " + this.field6665.particles.method1208() + ". T: " + this.field6665.world.method6844(),
                this.field6665.world.method6758(),
                "",
-               String.format("Chunk-relative: %d %d %d", var8.method8304() & 15, var8.getY() & 15, var8.method8306() & 15)
+               String.format("Chunk-relative: %d %d %d", var8.getX() & 15, var8.getY() & 15, var8.getZ() & 15)
             }
          );
       } else {
-         Entity var10 = this.field6665.method1550();
+         Entity var10 = this.field6665.getRenderViewEntity();
          Direction var11 = var10.method3386();
          String var12;
          switch (Class7968.field34258[var11.ordinal()]) {
@@ -267,14 +267,14 @@ public class Class1262 extends Class1193 {
          List<String> var16 = Lists.newArrayList(
             new String[]{
                "Minecraft "
-                  + SharedConstants.method34773().getName()
+                  + SharedConstants.getVersion().getName()
                   + " ("
-                  + this.field6665.method1465()
+                  + this.field6665.getVersion()
                   + "/"
-                  + Class8948.method32694()
-                  + ("release".equalsIgnoreCase(this.field6665.method1466()) ? "" : "/" + this.field6665.method1466())
+                  + ClientBrandRetriever.getClientModName()
+                  + ("release".equalsIgnoreCase(this.field6665.getVersionType()) ? "" : "/" + this.field6665.getVersionType())
                   + ")",
-               this.field6665.field1363,
+               this.field6665.debug,
                var7,
                this.field6665.worldRenderer.method871(),
                this.field6665.worldRenderer.method873(),
@@ -287,27 +287,27 @@ public class Class1262 extends Class1193 {
             var16.add(var17);
          }
 
-         var16.add(this.field6665.world.method6813().method31399() + " FC: " + var15.size());
+         var16.add(this.field6665.world.getDimensionKey().method31399() + " FC: " + var15.size());
          var16.add("");
          var16.add(
             String.format(
                Locale.ROOT,
                "XYZ: %.3f / %.5f / %.3f",
-               this.field6665.method1550().getPosX(),
-               this.field6665.method1550().getPosY(),
-               this.field6665.method1550().getPosZ()
+               this.field6665.getRenderViewEntity().getPosX(),
+               this.field6665.getRenderViewEntity().getPosY(),
+               this.field6665.getRenderViewEntity().getPosZ()
             )
          );
-         var16.add(String.format("Block: %d %d %d", var8.method8304(), var8.getY(), var8.method8306()));
+         var16.add(String.format("Block: %d %d %d", var8.getX(), var8.getY(), var8.getZ()));
          var16.add(
             String.format(
                "Chunk: %d %d %d in %d %d %d",
-               var8.method8304() & 15,
+               var8.getX() & 15,
                var8.getY() & 15,
-               var8.method8306() & 15,
-               var8.method8304() >> 4,
+               var8.getZ() & 15,
+               var8.getX() >> 4,
                var8.getY() >> 4,
-               var8.method8306() >> 4
+               var8.getZ() >> 4
             )
          );
          var16.add(
@@ -343,7 +343,7 @@ public class Class1262 extends Class1193 {
 
                   for (Class101 var27 : Class101.values()) {
                      if (var27.method284()) {
-                        var35.append(" ").append(field6664.get(var27)).append(": ").append(var18.method7071(var27, var8.method8304(), var8.method8306()));
+                        var35.append(" ").append(field6664.get(var27)).append(": ").append(var18.method7071(var27, var8.getX(), var8.getZ()));
                      }
                   }
 
@@ -355,7 +355,7 @@ public class Class1262 extends Class1193 {
                      if (var40.method285()) {
                         var35.append(" ").append(field6664.get(var40)).append(": ");
                         if (var22 != null) {
-                           var35.append(var22.method7071(var40, var8.method8304(), var8.method8306()));
+                           var35.append(var22.method7071(var40, var8.getX(), var8.getZ()));
                         } else {
                            var35.append("??");
                         }
@@ -370,7 +370,7 @@ public class Class1262 extends Class1193 {
                               .world
                               .method6867()
                               .<Biome>method32453(Registry.BIOME_KEY)
-                              .method9181(this.field6665.world.method7003(var8))
+                              .getKey(this.field6665.world.getBiome(var8))
                      );
                      long var28 = 0L;
                      float var39 = 0.0F;
@@ -417,20 +417,20 @@ public class Class1262 extends Class1193 {
             }
          }
 
-         Class1647 var32 = this.field6665.gameRenderer.method739();
+         Class1647 var32 = this.field6665.gameRenderer.getShaderGroup();
          if (var32 != null) {
             var16.add("Shader: " + var32.method6527());
          }
 
-         var16.add(this.field6665.method1546().method1014() + String.format(" (Mood %d%%)", Math.round(this.field6665.player.method5387() * 100.0F)));
+         var16.add(this.field6665.getSoundHandler().method1014() + String.format(" (Mood %d%%)", Math.round(this.field6665.player.method5387() * 100.0F)));
          return var16;
       }
    }
 
    @Nullable
    private ServerWorld method5883() {
-      Class1644 var3 = this.field6665.method1531();
-      return var3 == null ? null : var3.method1318(this.field6665.world.method6813());
+      IntegratedServer var3 = this.field6665.getIntegratedServer();
+      return var3 == null ? null : var3.method1318(this.field6665.world.getDimensionKey());
    }
 
    @Nullable
@@ -441,8 +441,8 @@ public class Class1262 extends Class1193 {
 
    private World method5885() {
       return (World)DataFixUtils.orElse(
-         Optional.<Class1644>ofNullable(this.field6665.method1531())
-            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.world.method6813()))),
+         Optional.<IntegratedServer>ofNullable(this.field6665.getIntegratedServer())
+            .<ServerWorld>flatMap(var1 -> Optional.ofNullable(var1.method1318(this.field6665.world.getDimensionKey()))),
          this.field6665.world
       );
    }
@@ -480,17 +480,17 @@ public class Class1262 extends Class1193 {
       long var9 = var5 - var7;
       ArrayList var11 = Lists.newArrayList(
          new String[]{
-            String.format("Java: %s %dbit", System.getProperty("java.version"), !this.field6665.method1543() ? 32 : 64),
+            String.format("Java: %s %dbit", System.getProperty("java.version"), !this.field6665.isJava64bit() ? 32 : 64),
             String.format("Mem: % 2d%% %03d/%03dMB", var9 * 100L / var3, method5893(var9), method5893(var3)),
             String.format("Allocated: % 2d%% %03dMB", var5 * 100L / var3, method5893(var5)),
             "",
-            String.format("CPU: %s", Class9036.method33486()),
+            String.format("CPU: %s", PlatformDescriptors.getCpuInfo()),
             "",
             String.format(
-               "Display: %dx%d (%s)", Minecraft.getInstance().method1580().getFramebufferWidth(), Minecraft.getInstance().method1580().getFramebufferHeight(), Class9036.method33485()
+               "Display: %dx%d (%s)", Minecraft.getInstance().getMainWindow().getFramebufferWidth(), Minecraft.getInstance().getMainWindow().getFramebufferHeight(), PlatformDescriptors.method33485()
             ),
-            Class9036.method33487(),
-            Class9036.method33488()
+            PlatformDescriptors.method33487(),
+            PlatformDescriptors.method33488()
          }
       );
       long var12 = Class9323.method35236();
@@ -509,15 +509,15 @@ public class Class1262 extends Class1193 {
          }
       }
 
-      if (this.field6665.method1565()) {
+      if (this.field6665.isReducedDebug()) {
          return var11;
       } else {
-         if (this.field6667.method31417() == Class2100.field13690) {
-            BlockPos var24 = ((Class8711)this.field6667).method31423();
-            Class7380 var27 = this.field6665.world.method6738(var24);
+         if (this.field6667.getType() == RayTraceResult.Type.BLOCK) {
+            BlockPos var24 = ((BlockRayTraceResult)this.field6667).getPos();
+            BlockState var27 = this.field6665.world.getBlockState(var24);
             var11.add("");
-            var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.method8304() + ", " + var24.getY() + ", " + var24.method8306());
-            var11.add(String.valueOf(Registry.field16072.method9181(var27.method23383())));
+            var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.getX() + ", " + var24.getY() + ", " + var24.getZ());
+            var11.add(String.valueOf(Registry.BLOCK.getKey(var27.getBlock())));
             UnmodifiableIterator var21 = var27.method23468().entrySet().iterator();
 
             while (var21.hasNext()) {
@@ -527,9 +527,9 @@ public class Class1262 extends Class1193 {
 
             Collection<ResourceLocation> var30;
             if (!Class9299.field42818.method20214()) {
-               var30 = this.field6665.getClientPlayNetHandler().method15798().method32657().method27138(var27.method23383());
+               var30 = this.field6665.getConnection().method15798().method32657().method27138(var27.getBlock());
             } else {
-               var30 = (Collection)Class9299.method35070(var27.method23383(), Class9299.field42818);
+               var30 = (Collection)Class9299.method35070(var27.getBlock(), Class9299.field42818);
             }
 
             for (ResourceLocation var23 : var30) {
@@ -537,12 +537,12 @@ public class Class1262 extends Class1193 {
             }
          }
 
-         if (this.field6668.method31417() == Class2100.field13690) {
-            BlockPos var25 = ((Class8711)this.field6668).method31423();
+         if (this.field6668.getType() == RayTraceResult.Type.BLOCK) {
+            BlockPos var25 = ((BlockRayTraceResult)this.field6668).getPos();
             Class7379 var28 = this.field6665.world.method6739(var25);
             var11.add("");
-            var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.method8304() + ", " + var25.getY() + ", " + var25.method8306());
-            var11.add(String.valueOf(Registry.field16070.method9181(var28.method23472())));
+            var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", " + var25.getZ());
+            var11.add(String.valueOf(Registry.field16070.getKey(var28.method23472())));
             UnmodifiableIterator var31 = var28.method23468().entrySet().iterator();
 
             while (var31.hasNext()) {
@@ -552,7 +552,7 @@ public class Class1262 extends Class1193 {
 
             Collection<ResourceLocation> var32;
             if (!Class9299.field42853.method20214()) {
-               var32 = this.field6665.getClientPlayNetHandler().method15798().method32659().method27138(var28.method23472());
+               var32 = this.field6665.getConnection().method15798().method32659().method27138(var28.method23472());
             } else {
                var32 = (Collection)Class9299.method35070(var28.method23472(), Class9299.field42853);
             }
@@ -562,13 +562,13 @@ public class Class1262 extends Class1193 {
             }
          }
 
-         Entity var26 = this.field6665.field1345;
+         Entity var26 = this.field6665.pointedEntity;
          if (var26 != null) {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Entity");
-            var11.add(String.valueOf(Registry.field16074.method9181(var26.method3204())));
+            var11.add(String.valueOf(Registry.ENTITY_TYPE.getKey(var26.getType())));
             if (Class9299.field42842.method20214()) {
-               Collection var29 = (Collection)Class9299.method35070(var26.method3204(), Class9299.field42842);
+               Collection var29 = (Collection)Class9299.method35070(var26.getType(), Class9299.field42842);
                var29.forEach(var1 -> var11.add("#" + var1));
             }
          }
@@ -592,11 +592,11 @@ public class Class1262 extends Class1193 {
       return var4.method30472() + ": " + var6;
    }
 
-   private void method5890(MatrixStack var1, Class9789 var2, int var3, int var4, boolean var5) {
+   private void method5890(MatrixStack var1, FrameTimer var2, int var3, int var4, boolean var5) {
       if (!var5) {
-         int var8 = (int)(512.0 / this.field6665.method1580().method8049());
+         int var8 = (int)(512.0 / this.field6665.getMainWindow().method8049());
          var3 = Math.max(var3, var8);
-         var4 = this.field6665.method1580().getScaledWidth() - var3;
+         var4 = this.field6665.getMainWindow().getScaledWidth() - var3;
          RenderSystem.disableDepthTest();
          int var9 = var2.method38594();
          int var10 = var2.method38595();
@@ -616,13 +616,13 @@ public class Class1262 extends Class1193 {
             var16 += (long)var21;
          }
 
-         int var32 = this.field6665.method1580().getScaledHeight();
+         int var32 = this.field6665.getMainWindow().getScaledHeight();
          method5686(var1, var3, var32 - 60, var3 + var14, var32, -1873784752);
-         Class5425 var33 = Class9352.method35409().method35411();
+         BufferBuilder var33 = Tessellator.getInstance().getBuffer();
          RenderSystem.enableBlend();
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          RenderSystem.method27938();
-         var33.method17063(7, Class9337.field43342);
+         var33.begin(7, DefaultVertexFormats.POSITION_COLOR);
 
          for (Class9367 var22 = Class6979.method21542().method21548(); var15 != var10; var15 = var2.method38596(var15 + 1)) {
             int var23 = var2.method38593(var11[var15], !var5 ? 60 : 30, !var5 ? 20 : 60);
@@ -632,10 +632,10 @@ public class Class1262 extends Class1193 {
             int var27 = var25 >> 16 & 0xFF;
             int var28 = var25 >> 8 & 0xFF;
             int var29 = var25 & 0xFF;
-            var33.method17040(var22, (float)(var12 + 1), (float)var32, 0.0F).method17026(var27, var28, var29, var26).method17031();
-            var33.method17040(var22, (float)(var12 + 1), (float)(var32 - var23 + 1), 0.0F).method17026(var27, var28, var29, var26).method17031();
-            var33.method17040(var22, (float)var12, (float)(var32 - var23 + 1), 0.0F).method17026(var27, var28, var29, var26).method17031();
-            var33.method17040(var22, (float)var12, (float)var32, 0.0F).method17026(var27, var28, var29, var26).method17031();
+            var33.method17040(var22, (float)(var12 + 1), (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.method17040(var22, (float)(var12 + 1), (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.method17040(var22, (float)var12, (float)(var32 - var23 + 1), 0.0F).color(var27, var28, var29, var26).endVertex();
+            var33.method17040(var22, (float)var12, (float)var32, 0.0F).color(var27, var28, var29, var26).endVertex();
             var12++;
          }
 
@@ -659,16 +659,16 @@ public class Class1262 extends Class1193 {
          this.method5684(var1, var3, var3 + var14 - 1, var32 - 1, -1);
          this.method5685(var1, var3, var32 - 60, var32, -1);
          this.method5685(var1, var3 + var14 - 1, var32 - 60, var32, -1);
-         if (var5 && this.field6665.gameSettings.field44576 > 0 && this.field6665.gameSettings.field44576 <= 250) {
-            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field6665.gameSettings.field44576), -16711681);
+         if (var5 && this.field6665.gameSettings.framerateLimit > 0 && this.field6665.gameSettings.framerateLimit <= 250) {
+            this.method5684(var1, var3, var3 + var14 - 1, var32 - 1 - (int)(1800.0 / (double)this.field6665.gameSettings.framerateLimit), -16711681);
          }
 
          String var34 = var18 + " ms min";
          String var35 = var16 / (long)var14 + " ms avg";
          String var36 = var19 + " ms max";
-         this.field6666.method38799(var1, var34, (float)(var3 + 2), (float)(var32 - 60 - 9), 14737632);
-         this.field6666.method38799(var1, var35, (float)(var3 + var14 / 2 - this.field6666.method38820(var35) / 2), (float)(var32 - 60 - 9), 14737632);
-         this.field6666.method38799(var1, var36, (float)(var3 + var14 - this.field6666.method38820(var36)), (float)(var32 - 60 - 9), 14737632);
+         this.field6666.drawStringWithShadow(var1, var34, (float)(var3 + 2), (float)(var32 - 60 - 9), 14737632);
+         this.field6666.drawStringWithShadow(var1, var35, (float)(var3 + var14 / 2 - this.field6666.getStringWidth(var35) / 2), (float)(var32 - 60 - 9), 14737632);
+         this.field6666.drawStringWithShadow(var1, var36, (float)(var3 + var14 - this.field6666.getStringWidth(var36)), (float)(var32 - 60 - 9), 14737632);
          RenderSystem.enableDepthTest();
       }
    }

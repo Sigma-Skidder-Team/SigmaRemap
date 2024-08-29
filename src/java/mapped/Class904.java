@@ -24,7 +24,7 @@ public class Class904 extends Class882 {
    private final int field5162;
 
    private Class904(World var1, PlayerEntity var2, int var3, int var4) {
-      super(Class8992.field41112, var1);
+      super(EntityType.field41112, var1);
       this.field5077 = true;
       this.method3459(var2);
       var2.field4930 = this;
@@ -44,10 +44,10 @@ public class Class904 extends Class882 {
       this(var2, var1, var3, var4);
       float var7 = var1.field5032;
       float var8 = var1.field5031;
-      float var9 = MathHelper.method37764(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var10 = MathHelper.method37763(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
-      float var11 = -MathHelper.method37764(-var7 * (float) (Math.PI / 180.0));
-      float var12 = MathHelper.method37763(-var7 * (float) (Math.PI / 180.0));
+      float var9 = MathHelper.cos(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var10 = MathHelper.sin(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
+      float var11 = -MathHelper.cos(-var7 * (float) (Math.PI / 180.0));
+      float var12 = MathHelper.sin(-var7 * (float) (Math.PI / 180.0));
       double var13 = var1.getPosX() - (double)var10 * 0.3;
       double var15 = var1.method3442();
       double var17 = var1.getPosZ() - (double)var9 * 0.3;
@@ -76,7 +76,7 @@ public class Class904 extends Class882 {
    public void method3155(Class9289<?> var1) {
       if (field5151.equals(var1)) {
          int var4 = this.method3210().<Integer>method35445(field5151);
-         this.field5159 = var4 <= 0 ? null : this.field5024.method6774(var4 - 1);
+         this.field5159 = var4 <= 0 ? null : this.world.method6774(var4 - 1);
       }
 
       if (field5152.equals(var1)) {
@@ -101,11 +101,11 @@ public class Class904 extends Class882 {
 
    @Override
    public void tick() {
-      this.field5148.setSeed(this.getUniqueID().getLeastSignificantBits() ^ this.field5024.method6783());
+      this.field5148.setSeed(this.getUniqueID().getLeastSignificantBits() ^ this.world.method6783());
       super.tick();
       PlayerEntity var3 = this.method3544();
       if (var3 != null) {
-         if (this.field5024.field9020 || !this.method3534(var3)) {
+         if (this.world.field9020 || !this.method3534(var3)) {
             if (!this.field5036) {
                this.field5153 = 0;
             } else {
@@ -117,10 +117,10 @@ public class Class904 extends Class882 {
             }
 
             float var4 = 0.0F;
-            BlockPos var5 = this.method3432();
-            Class7379 var6 = this.field5024.method6739(var5);
+            BlockPos var5 = this.getPosition();
+            Class7379 var6 = this.world.method6739(var5);
             if (var6.method23486(Class8953.field40469)) {
-               var4 = var6.method23475(this.field5024, var5);
+               var4 = var6.method23475(this.world, var5);
             }
 
             boolean var7 = var4 > 0.0F;
@@ -160,7 +160,7 @@ public class Class904 extends Class882 {
                         this.method3434(this.method3433().method11339(0.0, -0.1 * (double)this.field5148.nextFloat() * (double)this.field5148.nextFloat(), 0.0));
                      }
 
-                     if (!this.field5024.field9020) {
+                     if (!this.world.field9020) {
                         this.method3537(var5);
                      }
                   }
@@ -203,8 +203,8 @@ public class Class904 extends Class882 {
    private boolean method3534(PlayerEntity var1) {
       ItemStack var4 = var1.method3090();
       ItemStack var5 = var1.method3091();
-      boolean var6 = var4.method32107() == Class8514.field37906;
-      boolean var7 = var5.method32107() == Class8514.field37906;
+      boolean var6 = var4.getItem() == Items.field37906;
+      boolean var7 = var5.getItem() == Items.field37906;
       if (!var1.field5041 && var1.method3066() && (var6 || var7) && !(this.getDistanceSq(var1) > 1024.0)) {
          return false;
       } else {
@@ -214,7 +214,7 @@ public class Class904 extends Class882 {
    }
 
    private void method3535() {
-      Class8710 var3 = Class9456.method36385(this, this::method3467);
+      RayTraceResult var3 = Class9456.method36385(this, this::method3467);
       this.method3464(var3);
    }
 
@@ -224,16 +224,16 @@ public class Class904 extends Class882 {
    }
 
    @Override
-   public void method3465(Class8709 var1) {
+   public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.field5024.field9020) {
-         this.field5159 = var1.method31416();
+      if (!this.world.field9020) {
+         this.field5159 = var1.getEntity();
          this.method3536();
       }
    }
 
    @Override
-   public void method3466(Class8711 var1) {
+   public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
       this.method3434(this.method3433().method11333().method11344(var1.method31418(this)));
    }
@@ -243,14 +243,14 @@ public class Class904 extends Class882 {
    }
 
    private void method3537(BlockPos var1) {
-      ServerWorld var4 = (ServerWorld)this.field5024;
+      ServerWorld var4 = (ServerWorld)this.world;
       int var5 = 1;
       BlockPos var6 = var1.method8311();
-      if (this.field5054.nextFloat() < 0.25F && this.field5024.method6796(var6)) {
+      if (this.field5054.nextFloat() < 0.25F && this.world.method6796(var6)) {
          var5++;
       }
 
-      if (this.field5054.nextFloat() < 0.5F && !this.field5024.method7022(var6)) {
+      if (this.field5054.nextFloat() < 0.5F && !this.world.method7022(var6)) {
          var5--;
       }
 
@@ -277,10 +277,10 @@ public class Class904 extends Class882 {
                if (this.field5054.nextFloat() < var9) {
                   float var10 = MathHelper.method37783(this.field5054, 0.0F, 360.0F) * (float) (Math.PI / 180.0);
                   float var11 = MathHelper.method37783(this.field5054, 25.0F, 60.0F);
-                  double var12 = this.getPosX() + (double)(MathHelper.method37763(var10) * var11 * 0.1F);
-                  double var14 = (double)((float) MathHelper.method37769(this.getPosY()) + 1.0F);
-                  double var16 = this.getPosZ() + (double)(MathHelper.method37764(var10) * var11 * 0.1F);
-                  Class7380 var18 = var4.method6738(new BlockPos(var12, var14 - 1.0, var16));
+                  double var12 = this.getPosX() + (double)(MathHelper.sin(var10) * var11 * 0.1F);
+                  double var14 = (double)((float) MathHelper.floor(this.getPosY()) + 1.0F);
+                  double var16 = this.getPosZ() + (double)(MathHelper.cos(var10) * var11 * 0.1F);
+                  BlockState var18 = var4.getBlockState(new BlockPos(var12, var14 - 1.0, var16));
                   if (var18.method23448(Blocks.WATER)) {
                      var4.method6939(Class7940.field34099, var12, var14, var16, 2 + this.field5054.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
                   }
@@ -323,12 +323,12 @@ public class Class904 extends Class882 {
             } else {
                this.field5157 = (float)((double)this.field5157 + this.field5054.nextGaussian() * 4.0);
                float var21 = this.field5157 * (float) (Math.PI / 180.0);
-               float var22 = MathHelper.method37763(var21);
-               float var23 = MathHelper.method37764(var21);
+               float var22 = MathHelper.sin(var21);
+               float var23 = MathHelper.cos(var21);
                double var24 = this.getPosX() + (double)(var22 * (float)this.field5156 * 0.1F);
-               double var25 = (double)((float) MathHelper.method37769(this.getPosY()) + 1.0F);
+               double var25 = (double)((float) MathHelper.floor(this.getPosY()) + 1.0F);
                double var26 = this.getPosZ() + (double)(var23 * (float)this.field5156 * 0.1F);
-               Class7380 var27 = var4.method6738(new BlockPos(var24, var25 - 1.0, var26));
+               BlockState var27 = var4.getBlockState(new BlockPos(var24, var25 - 1.0, var26));
                if (var27.method23448(Blocks.WATER)) {
                   if (this.field5054.nextFloat() < 0.15F) {
                      var4.method6939(Class7940.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
@@ -384,10 +384,10 @@ public class Class904 extends Class882 {
    }
 
    private Class2331 method3540(BlockPos var1) {
-      Class7380 var4 = this.field5024.method6738(var1);
-      if (!var4.method23393() && !var4.method23448(Blocks.LILY_PAD)) {
+      BlockState var4 = this.world.getBlockState(var1);
+      if (!var4.isAir() && !var4.method23448(Blocks.LILY_PAD)) {
          Class7379 var5 = var4.method23449();
-         return var5.method23486(Class8953.field40469) && var5.method23473() && var4.method23414(this.field5024, var1).method19516()
+         return var5.method23486(Class8953.field40469) && var5.method23473() && var4.method23414(this.world, var1).method19516()
             ? Class2331.field15948
             : Class2331.field15949;
       } else {
@@ -400,42 +400,42 @@ public class Class904 extends Class882 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
    }
 
    public int method3542(ItemStack var1) {
       PlayerEntity var4 = this.method3544();
-      if (!this.field5024.field9020 && var4 != null) {
+      if (!this.world.field9020 && var4 != null) {
          int var5 = 0;
          if (this.field5159 == null) {
             if (this.field5154 > 0) {
-               Class9464 var6 = new Class9464((ServerWorld)this.field5024)
+               Class9464 var6 = new Class9464((ServerWorld)this.world)
                   .method36454(Class9525.field44335, this.getPositionVec())
                   .method36454(Class9525.field44338, var1)
                   .method36454(Class9525.field44330, this)
                   .method36450(this.field5054)
                   .method36453((float)this.field5161 + var4.method2978());
-               Class7318 var7 = this.field5024.method6715().method1411().method1058(Class8793.field39591);
+               Class7318 var7 = this.world.method6715().method1411().method1058(Class8793.field39591);
                List<ItemStack> var8 = var7.method23182(var6.method36460(Class8524.field38285));
                CriteriaTriggers.field44494.method15124((ServerPlayerEntity)var4, var1, this, var8);
 
                for (ItemStack var10 : var8) {
-                  ItemEntity var11 = new ItemEntity(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ(), var10);
+                  ItemEntity var11 = new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), var10);
                   double var12 = var4.getPosX() - this.getPosX();
                   double var14 = var4.getPosY() - this.getPosY();
                   double var16 = var4.getPosZ() - this.getPosZ();
                   double var18 = 0.1;
                   var11.method3435(var12 * 0.1, var14 * 0.1 + Math.sqrt(Math.sqrt(var12 * var12 + var14 * var14 + var16 * var16)) * 0.08, var16 * 0.1);
-                  this.field5024.method6916(var11);
-                  var4.field5024
+                  this.world.method6916(var11);
+                  var4.world
                      .method6916(
-                        new ExperienceOrbEntity(var4.field5024, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.field5054.nextInt(6) + 1)
+                        new ExperienceOrbEntity(var4.world, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.field5054.nextInt(6) + 1)
                      );
-                  if (var10.method32107().method11743(Class5985.field26114)) {
+                  if (var10.getItem().method11743(Class5985.field26114)) {
                      var4.method2912(Class8876.field40138, 1);
                   }
                }
@@ -445,7 +445,7 @@ public class Class904 extends Class882 {
          } else {
             this.method3543();
             CriteriaTriggers.field44494.method15124((ServerPlayerEntity)var4, var1, this, Collections.<ItemStack>emptyList());
-            this.field5024.method6786(this, (byte)31);
+            this.world.method6786(this, (byte)31);
             var5 = !(this.field5159 instanceof ItemEntity) ? 5 : 3;
          }
 
@@ -462,7 +462,7 @@ public class Class904 extends Class882 {
 
    @Override
    public void method2866(byte var1) {
-      if (var1 == 31 && this.field5024.field9020 && this.field5159 instanceof PlayerEntity && ((PlayerEntity)this.field5159).method2905()) {
+      if (var1 == 31 && this.world.field9020 && this.field5159 instanceof PlayerEntity && ((PlayerEntity)this.field5159).method2905()) {
          this.method3543();
       }
 

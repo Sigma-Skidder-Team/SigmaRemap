@@ -13,7 +13,7 @@ public class Class5264 extends PremiumModule {
 
     public Class5264() {
         super("Hypixel", "Hypixel bypass", ModuleCategory.PLAYER);
-        this.method15972(new Class6004("Fire resistance potions", "Automatically drink fire pots", true));
+        this.registerSetting(new BooleanSetting("Fire resistance potions", "Automatically drink fire pots", true));
         this.field23678 = -1;
         this.field23681 = -1;
     }
@@ -58,17 +58,17 @@ public class Class5264 extends PremiumModule {
 
                 if (this.field23678 != 1) {
                     if (this.field23678 >= 3) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
-                        mc.getClientPlayNetHandler().sendPacket(new Class5539(this.field23681 + (this.field23681 != 8 ? 1 : -1)));
-                        mc.getClientPlayNetHandler().sendPacket(new Class5539(this.field23681));
-                        mc.player.field4902.field5443 = this.field23679;
+                        mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+                        mc.getConnection().sendPacket(new Class5539(this.field23681 + (this.field23681 != 8 ? 1 : -1)));
+                        mc.getConnection().sendPacket(new Class5539(this.field23681));
+                        mc.player.inventory.currentItem = this.field23679;
                         this.field23679 = -1;
                         this.field23678 = -1;
                         this.field23681 = -1;
                     }
                 } else {
-                    this.field23679 = mc.player.field4902.field5443;
-                    mc.player.field4902.field5443 = this.field23681;
+                    this.field23679 = mc.player.inventory.currentItem;
+                    mc.player.inventory.currentItem = this.field23681;
                 }
             }
         }

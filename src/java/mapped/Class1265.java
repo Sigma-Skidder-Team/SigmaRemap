@@ -12,13 +12,13 @@ import java.util.List;
 public class Class1265 extends Class1193 {
    private static final Ordering<Class6589> field6691 = Ordering.from(new Class3590());
    private final Minecraft field6692;
-   private final Class1268 field6693;
+   private final IngameGui field6693;
    private ITextComponent field6694;
    private ITextComponent field6695;
    private long field6696;
    private boolean field6697;
 
-   public Class1265(Minecraft var1, Class1268 var2) {
+   public Class1265(Minecraft var1, IngameGui var2) {
       this.field6692 = var1;
       this.field6693 = var2;
    }
@@ -48,10 +48,10 @@ public class Class1265 extends Class1193 {
       int var10 = 0;
 
       for (Class6589 var12 : var8) {
-         int var13 = this.field6692.field1294.method38821(this.method5917(var12));
+         int var13 = this.field6692.fontRenderer.method38821(this.method5917(var12));
          var9 = Math.max(var9, var13);
          if (var4 != null && var4.method29342() != Class2316.field15869) {
-            var13 = this.field6692.field1294.method38820(" " + var3.method20980(var12.method19966().getName(), var4).method36050());
+            var13 = this.field6692.fontRenderer.getStringWidth(" " + var3.method20980(var12.method19966().getName(), var4).method36050());
             var10 = Math.max(var10, var13);
          }
       }
@@ -65,7 +65,7 @@ public class Class1265 extends Class1193 {
          var40++;
       }
 
-      boolean var14 = this.field6692.isIntegratedServerRunning() || this.field6692.getClientPlayNetHandler().method15589().method30706();
+      boolean var14 = this.field6692.isIntegratedServerRunning() || this.field6692.getConnection().getNetworkManager().method30706();
       int var15;
       if (var4 == null) {
          var15 = 0;
@@ -81,19 +81,19 @@ public class Class1265 extends Class1193 {
       int var19 = var16 * var40 + (var40 - 1) * 5;
       List<Class9125> var20 = null;
       if (this.field6695 != null) {
-         var20 = this.field6692.field1294.method38828(this.field6695, var2 - 50);
+         var20 = this.field6692.fontRenderer.method38828(this.field6695, var2 - 50);
 
          for (Class9125 var22 : var20) {
-            var19 = Math.max(var19, this.field6692.field1294.method38822(var22));
+            var19 = Math.max(var19, this.field6692.fontRenderer.method38822(var22));
          }
       }
 
       List<Class9125> var42 = null;
       if (this.field6694 != null) {
-         var42 = this.field6692.field1294.method38828(this.field6694, var2 - 50);
+         var42 = this.field6692.fontRenderer.method38828(this.field6694, var2 - 50);
 
          for (Class9125 var23 : var42) {
-            var19 = Math.max(var19, this.field6692.field1294.method38822(var23));
+            var19 = Math.max(var19, this.field6692.fontRenderer.method38822(var23));
          }
       }
 
@@ -101,8 +101,8 @@ public class Class1265 extends Class1193 {
          method5686(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var20.size() * 9, Integer.MIN_VALUE);
 
          for (Class9125 var46 : var20) {
-            int var24 = this.field6692.field1294.method38822(var46);
-            this.field6692.field1294.method38802(var1, var46, (float)(var2 / 2 - var24 / 2), (float)var18, -1);
+            int var24 = this.field6692.fontRenderer.method38822(var46);
+            this.field6692.fontRenderer.method38802(var1, var46, (float)(var2 / 2 - var24 / 2), (float)var18, -1);
             var18 += 9;
          }
 
@@ -144,7 +144,7 @@ public class Class1265 extends Class1193 {
             }
 
             this.field6692
-               .field1294
+               .fontRenderer
                .method38803(var1, this.method5917(var28), (float)var26, (float)var27, var28.method19967() != Class1894.field11105 ? -1 : -1862270977);
             if (var4 != null && var28.method19967() != Class1894.field11105) {
                int var52 = var26 + var9 + 1;
@@ -163,8 +163,8 @@ public class Class1265 extends Class1193 {
          method5686(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var42.size() * 9, Integer.MIN_VALUE);
 
          for (Class9125 var50 : var42) {
-            int var51 = this.field6692.field1294.method38822(var50);
-            this.field6692.field1294.method38802(var1, var50, (float)(var2 / 2 - var51 / 2), (float)var18, -1);
+            int var51 = this.field6692.fontRenderer.method38822(var50);
+            this.field6692.fontRenderer.method38802(var1, var50, (float)(var2 / 2 - var51 / 2), (float)var18, -1);
             var18 += 9;
          }
       }
@@ -206,7 +206,7 @@ public class Class1265 extends Class1193 {
       int var10 = var1.method29335().method20980(var3, var1).method36050();
       if (var1.method29342() != Class2316.field15869) {
          String var11 = TextFormatting.YELLOW + "" + var10;
-         this.field6692.field1294.method38799(var7, var11, (float)(var5 - this.field6692.field1294.method38820(var11)), (float)var2, 16777215);
+         this.field6692.fontRenderer.drawStringWithShadow(var7, var11, (float)(var5 - this.field6692.fontRenderer.getStringWidth(var11)), (float)var2, 16777215);
       } else {
          this.field6692.getTextureManager().bindTexture(field6453);
          long var12 = Util.milliTime();
@@ -239,13 +239,13 @@ public class Class1265 extends Class1193 {
                float var18 = MathHelper.method37777((float)var10 / 20.0F, 0.0F, 1.0F);
                int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;
                String var20 = "" + (float)var10 / 2.0F;
-               if (var5 - this.field6692.field1294.method38820(var20 + "hp") >= var4) {
+               if (var5 - this.field6692.fontRenderer.getStringWidth(var20 + "hp") >= var4) {
                   var20 = var20 + "hp";
                }
 
                this.field6692
-                  .field1294
-                  .method38799(var7, var20, (float)((var5 + var4) / 2 - this.field6692.field1294.method38820(var20) / 2), (float)var2, var19);
+                  .fontRenderer
+                  .drawStringWithShadow(var7, var20, (float)((var5 + var4) / 2 - this.field6692.fontRenderer.getStringWidth(var20) / 2), (float)var2, var19);
             } else {
                for (int var21 = var14; var21 < var15; var21++) {
                   this.method5696(var7, var4 + var21 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);

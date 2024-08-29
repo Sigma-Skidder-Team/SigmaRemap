@@ -29,7 +29,7 @@ public class Class817 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       int var3 = this.field4564 / 4 - 2;
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 4, method1929(12), var3, 20, new TranslationTextComponent("mco.terms.buttons.agree"), var1 -> this.method2325())
@@ -48,7 +48,7 @@ public class Class817 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -77,7 +77,7 @@ public class Class817 extends Class798 {
       if (!this.field4452) {
          return super.method1958(var1, var3, var5);
       } else {
-         this.field4562.field1302.method36350("https://aka.ms/MinecraftRealmsTerms");
+         this.field4562.keyboardListener.method36350("https://aka.ms/MinecraftRealmsTerms");
          Util.getOSType().method8181("https://aka.ms/MinecraftRealmsTerms");
          return true;
       }

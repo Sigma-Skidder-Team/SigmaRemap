@@ -108,7 +108,7 @@ public class Class2350<T> extends Class2349<T> {
 
    @Nullable
    @Override
-   public ResourceLocation method9181(T var1) {
+   public ResourceLocation getKey(T var1) {
       return (ResourceLocation)this.field16144.inverse().get(var1);
    }
 

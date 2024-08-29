@@ -11,14 +11,14 @@ public class Class4217 extends Class4213 {
       this.field20545 = var3.nextInt(3);
    }
 
-   public Class4217(Class8761 var1, Class39 var2) {
+   public Class4217(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33472, var2);
    }
 
    @Override
    public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (Class9312.method35192(this.field20539) / 25 > 0) {
-         this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.field672.method533()]);
+         this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.method533()]);
       }
 
       if (Class9312.method35191(this.field20539)[Direction.field673.method533()] == null) {
@@ -27,7 +27,7 @@ public class Class4217 extends Class4213 {
 
       boolean var10 = this.field20545 != 0
          && var4.nextBoolean()
-         && !Class9312.method35193(this.field20539)[Direction.field672.method533()]
+         && !Class9312.method35193(this.field20539)[Direction.DOWN.method533()]
          && !Class9312.method35193(this.field20539)[Direction.field673.method533()]
          && this.field20539.method35190() > 1;
       if (this.field20545 != 0) {

@@ -25,8 +25,8 @@ public class Class7020 implements Class7016 {
                int var7 = 0;
 
                for (PlayerEntity var9 : var1.method6870()) {
-                  if (!var9.method2800()) {
-                     BlockPos var10 = var9.method3432();
+                  if (!var9.isSpectator()) {
+                     BlockPos var10 = var9.getPosition();
                      if (!var1.method6812().method36875() || var10.getY() >= var1.method6776() && var1.method7022(var10)) {
                         Class9755 var11 = var1.method6807(var10);
                         if (var11.method38329(var6.nextFloat() * 3.0F)) {
@@ -35,16 +35,16 @@ public class Class7020 implements Class7016 {
                            short var14 = 24000;
                            if (var6.nextInt(var13) >= 72000) {
                               BlockPos var15 = var10.method8339(20 + var6.nextInt(15)).method8348(-10 + var6.nextInt(21)).method8344(-10 + var6.nextInt(21));
-                              Class7380 var16 = var1.method6738(var15);
+                              BlockState var16 = var1.getBlockState(var15);
                               Class7379 var17 = var1.method6739(var15);
-                              if (Class8170.method28428(var1, var15, var16, var17, Class8992.field41063)) {
+                              if (Class8170.method28428(var1, var15, var16, var17, EntityType.field41063)) {
                                  Class5093 var18 = null;
                                  int var19 = 1 + var6.nextInt(var11.method38327().method8905() + 1);
 
                                  for (int var20 = 0; var20 < var19; var20++) {
-                                    Class1110 var21 = Class8992.field41063.method33215(var1);
+                                    Class1110 var21 = EntityType.field41063.method33215(var1);
                                     var21.method3272(var15, 0.0F, 0.0F);
-                                    var18 = var21.method4276(var1, var11, Class2202.field14391, var18, (Class39)null);
+                                    var18 = var21.method4276(var1, var11, Class2202.field14391, var18, (CompoundNBT)null);
                                     var1.method6995(var21);
                                  }
 

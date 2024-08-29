@@ -5,7 +5,7 @@ import com.google.gson.JsonNull;
 
 public final class Class8925 extends Class8924 {
    @Override
-   public boolean method32624(Class8992<?> var1) {
+   public boolean method32624(EntityType<?> var1) {
       return true;
    }
 

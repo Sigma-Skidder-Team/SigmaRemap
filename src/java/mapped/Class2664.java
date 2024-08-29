@@ -16,7 +16,7 @@ public class Class2664 extends Class2661 {
    public Class2664(Class1017 var1) {
       super(var1, null);
       this.field17022 = var1;
-      this.field17033 = this.field17022.field5024.field9016.nextInt(10);
+      this.field17033 = this.field17022.world.field9016.nextInt(10);
       this.field17034 = Lists.newArrayList();
       this.field17035 = null;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
@@ -28,7 +28,7 @@ public class Class2664 extends Class2661 {
          && !this.field17022.method4291()
          && Class1017.method4452(this.field17022)
          && !this.method10878(Class1017.method4453(this.field17022))
-         && this.field17022.field5024.method6738(Class1017.method4453(this.field17022)).method23446(Class7645.field32794);
+         && this.field17022.world.getBlockState(Class1017.method4453(this.field17022)).method23446(Class7645.field32794);
    }
 
    @Override
@@ -86,7 +86,7 @@ public class Class2664 extends Class2661 {
 
    private boolean method10872(BlockPos var1) {
       Class1017.method4463(this.field17022).method21642(10.0F);
-      Class1017.method4464(this.field17022).method21654((double)var1.method8304(), (double)var1.getY(), (double)var1.method8306(), 1.0);
+      Class1017.method4464(this.field17022).method21654((double)var1.getX(), (double)var1.getY(), (double)var1.getZ(), 1.0);
       return Class1017.method4465(this.field17022).method21657() != null && Class1017.method4466(this.field17022).method21657().method28708();
    }
 

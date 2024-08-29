@@ -45,7 +45,7 @@ public class NarratorChatListener implements Class6687 {
    }
 
    private void method20403(boolean var1, String var2) {
-      if (SharedConstants.field42545) {
+      if (SharedConstants.developmentMode) {
          field29301.debug("Narrating: {}", var2.replaceAll("\n", "\\\\n"));
       }
 
@@ -53,17 +53,17 @@ public class NarratorChatListener implements Class6687 {
    }
 
    public void method20404(Class1911 var1) {
-      this.method20406();
+      this.clear();
       this.field29303.say(new TranslationTextComponent("options.narrator").appendString(" : ").append(var1.method8190()).getString(), true);
-      Class1264 var4 = Minecraft.getInstance().method1566();
+      ToastGui var4 = Minecraft.getInstance().getToastGui();
       if (!this.field29303.active()) {
-         Class7603.method24907(
-            var4, Class1906.field11196, new TranslationTextComponent("narrator.toast.disabled"), new TranslationTextComponent("options.narrator.notavailable")
+         SystemToast.method24907(
+            var4, SystemToast.Type.field11196, new TranslationTextComponent("narrator.toast.disabled"), new TranslationTextComponent("options.narrator.notavailable")
          );
       } else if (var1 != Class1911.field11267) {
-         Class7603.method24907(var4, Class1906.field11196, new TranslationTextComponent("narrator.toast.enabled"), var1.method8190());
+         SystemToast.method24907(var4, SystemToast.Type.field11196, new TranslationTextComponent("narrator.toast.enabled"), var1.method8190());
       } else {
-         Class7603.method24907(var4, Class1906.field11196, new TranslationTextComponent("narrator.toast.disabled"), (ITextComponent)null);
+         SystemToast.method24907(var4, SystemToast.Type.field11196, new TranslationTextComponent("narrator.toast.disabled"), (ITextComponent)null);
       }
    }
 
@@ -71,7 +71,7 @@ public class NarratorChatListener implements Class6687 {
       return this.field29303.active();
    }
 
-   public void method20406() {
+   public void clear() {
       if (method20402() != Class1911.field11267 && this.field29303.active()) {
          this.field29303.clear();
       }

@@ -30,7 +30,7 @@ public class Class7217 {
       this.field31027.clear();
    }
 
-   public int method22664(Class7380 var1, Class1663 var2, BlockPos var3) {
+   public int method22664(BlockState var1, Class1663 var2, BlockPos var3) {
       long var6 = var3.method8332();
       if (this.field31025) {
          int var8 = this.field31026.get(var6);
@@ -39,7 +39,7 @@ public class Class7217 {
          }
       }
 
-      int var9 = Class264.method945(var2, var1, var3);
+      int var9 = WorldRenderer.method945(var2, var1, var3);
       if (this.field31025) {
          if (this.field31026.size() == 100) {
             this.field31026.removeFirstInt();
@@ -51,7 +51,7 @@ public class Class7217 {
       return var9;
    }
 
-   public float method22665(Class7380 var1, Class1663 var2, BlockPos var3) {
+   public float method22665(BlockState var1, Class1663 var2, BlockPos var3) {
       long var6 = var3.method8332();
       if (this.field31025) {
          float var8 = this.field31027.get(var6);

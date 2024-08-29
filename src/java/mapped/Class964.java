@@ -10,12 +10,12 @@ import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Class964 extends Class944 {
+public class Class964 extends TileEntity {
    private ResourceLocation field5395;
    private String field5396 = "";
    private String field5397 = "";
    private BlockPos field5398 = new BlockPos(0, 1, 0);
-   private BlockPos field5399 = BlockPos.field13032;
+   private BlockPos field5399 = BlockPos.ZERO;
    private Class2089 field5400 = Class2089.field13614;
    private Class80 field5401 = Class80.field185;
    private Class104 field5402 = Class104.field321;
@@ -36,17 +36,17 @@ public class Class964 extends Class944 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       var1.method109("name", this.method3934());
       var1.method109("author", this.field5396);
       var1.method109("metadata", this.field5397);
-      var1.method102("posX", this.field5398.method8304());
+      var1.method102("posX", this.field5398.getX());
       var1.method102("posY", this.field5398.getY());
-      var1.method102("posZ", this.field5398.method8306());
-      var1.method102("sizeX", this.field5399.method8304());
+      var1.method102("posZ", this.field5398.getZ());
+      var1.method102("sizeX", this.field5399.getX());
       var1.method102("sizeY", this.field5399.getY());
-      var1.method102("sizeZ", this.field5399.method8306());
+      var1.method102("sizeZ", this.field5399.getZ());
       var1.method109("rotation", this.field5401.toString());
       var1.method109("mirror", this.field5400.toString());
       var1.method109("mode", this.field5402.toString());
@@ -60,7 +60,7 @@ public class Class964 extends Class944 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.method3937(var2.method126("name"));
       this.field5396 = var2.method126("author");
@@ -96,7 +96,7 @@ public class Class964 extends Class944 {
       this.field5404 = var2.method132("powered");
       this.field5405 = var2.method132("showair");
       this.field5406 = var2.method132("showboundingbox");
-      if (var2.method118("integrity")) {
+      if (var2.contains("integrity")) {
          this.field5407 = var2.method124("integrity");
       } else {
          this.field5407 = 1.0F;
@@ -108,8 +108,8 @@ public class Class964 extends Class944 {
 
    private void method3932() {
       if (this.field5324 != null) {
-         BlockPos var3 = this.method3774();
-         Class7380 var4 = this.field5324.method6738(var3);
+         BlockPos var3 = this.getPos();
+         BlockState var4 = this.field5324.getBlockState(var3);
          if (var4.method23448(Blocks.field37113)) {
             this.field5324.method6725(var3, var4.method23465(Class3367.field18938, this.field5402), 2);
          }
@@ -123,8 +123,8 @@ public class Class964 extends Class944 {
    }
 
    @Override
-   public Class39 method3777() {
-      return this.method3646(new Class39());
+   public CompoundNBT method3777() {
+      return this.write(new CompoundNBT());
    }
 
    public boolean method3933(PlayerEntity var1) {
@@ -209,9 +209,9 @@ public class Class964 extends Class944 {
 
    public void method3951(Class104 var1) {
       this.field5402 = var1;
-      Class7380 var4 = this.field5324.method6738(this.method3774());
+      BlockState var4 = this.field5324.getBlockState(this.getPos());
       if (var4.method23448(Blocks.field37113)) {
-         this.field5324.method6725(this.method3774(), var4.method23465(Class3367.field18938, var1), 2);
+         this.field5324.method6725(this.getPos(), var4.method23465(Class3367.field18938, var1), 2);
       }
    }
 
@@ -257,23 +257,23 @@ public class Class964 extends Class944 {
 
    public boolean method3959() {
       if (this.field5402 == Class104.field318) {
-         BlockPos var3 = this.method3774();
+         BlockPos var3 = this.getPos();
 
-         BlockPos var5 = new BlockPos(var3.method8304() - 80, 0, var3.method8306() - 80);
-         BlockPos var6 = new BlockPos(var3.method8304() + 80, 255, var3.method8306() + 80);
+         BlockPos var5 = new BlockPos(var3.getX() - 80, 0, var3.getZ() - 80);
+         BlockPos var6 = new BlockPos(var3.getX() + 80, 255, var3.getZ() + 80);
          List var7 = this.method3961(var5, var6);
          List var8 = this.method3960(var7);
          if (var8.size() >= 1) {
             Class9764 var9 = this.method3962(var3, var8);
             if (var9.field45681 - var9.field45678 > 1 && var9.field45682 - var9.field45679 > 1 && var9.field45683 - var9.field45680 > 1) {
                this.field5398 = new BlockPos(
-                  var9.field45678 - var3.method8304() + 1, var9.field45679 - var3.getY() + 1, var9.field45680 - var3.method8306() + 1
+                  var9.field45678 - var3.getX() + 1, var9.field45679 - var3.getY() + 1, var9.field45680 - var3.getZ() + 1
                );
                this.field5399 = new BlockPos(
                   var9.field45681 - var9.field45678 - 1, var9.field45682 - var9.field45679 - 1, var9.field45683 - var9.field45680 - 1
                );
                this.method3622();
-               Class7380 var10 = this.field5324.method6738(var3);
+               BlockState var10 = this.field5324.getBlockState(var3);
                this.field5324.method6731(var3, var10, var10, 3);
                return true;
             } else {
@@ -296,9 +296,9 @@ public class Class964 extends Class944 {
       ArrayList var5 = Lists.newArrayList();
 
       for (BlockPos var7 : BlockPos.method8359(var1, var2)) {
-         Class7380 var8 = this.field5324.method6738(var7);
+         BlockState var8 = this.field5324.getBlockState(var7);
          if (var8.method23448(Blocks.field37113)) {
-            Class944 var9 = this.field5324.method6759(var7);
+            TileEntity var9 = this.field5324.getTileEntity(var7);
             if (var9 != null && var9 instanceof Class964) {
                var5.add((Class964)var9);
             }
@@ -313,18 +313,18 @@ public class Class964 extends Class944 {
       if (var2.size() <= 1) {
          var5 = new Class9764(var1, var1);
       } else {
-         BlockPos var6 = ((Class964)var2.get(0)).method3774();
+         BlockPos var6 = ((Class964)var2.get(0)).getPos();
          var5 = new Class9764(var6, var6);
       }
 
       for (Class964 var7 : var2) {
-         BlockPos var8 = var7.method3774();
-         if (var8.method8304() >= var5.field45678) {
-            if (var8.method8304() > var5.field45681) {
-               var5.field45681 = var8.method8304();
+         BlockPos var8 = var7.getPos();
+         if (var8.getX() >= var5.field45678) {
+            if (var8.getX() > var5.field45681) {
+               var5.field45681 = var8.getX();
             }
          } else {
-            var5.field45678 = var8.method8304();
+            var5.field45678 = var8.getX();
          }
 
          if (var8.getY() >= var5.field45679) {
@@ -335,12 +335,12 @@ public class Class964 extends Class944 {
             var5.field45679 = var8.getY();
          }
 
-         if (var8.method8306() >= var5.field45680) {
-            if (var8.method8306() > var5.field45683) {
-               var5.field45683 = var8.method8306();
+         if (var8.getZ() >= var5.field45680) {
+            if (var8.getZ() > var5.field45683) {
+               var5.field45683 = var8.getZ();
             }
          } else {
-            var5.field45680 = var8.method8306();
+            var5.field45680 = var8.getZ();
          }
       }
 
@@ -353,7 +353,7 @@ public class Class964 extends Class944 {
 
    public boolean method3964(boolean var1) {
       if (this.field5402 == Class104.field318 && !this.field5324.field9020 && this.field5395 != null) {
-         BlockPos var4 = this.method3774().method8337(this.field5398);
+         BlockPos var4 = this.getPos().method8337(this.field5398);
          ServerWorld var5 = (ServerWorld)this.field5324;
          Class8761 var6 = var5.method6938();
 
@@ -406,7 +406,7 @@ public class Class964 extends Class944 {
    }
 
    public boolean method3968(ServerWorld var1, boolean var2, Class8969 var3) {
-      BlockPos var6 = this.method3774();
+      BlockPos var6 = this.getPos();
       if (!Class9001.method33256(var3.method32888())) {
          this.field5396 = var3.method32888();
       }
@@ -416,7 +416,7 @@ public class Class964 extends Class944 {
       if (!var8) {
          this.field5399 = var7;
          this.method3622();
-         Class7380 var9 = var1.method6738(var6);
+         BlockState var9 = var1.getBlockState(var6);
          var1.method6731(var6, var9, var9, 3);
       }
 

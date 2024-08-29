@@ -36,7 +36,7 @@ public class Class7168 implements Class7166 {
    private static final int field30839 = "tick".hashCode();
    private static final int field30840 = "sound".hashCode();
    private static final Class6636 field30841 = new Class6636(Minecraft.class);
-   private static final Class6633 field30842 = new Class6633(field30841, Class7684.class);
+   private static final Class6633 field30842 = new Class6633(field30841, TimeTracker.class);
 
    public Class7168(LongSupplier var1, IntSupplier var2, boolean var3) {
       this.field30827 = var1.getAsLong();
@@ -47,9 +47,9 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public void method22501() {
-      Class7684 var3 = (Class7684)Class9299.method35072(Minecraft.getInstance(), field30842);
-      this.field30833 = var3 != null && var3.method25294() == this;
+   public void startTick() {
+      TimeTracker var3 = (TimeTracker)Class9299.method35072(Minecraft.getInstance(), field30842);
+      this.field30833 = var3 != null && var3.func_233508_d_() == this;
       this.field30834 = this.field30833 && Class8578.method30660();
       if (!this.field30830) {
          this.field30830 = true;
@@ -62,14 +62,14 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public void method22502() {
+   public void endTick() {
       if (this.field30830) {
          this.endSection();
          this.field30830 = false;
          if (!this.field30829.isEmpty()) {
             field30821.error(
                "Profiler tick ended before path was fully popped (remainder: '{}'). Mismatched push/pop?",
-               new Supplier[]{() -> Class7740.method25634(this.field30829)}
+               new Supplier[]{() -> IProfileResult.method25634(this.field30829)}
             );
          }
       } else {
@@ -122,7 +122,7 @@ public class Class7168 implements Class7166 {
             if (this.field30832 && var7 > field30820) {
                field30821.warn(
                   "Something's taking too long! '{}' took aprox {} ms",
-                  new Supplier[]{() -> Class7740.method25634(this.field30829), () -> (double)var7 / 1000000.0}
+                  new Supplier[]{() -> IProfileResult.method25634(this.field30829), () -> (double)var7 / 1000000.0}
                );
             }
 
@@ -174,7 +174,7 @@ public class Class7168 implements Class7166 {
    }
 
    @Override
-   public Class7740 method22511() {
+   public IProfileResult method22511() {
       return new Class7741(this.field30824, this.field30827, this.field30828, this.field30826.getAsLong(), this.field30825.getAsInt());
    }
 }

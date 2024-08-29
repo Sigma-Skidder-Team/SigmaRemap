@@ -23,8 +23,8 @@ public enum Class2064 {
    }
 
    public static Class2064 method8721(int var0) {
-      if (var0 >= SharedConstants.method34773().getPackVersion()) {
-         return var0 <= SharedConstants.method34773().getPackVersion() ? field13456 : field13455;
+      if (var0 >= SharedConstants.getVersion().getPackVersion()) {
+         return var0 <= SharedConstants.getVersion().getPackVersion() ? field13456 : field13455;
       } else {
          return field13454;
       }

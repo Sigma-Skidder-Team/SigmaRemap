@@ -34,7 +34,7 @@ public class Class4259 extends Class4247 {
       int var11 = var5 - var10 - 10;
       int var12 = var6 - var9 - 10;
       this.method13230(this.field20647 = new Class4266(this, "zoom", var11, var12, var10, var9));
-      this.field20648 = Minecraft.getInstance().world.method7011(Minecraft.getInstance().player.method3432()).method7072();
+      this.field20648 = Minecraft.getInstance().world.method7011(Minecraft.getInstance().player.getPosition()).method7072();
       this.method13300(false);
    }
 

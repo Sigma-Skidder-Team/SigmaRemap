@@ -21,10 +21,10 @@ public class Class4449 implements Class4442 {
    public void method14013(Class8297 var1) throws IOException {
       JsonObject var4 = new JsonObject();
 
-      for (Block var6 : Registry.field16072) {
-         ResourceLocation var7 = Registry.field16072.method9181(var6);
+      for (Block var6 : Registry.BLOCK) {
+         ResourceLocation var7 = Registry.BLOCK.getKey(var6);
          JsonObject var8 = new JsonObject();
-         Class9348<Block, Class7380> var9 = var6.method11577();
+         Class9348<Block, BlockState> var9 = var6.getStateContainer();
          if (!var9.method35395().isEmpty()) {
             JsonObject var10 = new JsonObject();
 
@@ -42,10 +42,10 @@ public class Class4449 implements Class4442 {
          }
 
          JsonArray var18 = new JsonArray();
-         UnmodifiableIterator var19 = var9.method35392().iterator();
+         UnmodifiableIterator var19 = var9.getValidStates().iterator();
 
          while (var19.hasNext()) {
-            Class7380 var20 = (Class7380)var19.next();
+            BlockState var20 = (BlockState)var19.next();
             JsonObject var21 = new JsonObject();
             JsonObject var22 = new JsonObject();
 

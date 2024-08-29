@@ -16,7 +16,7 @@ public class Class2008 extends KeyBinding {
       if (!this.field13074.getAsBoolean()) {
          super.method8524(var1);
       } else if (var1) {
-         super.method8524(!this.method8509());
+         super.method8524(!this.isKeyDown());
       }
    }
 }

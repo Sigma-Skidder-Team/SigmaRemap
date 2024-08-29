@@ -17,16 +17,16 @@ public class Class8624 {
    public static final ResourceLocation field38769 = new ResourceLocation("textures/atlas/shield_patterns.png");
    public static final ResourceLocation field38770 = new ResourceLocation("textures/atlas/signs.png");
    public static final ResourceLocation field38771 = new ResourceLocation("textures/atlas/chest.png");
-   private static final Class4520 field38772 = Class4520.method14312(field38766);
-   private static final Class4520 field38773 = Class4520.method14309(field38767);
-   private static final Class4520 field38774 = Class4520.method14322(field38768);
-   private static final Class4520 field38775 = Class4520.method14322(field38769);
-   private static final Class4520 field38776 = Class4520.method14312(field38770);
-   private static final Class4520 field38777 = Class4520.method14310(field38771);
-   private static final Class4520 field38778 = Class4520.method14309(Class289.field1102);
-   private static final Class4520 field38779 = Class4520.method14310(Class289.field1102);
-   private static final Class4520 field38780 = Class4520.method14315(Class289.field1102);
-   private static final Class4520 field38781 = Class4520.method14316(Class289.field1102);
+   private static final RenderType field38772 = RenderType.getEntityCutoutNoCull(field38766);
+   private static final RenderType field38773 = RenderType.getEntitySolid(field38767);
+   private static final RenderType field38774 = RenderType.method14322(field38768);
+   private static final RenderType field38775 = RenderType.method14322(field38769);
+   private static final RenderType field38776 = RenderType.getEntityCutoutNoCull(field38770);
+   private static final RenderType field38777 = RenderType.getEntityCutout(field38771);
+   private static final RenderType field38778 = RenderType.getEntitySolid(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+   private static final RenderType field38779 = RenderType.getEntityCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+   private static final RenderType field38780 = RenderType.method14315(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+   private static final RenderType field38781 = RenderType.method14316(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
    public static final Class7826 field38782 = new Class7826(field38766, new ResourceLocation("entity/shulker/shulker"));
    public static final List<Class7826> field38783 = Stream.<String>of(
          "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"
@@ -50,43 +50,43 @@ public class Class8624 {
    public static final Class7826 field38794 = method30912("normal_right");
    public static final Class7826 field38795 = method30912("ender");
 
-   public static Class4520 method30900() {
+   public static RenderType method30900() {
       return field38774;
    }
 
-   public static Class4520 method30901() {
+   public static RenderType method30901() {
       return field38775;
    }
 
-   public static Class4520 method30902() {
+   public static RenderType method30902() {
       return field38773;
    }
 
-   public static Class4520 method30903() {
+   public static RenderType method30903() {
       return field38772;
    }
 
-   public static Class4520 method30904() {
+   public static RenderType method30904() {
       return field38776;
    }
 
-   public static Class4520 method30905() {
+   public static RenderType method30905() {
       return field38777;
    }
 
-   public static Class4520 method30906() {
+   public static RenderType method30906() {
       return field38778;
    }
 
-   public static Class4520 method30907() {
+   public static RenderType method30907() {
       return field38779;
    }
 
-   public static Class4520 method30908() {
+   public static RenderType method30908() {
       return field38780;
    }
 
-   public static Class4520 method30909() {
+   public static RenderType method30909() {
       return field38781;
    }
 
@@ -125,7 +125,7 @@ public class Class8624 {
       return new Class7826(field38771, new ResourceLocation("entity/chest/" + var0));
    }
 
-   public static Class7826 method30913(Class944 var0, Class111 var1, boolean var2) {
+   public static Class7826 method30913(TileEntity var0, Class111 var1, boolean var2) {
       if (!var2) {
          if (!(var0 instanceof Class970)) {
             return !(var0 instanceof Class943) ? method30914(var1, field38792, field38793, field38794) : field38795;

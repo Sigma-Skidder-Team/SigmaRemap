@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4396;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4420;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -18,12 +18,12 @@ public class Class5192 extends Module {
     public Class5192() {
         super(ModuleCategory.RENDER, "Search", "Searches blocks through the world");
         Class6009 var3;
-        this.method15972(var3 = new Class6009<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
-        Class6004 var4;
-        this.method15972(var4 = new Class6004("Holes", "Shows 1x1 explosion protection holes", false));
-        this.method15972(new Class6010("Color", "The rendered block color", Class1979.field12899.field12910, true));
+        this.registerSetting(var3 = new Class6009<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
+        BooleanSetting var4;
+        this.registerSetting(var4 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
+        this.registerSetting(new Class6010("Color", "The rendered block color", Class1979.field12899.field12910, true));
         Class6003 var5;
-        this.method15972(var5 = new Class6003("Blocks", "Blocks to render", true));
+        this.registerSetting(var5 = new Class6003("Blocks", "Blocks to render", true));
         var5.method18616(var1 -> this.field23499.clear());
         var3.method18616(var1 -> this.field23499.clear());
         var4.method18616(var1 -> this.field23499.clear());
@@ -58,7 +58,7 @@ public class Class5192 extends Module {
     }
 
     @EventTarget
-    public void method16165(Class4418 var1) {
+    public void method16165(WorldLoadEvent var1) {
         this.field23499.clear();
         this.field23500.clear();
     }
@@ -92,7 +92,7 @@ public class Class5192 extends Module {
             List var5 = (List) this.method15973("Blocks");
 
             for (BlockPos var7 : this.method16166(var1)) {
-                String var8 = Registry.field16072.method9181(mc.world.method6738(var7).method23383()).toString();
+                String var8 = Registry.BLOCK.getKey(mc.world.getBlockState(var7).getBlock()).toString();
                 if (var5.contains(var8)) {
                     var4.add(var7);
                 }
@@ -101,11 +101,11 @@ public class Class5192 extends Module {
             if (this.method15974("Holes")) {
                 label57:
                 for (BlockPos var13 : this.method16166(var1)) {
-                    if (mc.world.method6738(var13).method23383() == Blocks.AIR) {
+                    if (mc.world.getBlockState(var13).getBlock() == Blocks.AIR) {
                         for (Direction var11 : Direction.values()) {
                             if (var11 != Direction.field673
-                                    && mc.world.method6738(var13.method8337(var11.method556())).method23383() != Blocks.field36527
-                                    && mc.world.method6738(var13.method8337(var11.method556())).method23383() != Blocks.BEDROCK) {
+                                    && mc.world.getBlockState(var13.method8337(var11.method556())).getBlock() != Blocks.field36527
+                                    && mc.world.getBlockState(var13.method8337(var11.method556())).getBlock() != Blocks.BEDROCK) {
                                 continue label57;
                             }
                         }
@@ -181,9 +181,9 @@ public class Class5192 extends Module {
 
         for (Class7871 var5 : this.field23499) {
             for (BlockPos var7 : var5.field33732) {
-                double var8 = (double) var7.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+                double var8 = (double) var7.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                 double var10 = (double) var7.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                double var12 = (double) var7.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                double var12 = (double) var7.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var14 = new Class9388(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
                 Class3192.method11459(var14, var3);
             }

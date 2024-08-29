@@ -28,9 +28,9 @@ public class Class2784 extends Class2595 {
                   return false;
                }
 
-               BlockPos var4 = this.field17402.method3432();
-               Class7380 var5 = this.field17401.field5024.method6738(var4);
-               if (var5.method23383().method11540(Class7645.field32770)) {
+               BlockPos var4 = this.field17402.getPosition();
+               BlockState var5 = this.field17401.world.getBlockState(var4);
+               if (var5.getBlock().method11540(Class7645.field32770)) {
                   this.field17403 = var5.<Direction>method23464(Class3250.field18484)
                      .<BlockPos>map(var1 -> var4.method8349(var1.method536()))
                      .orElseGet(() -> new BlockPos(var4));
@@ -48,7 +48,7 @@ public class Class2784 extends Class2595 {
    }
 
    private boolean method10974() {
-      for (Class1098 var4 : this.field17401.field5024.<Class1098>method7182(Class1098.class, new Class6488(this.field17403).method19664(2.0))) {
+      for (Class1098 var4 : this.field17401.world.<Class1098>method7182(Class1098.class, new Class6488(this.field17403).method19664(2.0))) {
          if (var4 != this.field17401 && (var4.method5253() || var4.method5255())) {
             return true;
          }
@@ -73,15 +73,15 @@ public class Class2784 extends Class2595 {
          this.field17401.method4396(false);
          this.field17401
             .method4230()
-            .method21654((double)this.field17403.method8304(), (double)this.field17403.getY(), (double)this.field17403.method8306(), 1.1F);
+            .method21654((double)this.field17403.getX(), (double)this.field17403.getY(), (double)this.field17403.getZ(), 1.1F);
       }
    }
 
    @Override
    public void method10807() {
       this.field17401.method5252(false);
-      float var3 = this.field17401.field5024.method7001(1.0F);
-      if (this.field17402.method2910() >= 100 && (double)var3 > 0.77 && (double)var3 < 0.8 && (double)this.field17401.field5024.method6814().nextFloat() < 0.7) {
+      float var3 = this.field17401.world.method7001(1.0F);
+      if (this.field17402.method2910() >= 100 && (double)var3 > 0.77 && (double)var3 < 0.8 && (double)this.field17401.world.method6814().nextFloat() < 0.7) {
          this.method10975();
       }
 
@@ -93,30 +93,30 @@ public class Class2784 extends Class2595 {
    private void method10975() {
       Random var3 = this.field17401.method3013();
       Mutable var4 = new Mutable();
-      var4.method8374(this.field17401.method3432());
+      var4.method8374(this.field17401.getPosition());
       this.field17401
          .method3168(
-            (double)(var4.method8304() + var3.nextInt(11) - 5),
+            (double)(var4.getX() + var3.nextInt(11) - 5),
             (double)(var4.getY() + var3.nextInt(5) - 2),
-            (double)(var4.method8306() + var3.nextInt(11) - 5),
+            (double)(var4.getZ() + var3.nextInt(11) - 5),
             false
          );
-      var4.method8374(this.field17401.method3432());
-      Class7318 var5 = this.field17401.field5024.method6715().method1411().method1058(Class8793.field39595);
-      Class9464 var6 = new Class9464((ServerWorld)this.field17401.field5024)
+      var4.method8374(this.field17401.getPosition());
+      Class7318 var5 = this.field17401.world.method6715().method1411().method1058(Class8793.field39595);
+      Class9464 var6 = new Class9464((ServerWorld)this.field17401.world)
          .method36454(Class9525.field44335, this.field17401.getPositionVec())
          .method36454(Class9525.field44330, this.field17401)
          .method36450(var3);
 
       for (ItemStack var8 : var5.method23182(var6.method36460(Class8524.field38287))) {
          this.field17401
-            .field5024
+            .world
             .method6916(
                new ItemEntity(
-                  this.field17401.field5024,
-                  (double)var4.method8304() - (double) MathHelper.method37763(this.field17401.field4965 * (float) (Math.PI / 180.0)),
+                  this.field17401.world,
+                  (double)var4.getX() - (double) MathHelper.sin(this.field17401.field4965 * (float) (Math.PI / 180.0)),
                   (double)var4.getY(),
-                  (double)var4.method8306() + (double) MathHelper.method37764(this.field17401.field4965 * (float) (Math.PI / 180.0)),
+                  (double)var4.getZ() + (double) MathHelper.cos(this.field17401.field4965 * (float) (Math.PI / 180.0)),
                   var8
                )
             );
@@ -129,7 +129,7 @@ public class Class2784 extends Class2595 {
          this.field17401.method4396(false);
          this.field17401
             .method4230()
-            .method21654((double)this.field17403.method8304(), (double)this.field17403.getY(), (double)this.field17403.method8306(), 1.1F);
+            .method21654((double)this.field17403.getX(), (double)this.field17403.getY(), (double)this.field17403.getZ(), 1.1F);
          if (!(this.field17401.getDistanceSq(this.field17402) < 2.5)) {
             this.field17401.method5252(false);
          } else {

@@ -25,7 +25,7 @@ public class TP extends Command {
          throw new CommandException("Too many arguments");
       } else if (!mc.player.field5036 && Class5628.method17716()) {
          throw new CommandException("Use this command on ground");
-      } else if (var2[0].method30899().equalsIgnoreCase(mc.method1533().username)) {
+      } else if (var2[0].method30899().equalsIgnoreCase(mc.getSession().username)) {
          throw new CommandException("You can not tp to yourself");
       } else {
          this.field25710.field45879 = null;
@@ -48,8 +48,8 @@ public class TP extends Command {
                double var9 = mc.player.getPosX();
                double var11 = mc.player.getPosY();
                double var13 = mc.player.getPosZ();
-               mc.getClientPlayNetHandler().sendPacket(new Class5605(var9, var11 + 0.2, var13, false));
-               mc.getClientPlayNetHandler().sendPacket(new Class5605(var9, var11 + 0.1, var13, false));
+               mc.getConnection().sendPacket(new Class5605(var9, var11 + 0.2, var13, false));
+               mc.getConnection().sendPacket(new Class5605(var9, var11 + 0.1, var13, false));
                this.field25710.field45878 = 1;
                Client.getInstance()
                   .getNotificationManager()

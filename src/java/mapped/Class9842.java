@@ -8,7 +8,7 @@ import java.util.Random;
 public class Class9842 {
    private static final Random field45941 = new Random(0L);
 
-   public static void method38896(Class7202 var0) {
+   public static void method38896(IBakedModel var0) {
       if (var0 != null) {
          Class7944.method26810(
             "Model: "
@@ -20,17 +20,17 @@ public class Class9842 {
                + ", builtIn: "
                + var0.method22623()
                + ", particle: "
-               + var0.method22624()
+               + var0.getParticleTexture()
          );
          Direction[] var3 = Direction.field685;
 
          for (int var4 = 0; var4 < var3.length; var4++) {
             Direction var5 = var3[var4];
-            List var6 = var0.method22619((Class7380)null, var5, field45941);
+            List var6 = var0.method22619((BlockState)null, var5, field45941);
             method38897(var5.method257(), var6, "  ");
          }
 
-         List var7 = var0.method22619((Class7380)null, (Direction)null, field45941);
+         List var7 = var0.method22619((BlockState)null, (Direction)null, field45941);
          method38897("General", var7, "  ");
       }
    }
@@ -74,19 +74,19 @@ public class Class9842 {
       }
    }
 
-   public static Class7202 method38900(Class7202 var0) {
-      List var3 = method38901(var0.method22619((Class7380)null, (Direction)null, field45941));
+   public static IBakedModel method38900(IBakedModel var0) {
+      List var3 = method38901(var0.method22619((BlockState)null, (Direction)null, field45941));
       Direction[] var4 = Direction.field685;
       HashMap var5 = new HashMap();
 
       for (int var6 = 0; var6 < var4.length; var6++) {
          Direction var7 = var4[var6];
-         List var8 = var0.method22619((Class7380)null, var7, field45941);
+         List var8 = var0.method22619((BlockState)null, var7, field45941);
          List var9 = method38901(var8);
          var5.put(var7, var9);
       }
 
-      return new Class7206(var3, var5, var0.method22620(), var0.method22621(), true, var0.method22624(), var0.method22625(), var0.method22626());
+      return new Class7206(var3, var5, var0.method22620(), var0.method22621(), true, var0.getParticleTexture(), var0.method22625(), var0.method22626());
    }
 
    public static List method38901(List<Class8557> var0) {

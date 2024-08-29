@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Class1189 extends Class1197 implements Class1190, Class1152 {
-   private final Class9834 field6418;
+   private final FontRenderer field6418;
    private String field6419 = "";
    private int field6420 = 32;
    private int field6421;
@@ -29,11 +29,11 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
    private Predicate<String> field6433 = Objects::nonNull;
    private BiFunction<String, Integer, Class9125> field6434 = (var0, var1x) -> Class9125.method34038(var0, Style.EMPTY);
 
-   public Class1189(Class9834 var1, int var2, int var3, int var4, int var5, ITextComponent var6) {
+   public Class1189(FontRenderer var1, int var2, int var3, int var4, int var5, ITextComponent var6) {
       this(var1, var2, var3, var4, var5, (Class1189)null, var6);
    }
 
-   public Class1189(Class9834 var1, int var2, int var3, int var4, int var5, Class1189 var6, ITextComponent var7) {
+   public Class1189(FontRenderer var1, int var2, int var3, int var4, int var5, Class1189 var6, ITextComponent var7) {
       super(var2, var3, var4, var5, var7);
       this.field6418 = var1;
       if (var6 != null) {
@@ -116,7 +116,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
    }
 
    private void method5641(int var1) {
-      if (!Screen.method2475()) {
+      if (!Screen.hasControlDown()) {
          this.method5643(var1);
       } else {
          this.method5642(var1);
@@ -230,16 +230,16 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
             this.method5668(0);
             return true;
          } else if (Screen.method2480(var1)) {
-            Minecraft.getInstance().field1302.method36350(this.method5637());
+            Minecraft.getInstance().keyboardListener.method36350(this.method5637());
             return true;
          } else if (Screen.method2479(var1)) {
             if (this.field6424) {
-               this.method5639(Minecraft.getInstance().field1302.method36349());
+               this.method5639(Minecraft.getInstance().keyboardListener.method36349());
             }
 
             return true;
          } else if (Screen.method2478(var1)) {
-            Minecraft.getInstance().field1302.method36350(this.method5637());
+            Minecraft.getInstance().keyboardListener.method36350(this.method5637());
             if (this.field6424) {
                this.method5639("");
             }
@@ -271,7 +271,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
 
                   return true;
                case 262:
-                  if (Screen.method2475()) {
+                  if (Screen.hasControlDown()) {
                      this.method5649(this.method5644(1));
                   } else {
                      this.method5647(1);
@@ -279,7 +279,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
 
                   return true;
                case 263:
-                  if (Screen.method2475()) {
+                  if (Screen.hasControlDown()) {
                      this.method5649(this.method5644(-1));
                   } else {
                      this.method5647(-1);
@@ -332,7 +332,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
          }
 
          if (this.method5746() && var8 && var5 == 0) {
-            int var9 = MathHelper.method37769(var1) - this.field6477;
+            int var9 = MathHelper.floor(var1) - this.field6477;
             if (this.field6422) {
                var9 -= 4;
             }
@@ -393,19 +393,19 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
          }
 
          if (!var20 && this.field6431 != null) {
-            this.field6418.method38799(var1, this.field6431, (float)(var17 - 1), (float)var14, -8355712);
+            this.field6418.drawStringWithShadow(var1, this.field6431, (float)(var17 - 1), (float)var14, -8355712);
          }
 
          if (var12) {
             if (!var20) {
-               this.field6418.method38799(var1, "_", (float)var17, (float)var14, var19);
+               this.field6418.drawStringWithShadow(var1, "_", (float)var17, (float)var14, var19);
             } else {
                Class1193.method5686(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
             }
          }
 
          if (var9 != var8) {
-            int var18 = var13 + this.field6418.method38820(var10.substring(0, var9));
+            int var18 = var13 + this.field6418.getStringWidth(var10.substring(0, var9));
             this.method5656(var17, var14 - 1, var18 - 1, var14 + 1 + 9);
          }
       }
@@ -432,18 +432,18 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
          var1 = this.field6477 + this.field6475;
       }
 
-      Class9352 var10 = Class9352.method35409();
-      Class5425 var8 = var10.method35411();
+      Tessellator var10 = Tessellator.getInstance();
+      BufferBuilder var8 = var10.getBuffer();
       RenderSystem.method27889(0.0F, 0.0F, 255.0F, 255.0F);
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27857();
       RenderSystem.method27859(Class2270.field14769);
-      var8.method17063(7, Class9337.field43341);
-      var8.method17025((double)var1, (double)var4, 0.0).method17031();
-      var8.method17025((double)var3, (double)var4, 0.0).method17031();
-      var8.method17025((double)var3, (double)var2, 0.0).method17031();
-      var8.method17025((double)var1, (double)var2, 0.0).method17031();
-      var10.method35410();
+      var8.begin(7, DefaultVertexFormats.field43341);
+      var8.pos((double)var1, (double)var4, 0.0).endVertex();
+      var8.pos((double)var3, (double)var4, 0.0).endVertex();
+      var8.pos((double)var3, (double)var2, 0.0).endVertex();
+      var8.pos((double)var1, (double)var2, 0.0).endVertex();
+      var10.draw();
       RenderSystem.method27858();
       RenderSystem.enableTexture();
    }
@@ -557,7 +557,7 @@ public class Class1189 extends Class1197 implements Class1190, Class1152 {
    }
 
    public int method5673(int var1) {
-      return var1 <= this.field6419.length() ? this.field6477 + this.field6418.method38820(this.field6419.substring(0, var1)) : this.field6477;
+      return var1 <= this.field6419.length() ? this.field6477 + this.field6418.getStringWidth(this.field6419.substring(0, var1)) : this.field6477;
    }
 
    public void method5674(int var1) {

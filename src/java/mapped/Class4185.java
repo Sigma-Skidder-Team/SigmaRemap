@@ -10,12 +10,12 @@ public class Class4185 extends Class4180 {
       super(Class7792.field33459, 0);
       this.field20471 = var2;
       BlockPos var8 = (BlockPos)Class3191.method11408().get(var2);
-      this.field20455 = var3.method8336(var8.method8304(), var8.getY() - var5, var8.method8306());
+      this.field20455 = var3.method8336(var8.getX(), var8.getY() - var5, var8.getZ());
       this.field20472 = var4;
       this.method12964(var1);
    }
 
-   public Class4185(Class8761 var1, Class39 var2) {
+   public Class4185(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33459, var2);
       this.field20471 = new ResourceLocation(var2.method126("Template"));
       this.field20472 = Class80.valueOf(var2.method126("Rot"));
@@ -33,7 +33,7 @@ public class Class4185 extends Class4180 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20471.toString());
       var1.method109("Rot", this.field20472.name());
@@ -43,7 +43,7 @@ public class Class4185 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if ("chest".equals(var1)) {
          var3.method6725(var2, Blocks.AIR.method11579(), 3);
-         Class944 var8 = var3.method6759(var2.method8313());
+         TileEntity var8 = var3.getTileEntity(var2.method8313());
          if (var8 instanceof Class941) {
             ((Class941)var8).method3744(Class8793.field39561, var4.nextLong());
          }
@@ -58,15 +58,15 @@ public class Class4185 extends Class4180 {
          .method36427((BlockPos)Class3191.method11409().get(this.field20471))
          .method36434(Class7095.field30526);
       BlockPos var11 = (BlockPos)Class3191.method11408().get(this.field20471);
-      BlockPos var12 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3 - var11.method8304(), 0, 0 - var11.method8306())));
-      int var13 = var1.method6736(Class101.field295, var12.method8304(), var12.method8306());
+      BlockPos var12 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.getZ())));
+      int var13 = var1.method6736(Class101.field295, var12.getX(), var12.getZ());
       BlockPos var14 = this.field20455;
       this.field20455 = this.field20455.method8336(0, var13 - 90 - 1, 0);
       boolean var15 = super.method12896(var1, var2, var3, var4, var5, var6, var7);
       if (this.field20471.equals(Class3191.method11410())) {
          BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
-         Class7380 var17 = var1.method6738(var16.method8313());
-         if (!var17.method23393() && !var17.method23448(Blocks.LADDER)) {
+         BlockState var17 = var1.getBlockState(var16.method8313());
+         if (!var17.isAir() && !var17.method23448(Blocks.LADDER)) {
             var1.method6725(var16, Blocks.SNOW_BLOCK.method11579(), 3);
          }
       }

@@ -8,13 +8,13 @@ public interface Class5422 extends Class5421 {
    ThreadLocal<Class8391> field24104 = ThreadLocal.<Class8391>withInitial(() -> new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0)));
    boolean field24105 = Class9299.field42864.method20245();
 
-   default Class8391 method17022(Class7380 var1, BlockPos var2) {
+   default Class8391 method17022(BlockState var1, BlockPos var2) {
       Class8391 var5 = field24104.get();
       var5.method29411(var1, var2);
       return var5;
    }
 
-   default Class4520 method17023() {
+   default RenderType method17023() {
       return null;
    }
 
@@ -22,9 +22,9 @@ public interface Class5422 extends Class5421 {
       return false;
    }
 
-   Class5422 method17025(double var1, double var3, double var5);
+   Class5422 pos(double var1, double var3, double var5);
 
-   Class5422 method17026(int var1, int var2, int var3, int var4);
+   Class5422 color(int var1, int var2, int var3, int var4);
 
    Class5422 method17027(float var1, float var2);
 
@@ -34,7 +34,7 @@ public interface Class5422 extends Class5421 {
 
    Class5422 method17030(float var1, float var2, float var3);
 
-   void method17031();
+   void endVertex();
 
    default void method17032(
       float var1,
@@ -52,17 +52,17 @@ public interface Class5422 extends Class5421 {
       float var13,
       float var14
    ) {
-      this.method17025((double)var1, (double)var2, (double)var3);
+      this.pos((double)var1, (double)var2, (double)var3);
       this.method17033(var4, var5, var6, var7);
       this.method17027(var8, var9);
       this.method17035(var10);
       this.method17034(var11);
       this.method17030(var12, var13, var14);
-      this.method17031();
+      this.endVertex();
    }
 
    default Class5422 method17033(float var1, float var2, float var3, float var4) {
-      return this.method17026((int)(var1 * 255.0F), (int)(var2 * 255.0F), (int)(var3 * 255.0F), (int)(var4 * 255.0F));
+      return this.color((int)(var1 * 255.0F), (int)(var2 * 255.0F), (int)(var3 * 255.0F), (int)(var4 * 255.0F));
    }
 
    default Class5422 method17034(int var1) {
@@ -90,16 +90,16 @@ public interface Class5422 extends Class5421 {
       this.method17042(var2.method30516());
       boolean var14 = Class7551.method24696();
       Class1998 var15 = var2.method30514().method556();
-      float var16 = (float)var15.method8304();
+      float var16 = (float)var15.getX();
       float var17 = (float)var15.getY();
-      float var18 = (float)var15.method8306();
+      float var18 = (float)var15.getZ();
       Class9367 var19 = var1.method32361();
       Class8967 var20 = var1.method32362();
       float var21 = var20.method32832(var16, var17, var18);
       float var22 = var20.method32833(var16, var17, var18);
       float var23 = var20.method32834(var16, var17, var18);
       byte var24 = 8;
-      int var25 = Class9337.field43334.method26215();
+      int var25 = DefaultVertexFormats.field43334.method26215();
       int var26 = var13.length / var25;
 
       for (int var27 = 0; var27 < var26; var27++) {
@@ -164,7 +164,7 @@ public interface Class5422 extends Class5421 {
       float var7 = var1.method35517(var2, var3, var4, 1.0F);
       float var8 = var1.method35518(var2, var3, var4, 1.0F);
       float var9 = var1.method35519(var2, var3, var4, 1.0F);
-      return this.method17025((double)var7, (double)var8, (double)var9);
+      return this.pos((double)var7, (double)var8, (double)var9);
    }
 
    default Class5422 method17041(Class8967 var1, float var2, float var3, float var4) {
@@ -174,13 +174,13 @@ public interface Class5422 extends Class5421 {
       return this.method17030(var7, var8, var9);
    }
 
-   default void method17042(Class1713 var1) {
+   default void method17042(TextureAtlasSprite var1) {
    }
 
-   default void method17043(Class1713 var1) {
+   default void method17043(TextureAtlasSprite var1) {
    }
 
-   default void method17044(Class4520 var1) {
+   default void method17044(RenderType var1) {
    }
 
    default Class7680 method17045(Class7680 var1) {

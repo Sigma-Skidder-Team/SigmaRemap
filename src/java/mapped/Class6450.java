@@ -19,7 +19,7 @@ public class Class6450 {
             (var0, var1) -> new TranslationTextComponent("commands.clone.toobig", var0, var1)
     );
     private static final SimpleCommandExceptionType field28362 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.clone.failed"));
-    public static final Predicate<Class9632> field28363 = var0 -> !var0.method37548().method23393();
+    public static final Predicate<Class9632> field28363 = var0 -> !var0.method37548().isAir();
 
     public static void method19588(CommandDispatcher<Class6619> var0) {
         var0.register(
@@ -234,19 +234,19 @@ public class Class6450 {
                                 BlockPos var21 = new BlockPos(var20, var19, var18);
                                 BlockPos var22 = var21.method8337(var17);
                                 Class9632 var23 = new Class9632(var12, var21, false);
-                                Class7380 var24 = var23.method37548();
+                                BlockState var24 = var23.method37548();
                                 if (var4.test(var23)) {
-                                    Class944 var25 = var12.method6759(var21);
+                                    TileEntity var25 = var12.getTileEntity(var21);
                                     if (var25 == null) {
                                         if (!var24.method23409(var12, var21) && !var24.method23456(var12, var21)) {
-                                            var15.add(new Class6202(var22, var24, (Class39) null));
+                                            var15.add(new Class6202(var22, var24, (CompoundNBT) null));
                                             var16.addFirst(var21);
                                         } else {
-                                            var13.add(new Class6202(var22, var24, (Class39) null));
+                                            var13.add(new Class6202(var22, var24, (CompoundNBT) null));
                                             var16.addLast(var21);
                                         }
                                     } else {
-                                        Class39 var26 = var25.method3646(new Class39());
+                                        CompoundNBT var26 = var25.write(new CompoundNBT());
                                         var14.add(new Class6202(var22, var24, var26));
                                         var16.addLast(var21);
                                     }
@@ -257,7 +257,7 @@ public class Class6450 {
 
                     if (var5 == Class2109.field13762) {
                         for (BlockPos var30 : var16) {
-                            Class944 var33 = var12.method6759(var30);
+                            TileEntity var33 = var12.getTileEntity(var30);
                             Class946.method3802(var33);
                             var12.method6725(var30, Blocks.field36765.method11579(), 2);
                         }
@@ -274,7 +274,7 @@ public class Class6450 {
                     List<Class6202> var32 = Lists.reverse(var29);
 
                     for (Class6202 var36 : var32) {
-                        Class944 var40 = var12.method6759(var36.field27679);
+                        TileEntity var40 = var12.getTileEntity(var36.field27679);
                         Class946.method3802(var40);
                         var12.method6725(var36.field27679, Blocks.field36765.method11579(), 2);
                     }
@@ -288,11 +288,11 @@ public class Class6450 {
                     }
 
                     for (Class6202 var42 : var14) {
-                        Class944 var44 = var12.method6759(var42.field27679);
+                        TileEntity var44 = var12.getTileEntity(var42.field27679);
                         if (var42.field27681 != null && var44 != null) {
-                            var42.field27681.method102("x", var42.field27679.method8304());
+                            var42.field27681.method102("x", var42.field27679.getX());
                             var42.field27681.method102("y", var42.field27679.getY());
-                            var42.field27681.method102("z", var42.field27679.method8306());
+                            var42.field27681.method102("z", var42.field27679.getZ());
                             var44.method3645(var42.field27680, var42.field27681);
                             var44.method3622();
                         }
@@ -301,7 +301,7 @@ public class Class6450 {
                     }
 
                     for (Class6202 var43 : var32) {
-                        var12.method6964(var43.field27679, var43.field27680.method23383());
+                        var12.method6964(var43.field27679, var43.field27680.getBlock());
                     }
 
                     var12.method6860().method20732(var8, var17);

@@ -11,9 +11,9 @@ public class Class5808 extends Class5807 {
       double var2,
       double var4,
       float var6,
-      Function<Class9574, Double> var7,
-      BiConsumer<Class9574, Double> var8,
-      BiFunction<Class9574, Class5807, ITextComponent> var9
+      Function<GameSettings, Double> var7,
+      BiConsumer<GameSettings, Double> var8,
+      BiFunction<GameSettings, Class5807, ITextComponent> var9
    ) {
       super(var1, var2, var4, var6, var7, var8, var9);
    }

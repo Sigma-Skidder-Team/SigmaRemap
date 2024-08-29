@@ -11,7 +11,7 @@ public abstract class Class2921<U extends Class4698> extends Class2898<U> {
 
    @Override
    public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, U var5) {
-      Class7380 var8 = this.method11254(var3, var4, (U)var5);
+      BlockState var8 = this.method11254(var3, var4, (U)var5);
       int var9 = 0;
 
       for (int var10 = 0; var10 < this.method11252((U)var5); var10++) {
@@ -31,5 +31,5 @@ public abstract class Class2921<U extends Class4698> extends Class2898<U> {
 
    public abstract BlockPos method11253(Random var1, BlockPos var2, U var3);
 
-   public abstract Class7380 method11254(Random var1, BlockPos var2, U var3);
+   public abstract BlockState method11254(Random var1, BlockPos var2, U var3);
 }

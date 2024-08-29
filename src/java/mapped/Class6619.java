@@ -386,7 +386,7 @@ public class Class6619 implements Class6618 {
    }
 
    @Override
-   public Class8904 method20136() {
+   public DynamicRegistries method20136() {
       return this.field29130.method1437();
    }
 }

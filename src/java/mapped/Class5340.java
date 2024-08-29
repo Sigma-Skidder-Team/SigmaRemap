@@ -29,12 +29,12 @@ public class Class5340 extends Class5325 {
                 new Class5230(),
                 new Class5208()
         );
-        this.method15972(new Class6004("AutoL", "Automatically says L when you kill a player", true));
-        this.method15972(new Class6005("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").method18616(var1 -> this.field23888.clear()));
-        this.method15972(new Class6011("First character", "The characters your sentences will start with.", ""));
-        this.method15972(new Class6004("AutoGG", "Automatically say gg at the end of the game", true));
-        this.method15972(new Class6004("Auto Join", "Automatically joins another game", true));
-        this.method15972(new Class6009<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("AutoL", "Automatically says L when you kill a player", true));
+        this.registerSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").method18616(var1 -> this.field23888.clear()));
+        this.registerSetting(new Class6011("First character", "The characters your sentences will start with.", ""));
+        this.registerSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
+        this.registerSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
+        this.registerSetting(new Class6009<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
         this.field23891 = new Timer();
     }
 

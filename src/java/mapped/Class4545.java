@@ -21,12 +21,12 @@ public class Class4545 implements Iterator<BlockPos> {
    public Class4545(BlockPos var1, BlockPos var2, double var3, double var5) {
       this.field21897 = var3;
       this.field21898 = var5;
-      this.field21899 = var1.method8304();
-      this.field21900 = var2.method8304();
+      this.field21899 = var1.getX();
+      this.field21900 = var2.getX();
       this.field21901 = (double)var1.getY();
       this.field21902 = (double)var2.getY() - 0.5;
-      this.field21903 = (double)var1.method8306();
-      this.field21904 = (double)var2.method8306() - 0.5;
+      this.field21903 = (double)var1.getZ();
+      this.field21904 = (double)var2.getZ() - 0.5;
       this.field21905 = this.field21899;
       this.field21906 = this.field21901;
       this.field21907 = this.field21903;

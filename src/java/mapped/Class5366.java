@@ -12,9 +12,9 @@ public class Class5366 extends Module {
 
     public Class5366() {
         super(ModuleCategory.MOVEMENT, "Redesky", "Longjump for Redesky.");
-        this.method15972(new Class6009<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
-        this.method15972(new Class6004("NoFall", "Avoid taking fall damage", true));
+        this.registerSetting(new Class6009<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new BooleanSetting("NoFall", "Avoid taking fall damage", true));
     }
 
     @Override

@@ -7,16 +7,16 @@ import com.google.gson.JsonSerializationContext;
 public class Class4950 implements ILootSerializer<Class155> {
    public void serialize(JsonObject var1, Class155 var2, JsonSerializationContext var3) {
       var1.add("predicate", Class155.method471(var2).method30652());
-      if (Class155.method472(var2).method8304() != 0) {
-         var1.addProperty("offsetX", Class155.method472(var2).method8304());
+      if (Class155.method472(var2).getX() != 0) {
+         var1.addProperty("offsetX", Class155.method472(var2).getX());
       }
 
       if (Class155.method472(var2).getY() != 0) {
          var1.addProperty("offsetY", Class155.method472(var2).getY());
       }
 
-      if (Class155.method472(var2).method8306() != 0) {
-         var1.addProperty("offsetZ", Class155.method472(var2).method8306());
+      if (Class155.method472(var2).getZ() != 0) {
+         var1.addProperty("offsetZ", Class155.method472(var2).getZ());
       }
    }
 

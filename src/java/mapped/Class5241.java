@@ -13,7 +13,7 @@ public class Class5241 extends Module {
 
     public Class5241() {
         super(ModuleCategory.MOVEMENT, "SlowHop", "SlowHop speed");
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
     }
 
     @Override

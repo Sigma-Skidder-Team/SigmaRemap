@@ -50,7 +50,7 @@ public class Class7473 {
    private BlockPos method24196(BlockPos var1) {
       int var4 = Math.max(0, var1.getY() - 21);
 
-      while (var1.getY() > var4 && method24202(this.field32112.method6738(var1.method8313()))) {
+      while (var1.getY() > var4 && method24202(this.field32112.getBlockState(var1.method8313()))) {
          var1 = var1.method8313();
       }
 
@@ -69,7 +69,7 @@ public class Class7473 {
 
       for (int var6 = 0; var6 <= 21; var6++) {
          var5.method8374(var1).method8380(var2, var6);
-         Class7380 var7 = this.field32112.method6738(var5);
+         BlockState var7 = this.field32112.getBlockState(var5);
          if (!method24202(var7)) {
             if (field32111.method30847(var7, this.field32112, var5)) {
                return var6;
@@ -77,7 +77,7 @@ public class Class7473 {
             break;
          }
 
-         Class7380 var8 = this.field32112.method6738(var5.method8379(Direction.field672));
+         BlockState var8 = this.field32112.getBlockState(var5.method8379(Direction.DOWN));
          if (!field32111.method30847(var8, this.field32112, var5)) {
             break;
          }
@@ -95,7 +95,7 @@ public class Class7473 {
    private boolean method24200(Mutable var1, int var2) {
       for (int var5 = 0; var5 < this.field32118; var5++) {
          Mutable var6 = var1.method8374(this.field32116).method8380(Direction.field673, var2).method8380(this.field32114, var5);
-         if (!field32111.method30847(this.field32112.method6738(var6), this.field32112, var6)) {
+         if (!field32111.method30847(this.field32112.getBlockState(var6), this.field32112, var6)) {
             return false;
          }
       }
@@ -106,18 +106,18 @@ public class Class7473 {
    private int method24201(Mutable var1) {
       for (int var4 = 0; var4 < 21; var4++) {
          var1.method8374(this.field32116).method8380(Direction.field673, var4).method8380(this.field32114, -1);
-         if (!field32111.method30847(this.field32112.method6738(var1), this.field32112, var1)) {
+         if (!field32111.method30847(this.field32112.getBlockState(var1), this.field32112, var1)) {
             return var4;
          }
 
          var1.method8374(this.field32116).method8380(Direction.field673, var4).method8380(this.field32114, this.field32118);
-         if (!field32111.method30847(this.field32112.method6738(var1), this.field32112, var1)) {
+         if (!field32111.method30847(this.field32112.getBlockState(var1), this.field32112, var1)) {
             return var4;
          }
 
          for (int var5 = 0; var5 < this.field32118; var5++) {
             var1.method8374(this.field32116).method8380(Direction.field673, var4).method8380(this.field32114, var5);
-            Class7380 var6 = this.field32112.method6738(var1);
+            BlockState var6 = this.field32112.getBlockState(var1);
             if (!method24202(var6)) {
                return var4;
             }
@@ -131,8 +131,8 @@ public class Class7473 {
       return 21;
    }
 
-   private static boolean method24202(Class7380 var0) {
-      return var0.method23393() || var0.method23446(Class7645.field32798) || var0.method23448(Blocks.field36588);
+   private static boolean method24202(BlockState var0) {
+      return var0.isAir() || var0.method23446(Class7645.field32798) || var0.method23448(Blocks.field36588);
    }
 
    public boolean method24203() {
@@ -140,7 +140,7 @@ public class Class7473 {
    }
 
    public void method24204() {
-      Class7380 var3 = Blocks.field36588.method11579().method23465(Class3401.field19060, this.field32113);
+      BlockState var3 = Blocks.field36588.method11579().method23465(Class3401.field19060, this.field32113);
       BlockPos.method8359(this.field32116, this.field32116.method8350(Direction.field673, this.field32117 - 1).method8350(this.field32114, this.field32118 - 1))
          .forEach(var2 -> this.field32112.method6725(var2, var3, 18));
    }
@@ -176,7 +176,7 @@ public class Class7473 {
 
    public static Class9761 method24207(ServerWorld var0, Class9502 var1, Class113 var2, Vector3d var3, Class8847 var4, Vector3d var5, float var6, float var7) {
       BlockPos var10 = var1.field44253;
-      Class7380 var11 = var0.method6738(var10);
+      BlockState var11 = var0.getBlockState(var10);
       Class113 var12 = var11.<Class113>method23463(Class8820.field39712);
       double var13 = (double)var1.field44254;
       double var15 = (double)var1.field44255;
@@ -187,7 +187,7 @@ public class Class7473 {
       double var23 = 0.5 + var3.method11322();
       boolean var25 = var12 == Class113.field413;
       Vector3d var26 = new Vector3d(
-         (double)var10.method8304() + (!var25 ? var23 : var19), (double)var10.getY() + var21, (double)var10.method8306() + (!var25 ? var19 : var23)
+         (double)var10.getX() + (!var25 ? var23 : var19), (double)var10.getY() + var21, (double)var10.getZ() + (!var25 ? var19 : var23)
       );
       return new Class9761(var26, var18, var6 + (float)var17, var7);
    }

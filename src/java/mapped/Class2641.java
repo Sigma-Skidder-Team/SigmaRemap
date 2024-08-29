@@ -15,17 +15,17 @@ public class Class2641 extends Class2640 {
    public boolean method10803() {
       if (this.field16973.isSleeping() || this.field16966.method4232() != null) {
          return false;
-      } else if (this.field16973.field5024.method6794()) {
+      } else if (this.field16973.world.method6794()) {
          return true;
       } else if (this.field16972 > 0) {
          this.field16972--;
          return false;
       } else {
          this.field16972 = 100;
-         BlockPos var3 = this.field16966.method3432();
-         return this.field16973.field5024.method6740()
-            && this.field16973.field5024.method7022(var3)
-            && !((ServerWorld)this.field16973.field5024).method6952(var3)
+         BlockPos var3 = this.field16966.getPosition();
+         return this.field16973.world.method6740()
+            && this.field16973.world.method7022(var3)
+            && !((ServerWorld)this.field16973.world).method6952(var3)
             && this.method10848();
       }
    }

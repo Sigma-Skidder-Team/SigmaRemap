@@ -3,11 +3,11 @@ package mapped;
 import java.util.List;
 import java.util.Random;
 
-public class Class7204 implements Class7202 {
+public class Class7204 implements IBakedModel {
    private static String[] field30922;
    private final int field30923;
    private final List<Class6690> field30924;
-   private final Class7202 field30925;
+   private final IBakedModel field30925;
 
    public Class7204(List<Class6690> var1) {
       this.field30924 = var1;
@@ -16,7 +16,7 @@ public class Class7204 implements Class7202 {
    }
 
    @Override
-   public List<Class8557> method22619(Class7380 var1, Direction var2, Random var3) {
+   public List<Class8557> method22619(BlockState var1, Direction var2, Random var3) {
       return Class8879.<Class6690>method32313(this.field30924, Math.abs((int)var3.nextLong()) % this.field30923).field29307.method22619(var1, var2, var3);
    }
 
@@ -41,8 +41,8 @@ public class Class7204 implements Class7202 {
    }
 
    @Override
-   public Class1713 method22624() {
-      return this.field30925.method22624();
+   public TextureAtlasSprite getParticleTexture() {
+      return this.field30925.getParticleTexture();
    }
 
    @Override

@@ -6,14 +6,14 @@ public class Class1699 implements AutoCloseable {
    private final ResourceLocation field9250;
    private boolean field9251;
    private float field9252;
-   private final Class214 field9253;
+   private final GameRenderer field9253;
    private final Minecraft field9254;
    private boolean field9255 = true;
    private boolean field9256 = false;
    private Class7680 field9257 = new Class7680();
    public static final int field9258 = method7321(15, 15);
 
-   public Class1699(Class214 var1, Minecraft var2) {
+   public Class1699(GameRenderer var1, Minecraft var2) {
       this.field9253 = var1;
       this.field9254 = var2;
       this.field9248 = new Class291(16, 16, false);
@@ -42,22 +42,22 @@ public class Class1699 implements AutoCloseable {
 
    public void method7316() {
       RenderSystem.method27860(33986);
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27860(33984);
       if (Class7944.method26921()) {
-         Class8981.method33127();
+         Shaders.method33127();
       }
    }
 
    public void method7317() {
       if (this.field9255) {
          RenderSystem.method27860(33986);
-         RenderSystem.method27878(5890);
-         RenderSystem.method27879();
+         RenderSystem.matrixMode(5890);
+         RenderSystem.loadIdentity();
          float var3 = 0.00390625F;
          RenderSystem.scalef(0.00390625F, 0.00390625F, 0.00390625F);
          RenderSystem.translatef(8.0F, 8.0F, 8.0F);
-         RenderSystem.method27878(5888);
+         RenderSystem.matrixMode(5888);
          this.field9254.getTextureManager().bindTexture(this.field9250);
          RenderSystem.method27863(3553, 10241, 9729);
          RenderSystem.method27863(3553, 10240, 9729);
@@ -67,7 +67,7 @@ public class Class1699 implements AutoCloseable {
          RenderSystem.enableTexture();
          RenderSystem.method27860(33984);
          if (Class7944.method26921()) {
-            Class8981.method33126();
+            Shaders.method33126();
          }
       }
    }
@@ -75,8 +75,8 @@ public class Class1699 implements AutoCloseable {
    public void method7318(float var1) {
       if (this.field9251) {
          this.field9251 = false;
-         this.field9254.method1574().startSection("lightTex");
-         Class1656 var4 = this.field9254.world;
+         this.field9254.getProfiler().startSection("lightTex");
+         ClientWorld var4 = this.field9254.world;
          if (var4 != null) {
             this.field9256 = false;
             if (Class7944.method26911()) {
@@ -84,7 +84,7 @@ public class Class1699 implements AutoCloseable {
                if (Class9680.method37875(var4, this.field9252, this.field9249, var5, var1)) {
                   this.field9248.method1140();
                   this.field9251 = false;
-                  this.field9254.method1574().endSection();
+                  this.field9254.getProfiler().endSection();
                   this.field9256 = true;
                   return;
                }
@@ -92,7 +92,7 @@ public class Class1699 implements AutoCloseable {
 
             float var24 = var4.method6872(1.0F);
             float var6;
-            if (var4.method6876() <= 0) {
+            if (var4.getTimeLightningFlash() <= 0) {
                var6 = var24 * 0.95F + 0.05F;
             } else {
                var6 = 1.0F;
@@ -107,7 +107,7 @@ public class Class1699 implements AutoCloseable {
                   var8 = 0.0F;
                }
             } else {
-               var8 = Class214.method750(this.field9254.player, var1);
+               var8 = GameRenderer.method750(this.field9254.player, var1);
             }
 
             Class7680 var9 = new Class7680(var24, var24, 1.0F);
@@ -164,7 +164,7 @@ public class Class1699 implements AutoCloseable {
             }
 
             this.field9248.method1140();
-            this.field9254.method1574().endSection();
+            this.field9254.getProfiler().endSection();
          }
       }
    }

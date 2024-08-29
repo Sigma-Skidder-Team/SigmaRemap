@@ -16,10 +16,10 @@ public interface Class1668 extends Class1665 {
       return true;
    }
 
-   default boolean method7049(Class7380 var1, BlockPos var2, Class4832 var3) {
+   default boolean method7049(BlockState var1, BlockPos var2, Class4832 var3) {
       Class6408 var6 = var1.method23415(this, var2, var3);
       return var6.method19516()
-         || this.method7048((Entity)null, var6.method19517((double)var2.method8304(), (double)var2.getY(), (double)var2.method8306()));
+         || this.method7048((Entity)null, var6.method19517((double)var2.getX(), (double)var2.getY(), (double)var2.getZ()));
    }
 
    default boolean method7050(Entity var1) {
@@ -52,11 +52,11 @@ public interface Class1668 extends Class1665 {
       return StreamSupport.<Class6408>stream(new Class8181(this, var1, var2), false);
    }
 
-   default boolean method7056(Entity var1, Class6488 var2, BiPredicate<Class7380, BlockPos> var3) {
+   default boolean method7056(Entity var1, Class6488 var2, BiPredicate<BlockState, BlockPos> var3) {
       return this.method7057(var1, var2, var3).allMatch(Class6408::method19516);
    }
 
-   default Stream<Class6408> method7057(Entity var1, Class6488 var2, BiPredicate<Class7380, BlockPos> var3) {
+   default Stream<Class6408> method7057(Entity var1, Class6488 var2, BiPredicate<BlockState, BlockPos> var3) {
       return StreamSupport.<Class6408>stream(new Class8181(this, var1, var2, var3), false);
    }
 }

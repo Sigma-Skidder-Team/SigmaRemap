@@ -18,7 +18,7 @@ public class Class5853 extends Class5839 {
    @Override
    public ItemStack method18272(int var1) {
       if (this.method18266()) {
-         this.field25608 = this.field25608 + Math.min(var1, this.method18265().method32179());
+         this.field25608 = this.field25608 + Math.min(var1, this.method18265().getCount());
       }
 
       return super.method18272(var1);
@@ -39,8 +39,8 @@ public class Class5853 extends Class5839 {
 
    @Override
    public void method18263(ItemStack var1) {
-      var1.method32136(this.field25607.field5024, this.field25607, this.field25608);
-      if (!this.field25607.field5024.field9020 && this.field25578 instanceof Class924) {
+      var1.method32136(this.field25607.world, this.field25607, this.field25608);
+      if (!this.field25607.world.field9020 && this.field25578 instanceof Class924) {
          ((Class924)this.field25578).method3656(this.field25607);
       }
 

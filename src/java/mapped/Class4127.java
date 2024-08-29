@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 public class Class4127 extends Class4117 {
    public Class4127() {
-      super(Class8992.field41065, "piglin", 0.5F);
+      super(EntityType.field41065, "piglin", 0.5F);
    }
 
-   public Class4127(Class8992 var1, String var2, float var3) {
+   public Class4127(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 
@@ -43,7 +43,7 @@ public class Class4127 extends Class4117 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5671 var6 = new Class5671(var5, false);
       var6.field25086 = (Class2895<Class1006>)var1;
       var6.field25098 = var2;

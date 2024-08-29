@@ -24,21 +24,21 @@ public class Class6763 extends Class6762 {
    public Class7176 method20615() {
       int var3;
       if (this.method20649() && this.field29476.method3250()) {
-         var3 = MathHelper.method37769(this.field29476.getPosY());
+         var3 = MathHelper.floor(this.field29476.getPosY());
          Mutable var4 = new Mutable(this.field29476.getPosX(), (double)var3, this.field29476.getPosZ());
 
-         for (Block var5 = this.field29475.method6738(var4).method23383();
+         for (Block var5 = this.field29475.getBlockState(var4).getBlock();
               var5 == Blocks.WATER;
-              var5 = this.field29475.method6738(var4).method23383()
+              var5 = this.field29475.getBlockState(var4).getBlock()
          ) {
             var4.method8373(this.field29476.getPosX(), (double)(++var3), this.field29476.getPosZ());
          }
       } else {
-         var3 = MathHelper.method37769(this.field29476.getPosY() + 0.5);
+         var3 = MathHelper.floor(this.field29476.getPosY() + 0.5);
       }
 
-      BlockPos var10 = this.field29476.method3432();
-      Class2163 var11 = this.method20642(this.field29476, var10.method8304(), var3, var10.method8306());
+      BlockPos var10 = this.field29476.getPosition();
+      Class2163 var11 = this.method20642(this.field29476, var10.getX(), var3, var10.getZ());
       if (this.field29476.method4223(var11) < 0.0F) {
          Set<BlockPos> var6 = Sets.newHashSet();
          var6.add(new BlockPos(this.field29476.method3389().field28449, (double)var3, this.field29476.method3389().field28451));
@@ -49,17 +49,17 @@ public class Class6763 extends Class6762 {
          for (BlockPos var8 : var6) {
             Class2163 var9 = this.method20631(this.field29476, var8);
             if (this.field29476.method4223(var9) >= 0.0F) {
-               return super.method20641(var8.method8304(), var8.getY(), var8.method8306());
+               return super.method20641(var8.getX(), var8.getY(), var8.getZ());
             }
          }
       }
 
-      return super.method20641(var10.method8304(), var3, var10.method8306());
+      return super.method20641(var10.getX(), var3, var10.getZ());
    }
 
    @Override
    public Class7175 method20616(double var1, double var3, double var5) {
-      return new Class7175(super.method20641(MathHelper.method37769(var1), MathHelper.method37769(var3), MathHelper.method37769(var5)));
+      return new Class7175(super.method20641(MathHelper.floor(var1), MathHelper.floor(var3), MathHelper.floor(var5)));
    }
 
    @Override
@@ -274,7 +274,7 @@ public class Class6763 extends Class6762 {
    public Class2163 method20629(Class1665 var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet<Class2163> var13 = EnumSet.noneOf(Class2163.class);
       Class2163 var14 = Class2163.field14184;
-      BlockPos var15 = var5.method3432();
+      BlockPos var15 = var5.getPosition();
       var14 = this.method20630(var1, var2, var3, var4, var6, var7, var8, var9, var10, var13, var14, var15);
       if (var13.contains(Class2163.field14189)) {
          return Class2163.field14189;
@@ -300,7 +300,7 @@ public class Class6763 extends Class6762 {
       Mutable var7 = new Mutable();
       Class2163 var8 = method20635(var1, var7.method8372(var2, var3, var4));
       if (var8 == Class2163.field14185 && var3 >= 1) {
-         Class7380 var9 = var1.method6738(var7.method8372(var2, var3 - 1, var4));
+         BlockState var9 = var1.getBlockState(var7.method8372(var2, var3 - 1, var4));
          Class2163 var10 = method20635(var1, var7.method8372(var2, var3 - 1, var4));
          if (var10 == Class2163.field14196 || var9.method23448(Blocks.field36890) || var10 == Class2163.field14190 || var9.method23446(Class7645.field32809)
             )
@@ -335,7 +335,7 @@ public class Class6763 extends Class6762 {
    }
 
    private Class2163 method20631(Class1006 var1, BlockPos var2) {
-      return this.method20642(var1, var2.method8304(), var2.getY(), var2.method8306());
+      return this.method20642(var1, var2.getX(), var2.getY(), var2.getZ());
    }
 
    private Class2163 method20642(Class1006 var1, int var2, int var3, int var4) {

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4401;
+import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.Class4435;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -30,9 +30,9 @@ public class Class5195 extends Module {
     }
 
     @EventTarget
-    public void method16178(Class4401 var1) {
+    public void method16178(StopUseItemEvent var1) {
         if (this.method15996()) {
-            if (mc.player.getHeldItem(Hand.field182).method32107() == Class8514.field37796 && this.field23504 >= 1) {
+            if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.field37796 && this.field23504 >= 1) {
                 var1.method13900(true);
             }
         }
@@ -72,8 +72,8 @@ public class Class5195 extends Module {
 
             int var4 = this.method16181();
             if (var4 >= 0 || var4 <= 8) {
-                if (mc.player.getHeldItem(Hand.field182).method32107() == Class8514.field37796) {
-                    if (Class5260.method16437(Class8514.field37797) == 0) {
+                if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.field37796) {
+                    if (Class5260.method16437(Items.field37797) == 0) {
                         if (this.field23505.method27121() > 5000L) {
                             Client.getInstance().getNotificationManager().post(new Notification("BowFly", "You have no arrows"));
                             this.field23505.method27120();
@@ -115,10 +115,10 @@ public class Class5195 extends Module {
                     this.field23504++;
                     if (this.field23504 < 4) {
                         if (this.field23504 == 1) {
-                            mc.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
+                            mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
                         }
                     } else {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13489, BlockPos.field13032, Direction.field672));
+                        mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, BlockPos.ZERO, Direction.DOWN));
                         this.field23504 = 0;
                     }
                 }
@@ -130,7 +130,7 @@ public class Class5195 extends Module {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.field4904.method18131(var3).method18266()) {
                 ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
-                if (var4.method32107() == Class8514.field37796) {
+                if (var4.getItem() == Items.field37796) {
                     return var3 - 36;
                 }
             }
@@ -139,7 +139,7 @@ public class Class5195 extends Module {
         for (int var5 = 9; var5 < 36; var5++) {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                if (var6.method32107() == Class8514.field37796) {
+                if (var6.getItem() == Items.field37796) {
                     Class7789.method25873(var5, 7);
                     return 7;
                 }

@@ -42,7 +42,7 @@ public class Class5818 extends Class5812 {
 
                ItemStack var7 = this.field25491.method3620(0);
                this.field25491.method3622();
-               if (!var1.field4902.method4045(var7)) {
+               if (!var1.inventory.method4045(var7)) {
                   var1.method2882(var7, false);
                }
 

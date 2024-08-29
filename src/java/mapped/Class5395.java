@@ -15,11 +15,11 @@ public class Class5395 implements Class5391 {
       this(new ItemStack(var1), var2, var3, var4, var5);
    }
 
-   public Class5395(Class3257 var1, int var2, int var3, int var4) {
+   public Class5395(Item var1, int var2, int var3, int var4) {
       this(new ItemStack(var1), var2, var3, 12, var4);
    }
 
-   public Class5395(Class3257 var1, int var2, int var3, int var4, int var5) {
+   public Class5395(Item var1, int var2, int var3, int var4, int var5) {
       this(new ItemStack(var1), var2, var3, var4, var5);
    }
 
@@ -39,8 +39,8 @@ public class Class5395 implements Class5391 {
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
       return new Class9346(
-         new ItemStack(Class8514.field38049, this.field24049),
-         new ItemStack(this.field24048.method32107(), this.field24050),
+         new ItemStack(Items.field38049, this.field24049),
+         new ItemStack(this.field24048.getItem(), this.field24050),
          this.field24051,
          this.field24052,
          this.field24053

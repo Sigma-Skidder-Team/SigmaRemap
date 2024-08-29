@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class Class860<T extends Class5812> extends Class851<T> {
    public boolean field4772;
 
-   public Class860(T var1, Class974 var2, ITextComponent var3) {
+   public Class860(T var1, PlayerInventory var2, ITextComponent var3) {
       super((T)var1, var2, var3);
    }
 
@@ -66,12 +66,12 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    private void method2641(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
-      Class279 var7 = this.field4562.method1572();
+      PotionSpriteUploader var7 = this.field4562.getPotionSpriteUploader();
       int var8 = this.field4735;
 
       for (Class2023 var10 : var4) {
          Class7144 var11 = var10.method8627();
-         Class1713 var12 = var7.method1022(var11);
+         TextureAtlasSprite var12 = var7.method1022(var11);
          this.field4562.getTextureManager().bindTexture(var12.method7466().method1100());
          method5695(var1, var2 + 6, var8 + 7, this.method5702(), 18, 18, var12);
          var8 += var3;
@@ -82,14 +82,14 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       int var7 = this.field4735;
 
       for (Class2023 var9 : var4) {
-         String var10 = Class9088.method33883(var9.method8627().method22294());
+         String var10 = I18n.format(var9.method8627().method22294());
          if (var9.method8629() >= 1 && var9.method8629() <= 9) {
-            var10 = var10 + ' ' + Class9088.method33883("enchantment.level." + (var9.method8629() + 1));
+            var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.method8629() + 1));
          }
 
-         this.field4568.method38799(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
+         this.field4568.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
          String var11 = Class7182.method22535(var9, 1.0F);
-         this.field4568.method38799(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
+         this.field4568.drawStringWithShadow(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
          var7 += var3;
       }
    }

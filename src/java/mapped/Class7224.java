@@ -18,7 +18,7 @@ public class Class7224 implements Class7222 {
       this.field31058 = Lists.newArrayList();
 
       for (String var6 : var2.method28575()) {
-         Class6589 var7 = Minecraft.getInstance().getClientPlayNetHandler().method15793(var6);
+         Class6589 var7 = Minecraft.getInstance().getConnection().method15793(var6);
          if (var7 != null) {
             this.field31058.add(var7);
          }

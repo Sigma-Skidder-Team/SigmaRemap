@@ -23,14 +23,14 @@ public class Class5347 extends Module {
 
     public Class5347() {
         super(ModuleCategory.COMBAT, "InfiniteAura", "Basically infinite aura");
-        this.method15972(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
-        this.method15972(new Class6009<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
-        this.method15972(new Class6009<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
-        this.method15972(new Class6004("Players", "Hit players", true));
-        this.method15972(new Class6004("Animals/Monsters", "Hit animals and monsters", false));
-        this.method15972(new Class6004("Anti-Bot", "Doesn't hit bots", true));
-        this.method15972(new Class6004("Invisible", "Hit invisible entites", true));
-        this.method15972(new Class6004("No Swing", "Doesn't swing", false));
+        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("Players", "Hit players", true));
+        this.registerSetting(new BooleanSetting("Animals/Monsters", "Hit animals and monsters", false));
+        this.registerSetting(new BooleanSetting("Anti-Bot", "Doesn't hit bots", true));
+        this.registerSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
+        this.registerSetting(new BooleanSetting("No Swing", "Doesn't swing", false));
         this.field23900 = new ArrayList<List<Class8472>>();
     }
 
@@ -116,24 +116,24 @@ public class Class5347 extends Module {
         for (Class8472 var8 : var1) {
             var6 = var8;
             if (var5 == null) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5605(var8.method29876(), var8.method29877(), var8.method29878(), true));
+                mc.getConnection().sendPacket(new Class5605(var8.method29876(), var8.method29877(), var8.method29878(), true));
             } else {
                 var5.field5028.field18048 = var8.method29876() + 0.5;
                 var5.field5028.field18049 = var8.method29877();
                 var5.field5028.field18050 = var8.method29878() + 0.5;
-                mc.getClientPlayNetHandler().sendPacket(new Class5538(false, false));
-                mc.getClientPlayNetHandler().sendPacket(new Class5606(mc.player.field5031, mc.player.field5032, false));
-                mc.getClientPlayNetHandler().sendPacket(new Class5471(0.0F, 1.0F, false, false));
-                Class1002 var9 = new Class1002(mc.world, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
+                mc.getConnection().sendPacket(new Class5538(false, false));
+                mc.getConnection().sendPacket(new Class5606(mc.player.field5031, mc.player.field5032, false));
+                mc.getConnection().sendPacket(new Class5471(0.0F, 1.0F, false, false));
+                BoatEntity var9 = new BoatEntity(mc.world, var8.method29876() + 0.5, var8.method29877(), var8.method29878() + 0.5);
                 var9.field5031 = var5.field5031;
                 var9.field5032 = var5.field5032;
-                mc.getClientPlayNetHandler().sendPacket(new Class5483(var9));
+                mc.getConnection().sendPacket(new Class5483(var9));
             }
         }
 
         if (var2 && var6 != null) {
-            mc.getClientPlayNetHandler().sendPacket(new Class5605(var6.method29876(), var6.method29877() + 1.0E-14, var6.method29878(), false));
-            mc.getClientPlayNetHandler().sendPacket(new Class5605(var6.method29876(), var6.method29877(), var6.method29878(), false));
+            mc.getConnection().sendPacket(new Class5605(var6.method29876(), var6.method29877() + 1.0E-14, var6.method29878(), false));
+            mc.getConnection().sendPacket(new Class5605(var6.method29876(), var6.method29877(), var6.method29878(), false));
         }
     }
 
@@ -195,7 +195,7 @@ public class Class5347 extends Module {
                         if (((Class880) var8).method3042() != 0.0F) {
                             if (!(mc.player.method3275(var8) > var1)) {
                                 if (mc.player.method3026((Class880) var8)) {
-                                    if (!(var8 instanceof Class1005)) {
+                                    if (!(var8 instanceof ArmorStandEntity)) {
                                         if (!this.method15974("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();
                                         } else if (var8 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var8)) {
@@ -245,7 +245,7 @@ public class Class5347 extends Module {
     public boolean method16776() {
         return this.field23898
                 && Minecraft.getInstance().player.method3090() != null
-                && Minecraft.getInstance().player.method3090().method32107() instanceof Class3267;
+                && Minecraft.getInstance().player.method3090().getItem() instanceof Class3267;
     }
 
     @Override

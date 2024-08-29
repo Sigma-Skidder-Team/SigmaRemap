@@ -70,7 +70,7 @@ public class Class4224 extends Class4213 {
       this.field20555.add(new Class4225(var7, var15));
    }
 
-   public Class4224(Class8761 var1, Class39 var2) {
+   public Class4224(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33463, var2);
    }
 

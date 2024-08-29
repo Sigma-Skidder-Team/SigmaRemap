@@ -19,6 +19,6 @@ public class Class1238 extends Class1236 {
 
    @Override
    public void method5812() {
-      Class1321.method6283(this.field6588, MathHelper.method37769(MathHelper.method37779(0.0, 7.0, this.field6584)));
+      Class1321.method6283(this.field6588, MathHelper.floor(MathHelper.method37779(0.0, 7.0, this.field6584)));
    }
 }

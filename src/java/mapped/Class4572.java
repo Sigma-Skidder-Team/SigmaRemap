@@ -7,7 +7,7 @@ public class Class4572 extends Class4566 {
    private static final Random field22011 = new Random();
    private final Class8975 field22012;
 
-   public Class4572(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12, Class8975 var14) {
+   public Class4572(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, Class8975 var14) {
       super(var1, var2, var4, var6, 0.5 - field22011.nextDouble(), var10, 0.5 - field22011.nextDouble());
       this.field22012 = var14;
       this.field22045 *= 0.2F;

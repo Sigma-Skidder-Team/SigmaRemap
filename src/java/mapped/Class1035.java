@@ -6,7 +6,7 @@ public abstract class Class1035 extends Class1009 {
    public static final Class9289<Boolean> field5750 = Class9361.<Boolean>method35441(Class1035.class, Class7784.field33398);
    public int field5751 = 0;
 
-   public Class1035(Class8992<? extends Class1035> var1, World var2) {
+   public Class1035(EntityType<? extends Class1035> var1, World var2) {
       super(var1, var2);
       this.method4281(true);
       this.method4631();
@@ -37,7 +37,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method4633()) {
          var1.method115("IsImmuneToZombification", true);
@@ -52,7 +52,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4632(var1.method132("IsImmuneToZombification"));
       this.field5751 = var1.method122("TimeInOverworld");
@@ -69,16 +69,16 @@ public abstract class Class1035 extends Class1009 {
 
       if (this.field5751 > 300) {
          this.method4630();
-         this.method4619((ServerWorld)this.field5024);
+         this.method4619((ServerWorld)this.world);
       }
    }
 
    public boolean method4634() {
-      return !this.field5024.method6812().method36880() && !this.method4633() && !this.method4305();
+      return !this.world.method6812().method36880() && !this.method4633() && !this.method4305();
    }
 
    public void method4619(ServerWorld var1) {
-      Class1063 var4 = this.<Class1063>method4292(Class8992.field41110, true);
+      Class1063 var4 = this.<Class1063>method4292(EntityType.field41110, true);
       if (var4 != null) {
          var4.method3035(new Class2023(Class8254.field35475, 200, 0));
       }
@@ -97,7 +97,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    public boolean method4636() {
-      return this.method3090().method32107() instanceof Class3266;
+      return this.method3090().getItem() instanceof Class3266;
    }
 
    @Override

@@ -5,15 +5,15 @@ public enum Class2210 {
    field14453("brown", Blocks.BROWN_MUSHROOM.method11579());
 
    private final String field14454;
-   private final Class7380 field14455;
+   private final BlockState field14455;
    private static final Class2210[] field14456 = new Class2210[]{field14452, field14453};
 
-   private Class2210(String var3, Class7380 var4) {
+   private Class2210(String var3, BlockState var4) {
       this.field14454 = var3;
       this.field14455 = var4;
    }
 
-   public Class7380 method8934() {
+   public BlockState method8934() {
       return this.field14455;
    }
 
@@ -33,7 +33,7 @@ public enum Class2210 {
    }
 
    // $VF: synthetic method
-   public static Class7380 method8937(Class2210 var0) {
+   public static BlockState method8937(Class2210 var0) {
       return var0.field14455;
    }
 

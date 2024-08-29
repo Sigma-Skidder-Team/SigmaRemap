@@ -12,9 +12,9 @@ public class Class5297 extends Module {
 
     public Class5297() {
         super(ModuleCategory.MOVEMENT, "Minemen", "Minemen spider");
-        this.method15972(new Class6004("AutoClimb", "Automatically climbs for you", true));
-        this.method15972(new Class6004("Ceiling", "Allows you to fly under ceiling", true));
-        this.method15972(new Class6004("SneakVClip", "Allows you to phase through ground", true));
+        this.registerSetting(new BooleanSetting("AutoClimb", "Automatically climbs for you", true));
+        this.registerSetting(new BooleanSetting("Ceiling", "Allows you to fly under ceiling", true));
+        this.registerSetting(new BooleanSetting("SneakVClip", "Allows you to phase through ground", true));
     }
 
     @Override
@@ -32,10 +32,10 @@ public class Class5297 extends Module {
         if (var6) {
             if (!mc.player.field5037) {
                 if (!mc.player.field5036) {
-                    var1.method13995(!mc.gameSettings.field44637.method8509() ? 0.0 : var1.method13994());
+                    var1.method13995(!mc.gameSettings.field44637.isKeyDown() ? 0.0 : var1.method13994());
                 }
-            } else if (!this.method15974("AutoClimb") && !mc.gameSettings.field44636.method8509()) {
-                var1.method13995(!mc.gameSettings.field44637.method8509() ? 0.0 : var1.method13994());
+            } else if (!this.method15974("AutoClimb") && !mc.gameSettings.field44636.isKeyDown()) {
+                var1.method13995(!mc.gameSettings.field44637.isKeyDown() ? 0.0 : var1.method13994());
             } else {
                 var1.method13995(0.6);
             }
@@ -44,10 +44,10 @@ public class Class5297 extends Module {
         }
 
         if (Class5628.method17730(mc.player, 0.001F) && this.method15974("SneakVClip")) {
-            if (mc.gameSettings.field44637.method8509()
+            if (mc.gameSettings.field44637.isKeyDown()
                     && !this.field23813
                     && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, -2.8, 0.0)).count() == 0L) {
-                mc.getClientPlayNetHandler()
+                mc.getConnection()
                         .sendPacket(
                                 new Class5605(
                                         mc.player.getPositionVec().field18048,
@@ -71,7 +71,7 @@ public class Class5297 extends Module {
             }
         } else {
             if (this.method15974("Ceiling")
-                    && !mc.gameSettings.field44637.method8509()
+                    && !mc.gameSettings.field44637.isKeyDown()
                     && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 0.01, 0.0)).count() > 0L) {
                 var1.method13995(1.0E-14);
                 Class9567.method37088(var1, 0.689 + (double) Class9567.method37078() * 0.06);

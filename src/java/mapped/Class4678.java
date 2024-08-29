@@ -35,17 +35,17 @@ public final class Class4678 {
 
    private ImmutableMap<String, String> method14670() {
       Builder var3 = new Builder();
-      String var4 = method14669(this.field22250, Class9036.method33487());
+      String var4 = method14669(this.field22250, PlatformDescriptors.method33487());
       if (!var4.isEmpty()) {
          var3.put("renderer", var4);
       }
 
-      String var5 = method14669(this.field22251, Class9036.method33488());
+      String var5 = method14669(this.field22251, PlatformDescriptors.method33488());
       if (!var5.isEmpty()) {
          var3.put("version", var5);
       }
 
-      String var6 = method14669(this.field22252, Class9036.method33485());
+      String var6 = method14669(this.field22252, PlatformDescriptors.method33485());
       if (!var6.isEmpty()) {
          var3.put("vendor", var6);
       }

@@ -39,7 +39,7 @@ public class Class1703 extends Class1702 {
 
    public Class1703(
       ServerWorld var1,
-      Class1814 var2,
+      SaveFormat.LevelSave var2,
       DataFixer var3,
       Class8761 var4,
       Executor var5,
@@ -53,7 +53,7 @@ public class Class1703 extends Class1702 {
       this.field9278 = new Class320(this, var1);
       this.field9274 = var6;
       this.field9276 = Thread.currentThread();
-      File var13 = var2.method7992(var1.method6813());
+      File var13 = var2.method7992(var1.getDimensionKey());
       File var14 = new File(var13, "data");
       var14.mkdirs();
       this.field9280 = new Class8250(var14, var3);
@@ -94,7 +94,7 @@ public class Class1703 extends Class1702 {
       if (Thread.currentThread() != this.field9276) {
          return CompletableFuture.<Class1670>supplyAsync(() -> this.method7346(var1, var2, var3, var4), this.field9278).join();
       } else {
-         Class7165 var7 = this.field9275.method6820();
+         IProfiler var7 = this.field9275.method6820();
          var7.func_230035_c_("getChunk");
          long var8 = Class7481.method24353(var1, var2);
 
@@ -109,7 +109,7 @@ public class Class1703 extends Class1702 {
 
          var7.func_230035_c_("getChunkCacheMiss");
          CompletableFuture var12 = this.method7359(var1, var2, var3, var4);
-         this.field9278.method1639(var12::isDone);
+         this.field9278.driveUntil(var12::isDone);
          Class1670 var13 = (Class1670)((Either)var12.join()).map(var0 -> var0, var1x -> {
             if (!var4) {
                return null;
@@ -174,7 +174,7 @@ public class Class1703 extends Class1702 {
             .<Either<Class1670, Class7022>>thenCompose(var0 -> (CompletionStage<Either<Class1670, Class7022>>)var0);
       } else {
          var8 = this.method7359(var1, var2, var3, var4);
-         this.field9278.method1639(var8::isDone);
+         this.field9278.driveUntil(var8::isDone);
       }
 
       return var8;
@@ -188,7 +188,7 @@ public class Class1703 extends Class1702 {
       if (var4) {
          this.field9273.method35128(Class8561.field38487, var7, var10, var7);
          if (this.method7360(var11, var10)) {
-            Class7165 var12 = this.field9275.method6820();
+            IProfiler var12 = this.field9275.method6820();
             var12.startSection("chunkLoad");
             this.method7363();
             var11 = this.method7354(var8);
@@ -259,7 +259,7 @@ public class Class1703 extends Class1702 {
 
    @Override
    public boolean method7351(Entity var1) {
-      long var4 = Class7481.method24353(MathHelper.method37769(var1.getPosX()) >> 4, MathHelper.method37769(var1.getPosZ()) >> 4);
+      long var4 = Class7481.method24353(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
       return this.method7364(var4, Class8641::method31041);
    }
 
@@ -270,7 +270,7 @@ public class Class1703 extends Class1702 {
 
    @Override
    public boolean method7353(BlockPos var1) {
-      long var4 = Class7481.method24353(var1.method8304() >> 4, var1.method8306() >> 4);
+      long var4 = Class7481.method24353(var1.getX() >> 4, var1.getZ() >> 4);
       return this.method7364(var4, Class8641::method31040);
    }
 
@@ -385,8 +385,8 @@ public class Class1703 extends Class1702 {
    }
 
    public void method7372(BlockPos var1) {
-      int var4 = var1.method8304() >> 4;
-      int var5 = var1.method8306() >> 4;
+      int var4 = var1.getX() >> 4;
+      int var5 = var1.getZ() >> 4;
       Class8641 var6 = this.method7354(Class7481.method24353(var4, var5));
       if (var6 != null) {
          var6.method31047(var1);

@@ -31,7 +31,7 @@ public class Class7138 extends Class7139 {
                         Direction var10 = var9x.method536();
                         BlockPos var11 = var5x.method8336(var10.method539(), 0, var10.method541());
                         if (Class2898.method11221(var1, var11)) {
-                           Class7380 var12 = Blocks.COCOA
+                           BlockState var12 = Blocks.COCOA
                               .method11579()
                               .method23465(Class3197.field18479, Integer.valueOf(var2.nextInt(3)))
                               .method23465(Class3197.field18484, var9x);

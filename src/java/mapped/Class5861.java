@@ -9,6 +9,6 @@ public class Class5861 extends Class5839 {
 
    @Override
    public boolean method18259(ItemStack var1) {
-      return !(Block.method11537(var1.method32107()) instanceof Class3368);
+      return !(Block.method11537(var1.getItem()) instanceof Class3368);
    }
 }

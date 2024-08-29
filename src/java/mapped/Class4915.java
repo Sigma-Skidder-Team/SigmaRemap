@@ -145,26 +145,26 @@ public class Class4915 {
 
    public static String method15205() {
       StringBuilder var2 = new StringBuilder();
-      if (Class8981.field40878 > 0) {
-         method15206(var2, "MC_FXAA_LEVEL", Class8981.field40878);
+      if (Shaders.field40878 > 0) {
+         method15206(var2, "MC_FXAA_LEVEL", Shaders.field40878);
       }
 
-      if (Class8981.field40874) {
+      if (Shaders.field40874) {
          method15208(var2, "MC_NORMAL_MAP");
       }
 
-      if (Class8981.field40875) {
+      if (Shaders.field40875) {
          method15208(var2, "MC_SPECULAR_MAP");
       }
 
-      method15207(var2, "MC_RENDER_QUALITY", Class8981.field40865);
-      method15207(var2, "MC_SHADOW_QUALITY", Class8981.field40866);
-      method15207(var2, "MC_HAND_DEPTH", Class8981.field40864);
-      if (Class8981.method32993()) {
+      method15207(var2, "MC_RENDER_QUALITY", Shaders.field40865);
+      method15207(var2, "MC_SHADOW_QUALITY", Shaders.field40866);
+      method15207(var2, "MC_HAND_DEPTH", Shaders.field40864);
+      if (Shaders.method32993()) {
          method15208(var2, "MC_OLD_HAND_LIGHT");
       }
 
-      if (Class8981.method32995()) {
+      if (Shaders.method32995()) {
          method15208(var2, "MC_OLD_LIGHTING");
       }
 

@@ -22,7 +22,7 @@ import java.util.Date;
 
 public class Class4348 extends Class4278 {
    public Ban field21243 = null;
-   public Class7730 field21244 = null;
+   public ServerData field21244 = null;
    public Texture field21245 = null;
    public Texture field21246 = null;
    private BufferedImage field21247;

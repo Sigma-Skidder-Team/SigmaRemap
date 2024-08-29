@@ -17,14 +17,14 @@ public class Class149 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      if (!var1.method32105()) {
-         Class39 var5 = new Class39();
+      if (!var1.isEmpty()) {
+         CompoundNBT var5 = new CompoundNBT();
          var5.method109("LootTable", this.field493.toString());
          if (this.field494 != 0L) {
             var5.method103("LootTableSeed", this.field494);
          }
 
-         var1.method32143().method99("BlockEntityTag", var5);
+         var1.getOrCreateTag().put("BlockEntityTag", var5);
          return var1;
       } else {
          return var1;

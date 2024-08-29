@@ -44,7 +44,7 @@ public class Class3746 extends Class3676<Class1042> {
                   int var10 = 0;
 
                   for (short var11 = 1000;
-                     var10 < 1000 && (var9 == null || this.method12703(var2, Class9378.method35577(var1.method6813(), new BlockPos(var9))));
+                     var10 < 1000 && (var9 == null || this.method12703(var2, Class9378.method35577(var1.getDimensionKey(), new BlockPos(var9))));
                      var10++
                   ) {
                      var9 = Class8037.method27587(var2, 15, 7, Vector3d.method11330(var6.method35579()));
@@ -67,14 +67,14 @@ public class Class3746 extends Class3676<Class1042> {
    }
 
    private boolean method12703(Class1042 var1, Class9378 var2) {
-      return var2.method35579().method8321(var1.method3432()) > this.field19889;
+      return var2.method35579().method8321(var1.getPosition()) > this.field19889;
    }
 
    private boolean method12704(ServerWorld var1, Class9378 var2) {
-      return var2.method35578() != var1.method6813();
+      return var2.method35578() != var1.getDimensionKey();
    }
 
    private boolean method12705(ServerWorld var1, Class1042 var2, Class9378 var3) {
-      return var3.method35578() == var1.method6813() && var3.method35579().method8321(var2.method3432()) <= this.field19888;
+      return var3.method35578() == var1.getDimensionKey() && var3.method35579().method8321(var2.getPosition()) <= this.field19888;
    }
 }

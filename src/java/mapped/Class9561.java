@@ -40,15 +40,15 @@ public class Class9561 {
       }
    }
 
-   public static boolean method37045(Class7380 var0) {
-      return !field44535 ? var0.method23383().method11998() : Class9299.method35064(var0, Class9299.field42829);
+   public static boolean method37045(BlockState var0) {
+      return !field44535 ? var0.getBlock().isTileEntityProvider() : Class9299.method35064(var0, Class9299.field42829);
    }
 
    public static boolean method37046(ItemStack var0) {
-      return Class9299.field42919.method20214() ? Class9299.method35064(var0.method32107(), Class9299.field42919, var0) : var0.method32116();
+      return Class9299.field42919.method20214() ? Class9299.method35064(var0.getItem(), Class9299.field42919, var0) : var0.method32116();
    }
 
-   public static int method37047(Class7380 var0, Class1663 var1, BlockPos var2) {
+   public static int method37047(BlockState var0, Class1663 var1, BlockPos var2) {
       return !Class9299.field42826.method20214() ? var0.method23392() : Class9299.method35065(var0, Class9299.field42826, var1, var2);
    }
 
@@ -56,7 +56,7 @@ public class Class9561 {
       if (!Class9299.field42864.method20245()) {
          return Class3316.method11861(var0, var1);
       } else {
-         Class3316 var4 = (Class3316)var0.method32107();
+         Class3316 var4 = (Class3316)var0.getItem();
          return Class3316.method11861(var0, var1);
       }
    }
@@ -86,18 +86,18 @@ public class Class9561 {
       }
    }
 
-   public static boolean method37050(Class7380 var0, Class1665 var1, BlockPos var2) {
-      return !Class9299.field42830.method20214() ? var0.method23393() : Class9299.method35064(var0, Class9299.field42830, var1, var2);
+   public static boolean method37050(BlockState var0, Class1665 var1, BlockPos var2) {
+      return !Class9299.field42830.method20214() ? var0.isAir() : Class9299.method35064(var0, Class9299.field42830, var1, var2);
    }
 
    public static boolean method37051(ItemStack var0, ItemStack var1, PlayerEntity var2, Class1006 var3) {
       return !Class9299.field42921.method20214()
-         ? var0.method32107() instanceof Class3265
+         ? var0.getItem() instanceof Class3265
          : Class9299.method35064(var0, Class9299.field42921, var1, var2, var3);
    }
 
    public static boolean method37052(ItemStack var0, PlayerEntity var1) {
-      return !Class9299.field42925.method20214() ? var0.method32107() == Class8514.field38119 : Class9299.method35064(var0, Class9299.field42925, var1);
+      return !Class9299.field42925.method20214() ? var0.getItem() == Items.field38119 : Class9299.method35064(var0, Class9299.field42925, var1);
    }
 
    public static Class1206 method37053(MainMenuScreen var0, int var1, int var2) {
@@ -152,7 +152,7 @@ public class Class9561 {
       return !field44536 ? true : Class9299.method35064(var0, Class9299.field42835);
    }
 
-   public static boolean method37058(Class3257 var0, ItemStack var1) {
+   public static boolean method37058(Item var0, ItemStack var1) {
       return !Class9299.field42915.method20214() ? var0.method11712() : Class9299.method35064(var0, Class9299.field42915, var1);
    }
 }

@@ -7,8 +7,8 @@ public class Class46 extends ArrayList<Class9346> {
    public Class46() {
    }
 
-   public Class46(Class39 var1) {
-      Class41 var4 = var1.method131("Recipes", 10);
+   public Class46(CompoundNBT var1) {
+      ListNBT var4 = var1.method131("Recipes", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
          this.add(new Class9346(var4.method153(var5)));
@@ -40,8 +40,8 @@ public class Class46 extends ArrayList<Class9346> {
          var1.method35724(var5.method35365());
          var1.method35724(var5.method35368());
          ItemStack var6 = var5.method35367();
-         var1.writeBoolean(!var6.method32105());
-         if (!var6.method32105()) {
+         var1.writeBoolean(!var6.isEmpty());
+         if (!var6.isEmpty()) {
             var1.method35724(var6);
          }
 
@@ -86,16 +86,16 @@ public class Class46 extends ArrayList<Class9346> {
       return var3;
    }
 
-   public Class39 method166() {
-      Class39 var3 = new Class39();
-      Class41 var4 = new Class41();
+   public CompoundNBT method166() {
+      CompoundNBT var3 = new CompoundNBT();
+      ListNBT var4 = new ListNBT();
 
       for (int var5 = 0; var5 < this.size(); var5++) {
          Class9346 var6 = this.get(var5);
          var4.add(var6.method35386());
       }
 
-      var3.method99("Recipes", var4);
+      var3.put("Recipes", var4);
       return var3;
    }
 }

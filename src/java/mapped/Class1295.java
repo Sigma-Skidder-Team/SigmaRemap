@@ -25,7 +25,7 @@ public class Class1295 extends Class1293<Class1186> {
          }
 
          TranslationTextComponent var12 = new TranslationTextComponent(var10.method8513());
-         int var13 = var2.field1294.method38821(var12);
+         int var13 = var2.fontRenderer.method38821(var12);
          if (var13 > this.field6861) {
             this.field6861 = var13;
          }

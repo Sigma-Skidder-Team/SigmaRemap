@@ -20,10 +20,10 @@ public class Class9772 {
 
    public static String[] method38437(String[] var0, String[] var1) {
       LinkedHashSet<String> var4 = new LinkedHashSet();
-      Class303[] var5 = Class7944.method26869();
+      IResourcePack[] var5 = Class7944.method26869();
 
       for (int var6 = 0; var6 < var5.length; var6++) {
-         Class303 var7 = var5[var6];
+         IResourcePack var7 = var5[var6];
          String[] var8 = method38440(var7, var0, var1, (String[])null);
          var4.addAll(Arrays.asList(var8));
       }
@@ -31,18 +31,18 @@ public class Class9772 {
       return var4.toArray(new String[var4.size()]);
    }
 
-   public static String[] method38438(Class303 var0, String var1, String var2, String[] var3) {
+   public static String[] method38438(IResourcePack var0, String var1, String var2, String[] var3) {
       return method38440(var0, new String[]{var1}, new String[]{var2}, var3);
    }
 
-   public static String[] method38439(Class303 var0, String[] var1, String[] var2) {
+   public static String[] method38439(IResourcePack var0, String[] var1, String[] var2) {
       return method38440(var0, var1, var2, (String[])null);
    }
 
-   public static String[] method38440(Class303 var0, String[] var1, String[] var2, String[] var3) {
+   public static String[] method38440(IResourcePack var0, String[] var1, String[] var2, String[] var3) {
       if (!(var0 instanceof Class306)) {
-         if (var0 instanceof Class304) {
-            Class303 var6 = (Class303)Class9299.method35072(var0, Class9299.field43015);
+         if (var0 instanceof LegacyResourcePackWrapper) {
+            IResourcePack var6 = (IResourcePack)Class9299.method35072(var0, Class9299.field43015);
             if (var6 == null) {
                Class7944.method26811("LegacyResourcePackWrapper base resource pack not found: " + var0);
                return new String[0];
@@ -51,8 +51,8 @@ public class Class9772 {
             var0 = var6;
          }
 
-         if (var0 instanceof Class305) {
-            Class303 var8 = (Class303)Class9299.method35072(var0, Class9299.field43017);
+         if (var0 instanceof LegacyResourcePackWrapperV4) {
+            IResourcePack var8 = (IResourcePack)Class9299.method35072(var0, Class9299.field43017);
             if (var8 == null) {
                Class7944.method26811("LegacyResourcePackWrapperV4 base resource pack not found: " + var0);
                return new String[0];
@@ -87,7 +87,7 @@ public class Class9772 {
       }
    }
 
-   private static String[] method38441(Class303 var0, String[] var1) {
+   private static String[] method38441(IResourcePack var0, String[] var1) {
       if (var1 != null) {
          ArrayList<String> var4 = new ArrayList();
 
@@ -95,7 +95,7 @@ public class Class9772 {
             String var6 = var1[var5];
             if (method38444(var6)) {
                ResourceLocation var7 = new ResourceLocation(var6);
-               if (var0.method1225(Class1946.field12610, var7)) {
+               if (var0.method1225(ResourcePackType.CLIENT_RESOURCES, var7)) {
                   var4.add(var6);
                }
             } else {

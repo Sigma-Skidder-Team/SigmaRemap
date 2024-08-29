@@ -102,23 +102,23 @@ public class Class8158 {
                               .then(var1.method25731((var0xx, var1x, var2, var3x) -> var2.method37730(var1x, ((Class30)Iterables.getLast(var3x))::method79)))
                         )
                         .then(Class6099.method18839("merge").then(var1.method25731((var0xx, var1x, var2, var3x) -> {
-                           List<Class30> var6 = var2.method37728(var1x, Class39::new);
+                           List<Class30> var6 = var2.method37728(var1x, CompoundNBT::new);
                            int var7 = 0;
 
                            for (Class30 var9 : var6) {
-                              if (!(var9 instanceof Class39)) {
+                              if (!(var9 instanceof CompoundNBT)) {
                                  throw field35110.create(var9);
                               }
 
-                              Class39 var10 = (Class39)var9;
-                              Class39 var11 = var10.method79();
+                              CompoundNBT var10 = (CompoundNBT)var9;
+                              CompoundNBT var11 = var10.method79();
 
                               for (Class30 var13 : var3x) {
-                                 if (!(var13 instanceof Class39)) {
+                                 if (!(var13 instanceof CompoundNBT)) {
                                     throw field35110.create(var13);
                                  }
 
-                                 var10.method140((Class39)var13);
+                                 var10.method140((CompoundNBT)var13);
                               }
 
                               var7 += !var11.equals(var10) ? 1 : 0;
@@ -133,8 +133,8 @@ public class Class8158 {
       var0.register(var3);
    }
 
-   private static int method28316(int var0, Class39 var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
-      List<Class30> var6 = var2.method37728(var1, Class41::new);
+   private static int method28316(int var0, CompoundNBT var1, Class9670 var2, List<Class30> var3) throws CommandSyntaxException {
+      List<Class30> var6 = var2.method37728(var1, ListNBT::new);
       int var7 = 0;
 
       for (Class30 var9 : var6) {
@@ -172,7 +172,7 @@ public class Class8158 {
 
             for (Class8196 var7 : field35114) {
                var0.accept(var5x, var2x -> var7.method28504(Class6099.method18839("from"), var3x -> var3x.executes(var3xx -> {
-                        List var6 = Collections.<Class39>singletonList(var7.method28503(var3xx).method22312());
+                        List var6 = Collections.<CompoundNBT>singletonList(var7.method28503(var3xx).method22312());
                         return method28318(var3xx, var5, var2x, var6);
                      }).then(Class6099.method18840("sourcePath", Class8320.method29128()).executes(var3xx -> {
                         Class7151 var6 = var7.method28503(var3xx);
@@ -196,7 +196,7 @@ public class Class8158 {
    private static int method28318(CommandContext<Class6619> var0, Class8196 var1, Class7823 var2, List<Class30> var3) throws CommandSyntaxException {
       Class7151 var6 = var1.method28503(var0);
       Class9670 var7 = Class8320.method29129(var0, "targetPath");
-      Class39 var8 = var6.method22312();
+      CompoundNBT var8 = var6.method22312();
       int var9 = var2.method26160(var0, var8, var7, var3);
       if (var9 != 0) {
          var6.method22311(var8);
@@ -208,7 +208,7 @@ public class Class8158 {
    }
 
    private static int method28319(Class6619 var0, Class7151 var1, Class9670 var2) throws CommandSyntaxException {
-      Class39 var5 = var1.method22312();
+      CompoundNBT var5 = var1.method22312();
       int var6 = var2.method37731(var5);
       if (var6 != 0) {
          var1.method22311(var5);
@@ -235,20 +235,20 @@ public class Class8158 {
       int var6;
       if (!(var5 instanceof Class31)) {
          if (!(var5 instanceof Class27)) {
-            if (!(var5 instanceof Class39)) {
-               if (!(var5 instanceof Class40)) {
+            if (!(var5 instanceof CompoundNBT)) {
+               if (!(var5 instanceof StringNBT)) {
                   throw field35107.create(var2.toString());
                }
 
                var6 = var5.method81().length();
             } else {
-               var6 = ((Class39)var5).method98();
+               var6 = ((CompoundNBT)var5).method98();
             }
          } else {
             var6 = ((Class27)var5).size();
          }
       } else {
-         var6 = MathHelper.method37769(((Class31)var5).method87());
+         var6 = MathHelper.floor(((Class31)var5).method87());
       }
 
       var0.method20179(var1.method22314(var5), false);
@@ -258,7 +258,7 @@ public class Class8158 {
    private static int method28322(Class6619 var0, Class7151 var1, Class9670 var2, double var3) throws CommandSyntaxException {
       Class30 var7 = method28320(var2, var1);
       if (var7 instanceof Class31) {
-         int var8 = MathHelper.method37769(((Class31)var7).method87() * var3);
+         int var8 = MathHelper.floor(((Class31)var7).method87() * var3);
          var0.method20179(var1.method22315(var2, var3, var8), false);
          return var8;
       } else {
@@ -271,9 +271,9 @@ public class Class8158 {
       return 1;
    }
 
-   private static int method28324(Class6619 var0, Class7151 var1, Class39 var2) throws CommandSyntaxException {
-      Class39 var5 = var1.method22312();
-      Class39 var6 = var5.method79().method140(var2);
+   private static int method28324(Class6619 var0, Class7151 var1, CompoundNBT var2) throws CommandSyntaxException {
+      CompoundNBT var5 = var1.method22312();
+      CompoundNBT var6 = var5.method79().method140(var2);
       if (!var5.equals(var6)) {
          var1.method22311(var6);
          var0.method20179(var1.method22313(), true);

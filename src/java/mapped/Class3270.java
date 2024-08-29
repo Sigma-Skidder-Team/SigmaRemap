@@ -44,14 +44,14 @@ public class Class3270 extends Class3264 {
          Blocks.SOUL_SOIL
       }
    );
-   public static final Map<Block, Class7380> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.field36395, Blocks.field36885.method11579()));
+   public static final Map<Block, BlockState> field18770 = Maps.newHashMap(ImmutableMap.of(Blocks.field36395, Blocks.field36885.method11579()));
 
    public Class3270(Class2283 var1, float var2, float var3, Class5643 var4) {
       super(var2, var3, var1, field18769, var4);
    }
 
    @Override
-   public boolean method11715(Class7380 var1) {
+   public boolean method11715(BlockState var1) {
       return var1.method23448(Blocks.SNOW) || var1.method23448(Blocks.SNOW_BLOCK);
    }
 
@@ -59,17 +59,17 @@ public class Class3270 extends Class3264 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
-      if (var1.method18354() == Direction.field672) {
+      BlockState var6 = var4.getBlockState(var5);
+      if (var1.method18354() == Direction.DOWN) {
          return ActionResultType.field14820;
       } else {
          PlayerEntity var7 = var1.method18358();
-         Class7380 var8 = field18770.get(var6.method23383());
-         Class7380 var9 = null;
-         if (var8 != null && var4.method6738(var5.method8311()).method23393()) {
+         BlockState var8 = field18770.get(var6.getBlock());
+         BlockState var9 = null;
+         if (var8 != null && var4.getBlockState(var5.method8311()).isAir()) {
             var4.method6742(var7, var5, Class6067.field27042, Class2266.field14732, 1.0F, 1.0F);
             var9 = var8;
-         } else if (var6.method23383() instanceof Class3244 && var6.<Boolean>method23463(Class3244.field18698)) {
+         } else if (var6.getBlock() instanceof Class3244 && var6.<Boolean>method23463(Class3244.field18698)) {
             if (!var4.method6714()) {
                var4.method6869((PlayerEntity)null, 1009, var5, 0);
             }

@@ -42,7 +42,7 @@ public class Class824 extends Class798 {
       this.field4530 = this.field4564 / 2 - 160;
       this.field4531 = 150;
       this.field4532 = this.field4564 / 2 + 12;
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4529 = new Class1290(this);
       this.field4529.method6035(this.field4530);
       this.<Class1290>method2456(this.field4529);
@@ -84,7 +84,7 @@ public class Class824 extends Class798 {
       );
       this.<Class1206>method2455(
          new Class1206(
-            this.field4532 + this.field4531 / 2 + 2, method1929(12), this.field4531 / 2 + 10 - 2, 20, Class7127.field30663, var1 -> this.method2410()
+            this.field4532 + this.field4531 / 2 + 2, method1929(12), this.field4531 / 2 + 10 - 2, 20, DialogTexts.field30663, var1 -> this.method2410()
          )
       );
       this.field4539 = this.<Class1153>method2456(
@@ -105,7 +105,7 @@ public class Class824 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override
@@ -202,23 +202,23 @@ public class Class824 extends Class798 {
       }
 
       int var7 = method1929(12) + 20;
-      Class9352 var8 = Class9352.method35409();
-      Class5425 var9 = var8.method35411();
+      Tessellator var8 = Tessellator.getInstance();
+      BufferBuilder var9 = var8.getBuffer();
       this.field4562.getTextureManager().bindTexture(field4521);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = 32.0F;
-      var9.method17063(7, Class9337.field43346);
-      var9.method17025(0.0, (double)this.field4565, 0.0)
+      var9.begin(7, DefaultVertexFormats.field43346);
+      var9.pos(0.0, (double)this.field4565, 0.0)
          .method17027(0.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
-         .method17026(64, 64, 64, 255)
-         .method17031();
-      var9.method17025((double)this.field4564, (double)this.field4565, 0.0)
+         .color(64, 64, 64, 255)
+         .endVertex();
+      var9.pos((double)this.field4564, (double)this.field4565, 0.0)
          .method17027((float)this.field4564 / 32.0F, (float)(this.field4565 - var7) / 32.0F + 0.0F)
-         .method17026(64, 64, 64, 255)
-         .method17031();
-      var9.method17025((double)this.field4564, (double)var7, 0.0).method17027((float)this.field4564 / 32.0F, 0.0F).method17026(64, 64, 64, 255).method17031();
-      var9.method17025(0.0, (double)var7, 0.0).method17027(0.0F, 0.0F).method17026(64, 64, 64, 255).method17031();
-      var8.method35410();
+         .color(64, 64, 64, 255)
+         .endVertex();
+      var9.pos((double)this.field4564, (double)var7, 0.0).method17027((float)this.field4564 / 32.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+      var9.pos(0.0, (double)var7, 0.0).method17027(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+      var8.draw();
       this.field4539.method5542(this, var1);
       if (this.field4528 != null && this.field4528.field27450 != null) {
          this.field4568
@@ -295,7 +295,7 @@ public class Class824 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2426(Class824 var0) {
+   public static FontRenderer method2426(Class824 var0) {
       return var0.field4568;
    }
 

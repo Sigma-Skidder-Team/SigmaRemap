@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 public class Class5279 extends Module {
     public Class5279() {
         super(ModuleCategory.RENDER, "Tracers", "Shows players");
-        this.method15972(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
+        this.registerSetting(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
     }
 
     @EventTarget

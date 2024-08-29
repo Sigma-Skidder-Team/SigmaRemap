@@ -24,8 +24,8 @@ public abstract class Class4307 extends Class4305 {
     @Override
     public void method13065(int var1) {
         if (var1 == Minecraft.getInstance().gameSettings.field44652.field13070.field34875) {
-            Minecraft.getInstance().mainWindow.method8034();
-            Minecraft.getInstance().gameSettings.field44626 = Minecraft.getInstance().mainWindow.method8040();
+            Minecraft.getInstance().mainWindow.toggleFullscreen();
+            Minecraft.getInstance().gameSettings.fullscreen = Minecraft.getInstance().mainWindow.isFullscreen();
         }
 
         super.method13065(var1);

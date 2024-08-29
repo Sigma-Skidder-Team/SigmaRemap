@@ -19,9 +19,9 @@ public class Class6678 extends Class6679 {
 
    @Override
    public String method20361(String var1) {
-      String var4 = Class8981.method33144("prefix." + this.method20366(), "");
+      String var4 = Shaders.method33144("prefix." + this.method20366(), "");
       String var5 = super.method20361(var1);
-      String var6 = Class8981.method33144("suffix." + this.method20366(), "");
+      String var6 = Shaders.method33144("suffix." + this.method20366(), "");
       return var4 + var5 + var6;
    }
 

@@ -18,8 +18,8 @@ public class Class802 extends Class798 {
 
    @Override
    public void method1921() {
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 105, method1929(9), 100, 20, Class7127.field30660, var1 -> this.field4187.accept(true)));
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(9), 100, 20, Class7127.field30661, var1 -> this.field4187.accept(false)));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 105, method1929(9), 100, 20, DialogTexts.field30660, var1 -> this.field4187.accept(true)));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(9), 100, 20, DialogTexts.field30661, var1 -> this.field4187.accept(false)));
    }
 
    @Override
@@ -31,8 +31,8 @@ public class Class802 extends Class798 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       if (--this.field4190 == 0) {
          for (Class1197 var4 : this.field4566) {
             var4.field6482 = true;

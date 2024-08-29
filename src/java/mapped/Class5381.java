@@ -16,8 +16,8 @@ public class Class5381 extends Module {
 
    public Class5381() {
       super(ModuleCategory.MOVEMENT, "Jesus", "Where's the scientific proof?");
-      this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Dolphin").method18631("Dolphin"));
-      this.method15972(new Class6004("Swim up", "Automatically swim up", true));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").method18631("Dolphin"));
+      this.registerSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
    }
 
    @Override
@@ -27,9 +27,9 @@ public class Class5381 extends Module {
    @EventTarget
    public void method16945(Class4398 var1) {
       if (this.method15996() && mc.world != null && !Class5258.method16421()) {
-         if (mc.world.method6738(var1.method13902()).method23384() == Class8649.field38940
-            || mc.world.method6738(var1.method13902()).method23384() == Class8649.field38941
-            || mc.world.method6738(var1.method13902()).method23384() == Class8649.field38943) {
+         if (mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38940
+            || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38941
+            || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38943) {
             if (!(
                (double)var1.method13902().getY()
                   >= mc.player.getPosY() - (double)(mc.player.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
@@ -37,7 +37,7 @@ public class Class5381 extends Module {
                if (!this.method16951(mc.player.field5035)) {
                   if (!mc.player.method3331()) {
                      if (!(mc.player.field5045 > 10.0F)) {
-                        Class7380 var4 = mc.world.method6738(var1.method13902());
+                        BlockState var4 = mc.world.getBlockState(var1.method13902());
                         int var5 = var4.method23449().method23477();
                         float var6 = 0.0F;
                         if (var5 > 3) {
@@ -60,7 +60,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16946(Class4399 var1) {
-      if (this.method15996() && mc.world != null && var1.method13921() && mc.method1528() != null) {
+      if (this.method15996() && mc.world != null && var1.method13921() && mc.getCurrentServerData() != null) {
          if (method16953() && !this.method16951(mc.player.field5035)) {
             this.field24017++;
          } else {
@@ -85,7 +85,7 @@ public class Class5381 extends Module {
    public void method16947(Class4435 var1) {
       if (this.method15996() && mc.world != null && !Class5258.method16421()) {
          if (this.method16951(mc.player.field5035) && !mc.player.method3331()) {
-            Class7380 var4 = mc.world.method6738(mc.player.method3432());
+            BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
             if (var4 != null && !var4.method23449().method23474()) {
                double var5 = (double)var4.method23449().method23476();
                if (var5 > 0.4) {
@@ -146,7 +146,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16948(Class4436 var1) {
-      if (this.method15996() && mc.world != null && mc.method1528() != null) {
+      if (this.method15996() && mc.world != null && mc.getCurrentServerData() != null) {
          if (method16953()) {
             if (this.field24015 % 2 != 0) {
                var1.method13900(true);
@@ -180,14 +180,14 @@ public class Class5381 extends Module {
    }
 
    public boolean method16952(Class6488 var1, Class8649 var2) {
-      int var5 = MathHelper.method37769(var1.field28449);
+      int var5 = MathHelper.floor(var1.field28449);
       int var6 = MathHelper.method37774(var1.field28452);
-      int var7 = MathHelper.method37769(var1.field28450);
+      int var7 = MathHelper.floor(var1.field28450);
       int var8 = MathHelper.method37774(var1.field28453);
-      int var9 = MathHelper.method37769(var1.field28451);
+      int var9 = MathHelper.floor(var1.field28451);
       int var10 = MathHelper.method37774(var1.field28454);
       Class116 var11 = Class116.method330(var2);
-      return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(mc.world.method6738(var1x)));
+      return BlockPos.method8363(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(mc.world.getBlockState(var1x)));
    }
 
    public static boolean method16953() {
@@ -200,7 +200,7 @@ public class Class5381 extends Module {
             Class6408 var6 = (Class6408)var4.next();
             Class6488 var7 = var6.method19514();
             BlockPos var8 = new BlockPos(var7.method19685());
-            Block var9 = mc.world.method6738(var8).method23383();
+            Block var9 = mc.world.getBlockState(var8).getBlock();
             if (var9 != Blocks.WATER
                && var9 != Blocks.LAVA
                && var9 != Blocks.AIR

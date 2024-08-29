@@ -13,8 +13,8 @@ public class Class8066 {
    public final AtomicReference<Class7457> field34609;
    private Class2011 field34610;
    private Class2010 field34611;
-   private final Set<Class944> field34612;
-   private final Map<Class4520, Class1698> field34613;
+   private final Set<TileEntity> field34612;
+   private final Map<RenderType, Class1698> field34613;
    public Class6488 field34614;
    private int field34615;
    private boolean field34616;
@@ -44,7 +44,7 @@ public class Class8066 {
       this.field34637 = var1;
       this.field34609 = new AtomicReference<Class7457>(Class7457.field32071);
       this.field34612 = Sets.newHashSet();
-      this.field34613 = Class4520.method14349().stream().collect(Collectors.toMap(var0 -> (Class4520)var0, var0 -> new Class1698(Class9337.field43334)));
+      this.field34613 = RenderType.method14349().stream().collect(Collectors.toMap(var0 -> (RenderType)var0, var0 -> new Class1698(DefaultVertexFormats.field43334)));
       this.field34615 = -1;
       this.field34616 = true;
       this.field34617 = new Mutable(-1, -1, -1);
@@ -66,7 +66,7 @@ public class Class8066 {
    }
 
    private boolean method27708(BlockPos var1) {
-      return Class9016.method33344(this.field34637).method6724(var1.method8304() >> 4, var1.method8306() >> 4, Class9176.field42145, false) != null;
+      return Class9016.method33344(this.field34637).method6724(var1.getX() >> 4, var1.getZ() >> 4, Class9176.field42145, false) != null;
    }
 
    public boolean method27709() {
@@ -92,12 +92,12 @@ public class Class8066 {
       }
    }
 
-   public Class1698 method27711(Class4520 var1) {
+   public Class1698 method27711(RenderType var1) {
       return this.field34613.get(var1);
    }
 
    public void method27712(int var1, int var2, int var3) {
-      if (var1 != this.field34617.method8304() || var2 != this.field34617.getY() || var3 != this.field34617.method8306()) {
+      if (var1 != this.field34617.getX() || var2 != this.field34617.getY() || var3 != this.field34617.getZ()) {
          this.method27716();
          this.field34617.method8372(var1, var2, var3);
          if (this.field34623) {
@@ -138,8 +138,8 @@ public class Class8066 {
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 
-   private void method27714(Class5425 var1) {
-      var1.method17063(7, Class9337.field43334);
+   private void method27714(BufferBuilder var1) {
+      var1.begin(7, DefaultVertexFormats.field43334);
    }
 
    public Class7457 method27715() {
@@ -188,7 +188,7 @@ public class Class8066 {
       return this.field34618[var1.ordinal()];
    }
 
-   public boolean method27724(Class4520 var1, Class9016 var2) {
+   public boolean method27724(RenderType var1, Class9016 var2) {
       Class7457 var5 = this.method27715();
       if (this.field34611 != null) {
          this.field34611.method8528();
@@ -239,7 +239,7 @@ public class Class8066 {
       var1.method33326(var4);
    }
 
-   private void method27728(Set<Class944> var1) {
+   private void method27728(Set<TileEntity> var1) {
       HashSet var4 = Sets.newHashSet(var1);
       HashSet var5 = Sets.newHashSet(this.field34612);
       var4.removeAll(this.field34612);
@@ -255,10 +255,10 @@ public class Class8066 {
    }
 
    private boolean method27730() {
-      if (!(Class9016.method33344(this.field34637) instanceof Class1656)) {
+      if (!(Class9016.method33344(this.field34637) instanceof ClientWorld)) {
          return false;
       } else {
-         Class1656 var3 = (Class1656)Class9016.method33344(this.field34637);
+         ClientWorld var3 = (ClientWorld)Class9016.method33344(this.field34637);
          return var3.method6864();
       }
    }
@@ -267,7 +267,7 @@ public class Class8066 {
       return this.field34622;
    }
 
-   private Class4520[] method27732(Class7379 var1, Class4520[] var2) {
+   private RenderType[] method27732(Class7379 var1, RenderType[] var2) {
       if (!Class9016.method33348()) {
          var2[0] = Class8928.method32634(var1);
          return var2;
@@ -276,7 +276,7 @@ public class Class8066 {
       }
    }
 
-   private Class4520[] method27733(Class7380 var1, Class4520[] var2) {
+   private RenderType[] method27733(BlockState var1, RenderType[] var2) {
       if (!Class9016.method33349()) {
          var2[0] = Class8928.method32630(var1);
          return var2;
@@ -285,9 +285,9 @@ public class Class8066 {
       }
    }
 
-   private Class4520 method27734(Class1665 var1, Class7380 var2, BlockPos var3, Class4520 var4) {
+   private RenderType method27734(Class1665 var1, BlockState var2, BlockPos var3, RenderType var4) {
       if (Class7031.method21828()) {
-         Class4520 var7 = Class7031.method21824(var1, var2, var3);
+         RenderType var7 = Class7031.method21824(var1, var2, var3);
          if (var7 != null) {
             return var7;
          }
@@ -299,7 +299,7 @@ public class Class8066 {
                return Class9025.field41290;
             }
          } else if (var4 == Class9025.field41290) {
-            Block var8 = var2.method23383();
+            Block var8 = var2.getBlock();
             if (!(var8 instanceof Class3222)) {
                if (!(var8 instanceof Class3220)) {
                   return Class9025.field41289;
@@ -323,8 +323,8 @@ public class Class8066 {
       this.method27736(Class9025.field41291, var1, var2);
    }
 
-   private void method27736(Class4520 var1, Class7828 var2, Class7457 var3) {
-      Class5425 var6 = var2.method26203(var1);
+   private void method27736(RenderType var1, Class7828 var2, Class7457 var3) {
+      BufferBuilder var6 = var2.method26203(var1);
       if (var6.method17074()) {
          var3.method24114(var1);
          if (var6.method17081() > 0) {
@@ -401,16 +401,16 @@ public class Class8066 {
    }
 
    private void method27747() {
-      int var3 = this.method27718().method8304();
-      int var4 = this.method27718().method8306();
+      int var3 = this.method27718().getX();
+      int var4 = this.method27718().getZ();
       int var5 = Direction.NORTH.ordinal();
       int var6 = Direction.SOUTH.ordinal();
       int var7 = Direction.WEST.ordinal();
       int var8 = Direction.EAST.ordinal();
-      this.field34633[var5] = this.field34632[var5].method27718().method8306() != var4 - 16 ? null : this.field34632[var5];
-      this.field34633[var6] = this.field34632[var6].method27718().method8306() != var4 + 16 ? null : this.field34632[var6];
-      this.field34633[var7] = this.field34632[var7].method27718().method8304() != var3 - 16 ? null : this.field34632[var7];
-      this.field34633[var8] = this.field34632[var8].method27718().method8304() != var3 + 16 ? null : this.field34632[var8];
+      this.field34633[var5] = this.field34632[var5].method27718().getZ() != var4 - 16 ? null : this.field34632[var5];
+      this.field34633[var6] = this.field34632[var6].method27718().getZ() != var4 + 16 ? null : this.field34632[var6];
+      this.field34633[var7] = this.field34632[var7].method27718().getX() != var3 - 16 ? null : this.field34632[var7];
+      this.field34633[var8] = this.field34632[var8].method27718().getX() != var3 + 16 ? null : this.field34632[var8];
       this.field34634 = true;
    }
 
@@ -421,9 +421,9 @@ public class Class8066 {
    public Class6487 method27749() {
       if (this.field34636 == null) {
          BlockPos var3 = this.method27718();
-         int var4 = var3.method8304();
+         int var4 = var3.getX();
          int var5 = var3.getY();
-         int var6 = var3.method8306();
+         int var6 = var3.getZ();
          byte var7 = 5;
          int var8 = var4 >> var7 << var7;
          int var9 = var5 >> var7 << var7;
@@ -470,22 +470,22 @@ public class Class8066 {
    }
 
    // $VF: synthetic method
-   public static Class4520[] method27757(Class8066 var0, Class7379 var1, Class4520[] var2) {
+   public static RenderType[] method27757(Class8066 var0, Class7379 var1, RenderType[] var2) {
       return var0.method27732(var1, var2);
    }
 
    // $VF: synthetic method
-   public static void method27758(Class8066 var0, Class5425 var1) {
+   public static void method27758(Class8066 var0, BufferBuilder var1) {
       var0.method27714(var1);
    }
 
    // $VF: synthetic method
-   public static Class4520[] method27759(Class8066 var0, Class7380 var1, Class4520[] var2) {
+   public static RenderType[] method27759(Class8066 var0, BlockState var1, RenderType[] var2) {
       return var0.method27733(var1, var2);
    }
 
    // $VF: synthetic method
-   public static Class4520 method27760(Class8066 var0, Class1665 var1, Class7380 var2, BlockPos var3, Class4520 var4) {
+   public static RenderType method27760(Class8066 var0, Class1665 var1, BlockState var2, BlockPos var3, RenderType var4) {
       return var0.method27734(var1, var2, var3, var4);
    }
 

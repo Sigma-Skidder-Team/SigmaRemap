@@ -5,7 +5,7 @@ import java.util.function.Function;
 public class Class2847 extends Class2828 {
    private static String[] field17648;
 
-   public Class2847(Function<ResourceLocation, Class4520> var1) {
+   public Class2847(Function<ResourceLocation, RenderType> var1) {
       super(var1);
    }
 

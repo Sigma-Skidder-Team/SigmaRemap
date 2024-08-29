@@ -94,14 +94,14 @@ public class Main {
       String var51 = var28.has(var24) ? (String)var24.value(var28) : null;
       String var52 = getOptionValueOrDefault(var28, var4);
       Integer var53 = getOptionValueOrDefault(var28, var5);
-      Class4526.method14414();
-      Class7729.method25566();
-      Class7729.method25570();
+      CrashReport.method14414();
+      Bootstrap.method25566();
+      Bootstrap.method25570();
       Util.method38531();
       Session var54 = new Session((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
-      Class8051 var55 = new Class8051(
+      GameConfiguration var55 = new GameConfiguration(
          new Class8227(var54, var44, var45, var31),
-         new Class9790(var34, var35, var36, var37, var38),
+         new ScreenSize(var34, var35, var36, var37, var38),
          new Class8281(var47, var49, var48, var51),
          new Class7745(var39, var42, var46, var40, var41),
          new Class7199(var52, var53)
@@ -122,19 +122,19 @@ public class Main {
          LOGGER.warn("Failed to create window: ", var70);
          return;
       } catch (Throwable var71) {
-         Class4526 var59 = Class4526.method14413(var71, "Initializing game");
-         var59.method14410("Initialization");
-         Minecraft.method1522((Class267)null, var55.field34580.field33254, (Class9574)null, var59);
-         Minecraft.method1468(var59);
+         CrashReport var59 = CrashReport.makeCrashReport(var71, "Initializing game");
+         var59.makeCategory("Initialization");
+         Minecraft.fillCrashReport((LanguageManager)null, var55.gameInfo.version, (GameSettings)null, var59);
+         Minecraft.displayCrashReport(var59);
          return;
       }
 
       Class357 var58;
-      if (var57.method1579()) {
+      if (var57.isRenderOnThread()) {
          var58 = new Class357("Game thread", var57);
          var58.start();
 
-         while (var57.method1488()) {
+         while (var57.isRunning()) {
          }
       } else {
          var58 = null;

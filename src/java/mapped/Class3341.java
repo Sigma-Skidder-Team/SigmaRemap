@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3341 extends Class3257 {
+public class Class3341 extends Item {
    private static String[] field18847;
 
    public Class3341(Class5643 var1) {
@@ -11,13 +11,13 @@ public class Class3341 extends Class3257 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
+      BlockState var6 = var4.getBlockState(var5);
       if (!var6.method23448(Blocks.field36650) || var6.<Boolean>method23463(Class3400.field19054)) {
          return ActionResultType.field14820;
       } else if (var4.field9020) {
          return ActionResultType.field14818;
       } else {
-         Class7380 var7 = var6.method23465(Class3400.field19054, Boolean.valueOf(true));
+         BlockState var7 = var6.method23465(Class3400.field19054, Boolean.valueOf(true));
          Block.method11538(var6, var7, var4, var5);
          var4.method6725(var5, var7, 2);
          var4.method6806(var5, Blocks.field36650);
@@ -43,13 +43,13 @@ public class Class3341 extends Class3257 {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      Class8711 var7 = method11735(var1, var2, Class1985.field12962);
-      if (var7.method31417() == Class2100.field13690 && var1.method6738(var7.method31423()).method23448(Blocks.field36650)) {
+      BlockRayTraceResult var7 = method11735(var1, var2, Class1985.field12962);
+      if (var7.getType() == RayTraceResult.Type.BLOCK && var1.getBlockState(var7.getPos()).method23448(Blocks.field36650)) {
          return Class6794.<ItemStack>method20698(var6);
       } else {
          var2.method3154(var3);
          if (var1 instanceof ServerWorld) {
-            BlockPos var8 = ((ServerWorld)var1).method6883().method7370().method17820((ServerWorld)var1, Structure.field18067, var2.method3432(), 100, false);
+            BlockPos var8 = ((ServerWorld)var1).method6883().method7370().method17820((ServerWorld)var1, Structure.field18067, var2.getPosition(), 100, false);
             if (var8 != null) {
                Class897 var9 = new Class897(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ());
                var9.method3522(var6);
@@ -69,8 +69,8 @@ public class Class3341 extends Class3257 {
                   0.5F,
                   0.4F / (field18735.nextFloat() * 0.4F + 0.8F)
                );
-               var1.method6869((PlayerEntity)null, 1003, var2.method3432(), 0);
-               if (!var2.field4919.field29609) {
+               var1.method6869((PlayerEntity)null, 1003, var2.getPosition(), 0);
+               if (!var2.abilities.isCreativeMode) {
                   var6.method32182(1);
                }
 

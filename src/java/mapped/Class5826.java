@@ -8,11 +8,11 @@ public class Class5826 extends Class5812 {
    private boolean field25529;
    private boolean field25530;
 
-   public Class5826(int var1, Class974 var2) {
+   public Class5826(int var1, PlayerInventory var2) {
       this(var1, var2, new Class1061(var2.field5444));
    }
 
-   public Class5826(int var1, Class974 var2, Class1060 var3) {
+   public Class5826(int var1, PlayerInventory var2, Class1060 var3) {
       super(Class8298.field35666, var1);
       this.field25526 = var3;
       this.field25527 = new Class988(var3);
@@ -111,13 +111,13 @@ public class Class5826 extends Class5812 {
             this.method18212();
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
@@ -143,17 +143,17 @@ public class Class5826 extends Class5812 {
       if (!this.field25526.method4753().field9020) {
          if (!var1.method3066() || var1 instanceof ServerPlayerEntity && ((ServerPlayerEntity)var1).method2783()) {
             ItemStack var4 = this.field25527.method3620(0);
-            if (!var4.method32105()) {
+            if (!var4.isEmpty()) {
                var1.method2882(var4, false);
             }
 
             var4 = this.field25527.method3620(1);
-            if (!var4.method32105()) {
+            if (!var4.isEmpty()) {
                var1.method2882(var4, false);
             }
          } else {
-            var1.field4902.method4047(var1.field5024, this.field25527.method3620(0));
-            var1.field4902.method4047(var1.field5024, this.field25527.method3620(1));
+            var1.inventory.method4047(var1.world, this.field25527.method3620(0));
+            var1.inventory.method4047(var1.world, this.field25527.method3620(1));
          }
       }
    }
@@ -161,7 +161,7 @@ public class Class5826 extends Class5812 {
    public void method18213(int var1) {
       if (this.method18217().size() > var1) {
          ItemStack var4 = this.field25527.method3618(0);
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             if (!this.method18142(var4, 3, 39, true)) {
                return;
             }
@@ -170,7 +170,7 @@ public class Class5826 extends Class5812 {
          }
 
          ItemStack var5 = this.field25527.method3618(1);
-         if (!var5.method32105()) {
+         if (!var5.isEmpty()) {
             if (!this.method18142(var5, 3, 39, true)) {
                return;
             }
@@ -178,7 +178,7 @@ public class Class5826 extends Class5812 {
             this.field25527.method3621(1, var5);
          }
 
-         if (this.field25527.method3618(0).method32105() && this.field25527.method3618(1).method32105()) {
+         if (this.field25527.method3618(0).isEmpty() && this.field25527.method3618(1).isEmpty()) {
             ItemStack var6 = this.method18217().get(var1).method35366();
             this.method18214(0, var6);
             ItemStack var7 = this.method18217().get(var1).method35367();
@@ -188,13 +188,13 @@ public class Class5826 extends Class5812 {
    }
 
    private void method18214(int var1, ItemStack var2) {
-      if (!var2.method32105()) {
+      if (!var2.isEmpty()) {
          for (int var5 = 3; var5 < 39; var5++) {
             ItemStack var6 = this.field25468.get(var5).method18265();
-            if (!var6.method32105() && this.method18215(var2, var6)) {
+            if (!var6.isEmpty() && this.method18215(var2, var6)) {
                ItemStack var7 = this.field25527.method3618(var1);
-               int var8 = !var7.method32105() ? var7.method32179() : 0;
-               int var9 = Math.min(var2.method32113() - var8, var6.method32179());
+               int var8 = !var7.isEmpty() ? var7.getCount() : 0;
+               int var9 = Math.min(var2.method32113() - var8, var6.getCount());
                ItemStack var10 = var6.copy();
                int var11 = var8 + var9;
                var6.method32182(var9);
@@ -209,7 +209,7 @@ public class Class5826 extends Class5812 {
    }
 
    private boolean method18215(ItemStack var1, ItemStack var2) {
-      return var1.method32107() == var2.method32107() && ItemStack.method32127(var1, var2);
+      return var1.getItem() == var2.getItem() && ItemStack.method32127(var1, var2);
    }
 
    public void method18216(Class46 var1) {

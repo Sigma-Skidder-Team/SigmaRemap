@@ -15,7 +15,7 @@ public class Class8747<T> {
    }
 
    public Class8747<T> method31558(T var1) {
-      this.field39426.method20945(this.field39427.method9181((T)var1), this.field39428);
+      this.field39426.method20945(this.field39427.getKey((T)var1), this.field39428);
       return this;
    }
 
@@ -26,7 +26,7 @@ public class Class8747<T> {
 
    @SafeVarargs
    public final Class8747<T> method31560(T... var1) {
-      Stream.of(var1).map(this.field39427::method9181).forEach(var1x -> this.field39426.method20945(var1x, this.field39428));
+      Stream.of(var1).map(this.field39427::getKey).forEach(var1x -> this.field39426.method20945(var1x, this.field39428));
       return this;
    }
 }

@@ -12,11 +12,11 @@ public class Class5124 implements Class5119 {
 
    @Override
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
-      Class1656 var11 = this.field23305.world;
+      ClientWorld var11 = this.field23305.world;
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();
       RenderSystem.method27938();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       BlockPos var12 = new BlockPos(var3, var5, var7);
       LongOpenHashSet var13 = new LongOpenHashSet();
 
@@ -26,7 +26,7 @@ public class Class5124 implements Class5119 {
          int var18 = MathHelper.method37818(var17, 0.9F, 0.9F);
          long var19 = Class2002.method8419(var15.method8332());
          if (var13.add(var19)) {
-            Class8023.method27461(
+            DebugRenderer.method27461(
                var11.method6883().method7348().method639(Class1977.field12881, Class2002.method8393(var19)),
                (double)(Class2002.method8407(var19) * 16 + 8),
                (double)(Class2002.method8408(var19) * 16 + 8),
@@ -37,8 +37,8 @@ public class Class5124 implements Class5119 {
          }
 
          if (var16 != 15) {
-            Class8023.method27460(
-               String.valueOf(var16), (double)var15.method8304() + 0.5, (double)var15.getY() + 0.25, (double)var15.method8306() + 0.5, var18
+            DebugRenderer.method27460(
+               String.valueOf(var16), (double)var15.getX() + 0.5, (double)var15.getY() + 0.25, (double)var15.getZ() + 0.5, var18
             );
          }
       }

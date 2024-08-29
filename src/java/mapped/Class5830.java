@@ -14,7 +14,7 @@ public class Class5830 extends Class5828<Class926> {
    public final boolean field25549;
    private final PlayerEntity field25550;
 
-   public Class5830(Class974 var1, boolean var2, PlayerEntity var3) {
+   public Class5830(PlayerInventory var1, boolean var2, PlayerEntity var3) {
       super((Class8298<?>)null, 0);
       this.field25549 = var2;
       this.field25550 = var3;
@@ -57,20 +57,20 @@ public class Class5830 extends Class5828<Class926> {
 
    @Override
    public boolean method18222(Class4843<? super Class926> var1) {
-      return var1.method14963(this.field25547, this.field25550.field5024);
+      return var1.method14963(this.field25547, this.field25550.world);
    }
 
    @Override
    public void method18106(Class920 var1) {
-      Class5829.method18228(this.field25471, this.field25550.field5024, this.field25550, this.field25547, this.field25548);
+      Class5829.method18228(this.field25471, this.field25550.world, this.field25550, this.field25547, this.field25548);
    }
 
    @Override
    public void method18113(PlayerEntity var1) {
       super.method18113(var1);
       this.field25548.method3625();
-      if (!var1.field5024.field9020) {
-         this.method18135(var1, var1.field5024, this.field25547);
+      if (!var1.world.field9020) {
+         this.method18135(var1, var1.world, this.field25547);
       }
    }
 
@@ -124,13 +124,13 @@ public class Class5830 extends Class5828<Class926> {
             var6.method18260(var7, var5);
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 

@@ -33,8 +33,8 @@ public class Class6836 extends Class6829 {
                float var13 = -((float)(MathHelper.method37814(var5, (double) MathHelper.method37766(var3 * var3 + var7 * var7)) * 180.0F / (float)Math.PI));
                var13 = MathHelper.method37777(MathHelper.method37792(var13), -85.0F, 85.0F);
                this.field29723.field5032 = this.method20816(this.field29723.field5032, var13, 5.0F);
-               float var14 = MathHelper.method37764(this.field29723.field5032 * (float) (Math.PI / 180.0));
-               float var15 = MathHelper.method37763(this.field29723.field5032 * (float) (Math.PI / 180.0));
+               float var14 = MathHelper.cos(this.field29723.field5032 * (float) (Math.PI / 180.0));
+               float var15 = MathHelper.sin(this.field29723.field5032 * (float) (Math.PI / 180.0));
                this.field29723.field4984 = var14 * var12;
                this.field29723.field4983 = -var15 * var12;
             }

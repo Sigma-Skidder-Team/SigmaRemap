@@ -4,26 +4,26 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public abstract class Class6768<C extends Class8277> {
-   private static final Class7380 field29487 = Blocks.field36396.method11579();
-   private static final Class7380 field29488 = Blocks.field36395.method11579();
-   private static final Class7380 field29489 = Blocks.field36398.method11579();
-   private static final Class7380 field29490 = Blocks.GRAVEL.method11579();
-   private static final Class7380 field29491 = Blocks.STONE.method11579();
-   private static final Class7380 field29492 = Blocks.field36397.method11579();
-   private static final Class7380 field29493 = Blocks.SAND.method11579();
-   private static final Class7380 field29494 = Blocks.RED_SAND.method11579();
-   private static final Class7380 field29495 = Blocks.field36730.method11579();
-   private static final Class7380 field29496 = Blocks.MYCELIUM.method11579();
-   private static final Class7380 field29497 = Blocks.SOUL_SAND.method11579();
-   private static final Class7380 field29498 = Blocks.NETHERRACK.method11579();
-   private static final Class7380 field29499 = Blocks.field36651.method11579();
-   private static final Class7380 field29500 = Blocks.field37083.method11579();
-   private static final Class7380 field29501 = Blocks.field37074.method11579();
-   private static final Class7380 field29502 = Blocks.field36891.method11579();
-   private static final Class7380 field29503 = Blocks.field37076.method11579();
-   private static final Class7380 field29504 = Blocks.field37130.method11579();
-   private static final Class7380 field29505 = Blocks.BASALT.method11579();
-   private static final Class7380 field29506 = Blocks.field36890.method11579();
+   private static final BlockState field29487 = Blocks.field36396.method11579();
+   private static final BlockState field29488 = Blocks.field36395.method11579();
+   private static final BlockState field29489 = Blocks.field36398.method11579();
+   private static final BlockState field29490 = Blocks.GRAVEL.method11579();
+   private static final BlockState field29491 = Blocks.STONE.method11579();
+   private static final BlockState field29492 = Blocks.field36397.method11579();
+   private static final BlockState field29493 = Blocks.SAND.method11579();
+   private static final BlockState field29494 = Blocks.RED_SAND.method11579();
+   private static final BlockState field29495 = Blocks.field36730.method11579();
+   private static final BlockState field29496 = Blocks.MYCELIUM.method11579();
+   private static final BlockState field29497 = Blocks.SOUL_SAND.method11579();
+   private static final BlockState field29498 = Blocks.NETHERRACK.method11579();
+   private static final BlockState field29499 = Blocks.field36651.method11579();
+   private static final BlockState field29500 = Blocks.field37083.method11579();
+   private static final BlockState field29501 = Blocks.field37074.method11579();
+   private static final BlockState field29502 = Blocks.field36891.method11579();
+   private static final BlockState field29503 = Blocks.field37076.method11579();
+   private static final BlockState field29504 = Blocks.field37130.method11579();
+   private static final BlockState field29505 = Blocks.BASALT.method11579();
+   private static final BlockState field29506 = Blocks.field36890.method11579();
    public static final Class8278 field29507 = new Class8278(field29489, field29487, field29490);
    public static final Class8278 field29508 = new Class8278(field29490, field29490, field29490);
    public static final Class8278 field29509 = new Class8278(field29488, field29487, field29490);
@@ -74,7 +74,7 @@ public abstract class Class6768<C extends Class8277> {
    }
 
    public abstract void method20654(
-           Random var1, Class1670 var2, Biome var3, int var4, int var5, int var6, double var7, Class7380 var9, Class7380 var10, int var11, long var12, C var14
+           Random var1, Class1670 var2, Biome var3, int var4, int var5, int var6, double var7, BlockState var9, BlockState var10, int var11, long var12, C var14
    );
 
    public void method20658(long var1) {

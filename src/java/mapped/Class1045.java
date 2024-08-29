@@ -8,12 +8,12 @@ public abstract class Class1045 extends Class1046 {
    public int field5802;
    public int field5803;
 
-   public Class1045(Class8992<? extends Class1045> var1, World var2) {
+   public Class1045(EntityType<? extends Class1045> var1, World var2) {
       super(var1, var2);
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(true);
       }
@@ -41,7 +41,7 @@ public abstract class Class1045 extends Class1046 {
    }
 
    public int method4767() {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          return this.field5801;
       } else {
          return !this.field5063.<Boolean>method35445(field5800) ? 1 : -1;
@@ -83,14 +83,14 @@ public abstract class Class1045 extends Class1046 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Age", this.method4767());
       var1.method102("ForcedAge", this.field5802);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4770(var1.method122("Age"));
       this.field5802 = var1.method122("ForcedAge");
@@ -108,7 +108,7 @@ public abstract class Class1045 extends Class1046 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (this.method3066()) {
             int var3 = this.method4767();
             if (var3 >= 0) {
@@ -121,7 +121,7 @@ public abstract class Class1045 extends Class1046 {
          }
       } else if (this.field5803 > 0) {
          if (this.field5803 % 4 == 0) {
-            this.field5024.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+            this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
          }
 
          this.field5803--;

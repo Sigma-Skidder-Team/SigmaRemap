@@ -6,7 +6,7 @@ public class Class4230 {
    private static String[] field20561;
 
    @Deprecated
-   public static int[] method13022(Class191 var0, ResourceLocation var1) throws IOException {
+   public static int[] method13022(IResourceManager var0, ResourceLocation var1) throws IOException {
       int[] var8;
       try (
          Class1783 var4 = var0.method580(var1);

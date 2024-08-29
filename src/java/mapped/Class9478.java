@@ -256,7 +256,7 @@ public class Class9478 {
       }
 
       TarArchiveInputStream var136 = null;
-      File var138 = new File(Minecraft.getInstance().field1303.getAbsolutePath(), "saves");
+      File var138 = new File(Minecraft.getInstance().gameDir.getAbsolutePath(), "saves");
 
       try {
          var138.mkdir();
@@ -286,9 +286,9 @@ public class Class9478 {
             var2.delete();
          }
 
-         try (Class1814 var23 = var3.method38468(var133)) {
+         try (SaveFormat.LevelSave var23 = var3.getLevelSave(var133)) {
             var23.method8004(var133.trim());
-            Path var25 = var23.method7991(Class5137.field23350);
+            Path var25 = var23.resolveFilePath(FolderName.field23350);
             method36594(var25.toFile());
          } catch (IOException var126) {
             field44053.error("Failed to rename unpacked realms level {}", var133, var126);
@@ -301,8 +301,8 @@ public class Class9478 {
    private static void method36594(File var0) {
       if (var0.exists()) {
          try {
-            Class39 var3 = Class8799.method31765(var0);
-            Class39 var4 = var3.method130("Data");
+            CompoundNBT var3 = Class8799.method31765(var0);
+            CompoundNBT var4 = var3.getCompound("Data");
             var4.method133("Player");
             Class8799.method31767(var3, var0);
          } catch (Exception var5) {

@@ -82,8 +82,8 @@ public final class Class9777 {
                   }
 
                   for (Class80 var34 : Class80.method255(this.field45739)) {
-                     List<Class8266> var35 = var32.method24374(this.field45737, BlockPos.field13032, var34, this.field45739);
-                     Class9764 var36 = var32.method24375(this.field45737, BlockPos.field13032, var34);
+                     List<Class8266> var35 = var32.method24374(this.field45737, BlockPos.ZERO, var34, this.field45739);
+                     Class9764 var36 = var32.method24375(this.field45737, BlockPos.ZERO, var34);
                      int var37;
                      if (var5 && var36.method38399() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
@@ -106,7 +106,7 @@ public final class Class9777 {
                         if (Class3249.method11674(var17, var39)) {
                            BlockPos var40 = var39.field35530;
                            BlockPos var41 = new BlockPos(
-                              var20.method8304() - var40.method8304(), var20.getY() - var40.getY(), var20.method8306() - var40.method8306()
+                              var20.getX() - var40.getX(), var20.getY() - var40.getY(), var20.getZ() - var40.getZ()
                            );
                            Class9764 var42 = var32.method24375(this.field45737, var41, var34);
                            int var43 = var42.field45679;
@@ -119,7 +119,7 @@ public final class Class9777 {
                               var48 = var15 + var47;
                            } else {
                               if (var22 == -1) {
-                                 var22 = this.field45736.method17828(var19.method8304(), var19.method8306(), Class101.field295);
+                                 var22 = this.field45736.method17828(var19.getX(), var19.getZ(), Class101.field295);
                               }
 
                               var48 = var22 - var46;
@@ -152,7 +152,7 @@ public final class Class9777 {
                               if (!var12) {
                                  if (!var45) {
                                     if (var22 == -1) {
-                                       var22 = this.field45736.method17828(var19.method8304(), var19.method8306(), Class101.field295);
+                                       var22 = this.field45736.method17828(var19.getX(), var19.getZ(), Class101.field295);
                                     }
 
                                     var55 = var22 + var47 / 2;
@@ -163,8 +163,8 @@ public final class Class9777 {
                                  var55 = var15 + var21;
                               }
 
-                              var1.method12980(new Class3637(var20.method8304(), var55 - var21 + var56, var20.method8306(), var47, var44));
-                              var54.method12980(new Class3637(var19.method8304(), var55 - var46 + var53, var19.method8306(), -var47, var11));
+                              var1.method12980(new Class3637(var20.getX(), var55 - var21 + var56, var20.getZ(), var47, var44));
+                              var54.method12980(new Class3637(var19.getX(), var55 - var46 + var53, var19.getZ(), -var47, var11));
                               this.field45738.add(var54);
                               if (var4 + 1 <= this.field45734) {
                                  this.field45740.addLast(new Class7213(var54, var28, var29, var4 + 1));

@@ -5,7 +5,7 @@ public class Class5827 extends Class5812 {
    private final Class920 field25532;
    private final AbstractHorseEntity field25533;
 
-   public Class5827(int var1, Class974 var2, Class920 var3, AbstractHorseEntity var4) {
+   public Class5827(int var1, PlayerInventory var2, Class920 var3, AbstractHorseEntity var4) {
       super((Class8298<?>)null, var1);
       this.field25532 = var3;
       this.field25533 = var4;
@@ -74,7 +74,7 @@ public class Class5827 extends Class5812 {
             return ItemStack.EMPTY;
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);

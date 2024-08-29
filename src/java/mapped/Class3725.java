@@ -16,7 +16,7 @@ public class Class3725 extends Class3676<Class1042> {
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
       if (var2.field5055 % 10 == 0 && (this.field19816 == 0L || this.field19816 + 160L <= (long)var2.field5055)) {
-         if (var2.method4752().method3634(Class8514.field37934) > 0) {
+         if (var2.method4752().method3634(Items.field37934) > 0) {
             this.field19818 = this.method12625(var1, var2);
             return this.field19818.isPresent();
          } else {
@@ -39,7 +39,7 @@ public class Class3725 extends Class3676<Class1042> {
       for (int var8 = -1; var8 <= 1; var8++) {
          for (int var9 = -1; var9 <= 1; var9++) {
             for (int var10 = -1; var10 <= 1; var10++) {
-               var5.method8378(var2.method3432(), var8, var9, var10);
+               var5.method8378(var2.getPosition(), var8, var9, var10);
                if (this.method12626(var5, var1)) {
                   if (var1.field9016.nextInt(++var7) == 0) {
                      var6 = Optional.<BlockPos>of(var5.method8353());
@@ -53,14 +53,14 @@ public class Class3725 extends Class3676<Class1042> {
    }
 
    private boolean method12626(BlockPos var1, ServerWorld var2) {
-      Class7380 var5 = var2.method6738(var1);
-      Block var6 = var5.method23383();
+      BlockState var5 = var2.getBlockState(var1);
+      Block var6 = var5.getBlock();
       return var6 instanceof Class3480 && !((Class3480)var6).method12179(var5);
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       this.method12627(var2);
-      var2.method2944(Class2106.field13731, new ItemStack(Class8514.field37934));
+      var2.method2944(Class2106.field13731, new ItemStack(Items.field37934));
       this.field19815 = var3;
       this.field19817 = 0;
    }
@@ -87,13 +87,13 @@ public class Class3725 extends Class3676<Class1042> {
 
          for (int var11 = 0; var11 < var10; var11++) {
             ItemStack var12 = var9.method3618(var11);
-            if (var12.method32107() == Class8514.field37934) {
+            if (var12.getItem() == Items.field37934) {
                var8 = var12;
                break;
             }
          }
 
-         if (!var8.method32105() && Class3336.method11883(var8, var1, var7)) {
+         if (!var8.isEmpty() && Class3336.method11883(var8, var1, var7)) {
             var1.method6999(2005, var7, 0);
             this.field19818 = this.method12625(var1, var2);
             this.method12627(var2);

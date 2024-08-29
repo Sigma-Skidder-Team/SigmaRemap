@@ -10,18 +10,18 @@ import java.util.stream.Stream;
 
 public class Class8719 {
    private static String[] field39340;
-   private final Class313 field39341;
-   private final List<Class1810> field39342;
-   private final List<Class1810> field39343;
-   private final Function<Class1810, ResourceLocation> field39344;
+   private final ResourcePackList field39341;
+   private final List<ResourcePackInfo> field39342;
+   private final List<ResourcePackInfo> field39343;
+   private final Function<ResourcePackInfo, ResourceLocation> field39344;
    private final Runnable field39345;
-   private final Consumer<Class313> field39346;
+   private final Consumer<ResourcePackList> field39346;
 
-   public Class8719(Runnable var1, Function<Class1810, ResourceLocation> var2, Class313 var3, Consumer<Class313> var4) {
+   public Class8719(Runnable var1, Function<ResourcePackInfo, ResourceLocation> var2, ResourcePackList var3, Consumer<ResourcePackList> var4) {
       this.field39345 = var1;
       this.field39344 = var2;
       this.field39341 = var3;
-      this.field39342 = Lists.newArrayList(var3.method1270());
+      this.field39342 = Lists.newArrayList(var3.getEnabledPacks());
       Collections.reverse(this.field39342);
       this.field39343 = Lists.newArrayList(var3.method1268());
       this.field39343.removeAll(this.field39342);
@@ -37,12 +37,12 @@ public class Class8719 {
    }
 
    public void method31450() {
-      this.field39341.method1264(Lists.reverse(this.field39342).stream().<String>map(Class1810::method7951).collect(ImmutableList.toImmutableList()));
+      this.field39341.setEnabledPacks(Lists.reverse(this.field39342).stream().<String>map(ResourcePackInfo::getName).collect(ImmutableList.toImmutableList()));
       this.field39346.accept(this.field39341);
    }
 
    public void method31451() {
-      this.field39341.method1262();
+      this.field39341.reloadPacksFromFinders();
       this.field39342.retainAll(this.field39341.method1268());
       this.field39343.clear();
       this.field39343.addAll(this.field39341.method1268());

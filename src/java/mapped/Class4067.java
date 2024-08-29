@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Class4067 extends Class4057 {
    public Class4067() {
-      super(Class8992.field41018, "dolphin", 0.7F);
+      super(EntityType.field41018, "dolphin", 0.7F);
    }
 
    @Override
@@ -59,7 +59,7 @@ public class Class4067 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5654 var6 = new Class5654(var5);
       var6.field25086 = (Class2805<Class1048>)var1;
       var6.field25098 = var2;

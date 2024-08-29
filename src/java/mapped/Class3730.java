@@ -78,17 +78,17 @@ public class Class3730 extends Class3676<Class1006> {
    }
 
    private boolean method12649(ServerWorld var1, Class1006 var2) {
-      BlockPos var5 = var2.method3432();
+      BlockPos var5 = var2.getPosition();
       BlockPos var6 = var5.method8313();
       return this.method12651(var1, var5) || this.method12651(var1, var6);
    }
 
    private boolean method12650(ServerWorld var1, Class1006 var2) {
-      return this.method12651(var1, var2.method3432());
+      return this.method12651(var1, var2.getPosition());
    }
 
    private boolean method12651(ServerWorld var1, BlockPos var2) {
-      return var1.method6738(var2).method23446(Class7645.field32770);
+      return var1.getBlockState(var2).method23446(Class7645.field32770);
    }
 
    private Optional<BlockPos> method12652(Class1006 var1) {

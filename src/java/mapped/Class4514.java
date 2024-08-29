@@ -5,21 +5,21 @@ public final class Class4514 extends Class4513 {
 
    public Class4514(int var1) {
       super("portal_texturing", () -> {
-         RenderSystem.method27878(5890);
+         RenderSystem.matrixMode(5890);
          RenderSystem.pushMatrix();
-         RenderSystem.method27879();
+         RenderSystem.loadIdentity();
          RenderSystem.translatef(0.5F, 0.5F, 0.0F);
          RenderSystem.scalef(0.5F, 0.5F, 1.0F);
          RenderSystem.translatef(17.0F / (float)var1, (2.0F + (float)var1 / 1.5F) * ((float)(Util.milliTime() % 800000L) / 800000.0F), 0.0F);
          RenderSystem.method27883(((float)(var1 * var1) * 4321.0F + (float)var1 * 9.0F) * 2.0F, 0.0F, 0.0F, 1.0F);
          RenderSystem.scalef(4.5F - (float)var1 / 4.0F, 4.5F - (float)var1 / 4.0F, 1.0F);
          RenderSystem.method27931();
-         RenderSystem.method27878(5888);
+         RenderSystem.matrixMode(5888);
          RenderSystem.method27932();
       }, () -> {
-         RenderSystem.method27878(5890);
+         RenderSystem.matrixMode(5890);
          RenderSystem.popMatrix();
-         RenderSystem.method27878(5888);
+         RenderSystem.matrixMode(5888);
          RenderSystem.method27933();
       });
       this.field21785 = var1;

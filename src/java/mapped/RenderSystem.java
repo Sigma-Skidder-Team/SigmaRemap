@@ -17,7 +17,7 @@ import org.lwjgl.glfw.GLFWErrorCallbackI;
 public class RenderSystem {
    private static final Logger field34654 = LogManager.getLogger();
    private static final ConcurrentLinkedQueue<Class4504> field34655 = Queues.newConcurrentLinkedQueue();
-   private static final Class9352 field34656 = new Class9352();
+   private static final Tessellator field34656 = new Tessellator();
    public static final float field34657 = 0.1F;
    private static final int field34658 = 1024;
    private static boolean field34659;
@@ -77,7 +77,7 @@ public class RenderSystem {
    public static void method27811(long var0) {
       GLFW.glfwPollEvents();
       method27812();
-      Class9352.method35409().method35411().method17071();
+      Tessellator.getInstance().getBuffer().method17071();
       GLFW.glfwSwapBuffers(var0);
       GLFW.glfwPollEvents();
    }
@@ -366,7 +366,7 @@ public class RenderSystem {
       Class7414.method23804();
    }
 
-   public static void method27862() {
+   public static void disableTexture() {
       method27808(RenderSystem::method27806);
       Class7414.method23805();
    }
@@ -448,13 +448,13 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27878(int var0) {
+   public static void matrixMode(int var0) {
       method27808(RenderSystem::method27806);
       Class7414.method23830(var0);
    }
 
    @Deprecated
-   public static void method27879() {
+   public static void loadIdentity() {
       method27808(RenderSystem::method27806);
       Class7414.method23831();
    }
@@ -472,7 +472,7 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27882(double var0, double var2, double var4, double var6, double var8, double var10) {
+   public static void ortho(double var0, double var2, double var4, double var6, double var8, double var10) {
       method27808(RenderSystem::method27806);
       Class7414.method23835(var0, var2, var4, var6, var8, var10);
    }
@@ -536,7 +536,7 @@ public class RenderSystem {
       Class7414.method23854(var0, var1, var2);
    }
 
-   public static void method27893(float var0) {
+   public static void lineWidth(float var0) {
       method27808(RenderSystem::method27806);
       Class7414.method23855(var0);
    }
@@ -560,27 +560,27 @@ public class RenderSystem {
       var1.accept(Class7414.method23860(var0));
    }
 
-   public static String method27898() {
+   public static String getBackendDescription() {
       method27808(RenderSystem::method27809);
       return String.format("LWJGL version %s", Class8157.method28297());
    }
 
-   public static String method27899() {
+   public static String getApiDescription() {
       method27808(RenderSystem::method27809);
       return Class8157.method28295();
    }
 
-   public static LongSupplier method27900() {
+   public static LongSupplier initBackendSystem() {
       method27808(RenderSystem::method27809);
       return Class8157.method28298();
    }
 
-   public static void method27901(int var0, boolean var1) {
+   public static void initRenderer(int var0, boolean var1) {
       method27808(RenderSystem::method27809);
       Class8157.method28302(var0, var1);
    }
 
-   public static void method27902(GLFWErrorCallbackI var0) {
+   public static void setErrorCallback(GLFWErrorCallbackI var0) {
       method27808(RenderSystem::method27809);
       Class8157.method28299(var0);
    }
@@ -601,12 +601,12 @@ public class RenderSystem {
       Class7414.method23761(var0, var1, var2);
    }
 
-   public static String method27906() {
+   public static String getCapsString() {
       method27808(RenderSystem::method27806);
       return Class8157.method28303();
    }
 
-   public static void method27907(int var0, int var1, int var2, int var3) {
+   public static void setupDefaultState(int var0, int var1, int var2, int var3) {
       method27808(RenderSystem::method27809);
       Class7414.method23804();
       Class7414.method23818(7425);
@@ -789,7 +789,7 @@ public class RenderSystem {
       }
    }
 
-   public static Class9352 method27937() {
+   public static Tessellator method27937() {
       method27808(RenderSystem::method27803);
       return field34656;
    }
@@ -804,13 +804,13 @@ public class RenderSystem {
 
    @Deprecated
    public static void method27940(Runnable var0) {
-      boolean var3 = Minecraft.method1517();
+      boolean var3 = Minecraft.isFabulousGraphicsEnabled();
       if (var3) {
-         Class9574 var4 = Minecraft.getInstance().gameSettings;
-         Class2087 var5 = var4.field44578;
-         var4.field44578 = Class2087.field13604;
+         GameSettings var4 = Minecraft.getInstance().gameSettings;
+         GraphicsFanciness var5 = var4.graphicFanciness;
+         var4.graphicFanciness = GraphicsFanciness.FANCY;
          var0.run();
-         var4.field44578 = var5;
+         var4.graphicFanciness = var5;
       } else {
          var0.run();
       }

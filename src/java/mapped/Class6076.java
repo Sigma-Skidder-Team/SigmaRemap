@@ -47,7 +47,7 @@ public class Class6076 extends Class6069 {
 
    @Override
    public boolean method18821(ItemStack var1) {
-      return !(var1.method32107() instanceof Class3265) ? super.method18821(var1) : true;
+      return !(var1.getItem() instanceof Class3265) ? super.method18821(var1) : true;
    }
 
    @Override

@@ -2,7 +2,7 @@ package mapped;
 
 public class Class4061 extends Class4060 {
    public Class4061() {
-      super(Class8992.field41040, "illusioner", 0.5F, new String[]{"illusion_illager"});
+      super(EntityType.field41040, "illusioner", 0.5F, new String[]{"illusion_illager"});
    }
 
    @Override
@@ -14,7 +14,7 @@ public class Class4061 extends Class4060 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5679 var6 = new Class5679(var5);
       var6.field25086 = (Class2823<Class1033>) var1;
       var6.field25098 = var2;

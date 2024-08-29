@@ -23,7 +23,7 @@ public final class Class8611<E> extends MapCodec<Registry<E>> {
    }
 
    public <T> DataResult<Registry<E>> decode(DynamicOps<T> var1, MapLike<T> var2) {
-      return !(var1 instanceof Class6711) ? DataResult.error("Not a registry ops") : ((Class6711)var1).<E>method20477(this.field38730);
+      return !(var1 instanceof WorldSettingsImport) ? DataResult.error("Not a registry ops") : ((WorldSettingsImport)var1).<E>method20477(this.field38730);
    }
 
    public String toString() {

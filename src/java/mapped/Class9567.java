@@ -11,7 +11,7 @@ public class Class9567 {
       double var2 = 0.2873;
       float var4 = 1.0F;
       Class9805 var5 = field44554.player.method3085(Class9173.field42108);
-      var4 = (float)((double)var4 * ((var5.method38674() / (double)field44554.player.field4919.method20716() + 1.0) / 2.0));
+      var4 = (float)((double)var4 * ((var5.method38674() / (double)field44554.player.abilities.method20716() + 1.0) / 2.0));
       if (field44554.player.method3337()) {
          var4 = (float)((double)var4 - 0.15);
       }
@@ -153,7 +153,7 @@ public class Class9567 {
       float var2 = field44554.player.field4984;
       float var3 = field44554.player.field4982;
       float var4 = field44554.player.field5031 + 90.0F;
-      if (var2 > 0.0F && field44554.gameSettings.field44634.method8509()) {
+      if (var2 > 0.0F && field44554.gameSettings.field44634.isKeyDown()) {
          var2 = -1.0F;
       }
 
@@ -179,10 +179,10 @@ public class Class9567 {
    }
 
    public static boolean method37087() {
-      boolean var2 = field44554.gameSettings.field44632.method8509();
-      boolean var3 = field44554.gameSettings.field44633.method8509();
-      boolean var4 = field44554.gameSettings.field44635.method8509();
-      boolean var5 = field44554.gameSettings.field44634.method8509();
+      boolean var2 = field44554.gameSettings.field44632.isKeyDown();
+      boolean var3 = field44554.gameSettings.field44633.isKeyDown();
+      boolean var4 = field44554.gameSettings.field44635.isKeyDown();
+      boolean var5 = field44554.gameSettings.field44634.isKeyDown();
       return var2 || var3 || var4 || var5;
    }
 
@@ -249,11 +249,11 @@ public class Class9567 {
       double var6 = field44554.player.getPosZ();
 
       for (int var8 = 0; var8 < 49 + method37079() * 17; var8++) {
-         field44554.getClientPlayNetHandler().sendPacket(new Class5605(var2, var4 + 0.06248, var6, false));
-         field44554.getClientPlayNetHandler().sendPacket(new Class5605(var2, var4, var6, false));
+         field44554.getConnection().sendPacket(new Class5605(var2, var4 + 0.06248, var6, false));
+         field44554.getConnection().sendPacket(new Class5605(var2, var4, var6, false));
       }
 
-      field44554.getClientPlayNetHandler().sendPacket(new Class5605(var2, var4, var6, true));
+      field44554.getConnection().sendPacket(new Class5605(var2, var4, var6, true));
    }
 
    public static float method37092(Class4435 var0, double var1, float var3, float var4, float var5) {
@@ -265,8 +265,8 @@ public class Class9567 {
       }
 
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
-      var0.method13993((double)(-MathHelper.method37763(var9)) * var1);
-      var0.method13997((double) MathHelper.method37764(var9) * var1);
+      var0.method13993((double)(-MathHelper.sin(var9)) * var1);
+      var0.method13997((double) MathHelper.cos(var9) * var1);
       Class5628.method17724(var0.method13992());
       Class5628.method17726(var0.method13996());
       return var4;
@@ -281,8 +281,8 @@ public class Class9567 {
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);
-      Class5628.method17724((double)(-MathHelper.method37763(var8)) * var0);
-      Class5628.method17726((double) MathHelper.method37764(var8) * var0);
+      Class5628.method17724((double)(-MathHelper.sin(var8)) * var0);
+      Class5628.method17726((double) MathHelper.cos(var8) * var0);
       return var3;
    }
 
@@ -292,8 +292,8 @@ public class Class9567 {
       float var10 = 0.6F;
       double var11 = !var0 ? (double)field44554.player.field4969 : (double)(field44554.player.method2918() * (0.21600002F / (var10 * var10 * var10)));
       Vector3d var13 = (!(var8 > 1.0) ? var7 : var7.method11333()).method11344(var11);
-      float var14 = MathHelper.method37763(field44554.player.field5031 * (float) (Math.PI / 180.0));
-      float var15 = MathHelper.method37764(field44554.player.field5031 * (float) (Math.PI / 180.0));
+      float var14 = MathHelper.sin(field44554.player.field5031 * (float) (Math.PI / 180.0));
+      float var15 = MathHelper.cos(field44554.player.field5031 * (float) (Math.PI / 180.0));
       return new Vector3d(
          var13.field18048 * (double)var15 - var13.field18050 * (double)var14,
          var13.field18049,

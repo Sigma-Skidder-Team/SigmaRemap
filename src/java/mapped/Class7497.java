@@ -56,14 +56,14 @@ public class Class7497 implements Class7495 {
 
    @Nullable
    @Override
-   public Class7202 method24425(Class8968 var1, Function<Class7826, Class1713> var2, Class1902 var3, ResourceLocation var4) {
+   public IBakedModel method24425(Class8968 var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
       if (this.method24445().isEmpty()) {
          return null;
       } else {
          Class9143 var7 = new Class9143();
 
          for (Class1903 var9 : this.method24445()) {
-            Class7202 var10 = var1.method32847(var9.method8171(), var9);
+            IBakedModel var10 = var1.method32847(var9.method8171(), var9);
             var7.method34155(var10, var9.method8172());
          }
 

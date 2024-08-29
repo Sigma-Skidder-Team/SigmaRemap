@@ -20,15 +20,15 @@ public class Class6207 {
    }
 
    public void method19118(ItemStack var1, int var2) {
-      if (!var1.method32105()) {
+      if (!var1.isEmpty()) {
          int var5 = method19119(var1);
-         int var6 = Math.min(var2, var1.method32179());
+         int var6 = Math.min(var2, var1.getCount());
          this.method19122(var5, var6);
       }
    }
 
    public static int method19119(ItemStack var0) {
-      return Registry.field16075.method9171(var0.method32107());
+      return Registry.ITEM.method9171(var0.getItem());
    }
 
    private boolean method19120(int var1) {
@@ -66,7 +66,7 @@ public class Class6207 {
    }
 
    public static ItemStack method19127(int var0) {
-      return var0 != 0 ? new ItemStack(Class3257.method11702(var0)) : ItemStack.EMPTY;
+      return var0 != 0 ? new ItemStack(Item.method11702(var0)) : ItemStack.EMPTY;
    }
 
    public void method19128() {
@@ -145,7 +145,7 @@ public class Class6207 {
    
             this.field38236.clear(0, this.field38233 + this.field38235 + this.field38233);
             int var8 = 0;
-            Class25<Class120> var9 = this.field38231.method14969();
+            NonNullList<Class120> var9 = this.field38231.method14969();
    
             for (int var10 = 0; var10 < var9.size(); var10++) {
                if (var13 && var9.get(var10).method337()) {

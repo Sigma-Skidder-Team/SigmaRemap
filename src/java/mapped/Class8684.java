@@ -41,28 +41,28 @@ public class Class8684 {
    private static final String field39182 = "nether_portal";
    private static final String field39183 = "glass";
    private static final String field39184 = "glass_pane_top";
-   public static Class1713 field39185;
-   public static Class1713 field39186;
-   public static Class1713 field39187;
-   public static Class1713 field39188;
-   public static Class1713 field39189;
-   public static Class1713 field39190;
-   public static Class1713 field39191;
-   public static Class1713 field39192;
-   public static Class1713 field39193;
-   public static Class1713 field39194;
-   public static Class1713 field39195;
-   public static Class1713 field39196;
-   public static Class1713 field39197;
-   public static Class1713 field39198;
-   public static Class1713 field39199;
-   public static Class1713 field39200;
-   public static Class1713 field39201;
-   public static Class1713 field39202;
-   public static Class1713 field39203;
-   public static Class1713 field39204;
-   public static Class1713 field39205;
-   public static Class1713 field39206;
+   public static TextureAtlasSprite field39185;
+   public static TextureAtlasSprite field39186;
+   public static TextureAtlasSprite field39187;
+   public static TextureAtlasSprite field39188;
+   public static TextureAtlasSprite field39189;
+   public static TextureAtlasSprite field39190;
+   public static TextureAtlasSprite field39191;
+   public static TextureAtlasSprite field39192;
+   public static TextureAtlasSprite field39193;
+   public static TextureAtlasSprite field39194;
+   public static TextureAtlasSprite field39195;
+   public static TextureAtlasSprite field39196;
+   public static TextureAtlasSprite field39197;
+   public static TextureAtlasSprite field39198;
+   public static TextureAtlasSprite field39199;
+   public static TextureAtlasSprite field39200;
+   public static TextureAtlasSprite field39201;
+   public static TextureAtlasSprite field39202;
+   public static TextureAtlasSprite field39203;
+   public static TextureAtlasSprite field39204;
+   public static TextureAtlasSprite field39205;
+   public static TextureAtlasSprite field39206;
    public static final String field39207 = "minecraft:block/";
    public static final String field39208 = "minecraft:item/";
    public static final ResourceLocation field39209 = new ResourceLocation("optifine/ctm/default/empty");
@@ -71,7 +71,7 @@ public class Class8684 {
    private static int field39212 = -1;
 
    public static void method31259() {
-      Class289 var2 = method31267();
+      AtlasTexture var2 = method31267();
       if (var2 != null) {
          String var3 = "minecraft:block/";
          field39185 = method31260(var2, var3 + "grass_block_top");
@@ -100,8 +100,8 @@ public class Class8684 {
       }
    }
 
-   public static Class1713 method31260(Class289 var0, String var1) {
-      Class1713 var4 = var0.method1106(var1);
+   public static TextureAtlasSprite method31260(AtlasTexture var0, String var1) {
+      TextureAtlasSprite var4 = var0.method1106(var1);
       if (var4 == null || var4 instanceof Class1714) {
          Class7944.method26811("Sprite not found: " + var1);
       }
@@ -171,7 +171,7 @@ public class Class8684 {
       }
    }
 
-   public static void method31266(Class191 var0) {
+   public static void method31266(IResourceManager var0) {
       if (method31267() != null) {
          Class7944.method26810("*** Reloading custom textures ***");
          Class8862.method32260();
@@ -186,7 +186,7 @@ public class Class8684 {
          Class9387.method35644();
          Class7992.method27252();
          Class9810.method38688();
-         Class8981.method33141();
+         Shaders.method33141();
          Class8043.method27615();
          Class7944.method26824();
          Class9753.method38323();
@@ -195,24 +195,24 @@ public class Class8684 {
          Class262.method853();
          Class8703.method31388();
          Class7031.method21825();
-         Class7944.method26861().method1080();
+         Class7944.method26861().tick();
          Class7944.method26810("Disable Forge light pipeline");
          Class9561.method37054(false);
       }
    }
 
-   public static Class289 method31267() {
+   public static AtlasTexture method31267() {
       return Class7944.method26969();
    }
 
    public static void method31268() {
-      Class191 var2 = Class7944.method26862();
-      if (var2 instanceof Class192) {
-         Class192 var3 = (Class192)var2;
+      IResourceManager var2 = Class7944.method26862();
+      if (var2 instanceof IReloadableResourceManager) {
+         IReloadableResourceManager var3 = (IReloadableResourceManager)var2;
          Class276 var4 = new Class276();
-         var3.method587(var4);
+         var3.addReloadListener(var4);
          Class265 var5 = new Class265();
-         var3.method587(var5);
+         var3.addReloadListener(var5);
       }
    }
 
@@ -227,16 +227,16 @@ public class Class8684 {
       Class7992.method27251(var0);
    }
 
-   public static void method31271(Class289 var0) {
-      if (var0.method1100().equals(Class289.field1102)) {
+   public static void method31271(AtlasTexture var0) {
+      if (var0.method1100().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)) {
          Class9619.method37482(var0);
          Class7992.method27249(var0);
          Class9422.method36142(var0);
       }
    }
 
-   public static void method31272(Class289 var0) {
-      if (var0.method1100().equals(Class289.field1102)) {
+   public static void method31272(AtlasTexture var0) {
+      if (var0.method1100().equals(AtlasTexture.LOCATION_BLOCKS_TEXTURE)) {
          Class9619.method37484(var0);
          Class7992.method27250(var0);
          Class9422.method36145(var0);
@@ -405,7 +405,7 @@ public class Class8684 {
       return null;
    }
 
-   public static void method31286(Class1713 var0) {
+   public static void method31286(TextureAtlasSprite var0) {
       Class1806[] var3 = var0.method7488();
 
       for (int var4 = 0; var4 < var3.length; var4++) {

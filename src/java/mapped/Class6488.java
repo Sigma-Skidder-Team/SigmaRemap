@@ -22,23 +22,23 @@ public class Class6488 {
 
    public Class6488(BlockPos var1) {
       this(
-         (double)var1.method8304(),
+         (double)var1.getX(),
          (double)var1.getY(),
-         (double)var1.method8306(),
-         (double)(var1.method8304() + 1),
+         (double)var1.getZ(),
+         (double)(var1.getX() + 1),
          (double)(var1.getY() + 1),
-         (double)(var1.method8306() + 1)
+         (double)(var1.getZ() + 1)
       );
    }
 
    public Class6488(BlockPos var1, BlockPos var2) {
       this(
-         (double)var1.method8304(),
+         (double)var1.getX(),
          (double)var1.getY(),
-         (double)var1.method8306(),
-         (double)var2.method8304(),
+         (double)var1.getZ(),
+         (double)var2.getX(),
          (double)var2.getY(),
-         (double)var2.method8306()
+         (double)var2.getZ()
       );
    }
 
@@ -229,12 +229,12 @@ public class Class6488 {
 
    public Class6488 method19668(BlockPos var1) {
       return new Class6488(
-         this.field28449 + (double)var1.method8304(),
+         this.field28449 + (double)var1.getX(),
          this.field28450 + (double)var1.getY(),
-         this.field28451 + (double)var1.method8306(),
-         this.field28452 + (double)var1.method8304(),
+         this.field28451 + (double)var1.getZ(),
+         this.field28452 + (double)var1.getX(),
          this.field28453 + (double)var1.getY(),
-         this.field28454 + (double)var1.method8306()
+         this.field28454 + (double)var1.getZ()
       );
    }
 
@@ -317,7 +317,7 @@ public class Class6488 {
    }
 
    @Nullable
-   public static Class8711 method19681(Iterable<Class6488> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
+   public static BlockRayTraceResult method19681(Iterable<Class6488> var0, Vector3d var1, Vector3d var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
       double var8 = var2.field18048 - var1.field18048;
@@ -330,7 +330,7 @@ public class Class6488 {
 
       if (var7 != null) {
          double var15 = var6[0];
-         return new Class8711(var1.method11339(var15 * var8, var15 * var10, var15 * var12), var7, var3, false);
+         return new BlockRayTraceResult(var1.method11339(var15 * var8, var15 * var10, var15 * var12), var7, var3, false);
       } else {
          return null;
       }
@@ -407,7 +407,7 @@ public class Class6488 {
             var0.field28454,
             var0.field28449,
             var0.field28452,
-            Direction.field672,
+            Direction.DOWN,
             var1.field18049,
             var1.field18050,
             var1.field18048

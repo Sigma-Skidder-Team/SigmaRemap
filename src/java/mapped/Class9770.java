@@ -7,7 +7,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class Class9770 implements ArgumentType<Class39> {
+public class Class9770 implements ArgumentType<CompoundNBT> {
    private static final Collection<String> field45708 = Arrays.<String>asList("{}", "{foo=bar}");
 
    private Class9770() {
@@ -17,11 +17,11 @@ public class Class9770 implements ArgumentType<Class39> {
       return new Class9770();
    }
 
-   public static <S> Class39 method38433(CommandContext<S> var0, String var1) {
-      return (Class39)var0.getArgument(var1, Class39.class);
+   public static <S> CompoundNBT method38433(CommandContext<S> var0, String var1) {
+      return (CompoundNBT)var0.getArgument(var1, CompoundNBT.class);
    }
 
-   public Class39 parse(StringReader var1) throws CommandSyntaxException {
+   public CompoundNBT parse(StringReader var1) throws CommandSyntaxException {
       return new Class7671(var1).method25195();
    }
 

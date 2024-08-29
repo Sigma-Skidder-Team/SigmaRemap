@@ -31,7 +31,7 @@ public abstract class Class6990 {
    public Class6990(Class1006 var1, World var2) {
       this.field30243 = var1;
       this.field30244 = var2;
-      int var5 = MathHelper.method37769(var1.method3086(Class9173.field42106) * 16.0);
+      int var5 = MathHelper.floor(var1.method3086(Class9173.field42106) * 16.0);
       this.field30261 = this.method21644(var5);
    }
 
@@ -90,7 +90,7 @@ public abstract class Class6990 {
 
    @Nullable
    public Class8238 method21652(Entity var1, int var2) {
-      return this.method21653(ImmutableSet.of(var1.method3432()), 16, true, var2);
+      return this.method21653(ImmutableSet.of(var1.getPosition()), 16, true, var2);
    }
 
    @Nullable
@@ -103,7 +103,7 @@ public abstract class Class6990 {
                } else {
                   this.field30244.method6820().startSection("pathfind");
                   float var7 = (float)this.field30243.method3086(Class9173.field42106);
-                  BlockPos var8 = !var3 ? this.field30243.method3432() : this.field30243.method3432().method8311();
+                  BlockPos var8 = !var3 ? this.field30243.getPosition() : this.field30243.getPosition().method8311();
                   int var9 = (int)(var7 + (float)var2);
                   Class1667 var10 = new Class1667(this.field30244, var8.method8336(-var9, -var9, -var9), var8.method8336(var9, var9, var9));
                   Class8238 var11 = this.field30261.method37250(var10, this.field30243, var1, var7, var4, this.field30260);
@@ -180,8 +180,8 @@ public abstract class Class6990 {
                Vector3d var4 = this.field30245.method28703(this.field30243);
                if (var3.field18049 > var4.field18049
                   && !this.field30243.method3226()
-                  && MathHelper.method37769(var3.field18048) == MathHelper.method37769(var4.field18048)
-                  && MathHelper.method37769(var3.field18050) == MathHelper.method37769(var4.field18050)) {
+                  && MathHelper.floor(var3.field18048) == MathHelper.floor(var4.field18048)
+                  && MathHelper.floor(var3.field18050) == MathHelper.floor(var4.field18050)) {
                   this.field30245.method28691();
                }
             }
@@ -197,7 +197,7 @@ public abstract class Class6990 {
                .method4228()
                .method20813(
                   var5.field18048,
-                  !this.field30244.method6738(var6.method8313()).method23393() ? Class6762.method20626(this.field30244, var6) : var5.field18049,
+                  !this.field30244.getBlockState(var6.method8313()).isAir() ? Class6762.method20626(this.field30244, var6) : var5.field18049,
                   var5.field18050,
                   this.field30246
                );
@@ -209,9 +209,9 @@ public abstract class Class6990 {
       Vector3d var3 = this.method21667();
       this.field30254 = !(this.field30243.method3429() > 0.75F) ? 0.75F - this.field30243.method3429() / 2.0F : this.field30243.method3429() / 2.0F;
       BlockPos var4 = this.field30245.method28704();
-      double var5 = Math.abs(this.field30243.getPosX() - ((double)var4.method8304() + 0.5));
+      double var5 = Math.abs(this.field30243.getPosX() - ((double)var4.getX() + 0.5));
       double var7 = Math.abs(this.field30243.getPosY() - (double)var4.getY());
-      double var9 = Math.abs(this.field30243.getPosZ() - ((double)var4.method8306() + 0.5));
+      double var9 = Math.abs(this.field30243.getPosZ() - ((double)var4.getZ() + 0.5));
       boolean var11 = var5 < (double)this.field30254 && var9 < (double)this.field30254 && var7 < 1.0;
       if (var11 || this.field30243.method4225(this.field30245.method28705().field30859) && this.method21660(var3)) {
          this.field30245.method28691();
@@ -304,7 +304,7 @@ public abstract class Class6990 {
          for (int var3 = 0; var3 < this.field30245.method28698(); var3++) {
             Class7176 var4 = this.field30245.method28695(var3);
             Class7176 var5 = var3 + 1 >= this.field30245.method28698() ? null : this.field30245.method28695(var3 + 1);
-            Class7380 var6 = this.field30244.method6738(new BlockPos(var4.field30847, var4.field30848, var4.field30849));
+            BlockState var6 = this.field30244.getBlockState(new BlockPos(var4.field30847, var4.field30848, var4.field30849));
             if (var6.method23448(Blocks.field36648)) {
                this.field30245.method28697(var3, var4.method22525(var4.field30847, var4.field30848 + 1, var4.field30849));
                if (var5 != null && var4.field30848 >= var5.field30848) {
@@ -319,7 +319,7 @@ public abstract class Class6990 {
 
    public boolean method21672(BlockPos var1) {
       BlockPos var4 = var1.method8313();
-      return this.field30244.method6738(var4).method23409(this.field30244, var4);
+      return this.field30244.getBlockState(var4).method23409(this.field30244, var4);
    }
 
    public Class6764 method21673() {

@@ -19,7 +19,7 @@ public class Class818 extends Class798 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field4460.method5633();
       this.field4459.method5633();
       this.field4458.field6482 = !this.field4460.method5636().trim().isEmpty();
@@ -27,13 +27,13 @@ public class Class818 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       int var3 = this.field4564 / 2 - 106;
       this.field4458 = this.<Class1206>method2455(
          new Class1206(var3 - 2, method1929(12), 106, 20, new TranslationTextComponent("mco.configure.world.buttons.done"), var1 -> this.method2329())
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 2, method1929(12), 106, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field4456))
+         new Class1206(this.field4564 / 2 + 2, method1929(12), 106, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field4456))
       );
       String var4 = this.field4457.field27447 != Class2261.field14707 ? "mco.configure.world.buttons.open" : "mco.configure.world.buttons.close";
       Class1206 var5 = new Class1206(this.field4564 / 2 - 53, method1929(0), 106, 20, new TranslationTextComponent(var4), var1 -> {
@@ -53,14 +53,14 @@ public class Class818 extends Class798 {
       });
       this.<Class1206>method2455(var5);
       this.field4460 = new Class1189(
-         this.field4562.field1294, var3, method1929(4), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.name")
+         this.field4562.fontRenderer, var3, method1929(4), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.name")
       );
       this.field4460.method5657(32);
       this.field4460.method5635(this.field4457.method18907());
       this.<Class1189>method2456(this.field4460);
       this.method5537(this.field4460);
       this.field4459 = new Class1189(
-         this.field4562.field1294, var3, method1929(8), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.description")
+         this.field4562.fontRenderer, var3, method1929(8), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.description")
       );
       this.field4459.method5657(32);
       this.field4459.method5635(this.field4457.method18906());
@@ -73,7 +73,7 @@ public class Class818 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override

@@ -39,15 +39,15 @@ public class Class6801<T> implements Class6802<T> {
       return false;
    }
 
-   public Class41 method20721() {
-      Class41 var3 = new Class41();
+   public ListNBT method20721() {
+      ListNBT var3 = new ListNBT();
 
       for (Class6575 var5 : this.field29613) {
-         Class39 var6 = new Class39();
+         CompoundNBT var6 = new CompoundNBT();
          var6.method109("i", this.field29614.apply((T)Class6575.method19905(var5)).toString());
-         var6.method102("x", var5.field28943.method8304());
+         var6.method102("x", var5.field28943.getX());
          var6.method102("y", var5.field28943.getY());
-         var6.method102("z", var5.field28943.method8306());
+         var6.method102("z", var5.field28943.getZ());
          var6.method102("t", var5.field28944);
          var6.method102("p", var5.field28945.method8914());
          var3.add(var6);
@@ -56,11 +56,11 @@ public class Class6801<T> implements Class6802<T> {
       return var3;
    }
 
-   public static <T> Class6801<T> method20722(Class41 var0, Function<T, ResourceLocation> var1, Function<ResourceLocation, T> var2) {
+   public static <T> Class6801<T> method20722(ListNBT var0, Function<T, ResourceLocation> var1, Function<ResourceLocation, T> var2) {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var0.size(); var6++) {
-         Class39 var7 = var0.method153(var6);
+         CompoundNBT var7 = var0.method153(var6);
          Object var8 = var2.apply(new ResourceLocation(var7.method126("i")));
          if (var8 != null) {
             BlockPos var9 = new BlockPos(var7.method122("x"), var7.method122("y"), var7.method122("z"));

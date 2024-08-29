@@ -29,7 +29,7 @@ public class Class7958 {
    private static final ThreadFactory field34207 = new ThreadFactoryBuilder().setDaemon(true).build();
    private final ImmutableSet<RegistryKey<World>> field34208;
    private final boolean field34209;
-   private final Class1814 field34210;
+   private final SaveFormat.LevelSave field34210;
    private final Thread field34211;
    private final DataFixer field34212;
    private volatile boolean field34213 = true;
@@ -43,7 +43,7 @@ public class Class7958 {
    private static final Pattern field34221 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
    private final Class8250 field34222;
 
-   public Class7958(Class1814 var1, DataFixer var2, ImmutableSet<RegistryKey<World>> var3, boolean var4) {
+   public Class7958(SaveFormat.LevelSave var1, DataFixer var2, ImmutableSet<RegistryKey<World>> var3, boolean var4) {
       this.field34208 = var3;
       this.field34209 = var4;
       this.field34212 = var2;
@@ -111,21 +111,21 @@ public class Class7958 {
                   boolean var19 = false;
 
                   try {
-                     Class39 var20 = var17.method6531(var18);
+                     CompoundNBT var20 = var17.method6531(var18);
                      if (var20 != null) {
                         int var37 = Class1648.method6530(var20);
-                        Class39 var22 = var17.method6529(var15, () -> this.field34222, var20);
-                        Class39 var23 = var22.method130("Level");
+                        CompoundNBT var22 = var17.method6529(var15, () -> this.field34222, var20);
+                        CompoundNBT var23 = var22.getCompound("Level");
                         Class7481 var24 = new Class7481(var23.method122("xPos"), var23.method122("zPos"));
                         if (!var24.equals(var18)) {
                            field34206.warn("Chunk {} has invalid position {}", var18, var24);
                         }
 
-                        boolean var25 = var37 < SharedConstants.method34773().getWorldVersion();
+                        boolean var25 = var37 < SharedConstants.getVersion().getWorldVersion();
                         if (this.field34209) {
-                           var25 = var25 || var23.method118("Heightmaps");
+                           var25 = var25 || var23.contains("Heightmaps");
                            var23.method133("Heightmaps");
-                           var25 = var25 || var23.method118("isLightOn");
+                           var25 = var25 || var23.contains("isLightOn");
                            var23.method133("isLightOn");
                         }
 
@@ -134,7 +134,7 @@ public class Class7958 {
                            var19 = true;
                         }
                      }
-                  } catch (Class2506 var27) {
+                  } catch (ReportedException var27) {
                      Throwable var21 = var27.getCause();
                      if (!(var21 instanceof IOException)) {
                         throw var27;

@@ -2,7 +2,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class969 extends Class944 {
+public class Class969 extends TileEntity {
    private boolean field5429;
    private boolean field5430;
    private boolean field5431;
@@ -14,8 +14,8 @@ public class Class969 extends Class944 {
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       this.field5433.method3560(var1);
       var1.method115("powered", this.method4011());
       var1.method115("conditionMet", this.method4016());
@@ -24,7 +24,7 @@ public class Class969 extends Class944 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       this.field5433.method3561(var2);
       this.field5429 = var2.method132("powered");
@@ -39,7 +39,7 @@ public class Class969 extends Class944 {
          return null;
       } else {
          this.method4019(false);
-         Class39 var3 = this.method3646(new Class39());
+         CompoundNBT var3 = this.write(new CompoundNBT());
          return new Class5610(this.field5325, 2, var3);
       }
    }
@@ -81,7 +81,7 @@ public class Class969 extends Class944 {
    }
 
    private void method4015() {
-      Block var3 = this.method3775().method23383();
+      Block var3 = this.method3775().getBlock();
       if (var3 instanceof Class3355) {
          this.method4017();
          this.field5324.method6860().method20726(this.field5325, var3, 1);
@@ -95,11 +95,11 @@ public class Class969 extends Class944 {
    public boolean method4017() {
       this.field5431 = true;
       if (this.method4021()) {
-         BlockPos var3 = this.field5325.method8349(this.field5324.method6738(this.field5325).<Direction>method23463(Class3355.field18893).method536());
-         if (!(this.field5324.method6738(var3).method23383() instanceof Class3355)) {
+         BlockPos var3 = this.field5325.method8349(this.field5324.getBlockState(this.field5325).<Direction>method23463(Class3355.field18893).method536());
+         if (!(this.field5324.getBlockState(var3).getBlock() instanceof Class3355)) {
             this.field5431 = false;
          } else {
-            Class944 var4 = this.field5324.method6759(var3);
+            TileEntity var4 = this.field5324.getTileEntity(var3);
             this.field5431 = var4 instanceof Class969 && ((Class969)var4).method4009().method3557() > 0;
          }
       }
@@ -116,7 +116,7 @@ public class Class969 extends Class944 {
    }
 
    public Class2037 method4020() {
-      Class7380 var3 = this.method3775();
+      BlockState var3 = this.method3775();
       if (!var3.method23448(Blocks.COMMAND_BLOCK)) {
          if (!var3.method23448(Blocks.field36887)) {
             return !var3.method23448(Blocks.field36888) ? Class2037.field13325 : Class2037.field13323;
@@ -129,8 +129,8 @@ public class Class969 extends Class944 {
    }
 
    public boolean method4021() {
-      Class7380 var3 = this.field5324.method6738(this.method3774());
-      return !(var3.method23383() instanceof Class3355) ? false : var3.<Boolean>method23463(Class3355.field18894);
+      BlockState var3 = this.field5324.getBlockState(this.getPos());
+      return !(var3.getBlock() instanceof Class3355) ? false : var3.<Boolean>method23463(Class3355.field18894);
    }
 
    @Override

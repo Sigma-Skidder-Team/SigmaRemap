@@ -13,7 +13,7 @@ public class Class4203 extends Class4194 {
       this.field20444 = var3;
    }
 
-   public Class4203(Class8761 var1, Class39 var2) {
+   public Class4203(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33456, var2);
    }
 
@@ -32,7 +32,7 @@ public class Class4203 extends Class4194 {
       this.method12928(var1, var5, 0, 0, 0, 4, 10, 7, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 7, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 7);
-      Class7380 var10 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+      BlockState var10 = Blocks.COBBLESTONE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
 
       for (int var11 = 0; var11 < 6; var11++) {
          this.method12923(var1, var10, 1, 6 - var11, 1 + var11, var5);

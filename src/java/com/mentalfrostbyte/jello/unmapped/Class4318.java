@@ -80,7 +80,7 @@ public class Class4318 extends Class4307 {
 
     @Override
     public void method13027(float var1) {
-        if (Class1272.field6779 != null) {
+        if (CustomResourceLoadProgressGui.field6779 != null) {
             field21069.changeDirection(Direction.FORWARDS);
             int var4 = 40;
             float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
@@ -90,7 +90,7 @@ public class Class4318 extends Class4307 {
                     (float) var4 * var6,
                     (float) (Minecraft.getInstance().mainWindow.method8043() + var4),
                     (float) (Minecraft.getInstance().mainWindow.method8044() + var4),
-                    Class1272.field6779
+                    CustomResourceLoadProgressGui.field6779
             );
             float var7 = Class8603.method30791(field21069.calcPercent(), 0.16, 0.71, 0.0, 0.99);
             int var8 = (Minecraft.getInstance().mainWindow.method8043() - 455) / 2;
@@ -108,7 +108,7 @@ public class Class4318 extends Class4307 {
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.method8043(),
                     (float) Minecraft.getInstance().mainWindow.method8044(),
-                    Class1272.field6780,
+                    CustomResourceLoadProgressGui.field6780,
                     Class5628.method17688(Class1979.field12896.field12910, 1.0F - field21069.calcPercent())
             );
             Class3192.method11424(
@@ -118,7 +118,7 @@ public class Class4318 extends Class4307 {
                     (float) Minecraft.getInstance().mainWindow.method8044(),
                     Class5628.method17688(0, 0.75F * (1.0F - field21069.calcPercent()))
             );
-            Class3192.method11455((float) var8, (float) var9, 455.0F, 78.0F, Class1272.field6778);
+            Class3192.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
         }
     }
 

@@ -11,7 +11,7 @@ public class Class5193 extends Module {
 
     public Class5193() {
         super(ModuleCategory.MOVEMENT, "Cubecraft", "Longjump for Cubecraft.");
-        this.method15972(new Class6009<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
     }
 
     @Override
@@ -53,11 +53,11 @@ public class Class5193 extends Module {
                 int var10 = 49 + Class9567.method37079() * 17;
 
                 for (int var11 = 0; var11 < var10; var11++) {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6 + 0.06248, var8, false));
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6, var8, false));
+                    mc.getConnection().sendPacket(new Class5605(var4, var6 + 0.06248, var8, false));
+                    mc.getConnection().sendPacket(new Class5605(var4, var6, var8, false));
                 }
 
-                mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6, var8, true));
+                mc.getConnection().sendPacket(new Class5605(var4, var6, var8, true));
                 Class5628.method17725(Class9567.method37080());
                 this.field23501 = 0;
                 this.field23502 = this.method15977("Boost") / 2.0F;

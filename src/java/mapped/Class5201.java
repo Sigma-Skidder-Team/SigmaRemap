@@ -61,7 +61,7 @@ public class Class5201 extends Module {
 
                         try {
                             Class9823 var4x = new Class9823();
-                            Class9510 var5 = new Class9510(new Class9110(mc.player.method3432()));
+                            Class9510 var5 = new Class9510(new Class9110(mc.player.getPosition()));
                             Class7860 var6 = new Class7860(this.field23513 = var4);
                             this.field23514 = this.field23513.field5028;
                             Class7267 var7 = new Class7267(var5, var6);

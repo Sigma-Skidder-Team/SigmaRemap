@@ -6,8 +6,8 @@ public class Class2849 extends Class2828 {
    public Class7219 field17654;
 
    public Class2849() {
-      super(Class4520::method14312);
-      Class5723 var3 = new Class5723(Minecraft.getInstance().method1554());
+      super(RenderType::getEntityCutoutNoCull);
+      Class5723 var3 = new Class5723(Minecraft.getInstance().getRenderManager());
       this.field17652 = (Class7219)Class9299.field43041.method36565(var3, 0);
       this.field17653 = (Class7219)Class9299.field43041.method36565(var3, 1);
       this.field17654 = (Class7219)Class9299.field43041.method36565(var3, 2);

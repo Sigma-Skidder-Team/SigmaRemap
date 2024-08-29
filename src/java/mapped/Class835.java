@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Iterator;
 
-public class Class835 extends Class834 {
+public class Class835 extends IngameMenuScreen {
    public static Date field4622 = new Date(0L);
 
    public Class835() {
@@ -59,7 +59,7 @@ public class Class835 extends Class834 {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return false;
    }
 }

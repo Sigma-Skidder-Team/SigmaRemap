@@ -8,8 +8,8 @@ public final class Class6221 extends Class6218 {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       BlockPos var6 = var1.method11323().method8349(var5);
       ServerWorld var7 = var1.method11326();
-      Class1005 var8 = new Class1005(var7, (double)var6.method8304() + 0.5, (double)var6.getY(), (double)var6.method8306() + 0.5);
-      Class8992.method33204(var7, (PlayerEntity)null, var8, var2.method32142());
+      ArmorStandEntity var8 = new ArmorStandEntity(var7, (double)var6.getX() + 0.5, (double)var6.getY(), (double)var6.getZ() + 0.5);
+      EntityType.method33204(var7, (PlayerEntity)null, var8, var2.method32142());
       var8.field5031 = var5.method551();
       var7.method6916(var8);
       var2.method32182(1);

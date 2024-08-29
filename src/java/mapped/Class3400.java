@@ -16,42 +16,42 @@ public class Class3400 extends Block {
    }
 
    @Override
-   public boolean method11534(Class7380 var1) {
+   public boolean method11534(BlockState var1) {
       return true;
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return !var1.<Boolean>method23463(field19054) ? field19055 : field19057;
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       return this.method11579().method23465(field19053, var1.method18350().method536()).method23465(field19054, Boolean.valueOf(false));
    }
 
    @Override
-   public boolean method11648(Class7380 var1) {
+   public boolean method11648(BlockState var1) {
       return true;
    }
 
    @Override
-   public int method11649(Class7380 var1, World var2, BlockPos var3) {
+   public int method11649(BlockState var1, World var2, BlockPos var3) {
       return !var1.<Boolean>method23463(field19054) ? 0 : 15;
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field19053, var2.method252(var1.<Direction>method23463(field19053)));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23395(var2.method8749(var1.<Direction>method23463(field19053)));
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19053, field19054);
    }
 
@@ -99,7 +99,7 @@ public class Class3400 extends Block {
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

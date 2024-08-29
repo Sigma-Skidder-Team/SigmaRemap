@@ -12,14 +12,14 @@ import java.util.Objects;
 public class Class1157 extends Class1156 {
    private final MultiplayerScreen field6296;
    private final Minecraft field6297;
-   private final Class7730 field6298;
+   private final ServerData field6298;
    private final ResourceLocation field6299;
    private String field6300;
    private Class291 field6301;
    private long field6302;
    public final Class1279 field6303;
 
-   public Class1157(Class1279 var1, MultiplayerScreen var2, Class7730 var3) {
+   public Class1157(Class1279 var1, MultiplayerScreen var2, ServerData var3) {
       this.field6303 = var1;
       this.field6296 = var2;
       this.field6298 = var3;
@@ -48,17 +48,17 @@ public class Class1157 extends Class1156 {
          });
       }
 
-      boolean var13 = this.field6298.field33193 != SharedConstants.method34773().getProtocolVersion();
-      this.field6297.field1294.method38801(var1, this.field6298.field33188, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
-      List var14 = this.field6297.field1294.method38828(this.field6298.field33191, var5 - 32 - 2);
+      boolean var13 = this.field6298.field33193 != SharedConstants.getVersion().getProtocolVersion();
+      this.field6297.fontRenderer.method38801(var1, this.field6298.field33188, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
+      List var14 = this.field6297.fontRenderer.method38828(this.field6298.field33191, var5 - 32 - 2);
 
       for (int var15 = 0; var15 < Math.min(var14.size(), 2); var15++) {
-         this.field6297.field1294.method38804(var1, (Class9125)var14.get(var15), (float)(var4 + 32 + 3), (float)(var3 + 12 + 9 * var15), 8421504);
+         this.field6297.fontRenderer.method38804(var1, (Class9125)var14.get(var15), (float)(var4 + 32 + 3), (float)(var3 + 12 + 9 * var15), 8421504);
       }
 
       Object var26 = !var13 ? this.field6298.field33190 : this.field6298.field33194.deepCopy().mergeStyle(TextFormatting.RED);
-      int var16 = this.field6297.field1294.method38821((ITextProperties)var26);
-      this.field6297.field1294.method38805(var1, (ITextComponent)var26, (float)(var4 + var5 - var16 - 15 - 2), (float)(var3 + 1), 8421504);
+      int var16 = this.field6297.fontRenderer.method38821((ITextProperties)var26);
+      this.field6297.fontRenderer.method38805(var1, (ITextComponent)var26, (float)(var4 + var5 - var16 - 15 - 2), (float)(var3 + 1), 8421504);
       int var17 = 0;
       int var18;
       Object var19;
@@ -137,7 +137,7 @@ public class Class1157 extends Class1156 {
          this.field6296.method6241(var20);
       }
 
-      if (this.field6297.gameSettings.field44625 || var9) {
+      if (this.field6297.gameSettings.touchscreen || var9) {
          this.field6297.getTextureManager().bindTexture(Class1279.method6090());
          Class1193.method5686(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
@@ -268,12 +268,12 @@ public class Class1157 extends Class1156 {
       return false;
    }
 
-   public Class7730 method5551() {
+   public ServerData method5551() {
       return this.field6298;
    }
 
    // $VF: synthetic method
-   public static Class7730 method5554(Class1157 var0) {
+   public static ServerData method5554(Class1157 var0) {
       return var0.field6298;
    }
 }

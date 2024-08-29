@@ -45,8 +45,8 @@ public class Class5305 extends Module {
             for (Entity var5 : Class5628.method17708()) {
                 if (var5 instanceof ItemEntity) {
                     ItemEntity var6 = (ItemEntity) var5;
-                    if (!(var6.method4124().method32107() instanceof Class3292)
-                            || !(((Class3292) var6.method4124().method32107()).method11845() instanceof Class3368)) {
+                    if (!(var6.method4124().getItem() instanceof Class3292)
+                            || !(((Class3292) var6.method4124().getItem()).method11845() instanceof Class3368)) {
                         return;
                     }
 
@@ -79,8 +79,8 @@ public class Class5305 extends Module {
                                 Class5628.method17688(Class1979.field12891.field12910, 0.3F)
                         );
                         GL11.glDisable(3042);
-                        if (mc.gameSettings.field44642.method8509()) {
-                            mc.gameSettings.field44642.field13071 = false;
+                        if (mc.gameSettings.keyBindUseItem.isKeyDown()) {
+                            mc.gameSettings.keyBindUseItem.field13071 = false;
                             Peek.method18337(var6.method4124());
                         }
                     }
@@ -156,8 +156,8 @@ public class Class5305 extends Module {
                 Class5839 var5 = var4.field4729;
                 if (var5 != null
                         && var5.method18266()
-                        && var5.method18265().method32107() instanceof Class3292
-                        && ((Class3292) var5.method18265().method32107()).method11845() instanceof Class3368) {
+                        && var5.method18265().getItem() instanceof Class3292
+                        && ((Class3292) var5.method18265().getItem()).method11845() instanceof Class3368) {
                     ItemStack var6 = var5.method18265();
                     List var7 = this.method16678(var6);
                     int var8 = Math.max(-1, Math.min(1, this.method16670()));
@@ -253,11 +253,11 @@ public class Class5305 extends Module {
             int var27 = var1 + var8 + var23 % 9 * (var10 + var11);
             if (var23 == this.field23841 && var5) {
                 RenderSystem.method27821();
-                int var29 = mc.field1294.method38820(var24.method32149().getUnformattedComponentText());
+                int var29 = mc.fontRenderer.getStringWidth(var24.method32149().getUnformattedComponentText());
                 List var32 = this.method16677(var24);
 
                 for (int var20 = 0; var20 < var32.size(); var20++) {
-                    var29 = Math.max(var29, mc.field1294.method38820((String) var32.get(var20)));
+                    var29 = Math.max(var29, mc.fontRenderer.getStringWidth((String) var32.get(var20)));
                 }
 
                 var29 = (int) ((float) var29 * Class3192.method11417());
@@ -278,7 +278,7 @@ public class Class5305 extends Module {
 
                 for (int var21 = 0; var21 < var32.size(); var21++) {
                     String var22 = (String) var32.get(var21);
-                    mc.field1294
+                    mc.fontRenderer
                             .method38807(
                                     var22,
                                     (float) (var27 + 5),
@@ -297,7 +297,7 @@ public class Class5305 extends Module {
     }
 
     public List<String> method16677(ItemStack var1) {
-        List<ITextComponent> var4 = var1.method32153(mc.player, !mc.gameSettings.field44588 ? Class2215.field14480 : Class2215.field14481);
+        List<ITextComponent> var4 = var1.getTooltip(mc.player, !mc.gameSettings.field44588 ? TooltipFlags.NORMAL : TooltipFlags.field14481);
         List var5 = Lists.newArrayList();
 
         for (ITextComponent var7 : var4) {
@@ -309,21 +309,21 @@ public class Class5305 extends Module {
 
     private List<ItemStack> method16678(ItemStack var1) {
         List<ItemStack> var4 = new ArrayList();
-        Class39 var5 = var1.method32142();
+        CompoundNBT var5 = var1.method32142();
         if (var5 != null && var5.method119("BlockEntityTag", 10)) {
-            Class39 var6 = var5.method130("BlockEntityTag");
+            CompoundNBT var6 = var5.getCompound("BlockEntityTag");
             Peek.method18338(var6);
             if (var6.method119("Items", 9)) {
-                Class25<ItemStack> var7 = Class25.method68(27, ItemStack.EMPTY);
+                NonNullList<ItemStack> var7 = NonNullList.method68(27, ItemStack.EMPTY);
                 Class7920.method26567(var6, var7);
 
                 for (ItemStack var9 : var7) {
-                    if (!var9.method32105()) {
+                    if (!var9.isEmpty()) {
                         boolean var10 = true;
 
                         for (ItemStack var12 : var4) {
                             if (var9.method32132(var12) && ItemStack.method32127(var12, var9)) {
-                                var12.method32180(var9.method32179() + var12.method32179());
+                                var12.method32180(var9.getCount() + var12.getCount());
                                 var10 = false;
                             }
                         }

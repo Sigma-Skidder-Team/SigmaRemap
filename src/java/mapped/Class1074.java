@@ -7,7 +7,7 @@ public class Class1074 extends AbstractHorseEntity {
    private static final UUID field5916 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
    private static final Class9289<Integer> field5917 = Class9361.<Integer>method35441(Class1074.class, Class7784.field33391);
 
-   public Class1074(Class8992<? extends Class1074> var1, World var2) {
+   public Class1074(EntityType<? extends Class1074> var1, World var2) {
       super(var1, var2);
    }
 
@@ -25,11 +25,11 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Variant", this.method4993());
-      if (!this.field5890.method3618(1).method32105()) {
-         var1.method99("ArmorItem", this.field5890.method3618(1).method32112(new Class39()));
+      if (!this.field5890.method3618(1).isEmpty()) {
+         var1.put("ArmorItem", this.field5890.method3618(1).method32112(new CompoundNBT()));
       }
    }
 
@@ -43,12 +43,12 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method4992(var1.method122("Variant"));
       if (var1.method119("ArmorItem", 10)) {
-         ItemStack var4 = ItemStack.method32104(var1.method130("ArmorItem"));
-         if (!var4.method32105() && this.method4900(var4)) {
+         ItemStack var4 = ItemStack.method32104(var1.getCompound("ArmorItem"));
+         if (!var4.isEmpty() && this.method4900(var4)) {
             this.field5890.method3621(1, var4);
          }
       }
@@ -78,7 +78,7 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Override
    public void method4903() {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          super.method4903();
          this.method4997(this.field5890.method3618(1));
          this.method4279(Class2106.field13735, 0.0F);
@@ -87,10 +87,10 @@ public class Class1074 extends AbstractHorseEntity {
 
    private void method4997(ItemStack var1) {
       this.method4991(var1);
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          this.method3085(Class9173.field42113).method38671(field5916);
          if (this.method4900(var1)) {
-            int var4 = ((Class3275)var1.method32107()).method11798();
+            int var4 = ((Class3275)var1.getItem()).method11798();
             if (var4 != 0) {
                this.method3085(Class9173.field42113).method38667(new Class9689(field5916, "Horse armor bonus", (double)var4, Class2045.field13352));
             }
@@ -152,7 +152,7 @@ public class Class1074 extends AbstractHorseEntity {
       if (!this.method3005()) {
          if (this.method4932() && var1.method2851()) {
             this.openGUI(var1);
-            return ActionResultType.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.world.field9020);
          }
 
          if (this.method3329()) {
@@ -160,7 +160,7 @@ public class Class1074 extends AbstractHorseEntity {
          }
       }
 
-      if (!var5.method32105()) {
+      if (!var5.isEmpty()) {
          if (this.method4381(var5)) {
             return this.method4953(var1, var5);
          }
@@ -172,19 +172,19 @@ public class Class1074 extends AbstractHorseEntity {
 
          if (!this.method4932()) {
             this.method4896();
-            return ActionResultType.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.world.field9020);
          }
 
-         boolean var7 = !this.method3005() && !this.method4943() && var5.method32107() == Class8514.field37886;
+         boolean var7 = !this.method3005() && !this.method4943() && var5.getItem() == Items.field37886;
          if (this.method4900(var5) || var7) {
             this.openGUI(var1);
-            return ActionResultType.method9002(this.field5024.field9020);
+            return ActionResultType.method9002(this.world.field9020);
          }
       }
 
       if (!this.method3005()) {
          this.method4920(var1);
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       } else {
          return super.method4285(var1, var2);
       }
@@ -204,7 +204,7 @@ public class Class1074 extends AbstractHorseEntity {
       AbstractHorseEntity var6;
       if (!(var2 instanceof Class1067)) {
          Class1074 var5 = (Class1074)var2;
-         var6 = Class8992.field41038.method33215(var1);
+         var6 = EntityType.field41038.method33215(var1);
          int var7 = this.field5054.nextInt(9);
          Class2190 var8;
          if (var7 >= 4) {
@@ -231,7 +231,7 @@ public class Class1074 extends AbstractHorseEntity {
 
          ((Class1074)var6).method4994(var8, var10);
       } else {
-         var6 = Class8992.field41057.method33215(var1);
+         var6 = EntityType.field41057.method33215(var1);
       }
 
       this.method4962(var2, var6);
@@ -245,12 +245,12 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Override
    public boolean method4900(ItemStack var1) {
-      return var1.method32107() instanceof Class3275;
+      return var1.getItem() instanceof Class3275;
    }
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class2190 var8;
       if (!(var4 instanceof Class5098)) {
          var8 = Util.<Class2190>method38518(Class2190.values(), this.field5054);

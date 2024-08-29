@@ -8,7 +8,7 @@ public class Class4262 extends Class4261 {
    private boolean field20676;
 
    public Class4262(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
-      super(var1, var2, var3, var4, var5, var6, false, new Class7312(Class7925.field33943, 20, 40, 18, Class2188.field14309, 200, 1));
+      super(var1, var2, var3, var4, var5, var6, false, new Class7312(ClassicDecryption.checkbox, 20, 40, 18, Class2188.field14309, 200, 1));
       this.method13088();
    }
 

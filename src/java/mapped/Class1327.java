@@ -30,7 +30,7 @@ public class Class1327 extends Class1325 {
    public void method6308(Class911 var1) {
       if (var1 instanceof Class912) {
          Class912 var4 = (Class912)var1;
-         this.field4562.getClientPlayNetHandler().sendPacket(new Class5529(var4.method3577().method3205(), this.field7010.method5636(), var1.method3571()));
+         this.field4562.getConnection().sendPacket(new Class5529(var4.method3577().method3205(), this.field7010.method5636(), var1.method3571()));
       }
    }
 }

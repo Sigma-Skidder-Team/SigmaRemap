@@ -14,7 +14,7 @@ public class Class1134 extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 140, 200, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen((Screen)null)));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 140, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen((Screen)null)));
    }
 
    @Override

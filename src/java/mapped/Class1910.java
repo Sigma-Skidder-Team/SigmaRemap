@@ -6,54 +6,54 @@ public enum Class1910 {
    field11211("biome_precipitation"),
    field11212("temperature"),
    field11213("rainfall"),
-   field11214(Class8981.field40721),
-   field11215(Class8981.field40722),
-   field11216(Class8981.field40723),
-   field11217(Class8981.field40724),
-   field11218(Class8981.field40729),
-   field11219(Class8981.field40730),
-   field11220(Class8981.field40731),
-   field11221(Class8981.field40732),
-   field11222(Class8981.field40733),
-   field11223(Class8981.field40734),
-   field11224(Class8981.field40735),
-   field11225(Class8981.field40736),
-   field11226(Class8981.field40737),
-   field11227(Class8981.field40738),
-   field11228(Class8981.field40739),
-   field11229(Class8981.field40740),
-   field11230(Class8981.field40741),
-   field11231(Class8981.field40742),
-   field11232(Class8981.field40759),
-   field11233(Class8981.field40760),
-   field11234(Class8981.field40761, new String[]{"x", "y"}),
-   field11235(Class8981.field40763, new String[]{"x", "y"}),
-   field11236(Class8981.field40764),
-   field11237(Class8981.field40765),
-   field11238(Class8981.field40766),
-   field11239(Class8981.field40767),
-   field11240(Class8981.field40768),
-   field11241(Class8981.field40769),
-   field11242(Class8981.field40770),
-   field11243(Class8981.field40771, new String[]{"x", "y"}),
-   field11244(Class8981.field40774),
-   field11245(Class8981.field40748, new String[]{"x", "y", "z"}),
-   field11246(Class8981.field40747, new String[]{"x", "y", "z"}),
-   field11247(Class8981.field40743, new String[]{"x", "y", "z"}),
-   field11248(Class8981.field40744, new String[]{"x", "y", "z"}),
-   field11249(Class8981.field40745, new String[]{"x", "y", "z"}),
-   field11250(Class8981.field40746, new String[]{"x", "y", "z"}),
-   field11251(Class8981.field40728, new String[]{"r", "g", "b"}),
-   field11252(Class8981.field40752, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11253(Class8981.field40753, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11254(Class8981.field40751, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11255(Class8981.field40749, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11256(Class8981.field40750, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11257(Class8981.field40754, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11258(Class8981.field40755, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11259(Class8981.field40756, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11260(Class8981.field40757, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
-   field11261(Class8981.field40758, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"});
+   field11214(Shaders.field40721),
+   field11215(Shaders.field40722),
+   field11216(Shaders.field40723),
+   field11217(Shaders.field40724),
+   field11218(Shaders.field40729),
+   field11219(Shaders.field40730),
+   field11220(Shaders.field40731),
+   field11221(Shaders.field40732),
+   field11222(Shaders.field40733),
+   field11223(Shaders.field40734),
+   field11224(Shaders.field40735),
+   field11225(Shaders.field40736),
+   field11226(Shaders.field40737),
+   field11227(Shaders.field40738),
+   field11228(Shaders.field40739),
+   field11229(Shaders.field40740),
+   field11230(Shaders.field40741),
+   field11231(Shaders.field40742),
+   field11232(Shaders.field40759),
+   field11233(Shaders.field40760),
+   field11234(Shaders.field40761, new String[]{"x", "y"}),
+   field11235(Shaders.field40763, new String[]{"x", "y"}),
+   field11236(Shaders.field40764),
+   field11237(Shaders.field40765),
+   field11238(Shaders.field40766),
+   field11239(Shaders.field40767),
+   field11240(Shaders.field40768),
+   field11241(Shaders.field40769),
+   field11242(Shaders.field40770),
+   field11243(Shaders.field40771, new String[]{"x", "y"}),
+   field11244(Shaders.field40774),
+   field11245(Shaders.field40748, new String[]{"x", "y", "z"}),
+   field11246(Shaders.field40747, new String[]{"x", "y", "z"}),
+   field11247(Shaders.field40743, new String[]{"x", "y", "z"}),
+   field11248(Shaders.field40744, new String[]{"x", "y", "z"}),
+   field11249(Shaders.field40745, new String[]{"x", "y", "z"}),
+   field11250(Shaders.field40746, new String[]{"x", "y", "z"}),
+   field11251(Shaders.field40728, new String[]{"r", "g", "b"}),
+   field11252(Shaders.field40752, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11253(Shaders.field40753, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11254(Shaders.field40751, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11255(Shaders.field40749, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11256(Shaders.field40750, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11257(Shaders.field40754, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11258(Shaders.field40755, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11259(Shaders.field40756, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11260(Shaders.field40757, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"}),
+   field11261(Shaders.field40758, new String[]{"0", "1", "2", "3"}, new String[]{"0", "1", "2", "3"});
 
    private String field11262;
    private Class3614 field11263;
@@ -167,24 +167,24 @@ public enum Class1910 {
          if (this.field11265 == null || var2 >= 0 && var2 <= this.field11265.length) {
             switch (Class5431.field24169[this.ordinal()]) {
                case 1:
-                  BlockPos var5 = Class8981.method33165();
-                  Biome var6 = Class8981.method33164().method7003(var5);
+                  BlockPos var5 = Shaders.method33165();
+                  Biome var6 = Shaders.method33164().getBiome(var5);
                   return (float)Class8708.method31407(var6);
                case 2:
-                  BlockPos var7 = Class8981.method33165();
-                  Biome var8 = Class8981.method33164().method7003(var7);
-                  return var8 != null ? (float)var8.method32527().ordinal() : 0.0F;
+                  BlockPos var7 = Shaders.method33165();
+                  Biome var8 = Shaders.method33164().getBiome(var7);
+                  return var8 != null ? (float)var8.getCategory().ordinal() : 0.0F;
                case 3:
-                  BlockPos var9 = Class8981.method33165();
-                  Biome var10 = Class8981.method33164().method7003(var9);
+                  BlockPos var9 = Shaders.method33165();
+                  Biome var10 = Shaders.method33164().getBiome(var9);
                   return var10 != null ? (float)var10.method32500().ordinal() : 0.0F;
                case 4:
-                  BlockPos var11 = Class8981.method33165();
-                  Biome var12 = Class8981.method33164().method7003(var11);
+                  BlockPos var11 = Shaders.method33165();
+                  Biome var12 = Shaders.method33164().getBiome(var11);
                   return var12 != null ? var12.method32503(var11) : 0.0F;
                case 5:
-                  BlockPos var13 = Class8981.method33165();
-                  Biome var14 = Class8981.method33164().method7003(var13);
+                  BlockPos var13 = Shaders.method33165();
+                  Biome var14 = Shaders.method33164().getBiome(var13);
                   return var14 != null ? var14.method32516() : 0.0F;
                default:
                   if (this.field11263 instanceof Class3620) {

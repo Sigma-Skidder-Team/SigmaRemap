@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class HoverEvent$EntityHover {
-   public final Class8992<?> type;
+   public final EntityType<?> type;
    public final UUID id;
    public final ITextComponent name;
    private List<ITextComponent> field_240680_d_;
 
-   public HoverEvent$EntityHover(Class8992<?> type, UUID id, ITextComponent name) {
+   public HoverEvent$EntityHover(EntityType<?> type, UUID id, ITextComponent name) {
       this.type = type;
       this.id = id;
       this.name = name;
@@ -31,7 +31,7 @@ public class HoverEvent$EntityHover {
          return null;
       } else {
          JsonObject entitytype = element.getAsJsonObject();
-         Class8992 uuid = Registry.field16074.method9184(new ResourceLocation(JSONUtils.method32763(entitytype, "type")));
+         EntityType uuid = Registry.ENTITY_TYPE.method9184(new ResourceLocation(JSONUtils.method32763(entitytype, "type")));
          UUID itextcomponent = UUID.fromString(JSONUtils.method32763(entitytype, "id"));
          IFormattableTextComponent var6 = ITextComponent$Serializer.func_240641_a_(entitytype.get("name"));
          return new HoverEvent$EntityHover(uuid, itextcomponent, var6);
@@ -41,9 +41,9 @@ public class HoverEvent$EntityHover {
    @Nullable
    public static HoverEvent$EntityHover deserialize(ITextComponent component) {
       try {
-         Class39 itextcomponent = Class7671.method25188(component.getString());
+         CompoundNBT itextcomponent = Class7671.method25188(component.getString());
          IFormattableTextComponent entitytype = ITextComponent$Serializer.func_240643_a_(itextcomponent.method126("name"));
-         Class8992 uuid = Registry.field16074.method9184(new ResourceLocation(itextcomponent.method126("type")));
+         EntityType uuid = Registry.ENTITY_TYPE.method9184(new ResourceLocation(itextcomponent.method126("type")));
          UUID var6 = UUID.fromString(itextcomponent.method126("id"));
          return new HoverEvent$EntityHover(uuid, var6, entitytype);
       } catch (JsonSyntaxException | CommandSyntaxException var7) {
@@ -53,7 +53,7 @@ public class HoverEvent$EntityHover {
 
    public JsonElement serialize() {
       JsonObject var3 = new JsonObject();
-      var3.addProperty("type", Registry.field16074.method9181(this.type).toString());
+      var3.addProperty("type", Registry.ENTITY_TYPE.getKey(this.type).toString());
       var3.addProperty("id", this.id.toString());
       if (this.name != null) {
          var3.add("name", ITextComponent$Serializer.toJsonTree(this.name));

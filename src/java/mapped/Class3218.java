@@ -24,12 +24,12 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       return this.method11579().method23465(field18627, var1.method18350().method537());
    }
 
    @Override
-   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.field9020) {
          var4.method2766(var1.method23445(var2, var3));
          var4.method2911(Class8876.field40175);
@@ -41,12 +41,12 @@ public class Class3218 extends Class3213 {
 
    @Nullable
    @Override
-   public Class949 method11528(Class7380 var1, World var2, BlockPos var3) {
+   public Class949 method11528(BlockState var1, World var2, BlockPos var3) {
       return new Class953((var2x, var3x, var4) -> new Class5824(var2x, var3x, Class8786.method31714(var2, var3)), field18637);
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       Direction var7 = var1.<Direction>method23463(field18627);
       return var7.method544() != Class113.field413 ? field18636 : field18635;
    }
@@ -57,7 +57,7 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public void method11599(World var1, BlockPos var2, Class7380 var3, Class7380 var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
       if (!var5.method3245()) {
          var1.method6999(1031, var2, 0);
       }
@@ -71,7 +71,7 @@ public class Class3218 extends Class3213 {
    }
 
    @Nullable
-   public static Class7380 method11607(Class7380 var0) {
+   public static BlockState method11607(BlockState var0) {
       if (!var0.method23448(Blocks.ANVIL)) {
          return !var0.method23448(Blocks.field36714)
             ? null
@@ -82,22 +82,22 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field18627, var2.method252(var1.<Direction>method23463(field18627)));
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18627);
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 
    @Override
-   public int method11601(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public int method11601(BlockState var1, Class1665 var2, BlockPos var3) {
       return var1.method23394(var2, var3).field31006;
    }
 }

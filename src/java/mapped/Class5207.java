@@ -17,7 +17,7 @@ public class Class5207 extends Module {
             if (mc.player.field4949 != 1) {
                 if (mc.player.field4949 == 0) {
                     mc.gameSettings.field44632.field13071 = Class9798.method38639(
-                            Minecraft.getInstance().mainWindow.method8039(), mc.gameSettings.field44632.field13070.field34875
+                            Minecraft.getInstance().mainWindow.getHandle(), mc.gameSettings.field44632.field13070.field34875
                     );
                 }
             } else {

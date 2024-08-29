@@ -15,9 +15,9 @@ public class Class5163 extends Module {
 
     public Class5163() {
         super(ModuleCategory.PLAYER, "Derp", "Spazzes around");
-        this.method15972(new Class6005("Rotation Mode", "Rotation Mode", 0, "Random", "Spin", "None"));
-        this.method15972(new Class6004("Hit", "Randomly hit", true));
-        this.method15972(new Class6004("Sneak", "Randomly sneak", true));
+        this.registerSetting(new ModeSetting("Rotation Mode", "Rotation Mode", 0, "Random", "Spin", "None"));
+        this.registerSetting(new BooleanSetting("Hit", "Randomly hit", true));
+        this.registerSetting(new BooleanSetting("Sneak", "Randomly sneak", true));
     }
 
     @EventTarget
@@ -25,9 +25,9 @@ public class Class5163 extends Module {
         if (this.method15996() && var1.method13921()) {
             if (this.method15974("Sneak")) {
                 if (this.field23435) {
-                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
+                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
                 } else {
-                    mc.getClientPlayNetHandler().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
+                    mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
                 }
             }
 

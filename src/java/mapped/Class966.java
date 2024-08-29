@@ -4,7 +4,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 
 import java.util.List;
 
-public class Class966 extends Class944 implements Class935 {
+public class Class966 extends TileEntity implements Class935 {
    private static String[] field5414;
    private long field5415;
    public int field5416;
@@ -60,11 +60,11 @@ public class Class966 extends Class944 implements Class935 {
    }
 
    private void method3990() {
-      this.field5324.method6742((PlayerEntity)null, this.method3774(), Class6067.field26401, Class2266.field14732, 1.0F, 1.0F);
+      this.field5324.method6742((PlayerEntity)null, this.getPos(), Class6067.field26401, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public void method3991(Direction var1) {
-      BlockPos var4 = this.method3774();
+      BlockPos var4 = this.getPos();
       this.field5418 = var1;
       if (!this.field5417) {
          this.field5417 = true;
@@ -72,11 +72,11 @@ public class Class966 extends Class944 implements Class935 {
          this.field5416 = 0;
       }
 
-      this.field5324.method6787(var4, this.method3775().method23383(), 1, var1.method533());
+      this.field5324.method6787(var4, this.method3775().getBlock(), 1, var1.method533());
    }
 
    private void method3992() {
-      BlockPos var3 = this.method3774();
+      BlockPos var3 = this.getPos();
       if (this.field5324.method6783() > this.field5415 + 60L || this.field5419 == null) {
          this.field5415 = this.field5324.method6783();
          Class6488 var4 = new Class6488(var3).method19664(48.0);
@@ -93,10 +93,10 @@ public class Class966 extends Class944 implements Class935 {
    }
 
    private boolean method3993() {
-      BlockPos var3 = this.method3774();
+      BlockPos var3 = this.getPos();
 
       for (Class880 var5 : this.field5419) {
-         if (var5.method3066() && !var5.field5041 && var3.method8317(var5.getPositionVec(), 32.0) && var5.method3204().method33228(Class8613.field38735)) {
+         if (var5.method3066() && !var5.field5041 && var3.method8317(var5.getPositionVec(), 32.0) && var5.getType().method33228(Class8613.field38735)) {
             return true;
          }
       }
@@ -112,7 +112,7 @@ public class Class966 extends Class944 implements Class935 {
 
    private void method3995(World var1) {
       if (var1.field9020) {
-         BlockPos var4 = this.method3774();
+         BlockPos var4 = this.getPos();
          MutableInt var5 = new MutableInt(16700985);
          int var6 = (int)this.field5419.stream().filter(var1x -> var4.method8317(var1x.getPositionVec(), 48.0)).count();
          this.field5419
@@ -122,11 +122,11 @@ public class Class966 extends Class944 implements Class935 {
                var4x -> {
                   float var7 = 1.0F;
                   float var8 = MathHelper.method37766(
-                     (var4x.getPosX() - (double)var4.method8304()) * (var4x.getPosX() - (double)var4.method8304())
-                        + (var4x.getPosZ() - (double)var4.method8306()) * (var4x.getPosZ() - (double)var4.method8306())
+                     (var4x.getPosX() - (double)var4.getX()) * (var4x.getPosX() - (double)var4.getX())
+                        + (var4x.getPosZ() - (double)var4.getZ()) * (var4x.getPosZ() - (double)var4.getZ())
                   );
-                  double var9 = (double)((float)var4.method8304() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.method8304());
-                  double var11 = (double)((float)var4.method8306() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.method8306());
+                  double var9 = (double)((float)var4.getX() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.getX());
+                  double var11 = (double)((float)var4.getZ() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.getZ());
                   int var13 = MathHelper.method37775((var6 - 21) / -2, 3, 15);
 
                   for (int var14 = 0; var14 < var13; var14++) {
@@ -144,8 +144,8 @@ public class Class966 extends Class944 implements Class935 {
    private boolean method3996(Class880 var1) {
       return var1.method3066()
          && !var1.field5041
-         && this.method3774().method8317(var1.getPositionVec(), 48.0)
-         && var1.method3204().method33228(Class8613.field38735);
+         && this.getPos().method8317(var1.getPositionVec(), 48.0)
+         && var1.getType().method33228(Class8613.field38735);
    }
 
    private void method3997(Class880 var1) {

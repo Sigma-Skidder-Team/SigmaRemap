@@ -30,9 +30,9 @@ public class Class2726 extends Class2595 {
             this.field17232.getPosY() - var3.getPosY(),
             this.field17232.getPosZ() - var3.getPosZ()
          );
-         Class7380 var5 = this.field17232
-            .field5024
-            .method6738(
+         BlockState var5 = this.field17232
+            .world
+            .getBlockState(
                new BlockPos(
                   this.field17232.getPosX() + var4.field18048,
                   this.field17232.getPosY() + var4.field18049,
@@ -40,7 +40,7 @@ public class Class2726 extends Class2595 {
                )
             );
          Class7379 var6 = this.field17232
-            .field5024
+            .world
             .method6739(
                new BlockPos(
                   this.field17232.getPosX() + var4.field18048,
@@ -48,7 +48,7 @@ public class Class2726 extends Class2595 {
                   this.field17232.getPosZ() + var4.field18050
                )
             );
-         if (var6.method23486(Class8953.field40469) || var5.method23393()) {
+         if (var6.method23486(Class8953.field40469) || var5.isAir()) {
             double var7 = var4.method11348();
             if (var7 > 0.0) {
                var4.method11333();
@@ -62,7 +62,7 @@ public class Class2726 extends Class2595 {
                }
             }
 
-            if (var5.method23393()) {
+            if (var5.isAir()) {
                var4 = var4.method11337(0.0, var4.field18049, 0.0);
             }
 
@@ -71,7 +71,7 @@ public class Class2726 extends Class2595 {
 
          if (this.field17231 % 10 == 5) {
             this.field17232
-               .field5024
+               .world
                .method6746(Class7940.field34052, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
          }
       }

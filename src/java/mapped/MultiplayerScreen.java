@@ -17,7 +17,7 @@ public class MultiplayerScreen extends Screen {
    private Class1206 field6952;
    private Class1206 field6953;
    private List<ITextComponent> field6954;
-   private Class7730 field6955;
+   private ServerData field6955;
    private Class9635 field6956;
    private Class370 field6957;
    private boolean field6958;
@@ -30,7 +30,7 @@ public class MultiplayerScreen extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       if (this.field6958) {
          this.field6949.method6034(this.field4564, this.field4565, 32, this.field4565 - 64);
       } else {
@@ -56,13 +56,13 @@ public class MultiplayerScreen extends Screen {
       );
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 50, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.direct"), var1 -> {
-            this.field6955 = new Class7730(Class9088.method33883("selectServer.defaultName"), "", false);
+            this.field6955 = new ServerData(I18n.format("selectServer.defaultName"), "", false);
             this.field4562.displayGuiScreen(new Class1320(this, this::method6235, this.field6955));
          })
       );
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 4 + 50, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.add"), var1 -> {
-            this.field6955 = new Class7730(Class9088.method33883("selectServer.defaultName"), "", false);
+            this.field6955 = new ServerData(I18n.format("selectServer.defaultName"), "", false);
             this.field4562.displayGuiScreen(new Class1330(this, this::method6234, this.field6955));
          })
       );
@@ -70,8 +70,8 @@ public class MultiplayerScreen extends Screen {
          new Class1206(this.field4564 / 2 - 154, this.field4565 - 28, 70, 20, new TranslationTextComponent("selectServer.edit"), var1 -> {
             Class1156 var4x = this.field6949.method6023();
             if (var4x instanceof Class1157) {
-               Class7730 var5 = ((Class1157)var4x).method5551();
-               this.field6955 = new Class7730(var5.field33188, var5.field33189, false);
+               ServerData var5 = ((Class1157)var4x).method5551();
+               this.field6955 = new ServerData(var5.field33188, var5.field33189, false);
                this.field6955.method25583(var5);
                this.field4562.displayGuiScreen(new Class1330(this, this::method6233, this.field6955));
             }
@@ -86,8 +86,8 @@ public class MultiplayerScreen extends Screen {
                   TranslationTextComponent var6 = new TranslationTextComponent("selectServer.deleteQuestion");
                   TranslationTextComponent var7 = new TranslationTextComponent("selectServer.deleteWarning", var5);
                   TranslationTextComponent var8 = new TranslationTextComponent("selectServer.deleteButton");
-                  ITextComponent var9 = Class7127.field30659;
-                  this.field4562.displayGuiScreen(new Class829(this::method6232, var6, var7, var8, var9));
+                  ITextComponent var9 = DialogTexts.GUI_CANCEL;
+                  this.field4562.displayGuiScreen(new ConfirmScreen(this::method6232, var6, var7, var8, var9));
                }
             }
          })
@@ -96,14 +96,14 @@ public class MultiplayerScreen extends Screen {
          new Class1206(this.field4564 / 2 + 4, this.field4565 - 28, 70, 20, new TranslationTextComponent("selectServer.refresh"), var1 -> this.method6231())
       );
       this.method2455(
-         new Class1206(this.field4564 / 2 + 4 + 76, this.field4565 - 28, 75, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field6948))
+         new Class1206(this.field4564 / 2 + 4 + 76, this.field4565 - 28, 75, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6948))
       );
       this.method6239();
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       if (this.field6956.method37555()) {
          List var3 = this.field6956.method37557();
          this.field6956.method37556();
@@ -115,7 +115,7 @@ public class MultiplayerScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
       if (this.field6957 != null) {
          this.field6957.interrupt();
          this.field6957 = null;
@@ -143,7 +143,7 @@ public class MultiplayerScreen extends Screen {
    private void method6233(boolean var1) {
       Class1156 var4 = this.field6949.method6023();
       if (var1 && var4 instanceof Class1157) {
-         Class7730 var5 = ((Class1157)var4).method5551();
+         ServerData var5 = ((Class1157)var4).method5551();
          var5.field33188 = this.field6955.field33188;
          var5.field33189 = this.field6955.field33189;
          var5.method25583(this.field6955);
@@ -211,20 +211,20 @@ public class MultiplayerScreen extends Screen {
       if (!(var3 instanceof Class1157)) {
          if (var3 instanceof Class1158) {
             Class9162 var4 = ((Class1158)var3).method5555();
-            this.method6237(new Class7730(var4.method34207(), var4.method34208(), true));
+            this.method6237(new ServerData(var4.method34207(), var4.method34208(), true));
          }
       } else {
          this.method6237(((Class1157)var3).method5551());
       }
    }
 
-   private void method6237(Class7730 var1) {
+   private void method6237(ServerData var1) {
     /*  if (var1.field33189 != null && var1.field33189.contains("hypixel.net") && Class8005.method27372().method18582() < Class5989.field26155.method18582()) {
          Class8005.field34417 = Class5989.field26155;
       }*/
 
       Class5628.method17746(var1);
-      this.field4562.displayGuiScreen(new Class1314(this, this.field4562, var1));
+      this.field4562.displayGuiScreen(new ConnectingScreen(this, this.field4562, var1));
    }
 
    public void method6238(Class1156 var1) {

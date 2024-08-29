@@ -1,14 +1,14 @@
 package mapped;
 
 public class Class8876 {
-   public static final Class49<Block> field40096 = method32295("mined", Registry.field16072);
-   public static final Class49<Class3257> field40097 = method32295("crafted", Registry.field16075);
-   public static final Class49<Class3257> field40098 = method32295("used", Registry.field16075);
-   public static final Class49<Class3257> field40099 = method32295("broken", Registry.field16075);
-   public static final Class49<Class3257> field40100 = method32295("picked_up", Registry.field16075);
-   public static final Class49<Class3257> field40101 = method32295("dropped", Registry.field16075);
-   public static final Class49<Class8992<?>> field40102 = method32295("killed", Registry.field16074);
-   public static final Class49<Class8992<?>> field40103 = method32295("killed_by", Registry.field16074);
+   public static final Class49<Block> field40096 = method32295("mined", Registry.BLOCK);
+   public static final Class49<Item> field40097 = method32295("crafted", Registry.ITEM);
+   public static final Class49<Item> field40098 = method32295("used", Registry.ITEM);
+   public static final Class49<Item> field40099 = method32295("broken", Registry.ITEM);
+   public static final Class49<Item> field40100 = method32295("picked_up", Registry.ITEM);
+   public static final Class49<Item> field40101 = method32295("dropped", Registry.ITEM);
+   public static final Class49<EntityType<?>> field40102 = method32295("killed", Registry.ENTITY_TYPE);
+   public static final Class49<EntityType<?>> field40103 = method32295("killed_by", Registry.ENTITY_TYPE);
    public static final Class49<ResourceLocation> field40104 = method32295("custom", Registry.field16080);
    public static final ResourceLocation field40105 = method32294("leave_game", Class8762.field39447);
    public static final ResourceLocation field40106 = method32294("play_one_minute", Class8762.field39450);

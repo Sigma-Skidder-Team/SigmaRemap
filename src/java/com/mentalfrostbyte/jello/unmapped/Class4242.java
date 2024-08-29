@@ -39,7 +39,7 @@ public class Class4242 extends Class4240 {
                 (float) var5 * var7,
                 (float) (Minecraft.getInstance().mainWindow.method8043() + var5),
                 (float) (Minecraft.getInstance().mainWindow.method8044() + var5),
-                Class1272.field6780
+                CustomResourceLoadProgressGui.field6780
         );
         Class3192.method11422();
         if (this.field20591) {

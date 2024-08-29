@@ -44,7 +44,7 @@ public class Class4317 extends Class4307 {
       int var6 = var5.method27099();
 
       for (int var7 = 0; var7 < var6; var7++) {
-         Class7730 var8 = var5.method27096(var7);
+         ServerData var8 = var5.method27096(var7);
          if (!var4.contains(var8.field33189)) {
             var4.add(var8.field33189);
          }
@@ -132,7 +132,7 @@ public class Class4317 extends Class4307 {
    public void method13027(float var1) {
       this.method13401();
       super.method13027(var1);
-      Class3192.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().method1533().getUsername(), -2236963);
+      Class3192.method11439(ResourceRegistry.field38868, 20.0F, 20.0F, Minecraft.getInstance().getSession().getUsername(), -2236963);
       Class3192.method11440(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
@@ -169,7 +169,7 @@ public class Class4317 extends Class4307 {
    }
 
    private void method13401() {
-      Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class7925.field33940);
+      Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
       Class3192.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, 0.23F));
    }
 

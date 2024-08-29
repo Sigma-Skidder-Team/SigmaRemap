@@ -23,12 +23,12 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    public final ITextComponent field4560;
    public final List<Class1152> field4561 = Lists.newArrayList();
    public Minecraft field4562;
-   public Class216 field4563;
+   public ItemRenderer field4563;
    public int field4564;
    public int field4565;
    public final List<Class1197> field4566 = Lists.newArrayList();
    public boolean field4567;
-   public Class9834 field4568;
+   public FontRenderer field4568;
    private URI field4569;
 
    public Screen(ITextComponent var1) {
@@ -90,7 +90,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    public List<ITextComponent> method2458(ItemStack var1) {
-      return var1.method32153(this.field4562.player, !this.field4562.gameSettings.field44588 ? Class2215.field14480 : Class2215.field14481);
+      return var1.getTooltip(this.field4562.player, !this.field4562.gameSettings.field44588 ? TooltipFlags.NORMAL : TooltipFlags.field14481);
    }
 
    public void method2459(MatrixStack var1, ITextComponent var2, int var3, int var4) {
@@ -127,11 +127,11 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             var22 = this.field4565 - var23 - 6;
          }
 
-         var1.method35294();
+         var1.push();
          short var14 = 400;
-         Class9352 var15 = Class9352.method35409();
-         Class5425 var16 = var15.method35411();
-         var16.method17063(7, Class9337.field43342);
+         Tessellator var15 = Tessellator.getInstance();
+         BufferBuilder var16 = var15.getBuffer();
+         var16.begin(7, DefaultVertexFormats.POSITION_COLOR);
          Class9367 var17 = var1.method35296().method32361();
          method5689(var17, var16, var21 - 3, var22 - 4, var21 + var7 + 3, var22 - 3, 400, -267386864, -267386864);
          method5689(var17, var16, var21 - 3, var22 + var23 + 3, var21 + var7 + 3, var22 + var23 + 4, 400, -267386864, -267386864);
@@ -143,7 +143,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          method5689(var17, var16, var21 - 3, var22 - 3, var21 + var7 + 3, var22 - 3 + 1, 400, 1347420415, 1347420415);
          method5689(var17, var16, var21 - 3, var22 + var23 + 2, var21 + var7 + 3, var22 + var23 + 3, 400, 1344798847, 1344798847);
          RenderSystem.enableDepthTest();
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          RenderSystem.enableBlend();
          RenderSystem.method27938();
          RenderSystem.method27866(7425);
@@ -152,8 +152,8 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          RenderSystem.method27866(7424);
          RenderSystem.disableBlend();
          RenderSystem.enableTexture();
-         Class7735 var18 = Class7733.method25595(Class9352.method35409().method35411());
-         var1.method35291(0.0, 0.0, 400.0);
+         Class7735 var18 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+         var1.translate(0.0, 0.0, 400.0);
 
          for (int var19 = 0; var19 < var2.size(); var19++) {
             Class9125 var20 = (Class9125)var2.get(var19);
@@ -182,7 +182,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             if (var9 == null) {
                ITextComponent var10 = var7.<ITextComponent>getParameter(HoverEvent$Action.SHOW_TEXT);
                if (var10 != null) {
-                  this.method2461(var1, this.field4562.field1294.method38828(var10, Math.max(this.field4564 / 2, 200)), var3, var4);
+                  this.method2461(var1, this.field4562.fontRenderer.method38828(var10, Math.max(this.field4564 / 2, 200)), var3, var4);
                }
             } else if (this.field4562.gameSettings.field44588) {
                this.method2460(var1, var9.getTooltip(), var3, var4);
@@ -239,7 +239,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             } else if (var4.getAction() == ClickEvent$Action.RUN_COMMAND) {
                this.method2466(var4.getValue(), false);
             } else if (var4.getAction() == ClickEvent$Action.COPY_TO_CLIPBOARD) {
-               this.field4562.field1302.method36350(var4.getValue());
+               this.field4562.keyboardListener.method36350(var4.getValue());
             } else {
                field4558.error("Don't know how to handle {}", var4);
             }
@@ -263,10 +263,10 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       this.field4562.player.method5389(var1);
    }
 
-   public void method2467(Minecraft var1, int var2, int var3) {
+   public void init(Minecraft var1, int var2, int var3) {
       this.field4562 = var1;
-      this.field4563 = var1.method1555();
-      this.field4568 = var1.field1294;
+      this.field4563 = var1.getItemRenderer();
+      this.field4568 = var1.fontRenderer;
       this.field4564 = var2;
       this.field4565 = var3;
       this.field4566.clear();
@@ -284,7 +284,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
    }
 
    public void onClose() {
@@ -303,26 +303,26 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    public void method2471(int var1) {
-      Class9352 var4 = Class9352.method35409();
-      Class5425 var5 = var4.method35411();
+      Tessellator var4 = Tessellator.getInstance();
+      BufferBuilder var5 = var4.getBuffer();
       this.field4562.getTextureManager().bindTexture(field6451);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;
-      var5.method17063(7, Class9337.field43346);
-      var5.method17025(0.0, (double)this.field4565, 0.0)
+      var5.begin(7, DefaultVertexFormats.field43346);
+      var5.pos(0.0, (double)this.field4565, 0.0)
          .method17027(0.0F, (float)this.field4565 / 32.0F + (float)var1)
-         .method17026(64, 64, 64, 255)
-         .method17031();
-      var5.method17025((double)this.field4564, (double)this.field4565, 0.0)
+         .color(64, 64, 64, 255)
+         .endVertex();
+      var5.pos((double)this.field4564, (double)this.field4565, 0.0)
          .method17027((float)this.field4564 / 32.0F, (float)this.field4565 / 32.0F + (float)var1)
-         .method17026(64, 64, 64, 255)
-         .method17031();
-      var5.method17025((double)this.field4564, 0.0, 0.0).method17027((float)this.field4564 / 32.0F, (float)var1).method17026(64, 64, 64, 255).method17031();
-      var5.method17025(0.0, 0.0, 0.0).method17027(0.0F, (float)var1).method17026(64, 64, 64, 255).method17031();
-      var4.method35410();
+         .color(64, 64, 64, 255)
+         .endVertex();
+      var5.pos((double)this.field4564, 0.0, 0.0).method17027((float)this.field4564 / 32.0F, (float)var1).color(64, 64, 64, 255).endVertex();
+      var5.pos(0.0, 0.0, 0.0).method17027(0.0F, (float)var1).color(64, 64, 64, 255).endVertex();
+      var4.draw();
    }
 
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return true;
    }
 
@@ -339,52 +339,52 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       Util.getOSType().openURI(var1);
    }
 
-   public static boolean method2475() {
+   public static boolean hasControlDown() {
       return !Minecraft.IS_RUNNING_ON_MAC
-         ? Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 341)
-            || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 345)
-         : Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 343)
-            || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 347);
+         ? Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 341)
+            || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 345)
+         : Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 343)
+            || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 347);
    }
 
    public static boolean method2476() {
-      return Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 340)
-         || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 344);
+      return Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 340)
+         || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 344);
    }
 
    public static boolean method2477() {
-      return Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 342)
-         || Class9798.method38639(Minecraft.getInstance().method1580().method8039(), 346);
+      return Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 342)
+         || Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), 346);
    }
 
    public static boolean method2478(int var0) {
-      return var0 == 88 && method2475() && !method2476() && !method2477();
+      return var0 == 88 && hasControlDown() && !method2476() && !method2477();
    }
 
    public static boolean method2479(int var0) {
-      return var0 == 86 && method2475() && !method2476() && !method2477();
+      return var0 == 86 && hasControlDown() && !method2476() && !method2477();
    }
 
    public static boolean method2480(int var0) {
-      return var0 == 67 && method2475() && !method2476() && !method2477();
+      return var0 == 67 && hasControlDown() && !method2476() && !method2477();
    }
 
    public static boolean method2481(int var0) {
-      return var0 == 65 && method2475() && !method2476() && !method2477();
+      return var0 == 65 && hasControlDown() && !method2476() && !method2477();
    }
 
-   public void method2482(Minecraft var1, int var2, int var3) {
-      this.method2467(var1, var2, var3);
+   public void resize(Minecraft var1, int var2, int var3) {
+      this.init(var1, var2, var3);
    }
 
-   public static void method2483(Runnable var0, String var1, String var2) {
+   public static void wrapScreenError(Runnable var0, String var1, String var2) {
       try {
          var0.run();
       } catch (Throwable var8) {
-         Class4526 var6 = Class4526.method14413(var8, var1);
-         Class8965 var7 = var6.method14410("Affected screen");
-         var7.method32806("Screen name", () -> var2);
-         throw new Class2506(var6);
+         CrashReport var6 = CrashReport.makeCrashReport(var8, var1);
+         CrashReportCategory var7 = var6.makeCategory("Affected screen");
+         var7.addDetail("Screen name", () -> var2);
+         throw new ReportedException(var6);
       }
    }
 

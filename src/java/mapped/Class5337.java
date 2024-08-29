@@ -8,31 +8,31 @@ import org.lwjgl.opengl.GL11;
 public class Class5337 extends Class5325 {
     public Class5337() {
         super(ModuleCategory.MOVEMENT, "ClickTP", "TP's you when you click", new Class5236(), new Class5174());
-        this.method15972(new Class6004("Sneak", "Allows teleport only when sneaking", true));
-        this.method15972(new Class6004("Auto Disable", "Disable ClickTP after teleporting", true));
-        this.method15972(new Class6009<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
+        this.registerSetting(new BooleanSetting("Auto Disable", "Disable ClickTP after teleporting", true));
+        this.registerSetting(new Class6009<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
     }
 
     @EventTarget
     public void method16752(Class4420 var1) {
         if (this.method15996() && (mc.player.method3331() || !this.method15974("Sneak"))) {
-            Class8711 var4 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.method15977("Maximum range"));
+            BlockRayTraceResult var4 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.method15977("Maximum range"));
             BlockPos var5 = null;
             if (var4 != null) {
-                var5 = var4.method31423();
+                var5 = var4.getPos();
             }
 
             this.method16754(
                     this.method16753(),
-                    (double) var5.method8304() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
+                    (double) var5.getX() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11320(),
                     (double) (var5.getY() + 1) - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11321(),
-                    (double) var5.method8306() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
+                    (double) var5.getZ() + 0.5 - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().method37504().method11322()
             );
         }
     }
 
     private double method16753() {
-        return MathHelper.method37763((float) Math.toRadians(90.0F - mc.player.field5032)) * 10.0F;
+        return MathHelper.sin((float) Math.toRadians(90.0F - mc.player.field5032)) * 10.0F;
     }
 
     private void method16754(double var1, double var3, double var5, double var7) {

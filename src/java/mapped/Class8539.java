@@ -26,7 +26,7 @@ public class Class8539 {
             Direction.field673, new Class6979((Class7680)null, new Class8661(new Class7680(1.0F, 0.0F, 0.0F), -90.0F, true), (Class7680)null, (Class8661)null)
          );
          var0.put(
-            Direction.field672, new Class6979((Class7680)null, new Class8661(new Class7680(1.0F, 0.0F, 0.0F), 90.0F, true), (Class7680)null, (Class8661)null)
+            Direction.DOWN, new Class6979((Class7680)null, new Class8661(new Class7680(1.0F, 0.0F, 0.0F), 90.0F, true), (Class7680)null, (Class8661)null)
          );
       }
    );

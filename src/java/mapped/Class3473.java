@@ -11,19 +11,19 @@ public class Class3473 extends Class3472 implements Class3196 {
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
-      return var1.method6738(var2.method8311()).method23393();
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+      return var1.getBlockState(var2.method8311()).isAir();
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return true;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       BlockPos var7 = var3.method8311();
-      Class7380 var8 = Blocks.GRASS.method11579();
+      BlockState var8 = Blocks.GRASS.method11579();
 
       label61:
       for (int var9 = 0; var9 < 128; var9++) {
@@ -31,22 +31,22 @@ public class Class3473 extends Class3472 implements Class3196 {
 
          for (int var11 = 0; var11 < var9 / 16; var11++) {
             var10 = var10.method8336(var2.nextInt(3) - 1, (var2.nextInt(3) - 1) * var2.nextInt(3) / 2, var2.nextInt(3) - 1);
-            if (!var1.method6738(var10.method8313()).method23448(this) || var1.method6738(var10).method23456(var1, var10)) {
+            if (!var1.getBlockState(var10.method8313()).method23448(this) || var1.getBlockState(var10).method23456(var1, var10)) {
                continue label61;
             }
          }
 
-         Class7380 var16 = var1.method6738(var10);
-         if (var16.method23448(var8.method23383()) && var2.nextInt(10) == 0) {
-            ((Class3196)var8.method23383()).method11488(var1, var2, var10, var16);
+         BlockState var16 = var1.getBlockState(var10);
+         if (var16.method23448(var8.getBlock()) && var2.nextInt(10) == 0) {
+            ((Class3196)var8.getBlock()).method11488(var1, var2, var10, var16);
          }
 
-         if (var16.method23393()) {
-            Class7380 var12;
+         if (var16.isAir()) {
+            BlockState var12;
             if (var2.nextInt(8) != 0) {
                var12 = var8;
             } else {
-               List var13 = var1.method7003(var10).method32507().method24280();
+               List var13 = var1.getBiome(var10).method32507().method24280();
                if (var13.isEmpty()) {
                   continue;
                }

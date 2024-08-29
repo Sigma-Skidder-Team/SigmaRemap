@@ -17,14 +17,14 @@ import java.util.List;
 import java.util.Map;
 
 public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
-   public final Class1654 field1049;
+   public final FontResourceManager field1049;
 
-   public Class272(Class1654 var1) {
+   public Class272(FontResourceManager var1) {
       this.field1049 = var1;
    }
 
-   public Map<ResourceLocation, List<Class1768>> method970(Class191 var1, Class7165 var2) {
-      var2.method22501();
+   public Map<ResourceLocation, List<Class1768>> method970(IResourceManager var1, IProfiler var2) {
+      var2.startTick();
       Gson var5 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
       Map<ResourceLocation, List<Class1768>> var6 = Maps.newHashMap();
 
@@ -60,21 +60,21 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
 
                         var2.endSection();
                      } catch (RuntimeException var51) {
-                        Class1654.method6711()
+                        FontResourceManager.method6711()
                            .warn("Unable to read definition '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.method7765(), var51.getMessage());
                      }
                   }
 
                   var2.endSection();
                } catch (RuntimeException var56) {
-                  Class1654.method6711()
+                  FontResourceManager.method6711()
                      .warn("Unable to load font '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.method7765(), var56.getMessage());
                }
 
                var2.endSection();
             }
          } catch (IOException var57) {
-            Class1654.method6711().warn("Unable to load font '{}' in fonts.json: {}", var10, var57.getMessage());
+            FontResourceManager.method6711().warn("Unable to load font '{}' in fonts.json: {}", var10, var57.getMessage());
          }
 
          var2.startSection("caching");
@@ -97,23 +97,23 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
          var2.endSection();
       }
 
-      var2.method22502();
+      var2.endTick();
       return var6;
    }
 
-   public void method971(Map<ResourceLocation, List<Class1768>> var1, Class191 var2, Class7165 var3) {
-      var3.method22501();
+   public void method971(Map<ResourceLocation, List<Class1768>> var1, IResourceManager var2, IProfiler var3) {
+      var3.startTick();
       var3.startSection("closing");
-      Class1654.method6712(this.field1049).values().forEach(Class1807::close);
-      Class1654.method6712(this.field1049).clear();
+      FontResourceManager.method6712(this.field1049).values().forEach(Class1807::close);
+      FontResourceManager.method6712(this.field1049).clear();
       var3.endStartSection("reloading");
       var1.forEach((var1x, var2x) -> {
-         Class1807 var5 = new Class1807(Class1654.method6713(this.field1049), var1x);
+         Class1807 var5 = new Class1807(FontResourceManager.method6713(this.field1049), var1x);
          var5.method7919(Lists.reverse(var2x));
-         Class1654.method6712(this.field1049).put(var1x, var5);
+         FontResourceManager.method6712(this.field1049).put(var1x, var5);
       });
       var3.endSection();
-      var3.method22502();
+      var3.endTick();
    }
 
    @Override

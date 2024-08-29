@@ -42,7 +42,7 @@ public interface Class6618 {
 
    Set<RegistryKey<World>> method20135();
 
-   Class8904 method20136();
+   DynamicRegistries method20136();
 
    boolean method20129(int var1);
 

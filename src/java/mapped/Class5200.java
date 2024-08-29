@@ -14,14 +14,14 @@ public class Class5200 extends Module {
 
     public Class5200() {
         super(ModuleCategory.ITEM, "AutoTools", "Picks the best tool when breaking blocks");
-        this.method15972(new Class6005("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
+        this.registerSetting(new ModeSetting("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
     }
 
     @EventTarget
     public void method16189(Class4426 var1) {
         if (this.method15996() && mc.player != null && var1.method13973() == 0) {
             if (this.field23511 != -1) {
-                mc.player.field4902.field5443 = this.field23511;
+                mc.player.inventory.currentItem = this.field23511;
                 this.field23511 = -1;
             }
         }
@@ -36,37 +36,37 @@ public class Class5200 extends Module {
 
     @EventTarget
     private void method16191(TickEvent var1) {
-        if (this.method15996() && mc.player != null && mc.gameSettings.field44643.method8509()) {
+        if (this.method15996() && mc.player != null && mc.gameSettings.keyBindAttack.isKeyDown()) {
             this.method16192(null);
         }
     }
 
     public void method16192(BlockPos var1) {
         BlockPos var4 = var1 == null
-                ? (mc.field1346.method31417() != Class2100.field13690 ? null : ((Class8711) mc.field1346).method31423())
+                ? (mc.objectMouseOver.getType() != RayTraceResult.Type.BLOCK ? null : ((BlockRayTraceResult) mc.objectMouseOver).getPos())
                 : var1;
         if (var4 != null) {
-            int var5 = Class7789.method25837(mc.world.method6738(var4));
+            int var5 = Class7789.method25837(mc.world.getBlockState(var4));
             if (var5 != -1) {
-                if (mc.player.field4902.field5443 != var5 % 9 && this.field23511 == -1) {
-                    this.field23511 = mc.player.field4902.field5443;
+                if (mc.player.inventory.currentItem != var5 % 9 && this.field23511 == -1) {
+                    this.field23511 = mc.player.inventory.currentItem;
                 }
 
                 if (var5 >= 36 && var5 <= 44) {
-                    mc.player.field4902.field5443 = var5 % 9;
+                    mc.player.inventory.currentItem = var5 % 9;
                 } else if (Client.getInstance().method19939().method31333() > 1) {
                     String var6 = this.getStringSettingValueByName("Inv Mode");
-                    if (var6.equals("OpenInv") && !(mc.currentScreen instanceof Class859)) {
+                    if (var6.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
                         return;
                     }
 
                     if (var6.equals("FakeInv") && Class8005.method27349() <= Class5989.field26136.method18582()) {
-                        mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
-                    mc.player.field4902.field5443 = Class7789.method25857(var5);
+                    mc.player.inventory.currentItem = Class7789.method25857(var5);
                     if (var6.equals("FakeInv")) {
-                        mc.getClientPlayNetHandler().sendPacket(new Class5482(-1));
+                        mc.getConnection().sendPacket(new Class5482(-1));
                     }
                 }
             }

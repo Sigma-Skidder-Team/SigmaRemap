@@ -27,7 +27,7 @@ public class Class823 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4512 = new Class1292(this);
       new Class376(this, "Realms-pending-invitations-fetcher").start();
       this.<Class1292>method2456(this.field4512);
@@ -40,7 +40,7 @@ public class Class823 extends Class798 {
       );
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 50, this.field4565 - 32, 100, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(new Class806(this.field4509))
+            this.field4564 / 2 - 50, this.field4565 - 32, 100, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(new Class806(this.field4509))
          )
       );
       this.field4516 = this.<Class1206>method2455(
@@ -154,17 +154,17 @@ public class Class823 extends Class798 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method2394(Class823 var0) {
+   public static FontRenderer method2394(Class823 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2395(Class823 var0) {
+   public static FontRenderer method2395(Class823 var0) {
       return var0.field4568;
    }
 
    // $VF: synthetic method
-   public static Class9834 method2396(Class823 var0) {
+   public static FontRenderer method2396(Class823 var0) {
       return var0.field4568;
    }
 

@@ -10,19 +10,19 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class HoverEvent$ItemHover {
-   private final Class3257 item;
+   private final Item item;
    private final int count;
-   private final Class39 tag;
+   private final CompoundNBT tag;
    private ItemStack stack;
 
-   public HoverEvent$ItemHover(Class3257 item, int count, Class39 tag) {
+   public HoverEvent$ItemHover(Item item, int count, CompoundNBT tag) {
       this.item = item;
       this.count = count;
       this.tag = tag;
    }
 
    public HoverEvent$ItemHover(ItemStack stack) {
-      this(stack.method32107(), stack.method32179(), stack.method32142() != null ? stack.method32142().method79() : null);
+      this(stack.getItem(), stack.getCount(), stack.method32142() != null ? stack.method32142().method79() : null);
    }
 
    @Override
@@ -57,30 +57,30 @@ public class HoverEvent$ItemHover {
 
    private static HoverEvent$ItemHover deserialize(JsonElement element) {
       if (element.isJsonPrimitive()) {
-         return new HoverEvent$ItemHover(Registry.field16075.method9184(new ResourceLocation(element.getAsString())), 1, (Class39)null);
+         return new HoverEvent$ItemHover(Registry.ITEM.method9184(new ResourceLocation(element.getAsString())), 1, (CompoundNBT)null);
       } else {
          JsonObject item = JSONUtils.method32781(element, "item");
-         Class3257 i = Registry.field16075.method9184(new ResourceLocation(JSONUtils.method32763(item, "id")));
+         Item i = Registry.ITEM.method9184(new ResourceLocation(JSONUtils.method32763(item, "id")));
          int s = JSONUtils.getInt(item, "count", 1);
          if (item.has("tag")) {
             String commandsyntaxexception = JSONUtils.method32763(item, "tag");
 
             try {
-               Class39 var7 = Class7671.method25188(commandsyntaxexception);
+               CompoundNBT var7 = Class7671.method25188(commandsyntaxexception);
                return new HoverEvent$ItemHover(i, s, var7);
             } catch (CommandSyntaxException var8) {
                HoverEvent.access$400().warn("Failed to parse tag: {}", commandsyntaxexception, var8);
             }
          }
 
-         return new HoverEvent$ItemHover(i, s, (Class39)null);
+         return new HoverEvent$ItemHover(i, s, (CompoundNBT)null);
       }
    }
 
    @Nullable
    private static HoverEvent$ItemHover deserialize(ITextComponent component) {
       try {
-         Class39 var3 = Class7671.method25188(component.getString());
+         CompoundNBT var3 = Class7671.method25188(component.getString());
          return new HoverEvent$ItemHover(ItemStack.method32104(var3));
       } catch (CommandSyntaxException var4) {
          HoverEvent.access$400().warn("Failed to parse item tag: {}", component, var4);
@@ -90,7 +90,7 @@ public class HoverEvent$ItemHover {
 
    private JsonElement serialize() {
       JsonObject var3 = new JsonObject();
-      var3.addProperty("id", Registry.field16075.method9181(this.item).toString());
+      var3.addProperty("id", Registry.ITEM.getKey(this.item).toString());
       if (this.count != 1) {
          var3.addProperty("count", this.count);
       }

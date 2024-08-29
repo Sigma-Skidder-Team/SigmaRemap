@@ -7,9 +7,9 @@ public class Class4854 implements Class4842 {
    private final ResourceLocation field22648;
    private final String field22649;
    private final ItemStack field22650;
-   private final Class25<Class120> field22651;
+   private final NonNullList<Class120> field22651;
 
-   public Class4854(ResourceLocation var1, String var2, ItemStack var3, Class25<Class120> var4) {
+   public Class4854(ResourceLocation var1, String var2, ItemStack var3, NonNullList<Class120> var4) {
       this.field22648 = var1;
       this.field22649 = var2;
       this.field22650 = var3;
@@ -32,12 +32,12 @@ public class Class4854 implements Class4842 {
    }
 
    @Override
-   public ItemStack method14966() {
+   public ItemStack getRecipeOutput() {
       return this.field22650;
    }
 
    @Override
-   public Class25<Class120> method14969() {
+   public NonNullList<Class120> method14969() {
       return this.field22651;
    }
 
@@ -47,7 +47,7 @@ public class Class4854 implements Class4842 {
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          ItemStack var8 = var1.method3618(var7);
-         if (!var8.method32105()) {
+         if (!var8.isEmpty()) {
             var6++;
             var5.method19118(var8, 1);
          }
@@ -71,7 +71,7 @@ public class Class4854 implements Class4842 {
    }
 
    // $VF: synthetic method
-   public static Class25<Class120> method14999(Class4854 var0) {
+   public static NonNullList<Class120> method14999(Class4854 var0) {
       return var0.field22651;
    }
 

@@ -19,7 +19,7 @@ public class Class1055 extends Class1047 {
    private float field5837;
    private float field5838;
 
-   public Class1055(Class8992<? extends Class1055> var1, World var2) {
+   public Class1055(EntityType<? extends Class1055> var1, World var2) {
       super(var1, var2);
       this.field5054.setSeed((long)this.method3205());
       this.field5834 = 1.0F / (this.field5054.nextFloat() + 1.0F) * 0.2F;
@@ -74,21 +74,21 @@ public class Class1055 extends Class1047 {
       this.field5832 = this.field5831;
       this.field5829 = this.field5829 + this.field5834;
       if ((double)this.field5829 > Math.PI * 2) {
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             this.field5829 = (float)((double)this.field5829 - (Math.PI * 2));
             if (this.field5054.nextInt(10) == 0) {
                this.field5834 = 1.0F / (this.field5054.nextFloat() + 1.0F) * 0.2F;
             }
 
-            this.field5024.method6786(this, (byte)19);
+            this.world.method6786(this, (byte)19);
          } else {
             this.field5829 = (float) (Math.PI * 2);
          }
       }
 
       if (!this.method3255()) {
-         this.field5831 = MathHelper.method37771(MathHelper.method37763(this.field5829)) * (float) Math.PI * 0.25F;
-         if (!this.field5024.field9020) {
+         this.field5831 = MathHelper.method37771(MathHelper.sin(this.field5829)) * (float) Math.PI * 0.25F;
+         if (!this.world.field9020) {
             double var5 = this.method3433().field18049;
             if (!this.method3033(Class8254.field35491)) {
                if (!this.method3247()) {
@@ -109,7 +109,7 @@ public class Class1055 extends Class1047 {
             this.field5835 *= 0.99F;
          } else {
             float var3 = this.field5829 / (float) Math.PI;
-            this.field5831 = MathHelper.method37763(var3 * var3 * (float) Math.PI) * (float) Math.PI * 0.25F;
+            this.field5831 = MathHelper.sin(var3 * var3 * (float) Math.PI) * (float) Math.PI * 0.25F;
             if (!((double)var3 > 0.75)) {
                this.field5835 *= 0.8F;
             } else {
@@ -118,7 +118,7 @@ public class Class1055 extends Class1047 {
             }
          }
 
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             this.method3435((double)(this.field5836 * this.field5833), (double)(this.field5837 * this.field5833), (double)(this.field5838 * this.field5833));
          }
 
@@ -154,7 +154,7 @@ public class Class1055 extends Class1047 {
       for (int var4 = 0; var4 < 30; var4++) {
          Vector3d var5 = this.method4837(new Vector3d((double)this.field5054.nextFloat() * 0.6 - 0.3, -1.0, (double)this.field5054.nextFloat() * 0.6 - 0.3));
          Vector3d var6 = var5.method11344(0.3 + (double)(this.field5054.nextFloat() * 2.0F));
-         ((ServerWorld)this.field5024)
+         ((ServerWorld)this.world)
             .method6939(
                Class7940.field34095, var3.field18048, var3.field18049 + 0.5, var3.field18050, 0, var6.field18048, var6.field18049, var6.field18050, 0.1F
             );
@@ -166,7 +166,7 @@ public class Class1055 extends Class1047 {
       this.move(Class2107.field13742, this.method3433());
    }
 
-   public static boolean method4839(Class8992<Class1055> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4839(EntityType<Class1055> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var3.getY() > 45 && var3.getY() < var1.method6776();
    }
 

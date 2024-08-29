@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public enum Direction implements Class83 {
-   field672(0, 1, -1, "down", Class1892.field11093, Class113.field414, new Class1998(0, -1, 0)),
+   DOWN(0, 1, -1, "down", Class1892.field11093, Class113.field414, new Class1998(0, -1, 0)),
    field673(1, 0, -1, "up", Class1892.field11092, Class113.field414, new Class1998(0, 1, 0)),
    NORTH(2, 3, 2, "north", Class1892.field11093, Class113.field415, new Class1998(0, 0, -1)),
    SOUTH(3, 2, 0, "south", Class1892.field11092, Class113.field415, new Class1998(0, 0, 1)),
@@ -36,7 +36,7 @@ public enum Direction implements Class83 {
       .collect(Collectors.toMap(var0 -> new BlockPos(var0.method556()).method8332(), var0 -> (Direction)var0, (var0, var1) -> {
          throw new IllegalArgumentException("Duplicate keys");
       }, Long2ObjectOpenHashMap::new));
-   private static final Direction[] field690 = new Direction[]{field672, field673, NORTH, SOUTH, WEST, EAST};
+   private static final Direction[] field690 = new Direction[]{DOWN, field673, NORTH, SOUTH, WEST, EAST};
 
    private Direction(int var3, int var4, int var5, String var6, Class1892 var7, Class113 var8, Class1998 var9) {
       this.field678 = var3;
@@ -51,10 +51,10 @@ public enum Direction implements Class83 {
    public static Direction[] method529(Entity var0) {
       float var3 = var0.method3282(1.0F) * (float) (Math.PI / 180.0);
       float var4 = -var0.method3136(1.0F) * (float) (Math.PI / 180.0);
-      float var5 = MathHelper.method37763(var3);
-      float var6 = MathHelper.method37764(var3);
-      float var7 = MathHelper.method37763(var4);
-      float var8 = MathHelper.method37764(var4);
+      float var5 = MathHelper.sin(var3);
+      float var6 = MathHelper.cos(var3);
+      float var7 = MathHelper.sin(var4);
+      float var8 = MathHelper.cos(var4);
       boolean var9 = var7 > 0.0F;
       boolean var10 = var5 < 0.0F;
       boolean var11 = var8 > 0.0F;
@@ -64,7 +64,7 @@ public enum Direction implements Class83 {
       float var15 = var12 * var6;
       float var16 = var14 * var6;
       Direction var17 = !var9 ? WEST : EAST;
-      Direction var18 = !var10 ? field672 : field673;
+      Direction var18 = !var10 ? DOWN : field673;
       Direction var19 = !var11 ? NORTH : SOUTH;
       if (!(var12 > var14)) {
          if (!(var13 > var16)) {
@@ -85,7 +85,7 @@ public enum Direction implements Class83 {
 
    public static Direction method531(Class9367 var0, Direction var1) {
       Class1998 var4 = var1.method556();
-      Class7755 var5 = new Class7755((float)var4.method8304(), (float)var4.getY(), (float)var4.method8306(), 0.0F);
+      Class7755 var5 = new Class7755((float)var4.getX(), (float)var4.getY(), (float)var4.getZ(), 0.0F);
       var5.method25709(var0);
       return method554(var5.method25701(), var5.method25702(), var5.method25703());
    }
@@ -159,7 +159,7 @@ public enum Direction implements Class83 {
    }
 
    public int method539() {
-      return this.field684.method8304();
+      return this.field684.getX();
    }
 
    public int method540() {
@@ -167,7 +167,7 @@ public enum Direction implements Class83 {
    }
 
    public int method541() {
-      return this.field684.method8306();
+      return this.field684.getZ();
    }
 
    public Class7680 method542() {
@@ -201,7 +201,7 @@ public enum Direction implements Class83 {
    }
 
    public static Direction method549(double var0) {
-      return method547(MathHelper.method37769(var0 / 90.0 + 0.5) & 3);
+      return method547(MathHelper.floor(var0 / 90.0 + 0.5) & 3);
    }
 
    public static Direction method550(Class113 var0, Class1892 var1) {
@@ -209,7 +209,7 @@ public enum Direction implements Class83 {
          case 1:
             return var1 == Class1892.field11092 ? EAST : WEST;
          case 2:
-            return var1 == Class1892.field11092 ? field673 : field672;
+            return var1 == Class1892.field11092 ? field673 : DOWN;
          case 3:
          default:
             return var1 == Class1892.field11092 ? SOUTH : NORTH;
@@ -233,7 +233,7 @@ public enum Direction implements Class83 {
       float var6 = Float.MIN_VALUE;
 
       for (Direction var10 : field685) {
-         float var11 = var0 * (float)var10.field684.method8304() + var1 * (float)var10.field684.getY() + var2 * (float)var10.field684.method8306();
+         float var11 = var0 * (float)var10.field684.getX() + var1 * (float)var10.field684.getY() + var2 * (float)var10.field684.getZ();
          if (var11 > var6) {
             var6 = var11;
             var5 = var10;
@@ -269,8 +269,8 @@ public enum Direction implements Class83 {
 
    public boolean method557(float var1) {
       float var4 = var1 * (float) (Math.PI / 180.0);
-      float var5 = -MathHelper.method37763(var4);
-      float var6 = MathHelper.method37764(var4);
-      return (float)this.field684.method8304() * var5 + (float)this.field684.method8306() * var6 > 0.0F;
+      float var5 = -MathHelper.sin(var4);
+      float var6 = MathHelper.cos(var4);
+      return (float)this.field684.getX() * var5 + (float)this.field684.getZ() * var6 > 0.0F;
    }
 }

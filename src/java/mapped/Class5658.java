@@ -3,13 +3,13 @@ package mapped;
 public class Class5658 extends Class5651<Class1105, Class2820> {
    private static final ResourceLocation field25020 = new ResourceLocation("textures/entity/guardian.png");
    private static final ResourceLocation field25021 = new ResourceLocation("textures/entity/guardian_beam.png");
-   private static final Class4520 field25022 = Class4520.method14312(field25021);
+   private static final RenderType field25022 = RenderType.getEntityCutoutNoCull(field25021);
 
-   public Class5658(Class8853 var1) {
+   public Class5658(EntityRendererManager var1) {
       this(var1, 0.5F);
    }
 
-   public Class5658(Class8853 var1, float var2) {
+   public Class5658(EntityRendererManager var1, float var2) {
       super(var1, new Class2820(), var2);
    }
 
@@ -44,11 +44,11 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       Class880 var9 = var1.method5306();
       if (var9 != null) {
          float var10 = var1.method5310(var3);
-         float var11 = (float)var1.field5024.method6783() + var3;
+         float var11 = (float)var1.world.method6783() + var3;
          float var12 = var11 * 0.5F % 1.0F;
          float var13 = var1.method3393();
-         var4.method35294();
-         var4.method35291(0.0, (double)var13, 0.0);
+         var4.push();
+         var4.translate(0.0, (double)var13, 0.0);
          Vector3d var14 = this.method17861(var9, (double)var9.method3430() * 0.5, var3);
          Vector3d var15 = this.method17861(var1, (double)var13, var3);
          Vector3d var16 = var14.method11336(var15);
@@ -66,22 +66,22 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          int var25 = 128 - (int)(var22 * 64.0F);
          float var26 = 0.2F;
          float var27 = 0.282F;
-         float var28 = MathHelper.method37764(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
-         float var29 = MathHelper.method37763(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
-         float var30 = MathHelper.method37764(var21 + (float) (Math.PI / 4)) * 0.282F;
-         float var31 = MathHelper.method37763(var21 + (float) (Math.PI / 4)) * 0.282F;
-         float var32 = MathHelper.method37764(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
-         float var33 = MathHelper.method37763(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
-         float var34 = MathHelper.method37764(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
-         float var35 = MathHelper.method37763(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
-         float var36 = MathHelper.method37764(var21 + (float) Math.PI) * 0.2F;
-         float var37 = MathHelper.method37763(var21 + (float) Math.PI) * 0.2F;
-         float var38 = MathHelper.method37764(var21 + 0.0F) * 0.2F;
-         float var39 = MathHelper.method37763(var21 + 0.0F) * 0.2F;
-         float var40 = MathHelper.method37764(var21 + (float) (Math.PI / 2)) * 0.2F;
-         float var41 = MathHelper.method37763(var21 + (float) (Math.PI / 2)) * 0.2F;
-         float var42 = MathHelper.method37764(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
-         float var43 = MathHelper.method37763(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
+         float var28 = MathHelper.cos(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
+         float var29 = MathHelper.sin(var21 + (float) (Math.PI * 3.0 / 4.0)) * 0.282F;
+         float var30 = MathHelper.cos(var21 + (float) (Math.PI / 4)) * 0.282F;
+         float var31 = MathHelper.sin(var21 + (float) (Math.PI / 4)) * 0.282F;
+         float var32 = MathHelper.cos(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
+         float var33 = MathHelper.sin(var21 + ((float) Math.PI * 5.0F / 4.0F)) * 0.282F;
+         float var34 = MathHelper.cos(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
+         float var35 = MathHelper.sin(var21 + ((float) Math.PI * 7.0F / 4.0F)) * 0.282F;
+         float var36 = MathHelper.cos(var21 + (float) Math.PI) * 0.2F;
+         float var37 = MathHelper.sin(var21 + (float) Math.PI) * 0.2F;
+         float var38 = MathHelper.cos(var21 + 0.0F) * 0.2F;
+         float var39 = MathHelper.sin(var21 + 0.0F) * 0.2F;
+         float var40 = MathHelper.cos(var21 + (float) (Math.PI / 2)) * 0.2F;
+         float var41 = MathHelper.sin(var21 + (float) (Math.PI / 2)) * 0.2F;
+         float var42 = MathHelper.cos(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
+         float var43 = MathHelper.sin(var21 + (float) (Math.PI * 3.0 / 2.0)) * 0.2F;
          float var44 = 0.0F;
          float var45 = 0.4999F;
          float var46 = -1.0F + var12;
@@ -115,12 +115,12 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       Class5422 var0, Class9367 var1, Class8967 var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
    ) {
       var0.method17040(var1, var3, var4, var5)
-         .method17026(var6, var7, var8, 255)
+         .color(var6, var7, var8, 255)
          .method17027(var9, var10)
          .method17035(Class213.field798)
          .method17034(15728880)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
-         .method17031();
+         .endVertex();
    }
 
    public ResourceLocation method17843(Class1105 var1) {

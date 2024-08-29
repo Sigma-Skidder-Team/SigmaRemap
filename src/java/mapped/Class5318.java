@@ -41,11 +41,11 @@ public class Class5318 extends Module {
                 }
             } else {
                 Class5487 var6 = (Class5487) var1.method13898();
-                if (var6.method17266() == Class8992.field41006) {
+                if (var6.method17266() == EntityType.field41006) {
                     var1.method13900(true);
                 }
 
-                if (var6.method17266() == Class8992.field41035) {
+                if (var6.method17266() == EntityType.field41035) {
                     var1.method13900(true);
                 }
             }

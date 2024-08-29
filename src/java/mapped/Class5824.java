@@ -13,28 +13,28 @@ public class Class5824 extends Class5823 {
    private String field25519;
    private final Class4923 field25520 = Class4923.method15238();
 
-   public Class5824(int var1, Class974 var2) {
+   public Class5824(int var1, PlayerInventory var2) {
       this(var1, var2, Class8786.field39521);
    }
 
-   public Class5824(int var1, Class974 var2, Class8786 var3) {
+   public Class5824(int var1, PlayerInventory var2, Class8786 var3) {
       super(Class8298.field35655, var1, var2, var3);
       this.method18125(this.field25520);
    }
 
    @Override
-   public boolean method18191(Class7380 var1) {
+   public boolean method18191(BlockState var1) {
       return var1.method23446(Class7645.field32765);
    }
 
    @Override
    public boolean method18189(PlayerEntity var1, boolean var2) {
-      return (var1.field4919.field29609 || var1.field4920 >= this.field25520.method15234()) && this.field25520.method15234() > 0;
+      return (var1.abilities.isCreativeMode || var1.field4920 >= this.field25520.method15234()) && this.field25520.method15234() > 0;
    }
 
    @Override
    public ItemStack method18190(PlayerEntity var1, ItemStack var2) {
-      if (!var1.field4919.field29609) {
+      if (!var1.abilities.isCreativeMode) {
          var1.method2727(-this.field25520.method15234());
       }
 
@@ -43,7 +43,7 @@ public class Class5824 extends Class5823 {
          this.field25513.method3621(1, ItemStack.EMPTY);
       } else {
          ItemStack var5 = this.field25513.method3618(1);
-         if (!var5.method32105() && var5.method32179() > this.field25518) {
+         if (!var5.isEmpty() && var5.getCount() > this.field25518) {
             var5.method32182(this.field25518);
             this.field25513.method3621(1, var5);
          } else {
@@ -53,9 +53,9 @@ public class Class5824 extends Class5823 {
 
       this.field25520.method15235(0);
       this.field25514.method31716((var1x, var2x) -> {
-         Class7380 var5x = var1x.method6738(var2x);
-         if (!var1.field4919.field29609 && var5x.method23446(Class7645.field32765) && var1.method3013().nextFloat() < 0.12F) {
-            Class7380 var6 = Class3218.method11607(var5x);
+         BlockState var5x = var1x.getBlockState(var2x);
+         if (!var1.abilities.isCreativeMode && var5x.method23446(Class7645.field32765) && var1.method3013().nextFloat() < 0.12F) {
+            BlockState var6 = Class3218.method11607(var5x);
             if (var6 != null) {
                var1x.method6725(var2x, var6, 2);
                var1x.method6999(1030, var2x, 0);
@@ -77,18 +77,18 @@ public class Class5824 extends Class5823 {
       int var4 = 0;
       int var5 = 0;
       int var6 = 0;
-      if (var3.method32105()) {
+      if (var3.isEmpty()) {
          this.field25512.method3621(0, ItemStack.EMPTY);
          this.field25520.method15235(0);
       } else {
          ItemStack var7 = var3.copy();
          ItemStack var8 = this.field25513.method3618(1);
          Map<Class6069, Integer> var9 = Class7858.method26312(var7);
-         var5 = var5 + var3.method32169() + (var8.method32105() ? 0 : var8.method32169());
+         var5 = var5 + var3.method32169() + (var8.isEmpty() ? 0 : var8.method32169());
          this.field25518 = 0;
-         if (!var8.method32105()) {
-            boolean var10 = var8.method32107() == Class8514.field38070 && !Class3290.method11830(var8).isEmpty();
-            if (var7.method32115() && var7.method32107().method11699(var3, var8)) {
+         if (!var8.isEmpty()) {
+            boolean var10 = var8.getItem() == Items.field38070 && !Class3290.method11830(var8).isEmpty();
+            if (var7.method32115() && var7.getItem().method11699(var3, var8)) {
                int var24 = Math.min(var7.method32117(), var7.method32119() / 4);
                if (var24 <= 0) {
                   this.field25512.method3621(0, ItemStack.EMPTY);
@@ -97,7 +97,7 @@ public class Class5824 extends Class5823 {
                }
 
                int var26;
-               for (var26 = 0; var24 > 0 && var26 < var8.method32179(); var26++) {
+               for (var26 = 0; var24 > 0 && var26 < var8.getCount(); var26++) {
                   int var28 = var7.method32117() - var24;
                   var7.method32118(var28);
                   var4++;
@@ -106,7 +106,7 @@ public class Class5824 extends Class5823 {
 
                this.field25518 = var26;
             } else {
-               if (!var10 && (var7.method32107() != var8.method32107() || !var7.method32115())) {
+               if (!var10 && (var7.getItem() != var8.getItem() || !var7.method32115())) {
                   this.field25512.method3621(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
@@ -138,7 +138,7 @@ public class Class5824 extends Class5823 {
                      int var17 = (Integer)var23.get(var30);
                      var17 = var16 == var17 ? var17 + 1 : Math.max(var17, var16);
                      boolean var18 = var30.method18821(var3);
-                     if (this.field25515.field4919.field29609 || var3.method32107() == Class8514.field38070) {
+                     if (this.field25515.abilities.isCreativeMode || var3.getItem() == Items.field38070) {
                         var18 = true;
                      }
 
@@ -178,7 +178,7 @@ public class Class5824 extends Class5823 {
                         }
 
                         var4 += var32 * var17;
-                        if (var3.method32179() > 1) {
+                        if (var3.getCount() > 1) {
                            var4 = 40;
                         }
                      }
@@ -214,13 +214,13 @@ public class Class5824 extends Class5823 {
             this.field25520.method15235(39);
          }
 
-         if (this.field25520.method15234() >= 40 && !this.field25515.field4919.field29609) {
+         if (this.field25520.method15234() >= 40 && !this.field25515.abilities.isCreativeMode) {
             var7 = ItemStack.EMPTY;
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             int var22 = var7.method32169();
-            if (!var8.method32105() && var22 < var8.method32169()) {
+            if (!var8.isEmpty() && var22 < var8.method32169()) {
                var22 = var8.method32169();
             }
 

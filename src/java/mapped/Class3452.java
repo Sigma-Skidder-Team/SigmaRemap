@@ -13,27 +13,27 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public Class7380 method12122(Class1660 var1) {
+   public BlockState method12122(Class1660 var1) {
       return this.method11579().method23465(field19267, Integer.valueOf(var1.method6814().nextInt(25)));
    }
 
    @Override
-   public boolean method11499(Class7380 var1) {
+   public boolean method11499(BlockState var1) {
       return var1.<Integer>method23463(field19267) < 25;
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19267) < 25 && var4.nextDouble() < this.field19268) {
          BlockPos var7 = var3.method8349(this.field19256);
-         if (this.method12127(var2.method6738(var7))) {
+         if (this.method12127(var2.getBlockState(var7))) {
             var2.method6730(var7, var1.method23459(field19267));
          }
       }
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var2 == this.field19256.method536() && !var1.method23443(var4, var5)) {
          var4.method6860().method20726(var5, this, 1);
       }
@@ -50,27 +50,27 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19267);
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
-      return this.method12127(var1.method6738(var2.method8349(this.field19256)));
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+      return this.method12127(var1.getBlockState(var2.method8349(this.field19256)));
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return true;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       BlockPos var7 = var3.method8349(this.field19256);
       int var8 = Math.min(var4.<Integer>method23463(field19267) + 1, 25);
       int var9 = this.method12128(var2);
 
-      for (int var10 = 0; var10 < var9 && this.method12127(var1.method6738(var7)); var10++) {
+      for (int var10 = 0; var10 < var9 && this.method12127(var1.getBlockState(var7)); var10++) {
          var1.method6730(var7, var4.method23465(field19267, Integer.valueOf(var8)));
          var7 = var7.method8349(this.field19256);
          var8 = Math.min(var8 + 1, 25);
@@ -79,7 +79,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
 
    public abstract int method12128(Random var1);
 
-   public abstract boolean method12127(Class7380 var1);
+   public abstract boolean method12127(BlockState var1);
 
    @Override
    public Class3452 method12124() {

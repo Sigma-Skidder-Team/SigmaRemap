@@ -29,7 +29,7 @@ public class Class8039 {
             this.field34548 = "water";
          }
       } else {
-         Class7380 var4 = this.field34542.field5024.method6738((BlockPos)var3.get());
+         BlockState var4 = this.field34542.world.getBlockState((BlockPos)var3.get());
          if (var4.method23448(Blocks.LADDER) || var4.method23446(Class7645.field32768)) {
             this.field34548 = "ladder";
          } else if (!var4.method23448(Blocks.VINE)) {
@@ -79,7 +79,7 @@ public class Class8039 {
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method37101().method31109();
                ItemStack var10 = !(var11 instanceof Class880) ? ItemStack.EMPTY : ((Class880)var11).method3090();
-               if (!var10.method32105() && var10.method32152()) {
+               if (!var10.isEmpty() && var10.method32152()) {
                   var7 = new TranslationTextComponent("death.fell.assist.item", this.field34542.getDisplayName(), var8, var10.method32173());
                } else {
                   var7 = new TranslationTextComponent("death.fell.assist", this.field34542.getDisplayName(), var8);
@@ -88,7 +88,7 @@ public class Class8039 {
                var7 = new TranslationTextComponent("death.fell.killer", this.field34542.getDisplayName());
             } else {
                ItemStack var9 = !(var6 instanceof Class880) ? ItemStack.EMPTY : ((Class880)var6).method3090();
-               if (!var9.method32105() && var9.method32152()) {
+               if (!var9.isEmpty() && var9.method32152()) {
                   var7 = new TranslationTextComponent("death.fell.finish.item", this.field34542.getDisplayName(), var5, var9.method32173());
                } else {
                   var7 = new TranslationTextComponent("death.fell.finish", this.field34542.getDisplayName(), var5);

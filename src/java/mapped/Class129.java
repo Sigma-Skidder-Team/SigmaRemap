@@ -26,15 +26,15 @@ public class Class129 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      Class7380 var5 = var2.<Class7380>method26081(Class9525.field44336);
+      BlockState var5 = var2.<BlockState>method26081(Class9525.field44336);
       if (var5 != null) {
-         Class39 var6 = var1.method32143();
-         Class39 var7;
+         CompoundNBT var6 = var1.getOrCreateTag();
+         CompoundNBT var7;
          if (!var6.method119("BlockStateTag", 10)) {
-            var7 = new Class39();
-            var6.method99("BlockStateTag", var7);
+            var7 = new CompoundNBT();
+            var6.put("BlockStateTag", var7);
          } else {
-            var7 = var6.method130("BlockStateTag");
+            var7 = var6.getCompound("BlockStateTag");
          }
 
          this.field444.stream().filter(var5::method23462).forEach(var2x -> var7.method109(var2x.method30472(), method374(var5, (Class8550<?>)var2x)));
@@ -47,7 +47,7 @@ public class Class129 extends Class128 {
       return new Class5880(var0);
    }
 
-   private static <T extends Comparable<T>> String method374(Class7380 var0, Class8550<T> var1) {
+   private static <T extends Comparable<T>> String method374(BlockState var0, Class8550<T> var1) {
       Comparable var4 = var0.method23463(var1);
       return var1.method30475((T)var4);
    }

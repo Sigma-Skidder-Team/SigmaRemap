@@ -213,7 +213,7 @@ public class Class9336 {
    }
 
    public static void method35311(int var0, int var1) {
-      if (Class8981.field40605 && Class7414.method23863() == 33984) {
+      if (Shaders.field40605 && Class7414.method23863() == 33984) {
          Class7414.method23803(33985);
          Class7414.method23814(var0);
          Class7414.method23803(33987);
@@ -227,7 +227,7 @@ public class Class9336 {
    }
 
    public static void method35313(int var0, int var1, int var2) {
-      if (Class8981.field40605 && Class7414.method23863() == 33984) {
+      if (Shaders.field40605 && Class7414.method23863() == 33984) {
          Class7414.method23803(33985);
          Class7414.method23814(var1);
          Class7414.method23803(33987);
@@ -239,13 +239,13 @@ public class Class9336 {
    }
 
    public static void method35314(Class9732 var0) {
-      if (Class8981.field40605 && Class7414.method23863() == 33984) {
-         if (Class8981.field40874) {
+      if (Shaders.field40605 && Class7414.method23863() == 33984) {
+         if (Shaders.field40874) {
             Class7414.method23803(33985);
             Class7414.method23814(var0.field45440);
          }
 
-         if (Class8981.field40875) {
+         if (Shaders.field40875) {
             Class7414.method23803(33987);
             Class7414.method23814(var0.field45441);
          }
@@ -260,19 +260,19 @@ public class Class9336 {
       int var3 = var0.method1131();
       method35314(var0.method1135());
       if (Class7414.method23863() == 33984) {
-         int var4 = Class8981.field40682;
-         int var5 = Class8981.field40683;
-         if (!(var0 instanceof Class289)) {
-            Class8981.field40682 = 0;
-            Class8981.field40683 = 0;
+         int var4 = Shaders.field40682;
+         int var5 = Shaders.field40683;
+         if (!(var0 instanceof AtlasTexture)) {
+            Shaders.field40682 = 0;
+            Shaders.field40683 = 0;
          } else {
-            Class8981.field40682 = ((Class289)var0).field1118;
-            Class8981.field40683 = ((Class289)var0).field1119;
+            Shaders.field40682 = ((AtlasTexture)var0).field1118;
+            Shaders.field40683 = ((AtlasTexture)var0).field1119;
          }
 
-         if (Class8981.field40682 != var4 || Class8981.field40683 != var5) {
+         if (Shaders.field40682 != var4 || Shaders.field40683 != var5) {
             boolean var6 = Class8496.method30082(false);
-            Class8981.field40771.method12259(Class8981.field40682, Class8981.field40683);
+            Shaders.field40771.method12259(Shaders.field40682, Shaders.field40683);
             Class8496.method30082(var6);
          }
       }
@@ -317,14 +317,14 @@ public class Class9336 {
       return var2;
    }
 
-   public static void method35320(int var0, int var1, int var2, Class289 var3) {
+   public static void method35320(int var0, int var1, int var2, AtlasTexture var3) {
       Class9732 var6 = method35309(var3);
-      if (Class8981.field40874) {
+      if (Shaders.field40874) {
          Class7399.method23634("Allocate texture map normal: " + var1 + "x" + var2 + ", mipmaps: " + var0);
          Class8535.method30370(var6.field45440, var0, var1, var2);
       }
 
-      if (Class8981.field40875) {
+      if (Shaders.field40875) {
          Class7399.method23634("Allocate texture map specular: " + var1 + "x" + var2 + ", mipmaps: " + var0);
          Class8535.method30370(var6.field45441, var0, var1, var2);
       }
@@ -653,7 +653,7 @@ public class Class9336 {
       }
    }
 
-   private static Class1806 method35333(Class191 var0, ResourceLocation var1, int var2, int var3, int var4) {
+   private static Class1806 method35333(IResourceManager var0, ResourceLocation var1, int var2, int var3, int var4) {
       Class1806 var7 = method35335(var0, var1, var2, var3);
       if (var7 == null) {
          var7 = new Class1806(var2, var3, false);
@@ -671,7 +671,7 @@ public class Class9336 {
       return var5;
    }
 
-   private static Class1806 method35335(Class191 var0, ResourceLocation var1, int var2, int var3) {
+   private static Class1806 method35335(IResourceManager var0, ResourceLocation var1, int var2, int var3) {
       if (var1 == null) {
          return null;
       } else {
@@ -692,7 +692,7 @@ public class Class9336 {
       }
    }
 
-   public static void method35336(int var0, Class1806 var1, boolean var2, boolean var3, Class191 var4, ResourceLocation var5, Class9732 var6) {
+   public static void method35336(int var0, Class1806 var1, boolean var2, boolean var3, IResourceManager var4, ResourceLocation var5, Class9732 var6) {
       int var9 = var1.method7886();
       int var10 = var1.method7887();
       ResourceLocation var11 = method35332(var5, "n");
@@ -719,18 +719,18 @@ public class Class9336 {
 
    public static void method35339() {
       TextureManager var2 = Minecraft.getInstance().getTextureManager();
-      Class290 var3 = var2.method1076(Class289.field1102);
+      Class290 var3 = var2.method1076(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       if (var3 != null) {
          Class9732 var4 = var3.method1135();
          Class7414.method23814(var4.field45439);
-         GL11.glTexParameteri(3553, 10241, Class8981.field40883[Class8981.field40867]);
-         GL11.glTexParameteri(3553, 10240, Class8981.field40884[Class8981.field40870]);
+         GL11.glTexParameteri(3553, 10241, Shaders.field40883[Shaders.field40867]);
+         GL11.glTexParameteri(3553, 10240, Shaders.field40884[Shaders.field40870]);
          Class7414.method23814(var4.field45440);
-         GL11.glTexParameteri(3553, 10241, Class8981.field40883[Class8981.field40868]);
-         GL11.glTexParameteri(3553, 10240, Class8981.field40884[Class8981.field40871]);
+         GL11.glTexParameteri(3553, 10241, Shaders.field40883[Shaders.field40868]);
+         GL11.glTexParameteri(3553, 10240, Shaders.field40884[Shaders.field40871]);
          Class7414.method23814(var4.field45441);
-         GL11.glTexParameteri(3553, 10241, Class8981.field40883[Class8981.field40869]);
-         GL11.glTexParameteri(3553, 10240, Class8981.field40884[Class8981.field40872]);
+         GL11.glTexParameteri(3553, 10241, Shaders.field40883[Shaders.field40869]);
+         GL11.glTexParameteri(3553, 10240, Shaders.field40884[Shaders.field40872]);
          Class7414.method23814(0);
       }
    }
@@ -761,11 +761,11 @@ public class Class9336 {
       return var7;
    }
 
-   public static int[][] method35341(Class1713 var0, int[][] var1, int var2, int var3) {
+   public static int[][] method35341(TextureAtlasSprite var0, int[][] var1, int var2, int var3) {
       boolean var6 = true;
       return var1;
    }
 
-   public static void method35342(Class1713 var0, int[] var1) {
+   public static void method35342(TextureAtlasSprite var0, int[] var1) {
    }
 }

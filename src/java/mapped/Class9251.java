@@ -14,13 +14,13 @@ import org.apache.logging.log4j.Logger;
 public class Class9251 {
    private static final Logger field42556 = LogManager.getLogger();
 
-   public static boolean method34798(Class1814 var0, Class1339 var1) {
+   public static boolean method34798(SaveFormat.LevelSave var0, Class1339 var1) {
       var1.method6419(0);
       ArrayList var4 = Lists.newArrayList();
       ArrayList var5 = Lists.newArrayList();
       ArrayList var6 = Lists.newArrayList();
       File var7 = var0.method7992(World.field8999);
-      File var8 = var0.method7992(World.field9000);
+      File var8 = var0.method7992(World.THE_NETHER);
       File var9 = var0.method7992(World.THE_END);
       field42556.info("Scanning folders...");
       method34802(var7, var4);
@@ -34,13 +34,13 @@ public class Class9251 {
 
       int var10 = var4.size() + var5.size() + var6.size();
       field42556.info("Total conversion count is {}", var10);
-      Class8905 var11 = Class8904.method32457();
-      Class6711 var12 = Class6711.method20471(Class8063.field34602, Class190.field721, var11);
-      Class6611 var13 = var0.method7998(var12, Class7818.field33531);
-      long var14 = var13 == null ? 0L : var13.method20087().method26259();
+      Class8905 var11 = DynamicRegistries.func_239770_b_();
+      WorldSettingsImport var12 = WorldSettingsImport.create(NBTDynamicOps.INSTANCE, Class190.field721, var11);
+      IServerConfiguration var13 = var0.readServerConfiguration(var12, DatapackCodec.field33531);
+      long var14 = var13 == null ? 0L : var13.getDimensionGeneratorSettings().method26259();
       Class2349<Biome> var16 = var11.method32453(Registry.BIOME_KEY);
       Object var17;
-      if (var13 != null && var13.method20087().method26268()) {
+      if (var13 != null && var13.getDimensionGeneratorSettings().method26268()) {
          var17 = new Class1688((Biome) var16.method9189(Class9495.field44122));
       } else {
          var17 = new Class1689(var14, false, false, var16);
@@ -50,12 +50,12 @@ public class Class9251 {
       method34800(var11, new File(var8, "region"), var5, new Class1688(var16.method9189(Class9495.field44129)), var4.size(), var10, var1);
       method34800(var11, new File(var9, "region"), var6, new Class1688(var16.method9189(Class9495.field44130)), var4.size() + var5.size(), var10, var1);
       method34799(var0);
-      var0.method8000(var11, var13);
+      var0.saveLevel(var11, var13);
       return true;
    }
 
-   private static void method34799(Class1814 var0) {
-      File var3 = var0.method7991(Class5137.field23350).toFile();
+   private static void method34799(SaveFormat.LevelSave var0) {
+      File var3 = var0.resolveFilePath(FolderName.field23350).toFile();
       if (var3.exists()) {
          File var4 = new File(var3.getParent(), "level.dat_mcr");
          if (!var3.renameTo(var4)) {
@@ -86,7 +86,7 @@ public class Class9251 {
             for (int var15 = 0; var15 < 32; var15++) {
                Class7481 var16 = new Class7481(var14, var15);
                if (var10.method7265(var16) && !var12.method7265(var16)) {
-                  Class39 var20;
+                  CompoundNBT var20;
                   try (DataInputStream var17 = var10.method7247(var16)) {
                      if (var17 == null) {
                         field42556.warn("Failed to fetch input stream for chunk {}", var16);
@@ -99,11 +99,11 @@ public class Class9251 {
                      continue;
                   }
 
-                  Class39 var117 = var20.method130("Level");
+                  CompoundNBT var117 = var20.getCompound("Level");
                   Class9028 var118 = Class7660.method25180(var117);
-                  Class39 var19 = new Class39();
-                  Class39 var21 = new Class39();
-                  var19.method99("Level", var21);
+                  CompoundNBT var19 = new CompoundNBT();
+                  CompoundNBT var21 = new CompoundNBT();
+                  var19.put("Level", var21);
                   Class7660.method25181(var0, var118, var21, var3);
 
                   try (DataOutputStream var22 = var12.method7258(var16)) {

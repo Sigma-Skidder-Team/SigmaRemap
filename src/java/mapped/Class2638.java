@@ -16,7 +16,7 @@ public class Class2638 extends Class2628 {
 
    @Override
    public boolean method10806() {
-      return !this.field16961.method3264() && this.method10840(this.field16961.field5024, this.field16933);
+      return !this.field16961.method3264() && this.method10840(this.field16961.world, this.field16933);
    }
 
    @Override
@@ -31,6 +31,6 @@ public class Class2638 extends Class2628 {
 
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
-      return var1.method6738(var2).method23448(Blocks.LAVA) && var1.method6738(var2.method8311()).method23440(var1, var2, Class1947.field12614);
+      return var1.getBlockState(var2).method23448(Blocks.LAVA) && var1.getBlockState(var2.method8311()).method23440(var1, var2, Class1947.field12614);
    }
 }

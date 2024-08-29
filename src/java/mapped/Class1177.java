@@ -19,7 +19,7 @@ public class Class1177 extends Class1155<Class1177> {
       Class804.method1983(this.field6372).method38801(var1, var2.field27465, (float)var9, (float)(var4 + 2), 16777215);
       Class804.method1984(this.field6372).method38801(var1, var2.field27467, (float)var9, (float)(var4 + 15), 7105644);
       Class804.method1986(this.field6372)
-         .method38801(var1, var2.field27466, (float)(var9 + 227 - Class804.method1985(this.field6372).method38820(var2.field27466)), (float)(var4 + 1), 7105644);
+         .method38801(var1, var2.field27466, (float)(var9 + 227 - Class804.method1985(this.field6372).getStringWidth(var2.field27466)), (float)(var4 + 1), 7105644);
       if (!"".equals(var2.field27468) || !"".equals(var2.field27470) || !"".equals(var2.field27471)) {
          this.method5605(var1, var9 - 1, var4 + 25, var5, var6, var2.field27468, var2.field27470, var2.field27471);
       }
@@ -41,7 +41,7 @@ public class Class1177 extends Class1155<Class1177> {
          Class804.method1989(this.field6372).method38801(var1, var8, (float)var2, (float)(var3 + 4), 5000268);
       }
 
-      int var11 = !"".equals(var8) ? Class804.method1990(this.field6372).method38820(var8) + 2 : 0;
+      int var11 = !"".equals(var8) ? Class804.method1990(this.field6372).getStringWidth(var8) + 2 : 0;
       boolean var12 = false;
       boolean var13 = false;
       boolean var14 = "".equals(var6);

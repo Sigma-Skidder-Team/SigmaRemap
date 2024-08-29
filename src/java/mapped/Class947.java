@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class947 extends Class944 implements Class946 {
+public class Class947 extends TileEntity implements Class946 {
    private ItemStack field5332 = ItemStack.EMPTY;
 
    public Class947() {
@@ -8,18 +8,18 @@ public class Class947 extends Class944 implements Class946 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
       if (var2.method119("RecordItem", 10)) {
-         this.method3804(ItemStack.method32104(var2.method130("RecordItem")));
+         this.method3804(ItemStack.method32104(var2.getCompound("RecordItem")));
       }
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
-      if (!this.method3803().method32105()) {
-         var1.method99("RecordItem", this.method3803().method32112(new Class39()));
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
+      if (!this.method3803().isEmpty()) {
+         var1.put("RecordItem", this.method3803().method32112(new CompoundNBT()));
       }
 
       return var1;

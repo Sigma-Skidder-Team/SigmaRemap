@@ -19,7 +19,7 @@ public class Class9743 {
    }
 
    public static void method38193(Class1036 var0) {
-      Class9378 var3 = Class9378.method35577(var0.field5024.method6813(), var0.method3432());
+      Class9378 var3 = Class9378.method35577(var0.world.getDimensionKey(), var0.getPosition());
       var0.method2992().method21406(Class8830.field39813, var3);
    }
 
@@ -32,7 +32,7 @@ public class Class9743 {
       var1.method21425(
          Class8890.field40220,
          10,
-         ImmutableList.of(new Class3733<Class1035>(Class9743::method38201), method38197(), method38198(), new Class3715(Class8992.field41111, 4))
+         ImmutableList.of(new Class3733<Class1035>(Class9743::method38201), method38197(), method38198(), new Class3715(EntityType.PLAYER, 4))
       );
    }
 
@@ -48,9 +48,9 @@ public class Class9743 {
    private static Class3693<Class1036> method38197() {
       return new Class3693<Class1036>(
          ImmutableList.of(
-            Pair.of(new Class3738(Class8992.field41111, 8.0F), 1),
-            Pair.of(new Class3738(Class8992.field41065, 8.0F), 1),
-            Pair.of(new Class3738(Class8992.field41066, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.field41065, 8.0F), 1),
+            Pair.of(new Class3738(EntityType.field41066, 8.0F), 1),
             Pair.of(new Class3738(8.0F), 1),
             Pair.of(new Class3675(30, 60), 1)
          )
@@ -61,8 +61,8 @@ public class Class9743 {
       return new Class3693<Class1036>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
-            Pair.of(Class3696.<Class880>method12551(Class8992.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
-            Pair.of(Class3696.<Class880>method12551(Class8992.field41066, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<Class880>method12551(EntityType.field41065, 8, Class8830.field39828, 0.6F, 2), 2),
+            Pair.of(Class3696.<Class880>method12551(EntityType.field41066, 8, Class8830.field39828, 0.6F, 2), 2),
             Pair.of(new Class3700(Class8830.field39813, 0.6F, 2, 100), 2),
             Pair.of(new Class3726(Class8830.field39813, 0.6F, 5), 2),
             Pair.of(new Class3675(30, 60), 1)
@@ -111,7 +111,7 @@ public class Class9743 {
    }
 
    public static void method38205(Class1036 var0) {
-      if ((double)var0.field5024.field9016.nextFloat() < 0.0125) {
+      if ((double)var0.world.field9016.nextFloat() < 0.0125) {
          method38206(var0);
       }
    }

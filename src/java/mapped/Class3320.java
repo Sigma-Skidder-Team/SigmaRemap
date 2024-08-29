@@ -7,20 +7,20 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class3320 extends Class3257 {
+public class Class3320 extends Item {
    public Class3320(Class5643 var1) {
       super(var1);
    }
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
-      Class39 var7 = var1.method32145("Explosion");
+      CompoundNBT var7 = var1.method32145("Explosion");
       if (var7 != null) {
          method11873(var7, var3);
       }
    }
 
-   public static void method11873(Class39 var0, List<ITextComponent> var1) {
+   public static void method11873(CompoundNBT var0, List<ITextComponent> var1) {
       Class2119 var4 = Class2119.method8802(var0.method120("Type"));
       var1.add(new TranslationTextComponent("item.minecraft.firework_star.shape." + var4.method8801()).mergeStyle(TextFormatting.GRAY));
       int[] var5 = var0.method128("Colors");

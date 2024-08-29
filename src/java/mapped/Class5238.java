@@ -15,15 +15,15 @@ public class Class5238 extends Module {
 
     public Class5238() {
         super(ModuleCategory.MOVEMENT, "ViperMC", "A fly for ViperMC");
-        this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 6.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 6.0F, 0.1F));
     }
 
     @Override
     public void isInDevelopment() {
         this.field23596 = mc.player.getPosY();
         this.field23594 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23598 = false;
             }
         } else {
@@ -68,7 +68,7 @@ public class Class5238 extends Module {
             if (this.field23594 <= 0) {
                 if (this.field23594 != -1) {
                     if (this.field23594 == 0) {
-                        if (!mc.gameSettings.field44636.method8509() && var1.method13994() > 0.0) {
+                        if (!mc.gameSettings.field44636.isKeyDown() && var1.method13994() > 0.0) {
                             var1.method13995(-Class9567.method37080());
                         }
 
@@ -76,7 +76,7 @@ public class Class5238 extends Module {
                         Class9567.method37088(var1, Class9567.method37075());
                     }
                 } else {
-                    if (mc.gameSettings.field44636.method8509()) {
+                    if (mc.gameSettings.field44636.isKeyDown()) {
                         var1.method13995(!this.field23598 ? var4 / 2.0 : Class9567.method37080());
                         this.field23597 = this.field23596;
                         this.field23596 = !this.field23598 ? mc.player.getPosY() + var1.method13994() : this.field23596;

@@ -3,7 +3,7 @@ package mapped;
 public class Class5675 extends Class5651<Class1108, Class2826<Class1108>> {
    private static final ResourceLocation field25041 = new ResourceLocation("textures/entity/slime/slime.png");
 
-   public Class5675(Class8853 var1) {
+   public Class5675(EntityRendererManager var1) {
       super(var1, new Class2826<Class1108>(16), 0.25F);
       this.method17880(new Class247<Class1108>(this));
    }
@@ -16,7 +16,7 @@ public class Class5675 extends Class5651<Class1108, Class2826<Class1108>> {
    public void method17857(Class1108 var1, MatrixStack var2, float var3) {
       float var6 = 0.999F;
       var2.method35292(0.999F, 0.999F, 0.999F);
-      var2.method35291(0.0, 0.001F, 0.0);
+      var2.translate(0.0, 0.001F, 0.0);
       float var7 = (float)var1.method5319();
       float var8 = MathHelper.method37821(var3, var1.field6084, var1.field6083) / (var7 * 0.5F + 1.0F);
       float var9 = 1.0F / (var8 + 1.0F);

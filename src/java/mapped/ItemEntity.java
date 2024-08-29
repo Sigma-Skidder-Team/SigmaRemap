@@ -16,13 +16,13 @@ public class ItemEntity extends Entity {
    private UUID field5519;
    public final float field5520;
 
-   public ItemEntity(Class8992<? extends ItemEntity> var1, World var2) {
+   public ItemEntity(EntityType<? extends ItemEntity> var1, World var2) {
       super(var1, var2);
       this.field5520 = (float)(Math.random() * Math.PI * 2.0);
    }
 
    public ItemEntity(World var1, double var2, double var4, double var6) {
-      this(Class8992.field41042, var1);
+      this(EntityType.field41042, var1);
       this.method3215(var2, var4, var6);
       this.field5031 = this.field5054.nextFloat() * 360.0F;
       this.method3435(this.field5054.nextDouble() * 0.2 - 0.1, 0.2, this.field5054.nextDouble() * 0.2 - 0.1);
@@ -34,7 +34,7 @@ public class ItemEntity extends Entity {
    }
 
    private ItemEntity(ItemEntity var1) {
-      super(var1.method3204(), var1.field5024);
+      super(var1.getType(), var1.world);
       this.method4125(var1.method4124().copy());
       this.method3364(var1);
       this.field5515 = var1.field5515;
@@ -53,7 +53,7 @@ public class ItemEntity extends Entity {
 
    @Override
    public void tick() {
-      if (!this.method4124().method32105()) {
+      if (!this.method4124().isEmpty()) {
          super.tick();
          if (this.field5516 > 0 && this.field5516 != 32767) {
             this.field5516--;
@@ -72,8 +72,8 @@ public class ItemEntity extends Entity {
             this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
          }
 
-         if (!this.field5024.field9020) {
-            this.field5052 = !this.field5024.method7052(this);
+         if (!this.world.field9020) {
+            this.field5052 = !this.world.method7052(this);
             if (this.field5052) {
                this.pushOutOfBlocks(this.getPosX(), (this.method3389().field28450 + this.method3389().field28453) / 2.0, this.getPosZ());
             }
@@ -85,7 +85,7 @@ public class ItemEntity extends Entity {
             this.move(Class2107.field13742, this.method3433());
             float var5 = 0.98F;
             if (this.field5036) {
-               var5 = this.field5024.method6738(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).method23383().method11571()
+               var5 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571()
                   * 0.98F;
             }
 
@@ -98,16 +98,16 @@ public class ItemEntity extends Entity {
             }
          }
 
-         boolean var9 = MathHelper.method37769(this.field5025) != MathHelper.method37769(this.getPosX())
-            || MathHelper.method37769(this.field5026) != MathHelper.method37769(this.getPosY())
-            || MathHelper.method37769(this.field5027) != MathHelper.method37769(this.getPosZ());
+         boolean var9 = MathHelper.floor(this.field5025) != MathHelper.floor(this.getPosX())
+            || MathHelper.floor(this.field5026) != MathHelper.floor(this.getPosY())
+            || MathHelper.floor(this.field5027) != MathHelper.floor(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.field5055 % var10 == 0) {
-            if (this.field5024.method6739(this.method3432()).method23486(Class8953.field40470) && !this.method3249()) {
+            if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
                this.method2863(Class6067.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
             }
 
-            if (!this.field5024.field9020 && this.method4118()) {
+            if (!this.world.field9020 && this.method4118()) {
                this.method4117();
             }
          }
@@ -117,14 +117,14 @@ public class ItemEntity extends Entity {
          }
 
          this.field5078 = this.field5078 | this.method3257();
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             double var7 = this.method3433().method11336(var3).method11349();
             if (var7 > 0.01) {
                this.field5078 = true;
             }
          }
 
-         if (!this.field5024.field9020 && this.field5515 >= 6000) {
+         if (!this.world.field9020 && this.field5515 >= 6000) {
             this.method2904();
          }
       } else {
@@ -144,7 +144,7 @@ public class ItemEntity extends Entity {
 
    private void method4117() {
       if (this.method4118()) {
-         for (ItemEntity var4 : this.field5024
+         for (ItemEntity var4 : this.world
             .<ItemEntity>method6772(ItemEntity.class, this.method3389().method19663(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method4118())) {
             if (var4.method4118()) {
                this.method4119(var4);
@@ -158,14 +158,14 @@ public class ItemEntity extends Entity {
 
    private boolean method4118() {
       ItemStack var3 = this.method4124();
-      return this.method3066() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.method32179() < var3.method32113();
+      return this.method3066() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.getCount() < var3.method32113();
    }
 
    private void method4119(ItemEntity var1) {
       ItemStack var4 = this.method4124();
       ItemStack var5 = var1.method4124();
       if (Objects.equals(this.method4126(), var1.method4126()) && method4120(var4, var5)) {
-         if (var5.method32179() >= var4.method32179()) {
+         if (var5.getCount() >= var4.getCount()) {
             method4123(var1, var5, this, var4);
          } else {
             method4123(this, var4, var1, var5);
@@ -174,9 +174,9 @@ public class ItemEntity extends Entity {
    }
 
    public static boolean method4120(ItemStack var0, ItemStack var1) {
-      if (var1.method32107() != var0.method32107()) {
+      if (var1.getItem() != var0.getItem()) {
          return false;
-      } else if (var1.method32179() + var0.method32179() <= var1.method32113()) {
+      } else if (var1.getCount() + var0.getCount() <= var1.method32113()) {
          return var1.method32141() ^ var0.method32141() ? false : !var1.method32141() || var1.method32142().equals(var0.method32142());
       } else {
          return false;
@@ -184,7 +184,7 @@ public class ItemEntity extends Entity {
    }
 
    public static ItemStack method4121(ItemStack var0, ItemStack var1, int var2) {
-      int var5 = Math.min(Math.min(var0.method32113(), var2) - var0.method32179(), var1.method32179());
+      int var5 = Math.min(Math.min(var0.method32113(), var2) - var0.getCount(), var1.getCount());
       ItemStack var6 = var0.copy();
       var6.method32181(var5);
       var1.method32182(var5);
@@ -200,22 +200,22 @@ public class ItemEntity extends Entity {
       method4122(var0, var1, var3);
       var0.field5516 = Math.max(var0.field5516, var2.field5516);
       var0.field5515 = Math.min(var0.field5515, var2.field5515);
-      if (var3.method32105()) {
+      if (var3.isEmpty()) {
          var2.method2904();
       }
    }
 
    @Override
    public boolean method3249() {
-      return this.method4124().method32107().method11748() || super.method3249();
+      return this.method4124().getItem().method11748() || super.method3249();
    }
 
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         if (!this.method4124().method32105() && this.method4124().method32107() == Class8514.field38066 && var1.method31131()) {
+         if (!this.method4124().isEmpty() && this.method4124().getItem() == Items.field38066 && var1.method31131()) {
             return false;
-         } else if (this.method4124().method32107().method11749(var1)) {
+         } else if (this.method4124().getItem().method11749(var1)) {
             this.method3141();
             this.field5517 = (int)((float)this.field5517 - var2);
             if (this.field5517 <= 0) {
@@ -232,7 +232,7 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       var1.method101("Health", (short)this.field5517);
       var1.method101("Age", (short)this.field5515);
       var1.method101("PickupDelay", (short)this.field5516);
@@ -244,16 +244,16 @@ public class ItemEntity extends Entity {
          var1.method104("Owner", this.method4126());
       }
 
-      if (!this.method4124().method32105()) {
-         var1.method99("Item", this.method4124().method32112(new Class39()));
+      if (!this.method4124().isEmpty()) {
+         var1.put("Item", this.method4124().method32112(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.field5517 = var1.method121("Health");
       this.field5515 = var1.method121("Age");
-      if (var1.method118("PickupDelay")) {
+      if (var1.contains("PickupDelay")) {
          this.field5516 = var1.method121("PickupDelay");
       }
 
@@ -265,22 +265,22 @@ public class ItemEntity extends Entity {
          this.field5518 = var1.method105("Thrower");
       }
 
-      Class39 var4 = var1.method130("Item");
+      CompoundNBT var4 = var1.getCompound("Item");
       this.method4125(ItemStack.method32104(var4));
-      if (this.method4124().method32105()) {
+      if (this.method4124().isEmpty()) {
          this.method2904();
       }
    }
 
    @Override
    public void method3279(PlayerEntity var1) {
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          ItemStack var4 = this.method4124();
-         Class3257 var5 = var4.method32107();
-         int var6 = var4.method32179();
-         if (this.field5516 == 0 && (this.field5519 == null || this.field5519.equals(var1.getUniqueID())) && var1.field4902.method4045(var4)) {
+         Item var5 = var4.getItem();
+         int var6 = var4.getCount();
+         if (this.field5516 == 0 && (this.field5519 == null || this.field5519.equals(var1.getUniqueID())) && var1.inventory.method4045(var4)) {
             var1.method2751(this, var6);
-            if (var4.method32105()) {
+            if (var4.isEmpty()) {
                this.method2904();
                var4.method32180(var6);
             }
@@ -294,7 +294,7 @@ public class ItemEntity extends Entity {
    @Override
    public ITextComponent getName() {
       ITextComponent var3 = this.method3380();
-      return (ITextComponent)(var3 == null ? new TranslationTextComponent(this.method4124().method32134()) : var3);
+      return (ITextComponent)(var3 == null ? new TranslationTextComponent(this.method4124().getTranslationKey()) : var3);
    }
 
    @Override
@@ -306,7 +306,7 @@ public class ItemEntity extends Entity {
    @Override
    public Entity method2745(ServerWorld var1) {
       Entity var4 = super.method2745(var1);
-      if (!this.field5024.field9020 && var4 instanceof ItemEntity) {
+      if (!this.world.field9020 && var4 instanceof ItemEntity) {
          ((ItemEntity)var4).method4117();
       }
 

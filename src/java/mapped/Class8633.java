@@ -5,8 +5,8 @@ import java.util.Random;
 public class Class8633 {
    private static String[] field38838;
 
-   public static boolean method31014(Class7380 var0) {
-      return var0.method23393();
+   public static boolean method31014(BlockState var0) {
+      return var0.isAir();
    }
 
    public static int method31015(Random var0) {

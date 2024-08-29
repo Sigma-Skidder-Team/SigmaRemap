@@ -10,7 +10,7 @@ public class Class2922 extends Class2921<Class4703> {
    }
 
    public boolean method11251(Class1660 var1, BlockPos var2, Class4703 var3) {
-      return !var3.field22309.contains(var1.method6738(var2));
+      return !var3.field22309.contains(var1.getBlockState(var2));
    }
 
    public int method11252(Class4703 var1) {
@@ -25,7 +25,7 @@ public class Class2922 extends Class2921<Class4703> {
       );
    }
 
-   public Class7380 method11254(Random var1, BlockPos var2, Class4703 var3) {
+   public BlockState method11254(Random var1, BlockPos var2, Class4703 var3) {
       return var3.field22306.method20424(var1, var2);
    }
 }

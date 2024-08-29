@@ -57,14 +57,14 @@ public abstract class Class6395 {
 
    public void method19445(NetworkManager var1, ServerPlayerEntity var2) {
       GameProfile var5 = var2.getGameProfile();
-      Class8805 var6 = this.field27990.method1386();
+      PlayerProfileCache var6 = this.field27990.method1386();
       GameProfile var7 = var6.method31793(var5.getId());
       String var8 = var7 != null ? var7.getName() : var5.getName();
       var6.method31790(var5);
-      Class39 var9 = this.method19448(var2);
+      CompoundNBT var9 = this.method19448(var2);
       RegistryKey var10 = var9 == null
          ? World.field8999
-         : Class9535.method36867(new Dynamic(Class8063.field34602, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(World.field8999);
+         : Class9535.method36867(new Dynamic(NBTDynamicOps.INSTANCE, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(World.field8999);
       ServerWorld var11 = this.field27990.method1318(var10);
       ServerWorld var12;
       if (var11 != null) {
@@ -75,7 +75,7 @@ public abstract class Class6395 {
       }
 
       var2.method3268(var12);
-      var2.field4857.method33871((ServerWorld)var2.field5024);
+      var2.field4857.method33871((ServerWorld)var2.world);
       String var13 = "local";
       if (var1.method30700() != null) {
          var13 = var1.method30700().toString();
@@ -106,7 +106,7 @@ public abstract class Class6395 {
             this.field27990.method1319(),
             this.field28001,
             var12.method6812(),
-            var12.method6813(),
+            var12.getDimensionKey(),
             this.method19475(),
             this.field28003,
             var18,
@@ -117,8 +117,8 @@ public abstract class Class6395 {
       );
       var15.sendPacket(new Class5532(Class5532.field24537, new PacketBuffer(Unpooled.buffer()).method35729(this.method19444().method1325())));
       var15.sendPacket(new Class5535(var14.method20047(), var14.method20048()));
-      var15.sendPacket(new Class5599(var2.field4919));
-      var15.sendPacket(new Class5608(var2.field4902.field5443));
+      var15.sendPacket(new Class5599(var2.abilities));
+      var15.sendPacket(new Class5608(var2.inventory.currentItem));
       var15.sendPacket(new Class5512(this.field27990.method1407().method1036()));
       var15.sendPacket(new Class5611(this.field27990.method1408()));
       this.method19454(var2);
@@ -155,8 +155,8 @@ public abstract class Class6395 {
       }
 
       if (var9 != null && var9.method119("RootVehicle", 10)) {
-         Class39 var26 = var9.method130("RootVehicle");
-         Entity var27 = Class8992.method33223(var26.method130("Entity"), var12, var1x -> var12.method6917(var1x) ? var1x : null);
+         CompoundNBT var26 = var9.getCompound("RootVehicle");
+         Entity var27 = EntityType.method33223(var26.getCompound("Entity"), var12, var1x -> var12.method6917(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
             if (!var26.method106("Attach")) {
@@ -214,9 +214,9 @@ public abstract class Class6395 {
    }
 
    @Nullable
-   public Class39 method19448(ServerPlayerEntity var1) {
-      Class39 var4 = this.field27990.method1436().method20083();
-      Class39 var5;
+   public CompoundNBT method19448(ServerPlayerEntity var1) {
+      CompoundNBT var4 = this.field27990.method1436().method20083();
+      CompoundNBT var5;
       if (var1.getName().getString().equals(this.field27990.method1332()) && var4 != null) {
          var5 = var4;
          var1.method3295(var4);
@@ -377,7 +377,7 @@ public abstract class Class6395 {
             var12.field4855.sendPacket(new Class5534(Class5534.field24560, 0.0F));
          }
       } else {
-         Class7380 var20 = var10.method6738(var5);
+         BlockState var20 = var10.getBlockState(var5);
          boolean var15 = var20.method23448(Blocks.field37124);
          Vector3d var16 = (Vector3d)var9.get();
          float var18;
@@ -389,7 +389,7 @@ public abstract class Class6395 {
          }
 
          var12.method3273(var16.field18048, var16.field18049, var16.field18050, var18, 0.0F);
-         var12.method2829(var10.method6813(), var5, var6, var7, false);
+         var12.method2829(var10.getDimensionKey(), var5, var6, var7, false);
          var19 = !var2 && var15;
       }
 
@@ -397,12 +397,12 @@ public abstract class Class6395 {
          var12.method3215(var12.getPosX(), var12.getPosY() + 1.0, var12.getPosZ());
       }
 
-      Class6612 var21 = var12.field5024.getWorldInfo();
+      Class6612 var21 = var12.world.getWorldInfo();
       var12.field4855
          .sendPacket(
             new Class5545(
-               var12.field5024.method6812(),
-               var12.field5024.method6813(),
+               var12.world.method6812(),
+               var12.world.getDimensionKey(),
                Class6668.method20321(var12.getServerWorld().method6967()),
                var12.field4857.method33863(),
                var12.field4857.method33864(),
@@ -426,7 +426,7 @@ public abstract class Class6395 {
          var12.field4855
             .sendPacket(
                new Class5584(
-                  Class6067.field27014, Class2266.field14732, (double)var5.method8304(), (double)var5.getY(), (double)var5.method8306(), 1.0F, 1.0F
+                  Class6067.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
                )
             );
       }
@@ -456,7 +456,7 @@ public abstract class Class6395 {
    public void method19457(Packet<?> var1, RegistryKey<World> var2) {
       for (int var5 = 0; var5 < this.field27991.size(); var5++) {
          ServerPlayerEntity var6 = this.field27991.get(var5);
-         if (var6.field5024.method6813() == var2) {
+         if (var6.world.getDimensionKey() == var2) {
             var6.field4855.sendPacket(var1);
          }
       }
@@ -563,7 +563,7 @@ public abstract class Class6395 {
    public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8, RegistryKey<World> var10, Packet<?> var11) {
       for (int var14 = 0; var14 < this.field27991.size(); var14++) {
          ServerPlayerEntity var15 = this.field27991.get(var14);
-         if (var15 != var1 && var15.field5024.method6813() == var10) {
+         if (var15 != var1 && var15.world.getDimensionKey() == var10) {
             double var16 = var2 - var15.getPosX();
             double var18 = var4 - var15.getPosY();
             double var20 = var6 - var15.getPosZ();
@@ -614,7 +614,7 @@ public abstract class Class6395 {
    public void method19473(ServerPlayerEntity var1) {
       var1.method2771(var1.field4904);
       var1.method2784();
-      var1.field4855.sendPacket(new Class5608(var1.field4902.field5443));
+      var1.field4855.sendPacket(new Class5608(var1.inventory.currentItem));
    }
 
    public int method19474() {
@@ -653,7 +653,7 @@ public abstract class Class6395 {
       return this.field27990;
    }
 
-   public Class39 method19479() {
+   public CompoundNBT method19479() {
       return null;
    }
 
@@ -692,7 +692,7 @@ public abstract class Class6395 {
       UUID var4 = var1.getUniqueID();
       Class8287 var5 = var4 != null ? this.field27997.get(var4) : null;
       if (var5 == null) {
-         File var6 = this.field27990.method1433(Class5137.field23347).toFile();
+         File var6 = this.field27990.method1433(FolderName.field23347).toFile();
          File var7 = new File(var6, var4 + ".json");
          if (!var7.exists()) {
             File var8 = new File(var6, var1.getName().getString() + ".json");
@@ -712,7 +712,7 @@ public abstract class Class6395 {
       UUID var4 = var1.getUniqueID();
       Class8019 var5 = this.field27998.get(var4);
       if (var5 == null) {
-         File var6 = this.field27990.method1433(Class5137.field23346).toFile();
+         File var6 = this.field27990.method1433(FolderName.field23346).toFile();
          File var7 = new File(var6, var4 + ".json");
          var5 = new Class8019(this.field27990.method1394(), this, this.field27990.method1396(), var7, var1);
          this.field27998.put(var4, var5);

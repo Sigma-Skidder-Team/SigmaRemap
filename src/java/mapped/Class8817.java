@@ -20,7 +20,7 @@ public class Class8817 {
    }
 
    public boolean method31836() {
-      Class39 var3 = null;
+      CompoundNBT var3 = null;
 
       try {
          var3 = Class8799.method31766(new FileInputStream(this.field39664));
@@ -53,7 +53,7 @@ public class Class8817 {
       byte[] var19 = var3.method127("Data");
       byte[] var20 = new byte[0];
       short[] var21 = new short[var18.length];
-      if (var3.method118("AddBlocks")) {
+      if (var3.contains("AddBlocks")) {
          var20 = var3.method127("AddBlocks");
       }
 

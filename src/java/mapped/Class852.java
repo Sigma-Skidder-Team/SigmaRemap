@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 public class Class852 extends Class851<Class5836> {
    private static final ResourceLocation field4753 = new ResourceLocation("textures/gui/container/cartography_table.png");
 
-   public Class852(Class5836 var1, Class974 var2, ITextComponent var3) {
+   public Class852(Class5836 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
       this.field4724 -= 2;
    }
@@ -24,14 +24,14 @@ public class Class852 extends Class851<Class5836> {
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      Class3257 var9 = this.field4727.method18131(1).method18265().method32107();
-      boolean var10 = var9 == Class8514.field38056;
-      boolean var11 = var9 == Class8514.field37899;
-      boolean var12 = var9 == Class8514.field37471;
+      Item var9 = this.field4727.method18131(1).method18265().getItem();
+      boolean var10 = var9 == Items.field38056;
+      boolean var11 = var9 == Items.field37899;
+      boolean var12 = var9 == Items.field37471;
       ItemStack var13 = this.field4727.method18131(0).method18265();
       boolean var14 = false;
       Class7529 var15;
-      if (var13.method32107() != Class8514.field37955) {
+      if (var13.getItem() != Items.field37955) {
          var15 = null;
       } else {
          var15 = Class3316.method11860(var13, this.field4562.world);
@@ -89,7 +89,7 @@ public class Class852 extends Class851<Class5836> {
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)var2, (float)var3, 1.0F);
          RenderSystem.scalef(var4, var4, 1.0F);
-         Class7735 var7 = Class7733.method25595(Class9352.method35409().method35411());
+         Class7735 var7 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          this.field4562.gameRenderer.method756().method593(new MatrixStack(), var7, var1, true, 15728880);
          var7.method25602();
          RenderSystem.popMatrix();

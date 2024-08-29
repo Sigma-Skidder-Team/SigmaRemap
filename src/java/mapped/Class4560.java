@@ -12,9 +12,9 @@ import java.util.UUID;
 
 public class Class4560 extends CacheLoader<String, Map<Type, MinecraftProfileTexture>> {
    public final MinecraftSessionService field21995;
-   public final Class9758 field21996;
+   public final SkinManager field21996;
 
-   public Class4560(Class9758 var1, MinecraftSessionService var2) {
+   public Class4560(SkinManager var1, MinecraftSessionService var2) {
       this.field21996 = var1;
       this.field21995 = var2;
    }

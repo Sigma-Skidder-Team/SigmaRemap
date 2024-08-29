@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public class Class4387<T extends Class944> {
+public class Class4387<T extends TileEntity> {
    private static final Logger field21420 = LogManager.getLogger();
    public static final Class4387<Class986> field21421 = method13794("furnace", Class9785.<Class986>method38569(Class986::new, Blocks.FURNACE));
    public static final Class4387<Class941> field21422 = method13794("chest", Class9785.<Class941>method38569(Class941::new, Blocks.CHEST));
@@ -45,10 +45,10 @@ public class Class4387<T extends Class944> {
    public static final Class4387<Class934> field21432 = method13794("enchanting_table", Class9785.<Class934>method38569(Class934::new, Blocks.ENCHANTING_TABLE));
    public static final Class4387<Class956> field21433 = method13794("end_portal", Class9785.<Class956>method38569(Class956::new, Blocks.field36649));
    public static final Class4387<Class950> field21434 = method13794("beacon", Class9785.<Class950>method38569(Class950::new, Blocks.BEACON));
-   public static final Class4387<Class968> field21435 = method13794(
+   public static final Class4387<SkullTileEntity> field21435 = method13794(
       "skull",
-      Class9785.<Class968>method38569(
-         Class968::new,
+      Class9785.<SkullTileEntity>method38569(
+         SkullTileEntity::new,
          Blocks.field36701,
          Blocks.field36702,
          Blocks.field36709,
@@ -173,10 +173,10 @@ public class Class4387<T extends Class944> {
 
    @Nullable
    public static ResourceLocation method13793(Class4387<?> var0) {
-      return Registry.field16078.method9181(var0);
+      return Registry.field16078.getKey(var0);
    }
 
-   private static <T extends Class944> Class4387<T> method13794(String var0, Class9785<T> var1) {
+   private static <T extends TileEntity> Class4387<T> method13794(String var0, Class9785<T> var1) {
       if (Class9785.method38571(var1).isEmpty()) {
          field21420.warn("Block entity type {} requires at least one valid block to be defined!", var0);
       }
@@ -202,7 +202,7 @@ public class Class4387<T extends Class944> {
 
    @Nullable
    public T method13797(Class1665 var1, BlockPos var2) {
-      Class944 var5 = var1.method6759(var2);
+      TileEntity var5 = var1.getTileEntity(var2);
       return (T)(var5 != null && var5.method3786() == this ? var5 : null);
    }
 }

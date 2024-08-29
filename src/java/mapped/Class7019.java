@@ -69,7 +69,7 @@ public class Class7019 implements Class7016 {
          if (this.field30322.nextInt(10) != 0) {
             return false;
          } else {
-            BlockPos var5 = var4.method3432();
+            BlockPos var5 = var4.getPosition();
             byte var6 = 48;
             Class1653 var7 = var1.method6951();
             Optional<BlockPos> var8 = var7.method6670(Class4913.field22767.method15182(), var0 -> true, var5, 48, Class2093.field13637);
@@ -80,8 +80,8 @@ public class Class7019 implements Class7016 {
                   return false;
                }
 
-               Class1044 var11 = Class8992.field41100
-                  .method33201(var1, (Class39)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14398, false, false);
+               Class1044 var11 = EntityType.field41100
+                  .method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, Class2202.field14398, false, false);
                if (var11 != null) {
                   for (int var12 = 0; var12 < 2; var12++) {
                      this.method21751(var1, var11, 4);
@@ -103,9 +103,9 @@ public class Class7019 implements Class7016 {
    }
 
    private void method21751(ServerWorld var1, Class1044 var2, int var3) {
-      BlockPos var6 = this.method21752(var1, var2.method3432(), var3);
+      BlockPos var6 = this.method21752(var1, var2.getPosition(), var3);
       if (var6 != null) {
-         Class1065 var7 = Class8992.field41094.method33201(var1, (Class39)null, (ITextComponent)null, (PlayerEntity)null, var6, Class2202.field14398, false, false);
+         Class1065 var7 = EntityType.field41094.method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var6, Class2202.field14398, false, false);
          if (var7 != null) {
             var7.method4298(var2, true);
          }
@@ -117,11 +117,11 @@ public class Class7019 implements Class7016 {
       BlockPos var6 = null;
 
       for (int var7 = 0; var7 < 10; var7++) {
-         int var8 = var2.method8304() + this.field30322.nextInt(var3 * 2) - var3;
-         int var9 = var2.method8306() + this.field30322.nextInt(var3 * 2) - var3;
+         int var8 = var2.getX() + this.field30322.nextInt(var3 * 2) - var3;
+         int var9 = var2.getZ() + this.field30322.nextInt(var3 * 2) - var3;
          int var10 = var1.method6736(Class101.field296, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);
-         if (Class8170.method28429(Class2068.field13472, var1, var11, Class8992.field41100)) {
+         if (Class8170.method28429(Class2068.field13472, var1, var11, EntityType.field41100)) {
             var6 = var11;
             break;
          }
@@ -132,7 +132,7 @@ public class Class7019 implements Class7016 {
 
    private boolean method21753(Class1665 var1, BlockPos var2) {
       for (BlockPos var6 : BlockPos.method8359(var2, var2.method8336(1, 2, 1))) {
-         if (!var1.method6738(var6).method23414(var1, var6).method19516()) {
+         if (!var1.getBlockState(var6).method23414(var1, var6).method19516()) {
             return false;
          }
       }

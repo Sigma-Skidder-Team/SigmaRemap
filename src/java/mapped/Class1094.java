@@ -14,7 +14,7 @@ public class Class1094 extends Class1018 {
    private int field5991;
    private int field5992;
 
-   public Class1094(Class8992<? extends Class1094> var1, World var2) {
+   public Class1094(EntityType<? extends Class1094> var1, World var2) {
       super(var1, var2);
       this.field5597 = new Class7955(this, this);
       this.field5596 = new Class6840(this);
@@ -26,7 +26,7 @@ public class Class1094 extends Class1018 {
       this.field5600.method20002(1, new Class2603(this));
       this.field5600.method20002(1, new Class2749(this, 2.2));
       this.field5600.method20002(2, new Class2785(this, 0.8));
-      this.field5600.method20002(3, new Class2680(this, 1.0, Class120.method339(Class8514.field38052, Class8514.field38057, Blocks.DANDELION), false));
+      this.field5600.method20002(3, new Class2680(this, 1.0, Class120.method339(Items.field38052, Items.field38057, Blocks.DANDELION), false));
       this.field5600.method20002(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
       this.field5600.method20002(4, new Class2772<Class1012>(this, Class1012.class, 10.0F, 2.2, 2.2));
       this.field5600.method20002(4, new Class2772<Class1009>(this, Class1009.class, 4.0F, 2.2, 2.2));
@@ -63,8 +63,8 @@ public class Class1094 extends Class1018 {
          }
       }
 
-      if (!this.field5024.field9020) {
-         this.field5024.method6786(this, (byte)1);
+      if (!this.world.field9020) {
+         this.world.method6786(this, (byte)1);
       }
    }
 
@@ -195,14 +195,14 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("RabbitType", this.method5114());
       var1.method102("MoreCarrotTicks", this.field5992);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.method5115(var1.method122("RabbitType"));
       this.field5992 = var1.method122("MoreCarrotTicks");
@@ -247,12 +247,12 @@ public class Class1094 extends Class1018 {
       return !this.method2760(var1) ? super.method2741(var1, var2) : false;
    }
 
-   private boolean method5113(Class3257 var1) {
-      return var1 == Class8514.field38052 || var1 == Class8514.field38057 || var1 == Blocks.DANDELION.method11581();
+   private boolean method5113(Item var1) {
+      return var1 == Items.field38052 || var1 == Items.field38057 || var1 == Blocks.DANDELION.method11581();
    }
 
    public Class1094 method4389(ServerWorld var1, Class1045 var2) {
-      Class1094 var5 = Class8992.field41071.method33215(var1);
+      Class1094 var5 = EntityType.field41071.method33215(var1);
       int var6 = this.method5116(var1);
       if (this.field5054.nextInt(20) != 0) {
          if (var2 instanceof Class1094 && this.field5054.nextBoolean()) {
@@ -268,7 +268,7 @@ public class Class1094 extends Class1018 {
 
    @Override
    public boolean method4381(ItemStack var1) {
-      return this.method5113(var1.method32107());
+      return this.method5113(var1.getItem());
    }
 
    public int method5114() {
@@ -292,7 +292,7 @@ public class Class1094 extends Class1018 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       int var8 = this.method5116(var1);
       if (!(var4 instanceof Class5099)) {
          var4 = new Class5099(var8);
@@ -305,10 +305,10 @@ public class Class1094 extends Class1018 {
    }
 
    private int method5116(Class1660 var1) {
-      Biome var4 = var1.method7003(this.method3432());
+      Biome var4 = var1.getBiome(this.getPosition());
       int var5 = this.field5054.nextInt(100);
       if (var4.method32500() != Class87.field225) {
-         if (var4.method32527() != Class100.field286) {
+         if (var4.getCategory() != Class100.field286) {
             return var5 >= 50 ? (var5 >= 90 ? 2 : 5) : 0;
          } else {
             return 4;
@@ -318,8 +318,8 @@ public class Class1094 extends Class1018 {
       }
    }
 
-   public static boolean method5117(Class8992<Class1094> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      Class7380 var7 = var1.method6738(var3.method8313());
+   public static boolean method5117(EntityType<Class1094> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+      BlockState var7 = var1.getBlockState(var3.method8313());
       return (var7.method23448(Blocks.field36395) || var7.method23448(Blocks.SNOW) || var7.method23448(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;
    }

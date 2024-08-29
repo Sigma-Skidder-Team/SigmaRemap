@@ -20,7 +20,7 @@ public class Class5867 extends Class5839 {
    public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
       this.field25640.field25468.get(0).method18272(1);
       this.field25640.field25468.get(1).method18272(1);
-      var2.method32107().method11725(var2, var1.field5024, var1);
+      var2.getItem().method11725(var2, var1.world, var1);
       this.field25639.method31716((var1x, var2x) -> {
          long var5 = var1x.method6783();
          if (Class5836.method18242(this.field25640) != var5) {

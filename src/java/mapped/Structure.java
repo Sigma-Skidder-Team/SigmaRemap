@@ -60,7 +60,7 @@ public abstract class Structure<C extends Class4698> {
    }
 
    @Nullable
-   public static Class5444<?> method11366(Class8761 var0, Class39 var1, long var2) {
+   public static Class5444<?> method11366(Class8761 var0, CompoundNBT var1, long var2) {
       String var6 = var1.method126("id");
       if ("INVALID".equals(var6)) {
          return Class5444.field24194;
@@ -73,14 +73,14 @@ public abstract class Structure<C extends Class4698> {
             int var8 = var1.method122("ChunkX");
             int var9 = var1.method122("ChunkZ");
             int var10 = var1.method122("references");
-            Class9764 var11 = var1.method118("BB") ? new Class9764(var1.method128("BB")) : Class9764.method38386();
-            Class41 var12 = var1.method131("Children", 10);
+            Class9764 var11 = var1.contains("BB") ? new Class9764(var1.method128("BB")) : Class9764.method38386();
+            ListNBT var12 = var1.method131("Children", 10);
 
             try {
                Class5444 var13 = var7.method11371(var8, var9, var11, var10, var2);
 
                for (int var14 = 0; var14 < var12.size(); var14++) {
-                  Class39 var15 = var12.method153(var14);
+                  CompoundNBT var15 = var12.method153(var14);
                   String var16 = var15.method126("id").toLowerCase(Locale.ROOT);
                   ResourceLocation var17 = new ResourceLocation(var16);
                   ResourceLocation var18 = field18078.getOrDefault(var17, var17);
@@ -117,8 +117,8 @@ public abstract class Structure<C extends Class4698> {
    @Nullable
    public BlockPos method11369(Class1662 var1, Class7480 var2, BlockPos var3, int var4, boolean var5, long var6, Class8483 var8) {
       int var11 = var8.method29980();
-      int var12 = var3.method8304() >> 4;
-      int var13 = var3.method8306() >> 4;
+      int var12 = var3.getX() >> 4;
+      int var13 = var3.getZ() >> 4;
       int var14 = 0;
 
       for (Class2420 var15 = new Class2420(); var14 <= var4; var14++) {
@@ -191,7 +191,7 @@ public abstract class Structure<C extends Class4698> {
    }
 
    public Class5444<?> method11372(
-      Class8904 var1,
+      DynamicRegistries var1,
       Class5646 var2,
       Class1685 var3,
       Class8761 var4,

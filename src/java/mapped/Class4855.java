@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 
 public class Class4855 extends Class4837 {
-   private static final Class120 field22652 = Class120.method339(Class8514.field38069);
+   private static final Class120 field22652 = Class120.method339(Items.field38069);
 
    public Class4855(ResourceLocation var1) {
       super(var1);
@@ -16,8 +16,8 @@ public class Class4855 extends Class4837 {
 
       for (int var7 = 0; var7 < var1.method3629(); var7++) {
          ItemStack var8 = var1.method3618(var7);
-         if (!var8.method32105()) {
-            if (!(var8.method32107() instanceof Class3321)) {
+         if (!var8.isEmpty()) {
+            if (!(var8.getItem() instanceof Class3321)) {
                if (!field22652.test(var8)) {
                   return false;
                }
@@ -42,7 +42,7 @@ public class Class4855 extends Class4837 {
 
       for (int var6 = 0; var6 < var1.method3629(); var6++) {
          ItemStack var7 = var1.method3618(var6);
-         Class3257 var8 = var7.method32107();
+         Item var8 = var7.getItem();
          if (!(var8 instanceof Class3321)) {
             if (field22652.test(var7)) {
                var5 = var7.copy();

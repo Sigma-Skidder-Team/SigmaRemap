@@ -17,27 +17,27 @@ public abstract class Class3444 extends Block {
 
    @Nullable
    @Override
-   public Class7380 method11495(Class5909 var1) {
-      Class7380 var4 = var1.method18360().method6738(var1.method18345().method8349(this.field19256));
+   public BlockState method11495(Class5909 var1) {
+      BlockState var4 = var1.method18360().getBlockState(var1.method18345().method8349(this.field19256));
       return !var4.method23448(this.method12124()) && !var4.method23448(this.method12125())
          ? this.method12122(var1.method18360())
          : this.method12125().method11579();
    }
 
-   public Class7380 method12122(Class1660 var1) {
+   public BlockState method12122(Class1660 var1) {
       return this.method11579();
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockPos var6 = var3.method8349(this.field19256.method536());
-      Class7380 var7 = var2.method6738(var6);
-      Block var8 = var7.method23383();
+      BlockState var7 = var2.getBlockState(var6);
+      Block var8 = var7.getBlock();
       return !this.method12123(var8) ? false : var8 == this.method12124() || var8 == this.method12125() || var7.method23454(var2, var6, this.field19256);
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.method23443(var2, var3)) {
          var2.method7179(var3, true);
       }
@@ -48,7 +48,7 @@ public abstract class Class3444 extends Block {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return this.field19258;
    }
 

@@ -31,7 +31,7 @@ public class Class2693 extends Class2692 {
          this.field17135--;
          return false;
       } else {
-         return this.field17133.field5024.method6740() && this.method10910() && !this.method10911();
+         return this.field17133.world.method6740() && this.method10910() && !this.method10911();
       }
    }
 

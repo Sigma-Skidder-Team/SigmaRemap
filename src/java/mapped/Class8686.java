@@ -75,19 +75,19 @@ public class Class8686 {
       } else {
          boolean var9;
          if (var3 != Class2047.field13362) {
-            Class944 var8 = var7.method6759(var1);
+            TileEntity var8 = var7.getTileEntity(var1);
             Class946.method3802(var8);
             var9 = true;
          } else {
             var7.method7179(var1, true);
-            var9 = !var2.method495().method23393() || !var7.method6738(var1).method23393();
+            var9 = !var2.method495().isAir() || !var7.getBlockState(var1).isAir();
          }
 
          if (var9 && !var2.method496(var7, var1, 2)) {
             throw field39214.create();
          } else {
-            var7.method6964(var1, var2.method495().method23383());
-            var0.method20179(new TranslationTextComponent("commands.setblock.success", var1.method8304(), var1.getY(), var1.method8306()), true);
+            var7.method6964(var1, var2.method495().getBlock());
+            var0.method20179(new TranslationTextComponent("commands.setblock.success", var1.getX(), var1.getY(), var1.getZ()), true);
             return 1;
          }
       }

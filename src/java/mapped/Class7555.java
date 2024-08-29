@@ -110,7 +110,7 @@ public class Class7555 extends Class7554 {
       float var3 = (float)(this.field32402 * 25);
       float var4 = Math.abs(var3 - (float)this.field32403);
       boolean var5 = var3 - (float)this.field32403 != var4;
-      float var6 = 60.0F / (float) Minecraft.method1586();
+      float var6 = 60.0F / (float) Minecraft.getFps();
       float var7 = Math.min(var4 * 0.8F, var4 * 0.3F * var6);
       if (var5) {
          var7 *= -1.0F;

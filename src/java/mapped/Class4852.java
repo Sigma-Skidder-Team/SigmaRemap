@@ -16,12 +16,12 @@ import java.util.Map.Entry;
 public class Class4852 implements Class4842 {
    private final int field22641;
    private final int field22642;
-   private final Class25<Class120> field22643;
+   private final NonNullList<Class120> field22643;
    private final ItemStack field22644;
    private final ResourceLocation field22645;
    private final String field22646;
 
-   public Class4852(ResourceLocation var1, String var2, int var3, int var4, Class25<Class120> var5, ItemStack var6) {
+   public Class4852(ResourceLocation var1, String var2, int var3, int var4, NonNullList<Class120> var5, ItemStack var6) {
       this.field22645 = var1;
       this.field22646 = var2;
       this.field22641 = var3;
@@ -46,12 +46,12 @@ public class Class4852 implements Class4842 {
    }
 
    @Override
-   public ItemStack method14966() {
+   public ItemStack getRecipeOutput() {
       return this.field22644;
    }
 
    @Override
-   public Class25<Class120> method14969() {
+   public NonNullList<Class120> method14969() {
       return this.field22643;
    }
 
@@ -100,7 +100,7 @@ public class Class4852 implements Class4842 {
    }
 
    public ItemStack method14962(Class926 var1) {
-      return this.method14966().copy();
+      return this.getRecipeOutput().copy();
    }
 
    public int method14979() {
@@ -111,8 +111,8 @@ public class Class4852 implements Class4842 {
       return this.field22642;
    }
 
-   private static Class25<Class120> method14981(String[] var0, Map<String, Class120> var1, int var2, int var3) {
-      Class25 var6 = Class25.<Class120>method68(var2 * var3, Class120.field427);
+   private static NonNullList<Class120> method14981(String[] var0, Map<String, Class120> var1, int var2, int var3) {
+      NonNullList var6 = NonNullList.<Class120>method68(var2 * var3, Class120.field427);
       HashSet var7 = Sets.newHashSet(var1.keySet());
       var7.remove(" ");
 
@@ -237,7 +237,7 @@ public class Class4852 implements Class4842 {
 
    public static ItemStack method14987(JsonObject var0) {
       String var3 = JSONUtils.method32763(var0, "item");
-      Class3257 var4 = Registry.field16075.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
+      Item var4 = Registry.ITEM.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
          int var5 = JSONUtils.getInt(var0, "count", 1);
          return new ItemStack(var4, var5);
@@ -257,7 +257,7 @@ public class Class4852 implements Class4842 {
    }
 
    // $VF: synthetic method
-   public static Class25 method14991(String[] var0, Map var1, int var2, int var3) {
+   public static NonNullList method14991(String[] var0, Map var1, int var2, int var3) {
       return method14981(var0, var1, var2, var3);
    }
 
@@ -277,7 +277,7 @@ public class Class4852 implements Class4842 {
    }
 
    // $VF: synthetic method
-   public static Class25<Class120> method14995(Class4852 var0) {
+   public static NonNullList<Class120> method14995(Class4852 var0) {
       return var0.field22643;
    }
 

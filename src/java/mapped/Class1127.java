@@ -24,25 +24,25 @@ public class Class1127 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       super.method1921();
       this.field6167 = new Class1294(this, this.field6171);
       this.field4561.add(this.field6167);
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, Class7127.field30659, var1 -> this.field6166.accept(Optional.<Class5462>empty())
+            this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6166.accept(Optional.<Class5462>empty())
          )
       );
       this.field6169 = this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 155, this.field4565 - 29, 150, 20, Class7127.field30658, var1 -> this.field6166.accept(Optional.<Class5462>of(this.field6171))
+            this.field4564 / 2 - 155, this.field4565 - 29, 150, 20, DialogTexts.field30658, var1 -> this.field6166.accept(Optional.<Class5462>of(this.field6171))
          )
       );
    }
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override

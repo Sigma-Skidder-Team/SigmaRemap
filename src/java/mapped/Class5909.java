@@ -5,18 +5,18 @@ public class Class5909 extends Class5911 {
    public BlockPos field25717;
    public boolean field25718 = true;
 
-   public Class5909(PlayerEntity var1, Hand var2, ItemStack var3, Class8711 var4) {
-      this(var1.field5024, var1, var2, var3, var4);
+   public Class5909(PlayerEntity var1, Hand var2, ItemStack var3, BlockRayTraceResult var4) {
+      this(var1.world, var1, var2, var3, var4);
    }
 
    public Class5909(Class5911 var1) {
       this(var1.method18360(), var1.method18358(), var1.method18359(), var1.method18357(), var1.method18353());
    }
 
-   public Class5909(World var1, PlayerEntity var2, Hand var3, ItemStack var4, Class8711 var5) {
+   public Class5909(World var1, PlayerEntity var2, Hand var3, ItemStack var4, BlockRayTraceResult var5) {
       super(var1, var2, var3, var4, var5);
-      this.field25717 = var5.method31423().method8349(var5.method31424());
-      this.field25718 = var1.method6738(var5.method31423()).method23441(this);
+      this.field25717 = var5.getPos().method8349(var5.getFace());
+      this.field25718 = var1.getBlockState(var5.getPos()).method23441(this);
    }
 
    public static Class5909 method18344(Class5909 var0, BlockPos var1, Direction var2) {
@@ -25,11 +25,11 @@ public class Class5909 extends Class5911 {
          var0.method18358(),
          var0.method18359(),
          var0.method18357(),
-         new Class8711(
+         new BlockRayTraceResult(
             new Vector3d(
-               (double)var1.method8304() + 0.5 + (double)var2.method539() * 0.5,
+               (double)var1.getX() + 0.5 + (double)var2.method539() * 0.5,
                (double)var1.getY() + 0.5 + (double)var2.method540() * 0.5,
-               (double)var1.method8306() + 0.5 + (double)var2.method541() * 0.5
+               (double)var1.getZ() + 0.5 + (double)var2.method541() * 0.5
             ),
             var2,
             var1,
@@ -44,7 +44,7 @@ public class Class5909 extends Class5911 {
    }
 
    public boolean method18346() {
-      return this.field25718 || this.method18360().method6738(this.method18345()).method23441(this);
+      return this.field25718 || this.method18360().getBlockState(this.method18345()).method23441(this);
    }
 
    public boolean method18347() {

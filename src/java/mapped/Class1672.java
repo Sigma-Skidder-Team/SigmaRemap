@@ -23,10 +23,10 @@ public class Class1672 implements Class1670 {
    private volatile Class196 field9092;
    private final Map<Class101, Class7527> field9093 = Maps.newEnumMap(Class101.class);
    private volatile Class9176 field9094 = Class9176.field42133;
-   private final Map<BlockPos, Class944> field9095 = Maps.newHashMap();
-   private final Map<BlockPos, Class39> field9096 = Maps.newHashMap();
+   private final Map<BlockPos, TileEntity> field9095 = Maps.newHashMap();
+   private final Map<BlockPos, CompoundNBT> field9096 = Maps.newHashMap();
    private final Class7038[] field9097 = new Class7038[16];
-   private final List<Class39> field9098 = Lists.newArrayList();
+   private final List<CompoundNBT> field9098 = Lists.newArrayList();
    private final List<BlockPos> field9099 = Lists.newArrayList();
    private final ShortList[] field9100 = new ShortList[16];
    private final Map<Structure<?>, Class5444<?>> field9101 = Maps.newHashMap();
@@ -43,7 +43,7 @@ public class Class1672 implements Class1670 {
          var1,
          var2,
          (Class7038[])null,
-         new Class6806<Block>(var0 -> var0 == null || var0.method11579().method23393(), var1),
+         new Class6806<Block>(var0 -> var0 == null || var0.method11579().isAir(), var1),
          new Class6806<Class7631>(var0 -> var0 == null || var0 == Class9479.field44064, var1)
       );
    }
@@ -63,11 +63,11 @@ public class Class1672 implements Class1670 {
    }
 
    @Override
-   public Class7380 method6738(BlockPos var1) {
+   public BlockState getBlockState(BlockPos var1) {
       int var4 = var1.getY();
       if (!World.method6721(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
-         return !Class7038.method21859(var5) ? var5.method21852(var1.method8304() & 15, var4 & 15, var1.method8306() & 15) : Blocks.AIR.method11579();
+         return !Class7038.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.method11579();
       } else {
          return Blocks.field37011.method11579();
       }
@@ -78,7 +78,7 @@ public class Class1672 implements Class1670 {
       int var4 = var1.getY();
       if (!World.method6721(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
-         return !Class7038.method21859(var5) ? var5.method21853(var1.method8304() & 15, var4 & 15, var1.method8306() & 15) : Class9479.field44064.method25049();
+         return !Class7038.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Class9479.field44064.method25049();
       } else {
          return Class9479.field44064.method25049();
       }
@@ -109,10 +109,10 @@ public class Class1672 implements Class1670 {
 
    @Nullable
    @Override
-   public Class7380 method7061(BlockPos var1, Class7380 var2, boolean var3) {
-      int var6 = var1.method8304();
+   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
+      int var6 = var1.getX();
       int var7 = var1.getY();
-      int var8 = var1.method8306();
+      int var8 = var1.getZ();
       if (var7 >= 0 && var7 < 256) {
          if (this.field9097[var7 >> 4] == Class1674.field9111 && var2.method23448(Blocks.AIR)) {
             return var2;
@@ -122,7 +122,7 @@ public class Class1672 implements Class1670 {
             }
 
             Class7038 var9 = this.method7106(var7 >> 4);
-            Class7380 var10 = var9.method21856(var6 & 15, var7 & 15, var8 & 15, var2);
+            BlockState var10 = var9.method21856(var6 & 15, var7 & 15, var8 & 15, var2);
             if (this.field9094.method34306(Class9176.field42141)
                && var2 != var10
                && (
@@ -173,7 +173,7 @@ public class Class1672 implements Class1670 {
    }
 
    @Override
-   public void method7062(BlockPos var1, Class944 var2) {
+   public void method7062(BlockPos var1, TileEntity var2) {
       var2.method3782(var1);
       this.field9095.put(var1, var2);
    }
@@ -187,28 +187,28 @@ public class Class1672 implements Class1670 {
 
    @Nullable
    @Override
-   public Class944 method6759(BlockPos var1) {
+   public TileEntity getTileEntity(BlockPos var1) {
       return this.field9095.get(var1);
    }
 
-   public Map<BlockPos, Class944> method7107() {
+   public Map<BlockPos, TileEntity> method7107() {
       return this.field9095;
    }
 
-   public void method7108(Class39 var1) {
+   public void method7108(CompoundNBT var1) {
       this.field9098.add(var1);
    }
 
    @Override
    public void method7063(Entity var1) {
       if (!var1.method3328()) {
-         Class39 var4 = new Class39();
+         CompoundNBT var4 = new CompoundNBT();
          var1.method3293(var4);
          this.method7108(var4);
       }
    }
 
-   public List<Class39> method7109() {
+   public List<CompoundNBT> method7109() {
       return this.field9098;
    }
 
@@ -335,9 +335,9 @@ public class Class1672 implements Class1670 {
    }
 
    public static short method7113(BlockPos var0) {
-      int var3 = var0.method8304();
+      int var3 = var0.getX();
       int var4 = var0.getY();
-      int var5 = var0.method8306();
+      int var5 = var0.getZ();
       int var6 = var3 & 15;
       int var7 = var4 & 15;
       int var8 = var5 & 15;
@@ -392,24 +392,24 @@ public class Class1672 implements Class1670 {
    }
 
    @Override
-   public void method7085(Class39 var1) {
+   public void method7085(CompoundNBT var1) {
       this.field9096.put(new BlockPos(var1.method122("x"), var1.method122("y"), var1.method122("z")), var1);
    }
 
-   public Map<BlockPos, Class39> method7115() {
-      return Collections.<BlockPos, Class39>unmodifiableMap(this.field9096);
+   public Map<BlockPos, CompoundNBT> method7115() {
+      return Collections.<BlockPos, CompoundNBT>unmodifiableMap(this.field9096);
    }
 
    @Override
-   public Class39 method7086(BlockPos var1) {
+   public CompoundNBT method7086(BlockPos var1) {
       return this.field9096.get(var1);
    }
 
    @Nullable
    @Override
-   public Class39 method7087(BlockPos var1) {
-      Class944 var4 = this.method6759(var1);
-      return var4 == null ? this.field9096.get(var1) : var4.method3646(new Class39());
+   public CompoundNBT method7087(BlockPos var1) {
+      TileEntity var4 = this.getTileEntity(var1);
+      return var4 == null ? this.field9096.get(var1) : var4.write(new CompoundNBT());
    }
 
    @Override

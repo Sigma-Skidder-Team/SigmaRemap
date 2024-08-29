@@ -8,7 +8,6 @@ import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Desktop.Action;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -61,7 +60,7 @@ public class Class5628 {
    }
 
    public static void method17679(String var0) {
-      field24949.getClientPlayNetHandler().sendPacket(new Class5522(var0));
+      field24949.getConnection().sendPacket(new Class5522(var0));
    }
 
    public static List<PlayerEntity> method17680() {
@@ -128,7 +127,7 @@ public class Class5628 {
    }
 
    public static final boolean method17684(Entity var0) {
-      Class1656 var3 = field24949.world;
+      ClientWorld var3 = field24949.world;
       Class6488 var4 = var0.field5035;
       return var3.method7014(var4);
    }
@@ -219,7 +218,7 @@ public class Class5628 {
    public static void method17695(String var0) {
       try {
          Desktop var3 = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-         if (var3 != null && var3.isSupported(Action.BROWSE)) {
+         if (var3 != null && var3.isSupported(Desktop.Action.BROWSE)) {
             try {
                var3.browse(new URI(var0));
             } catch (Exception var5) {
@@ -420,7 +419,7 @@ public class Class5628 {
    }
 
    public static int method17705() {
-      for (Class6589 var3 : field24949.getClientPlayNetHandler().method15790()) {
+      for (Class6589 var3 : field24949.getConnection().method15790()) {
          if (var3.method19966().getId().equals(field24949.player.getUniqueID()) && !field24949.isIntegratedServerRunning()) {
             return var3.method19969();
          }
@@ -463,17 +462,17 @@ public class Class5628 {
    }
 
    public static Entity method17711(float var0, float var1, float var2, double var3) {
-      Class8709 var7 = method17712(var0, var1, var2, var3);
-      return var7 == null ? null : var7.method31416();
+      EntityRayTraceResult var7 = method17712(var0, var1, var2, var3);
+      return var7 == null ? null : var7.getEntity();
    }
 
-   public static Class8709 method17712(float var0, float var1, float var2, double var3) {
+   public static EntityRayTraceResult method17712(float var0, float var1, float var2, double var3) {
       Vector3d var7 = new Vector3d(
          field24949.player.getPosX(), field24949.player.getPosY() + (double)field24949.player.method3393(), field24949.player.getPosZ()
       );
-      Entity var8 = field24949.method1550();
+      Entity var8 = field24949.getRenderViewEntity();
       if (var8 != null && field24949.world != null) {
-         double var9 = (double)field24949.field1337.method23135();
+         double var9 = (double)field24949.playerController.method23135();
          if (var2 != 0.0F) {
             var9 = (double)var2;
          }
@@ -490,7 +489,7 @@ public class Class5628 {
       }
    }
 
-   public static Class8709 method17713(
+   public static EntityRayTraceResult method17713(
            World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5, double var6, double var8
    ) {
       double var12 = var6;
@@ -513,10 +512,10 @@ public class Class5628 {
          }
       }
 
-      return var14 != null ? new Class8709(var14) : null;
+      return var14 != null ? new EntityRayTraceResult(var14) : null;
    }
 
-   public static Class8709 method17714(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
+   public static EntityRayTraceResult method17714(Entity var0, float var1, float var2, Predicate<Entity> var3, double var4) {
       double var8 = var4 * var4;
       Entity var10 = null;
       Vector3d var11 = null;
@@ -540,7 +539,7 @@ public class Class5628 {
          }
       }
 
-      return var10 != null && var11 != null ? new Class8709(var10, var11) : null;
+      return var10 != null && var11 != null ? new EntityRayTraceResult(var10, var11) : null;
    }
 
    public static boolean method17715(Vector3d var0, Class6488 var1) {
@@ -554,34 +553,34 @@ public class Class5628 {
 
    public static boolean method17716() {
       return !field24954
-         && field24949.method1531() == null
-         && field24949.method1528() != null
-         && field24949.method1528().field33189.toLowerCase().contains("hypixel.net");
+         && field24949.getIntegratedServer() == null
+         && field24949.getCurrentServerData() != null
+         && field24949.getCurrentServerData().field33189.toLowerCase().contains("hypixel.net");
    }
 
    public static boolean method17717() {
-      return field24949.method1531() == null && field24949.method1528() != null && field24949.method1528().field33189.toLowerCase().contains("minemen.club");
+      return field24949.getIntegratedServer() == null && field24949.getCurrentServerData() != null && field24949.getCurrentServerData().field33189.toLowerCase().contains("minemen.club");
    }
 
    public static boolean method17718() {
-      return field24949.method1531() == null && field24949.method1528() != null && field24949.method1528().field33189.toLowerCase().contains("cubecraft.net");
+      return field24949.getIntegratedServer() == null && field24949.getCurrentServerData() != null && field24949.getCurrentServerData().field33189.toLowerCase().contains("cubecraft.net");
    }
 
    public static boolean method17719() {
-      return field24949.method1531() == null && field24949.method1528() != null && field24949.method1528().field33189.toLowerCase().contains("mineplex.com");
+      return field24949.getIntegratedServer() == null && field24949.getCurrentServerData() != null && field24949.getCurrentServerData().field33189.toLowerCase().contains("mineplex.com");
    }
 
    public static boolean method17720() {
-      return field24949.method1528() == null || field24949.method1528().field33189.toLowerCase().contains("localhost");
+      return field24949.getCurrentServerData() == null || field24949.getCurrentServerData().field33189.toLowerCase().contains("localhost");
    }
 
    public static Vector3d method17721(float var0, float var1) {
       float var4 = var0 * (float) (Math.PI / 180.0);
       float var5 = -var1 * (float) (Math.PI / 180.0);
-      float var6 = MathHelper.method37764(var5);
-      float var7 = MathHelper.method37763(var5);
-      float var8 = MathHelper.method37764(var4);
-      float var9 = MathHelper.method37763(var4);
+      float var6 = MathHelper.cos(var5);
+      float var7 = MathHelper.sin(var5);
+      float var8 = MathHelper.cos(var4);
+      float var9 = MathHelper.sin(var4);
       return new Vector3d((double)(var7 * var8), (double)(-var9), (double)(var6 * var8));
    }
 
@@ -681,12 +680,12 @@ public class Class5628 {
    }
 
    public static void method17733() {
-      field24949.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field182));
-      field24949.getClientPlayNetHandler().sendPacket(new Class5555(Hand.field183));
+      field24949.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
+      field24949.getConnection().sendPacket(new Class5555(Hand.field183));
    }
 
    public static void method17734() {
-      field24949.getClientPlayNetHandler().sendPacket(new Class5492(Class2070.field13489, new BlockPos(0, 0, 0), Direction.field672));
+      field24949.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13489, new BlockPos(0, 0, 0), Direction.DOWN));
    }
 
    public static void method17735(Entity var0, boolean var1) {
@@ -695,11 +694,11 @@ public class Class5628 {
       Client.getInstance().getEventManager().call(var5);
       if (!var5.isCancelled()) {
          if (var4 && var1) {
-            field24949.player.swingArm(Hand.field182);
+            field24949.player.swingArm(Hand.MAIN_HAND);
          }
 
-         field24949.getClientPlayNetHandler().sendPacket(new CUseEntityPacket(var5.method13935(), field24949.player.method3331()));
-         if (Class7858.method26311(Class6069.method18810(12), field24949.player.getHeldItem(Hand.field182)) > 0) {
+         field24949.getConnection().sendPacket(new CUseEntityPacket(var5.method13935(), field24949.player.method3331()));
+         if (Class7858.method26311(Class6069.method18810(12), field24949.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
             field24949.particles.method1195(var5.method13935(), Class7940.field34065);
          }
 
@@ -715,9 +714,9 @@ public class Class5628 {
             field24949.particles.method1195(var5.method13935(), Class7940.field34054);
          }
 
-         field24949.player.method2975();
+         field24949.player.resetCooldown();
          if (!var4 && var1) {
-            field24949.player.swingArm(Hand.field182);
+            field24949.player.swingArm(Hand.MAIN_HAND);
          }
 
          var5.method13938();
@@ -784,7 +783,7 @@ public class Class5628 {
    }
 
    public static void method17739() {
-      if (field24949.method1550() instanceof PlayerEntity && Client.getInstance().getGuiManager().method33470()) {
+      if (field24949.getRenderViewEntity() instanceof PlayerEntity && Client.getInstance().getGuiManager().method33470()) {
          if (field24949.gameRenderer.field828 != null) {
             field24949.gameRenderer.field828.close();
          }
@@ -807,10 +806,10 @@ public class Class5628 {
    }
 
    public static void method17742() {
-      if (field24949.gameRenderer.field831 == Class214.field830) {
+      if (field24949.gameRenderer.field831 == GameRenderer.field830) {
          field24949.gameRenderer.field828 = null;
       } else {
-         field24949.gameRenderer.method736(Class214.field829[field24949.gameRenderer.field831]);
+         field24949.gameRenderer.method736(GameRenderer.field829[field24949.gameRenderer.field831]);
       }
    }
 
@@ -968,7 +967,7 @@ public class Class5628 {
       return var6.values().toArray(new String[var6.values().size()]);
    }
 
-   public static void method17746(Class7730 var0) {
+   public static void method17746(ServerData var0) {
       field24954 = var0.field33189.toLowerCase().contains("hypixel.net");
       if (field24954) {
          new Thread(() -> {
@@ -1029,7 +1028,7 @@ public class Class5628 {
                return false;
             } else if (!field24949.player.method3026((Class880)var0)) {
                return false;
-            } else if (var0 instanceof Class1005) {
+            } else if (var0 instanceof ArmorStandEntity) {
                return false;
             } else if (!var1 && var0 instanceof PlayerEntity) {
                return false;
@@ -1064,15 +1063,15 @@ public class Class5628 {
 
       for (int var10 = 0; var10 < var9; var10++) {
          double var11 = !var0 ? 0.0 : method17750();
-         field24949.getClientPlayNetHandler().sendPacket(new Class5605(var3 + var11, var5 + 0.06248 + method17750(), var7 + var11, false));
+         field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5 + 0.06248 + method17750(), var7 + var11, false));
          if (method17716()) {
-            field24949.getClientPlayNetHandler().sendPacket(new Class5605(var3 + var11, var5 + 0.05 + method17750(), var7 + var11, false));
+            field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5 + 0.05 + method17750(), var7 + var11, false));
          }
 
-         field24949.getClientPlayNetHandler().sendPacket(new Class5605(var3 + var11, var5, var7 + var11, false));
+         field24949.getConnection().sendPacket(new Class5605(var3 + var11, var5, var7 + var11, false));
       }
 
-      field24949.getClientPlayNetHandler().sendPacket(new Class5603(true));
+      field24949.getConnection().sendPacket(new Class5603(true));
    }
 
    public static double method17750() {

@@ -30,7 +30,7 @@ public abstract class Class6069 {
 
       for (Class2106 var8 : this.field27306) {
          ItemStack var9 = var1.method2943(var8);
-         if (!var9.method32105()) {
+         if (!var9.isEmpty()) {
             var4.put(var8, var9);
          }
       }
@@ -76,7 +76,7 @@ public abstract class Class6069 {
 
    public String method18818() {
       if (this.field27309 == null) {
-         this.field27309 = Util.method38486("enchantment", Registry.field16073.method9181(this));
+         this.field27309 = Util.method38486("enchantment", Registry.field16073.getKey(this));
       }
 
       return this.field27309;
@@ -102,7 +102,7 @@ public abstract class Class6069 {
    }
 
    public boolean method18821(ItemStack var1) {
-      return this.field27308.method8990(var1.method32107());
+      return this.field27308.method8990(var1.getItem());
    }
 
    public void method18822(Class880 var1, Entity var2, int var3) {

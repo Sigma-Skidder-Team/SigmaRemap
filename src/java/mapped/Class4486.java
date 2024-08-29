@@ -20,11 +20,11 @@ public class Class4486 extends Class4457 {
       return new Class4486(Class9587.field44822, var0, Class7340.field31445, Class8576.field38559, Class8634.field38839);
    }
 
-   public boolean method14153(Class7380 var1, BlockPos var2, ServerWorld var3, ItemStack var4) {
+   public boolean method14153(BlockState var1, BlockPos var2, ServerWorld var3, ItemStack var4) {
       if (this.field21682 != null && !var1.method23448(this.field21682)) {
          return false;
       } else if (this.field21683.method23258(var1)) {
-         return this.field21684.method30651(var3, (float)var2.method8304(), (float)var2.getY(), (float)var2.method8306())
+         return this.field21684.method30651(var3, (float)var2.getX(), (float)var2.getY(), (float)var2.getZ())
             ? this.field21685.method31016(var4)
             : false;
       } else {
@@ -36,7 +36,7 @@ public class Class4486 extends Class4457 {
    public JsonObject method14092(Class8107 var1) {
       JsonObject var4 = super.method14092(var1);
       if (this.field21682 != null) {
-         var4.addProperty("block", Registry.field16072.method9181(this.field21682).toString());
+         var4.addProperty("block", Registry.BLOCK.getKey(this.field21682).toString());
       }
 
       var4.add("state", this.field21683.method23262());

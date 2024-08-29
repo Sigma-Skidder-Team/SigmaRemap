@@ -13,14 +13,14 @@ public class Class3414 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!this.method12052(var2, var3)) {
          var2.method6725(var3, this.field19104.method11579(), 2);
       }
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (!this.method12052(var4, var5)) {
          var4.method6860().method20726(var5, this, 60 + var4.method6814().nextInt(40));
       }
@@ -41,7 +41,7 @@ public class Class3414 extends Block {
 
    @Nullable
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       if (!this.method12052(var1.method18360(), var1.method18345())) {
          var1.method18360().method6860().method20726(var1.method18345(), this, 60 + var1.method18360().method6814().nextInt(40));
       }

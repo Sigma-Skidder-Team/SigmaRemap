@@ -33,8 +33,8 @@ public class Class2351<T> extends Class2350<T> {
 
    @Nonnull
    @Override
-   public ResourceLocation method9181(T var1) {
-      ResourceLocation var4 = super.method9181((T)var1);
+   public ResourceLocation getKey(T var1) {
+      ResourceLocation var4 = super.getKey((T)var1);
       return var4 != null ? var4 : this.field16151;
    }
 

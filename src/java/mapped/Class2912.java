@@ -25,7 +25,7 @@ public class Class2912 extends Class2898<Class4712> {
 
          for (int var10 = var8.method24357(); var10 <= var8.method24359(); var10++) {
             for (int var11 = var8.method24356(); var11 <= var8.method24358(); var11++) {
-               if (method11248(field17996.method8304(), field17996.method8306(), var11, var10) <= 16) {
+               if (method11248(field17996.getX(), field17996.getZ(), var11, var10) <= 16) {
                   var9.method8372(var11, field17996.getY(), var10);
                   if (!var9.equals(field17996)) {
                      var1.method6725(var9, Blocks.STONE.method11579(), 2);

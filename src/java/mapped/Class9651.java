@@ -138,7 +138,7 @@ public class Class9651 {
          method37647(
             var0,
             var6,
-            (ServerWorld)var2.field5024,
+            (ServerWorld)var2.world,
             var2.getPosX(),
             var2.getPosY(),
             var2.getPosZ(),
@@ -222,10 +222,10 @@ public class Class9651 {
             float var16 = MathHelper.method37792(var10);
             float var17 = MathHelper.method37792(var11);
             var17 = MathHelper.method37777(var17, -90.0F, 90.0F);
-            if (var2 != var1.field5024) {
+            if (var2 != var1.world) {
                var1.method3200();
                Entity var18 = var1;
-               var1 = var1.method3204().method33215(var2);
+               var1 = var1.getType().method33215(var2);
                if (var1 == null) {
                   return;
                }
@@ -247,7 +247,7 @@ public class Class9651 {
                ((ServerPlayerEntity)var1).stopSleepInBed(true, true);
             }
 
-            if (var2 != var1.field5024) {
+            if (var2 != var1.world) {
                ((ServerPlayerEntity)var1).method2824(var2, var3, var5, var7, var10, var11);
             } else {
                ((ServerPlayerEntity)var1).field4855.method15669(var3, var5, var7, var10, var11, var9);

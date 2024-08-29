@@ -75,7 +75,7 @@ public abstract class Class2898<FC extends Class4698> {
       return new Class7909<FC, Class2898<FC>>(this, (FC)var1);
    }
 
-   public void method11217(Class1681 var1, BlockPos var2, Class7380 var3) {
+   public void method11217(Class1681 var1, BlockPos var2, BlockState var3) {
       var1.method6725(var2, var3, 3);
    }
 
@@ -94,10 +94,10 @@ public abstract class Class2898<FC extends Class4698> {
    }
 
    public static boolean method11220(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, var0x -> method11219(var0x.method23383()));
+      return var0.method6815(var1, var0x -> method11219(var0x.getBlock()));
    }
 
    public static boolean method11221(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, Class7377::method23393);
+      return var0.method6815(var1, Class7377::isAir);
    }
 }

@@ -21,6 +21,6 @@ public class Class4248 extends Class4247 {
          (float)(this.method13265() + this.method13269()),
          -3618616
       );
-      Class3192.method11439(Class7925.field33947, (float)(this.method13263() + 5), (float)(this.method13265() - 2), this.field20605.method18626(), -14540254);
+      Class3192.method11439(ClassicDecryption.regular17, (float)(this.method13263() + 5), (float)(this.method13265() - 2), this.field20605.method18626(), -14540254);
    }
 }

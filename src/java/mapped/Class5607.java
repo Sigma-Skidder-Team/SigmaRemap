@@ -5,18 +5,18 @@ import java.io.IOException;
 public class Class5607 implements Packet<Class5116> {
    private static String[] field24886;
    private BlockPos field24887;
-   private Class7380 field24888;
+   private BlockState field24888;
 
    public Class5607() {
    }
 
-   public Class5607(BlockPos var1, Class7380 var2) {
+   public Class5607(BlockPos var1, BlockState var2) {
       this.field24887 = var1;
       this.field24888 = var2;
    }
 
    public Class5607(Class1665 var1, BlockPos var2) {
-      this(var2, var1.method6738(var2));
+      this(var2, var1.getBlockState(var2));
    }
 
    @Override
@@ -35,7 +35,7 @@ public class Class5607 implements Packet<Class5116> {
       var1.method15705(this);
    }
 
-   public Class7380 method17631() {
+   public BlockState method17631() {
       return this.field24888;
    }
 

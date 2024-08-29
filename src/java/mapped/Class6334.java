@@ -19,7 +19,7 @@ public abstract class Class6334 extends Class6333 {
    public void method19269() {
       boolean var3 = this.method19276();
       if (var3 && !this.method19270()) {
-         Minecraft.getInstance().method1546().method999(this.method19275());
+         Minecraft.getInstance().getSoundHandler().method999(this.method19275());
          this.field27847 = true;
       }
 

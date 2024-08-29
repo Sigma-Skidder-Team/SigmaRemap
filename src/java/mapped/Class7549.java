@@ -23,7 +23,7 @@ public class Class7549 extends Class7548 {
       String var5 = var1.method20385();
       String var6 = Class7944.method26946(var1.method20368()).trim();
       String[] var7 = this.method24673(var6);
-      Class9574 var8 = Class7944.method26928();
+      GameSettings var8 = Class7944.method26928();
       String var9 = null;
       if (!var5.equals(var1.method20366()) && var8.field44588) {
          var9 = "§8" + Class8043.method27619("of.general.id") + ": " + var1.method20366();
@@ -75,7 +75,7 @@ public class Class7549 extends Class7548 {
    }
 
    private String[] method24674(int var1, List<String> var2) {
-      Class9834 var5 = Class7944.method26860().field1294;
+      FontRenderer var5 = Class7944.method26860().fontRenderer;
       ArrayList<String> var6 = new ArrayList();
 
       for (int var7 = 0; var7 < var2.size(); var7++) {

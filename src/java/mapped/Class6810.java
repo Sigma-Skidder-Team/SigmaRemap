@@ -260,7 +260,7 @@ public class Class6810 {
          }
 
          if (this.field29657 != null) {
-            Class1656 var15 = Class7944.method26860().world;
+            ClientWorld var15 = Class7944.method26860().world;
             if (var15 != null) {
                int var21 = var15.method7002();
                if (!this.field29657.method36838(var21)) {
@@ -270,7 +270,7 @@ public class Class6810 {
          }
 
          if (this.field29658 != null) {
-            Class1656 var16 = Class7944.method26860().world;
+            ClientWorld var16 = Class7944.method26860().world;
             if (var16 != null) {
                int var22 = (int)var16.method6784();
                if (!this.field29658.method36838(var22)) {
@@ -280,7 +280,7 @@ public class Class6810 {
          }
 
          if (this.field29659 != null) {
-            Class1656 var17 = Class7944.method26860().world;
+            ClientWorld var17 = Class7944.method26860().world;
             if (var17 != null) {
                Class1989 var23 = Class1989.method8276(var17, 0.0F);
                if (!Class8720.method31458(this.field29659, var23)) {

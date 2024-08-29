@@ -27,9 +27,9 @@ public class Class2662 extends Class2661 {
    public void method10805() {
       if (Class1017.method4479(this.field17022).nextInt(30) == 0) {
          for (int var3 = 1; var3 <= 2; var3++) {
-            BlockPos var4 = this.field17022.method3432().method8340(var3);
-            Class7380 var5 = this.field17022.field5024.method6738(var4);
-            Block var6 = var5.method23383();
+            BlockPos var4 = this.field17022.getPosition().method8340(var3);
+            BlockState var5 = this.field17022.world.getBlockState(var4);
+            Block var6 = var5.getBlock();
             boolean var7 = false;
             Class8554 var8 = null;
             if (var6.method11540(Class7645.field32796)) {
@@ -58,8 +58,8 @@ public class Class2662 extends Class2661 {
                }
 
                if (var7) {
-                  this.field17022.field5024.method6999(2005, var4, 0);
-                  this.field17022.field5024.method6730(var4, var5.method23465(var8, Integer.valueOf(var5.<Integer>method23463(var8) + 1)));
+                  this.field17022.world.method6999(2005, var4, 0);
+                  this.field17022.world.method6730(var4, var5.method23465(var8, Integer.valueOf(var5.<Integer>method23463(var8) + 1)));
                   Class1017.method4480(this.field17022);
                }
             }

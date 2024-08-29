@@ -9,7 +9,7 @@ import java.util.Map;
 public class Class9446 {
    private static Class8138 field43880 = new Class8138();
    private static Map<String, Integer> field43881 = new HashMap<String, Integer>();
-   private static Map<Class3257, Integer> field43882 = new HashMap<Class3257, Integer>();
+   private static Map<Item, Integer> field43882 = new HashMap<Item, Integer>();
    private static long field43883 = 0L;
    private static final double field43884 = 7.5;
    private static final double field43885 = 56.25;
@@ -23,10 +23,10 @@ public class Class9446 {
    private static final Class9289<ItemStack> field43893 = (Class9289<ItemStack>)Class9299.field43007.method20234();
    private static boolean field43894;
 
-   public static void method36307(Entity var0, Class264 var1) {
+   public static void method36307(Entity var0, WorldRenderer var1) {
    }
 
-   public static void method36308(Entity var0, Class264 var1) {
+   public static void method36308(Entity var0, WorldRenderer var1) {
       synchronized (field43880) {
          Class9701 var5 = field43880.method28216(var0.method3205());
          if (var5 != null) {
@@ -35,7 +35,7 @@ public class Class9446 {
       }
    }
 
-   public static void method36309(Class264 var0) {
+   public static void method36309(WorldRenderer var0) {
       long var3 = System.currentTimeMillis();
       if (var3 >= field43883 + 50L) {
          field43883 = var3;
@@ -129,8 +129,8 @@ public class Class9446 {
       }
    }
 
-   private static void method36313(Class264 var0) {
-      Class1656 var3 = var0.method930();
+   private static void method36313(WorldRenderer var0) {
+      ClientWorld var3 = var0.method930();
       if (var3 != null) {
          for (Entity var5 : var3.method6835()) {
             int var6 = method36319(var5);
@@ -158,7 +158,7 @@ public class Class9446 {
    }
 
    public static int method36315(Entity var0, int var1) {
-      double var4 = method36317(var0.method3432());
+      double var4 = method36317(var0.getPosition());
       if (var0 == Class7944.method26860().player) {
          double var6 = (double)method36319(var0);
          var4 = Math.max(var4, var6);
@@ -193,9 +193,9 @@ public class Class9446 {
                double var11 = var9.method38013();
                double var13 = var9.method38014();
                double var15 = var9.method38015();
-               double var17 = (double)var0.method8304() - var11;
+               double var17 = (double)var0.getX() - var11;
                double var19 = (double)var0.getY() - var13;
-               double var21 = (double)var0.method8306() - var15;
+               double var21 = (double)var0.getZ() - var15;
                double var23 = var17 * var17 + var19 * var19 + var21 * var21;
                if (!(var23 > 56.25)) {
                   double var25 = Math.sqrt(var23);
@@ -214,7 +214,7 @@ public class Class9446 {
 
    public static int method36318(ItemStack var0) {
       if (var0 != null) {
-         Class3257 var3 = var0.method32107();
+         Item var3 = var0.getItem();
          if (var3 instanceof Class3292) {
             Class3292 var4 = (Class3292)var3;
             Block var5 = var4.method11845();
@@ -223,16 +223,16 @@ public class Class9446 {
             }
          }
 
-         if (var3 != Class8514.field37884) {
-            if (var3 == Class8514.field37967 || var3 == Class8514.field37975) {
+         if (var3 != Items.field37884) {
+            if (var3 == Items.field37967 || var3 == Items.field37975) {
                return 10;
-            } else if (var3 == Class8514.field37908) {
+            } else if (var3 == Items.field37908) {
                return 8;
-            } else if (var3 == Class8514.field38076) {
+            } else if (var3 == Items.field38076) {
                return 8;
-            } else if (var3 == Class8514.field37976) {
+            } else if (var3 == Items.field37976) {
                return 8;
-            } else if (var3 != Class8514.field38066) {
+            } else if (var3 != Items.field38066) {
                if (!field43882.isEmpty()) {
                   Integer var6 = field43882.get(var3);
                   if (var6 != null) {
@@ -253,12 +253,12 @@ public class Class9446 {
    }
 
    public static int method36319(Entity var0) {
-      if (var0 == Class7944.method26860().method1550() && !Class7944.method26972()) {
+      if (var0 == Class7944.method26860().getRenderViewEntity() && !Class7944.method26972()) {
          return 0;
       } else {
          if (var0 instanceof PlayerEntity) {
             PlayerEntity var3 = (PlayerEntity)var0;
-            if (var3.method2800()) {
+            if (var3.isSpectator()) {
                return 0;
             }
          }
@@ -322,7 +322,7 @@ public class Class9446 {
       }
    }
 
-   public static void method36320(Class264 var0) {
+   public static void method36320(WorldRenderer var0) {
       synchronized (field43880) {
          List var4 = field43880.method28219();
 

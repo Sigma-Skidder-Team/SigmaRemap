@@ -9,7 +9,7 @@ public class Class2887<T extends Class1057> extends Class2803<T> {
    private final Class7219 field17890;
 
    public Class2887() {
-      super(Class4520::method14314);
+      super(RenderType::method14314);
       this.field17888 = new Class7219(64, 64, 0, 28);
       this.field17890 = new Class7219(64, 64, 0, 52);
       this.field17889.method22673(-8.0F, -16.0F, -8.0F, 16.0F, 12.0F, 16.0F);
@@ -23,13 +23,13 @@ public class Class2887<T extends Class1057> extends Class2803<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = var4 - (float)var1.field5055;
       float var10 = (0.5F + var1.method4853(var9)) * (float) Math.PI;
-      float var11 = -1.0F + MathHelper.method37763(var10);
+      float var11 = -1.0F + MathHelper.sin(var10);
       float var12 = 0.0F;
       if (var10 > (float) Math.PI) {
-         var12 = MathHelper.method37763(var4 * 0.1F) * 0.7F;
+         var12 = MathHelper.sin(var4 * 0.1F) * 0.7F;
       }
 
-      this.field17889.method22679(0.0F, 16.0F + MathHelper.method37763(var10) * 8.0F + var12, 0.0F);
+      this.field17889.method22679(0.0F, 16.0F + MathHelper.sin(var10) * 8.0F + var12, 0.0F);
       if (!(var1.method4853(var9) > 0.3F)) {
          this.field17889.field31036 = 0.0F;
       } else {

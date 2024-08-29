@@ -11,7 +11,7 @@ public class SharedConstants {
    public static final Level field42542 = Level.DISABLED;
    public static final long field42543 = Duration.ofMillis(300L).toNanos();
    public static boolean field42544 = true;
-   public static boolean field42545;
+   public static boolean developmentMode;
    public static final char[] field42546 = new char[]{'/', '\n', '\r', '\t', '\u0000', '\f', '`', '?', '*', '\\', '<', '>', '|', '"', ':'};
    private static GameVersion field42547;
 
@@ -31,7 +31,7 @@ public class SharedConstants {
       return var3.toString();
    }
 
-   public static GameVersion method34773() {
+   public static GameVersion getVersion() {
       if (field42547 == null) {
          field42547 = Class8245.method28760();
       }

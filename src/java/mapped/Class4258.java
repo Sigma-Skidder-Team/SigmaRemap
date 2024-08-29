@@ -32,21 +32,21 @@ public class Class4258 extends Class4247 {
 
          this.method13230(this.field20642 = new Class4339(this, "scrollview", 0, 40, this.field20897, this.field20898 - 40));
          byte var4 = 40;
-         ArrayList<Class3257> var5 = new ArrayList();
+         ArrayList<Item> var5 = new ArrayList();
 
-         for (Class3257 var7 : Registry.field16075) {
+         for (Item var7 : Registry.ITEM) {
             var5.add(var7);
          }
 
-         var5.add(new Class3292(Blocks.field36588, new Class5643().method17779(Class7401.field31669)));
-         var5.add(new Class3292(Blocks.field36649, new Class5643().method17779(Class7401.field31669)));
+         var5.add(new Class3292(Blocks.field36588, new Class5643().method17779(ItemGroup.field31669)));
+         var5.add(new Class3292(Blocks.field36649, new Class5643().method17779(ItemGroup.field31669)));
 
-         for (Class3257 var13 : method13070(var5, var1)) {
-            if (var13 != Class8514.field37222 && (!this.field20644 || var13 instanceof Class3292)) {
-               ResourceLocation var8 = Registry.field16075.method9181(var13);
+         for (Item var13 : method13070(var5, var1)) {
+            if (var13 != Items.field37222 && (!this.field20644 || var13 instanceof Class3292)) {
+               ResourceLocation var8 = Registry.ITEM.getKey(var13);
                String var9;
                if (var13 instanceof Class3292 && var8.method8292().equals("air")) {
-                  var9 = Registry.field16072.method9181(((Class3292)var13).method11845()).toString();
+                  var9 = Registry.BLOCK.getKey(((Class3292)var13).method11845()).toString();
                } else {
                   var9 = var8.toString();
                }
@@ -72,14 +72,14 @@ public class Class4258 extends Class4247 {
       });
    }
 
-   public static List<Class3257> method13070(List<Class3257> var0, String var1) {
+   public static List<Item> method13070(List<Item> var0, String var1) {
       var1 = var1.toLowerCase();
       if (var1.length() != 0) {
          ArrayList var4 = new ArrayList();
          Iterator var5 = var0.iterator();
 
          while (var5.hasNext()) {
-            Class3257 var6 = (Class3257)var5.next();
+            Item var6 = (Item)var5.next();
             if (var6.method11717().getString().toLowerCase().startsWith(var1.toLowerCase())) {
                var4.add(var6);
                var5.remove();
@@ -89,7 +89,7 @@ public class Class4258 extends Class4247 {
          Iterator var9 = var0.iterator();
 
          while (var9.hasNext()) {
-            Class3257 var7 = (Class3257)var9.next();
+            Item var7 = (Item)var9.next();
             if (var7.method11717().getString().toLowerCase().contains(var1.toLowerCase())) {
                var4.add(var7);
                var9.remove();

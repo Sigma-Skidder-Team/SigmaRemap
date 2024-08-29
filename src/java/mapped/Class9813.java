@@ -27,11 +27,11 @@ public class Class9813 {
       var0 -> new TranslationTextComponent("commands.datapack.disable.failed", var0)
    );
    private static final SuggestionProvider<Class6619> field45862 = (var0, var1) -> Class6618.method20148(
-         ((Class6619)var0.getSource()).method20177().method1402().method1269().stream().<String>map(StringArgumentType::escapeIfRequired), var1
+         ((Class6619)var0.getSource()).method20177().method1402().func_232621_d_().stream().<String>map(StringArgumentType::escapeIfRequired), var1
       );
    private static final SuggestionProvider<Class6619> field45863 = (var0, var1) -> {
-      Class313 var4 = ((Class6619)var0.getSource()).method20177().method1402();
-      Collection var5 = var4.method1269();
+      ResourcePackList var4 = ((Class6619)var0.getSource()).method20177().method1402();
+      Collection var5 = var4.func_232621_d_();
       return Class6618.method20148(var4.method1267().stream().filter(var1x -> !var5.contains(var1x)).<String>map(StringArgumentType::escapeIfRequired), var1);
    };
 
@@ -111,21 +111,21 @@ public class Class9813 {
       );
    }
 
-   private static int method38701(Class6619 var0, Class1810 var1, Class8750 var2) throws CommandSyntaxException {
-      Class313 var5 = var0.method20177().method1402();
-      ArrayList<Class1810> var6 = Lists.newArrayList(var5.method1270());
+   private static int method38701(Class6619 var0, ResourcePackInfo var1, Class8750 var2) throws CommandSyntaxException {
+      ResourcePackList var5 = var0.method20177().method1402();
+      ArrayList<ResourcePackInfo> var6 = Lists.newArrayList(var5.getEnabledPacks());
       var2.method31568(var6, var1);
       var0.method20179(new TranslationTextComponent("commands.datapack.modify.enable", var1.method7948(true)), true);
-      Class9482.method36605(var6.stream().<String>map(Class1810::method7951).collect(Collectors.<String>toList()), var0);
+      Class9482.method36605(var6.stream().<String>map(ResourcePackInfo::getName).collect(Collectors.<String>toList()), var0);
       return var6.size();
    }
 
-   private static int method38702(Class6619 var0, Class1810 var1) {
-      Class313 var4 = var0.method20177().method1402();
-      ArrayList<Class1810> var5 = Lists.newArrayList(var4.method1270());
+   private static int method38702(Class6619 var0, ResourcePackInfo var1) {
+      ResourcePackList var4 = var0.method20177().method1402();
+      ArrayList<ResourcePackInfo> var5 = Lists.newArrayList(var4.getEnabledPacks());
       var5.remove(var1);
       var0.method20179(new TranslationTextComponent("commands.datapack.modify.disable", var1.method7948(true)), true);
-      Class9482.method36605(var5.stream().<String>map(Class1810::method7951).collect(Collectors.<String>toList()), var0);
+      Class9482.method36605(var5.stream().<String>map(ResourcePackInfo::getName).collect(Collectors.<String>toList()), var0);
       return var5.size();
    }
 
@@ -134,11 +134,11 @@ public class Class9813 {
    }
 
    private static int method38704(Class6619 var0) {
-      Class313 var3 = var0.method20177().method1402();
-      var3.method1262();
-      Collection<Class1810> var4 = var3.method1270();
-      Collection<Class1810> var5 = var3.method1268();
-      List<Class1810> var6 = var5.stream().filter(var1 -> !var4.contains(var1)).collect(Collectors.toList());
+      ResourcePackList var3 = var0.method20177().method1402();
+      var3.reloadPacksFromFinders();
+      Collection<ResourcePackInfo> var4 = var3.getEnabledPacks();
+      Collection<ResourcePackInfo> var5 = var3.method1268();
+      List<ResourcePackInfo> var6 = var5.stream().filter(var1 -> !var4.contains(var1)).collect(Collectors.toList());
       if (!var6.isEmpty()) {
          var0.method20179(
             new TranslationTextComponent(
@@ -154,9 +154,9 @@ public class Class9813 {
    }
 
    private static int method38705(Class6619 var0) {
-      Class313 var3 = var0.method20177().method1402();
-      var3.method1262();
-      Collection<Class1810> var4 = var3.method1270();
+      ResourcePackList var3 = var0.method20177().method1402();
+      var3.reloadPacksFromFinders();
+      Collection<ResourcePackInfo> var4 = var3.getEnabledPacks();
       if (!var4.isEmpty()) {
          var0.method20179(
             new TranslationTextComponent(
@@ -171,12 +171,12 @@ public class Class9813 {
       return var4.size();
    }
 
-   private static Class1810 method38706(CommandContext<Class6619> var0, String var1, boolean var2) throws CommandSyntaxException {
+   private static ResourcePackInfo method38706(CommandContext<Class6619> var0, String var1, boolean var2) throws CommandSyntaxException {
       String var5 = StringArgumentType.getString(var0, var1);
-      Class313 var6 = ((Class6619)var0.getSource()).method20177().method1402();
-      Class1810 var7 = var6.method1271(var5);
+      ResourcePackList var6 = ((Class6619)var0.getSource()).method20177().method1402();
+      ResourcePackInfo var7 = var6.method1271(var5);
       if (var7 != null) {
-         boolean var8 = var6.method1270().contains(var7);
+         boolean var8 = var6.getEnabledPacks().contains(var7);
          if (var2 && var8) {
             throw field45860.create(var5);
          } else if (!var2 && !var8) {

@@ -16,13 +16,13 @@ public class Class1675 extends Class1674 {
    }
 
    @Override
-   public Class7380 method6738(BlockPos var1) {
+   public BlockState getBlockState(BlockPos var1) {
       return Blocks.field37011.method11579();
    }
 
    @Nullable
    @Override
-   public Class7380 method7061(BlockPos var1, Class7380 var2, boolean var3) {
+   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
       return null;
    }
 
@@ -56,16 +56,16 @@ public class Class1675 extends Class1674 {
 
    @Nullable
    @Override
-   public Class944 method7029(BlockPos var1, Class2206 var2) {
+   public TileEntity method7029(BlockPos var1, Class2206 var2) {
       return null;
    }
 
    @Override
-   public void method7135(Class944 var1) {
+   public void method7135(TileEntity var1) {
    }
 
    @Override
-   public void method7062(BlockPos var1, Class944 var2) {
+   public void method7062(BlockPos var1, TileEntity var2) {
    }
 
    @Override

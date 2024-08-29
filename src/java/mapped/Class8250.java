@@ -56,8 +56,8 @@ public class Class8250 {
          File var5 = this.method28766(var2);
          if (var5.exists()) {
             Class7530 var6 = (Class7530)var1.get();
-            Class39 var7 = this.method28771(var2, SharedConstants.method34773().getWorldVersion());
-            var6.method24591(var7.method130("data"));
+            CompoundNBT var7 = this.method28771(var2, SharedConstants.getVersion().getWorldVersion());
+            var6.method24591(var7.getCompound("data"));
             return (T)var6;
          }
       } catch (Exception var8) {
@@ -71,15 +71,15 @@ public class Class8250 {
       this.field35446.put(var1.method24608(), var1);
    }
 
-   public Class39 method28771(String var1, int var2) throws IOException {
+   public CompoundNBT method28771(String var1, int var2) throws IOException {
       File var5 = this.method28766(var1);
 
-      Class39 var16;
+      CompoundNBT var16;
       try (
          FileInputStream var6 = new FileInputStream(var5);
          PushbackInputStream var8 = new PushbackInputStream(var6, 2);
       ) {
-         Class39 var10;
+         CompoundNBT var10;
          if (this.method28772(var8)) {
             var10 = Class8799.method31766(var8);
          } else {

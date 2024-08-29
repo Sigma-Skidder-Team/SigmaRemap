@@ -9,7 +9,7 @@ public class Class4191 extends Class4188 {
    private boolean field20485;
    private final int field20486;
 
-   public Class4191(Class8761 var1, Class39 var2) {
+   public Class4191(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33425, var2);
       this.field20483 = var2.method132("hr");
       this.field20484 = var2.method132("sc");
@@ -18,7 +18,7 @@ public class Class4191 extends Class4188 {
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("hr", this.field20483);
       var1.method115("sc", this.field20484);
@@ -224,10 +224,10 @@ public class Class4191 extends Class4188 {
    @Override
    public boolean method12933(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      if (var2.method38396(var10) && var1.method6738(var10).method23393() && !var1.method6738(var10.method8313()).method23393()) {
-         Class7380 var11 = Blocks.RAIL.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
+      if (var2.method38396(var10) && var1.getBlockState(var10).isAir() && !var1.getBlockState(var10.method8313()).isAir()) {
+         BlockState var11 = Blocks.RAIL.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
          this.method12923(var1, var11, var4, var5, var6, var2);
-         Class991 var12 = new Class991(var1.method6970(), (double)var10.method8304() + 0.5, (double)var10.getY() + 0.5, (double)var10.method8306() + 0.5);
+         Class991 var12 = new Class991(var1.method6970(), (double)var10.getX() + 0.5, (double)var10.getY() + 0.5, (double)var10.getZ() + 0.5);
          var12.method3626(var7, var3.nextLong());
          var1.method6916(var12);
          return true;
@@ -242,7 +242,7 @@ public class Class4191 extends Class4188 {
          return false;
       } else {
          int var14 = this.field20486 * 5 - 1;
-         Class7380 var15 = this.method12967();
+         BlockState var15 = this.method12967();
          this.method12927(var1, var5, 0, 0, 0, 2, 1, var14, field20443, field20443, false);
          this.method12929(var1, var5, var4, 0.8F, 0, 2, 0, 2, 2, var14, field20443, field20443, false, false);
          if (this.field20484) {
@@ -277,9 +277,9 @@ public class Class4191 extends Class4188 {
                if (var5.method38396(var22) && this.method12925(var1, 1, 0, var19, var5)) {
                   this.field20485 = true;
                   var1.method6725(var22, Blocks.field36532.method11579(), 2);
-                  Class944 var23 = var1.method6759(var22);
+                  TileEntity var23 = var1.getTileEntity(var22);
                   if (var23 instanceof Class960) {
-                     ((Class960)var23).method3911().method24790(Class8992.field41013);
+                     ((Class960)var23).method3911().method24790(EntityType.field41013);
                   }
                }
             }
@@ -288,8 +288,8 @@ public class Class4191 extends Class4188 {
          for (int var24 = 0; var24 <= 2; var24++) {
             for (int var26 = 0; var26 <= var14; var26++) {
                byte var28 = -1;
-               Class7380 var30 = this.method12924(var1, var24, -1, var26, var5);
-               if (var30.method23393() && this.method12925(var1, var24, -1, var26, var5)) {
+               BlockState var30 = this.method12924(var1, var24, -1, var26, var5);
+               if (var30.isAir() && this.method12925(var1, var24, -1, var26, var5)) {
                   byte var32 = -1;
                   this.method12923(var1, var15, var24, -1, var26, var5);
                }
@@ -297,11 +297,11 @@ public class Class4191 extends Class4188 {
          }
 
          if (this.field20483) {
-            Class7380 var25 = Blocks.RAIL.method11579().method23465(Class3430.field19191, Class96.field247);
+            BlockState var25 = Blocks.RAIL.method11579().method23465(Class3430.field19191, Class96.field247);
 
             for (int var27 = 0; var27 <= var14; var27++) {
-               Class7380 var29 = this.method12924(var1, 1, -1, var27, var5);
-               if (!var29.method23393() && var29.method23409(var1, new BlockPos(this.method12920(1, var27), this.method12921(-1), this.method12922(1, var27)))
+               BlockState var29 = this.method12924(var1, 1, -1, var27, var5);
+               if (!var29.isAir() && var29.method23409(var1, new BlockPos(this.method12920(1, var27), this.method12921(-1), this.method12922(1, var27)))
                   )
                 {
                   float var31 = !this.method12925(var1, 1, 0, var27, var5) ? 0.9F : 0.7F;
@@ -316,8 +316,8 @@ public class Class4191 extends Class4188 {
 
    private void method12973(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, Random var8) {
       if (this.method12969(var1, var2, var3, var7, var6, var5)) {
-         Class7380 var11 = this.method12967();
-         Class7380 var12 = this.method12968();
+         BlockState var11 = this.method12967();
+         BlockState var12 = this.method12968();
          this.method12927(var1, var2, var3, var4, var5, var3, var6 - 1, var5, var12.method23465(Class3239.field18683, Boolean.valueOf(true)), field20443, false);
          this.method12927(var1, var2, var7, var4, var5, var7, var6 - 1, var5, var12.method23465(Class3239.field18681, Boolean.valueOf(true)), field20443, false);
          if (var8.nextInt(4) != 0) {

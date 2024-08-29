@@ -6,7 +6,7 @@ import java.util.List;
 public class Class8861 {
    private static String[] field40047;
    private static boolean field40048;
-   private static final Class4510[] field40049 = new Class4510[Class4520.method14365()];
+   private static final Class4510[] field40049 = new Class4510[RenderType.method14365()];
 
    public static void method32252(List<Class4510> var0) {
       if (!field40048) {

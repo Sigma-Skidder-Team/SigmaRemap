@@ -13,7 +13,7 @@ public class Class1199 extends Class1197 {
    private static final ITextComponent field6492 = new TranslationTextComponent("gui.recipebook.moreRecipes");
    private Class5828<?> field6493;
    private Class6941 field6494;
-   private Class9266 field6495;
+   private RecipeList field6495;
    private float field6496;
    private float field6497;
    private int field6498;
@@ -22,7 +22,7 @@ public class Class1199 extends Class1197 {
       super(0, 0, 25, 25, StringTextComponent.EMPTY);
    }
 
-   public void method5752(Class9266 var1, Class2954 var2) {
+   public void method5752(RecipeList var1, Class2954 var2) {
       this.field6495 = var1;
       this.field6493 = (Class5828<?>)var2.method11318().player.field4905;
       this.field6494 = var2.method11319();
@@ -37,7 +37,7 @@ public class Class1199 extends Class1197 {
       }
    }
 
-   public Class9266 method5753() {
+   public RecipeList method5753() {
       return this.field6495;
    }
 
@@ -48,7 +48,7 @@ public class Class1199 extends Class1197 {
 
    @Override
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
-      if (!Screen.method2475()) {
+      if (!Screen.hasControlDown()) {
          this.field6496 += var4;
       }
 
@@ -77,14 +77,14 @@ public class Class1199 extends Class1197 {
       this.method5696(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
       List var14 = this.method5755();
       this.field6498 = MathHelper.method37767(this.field6496 / 30.0F) % var14.size();
-      ItemStack var12 = ((Class4843)var14.get(this.field6498)).method14966();
+      ItemStack var12 = ((Class4843)var14.get(this.field6498)).getRecipeOutput();
       int var13 = 4;
       if (this.field6495.method34895() && this.method5755().size() > 1) {
-         var7.method1555().method793(var12, this.field6477 + var13 + 1, this.field6478 + var13 + 1);
+         var7.getItemRenderer().method793(var12, this.field6477 + var13 + 1, this.field6478 + var13 + 1);
          var13--;
       }
 
-      var7.method1555().method794(var12, this.field6477 + var13, this.field6478 + var13);
+      var7.getItemRenderer().method794(var12, this.field6477 + var13, this.field6478 + var13);
       if (var10) {
          RenderSystem.popMatrix();
       }
@@ -109,7 +109,7 @@ public class Class1199 extends Class1197 {
    }
 
    public List<ITextComponent> method5758(Screen var1) {
-      ItemStack var4 = this.method5755().get(this.field6498).method14966();
+      ItemStack var4 = this.method5755().get(this.field6498).getRecipeOutput();
       ArrayList var5 = Lists.newArrayList(var1.method2458(var4));
       if (this.field6495.method34893(this.field6494.method21370(this.field6493)).size() > 1) {
          var5.add(field6492);

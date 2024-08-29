@@ -64,7 +64,7 @@ public class Class8463 {
       if (this != field36278) {
          JsonObject var3 = new JsonObject();
          if (this.field36280 != null) {
-            var3.addProperty("fluid", Registry.field16070.method9181(this.field36280).toString());
+            var3.addProperty("fluid", Registry.field16070.getKey(this.field36280).toString());
          }
 
          if (this.field36279 != null) {

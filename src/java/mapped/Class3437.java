@@ -14,17 +14,17 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field19198, var2.method252(var1.<Direction>method23463(field19198)));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23465(field19198, var2.method8750(var1.<Direction>method23463(field19198)));
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       switch (Class8694.field39238[var1.<Direction>method23463(field19198).method544().ordinal()]) {
          case 1:
          default:
@@ -37,20 +37,20 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       Direction var4 = var1.method18354();
-      Class7380 var5 = var1.method18360().method6738(var1.method18345().method8349(var4.method536()));
+      BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8349(var4.method536()));
       return var5.method23448(this) && var5.method23463(field19198) == var4
          ? this.method11579().method23465(field19198, var4.method536())
          : this.method11579().method23465(field19198, var4);
    }
 
    @Override
-   public void method11512(Class7380 var1, World var2, BlockPos var3, Random var4) {
+   public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method23463(field19198);
-      double var8 = (double)var3.method8304() + 0.55 - (double)(var4.nextFloat() * 0.1F);
+      double var8 = (double)var3.getX() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var10 = (double)var3.getY() + 0.55 - (double)(var4.nextFloat() * 0.1F);
-      double var12 = (double)var3.method8306() + 0.55 - (double)(var4.nextFloat() * 0.1F);
+      double var12 = (double)var3.getZ() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var14 = (double)(0.4F - (var4.nextFloat() + var4.nextFloat()) * 0.4F);
       if (var4.nextInt(5) == 0) {
          var2.method6746(
@@ -66,17 +66,17 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19198);
    }
 
    @Override
-   public Class2315 method11689(Class7380 var1) {
+   public Class2315 method11689(BlockState var1) {
       return Class2315.field15862;
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

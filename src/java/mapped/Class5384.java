@@ -39,14 +39,14 @@ public class Class5384 extends Module {
       int var5 = Class5628.method17688(this.method16004().method15976("Ender Color"), 0.7F);
       int var6 = Class5628.method17688(this.method16004().method15976("Trapped Color"), 0.7F);
 
-      for (Class944 var8 : mc.world.field9003) {
+      for (TileEntity var8 : mc.world.field9003) {
          boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().method15974("Show Regular Chests");
          boolean var10 = var8 instanceof Class943 && this.method16004().method15974("Show Ender Chests");
          boolean var11 = var8 instanceof Class970 && this.method16004().method15974("Show Trapped Chests");
          if (var9 || var10 || var11) {
-            double var12 = Class9647.method37624(var8.method3774()).field43722;
-            double var14 = Class9647.method37624(var8.method3774()).field43723;
-            double var16 = Class9647.method37624(var8.method3774()).field43724;
+            double var12 = Class9647.method37624(var8.getPos()).field43722;
+            double var14 = Class9647.method37624(var8.getPos()).field43723;
+            double var16 = Class9647.method37624(var8.getPos()).field43724;
             GL11.glDisable(2929);
             GL11.glEnable(3042);
             int var18 = var4;
@@ -59,7 +59,7 @@ public class Class5384 extends Module {
             }
 
             Class9388 var19 = new Class9388(
-               var8.method3775().method23412(mc.world, var8.method3774()).method19514().method19667(var12, var14, var16)
+               var8.method3775().method23412(mc.world, var8.getPos()).method19514().method19667(var12, var14, var16)
             );
             if (var1) {
                Class3192.method11462(var19, 3.0F, var18);

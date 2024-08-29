@@ -2,10 +2,10 @@ package mapped;
 
 public class Class4135 extends Class4057 {
    public Class4135() {
-      super(Class8992.field41050, "minecart", 0.5F);
+      super(EntityType.field41050, "minecart", 0.5F);
    }
 
-   public Class4135(Class8992 var1, String var2, float var3) {
+   public Class4135(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 
@@ -58,7 +58,7 @@ public class Class4135 extends Class4057 {
 
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
-      Class8853 var5 = Minecraft.getInstance().method1554();
+      EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5732 var6 = new Class5732(var5);
       if (Class9299.field43144.method20238()) {
          Class9299.method35082(var6, Class9299.field43144, var1);

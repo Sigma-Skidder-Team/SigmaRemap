@@ -69,12 +69,12 @@ public class Class8878<T extends Entity> {
       return this;
    }
 
-   public Class8992<T> method32309(String var1) {
+   public EntityType<T> method32309(String var1) {
       if (this.field40184) {
          Util.method38500(Class8239.field35390, var1);
       }
 
-      return new Class8992<T>(
+      return new EntityType<T>(
          this.field40181,
          this.field40182,
          this.field40184,

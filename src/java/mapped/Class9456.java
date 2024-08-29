@@ -7,27 +7,27 @@ import javax.annotation.Nullable;
 public final class Class9456 {
    private static String[] field43938;
 
-   public static Class8710 method36385(Entity var0, Predicate<Entity> var1) {
+   public static RayTraceResult method36385(Entity var0, Predicate<Entity> var1) {
       Vector3d var4 = var0.method3433();
-      World var5 = var0.field5024;
+      World var5 = var0.world;
       Vector3d var6 = var0.getPositionVec();
       Vector3d var7 = var6.method11338(var4);
       Object var8 = var5.method7036(new Class6809(var6, var7, Class2271.field14774, Class1985.field12962, var0));
-      if (((Class8710)var8).method31417() != Class2100.field13689) {
-         var7 = ((Class8710)var8).method31419();
+      if (((RayTraceResult)var8).getType() != RayTraceResult.Type.MISS) {
+         var7 = ((RayTraceResult)var8).method31419();
       }
 
-      Class8709 var9 = method36387(var5, var0, var6, var7, var0.method3389().method19661(var0.method3433()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.method3389().method19661(var0.method3433()).method19664(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
 
-      return (Class8710)var8;
+      return (RayTraceResult)var8;
    }
 
    @Nullable
-   public static Class8709 method36386(Entity var0, Vector3d var1, Vector3d var2, Class6488 var3, Predicate<Entity> var4, double var5) {
-      World var9 = var0.field5024;
+   public static EntityRayTraceResult method36386(Entity var0, Vector3d var1, Vector3d var2, Class6488 var3, Predicate<Entity> var4, double var5) {
+      World var9 = var0.world;
       double var10 = var5;
       Entity var12 = null;
       Vector3d var13 = null;
@@ -57,11 +57,11 @@ public final class Class9456 {
          }
       }
 
-      return var12 != null ? new Class8709(var12, var13) : null;
+      return var12 != null ? new EntityRayTraceResult(var12, var13) : null;
    }
 
    @Nullable
-   public static Class8709 method36387(World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5) {
+   public static EntityRayTraceResult method36387(World var0, Entity var1, Vector3d var2, Vector3d var3, Class6488 var4, Predicate<Entity> var5) {
       double var8 = Double.MAX_VALUE;
       Entity var10 = null;
 
@@ -77,7 +77,7 @@ public final class Class9456 {
          }
       }
 
-      return var10 != null ? new Class8709(var10) : null;
+      return var10 != null ? new EntityRayTraceResult(var10) : null;
    }
 
    public static final void method36388(Entity var0, float var1) {
@@ -108,15 +108,15 @@ public final class Class9456 {
       }
    }
 
-   public static Hand method36389(Class880 var0, Class3257 var1) {
-      return var0.method3090().method32107() != var1 ? Hand.field183 : Hand.field182;
+   public static Hand method36389(Class880 var0, Item var1) {
+      return var0.method3090().getItem() != var1 ? Hand.field183 : Hand.MAIN_HAND;
    }
 
    public static AbstractArrowEntity method36390(Class880 var0, ItemStack var1, float var2) {
-      Class3308 var5 = (Class3308)(!(var1.method32107() instanceof Class3308) ? Class8514.field37797 : var1.method32107());
-      AbstractArrowEntity var6 = var5.method11850(var0.field5024, var1, var0);
+      Class3308 var5 = (Class3308)(!(var1.getItem() instanceof Class3308) ? Items.field37797 : var1.getItem());
+      AbstractArrowEntity var6 = var5.method11850(var0.world, var1, var0);
       var6.method3490(var0, var2);
-      if (var1.method32107() == Class8514.field38117 && var6 instanceof Class887) {
+      if (var1.getItem() == Items.field38117 && var6 instanceof Class887) {
          ((Class887)var6).method3497(var1);
       }
 

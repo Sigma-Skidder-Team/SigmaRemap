@@ -59,7 +59,7 @@ public class Class2760 extends Class2595 {
             var6 = Class8037.method27587(this.field17319, 8, 7, var5);
          }
 
-         if (var6 != null && !var4 && !this.field17319.field5024.method6738(new BlockPos(var6)).method23448(Blocks.WATER)) {
+         if (var6 != null && !var4 && !this.field17319.world.getBlockState(new BlockPos(var6)).method23448(Blocks.WATER)) {
             var6 = Class8037.method27587(this.field17319, 16, 5, var5);
          }
 

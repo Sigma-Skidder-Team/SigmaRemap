@@ -27,15 +27,15 @@ public class Class6761 extends Class6762 {
    @Override
    public Class7176 method20615() {
       return this.method20641(
-         MathHelper.method37769(this.field29476.method3389().field28449),
-         MathHelper.method37769(this.field29476.method3389().field28450 + 0.5),
-         MathHelper.method37769(this.field29476.method3389().field28451)
+         MathHelper.floor(this.field29476.method3389().field28449),
+         MathHelper.floor(this.field29476.method3389().field28450 + 0.5),
+         MathHelper.floor(this.field29476.method3389().field28451)
       );
    }
 
    @Override
    public Class7175 method20616(double var1, double var3, double var5) {
-      return new Class7175(this.method20641(MathHelper.method37769(var1), MathHelper.method37769(var3 + 0.5), MathHelper.method37769(var5)));
+      return new Class7175(this.method20641(MathHelper.floor(var1), MathHelper.floor(var3 + 0.5), MathHelper.floor(var5)));
    }
 
    @Override
@@ -114,7 +114,7 @@ public class Class6761 extends Class6762 {
          return (double)var1.getY() + 0.5;
       } else {
          BlockPos var4 = var1.method8313();
-         Class6408 var5 = this.field29475.method6738(var4).method23414(this.field29475, var4);
+         Class6408 var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
          return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
       }
    }
@@ -148,7 +148,7 @@ public class Class6761 extends Class6762 {
                   (double)((float)var2 + this.field29476.method3430()),
                   (double)var3 + var15 + 0.5
                );
-               if (!this.field29476.field5024.method7053(this.field29476, var17)) {
+               if (!this.field29476.world.method7053(this.field29476, var17)) {
                   return null;
                }
 
@@ -194,7 +194,7 @@ public class Class6761 extends Class6762 {
 
             return var9;
          } else {
-            if (var2 < this.field29476.field5024.method6776() - 10 && var9 != null) {
+            if (var2 < this.field29476.world.method6776() - 10 && var9 != null) {
                var9.field30858++;
             }
 
@@ -208,8 +208,8 @@ public class Class6761 extends Class6762 {
    @Override
    public Class2163 method20620(Class1665 var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
       if (var5 == Class2163.field14193
-         && !(var1.method6738(var4).method23383() instanceof Class3429)
-         && !(var1.method6738(var4.method8313()).method23383() instanceof Class3429)) {
+         && !(var1.getBlockState(var4).getBlock() instanceof Class3429)
+         && !(var1.getBlockState(var4.method8313()).getBlock() instanceof Class3429)) {
          var5 = Class2163.field14194;
       }
 
@@ -230,7 +230,7 @@ public class Class6761 extends Class6762 {
       Class2163 var8 = method20635(var1, var7.method8372(var2, var3, var4));
       if (var8 != Class2163.field14191) {
          if (var8 == Class2163.field14185 && var3 >= 1) {
-            Class7380 var14 = var1.method6738(new BlockPos(var2, var3 - 1, var4));
+            BlockState var14 = var1.getBlockState(new BlockPos(var2, var3 - 1, var4));
             Class2163 var15 = method20635(var1, var7.method8372(var2, var3 - 1, var4));
             if (var15 != Class2163.field14186 && var15 != Class2163.field14185 && var15 != Class2163.field14190) {
                var8 = Class2163.field14186;

@@ -68,10 +68,10 @@ public class Class6805<T> implements Class6802<T> {
                   this.field29625.add(var11);
                   this.field29626.accept(var11);
                } catch (Throwable var10) {
-                  Class4526 var8 = Class4526.method14413(var10, "Exception while ticking");
-                  Class8965 var9 = var8.method14410("Block being ticked");
-                  Class8965.method32814(var9, var11.field35556, (Class7380)null);
-                  throw new Class2506(var8);
+                  CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception while ticking");
+                  CrashReportCategory var9 = var8.makeCategory("Block being ticked");
+                  CrashReportCategory.method32814(var9, var11.field35556, (BlockState)null);
+                  throw new ReportedException(var8);
                }
             } else {
                this.method20726(var11.field35556, (T)var11.method28874(), 0);
@@ -118,10 +118,10 @@ public class Class6805<T> implements Class6802<T> {
       while (var7.hasNext()) {
          Class8269 var8 = (Class8269)var7.next();
          BlockPos var9 = var8.field35556;
-         if (var9.method8304() >= var3.field45678
-            && var9.method8304() < var3.field45681
-            && var9.method8306() >= var3.field45680
-            && var9.method8306() < var3.field45683) {
+         if (var9.getX() >= var3.field45678
+            && var9.getX() < var3.field45681
+            && var9.getZ() >= var3.field45680
+            && var9.getZ() < var3.field45683) {
             if (var4) {
                var7.remove();
             }
@@ -147,20 +147,20 @@ public class Class6805<T> implements Class6802<T> {
       }
    }
 
-   public Class41 method20733(Class7481 var1) {
+   public ListNBT method20733(Class7481 var1) {
       List var4 = this.method20729(var1, false, true);
       return method20734(this.field29620, var4, this.field29623.method6783());
    }
 
-   private static <T> Class41 method20734(Function<T, ResourceLocation> var0, Iterable<Class8269<T>> var1, long var2) {
-      Class41 var6 = new Class41();
+   private static <T> ListNBT method20734(Function<T, ResourceLocation> var0, Iterable<Class8269<T>> var1, long var2) {
+      ListNBT var6 = new ListNBT();
 
       for (Class8269<T> var8 : var1) {
-         Class39 var9 = new Class39();
+         CompoundNBT var9 = new CompoundNBT();
          var9.method109("i", var0.apply(var8.method28874()).toString());
-         var9.method102("x", var8.field35556.method8304());
+         var9.method102("x", var8.field35556.getX());
          var9.method102("y", var8.field35556.getY());
-         var9.method102("z", var8.field35556.method8306());
+         var9.method102("z", var8.field35556.getZ());
          var9.method102("t", (int)(var8.field35557 - var2));
          var9.method102("p", var8.field35558.method8914());
          var6.add(var9);

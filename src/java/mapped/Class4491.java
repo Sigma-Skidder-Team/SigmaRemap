@@ -29,7 +29,7 @@ public class Class4491 extends Class4457 {
 
       for (int var4 = 0; var4 < var0.length; var4++) {
          var3[var4] = new Class8634(
-            (Class7608<Class3257>)null,
+            (Class7608<Item>)null,
             var0[var4].method11581(),
             Class8840.field39936,
             Class8840.field39936,
@@ -67,7 +67,7 @@ public class Class4491 extends Class4457 {
       return var4;
    }
 
-   public boolean method14165(Class974 var1, ItemStack var2, int var3, int var4, int var5) {
+   public boolean method14165(PlayerInventory var1, ItemStack var2, int var3, int var4, int var5) {
       if (!this.field21694.method32015(var3)) {
          return false;
       } else if (!this.field21695.method32015(var4)) {
@@ -79,7 +79,7 @@ public class Class4491 extends Class4457 {
          if (var8 == 0) {
             return true;
          } else if (var8 == 1) {
-            return !var2.method32105() && this.field21696[0].method31016(var2);
+            return !var2.isEmpty() && this.field21696[0].method31016(var2);
          } else {
             List<Class8634> var9 = new ObjectArrayList<>(this.field21696);
             int var10 = var1.method3629();
@@ -90,7 +90,7 @@ public class Class4491 extends Class4457 {
                }
 
                ItemStack var12 = var1.method3618(var11);
-               if (!var12.method32105()) {
+               if (!var12.isEmpty()) {
                   var9.removeIf(var1x -> var1x.method31016(var12));
                }
             }

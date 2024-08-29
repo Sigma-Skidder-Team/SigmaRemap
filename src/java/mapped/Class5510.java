@@ -6,12 +6,12 @@ import javax.annotation.Nullable;
 public class Class5510 implements Packet<Class5116> {
    private static String[] field24456;
    private int field24457;
-   private Class39 field24458;
+   private CompoundNBT field24458;
 
    public Class5510() {
    }
 
-   public Class5510(int var1, Class39 var2) {
+   public Class5510(int var1, CompoundNBT var2) {
       this.field24457 = var1;
       this.field24458 = var2;
    }
@@ -37,7 +37,7 @@ public class Class5510 implements Packet<Class5116> {
    }
 
    @Nullable
-   public Class39 method17329() {
+   public CompoundNBT method17329() {
       return this.field24458;
    }
 

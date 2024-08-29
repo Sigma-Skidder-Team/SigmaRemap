@@ -1,5 +1,5 @@
 package mapped;
 
 public interface Class9283<T extends Entity> {
-   T method35007(Class8992<T> var1, World var2);
+   T method35007(EntityType<T> var1, World var2);
 }

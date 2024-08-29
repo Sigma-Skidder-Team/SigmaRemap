@@ -11,50 +11,50 @@ public class Class7316 extends PlayerController {
    }
 
    @Override
-   public boolean method23132(BlockPos var1, Direction var2) {
+   public boolean clickBlock(BlockPos var1, Direction var2) {
       this.field31371 = true;
       this.field31372 = var1;
-      boolean var5 = super.method23132(var1, var2);
+      boolean var5 = super.clickBlock(var1, var2);
       this.field31371 = false;
       return var5;
    }
 
    @Override
-   public boolean method23134(BlockPos var1, Direction var2) {
+   public boolean onPlayerDamageBlock(BlockPos var1, Direction var2) {
       this.field31371 = true;
       this.field31372 = var1;
-      boolean var5 = super.method23134(var1, var2);
+      boolean var5 = super.onPlayerDamageBlock(var1, var2);
       this.field31371 = false;
       return var5;
    }
 
    @Override
-   public ActionResultType method23140(PlayerEntity var1, World var2, Hand var3) {
+   public ActionResultType processRightClick(PlayerEntity var1, World var2, Hand var3) {
       this.field31371 = true;
-      ActionResultType var6 = super.method23140(var1, var2, var3);
+      ActionResultType var6 = super.processRightClick(var1, var2, var3);
       this.field31371 = false;
       return var6;
    }
 
    @Override
-   public ActionResultType method23139(ClientPlayerEntity var1, Class1656 var2, Hand var3, Class8711 var4) {
+   public ActionResultType func_217292_a(ClientPlayerEntity var1, ClientWorld var2, Hand var3, BlockRayTraceResult var4) {
       this.field31371 = true;
-      this.field31372 = var4.method31423();
-      ActionResultType var7 = super.method23139(var1, var2, var3, var4);
+      this.field31372 = var4.getPos();
+      ActionResultType var7 = super.func_217292_a(var1, var2, var3, var4);
       this.field31371 = false;
       return var7;
    }
 
    @Override
-   public ActionResultType method23142(PlayerEntity var1, Entity var2, Hand var3) {
+   public ActionResultType interactWithEntity(PlayerEntity var1, Entity var2, Hand var3) {
       this.field31373 = var2;
-      return super.method23142(var1, var2, var3);
+      return super.interactWithEntity(var1, var2, var3);
    }
 
    @Override
-   public ActionResultType method23143(PlayerEntity var1, Entity var2, Class8709 var3, Hand var4) {
+   public ActionResultType interactWithEntity(PlayerEntity var1, Entity var2, EntityRayTraceResult var3, Hand var4) {
       this.field31373 = var2;
-      return super.method23143(var1, var2, var3, var4);
+      return super.interactWithEntity(var1, var2, var3, var4);
    }
 
    public boolean method23162() {

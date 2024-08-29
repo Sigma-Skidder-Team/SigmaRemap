@@ -23,7 +23,7 @@ public class Class133 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      if (var1.method32107() == Class8514.field38149 && !this.field453.isEmpty()) {
+      if (var1.getItem() == Items.field38149 && !this.field453.isEmpty()) {
          Random var5 = var2.method26088();
          int var6 = var5.nextInt(this.field453.size());
          Entry var7 = (Entry)Iterables.get(this.field453.entrySet(), var6);

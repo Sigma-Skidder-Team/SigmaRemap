@@ -6,7 +6,7 @@ public final class Class2848 extends Class2828 {
    public final Class7219 field17651;
 
    public Class2848() {
-      super(Class4520::method14312);
+      super(RenderType::getEntityCutoutNoCull);
       this.field17650.method22675(-12.0F, -14.0F, -1.0F, 24.0F, 12.0F, 2.0F, 0.0F);
       this.field17651 = new Class7219(64, 32, 0, 14);
       this.field17651.method22675(-1.0F, -2.0F, -1.0F, 2.0F, 14.0F, 2.0F, 0.0F);

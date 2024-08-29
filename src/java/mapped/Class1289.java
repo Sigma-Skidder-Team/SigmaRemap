@@ -83,7 +83,7 @@ public class Class1289 extends Class1286<Class1168> {
    public void method6109(int var1) {
       this.method6108(var1);
       if (var1 != -1) {
-         Class9229.method34711(Class9088.method33883("narrator.select", ((Class6122)Class807.method2189(this.field6853).get(var1)).field27411.toString()));
+         Class9229.method34711(I18n.format("narrator.select", ((Class6122)Class807.method2189(this.field6853).get(var1)).field27411.toString()));
       }
 
       this.method6115(var1);

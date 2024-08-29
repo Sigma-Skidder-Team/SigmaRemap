@@ -14,7 +14,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    public float field6084;
    private boolean field6085;
 
-   public Class1108(Class8992<? extends Class1108> var1, World var2) {
+   public Class1108(EntityType<? extends Class1108> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6841(this);
    }
@@ -55,14 +55,14 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Size", this.method5319() - 1);
       var1.method115("wasOnGround", this.field6085);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       int var4 = var1.method122("Size");
       if (var4 < 0) {
          var4 = 0;
@@ -97,9 +97,9 @@ public class Class1108 extends Class1006 implements Class1008 {
          for (int var4 = 0; var4 < var3 * 8; var4++) {
             float var5 = this.field5054.nextFloat() * (float) (Math.PI * 2);
             float var6 = this.field5054.nextFloat() * 0.5F + 0.5F;
-            float var7 = MathHelper.method37763(var5) * (float)var3 * 0.5F * var6;
-            float var8 = MathHelper.method37764(var5) * (float)var3 * 0.5F * var6;
-            this.field5024.method6746(this.method5321(), this.getPosX() + (double)var7, this.getPosY(), this.getPosZ() + (double)var8, 0.0, 0.0, 0.0);
+            float var7 = MathHelper.sin(var5) * (float)var3 * 0.5F * var6;
+            float var8 = MathHelper.cos(var5) * (float)var3 * 0.5F * var6;
+            this.world.method6746(this.method5321(), this.getPosX() + (double)var7, this.getPosY(), this.getPosZ() + (double)var8, 0.0, 0.0, 0.0);
          }
 
          this.method2863(this.method5327(), this.method3099(), ((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F) / 0.8F);
@@ -144,14 +144,14 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    @Override
-   public Class8992<? extends Class1108> method3204() {
-      return (Class8992<? extends Class1108>)super.method3204();
+   public EntityType<? extends Class1108> getType() {
+      return (EntityType<? extends Class1108>)super.getType();
    }
 
    @Override
    public void method2904() {
       int var3 = this.method5319();
-      if (!this.field5024.field9020 && var3 > 1 && this.getShouldBeDead()) {
+      if (!this.world.field9020 && var3 > 1 && this.getShouldBeDead()) {
          ITextComponent var4 = this.method3380();
          boolean var5 = this.method4305();
          float var6 = (float)var3 / 4.0F;
@@ -161,7 +161,7 @@ public class Class1108 extends Class1006 implements Class1008 {
          for (int var9 = 0; var9 < var8; var9++) {
             float var10 = ((float)(var9 % 2) - 0.5F) * var6;
             float var11 = ((float)(var9 / 2) - 0.5F) * var6;
-            Class1108 var12 = this.method3204().method33215(this.field5024);
+            Class1108 var12 = this.getType().method33215(this.world);
             if (this.method4282()) {
                var12.method4278();
             }
@@ -173,7 +173,7 @@ public class Class1108 extends Class1006 implements Class1008 {
             var12.method3273(
                this.getPosX() + (double)var10, this.getPosY() + 0.5, this.getPosZ() + (double)var11, this.field5054.nextFloat() * 360.0F, 0.0F
             );
-            this.field5024.method6916(var12);
+            this.world.method6916(var12);
          }
       }
 
@@ -236,10 +236,10 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    @Override
    public ResourceLocation method4242() {
-      return this.method5319() != 1 ? Class8793.field39533 : this.method3204().method33212();
+      return this.method5319() != 1 ? Class8793.field39533 : this.getType().method33212();
    }
 
-   public static boolean method5328(Class8992<Class1108> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5328(EntityType<Class1108> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Class2197.field14351) {
          if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Class9495.field44127))
             && var3.getY() > 50
@@ -287,7 +287,7 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       int var8 = this.field5054.nextInt(3);
       if (var8 < 2 && this.field5054.nextFloat() < 0.5F * var2.method38330()) {
          var8++;

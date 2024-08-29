@@ -17,7 +17,7 @@ public class Class8031 {
    private static final Dynamic2CommandExceptionType field34511 = new Dynamic2CommandExceptionType(
       (var0, var1) -> new TranslationTextComponent("commands.fill.toobig", var0, var1)
    );
-   private static final Class164 field34512 = new Class164(Blocks.AIR.method11579(), Collections.<Class8550<?>>emptySet(), (Class39)null);
+   private static final Class164 field34512 = new Class164(Blocks.AIR.method11579(), Collections.<Class8550<?>>emptySet(), (CompoundNBT)null);
    private static final SimpleCommandExceptionType field34513 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.fill.failed"));
 
    public static void method27540(CommandDispatcher<Class6619> var0) {
@@ -131,7 +131,7 @@ public class Class8031 {
             if (var4 == null || var4.test(new Class9632(var9, var12, true))) {
                Class164 var13 = var3.field14514.method26284(var1, var12, var2, var9);
                if (var13 != null) {
-                  Class944 var14 = var9.method6759(var12);
+                  TileEntity var14 = var9.getTileEntity(var12);
                   Class946.method3802(var14);
                   if (var13.method496(var9, var12, 2)) {
                      var8.add(var12.method8353());
@@ -142,7 +142,7 @@ public class Class8031 {
          }
 
          for (BlockPos var16 : var8) {
-            Block var17 = var9.method6738(var16).method23383();
+            Block var17 = var9.getBlockState(var16).getBlock();
             var9.method6964(var16, var17);
          }
 

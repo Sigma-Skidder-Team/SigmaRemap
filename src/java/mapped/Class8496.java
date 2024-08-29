@@ -17,7 +17,7 @@ public class Class8496 {
 
    public static void method30084() {
       if (field37167) {
-         Class7911 var2 = field37168.method1581();
+         RenderTypeBuffers var2 = field37168.getRenderTypeBuffers();
          var2.method26536().method25598();
          var2.method26537().method25598();
       }

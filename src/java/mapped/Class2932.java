@@ -23,7 +23,7 @@ public class Class2932 extends Class2930 {
             boolean var17 = var14 || var15;
             if (!var16 || !var17) {
                var5.method8378(var3, var10, var4, var11);
-               if (!var1.method6738(var5).method23409(var1, var5)) {
+               if (!var1.getBlockState(var5).method23409(var1, var5)) {
                   boolean var18 = var12 || var17 && var10 == 1 - var9;
                   boolean var19 = var13 || var17 && var10 == var9 - 1;
                   boolean var20 = var14 || var16 && var11 == 1 - var9;

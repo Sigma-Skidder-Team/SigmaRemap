@@ -3,10 +3,10 @@ package mapped;
 public class Class8077 implements IAmbientSoundHandler {
    private static String[] field34715;
    private final ClientPlayerEntity field34716;
-   private final Class274 field34717;
+   private final SoundHandler field34717;
    private int field34718 = 0;
 
-   public Class8077(ClientPlayerEntity var1, Class274 var2) {
+   public Class8077(ClientPlayerEntity var1, SoundHandler var2) {
       this.field34716 = var1;
       this.field34717 = var2;
    }
@@ -14,8 +14,8 @@ public class Class8077 implements IAmbientSoundHandler {
    @Override
    public void tick() {
       this.field34718--;
-      if (this.field34718 <= 0 && this.field34716.method3256()) {
-         float var3 = this.field34716.field5024.field9016.nextFloat();
+      if (this.field34718 <= 0 && this.field34716.canSwim()) {
+         float var3 = this.field34716.world.field9016.nextFloat();
          if (!(var3 < 1.0E-4F)) {
             if (!(var3 < 0.001F)) {
                if (var3 < 0.01F) {

@@ -16,11 +16,11 @@ public class Class7229 implements Class7222 {
    public Class7229(GameProfile var1) {
       this.field31070 = var1;
       Minecraft var4 = Minecraft.getInstance();
-      Map var5 = var4.method1549().method38347(var1);
+      Map var5 = var4.getSkinManager().method38347(var1);
       if (!var5.containsKey(Type.SKIN)) {
          this.field31071 = Class7209.method22637(PlayerEntity.method2960(var1));
       } else {
-         this.field31071 = var4.method1549().method38344((MinecraftProfileTexture)var5.get(Type.SKIN), Type.SKIN);
+         this.field31071 = var4.getSkinManager().method38344((MinecraftProfileTexture)var5.get(Type.SKIN), Type.SKIN);
       }
 
       this.field31072 = new StringTextComponent(var1.getName());
@@ -28,7 +28,7 @@ public class Class7229 implements Class7222 {
 
    @Override
    public void method22697(Class8036 var1) {
-      Minecraft.getInstance().getClientPlayNetHandler().sendPacket(new Class5497(this.field31070.getId()));
+      Minecraft.getInstance().getConnection().sendPacket(new Class5497(this.field31070.getId()));
    }
 
    @Override

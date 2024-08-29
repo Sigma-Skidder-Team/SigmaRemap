@@ -6,7 +6,7 @@ public class Class1104 extends Class1009 {
    private int field6063;
    private boolean field6064;
 
-   public Class1104(Class8992<? extends Class1104> var1, World var2) {
+   public Class1104(EntityType<? extends Class1104> var1, World var2) {
       super(var1, var2);
       this.field5594 = 3;
    }
@@ -52,19 +52,19 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field26554, 0.15F, 1.0F);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field6063 = var1.method122("Lifetime");
       this.field6064 = var1.method132("PlayerSpawned");
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("Lifetime", this.field6063);
       var1.method115("PlayerSpawned", this.field6064);
@@ -98,7 +98,7 @@ public class Class1104 extends Class1009 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.field5024.field9020) {
+      if (!this.world.field9020) {
          if (!this.method4282()) {
             this.field6063++;
          }
@@ -108,7 +108,7 @@ public class Class1104 extends Class1009 {
          }
       } else {
          for (int var3 = 0; var3 < 2; var3++) {
-            this.field5024
+            this.world
                .method6746(
                   Class7940.field34090,
                   this.method3438(0.5),
@@ -122,11 +122,11 @@ public class Class1104 extends Class1009 {
       }
    }
 
-   public static boolean method5299(Class8992<Class1104> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5299(EntityType<Class1104> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       if (!method4342(var0, var1, var2, var3, var4)) {
          return false;
       } else {
-         PlayerEntity var7 = var1.method7186((double)var3.method8304() + 0.5, (double)var3.getY() + 0.5, (double)var3.method8306() + 0.5, 5.0, true);
+         PlayerEntity var7 = var1.method7186((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 5.0, true);
          return var7 == null;
       }
    }

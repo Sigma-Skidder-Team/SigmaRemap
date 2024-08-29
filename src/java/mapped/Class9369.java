@@ -22,7 +22,7 @@ public class Class9369 {
                Codec.mapPair(Class7487.field32183.fieldOf("element"), Codec.INT.fieldOf("weight"))
                   .codec()
                   .listOf()
-                  .promotePartial(Util.method38529("Pool element: ", field43490::error))
+                  .promotePartial(Util.func_240982_a_("Pool element: ", field43490::error))
                   .fieldOf("elements")
                   .forGetter(var0x -> var0x.field43494)
             )
@@ -72,7 +72,7 @@ public class Class9369 {
       if (this.field43497 == Integer.MIN_VALUE) {
          this.field43497 = this.field43495
             .stream()
-            .mapToInt(var1x -> var1x.method24375(var1, BlockPos.field13032, Class80.field185).method38399())
+            .mapToInt(var1x -> var1x.method24375(var1, BlockPos.ZERO, Class80.field185).method38399())
             .max()
             .orElse(0);
       }

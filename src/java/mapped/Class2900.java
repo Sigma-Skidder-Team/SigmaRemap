@@ -15,6 +15,6 @@ public class Class2900 extends Class2899 {
          var4 = var4.method8313();
       }
 
-      return var1.method6738(var4).method23448(Blocks.SNOW_BLOCK) ? super.method11213(var1, var2, var3, var4, var5) : false;
+      return var1.getBlockState(var4).method23448(Blocks.SNOW_BLOCK) ? super.method11213(var1, var2, var3, var4, var5) : false;
    }
 }

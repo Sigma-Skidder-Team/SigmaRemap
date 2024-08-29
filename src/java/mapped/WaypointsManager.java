@@ -19,7 +19,7 @@ import java.util.Map.Entry;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import totalcross.json.JSONArray;
@@ -113,7 +113,7 @@ public class WaypointsManager {
    }
 
    @EventTarget
-   public void method29994(Class4418 var1) {
+   public void method29994(WorldLoadEvent var1) {
       try {
          this.method29991();
          this.method29997();
@@ -136,7 +136,7 @@ public class WaypointsManager {
             boolean var4 = false;
             if (!var4) {
                if (this.field36365.player.field5055 % 140 == 0) {
-                  Class2531 var5 = Class7927.method26605(this.field36365.world.method7011(this.field36365.player.method3432()).method7072());
+                  Class2531 var5 = Class7927.method26605(this.field36365.world.method7011(this.field36365.player.getPosition()).method7072());
                   Iterator var6 = this.field36372.entrySet().iterator();
 
                   while (var6.hasNext()) {
@@ -174,7 +174,7 @@ public class WaypointsManager {
                      if ((!var18 || var19)
                         && !var17.method7141()
                         && this.field36365.world.method6883().method7352(var17.method7072())
-                        && this.field36365.world.method6813() == World.field8999) {
+                        && this.field36365.world.getDimensionKey() == World.field8999) {
                         if (!var18) {
                            this.field36366.add(var17.method7072());
                         }
@@ -270,10 +270,10 @@ public class WaypointsManager {
 
    public String method29998() {
       String var3 = "local/local";
-      if (this.field36365.method1531() == null && this.field36365.method1528() != null) {
-         var3 = "server/" + this.field36365.method1528().field33189.replace("/", ":");
-      } else if (this.field36365.method1531() != null) {
-         var3 = "local/" + this.field36365.method1531().method1436().method20054();
+      if (this.field36365.getIntegratedServer() == null && this.field36365.getCurrentServerData() != null) {
+         var3 = "server/" + this.field36365.getCurrentServerData().field33189.replace("/", ":");
+      } else if (this.field36365.getIntegratedServer() != null) {
+         var3 = "local/" + this.field36365.getIntegratedServer().method1436().method20054();
       }
 
       return var3;
@@ -386,7 +386,7 @@ public class WaypointsManager {
          for (int var9 = 0; var9 < 16; var9++) {
             BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method30006(
-               new BlockPos(var10.method8304(), var1.method7070(Class101.field296).method24579(var8, var9) - 1, var10.method8306()), var2
+               new BlockPos(var10.getX(), var1.method7070(Class101.field296).method24579(var8, var9) - 1, var10.getZ()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));
@@ -399,13 +399,13 @@ public class WaypointsManager {
    }
 
    public int method30006(BlockPos var1, boolean var2) {
-      if (this.field36365.world.method6738(var1).method23383() == Blocks.AIR) {
+      if (this.field36365.world.getBlockState(var1).getBlock() == Blocks.AIR) {
          var1 = var1.method8313();
       }
 
-      Class7210 var5 = this.field36365.world.method6738(var1).method23384().method31092();
+      Class7210 var5 = this.field36365.world.getBlockState(var1).method23384().method31092();
       int var6 = var5.field31006;
-      Class8649 var7 = this.field36365.world.method6738(var1.method8311()).method23384();
+      Class8649 var7 = this.field36365.world.getBlockState(var1.method8311()).method23384();
       if (var7 != Class8649.field38944) {
          if (var7 == Class8649.field38943) {
             var6 = var7.method31092().field31006;
@@ -414,7 +414,7 @@ public class WaypointsManager {
          var6 = -1;
       }
 
-      if (this.field36365.world.method6738(var1).method23462(Class8820.field39710)) {
+      if (this.field36365.world.getBlockState(var1).method23462(Class8820.field39710)) {
          var6 = Class8649.field38941.method31092().field31006;
       }
 
@@ -422,14 +422,14 @@ public class WaypointsManager {
       int var9 = (var6 & 0xFF00) >> 8;
       int var10 = var6 & 0xFF;
       var6 = new Color(var8, var9, var10).getRGB();
-      boolean var11 = Math.abs(var1.method8306() % 16) != 15 && Math.abs(var1.method8306() % 16) != 0;
-      if (var1.method8306() < 0) {
-         var11 = Math.abs(var1.method8306() % 16) != 16 && Math.abs(var1.method8306() % 16) != 0;
+      boolean var11 = Math.abs(var1.getZ() % 16) != 15 && Math.abs(var1.getZ() % 16) != 0;
+      if (var1.getZ() < 0) {
+         var11 = Math.abs(var1.getZ() % 16) != 16 && Math.abs(var1.getZ() % 16) != 0;
       }
 
       if (var2 || var11) {
-         Class8649 var12 = this.field36365.world.method6738(var1.method8341()).method23384();
-         Class8649 var13 = this.field36365.world.method6738(var1.method8343()).method23384();
+         Class8649 var12 = this.field36365.world.getBlockState(var1.method8341()).method23384();
+         Class8649 var13 = this.field36365.world.getBlockState(var1.method8343()).method23384();
          if (var12 == Class8649.field38932 || var12 == Class8649.field38944) {
             var6 = Class5628.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
          } else if (var13 == Class8649.field38932 || var13 == Class8649.field38944) {

@@ -3,7 +3,7 @@ package mapped;
 import java.util.Objects;
 import java.util.Optional;
 
-public class Class3336 extends Class3257 {
+public class Class3336 extends Item {
    private static String[] field18843;
 
    public Class3336(Class5643 var1) {
@@ -16,7 +16,7 @@ public class Class3336 extends Class3257 {
       BlockPos var5 = var1.method18345();
       BlockPos var6 = var5.method8349(var1.method18354());
       if (!method11883(var1.method18357(), var4, var5)) {
-         Class7380 var7 = var4.method6738(var5);
+         BlockState var7 = var4.getBlockState(var5);
          boolean var8 = var7.method23454(var4, var5, var1.method18354());
          if (var8 && method11884(var1.method18357(), var4, var6, var1.method18354())) {
             if (!var4.field9020) {
@@ -37,9 +37,9 @@ public class Class3336 extends Class3257 {
    }
 
    public static boolean method11883(ItemStack var0, World var1, BlockPos var2) {
-      Class7380 var5 = var1.method6738(var2);
-      if (var5.method23383() instanceof Class3196) {
-         Class3196 var6 = (Class3196)var5.method23383();
+      BlockState var5 = var1.getBlockState(var2);
+      if (var5.getBlock() instanceof Class3196) {
+         Class3196 var6 = (Class3196)var5.getBlock();
          if (var6.method11486(var1, var2, var5, var1.field9020)) {
             if (var1 instanceof ServerWorld) {
                if (var6.method11487(var1, var1.field9016, var2, var5)) {
@@ -57,18 +57,18 @@ public class Class3336 extends Class3257 {
    }
 
    public static boolean method11884(ItemStack var0, World var1, BlockPos var2, Direction var3) {
-      if (var1.method6738(var2).method23448(Blocks.WATER) && var1.method6739(var2).method23477() == 8) {
+      if (var1.getBlockState(var2).method23448(Blocks.WATER) && var1.method6739(var2).method23477() == 8) {
          if (!(var1 instanceof ServerWorld)) {
             return true;
          } else {
             label110:
             for (int var6 = 0; var6 < 128; var6++) {
                BlockPos var7 = var2;
-               Class7380 var8 = Blocks.SEAGRASS.method11579();
+               BlockState var8 = Blocks.SEAGRASS.method11579();
 
                for (int var9 = 0; var9 < var6 / 16; var9++) {
                   var7 = var7.method8336(field18735.nextInt(3) - 1, (field18735.nextInt(3) - 1) * field18735.nextInt(3) / 2, field18735.nextInt(3) - 1);
-                  if (var1.method6738(var7).method23456(var1, var7)) {
+                  if (var1.getBlockState(var7).method23456(var1, var7)) {
                      continue label110;
                   }
                }
@@ -83,14 +83,14 @@ public class Class3336 extends Class3257 {
                   }
                }
 
-               if (var8.method23383().method11540(Class7645.field32784)) {
+               if (var8.getBlock().method11540(Class7645.field32784)) {
                   for (int var10 = 0; !var8.method23443(var1, var7) && var10 < 4; var10++) {
                      var8 = var8.method23465(Class3229.field18669, Class76.field161.method247(field18735));
                   }
                }
 
                if (var8.method23443(var1, var7)) {
-                  Class7380 var12 = var1.method6738(var7);
+                  BlockState var12 = var1.getBlockState(var7);
                   if (var12.method23448(Blocks.WATER) && var1.method6739(var7).method23477() == 8) {
                      var1.method6725(var7, var8, 3);
                   } else if (var12.method23448(Blocks.SEAGRASS) && field18735.nextInt(10) == 0) {
@@ -112,8 +112,8 @@ public class Class3336 extends Class3257 {
          var2 = 15;
       }
 
-      Class7380 var5 = var0.method6738(var1);
-      if (!var5.method23393()) {
+      BlockState var5 = var0.getBlockState(var1);
+      if (!var5.isAir()) {
          double var6 = 0.5;
          double var8;
          if (!var5.method23448(Blocks.WATER)) {
@@ -131,17 +131,17 @@ public class Class3336 extends Class3257 {
             var6 = 3.0;
          }
 
-         var0.method6746(Class7940.field34078, (double)var1.method8304() + 0.5, (double)var1.getY() + 0.5, (double)var1.method8306() + 0.5, 0.0, 0.0, 0.0);
+         var0.method6746(Class7940.field34078, (double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, 0.0, 0.0, 0.0);
 
          for (int var10 = 0; var10 < var2; var10++) {
             double var11 = field18735.nextGaussian() * 0.02;
             double var13 = field18735.nextGaussian() * 0.02;
             double var15 = field18735.nextGaussian() * 0.02;
             double var17 = 0.5 - var6;
-            double var19 = (double)var1.method8304() + var17 + field18735.nextDouble() * var6 * 2.0;
+            double var19 = (double)var1.getX() + var17 + field18735.nextDouble() * var6 * 2.0;
             double var21 = (double)var1.getY() + field18735.nextDouble() * var8;
-            double var23 = (double)var1.method8306() + var17 + field18735.nextDouble() * var6 * 2.0;
-            if (!var0.method6738(new BlockPos(var19, var21, var23).method8313()).method23393()) {
+            double var23 = (double)var1.getZ() + var17 + field18735.nextDouble() * var6 * 2.0;
+            if (!var0.getBlockState(new BlockPos(var19, var21, var23).method8313()).isAir()) {
                var0.method6746(Class7940.field34078, var19, var21, var23, var11, var13, var15);
             }
          }

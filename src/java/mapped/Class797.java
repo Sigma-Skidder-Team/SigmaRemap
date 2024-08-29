@@ -50,8 +50,8 @@ public class Class797 extends Class798 implements Class796 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       Class9229.method34716(this.field4158.getString());
       this.field4161++;
       this.field4162.method1910();
@@ -70,7 +70,7 @@ public class Class797 extends Class798 implements Class796 {
    @Override
    public void method1921() {
       this.field4162.method1911();
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 106, method1929(12), 212, 20, Class7127.field30659, var1 -> this.method1922()));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 106, method1929(12), 212, 20, DialogTexts.GUI_CANCEL, var1 -> this.method1922()));
    }
 
    private void method1922() {
@@ -99,7 +99,7 @@ public class Class797 extends Class798 implements Class796 {
       Class9229.method34711(var1.getString());
       this.method1924();
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 106, this.field4565 / 4 + 120 + 12, 200, 20, Class7127.field30663, var1x -> this.method1922())
+         new Class1206(this.field4564 / 2 - 106, this.field4565 / 4 + 120 + 12, 200, 20, DialogTexts.field30663, var1x -> this.method1922())
       );
    }
 

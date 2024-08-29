@@ -24,7 +24,7 @@ public class Class1207 extends Class1206 {
          if (var2 >= this.field6477 + 20) {
             if (var2 < this.field6477 + 50 && var2 > this.field6477 + 30) {
                ItemStack var7 = this.field6517.field4727.method18217().get(this.field6516 + Class862.method2668(this.field6517)).method35367();
-               if (!var7.method32105()) {
+               if (!var7.isEmpty()) {
                   Class862.method2670(this.field6517, var1, var7, var2, var3);
                }
             } else if (var2 > this.field6477 + 65) {

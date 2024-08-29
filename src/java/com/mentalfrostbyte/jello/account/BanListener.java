@@ -17,7 +17,7 @@ public class BanListener {
 
     @EventTarget
     private void method30840(Class4396 var1) {
-        if (this.field38719.method1528() != null) {
+        if (this.field38719.getCurrentServerData() != null) {
             if (var1.method13898() instanceof SChatPacket) {
                 SChatPacket var4 = (SChatPacket) var1.method13898();
                 ArrayList var5 = new ArrayList<String>(
@@ -32,7 +32,7 @@ public class BanListener {
                         && var4.method17648().getSiblings().get(0).getStyle().getColor().toString().equalsIgnoreCase("red")) {
                     Account var6 = Client.getInstance().getAccountManager().containsAccount();
                     if (var6 != null) {
-                        Ban var7 = new Ban(this.field38719.method1528().field33189, new Date(Long.MAX_VALUE));
+                        Ban var7 = new Ban(this.field38719.getCurrentServerData().field33189, new Date(Long.MAX_VALUE));
                         var6.registerBan(var7);
                         Client.getInstance().getAccountManager().updateAccount(var6);
                         Client.getInstance().getAccountManager().saveAlts();
@@ -44,11 +44,11 @@ public class BanListener {
                 if (!(var1.method13898() instanceof Class5530)) {
                     if (var1.method13898() instanceof Class5598) {
                         long var11 = System.currentTimeMillis();
-                        if (this.field38719.method1528() == null) {
+                        if (this.field38719.getCurrentServerData() == null) {
                             return;
                         }
 
-                        Ban var15 = new Ban(this.field38719.method1528().field33189, new Date(var11));
+                        Ban var15 = new Ban(this.field38719.getCurrentServerData().field33189, new Date(var11));
                         Account var16 = Client.getInstance().getAccountManager().containsAccount();
                         if (var16 != null) {
                             var16.registerBan(var15);
@@ -63,7 +63,7 @@ public class BanListener {
                         return;
                     }
 
-                    Ban var17 = new Ban(this.field38719.method1528().field33189, new Date(var8));
+                    Ban var17 = new Ban(this.field38719.getCurrentServerData().field33189, new Date(var8));
                     Account var10 = Client.getInstance().getAccountManager().containsAccount();
                     if (var10 != null) {
                         var10.registerBan(var17);
@@ -78,7 +78,7 @@ public class BanListener {
                     return;
                 }
 
-                Ban var18 = new Ban(this.field38719.method1528().field33189, new Date(var19));
+                Ban var18 = new Ban(this.field38719.getCurrentServerData().field33189, new Date(var19));
                 Account var20 = Client.getInstance().getAccountManager().containsAccount();
                 if (var20 != null) {
                     var20.registerBan(var18);

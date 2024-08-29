@@ -14,7 +14,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    private static final Class8369 field5867 = Class8763.method31620(4, 6);
    private int field5868;
 
-   public Class1063(Class8992<? extends Class1063> var1, World var2) {
+   public Class1063(EntityType<? extends Class1063> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14190, 8.0F);
    }
@@ -62,7 +62,7 @@ public class Class1063 extends Class1038 implements Class1011 {
          this.method4875();
       }
 
-      this.method4366((ServerWorld)this.field5024, true);
+      this.method4366((ServerWorld)this.world, true);
       if (this.method4232() != null) {
          this.method4876();
       }
@@ -98,7 +98,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    private void method4877() {
       double var3 = this.method3086(Class9173.field42106);
       Class6488 var5 = Class6488.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
-      this.field5024
+      this.world
          .<Class1063>method7183(Class1063.class, var5)
          .stream()
          .filter(var1 -> var1 != this)
@@ -130,8 +130,8 @@ public class Class1063 extends Class1038 implements Class1011 {
       this.method4347(field5864.method29319(this.field5054));
    }
 
-   public static boolean method4879(Class8992<Class1063> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.method6997() != Class2197.field14351 && var1.method6738(var3.method8313()).method23383() != Blocks.field36891;
+   public static boolean method4879(EntityType<Class1063> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+      return var1.method6997() != Class2197.field14351 && var1.getBlockState(var3.method8313()).getBlock() != Blocks.field36891;
    }
 
    @Override
@@ -140,15 +140,15 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       this.method4364(var1);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      this.method4365((ServerWorld)this.field5024, var1);
+      this.method4365((ServerWorld)this.world, var1);
    }
 
    @Override
@@ -183,7 +183,7 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Class8514.field37815));
+      this.method2944(Class2106.field13731, new ItemStack(Items.field37815));
    }
 
    @Override

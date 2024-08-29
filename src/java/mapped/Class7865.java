@@ -19,7 +19,7 @@ public class Class7865 implements Class7864 {
 
    @Override
    public BlockPos method26357() {
-      return this.field33677.method3432();
+      return this.field33677.getPosition();
    }
 
    @Override

@@ -20,14 +20,14 @@ public final class Class4382 implements Class4383 {
    private final Map<RegistryKey<?>, Lifecycle> field21394 = Maps.newIdentityHashMap();
 
    public <E> void method13745(Class8905 var1, RegistryKey<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {
-      DataResult var9 = var3.encodeStart(Class6713.method20491(JsonOps.INSTANCE, var1), var5);
+      DataResult var9 = var3.encodeStart(WorldGenSettingsExport.create(JsonOps.INSTANCE, var1), var5);
       Optional var10 = var9.error();
       if (!var10.isPresent()) {
          this.field21392.put(var2, (JsonElement)var9.result().get());
          this.field21393.put(var2, var4);
          this.field21394.put(var2, var6);
       } else {
-         Class6711.method20490().error("Error adding element: {}", ((PartialResult)var10.get()).message());
+         WorldSettingsImport.method20490().error("Error adding element: {}", ((PartialResult)var10.get()).message());
       }
    }
 

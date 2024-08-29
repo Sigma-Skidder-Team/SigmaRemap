@@ -42,10 +42,10 @@ public class Class7992 {
       field34354 = true;
       if (Class7944.method26953()) {
          method27246("optifine/cit.properties");
-         Class303[] var2 = Class7944.method26869();
+         IResourcePack[] var2 = Class7944.method26869();
 
          for (int var3 = var2.length - 1; var3 >= 0; var3--) {
-            Class303 var4 = var2[var3];
+            IResourcePack var4 = var2[var3];
             method27247(var4);
          }
 
@@ -80,7 +80,7 @@ public class Class7992 {
       }
    }
 
-   private static void method27247(Class303 var0) {
+   private static void method27247(IResourcePack var0) {
       String[] var3 = Class9772.method38438(var0, "optifine/cit/", ".properties", (String[])null);
       Map var4 = method27255(var0);
       if (var4.size() > 0) {
@@ -105,7 +105,7 @@ public class Class7992 {
 
             if (var9 == null) {
                ResourceLocation var10 = new ResourceLocation(var8);
-               InputStream var11 = var0.method1223(Class1946.field12610, var10);
+               InputStream var11 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var10);
                if (var11 == null) {
                   Class7944.method26811("CustomItems file not found: " + var8);
                   continue;
@@ -151,13 +151,13 @@ public class Class7992 {
       return new Class3585();
    }
 
-   public static void method27249(Class289 var0) {
+   public static void method27249(AtlasTexture var0) {
       for (Class8090 var4 : method27253()) {
          var4.method28016(var0);
       }
    }
 
-   public static void method27250(Class289 var0) {
+   public static void method27250(AtlasTexture var0) {
       for (Class8090 var4 : method27253()) {
          var4.method28017(var0);
       }
@@ -172,7 +172,7 @@ public class Class7992 {
    public static void method27252() {
       for (Class8090 var3 : method27253()) {
          if (var3.field34770 == 1) {
-            Class289 var4 = Class7944.method26969();
+            AtlasTexture var4 = Class7944.method26969();
             var3.method28020(var4, field34353);
             var3.method28034();
          }
@@ -202,15 +202,15 @@ public class Class7992 {
       }
    }
 
-   private static Map<String, Class8090> method27255(Class303 var0) {
+   private static Map<String, Class8090> method27255(IResourcePack var0) {
       HashMap var3 = new HashMap();
-      var3.putAll(method27256(var0, "normal", Registry.field16075.method9181(Class8514.field37971)));
-      var3.putAll(method27256(var0, "splash", Registry.field16075.method9181(Class8514.field38115)));
-      var3.putAll(method27256(var0, "linger", Registry.field16075.method9181(Class8514.field38118)));
+      var3.putAll(method27256(var0, "normal", Registry.ITEM.getKey(Items.field37971)));
+      var3.putAll(method27256(var0, "splash", Registry.ITEM.getKey(Items.field38115)));
+      var3.putAll(method27256(var0, "linger", Registry.ITEM.getKey(Items.field38118)));
       return var3;
    }
 
-   private static Map<String, Class8090> method27256(Class303 var0, String var1, ResourceLocation var2) {
+   private static Map<String, Class8090> method27256(IResourcePack var0, String var1, ResourceLocation var2) {
       HashMap var5 = new HashMap();
       String var6 = var1 + "/";
       String[] var7 = new String[]{"optifine/cit/potion/" + var6, "optifine/cit/Potion/" + var6};
@@ -235,7 +235,7 @@ public class Class7992 {
       if (Class9402.method35761(var0, new String[]{"_n", "_s"})) {
          return null;
       } else if (var0.equals("empty") && var1.equals("normal")) {
-         var2 = Registry.field16075.method9181(Class8514.field37972);
+         var2 = Registry.ITEM.getKey(Items.field37972);
          Class20 var11 = new Class20();
          var11.put("type", "item");
          var11.put("items", var2.toString());
@@ -432,13 +432,13 @@ public class Class7992 {
       var5.add(var0);
    }
 
-   public static Class7202 method27268(ItemStack var0, Class7202 var1, ResourceLocation var2, boolean var3) {
+   public static IBakedModel method27268(ItemStack var0, IBakedModel var1, ResourceLocation var2, boolean var3) {
       if (!var3 && var1.method22621()) {
          return var1;
       } else if (field34350 != null) {
          Class8090 var6 = method27272(var0, 1);
          if (var6 != null) {
-            Class7202 var7 = var6.method28032(var2, var3);
+            IBakedModel var7 = var6.method28032(var2, var3);
             return var7 == null ? var1 : var7;
          } else {
             return var1;
@@ -461,7 +461,7 @@ public class Class7992 {
       Class8090 var5 = method27272(var0, 3);
       if (var5 != null) {
          if (var5.field34791 != null) {
-            Class3257 var6 = var0.method32107();
+            Item var6 = var0.getItem();
             if (var6 instanceof Class3279) {
                Class3279 var7 = (Class3279)var6;
                String var8 = var7.method11806().method8790();
@@ -508,8 +508,8 @@ public class Class7992 {
          if (var0 == null) {
             return null;
          } else {
-            Class3257 var4 = var0.method32107();
-            int var5 = Class3257.method11701(var4);
+            Item var4 = var0.getItem();
+            int var5 = Item.method11701(var4);
             if (var5 >= 0 && var5 < field34350.length) {
                Class8090[] var6 = field34350[var5];
                if (var6 != null) {
@@ -530,7 +530,7 @@ public class Class7992 {
    }
 
    private static boolean method27273(Class8090 var0, ItemStack var1, int[][] var2) {
-      Class3257 var5 = var1.method32107();
+      Item var5 = var1.getItem();
       if (var0.field34776 != null) {
          int var6 = method27274(var1);
          if (var6 < 0) {
@@ -551,7 +551,7 @@ public class Class7992 {
          }
       }
 
-      if (var0.field34779 != null && !var0.field34779.method36838(var1.method32179())) {
+      if (var0.field34779 != null && !var0.field34779.method36838(var1.getCount())) {
          return false;
       } else {
          int[][] var10 = var2;
@@ -596,7 +596,7 @@ public class Class7992 {
          }
 
          if (var0.field34782 != null) {
-            Class39 var13 = var1.method32142();
+            CompoundNBT var13 = var1.method32142();
 
             for (int var15 = 0; var15 < var0.field34782.length; var15++) {
                Class7305 var17 = var0.field34782[var15];
@@ -621,19 +621,19 @@ public class Class7992 {
    }
 
    private static int method27274(ItemStack var0) {
-      Class3257 var3 = var0.method32107();
+      Item var3 = var0.getItem();
       return !(var3 instanceof Class3323) ? var0.method32117() : method27275(var0);
    }
 
    private static int method27275(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       if (var3 != null) {
          String var4 = var3.method126("Potion");
          if (var4 != null && !var4.equals("")) {
             Integer var5 = field34366.get(var4);
             if (var5 != null) {
                int var6 = var5;
-               if (var0.method32107() == Class8514.field38115) {
+               if (var0.getItem() == Items.field38115) {
                   var6 |= 16384;
                }
 
@@ -686,21 +686,21 @@ public class Class7992 {
    }
 
    private static int[][] method27278(ItemStack var0) {
-      Class3257 var3 = var0.method32107();
-      Class41 var4;
-      if (var3 != Class8514.field38070) {
+      Item var3 = var0.getItem();
+      ListNBT var4;
+      if (var3 != Items.field38070) {
          var4 = var0.method32147();
       } else {
-         Class3290 var5 = (Class3290)Class8514.field38070;
+         Class3290 var5 = (Class3290) Items.field38070;
          var4 = Class3290.method11830(var0);
       }
 
-      Class41 var13 = var4;
+      ListNBT var13 = var4;
       if (var4 != null && var4.size() > 0) {
          int[][] var6 = new int[var4.size()][2];
 
          for (int var7 = 0; var7 < var13.size(); var7++) {
-            Class39 var8 = var13.method153(var7);
+            CompoundNBT var8 = var13.method153(var7);
             String var9 = var8.method126("id");
             int var10 = var8.method122("lvl");
             Class6069 var11 = Class7849.method26306(var9);
@@ -717,7 +717,7 @@ public class Class7992 {
       }
    }
 
-   public static boolean method27279(Class216 var0, ItemStack var1, Class7202 var2) {
+   public static boolean method27279(ItemRenderer var0, ItemStack var1, IBakedModel var2) {
       if (field34351 == null) {
          return false;
       } else if (var1 == null) {
@@ -775,7 +775,7 @@ public class Class7992 {
                Class7414.method23698();
                Class7414.method23712(515);
                Class7414.method23713(true);
-               var8.bindTexture(Class289.field1102);
+               var8.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
             }
 
             return var7;
@@ -788,7 +788,7 @@ public class Class7992 {
    ) {
       if (field34351 == null) {
          return false;
-      } else if (Class7944.method26921() && Class8981.field40609) {
+      } else if (Class7944.method26921() && Shaders.field40609) {
          return false;
       } else if (var1 == null) {
          return false;

@@ -7,18 +7,18 @@ import javax.annotation.Nullable;
 import java.io.File;
 
 public class Class1118 extends AbstractClientPlayerEntity {
-   public Class1118(Class1656 var1, GameProfile var2) {
+   public Class1118(ClientWorld var1, GameProfile var2) {
       super(var1, var2);
    }
 
    @Override
-   public boolean method2800() {
+   public boolean isSpectator() {
       return false;
    }
 
    @Override
-   public boolean method2801() {
-      Class6589 var3 = Minecraft.getInstance().getClientPlayNetHandler().method15792(this.getGameProfile().getId());
+   public boolean isCreative() {
+      Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
       return true;
    }
 

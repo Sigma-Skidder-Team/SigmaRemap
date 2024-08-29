@@ -15,7 +15,7 @@ public class Class7036 {
 
    public Class7036(Path var1) {
       this.field30363 = var1;
-      this.field30364 = SharedConstants.field42545 || this.method21844();
+      this.field30364 = SharedConstants.developmentMode || this.method21844();
    }
 
    private boolean method21844() {
@@ -35,7 +35,7 @@ public class Class7036 {
    }
 
    private void method21846() {
-      if (!SharedConstants.field42545) {
+      if (!SharedConstants.developmentMode) {
          try (OutputStream var3 = Files.newOutputStream(this.field30363)) {
             Properties var5 = new Properties();
             var5.setProperty("eula", "false");

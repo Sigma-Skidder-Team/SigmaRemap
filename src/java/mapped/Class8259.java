@@ -120,11 +120,11 @@ public class Class8259 {
 
    public static void method28796() {
       Class7122 var2 = new Class7122();
-      Executor var3 = Util.method38492();
+      Executor var3 = Util.getServerExecutor();
       Minecraft var4 = Minecraft.getInstance();
-      Class1654 var5 = (Class1654)Class9299.method35072(var4, Class9299.field43020);
+      FontResourceManager var5 = (FontResourceManager)Class9299.method35072(var4, Class9299.field43020);
       if (var5 != null) {
-         var5.method6708().method777(var2, Class7944.method26862(), Class7167.field30819, Class7167.field30819, var3, var4);
+         var5.getReloadListener().method777(var2, Class7944.method26862(), EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var3, var4);
       }
    }
 }

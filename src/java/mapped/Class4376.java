@@ -109,6 +109,6 @@ public class Class4376 extends Class4235 implements Class4238 {
 
    @Override
    public float method13033() {
-      return 0.07F * (30.0F / (float) Minecraft.method1586());
+      return 0.07F * (30.0F / (float) Minecraft.getFps());
    }
 }

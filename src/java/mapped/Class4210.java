@@ -10,14 +10,14 @@ public class Class4210 extends Class4209 {
       super(Class7792.field33461, var1, var2, 64, var3, 7, 7, 9);
    }
 
-   public Class4210(Class8761 var1, Class39 var2) {
+   public Class4210(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33461, var2);
       this.field20520 = var2.method132("Witch");
       this.field20521 = var2.method132("Cat");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Witch", this.field20520);
       var1.method115("Cat", this.field20521);
@@ -49,10 +49,10 @@ public class Class4210 extends Class4209 {
          this.method12923(var1, Blocks.field36648.method11579(), 4, 2, 6, var5);
          this.method12923(var1, Blocks.OAK_FENCE.method11579(), 1, 2, 1, var5);
          this.method12923(var1, Blocks.OAK_FENCE.method11579(), 5, 2, 1, var5);
-         Class7380 var10 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
-         Class7380 var11 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
-         Class7380 var12 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
-         Class7380 var13 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
+         BlockState var10 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.NORTH);
+         BlockState var11 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.EAST);
+         BlockState var12 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.WEST);
+         BlockState var13 = Blocks.SPRUCE_STAIRS.method11579().method23465(Class3421.field19131, Direction.SOUTH);
          this.method12927(var1, var5, 0, 4, 1, 6, 4, 1, var10, var10, false);
          this.method12927(var1, var5, 0, 4, 2, 0, 4, 7, var11, var11, false);
          this.method12927(var1, var5, 6, 4, 2, 6, 4, 7, var12, var12, false);
@@ -74,10 +74,10 @@ public class Class4210 extends Class4209 {
             int var16 = this.method12922(2, 5);
             if (var5.method38396(new BlockPos(var18, var19, var16))) {
                this.field20520 = true;
-               Class1027 var17 = Class8992.field41101.method33215(var1.method6970());
+               Class1027 var17 = EntityType.field41101.method33215(var1.method6970());
                var17.method4278();
                var17.method3273((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
-               var17.method4276(var1, var1.method6807(new BlockPos(var18, var19, var16)), Class2202.field14394, (Class5093)null, (Class39)null);
+               var17.method4276(var1, var1.method6807(new BlockPos(var18, var19, var16)), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
                var1.method6995(var17);
             }
          }
@@ -94,10 +94,10 @@ public class Class4210 extends Class4209 {
          int var7 = this.method12922(2, 5);
          if (var2.method38396(new BlockPos(var5, var6, var7))) {
             this.field20521 = true;
-            Class1098 var8 = Class8992.field41012.method33215(var1.method6970());
+            Class1098 var8 = EntityType.field41012.method33215(var1.method6970());
             var8.method4278();
             var8.method3273((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
-            var8.method4276(var1, var1.method6807(new BlockPos(var5, var6, var7)), Class2202.field14394, (Class5093)null, (Class39)null);
+            var8.method4276(var1, var1.method6807(new BlockPos(var5, var6, var7)), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
             var1.method6995(var8);
          }
       }

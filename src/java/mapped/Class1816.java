@@ -3,9 +3,9 @@ package mapped;
 public final class Class1816 implements AutoCloseable {
    private static String[] field9810;
    private final Class1806[] field9811;
-   public final Class1713 field9812;
+   public final TextureAtlasSprite field9812;
 
-   public Class1816(Class1713 var1, Class9431 var2, int var3) {
+   public Class1816(TextureAtlasSprite var1, Class9431 var2, int var3) {
       this.field9812 = var1;
       this.field9811 = new Class1806[var3 + 1];
 
@@ -20,14 +20,14 @@ public final class Class1816 implements AutoCloseable {
 
    private void method8058() {
       double var3 = 1.0
-         - (double)Class1713.method7505(this.field9812) / (double)Class1713.method7507(this.field9812).method25816(Class1713.method7506(this.field9812));
-      int var5 = Class1713.method7507(this.field9812).method25817(Class1713.method7506(this.field9812));
-      int var6 = Class1713.method7507(this.field9812).method25812() != 0 ? Class1713.method7507(this.field9812).method25812() : this.field9812.method7467();
-      int var7 = Class1713.method7507(this.field9812).method25817((Class1713.method7506(this.field9812) + 1) % var6);
+         - (double) TextureAtlasSprite.method7505(this.field9812) / (double) TextureAtlasSprite.method7507(this.field9812).method25816(TextureAtlasSprite.method7506(this.field9812));
+      int var5 = TextureAtlasSprite.method7507(this.field9812).method25817(TextureAtlasSprite.method7506(this.field9812));
+      int var6 = TextureAtlasSprite.method7507(this.field9812).method25812() != 0 ? TextureAtlasSprite.method7507(this.field9812).method25812() : this.field9812.method7467();
+      int var7 = TextureAtlasSprite.method7507(this.field9812).method25817((TextureAtlasSprite.method7506(this.field9812) + 1) % var6);
       if (var5 != var7 && var7 >= 0 && var7 < this.field9812.method7467()) {
          for (int var8 = 0; var8 < this.field9811.length; var8++) {
-            int var9 = Class9431.method36204(Class1713.method7508(this.field9812)) >> var8;
-            int var10 = Class9431.method36205(Class1713.method7508(this.field9812)) >> var8;
+            int var9 = Class9431.method36204(TextureAtlasSprite.method7508(this.field9812)) >> var8;
+            int var10 = Class9431.method36205(TextureAtlasSprite.method7508(this.field9812)) >> var8;
 
             for (int var11 = 0; var11 < var10; var11++) {
                for (int var12 = 0; var12 < var9; var12++) {
@@ -41,15 +41,15 @@ public final class Class1816 implements AutoCloseable {
             }
          }
 
-         Class1713.method7509(this.field9812, 0, 0, this.field9811);
+         TextureAtlasSprite.method7509(this.field9812, 0, 0, this.field9811);
       }
    }
 
    private int method8059(int var1, int var2, int var3, int var4) {
       return this.field9812.field9327[var2]
          .method7889(
-            var3 + (Class1713.method7510(this.field9812)[var1] * Class9431.method36204(Class1713.method7508(this.field9812)) >> var2),
-            var4 + (Class1713.method7511(this.field9812)[var1] * Class9431.method36205(Class1713.method7508(this.field9812)) >> var2)
+            var3 + (TextureAtlasSprite.method7510(this.field9812)[var1] * Class9431.method36204(TextureAtlasSprite.method7508(this.field9812)) >> var2),
+            var4 + (TextureAtlasSprite.method7511(this.field9812)[var1] * Class9431.method36205(TextureAtlasSprite.method7508(this.field9812)) >> var2)
          );
    }
 

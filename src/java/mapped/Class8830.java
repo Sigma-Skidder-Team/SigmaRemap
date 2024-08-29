@@ -75,7 +75,7 @@ public class Class8830<U> {
 
    @Override
    public String toString() {
-      return Registry.field16092.method9181(this).toString();
+      return Registry.field16092.getKey(this).toString();
    }
 
    public Optional<Codec<Class8222<U>>> method31926() {

@@ -36,8 +36,8 @@ public class Class6617 implements Class6618 {
 
    @Override
    public Collection<String> method20125() {
-      return (Collection<String>)(this.field29119.field1346 != null && this.field29119.field1346.method31417() == Class2100.field13691
-         ? Collections.<String>singleton(((Class8709)this.field29119.field1346).method31416().method3376())
+      return (Collection<String>)(this.field29119.objectMouseOver != null && this.field29119.objectMouseOver.getType() == RayTraceResult.Type.ENTITY
+         ? Collections.<String>singleton(((EntityRayTraceResult)this.field29119.objectMouseOver).getEntity().method3376())
          : Collections.<String>emptyList());
    }
 
@@ -48,7 +48,7 @@ public class Class6617 implements Class6618 {
 
    @Override
    public Collection<ResourceLocation> method20127() {
-      return this.field29119.method1546().method998();
+      return this.field29119.getSoundHandler().method998();
    }
 
    @Override
@@ -84,10 +84,10 @@ public class Class6617 implements Class6618 {
 
    @Override
    public Collection<Class9203> method20133() {
-      Class8710 var3 = this.field29119.field1346;
-      if (var3 != null && var3.method31417() == Class2100.field13690) {
-         BlockPos var4 = ((Class8711)var3).method31423();
-         return Collections.<Class9203>singleton(new Class9203(method20132(var4.method8304()), method20132(var4.getY()), method20132(var4.method8306())));
+      RayTraceResult var3 = this.field29119.objectMouseOver;
+      if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
+         BlockPos var4 = ((BlockRayTraceResult)var3).getPos();
+         return Collections.<Class9203>singleton(new Class9203(method20132(var4.getX()), method20132(var4.getY()), method20132(var4.getZ())));
       } else {
          return Class6618.super.method20133();
       }
@@ -95,8 +95,8 @@ public class Class6617 implements Class6618 {
 
    @Override
    public Collection<Class9203> method20134() {
-      Class8710 var3 = this.field29119.field1346;
-      if (var3 != null && var3.method31417() == Class2100.field13690) {
+      RayTraceResult var3 = this.field29119.objectMouseOver;
+      if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
          Vector3d var4 = var3.method31419();
          return Collections.<Class9203>singleton(new Class9203(method20131(var4.field18048), method20131(var4.field18049), method20131(var4.field18050)));
       } else {
@@ -110,7 +110,7 @@ public class Class6617 implements Class6618 {
    }
 
    @Override
-   public Class8904 method20136() {
+   public DynamicRegistries method20136() {
       return this.field29118.method15802();
    }
 

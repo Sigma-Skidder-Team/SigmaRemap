@@ -9,20 +9,20 @@ public class Class3494 extends Class3194 {
    }
 
    @Override
-   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
+   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       super.method11523(var1, var2, var3, var4);
-      if (var2 instanceof ServerWorld && var4 instanceof Class1002) {
+      if (var2 instanceof ServerWorld && var4 instanceof BoatEntity) {
          var2.method7180(new BlockPos(var3), true, var4);
       }
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19364;
    }
 
    @Override
-   public boolean method11490(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
       Class7379 var6 = var2.method6739(var3);
       Class7379 var7 = var2.method6739(var3.method8311());
       return (var6.method23472() == Class9479.field44066 || var1.method23384() == Class8649.field38964) && var7.method23472() == Class9479.field44064;

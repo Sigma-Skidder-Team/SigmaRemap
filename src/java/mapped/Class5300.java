@@ -19,8 +19,8 @@ public class Class5300 extends Module {
 
     public Class5300() {
         super(ModuleCategory.MISC, "Murderer", "Detects murderer in murder mystery minigame on hypixel");
-        this.method15972(new Class6004("GUI", "Shows a GUI with info on the murderer", true));
-        this.method15972(new Class6004("Chat Message", "Sends a message with the murderer's name", true));
+        this.registerSetting(new BooleanSetting("GUI", "Shows a GUI with info on the murderer", true));
+        this.registerSetting(new BooleanSetting("Chat Message", "Sends a message with the murderer's name", true));
     }
 
     @EventTarget
@@ -31,7 +31,7 @@ public class Class5300 extends Module {
 
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
-                            && ((ItemStack) var6.getSecond()).method32107() instanceof Class3267
+                            && ((ItemStack) var6.getSecond()).getItem() instanceof Class3267
                             && mc.world.method6774(var4.method17561()) instanceof PlayerEntity) {
                         Entity var7 = mc.world.method6774(var4.method17561());
                         if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {

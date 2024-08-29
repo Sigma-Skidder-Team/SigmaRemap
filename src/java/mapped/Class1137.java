@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1137 extends Class1135 {
-   public Class1137(Screen var1, Class9574 var2) {
+   public Class1137(Screen var1, GameSettings var2) {
       super(var1, var2, new TranslationTextComponent("options.sounds.title"));
    }
 
@@ -30,11 +30,11 @@ public class Class1137 extends Class1135 {
          new Class1228(var10, var11 + 24 * (++var3 >> 1), 150, 20, AbstractOption.field25364, AbstractOption.field25364.method18081(this.field6193), var1 -> {
             AbstractOption.field25364.method18078(this.field4562.gameSettings);
             var1.method5743(AbstractOption.field25364.method18081(this.field4562.gameSettings));
-            this.field4562.gameSettings.method37146();
+            this.field4562.gameSettings.saveOptions();
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 / 6 + 168, 200, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 / 6 + 168, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
       );
    }
 

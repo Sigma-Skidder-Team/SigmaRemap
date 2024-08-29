@@ -67,7 +67,7 @@ public class Class9763 {
    static {
       for (Structure var7 : Registry.field16114) {
          if (!field45674.containsKey(var7)) {
-            throw new IllegalStateException("Structure feature without default settings: " + Registry.field16114.method9181(var7));
+            throw new IllegalStateException("Structure feature without default settings: " + Registry.field16114.getKey(var7));
          }
       }
 

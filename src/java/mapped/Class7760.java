@@ -10,8 +10,8 @@ public class Class7760 {
    }
 
    public Class7760(BlockPos var1) {
-      this.field33332 = var1.method8304();
-      this.field33333 = var1.method8306();
+      this.field33332 = var1.getX();
+      this.field33333 = var1.getZ();
    }
 
    @Override

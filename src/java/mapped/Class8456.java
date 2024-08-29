@@ -52,7 +52,7 @@ public class Class8456 {
    private static int method29740(Class6619 var0) throws CommandSyntaxException {
       MinecraftServer var3 = var0.method20177();
       if (var3.method1430()) {
-         Class7740 var4 = var3.method1432();
+         IProfileResult var4 = var3.method1432();
          File var5 = new File(var3.method1316("debug"), "profile-results-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + ".txt");
          var4.method25627(var5);
          float var6 = (float)var4.method25632() / 1.0E9F;
@@ -74,7 +74,7 @@ public class Class8456 {
       try {
          Path var5 = var3.method1316("debug").toPath();
          Files.createDirectories(var5);
-         if (!SharedConstants.field42545 && field36266 != null) {
+         if (!SharedConstants.developmentMode && field36266 != null) {
             Path var21 = var5.resolve(var4 + ".zip");
 
             try (FileSystem var7 = field36266.newFileSystem(var21, ImmutableMap.of("create", "true"))) {

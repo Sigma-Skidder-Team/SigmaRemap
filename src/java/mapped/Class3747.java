@@ -24,7 +24,7 @@ public class Class3747<E extends Class1034> extends Class3676<E> {
 
    public boolean method12508(ServerWorld var1, E var2) {
       ItemEntity var5 = var2.method2992().<ItemEntity>method21410(Class8830.field39847).get();
-      return Class4388.method13827(var5.method4124().method32107());
+      return Class4388.method13827(var5.method4124().getItem());
    }
 
    public void method12502(ServerWorld var1, E var2, long var3) {

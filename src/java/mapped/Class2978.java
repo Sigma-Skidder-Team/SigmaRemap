@@ -69,7 +69,7 @@ public class Class2978 extends Structure<Class4726> {
          new BlockPos(var6.field45678, 0, var6.field45683),
          new BlockPos(var6.field45681, 0, var6.field45683)
       );
-      List<Class1665> var11 = var20.stream().map(var1x -> var1.method17798(var1x.method8304(), var1x.method8306())).collect(Collectors.toList());
+      List<Class1665> var11 = var20.stream().map(var1x -> var1.method17798(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
       Class101 var12 = var2 != Class2219.field14496 ? Class101.field295 : Class101.field297;
       Mutable var13 = new Mutable();
 
@@ -79,7 +79,7 @@ public class Class2978 extends Structure<Class4726> {
          var13.method8372(0, var14, 0);
 
          for (Class1665 var17 : var11) {
-            Class7380 var18 = var17.method6738(var13);
+            BlockState var18 = var17.getBlockState(var13);
             if (var18 != null && var12.method287().test(var18)) {
                if (++var15 == 3) {
                   return var14;

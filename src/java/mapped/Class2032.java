@@ -2,7 +2,7 @@ package mapped;
 
 public enum Class2032 {
    field13190(Direction.field673, 0, -1),
-   field13191(Direction.field672, 0, 1),
+   field13191(Direction.DOWN, 0, 1),
    field13192(Direction.EAST, -1, 0),
    field13193(Direction.WEST, 1, 0);
 

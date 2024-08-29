@@ -3,7 +3,7 @@ package mapped;
 public class Class1087 extends Class1018 {
    private static String[] field5955;
 
-   public Class1087(Class8992<? extends Class1087> var1, World var2) {
+   public Class1087(EntityType<? extends Class1087> var1, World var2) {
       super(var1, var2);
    }
 
@@ -12,7 +12,7 @@ public class Class1087 extends Class1018 {
       this.field5600.method20002(0, new Class2603(this));
       this.field5600.method20002(1, new Class2747(this, 2.0));
       this.field5600.method20002(2, new Class2785(this, 1.0));
-      this.field5600.method20002(3, new Class2680(this, 1.25, Class120.method339(Class8514.field37842), false));
+      this.field5600.method20002(3, new Class2680(this, 1.25, Class120.method339(Items.field37842), false));
       this.field5600.method20002(4, new Class2764(this, 1.25));
       this.field5600.method20002(5, new Class2737(this, 1.0));
       this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 6.0F));
@@ -39,7 +39,7 @@ public class Class1087 extends Class1018 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field26481, 0.15F, 1.0F);
    }
 
@@ -51,18 +51,18 @@ public class Class1087 extends Class1018 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.method32107() == Class8514.field37882 && !this.method3005()) {
+      if (var5.getItem() == Items.field37882 && !this.method3005()) {
          var1.method2863(Class6067.field26480, 1.0F, 1.0F);
-         ItemStack var6 = Class8482.method29979(var5, var1, Class8514.field37891.method11742());
+         ItemStack var6 = Class8482.method29979(var5, var1, Items.field37891.method11742());
          var1.method3095(var2, var6);
-         return ActionResultType.method9002(this.field5024.field9020);
+         return ActionResultType.method9002(this.world.field9020);
       } else {
          return super.method4285(var1, var2);
       }
    }
 
    public Class1087 method4389(ServerWorld var1, Class1045 var2) {
-      return Class8992.field41016.method33215(var1);
+      return EntityType.field41016.method33215(var1);
    }
 
    @Override

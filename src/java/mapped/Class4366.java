@@ -21,7 +21,7 @@ public class Class4366 extends Class4247 {
 
    private void method13663() {
       this.method13241().clear();
-      this.field20913 = Class7925.field33948;
+      this.field20913 = ClassicDecryption.regular15;
       Class4240 var3;
       this.method13230(var3 = new Class4240(this, "dropdownButton", 0, 0, this.method13269(), this.method13269(), this.field20914));
       var3.method13261((var1, var2) -> {
@@ -51,7 +51,7 @@ public class Class4366 extends Class4247 {
                   Class2218.field14492
                ),
                var5,
-               Class7925.field33949
+               ClassicDecryption.regular12
             )
          );
          var6.method13034(8);

@@ -19,23 +19,23 @@ public class Class319 extends Class318<Runnable> {
    }
 
    @Override
-   public Runnable method1440(Runnable var1) {
+   public Runnable wrapTask(Runnable var1) {
       return var1;
    }
 
    @Override
-   public boolean method1439(Runnable var1) {
+   public boolean canRun(Runnable var1) {
       return !this.field1382;
    }
 
    @Override
-   public Thread method1391() {
+   public Thread getExecutionThread() {
       return this.field1381;
    }
 
    private void run() {
       while (!this.field1382) {
-         this.method1639(() -> this.field1382);
+         this.driveUntil(() -> this.field1382);
       }
    }
 
@@ -54,7 +54,7 @@ public class Class319 extends Class318<Runnable> {
          Thread.currentThread().interrupt();
       }
 
-      this.method1637();
+      this.dropTasks();
       this.field1382 = false;
       this.field1381 = this.method1643();
    }

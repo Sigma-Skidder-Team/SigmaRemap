@@ -10,7 +10,7 @@ public class Class3522 implements Class3499<Class7435> {
       this.field19418 = var1;
    }
 
-   public Class4587 method12199(Class7435 var1, Class1656 var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public Class4587 method12199(Class7435 var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       Random var17 = var2.field9016;
       double var18 = var17.nextGaussian() * 1.0E-6F;
       double var20 = var17.nextGaussian() * 1.0E-4F;

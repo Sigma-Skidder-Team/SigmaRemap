@@ -15,8 +15,8 @@ public class Class3316 extends Class3314 {
    }
 
    public static ItemStack method11859(World var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
-      ItemStack var8 = new ItemStack(Class8514.field37955);
-      method11863(var8, var0, var1, var2, var3, var4, var5, var0.method6813());
+      ItemStack var8 = new ItemStack(Items.field37955);
+      method11863(var8, var0, var1, var2, var3, var4, var5, var0.getDimensionKey());
       return var8;
    }
 
@@ -29,14 +29,14 @@ public class Class3316 extends Class3314 {
    public static Class7529 method11861(ItemStack var0, World var1) {
       Class7529 var4 = method11860(var0, var1);
       if (var4 == null && var1 instanceof ServerWorld) {
-         var4 = method11863(var0, var1, var1.getWorldInfo().method20029(), var1.getWorldInfo().method20031(), 3, false, false, var1.method6813());
+         var4 = method11863(var0, var1, var1.getWorldInfo().method20029(), var1.getWorldInfo().method20031(), 3, false, false, var1.getDimensionKey());
       }
 
       return var4;
    }
 
    public static int method11862(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       return var3 != null && var3.method119("map", 99) ? var3.method122("map") : 0;
    }
 
@@ -45,7 +45,7 @@ public class Class3316 extends Class3314 {
       Class7529 var11 = new Class7529(method11864(var10));
       var11.method24589(var2, var3, var4, var5, var6, var7);
       var1.method6799(var11);
-      var0.method32143().method102("map", var10);
+      var0.getOrCreateTag().method102("map", var10);
       return var11;
    }
 
@@ -54,12 +54,12 @@ public class Class3316 extends Class3314 {
    }
 
    public void method11865(World var1, Entity var2, Class7529 var3) {
-      if (var1.method6813() == var3.field32318 && var2 instanceof PlayerEntity) {
+      if (var1.getDimensionKey() == var3.field32318 && var2 instanceof PlayerEntity) {
          int var6 = 1 << var3.field32321;
          int var7 = var3.field32316;
          int var8 = var3.field32317;
-         int var9 = MathHelper.method37769(var2.getPosX() - (double)var7) / var6 + 64;
-         int var10 = MathHelper.method37769(var2.getPosZ() - (double)var8) / var6 + 64;
+         int var9 = MathHelper.floor(var2.getPosX() - (double)var7) / var6 + 64;
+         int var10 = MathHelper.floor(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
          if (var1.method6812().method36876()) {
             var11 /= 2;
@@ -96,23 +96,23 @@ public class Class3316 extends Class3314 {
                            for (int var33 = 0; var33 < var6; var33++) {
                               for (int var36 = 0; var36 < var6; var36++) {
                                  int var37 = var24.method7071(Class101.field296, var33 + var26, var36 + var27) + 1;
-                                 Class7380 var38;
+                                 BlockState var38;
                                  if (var37 <= 1) {
                                     var38 = Blocks.BEDROCK.method11579();
                                  } else {
                                     do {
                                        var31.method8372(var25.method24356() + var33 + var26, --var37, var25.method24357() + var36 + var27);
-                                       var38 = var24.method6738(var31);
+                                       var38 = var24.getBlockState(var31);
                                     } while (var38.method23394(var1, var31) == Class7210.field30947 && var37 > 0);
 
                                     if (var37 > 0 && !var38.method23449().method23474()) {
                                        int var39 = var37 - 1;
                                        var32.method8374(var31);
 
-                                       Class7380 var40;
+                                       BlockState var40;
                                        do {
                                           var32.method8308(var39--);
-                                          var40 = var24.method6738(var32);
+                                          var40 = var24.getBlockState(var32);
                                           var28++;
                                        } while (var39 > 0 && !var40.method23449().method23474());
 
@@ -129,9 +129,9 @@ public class Class3316 extends Class3314 {
                            int var42 = var21 + var22 * 231871;
                            var42 = var42 * var42 * 31287121 + var42 * 11;
                            if ((var42 >> 20 & 1) != 0) {
-                              var23.add(Blocks.STONE.method11579().method23394(var1, BlockPos.field13032), 100);
+                              var23.add(Blocks.STONE.method11579().method23394(var1, BlockPos.ZERO), 100);
                            } else {
-                              var23.add(Blocks.field36396.method11579().method23394(var1, BlockPos.field13032), 10);
+                              var23.add(Blocks.field36396.method11579().method23394(var1, BlockPos.ZERO), 10);
                            }
 
                            var29 = 100.0;
@@ -179,7 +179,7 @@ public class Class3316 extends Class3314 {
       }
    }
 
-   private Class7380 method11866(World var1, Class7380 var2, BlockPos var3) {
+   private BlockState method11866(World var1, BlockState var2, BlockPos var3) {
       Class7379 var6 = var2.method23449();
       return !var6.method23474() && !var2.method23454(var1, var3, Direction.field673) ? var6.method23484() : var2;
    }
@@ -190,7 +190,7 @@ public class Class3316 extends Class3314 {
 
    public static void method11868(ServerWorld var0, ItemStack var1) {
       Class7529 var4 = method11861(var1, var0);
-      if (var4 != null && var0.method6813() == var4.field32318) {
+      if (var4 != null && var0.getDimensionKey() == var4.field32318) {
          int var5 = 1 << var4.field32321;
          int var6 = var4.field32316;
          int var7 = var4.field32317;
@@ -198,7 +198,7 @@ public class Class3316 extends Class3314 {
 
          for (int var9 = 0; var9 < 128 * var5; var9++) {
             for (int var10 = 0; var10 < 128 * var5; var10++) {
-               var8[var9 * 128 * var5 + var10] = var0.method7003(new BlockPos((var6 / var5 - 64) * var5 + var10, 0, (var7 / var5 - 64) * var5 + var9));
+               var8[var9 * 128 * var5 + var10] = var0.getBiome(new BlockPos((var6 / var5 - 64) * var5 + var10, 0, (var7 / var5 - 64) * var5 + var9));
             }
          }
 
@@ -253,7 +253,7 @@ public class Class3316 extends Class3314 {
                   } else {
                      var14 = Class7210.field30962;
                      if (var12 > 7 && var16 % 2 == 0) {
-                        var13 = (var15 + (int)(MathHelper.method37763((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
+                        var13 = (var15 + (int)(MathHelper.sin((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
                         if (var13 != 3) {
                            if (var13 == 4) {
                               var13 = 0;
@@ -313,7 +313,7 @@ public class Class3316 extends Class3314 {
 
    @Override
    public void method11725(ItemStack var1, World var2, PlayerEntity var3) {
-      Class39 var6 = var1.method32142();
+      CompoundNBT var6 = var1.method32142();
       if (var6 != null && var6.method119("map_scale_direction", 99)) {
          method11869(var1, var2, var6.method122("map_scale_direction"));
          var6.method133("map_scale_direction");
@@ -366,7 +366,7 @@ public class Class3316 extends Class3314 {
    }
 
    public static int method11871(ItemStack var0) {
-      Class39 var3 = var0.method32145("display");
+      CompoundNBT var3 = var0.method32145("display");
       if (var3 != null && var3.method119("MapColor", 99)) {
          int var4 = var3.method122("MapColor");
          return 0xFF000000 | var4 & 16777215;
@@ -377,7 +377,7 @@ public class Class3316 extends Class3314 {
 
    @Override
    public ActionResultType method11707(Class5911 var1) {
-      Class7380 var4 = var1.method18360().method6738(var1.method18345());
+      BlockState var4 = var1.method18360().getBlockState(var1.method18345());
       if (!var4.method23446(Class7645.field32760)) {
          return super.method11707(var1);
       } else {

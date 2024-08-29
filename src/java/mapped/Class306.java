@@ -19,13 +19,13 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class306 implements Class303 {
+public class Class306 implements IResourcePack {
    public static Path field1188;
    private static final Logger field1189 = LogManager.getLogger();
    public static Class<?> field1190;
-   private static final Map<Class1946, FileSystem> field1191 = Util.<Map<Class1946, FileSystem>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<ResourcePackType, FileSystem> field1191 = Util.<Map<ResourcePackType, FileSystem>>method38508(Maps.newHashMap(), var0 -> {
       synchronized (Class306.class) {
-         for (Class1946 var7 : Class1946.values()) {
+         for (ResourcePackType var7 : ResourcePackType.values()) {
             URL var8 = Class306.class.getResource("/" + var7.method8205() + "/.mcassetsroot");
 
             try {
@@ -71,7 +71,7 @@ public class Class306 implements Class303 {
    }
 
    @Override
-   public InputStream method1223(Class1946 var1, ResourceLocation var2) throws IOException {
+   public InputStream getResourceStream(ResourcePackType var1, ResourceLocation var2) throws IOException {
       InputStream var5 = this.method1243(var1, var2);
       if (var5 == null) {
          throw new FileNotFoundException(var2.method8292());
@@ -81,7 +81,7 @@ public class Class306 implements Class303 {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(Class1946 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       HashSet var8 = Sets.newHashSet();
       if (field1188 != null) {
          try {
@@ -89,7 +89,7 @@ public class Class306 implements Class303 {
          } catch (IOException var17) {
          }
 
-         if (var1 == Class1946.field12610) {
+         if (var1 == ResourcePackType.CLIENT_RESOURCES) {
             Enumeration var9 = null;
 
             try {
@@ -146,7 +146,7 @@ public class Class306 implements Class303 {
    }
 
    @Nullable
-   public InputStream method1243(Class1946 var1, ResourceLocation var2) {
+   public InputStream method1243(ResourcePackType var1, ResourceLocation var2) {
       String var5 = method1244(var1, var2);
       InputStream var6 = Class9561.method37043(var5);
       if (var6 != null) {
@@ -171,7 +171,7 @@ public class Class306 implements Class303 {
       }
    }
 
-   private static String method1244(Class1946 var0, ResourceLocation var1) {
+   private static String method1244(ResourcePackType var0, ResourceLocation var1) {
       return "/" + var0.method8205() + "/" + var1.method8293() + "/" + var1.method8292();
    }
 
@@ -181,11 +181,11 @@ public class Class306 implements Class303 {
 
    @Nullable
    public InputStream method1246(String var1) {
-      return !field1194 ? Class306.class.getResourceAsStream("/" + var1) : this.method1248(Class1946.field12611, "/" + var1);
+      return !field1194 ? Class306.class.getResourceAsStream("/" + var1) : this.method1248(ResourcePackType.field12611, "/" + var1);
    }
 
    @Override
-   public boolean method1225(Class1946 var1, ResourceLocation var2) {
+   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
       String var5 = method1244(var1, var2);
       InputStream var6 = Class9561.method37043(var5);
       if (var6 != null) {
@@ -208,7 +208,7 @@ public class Class306 implements Class303 {
    }
 
    @Override
-   public Set<String> method1226(Class1946 var1) {
+   public Set<String> method1226(ResourcePackType var1) {
       return this.field1192;
    }
 
@@ -244,7 +244,7 @@ public class Class306 implements Class303 {
       }
    }
 
-   private InputStream method1248(Class1946 var1, String var2) {
+   private InputStream method1248(ResourcePackType var1, String var2) {
       try {
          FileSystem var5 = field1191.get(var1);
          return var5 != null ? Files.newInputStream(var5.getPath(var2)) : Class306.class.getResourceAsStream(var2);

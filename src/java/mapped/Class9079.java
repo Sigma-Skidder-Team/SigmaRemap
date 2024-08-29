@@ -29,7 +29,7 @@ public class Class9079 {
    }
 
    public static String method33828(Minecraft var0) {
-      return TextFormatting.getTextWithoutFormattingCodes(var0.field1302.method36349().replaceAll("\\r", ""));
+      return TextFormatting.getTextWithoutFormattingCodes(var0.keyboardListener.method36349().replaceAll("\\r", ""));
    }
 
    public static Consumer<String> method33829(Minecraft var0) {
@@ -37,7 +37,7 @@ public class Class9079 {
    }
 
    public static void method33830(Minecraft var0, String var1) {
-      var0.field1302.method36350(var1);
+      var0.keyboardListener.method36350(var1);
    }
 
    public boolean method33831(char var1) {
@@ -56,7 +56,7 @@ public class Class9079 {
                   if (var1 != 259) {
                      if (var1 != 261) {
                         if (var1 == 263) {
-                           if (!Screen.method2475()) {
+                           if (!Screen.hasControlDown()) {
                               this.method33837(-1, Screen.method2476());
                            } else {
                               this.method33838(-1, Screen.method2476());
@@ -66,7 +66,7 @@ public class Class9079 {
                         }
 
                         if (var1 == 262) {
-                           if (!Screen.method2475()) {
+                           if (!Screen.hasControlDown()) {
                               this.method33837(1, Screen.method2476());
                            } else {
                               this.method33838(1, Screen.method2476());

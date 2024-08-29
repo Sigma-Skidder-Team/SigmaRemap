@@ -49,9 +49,9 @@ public class Class828 extends Screen {
       this.field4578 = var1;
       this.field4579 = var2;
       this.field4596 = var3;
-      Class39 var6 = var2.method32142();
+      CompoundNBT var6 = var2.method32142();
       if (var6 != null) {
-         Class41 var7 = var6.method131("pages", 8).method79();
+         ListNBT var7 = var6.method131("pages", 8).method79();
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             this.field4584.add(var7.method160(var8));
@@ -80,22 +80,22 @@ public class Class828 extends Screen {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4582++;
    }
 
    @Override
    public void method1921() {
       this.method2518();
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4593 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 100, 196, 98, 20, new TranslationTextComponent("book.signButton"), var1 -> {
             this.field4581 = true;
             this.method2498();
          })
       );
-      this.field4592 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 2, 196, 98, 20, Class7127.field30658, var1 -> {
+      this.field4592 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 2, 196, 98, 20, DialogTexts.field30658, var1 -> {
          this.field4562.displayGuiScreen((Screen)null);
          this.method2500(false);
       }));
@@ -107,7 +107,7 @@ public class Class828 extends Screen {
             }
          })
       );
-      this.field4595 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 2, 196, 98, 20, Class7127.field30659, var1 -> {
+      this.field4595 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 2, 196, 98, 20, DialogTexts.GUI_CANCEL, var1 -> {
          if (this.field4581) {
             this.field4581 = false;
          }
@@ -146,7 +146,7 @@ public class Class828 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    private void method2498() {
@@ -170,19 +170,19 @@ public class Class828 extends Screen {
    private void method2500(boolean var1) {
       if (this.field4580) {
          this.method2499();
-         Class41 var4 = new Class41();
-         this.field4584.stream().<Class40>map(Class40::method150).forEach(var4::add);
+         ListNBT var4 = new ListNBT();
+         this.field4584.stream().<StringNBT>map(StringNBT::valueOf).forEach(var4::add);
          if (!this.field4584.isEmpty()) {
-            this.field4579.method32164("pages", var4);
+            this.field4579.setTagInfo("pages", var4);
          }
 
          if (var1) {
-            this.field4579.method32164("author", Class40.method150(this.field4578.getGameProfile().getName()));
-            this.field4579.method32164("title", Class40.method150(this.field4585.trim()));
+            this.field4579.setTagInfo("author", StringNBT.valueOf(this.field4578.getGameProfile().getName()));
+            this.field4579.setTagInfo("title", StringNBT.valueOf(this.field4585.trim()));
          }
 
-         int var5 = this.field4596 != Hand.field182 ? 40 : this.field4578.field4902.field5443;
-         this.field4562.getClientPlayNetHandler().sendPacket(new Class5551(this.field4579, var1, var5));
+         int var5 = this.field4596 != Hand.MAIN_HAND ? 40 : this.field4578.inventory.currentItem;
+         this.field4562.getConnection().sendPacket(new Class5551(this.field4579, var1, var5));
       }
    }
 
@@ -399,26 +399,26 @@ public class Class828 extends Screen {
    }
 
    private void method2512(Class9518[] var1) {
-      Class9352 var4 = Class9352.method35409();
-      Class5425 var5 = var4.method35411();
+      Tessellator var4 = Tessellator.getInstance();
+      BufferBuilder var5 = var4.getBuffer();
       RenderSystem.method27889(0.0F, 0.0F, 255.0F, 255.0F);
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27857();
       RenderSystem.method27859(Class2270.field14769);
-      var5.method17063(7, Class9337.field43341);
+      var5.begin(7, DefaultVertexFormats.field43341);
 
       for (Class9518 var9 : var1) {
          int var10 = var9.method36780();
          int var11 = var9.method36781();
          int var12 = var10 + var9.method36782();
          int var13 = var11 + var9.method36783();
-         var5.method17025((double)var10, (double)var13, 0.0).method17031();
-         var5.method17025((double)var12, (double)var13, 0.0).method17031();
-         var5.method17025((double)var12, (double)var11, 0.0).method17031();
-         var5.method17025((double)var10, (double)var11, 0.0).method17031();
+         var5.pos((double)var10, (double)var13, 0.0).endVertex();
+         var5.pos((double)var12, (double)var13, 0.0).endVertex();
+         var5.pos((double)var12, (double)var11, 0.0).endVertex();
+         var5.pos((double)var10, (double)var11, 0.0).endVertex();
       }
 
-      var4.method35410();
+      var4.draw();
       RenderSystem.method27858();
       RenderSystem.enableTexture();
    }
@@ -526,7 +526,7 @@ public class Class828 extends Screen {
             var15 = new Class6178(0, var7.size() * 9);
          } else {
             int var13 = method2521(var11, var4);
-            int var14 = this.field4568.method38820(var3.substring(var11[var13], var4));
+            int var14 = this.field4568.getStringWidth(var3.substring(var11[var13], var4));
             var15 = new Class6178(var14, var13 * 9);
          }
 

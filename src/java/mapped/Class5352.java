@@ -12,14 +12,14 @@ public class Class5352 extends Module {
 
     public Class5352() {
         super(ModuleCategory.MOVEMENT, "LibreCraft", "A fly for LibreCraft");
-        this.method15972(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
+        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
     }
 
     @Override
     public void isInDevelopment() {
         this.field23910 = 0;
-        if (!mc.gameSettings.field44637.method8509()) {
-            if (!mc.gameSettings.field44637.method8509()) {
+        if (!mc.gameSettings.field44637.isKeyDown()) {
+            if (!mc.gameSettings.field44637.isKeyDown()) {
                 this.field23911 = false;
             }
         } else {

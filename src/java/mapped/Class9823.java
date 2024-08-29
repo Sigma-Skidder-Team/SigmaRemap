@@ -203,24 +203,24 @@ public class Class9823 {
    }
 
    private Class9110 method38774(float var1, int var2) {
-      return this.field45897.method33977((float)this.field45896.method8304() * var1, (float)var2, (float)this.field45896.method8306() * var1);
+      return this.field45897.method33977((float)this.field45896.getX() * var1, (float)var2, (float)this.field45896.getZ() * var1);
    }
 
    private Class9110 method38775(float var1, float var2, int var3) {
-      Class9110 var6 = this.field45897.method33977((float)this.field45896.method8304() * var1, (float)var3, (float)this.field45896.method8306() * var1);
-      if (this.field45896.method8304() > 0) {
+      Class9110 var6 = this.field45897.method33977((float)this.field45896.getX() * var1, (float)var3, (float)this.field45896.getZ() * var1);
+      if (this.field45896.getX() > 0) {
          var6 = var6.method33977(0.0F, 0.0F, -var2);
       }
 
-      if (this.field45896.method8306() > 0) {
+      if (this.field45896.getZ() > 0) {
          var6 = var6.method33977(var2, 0.0F, 0.0F);
       }
 
-      if (this.field45896.method8304() < 0) {
+      if (this.field45896.getX() < 0) {
          var6 = var6.method33977(0.0F, 0.0F, var2);
       }
 
-      if (this.field45896.method8306() < 0) {
+      if (this.field45896.getZ() < 0) {
          var6 = var6.method33977(-var2, 0.0F, 0.0F);
       }
 
@@ -434,8 +434,8 @@ public class Class9823 {
    }
 
    public static double method38779(BlockPos var0, BlockPos var1) {
-      double var4 = (double)var0.method8304() - (double)var1.method8304();
-      double var6 = (double)var0.method8306() - (double)var1.method8306();
+      double var4 = (double)var0.getX() - (double)var1.getX();
+      double var6 = (double)var0.getZ() - (double)var1.getZ();
       return Math.sqrt(var4 * var6);
    }
 

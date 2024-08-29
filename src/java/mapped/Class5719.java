@@ -5,7 +5,7 @@ import java.util.Random;
 public class Class5719 extends Class5715<Class906> {
    private static String[] field25116;
 
-   public Class5719(Class8853 var1) {
+   public Class5719(EntityRendererManager var1) {
       super(var1);
    }
 
@@ -23,7 +23,7 @@ public class Class5719 extends Class5715<Class906> {
          var12 += (float)(var13.nextInt(11) - 5);
       }
 
-      Class5422 var32 = var5.method25597(Class4520.method14341());
+      Class5422 var32 = var5.method25597(RenderType.method14341());
       Class9367 var15 = var4.method35296().method32361();
 
       for (int var16 = 0; var16 < 4; var16++) {
@@ -97,19 +97,19 @@ public class Class5719 extends Class5715<Class906> {
    ) {
       var1.method17040(var0, var2 + (!var12 ? -var11 : var11), (float)(var4 * 16), var3 + (!var13 ? -var11 : var11))
          .method17033(var7, var8, var9, 0.3F)
-         .method17031();
+         .endVertex();
       var1.method17040(var0, var5 + (!var12 ? -var10 : var10), (float)((var4 + 1) * 16), var6 + (!var13 ? -var10 : var10))
          .method17033(var7, var8, var9, 0.3F)
-         .method17031();
+         .endVertex();
       var1.method17040(var0, var5 + (!var14 ? -var10 : var10), (float)((var4 + 1) * 16), var6 + (!var15 ? -var10 : var10))
          .method17033(var7, var8, var9, 0.3F)
-         .method17031();
+         .endVertex();
       var1.method17040(var0, var2 + (!var14 ? -var11 : var11), (float)(var4 * 16), var3 + (!var15 ? -var11 : var11))
          .method17033(var7, var8, var9, 0.3F)
-         .method17031();
+         .endVertex();
    }
 
    public ResourceLocation method17843(Class906 var1) {
-      return Class289.field1102;
+      return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }

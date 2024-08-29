@@ -33,10 +33,10 @@ public class Class5265 extends PremiumModule {
 
     public Class5265() {
         super("TargetHUD", "Shows target info with killaura", ModuleCategory.GUI);
-        this.method15972(new Class6005("Background", "Background", 0, "Blur", "Color", "None"));
-        this.method15972(new Class6005("Position", "HUD Position", 0, "Center", "Bottom"));
-        this.method15972(new Class6005("HealthBar", "Healthbar color", 0, "Health", "White"));
-        this.method15972(new Class6004("Armor", "Draw target's armor", false));
+        this.registerSetting(new ModeSetting("Background", "Background", 0, "Blur", "Color", "None"));
+        this.registerSetting(new ModeSetting("Position", "HUD Position", 0, "Center", "Bottom"));
+        this.registerSetting(new ModeSetting("HealthBar", "Healthbar color", 0, "Health", "White"));
+        this.registerSetting(new BooleanSetting("Armor", "Draw target's armor", false));
         this.method16005(false);
         this.field23689 = new Animation(800, 200, Direction.BACKWARDS);
         this.field23691 = new Animation(1500, 200, Direction.BACKWARDS);
@@ -86,7 +86,7 @@ public class Class5265 extends PremiumModule {
         if (mc.currentScreen == null || mc.currentScreen instanceof ChatScreen) {
             GL11.glPushMatrix();
             Class3192.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
-            Class8853 var4 = Minecraft.getInstance().method1554();
+            EntityRendererManager var4 = Minecraft.getInstance().getRenderManager();
             Class5743 var5 = new Class5743(var4);
             short var6 = 150;
             UUID var7 = this.field23693.getUniqueID();
@@ -152,12 +152,12 @@ public class Class5265 extends PremiumModule {
             RenderSystem.translatef((float) var1 + 50.0F, (float) this.field23683 + 295.0F, 1000.0F);
             RenderSystem.scalef(1.0F, 1.0F, -1.0F);
             MatrixStack var10 = new MatrixStack();
-            var10.method35291(0.0, 0.0, 1500.0);
+            var10.translate(0.0, 0.0, 1500.0);
             var10.method35292(var6, var6, var6);
             Class8661 var11 = Class7680.field32902.method25286(180.0F);
             var10.method35293(var11);
             var4.method32215(false);
-            Class7735 var12 = Minecraft.getInstance().method1581().method26536();
+            Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
             RenderSystem.method27940(
                     () -> var5.method17924(
                             var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field23689.calcPercent() * 4.0F), this.field23691.calcPercent()

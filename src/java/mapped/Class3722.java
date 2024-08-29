@@ -10,7 +10,7 @@ public class Class3722<E extends Class1034> extends Class3676<E> {
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
-      return !var2.method3091().method32105() && var2.method3091().method32107() != Class8514.field38119;
+      return !var2.method3091().isEmpty() && var2.method3091().getItem() != Items.field38119;
    }
 
    public void method12502(ServerWorld var1, E var2, long var3) {

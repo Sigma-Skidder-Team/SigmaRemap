@@ -1,6 +1,6 @@
 package mapped;
 
-public final class Class7406 extends Class7401 {
+public final class Class7406 extends ItemGroup {
    public Class7406(int var1, String var2) {
       super(var1, var2);
    }
@@ -11,7 +11,7 @@ public final class Class7406 extends Class7401 {
    }
 
    @Override
-   public void method23658(Class25<ItemStack> var1) {
+   public void method23658(NonNullList<ItemStack> var1) {
       throw new RuntimeException("Implement exception client-side.");
    }
 

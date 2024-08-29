@@ -36,7 +36,7 @@ public class Class8920 {
          Class5526 var18 = (Class5526)var0.method13898();
 
          try {
-            while (Minecraft.getInstance().getClientPlayNetHandler() == null) {
+            while (Minecraft.getInstance().getConnection() == null) {
                Thread.sleep(100L);
             }
          } catch (InterruptedException var16) {
@@ -44,7 +44,7 @@ public class Class8920 {
 
          Class1684 var19 = var18.method17384() == null
             ? null
-            : new Class1684(Minecraft.getInstance().getClientPlayNetHandler().field23287.<Biome>method32453(Registry.BIOME_KEY), var18.method17384());
+            : new Class1684(Minecraft.getInstance().getConnection().field23287.<Biome>method32453(Registry.BIOME_KEY), var18.method17384());
          Class1674 var20 = new Class1674(Minecraft.getInstance().world, new Class7481(var18.method17378(), var18.method17379()), null);
          var20.method7142(var19, new PacketBuffer(var18.method17374().copy()), var18.method17382(), var18.method17380());
          if (var20 != null) {
@@ -55,7 +55,7 @@ public class Class8920 {
                   for (float var12 = 0.0F; var12 <= 15.0F; var12++) {
                      for (float var13 = 0.0F; var13 <= 15.0F; var13++) {
                         for (float var14 = 0.0F; var14 <= 15.0F; var14++) {
-                           Class7380 var15 = var20.method6738(new BlockPos((double)var13, (double)((float)(var7 * 16) + var12), (double)var14));
+                           BlockState var15 = var20.getBlockState(new BlockPos((double)var13, (double)((float)(var7 * 16) + var12), (double)var14));
                            if (var1.method33182(var15)) {
                               var1.method33183(
                                  new BlockPos(

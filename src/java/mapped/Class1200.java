@@ -21,7 +21,7 @@ public abstract class Class1200 extends Class1197 {
       } else if (var1 != 257 && var1 != 32 && var1 != 335) {
          return false;
       } else {
-         this.method5739(Minecraft.getInstance().method1546());
+         this.method5739(Minecraft.getInstance().getSoundHandler());
          this.method5759();
          return true;
       }

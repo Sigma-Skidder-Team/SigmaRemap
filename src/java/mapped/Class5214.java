@@ -15,8 +15,8 @@ public class Class5214 extends Module {
 
     public Class5214() {
         super(ModuleCategory.MOVEMENT, "YPort", "YPort speed");
-        this.method15972(new Class6005("Mode", "YPort mode", 0, "NCP", "OldNCP"));
-        this.method15972(new Class6004("OnGround", "See yourself on ground", true));
+        this.registerSetting(new ModeSetting("Mode", "YPort mode", 0, "NCP", "OldNCP"));
+        this.registerSetting(new BooleanSetting("OnGround", "See yourself on ground", true));
     }
 
     @EventTarget

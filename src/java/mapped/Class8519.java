@@ -27,9 +27,9 @@ public class Class8519 {
          : new Class8519(
             var3,
             var4,
-            var6.get("Name").asString(SharedConstants.method34773().getName()),
-            var6.get("Id").asInt(SharedConstants.method34773().getWorldVersion()),
-            var6.get("Snapshot").asBoolean(!SharedConstants.method34773().isStable())
+            var6.get("Name").asString(SharedConstants.getVersion().getName()),
+            var6.get("Id").asInt(SharedConstants.getVersion().getWorldVersion()),
+            var6.get("Snapshot").asBoolean(!SharedConstants.getVersion().isStable())
          );
    }
 

@@ -39,7 +39,7 @@ public class Class825 extends Class798 {
    public void method1921() {
       this.method2442(this.field4553.field27443);
       Class9229.method34713(field4542.getString(), field4543.getString(), this.field4556, field4544.getString(), this.field4555.getString());
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.<Class1206>method2455(
          new Class1206(
             this.field4564 / 2 - 100,
@@ -51,14 +51,14 @@ public class Class825 extends Class798 {
                String var4 = "https://aka.ms/ExtendJavaRealms?subscriptionId="
                   + this.field4553.field27444
                   + "&profileId="
-                  + this.field4562.method1533().getPlayerID();
-               this.field4562.field1302.method36350(var4);
+                  + this.field4562.getSession().getPlayerID();
+               this.field4562.keyboardListener.method36350(var4);
                Util.getOSType().method8181(var4);
             }
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, Class7127.field30663, var1 -> this.field4562.displayGuiScreen(this.field4552))
+         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4552))
       );
       if (this.field4553.field27452) {
          this.<Class1206>method2455(
@@ -101,7 +101,7 @@ public class Class825 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override

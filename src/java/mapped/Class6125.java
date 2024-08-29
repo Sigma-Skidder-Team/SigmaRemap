@@ -70,12 +70,12 @@ public class Class6125 extends Class6109 {
       if (this.field27430 != null && !this.field27430.isEmpty()) {
          return this.field27430;
       } else {
-         return !this.field27434 ? this.method18902(var1) : Class9088.method33883("mco.configure.world.slot.empty");
+         return !this.field27434 ? this.method18902(var1) : I18n.format("mco.configure.world.slot.empty");
       }
    }
 
    public String method18902(int var1) {
-      return Class9088.method33883("mco.configure.world.slot", var1);
+      return I18n.format("mco.configure.world.slot", var1);
    }
 
    public String method18903() {

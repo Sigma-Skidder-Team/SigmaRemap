@@ -5,14 +5,14 @@ import java.util.Map;
 import java.util.Random;
 
 public class Class5390 implements Class5391 {
-   private final Map<Class9564, Class3257> field24027;
+   private final Map<Class9564, Item> field24027;
    private final int field24028;
    private final int field24029;
    private final int field24030;
 
-   public Class5390(int var1, int var2, int var3, Map<Class9564, Class3257> var4) {
+   public Class5390(int var1, int var2, int var3, Map<Class9564, Item> var4) {
       Registry.field16089.method9192().filter(var1x -> !var4.containsKey(var1x)).findAny().ifPresent(var0 -> {
-         throw new IllegalStateException("Missing trade for villager type: " + Registry.field16089.method9181(var0));
+         throw new IllegalStateException("Missing trade for villager type: " + Registry.field16089.getKey(var0));
       });
       this.field24027 = var4;
       this.field24028 = var1;
@@ -27,7 +27,7 @@ public class Class5390 implements Class5391 {
          return null;
       } else {
          ItemStack var5 = new ItemStack(this.field24027.get(((Class1041)var1).method4674().method26570()), this.field24028);
-         return new Class9346(var5, new ItemStack(Class8514.field38049), this.field24029, this.field24030, 0.05F);
+         return new Class9346(var5, new ItemStack(Items.field38049), this.field24029, this.field24030, 0.05F);
       }
    }
 }

@@ -35,14 +35,14 @@ public class Class7803 {
    }
 
    public static Class6488 method26052(Class964 var0) {
-      BlockPos var3 = var0.method3774();
+      BlockPos var3 = var0.getPos();
       BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Class2089.field13614, var0.method3946(), var3);
       return new Class6488(var3, var5);
    }
 
    public static Class9764 method26053(Class964 var0) {
-      BlockPos var3 = var0.method3774();
+      BlockPos var3 = var0.getPos();
       BlockPos var4 = var3.method8337(var0.method3942().method8336(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Class2089.field13614, var0.method3946(), var3);
       return new Class9764(var3, var5);
@@ -51,7 +51,7 @@ public class Class7803 {
    public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, ServerWorld var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
       var3.method6730(var6, Blocks.COMMAND_BLOCK.method11579());
-      Class969 var7 = (Class969)var3.method6759(var6);
+      Class969 var7 = (Class969)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
       BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Class2089.field13614, var2, var6);
       var3.method6730(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
@@ -61,7 +61,7 @@ public class Class7803 {
       Class9764 var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
       var4.method6730(var1, Blocks.field37113.method11579());
-      Class964 var8 = (Class964)var4.method6759(var1);
+      Class964 var8 = (Class964)var4.getTileEntity(var1);
       var8.method3954(false);
       var8.method3938(new ResourceLocation(var0));
       var8.method3943(var2);
@@ -80,12 +80,12 @@ public class Class7803 {
                   throw new IllegalArgumentException("Invalid rotation: " + var2);
                }
 
-               var10 = var1.method8336(0, 0, var8.method8304() - 1);
+               var10 = var1.method8336(0, 0, var8.getX() - 1);
             } else {
-               var10 = var1.method8336(var8.method8304() - 1, 0, var8.method8306() - 1);
+               var10 = var1.method8336(var8.getX() - 1, 0, var8.getZ() - 1);
             }
          } else {
-            var10 = var1.method8336(var8.method8306() - 1, 0, 0);
+            var10 = var1.method8336(var8.getZ() - 1, 0, 0);
          }
       } else {
          var10 = var1;
@@ -128,10 +128,10 @@ public class Class7803 {
    public static Class9764 method26059(BlockPos var0, BlockPos var1, Class80 var2) {
       BlockPos var5 = var0.method8337(var1).method8336(-1, -1, -1);
       BlockPos var6 = Class8969.method32905(var5, Class2089.field13614, var2, var0);
-      Class9764 var7 = Class9764.method38389(var0.method8304(), var0.getY(), var0.method8306(), var6.method8304(), var6.getY(), var6.method8306());
+      Class9764 var7 = Class9764.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
       int var8 = Math.min(var7.field45678, var7.field45681);
       int var9 = Math.min(var7.field45680, var7.field45683);
-      BlockPos var10 = new BlockPos(var0.method8304() - var8, 0, var0.method8306() - var9);
+      BlockPos var10 = new BlockPos(var0.getX() - var8, 0, var0.getZ() - var9);
       var7.method38395(var10);
       return var7;
    }
@@ -157,7 +157,7 @@ public class Class7803 {
          for (int var8 = (int)var6.field28450; var8 <= (int)var6.field28453; var8++) {
             for (int var9 = (int)var6.field28451; var9 <= (int)var6.field28454; var9++) {
                BlockPos var10 = new BlockPos(var7, var8, var9);
-               Class7380 var11 = var2.method6738(var10);
+               BlockState var11 = var2.getBlockState(var10);
                if (var11.method23448(Blocks.field37113)) {
                   var5.add(var10);
                }
@@ -174,7 +174,7 @@ public class Class7803 {
       if (var5 == null) {
          String var6 = var0 + ".snbt";
          Path var7 = Paths.get(field33501, var6);
-         Class39 var8 = method26065(var7);
+         CompoundNBT var8 = method26065(var7);
          if (var8 != null) {
             return var4.method31609(var8);
          } else {
@@ -187,16 +187,16 @@ public class Class7803 {
 
    private static Class964 method26064(String var0, BlockPos var1, Class80 var2, ServerWorld var3, boolean var4) {
       var3.method6730(var1, Blocks.field37113.method11579());
-      Class964 var7 = (Class964)var3.method6759(var1);
+      Class964 var7 = (Class964)var3.getTileEntity(var1);
       var7.method3951(Class104.field319);
       var7.method3947(var2);
       var7.method3954(false);
       var7.method3938(new ResourceLocation(var0));
       var7.method3967(var3, var4);
-      if (var7.method3942() == BlockPos.field13032) {
+      if (var7.method3942() == BlockPos.ZERO) {
          Class8969 var8 = method26063(var0, var3);
          var7.method3968(var3, var4, var8);
-         if (var7.method3942() != BlockPos.field13032) {
+         if (var7.method3942() != BlockPos.ZERO) {
             return var7;
          } else {
             throw new RuntimeException("Failed to load structure " + var0);
@@ -207,7 +207,7 @@ public class Class7803 {
    }
 
    @Nullable
-   private static Class39 method26065(Path var0) {
+   private static CompoundNBT method26065(Path var0) {
       try {
          BufferedReader var3 = Files.newBufferedReader(var0);
          String var4 = IOUtils.toString(var3);
@@ -220,18 +220,18 @@ public class Class7803 {
    }
 
    private static void method26066(int var0, BlockPos var1, ServerWorld var2) {
-      Class7380 var5 = null;
+      BlockState var5 = null;
       Class9733 var6 = Class9733.method38132(var2.method6867().<Biome>method32453(Registry.BIOME_KEY));
       if (!(var6 instanceof Class9733)) {
          if (var1.getY() != var0 - 1) {
             if (var1.getY() < var0 - 1) {
-               var5 = var2.method7003(var1).method32507().method24283().method28935();
+               var5 = var2.getBiome(var1).method32507().method24283().method28935();
             }
          } else {
-            var5 = var2.method7003(var1).method32507().method24283().method28934();
+            var5 = var2.getBiome(var1).method32507().method24283().method28934();
          }
       } else {
-         Class7380[] var7 = var6.method38130();
+         BlockState[] var7 = var6.method38130();
          if (var1.getY() < var0 && var1.getY() <= var7.length) {
             var5 = var7[var1.getY() - 1];
          }
@@ -241,13 +241,13 @@ public class Class7803 {
          var5 = Blocks.AIR.method11579();
       }
 
-      Class164 var8 = new Class164(var5, Collections.<Class8550<?>>emptySet(), (Class39)null);
+      Class164 var8 = new Class164(var5, Collections.<Class8550<?>>emptySet(), (CompoundNBT)null);
       var8.method496(var2, var1, 2);
-      var2.method6964(var1, var5.method23383());
+      var2.method6964(var1, var5.getBlock());
    }
 
    private static boolean method26067(BlockPos var0, BlockPos var1, ServerWorld var2) {
-      Class964 var5 = (Class964)var2.method6759(var0);
+      Class964 var5 = (Class964)var2.getTileEntity(var0);
       Class6488 var6 = method26052(var5).method19664(1.0);
       return var6.method19673(Vector3d.method11328(var1));
    }

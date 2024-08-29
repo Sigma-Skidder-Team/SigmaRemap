@@ -26,7 +26,7 @@ public class Class7894 extends Class7882<Class880> {
       }
 
       var5.method21410(Class8830.field39836).ifPresent(var2x -> {
-         if (!var2x.method3066() || var2x.field5024 != var1) {
+         if (!var2x.method3066() || var2x.world != var1) {
             var5.method21405(Class8830.field39836);
          }
       });

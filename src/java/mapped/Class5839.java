@@ -19,7 +19,7 @@ public class Class5839 {
    }
 
    public void method18260(ItemStack var1, ItemStack var2) {
-      int var5 = var2.method32179() - var1.method32179();
+      int var5 = var2.getCount() - var1.getCount();
       if (var5 > 0) {
          this.method18261(var2, var5);
       }
@@ -48,7 +48,7 @@ public class Class5839 {
    }
 
    public boolean method18266() {
-      return !this.method18265().method32105();
+      return !this.method18265().isEmpty();
    }
 
    public void method18267(ItemStack var1) {

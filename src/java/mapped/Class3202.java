@@ -40,7 +40,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       Direction var7 = var1.<Direction>method23463(field18484);
       boolean var8 = var1.<Boolean>method23463(field18510);
       switch (Class6392.field27980[var1.<Class103>method23463(field18500).ordinal()]) {
@@ -73,7 +73,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var1.<Boolean>method23463(field18510)) {
          this.method11519(var1, var2, var3);
          this.method11520(var4, var2, var3, true);
@@ -83,7 +83,7 @@ public abstract class Class3202 extends Class3200 {
       }
    }
 
-   public void method11519(Class7380 var1, World var2, BlockPos var3) {
+   public void method11519(BlockState var1, World var2, BlockPos var3) {
       var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(true)), 3);
       this.method11525(var1, var2, var3);
       var2.method6860().method20726(var3, this, this.method11518());
@@ -96,8 +96,8 @@ public abstract class Class3202 extends Class3200 {
    public abstract Class9455 method11521(boolean var1);
 
    @Override
-   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.method23383())) {
+   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var5 && !var1.method23448(var4.getBlock())) {
          if (var1.<Boolean>method23463(field18510)) {
             this.method11525(var1, var2, var3);
          }
@@ -107,22 +107,22 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public int method11514(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field18510) ? 0 : 15;
    }
 
    @Override
-   public int method11515(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
       return var1.<Boolean>method23463(field18510) && method11509(var1) == var4 ? 15 : 0;
    }
 
    @Override
-   public boolean method11516(Class7380 var1) {
+   public boolean method11516(BlockState var1) {
       return true;
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18510)) {
          if (!this.field18527) {
             var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(false)), 3);
@@ -135,13 +135,13 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public void method11523(Class7380 var1, World var2, BlockPos var3, Entity var4) {
+   public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.field9020 && this.field18527 && !var1.<Boolean>method23463(field18510)) {
          this.method11524(var1, var2, var3);
       }
    }
 
-   private void method11524(Class7380 var1, World var2, BlockPos var3) {
+   private void method11524(BlockState var1, World var2, BlockPos var3) {
       List var6 = var2.<AbstractArrowEntity>method7182(AbstractArrowEntity.class, var1.method23412(var2, var3).method19514().method19668(var3));
       boolean var7 = !var6.isEmpty();
       boolean var8 = var1.<Boolean>method23463(field18510);
@@ -156,13 +156,13 @@ public abstract class Class3202 extends Class3200 {
       }
    }
 
-   private void method11525(Class7380 var1, World var2, BlockPos var3) {
+   private void method11525(BlockState var1, World var2, BlockPos var3) {
       var2.method6733(var3, this);
       var2.method6733(var3.method8349(method11509(var1).method536()), this);
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18484, field18510, field18500);
    }
 }

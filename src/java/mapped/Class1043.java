@@ -11,14 +11,14 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    public Class46 field5796;
    private final Class927 field5797 = new Class927(8);
 
-   public Class1043(Class8992<? extends Class1043> var1, World var2) {
+   public Class1043(EntityType<? extends Class1043> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14195, 16.0F);
       this.method4224(Class2163.field14196, -1.0F);
    }
 
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new Class5097(false);
       }
@@ -102,9 +102,9 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Override
    public void method4747(ItemStack var1) {
-      if (!this.field5024.field9020 && this.field5593 > -this.method4236() + 20) {
+      if (!this.world.field9020 && this.field5593 > -this.method4236() + 20) {
          this.field5593 = -this.method4236();
-         this.method2863(this.method4749(!var1.method32105()), this.method3099(), this.method3100());
+         this.method2863(this.method4749(!var1.isEmpty()), this.method3099(), this.method3100());
       }
    }
 
@@ -122,21 +122,21 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       Class46 var4 = this.method4742();
       if (!var4.isEmpty()) {
-         var1.method99("Offers", var4.method166());
+         var1.put("Offers", var4.method166());
       }
 
-      var1.method99("Inventory", this.field5797.method3683());
+      var1.put("Inventory", this.field5797.method3683());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.method119("Offers", 10)) {
-         this.field5796 = new Class46(var1.method130("Offers"));
+         this.field5796 = new Class46(var1.getCompound("Offers"));
       }
 
       this.field5797.method3682(var1.method131("Inventory", 10));
@@ -164,7 +164,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
          double var5 = this.field5054.nextGaussian() * 0.02;
          double var7 = this.field5054.nextGaussian() * 0.02;
          double var9 = this.field5054.nextGaussian() * 0.02;
-         this.field5024.method6746(var1, this.method3438(1.0), this.method3441() + 1.0, this.method3445(1.0), var5, var7, var9);
+         this.world.method6746(var1, this.method3438(1.0), this.method3441() + 1.0, this.method3445(1.0), var5, var7, var9);
       }
    }
 
@@ -194,7 +194,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Override
    public World method4753() {
-      return this.field5024;
+      return this.world;
    }
 
    public abstract void method4713();

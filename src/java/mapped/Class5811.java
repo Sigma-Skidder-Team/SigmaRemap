@@ -18,14 +18,14 @@ public class Class5811 extends Class5812 {
    public final Class920 field25465 = new Class977(this, 1);
    private final Class921 field25466 = new Class921();
 
-   public Class5811(int var1, Class974 var2) {
+   public Class5811(int var1, PlayerInventory var2) {
       this(var1, var2, Class8786.field39521);
    }
 
-   public Class5811(int var1, Class974 var2, Class8786 var3) {
+   public Class5811(int var1, PlayerInventory var2, Class8786 var3) {
       super(Class8298.field35671, var1);
       this.field25456 = var3;
-      this.field25458 = var2.field5444.field5024;
+      this.field25458 = var2.field5444.world;
       this.field25462 = this.method18124(new Class5839(this.field25465, 0, 20, 33));
       this.field25463 = this.method18124(new Class5850(this, this.field25466, 1, 143, 33, var3));
 
@@ -80,7 +80,7 @@ public class Class5811 extends Class5812 {
    @Override
    public void method18106(Class920 var1) {
       ItemStack var4 = this.field25462.method18265();
-      if (var4.method32107() != this.field25460.method32107()) {
+      if (var4.getItem() != this.field25460.getItem()) {
          this.field25460 = var4.copy();
          this.method18107(var1, var4);
       }
@@ -90,7 +90,7 @@ public class Class5811 extends Class5812 {
       this.field25459.clear();
       this.field25457.method15235(-1);
       this.field25463.method18267(ItemStack.EMPTY);
-      if (!var2.method32105()) {
+      if (!var2.isEmpty()) {
          this.field25459 = this.field25458.method6816().<Class920, Class4845>method1032(Class7207.field30940, var1, this.field25458);
       }
    }
@@ -127,7 +127,7 @@ public class Class5811 extends Class5812 {
       Class5839 var6 = this.field25468.get(var2);
       if (var6 != null && var6.method18266()) {
          ItemStack var7 = var6.method18265();
-         Class3257 var8 = var7.method32107();
+         Item var8 = var7.getItem();
          var5 = var7.copy();
          if (var2 != 1) {
             if (var2 != 0) {
@@ -146,7 +146,7 @@ public class Class5811 extends Class5812 {
                return ItemStack.EMPTY;
             }
          } else {
-            var8.method11725(var7, var1.field5024, var1);
+            var8.method11725(var7, var1.world, var1);
             if (!this.method18142(var7, 2, 38, true)) {
                return ItemStack.EMPTY;
             }
@@ -154,12 +154,12 @@ public class Class5811 extends Class5812 {
             var6.method18260(var7, var5);
          }
 
-         if (var7.method32105()) {
+         if (var7.isEmpty()) {
             var6.method18267(ItemStack.EMPTY);
          }
 
          var6.method18268();
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
@@ -174,7 +174,7 @@ public class Class5811 extends Class5812 {
    public void method18113(PlayerEntity var1) {
       super.method18113(var1);
       this.field25466.method3620(1);
-      this.field25456.method31716((var2, var3) -> this.method18135(var1, var1.field5024, this.field25465));
+      this.field25456.method31716((var2, var3) -> this.method18135(var1, var1.world, this.field25465));
    }
 
    // $VF: synthetic method

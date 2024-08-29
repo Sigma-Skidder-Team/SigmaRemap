@@ -57,8 +57,8 @@ public abstract class Class5646 {
                int var17 = (int)Math.round(Math.sin(var9) * var14);
                BlockPos var18 = this.field24985.method7203((var16 << 4) + 8, 0, (var17 << 4) + 8, 112, var4::contains, var8);
                if (var18 != null) {
-                  var16 = var18.method8304() >> 4;
-                  var17 = var18.method8306() >> 4;
+                  var16 = var18.getX() >> 4;
+                  var17 = var18.getZ() >> 4;
                }
 
                this.field24989.add(new Class7481(var16, var17));
@@ -157,9 +157,9 @@ public abstract class Class5646 {
       try {
          var10.method32508(var2, this, var1, var12, var11, var9);
       } catch (Exception var16) {
-         Class4526 var15 = Class4526.method14413(var16, "Biome decoration");
-         var15.method14410("Generation").method32807("CenterX", var5).method32807("CenterZ", var6).method32807("Seed", var12).method32807("Biome", var10);
-         throw new Class2506(var15);
+         CrashReport var15 = CrashReport.makeCrashReport(var16, "Biome decoration");
+         var15.makeCategory("Generation").addDetail("CenterX", var5).addDetail("CenterZ", var6).addDetail("Seed", var12).addDetail("Biome", var10);
+         throw new ReportedException(var15);
       }
    }
 
@@ -188,7 +188,7 @@ public abstract class Class5646 {
       return var1.method32499().method31968(var3);
    }
 
-   public void method17825(Class8904 var1, Class7480 var2, Class1670 var3, Class8761 var4, long var5) {
+   public void method17825(DynamicRegistries var1, Class7480 var2, Class1670 var3, Class8761 var4, long var5) {
       Class7481 var9 = var3.method7072();
       Biome var10 = this.field24985.method7005((var9.field32174 << 2) + 2, 0, (var9.field32175 << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
@@ -198,7 +198,7 @@ public abstract class Class5646 {
       }
    }
 
-   private void method17826(Class9300<?, ?> var1, Class8904 var2, Class7480 var3, Class1670 var4, Class8761 var5, long var6, Class7481 var8, Biome var9) {
+   private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, Class1670 var4, Class8761 var5, long var6, Class7481 var8, Biome var9) {
       Class5444 var12 = var3.method24341(Class2002.method8391(var4.method7072(), 0), var1.field43174, var4);
       int var13 = var12 == null ? 0 : var12.method17123();
       Class8483 var14 = this.field24987.method38381(var1.field43174);
@@ -227,12 +227,12 @@ public abstract class Class5646 {
                      Class7393.method23619(var1, var17);
                   }
                } catch (Exception var21) {
-                  Class4526 var19 = Class4526.method14413(var21, "Generating structure reference");
-                  Class8965 var20 = var19.method14410("Structure");
-                  var20.method32806("Id", () -> Registry.field16114.method9181(var17.method17125()).toString());
-                  var20.method32806("Name", () -> var17.method17125().method11373());
-                  var20.method32806("Class", () -> var17.method17125().getClass().getCanonicalName());
-                  throw new Class2506(var19);
+                  CrashReport var19 = CrashReport.makeCrashReport(var21, "Generating structure reference");
+                  CrashReportCategory var20 = var19.makeCategory("Structure");
+                  var20.addDetail("Id", () -> Registry.field16114.getKey(var17.method17125()).toString());
+                  var20.addDetail("Name", () -> var17.method17125().method11373());
+                  var20.addDetail("Class", () -> var17.method17125().getClass().getCanonicalName());
+                  throw new ReportedException(var19);
                }
             }
          }

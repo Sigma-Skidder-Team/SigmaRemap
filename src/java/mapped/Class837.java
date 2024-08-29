@@ -17,7 +17,7 @@ public class Class837 extends Screen {
    private static final Object2IntMap<RegistryKey<World>> field4625 = Util.<Object2IntMap<RegistryKey<World>>>method38508(
       new Object2IntOpenCustomHashMap(Util.method38509()), var0 -> {
          var0.put(World.field8999, -13408734);
-         var0.put(World.field9000, -10075085);
+         var0.put(World.THE_NETHER, -10075085);
          var0.put(World.THE_END, -8943531);
          var0.defaultReturnValue(-2236963);
       }
@@ -26,13 +26,13 @@ public class Class837 extends Screen {
    private final Class7958 field4627;
 
    @Nullable
-   public static Class837 method2560(Minecraft var0, BooleanConsumer var1, DataFixer var2, Class1814 var3, boolean var4) {
-      Class8905 var7 = Class8904.method32457();
+   public static Class837 method2560(Minecraft var0, BooleanConsumer var1, DataFixer var2, SaveFormat.LevelSave var3, boolean var4) {
+      Class8905 var7 = DynamicRegistries.func_239770_b_();
 
-      try (Class1811 var8 = var0.method1503(var7, Minecraft::method1497, Minecraft::method1498, false, var3)) {
-         Class6611 var10 = var8.method7959();
-         var3.method8000(var7, var10);
-         ImmutableSet var11 = var10.method20087().method26266();
+      try (Minecraft.PackManager var8 = var0.reloadDatapacks(var7, Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, var3)) {
+         IServerConfiguration var10 = var8.getServerConfiguration();
+         var3.saveLevel(var7, var10);
+         ImmutableSet var11 = var10.getDimensionGeneratorSettings().method26266();
          return new Class837(var1, var2, var3, var10.method20099(), var4, var11);
       } catch (Exception var24) {
          field4624.warn("Failed to load datapacks, can't optimize world", var24);
@@ -40,7 +40,7 @@ public class Class837 extends Screen {
       }
    }
 
-   private Class837(BooleanConsumer var1, DataFixer var2, Class1814 var3, Class8898 var4, boolean var5, ImmutableSet<RegistryKey<World>> var6) {
+   private Class837(BooleanConsumer var1, DataFixer var2, SaveFormat.LevelSave var3, WorldSettings var4, boolean var5, ImmutableSet<RegistryKey<World>> var6) {
       super(new TranslationTextComponent("optimizeWorld.title", var4.method32426()));
       this.field4626 = var1;
       this.field4627 = new Class7958(var3, var2, var6, var5);
@@ -49,14 +49,14 @@ public class Class837 extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 150, 200, 20, Class7127.field30659, var1 -> {
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 150, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field4627.method27059();
          this.field4626.accept(false);
       }));
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       if (this.field4627.method27062()) {
          this.field4626.accept(true);
       }

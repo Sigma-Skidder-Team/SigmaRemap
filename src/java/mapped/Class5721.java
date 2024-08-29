@@ -5,20 +5,20 @@ import java.util.Random;
 public class Class5721 extends Class5715<Class907> {
    private static String[] field25119;
 
-   public Class5721(Class8853 var1) {
+   public Class5721(EntityRendererManager var1) {
       super(var1);
       this.field25098 = 0.5F;
    }
 
    public void method17853(Class907 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      Class7380 var9 = var1.method3556();
-      if (var9.method23397() == Class1855.field9887) {
+      BlockState var9 = var1.method3556();
+      if (var9.getRenderType() == BlockRenderType.MODEL) {
          World var10 = var1.method3554();
-         if (var9 != var10.method6738(var1.method3432()) && var9.method23397() != Class1855.field9885) {
-            var4.method35294();
+         if (var9 != var10.getBlockState(var1.getPosition()) && var9.getRenderType() != BlockRenderType.field9885) {
+            var4.push();
             BlockPos var11 = new BlockPos(var1.getPosX(), var1.method3389().field28453, var1.getPosZ());
-            var4.method35291(-0.5, 0.0, -0.5);
-            Class217 var12 = Minecraft.getInstance().method1553();
+            var4.translate(-0.5, 0.0, -0.5);
+            BlockRendererDispatcher var12 = Minecraft.getInstance().getBlockRendererDispatcher();
             var12.method812()
                .method24679(
                   var10,
@@ -39,6 +39,6 @@ public class Class5721 extends Class5715<Class907> {
    }
 
    public ResourceLocation method17843(Class907 var1) {
-      return Class289.field1102;
+      return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }

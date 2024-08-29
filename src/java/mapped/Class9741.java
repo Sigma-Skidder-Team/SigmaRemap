@@ -27,7 +27,7 @@ public class Class9741 {
       return var4;
    }
 
-   public static List<Class2023> method38178(Class39 var0) {
+   public static List<Class2023> method38178(CompoundNBT var0) {
       ArrayList var3 = Lists.newArrayList();
       var3.addAll(method38186(var0).method31816());
       method38181(var0, var3);
@@ -38,18 +38,18 @@ public class Class9741 {
       return method38180(var0.method32142());
    }
 
-   public static List<Class2023> method38180(Class39 var0) {
+   public static List<Class2023> method38180(CompoundNBT var0) {
       ArrayList var3 = Lists.newArrayList();
       method38181(var0, var3);
       return var3;
    }
 
-   public static void method38181(Class39 var0, List<Class2023> var1) {
+   public static void method38181(CompoundNBT var0, List<Class2023> var1) {
       if (var0 != null && var0.method119("CustomPotionEffects", 9)) {
-         Class41 var4 = var0.method131("CustomPotionEffects", 10);
+         ListNBT var4 = var0.method131("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            Class39 var6 = var4.method153(var5);
+            CompoundNBT var6 = var4.method153(var5);
             Class2023 var7 = Class2023.method8639(var6);
             if (var7 != null) {
                var1.add(var7);
@@ -59,7 +59,7 @@ public class Class9741 {
    }
 
    public static int method38182(ItemStack var0) {
-      Class39 var3 = var0.method32142();
+      CompoundNBT var3 = var0.method32142();
       if (var3 != null && var3.method119("CustomPotionColor", 99)) {
          return var3.method122("CustomPotionColor");
       } else {
@@ -111,14 +111,14 @@ public class Class9741 {
       return method38186(var0.method32142());
    }
 
-   public static Class8812 method38186(Class39 var0) {
+   public static Class8812 method38186(CompoundNBT var0) {
       return var0 != null ? Class8812.method31814(var0.method126("Potion")) : Class8137.field34976;
    }
 
    public static ItemStack method38187(ItemStack var0, Class8812 var1) {
-      ResourceLocation var4 = Registry.field16076.method9181(var1);
+      ResourceLocation var4 = Registry.field16076.getKey(var1);
       if (var1 != Class8137.field34976) {
-         var0.method32143().method109("Potion", var4.toString());
+         var0.getOrCreateTag().method109("Potion", var4.toString());
       } else {
          var0.method32146("Potion");
       }
@@ -130,14 +130,14 @@ public class Class9741 {
       if (var1.isEmpty()) {
          return var0;
       } else {
-         Class39 var4 = var0.method32143();
-         Class41 var5 = var4.method131("CustomPotionEffects", 9);
+         CompoundNBT var4 = var0.getOrCreateTag();
+         ListNBT var5 = var4.method131("CustomPotionEffects", 9);
 
          for (Class2023 var7 : var1) {
-            var5.add(var7.method8637(new Class39()));
+            var5.add(var7.method8637(new CompoundNBT()));
          }
 
-         var4.method99("CustomPotionEffects", var5);
+         var4.put("CustomPotionEffects", var5);
          return var0;
       }
    }

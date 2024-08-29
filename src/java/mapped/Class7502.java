@@ -12,9 +12,9 @@ public interface Class7502 {
    }
 
    static Class7502 method24462(ItemStack var0) {
-      Class3257 var3 = var0.method32107();
-      if (var3 != Class8514.field38048) {
-         return (Class7502)(var3 != Class8514.field38047 ? Class870.field4819 : new Class7504(var0));
+      Item var3 = var0.getItem();
+      if (var3 != Items.field38048) {
+         return (Class7502)(var3 != Items.field38047 ? Class870.field4819 : new Class7504(var0));
       } else {
          return new Class7501(var0);
       }

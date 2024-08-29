@@ -24,8 +24,8 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
 
    private void method843(MatrixStack var1, Class7733 var2, T var3, Class2106 var4, int var5, A var6) {
       ItemStack var9 = var3.method2943(var4);
-      if (var9.method32107() instanceof Class3279) {
-         Class3279 var10 = (Class3279)var9.method32107();
+      if (var9.getItem() instanceof Class3279) {
+         Class3279 var10 = (Class3279)var9.getItem();
          if (var10.method11805() == var4) {
             if (Class9299.field42864.method20245()) {
                var6 = this.method850((T)var3, var9, var4, (A)var6);
@@ -79,7 +79,7 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
    }
 
    private void method846(MatrixStack var1, Class7733 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
-      Class5422 var12 = Class216.method782(var2, Class4520.method14308(var9), false, var4);
+      Class5422 var12 = ItemRenderer.method782(var2, RenderType.method14308(var9), false, var4);
       var5.method11016(var1, var12, var3, Class213.field798, var6, var7, var8, 1.0F);
    }
 
@@ -101,7 +101,7 @@ public class Class255<T extends Class880, M extends Class2797<T>, A extends Clas
    }
 
    public ResourceLocation method851(Entity var1, ItemStack var2, Class2106 var3, String var4) {
-      Class3279 var7 = (Class3279)var2.method32107();
+      Class3279 var7 = (Class3279)var2.getItem();
       String var8 = var7.method11806().method8790();
       String var9 = "minecraft";
       int var10 = var8.indexOf(58);

@@ -40,8 +40,8 @@ public class Class5135 implements Class5119 {
       RenderSystem.enableBlend();
       RenderSystem.method27938();
       RenderSystem.method27889(0.0F, 1.0F, 0.0F, 0.75F);
-      RenderSystem.method27862();
-      RenderSystem.method27893(6.0F);
+      RenderSystem.disableTexture();
+      RenderSystem.lineWidth(6.0F);
       method15904(var0, var1, var2, var3, var4, var6, var8);
       RenderSystem.enableTexture();
       RenderSystem.disableBlend();
@@ -52,14 +52,14 @@ public class Class5135 implements Class5119 {
       method15905(var0, var4, var6, var8);
       BlockPos var12 = var0.method28712();
       if (method15906(var12, var4, var6, var8) <= 80.0F) {
-         Class8023.method27457(
+         DebugRenderer.method27457(
             new Class6488(
-                  (double)((float)var12.method8304() + 0.25F),
+                  (double)((float)var12.getX() + 0.25F),
                   (double)((float)var12.getY() + 0.25F),
-                  (double)var12.method8306() + 0.25,
-                  (double)((float)var12.method8304() + 0.75F),
+                  (double)var12.getZ() + 0.25,
+                  (double)((float)var12.getX() + 0.75F),
                   (double)((float)var12.getY() + 0.75F),
-                  (double)((float)var12.method8306() + 0.75F)
+                  (double)((float)var12.getZ() + 0.75F)
                )
                .method19667(-var4, -var6, -var8),
             0.0F,
@@ -73,7 +73,7 @@ public class Class5135 implements Class5119 {
             if (method15906(var14.method22531(), var4, var6, var8) <= 80.0F) {
                float var15 = var13 != var0.method28699() ? 0.0F : 1.0F;
                float var16 = var13 != var0.method28699() ? 1.0F : 0.0F;
-               Class8023.method27457(
+               DebugRenderer.method27457(
                   new Class6488(
                         (double)((float)var14.field30847 + 0.5F - var1),
                         (double)((float)var14.field30848 + 0.01F * (float)var13),
@@ -95,7 +95,7 @@ public class Class5135 implements Class5119 {
       if (var2) {
          for (Class7176 var25 : var0.method28710()) {
             if (method15906(var25.method22531(), var4, var6, var8) <= 80.0F) {
-               Class8023.method27457(
+               DebugRenderer.method27457(
                   new Class6488(
                         (double)((float)var25.field30847 + 0.5F - var1 / 2.0F),
                         (double)((float)var25.field30848 + 0.01F),
@@ -115,7 +115,7 @@ public class Class5135 implements Class5119 {
 
          for (Class7176 var26 : var0.method28709()) {
             if (method15906(var26.method22531(), var4, var6, var8) <= 80.0F) {
-               Class8023.method27457(
+               DebugRenderer.method27457(
                   new Class6488(
                         (double)((float)var26.field30847 + 0.5F - var1 / 2.0F),
                         (double)((float)var26.field30848 + 0.01F),
@@ -138,7 +138,7 @@ public class Class5135 implements Class5119 {
          for (int var19 = 0; var19 < var0.method28698(); var19++) {
             Class7176 var22 = var0.method28695(var19);
             if (method15906(var22.method22531(), var4, var6, var8) <= 80.0F) {
-               Class8023.method27462(
+               DebugRenderer.method27462(
                   String.format("%s", var22.field30859),
                   (double)var22.field30847 + 0.5,
                   (double)var22.field30848 + 0.75,
@@ -149,7 +149,7 @@ public class Class5135 implements Class5119 {
                   0.0F,
                   true
                );
-               Class8023.method27462(
+               DebugRenderer.method27462(
                   String.format(Locale.ROOT, "%.2f", var22.field30858),
                   (double)var22.field30847 + 0.5,
                   (double)var22.field30848 + 0.25,
@@ -166,9 +166,9 @@ public class Class5135 implements Class5119 {
    }
 
    public static void method15905(Class8238 var0, double var1, double var3, double var5) {
-      Class9352 var9 = Class9352.method35409();
-      Class5425 var10 = var9.method35411();
-      var10.method17063(3, Class9337.field43342);
+      Tessellator var9 = Tessellator.getInstance();
+      BufferBuilder var10 = var9.getBuffer();
+      var10.begin(3, DefaultVertexFormats.POSITION_COLOR);
 
       for (int var11 = 0; var11 < var0.method28698(); var11++) {
          Class7176 var12 = var0.method28695(var11);
@@ -178,16 +178,16 @@ public class Class5135 implements Class5119 {
             int var15 = var14 >> 16 & 0xFF;
             int var16 = var14 >> 8 & 0xFF;
             int var17 = var14 & 0xFF;
-            var10.method17025((double)var12.field30847 - var1 + 0.5, (double)var12.field30848 - var3 + 0.5, (double)var12.field30849 - var5 + 0.5)
-               .method17026(var15, var16, var17, 255)
-               .method17031();
+            var10.pos((double)var12.field30847 - var1 + 0.5, (double)var12.field30848 - var3 + 0.5, (double)var12.field30849 - var5 + 0.5)
+               .color(var15, var16, var17, 255)
+               .endVertex();
          }
       }
 
-      var9.method35410();
+      var9.draw();
    }
 
    private static float method15906(BlockPos var0, double var1, double var3, double var5) {
-      return (float)(Math.abs((double)var0.method8304() - var1) + Math.abs((double)var0.getY() - var3) + Math.abs((double)var0.method8306() - var5));
+      return (float)(Math.abs((double)var0.getX() - var1) + Math.abs((double)var0.getY() - var3) + Math.abs((double)var0.getZ() - var5));
    }
 }

@@ -3,10 +3,10 @@ package mapped;
 import java.util.UUID;
 
 public class Class6609 implements Class6608 {
-   private final Class6611 field29061;
+   private final IServerConfiguration field29061;
    private final Class6608 field29062;
 
-   public Class6609(Class6611 var1, Class6608 var2) {
+   public Class6609(IServerConfiguration var1, Class6608 var2) {
       this.field29061 = var1;
       this.field29062 = var2;
    }
@@ -199,8 +199,8 @@ public class Class6609 implements Class6608 {
    }
 
    @Override
-   public void method20049(Class8965 var1) {
-      var1.method32807("Derived", true);
+   public void method20049(CrashReportCategory var1) {
+      var1.addDetail("Derived", true);
       this.field29062.method20049(var1);
    }
 }

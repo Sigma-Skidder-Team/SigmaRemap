@@ -17,7 +17,7 @@ public class Class5244 extends Module {
 
     public Class5244() {
         super(ModuleCategory.MOVEMENT, "NCP", "Speed for NCP");
-        this.method15972(new Class6004("Auto Jump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Class5244 extends Module {
                             var1.method13995(var1.method13994() - 0.01);
                         }
                     }
-                } else if (this.field23608 > 1 && (this.method15974("Auto Jump") && Class5628.method17686() || mc.gameSettings.field44636.method8509())) {
+                } else if (this.field23608 > 1 && (this.method15974("Auto Jump") && Class5628.method17686() || mc.gameSettings.field44636.isKeyDown())) {
                     this.field23607 = 0;
                     mc.player.method2914();
                     var1.method13993(mc.player.method3433().field18048);
@@ -90,7 +90,7 @@ public class Class5244 extends Module {
                 var1.method13900(true);
             }
 
-            if (!mc.gameSettings.field44636.method8509() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
+            if (!mc.gameSettings.field44636.isKeyDown() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
                 double var4 = 0.56 + (double) Class9567.method37078() * 0.1;
                 var1.method14002(0.407 + (double) Class9567.method37079() * 0.1 + Math.random() * 1.0E-5);
                 if (Class5341.field23893 < 2) {

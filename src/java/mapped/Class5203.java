@@ -16,9 +16,9 @@ public class Class5203 extends Module {
 
     public Class5203() {
         super(ModuleCategory.COMBAT, "Delay", "For anticheats with \"good\" velocity checks");
-        this.method15972(new Class6009<Float>("Delay", "Ticks delay", 7.0F, Float.class, 1.0F, 20.0F, 1.0F));
-        this.method15972(new Class6009<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.method15972(new Class6009<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Delay", "Ticks delay", 7.0F, Float.class, 1.0F, 20.0F, 1.0F));
+        this.registerSetting(new Class6009<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
     }
 
     @EventTarget
@@ -74,14 +74,14 @@ public class Class5203 extends Module {
                     var5.field24473 = var5.field24473 * this.method15977("H-Multiplier");
                     var5.field24475 = var5.field24475 * this.method15977("H-Multiplier");
                     var5.field24474 = var5.field24474 * this.method15977("V-Multiplier");
-                    mc.getClientPlayNetHandler().method15720(var5);
+                    mc.getConnection().method15720(var5);
                 }
             } else {
                 Class5590 var6 = (Class5590) var4;
                 var6.field24801 = (int) ((float) var6.field24801 * this.method15977("H-Multiplier"));
                 var6.field24803 = (int) ((float) var6.field24803 * this.method15977("H-Multiplier"));
                 var6.field24802 = (int) ((float) var6.field24802 * this.method15977("V-Multiplier"));
-                mc.getClientPlayNetHandler().method15739(var6);
+                mc.getConnection().method15739(var6);
             }
         }
 

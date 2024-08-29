@@ -3,7 +3,7 @@ package mapped;
 public class Class1053 extends Class1050 {
    private static String[] field5819;
 
-   public Class1053(Class8992<? extends Class1053> var1, World var2) {
+   public Class1053(EntityType<? extends Class1053> var1, World var2) {
       super(var1, var2);
    }
 
@@ -14,7 +14,7 @@ public class Class1053 extends Class1050 {
 
    @Override
    public ItemStack method4796() {
-      return new ItemStack(Class8514.field37893);
+      return new ItemStack(Items.field37893);
    }
 
    @Override

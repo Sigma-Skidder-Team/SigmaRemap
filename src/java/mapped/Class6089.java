@@ -29,16 +29,16 @@ public class Class6089 extends Class6069 {
 
    public static void method18829(Class880 var0, World var1, BlockPos var2, int var3) {
       if (var0.method3226()) {
-         Class7380 var6 = Blocks.field36889.method11579();
+         BlockState var6 = Blocks.field36889.method11579();
          float var7 = (float)Math.min(16, 2 + var3);
          Mutable var8 = new Mutable();
 
          for (BlockPos var10 : BlockPos.method8359(var2.method8335((double)(-var7), -1.0, (double)(-var7)), var2.method8335((double)var7, -1.0, (double)var7))) {
             if (var10.method8317(var0.getPositionVec(), (double)var7)) {
-               var8.method8372(var10.method8304(), var10.getY() + 1, var10.method8306());
-               Class7380 var11 = var1.method6738(var8);
-               if (var11.method23393()) {
-                  Class7380 var12 = var1.method6738(var10);
+               var8.method8372(var10.getX(), var10.getY() + 1, var10.getZ());
+               BlockState var11 = var1.getBlockState(var8);
+               if (var11.isAir()) {
+                  BlockState var12 = var1.getBlockState(var10);
                   if (var12.method23384() == Class8649.field38941
                      && var12.<Integer>method23463(Class3404.field19079) == 0
                      && var6.method23443(var1, var10)

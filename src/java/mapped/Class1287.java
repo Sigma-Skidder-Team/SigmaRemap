@@ -97,15 +97,15 @@ public class Class1287 extends Class1286<Class1161> {
       super.method6024(var1);
       int var4 = this.method2468().indexOf(var1);
       if (this.field6850 && var4 == 0) {
-         Class9229.method34713(Class9088.method33883("mco.trial.message.line1"), Class9088.method33883("mco.trial.message.line2"));
+         Class9229.method34713(I18n.format("mco.trial.message.line1"), I18n.format("mco.trial.message.line2"));
       } else if (!this.field6850 || var4 > 0) {
          Class6128 var5 = (Class6128)Class806.method2159(this.field6851).get(var4 - (!this.field6850 ? 0 : 1));
          Class806.method2120(this.field6851, var5.field27443);
          Class806.method2160(this.field6851, var5);
          if (var5.field27447 != Class2261.field14708) {
-            Class9229.method34711(Class9088.method33883("narrator.select", var5.field27445));
+            Class9229.method34711(I18n.format("narrator.select", var5.field27445));
          } else {
-            Class9229.method34711(Class9088.method33883("mco.selectServer.uninitialized") + Class9088.method33883("mco.gui.button"));
+            Class9229.method34711(I18n.format("mco.selectServer.uninitialized") + I18n.format("mco.gui.button"));
          }
       }
    }

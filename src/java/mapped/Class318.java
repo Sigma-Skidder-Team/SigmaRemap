@@ -21,15 +21,15 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       this.field1377 = var1;
    }
 
-   public abstract R method1440(Runnable var1);
+   public abstract R wrapTask(Runnable var1);
 
-   public abstract boolean method1439(R var1);
+   public abstract boolean canRun(R var1);
 
    public boolean method1629() {
-      return Thread.currentThread() == this.method1391();
+      return Thread.currentThread() == this.getExecutionThread();
    }
 
-   public abstract Thread method1391();
+   public abstract Thread getExecutionThread();
 
    public boolean method1390() {
       return !this.method1629();
@@ -44,7 +44,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       return this.field1377;
    }
 
-   public <V> CompletableFuture<V> method1632(Supplier<V> var1) {
+   public <V> CompletableFuture<V> supplyAsync(Supplier<V> var1) {
       return !this.method1390() ? CompletableFuture.<V>completedFuture((V)var1.get()) : CompletableFuture.<V>supplyAsync(var1, this);
    }
 
@@ -74,7 +74,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
 
    public void method1641(R var1) {
       this.field1379.add((R)var1);
-      LockSupport.unpark(this.method1391());
+      LockSupport.unpark(this.getExecutionThread());
    }
 
    @Override
@@ -82,11 +82,11 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       if (!this.method1390()) {
          var1.run();
       } else {
-         this.method1641(this.method1440(var1));
+         this.method1641(this.wrapTask(var1));
       }
    }
 
-   public void method1637() {
+   public void dropTasks() {
       this.field1379.clear();
    }
 
@@ -98,7 +98,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
    public boolean method1302() {
       Runnable var3 = this.field1379.peek();
       if (var3 != null) {
-         if (this.field1380 == 0 && !this.method1439((R)var3)) {
+         if (this.field1380 == 0 && !this.canRun((R)var3)) {
             return false;
          } else {
             this.run(this.field1379.remove());
@@ -109,7 +109,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
       }
    }
 
-   public void method1639(BooleanSupplier var1) {
+   public void driveUntil(BooleanSupplier var1) {
       this.field1380++;
 
       try {

@@ -11,7 +11,7 @@ public class Class4295 extends Class4278 {
 
    public Class4295(Class4305 var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var6, false);
-      this.field20810 = new ItemStack(Class3257.method11702(var7));
+      this.field20810 = new ItemStack(Item.method11702(var7));
    }
 
    @Override
@@ -55,7 +55,7 @@ public class Class4295 extends Class4278 {
          (float)(this.field20896 + this.field20898),
          Class5628.method17688(-921103, var1)
       );
-      if (this.field20810.method32107() != null) {
+      if (this.field20810.getItem() != null) {
          this.method13177();
       }
    }
@@ -70,7 +70,7 @@ public class Class4295 extends Class4278 {
       GL11.glTranslatef((float)(-this.field20895), (float)(-this.field20896), 0.0F);
       GL11.glEnable(2929);
       Class7516.method24498();
-      this.field20811.method1555().method791(this.field20810, this.field20895 + 1, this.field20896 + 1);
+      this.field20811.getItemRenderer().method791(this.field20810, this.field20895 + 1, this.field20896 + 1);
       Class7516.method24499();
       GL11.glDisable(2929);
       GL11.glPopMatrix();

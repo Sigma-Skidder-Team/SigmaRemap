@@ -10,11 +10,11 @@ public class Class5202 extends Module {
 
     public Class5202() {
         super(ModuleCategory.EXPLOIT, "TP", "Disabler working on some anticheats.");
-        this.method15972(new Class6009<Float>("Delay", "Tp delay.", 20.0F, Float.class, 5.0F, 40.0F, 1.0F));
-        this.method15972(new Class6005("Mode", "Mode", 0, "Basic1", "Basic2", "MinInfinity", "MaxInfinity", "MinValue", "MaxValue"));
-        this.method15972(new Class6004("OnGround", "Send on ground packets.", false));
-        this.method15972(new Class6004("More Packets", "Send more packets.", false));
-        this.method15972(new Class6004("Ping spoof", "Spoof your ping.", false));
+        this.registerSetting(new Class6009<Float>("Delay", "Tp delay.", 20.0F, Float.class, 5.0F, 40.0F, 1.0F));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic1", "Basic2", "MinInfinity", "MaxInfinity", "MinValue", "MaxValue"));
+        this.registerSetting(new BooleanSetting("OnGround", "Send on ground packets.", false));
+        this.registerSetting(new BooleanSetting("More Packets", "Send more packets.", false));
+        this.registerSetting(new BooleanSetting("Ping spoof", "Spoof your ping.", false));
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Class5202 extends Module {
 
     @EventTarget
     public void method16197(Class4399 var1) {
-        if (this.method15996() && mc.player != null && var1.method13921() && mc.method1528() != null) {
+        if (this.method15996() && mc.player != null && var1.method13921() && mc.getCurrentServerData() != null) {
             this.field23517++;
             double var4 = -4.503599627370497E15;
             String var6 = this.getStringSettingValueByName("Mode");
@@ -52,7 +52,7 @@ public class Class5202 extends Module {
                 this.field23517 = 0;
                 boolean var8 = this.method15974("OnGround");
                 if (this.method15974("More Packets")) {
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
+                    mc.getConnection().sendPacket(new Class5605(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
                 } else {
                     var1.method13912(var4);
                     var1.method13920(var8);

@@ -2,7 +2,7 @@ package mapped;
 
 public class Class8507 {
    private final ResourceLocation field37202;
-   private Class1656 field37203;
+   private ClientWorld field37203;
    private Biome field37204;
    private static Minecraft field37205 = Minecraft.getInstance();
 

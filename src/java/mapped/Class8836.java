@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
 public class Class8836 {
-   private Class4520 field39905 = null;
+   private RenderType field39905 = null;
    private int field39906 = Class7414.method23746();
    private int field39907 = 4096;
    private int field39908 = 0;
@@ -14,11 +14,11 @@ public class Class8836 {
    private Class8697 field39911 = null;
    private IntBuffer field39912 = Class7944.method26984(this.field39907);
    private IntBuffer field39913 = Class7944.method26984(this.field39907);
-   private final int field39914 = Class9337.field43334.method26216();
+   private final int field39914 = DefaultVertexFormats.field43334.method26216();
    private int field39915 = 7;
    private boolean field39916 = Class7944.method26921();
 
-   public Class8836(Class4520 var1) {
+   public Class8836(RenderType var1) {
       this.field39905 = var1;
       this.method31984();
       long var4 = this.method31989(this.field39907);
@@ -205,7 +205,7 @@ public class Class8836 {
 
    public void method31986() {
       this.method31984();
-      Class9337.field43334.method26218(0L);
+      DefaultVertexFormats.field43334.method26218(0L);
       if (this.field39916) {
          Class5463.method17166();
       }

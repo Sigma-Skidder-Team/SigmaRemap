@@ -151,7 +151,7 @@ public class Class8262 {
 
    public void method28817(BlockPos var1, int var2) {
       Class964 var5 = Class7803.method26056(this.method28820(), var1, this.method28821(), var2, this.field35511, false);
-      this.method28802(var5.method3774());
+      this.method28802(var5.getPos());
       var5.method3937(this.method28806());
       Class7803.method26054(this.field35510, new BlockPos(1, 0, -1), this.method28821(), this.field35511);
       this.field35512.forEach(var1x -> var1x.method29524(this));

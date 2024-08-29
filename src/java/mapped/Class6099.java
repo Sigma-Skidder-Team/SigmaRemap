@@ -71,7 +71,7 @@ public class Class6099 {
       Class9504.method36698(this.field27345);
       Class7517.method24504(this.field27345);
       Class9601.method37271(this.field27345);
-      Class9554.method37005(this.field27345, var1 != Class2085.field13577);
+      Class9554.method37005(this.field27345, var1 != Class2085.INTEGRATED);
       Class8686.method31294(this.field27345);
       Class9160.method34194(this.field27345);
       Class8751.method31569(this.field27345);
@@ -89,7 +89,7 @@ public class Class6099 {
       Class8322.method29142(this.field27345);
       Class8295.method28988(this.field27345);
       Class8243.method28741(this.field27345);
-      if (SharedConstants.field42545) {
+      if (SharedConstants.developmentMode) {
          Class9037.method33489(this.field27345);
       }
 
@@ -178,7 +178,7 @@ public class Class6099 {
          var1.method20181(
             new TranslationTextComponent("command.failed").modifyStyle(var1x -> var1x.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7)))
          );
-         if (SharedConstants.field42545) {
+         if (SharedConstants.developmentMode) {
             var1.method20181(new StringTextComponent(Util.method38517(var17)));
             field27344.error("'" + var2 + "' threw an exception", var17);
          }

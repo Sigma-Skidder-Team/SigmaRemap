@@ -1,5 +1,8 @@
 package com.mentalfrostbyte.jello.unmapped;
 
+/**
+ * Default profile idk
+ */
 public class Class8433 {
     public String field36141;
     public String field36142;

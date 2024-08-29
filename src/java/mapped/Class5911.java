@@ -6,15 +6,15 @@ public class Class5911 {
    private static String[] field25720;
    private final PlayerEntity field25721;
    private final Hand field25722;
-   private final Class8711 field25723;
+   private final BlockRayTraceResult field25723;
    private final World field25724;
    private final ItemStack field25725;
 
-   public Class5911(PlayerEntity var1, Hand var2, Class8711 var3) {
-      this(var1.field5024, var1, var2, var1.getHeldItem(var2), var3);
+   public Class5911(PlayerEntity var1, Hand var2, BlockRayTraceResult var3) {
+      this(var1.world, var1, var2, var1.getHeldItem(var2), var3);
    }
 
-   public Class5911(World var1, PlayerEntity var2, Hand var3, ItemStack var4, Class8711 var5) {
+   public Class5911(World var1, PlayerEntity var2, Hand var3, ItemStack var4, BlockRayTraceResult var5) {
       this.field25721 = var2;
       this.field25722 = var3;
       this.field25723 = var5;
@@ -22,16 +22,16 @@ public class Class5911 {
       this.field25724 = var1;
    }
 
-   public final Class8711 method18353() {
+   public final BlockRayTraceResult method18353() {
       return this.field25723;
    }
 
    public BlockPos method18345() {
-      return this.field25723.method31423();
+      return this.field25723.getPos();
    }
 
    public Direction method18354() {
-      return this.field25723.method31424();
+      return this.field25723.getFace();
    }
 
    public Vector3d method18355() {

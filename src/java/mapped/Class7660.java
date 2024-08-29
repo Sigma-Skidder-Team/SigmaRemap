@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class7660 {
-   public static Class9028 method25180(Class39 var0) {
+   public static Class9028 method25180(CompoundNBT var0) {
       int var3 = var0.method122("xPos");
       int var4 = var0.method122("zPos");
       Class9028 var5 = new Class9028(var3, var4);
@@ -24,7 +24,7 @@ public class Class7660 {
       return var5;
    }
 
-   public static void method25181(Class8905 var0, Class9028 var1, Class39 var2, Class1685 var3) {
+   public static void method25181(Class8905 var0, Class9028 var1, CompoundNBT var2, Class1685 var3) {
       var2.method102("xPos", var1.field41310);
       var2.method102("zPos", var1.field41311);
       var2.method103("LastUpdate", var1.field41300);
@@ -36,7 +36,7 @@ public class Class7660 {
 
       var2.method111("HeightMap", var6);
       var2.method115("TerrainPopulated", var1.field41301);
-      Class41 var19 = new Class41();
+      ListNBT var19 = new ListNBT();
 
       for (int var8 = 0; var8 < 8; var8++) {
          boolean var9 = true;
@@ -73,7 +73,7 @@ public class Class7660 {
                }
             }
 
-            Class39 var25 = new Class39();
+            CompoundNBT var25 = new CompoundNBT();
             var25.method100("Y", (byte)(var8 & 0xFF));
             var25.method110("Blocks", var20);
             var25.method110("Data", var21.method20669());
@@ -83,14 +83,14 @@ public class Class7660 {
          }
       }
 
-      var2.method99("Sections", var19);
+      var2.put("Sections", var19);
       var2.method111(
          "Biomes", new Class1684(var0.<Biome>method32453(Registry.BIOME_KEY), new Class7481(var1.field41310, var1.field41311), var3).method7198()
       );
-      var2.method99("Entities", var1.field41307);
-      var2.method99("TileEntities", var1.field41308);
+      var2.put("Entities", var1.field41307);
+      var2.put("TileEntities", var1.field41308);
       if (var1.field41309 != null) {
-         var2.method99("TileTicks", var1.field41309);
+         var2.put("TileTicks", var1.field41309);
       }
 
       var2.method115("convertedFromAlphaFormat", true);

@@ -9,7 +9,7 @@ public class Class1121 implements Class876 {
    }
 
    @Override
-   public void method2718(Class5812 var1, Class25<ItemStack> var2) {
+   public void method2718(Class5812 var1, NonNullList<ItemStack> var2) {
       Class869.method2688(this.field6153);
    }
 

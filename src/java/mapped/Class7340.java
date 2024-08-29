@@ -46,8 +46,8 @@ public class Class7340 {
       return true;
    }
 
-   public boolean method23258(Class7380 var1) {
-      return this.method23257(var1.method23383().method11577(), var1);
+   public boolean method23258(BlockState var1) {
+      return this.method23257(var1.getBlock().getStateContainer(), var1);
    }
 
    public boolean method23259(Class7379 var1) {

@@ -12,7 +12,7 @@ public class Class1284 extends Class1274<Class1164> {
       for (Class2019 var6 : Class1136.method5461(var1).method966()) {
          Class1164 var7 = new Class1164(this, var6);
          this.method6030(var7);
-         if (Class1136.method5461(var1).method965().getCode().equals(var6.getCode())) {
+         if (Class1136.method5461(var1).getCurrentLanguage().getCode().equals(var6.getCode())) {
             this.method6024(var7);
          }
       }

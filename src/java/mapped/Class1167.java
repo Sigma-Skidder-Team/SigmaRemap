@@ -33,7 +33,7 @@ public class Class1167 extends Class1155<Class1167> {
       Class1313.method6218(this.field6332.field6836).method5651();
    }
 
-   private void method5570(MatrixStack var1, int var2, int var3, Class3257 var4) {
+   private void method5570(MatrixStack var1, int var2, int var3, Item var4) {
       this.method5571(var1, var2 + 1, var3 + 1);
       RenderSystem.method27867();
       this.field6332.field6836.field4563.method791(new ItemStack(var4), var2 + 2, var3 + 2);

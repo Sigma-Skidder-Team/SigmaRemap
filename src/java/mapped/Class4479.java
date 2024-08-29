@@ -30,7 +30,7 @@ public class Class4479 extends Class4457 {
    public JsonObject method14092(Class8107 var1) {
       JsonObject var4 = super.method14092(var1);
       if (this.field21669 != null) {
-         var4.addProperty("block", Registry.field16072.method9181(this.field21669).toString());
+         var4.addProperty("block", Registry.BLOCK.getKey(this.field21669).toString());
       }
 
       var4.add("item", this.field21670.method31018());

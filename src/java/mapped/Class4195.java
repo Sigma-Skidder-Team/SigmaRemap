@@ -26,17 +26,17 @@ public class Class4195 extends Class4194 {
       this.field20444 = var3;
    }
 
-   public Class4195(Class7792 var1, Class39 var2) {
+   public Class4195(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field20496 = var2.method132("Source");
    }
 
-   public Class4195(Class8761 var1, Class39 var2) {
+   public Class4195(Class8761 var1, CompoundNBT var2) {
       this(Class7792.field33453, var2);
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Source", this.field20496);
    }

@@ -15,12 +15,12 @@ public class Class3593 implements Comparator<BlockPos> {
             Math.sqrt(
                   Class5235.method16322()
                      .player
-                     .method3276((double)var1.method8304() + 0.5, (double)var1.getY() + 0.5, (double)var1.method8306() + 0.5)
+                     .method3276((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5)
                )
                > Math.sqrt(
                   Class5235.method16323()
                      .player
-                     .method3276((double)var2.method8304() + 0.5, (double)var2.getY() + 0.5, (double)var2.method8306() + 0.5)
+                     .method3276((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5)
                )
          )
          ? -1

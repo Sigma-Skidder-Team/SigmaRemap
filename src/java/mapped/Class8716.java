@@ -11,15 +11,15 @@ public class Class8716 {
    private final File field39330;
    public final DataFixer field39331;
 
-   public Class8716(Class1814 var1, DataFixer var2) {
+   public Class8716(SaveFormat.LevelSave var1, DataFixer var2) {
       this.field39331 = var2;
-      this.field39330 = var1.method7991(Class5137.field23348).toFile();
+      this.field39330 = var1.resolveFilePath(FolderName.field23348).toFile();
       this.field39330.mkdirs();
    }
 
    public void method31441(PlayerEntity var1) {
       try {
-         Class39 var4 = var1.method3294(new Class39());
+         CompoundNBT var4 = var1.method3294(new CompoundNBT());
          File var5 = File.createTempFile(var1.method3376() + "-", ".dat", this.field39330);
          Class8799.method31767(var4, var5);
          File var6 = new File(this.field39330, var1.method3376() + ".dat");
@@ -31,8 +31,8 @@ public class Class8716 {
    }
 
    @Nullable
-   public Class39 method31442(PlayerEntity var1) {
-      Class39 var4 = null;
+   public CompoundNBT method31442(PlayerEntity var1) {
+      CompoundNBT var4 = null;
 
       try {
          File var5 = new File(this.field39330, var1.method3376() + ".dat");

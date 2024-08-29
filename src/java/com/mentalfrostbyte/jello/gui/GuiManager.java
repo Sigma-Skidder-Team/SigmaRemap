@@ -68,7 +68,7 @@ public class GuiManager {
         field41344 = GLFW.glfwCreateStandardCursor(221185);
         field41345 = GLFW.glfwCreateStandardCursor(221188);
         field41346 = GLFW.glfwCreateStandardCursor(221186);
-        GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.method8039(), field41344);
+        GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), field41344);
         field41348 = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.method8044());
     }
 
@@ -77,7 +77,7 @@ public class GuiManager {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new Class1317(((MultiplayerScreen) var0).field6948));
             return true;
-        } else if (var0 instanceof Class834 && !(var0 instanceof Class835)) {
+        } else if (var0 instanceof IngameMenuScreen && !(var0 instanceof Class835)) {
             Minecraft.getInstance().currentScreen = null;
             Minecraft.getInstance().displayGuiScreen(new Class835());
             return true;
@@ -243,13 +243,13 @@ public class GuiManager {
                 float var7 = 0.5F + Class5151.field23380.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
                 Class3192.method11424(4.0F, 2.0F, 106.0F, 28.0F, Class5628.method17688(Class1979.field12891.field12910, 0.6F * var7));
-                Class3192.method11439(Class7925.field33950, 9.0F, 2.0F, "Sigma", Class5628.method17688(Class1979.field12891.field12910, 0.5F * var7));
+                Class3192.method11439(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", Class5628.method17688(Class1979.field12891.field12910, 0.5F * var7));
                 Class3192.method11439(
-                        Class7925.field33950, 8.0F, 1.0F, "Sigma", Class5628.method17688(Class1979.field12896.field12910, Math.min(1.0F, var7 * 1.2F))
+                        ClassicDecryption.bold22, 8.0F, 1.0F, "Sigma", Class5628.method17688(Class1979.field12896.field12910, Math.min(1.0F, var7 * 1.2F))
                 );
                 int var8 = Color.getHSBColor((float) (System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F).getRGB();
-                Class3192.method11439(Class7925.field33953, 73.0F, 2.0F, "5.0.0", Class5628.method17688(Class1979.field12891.field12910, 0.5F));
-                Class3192.method11439(Class7925.field33953, 72.0F, 1.0F, "5.0.0", Class5628.method17688(var8, Math.min(1.0F, var7 * 1.4F)));
+                Class3192.method11439(ClassicDecryption.bold14, 73.0F, 2.0F, "5.0.0", Class5628.method17688(Class1979.field12891.field12910, 0.5F));
+                Class3192.method11439(ClassicDecryption.bold14, 72.0F, 1.0F, "5.0.0", Class5628.method17688(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
                 Class3192.method11455((float) var3, var4, 170.0F, 104.0F, !(field41348 > 1.0F) ? ResourcesDecrypter.jelloWatermarkPNG : ResourcesDecrypter.jelloWatermark2xPNG);
@@ -258,25 +258,25 @@ public class GuiManager {
             Client.getInstance().getEventManager().call(new Class4415());
         }
 
-        if (this.field41352 != null && Minecraft.getInstance().loadingGuiIn == null) {
+        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
             this.field41352.method13027(1.0F);
         }
     }
 
     public void method33465(float var1) {
-        if (this.field41352 != null && Minecraft.getInstance().loadingGuiIn == null) {
+        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
             this.field41352.method13079(var1);
         }
     }
 
     public void method33466(int var1, int var2, int var3) {
-        if (this.field41352 != null && Minecraft.getInstance().loadingGuiIn == null) {
+        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
             this.field41352.method13078(var1, var2, var3);
         }
     }
 
     public void method33467(int var1, int var2, int var3) {
-        if (this.field41352 != null && Minecraft.getInstance().loadingGuiIn == null) {
+        if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {
             this.field41352.method13095(var1, var2, var3);
         }
     }
@@ -365,7 +365,7 @@ public class GuiManager {
         }
     }
 
-    public void method33479() {
+    public void onResize() {
         if (this.field41352 != null) {
             this.method33468(Client.getInstance().getConfig());
 

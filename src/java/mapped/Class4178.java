@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Set;
 
 public abstract class Class4178 {
-   public static final Class7380 field20443 = Blocks.field37012.method11579();
+   public static final BlockState field20443 = Blocks.field37012.method11579();
    public Class9764 field20444;
    private Direction field20445;
    private Class2089 field20446;
@@ -34,9 +34,9 @@ public abstract class Class4178 {
       this.field20448 = var2;
    }
 
-   public Class4178(Class7792 var1, Class39 var2) {
+   public Class4178(Class7792 var1, CompoundNBT var2) {
       this(var1, var2.method122("GD"));
-      if (var2.method118("BB")) {
+      if (var2.contains("BB")) {
          this.field20444 = new Class9764(var2.method128("BB"));
       }
 
@@ -44,10 +44,10 @@ public abstract class Class4178 {
       this.method12939(var5 != -1 ? Direction.method547(var5) : null);
    }
 
-   public final Class39 method12914() {
-      Class39 var3 = new Class39();
-      var3.method109("id", Registry.field16116.method9181(this.method12941()).toString());
-      var3.method99("BB", this.field20444.method38402());
+   public final CompoundNBT method12914() {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.method109("id", Registry.field16116.getKey(this.method12941()).toString());
+      var3.put("BB", this.field20444.method38402());
       Direction var4 = this.method12938();
       var3.method102("O", var4 != null ? var4.method534() : -1);
       var3.method102("GD", this.field20448);
@@ -55,7 +55,7 @@ public abstract class Class4178 {
       return var3;
    }
 
-   public abstract void method12897(Class39 var1);
+   public abstract void method12897(CompoundNBT var1);
 
    public void method12894(Class4178 var1, List<Class4178> var2, Random var3) {
    }
@@ -97,11 +97,11 @@ public abstract class Class4178 {
 
       for (int var12 = var5; var12 <= var8; var12++) {
          for (int var13 = var7; var13 <= var10; var13++) {
-            if (var1.method6738(var11.method8372(var12, var6, var13)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var12, var6, var13)).method23384().method31085()) {
                return true;
             }
 
-            if (var1.method6738(var11.method8372(var12, var9, var13)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var12, var9, var13)).method23384().method31085()) {
                return true;
             }
          }
@@ -109,11 +109,11 @@ public abstract class Class4178 {
 
       for (int var14 = var5; var14 <= var8; var14++) {
          for (int var16 = var6; var16 <= var9; var16++) {
-            if (var1.method6738(var11.method8372(var14, var16, var7)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var14, var16, var7)).method23384().method31085()) {
                return true;
             }
 
-            if (var1.method6738(var11.method8372(var14, var16, var10)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var14, var16, var10)).method23384().method31085()) {
                return true;
             }
          }
@@ -121,11 +121,11 @@ public abstract class Class4178 {
 
       for (int var15 = var7; var15 <= var10; var15++) {
          for (int var17 = var6; var17 <= var9; var17++) {
-            if (var1.method6738(var11.method8372(var5, var17, var15)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var5, var17, var15)).method23384().method31085()) {
                return true;
             }
 
-            if (var1.method6738(var11.method8372(var8, var17, var15)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var8, var17, var15)).method23384().method31085()) {
                return true;
             }
          }
@@ -176,7 +176,7 @@ public abstract class Class4178 {
       }
    }
 
-   public void method12923(Class1658 var1, Class7380 var2, int var3, int var4, int var5, Class9764 var6) {
+   public void method12923(Class1658 var1, BlockState var2, int var3, int var4, int var5, Class9764 var6) {
       BlockPos var9 = new BlockPos(this.method12920(var3, var5), this.method12921(var4), this.method12922(var3, var5));
       if (var6.method38396(var9)) {
          if (this.field20446 != Class2089.field13614) {
@@ -193,18 +193,18 @@ public abstract class Class4178 {
             var1.method6861().method20726(var9, var10.method23472(), 0);
          }
 
-         if (field20450.contains(var2.method23383())) {
+         if (field20450.contains(var2.getBlock())) {
             var1.method7011(var9).method7082(var9);
          }
       }
    }
 
-   public Class7380 method12924(Class1665 var1, int var2, int var3, int var4, Class9764 var5) {
+   public BlockState method12924(Class1665 var1, int var2, int var3, int var4, Class9764 var5) {
       int var8 = this.method12920(var2, var4);
       int var9 = this.method12921(var3);
       int var10 = this.method12922(var2, var4);
       BlockPos var11 = new BlockPos(var8, var9, var10);
-      return var5.method38396(var11) ? var1.method6738(var11) : Blocks.AIR.method11579();
+      return var5.method38396(var11) ? var1.getBlockState(var11) : Blocks.AIR.method11579();
    }
 
    public boolean method12925(Class1662 var1, int var2, int var3, int var4, Class9764 var5) {
@@ -226,12 +226,12 @@ public abstract class Class4178 {
    }
 
    public void method12927(
-      Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, Class7380 var9, Class7380 var10, boolean var11
+           Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9, BlockState var10, boolean var11
    ) {
       for (int var14 = var4; var14 <= var7; var14++) {
          for (int var15 = var3; var15 <= var6; var15++) {
             for (int var16 = var5; var16 <= var8; var16++) {
-               if (!var11 || !this.method12924(var1, var15, var14, var16, var2).method23393()) {
+               if (!var11 || !this.method12924(var1, var15, var14, var16, var2).isAir()) {
                   if (var14 != var4 && var14 != var7 && var15 != var3 && var15 != var6 && var16 != var5 && var16 != var8) {
                      this.method12923(var1, var10, var15, var14, var16, var2);
                   } else {
@@ -249,7 +249,7 @@ public abstract class Class4178 {
       for (int var14 = var4; var14 <= var7; var14++) {
          for (int var15 = var3; var15 <= var6; var15++) {
             for (int var16 = var5; var16 <= var8; var16++) {
-               if (!var9 || !this.method12924(var1, var15, var14, var16, var2).method23393()) {
+               if (!var9 || !this.method12924(var1, var15, var14, var16, var2).isAir()) {
                   var11.method29258(
                      var10, var15, var14, var16, var14 == var4 || var14 == var7 || var15 == var3 || var15 == var6 || var16 == var5 || var16 == var8
                   );
@@ -271,8 +271,8 @@ public abstract class Class4178 {
       int var8,
       int var9,
       int var10,
-      Class7380 var11,
-      Class7380 var12,
+      BlockState var11,
+      BlockState var12,
       boolean var13,
       boolean var14
    ) {
@@ -280,7 +280,7 @@ public abstract class Class4178 {
          for (int var18 = var5; var18 <= var8; var18++) {
             for (int var19 = var7; var19 <= var10; var19++) {
                if (!(var3.nextFloat() > var4)
-                  && (!var13 || !this.method12924(var1, var18, var17, var19, var2).method23393())
+                  && (!var13 || !this.method12924(var1, var18, var17, var19, var2).isAir())
                   && (!var14 || this.method12925(var1, var18, var17, var19, var2))) {
                   if (var17 != var6 && var17 != var9 && var18 != var5 && var18 != var8 && var19 != var7 && var19 != var10) {
                      this.method12923(var1, var12, var18, var17, var19, var2);
@@ -293,13 +293,13 @@ public abstract class Class4178 {
       }
    }
 
-   public void method12930(Class1658 var1, Class9764 var2, Random var3, float var4, int var5, int var6, int var7, Class7380 var8) {
+   public void method12930(Class1658 var1, Class9764 var2, Random var3, float var4, int var5, int var6, int var7, BlockState var8) {
       if (var3.nextFloat() < var4) {
          this.method12923(var1, var8, var5, var6, var7, var2);
       }
    }
 
-   public void method12931(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, Class7380 var9, boolean var10) {
+   public void method12931(Class1658 var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8, BlockState var9, boolean var10) {
       float var13 = (float)(var6 - var3 + 1);
       float var14 = (float)(var7 - var4 + 1);
       float var15 = (float)(var8 - var5 + 1);
@@ -314,7 +314,7 @@ public abstract class Class4178 {
 
             for (int var22 = var5; var22 <= var8; var22++) {
                float var23 = ((float)var22 - var17) / (var15 * 0.5F);
-               if (!var10 || !this.method12924(var1, var20, var18, var22, var2).method23393()) {
+               if (!var10 || !this.method12924(var1, var20, var18, var22, var2).isAir()) {
                   float var24 = var21 * var21 + var19 * var19 + var23 * var23;
                   if (var24 <= 1.05F) {
                      this.method12923(var1, var9, var20, var18, var22, var2);
@@ -325,13 +325,13 @@ public abstract class Class4178 {
       }
    }
 
-   public void method12932(Class1658 var1, Class7380 var2, int var3, int var4, int var5, Class9764 var6) {
+   public void method12932(Class1658 var1, BlockState var2, int var3, int var4, int var5, Class9764 var6) {
       int var9 = this.method12920(var3, var5);
       int var10 = this.method12921(var4);
       int var11 = this.method12922(var3, var5);
       if (var6.method38396(new BlockPos(var9, var10, var11))) {
          while (
-            (var1.method7007(new BlockPos(var9, var10, var11)) || var1.method6738(new BlockPos(var9, var10, var11)).method23384().method31085()) && var10 > 1
+            (var1.method7007(new BlockPos(var9, var10, var11)) || var1.getBlockState(new BlockPos(var9, var10, var11)).method23384().method31085()) && var10 > 1
          ) {
             var1.method6725(new BlockPos(var9, var10, var11), var2, 2);
             var10--;
@@ -341,15 +341,15 @@ public abstract class Class4178 {
 
    public boolean method12933(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      return this.method12935(var1, var2, var3, var10, var7, (Class7380)null);
+      return this.method12935(var1, var2, var3, var10, var7, (BlockState)null);
    }
 
-   public static Class7380 method12934(Class1665 var0, BlockPos var1, Class7380 var2) {
+   public static BlockState method12934(Class1665 var0, BlockPos var1, BlockState var2) {
       Direction var5 = null;
 
       for (Direction var7 : Class76.field161) {
          BlockPos var8 = var1.method8349(var7);
-         Class7380 var9 = var0.method6738(var8);
+         BlockState var9 = var0.getBlockState(var8);
          if (var9.method23448(Blocks.CHEST)) {
             return var2;
          }
@@ -367,17 +367,17 @@ public abstract class Class4178 {
       if (var5 == null) {
          Direction var10 = var2.<Direction>method23463(Class3198.field18484);
          BlockPos var11 = var1.method8349(var10);
-         if (var0.method6738(var11).method23409(var0, var11)) {
+         if (var0.getBlockState(var11).method23409(var0, var11)) {
             var10 = var10.method536();
             var11 = var1.method8349(var10);
          }
 
-         if (var0.method6738(var11).method23409(var0, var11)) {
+         if (var0.getBlockState(var11).method23409(var0, var11)) {
             var10 = var10.method537();
             var11 = var1.method8349(var10);
          }
 
-         if (var0.method6738(var11).method23409(var0, var11)) {
+         if (var0.getBlockState(var11).method23409(var0, var11)) {
             var10 = var10.method536();
             var1.method8349(var10);
          }
@@ -388,14 +388,14 @@ public abstract class Class4178 {
       }
    }
 
-   public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, Class7380 var6) {
-      if (var2.method38396(var4) && !var1.method6738(var4).method23448(Blocks.CHEST)) {
+   public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
+      if (var2.method38396(var4) && !var1.getBlockState(var4).method23448(Blocks.CHEST)) {
          if (var6 == null) {
             var6 = method12934(var1, var4, Blocks.CHEST.method11579());
          }
 
          var1.method6725(var4, var6, 2);
-         Class944 var9 = var1.method6759(var4);
+         TileEntity var9 = var1.getTileEntity(var4);
          if (var9 instanceof Class941) {
             ((Class941)var9).method3744(var5, var3.nextLong());
          }
@@ -408,9 +408,9 @@ public abstract class Class4178 {
 
    public boolean method12936(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      if (var2.method38396(var11) && !var1.method6738(var11).method23448(Blocks.DISPENSER)) {
+      if (var2.method38396(var11) && !var1.getBlockState(var11).method23448(Blocks.DISPENSER)) {
          this.method12923(var1, Blocks.DISPENSER.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
-         Class944 var12 = var1.method6759(var11);
+         TileEntity var12 = var1.getTileEntity(var11);
          if (var12 instanceof Class971) {
             ((Class971)var12).method3744(var8, var3.nextLong());
          }

@@ -1,6 +1,6 @@
 package mapped;
 
-public final class Class7408 extends Class7401 {
+public final class Class7408 extends ItemGroup {
    public Class7408(int var1, String var2) {
       super(var1, var2);
    }

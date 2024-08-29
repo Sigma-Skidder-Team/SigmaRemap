@@ -44,6 +44,6 @@ public class Class7884 extends Class7882<Class1091> {
    }
 
    private Optional<BlockPos> method26439(ServerWorld var1, Class1091 var2) {
-      return BlockPos.method8357(var2.method3432(), 8, 4, var1x -> var1.method6738(var1x).method23446(Class7645.field32806));
+      return BlockPos.method8357(var2.getPosition(), 8, 4, var1x -> var1.getBlockState(var1x).method23446(Class7645.field32806));
    }
 }

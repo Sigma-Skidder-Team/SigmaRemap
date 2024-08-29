@@ -24,27 +24,27 @@ public class Class8043 {
       String var5 = "en_us";
       String var6 = ".lang";
       var3.add(var4 + var5 + var6);
-      if (!Class7944.method26928().field44676.equals(var5)) {
-         var3.add(var4 + Class7944.method26928().field44676 + var6);
+      if (!Class7944.method26928().language.equals(var5)) {
+         var3.add(var4 + Class7944.method26928().language + var6);
       }
 
       String[] var7 = var3.toArray(new String[var3.size()]);
       method27616(Class7944.method26871(), var7, var2);
-      Class303[] var8 = Class7944.method26869();
+      IResourcePack[] var8 = Class7944.method26869();
 
       for (int var9 = 0; var9 < var8.length; var9++) {
-         Class303 var10 = var8[var9];
+         IResourcePack var10 = var8[var9];
          method27616(var10, var7, var2);
       }
    }
 
-   private static void method27616(Class303 var0, String[] var1, Map var2) {
+   private static void method27616(IResourcePack var0, String[] var1, Map var2) {
       try {
          for (int var5 = 0; var5 < var1.length; var5++) {
             String var6 = var1[var5];
             ResourceLocation var7 = new ResourceLocation(var6);
-            if (var0.method1225(Class1946.field12610, var7)) {
-               InputStream var8 = var0.method1223(Class1946.field12610, var7);
+            if (var0.method1225(ResourcePackType.CLIENT_RESOURCES, var7)) {
+               InputStream var8 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var7);
                if (var8 != null) {
                   method27617(var8, var2);
                }
@@ -72,7 +72,7 @@ public class Class8043 {
       }
    }
 
-   public static void method27618(Class191 var0, String var1, Map<String, String> var2) {
+   public static void method27618(IResourceManager var0, String var1, Map<String, String> var2) {
       try {
          String var5 = "optifine/lang/" + var1 + ".lang";
          ResourceLocation var6 = new ResourceLocation(var5);
@@ -84,7 +84,7 @@ public class Class8043 {
    }
 
    public static String method27619(String var0) {
-      return Class9088.method33883(var0);
+      return I18n.format(var0);
    }
 
    public static TranslationTextComponent method27620(String var0) {
@@ -92,27 +92,27 @@ public class Class8043 {
    }
 
    public static String method27621(String var0, String var1) {
-      String var4 = Class9088.method33883(var0);
+      String var4 = I18n.format(var0);
       return var4 != null && !var4.equals(var0) ? var4 : var1;
    }
 
    public static String method27622() {
-      return Class9088.method33883("options.on");
+      return I18n.format("options.on");
    }
 
    public static String method27623() {
-      return Class9088.method33883("options.off");
+      return I18n.format("options.off");
    }
 
    public static String method27624() {
-      return Class9088.method33883("options.graphics.fast");
+      return I18n.format("options.graphics.fast");
    }
 
    public static String method27625() {
-      return Class9088.method33883("options.graphics.fancy");
+      return I18n.format("options.graphics.fancy");
    }
 
    public static String method27626() {
-      return Class9088.method33883("generator.default");
+      return I18n.format("generator.default");
    }
 }

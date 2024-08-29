@@ -41,20 +41,20 @@ public class Class5168 extends Module {
 
             String[] var5 = new String[this.field23448.size()];
             var5 = this.field23448.<String>toArray(var5);
-            this.method15972(new Class6005("Shematics", "shematics", 0, var5));
+            this.registerSetting(new ModeSetting("Shematics", "shematics", 0, var5));
         }
     }
 
     private BlockPos method16070(int var1) {
         return new BlockPos(
-                this.field23441.method8304() + this.field23440.method31843().get(var1).method17098().method8553(),
+                this.field23441.getX() + this.field23440.method31843().get(var1).method17098().method8553(),
                 this.field23441.getY() + this.field23440.method31843().get(var1).method17098().method8557(),
-                this.field23441.method8306() + this.field23440.method31843().get(var1).method17098().method8561()
+                this.field23441.getZ() + this.field23440.method31843().get(var1).method17098().method8561()
         );
     }
 
     private Block method16071(int var1) {
-        return Block.method11536(this.field23440.method31843().get(var1).method17096()).method23383();
+        return Block.method11536(this.field23440.method31843().get(var1).method17096()).getBlock();
     }
 
     private BlockPos method16072() {
@@ -97,14 +97,14 @@ public class Class5168 extends Module {
 
             for (Class5432 var5 : this.field23440.method31843()) {
                 BlockPos var6 = new BlockPos(
-                        (double) this.field23441.method8304() + var5.method17098().method8552(),
+                        (double) this.field23441.getX() + var5.method17098().method8552(),
                         (double) this.field23441.getY() + var5.method17098().method8556(),
-                        (double) this.field23441.method8306() + var5.method17098().method8560()
+                        (double) this.field23441.getZ() + var5.method17098().method8560()
                 );
                 if (Class9217.method34536(var6) == Blocks.AIR) {
-                    double var7 = (double) var6.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+                    double var7 = (double) var6.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                     double var9 = (double) var6.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                    double var11 = (double) var6.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                    double var11 = (double) var6.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                     Class9388 var13 = new Class9388(var7, var9, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
                     Class3192.method11459(var13, Class5628.method17688(Class1979.field12903.field12910, 0.02F));
                     GL11.glEnable(2848);
@@ -115,9 +115,9 @@ public class Class5168 extends Module {
 
             for (Class9238 var15 : this.field23439) {
                 BlockPos var16 = var15.field42516;
-                double var17 = (double) var16.method8304() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
+                double var17 = (double) var16.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
                 double var18 = (double) var16.getY() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321();
-                double var19 = (double) var16.method8306() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
+                double var19 = (double) var16.getZ() - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                 Class9388 var20 = new Class9388(var17, var18, var19, var17 + 1.0, var18 + 1.0, var19 + 1.0);
                 Class3192.method11459(var20, Class5628.method17688(Class1979.field12892.field12910, 0.1F));
                 Class3192.method11461(var20, Class5628.method17688(Class1979.field12892.field12910, 0.2F));

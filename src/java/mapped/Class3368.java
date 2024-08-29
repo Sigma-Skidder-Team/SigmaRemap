@@ -20,20 +20,20 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class944 method11646(Class1665 var1) {
+   public TileEntity method11646(Class1665 var1) {
       return new Class940(this.field18941);
    }
 
    @Override
-   public Class1855 method11526(Class7380 var1) {
-      return Class1855.field9886;
+   public BlockRenderType method11526(BlockState var1) {
+      return BlockRenderType.field9886;
    }
 
    @Override
-   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var2.field9020) {
-         if (!var4.method2800()) {
-            Class944 var9 = var2.method6759(var3);
+         if (!var4.isSpectator()) {
+            TileEntity var9 = var2.getTileEntity(var3);
             if (!(var9 instanceof Class940)) {
                return ActionResultType.field14820;
             } else {
@@ -63,32 +63,32 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class7380 method11495(Class5909 var1) {
+   public BlockState method11495(Class5909 var1) {
       return this.method11579().method23465(field18939, var1.method18354());
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field18939);
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, Class7380 var3, PlayerEntity var4) {
-      Class944 var7 = var1.method6759(var2);
+   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+      TileEntity var7 = var1.getTileEntity(var2);
       if (var7 instanceof Class940) {
          Class940 var8 = (Class940)var7;
-         if (!var1.field9020 && var4.method2801() && !var8.method3617()) {
+         if (!var1.field9020 && var4.isCreative() && !var8.method3617()) {
             ItemStack var9 = method11958(this.method11957());
-            Class39 var10 = var8.method3754(new Class39());
+            CompoundNBT var10 = var8.method3754(new CompoundNBT());
             if (!var10.method134()) {
-               var9.method32164("BlockEntityTag", var10);
+               var9.setTagInfo("BlockEntityTag", var10);
             }
 
             if (var8.method3381()) {
                var9.method32150(var8.method3380());
             }
 
-            ItemEntity var11 = new ItemEntity(var1, (double)var2.method8304() + 0.5, (double)var2.getY() + 0.5, (double)var2.method8306() + 0.5, var9);
+            ItemEntity var11 = new ItemEntity(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var9);
             var11.method4131();
             var1.method6916(var11);
          } else {
@@ -100,8 +100,8 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public List<ItemStack> method11697(Class7380 var1, Class9464 var2) {
-      Class944 var5 = var2.<Class944>method36459(Class9525.field44337);
+   public List<ItemStack> method11697(BlockState var1, Class9464 var2) {
+      TileEntity var5 = var2.<TileEntity>method36459(Class9525.field44337);
       if (var5 instanceof Class940) {
          Class940 var6 = (Class940)var5;
          var2 = var2.method36456(field18940, (var1x, var2x) -> {
@@ -115,9 +115,9 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
+   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
       if (var5.method32152()) {
-         Class944 var8 = var1.method6759(var2);
+         TileEntity var8 = var1.getTileEntity(var2);
          if (var8 instanceof Class940) {
             ((Class940)var8).method3695(var5.method32149());
          }
@@ -125,11 +125,11 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var1.method23448(var4.method23383())) {
-         Class944 var8 = var2.method6759(var3);
+   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var1.method23448(var4.getBlock())) {
+         TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class940) {
-            var2.method6806(var3, var1.method23383());
+            var2.method6806(var3, var1.getBlock());
          }
 
          super.method11513(var1, var2, var3, var4, var5);
@@ -139,25 +139,25 @@ public class Class3368 extends Class3241 {
    @Override
    public void method11583(ItemStack var1, Class1665 var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11583(var1, var2, var3, var4);
-      Class39 var7 = var1.method32145("BlockEntityTag");
+      CompoundNBT var7 = var1.method32145("BlockEntityTag");
       if (var7 != null) {
          if (var7.method119("LootTable", 8)) {
             var3.add(new StringTextComponent("???????"));
          }
 
          if (var7.method119("Items", 9)) {
-            Class25<ItemStack> var8 = Class25.method68(27, ItemStack.EMPTY);
+            NonNullList<ItemStack> var8 = NonNullList.method68(27, ItemStack.EMPTY);
             Class7920.method26567(var7, var8);
             int var9 = 0;
             int var10 = 0;
 
             for (ItemStack var12 : var8) {
-               if (!var12.method32105()) {
+               if (!var12.isEmpty()) {
                   var10++;
                   if (var9 <= 4) {
                      var9++;
                      IFormattableTextComponent var13 = var12.method32149().deepCopy();
-                     var13.appendString(" x").appendString(String.valueOf(var12.method32179()));
+                     var13.appendString(" x").appendString(String.valueOf(var12.getCount()));
                      var3.add(var13);
                   }
                }
@@ -171,40 +171,40 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class2315 method11689(Class7380 var1) {
+   public Class2315 method11689(BlockState var1) {
       return Class2315.field15863;
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
-      Class944 var7 = var2.method6759(var3);
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+      TileEntity var7 = var2.getTileEntity(var3);
       return !(var7 instanceof Class940) ? Class8022.method27426() : Class8022.method27428(((Class940)var7).method3747(var1));
    }
 
    @Override
-   public boolean method11648(Class7380 var1) {
+   public boolean method11648(BlockState var1) {
       return true;
    }
 
    @Override
-   public int method11649(Class7380 var1, World var2, BlockPos var3) {
-      return Class5812.method18152((Class920)var2.method6759(var3));
+   public int method11649(BlockState var1, World var2, BlockPos var3) {
+      return Class5812.method18152((Class920)var2.getTileEntity(var3));
    }
 
    @Override
-   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      ItemStack var6 = super.method11569(var1, var2, var3);
-      Class940 var7 = (Class940)var1.method6759(var2);
-      Class39 var8 = var7.method3754(new Class39());
+   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+      ItemStack var6 = super.getItem(var1, var2, var3);
+      Class940 var7 = (Class940)var1.getTileEntity(var2);
+      CompoundNBT var8 = var7.method3754(new CompoundNBT());
       if (!var8.method134()) {
-         var6.method32164("BlockEntityTag", var8);
+         var6.setTagInfo("BlockEntityTag", var8);
       }
 
       return var6;
    }
 
    @Nullable
-   public static Class112 method11954(Class3257 var0) {
+   public static Class112 method11954(Item var0) {
       return method11955(Block.method11537(var0));
    }
 
@@ -265,12 +265,12 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field18939, var2.method252(var1.<Direction>method23463(field18939)));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23395(var2.method8749(var1.<Direction>method23463(field18939)));
    }
 }

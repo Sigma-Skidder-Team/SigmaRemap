@@ -38,7 +38,7 @@ public class Class6822 extends Class6819 {
             var18 = var17;
          }
 
-         this.method20796(var1, var2, var3, new BlockPos(var13.method8304(), var15, var13.method8306()), var18, var8, 0, var5.method35439(), var10);
+         this.method20796(var1, var2, var3, new BlockPos(var13.getX(), var15, var13.getZ()), var18, var8, 0, var5.method35439(), var10);
          var14 = var17;
       }
    }

@@ -16,9 +16,9 @@ public class Class7097 extends Class7092 {
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       Random var9 = var6.method36439(var5.field35530);
-      Class7380 var10 = var5.field35531;
+      BlockState var10 = var5.field35531;
       BlockPos var11 = var5.field35530;
-      Class7380 var12 = null;
+      BlockState var12 = null;
       if (var10.method23448(Blocks.field36615) || var10.method23448(Blocks.STONE) || var10.method23448(Blocks.field36618)) {
          var12 = this.method22076(var9);
       } else if (!var10.method23446(Class7645.field32762)) {
@@ -41,10 +41,10 @@ public class Class7097 extends Class7092 {
    }
 
    @Nullable
-   private Class7380 method22076(Random var1) {
+   private BlockState method22076(Random var1) {
       if (!(var1.nextFloat() >= 0.5F)) {
-         Class7380[] var4 = new Class7380[]{Blocks.field36617.method11579(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
-         Class7380[] var5 = new Class7380[]{Blocks.field36616.method11579(), method22081(var1, Blocks.field37016)};
+         BlockState[] var4 = new BlockState[]{Blocks.field36617.method11579(), method22081(var1, Blocks.STONE_BRICK_STAIRS)};
+         BlockState[] var5 = new BlockState[]{Blocks.field36616.method11579(), method22081(var1, Blocks.field37016)};
          return this.method22082(var1, var4, var5);
       } else {
          return null;
@@ -52,12 +52,12 @@ public class Class7097 extends Class7092 {
    }
 
    @Nullable
-   private Class7380 method22077(Random var1, Class7380 var2) {
+   private BlockState method22077(Random var1, BlockState var2) {
       Direction var5 = var2.<Direction>method23463(Class3421.field19131);
       Class99 var6 = var2.<Class99>method23463(Class3421.field19132);
       if (!(var1.nextFloat() >= 0.5F)) {
-         Class7380[] var7 = new Class7380[]{Blocks.field36845.method11579(), Blocks.field36852.method11579()};
-         Class7380[] var8 = new Class7380[]{
+         BlockState[] var7 = new BlockState[]{Blocks.field36845.method11579(), Blocks.field36852.method11579()};
+         BlockState[] var8 = new BlockState[]{
             Blocks.field37016.method11579().method23465(Class3421.field19131, var5).method23465(Class3421.field19132, var6),
             Blocks.field37030.method11579()
          };
@@ -68,31 +68,31 @@ public class Class7097 extends Class7092 {
    }
 
    @Nullable
-   private Class7380 method22078(Random var1) {
+   private BlockState method22078(Random var1) {
       return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37030.method11579();
    }
 
    @Nullable
-   private Class7380 method22079(Random var1) {
+   private BlockState method22079(Random var1) {
       return !(var1.nextFloat() < this.field30534) ? null : Blocks.field37044.method11579();
    }
 
    @Nullable
-   private Class7380 method22080(Random var1) {
+   private BlockState method22080(Random var1) {
       return !(var1.nextFloat() < 0.15F) ? null : Blocks.field37123.method11579();
    }
 
-   private static Class7380 method22081(Random var0, Block var1) {
+   private static BlockState method22081(Random var0, Block var1) {
       return var1.method11579()
          .method23465(Class3421.field19131, Class76.field161.method247(var0))
          .method23465(Class3421.field19132, Class99.values()[var0.nextInt(Class99.values().length)]);
    }
 
-   private Class7380 method22082(Random var1, Class7380[] var2, Class7380[] var3) {
+   private BlockState method22082(Random var1, BlockState[] var2, BlockState[] var3) {
       return !(var1.nextFloat() < this.field30534) ? method22083(var1, var2) : method22083(var1, var3);
    }
 
-   private static Class7380 method22083(Random var0, Class7380[] var1) {
+   private static BlockState method22083(Random var0, BlockState[] var1) {
       return var1[var0.nextInt(var1.length)];
    }
 

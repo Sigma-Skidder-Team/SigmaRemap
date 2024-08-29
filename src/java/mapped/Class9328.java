@@ -14,7 +14,7 @@ public class Class9328 {
    private static String[] field43287;
    private final Map<Class179, List<Class6692>> field43288 = Stream.<Class179>of(Class179.values())
       .collect(ImmutableMap.toImmutableMap(var0 -> var0, var0 -> Lists.newArrayList()));
-   private final Map<Class8992<?>, Class7763> field43289 = Maps.newLinkedHashMap();
+   private final Map<EntityType<?>, Class7763> field43289 = Maps.newLinkedHashMap();
    private float field43290 = 0.1F;
    private boolean field43291;
 
@@ -23,7 +23,7 @@ public class Class9328 {
       return this;
    }
 
-   public Class9328 method35250(Class8992<?> var1, double var2, double var4) {
+   public Class9328 method35250(EntityType<?> var1, double var2, double var4) {
       this.field43289.put(var1, new Class7763(var4, var2));
       return this;
    }

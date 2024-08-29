@@ -40,7 +40,7 @@ public class Class8730 {
             }
 
             if (!var1.method17490() && var7.method8489() && var6.method27027() != null && var6.method27027().method34941()) {
-               this.field39377.method1566().method5914(new Class7604(var6));
+               this.field39377.getToastGui().method5914(new Class7604(var6));
             }
          }
       }
@@ -51,7 +51,7 @@ public class Class8730 {
    }
 
    public void method31510(Class7952 var1, boolean var2) {
-      ClientPlayNetHandler var5 = this.field39377.getClientPlayNetHandler();
+      ClientPlayNetHandler var5 = this.field39377.getConnection();
       if (var5 != null && var1 != null && var2) {
          var5.sendPacket(Class5466.method17182(var1));
       }

@@ -36,7 +36,7 @@ public class ViaVersionLoader {
    }
 
    @EventTarget
-   public void method23342(Class4401 var1) {
+   public void method23342(StopUseItemEvent var1) {
       if (Class8005.method27349() == Class5989.field26129.method18582()) {
          if (this.mc.player.method3160() <= 1) {
             var1.method13900(true);
@@ -47,21 +47,21 @@ public class ViaVersionLoader {
    @EventTarget
    public void method23343(Class4430 var1) {
       if (var1.method13977() == this.mc.gameSettings.field44639.field13070.method28100() && Class8005.method27349() <= Class5989.field26136.method18582()) {
-         this.mc.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+         this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
       }
 
       if (Class8005.method27349() == Class5989.field26129.method18582()
          && var1.method13977() == 258
          && this.field31496 != null
          && this.mc.currentScreen instanceof ChatScreen) {
-         this.mc.getClientPlayNetHandler().method15589().method30695(this.field31496);
+         this.mc.getConnection().getNetworkManager().method30695(this.field31496);
          this.field31496 = null;
       }
    }
 
    @EventTarget
    @HigestPriority
-   public void method23344(Class4418 var1) {
+   public void method23344(WorldLoadEvent var1) {
       field31494 = 0;
       this.field31495.method33176();
    }
@@ -80,7 +80,7 @@ public class ViaVersionLoader {
    @HigestPriority
    public void method23346(Class4398 var1) {
       if (this.mc.world != null && this.mc.player != null) {
-         Block var4 = this.mc.world.method6738(var1.method13902()).method23383();
+         Block var4 = this.mc.world.getBlockState(var1.method13902()).getBlock();
          if (Class8005.method27349() == Class5989.field26129.method18582() && var4 instanceof Class3411) {
             Class6408 var5 = Class8022.method27427(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.method13905(var5);
@@ -116,7 +116,7 @@ public class ViaVersionLoader {
 
                while (var7.hasNext()) {
                   ItemStack var9 = (ItemStack)var7.next();
-                  if (var9.method32107() instanceof Class3267) {
+                  if (var9.getItem() instanceof Class3267) {
                      var8 = true;
                   }
                }
@@ -158,7 +158,7 @@ public class ViaVersionLoader {
    public void method23348(Class4402 var1) {
       if (var1.method13932() instanceof Class5539) {
          int var4 = ((Class5539)var1.method13932()).method17416();
-         if (Class974.method4035(var4)) {
+         if (PlayerInventory.isHotbar(var4)) {
             field31494 = var4;
          }
       }
@@ -190,7 +190,7 @@ public class ViaVersionLoader {
                   Client.getInstance().getModuleManager().method14662(Class5156.class).method15996()
                      || Class8005.method27349() == Class5989.field26129.method18582()
                )) {
-               if (!(((ItemStack)var6.getSecond()).method32107() instanceof Class3334)) {
+               if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
                   Entity var7 = this.mc.world.method6774(var4.method17561());
                   if (field31493.contains(var7)) {
                      field31493.remove(var7);
@@ -246,7 +246,7 @@ public class ViaVersionLoader {
             }
          } else {
             int var12 = ((Class5608)var1.method13898()).method17633();
-            if (Class974.method4035(var12)) {
+            if (PlayerInventory.isHotbar(var12)) {
                field31494 = var12;
             }
          }
@@ -276,7 +276,7 @@ public class ViaVersionLoader {
                var7 += (this.mc.player.method2918() - var7) * var8 / 3.0F;
             }
 
-            if (!this.mc.gameSettings.field44638.method8509()) {
+            if (!this.mc.gameSettings.field44638.isKeyDown()) {
                if (this.mc.player.field4982 == 0.0F && this.mc.player.field4984 == 0.0F) {
                   this.mc.player.setSprinting(false);
                }

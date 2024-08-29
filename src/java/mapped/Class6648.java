@@ -42,9 +42,9 @@ public class Class6648 implements Class6646<Class6647> {
             }
          }
 
-         return Class274.field1051;
+         return SoundHandler.field1051;
       } else {
-         return Class274.field1051;
+         return SoundHandler.field1051;
       }
    }
 

@@ -7,13 +7,13 @@ public class Class1004 extends Entity {
    private Class880 field5563;
    private int field5564 = 80;
 
-   public Class1004(Class8992<? extends Class1004> var1, World var2) {
+   public Class1004(EntityType<? extends Class1004> var1, World var2) {
       super(var1, var2);
       this.field5019 = true;
    }
 
    public Class1004(World var1, double var2, double var4, double var6, Class880 var8) {
-      this(Class8992.field41069, var1);
+      this(EntityType.field41069, var1);
       this.method3215(var2, var4, var6);
       double var11 = var1.field9016.nextDouble() * (float) (Math.PI * 2);
       this.method3435(-Math.sin(var11) * 0.02, 0.2F, -Math.cos(var11) * 0.02);
@@ -54,12 +54,12 @@ public class Class1004 extends Entity {
       this.field5564--;
       if (this.field5564 > 0) {
          this.method3257();
-         if (this.field5024.field9020) {
-            this.field5024.method6746(Class7940.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+         if (this.world.field9020) {
+            this.world.method6746(Class7940.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
          }
       } else {
          this.method2904();
-         if (!this.field5024.field9020) {
+         if (!this.world.field9020) {
             this.method4180();
          }
       }
@@ -67,16 +67,16 @@ public class Class1004 extends Entity {
 
    private void method4180() {
       float var3 = 4.0F;
-      this.field5024.method6755(this, this.getPosX(), this.method3440(0.0625), this.getPosZ(), 4.0F, Class2141.field14015);
+      this.world.method6755(this, this.getPosX(), this.method3440(0.0625), this.getPosZ(), 4.0F, Class2141.field14015);
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       var1.method101("Fuse", (short)this.method4184());
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       this.method4182(var1.method121("Fuse"));
    }
 

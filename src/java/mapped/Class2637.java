@@ -35,7 +35,7 @@ public class Class2637 extends Class2628 {
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
       if (var1.method7007(var2.method8311())) {
-         Class7380 var5 = var1.method6738(var2);
+         BlockState var5 = var1.getBlockState(var2);
          if (var5.method23448(Blocks.CHEST)) {
             return Class941.method3763(var1, var2) < 1;
          } else {

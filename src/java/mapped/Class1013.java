@@ -9,7 +9,7 @@ public abstract class Class1013 extends Class1018 {
    public static final Class9289<Optional<UUID>> field5669 = Class9361.<Optional<UUID>>method35441(Class1013.class, Class7784.field33404);
    private boolean field5670;
 
-   public Class1013(Class8992<? extends Class1013> var1, World var2) {
+   public Class1013(EntityType<? extends Class1013> var1, World var2) {
       super(var1, var2);
       this.method4394();
    }
@@ -22,7 +22,7 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.method4397() != null) {
          var1.method104("Owner", this.method4397());
@@ -32,7 +32,7 @@ public abstract class Class1013 extends Class1018 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       UUID var4;
       if (var1.method106("Owner")) {
@@ -70,7 +70,7 @@ public abstract class Class1013 extends Class1018 {
          double var6 = this.field5054.nextGaussian() * 0.02;
          double var8 = this.field5054.nextGaussian() * 0.02;
          double var10 = this.field5054.nextGaussian() * 0.02;
-         this.field5024.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
+         this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
       }
    }
 
@@ -139,7 +139,7 @@ public abstract class Class1013 extends Class1018 {
    public Class880 method4400() {
       try {
          UUID var3 = this.method4397();
-         return var3 == null ? null : this.field5024.method7196(var3);
+         return var3 == null ? null : this.world.method7196(var3);
       } catch (IllegalArgumentException var4) {
          return null;
       }
@@ -188,7 +188,7 @@ public abstract class Class1013 extends Class1018 {
 
    @Override
    public void method2737(Class8654 var1) {
-      if (!this.field5024.field9020 && this.field5024.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
+      if (!this.world.field9020 && this.world.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
          this.method4400().sendMessage(this.method3073().method27600(), Util.DUMMY_UUID);
       }
 

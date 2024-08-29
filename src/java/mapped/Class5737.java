@@ -1,30 +1,30 @@
 package mapped;
 
-public class Class5737 extends Class5715<Class998> {
+public class Class5737 extends Class5715<PaintingEntity> {
    private static String[] field25158;
 
-   public Class5737(Class8853 var1) {
+   public Class5737(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void method17853(Class998 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      var4.method35294();
+   public void method17853(PaintingEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      var4.push();
       var4.method35293(Class7680.field32900.method25286(180.0F - var2));
       Class9078 var9 = var1.field5496;
       float var10 = 0.0625F;
       var4.method35292(0.0625F, 0.0625F, 0.0625F);
-      Class5422 var11 = var5.method25597(Class4520.method14309(this.method17843(var1)));
-      Class278 var12 = Minecraft.getInstance().method1571();
+      Class5422 var11 = var5.method25597(RenderType.getEntitySolid(this.method17843(var1)));
+      PaintingSpriteUploader var12 = Minecraft.getInstance().getPaintingSpriteUploader();
       this.method17919(var4, var11, var1, var9.method33825(), var9.method33826(), var12.method1020(var9), var12.method1021());
       var4.method35295();
       super.method17853(var1, var2, var3, var4, var5, var6);
    }
 
-   public ResourceLocation method17843(Class998 var1) {
-      return Minecraft.getInstance().method1571().method1021().method7466().method1100();
+   public ResourceLocation method17843(PaintingEntity var1) {
+      return Minecraft.getInstance().getPaintingSpriteUploader().method1021().method7466().method1100();
    }
 
-   private void method17919(MatrixStack var1, Class5422 var2, Class998 var3, int var4, int var5, Class1713 var6, Class1713 var7) {
+   private void method17919(MatrixStack var1, Class5422 var2, PaintingEntity var3, int var4, int var5, TextureAtlasSprite var6, TextureAtlasSprite var7) {
       Class8892 var10 = var1.method35296();
       Class9367 var11 = var10.method32361();
       Class8967 var12 = var10.method32362();
@@ -54,27 +54,27 @@ public class Class5737 extends Class5715<Class998> {
             float var37 = var13 + (float)(var34 * 16);
             float var38 = var14 + (float)((var35 + 1) * 16);
             float var39 = var14 + (float)(var35 * 16);
-            int var40 = MathHelper.method37769(var3.getPosX());
-            int var41 = MathHelper.method37769(var3.getPosY() + (double)((var38 + var39) / 2.0F / 16.0F));
-            int var42 = MathHelper.method37769(var3.getPosZ());
+            int var40 = MathHelper.floor(var3.getPosX());
+            int var41 = MathHelper.floor(var3.getPosY() + (double)((var38 + var39) / 2.0F / 16.0F));
+            int var42 = MathHelper.floor(var3.getPosZ());
             Direction var43 = var3.method3386();
             if (var43 == Direction.NORTH) {
-               var40 = MathHelper.method37769(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
+               var40 = MathHelper.floor(var3.getPosX() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.WEST) {
-               var42 = MathHelper.method37769(var3.getPosZ() - (double)((var36 + var37) / 2.0F / 16.0F));
+               var42 = MathHelper.floor(var3.getPosZ() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.SOUTH) {
-               var40 = MathHelper.method37769(var3.getPosX() - (double)((var36 + var37) / 2.0F / 16.0F));
+               var40 = MathHelper.floor(var3.getPosX() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
             if (var43 == Direction.EAST) {
-               var42 = MathHelper.method37769(var3.getPosZ() + (double)((var36 + var37) / 2.0F / 16.0F));
+               var42 = MathHelper.floor(var3.getPosZ() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
-            int var44 = Class264.method944(var3.field5024, new BlockPos(var40, var41, var42));
+            int var44 = WorldRenderer.method944(var3.world, new BlockPos(var40, var41, var42));
             float var45 = var6.method7461(var30 * (double)(var28 - var34));
             float var46 = var6.method7461(var30 * (double)(var28 - (var34 + 1)));
             float var47 = var6.method7464(var32 * (double)(var29 - var35));
@@ -111,11 +111,11 @@ public class Class5737 extends Class5715<Class998> {
       Class9367 var1, Class8967 var2, Class5422 var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12
    ) {
       var3.method17040(var1, var4, var5, var8)
-         .method17026(255, 255, 255, 255)
+         .color(255, 255, 255, 255)
          .method17027(var6, var7)
          .method17035(Class213.field798)
          .method17034(var12)
          .method17041(var2, (float)var9, (float)var10, (float)var11)
-         .method17031();
+         .endVertex();
    }
 }

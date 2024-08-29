@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 public class Class921 implements Class920, Class923 {
    private static String[] field5240;
-   private final Class25<ItemStack> field5241 = Class25.<ItemStack>method68(1, ItemStack.EMPTY);
+   private final NonNullList<ItemStack> field5241 = NonNullList.<ItemStack>method68(1, ItemStack.EMPTY);
    private Class4843<?> field5242;
 
    @Override
@@ -15,7 +15,7 @@ public class Class921 implements Class920, Class923 {
    @Override
    public boolean method3617() {
       for (ItemStack var4 : this.field5241) {
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             return false;
          }
       }

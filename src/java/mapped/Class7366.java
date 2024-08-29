@@ -26,7 +26,7 @@ public class Class7366 extends Class7361 {
          double var16 = var8 + var11.nextGaussian() / 2.0;
          Vector3d var18 = this.field31519.method3433();
          this.field31519
-            .field5024
+            .world
             .method6746(
                Class7940.field34056,
                var12,
@@ -43,7 +43,7 @@ public class Class7366 extends Class7361 {
    @Override
    public void method23360() {
       if (this.field31531 == null) {
-         this.field31531 = Vector3d.method11330(this.field31519.field5024.method7006(Class101.field300, Class2909.field17994));
+         this.field31531 = Vector3d.method11330(this.field31519.world.method7006(Class101.field300, Class2909.field17994));
       }
 
       if (this.field31531.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ()) < 1.0) {

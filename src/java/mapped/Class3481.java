@@ -19,11 +19,11 @@ public class Class3481 extends Class3480 {
 
    @Override
    public Class3303 method12183() {
-      return Class8514.field38053;
+      return Items.field38053;
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       return field19336[var1.<Integer>method23463(this.method12175())];
    }
 }

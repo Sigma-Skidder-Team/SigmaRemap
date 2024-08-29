@@ -68,8 +68,8 @@ public class Class9624 {
             this.field45008.field18049 - (double)this.field45010.method25270() * var1 + (double)var7,
             this.field45008.field18050 - (double)this.field45010.method25271() * var1 + (double)var8
          );
-         Class8711 var11 = this.field45006.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.field45007));
-         if (var11.method31417() != Class2100.field13689) {
+         BlockRayTraceResult var11 = this.field45006.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.field45007));
+         if (var11.getType() != RayTraceResult.Type.MISS) {
             double var12 = var11.method31419().method11341(this.field45008);
             if (var12 < var1 && !Client.getInstance().getModuleManager().method14662(Class5273.class).method15996()) {
                var1 = var12;
@@ -154,8 +154,8 @@ public class Class9624 {
       }
    }
 
-   public Class7380 method37513() {
-      return this.field45005 ? this.field45006.method6738(this.field45009) : Blocks.AIR.method11579();
+   public BlockState method37513() {
+      return this.field45005 ? this.field45006.getBlockState(this.field45009) : Blocks.AIR.method11579();
    }
 
    public void method37514(float var1, float var2) {
@@ -163,11 +163,11 @@ public class Class9624 {
       this.field45013 = var2;
    }
 
-   public Class7380 method37515() {
+   public BlockState method37515() {
       if (this.field45005) {
-         Class7380 var3 = this.field45006.method6738(this.field45009);
+         BlockState var3 = this.field45006.getBlockState(this.field45009);
          if (Class9299.field42828.method20214()) {
-            var3 = (Class7380)Class9299.method35070(var3, Class9299.field42828, this.field45006, this.field45009, this.field45008);
+            var3 = (BlockState)Class9299.method35070(var3, Class9299.field42828, this.field45006, this.field45009, this.field45008);
          }
 
          return var3;

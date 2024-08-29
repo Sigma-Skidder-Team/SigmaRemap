@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.target;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import mapped.Class5628;
@@ -32,7 +32,7 @@ public class CombatManager {
 
     @EventTarget
     @HigestPriority
-    private void method29348(Class4418 var1) {
+    private void method29348(WorldLoadEvent var1) {
         this.field35947.clear();
     }
 

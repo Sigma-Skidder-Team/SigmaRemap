@@ -20,7 +20,7 @@ public class Class2756 extends Class2754 {
          Direction var3 = this.field17298.method3387();
          int var4 = var3.method539();
          int var5 = var3.method541();
-         BlockPos var6 = this.field17298.method3432();
+         BlockPos var6 = this.field17298.getPosition();
 
          for (int var10 : field17297) {
             if (!this.method10959(var6, var4, var5, var10) || !this.method10960(var6, var4, var5, var10)) {
@@ -34,13 +34,13 @@ public class Class2756 extends Class2754 {
 
    private boolean method10959(BlockPos var1, int var2, int var3, int var4) {
       BlockPos var7 = var1.method8336(var2 * var4, 0, var3 * var4);
-      return this.field17298.field5024.method6739(var7).method23486(Class8953.field40469)
-         && !this.field17298.field5024.method6738(var7).method23384().method31087();
+      return this.field17298.world.method6739(var7).method23486(Class8953.field40469)
+         && !this.field17298.world.getBlockState(var7).method23384().method31087();
    }
 
    private boolean method10960(BlockPos var1, int var2, int var3, int var4) {
-      return this.field17298.field5024.method6738(var1.method8336(var2 * var4, 1, var3 * var4)).method23393()
-         && this.field17298.field5024.method6738(var1.method8336(var2 * var4, 2, var3 * var4)).method23393();
+      return this.field17298.world.getBlockState(var1.method8336(var2 * var4, 1, var3 * var4)).isAir()
+         && this.field17298.world.getBlockState(var1.method8336(var2 * var4, 2, var3 * var4)).isAir();
    }
 
    @Override
@@ -71,7 +71,7 @@ public class Class2756 extends Class2754 {
    public void method10805() {
       boolean var3 = this.field17300;
       if (!var3) {
-         Class7379 var4 = this.field17298.field5024.method6739(this.field17298.method3432());
+         Class7379 var4 = this.field17298.world.method6739(this.field17298.getPosition());
          this.field17300 = var4.method23486(Class8953.field40469);
       }
 

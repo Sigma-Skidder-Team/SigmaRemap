@@ -11,8 +11,8 @@ import java.util.Map.Entry;
 
 public class Class8982 {
    private final ViaVersionLoader field40988;
-   private HashMap<BlockPos, Class7380> field40989 = new HashMap<BlockPos, Class7380>();
-   private HashMap<BlockPos, Class7380> field40990 = new HashMap<BlockPos, Class7380>();
+   private HashMap<BlockPos, BlockState> field40989 = new HashMap<BlockPos, BlockState>();
+   private HashMap<BlockPos, BlockState> field40990 = new HashMap<BlockPos, BlockState>();
    private Set<Class6490> field40991 = new HashSet<Class6490>();
    private Set<Class8189> field40992 = new HashSet<Class8189>();
    private Set<Class8189> field40993 = new HashSet<Class8189>();
@@ -42,7 +42,7 @@ public class Class8982 {
 
    public void method33174() {
       for (Entry var4 : this.field40989.entrySet()) {
-         this.method33178((BlockPos)var4.getKey(), (Class7380)var4.getValue());
+         this.method33178((BlockPos)var4.getKey(), (BlockState)var4.getValue());
       }
 
       this.field40989.clear();
@@ -50,7 +50,7 @@ public class Class8982 {
 
    public void method33175() {
       for (Entry var4 : this.field40990.entrySet()) {
-         this.method33181((BlockPos)var4.getKey(), (Class7380)var4.getValue());
+         this.method33181((BlockPos)var4.getKey(), (BlockState)var4.getValue());
       }
 
       this.field40990.clear();
@@ -77,7 +77,7 @@ public class Class8982 {
       }
    }
 
-   private void method33178(BlockPos var1, Class7380 var2) {
+   private void method33178(BlockPos var1, BlockState var2) {
       Class6490 var5 = this.method33179(var2);
       if (var5 != null) {
          try {
@@ -88,9 +88,9 @@ public class Class8982 {
       }
    }
 
-   private Class6490 method33179(Class7380 var1) {
+   private Class6490 method33179(BlockState var1) {
       for (Class6490 var5 : this.field40991) {
-         if (var5.field28458 == var1.method23383().getClass()) {
+         if (var5.field28458 == var1.getBlock().getClass()) {
             return var5;
          }
       }
@@ -133,25 +133,25 @@ public class Class8982 {
       return null;
    }
 
-   private void method33181(BlockPos var1, Class7380 var2) {
+   private void method33181(BlockPos var1, BlockState var2) {
       Class6490 var5 = this.method33179(var2);
       if (var5 != null) {
          this.field40993.addAll(var5.method19688(var1, var2, this));
       }
    }
 
-   public boolean method33182(Class7380 var1) {
+   public boolean method33182(BlockState var1) {
       return this.method33179(var1) != null;
    }
 
-   public void method33183(BlockPos var1, Class7380 var2) {
+   public void method33183(BlockPos var1, BlockState var2) {
       this.field40989.put(var1, var2);
       this.field40990.put(var1, var2);
    }
 
-   public Class7380 method33184(BlockPos var1) {
+   public BlockState method33184(BlockPos var1) {
       if (!this.field40989.containsKey(var1)) {
-         return !this.field40990.containsKey(var1) ? Minecraft.getInstance().world.method6738(var1) : this.field40990.get(var1);
+         return !this.field40990.containsKey(var1) ? Minecraft.getInstance().world.getBlockState(var1) : this.field40990.get(var1);
       } else {
          return this.field40989.get(var1);
       }

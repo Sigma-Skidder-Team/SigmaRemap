@@ -51,15 +51,15 @@ public abstract class Class1193 {
       float var9 = (float)(var5 >> 16 & 0xFF) / 255.0F;
       float var10 = (float)(var5 >> 8 & 0xFF) / 255.0F;
       float var11 = (float)(var5 & 0xFF) / 255.0F;
-      Class5425 var12 = Class9352.method35409().method35411();
+      BufferBuilder var12 = Tessellator.getInstance().getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27938();
-      var12.method17063(7, Class9337.field43342);
-      var12.method17040(var0, (float)var1, (float)var4, 0.0F).method17033(var9, var10, var11, var14).method17031();
-      var12.method17040(var0, (float)var3, (float)var4, 0.0F).method17033(var9, var10, var11, var14).method17031();
-      var12.method17040(var0, (float)var3, (float)var2, 0.0F).method17033(var9, var10, var11, var14).method17031();
-      var12.method17040(var0, (float)var1, (float)var2, 0.0F).method17033(var9, var10, var11, var14).method17031();
+      var12.begin(7, DefaultVertexFormats.POSITION_COLOR);
+      var12.method17040(var0, (float)var1, (float)var4, 0.0F).method17033(var9, var10, var11, var14).endVertex();
+      var12.method17040(var0, (float)var3, (float)var4, 0.0F).method17033(var9, var10, var11, var14).endVertex();
+      var12.method17040(var0, (float)var3, (float)var2, 0.0F).method17033(var9, var10, var11, var14).endVertex();
+      var12.method17040(var0, (float)var1, (float)var2, 0.0F).method17033(var9, var10, var11, var14).endVertex();
       var12.method17065();
       Class4395.method13895(var12);
       RenderSystem.enableTexture();
@@ -67,23 +67,23 @@ public abstract class Class1193 {
    }
 
    public void method5688(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.method27817();
       RenderSystem.method27938();
       RenderSystem.method27866(7425);
-      Class9352 var10 = Class9352.method35409();
-      Class5425 var11 = var10.method35411();
-      var11.method17063(7, Class9337.field43342);
+      Tessellator var10 = Tessellator.getInstance();
+      BufferBuilder var11 = var10.getBuffer();
+      var11.begin(7, DefaultVertexFormats.POSITION_COLOR);
       method5689(var1.method35296().method32361(), var11, var2, var3, var4, var5, this.field6454, var6, var7);
-      var10.method35410();
+      var10.draw();
       RenderSystem.method27866(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
       RenderSystem.enableTexture();
    }
 
-   public static void method5689(Class9367 var0, Class5425 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public static void method5689(Class9367 var0, BufferBuilder var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       float var11 = (float)(var7 >> 24 & 0xFF) / 255.0F;
       float var12 = (float)(var7 >> 16 & 0xFF) / 255.0F;
       float var13 = (float)(var7 >> 8 & 0xFF) / 255.0F;
@@ -92,26 +92,26 @@ public abstract class Class1193 {
       float var16 = (float)(var8 >> 16 & 0xFF) / 255.0F;
       float var17 = (float)(var8 >> 8 & 0xFF) / 255.0F;
       float var18 = (float)(var8 & 0xFF) / 255.0F;
-      var1.method17040(var0, (float)var4, (float)var3, (float)var6).method17033(var12, var13, var14, var11).method17031();
-      var1.method17040(var0, (float)var2, (float)var3, (float)var6).method17033(var12, var13, var14, var11).method17031();
-      var1.method17040(var0, (float)var2, (float)var5, (float)var6).method17033(var16, var17, var18, var15).method17031();
-      var1.method17040(var0, (float)var4, (float)var5, (float)var6).method17033(var16, var17, var18, var15).method17031();
+      var1.method17040(var0, (float)var4, (float)var3, (float)var6).method17033(var12, var13, var14, var11).endVertex();
+      var1.method17040(var0, (float)var2, (float)var3, (float)var6).method17033(var12, var13, var14, var11).endVertex();
+      var1.method17040(var0, (float)var2, (float)var5, (float)var6).method17033(var16, var17, var18, var15).endVertex();
+      var1.method17040(var0, (float)var4, (float)var5, (float)var6).method17033(var16, var17, var18, var15).endVertex();
    }
 
-   public static void method5690(MatrixStack var0, Class9834 var1, String var2, int var3, int var4, int var5) {
-      var1.method38799(var0, var2, (float)(var3 - var1.method38820(var2) / 2), (float)var4, var5);
+   public static void method5690(MatrixStack var0, FontRenderer var1, String var2, int var3, int var4, int var5) {
+      var1.drawStringWithShadow(var0, var2, (float)(var3 - var1.getStringWidth(var2) / 2), (float)var4, var5);
    }
 
-   public static void method5691(MatrixStack var0, Class9834 var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void method5691(MatrixStack var0, FontRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
       Class9125 var8 = var2.func_241878_f();
       var1.method38802(var0, var8, (float)(var3 - var1.method38822(var8) / 2), (float)var4, var5);
    }
 
-   public static void method5692(MatrixStack var0, Class9834 var1, String var2, int var3, int var4, int var5) {
-      var1.method38799(var0, var2, (float)var3, (float)var4, var5);
+   public static void method5692(MatrixStack var0, FontRenderer var1, String var2, int var3, int var4, int var5) {
+      var1.drawStringWithShadow(var0, var2, (float)var3, (float)var4, var5);
    }
 
-   public static void method5693(MatrixStack var0, Class9834 var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void method5693(MatrixStack var0, FontRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
       var1.method38803(var0, var2, (float)var3, (float)var4, var5);
    }
 
@@ -125,7 +125,7 @@ public abstract class Class1193 {
       var3.accept(var1, var2);
    }
 
-   public static void method5695(MatrixStack var0, int var1, int var2, int var3, int var4, int var5, Class1713 var6) {
+   public static void method5695(MatrixStack var0, int var1, int var2, int var3, int var4, int var5, TextureAtlasSprite var6) {
       method5701(
          var0.method35296().method32361(),
          var1,
@@ -174,12 +174,12 @@ public abstract class Class1193 {
    }
 
    private static void method5701(Class9367 var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, float var9) {
-      Class5425 var12 = Class9352.method35409().method35411();
-      var12.method17063(7, Class9337.field43344);
-      var12.method17040(var0, (float)var1, (float)var4, (float)var5).method17027(var6, var9).method17031();
-      var12.method17040(var0, (float)var2, (float)var4, (float)var5).method17027(var7, var9).method17031();
-      var12.method17040(var0, (float)var2, (float)var3, (float)var5).method17027(var7, var8).method17031();
-      var12.method17040(var0, (float)var1, (float)var3, (float)var5).method17027(var6, var8).method17031();
+      BufferBuilder var12 = Tessellator.getInstance().getBuffer();
+      var12.begin(7, DefaultVertexFormats.field43344);
+      var12.method17040(var0, (float)var1, (float)var4, (float)var5).method17027(var6, var9).endVertex();
+      var12.method17040(var0, (float)var2, (float)var4, (float)var5).method17027(var7, var9).endVertex();
+      var12.method17040(var0, (float)var2, (float)var3, (float)var5).method17027(var7, var8).endVertex();
+      var12.method17040(var0, (float)var1, (float)var3, (float)var5).method17027(var6, var8).endVertex();
       var12.method17065();
       RenderSystem.disableAlphaTest();
       Class4395.method13895(var12);

@@ -9,17 +9,17 @@ public class Class2669 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17046.field5024.method7187(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ(), 10.0);
+      return this.field17046.world.method7187(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ(), 10.0);
    }
 
    @Override
    public void method10805() {
-      ServerWorld var3 = (ServerWorld)this.field17046.field5024;
-      Class9755 var4 = var3.method6807(this.field17046.method3432());
+      ServerWorld var3 = (ServerWorld)this.field17046.world;
+      Class9755 var4 = var3.method6807(this.field17046.getPosition());
       this.field17046.method5001(false);
       this.field17046.method4936(true);
       this.field17046.method4770(0);
-      Class906 var5 = Class8992.field41046.method33215(var3);
+      Class906 var5 = EntityType.field41046.method33215(var3);
       var5.method2794(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
       var5.method3549(true);
       var3.method6916(var5);
@@ -37,8 +37,8 @@ public class Class2669 extends Class2595 {
    }
 
    private AbstractHorseEntity method10886(Class9755 var1) {
-      Class1076 var4 = Class8992.field41079.method33215(this.field17046.field5024);
-      var4.method4276((ServerWorld)this.field17046.field5024, var1, Class2202.field14401, (Class5093)null, (Class39)null);
+      Class1076 var4 = EntityType.field41079.method33215(this.field17046.world);
+      var4.method4276((ServerWorld)this.field17046.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
       var4.method3215(this.field17046.getPosX(), this.field17046.getPosY(), this.field17046.getPosZ());
       var4.field5061 = 60;
       var4.method4278();
@@ -48,13 +48,13 @@ public class Class2669 extends Class2595 {
    }
 
    private Class1085 method10887(Class9755 var1, AbstractHorseEntity var2) {
-      Class1085 var5 = Class8992.field41078.method33215(var2.field5024);
-      var5.method4276((ServerWorld)var2.field5024, var1, Class2202.field14401, (Class5093)null, (Class39)null);
+      Class1085 var5 = EntityType.field41078.method33215(var2.world);
+      var5.method4276((ServerWorld)var2.world, var1, Class2202.field14401, (Class5093)null, (CompoundNBT)null);
       var5.method3215(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       var5.field5061 = 60;
       var5.method4278();
-      if (var5.method2943(Class2106.field13736).method32105()) {
-         var5.method2944(Class2106.field13736, new ItemStack(Class8514.field37852));
+      if (var5.method2943(Class2106.field13736).isEmpty()) {
+         var5.method2944(Class2106.field13736, new ItemStack(Items.field37852));
       }
 
       var5.method2944(

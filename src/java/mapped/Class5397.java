@@ -14,11 +14,11 @@ public class Class5397 implements Class5391 {
    private final int field24067;
    private final float field24068;
 
-   public Class5397(Class3303 var1, int var2, Class3257 var3, int var4, int var5, int var6) {
+   public Class5397(Class3303 var1, int var2, Item var3, int var4, int var5, int var6) {
       this(var1, var2, 1, var3, var4, var5, var6);
    }
 
-   public Class5397(Class3303 var1, int var2, int var3, Class3257 var4, int var5, int var6, int var7) {
+   public Class5397(Class3303 var1, int var2, int var3, Item var4, int var5, int var6, int var7) {
       this.field24061 = new ItemStack(var1);
       this.field24062 = var2;
       this.field24063 = var3;
@@ -33,9 +33,9 @@ public class Class5397 implements Class5391 {
    @Override
    public Class9346 method16977(Entity var1, Random var2) {
       return new Class9346(
-         new ItemStack(Class8514.field38049, this.field24063),
-         new ItemStack(this.field24061.method32107(), this.field24062),
-         new ItemStack(this.field24064.method32107(), this.field24065),
+         new ItemStack(Items.field38049, this.field24063),
+         new ItemStack(this.field24061.getItem(), this.field24062),
+         new ItemStack(this.field24064.getItem(), this.field24065),
          this.field24066,
          this.field24067,
          this.field24068

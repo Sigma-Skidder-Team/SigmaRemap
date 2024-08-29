@@ -5,11 +5,11 @@ import java.util.Collection;
 import java.util.function.Function;
 
 public interface Class4872 {
-   default boolean method15041(Class191 var1, ResourceLocation var2) {
+   default boolean method15041(IResourceManager var1, ResourceLocation var2) {
       return false;
    }
 
-   default boolean method15042(Class191 var1, ResourceLocation var2, Function<ResourceLocation, Class1713> var3) {
+   default boolean method15042(IResourceManager var1, ResourceLocation var2, Function<ResourceLocation, TextureAtlasSprite> var3) {
       return true;
    }
 

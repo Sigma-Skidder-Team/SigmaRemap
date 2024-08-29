@@ -3,7 +3,7 @@ package mapped;
 public class Class4574 extends Class4573 {
    private static String[] field22013;
 
-   public Class4574(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class4574(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.field22035 = (float)((double)this.field22035 * 1.5);
       this.field22056 = (int)(Math.random() * 2.0) + 60;

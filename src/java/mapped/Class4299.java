@@ -68,7 +68,7 @@ public class Class4299 extends Class4278 {
          Class3192.method11455((float)(this.field20895 + 288 * var4), (float)this.field20896, 288.0F, 512.0F, this.field20829);
       }
 
-      float var16 = 60.0F / (float) Minecraft.method1586();
+      float var16 = 60.0F / (float) Minecraft.getFps();
       float var5 = 0.026F * var16;
       this.field20835 = Math.max(Math.min(1.0F, this.field20835 + this.field20836 - var5), 0.0F);
       this.field20836 = Math.max(-var5, this.field20836 * 0.965F);

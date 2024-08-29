@@ -82,9 +82,9 @@ public class Class6606 implements Class6607 {
 
    @Override
    public void method20041(BlockPos var1, float var2) {
-      this.field29052 = var1.method8304();
+      this.field29052 = var1.getX();
       this.field29053 = var1.getY();
-      this.field29054 = var1.method8306();
+      this.field29054 = var1.getZ();
       this.field29055 = var2;
    }
 
@@ -124,7 +124,7 @@ public class Class6606 implements Class6607 {
    }
 
    @Override
-   public void method20049(Class8965 var1) {
+   public void method20049(CrashReportCategory var1) {
       Class6607.super.method20049(var1);
    }
 

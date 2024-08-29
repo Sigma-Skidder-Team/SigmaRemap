@@ -31,7 +31,7 @@ public class Class6794<T> {
    }
 
    public static <T> Class6794<T> method20699(T var0) {
-      return new Class6794<T>(ActionResultType.field14821, (T)var0);
+      return new Class6794<T>(ActionResultType.FAIL, (T)var0);
    }
 
    public static <T> Class6794<T> method20700(T var0, boolean var1) {

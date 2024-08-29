@@ -2,13 +2,13 @@ package mapped;
 
 public class Class926 implements Class920, Class925 {
    private static String[] field5255;
-   private final Class25<ItemStack> field5256;
+   private final NonNullList<ItemStack> field5256;
    private final int field5257;
    private final int field5258;
    private final Class5812 field5259;
 
    public Class926(Class5812 var1, int var2, int var3) {
-      this.field5256 = Class25.<ItemStack>method68(var2 * var3, ItemStack.EMPTY);
+      this.field5256 = NonNullList.<ItemStack>method68(var2 * var3, ItemStack.EMPTY);
       this.field5259 = var1;
       this.field5257 = var2;
       this.field5258 = var3;
@@ -22,7 +22,7 @@ public class Class926 implements Class920, Class925 {
    @Override
    public boolean method3617() {
       for (ItemStack var4 : this.field5256) {
-         if (!var4.method32105()) {
+         if (!var4.isEmpty()) {
             return false;
          }
       }
@@ -43,7 +43,7 @@ public class Class926 implements Class920, Class925 {
    @Override
    public ItemStack method3619(int var1, int var2) {
       ItemStack var5 = Class7920.method26563(this.field5256, var1, var2);
-      if (!var5.method32105()) {
+      if (!var5.isEmpty()) {
          this.field5259.method18106(this);
       }
 

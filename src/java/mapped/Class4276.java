@@ -62,8 +62,8 @@ public class Class4276 extends Class4247 {
             this.field20897 - 100,
             20,
             Class4281.field20741,
-            var5.method8304() + " " + var5.method8306(),
-            var5.method8304() + " " + var5.method8306()
+            var5.getX() + " " + var5.getZ(),
+            var5.getX() + " " + var5.getZ()
          )
       );
       this.field20728.method13156(false);

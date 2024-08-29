@@ -41,23 +41,23 @@ public class Class9809 {
    }
 
    public void method38686(ItemStack var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
-      Class3257 var8 = var1.method32107();
+      Item var8 = var1.getItem();
       if (!(var8 instanceof Class3292)) {
-         if (var8 != Class8514.field38119) {
-            if (var8 == Class8514.field38144) {
-               var2.method35294();
+         if (var8 != Items.field38119) {
+            if (var8 == Items.field38144) {
+               var2.push();
                var2.method35292(1.0F, -1.0F, -1.0F);
-               Class5422 var9 = Class216.method786(var3, this.field45852.method11028(Class2842.field17638), false, var1.method32159());
+               Class5422 var9 = ItemRenderer.method786(var3, this.field45852.method11028(Class2842.field17638), false, var1.method32159());
                this.field45852.method11016(var2, var9, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
                var2.method35295();
             }
          } else {
             boolean var13 = var1.method32145("BlockEntityTag") != null;
-            var2.method35294();
+            var2.push();
             var2.method35292(1.0F, -1.0F, -1.0F);
             Class7826 var11 = !var13 ? Class8968.field40515 : Class8968.field40514;
             Class5422 var10 = var11.method26198()
-               .method7474(Class216.method786(var3, this.field45851.method11028(var11.method26196()), true, var1.method32159()));
+               .method7474(ItemRenderer.method786(var3, this.field45851.method11028(var11.method26196()), true, var1.method32159()));
             this.field45851.method11182().method22681(var2, var10, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
             if (!var13) {
                this.field45851.method11181().method22681(var2, var10, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
@@ -109,20 +109,20 @@ public class Class9809 {
                var17 = this.field45848;
             }
 
-            Class8086.field34743.method27964((Class944)var17, var2, var3, var4, var5);
+            TileEntityRendererDispatcher.instance.method27964((TileEntity)var17, var2, var3, var4, var5);
          } else {
             GameProfile var18 = null;
             if (var1.method32141()) {
-               Class39 var16 = var1.method32142();
+               CompoundNBT var16 = var1.method32142();
                if (!var16.method119("SkullOwner", 10)) {
                   if (var16.method119("SkullOwner", 8) && !StringUtils.isBlank(var16.method126("SkullOwner"))) {
                      GameProfile var19 = new GameProfile((UUID)null, var16.method126("SkullOwner"));
-                     var18 = Class968.method4008(var19);
+                     var18 = SkullTileEntity.method4008(var19);
                      var16.method133("SkullOwner");
-                     var16.method99("SkullOwner", Class8354.method29279(new Class39(), var18));
+                     var16.put("SkullOwner", Class8354.method29279(new CompoundNBT(), var18));
                   }
                } else {
-                  var18 = Class8354.method29278(var16.method130("SkullOwner"));
+                  var18 = Class8354.method29278(var16.getCompound("SkullOwner"));
                }
             }
 

@@ -25,7 +25,7 @@ public final class Class9490<E extends Class880> extends MapCodec<Class6947<E>> 
    public <T> Stream<T> keys(DynamicOps<T> var1) {
       return this.field44113
          .stream()
-         .<ResourceLocation>flatMap(var0 -> Util.method38511(var0.method31926().map(var1x -> Registry.field16092.method9181((Class8830<?>)var0))))
+         .<ResourceLocation>flatMap(var0 -> Util.method38511(var0.method31926().map(var1x -> Registry.field16092.getKey((Class8830<?>)var0))))
          .<T>map(var1x -> (T)var1.createString(var1x.toString()));
    }
 

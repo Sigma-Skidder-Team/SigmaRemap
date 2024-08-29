@@ -8,11 +8,11 @@ import java.util.UUID;
 public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {
    public static HashMap<UUID, ResourceLocation> field25166 = new HashMap<UUID, ResourceLocation>();
 
-   public Class5743(Class8853 var1) {
+   public Class5743(EntityRendererManager var1) {
       this(var1, false);
    }
 
-   public Class5743(Class8853 var1, boolean var2) {
+   public Class5743(EntityRendererManager var1, boolean var2) {
       super(var1, new Class2894<AbstractClientPlayerEntity>(0.0F, var2), 0.5F);
       this.method17880(new Class235<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>>(this));
    }
@@ -24,7 +24,7 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       float var12 = var1.field4967;
       float var13 = var1.field5032;
       float var14 = Class8603.method30791(var8, 0.15, 0.84, 0.34, 1.0);
-      float var15 = ((float) Minecraft.getInstance().player.field5055 + Minecraft.getInstance().method1562()) * 3.0F + var14 * 160.0F;
+      float var15 = ((float) Minecraft.getInstance().player.field5055 + Minecraft.getInstance().getRenderPartialTicks()) * 3.0F + var14 * 160.0F;
       var1.field4967 = var15;
       var1.field5032 = -10.0F;
       this.field25096 = var7;
@@ -44,7 +44,7 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       } else {
          if (!var1.method5368() && !var4) {
             field25166.put(var1.getGameProfile().getId(), new ResourceLocation(""));
-            Minecraft.getInstance().method1549().method38346(var1.getGameProfile(), (var1x, var2, var3) -> {
+            Minecraft.getInstance().getSkinManager().method38346(var1.getGameProfile(), (var1x, var2, var3) -> {
                if (var1x == Type.SKIN) {
                   field25166.put(var1.getGameProfile().getId(), var2);
                }

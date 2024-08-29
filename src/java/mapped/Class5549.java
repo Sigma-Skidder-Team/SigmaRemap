@@ -9,7 +9,7 @@ public class Class5549 implements Packet<Class5116> {
    private static String[] field24641;
    public Class2002 field24642;
    public short[] field24643;
-   public Class7380[] field24644;
+   public BlockState[] field24644;
    public boolean field24645;
 
    public Class5549() {
@@ -30,7 +30,7 @@ public class Class5549 implements Packet<Class5116> {
 
    private void method17460(int var1) {
       this.field24643 = new short[var1];
-      this.field24644 = new Class7380[var1];
+      this.field24644 = new BlockState[var1];
    }
 
    @Override
@@ -62,7 +62,7 @@ public class Class5549 implements Packet<Class5116> {
       var1.method15707(this);
    }
 
-   public void method17461(BiConsumer<BlockPos, Class7380> var1) {
+   public void method17461(BiConsumer<BlockPos, BlockState> var1) {
       Mutable var4 = new Mutable();
 
       for (int var5 = 0; var5 < this.field24643.length; var5++) {

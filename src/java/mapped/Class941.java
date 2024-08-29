@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class941 extends Class939 implements Class942, Class935 {
-   private Class25<ItemStack> field5312 = Class25.<ItemStack>method68(27, ItemStack.EMPTY);
+   private NonNullList<ItemStack> field5312 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    public float field5313;
    public float field5314;
    public int field5315;
@@ -29,17 +29,17 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public void method3645(Class7380 var1, Class39 var2) {
+   public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5312 = Class25.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5312 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5312);
       }
    }
 
    @Override
-   public Class39 method3646(Class39 var1) {
-      super.method3646(var1);
+   public CompoundNBT write(CompoundNBT var1) {
+      super.write(var1);
       if (!this.method3742(var1)) {
          Class7920.method26565(var1, this.field5312);
       }
@@ -49,9 +49,9 @@ public class Class941 extends Class939 implements Class942, Class935 {
 
    @Override
    public void method3647() {
-      int var3 = this.field5325.method8304();
+      int var3 = this.field5325.getX();
       int var4 = this.field5325.getY();
-      int var5 = this.field5325.method8306();
+      int var5 = this.field5325.getZ();
       this.field5316++;
       this.field5315 = method3758(this.field5324, this, this.field5316, var3, var4, var5, this.field5315);
       this.field5314 = this.field5313;
@@ -120,9 +120,9 @@ public class Class941 extends Class939 implements Class942, Class935 {
    private void method3760(Class9455 var1) {
       Class111 var4 = this.method3775().<Class111>method23463(Class3348.field18866);
       if (var4 != Class111.field380) {
-         double var5 = (double)this.field5325.method8304() + 0.5;
+         double var5 = (double)this.field5325.getX() + 0.5;
          double var7 = (double)this.field5325.getY() + 0.5;
-         double var9 = (double)this.field5325.method8306() + 0.5;
+         double var9 = (double)this.field5325.getZ() + 0.5;
          if (var4 == Class111.field381) {
             Direction var11 = Class3348.method11908(this.method3775());
             var5 += (double)var11.method539() * 0.5;
@@ -145,7 +145,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
 
    @Override
    public void method3631(PlayerEntity var1) {
-      if (!var1.method2800()) {
+      if (!var1.isSpectator()) {
          if (this.field5315 < 0) {
             this.field5315 = 0;
          }
@@ -157,14 +157,14 @@ public class Class941 extends Class939 implements Class942, Class935 {
 
    @Override
    public void method3632(PlayerEntity var1) {
-      if (!var1.method2800()) {
+      if (!var1.isSpectator()) {
          this.field5315--;
          this.method3761();
       }
    }
 
    public void method3761() {
-      Block var3 = this.method3775().method23383();
+      Block var3 = this.method3775().getBlock();
       if (var3 instanceof Class3348) {
          this.field5324.method6787(this.field5325, var3, 1, this.field5315);
          this.field5324.method6733(this.field5325, var3);
@@ -172,12 +172,12 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public Class25<ItemStack> method3724() {
+   public NonNullList<ItemStack> method3724() {
       return this.field5312;
    }
 
    @Override
-   public void method3725(Class25<ItemStack> var1) {
+   public void method3725(NonNullList<ItemStack> var1) {
       this.field5312 = var1;
    }
 
@@ -187,9 +187,9 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    public static int method3763(Class1665 var0, BlockPos var1) {
-      Class7380 var4 = var0.method6738(var1);
-      if (var4.method23383().method11998()) {
-         Class944 var5 = var0.method6759(var1);
+      BlockState var4 = var0.getBlockState(var1);
+      if (var4.getBlock().isTileEntityProvider()) {
+         TileEntity var5 = var0.getTileEntity(var1);
          if (var5 instanceof Class941) {
             return ((Class941)var5).field5315;
          }
@@ -199,13 +199,13 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    public static void method3764(Class941 var0, Class941 var1) {
-      Class25 var4 = var0.method3724();
+      NonNullList var4 = var0.method3724();
       var0.method3725(var1.method3724());
       var1.method3725(var4);
    }
 
    @Override
-   public Class5812 method3690(int var1, Class974 var2) {
+   public Class5812 method3690(int var1, PlayerInventory var2) {
       return Class5813.method18162(var1, var2, this);
    }
 

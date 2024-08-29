@@ -15,7 +15,7 @@ public class Class2939 extends Class2898<Class4734> {
 
       for (int var10 = 0; var10 < var8; var10++) {
          this.method11282(var9, var3, var4, Math.min(var10, 7));
-         if (var5.field22422.method19540(var1.method6738(var9), var3) && !this.method11284(var1, var9)) {
+         if (var5.field22422.method19540(var1.getBlockState(var9), var3) && !this.method11284(var1, var9)) {
             var1.method6725(var9, var5.field22424, 2);
          }
       }
@@ -39,7 +39,7 @@ public class Class2939 extends Class2898<Class4734> {
 
       for (Direction var9 : Direction.values()) {
          var5.method8377(var2, var9);
-         if (var1.method6738(var5).method23393()) {
+         if (var1.getBlockState(var5).isAir()) {
             return true;
          }
       }

@@ -3,7 +3,7 @@ package mapped;
 public class Class4569 extends Class4566 {
    private static String[] field22007;
 
-   public Class4569(Class1656 var1, double var2, double var4, double var6) {
+   public Class4569(ClientWorld var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
       this.field22044 *= 0.3F;
       this.field22045 = Math.random() * 0.2F + 0.1F;
@@ -41,9 +41,9 @@ public class Class4569 extends Class4566 {
          BlockPos var3 = new BlockPos(this.field22041, this.field22042, this.field22043);
          double var4 = Math.max(
             this.field22037
-               .method6738(var3)
+               .getBlockState(var3)
                .method23414(this.field22037, var3)
-               .method19522(Class113.field414, this.field22041 - (double)var3.method8304(), this.field22043 - (double)var3.method8306()),
+               .method19522(Class113.field414, this.field22041 - (double)var3.getX(), this.field22043 - (double)var3.getZ()),
             (double)this.field22037.method6739(var3).method23475(this.field22037, var3)
          );
          if (var4 > 0.0 && this.field22042 < (double)var3.getY() + var4) {

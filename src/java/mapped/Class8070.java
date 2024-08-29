@@ -7,7 +7,7 @@ public class Class8070 {
 
    static {
       try {
-         field34651[Direction.field672.ordinal()] = 1;
+         field34651[Direction.DOWN.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 

@@ -12,7 +12,7 @@ public class Class1330 extends Screen {
     private static final ITextComponent field7037 = new TranslationTextComponent("addServer.enterIp");
     private Class1206 field7038;
     private final BooleanConsumer field7039;
-    private final Class7730 field7040;
+    private final ServerData field7040;
     private Class1189 field7041;
     private Class1189 field7042;
     private Class1206 field7043;
@@ -35,7 +35,7 @@ public class Class1330 extends Screen {
         }
     };
 
-    public Class1330(Screen var1, BooleanConsumer var2, Class7730 var3) {
+    public Class1330(Screen var1, BooleanConsumer var2, ServerData var3) {
         super(new TranslationTextComponent("addServer.title"));
         this.field7044 = var1;
         this.field7039 = var2;
@@ -43,14 +43,14 @@ public class Class1330 extends Screen {
     }
 
     @Override
-    public void method1919() {
+    public void tick() {
         this.field7042.method5633();
         this.field7041.method5633();
     }
 
     @Override
     public void method1921() {
-        this.field4562.field1302.method36347(true);
+        this.field4562.keyboardListener.method36347(true);
         this.field7042 = new Class1189(this.field4568, this.field4564 / 2 - 100, 66, 200, 20, new TranslationTextComponent("addServer.enterName"));
         this.field7042.method5654(true);
         this.field7042.method5635(this.field7040.field33188);
@@ -74,7 +74,7 @@ public class Class1330 extends Screen {
                 )
         );
         this.<Class1206>method2455(
-                new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 18, 200, 20, Class7127.field30659, var1 -> this.field7039.accept(false))
+                new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 18, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.field7039.accept(false))
         );
         this.method6339();
     }
@@ -84,10 +84,10 @@ public class Class1330 extends Screen {
     }
 
     @Override
-    public void method2482(Minecraft var1, int var2, int var3) {
+    public void resize(Minecraft var1, int var2, int var3) {
         String var6 = this.field7041.method5636();
         String var7 = this.field7042.method5636();
-        this.method2467(var1, var2, var3);
+        this.init(var1, var2, var3);
         this.field7041.method5635(var6);
         this.field7042.method5635(var7);
     }
@@ -98,7 +98,7 @@ public class Class1330 extends Screen {
 
     @Override
     public void onClose() {
-        this.field4562.field1302.method36347(false);
+        this.field4562.keyboardListener.method36347(false);
     }
 
     private void method6338() {

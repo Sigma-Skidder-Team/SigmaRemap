@@ -22,15 +22,15 @@ public class Class805 extends Class798 {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field4219.method5633();
    }
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field4219 = new Class1189(
-         this.field4562.field1294,
+         this.field4562.fontRenderer,
          this.field4564 / 2 - 100,
          method1929(2),
          200,
@@ -46,13 +46,13 @@ public class Class805 extends Class798 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, Class7127.field30659, var1 -> this.field4562.displayGuiScreen(this.field4222))
+         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field4222))
       );
    }
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    private void method2007() {

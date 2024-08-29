@@ -6,7 +6,7 @@ public class Class5950 extends Class5942<Class967> {
    private final Class7219 field25948;
    private final Class7219[] field25949 = new Class7219[4];
 
-   public Class5950(Class8086 var1) {
+   public Class5950(TileEntityRendererDispatcher var1) {
       super(var1);
       this.field25947 = new Class7219(64, 64, 0, 0);
       this.field25947.method22675(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 6.0F, 0.0F);
@@ -37,9 +37,9 @@ public class Class5950 extends Class5942<Class967> {
          this.method18480(var3, var4, true, Direction.SOUTH, var9, var5, var6, false);
          this.method18480(var3, var4, false, Direction.SOUTH, var9, var5, var6, true);
       } else {
-         Class7380 var11 = var1.method3775();
+         BlockState var11 = var1.method3775();
          Class7995<Class967> var12 = Class9324.<Class967>method35243(
-            Class4387.field21444, Class3250::method11684, Class3250::method11683, Class3348.field18865, var11, var10, var1.method3774(), (var0, var1x) -> false
+            Class4387.field21444, Class3250::method11684, Class3250::method11683, Class3348.field18865, var11, var10, var1.getPos(), (var0, var1x) -> false
          );
          int var13 = var12.method27292(new Class6138<>()).get(var5);
          this.method18480(
@@ -62,13 +62,13 @@ public class Class5950 extends Class5942<Class967> {
       this.field25949[1].field31039 = var3;
       this.field25949[2].field31039 = !var3;
       this.field25949[3].field31039 = var3;
-      var1.method35294();
-      var1.method35291(0.0, 0.5625, !var8 ? 0.0 : -1.0);
+      var1.push();
+      var1.translate(0.0, 0.5625, !var8 ? 0.0 : -1.0);
       var1.method35293(Class7680.field32898.method25286(90.0F));
-      var1.method35291(0.5, 0.5, 0.5);
+      var1.translate(0.5, 0.5, 0.5);
       var1.method35293(Class7680.field32902.method25286(180.0F + var4.method551()));
-      var1.method35291(-0.5, -0.5, -0.5);
-      Class5422 var11 = var5.method26200(var2, Class4520::method14309);
+      var1.translate(-0.5, -0.5, -0.5);
+      Class5422 var11 = var5.method26200(var2, RenderType::getEntitySolid);
       this.field25947.method22680(var1, var11, var6, var7);
       this.field25948.method22680(var1, var11, var6, var7);
       this.field25949[0].method22680(var1, var11, var6, var7);

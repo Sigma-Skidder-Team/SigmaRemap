@@ -43,10 +43,10 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.method10998((T)var1, var2, var3, var4, var5, var6);
-      this.field17774.field31035 = MathHelper.method37764(var2 * 0.6662F * 0.6F) * 0.5F * var3;
-      this.field17775.field31035 = MathHelper.method37764(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field17776.field31037 = MathHelper.method37764(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field17777.field31037 = MathHelper.method37764(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field17774.field31035 = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field17775.field31035 = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field17776.field31037 = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field17777.field31037 = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
       this.field17776.field31035 = 0.0F;
       this.field17777.field31035 = 0.0F;
       this.field17776.field31036 = 0.0F;
@@ -58,13 +58,13 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
          float var9 = !var1.method5047() ? 1.0F : 4.0F;
          float var10 = !var1.method5047() ? 1.0F : 2.0F;
          float var11 = 5.0F;
-         this.field17776.field31036 = MathHelper.method37764(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
+         this.field17776.field31036 = MathHelper.cos(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
          this.field17776.field31037 = 0.0F;
-         this.field17777.field31036 = MathHelper.method37764(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
+         this.field17777.field31036 = MathHelper.cos(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
          this.field17777.field31037 = 0.0F;
-         this.field17774.field31036 = MathHelper.method37764(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
+         this.field17774.field31036 = MathHelper.cos(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
          this.field17774.field31035 = 0.0F;
-         this.field17775.field31036 = MathHelper.method37764(var2 * 5.0F) * 3.0F * var3;
+         this.field17775.field31036 = MathHelper.cos(var2 * 5.0F) * 3.0F * var3;
          this.field17775.field31035 = 0.0F;
       }
 
@@ -75,8 +75,8 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
    public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       boolean var11 = this.field17787.field31039;
       if (var11) {
-         var1.method35294();
-         var1.method35291(0.0, -0.08F, 0.0);
+         var1.push();
+         var1.translate(0.0, -0.08F, 0.0);
       }
 
       super.method11016(var1, var2, var3, var4, var5, var6, var7, var8);

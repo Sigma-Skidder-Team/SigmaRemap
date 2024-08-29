@@ -4,14 +4,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Class7203 implements Class7202 {
+public class Class7203 implements IBakedModel {
    private static String[] field30917;
    private final Class9264 field30918;
    private final Class6391 field30919;
-   private final Class1713 field30920;
+   private final TextureAtlasSprite field30920;
    private final boolean field30921;
 
-   public Class7203(Class9264 var1, Class6391 var2, Class1713 var3, boolean var4) {
+   public Class7203(Class9264 var1, Class6391 var2, TextureAtlasSprite var3, boolean var4) {
       this.field30918 = var1;
       this.field30919 = var2;
       this.field30920 = var3;
@@ -19,7 +19,7 @@ public class Class7203 implements Class7202 {
    }
 
    @Override
-   public List<Class8557> method22619(Class7380 var1, Direction var2, Random var3) {
+   public List<Class8557> method22619(BlockState var1, Direction var2, Random var3) {
       return Collections.<Class8557>emptyList();
    }
 
@@ -44,7 +44,7 @@ public class Class7203 implements Class7202 {
    }
 
    @Override
-   public Class1713 method22624() {
+   public TextureAtlasSprite getParticleTexture() {
       return this.field30920;
    }
 

@@ -26,7 +26,7 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       switch (Class7594.field32602[var1.<Direction>method23463(field19281).ordinal()]) {
          case 1:
          default:
@@ -41,15 +41,15 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       Direction var6 = var1.<Direction>method23463(field19281);
       BlockPos var7 = var3.method8349(var6.method536());
-      Class7380 var8 = var2.method6738(var7);
+      BlockState var8 = var2.getBlockState(var7);
       return var6.method544().method324() && var8.method23454(var2, var7, var6);
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2.method536() == var1.method23463(field19281) && !var1.method23443(var4, var5)
          ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
@@ -57,8 +57,8 @@ public class Class3459 extends Block {
 
    @Nullable
    @Override
-   public Class7380 method11495(Class5909 var1) {
-      Class7380 var4 = this.method11579().method23465(field19282, Boolean.valueOf(false)).method23465(field19283, Boolean.valueOf(false));
+   public BlockState method11495(Class5909 var1) {
+      BlockState var4 = this.method11579().method23465(field19282, Boolean.valueOf(false)).method23465(field19283, Boolean.valueOf(false));
       World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
       Direction[] var7 = var1.method18349();
@@ -77,22 +77,22 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11563(World var1, BlockPos var2, Class7380 var3, Class880 var4, ItemStack var5) {
-      this.method12134(var1, var2, var3, false, false, -1, (Class7380)null);
+   public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
+      this.method12134(var1, var2, var3, false, false, -1, (BlockState)null);
    }
 
-   public void method12134(World var1, BlockPos var2, Class7380 var3, boolean var4, boolean var5, int var6, Class7380 var7) {
+   public void method12134(World var1, BlockPos var2, BlockState var3, boolean var4, boolean var5, int var6, BlockState var7) {
       Direction var10 = var3.<Direction>method23463(field19281);
       boolean var11 = var3.<Boolean>method23463(field19283);
       boolean var12 = var3.<Boolean>method23463(field19282);
       boolean var13 = !var4;
       boolean var14 = false;
       int var15 = 0;
-      Class7380[] var16 = new Class7380[42];
+      BlockState[] var16 = new BlockState[42];
 
       for (int var17 = 1; var17 < 42; var17++) {
          BlockPos var18 = var2.method8350(var10, var17);
-         Class7380 var19 = var1.method6738(var18);
+         BlockState var19 = var1.getBlockState(var18);
          if (var19.method23448(Blocks.TRIPWIRE_HOOK)) {
             if (var19.<Direction>method23463(field19281) == var10.method536()) {
                var15 = var17;
@@ -105,7 +105,7 @@ public class Class3459 extends Block {
             var13 = false;
          } else {
             if (var17 == var6) {
-               var19 = (Class7380)MoreObjects.firstNonNull(var7, var19);
+               var19 = (BlockState)MoreObjects.firstNonNull(var7, var19);
             }
 
             boolean var20 = !var19.<Boolean>method23463(Class3425.field19165);
@@ -121,7 +121,7 @@ public class Class3459 extends Block {
 
       var13 &= var15 > 1;
       var14 &= var13;
-      Class7380 var24 = this.method11579().method23465(field19283, Boolean.valueOf(var13)).method23465(field19282, Boolean.valueOf(var14));
+      BlockState var24 = this.method11579().method23465(field19283, Boolean.valueOf(var13)).method23465(field19282, Boolean.valueOf(var14));
       if (var15 > 0) {
          BlockPos var25 = var2.method8350(var10, var15);
          Direction var27 = var10.method536();
@@ -141,10 +141,10 @@ public class Class3459 extends Block {
       if (var11 != var13) {
          for (int var26 = 1; var26 < var15; var26++) {
             BlockPos var28 = var2.method8350(var10, var26);
-            Class7380 var29 = var16[var26];
+            BlockState var29 = var16[var26];
             if (var29 != null) {
                var1.method6725(var28, var29.method23465(field19283, Boolean.valueOf(var13)), 3);
-               if (var1.method6738(var28).method23393()) {
+               if (var1.getBlockState(var28).isAir()) {
                }
             }
          }
@@ -152,8 +152,8 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11522(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
-      this.method12134(var2, var3, var1, false, true, -1, (Class7380)null);
+   public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
+      this.method12134(var2, var3, var1, false, true, -1, (BlockState)null);
    }
 
    private void method12135(World var1, BlockPos var2, boolean var3, boolean var4, boolean var5, boolean var6) {
@@ -174,12 +174,12 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public void method11513(Class7380 var1, World var2, BlockPos var3, Class7380 var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.method23383())) {
+   public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
+      if (!var5 && !var1.method23448(var4.getBlock())) {
          boolean var8 = var1.<Boolean>method23463(field19283);
          boolean var9 = var1.<Boolean>method23463(field19282);
          if (var8 || var9) {
-            this.method12134(var2, var3, var1, true, false, -1, (Class7380)null);
+            this.method12134(var2, var3, var1, true, false, -1, (BlockState)null);
          }
 
          if (var9) {
@@ -192,12 +192,12 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public int method11514(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
       return !var1.<Boolean>method23463(field19282) ? 0 : 15;
    }
 
    @Override
-   public int method11515(Class7380 var1, Class1665 var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, Class1665 var2, BlockPos var3, Direction var4) {
       if (var1.<Boolean>method23463(field19282)) {
          return var1.method23463(field19281) != var4 ? 0 : 15;
       } else {
@@ -206,22 +206,22 @@ public class Class3459 extends Block {
    }
 
    @Override
-   public boolean method11516(Class7380 var1) {
+   public boolean method11516(BlockState var1) {
       return true;
    }
 
    @Override
-   public Class7380 method11500(Class7380 var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Class80 var2) {
       return var1.method23465(field19281, var2.method252(var1.<Direction>method23463(field19281)));
    }
 
    @Override
-   public Class7380 method11501(Class7380 var1, Class2089 var2) {
+   public BlockState method11501(BlockState var1, Class2089 var2) {
       return var1.method23395(var2.method8749(var1.<Direction>method23463(field19281)));
    }
 
    @Override
-   public void method11489(Class7558<Block, Class7380> var1) {
+   public void method11489(Class7558<Block, BlockState> var1) {
       var1.method24737(field19281, field19282, field19283);
    }
 }

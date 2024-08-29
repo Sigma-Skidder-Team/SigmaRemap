@@ -18,16 +18,16 @@ public class Class7017 implements Class7016 {
                Random var7 = var1.field9016;
                int var8 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
                int var9 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
-               BlockPos var10 = var6.method3432().method8336(var8, 0, var9);
+               BlockPos var10 = var6.getPosition().method8336(var8, 0, var9);
                if (var1.method7019(
-                  var10.method8304() - 10,
+                  var10.getX() - 10,
                   var10.getY() - 10,
-                  var10.method8306() - 10,
-                  var10.method8304() + 10,
+                  var10.getZ() - 10,
+                  var10.getX() + 10,
                   var10.getY() + 10,
-                  var10.method8306() + 10
+                  var10.getZ() + 10
                )) {
-                  if (Class8170.method28429(Class2068.field13472, var1, var10, Class8992.field41012)) {
+                  if (Class8170.method28429(Class2068.field13472, var1, var10, EntityType.field41012)) {
                      if (var1.method6954(var10, 2)) {
                         return this.method21746(var1, var10);
                      }
@@ -71,9 +71,9 @@ public class Class7017 implements Class7016 {
    }
 
    private int method21748(BlockPos var1, ServerWorld var2) {
-      Class1098 var5 = Class8992.field41012.method33215(var2);
+      Class1098 var5 = EntityType.field41012.method33215(var2);
       if (var5 != null) {
-         var5.method4276(var2, var2.method6807(var1), Class2202.field14391, (Class5093)null, (Class39)null);
+         var5.method4276(var2, var2.method6807(var1), Class2202.field14391, (Class5093)null, (CompoundNBT)null);
          var5.method3272(var1, 0.0F, 0.0F);
          var2.method6995(var5);
          return 1;

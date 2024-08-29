@@ -70,12 +70,12 @@ public class Class9764 {
    }
 
    public Class9764(Class1998 var1, Class1998 var2) {
-      this.field45678 = Math.min(var1.method8304(), var2.method8304());
+      this.field45678 = Math.min(var1.getX(), var2.getX());
       this.field45679 = Math.min(var1.getY(), var2.getY());
-      this.field45680 = Math.min(var1.method8306(), var2.method8306());
-      this.field45681 = Math.max(var1.method8304(), var2.method8304());
+      this.field45680 = Math.min(var1.getZ(), var2.getZ());
+      this.field45681 = Math.max(var1.getX(), var2.getX());
       this.field45682 = Math.max(var1.getY(), var2.getY());
-      this.field45683 = Math.max(var1.method8306(), var2.method8306());
+      this.field45683 = Math.max(var1.getZ(), var2.getZ());
    }
 
    public Class9764(int var1, int var2, int var3, int var4) {
@@ -125,14 +125,14 @@ public class Class9764 {
    }
 
    public void method38395(Class1998 var1) {
-      this.method38393(var1.method8304(), var1.getY(), var1.method8306());
+      this.method38393(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public boolean method38396(Class1998 var1) {
-      return var1.method8304() >= this.field45678
-         && var1.method8304() <= this.field45681
-         && var1.method8306() >= this.field45680
-         && var1.method8306() <= this.field45683
+      return var1.getX() >= this.field45678
+         && var1.getX() <= this.field45681
+         && var1.getZ() >= this.field45680
+         && var1.getZ() <= this.field45683
          && var1.getY() >= this.field45679
          && var1.getY() <= this.field45682;
    }

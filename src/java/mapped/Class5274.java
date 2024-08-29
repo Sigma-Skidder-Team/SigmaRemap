@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Class4415;
-import com.mentalfrostbyte.jello.event.impl.Class4418;
+import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -68,7 +68,7 @@ public class Class5274 extends Module {
     }
 
     @EventTarget
-    public void method16499(Class4418 var1) {
+    public void method16499(WorldLoadEvent var1) {
         this.field23716.clear();
     }
 
@@ -135,7 +135,7 @@ public class Class5274 extends Module {
                 this.field23717 = (mc.player.getPosX() - (double) (mc.player.field5072 * 16)) / 16.0;
                 this.field23718 = (mc.player.getPosZ() - (double) (mc.player.field5074 * 16)) / 16.0;
                 this.field23704 = this.method16502(this.field23706);
-                this.field23714 = mc.player.method3432();
+                this.field23714 = mc.player.getPosition();
                 this.field23707 = 0;
             }
         }
@@ -147,7 +147,7 @@ public class Class5274 extends Module {
         if (this.method15996() && mc.player != null && mc.world != null) {
             if (this.field23704 != null) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-                    if (!Minecraft.getInstance().gameSettings.field44662) {
+                    if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         ByteBuffer var4 = this.field23704;
                         this.field23712 = var1.method13960();
                         if (var4 != null) {

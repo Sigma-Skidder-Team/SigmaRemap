@@ -6,7 +6,7 @@ public class Class4613 extends Class4566 {
    private final double field22128;
 
    public Class4613(
-      Class1656 var1,
+      ClientWorld var1,
       double var2,
       double var4,
       double var6,

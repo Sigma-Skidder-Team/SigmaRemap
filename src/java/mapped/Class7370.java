@@ -18,7 +18,7 @@ public class Class7370 extends Class7361 {
          float var4 = (this.field31519.method3013().nextFloat() - 0.5F) * 4.0F;
          float var5 = (this.field31519.method3013().nextFloat() - 0.5F) * 8.0F;
          this.field31519
-            .field5024
+            .world
             .method6746(
                Class7940.field34069,
                this.field31519.getPosX() + (double)var3,
@@ -35,7 +35,7 @@ public class Class7370 extends Class7361 {
    public void method23360() {
       this.field31545++;
       if (this.field31544 == null) {
-         BlockPos var5 = this.field31519.field5024.method7006(Class101.field299, Class2909.field17994);
+         BlockPos var5 = this.field31519.world.method7006(Class101.field299, Class2909.field17994);
          this.field31544 = Vector3d.method11330(var5);
       }
 

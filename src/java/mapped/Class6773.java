@@ -7,14 +7,14 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Class6773 extends Class6768<Class8278> {
-   private static final Class7380 field29495 = Blocks.field36730.method11579();
-   private static final Class7380 field29549 = Blocks.field36731.method11579();
-   private static final Class7380 field29550 = Blocks.field36794.method11579();
-   private static final Class7380 field29551 = Blocks.field36734.method11579();
-   private static final Class7380 field29552 = Blocks.field36742.method11579();
-   private static final Class7380 field29553 = Blocks.field36744.method11579();
-   private static final Class7380 field29554 = Blocks.field36738.method11579();
-   public Class7380[] field29555;
+   private static final BlockState field29495 = Blocks.field36730.method11579();
+   private static final BlockState field29549 = Blocks.field36731.method11579();
+   private static final BlockState field29550 = Blocks.field36794.method11579();
+   private static final BlockState field29551 = Blocks.field36734.method11579();
+   private static final BlockState field29552 = Blocks.field36742.method11579();
+   private static final BlockState field29553 = Blocks.field36744.method11579();
+   private static final BlockState field29554 = Blocks.field36738.method11579();
+   public BlockState[] field29555;
    public long field29556;
    public Class7691 field29557;
    public Class7691 field29558;
@@ -32,19 +32,19 @@ public class Class6773 extends Class6768<Class8278> {
       int var5,
       int var6,
       double var7,
-      Class7380 var9,
-      Class7380 var10,
+      BlockState var9,
+      BlockState var10,
       int var11,
       long var12,
       Class8278 var14
    ) {
       int var17 = var4 & 15;
       int var18 = var5 & 15;
-      Class7380 var19 = field29495;
+      BlockState var19 = field29495;
       Class8277 var20 = var3.method32507().method24283();
-      Class7380 var21 = var20.method28935();
-      Class7380 var22 = var20.method28934();
-      Class7380 var23 = var21;
+      BlockState var21 = var20.method28935();
+      BlockState var22 = var20.method28934();
+      BlockState var23 = var21;
       int var24 = (int)(var7 / 3.0 + 3.0 + var1.nextDouble() * 0.25);
       boolean var25 = Math.cos(var7 / 3.0 * Math.PI) > 0.0;
       int var26 = -1;
@@ -55,9 +55,9 @@ public class Class6773 extends Class6768<Class8278> {
       for (int var30 = var6; var30 >= 0; var30--) {
          if (var28 < 15) {
             var29.method8372(var17, var30, var18);
-            Class7380 var31 = var2.method6738(var29);
-            if (!var31.method23393()) {
-               if (var31.method23448(var9.method23383())) {
+            BlockState var31 = var2.getBlockState(var29);
+            if (!var31.isAir()) {
+               if (var31.method23448(var9.getBlock())) {
                   if (var26 != -1) {
                      if (var26 > 0) {
                         var26--;
@@ -79,14 +79,14 @@ public class Class6773 extends Class6768<Class8278> {
                         var23 = var9;
                      }
 
-                     if (var30 < var11 && (var19 == null || var19.method23393())) {
+                     if (var30 < var11 && (var19 == null || var19.isAir())) {
                         var19 = var10;
                      }
 
                      var26 = var24 + Math.max(0, var30 - var11);
                      if (var30 < var11 - 1) {
                         var2.method7061(var29, var23, false);
-                        Block var33 = var23.method23383();
+                        Block var33 = var23.getBlock();
                         if (var33 == Blocks.field36730
                            || var33 == Blocks.field36731
                            || var33 == Blocks.field36732
@@ -109,7 +109,7 @@ public class Class6773 extends Class6768<Class8278> {
                         var2.method7061(var29, var22, false);
                         var27 = true;
                      } else {
-                        Class7380 var32;
+                        BlockState var32;
                         if (var30 < 64 || var30 > 127) {
                            var32 = field29549;
                         } else if (!var25) {
@@ -147,7 +147,7 @@ public class Class6773 extends Class6768<Class8278> {
    }
 
    public void method20659(long var1) {
-      this.field29555 = new Class7380[64];
+      this.field29555 = new BlockState[64];
       Arrays.fill(this.field29555, field29550);
       Class2420 var5 = new Class2420(var1);
       this.field29559 = new Class7691(var5, ImmutableList.of(0));
@@ -212,7 +212,7 @@ public class Class6773 extends Class6768<Class8278> {
       }
    }
 
-   public Class7380 method20660(int var1, int var2, int var3) {
+   public BlockState method20660(int var1, int var2, int var3) {
       int var6 = (int)Math.round(this.field29559.method25315((double)var1 / 512.0, (double)var3 / 512.0, false) * 2.0);
       return this.field29555[(var2 + var6 + 64) % 64];
    }

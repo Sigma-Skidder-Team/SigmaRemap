@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 public class Class4663 implements Class4664 {
    private final ResourceLocation field22198;
-   private final Class3257 field22199;
+   private final Item field22199;
    private final int field22200;
    private final String field22201;
    private final List<String> field22202;
@@ -18,7 +18,7 @@ public class Class4663 implements Class4664 {
    private final ResourceLocation field22205;
    public final Class8528 field22206;
 
-   public Class4663(Class8528 var1, ResourceLocation var2, Class3257 var3, int var4, String var5, List<String> var6, Map<Character, Class120> var7, Class7999 var8, ResourceLocation var9
+   public Class4663(Class8528 var1, ResourceLocation var2, Item var3, int var4, String var5, List<String> var6, Map<Character, Class120> var7, Class7999 var8, ResourceLocation var9
    ) {
       this.field22206 = var1;
       this.field22198 = var2;
@@ -52,7 +52,7 @@ public class Class4663 implements Class4664 {
 
       var1.add("key", var8);
       JsonObject var10 = new JsonObject();
-      var10.addProperty("item", Registry.field16075.method9181(this.field22199).toString());
+      var10.addProperty("item", Registry.ITEM.getKey(this.field22199).toString());
       if (this.field22200 > 1) {
          var10.addProperty("count", this.field22200);
       }

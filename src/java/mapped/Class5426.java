@@ -12,7 +12,7 @@ public interface Class5426 extends Class5422 {
    void method17068(int var1, float var2);
 
    @Override
-   default Class5422 method17025(double var1, double var3, double var5) {
+   default Class5422 pos(double var1, double var3, double var5) {
       if (this.method17073().method28516() == Class2061.field13430) {
          this.method17068(0, (float)var1);
          this.method17068(4, (float)var3);
@@ -25,7 +25,7 @@ public interface Class5426 extends Class5422 {
    }
 
    @Override
-   default Class5422 method17026(int var1, int var2, int var3, int var4) {
+   default Class5422 color(int var1, int var2, int var3, int var4) {
       Class8209 var7 = this.method17073();
       if (var7.method28517() == Class2142.field14020) {
          if (var7.method28516() == Class2061.field13431) {

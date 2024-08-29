@@ -3,12 +3,12 @@ package mapped;
 import java.io.DataInput;
 import java.io.IOException;
 
-public final class Class7062 implements Class7052<Class40> {
-   public Class40 method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
+public final class Class7062 implements Class7052<StringNBT> {
+   public StringNBT method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
       var3.method29769(288L);
       String var6 = var1.readUTF();
       var3.method29769((long)(16 * var6.length()));
-      return Class40.method150(var6);
+      return StringNBT.valueOf(var6);
    }
 
    @Override

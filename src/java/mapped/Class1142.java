@@ -18,7 +18,7 @@ public class Class1142 extends Class1140 {
       AbstractOption.field25325
    };
 
-   public Class1142(Screen var1, Class9574 var2) {
+   public Class1142(Screen var1, GameSettings var2) {
       super(var1, var2, new TranslationTextComponent("options.accessibility.title"), field6208);
    }
 
@@ -41,7 +41,7 @@ public class Class1142 extends Class1140 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 27, 150, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 27, 150, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
       );
    }
 }

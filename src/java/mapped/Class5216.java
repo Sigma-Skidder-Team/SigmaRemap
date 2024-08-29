@@ -22,17 +22,17 @@ public class Class5216 extends Module {
             byte var5 = 2;
             byte var6 = 4;
             int var7 = var4.nextInt(var6 - var5) + var5;
-            if (mc.gameSettings.field44643.method8509() && this.field23548 >= var7) {
-                mc.player.swingArm(Hand.field182);
+            if (mc.gameSettings.keyBindAttack.isKeyDown() && this.field23548 >= var7) {
+                mc.player.swingArm(Hand.MAIN_HAND);
                 this.field23548 = 0;
                 if (Class5628.method17711(mc.player.field5031, mc.player.field5032, 4.6F, 0.0) != null) {
-                    mc.getClientPlayNetHandler()
+                    mc.getConnection()
                             .sendPacket(
                                     new CUseEntityPacket(
                                             Class5628.method17711(mc.player.field5031, mc.player.field5032, 4.6F, 0.0), mc.player.method3331()
                                     )
                             );
-                    mc.player.swingArm(Hand.field182);
+                    mc.player.swingArm(Hand.MAIN_HAND);
                 }
             }
         }

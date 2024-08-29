@@ -18,7 +18,7 @@ public class Class7154 implements Class7151 {
    }
 
    @Override
-   public void method22311(Class39 var1) throws CommandSyntaxException {
+   public void method22311(CompoundNBT var1) throws CommandSyntaxException {
       if (!(this.field30733 instanceof PlayerEntity)) {
          UUID var4 = this.field30733.getUniqueID();
          this.field30733.method3295(var1);
@@ -29,7 +29,7 @@ public class Class7154 implements Class7151 {
    }
 
    @Override
-   public Class39 method22312() {
+   public CompoundNBT method22312() {
       return Class8811.method31813(this.field30733);
    }
 

@@ -27,30 +27,30 @@ public class Class4184 extends Class4180 {
       this.method12949(var5, var8);
    }
 
-   public Class4184(Class8761 var1, Class39 var2) {
+   public Class4184(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33460, var2);
       this.field20466 = new ResourceLocation(var2.method126("Template"));
       this.field20467 = Class80.valueOf(var2.method126("Rotation"));
       this.field20468 = Class2089.valueOf(var2.method126("Mirror"));
       this.field20469 = Class2219.method8946(var2.method126("VerticalPlacement"));
       this.field20470 = (Class8299)Class8299.field35673
-         .parse(new Dynamic(Class8063.field34602, var2.method116("Properties")))
+         .parse(new Dynamic(NBTDynamicOps.INSTANCE, var2.method116("Properties")))
          .getOrThrow(true, field20465::error);
       Class8969 var5 = var1.method31603(this.field20466);
-      this.method12949(var5, new BlockPos(var5.method32886().method8304() / 2, 0, var5.method32886().method8306() / 2));
+      this.method12949(var5, new BlockPos(var5.method32886().getX() / 2, 0, var5.method32886().getZ() / 2));
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method109("Template", this.field20466.toString());
       var1.method109("Rotation", this.field20467.name());
       var1.method109("Mirror", this.field20468.name());
       var1.method109("VerticalPlacement", this.field20469.method8945());
       Class8299.field35673
-         .encodeStart(Class8063.field34602, this.field20470)
+         .encodeStart(NBTDynamicOps.INSTANCE, this.field20470)
          .resultOrPartial(field20465::error)
-         .ifPresent(var1x -> var1.method99("Properties", var1x));
+         .ifPresent(var1x -> var1.put("Properties", var1x));
    }
 
    private void method12949(Class8969 var1, BlockPos var2) {
@@ -117,12 +117,12 @@ public class Class4184 extends Class4180 {
    }
 
    private void method12951(Random var1, Class1660 var2, BlockPos var3) {
-      Class7380 var6 = var2.method6738(var3);
-      if (!var6.method23393() && !var6.method23448(Blocks.VINE)) {
+      BlockState var6 = var2.getBlockState(var3);
+      if (!var6.isAir() && !var6.method23448(Blocks.VINE)) {
          Direction var7 = Class76.field161.method247(var1);
          BlockPos var8 = var3.method8349(var7);
-         Class7380 var9 = var2.method6738(var8);
-         if (var9.method23393() && Block.method11549(var6.method23414(var2, var3), var7)) {
+         BlockState var9 = var2.getBlockState(var8);
+         if (var9.isAir() && Block.method11549(var6.method23414(var2, var3), var7)) {
             Class8551 var10 = Class3402.method12039(var7.method536());
             var2.method6725(var8, Blocks.VINE.method11579().method23465(var10, Boolean.valueOf(true)), 3);
          }
@@ -130,7 +130,7 @@ public class Class4184 extends Class4180 {
    }
 
    private void method12952(Random var1, Class1660 var2, BlockPos var3) {
-      if (var1.nextFloat() < 0.5F && var2.method6738(var3).method23448(Blocks.NETHERRACK) && var2.method6738(var3.method8311()).method23393()) {
+      if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).method23448(Blocks.NETHERRACK) && var2.getBlockState(var3.method8311()).isAir()) {
          var2.method6725(var3.method8311(), Blocks.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
@@ -139,7 +139,7 @@ public class Class4184 extends Class4180 {
       for (int var5 = this.field20444.field45678 + 1; var5 < this.field20444.field45681; var5++) {
          for (int var6 = this.field20444.field45680 + 1; var6 < this.field20444.field45683; var6++) {
             BlockPos var7 = new BlockPos(var5, this.field20444.field45679, var6);
-            if (var2.method6738(var7).method23448(Blocks.NETHERRACK)) {
+            if (var2.getBlockState(var7).method23448(Blocks.NETHERRACK)) {
                this.method12954(var1, var2, var7.method8313());
             }
          }
@@ -152,7 +152,7 @@ public class Class4184 extends Class4180 {
       int var7 = 8;
 
       while (var7 > 0 && var1.nextFloat() < 0.5F) {
-         var6.method8379(Direction.field672);
+         var6.method8379(Direction.DOWN);
          var7--;
          this.method12957(var1, var2, var6);
       }
@@ -161,14 +161,14 @@ public class Class4184 extends Class4180 {
    private void method12955(Random var1, Class1660 var2) {
       boolean var5 = this.field20469 == Class2219.field14494 || this.field20469 == Class2219.field14496;
       Class1998 var6 = this.field20444.method38401();
-      int var7 = var6.method8304();
-      int var8 = var6.method8306();
+      int var7 = var6.getX();
+      int var8 = var6.getZ();
       float[] var9 = new float[]{1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.9F, 0.9F, 0.8F, 0.7F, 0.6F, 0.4F, 0.2F};
       int var10 = var9.length;
       int var11 = (this.field20444.method38398() + this.field20444.method38400()) / 2;
       int var12 = var1.nextInt(Math.max(1, 8 - var11 / 2));
 
-      Mutable var14 = BlockPos.field13032.method8354();
+      Mutable var14 = BlockPos.ZERO.method8354();
 
       for (int var15 = var7 - var10; var15 <= var7 + var10; var15++) {
          for (int var16 = var8 - var10; var16 <= var8 + var10; var16++) {
@@ -195,7 +195,7 @@ public class Class4184 extends Class4180 {
    }
 
    private boolean method12956(Class1660 var1, BlockPos var2) {
-      Class7380 var5 = var1.method6738(var2);
+      BlockState var5 = var1.getBlockState(var2);
       return !var5.method23448(Blocks.AIR)
          && !var5.method23448(Blocks.field36527)
          && !var5.method23448(Blocks.CHEST)

@@ -1,9 +1,9 @@
 package mapped;
 
 public interface Class1681 {
-   boolean method6726(BlockPos var1, Class7380 var2, int var3, int var4);
+   boolean method6726(BlockPos var1, BlockState var2, int var3, int var4);
 
-   default boolean method6725(BlockPos var1, Class7380 var2, int var3) {
+   default boolean method6725(BlockPos var1, BlockState var2, int var3) {
       return this.method6726(var1, var2, var3, 512);
    }
 

@@ -7,30 +7,30 @@ import java.util.Map;
 
 public class Class4860 extends Class4837 {
    private static final Class120 field22658 = Class120.method339(
-      Class8514.field38046,
-      Class8514.field37839,
-      Class8514.field37969,
-      Class8514.field38058,
-      Class8514.field38059,
-      Class8514.field38062,
-      Class8514.field38060,
-      Class8514.field38063,
-      Class8514.field38061
+      Items.field38046,
+      Items.field37839,
+      Items.field37969,
+      Items.field38058,
+      Items.field38059,
+      Items.field38062,
+      Items.field38060,
+      Items.field38063,
+      Items.field38061
    );
-   private static final Class120 field22659 = Class120.method339(Class8514.field37800);
-   private static final Class120 field22660 = Class120.method339(Class8514.field37908);
-   private static final Map<Class3257, Class2119> field22661 = Util.<Map<Class3257, Class2119>>method38508(Maps.newHashMap(), var0 -> {
-      var0.put(Class8514.field38046, Class2119.field13808);
-      var0.put(Class8514.field37839, Class2119.field13811);
-      var0.put(Class8514.field37969, Class2119.field13809);
-      var0.put(Class8514.field38058, Class2119.field13810);
-      var0.put(Class8514.field38059, Class2119.field13810);
-      var0.put(Class8514.field38062, Class2119.field13810);
-      var0.put(Class8514.field38060, Class2119.field13810);
-      var0.put(Class8514.field38063, Class2119.field13810);
-      var0.put(Class8514.field38061, Class2119.field13810);
+   private static final Class120 field22659 = Class120.method339(Items.field37800);
+   private static final Class120 field22660 = Class120.method339(Items.field37908);
+   private static final Map<Item, Class2119> field22661 = Util.<Map<Item, Class2119>>method38508(Maps.newHashMap(), var0 -> {
+      var0.put(Items.field38046, Class2119.field13808);
+      var0.put(Items.field37839, Class2119.field13811);
+      var0.put(Items.field37969, Class2119.field13809);
+      var0.put(Items.field38058, Class2119.field13810);
+      var0.put(Items.field38059, Class2119.field13810);
+      var0.put(Items.field38062, Class2119.field13810);
+      var0.put(Items.field38060, Class2119.field13810);
+      var0.put(Items.field38063, Class2119.field13810);
+      var0.put(Items.field38061, Class2119.field13810);
    });
-   private static final Class120 field22662 = Class120.method339(Class8514.field37840);
+   private static final Class120 field22662 = Class120.method339(Items.field37840);
 
    public Class4860(ResourceLocation var1) {
       super(var1);
@@ -45,12 +45,12 @@ public class Class4860 extends Class4837 {
 
       for (int var10 = 0; var10 < var1.method3629(); var10++) {
          ItemStack var11 = var1.method3618(var10);
-         if (!var11.method32105()) {
+         if (!var11.isEmpty()) {
             if (!field22658.test(var11)) {
                if (!field22660.test(var11)) {
                   if (!field22659.test(var11)) {
                      if (!field22662.test(var11)) {
-                        if (!(var11.method32107() instanceof Class3321)) {
+                        if (!(var11.getItem() instanceof Class3321)) {
                            return false;
                         }
 
@@ -90,19 +90,19 @@ public class Class4860 extends Class4837 {
    }
 
    public ItemStack method14962(Class926 var1) {
-      ItemStack var4 = new ItemStack(Class8514.field38069);
-      Class39 var5 = var4.method32144("Explosion");
+      ItemStack var4 = new ItemStack(Items.field38069);
+      CompoundNBT var5 = var4.method32144("Explosion");
       Class2119 var6 = Class2119.field13807;
       ArrayList var7 = Lists.newArrayList();
 
       for (int var8 = 0; var8 < var1.method3629(); var8++) {
          ItemStack var9 = var1.method3618(var8);
-         if (!var9.method32105()) {
+         if (!var9.isEmpty()) {
             if (!field22658.test(var9)) {
                if (!field22660.test(var9)) {
                   if (!field22659.test(var9)) {
-                     if (var9.method32107() instanceof Class3321) {
-                        var7.add(((Class3321)var9.method32107()).method11876().method313());
+                     if (var9.getItem() instanceof Class3321) {
+                        var7.add(((Class3321)var9.getItem()).method11876().method313());
                      }
                   } else {
                      var5.method115("Trail", true);
@@ -111,7 +111,7 @@ public class Class4860 extends Class4837 {
                   var5.method115("Flicker", true);
                }
             } else {
-               var6 = field22661.get(var9.method32107());
+               var6 = field22661.get(var9.getItem());
             }
          }
       }
@@ -127,8 +127,8 @@ public class Class4860 extends Class4837 {
    }
 
    @Override
-   public ItemStack method14966() {
-      return new ItemStack(Class8514.field38069);
+   public ItemStack getRecipeOutput() {
+      return new ItemStack(Items.field38069);
    }
 
    @Override

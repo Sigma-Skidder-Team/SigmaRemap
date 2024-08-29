@@ -182,18 +182,18 @@ public class Class3192 {
       float var8 = (float)(var4 >> 16 & 0xFF) / 255.0F;
       float var9 = (float)(var4 >> 8 & 0xFF) / 255.0F;
       float var10 = (float)(var4 & 0xFF) / 255.0F;
-      Class9352 var11 = Class9352.method35409();
-      Class5425 var12 = var11.method35411();
+      Tessellator var11 = Tessellator.getInstance();
+      BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
       RenderSystem.method27889(var8, var9, var10, var14);
-      var12.method17063(7, Class9337.field43341);
-      var12.method17025((double)var0, (double)var3, 0.0).method17031();
-      var12.method17025((double)var2, (double)var3, 0.0).method17031();
-      var12.method17025((double)var2, (double)var1, 0.0).method17031();
-      var12.method17025((double)var0, (double)var1, 0.0).method17031();
-      var11.method35410();
+      var12.begin(7, DefaultVertexFormats.field43341);
+      var12.pos((double)var0, (double)var3, 0.0).endVertex();
+      var12.pos((double)var2, (double)var3, 0.0).endVertex();
+      var12.pos((double)var2, (double)var1, 0.0).endVertex();
+      var12.pos((double)var0, (double)var1, 0.0).endVertex();
+      var11.draw();
       RenderSystem.enableTexture();
       RenderSystem.disableBlend();
    }
@@ -212,7 +212,7 @@ public class Class3192 {
       }
 
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
       var4.bindFramebuffer(true);
       var4.framebufferRender((int)var0 - (int)var2, (int)var1 - (int)var3);
@@ -248,19 +248,19 @@ public class Class3192 {
       float var13 = (float)(var5 >> 16 & 0xFF) / 255.0F;
       float var14 = (float)(var5 >> 8 & 0xFF) / 255.0F;
       float var15 = (float)(var5 & 0xFF) / 255.0F;
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.method27817();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
       RenderSystem.method27866(7425);
-      Class9352 var16 = Class9352.method35409();
-      Class5425 var17 = var16.method35411();
-      var17.method17063(7, Class9337.field43342);
-      var17.method17025((double)var2, (double)var1, 0.0).method17033(var9, var10, var11, var8).method17031();
-      var17.method17025((double)var0, (double)var1, 0.0).method17033(var9, var10, var11, var8).method17031();
-      var17.method17025((double)var0, (double)var3, 0.0).method17033(var13, var14, var15, var12).method17031();
-      var17.method17025((double)var2, (double)var3, 0.0).method17033(var13, var14, var15, var12).method17031();
-      var16.method35410();
+      Tessellator var16 = Tessellator.getInstance();
+      BufferBuilder var17 = var16.getBuffer();
+      var17.begin(7, DefaultVertexFormats.POSITION_COLOR);
+      var17.pos((double)var2, (double)var1, 0.0).method17033(var9, var10, var11, var8).endVertex();
+      var17.pos((double)var0, (double)var1, 0.0).method17033(var9, var10, var11, var8).endVertex();
+      var17.pos((double)var0, (double)var3, 0.0).method17033(var13, var14, var15, var12).endVertex();
+      var17.pos((double)var2, (double)var3, 0.0).method17033(var13, var14, var15, var12).endVertex();
+      var16.draw();
       RenderSystem.method27866(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
@@ -284,19 +284,19 @@ public class Class3192 {
       float var23 = (float)(var7 >> 16 & 0xFF) / 255.0F;
       float var24 = (float)(var7 >> 8 & 0xFF) / 255.0F;
       float var25 = (float)(var7 & 0xFF) / 255.0F;
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.method27817();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
       RenderSystem.method27866(7425);
-      Class9352 var26 = Class9352.method35409();
-      Class5425 var27 = var26.method35411();
-      var27.method17063(7, Class9337.field43342);
-      var27.method17025((double)var2, (double)var1, 0.0).method17033(var15, var16, var17, var14).method17031();
-      var27.method17025((double)var0, (double)var1, 0.0).method17033(var11, var12, var13, var10).method17031();
-      var27.method17025((double)var0, (double)var3, 0.0).method17033(var23, var24, var25, var22).method17031();
-      var27.method17025((double)var2, (double)var3, 0.0).method17033(var19, var20, var21, var18).method17031();
-      var26.method35410();
+      Tessellator var26 = Tessellator.getInstance();
+      BufferBuilder var27 = var26.getBuffer();
+      var27.begin(7, DefaultVertexFormats.POSITION_COLOR);
+      var27.pos((double)var2, (double)var1, 0.0).method17033(var15, var16, var17, var14).endVertex();
+      var27.pos((double)var0, (double)var1, 0.0).method17033(var11, var12, var13, var10).endVertex();
+      var27.pos((double)var0, (double)var3, 0.0).method17033(var23, var24, var25, var22).endVertex();
+      var27.pos((double)var2, (double)var3, 0.0).method17033(var19, var20, var21, var18).endVertex();
+      var26.draw();
       RenderSystem.method27866(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
@@ -311,17 +311,17 @@ public class Class3192 {
       float var9 = (float)(var4 >> 16 & 0xFF) / 255.0F;
       float var10 = (float)(var4 >> 8 & 0xFF) / 255.0F;
       float var11 = (float)(var4 & 0xFF) / 255.0F;
-      Class9352 var12 = Class9352.method35409();
-      Class5425 var13 = var12.method35411();
+      Tessellator var12 = Tessellator.getInstance();
+      BufferBuilder var13 = var12.getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       RenderSystem.method27889(var9, var10, var11, var8);
       GL11.glEnable(2848);
-      var13.method17063(1, Class9337.field43342);
-      var13.method17025((double)var0, (double)var1, 0.0);
-      var13.method17025((double)var2, (double)var3, 0.0);
-      var12.method35410();
+      var13.begin(1, DefaultVertexFormats.POSITION_COLOR);
+      var13.pos((double)var0, (double)var1, 0.0);
+      var13.pos((double)var2, (double)var3, 0.0);
+      var12.draw();
       GL11.glDisable(2848);
       RenderSystem.enableTexture();
       RenderSystem.disableBlend();
@@ -334,10 +334,10 @@ public class Class3192 {
       float var10 = (float)(var6 >> 16 & 0xFF) / 255.0F;
       float var11 = (float)(var6 >> 8 & 0xFF) / 255.0F;
       float var12 = (float)(var6 & 0xFF) / 255.0F;
-      Class9352 var13 = Class9352.method35409();
-      Class5425 var14 = var13.method35411();
+      Tessellator var13 = Tessellator.getInstance();
+      BufferBuilder var14 = var13.getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       RenderSystem.method27889(var10, var11, var12, var9);
       GL11.glBegin(6);
@@ -353,10 +353,10 @@ public class Class3192 {
    public static void method11435(float var0, float var1, float var2, int var3, int var4) {
       RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
-      Class9352 var7 = Class9352.method35409();
-      Class5425 var8 = var7.method35411();
+      Tessellator var7 = Tessellator.getInstance();
+      BufferBuilder var8 = var7.getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       GL11.glColor4fv(Class5628.method17709(var3));
       GL11.glEnable(2881);
@@ -399,9 +399,9 @@ public class Class3192 {
       float var7 = (float)(var3 >> 16 & 0xFF) / 255.0F;
       float var8 = (float)(var3 >> 8 & 0xFF) / 255.0F;
       float var9 = (float)(var3 & 0xFF) / 255.0F;
-      Class9352 var10 = Class9352.method35409();
-      Class5425 var11 = var10.method35411();
-      RenderSystem.method27862();
+      Tessellator var10 = Tessellator.getInstance();
+      BufferBuilder var11 = var10.getBuffer();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       RenderSystem.method27889(var7, var8, var9, var6);
       GL11.glEnable(2832);
@@ -556,10 +556,10 @@ public class Class3192 {
       float var11 = (float)(var6 >> 16 & 0xFF) / 255.0F;
       float var12 = (float)(var6 >> 8 & 0xFF) / 255.0F;
       float var13 = (float)(var6 & 0xFF) / 255.0F;
-      Class9352 var14 = Class9352.method35409();
-      Class5425 var15 = var14.method35411();
+      Tessellator var14 = Tessellator.getInstance();
+      BufferBuilder var15 = var14.getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       RenderSystem.method27889(var11, var12, var13, var10);
       if (var10 > 0.5F) {
@@ -597,10 +597,10 @@ public class Class3192 {
       float var8 = (float)(var4 >> 16 & 0xFF) / 255.0F;
       float var9 = (float)(var4 >> 8 & 0xFF) / 255.0F;
       float var10 = (float)(var4 & 0xFF) / 255.0F;
-      Class9352 var11 = Class9352.method35409();
-      Class5425 var12 = var11.method35411();
+      Tessellator var11 = Tessellator.getInstance();
+      BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       RenderSystem.method27889(var8, var9, var10, var7);
       GL11.glBegin(6);
@@ -650,7 +650,7 @@ public class Class3192 {
          float var15 = (float)(var5 >> 8 & 0xFF) / 255.0F;
          float var16 = (float)(var5 & 0xFF) / 255.0F;
          RenderSystem.enableBlend();
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          RenderSystem.method27837(770, 771, 1, 0);
          RenderSystem.method27889(var14, var15, var16, var13);
          GL11.glEnable(3042);
@@ -700,7 +700,7 @@ public class Class3192 {
          float var16 = (float)(var5 >> 8 & 0xFF) / 255.0F;
          float var17 = (float)(var5 & 0xFF) / 255.0F;
          RenderSystem.enableBlend();
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          RenderSystem.method27837(770, 771, 1, 0);
          RenderSystem.method27889(var15, var16, var17, var14);
          GL11.glEnable(3042);
@@ -764,7 +764,7 @@ public class Class3192 {
       float var13 = (float)(var4 >> 8 & 0xFF) / 255.0F;
       float var14 = (float)(var4 & 0xFF) / 255.0F;
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
       RenderSystem.method27889(var12, var13, var14, var11);
       GL11.glEnable(3042);
@@ -1140,7 +1140,7 @@ public class Class3192 {
    }
 
    public static void method11468() {
-      Framebuffer var2 = Minecraft.getInstance().method1464();
+      Framebuffer var2 = Minecraft.getInstance().getFramebuffer();
       if (var2 != null && var2.field35737 > -1) {
          method11469(var2);
          var2.field35737 = -1;
@@ -1261,12 +1261,12 @@ public class Class3192 {
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
-         Class216 var7 = field18460.method1555();
+         ItemRenderer var7 = field18460.getItemRenderer();
          if (var0.field39976 == 0) {
-            var0 = new ItemStack(var0.method32107());
+            var0 = new ItemStack(var0.getItem());
          }
 
-         Class3257 var8 = var0.method32107();
+         Item var8 = var0.getItem();
          Block var9 = Block.method11537(var8);
          boolean var10 = false;
          Class7516.method24502();
@@ -1292,14 +1292,14 @@ public class Class3192 {
 
    public static void method11480(ItemStack var0, int var1, int var2, float var3) {
       GL11.glPushMatrix();
-      RenderSystem.method27878(5888);
-      RenderSystem.method27879();
-      field18460.method1555().field847 -= 1101.0F;
+      RenderSystem.matrixMode(5888);
+      RenderSystem.loadIdentity();
+      field18460.getItemRenderer().field847 -= 1101.0F;
       RenderSystem.scaled(1.0 / field18460.mainWindow.method8049(), 1.0 / field18460.mainWindow.method8049(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
-      field18460.method1555().method791(var0, 0, 0);
-      field18460.method1555().field847 += 1101.0F;
+      field18460.getItemRenderer().method791(var0, 0, 0);
+      field18460.getItemRenderer().field847 += 1101.0F;
       TextureImpl.method36180();
       TextureManager var6 = field18460.getTextureManager();
       field18460.getTextureManager();

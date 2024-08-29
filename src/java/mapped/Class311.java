@@ -50,7 +50,7 @@ public class Class311 extends Class308 {
    }
 
    @Override
-   public Set<String> method1226(Class1946 var1) {
+   public Set<String> method1226(ResourcePackType var1) {
       ZipFile var4;
       try {
          var4 = this.method1261();
@@ -95,7 +95,7 @@ public class Class311 extends Class308 {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(Class1946 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       ZipFile var8;
       try {
          var8 = this.method1261();

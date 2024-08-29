@@ -46,7 +46,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
    public static void method8506() {
       for (KeyBinding var3 : field13063.values()) {
          if (var3.field13070.method28099() == Class1938.field12592 && var3.field13070.method28100() != Class9798.field45819.method28100()) {
-            var3.method8524(Class9798.method38639(Minecraft.getInstance().method1580().method8039(), var3.field13070.method28100()));
+            var3.method8524(Class9798.method38639(Minecraft.getInstance().getMainWindow().getHandle(), var3.field13070.method28100()));
          }
       }
    }
@@ -79,7 +79,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
       field13065.add(var4);
    }
 
-   public boolean method8509() {
+   public boolean isKeyDown() {
       return this.field13071;
    }
 
@@ -87,7 +87,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
       return this.field13069;
    }
 
-   public boolean method8511() {
+   public boolean isPressed() {
       if (this.field13072 != 0) {
          this.field13072--;
          return true;
@@ -116,10 +116,10 @@ public class KeyBinding implements Comparable<KeyBinding> {
    public int compareTo(KeyBinding var1) {
       return !this.field13069.equals(var1.field13069)
          ? field13066.get(this.field13069).compareTo(field13066.get(var1.field13069))
-         : Class9088.method33883(this.field13067).compareTo(Class9088.method33883(var1.field13067));
+         : I18n.format(this.field13067).compareTo(I18n.format(var1.field13067));
    }
 
-   public static Supplier<ITextComponent> method8516(String var0) {
+   public static Supplier<ITextComponent> getDisplayString(String var0) {
       KeyBinding var3 = field13063.get(var0);
       return var3 != null ? var3::method8521 : () -> new TranslationTextComponent(var0);
    }

@@ -15,7 +15,6 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -35,8 +34,8 @@ public class Class4444 implements Class4442 {
       return this;
    }
 
-   private Class39 method14022(String var1, Class39 var2) {
-      Class39 var5 = var2;
+   private CompoundNBT method14022(String var1, CompoundNBT var2) {
+      CompoundNBT var5 = var2;
 
       for (Class6253 var7 : this.field21608) {
          var5 = var7.method19217(var1, var5);
@@ -55,7 +54,7 @@ public class Class4444 implements Class4442 {
          Files.walk(var7)
             .filter(var0 -> var0.toString().endsWith(".snbt"))
             .forEach(
-               var3 -> var5.add(CompletableFuture.supplyAsync(() -> this.method14024(var3, this.method14023(var7, var3)), Util.method38492()))
+               var3 -> var5.add(CompletableFuture.supplyAsync(() -> this.method14024(var3, this.method14023(var7, var3)), Util.getServerExecutor()))
             );
       }
 
@@ -76,7 +75,7 @@ public class Class4444 implements Class4442 {
    private Class9822 method14024(Path var1, String var2) {
       try (BufferedReader var5 = Files.newBufferedReader(var1)) {
          String var7 = IOUtils.toString(var5);
-         Class39 var8 = this.method14022(var2, Class7671.method25188(var7));
+         CompoundNBT var8 = this.method14022(var2, Class7671.method25188(var7));
          ByteArrayOutputStream var9 = new ByteArrayOutputStream();
          Class8799.method31768(var8, var9);
          byte[] var10 = var9.toByteArray();

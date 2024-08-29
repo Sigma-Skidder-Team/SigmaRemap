@@ -21,14 +21,14 @@ public class Class9793 {
    public static void method38605() {
       if (field45791) {
          field45791 = false;
-         method38606(Class8981.method32955());
+         method38606(Shaders.method32955());
       }
    }
 
    public static void method38606(Class4671 var0) {
       method38611();
       if (var0 != null) {
-         if (Class9299.field42965.method20214() && Minecraft.getInstance().method1537() == null) {
+         if (Class9299.field42965.method20214() && Minecraft.getInstance().getResourceManager() == null) {
             Class7944.method26810("[Shaders] Delayed loading of entity mappings after resources are loaded");
             field45791 = true;
          } else {

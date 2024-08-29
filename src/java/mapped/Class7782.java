@@ -80,8 +80,8 @@ public class Class7782 {
                   double var22 = MathHelper.method37822((double)var18, var4.field28450, var4.field28453);
                   double var24 = MathHelper.method37822((double)var19, var4.field28451, var4.field28454);
                   Vector3d var26 = new Vector3d(var20 + var11, var22, var24 + var13);
-                  if (var1.field5024.method7036(new Class6809(var26, var0, Class2271.field14774, Class1985.field12962, var1)).method31417()
-                     == Class2100.field13689) {
+                  if (var1.world.method7036(new Class6809(var26, var0, Class2271.field14774, Class1985.field12962, var1)).getType()
+                     == RayTraceResult.Type.MISS) {
                      var15++;
                   }
 
@@ -118,7 +118,7 @@ public class Class7782 {
 
                   for (float var30 = 0.3F; var23 > 0.0F; var23 -= 0.22500001F) {
                      BlockPos var31 = new BlockPos(var24, var26, var28);
-                     Class7380 var32 = this.field33373.method6738(var31);
+                     BlockState var32 = this.field33373.getBlockState(var31);
                      Class7379 var33 = this.field33373.method6739(var31);
                      Optional<Float> var34 = this.field33380.method18423(this, this.field33373, var31, var32, var33);
                      if (var34.isPresent()) {
@@ -140,12 +140,12 @@ public class Class7782 {
 
       this.field33381.addAll(var3);
       float var53 = this.field33378 * 2.0F;
-      int var54 = MathHelper.method37769(this.field33374 - (double)var53 - 1.0);
-      int var55 = MathHelper.method37769(this.field33374 + (double)var53 + 1.0);
-      int var8 = MathHelper.method37769(this.field33375 - (double)var53 - 1.0);
-      int var9 = MathHelper.method37769(this.field33375 + (double)var53 + 1.0);
-      int var10 = MathHelper.method37769(this.field33376 - (double)var53 - 1.0);
-      int var11 = MathHelper.method37769(this.field33376 + (double)var53 + 1.0);
+      int var54 = MathHelper.floor(this.field33374 - (double)var53 - 1.0);
+      int var55 = MathHelper.floor(this.field33374 + (double)var53 + 1.0);
+      int var8 = MathHelper.floor(this.field33375 - (double)var53 - 1.0);
+      int var9 = MathHelper.floor(this.field33375 + (double)var53 + 1.0);
+      int var10 = MathHelper.floor(this.field33376 - (double)var53 - 1.0);
+      int var11 = MathHelper.floor(this.field33376 + (double)var53 + 1.0);
       List var12 = this.field33373
          .method7181(this.field33377, new Class6488((double)var54, (double)var8, (double)var10, (double)var55, (double)var9, (double)var11));
       Vector3d var13 = new Vector3d(this.field33374, this.field33375, this.field33376);
@@ -174,7 +174,7 @@ public class Class7782 {
                   var35.method3434(var35.method3433().method11339(var38 * var50, var40 * var50, var42 * var50));
                   if (var35 instanceof PlayerEntity) {
                      PlayerEntity var52 = (PlayerEntity)var35;
-                     if (!var52.method2800() && (!var52.method2801() || !var52.field4919.field29607)) {
+                     if (!var52.isSpectator() && (!var52.isCreative() || !var52.abilities.field29607)) {
                         this.field33382.put(var52, new Vector3d(var38 * var48, var40 * var48, var42 * var48));
                      }
                   }
@@ -213,13 +213,13 @@ public class Class7782 {
          Collections.shuffle(this.field33381, this.field33373.field9016);
 
          for (BlockPos var7 : this.field33381) {
-            Class7380 var8 = this.field33373.method6738(var7);
-            Block var9 = var8.method23383();
-            if (!var8.method23393()) {
+            BlockState var8 = this.field33373.getBlockState(var7);
+            Block var9 = var8.getBlock();
+            if (!var8.isAir()) {
                BlockPos var10 = var7.method8353();
                this.field33373.method6820().startSection("explosion_blocks");
                if (var9.method11576(this) && this.field33373 instanceof ServerWorld) {
-                  Class944 var11 = !var9.method11998() ? null : this.field33373.method6759(var7);
+                  TileEntity var11 = !var9.isTileEntityProvider() ? null : this.field33373.getTileEntity(var7);
                   Class9464 var12 = new Class9464((ServerWorld)this.field33373)
                      .method36450(this.field33373.field9016)
                      .method36454(Class9525.field44335, Vector3d.method11328(var7))
@@ -250,8 +250,8 @@ public class Class7782 {
       if (this.field33370) {
          for (BlockPos var15 : this.field33381) {
             if (this.field33372.nextInt(3) == 0
-               && this.field33373.method6738(var15).method23393()
-               && this.field33373.method6738(var15.method8313()).method23409(this.field33373, var15.method8313())) {
+               && this.field33373.getBlockState(var15).isAir()
+               && this.field33373.getBlockState(var15.method8313()).method23409(this.field33373, var15.method8313())) {
                this.field33373.method6730(var15, Class3397.method12009(this.field33373, var15));
             }
          }
@@ -267,7 +267,7 @@ public class Class7782 {
          if (ItemEntity.method4120(var8, var1)) {
             ItemStack var9 = ItemEntity.method4121(var8, var1, 16);
             var0.set(var6, Pair.of(var9, var7.getSecond()));
-            if (var1.method32105()) {
+            if (var1.isEmpty()) {
                return;
             }
          }

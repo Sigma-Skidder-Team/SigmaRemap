@@ -23,7 +23,7 @@ public class Class793 extends Class789 {
    @Override
    public void method1912() {
       this.field4146.method34897();
-      Minecraft.getInstance().method1539().method25150();
+      Minecraft.getInstance().getPackFinder().clearResourcePack();
    }
 
    @Override

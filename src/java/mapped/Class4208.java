@@ -13,13 +13,13 @@ public class Class4208 extends Class4194 {
       this.field20515 = var3 != Direction.NORTH && var3 != Direction.SOUTH ? var2.method38398() : var2.method38400();
    }
 
-   public Class4208(Class8761 var1, Class39 var2) {
+   public Class4208(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33445, var2);
       this.field20515 = var2.method122("Steps");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method102("Steps", this.field20515);
    }

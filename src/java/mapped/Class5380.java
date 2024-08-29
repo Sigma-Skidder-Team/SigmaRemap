@@ -15,8 +15,8 @@ public class Class5380 extends Module {
 
     public Class5380() {
         super(ModuleCategory.MOVEMENT, "Legit", "Legit Sprint jumping.");
-        this.method15972(new Class6004("Sprint", "Sprints when walking", true));
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you.", true));
+        this.registerSetting(new BooleanSetting("Sprint", "Sprints when walking", true));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
     }
 
     @EventTarget

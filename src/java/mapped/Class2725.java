@@ -16,7 +16,7 @@ public class Class2725 extends Class2595 {
 
    public Class2725(Class1013 var1, double var2, float var4, float var5, boolean var6) {
       this.field17220 = var1;
-      this.field17222 = var1.field5024;
+      this.field17222 = var1.world;
       this.field17223 = var2;
       this.field17224 = var1.method4230();
       this.field17227 = var4;
@@ -32,7 +32,7 @@ public class Class2725 extends Class2595 {
    public boolean method10803() {
       Class880 var3 = this.field17220.method4400();
       if (var3 != null) {
-         if (!var3.method2800()) {
+         if (!var3.isSpectator()) {
             if (!this.field17220.method4402()) {
                if (!(this.field17220.getDistanceSq(var3) < (double)(this.field17227 * this.field17227))) {
                   this.field17221 = var3;
@@ -90,13 +90,13 @@ public class Class2725 extends Class2595 {
    }
 
    private void method10934() {
-      BlockPos var3 = this.field17221.method3432();
+      BlockPos var3 = this.field17221.getPosition();
 
       for (int var4 = 0; var4 < 10; var4++) {
          int var5 = this.method10937(-3, 3);
          int var6 = this.method10937(-1, 1);
          int var7 = this.method10937(-3, 3);
-         boolean var8 = this.method10935(var3.method8304() + var5, var3.getY() + var6, var3.method8306() + var7);
+         boolean var8 = this.method10935(var3.getX() + var5, var3.getY() + var6, var3.getZ() + var7);
          if (var8) {
             return;
          }
@@ -118,11 +118,11 @@ public class Class2725 extends Class2595 {
    private boolean method10936(BlockPos var1) {
       Class2163 var4 = Class6762.method20633(this.field17222, var1.method8354());
       if (var4 == Class2163.field14186) {
-         Class7380 var5 = this.field17222.method6738(var1.method8313());
-         if (!this.field17229 && var5.method23383() instanceof Class3465) {
+         BlockState var5 = this.field17222.getBlockState(var1.method8313());
+         if (!this.field17229 && var5.getBlock() instanceof Class3465) {
             return false;
          } else {
-            BlockPos var6 = var1.method8338(this.field17220.method3432());
+            BlockPos var6 = var1.method8338(this.field17220.getPosition());
             return this.field17222.method7053(this.field17220, this.field17220.method3389().method19668(var6));
          }
       } else {

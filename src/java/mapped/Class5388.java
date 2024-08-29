@@ -13,9 +13,9 @@ public class Class5388 extends Module {
 
    public Class5388() {
       super(ModuleCategory.MOVEMENT, "Mineplex", "Highjump for Mineplex");
-      this.method15972(new Class6009<Float>("Motion", "Highjump motion", 1.1F, Float.class, 0.42F, 5.0F, 0.05F));
-      this.method15972(new Class6004("Disable", "Disable on landing.", true));
-      this.method15972(new Class6004("Fake fly", "Am i flying ?", false));
+      this.registerSetting(new Class6009<Float>("Motion", "Highjump motion", 1.1F, Float.class, 0.42F, 5.0F, 0.05F));
+      this.registerSetting(new BooleanSetting("Disable", "Disable on landing.", true));
+      this.registerSetting(new BooleanSetting("Fake fly", "Am i flying ?", false));
    }
 
    @Override
@@ -90,8 +90,8 @@ public class Class5388 extends Module {
                   var19 = 312.7;
                   Class5605 var26 = new Class5605(var17, var24 - var22, var19, true);
                   Class5605 var27 = new Class5605(var17, var24, var19, true);
-                  mc.getClientPlayNetHandler().sendPacket(var27);
-                  mc.getClientPlayNetHandler().sendPacket(var26);
+                  mc.getConnection().sendPacket(var27);
+                  mc.getConnection().sendPacket(var26);
                   this.field24026 = var24 + 0.42;
                   mc.player.method3215(var17, var24, var19);
                   this.field24025 = (double)this.method15977("Motion");

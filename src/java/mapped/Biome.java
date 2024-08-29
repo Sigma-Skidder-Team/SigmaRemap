@@ -90,7 +90,7 @@ public final class Biome {
       if (var1.getY() <= 64) {
          return var4;
       } else {
-         float var5 = (float)(field40312.method25315((double)((float)var1.method8304() / 8.0F), (double)((float)var1.method8306() / 8.0F), false) * 4.0);
+         float var5 = (float)(field40312.method25315((double)((float)var1.getX() / 8.0F), (double)((float)var1.getZ() / 8.0F), false) * 4.0);
          return var4 - (var5 + (float)var1.getY() - 64.0F) * 0.05F / 30.0F;
       }
    }
@@ -121,9 +121,9 @@ public final class Biome {
          return false;
       } else {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.method7020(Class1977.field12882, var2) < 10) {
-            Class7380 var6 = var1.method6738(var2);
+            BlockState var6 = var1.getBlockState(var2);
             Class7379 var7 = var1.method6739(var2);
-            if (var7.method23472() == Class9479.field44066 && var6.method23383() instanceof Class3404) {
+            if (var7.method23472() == Class9479.field44066 && var6.getBlock() instanceof Class3404) {
                if (!var3) {
                   return true;
                }
@@ -145,8 +145,8 @@ public final class Biome {
    public boolean method32506(Class1662 var1, BlockPos var2) {
       if (!(this.method32503(var2) >= 0.15F)) {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.method7020(Class1977.field12882, var2) < 10) {
-            Class7380 var5 = var1.method6738(var2);
-            if (var5.method23393() && Blocks.SNOW.method11579().method23443(var1, var2)) {
+            BlockState var5 = var1.getBlockState(var2);
+            if (var5.isAir() && Blocks.SNOW.method11579().method23443(var1, var2)) {
                return true;
             }
          }
@@ -170,8 +170,8 @@ public final class Biome {
          if (var1.method24344()) {
             for (Structure var15 : this.field40311.getOrDefault(var12, Collections.<Structure<?>>emptyList())) {
                var6.method10372(var4, var13, var12);
-               int var16 = var7.method8304() >> 4;
-               int var17 = var7.method8306() >> 4;
+               int var16 = var7.getX() >> 4;
+               int var17 = var7.getZ() >> 4;
                int var18 = var16 << 4;
                int var19 = var17 << 4;
 
@@ -181,9 +181,9 @@ public final class Biome {
                         var8 -> var8.method17112(var3, var1, var2, var6, new Class9764(var18, var19, var18 + 15, var19 + 15), new Class7481(var16, var17))
                      );
                } catch (Exception var22) {
-                  Class4526 var21 = Class4526.method14413(var22, "Feature placement");
-                  var21.method14410("Feature").method32807("Id", Registry.field16114.method9181(var15)).method32806("Description", () -> var15.toString());
-                  throw new Class2506(var21);
+                  CrashReport var21 = CrashReport.makeCrashReport(var22, "Feature placement");
+                  var21.makeCategory("Feature").addDetail("Id", Registry.field16114.getKey(var15)).addDetail("Description", () -> var15.toString());
+                  throw new ReportedException(var21);
                }
 
                var13++;
@@ -198,12 +198,12 @@ public final class Biome {
                try {
                   var26.method26521(var3, var2, var6, var7);
                } catch (Exception var23) {
-                  Class4526 var27 = Class4526.method14413(var23, "Feature placement");
-                  var27.method14410("Feature")
-                     .method32807("Id", Registry.field16112.method9181(var26.field33886))
-                     .method32807("Config", var26.field33887)
-                     .method32806("Description", () -> var26.field33886.toString());
-                  throw new Class2506(var27);
+                  CrashReport var27 = CrashReport.makeCrashReport(var23, "Feature placement");
+                  var27.makeCategory("Feature")
+                     .addDetail("Id", Registry.field16112.getKey(var26.field33886))
+                     .addDetail("Config", var26.field33887)
+                     .addDetail("Description", () -> var26.field33886.toString());
+                  throw new ReportedException(var27);
                }
 
                var13++;
@@ -237,7 +237,7 @@ public final class Biome {
       return Class9441.method36292(var3, var5);
    }
 
-   public void method32514(Random var1, Class1670 var2, int var3, int var4, int var5, double var6, Class7380 var8, Class7380 var9, int var10, long var11) {
+   public void method32514(Random var1, Class1670 var2, int var3, int var4, int var5, double var6, BlockState var8, BlockState var9, int var10, long var11) {
       Class9319 var15 = this.field40316.method24282().get();
       var15.method35210(var11);
       var15.method35209(var1, var2, this, var3, var4, var5, var6, var8, var9, var10, var11);
@@ -287,17 +287,17 @@ public final class Biome {
       return this.field40321.method25683();
    }
 
-   public Optional<Class3496> method32526() {
+   public Optional<BackgroundMusicSelector> getBackgroundMusic() {
       return this.field40321.method25684();
    }
 
-   public final Class100 method32527() {
+   public final Class100 getCategory() {
       return this.field40320;
    }
 
    @Override
    public String toString() {
-      ResourceLocation var3 = Class6714.field29430.method9181(this);
+      ResourceLocation var3 = Class6714.field29430.getKey(this);
       return var3 != null ? var3.toString() : super.toString();
    }
 

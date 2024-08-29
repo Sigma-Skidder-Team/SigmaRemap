@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public final class Class8905 extends Class8904 {
+public final class Class8905 extends DynamicRegistries {
    public static final Codec<Class8905> field40301 = method32473();
    private final Map<? extends RegistryKey<? extends Registry<?>>, ? extends Class2350<?>> field40302;
 
@@ -30,20 +30,20 @@ public final class Class8905 extends Class8904 {
       return var0.xmap(Class8905::new, var0x ->
               ((java.util.Set<Entry<K, V>>)(Object)(var0x.field40302.entrySet()))
                .stream()
-               .filter(var0xx -> Class8904.method32472().get(var0xx.getKey()).method35119())
+               .filter(var0xx -> DynamicRegistries.method32472().get(var0xx.getKey()).method35119())
                .collect(ImmutableMap.toImmutableMap(Entry::getKey, Entry::getValue))
       );
    }
 
    private static <E> DataResult<? extends Codec<E>> method32475(RegistryKey<? extends Registry<E>> var0) {
-      return Optional.ofNullable((Class9305<E>)Class8904.method32472().get(var0))
+      return Optional.ofNullable((Class9305<E>) DynamicRegistries.method32472().get(var0))
          .map(Class9305::method35118)
          .map(DataResult::success)
          .orElseGet(() -> DataResult.error("Unknown or not serializable registry: " + var0));
    }
 
    public Class8905() {
-      this(Class8904.method32472().keySet().stream().collect(Collectors.toMap(Function.identity(), Class8905::method32476)));
+      this(DynamicRegistries.method32472().keySet().stream().collect(Collectors.toMap(Function.identity(), Class8905::method32476)));
    }
 
    private Class8905(Map<? extends RegistryKey<? extends Registry<?>>, ? extends Class2350<?>> var1) {

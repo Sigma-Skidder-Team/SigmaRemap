@@ -44,7 +44,7 @@ public class Class6850 {
    private final Minecraft field29747;
    private final Screen field29748;
    private final Class1189 field29749;
-   private final Class9834 field29750;
+   private final FontRenderer field29750;
    private final boolean field29751;
    private final boolean field29752;
    private final int field29753;
@@ -60,7 +60,7 @@ public class Class6850 {
    private boolean field29763;
    private boolean field29764;
 
-   public Class6850(Minecraft var1, Screen var2, Class1189 var3, Class9834 var4, boolean var5, boolean var6, int var7, int var8, boolean var9, int var10) {
+   public Class6850(Minecraft var1, Screen var2, Class1189 var3, FontRenderer var4, boolean var5, boolean var6, int var7, int var8, boolean var9, int var10) {
       this.field29747 = var1;
       this.field29748 = var2;
       this.field29749 = var3;
@@ -107,7 +107,7 @@ public class Class6850 {
             int var5 = 0;
 
             for (Suggestion var7 : var4.getList()) {
-               var5 = Math.max(var5, this.field29750.method38820(var7.getText()));
+               var5 = Math.max(var5, this.field29750.getStringWidth(var7.getText()));
             }
 
             int var8 = MathHelper.method37775(
@@ -247,7 +247,7 @@ public class Class6850 {
       for (Entry<CommandNode<Class6618>, String> var11 : var6.entrySet()) {
          if (!(var11.getKey() instanceof LiteralCommandNode)) {
             var7.add(Class9125.method34038((String)var11.getValue(), var9));
-            var8 = Math.max(var8, this.field29750.method38820((String)var11.getValue()));
+            var8 = Math.max(var8, this.field29750.getStringWidth((String)var11.getValue()));
          }
       }
 
@@ -347,7 +347,7 @@ public class Class6850 {
    }
 
    // $VF: synthetic method
-   public static Class9834 method20850(Class6850 var0) {
+   public static FontRenderer method20850(Class6850 var0) {
       return var0.field29750;
    }
 

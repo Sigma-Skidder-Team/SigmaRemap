@@ -87,7 +87,7 @@ public class Class4250 extends Class4247 {
       GL11.glColor4d(0.0, 0.0, 0.0, (double)(0.6F * var1));
       GL11.glAlphaFunc(519, 0.0F);
       RenderSystem.enableBlend();
-      RenderSystem.method27862();
+      RenderSystem.disableTexture();
       RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field15990, Class1981.field12936);
       GL11.glEnable(2848);
       GL11.glBegin(3);

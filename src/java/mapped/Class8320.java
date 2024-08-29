@@ -60,7 +60,7 @@ public class Class8320 implements ArgumentType<Class9670> {
             var0.skip();
             char var5 = var0.peek();
             if (var5 == '{') {
-               Class39 var9 = new Class7671(var0).method25195();
+               CompoundNBT var9 = new Class7671(var0).method25195();
                var0.expect(']');
                return new Class8360(var9);
             } else {
@@ -78,7 +78,7 @@ public class Class8320 implements ArgumentType<Class9670> {
                throw field35743.createWithContext(var0);
             }
 
-            Class39 var6 = new Class7671(var0).method25195();
+            CompoundNBT var6 = new Class7671(var0).method25195();
             return new Class8358(var6);
          default:
             String var7 = method29132(var0);
@@ -88,7 +88,7 @@ public class Class8320 implements ArgumentType<Class9670> {
 
    private static Class8356 method29131(StringReader var0, String var1) throws CommandSyntaxException {
       if (var0.canRead() && var0.peek() == '{') {
-         Class39 var4 = new Class7671(var0).method25195();
+         CompoundNBT var4 = new Class7671(var0).method25195();
          return new Class8357(var1, var4);
       } else {
          return new Class8359(var1);
@@ -117,12 +117,12 @@ public class Class8320 implements ArgumentType<Class9670> {
       return var0 != ' ' && var0 != '"' && var0 != '[' && var0 != ']' && var0 != '.' && var0 != '{' && var0 != '}';
    }
 
-   private static Predicate<Class30> method29134(Class39 var0) {
+   private static Predicate<Class30> method29134(CompoundNBT var0) {
       return var1 -> Class8354.method29280(var0, var1, true);
    }
 
    // $VF: synthetic method
-   public static Predicate method29137(Class39 var0) {
+   public static Predicate method29137(CompoundNBT var0) {
       return method29134(var0);
    }
 }

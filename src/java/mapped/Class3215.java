@@ -8,7 +8,7 @@ public class Class3215 extends Class3213 {
    }
 
    @Override
-   public int method11601(Class7380 var1, Class1665 var2, BlockPos var3) {
+   public int method11601(BlockState var1, Class1665 var2, BlockPos var3) {
       return -8356741;
    }
 }

@@ -25,7 +25,7 @@ public class Class284 extends Class281 {
       return this.field1082.getOrDefault(var1, Class7318.field31380);
    }
 
-   public void method971(Map<ResourceLocation, JsonElement> var1, Class191 var2, Class7165 var3) {
+   public void method971(Map<ResourceLocation, JsonElement> var1, IResourceManager var2, IProfiler var3) {
       Builder<ResourceLocation, Class7318> var6 = ImmutableMap.builder();
       JsonElement var7 = (JsonElement)var1.remove(Class8793.field39533);
       if (var7 != null) {

@@ -43,7 +43,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    private static final Logger field38639 = LogManager.getLogger();
    public static final Marker field38640 = MarkerManager.getMarker("NETWORK");
    public static final Marker field38641 = MarkerManager.getMarker("NETWORK_PACKETS", field38640);
-   public static final AttributeKey<Class1858> field38642 = AttributeKey.valueOf("protocol");
+   public static final AttributeKey<ProtocolType> field38642 = AttributeKey.valueOf("protocol");
    public static final Class8112<NioEventLoopGroup> field38643 = new Class8112<NioEventLoopGroup>(
       () -> new NioEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Client IO #%d").setDaemon(true).build())
    );
@@ -79,14 +79,14 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       this.field38649 = this.field38648.remoteAddress();
 
       try {
-         this.method30690(Class1858.field9901);
+         this.method30690(ProtocolType.field9901);
         // this.field38660 = new Class8005(this.field38648);
       } catch (Throwable var5) {
          field38639.fatal(var5);
       }
    }
 
-   public void method30690(Class1858 var1) {
+   public void method30690(ProtocolType var1) {
       this.field38648.attr(field38642).set(var1);
       this.field38648.config().setAutoRead(true);
       field38639.debug("Enabled auto read");
@@ -143,12 +143,12 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       var0.method17180((T) var1);
    }
 
-   public void method30692(Class5104 var1) {
+   public void setNetHandler(Class5104 var1) {
       Validate.notNull(var1, "packetListener", new Object[0]);
       this.field38650 = var1;
    }
 
-   public void method30693(Packet<?> var1) {
+   public void sendPacket(Packet<?> var1) {
       this.method30694(var1, null);
    }
 
@@ -157,7 +157,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       Client.getInstance().getEventManager().call(var5);
       var1 = var5.method13932();
       if (!var5.isCancelled()) {
-         if (!this.method30707()) {
+         if (!this.isChannelOpen()) {
             this.field38647.add(new Class9742(var1, var2));
          } else {
             this.method30697();
@@ -168,7 +168,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
 
    public void method30695(Packet<?> var1) {
       GenericFutureListener var4 = (GenericFutureListener)null;
-      if (!this.method30707()) {
+      if (!this.isChannelOpen()) {
          this.field38647.add(new Class9742(var1, var4));
       } else {
          this.method30697();
@@ -177,8 +177,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    }
 
    private void method30696(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
-      Class1858 var5 = Class1858.method8106(var1);
-      Class1858 var6 = (Class1858)this.field38648.attr(field38642).get();
+      ProtocolType var5 = ProtocolType.method8106(var1);
+      ProtocolType var6 = (ProtocolType)this.field38648.attr(field38642).get();
       this.field38655++;
       if (var6 != var5) {
          field38639.debug("Disabled auto read");
@@ -223,7 +223,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       }
    }
 
-   public void method30698() {
+   public void tick() {
       this.method30697();
       if (this.field38650 instanceof Class5109) {
          ((Class5109)this.field38650).method15599();
@@ -287,7 +287,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       return var5;
    }
 
-   public static NetworkManager method30704(SocketAddress var0) {
+   public static NetworkManager provideLocalClient(SocketAddress var0) {
       NetworkManager var3 = new NetworkManager(Class1975.CLIENTBOUND);
       ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)field38645.method28097())).handler(new Class9317(var3)))
             .channel(LocalChannel.class))
@@ -306,7 +306,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
       return this.field38652;
    }
 
-   public boolean method30707() {
+   public boolean isChannelOpen() {
       return this.field38648 != null && this.field38648.isOpen();
    }
 

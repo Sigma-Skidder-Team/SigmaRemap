@@ -10,8 +10,8 @@ import java.util.Map;
 
 public class Class8634 {
    public static final Class8634 field38839 = new Class8634();
-   private final Class7608<Class3257> field38840;
-   private final Class3257 field38841;
+   private final Class7608<Item> field38840;
+   private final Item field38841;
    private final Class8840 field38842;
    private final Class8840 field38843;
    private final Class8605[] field38844;
@@ -31,7 +31,7 @@ public class Class8634 {
    }
 
    public Class8634(
-      Class7608<Class3257> var1, Class3257 var2, Class8840 var3, Class8840 var4, Class8605[] var5, Class8605[] var6, Class8812 var7, Class8811 var8
+           Class7608<Item> var1, Item var2, Class8840 var3, Class8840 var4, Class8605[] var5, Class8605[] var6, Class8812 var7, Class8811 var8
    ) {
       this.field38840 = var1;
       this.field38841 = var2;
@@ -46,11 +46,11 @@ public class Class8634 {
    public boolean method31016(ItemStack var1) {
       if (this == field38839) {
          return true;
-      } else if (this.field38840 != null && !this.field38840.method24917(var1.method32107())) {
+      } else if (this.field38840 != null && !this.field38840.method24917(var1.getItem())) {
          return false;
-      } else if (this.field38841 != null && var1.method32107() != this.field38841) {
+      } else if (this.field38841 != null && var1.getItem() != this.field38841) {
          return false;
-      } else if (this.field38842.method32015(var1.method32179())) {
+      } else if (this.field38842.method32015(var1.getCount())) {
          if (!this.field38843.method32004() && !var1.method32115()) {
             return false;
          } else if (this.field38843.method32015(var1.method32119() - var1.method32117())) {
@@ -95,10 +95,10 @@ public class Class8634 {
          Class8840 var5 = Class8840.method32016(var3.get("durability"));
          if (!var3.has("data")) {
             Class8811 var6 = Class8811.method31812(var3.get("nbt"));
-            Class3257 var7 = null;
+            Item var7 = null;
             if (var3.has("item")) {
                ResourceLocation var8 = new ResourceLocation(JSONUtils.method32763(var3, "item"));
-               var7 = Registry.field16075.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
+               var7 = Registry.ITEM.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
             }
 
             Class7608 var12 = null;
@@ -133,7 +133,7 @@ public class Class8634 {
       } else {
          JsonObject var3 = new JsonObject();
          if (this.field38841 != null) {
-            var3.addProperty("item", Registry.field16075.method9181(this.field38841).toString());
+            var3.addProperty("item", Registry.ITEM.getKey(this.field38841).toString());
          }
 
          if (this.field38840 != null) {
@@ -164,7 +164,7 @@ public class Class8634 {
          }
 
          if (this.field38846 != null) {
-            var3.addProperty("potion", Registry.field16076.method9181(this.field38846).toString());
+            var3.addProperty("potion", Registry.field16076.getKey(this.field38846).toString());
          }
 
          return var3;

@@ -53,6 +53,6 @@ public class Class9068 {
    }
 
    static {
-      Class7729.method25566();
+      Bootstrap.method25566();
    }
 }

@@ -17,7 +17,7 @@ public class Class9291 {
             new Class9238(var3.method8343(), Direction.NORTH),
             new Class9238(var3.method8345(), Direction.EAST),
             new Class9238(var3.method8313(), Direction.field673),
-            new Class9238(var3.method8311(), Direction.field672)
+            new Class9238(var3.method8311(), Direction.DOWN)
          };
 
          for (Class9238 var8 : var4) {
@@ -47,7 +47,7 @@ public class Class9291 {
             return var5;
          } else {
             Class9238[] var6 = new Class9238[]{
-               new Class9238(var1.method8311(), Direction.field672),
+               new Class9238(var1.method8311(), Direction.DOWN),
                new Class9238(var1.method8341(), Direction.SOUTH),
                new Class9238(var1.method8347(), Direction.WEST),
                new Class9238(var1.method8343(), Direction.NORTH),

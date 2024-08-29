@@ -32,7 +32,7 @@ public abstract class Module {
         this.descriptor = var3;
     }
 
-    public void method15972(Setting var1) {
+    public void registerSetting(Setting var1) {
         if (!this.field23397.containsKey(var1.method18625())) {
             this.field23397.put(var1.method18625(), var1);
         } else {
@@ -265,7 +265,7 @@ public abstract class Module {
 
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                             && Client.getInstance().getModuleManager().method14662(Class5359.class).method15974("Sound")) {
-                        Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27131, 0.6F));
+                        Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27131, 0.6F));
                     }
                 }
 
@@ -279,7 +279,7 @@ public abstract class Module {
 
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
                         && Client.getInstance().getModuleManager().method14662(Class5359.class).method15974("Sound")) {
-                    Minecraft.getInstance().method1546().method1000(Class6339.method19292(Class6067.field27131, 0.7F));
+                    Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27131, 0.7F));
                 }
 
                 this.isInDevelopment();

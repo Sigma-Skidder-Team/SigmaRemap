@@ -12,8 +12,8 @@ public class Class5299 extends Module {
 
     public Class5299() {
         super(ModuleCategory.MOVEMENT, "Jump", "Jump spider");
-        this.method15972(new Class6005("Mode", "Mode", 0, "Spartan"));
-        this.method15972(new Class6004("AutoJump", "Automatically jumps for you", true));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Spartan"));
+        this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you", true));
     }
 
     @Override
@@ -32,10 +32,10 @@ public class Class5299 extends Module {
                     var1.method13995((double) ((int) mc.player.getPositionVec().field18049) - mc.player.getPositionVec().field18049);
                     this.field23832 = true;
                 }
-            } else if (this.method15974("AutoJump") || mc.gameSettings.field44636.method8509()) {
+            } else if (this.method15974("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
                 mc.player.method2914();
                 var1.method13995(mc.player.method3433().field18049);
-            } else if (!mc.gameSettings.field44637.method8509()) {
+            } else if (!mc.gameSettings.field44637.isKeyDown()) {
                 Class9567.method37088(var1, 0.28 + (double) Class9567.method37078() * 0.05);
                 var1.method13995(0.0);
             } else {
@@ -72,7 +72,7 @@ public class Class5299 extends Module {
                 }
 
                 if (this.field23832) {
-                    if (this.method15974("AutoJump") || mc.gameSettings.field44636.method8509()) {
+                    if (this.method15974("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
                         this.field23832 = !this.field23832;
                     }
 

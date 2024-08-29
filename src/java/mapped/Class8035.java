@@ -36,9 +36,9 @@ public class Class8035 extends Class8033 {
    @Override
    public boolean method27553(BlockPos var1, BlockPos var2, BlockPos var3, Random var4) {
       Direction var7 = Direction.method555(Class1892.field11092, this.field34528);
-      float var8 = (float)Math.abs((var2.method8304() - var3.method8304()) * var7.method539());
+      float var8 = (float)Math.abs((var2.getX() - var3.getX()) * var7.method539());
       float var9 = (float)Math.abs((var2.getY() - var3.getY()) * var7.method540());
-      float var10 = (float)Math.abs((var2.method8306() - var3.method8306()) * var7.method541());
+      float var10 = (float)Math.abs((var2.getZ() - var3.getZ()) * var7.method541());
       int var11 = (int)(var8 + var9 + var10);
       float var12 = var4.nextFloat();
       return (double)var12

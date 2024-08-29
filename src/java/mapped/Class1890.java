@@ -17,7 +17,7 @@ public enum Class1890 implements Class1876 {
    field11085("is_wet");
 
    private String field11086;
-   private Class8853 field11087;
+   private EntityRendererManager field11087;
    private static final Class1890[] field11088 = values();
    private static final Class1890[] field11089 = new Class1890[]{
       field11072,
@@ -38,7 +38,7 @@ public enum Class1890 implements Class1876 {
 
    private Class1890(String var3) {
       this.field11086 = var3;
-      this.field11087 = Minecraft.getInstance().method1554();
+      this.field11087 = Minecraft.getInstance().getRenderManager();
    }
 
    public String method8148() {
@@ -66,7 +66,7 @@ public enum Class1890 implements Class1876 {
                case 3:
                   return var5.method3005();
                case 4:
-                  return var5.method3340();
+                  return var5.isGlowing();
                case 5:
                   return var5.field4952 > 0;
                case 6:

@@ -5,25 +5,25 @@ import java.util.List;
 public class Class903 extends Class901 {
    private static String[] field5146;
 
-   public Class903(Class8992<? extends Class903> var1, World var2) {
+   public Class903(EntityType<? extends Class903> var1, World var2) {
       super(var1, var2);
    }
 
    public Class903(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      super(Class8992.field41020, var2, var4, var6, var8, var10, var12, var1);
+      super(EntityType.field41020, var2, var4, var6, var8, var10, var12, var1);
    }
 
    public Class903(World var1, Class880 var2, double var3, double var5, double var7) {
-      super(Class8992.field41020, var2, var3, var5, var7, var1);
+      super(EntityType.field41020, var2, var3, var5, var7, var1);
    }
 
    @Override
-   public void method3464(Class8710 var1) {
+   public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       Entity var4 = this.method3460();
-      if ((var1.method31417() != Class2100.field13691 || !((Class8709)var1).method31416().method3359(var4)) && !this.field5024.field9020) {
-         List<Class880> var5 = this.field5024.method7182(Class880.class, this.method3389().method19663(4.0, 2.0, 4.0));
-         Class999 var6 = new Class999(this.field5024, this.getPosX(), this.getPosY(), this.getPosZ());
+      if ((var1.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)var1).getEntity().method3359(var4)) && !this.world.field9020) {
+         List<Class880> var5 = this.world.method7182(Class880.class, this.method3389().method19663(4.0, 2.0, 4.0));
+         Class999 var6 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
          if (var4 instanceof Class880) {
             var6.method4113((Class880)var4);
          }
@@ -43,8 +43,8 @@ public class Class903 extends Class901 {
             }
          }
 
-         this.field5024.method6999(2006, this.method3432(), !this.method3245() ? 1 : -1);
-         this.field5024.method6916(var6);
+         this.world.method6999(2006, this.getPosition(), !this.method3245() ? 1 : -1);
+         this.world.method6916(var6);
          this.method2904();
       }
    }

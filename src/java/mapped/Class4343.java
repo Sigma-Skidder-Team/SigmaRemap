@@ -126,18 +126,18 @@ public class Class4343 extends Class4339 implements Class4342 {
                var4 + 6 - 1,
                123,
                27,
-               ((Class6005)var2).method18634(),
-               ((Class6005)var2).method18632()
+               ((ModeSetting)var2).method18634(),
+               ((ModeSetting)var2).method18632()
             );
             this.field21223.put(var34, var2);
             var2.method18616(var2x -> {
-               if (var42.method13655() != ((Class6005)var2).method18632()) {
-                  var42.method13656(((Class6005)var2).method18632());
+               if (var42.method13655() != ((ModeSetting)var2).method18632()) {
+                  var42.method13656(((ModeSetting)var2).method18632());
                }
             });
             var42.method13036(var2x -> {
-               ((Class6005)var2).method18633(((Class4363)var2x).method13655());
-               var42.method13656(((Class6005)var2).method18632());
+               ((ModeSetting)var2).method18633(((Class4363)var2x).method13655());
+               var42.method13656(((ModeSetting)var2).method18632());
             });
             var42.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
             var1.method13230(var34);

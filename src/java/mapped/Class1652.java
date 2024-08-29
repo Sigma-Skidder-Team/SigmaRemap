@@ -84,11 +84,11 @@ public class Class1652<R> implements AutoCloseable {
    }
 
    private void method6646(Class7481 var1) {
-      this.method6648(var1, Class8063.field34602, this.method6647(var1));
+      this.method6648(var1, NBTDynamicOps.INSTANCE, this.method6647(var1));
    }
 
    @Nullable
-   private Class39 method6647(Class7481 var1) {
+   private CompoundNBT method6647(Class7481 var1) {
       try {
          return this.field8980.method7412(var1);
       } catch (IOException var5) {
@@ -101,7 +101,7 @@ public class Class1652<R> implements AutoCloseable {
       if (var3 != null) {
          Dynamic<T> var6 = new Dynamic<>(var2, var3);
          int var7 = method6653(var6);
-         int var8 = SharedConstants.method34773().getWorldVersion();
+         int var8 = SharedConstants.getVersion().getWorldVersion();
          boolean var9 = var7 != var8;
          Dynamic<T> var10 = this.field8985.update(this.field8986.method8778(), var6, var7, var8);
          OptionalDynamic<T> var11 = var10.get("Sections");
@@ -127,12 +127,12 @@ public class Class1652<R> implements AutoCloseable {
    }
 
    private void method6649(Class7481 var1) {
-      Dynamic var4 = this.method6650(var1, Class8063.field34602);
+      Dynamic var4 = this.method6650(var1, NBTDynamicOps.INSTANCE);
       Class30 var5 = (Class30)var4.getValue();
-      if (!(var5 instanceof Class39)) {
+      if (!(var5 instanceof CompoundNBT)) {
          field8979.error("Expected compound tag, got {}", var5);
       } else {
-         this.field8980.method7411(var1, (Class39)var5);
+         this.field8980.method7411(var1, (CompoundNBT)var5);
       }
    }
 
@@ -154,7 +154,7 @@ public class Class1652<R> implements AutoCloseable {
          var2,
          var2.createMap(
             ImmutableMap.of(
-               var2.createString("Sections"), var2.createMap(var5), var2.createString("DataVersion"), var2.createInt(SharedConstants.method34773().getWorldVersion())
+               var2.createString("Sections"), var2.createMap(var5), var2.createString("DataVersion"), var2.createInt(SharedConstants.getVersion().getWorldVersion())
             )
          )
       );

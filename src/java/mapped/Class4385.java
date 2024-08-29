@@ -13,6 +13,6 @@ public class Class4385 {
 
    public void method13754(float var1, float var2) {
       this.field21399 += var1;
-      this.field21398.method24087(this.field21397, MathHelper.method37763(this.field21399 * 0.001F) * 5.0F + 25.0F, -this.field21399 * 0.1F, var2);
+      this.field21398.method24087(this.field21397, MathHelper.sin(this.field21399 * 0.001F) * 5.0F + 25.0F, -this.field21399 * 0.1F, var2);
    }
 }

@@ -100,7 +100,7 @@ public class Class3268 extends Class3264 {
    }
 
    @Override
-   public boolean method11715(Class7380 var1) {
+   public boolean method11715(BlockState var1) {
       int var4 = this.method11783().method9013();
       if (var1.method23448(Blocks.field36527)
          || var1.method23448(Blocks.field37123)
@@ -128,7 +128,7 @@ public class Class3268 extends Class3264 {
    }
 
    @Override
-   public float method11708(ItemStack var1, Class7380 var2) {
+   public float method11708(ItemStack var1, BlockState var2) {
       Class8649 var5 = var2.method23384();
       return var5 != Class8649.field38967 && var5 != Class8649.field38969 && var5 != Class8649.field38966 ? super.method11708(var1, var2) : this.field18752;
    }

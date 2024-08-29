@@ -104,6 +104,6 @@ public class Class5237 extends Module {
 
     private void method16328(String var1) {
         this.field23591 = var1;
-        mc.getClientPlayNetHandler().sendPacket(new Class5562(0, "/" + var1));
+        mc.getConnection().sendPacket(new Class5562(0, "/" + var1));
     }
 }

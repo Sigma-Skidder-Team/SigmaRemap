@@ -42,7 +42,7 @@ public class Class7369 extends Class7361 {
 
    private void method23373() {
       if (this.field31540 != null && this.field31540.method28693()) {
-         BlockPos var3 = this.field31519.field5024.method7006(Class101.field300, new BlockPos(Class2909.field17994));
+         BlockPos var3 = this.field31519.world.method7006(Class101.field300, new BlockPos(Class2909.field17994));
          int var4 = this.field31519.method4337() != null ? this.field31519.method4337().method26125() : 0;
          if (this.field31519.method3013().nextInt(var4 + 3) == 0) {
             this.field31519.method4336().method32671(Class9598.field44898);
@@ -50,13 +50,13 @@ public class Class7369 extends Class7361 {
          }
 
          double var5 = 64.0;
-         PlayerEntity var7 = this.field31519.field5024.method7190(field31539, (double)var3.method8304(), (double)var3.getY(), (double)var3.method8306());
+         PlayerEntity var7 = this.field31519.world.method7190(field31539, (double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
          if (var7 != null) {
             var5 = var3.method8319(var7.getPositionVec(), true) / 512.0;
          }
 
          if (var7 != null
-            && !var7.field4919.field29606
+            && !var7.abilities.field29606
             && (this.field31519.method3013().nextInt(MathHelper.method37772((int)var5) + 2) == 0 || this.field31519.method3013().nextInt(var4 + 2) == 0)) {
             this.method23374(var7);
             return;
@@ -106,8 +106,8 @@ public class Class7369 extends Class7361 {
       if (this.field31540 != null && !this.field31540.method28693()) {
          BlockPos var3 = this.field31540.method28704();
          this.field31540.method28691();
-         double var4 = (double)var3.method8304();
-         double var6 = (double)var3.method8306();
+         double var4 = (double)var3.getX();
+         double var6 = (double)var3.getZ();
 
          double var8;
          do {
@@ -119,8 +119,8 @@ public class Class7369 extends Class7361 {
    }
 
    @Override
-   public void method23361(Class1001 var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
-      if (var4 != null && !var4.field4919.field29606) {
+   public void method23361(EnderCrystalEntity var1, BlockPos var2, Class8654 var3, PlayerEntity var4) {
+      if (var4 != null && !var4.abilities.field29606) {
          this.method23374(var4);
       }
    }

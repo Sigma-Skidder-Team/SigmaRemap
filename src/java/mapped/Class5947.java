@@ -7,38 +7,38 @@ public class Class5947 extends Class5942<Class954> {
    private final Class2848 field25938 = new Class2848();
    private static double field25939 = 4096.0;
 
-   public Class5947(Class8086 var1) {
+   public Class5947(TileEntityRendererDispatcher var1) {
       super(var1);
    }
 
    public void method18462(Class954 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      Class7380 var9 = var1.method3775();
-      var3.method35294();
+      BlockState var9 = var1.method3775();
+      var3.push();
       float var10 = 0.6666667F;
-      if (!(var9.method23383() instanceof Class3374)) {
-         var3.method35291(0.5, 0.5, 0.5);
+      if (!(var9.getBlock() instanceof Class3374)) {
+         var3.translate(0.5, 0.5, 0.5);
          float var11 = -var9.<Direction>method23463(Class3375.field18972).method551();
          var3.method35293(Class7680.field32900.method25286(var11));
-         var3.method35291(0.0, -0.3125, -0.4375);
+         var3.translate(0.0, -0.3125, -0.4375);
          this.field25938.field17651.field31039 = false;
       } else {
-         var3.method35291(0.5, 0.5, 0.5);
+         var3.translate(0.5, 0.5, 0.5);
          float var26 = -((float)(var9.<Integer>method23463(Class3374.field18970) * 360) / 16.0F);
          var3.method35293(Class7680.field32900.method25286(var26));
          this.field25938.field17651.field31039 = true;
       }
 
-      var3.method35294();
+      var3.push();
       var3.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-      Class7826 var27 = method18473(var9.method23383());
+      Class7826 var27 = method18473(var9.getBlock());
       Class5422 var12 = var27.method26200(var4, this.field25938::method11028);
       this.field25938.field17650.method22680(var3, var12, var5, var6);
       this.field25938.field17651.method22680(var3, var12, var5, var6);
       var3.method35295();
       if (method18474(var1)) {
-         Class9834 var13 = this.field25928.method27967();
+         FontRenderer var13 = this.field25928.method27967();
          float var14 = 0.010416667F;
-         var3.method35291(0.0, 0.33333334F, 0.046666667F);
+         var3.translate(0.0, 0.33333334F, 0.046666667F);
          var3.method35292(0.010416667F, -0.010416667F, 0.010416667F);
          int var15 = var1.method3844().method314();
          if (Class7944.method26911()) {
@@ -79,11 +79,11 @@ public class Class5947 extends Class5942<Class954> {
    }
 
    private static boolean method18474(Class954 var0) {
-      if (!Class8981.field40609) {
+      if (! Shaders.field40609) {
          if (!Class7944.field34162) {
-            BlockPos var3 = var0.method3774();
-            Entity var4 = Minecraft.getInstance().method1550();
-            double var5 = var4.method3276((double)var3.method8304(), (double)var3.getY(), (double)var3.method8306());
+            BlockPos var3 = var0.getPos();
+            Entity var4 = Minecraft.getInstance().getRenderViewEntity();
+            double var5 = var4.method3276((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
             if (var5 > field25939) {
                return false;
             }
@@ -98,7 +98,7 @@ public class Class5947 extends Class5942<Class954> {
    public static void method18475() {
       Minecraft var2 = Minecraft.getInstance();
       double var3 = Class7944.method26833(var2.gameSettings.field44669, 1.0, 120.0);
-      double var5 = Math.max(1.5 * (double)var2.method1580().method8044() / var3, 16.0);
+      double var5 = Math.max(1.5 * (double)var2.getMainWindow().method8044() / var3, 16.0);
       field25939 = var5 * var5;
    }
 }

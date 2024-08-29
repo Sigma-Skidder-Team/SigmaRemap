@@ -46,7 +46,7 @@ public class Class3728 extends Class3676<Class1042> {
       this.method12638(var2);
       if (!var5) {
          Class6983.method21577(var3, var4, this.field19826, 1);
-         var3.method2992().method21406(Class8830.field39815, Class9378.method35577(var1.method6813(), var4));
+         var3.method2992().method21406(Class8830.field39815, Class9378.method35577(var1.getDimensionKey(), var4));
          Class7393.method23615(var1, var4);
       }
    }

@@ -25,8 +25,8 @@ public class Class161 implements ILootCondition {
    }
 
    public boolean test(LootContext var1) {
-      Class7380 var4 = var1.<Class7380>method26081(Class9525.field44336);
-      return var4 != null && this.field523 == var4.method23383() && this.field524.method23258(var4);
+      BlockState var4 = var1.<BlockState>method26081(Class9525.field44336);
+      return var4 != null && this.field523 == var4.getBlock() && this.field524.method23258(var4);
    }
 
    public static Class7520 method486(Block var0) {

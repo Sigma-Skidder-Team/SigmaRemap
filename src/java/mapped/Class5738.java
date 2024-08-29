@@ -2,17 +2,17 @@ package mapped;
 
 public class Class5738 extends Class5715<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");
-   private static final Class4520 field25160 = Class4520.method14310(field25159);
+   private static final RenderType field25160 = RenderType.getEntityCutout(field25159);
 
-   public Class5738(Class8853 var1) {
+   public Class5738(EntityRendererManager var1) {
       super(var1);
    }
 
    public void method17853(Class904 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       PlayerEntity var9 = var1.method3544();
       if (var9 != null) {
-         var4.method35294();
-         var4.method35294();
+         var4.push();
+         var4.push();
          var4.method35292(0.5F, 0.5F, 0.5F);
          var4.method35293(this.field25097.method32230());
          var4.method35293(Class7680.field32900.method25286(180.0F));
@@ -27,22 +27,22 @@ public class Class5738 extends Class5715<Class904> {
          var4.method35295();
          int var14 = var9.method2967() != Class2205.field14418 ? -1 : 1;
          ItemStack var15 = var9.method3090();
-         if (var15.method32107() != Class8514.field37906) {
+         if (var15.getItem() != Items.field37906) {
             var14 = -var14;
          }
 
          float var16 = var9.method3137(var3);
-         float var17 = MathHelper.method37763(MathHelper.method37765(var16) * (float) Math.PI);
+         float var17 = MathHelper.sin(MathHelper.method37765(var16) * (float) Math.PI);
          float var18 = MathHelper.method37821(var3, var9.field4966, var9.field4965) * (float) (Math.PI / 180.0);
-         double var19 = (double) MathHelper.method37763(var18);
-         double var21 = (double) MathHelper.method37764(var18);
+         double var19 = (double) MathHelper.sin(var18);
+         double var21 = (double) MathHelper.cos(var18);
          double var23 = (double)var14 * 0.35;
          double var25 = 0.8;
          double var27;
          double var29;
          double var31;
          float var36;
-         if ((this.field25097.field40020 == null || this.field25097.field40020.method37173().method8246()) && var9 == Minecraft.getInstance().player) {
+         if ((this.field25097.field40020 == null || this.field25097.field40020.getPointOfView().func_243192_a()) && var9 == Minecraft.getInstance().player) {
             double var33 = this.field25097.field40020.field44669;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
@@ -67,7 +67,7 @@ public class Class5738 extends Class5715<Class904> {
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);
-         Class5422 var44 = var5.method25597(Class4520.method14345());
+         Class5422 var44 = var5.method25597(RenderType.method14345());
          Class9367 var45 = var4.method35296().method32361();
          byte var46 = 16;
 
@@ -87,16 +87,16 @@ public class Class5738 extends Class5715<Class904> {
 
    private static void method17922(Class5422 var0, Class9367 var1, Class8967 var2, int var3, float var4, int var5, int var6, int var7) {
       var0.method17040(var1, var4 - 0.5F, (float)var5 - 0.5F, 0.0F)
-         .method17026(255, 255, 255, 255)
+         .color(255, 255, 255, 255)
          .method17027((float)var6, (float)var7)
          .method17035(Class213.field798)
          .method17034(var3)
          .method17041(var2, 0.0F, 1.0F, 0.0F)
-         .method17031();
+         .endVertex();
    }
 
    private static void method17923(float var0, float var1, float var2, Class5422 var3, Class9367 var4, float var5) {
-      var3.method17040(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).method17026(0, 0, 0, 255).method17031();
+      var3.method17040(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).color(0, 0, 0, 255).endVertex();
    }
 
    public ResourceLocation method17843(Class904 var1) {

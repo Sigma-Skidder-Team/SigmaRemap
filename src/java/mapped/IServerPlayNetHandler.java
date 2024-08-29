@@ -29,7 +29,7 @@ public interface IServerPlayNetHandler extends Class5104 {
 
    void method15623(Class5612 var1);
 
-   void method15624(Class5492 var1);
+   void method15624(CPlayerDiggingPacket var1);
 
    void processEntityAction(CEntityActionPacket var1);
 

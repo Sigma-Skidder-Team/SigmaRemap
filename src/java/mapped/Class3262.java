@@ -2,9 +2,9 @@ package mapped;
 
 import java.util.function.Predicate;
 
-public abstract class Class3262 extends Class3257 {
-   public static final Predicate<ItemStack> field18748 = var0 -> var0.method32107().method11743(Class5985.field26119);
-   public static final Predicate<ItemStack> field18749 = field18748.or(var0 -> var0.method32107() == Class8514.field38068);
+public abstract class Class3262 extends Item {
+   public static final Predicate<ItemStack> field18748 = var0 -> var0.getItem().method11743(Class5985.field26119);
+   public static final Predicate<ItemStack> field18749 = field18748.or(var0 -> var0.getItem() == Items.field38068);
 
    public Class3262(Class5643 var1) {
       super(var1);
@@ -18,7 +18,7 @@ public abstract class Class3262 extends Class3257 {
 
    public static ItemStack method11774(Class880 var0, Predicate<ItemStack> var1) {
       if (!var1.test(var0.getHeldItem(Hand.field183))) {
-         return !var1.test(var0.getHeldItem(Hand.field182)) ? ItemStack.EMPTY : var0.getHeldItem(Hand.field182);
+         return !var1.test(var0.getHeldItem(Hand.MAIN_HAND)) ? ItemStack.EMPTY : var0.getHeldItem(Hand.MAIN_HAND);
       } else {
          return var0.getHeldItem(Hand.field183);
       }

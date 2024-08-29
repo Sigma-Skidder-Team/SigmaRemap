@@ -47,13 +47,13 @@ public class Class5283 extends Module {
         if (this.method15996()) {
             if (mc.player != null) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-                    if (!Minecraft.getInstance().gameSettings.field44662) {
+                    if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         float var4 = Math.min(1.0F, 0.6F + this.field23756.calcPercent() * 4.0F);
-                        String var5 = mc.player.method3432().method8304()
+                        String var5 = mc.player.getPosition().getX()
                                 + " "
-                                + mc.player.method3432().getY()
+                                + mc.player.getPosition().getY()
                                 + " "
-                                + mc.player.method3432().method8306();
+                                + mc.player.getPosition().getZ();
                         byte var6 = 85;
                         int var7 = var1.method13960();
                         short var8 = 150;

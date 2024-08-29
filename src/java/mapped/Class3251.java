@@ -9,8 +9,8 @@ public abstract class Class3251 extends Class3241 implements Class3255 {
    }
 
    @Override
-   public Class944 method11646(Class1665 var1) {
-      return new Class968();
+   public TileEntity method11646(Class1665 var1) {
+      return new SkullTileEntity();
    }
 
    public Class2137 method11696() {
@@ -18,7 +18,7 @@ public abstract class Class3251 extends Class3241 implements Class3255 {
    }
 
    @Override
-   public boolean method11494(Class7380 var1, Class1665 var2, BlockPos var3, Class1947 var4) {
+   public boolean method11494(BlockState var1, Class1665 var2, BlockPos var3, Class1947 var4) {
       return false;
    }
 }

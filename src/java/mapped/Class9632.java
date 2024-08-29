@@ -8,8 +8,8 @@ public class Class9632 {
    private final Class1662 field45050;
    private final BlockPos field45051;
    private final boolean field45052;
-   private Class7380 field45053;
-   private Class944 field45054;
+   private BlockState field45053;
+   private TileEntity field45054;
    private boolean field45055;
 
    public Class9632(Class1662 var1, BlockPos var2, boolean var3) {
@@ -18,18 +18,18 @@ public class Class9632 {
       this.field45052 = var3;
    }
 
-   public Class7380 method37548() {
+   public BlockState method37548() {
       if (this.field45053 == null && (this.field45052 || this.field45050.method7017(this.field45051))) {
-         this.field45053 = this.field45050.method6738(this.field45051);
+         this.field45053 = this.field45050.getBlockState(this.field45051);
       }
 
       return this.field45053;
    }
 
    @Nullable
-   public Class944 method37549() {
+   public TileEntity method37549() {
       if (this.field45054 == null && !this.field45055) {
-         this.field45054 = this.field45050.method6759(this.field45051);
+         this.field45054 = this.field45050.getTileEntity(this.field45051);
          this.field45055 = true;
       }
 
@@ -44,7 +44,7 @@ public class Class9632 {
       return this.field45051;
    }
 
-   public static Predicate<Class9632> method37552(Predicate<Class7380> var0) {
+   public static Predicate<Class9632> method37552(Predicate<BlockState> var0) {
       return var1 -> var1 != null && var0.test(var1.method37548());
    }
 }

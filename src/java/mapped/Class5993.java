@@ -5,9 +5,9 @@ import java.util.List;
 public final class Class5993 implements Class5991 {
    private static String[] field26164;
    public final List<Class9806> field26165;
-   public final Class9834 field26166;
+   public final FontRenderer field26166;
 
-   public Class5993(List<Class9806> var1, Class9834 var2) {
+   public Class5993(List<Class9806> var1, FontRenderer var2) {
       this.field26165 = var1;
       this.field26166 = var2;
    }

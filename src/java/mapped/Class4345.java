@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 public class Class4345 extends Class4339 {
    private Module field21229;
-   public ClientResource field21230 = Class7925.field33946;
+   public ClientResource field21230 = ClassicDecryption.regular20;
    public Animation field21231 = new Animation(150, 150);
    public HashMap<Module, Class4305> field21232 = new HashMap<Module, Class4305>();
 
@@ -106,14 +106,14 @@ public class Class4345 extends Class4339 {
             int var15 = 80;
             int var19 = 20;
             Class4366 var23 = new Class4366(
-               var1, var2.method18625() + "btn", var3, var4 + 27, 80, 20, ((Class6005)var2).method18634(), ((Class6005)var2).method18632()
+               var1, var2.method18625() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).method18634(), ((ModeSetting)var2).method18632()
             );
             var2.method18616(var2x -> {
-               if (var23.method13671() != ((Class6005)var2).method18632()) {
-                  var23.method13672(((Class6005)var2).method18632());
+               if (var23.method13671() != ((ModeSetting)var2).method18632()) {
+                  var23.method13672(((ModeSetting)var2).method18632());
                }
             });
-            var23.method13036(var1x -> ((Class6005)var2).method18633(((Class4366)var1x).method13671()));
+            var23.method13036(var1x -> ((ModeSetting)var2).method18633(((Class4366)var1x).method13671()));
             var1.method13230(var23);
             var4 += 65;
             break;

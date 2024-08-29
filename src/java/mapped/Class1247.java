@@ -13,6 +13,6 @@ public class Class1247 extends Class1206 {
 
    @Override
    public ITextComponent method5745() {
-      return Class7127.method22238(super.method5745(), Class1321.method6284(this.field6610));
+      return DialogTexts.method22238(super.method5745(), Class1321.method6284(this.field6610));
    }
 }

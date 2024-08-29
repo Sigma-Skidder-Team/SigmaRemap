@@ -3,7 +3,7 @@ package mapped;
 public class Class5703 extends Class5702<Class1102> {
    private static final ResourceLocation field25073 = new ResourceLocation("textures/entity/spider/cave_spider.png");
 
-   public Class5703(Class8853 var1) {
+   public Class5703(EntityRendererManager var1) {
       super(var1);
       this.field25098 *= 0.7F;
    }

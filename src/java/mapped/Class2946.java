@@ -14,7 +14,7 @@ public class Class2946 extends Class2898<Class4710> {
    }
 
    public static boolean method11288(Class1660 var0, Random var1, BlockPos var2, Class4710 var3, int var4, int var5) {
-      Block var8 = var0.method6738(var2.method8313()).method23383();
+      Block var8 = var0.getBlockState(var2.method8313()).getBlock();
       if (var8.method11540(Class7645.field32799)) {
          int var9 = var2.getY();
          if (var9 >= 1 && var9 + 1 < 256) {
@@ -24,7 +24,7 @@ public class Class2946 extends Class2898<Class4710> {
                BlockPos var12 = var2.method8336(
                   var1.nextInt(var4) - var1.nextInt(var4), var1.nextInt(var5) - var1.nextInt(var5), var1.nextInt(var4) - var1.nextInt(var4)
                );
-               Class7380 var13 = var3.field22343.method20424(var1, var12);
+               BlockState var13 = var3.field22343.method20424(var1, var12);
                if (var0.method7007(var12) && var12.getY() > 0 && var13.method23443(var0, var12)) {
                   var0.method6725(var12, var13, 2);
                   var10++;

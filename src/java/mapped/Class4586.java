@@ -3,11 +3,11 @@ package mapped;
 public abstract class Class4586 extends Class4587 {
    public float field22035 = 0.1F * (this.field22054.nextFloat() * 0.5F + 0.5F) * 2.0F;
 
-   public Class4586(Class1656 var1, double var2, double var4, double var6) {
+   public Class4586(ClientWorld var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6);
    }
 
-   public Class4586(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class4586(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
    }
 
@@ -45,26 +45,26 @@ public abstract class Class4586 extends Class4587 {
       float var16 = this.method14505();
       float var17 = this.method14506();
       int var18 = this.method14499(var3);
-      var1.method17025((double)var12[0].method25269(), (double)var12[0].method25270(), (double)var12[0].method25271())
+      var1.pos((double)var12[0].method25269(), (double)var12[0].method25270(), (double)var12[0].method25271())
          .method17027(var21, var17)
          .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
-         .method17031();
-      var1.method17025((double)var12[1].method25269(), (double)var12[1].method25270(), (double)var12[1].method25271())
+         .endVertex();
+      var1.pos((double)var12[1].method25269(), (double)var12[1].method25270(), (double)var12[1].method25271())
          .method17027(var21, var16)
          .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
-         .method17031();
-      var1.method17025((double)var12[2].method25269(), (double)var12[2].method25270(), (double)var12[2].method25271())
+         .endVertex();
+      var1.pos((double)var12[2].method25269(), (double)var12[2].method25270(), (double)var12[2].method25271())
          .method17027(var20, var16)
          .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
-         .method17031();
-      var1.method17025((double)var12[3].method25269(), (double)var12[3].method25270(), (double)var12[3].method25271())
+         .endVertex();
+      var1.pos((double)var12[3].method25269(), (double)var12[3].method25270(), (double)var12[3].method25271())
          .method17027(var20, var17)
          .method17033(this.field22058, this.field22059, this.field22060, this.field22061)
          .method17034(var18)
-         .method17031();
+         .endVertex();
    }
 
    public float method14509(float var1) {

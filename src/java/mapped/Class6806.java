@@ -1,7 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortList;
-import it.unimi.dsi.fastutil.shorts.ShortListIterator;
+
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -12,15 +12,15 @@ public class Class6806<T> implements Class6802<T> {
    private final ShortList[] field29630 = new ShortList[16];
 
    public Class6806(Predicate<T> var1, Class7481 var2) {
-      this(var1, var2, new Class41());
+      this(var1, var2, new ListNBT());
    }
 
-   public Class6806(Predicate<T> var1, Class7481 var2, Class41 var3) {
+   public Class6806(Predicate<T> var1, Class7481 var2, ListNBT var3) {
       this.field29628 = var1;
       this.field29629 = var2;
 
       for (int var6 = 0; var6 < var3.size(); var6++) {
-         Class41 var7 = var3.method154(var6);
+         ListNBT var7 = var3.method154(var6);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             Class1670.method7094(this.field29630, var6).add(var7.method155(var8));
@@ -28,7 +28,7 @@ public class Class6806<T> implements Class6802<T> {
       }
    }
 
-   public Class41 method20737() {
+   public ListNBT method20737() {
       return Class9725.method38094(this.field29630);
    }
 

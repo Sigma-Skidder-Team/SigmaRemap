@@ -157,7 +157,7 @@ public class Class4310 extends Class4307 {
 
       float var10 = var9 - (float)this.field20966;
       float var11 = (float)(var8 - this.field20967);
-      if (Minecraft.getInstance().loadingGuiIn != null) {
+      if (Minecraft.getInstance().loadingGui != null) {
          if (var9 != (float)this.field20966) {
             this.field20966 = (int)((float)this.field20966 + var10 * field20982);
          }
@@ -244,7 +244,7 @@ public class Class4310 extends Class4307 {
          }
 
          if (var14 > 0.0F && Client.getInstance().method19930()) {
-            Class1272.method6015(var13, 1.0F);
+            CustomResourceLoadProgressGui.method6015(var13, 1.0F);
             Client.getInstance().method19931(false);
          }
 

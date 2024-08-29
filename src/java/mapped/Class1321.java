@@ -27,7 +27,7 @@ public class Class1321 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field6984.method5633();
       this.field6985.method5633();
       this.field6986.method5633();
@@ -45,10 +45,10 @@ public class Class1321 extends Screen {
 
    private void method6270() {
       this.field4562
-         .getClientPlayNetHandler()
+         .getConnection()
          .sendPacket(
             new Class5544(
-               this.field6983.method3774(),
+               this.field6983.getPos(),
                new ResourceLocation(this.field6984.method5636()),
                new ResourceLocation(this.field6985.method5636()),
                new ResourceLocation(this.field6986.method5636()),
@@ -59,7 +59,7 @@ public class Class1321 extends Screen {
    }
 
    private void method6271() {
-      this.field4562.getClientPlayNetHandler().sendPacket(new Class5468(this.field6983.method3774(), this.field6988, this.field6989));
+      this.field4562.getConnection().sendPacket(new Class5468(this.field6983.getPos(), this.field6988, this.field6989));
    }
 
    @Override
@@ -69,7 +69,7 @@ public class Class1321 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field6986 = new Class1189(this.field4568, this.field4564 / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
       this.field6986.method5657(128);
       this.field6986.method5635(this.field6983.method3980().toString());
@@ -111,8 +111,8 @@ public class Class1321 extends Screen {
          this.method6268();
          this.method6271();
       }));
-      this.field6991 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 4 - 150, 210, 150, 20, Class7127.field30658, var1 -> this.method6268()));
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, 210, 150, 20, Class7127.field30659, var1 -> this.method6269()));
+      this.field6991 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method6268()));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method6269()));
       this.method5536(this.field6986);
       this.method6272();
    }
@@ -124,14 +124,14 @@ public class Class1321 extends Screen {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
+   public void resize(Minecraft var1, int var2, int var3) {
       String var6 = this.field6984.method5636();
       String var7 = this.field6985.method5636();
       String var8 = this.field6986.method5636();
       String var9 = this.field6987.method5636();
       int var10 = this.field6988;
       Class92 var11 = this.field6992;
-      this.method2467(var1, var2, var3);
+      this.init(var1, var2, var3);
       this.field6984.method5635(var6);
       this.field6985.method5635(var7);
       this.field6986.method5635(var8);
@@ -147,7 +147,7 @@ public class Class1321 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    @Override

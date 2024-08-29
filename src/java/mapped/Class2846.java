@@ -32,8 +32,8 @@ public class Class2846 extends Class2844 {
 
    @Override
    public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      var1.method35294();
-      var1.method35291(0.0, -0.374375F, 0.0);
+      var1.push();
+      var1.translate(0.0, -0.374375F, 0.0);
       var1.method35292(0.75F, 0.75F, 0.75F);
       this.field17646.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
       var1.method35295();

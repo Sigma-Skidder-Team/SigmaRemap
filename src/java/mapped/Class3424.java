@@ -16,25 +16,25 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public Class6408 method11483(Class7380 var1, Class1665 var2, BlockPos var3, Class4832 var4) {
+   public Class6408 method11483(BlockState var1, Class1665 var2, BlockPos var3, Class4832 var4) {
       Vector3d var7 = var1.method23421(var2, var3);
       return field19161.method19517(var7.field18048, var7.field18049, var7.field18050);
    }
 
    @Override
-   public void method11484(Class7380 var1, ServerWorld var2, BlockPos var3, Random var4) {
+   public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var4.nextInt(3) == 0 && var2.method7007(var3.method8311()) && var2.method7021(var3.method8311(), 0) >= 9) {
          this.method12079(var2, var3);
       }
    }
 
    @Override
-   public boolean method11492(Class7380 var1, Class1662 var2, BlockPos var3) {
-      return var2.method6738(var3.method8313()).method23446(Class7645.field32787);
+   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+      return var2.getBlockState(var3.method8313()).method23446(Class7645.field32787);
    }
 
    @Override
-   public Class7380 method11491(Class7380 var1, Direction var2, Class7380 var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
          if (var2 == Direction.field673 && var3.method23448(Blocks.field37009)) {
             var4.method6725(var5, Blocks.field37009.method11579(), 2);
@@ -47,28 +47,28 @@ public class Class3424 extends Block implements Class3196 {
    }
 
    @Override
-   public ItemStack method11569(Class1665 var1, BlockPos var2, Class7380 var3) {
-      return new ItemStack(Class8514.field37357);
+   public ItemStack getItem(Class1665 var1, BlockPos var2, BlockState var3) {
+      return new ItemStack(Items.field37357);
    }
 
    @Override
-   public boolean method11486(Class1665 var1, BlockPos var2, Class7380 var3, boolean var4) {
-      return var1.method6738(var2.method8311()).method23393();
+   public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
+      return var1.getBlockState(var2.method8311()).isAir();
    }
 
    @Override
-   public boolean method11487(World var1, Random var2, BlockPos var3, Class7380 var4) {
+   public boolean method11487(World var1, Random var2, BlockPos var3, BlockState var4) {
       return true;
    }
 
    @Override
-   public void method11488(ServerWorld var1, Random var2, BlockPos var3, Class7380 var4) {
+   public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       this.method12079(var1, var3);
    }
 
    @Override
-   public float method11997(Class7380 var1, PlayerEntity var2, Class1665 var3, BlockPos var4) {
-      return !(var2.method3090().method32107() instanceof Class3267) ? super.method11997(var1, var2, var3, var4) : 1.0F;
+   public float method11997(BlockState var1, PlayerEntity var2, Class1665 var3, BlockPos var4) {
+      return !(var2.method3090().getItem() instanceof Class3267) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 
    public void method12079(World var1, BlockPos var2) {

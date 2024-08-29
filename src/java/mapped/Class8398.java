@@ -22,7 +22,7 @@ public class Class8398 {
       this.field36042 = var6;
    }
 
-   public int method29481(Class9834 var1, Class6178 var2) {
+   public int method29481(FontRenderer var1, Class6178 var2) {
       int var5 = var2.field27615 / 9;
       if (var5 >= 0) {
          if (var5 < this.field36041.length) {

@@ -146,12 +146,12 @@ public class Class9281 {
       if (var5 != null) {
          return var0.method172(var5);
       } else {
-         throw new JsonParseException("Unknown object " + var1 + " for stat type " + Registry.field16088.method9181(var0));
+         throw new JsonParseException("Unknown object " + var1 + " for stat type " + Registry.field16088.getKey(var0));
       }
    }
 
    private static <T> ResourceLocation method34999(Class9007<T> var0) {
-      return var0.method33275().method171().method9181(var0.method33276());
+      return var0.method33275().method171().getKey(var0.method33276());
    }
 
    public JsonElement method35000() {
@@ -166,7 +166,7 @@ public class Class9281 {
             JsonArray var4 = new JsonArray();
             this.field42700.forEach((var1, var2) -> {
                JsonObject var5x = new JsonObject();
-               var5x.addProperty("type", Registry.field16088.method9181(var1.method33275()).toString());
+               var5x.addProperty("type", Registry.field16088.getKey(var1.method33275()).toString());
                var5x.addProperty("stat", method34999((Class9007<?>)var1).toString());
                var5x.add("value", var2.method32005());
                var4.add(var5x);

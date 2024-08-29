@@ -19,13 +19,13 @@ public class Class131 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      if (!var1.method32105()) {
+      if (!var1.isEmpty()) {
          Optional var5 = var2.method26090().method6816().<Class920, Class4849>method1030(Class7207.field30936, new Class927(var1), var2.method26090());
          if (var5.isPresent()) {
-            ItemStack var6 = ((Class4849)var5.get()).method14966();
-            if (!var6.method32105()) {
+            ItemStack var6 = ((Class4849)var5.get()).getRecipeOutput();
+            if (!var6.isEmpty()) {
                ItemStack var7 = var6.copy();
-               var7.method32180(var1.method32179());
+               var7.method32180(var1.getCount());
                return var7;
             }
          }

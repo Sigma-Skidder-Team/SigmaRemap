@@ -128,8 +128,8 @@ public class Class3623 extends Class3624 {
       return !var4.isEmpty() || !var5.isEmpty();
    }
 
-   public Class39 method12273() {
-      Class39 var3 = new Class39();
+   public CompoundNBT method12273() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method109("Name", ITextComponent$Serializer.toJson(this.field19634));
       var3.method115("Visible", this.method12286());
       var3.method102("Value", this.field19627);
@@ -139,17 +139,17 @@ public class Class3623 extends Class3624 {
       var3.method115("DarkenScreen", this.method12294());
       var3.method115("PlayBossMusic", this.method12295());
       var3.method115("CreateWorldFog", this.method12296());
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (UUID var6 : this.field19626) {
          var4.add(Class8354.method29281(var6));
       }
 
-      var3.method99("Players", var4);
+      var3.put("Players", var4);
       return var3;
    }
 
-   public static Class3623 method12274(Class39 var0, ResourceLocation var1) {
+   public static Class3623 method12274(CompoundNBT var0, ResourceLocation var1) {
       Class3623 var4 = new Class3623(var1, ITextComponent$Serializer.func_240643_a_(var0.method126("Name")));
       var4.method12287(var0.method132("Visible"));
       var4.method12269(var0.method122("Value"));
@@ -159,7 +159,7 @@ public class Class3623 extends Class3624 {
       var4.method12281(var0.method132("DarkenScreen"));
       var4.method12282(var0.method132("PlayBossMusic"));
       var4.method12283(var0.method132("CreateWorldFog"));
-      Class41 var5 = var0.method131("Players", 11);
+      ListNBT var5 = var0.method131("Players", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          var4.method12264(Class8354.method29282(var5.get(var6)));

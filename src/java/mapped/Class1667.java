@@ -14,10 +14,10 @@ public class Class1667 implements Class1665, Class1668 {
 
    public Class1667(World var1, BlockPos var2, BlockPos var3) {
       this.field9085 = var1;
-      this.field9081 = var2.method8304() >> 4;
-      this.field9082 = var2.method8306() >> 4;
-      int var6 = var3.method8304() >> 4;
-      int var7 = var3.method8306() >> 4;
+      this.field9081 = var2.getX() >> 4;
+      this.field9082 = var2.getZ() >> 4;
+      int var6 = var3.getX() >> 4;
+      int var7 = var3.getZ() >> 4;
       this.field9083 = new Class1670[var6 - this.field9081 + 1][var7 - this.field9082 + 1];
       Class1702 var8 = var1.method6883();
       this.field9084 = true;
@@ -28,8 +28,8 @@ public class Class1667 implements Class1665, Class1668 {
          }
       }
 
-      for (int var12 = var2.method8304() >> 4; var12 <= var3.method8304() >> 4; var12++) {
-         for (int var13 = var2.method8306() >> 4; var13 <= var3.method8306() >> 4; var13++) {
+      for (int var12 = var2.getX() >> 4; var12 <= var3.getX() >> 4; var12++) {
+         for (int var13 = var2.getZ() >> 4; var13 <= var3.getZ() >> 4; var13++) {
             Class1670 var11 = this.field9083[var12 - this.field9081][var13 - this.field9082];
             if (var11 != null && !var11.method7076(var2.getY(), var3.getY())) {
                this.field9084 = false;
@@ -40,7 +40,7 @@ public class Class1667 implements Class1665, Class1668 {
    }
 
    private Class1670 method7044(BlockPos var1) {
-      return this.method7045(var1.method8304() >> 4, var1.method8306() >> 4);
+      return this.method7045(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    private Class1670 method7045(int var1, int var2) {
@@ -66,16 +66,16 @@ public class Class1667 implements Class1665, Class1668 {
 
    @Nullable
    @Override
-   public Class944 method6759(BlockPos var1) {
+   public TileEntity getTileEntity(BlockPos var1) {
       Class1670 var4 = this.method7044(var1);
-      return var4.method6759(var1);
+      return var4.getTileEntity(var1);
    }
 
    @Override
-   public Class7380 method6738(BlockPos var1) {
+   public BlockState getBlockState(BlockPos var1) {
       if (!World.method6720(var1)) {
          Class1670 var4 = this.method7044(var1);
-         return var4.method6738(var1);
+         return var4.getBlockState(var1);
       } else {
          return Blocks.AIR.method11579();
       }

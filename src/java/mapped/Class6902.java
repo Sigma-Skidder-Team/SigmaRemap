@@ -29,8 +29,8 @@ public class Class6902 extends Class6896 {
       int var12 = var3 - var2.nextInt(4) - 1;
       int var13 = 3 - var2.nextInt(3);
       Mutable var14 = new Mutable();
-      int var15 = var4.method8304();
-      int var16 = var4.method8306();
+      int var15 = var4.getX();
+      int var16 = var4.getZ();
       int var17 = 0;
 
       for (int var18 = 0; var18 < var3; var18++) {
@@ -47,8 +47,8 @@ public class Class6902 extends Class6896 {
       }
 
       var10.add(new Class9359(new BlockPos(var15, var17, var16), 1, false));
-      var15 = var4.method8304();
-      var16 = var4.method8306();
+      var15 = var4.getX();
+      var16 = var4.getZ();
       Direction var26 = Class76.field161.method247(var2);
       if (var26 != var11) {
          int var27 = var12 - var2.nextInt(2) - 1;

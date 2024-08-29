@@ -11,13 +11,13 @@ public class Class6497 extends Class6490 {
    }
 
    @Override
-   public Set<Class8189> method19688(BlockPos var1, Class7380 var2, Class8982 var3) {
+   public Set<Class8189> method19688(BlockPos var1, BlockState var2, Class8982 var3) {
       HashSet var6 = new HashSet();
-      Class8711 var7 = new Class8711(new Vector3d(0.0, 0.0, 0.0), Direction.field672, var1, false);
-      Class5909 var8 = new Class5909(this.field28457.world, this.field28457.player, Hand.field182, new ItemStack(var2.method23383()), var7);
+      BlockRayTraceResult var7 = new BlockRayTraceResult(new Vector3d(0.0, 0.0, 0.0), Direction.DOWN, var1, false);
+      Class5909 var8 = new Class5909(this.field28457.world, this.field28457.player, Hand.MAIN_HAND, new ItemStack(var2.getBlock()), var7);
       var8.field25717 = var1;
       var8.field25718 = false;
-      Class7380 var9 = var2.method23383().method11495(var8);
+      BlockState var9 = var2.getBlock().method11495(var8);
       var6.add(new Class8189(var1, var9));
       return var6;
    }

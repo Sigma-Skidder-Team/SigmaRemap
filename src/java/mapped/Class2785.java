@@ -20,7 +20,7 @@ public class Class2785 extends Class2595 {
 
    public Class2785(Class1018 var1, double var2, Class<? extends Class1018> var4) {
       this.field17407 = var1;
-      this.field17409 = var1.field5024;
+      this.field17409 = var1.world;
       this.field17408 = var4;
       this.field17412 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));

@@ -13,9 +13,9 @@ import java.util.stream.Stream;
 
 public interface Class1670 extends Class1665, Class1671 {
    @Nullable
-   Class7380 method7061(BlockPos var1, Class7380 var2, boolean var3);
+   BlockState method7061(BlockPos var1, BlockState var2, boolean var3);
 
-   void method7062(BlockPos var1, Class944 var2);
+   void method7062(BlockPos var1, TileEntity var2);
 
    void method7063(Entity var1);
 
@@ -97,15 +97,15 @@ public interface Class1670 extends Class1665, Class1671 {
       method7094(this.method7083(), var2).add(var1);
    }
 
-   default void method7085(Class39 var1) {
+   default void method7085(CompoundNBT var1) {
       LogManager.getLogger().warn("Trying to set a BlockEntity, but this operation is not supported.");
    }
 
    @Nullable
-   Class39 method7086(BlockPos var1);
+   CompoundNBT method7086(BlockPos var1);
 
    @Nullable
-   Class39 method7087(BlockPos var1);
+   CompoundNBT method7087(BlockPos var1);
 
    Stream<BlockPos> method7088();
 

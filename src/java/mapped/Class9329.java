@@ -45,8 +45,8 @@ public class Class9329 {
    }
 
    @Nullable
-   public Class7513 method35259(Class1815 var1) {
-      long var4 = GLFW.glfwGetWindowMonitor(var1.method8039());
+   public Class7513 method35259(MainWindow var1) {
+      long var4 = GLFW.glfwGetWindowMonitor(var1.getHandle());
       if (var4 == 0L) {
          int var6 = var1.method8047();
          int var7 = var6 + var1.method8043();

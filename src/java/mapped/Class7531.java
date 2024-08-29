@@ -51,29 +51,29 @@ public class Class7531 extends Class7530 {
 
    public static boolean method24612(Class1026 var0, Class7699 var1) {
       return var0 != null && var1 != null && var1.method25394() != null
-         ? var0.method3066() && var0.method4547() && var0.method3021() <= 2400 && var0.field5024.method6812() == var1.method25394().method6812()
+         ? var0.method3066() && var0.method4547() && var0.method3021() <= 2400 && var0.world.method6812() == var1.method25394().method6812()
          : false;
    }
 
    @Nullable
    public Class7699 method24613(ServerPlayerEntity var1) {
-      if (var1.method2800()) {
+      if (var1.isSpectator()) {
          return null;
       } else if (this.field32333.method6789().method17135(Class5462.field24246)) {
          return null;
       } else {
-         Class9535 var4 = var1.field5024.method6812();
+         Class9535 var4 = var1.world.method6812();
          if (!var4.method36883()) {
             return null;
          } else {
-            BlockPos var5 = var1.method3432();
+            BlockPos var5 = var1.getPosition();
             List<Class9343> var6 = this.field32333.method6951().method6666(Class4913.field22748, var5, 64, Class2093.field13636).collect(Collectors.toList());
             int var7 = 0;
             Vector3d var8 = Vector3d.field18047;
 
             for (Class9343 var10 : var6) {
                BlockPos var11 = var10.method35355();
-               var8 = var8.method11339((double)var11.method8304(), (double)var11.getY(), (double)var11.method8306());
+               var8 = var8.method11339((double)var11.getX(), (double)var11.getY(), (double)var11.getZ());
                var7++;
             }
 
@@ -123,31 +123,31 @@ public class Class7531 extends Class7530 {
    }
 
    @Override
-   public void method24591(Class39 var1) {
+   public void method24591(CompoundNBT var1) {
       this.field32334 = var1.method122("NextAvailableID");
       this.field32335 = var1.method122("Tick");
-      Class41 var4 = var1.method131("Raids", 10);
+      ListNBT var4 = var1.method131("Raids", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         Class39 var6 = var4.method153(var5);
+         CompoundNBT var6 = var4.method153(var5);
          Class7699 var7 = new Class7699(this.field32333, var6);
          this.field32332.put(var7.method25430(), var7);
       }
    }
 
    @Override
-   public Class39 method24592(Class39 var1) {
+   public CompoundNBT method24592(CompoundNBT var1) {
       var1.method102("NextAvailableID", this.field32334);
       var1.method102("Tick", this.field32335);
-      Class41 var4 = new Class41();
+      ListNBT var4 = new ListNBT();
 
       for (Class7699 var6 : this.field32332.values()) {
-         Class39 var7 = new Class39();
+         CompoundNBT var7 = new CompoundNBT();
          var6.method25434(var7);
          var4.add(var7);
       }
 
-      var1.method99("Raids", var4);
+      var1.put("Raids", var4);
       return var1;
    }
 

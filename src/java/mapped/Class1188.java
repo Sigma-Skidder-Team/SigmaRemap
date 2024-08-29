@@ -31,7 +31,7 @@ public class Class1188 extends Class1186 {
       boolean var13 = Class1295.method6127(this.field6417).field6199 == this.field6413;
       this.field6417
          .field6782
-         .field1294
+         .fontRenderer
          .method38805(var1, this.field6414, (float)(var4 + 90 - Class1295.method6128(this.field6417)), (float)(var3 + var6 / 2 - 4), 16777215);
       this.field6416.field6477 = var4 + 190;
       this.field6416.field6478 = var3;

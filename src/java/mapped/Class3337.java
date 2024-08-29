@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3337 extends Class3257 {
+public class Class3337 extends Item {
    private static String[] field18844;
 
    public Class3337(Class5643 var1) {
@@ -9,7 +9,7 @@ public class Class3337 extends Class3257 {
 
    @Override
    public boolean method11734(ItemStack var1) {
-      return var1.method32179() == 1;
+      return var1.getCount() == 1;
    }
 
    @Override

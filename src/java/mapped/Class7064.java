@@ -5,8 +5,8 @@ import java.io.DataInput;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public final class Class7064 implements Class7052<Class41> {
-   public Class41 method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
+public final class Class7064 implements Class7052<ListNBT> {
+   public ListNBT method21978(DataInput var1, int var2, Class8465 var3) throws IOException {
       var3.method29769(296L);
       if (var2 > 512) {
          throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
@@ -24,7 +24,7 @@ public final class Class7064 implements Class7052<Class41> {
                var9.add(var8.method21978(var1, var2 + 1, var3));
             }
 
-            return new Class41(var9, var6, null);
+            return new ListNBT(var9, var6, null);
          }
       }
    }

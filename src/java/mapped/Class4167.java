@@ -9,12 +9,12 @@ public abstract class Class4167 extends Class4178 {
       super(var1, var2);
    }
 
-   public Class4167(Class7792 var1, Class39 var2) {
+   public Class4167(Class7792 var1, CompoundNBT var2) {
       super(var1, var2);
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
    }
 
    private int method12898(List<Class7258> var1) {

@@ -16,17 +16,17 @@ public class Class9711 {
       String var5 = method38049(var4);
       if (!var5.isEmpty()) {
          var4 = var5 + var4;
-         if (Class8981.field40931) {
+         if (Shaders.field40931) {
             String var6 = var1.replace(':', '/') + ".pre";
-            Class8981.method33016(var6, var4);
+            Shaders.method33016(var6, var4);
          }
 
          var4 = method38048(var4);
       }
 
-      if (Class8981.field40931) {
+      if (Shaders.field40931) {
          String var8 = var1.replace(':', '/');
-         Class8981.method33016(var8, var4);
+         Shaders.method33016(var8, var4);
       }
 
       byte[] var9 = var4.getBytes("ASCII");
@@ -90,7 +90,7 @@ public class Class9711 {
 
    private static List<Class6679> method38050() {
       ArrayList var2 = new ArrayList();
-      Class6679[] var3 = Class8981.method32972();
+      Class6679[] var3 = Shaders.method32972();
 
       for (int var4 = 0; var4 < var3.length; var4++) {
          Class6679 var5 = var3[var4];

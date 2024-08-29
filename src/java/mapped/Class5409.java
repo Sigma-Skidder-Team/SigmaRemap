@@ -14,11 +14,11 @@ public class Class5409 extends Class5408 {
    @Override
    public Class9738 method16994(Class7161 var1) {
       Minecraft var4 = Minecraft.getInstance();
-      ItemStack var5 = !Class974.method4035(ViaVersionLoader.field31494) ? ItemStack.EMPTY : var4.player.field4902.field5439.get(ViaVersionLoader.field31494);
-      Class3257 var6 = var5.method32107();
+      ItemStack var5 = ! PlayerInventory.isHotbar(ViaVersionLoader.field31494) ? ItemStack.EMPTY : var4.player.inventory.field5439.get(ViaVersionLoader.field31494);
+      Item var6 = var5.getItem();
       if (var6 != null) {
          Class9738 var7 = new Class9738(
-            (short)Class3257.method11701(var6), (byte)var5.field39976, (short)var5.method32117(), this.method16995(var5.method32142())
+            (short) Item.method11701(var6), (byte)var5.field39976, (short)var5.method32117(), this.method16995(var5.method32142())
          );
          Class9550.method36998(var7);
          Class8121.method28121(var7);
@@ -33,7 +33,7 @@ public class Class5409 extends Class5408 {
       }
    }
 
-   public Class72 method16995(Class39 var1) {
+   public Class72 method16995(CompoundNBT var1) {
       if (var1 == null) {
          return null;
       } else {

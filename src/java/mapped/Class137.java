@@ -34,51 +34,51 @@ public class Class137 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      Class41 var5 = this.method402(var1, !this.field461.isEmpty());
+      ListNBT var5 = this.method402(var1, !this.field461.isEmpty());
       if (var5 != null) {
          if (this.field460) {
             var5.clear();
          }
 
          UnaryOperator<ITextComponent> var6 = Class132.method384(var2, this.field462);
-         this.field461.stream().map(var6).map(ITextComponent$Serializer::toJson).map(Class40::method150).forEach(var5::add);
+         this.field461.stream().map(var6).map(ITextComponent$Serializer::toJson).map(StringNBT::valueOf).forEach(var5::add);
       }
 
       return var1;
    }
 
    @Nullable
-   private Class41 method402(ItemStack var1, boolean var2) {
-      Class39 var5;
+   private ListNBT method402(ItemStack var1, boolean var2) {
+      CompoundNBT var5;
       if (!var1.method32141()) {
          if (!var2) {
             return null;
          }
 
-         var5 = new Class39();
+         var5 = new CompoundNBT();
          var1.method32148(var5);
       } else {
          var5 = var1.method32142();
       }
 
-      Class39 var6;
+      CompoundNBT var6;
       if (!var5.method119("display", 10)) {
          if (!var2) {
             return null;
          }
 
-         var6 = new Class39();
-         var5.method99("display", var6);
+         var6 = new CompoundNBT();
+         var5.put("display", var6);
       } else {
-         var6 = var5.method130("display");
+         var6 = var5.getCompound("display");
       }
 
       if (!var6.method119("Lore", 9)) {
          if (!var2) {
             return null;
          } else {
-            Class41 var7 = new Class41();
-            var6.method99("Lore", var7);
+            ListNBT var7 = new ListNBT();
+            var6.put("Lore", var7);
             return var7;
          }
       } else {

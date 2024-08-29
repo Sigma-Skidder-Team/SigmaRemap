@@ -5,7 +5,7 @@ import java.util.List;
 public class Class5946 extends Class5942<Class950> {
    public static final ResourceLocation field25936 = new ResourceLocation("textures/entity/beacon_beam.png");
 
-   public Class5946(Class8086 var1) {
+   public Class5946(TileEntityRendererDispatcher var1) {
       super(var1);
    }
 
@@ -29,15 +29,15 @@ public class Class5946 extends Class5942<Class950> {
            MatrixStack var0, Class7733 var1, ResourceLocation var2, float var3, float var4, long var5, int var7, int var8, float[] var9, float var10, float var11
    ) {
       int var14 = var7 + var8;
-      var0.method35294();
-      var0.method35291(0.5, 0.0, 0.5);
+      var0.push();
+      var0.translate(0.5, 0.0, 0.5);
       float var15 = (float)Math.floorMod(var5, 40L) + var3;
       float var16 = var8 >= 0 ? -var15 : var15;
       float var17 = MathHelper.method37807(var16 * 0.2F - (float) MathHelper.method37767(var16 * 0.1F));
       float var18 = var9[0];
       float var19 = var9[1];
       float var20 = var9[2];
-      var0.method35294();
+      var0.push();
       var0.method35293(Class7680.field32900.method25286(var15 * 2.25F - 45.0F));
       float var21 = 0.0F;
       float var22 = 0.0F;
@@ -51,7 +51,7 @@ public class Class5946 extends Class5942<Class950> {
       float var30 = (float)var8 * var4 * (0.5F / var10) + var29;
       method18470(
          var0,
-         var1.method25597(Class4520.method14320(var2, false)),
+         var1.method25597(RenderType.method14320(var2, false)),
          var18,
          var19,
          var20,
@@ -82,7 +82,7 @@ public class Class5946 extends Class5942<Class950> {
       var30 = (float)var8 * var4 + var29;
       method18470(
          var0,
-         var1.method25597(Class4520.method14320(var2, true)),
+         var1.method25597(RenderType.method14320(var2, true)),
          var18,
          var19,
          var20,
@@ -181,7 +181,7 @@ public class Class5946 extends Class5942<Class950> {
          .method17035(Class213.field798)
          .method17034(15728880)
          .method17041(var1, 0.0F, 1.0F, 0.0F)
-         .method17031();
+         .endVertex();
    }
 
    public boolean method18461(Class950 var1) {

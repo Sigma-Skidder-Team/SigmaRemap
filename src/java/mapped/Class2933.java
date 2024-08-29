@@ -14,15 +14,15 @@ public class Class2933 extends Class2898<Class4734> {
       float var8 = var3.nextFloat() * (float) Math.PI;
       float var9 = (float)var5.field22423 / 8.0F;
       int var10 = MathHelper.method37773(((float)var5.field22423 / 16.0F * 2.0F + 1.0F) / 2.0F);
-      double var11 = (double)var4.method8304() + Math.sin((double)var8) * (double)var9;
-      double var13 = (double)var4.method8304() - Math.sin((double)var8) * (double)var9;
-      double var15 = (double)var4.method8306() + Math.cos((double)var8) * (double)var9;
-      double var17 = (double)var4.method8306() - Math.cos((double)var8) * (double)var9;
+      double var11 = (double)var4.getX() + Math.sin((double)var8) * (double)var9;
+      double var13 = (double)var4.getX() - Math.sin((double)var8) * (double)var9;
+      double var15 = (double)var4.getZ() + Math.cos((double)var8) * (double)var9;
+      double var17 = (double)var4.getZ() - Math.cos((double)var8) * (double)var9;
       double var20 = (double)(var4.getY() + var3.nextInt(3) - 2);
       double var22 = (double)(var4.getY() + var3.nextInt(3) - 2);
-      int var24 = var4.method8304() - MathHelper.method37773(var9) - var10;
+      int var24 = var4.getX() - MathHelper.method37773(var9) - var10;
       int var25 = var4.getY() - 2 - var10;
-      int var26 = var4.method8306() - MathHelper.method37773(var9) - var10;
+      int var26 = var4.getZ() - MathHelper.method37773(var9) - var10;
       int var27 = 2 * (MathHelper.method37773(var9) + var10);
       int var28 = 2 * (2 + var10);
 
@@ -65,7 +65,7 @@ public class Class2933 extends Class2898<Class4734> {
          double var32 = MathHelper.method37822((double)var29, var12, var14);
          double var34 = MathHelper.method37822((double)var29, var8, var10);
          double var36 = var2.nextDouble() * (double)var26 / 16.0;
-         double var38 = ((double)(MathHelper.method37763((float) Math.PI * var29) + 1.0F) * var36 + 1.0) / 2.0;
+         double var38 = ((double)(MathHelper.sin((float) Math.PI * var29) + 1.0F) * var36 + 1.0) / 2.0;
          var27[var28 * 4 + 0] = var30;
          var27[var28 * 4 + 1] = var32;
          var27[var28 * 4 + 2] = var34;
@@ -98,12 +98,12 @@ public class Class2933 extends Class2898<Class4734> {
             double var42 = var27[var65 * 4 + 0];
             double var44 = var27[var65 * 4 + 1];
             double var46 = var27[var65 * 4 + 2];
-            int var48 = Math.max(MathHelper.method37769(var42 - var40), var16);
-            int var49 = Math.max(MathHelper.method37769(var44 - var40), var17);
-            int var50 = Math.max(MathHelper.method37769(var46 - var40), var18);
-            int var51 = Math.max(MathHelper.method37769(var42 + var40), var48);
-            int var52 = Math.max(MathHelper.method37769(var44 + var40), var49);
-            int var53 = Math.max(MathHelper.method37769(var46 + var40), var50);
+            int var48 = Math.max(MathHelper.floor(var42 - var40), var16);
+            int var49 = Math.max(MathHelper.floor(var44 - var40), var17);
+            int var50 = Math.max(MathHelper.floor(var46 - var40), var18);
+            int var51 = Math.max(MathHelper.floor(var42 + var40), var48);
+            int var52 = Math.max(MathHelper.floor(var44 + var40), var49);
+            int var53 = Math.max(MathHelper.floor(var46 + var40), var50);
 
             for (int var54 = var48; var54 <= var51; var54++) {
                double var55 = ((double)var54 + 0.5 - var42) / var40;
@@ -118,7 +118,7 @@ public class Class2933 extends Class2898<Class4734> {
                               if (!var24.get(var63)) {
                                  var24.set(var63);
                                  var25.method8372(var54, var57, var60);
-                                 if (var3.field22422.method19540(var1.method6738(var25), var2)) {
+                                 if (var3.field22422.method19540(var1.getBlockState(var25), var2)) {
                                     var1.method6725(var25, var3.field22424, 2);
                                     var23++;
                                  }

@@ -150,6 +150,6 @@ public class AccountManager {
     public boolean method36779(Account var1) {
         return this.getEmail() != null
                 ? var1.getEmail().equals(this.getEmail())
-                : var1.getKnownName().equals(Minecraft.getInstance().method1533().getUsername());
+                : var1.getKnownName().equals(Minecraft.getInstance().getSession().getUsername());
     }
 }

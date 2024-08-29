@@ -12,11 +12,11 @@ import org.lwjgl.opengl.GL11;
 
 public class Class5289 extends Module {
     public static Class2191 field23794 = Class2191.field14327;
-    public Class7735 field23795 = Class7733.method25596(mc.method1581().field33890, new Class5425(256));
+    public Class7735 field23795 = Class7733.method25596(mc.getRenderTypeBuffers().field33890, new BufferBuilder(256));
 
     public Class5289() {
         super(ModuleCategory.RENDER, "Shadow", "Draws a line arround entities");
-        this.method15972(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
+        this.registerSetting(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
     }
 
     @EventTarget
@@ -123,11 +123,11 @@ public class Class5289 extends Module {
             }
         }
 
-        this.field23795.method25603(Class4520.method14309(Class289.field1102));
-        this.field23795.method25603(Class4520.method14310(Class289.field1102));
-        this.field23795.method25603(Class4520.method14312(Class289.field1102));
-        this.field23795.method25603(Class4520.method14319(Class289.field1102));
-        this.field23795.method25603(Class4520.method14345());
+        this.field23795.finish(RenderType.getEntitySolid(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23795.finish(RenderType.getEntityCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23795.finish(RenderType.getEntityCutoutNoCull(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23795.finish(RenderType.getEntitySmoothCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
+        this.field23795.finish(RenderType.method14345());
         this.field23795.method25602();
         if (field23794 == Class2191.field14329) {
             GL11.glPolygonMode(1032, 6914);

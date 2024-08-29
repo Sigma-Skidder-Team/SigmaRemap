@@ -13,13 +13,13 @@ public class Class4206 extends Class4194 {
       this.field20444 = var3;
    }
 
-   public Class4206(Class8761 var1, Class39 var2) {
+   public Class4206(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33444, var2);
       this.field20513 = var2.method132("Chest");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method115("Chest", this.field20513);
    }

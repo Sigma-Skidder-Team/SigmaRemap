@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
-public class Class7742 implements Class7740 {
+public class Class7742 implements IProfileResult {
    private static String[] field33247;
    public static final Class7742 field33248 = new Class7742();
 
@@ -12,8 +12,8 @@ public class Class7742 implements Class7740 {
    }
 
    @Override
-   public List<Class2012> method25626(String var1) {
-      return Collections.<Class2012>emptyList();
+   public List<DataPoint> getDataPoints(String var1) {
+      return Collections.<DataPoint>emptyList();
    }
 
    @Override

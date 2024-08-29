@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 import java.util.Arrays;
 
-public class Class2883 extends Class2803<Class1002> {
+public class Class2883 extends Class2803<BoatEntity> {
    private static String[] field17870;
    private final Class7219[] field17871 = new Class7219[2];
    private final Class7219 field17872;
@@ -54,7 +54,7 @@ public class Class2883 extends Class2803<Class1002> {
       this.field17873 = var9.build();
    }
 
-   public void method10998(Class1002 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void method10998(BoatEntity var1, float var2, float var3, float var4, float var5, float var6) {
       this.method11201(var1, 0, var2);
       this.method11201(var1, 1, var2);
    }
@@ -78,12 +78,12 @@ public class Class2883 extends Class2803<Class1002> {
       return var4;
    }
 
-   public void method11201(Class1002 var1, int var2, float var3) {
+   public void method11201(BoatEntity var1, int var2, float var3) {
       float var6 = var1.method4152(var2, var3);
       Class7219 var7 = this.field17871[var2];
-      var7.field31035 = (float) MathHelper.method37779((float) (-Math.PI / 3), (float) (-Math.PI / 12), (double)((MathHelper.method37763(-var6) + 1.0F) / 2.0F));
+      var7.field31035 = (float) MathHelper.method37779((float) (-Math.PI / 3), (float) (-Math.PI / 12), (double)((MathHelper.sin(-var6) + 1.0F) / 2.0F));
       var7.field31036 = (float) MathHelper.method37779(
-         (float) (-Math.PI / 4), (float) (Math.PI / 4), (double)((MathHelper.method37763(-var6 + 1.0F) + 1.0F) / 2.0F)
+         (float) (-Math.PI / 4), (float) (Math.PI / 4), (double)((MathHelper.sin(-var6 + 1.0F) + 1.0F) / 2.0F)
       );
       if (var2 == 1) {
          var7.field31036 = (float) Math.PI - var7.field31036;

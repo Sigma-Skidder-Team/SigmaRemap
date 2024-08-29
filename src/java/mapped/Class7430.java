@@ -15,12 +15,12 @@ public class Class7430 extends ClientResource {
    }
 
    private int method23949(char var1) {
-      return this.field31946.field1294.method38820(String.valueOf(var1)) * this.field31945;
+      return this.field31946.fontRenderer.getStringWidth(String.valueOf(var1)) * this.field31945;
    }
 
    @Override
    public int method23942(String var1) {
-      return this.field31946.field1294.method38820(var1) * this.field31945;
+      return this.field31946.fontRenderer.getStringWidth(var1) * this.field31945;
    }
 
    @Override
@@ -49,7 +49,7 @@ public class Class7430 extends ClientResource {
       GL11.glScalef((float)this.field31945, (float)this.field31945, 0.0F);
       GL11.glTranslatef(-var1 / (float)this.field31945, -var2 / (float)this.field31945 + 1.0F, 0.0F);
       this.field31946
-         .field1294
+         .fontRenderer
          .method38807(
             var3,
             var1,

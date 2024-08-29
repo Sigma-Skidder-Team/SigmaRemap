@@ -24,15 +24,15 @@ public class Class842 extends Class838 {
    public static final int field4656 = 3;
    public static final int field4657 = 4;
 
-   public Class842(Screen var1, Class9574 var2) {
-      super(new StringTextComponent(Class9088.method33883("of.options.shadersTitle")));
+   public Class842(Screen var1, GameSettings var2) {
+      super(new StringTextComponent(I18n.format("of.options.shadersTitle")));
       this.field4642 = var1;
    }
 
    @Override
    public void method1921() {
-      if (Class8981.field40855 == null) {
-         Class8981.method32948();
+      if (Shaders.field40855 == null) {
+         Shaders.method32948();
       }
 
       byte var3 = 120;
@@ -56,7 +56,7 @@ public class Class842 extends Class838 {
       int var11 = this.field4565 - 25;
       this.<Class1210>method2455(new Class1210(201, var10, var11, var9 - 22 + 1, var4, Class8043.method27619("of.options.shaders.shadersFolder")));
       this.<Class1212>method2455(new Class1212(210, var10 + var9 - 22 - 1, var11));
-      this.<Class1210>method2455(new Class1210(202, var8 / 4 * 3 - var9 / 2, this.field4565 - 25, var9, var4, Class9088.method33883("gui.done")));
+      this.<Class1210>method2455(new Class1210(202, var8 / 4 * 3 - var9 / 2, this.field4565 - 25, var9, var4, I18n.format("gui.done")));
       this.<Class1210>method2455(new Class1210(203, var5, this.field4565 - 25, var3, var4, Class8043.method27619("of.options.shaders.shaderOptions")));
       this.method5534(this.field4645);
       this.method2569();
@@ -94,7 +94,7 @@ public class Class842 extends Class838 {
                   case 201:
                      switch (method2580()) {
                         case 1:
-                           String var6 = String.format("cmd.exe /C start \"Open file\" \"%s\"", Class8981.field40892.getAbsolutePath());
+                           String var6 = String.format("cmd.exe /C start \"Open file\" \"%s\"", Shaders.field40892.getAbsolutePath());
 
                            try {
                               Runtime.getRuntime().exec(var6);
@@ -105,7 +105,7 @@ public class Class842 extends Class838 {
                            }
                         case 2:
                            try {
-                              Runtime.getRuntime().exec(new String[]{"/usr/bin/open", Class8981.field40892.getAbsolutePath()});
+                              Runtime.getRuntime().exec(new String[]{"/usr/bin/open", Shaders.field40892.getAbsolutePath()});
                               return;
                            } catch (IOException var11) {
                               var11.printStackTrace();
@@ -115,7 +115,7 @@ public class Class842 extends Class838 {
                      boolean var14 = false;
 
                      try {
-                        URI var15 = new File(this.field4562.field1303, "shaderpacks").toURI();
+                        URI var15 = new File(this.field4562.gameDir, "shaderpacks").toURI();
                         Util.getOSType().openURI(var15);
                      } catch (Throwable var10) {
                         var10.printStackTrace();
@@ -124,11 +124,11 @@ public class Class842 extends Class838 {
 
                      if (var14) {
                         Class7944.method26810("Opening via system class!");
-                        Util.getOSType().method8181("file://" + Class8981.field40892.getAbsolutePath());
+                        Util.getOSType().method8181("file://" + Shaders.field40892.getAbsolutePath());
                      }
                      break;
                   case 202:
-                     Class8981.method32950();
+                     Shaders.method32950();
                      this.field4646 = true;
                      this.field4562.displayGuiScreen(this.field4642);
                      break;
@@ -156,88 +156,88 @@ public class Class842 extends Class838 {
             Class1215 var13 = (Class1215)var1;
             switch (Class8072.field34653[var13.method5772().ordinal()]) {
                case 1:
-                  Class8981.method33139(!var2);
+                  Shaders.method33139(!var2);
                   if (method2476()) {
-                     Class8981.field40878 = 0;
+                     Shaders.field40878 = 0;
                   }
 
-                  Class8981.method33033();
+                  Shaders.method33033();
                   break;
                case 2:
-                  Class8981.field40874 = !Class8981.field40874;
+                  Shaders.field40874 = ! Shaders.field40874;
                   if (method2476()) {
-                     Class8981.field40874 = true;
+                     Shaders.field40874 = true;
                   }
 
-                  Class8981.method33033();
-                  this.field4562.method1524();
+                  Shaders.method33033();
+                  this.field4562.scheduleResourcesRefresh();
                   break;
                case 3:
-                  Class8981.field40875 = !Class8981.field40875;
+                  Shaders.field40875 = ! Shaders.field40875;
                   if (method2476()) {
-                     Class8981.field40875 = true;
+                     Shaders.field40875 = true;
                   }
 
-                  Class8981.method33033();
-                  this.field4562.method1524();
+                  Shaders.method33033();
+                  this.field4562.scheduleResourcesRefresh();
                   break;
                case 4:
-                  Class8981.field40865 = this.method2576(Class8981.field40865, field4647, field4649, !var2, method2476());
-                  Class8981.method33033();
-                  Class8981.method33034();
+                  Shaders.field40865 = this.method2576(Shaders.field40865, field4647, field4649, !var2, method2476());
+                  Shaders.method33033();
+                  Shaders.method33034();
                   break;
                case 5:
-                  Class8981.field40866 = this.method2576(Class8981.field40866, field4647, field4649, !var2, method2476());
-                  Class8981.method33033();
-                  Class8981.method33035();
+                  Shaders.field40866 = this.method2576(Shaders.field40866, field4647, field4649, !var2, method2476());
+                  Shaders.method33033();
+                  Shaders.method33035();
                   break;
                case 6:
-                  Class8981.field40864 = this.method2576(Class8981.field40864, field4650, field4652, !var2, method2476());
-                  Class8981.method33033();
+                  Shaders.field40864 = this.method2576(Shaders.field40864, field4650, field4652, !var2, method2476());
+                  Shaders.method33033();
                   break;
                case 7:
-                  Class8981.field40877.method27381(!var2);
+                  Shaders.field40877.method27381(!var2);
                   if (method2476()) {
-                     Class8981.field40877.method27387();
+                     Shaders.field40877.method27387();
                   }
 
-                  Class8981.method33033();
+                  Shaders.method33033();
                   break;
                case 8:
-                  Class8981.field40876.method27381(!var2);
+                  Shaders.field40876.method27381(!var2);
                   if (method2476()) {
-                     Class8981.field40876.method27387();
+                     Shaders.field40876.method27387();
                   }
 
-                  Class8981.method32992();
-                  Class8981.method33033();
-                  this.field4562.method1524();
+                  Shaders.method32992();
+                  Shaders.method33033();
+                  this.field4562.scheduleResourcesRefresh();
                   break;
                case 9:
-                  Class8981.field40862 = !Class8981.field40862;
+                  Shaders.field40862 = ! Shaders.field40862;
                   break;
                case 10:
-                  Class8981.field40863 = !Class8981.field40863;
+                  Shaders.field40863 = ! Shaders.field40863;
                   break;
                case 11:
-                  Class8981.field40867 = (Class8981.field40867 + 1) % 3;
-                  Class8981.field40868 = Class8981.field40869 = Class8981.field40867;
-                  var13.method5766("Tex Min: " + Class8981.field40881[Class8981.field40867]);
+                  Shaders.field40867 = (Shaders.field40867 + 1) % 3;
+                  Shaders.field40868 = Shaders.field40869 = Shaders.field40867;
+                  var13.method5766("Tex Min: " + Shaders.field40881[Shaders.field40867]);
                   Class9336.method35339();
                   break;
                case 12:
-                  Class8981.field40871 = (Class8981.field40871 + 1) % 2;
-                  var13.method5766("Tex_n Mag: " + Class8981.field40882[Class8981.field40871]);
+                  Shaders.field40871 = (Shaders.field40871 + 1) % 2;
+                  var13.method5766("Tex_n Mag: " + Shaders.field40882[Shaders.field40871]);
                   Class9336.method35339();
                   break;
                case 13:
-                  Class8981.field40872 = (Class8981.field40872 + 1) % 2;
-                  var13.method5766("Tex_s Mag: " + Class8981.field40882[Class8981.field40872]);
+                  Shaders.field40872 = (Shaders.field40872 + 1) % 2;
+                  var13.method5766("Tex_s Mag: " + Shaders.field40882[Shaders.field40872]);
                   Class9336.method35339();
                   break;
                case 14:
-                  Class8981.field40873 = !Class8981.field40873;
-                  var13.method5766("ShadowClipFrustrum: " + method2573(Class8981.field40873));
+                  Shaders.field40873 = ! Shaders.field40873;
+                  var13.method5766("ShadowClipFrustrum: " + method2573(Shaders.field40873));
                   Class9336.method35339();
             }
 
@@ -249,7 +249,7 @@ public class Class842 extends Class838 {
    @Override
    public void onClose() {
       if (!this.field4646) {
-         Class8981.method32950();
+         Shaders.method32950();
          this.field4646 = true;
       }
 
@@ -266,8 +266,8 @@ public class Class842 extends Class838 {
       }
 
       method5691(var1, this.field4630, this.field4560, this.field4564 / 2, 15, 16777215);
-      String var7 = "OpenGL: " + Class8981.field40596 + ", " + Class8981.field40597 + ", " + Class8981.field40598;
-      int var8 = this.field4630.method38820(var7);
+      String var7 = "OpenGL: " + Shaders.field40596 + ", " + Shaders.field40597 + ", " + Shaders.field40598;
+      int var8 = this.field4630.getStringWidth(var7);
       if (var8 >= this.field4564 - 5) {
          method5692(var1, this.field4630, var7, 5, this.field4565 - 40, 8421504);
       } else {
@@ -279,8 +279,8 @@ public class Class842 extends Class838 {
    }
 
    @Override
-   public void method1919() {
-      super.method1919();
+   public void tick() {
+      super.tick();
       this.field4644--;
    }
 

@@ -60,7 +60,7 @@ public class Class9379 {
             )
          ),
          Pair.of(10, new Class3729(400, 1600)),
-         Pair.of(10, new Class3715(Class8992.field41111, 4)),
+         Pair.of(10, new Class3715(EntityType.PLAYER, 4)),
          Pair.of(2, new Class3746(Class8830.field39814, var1, 9, 100, 1200)),
          Pair.of(3, new Class3717(100)),
          Pair.of(99, new Class3708())
@@ -77,8 +77,8 @@ public class Class9379 {
             new Class3693(
                ImmutableMap.of(Class8830.field39820, Class2217.field14485),
                ImmutableList.of(
-                  Pair.of(Class3696.<Class880>method12551(Class8992.field41098, 8, Class8830.field39828, var0, 2), 2),
-                  Pair.of(Class3696.<Class880>method12551(Class8992.field41012, 8, Class8830.field39828, var0, 2), 1),
+                  Pair.of(Class3696.<Class880>method12551(EntityType.field41098, 8, Class8830.field39828, var0, 2), 2),
+                  Pair.of(Class3696.<Class880>method12551(EntityType.field41012, 8, Class8830.field39828, var0, 2), 1),
                   Pair.of(new Class3712(var0), 1),
                   Pair.of(new Class3694(var0, 2), 1),
                   Pair.of(new Class3730(var0), 2),
@@ -113,7 +113,7 @@ public class Class9379 {
       return ImmutableList.of(
          Pair.of(2, new Class3693(ImmutableList.of(Pair.of(new Class3726(Class8830.field39816, 0.4F, 40), 2), Pair.of(new Class3727(), 2)))),
          Pair.of(10, new Class3729(400, 1600)),
-         Pair.of(10, new Class3715(Class8992.field41111, 4)),
+         Pair.of(10, new Class3715(EntityType.PLAYER, 4)),
          Pair.of(2, new Class3746(Class8830.field39816, var1, 6, 100, 200)),
          Pair.of(3, new Class3717(100)),
          Pair.of(3, new Class3699(Class4913.field22767, Class8830.field39816)),
@@ -138,12 +138,12 @@ public class Class9379 {
             2,
             new Class3693(
                ImmutableList.of(
-                  Pair.of(Class3696.<Class880>method12551(Class8992.field41098, 8, Class8830.field39828, var1, 2), 2),
+                  Pair.of(Class3696.<Class880>method12551(EntityType.field41098, 8, Class8830.field39828, var1, 2), 2),
                   Pair.of(
-                     new Class3696<Class1042, Class1045>(Class8992.field41098, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
+                     new Class3696<Class1042, Class1045>(EntityType.field41098, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
                      1
                   ),
-                  Pair.of(Class3696.<Class880>method12551(Class8992.field41012, 8, Class8830.field39828, var1, 2), 1),
+                  Pair.of(Class3696.<Class880>method12551(EntityType.field41012, 8, Class8830.field39828, var1, 2), 1),
                   Pair.of(new Class3712(var1), 1),
                   Pair.of(new Class3694(var1, 2), 1),
                   Pair.of(new Class3730(var1), 1),
@@ -152,7 +152,7 @@ public class Class9379 {
             )
          ),
          Pair.of(3, new Class3717(100)),
-         Pair.of(3, new Class3715(Class8992.field41111, 4)),
+         Pair.of(3, new Class3715(EntityType.PLAYER, 4)),
          Pair.of(3, new Class3729(400, 1600)),
          Pair.of(
             3,
@@ -222,9 +222,9 @@ public class Class9379 {
          5,
          new Class3693(
             ImmutableList.of(
-               Pair.of(new Class3738(Class8992.field41012, 8.0F), 8),
-               Pair.of(new Class3738(Class8992.field41098, 8.0F), 2),
-               Pair.of(new Class3738(Class8992.field41111, 8.0F), 2),
+               Pair.of(new Class3738(EntityType.field41012, 8.0F), 8),
+               Pair.of(new Class3738(EntityType.field41098, 8.0F), 2),
+               Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2),
                Pair.of(new Class3738(Class179.field624, 8.0F), 1),
                Pair.of(new Class3738(Class179.field626, 8.0F), 1),
                Pair.of(new Class3738(Class179.field627, 8.0F), 1),
@@ -240,7 +240,7 @@ public class Class9379 {
          5,
          new Class3693(
             ImmutableList.of(
-               Pair.of(new Class3738(Class8992.field41098, 8.0F), 2), Pair.of(new Class3738(Class8992.field41111, 8.0F), 2), Pair.of(new Class3675(30, 60), 8)
+               Pair.of(new Class3738(EntityType.field41098, 8.0F), 2), Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 2), Pair.of(new Class3675(30, 60), 8)
             )
          )
       );

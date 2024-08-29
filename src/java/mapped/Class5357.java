@@ -48,35 +48,35 @@ public class Class5357 extends Module {
 
     public Class5357() {
         super(ModuleCategory.COMBAT, "KillAura", "Automatically attacks entities");
-        this.method15972(new Class6005("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
-        this.method15972(new Class6005("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
-        this.method15972(new Class6005("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
-        this.method15972(new Class6005("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
-        this.method15972(new Class6005("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC", "Smooth", "LockView", "Test", "Test2", "None"));
-        this.method15972(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
-        this.method15972(
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
+        this.registerSetting(new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
+        this.registerSetting(new ModeSetting("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
+        this.registerSetting(new ModeSetting("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
+        this.registerSetting(new ModeSetting("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC", "Smooth", "LockView", "Test", "Test2", "None"));
+        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
+        this.registerSetting(
                 new Class6009<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method18616(var1 -> this.field23938.method36818())
         );
-        this.method15972(
+        this.registerSetting(
                 new Class6009<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method18616(var1 -> this.field23938.method36818())
         );
-        this.method15972(new Class6009<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.method15972(new Class6009<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
-        this.method15972(new Class6004("Interact autoblock", "Send interact packet when blocking", true));
-        this.method15972(new Class6004("Players", "Hit players", true));
-        this.method15972(new Class6004("Animals", "Hit animals", false));
-        this.method15972(new Class6004("Monsters", "Hit monsters", false));
-        this.method15972(new Class6004("Invisible", "Hit invisible entites", true));
-        this.method15972(new Class6004("Raytrace", "Helps the aura become more legit", true));
-        this.method15972(new Class6004("Cooldown", "Use attack cooldown (1.9+)", false));
-        this.method15972(new Class6004("No swing", "Hit without swinging", false));
-        this.method15972(new Class6004("Disable on death", "Disable on death", true));
-        this.method15972(new Class6004("Through walls", "Target entities through walls", true));
-        this.method15972(new Class6004("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
-        this.method15972(new Class6004("Silent", "Silent rotations", true));
-        this.method15972(new Class6004("ESP", "ESP on targets", true));
-        this.method15972(new Class6010("ESP Color", "The render color", Class1979.field12896.field12910));
+        this.registerSetting(new Class6009<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
+        this.registerSetting(new BooleanSetting("Interact autoblock", "Send interact packet when blocking", true));
+        this.registerSetting(new BooleanSetting("Players", "Hit players", true));
+        this.registerSetting(new BooleanSetting("Animals", "Hit animals", false));
+        this.registerSetting(new BooleanSetting("Monsters", "Hit monsters", false));
+        this.registerSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
+        this.registerSetting(new BooleanSetting("Raytrace", "Helps the aura become more legit", true));
+        this.registerSetting(new BooleanSetting("Cooldown", "Use attack cooldown (1.9+)", false));
+        this.registerSetting(new BooleanSetting("No swing", "Hit without swinging", false));
+        this.registerSetting(new BooleanSetting("Disable on death", "Disable on death", true));
+        this.registerSetting(new BooleanSetting("Through walls", "Target entities through walls", true));
+        this.registerSetting(new BooleanSetting("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
+        this.registerSetting(new BooleanSetting("Silent", "Silent rotations", true));
+        this.registerSetting(new BooleanSetting("ESP", "ESP on targets", true));
+        this.registerSetting(new Class6010("ESP Color", "The render color", Class1979.field12896.field12910));
     }
 
     // $VF: synthetic method
@@ -160,7 +160,7 @@ public class Class5357 extends Module {
         field23951 = new Class7461(mc.player.field5031, mc.player.field5032);
         this.field23957 = -1.0F;
         this.field23938
-                .method36814(mc.player.getHeldItem(Hand.field182).method32107() instanceof Class3267 && mc.gameSettings.field44642.method8509());
+                .method36814(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof Class3267 && mc.gameSettings.keyBindUseItem.isKeyDown());
         this.field23959 = false;
         this.field23946 = -1;
         this.field23938.field44349.clear();
@@ -182,7 +182,7 @@ public class Class5357 extends Module {
     }
 
     @EventTarget
-    public void method16818(Class4418 var1) {
+    public void method16818(WorldLoadEvent var1) {
         if (this.method15996() && this.method15974("Disable on death")) {
             Client.getInstance().getNotificationManager().post(new Notification("Aura", "Aura disabled due to respawn"));
             this.method16000();
@@ -206,13 +206,13 @@ public class Class5357 extends Module {
     }
 
     @EventTarget
-    public void method16820(Class4401 var1) {
+    public void method16820(StopUseItemEvent var1) {
         if (this.method15996()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
-                    && (mc.player.method3090().method32107() instanceof Class3267 || this.field23943 != mc.player.field4902.field5443)
+                    && (mc.player.method3090().getItem() instanceof Class3267 || this.field23943 != mc.player.inventory.currentItem)
                     && field23948 != null) {
                 var1.method13900(true);
-            } else if (mc.player.method3090().method32107() instanceof Class3267) {
+            } else if (mc.player.method3090().getItem() instanceof Class3267) {
                 this.field23945 = 2;
             }
         }
@@ -223,7 +223,7 @@ public class Class5357 extends Module {
     public void method16821(Class4399 var1) {
         if (this.method15996() && mc.player != null) {
             if (!var1.method13921()) {
-                this.field23943 = mc.player.field4902.field5443;
+                this.field23943 = mc.player.inventory.currentItem;
                 if (field23948 != null && this.field23938.method36817() && this.field23952 != null) {
                     this.field23938.method36815(field23948, this.field23952.field32084, this.field23952.field32085);
                 }
@@ -236,7 +236,7 @@ public class Class5357 extends Module {
                     this.field23938.method36816();
                 }
 
-                if (this.field23938.method36813() && (!(mc.player.method3090().method32107() instanceof Class3267) || field23948 == null)) {
+                if (this.field23938.method36813() && (!(mc.player.method3090().getItem() instanceof Class3267) || field23948 == null)) {
                     this.field23938.method36814(false);
                 }
 
@@ -296,8 +296,8 @@ public class Class5357 extends Module {
     @EventTarget
     public void method16822(Class4415 var1) {
         if (field23949 != null && !this.method15974("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
-            float var4 = MathHelper.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.method1562());
-            float var5 = MathHelper.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.method1562());
+            float var4 = MathHelper.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.getRenderPartialTicks());
+            float var5 = MathHelper.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.getRenderPartialTicks());
             mc.player.field5031 = var4;
             mc.player.field5032 = var5;
         }
@@ -458,7 +458,7 @@ public class Class5357 extends Module {
     public boolean method16827() {
         return field23948 != null
                 && mc.player.method3090() != null
-                && mc.player.method3090().method32107() instanceof Class3267
+                && mc.player.method3090().getItem() instanceof Class3267
                 && !this.getStringSettingValueByName("Autoblock Mode").equals("None");
     }
 
@@ -481,7 +481,7 @@ public class Class5357 extends Module {
             this.field23940 = 0;
             var8 = false;
             if (var2.equals("Hypixel") && this.field23960 != null && mc.player.method3433().field18049 < 0.0) {
-                mc.getClientPlayNetHandler().sendPacket(new Class5605(this.field23960[0], this.field23960[1], this.field23960[2], false));
+                mc.getConnection().sendPacket(new Class5605(this.field23960[0], this.field23960[1], this.field23960[2], false));
                 this.field23960 = null;
             }
         }
@@ -501,7 +501,7 @@ public class Class5357 extends Module {
                     && var9
                     && !mc.player.field4981
                     && !mc.player.method3250()
-                    && !mc.gameSettings.field44636.method8509()) {
+                    && !mc.gameSettings.field44636.isKeyDown()) {
                 field23937 = var6 > 0.001;
 
                 var1.method13912(mc.player.getPosY() + var6);
@@ -527,7 +527,7 @@ public class Class5357 extends Module {
             this.isInDevelopment();
         }
 
-        if (var6 != null && var6.size() != 0 && !mc.gameSettings.field44643.method8511()) {
+        if (var6 != null && var6.size() != 0 && !mc.gameSettings.keyBindAttack.isPressed()) {
             field23948 = this.method16829(var6);
             var6 = this.field23938.method36823(var4);
             if (var5.equals("Single") || var5.equals("Multi")) {
@@ -728,7 +728,7 @@ public class Class5357 extends Module {
                     }
 
                     this.field23957 = 0.0F;
-                    if (mc.field1345 == null && var29 != 1.0F) {
+                    if (mc.pointedEntity == null && var29 != 1.0F) {
                         this.field23955 = Math.random() * 0.5 + 0.25;
                     }
 
@@ -751,18 +751,18 @@ public class Class5357 extends Module {
             case "LockView":
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
-                Class8709 var40 = Class5628.method17714(
+                EntityRayTraceResult var40 = Class5628.method17714(
                         var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.method15977("Range")
                 );
-                if (var40 == null || var40.method31416() != var3) {
+                if (var40 == null || var40.getEntity() != var3) {
                     this.field23952 = var4;
                 }
                 break;
             case "Test2":
-                Class8709 var24 = Class5628.method17714(
+                EntityRayTraceResult var24 = Class5628.method17714(
                         var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.method15977("Range")
                 );
-                if (var24 != null && var24.method31416() == var3) {
+                if (var24 != null && var24.getEntity() == var3) {
                     this.field23953.field32084 = this.field23952.field32084;
                     this.field23953.field32085 = this.field23952.field32085;
                     this.field23952.field32084 = (float) ((double) this.field23952.field32084 + (Math.random() - 0.5) * 2.0 + (double) (var5 / 10.0F));
@@ -792,7 +792,7 @@ public class Class5357 extends Module {
                     }
 
                     this.field23957 = 0.0F;
-                    if (mc.field1345 == null && var10 != 1.0F) {
+                    if (mc.pointedEntity == null && var10 != 1.0F) {
                         this.field23955 = Math.random() * 0.5 + 0.25;
                     }
 

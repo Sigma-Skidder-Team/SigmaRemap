@@ -14,7 +14,7 @@ public final class Class5688 extends Class5685<Class1074, Class2856<Class1074>> 
       var0.put(Class2190.field14323, new ResourceLocation("textures/entity/horse/horse_darkbrown.png"));
    });
 
-   public Class5688(Class8853 var1) {
+   public Class5688(EntityRendererManager var1) {
       super(var1, new Class2856<Class1074>(0.0F), 1.1F);
       this.method17880(new Class248(this));
       this.method17880(new Class258(this));

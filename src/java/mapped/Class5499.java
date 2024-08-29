@@ -137,7 +137,7 @@ public class Class5499 implements Packet<Class5116> {
       return this.field24411;
    }
 
-   public Class8904 method17293() {
+   public DynamicRegistries method17293() {
       return this.field24412;
    }
 

@@ -7,7 +7,7 @@ public class Class4669 implements Class4664 {
    private final ResourceLocation field22231;
    private final String field22232;
    private final Class120 field22233;
-   private final Class3257 field22234;
+   private final Item field22234;
    private final float field22235;
    private final int field22236;
    private final Class7999 field22237;
@@ -15,7 +15,7 @@ public class Class4669 implements Class4664 {
    private final Class6504<? extends Class4847> field22239;
 
    public Class4669(
-           ResourceLocation var1, String var2, Class120 var3, Class3257 var4, float var5, int var6, Class7999 var7, ResourceLocation var8, Class6504<? extends Class4847> var9
+           ResourceLocation var1, String var2, Class120 var3, Item var4, float var5, int var6, Class7999 var7, ResourceLocation var8, Class6504<? extends Class4847> var9
    ) {
       this.field22231 = var1;
       this.field22232 = var2;
@@ -35,7 +35,7 @@ public class Class4669 implements Class4664 {
       }
 
       var1.add("ingredient", this.field22233.method336());
-      var1.addProperty("result", Registry.field16075.method9181(this.field22234).toString());
+      var1.addProperty("result", Registry.ITEM.getKey(this.field22234).toString());
       var1.addProperty("experience", this.field22235);
       var1.addProperty("cookingtime", this.field22236);
    }

@@ -2,14 +2,14 @@ package mapped;
 
 public class Class4829 {
    private static String[] field22601;
-   private final Class1713[] field22602 = new Class1713[2];
-   private final Class1713[] field22603 = new Class1713[2];
-   private Class1713 field22604;
+   private final TextureAtlasSprite[] field22602 = new TextureAtlasSprite[2];
+   private final TextureAtlasSprite[] field22603 = new TextureAtlasSprite[2];
+   private TextureAtlasSprite field22604;
 
    public void method14919() {
-      this.field22602[0] = Minecraft.getInstance().method1570().method1025().method38153(Blocks.LAVA.method11579()).method22624();
+      this.field22602[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.LAVA.method11579()).getParticleTexture();
       this.field22602[1] = Class8968.field40510.method26198();
-      this.field22603[0] = Minecraft.getInstance().method1570().method1025().method38153(Blocks.WATER.method11579()).method22624();
+      this.field22603[0] = Minecraft.getInstance().getModelManager().method1025().method38153(Blocks.WATER.method11579()).getParticleTexture();
       this.field22603[1] = Class8968.field40511.method26198();
       this.field22604 = Class8968.field40512.method26198();
    }
@@ -20,7 +20,7 @@ public class Class4829 {
       return var7.method23472().method25066(var3.method23472());
    }
 
-   private static boolean method14921(Class1665 var0, Direction var1, float var2, BlockPos var3, Class7380 var4) {
+   private static boolean method14921(Class1665 var0, Direction var1, float var2, BlockPos var3, BlockState var4) {
       if (!var4.method23410()) {
          return false;
       } else {
@@ -32,20 +32,20 @@ public class Class4829 {
 
    private static boolean method14922(Class1665 var0, BlockPos var1, Direction var2, float var3) {
       BlockPos var6 = var1.method8349(var2);
-      Class7380 var7 = var0.method6738(var6);
+      BlockState var7 = var0.getBlockState(var6);
       return method14921(var0, var2, var3, var6, var7);
    }
 
-   private static boolean method14923(Class1665 var0, BlockPos var1, Class7380 var2, Direction var3) {
+   private static boolean method14923(Class1665 var0, BlockPos var1, BlockState var2, Direction var3) {
       return method14921(var0, var3.method536(), 1.0F, var1, var2);
    }
 
-   public static boolean method14924(Class1663 var0, BlockPos var1, Class7379 var2, Class7380 var3, Direction var4) {
+   public static boolean method14924(Class1663 var0, BlockPos var1, Class7379 var2, BlockState var3, Direction var4) {
       return !method14923(var0, var1, var3, var4) && !method14920(var0, var1, var4, var2);
    }
 
    public boolean method14925(Class1663 var1, BlockPos var2, Class5422 var3, Class7379 var4) {
-      Class7380 var7 = var4.method23484();
+      BlockState var7 = var4.method23484();
 
       boolean var23;
       try {
@@ -54,10 +54,10 @@ public class Class4829 {
          }
 
          boolean var8 = var4.method23486(Class8953.field40470);
-         Class1713[] var9 = var8 ? this.field22602 : this.field22603;
-         Class7380 var10 = var1.method6738(var2);
+         TextureAtlasSprite[] var9 = var8 ? this.field22602 : this.field22603;
+         BlockState var10 = var1.getBlockState(var2);
          if (Class9299.field42875.method20214()) {
-            Class1713[] var11 = (Class1713[])Class9299.method35062(Class9299.field42875, var1, var2, var4);
+            TextureAtlasSprite[] var11 = (TextureAtlasSprite[])Class9299.method35062(Class9299.field42875, var1, var2, var4);
             if (var11 != null) {
                var9 = var11;
             }
@@ -75,7 +75,7 @@ public class Class4829 {
          }
 
          boolean var82 = !method14920(var1, var2, Direction.field673, var4);
-         boolean var15 = method14924(var1, var2, var4, var10, Direction.field672) && !method14922(var1, var2, Direction.field672, 0.8888889F);
+         boolean var15 = method14924(var1, var2, var4, var10, Direction.DOWN) && !method14922(var1, var2, Direction.DOWN, 0.8888889F);
          boolean var16 = method14924(var1, var2, var4, var10, Direction.NORTH);
          boolean var17 = method14924(var1, var2, var4, var10, Direction.SOUTH);
          boolean var18 = method14924(var1, var2, var4, var10, Direction.WEST);
@@ -89,7 +89,7 @@ public class Class4829 {
             float var21 = (float)(var12 >> 8 & 0xFF) / 255.0F;
             float var22 = (float)(var12 & 0xFF) / 255.0F;
             var23 = false;
-            float var24 = var1.method6877(Direction.field672, true);
+            float var24 = var1.method6877(Direction.DOWN, true);
             float var25 = var1.method6877(Direction.field673, true);
             float var26 = var1.method6877(Direction.NORTH, true);
             float var27 = var1.method6877(Direction.WEST, true);
@@ -97,13 +97,13 @@ public class Class4829 {
             float var29 = this.method14929(var1, var2.method8343(), var4.method23472());
             float var30 = this.method14929(var1, var2.method8347().method8343(), var4.method23472());
             float var31 = this.method14929(var1, var2.method8347(), var4.method23472());
-            double var32 = (double)(var2.method8304() & 15);
+            double var32 = (double)(var2.getX() & 15);
             double var34 = (double)(var2.getY() & 15);
-            double var36 = (double)(var2.method8306() & 15);
+            double var36 = (double)(var2.getZ() & 15);
             if (Class7944.method26977()) {
-               int var38 = var2.method8304() >> 4 << 4;
+               int var38 = var2.getX() >> 4 << 4;
                int var39 = var2.getY() >> 4 << 4;
-               int var40 = var2.method8306() >> 4 << 4;
+               int var40 = var2.getZ() >> 4 << 4;
                byte var41 = 8;
                int var42 = var38 >> var41 << var41;
                int var43 = var40 >> var41 << var41;
@@ -132,7 +132,7 @@ public class Class4829 {
                float var101;
                float var104;
                if (var86.field18048 == 0.0 && var86.field18050 == 0.0) {
-                  Class1713 var107 = var9[0];
+                  TextureAtlasSprite var107 = var9[0];
                   var3.method17043(var107);
                   var101 = var107.method7461(0.0);
                   var90 = var107.method7464(0.0);
@@ -143,11 +143,11 @@ public class Class4829 {
                   var49 = var48;
                   var98 = var90;
                } else {
-                  Class1713 var46 = var9[1];
+                  TextureAtlasSprite var46 = var9[1];
                   var3.method17043(var46);
                   float var50 = (float) MathHelper.method37814(var86.field18050, var86.field18048) - (float) (Math.PI / 2);
-                  float var51 = MathHelper.method37763(var50) * 0.25F;
-                  float var52 = MathHelper.method37764(var50) * 0.25F;
+                  float var51 = MathHelper.sin(var50) * 0.25F;
+                  float var52 = MathHelper.cos(var50) * 0.25F;
                   float var53 = 8.0F;
                   var101 = var46.method7461((double)(8.0F + (-var52 - var51) * 16.0F));
                   var90 = var46.method7464((double)(8.0F + (-var52 + var51) * 16.0F));
@@ -195,7 +195,7 @@ public class Class4829 {
                float var96 = var9[0].method7462();
                float var100 = var9[0].method7463();
                int var103 = this.method14928(var1, var2.method8313());
-               float var106 = var1.method6877(Direction.field672, true);
+               float var106 = var1.method6877(Direction.DOWN, true);
                float var112 = var106 * var20;
                float var114 = var106 * var21;
                float var110 = var106 * var22;
@@ -256,7 +256,7 @@ public class Class4829 {
                if (var119 && !method14922(var1, var2, var117, Math.max(var93, var97))) {
                   var23 = true;
                   BlockPos var121 = var2.method8349(var117);
-                  Class1713 var122 = var9[1];
+                  TextureAtlasSprite var122 = var9[1];
                   float var123 = 0.0F;
                   float var125 = 0.0F;
                   boolean var127 = !var8;
@@ -265,8 +265,8 @@ public class Class4829 {
                   }
 
                   if (var127) {
-                     Class7380 var66 = var1.method6738(var121);
-                     Block var67 = var66.method23383();
+                     BlockState var66 = var1.getBlockState(var121);
+                     Block var67 = var66.getBlock();
                      boolean var68 = false;
                      if (Class9299.field42831.method20214()) {
                         var68 = Class9299.method35064(var66, Class9299.field42831, var1, var121, var4);
@@ -328,7 +328,7 @@ public class Class4829 {
                }
             }
 
-            var3.method17043((Class1713)null);
+            var3.method17043((TextureAtlasSprite)null);
             return var23;
          }
 
@@ -343,28 +343,28 @@ public class Class4829 {
    }
 
    private void method14926(Class5422 var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, int var13) {
-      var1.method17025(var2, var4, var6)
+      var1.pos(var2, var4, var6)
          .method17033(var8, var9, var10, 1.0F)
          .method17027(var11, var12)
          .method17034(var13)
          .method17030(0.0F, 1.0F, 0.0F)
-         .method17031();
+         .endVertex();
    }
 
    private void method14927(
       Class5422 var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, float var13, int var14
    ) {
-      var1.method17025(var2, var4, var6)
+      var1.pos(var2, var4, var6)
          .method17033(var8, var9, var10, var11)
          .method17027(var12, var13)
          .method17034(var14)
          .method17030(0.0F, 1.0F, 0.0F)
-         .method17031();
+         .endVertex();
    }
 
    private int method14928(Class1663 var1, BlockPos var2) {
-      int var5 = Class264.method944(var1, var2);
-      int var6 = Class264.method944(var1, var2.method8311());
+      int var5 = WorldRenderer.method944(var1, var2);
+      int var6 = WorldRenderer.method944(var1, var2.method8311());
       int var7 = var5 & 0xFF;
       int var8 = var6 & 0xFF;
       int var9 = var5 >> 16 & 0xFF;
@@ -384,7 +384,7 @@ public class Class4829 {
 
          Class7379 var10 = var1.method6739(var9);
          if (!var10.method23472().method25066(var3)) {
-            if (!var1.method6738(var9).method23384().method31086()) {
+            if (!var1.getBlockState(var9).method23384().method31086()) {
                var6++;
             }
          } else {

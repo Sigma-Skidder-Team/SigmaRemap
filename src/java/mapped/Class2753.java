@@ -26,16 +26,16 @@ public class Class2753 extends Class2595 {
    public void method10805() {
       this.field17293--;
       if (this.field17293 <= 0) {
-         World var3 = this.field17292.field5024;
+         World var3 = this.field17292.world;
          Random var4 = this.field17292.method3013();
-         BlockPos var5 = this.field17292.method3432();
+         BlockPos var5 = this.field17292.getPosition();
 
          for (int var6 = 0; var6 <= 5 && var6 >= -5; var6 = (var6 > 0 ? 0 : 1) - var6) {
             for (int var7 = 0; var7 <= 10 && var7 >= -10; var7 = (var7 > 0 ? 0 : 1) - var7) {
                for (int var8 = 0; var8 <= 10 && var8 >= -10; var8 = (var8 > 0 ? 0 : 1) - var8) {
                   BlockPos var9 = var5.method8336(var7, var6, var8);
-                  Class7380 var10 = var3.method6738(var9);
-                  Block var11 = var10.method23383();
+                  BlockState var10 = var3.getBlockState(var9);
+                  Block var11 = var10.getBlock();
                   if (var11 instanceof Class3442) {
                      if (!var3.method6789().method17135(Class5462.field24224)) {
                         var3.method6725(var9, ((Class3442)var11).method12118().method11579(), 3);

@@ -13,11 +13,11 @@ public class Class5175 extends Module {
     @EventTarget
     private void method16107(TickEvent var1) {
         if (this.method15996()) {
-            if (mc.field1337.field31362 > 0.7F) {
-                mc.field1337.field31362 = 1.0F;
+            if (mc.playerController.field31362 > 0.7F) {
+                mc.playerController.field31362 = 1.0F;
             }
 
-            mc.field1337.field31364 = 0;
+            mc.playerController.field31364 = 0;
         }
     }
 }

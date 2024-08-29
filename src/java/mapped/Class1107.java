@@ -6,7 +6,7 @@ public class Class1107 extends Class1009 {
    private static String[] field6079;
    private Class2753 field6080;
 
-   public Class1107(Class8992<? extends Class1107> var1, World var2) {
+   public Class1107(EntityType<? extends Class1107> var1, World var2) {
       super(var1, var2);
    }
 
@@ -56,7 +56,7 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, Class7380 var2) {
+   public void method3241(BlockPos var1, BlockState var2) {
       this.method2863(Class6067.field27058, 0.15F, 1.0F);
    }
 
@@ -87,14 +87,14 @@ public class Class1107 extends Class1009 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !Class3442.method12119(var2.method6738(var1.method8313())) ? super.method4339(var1, var2) : 10.0F;
+      return !Class3442.method12119(var2.getBlockState(var1.method8313())) ? super.method4339(var1, var2) : 10.0F;
    }
 
-   public static boolean method5317(Class8992<Class1107> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method5317(EntityType<Class1107> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       if (!method4342(var0, var1, var2, var3, var4)) {
          return false;
       } else {
-         PlayerEntity var7 = var1.method7186((double)var3.method8304() + 0.5, (double)var3.getY() + 0.5, (double)var3.method8306() + 0.5, 5.0, true);
+         PlayerEntity var7 = var1.method7186((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 5.0, true);
          return var7 == null;
       }
    }

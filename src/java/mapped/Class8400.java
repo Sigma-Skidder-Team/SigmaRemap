@@ -9,43 +9,43 @@ import javax.annotation.Nullable;
 public class Class8400 {
    private static String[] field36046;
    public final Int2ObjectMap<Class1997> field36047 = new Int2ObjectOpenHashMap(256);
-   private final Int2ObjectMap<Class7202> field36048 = new Int2ObjectOpenHashMap(256);
-   private final Class280 field36049;
+   private final Int2ObjectMap<IBakedModel> field36048 = new Int2ObjectOpenHashMap(256);
+   private final ModelManager field36049;
 
-   public Class8400(Class280 var1) {
+   public Class8400(ModelManager var1) {
       this.field36049 = var1;
    }
 
-   public Class1713 method29490(Class3303 var1) {
+   public TextureAtlasSprite method29490(Class3303 var1) {
       return this.method29491(new ItemStack(var1));
    }
 
-   public Class1713 method29491(ItemStack var1) {
-      Class7202 var4 = this.method29492(var1);
-      return var4 == this.field36049.method1024() && var1.method32107() instanceof Class3292
-         ? this.field36049.method1025().method38152(((Class3292)var1.method32107()).method11845().method11579())
-         : var4.method22624();
+   public TextureAtlasSprite method29491(ItemStack var1) {
+      IBakedModel var4 = this.method29492(var1);
+      return var4 == this.field36049.getMissingModel() && var1.getItem() instanceof Class3292
+         ? this.field36049.method1025().getTexture(((Class3292)var1.getItem()).method11845().method11579())
+         : var4.getParticleTexture();
    }
 
-   public Class7202 method29492(ItemStack var1) {
-      Class7202 var4 = this.method29493(var1.method32107());
-      return var4 != null ? var4 : this.field36049.method1024();
+   public IBakedModel method29492(ItemStack var1) {
+      IBakedModel var4 = this.method29493(var1.getItem());
+      return var4 != null ? var4 : this.field36049.getMissingModel();
    }
 
    @Nullable
-   public Class7202 method29493(Class3257 var1) {
-      return (Class7202)this.field36048.get(method29494(var1));
+   public IBakedModel method29493(Item var1) {
+      return (IBakedModel)this.field36048.get(method29494(var1));
    }
 
-   private static int method29494(Class3257 var0) {
-      return Class3257.method11701(var0);
+   private static int method29494(Item var0) {
+      return Item.method11701(var0);
    }
 
-   public void method29495(Class3257 var1, Class1997 var2) {
+   public void method29495(Item var1, Class1997 var2) {
       this.field36047.put(method29494(var1), var2);
    }
 
-   public Class280 method29496() {
+   public ModelManager method29496() {
       return this.field36049;
    }
 

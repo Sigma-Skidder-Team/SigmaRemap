@@ -13,9 +13,9 @@ public class Class5107 implements Class5105 {
    }
 
    @Override
-   public void method15595(Class5575 var1) {
+   public void method15595(CHandshakePacket var1) {
       this.field23210.method30690(var1.method17508());
-      this.field23210.method30692(new Class5109(this.field23209, this.field23210));
+      this.field23210.setNetHandler(new Class5109(this.field23209, this.field23210));
    }
 
    @Override
@@ -23,7 +23,7 @@ public class Class5107 implements Class5105 {
    }
 
    @Override
-   public NetworkManager method15589() {
+   public NetworkManager getNetworkManager() {
       return this.field23210;
    }
 }

@@ -14,13 +14,13 @@ public class Class4205 extends Class4194 {
       this.field20512 = var2.nextInt(5);
    }
 
-   public Class4205(Class8761 var1, Class39 var2) {
+   public Class4205(Class8761 var1, CompoundNBT var2) {
       super(Class7792.field33452, var2);
       this.field20512 = var2.method122("Type");
    }
 
    @Override
-   public void method12897(Class39 var1) {
+   public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.method102("Type", this.field20512);
    }
@@ -117,7 +117,7 @@ public class Class4205 extends Class4194 {
                this.method12923(var1, Blocks.field36400.method11579(), 8, 3, var13, var5);
             }
 
-            Class7380 var14 = Blocks.LADDER.method11579().method23465(Class3423.field19154, Direction.WEST);
+            BlockState var14 = Blocks.LADDER.method11579().method23465(Class3423.field19154, Direction.WEST);
             this.method12923(var1, var14, 9, 1, 3, var5);
             this.method12923(var1, var14, 9, 2, 3, var5);
             this.method12923(var1, var14, 9, 3, 3, var5);

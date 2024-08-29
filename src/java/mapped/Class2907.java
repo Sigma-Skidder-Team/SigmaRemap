@@ -28,7 +28,7 @@ public class Class2907 extends Class2898<Class4712> {
             var11 = var11 && this.method11246(var1, var3, var9.method8377(var8, Direction.SOUTH));
             var12 = var12 && this.method11246(var1, var3, var9.method8377(var8, Direction.WEST));
             var13 = var13 && this.method11246(var1, var3, var9.method8377(var8, Direction.EAST));
-            var8.method8379(Direction.field672);
+            var8.method8379(Direction.DOWN);
          }
 
          var8.method8379(Direction.field673);
@@ -36,7 +36,7 @@ public class Class2907 extends Class2898<Class4712> {
          this.method11245(var1, var3, var9.method8377(var8, Direction.SOUTH));
          this.method11245(var1, var3, var9.method8377(var8, Direction.WEST));
          this.method11245(var1, var3, var9.method8377(var8, Direction.EAST));
-         var8.method8379(Direction.field672);
+         var8.method8379(Direction.DOWN);
          Mutable var14 = new Mutable();
 
          for (int var15 = -3; var15 < 4; var15++) {
@@ -46,14 +46,14 @@ public class Class2907 extends Class2898<Class4712> {
                   var14.method8374(var8.method8336(var15, 0, var16));
                   int var18 = 3;
 
-                  while (var1.method7007(var9.method8377(var14, Direction.field672))) {
-                     var14.method8379(Direction.field672);
+                  while (var1.method7007(var9.method8377(var14, Direction.DOWN))) {
+                     var14.method8379(Direction.DOWN);
                      if (--var18 <= 0) {
                         break;
                      }
                   }
 
-                  if (!var1.method7007(var9.method8377(var14, Direction.field672))) {
+                  if (!var1.method7007(var9.method8377(var14, Direction.DOWN))) {
                      var1.method6725(var14, Blocks.BASALT.method11579(), 2);
                   }
                }

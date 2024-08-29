@@ -10,9 +10,9 @@ public abstract class Class5823 extends Class5812 {
 
    public abstract ItemStack method18190(PlayerEntity var1, ItemStack var2);
 
-   public abstract boolean method18191(Class7380 var1);
+   public abstract boolean method18191(BlockState var1);
 
-   public Class5823(Class8298<?> var1, int var2, Class974 var3, Class8786 var4) {
+   public Class5823(Class8298<?> var1, int var2, PlayerInventory var3, Class8786 var4) {
       super(var1, var2);
       this.field25514 = var4;
       this.field25515 = var3.field5444;
@@ -51,8 +51,8 @@ public abstract class Class5823 extends Class5812 {
    public boolean method18103(PlayerEntity var1) {
       return this.field25514
          .<Boolean>method31715(
-            (var2, var3) -> this.method18191(var2.method6738(var3))
-                  ? var1.method3276((double)var3.method8304() + 0.5, (double)var3.getY() + 0.5, (double)var3.method8306() + 0.5) <= 64.0
+            (var2, var3) -> this.method18191(var2.getBlockState(var3))
+                  ? var1.method3276((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5) <= 64.0
                   : false,
             true
          );
@@ -88,13 +88,13 @@ public abstract class Class5823 extends Class5812 {
             var6.method18260(var7, var5);
          }
 
-         if (!var7.method32105()) {
+         if (!var7.isEmpty()) {
             var6.method18268();
          } else {
             var6.method18267(ItemStack.EMPTY);
          }
 
-         if (var7.method32179() == var5.method32179()) {
+         if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 

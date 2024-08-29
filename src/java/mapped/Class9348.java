@@ -6,13 +6,12 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.Decoder;
 import com.mojang.serialization.Encoder;
 import com.mojang.serialization.MapCodec;
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -80,7 +79,7 @@ public class Class9348<O, S extends Class7378<O, S>> {
       });
    }
 
-   public ImmutableList<S> method35392() {
+   public ImmutableList<S> getValidStates() {
       return this.field43397;
    }
 

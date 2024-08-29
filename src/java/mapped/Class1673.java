@@ -17,14 +17,14 @@ public class Class1673 extends Class1672 {
 
    @Nullable
    @Override
-   public Class944 method6759(BlockPos var1) {
-      return this.field9109.method6759(var1);
+   public TileEntity getTileEntity(BlockPos var1) {
+      return this.field9109.getTileEntity(var1);
    }
 
    @Nullable
    @Override
-   public Class7380 method6738(BlockPos var1) {
-      return this.field9109.method6738(var1);
+   public BlockState getBlockState(BlockPos var1) {
+      return this.field9109.getBlockState(var1);
    }
 
    @Override
@@ -39,12 +39,12 @@ public class Class1673 extends Class1672 {
 
    @Nullable
    @Override
-   public Class7380 method7061(BlockPos var1, Class7380 var2, boolean var3) {
+   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
       return null;
    }
 
    @Override
-   public void method7062(BlockPos var1, Class944 var2) {
+   public void method7062(BlockPos var1, TileEntity var2) {
    }
 
    @Override
@@ -157,18 +157,18 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public void method7085(Class39 var1) {
+   public void method7085(CompoundNBT var1) {
    }
 
    @Nullable
    @Override
-   public Class39 method7086(BlockPos var1) {
+   public CompoundNBT method7086(BlockPos var1) {
       return this.field9109.method7086(var1);
    }
 
    @Nullable
    @Override
-   public Class39 method7087(BlockPos var1) {
+   public CompoundNBT method7087(BlockPos var1) {
       return this.field9109.method7087(var1);
    }
 
@@ -183,7 +183,7 @@ public class Class1673 extends Class1672 {
 
    @Override
    public Class6806<Block> method7089() {
-      return new Class6806<Block>(var0 -> var0.method11579().method23393(), this.method7072());
+      return new Class6806<Block>(var0 -> var0.method11579().isAir(), this.method7072());
    }
 
    @Override

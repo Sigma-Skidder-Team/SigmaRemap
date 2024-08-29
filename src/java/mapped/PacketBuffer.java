@@ -51,8 +51,8 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public <T> T method35696(Codec<T> var1) throws IOException {
-      Class39 var4 = this.method35722();
-      DataResult var5 = var1.parse(Class8063.field34602, var4);
+      CompoundNBT var4 = this.method35722();
+      DataResult var5 = var1.parse(NBTDynamicOps.INSTANCE, var4);
       if (!var5.error().isPresent()) {
          return (T)var5.result().get();
       } else {
@@ -61,9 +61,9 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public <T> void method35697(Codec<T> var1, T var2) throws IOException {
-      DataResult var5 = var1.encodeStart(Class8063.field34602, var2);
+      DataResult var5 = var1.encodeStart(NBTDynamicOps.INSTANCE, var2);
       if (!var5.error().isPresent()) {
-         this.method35720((Class39)var5.result().get());
+         this.method35720((CompoundNBT)var5.result().get());
       } else {
          throw new IOException("Failed to encode: " + ((PartialResult)var5.error().get()).message() + " " + var2);
       }
@@ -241,7 +241,7 @@ public class PacketBuffer extends ByteBuf {
       return this;
    }
 
-   public PacketBuffer method35720(Class39 var1) {
+   public PacketBuffer method35720(CompoundNBT var1) {
       if (var1 == null) {
          this.writeByte(0);
       } else {
@@ -256,17 +256,17 @@ public class PacketBuffer extends ByteBuf {
    }
 
    @Nullable
-   public Class39 method35721() {
+   public CompoundNBT method35721() {
       return this.method35723(new Class8465(2097152L));
    }
 
    @Nullable
-   public Class39 method35722() {
+   public CompoundNBT method35722() {
       return this.method35723(Class8465.field36284);
    }
 
    @Nullable
-   public Class39 method35723(Class8465 var1) {
+   public CompoundNBT method35723(Class8465 var1) {
       int var4 = this.readerIndex();
       byte var5 = this.readByte();
       if (var5 == 0) {
@@ -287,15 +287,15 @@ public class PacketBuffer extends ByteBuf {
    }
 
    public PacketBuffer method35725(ItemStack var1, boolean var2) {
-      if (!var1.method32105()) {
+      if (!var1.isEmpty()) {
          this.writeBoolean(true);
-         Class3257 var5 = var1.method32107();
-         this.writeVarInt(Class3257.method11701(var5));
-         this.writeByte(var1.method32179());
-         Class39 var6 = null;
+         Item var5 = var1.getItem();
+         this.writeVarInt(Item.method11701(var5));
+         this.writeByte(var1.getCount());
+         CompoundNBT var6 = null;
          if (Class9561.method37058(var5, var1) || var5.method11721()) {
             if (var2 && Class9299.field42923.method20214()) {
-               var6 = (Class39)Class9299.method35070(var1, Class9299.field42923);
+               var6 = (CompoundNBT)Class9299.method35070(var1, Class9299.field42923);
             } else {
                var6 = var1.method32142();
             }
@@ -313,7 +313,7 @@ public class PacketBuffer extends ByteBuf {
       if (this.readBoolean()) {
          int var3 = this.method35714();
          byte var4 = this.readByte();
-         ItemStack var5 = new ItemStack(Class3257.method11702(var3), var4);
+         ItemStack var5 = new ItemStack(Item.method11702(var3), var4);
          if (!Class9299.field42926.method20214()) {
             var5.method32148(this.method35721());
          } else {
@@ -382,29 +382,29 @@ public class PacketBuffer extends ByteBuf {
       return this;
    }
 
-   public Class8711 method35735() {
+   public BlockRayTraceResult method35735() {
       BlockPos var3 = this.method35707();
       Direction var4 = this.<Direction>method35712(Direction.class);
       float var5 = this.readFloat();
       float var6 = this.readFloat();
       float var7 = this.readFloat();
       boolean var8 = this.readBoolean();
-      return new Class8711(
-         new Vector3d((double)var3.method8304() + (double)var5, (double)var3.getY() + (double)var6, (double)var3.method8306() + (double)var7),
+      return new BlockRayTraceResult(
+         new Vector3d((double)var3.getX() + (double)var5, (double)var3.getY() + (double)var6, (double)var3.getZ() + (double)var7),
          var4,
          var3,
          var8
       );
    }
 
-   public void method35736(Class8711 var1) {
-      BlockPos var4 = var1.method31423();
+   public void method35736(BlockRayTraceResult var1) {
+      BlockPos var4 = var1.getPos();
       this.method35708(var4);
-      this.method35713(var1.method31424());
+      this.method35713(var1.getFace());
       Vector3d var5 = var1.method31419();
-      this.writeFloat((float)(var5.field18048 - (double)var4.method8304()));
+      this.writeFloat((float)(var5.field18048 - (double)var4.getX()));
       this.writeFloat((float)(var5.field18049 - (double)var4.getY()));
-      this.writeFloat((float)(var5.field18050 - (double)var4.method8306()));
+      this.writeFloat((float)(var5.field18050 - (double)var4.getZ()));
       this.writeBoolean(var1.method31425());
    }
 

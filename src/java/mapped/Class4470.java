@@ -22,7 +22,7 @@ public class Class4470 extends Class4457 {
    public JsonObject method14092(Class8107 var1) {
       JsonObject var4 = super.method14092(var1);
       if (this.field21659 != null) {
-         var4.addProperty("potion", Registry.field16076.method9181(this.field21659).toString());
+         var4.addProperty("potion", Registry.field16076.getKey(this.field21659).toString());
       }
 
       return var4;

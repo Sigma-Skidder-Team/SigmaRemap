@@ -26,7 +26,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
    }
 
    private boolean method10907() {
-      return this.field17125.method3092(Class8514.field38148);
+      return this.field17125.method3092(Items.field38148);
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
       this.field17125.method4304(false);
       this.field17125.method4233((Class880)null);
       this.field17129 = 0;
-      if (this.field17125.method3148()) {
+      if (this.field17125.isHandActive()) {
          this.field17125.method3162();
          this.field17125.method4535(false);
          Class3261.method11756(this.field17125.method3158(), false);
@@ -86,7 +86,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                if (this.field17126 != Class2229.field14615) {
                   if (this.field17126 == Class2229.field14616 && var4) {
                      this.field17125.method4530(var3, 1.0F);
-                     ItemStack var9 = this.field17125.getHeldItem(Class9456.method36389(this.field17125, Class8514.field38148));
+                     ItemStack var9 = this.field17125.getHeldItem(Class9456.method36389(this.field17125, Items.field38148));
                      Class3261.method11756(var9, false);
                      this.field17126 = Class2229.field14613;
                   }
@@ -97,7 +97,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                   }
                }
             } else {
-               if (!this.field17125.method3148()) {
+               if (!this.field17125.isHandActive()) {
                   this.field17126 = Class2229.field14613;
                }
 
@@ -111,7 +111,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                }
             }
          } else if (!var8) {
-            this.field17125.method3154(Class9456.method36389(this.field17125, Class8514.field38148));
+            this.field17125.method3154(Class9456.method36389(this.field17125, Items.field38148));
             this.field17126 = Class2229.field14614;
             this.field17125.method4535(true);
          }

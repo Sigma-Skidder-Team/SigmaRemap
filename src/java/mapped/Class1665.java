@@ -8,14 +8,14 @@ import java.util.stream.Stream;
 
 public interface Class1665 {
    @Nullable
-   Class944 method6759(BlockPos var1);
+   TileEntity getTileEntity(BlockPos var1);
 
-   Class7380 method6738(BlockPos var1);
+   BlockState getBlockState(BlockPos var1);
 
    Class7379 method6739(BlockPos var1);
 
    default int method7032(BlockPos var1) {
-      return this.method6738(var1).method23392();
+      return this.getBlockState(var1).method23392();
    }
 
    default int method7033() {
@@ -26,29 +26,29 @@ public interface Class1665 {
       return 256;
    }
 
-   default Stream<Class7380> method7035(Class6488 var1) {
-      return BlockPos.method8362(var1).<Class7380>map(this::method6738);
+   default Stream<BlockState> method7035(Class6488 var1) {
+      return BlockPos.method8362(var1).<BlockState>map(this::getBlockState);
    }
 
-   default Class8711 method7036(Class6809 var1) {
+   default BlockRayTraceResult method7036(Class6809 var1) {
       return method7040(
          var1,
          (var1x, var2) -> {
-            Class7380 var5 = this.method6738(var2);
+            BlockState var5 = this.getBlockState(var2);
             Class7379 var6 = this.method6739(var2);
             Vector3d var7 = var1x.method20745();
             Vector3d var8 = var1x.method20744();
             Class6408 var9 = var1x.method20746(var5, this, var2);
-            Class8711 var10 = this.method7037(var7, var8, var2, var9, var5);
+            BlockRayTraceResult var10 = this.method7037(var7, var8, var2, var9, var5);
             Class6408 var11 = var1x.method20747(var6, this, var2);
-            Class8711 var12 = var11.method19525(var7, var8, var2);
+            BlockRayTraceResult var12 = var11.method19525(var7, var8, var2);
             double var13 = var10 != null ? var1x.method20745().method11342(var10.method31419()) : Double.MAX_VALUE;
             double var15 = var12 != null ? var1x.method20745().method11342(var12.method31419()) : Double.MAX_VALUE;
             return !(var13 <= var15) ? var12 : var10;
          },
          var0 -> {
             Vector3d var3 = var0.method20745().method11336(var0.method20744());
-            return Class8711.method31420(
+            return BlockRayTraceResult.method31420(
                var0.method20744(), Direction.method553(var3.field18048, var3.field18049, var3.field18050), new BlockPos(var0.method20744())
             );
          }
@@ -56,12 +56,12 @@ public interface Class1665 {
    }
 
    @Nullable
-   default Class8711 method7037(Vector3d var1, Vector3d var2, BlockPos var3, Class6408 var4, Class7380 var5) {
-      Class8711 var8 = var4.method19525(var1, var2, var3);
+   default BlockRayTraceResult method7037(Vector3d var1, Vector3d var2, BlockPos var3, Class6408 var4, BlockState var5) {
+      BlockRayTraceResult var8 = var4.method19525(var1, var2, var3);
       if (var8 != null) {
-         Class8711 var9 = var5.method23418(this, var3).method19525(var1, var2, var3);
+         BlockRayTraceResult var9 = var5.method23418(this, var3).method19525(var1, var2, var3);
          if (var9 != null && var9.method31419().method11336(var1).method11349() < var8.method31419().method11336(var1).method11349()) {
-            return var8.method31421(var9.method31424());
+            return var8.method31421(var9.getFace());
          }
       }
 
@@ -78,9 +78,9 @@ public interface Class1665 {
    }
 
    default double method7039(BlockPos var1) {
-      return this.method7038(this.method6738(var1).method23414(this, var1), () -> {
+      return this.method7038(this.getBlockState(var1).method23414(this, var1), () -> {
          BlockPos var4 = var1.method8313();
-         return this.method6738(var4).method23414(this, var4);
+         return this.getBlockState(var4).method23414(this, var4);
       });
    }
 
@@ -94,9 +94,9 @@ public interface Class1665 {
          double var13 = MathHelper.method37822(-1.0E-7, var5.field18048, var6.field18048);
          double var15 = MathHelper.method37822(-1.0E-7, var5.field18049, var6.field18049);
          double var17 = MathHelper.method37822(-1.0E-7, var5.field18050, var6.field18050);
-         int var19 = MathHelper.method37769(var13);
-         int var20 = MathHelper.method37769(var15);
-         int var21 = MathHelper.method37769(var17);
+         int var19 = MathHelper.floor(var13);
+         int var20 = MathHelper.floor(var15);
+         int var21 = MathHelper.floor(var17);
          Mutable var22 = new Mutable(var19, var20, var21);
          Object var23 = var1.apply(var0, var22);
          if (var23 == null) {

@@ -1,7 +1,7 @@
 package mapped;
 
 public abstract class Class4583 extends Class4566 {
-   public Class4583(Class1656 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public Class4583(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.field22044 = this.field22044 * 0.01F + var8;
       this.field22045 = this.field22045 * 0.01F + var10;

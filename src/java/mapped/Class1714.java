@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 
-public final class Class1714 extends Class1713 {
+public final class Class1714 extends TextureAtlasSprite {
    private static final ResourceLocation field9360 = new ResourceLocation("missingno");
    private static Class291 field9361;
    private static final Class8112<Class1806> field9362 = new Class8112<Class1806>(() -> {
@@ -25,15 +25,15 @@ public final class Class1714 extends Class1713 {
       field9360, 16, 16, new Class7788(Lists.newArrayList(new Class9704[]{new Class9704(0, -1)}), 16, 16, 1, false)
    );
 
-   public Class1714(Class289 var1, Class9431 var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class1714(AtlasTexture var1, Class9431 var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var6, var7, method7516(var2.method36196(), var2.method36197()));
    }
 
-   private Class1714(Class289 var1, int var2, int var3, int var4, int var5, int var6) {
+   private Class1714(AtlasTexture var1, int var2, int var3, int var4, int var5, int var6) {
       super(var1, field9325, var2, var3, var4, var5, var6, field9362.method28097());
    }
 
-   public static Class1714 method7512(Class289 var0, int var1, int var2, int var3, int var4, int var5) {
+   public static Class1714 method7512(AtlasTexture var0, int var1, int var2, int var3, int var4, int var5) {
       return new Class1714(var0, var1, var2, var3, var4, var5);
    }
 

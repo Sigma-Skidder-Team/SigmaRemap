@@ -13,7 +13,7 @@ public interface Class4832 {
 
    boolean method14950(Class6408 var1, BlockPos var2, boolean var3);
 
-   boolean method14951(Class3257 var1);
+   boolean method14951(Item var1);
 
    boolean method14952(Class7379 var1, Class7633 var2);
 }

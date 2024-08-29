@@ -27,7 +27,7 @@ public class Class7365 extends Class7362 {
 
             for (int var17 = 0; var17 < 6; var17++) {
                this.field31519
-                  .field5024
+                  .world
                   .method6746(
                      Class7940.field34056,
                      var11,
@@ -62,7 +62,7 @@ public class Class7365 extends Class7362 {
             double var11 = var9;
             Mutable var13 = new Mutable(var5, var9, var7);
 
-            while (this.field31519.field5024.method7007(var13)) {
+            while (this.field31519.world.method7007(var13)) {
                if (--var11 < 0.0) {
                   var11 = var9;
                   break;
@@ -71,14 +71,14 @@ public class Class7365 extends Class7362 {
                var13.method8373(var5, var11, var7);
             }
 
-            var11 = (double)(MathHelper.method37769(var11) + 1);
-            this.field31529 = new Class999(this.field31519.field5024, var5, var11, var7);
+            var11 = (double)(MathHelper.floor(var11) + 1);
+            this.field31529 = new Class999(this.field31519.world, var5, var11, var7);
             this.field31529.method4113(this.field31519);
             this.field31529.method4097(5.0F);
             this.field31529.method4109(200);
             this.field31529.method4105(Class7940.field34056);
             this.field31529.method4101(new Class2023(Class8254.field35473));
-            this.field31519.field5024.method6916(this.field31529);
+            this.field31519.world.method6916(this.field31529);
          }
       } else if (this.field31528 < 4) {
          this.field31519.method4336().method32671(Class9598.field44902);

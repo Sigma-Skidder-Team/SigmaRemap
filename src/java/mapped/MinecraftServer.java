@@ -47,18 +47,18 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BooleanSupplier;
 import java.util.function.Function;
 
-public abstract class MinecraftServer extends Class317<Class567> implements Class315, Class909, AutoCloseable {
+public abstract class MinecraftServer extends RecursiveEventLoop<Class567> implements ISnooperInfo, Class909, AutoCloseable {
    private static final Logger field1208 = LogManager.getLogger();
-   public static final File field1209 = new File("usercache.json");
-   public static final Class8898 field1210 = new Class8898(
-      "Demo World", Class1894.field11102, false, Class2197.field14353, false, new Class5462(), Class7818.field33531
+   public static final File USER_CACHE_FILE = new File("usercache.json");
+   public static final WorldSettings field1210 = new WorldSettings(
+      "Demo World", Class1894.field11102, false, Class2197.field14353, false, new Class5462(), DatapackCodec.field33531
    );
-   public final Class1814 field1211;
+   public final SaveFormat.LevelSave field1211;
    public final Class8716 field1212;
-   private final Class7998 field1213 = new Class7998("server", this, Util.milliTime());
+   private final Snooper field1213 = new Snooper("server", this, Util.milliTime());
    private final List<Runnable> field1214 = Lists.newArrayList();
-   private final Class7684 field1215 = new Class7684(Util.nanoTimeSupplier, this::method1375);
-   private Class7165 field1216 = Class7167.field30819;
+   private final TimeTracker field1215 = new TimeTracker(Util.nanoTimeSupplier, this::method1375);
+   private IProfiler field1216 = EmptyProfiler.INSTANCE;
    private final Class9021 field1217;
    private final Class8216 field1218;
    private final Class8783 field1219 = new Class8783();
@@ -92,28 +92,28 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    private boolean field1247;
    private final MinecraftSessionService field1248;
    private final GameProfileRepository field1249;
-   private final Class8805 field1250;
+   private final PlayerProfileCache field1250;
    private long field1251;
    private final Thread field1252;
    private long field1253 = Util.milliTime();
    private long field1254;
    private boolean field1255;
    private boolean field1256;
-   private final Class313 field1257;
+   private final ResourcePackList field1257;
    private final Class6887 field1258 = new Class6887(this);
    private Class8962 field1259;
    private final Class8426 field1260 = new Class8426();
    private final Class7268 field1261;
-   private final Class9789 field1262 = new Class9789();
+   private final FrameTimer field1262 = new FrameTimer();
    private boolean field1263;
    private float field1264;
    private final Executor field1265;
    private String field1266;
-   private Class1701 field1267;
+   private DataPackRegistries field1267;
    private final Class8761 field1268;
-   public final Class6611 field1269;
+   public final IServerConfiguration field1269;
 
-   public static <S extends MinecraftServer> S method1275(Function<Thread, S> var0) {
+   public static <S extends MinecraftServer> S func_240784_a_(Function<Thread, S> var0) {
       AtomicReference var3 = new AtomicReference();
       Thread var4 = new Thread(() -> ((MinecraftServer)var3.get()).method1297(), "Server thread");
       var4.setUncaughtExceptionHandler((var0x, var1) -> field1208.error(var1));
@@ -126,15 +126,15 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    public MinecraftServer(
       Thread var1,
       Class8905 var2,
-      Class1814 var3,
-      Class6611 var4,
-      Class313 var5,
+      SaveFormat.LevelSave var3,
+      IServerConfiguration var4,
+      ResourcePackList var5,
       Proxy var6,
       DataFixer var7,
-      Class1701 var8,
+      DataPackRegistries var8,
       MinecraftSessionService var9,
       GameProfileRepository var10,
-      Class8805 var11,
+      PlayerProfileCache var11,
       Class8216 var12
    ) {
       super("Server");
@@ -152,9 +152,9 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       this.field1212 = var3.method7994();
       this.field1221 = var7;
       this.field1261 = new Class7268(this, var8.method7330());
-      this.field1268 = new Class8761(var8.method7337(), var3, var7);
+      this.field1268 = new Class8761(var8.getResourceManager(), var3, var7);
       this.field1252 = var1;
-      this.field1265 = Util.method38492();
+      this.field1265 = Util.getServerExecutor();
    }
 
    private void method1276(Class8250 var1) {
@@ -165,7 +165,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
 
    public abstract boolean method1277() throws IOException;
 
-   public static void method1278(Class1814 var0) {
+   public static void func_240777_a_(SaveFormat.LevelSave var0) {
       if (var0.method7995()) {
          field1208.info("Converting map!");
          var0.method7996(new Class1340());
@@ -186,7 +186,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
 
    public void method1281(Class7243 var1) {
       Class6608 var4 = this.field1269.method20098();
-      Class7846 var5 = this.field1269.method20087();
+      DimensionGeneratorSettings var5 = this.field1269.getDimensionGeneratorSettings();
       boolean var6 = var5.method26267();
       long var7 = var5.method26259();
       long var9 = Class6668.method20321(var7);
@@ -197,7 +197,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       Object var15;
       if (var13 == null) {
          var14 = this.field1224.method32454().method9189(Class9535.field44371);
-         var15 = Class7846.method26258(
+         var15 = DimensionGeneratorSettings.method26258(
             this.field1224.<Biome>method32453(Registry.BIOME_KEY), this.field1224.<Class9309>method32453(Registry.field16099), new Random().nextLong()
          );
       } else {
@@ -220,14 +220,14 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
                this.method1283(this.field1269);
             }
          } catch (Throwable var28) {
-            Class4526 var20 = Class4526.method14413(var28, "Exception initializing level");
+            CrashReport var20 = CrashReport.makeCrashReport(var28, "Exception initializing level");
 
             try {
-               var16.method6802(var20);
+               var16.fillCrashReport(var20);
             } catch (Throwable var27) {
             }
 
-            throw new Class2506(var20);
+            throw new ReportedException(var20);
          }
 
          var4.method20071(true);
@@ -303,14 +303,14 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
                var22.method26521(var0, var7, var0.field9016, new BlockPos(var1.method20029(), var1.method20030(), var1.method20031()));
             }
          } else {
-            var1.method20041(BlockPos.field13032.method8311(), 0.0F);
+            var1.method20041(BlockPos.ZERO.method8311(), 0.0F);
          }
       } else {
-         var1.method20041(BlockPos.field13032.method8339(var7.method17823()), 0.0F);
+         var1.method20041(BlockPos.ZERO.method8339(var7.method17823()), 0.0F);
       }
    }
 
-   private void method1283(Class6611 var1) {
+   private void method1283(IServerConfiguration var1) {
       var1.method20085(Class2197.field14351);
       var1.method20086(true);
       Class6608 var4 = var1.method20098();
@@ -323,7 +323,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
 
    private void method1284(Class7243 var1) {
       ServerWorld var4 = this.method1317();
-      field1208.info("Preparing start region for dimension {}", var4.method6813().method31399());
+      field1208.info("Preparing start region for dimension {}", var4.getDimensionKey().method31399());
       BlockPos var5 = var4.method6947();
       var1.method22736(new Class7481(var5));
       Class1703 var6 = var4.method6883();
@@ -360,7 +360,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    }
 
    public void method1285() {
-      File var3 = this.field1211.method7991(Class5137.field23353).toFile();
+      File var3 = this.field1211.resolveFilePath(FolderName.field23353).toFile();
       if (var3.isFile()) {
          String var4 = this.field1211.method7990();
 
@@ -391,7 +391,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
 
       for (ServerWorld var8 : this.method1320()) {
          if (!var1) {
-            field1208.info("Saving chunks for level '{}'/{}", var8, var8.method6813().method31399());
+            field1208.info("Saving chunks for level '{}'/{}", var8, var8.getDimensionKey().method31399());
          }
 
          var8.method6910((Class1339)null, var2, var8.field9047 && !var3);
@@ -413,8 +413,8 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
 
    public void method1292() {
       field1208.info("Stopping server");
-      if (this.method1371() != null) {
-         this.method1371().method33400();
+      if (this.getNetworkSystem() != null) {
+         this.getNetworkSystem().method33400();
       }
 
       if (this.field1226 != null) {
@@ -443,7 +443,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
          }
       }
 
-      if (this.field1213.method27300()) {
+      if (this.field1213.isSnooperRunning()) {
          this.field1213.method27301();
       }
 
@@ -468,7 +468,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       return this.field1227;
    }
 
-   public void method1296(boolean var1) {
+   public void initiateShutdown(boolean var1) {
       this.field1227 = false;
       if (var1) {
          try {
@@ -484,7 +484,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
          if (this.method1277()) {
             this.field1253 = Util.milliTime();
             this.field1219.method31701(new StringTextComponent(this.field1235));
-            this.field1219.method31705(new Class9226(SharedConstants.method34773().getName(), SharedConstants.method34773().getProtocolVersion()));
+            this.field1219.method31705(new Class9226(SharedConstants.getVersion().getName(), SharedConstants.getVersion().getProtocolVersion()));
             this.method1304(this.field1219);
 
             while (this.field1227) {
@@ -497,9 +497,9 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
                }
 
                this.field1253 += 50L;
-               Class9487 var51 = Class9487.method36636("Server");
+               LongTickDetector var51 = LongTickDetector.method36636("Server");
                this.method1428(var51);
-               this.field1216.method22501();
+               this.field1216.startTick();
                this.field1216.startSection("tick");
                this.method1310(this::method1298);
                this.field1216.endStartSection("nextTickWait");
@@ -507,26 +507,26 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
                this.field1254 = Math.max(Util.milliTime() + 50L, this.field1253);
                this.method1299();
                this.field1216.endSection();
-               this.field1216.method22502();
+               this.field1216.endTick();
                this.method1429(var51);
                this.field1244 = true;
             }
          } else {
-            this.method1308((Class4526)null);
+            this.method1308((CrashReport)null);
          }
       } catch (Throwable var49) {
          field1208.error("Encountered an unexpected exception", var49);
-         Class4526 var10;
-         if (var49 instanceof Class2506) {
-            var10 = this.method1326(((Class2506)var49).method10487());
+         CrashReport var10;
+         if (var49 instanceof ReportedException) {
+            var10 = this.method1326(((ReportedException)var49).getCrashReport());
          } else {
-            var10 = this.method1326(new Class4526("Exception in server tick loop", var49));
+            var10 = this.method1326(new CrashReport("Exception in server tick loop", var49));
          }
 
          File var7 = new File(
             new File(this.method1307(), "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-server.txt"
          );
-         if (var10.method14408(var7)) {
+         if (var10.saveToFile(var7)) {
             field1208.error("This crash report has been saved to: {}", var7.getAbsolutePath());
          } else {
             field1208.error("We were unable to save this crash report to disk.");
@@ -551,14 +551,14 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
 
    public void method1299() {
       this.drainTasks();
-      this.method1639(() -> !this.method1298());
+      this.driveUntil(() -> !this.method1298());
    }
 
-   public Class567 method1440(Runnable var1) {
+   public Class567 wrapTask(Runnable var1) {
       return new Class567(this.field1229, var1);
    }
 
-   public boolean method1439(Class567 var1) {
+   public boolean canRun(Class567 var1) {
       return var1.method1895() + 3 < this.field1229 || this.method1298();
    }
 
@@ -627,7 +627,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       return new File(".");
    }
 
-   public void method1308(Class4526 var1) {
+   public void method1308(CrashReport var1) {
    }
 
    public void method1309() {
@@ -661,12 +661,12 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       }
 
       this.field1216.startSection("snooper");
-      if (!this.field1213.method27300() && this.field1229 > 100) {
-         this.field1213.method27296();
+      if (!this.field1213.isSnooperRunning() && this.field1229 > 100) {
+         this.field1213.start();
       }
 
       if (this.field1229 % 6000 == 0) {
-         this.field1213.method27297();
+         this.field1213.addMemoryStatsToSnooper();
       }
 
       this.field1216.endSection();
@@ -674,7 +674,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       long var6 = this.field1238[this.field1229 % 100] = Util.nanoTime() - var4;
       this.field1264 = this.field1264 * 0.8F + (float)var6 / 1000000.0F * 0.19999999F;
       long var8 = Util.nanoTime();
-      this.field1262.method38592(var8 - var4);
+      this.field1262.addFrame(var8 - var4);
       this.field1216.endSection();
    }
 
@@ -684,11 +684,11 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       this.field1216.endStartSection("levels");
 
       for (ServerWorld var5 : this.method1320()) {
-         this.field1216.method22504(() -> var5 + " " + var5.method6813().method31399());
+         this.field1216.method22504(() -> var5 + " " + var5.getDimensionKey().method31399());
          if (this.field1229 % 20 == 0) {
             this.field1216.startSection("timeSync");
             this.field1226
-               .method19457(new Class5577(var5.method6783(), var5.method6784(), var5.method6789().method17135(Class5462.field24232)), var5.method6813());
+               .method19457(new Class5577(var5.method6783(), var5.method6784(), var5.method6789().method17135(Class5462.field24232)), var5.getDimensionKey());
             this.field1216.endSection();
          }
 
@@ -697,9 +697,9 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
          try {
             var5.method6894(var1);
          } catch (Throwable var8) {
-            Class4526 var7 = Class4526.method14413(var8, "Exception ticking world");
-            var5.method6802(var7);
-            throw new Class2506(var7);
+            CrashReport var7 = CrashReport.makeCrashReport(var8, "Exception ticking world");
+            var5.fillCrashReport(var7);
+            throw new ReportedException(var7);
          }
 
          this.field1216.endSection();
@@ -707,10 +707,10 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       }
 
       this.field1216.endStartSection("connection");
-      this.method1371().method33401();
+      this.getNetworkSystem().method33401();
       this.field1216.endStartSection("players");
       this.field1226.method19455();
-      if (SharedConstants.field42545) {
+      if (SharedConstants.developmentMode) {
          Class7879.field33820.method26417();
       }
 
@@ -735,7 +735,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       this.field1266 = var1;
    }
 
-   public boolean method1315() {
+   public boolean isThreadAlive() {
       return !this.field1252.isAlive();
    }
 
@@ -761,7 +761,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    }
 
    public String method1321() {
-      return SharedConstants.method34773().getName();
+      return SharedConstants.getVersion().getName();
    }
 
    public int method1322() {
@@ -780,21 +780,21 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       return "vanilla";
    }
 
-   public Class4526 method1326(Class4526 var1) {
+   public CrashReport method1326(CrashReport var1) {
       if (this.field1226 != null) {
-         var1.method14409()
-            .method32806("Player Count", () -> this.field1226.method19474() + " / " + this.field1226.method19475() + "; " + this.field1226.method19488());
+         var1.getCategory()
+            .addDetail("Player Count", () -> this.field1226.method19474() + " / " + this.field1226.method19475() + "; " + this.field1226.method19488());
       }
 
-      var1.method14409().method32806("Data Packs", () -> {
+      var1.getCategory().addDetail("Data Packs", () -> {
          StringBuilder var3 = new StringBuilder();
 
-         for (Class1810 var5 : this.field1257.method1270()) {
+         for (ResourcePackInfo var5 : this.field1257.getEnabledPacks()) {
             if (var3.length() > 0) {
                var3.append(", ");
             }
 
-            var3.append(var5.method7951());
+            var3.append(var5.getName());
             if (!var5.method7949().method8720()) {
                var3.append(" (incompatible)");
             }
@@ -803,7 +803,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
          return var3.toString();
       });
       if (this.field1266 != null) {
-         var1.method14409().method32806("Server Id", () -> this.field1266);
+         var1.getCategory().addDetail("Server Id", () -> this.field1266);
       }
 
       return var1;
@@ -904,34 +904,34 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    }
 
    @Override
-   public void method1347(Class7998 var1) {
-      var1.method27298("whitelist_enabled", false);
-      var1.method27298("whitelist_count", 0);
+   public void fillSnooper(Snooper var1) {
+      var1.addClientStat("whitelist_enabled", false);
+      var1.addClientStat("whitelist_count", 0);
       if (this.field1226 != null) {
-         var1.method27298("players_current", this.method1322());
-         var1.method27298("players_max", this.method1323());
-         var1.method27298("players_seen", this.field1212.method31443().length);
+         var1.addClientStat("players_current", this.method1322());
+         var1.addClientStat("players_max", this.method1323());
+         var1.addClientStat("players_seen", this.field1212.method31443().length);
       }
 
-      var1.method27298("uses_auth", this.field1231);
-      var1.method27298("gui_state", !this.method1373() ? "disabled" : "enabled");
-      var1.method27298("run_time", (Util.milliTime() - var1.method27303()) / 60L * 1000L);
-      var1.method27298("avg_tick_ms", (int)(MathHelper.method37785(this.field1238) * 1.0E-6));
+      var1.addClientStat("uses_auth", this.field1231);
+      var1.addClientStat("gui_state", !this.method1373() ? "disabled" : "enabled");
+      var1.addClientStat("run_time", (Util.milliTime() - var1.getMinecraftStartTimeMillis()) / 60L * 1000L);
+      var1.addClientStat("avg_tick_ms", (int)(MathHelper.method37785(this.field1238) * 1.0E-6));
       int var4 = 0;
 
       for (ServerWorld var6 : this.method1320()) {
          if (var6 != null) {
-            var1.method27298("world[" + var4 + "][dimension]", var6.method6813().method31399());
-            var1.method27298("world[" + var4 + "][mode]", this.field1269.method20067());
-            var1.method27298("world[" + var4 + "][difficulty]", var6.method6997());
-            var1.method27298("world[" + var4 + "][hardcore]", this.field1269.method20045());
-            var1.method27298("world[" + var4 + "][height]", this.field1236);
-            var1.method27298("world[" + var4 + "][chunks_loaded]", var6.method6883().method7371());
+            var1.addClientStat("world[" + var4 + "][dimension]", var6.getDimensionKey().method31399());
+            var1.addClientStat("world[" + var4 + "][mode]", this.field1269.method20067());
+            var1.addClientStat("world[" + var4 + "][difficulty]", var6.method6997());
+            var1.addClientStat("world[" + var4 + "][hardcore]", this.field1269.method20045());
+            var1.addClientStat("world[" + var4 + "][height]", this.field1236);
+            var1.addClientStat("world[" + var4 + "][chunks_loaded]", var6.method6883().method7371());
             var4++;
          }
       }
 
-      var1.method27298("worlds", var4);
+      var1.addClientStat("worlds", var4);
    }
 
    public abstract boolean method1348();
@@ -1010,14 +1010,14 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       this.field1226 = var1;
    }
 
-   public abstract boolean method1369();
+   public abstract boolean getPublic();
 
    public void method1370(Class1894 var1) {
       this.field1269.method20073(var1);
    }
 
    @Nullable
-   public Class9021 method1371() {
+   public Class9021 getNetworkSystem() {
       return this.field1217;
    }
 
@@ -1035,7 +1035,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       return this.field1229;
    }
 
-   public Class7998 method1376() {
+   public Snooper getSnooper() {
       return this.field1213;
    }
 
@@ -1075,7 +1075,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       return this.field1249;
    }
 
-   public Class8805 method1386() {
+   public PlayerProfileCache method1386() {
       return this.field1250;
    }
 
@@ -1097,7 +1097,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    }
 
    @Override
-   public Thread method1391() {
+   public Thread getExecutionThread() {
       return this.field1252;
    }
 
@@ -1128,35 +1128,35 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
    public CompletableFuture<Void> method1398(Collection<String> var1) {
       CompletableFuture var4 = CompletableFuture.<ImmutableList>supplyAsync(
             () -> var1.stream()
-                  .<Class1810>map(this.field1257::method1271)
+                  .<ResourcePackInfo>map(this.field1257::method1271)
                   .filter(Objects::nonNull)
-                  .<Class303>map(Class1810::method7950)
+                  .<IResourcePack>map(ResourcePackInfo::method7950)
                   .collect(ImmutableList.toImmutableList()),
             this
          )
-         .<Class1701>thenCompose(
-            var1x -> Class1701.method7338(var1x, !this.method1348() ? Class2085.field13577 : Class2085.field13576, this.method1289(), this.field1265, this)
+         .<DataPackRegistries>thenCompose(
+            var1x -> DataPackRegistries.func_240961_a_(var1x, !this.method1348() ? Class2085.INTEGRATED : Class2085.field13576, this.method1289(), this.field1265, this)
          )
          .thenAcceptAsync(var2 -> {
             this.field1267.close();
             this.field1267 = var2;
-            this.field1257.method1264(var1);
+            this.field1257.setEnabledPacks(var1);
             this.field1269.method20092(method1400(this.field1257));
-            var2.method7339();
+            var2.updateTags();
             this.getPlayerList().method19467();
             this.getPlayerList().method19490();
             this.field1261.method22826(this.field1267.method7330());
-            this.field1268.method31605(this.field1267.method7337());
+            this.field1268.method31605(this.field1267.getResourceManager());
          }, this);
       if (this.method1629()) {
-         this.method1639(var4::isDone);
+         this.driveUntil(var4::isDone);
       }
 
       return var4;
    }
 
-   public static Class7818 method1399(Class313 var0, Class7818 var1, boolean var2) {
-      var0.method1262();
+   public static DatapackCodec func_240772_a_(ResourcePackList var0, DatapackCodec var1, boolean var2) {
+      var0.reloadPacksFromFinders();
       if (!var2) {
          LinkedHashSet var5 = Sets.newLinkedHashSet();
 
@@ -1168,8 +1168,8 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
             }
          }
 
-         for (Class1810 var10 : var0.method1268()) {
-            String var8 = var10.method7951();
+         for (ResourcePackInfo var10 : var0.method1268()) {
+            String var8 = var10.getName();
             if (!var1.method26105().contains(var8) && !var5.contains(var8)) {
                field1208.info("Found new data pack {}, loading it automatically", var8);
                var5.add(var8);
@@ -1181,19 +1181,19 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
             var5.add("vanilla");
          }
 
-         var0.method1264(var5);
+         var0.setEnabledPacks(var5);
          return method1400(var0);
       } else {
-         var0.method1264(Collections.<String>singleton("vanilla"));
-         return new Class7818(ImmutableList.of("vanilla"), ImmutableList.of());
+         var0.setEnabledPacks(Collections.<String>singleton("vanilla"));
+         return new DatapackCodec(ImmutableList.of("vanilla"), ImmutableList.of());
       }
    }
 
-   private static Class7818 method1400(Class313 var0) {
-      Collection var3 = var0.method1269();
+   private static DatapackCodec method1400(ResourcePackList var0) {
+      Collection var3 = var0.func_232621_d_();
       ImmutableList var4 = ImmutableList.copyOf(var3);
       List var5 = var0.method1267().stream().filter(var1 -> !var3.contains(var1)).collect(ImmutableList.toImmutableList());
-      return new Class7818(var4, var5);
+      return new DatapackCodec(var4, var5);
    }
 
    public void method1401(Class6619 var1) {
@@ -1209,7 +1209,7 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       }
    }
 
-   public Class313 method1402() {
+   public ResourcePackList method1402() {
       return this.field1257;
    }
 
@@ -1311,11 +1311,11 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       }
    }
 
-   public Class9789 method1419() {
+   public FrameTimer method1419() {
       return this.field1262;
    }
 
-   public Class7165 method1420() {
+   public IProfiler method1420() {
       return this.field1216;
    }
 
@@ -1343,16 +1343,16 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
          var4.write(String.format("pending_tasks: %d\n", this.method1630()));
          var4.write(String.format("average_tick_time: %f\n", this.method1417()));
          var4.write(String.format("tick_times: %s\n", Arrays.toString(this.field1238)));
-         var4.write(String.format("queue: %s\n", Util.method38492()));
+         var4.write(String.format("queue: %s\n", Util.getServerExecutor()));
       }
    }
 
    private void method1424(Path var1) throws IOException {
-      Class4526 var4 = new Class4526("Server dump", new Exception("dummy"));
+      CrashReport var4 = new CrashReport("Server dump", new Exception("dummy"));
       this.method1326(var4);
 
       try (BufferedWriter var5 = Files.newBufferedWriter(var1)) {
-         var5.write(var4.method14406());
+         var5.write(var4.getCompleteReport());
       }
    }
 
@@ -1393,39 +1393,39 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       }
    }
 
-   private void method1428(Class9487 var1) {
+   private void method1428(LongTickDetector var1) {
       if (this.field1246) {
          this.field1246 = false;
-         this.field1215.method25293();
+         this.field1215.func_233507_c_();
       }
 
-      this.field1216 = Class9487.method36637(this.field1215.method25294(), var1);
+      this.field1216 = LongTickDetector.func_233523_a_(this.field1215.func_233508_d_(), var1);
    }
 
-   private void method1429(Class9487 var1) {
+   private void method1429(LongTickDetector var1) {
       if (var1 != null) {
-         var1.method36635();
+         var1.func_233525_b_();
       }
 
-      this.field1216 = this.field1215.method25294();
+      this.field1216 = this.field1215.func_233508_d_();
    }
 
    public boolean method1430() {
-      return this.field1215.method25291();
+      return this.field1215.func_233505_a_();
    }
 
    public void method1431() {
       this.field1246 = true;
    }
 
-   public Class7740 method1432() {
-      Class7740 var3 = this.field1215.method25295();
-      this.field1215.method25292();
+   public IProfileResult method1432() {
+      IProfileResult var3 = this.field1215.func_233509_e_();
+      this.field1215.func_233506_b_();
       return var3;
    }
 
-   public Path method1433(Class5137 var1) {
-      return this.field1211.method7991(var1);
+   public Path method1433(FolderName var1) {
+      return this.field1211.resolveFilePath(var1);
    }
 
    public boolean method1434() {
@@ -1436,11 +1436,11 @@ public abstract class MinecraftServer extends Class317<Class567> implements Clas
       return this.field1268;
    }
 
-   public Class6611 method1436() {
+   public IServerConfiguration method1436() {
       return this.field1269;
    }
 
-   public Class8904 method1437() {
+   public DynamicRegistries method1437() {
       return this.field1224;
    }
 

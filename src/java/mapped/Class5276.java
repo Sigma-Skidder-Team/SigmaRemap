@@ -14,7 +14,7 @@ public class Class5276 extends Module {
 
     public Class5276() {
         super(ModuleCategory.RENDER, "Box Outline", "Draws a line arround players");
-        this.method15972(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
+        this.registerSetting(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
     }
 
     @EventTarget

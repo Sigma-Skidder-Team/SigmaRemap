@@ -66,11 +66,11 @@ public class Class7305 {
       this.field31305 = var2;
    }
 
-   public boolean method23079(Class39 var1) {
+   public boolean method23079(CompoundNBT var1) {
       return !this.field31303 ? this.method23080(var1) : !this.method23080(var1);
    }
 
-   public boolean method23080(Class39 var1) {
+   public boolean method23080(CompoundNBT var1) {
       if (var1 == null) {
          return false;
       } else {
@@ -94,8 +94,8 @@ public class Class7305 {
    }
 
    private boolean method23081(Class30 var1) {
-      if (var1 instanceof Class39) {
-         Class39 var4 = (Class39)var1;
+      if (var1 instanceof CompoundNBT) {
+         CompoundNBT var4 = (CompoundNBT)var1;
 
          for (String var6 : var4.method97()) {
             Class30 var7 = var4.method116(var6);
@@ -105,8 +105,8 @@ public class Class7305 {
          }
       }
 
-      if (var1 instanceof Class41) {
-         Class41 var8 = (Class41)var1;
+      if (var1 instanceof ListNBT) {
+         ListNBT var8 = (ListNBT)var1;
          int var9 = var8.size();
 
          for (int var10 = 0; var10 < var9; var10++) {
@@ -121,13 +121,13 @@ public class Class7305 {
    }
 
    private static Class30 method23082(Class30 var0, String var1) {
-      if (var0 instanceof Class39) {
-         Class39 var6 = (Class39)var0;
+      if (var0 instanceof CompoundNBT) {
+         CompoundNBT var6 = (CompoundNBT)var0;
          return var6.method116(var1);
-      } else if (!(var0 instanceof Class41)) {
+      } else if (!(var0 instanceof ListNBT)) {
          return null;
       } else {
-         Class41 var4 = (Class41)var0;
+         ListNBT var4 = (ListNBT)var0;
          if (var1.equals("count")) {
             return Class36.method95(var4.size());
          } else {
@@ -177,7 +177,7 @@ public class Class7305 {
 
    private static String method23087(Class30 var0, int var1) {
       if (var0 != null) {
-         if (!(var0 instanceof Class40)) {
+         if (!(var0 instanceof StringNBT)) {
             if (!(var0 instanceof Class36)) {
                if (!(var0 instanceof Class33)) {
                   if (!(var0 instanceof Class37)) {
@@ -210,7 +210,7 @@ public class Class7305 {
                return var1 != 1 ? Integer.toString(var7.method84()) : "#" + Class9402.method35758(Integer.toHexString(var7.method84()), 6, '0');
             }
          } else {
-            Class40 var4 = (Class40)var0;
+            StringNBT var4 = (StringNBT)var0;
             String var5 = var4.method81();
             if (var5.startsWith("{")) {
                Matcher var6 = field31320.matcher(var5);

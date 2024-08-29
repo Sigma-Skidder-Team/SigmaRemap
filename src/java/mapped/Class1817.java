@@ -15,18 +15,18 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class1817 implements Class191 {
+public class Class1817 implements IResourceManager {
    private static final Logger field9813 = LogManager.getLogger();
-   public final List<Class303> field9814 = Lists.newArrayList();
-   private final Class1946 field9815;
+   public final List<IResourcePack> field9814 = Lists.newArrayList();
+   private final ResourcePackType field9815;
    private final String field9816;
 
-   public Class1817(Class1946 var1, String var2) {
+   public Class1817(ResourcePackType var1, String var2) {
       this.field9815 = var1;
       this.field9816 = var2;
    }
 
-   public void method8062(Class303 var1) {
+   public void method8062(IResourcePack var1) {
       this.field9814.add(var1);
    }
 
@@ -38,11 +38,11 @@ public class Class1817 implements Class191 {
    @Override
    public Class1783 method580(ResourceLocation var1) throws IOException {
       this.method8064(var1);
-      Class303 var4 = null;
+      IResourcePack var4 = null;
       ResourceLocation var5 = method8066(var1);
 
       for (int var6 = this.field9814.size() - 1; var6 >= 0; var6--) {
-         Class303 var7 = this.field9814.get(var6);
+         IResourcePack var7 = this.field9814.get(var6);
          if (var4 == null && var7.method1225(this.field9815, var5)) {
             var4 = var7;
          }
@@ -66,7 +66,7 @@ public class Class1817 implements Class191 {
          return false;
       } else {
          for (int var4 = this.field9814.size() - 1; var4 >= 0; var4--) {
-            Class303 var5 = this.field9814.get(var4);
+            IResourcePack var5 = this.field9814.get(var4);
             if (var5.method1225(this.field9815, var1)) {
                return true;
             }
@@ -76,8 +76,8 @@ public class Class1817 implements Class191 {
       }
    }
 
-   public InputStream method8063(ResourceLocation var1, Class303 var2) throws IOException {
-      InputStream var5 = var2.method1223(this.field9815, var1);
+   public InputStream method8063(ResourceLocation var1, IResourcePack var2) throws IOException {
+      InputStream var5 = var2.getResourceStream(this.field9815, var1);
       return (InputStream)(!field9813.isDebugEnabled() ? var5 : new Class1780(var5, var1, var2.method1228()));
    }
 
@@ -97,7 +97,7 @@ public class Class1817 implements Class191 {
       ArrayList var4 = Lists.newArrayList();
       ResourceLocation var5 = method8066(var1);
 
-      for (Class303 var7 : this.field9814) {
+      for (IResourcePack var7 : this.field9814) {
          if (var7.method1225(this.field9815, var1)) {
             InputStream var8 = !var7.method1225(this.field9815, var5) ? null : this.method8063(var5, var7);
             var4.add(new Class1785(var7.method1228(), var1, this.method8063(var1, var7), var8));
@@ -115,7 +115,7 @@ public class Class1817 implements Class191 {
    public Collection<ResourceLocation> method583(String var1, Predicate<String> var2) {
       ArrayList var5 = Lists.newArrayList();
 
-      for (Class303 var7 : this.field9814) {
+      for (IResourcePack var7 : this.field9814) {
          var5.addAll(var7.method1224(this.field9815, this.field9816, var1, Integer.MAX_VALUE, var2));
       }
 
@@ -124,7 +124,7 @@ public class Class1817 implements Class191 {
    }
 
    @Override
-   public Stream<Class303> method584() {
+   public Stream<IResourcePack> method584() {
       return this.field9814.stream();
    }
 

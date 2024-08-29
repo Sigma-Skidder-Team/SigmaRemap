@@ -12,7 +12,7 @@ public class Class1030 extends Class1025 {
    private static final Predicate<Class2197> field5731 = var0 -> var0 == Class2197.field14353 || var0 == Class2197.field14354;
    private boolean field5732;
 
-   public Class1030(Class8992<? extends Class1030> var1, World var2) {
+   public Class1030(EntityType<? extends Class1030> var1, World var2) {
       super(var1, var2);
    }
 
@@ -37,7 +37,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4258() {
       if (!this.method4305() && Class8100.method28053(this)) {
-         boolean var3 = ((ServerWorld)this.field5024).method6958(this.method3432());
+         boolean var3 = ((ServerWorld)this.world).method6958(this.getPosition());
          ((Class6991)this.method4230()).method21682(var3);
       }
 
@@ -53,7 +53,7 @@ public class Class1030 extends Class1025 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       if (this.field5732) {
          var1.method115("Johnny", true);
@@ -70,7 +70,7 @@ public class Class1030 extends Class1025 {
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       if (var1.method119("Johnny", 99)) {
          this.field5732 = var1.method132("Johnny");
@@ -84,7 +84,7 @@ public class Class1030 extends Class1025 {
 
    @Nullable
    @Override
-   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, Class39 var5) {
+   public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class5093 var8 = super.method4276(var1, var2, var3, var4, var5);
       ((Class6991)this.method4230()).method21682(true);
       this.method4270(var2);
@@ -95,7 +95,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4551() == null) {
-         this.method2944(Class2106.field13731, new ItemStack(Class8514.field37823));
+         this.method2944(Class2106.field13731, new ItemStack(Items.field37823));
       }
    }
 
@@ -135,7 +135,7 @@ public class Class1030 extends Class1025 {
 
    @Override
    public void method4545(int var1, boolean var2) {
-      ItemStack var5 = new ItemStack(Class8514.field37823);
+      ItemStack var5 = new ItemStack(Items.field37823);
       Class7699 var6 = this.method4551();
       byte var7 = 1;
       if (var1 > var6.method25435(Class2197.field14353)) {

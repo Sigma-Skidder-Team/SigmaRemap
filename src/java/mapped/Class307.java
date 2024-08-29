@@ -18,8 +18,8 @@ public class Class307 extends Class306 {
 
    @Nullable
    @Override
-   public InputStream method1243(Class1946 var1, ResourceLocation var2) {
-      if (var1 == Class1946.field12610) {
+   public InputStream method1243(ResourcePackType var1, ResourceLocation var2) {
+      if (var1 == ResourcePackType.CLIENT_RESOURCES) {
          File var5 = this.field1195.method27015(var2);
          if (var5 != null && var5.exists()) {
             try {
@@ -33,8 +33,8 @@ public class Class307 extends Class306 {
    }
 
    @Override
-   public boolean method1225(Class1946 var1, ResourceLocation var2) {
-      if (var1 == Class1946.field12610) {
+   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
+      if (var1 == ResourcePackType.CLIENT_RESOURCES) {
          File var5 = this.field1195.method27015(var2);
          if (var5 != null && var5.exists()) {
             return true;
@@ -59,7 +59,7 @@ public class Class307 extends Class306 {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(Class1946 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       Collection var8 = super.method1224(var1, var2, var3, var4, var5);
       var8.addAll(this.field1195.method27017(var3, var2, var4, var5));
       return var8;

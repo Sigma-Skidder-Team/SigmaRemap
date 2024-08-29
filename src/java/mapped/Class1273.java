@@ -112,7 +112,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       int var8 = this.field6790 + this.field6785 / 2;
       int var9 = var8 - var7;
       int var10 = var8 + var7;
-      int var11 = MathHelper.method37769(var3 - (double)this.field6787) - this.field6795 + (int)this.method6044() - 4;
+      int var11 = MathHelper.floor(var3 - (double)this.field6787) - this.field6795 + (int)this.method6044() - 4;
       int var12 = var11 / this.field6783;
       return var1 < (double)this.method6048() && var1 >= (double)var9 && var1 <= (double)var10 && var12 >= 0 && var11 >= 0 && var12 < this.method6031()
          ? this.method2468().get(var12)
@@ -140,7 +140,7 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
    public void method6037(int var1, int var2) {
    }
 
-   public void method6038(MatrixStack var1, int var2, int var3, Class9352 var4) {
+   public void method6038(MatrixStack var1, int var2, int var3, Tessellator var4) {
    }
 
    public void method6039(MatrixStack var1) {
@@ -154,30 +154,30 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
       this.method6039(var1);
       int var7 = this.method6048();
       int var8 = var7 + 6;
-      Class9352 var9 = Class9352.method35409();
-      Class5425 var10 = var9.method35411();
+      Tessellator var9 = Tessellator.getInstance();
+      BufferBuilder var10 = var9.getBuffer();
       if (this.field6798) {
          this.field6782.getTextureManager().bindTexture(Class1193.field6451);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
-         var10.method17063(7, Class9337.field43346);
-         var10.method17025((double)this.field6790, (double)this.field6788, 0.0)
+         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.pos((double)this.field6790, (double)this.field6788, 0.0)
             .method17027((float)this.field6790 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
-            .method17026(32, 32, 32, 255)
-            .method17031();
-         var10.method17025((double)this.field6789, (double)this.field6788, 0.0)
+            .color(32, 32, 32, 255)
+            .endVertex();
+         var10.pos((double)this.field6789, (double)this.field6788, 0.0)
             .method17027((float)this.field6789 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
-            .method17026(32, 32, 32, 255)
-            .method17031();
-         var10.method17025((double)this.field6789, (double)this.field6787, 0.0)
+            .color(32, 32, 32, 255)
+            .endVertex();
+         var10.pos((double)this.field6789, (double)this.field6787, 0.0)
             .method17027((float)this.field6789 / 32.0F, (float)(this.field6787 + (int)this.method6044()) / 32.0F)
-            .method17026(32, 32, 32, 255)
-            .method17031();
-         var10.method17025((double)this.field6790, (double)this.field6787, 0.0)
+            .color(32, 32, 32, 255)
+            .endVertex();
+         var10.pos((double)this.field6790, (double)this.field6787, 0.0)
             .method17027((float)this.field6790 / 32.0F, (float)(this.field6787 + (int)this.method6044()) / 32.0F)
-            .method17026(32, 32, 32, 255)
-            .method17031();
-         var9.method35410();
+            .color(32, 32, 32, 255)
+            .endVertex();
+         var9.draw();
       }
 
       int var16 = this.method6053();
@@ -193,60 +193,60 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
          RenderSystem.depthFunc(519);
          float var13 = 32.0F;
          byte var14 = -100;
-         var10.method17063(7, Class9337.field43346);
-         var10.method17025((double)this.field6790, (double)this.field6787, -100.0)
+         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.pos((double)this.field6790, (double)this.field6787, -100.0)
             .method17027(0.0F, (float)this.field6787 / 32.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var10.method17025((double)(this.field6790 + this.field6785), (double)this.field6787, -100.0)
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var10.pos((double)(this.field6790 + this.field6785), (double)this.field6787, -100.0)
             .method17027((float)this.field6785 / 32.0F, (float)this.field6787 / 32.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var10.method17025((double)(this.field6790 + this.field6785), 0.0, -100.0)
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var10.pos((double)(this.field6790 + this.field6785), 0.0, -100.0)
             .method17027((float)this.field6785 / 32.0F, 0.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var10.method17025((double)this.field6790, 0.0, -100.0).method17027(0.0F, 0.0F).method17026(64, 64, 64, 255).method17031();
-         var10.method17025((double)this.field6790, (double)this.field6786, -100.0)
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var10.pos((double)this.field6790, 0.0, -100.0).method17027(0.0F, 0.0F).color(64, 64, 64, 255).endVertex();
+         var10.pos((double)this.field6790, (double)this.field6786, -100.0)
             .method17027(0.0F, (float)this.field6786 / 32.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var10.method17025((double)(this.field6790 + this.field6785), (double)this.field6786, -100.0)
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var10.pos((double)(this.field6790 + this.field6785), (double)this.field6786, -100.0)
             .method17027((float)this.field6785 / 32.0F, (float)this.field6786 / 32.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var10.method17025((double)(this.field6790 + this.field6785), (double)this.field6788, -100.0)
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var10.pos((double)(this.field6790 + this.field6785), (double)this.field6788, -100.0)
             .method17027((float)this.field6785 / 32.0F, (float)this.field6788 / 32.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var10.method17025((double)this.field6790, (double)this.field6788, -100.0)
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var10.pos((double)this.field6790, (double)this.field6788, -100.0)
             .method17027(0.0F, (float)this.field6788 / 32.0F)
-            .method17026(64, 64, 64, 255)
-            .method17031();
-         var9.method35410();
+            .color(64, 64, 64, 255)
+            .endVertex();
+         var9.draw();
          RenderSystem.depthFunc(515);
          RenderSystem.disableDepthTest();
          RenderSystem.enableBlend();
          RenderSystem.method27836(Class2339.field15997, Class1981.field12932, Class2339.field16000, Class1981.field12927);
          RenderSystem.method27817();
          RenderSystem.method27866(7425);
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          byte var15 = 4;
-         var10.method17063(7, Class9337.field43346);
-         var10.method17025((double)this.field6790, (double)(this.field6787 + 4), 0.0).method17027(0.0F, 1.0F).method17026(0, 0, 0, 0).method17031();
-         var10.method17025((double)this.field6789, (double)(this.field6787 + 4), 0.0).method17027(1.0F, 1.0F).method17026(0, 0, 0, 0).method17031();
-         var10.method17025((double)this.field6789, (double)this.field6787, 0.0).method17027(1.0F, 0.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)this.field6790, (double)this.field6787, 0.0).method17027(0.0F, 0.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)this.field6790, (double)this.field6788, 0.0).method17027(0.0F, 1.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)this.field6789, (double)this.field6788, 0.0).method17027(1.0F, 1.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)this.field6789, (double)(this.field6788 - 4), 0.0).method17027(1.0F, 0.0F).method17026(0, 0, 0, 0).method17031();
-         var10.method17025((double)this.field6790, (double)(this.field6788 - 4), 0.0).method17027(0.0F, 0.0F).method17026(0, 0, 0, 0).method17031();
-         var9.method35410();
+         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.pos((double)this.field6790, (double)(this.field6787 + 4), 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6789, (double)(this.field6787 + 4), 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6789, (double)this.field6787, 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6790, (double)this.field6787, 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6790, (double)this.field6788, 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6789, (double)this.field6788, 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)this.field6789, (double)(this.field6788 - 4), 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 0).endVertex();
+         var10.pos((double)this.field6790, (double)(this.field6788 - 4), 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 0).endVertex();
+         var9.draw();
       }
 
       int var17 = this.method6046();
       if (var17 > 0) {
-         RenderSystem.method27862();
+         RenderSystem.disableTexture();
          int var18 = (int)((float)((this.field6788 - this.field6787) * (this.field6788 - this.field6787)) / (float)this.method6036());
          var18 = MathHelper.method37775(var18, 32, this.field6788 - this.field6787 - 8);
          int var20 = (int)this.method6044() * (this.field6788 - this.field6787 - var18) / var17 + this.field6787;
@@ -254,20 +254,20 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
             var20 = this.field6787;
          }
 
-         var10.method17063(7, Class9337.field43346);
-         var10.method17025((double)var7, (double)this.field6788, 0.0).method17027(0.0F, 1.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)var8, (double)this.field6788, 0.0).method17027(1.0F, 1.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)var8, (double)this.field6787, 0.0).method17027(1.0F, 0.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)var7, (double)this.field6787, 0.0).method17027(0.0F, 0.0F).method17026(0, 0, 0, 255).method17031();
-         var10.method17025((double)var7, (double)(var20 + var18), 0.0).method17027(0.0F, 1.0F).method17026(128, 128, 128, 255).method17031();
-         var10.method17025((double)var8, (double)(var20 + var18), 0.0).method17027(1.0F, 1.0F).method17026(128, 128, 128, 255).method17031();
-         var10.method17025((double)var8, (double)var20, 0.0).method17027(1.0F, 0.0F).method17026(128, 128, 128, 255).method17031();
-         var10.method17025((double)var7, (double)var20, 0.0).method17027(0.0F, 0.0F).method17026(128, 128, 128, 255).method17031();
-         var10.method17025((double)var7, (double)(var20 + var18 - 1), 0.0).method17027(0.0F, 1.0F).method17026(192, 192, 192, 255).method17031();
-         var10.method17025((double)(var8 - 1), (double)(var20 + var18 - 1), 0.0).method17027(1.0F, 1.0F).method17026(192, 192, 192, 255).method17031();
-         var10.method17025((double)(var8 - 1), (double)var20, 0.0).method17027(1.0F, 0.0F).method17026(192, 192, 192, 255).method17031();
-         var10.method17025((double)var7, (double)var20, 0.0).method17027(0.0F, 0.0F).method17026(192, 192, 192, 255).method17031();
-         var9.method35410();
+         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.pos((double)var7, (double)this.field6788, 0.0).method17027(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var8, (double)this.field6788, 0.0).method17027(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var8, (double)this.field6787, 0.0).method17027(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var7, (double)this.field6787, 0.0).method17027(0.0F, 0.0F).color(0, 0, 0, 255).endVertex();
+         var10.pos((double)var7, (double)(var20 + var18), 0.0).method17027(0.0F, 1.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var8, (double)(var20 + var18), 0.0).method17027(1.0F, 1.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var8, (double)var20, 0.0).method17027(1.0F, 0.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var7, (double)var20, 0.0).method17027(0.0F, 0.0F).color(128, 128, 128, 255).endVertex();
+         var10.pos((double)var7, (double)(var20 + var18 - 1), 0.0).method17027(0.0F, 1.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)(var8 - 1), (double)(var20 + var18 - 1), 0.0).method17027(1.0F, 1.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)(var8 - 1), (double)var20, 0.0).method17027(1.0F, 0.0F).color(192, 192, 192, 255).endVertex();
+         var10.pos((double)var7, (double)var20, 0.0).method17027(0.0F, 0.0F).color(192, 192, 192, 255).endVertex();
+         var9.draw();
       }
 
       this.method6040(var1, var2, var3);
@@ -446,8 +446,8 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
 
    public void method6052(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
       int var9 = this.method6031();
-      Class9352 var10 = Class9352.method35409();
-      Class5425 var11 = var10.method35411();
+      Tessellator var10 = Tessellator.getInstance();
+      BufferBuilder var11 = var10.getBuffer();
 
       for (int var12 = 0; var12 < var9; var12++) {
          int var13 = this.method6055(var12);
@@ -460,22 +460,22 @@ public abstract class Class1273<E extends Class1154<E>> extends Class1150 implem
             if (this.field6793 && this.method6032(var12)) {
                int var19 = this.field6790 + this.field6785 / 2 - var18 / 2;
                int var20 = this.field6790 + this.field6785 / 2 + var18 / 2;
-               RenderSystem.method27862();
+               RenderSystem.disableTexture();
                float var21 = !this.method6057() ? 0.5F : 1.0F;
                RenderSystem.method27889(var21, var21, var21, 1.0F);
-               var11.method17063(7, Class9337.field43341);
-               var11.method17025((double)var19, (double)(var15 + var16 + 2), 0.0).method17031();
-               var11.method17025((double)var20, (double)(var15 + var16 + 2), 0.0).method17031();
-               var11.method17025((double)var20, (double)(var15 - 2), 0.0).method17031();
-               var11.method17025((double)var19, (double)(var15 - 2), 0.0).method17031();
-               var10.method35410();
+               var11.begin(7, DefaultVertexFormats.field43341);
+               var11.pos((double)var19, (double)(var15 + var16 + 2), 0.0).endVertex();
+               var11.pos((double)var20, (double)(var15 + var16 + 2), 0.0).endVertex();
+               var11.pos((double)var20, (double)(var15 - 2), 0.0).endVertex();
+               var11.pos((double)var19, (double)(var15 - 2), 0.0).endVertex();
+               var10.draw();
                RenderSystem.method27889(0.0F, 0.0F, 0.0F, 1.0F);
-               var11.method17063(7, Class9337.field43341);
-               var11.method17025((double)(var19 + 1), (double)(var15 + var16 + 1), 0.0).method17031();
-               var11.method17025((double)(var20 - 1), (double)(var15 + var16 + 1), 0.0).method17031();
-               var11.method17025((double)(var20 - 1), (double)(var15 - 1), 0.0).method17031();
-               var11.method17025((double)(var19 + 1), (double)(var15 - 1), 0.0).method17031();
-               var10.method35410();
+               var11.begin(7, DefaultVertexFormats.field43341);
+               var11.pos((double)(var19 + 1), (double)(var15 + var16 + 1), 0.0).endVertex();
+               var11.pos((double)(var20 - 1), (double)(var15 + var16 + 1), 0.0).endVertex();
+               var11.pos((double)(var20 - 1), (double)(var15 - 1), 0.0).endVertex();
+               var11.pos((double)(var19 + 1), (double)(var15 - 1), 0.0).endVertex();
+               var10.draw();
                RenderSystem.enableTexture();
             }
 

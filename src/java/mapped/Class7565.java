@@ -18,7 +18,7 @@ public class Class7565 implements Class7562 {
    }
 
    @Override
-   public Predicate<Class7380> method24750(Class9348<Block, Class7380> var1) {
+   public Predicate<BlockState> method24750(Class9348<Block, BlockState> var1) {
       Class8550 var4 = var1.method35396(this.field32495);
       if (var4 == null) {
          throw new RuntimeException(String.format("Unknown property '%s' on '%s'", this.field32495, ((Block)var1.method35394()).toString()));
@@ -31,9 +31,9 @@ public class Class7565 implements Class7562 {
 
          List<String> var7 = field32494.splitToList(var5);
          if (!var7.isEmpty()) {
-            Predicate<Class7380> var9;
+            Predicate<BlockState> var9;
             if (var7.size() != 1) {
-               List<Predicate<Class7380>> var8 = var7.stream().<Predicate<Class7380>>map(var3 -> this.method24761(var1, var4, var3)).collect(Collectors.toList());
+               List<Predicate<BlockState>> var8 = var7.stream().<Predicate<BlockState>>map(var3 -> this.method24761(var1, var4, var3)).collect(Collectors.toList());
                var9 = var1x -> var8.stream().anyMatch(var1xx -> var1xx.test(var1x));
             } else {
                var9 = this.method24761(var1, var4, var5);
@@ -48,7 +48,7 @@ public class Class7565 implements Class7562 {
       }
    }
 
-   private Predicate<Class7380> method24761(Class9348<Block, Class7380> var1, Class8550<?> var2, String var3) {
+   private Predicate<BlockState> method24761(Class9348<Block, BlockState> var1, Class8550<?> var2, String var3) {
       Optional var6 = var2.method30476(var3);
       if (var6.isPresent()) {
          return var2x -> var2x.method23463(var2).equals(var6.get());

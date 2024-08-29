@@ -38,7 +38,7 @@ public class Class49<T> implements Iterable<Class9007<T>> {
    }
 
    public String method173() {
-      return "stat_type." + Registry.field16088.method9181(this).toString().replace(':', '.');
+      return "stat_type." + Registry.field16088.getKey(this).toString().replace(':', '.');
    }
 
    public ITextComponent method174() {

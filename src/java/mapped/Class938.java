@@ -7,23 +7,23 @@ import java.util.List;
 public class Class938 extends Class919 implements Class937 {
    private boolean field5299 = true;
    private int field5300 = -1;
-   private final BlockPos field5301 = BlockPos.field13032;
+   private final BlockPos field5301 = BlockPos.ZERO;
 
-   public Class938(Class8992<? extends Class938> var1, World var2) {
+   public Class938(EntityType<? extends Class938> var1, World var2) {
       super(var1, var2);
    }
 
    public Class938(World var1, double var2, double var4, double var6) {
-      super(Class8992.field41054, var2, var4, var6, var1);
+      super(EntityType.field41054, var2, var4, var6, var1);
    }
 
    @Override
-   public Class2177 method3602() {
-      return Class2177.field14292;
+   public MinecartType getMinecartType() {
+      return MinecartType.HOPPER;
    }
 
    @Override
-   public Class7380 method3604() {
+   public BlockState method3604() {
       return Blocks.field36723.method11579();
    }
 
@@ -55,7 +55,7 @@ public class Class938 extends Class919 implements Class937 {
 
    @Override
    public World method3734() {
-      return this.field5024;
+      return this.world;
    }
 
    @Override
@@ -76,8 +76,8 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public void tick() {
       super.tick();
-      if (!this.field5024.field9020 && this.method3066() && this.method3735()) {
-         BlockPos var3 = this.method3432();
+      if (!this.world.field9020 && this.method3066() && this.method3735()) {
+         BlockPos var3 = this.getPosition();
          if (!var3.equals(this.field5301)) {
             this.method3738(0);
          } else {
@@ -96,7 +96,7 @@ public class Class938 extends Class919 implements Class937 {
 
    public boolean method3737() {
       if (!Class936.method3705(this)) {
-         List var3 = this.field5024.<Entity>method6772(ItemEntity.class, this.method3389().method19663(0.25, 0.0, 0.25), Class8088.field34757);
+         List var3 = this.world.<Entity>method6772(ItemEntity.class, this.method3389().method19663(0.25, 0.0, 0.25), Class8088.field34757);
          if (!var3.isEmpty()) {
             Class936.method3707(this, (ItemEntity)var3.get(0));
          }
@@ -110,23 +110,23 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public void method3586(Class8654 var1) {
       super.method3586(var1);
-      if (this.field5024.method6789().method17135(Class5462.field24229)) {
+      if (this.world.method6789().method17135(Class5462.field24229)) {
          this.method3300(Blocks.field36723);
       }
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
       var1.method102("TransferCooldown", this.field5300);
       var1.method115("Enabled", this.field5299);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
       this.field5300 = var1.method122("TransferCooldown");
-      this.field5299 = !var1.method118("Enabled") ? true : var1.method132("Enabled");
+      this.field5299 = !var1.contains("Enabled") ? true : var1.method132("Enabled");
    }
 
    public void method3738(int var1) {
@@ -138,7 +138,7 @@ public class Class938 extends Class919 implements Class937 {
    }
 
    @Override
-   public Class5812 method3628(int var1, Class974 var2) {
+   public Class5812 method3628(int var1, PlayerInventory var2) {
       return new Class5816(var1, var2, this);
    }
 

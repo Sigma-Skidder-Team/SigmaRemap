@@ -16,7 +16,7 @@ public class Class5259 extends PremiumModule {
 
     public Class5259() {
         super("NCP", "Phase for NCP anticheat", ModuleCategory.MOVEMENT);
-        this.method15972(new Class6004("Hypixel", "Hypixel bypass", true));
+        this.registerSetting(new BooleanSetting("Hypixel", "Hypixel bypass", true));
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Class5259 extends PremiumModule {
                 double var3 = mc.player.getPosX();
                 double var5 = mc.player.getPosY();
                 double var7 = mc.player.getPosZ();
-                mc.getClientPlayNetHandler().sendPacket(new Class5605(var3, var5 + 0.0626, var7, false));
+                mc.getConnection().sendPacket(new Class5605(var3, var5 + 0.0626, var7, false));
             }
         }
     }
@@ -38,7 +38,7 @@ public class Class5259 extends PremiumModule {
     @EventTarget
     private void method16426(Class4399 var1) {
         if (this.method15996() && var1.method13921()) {
-            if (mc.gameSettings.field44637.method8509()) {
+            if (mc.gameSettings.field44637.isKeyDown()) {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
@@ -78,7 +78,7 @@ public class Class5259 extends PremiumModule {
                     double var4 = mc.player.getPosX();
                     double var6 = mc.player.getPosY();
                     double var8 = mc.player.getPosZ();
-                    mc.getClientPlayNetHandler().sendPacket(new Class5605(var4, var6 + 0.0626, var8, false));
+                    mc.getConnection().sendPacket(new Class5605(var4, var6 + 0.0626, var8, false));
                 }
             }
 

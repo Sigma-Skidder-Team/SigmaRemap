@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class Class3283 extends Class3257 {
+public class Class3283 extends Item {
    private static final Map<Class9455, Class3283> field18793 = Maps.newHashMap();
    private final int field18794;
    private final Class9455 field18795;
@@ -26,12 +26,12 @@ public class Class3283 extends Class3257 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7380 var6 = var4.method6738(var5);
+      BlockState var6 = var4.getBlockState(var5);
       if (var6.method23448(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
          ItemStack var7 = var1.method18357();
          if (!var4.field9020) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);
-            var4.method6869((PlayerEntity)null, 1010, var5, Class3257.method11701(this));
+            var4.method6869((PlayerEntity)null, 1010, var5, Item.method11701(this));
             var7.method32182(1);
             PlayerEntity var8 = var1.method18358();
             if (var8 != null) {
@@ -55,7 +55,7 @@ public class Class3283 extends Class3257 {
    }
 
    public IFormattableTextComponent method11813() {
-      return new TranslationTextComponent(this.method11719() + ".desc");
+      return new TranslationTextComponent(this.getTranslationKey() + ".desc");
    }
 
    @Nullable

@@ -18,7 +18,7 @@ public class Class5325 extends Module {
     private final List<Class6547> field23882 = new ArrayList<Class6547>();
     public Module[] field23878;
     public Module field23879;
-    public Class6005 field23881;
+    public ModeSetting field23881;
     private final List<String> field23880 = new ArrayList<String>();
 
     public Class5325(ModuleCategory var1, String var2, String var3, Module... var4) {
@@ -31,7 +31,7 @@ public class Class5325 extends Module {
             var10.method16003(this);
         }
 
-        this.method15972(this.field23881 = new Class6005("Type", var2 + " mode", 0, this.field23880.toArray(new String[0])));
+        this.registerSetting(this.field23881 = new ModeSetting("Type", var2 + " mode", 0, this.field23880.toArray(new String[0])));
         this.field23881.method18616(var1x -> this.method16724());
         this.method16724();
     }

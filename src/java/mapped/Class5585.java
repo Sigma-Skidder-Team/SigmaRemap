@@ -8,14 +8,14 @@ public class Class5585 implements Packet<Class5116> {
    private static String[] field24783;
    private static final Logger field24784 = LogManager.getLogger();
    private BlockPos field24785;
-   private Class7380 field24786;
-   public Class2070 field24787;
+   private BlockState field24786;
+   public CPlayerDiggingPacket.Action field24787;
    private boolean field24788;
 
    public Class5585() {
    }
 
-   public Class5585(BlockPos var1, Class7380 var2, Class2070 var3, boolean var4, String var5) {
+   public Class5585(BlockPos var1, BlockState var2, CPlayerDiggingPacket.Action var3, boolean var4, String var5) {
       this.field24785 = var1.method8353();
       this.field24786 = var2;
       this.field24787 = var3;
@@ -26,7 +26,7 @@ public class Class5585 implements Packet<Class5116> {
    public void method17175(PacketBuffer var1) throws IOException {
       this.field24785 = var1.method35707();
       this.field24786 = Block.field18610.method9172(var1.method35714());
-      this.field24787 = var1.<Class2070>method35712(Class2070.class);
+      this.field24787 = var1.<CPlayerDiggingPacket.Action>method35712(CPlayerDiggingPacket.Action.class);
       this.field24788 = var1.readBoolean();
    }
 
@@ -42,7 +42,7 @@ public class Class5585 implements Packet<Class5116> {
       var1.method15780(this);
    }
 
-   public Class7380 method17556() {
+   public BlockState method17556() {
       return this.field24786;
    }
 
@@ -54,7 +54,7 @@ public class Class5585 implements Packet<Class5116> {
       return this.field24788;
    }
 
-   public Class2070 method17559() {
+   public CPlayerDiggingPacket.Action method17559() {
       return this.field24787;
    }
 }

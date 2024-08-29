@@ -17,15 +17,15 @@ public class Class3634 {
       var5.method6682(this.field19668, var1, var6);
       Optional<Class9343> var7 = var5.method6665(var0 -> var0 == Class4913.field22770, var1, var6, Class2093.field13637)
          .sorted(Comparator.<Class9343>comparingDouble(var1x -> var1x.method35355().method8318(var1)).thenComparingInt(var0 -> var0.method35355().getY()))
-         .filter(var1x -> this.field19668.method6738(var1x.method35355()).method23462(Class8820.field39712))
+         .filter(var1x -> this.field19668.getBlockState(var1x.method35355()).method23462(Class8820.field39712))
          .findFirst();
       return var7.<Class9502>map(
          var1x -> {
             BlockPos var4 = var1x.method35355();
             this.field19668.method6883().method7374(Class8561.field38485, new Class7481(var4), 3, var4);
-            Class7380 var5x = this.field19668.method6738(var4);
+            BlockState var5x = this.field19668.getBlockState(var4);
             return Class7215.method22658(
-               var4, var5x.<Class113>method23463(Class8820.field39712), 21, Class113.field414, 21, var2x -> this.field19668.method6738(var2x) == var5x
+               var4, var5x.<Class113>method23463(Class8820.field39712), 21, Class113.field414, 21, var2x -> this.field19668.getBlockState(var2x) == var5x
             );
          }
       );
@@ -42,7 +42,7 @@ public class Class3634 {
       Mutable var14 = var1.method8354();
 
       for (Mutable var16 : BlockPos.method8365(var1, 16, Direction.EAST, Direction.SOUTH)) {
-         int var17 = Math.min(var13, this.field19668.method6736(Class101.field299, var16.method8304(), var16.method8306()));
+         int var17 = Math.min(var13, this.field19668.method6736(Class101.field299, var16.getX(), var16.getZ()));
          boolean var18 = true;
          if (var12.method24523(var16) && var12.method24523(var16.method8380(var5, 1))) {
             var16.method8380(var5.method536(), 1);
@@ -52,7 +52,7 @@ public class Class3634 {
                if (this.field19668.method7007(var16)) {
                   int var20 = var19;
 
-                  while (var19 > 0 && this.field19668.method7007(var16.method8379(Direction.field672))) {
+                  while (var19 > 0 && this.field19668.method7007(var16.method8379(Direction.DOWN))) {
                      var19--;
                   }
 
@@ -85,7 +85,7 @@ public class Class3634 {
       }
 
       if (var6 == -1.0) {
-         var8 = new BlockPos(var1.method8304(), MathHelper.method37775(var1.getY(), 70, this.field19668.method6998() - 10), var1.method8306())
+         var8 = new BlockPos(var1.getX(), MathHelper.method37775(var1.getY(), 70, this.field19668.method6998() - 10), var1.getZ())
             .method8353();
          Direction var24 = var5.method537();
          if (!var12.method24523(var8)) {
@@ -95,7 +95,7 @@ public class Class3634 {
          for (int var27 = -1; var27 < 2; var27++) {
             for (int var30 = 0; var30 < 2; var30++) {
                for (int var32 = -1; var32 < 3; var32++) {
-                  Class7380 var33 = var32 >= 0 ? Blocks.AIR.method11579() : Blocks.field36527.method11579();
+                  BlockState var33 = var32 >= 0 ? Blocks.AIR.method11579() : Blocks.field36527.method11579();
                   var14.method8378(var8, var30 * var5.method539() + var27 * var24.method539(), var32, var30 * var5.method541() + var27 * var24.method541());
                   this.field19668.method6730(var14, var33);
                }
@@ -112,7 +112,7 @@ public class Class3634 {
          }
       }
 
-      Class7380 var26 = Blocks.field36588.method11579().method23465(Class3401.field19060, var2);
+      BlockState var26 = Blocks.field36588.method11579().method23465(Class3401.field19060, var2);
 
       for (int var29 = 0; var29 < 2; var29++) {
          for (int var31 = 0; var31 < 3; var31++) {
@@ -130,7 +130,7 @@ public class Class3634 {
       for (int var8 = -1; var8 < 3; var8++) {
          for (int var9 = -1; var9 < 4; var9++) {
             var2.method8378(var1, var3.method539() * var8 + var7.method539() * var4, var9, var3.method541() * var8 + var7.method541() * var4);
-            if (var9 < 0 && !this.field19668.method6738(var2).method23384().method31086()) {
+            if (var9 < 0 && !this.field19668.getBlockState(var2).method23384().method31086()) {
                return false;
             }
 

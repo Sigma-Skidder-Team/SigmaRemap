@@ -121,7 +121,7 @@ public class Class7448 implements Class7443 {
 
    private Class9727[] method24058() {
       ResourceLocation var3 = new ResourceLocation(this.field32022);
-      if (!Registry.field16072.method9193(var3)) {
+      if (!Registry.BLOCK.method9193(var3)) {
          Pattern var8 = Pattern.compile("^block([0-9]+).*$");
          Matcher var5 = var8.matcher(this.field32022);
          if (var5.matches()) {
@@ -136,7 +136,7 @@ public class Class7448 implements Class7443 {
          Class9727[] var10 = var9.method32386(this.field32022);
          return var10 == null ? null : var10;
       } else {
-         Block var4 = Registry.field16072.method9184(var3);
+         Block var4 = Registry.BLOCK.method9184(var3);
          return new Class9727[]{new Class9727(Class9716.method38065(var4))};
       }
    }
@@ -237,7 +237,7 @@ public class Class7448 implements Class7443 {
       return var0;
    }
 
-   public boolean method24064(Class7380 var1) {
+   public boolean method24064(BlockState var1) {
       return Class7542.method24657(var1, this.field32025);
    }
 
@@ -270,7 +270,7 @@ public class Class7448 implements Class7443 {
    }
 
    @Override
-   public int method24053(Class7380 var1, Class1663 var2, BlockPos var3) {
+   public int method24053(BlockState var1, Class1663 var2, BlockPos var3) {
       return this.method24069(var2, var3);
    }
 
@@ -296,9 +296,9 @@ public class Class7448 implements Class7443 {
       if (this.field32024 == 2) {
          return this.field32027;
       } else {
-         int var11 = MathHelper.method37769(var2);
-         int var12 = MathHelper.method37769(var4);
-         int var13 = MathHelper.method37769(var6);
+         int var11 = MathHelper.floor(var2);
+         int var12 = MathHelper.floor(var4);
+         int var13 = MathHelper.floor(var6);
          int var14 = 0;
          int var15 = 0;
          int var16 = 0;
@@ -336,7 +336,7 @@ public class Class7448 implements Class7443 {
       int var5 = Class8708.method31407(var1);
       int var6 = var2.getY() - this.field32029;
       if (this.field32028 > 0) {
-         int var7 = var2.method8304() << 16 + var2.method8306();
+         int var7 = var2.getX() << 16 + var2.getZ();
          int var8 = Class7944.method26933(var7);
          int var9 = this.field32028 * 2 + 1;
          int var10 = (var8 & 0xFF) % var9 - this.field32028;

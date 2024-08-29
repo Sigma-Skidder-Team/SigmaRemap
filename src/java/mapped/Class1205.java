@@ -5,7 +5,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1205 extends Class1201 {
    private final Class7144 field6506;
-   private final Class1713 field6507;
+   private final TextureAtlasSprite field6507;
    private final boolean field6508;
    private final ITextComponent field6509;
    public final Class872 field6510;
@@ -14,7 +14,7 @@ public class Class1205 extends Class1201 {
       super(var2, var3);
       this.field6510 = var1;
       this.field6506 = var4;
-      this.field6507 = Minecraft.getInstance().method1572().method1022(var4);
+      this.field6507 = Minecraft.getInstance().getPotionSpriteUploader().method1022(var4);
       this.field6508 = var5;
       this.field6509 = this.method5763(var4, var5);
    }
@@ -40,7 +40,7 @@ public class Class1205 extends Class1201 {
          Class872.method2714(this.field6510).clear();
          Class872.method2715(this.field6510).clear();
          this.field6510.method1921();
-         this.field6510.method1919();
+         this.field6510.tick();
       }
    }
 

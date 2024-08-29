@@ -28,26 +28,26 @@ public class Class7018 implements Class7016 {
                   return 0;
                } else {
                   PlayerEntity var10 = var1.method6870().get(var6.nextInt(var9));
-                  if (var10.method2800()) {
+                  if (var10.isSpectator()) {
                      return 0;
-                  } else if (var1.method6954(var10.method3432(), 2)) {
+                  } else if (var1.method6954(var10.getPosition(), 2)) {
                      return 0;
                   } else {
                      int var11 = (24 + var6.nextInt(24)) * (!var6.nextBoolean() ? 1 : -1);
                      int var12 = (24 + var6.nextInt(24)) * (!var6.nextBoolean() ? 1 : -1);
-                     Mutable var13 = var10.method3432().method8354().method8381(var11, 0, var12);
+                     Mutable var13 = var10.getPosition().method8354().method8381(var11, 0, var12);
                      if (!var1.method7019(
-                        var13.method8304() - 10,
+                        var13.getX() - 10,
                         var13.getY() - 10,
-                        var13.method8306() - 10,
-                        var13.method8304() + 10,
+                        var13.getZ() - 10,
+                        var13.getX() + 10,
                         var13.getY() + 10,
-                        var13.method8306() + 10
+                        var13.getZ() + 10
                      )) {
                         return 0;
                      } else {
-                        Biome var14 = var1.method7003(var13);
-                        Class100 var15 = var14.method32527();
+                        Biome var14 = var1.getBiome(var13);
+                        Class100 var15 = var14.getCategory();
                         if (var15 == Class100.field289) {
                            return 0;
                         } else {
@@ -63,8 +63,8 @@ public class Class7018 implements Class7016 {
                                  break;
                               }
 
-                              var13.method8307(var13.method8304() + var6.nextInt(5) - var6.nextInt(5));
-                              var13.method8309(var13.method8306() + var6.nextInt(5) - var6.nextInt(5));
+                              var13.method8307(var13.getX() + var6.nextInt(5) - var6.nextInt(5));
+                              var13.method8309(var13.getZ() + var6.nextInt(5) - var6.nextInt(5));
                            }
 
                            return var16;
@@ -80,10 +80,10 @@ public class Class7018 implements Class7016 {
    }
 
    private boolean method21749(ServerWorld var1, BlockPos var2, Random var3, boolean var4) {
-      Class7380 var7 = var1.method6738(var2);
-      if (Class8170.method28428(var1, var2, var7, var7.method23449(), Class8992.field41067)) {
-         if (Class1028.method4572(Class8992.field41067, var1, Class2202.field14406, var2, var3)) {
-            Class1028 var8 = Class8992.field41067.method33215(var1);
+      BlockState var7 = var1.getBlockState(var2);
+      if (Class8170.method28428(var1, var2, var7, var7.method23449(), EntityType.field41067)) {
+         if (Class1028.method4572(EntityType.field41067, var1, Class2202.field14406, var2, var3)) {
+            Class1028 var8 = EntityType.field41067.method33215(var1);
             if (var8 == null) {
                return false;
             } else {
@@ -92,8 +92,8 @@ public class Class7018 implements Class7016 {
                   var8.method4578();
                }
 
-               var8.method3215((double)var2.method8304(), (double)var2.getY(), (double)var2.method8306());
-               var8.method4276(var1, var1.method6807(var2), Class2202.field14406, (Class5093)null, (Class39)null);
+               var8.method3215((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+               var8.method4276(var1, var1.method6807(var2), Class2202.field14406, (Class5093)null, (CompoundNBT)null);
                var1.method6995(var8);
                return true;
             }

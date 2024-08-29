@@ -9,7 +9,7 @@ public class Class293 extends Class290 {
    private static String[] field1135;
    private static final Logger field1136 = LogManager.getLogger();
    public final ResourceLocation field1137;
-   private Class191 field1138;
+   private IResourceManager field1138;
    public ResourceLocation field1139;
    public boolean field1140;
 
@@ -18,7 +18,7 @@ public class Class293 extends Class290 {
    }
 
    @Override
-   public void method1090(Class191 var1) throws IOException {
+   public void method1090(IResourceManager var1) throws IOException {
       this.field1138 = var1;
       Class1805 var4 = this.method1146(var1);
       var4.method7878();
@@ -53,7 +53,7 @@ public class Class293 extends Class290 {
       }
    }
 
-   public Class1805 method1146(Class191 var1) {
+   public Class1805 method1146(IResourceManager var1) {
       return Class1805.method7875(var1, this.field1137);
    }
 

@@ -1,13 +1,13 @@
 package mapped;
 
 public enum Class81 {
-   field191(Direction.field672, false),
+   field191(Direction.DOWN, false),
    field192(Direction.field673, false),
    field193(Direction.NORTH, false),
    field194(Direction.SOUTH, false),
    field195(Direction.WEST, false),
    field196(Direction.EAST, false),
-   field197(Direction.field672, true),
+   field197(Direction.DOWN, true),
    field198(Direction.field673, true),
    field199(Direction.NORTH, true),
    field200(Direction.SOUTH, true),

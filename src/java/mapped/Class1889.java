@@ -20,7 +20,7 @@ public enum Class1889 implements Class1884 {
    field11067("swing_progress");
 
    private String field11068;
-   private Class8853 field11069;
+   private EntityRendererManager field11069;
    private static final Class1889[] field11070 = values();
    private static final Class1889[] field11071 = new Class1889[]{
       field11051,
@@ -44,7 +44,7 @@ public enum Class1889 implements Class1884 {
 
    private Class1889(String var3) {
       this.field11068 = var3;
-      this.field11069 = Minecraft.getInstance().method1554();
+      this.field11069 = Minecraft.getInstance().getRenderManager();
    }
 
    public String method8146() {

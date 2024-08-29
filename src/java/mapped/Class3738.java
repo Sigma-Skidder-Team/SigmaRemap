@@ -11,11 +11,11 @@ public class Class3738 extends Class3676<Class880> {
    private final float field19862;
 
    public Class3738(Class179 var1, float var2) {
-      this(var1x -> var1.equals(var1x.method3204().method33209()), var2);
+      this(var1x -> var1.equals(var1x.getType().method33209()), var2);
    }
 
-   public Class3738(Class8992<?> var1, float var2) {
-      this(var1x -> var1.equals(var1x.method3204()), var2);
+   public Class3738(EntityType<?> var1, float var2) {
+      this(var1x -> var1.equals(var1x.getType()), var2);
    }
 
    public Class3738(float var1) {

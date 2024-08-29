@@ -36,14 +36,14 @@ public abstract class Class6896 {
       return this.field29885 + var1.nextInt(this.field29886 + 1) + var1.nextInt(this.field29887 + 1);
    }
 
-   public static void method21067(Class1681 var0, BlockPos var1, Class7380 var2, Class9764 var3) {
+   public static void method21067(Class1681 var0, BlockPos var1, BlockState var2, Class9764 var3) {
       Class2903.method11232(var0, var1, var2);
       var3.method38392(new Class9764(var1, var1));
    }
 
    private static boolean method21068(Class1680 var0, BlockPos var1) {
       return var0.method6815(var1, var0x -> {
-         Block var3 = var0x.method23383();
+         Block var3 = var0x.getBlock();
          return Class2898.method11219(var3) && !var0x.method23448(Blocks.field36395) && !var0x.method23448(Blocks.MYCELIUM);
       });
    }

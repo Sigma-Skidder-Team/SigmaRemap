@@ -8,10 +8,10 @@ import java.util.concurrent.Executor;
 import java.util.stream.Collectors;
 
 public class Class286 implements Class268 {
-   private final Class9768<Block> field1088 = new Class9768<Block>(Registry.field16072::method9187, "tags/blocks", "block");
-   private final Class9768<Class3257> field1089 = new Class9768<Class3257>(Registry.field16075::method9187, "tags/items", "item");
+   private final Class9768<Block> field1088 = new Class9768<Block>(Registry.BLOCK::method9187, "tags/blocks", "block");
+   private final Class9768<Item> field1089 = new Class9768<Item>(Registry.ITEM::method9187, "tags/items", "item");
    private final Class9768<Class7631> field1090 = new Class9768<Class7631>(Registry.field16070::method9187, "tags/fluids", "fluid");
-   private final Class9768<Class8992<?>> field1091 = new Class9768<Class8992<?>>(Registry.field16074::method9187, "tags/entity_types", "entity_type");
+   private final Class9768<EntityType<?>> field1091 = new Class9768<EntityType<?>>(Registry.ENTITY_TYPE::method9187, "tags/entity_types", "entity_type");
    private Class8933 field1092 = Class8933.field40418;
 
    public Class8933 method1068() {
@@ -19,7 +19,7 @@ public class Class286 implements Class268 {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, Class191 var2, Class7165 var3, Class7165 var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       CompletableFuture<Map<ResourceLocation, Class6879>> var9 = this.field1088.method38419(var2, var5);
       CompletableFuture<Map<ResourceLocation, Class6879>> var10 = this.field1089.method38419(var2, var5);
       CompletableFuture<Map<ResourceLocation, Class6879>> var11 = this.field1090.method38419(var2, var5);

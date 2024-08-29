@@ -26,7 +26,7 @@ public class Class8883 {
    }
 
    private static int method32321(Class6619 var0, int var1) throws CommandSyntaxException {
-      if (!var0.method20177().method1369()) {
+      if (!var0.method20177().getPublic()) {
          if (var0.method20177().method1374(var0.method20177().method1286(), false, var1)) {
             var0.method20179(new TranslationTextComponent("commands.publish.success", var1), true);
             return var1;

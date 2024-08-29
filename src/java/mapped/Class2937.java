@@ -47,7 +47,7 @@ public class Class2937 extends Class2898<Class4712> {
       while (true) {
          var1.method8381(0, -1, 0);
          if (!World.method6720(var1)) {
-            if (var0.method6738(var1).method23393()) {
+            if (var0.getBlockState(var1).isAir()) {
                continue;
             }
 
@@ -80,7 +80,7 @@ public class Class2937 extends Class2898<Class4712> {
       if (!var0.method7007(var1)) {
          return true;
       } else {
-         Class7380 var4 = var0.method6738(var1.method8313());
+         BlockState var4 = var0.getBlockState(var1.method8313());
          return !var4.method23448(Blocks.NETHERRACK) && !var4.method23448(Blocks.field37074) && !var4.method23448(Blocks.field37076);
       }
    }

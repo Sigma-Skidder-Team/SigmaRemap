@@ -8,22 +8,22 @@ public class Class3464 extends Class3462 {
    }
 
    @Override
-   public ActionResultType method11505(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, Class8711 var6) {
+   public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
-      if (var9.method32107() != Class8514.field37956) {
+      if (var9.getItem() != Items.field37956) {
          return super.method11505(var1, var2, var3, var4, var5, var6);
       } else {
          if (!var2.field9020) {
-            Direction var10 = var6.method31424();
+            Direction var10 = var6.getFace();
             Direction var11 = var10.method544() != Class113.field414 ? var10 : var4.method3386().method536();
             var2.method6742((PlayerEntity)null, var3, Class6067.field26986, Class2266.field14732, 1.0F, 1.0F);
             var2.method6725(var3, Blocks.field36589.method11579().method23465(Class3342.field18848, var11), 11);
             ItemEntity var12 = new ItemEntity(
                var2,
-               (double)var3.method8304() + 0.5 + (double)var11.method539() * 0.65,
+               (double)var3.getX() + 0.5 + (double)var11.method539() * 0.65,
                (double)var3.getY() + 0.1,
-               (double)var3.method8306() + 0.5 + (double)var11.method541() * 0.65,
-               new ItemStack(Class8514.field37959, 4)
+               (double)var3.getZ() + 0.5 + (double)var11.method541() * 0.65,
+               new ItemStack(Items.field37959, 4)
             );
             var12.method3435(
                0.05 * (double)var11.method539() + var2.field9016.nextDouble() * 0.02,

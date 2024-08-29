@@ -12,13 +12,13 @@ public class Class2751 extends Class2747 {
       if (this.field17281.method3014() == null && !this.field17281.method3327()) {
          return false;
       } else {
-         BlockPos var3 = this.method10957(this.field17281.field5024, this.field17281, 7, 4);
+         BlockPos var3 = this.method10957(this.field17281.world, this.field17281, 7, 4);
          if (var3 == null) {
             return this.method10955();
          } else {
-            this.field17283 = (double)var3.method8304();
+            this.field17283 = (double)var3.getX();
             this.field17284 = (double)var3.getY();
-            this.field17285 = (double)var3.method8306();
+            this.field17285 = (double)var3.getZ();
             return true;
          }
       }

@@ -11,9 +11,9 @@ public class Class3571 {
       Class32.field61,
       Class34.field68,
       Class29.field54,
-      Class40.field84,
-      Class41.field87,
-      Class39.field82,
+      StringNBT.field84,
+      ListNBT.field87,
+      CompoundNBT.field82,
       Class28.field52,
       Class42.field91
    };

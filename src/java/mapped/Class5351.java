@@ -13,7 +13,7 @@ public class Class5351 extends Module {
 
     public Class5351() {
         super(ModuleCategory.COMBAT, "AAC", "Places block underneath");
-        this.method15972(new Class6009<Float>("Strengh", "Boost strengh", 0.7F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new Class6009<Float>("Strengh", "Boost strengh", 0.7F, Float.class, 0.0F, 1.0F, 0.01F));
         field23907 = 20;
     }
 

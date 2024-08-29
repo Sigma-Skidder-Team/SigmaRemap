@@ -11,13 +11,13 @@ public class Class5647 extends Class5646 {
       .xmap(Class5647::new, Class5647::method17834)
       .stable()
       .codec();
-   private static final List<Class7380> field24992 = StreamSupport.<Block>stream(Registry.field16072.spliterator(), false)
-      .<Class7380>flatMap(var0 -> var0.method11577().method35392().stream())
-      .collect(Collectors.<Class7380>toList());
+   private static final List<BlockState> field24992 = StreamSupport.<Block>stream(Registry.BLOCK.spliterator(), false)
+      .<BlockState>flatMap(var0 -> var0.getStateContainer().getValidStates().stream())
+      .collect(Collectors.<BlockState>toList());
    private static final int field24993 = MathHelper.method37773(MathHelper.method37765((float)field24992.size()));
    private static final int field24994 = MathHelper.method37773((float)field24992.size() / (float)field24993);
-   public static final Class7380 field24995 = Blocks.AIR.method11579();
-   public static final Class7380 field24996 = Blocks.field36765.method11579();
+   public static final BlockState field24995 = Blocks.AIR.method11579();
+   public static final BlockState field24996 = Blocks.field36765.method11579();
    private final Registry<Biome> field24997;
 
    public Class5647(Registry<Biome> var1) {
@@ -58,7 +58,7 @@ public class Class5647 extends Class5646 {
             int var10 = (var6 << 4) + var8;
             int var11 = (var7 << 4) + var9;
             var1.method6725(var5.method8372(var10, 60, var11), field24996, 2);
-            Class7380 var12 = method17835(var10, var11);
+            BlockState var12 = method17835(var10, var11);
             if (var12 != null) {
                var1.method6725(var5.method8372(var10, 70, var11), var12, 2);
             }
@@ -77,11 +77,11 @@ public class Class5647 extends Class5646 {
 
    @Override
    public Class1665 method17798(int var1, int var2) {
-      return new Class1669(new Class7380[0]);
+      return new Class1669(new BlockState[0]);
    }
 
-   public static Class7380 method17835(int var0, int var1) {
-      Class7380 var4 = field24995;
+   public static BlockState method17835(int var0, int var1) {
+      BlockState var4 = field24995;
       if (var0 > 0 && var1 > 0 && var0 % 2 != 0 && var1 % 2 != 0) {
          var0 /= 2;
          var1 /= 2;

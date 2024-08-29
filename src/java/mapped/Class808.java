@@ -27,8 +27,8 @@ public class Class808 extends Class798 {
             new Class1206(this.field4564 / 2 - 50, method1929(8), 100, 20, new TranslationTextComponent("mco.gui.ok"), var1 -> this.field4329.accept(true))
          );
       } else {
-         this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 105, method1929(8), 100, 20, Class7127.field30660, var1 -> this.field4329.accept(true)));
-         this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(8), 100, 20, Class7127.field30661, var1 -> this.field4329.accept(false)));
+         this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 105, method1929(8), 100, 20, DialogTexts.field30660, var1 -> this.field4329.accept(true)));
+         this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(8), 100, 20, DialogTexts.field30661, var1 -> this.field4329.accept(false)));
       }
    }
 

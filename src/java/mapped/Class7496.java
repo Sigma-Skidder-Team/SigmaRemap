@@ -164,12 +164,12 @@ public class Class7496 implements Class7495 {
    }
 
    @Override
-   public Class7202 method24425(Class8968 var1, Function<Class7826, Class1713> var2, Class1902 var3, ResourceLocation var4) {
+   public IBakedModel method24425(Class8968 var1, Function<Class7826, TextureAtlasSprite> var2, Class1902 var3, ResourceLocation var4) {
       return this.method24433(var1, this, var2, var3, var4, true);
    }
 
-   public Class7202 method24433(Class8968 var1, Class7496 var2, Function<Class7826, Class1713> var3, Class1902 var4, ResourceLocation var5, boolean var6) {
-      Class1713 var9 = (Class1713)var3.apply(this.method24436("particle"));
+   public IBakedModel method24433(Class8968 var1, Class7496 var2, Function<Class7826, TextureAtlasSprite> var3, Class1902 var4, ResourceLocation var5, boolean var6) {
+      TextureAtlasSprite var9 = (TextureAtlasSprite)var3.apply(this.method24436("particle"));
       if (this.method24439() == Class8968.field40528) {
          return new Class7203(this.method24440(), this.method24432(var1, var2), var9, this.method24430().method8812());
       } else {
@@ -178,7 +178,7 @@ public class Class7496 implements Class7495 {
          for (Class9726 var12 : this.method24428()) {
             for (Direction var14 : var12.field45425.keySet()) {
                Class9163 var15 = var12.field45425.get(var14);
-               Class1713 var16 = (Class1713)var3.apply(this.method24436(var15.field42068));
+               TextureAtlasSprite var16 = (TextureAtlasSprite)var3.apply(this.method24436(var15.field42068));
                if (var15.field42066 != null) {
                   var10.method33810(Direction.method531(var4.method8166().method21548(), var15.field42066), method24434(var12, var15, var16, var14, var4, var5));
                } else {
@@ -191,7 +191,7 @@ public class Class7496 implements Class7495 {
       }
    }
 
-   private static Class8557 method24434(Class9726 var0, Class9163 var1, Class1713 var2, Direction var3, Class1902 var4, ResourceLocation var5) {
+   private static Class8557 method24434(Class9726 var0, Class9163 var1, TextureAtlasSprite var2, Direction var3, Class1902 var4, ResourceLocation var5) {
       return field32200.method34175(var0.field45423, var0.field45424, var1, var2, var3, var4, var0.field45426, var0.field45427, var5);
    }
 
@@ -216,7 +216,7 @@ public class Class7496 implements Class7495 {
          var1 = (String)var5.right().get();
          if (var4.contains(var1)) {
             field32199.warn("Unable to resolve texture due to reference chain {}->{} in {}", Joiner.on("->").join(var4), var1, this.field32207);
-            return new Class7826(Class289.field1102, Class1714.method7513());
+            return new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class1714.method7513());
          }
 
          var4.add(var1);
@@ -231,7 +231,7 @@ public class Class7496 implements Class7495 {
          }
       }
 
-      return Either.left(new Class7826(Class289.field1102, Class1714.method7513()));
+      return Either.left(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class1714.method7513()));
    }
 
    private static boolean method24438(String var0) {

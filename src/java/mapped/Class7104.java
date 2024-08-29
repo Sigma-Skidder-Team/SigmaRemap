@@ -29,14 +29,14 @@ public class Class7104 {
    public Class7305 field30569 = null;
    public int[] field30570 = null;
    public int field30571 = 1;
-   public Class1713[] field30572 = null;
-   public Class1713[] field30573 = null;
+   public TextureAtlasSprite[] field30572 = null;
+   public TextureAtlasSprite[] field30573 = null;
    public Class9727[] field30574 = null;
    public String[] field30575 = null;
-   public Class1713[] field30576 = null;
+   public TextureAtlasSprite[] field30576 = null;
    public int field30577 = -1;
-   public Class7380 field30578 = Blocks.AIR.method11579();
-   public Class4520 field30579 = null;
+   public BlockState field30578 = Blocks.AIR.method11579();
+   public RenderType field30579 = null;
    public static final int field30580 = 0;
    public static final int field30581 = 1;
    public static final int field30582 = 2;
@@ -520,13 +520,13 @@ public class Class7104 {
    }
 
    private String[] method22105() {
-      Class1713 var3 = method22106(this.field30549);
+      TextureAtlasSprite var3 = method22106(this.field30549);
       return var3 != null ? new String[]{this.field30549} : null;
    }
 
-   private static Class1713 method22106(String var0) {
-      Class289 var3 = Class7944.method26969();
-      Class1713 var4 = var3.method1104(var0);
+   private static TextureAtlasSprite method22106(String var0) {
+      AtlasTexture var3 = Class7944.method26969();
+      TextureAtlasSprite var4 = var3.method1104(var0);
       return var4 == null ? var3.method1104("block/" + var0) : var4;
    }
 
@@ -782,7 +782,7 @@ public class Class7104 {
       }
    }
 
-   public void method22122(Class289 var1) {
+   public void method22122(AtlasTexture var1) {
       if (this.field30553 != null) {
          this.field30572 = method22126(this.field30553, var1, false, false);
       }
@@ -796,19 +796,19 @@ public class Class7104 {
       }
    }
 
-   public void method22123(Class289 var1) {
+   public void method22123(AtlasTexture var1) {
       this.method22124(this.field30572, var1);
       this.method22124(this.field30576, var1);
       this.method22124(this.field30573, var1);
    }
 
-   private void method22124(Class1713[] var1, Class289 var2) {
+   private void method22124(TextureAtlasSprite[] var1, AtlasTexture var2) {
       if (var1 != null) {
          for (int var5 = 0; var5 < var1.length; var5++) {
-            Class1713 var6 = var1[var5];
+            TextureAtlasSprite var6 = var1[var5];
             if (var6 != null) {
                ResourceLocation var7 = var6.method7465();
-               Class1713 var8 = var2.method1098(var7);
+               TextureAtlasSprite var8 = var2.getSprite(var7);
                if (var8 == null || var8 instanceof Class1714) {
                   Class7944.method26811("Missing CTM sprite: " + var7 + ", properties: " + this.field30550);
                }
@@ -832,11 +832,11 @@ public class Class7104 {
       }
    }
 
-   private static Class1713[] method22126(String[] var0, Class289 var1, boolean var2, boolean var3) {
+   private static TextureAtlasSprite[] method22126(String[] var0, AtlasTexture var1, boolean var2, boolean var3) {
       if (var0 == null) {
          return null;
       } else {
-         ArrayList<Class1713> var6 = new ArrayList();
+         ArrayList<TextureAtlasSprite> var6 = new ArrayList();
 
          for (int var7 = 0; var7 < var0.length; var7++) {
             String var8 = var0[var7];
@@ -866,12 +866,12 @@ public class Class7104 {
                }
 
                ResourceLocation var17 = new ResourceLocation(var10, var16);
-               Class1713 var18 = var1.method1119(var17);
+               TextureAtlasSprite var18 = var1.method1119(var17);
                var6.add(var18);
             }
          }
 
-         return var6.toArray(new Class1713[var6.size()]);
+         return var6.toArray(new TextureAtlasSprite[var6.size()]);
       }
    }
 
@@ -883,7 +883,7 @@ public class Class7104 {
       return Class7542.method24658(var1, var2, this.field30551);
    }
 
-   public boolean method22129(Class1713 var1) {
+   public boolean method22129(TextureAtlasSprite var1) {
       return Class7542.method24661(var1, this.field30572);
    }
 

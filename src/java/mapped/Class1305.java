@@ -24,7 +24,7 @@ public class Class1305 extends Screen implements Class1306 {
    @Override
    public void method1921() {
       this.field6906 = true;
-      this.field4562.getClientPlayNetHandler().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
+      this.field4562.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
    }
 
    public void method6179() {
@@ -50,7 +50,7 @@ public class Class1305 extends Screen implements Class1306 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 28, 200, 20, Class7127.field30658, var1 -> this.field4562.displayGuiScreen(this.field6900))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 - 28, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6900))
       );
       if (this.field6902.method2468().isEmpty()) {
          var3.field6482 = false;
@@ -92,7 +92,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    @Override
-   public boolean method2472() {
+   public boolean isPauseScreen() {
       return !this.field6906;
    }
 
@@ -119,7 +119,7 @@ public class Class1305 extends Screen implements Class1306 {
       return 115 + 40 * var1;
    }
 
-   private void method6186(MatrixStack var1, int var2, int var3, Class3257 var4) {
+   private void method6186(MatrixStack var1, int var2, int var3, Item var4) {
       this.method6187(var1, var2 + 1, var3 + 1, 0, 0);
       RenderSystem.method27867();
       this.field4563.method791(var4.method11742(), var2 + 2, var3 + 2);
@@ -158,7 +158,7 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    // $VF: synthetic method
-   public static void method6197(Class1305 var0, MatrixStack var1, int var2, int var3, Class3257 var4) {
+   public static void method6197(Class1305 var0, MatrixStack var1, int var2, int var3, Item var4) {
       var0.method6186(var1, var2, var3, var4);
    }
 }

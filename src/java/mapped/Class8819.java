@@ -21,7 +21,7 @@ public class Class8819 {
       byte[] var9;
       try {
          URL var4 = new URL(var0);
-         var3 = (HttpURLConnection)var4.openConnection(Minecraft.getInstance().method1535());
+         var3 = (HttpURLConnection)var4.openConnection(Minecraft.getInstance().getProxy());
          var3.setDoInput(true);
          var3.setDoOutput(false);
          var3.connect();
@@ -62,7 +62,7 @@ public class Class8819 {
       String var13;
       try {
          URL var6 = new URL(var0);
-         var5 = (HttpURLConnection)var6.openConnection(Minecraft.getInstance().method1535());
+         var5 = (HttpURLConnection)var6.openConnection(Minecraft.getInstance().getProxy());
          var5.setRequestMethod("POST");
          if (var1 != null) {
             for (String var8 : var1.keySet()) {
@@ -108,7 +108,7 @@ public class Class8819 {
          try {
             boolean var2 = Class7944.method26901(System.getProperty("player.models.local"), false);
             if (var2) {
-               File var3 = Minecraft.getInstance().field1303;
+               File var3 = Minecraft.getInstance().gameDir;
                File var4 = new File(var3, "playermodels");
                field39679 = var4.toURI().toURL().toExternalForm();
             }

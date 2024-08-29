@@ -11,7 +11,7 @@ public class Class7364 extends Class7362 {
    @Override
    public void method23359() {
       this.field31519
-         .field5024
+         .world
          .method6745(
             this.field31519.getPosX(),
             this.field31519.getPosY(),

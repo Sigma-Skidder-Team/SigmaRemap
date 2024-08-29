@@ -21,7 +21,7 @@ public abstract class Class1325 extends Screen {
    }
 
    @Override
-   public void method1919() {
+   public void tick() {
       this.field7010.method5633();
    }
 
@@ -31,12 +31,12 @@ public abstract class Class1325 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.field1302.method36347(true);
+      this.field4562.keyboardListener.method36347(true);
       this.field7012 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 4 - 150, this.field4565 / 4 + 120 + 12, 150, 20, Class7127.field30658, var1 -> this.method6307())
+         new Class1206(this.field4564 / 2 - 4 - 150, this.field4565 / 4 + 120 + 12, 150, 20, DialogTexts.field30658, var1 -> this.method6307())
       );
       this.field7013 = this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 4, this.field4565 / 4 + 120 + 12, 150, 20, Class7127.field30659, var1 -> this.method1945())
+         new Class1206(this.field4564 / 2 + 4, this.field4565 / 4 + 120 + 12, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method1945())
       );
       this.field7014 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 150 - 20, this.method6305(), 20, 20, new StringTextComponent("O"), var1 -> {
@@ -64,9 +64,9 @@ public abstract class Class1325 extends Screen {
    }
 
    @Override
-   public void method2482(Minecraft var1, int var2, int var3) {
+   public void resize(Minecraft var1, int var2, int var3) {
       String var6 = this.field7010.method5636();
-      this.method2467(var1, var2, var3);
+      this.init(var1, var2, var3);
       this.field7010.method5635(var6);
       this.field7016.method20835();
    }
@@ -93,7 +93,7 @@ public abstract class Class1325 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.field1302.method36347(false);
+      this.field4562.keyboardListener.method36347(false);
    }
 
    public abstract void method6308(Class911 var1);

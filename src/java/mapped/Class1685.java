@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 public abstract class Class1685 implements Class1683 {
    public static final Codec<Class1685> field9159 = Registry.field16135.dispatchStable(Class1685::method7199, Function.identity());
    public final Map<Structure<?>, Boolean> field9160 = Maps.newHashMap();
-   public final Set<Class7380> field9161 = Sets.newHashSet();
+   public final Set<BlockState> field9161 = Sets.newHashSet();
    public final List<Biome> field9162;
 
    public Class1685(Stream<Supplier<Biome>> var1) {
@@ -116,7 +116,7 @@ public abstract class Class1685 implements Class1683 {
       return this.field9160.computeIfAbsent(var1, var1x -> this.field9162.stream().anyMatch(var1xx -> var1xx.method32507().method24277(var1x)));
    }
 
-   public Set<Class7380> method7206() {
+   public Set<BlockState> method7206() {
       if (this.field9161.isEmpty()) {
          for (Biome var4 : this.field9162) {
             this.field9161.add(var4.method32507().method24283().method28934());

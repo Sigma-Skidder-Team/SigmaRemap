@@ -24,7 +24,7 @@ public class Class2580 extends LanguageMap {
       this.field16802 = var2;
    }
 
-   public static Class2580 method10782(Class191 var0, List<Class2019> var1) {
+   public static Class2580 method10782(IResourceManager var0, List<Class2019> var1) {
       HashMap var4 = Maps.newHashMap();
       boolean var5 = false;
 

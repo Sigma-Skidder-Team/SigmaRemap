@@ -19,7 +19,7 @@ public class Class5302 extends Module {
     @EventTarget
     private void method16657(Class4415 var1) {
         if (this.method15996() && mc.player != null) {
-            if (!Minecraft.getInstance().gameSettings.field44662) {
+            if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 byte var4 = 5;
                 byte var5 = 60;
                 int var6 = !Minecraft.getInstance().gameSettings.showDebugInfo ? 0 : 60;

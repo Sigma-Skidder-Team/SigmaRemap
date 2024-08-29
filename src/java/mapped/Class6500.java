@@ -34,11 +34,11 @@ public class Class6500 {
       }
    }
 
-   public void method19691(Class39 var1) {
+   public void method19691(CompoundNBT var1) {
       var1.method115("Saddle", this.method19694());
    }
 
-   public void method19692(Class39 var1) {
+   public void method19692(CompoundNBT var1) {
       this.method19693(var1.method132("Saddle"));
    }
 

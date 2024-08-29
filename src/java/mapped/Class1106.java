@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Class1106 extends Class1105 {
    private static String[] field6077;
-   public static final float field6078 = Class8992.field41022.method33213() / Class8992.field41036.method33213();
+   public static final float field6078 = EntityType.field41022.method33213() / EntityType.field41036.method33213();
 
-   public Class1106(Class8992<? extends Class1106> var1, World var2) {
+   public Class1106(EntityType<? extends Class1106> var1, World var2) {
       super(var1, var2);
       this.method4278();
       if (this.field6076 != null) {
@@ -49,7 +49,7 @@ public class Class1106 extends Class1105 {
       short var3 = 1200;
       if ((this.field5055 + this.method3205()) % 1200 == 0) {
          Class7144 var4 = Class8254.field35470;
-         List<ServerPlayerEntity> var5 = ((ServerWorld)this.field5024).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
+         List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
 
          for (ServerPlayerEntity var10 : var5) {
             if (!var10.method3033(var4) || var10.method3034(var4).method8629() < 2 || var10.method3034(var4).method8628() < 1200) {
@@ -60,7 +60,7 @@ public class Class1106 extends Class1105 {
       }
 
       if (!this.method4291()) {
-         this.method4288(this.method3432(), 16);
+         this.method4288(this.getPosition(), 16);
       }
    }
 }

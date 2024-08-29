@@ -35,7 +35,7 @@ public class Class7144 {
                if (this == Class8254.field35483 && var1 instanceof PlayerEntity) {
                   ((PlayerEntity)var1).method2931(0.005F * (float)(var2 + 1));
                } else if (this == Class8254.field35489 && var1 instanceof PlayerEntity) {
-                  if (!var1.field5024.field9020) {
+                  if (!var1.world.field9020) {
                      ((PlayerEntity)var1).method2932().method37569(var2 + 1, 1.0F);
                   }
                } else if ((this != Class8254.field35472 || var1.method3038()) && (this != Class8254.field35473 || !var1.method3038())) {
@@ -99,7 +99,7 @@ public class Class7144 {
 
    public String method22293() {
       if (this.field30710 == null) {
-         this.field30710 = Util.method38486("effect", Registry.field16071.method9181(this));
+         this.field30710 = Util.method38486("effect", Registry.field16071.getKey(this));
       }
 
       return this.field30710;

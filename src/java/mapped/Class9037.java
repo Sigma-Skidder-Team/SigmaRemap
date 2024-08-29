@@ -205,14 +205,14 @@ public class Class9037 {
       if (var2 <= 48 && var3 <= 48 && var4 <= 48) {
          ServerWorld var7 = var0.method20172();
          BlockPos var8 = new BlockPos(var0.method20171());
-         BlockPos var9 = new BlockPos(var8.method8304(), var0.method20172().method7006(Class101.field296, var8).getY(), var8.method8306() + 3);
+         BlockPos var9 = new BlockPos(var8.getX(), var0.method20172().method7006(Class101.field296, var8).getY(), var8.getZ() + 3);
          Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Class80.field185, var7);
 
          for (int var10 = 0; var10 < var2; var10++) {
             for (int var11 = 0; var11 < var4; var11++) {
-               BlockPos var12 = new BlockPos(var9.method8304() + var10, var9.getY() + 1, var9.method8306() + var11);
+               BlockPos var12 = new BlockPos(var9.getX() + var10, var9.getY() + 1, var9.getZ() + var11);
                Block var13 = Blocks.POLISHED_ANDESITE;
-               Class164 var14 = new Class164(var13.method11579(), Collections.EMPTY_SET, (Class39)null);
+               Class164 var14 = new Class164(var13.method11579(), Collections.EMPTY_SET, (CompoundNBT)null);
                var14.method496(var7, var12, 2);
             }
          }
@@ -225,8 +225,8 @@ public class Class9037 {
    }
 
    private static int method33491(Class6619 var0, String var1) throws CommandSyntaxException {
-      Class8711 var4 = (Class8711)var0.method20175().method3289(10.0, 1.0F, false);
-      BlockPos var5 = var4.method31423();
+      BlockRayTraceResult var4 = (BlockRayTraceResult)var0.method20175().method3289(10.0, 1.0F, false);
+      BlockPos var5 = var4.getPos();
       ServerWorld var6 = var0.method20172();
       Optional var7 = Class7803.method26060(var5, 15, var6);
       if (!var7.isPresent()) {
@@ -234,9 +234,9 @@ public class Class9037 {
       }
 
       if (var7.isPresent()) {
-         Class964 var8 = (Class964)var6.method6759((BlockPos)var7.get());
+         Class964 var8 = (Class964)var6.getTileEntity((BlockPos)var7.get());
          BlockPos var9 = var5.method8338((Class1998)var7.get());
-         String var10 = var9.method8304() + ", " + var9.getY() + ", " + var9.method8306();
+         String var10 = var9.getX() + ", " + var9.getY() + ", " + var9.getZ();
          String var11 = var8.method3935();
          IFormattableTextComponent var12 = new StringTextComponent(var10)
             .setStyle(
@@ -286,7 +286,7 @@ public class Class9037 {
    }
 
    private static void method33494(ServerWorld var0, BlockPos var1, Class9494 var2) {
-      Class964 var5 = (Class964)var0.method6759(var1);
+      Class964 var5 = (Class964)var0.getTileEntity(var1);
       String var6 = var5.method3935();
       Class4871 var7 = Class7936.method26709(var6);
       Class8262 var8 = new Class8262(var7, var5.method3946(), var0);
@@ -332,7 +332,7 @@ public class Class9037 {
       ServerWorld var5 = var0.method20172();
       BlockPos var6 = new BlockPos(var0.method20171());
       int var7 = var0.method20172().method7006(Class101.field296, var6).getY();
-      BlockPos var8 = new BlockPos(var6.method8304(), var7, var6.method8306() + 3);
+      BlockPos var8 = new BlockPos(var6.getX(), var7, var6.getZ() + 3);
       Class7440.method24038(var5);
       method33498(var1, var5);
       Class80 var9 = Class7803.method26051(var2);
@@ -387,7 +387,7 @@ public class Class9037 {
 
    private static void method33502(Class6619 var0, Collection<Class4871> var1, int var2, int var3) {
       BlockPos var6 = new BlockPos(var0.method20171());
-      BlockPos var7 = new BlockPos(var6.method8304(), var0.method20172().method7006(Class101.field296, var6).getY(), var6.method8306() + 3);
+      BlockPos var7 = new BlockPos(var6.getX(), var0.method20172().method7006(Class101.field296, var6).getY(), var6.getZ() + 3);
       ServerWorld var8 = var0.method20172();
       Class80 var9 = Class7803.method26051(var2);
       Collection var10 = Class7440.method24031(var1, var7, var9, var8, Class7879.field33820, var3);
@@ -405,7 +405,7 @@ public class Class9037 {
       ServerWorld var4 = var0.method20172();
       BlockPos var5 = Class7803.method26061(var3, 15, var4);
       if (var5 != null) {
-         Class964 var6 = (Class964)var4.method6759(var5);
+         Class964 var6 = (Class964)var4.getTileEntity(var5);
          String var7 = var6.method3935();
          return method33505(var0, var7);
       } else {

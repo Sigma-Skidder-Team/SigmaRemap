@@ -22,12 +22,12 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11706(Class7380 var1, World var2, BlockPos var3, PlayerEntity var4) {
-      return !var4.method2801();
+   public boolean method11706(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
+      return !var4.isCreative();
    }
 
    @Override
-   public float method11708(ItemStack var1, Class7380 var2) {
+   public float method11708(ItemStack var1, BlockState var2) {
       if (var2.method23448(Blocks.COBWEB)) {
          return 15.0F;
       } else {
@@ -49,7 +49,7 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11714(ItemStack var1, World var2, Class7380 var3, BlockPos var4, Class880 var5) {
+   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, Class880 var5) {
       if (var3.method23405(var2, var4) != 0.0F) {
          var1.method32121(2, var5, var0 -> var0.method3184(Class2106.field13731));
       }
@@ -58,7 +58,7 @@ public class Class3267 extends Class3266 implements Class3260 {
    }
 
    @Override
-   public boolean method11715(Class7380 var1) {
+   public boolean method11715(BlockState var1) {
       return var1.method23448(Blocks.COBWEB);
    }
 

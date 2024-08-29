@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public class Class1010 extends Class1009 implements Class1011 {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
    private static final Class9689 field5646 = new Class9689(field5645, "Attacking speed boost", 0.15F, Class2045.field13352);
-   private static final Class9289<Optional<Class7380>> field5647 = Class9361.<Optional<Class7380>>method35441(Class1010.class, Class7784.field33397);
+   private static final Class9289<Optional<BlockState>> field5647 = Class9361.<Optional<BlockState>>method35441(Class1010.class, Class7784.field33397);
    private static final Class9289<Boolean> field5648 = Class9361.<Boolean>method35441(Class1010.class, Class7784.field33398);
    private static final Class9289<Boolean> field5649 = Class9361.<Boolean>method35441(Class1010.class, Class7784.field33398);
    private static final Predicate<Class880> field5650 = var0 -> var0 instanceof Class1104 && ((Class1104)var0).method5297();
@@ -18,7 +18,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    private int field5654;
    private UUID field5655;
 
-   public Class1010(Class8992<? extends Class1010> var1, World var2) {
+   public Class1010(EntityType<? extends Class1010> var1, World var2) {
       super(var1, var2);
       this.field5051 = 1.0F;
       this.method4224(Class2163.field14191, -1.0F);
@@ -69,7 +69,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    @Override
    public void method2850() {
       super.method2850();
-      this.field5063.method35442(field5647, Optional.<Class7380>empty());
+      this.field5063.method35442(field5647, Optional.<BlockState>empty());
       this.field5063.method35442(field5648, false);
       this.field5063.method35442(field5649, false);
    }
@@ -103,14 +103,14 @@ public class Class1010 extends Class1009 implements Class1011 {
       if (this.field5055 >= this.field5651 + 400) {
          this.field5651 = this.field5055;
          if (!this.method3245()) {
-            this.field5024.method6745(this.getPosX(), this.method3442(), this.getPosZ(), Class6067.field26549, this.method2864(), 2.5F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.method3442(), this.getPosZ(), Class6067.field26549, this.method2864(), 2.5F, 1.0F, false);
          }
       }
    }
 
    @Override
    public void method3155(Class9289<?> var1) {
-      if (field5648.equals(var1) && this.method4359() && this.field5024.field9020) {
+      if (field5648.equals(var1) && this.method4359() && this.world.field9020) {
          this.method4351();
       }
 
@@ -118,34 +118,34 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    @Override
-   public void method2724(Class39 var1) {
+   public void method2724(CompoundNBT var1) {
       super.method2724(var1);
-      Class7380 var4 = this.method4357();
+      BlockState var4 = this.method4357();
       if (var4 != null) {
-         var1.method99("carriedBlockState", Class8354.method29287(var4));
+         var1.put("carriedBlockState", Class8354.method29287(var4));
       }
 
       this.method4364(var1);
    }
 
    @Override
-   public void method2723(Class39 var1) {
+   public void method2723(CompoundNBT var1) {
       super.method2723(var1);
-      Class7380 var4 = null;
+      BlockState var4 = null;
       if (var1.method119("carriedBlockState", 10)) {
-         var4 = Class8354.method29285(var1.method130("carriedBlockState"));
-         if (var4.method23393()) {
+         var4 = Class8354.method29285(var1.getCompound("carriedBlockState"));
+         if (var4.isAir()) {
             var4 = null;
          }
       }
 
       this.method4356(var4);
-      this.method4365((ServerWorld)this.field5024, var1);
+      this.method4365((ServerWorld)this.world, var1);
    }
 
    private boolean method4352(PlayerEntity var1) {
-      ItemStack var4 = var1.field4902.field5440.get(3);
-      if (var4.method32107() != Blocks.field36589.method11581()) {
+      ItemStack var4 = var1.inventory.field5440.get(3);
+      if (var4.getItem() != Blocks.field36589.method11581()) {
          Vector3d var5 = var1.method3281(1.0F).method11333();
          Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.method3442() - var1.method3442(), this.getPosZ() - var1.getPosZ());
          double var7 = var6.method11348();
@@ -164,9 +164,9 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    @Override
    public void method2871() {
-      if (this.field5024.field9020) {
+      if (this.world.field9020) {
          for (int var3 = 0; var3 < 2; var3++) {
-            this.field5024
+            this.world
                .method6746(
                   Class7940.field34090,
                   this.method3438(0.5),
@@ -180,8 +180,8 @@ public class Class1010 extends Class1009 implements Class1011 {
       }
 
       this.field4981 = false;
-      if (!this.field5024.field9020) {
-         this.method4366((ServerWorld)this.field5024, true);
+      if (!this.world.field9020) {
+         this.method4366((ServerWorld)this.world, true);
       }
 
       super.method2871();
@@ -194,9 +194,9 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    @Override
    public void method4258() {
-      if (this.field5024.method6740() && this.field5055 >= this.field5652 + 600) {
+      if (this.world.method6740() && this.field5055 >= this.field5652 + 600) {
          float var3 = this.method3267();
-         if (var3 > 0.5F && this.field5024.method7022(this.method3432()) && this.field5054.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
+         if (var3 > 0.5F && this.world.method7022(this.getPosition()) && this.field5054.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
             this.method4233((Class880)null);
             this.method4353();
          }
@@ -206,7 +206,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    public boolean method4353() {
-      if (!this.field5024.method6714() && this.method3066()) {
+      if (!this.world.method6714() && this.method3066()) {
          double var3 = this.getPosX() + (this.field5054.nextDouble() - 0.5) * 64.0;
          double var5 = this.getPosY() + (double)(this.field5054.nextInt(64) - 32);
          double var7 = this.getPosZ() + (this.field5054.nextDouble() - 0.5) * 64.0;
@@ -229,17 +229,17 @@ public class Class1010 extends Class1009 implements Class1011 {
    private boolean method4355(double var1, double var3, double var5) {
       Mutable var9 = new Mutable(var1, var3, var5);
 
-      while (var9.getY() > 0 && !this.field5024.method6738(var9).method23384().method31087()) {
-         var9.method8379(Direction.field672);
+      while (var9.getY() > 0 && !this.world.getBlockState(var9).method23384().method31087()) {
+         var9.method8379(Direction.DOWN);
       }
 
-      Class7380 var10 = this.field5024.method6738(var9);
+      BlockState var10 = this.world.getBlockState(var9);
       boolean var11 = var10.method23384().method31087();
       boolean var12 = var10.method23449().method23486(Class8953.field40469);
       if (var11 && !var12) {
          boolean var13 = this.method3168(var1, var3, var5, true);
          if (var13 && !this.method3245()) {
-            this.field5024.method6743((PlayerEntity)null, this.field5025, this.field5026, this.field5027, Class6067.field26550, this.method2864(), 1.0F, 1.0F);
+            this.world.method6743((PlayerEntity)null, this.field5025, this.field5026, this.field5027, Class6067.field26550, this.method2864(), 1.0F, 1.0F);
             this.method2863(Class6067.field26550, 1.0F, 1.0F);
          }
 
@@ -267,19 +267,19 @@ public class Class1010 extends Class1009 implements Class1011 {
    @Override
    public void method3054(Class8654 var1, int var2, boolean var3) {
       super.method3054(var1, var2, var3);
-      Class7380 var6 = this.method4357();
+      BlockState var6 = this.method4357();
       if (var6 != null) {
-         this.method3300(var6.method23383());
+         this.method3300(var6.getBlock());
       }
    }
 
-   public void method4356(Class7380 var1) {
-      this.field5063.method35446(field5647, Optional.<Class7380>ofNullable(var1));
+   public void method4356(BlockState var1) {
+      this.field5063.method35446(field5647, Optional.<BlockState>ofNullable(var1));
    }
 
    @Nullable
-   public Class7380 method4357() {
-      return this.field5063.<Optional<Class7380>>method35445(field5647).orElse((Class7380)null);
+   public BlockState method4357() {
+      return this.field5063.<Optional<BlockState>>method35445(field5647).orElse((BlockState)null);
    }
 
    @Override
@@ -288,7 +288,7 @@ public class Class1010 extends Class1009 implements Class1011 {
          return false;
       } else if (!(var1 instanceof Class8653)) {
          boolean var6 = super.method2741(var1, var2);
-         if (!this.field5024.method6714() && !(var1.method31109() instanceof Class880) && this.field5054.nextInt(10) != 0) {
+         if (!this.world.method6714() && !(var1.method31109() instanceof Class880) && this.field5054.nextInt(10) != 0) {
             this.method4353();
          }
 

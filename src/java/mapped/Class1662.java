@@ -14,25 +14,25 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    int method6808();
 
-   Class6668 method6822();
+   Class6668 getBiomeManager();
 
-   default Biome method7003(BlockPos var1) {
-      return this.method6822().method20323(var1);
+   default Biome getBiome(BlockPos var1) {
+      return this.getBiomeManager().method20323(var1);
    }
 
-   default Stream<Class7380> method7004(Class6488 var1) {
-      int var4 = MathHelper.method37769(var1.field28449);
-      int var5 = MathHelper.method37769(var1.field28452);
-      int var6 = MathHelper.method37769(var1.field28450);
-      int var7 = MathHelper.method37769(var1.field28453);
-      int var8 = MathHelper.method37769(var1.field28451);
-      int var9 = MathHelper.method37769(var1.field28454);
-      return !this.method7019(var4, var6, var8, var5, var7, var9) ? Stream.<Class7380>empty() : this.method7035(var1);
+   default Stream<BlockState> method7004(Class6488 var1) {
+      int var4 = MathHelper.floor(var1.field28449);
+      int var5 = MathHelper.floor(var1.field28452);
+      int var6 = MathHelper.floor(var1.field28450);
+      int var7 = MathHelper.floor(var1.field28453);
+      int var8 = MathHelper.floor(var1.field28451);
+      int var9 = MathHelper.floor(var1.field28454);
+      return !this.method7019(var4, var6, var8, var5, var7, var9) ? Stream.<BlockState>empty() : this.method7035(var1);
    }
 
    @Override
    default int method6878(BlockPos var1, Class8980 var2) {
-      return var2.method32943(this.method7003(var1), (double)var1.method8304(), (double)var1.method8306());
+      return var2.method32943(this.getBiome(var1), (double)var1.getX(), (double)var1.getZ());
    }
 
    @Override
@@ -51,19 +51,19 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    Class9535 method6812();
 
    default BlockPos method7006(Class101 var1, BlockPos var2) {
-      return new BlockPos(var2.method8304(), this.method6736(var1, var2.method8304(), var2.method8306()), var2.method8306());
+      return new BlockPos(var2.getX(), this.method6736(var1, var2.getX(), var2.getZ()), var2.getZ());
    }
 
    default boolean method7007(BlockPos var1) {
-      return this.method6738(var1).method23393();
+      return this.getBlockState(var1).isAir();
    }
 
    default boolean method7008(BlockPos var1) {
       if (var1.getY() < this.method6776()) {
-         BlockPos var4 = new BlockPos(var1.method8304(), this.method6776(), var1.method8306());
+         BlockPos var4 = new BlockPos(var1.getX(), this.method6776(), var1.getZ());
          if (this.method7022(var4)) {
             for (BlockPos var5 = var4.method8313(); var5.getY() > var1.getY(); var5 = var5.method8313()) {
-               Class7380 var6 = this.method6738(var5);
+               BlockState var6 = this.getBlockState(var5);
                if (var6.method23387(this, var5) > 0 && !var6.method23384().method31085()) {
                   return false;
                }
@@ -84,11 +84,11 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default int method7010(BlockPos var1, Direction var2) {
-      return this.method6738(var1).method23407(this, var1, var2);
+      return this.getBlockState(var1).method23407(this, var1, var2);
    }
 
    default Class1670 method7011(BlockPos var1) {
-      return this.method6824(var1.method8304() >> 4, var1.method8306() >> 4);
+      return this.method6824(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    default Class1670 method6824(int var1, int var2) {
@@ -110,18 +110,18 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default boolean method7014(Class6488 var1) {
-      int var4 = MathHelper.method37769(var1.field28449);
+      int var4 = MathHelper.floor(var1.field28449);
       int var5 = MathHelper.method37774(var1.field28452);
-      int var6 = MathHelper.method37769(var1.field28450);
+      int var6 = MathHelper.floor(var1.field28450);
       int var7 = MathHelper.method37774(var1.field28453);
-      int var8 = MathHelper.method37769(var1.field28451);
+      int var8 = MathHelper.floor(var1.field28451);
       int var9 = MathHelper.method37774(var1.field28454);
       Mutable var10 = new Mutable();
 
       for (int var11 = var4; var11 < var5; var11++) {
          for (int var12 = var6; var12 < var7; var12++) {
             for (int var13 = var8; var13 < var9; var13++) {
-               Class7380 var14 = this.method6738(var10.method8372(var11, var12, var13));
+               BlockState var14 = this.getBlockState(var10.method8372(var11, var12, var13));
                if (!var14.method23449().method23474()) {
                   return true;
                }
@@ -137,19 +137,19 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    default int method7016(BlockPos var1, int var2) {
-      return var1.method8304() >= -30000000 && var1.method8306() >= -30000000 && var1.method8304() < 30000000 && var1.method8306() < 30000000
+      return var1.getX() >= -30000000 && var1.getZ() >= -30000000 && var1.getX() < 30000000 && var1.getZ() < 30000000
          ? this.method7021(var1, var2)
          : 15;
    }
 
    @Deprecated
    default boolean method7017(BlockPos var1) {
-      return this.method6843(var1.method8304() >> 4, var1.method8306() >> 4);
+      return this.method6843(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    @Deprecated
    default boolean method7018(BlockPos var1, BlockPos var2) {
-      return this.method7019(var1.method8304(), var1.getY(), var1.method8306(), var2.method8304(), var2.getY(), var2.method8306());
+      return this.method7019(var1.getX(), var1.getY(), var1.getZ(), var2.getX(), var2.getY(), var2.getZ());
    }
 
    @Deprecated

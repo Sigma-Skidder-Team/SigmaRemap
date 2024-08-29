@@ -65,7 +65,7 @@ public class Class5287 extends Module {
         if (this.method15996() && mc.player != null) {
             if (Client.getInstance().getGuiManager().method33472()) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-                    if (!Minecraft.getInstance().gameSettings.field44662) {
+                    if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         Class8480.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
                         if (this.field23781) {
                             Class8480.method29971(170, this.field23769, this.field23786, this.field23783);
@@ -81,7 +81,7 @@ public class Class5287 extends Module {
     private void method16591(Class4415 var1) {
         if (this.method15996() && mc.player != null && mc.world != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-                if (!Minecraft.getInstance().gameSettings.field44662) {
+                if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     this.field23771 = 5 * this.field23778 + this.field23779;
                     float var4 = Math.abs((float) this.method16592() - this.field23787);
                     boolean var5 = (float) this.method16592() - this.field23787 < 0.0F;
@@ -309,7 +309,7 @@ public class Class5287 extends Module {
     private void method16598(Class4420 var1) {
         if (this.method15996() && mc.player != null) {
             this.method16601();
-            this.field23780 = (float) Math.max(Math.round(6.0F - (float) Minecraft.method1586() / 10.0F), 1);
+            this.field23780 = (float) Math.max(Math.round(6.0F - (float) Minecraft.getFps() / 10.0F), 1);
         }
     }
 
@@ -401,7 +401,7 @@ public class Class5287 extends Module {
         byte var3 = 3;
         if (!Client.getInstance().getGuiManager().method33472()) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
-                if (!Minecraft.getInstance().gameSettings.field44662) {
+                if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     for (int var4 = 0; var4 < 3; var4++) {
                         this.field23763[var4] = this.method16602(this.field23768 + this.field23770 / 3 * var4, this.field23769, this.field23763[var4]);
                         this.field23764[var4] = this.method16602(

@@ -20,7 +20,7 @@ public class Class3726 extends Class3676<Class1046> {
    public boolean method12508(ServerWorld var1, Class1046 var2) {
       Optional<Class9378> var5 = var2.method2992().<Class9378>method21410(this.field19820);
       return var5.isPresent()
-         && var1.method6813() == ((Class9378)var5.get()).method35578()
+         && var1.getDimensionKey() == ((Class9378)var5.get()).method35578()
          && ((Class9378)var5.get()).method35579().method8317(var2.getPositionVec(), (double)this.field19822);
    }
 

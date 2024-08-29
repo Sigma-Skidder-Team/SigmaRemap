@@ -19,9 +19,9 @@ public class Class5154 extends Module {
 
    public Class5154() {
       super(ModuleCategory.MOVEMENT, "AAC", "Speed for AAC");
-      this.method15972(new Class6005("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").method18631("Fast2"));
-      this.method15972(new Class6004("Fluid Fix", "Makes your jump fluid.", true));
-      this.method15972(new Class6004("Auto Jump", "Automatically jumps for you.", true));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").method18631("Fast2"));
+      this.registerSetting(new BooleanSetting("Fluid Fix", "Makes your jump fluid.", true));
+      this.registerSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
 
    @Override

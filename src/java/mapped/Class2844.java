@@ -9,7 +9,7 @@ public class Class2844 extends Class2828 {
    }
 
    public Class2844(int var1, int var2, int var3, int var4) {
-      super(Class4520::method14318);
+      super(RenderType::method14318);
       this.field17604 = var3;
       this.field17605 = var4;
       this.field17644 = new Class7219(this, var1, var2);

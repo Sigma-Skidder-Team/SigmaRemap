@@ -7,8 +7,8 @@ public class Class9525 {
    public static final Class9821<Entity> field44333 = method36807("killer_entity");
    public static final Class9821<Entity> field44334 = method36807("direct_killer_entity");
    public static final Class9821<Vector3d> field44335 = method36807("origin");
-   public static final Class9821<Class7380> field44336 = method36807("block_state");
-   public static final Class9821<Class944> field44337 = method36807("block_entity");
+   public static final Class9821<BlockState> field44336 = method36807("block_state");
+   public static final Class9821<TileEntity> field44337 = method36807("block_entity");
    public static final Class9821<ItemStack> field44338 = method36807("tool");
    public static final Class9821<Float> field44339 = method36807("explosion_radius");
 

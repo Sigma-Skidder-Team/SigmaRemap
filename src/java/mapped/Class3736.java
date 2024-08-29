@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public class Class3736 extends Class3676<Class1018> {
    private static String[] field19854;
-   private final Class8992<? extends Class1018> field19855;
+   private final EntityType<? extends Class1018> field19855;
    private final float field19856;
    private long field19857;
 
-   public Class3736(Class8992<? extends Class1018> var1, float var2) {
+   public Class3736(EntityType<? extends Class1018> var1, float var2) {
       super(
          ImmutableMap.of(
             Class8830.field39819,
@@ -74,7 +74,7 @@ public class Class3736 extends Class3676<Class1018> {
 
    private boolean method12665(Class1018 var1) {
       Class6947<?> var4 = var1.method2992();
-      return var4.method21404(Class8830.field39829) && var4.method21410(Class8830.field39829).get().method3204() == this.field19855;
+      return var4.method21404(Class8830.field39829) && var4.method21410(Class8830.field39829).get().getType() == this.field19855;
    }
 
    private Optional<? extends Class1018> method12666(Class1018 var1) {
@@ -82,7 +82,7 @@ public class Class3736 extends Class3676<Class1018> {
          .<List<Class880>>method21410(Class8830.field39819)
          .get()
          .stream()
-         .filter(var1x -> var1x.method3204() == this.field19855)
+         .filter(var1x -> var1x.getType() == this.field19855)
          .<Class1018>map(var0 -> (Class1018)var0)
          .filter(var1::method4386)
          .findFirst();

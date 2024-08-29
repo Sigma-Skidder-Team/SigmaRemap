@@ -26,7 +26,7 @@ public class Class8751 {
 
    private static int method31570(Class6619 var0, BlockPos var1, float var2) {
       var0.method20172().method6946(var1, var2);
-      var0.method20179(new TranslationTextComponent("commands.setworldspawn.success", var1.method8304(), var1.getY(), var1.method8306(), var2), true);
+      var0.method20179(new TranslationTextComponent("commands.setworldspawn.success", var1.getX(), var1.getY(), var1.getZ(), var2), true);
       return 1;
    }
 }

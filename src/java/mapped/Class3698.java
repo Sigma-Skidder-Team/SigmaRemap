@@ -46,7 +46,7 @@ public class Class3698 extends Class3676<Class1046> {
       } else if (this.field19745 != 0L) {
          return var1.method6783() >= this.field19745;
       } else {
-         this.field19745 = var2.field5024.method6783() + (long)var1.field9016.nextInt(20);
+         this.field19745 = var2.world.method6783() + (long)var1.field9016.nextInt(20);
          return false;
       }
    }
@@ -68,20 +68,20 @@ public class Class3698 extends Class3676<Class1046> {
             return true;
          }
       };
-      Set<BlockPos> var9 = var7.method6669(this.field19741.method15182(), var8, var2.method3432(), 48, Class2093.field13635).limit(5L).collect(Collectors.toSet());
+      Set<BlockPos> var9 = var7.method6669(this.field19741.method15182(), var8, var2.getPosition(), 48, Class2093.field13635).limit(5L).collect(Collectors.toSet());
       Class8238 var10 = var2.method4230().method21650(var9, this.field19741.method15183());
       if (var10 != null && var10.method28708()) {
          BlockPos var13 = var10.method28712();
          var7.method6676(var13).ifPresent(var5 -> {
             var7.method6672(this.field19741.method15182(), var1xx -> var1xx.equals(var13), var13, 1);
-            var2.method2992().method21406(this.field19742, Class9378.method35577(var1.method6813(), var13));
+            var2.method2992().method21406(this.field19742, Class9378.method35577(var1.getDimensionKey(), var13));
             this.field19744.ifPresent(var2xx -> var1.method6786(var2, var2xx));
             this.field19746.clear();
             Class7393.method23615(var1, var13);
          });
       } else {
          for (BlockPos var12 : var9) {
-            this.field19746.computeIfAbsent(var12.method8332(), var3x -> new Class8341(var2.field5024.field9016, var3));
+            this.field19746.computeIfAbsent(var12.method8332(), var3x -> new Class8341(var2.world.field9016, var3));
          }
       }
    }

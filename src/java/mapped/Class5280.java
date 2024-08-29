@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.List;
 
 public class Class5280 extends Module {
-    public Class8853 field23731 = mc.method1554();
+    public EntityRendererManager field23731 = mc.getRenderManager();
     public Class7423 field23732 = new Class7423(0.0F, 0.0F, 0.0F);
     public Class7423 field23733 = new Class7423(0.0F, 0.0F, 0.0F);
     public Class7423 field23734 = new Class7423(0.0F, 0.0F, 0.0F);
@@ -139,14 +139,14 @@ public class Class5280 extends Module {
     public void method16523(Class4420 var1) {
         if (this.method15996()) {
             if (mc.player.method3090() != null) {
-                Class2309 var4 = Class2309.method9085(mc.player.method3090().method32107());
+                Class2309 var4 = Class2309.method9085(mc.player.method3090().getItem());
                 if (var4 != null) {
                     float var5 = (float) Math.toRadians(mc.player.field5031 - 25.0F);
                     float var6 = (float) Math.toRadians(mc.player.field5032);
                     double var7 = 0.2F;
                     double var9 = mc.player.field5035.method19675() / 2.0;
-                    double var11 = (double) MathHelper.method37764(var5) * var9;
-                    double var13 = (double) MathHelper.method37763(var5) * var9;
+                    double var11 = (double) MathHelper.cos(var5) * var9;
+                    double var13 = (double) MathHelper.sin(var5) * var9;
                     double var15 = mc.player.field5048
                             + (mc.player.getPosX() - mc.player.field5048) * (double) mc.timer.renderPartialTicks;
                     double var17 = mc.player.field5049
@@ -227,18 +227,18 @@ public class Class5280 extends Module {
                         double var45 = var4.field15827 - mc.gameRenderer.getActiveRenderInfo().method37504().method11322();
                         GL11.glPushMatrix();
                         GL11.glTranslated(var49, var42, var45);
-                        BlockPos var33 = new BlockPos(0, 0, 0).method8349(((Class8711) var4.field15831).method31424());
+                        BlockPos var33 = new BlockPos(0, 0, 0).method8349(((BlockRayTraceResult) var4.field15831).getFace());
                         GL11.glRotatef(
                                 45.0F,
-                                this.field23732.method23931((float) var33.method8304()),
+                                this.field23732.method23931((float) var33.getX()),
                                 this.field23732.method23932((float) (-var33.getY())),
-                                this.field23732.method23933((float) var33.method8306())
+                                this.field23732.method23933((float) var33.getZ())
                         );
                         GL11.glRotatef(
                                 90.0F,
-                                this.field23733.method23931((float) var33.method8306()),
+                                this.field23733.method23931((float) var33.getZ()),
                                 this.field23733.method23932((float) var33.getY()),
-                                this.field23733.method23933((float) (-var33.method8304()))
+                                this.field23733.method23933((float) (-var33.getX()))
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                         Class9388 var34 = new Class9388(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
