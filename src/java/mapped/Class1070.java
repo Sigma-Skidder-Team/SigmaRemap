@@ -32,14 +32,14 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
       do {
          var7.method8379(Direction.field673);
-      } while (var1.method6739(var7).method23486(Class8953.field40470));
+      } while (var1.getFluidState(var7).method23486(Class8953.field40470));
 
       return var1.getBlockState(var7).isAir();
    }
 
    @Override
    public void method3155(DataParameter<?> var1) {
-      if (field5905.equals(var1) && this.world.field9020) {
+      if (field5905.equals(var1) && this.world.isRemote) {
          this.field5908.method19689();
       }
 
@@ -165,7 +165,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       }
 
       for (BlockPos var24 : var5) {
-         if (!this.world.method6739(var24).method23486(Class8953.field40470)) {
+         if (!this.world.getFluidState(var24).method23486(Class8953.field40470)) {
             double var17 = this.world.method7039(var24);
             if (Class4527.method14423(var17)) {
                Vector3d var19 = Vector3d.method11331(var24, var17);
@@ -241,7 +241,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
       BlockState var3 = this.world.getBlockState(this.getPosition());
       BlockState var4 = this.method3260();
-      boolean var5 = var3.method23446(Class7645.field32808) || var4.method23446(Class7645.field32808) || this.method3427(Class8953.field40470) > 0.0;
+      boolean var5 = var3.method23446(BlockTags.field32808) || var4.method23446(BlockTags.field32808) || this.method3427(Class8953.field40470) > 0.0;
       this.method4977(!var5);
       super.tick();
       this.method4985();
@@ -265,7 +265,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       if (this.method3264()) {
          ISelectionContext var3 = ISelectionContext.forEntity(this);
          if (var3.method14950(Class3404.field19082, this.getPosition(), true)
-            && !this.world.method6739(this.getPosition().method8311()).method23486(Class8953.field40470)) {
+            && !this.world.getFluidState(this.getPosition().up()).method23486(Class8953.field40470)) {
             this.onGround = true;
          } else {
             this.method3434(this.method3433().method11344(0.5).method11339(0.0, 0.05, 0.0));
@@ -342,11 +342,11 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       boolean var5 = this.method4381(var1.getHeldItem(var2));
       if (!var5 && this.method4943() && !this.isBeingRidden() && !var1.method2851()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             var1.method3311(this);
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          ActionResultType var6 = super.method4285(var1, var2);
          if (var6.isSuccessOrConsume()) {

@@ -12,8 +12,8 @@ public class Class5745 extends Class5651<Class1089, Class2874<Class1089>> {
    }
 
    public float method17871(Class1089 var1, float var2) {
-      float var5 = MathHelper.method37821(var2, var1.field5968, var1.field5965);
-      float var6 = MathHelper.method37821(var2, var1.field5967, var1.field5966);
+      float var5 = MathHelper.lerp(var2, var1.field5968, var1.field5965);
+      float var6 = MathHelper.lerp(var2, var1.field5967, var1.field5966);
       return (MathHelper.sin(var5) + 1.0F) * var6;
    }
 }

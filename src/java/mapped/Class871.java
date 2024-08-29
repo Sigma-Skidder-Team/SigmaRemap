@@ -72,13 +72,13 @@ public class Class871 extends Class851<Class5822> {
       var1.method35292(5.0F, 5.0F, 5.0F);
       var1.method35293(Class7680.field32902.method25286(180.0F));
       var1.method35293(Class7680.field32898.method25286(20.0F));
-      float var12 = MathHelper.method37821(var2, this.field4839, this.field4838);
+      float var12 = MathHelper.lerp(var2, this.field4839, this.field4838);
       var1.translate((double)((1.0F - var12) * 0.2F), (double)((1.0F - var12) * 0.1F), (double)((1.0F - var12) * 0.25F));
       float var13 = -(1.0F - var12) * 90.0F - 90.0F;
       var1.method35293(Class7680.field32900.method25286(var13));
       var1.method35293(Class7680.field32898.method25286(180.0F));
-      float var14 = MathHelper.method37821(var2, this.field4835, this.field4834) + 0.25F;
-      float var15 = MathHelper.method37821(var2, this.field4835, this.field4834) + 0.75F;
+      float var14 = MathHelper.lerp(var2, this.field4835, this.field4834) + 0.25F;
+      float var15 = MathHelper.lerp(var2, this.field4835, this.field4834) + 0.75F;
       var14 = (var14 - (float) MathHelper.method37768((double)var14)) * 1.6F - 0.3F;
       var15 = (var15 - (float) MathHelper.method37768((double)var15)) * 1.6F - 0.3F;
       if (var14 < 0.0F) {

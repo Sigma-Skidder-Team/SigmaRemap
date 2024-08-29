@@ -42,7 +42,7 @@ public class Class1101 extends Class1009 {
    @Override
    public void tick() {
       super.tick();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method5290(this.collidedHorizontally);
       }
    }

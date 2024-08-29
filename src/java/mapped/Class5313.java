@@ -35,8 +35,8 @@ public class Class5313 extends Module {
                 if (!this.getStringSettingValueByName("Type").equals("Normal")) {
                     int var4 = 16;
                     BlockPos var5 = new BlockPos(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())
-                            .method8311();
-                    Class1670 var6 = mc.world.method7011(var5);
+                            .up();
+                    IChunk var6 = mc.world.method7011(var5);
                     if (var6 != null && var5.getY() >= 0 && var5.getY() < 256 && !var6.method7095()) {
                         var4 -= var6.method7032(var5);
                     }

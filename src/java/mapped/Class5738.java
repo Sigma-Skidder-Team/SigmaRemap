@@ -33,7 +33,7 @@ public class Class5738 extends Class5715<Class904> {
 
          float var16 = var9.method3137(var3);
          float var17 = MathHelper.sin(MathHelper.method37765(var16) * (float) Math.PI);
-         float var18 = MathHelper.method37821(var3, var9.field4966, var9.field4965) * (float) (Math.PI / 180.0);
+         float var18 = MathHelper.lerp(var3, var9.field4966, var9.field4965) * (float) (Math.PI / 180.0);
          double var19 = (double) MathHelper.sin(var18);
          double var21 = (double) MathHelper.cos(var18);
          double var23 = (double)var14 * 0.35;
@@ -46,8 +46,8 @@ public class Class5738 extends Class5715<Class904> {
             double var33 = this.field25097.field40020.field44669;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
-            var35 = var35.method11350(-MathHelper.method37821(var3, var9.prevRotationPitch, var9.rotationPitch) * (float) (Math.PI / 180.0));
-            var35 = var35.method11351(-MathHelper.method37821(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
+            var35 = var35.method11350(-MathHelper.lerp(var3, var9.prevRotationPitch, var9.rotationPitch) * (float) (Math.PI / 180.0));
+            var35 = var35.method11351(-MathHelper.lerp(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
             var35 = var35.method11351(var17 * 0.5F);
             var35 = var35.method11350(-var17 * 0.7F);
             var27 = MathHelper.method37822((double)var3, var9.prevPosX, var9.getPosX()) + var35.field18048;

@@ -18,8 +18,8 @@ public class Class6225 extends Class6218 {
       double var11 = var1.method11322() + (double)((float)var5.method541() * 1.125F);
       BlockPos var13 = var1.method11323().method8349(var5);
       double var14;
-      if (!var6.method6739(var13).method23486(Class8953.field40469)) {
-         if (!var6.getBlockState(var13).isAir() || !var6.method6739(var13.method8313()).method23486(Class8953.field40469)) {
+      if (!var6.getFluidState(var13).method23486(Class8953.field40469)) {
+         if (!var6.getBlockState(var13).isAir() || !var6.getFluidState(var13.down()).method23486(Class8953.field40469)) {
             return this.field27720.method19196(var1, var2);
          }
 
@@ -38,6 +38,6 @@ public class Class6225 extends Class6218 {
 
    @Override
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(1000, var1.method11323(), 0);
+      var1.method11326().playEvent(1000, var1.method11323(), 0);
    }
 }

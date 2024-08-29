@@ -6,11 +6,11 @@ import com.mojang.serialization.MapCodec;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public final class Class7379 extends Class7378<Fluid, Class7379> {
+public final class FluidState extends Class7378<Fluid, FluidState> {
    private static String[] field31583;
-   public static final Codec<Class7379> field31584 = method23469(Registry.field16070, Fluid::method25049).stable();
+   public static final Codec<FluidState> field31584 = method23469(Registry.field16070, Fluid::method25049).stable();
 
-   public Class7379(Fluid var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<Class7379> var3) {
+   public FluidState(Fluid var1, ImmutableMap<Class8550<?>, Comparable<?>> var2, MapCodec<FluidState> var3) {
       super(var1, var2, var3);
    }
 
@@ -42,7 +42,7 @@ public final class Class7379 extends Class7378<Fluid, Class7379> {
       for (int var5 = -1; var5 <= 1; var5++) {
          for (int var6 = -1; var6 <= 1; var6++) {
             BlockPos var7 = var2.method8336(var5, 0, var6);
-            Class7379 var8 = var1.method6739(var7);
+            FluidState var8 = var1.getFluidState(var7);
             if (!var8.method23472().method25066(this.method23472()) && !var1.getBlockState(var7).method23409(var1, var7)) {
                return true;
             }
@@ -72,7 +72,7 @@ public final class Class7379 extends Class7378<Fluid, Class7379> {
       return this.method23472().method25056(var1, var2, this);
    }
 
-   public BlockState method23484() {
+   public BlockState getBlockState() {
       return this.method23472().method25063(this);
    }
 

@@ -125,7 +125,7 @@ public class Item implements Class3303 {
 
    @Override
    public String toString() {
-      return Registry.ITEM.getKey(this).method8292();
+      return Registry.ITEM.getKey(this).getPath();
    }
 
    public String method11718() {

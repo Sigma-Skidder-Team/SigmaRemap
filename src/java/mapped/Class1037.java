@@ -49,7 +49,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       Optional var7 = var1.method7178(var3);
       boolean var8 = var1.method6997() != Class2197.field14351
          && method4340(var1, var3, var4)
-         && (var2 == Class2202.field14393 || var1.method6739(var3).method23486(Class8953.field40469));
+         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(Class8953.field40469));
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44128))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44132))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8
@@ -161,7 +161,7 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public void method2916() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.method3138() && this.method3250() && this.method4647()) {
             this.field5599 = this.field5756;
             this.method3339(true);

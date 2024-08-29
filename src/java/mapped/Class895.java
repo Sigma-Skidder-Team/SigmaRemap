@@ -46,7 +46,7 @@ public class Class895 extends Class890 {
             );
       }
 
-      if (!this.world.field9020 && !this.removed) {
+      if (!this.world.isRemote && !this.removed) {
          if (!(var4 instanceof ServerPlayerEntity)) {
             if (var4 != null) {
                var4.method2793(this.getPosX(), this.getPosY(), this.getPosZ());

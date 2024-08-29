@@ -72,7 +72,7 @@ public class Class883 extends Class882 {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method2904();
       }
    }

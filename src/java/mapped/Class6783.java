@@ -10,7 +10,7 @@ public class Class6783 extends Class6768<Class8278> {
 
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -27,7 +27,7 @@ public class Class6783 extends Class6768<Class8278> {
 
    public void method20667(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -56,7 +56,7 @@ public class Class6783 extends Class6768<Class8278> {
                if (var20 != -1) {
                   if (var20 > 0) {
                      var20--;
-                     var2.method7061(var19, var18, false);
+                     var2.setBlockState(var19, var18, false);
                      if (var20 == 0 && var18.method23448(Blocks.SAND) && var21 > 1) {
                         var20 = var1.nextInt(4) + Math.max(0, var24 - 63);
                         var18 = !var18.method23448(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
@@ -86,14 +86,14 @@ public class Class6783 extends Class6768<Class8278> {
                   var20 = var21;
                   if (var24 < var14 - 1) {
                      if (var24 >= var14 - 7 - var21) {
-                        var2.method7061(var19, var18, false);
+                        var2.setBlockState(var19, var18, false);
                      } else {
                         var17 = Blocks.AIR.method11579();
                         var18 = var9;
-                        var2.method7061(var19, var13, false);
+                        var2.setBlockState(var19, var13, false);
                      }
                   } else {
-                     var2.method7061(var19, var17, false);
+                     var2.setBlockState(var19, var17, false);
                   }
                }
             }

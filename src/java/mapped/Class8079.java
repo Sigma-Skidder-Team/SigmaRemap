@@ -8,7 +8,7 @@ public class Class8079 implements IAmbientSoundHandler {
    private static String[] field34719;
    private final ClientPlayerEntity field34720;
    private final SoundHandler field34721;
-   private final Class6668 field34722;
+   private final BiomeManager field34722;
    private final Random field34723;
    private Object2ObjectArrayMap<Biome, Class6337> field34724 = new Object2ObjectArrayMap();
    private Optional<Class7959> field34725 = Optional.<Class7959>empty();
@@ -16,7 +16,7 @@ public class Class8079 implements IAmbientSoundHandler {
    private float field34727;
    private Biome field34728;
 
-   public Class8079(ClientPlayerEntity var1, SoundHandler var2, Class6668 var3) {
+   public Class8079(ClientPlayerEntity var1, SoundHandler var2, BiomeManager var3) {
       this.field34723 = var1.world.method6814();
       this.field34720 = var1;
       this.field34721 = var2;

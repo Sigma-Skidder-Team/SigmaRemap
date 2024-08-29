@@ -23,8 +23,8 @@ public class Class7244 implements Class7243 {
    }
 
    @Override
-   public void method22737(Class7481 var1, Class9176 var2) {
-      if (var2 == Class9176.field42145) {
+   public void method22737(Class7481 var1, ChunkStatus var2) {
+      if (var2 == ChunkStatus.FULL) {
          this.field31098++;
       }
 

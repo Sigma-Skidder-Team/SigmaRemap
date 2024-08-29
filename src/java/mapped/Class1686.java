@@ -52,14 +52,14 @@ public class Class1686 extends Class1685 {
    private final List<Pair<Class7150, Supplier<Biome>>> field9174;
    private final boolean field9175;
    private final long field9176;
-   private final Optional<Pair<Registry<Biome>, Class9546>> field9177;
+   private final Optional<Pair<Registry<Biome>, NetherBiomeProviderPreset>> field9177;
 
-   public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Optional<Pair<Registry<Biome>, Class9546>> var4) {
+   public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Optional<Pair<Registry<Biome>, NetherBiomeProviderPreset>> var4) {
       this(var1, var3, field9163, field9163, field9163, field9163, var4);
    }
 
    public Class1686(long var1, List<Pair<Class7150, Supplier<Biome>>> var3, Class6813 var4, Class6813 var5, Class6813 var6, Class6813 var7) {
-      this(var1, var3, var4, var5, var6, var7, Optional.<Pair<Registry<Biome>, Class9546>>empty());
+      this(var1, var3, var4, var5, var6, var7, Optional.<Pair<Registry<Biome>, NetherBiomeProviderPreset>>empty());
    }
 
    private Class1686(
@@ -69,7 +69,7 @@ public class Class1686 extends Class1685 {
       Class6813 var5,
       Class6813 var6,
       Class6813 var7,
-      Optional<Pair<Registry<Biome>, Class9546>> var8
+      Optional<Pair<Registry<Biome>, NetherBiomeProviderPreset>> var8
    ) {
       super(var3.stream().<Supplier<Biome>>map(Pair::getSecond));
       this.field9176 = var1;
@@ -119,6 +119,6 @@ public class Class1686 extends Class1685 {
    }
 
    public boolean method7210(long var1) {
-      return this.field9176 == var1 && this.field9177.isPresent() && Objects.equals(this.field9177.get().getSecond(), Class9546.field44451);
+      return this.field9176 == var1 && this.field9177.isPresent() && Objects.equals(this.field9177.get().getSecond(), NetherBiomeProviderPreset.DEFAULT_NETHER_PROVIDER_PRESET);
    }
 }

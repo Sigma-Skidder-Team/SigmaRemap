@@ -65,7 +65,7 @@ public abstract class VoxelShape {
       VoxelShape[] var3 = new VoxelShape[]{VoxelShapes.method27425()};
       this.method19520(
          (var1, var3x, var5, var7, var9, var11) -> var3[0] = VoxelShapes.method27434(
-               var3[0], VoxelShapes.method27427(var1, var3x, var5, var7, var9, var11), IBooleanFunction.field44051
+               var3[0], VoxelShapes.create(var1, var3x, var5, var7, var9, var11), IBooleanFunction.field44051
             )
       );
       return var3[0];

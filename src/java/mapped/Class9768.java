@@ -42,8 +42,8 @@ public class Class9768<T> {
             Map<ResourceLocation, Class6879> var4 = Maps.newHashMap();
 
             for (ResourceLocation var6 : var1.method583(this.field45706, var0 -> var0.endsWith(".json"))) {
-               String var7 = var6.method8292();
-               ResourceLocation var8 = new ResourceLocation(var6.method8293(), var7.substring(this.field45706.length() + 1, var7.length() - field45704));
+               String var7 = var6.getPath();
+               ResourceLocation var8 = new ResourceLocation(var6.getNamespace(), var7.substring(this.field45706.length() + 1, var7.length() - field45704));
 
                try {
                   for (Class1783 var10 : var1.method582(var6)) {

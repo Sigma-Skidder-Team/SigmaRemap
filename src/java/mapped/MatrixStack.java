@@ -7,7 +7,7 @@ import java.util.Deque;
 public class MatrixStack {
    private static String[] field43309;
    public Deque<Class8892> field43310 = new ArrayDeque<Class8892>();
-   private final Deque<Class8892> field43311 = Util.<Deque<Class8892>>method38508(Queues.newArrayDeque(), var0 -> {
+   private final Deque<Class8892> field43311 = Util.<Deque<Class8892>>make(Queues.newArrayDeque(), var0 -> {
       Class9367 var3 = new Class9367();
       var3.method35503();
       Class8967 var4 = new Class8967();

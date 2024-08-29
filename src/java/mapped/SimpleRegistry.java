@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class Class2350<T> extends Class2349<T> {
+public class SimpleRegistry<T> extends MutableRegistry<T> {
    public static final Logger field16141 = LogManager.getLogger();
    private final ObjectList<T> field16142 = new ObjectArrayList(256);
    private final Object2IntMap<T> field16143 = new Object2IntOpenCustomHashMap(Util.method38509());
@@ -29,7 +29,7 @@ public class Class2350<T> extends Class2349<T> {
    public Object[] field16148;
    private int field16149;
 
-   public Class2350(RegistryKey<? extends Registry<T>> var1, Lifecycle var2) {
+   public SimpleRegistry(RegistryKey<? extends Registry<T>> var1, Lifecycle var2) {
       super(var1, var2);
       this.field16143.defaultReturnValue(-1);
       this.field16144 = HashBiMap.create();
@@ -41,7 +41,7 @@ public class Class2350<T> extends Class2349<T> {
    public static <T> MapCodec<Class9581<T>> method9252(RegistryKey<? extends Registry<T>> var0, MapCodec<T> var1) {
       return RecordCodecBuilder.mapCodec(
          var2 -> var2.group(
-                  ResourceLocation.field13020.xmap(RegistryKey.method31400(var0), RegistryKey::method31399).fieldOf("name").forGetter(var0xx -> var0xx.field44788),
+                  ResourceLocation.CODEC.xmap(RegistryKey.method31400(var0), RegistryKey::getLocation).fieldOf("name").forGetter(var0xx -> var0xx.field44788),
                   Codec.INT.fieldOf("id").forGetter(var0xx -> var0xx.field44789),
                   var1.forGetter(var0xx -> var0xx.field44790)
                )
@@ -69,7 +69,7 @@ public class Class2350<T> extends Class2349<T> {
          field16141.error("Adding duplicate value '{}' to registry", var3);
       }
 
-      this.field16144.put(var2.method31399(), var3);
+      this.field16144.put(var2.getLocation(), var3);
       this.field16145.put(var2, var3);
       this.field16146.put((T)var3, var4);
       this.field16147 = this.field16147.add(var4);
@@ -81,7 +81,7 @@ public class Class2350<T> extends Class2349<T> {
    }
 
    @Override
-   public <V extends T> V method9250(RegistryKey<T> var1, V var2, Lifecycle var3) {
+   public <V extends T> V register(RegistryKey<T> var1, V var2, Lifecycle var3) {
       return this.<V>method9249(this.field16149, var1, (V)var2, var3);
    }
 
@@ -184,9 +184,9 @@ public class Class2350<T> extends Class2349<T> {
       return this.field16144.containsKey(var1);
    }
 
-   public static <T> Codec<Class2350<T>> method9255(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
+   public static <T> Codec<SimpleRegistry<T>> method9255(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
       return method9252(var0, var2.fieldOf("element")).codec().listOf().xmap(var2x -> {
-         Class2350<T> var5 = new Class2350(var0, var1);
+         SimpleRegistry<T> var5 = new SimpleRegistry(var0, var1);
 
          for (Class9581<T> var7 : var2x) {
             var5.method9249(var7.field44789, var7.field44788, var7.field44790, var1);
@@ -204,14 +204,14 @@ public class Class2350<T> extends Class2349<T> {
       });
    }
 
-   public static <T> Codec<Class2350<T>> method9256(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
+   public static <T> Codec<SimpleRegistry<T>> method9256(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
       return Class8423.method29595(var0, var1, var2);
    }
 
-   public static <T> Codec<Class2350<T>> method9257(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
-      return Codec.unboundedMap(ResourceLocation.field13020.xmap(RegistryKey.method31400(var0), RegistryKey::method31399), var2).xmap(var2x -> {
-         Class2350 var5 = new Class2350(var0, var1);
-         var2x.forEach((var2xx, var3) -> var5.method9250((RegistryKey<T>)var2xx, var3, var1));
+   public static <T> Codec<SimpleRegistry<T>> method9257(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Codec<T> var2) {
+      return Codec.unboundedMap(ResourceLocation.CODEC.xmap(RegistryKey.method31400(var0), RegistryKey::getLocation), var2).xmap(var2x -> {
+         SimpleRegistry var5 = new SimpleRegistry(var0, var1);
+         var2x.forEach((var2xx, var3) -> var5.register((RegistryKey<T>)var2xx, var3, var1));
          return var5;
       }, var0x -> ImmutableMap.copyOf(var0x.field16145));
    }

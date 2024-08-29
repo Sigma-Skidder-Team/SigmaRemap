@@ -166,7 +166,7 @@ public class Class1653 extends Class1652<Class8377> {
          .filter(var0 -> var0.getSecond().map(Class8377::method29360).orElse(false))
          .map(var0 -> var0.getFirst().method8423())
          .filter(var1x -> this.field8989.add(var1x.method24352()))
-         .forEach(var1x -> var1.method7012(var1x.field32174, var1x.field32175, Class9176.field42133));
+         .forEach(var1x -> var1.getChunk(var1x.field32174, var1x.field32175, ChunkStatus.field42133));
    }
 
    // $VF: synthetic method

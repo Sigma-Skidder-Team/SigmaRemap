@@ -131,6 +131,6 @@ public abstract class Class1685 implements Class1683 {
       Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "multi_noise", Class1686.field9165);
       Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "checkerboard", Class1687.field9178);
       Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "vanilla_layered", Class1689.field9184);
-      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "the_end", Class1690.field9191);
+      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "the_end", EndBiomeProvider.field9191);
    }
 }

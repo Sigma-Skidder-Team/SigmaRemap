@@ -9,13 +9,13 @@ public class Class6878 {
    public static BlockPos method20940(ServerWorld var0, int var1, int var2, boolean var3) {
       Mutable var6 = new Mutable(var1, 0, var2);
       Biome var7 = var0.getBiome(var6);
-      boolean var8 = var0.method6812().method36876();
+      boolean var8 = var0.method6812().getHasCeiling();
       BlockState var9 = var7.method32507().method24283().method28934();
-      if (var3 && !var9.getBlock().method11540(Class7645.field32780)) {
+      if (var3 && !var9.getBlock().method11540(BlockTags.field32780)) {
          return null;
       } else {
-         Class1674 var10 = var0.method6824(var1 >> 4, var2 >> 4);
-         int var11 = !var8 ? var10.method7071(Class101.field299, var1 & 15, var2 & 15) : var0.method6883().method7370().method17823();
+         Chunk var10 = var0.getChunk(var1 >> 4, var2 >> 4);
+         int var11 = !var8 ? var10.method7071(Class101.field299, var1 & 15, var2 & 15) : var0.getChunkProvider().method7370().method17823();
          if (var11 < 0) {
             return null;
          } else {
@@ -31,7 +31,7 @@ public class Class6878 {
                   }
 
                   if (var14.equals(var9)) {
-                     return var6.method8311().method8353();
+                     return var6.up().method8353();
                   }
                }
 

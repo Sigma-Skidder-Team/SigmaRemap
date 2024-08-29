@@ -259,11 +259,11 @@ public class Class6450 {
                         for (BlockPos var30 : var16) {
                             TileEntity var33 = var12.getTileEntity(var30);
                             Class946.method3802(var33);
-                            var12.method6725(var30, Blocks.field36765.method11579(), 2);
+                            var12.setBlockState(var30, Blocks.field36765.method11579(), 2);
                         }
 
                         for (BlockPos var31 : var16) {
-                            var12.method6725(var31, Blocks.AIR.method11579(), 3);
+                            var12.setBlockState(var31, Blocks.AIR.method11579(), 3);
                         }
                     }
 
@@ -276,13 +276,13 @@ public class Class6450 {
                     for (Class6202 var36 : var32) {
                         TileEntity var40 = var12.getTileEntity(var36.field27679);
                         Class946.method3802(var40);
-                        var12.method6725(var36.field27679, Blocks.field36765.method11579(), 2);
+                        var12.setBlockState(var36.field27679, Blocks.field36765.method11579(), 2);
                     }
 
                     int var35 = 0;
 
                     for (Class6202 var41 : var29) {
-                        if (var12.method6725(var41.field27679, var41.field27680, 2)) {
+                        if (var12.setBlockState(var41.field27679, var41.field27680, 2)) {
                             var35++;
                         }
                     }
@@ -297,11 +297,11 @@ public class Class6450 {
                             var44.method3622();
                         }
 
-                        var12.method6725(var42.field27679, var42.field27680, 2);
+                        var12.setBlockState(var42.field27679, var42.field27680, 2);
                     }
 
                     for (Class6202 var43 : var32) {
-                        var12.method6964(var43.field27679, var43.field27680.getBlock());
+                        var12.func_230547_a_(var43.field27679, var43.field27680.getBlock());
                     }
 
                     var12.method6860().method20732(var8, var17);

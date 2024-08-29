@@ -166,15 +166,15 @@ public class WaypointsManager {
                String var23 = this.field36371;
                int var24 = 0;
 
-               for (int var25 = 0; var25 < this.field36365.world.method6883().field9291.field39654.length(); var25++) {
-                  Class1674 var17 = this.field36365.world.method6883().field9291.field39654.get(var25);
+               for (int var25 = 0; var25 < this.field36365.world.getChunkProvider().field9291.field39654.length(); var25++) {
+                  Chunk var17 = this.field36365.world.getChunkProvider().field9291.field39654.get(var25);
                   if (var17 != null) {
                      boolean var18 = this.field36366.contains(var17.method7072());
                      boolean var19 = this.field36367.contains(var17.method7072());
                      if ((!var18 || var19)
                         && !var17.method7141()
-                        && this.field36365.world.method6883().method7352(var17.method7072())
-                        && this.field36365.world.getDimensionKey() == World.field8999) {
+                        && this.field36365.world.getChunkProvider().method7352(var17.method7072())
+                        && this.field36365.world.getDimensionKey() == World.OVERWORLD) {
                         if (!var18) {
                            this.field36366.add(var17.method7072());
                         }
@@ -291,7 +291,7 @@ public class WaypointsManager {
       return var1 + "/" + var2.field33957 + "c" + var2.field33958 + ".jmap";
    }
 
-   public String method30002(String var1, Class1674 var2) throws FileNotFoundException {
+   public String method30002(String var1, Chunk var2) throws FileNotFoundException {
       Class2531 var5 = Class7927.method26605(var2.method7072());
       return var1 + "/" + var5.field16734 + "c" + var5.field16735 + ".jmap";
    }
@@ -371,13 +371,13 @@ public class WaypointsManager {
       return new Class7101(var21, 16 * var2, 16 * var2);
    }
 
-   private boolean method30004(Class1674 var1) {
-      Class1674 var4 = this.field36365.world.method6824(var1.method7072().field32174, var1.method7072().field32175 + 1);
-      Class1674 var5 = this.field36365.world.method6824(var1.method7072().field32174, var1.method7072().field32175 - 1);
+   private boolean method30004(Chunk var1) {
+      Chunk var4 = this.field36365.world.getChunk(var1.method7072().field32174, var1.method7072().field32175 + 1);
+      Chunk var5 = this.field36365.world.getChunk(var1.method7072().field32174, var1.method7072().field32175 - 1);
       return var4 != null && !var4.method7141() && var5 != null && !var5.method7141();
    }
 
-   public ByteBuffer method30005(Class1674 var1, boolean var2) {
+   public ByteBuffer method30005(Chunk var1, boolean var2) {
       ByteBuffer var5 = BufferUtils.createByteBuffer(768);
       int var6 = var1.method7072().field32174 * 16;
       int var7 = var1.method7072().field32175 * 16;
@@ -400,12 +400,12 @@ public class WaypointsManager {
 
    public int method30006(BlockPos var1, boolean var2) {
       if (this.field36365.world.getBlockState(var1).getBlock() == Blocks.AIR) {
-         var1 = var1.method8313();
+         var1 = var1.down();
       }
 
       Class7210 var5 = this.field36365.world.getBlockState(var1).method23384().method31092();
       int var6 = var5.field31006;
-      Class8649 var7 = this.field36365.world.getBlockState(var1.method8311()).method23384();
+      Class8649 var7 = this.field36365.world.getBlockState(var1.up()).method23384();
       if (var7 != Class8649.field38944) {
          if (var7 == Class8649.field38943) {
             var6 = var7.method31092().field31006;
@@ -428,8 +428,8 @@ public class WaypointsManager {
       }
 
       if (var2 || var11) {
-         Class8649 var12 = this.field36365.world.getBlockState(var1.method8341()).method23384();
-         Class8649 var13 = this.field36365.world.getBlockState(var1.method8343()).method23384();
+         Class8649 var12 = this.field36365.world.getBlockState(var1.north()).method23384();
+         Class8649 var13 = this.field36365.world.getBlockState(var1.south()).method23384();
          if (var12 == Class8649.field38932 || var12 == Class8649.field38944) {
             var6 = Class5628.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
          } else if (var13 == Class8649.field38932 || var13 == Class8649.field38944) {

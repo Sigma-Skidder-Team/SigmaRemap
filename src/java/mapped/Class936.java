@@ -67,7 +67,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
 
    @Override
    public void method3647() {
-      if (this.field5324 != null && !this.field5324.field9020) {
+      if (this.field5324 != null && !this.field5324.isRemote) {
          this.field5294--;
          this.field5295 = this.field5324.method6783();
          if (!this.method3722()) {
@@ -78,7 +78,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
    }
 
    private boolean method3699(Supplier<Boolean> var1) {
-      if (this.field5324 != null && !this.field5324.field9020) {
+      if (this.field5324 != null && !this.field5324.isRemote) {
          if (!this.method3722() && this.method3775().<Boolean>method23463(Class3362.field18914)) {
             boolean var4 = false;
             if (!this.method3617()) {
@@ -324,7 +324,7 @@ public class Class936 extends Class939 implements Class937, Class935 {
             (Entity)null, new AxisAlignedBB(var1 - 0.5, var3 - 0.5, var5 - 0.5, var1 + 0.5, var3 + 0.5, var5 + 0.5), Class8088.field34760
          );
          if (!var14.isEmpty()) {
-            var9 = (Class920)var14.get(var0.field9016.nextInt(var14.size()));
+            var9 = (Class920)var14.get(var0.rand.nextInt(var14.size()));
          }
       }
 

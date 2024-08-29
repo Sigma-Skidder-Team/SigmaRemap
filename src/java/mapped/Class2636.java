@@ -47,7 +47,7 @@ public class Class2636 extends Class2628 {
          if (var3.method23448(Blocks.field37069)) {
             int var4 = var3.<Integer>method23463(Class3484.field19342);
             var3.method23465(Class3484.field19342, Integer.valueOf(1));
-            int var5 = 1 + this.field16957.world.field9016.nextInt(2) + (var4 != 3 ? 0 : 1);
+            int var5 = 1 + this.field16957.world.rand.nextInt(2) + (var4 != 3 ? 0 : 1);
             ItemStack var6 = this.field16957.method2943(Class2106.field13731);
             if (var6.isEmpty()) {
                this.field16957.method2944(Class2106.field13731, new ItemStack(Items.field38170));
@@ -59,7 +59,7 @@ public class Class2636 extends Class2628 {
             }
 
             this.field16957.method2863(Sounds.field27144, 1.0F, 1.0F);
-            this.field16957.world.method6725(this.field16933, var3.method23465(Class3484.field19342, Integer.valueOf(1)), 2);
+            this.field16957.world.setBlockState(this.field16933, var3.method23465(Class3484.field19342, Integer.valueOf(1)), 2);
          }
       }
    }

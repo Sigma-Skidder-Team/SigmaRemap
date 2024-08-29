@@ -57,7 +57,7 @@ public class Class5148 implements Class5146 {
       });
 
       JsonObject var8 = new JsonObject();
-      var8.add("variants", Util.method38508(new JsonObject(), var1 -> var7.forEach(var1::add)));
+      var8.add("variants", Util.make(new JsonObject(), var1 -> var7.forEach(var1::add)));
       return var8;
    }
 

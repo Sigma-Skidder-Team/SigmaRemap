@@ -18,7 +18,7 @@ public interface Class7525<P extends Class7092> {
    Codec<Class3622> field32304 = field32303.listOf().xmap(Class3622::new, Class3622::method12261);
    Codec<Class3622> field32305 = Codec.either(field32304.fieldOf("processors").codec(), field32304)
       .xmap(var0 -> (Class3622)var0.map(var0x -> var0x, var0x -> var0x), Either::left);
-   Codec<Supplier<Class3622>> field32306 = Class9054.method33671(Registry.field16104, field32305);
+   Codec<Supplier<Class3622>> field32306 = RegistryKeyCodec.create(Registry.field16104, field32305);
 
    Codec<P> method24567();
 

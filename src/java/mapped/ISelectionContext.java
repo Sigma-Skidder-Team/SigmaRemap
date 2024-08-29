@@ -15,5 +15,5 @@ public interface ISelectionContext {
 
    boolean method14951(Item var1);
 
-   boolean method14952(Class7379 var1, Class7633 var2);
+   boolean method14952(FluidState var1, Class7633 var2);
 }

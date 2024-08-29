@@ -40,7 +40,7 @@ public class Class5853 extends Class5839 {
    @Override
    public void method18263(ItemStack var1) {
       var1.method32136(this.field25607.world, this.field25607, this.field25608);
-      if (!this.field25607.world.field9020 && this.field25578 instanceof Class924) {
+      if (!this.field25607.world.isRemote && this.field25578 instanceof Class924) {
          ((Class924)this.field25578).method3656(this.field25607);
       }
 

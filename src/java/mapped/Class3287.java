@@ -31,11 +31,11 @@ public class Class3287 extends Item {
                      var2.method2913(Class8876.field40098.method172(this));
                      var2.method2863(!var16.method25067(Class8953.field40470) ? Sounds.field26429 : Sounds.field26431, 1.0F, 1.0F);
                      ItemStack var14 = Class8482.method29979(var6, var2, new ItemStack(var16.method25050()));
-                     if (!var1.field9020) {
+                     if (!var1.isRemote) {
                         CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var2, new ItemStack(var16.method25050()));
                      }
 
-                     return Class6794.<ItemStack>method20700(var14, var1.method6714());
+                     return Class6794.<ItemStack>method20700(var14, var1.isRemote());
                   }
                }
 
@@ -52,7 +52,7 @@ public class Class3287 extends Item {
                   }
 
                   var2.method2913(Class8876.field40098.method172(this));
-                  return Class6794.<ItemStack>method20700(this.method11823(var6, var2), var1.method6714());
+                  return Class6794.<ItemStack>method20700(this.method11823(var6, var2), var1.isRemote());
                }
             }
          }
@@ -78,12 +78,12 @@ public class Class3287 extends Item {
          boolean var10 = var7.method23442(this.field18798);
          boolean var11 = var7.isAir() || var10 || var8 instanceof Class3449 && ((Class3449)var8).method11531(var2, var3, var7, this.field18798);
          if (var11) {
-            if (var2.method6812().method36877() && this.field18798.method25067(Class8953.field40469)) {
+            if (var2.method6812().isUltrawarm() && this.field18798.method25067(Class8953.field40469)) {
                int var12 = var3.getX();
                int var13 = var3.getY();
                int var14 = var3.getZ();
                var2.method6742(
-                  var1, var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.field9016.nextFloat() - var2.field9016.nextFloat()) * 0.8F
+                  var1, var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
                );
 
                for (int var15 = 0; var15 < 8; var15++) {
@@ -98,11 +98,11 @@ public class Class3287 extends Item {
                this.method11826(var1, var2, var3);
                return true;
             } else {
-               if (!var2.field9020 && var10 && !var9.method31085()) {
+               if (!var2.isRemote && var10 && !var9.method31085()) {
                   var2.method7179(var3, true);
                }
 
-               if (!var2.method6725(var3, this.field18798.method25049().method23484(), 11) && !var7.method23449().method23473()) {
+               if (!var2.setBlockState(var3, this.field18798.method25049().getBlockState(), 11) && !var7.method23449().method23473()) {
                   return false;
                } else {
                   this.method11826(var1, var2, var3);

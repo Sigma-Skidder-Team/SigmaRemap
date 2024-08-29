@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.List;
 
-public class Class7522 {
+public class WorldBorder {
    private static String[] field32257;
    private final List<Class7047> field32258 = Lists.newArrayList();
    private double field32259 = 0.2;
@@ -12,8 +12,8 @@ public class Class7522 {
    private int field32262 = 5;
    private double field32263;
    private double field32264;
-   private int field32265 = 29999984;
-   private Class8117 field32266 = new Class8116(this, 6.0E7);
+   private int worldSize = 29999984;
+   private WorldBorderIBorderInfo field32266 = new StationaryBorderInfo(this, 6.0E7);
    public static final Class7235 field32267 = new Class7235(0.0, 0.0, 0.2, 5.0, 5, 15, 6.0E7, 0L, 0.0);
 
    public boolean method24523(BlockPos var1) {
@@ -42,7 +42,7 @@ public class Class7522 {
    }
 
    public VoxelShape method24527() {
-      return this.field32266.method28118();
+      return this.field32266.getShape();
    }
 
    public double method24528(double var1, double var3) {
@@ -55,38 +55,38 @@ public class Class7522 {
       return Math.min(var15, var9);
    }
 
-   public Class2101 method24529() {
-      return this.field32266.method28110();
+   public BorderStatus method24529() {
+      return this.field32266.getStatus();
    }
 
    public double method24530() {
-      return this.field32266.method28105();
+      return this.field32266.getMinX();
    }
 
    public double method24531() {
-      return this.field32266.method28107();
+      return this.field32266.getMinZ();
    }
 
    public double method24532() {
-      return this.field32266.method28106();
+      return this.field32266.getMaxX();
    }
 
    public double method24533() {
-      return this.field32266.method28108();
+      return this.field32266.getMaxZ();
    }
 
-   public double method24534() {
+   public double getCenterX() {
       return this.field32263;
    }
 
-   public double method24535() {
+   public double getCenterZ() {
       return this.field32264;
    }
 
    public void method24536(double var1, double var3) {
       this.field32263 = var1;
       this.field32264 = var3;
-      this.field32266.method28116();
+      this.field32266.onCenterChanged();
 
       for (Class7047 var8 : this.method24542()) {
          var8.method21951(this, var1, var3);
@@ -94,19 +94,19 @@ public class Class7522 {
    }
 
    public double method24537() {
-      return this.field32266.method28109();
+      return this.field32266.getSize();
    }
 
    public long method24538() {
-      return this.field32266.method28112();
+      return this.field32266.getTimeUntilTarget();
    }
 
    public double method24539() {
-      return this.field32266.method28113();
+      return this.field32266.getTargetSize();
    }
 
    public void method24540(double var1) {
-      this.field32266 = new Class8116(this, var1);
+      this.field32266 = new StationaryBorderInfo(this, var1);
 
       for (Class7047 var6 : this.method24542()) {
          var6.method21949(this, var1);
@@ -114,7 +114,7 @@ public class Class7522 {
    }
 
    public void method24541(double var1, double var3, long var5) {
-      this.field32266 = (Class8117)(var1 != var3 ? new Class8118(this, var1, var3, var5) : new Class8116(this, var3));
+      this.field32266 = (WorldBorderIBorderInfo)(var1 != var3 ? new Class8118(this, var1, var3, var5) : new StationaryBorderInfo(this, var3));
 
       for (Class7047 var10 : this.method24542()) {
          var10.method21950(this, var1, var3, var5);
@@ -130,12 +130,12 @@ public class Class7522 {
    }
 
    public void method24544(int var1) {
-      this.field32265 = var1;
-      this.field32266.method28115();
+      this.worldSize = var1;
+      this.field32266.onSizeChanged();
    }
 
    public int method24545() {
-      return this.field32265;
+      return this.worldSize;
    }
 
    public double method24546() {
@@ -163,7 +163,7 @@ public class Class7522 {
    }
 
    public double method24550() {
-      return this.field32266.method28111();
+      return this.field32266.getResizeSpeed();
    }
 
    public int method24551() {
@@ -191,7 +191,7 @@ public class Class7522 {
    }
 
    public void method24555() {
-      this.field32266 = this.field32266.method28117();
+      this.field32266 = this.field32266.tick();
    }
 
    public Class7235 method24556() {
@@ -212,7 +212,7 @@ public class Class7522 {
    }
 
    // $VF: synthetic method
-   public static int method24558(Class7522 var0) {
-      return var0.field32265;
+   public static int getWorldBorderSize(WorldBorder worldBorder) {
+      return worldBorder.worldSize;
    }
 }

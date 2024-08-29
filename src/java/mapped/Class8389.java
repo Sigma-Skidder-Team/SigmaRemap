@@ -119,7 +119,7 @@ public class Class8389 {
       } else if (var6 >= 0 && var7 >= 0 && var8 >= 0 && var9 >= 0) {
          var4 = var4.trim();
          var5 = var5.trim();
-         String var10 = Class8684.method31275(var1.method8292());
+         String var10 = Class8684.method31275(var1.getPath());
          var4 = Class8684.method31274(var4, var10);
          var5 = Class8684.method31274(var5, var10);
          byte[] var11 = method29398(var4, var8);

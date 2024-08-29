@@ -53,14 +53,14 @@ public class Class3428 extends Block implements Class3207 {
       World var5 = var1.method18360();
       int var6 = method12085(var5, var4);
       return this.method11579()
-         .method23465(field19185, Boolean.valueOf(var5.method6739(var4).method23472() == Class9479.field44066))
+         .method23465(field19185, Boolean.valueOf(var5.getFluidState(var4).method23472() == Class9479.field44066))
          .method23465(field19184, Integer.valueOf(var6))
          .method23465(field19186, Boolean.valueOf(this.method12084(var5, var4, var6)));
    }
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          var2.method6860().method20726(var3, this, 1);
       }
    }
@@ -71,7 +71,7 @@ public class Class3428 extends Block implements Class3207 {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      if (!var4.method6714()) {
+      if (!var4.isRemote()) {
          var4.method6860().method20726(var5, this, 1);
       }
 
@@ -84,7 +84,7 @@ public class Class3428 extends Block implements Class3207 {
       BlockState var8 = var1.method23465(field19184, Integer.valueOf(var7)).method23465(field19186, Boolean.valueOf(this.method12084(var2, var3, var7)));
       if (var8.<Integer>method23463(field19184) != 7) {
          if (var1 != var8) {
-            var2.method6725(var3, var8, 3);
+            var2.setBlockState(var3, var8, 3);
          }
       } else if (var1.<Integer>method23463(field19184) != 7) {
          var2.method7179(var3, true);
@@ -118,12 +118,12 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field19185) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    private boolean method12084(Class1665 var1, BlockPos var2, int var3) {
-      return var3 > 0 && !var1.getBlockState(var2.method8313()).method23448(this);
+      return var3 > 0 && !var1.getBlockState(var2.down()).method23448(this);
    }
 
    public static int method12085(Class1665 var0, BlockPos var1) {

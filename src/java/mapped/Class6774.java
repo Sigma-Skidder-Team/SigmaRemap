@@ -15,7 +15,7 @@ public class Class6774 extends Class6773 {
    @Override
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -57,7 +57,7 @@ public class Class6774 extends Class6773 {
       for (int var39 = Math.max(var6, (int)var17 + 1); var39 >= 0; var39--) {
          var38.method8372(var21, var39, var22);
          if (var2.getBlockState(var38).isAir() && var39 < (int)var17) {
-            var2.method7061(var38, var9, false);
+            var2.setBlockState(var38, var9, false);
          }
 
          BlockState var40 = var2.getBlockState(var38);
@@ -67,9 +67,9 @@ public class Class6774 extends Class6773 {
                   if (var36 > 0) {
                      var36--;
                      if (!var37) {
-                        var2.method7061(var38, this.method20660(var4, var39, var5), false);
+                        var2.setBlockState(var38, this.method20660(var4, var39, var5), false);
                      } else {
-                        var2.method7061(var38, field29549, false);
+                        var2.setBlockState(var38, field29549, false);
                      }
                   }
                } else {
@@ -90,7 +90,7 @@ public class Class6774 extends Class6773 {
 
                   var36 = var28 + Math.max(0, var39 - var11);
                   if (var39 < var11 - 1) {
-                     var2.method7061(var38, var27, false);
+                     var2.setBlockState(var38, var27, false);
                      Block var41 = var27.getBlock();
                      if (var41 == Blocks.field36730
                         || var41 == Blocks.field36731
@@ -108,7 +108,7 @@ public class Class6774 extends Class6773 {
                         || var41 == Blocks.field36743
                         || var41 == Blocks.field36744
                         || var41 == Blocks.field36745) {
-                        var2.method7061(var38, field29549, false);
+                        var2.setBlockState(var38, field29549, false);
                      }
                   } else if (var39 > var11 + 3 + var28) {
                      BlockState var43;
@@ -120,9 +120,9 @@ public class Class6774 extends Class6773 {
                         var43 = field29550;
                      }
 
-                     var2.method7061(var38, var43, false);
+                     var2.setBlockState(var38, var43, false);
                   } else {
-                     var2.method7061(var38, var26, false);
+                     var2.setBlockState(var38, var26, false);
                      var37 = true;
                   }
                }

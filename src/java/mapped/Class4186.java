@@ -54,7 +54,7 @@ public class Class4186 extends Class4180 {
             var3.method6916(var9);
          }
       } else {
-         BlockPos var10 = var2.method8313();
+         BlockPos var10 = var2.down();
          if (var5.method38396(var10)) {
             Class939.method3740(var3, var4, var10, Class8793.field39535);
          }

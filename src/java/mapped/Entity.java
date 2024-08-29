@@ -269,7 +269,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void tick() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3349(6, this.isGlowing());
       }
 
@@ -277,7 +277,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public void method3000() {
-      this.world.method6820().startSection("entityBaseTick");
+      this.world.getProfiler().startSection("entityBaseTick");
       if (this.isPassenger() && this.getRidingEntity().removed) {
          this.stopRiding();
       }
@@ -297,7 +297,7 @@ public abstract class Entity implements INameable, ICommandSource {
       this.method3257();
       this.method3259();
       this.method2916();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.fire > 0) {
             if (!this.method3249()) {
                if (this.fire % 20 == 0 && !this.method3264()) {
@@ -325,12 +325,12 @@ public abstract class Entity implements INameable, ICommandSource {
          this.method3083();
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3349(0, this.fire > 0);
       }
 
       this.firstUpdate = false;
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
    }
 
    public void method3218() {
@@ -425,7 +425,7 @@ public abstract class Entity implements INameable, ICommandSource {
             }
          }
 
-         this.world.method6820().startSection("move");
+         this.world.getProfiler().startSection("move");
          if (this.motionMultiplier.method11349() > 1.0E-7) {
             var2 = var2.method11346(this.motionMultiplier);
             this.motionMultiplier = Vector3d.ZERO;
@@ -439,8 +439,8 @@ public abstract class Entity implements INameable, ICommandSource {
             this.method3239();
          }
 
-         this.world.method6820().endSection();
-         this.world.method6820().startSection("rest");
+         this.world.getProfiler().endSection();
+         this.world.getProfiler().startSection("rest");
          this.collidedHorizontally = !MathHelper.method37787(var2.field18048, var25.field18048) || !MathHelper.method37787(var2.field18050, var25.field18050);
          this.collidedVertically = var2.field18049 != var25.field18049;
          this.onGround = this.collidedVertically && var2.field18049 < 0.0;
@@ -469,7 +469,7 @@ public abstract class Entity implements INameable, ICommandSource {
             double var10 = var25.field18048;
             double var12 = var25.field18049;
             double var14 = var25.field18050;
-            if (!var9.method11540(Class7645.field32804)) {
+            if (!var9.method11540(BlockTags.field32804)) {
                var12 = 0.0;
             }
 
@@ -511,7 +511,7 @@ public abstract class Entity implements INameable, ICommandSource {
          this.method3434(this.method3433().method11347((double)var20, 1.0, (double)var20));
          if (this.world
                .method7004(this.getBoundingBox().method19679(0.001))
-               .noneMatch(var0 -> var0.method23446(Class7645.field32798) || var0.method23448(Blocks.LAVA))
+               .noneMatch(var0 -> var0.method23446(BlockTags.field32798) || var0.method23448(Blocks.LAVA))
             && this.fire <= 0) {
             this.method2966(-this.getFireImmuneTicks());
          }
@@ -521,7 +521,7 @@ public abstract class Entity implements INameable, ICommandSource {
             this.method2966(-this.getFireImmuneTicks());
          }
 
-         this.world.method6820().endSection();
+         this.world.getProfiler().endSection();
       }
    }
 
@@ -531,10 +531,10 @@ public abstract class Entity implements INameable, ICommandSource {
       int var5 = MathHelper.floor(this.positionVec.field18050);
       BlockPos var6 = new BlockPos(var3, var4, var5);
       if (this.world.getBlockState(var6).isAir()) {
-         BlockPos var7 = var6.method8313();
+         BlockPos var7 = var6.down();
          BlockState var8 = this.world.getBlockState(var7);
          Block var9 = var8.getBlock();
-         if (var9.method11540(Class7645.field32771) || var9.method11540(Class7645.field32764) || var9 instanceof Class3199) {
+         if (var9.method11540(BlockTags.field32771) || var9.method11540(BlockTags.field32764) || var9 instanceof Class3199) {
             return var7;
          }
       }
@@ -772,7 +772,7 @@ public abstract class Entity implements INameable, ICommandSource {
                   } catch (Throwable var14) {
                      CrashReport var12 = CrashReport.makeCrashReport(var14, "Colliding entity with block");
                      CrashReportCategory var13 = var12.makeCategory("Block being collided with");
-                     CrashReportCategory.method32814(var13, var6, var10);
+                     CrashReportCategory.addBlockInfo(var13, var6, var10);
                      throw new ReportedException(var12);
                   }
                }
@@ -786,7 +786,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void method3241(BlockPos var1, BlockState var2) {
       if (!var2.method23384().method31085()) {
-         BlockState var5 = this.world.getBlockState(var1.method8311());
+         BlockState var5 = this.world.getBlockState(var1.up());
          Class8447 var6 = !var5.method23448(Blocks.SNOW) ? var2.method23452() : var5.method23452();
          this.method2863(var6.method29713(), var6.method29710() * 0.15F, var6.method29711());
       }
@@ -899,7 +899,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean method3257() {
       this.eyesFluidLevel.clear();
       this.method3258();
-      double var3 = !this.world.method6812().method36877() ? 0.0023333333333333335 : 0.007;
+      double var3 = !this.world.method6812().isUltrawarm() ? 0.0023333333333333335 : 0.007;
       boolean var5 = this.method3426(Class8953.field40470, var3);
       return this.method3250() || var5;
    }
@@ -935,7 +935,7 @@ public abstract class Entity implements INameable, ICommandSource {
       }
 
       BlockPos var12 = new BlockPos(this.getPosX(), var3, this.getPosZ());
-      Class7379 var7 = this.world.method6739(var12);
+      FluidState var7 = this.world.getFluidState(var12);
 
       for (ITag var9 : Class8953.method32717()) {
          if (var7.method23486(var9)) {
@@ -1198,11 +1198,11 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float method3282(float var1) {
-      return var1 != 1.0F ? MathHelper.method37821(var1, this.prevRotationPitch, this.rotationPitch) : this.rotationPitch;
+      return var1 != 1.0F ? MathHelper.lerp(var1, this.prevRotationPitch, this.rotationPitch) : this.rotationPitch;
    }
 
    public float method3136(float var1) {
-      return var1 != 1.0F ? MathHelper.method37821(var1, this.prevRotationYaw, this.rotationYaw) : this.rotationYaw;
+      return var1 != 1.0F ? MathHelper.lerp(var1, this.prevRotationYaw, this.rotationYaw) : this.rotationYaw;
    }
 
    public final Vector3d method3283(float var1, float var2) {
@@ -1497,7 +1497,7 @@ public abstract class Entity implements INameable, ICommandSource {
    @Nullable
    public ItemEntity method3303(ItemStack var1, float var2) {
       if (!var1.isEmpty()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             ItemEntity var5 = new ItemEntity(this.world, this.getPosX(), this.getPosY() + (double)var2, this.getPosZ(), var1);
             var5.method4131();
             this.world.method6916(var5);
@@ -1626,7 +1626,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (var1.getRidingEntity() != this) {
          throw new IllegalStateException("Use x.startRiding(y), not y.addPassenger(x)");
       } else {
-         if (!this.world.field9020 && var1 instanceof PlayerEntity && !(this.method3407() instanceof PlayerEntity)) {
+         if (!this.world.isRemote && var1 instanceof PlayerEntity && !(this.method3407() instanceof PlayerEntity)) {
             this.passengers.add(0, var1);
          } else {
             this.passengers.add(var1);
@@ -1674,7 +1674,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public void method3323(BlockPos var1) {
       if (!this.method3219()) {
-         if (!this.world.field9020 && !var1.equals(this.field_242271_ac)) {
+         if (!this.world.isRemote && !var1.equals(this.field_242271_ac)) {
             this.field_242271_ac = var1.method8353();
          }
 
@@ -1697,15 +1697,15 @@ public abstract class Entity implements INameable, ICommandSource {
                this.portalCounter = 0;
             }
          } else {
-            MinecraftServer var5 = var4.method6715();
-            RegistryKey var6 = this.world.getDimensionKey() != World.THE_NETHER ? World.THE_NETHER : World.field8999;
+            MinecraftServer var5 = var4.getServer();
+            RegistryKey var6 = this.world.getDimensionKey() != World.THE_NETHER ? World.THE_NETHER : World.OVERWORLD;
             ServerWorld var7 = var5.method1318(var6);
             if (var7 != null && var5.method1312() && !this.isPassenger() && this.portalCounter++ >= var3) {
-               this.world.method6820().startSection("portal");
+               this.world.getProfiler().startSection("portal");
                this.portalCounter = var3;
                this.method3218();
                this.method2745(var7);
-               this.world.method6820().endSection();
+               this.world.getProfiler().endSection();
             }
 
             this.inPortal = false;
@@ -1749,7 +1749,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean method3327() {
-      boolean var3 = this.world != null && this.world.field9020;
+      boolean var3 = this.world != null && this.world.isRemote;
       return !this.method3249() && (this.fire > 0 || var3 && this.method3348(0));
    }
 
@@ -1818,12 +1818,12 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean isGlowing() {
-      return this.glowing || this.world.field9020 && this.method3348(6);
+      return this.glowing || this.world.isRemote && this.method3348(6);
    }
 
    public void method3341(boolean var1) {
       this.glowing = var1;
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3349(6, this.glowing);
       }
    }
@@ -2044,12 +2044,12 @@ public abstract class Entity implements INameable, ICommandSource {
    @Nullable
    public Entity method2745(ServerWorld var1) {
       if (this.world instanceof ServerWorld && !this.removed) {
-         this.world.method6820().startSection("changeDimension");
+         this.world.getProfiler().startSection("changeDimension");
          this.detach();
-         this.world.method6820().startSection("reposition");
+         this.world.getProfiler().startSection("reposition");
          Class9761 var4 = this.method2744(var1);
          if (var4 != null) {
-            this.world.method6820().endStartSection("reloading");
+            this.world.getProfiler().endStartSection("reloading");
             Entity var5 = this.getType().method33215(var1);
             if (var5 != null) {
                var5.method3365(this);
@@ -2062,10 +2062,10 @@ public abstract class Entity implements INameable, ICommandSource {
             }
 
             this.method3366();
-            this.world.method6820().endSection();
+            this.world.getProfiler().endSection();
             ((ServerWorld)this.world).method6904();
             var1.method6904();
-            this.world.method6820().endSection();
+            this.world.getProfiler().endSection();
             return var5;
          } else {
             return null;
@@ -2081,19 +2081,19 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public Class9761 method2744(ServerWorld var1) {
-      boolean var4 = this.world.getDimensionKey() == World.THE_END && var1.getDimensionKey() == World.field8999;
+      boolean var4 = this.world.getDimensionKey() == World.THE_END && var1.getDimensionKey() == World.OVERWORLD;
       boolean var5 = var1.getDimensionKey() == World.THE_END;
       if (!var4 && !var5) {
          boolean var19 = var1.getDimensionKey() == World.THE_NETHER;
          if (this.world.getDimensionKey() != World.THE_NETHER && !var19) {
             return null;
          } else {
-            Class7522 var7 = var1.method6810();
+            WorldBorder var7 = var1.method6810();
             double var8 = Math.max(-2.9999872E7, var7.method24530() + 16.0);
             double var10 = Math.max(-2.9999872E7, var7.method24531() + 16.0);
             double var12 = Math.min(2.9999872E7, var7.method24532() - 16.0);
             double var14 = Math.min(2.9999872E7, var7.method24533() - 16.0);
-            double var16 = Class9535.method36872(this.world.method6812(), var1.method6812());
+            double var16 = DimensionType.getCoordinateDifference(this.world.method6812(), var1.method6812());
             BlockPos var18 = new BlockPos(
                MathHelper.method37778(this.getPosX() * var16, var8, var12), this.getPosY(), MathHelper.method37778(this.getPosZ() * var16, var10, var14)
             );
@@ -2142,7 +2142,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return true;
    }
 
-   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, Class7379 var5, float var6) {
+   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
       return var6;
    }
 
@@ -2238,8 +2238,8 @@ public abstract class Entity implements INameable, ICommandSource {
    public final void method3384(double var1, double var3, double var5) {
       if (this.world instanceof ServerWorld) {
          Class7481 var9 = new Class7481(new BlockPos(var1, var3, var5));
-         ((ServerWorld)this.world).method6883().method7374(Class8561.field38486, var9, 0, this.method3205());
-         this.world.method6824(var9.field32174, var9.field32175);
+         ((ServerWorld)this.world).getChunkProvider().method7374(Class8561.field38486, var9, 0, this.method3205());
+         this.world.getChunk(var9.field32174, var9.field32175);
          this.method2793(var1, var3, var5);
       }
    }
@@ -2287,7 +2287,7 @@ public abstract class Entity implements INameable, ICommandSource {
                var6.field28451 + (double)var5.field39968
             )
          );
-         if (var5.field39968 > var3.field39968 && !this.firstUpdate && !this.world.field9020) {
+         if (var5.field39968 > var3.field39968 && !this.firstUpdate && !this.world.isRemote) {
             float var9 = var3.field39968 - var5.field39968;
             this.move(Class2107.field13742, new Vector3d((double)var9, 0.0, (double)var9));
          }
@@ -2372,7 +2372,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Nullable
    public MinecraftServer method3396() {
-      return this.world.method6715();
+      return this.world.getServer();
    }
 
    public ActionResultType applyPlayerInteraction(PlayerEntity var1, Vector3d var2, Hand var3) {
@@ -2529,7 +2529,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public boolean method3418() {
       Entity var3 = this.method3407();
-      return !(var3 instanceof PlayerEntity) ? !this.world.field9020 : ((PlayerEntity)var3).method2905();
+      return !(var3 instanceof PlayerEntity) ? !this.world.isRemote : ((PlayerEntity)var3).method2905();
    }
 
    public static Vector3d method3419(double var0, double var2, float var4) {
@@ -2570,7 +2570,7 @@ public abstract class Entity implements INameable, ICommandSource {
          this.method2807(),
          this.getName().getString(),
          this.getDisplayName(),
-         this.world.method6715(),
+         this.world.getServer(),
          this
       );
    }
@@ -2633,7 +2633,7 @@ public abstract class Entity implements INameable, ICommandSource {
             for (int var21 = var9; var21 < var10; var21++) {
                for (int var22 = var11; var22 < var12; var22++) {
                   var19.method8372(var20, var21, var22);
-                  Class7379 var23 = this.world.method6739(var19);
+                  FluidState var23 = this.world.getFluidState(var19);
                   if (var23.method23486(var1)) {
                      double var24 = (double)((float)var21 + var23.method23475(this.world, var19));
                      if (var24 >= var6.field28450) {

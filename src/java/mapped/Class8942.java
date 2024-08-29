@@ -21,11 +21,11 @@ public class Class8942 {
          }
 
          this.field40439 = this.method32673(var1);
-         if (!this.field40437.world.field9020) {
+         if (!this.field40437.world.isRemote) {
             this.field40437.method3210().method35446(Class1007.field5619, var1.method37259());
          }
 
-         field40436.debug("Dragon is now in phase {} on the {}", var1, !this.field40437.world.field9020 ? "server" : "client");
+         field40436.debug("Dragon is now in phase {} on the {}", var1, !this.field40437.world.isRemote ? "server" : "client");
          this.field40439.method23362();
       }
    }

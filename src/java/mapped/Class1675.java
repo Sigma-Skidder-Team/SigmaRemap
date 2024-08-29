@@ -5,14 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Class1675 extends Class1674 {
+public class Class1675 extends Chunk {
    private static String[] field9134;
-   private static final Biome[] field9135 = Util.<Biome[]>method38508(
+   private static final Biome[] field9135 = Util.<Biome[]>make(
       new Biome[Class1684.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
    );
 
    public Class1675(World var1, Class7481 var2) {
-      super(var1, var2, new Class1684(var1.method6867().<Biome>method32453(Registry.BIOME_KEY), field9135));
+      super(var1, var2, new Class1684(var1.method6867().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
    }
 
    @Override
@@ -22,12 +22,12 @@ public class Class1675 extends Class1674 {
 
    @Nullable
    @Override
-   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
+   public BlockState setBlockState(BlockPos var1, BlockState var2, boolean var3) {
       return null;
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       return Class9479.field44064.method25049();
    }
 
@@ -95,7 +95,7 @@ public class Class1675 extends Class1674 {
    }
 
    @Override
-   public Class77 method7152() {
-      return Class77.field167;
+   public ChunkHolderLocationType getLocationType() {
+      return ChunkHolderLocationType.field167;
    }
 }

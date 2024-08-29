@@ -27,7 +27,7 @@ public class Class3372 extends Class3241 {
    }
 
    public static void method11966(BlockState var0, World var1, BlockPos var2) {
-      if (var1.method6812().method36875()) {
+      if (var1.method6812().hasSkyLight()) {
          int var5 = var1.method7020(Class1977.field12881, var2) - var1.method6808();
          float var6 = var1.method6750(1.0F);
          boolean var7 = var0.<Boolean>method23463(field18964);
@@ -43,7 +43,7 @@ public class Class3372 extends Class3241 {
 
          var5 = MathHelper.method37775(var5, 0, 15);
          if (var0.<Integer>method23463(field18963) != var5) {
-            var1.method6725(var2, var0.method23465(field18963, Integer.valueOf(var5)), 3);
+            var1.setBlockState(var2, var0.method23465(field18963, Integer.valueOf(var5)), 3);
          }
       }
    }
@@ -52,9 +52,9 @@ public class Class3372 extends Class3241 {
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (!var4.method2935()) {
          return super.method11505(var1, var2, var3, var4, var5, var6);
-      } else if (!var2.field9020) {
+      } else if (!var2.isRemote) {
          BlockState var9 = var1.method23459(field18964);
-         var2.method6725(var3, var9, 4);
+         var2.setBlockState(var3, var9, 4);
          method11966(var9, var2, var3);
          return ActionResultType.field14819;
       } else {

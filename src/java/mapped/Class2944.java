@@ -23,7 +23,7 @@ public class Class2944 extends Class2898<Class4707> {
       return (List<Class9648>)field18007.getUnchecked(var4);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4707 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4707 var5) {
       List<Class9648> var8 = var5.method14776();
       if (var8.isEmpty()) {
          var8 = method11286(var1);

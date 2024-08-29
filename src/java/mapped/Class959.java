@@ -63,7 +63,7 @@ public class Class959 extends TileEntity implements Class935 {
       long var3 = this.field5324.method6783();
       if (var3 % 40L == 0L) {
          this.method3905(this.method3896());
-         if (!this.field5324.field9020 && this.method3903()) {
+         if (!this.field5324.isRemote && this.method3903()) {
             this.method3897();
             this.method3898();
          }
@@ -78,7 +78,7 @@ public class Class959 extends TileEntity implements Class935 {
          this.method3908(Sounds.field26469);
       }
 
-      if (this.field5324.field9020) {
+      if (this.field5324.isRemote) {
          this.method3899();
          this.method3902();
          if (this.method3903()) {
@@ -159,7 +159,7 @@ public class Class959 extends TileEntity implements Class935 {
          } else {
             List var5 = this.field5324.<Class880>method6772(Class880.class, this.method3900(), var0 -> var0 instanceof Class1008 && var0.method3253());
             if (!var5.isEmpty()) {
-               this.field5387 = (Class880)var5.get(this.field5324.field9016.nextInt(var5.size()));
+               this.field5387 = (Class880)var5.get(this.field5324.rand.nextInt(var5.size()));
             }
          }
       } else {
@@ -183,7 +183,7 @@ public class Class959 extends TileEntity implements Class935 {
 
       if (var3 != this.field5387) {
          BlockState var6 = this.method3775();
-         this.field5324.method6731(this.field5325, var6, var6, 2);
+         this.field5324.notifyBlockUpdate(this.field5325, var6, var6, 2);
       }
    }
 
@@ -214,7 +214,7 @@ public class Class959 extends TileEntity implements Class935 {
    }
 
    private void method3902() {
-      Random var3 = this.field5324.field9016;
+      Random var3 = this.field5324.rand;
       double var4 = (double)(MathHelper.sin((float)(this.field5382 + 35) * 0.1F) / 2.0F + 0.5F);
       var4 = (var4 * var4 + var4) * 0.3F;
       Vector3d var6 = new Vector3d(

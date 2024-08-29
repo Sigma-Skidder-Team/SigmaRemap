@@ -12,7 +12,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    public static boolean method11226(Class1680 var0, BlockPos var1) {
-      return method11233(var0, var1) || var0.method6815(var1, var0x -> var0x.method23446(Class7645.field32751));
+      return method11233(var0, var1) || var0.method6815(var1, var0x -> var0x.method23446(BlockTags.field32751));
    }
 
    private static boolean method11227(Class1680 var0, BlockPos var1) {
@@ -24,7 +24,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    public static boolean method11229(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, var0x -> var0x.isAir() || var0x.method23446(Class7645.field32767));
+      return var0.method6815(var1, var0x -> var0x.isAir() || var0x.method23446(BlockTags.field32767));
    }
 
    private static boolean method11230(Class1680 var0, BlockPos var1) {
@@ -42,7 +42,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    public static void method11232(Class1681 var0, BlockPos var1, BlockState var2) {
-      var0.method6725(var1, var2, 19);
+      var0.setBlockState(var1, var2, 19);
    }
 
    public static boolean method11233(Class1680 var0, BlockPos var1) {
@@ -80,7 +80,7 @@ public class Class2903 extends Class2898<Class4733> {
 
       if (var14.getY() < 1 || var14.getY() + var10 + 1 > 256) {
          return false;
-      } else if (!method11230(var1, var14.method8313())) {
+      } else if (!method11230(var1, var14.down())) {
          return false;
       } else {
          OptionalInt var18 = var7.field22417.method24959();
@@ -119,7 +119,7 @@ public class Class2903 extends Class2898<Class4733> {
       method11232(var1, var2, var3);
    }
 
-   public final boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4733 var5) {
+   public final boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4733 var5) {
       HashSet var8 = Sets.newHashSet();
       HashSet var9 = Sets.newHashSet();
       HashSet var10 = Sets.newHashSet();

@@ -3,7 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import java.util.Arrays;
 
-public class Class5648 extends Class5646 {
+public class Class5648 extends ChunkGenerator {
    public static final Codec<Class5648> field24998 = Class9733.field45443.fieldOf("settings").xmap(Class5648::new, Class5648::method17837).codec();
    private final Class9733 field24999;
 
@@ -13,12 +13,12 @@ public class Class5648 extends Class5646 {
    }
 
    @Override
-   public Codec<? extends Class5646> method17790() {
+   public Codec<? extends ChunkGenerator> method17790() {
       return field24998;
    }
 
    @Override
-   public Class5646 method17791(long var1) {
+   public ChunkGenerator method17791(long var1) {
       return this;
    }
 
@@ -27,7 +27,7 @@ public class Class5648 extends Class5646 {
    }
 
    @Override
-   public void method17801(Class1691 var1, Class1670 var2) {
+   public void method17801(Class1691 var1, IChunk var2) {
    }
 
    @Override
@@ -45,7 +45,7 @@ public class Class5648 extends Class5646 {
    }
 
    @Override
-   public void method17803(Class1660 var1, Class7480 var2, Class1670 var3) {
+   public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
       BlockState[] var6 = this.field24999.method38130();
       Mutable var7 = new Mutable();
       Class7527 var8 = var3.method7070(Class101.field297);
@@ -56,7 +56,7 @@ public class Class5648 extends Class5646 {
          if (var11 != null) {
             for (int var12 = 0; var12 < 16; var12++) {
                for (int var13 = 0; var13 < 16; var13++) {
-                  var3.method7061(var7.method8372(var12, var10, var13), var11, false);
+                  var3.setBlockState(var7.method8372(var12, var10, var13), var11, false);
                   var8.method24578(var12, var10, var13, var11);
                   var9.method24578(var12, var10, var13, var11);
                }

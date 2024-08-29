@@ -19,7 +19,7 @@ public class Class3274 extends Item {
          var1.method32182(1);
       }
 
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          var3.method3030();
       }
 

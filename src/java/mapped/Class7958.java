@@ -48,7 +48,7 @@ public class Class7958 {
       this.field34209 = var4;
       this.field34212 = var2;
       this.field34210 = var1;
-      this.field34222 = new Class8250(new File(this.field34210.method7992(World.field8999), "data"), var2);
+      this.field34222 = new Class8250(new File(this.field34210.method7992(World.OVERWORLD), "data"), var2);
       this.field34211 = field34207.newThread(this::method27060);
       this.field34211.setUncaughtExceptionHandler((var1x, var2x) -> {
          field34206.error("Error upgrading world", var2x);

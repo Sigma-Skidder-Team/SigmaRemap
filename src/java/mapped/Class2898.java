@@ -76,10 +76,10 @@ public abstract class Class2898<FC extends Class4698> {
    }
 
    public void method11217(Class1681 var1, BlockPos var2, BlockState var3) {
-      var1.method6725(var2, var3, 3);
+      var1.setBlockState(var2, var3, 3);
    }
 
-   public abstract boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, FC var5);
+   public abstract boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, FC var5);
 
    public static boolean method11218(Block var0) {
       return var0 == Blocks.STONE || var0 == Blocks.GRANITE || var0 == Blocks.DIORITE || var0 == Blocks.ANDESITE;

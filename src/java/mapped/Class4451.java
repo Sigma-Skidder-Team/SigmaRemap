@@ -29,7 +29,7 @@ public class Class4451 implements Class4442 {
       Path var4 = this.field21629.method33776();
 
       for (Entry var6 : Class6714.field29430.method9191()) {
-         Path var7 = method14085(var4, ((RegistryKey)var6.getKey()).method31399());
+         Path var7 = method14085(var4, ((RegistryKey)var6.getKey()).getLocation());
          Biome var8 = (Biome)var6.getValue();
          Function<Supplier<Biome>, DataResult<JsonElement>> var9 = JsonOps.INSTANCE.withEncoder(Biome.field40309);
 
@@ -47,7 +47,7 @@ public class Class4451 implements Class4442 {
    }
 
    private static Path method14085(Path var0, ResourceLocation var1) {
-      return var0.resolve("reports/biomes/" + var1.method8292() + ".json");
+      return var0.resolve("reports/biomes/" + var1.getPath() + ".json");
    }
 
    @Override

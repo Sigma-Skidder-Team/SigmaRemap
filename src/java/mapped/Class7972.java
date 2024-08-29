@@ -21,8 +21,8 @@ public class Class7972 {
       float var8 = (float)Class3261.method11767(var2.method3158());
       float var9 = MathHelper.method37777((float)var2.method3160(), 0.0F, var8);
       float var10 = var9 / var8;
-      var7.field31036 = MathHelper.method37821(var10, 0.4F, 0.85F) * (float)(!var3 ? -1 : 1);
-      var7.field31035 = MathHelper.method37821(var10, var7.field31035, (float) (-Math.PI / 2));
+      var7.field31036 = MathHelper.lerp(var10, 0.4F, 0.85F) * (float)(!var3 ? -1 : 1);
+      var7.field31035 = MathHelper.lerp(var10, var7.field31035, (float) (-Math.PI / 2));
    }
 
    public static <T extends Class1006> void method27107(Class7219 var0, Class7219 var1, T var2, float var3, float var4) {

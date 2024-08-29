@@ -106,7 +106,7 @@ public class BoatEntity extends Entity {
    public boolean method2741(Class8654 var1, float var2) {
       if (this.method2760(var1)) {
          return false;
-      } else if (!this.world.field9020 && !this.removed) {
+      } else if (!this.world.isRemote && !this.removed) {
          this.method4169(-this.method4170());
          this.method4164(10);
          this.method4162(this.method4163() + var2 * 10.0F);
@@ -128,7 +128,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public void method3354(boolean var1) {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.field5550 = true;
          this.field5551 = var1;
          if (this.method4167() == 0) {
@@ -227,7 +227,7 @@ public class BoatEntity extends Entity {
          this.field5533++;
       }
 
-      if (!this.world.field9020 && this.field5533 >= 60.0F) {
+      if (!this.world.isRemote && this.field5533 >= 60.0F) {
          this.removePassengers();
       }
 
@@ -249,7 +249,7 @@ public class BoatEntity extends Entity {
          }
 
          this.method4158();
-         if (this.world.field9020) {
+         if (this.world.isRemote) {
             this.method4159();
             this.world.method6811(new Class5538(this.method4161(0), this.method4161(1)));
          }
@@ -292,7 +292,7 @@ public class BoatEntity extends Entity {
       this.method3240();
       List var11 = this.world.method6770(this, this.getBoundingBox().method19663(0.2F, -0.01F, 0.2F), Class8088.method27981(this));
       if (!var11.isEmpty()) {
-         boolean var12 = !this.world.field9020 && !(this.method3407() instanceof PlayerEntity);
+         boolean var12 = !this.world.isRemote && !(this.method3407() instanceof PlayerEntity);
 
          for (int var13 = 0; var13 < var11.size(); var13++) {
             Entity var10 = (Entity)var11.get(var13);
@@ -314,7 +314,7 @@ public class BoatEntity extends Entity {
    }
 
    private void method4148() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (!this.field5550) {
             this.method4166(0);
          }
@@ -432,7 +432,7 @@ public class BoatEntity extends Entity {
          for (int var13 = var4; var13 < var5; var13++) {
             for (int var14 = var8; var14 < var9; var14++) {
                var10.method8372(var13, var11, var14);
-               Class7379 var15 = this.world.method6739(var10);
+               FluidState var15 = this.world.getFluidState(var10);
                if (var15.method23486(Class8953.field40469)) {
                   var12 = Math.max(var12, var15.method23475(this.world, var10));
                }
@@ -505,7 +505,7 @@ public class BoatEntity extends Entity {
          for (int var13 = var6; var13 < var7; var13++) {
             for (int var14 = var8; var14 < var9; var14++) {
                var11.method8372(var12, var13, var14);
-               Class7379 var15 = this.world.method6739(var11);
+               FluidState var15 = this.world.getFluidState(var11);
                if (var15.method23486(Class8953.field40469)) {
                   float var16 = (float)var13 + var15.method23475(this.world, var11);
                   this.field5545 = Math.max((double)var16, this.field5545);
@@ -535,7 +535,7 @@ public class BoatEntity extends Entity {
          for (int var15 = var8; var15 < var9; var15++) {
             for (int var16 = var10; var16 < var11; var16++) {
                var13.method8372(var14, var15, var16);
-               Class7379 var17 = this.world.method6739(var13);
+               FluidState var17 = this.world.getFluidState(var13);
                if (var17.method23486(Class8953.field40469) && var4 < (double)((float)var13.getY() + var17.method23475(this.world, var13))) {
                   if (!var17.method23473()) {
                      return Class2096.field13657;
@@ -671,7 +671,7 @@ public class BoatEntity extends Entity {
       double var5 = this.getPosX() + var4.field18048;
       double var7 = this.getPosZ() + var4.field18050;
       BlockPos var9 = new BlockPos(var5, this.getBoundingBox().field28453, var7);
-      BlockPos var10 = var9.method8313();
+      BlockPos var10 = var9.down();
       if (!this.world.method7013(var10)) {
          double var11 = (double)var9.getY() + this.world.method7039(var9);
          double var13 = (double)var9.getY() + this.world.method7039(var10);
@@ -727,7 +727,7 @@ public class BoatEntity extends Entity {
       if (!var1.method2851()) {
          if (!(this.field5533 < 60.0F)) {
             return ActionResultType.field14820;
-         } else if (this.world.field9020) {
+         } else if (this.world.isRemote) {
             return ActionResultType.field14818;
          } else {
             return !var1.method3311(this) ? ActionResultType.field14820 : ActionResultType.field14819;
@@ -742,7 +742,7 @@ public class BoatEntity extends Entity {
       this.field5549 = this.method3433().field18049;
       if (!this.isPassenger()) {
          if (!var3) {
-            if (!this.world.method6739(this.getPosition().method8313()).method23486(Class8953.field40469) && var1 < 0.0) {
+            if (!this.world.getFluidState(this.getPosition().down()).method23486(Class8953.field40469) && var1 < 0.0) {
                this.fallDistance = (float)((double)this.fallDistance - var1);
             }
          } else {
@@ -753,7 +753,7 @@ public class BoatEntity extends Entity {
                }
 
                this.method2921(this.fallDistance, 1.0F);
-               if (!this.world.field9020 && !this.removed) {
+               if (!this.world.isRemote && !this.removed) {
                   this.method2904();
                   if (this.world.method6789().method17135(Class5462.field24229)) {
                      for (int var8 = 0; var8 < 3; var8++) {
@@ -801,7 +801,7 @@ public class BoatEntity extends Entity {
    }
 
    public float method4168(float var1) {
-      return MathHelper.method37821(var1, this.field5554, this.field5553);
+      return MathHelper.lerp(var1, this.field5554, this.field5553);
    }
 
    public void method4169(int var1) {

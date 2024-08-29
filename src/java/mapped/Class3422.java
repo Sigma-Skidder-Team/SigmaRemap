@@ -26,6 +26,6 @@ public class Class3422 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return !var2.method7007(var3.method8313());
+      return !var2.method7007(var3.down());
    }
 }

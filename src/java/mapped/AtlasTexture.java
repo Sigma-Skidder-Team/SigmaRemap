@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Nullable;
 import java.awt.*;
+import java.awt.Dimension;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -146,12 +147,12 @@ public class AtlasTexture extends Class290 implements Class288 {
       if (Class7944.equals(System.getProperty("saveTextureMap"), "true")) {
          Class7944.method26810("Exporting texture map: " + this.field1107);
          Class8684.method31287(
-            "debug/" + this.field1107.method8292().replaceAll("/", "_"), this.method1131(), var1.field35337, var1.field35335, var1.field35336
+            "debug/" + this.field1107.getPath().replaceAll("/", "_"), this.method1131(), var1.field35337, var1.field35335, var1.field35336
          );
          if (this.field1123) {
             if (Shaders.field40874) {
                Class8684.method31287(
-                  "debug/" + this.field1107.method8292().replaceAll("/", "_").replace(".png", "_n.png"),
+                  "debug/" + this.field1107.getPath().replaceAll("/", "_").replace(".png", "_n.png"),
                   this.field1128.field45440,
                   var1.field35337,
                   var1.field35335,
@@ -161,7 +162,7 @@ public class AtlasTexture extends Class290 implements Class288 {
 
             if (Shaders.field40875) {
                Class8684.method31287(
-                  "debug/" + this.field1107.method8292().replaceAll("/", "_").replace(".png", "_s.png"),
+                  "debug/" + this.field1107.getPath().replaceAll("/", "_").replace(".png", "_s.png"),
                   this.field1128.field45441,
                   var1.field35337,
                   var1.field35335,
@@ -368,8 +369,8 @@ public class AtlasTexture extends Class290 implements Class288 {
 
    public ResourceLocation method1096(ResourceLocation var1) {
       return !this.method1102(var1)
-         ? new ResourceLocation(var1.method8293(), String.format("textures/%s%s", var1.method8292(), ".png"))
-         : new ResourceLocation(var1.method8293(), var1.method8292() + ".png");
+         ? new ResourceLocation(var1.getNamespace(), String.format("textures/%s%s", var1.getPath(), ".png"))
+         : new ResourceLocation(var1.getNamespace(), var1.getPath() + ".png");
    }
 
    public void method1097() {
@@ -498,7 +499,7 @@ public class AtlasTexture extends Class290 implements Class288 {
    }
 
    private boolean method1102(ResourceLocation var1) {
-      String var4 = var1.method8292();
+      String var4 = var1.getPath();
       return this.method1103(var4);
    }
 

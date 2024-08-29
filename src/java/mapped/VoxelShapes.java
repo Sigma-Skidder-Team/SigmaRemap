@@ -19,7 +19,7 @@ public final class VoxelShapes {
       var2.method26718(0, 0, 0, true, true);
       return new Class6410(var2);
    });
-   public static final VoxelShape field34463 = method27427(
+   public static final VoxelShape INFINITY = create(
       Double.NEGATIVE_INFINITY,
       Double.NEGATIVE_INFINITY,
       Double.NEGATIVE_INFINITY,
@@ -39,7 +39,7 @@ public final class VoxelShapes {
       return field34462;
    }
 
-   public static VoxelShape method27427(double var0, double var2, double var4, double var6, double var8, double var10) {
+   public static VoxelShape create(double var0, double var2, double var4, double var6, double var8, double var10) {
       return create(new AxisAlignedBB(var0, var2, var4, var6, var8, var10));
    }
 
@@ -105,14 +105,14 @@ public final class VoxelShapes {
    }
 
    public static VoxelShape method27431(VoxelShape var0, VoxelShape var1) {
-      return method27433(var0, var1, IBooleanFunction.field44051);
+      return combineAndSimplify(var0, var1, IBooleanFunction.field44051);
    }
 
    public static VoxelShape method27432(VoxelShape var0, VoxelShape... var1) {
       return Arrays.<VoxelShape>stream(var1).reduce(var0, VoxelShapes::method27431);
    }
 
-   public static VoxelShape method27433(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
+   public static VoxelShape combineAndSimplify(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
       return method27434(var0, var1, var2).method19518();
    }
 
@@ -295,7 +295,7 @@ public final class VoxelShapes {
          Class1892 var6 = var2.method535();
          VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
          VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
-         IBooleanFunction var9 = var6 != Class1892.field11092 ? IBooleanFunction.field44039 : IBooleanFunction.field44041;
+         IBooleanFunction var9 = var6 != Class1892.field11092 ? IBooleanFunction.field44039 : IBooleanFunction.ONLY_FIRST;
          return DoubleMath.fuzzyEquals(var7.method19513(var5), 1.0, 1.0E-7)
             && DoubleMath.fuzzyEquals(var8.method19512(var5), 0.0, 1.0E-7)
             && ! compare(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
@@ -340,7 +340,7 @@ public final class VoxelShapes {
          return ! compare(
             method27426(),
             method27434(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), IBooleanFunction.field44051),
-            IBooleanFunction.field44041
+            IBooleanFunction.ONLY_FIRST
          );
       } else {
          return true;
@@ -353,7 +353,7 @@ public final class VoxelShapes {
       } else {
          return var0.method19516() && var1.method19516()
             ? false
-            : ! compare(method27426(), method27434(var0, var1, IBooleanFunction.field44051), IBooleanFunction.field44041);
+            : ! compare(method27426(), method27434(var0, var1, IBooleanFunction.field44051), IBooleanFunction.ONLY_FIRST);
       }
    }
 

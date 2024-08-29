@@ -38,7 +38,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
       boolean var10 = var9.getItem() instanceof Class3321 && var4.abilities.field29610;
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          TileEntity var11 = var2.getTileEntity(var3);
          if (!(var11 instanceof Class954)) {
             return ActionResultType.field14820;
@@ -59,7 +59,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18966) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

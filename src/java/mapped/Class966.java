@@ -83,7 +83,7 @@ public class Class966 extends TileEntity implements Class935 {
          this.field5419 = this.field5324.<Class880>method7182(Class880.class, var4);
       }
 
-      if (!this.field5324.field9020) {
+      if (!this.field5324.isRemote) {
          for (Class880 var5 : this.field5419) {
             if (var5.method3066() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0)) {
                var5.method2992().method21406(Class8830.field39840, this.field5324.method6783());
@@ -105,13 +105,13 @@ public class Class966 extends TileEntity implements Class935 {
    }
 
    private void method3994(World var1) {
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          this.field5419.stream().filter(this::method3996).forEach(this::method3997);
       }
    }
 
    private void method3995(World var1) {
-      if (var1.field9020) {
+      if (var1.isRemote) {
          BlockPos var4 = this.getPos();
          MutableInt var5 = new MutableInt(16700985);
          int var6 = (int)this.field5419.stream().filter(var1x -> var4.method8317(var1x.getPositionVec(), 48.0)).count();

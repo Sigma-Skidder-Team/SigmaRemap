@@ -23,7 +23,7 @@ public class Class306 implements IResourcePack {
    public static Path field1188;
    private static final Logger field1189 = LogManager.getLogger();
    public static Class<?> field1190;
-   private static final Map<ResourcePackType, FileSystem> field1191 = Util.<Map<ResourcePackType, FileSystem>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<ResourcePackType, FileSystem> field1191 = Util.<Map<ResourcePackType, FileSystem>>make(Maps.newHashMap(), var0 -> {
       synchronized (Class306.class) {
          for (ResourcePackType var7 : ResourcePackType.values()) {
             URL var8 = Class306.class.getResource("/" + var7.method8205() + "/.mcassetsroot");
@@ -74,7 +74,7 @@ public class Class306 implements IResourcePack {
    public InputStream getResourceStream(ResourcePackType var1, ResourceLocation var2) throws IOException {
       InputStream var5 = this.method1243(var1, var2);
       if (var5 == null) {
-         throw new FileNotFoundException(var2.method8292());
+         throw new FileNotFoundException(var2.getPath());
       } else {
          return var5;
       }
@@ -153,7 +153,7 @@ public class Class306 implements IResourcePack {
          return var6;
       } else {
          if (field1188 != null) {
-            Path var7 = field1188.resolve(var1.method8205() + "/" + var2.method8293() + "/" + var2.method8292());
+            Path var7 = field1188.resolve(var1.method8205() + "/" + var2.getNamespace() + "/" + var2.getPath());
             if (Files.exists(var7)) {
                try {
                   return Files.newInputStream(var7);
@@ -172,7 +172,7 @@ public class Class306 implements IResourcePack {
    }
 
    private static String method1244(ResourcePackType var0, ResourceLocation var1) {
-      return "/" + var0.method8205() + "/" + var1.method8293() + "/" + var1.method8292();
+      return "/" + var0.method8205() + "/" + var1.getNamespace() + "/" + var1.getPath();
    }
 
    private static boolean method1245(String var0, URL var1) throws IOException {
@@ -192,7 +192,7 @@ public class Class306 implements IResourcePack {
          return true;
       } else {
          if (field1188 != null) {
-            Path var7 = field1188.resolve(var1.method8205() + "/" + var2.method8293() + "/" + var2.method8292());
+            Path var7 = field1188.resolve(var1.method8205() + "/" + var2.getNamespace() + "/" + var2.getPath());
             if (Files.exists(var7)) {
                return true;
             }

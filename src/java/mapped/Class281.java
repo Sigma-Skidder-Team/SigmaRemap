@@ -31,8 +31,8 @@ public abstract class Class281 extends Class269<Map<ResourceLocation, JsonElemen
       int var6 = this.field1073.length() + 1;
 
       for (ResourceLocation var8 : var1.method583(this.field1073, var0 -> var0.endsWith(".json"))) {
-         String var9 = var8.method8292();
-         ResourceLocation var10 = new ResourceLocation(var8.method8293(), var9.substring(var6, var9.length() - field1071));
+         String var9 = var8.getPath();
+         ResourceLocation var10 = new ResourceLocation(var8.getNamespace(), var9.substring(var6, var9.length() - field1071));
 
          try (
             Class1783 var11 = var1.method580(var8);

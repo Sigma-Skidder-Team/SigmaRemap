@@ -19,7 +19,7 @@ public final class Class4382 implements Class4383 {
    private final Object2IntMap<RegistryKey<?>> field21393 = new Object2IntOpenCustomHashMap(Util.method38509());
    private final Map<RegistryKey<?>, Lifecycle> field21394 = Maps.newIdentityHashMap();
 
-   public <E> void method13745(Class8905 var1, RegistryKey<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {
+   public <E> void method13745(DynamicRegistriesImpl var1, RegistryKey<E> var2, Encoder<E> var3, int var4, E var5, Lifecycle var6) {
       DataResult var9 = var3.encodeStart(WorldGenSettingsExport.create(JsonOps.INSTANCE, var1), var5);
       Optional var10 = var9.error();
       if (!var10.isPresent()) {
@@ -38,7 +38,7 @@ public final class Class4382 implements Class4383 {
          .stream()
          .filter(var1x -> var1x.method31398(var1))
          .<ResourceLocation>map(
-            var1x -> new ResourceLocation(var1x.method31399().method8293(), var1.method31399().method8292() + "/" + var1x.method31399().method8292() + ".json")
+            var1x -> new ResourceLocation(var1x.getLocation().getNamespace(), var1.getLocation().getPath() + "/" + var1x.getLocation().getPath() + ".json")
          )
          .collect(Collectors.<ResourceLocation>toList());
    }

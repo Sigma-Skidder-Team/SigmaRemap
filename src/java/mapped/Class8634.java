@@ -104,7 +104,7 @@ public class Class8634 {
             ITag var12 = null;
             if (var3.has("tag")) {
                ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
-               var12 = Class9443.method36296().method32658().method27135(var9);
+               var12 = Class9443.method36296().method32658().get(var9);
                if (var12 == null) {
                   throw new JsonSyntaxException("Unknown item tag '" + var9 + "'");
                }

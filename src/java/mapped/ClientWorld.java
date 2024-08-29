@@ -27,7 +27,7 @@ public class ClientWorld extends World {
    private Class6886 field9032 = new Class6886();
    private final Map<String, Class7529> field9033 = Maps.newHashMap();
    private int field9034;
-   private final Object2ObjectArrayMap<Class8980, Class8960> field9035 = Util.<Object2ObjectArrayMap<Class8980, Class8960>>method38508(
+   private final Object2ObjectArrayMap<Class8980, Class8960> field9035 = Util.<Object2ObjectArrayMap<Class8980, Class8960>>make(
       new Object2ObjectArrayMap(3), var0 -> {
          var0.put(Class8527.field38301, new Class8960());
          var0.put(Class8527.field38302, new Class8960());
@@ -38,7 +38,7 @@ public class ClientWorld extends World {
    private boolean field9037 = false;
 
    public ClientWorld(
-           ClientPlayNetHandler var1, Class6606 var2, RegistryKey<World> var3, Class9535 var4, int var5, Supplier<IProfiler> var6, WorldRenderer var7, boolean var8, long var9
+           ClientPlayNetHandler var1, Class6606 var2, RegistryKey<World> var3, DimensionType var4, int var5, Supplier<IProfiler> var6, WorldRenderer var7, boolean var8, long var9
    ) {
       super(var2, var3, var4, var6, true, var8, var9);
       this.field9026 = var1;
@@ -70,15 +70,15 @@ public class ClientWorld extends World {
    public void tick(BooleanSupplier var1) {
       this.method6810().method24555();
       this.method6832();
-      this.method6820().startSection("blocks");
+      this.getProfiler().startSection("blocks");
       this.field9036.method7401(var1);
-      this.method6820().endSection();
+      this.getProfiler().endSection();
    }
 
    private void method6832() {
-      this.method6833(this.field9018.method20033() + 1L);
-      if (this.field9018.method20046().method17135(Class5462.field24232)) {
-         this.method6834(this.field9018.method20034() + 1L);
+      this.method6833(this.worldInfo.method20033() + 1L);
+      if (this.worldInfo.method20046().method17135(Class5462.field24232)) {
+         this.method6834(this.worldInfo.method20034() + 1L);
       }
    }
 
@@ -102,7 +102,7 @@ public class ClientWorld extends World {
    }
 
    public void tickEntities() {
-      IProfiler var3 = this.method6820();
+      IProfiler var3 = this.getProfiler();
       var3.startSection("entities");
       ObjectIterator var4 = this.field9025.int2ObjectEntrySet().iterator();
 
@@ -131,7 +131,7 @@ public class ClientWorld extends World {
    }
 
    public void method6837(Entity var1) {
-      if (!(var1 instanceof PlayerEntity) && !this.method6883().method7351(var1)) {
+      if (!(var1 instanceof PlayerEntity) && !this.getChunkProvider().method7351(var1)) {
          this.method6839(var1);
       } else {
          var1.method3274(var1.getPosX(), var1.getPosY(), var1.getPosZ());
@@ -139,12 +139,12 @@ public class ClientWorld extends World {
          var1.prevRotationPitch = var1.rotationPitch;
          if (var1.addedToChunk || var1.isSpectator()) {
             var1.ticksExisted++;
-            this.method6820().method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
+            this.getProfiler().method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
             if (Class9561.method37057(var1)) {
                var1.tick();
             }
 
-            this.method6820().endSection();
+            this.getProfiler().endSection();
          }
 
          this.method6839(var1);
@@ -159,7 +159,7 @@ public class ClientWorld extends World {
    public void method6838(Entity var1, Entity var2) {
       if (var2.removed || var2.getRidingEntity() != var1) {
          var2.stopRiding();
-      } else if (var2 instanceof PlayerEntity || this.method6883().method7351(var2)) {
+      } else if (var2 instanceof PlayerEntity || this.getChunkProvider().method7351(var2)) {
          var2.method3274(var2.getPosX(), var2.getPosY(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.prevRotationPitch = var2.rotationPitch;
@@ -179,40 +179,40 @@ public class ClientWorld extends World {
 
    private void method6839(Entity var1) {
       if (var1.method3406()) {
-         this.method6820().startSection("chunkCheck");
+         this.getProfiler().startSection("chunkCheck");
          int var4 = MathHelper.floor(var1.getPosX() / 16.0);
          int var5 = MathHelper.floor(var1.getPosY() / 16.0);
          int var6 = MathHelper.floor(var1.getPosZ() / 16.0);
          if (!var1.addedToChunk || var1.chunkCoordX != var4 || var1.chunkCoordY != var5 || var1.chunkCoordZ != var6) {
             if (var1.addedToChunk && this.method6843(var1.chunkCoordX, var1.chunkCoordZ)) {
-               this.method6824(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
+               this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
             }
 
             if (!var1.method3405() && !this.method6843(var4, var6)) {
                if (var1.addedToChunk) {
-                  field8997.warn("Entity {} left loaded chunk area", var1);
+                  LOGGER.warn("Entity {} left loaded chunk area", var1);
                }
 
                var1.addedToChunk = false;
             } else {
-               this.method6824(var4, var6).method7063(var1);
+               this.getChunk(var4, var6).method7063(var1);
             }
          }
 
-         this.method6820().endSection();
+         this.getProfiler().endSection();
       }
    }
 
-   public void method6840(Class1674 var1) {
+   public void method6840(Chunk var1) {
       List<TileEntity> var4;
       if (!Class9299.field42944.method20238()) {
-         var4 = this.field9006;
+         var4 = this.tileEntitiesToBeRemoved;
       } else {
          var4 = (List<TileEntity>) Class9299.method35072(this, Class9299.field42944);
       }
 
       var4.addAll(var1.method7145().values());
-      this.field9036.method7348().method605(var1.method7072(), false);
+      this.field9036.getLightManager().method605(var1.method7072(), false);
    }
 
    public void method6841(int var1, int var2) {
@@ -245,8 +245,8 @@ public class ClientWorld extends World {
       if (!Class9299.field42807.method20241() || !Class9299.method35085(Class9299.field42807, var2, this)) {
          this.method6848(var1);
          this.field9025.put(var1, var2);
-         this.method6883()
-            .method7346(MathHelper.floor(var2.getPosX() / 16.0), MathHelper.floor(var2.getPosZ() / 16.0), Class9176.field42145, true)
+         this.getChunkProvider()
+            .method7346(MathHelper.floor(var2.getPosX() / 16.0), MathHelper.floor(var2.getPosZ() / 16.0), ChunkStatus.FULL, true)
             .method7063(var2);
          if (Class9299.field42836.method20214()) {
             Class9299.method35070(var2, Class9299.field42836);
@@ -267,7 +267,7 @@ public class ClientWorld extends World {
    private void method6849(Entity var1) {
       var1.detach();
       if (var1.addedToChunk) {
-         this.method6824(var1.chunkCoordX, var1.chunkCoordZ).method7132(var1);
+         this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7132(var1);
       }
 
       this.field9031.remove(var1);
@@ -282,7 +282,7 @@ public class ClientWorld extends World {
       this.method6866(var1);
    }
 
-   public void method6850(Class1674 var1) {
+   public void method6850(Chunk var1) {
       ObjectIterator var4 = this.field9025.int2ObjectEntrySet().iterator();
 
       while (var4.hasNext()) {
@@ -303,7 +303,7 @@ public class ClientWorld extends World {
    }
 
    public void method6851(BlockPos var1, BlockState var2) {
-      this.method6725(var1, var2, 19);
+      this.setBlockState(var1, var2, 19);
    }
 
    @Override
@@ -333,19 +333,19 @@ public class ClientWorld extends World {
    }
 
    public void method6853(int var1, int var2, int var3, int var4, Random var5, boolean var6, Mutable var7) {
-      int var10 = var1 + this.field9016.nextInt(var4) - this.field9016.nextInt(var4);
-      int var11 = var2 + this.field9016.nextInt(var4) - this.field9016.nextInt(var4);
-      int var12 = var3 + this.field9016.nextInt(var4) - this.field9016.nextInt(var4);
+      int var10 = var1 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
+      int var11 = var2 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
+      int var12 = var3 + this.rand.nextInt(var4) - this.rand.nextInt(var4);
       var7.method8372(var10, var11, var12);
       BlockState var13 = this.getBlockState(var7);
       var13.getBlock().method11512(var13, this, var7, var5);
-      Class7379 var14 = this.method6739(var7);
+      FluidState var14 = this.getFluidState(var7);
       if (!var14.method23474()) {
          var14.method23480(this, var7, var5);
          Class7436 var15 = var14.method23485();
-         if (var15 != null && this.field9016.nextInt(10) == 0) {
+         if (var15 != null && this.rand.nextInt(10) == 0) {
             boolean var16 = var13.method23454(this, var7, Direction.DOWN);
-            BlockPos var17 = var7.method8313();
+            BlockPos var17 = var7.down();
             this.method6854(var17, this.getBlockState(var17), var15, var16);
          }
       }
@@ -359,12 +359,12 @@ public class ClientWorld extends World {
             .method32522()
             .ifPresent(
                var2x -> {
-                  if (var2x.method25615(this.field9016)) {
+                  if (var2x.method25615(this.rand)) {
                      this.method6746(
                         var2x.method25614(),
-                        (double)var7.getX() + this.field9016.nextDouble(),
-                        (double)var7.getY() + this.field9016.nextDouble(),
-                        (double)var7.getZ() + this.field9016.nextDouble(),
+                        (double)var7.getX() + this.rand.nextDouble(),
+                        (double)var7.getY() + this.rand.nextDouble(),
+                        (double)var7.getZ() + this.rand.nextDouble(),
                         0.0,
                         0.0,
                         0.0
@@ -380,10 +380,10 @@ public class ClientWorld extends World {
          VoxelShape var7 = var2.method23414(this, var1);
          double var8 = var7.method19513(Class113.field414);
          if (!(var8 < 1.0)) {
-            if (!var2.method23446(Class7645.field32781)) {
+            if (!var2.method23446(BlockTags.field32781)) {
                double var10 = var7.method19512(Class113.field414);
                if (!(var10 > 0.0)) {
-                  BlockPos var12 = var1.method8313();
+                  BlockPos var12 = var1.down();
                   BlockState var13 = this.getBlockState(var12);
                   VoxelShape var14 = var13.method23414(this, var12);
                   double var15 = var14.method19513(Class113.field414);
@@ -421,9 +421,9 @@ public class ClientWorld extends World {
    private void method6856(double var1, double var3, double var5, double var7, double var9, Class7436 var11) {
       this.method6746(
          var11,
-         MathHelper.method37822(this.field9016.nextDouble(), var1, var3),
+         MathHelper.method37822(this.rand.nextDouble(), var1, var3),
          var9,
-         MathHelper.method37822(this.field9016.nextDouble(), var5, var7),
+         MathHelper.method37822(this.rand.nextDouble(), var5, var7),
          0.0,
          0.0,
          0.0
@@ -532,14 +532,14 @@ public class ClientWorld extends World {
       return Class6804.<Fluid>method20727();
    }
 
-   public Class1705 method6883() {
+   public Class1705 getChunkProvider() {
       return this.field9036;
    }
 
    @Override
-   public boolean method6725(BlockPos var1, BlockState var2, int var3) {
+   public boolean setBlockState(BlockPos pos, BlockState newState, int flags) {
       this.field9037 = this.method6863();
-      boolean var6 = super.method6725(var1, var2, var3);
+      boolean var6 = super.setBlockState(pos, newState, flags);
       this.field9037 = false;
       return var6;
    }
@@ -603,12 +603,12 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6731(BlockPos var1, BlockState var2, BlockState var3, int var4) {
+   public void notifyBlockUpdate(BlockPos var1, BlockState var2, BlockState var3, int var4) {
       this.field9027.method901(this, var1, var2, var3, var4);
    }
 
    @Override
-   public void method6732(BlockPos var1, BlockState var2, BlockState var3) {
+   public void markBlockRangeForRenderUpdate(BlockPos var1, BlockState var2, BlockState var3) {
       this.field9027.method904(var1, var2, var3);
    }
 
@@ -668,7 +668,7 @@ public class ClientWorld extends World {
 
    @Override
    public Biome method6871(int var1, int var2, int var3) {
-      return this.method6867().<Biome>method32453(Registry.BIOME_KEY).method9189(Class9495.field44122);
+      return this.method6867().<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Class9495.field44122);
    }
 
    public float method6872(float var1) {
@@ -838,20 +838,20 @@ public class ClientWorld extends World {
    }
 
    public BlockPos method6880() {
-      BlockPos var3 = new BlockPos(this.field9018.method20029(), this.field9018.method20030(), this.field9018.method20031());
+      BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
       if (!this.method6810().method24523(var3)) {
-         var3 = this.method7006(Class101.field299, new BlockPos(this.method6810().method24534(), 0.0, this.method6810().method24535()));
+         var3 = this.method7006(Class101.field299, new BlockPos(this.method6810().getCenterX(), 0.0, this.method6810().getCenterZ()));
       }
 
       return var3;
    }
 
    public float method6881() {
-      return this.field9018.method20032();
+      return this.worldInfo.method20032();
    }
 
    public void method6882(BlockPos var1, float var2) {
-      this.field9018.method20041(var1, var2);
+      this.worldInfo.method20041(var1, var2);
    }
 
    @Override

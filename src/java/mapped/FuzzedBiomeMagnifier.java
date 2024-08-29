@@ -1,10 +1,10 @@
 package mapped;
 
-public enum Class1959 implements Class1960 {
-   field12765;
+public enum FuzzedBiomeMagnifier implements IBiomeMagnifier {
+   INSTANCE;
 
    public ThreadLocal<double[]> field12766 = ThreadLocal.<double[]>withInitial(() -> new double[8]);
-   private static final Class1959[] field12767 = new Class1959[]{field12765};
+   private static final FuzzedBiomeMagnifier[] field12767 = new FuzzedBiomeMagnifier[]{INSTANCE};
 
    @Override
    public Biome method8225(long var1, int var3, int var4, int var5, Class1683 var6) {

@@ -66,7 +66,7 @@ public class Class4445 implements Class4442 {
    }
 
    private static Path method14030(Path var0, ResourceLocation var1) {
-      return var0.resolve("data/" + var1.method8293() + "/loot_tables/" + var1.method8292() + ".json");
+      return var0.resolve("data/" + var1.getNamespace() + "/loot_tables/" + var1.getPath() + ".json");
    }
 
    @Override

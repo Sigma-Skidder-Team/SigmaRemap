@@ -92,7 +92,7 @@ public class Class1114 extends Class1113 {
    public void method4258() {
       super.method4258();
       BlockPos var3 = this.getPosition();
-      BlockPos var4 = var3.method8311();
+      BlockPos var4 = var3.up();
       if (!this.method5364()) {
          if (this.field6095 != null && (!this.world.method7007(this.field6095) || this.field6095.getY() < 1)) {
             this.field6095 = null;
@@ -167,7 +167,7 @@ public class Class1114 extends Class1113 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         if (!this.world.field9020 && this.method5364()) {
+         if (!this.world.isRemote && this.method5364()) {
             this.method5365(false);
          }
 

@@ -17,7 +17,7 @@ public class Class5665 extends Class5662<Class1037, Class2793<Class1037>> {
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = var1.method2999(var5);
       if (var8 > 0.0F) {
-         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var8, var1.rotationPitch, -10.0F - var1.rotationPitch)));
+         var2.method35293(Class7680.field32898.method25286(MathHelper.lerp(var8, var1.rotationPitch, -10.0F - var1.rotationPitch)));
       }
    }
 }

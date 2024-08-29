@@ -109,9 +109,9 @@ public class Class7819 {
       }
 
       if (this.field33537.method12288().isEmpty()) {
-         this.field33538.method6883().method7375(Class8561.field38481, new Class7481(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().method7375(Class8561.field38481, new Class7481(0, 0), 9, Class2341.field16010);
       } else {
-         this.field33538.method6883().method7374(Class8561.field38481, new Class7481(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().method7374(Class8561.field38481, new Class7481(0, 0), 9, Class2341.field16010);
          boolean var3 = this.method26116();
          if (this.field33548 && var3) {
             this.method26111();
@@ -208,7 +208,7 @@ public class Class7819 {
    private boolean method26114() {
       for (int var3 = -8; var3 <= 8; var3++) {
          for (int var4 = -8; var4 <= 8; var4++) {
-            Class1674 var5 = this.field33538.method6824(var3, var4);
+            Chunk var5 = this.field33538.getChunk(var3, var4);
 
             for (TileEntity var7 : var5.method7145().values()) {
                if (var7 instanceof Class956) {
@@ -225,7 +225,7 @@ public class Class7819 {
    private Class9086 method26115() {
       for (int var3 = -8; var3 <= 8; var3++) {
          for (int var4 = -8; var4 <= 8; var4++) {
-            Class1674 var5 = this.field33538.method6824(var3, var4);
+            Chunk var5 = this.field33538.getChunk(var3, var4);
 
             for (TileEntity var7 : var5.method7145().values()) {
                if (var7 instanceof Class956) {
@@ -263,13 +263,13 @@ public class Class7819 {
    private boolean method26116() {
       for (int var3 = -8; var3 <= 8; var3++) {
          for (int var4 = 8; var4 <= 8; var4++) {
-            Class1670 var5 = this.field33538.method6724(var3, var4, Class9176.field42145, false);
-            if (!(var5 instanceof Class1674)) {
+            IChunk var5 = this.field33538.getChunk(var3, var4, ChunkStatus.FULL, false);
+            if (!(var5 instanceof Chunk)) {
                return false;
             }
 
-            Class77 var6 = ((Class1674)var5).method7152();
-            if (!var6.method249(Class77.field168)) {
+            ChunkHolderLocationType var6 = ((Chunk)var5).getLocationType();
+            if (!var6.isAtLeast(ChunkHolderLocationType.TICKING)) {
                return false;
             }
          }
@@ -312,7 +312,7 @@ public class Class7819 {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.method6730(this.field33538.method7006(Class101.field299, Class2909.field17994), Blocks.field36652.method11579());
+            this.field33538.setBlockState(this.field33538.method7006(Class101.field299, Class2909.field17994), Blocks.field36652.method11579());
          }
 
          this.field33546 = true;
@@ -330,28 +330,28 @@ public class Class7819 {
    }
 
    private void method26121(BlockPos var1) {
-      this.field33538.method6999(3000, var1, 0);
-      Class9104.field41635.method26521(this.field33538, this.field33538.method6883().method7370(), new Random(), var1);
+      this.field33538.playEvent(3000, var1, 0);
+      Class9104.field41635.method26521(this.field33538, this.field33538.getChunkProvider().method7370(), new Random(), var1);
    }
 
    private void method26122(boolean var1) {
       Class2909 var4 = new Class2909(var1);
       if (this.field33549 == null) {
-         this.field33549 = this.field33538.method7006(Class101.field300, Class2909.field17994).method8313();
+         this.field33549 = this.field33538.method7006(Class101.field300, Class2909.field17994).down();
 
          while (this.field33538.getBlockState(this.field33549).method23448(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
-            this.field33549 = this.field33549.method8313();
+            this.field33549 = this.field33549.down();
          }
       }
 
-      var4.method11216(Class4698.field22290).method26521(this.field33538, this.field33538.method6883().method7370(), new Random(), this.field33549);
+      var4.method11216(Class4698.field22290).method26521(this.field33538, this.field33538.getChunkProvider().method7370(), new Random(), this.field33549);
    }
 
    private Class1007 method26123() {
-      this.field33538.method6722(new BlockPos(0, 128, 0));
+      this.field33538.getChunkAt(new BlockPos(0, 128, 0));
       Class1007 var3 = EntityType.field41024.method33215(this.field33538);
       var3.method4336().method32671(Class9598.field44896);
-      var3.method3273(0.0, 128.0, 0.0, this.field33538.field9016.nextFloat() * 360.0F, 0.0F);
+      var3.method3273(0.0, 128.0, 0.0, this.field33538.rand.nextFloat() * 360.0F, 0.0F);
       this.field33538.method6916(var3);
       this.field33547 = var3.getUniqueID();
       return var3;
@@ -432,7 +432,7 @@ public class Class7819 {
                   for (int var7 = 0; var7 < this.field33540.method38652(); var7++) {
                      Class9632 var8 = var4.method33881(var5, var6, var7);
                      if (var8.method37548().method23448(Blocks.BEDROCK) || var8.method37548().method23448(Blocks.field36649)) {
-                        this.field33538.method6730(var8.method37551(), Blocks.field36651.method11579());
+                        this.field33538.setBlockState(var8.method37551(), Blocks.field36651.method11579());
                      }
                   }
                }

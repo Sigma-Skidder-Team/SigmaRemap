@@ -56,7 +56,7 @@ public class Class7193 extends Class7194 {
 
    @Override
    public boolean method22596(
-      Class1670 var1,
+      IChunk var1,
       Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,
@@ -84,10 +84,10 @@ public class Class7193 extends Class7194 {
             if (var14 > 31) {
                var20 = field30894;
             } else {
-               var20 = field30896.method23484();
+               var20 = field30896.getBlockState();
             }
 
-            var1.method7061(var5, var20, false);
+            var1.setBlockState(var5, var20, false);
             return true;
          }
       } else {

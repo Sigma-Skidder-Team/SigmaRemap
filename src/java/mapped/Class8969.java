@@ -182,15 +182,15 @@ public class Class8969 {
             for (Class8266 var20 : method32901(var1, var2, var3, var4, var9)) {
                BlockPos var21 = var20.field35530;
                if (var10 == null || var10.method38396(var21)) {
-                  Class7379 var22 = !var4.method36445() ? null : var1.method6739(var21);
+                  FluidState var22 = !var4.method36445() ? null : var1.getFluidState(var21);
                   BlockState var23 = var20.field35531.method23396(var4.method36436()).method23395(var4.method36437());
                   if (var20.field35532 != null) {
                      TileEntity var24 = var1.getTileEntity(var21);
                      Class946.method3802(var24);
-                     var1.method6725(var21, Blocks.field36765.method11579(), 20);
+                     var1.setBlockState(var21, Blocks.field36765.method11579(), 20);
                   }
 
-                  if (var1.method6725(var21, var23, var6)) {
+                  if (var1.setBlockState(var21, var23, var6)) {
                      var13 = Math.min(var13, var21.getX());
                      var14 = Math.min(var14, var21.getY());
                      var15 = Math.min(var15, var21.getZ());
@@ -234,11 +234,11 @@ public class Class8969 {
                while (var30.hasNext()) {
                   BlockPos var33 = (BlockPos)var30.next();
                   BlockPos var36 = var33;
-                  Class7379 var40 = var1.method6739(var33);
+                  FluidState var40 = var1.getFluidState(var33);
 
                   for (int var25 = 0; var25 < var29.length && !var40.method23473(); var25++) {
                      BlockPos var26 = var36.method8349(var29[var25]);
-                     Class7379 var27 = var1.method6739(var26);
+                     FluidState var27 = var1.getFluidState(var26);
                      if (var27.method23475(var1, var26) > var40.method23475(var1, var36) || var27.method23473() && !var40.method23473()) {
                         var40 = var27;
                         var36 = var26;
@@ -278,10 +278,10 @@ public class Class8969 {
                      BlockState var42 = var1.getBlockState(var38);
                      BlockState var46 = Block.method11542(var42, var1, var38);
                      if (var42 != var46) {
-                        var1.method6725(var38, var46, var6 & -2 | 16);
+                        var1.setBlockState(var38, var46, var6 & -2 | 16);
                      }
 
-                     var1.method6964(var38, var46.getBlock());
+                     var1.func_230547_a_(var38, var46.getBlock());
                   }
 
                   if (var35.getSecond() != null) {
@@ -312,12 +312,12 @@ public class Class8969 {
          BlockState var14 = var0.getBlockState(var12);
          BlockState var15 = var13.method23439(var5x, var14, var0, var11, var12);
          if (var13 != var15) {
-            var0.method6725(var11, var15, var1 & -2);
+            var0.setBlockState(var11, var15, var1 & -2);
          }
 
          BlockState var16 = var14.method23439(var5x.method536(), var15, var0, var12, var11);
          if (var14 != var16) {
-            var0.method6725(var12, var16, var1 & -2);
+            var0.setBlockState(var12, var16, var1 & -2);
          }
       });
    }

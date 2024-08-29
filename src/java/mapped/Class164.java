@@ -44,7 +44,7 @@ public class Class164 implements Predicate<Class9632> {
          var6 = this.field529;
       }
 
-      if (var1.method6725(var2, var6, var3)) {
+      if (var1.setBlockState(var2, var6, var3)) {
          if (this.field531 != null) {
             TileEntity var7 = var1.getTileEntity(var2);
             if (var7 != null) {

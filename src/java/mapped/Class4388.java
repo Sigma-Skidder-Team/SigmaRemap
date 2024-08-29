@@ -32,7 +32,7 @@ public class Class4388 {
    }
 
    public static void method13799(Class1034 var0) {
-      int var3 = field21459.method29319(var0.world.field9016);
+      int var3 = field21459.method29319(var0.world.rand);
       var0.method2992().method21407(Class8830.field39855, true, (long)var3);
    }
 
@@ -326,11 +326,11 @@ public class Class4388 {
    }
 
    private static List<ItemStack> method13824(Class1034 var0) {
-      Class7318 var3 = var0.world.method6715().method1411().method1058(Class8793.field39609);
+      Class7318 var3 = var0.world.getServer().method1411().method1058(Class8793.field39609);
       return var3.method23182(
          new Class9464((ServerWorld)var0.world)
             .method36454(Class9525.field44330, var0)
-            .method36450(var0.world.field9016)
+            .method36450(var0.world.rand)
             .method36460(Class8524.field38288)
       );
    }
@@ -657,12 +657,12 @@ public class Class4388 {
       var0.method2992().method21405(Class8830.field39849);
       var0.method2992().method21405(Class8830.field39826);
       var0.method2992().method21405(Class8830.field39824);
-      var0.method2992().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.world.field9016));
+      var0.method2992().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.world.rand));
       method13861(var0);
    }
 
    public static void method13861(Class1035 var0) {
-      var0.method2992().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.field9016));
+      var0.method2992().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.rand));
    }
 
    private static void method13862(Class1034 var0) {

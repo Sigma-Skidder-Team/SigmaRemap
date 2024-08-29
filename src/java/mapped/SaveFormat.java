@@ -90,7 +90,7 @@ public class SaveFormat {
          var10.resultOrPartial(Util.func_240982_a_("WorldGenSettings: ", field45713::error))
             .orElseGet(
                () -> {
-                  Registry<Class9535> var3 = Class8611.<Class9535>method30859(Registry.field16066)
+                  Registry<DimensionType> var3 = Class8611.<DimensionType>method30859(Registry.DIMENSION_TYPE_KEY)
                      .codec()
                      .parse(var9)
                      .resultOrPartial(Util.func_240982_a_("Dimension type registry: ", field45713::error))
@@ -100,7 +100,7 @@ public class SaveFormat {
                      .parse(var9)
                      .resultOrPartial(Util.func_240982_a_("Biome registry: ", field45713::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get biome registry"));
-                  Registry<Class9309> var5x = Class8611.method30859(Registry.field16099)
+                  Registry<DimensionSettings> var5x = Class8611.method30859(Registry.field16099)
                      .codec()
                      .parse(var9)
                      .resultOrPartial(Util.func_240982_a_("Noise settings registry: ", field45713::error))
@@ -325,7 +325,7 @@ public class SaveFormat {
       }
 
       public File method7992(RegistryKey<World> var1) {
-         return Class9535.method36874(var1, this.field9780.toFile());
+         return DimensionType.getDimensionFolder(var1, this.field9780.toFile());
       }
 
       private void method7993() {

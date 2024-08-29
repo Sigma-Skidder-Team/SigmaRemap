@@ -46,12 +46,12 @@ public final class Class8170 {
       return new Class7307(var0, var6, var5);
    }
 
-   private static Biome method28416(BlockPos var0, Class1670 var1) {
+   private static Biome method28416(BlockPos var0, IChunk var1) {
       return Class1962.field12770.method8225(0L, var0.getX(), var0.getY(), var0.getZ(), var1.method7077());
    }
 
-   public static void method28417(ServerWorld var0, Class1674 var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
-      var0.method6820().startSection("spawner");
+   public static void method28417(ServerWorld var0, Chunk var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
+      var0.getProfiler().startSection("spawner");
 
       for (Class179 var11 : field35151) {
          if ((var3 || !var11.method520()) && (var4 || var11.method520()) && (var5 || !var11.method521()) && Class7307.method23093(var2, var11)) {
@@ -65,19 +65,19 @@ public final class Class8170 {
          }
       }
 
-      var0.method6820().endSection();
+      var0.getProfiler().endSection();
    }
 
-   public static void method28418(Class179 var0, ServerWorld var1, Class1674 var2, Class8145 var3, Class8940 var4) {
+   public static void method28418(Class179 var0, ServerWorld var1, Chunk var2, Class8145 var3, Class8940 var4) {
       BlockPos var7 = method28427(var1, var2);
       if (var7.getY() >= 1) {
          method28419(var0, var1, var2, var7, var3, var4);
       }
    }
 
-   public static void method28419(Class179 var0, ServerWorld var1, Class1670 var2, BlockPos var3, Class8145 var4, Class8940 var5) {
+   public static void method28419(Class179 var0, ServerWorld var1, IChunk var2, BlockPos var3, Class8145 var4, Class8940 var5) {
       Class7480 var8 = var1.method6893();
-      Class5646 var9 = var1.method6883().method7370();
+      ChunkGenerator var9 = var1.getChunkProvider().method7370();
       int var10 = var3.getY();
       BlockState var11 = var2.getBlockState(var3);
       if (!var11.method23400(var2, var3)) {
@@ -90,12 +90,12 @@ public final class Class8170 {
             byte var17 = 6;
             Class6692 var18 = null;
             Class5093 var19 = null;
-            int var20 = MathHelper.method37773(var1.field9016.nextFloat() * 4.0F);
+            int var20 = MathHelper.method37773(var1.rand.nextFloat() * 4.0F);
             int var21 = 0;
 
             for (int var22 = 0; var22 < var20; var22++) {
-               var15 += var1.field9016.nextInt(6) - var1.field9016.nextInt(6);
-               var16 += var1.field9016.nextInt(6) - var1.field9016.nextInt(6);
+               var15 += var1.rand.nextInt(6) - var1.rand.nextInt(6);
+               var16 += var1.rand.nextInt(6) - var1.rand.nextInt(6);
                var12.method8372(var15, var10, var16);
                double var23 = (double)var15 + 0.5;
                double var25 = (double)var16 + 0.5;
@@ -104,12 +104,12 @@ public final class Class8170 {
                   double var28 = var27.method3276(var23, (double)var10, var25);
                   if (method28420(var1, var2, var12, var28)) {
                      if (var18 == null) {
-                        var18 = method28424(var1, var8, var9, var0, var1.field9016, var12);
+                        var18 = method28424(var1, var8, var9, var0, var1.rand, var12);
                         if (var18 == null) {
                            break;
                         }
 
-                        var20 = var18.field29312 + var1.field9016.nextInt(1 + var18.field29313 - var18.field29312);
+                        var20 = var18.field29312 + var1.rand.nextInt(1 + var18.field29313 - var18.field29312);
                      }
 
                      if (method28421(var1, var0, var8, var9, var18, var12, var28) && var4.method28251(var18.field29311, var12, var2)) {
@@ -118,7 +118,7 @@ public final class Class8170 {
                            return;
                         }
 
-                        var30.method3273(var23, (double)var10, var25, var1.field9016.nextFloat() * 360.0F, 0.0F);
+                        var30.method3273(var23, (double)var10, var25, var1.rand.nextFloat() * 360.0F, 0.0F);
                         if (method28423(var1, var30, var28)) {
                            var19 = var30.method4276(var1, var1.method6807(var30.getPosition()), Class2202.field14391, var19, (CompoundNBT)null);
                            var13++;
@@ -141,20 +141,20 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28420(ServerWorld var0, Class1670 var1, Mutable var2, double var3) {
+   private static boolean method28420(ServerWorld var0, IChunk var1, Mutable var2, double var3) {
       if (!(var3 <= 576.0)) {
          if (var0.method6947().method8317(new Vector3d((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
             return false;
          } else {
             Class7481 var7 = new Class7481(var2);
-            return Objects.equals(var7, var1.method7072()) || var0.method6883().method7352(var7);
+            return Objects.equals(var7, var1.method7072()) || var0.getChunkProvider().method7352(var7);
          }
       } else {
          return false;
       }
    }
 
-   private static boolean method28421(ServerWorld var0, Class179 var1, Class7480 var2, Class5646 var3, Class6692 var4, Mutable var5, double var6) {
+   private static boolean method28421(ServerWorld var0, Class179 var1, Class7480 var2, ChunkGenerator var3, Class6692 var4, Mutable var5, double var6) {
       EntityType var10 = var4.field29311;
       if (var10.method33209() != Class179.field628) {
          if (!var10.method33208() && var6 > (double)(var10.method33209().method522() * var10.method33209().method522())) {
@@ -164,7 +164,7 @@ public final class Class8170 {
             if (!method28429(var11, var0, var5, var10)) {
                return false;
             } else {
-               return Class6914.method21122(var10, var0, Class2202.field14391, var5, var0.field9016)
+               return Class6914.method21122(var10, var0, Class2202.field14391, var5, var0.rand)
                   ? var0.method7051(var10.method33219((double)var5.getX() + 0.5, (double)var5.getY(), (double)var5.getZ() + 0.5))
                   : false;
             }
@@ -198,7 +198,7 @@ public final class Class8170 {
    }
 
    @Nullable
-   private static Class6692 method28424(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, Random var4, BlockPos var5) {
+   private static Class6692 method28424(ServerWorld var0, Class7480 var1, ChunkGenerator var2, Class179 var3, Random var4, BlockPos var5) {
       Biome var8 = var0.getBiome(var5);
       if (var3 == Class179.field627 && var8.getCategory() == Class100.RIVER && var4.nextFloat() < 0.98F) {
          return null;
@@ -208,32 +208,32 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28425(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, Class6692 var4, BlockPos var5) {
+   private static boolean method28425(ServerWorld var0, Class7480 var1, ChunkGenerator var2, Class179 var3, Class6692 var4, BlockPos var5) {
       return method28426(var0, var1, var2, var3, var5, (Biome)null).contains(var4);
    }
 
-   private static List<Class6692> method28426(ServerWorld var0, Class7480 var1, Class5646 var2, Class179 var3, BlockPos var4, Biome var5) {
+   private static List<Class6692> method28426(ServerWorld var0, Class7480 var1, ChunkGenerator var2, Class179 var3, BlockPos var4, Biome var5) {
       return var3 == Class179.field623
-            && var0.getBlockState(var4.method8313()).getBlock() == Blocks.NETHER_BRICKS
+            && var0.getBlockState(var4.down()).getBlock() == Blocks.NETHER_BRICKS
             && var1.method24345(var4, false, Structure.field18070).method17117()
          ? Structure.field18070.method11374()
          : var2.method17808(var5 == null ? var0.getBiome(var4) : var5, var1, var3, var4);
    }
 
-   private static BlockPos method28427(World var0, Class1674 var1) {
+   private static BlockPos method28427(World var0, Chunk var1) {
       Class7481 var4 = var1.method7072();
-      int var5 = var4.method24356() + var0.field9016.nextInt(16);
-      int var6 = var4.method24357() + var0.field9016.nextInt(16);
+      int var5 = var4.method24356() + var0.rand.nextInt(16);
+      int var6 = var4.method24357() + var0.rand.nextInt(16);
       int var7 = var1.method7071(Class101.field296, var5, var6) + 1;
-      int var8 = var0.field9016.nextInt(var7 + 1);
+      int var8 = var0.rand.nextInt(var7 + 1);
       return new BlockPos(var5, var8, var6);
    }
 
-   public static boolean method28428(Class1665 var0, BlockPos var1, BlockState var2, Class7379 var3, EntityType<?> var4) {
+   public static boolean method28428(Class1665 var0, BlockPos var1, BlockState var2, FluidState var3, EntityType<?> var4) {
       if (!var2.method23456(var0, var1)) {
          if (!var2.method23401()) {
             if (var3.method23474()) {
-               return !var2.method23446(Class7645.field32811) ? !var4.method33220(var2) : false;
+               return !var2.method23446(BlockTags.field32811) ? !var4.method33220(var2) : false;
             } else {
                return false;
             }
@@ -250,13 +250,13 @@ public final class Class8170 {
          return true;
       } else if (var3 != null && var1.method6810().method24523(var2)) {
          BlockState var6 = var1.getBlockState(var2);
-         Class7379 var7 = var1.method6739(var2);
-         BlockPos var8 = var2.method8311();
-         BlockPos var9 = var2.method8313();
+         FluidState var7 = var1.getFluidState(var2);
+         BlockPos var8 = var2.up();
+         BlockPos var9 = var2.down();
          switch (Class8470.field36295[var0.ordinal()]) {
             case 1:
                return var7.method23486(Class8953.field40469)
-                  && var1.method6739(var9).method23486(Class8953.field40469)
+                  && var1.getFluidState(var9).method23486(Class8953.field40469)
                   && !var1.getBlockState(var8).method23400(var1, var8);
             case 2:
                return var7.method23486(Class8953.field40470);
@@ -265,7 +265,7 @@ public final class Class8170 {
                BlockState var10 = var1.getBlockState(var9);
                return !var10.method23385(var1, var9, var3)
                   ? false
-                  : method28428(var1, var2, var6, var7, var3) && method28428(var1, var8, var1.getBlockState(var8), var1.method6739(var8), var3);
+                  : method28428(var1, var2, var6, var7, var3) && method28428(var1, var8, var1.getBlockState(var8), var1.getFluidState(var8), var3);
          }
       } else {
          return false;
@@ -340,7 +340,7 @@ public final class Class8170 {
    private static BlockPos method28431(Class1662 var0, EntityType<?> var1, int var2, int var3) {
       int var6 = var0.method6736(Class6914.method21121(var1), var2, var3);
       Mutable var7 = new Mutable(var2, var6, var3);
-      if (var0.method6812().method36876()) {
+      if (var0.method6812().getHasCeiling()) {
          do {
             var7.method8379(Direction.DOWN);
          } while (!var0.getBlockState(var7).isAir());
@@ -351,7 +351,7 @@ public final class Class8170 {
       }
 
       if (Class6914.method21120(var1) == Class2068.field13472) {
-         BlockPos var8 = var7.method8313();
+         BlockPos var8 = var7.down();
          if (var0.getBlockState(var8).method23440(var0, var8, Class1947.field12614)) {
             return var8;
          }
@@ -361,7 +361,7 @@ public final class Class8170 {
    }
 
    // $VF: synthetic method
-   public static Biome method28437(BlockPos var0, Class1670 var1) {
+   public static Biome method28437(BlockPos var0, IChunk var1) {
       return method28416(var0, var1);
    }
 

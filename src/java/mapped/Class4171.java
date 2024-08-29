@@ -30,7 +30,7 @@ public class Class4171 extends Class4167 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       Random var10 = new Random((long)this.field20433);
 
       for (int var11 = 0; var11 <= 4; var11++) {

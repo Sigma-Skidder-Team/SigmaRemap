@@ -71,10 +71,10 @@ public class Class2674 extends Class2672 {
       double var15 = 0.0;
 
       while (true) {
-         BlockPos var17 = var13.method8313();
+         BlockPos var17 = var13.down();
          BlockState var18 = this.field17064.world.getBlockState(var17);
          if (!var18.method23454(this.field17064.world, var17, Direction.field673)) {
-            var13 = var13.method8313();
+            var13 = var13.down();
             if (var13.getY() >= MathHelper.floor(var5) - 1) {
                continue;
             }

@@ -65,7 +65,7 @@ public final class Class9126 implements DynamicMBean {
    }
 
    private long[] method34054() {
-      return this.field41932.field1238;
+      return this.field41932.tickTimeArray;
    }
 
    @Nullable

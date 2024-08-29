@@ -44,7 +44,7 @@ public class Class3358 extends Class3357 {
             var6.method3621(var7, var12);
          }
       } else {
-         var1.method6999(1001, var2, 0);
+         var1.playEvent(1001, var2, 0);
       }
    }
 }

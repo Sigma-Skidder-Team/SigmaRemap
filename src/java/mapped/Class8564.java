@@ -168,8 +168,8 @@ public class Class8564 {
 
    private static void method30601(AtlasTexture var0, ResourceLocation var1) {
       String var4 = method30589();
-      if (var4 != null && !var1.method8292().endsWith(var4)) {
-         ResourceLocation var5 = new ResourceLocation(var1.method8293(), var1.method8292() + var4);
+      if (var4 != null && !var1.getPath().endsWith(var4)) {
+         ResourceLocation var5 = new ResourceLocation(var1.getNamespace(), var1.getPath() + var4);
          ResourceLocation var6 = var0.method1096(var5);
          if (Class7944.method26866(var6)) {
             TextureAtlasSprite var7 = var0.method1119(var1);
@@ -209,7 +209,7 @@ public class Class8564 {
    }
 
    public static boolean method30606(ResourceLocation var0) {
-      return field38503 != null ? var0.method8292().endsWith(field38503) : false;
+      return field38503 != null ? var0.getPath().endsWith(field38503) : false;
    }
 
    public static void method30607(ResourceLocation var0, Class293 var1) {
@@ -217,11 +217,11 @@ public class Class8564 {
          var1.field1140 = false;
          var1.field1139 = null;
          if (field38503 != null) {
-            String var4 = var0.method8292();
+            String var4 = var0.getPath();
             if (var4.endsWith(".png")) {
                if (!var4.endsWith(field38503)) {
                   String var5 = var4.substring(0, var4.length() - ".png".length()) + field38503;
-                  ResourceLocation var6 = new ResourceLocation(var0.method8293(), var5);
+                  ResourceLocation var6 = new ResourceLocation(var0.getNamespace(), var5);
                   if (Class7944.method26866(var6)) {
                      var1.field1139 = var6;
                   }

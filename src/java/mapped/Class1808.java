@@ -125,7 +125,7 @@ public class Class1808 implements Class1809, AutoCloseable {
          }
 
          JSONException var9 = JSONException.method10464(var27);
-         var9.method10463(var5.method8292() + var8);
+         var9.method10463(var5.getPath() + var8);
          throw var9;
       } finally {
          IOUtils.closeQuietly(var6);

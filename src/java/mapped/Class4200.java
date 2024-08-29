@@ -71,7 +71,7 @@ public class Class4200 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 9, 8, 10, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 4, 3, 0);
       if (this.field20503) {

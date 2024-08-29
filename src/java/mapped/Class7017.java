@@ -15,7 +15,7 @@ public class Class7017 implements Class7016 {
             this.field30318 = 1200;
             ServerPlayerEntity var6 = var1.method6915();
             if (var6 != null) {
-               Random var7 = var1.field9016;
+               Random var7 = var1.rand;
                int var8 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
                int var9 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
                BlockPos var10 = var6.getPosition().method8336(var8, 0, var9);

@@ -51,7 +51,7 @@ public class Util {
    }
 
    public static String method38486(String var0, ResourceLocation var1) {
-      return var1 != null ? var0 + '.' + var1.method8293() + '.' + var1.method8292().replace('/', '.') : var0 + ".unregistered_sadface";
+      return var1 != null ? var0 + '.' + var1.getNamespace() + '.' + var1.getPath().replace('/', '.') : var0 + ".unregistered_sadface";
    }
 
    public static long milliTime() {
@@ -245,7 +245,7 @@ public class Util {
       return (T)var0.get();
    }
 
-   public static <T> T method38508(T var0, Consumer<T> var1) {
+   public static <T> T make(T var0, Consumer<T> var1) {
       var1.accept(var0);
       return (T)var0;
    }

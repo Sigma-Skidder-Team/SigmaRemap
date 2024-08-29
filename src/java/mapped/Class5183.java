@@ -93,7 +93,7 @@ public class Class5183 extends Module {
         double var13 = MathHelper.method37822(var8, var1.lastTickPosX, var1.getPosX());
         double var15 = MathHelper.method37822(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.method37822(var8, var1.lastTickPosZ, var1.getPosZ());
-        float var19 = MathHelper.method37821(var8, var1.prevRotationYaw, var1.rotationYaw);
+        float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
         mc.worldRenderer.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
     }
 

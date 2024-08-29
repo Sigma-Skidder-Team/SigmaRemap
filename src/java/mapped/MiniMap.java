@@ -90,11 +90,11 @@ public class MiniMap extends Module {
             }
 
             if (this.field23707 >= 1) {
-                List<Class1674> var4 = new ArrayList();
+                List<Chunk> var4 = new ArrayList();
 
                 for (int var5 = -this.field23715 / 2; var5 < this.field23715 / 2; var5++) {
                     for (int var6 = -this.field23715 / 2; var6 < this.field23715 / 2; var6++) {
-                        var4.add(mc.world.method6824(mc.player.chunkCoordX + var5, mc.player.chunkCoordZ + var6));
+                        var4.add(mc.world.getChunk(mc.player.chunkCoordX + var5, mc.player.chunkCoordZ + var6));
                     }
                 }
 
@@ -108,7 +108,7 @@ public class MiniMap extends Module {
                     }
                 }
 
-                for (Class1674 var15 : var4) {
+                for (Chunk var15 : var4) {
                     if (var15 == null) {
                         return;
                     }
@@ -218,11 +218,11 @@ public class MiniMap extends Module {
     }
 
     public ByteBuffer method16502(int var1) {
-        List<Class1674> var4 = new ArrayList();
+        List<Chunk> var4 = new ArrayList();
 
         for (int var5 = -this.field23715 / 2; var5 < this.field23715 / 2; var5++) {
             for (int var6 = -this.field23715 / 2; var6 < this.field23715 / 2; var6++) {
-                var4.add(mc.world.method6824(mc.player.chunkCoordX + var5, mc.player.chunkCoordZ + var6));
+                var4.add(mc.world.getChunk(mc.player.chunkCoordX + var5, mc.player.chunkCoordZ + var6));
             }
         }
 
@@ -230,7 +230,7 @@ public class MiniMap extends Module {
         int var17 = 0;
         int var7 = var16.position();
 
-        for (Class1674 var9 : var4) {
+        for (Chunk var9 : var4) {
             ByteBuffer var10 = BufferUtils.createByteBuffer(768);
             method16503(var10);
             Class8444 var11 = null;

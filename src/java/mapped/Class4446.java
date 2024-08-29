@@ -84,11 +84,11 @@ public class Class4446 implements Class4442 {
 
    private static Path method14038(Path var0, Block var1) {
       ResourceLocation var4 = Registry.BLOCK.getKey(var1);
-      return var0.resolve("assets/" + var4.method8293() + "/blockstates/" + var4.method8292() + ".json");
+      return var0.resolve("assets/" + var4.getNamespace() + "/blockstates/" + var4.getPath() + ".json");
    }
 
    private static Path method14039(Path var0, ResourceLocation var1) {
-      return var0.resolve("assets/" + var1.method8293() + "/models/" + var1.method8292() + ".json");
+      return var0.resolve("assets/" + var1.getNamespace() + "/models/" + var1.getPath() + ".json");
    }
 
    @Override

@@ -38,8 +38,8 @@ public final class Biome {
             )
             .apply(var0, (var0x, var1, var2, var3, var4) -> new Biome(var0x, var1, var2, var3, var4, Class7478.field32136, Class8835.field39899))
    );
-   public static final Codec<Supplier<Biome>> field40309 = Class9054.method33671(Registry.BIOME_KEY, field40307);
-   public static final Codec<List<Supplier<Biome>>> field40310 = Class9054.<Biome>method33672(Registry.BIOME_KEY, field40307);
+   public static final Codec<Supplier<Biome>> field40309 = RegistryKeyCodec.create(Registry.BIOME_KEY, field40307);
+   public static final Codec<List<Supplier<Biome>>> field40310 = RegistryKeyCodec.<Biome>method33672(Registry.BIOME_KEY, field40307);
    private final Map<Integer, List<Structure<?>>> field40311 = Registry.field16114
       .method9192()
       .collect(Collectors.<Structure<?>, Integer>groupingBy(var0 -> var0.method11364().ordinal()));
@@ -122,16 +122,16 @@ public final class Biome {
       } else {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.method7020(Class1977.field12882, var2) < 10) {
             BlockState var6 = var1.getBlockState(var2);
-            Class7379 var7 = var1.method6739(var2);
+            FluidState var7 = var1.getFluidState(var2);
             if (var7.method23472() == Class9479.field44066 && var6.getBlock() instanceof Class3404) {
                if (!var3) {
                   return true;
                }
 
-               boolean var8 = var1.method7013(var2.method8345())
-                  && var1.method7013(var2.method8347())
-                  && var1.method7013(var2.method8341())
-                  && var1.method7013(var2.method8343());
+               boolean var8 = var1.method7013(var2.west())
+                  && var1.method7013(var2.east())
+                  && var1.method7013(var2.north())
+                  && var1.method7013(var2.south());
                if (!var8) {
                   return true;
                }
@@ -161,7 +161,7 @@ public final class Biome {
       return this.field40316;
    }
 
-   public void method32508(Class7480 var1, Class5646 var2, Class1691 var3, long var4, Class2420 var6, BlockPos var7) {
+   public void method32508(Class7480 var1, ChunkGenerator var2, Class1691 var3, long var4, Class2420 var6, BlockPos var7) {
       List<List<Supplier<Class7909<?, ?>>>> var10 = this.field40316.method24281();
       int var11 = Class1993.values().length;
 
@@ -237,7 +237,7 @@ public final class Biome {
       return Class9441.method36292(var3, var5);
    }
 
-   public void method32514(Random var1, Class1670 var2, int var3, int var4, int var5, double var6, BlockState var8, BlockState var9, int var10, long var11) {
+   public void method32514(Random var1, IChunk var2, int var3, int var4, int var5, double var6, BlockState var8, BlockState var9, int var10, long var11) {
       Class9319 var15 = this.field40316.method24282().get();
       var15.method35210(var11);
       var15.method35209(var1, var2, this, var3, var4, var5, var6, var8, var9, var10, var11);

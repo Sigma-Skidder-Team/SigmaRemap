@@ -28,7 +28,7 @@ public class Class6809 {
       return this.field29638.method8998(var1, var2, var3, this.field29640);
    }
 
-   public VoxelShape method20747(Class7379 var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method20747(FluidState var1, Class1665 var2, BlockPos var3) {
       return !this.field29639.method8273(var1) ? VoxelShapes.method27425() : var1.method23489(var2, var3);
    }
 }

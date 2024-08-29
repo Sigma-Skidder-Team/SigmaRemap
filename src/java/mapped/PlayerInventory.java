@@ -281,7 +281,7 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    public void method4047(World var1, ItemStack var2) {
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          while (!var2.isEmpty()) {
             int var5 = this.method4043(var2);
             if (var5 == -1) {

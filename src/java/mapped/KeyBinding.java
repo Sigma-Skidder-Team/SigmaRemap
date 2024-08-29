@@ -13,7 +13,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
    private static final Map<String, KeyBinding> field13063 = Maps.newHashMap();
    private static final Map<Class8115, KeyBinding> field13064 = Maps.newHashMap();
    private static final Set<String> field13065 = Sets.newHashSet();
-   private static final Map<String, Integer> field13066 = Util.<Map<String, Integer>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, Integer> field13066 = Util.<Map<String, Integer>>make(Maps.newHashMap(), var0 -> {
       var0.put("key.categories.movement", 1);
       var0.put("key.categories.gameplay", 2);
       var0.put("key.categories.inventory", 3);

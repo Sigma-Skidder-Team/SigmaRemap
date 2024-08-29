@@ -19,7 +19,7 @@ public class Class3383 extends Class3381 {
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       for (Direction var11 : Direction.values()) {
-         var2.method6733(var3.method8349(var11), this);
+         var2.notifyNeighborsOfStateChange(var3.method8349(var11), this);
       }
    }
 
@@ -27,7 +27,7 @@ public class Class3383 extends Class3381 {
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var5) {
          for (Direction var11 : Direction.values()) {
-            var2.method6733(var3.method8349(var11), this);
+            var2.notifyNeighborsOfStateChange(var3.method8349(var11), this);
          }
       }
    }
@@ -38,7 +38,7 @@ public class Class3383 extends Class3381 {
    }
 
    public boolean method11981(World var1, BlockPos var2, BlockState var3) {
-      return var1.method6778(var2.method8313(), Direction.DOWN);
+      return var1.method6778(var2.down(), Direction.DOWN);
    }
 
    @Override
@@ -52,12 +52,12 @@ public class Class3383 extends Class3381 {
 
       if (!var1.<Boolean>method23463(field18987)) {
          if (!var7 && !method11982(var2, var3, false)) {
-            var2.method6725(var3, var1.method23465(field18987, Boolean.valueOf(true)), 3);
+            var2.setBlockState(var3, var1.method23465(field18987, Boolean.valueOf(true)), 3);
          }
       } else if (var7) {
-         var2.method6725(var3, var1.method23465(field18987, Boolean.valueOf(false)), 3);
+         var2.setBlockState(var3, var1.method23465(field18987, Boolean.valueOf(false)), 3);
          if (method11982(var2, var3, true)) {
-            var2.method6999(1502, var3, 0);
+            var2.playEvent(1502, var3, 0);
             var2.method6860().method20726(var3, var2.getBlockState(var3).getBlock(), 160);
          }
       }

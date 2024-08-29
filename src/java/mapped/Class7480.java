@@ -23,11 +23,11 @@ public class Class7480 {
 
    public Stream<? extends Class5444<?>> method24340(Class2002 var1, Structure<?> var2) {
       return this.field32171
-         .method7012(var1.method8410(), var1.method8412(), Class9176.field42135)
+         .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.field42135)
          .method7099(var2)
          .stream()
          .<Class2002>map(var0 -> Class2002.method8391(new Class7481(var0), 0))
-         .<Class5444<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.method7012(var2x.method8410(), var2x.method8412(), Class9176.field42134)))
+         .<Class5444<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.field42134)))
          .filter(var0 -> var0 != null && var0.method17117());
    }
 

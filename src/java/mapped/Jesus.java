@@ -48,7 +48,7 @@ public class Jesus extends Module {
                            var6 -= 0.8F;
                         }
 
-                        VoxelShape var7 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, (double)var6, 1.0);
+                        VoxelShape var7 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, (double)var6, 1.0);
                         var1.method13905(var7);
                      }
                   }

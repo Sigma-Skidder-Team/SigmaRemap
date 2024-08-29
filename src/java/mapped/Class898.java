@@ -17,7 +17,7 @@ public abstract class Class898 extends Class901 implements Class889 {
 
    public void method3526(ItemStack var1) {
       if (var1.getItem() != Items.field38046 || var1.method32141()) {
-         this.method3210().method35446(field5138, Util.<ItemStack>method38508(var1.copy(), var0 -> var0.method32180(1)));
+         this.method3210().method35446(field5138, Util.<ItemStack>make(var1.copy(), var0 -> var0.method32180(1)));
       }
    }
 

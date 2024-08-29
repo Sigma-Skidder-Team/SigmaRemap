@@ -13,17 +13,17 @@ public final class Class6222 extends Class6218 {
       double var9 = var6.method11321() + (double)((float)var5.method540() * 0.3F);
       double var11 = var6.method11322() + (double)((float)var5.method541() * 0.3F);
       ServerWorld var13 = var1.method11326();
-      Random var14 = var13.field9016;
+      Random var14 = var13.rand;
       double var15 = var14.nextGaussian() * 0.05 + (double)var5.method539();
       double var17 = var14.nextGaussian() * 0.05 + (double)var5.method540();
       double var19 = var14.nextGaussian() * 0.05 + (double)var5.method541();
-      var13.method6916(Util.method38508(new Class900(var13, var7, var9, var11, var15, var17, var19), var1x -> var1x.method3526(var2)));
+      var13.method6916(Util.make(new Class900(var13, var7, var9, var11, var15, var17, var19), var1x -> var1x.method3526(var2)));
       var2.method32182(1);
       return var2;
    }
 
    @Override
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(1018, var1.method11323(), 0);
+      var1.method11326().playEvent(1018, var1.method11323(), 0);
    }
 }

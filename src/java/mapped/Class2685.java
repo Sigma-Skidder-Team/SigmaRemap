@@ -28,13 +28,13 @@ public class Class2685 extends Class2595 {
       int var7 = MathHelper.floor(this.field17102.getPosZ() - 1.0 + var3.nextDouble() * 2.0);
       BlockPos var8 = new BlockPos(var5, var6, var7);
       BlockState var9 = var4.getBlockState(var8);
-      BlockPos var10 = var8.method8313();
+      BlockPos var10 = var8.down();
       BlockState var11 = var4.getBlockState(var10);
       BlockState var12 = this.field17102.method4357();
       if (var12 != null) {
          var12 = Block.method11542(var12, this.field17102.world, var8);
          if (this.method10901(var4, var8, var12, var9, var11, var10)) {
-            var4.method6725(var8, var12, 3);
+            var4.setBlockState(var8, var12, 3);
             this.field17102.method4356((BlockState)null);
          }
       }

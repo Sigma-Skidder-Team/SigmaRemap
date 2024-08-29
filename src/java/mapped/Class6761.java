@@ -113,7 +113,7 @@ public class Class6761 extends Class6762 {
       if (this.field29476.method3250()) {
          return (double)var1.getY() + 0.5;
       } else {
-         BlockPos var4 = var1.method8313();
+         BlockPos var4 = var1.down();
          VoxelShape var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
          return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
       }
@@ -209,7 +209,7 @@ public class Class6761 extends Class6762 {
    public Class2163 method20620(Class1665 var1, boolean var2, boolean var3, BlockPos var4, Class2163 var5) {
       if (var5 == Class2163.field14193
          && !(var1.getBlockState(var4).getBlock() instanceof Class3429)
-         && !(var1.getBlockState(var4.method8313()).getBlock() instanceof Class3429)) {
+         && !(var1.getBlockState(var4.down()).getBlock() instanceof Class3429)) {
          var5 = Class2163.field14194;
       }
 
@@ -238,7 +238,7 @@ public class Class6761 extends Class6762 {
                var8 = Class2163.field14185;
             }
 
-            if (var15 == Class2163.field14196 || var14.method23448(Blocks.field36890) || var14.method23446(Class7645.field32809)) {
+            if (var15 == Class2163.field14196 || var14.method23448(Blocks.field36890) || var14.method23446(BlockTags.field32809)) {
                var8 = Class2163.field14196;
             }
 

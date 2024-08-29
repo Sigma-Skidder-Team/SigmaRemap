@@ -11,7 +11,7 @@ public abstract class Class3350 extends Class3241 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          this.method11918(var2, var3, var4);
          return ActionResultType.field14819;
       } else {
@@ -43,7 +43,7 @@ public abstract class Class3350 extends Class3241 {
          if (var8 instanceof Class924) {
             Class7236.method22721(var2, var3, (Class924)var8);
             ((Class924)var8).method3657(var2, Vector3d.method11328(var3));
-            var2.method6806(var3, this);
+            var2.updateComparatorOutputLevel(var3, this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);

@@ -17,10 +17,10 @@ public class Class5474 implements Packet<Class5116> {
    public Class5474() {
    }
 
-   public Class5474(Class7522 var1, Class1864 var2) {
+   public Class5474(WorldBorder var1, Class1864 var2) {
       this.field24305 = var2;
-      this.field24307 = var1.method24534();
-      this.field24308 = var1.method24535();
+      this.field24307 = var1.getCenterX();
+      this.field24308 = var1.getCenterZ();
       this.field24310 = var1.method24537();
       this.field24309 = var1.method24539();
       this.field24311 = var1.method24538();
@@ -101,7 +101,7 @@ public class Class5474 implements Packet<Class5116> {
       var1.method15758(this);
    }
 
-   public void method17221(Class7522 var1) {
+   public void method17221(WorldBorder var1) {
       switch (Class6602.field29038[this.field24305.ordinal()]) {
          case 1:
             var1.method24540(this.field24309);

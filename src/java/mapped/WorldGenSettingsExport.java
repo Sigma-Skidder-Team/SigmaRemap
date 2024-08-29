@@ -21,11 +21,11 @@ public class WorldGenSettingsExport<T> extends Class6712<T> {
    public <E> DataResult<T> method20492(E var1, T var2, RegistryKey<? extends Registry<E>> var3, Codec<E> var4) {
       Optional var7 = this.field29419.method32452(var3);
       if (var7.isPresent()) {
-         Class2349 var8 = (Class2349)var7.get();
+         MutableRegistry var8 = (MutableRegistry)var7.get();
          Optional var9 = var8.method9182(var1);
          if (var9.isPresent()) {
             RegistryKey var10 = (RegistryKey)var9.get();
-            return ResourceLocation.field13020.encode(var10.method31399(), this.field29417, var2);
+            return ResourceLocation.CODEC.encode(var10.getLocation(), this.field29417, var2);
          }
       }
 

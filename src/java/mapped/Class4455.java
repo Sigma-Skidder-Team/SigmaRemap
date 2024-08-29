@@ -13,45 +13,45 @@ public class Class4455 extends Class4441<Item> {
 
    @Override
    public void method14010() {
-      this.method14089(Class7645.field32734, Class5985.field26070);
-      this.method14089(Class7645.field32735, Class5985.field26071);
-      this.method14089(Class7645.field32736, Class5985.field26072);
-      this.method14089(Class7645.field32737, Class5985.field26073);
-      this.method14089(Class7645.field32738, Class5985.field26074);
-      this.method14089(Class7645.field32739, Class5985.field26075);
-      this.method14089(Class7645.field32740, Class5985.field26076);
-      this.method14089(Class7645.field32741, Class5985.field26077);
-      this.method14089(Class7645.field32742, Class5985.field26078);
-      this.method14089(Class7645.field32743, Class5985.field26079);
-      this.method14089(Class7645.field32745, Class5985.field26080);
-      this.method14089(Class7645.field32748, Class5985.field26082);
-      this.method14089(Class7645.field32749, Class5985.field26083);
-      this.method14089(Class7645.field32753, Class5985.field26087);
-      this.method14089(Class7645.field32752, Class5985.field26086);
-      this.method14089(Class7645.field32754, Class5985.field26088);
-      this.method14089(Class7645.field32755, Class5985.field26089);
-      this.method14089(Class7645.field32757, Class5985.field26091);
-      this.method14089(Class7645.field32756, Class5985.field26090);
-      this.method14089(Class7645.field32758, Class5985.field26092);
-      this.method14089(Class7645.field32759, Class5985.field26093);
-      this.method14089(Class7645.field32750, Class5985.field26084);
-      this.method14089(Class7645.field32751, Class5985.field26085);
-      this.method14089(Class7645.field32761, Class5985.field26095);
-      this.method14089(Class7645.field32763, Class5985.field26097);
-      this.method14089(Class7645.field32764, Class5985.field26098);
-      this.method14089(Class7645.field32762, Class5985.field26096);
-      this.method14089(Class7645.field32765, Class5985.field26099);
-      this.method14089(Class7645.field32766, Class5985.field26100);
-      this.method14089(Class7645.field32767, Class5985.field26101);
-      this.method14089(Class7645.field32747, Class5985.field26081);
-      this.method14089(Class7645.field32768, Class5985.field26102);
-      this.method14089(Class7645.field32769, Class5985.field26103);
-      this.method14089(Class7645.field32770, Class5985.field26104);
-      this.method14089(Class7645.field32771, Class5985.field26105);
-      this.method14089(Class7645.field32772, Class5985.field26106);
-      this.method14089(Class7645.field32773, Class5985.field26107);
-      this.method14089(Class7645.field32775, Class5985.field26110);
-      this.method14089(Class7645.field32807, Class5985.field26112);
+      this.method14089(BlockTags.field32734, Class5985.field26070);
+      this.method14089(BlockTags.field32735, Class5985.field26071);
+      this.method14089(BlockTags.field32736, Class5985.field26072);
+      this.method14089(BlockTags.field32737, Class5985.field26073);
+      this.method14089(BlockTags.field32738, Class5985.field26074);
+      this.method14089(BlockTags.field32739, Class5985.field26075);
+      this.method14089(BlockTags.field32740, Class5985.field26076);
+      this.method14089(BlockTags.field32741, Class5985.field26077);
+      this.method14089(BlockTags.field32742, Class5985.field26078);
+      this.method14089(BlockTags.field32743, Class5985.field26079);
+      this.method14089(BlockTags.field32745, Class5985.field26080);
+      this.method14089(BlockTags.field32748, Class5985.field26082);
+      this.method14089(BlockTags.field32749, Class5985.field26083);
+      this.method14089(BlockTags.field32753, Class5985.field26087);
+      this.method14089(BlockTags.field32752, Class5985.field26086);
+      this.method14089(BlockTags.field32754, Class5985.field26088);
+      this.method14089(BlockTags.field32755, Class5985.field26089);
+      this.method14089(BlockTags.field32757, Class5985.field26091);
+      this.method14089(BlockTags.field32756, Class5985.field26090);
+      this.method14089(BlockTags.field32758, Class5985.field26092);
+      this.method14089(BlockTags.field32759, Class5985.field26093);
+      this.method14089(BlockTags.field32750, Class5985.field26084);
+      this.method14089(BlockTags.field32751, Class5985.field26085);
+      this.method14089(BlockTags.field32761, Class5985.field26095);
+      this.method14089(BlockTags.field32763, Class5985.field26097);
+      this.method14089(BlockTags.field32764, Class5985.field26098);
+      this.method14089(BlockTags.field32762, Class5985.field26096);
+      this.method14089(BlockTags.field32765, Class5985.field26099);
+      this.method14089(BlockTags.field32766, Class5985.field26100);
+      this.method14089(BlockTags.field32767, Class5985.field26101);
+      this.method14089(BlockTags.field32747, Class5985.field26081);
+      this.method14089(BlockTags.field32768, Class5985.field26102);
+      this.method14089(BlockTags.field32769, Class5985.field26103);
+      this.method14089(BlockTags.field32770, Class5985.field26104);
+      this.method14089(BlockTags.field32771, Class5985.field26105);
+      this.method14089(BlockTags.field32772, Class5985.field26106);
+      this.method14089(BlockTags.field32773, Class5985.field26107);
+      this.method14089(BlockTags.field32775, Class5985.field26110);
+      this.method14089(BlockTags.field32807, Class5985.field26112);
       this.method14014(Class5985.field26094)
          .method31560(
             Items.field38092,
@@ -75,7 +75,7 @@ public class Class4455 extends Class4441<Item> {
          .method31560(Items.field37889, Items.field38121, Items.field38122, Items.field38123, Items.field38124, Items.field38125);
       this.method14014(Class5985.field26114)
          .method31560(Items.field37909, Items.field37913, Items.field37910, Items.field37914, Items.field37912, Items.field37911);
-      this.method14089(Class7645.field32788, Class5985.field26115);
+      this.method14089(BlockTags.field32788, Class5985.field26115);
       this.method14014(Class5985.field26117)
          .method31560(
             Items.field38131,
@@ -165,7 +165,7 @@ public class Class4455 extends Class4441<Item> {
 
    @Override
    public Path method14011(ResourceLocation var1) {
-      return this.field21599.method33776().resolve("data/" + var1.method8293() + "/tags/items/" + var1.method8292() + ".json");
+      return this.field21599.method33776().resolve("data/" + var1.getNamespace() + "/tags/items/" + var1.getPath() + ".json");
    }
 
    @Override

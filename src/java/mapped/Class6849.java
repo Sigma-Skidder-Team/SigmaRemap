@@ -26,7 +26,7 @@ public class Class6849 implements ArgumentType<Class7329> {
       BlockPos var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23230((Class6619)var0.getSource());
       if (((Class6619)var0.getSource()).method20172().method7017(var4)) {
          ((Class6619)var0.getSource()).method20172();
-         if (ServerWorld.method6716(var4)) {
+         if (ServerWorld.isValid(var4)) {
             return var4;
          } else {
             throw field29742.create();

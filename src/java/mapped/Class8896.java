@@ -352,8 +352,8 @@ public class Class8896 {
             for (ResourceLocation var9 : Class8708.method31411()) {
                Class8507 var10 = Class8708.method31409(var9);
                if (var10 != null) {
-                  String var11 = var9.method8292().replace(" ", "").replace("_", "").toLowerCase();
-                  ResourceLocation var12 = new ResourceLocation(var9.method8293(), var11);
+                  String var11 = var9.getPath().replace(" ", "").replace("_", "").toLowerCase();
+                  ResourceLocation var12 = new ResourceLocation(var9.getNamespace(), var11);
                   field40261.put(var12, var10);
                }
             }

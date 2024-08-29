@@ -178,7 +178,7 @@ public class Class9422 {
    }
 
    private static List method36149(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
-      Block var7 = var0.getBlockState(var2.method8311()).getBlock();
+      Block var7 = var0.getBlockState(var2.up()).getBlock();
       boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
@@ -189,7 +189,7 @@ public class Class9422 {
             return field43706.method22619(var1, var3, field43715);
          }
       } else if (!var8) {
-         if (field43687 && method36154(var2.method8313(), var3, var0) == Blocks.MYCELIUM) {
+         if (field43687 && method36154(var2.down(), var3, var0) == Blocks.MYCELIUM) {
             return field43704.method22619(var1, var3, field43715);
          }
       } else if (field43690 && method36154(var2, var3, var0) == Blocks.SNOW) {
@@ -204,7 +204,7 @@ public class Class9422 {
          if (!Class7944.method26877()) {
             return field43702.method22619(var1, var3, field43715);
          } else {
-            return method36154(var2.method8313(), var3, var0) != Blocks.field36885 ? var4 : field43702.method22619(var1, var3, field43715);
+            return method36154(var2.down(), var3, var0) != Blocks.field36885 ? var4 : field43702.method22619(var1, var3, field43715);
          }
       } else {
          return var4;
@@ -224,7 +224,7 @@ public class Class9422 {
          }
       } else if (!var8) {
          if (field43688) {
-            BlockPos var9 = var2.method8313().method8349(var3);
+            BlockPos var9 = var2.down().method8349(var3);
             BlockState var10 = var0.getBlockState(var9);
             if (var10.getBlock() == Blocks.field36398) {
                return field43705.method22619(var1, var3, field43715);
@@ -245,7 +245,7 @@ public class Class9422 {
    }
 
    private static List method36153(Class1665 var0, BlockState var1, BlockPos var2, Direction var3, List var4) {
-      Block var7 = var0.getBlockState(var2.method8311()).getBlock();
+      Block var7 = var0.getBlockState(var2.up()).getBlock();
       boolean var8 = var7 == Blocks.SNOW_BLOCK || var7 == Blocks.SNOW;
       if (!Class7944.method26877()) {
          if (!var8) {
@@ -256,7 +256,7 @@ public class Class9422 {
             return field43706.method22619(var1, var3, field43715);
          }
       } else if (!var8) {
-         if (field43685 && method36154(var2.method8313(), var3, var0) == Blocks.field36395) {
+         if (field43685 && method36154(var2.down(), var3, var0) == Blocks.field36395) {
             return field43701.method22619(var1, var3, field43715);
          }
       } else if (field43689 && method36154(var2, var3, var0) == Blocks.SNOW) {

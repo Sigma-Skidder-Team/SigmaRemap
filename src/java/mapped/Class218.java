@@ -8,7 +8,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import java.io.IOException;
 
 public class Class218<T extends Class880 & Class1041, M extends Class2827<T> & Class2801> extends Class219<T, M> implements Class215 {
-   private static final Int2ObjectMap<ResourceLocation> field858 = Util.<Int2ObjectMap<ResourceLocation>>method38508(new Int2ObjectOpenHashMap(), var0 -> {
+   private static final Int2ObjectMap<ResourceLocation> field858 = Util.<Int2ObjectMap<ResourceLocation>>make(new Int2ObjectOpenHashMap(), var0 -> {
       var0.put(1, new ResourceLocation("stone"));
       var0.put(2, new ResourceLocation("iron"));
       var0.put(3, new ResourceLocation("gold"));
@@ -51,7 +51,7 @@ public class Class218<T extends Class880 & Class1041, M extends Class2827<T> & C
    }
 
    private ResourceLocation method818(String var1, ResourceLocation var2) {
-      return new ResourceLocation(var2.method8293(), "textures/entity/" + this.field862 + "/" + var1 + "/" + var2.method8292() + ".png");
+      return new ResourceLocation(var2.getNamespace(), "textures/entity/" + this.field862 + "/" + var1 + "/" + var2.getPath() + ".png");
    }
 
    public <K> Class1984 method819(Object2ObjectMap<K, Class1984> var1, String var2, Class2351<K> var3, K var4) {

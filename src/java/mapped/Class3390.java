@@ -45,7 +45,7 @@ public abstract class Class3390 {
          case 1:
             return !var1.method23456(var2, var3);
          case 2:
-            return var2.method6739(var3).method23486(Class8953.field40469);
+            return var2.getFluidState(var3).method23486(Class8953.field40469);
          case 3:
             return !var1.method23456(var2, var3);
          default:
@@ -110,7 +110,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return Class9479.field44064.method25049();
    }
 
@@ -149,7 +149,7 @@ public abstract class Class3390 {
       if (var5 != Class8793.field39533) {
          LootContext var6 = var2.method36454(Class9525.field44336, var1).method36460(Class8524.field38292);
          ServerWorld var7 = var6.method26090();
-         Class7318 var8 = var7.method6715().method1411().method1058(var5);
+         Class7318 var8 = var7.getServer().method1411().method1058(var5);
          return var8.method23182(var6);
       } else {
          return Collections.<ItemStack>emptyList();
@@ -270,7 +270,7 @@ public abstract class Class3390 {
    public final ResourceLocation method11999() {
       if (this.field19014 == null) {
          ResourceLocation var3 = Registry.BLOCK.getKey(this.method11584());
-         this.field19014 = new ResourceLocation(var3.method8293(), "blocks/" + var3.method8292());
+         this.field19014 = new ResourceLocation(var3.getNamespace(), "blocks/" + var3.getPath());
       }
 
       return this.field19014;

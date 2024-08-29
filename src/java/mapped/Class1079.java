@@ -89,7 +89,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    @Override
    public void method2871() {
       Vector3d var3 = this.method3433().method11347(1.0, 0.6, 1.0);
-      if (!this.world.field9020 && this.method5014(0) > 0) {
+      if (!this.world.isRemote && this.method5014(0) > 0) {
          Entity var4 = this.world.method6774(this.method5014(0));
          if (var4 != null) {
             double var5 = var3.field18049;
@@ -159,7 +159,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
                0.0,
                0.0
             );
-         if (var35 && this.world.field9016.nextInt(4) == 0) {
+         if (var35 && this.world.rand.nextInt(4) == 0) {
             this.world
                .method6746(
                   Class7940.field34068,
@@ -302,7 +302,7 @@ public class Class1079 extends Class1009 implements Class1080, Class1022 {
    }
 
    public static boolean method5002(BlockState var0) {
-      return !var0.isAir() && !Class7645.field32792.method24917(var0.getBlock());
+      return !var0.isAir() && !BlockTags.field32792.method24917(var0.getBlock());
    }
 
    public void method5003() {

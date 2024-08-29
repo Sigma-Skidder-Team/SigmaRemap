@@ -117,7 +117,7 @@ public class Class8576 {
          } else {
             BlockPos var7 = new BlockPos((double)var2, (double)var3, (double)var4);
             boolean var8 = var1.method6763(var7);
-            Optional var9 = var1.method6867().<Biome>method32453(Registry.BIOME_KEY).method9182(var1.getBiome(var7));
+            Optional var9 = var1.method6867().<Biome>getRegistry(Registry.BIOME_KEY).method9182(var1.getBiome(var7));
             if (!var9.isPresent()) {
                return false;
             } else if (this.field38563 == null || var8 && this.field38563 == var9.get()) {
@@ -157,7 +157,7 @@ public class Class8576 {
          }
 
          if (this.field38565 != null) {
-            World.field8998
+            World.CODEC
                .encodeStart(JsonOps.INSTANCE, this.field38565)
                .resultOrPartial(field38558::error)
                .ifPresent(var1 -> var3.add("dimension", var1));
@@ -168,7 +168,7 @@ public class Class8576 {
          }
 
          if (this.field38563 != null) {
-            var3.addProperty("biome", this.field38563.method31399().toString());
+            var3.addProperty("biome", this.field38563.getLocation().toString());
          }
 
          if (this.field38566 != null) {
@@ -191,16 +191,16 @@ public class Class8576 {
          Class8841 var7 = Class8841.method32025(var4.get("z"));
          RegistryKey var8 = !var3.has("dimension")
             ? null
-            : ResourceLocation.field13020
+            : ResourceLocation.CODEC
                .parse(JsonOps.INSTANCE, var3.get("dimension"))
                .resultOrPartial(field38558::error)
-               .<RegistryKey>map(var0x -> RegistryKey.<World>method31395(Registry.field16067, var0x))
+               .<RegistryKey>map(var0x -> RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var0x))
                .orElse((RegistryKey)null);
          Structure var9 = !var3.has("feature") ? null : (Structure) Structure.field_236365_a_.get(JSONUtils.method32763(var3, "feature"));
          RegistryKey var10 = null;
          if (var3.has("biome")) {
             ResourceLocation var11 = new ResourceLocation(JSONUtils.method32763(var3, "biome"));
-            var10 = RegistryKey.<Biome>method31395(Registry.BIOME_KEY, var11);
+            var10 = RegistryKey.<Biome>getOrCreateKey(Registry.BIOME_KEY, var11);
          }
 
          Boolean var15 = !var3.has("smokey") ? null : var3.get("smokey").getAsBoolean();

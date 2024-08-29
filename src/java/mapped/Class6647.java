@@ -26,7 +26,7 @@ public class Class6647 implements Class6646<Class6647> {
    }
 
    public ResourceLocation method20292() {
-      return new ResourceLocation(this.field29211.method8293(), "sounds/" + this.field29211.method8292() + ".ogg");
+      return new ResourceLocation(this.field29211.getNamespace(), "sounds/" + this.field29211.getPath() + ".ogg");
    }
 
    public float method20293() {

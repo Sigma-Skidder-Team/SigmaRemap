@@ -15,7 +15,7 @@ public abstract class Class6217 extends Class6218 {
 
    @Override
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(1002, var1.method11323(), 0);
+      var1.method11326().playEvent(1002, var1.method11323(), 0);
    }
 
    public abstract Class882 method19191(World var1, Class2955 var2, ItemStack var3);

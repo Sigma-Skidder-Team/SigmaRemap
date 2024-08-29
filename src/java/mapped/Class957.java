@@ -55,10 +55,10 @@ public class Class957 extends Class956 implements Class935 {
       boolean var4 = this.method3873();
       this.field5372++;
       if (!var4) {
-         if (!this.field5324.field9020) {
+         if (!this.field5324.isRemote) {
             List var5 = this.field5324.<Entity>method6772(Entity.class, new AxisAlignedBB(this.getPos()), Class957::method3871);
             if (!var5.isEmpty()) {
-               this.method3877((Entity)var5.get(this.field5324.field9016.nextInt(var5.size())));
+               this.method3877((Entity)var5.get(this.field5324.rand.nextInt(var5.size())));
             }
 
             if (this.field5372 % 2400L == 0L) {
@@ -106,7 +106,7 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    public void method3876() {
-      if (!this.field5324.field9020) {
+      if (!this.field5324.isRemote) {
          this.field5373 = 40;
          this.field5324.method6787(this.getPos(), this.method3775().getBlock(), 1, 0);
          this.method3622();
@@ -160,7 +160,7 @@ public class Class957 extends Class956 implements Class935 {
    private BlockPos method3878() {
       BlockPos var3 = method3880(this.field5324, this.field5374.method8336(0, 2, 0), 5, false);
       field5371.debug("Best exit position for portal at {} is {}", this.field5374, var3);
-      return var3.method8311();
+      return var3.up();
    }
 
    private void method3879(ServerWorld var1) {
@@ -176,14 +176,14 @@ public class Class957 extends Class956 implements Class935 {
       }
 
       field5371.debug("Found chunk at {}", var5);
-      Class1674 var8 = method3881(var1, var5);
+      Chunk var8 = method3881(var1, var5);
       this.field5374 = method3882(var8);
       if (this.field5374 != null) {
          field5371.debug("Found block at {}", this.field5374);
       } else {
          this.field5374 = new BlockPos(var5.field18048 + 0.5, 75.0, var5.field18050 + 0.5);
          field5371.debug("Failed to find suitable block, settling on {}", this.field5374);
-         Class9104.field41637.method26521(var1, var1.method6883().method7370(), new Random(this.field5374.method8332()), this.field5374);
+         Class9104.field41637.method26521(var1, var1.getChunkProvider().method7370(), new Random(this.field5374.method8332()), this.field5374);
       }
 
       this.field5374 = method3880(var1, this.field5374, 16, true);
@@ -214,12 +214,12 @@ public class Class957 extends Class956 implements Class935 {
       return var6 != null ? var6 : var1;
    }
 
-   private static Class1674 method3881(World var0, Vector3d var1) {
-      return var0.method6824(MathHelper.floor(var1.field18048 / 16.0), MathHelper.floor(var1.field18050 / 16.0));
+   private static Chunk method3881(World var0, Vector3d var1) {
+      return var0.getChunk(MathHelper.floor(var1.field18048 / 16.0), MathHelper.floor(var1.field18050 / 16.0));
    }
 
    @Nullable
-   private static BlockPos method3882(Class1674 var0) {
+   private static BlockPos method3882(Chunk var0) {
       Class7481 var3 = var0.method7072();
       BlockPos var4 = new BlockPos(var3.method24356(), 30, var3.method24357());
       int var5 = var0.method7065() + 16 - 1;
@@ -229,7 +229,7 @@ public class Class957 extends Class956 implements Class935 {
 
       for (BlockPos var11 : BlockPos.method8359(var4, var6)) {
          BlockState var12 = var0.getBlockState(var11);
-         BlockPos var13 = var11.method8311();
+         BlockPos var13 = var11.up();
          BlockPos var14 = var11.method8339(2);
          if (var12.method23448(Blocks.field36651) && !var0.getBlockState(var13).method23456(var0, var13) && !var0.getBlockState(var14).method23456(var0, var14)) {
             double var15 = var11.method8320(0.0, 0.0, 0.0, true);
@@ -244,7 +244,7 @@ public class Class957 extends Class956 implements Class935 {
    }
 
    private void method3883(ServerWorld var1, BlockPos var2) {
-      Class2898.field17964.method11216(Class4701.method14745(this.getPos(), false)).method26521(var1, var1.method6883().method7370(), new Random(), var2);
+      Class2898.field17964.method11216(Class4701.method14745(this.getPos(), false)).method26521(var1, var1.getChunkProvider().method7370(), new Random(), var2);
    }
 
    @Override

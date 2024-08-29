@@ -12,25 +12,26 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import java.awt.*;
+import java.awt.Dimension;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class Class2517 extends JComponent {
-   private static final Font field16651 = new Font("Monospaced", 0, 12);
-   private static final Logger field16652 = LogManager.getLogger();
-   private final Class1645 field16653;
+public class MinecraftServerGui extends JComponent {
+   private static final Font SERVER_GUI_FONT = new Font("Monospaced", 0, 12);
+   private static final Logger LOGGER = LogManager.getLogger();
+   private final DedicatedServer server;
    private Thread field16654;
    private final Collection<Runnable> field16655 = Lists.newArrayList();
    private final AtomicBoolean field16656 = new AtomicBoolean();
 
-   public static Class2517 method10550(Class1645 var0) {
+   public static MinecraftServerGui func_219048_a(DedicatedServer var0) {
       try {
          UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
       } catch (Exception var5) {
       }
 
       JFrame var3 = new JFrame("Minecraft server");
-      Class2517 var4 = new Class2517(var0);
+      MinecraftServerGui var4 = new MinecraftServerGui(var0);
       var3.setDefaultCloseOperation(2);
       var3.add(var4);
       var3.pack();
@@ -42,16 +43,16 @@ public class Class2517 extends JComponent {
       return var4;
    }
 
-   private Class2517(Class1645 var1) {
-      this.field16653 = var1;
+   private MinecraftServerGui(DedicatedServer serverIn) {
+      this.server = serverIn;
       this.setPreferredSize(new Dimension(854, 480));
       this.setLayout(new BorderLayout());
 
       try {
-         this.add(this.method10554(), "Center");
-         this.add(this.method10552(), "West");
+         this.add(this.getLogComponent(), "Center");
+         this.add(this.getStatsComponent(), "West");
       } catch (Exception var5) {
-         field16652.error("Couldn't build server GUI", var5);
+         LOGGER.error("Couldn't build server GUI", var5);
       }
    }
 
@@ -59,10 +60,10 @@ public class Class2517 extends JComponent {
       this.field16655.add(var1);
    }
 
-   private JComponent method10552() {
+   private JComponent getStatsComponent() {
       JPanel var3 = new JPanel(new BorderLayout());
-      Class2518 var4 = new Class2518(this.field16653);
-      this.field16655.add(var4::method10564);
+      StatsComponent var4 = new StatsComponent(this.server);
+      this.field16655.add(var4::func_219053_a);
       var3.add(var4, "North");
       var3.add(this.method10553(), "Center");
       var3.setBorder(new TitledBorder(new EtchedBorder(), "Stats"));
@@ -70,23 +71,23 @@ public class Class2517 extends JComponent {
    }
 
    private JComponent method10553() {
-      Class2514 var3 = new Class2514(this.field16653);
+      Class2514 var3 = new Class2514(this.server);
       JScrollPane var4 = new JScrollPane(var3, 22, 30);
       var4.setBorder(new TitledBorder(new EtchedBorder(), "Players"));
       return var4;
    }
 
-   private JComponent method10554() {
+   private JComponent getLogComponent() {
       JPanel var3 = new JPanel(new BorderLayout());
       JTextArea var4 = new JTextArea();
       JScrollPane var5 = new JScrollPane(var4, 22, 30);
       var4.setEditable(false);
-      var4.setFont(field16651);
+      var4.setFont(SERVER_GUI_FONT);
       JTextField var6 = new JTextField();
       var6.addActionListener(var2 -> {
          String var5x = var6.getText().trim();
          if (!var5x.isEmpty()) {
-            this.field16653.method6499(var5x, this.field16653.method1404());
+            this.server.method6499(var5x, this.server.method1404());
          }
 
          var6.setText("");
@@ -101,7 +102,7 @@ public class Class2517 extends JComponent {
             this.method10558(var4, var5, var5x);
          }
       });
-      this.field16654.setUncaughtExceptionHandler(new Class6030(field16652));
+      this.field16654.setUncaughtExceptionHandler(new Class6030(LOGGER));
       this.field16654.setDaemon(true);
       return var3;
    }
@@ -128,7 +129,7 @@ public class Class2517 extends JComponent {
          JScrollBar var7 = var2.getVerticalScrollBar();
          boolean var8 = false;
          if (var2.getViewport().getView() == var1) {
-            var8 = (double)var7.getValue() + var7.getSize().getHeight() + (double)(field16651.getSize() * 4) > (double)var7.getMaximum();
+            var8 = (double)var7.getValue() + var7.getSize().getHeight() + (double)(SERVER_GUI_FONT.getSize() * 4) > (double)var7.getMaximum();
          }
 
          try {
@@ -143,12 +144,12 @@ public class Class2517 extends JComponent {
    }
 
    // $VF: synthetic method
-   public static AtomicBoolean access$000(Class2517 var0) {
+   public static AtomicBoolean access$000(MinecraftServerGui var0) {
       return var0.field16656;
    }
 
    // $VF: synthetic method
-   public static void access$100(Class2517 var0) {
+   public static void access$100(MinecraftServerGui var0) {
       var0.method10557();
    }
 }

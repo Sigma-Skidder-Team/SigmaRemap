@@ -7,13 +7,13 @@ import java.io.File;
 import java.util.UUID;
 
 public final class Class8301 implements ProfileLookupCallback {
-   public final Class1645 field35688;
+   public final DedicatedServer field35688;
    public final File field35689;
    public final File field35690;
    public final File field35691;
    public final String[] field35692;
 
-   public Class8301(Class1645 var1, File var2, File var3, File var4, String[] var5) {
+   public Class8301(DedicatedServer var1, File var2, File var3, File var4, String[] var5) {
       this.field35688 = var1;
       this.field35689 = var2;
       this.field35690 = var3;

@@ -66,14 +66,14 @@ public class Class1044 extends Class1043 {
          }
 
          if (!this.method4742().isEmpty()) {
-            if (!this.world.field9020) {
+            if (!this.world.isRemote) {
                this.method4683(var1);
                this.method4872(var1, this.getDisplayName(), 1);
             }
 
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          } else {
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
       } else {
          return super.method4285(var1, var2);
@@ -174,7 +174,7 @@ public class Class1044 extends Class1043 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4757();
       }
    }

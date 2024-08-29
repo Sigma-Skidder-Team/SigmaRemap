@@ -71,7 +71,7 @@ public class Class6695 {
             if (var7 != null) {
                Class20 var8 = new Class20();
                var8.load(var7);
-               Class7944.method26810("CustomPanorama: " + var6.method8292());
+               Class7944.method26810("CustomPanorama: " + var6.getPath());
                var3[var4] = var8;
                var7.close();
             }

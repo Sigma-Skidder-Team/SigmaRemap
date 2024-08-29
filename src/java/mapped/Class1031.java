@@ -37,7 +37,7 @@ public abstract class Class1031 extends Class1025 {
    }
 
    public boolean method4594() {
-      return !this.world.field9020 ? this.field5734 > 0 : this.dataManager.<Byte>method35445(field5733) > 0;
+      return !this.world.isRemote ? this.field5734 > 0 : this.dataManager.<Byte>method35445(field5733) > 0;
    }
 
    public void method4595(Class2031 var1) {
@@ -46,7 +46,7 @@ public abstract class Class1031 extends Class1025 {
    }
 
    public Class2031 method4596() {
-      return this.world.field9020 ? Class2031.method8664(this.dataManager.<Byte>method35445(field5733)) : this.field5735;
+      return this.world.isRemote ? Class2031.method8664(this.dataManager.<Byte>method35445(field5733)) : this.field5735;
    }
 
    @Override
@@ -60,7 +60,7 @@ public abstract class Class1031 extends Class1025 {
    @Override
    public void tick() {
       super.tick();
-      if (this.world.field9020 && this.method4594()) {
+      if (this.world.isRemote && this.method4594()) {
          Class2031 var3 = this.method4596();
          double var4 = Class2031.method8666(var3)[0];
          double var6 = Class2031.method8666(var3)[1];

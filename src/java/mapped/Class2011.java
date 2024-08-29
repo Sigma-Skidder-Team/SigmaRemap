@@ -98,7 +98,7 @@ public class Class2011 extends Class2009 {
                   }
                }
 
-               Class7379 var37 = var20.method23449();
+               FluidState var37 = var20.method23449();
                Class7180 var23 = !Class9016.method33345() ? null : this.method8529(var19);
                if (!var37.method23474()) {
                   RenderType[] var24 = Class8066.method27757(this.field13078, var37, var15);

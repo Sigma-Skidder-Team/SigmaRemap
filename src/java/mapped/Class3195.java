@@ -22,7 +22,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    public BlockState method11495(Class5909 var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
       if (!var4.method23448(this)) {
-         Class7379 var5 = var1.method18360().method6739(var1.method18345());
+         FluidState var5 = var1.method18360().getFluidState(var1.method18345());
          boolean var6 = var5.method23472() == Class9479.field44066;
          return super.method11495(var1).method23465(field18473, Boolean.valueOf(var6));
       } else {
@@ -41,7 +41,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockPos var6 = var3.method8313();
+      BlockPos var6 = var3.down();
       return this.method11490(var2.getBlockState(var6), var2, var6);
    }
 
@@ -79,7 +79,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18473) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
@@ -100,7 +100,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      if (!method11496(var4) && var1.getBlockState(var3.method8313()).method23446(Class7645.field32783)) {
+      if (!method11496(var4) && var1.getBlockState(var3.down()).method23446(BlockTags.field32783)) {
          byte var7 = 5;
          byte var8 = 1;
          byte var9 = 2;
@@ -115,9 +115,9 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
                for (int var16 = var15 - 2; var16 < var15; var16++) {
                   BlockPos var17 = new BlockPos(var11 + var13, var16, var3.getZ() - var12 + var14);
                   if (var17 != var3 && var2.nextInt(6) == 0 && var1.getBlockState(var17).method23448(Blocks.WATER)) {
-                     BlockState var18 = var1.getBlockState(var17.method8313());
-                     if (var18.method23446(Class7645.field32783)) {
-                        var1.method6725(var17, Blocks.field37005.method11579().method23465(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
+                     BlockState var18 = var1.getBlockState(var17.down());
+                     if (var18.method23446(BlockTags.field32783)) {
+                        var1.setBlockState(var17, Blocks.field37005.method11579().method23465(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
                      }
                   }
                }
@@ -134,7 +134,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
             var10++;
          }
 
-         var1.method6725(var3, var4.method23465(field18472, Integer.valueOf(4)), 2);
+         var1.setBlockState(var3, var4.method23465(field18472, Integer.valueOf(4)), 2);
       }
    }
 

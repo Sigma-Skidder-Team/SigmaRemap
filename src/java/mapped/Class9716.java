@@ -52,7 +52,7 @@ public class Class9716 {
       if (var12 == 0) {
          VoxelShape var13 = var0.method23388(var1, var2, var3);
          VoxelShape var14 = var5.method23388(var1, var6, var3.method536());
-         boolean var15 = VoxelShapes.compare(var13, var14, IBooleanFunction.field44041);
+         boolean var15 = VoxelShapes.compare(var13, var14, IBooleanFunction.ONLY_FIRST);
          if (var11.size() > 400) {
             var11.removeLastByte();
          }

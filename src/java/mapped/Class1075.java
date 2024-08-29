@@ -57,7 +57,7 @@ public class Class1075 extends AbstractHorseEntity {
                   if (!var5.isEmpty()) {
                      if (var5.getItem() == Items.field37886 && !this.method4943()) {
                         this.openGUI(var1);
-                        return ActionResultType.method9002(this.world.field9020);
+                        return ActionResultType.method9002(this.world.isRemote);
                      }
 
                      ActionResultType var6 = var5.method32125(var1, this, var2);
@@ -67,13 +67,13 @@ public class Class1075 extends AbstractHorseEntity {
                   }
 
                   this.method4920(var1);
-                  return ActionResultType.method9002(this.world.field9020);
+                  return ActionResultType.method9002(this.world.isRemote);
                } else {
                   return super.method4285(var1, var2);
                }
             } else {
                this.openGUI(var1);
-               return ActionResultType.method9002(this.world.field9020);
+               return ActionResultType.method9002(this.world.isRemote);
             }
          } else {
             return super.method4285(var1, var2);

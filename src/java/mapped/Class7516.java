@@ -2,10 +2,10 @@ package mapped;
 
 public class Class7516 {
    private static String[] field32242;
-   private static final Class7680 field32243 = Util.<Class7680>method38508(new Class7680(0.2F, 1.0F, -0.7F), Class7680::method25280);
-   private static final Class7680 field32244 = Util.<Class7680>method38508(new Class7680(-0.2F, 1.0F, 0.7F), Class7680::method25280);
-   private static final Class7680 field32245 = Util.<Class7680>method38508(new Class7680(0.2F, 1.0F, -0.7F), Class7680::method25280);
-   private static final Class7680 field32246 = Util.<Class7680>method38508(new Class7680(-0.2F, -1.0F, 0.7F), Class7680::method25280);
+   private static final Class7680 field32243 = Util.<Class7680>make(new Class7680(0.2F, 1.0F, -0.7F), Class7680::method25280);
+   private static final Class7680 field32244 = Util.<Class7680>make(new Class7680(-0.2F, 1.0F, 0.7F), Class7680::method25280);
+   private static final Class7680 field32245 = Util.<Class7680>make(new Class7680(0.2F, 1.0F, -0.7F), Class7680::method25280);
+   private static final Class7680 field32246 = Util.<Class7680>make(new Class7680(-0.2F, -1.0F, 0.7F), Class7680::method25280);
 
    public static void method24498() {
       RenderSystem.method27820();

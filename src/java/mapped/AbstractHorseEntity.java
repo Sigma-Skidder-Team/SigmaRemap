@@ -238,7 +238,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4903() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4931(4, !this.field5890.method3618(0).isEmpty());
       }
    }
@@ -296,7 +296,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
       if (!var2.method23384().method31085()) {
-         BlockState var5 = this.world.getBlockState(var1.method8311());
+         BlockState var5 = this.world.getBlockState(var1.up());
          Class8447 var6 = var2.method23452();
          if (var5.method23448(Blocks.SNOW)) {
             var6 = var5.method23452();
@@ -345,7 +345,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void openGUI(PlayerEntity var1) {
-      if (!this.world.field9020 && (!this.isBeingRidden() || this.method3409(var1)) && this.method4932()) {
+      if (!this.world.isRemote && (!this.isBeingRidden() || this.method3409(var1)) && this.method4932()) {
          var1.method2768(this, this.field5890);
       }
    }
@@ -356,7 +356,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          var2.method32182(1);
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          return !var5 ? ActionResultType.field14820 : ActionResultType.field14818;
       } else {
          return ActionResultType.field14819;
@@ -378,7 +378,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                         var6 = 10.0F;
                         var7 = 240;
                         var8 = 10;
-                        if (!this.world.field9020 && this.method4932() && this.method4767() == 0 && !this.method4507()) {
+                        if (!this.world.isRemote && this.method4932() && this.method4767() == 0 && !this.method4507()) {
                            var5 = true;
                            this.method4503(var1);
                         }
@@ -387,7 +387,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                      var6 = 4.0F;
                      var7 = 60;
                      var8 = 5;
-                     if (!this.world.field9020 && this.method4932() && this.method4767() == 0 && !this.method4507()) {
+                     if (!this.world.isRemote && this.method4932() && this.method4767() == 0 && !this.method4507()) {
                         var5 = true;
                         this.method4503(var1);
                      }
@@ -419,7 +419,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
       if (this.method3005() && var7 > 0) {
          this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4769(var7);
          }
 
@@ -428,7 +428,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
       if (var8 > 0 && (var5 || !this.method4932()) && this.method4944() < this.method4907()) {
          var5 = true;
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4946(var8);
          }
       }
@@ -443,7 +443,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4920(PlayerEntity var1) {
       this.method4956(false);
       this.method4957(false);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          var1.rotationYaw = this.rotationYaw;
          var1.rotationPitch = this.rotationPitch;
          var1.method3311(this);
@@ -484,7 +484,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       super.method2871();
-      if (!this.world.field9020 && this.method3066()) {
+      if (!this.world.isRemote && this.method3066()) {
          if (this.rand.nextInt(900) == 0 && this.field4955 == 0) {
             this.method3041(1.0F);
          }
@@ -493,7 +493,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (!this.method4938()
                && !this.isBeingRidden()
                && this.rand.nextInt(300) == 0
-               && this.world.getBlockState(this.getPosition().method8313()).method23448(Blocks.field36395)) {
+               && this.world.getBlockState(this.getPosition().down()).method23448(Blocks.field36395)) {
                this.method4956(true);
             }
 
@@ -591,7 +591,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    private void method4955() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.field5885 = 1;
          this.method4931(64, true);
       }
@@ -784,15 +784,15 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public float method4963(float var1) {
-      return MathHelper.method37821(var1, this.field5895, this.field5894);
+      return MathHelper.lerp(var1, this.field5895, this.field5894);
    }
 
    public float method4964(float var1) {
-      return MathHelper.method37821(var1, this.field5897, this.field5896);
+      return MathHelper.lerp(var1, this.field5897, this.field5896);
    }
 
    public float method4965(float var1) {
-      return MathHelper.method37821(var1, this.field5899, this.field5898);
+      return MathHelper.lerp(var1, this.field5899, this.field5898);
    }
 
    @Override

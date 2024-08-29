@@ -45,7 +45,7 @@ public abstract class Class1006 extends Class880 {
       this.field5603 = new Class9363(this);
       Arrays.fill(this.field5607, 0.085F);
       Arrays.fill(this.field5605, 0.085F);
-      if (var2 != null && !var2.field9020) {
+      if (var2 != null && !var2.isRemote) {
          this.method4219();
       }
    }
@@ -161,13 +161,13 @@ public abstract class Class1006 extends Class880 {
    @Override
    public void method3000() {
       super.method3000();
-      this.world.method6820().startSection("mobBaseTick");
+      this.world.getProfiler().startSection("mobBaseTick");
       if (this.method3066() && this.rand.nextInt(1000) < this.field5593++) {
          this.method4238();
          this.method4237();
       }
 
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
    }
 
    @Override
@@ -204,7 +204,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    public void method4239() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.world.method6786(this, (byte)20);
       } else {
          for (int var3 = 0; var3 < 20; var3++) {
@@ -241,7 +241,7 @@ public abstract class Class1006 extends Class880 {
          this.method4313();
       } else {
          super.tick();
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4293();
             if (this.ticksExisted % 5 == 0) {
                this.method4240();
@@ -440,13 +440,13 @@ public abstract class Class1006 extends Class880 {
    @Override
    public void method2871() {
       super.method2871();
-      this.world.method6820().startSection("looting");
+      this.world.getProfiler().startSection("looting");
       boolean var3 = this.world.method6789().method17135(Class5462.field24224);
       if (Class9299.field42847.method20214()) {
          var3 = Class9299.method35056(Class9299.field42847, this.world, this);
       }
 
-      if (!this.world.field9020 && this.method4280() && this.method3066() && !this.field4972 && var3) {
+      if (!this.world.isRemote && this.method4280() && this.method3066() && !this.field4972 && var3) {
          for (ItemEntity var5 : this.world.<ItemEntity>method7182(ItemEntity.class, this.getBoundingBox().method19663(1.0, 0.0, 1.0))) {
             if (!var5.removed && !var5.method4124().isEmpty() && !var5.method4135() && this.method4253(var5.method4124())) {
                this.method4246(var5);
@@ -454,7 +454,7 @@ public abstract class Class1006 extends Class880 {
          }
       }
 
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
    }
 
    public void method4246(ItemEntity var1) {
@@ -626,30 +626,30 @@ public abstract class Class1006 extends Class880 {
    @Override
    public final void updateEntityActionState() {
       this.field4973++;
-      this.world.method6820().startSection("sensing");
+      this.world.getProfiler().startSection("sensing");
       this.field5603.method35459();
-      this.world.method6820().endSection();
-      this.world.method6820().startSection("targetSelector");
+      this.world.getProfiler().endSection();
+      this.world.getProfiler().startSection("targetSelector");
       this.field5601.method20004();
-      this.world.method6820().endSection();
-      this.world.method6820().startSection("goalSelector");
+      this.world.getProfiler().endSection();
+      this.world.getProfiler().startSection("goalSelector");
       this.field5600.method20004();
-      this.world.method6820().endSection();
-      this.world.method6820().startSection("navigation");
+      this.world.getProfiler().endSection();
+      this.world.getProfiler().startSection("navigation");
       this.field5599.method21658();
-      this.world.method6820().endSection();
-      this.world.method6820().startSection("mob tick");
+      this.world.getProfiler().endSection();
+      this.world.getProfiler().startSection("mob tick");
       this.method4258();
-      this.world.method6820().endSection();
-      this.world.method6820().startSection("controls");
-      this.world.method6820().startSection("move");
+      this.world.getProfiler().endSection();
+      this.world.getProfiler().startSection("controls");
+      this.world.getProfiler().startSection("move");
       this.field5596.method20810();
-      this.world.method6820().endStartSection("look");
+      this.world.getProfiler().endStartSection("look");
       this.field5595.method28037();
-      this.world.method6820().endStartSection("jump");
+      this.world.getProfiler().endStartSection("jump");
       this.field5597.method27048();
-      this.world.method6820().endSection();
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
+      this.world.getProfiler().endSection();
       this.method4257();
    }
 
@@ -704,7 +704,7 @@ public abstract class Class1006 extends Class880 {
    }
 
    public static boolean method4264(EntityType<? extends Class1006> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      BlockPos var7 = var3.method8313();
+      BlockPos var7 = var3.down();
       return var2 == Class2202.field14393 || var1.getBlockState(var7).method23385(var1, var7, var0);
    }
 
@@ -1012,7 +1012,7 @@ public abstract class Class1006 extends Class880 {
             }
          } else {
             this.method4294(true, !var1.abilities.isCreativeMode);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
       } else {
          return ActionResultType.field14820;
@@ -1024,7 +1024,7 @@ public abstract class Class1006 extends Class880 {
       if (var5.getItem() == Items.LEAD && this.method4295(var1)) {
          this.method4298(var1, true);
          var5.method32182(1);
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          if (var5.getItem() == Items.field38088) {
             ActionResultType var6 = var5.method32125(var1, this, var2);
@@ -1141,12 +1141,12 @@ public abstract class Class1006 extends Class880 {
 
          this.field5613 = null;
          this.field5615 = null;
-         if (!this.world.field9020 && var2) {
+         if (!this.world.isRemote && var2) {
             this.method3300(Items.LEAD);
          }
 
-         if (!this.world.field9020 && var1 && this.world instanceof ServerWorld) {
-            ((ServerWorld)this.world).method6883().method7380(this, new Class5593(this, (Entity)null));
+         if (!this.world.isRemote && var1 && this.world instanceof ServerWorld) {
+            ((ServerWorld)this.world).getChunkProvider().method7380(this, new Class5593(this, (Entity)null));
          }
       }
    }
@@ -1161,7 +1161,7 @@ public abstract class Class1006 extends Class880 {
 
    @Nullable
    public Entity method4297() {
-      if (this.field5613 == null && this.field5614 != 0 && this.world.field9020) {
+      if (this.field5613 == null && this.field5614 != 0 && this.world.isRemote) {
          this.field5613 = this.world.method6774(this.field5614);
       }
 
@@ -1176,8 +1176,8 @@ public abstract class Class1006 extends Class880 {
          this.field5613.forceSpawn = true;
       }
 
-      if (!this.world.field9020 && var2 && this.world instanceof ServerWorld) {
-         ((ServerWorld)this.world).method6883().method7380(this, new Class5593(this, this.field5613));
+      if (!this.world.isRemote && var2 && this.world instanceof ServerWorld) {
+         ((ServerWorld)this.world).getChunkProvider().method7380(this, new Class5593(this, this.field5613));
       }
 
       if (this.isPassenger()) {
@@ -1365,11 +1365,11 @@ public abstract class Class1006 extends Class880 {
    }
 
    public boolean method4310() {
-      if (this.world.method6740() && !this.world.field9020) {
+      if (this.world.method6740() && !this.world.isRemote) {
          float var3 = this.method3267();
          BlockPos var4 = !(this.getRidingEntity() instanceof BoatEntity)
             ? new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ())
-            : new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ()).method8311();
+            : new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ()).up();
          if (var3 > 0.5F && this.rand.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F && this.world.method7022(var4)) {
             return true;
          }

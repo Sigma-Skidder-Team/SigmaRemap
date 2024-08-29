@@ -41,7 +41,7 @@ public class Class3725 extends Class3676<Class1042> {
             for (int var10 = -1; var10 <= 1; var10++) {
                var5.method8378(var2.getPosition(), var8, var9, var10);
                if (this.method12626(var5, var1)) {
-                  if (var1.field9016.nextInt(++var7) == 0) {
+                  if (var1.rand.nextInt(++var7) == 0) {
                      var6 = Optional.<BlockPos>of(var5.method8353());
                   }
                }
@@ -94,7 +94,7 @@ public class Class3725 extends Class3676<Class1042> {
          }
 
          if (!var8.isEmpty() && Class3336.method11883(var8, var1, var7)) {
-            var1.method6999(2005, var7, 0);
+            var1.playEvent(2005, var7, 0);
             this.field19818 = this.method12625(var1, var2);
             this.method12627(var2);
             this.field19815 = var3 + 40L;

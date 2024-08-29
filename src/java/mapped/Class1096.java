@@ -60,7 +60,7 @@ public class Class1096 extends Class1018 implements Class1011 {
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44131))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44171))
          ? method4500(var0, var1, var2, var3, var4)
-         : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.method8313()).method23448(Blocks.ICE);
+         : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.down()).method23448(Blocks.ICE);
    }
 
    @Override
@@ -136,7 +136,7 @@ public class Class1096 extends Class1018 implements Class1011 {
    @Override
    public void tick() {
       super.tick();
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          if (this.field6012 != this.field6011) {
             this.method3385();
          }
@@ -153,7 +153,7 @@ public class Class1096 extends Class1018 implements Class1011 {
          this.field6013--;
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4366((ServerWorld)this.world, true);
       }
    }
@@ -188,7 +188,7 @@ public class Class1096 extends Class1018 implements Class1011 {
    }
 
    public float method5185(float var1) {
-      return MathHelper.method37821(var1, this.field6011, this.field6012) / 6.0F;
+      return MathHelper.lerp(var1, this.field6011, this.field6012) / 6.0F;
    }
 
    @Override

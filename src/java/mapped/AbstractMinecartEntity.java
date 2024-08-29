@@ -21,7 +21,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       Pose.STANDING, ImmutableList.of(0, 1, -1), Pose.field13624, ImmutableList.of(0, 1, -1), Pose.field13622, ImmutableList.of(0, 1)
    );
    private boolean field5220;
-   private static final Map<Class96, Pair<Class1998, Class1998>> field5221 = Util.<Map<Class96, Pair<Class1998, Class1998>>>method38508(
+   private static final Map<Class96, Pair<Class1998, Class1998>> field5221 = Util.<Map<Class96, Pair<Class1998, Class1998>>>make(
       Maps.newEnumMap(Class96.class), var0 -> {
          Class1998 var3 = Direction.WEST.method556();
          Class1998 var4 = Direction.EAST.method556();
@@ -101,7 +101,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       this.dataManager.register(field5213, 0);
       this.dataManager.register(field5214, 1);
       this.dataManager.register(field5215, 0.0F);
-      this.dataManager.register(field5216, Block.method11535(Blocks.AIR.method11579()));
+      this.dataManager.register(field5216, Block.getStateId(Blocks.AIR.method11579()));
       this.dataManager.register(field5217, 6);
       this.dataManager.register(field5218, false);
    }
@@ -150,7 +150,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                for (int[] var20 : var5) {
                   var7.method8372(var6.getX() + var20[0], var6.getY() + var16, var6.getZ() + var20[1]);
                   double var21 = this.world
-                     .method7038(Class4527.method14426(this.world, var7), () -> Class4527.method14426(this.world, var7.method8313()));
+                     .method7038(Class4527.method14426(this.world, var7), () -> Class4527.method14426(this.world, var7.down()));
                   if (Class4527.method14423(var21)) {
                      AxisAlignedBB var23 = new AxisAlignedBB((double)(-var14), 0.0, (double)(-var14), (double)var14, (double)var12.field39969, (double)var14);
                      Vector3d var24 = Vector3d.method11331(var7, var21);
@@ -184,7 +184,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    @Override
    public boolean method2741(Class8654 var1, float var2) {
-      if (this.world.field9020 || this.removed) {
+      if (this.world.isRemote || this.removed) {
          return true;
       } else if (this.method2760(var1)) {
          return false;
@@ -210,7 +210,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public float method2977() {
       BlockState var3 = this.world.getBlockState(this.getPosition());
-      return !var3.method23446(Class7645.field32766) ? super.method2977() : 1.0F;
+      return !var3.method23446(BlockTags.field32766) ? super.method2977() : 1.0F;
    }
 
    public void method3586(Class8654 var1) {
@@ -261,7 +261,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       }
 
       this.method3324();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (!this.method3247()) {
             this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
          }
@@ -269,7 +269,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY());
          int var5 = MathHelper.floor(this.getPosZ());
-         if (this.world.getBlockState(new BlockPos(var3, var4 - 1, var5)).method23446(Class7645.field32766)) {
+         if (this.world.getBlockState(new BlockPos(var3, var4 - 1, var5)).method23446(BlockTags.field32766)) {
             var4--;
          }
 
@@ -511,9 +511,9 @@ public abstract class AbstractMinecartEntity extends Entity {
             double var63 = var62.field18048;
             double var65 = var62.field18050;
             if (var18 == Class96.field248) {
-               if (this.method3592(var1.method8345())) {
+               if (this.method3592(var1.west())) {
                   var63 = 0.02;
-               } else if (this.method3592(var1.method8347())) {
+               } else if (this.method3592(var1.east())) {
                   var63 = -0.02;
                }
             } else {
@@ -521,9 +521,9 @@ public abstract class AbstractMinecartEntity extends Entity {
                   return;
                }
 
-               if (this.method3592(var1.method8341())) {
+               if (this.method3592(var1.north())) {
                   var65 = 0.02;
-               } else if (this.method3592(var1.method8343())) {
+               } else if (this.method3592(var1.south())) {
                   var65 = -0.02;
                }
             }
@@ -547,7 +547,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       int var11 = MathHelper.floor(var1);
       int var12 = MathHelper.floor(var3);
       int var13 = MathHelper.floor(var5);
-      if (this.world.getBlockState(new BlockPos(var11, var12 - 1, var13)).method23446(Class7645.field32766)) {
+      if (this.world.getBlockState(new BlockPos(var11, var12 - 1, var13)).method23446(BlockTags.field32766)) {
          var12--;
       }
 
@@ -588,7 +588,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       int var9 = MathHelper.floor(var1);
       int var10 = MathHelper.floor(var3);
       int var11 = MathHelper.floor(var5);
-      if (this.world.getBlockState(new BlockPos(var9, var10 - 1, var11)).method23446(Class7645.field32766)) {
+      if (this.world.getBlockState(new BlockPos(var9, var10 - 1, var11)).method23446(BlockTags.field32766)) {
          var10--;
       }
 
@@ -662,7 +662,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    @Override
    public void method3101(Entity var1) {
-      if (!this.world.field9020 && !var1.noClip && !this.noClip && !this.method3409(var1)) {
+      if (!this.world.isRemote && !var1.noClip && !this.noClip && !this.method3409(var1)) {
          double var4 = var1.getPosX() - this.getPosX();
          double var6 = var1.getPosZ() - this.getPosZ();
          double var8 = var4 * var4 + var6 * var6;
@@ -786,7 +786,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    }
 
    public void method3607(BlockState var1) {
-      this.method3210().method35446(field5216, Block.method11535(var1));
+      this.method3210().method35446(field5216, Block.getStateId(var1));
       this.method3610(true);
    }
 

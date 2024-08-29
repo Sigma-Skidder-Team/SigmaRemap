@@ -9,10 +9,10 @@ public class Class2927 extends Class2898<Class4709> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4709 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4709 var5) {
       Block var8 = var5.field22337.getBlock();
       BlockPos var9 = null;
-      Block var10 = var1.getBlockState(var4.method8313()).getBlock();
+      Block var10 = var1.getBlockState(var4.down()).getBlock();
       if (var10 == var8) {
          var9 = var4;
       }
@@ -33,7 +33,7 @@ public class Class2927 extends Class2898<Class4709> {
          }
 
          boolean var13 = !var5.field22341 && var3.nextFloat() < 0.06F;
-         var1.method6725(var4, Blocks.AIR.method11579(), 4);
+         var1.setBlockState(var4, Blocks.AIR.method11579(), 4);
          this.method11258(var1, var3, var5, var9, var11, var13);
          this.method11259(var1, var3, var5, var9, var11, var13);
          return true;
@@ -66,11 +66,11 @@ public class Class2927 extends Class2898<Class4709> {
                         this.method11217(var1, var9, var10);
                      }
                   } else {
-                     if (!var1.getBlockState(var9.method8313()).isAir()) {
+                     if (!var1.getBlockState(var9.down()).isAir()) {
                         var1.method7179(var9, true);
                      }
 
-                     var1.method6725(var9, var10, 3);
+                     var1.setBlockState(var9, var10, 3);
                   }
                }
             }
@@ -103,7 +103,7 @@ public class Class2927 extends Class2898<Class4709> {
                boolean var21 = var13 < var12 + 3;
                var9.method8378(var4, var15, var13, var16);
                if (method11257(var1, var9, false)) {
-                  if (var3.field22341 && !var1.getBlockState(var9.method8313()).isAir()) {
+                  if (var3.field22341 && !var1.getBlockState(var9.down()).isAir()) {
                      var1.method7179(var9, true);
                   }
 
@@ -140,7 +140,7 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    private void method11261(Class1660 var1, Random var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.getBlockState(var3.method8313()).method23448(var4.getBlock())) {
+      if (!var1.getBlockState(var3.down()).method23448(var4.getBlock())) {
          if ((double)var2.nextFloat() < 0.15) {
             this.method11217(var1, var3, var4);
             if (var5 && var2.nextInt(11) == 0) {

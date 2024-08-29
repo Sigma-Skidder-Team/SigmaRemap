@@ -24,7 +24,7 @@ public class Class5526 implements Packet<Class5116> {
    public Class5526() {
    }
 
-   public Class5526(Class1674 var1, int var2) {
+   public Class5526(Chunk var1, int var2) {
       Class7481 var5 = var1.method7072();
       this.field24514 = var5.field32174;
       this.field24515 = var5.field32175;
@@ -120,14 +120,14 @@ public class Class5526 implements Packet<Class5116> {
       return var3;
    }
 
-   public int method17376(PacketBuffer var1, Class1674 var2, int var3) {
+   public int method17376(PacketBuffer var1, Chunk var2, int var3) {
       int var6 = 0;
       Class7038[] var7 = var2.method7067();
       int var8 = 0;
 
       for (int var9 = var7.length; var8 < var9; var8++) {
          Class7038 var10 = var7[var8];
-         if (var10 != Class1674.field9111 && (!this.method17381() || !var10.method21858()) && (var3 & 1 << var8) != 0) {
+         if (var10 != Chunk.field9111 && (!this.method17381() || !var10.method21858()) && (var3 & 1 << var8) != 0) {
             var6 |= 1 << var8;
             var10.method21867(var1);
          }
@@ -136,14 +136,14 @@ public class Class5526 implements Packet<Class5116> {
       return var6;
    }
 
-   public int method17377(Class1674 var1, int var2) {
+   public int method17377(Chunk var1, int var2) {
       int var5 = 0;
       Class7038[] var6 = var1.method7067();
       int var7 = 0;
 
       for (int var8 = var6.length; var7 < var8; var7++) {
          Class7038 var9 = var6[var7];
-         if (var9 != Class1674.field9111 && (!this.method17381() || !var9.method21858()) && (var2 & 1 << var7) != 0) {
+         if (var9 != Chunk.field9111 && (!this.method17381() || !var9.method21858()) && (var2 & 1 << var7) != 0) {
             var5 += var9.method21868();
          }
       }

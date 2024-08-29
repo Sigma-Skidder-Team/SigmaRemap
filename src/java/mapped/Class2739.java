@@ -14,8 +14,8 @@ public class Class2739 extends Class2736 {
    @Nullable
    @Override
    public Vector3d method10943() {
-      float var3 = this.field17258.world.field9016.nextFloat();
-      if (!(this.field17258.world.field9016.nextFloat() < 0.3F)) {
+      float var3 = this.field17258.world.rand.nextFloat();
+      if (!(this.field17258.world.rand.nextFloat() < 0.3F)) {
          Vector3d var4;
          if (!(var3 < 0.7F)) {
             var4 = this.method10949();
@@ -45,7 +45,7 @@ public class Class2739 extends Class2736 {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
       List var4 = var3.<Class1042>method6771(EntityType.field41098, this.field17258.getBoundingBox().method19664(32.0), this::method10952);
       if (!var4.isEmpty()) {
-         Class1042 var5 = (Class1042)var4.get(this.field17258.world.field9016.nextInt(var4.size()));
+         Class1042 var5 = (Class1042)var4.get(this.field17258.world.rand.nextInt(var4.size()));
          Vector3d var6 = var5.getPositionVec();
          return Class8037.method27586(this.field17258, 10, 7, var6);
       } else {
@@ -68,7 +68,7 @@ public class Class2739 extends Class2736 {
    private Class2002 method10950() {
       ServerWorld var3 = (ServerWorld)this.field17258.world;
       List var4 = Class2002.method8427(Class2002.method8392(this.field17258), 2).filter(var1 -> var3.method6955(var1) == 0).collect(Collectors.toList());
-      return !var4.isEmpty() ? (Class2002)var4.get(var3.field9016.nextInt(var4.size())) : null;
+      return !var4.isEmpty() ? (Class2002)var4.get(var3.rand.nextInt(var4.size())) : null;
    }
 
    @Nullable
@@ -76,7 +76,7 @@ public class Class2739 extends Class2736 {
       ServerWorld var4 = (ServerWorld)this.field17258.world;
       Class1653 var5 = var4.method6951();
       List var6 = var5.method6666(var0 -> true, var1.method8422(), 8, Class2093.field13636).<BlockPos>map(Class9343::method35355).collect(Collectors.toList());
-      return !var6.isEmpty() ? (BlockPos)var6.get(var4.field9016.nextInt(var6.size())) : null;
+      return !var6.isEmpty() ? (BlockPos)var6.get(var4.rand.nextInt(var6.size())) : null;
    }
 
    private boolean method10952(Class1042 var1) {

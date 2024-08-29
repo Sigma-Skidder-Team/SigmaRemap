@@ -22,7 +22,7 @@ public class Class913 extends Class911 {
    @Override
    public void method3568() {
       BlockState var3 = this.field5203.field5324.getBlockState(this.field5203.field5325);
-      this.method3567().method6731(this.field5203.field5325, var3, var3, 3);
+      this.method3567().notifyBlockUpdate(this.field5203.field5325, var3, var3, 3);
    }
 
    @Override
@@ -40,7 +40,7 @@ public class Class913 extends Class911 {
          2,
          this.method3565().getString(),
          this.method3565(),
-         this.method3567().method6715(),
+         this.method3567().getServer(),
          (Entity)null
       );
    }

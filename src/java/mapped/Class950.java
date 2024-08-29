@@ -54,7 +54,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
          BlockState var10 = this.field5324.getBlockState(var6);
          Block var11 = var10.getBlock();
          if (!(var11 instanceof Class3235)) {
-            if (var7 == null || var10.method23387(this.field5324, var6) >= 15 && var11 != Blocks.BEDROCK) {
+            if (var7 == null || var10.getOpacity(this.field5324, var6) >= 15 && var11 != Blocks.BEDROCK) {
                this.field5341.clear();
                this.field5343 = var8;
                break;
@@ -84,7 +84,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
             }
          }
 
-         var6 = var6.method8311();
+         var6 = var6.up();
          this.field5343++;
       }
 
@@ -104,7 +104,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
          this.field5343 = -1;
          boolean var15 = var14 > 0;
          this.field5340 = this.field5341;
-         if (!this.field5324.field9020) {
+         if (!this.field5324.isRemote) {
             boolean var16 = this.field5342 > 0;
             if (!var15 && var16) {
                this.method3822(Sounds.field26385);
@@ -136,7 +136,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
 
          for (int var9 = var1 - var6; var9 <= var1 + var6 && var8; var9++) {
             for (int var10 = var3 - var6; var10 <= var3 + var6; var10++) {
-               if (!this.field5324.getBlockState(new BlockPos(var9, var7, var10)).method23446(Class7645.field32801)) {
+               if (!this.field5324.getBlockState(new BlockPos(var9, var7, var10)).method23446(BlockTags.field32801)) {
                   var8 = false;
                   break;
                }
@@ -156,7 +156,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    }
 
    private void method3821() {
-      if (!this.field5324.field9020 && this.field5344 != null) {
+      if (!this.field5324.isRemote && this.field5344 != null) {
          double var3 = (double)(this.field5342 * 10 + 10);
          byte var5 = 0;
          if (this.field5342 >= 4 && this.field5344 == this.field5345) {

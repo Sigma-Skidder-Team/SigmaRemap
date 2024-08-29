@@ -109,7 +109,7 @@ public class BlockPos extends Class1998 {
       return this.method8336(-var1.getX(), -var1.getY(), -var1.getZ());
    }
 
-   public BlockPos method8311() {
+   public BlockPos up() {
       return this.method8349(Direction.field673);
    }
 
@@ -117,7 +117,7 @@ public class BlockPos extends Class1998 {
       return this.method8350(Direction.field673, var1);
    }
 
-   public BlockPos method8313() {
+   public BlockPos down() {
       return this.method8349(Direction.DOWN);
    }
 
@@ -125,7 +125,7 @@ public class BlockPos extends Class1998 {
       return this.method8350(Direction.DOWN, var1);
    }
 
-   public BlockPos method8341() {
+   public BlockPos north() {
       return this.method8349(Direction.NORTH);
    }
 
@@ -133,7 +133,7 @@ public class BlockPos extends Class1998 {
       return this.method8350(Direction.NORTH, var1);
    }
 
-   public BlockPos method8343() {
+   public BlockPos south() {
       return this.method8349(Direction.SOUTH);
    }
 
@@ -141,7 +141,7 @@ public class BlockPos extends Class1998 {
       return this.method8350(Direction.SOUTH, var1);
    }
 
-   public BlockPos method8345() {
+   public BlockPos west() {
       return this.method8349(Direction.WEST);
    }
 
@@ -149,7 +149,7 @@ public class BlockPos extends Class1998 {
       return this.method8350(Direction.WEST, var1);
    }
 
-   public BlockPos method8347() {
+   public BlockPos east() {
       return this.method8349(Direction.EAST);
    }
 

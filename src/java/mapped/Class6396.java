@@ -8,7 +8,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class6396 extends Class6395 {
    private CompoundNBT field28007;
 
-   public Class6396(IntegratedServer var1, Class8905 var2, Class8716 var3) {
+   public Class6396(IntegratedServer var1, DynamicRegistriesImpl var2, Class8716 var3) {
       super(var1, var2, var3, 8);
       this.method19487(10);
    }

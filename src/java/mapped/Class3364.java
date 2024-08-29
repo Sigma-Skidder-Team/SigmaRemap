@@ -15,7 +15,7 @@ public class Class3364 extends Class3241 {
       if (var8.contains("BlockEntityTag")) {
          CompoundNBT var9 = var8.getCompound("BlockEntityTag");
          if (var9.contains("RecordItem")) {
-            var1.method6725(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
+            var1.setBlockState(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
          }
       }
    }
@@ -27,8 +27,8 @@ public class Class3364 extends Class3241 {
       } else {
          this.method11942(var2, var3);
          var1 = var1.method23465(field18931, Boolean.valueOf(false));
-         var2.method6725(var3, var1, 2);
-         return ActionResultType.method9002(var2.field9020);
+         var2.setBlockState(var3, var1, 2);
+         return ActionResultType.method9002(var2.isRemote);
       }
    }
 
@@ -36,23 +36,23 @@ public class Class3364 extends Class3241 {
       TileEntity var7 = var1.getTileEntity(var2);
       if (var7 instanceof Class947) {
          ((Class947)var7).method3804(var4.copy());
-         var1.method6725(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
+         var1.setBlockState(var2, var3.method23465(field18931, Boolean.valueOf(true)), 2);
       }
    }
 
    private void method11942(World var1, BlockPos var2) {
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          TileEntity var5 = var1.getTileEntity(var2);
          if (var5 instanceof Class947) {
             Class947 var6 = (Class947)var5;
             ItemStack var7 = var6.method3803();
             if (!var7.isEmpty()) {
-               var1.method6999(1010, var2, 0);
+               var1.playEvent(1010, var2, 0);
                var6.method3625();
                float var8 = 0.7F;
-               double var9 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
-               double var11 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.060000002F + 0.6;
-               double var13 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
+               double var9 = (double)(var1.rand.nextFloat() * 0.7F) + 0.15F;
+               double var11 = (double)(var1.rand.nextFloat() * 0.7F) + 0.060000002F + 0.6;
+               double var13 = (double)(var1.rand.nextFloat() * 0.7F) + 0.15F;
                ItemStack var15 = var7.copy();
                ItemEntity var16 = new ItemEntity(
                   var1, (double)var2.getX() + var9, (double)var2.getY() + var11, (double)var2.getZ() + var13, var15

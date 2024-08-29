@@ -75,7 +75,7 @@ public class Class7543 implements Class7544 {
       STBTTFontinfo var4 = null;
       ByteBuffer var5 = null;
 
-      try (Class1783 var6 = var1.method580(new ResourceLocation(this.field32357.method8293(), "font/" + this.field32357.method8292()))) {
+      try (Class1783 var6 = var1.method580(new ResourceLocation(this.field32357.getNamespace(), "font/" + this.field32357.getPath()))) {
          field32356.debug("Loading font {}", this.field32357);
          var4 = STBTTFontinfo.malloc();
          var5 = Class8535.method30373(var6.method7763());

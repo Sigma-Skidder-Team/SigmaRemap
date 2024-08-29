@@ -54,7 +54,7 @@ public class Class1089 extends Class1018 {
       }
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;
-      if (!this.world.field9020 && this.method3066() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
+      if (!this.world.isRemote && this.method3066() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
          this.method2863(Sounds.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
          this.method3300(Items.field37904);
          this.field5970 = this.rand.nextInt(6000) + 6000;

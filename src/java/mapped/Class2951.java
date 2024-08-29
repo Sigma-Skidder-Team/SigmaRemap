@@ -19,7 +19,7 @@ public class Class2951 extends Class2898<Class4728> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4728 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4728 var5) {
       int var8 = 0;
       Mutable var9 = var4.method8354();
       Mutable var10 = var4.method8354();
@@ -36,7 +36,7 @@ public class Class2951 extends Class2898<Class4728> {
                      if (var15 * var15 + var16 * var16 <= var12 * var12) {
                         var10.method8372(var13, var1.method6736(Class101.field296, var13, var14) - 1, var14);
                         if (method11219(var1.getBlockState(var10).getBlock())) {
-                           var1.method6725(var10, Blocks.field36398.method11579(), 2);
+                           var1.setBlockState(var10, Blocks.field36398.method11579(), 2);
                         }
                      }
                   }
@@ -44,14 +44,14 @@ public class Class2951 extends Class2898<Class4728> {
             }
 
             for (int var17 = 0; var17 < var11 && var1.method7007(var9); var17++) {
-               var1.method6725(var9, field18027, 2);
+               var1.setBlockState(var9, field18027, 2);
                var9.method8380(Direction.field673, 1);
             }
 
             if (var9.getY() - var4.getY() >= 3) {
-               var1.method6725(var9, field18028, 2);
-               var1.method6725(var9.method8380(Direction.DOWN, 1), field18029, 2);
-               var1.method6725(var9.method8380(Direction.DOWN, 1), field18030, 2);
+               var1.setBlockState(var9, field18028, 2);
+               var1.setBlockState(var9.method8380(Direction.DOWN, 1), field18029, 2);
+               var1.setBlockState(var9.method8380(Direction.DOWN, 1), field18030, 2);
             }
          }
 

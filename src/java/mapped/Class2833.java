@@ -220,7 +220,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
          .method27312(
             "safely_harvest_honey",
             Class4458.method14095(
-               Class8912.method32576().method32578(Class8831.method31929().method31931(Class7645.field32794).method31933()).method32579(true),
+               Class8912.method32576().method32578(Class8831.method31929().method31931(BlockTags.field32794).method31933()).method32579(true),
                Class9735.method38146().method38147(Items.field37972)
             )
          )
@@ -260,7 +260,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
 
    private Class7999 method11036(Class7999 var1) {
       for (Item var7 : field17618) {
-         var1.method27312(Registry.ITEM.getKey(var7).method8292(), Class4489.method14159(var7));
+         var1.method27312(Registry.ITEM.getKey(var7).getPath(), Class4489.method14159(var7));
       }
 
       return var1;
@@ -284,7 +284,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
 
    private Class7999 method11038(Class7999 var1) {
       for (Item var7 : field17617) {
-         var1.method27312(Registry.ITEM.getKey(var7).method8292(), Class4490.method14161(Class9735.method38146().method38147(var7).method38151()));
+         var1.method27312(Registry.ITEM.getKey(var7).getPath(), Class4490.method14161(Class9735.method38146().method38147(var7).method38151()));
       }
 
       return var1;
@@ -293,7 +293,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
    private Class7999 method11039(Class7999 var1) {
       for (Item var7 : field17616) {
          var1.method27312(
-            Registry.ITEM.getKey(var7).method8292(),
+            Registry.ITEM.getKey(var7).getPath(),
             Class4487.method14154(Class8634.field38839, Class6671.field29242, Class9735.method38146().method38147(var7).method38151())
          );
       }
@@ -303,7 +303,7 @@ public class Class2833 implements Consumer<Consumer<Class7952>> {
 
    private Class7999 method11040(Class7999 var1) {
       Class1098.field6041
-         .forEach((var1x, var2) -> var1.method27312(var2.method8292(), Class4460.method14100(Class7552.method24700().method24703(var2).method24717())));
+         .forEach((var1x, var2) -> var1.method27312(var2.getPath(), Class4460.method14100(Class7552.method24700().method24703(var2).method24717())));
       return var1;
    }
 }

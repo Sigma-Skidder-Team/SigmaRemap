@@ -37,7 +37,7 @@ public class Class9810 {
 
                for (int var6 = 0; var6 < var5.length; var6++) {
                   ResourceLocation var7 = var5[var6];
-                  Class7944.method26810("CustomEntityModel: " + var7.method8292());
+                  Class7944.method26810("CustomEntityModel: " + var7.getPath());
                   Class9492 var8 = method38693(var7);
                   if (var8 != null) {
                      Class4862 var9 = var8.method36665();
@@ -121,7 +121,7 @@ public class Class9810 {
    private static Class9492 method38693(ResourceLocation var0) {
       try {
          JsonObject var3 = Class8331.method29218(var0);
-         return method38694(var3, var0.method8292());
+         return method38694(var3, var0.getPath());
       } catch (IOException var4) {
          Class7944.method26813("" + var4.getClass().getName() + ": " + var4.getMessage());
          return null;

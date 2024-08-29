@@ -111,18 +111,18 @@ public class Class906 extends Entity {
    }
 
    private void method3551(int var1) {
-      if (!this.field5174 && !this.world.field9020 && this.world.method6789().method17135(Class5462.field24223)) {
+      if (!this.field5174 && !this.world.isRemote && this.world.method6789().method17135(Class5462.field24223)) {
          BlockPos var4 = this.getPosition();
-         BlockState var5 = Class3397.method12009(this.world, var4);
+         BlockState var5 = AbstractFireBlock.method12009(this.world, var4);
          if (this.world.getBlockState(var4).isAir() && var5.method23443(this.world, var4)) {
-            this.world.method6730(var4, var5);
+            this.world.setBlockState(var4, var5);
          }
 
          for (int var6 = 0; var6 < var1; var6++) {
             BlockPos var7 = var4.method8336(this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1, this.rand.nextInt(3) - 1);
-            var5 = Class3397.method12009(this.world, var7);
+            var5 = AbstractFireBlock.method12009(this.world, var7);
             if (this.world.getBlockState(var7).isAir() && var5.method23443(this.world, var7)) {
-               this.world.method6730(var7, var5);
+               this.world.setBlockState(var7, var5);
             }
          }
       }

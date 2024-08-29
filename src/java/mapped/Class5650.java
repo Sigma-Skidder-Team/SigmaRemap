@@ -14,7 +14,7 @@ public class Class5650 extends Class5651<Class1095, Class2864<Class1095>> {
    public void method17842(Class1095 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       if (var1.method5140() || var1.method5131()) {
-         float var8 = -MathHelper.method37821(var5, var1.prevRotationPitch, var1.rotationPitch);
+         float var8 = -MathHelper.lerp(var5, var1.prevRotationPitch, var1.rotationPitch);
          var2.method35293(Class7680.field32898.method25286(var8));
       }
    }

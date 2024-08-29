@@ -19,7 +19,7 @@ public class Class4860 extends Class4837 {
    );
    private static final Class120 field22659 = Class120.method339(Items.field37800);
    private static final Class120 field22660 = Class120.method339(Items.field37908);
-   private static final Map<Item, Class2119> field22661 = Util.<Map<Item, Class2119>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Item, Class2119> field22661 = Util.<Map<Item, Class2119>>make(Maps.newHashMap(), var0 -> {
       var0.put(Items.field38046, Class2119.field13808);
       var0.put(Items.field37839, Class2119.field13811);
       var0.put(Items.field37969, Class2119.field13809);

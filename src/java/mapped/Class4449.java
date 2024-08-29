@@ -57,7 +57,7 @@ public class Class4449 implements Class4442 {
                var21.add("properties", var22);
             }
 
-            var21.addProperty("id", Block.method11535(var20));
+            var21.addProperty("id", Block.getStateId(var20));
             if (var20 == var6.method11579()) {
                var21.addProperty("default", true);
             }

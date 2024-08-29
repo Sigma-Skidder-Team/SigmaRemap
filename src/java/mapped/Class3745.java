@@ -11,7 +11,7 @@ public class Class3745 extends Class3676<Class880> {
 
    @Override
    public boolean method12508(ServerWorld var1, Class880 var2) {
-      return var1.field9016.nextInt(20) == 0;
+      return var1.rand.nextInt(20) == 0;
    }
 
    @Override

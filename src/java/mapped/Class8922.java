@@ -42,7 +42,7 @@ public class Class8922 {
       }
    }
 
-   public void method32603(Class1674 var1) {
+   public void method32603(Chunk var1) {
       this.method32606(var1);
 
       for (Class1976 var7 : field40389) {
@@ -53,7 +53,7 @@ public class Class8922 {
       field40393.forEach(var1x -> var1x.method8971(var8));
    }
 
-   private static void method32604(Class1674 var0, Class1976 var1) {
+   private static void method32604(Chunk var0, Class1976 var1) {
       World var4 = var0.method7144();
       if (var0.method7091().field40390.remove(var1)) {
          Set var5 = var1.method8262();
@@ -90,7 +90,7 @@ public class Class8922 {
       return field40392.getOrDefault(var0.getBlock(), Class2230.field14619).method8970(var0, var1, var2.getBlockState(var4), var2, var3, var4);
    }
 
-   private void method32606(Class1674 var1) {
+   private void method32606(Chunk var1) {
       Mutable var4 = new Mutable();
       Mutable var5 = new Mutable();
       Class7481 var6 = var1.method7072();

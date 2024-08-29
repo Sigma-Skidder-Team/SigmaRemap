@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class Class1673 extends Class1672 {
-   private final Class1674 field9109;
+   private final Chunk field9109;
 
-   public Class1673(Class1674 var1) {
+   public Class1673(Chunk var1) {
       super(var1.method7072(), Class8922.field40388);
       this.field9109 = var1;
    }
@@ -28,8 +28,8 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
-      return this.field9109.method6739(var1);
+   public FluidState getFluidState(BlockPos var1) {
+      return this.field9109.getFluidState(var1);
    }
 
    @Override
@@ -39,7 +39,7 @@ public class Class1673 extends Class1672 {
 
    @Nullable
    @Override
-   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
+   public BlockState setBlockState(BlockPos var1, BlockState var2, boolean var3) {
       return null;
    }
 
@@ -52,7 +52,7 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public void method7111(Class9176 var1) {
+   public void method7111(ChunkStatus var1) {
    }
 
    @Override
@@ -144,7 +144,7 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class9176 method7080() {
+   public ChunkStatus method7080() {
       return this.field9109.method7080();
    }
 
@@ -201,7 +201,7 @@ public class Class1673 extends Class1672 {
       throw (UnsupportedOperationException) Util.method38516(new UnsupportedOperationException("Meaningless in this context"));
    }
 
-   public Class1674 method7127() {
+   public Chunk method7127() {
       return this.field9109;
    }
 

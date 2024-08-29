@@ -30,7 +30,7 @@ public class Class3218 extends Class3213 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          var4.method2766(var1.method23445(var2, var3));
          var4.method2911(Class8876.field40175);
          return ActionResultType.field14819;
@@ -59,14 +59,14 @@ public class Class3218 extends Class3213 {
    @Override
    public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
       if (!var5.method3245()) {
-         var1.method6999(1031, var2, 0);
+         var1.playEvent(1031, var2, 0);
       }
    }
 
    @Override
    public void method11600(World var1, BlockPos var2, Class907 var3) {
       if (!var3.method3245()) {
-         var1.method6999(1029, var2, 0);
+         var1.playEvent(1029, var2, 0);
       }
    }
 

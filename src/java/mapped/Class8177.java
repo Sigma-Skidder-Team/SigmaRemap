@@ -16,7 +16,7 @@ public final class Class8177 implements Class8176 {
 
          if (var2 != null) {
             double var7;
-            if (!var2.method6812().method36878()) {
+            if (!var2.method6812().isNatural()) {
                var7 = Math.random();
             } else {
                var7 = (double)var2.method7001(1.0F);

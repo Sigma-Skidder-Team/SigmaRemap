@@ -20,7 +20,7 @@ public class Class9725 {
    private static final Logger field45421 = LogManager.getLogger();
 
    public static Class1672 method38087(ServerWorld var0, Class8761 var1, Class1653 var2, Class7481 var3, CompoundNBT var4) {
-      Class5646 var7 = var0.method6883().method7370();
+      ChunkGenerator var7 = var0.getChunkProvider().method7370();
       Class1685 var8 = var7.method17824();
       CompoundNBT var9 = var4.getCompound("Level");
       Class7481 var10 = new Class7481(var9.method122("xPos"), var9.method122("zPos"));
@@ -29,7 +29,7 @@ public class Class9725 {
       }
 
       Class1684 var11 = new Class1684(
-         var0.method6867().<Biome>method32453(Registry.BIOME_KEY), var3, var8, !var9.method119("Biomes", 11) ? null : var9.method128("Biomes")
+         var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.method119("Biomes", 11) ? null : var9.method128("Biomes")
       );
       Class8922 var12 = !var9.method119("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.getCompound("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().isAir(), var3, var9.method131("ToBeTicked", 9));
@@ -38,9 +38,9 @@ public class Class9725 {
       ListNBT var16 = var9.method131("Sections", 10);
       byte var17 = 16;
       Class7038[] var18 = new Class7038[16];
-      boolean var19 = var0.method6812().method36875();
-      Class1703 var20 = var0.method6883();
-      Class196 var21 = var20.method7348();
+      boolean var19 = var0.method6812().hasSkyLight();
+      Class1703 var20 = var0.getChunkProvider();
+      Class196 var21 = var20.getLightManager();
       if (var15) {
          var21.method609(var3, true);
       }
@@ -78,14 +78,14 @@ public class Class9725 {
          var26.method7110(var11);
          var43 = var26;
          var26.method7092(var23);
-         var26.method7111(Class9176.method34304(var9.method126("Status")));
-         if (var26.method7080().method34306(Class9176.field42141)) {
+         var26.method7111(ChunkStatus.method34304(var9.method126("Status")));
+         if (var26.method7080().method34306(ChunkStatus.field42141)) {
             var26.method7119(var21);
          }
 
-         if (!var15 && var26.method7080().method34306(Class9176.field42142)) {
+         if (!var15 && var26.method7080().method34306(ChunkStatus.field42142)) {
             for (BlockPos var29 : BlockPos.method8364(var3.method24356(), 0, var3.method24357(), var3.method24358(), 255, var3.method24359())) {
-               if (((Class1670)var43).getBlockState(var29).method23392() != 0) {
+               if (((IChunk)var43).getBlockState(var29).getLightValue() != 0) {
                   var26.method7105(var29);
                }
             }
@@ -105,30 +105,30 @@ public class Class9725 {
             var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::method9184);
          }
 
-         var43 = new Class1674(
+         var43 = new Chunk(
             var0.method6970(), var3, var11, var12, (Class6802<Block>)var41, (Class6802<Fluid>)var44, var23, var18, var1x -> method38090(var9, var1x)
          );
       }
 
-      ((Class1670)var43).method7096(var15);
+      ((IChunk)var43).method7096(var15);
       CompoundNBT var42 = var9.getCompound("Heightmaps");
       EnumSet var45 = EnumSet.<Class101>noneOf(Class101.class);
 
-      for (Class101 var31 : ((Class1670)var43).method7080().method34305()) {
+      for (Class101 var31 : ((IChunk)var43).method7080().method34305()) {
          String var32 = var31.method283();
          if (!var42.method119(var32, 12)) {
             var45.add(var31);
          } else {
-            ((Class1670)var43).method7069(var31, var42.method129(var32));
+            ((IChunk)var43).method7069(var31, var42.method129(var32));
          }
       }
 
-      Class7527.method24577((Class1670)var43, var45);
+      Class7527.method24577((IChunk)var43, var45);
       CompoundNBT var47 = var9.getCompound("Structures");
-      ((Class1670)var43).method7075(method38092(var1, var47, var0.method6967()));
-      ((Class1670)var43).method7102(method38093(var3, var47));
+      ((IChunk)var43).method7075(method38092(var1, var47, var0.method6967()));
+      ((IChunk)var43).method7102(method38093(var3, var47));
       if (var9.method132("shouldSave")) {
-         ((Class1670)var43).method7078(true);
+         ((IChunk)var43).method7078(true);
       }
 
       ListNBT var48 = var9.method131("PostProcessing", 9);
@@ -137,12 +137,12 @@ public class Class9725 {
          ListNBT var33 = var48.method154(var49);
 
          for (int var34 = 0; var34 < var33.size(); var34++) {
-            ((Class1670)var43).method7084(var33.method155(var34), var49);
+            ((IChunk)var43).method7084(var33.method155(var34), var49);
          }
       }
 
       if (var40 == Class2076.field13525) {
-         return new Class1673((Class1674)var43);
+         return new Class1673((Chunk)var43);
       } else {
          Class1672 var50 = (Class1672)var43;
          ListNBT var51 = var9.method131("Entities", 10);
@@ -155,7 +155,7 @@ public class Class9725 {
 
          for (int var35 = 0; var35 < var53.size(); var35++) {
             CompoundNBT var36 = var53.method153(var35);
-            ((Class1670)var43).method7085(var36);
+            ((IChunk)var43).method7085(var36);
          }
 
          ListNBT var54 = var9.method131("Lights", 9);
@@ -179,7 +179,7 @@ public class Class9725 {
       }
    }
 
-   public static CompoundNBT method38088(ServerWorld var0, Class1670 var1) {
+   public static CompoundNBT method38088(ServerWorld var0, IChunk var1) {
       Class7481 var4 = var1.method7072();
       CompoundNBT var5 = new CompoundNBT();
       CompoundNBT var6 = new CompoundNBT();
@@ -197,7 +197,7 @@ public class Class9725 {
 
       Class7038[] var8 = var1.method7067();
       ListNBT var9 = new ListNBT();
-      Class195 var10 = var0.method6883().method7348();
+      Class195 var10 = var0.getChunkProvider().getLightManager();
       boolean var11 = var1.method7095();
 
       for (int var12 = -1; var12 < 17; var12++) {
@@ -205,13 +205,13 @@ public class Class9725 {
          Class7038 var14 = Arrays.<Class7038>stream(var8)
             .filter(var1x -> var1x != null && var1x.method21863() >> 4 == var13)
             .findFirst()
-            .orElse(Class1674.field9111);
+            .orElse(Chunk.field9111);
          Class6785 var15 = var10.method638(Class1977.field12882).method642(Class2002.method8391(var4, var13));
          Class6785 var16 = var10.method638(Class1977.field12881).method642(Class2002.method8391(var4, var13));
-         if (var14 != Class1674.field9111 || var15 != null || var16 != null) {
+         if (var14 != Chunk.field9111 || var15 != null || var16 != null) {
             CompoundNBT var17 = new CompoundNBT();
             var17.method100("Y", (byte)(var13 & 0xFF));
-            if (var14 != Class1674.field9111) {
+            if (var14 != Chunk.field9111) {
                var14.method21865().method30503(var17, "Palette", "BlockStates");
             }
 
@@ -263,7 +263,7 @@ public class Class9725 {
 
          var6.put("CarvingMasks", var31);
       } else {
-         Class1674 var28 = (Class1674)var1;
+         Chunk var28 = (Chunk)var1;
          var28.method7147(false);
 
          for (int var32 = 0; var32 < var28.method7146().length; var32++) {
@@ -316,7 +316,7 @@ public class Class9725 {
 
    public static Class2076 method38089(CompoundNBT var0) {
       if (var0 != null) {
-         Class9176 var3 = Class9176.method34304(var0.getCompound("Level").method126("Status"));
+         ChunkStatus var3 = ChunkStatus.method34304(var0.getCompound("Level").method126("Status"));
          if (var3 != null) {
             return var3.method34303();
          }
@@ -325,7 +325,7 @@ public class Class9725 {
       return Class2076.field13524;
    }
 
-   private static void method38090(CompoundNBT var0, Class1674 var1) {
+   private static void method38090(CompoundNBT var0, Chunk var1) {
       ListNBT var4 = var0.method131("Entities", 10);
       World var5 = var1.method7144();
 

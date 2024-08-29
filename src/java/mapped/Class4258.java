@@ -45,7 +45,7 @@ public class Class4258 extends Class4247 {
             if (var13 != Items.field37222 && (!this.field20644 || var13 instanceof Class3292)) {
                ResourceLocation var8 = Registry.ITEM.getKey(var13);
                String var9;
-               if (var13 instanceof Class3292 && var8.method8292().equals("air")) {
+               if (var13 instanceof Class3292 && var8.getPath().equals("air")) {
                   var9 = Registry.BLOCK.getKey(((Class3292)var13).method11845()).toString();
                } else {
                   var9 = var8.toString();

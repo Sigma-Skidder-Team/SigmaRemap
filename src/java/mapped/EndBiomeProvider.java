@@ -4,13 +4,13 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-public class Class1690 extends Class1685 {
-   public static final Codec<Class1690> field9191 = RecordCodecBuilder.create(
+public class EndBiomeProvider extends Class1685 {
+   public static final Codec<EndBiomeProvider> field9191 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field9193),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field9194)
             )
-            .apply(var0, var0.stable(Class1690::new))
+            .apply(var0, var0.stable(EndBiomeProvider::new))
    );
    private final Class8972 field9192;
    private final Registry<Biome> field9193;
@@ -21,19 +21,19 @@ public class Class1690 extends Class1685 {
    private final Biome field9198;
    private final Biome field9199;
 
-   public Class1690(Registry<Biome> var1, long var2) {
+   public EndBiomeProvider(Registry<Biome> var1, long var2) {
       this(
          var1,
          var2,
-         var1.method9189(Class9495.field44130),
-         var1.method9189(Class9495.field44163),
-         var1.method9189(Class9495.field44162),
-         var1.method9189(Class9495.field44161),
-         var1.method9189(Class9495.field44164)
+         var1.getOrThrow(Class9495.field44130),
+         var1.getOrThrow(Class9495.field44163),
+         var1.getOrThrow(Class9495.field44162),
+         var1.getOrThrow(Class9495.field44161),
+         var1.getOrThrow(Class9495.field44164)
       );
    }
 
-   private Class1690(Registry<Biome> var1, long var2, Biome var4, Biome var5, Biome var6, Biome var7, Biome var8) {
+   private EndBiomeProvider(Registry<Biome> var1, long var2, Biome var4, Biome var5, Biome var6, Biome var7, Biome var8) {
       super(ImmutableList.of(var4, var5, var6, var7, var8));
       this.field9193 = var1;
       this.field9194 = var2;
@@ -54,7 +54,7 @@ public class Class1690 extends Class1685 {
 
    @Override
    public Class1685 method7200(long var1) {
-      return new Class1690(this.field9193, var1, this.field9195, this.field9196, this.field9197, this.field9198, this.field9199);
+      return new EndBiomeProvider(this.field9193, var1, this.field9195, this.field9196, this.field9197, this.field9198, this.field9199);
    }
 
    @Override

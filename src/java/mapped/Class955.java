@@ -48,7 +48,7 @@ public class Class955 extends TileEntity implements Class935 {
          var1 = 1.0F;
       }
 
-      return MathHelper.method37821(var1, this.field5367, this.field5366);
+      return MathHelper.lerp(var1, this.field5367, this.field5366);
    }
 
    public float method3850(float var1) {
@@ -233,7 +233,7 @@ public class Class955 extends TileEntity implements Class935 {
    }
 
    public void method3865() {
-      if (this.field5324 != null && (this.field5367 < 1.0F || this.field5324.field9020)) {
+      if (this.field5324 != null && (this.field5367 < 1.0F || this.field5324.isRemote)) {
          this.field5366 = 1.0F;
          this.field5367 = this.field5366;
          this.field5324.method6762(this.field5325);
@@ -246,8 +246,8 @@ public class Class955 extends TileEntity implements Class935 {
                var3 = Blocks.AIR.method11579();
             }
 
-            this.field5324.method6725(this.field5325, var3, 3);
-            this.field5324.method6735(this.field5325, var3.getBlock(), this.field5325);
+            this.field5324.setBlockState(this.field5325, var3, 3);
+            this.field5324.neighborChanged(this.field5325, var3.getBlock(), this.field5325);
          }
       }
    }
@@ -264,7 +264,7 @@ public class Class955 extends TileEntity implements Class935 {
          if (this.field5366 >= 1.0F) {
             this.field5366 = 1.0F;
          }
-      } else if (this.field5324.field9020 && this.field5369 < 5) {
+      } else if (this.field5324.isRemote && this.field5369 < 5) {
          this.field5369++;
       } else {
          this.field5324.method6762(this.field5325);
@@ -276,10 +276,10 @@ public class Class955 extends TileEntity implements Class935 {
                   var4 = var4.method23465(Class8820.field39710, Boolean.valueOf(false));
                }
 
-               this.field5324.method6725(this.field5325, var4, 67);
-               this.field5324.method6735(this.field5325, var4.getBlock(), this.field5325);
+               this.field5324.setBlockState(this.field5325, var4, 67);
+               this.field5324.neighborChanged(this.field5325, var4.getBlock(), this.field5325);
             } else {
-               this.field5324.method6725(this.field5325, this.field5361, 84);
+               this.field5324.setBlockState(this.field5325, this.field5361, 84);
                Block.method11543(this.field5361, var4, this.field5324, this.field5325, 3);
             }
          }

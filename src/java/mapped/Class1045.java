@@ -41,7 +41,7 @@ public abstract class Class1045 extends Class1046 {
    }
 
    public int method4767() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          return this.field5801;
       } else {
          return !this.dataManager.<Boolean>method35445(field5800) ? 1 : -1;
@@ -108,7 +108,7 @@ public abstract class Class1045 extends Class1046 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.method3066()) {
             int var3 = this.method4767();
             if (var3 >= 0) {

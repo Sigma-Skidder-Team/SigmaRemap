@@ -29,7 +29,7 @@ public class Class994 extends AbstractMinecartEntity {
    @Override
    public void tick() {
       super.tick();
-      if (!this.world.method6714()) {
+      if (!this.world.isRemote()) {
          if (this.field5482 > 0) {
             this.field5482--;
          }
@@ -107,7 +107,7 @@ public class Class994 extends AbstractMinecartEntity {
          this.field5484 = this.getPosZ() - var1.getPosZ();
       }
 
-      return ActionResultType.method9002(this.world.field9020);
+      return ActionResultType.method9002(this.world.isRemote);
    }
 
    @Override

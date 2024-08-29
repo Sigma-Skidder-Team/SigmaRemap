@@ -63,7 +63,7 @@ public class Class7490 extends Class7487 {
 
    @Override
    public boolean method24376(
-           Class8761 var1, Class1658 var2, Class7480 var3, Class5646 var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           Class8761 var1, Class1658 var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    ) {
       return this.field32191.get().method26521(var2, var4, var9, var5);
    }

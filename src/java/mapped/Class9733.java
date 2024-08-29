@@ -31,7 +31,7 @@ public class Class9733 {
                .apply(var0, Class9733::new)
       )
       .stable();
-   private static final Map<Structure<?>, Class9300<?, ?>> field45444 = Util.<Map<Structure<?>, Class9300<?, ?>>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Structure<?>, Class9300<?, ?>> field45444 = Util.<Map<Structure<?>, Class9300<?, ?>>>make(Maps.newHashMap(), var0 -> {
       var0.put(Structure.field18059, Class9438.field43835);
       var0.put(Structure.field18073, Class9438.field43853);
       var0.put(Structure.field18067, Class9438.field43844);
@@ -74,14 +74,14 @@ public class Class9733 {
          this.field45448 = (Supplier<Biome>)var6.get();
       } else {
          field45442.error("Unknown biome, defaulting to plains");
-         this.field45448 = () -> var1.method9189(Class9495.field44122);
+         this.field45448 = () -> var1.getOrThrow(Class9495.field44122);
       }
    }
 
    public Class9733(Class9763 var1, Registry<Biome> var2) {
       this.field45445 = var2;
       this.field45446 = var1;
-      this.field45448 = () -> var2.method9189(Class9495.field44122);
+      this.field45448 = () -> var2.getOrThrow(Class9495.field44122);
    }
 
    public Class9733 method38121(Class9763 var1) {
@@ -212,7 +212,7 @@ public class Class9733 {
          Optional.<Class9245>of(Class9763.field45675), Maps.newHashMap(ImmutableMap.of(Structure.field18073, Class9763.field45674.get(Structure.field18073)))
       );
       Class9733 var4 = new Class9733(var3, var0);
-      var4.field45448 = () -> var0.method9189(Class9495.field44122);
+      var4.field45448 = () -> var0.getOrThrow(Class9495.field44122);
       var4.method38129().add(new Class9537(1, Blocks.BEDROCK));
       var4.method38129().add(new Class9537(2, Blocks.field36396));
       var4.method38129().add(new Class9537(1, Blocks.field36395));

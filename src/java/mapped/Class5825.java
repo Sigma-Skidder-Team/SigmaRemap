@@ -34,7 +34,7 @@ public class Class5825 extends Class5823 {
       this.field25512.method3638(var1);
       this.method18200(0);
       this.method18200(1);
-      this.field25514.method31716((var0, var1x) -> var0.method6999(1044, var1x, 0));
+      this.field25514.method31716((var0, var1x) -> var0.playEvent(1044, var1x, 0));
       return var2;
    }
 

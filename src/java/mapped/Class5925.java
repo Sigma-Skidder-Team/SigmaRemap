@@ -13,7 +13,7 @@ public class Class5925 extends Class5924 {
    }
 
    @Override
-   public Optional<Float> method18423(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, Class7379 var5) {
+   public Optional<Float> method18423(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, FluidState var5) {
       return var3.equals(var3) && this.field25810 ? Optional.<Float>of(Blocks.WATER.method11559()) : super.method18423(var1, var2, var3, var4, var5);
    }
 }

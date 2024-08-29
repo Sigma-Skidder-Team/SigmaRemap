@@ -13,7 +13,7 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return Class9479.field44066.method25078(false);
    }
 
@@ -23,7 +23,7 @@ public class Class3448 extends Class3445 implements Class3449 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, Class7379 var4) {
+   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
       return false;
    }
 }

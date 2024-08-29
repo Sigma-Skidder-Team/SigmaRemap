@@ -55,7 +55,7 @@ public class Class8958 {
          Bootstrap.method25566();
          Bootstrap.method25570();
          Util.method38531();
-         Class8905 var19 = DynamicRegistries.func_239770_b_();
+         DynamicRegistriesImpl var19 = DynamicRegistries.func_239770_b_();
          Path var20 = Paths.get("server.properties");
          Class6816 var21 = new Class6816(var19, var20);
          var21.method20780();
@@ -127,8 +127,8 @@ public class Class8958 {
 
          var31.saveLevel(var19, (IServerConfiguration)var39);
          IServerConfiguration var45 = var39;
-         Class1645 var46 = MinecraftServer.<Class1645>func_240784_a_(var16x -> {
-            Class1645 var19x = new Class1645(var16x, var19, var31, var34, var37, var45, var21, DataFixesManager.getDataFixer(), var26, var27, var28, Class7244::new);
+         DedicatedServer var46 = MinecraftServer.<DedicatedServer>func_240784_a_(var16x -> {
+            DedicatedServer var19x = new DedicatedServer(var16x, var19, var31, var34, var37, var45, var21, DataFixesManager.getDataFixer(), var26, var27, var28, Class7244::new);
             var19x.method1333((String)var18.valueOf(var12));
             var19x.method1331((Integer)var18.valueOf(var15));
             var19x.method1343(var18.has(var6));

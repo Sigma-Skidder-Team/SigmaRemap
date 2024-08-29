@@ -24,7 +24,7 @@ public enum Class1940 {
          if (var4 >= 100) {
             var2.method26113(field12606);
          } else if (var4 == 0 || var4 == 50 || var4 == 51 || var4 == 52 || var4 >= 95) {
-            var1.method6999(3001, new BlockPos(0, 128, 0), 0);
+            var1.playEvent(3001, new BlockPos(0, 128, 0), 0);
          }
       }
    },
@@ -50,7 +50,7 @@ public enum Class1940 {
                           new BlockPos(var13.method37626() - 10, var13.method37629() - 10, var13.method37627() - 10),
                           new BlockPos(var13.method37626() + 10, var13.method37629() + 10, var13.method37627() + 10)
                   )) {
-                     var1.method6728(var16, false);
+                     var1.removeBlock(var16, false);
                   }
 
                   var1.method6755(
@@ -64,7 +64,7 @@ public enum Class1940 {
                   Class4707 var18 = new Class4707(true, ImmutableList.of(var13), new BlockPos(0, 128, 0));
                   Class2898.field17962
                           .method11216(var18)
-                          .method26521(var1, var1.method6883().method7370(), new Random(), new BlockPos(var13.method37626(), 45, var13.method37627()));
+                          .method26521(var1, var1.getChunkProvider().method7370(), new Random(), new BlockPos(var13.method37626(), 45, var13.method37627()));
                } else {
                   for (EnderCrystalEntity var19 : var3) {
                      var19.method4142(new BlockPos(var13.method37626(), var13.method37629() + 1, var13.method37627()));
@@ -81,7 +81,7 @@ public enum Class1940 {
             if (var4 < 80) {
                if (var4 != 0) {
                   if (var4 < 5) {
-                     var1.method6999(3001, new BlockPos(0, 128, 0), 0);
+                     var1.playEvent(3001, new BlockPos(0, 128, 0), 0);
                   }
                } else {
                   for (EnderCrystalEntity var9 : var3) {
@@ -89,7 +89,7 @@ public enum Class1940 {
                   }
                }
             } else {
-               var1.method6999(3001, new BlockPos(0, 128, 0), 0);
+               var1.playEvent(3001, new BlockPos(0, 128, 0), 0);
             }
          } else {
             var2.method26113(field12608);

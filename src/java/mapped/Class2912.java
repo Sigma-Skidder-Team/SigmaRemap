@@ -16,7 +16,7 @@ public class Class2912 extends Class2898<Class4712> {
       return Math.max(Math.abs(var0 - var2), Math.abs(var1 - var3));
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       Class7481 var8 = new Class7481(var4);
       if (method11248(var8.field32174, var8.field32175, field17997.field32174, field17997.field32175) > 1) {
          return true;
@@ -28,9 +28,9 @@ public class Class2912 extends Class2898<Class4712> {
                if (method11248(field17996.getX(), field17996.getZ(), var11, var10) <= 16) {
                   var9.method8372(var11, field17996.getY(), var10);
                   if (!var9.equals(field17996)) {
-                     var1.method6725(var9, Blocks.STONE.method11579(), 2);
+                     var1.setBlockState(var9, Blocks.STONE.method11579(), 2);
                   } else {
-                     var1.method6725(var9, Blocks.field36399.method11579(), 2);
+                     var1.setBlockState(var9, Blocks.field36399.method11579(), 2);
                   }
                }
             }

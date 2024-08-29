@@ -207,7 +207,7 @@ public class Class5463 {
 
          for (Class7002 var25 : var20.method938()) {
             Class8066 var26 = var25.field30281;
-            Class1674 var27 = var26.method27740();
+            Chunk var27 = var26.method27740();
 
             for (Entity var29 : var27.method7146()[var26.method27718().getY() / 16]) {
                if ((var21.method32218(var29, var11, var14, var16, var18) || var29.method3417(var8.player))

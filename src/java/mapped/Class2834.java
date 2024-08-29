@@ -52,7 +52,7 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(
                      Class4695.method14724(Items.field37971)
                         .method18299(10)
-                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:water"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:water"))))
                   )
                   .method18291(Class4695.method14724(Items.field37838).method18299(5))
                   .method18291(Class4695.method14724(Items.field37906).method18299(2).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))

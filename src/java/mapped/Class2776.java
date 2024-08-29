@@ -45,7 +45,7 @@ public class Class2776 extends Class2595 {
          this.field17367.method4230().method21666();
       }
 
-      if (this.field17369.method2951() && this.field17369.world.field9016.nextInt(6) == 0) {
+      if (this.field17369.method2951() && this.field17369.world.rand.nextInt(6) == 0) {
          this.field17369.method3035(new Class2023(Class8254.field35496, 100));
       }
    }

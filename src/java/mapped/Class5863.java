@@ -30,7 +30,7 @@ public class Class5863 extends Class5839 {
             var1x.method6916(new ExperienceOrbEntity(var1x, (double)var2x.getX(), (double)var2x.getY() + 0.5, (double)var2x.getZ() + 0.5, var6));
          }
 
-         var1x.method6999(1042, var2x, 0);
+         var1x.playEvent(1042, var2x, 0);
       });
       Class5815.method18171(this.field25631).method3621(0, ItemStack.EMPTY);
       Class5815.method18171(this.field25631).method3621(1, ItemStack.EMPTY);
@@ -45,7 +45,7 @@ public class Class5863 extends Class5839 {
          return 0;
       } else {
          int var5 = (int)Math.ceil((double)var4 / 2.0);
-         return var5 + var1.field9016.nextInt(var5);
+         return var5 + var1.rand.nextInt(var5);
       }
    }
 

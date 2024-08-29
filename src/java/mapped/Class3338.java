@@ -10,7 +10,7 @@ public class Class3338 extends Item {
    @Override
    public ItemStack method11709(ItemStack var1, World var2, Class880 var3) {
       ItemStack var6 = super.method11709(var1, var2, var3);
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          double var7 = var3.getPosX();
          double var9 = var3.getPosY();
          double var11 = var3.getPosZ();

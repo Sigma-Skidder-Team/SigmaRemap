@@ -10,7 +10,7 @@ public class Class2933 extends Class2898<Class4734> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4734 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4734 var5) {
       float var8 = var3.nextFloat() * (float) Math.PI;
       float var9 = (float)var5.field22423 / 8.0F;
       int var10 = MathHelper.method37773(((float)var5.field22423 / 16.0F * 2.0F + 1.0F) / 2.0F);
@@ -119,7 +119,7 @@ public class Class2933 extends Class2898<Class4734> {
                                  var24.set(var63);
                                  var25.method8372(var54, var57, var60);
                                  if (var3.field22422.method19540(var1.getBlockState(var25), var2)) {
-                                    var1.method6725(var25, var3.field22424, 2);
+                                    var1.setBlockState(var25, var3.field22424, 2);
                                     var23++;
                                  }
                               }

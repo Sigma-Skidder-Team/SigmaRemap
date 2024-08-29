@@ -7,15 +7,15 @@ import java.util.function.Function;
 
 public interface Class6964 extends Class6965 {
    @Override
-   default CompletableFuture<Either<Class1670, Class7022>> method21487(
-      Class9176 var1,
+   default CompletableFuture<Either<IChunk, Class7022>> method21487(
+      ChunkStatus var1,
       ServerWorld var2,
-      Class5646 var3,
+      ChunkGenerator var3,
       Class8761 var4,
       Class195 var5,
-      Function<Class1670, CompletableFuture<Either<Class1670, Class7022>>> var6,
-      List<Class1670> var7,
-      Class1670 var8
+      Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var6,
+      List<IChunk> var7,
+      IChunk var8
    ) {
       if (!var8.method7080().method34306(var1)) {
          this.method21488(var2, var3, var7, var8);
@@ -24,8 +24,8 @@ public interface Class6964 extends Class6965 {
          }
       }
 
-      return CompletableFuture.<Either<Class1670, Class7022>>completedFuture(Either.left(var8));
+      return CompletableFuture.<Either<IChunk, Class7022>>completedFuture(Either.left(var8));
    }
 
-   void method21488(ServerWorld var1, Class5646 var2, List<Class1670> var3, Class1670 var4);
+   void method21488(ServerWorld var1, ChunkGenerator var2, List<IChunk> var3, IChunk var4);
 }

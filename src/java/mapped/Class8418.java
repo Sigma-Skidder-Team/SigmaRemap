@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class Class8418 {
-   private static final Map<String, String> field36088 = Util.<Map<String, String>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, String> field36088 = Util.<Map<String, String>>make(Maps.newHashMap(), var0 -> {
       var0.put("Village", "Village");
       var0.put("Mineshaft", "Mineshaft");
       var0.put("Mansion", "Mansion");
@@ -25,7 +25,7 @@ public class Class8418 {
       var0.put("Fortress", "Fortress");
       var0.put("EndCity", "EndCity");
    });
-   private static final Map<String, String> field36089 = Util.<Map<String, String>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, String> field36089 = Util.<Map<String, String>>make(Maps.newHashMap(), var0 -> {
       var0.put("Iglu", "Igloo");
       var0.put("TeDP", "Desert_Pyramid");
       var0.put("TeJP", "Jungle_Pyramid");
@@ -199,7 +199,7 @@ public class Class8418 {
    }
 
    public static Class8418 method29580(RegistryKey<World> var0, Class8250 var1) {
-      if (var0 != World.field8999) {
+      if (var0 != World.OVERWORLD) {
          if (var0 != World.THE_NETHER) {
             if (var0 != World.THE_END) {
                throw new RuntimeException(String.format("Unknown dimension type : %s", var0));

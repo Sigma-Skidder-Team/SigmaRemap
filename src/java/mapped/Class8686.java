@@ -86,7 +86,7 @@ public class Class8686 {
          if (var9 && !var2.method496(var7, var1, 2)) {
             throw field39214.create();
          } else {
-            var7.method6964(var1, var2.method495().getBlock());
+            var7.func_230547_a_(var1, var2.method495().getBlock());
             var0.method20179(new TranslationTextComponent("commands.setblock.success", var1.getX(), var1.getY(), var1.getZ()), true);
             return 1;
          }

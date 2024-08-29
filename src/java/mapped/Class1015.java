@@ -15,7 +15,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    private static final Set<Item> field5675 = Sets.newHashSet(
       new Item[]{Items.field37841, Items.field37960, Items.field37959, Items.field38112}
    );
-   private static final Map<EntityType<?>, Class9455> field5676 = Util.<Map<EntityType<?>, Class9455>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<EntityType<?>, Class9455> field5676 = Util.<Map<EntityType<?>, Class9455>>make(Maps.newHashMap(), var0 -> {
       var0.put(EntityType.field41010, Sounds.field26885);
       var0.put(EntityType.field41013, Sounds.field26907);
       var0.put(EntityType.field41017, Sounds.field26886);
@@ -121,7 +121,7 @@ public class Class1015 extends Class1014 implements Class1016 {
          this.field5683 = null;
       }
 
-      if (this.world.field9016.nextInt(400) == 0) {
+      if (this.world.rand.nextInt(400) == 0) {
          method4409(this.world, this);
       }
 
@@ -158,14 +158,14 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public static boolean method4409(World var0, Entity var1) {
-      if (var1.method3066() && !var1.method3245() && var0.field9016.nextInt(2) == 0) {
+      if (var1.method3066() && !var1.method3245() && var0.rand.nextInt(2) == 0) {
          List var4 = var0.<Class1006>method6772(Class1006.class, var1.getBoundingBox().method19664(20.0), field5673);
          if (!var4.isEmpty()) {
-            Class1006 var5 = (Class1006)var4.get(var0.field9016.nextInt(var4.size()));
+            Class1006 var5 = (Class1006)var4.get(var0.rand.nextInt(var4.size()));
             if (!var5.method3245()) {
                Class9455 var6 = method4412(var5.getType());
                var0.method6743(
-                  (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.method2864(), 0.7F, method4413(var0.field9016)
+                  (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.method2864(), 0.7F, method4413(var0.rand)
                );
                return true;
             }
@@ -199,7 +199,7 @@ public class Class1015 extends Class1014 implements Class1016 {
                );
          }
 
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             if (this.rand.nextInt(10) != 0) {
                this.world.method6786(this, (byte)6);
             } else {
@@ -208,14 +208,14 @@ public class Class1015 extends Class1014 implements Class1016 {
             }
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else if (var5.getItem() != field5674) {
          if (!this.method4416() && this.method4393() && this.method4401(var1)) {
-            if (!this.world.field9020) {
+            if (!this.world.isRemote) {
                this.method4403(!this.method4402());
             }
 
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          } else {
             return super.method4285(var1, var2);
          }
@@ -229,7 +229,7 @@ public class Class1015 extends Class1014 implements Class1016 {
             this.method2741(Class8654.method31117(var1), Float.MAX_VALUE);
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       }
    }
 
@@ -239,11 +239,11 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    public static boolean method4410(EntityType<Class1015> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      BlockState var7 = var1.getBlockState(var3.method8313());
+      BlockState var7 = var1.getBlockState(var3.down());
       return (
-            var7.method23446(Class7645.field32767)
+            var7.method23446(BlockTags.field32767)
                || var7.method23448(Blocks.field36395)
-               || var7.method23446(Class7645.field32751)
+               || var7.method23446(BlockTags.field32751)
                || var7.method23448(Blocks.AIR)
          )
          && var1.method7021(var3, 0) > 8;
@@ -277,7 +277,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return method4411(this.world, this.world.field9016);
+      return method4411(this.world, this.world.rand);
    }
 
    public static Class9455 method4411(World var0, Random var1) {

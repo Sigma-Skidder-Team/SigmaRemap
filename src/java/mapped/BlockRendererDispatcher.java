@@ -50,18 +50,18 @@ public class BlockRendererDispatcher implements Class215 {
       } catch (Throwable var14) {
          CrashReport var12 = CrashReport.makeCrashReport(var14, "Tesselating block in world");
          CrashReportCategory var13 = var12.makeCategory("Block being tesselated");
-         CrashReportCategory.method32814(var13, var2, var1);
+         CrashReportCategory.addBlockInfo(var13, var2, var1);
          throw new ReportedException(var12);
       }
    }
 
-   public boolean method811(BlockPos var1, Class1663 var2, Class5422 var3, Class7379 var4) {
+   public boolean method811(BlockPos var1, Class1663 var2, Class5422 var3, FluidState var4) {
       try {
          return this.field855.method14925(var2, var1, var3, var4);
       } catch (Throwable var10) {
          CrashReport var8 = CrashReport.makeCrashReport(var10, "Tesselating liquid in world");
          CrashReportCategory var9 = var8.makeCategory("Block being tesselated");
-         CrashReportCategory.method32814(var9, var1, (BlockState)null);
+         CrashReportCategory.addBlockInfo(var9, var1, (BlockState)null);
          throw new ReportedException(var8);
       }
    }

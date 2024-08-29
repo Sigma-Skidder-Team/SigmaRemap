@@ -54,13 +54,13 @@ public class Class7198 extends Class7194 {
    }
 
    @Override
-   public boolean method22611(Class1670 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
+   public boolean method22611(IChunk var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       return false;
    }
 
    @Override
    public boolean method22596(
-      Class1670 var1,
+      IChunk var1,
       Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,
@@ -82,7 +82,7 @@ public class Class7198 extends Class7194 {
 
    public static boolean method22615(
       Class7195<?> var0,
-      Class1670 var1,
+      IChunk var1,
       BitSet var2,
       Random var3,
       Mutable var4,
@@ -110,15 +110,15 @@ public class Class7198 extends Class7194 {
             } else if (var11 == 10) {
                float var22 = var3.nextFloat();
                if (!((double)var22 < 0.25)) {
-                  var1.method7061(var4, Blocks.field36527.method11579(), false);
+                  var1.setBlockState(var4, Blocks.field36527.method11579(), false);
                } else {
-                  var1.method7061(var4, Blocks.field36890.method11579(), false);
+                  var1.setBlockState(var4, Blocks.field36890.method11579(), false);
                   var1.method7089().method20726(var4, Blocks.field36890, 0);
                }
 
                return true;
             } else if (var11 < 10) {
-               var1.method7061(var4, Blocks.LAVA.method11579(), false);
+               var1.setBlockState(var4, Blocks.LAVA.method11579(), false);
                return false;
             } else {
                boolean var17 = false;
@@ -127,7 +127,7 @@ public class Class7198 extends Class7194 {
                   int var20 = var8 + var19.method539();
                   int var21 = var9 + var19.method541();
                   if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.getBlockState(var4.method8372(var20, var11, var21)).isAir()) {
-                     var1.method7061(var4, field30895.method23484(), false);
+                     var1.setBlockState(var4, field30895.getBlockState(), false);
                      var1.method7090().method20726(var4, field30895.method23472(), 0);
                      var17 = true;
                      break;
@@ -138,7 +138,7 @@ public class Class7198 extends Class7194 {
                if (var17) {
                   return true;
                } else {
-                  var1.method7061(var4, field30895.method23484(), false);
+                  var1.setBlockState(var4, field30895.getBlockState(), false);
                   return true;
                }
             }

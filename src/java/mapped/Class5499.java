@@ -13,8 +13,8 @@ public class Class5499 implements Packet<Class5116> {
    private Class1894 field24409;
    private Class1894 field24410;
    private Set<RegistryKey<World>> field24411;
-   private Class8905 field24412;
-   private Class9535 field24413;
+   private DynamicRegistriesImpl field24412;
+   private DimensionType field24413;
    private RegistryKey<World> field24414;
    private int field24415;
    private int field24416;
@@ -33,8 +33,8 @@ public class Class5499 implements Packet<Class5116> {
       long var4,
       boolean var6,
       Set<RegistryKey<World>> var7,
-      Class8905 var8,
-      Class9535 var9,
+      DynamicRegistriesImpl var8,
+      DimensionType var9,
       RegistryKey<World> var10,
       int var11,
       int var12,
@@ -70,12 +70,12 @@ public class Class5499 implements Packet<Class5116> {
       this.field24411 = Sets.newHashSet();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field24411.add(RegistryKey.<World>method31395(Registry.field16067, var1.method35731()));
+         this.field24411.add(RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731()));
       }
 
-      this.field24412 = var1.<Class8905>method35696(Class8905.field40301);
-      this.field24413 = var1.<Supplier<Class9535>>method35696(Class9535.field44379).get();
-      this.field24414 = RegistryKey.<World>method31395(Registry.field16067, var1.method35731());
+      this.field24412 = var1.<DynamicRegistriesImpl>method35696(DynamicRegistriesImpl.field40301);
+      this.field24413 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
+      this.field24414 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731());
       this.field24407 = var1.readLong();
       this.field24415 = var1.method35714();
       this.field24416 = var1.method35714();
@@ -94,12 +94,12 @@ public class Class5499 implements Packet<Class5116> {
       var1.writeVarInt(this.field24411.size());
 
       for (RegistryKey var5 : this.field24411) {
-         var1.method35732(var5.method31399());
+         var1.method35732(var5.getLocation());
       }
 
-      var1.method35697(Class8905.field40301, this.field24412);
-      var1.method35697(Class9535.field44379, () -> this.field24413);
-      var1.method35732(this.field24414.method31399());
+      var1.method35697(DynamicRegistriesImpl.field40301, this.field24412);
+      var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24413);
+      var1.method35732(this.field24414.getLocation());
       var1.writeLong(this.field24407);
       var1.writeVarInt(this.field24415);
       var1.writeVarInt(this.field24416);
@@ -141,7 +141,7 @@ public class Class5499 implements Packet<Class5116> {
       return this.field24412;
    }
 
-   public Class9535 method17294() {
+   public DimensionType method17294() {
       return this.field24413;
    }
 

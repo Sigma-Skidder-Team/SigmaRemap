@@ -21,7 +21,7 @@ public class Class3431 extends Class3429 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.field9020 && !var1.<Boolean>method23463(field19194)) {
+      if (!var2.isRemote && !var1.<Boolean>method23463(field19194)) {
          this.method12094(var2, var3, var1);
       }
    }
@@ -58,27 +58,27 @@ public class Class3431 extends Class3429 {
 
          if (var7 && !var6) {
             BlockState var9 = var3.method23465(field19194, Boolean.valueOf(true));
-            var1.method6725(var2, var9, 3);
+            var1.setBlockState(var2, var9, 3);
             this.method12095(var1, var2, var9, true);
-            var1.method6733(var2, this);
-            var1.method6733(var2.method8313(), this);
-            var1.method6732(var2, var3, var9);
+            var1.notifyNeighborsOfStateChange(var2, this);
+            var1.notifyNeighborsOfStateChange(var2.down(), this);
+            var1.markBlockRangeForRenderUpdate(var2, var3, var9);
          }
 
          if (!var7 && var6) {
             BlockState var10 = var3.method23465(field19194, Boolean.valueOf(false));
-            var1.method6725(var2, var10, 3);
+            var1.setBlockState(var2, var10, 3);
             this.method12095(var1, var2, var10, false);
-            var1.method6733(var2, this);
-            var1.method6733(var2.method8313(), this);
-            var1.method6732(var2, var3, var10);
+            var1.notifyNeighborsOfStateChange(var2, this);
+            var1.notifyNeighborsOfStateChange(var2.down(), this);
+            var1.markBlockRangeForRenderUpdate(var2, var3, var10);
          }
 
          if (var7) {
             var1.method6860().method20726(var2, this, 20);
          }
 
-         var1.method6806(var2, this);
+         var1.updateComparatorOutputLevel(var2, this);
       }
    }
 

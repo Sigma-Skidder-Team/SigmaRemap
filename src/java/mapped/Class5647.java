@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class Class5647 extends Class5646 {
+public class Class5647 extends ChunkGenerator {
    private static String[] field24990;
    public static final Codec<Class5647> field24991 = Class8611.<Biome>method30859(Registry.BIOME_KEY)
       .xmap(Class5647::new, Class5647::method17834)
@@ -21,7 +21,7 @@ public class Class5647 extends Class5646 {
    private final Registry<Biome> field24997;
 
    public Class5647(Registry<Biome> var1) {
-      super(new Class1688(var1.method9189(Class9495.field44122)), new Class9763(false));
+      super(new Class1688(var1.getOrThrow(Class9495.field44122)), new Class9763(false));
       this.field24997 = var1;
    }
 
@@ -30,21 +30,21 @@ public class Class5647 extends Class5646 {
    }
 
    @Override
-   public Codec<? extends Class5646> method17790() {
+   public Codec<? extends ChunkGenerator> method17790() {
       return field24991;
    }
 
    @Override
-   public Class5646 method17791(long var1) {
+   public ChunkGenerator method17791(long var1) {
       return this;
    }
 
    @Override
-   public void method17801(Class1691 var1, Class1670 var2) {
+   public void method17801(Class1691 var1, IChunk var2) {
    }
 
    @Override
-   public void method17819(long var1, Class6668 var3, Class1670 var4, Class97 var5) {
+   public void method17819(long var1, BiomeManager var3, IChunk var4, Class97 var5) {
    }
 
    @Override
@@ -57,17 +57,17 @@ public class Class5647 extends Class5646 {
          for (int var9 = 0; var9 < 16; var9++) {
             int var10 = (var6 << 4) + var8;
             int var11 = (var7 << 4) + var9;
-            var1.method6725(var5.method8372(var10, 60, var11), field24996, 2);
+            var1.setBlockState(var5.method8372(var10, 60, var11), field24996, 2);
             BlockState var12 = method17835(var10, var11);
             if (var12 != null) {
-               var1.method6725(var5.method8372(var10, 70, var11), var12, 2);
+               var1.setBlockState(var5.method8372(var10, 70, var11), var12, 2);
             }
          }
       }
    }
 
    @Override
-   public void method17803(Class1660 var1, Class7480 var2, Class1670 var3) {
+   public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
    }
 
    @Override

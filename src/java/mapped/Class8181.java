@@ -99,7 +99,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    public boolean method28475(Consumer<? super VoxelShape> var1) {
       Objects.<Entity>requireNonNull(this.field35186);
       this.field35193 = false;
-      Class7522 var4 = this.field35192.method6810();
+      WorldBorder var4 = this.field35192.method6810();
       AxisAlignedBB var5 = this.field35186.getBoundingBox();
       if (!method28478(var4, var5)) {
          VoxelShape var6 = var4.method24527();
@@ -120,7 +120,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
       return VoxelShapes.compare(var0, VoxelShapes.create(var1.method19679(1.0E-7)), IBooleanFunction.AND);
    }
 
-   public static boolean method28478(Class7522 var0, AxisAlignedBB var1) {
+   public static boolean method28478(WorldBorder var0, AxisAlignedBB var1) {
       double var4 = (double) MathHelper.floor(var0.method24530());
       double var6 = (double) MathHelper.floor(var0.method24531());
       double var8 = (double) MathHelper.method37774(var0.method24532());

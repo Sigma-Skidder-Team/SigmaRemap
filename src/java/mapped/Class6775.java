@@ -15,7 +15,7 @@ public class Class6775 extends Class6773 {
    @Override
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -51,9 +51,9 @@ public class Class6775 extends Class6773 {
                      if (var26 > 0) {
                         var26--;
                         if (!var27) {
-                           var2.method7061(var29, this.method20660(var4, var30, var5), false);
+                           var2.setBlockState(var29, this.method20660(var4, var30, var5), false);
                         } else {
-                           var2.method7061(var29, field29549, false);
+                           var2.setBlockState(var29, field29549, false);
                         }
                      }
                   } else {
@@ -74,13 +74,13 @@ public class Class6775 extends Class6773 {
 
                      var26 = var24 + Math.max(0, var30 - var11);
                      if (var30 < var11 - 1) {
-                        var2.method7061(var29, var23, false);
+                        var2.setBlockState(var29, var23, false);
                         if (var23 == field29495) {
-                           var2.method7061(var29, field29549, false);
+                           var2.setBlockState(var29, field29549, false);
                         }
                      } else if (var30 <= 86 + var24 * 2) {
                         if (var30 <= var11 + 3 + var24) {
-                           var2.method7061(var29, var22, false);
+                           var2.setBlockState(var29, var22, false);
                            var27 = true;
                         } else {
                            BlockState var32;
@@ -92,12 +92,12 @@ public class Class6775 extends Class6773 {
                               var32 = field29550;
                            }
 
-                           var2.method7061(var29, var32, false);
+                           var2.setBlockState(var29, var32, false);
                         }
                      } else if (!var25) {
-                        var2.method7061(var29, Blocks.field36395.method11579(), false);
+                        var2.setBlockState(var29, Blocks.field36395.method11579(), false);
                      } else {
-                        var2.method7061(var29, Blocks.field36397.method11579(), false);
+                        var2.setBlockState(var29, Blocks.field36397.method11579(), false);
                      }
                   }
 

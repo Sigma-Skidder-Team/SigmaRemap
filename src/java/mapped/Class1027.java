@@ -68,7 +68,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
    @Override
    public void method2871() {
-      if (!this.world.field9020 && this.method3066()) {
+      if (!this.world.isRemote && this.method3066()) {
          this.field5722.method10927();
          if (this.field5722.method10926() > 0) {
             this.field5723.method10925(false);

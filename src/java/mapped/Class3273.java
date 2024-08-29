@@ -15,14 +15,14 @@ public class Class3273 extends Item {
       boolean var7 = false;
       if (!Class3244.method11656(var6)) {
          var5 = var5.method8349(var1.method18354());
-         if (Class3397.method12012(var4, var5, var1.method18350())) {
+         if (AbstractFireBlock.method12012(var4, var5, var1.method18350())) {
             this.method11796(var4, var5);
-            var4.method6730(var5, Class3397.method12009(var4, var5));
+            var4.setBlockState(var5, AbstractFireBlock.method12009(var4, var5));
             var7 = true;
          }
       } else {
          this.method11796(var4, var5);
-         var4.method6730(var5, var6.method23465(Class3244.field18698, Boolean.valueOf(true)));
+         var4.setBlockState(var5, var6.method23465(Class3244.field18698, Boolean.valueOf(true)));
          var7 = true;
       }
 
@@ -30,7 +30,7 @@ public class Class3273 extends Item {
          return ActionResultType.FAIL;
       } else {
          var1.method18357().method32182(1);
-         return ActionResultType.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.isRemote);
       }
    }
 

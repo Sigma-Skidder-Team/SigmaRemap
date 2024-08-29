@@ -74,7 +74,7 @@ public class Class1055 extends Class1047 {
       this.field5832 = this.field5831;
       this.field5829 = this.field5829 + this.field5834;
       if ((double)this.field5829 > Math.PI * 2) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.field5829 = (float)((double)this.field5829 - (Math.PI * 2));
             if (this.rand.nextInt(10) == 0) {
                this.field5834 = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
@@ -88,7 +88,7 @@ public class Class1055 extends Class1047 {
 
       if (!this.method3255()) {
          this.field5831 = MathHelper.method37771(MathHelper.sin(this.field5829)) * (float) Math.PI * 0.25F;
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             double var5 = this.method3433().field18049;
             if (!this.method3033(Class8254.field35491)) {
                if (!this.method3247()) {
@@ -118,7 +118,7 @@ public class Class1055 extends Class1047 {
             }
          }
 
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method3435((double)(this.field5836 * this.field5833), (double)(this.field5837 * this.field5833), (double)(this.field5838 * this.field5833));
          }
 

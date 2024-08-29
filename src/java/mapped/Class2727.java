@@ -65,6 +65,6 @@ public class Class2727 extends Class2595 {
 
    private boolean method10939(Class1662 var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      return (var1.method6739(var2).method23474() || var5.method23448(Blocks.field37013)) && var5.method23440(var1, var2, Class1947.field12614);
+      return (var1.getFluidState(var2).method23474() || var5.method23448(Blocks.field37013)) && var5.method23440(var1, var2, Class1947.field12614);
    }
 }

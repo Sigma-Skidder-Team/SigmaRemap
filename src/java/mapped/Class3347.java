@@ -32,7 +32,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return this.method11579()
          .method23465(field18860, var1.method18350().method536())
          .method23465(field18861, Boolean.valueOf(var4.method23472() == Class9479.field44066));
@@ -43,10 +43,10 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
       Class980 var9 = var4.method2942();
       TileEntity var10 = var2.getTileEntity(var3);
       if (var9 != null && var10 instanceof Class943) {
-         BlockPos var11 = var3.method8311();
+         BlockPos var11 = var3.up();
          if (var2.getBlockState(var11).method23400(var2, var11)) {
-            return ActionResultType.method9002(var2.field9020);
-         } else if (!var2.field9020) {
+            return ActionResultType.method9002(var2.isRemote);
+         } else if (!var2.isRemote) {
             Class943 var12 = (Class943)var10;
             var9.method4064(var12);
             var4.method2766(new Class953((var1x, var2x, var3x) -> Class5813.method18162(var1x, var2x, var9), field18863));
@@ -57,7 +57,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
             return ActionResultType.field14818;
          }
       } else {
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       }
    }
 
@@ -97,7 +97,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18861) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

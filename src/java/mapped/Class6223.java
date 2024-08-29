@@ -16,6 +16,6 @@ public final class Class6223 extends Class6218 {
 
    @Override
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(1004, var1.method11323(), 0);
+      var1.method11326().playEvent(1004, var1.method11323(), 0);
    }
 }

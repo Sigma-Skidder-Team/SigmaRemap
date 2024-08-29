@@ -91,7 +91,7 @@ public class Class905 extends Class882 {
          var4 = (double)this.field5163.method3430() * 0.5;
          var6 = new BlockPos(this.field5163.getPosX(), this.field5163.getPosY() + var4, this.field5163.getPosZ());
       } else {
-         var6 = this.getPosition().method8313();
+         var6 = this.getPosition().down();
       }
 
       double var7 = (double)var6.getX() + 0.5;
@@ -102,25 +102,25 @@ public class Class905 extends Class882 {
          BlockPos var22 = this.getPosition();
          ArrayList var23 = Lists.newArrayList();
          if (var1 != Class113.field413) {
-            if (var22.getX() < var6.getX() && this.world.method7007(var22.method8347())) {
+            if (var22.getX() < var6.getX() && this.world.method7007(var22.east())) {
                var23.add(Direction.EAST);
-            } else if (var22.getX() > var6.getX() && this.world.method7007(var22.method8345())) {
+            } else if (var22.getX() > var6.getX() && this.world.method7007(var22.west())) {
                var23.add(Direction.WEST);
             }
          }
 
          if (var1 != Class113.field414) {
-            if (var22.getY() < var6.getY() && this.world.method7007(var22.method8311())) {
+            if (var22.getY() < var6.getY() && this.world.method7007(var22.up())) {
                var23.add(Direction.field673);
-            } else if (var22.getY() > var6.getY() && this.world.method7007(var22.method8313())) {
+            } else if (var22.getY() > var6.getY() && this.world.method7007(var22.down())) {
                var23.add(Direction.DOWN);
             }
          }
 
          if (var1 != Class113.field415) {
-            if (var22.getZ() < var6.getZ() && this.world.method7007(var22.method8343())) {
+            if (var22.getZ() < var6.getZ() && this.world.method7007(var22.south())) {
                var23.add(Direction.SOUTH);
-            } else if (var22.getZ() > var6.getZ() && this.world.method7007(var22.method8341())) {
+            } else if (var22.getZ() > var6.getZ() && this.world.method7007(var22.north())) {
                var23.add(Direction.NORTH);
             }
          }
@@ -168,7 +168,7 @@ public class Class905 extends Class882 {
    @Override
    public void tick() {
       super.tick();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.field5163 == null && this.field5169 != null) {
             this.field5163 = ((ServerWorld)this.world).method6942(this.field5169);
             if (this.field5163 == null) {
@@ -200,7 +200,7 @@ public class Class905 extends Class882 {
       Vector3d var8 = this.method3433();
       this.setPosition(this.getPosX() + var8.field18048, this.getPosY() + var8.field18049, this.getPosZ() + var8.field18050);
       Class9456.method36388(this, 0.5F);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.field5163 != null && !this.field5163.removed) {
             if (this.field5165 > 0) {
                this.field5165--;
@@ -293,7 +293,7 @@ public class Class905 extends Class882 {
 
    @Override
    public boolean method2741(Class8654 var1, float var2) {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method2863(Sounds.field27047, 1.0F, 1.0F);
          ((ServerWorld)this.world).method6939(Class7940.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.method2904();

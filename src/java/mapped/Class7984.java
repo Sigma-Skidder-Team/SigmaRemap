@@ -16,7 +16,7 @@ public interface Class7984<T> {
    Map<ResourceLocation, ITag<T>> method27134();
 
    @Nullable
-   default ITag<T> method27135(ResourceLocation var1) {
+   default ITag<T> get(ResourceLocation var1) {
       return this.method27134().get(var1);
    }
 

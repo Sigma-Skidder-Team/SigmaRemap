@@ -12,7 +12,7 @@ public class Class3392 extends Block {
    public static final Class8551 field19022 = Class8820.field39719;
    public static final Class8551 field19023 = Class8820.field39714;
    public static final Class8551 field19024 = Class8820.field39715;
-   public static final Map<Direction, Class8551> field19025 = Util.<Map<Direction, Class8551>>method38508(Maps.newEnumMap(Direction.class), var0 -> {
+   public static final Map<Direction, Class8551> field19025 = Util.<Map<Direction, Class8551>>make(Maps.newEnumMap(Direction.class), var0 -> {
       var0.put(Direction.NORTH, field19019);
       var0.put(Direction.EAST, field19020);
       var0.put(Direction.SOUTH, field19021);
@@ -37,7 +37,7 @@ public class Class3392 extends Block {
 
       for (int var8 = 0; var8 < field19018.length; var8++) {
          Direction var9 = field19018[var8];
-         var7[var8] = VoxelShapes.method27427(
+         var7[var8] = VoxelShapes.create(
             0.5 + Math.min((double)(-var1), (double)var9.method539() * 0.5),
             0.5 + Math.min((double)(-var1), (double)var9.method540() * 0.5),
             0.5 + Math.min((double)(-var1), (double)var9.method541() * 0.5),

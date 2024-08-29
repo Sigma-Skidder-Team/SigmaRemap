@@ -34,7 +34,7 @@ public abstract class Class3468 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockPos var6 = var3.method8313();
+      BlockPos var6 = var3.down();
       return method11547(var2, var6) || method11548(var2, var6, Direction.field673);
    }
 
@@ -48,7 +48,7 @@ public abstract class Class3468 extends Block {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          int var7 = this.method12158(var1);
          if (var7 == 0) {
             this.method12153(var2, var3, var1, var7);
@@ -62,9 +62,9 @@ public abstract class Class3468 extends Block {
       boolean var9 = var7 > 0;
       if (var4 != var7) {
          BlockState var10 = this.method12159(var3, var7);
-         var1.method6725(var2, var10, 2);
+         var1.setBlockState(var2, var10, 2);
          this.method12156(var1, var2);
-         var1.method6732(var2, var3, var10);
+         var1.markBlockRangeForRenderUpdate(var2, var3, var10);
       }
 
       if (!var9 && var8) {
@@ -94,8 +94,8 @@ public abstract class Class3468 extends Block {
    }
 
    public void method12156(World var1, BlockPos var2) {
-      var1.method6733(var2, this);
-      var1.method6733(var2.method8313(), this);
+      var1.notifyNeighborsOfStateChange(var2, this);
+      var1.notifyNeighborsOfStateChange(var2.down(), this);
    }
 
    @Override

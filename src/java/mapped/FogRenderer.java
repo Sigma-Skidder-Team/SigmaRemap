@@ -11,7 +11,7 @@ public class FogRenderer {
    public static boolean field40354 = false;
 
    public static void method32584(Class9624 var0, float var1, ClientWorld var2, int var3, float var4) {
-      Class7379 var7 = var0.method37512();
+      FluidState var7 = var0.method37512();
       if (!var7.method23486(Class8953.field40469)) {
          if (!var7.method23486(Class8953.field40470)) {
             float var8 = 0.25F + 0.75F * (float)var3 / 32.0F;
@@ -22,7 +22,7 @@ public class FogRenderer {
             float var11 = (float)var9.field18049;
             float var12 = (float)var9.field18050;
             float var13 = MathHelper.method37777(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
-            Class6668 var14 = var2.getBiomeManager();
+            BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.method37504().method11337(2.0, 2.0, 2.0).method11344(0.25);
             Vector3d var16 = Class8430.method29626(
                var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.method11327(var14.method20326(var3x, var4x, var5).method32509()), var13)
@@ -93,9 +93,9 @@ public class FogRenderer {
          int var41 = field40352 >> 8 & 0xFF;
          int var43 = field40352 & 0xFF;
          float var45 = MathHelper.method37777((float)(var19 - field40353) / 5000.0F, 0.0F, 1.0F);
-         float var48 = MathHelper.method37821(var45, (float)var40, (float)var32);
-         float var54 = MathHelper.method37821(var45, (float)var41, (float)var38);
-         float var55 = MathHelper.method37821(var45, (float)var43, (float)var39);
+         float var48 = MathHelper.lerp(var45, (float)var40, (float)var32);
+         float var54 = MathHelper.lerp(var45, (float)var41, (float)var38);
+         float var55 = MathHelper.lerp(var45, (float)var43, (float)var39);
          field40348 = var48 / 255.0F;
          field40349 = var54 / 255.0F;
          field40350 = var55 / 255.0F;
@@ -205,7 +205,7 @@ public class FogRenderer {
 
    public static void method32587(Class9624 var0, Class2040 var1, float var2, boolean var3, float var4) {
       field40354 = false;
-      Class7379 var7 = var0.method37512();
+      FluidState var7 = var0.method37512();
       Entity var8 = var0.method37509();
       float var9 = -1.0F;
       if (Class9299.field42876.method20214()) {
@@ -219,7 +219,7 @@ public class FogRenderer {
             if (!var7.method23486(Class8953.field40470)) {
                if (var8 instanceof Class880 && ((Class880)var8).method3033(Class8254.field35481)) {
                   int var12 = ((Class880)var8).method3034(Class8254.field35481).method8628();
-                  float var13 = MathHelper.method37821(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
+                  float var13 = MathHelper.lerp(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != Class2040.field13337) {
                      var10 = var13 * 0.25F;
                      var11 = var13;

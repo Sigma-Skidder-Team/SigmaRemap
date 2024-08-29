@@ -109,7 +109,7 @@ public class Class7881 extends Class7882<Class880> {
 
    private static boolean method26427(ServerWorld var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      boolean var5 = var4.method23446(Class7645.field32774);
+      boolean var5 = var4.method23446(BlockTags.field32774);
       return var5 && var4.method23448(Blocks.field37068) ? Class3244.method11655(var4) : var5;
    }
 }

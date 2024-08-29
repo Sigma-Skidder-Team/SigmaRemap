@@ -110,7 +110,7 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    @Override
    public void method3155(DataParameter<?> var1) {
-      if (field5648.equals(var1) && this.method4359() && this.world.field9020) {
+      if (field5648.equals(var1) && this.method4359() && this.world.isRemote) {
          this.method4351();
       }
 
@@ -164,7 +164,7 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    @Override
    public void method2871() {
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          for (int var3 = 0; var3 < 2; var3++) {
             this.world
                .method6746(
@@ -180,7 +180,7 @@ public class Class1010 extends Class1009 implements Class1011 {
       }
 
       this.field4981 = false;
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4366((ServerWorld)this.world, true);
       }
 
@@ -206,7 +206,7 @@ public class Class1010 extends Class1009 implements Class1011 {
    }
 
    public boolean method4353() {
-      if (!this.world.method6714() && this.method3066()) {
+      if (!this.world.isRemote() && this.method3066()) {
          double var3 = this.getPosX() + (this.rand.nextDouble() - 0.5) * 64.0;
          double var5 = this.getPosY() + (double)(this.rand.nextInt(64) - 32);
          double var7 = this.getPosZ() + (this.rand.nextDouble() - 0.5) * 64.0;
@@ -288,7 +288,7 @@ public class Class1010 extends Class1009 implements Class1011 {
          return false;
       } else if (!(var1 instanceof Class8653)) {
          boolean var6 = super.method2741(var1, var2);
-         if (!this.world.method6714() && !(var1.method31109() instanceof Class880) && this.rand.nextInt(10) != 0) {
+         if (!this.world.isRemote() && !(var1.method31109() instanceof Class880) && this.rand.nextInt(10) != 0) {
             this.method4353();
          }
 

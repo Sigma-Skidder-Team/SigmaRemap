@@ -41,7 +41,7 @@ public class Class3491 extends Class3490 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.field9020 && var2.method6997() != Class2197.field14351 && var4 instanceof Class880) {
+      if (!var2.isRemote && var2.method6997() != Class2197.field14351 && var4 instanceof Class880) {
          Class880 var7 = (Class880)var4;
          if (!var7.method2760(Class8654.field39007)) {
             var7.method3035(new Class2023(Class8254.field35486, 40));

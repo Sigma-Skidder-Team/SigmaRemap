@@ -10,7 +10,7 @@ public class Class2665 extends Class2661 {
    public Class2665(Class1017 var1) {
       super(var1, null);
       this.field17022 = var1;
-      this.field17038 = this.field17022.world.field9016.nextInt(10);
+      this.field17038 = this.field17022.world.rand.nextInt(10);
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }
 

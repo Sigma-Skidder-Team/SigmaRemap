@@ -77,7 +77,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
          }
       }
 
-      if (!this.field5324.field9020) {
+      if (!this.field5324.isRemote) {
          boolean[] var10 = this.method3687();
          if (!Arrays.equals(var10, this.field5275)) {
             this.field5275 = var10;
@@ -90,7 +90,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
                var8 = var8.method23465(Class3376.field18975[var9], Boolean.valueOf(var10[var9]));
             }
 
-            this.field5324.method6725(this.field5325, var8, 2);
+            this.field5324.setBlockState(this.field5325, var8, 2);
          }
       }
    }
@@ -139,7 +139,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
       if (var3.getItem().method11723()) {
          ItemStack var5 = new ItemStack(var3.getItem().method11722());
          if (!var3.isEmpty()) {
-            if (!this.field5324.field9020) {
+            if (!this.field5324.isRemote) {
                Class7236.method22725(this.field5324, (double)var6.getX(), (double)var6.getY(), (double)var6.getZ(), var5);
             }
          } else {
@@ -148,7 +148,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
       }
 
       this.field5273.set(3, var3);
-      this.field5324.method6999(1035, var6, 0);
+      this.field5324.playEvent(1035, var6, 0);
    }
 
    @Override

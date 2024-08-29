@@ -17,13 +17,13 @@ public final class Class8497 {
       int var11 = (int)var3 >> 4;
       int var12 = (int)var5 >> 4;
       Builder var13 = ImmutableMap.builder();
-      Class1705 var14 = var9.method6883();
+      Class1705 var14 = var9.getChunkProvider();
 
       for (int var15 = var11 - 12; var15 <= var11 + 12; var15++) {
          for (int var16 = var12 - 12; var16 <= var12 + 12; var16++) {
             Class7481 var17 = new Class7481(var15, var16);
             String var18 = "";
-            Class1674 var19 = var14.method7342(var15, var16, false);
+            Chunk var19 = var14.method7342(var15, var16, false);
             var18 = var18 + "Client: ";
             if (var19 != null) {
                var18 = var18 + (!var19.method7141() ? "" : " E");
@@ -43,7 +43,7 @@ public final class Class8497 {
             return ImmutableMap.of();
          } else {
             Builder var7 = ImmutableMap.builder();
-            Class1703 var8 = var6.method6883();
+            Class1703 var8 = var6.getChunkProvider();
 
             for (int var9x = var11 - 12; var9x <= var11 + 12; var9x++) {
                for (int var10x = var12 - 12; var10x <= var12 + 12; var10x++) {

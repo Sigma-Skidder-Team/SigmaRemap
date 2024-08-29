@@ -17,12 +17,12 @@ public class Class1818 implements IResourceManager {
 
    @Override
    public Class1783 method580(ResourceLocation var1) throws IOException {
-      return (Class1783)(!var1.method8292().equals("jelloblur") ? Class8480.method29975().getResourceManager().method580(var1) : new Class1784());
+      return (Class1783)(!var1.getPath().equals("jelloblur") ? Class8480.method29975().getResourceManager().method580(var1) : new Class1784());
    }
 
    @Override
    public boolean method581(ResourceLocation var1) {
-      return !var1.method8292().equals("jelloblur") ? Class8480.method29975().getResourceManager().method581(var1) : true;
+      return !var1.getPath().equals("jelloblur") ? Class8480.method29975().getResourceManager().method581(var1) : true;
    }
 
    @Override

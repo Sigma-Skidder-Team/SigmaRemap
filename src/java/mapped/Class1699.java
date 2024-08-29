@@ -175,7 +175,7 @@ public class Class1699 implements AutoCloseable {
    }
 
    private float method7320(World var1, int var2) {
-      return var1.method6812().method36890(var2);
+      return var1.method6812().getAmbientLight(var2);
    }
 
    public static int method7321(int var0, int var1) {

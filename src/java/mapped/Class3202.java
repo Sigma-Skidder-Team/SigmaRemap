@@ -77,14 +77,14 @@ public abstract class Class3202 extends Class3200 {
       if (!var1.<Boolean>method23463(field18510)) {
          this.method11519(var1, var2, var3);
          this.method11520(var4, var2, var3, true);
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14819;
       }
    }
 
    public void method11519(BlockState var1, World var2, BlockPos var3) {
-      var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(true)), 3);
+      var2.setBlockState(var3, var1.method23465(field18510, Boolean.valueOf(true)), 3);
       this.method11525(var1, var2, var3);
       var2.method6860().method20726(var3, this, this.method11518());
    }
@@ -125,7 +125,7 @@ public abstract class Class3202 extends Class3200 {
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18510)) {
          if (!this.field18527) {
-            var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(false)), 3);
+            var2.setBlockState(var3, var1.method23465(field18510, Boolean.valueOf(false)), 3);
             this.method11525(var1, var2, var3);
             this.method11520((PlayerEntity)null, var2, var3, false);
          } else {
@@ -136,7 +136,7 @@ public abstract class Class3202 extends Class3200 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.field9020 && this.field18527 && !var1.<Boolean>method23463(field18510)) {
+      if (!var2.isRemote && this.field18527 && !var1.<Boolean>method23463(field18510)) {
          this.method11524(var1, var2, var3);
       }
    }
@@ -146,7 +146,7 @@ public abstract class Class3202 extends Class3200 {
       boolean var7 = !var6.isEmpty();
       boolean var8 = var1.<Boolean>method23463(field18510);
       if (var7 != var8) {
-         var2.method6725(var3, var1.method23465(field18510, Boolean.valueOf(var7)), 3);
+         var2.setBlockState(var3, var1.method23465(field18510, Boolean.valueOf(var7)), 3);
          this.method11525(var1, var2, var3);
          this.method11520((PlayerEntity)null, var2, var3, var7);
       }
@@ -157,8 +157,8 @@ public abstract class Class3202 extends Class3200 {
    }
 
    private void method11525(BlockState var1, World var2, BlockPos var3) {
-      var2.method6733(var3, this);
-      var2.method6733(var3.method8349(method11509(var1).method536()), this);
+      var2.notifyNeighborsOfStateChange(var3, this);
+      var2.notifyNeighborsOfStateChange(var3.method8349(method11509(var1).method536()), this);
    }
 
    @Override

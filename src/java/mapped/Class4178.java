@@ -60,7 +60,7 @@ public abstract class Class4178 {
    public void method12894(Class4178 var1, List<Class4178> var2, Random var3) {
    }
 
-   public abstract boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7);
+   public abstract boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7);
 
    public Class9764 method12915() {
       return this.field20444;
@@ -187,8 +187,8 @@ public abstract class Class4178 {
             var2 = var2.method23395(this.field20447);
          }
 
-         var1.method6725(var9, var2, 2);
-         Class7379 var10 = var1.method6739(var9);
+         var1.setBlockState(var9, var2, 2);
+         FluidState var10 = var1.getFluidState(var9);
          if (!var10.method23474()) {
             var1.method6861().method20726(var9, var10.method23472(), 0);
          }
@@ -333,7 +333,7 @@ public abstract class Class4178 {
          while (
             (var1.method7007(new BlockPos(var9, var10, var11)) || var1.getBlockState(new BlockPos(var9, var10, var11)).method23384().method31085()) && var10 > 1
          ) {
-            var1.method6725(new BlockPos(var9, var10, var11), var2, 2);
+            var1.setBlockState(new BlockPos(var9, var10, var11), var2, 2);
             var10--;
          }
       }
@@ -394,7 +394,7 @@ public abstract class Class4178 {
             var6 = method12934(var1, var4, Blocks.CHEST.method11579());
          }
 
-         var1.method6725(var4, var6, 2);
+         var1.setBlockState(var4, var6, 2);
          TileEntity var9 = var1.getTileEntity(var4);
          if (var9 instanceof Class941) {
             ((Class941)var9).method3744(var5, var3.nextLong());

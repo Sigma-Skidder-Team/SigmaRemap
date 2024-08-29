@@ -20,7 +20,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Logger field16031 = LogManager.getLogger();
    private static final Map<ResourceLocation, Supplier<?>> field16032 = Maps.newLinkedHashMap();
    public static final ResourceLocation ROOT = new ResourceLocation("root");
-   public static final Class2349<Class2349<?>> field16034 = new Class2350<Class2349<?>>(createKey("root"), Lifecycle.experimental());
+   public static final MutableRegistry<MutableRegistry<?>> field16034 = new SimpleRegistry<MutableRegistry<?>>(createKey("root"), Lifecycle.experimental());
    public static final Registry<? extends Registry<?>> field16035 = field16034;
    public static final RegistryKey<Registry<Class9455>> field16036 = createKey("sound_event");
    public static final RegistryKey<Registry<Fluid>> field16037 = createKey("fluid");
@@ -34,7 +34,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class4387<?>>> field16045 = createKey("block_entity_type");
    public static final RegistryKey<Registry<Class9078>> field16046 = createKey("motive");
    public static final RegistryKey<Registry<ResourceLocation>> field16047 = createKey("custom_stat");
-   public static final RegistryKey<Registry<Class9176>> field16048 = createKey("chunk_status");
+   public static final RegistryKey<Registry<ChunkStatus>> field16048 = createKey("chunk_status");
    public static final RegistryKey<Registry<Class9277<?>>> field16049 = createKey("rule_test");
    public static final RegistryKey<Registry<Class8989<?>>> field16050 = createKey("pos_rule_test");
    public static final RegistryKey<Registry<Class8298<?>>> field16051 = createKey("menu");
@@ -52,9 +52,9 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class7131>> field16063 = createKey("loot_pool_entry_type");
    public static final RegistryKey<Registry<LootFunctionType>> field16064 = createKey("loot_function_type");
    public static final RegistryKey<Registry<Class7130>> field16065 = createKey("loot_condition_type");
-   public static final RegistryKey<Registry<Class9535>> field16066 = createKey("dimension_type");
-   public static final RegistryKey<Registry<World>> field16067 = createKey("dimension");
-   public static final RegistryKey<Registry<Class9459>> field16068 = createKey("dimension");
+   public static final RegistryKey<Registry<DimensionType>> DIMENSION_TYPE_KEY = createKey("dimension_type");
+   public static final RegistryKey<Registry<World>> WORLD_KEY = createKey("dimension");
+   public static final RegistryKey<Registry<Dimension>> DIMENSION_KEY = createKey("dimension");
    public static final Registry<Class9455> field16069 = method9175(field16036, () -> Sounds.field26714);
    public static final Class2351<Fluid> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Registry<Class7144> field16071 = method9175(field16038, () -> Class8254.field35492);
@@ -67,7 +67,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class4387<?>> field16078 = method9175(field16045, () -> Class4387.field21421);
    public static final Class2351<Class9078> field16079 = method9176(field16046, "kebab", () -> Class9078.field41530);
    public static final Registry<ResourceLocation> field16080 = method9175(field16047, () -> Class8876.field40125);
-   public static final Class2351<Class9176> field16081 = method9176(field16048, "empty", () -> Class9176.field42133);
+   public static final Class2351<ChunkStatus> field16081 = method9176(field16048, "empty", () -> ChunkStatus.field42133);
    public static final Registry<Class9277<?>> field16082 = method9175(field16049, () -> Class9277.field42660);
    public static final Registry<Class8989<?>> field16083 = method9175(field16050, () -> Class8989.field41001);
    public static final Registry<Class8298<?>> field16084 = method9175(field16051, () -> Class8298.field35655);
@@ -85,7 +85,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class7131> field16096 = method9175(field16063, () -> Class8695.field39239);
    public static final Registry<LootFunctionType> LOOT_FUNCTION_TYPE = method9175(field16064, () -> LootFunctionManager.SET_COUNT);
    public static final Registry<Class7130> field16098 = method9175(field16065, () -> Class8582.field38595);
-   public static final RegistryKey<Registry<Class9309>> field16099 = createKey("worldgen/noise_settings");
+   public static final RegistryKey<Registry<DimensionSettings>> field16099 = createKey("worldgen/noise_settings");
    public static final RegistryKey<Registry<Class9319<?>>> field16100 = createKey("worldgen/configured_surface_builder");
    public static final RegistryKey<Registry<Class6815<?>>> field16101 = createKey("worldgen/configured_carver");
    public static final RegistryKey<Registry<Class7909<?, ?>>> field16102 = createKey("worldgen/configured_feature");
@@ -112,7 +112,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class9542<?>>> field16123 = createKey("worldgen/tree_decorator_type");
    public static final RegistryKey<Registry<Class7646<?>>> field16124 = createKey("worldgen/feature_size_type");
    public static final RegistryKey<Registry<Codec<? extends Class1685>>> field16125 = createKey("worldgen/biome_source");
-   public static final RegistryKey<Registry<Codec<? extends Class5646>>> field16126 = createKey("worldgen/chunk_generator");
+   public static final RegistryKey<Registry<Codec<? extends ChunkGenerator>>> field16126 = createKey("worldgen/chunk_generator");
    public static final RegistryKey<Registry<Class7525<?>>> field16127 = createKey("worldgen/structure_processor");
    public static final RegistryKey<Registry<Class8325<?>>> field16128 = createKey("worldgen/structure_pool_element");
    public static final Registry<Class9654<?>> field16129 = method9175(field16119, () -> Class9654.field45131);
@@ -122,7 +122,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class9542<?>> field16133 = method9175(field16123, () -> Class9542.field44429);
    public static final Registry<Class7646<?>> field16134 = method9175(field16124, () -> Class7646.field32820);
    public static final Registry<Codec<? extends Class1685>> field16135 = method9177(field16125, Lifecycle.stable(), () -> Class1685.field9159);
-   public static final Registry<Codec<? extends Class5646>> field16136 = method9177(field16126, Lifecycle.stable(), () -> Class5646.field24984);
+   public static final Registry<Codec<? extends ChunkGenerator>> field16136 = method9177(field16126, Lifecycle.stable(), () -> ChunkGenerator.field24984);
    public static final Registry<Class7525<?>> field16137 = method9175(field16127, () -> Class7525.field32294);
    public static final Registry<Class8325<?>> field16138 = method9175(field16128, () -> Class8325.field35773);
    private final RegistryKey<? extends Registry<T>> field16139;
@@ -132,7 +132,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
       return RegistryKey.getOrCreateRootKey(new ResourceLocation(var0));
    }
 
-   public static <T extends Class2349<?>> void method9174(Class2349<T> var0) {
+   public static <T extends MutableRegistry<?>> void method9174(MutableRegistry<T> var0) {
       var0.forEach(var1 -> {
          if (var1.method9190().isEmpty()) {
             field16031.error("Registry '{}' was empty after loading", var0.getKey(var1));
@@ -157,18 +157,18 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    private static <T> Registry<T> method9177(RegistryKey<? extends Registry<T>> var0, Lifecycle var1, Supplier<T> var2) {
-      return method9179(var0, new Class2350<T>(var0, var1), var2, var1);
+      return method9179(var0, new SimpleRegistry<T>(var0, var1), var2, var1);
    }
 
    private static <T> Class2351<T> method9178(RegistryKey<? extends Registry<T>> var0, String var1, Lifecycle var2, Supplier<T> var3) {
       return method9179(var0, new Class2351<T>(var1, var0, var2), var3, var2);
    }
 
-   private static <T, R extends Class2349<T>> R method9179(RegistryKey<? extends Registry<T>> var0, R var1, Supplier<T> var2, Lifecycle var3) {
-      ResourceLocation var6 = var0.method31399();
+   private static <T, R extends MutableRegistry<T>> R method9179(RegistryKey<? extends Registry<T>> var0, R var1, Supplier<T> var2, Lifecycle var3) {
+      ResourceLocation var6 = var0.getLocation();
       field16032.put(var6, var2);
-      Class2349 var7 = field16034;
-      return (R) var7.<R>method9250(var0, (R)var1, var3);
+      MutableRegistry var7 = field16034;
+      return (R) var7.<R>register(var0, (R)var1, var3);
    }
 
    public Registry(RegistryKey<? extends Registry<T>> var1, Lifecycle var2) {
@@ -187,7 +187,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
 
    public <U> DataResult<Pair<T, U>> decode(DynamicOps<U> var1, U var2) {
       return !var1.compressMaps()
-         ? ResourceLocation.field13020
+         ? ResourceLocation.CODEC
             .decode(var1, var2)
             .flatMap(
                var1x -> {
@@ -244,7 +244,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
       return Optional.<T>ofNullable(this.method9183(var1));
    }
 
-   public T method9189(RegistryKey<T> var1) {
+   public T getOrThrow(RegistryKey<T> var1) {
       Object var4 = this.method9183(var1);
       if (var4 != null) {
          return (T)var4;
@@ -268,11 +268,11 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    public static <V, T extends V> T register(Registry<V> var0, ResourceLocation var1, T var2) {
-      return ((Class2349<V>)var0).method9250(RegistryKey.method31395(var0.field16139, var1), (T)var2, Lifecycle.stable());
+      return ((MutableRegistry<V>)var0).register(RegistryKey.getOrCreateKey(var0.field16139, var1), (T)var2, Lifecycle.stable());
    }
 
    public static <V, T extends V> T method9196(Registry<V> var0, int var1, String var2, T var3) {
-      return ((Class2349<V>)var0).method9249(var1, RegistryKey.method31395(var0.field16139, new ResourceLocation(var2)), (T)var3, Lifecycle.stable());
+      return ((MutableRegistry<V>)var0).method9249(var1, RegistryKey.getOrCreateKey(var0.field16139, new ResourceLocation(var2)), (T)var3, Lifecycle.stable());
    }
 
    static {

@@ -124,7 +124,7 @@ public class ItemFrameEntity extends Class995 {
       if (!this.field5495) {
          if (!this.method2760(var1)) {
             if (!var1.method31131() && !this.method4090().isEmpty()) {
-               if (!this.world.field9020) {
+               if (!this.world.isRemote) {
                   this.method4088(var1.method31109(), false);
                   this.method2863(Sounds.field26711, 1.0F, 1.0F);
                }
@@ -230,7 +230,7 @@ public class ItemFrameEntity extends Class995 {
       }
 
       if (var2 && this.field5488 != null) {
-         this.world.method6806(this.field5488, Blocks.AIR);
+         this.world.updateComparatorOutputLevel(this.field5488, Blocks.AIR);
       }
    }
 
@@ -265,7 +265,7 @@ public class ItemFrameEntity extends Class995 {
    private void method4095(int var1, boolean var2) {
       this.method3210().method35446(field5493, var1 % 8);
       if (var2 && this.field5488 != null) {
-         this.world.method6806(this.field5488, Blocks.AIR);
+         this.world.updateComparatorOutputLevel(this.field5488, Blocks.AIR);
       }
    }
 
@@ -316,7 +316,7 @@ public class ItemFrameEntity extends Class995 {
       boolean var6 = !this.method4090().isEmpty();
       boolean var7 = !var5.isEmpty();
       if (!this.field5495) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             if (var6) {
                this.method2863(Sounds.field26712, 1.0F, 1.0F);
                this.method4094(this.method4093() + 1);

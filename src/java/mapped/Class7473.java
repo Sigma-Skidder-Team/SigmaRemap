@@ -50,8 +50,8 @@ public class Class7473 {
    private BlockPos method24196(BlockPos var1) {
       int var4 = Math.max(0, var1.getY() - 21);
 
-      while (var1.getY() > var4 && method24202(this.field32112.getBlockState(var1.method8313()))) {
-         var1 = var1.method8313();
+      while (var1.getY() > var4 && method24202(this.field32112.getBlockState(var1.down()))) {
+         var1 = var1.down();
       }
 
       Direction var6 = this.field32114.method536();
@@ -132,7 +132,7 @@ public class Class7473 {
    }
 
    private static boolean method24202(BlockState var0) {
-      return var0.isAir() || var0.method23446(Class7645.field32798) || var0.method23448(Blocks.field36588);
+      return var0.isAir() || var0.method23446(BlockTags.field32798) || var0.method23448(Blocks.field36588);
    }
 
    public boolean method24203() {
@@ -142,7 +142,7 @@ public class Class7473 {
    public void method24204() {
       BlockState var3 = Blocks.field36588.method11579().method23465(Class3401.field19060, this.field32113);
       BlockPos.method8359(this.field32116, this.field32116.method8350(Direction.field673, this.field32117 - 1).method8350(this.field32114, this.field32118 - 1))
-         .forEach(var2 -> this.field32112.method6725(var2, var3, 18));
+         .forEach(var2 -> this.field32112.setBlockState(var2, var3, 18));
    }
 
    public boolean method24205() {

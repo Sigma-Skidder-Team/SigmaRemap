@@ -9,12 +9,12 @@ public class Class7632 extends Fluid {
    }
 
    @Override
-   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
+   public boolean method25055(FluidState var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
       return true;
    }
 
    @Override
-   public Vector3d method25056(Class1665 var1, BlockPos var2, Class7379 var3) {
+   public Vector3d method25056(Class1665 var1, BlockPos var2, FluidState var3) {
       return Vector3d.ZERO;
    }
 
@@ -34,32 +34,32 @@ public class Class7632 extends Fluid {
    }
 
    @Override
-   public float method25061(Class7379 var1, Class1665 var2, BlockPos var3) {
+   public float method25061(FluidState var1, Class1665 var2, BlockPos var3) {
       return 0.0F;
    }
 
    @Override
-   public float method25062(Class7379 var1) {
+   public float method25062(FluidState var1) {
       return 0.0F;
    }
 
    @Override
-   public BlockState method25063(Class7379 var1) {
+   public BlockState method25063(FluidState var1) {
       return Blocks.AIR.method11579();
    }
 
    @Override
-   public boolean method25064(Class7379 var1) {
+   public boolean method25064(FluidState var1) {
       return false;
    }
 
    @Override
-   public int method25065(Class7379 var1) {
+   public int method25065(FluidState var1) {
       return 0;
    }
 
    @Override
-   public VoxelShape method25068(Class7379 var1, Class1665 var2, BlockPos var3) {
+   public VoxelShape method25068(FluidState var1, Class1665 var2, BlockPos var3) {
       return VoxelShapes.method27425();
    }
 }

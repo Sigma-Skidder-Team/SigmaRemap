@@ -41,12 +41,12 @@ public class Class3239 extends Class3238 {
    }
 
    private boolean method11645(Block var1) {
-      return var1.method11540(Class7645.field32771) && var1.method11540(Class7645.field32743) == this.method11579().method23446(Class7645.field32743);
+      return var1.method11540(BlockTags.field32771) && var1.method11540(BlockTags.field32743) == this.method11579().method23446(BlockTags.field32743);
    }
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          return Class3329.method11880(var4, var2, var3);
       } else {
          ItemStack var9 = var4.getHeldItem(var5);
@@ -58,11 +58,11 @@ public class Class3239 extends Class3238 {
    public BlockState method11495(Class5909 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7379 var6 = var1.method18360().method6739(var1.method18345());
-      BlockPos var7 = var5.method8341();
-      BlockPos var8 = var5.method8347();
-      BlockPos var9 = var5.method8343();
-      BlockPos var10 = var5.method8345();
+      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
+      BlockPos var7 = var5.north();
+      BlockPos var8 = var5.east();
+      BlockPos var9 = var5.south();
+      BlockPos var10 = var5.west();
       BlockState var11 = var4.getBlockState(var7);
       BlockState var12 = var4.getBlockState(var8);
       BlockState var13 = var4.getBlockState(var9);

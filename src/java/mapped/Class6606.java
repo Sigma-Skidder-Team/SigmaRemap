@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6606 implements Class6607 {
+public class Class6606 implements ISpawnWorldInfo {
    private static String[] field29048;
    private final boolean field29049;
    private final Class5462 field29050;
@@ -125,7 +125,7 @@ public class Class6606 implements Class6607 {
 
    @Override
    public void method20049(CrashReportCategory var1) {
-      Class6607.super.method20049(var1);
+      ISpawnWorldInfo.super.method20049(var1);
    }
 
    public void method20050(Class2197 var1) {

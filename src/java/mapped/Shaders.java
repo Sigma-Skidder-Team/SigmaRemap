@@ -2675,7 +2675,7 @@ public class Shaders {
                     var5 = Class8715.method31433(var5);
                 }
 
-                int var7 = var6 != null ? var6.method11579().method23392() : 0;
+                int var7 = var6 != null ? var6.method11579().getLightValue() : 0;
                 ItemStack var8 = field40591.player != null ? field40591.player.method3091() : null;
                 Item var9 = var8 != null ? var8.getItem() : null;
                 int var10 = -1;
@@ -2689,7 +2689,7 @@ public class Shaders {
                     var10 = Class8715.method31433(var10);
                 }
 
-                int var12 = var11 != null ? var11.method11579().method23392() : 0;
+                int var12 = var11 != null ? var11.method11579().getLightValue() : 0;
                 if (method32993() && var12 > var7) {
                     var5 = var10;
                     var7 = var12;
@@ -3219,7 +3219,7 @@ public class Shaders {
                 float var10 = (float) Math.exp(Math.log(0.5) * (double) var9 / (double) field40653);
                 field40657 = field40657 * var10 + (float) (field40656 & 65535) * (1.0F - var10);
                 field40658 = field40658 * var10 + (float) (field40656 >> 16) * (1.0F - var10);
-                Class7379 var11 = var1.method37512();
+                FluidState var11 = var1.method37512();
                 if (var11.method23486(Class8953.field40469)) {
                     field40655 = 1;
                 } else if (var11.method23486(Class8953.field40470)) {

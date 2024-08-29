@@ -87,7 +87,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23286 = Sets.newLinkedHashSet(var4);
       this.field23287 = var1.method17293();
       RegistryKey var5 = var1.method17295();
-      Class9535 var6 = var1.method17294();
+      DimensionType var6 = var1.method17294();
       this.field23281 = var1.method17296();
       boolean var7 = var1.method17299();
       boolean var8 = var1.method17300();
@@ -556,7 +556,7 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15707(Class5549 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = 19 | (!var1.method17462() ? 0 : 128);
-      var1.method17461((var2, var3) -> this.field23273.method6725(var2, var3, var4));
+      var1.method17461((var2, var3) -> this.field23273.setBlockState(var2, var3, var4));
    }
 
    @Override
@@ -564,9 +564,9 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17378();
       int var5 = var1.method17379();
-      Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Biome>method32453(Registry.BIOME_KEY), var1.method17384()) : null;
-      Class1674 var7 = this.field23273
-         .method6883()
+      Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Biome>getRegistry(Registry.BIOME_KEY), var1.method17384()) : null;
+      Chunk var7 = this.field23273
+         .getChunkProvider()
          .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.method17381());
       if (var7 != null && var1.method17381()) {
          this.field23273.method6850(var7);
@@ -590,9 +590,9 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17492();
       int var5 = var1.method17493();
-      Class1705 var6 = this.field23273.method6883();
+      Class1705 var6 = this.field23273.getChunkProvider();
       var6.method7399(var4, var5);
-      Class196 var7 = var6.method7348();
+      Class196 var7 = var6.getLightManager();
 
       for (int var8 = 0; var8 < 16; var8++) {
          this.field23273.method6868(var4, var8, var5);
@@ -858,7 +858,7 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15734(Class5545 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       RegistryKey var4 = var1.method17433();
-      Class9535 var5 = var1.method17432();
+      DimensionType var5 = var1.method17432();
       ClientPlayerEntity var6 = this.field23272.player;
       int var7 = var6.method3205();
       this.field23275 = false;
@@ -1230,7 +1230,7 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15725(Class5481 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       if (!var1.method17242()) {
-         this.field23272.world.method6999(var1.method17243(), var1.method17245(), var1.method17244());
+         this.field23272.world.playEvent(var1.method17243(), var1.method17245(), var1.method17244());
       } else {
          this.field23272.world.method6801(var1.method17243(), var1.method17245(), var1.method17244());
       }
@@ -1715,7 +1715,7 @@ public class ClientPlayNetHandler implements Class5116 {
 
             this.field23272.debugRenderer.field34472.method15868(var42, var63, var11);
          } else if (Class5532.field24541.equals(var4)) {
-            Class9535 var43 = this.field23287.method32454().method9184(var5.method35731());
+            DimensionType var43 = this.field23287.method32454().method9184(var5.method35731());
             Class9764 var53 = new Class9764(var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt());
             int var64 = var5.readInt();
             ArrayList var73 = Lists.newArrayList();
@@ -2093,7 +2093,7 @@ public class ClientPlayNetHandler implements Class5116 {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.method17360();
       int var5 = var1.method17361();
-      Class196 var6 = this.field23273.method6883().method7348();
+      Class196 var6 = this.field23273.getChunkProvider().getLightManager();
       int var7 = var1.method17362();
       int var8 = var1.method17363();
       Iterator var9 = var1.method17364().iterator();
@@ -2121,13 +2121,13 @@ public class ClientPlayNetHandler implements Class5116 {
    public void method15778(Class5502 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23281 = var1.method17306();
-      this.field23273.method6883().method7403(var1.method17306());
+      this.field23273.getChunkProvider().method7403(var1.method17306());
    }
 
    @Override
    public void method15779(Class5579 var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23273.method6883().method7402(var1.method17522(), var1.method17523());
+      this.field23273.getChunkProvider().method7402(var1.method17522(), var1.method17523());
    }
 
    @Override

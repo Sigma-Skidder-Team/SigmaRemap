@@ -39,9 +39,9 @@ public class Class2726 extends Class2595 {
                   this.field17232.getPosZ() + var4.field18050
                )
             );
-         Class7379 var6 = this.field17232
+         FluidState var6 = this.field17232
             .world
-            .method6739(
+            .getFluidState(
                new BlockPos(
                   this.field17232.getPosX() + var4.field18048,
                   this.field17232.getPosY() + var4.field18049,

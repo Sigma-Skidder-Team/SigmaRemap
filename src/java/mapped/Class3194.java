@@ -22,7 +22,7 @@ public class Class3194 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockPos var6 = var3.method8313();
+      BlockPos var6 = var3.down();
       return this.method11490(var2.getBlockState(var6), var2, var6);
    }
 

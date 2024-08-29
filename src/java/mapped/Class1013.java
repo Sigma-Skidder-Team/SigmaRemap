@@ -188,7 +188,7 @@ public abstract class Class1013 extends Class1018 {
 
    @Override
    public void method2737(Class8654 var1) {
-      if (!this.world.field9020 && this.world.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
+      if (!this.world.isRemote && this.world.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
          this.method4400().sendMessage(this.method3073().method27600(), Util.DUMMY_UUID);
       }
 

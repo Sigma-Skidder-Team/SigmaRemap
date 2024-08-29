@@ -9,12 +9,12 @@ public class Class3475 extends Block implements Class3476 {
    public static final Class8554 field19326 = Class8820.field39752;
    public static final Object2FloatMap<Class3303> field19327 = new Object2FloatOpenHashMap();
    private static final VoxelShape field19328 = VoxelShapes.method27426();
-   private static final VoxelShape[] field19329 = Util.<VoxelShape[]>method38508(
+   private static final VoxelShape[] field19329 = Util.<VoxelShape[]>make(
       new VoxelShape[9],
       var0 -> {
          for (int var3 = 0; var3 < 8; var3++) {
-            var0[var3] = VoxelShapes.method27433(
-               field19328, Block.method11539(2.0, (double)Math.max(2, 1 + var3 * 2), 2.0, 14.0, 16.0, 14.0), IBooleanFunction.field44041
+            var0[var3] = VoxelShapes.combineAndSimplify(
+               field19328, Block.method11539(2.0, (double)Math.max(2, 1 + var3 * 2), 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST
             );
          }
 
@@ -179,20 +179,20 @@ public class Class3475 extends Block implements Class3476 {
       int var9 = var1.<Integer>method23463(field19326);
       ItemStack var10 = var4.getHeldItem(var5);
       if (var9 < 8 && field19327.containsKey(var10.getItem())) {
-         if (var9 < 7 && !var2.field9020) {
+         if (var9 < 7 && !var2.isRemote) {
             BlockState var11 = method12168(var1, var2, var3, var10);
-            var2.method6999(1500, var3, var1 == var11 ? 0 : 1);
+            var2.playEvent(1500, var3, var1 == var11 ? 0 : 1);
             if (!var4.abilities.isCreativeMode) {
                var10.method32182(1);
             }
          }
 
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else if (var9 != 8) {
          return ActionResultType.field14820;
       } else {
          method12166(var1, var2, var3);
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       }
    }
 
@@ -208,11 +208,11 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    public static BlockState method12166(BlockState var0, World var1, BlockPos var2) {
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          float var5 = 0.7F;
-         double var6 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
-         double var8 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.060000002F + 0.6;
-         double var10 = (double)(var1.field9016.nextFloat() * 0.7F) + 0.15F;
+         double var6 = (double)(var1.rand.nextFloat() * 0.7F) + 0.15F;
+         double var8 = (double)(var1.rand.nextFloat() * 0.7F) + 0.060000002F + 0.6;
+         double var10 = (double)(var1.rand.nextFloat() * 0.7F) + 0.15F;
          ItemEntity var12 = new ItemEntity(
             var1, (double)var2.getX() + var6, (double)var2.getY() + var8, (double)var2.getZ() + var10, new ItemStack(Items.field37934)
          );
@@ -227,7 +227,7 @@ public class Class3475 extends Block implements Class3476 {
 
    private static BlockState method12167(BlockState var0, Class1660 var1, BlockPos var2) {
       BlockState var5 = var0.method23465(field19326, Integer.valueOf(0));
-      var1.method6725(var2, var5, 3);
+      var1.setBlockState(var2, var5, 3);
       return var5;
    }
 
@@ -239,7 +239,7 @@ public class Class3475 extends Block implements Class3476 {
       } else {
          int var8 = var6 + 1;
          BlockState var9 = var0.method23465(field19326, Integer.valueOf(var8));
-         var1.method6725(var2, var9, 3);
+         var1.setBlockState(var2, var9, 3);
          if (var8 == 7) {
             var1.method6860().method20726(var2, var0.getBlock(), 20);
          }
@@ -251,7 +251,7 @@ public class Class3475 extends Block implements Class3476 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19326) == 7) {
-         var2.method6725(var3, var1.method23459(field19326), 3);
+         var2.setBlockState(var3, var1.method23459(field19326), 3);
          var2.method6742((PlayerEntity)null, var3, Sounds.field26466, Class2266.field14732, 1.0F, 1.0F);
       }
    }

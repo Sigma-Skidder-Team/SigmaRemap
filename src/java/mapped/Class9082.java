@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9082 implements ArgumentType<ResourceLocation> {
-   private static final Collection<String> field41582 = Stream.<RegistryKey>of(World.field8999, World.THE_NETHER)
-      .<String>map(var0 -> var0.method31399().toString())
+   private static final Collection<String> field41582 = Stream.<RegistryKey>of(World.OVERWORLD, World.THE_NETHER)
+      .<String>map(var0 -> var0.getLocation().toString())
       .collect(Collectors.<String>toList());
    private static final DynamicCommandExceptionType field41583 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("argument.dimension.invalid", var0)
@@ -28,7 +28,7 @@ public class Class9082 implements ArgumentType<ResourceLocation> {
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
       return !(var1.getSource() instanceof Class6618)
          ? Suggestions.empty()
-         : Class6618.method20143(((Class6618)var1.getSource()).method20135().stream().<ResourceLocation>map(RegistryKey::method31399), var2);
+         : Class6618.method20143(((Class6618)var1.getSource()).method20135().stream().<ResourceLocation>map(RegistryKey::getLocation), var2);
    }
 
    public Collection<String> getExamples() {
@@ -41,7 +41,7 @@ public class Class9082 implements ArgumentType<ResourceLocation> {
 
    public static ServerWorld method33873(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      RegistryKey var5 = RegistryKey.<World>method31395(Registry.field16067, var4);
+      RegistryKey var5 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var4);
       ServerWorld var6 = ((Class6619)var0.getSource()).method20177().method1318(var5);
       if (var6 != null) {
          return var6;

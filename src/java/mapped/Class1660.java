@@ -20,16 +20,16 @@ public interface Class1660 extends Class1678, Class1661 {
       return this.getWorldInfo().method20047();
    }
 
-   Class1702 method6883();
+   Class1702 getChunkProvider();
 
    @Override
    default boolean method6843(int var1, int var2) {
-      return this.method6883().method7345(var1, var2);
+      return this.getChunkProvider().method7345(var1, var2);
    }
 
    Random method6814();
 
-   default void method6964(BlockPos var1, Block var2) {
+   default void func_230547_a_(BlockPos var1, Block var2) {
    }
 
    void method6742(PlayerEntity var1, BlockPos var2, Class9455 var3, Class2266 var4, float var5, float var6);
@@ -39,10 +39,10 @@ public interface Class1660 extends Class1678, Class1661 {
    void method6869(PlayerEntity var1, int var2, BlockPos var3, int var4);
 
    default int method6998() {
-      return this.method6812().method36884();
+      return this.method6812().getLogicalHeight();
    }
 
-   default void method6999(int var1, BlockPos var2, int var3) {
+   default void playEvent(int var1, BlockPos var2, int var3) {
       this.method6869((PlayerEntity)null, var1, var2, var3);
    }
 }

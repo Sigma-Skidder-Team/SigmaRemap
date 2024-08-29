@@ -206,7 +206,7 @@ public class Class9061 {
       }
    }
 
-   public static boolean method33733(Class1645 var0) {
+   public static boolean method33733(DedicatedServer var0) {
       File var3 = method33738(var0);
       File var4 = new File(var3.getParentFile(), "playerdata");
       File var5 = new File(var3.getParentFile(), "unknownplayers");

@@ -118,7 +118,7 @@ public class Class2725 extends Class2595 {
    private boolean method10936(BlockPos var1) {
       Class2163 var4 = Class6762.method20633(this.field17222, var1.method8354());
       if (var4 == Class2163.field14186) {
-         BlockState var5 = this.field17222.getBlockState(var1.method8313());
+         BlockState var5 = this.field17222.getBlockState(var1.down());
          if (!this.field17229 && var5.getBlock() instanceof Class3465) {
             return false;
          } else {

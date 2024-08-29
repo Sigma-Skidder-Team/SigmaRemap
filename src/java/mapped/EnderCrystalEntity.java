@@ -36,7 +36,7 @@ public class EnderCrystalEntity extends Entity {
       if (this.world instanceof ServerWorld) {
          BlockPos var3 = this.getPosition();
          if (((ServerWorld)this.world).method6968() != null && this.world.getBlockState(var3).isAir()) {
-            this.world.method6730(var3, Class3397.method12009(this.world, var3));
+            this.world.setBlockState(var3, AbstractFireBlock.method12009(this.world, var3));
          }
       }
    }
@@ -70,7 +70,7 @@ public class EnderCrystalEntity extends Entity {
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
          if (!(var1.method31109() instanceof Class1007)) {
-            if (!this.removed && !this.world.field9020) {
+            if (!this.removed && !this.world.isRemote) {
                this.method2904();
                if (!var1.method31131()) {
                   this.world.method6755((Entity)null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0F, Class2141.field14016);

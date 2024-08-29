@@ -26,7 +26,7 @@ public class Class3381 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return method11548(var2, var3.method8313(), Direction.field673);
+      return method11548(var2, var3.down(), Direction.field673);
    }
 
    @Override

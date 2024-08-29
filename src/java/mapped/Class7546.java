@@ -19,7 +19,7 @@ public class Class7546 implements Class7544 {
    private final int field32368;
 
    public Class7546(ResourceLocation var1, int var2, int var3, List<int[]> var4) {
-      this.field32365 = new ResourceLocation(var1.method8293(), "textures/" + var1.method8292());
+      this.field32365 = new ResourceLocation(var1.getNamespace(), "textures/" + var1.getPath());
       this.field32365 = Class8259.method28795(this.field32365);
       this.field32366 = var4;
       this.field32367 = var2;

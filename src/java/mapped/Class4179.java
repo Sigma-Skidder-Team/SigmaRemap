@@ -19,13 +19,13 @@ public class Class4179 extends Class4178 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       int var10 = var1.method6736(Class101.field297, this.field20444.field45678, this.field20444.field45680);
       Mutable var11 = new Mutable(this.field20444.field45678, var10, this.field20444.field45680);
 
       while (var11.getY() > 0) {
          BlockState var12 = var1.getBlockState(var11);
-         BlockState var13 = var1.getBlockState(var11.method8313());
+         BlockState var13 = var1.getBlockState(var11.down());
          if (var13 == Blocks.SANDSTONE.method11579()
             || var13 == Blocks.STONE.method11579()
             || var13 == Blocks.ANDESITE.method11579()
@@ -37,12 +37,12 @@ public class Class4179 extends Class4178 {
                BlockPos var19 = var11.method8349(var18);
                BlockState var20 = var1.getBlockState(var19);
                if (var20.isAir() || this.method12942(var20)) {
-                  BlockPos var21 = var19.method8313();
+                  BlockPos var21 = var19.down();
                   BlockState var22 = var1.getBlockState(var21);
                   if ((var22.isAir() || this.method12942(var22)) && var18 != Direction.field673) {
-                     var1.method6725(var19, var13, 3);
+                     var1.setBlockState(var19, var13, 3);
                   } else {
-                     var1.method6725(var19, var14, 3);
+                     var1.setBlockState(var19, var14, 3);
                   }
                }
             }

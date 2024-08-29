@@ -11,8 +11,8 @@ public class Class5717 extends Class5715<Class883> {
    public void method17853(Class883 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.translate(0.0, 0.15F, 0.0);
-      var4.method35293(Class7680.field32900.method25286(MathHelper.method37821(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.method35293(Class7680.field32902.method25286(MathHelper.method37821(var3, var1.prevRotationPitch, var1.rotationPitch)));
+      var4.method35293(Class7680.field32900.method25286(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
+      var4.method35293(Class7680.field32902.method25286(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
       this.field25105.method10998(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
       Class5422 var9 = var5.method25597(this.field25105.method11028(field25104));
       this.field25105.method11016(var4, var9, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);

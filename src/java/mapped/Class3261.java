@@ -173,7 +173,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    private static void method11761(
            World var0, Class880 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
-      if (!var0.field9020) {
+      if (!var0.isRemote) {
          boolean var12 = var4.getItem() == Items.field38068;
          Object var13;
          if (!var12) {
@@ -258,7 +258,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    private static void method11766(World var0, Class880 var1, ItemStack var2) {
       if (var1 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var5 = (ServerPlayerEntity)var1;
-         if (!var0.field9020) {
+         if (!var0.isRemote) {
             CriteriaTriggers.field44496.method15103(var5, var2);
          }
 
@@ -270,7 +270,7 @@ public class Class3261 extends Class3262 implements Class3260 {
 
    @Override
    public void method11704(World var1, Class880 var2, ItemStack var3, int var4) {
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          int var7 = Class7858.method26311(Class8122.field34930, var3);
          Class9455 var8 = this.method11768(var7);
          Class9455 var9 = var7 != 0 ? null : Sounds.field26489;

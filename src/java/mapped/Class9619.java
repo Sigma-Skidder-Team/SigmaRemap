@@ -459,11 +459,11 @@ public class Class9619 {
       } else {
          int var5 = var4 / var0.field30567 * var0.field30567;
          if (var0.field30568) {
-            BlockPos var6 = var3.method8313();
+            BlockPos var6 = var3.down();
 
             for (BlockState var7 = var1.getBlockState(var6); var7.getBlock() == var2.getBlock(); var7 = var1.getBlockState(var6)) {
                var3 = var6;
-               var6 = var6.method8313();
+               var6 = var6.down();
                if (var6.getY() < 0) {
                   break;
                }
@@ -843,81 +843,81 @@ public class Class9619 {
       boolean[] var9 = var8.method29422();
       switch (var5) {
          case 0:
-            var9[0] = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-            var9[1] = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
-            var9[2] = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-            var9[3] = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+            var9[0] = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+            var9[1] = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
+            var9[2] = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+            var9[3] = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
             if (var0.field30561) {
-               BlockPos var16 = var3.method8313();
-               var9[0] = var9[0] && !method37474(var0, var1, var2, var16.method8345(), var5, var6, var7);
-               var9[1] = var9[1] && !method37474(var0, var1, var2, var16.method8347(), var5, var6, var7);
-               var9[2] = var9[2] && !method37474(var0, var1, var2, var16.method8341(), var5, var6, var7);
-               var9[3] = var9[3] && !method37474(var0, var1, var2, var16.method8343(), var5, var6, var7);
+               BlockPos var16 = var3.down();
+               var9[0] = var9[0] && !method37474(var0, var1, var2, var16.west(), var5, var6, var7);
+               var9[1] = var9[1] && !method37474(var0, var1, var2, var16.east(), var5, var6, var7);
+               var9[2] = var9[2] && !method37474(var0, var1, var2, var16.north(), var5, var6, var7);
+               var9[3] = var9[3] && !method37474(var0, var1, var2, var16.south(), var5, var6, var7);
             }
             break;
          case 1:
-            var9[0] = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-            var9[1] = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
-            var9[2] = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-            var9[3] = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
+            var9[0] = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+            var9[1] = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
+            var9[2] = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+            var9[3] = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
             if (var0.field30561) {
-               BlockPos var15 = var3.method8311();
-               var9[0] = var9[0] && !method37474(var0, var1, var2, var15.method8345(), var5, var6, var7);
-               var9[1] = var9[1] && !method37474(var0, var1, var2, var15.method8347(), var5, var6, var7);
-               var9[2] = var9[2] && !method37474(var0, var1, var2, var15.method8343(), var5, var6, var7);
-               var9[3] = var9[3] && !method37474(var0, var1, var2, var15.method8341(), var5, var6, var7);
+               BlockPos var15 = var3.up();
+               var9[0] = var9[0] && !method37474(var0, var1, var2, var15.west(), var5, var6, var7);
+               var9[1] = var9[1] && !method37474(var0, var1, var2, var15.east(), var5, var6, var7);
+               var9[2] = var9[2] && !method37474(var0, var1, var2, var15.south(), var5, var6, var7);
+               var9[3] = var9[3] && !method37474(var0, var1, var2, var15.north(), var5, var6, var7);
             }
             break;
          case 2:
-            var9[0] = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
-            var9[1] = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-            var9[2] = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-            var9[3] = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+            var9[0] = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
+            var9[1] = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+            var9[2] = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+            var9[3] = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             if (var0.field30561) {
-               BlockPos var14 = var3.method8341();
-               var9[0] = var9[0] && !method37474(var0, var1, var2, var14.method8347(), var5, var6, var7);
-               var9[1] = var9[1] && !method37474(var0, var1, var2, var14.method8345(), var5, var6, var7);
-               var9[2] = var9[2] && !method37474(var0, var1, var2, var14.method8313(), var5, var6, var7);
-               var9[3] = var9[3] && !method37474(var0, var1, var2, var14.method8311(), var5, var6, var7);
+               BlockPos var14 = var3.north();
+               var9[0] = var9[0] && !method37474(var0, var1, var2, var14.east(), var5, var6, var7);
+               var9[1] = var9[1] && !method37474(var0, var1, var2, var14.west(), var5, var6, var7);
+               var9[2] = var9[2] && !method37474(var0, var1, var2, var14.down(), var5, var6, var7);
+               var9[3] = var9[3] && !method37474(var0, var1, var2, var14.up(), var5, var6, var7);
             }
             break;
          case 3:
-            var9[0] = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-            var9[1] = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
-            var9[2] = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-            var9[3] = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+            var9[0] = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+            var9[1] = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
+            var9[2] = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+            var9[3] = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             if (var0.field30561) {
-               BlockPos var13 = var3.method8343();
-               var9[0] = var9[0] && !method37474(var0, var1, var2, var13.method8345(), var5, var6, var7);
-               var9[1] = var9[1] && !method37474(var0, var1, var2, var13.method8347(), var5, var6, var7);
-               var9[2] = var9[2] && !method37474(var0, var1, var2, var13.method8313(), var5, var6, var7);
-               var9[3] = var9[3] && !method37474(var0, var1, var2, var13.method8311(), var5, var6, var7);
+               BlockPos var13 = var3.south();
+               var9[0] = var9[0] && !method37474(var0, var1, var2, var13.west(), var5, var6, var7);
+               var9[1] = var9[1] && !method37474(var0, var1, var2, var13.east(), var5, var6, var7);
+               var9[2] = var9[2] && !method37474(var0, var1, var2, var13.down(), var5, var6, var7);
+               var9[3] = var9[3] && !method37474(var0, var1, var2, var13.up(), var5, var6, var7);
             }
             break;
          case 4:
-            var9[0] = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-            var9[1] = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-            var9[2] = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-            var9[3] = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+            var9[0] = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+            var9[1] = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+            var9[2] = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+            var9[3] = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             if (var0.field30561) {
-               BlockPos var12 = var3.method8345();
-               var9[0] = var9[0] && !method37474(var0, var1, var2, var12.method8341(), var5, var6, var7);
-               var9[1] = var9[1] && !method37474(var0, var1, var2, var12.method8343(), var5, var6, var7);
-               var9[2] = var9[2] && !method37474(var0, var1, var2, var12.method8313(), var5, var6, var7);
-               var9[3] = var9[3] && !method37474(var0, var1, var2, var12.method8311(), var5, var6, var7);
+               BlockPos var12 = var3.west();
+               var9[0] = var9[0] && !method37474(var0, var1, var2, var12.north(), var5, var6, var7);
+               var9[1] = var9[1] && !method37474(var0, var1, var2, var12.south(), var5, var6, var7);
+               var9[2] = var9[2] && !method37474(var0, var1, var2, var12.down(), var5, var6, var7);
+               var9[3] = var9[3] && !method37474(var0, var1, var2, var12.up(), var5, var6, var7);
             }
             break;
          case 5:
-            var9[0] = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-            var9[1] = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-            var9[2] = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-            var9[3] = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+            var9[0] = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+            var9[1] = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+            var9[2] = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+            var9[3] = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             if (var0.field30561) {
-               BlockPos var10 = var3.method8347();
-               var9[0] = var9[0] && !method37474(var0, var1, var2, var10.method8343(), var5, var6, var7);
-               var9[1] = var9[1] && !method37474(var0, var1, var2, var10.method8341(), var5, var6, var7);
-               var9[2] = var9[2] && !method37474(var0, var1, var2, var10.method8313(), var5, var6, var7);
-               var9[3] = var9[3] && !method37474(var0, var1, var2, var10.method8311(), var5, var6, var7);
+               BlockPos var10 = var3.east();
+               var9[0] = var9[0] && !method37474(var0, var1, var2, var10.south(), var5, var6, var7);
+               var9[1] = var9[1] && !method37474(var0, var1, var2, var10.north(), var5, var6, var7);
+               var9[2] = var9[2] && !method37474(var0, var1, var2, var10.down(), var5, var6, var7);
+               var9[3] = var9[3] && !method37474(var0, var1, var2, var10.up(), var5, var6, var7);
             }
       }
 
@@ -961,81 +961,81 @@ public class Class9619 {
       } else {
          switch (var5) {
             case 0:
-               var9[0] = !method37474(var0, var1, var2, var3.method8347().method8341(), var5, var6, var7);
-               var9[1] = !method37474(var0, var1, var2, var3.method8345().method8341(), var5, var6, var7);
-               var9[2] = !method37474(var0, var1, var2, var3.method8347().method8343(), var5, var6, var7);
-               var9[3] = !method37474(var0, var1, var2, var3.method8345().method8343(), var5, var6, var7);
+               var9[0] = !method37474(var0, var1, var2, var3.east().north(), var5, var6, var7);
+               var9[1] = !method37474(var0, var1, var2, var3.west().north(), var5, var6, var7);
+               var9[2] = !method37474(var0, var1, var2, var3.east().south(), var5, var6, var7);
+               var9[3] = !method37474(var0, var1, var2, var3.west().south(), var5, var6, var7);
                if (var0.field30561) {
-                  BlockPos var22 = var3.method8313();
-                  var9[0] = var9[0] || method37474(var0, var1, var2, var22.method8347().method8341(), var5, var6, var7);
-                  var9[1] = var9[1] || method37474(var0, var1, var2, var22.method8345().method8341(), var5, var6, var7);
-                  var9[2] = var9[2] || method37474(var0, var1, var2, var22.method8347().method8343(), var5, var6, var7);
-                  var9[3] = var9[3] || method37474(var0, var1, var2, var22.method8345().method8343(), var5, var6, var7);
+                  BlockPos var22 = var3.down();
+                  var9[0] = var9[0] || method37474(var0, var1, var2, var22.east().north(), var5, var6, var7);
+                  var9[1] = var9[1] || method37474(var0, var1, var2, var22.west().north(), var5, var6, var7);
+                  var9[2] = var9[2] || method37474(var0, var1, var2, var22.east().south(), var5, var6, var7);
+                  var9[3] = var9[3] || method37474(var0, var1, var2, var22.west().south(), var5, var6, var7);
                }
                break;
             case 1:
-               var9[0] = !method37474(var0, var1, var2, var3.method8347().method8343(), var5, var6, var7);
-               var9[1] = !method37474(var0, var1, var2, var3.method8345().method8343(), var5, var6, var7);
-               var9[2] = !method37474(var0, var1, var2, var3.method8347().method8341(), var5, var6, var7);
-               var9[3] = !method37474(var0, var1, var2, var3.method8345().method8341(), var5, var6, var7);
+               var9[0] = !method37474(var0, var1, var2, var3.east().south(), var5, var6, var7);
+               var9[1] = !method37474(var0, var1, var2, var3.west().south(), var5, var6, var7);
+               var9[2] = !method37474(var0, var1, var2, var3.east().north(), var5, var6, var7);
+               var9[3] = !method37474(var0, var1, var2, var3.west().north(), var5, var6, var7);
                if (var0.field30561) {
-                  BlockPos var21 = var3.method8311();
-                  var9[0] = var9[0] || method37474(var0, var1, var2, var21.method8347().method8343(), var5, var6, var7);
-                  var9[1] = var9[1] || method37474(var0, var1, var2, var21.method8345().method8343(), var5, var6, var7);
-                  var9[2] = var9[2] || method37474(var0, var1, var2, var21.method8347().method8341(), var5, var6, var7);
-                  var9[3] = var9[3] || method37474(var0, var1, var2, var21.method8345().method8341(), var5, var6, var7);
+                  BlockPos var21 = var3.up();
+                  var9[0] = var9[0] || method37474(var0, var1, var2, var21.east().south(), var5, var6, var7);
+                  var9[1] = var9[1] || method37474(var0, var1, var2, var21.west().south(), var5, var6, var7);
+                  var9[2] = var9[2] || method37474(var0, var1, var2, var21.east().north(), var5, var6, var7);
+                  var9[3] = var9[3] || method37474(var0, var1, var2, var21.west().north(), var5, var6, var7);
                }
                break;
             case 2:
-               var9[0] = !method37474(var0, var1, var2, var3.method8345().method8313(), var5, var6, var7);
-               var9[1] = !method37474(var0, var1, var2, var3.method8347().method8313(), var5, var6, var7);
-               var9[2] = !method37474(var0, var1, var2, var3.method8345().method8311(), var5, var6, var7);
-               var9[3] = !method37474(var0, var1, var2, var3.method8347().method8311(), var5, var6, var7);
+               var9[0] = !method37474(var0, var1, var2, var3.west().down(), var5, var6, var7);
+               var9[1] = !method37474(var0, var1, var2, var3.east().down(), var5, var6, var7);
+               var9[2] = !method37474(var0, var1, var2, var3.west().up(), var5, var6, var7);
+               var9[3] = !method37474(var0, var1, var2, var3.east().up(), var5, var6, var7);
                if (var0.field30561) {
-                  BlockPos var20 = var3.method8341();
-                  var9[0] = var9[0] || method37474(var0, var1, var2, var20.method8345().method8313(), var5, var6, var7);
-                  var9[1] = var9[1] || method37474(var0, var1, var2, var20.method8347().method8313(), var5, var6, var7);
-                  var9[2] = var9[2] || method37474(var0, var1, var2, var20.method8345().method8311(), var5, var6, var7);
-                  var9[3] = var9[3] || method37474(var0, var1, var2, var20.method8347().method8311(), var5, var6, var7);
+                  BlockPos var20 = var3.north();
+                  var9[0] = var9[0] || method37474(var0, var1, var2, var20.west().down(), var5, var6, var7);
+                  var9[1] = var9[1] || method37474(var0, var1, var2, var20.east().down(), var5, var6, var7);
+                  var9[2] = var9[2] || method37474(var0, var1, var2, var20.west().up(), var5, var6, var7);
+                  var9[3] = var9[3] || method37474(var0, var1, var2, var20.east().up(), var5, var6, var7);
                }
                break;
             case 3:
-               var9[0] = !method37474(var0, var1, var2, var3.method8347().method8313(), var5, var6, var7);
-               var9[1] = !method37474(var0, var1, var2, var3.method8345().method8313(), var5, var6, var7);
-               var9[2] = !method37474(var0, var1, var2, var3.method8347().method8311(), var5, var6, var7);
-               var9[3] = !method37474(var0, var1, var2, var3.method8345().method8311(), var5, var6, var7);
+               var9[0] = !method37474(var0, var1, var2, var3.east().down(), var5, var6, var7);
+               var9[1] = !method37474(var0, var1, var2, var3.west().down(), var5, var6, var7);
+               var9[2] = !method37474(var0, var1, var2, var3.east().up(), var5, var6, var7);
+               var9[3] = !method37474(var0, var1, var2, var3.west().up(), var5, var6, var7);
                if (var0.field30561) {
-                  BlockPos var19 = var3.method8343();
-                  var9[0] = var9[0] || method37474(var0, var1, var2, var19.method8347().method8313(), var5, var6, var7);
-                  var9[1] = var9[1] || method37474(var0, var1, var2, var19.method8345().method8313(), var5, var6, var7);
-                  var9[2] = var9[2] || method37474(var0, var1, var2, var19.method8347().method8311(), var5, var6, var7);
-                  var9[3] = var9[3] || method37474(var0, var1, var2, var19.method8345().method8311(), var5, var6, var7);
+                  BlockPos var19 = var3.south();
+                  var9[0] = var9[0] || method37474(var0, var1, var2, var19.east().down(), var5, var6, var7);
+                  var9[1] = var9[1] || method37474(var0, var1, var2, var19.west().down(), var5, var6, var7);
+                  var9[2] = var9[2] || method37474(var0, var1, var2, var19.east().up(), var5, var6, var7);
+                  var9[3] = var9[3] || method37474(var0, var1, var2, var19.west().up(), var5, var6, var7);
                }
                break;
             case 4:
-               var9[0] = !method37474(var0, var1, var2, var3.method8313().method8343(), var5, var6, var7);
-               var9[1] = !method37474(var0, var1, var2, var3.method8313().method8341(), var5, var6, var7);
-               var9[2] = !method37474(var0, var1, var2, var3.method8311().method8343(), var5, var6, var7);
-               var9[3] = !method37474(var0, var1, var2, var3.method8311().method8341(), var5, var6, var7);
+               var9[0] = !method37474(var0, var1, var2, var3.down().south(), var5, var6, var7);
+               var9[1] = !method37474(var0, var1, var2, var3.down().north(), var5, var6, var7);
+               var9[2] = !method37474(var0, var1, var2, var3.up().south(), var5, var6, var7);
+               var9[3] = !method37474(var0, var1, var2, var3.up().north(), var5, var6, var7);
                if (var0.field30561) {
-                  BlockPos var18 = var3.method8345();
-                  var9[0] = var9[0] || method37474(var0, var1, var2, var18.method8313().method8343(), var5, var6, var7);
-                  var9[1] = var9[1] || method37474(var0, var1, var2, var18.method8313().method8341(), var5, var6, var7);
-                  var9[2] = var9[2] || method37474(var0, var1, var2, var18.method8311().method8343(), var5, var6, var7);
-                  var9[3] = var9[3] || method37474(var0, var1, var2, var18.method8311().method8341(), var5, var6, var7);
+                  BlockPos var18 = var3.west();
+                  var9[0] = var9[0] || method37474(var0, var1, var2, var18.down().south(), var5, var6, var7);
+                  var9[1] = var9[1] || method37474(var0, var1, var2, var18.down().north(), var5, var6, var7);
+                  var9[2] = var9[2] || method37474(var0, var1, var2, var18.up().south(), var5, var6, var7);
+                  var9[3] = var9[3] || method37474(var0, var1, var2, var18.up().north(), var5, var6, var7);
                }
                break;
             case 5:
-               var9[0] = !method37474(var0, var1, var2, var3.method8313().method8341(), var5, var6, var7);
-               var9[1] = !method37474(var0, var1, var2, var3.method8313().method8343(), var5, var6, var7);
-               var9[2] = !method37474(var0, var1, var2, var3.method8311().method8341(), var5, var6, var7);
-               var9[3] = !method37474(var0, var1, var2, var3.method8311().method8343(), var5, var6, var7);
+               var9[0] = !method37474(var0, var1, var2, var3.down().north(), var5, var6, var7);
+               var9[1] = !method37474(var0, var1, var2, var3.down().south(), var5, var6, var7);
+               var9[2] = !method37474(var0, var1, var2, var3.up().north(), var5, var6, var7);
+               var9[3] = !method37474(var0, var1, var2, var3.up().south(), var5, var6, var7);
                if (var0.field30561) {
-                  BlockPos var11 = var3.method8347();
-                  var9[0] = var9[0] || method37474(var0, var1, var2, var11.method8313().method8341(), var5, var6, var7);
-                  var9[1] = var9[1] || method37474(var0, var1, var2, var11.method8313().method8343(), var5, var6, var7);
-                  var9[2] = var9[2] || method37474(var0, var1, var2, var11.method8311().method8341(), var5, var6, var7);
-                  var9[3] = var9[3] || method37474(var0, var1, var2, var11.method8311().method8343(), var5, var6, var7);
+                  BlockPos var11 = var3.east();
+                  var9[0] = var9[0] || method37474(var0, var1, var2, var11.down().north(), var5, var6, var7);
+                  var9[1] = var9[1] || method37474(var0, var1, var2, var11.down().south(), var5, var6, var7);
+                  var9[2] = var9[2] || method37474(var0, var1, var2, var11.up().north(), var5, var6, var7);
+                  var9[3] = var9[3] || method37474(var0, var1, var2, var11.up().south(), var5, var6, var7);
                }
          }
 
@@ -1244,84 +1244,84 @@ public class Class9619 {
          case 0:
             switch (var5) {
                case 0:
-                  var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
                   break label46;
                case 1:
-                  var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
                   break label46;
                case 2:
-                  var8 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
                   break label46;
                case 3:
-                  var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
                   break label46;
                case 4:
-                  var8 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
                   break label46;
                case 5:
-                  var8 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
                default:
                   break label46;
             }
          case 1:
             switch (var5) {
                case 0:
-                  var8 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
                   break label46;
                case 1:
-                  var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
                   break label46;
                case 2:
-                  var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
                   break label46;
                case 3:
-                  var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
                   break label46;
                case 4:
-                  var8 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
                   break label46;
                case 5:
-                  var8 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
                default:
                   break label46;
             }
          case 2:
             switch (var5) {
                case 0:
-                  var8 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
                   break;
                case 1:
-                  var8 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
                   break;
                case 2:
-                  var8 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
                   break;
                case 3:
-                  var8 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
                   break;
                case 4:
-                  var8 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
                   break;
                case 5:
-                  var8 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-                  var9 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+                  var8 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+                  var9 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
             }
       }
 
@@ -1347,38 +1347,38 @@ public class Class9619 {
       switch (var4) {
          case 0:
             if (var5 == 1) {
-               var8 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
             } else if (var5 == 0) {
-               var8 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
             } else {
-               var8 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             }
             break;
          case 1:
             if (var5 == 3) {
-               var8 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             } else if (var5 == 2) {
-               var8 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
             } else {
-               var8 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8341(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.north(), var5, var6, var7);
             }
             break;
          case 2:
             if (var5 == 5) {
-               var8 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
             } else if (var5 == 4) {
-               var8 = method37474(var0, var1, var2, var3.method8313(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.down(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             } else {
-               var8 = method37474(var0, var1, var2, var3.method8345(), var5, var6, var7);
-               var9 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+               var8 = method37474(var0, var1, var2, var3.west(), var5, var6, var7);
+               var9 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
             }
       }
 
@@ -1440,21 +1440,21 @@ public class Class9619 {
                return null;
             }
 
-            var8 = method37474(var0, var1, var2, var3.method8311(), var5, var6, var7);
+            var8 = method37474(var0, var1, var2, var3.up(), var5, var6, var7);
             break;
          case 1:
             if (var5 == 3 || var5 == 2) {
                return null;
             }
 
-            var8 = method37474(var0, var1, var2, var3.method8343(), var5, var6, var7);
+            var8 = method37474(var0, var1, var2, var3.south(), var5, var6, var7);
             break;
          case 2:
             if (var5 == 5 || var5 == 4) {
                return null;
             }
 
-            var8 = method37474(var0, var1, var2, var3.method8347(), var5, var6, var7);
+            var8 = method37474(var0, var1, var2, var3.east(), var5, var6, var7);
       }
 
       return var8 ? var0.field30573[0] : null;

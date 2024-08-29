@@ -1477,7 +1477,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       }
    }
 
-   public static IServerConfiguration loadWorld(SaveFormat.LevelSave var0, Class8905 var1, IResourceManager var2, DatapackCodec var3) {
+   public static IServerConfiguration loadWorld(SaveFormat.LevelSave var0, DynamicRegistriesImpl var1, IResourceManager var2, DatapackCodec var3) {
       WorldSettingsImport var4 = WorldSettingsImport.create(NBTDynamicOps.INSTANCE, var2, var1);
       IServerConfiguration var5 = var0.readServerConfiguration(var4, var3);
       if (var5 == null) {
@@ -1491,7 +1491,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.loadWorld(worldName, DynamicRegistries.func_239770_b_(), Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, WorldSelectionType.BACKUP);
    }
 
-   public void createWorld(String var1, WorldSettings var2, Class8905 var3, DimensionGeneratorSettings var4) {
+   public void createWorld(String var1, WorldSettings var2, DynamicRegistriesImpl var3, DimensionGeneratorSettings var4) {
       this.loadWorld(
          var1,
          var3,
@@ -1514,9 +1514,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
    private void loadWorld(
       String var1,
-      Class8905 var2,
+      DynamicRegistriesImpl var2,
       Function<SaveFormat.LevelSave, DatapackCodec> var3,
-      Function4<SaveFormat.LevelSave, Class8905, IResourceManager, DatapackCodec, IServerConfiguration> var4,
+      Function4<SaveFormat.LevelSave, DynamicRegistriesImpl, IResourceManager, DatapackCodec, IServerConfiguration> var4,
       boolean var5,
       WorldSelectionType var6
    ) {
@@ -1668,7 +1668,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public PackManager reloadDatapacks(
-           Class8905 var1, Function<SaveFormat.LevelSave, DatapackCodec> var2, Function4<SaveFormat.LevelSave, Class8905, IResourceManager, DatapackCodec, IServerConfiguration> var3, boolean var4, SaveFormat.LevelSave var5
+           DynamicRegistriesImpl var1, Function<SaveFormat.LevelSave, DatapackCodec> var2, Function4<SaveFormat.LevelSave, DynamicRegistriesImpl, IResourceManager, DatapackCodec, IServerConfiguration> var3, boolean var4, SaveFormat.LevelSave var5
    ) throws InterruptedException, ExecutionException {
       DatapackCodec var6 = (DatapackCodec)var2.apply(var5);
       ResourcePackList var7 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var5.resolveFilePath(FolderName.DATAPACKS).toFile(), IPackNameDecorator.WORLD));

@@ -125,14 +125,14 @@ public class Class3459 extends Block {
       if (var15 > 0) {
          BlockPos var25 = var2.method8350(var10, var15);
          Direction var27 = var10.method536();
-         var1.method6725(var25, var24.method23465(field19281, var27), 3);
+         var1.setBlockState(var25, var24.method23465(field19281, var27), 3);
          this.method12136(var1, var25, var27);
          this.method12135(var1, var25, var13, var14, var11, var12);
       }
 
       this.method12135(var1, var2, var13, var14, var11, var12);
       if (!var4) {
-         var1.method6725(var2, var24.method23465(field19281, var10), 3);
+         var1.setBlockState(var2, var24.method23465(field19281, var10), 3);
          if (var5) {
             this.method12136(var1, var2, var10);
          }
@@ -143,7 +143,7 @@ public class Class3459 extends Block {
             BlockPos var28 = var2.method8350(var10, var26);
             BlockState var29 = var16[var26];
             if (var29 != null) {
-               var1.method6725(var28, var29.method23465(field19283, Boolean.valueOf(var13)), 3);
+               var1.setBlockState(var28, var29.method23465(field19283, Boolean.valueOf(var13)), 3);
                if (var1.getBlockState(var28).isAir()) {
                }
             }
@@ -164,13 +164,13 @@ public class Class3459 extends Block {
       } else if (var3 && !var5) {
          var1.method6742((PlayerEntity)null, var2, Sounds.field27156, Class2266.field14732, 0.4F, 0.7F);
       } else if (!var3 && var5) {
-         var1.method6742((PlayerEntity)null, var2, Sounds.field27159, Class2266.field14732, 0.4F, 1.2F / (var1.field9016.nextFloat() * 0.2F + 0.9F));
+         var1.method6742((PlayerEntity)null, var2, Sounds.field27159, Class2266.field14732, 0.4F, 1.2F / (var1.rand.nextFloat() * 0.2F + 0.9F));
       }
    }
 
    private void method12136(World var1, BlockPos var2, Direction var3) {
-      var1.method6733(var2, this);
-      var1.method6733(var2.method8349(var3.method536()), this);
+      var1.notifyNeighborsOfStateChange(var2, this);
+      var1.notifyNeighborsOfStateChange(var2.method8349(var3.method536()), this);
    }
 
    @Override
@@ -183,8 +183,8 @@ public class Class3459 extends Block {
          }
 
          if (var9) {
-            var2.method6733(var3, this);
-            var2.method6733(var3.method8349(var1.<Direction>method23463(field19281).method536()), this);
+            var2.notifyNeighborsOfStateChange(var3, this);
+            var2.notifyNeighborsOfStateChange(var3.method8349(var1.<Direction>method23463(field19281).method536()), this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);

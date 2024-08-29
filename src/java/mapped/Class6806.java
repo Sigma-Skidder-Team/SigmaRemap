@@ -23,7 +23,7 @@ public class Class6806<T> implements Class6802<T> {
          ListNBT var7 = var3.method154(var6);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
-            Class1670.method7094(this.field29630, var6).add(var7.method155(var8));
+            IChunk.method7094(this.field29630, var6).add(var7.method155(var8));
          }
       }
    }
@@ -53,7 +53,7 @@ public class Class6806<T> implements Class6802<T> {
 
    @Override
    public void method20719(BlockPos var1, T var2, int var3, Class2199 var4) {
-      Class1670.method7094(this.field29630, var1.getY() >> 4).add(Class1672.method7113(var1));
+      IChunk.method7094(this.field29630, var1.getY() >> 4).add(Class1672.method7113(var1));
    }
 
    @Override

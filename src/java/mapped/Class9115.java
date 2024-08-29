@@ -34,7 +34,7 @@ public class Class9115 {
          int var8 = Registry.ENTITY_TYPE.method9171(var7);
          ResourceLocation var9 = Registry.ENTITY_TYPE.getKey(var7);
          String var10 = var9.toString();
-         String var11 = var9.method8292();
+         String var11 = var9.getPath();
          if (field41879.containsKey(var7)) {
             Class7944.method26811("Duplicate entity type: " + var7 + ", id1: " + field41879.get(var7) + ", id2: " + var8);
          }

@@ -1,6 +1,6 @@
 package mapped;
 
-public interface Class6607 extends Class6612 {
+public interface ISpawnWorldInfo extends Class6612 {
    void method20035(int var1);
 
    void method20036(int var1);

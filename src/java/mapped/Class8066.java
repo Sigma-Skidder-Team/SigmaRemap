@@ -32,7 +32,7 @@ public class Class8066 {
    private int field34628;
    private final Class8066[] field34629;
    private boolean field34630;
-   private Class1674 field34631;
+   private Chunk field34631;
    private Class8066[] field34632;
    private Class8066[] field34633;
    private boolean field34634;
@@ -48,7 +48,7 @@ public class Class8066 {
       this.field34615 = -1;
       this.field34616 = true;
       this.field34617 = new Mutable(-1, -1, -1);
-      this.field34618 = Util.<Mutable[]>method38508(new Mutable[6], var0 -> {
+      this.field34618 = Util.<Mutable[]>make(new Mutable[6], var0 -> {
          for (int var3 = 0; var3 < var0.length; var3++) {
             var0[var3] = new Mutable();
          }
@@ -66,7 +66,7 @@ public class Class8066 {
    }
 
    private boolean method27708(BlockPos var1) {
-      return Class9016.method33344(this.field34637).method6724(var1.getX() >> 4, var1.getZ() >> 4, Class9176.field42145, false) != null;
+      return Class9016.method33344(this.field34637).getChunk(var1.getX() >> 4, var1.getZ() >> 4, ChunkStatus.FULL, false) != null;
    }
 
    public boolean method27709() {
@@ -267,7 +267,7 @@ public class Class8066 {
       return this.field34622;
    }
 
-   private RenderType[] method27732(Class7379 var1, RenderType[] var2) {
+   private RenderType[] method27732(FluidState var1, RenderType[] var2) {
       if (!Class9016.method33348()) {
          var2[0] = Class8928.method32634(var1);
          return var2;
@@ -358,16 +358,16 @@ public class Class8066 {
       return this.field34629[var2.ordinal()];
    }
 
-   public Class1674 method27740() {
+   public Chunk method27740() {
       return this.method27741(this.field34617);
    }
 
-   private Class1674 method27741(BlockPos var1) {
-      Class1674 var4 = this.field34631;
+   private Chunk method27741(BlockPos var1) {
+      Chunk var4 = this.field34631;
       if (var4 != null && Class8674.method31217(var4)) {
          return var4;
       } else {
-         var4 = Class9016.method33344(this.field34637).method6722(var1);
+         var4 = Class9016.method33344(this.field34637).getChunkAt(var1);
          this.field34631 = var4;
          return var4;
       }
@@ -470,7 +470,7 @@ public class Class8066 {
    }
 
    // $VF: synthetic method
-   public static RenderType[] method27757(Class8066 var0, Class7379 var1, RenderType[] var2) {
+   public static RenderType[] method27757(Class8066 var0, FluidState var1, RenderType[] var2) {
       return var0.method27732(var1, var2);
    }
 

@@ -101,7 +101,7 @@ public class Class3402 extends Block {
                return false;
             } else {
                Class8551 var7 = field19069.get(var3);
-               BlockState var8 = var1.getBlockState(var2.method8311());
+               BlockState var8 = var1.getBlockState(var2.up());
                return var8.method23448(this) && var8.<Boolean>method23463(var7);
             }
          } else {
@@ -116,7 +116,7 @@ public class Class3402 extends Block {
    }
 
    private BlockState method12035(BlockState var1, Class1665 var2, BlockPos var3) {
-      BlockPos var6 = var3.method8311();
+      BlockPos var6 = var3.up();
       if (var1.<Boolean>method23463(field19064)) {
          var1 = var1.method23465(field19064, Boolean.valueOf(method12034(var2, var6, Direction.DOWN)));
       }
@@ -154,16 +154,16 @@ public class Class3402 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.field9016.nextInt(4) == 0) {
+      if (var2.rand.nextInt(4) == 0) {
          Direction var7 = Direction.method552(var4);
-         BlockPos var8 = var3.method8311();
+         BlockPos var8 = var3.up();
          if (var7.method544().method324() && !var1.<Boolean>method23463(method12039(var7))) {
             if (this.method12038(var2, var3)) {
                BlockPos var19 = var3.method8349(var7);
                BlockState var21 = var2.getBlockState(var19);
                if (!var21.isAir()) {
                   if (method12034(var2, var19, var7)) {
-                     var2.method6725(var3, var1.method23465(method12039(var7), Boolean.valueOf(true)), 2);
+                     var2.setBlockState(var3, var1.method23465(method12039(var7), Boolean.valueOf(true)), 2);
                   }
                } else {
                   Direction var23 = var7.method537();
@@ -173,17 +173,17 @@ public class Class3402 extends Block {
                   BlockPos var15 = var19.method8349(var23);
                   BlockPos var16 = var19.method8349(var24);
                   if (var13 && method12034(var2, var15, var23)) {
-                     var2.method6725(var19, this.method11579().method23465(method12039(var23), Boolean.valueOf(true)), 2);
+                     var2.setBlockState(var19, this.method11579().method23465(method12039(var23), Boolean.valueOf(true)), 2);
                   } else if (var14 && method12034(var2, var16, var24)) {
-                     var2.method6725(var19, this.method11579().method23465(method12039(var24), Boolean.valueOf(true)), 2);
+                     var2.setBlockState(var19, this.method11579().method23465(method12039(var24), Boolean.valueOf(true)), 2);
                   } else {
                      Direction var17 = var7.method536();
                      if (var13 && var2.method7007(var15) && method12034(var2, var3.method8349(var23), var17)) {
-                        var2.method6725(var15, this.method11579().method23465(method12039(var17), Boolean.valueOf(true)), 2);
+                        var2.setBlockState(var15, this.method11579().method23465(method12039(var17), Boolean.valueOf(true)), 2);
                      } else if (var14 && var2.method7007(var16) && method12034(var2, var3.method8349(var24), var17)) {
-                        var2.method6725(var16, this.method11579().method23465(method12039(var17), Boolean.valueOf(true)), 2);
-                     } else if ((double)var2.field9016.nextFloat() < 0.05 && method12034(var2, var19.method8311(), Direction.field673)) {
-                        var2.method6725(var19, this.method11579().method23465(field19064, Boolean.valueOf(true)), 2);
+                        var2.setBlockState(var16, this.method11579().method23465(method12039(var17), Boolean.valueOf(true)), 2);
+                     } else if ((double)var2.rand.nextFloat() < 0.05 && method12034(var2, var19.up(), Direction.field673)) {
+                        var2.setBlockState(var19, this.method11579().method23465(field19064, Boolean.valueOf(true)), 2);
                      }
                   }
                }
@@ -191,7 +191,7 @@ public class Class3402 extends Block {
          } else {
             if (var7 == Direction.field673 && var3.getY() < 255) {
                if (this.method12033(var2, var3, var7)) {
-                  var2.method6725(var3, var1.method23465(field19064, Boolean.valueOf(true)), 2);
+                  var2.setBlockState(var3, var1.method23465(field19064, Boolean.valueOf(true)), 2);
                   return;
                }
 
@@ -209,7 +209,7 @@ public class Class3402 extends Block {
                   }
 
                   if (this.method12037(var18)) {
-                     var2.method6725(var8, var18, 2);
+                     var2.setBlockState(var8, var18, 2);
                   }
 
                   return;
@@ -217,13 +217,13 @@ public class Class3402 extends Block {
             }
 
             if (var3.getY() > 0) {
-               BlockPos var9 = var3.method8313();
+               BlockPos var9 = var3.down();
                BlockState var10 = var2.getBlockState(var9);
                if (var10.isAir() || var10.method23448(this)) {
                   BlockState var11 = !var10.isAir() ? var10 : this.method11579();
                   BlockState var12 = this.method12036(var1, var11, var4);
                   if (var11 != var12 && this.method12037(var12)) {
-                     var2.method6725(var9, var12, 2);
+                     var2.setBlockState(var9, var12, 2);
                   }
                }
             }

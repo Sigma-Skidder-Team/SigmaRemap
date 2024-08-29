@@ -59,7 +59,7 @@ public class Class3702<E extends Class880> extends Class3676<E> {
    }
 
    private void method12580(ServerWorld var1) {
-      this.field19761 = this.field19759.method29319(var1.field9016);
+      this.field19761 = this.field19759.method29319(var1.rand);
    }
 
    @Override

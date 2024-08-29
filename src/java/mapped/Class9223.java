@@ -24,7 +24,7 @@ public final class Class9223 {
    }
 
    public Class9223() {
-      this(Util.<Map<Class1939, Class9248>>method38508(Maps.newEnumMap(Class1939.class), var0 -> {
+      this(Util.<Map<Class1939, Class9248>>make(Maps.newEnumMap(Class1939.class), var0 -> {
          for (Class1939 var6 : Class1939.values()) {
             var0.put(var6, new Class9248(false, false));
          }

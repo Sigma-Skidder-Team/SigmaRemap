@@ -17,7 +17,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class4914 implements ArgumentType<Integer> {
    private static final Collection<String> field22778 = Arrays.<String>asList("container.5", "12", "weapon");
    private static final DynamicCommandExceptionType field22779 = new DynamicCommandExceptionType(var0 -> new TranslationTextComponent("slot.unknown", var0));
-   private static final Map<String, Integer> field22780 = Util.<Map<String, Integer>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, Integer> field22780 = Util.<Map<String, Integer>>make(Maps.newHashMap(), var0 -> {
       for (int var3 = 0; var3 < 54; var3++) {
          var0.put("container." + var3, var3);
       }

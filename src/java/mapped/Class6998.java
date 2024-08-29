@@ -27,6 +27,6 @@ public class Class6998 extends Class6997 {
          }
       }
 
-      return !this.field30244.getBlockState(var1.method8313()).isAir();
+      return !this.field30244.getBlockState(var1.down()).isAir();
    }
 }

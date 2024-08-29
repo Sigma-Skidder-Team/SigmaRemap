@@ -20,7 +20,7 @@ public class Class897 extends Entity implements Class889 {
 
    public void method3522(ItemStack var1) {
       if (var1.getItem() != Items.field37979 || var1.method32141()) {
-         this.method3210().method35446(field5132, Util.<ItemStack>method38508(var1.copy(), var0 -> var0.method32180(1)));
+         this.method3210().method35446(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.method32180(1)));
       }
    }
 
@@ -93,7 +93,7 @@ public class Class897 extends Entity implements Class889 {
       float var10 = MathHelper.method37766(method3234(var3));
       this.rotationPitch = Class882.method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.field18049, (double)var10) * 180.0F / (float)Math.PI));
       this.rotationYaw = Class882.method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.field18048, var3.field18050) * 180.0F / (float)Math.PI));
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          double var12 = this.field5133 - var4;
          double var14 = this.field5135 - var8;
          float var16 = (float)Math.sqrt(var12 * var12 + var14 * var14);
@@ -137,16 +137,16 @@ public class Class897 extends Entity implements Class889 {
          }
       }
 
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          this.method3446(var4, var6, var8);
       } else {
          this.setPosition(var4, var6, var8);
          this.field5136++;
-         if (this.field5136 > 80 && !this.world.field9020) {
+         if (this.field5136 > 80 && !this.world.isRemote) {
             this.method2863(Sounds.field26543, 1.0F, 1.0F);
             this.method2904();
             if (!this.field5137) {
-               this.world.method6999(2003, this.getPosition(), 0);
+               this.world.playEvent(2003, this.getPosition(), 0);
             } else {
                this.world.method6916(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
             }

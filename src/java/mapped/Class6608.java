@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.UUID;
 
-public interface Class6608 extends Class6607 {
+public interface Class6608 extends ISpawnWorldInfo {
    String method20054();
 
    void method20055(boolean var1);
@@ -17,7 +17,7 @@ public interface Class6608 extends Class6607 {
 
    @Override
    default void method20049(CrashReportCategory var1) {
-      Class6607.super.method20049(var1);
+      ISpawnWorldInfo.super.method20049(var1);
       var1.addDetail("Level name", this::method20054);
       var1.addDetail(
          "Level game mode",

@@ -69,7 +69,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void tick() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.getPosY() < -64.0) {
             this.method3083();
          }
@@ -133,7 +133,7 @@ public abstract class Class995 extends Entity {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
-         if (!this.removed && !this.world.field9020) {
+         if (!this.removed && !this.world.isRemote) {
             this.method2904();
             this.method3141();
             this.method4083(var1.method31109());
@@ -147,7 +147,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void move(Class2107 var1, Vector3d var2) {
-      if (!this.world.field9020 && !this.removed && var2.method11349() > 0.0) {
+      if (!this.world.isRemote && !this.removed && var2.method11349() > 0.0) {
          this.method2904();
          this.method4083((Entity)null);
       }
@@ -155,7 +155,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public void method3280(double var1, double var3, double var5) {
-      if (!this.world.field9020 && !this.removed && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
+      if (!this.world.isRemote && !this.removed && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
          this.method2904();
          this.method4083((Entity)null);
       }

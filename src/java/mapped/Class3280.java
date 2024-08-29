@@ -15,7 +15,7 @@ public class Class3280 extends Item {
 
    @Override
    public String getTranslationKey() {
-      return this.field18788.method11566();
+      return this.field18788.getTranslationKey();
    }
 
    @Override

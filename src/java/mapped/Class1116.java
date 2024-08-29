@@ -68,9 +68,9 @@ public class Class1116 extends AbstractClientPlayerEntity {
       }
 
       this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
-      this.world.method6820().startSection("push");
+      this.world.getProfiler().startSection("push");
       this.method3126();
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
    }
 
    @Override

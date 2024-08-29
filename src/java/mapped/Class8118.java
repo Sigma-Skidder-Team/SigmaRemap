@@ -1,15 +1,15 @@
 package mapped;
 
-public class Class8118 implements Class8117 {
+public class Class8118 implements WorldBorderIBorderInfo {
    private static String[] field34886;
    private final double field34887;
    private final double field34888;
    private final long field34889;
    private final long field34890;
    private final double field34891;
-   public final Class7522 field34892;
+   public final WorldBorder field34892;
 
-   public Class8118(Class7522 var1, double var2, double var4, long var6) {
+   public Class8118(WorldBorder var1, double var2, double var4, long var6) {
       this.field34892 = var1;
       this.field34887 = var2;
       this.field34888 = var4;
@@ -19,86 +19,86 @@ public class Class8118 implements Class8117 {
    }
 
    @Override
-   public double method28105() {
-      return Math.max(this.field34892.method24534() - this.method28109() / 2.0, (double)(-Class7522.method24558(this.field34892)));
+   public double getMinX() {
+      return Math.max(this.field34892.getCenterX() - this.getSize() / 2.0, (double)(-WorldBorder.getWorldBorderSize(this.field34892)));
    }
 
    @Override
-   public double method28107() {
-      return Math.max(this.field34892.method24535() - this.method28109() / 2.0, (double)(-Class7522.method24558(this.field34892)));
+   public double getMinZ() {
+      return Math.max(this.field34892.getCenterZ() - this.getSize() / 2.0, (double)(-WorldBorder.getWorldBorderSize(this.field34892)));
    }
 
    @Override
-   public double method28106() {
-      return Math.min(this.field34892.method24534() + this.method28109() / 2.0, (double)Class7522.method24558(this.field34892));
+   public double getMaxX() {
+      return Math.min(this.field34892.getCenterX() + this.getSize() / 2.0, (double) WorldBorder.getWorldBorderSize(this.field34892));
    }
 
    @Override
-   public double method28108() {
-      return Math.min(this.field34892.method24535() + this.method28109() / 2.0, (double)Class7522.method24558(this.field34892));
+   public double getMaxZ() {
+      return Math.min(this.field34892.getCenterZ() + this.getSize() / 2.0, (double) WorldBorder.getWorldBorderSize(this.field34892));
    }
 
    @Override
-   public double method28109() {
+   public double getSize() {
       double var3 = (double)(Util.milliTime() - this.field34890) / this.field34891;
       return !(var3 < 1.0) ? this.field34888 : MathHelper.method37822(var3, this.field34887, this.field34888);
    }
 
    @Override
-   public double method28111() {
+   public double getResizeSpeed() {
       return Math.abs(this.field34887 - this.field34888) / (double)(this.field34889 - this.field34890);
    }
 
    @Override
-   public long method28112() {
+   public long getTimeUntilTarget() {
       return this.field34889 - Util.milliTime();
    }
 
    @Override
-   public double method28113() {
+   public double getTargetSize() {
       return this.field34888;
    }
 
    @Override
-   public Class2101 method28110() {
-      return !(this.field34888 < this.field34887) ? Class2101.field13693 : Class2101.field13694;
+   public BorderStatus getStatus() {
+      return !(this.field34888 < this.field34887) ? BorderStatus.field13693 : BorderStatus.field13694;
    }
 
    @Override
-   public void method28116() {
+   public void onCenterChanged() {
    }
 
    @Override
-   public void method28115() {
+   public void onSizeChanged() {
    }
 
    @Override
-   public Class8117 method28117() {
+   public WorldBorderIBorderInfo tick() {
       Object var10000;
-      if (this.method28112() > 0L) {
+      if (this.getTimeUntilTarget() > 0L) {
          var10000 = this;
       } else {
-         Class7522 var10002 = this.field34892;
+         WorldBorder var10002 = this.field34892;
          this.field34892.getClass();
-         var10000 = new Class8116(var10002, this.field34888);
+         var10000 = new StationaryBorderInfo(var10002, this.field34888);
       }
 
-      return (Class8117)var10000;
+      return (WorldBorderIBorderInfo)var10000;
    }
 
    @Override
-   public VoxelShape method28118() {
-      return VoxelShapes.method27433(
-         VoxelShapes.field34463,
-         VoxelShapes.method27427(
-            Math.floor(this.method28105()),
+   public VoxelShape getShape() {
+      return VoxelShapes.combineAndSimplify(
+         VoxelShapes.INFINITY,
+         VoxelShapes.create(
+            Math.floor(this.getMinX()),
             Double.NEGATIVE_INFINITY,
-            Math.floor(this.method28107()),
-            Math.ceil(this.method28106()),
+            Math.floor(this.getMinZ()),
+            Math.ceil(this.getMaxX()),
             Double.POSITIVE_INFINITY,
-            Math.ceil(this.method28108())
+            Math.ceil(this.getMaxZ())
          ),
-         IBooleanFunction.field44041
+         IBooleanFunction.ONLY_FIRST
       );
    }
 }

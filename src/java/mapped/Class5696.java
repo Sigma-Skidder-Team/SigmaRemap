@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
-   private static final Map<Class2293, ResourceLocation> field25066 = Util.<Map<Class2293, ResourceLocation>>method38508(Maps.newEnumMap(Class2293.class), var0 -> {
+   private static final Map<Class2293, ResourceLocation> field25066 = Util.<Map<Class2293, ResourceLocation>>make(Maps.newEnumMap(Class2293.class), var0 -> {
       var0.put(Class2293.field15234, new ResourceLocation("textures/entity/panda/panda.png"));
       var0.put(Class2293.field15235, new ResourceLocation("textures/entity/panda/lazy_panda.png"));
       var0.put(Class2293.field15236, new ResourceLocation("textures/entity/panda/worried_panda.png"));
@@ -69,7 +69,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
       float var16 = var1.method5220(var5);
       if (var16 > 0.0F) {
          var2.translate(0.0, (double)(0.8F * var16), 0.0);
-         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var16, var1.rotationPitch, var1.rotationPitch + 90.0F)));
+         var2.method35293(Class7680.field32898.method25286(MathHelper.lerp(var16, var1.rotationPitch, var1.rotationPitch + 90.0F)));
          var2.translate(0.0, (double)(-1.0F * var16), 0.0);
          if (var1.method5214()) {
             float var17 = (float)(Math.cos((double)var1.ticksExisted * 1.25) * Math.PI * 0.05F);
@@ -84,11 +84,11 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
       if (var18 > 0.0F) {
          float var19 = !var1.method3005() ? 1.3F : 0.5F;
          var2.translate(0.0, (double)(var19 * var18), 0.0);
-         var2.method35293(Class7680.field32898.method25286(MathHelper.method37821(var18, var1.rotationPitch, var1.rotationPitch + 180.0F)));
+         var2.method35293(Class7680.field32898.method25286(MathHelper.lerp(var18, var1.rotationPitch, var1.rotationPitch + 180.0F)));
       }
    }
 
    private float method17876(float var1, float var2, int var3, float var4, float var5) {
-      return !((float)var3 < var5) ? var1 : MathHelper.method37821(var4, var1, var2);
+      return !((float)var3 < var5) ? var1 : MathHelper.lerp(var4, var1, var2);
    }
 }

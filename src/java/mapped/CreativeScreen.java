@@ -333,14 +333,14 @@ public class CreativeScreen extends Class860<Class5820> {
       if (var4 != -1) {
          String var5 = var1.substring(0, var4).trim();
          String var6 = var1.substring(var4 + 1).trim();
-         var7 = var2 -> var2.method8293().contains(var5) && var2.method8292().contains(var6);
+         var7 = var2 -> var2.getNamespace().contains(var5) && var2.getPath().contains(var6);
       } else {
-         var7 = var1x -> var1x.method8292().contains(var1);
+         var7 = var1x -> var1x.getPath().contains(var1);
       }
 
       Class7984<Item> var8 = Class5985.method18561();
       var8.method27137().stream().filter(var7).forEach(var2 -> {
-         ITag var5x = this.field4785.put(var2, var8.method27135(var2));
+         ITag var5x = this.field4785.put(var2, var8.get(var2));
       });
    }
 

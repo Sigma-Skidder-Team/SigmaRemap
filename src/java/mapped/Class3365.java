@@ -31,8 +31,8 @@ public class Class3365 extends Class3241 {
             var1.method23412(var2, var3),
             IBooleanFunction.AND
          )) {
-         RegistryKey var7 = var2.getDimensionKey() != World.THE_END ? World.THE_END : World.field8999;
-         ServerWorld var8 = ((ServerWorld)var2).method6715().method1318(var7);
+         RegistryKey var7 = var2.getDimensionKey() != World.THE_END ? World.THE_END : World.OVERWORLD;
+         ServerWorld var8 = ((ServerWorld)var2).getServer().method1318(var7);
          if (var8 == null) {
             return;
          }

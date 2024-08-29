@@ -6,7 +6,7 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class2351<T> extends Class2350<T> {
+public class Class2351<T> extends SimpleRegistry<T> {
    private static String[] field16150;
    private final ResourceLocation field16151;
    private T field16152;
@@ -18,7 +18,7 @@ public class Class2351<T> extends Class2350<T> {
 
    @Override
    public <V extends T> V method9249(int var1, RegistryKey<T> var2, V var3, Lifecycle var4) {
-      if (this.field16151.equals(var2.method31399())) {
+      if (this.field16151.equals(var2.getLocation())) {
          this.field16152 = (T)var3;
       }
 

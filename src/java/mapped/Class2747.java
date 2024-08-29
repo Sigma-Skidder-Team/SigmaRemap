@@ -83,7 +83,7 @@ public class Class2747 extends Class2595 {
          for (int var15 = var9 - var4; var15 <= var9 + var4; var15++) {
             for (int var16 = var10 - var3; var16 <= var10 + var3; var16++) {
                var13.method8372(var14, var15, var16);
-               if (var1.method6739(var13).method23486(Class8953.field40469)) {
+               if (var1.getFluidState(var13).method23486(Class8953.field40469)) {
                   float var17 = (float)((var14 - var8) * (var14 - var8) + (var15 - var9) * (var15 - var9) + (var16 - var10) * (var16 - var10));
                   if (var17 < var11) {
                      var11 = var17;

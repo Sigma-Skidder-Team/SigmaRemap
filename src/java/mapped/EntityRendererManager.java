@@ -410,10 +410,10 @@ public class EntityRendererManager {
    private static void method32225(
            Class8892 var0, Class5422 var1, Class1662 var2, BlockPos var3, double var4, double var6, double var8, float var10, float var11
    ) {
-      BlockPos var14 = var3.method8313();
+      BlockPos var14 = var3.down();
       BlockState var15 = var2.getBlockState(var14);
       if (var15.getRenderType() != BlockRenderType.field9885 && var2.method7015(var3) > 3 && var15.method23456(var2, var14)) {
-         VoxelShape var16 = var15.method23412(var2, var3.method8313());
+         VoxelShape var16 = var15.method23412(var2, var3.down());
          if (!var16.method19516()) {
             float var17 = (float)(((double)var11 - (var6 - (double)var3.getY()) / 2.0) * 0.5 * (double)var2.method7009(var3));
             if (var17 >= 0.0F) {

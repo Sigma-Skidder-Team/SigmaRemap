@@ -72,7 +72,7 @@ public class ItemEntity extends Entity {
             this.method3434(this.method3433().method11339(0.0, -0.04, 0.0));
          }
 
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.noClip = !this.world.method7052(this);
             if (this.noClip) {
                this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().field28450 + this.getBoundingBox().field28453) / 2.0, this.getPosZ());
@@ -103,11 +103,11 @@ public class ItemEntity extends Entity {
             || MathHelper.floor(this.prevPosZ) != MathHelper.floor(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.ticksExisted % var10 == 0) {
-            if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
+            if (this.world.getFluidState(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
                this.method2863(Sounds.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
             }
 
-            if (!this.world.field9020 && this.method4118()) {
+            if (!this.world.isRemote && this.method4118()) {
                this.method4117();
             }
          }
@@ -117,14 +117,14 @@ public class ItemEntity extends Entity {
          }
 
          this.isAirBorne = this.isAirBorne | this.method3257();
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             double var7 = this.method3433().method11336(var3).method11349();
             if (var7 > 0.01) {
                this.isAirBorne = true;
             }
          }
 
-         if (!this.world.field9020 && this.field5515 >= 6000) {
+         if (!this.world.isRemote && this.field5515 >= 6000) {
             this.method2904();
          }
       } else {
@@ -274,7 +274,7 @@ public class ItemEntity extends Entity {
 
    @Override
    public void method3279(PlayerEntity var1) {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          ItemStack var4 = this.method4124();
          Item var5 = var4.getItem();
          int var6 = var4.getCount();
@@ -306,7 +306,7 @@ public class ItemEntity extends Entity {
    @Override
    public Entity method2745(ServerWorld var1) {
       Entity var4 = super.method2745(var1);
-      if (!this.world.field9020 && var4 instanceof ItemEntity) {
+      if (!this.world.isRemote && var4 instanceof ItemEntity) {
          ((ItemEntity)var4).method4117();
       }
 

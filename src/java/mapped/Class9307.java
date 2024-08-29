@@ -20,7 +20,7 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class Class9307 {
    private static final Logger field43204 = LogManager.getLogger();
-   private static final int field43205 = 33 + Class9176.method34296(Class9176.field42145) - 2;
+   private static final int field43205 = 33 + ChunkStatus.method34296(ChunkStatus.FULL) - 2;
    private final Long2ObjectMap<ObjectSet<ServerPlayerEntity>> field43206 = new Long2ObjectOpenHashMap();
    private final Long2ObjectOpenHashMap<Class52<Class2005<?>>> field43207 = new Long2ObjectOpenHashMap();
    private final Class204 field43208 = new Class204(this);

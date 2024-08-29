@@ -22,7 +22,7 @@ public final class Class7983<T> implements Class7984<T> {
    @Nullable
    @Override
    public ResourceLocation method27133(ITag<T> var1) {
-      return !(var1 instanceof Class7610) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((Class7610)var1).method24929();
+      return !(var1 instanceof Class7610) ? (ResourceLocation)this.field34310.inverse().get(var1) : ((Class7610)var1).getName();
    }
 
    @Override

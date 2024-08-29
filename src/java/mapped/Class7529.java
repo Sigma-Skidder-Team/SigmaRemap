@@ -50,7 +50,7 @@ public class Class7529 extends Class7530 {
 
    @Override
    public void method24591(CompoundNBT var1) {
-      this.field32318 = (RegistryKey<World>)Class9535.method36867(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("dimension")))
+      this.field32318 = (RegistryKey<World>) DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var1.method116("dimension")))
          .resultOrPartial(field32315::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method116("dimension")));
       this.field32316 = var1.method122("xCenter");
@@ -99,8 +99,8 @@ public class Class7529 extends Class7530 {
 
    @Override
    public CompoundNBT method24592(CompoundNBT var1) {
-      ResourceLocation.field13020
-         .encodeStart(NBTDynamicOps.INSTANCE, this.field32318.method31399())
+      ResourceLocation.CODEC
+         .encodeStart(NBTDynamicOps.INSTANCE, this.field32318.getLocation())
          .resultOrPartial(field32315::error)
          .ifPresent(var1x -> var1.put("dimension", var1x));
       var1.method102("xCenter", this.field32316);

@@ -23,7 +23,7 @@ public class Class3221 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockState var6 = var2.getBlockState(var3.method8311());
+      BlockState var6 = var2.getBlockState(var3.up());
       return !var6.method23384().method31086() || var6.getBlock() instanceof Class3199 || var6.getBlock() instanceof Class3356;
    }
 
@@ -52,23 +52,23 @@ public class Class3221 extends Block {
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>method23463(field18644);
-      if (!method11612(var2, var3) && !var2.method6796(var3.method8311())) {
+      if (!method11612(var2, var3) && !var2.method6796(var3.up())) {
          if (var7 <= 0) {
             if (!method11611(var2, var3)) {
                method11610(var1, var2, var3);
             }
          } else {
-            var2.method6725(var3, var1.method23465(field18644, Integer.valueOf(var7 - 1)), 2);
+            var2.setBlockState(var3, var1.method23465(field18644, Integer.valueOf(var7 - 1)), 2);
          }
       } else if (var7 < 7) {
-         var2.method6725(var3, var1.method23465(field18644, Integer.valueOf(7)), 2);
+         var2.setBlockState(var3, var1.method23465(field18644, Integer.valueOf(7)), 2);
       }
    }
 
    @Override
    public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
-      if (!var1.field9020
-         && var1.field9016.nextFloat() < var4 - 0.5F
+      if (!var1.isRemote
+         && var1.rand.nextFloat() < var4 - 0.5F
          && var3 instanceof Class880
          && (var3 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224))
          && var3.method3429() * var3.method3429() * var3.method3430() > 0.512F) {
@@ -79,17 +79,17 @@ public class Class3221 extends Block {
    }
 
    public static void method11610(BlockState var0, World var1, BlockPos var2) {
-      var1.method6730(var2, method11538(var0, Blocks.field36396.method11579(), var1, var2));
+      var1.setBlockState(var2, method11538(var0, Blocks.field36396.method11579(), var1, var2));
    }
 
    private static boolean method11611(Class1665 var0, BlockPos var1) {
-      Block var4 = var0.getBlockState(var1.method8311()).getBlock();
+      Block var4 = var0.getBlockState(var1.up()).getBlock();
       return var4 instanceof Class3480 || var4 instanceof Class3486 || var4 instanceof Class3493;
    }
 
    private static boolean method11612(Class1662 var0, BlockPos var1) {
       for (BlockPos var5 : BlockPos.method8359(var1.method8336(-4, 0, -4), var1.method8336(4, 1, 4))) {
-         if (var0.method6739(var5).method23486(Class8953.field40469)) {
+         if (var0.getFluidState(var5).method23486(Class8953.field40469)) {
             return true;
          }
       }

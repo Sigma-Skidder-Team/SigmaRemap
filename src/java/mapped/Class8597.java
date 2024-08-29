@@ -21,7 +21,7 @@ public class Class8597 {
       int var6 = MathHelper.floor(var1.getPosY()) >> 4;
       int var7 = MathHelper.floor(var1.getPosZ()) >> 4;
       var6 = Class7944.method26830(var6, 0, 15);
-      Class1674 var8 = var0.method6824(var5, var7);
+      Chunk var8 = var0.getChunk(var5, var7);
       int var9 = var5 - var2;
       int var10 = var5 + var2;
       int var11 = var7 - var2;
@@ -59,7 +59,7 @@ public class Class8597 {
 
       for (int var14 = var9; var14 < var10; var14++) {
          for (int var15 = var11; var15 < var12; var15++) {
-            Class1674 var16 = var0.method6824(var14, var15);
+            Chunk var16 = var0.getChunk(var14, var15);
             if (!var16.method7141()) {
                Class7038[] var17 = var16.method7067();
 

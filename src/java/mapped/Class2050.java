@@ -3,7 +3,7 @@ package mapped;
 public enum Class2050 implements Class2051 {
    field13375;
 
-   private static final Class1806 field13376 = Util.<Class1806>method38508(new Class1806(Class2237.field14626, 5, 8, false), var0 -> {
+   private static final Class1806 field13376 = Util.<Class1806>make(new Class1806(Class2237.field14626, 5, 8, false), var0 -> {
       for (int var3 = 0; var3 < 8; var3++) {
          for (int var4 = 0; var4 < 5; var4++) {
             if (var4 != 0 && var4 + 1 != 5 && var3 != 0 && var3 + 1 != 8) {

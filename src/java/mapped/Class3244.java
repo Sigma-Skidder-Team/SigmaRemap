@@ -37,7 +37,7 @@ public class Class3244 extends Class3241 implements Class3207 {
          ItemStack var11 = var4.getHeldItem(var5);
          Optional var12 = var10.method3797(var11);
          if (var12.isPresent()) {
-            if (!var2.field9020 && var10.method3798(!var4.abilities.isCreativeMode ? var11 : var11.copy(), ((Class4850)var12.get()).method14977())) {
+            if (!var2.isRemote && var10.method3798(!var4.abilities.isCreativeMode ? var11 : var11.copy(), ((Class4850)var12.get()).method14977())) {
                var4.method2911(Class8876.field40168);
                return ActionResultType.field14818;
             }
@@ -75,10 +75,10 @@ public class Class3244 extends Class3241 implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      boolean var6 = var4.method6739(var5).method23472() == Class9479.field44066;
+      boolean var6 = var4.getFluidState(var5).method23472() == Class9479.field44066;
       return this.method11579()
          .method23465(field18700, Boolean.valueOf(var6))
-         .method23465(field18699, Boolean.valueOf(this.method11651(var4.getBlockState(var5.method8313()))))
+         .method23465(field18699, Boolean.valueOf(this.method11651(var4.getBlockState(var5.down()))))
          .method23465(field18698, Boolean.valueOf(!var6))
          .method23465(field18701, var1.method18350());
    }
@@ -141,7 +141,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    public static void method11652(Class1660 var0, BlockPos var1, BlockState var2) {
-      if (var0.method6714()) {
+      if (var0.isRemote()) {
          for (int var5 = 0; var5 < 20; var5++) {
             method11653((World)var0, var1, var2.<Boolean>method23463(field18699), true);
          }
@@ -154,18 +154,18 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, Class7379 var4) {
+   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
       if (!var3.<Boolean>method23463(Class8820.field39710) && var4.method23472() == Class9479.field44066) {
          boolean var7 = var3.<Boolean>method23463(field18698);
          if (var7) {
-            if (!var1.method6714()) {
+            if (!var1.isRemote()) {
                var1.method6742((PlayerEntity)null, var2, Sounds.field26611, Class2266.field14732, 1.0F, 1.0F);
             }
 
             method11652(var1, var2, var3);
          }
 
-         var1.method6725(var2, var3.method23465(field18700, Boolean.valueOf(true)).method23465(field18698, Boolean.valueOf(false)), 3);
+         var1.setBlockState(var2, var3.method23465(field18700, Boolean.valueOf(true)).method23465(field18698, Boolean.valueOf(false)), 3);
          var1.method6861().method20726(var2, var4.method23472(), var4.method23472().method25057(var1));
          return true;
       } else {
@@ -175,12 +175,12 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, Class882 var4) {
-      if (!var1.field9020 && var4.method3327()) {
+      if (!var1.isRemote && var4.method3327()) {
          Entity var7 = var4.method3460();
          boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224);
          if (var8 && !var2.<Boolean>method23463(field18698) && !var2.<Boolean>method23463(field18700)) {
             BlockPos var9 = var3.getPos();
-            var1.method6725(var9, var2.method23465(Class8820.field39699, Boolean.valueOf(true)), 11);
+            var1.setBlockState(var9, var2.method23465(Class8820.field39699, Boolean.valueOf(true)), 11);
          }
       }
    }
@@ -221,7 +221,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
          boolean var7 = VoxelShapes.compare(field18702, var6.getCollisionShape(var0, var1, ISelectionContext.method14947()), IBooleanFunction.AND);
          if (var7) {
-            BlockState var8 = var0.getBlockState(var5.method8313());
+            BlockState var8 = var0.getBlockState(var5.down());
             return method11655(var8);
          }
       }
@@ -230,11 +230,11 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    public static boolean method11655(BlockState var0) {
-      return var0.method23462(field18698) && var0.method23446(Class7645.field32809) && var0.<Boolean>method23463(field18698);
+      return var0.method23462(field18698) && var0.method23446(BlockTags.field32809) && var0.<Boolean>method23463(field18698);
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18700) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
@@ -264,7 +264,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    public static boolean method11656(BlockState var0) {
-      return var0.method23447(Class7645.field32809, var0x -> var0x.method23462(Class8820.field39710) && var0x.method23462(Class8820.field39699))
+      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(Class8820.field39710) && var0x.method23462(Class8820.field39699))
          && !var0.<Boolean>method23463(Class8820.field39710)
          && !var0.<Boolean>method23463(Class8820.field39699);
    }

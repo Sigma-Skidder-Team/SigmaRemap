@@ -40,12 +40,12 @@ public class Class1221 implements Class1219, Class1190 {
    private Class1206 field6559;
    private Class1206 field6560;
    private Class1206 field6561;
-   private Class8905 field6562;
+   private DynamicRegistriesImpl field6562;
    private DimensionGeneratorSettings field6563;
    private Optional<Class5970> field6564;
    private OptionalLong field6565;
 
-   public Class1221(Class8905 var1, DimensionGeneratorSettings var2, Optional<Class5970> var3, OptionalLong var4) {
+   public Class1221(DynamicRegistriesImpl var1, DimensionGeneratorSettings var2, Optional<Class5970> var3, OptionalLong var4) {
       this.field6562 = var1;
       this.field6563 = var2;
       this.field6564 = var3;
@@ -109,7 +109,7 @@ public class Class1221 implements Class1219, Class1190 {
                TranslationTextComponent var6x = new TranslationTextComponent("selectWorld.import_worldgen_settings.select_file");
                String var7x = TinyFileDialogs.tinyfd_openFileDialog(var6x.getString(), (CharSequence)null, (PointerBuffer)null, (CharSequence)null, false);
                if (var7x != null) {
-                  Class8905 var8 = DynamicRegistries.func_239770_b_();
+                  DynamicRegistriesImpl var8 = DynamicRegistries.func_239770_b_();
                   ResourcePackList var9 = new ResourcePackList(new ServerPackFinder(), new FolderPackFinder(var1.method6363().toFile(), IPackNameDecorator.WORLD));
 
                   DataPackRegistries var11;
@@ -188,7 +188,7 @@ public class Class1221 implements Class1219, Class1190 {
       this.field6553 = Class5991.method18584(var3, field6551, this.field6559.method5740());
    }
 
-   private void method5781(Class8905 var1, DimensionGeneratorSettings var2) {
+   private void method5781(DynamicRegistriesImpl var1, DimensionGeneratorSettings var2) {
       this.field6562 = var1;
       this.field6563 = var2;
       this.field6564 = Class5970.method18504(var2);
@@ -273,12 +273,12 @@ public class Class1221 implements Class1219, Class1190 {
       this.field6556.method5671(var1);
    }
 
-   public Class8905 method5789() {
+   public DynamicRegistriesImpl method5789() {
       return this.field6562;
    }
 
    public void method5790(DataPackRegistries var1) {
-      Class8905 var4 = DynamicRegistries.func_239770_b_();
+      DynamicRegistriesImpl var4 = DynamicRegistries.func_239770_b_();
       WorldGenSettingsExport<JsonElement> var5 = WorldGenSettingsExport.create(JsonOps.INSTANCE, this.field6562);
       WorldSettingsImport<JsonElement> var6 = WorldSettingsImport.create(JsonOps.INSTANCE, var1.getResourceManager(), var4);
       DataResult<DimensionGeneratorSettings> var7 = DimensionGeneratorSettings.field_236201_a_.encodeStart(var5, this.field6563).flatMap(var1x -> DimensionGeneratorSettings.field_236201_a_.parse(var6, var1x));

@@ -18,7 +18,7 @@ public class MathHelper {
    public static final float field45214 = Class7317.method23173(Math.PI / 180.0);
    private static final float[] field45215 = new float[4096];
    public static boolean field45216 = false;
-   private static final float[] field45217 = Util.<float[]>method38508(new float[65536], var0 -> {
+   private static final float[] field45217 = Util.<float[]>make(new float[65536], var0 -> {
       for (int var3 = 0; var3 < var0.length; var3++) {
          var0[var3] = (float)Math.sin((double)var3 * Math.PI * 2.0 / 65536.0);
       }
@@ -302,7 +302,7 @@ public class MathHelper {
       return var0 - (float)method37767(var0);
    }
 
-   public static double method37808(double var0) {
+   public static double frac(double var0) {
       return var0 - (double)method37770(var0);
    }
 
@@ -478,7 +478,7 @@ public class MathHelper {
       return var0;
    }
 
-   public static float method37821(float var0, float var1, float var2) {
+   public static float lerp(float var0, float var1, float var2) {
       return var1 + var0 * (var2 - var1);
    }
 

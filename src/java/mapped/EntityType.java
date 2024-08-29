@@ -433,7 +433,7 @@ public class EntityType<T extends Entity> {
             (double)var5.getX() + 0.5,
             (double)var5.getY() + var12,
             (double)var5.getZ() + 0.5,
-            MathHelper.method37792(var1.field9016.nextFloat() * 360.0F),
+            MathHelper.method37792(var1.rand.nextFloat() * 360.0F),
             0.0F
          );
          if (var11 instanceof Class1006) {
@@ -467,8 +467,8 @@ public class EntityType<T extends Entity> {
 
    public static void method33204(World var0, PlayerEntity var1, Entity var2, CompoundNBT var3) {
       if (var3 != null && var3.method119("EntityTag", 10)) {
-         MinecraftServer var6 = var0.method6715();
-         if (var6 != null && var2 != null && (var0.field9020 || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
+         MinecraftServer var6 = var0.getServer();
+         if (var6 != null && var2 != null && (var0.isRemote || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
             CompoundNBT var7 = var2.method3294(new CompoundNBT());
             UUID var8 = var2.getUniqueID();
             var7.method140(var3.getCompound("EntityTag"));
@@ -522,7 +522,7 @@ public class EntityType<T extends Entity> {
    public ResourceLocation method33212() {
       if (this.field41124 == null) {
          ResourceLocation var3 = Registry.ENTITY_TYPE.getKey(this);
-         this.field41124 = new ResourceLocation(var3.method8293(), "entities/" + var3.method8292());
+         this.field41124 = new ResourceLocation(var3.getNamespace(), "entities/" + var3.getPath());
       }
 
       return this.field41124;
@@ -569,7 +569,7 @@ public class EntityType<T extends Entity> {
          return false;
       } else {
          return this.field41118
-               || !var1.method23446(Class7645.field32798)
+               || !var1.method23446(BlockTags.field32798)
                   && !var1.method23448(Blocks.field36890)
                   && !Class3244.method11655(var1)
                   && !var1.method23448(Blocks.LAVA)

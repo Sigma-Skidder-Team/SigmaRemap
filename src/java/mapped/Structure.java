@@ -131,7 +131,7 @@ public abstract class Structure<C extends Class4698> {
                   int var20 = var12 + var11 * var16;
                   int var21 = var13 + var11 * var18;
                   Class7481 var22 = this.method11370(var8, var6, var15, var20, var21);
-                  Class1670 var23 = var1.method7012(var22.field32174, var22.field32175, Class9176.field42134);
+                  IChunk var23 = var1.getChunk(var22.field32174, var22.field32175, ChunkStatus.field42134);
                   Class5444 var24 = var2.method24341(Class2002.method8391(var23.method7072(), 0), this, var23);
                   if (var24 != null && var24.method17117()) {
                      if (var5 && var24.method17121()) {
@@ -182,7 +182,7 @@ public abstract class Structure<C extends Class4698> {
       return new Class7481(var11 * var9 + var13, var12 * var9 + var14);
    }
 
-   public boolean method11361(Class5646 var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, C var10) {
+   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, C var10) {
       return true;
    }
 
@@ -192,7 +192,7 @@ public abstract class Structure<C extends Class4698> {
 
    public Class5444<?> method11372(
       DynamicRegistries var1,
-      Class5646 var2,
+      ChunkGenerator var2,
       Class1685 var3,
       Class8761 var4,
       long var5,

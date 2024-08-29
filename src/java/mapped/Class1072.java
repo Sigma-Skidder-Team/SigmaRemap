@@ -51,7 +51,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public void method3155(DataParameter<?> var1) {
-      if (field5913.equals(var1) && this.world.field9020) {
+      if (field5913.equals(var1) && this.world.isRemote) {
          this.field5915.method19689();
       }
 
@@ -101,11 +101,11 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       boolean var5 = this.method4381(var1.getHeldItem(var2));
       if (!var5 && this.method4943() && !this.isBeingRidden() && !var1.method2851()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             var1.method3311(this);
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          ActionResultType var6 = super.method4285(var1, var2);
          if (var6.isSuccessOrConsume()) {

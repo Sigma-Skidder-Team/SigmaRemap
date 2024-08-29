@@ -51,7 +51,7 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
 
    @Override
    public Class1783 method580(ResourceLocation var1) throws IOException {
-      IResourceManager var4 = this.field724.get(var1.method8293());
+      IResourceManager var4 = this.field724.get(var1.getNamespace());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
       } else {
@@ -61,13 +61,13 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
 
    @Override
    public boolean method581(ResourceLocation var1) {
-      IResourceManager var4 = this.field724.get(var1.method8293());
+      IResourceManager var4 = this.field724.get(var1.getNamespace());
       return var4 == null ? false : var4.method581(var1);
    }
 
    @Override
    public List<Class1783> method582(ResourceLocation var1) throws IOException {
-      IResourceManager var4 = this.field724.get(var1.method8293());
+      IResourceManager var4 = this.field724.get(var1.getNamespace());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
       } else {

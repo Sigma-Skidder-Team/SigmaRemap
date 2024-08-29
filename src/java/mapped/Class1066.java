@@ -45,7 +45,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    public void method2877() {
       super.method2877();
       if (this.method4927()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method3300(Blocks.CHEST);
          }
 
@@ -119,7 +119,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
       if (!this.method3005()) {
          if (this.method4932() && var1.method2851()) {
             this.openGUI(var1);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
 
          if (this.isBeingRidden()) {
@@ -134,7 +134,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
 
          if (!this.method4932()) {
             this.method4896();
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
 
          if (!this.method4927() && var5.getItem() == Blocks.CHEST.method11581()) {
@@ -145,18 +145,18 @@ public abstract class Class1066 extends AbstractHorseEntity {
             }
 
             this.method4948();
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
 
          if (!this.method3005() && !this.method4943() && var5.getItem() == Items.field37886) {
             this.openGUI(var1);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
       }
 
       if (!this.method3005()) {
          this.method4920(var1);
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }

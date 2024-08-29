@@ -41,14 +41,14 @@ public abstract class Class6395 {
    private final Map<UUID, Class8019> field27998 = Maps.newHashMap();
    private final Class8716 field27999;
    private boolean field28000;
-   private final Class8905 field28001;
+   private final DynamicRegistriesImpl field28001;
    public final int field28002;
    private int field28003;
    private Class1894 field28004;
    private boolean field28005;
    private int field28006;
 
-   public Class6395(MinecraftServer var1, Class8905 var2, Class8716 var3, int var4) {
+   public Class6395(MinecraftServer var1, DynamicRegistriesImpl var2, Class8716 var3, int var4) {
       this.field27990 = var1;
       this.field28001 = var2;
       this.field28002 = var4;
@@ -63,8 +63,8 @@ public abstract class Class6395 {
       var6.method31790(var5);
       CompoundNBT var9 = this.method19448(var2);
       RegistryKey var10 = var9 == null
-         ? World.field8999
-         : Class9535.method36867(new Dynamic(NBTDynamicOps.INSTANCE, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(World.field8999);
+         ? World.OVERWORLD
+         : DimensionType.decodeWorldKey(new Dynamic(NBTDynamicOps.INSTANCE, var9.method116("Dimension"))).resultOrPartial(field27988::error).orElse(World.OVERWORLD);
       ServerWorld var11 = this.field27990.method1318(var10);
       ServerWorld var12;
       if (var11 != null) {
@@ -101,7 +101,7 @@ public abstract class Class6395 {
             var2.method3205(),
             var2.field4857.method33863(),
             var2.field4857.method33864(),
-            Class6668.method20321(var12.method6967()),
+            BiomeManager.method20321(var12.method6967()),
             var14.isHardcore(),
             this.field27990.method1319(),
             this.field28001,
@@ -111,7 +111,7 @@ public abstract class Class6395 {
             this.field28003,
             var18,
             !var17,
-            var12.method6823(),
+            var12.isDebug(),
             var12.method6966()
          )
       );
@@ -258,7 +258,7 @@ public abstract class Class6395 {
                var7.removed = true;
             }
 
-            var4.method6824(var1.chunkCoordX, var1.chunkCoordZ).method7137();
+            var4.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7137();
          }
       }
 
@@ -381,7 +381,7 @@ public abstract class Class6395 {
          boolean var15 = var20.method23448(Blocks.field37124);
          Vector3d var16 = (Vector3d)var9.get();
          float var18;
-         if (!var20.method23446(Class7645.field32770) && !var15) {
+         if (!var20.method23446(BlockTags.field32770) && !var15) {
             var18 = var6;
          } else {
             Vector3d var17 = Vector3d.method11330(var5).method11336(var16).method11333();
@@ -403,10 +403,10 @@ public abstract class Class6395 {
             new Class5545(
                var12.world.method6812(),
                var12.world.getDimensionKey(),
-               Class6668.method20321(var12.getServerWorld().method6967()),
+               BiomeManager.method20321(var12.getServerWorld().method6967()),
                var12.field4857.method33863(),
                var12.field4857.method33864(),
-               var12.getServerWorld().method6823(),
+               var12.getServerWorld().isDebug(),
                var12.getServerWorld().method6966(),
                var2
             )
@@ -600,7 +600,7 @@ public abstract class Class6395 {
    }
 
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
-      Class7522 var5 = this.field27990.method1317().method6810();
+      WorldBorder var5 = this.field27990.method1317().method6810();
       var1.field4855.sendPacket(new Class5474(var5, Class1864.field10036));
       var1.field4855.sendPacket(new Class5577(var2.method6783(), var2.method6784(), var2.method6789().method17135(Class5462.field24232)));
       var1.field4855.sendPacket(new Class5525(var2.method6947(), var2.method6948()));
@@ -670,7 +670,7 @@ public abstract class Class6395 {
          var1.field4857.method33862(var2.field4857.method33863(), var2.field4857.method33864());
       }
 
-      var1.field4857.method33867(var3.method6715().method1436().method20067());
+      var1.field4857.method33867(var3.getServer().method1436().method20067());
    }
 
    public void method19482(boolean var1) {
@@ -728,7 +728,7 @@ public abstract class Class6395 {
 
       for (ServerWorld var5 : this.field27990.method1320()) {
          if (var5 != null) {
-            var5.method6883().method7381(var1);
+            var5.getChunkProvider().method7381(var1);
          }
       }
    }

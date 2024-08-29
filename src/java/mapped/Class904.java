@@ -105,7 +105,7 @@ public class Class904 extends Class882 {
       super.tick();
       PlayerEntity var3 = this.method3544();
       if (var3 != null) {
-         if (this.world.field9020 || !this.method3534(var3)) {
+         if (this.world.isRemote || !this.method3534(var3)) {
             if (!this.onGround) {
                this.field5153 = 0;
             } else {
@@ -118,7 +118,7 @@ public class Class904 extends Class882 {
 
             float var4 = 0.0F;
             BlockPos var5 = this.getPosition();
-            Class7379 var6 = this.world.method6739(var5);
+            FluidState var6 = this.world.getFluidState(var5);
             if (var6.method23486(Class8953.field40469)) {
                var4 = var6.method23475(this.world, var5);
             }
@@ -160,7 +160,7 @@ public class Class904 extends Class882 {
                         this.method3434(this.method3433().method11339(0.0, -0.1 * (double)this.field5148.nextFloat() * (double)this.field5148.nextFloat(), 0.0));
                      }
 
-                     if (!this.world.field9020) {
+                     if (!this.world.isRemote) {
                         this.method3537(var5);
                      }
                   }
@@ -226,7 +226,7 @@ public class Class904 extends Class882 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.field5159 = var1.getEntity();
          this.method3536();
       }
@@ -245,7 +245,7 @@ public class Class904 extends Class882 {
    private void method3537(BlockPos var1) {
       ServerWorld var4 = (ServerWorld)this.world;
       int var5 = 1;
-      BlockPos var6 = var1.method8311();
+      BlockPos var6 = var1.up();
       if (this.rand.nextFloat() < 0.25F && this.world.method6796(var6)) {
          var5++;
       }
@@ -386,7 +386,7 @@ public class Class904 extends Class882 {
    private Class2331 method3540(BlockPos var1) {
       BlockState var4 = this.world.getBlockState(var1);
       if (!var4.isAir() && !var4.method23448(Blocks.LILY_PAD)) {
-         Class7379 var5 = var4.method23449();
+         FluidState var5 = var4.method23449();
          return var5.method23486(Class8953.field40469) && var5.method23473() && var4.method23414(this.world, var1).method19516()
             ? Class2331.field15948
             : Class2331.field15949;
@@ -409,7 +409,7 @@ public class Class904 extends Class882 {
 
    public int method3542(ItemStack var1) {
       PlayerEntity var4 = this.method3544();
-      if (!this.world.field9020 && var4 != null) {
+      if (!this.world.isRemote && var4 != null) {
          int var5 = 0;
          if (this.field5159 == null) {
             if (this.field5154 > 0) {
@@ -419,7 +419,7 @@ public class Class904 extends Class882 {
                   .method36454(Class9525.field44330, this)
                   .method36450(this.rand)
                   .method36453((float)this.field5161 + var4.method2978());
-               Class7318 var7 = this.world.method6715().method1411().method1058(Class8793.field39591);
+               Class7318 var7 = this.world.getServer().method1411().method1058(Class8793.field39591);
                List<ItemStack> var8 = var7.method23182(var6.method36460(Class8524.field38285));
                CriteriaTriggers.field44494.method15124((ServerPlayerEntity)var4, var1, this, var8);
 
@@ -462,7 +462,7 @@ public class Class904 extends Class882 {
 
    @Override
    public void method2866(byte var1) {
-      if (var1 == 31 && this.world.field9020 && this.field5159 instanceof PlayerEntity && ((PlayerEntity)this.field5159).method2905()) {
+      if (var1 == 31 && this.world.isRemote && this.field5159 instanceof PlayerEntity && ((PlayerEntity)this.field5159).method2905()) {
          this.method3543();
       }
 

@@ -17,7 +17,7 @@ public class Class9222 {
    );
    public static final SuggestionProvider<Class6619> field42456 = method34676(
       new ResourceLocation("available_biomes"),
-      (var0, var1) -> Class6618.method20141(((Class6618)var0.getSource()).method20136().<Biome>method32453(Registry.BIOME_KEY).method9190(), var1)
+      (var0, var1) -> Class6618.method20141(((Class6618)var0.getSource()).method20136().<Biome>getRegistry(Registry.BIOME_KEY).method9190(), var1)
    );
    public static final SuggestionProvider<Class6619> field42457 = method34676(
       new ResourceLocation("summonable_entities"),

@@ -89,7 +89,7 @@ public class Class8998 {
    }
 
    private int method33244(int var1) {
-      return Class1649.method6633(this.field41152).method6715().method1337(var1);
+      return Class1649.method6633(this.field41152).getServer().method1337(var1);
    }
 
    private int method33245() {

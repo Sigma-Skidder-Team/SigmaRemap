@@ -15,7 +15,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class Class7488 extends Class7487 {
-   private static final Codec<Either<ResourceLocation, Class8969>> field32185 = Codec.of(Class7488::method24404, ResourceLocation.field13020.map(Either::left));
+   private static final Codec<Either<ResourceLocation, Class8969>> field32185 = Codec.of(Class7488::method24404, ResourceLocation.CODEC.map(Either::left));
    public static final Codec<Class7488> field32186 = RecordCodecBuilder.create(
       var0 -> var0.group(method24406(), method24405(), method24379()).apply(var0, Class7488::new)
    );
@@ -24,7 +24,7 @@ public class Class7488 extends Class7487 {
 
    private static <T> DataResult<T> method24404(Either<ResourceLocation, Class8969> var0, DynamicOps<T> var1, T var2) {
       Optional<ResourceLocation> var5 = var0.left();
-      return var5.isPresent() ? ResourceLocation.field13020.encode(var5.get(), var1, var2) : DataResult.error("Can not serialize a runtime pool element");
+      return var5.isPresent() ? ResourceLocation.CODEC.encode(var5.get(), var1, var2) : DataResult.error("Can not serialize a runtime pool element");
    }
 
    public static <E extends Class7488> RecordCodecBuilder<E, Supplier<Class3622>> method24405() {
@@ -82,7 +82,7 @@ public class Class7488 extends Class7487 {
 
    @Override
    public boolean method24376(
-           Class8761 var1, Class1658 var2, Class7480 var3, Class5646 var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           Class8761 var1, Class1658 var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    ) {
       Class8969 var13 = this.method24407(var1);
       Class9463 var14 = this.method24409(var7, var8, var10);

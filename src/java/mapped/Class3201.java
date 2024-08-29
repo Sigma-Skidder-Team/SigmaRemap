@@ -62,7 +62,7 @@ public class Class3201 extends Class3200 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          BlockState var11 = this.method11510(var1, var2, var3);
          float var10 = !var11.<Boolean>method23463(field18501) ? 0.5F : 0.6F;
          var2.method6742((PlayerEntity)null, var3, Sounds.field26730, Class2266.field14732, 0.3F, var10);
@@ -79,7 +79,7 @@ public class Class3201 extends Class3200 {
 
    public BlockState method11510(BlockState var1, World var2, BlockPos var3) {
       var1 = var1.method23459(field18501);
-      var2.method6725(var3, var1, 3);
+      var2.setBlockState(var3, var1, 3);
       this.method11517(var1, var2, var3);
       return var1;
    }
@@ -127,8 +127,8 @@ public class Class3201 extends Class3200 {
    }
 
    private void method11517(BlockState var1, World var2, BlockPos var3) {
-      var2.method6733(var3, this);
-      var2.method6733(var3.method8349(method11509(var1).method536()), this);
+      var2.notifyNeighborsOfStateChange(var3, this);
+      var2.notifyNeighborsOfStateChange(var3.method8349(method11509(var1).method536()), this);
    }
 
    @Override

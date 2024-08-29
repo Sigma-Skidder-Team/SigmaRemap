@@ -13,7 +13,7 @@ public final class Class9564 {
    public static final Class9564 field44545 = method37067("swamp");
    public static final Class9564 field44546 = method37067("taiga");
    private final String field44547;
-   private static final Map<RegistryKey<Biome>, Class9564> field44548 = Util.<Map<RegistryKey<Biome>, Class9564>>method38508(
+   private static final Map<RegistryKey<Biome>, Class9564> field44548 = Util.<Map<RegistryKey<Biome>, Class9564>>make(
       Maps.newHashMap(), var0 -> {
          var0.put(Class9495.field44158, field44540);
          var0.put(Class9495.field44160, field44540);

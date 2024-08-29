@@ -74,7 +74,7 @@ public abstract class Class6768<C extends Class8277> {
    }
 
    public abstract void method20654(
-           Random var1, Class1670 var2, Biome var3, int var4, int var5, int var6, double var7, BlockState var9, BlockState var10, int var11, long var12, C var14
+           Random var1, IChunk var2, Biome var3, int var4, int var5, int var6, double var7, BlockState var9, BlockState var10, int var11, long var12, C var14
    );
 
    public void method20658(long var1) {

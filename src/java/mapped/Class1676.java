@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class1676 extends Class1674 {
+public class Class1676 extends Chunk {
    private static String[] field9136;
    private Class8870 field9137;
    private boolean field9138;
@@ -18,7 +18,7 @@ public class Class1676 extends Class1674 {
       this.field9137 = var1;
    }
 
-   public static Class8870 method7168(Class1674 var0) {
+   public static Class8870 method7168(Chunk var0) {
       Class8889[] var3 = null;
       Class7038 var4 = var0.method7064();
       if (var4 != null) {

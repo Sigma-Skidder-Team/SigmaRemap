@@ -50,17 +50,17 @@ public class Class7803 {
 
    public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, ServerWorld var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
-      var3.method6730(var6, Blocks.COMMAND_BLOCK.method11579());
+      var3.setBlockState(var6, Blocks.COMMAND_BLOCK.method11579());
       Class969 var7 = (Class969)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
       BlockPos var8 = Class8969.method32905(var6.method8336(0, 0, -1), Class2089.field13614, var2, var6);
-      var3.method6730(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
+      var3.setBlockState(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
    }
 
    public static void method26055(String var0, BlockPos var1, BlockPos var2, Class80 var3, ServerWorld var4) {
       Class9764 var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
-      var4.method6730(var1, Blocks.field37113.method11579());
+      var4.setBlockState(var1, Blocks.field37113.method11579());
       Class964 var8 = (Class964)var4.getTileEntity(var1);
       var8.method3954(false);
       var8.method3938(new ResourceLocation(var0));
@@ -186,7 +186,7 @@ public class Class7803 {
    }
 
    private static Class964 method26064(String var0, BlockPos var1, Class80 var2, ServerWorld var3, boolean var4) {
-      var3.method6730(var1, Blocks.field37113.method11579());
+      var3.setBlockState(var1, Blocks.field37113.method11579());
       Class964 var7 = (Class964)var3.getTileEntity(var1);
       var7.method3951(Class104.field319);
       var7.method3947(var2);
@@ -221,7 +221,7 @@ public class Class7803 {
 
    private static void method26066(int var0, BlockPos var1, ServerWorld var2) {
       BlockState var5 = null;
-      Class9733 var6 = Class9733.method38132(var2.method6867().<Biome>method32453(Registry.BIOME_KEY));
+      Class9733 var6 = Class9733.method38132(var2.method6867().<Biome>getRegistry(Registry.BIOME_KEY));
       if (!(var6 instanceof Class9733)) {
          if (var1.getY() != var0 - 1) {
             if (var1.getY() < var0 - 1) {
@@ -243,7 +243,7 @@ public class Class7803 {
 
       Class164 var8 = new Class164(var5, Collections.<Class8550<?>>emptySet(), (CompoundNBT)null);
       var8.method496(var2, var1, 2);
-      var2.method6964(var1, var5.getBlock());
+      var2.func_230547_a_(var1, var5.getBlock());
    }
 
    private static boolean method26067(BlockPos var0, BlockPos var1, ServerWorld var2) {

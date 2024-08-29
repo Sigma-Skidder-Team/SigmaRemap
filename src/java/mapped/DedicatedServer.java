@@ -22,7 +22,7 @@ import java.util.Optional;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
 
-public class Class1645 extends MinecraftServer implements Class1646 {
+public class DedicatedServer extends MinecraftServer implements Class1646 {
    private static final Logger field1208 = LogManager.getLogger();
    private static final Pattern field8928 = Pattern.compile("^[a-fA-F0-9]{40}$");
    private final List<Class9335> field8929 = Collections.<Class9335>synchronizedList(Lists.newArrayList());
@@ -30,12 +30,12 @@ public class Class1645 extends MinecraftServer implements Class1646 {
    private final Class914 field8931;
    private Class441 field8932;
    private final Class6816 field8933;
-   private Class2517 field8934;
+   private MinecraftServerGui field8934;
    private final ChatFilterClient field8935;
 
-   public Class1645(
+   public DedicatedServer(
       Thread var1,
-      Class8905 var2,
+      DynamicRegistriesImpl var2,
       SaveFormat.LevelSave var3,
       ResourcePackList var4,
       DataPackRegistries var5,
@@ -325,7 +325,7 @@ public class Class1645 extends MinecraftServer implements Class1646 {
 
    public void method6504() {
       if (this.field8934 == null) {
-         this.field8934 = Class2517.method10550(this);
+         this.field8934 = MinecraftServerGui.func_219048_a(this);
       }
    }
 
@@ -351,7 +351,7 @@ public class Class1645 extends MinecraftServer implements Class1646 {
 
    @Override
    public boolean method1378(ServerWorld var1, BlockPos var2, PlayerEntity var3) {
-      if (var1.getDimensionKey() == World.field8999) {
+      if (var1.getDimensionKey() == World.OVERWORLD) {
          if (!this.getPlayerList().method19470().method14440()) {
             if (!this.getPlayerList().canSendCommands(var3.getGameProfile())) {
                if (this.method1377() > 0) {

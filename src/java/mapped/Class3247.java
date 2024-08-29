@@ -17,7 +17,7 @@ public abstract class Class3247 extends Class3198 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return method11547(var2, var3.method8313());
+      return method11547(var2, var3.down());
    }
 
    @Override
@@ -26,9 +26,9 @@ public abstract class Class3247 extends Class3198 {
          boolean var7 = var1.<Boolean>method23463(field18708);
          boolean var8 = this.method11661(var2, var3, var1);
          if (var7 && !var8) {
-            var2.method6725(var3, var1.method23465(field18708, Boolean.valueOf(false)), 2);
+            var2.setBlockState(var3, var1.method23465(field18708, Boolean.valueOf(false)), 2);
          } else if (!var7) {
-            var2.method6725(var3, var1.method23465(field18708, Boolean.valueOf(true)), 2);
+            var2.setBlockState(var3, var1.method23465(field18708, Boolean.valueOf(true)), 2);
             if (!var8) {
                var2.method6860().method20719(var3, this, this.method11658(var1), Class2199.field14368);
             }
@@ -55,10 +55,10 @@ public abstract class Class3247 extends Class3198 {
       if (!var1.method23443(var2, var3)) {
          TileEntity var9 = !this.isTileEntityProvider() ? null : var2.getTileEntity(var3);
          method11555(var1, var2, var3, var9);
-         var2.method6728(var3, false);
+         var2.removeBlock(var3, false);
 
          for (Direction var13 : Direction.values()) {
-            var2.method6733(var3.method8349(var13), this);
+            var2.notifyNeighborsOfStateChange(var3.method8349(var13), this);
          }
       } else {
          this.method11664(var2, var3, var1);
@@ -155,8 +155,8 @@ public abstract class Class3247 extends Class3198 {
    public void method11670(World var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>method23463(field18484);
       BlockPos var7 = var2.method8349(var6.method536());
-      var1.method6735(var7, this, var2);
-      var1.method6734(var7, this, var6);
+      var1.neighborChanged(var7, this, var2);
+      var1.notifyNeighborsOfStateExcept(var7, this, var6);
    }
 
    public boolean method11671(BlockState var1) {

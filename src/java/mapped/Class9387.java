@@ -115,7 +115,7 @@ public class Class9387 {
                return var0;
             }
 
-            String var4 = var0.method8292();
+            String var4 = var0.getPath();
             if (var4.startsWith("horse/")) {
                var4 = method35634(var4, "horse/".length());
             }
@@ -171,7 +171,7 @@ public class Class9387 {
    }
 
    private static Class7978 method35636(ResourceLocation var0, boolean var1) {
-      String var4 = var0.method8292();
+      String var4 = var0.getPath();
       ResourceLocation var5 = method35638(var0, var1);
       if (var5 != null) {
          Class7978 var6 = method35637(var5, var0);
@@ -186,8 +186,8 @@ public class Class9387 {
 
    private static Class7978 method35637(ResourceLocation var0, ResourceLocation var1) {
       try {
-         String var4 = var0.method8292();
-         method35646(var1.method8292() + ", properties: " + var4);
+         String var4 = var0.getPath();
+         method35646(var1.getPath() + ", properties: " + var4);
          InputStream var5 = Class7944.method26863(var0);
          if (var5 == null) {
             method35647("Properties not found: " + var4);
@@ -200,7 +200,7 @@ public class Class9387 {
             return !var7.method27115(var4) ? null : var7;
          }
       } catch (FileNotFoundException var8) {
-         method35647("File not found: " + var1.method8292());
+         method35647("File not found: " + var1.getPath());
          return null;
       } catch (IOException var9) {
          var9.printStackTrace();
@@ -211,8 +211,8 @@ public class Class9387 {
    private static ResourceLocation method35638(ResourceLocation var0, boolean var1) {
       ResourceLocation var4 = method35639(var0, var1);
       if (var4 != null) {
-         String var5 = var4.method8293();
-         String var6 = var4.method8292();
+         String var5 = var4.getNamespace();
+         String var6 = var4.getPath();
          String var7 = Class9402.method35763(var6, ".png");
          String var8 = var7 + ".properties";
          ResourceLocation var9 = new ResourceLocation(var5, var8);
@@ -233,8 +233,8 @@ public class Class9387 {
    }
 
    public static ResourceLocation method35639(ResourceLocation var0, boolean var1) {
-      String var4 = var0.method8293();
-      String var5 = var0.method8292();
+      String var4 = var0.getNamespace();
+      String var5 = var0.getPath();
       String var6 = "textures/";
       String var7 = "optifine/random/";
       if (var1) {
@@ -260,13 +260,13 @@ public class Class9387 {
 
    public static ResourceLocation method35641(ResourceLocation var0, int var1) {
       if (var0 != null) {
-         String var4 = var0.method8292();
+         String var4 = var0.getPath();
          int var5 = var4.lastIndexOf(46);
          if (var5 >= 0) {
             String var6 = var4.substring(0, var5);
             String var7 = var4.substring(var5);
             String var8 = var6 + var1 + var7;
-            return new ResourceLocation(var0.method8293(), var8);
+            return new ResourceLocation(var0.getNamespace(), var8);
          } else {
             return null;
          }
@@ -301,7 +301,7 @@ public class Class9387 {
 
          if (var4.size() > 1) {
             ResourceLocation[] var9 = var4.toArray(new ResourceLocation[var4.size()]);
-            method35646(var0.method8292() + ", variants: " + var9.length);
+            method35646(var0.getPath() + ", variants: " + var9.length);
             return var9;
          } else {
             return null;

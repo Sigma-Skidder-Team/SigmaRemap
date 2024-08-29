@@ -25,12 +25,12 @@ public class Class3393 extends Class3392 {
    }
 
    public BlockState method12004(Class1665 var1, BlockPos var2) {
-      Block var5 = var1.getBlockState(var2.method8313()).getBlock();
-      Block var6 = var1.getBlockState(var2.method8311()).getBlock();
-      Block var7 = var1.getBlockState(var2.method8341()).getBlock();
-      Block var8 = var1.getBlockState(var2.method8347()).getBlock();
-      Block var9 = var1.getBlockState(var2.method8343()).getBlock();
-      Block var10 = var1.getBlockState(var2.method8345()).getBlock();
+      Block var5 = var1.getBlockState(var2.down()).getBlock();
+      Block var6 = var1.getBlockState(var2.up()).getBlock();
+      Block var7 = var1.getBlockState(var2.north()).getBlock();
+      Block var8 = var1.getBlockState(var2.east()).getBlock();
+      Block var9 = var1.getBlockState(var2.south()).getBlock();
+      Block var10 = var1.getBlockState(var2.west()).getBlock();
       return this.method11579()
          .method23465(field19024, Boolean.valueOf(var5 == this || var5 == Blocks.field36879 || var5 == Blocks.field36651))
          .method23465(field19023, Boolean.valueOf(var6 == this || var6 == Blocks.field36879))
@@ -62,8 +62,8 @@ public class Class3393 extends Class3392 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockState var6 = var2.getBlockState(var3.method8313());
-      boolean var7 = !var2.getBlockState(var3.method8311()).isAir() && !var6.isAir();
+      BlockState var6 = var2.getBlockState(var3.down());
+      boolean var7 = !var2.getBlockState(var3.up()).isAir() && !var6.isAir();
 
       for (Direction var9 : Class76.field161) {
          BlockPos var10 = var3.method8349(var9);
@@ -73,7 +73,7 @@ public class Class3393 extends Class3392 {
                return false;
             }
 
-            Block var12 = var2.getBlockState(var10.method8313()).getBlock();
+            Block var12 = var2.getBlockState(var10.down()).getBlock();
             if (var12 == this || var12 == Blocks.field36651) {
                return true;
             }

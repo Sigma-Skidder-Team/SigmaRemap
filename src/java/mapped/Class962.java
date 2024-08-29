@@ -99,7 +99,7 @@ public class Class962 extends TileEntity implements Class935 {
          if (this.field5324 != null) {
             if (var1 instanceof Class1017) {
                Class1017 var7 = (Class1017)var1;
-               if (var7.method4422() && (!this.method3925() || this.field5324.field9016.nextBoolean())) {
+               if (var7.method4422() && (!this.method3925() || this.field5324.rand.nextBoolean())) {
                   this.field5393 = var7.method4421();
                }
             }
@@ -143,21 +143,21 @@ public class Class962 extends TileEntity implements Class935 {
             } else if (var12.getType().method33228(Class8613.field38736)) {
                if (var12 instanceof Class1017) {
                   Class1017 var13 = (Class1017)var12;
-                  if (this.method3925() && !var13.method4422() && this.field5324.field9016.nextFloat() < 0.9F) {
+                  if (this.method3925() && !var13.method4422() && this.field5324.rand.nextFloat() < 0.9F) {
                      var13.method4423(this.field5393);
                   }
 
                   if (var4 == Class2084.field13571) {
                      var13.method4449();
-                     if (var1.getBlock().method11540(Class7645.field32794)) {
+                     if (var1.getBlock().method11540(BlockTags.field32794)) {
                         int var14 = method3919(var1);
                         if (var14 < 5) {
-                           int var15 = this.field5324.field9016.nextInt(100) != 0 ? 1 : 2;
+                           int var15 = this.field5324.rand.nextInt(100) != 0 ? 1 : 2;
                            if (var14 + var15 > 5) {
                               var15--;
                            }
 
-                           this.field5324.method6730(this.getPos(), var1.method23465(Class3366.field18936, Integer.valueOf(var14 + var15)));
+                           this.field5324.setBlockState(this.getPos(), var1.method23465(Class3366.field18936, Integer.valueOf(var14 + var15)));
                         }
                      }
                   }
@@ -221,7 +221,7 @@ public class Class962 extends TileEntity implements Class935 {
 
    @Override
    public void method3647() {
-      if (!this.field5324.field9020) {
+      if (!this.field5324.isRemote) {
          this.method3926();
          BlockPos var3 = this.getPos();
          if (this.field5392.size() > 0 && this.field5324.method6814().nextDouble() < 0.005) {

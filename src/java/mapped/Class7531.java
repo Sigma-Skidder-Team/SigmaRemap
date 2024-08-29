@@ -62,8 +62,8 @@ public class Class7531 extends Class7530 {
       } else if (this.field32333.method6789().method17135(Class5462.field24246)) {
          return null;
       } else {
-         Class9535 var4 = var1.world.method6812();
-         if (!var4.method36883()) {
+         DimensionType var4 = var1.world.method6812();
+         if (!var4.isHasRaids()) {
             return null;
          } else {
             BlockPos var5 = var1.getPosition();
@@ -151,8 +151,8 @@ public class Class7531 extends Class7530 {
       return var1;
    }
 
-   public static String method24615(Class9535 var0) {
-      return "raids" + var0.method36873();
+   public static String method24615(DimensionType var0) {
+      return "raids" + var0.getSuffix();
    }
 
    private int method24616() {

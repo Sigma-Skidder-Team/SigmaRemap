@@ -163,7 +163,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
          this.field5248--;
       }
 
-      if (!this.field5324.field9020) {
+      if (!this.field5324.isRemote) {
          ItemStack var5 = this.field5247.get(1);
          if (this.method3644() || !var5.isEmpty() && !this.field5247.get(0).isEmpty()) {
             Class4843 var6 = this.field5324.method6816().method1030(this.field5254, this, this.field5324).orElse(null);
@@ -201,7 +201,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
          if (var3 != this.method3644()) {
             var4 = true;
             this.field5324
-               .method6725(this.field5325, this.field5324.getBlockState(this.field5325).method23465(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
+               .setBlockState(this.field5325, this.field5324.getBlockState(this.field5325).method23465(Class3350.field18876, Boolean.valueOf(this.method3644())), 3);
          }
       }
 
@@ -243,7 +243,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             this.field5247.set(2, var5.copy());
          }
 
-         if (!this.field5324.field9020) {
+         if (!this.field5324.isRemote) {
             this.method3636(var1);
          }
 

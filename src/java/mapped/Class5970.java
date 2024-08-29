@@ -24,7 +24,7 @@ public abstract class Class5970 {
    public static final Map<Optional<Class5970>, Class7837> field26034 = ImmutableMap.of(
       Optional.<Class5970>of(field26026),
       (Class7837)(var0, var1) -> {
-         Class5646 var4 = var1.method26265();
+         ChunkGenerator var4 = var1.method26265();
          return new Class1324(
             var0,
             var2 -> var0.field7092
@@ -33,11 +33,11 @@ public abstract class Class5970 {
                         var1.method26259(),
                         var1.method26260(),
                         var1.method26261(),
-                        DimensionGeneratorSettings.method26262(var0.field7092.method5789().<Class9535>method32453(Registry.field16066), var1.method26264(), new Class5648(var2))
+                        DimensionGeneratorSettings.method26262(var0.field7092.method5789().<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY), var1.method26264(), new Class5648(var2))
                      )
                   ),
             !(var4 instanceof Class5648)
-               ? Class9733.method38132(var0.field7092.method5789().<Biome>method32453(Registry.BIOME_KEY))
+               ? Class9733.method38132(var0.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY))
                : ((Class5648)var4).method17837()
          );
       },
@@ -71,24 +71,24 @@ public abstract class Class5970 {
 
    private static DimensionGeneratorSettings method18502(DynamicRegistries var0, DimensionGeneratorSettings var1, Class5970 var2, Biome var3) {
       Class1688 var6 = new Class1688(var3);
-      Class2349 var7 = var0.<Class9535>method32453(Registry.field16066);
-      Class2349 var8 = var0.<Class9309>method32453(Registry.field16099);
+      MutableRegistry var7 = var0.<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY);
+      MutableRegistry var8 = var0.<DimensionSettings>getRegistry(Registry.field16099);
       Supplier var9;
       if (var2 != field26030) {
          if (var2 != field26031) {
-            var9 = () -> var8.method9189(Class9309.field43230);
+            var9 = () -> var8.getOrThrow(DimensionSettings.field43230);
          } else {
-            var9 = () -> var8.method9189(Class9309.field43235);
+            var9 = () -> var8.getOrThrow(DimensionSettings.field43235);
          }
       } else {
-         var9 = () -> var8.method9189(Class9309.field43234);
+         var9 = () -> var8.getOrThrow(DimensionSettings.field43234);
       }
 
       return new DimensionGeneratorSettings(
          var1.method26259(),
          var1.method26260(),
          var1.method26261(),
-         DimensionGeneratorSettings.method26262(var7, var1.method26264(), new Class5645(var6, var1.method26259(), var9))
+         DimensionGeneratorSettings.method26262(var7, var1.method26264(), new NoiseChunkGenerator(var6, var1.method26259(), var9))
       );
    }
 
@@ -98,11 +98,11 @@ public abstract class Class5970 {
          .method7201()
          .stream()
          .findFirst()
-         .orElse(var0.<Biome>method32453(Registry.BIOME_KEY).method9189(Class9495.field44122));
+         .orElse(var0.<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Class9495.field44122));
    }
 
    public static Optional<Class5970> method18504(DimensionGeneratorSettings var0) {
-      Class5646 var3 = var0.method26265();
+      ChunkGenerator var3 = var0.method26265();
       if (!(var3 instanceof Class5648)) {
          return !(var3 instanceof Class5647) ? Optional.<Class5970>empty() : Optional.<Class5970>of(field26032);
       } else {
@@ -114,14 +114,14 @@ public abstract class Class5970 {
       return this.field26035;
    }
 
-   public DimensionGeneratorSettings method18506(Class8905 var1, long var2, boolean var4, boolean var5) {
-      Class2349 var8 = var1.<Biome>method32453(Registry.BIOME_KEY);
-      Class2349 var9 = var1.<Class9535>method32453(Registry.field16066);
-      Class2349 var10 = var1.<Class9309>method32453(Registry.field16099);
-      return new DimensionGeneratorSettings(var2, var4, var5, DimensionGeneratorSettings.method26262(var9, Class9535.method36871(var9, var8, var10, var2), this.method18500(var8, var10, var2)));
+   public DimensionGeneratorSettings method18506(DynamicRegistriesImpl var1, long var2, boolean var4, boolean var5) {
+      MutableRegistry var8 = var1.<Biome>getRegistry(Registry.BIOME_KEY);
+      MutableRegistry var9 = var1.<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY);
+      MutableRegistry var10 = var1.<DimensionSettings>getRegistry(Registry.field16099);
+      return new DimensionGeneratorSettings(var2, var4, var5, DimensionGeneratorSettings.method26262(var9, DimensionType.getDefaultSimpleRegistry(var9, var8, var10, var2), this.method18500(var8, var10, var2)));
    }
 
-   public abstract Class5646 method18500(Registry<Biome> var1, Registry<Class9309> var2, long var3);
+   public abstract ChunkGenerator method18500(Registry<Biome> var1, Registry<DimensionSettings> var2, long var3);
 
    // $VF: synthetic method
    public Class5970(String var1, Class5974 var2) {

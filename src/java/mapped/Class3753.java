@@ -32,7 +32,7 @@ public class Class3753 extends Class3676<Class1042> {
       Optional<Class9378> var7 = var2.method2992().<Class9378>method21410(Class8830.field39815);
       var7.ifPresent(var1x -> {
          BlockPos var4 = var1x.method35579();
-         ServerWorld var5 = var1.method6715().method1318(var1x.method35578());
+         ServerWorld var5 = var1.getServer().method1318(var1x.method35578());
          if (var5 != null) {
             Class1653 var6 = var5.method6951();
             if (var6.method6675(var4, var0x -> true)) {

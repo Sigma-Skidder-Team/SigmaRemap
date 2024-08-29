@@ -79,12 +79,12 @@ public class Class2865<T extends Class1006 & Class1092> extends Class2855<T> {
       this.field17762.field31036 = var5 * (float) (Math.PI / 180.0);
       int var9 = ((Class1092)var1).method5082();
       float var10 = 1.0F - (float) MathHelper.method37772(10 - 2 * var9) / 10.0F;
-      this.field17762.field31035 = MathHelper.method37821(var10, 0.87266463F, (float) (-Math.PI / 9));
+      this.field17762.field31035 = MathHelper.lerp(var10, 0.87266463F, (float) (-Math.PI / 9));
       if (!var1.method3005()) {
          this.field17762.field31033 = 2.0F;
          this.field17770.field31034 = -7.0F;
       } else {
-         this.field17762.field31033 = MathHelper.method37821(var10, 2.0F, 5.0F);
+         this.field17762.field31033 = MathHelper.lerp(var10, 2.0F, 5.0F);
          this.field17770.field31034 = -3.0F;
       }
 

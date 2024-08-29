@@ -83,7 +83,7 @@ public abstract class TileEntity {
          this.field5327 = this.field5324.getBlockState(this.field5325);
          this.field5324.method6775(this.field5325, this);
          if (!this.field5327.isAir()) {
-            this.field5324.method6806(this.field5325, this.field5327.getBlock());
+            this.field5324.updateComparatorOutputLevel(this.field5325, this.field5327.getBlock());
          }
       }
    }
@@ -136,8 +136,8 @@ public abstract class TileEntity {
    public void method3781(CrashReportCategory var1) {
       var1.addDetail("Name", () -> Registry.field16078.getKey(this.method3786()) + " // " + this.getClass().getCanonicalName());
       if (this.field5324 != null) {
-         CrashReportCategory.method32814(var1, this.field5325, this.method3775());
-         CrashReportCategory.method32814(var1, this.field5325, this.field5324.getBlockState(this.field5325));
+         CrashReportCategory.addBlockInfo(var1, this.field5325, this.method3775());
+         CrashReportCategory.addBlockInfo(var1, this.field5325, this.field5324.getBlockState(this.field5325));
       }
    }
 

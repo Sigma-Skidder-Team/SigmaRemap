@@ -115,14 +115,14 @@ public class Class1012 extends Class1013 implements Class1011 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020 && this.field5662 && !this.field5663 && !this.method4772() && this.onGround) {
+      if (!this.world.isRemote && this.field5662 && !this.field5663 && !this.method4772() && this.onGround) {
          this.field5663 = true;
          this.field5664 = 0.0F;
          this.field5665 = 0.0F;
          this.world.method6786(this, (byte)8);
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4366((ServerWorld)this.world, true);
       }
    }
@@ -176,7 +176,7 @@ public class Class1012 extends Class1013 implements Class1011 {
             }
          } else {
             this.field5662 = true;
-            if (this.field5663 && !this.world.field9020) {
+            if (this.field5663 && !this.world.isRemote) {
                this.world.method6786(this, (byte)56);
                this.method4374();
             }
@@ -204,11 +204,11 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public float method4376(float var1) {
-      return Math.min(0.5F + MathHelper.method37821(var1, this.field5665, this.field5664) / 2.0F * 0.5F, 1.0F);
+      return Math.min(0.5F + MathHelper.lerp(var1, this.field5665, this.field5664) / 2.0F * 0.5F, 1.0F);
    }
 
    public float method4377(float var1, float var2) {
-      float var5 = (MathHelper.method37821(var1, this.field5665, this.field5664) + var2) / 1.8F;
+      float var5 = (MathHelper.lerp(var1, this.field5665, this.field5664) + var2) / 1.8F;
       if (!(var5 < 0.0F)) {
          if (var5 > 1.0F) {
             var5 = 1.0F;
@@ -221,7 +221,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    }
 
    public float method4378(float var1) {
-      return MathHelper.method37821(var1, this.field5661, this.field5660) * 0.15F * (float) Math.PI;
+      return MathHelper.lerp(var1, this.field5661, this.field5660) * 0.15F * (float) Math.PI;
    }
 
    @Override
@@ -276,7 +276,7 @@ public class Class1012 extends Class1013 implements Class1011 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       Item var6 = var5.getItem();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (!this.method4393()) {
             if (var6 == Items.field37935 && !this.method4369()) {
                if (!var1.abilities.isCreativeMode) {

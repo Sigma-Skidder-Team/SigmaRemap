@@ -82,7 +82,7 @@ public class ViaVersionLoader {
       if (this.mc.world != null && this.mc.player != null) {
          Block var4 = this.mc.world.getBlockState(var1.method13902()).getBlock();
          if (Class8005.method27349() == Class5989.field26129.method18582() && var4 instanceof Class3411) {
-            VoxelShape var5 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
+            VoxelShape var5 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.method13905(var5);
          }
 
@@ -138,16 +138,16 @@ public class ViaVersionLoader {
 
          for (int var11 = -5; var11 < 5; var11++) {
             for (int var12 = -5; var12 < 5; var12++) {
-               Class1674 var13 = this.mc.world.method6824(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12);
+               Chunk var13 = this.mc.world.getChunk(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12);
                if (var13 instanceof Class1675) {
                   int var10001 = this.mc.player.chunkCoordX + var11;
-                  int var14 = this.mc.world.method6883().field9291.method31823(var10001, this.mc.player.chunkCoordZ + var12);
-                  Class1674 var15 = new Class1674(
+                  int var14 = this.mc.world.getChunkProvider().field9291.method31823(var10001, this.mc.player.chunkCoordZ + var12);
+                  Chunk var15 = new Chunk(
                      this.mc.world,
                      new Class7481(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12),
                      var13.method7077()
                   );
-                  this.mc.world.method6883().field9291.method31824(var14, var15);
+                  this.mc.world.getChunkProvider().field9291.method31824(var14, var15);
                }
             }
          }
@@ -352,7 +352,7 @@ public class ViaVersionLoader {
                if (this.field31499) {
                   var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4965));
                   var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4967));
-                  var1.method13952(MathHelper.method37821(var1.method13948(), Class4399.field21499, var1.method13953().rotationPitch));
+                  var1.method13952(MathHelper.lerp(var1.method13948(), Class4399.field21499, var1.method13953().rotationPitch));
                   var1.method13951(var1.method13945() - var1.method13944());
                   var1.method13953().prevRotationPitch = Class4399.field21499;
                   var1.method13953().prevRotationYaw = Class4399.field21498;
@@ -363,7 +363,7 @@ public class ViaVersionLoader {
             } else {
                var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
                var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
-               var1.method13952(MathHelper.method37821(var1.method13948(), Class4399.field21499, Class4399.field21497));
+               var1.method13952(MathHelper.lerp(var1.method13948(), Class4399.field21499, Class4399.field21497));
                var1.method13951(var1.method13945() - var1.method13944());
                this.field31499 = true;
             }

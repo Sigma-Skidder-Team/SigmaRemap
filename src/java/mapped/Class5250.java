@@ -331,7 +331,7 @@ public class Class5250 extends Module {
     }
 
     private void method16370() {
-        List<TileEntity> var3 = mc.world.field9003;
+        List<TileEntity> var3 = mc.world.loadedTileEntityList;
         var3.removeIf(var0 -> !(var0 instanceof Class941));
 
         for (TileEntity var5 : var3) {

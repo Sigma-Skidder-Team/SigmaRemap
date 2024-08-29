@@ -77,7 +77,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public ActionResultType method3304(PlayerEntity var1, Hand var2) {
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          return ActionResultType.field14818;
       } else {
          boolean var5 = false;
@@ -119,7 +119,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public boolean method4080() {
-      return this.world.getBlockState(this.field5488).getBlock().method11540(Class7645.field32771);
+      return this.world.getBlockState(this.field5488).getBlock().method11540(BlockTags.field32771);
    }
 
    public static LeashKnotEntity method4087(World var0, BlockPos var1) {

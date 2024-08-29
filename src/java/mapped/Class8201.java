@@ -29,7 +29,7 @@ public class Class8201 implements Class8202 {
             Class950.method3830(this.field35233, var2);
             break;
          case 1:
-            if (!this.field35233.field5324.field9020 && !Class950.method3831(this.field35233).isEmpty()) {
+            if (!this.field35233.field5324.isRemote && !Class950.method3831(this.field35233).isEmpty()) {
                this.field35233.method3822(Sounds.field26388);
             }
 

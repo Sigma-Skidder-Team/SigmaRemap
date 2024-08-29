@@ -9,7 +9,7 @@ public class Class3295 extends Class3292 {
 
    @Override
    public boolean method11843(Class5909 var1, BlockState var2) {
-      var1.method18360().method6725(var1.method18345().method8311(), Blocks.AIR.method11579(), 27);
+      var1.method18360().setBlockState(var1.method18345().up(), Blocks.AIR.method11579(), 27);
       return super.method11843(var1, var2);
    }
 }

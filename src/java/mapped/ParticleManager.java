@@ -163,7 +163,7 @@ public class ParticleManager implements Class268 {
    }
 
    private void method1194(IResourceManager var1, ResourceLocation var2, Map<ResourceLocation, List<ResourceLocation>> var3) {
-      ResourceLocation var6 = new ResourceLocation(var2.method8293(), "particles/" + var2.method8292() + ".json");
+      ResourceLocation var6 = new ResourceLocation(var2.getNamespace(), "particles/" + var2.getPath() + ".json");
 
       try (
          Class1783 var7 = var1.method580(var6);
@@ -182,7 +182,7 @@ public class ParticleManager implements Class268 {
             }
 
             var3.put(
-               var2, var12.stream().map(var0 -> new ResourceLocation(var0.method8293(), "particle/" + var0.method8292())).collect(Collectors.toList())
+               var2, var12.stream().map(var0 -> new ResourceLocation(var0.getNamespace(), "particle/" + var0.getPath())).collect(Collectors.toList())
             );
          }
       } catch (IOException var41) {
@@ -223,9 +223,9 @@ public class ParticleManager implements Class268 {
 
    public void tick() {
       this.field1169.forEach((var1, var2) -> {
-         this.field1168.method6820().startSection(var1.toString());
+         this.field1168.getProfiler().startSection(var1.toString());
          this.method1201(var2);
-         this.field1168.method6820().endSection();
+         this.field1168.getProfiler().endSection();
       });
       if (!this.field1170.isEmpty()) {
          ArrayList var3 = Lists.newArrayList();
@@ -311,7 +311,7 @@ public class ParticleManager implements Class268 {
             RenderSystem.method27860(33984);
          }
       };
-      Class7379 var10 = var4.method37512();
+      FluidState var10 = var4.method37512();
       boolean var11 = var10.method23486(Class8953.field40469);
       RenderSystem.pushMatrix();
       RenderSystem.method27888(var1.method35296().method32361());

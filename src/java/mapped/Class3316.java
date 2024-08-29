@@ -61,7 +61,7 @@ public class Class3316 extends Class3314 {
          int var9 = MathHelper.floor(var2.getPosX() - (double)var7) / var6 + 64;
          int var10 = MathHelper.floor(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
-         if (var1.method6812().method36876()) {
+         if (var1.method6812().getHasCeiling()) {
             var11 /= 2;
          }
 
@@ -82,14 +82,14 @@ public class Class3316 extends Class3314 {
                      int var21 = (var7 / var6 + var14 - 64) * var6;
                      int var22 = (var8 / var6 + var17 - 64) * var6;
                      LinkedHashMultiset var23 = LinkedHashMultiset.create();
-                     Class1674 var24 = var1.method6722(new BlockPos(var21, 0, var22));
+                     Chunk var24 = var1.getChunkAt(new BlockPos(var21, 0, var22));
                      if (!var24.method7141()) {
                         Class7481 var25 = var24.method7072();
                         int var26 = var21 & 15;
                         int var27 = var22 & 15;
                         int var28 = 0;
                         double var29 = 0.0;
-                        if (!var1.method6812().method36876()) {
+                        if (!var1.method6812().getHasCeiling()) {
                            Mutable var31 = new Mutable();
                            Mutable var32 = new Mutable();
 
@@ -180,8 +180,8 @@ public class Class3316 extends Class3314 {
    }
 
    private BlockState method11866(World var1, BlockState var2, BlockPos var3) {
-      Class7379 var6 = var2.method23449();
-      return !var6.method23474() && !var2.method23454(var1, var3, Direction.field673) ? var6.method23484() : var2;
+      FluidState var6 = var2.method23449();
+      return !var6.method23474() && !var2.method23454(var1, var3, Direction.field673) ? var6.getBlockState() : var2;
    }
 
    private static boolean method11867(Biome[] var0, int var1, int var2, int var3) {
@@ -290,7 +290,7 @@ public class Class3316 extends Class3314 {
 
    @Override
    public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          Class7529 var8 = method11861(var1, var2);
          if (var8 != null) {
             if (var3 instanceof PlayerEntity) {
@@ -378,15 +378,15 @@ public class Class3316 extends Class3314 {
    @Override
    public ActionResultType method11707(Class5911 var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
-      if (!var4.method23446(Class7645.field32760)) {
+      if (!var4.method23446(BlockTags.field32760)) {
          return super.method11707(var1);
       } else {
-         if (!var1.method18360().field9020) {
+         if (!var1.method18360().isRemote) {
             Class7529 var5 = method11861(var1.method18357(), var1.method18360());
             var5.method24600(var1.method18360(), var1.method18345());
          }
 
-         return ActionResultType.method9002(var1.method18360().field9020);
+         return ActionResultType.method9002(var1.method18360().isRemote);
       }
    }
 }

@@ -18,7 +18,7 @@ public abstract class Class308 implements IResourcePack {
    }
 
    private static String method1252(ResourcePackType var0, ResourceLocation var1) {
-      return String.format("%s/%s/%s", var0.method8205(), var1.method8293(), var1.method8292());
+      return String.format("%s/%s/%s", var0.method8205(), var1.getNamespace(), var1.getPath());
    }
 
    public static String method1253(File var0, File var1) {

@@ -103,7 +103,7 @@ public class Class5323 extends Module {
 
     public boolean method16717(BlockPos var1) {
         BlockState var4 = mc.world.getBlockState(var1);
-        BlockState var5 = mc.world.getBlockState(var1.method8311());
+        BlockState var5 = mc.world.getBlockState(var1.up());
         BlockState var6 = mc.world.getBlockState(var1.method8339(2));
         return var4.method23410() && var5.isAir() && var6.isAir();
     }
@@ -207,8 +207,8 @@ public class Class5323 extends Module {
                     if (this.field23870 != null) {
                         if (this.field23873 != 0) {
                             if (this.field23873 == 1) {
-                                float var4 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[0];
-                                float var5 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[1];
+                                float var4 = Class9217.method34543(this.field23870.up(), Direction.field673)[0];
+                                float var5 = Class9217.method34543(this.field23870.up(), Direction.field673)[1];
                                 var1.method13918(var4);
                                 var1.method13916(var5);
                                 int var6 = mc.player.inventory.currentItem;
@@ -222,8 +222,8 @@ public class Class5323 extends Module {
                                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));
                                     mc.player.field6131.field43914 = true;
                                     mc.player.inventory.currentItem = this.field23872;
-                                    Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.method8311());
-                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.field673, this.field23870.method8311(), false);
+                                    Vector3d var10 = Class9217.method34572(Direction.field673, this.field23870.up());
+                                    BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.field673, this.field23870.up(), false);
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
                                     mc.player.swingArm(Hand.MAIN_HAND);
                                     mc.player.field6131.field43914 = false;
@@ -300,8 +300,8 @@ public class Class5323 extends Module {
             }
 
             if (var1.method13932() instanceof CUseEntityPacket) {
-                float var4 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[0];
-                float var5 = Class9217.method34543(this.field23870.method8311(), Direction.field673)[1];
+                float var4 = Class9217.method34543(this.field23870.up(), Direction.field673)[0];
+                float var5 = Class9217.method34543(this.field23870.up(), Direction.field673)[1];
             }
 
             if (var1.method13932() instanceof Class5603) {

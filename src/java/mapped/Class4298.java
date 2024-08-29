@@ -56,7 +56,7 @@ public class Class4298 extends Class4278 {
          UUID var8 = UUID.fromString(this.account.getKnownUUID().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.account.getKnownUUID());
          if (field20825 == null) {
             Class6606 var9 = new Class6606(Class2197.field14353, false, false);
-            field20825 = new ClientWorld(this.field20824.getConnection(), var9, World.field8999, Class9535.field44374, 1, this::method13180, null, false, 0L);
+            field20825 = new ClientWorld(this.field20824.getConnection(), var9, World.OVERWORLD, DimensionType.OVERWORLD_TYPE, 1, this::method13180, null, false, 0L);
          }
 
          GameProfile var20 = new GameProfile(var8, this.account.getKnownName());

@@ -863,7 +863,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             BlockPos var15 = new BlockPos(this.getPosX(), this.getBoundingBox().field28453, this.getPosZ());
             BlockState var16 = this.world.getBlockState(var15);
             if (var16.getCollisionShape(this.world, var15, var46).method19516()) {
-               var15 = var15.method8311();
+               var15 = var15.up();
                BlockState var17 = this.world.getBlockState(var15);
                if (var17.getCollisionShape(this.world, var15, var46).method19516()) {
                   float var18 = 7.0F;
@@ -907,7 +907,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                            }
 
                            if (var37 > 1) {
-                              var15 = var15.method8311();
+                              var15 = var15.up();
                               BlockState var41 = this.world.getBlockState(var15);
                               if (!var41.getCollisionShape(this.world, var15, var46).method19516()) {
                                  return;
@@ -996,8 +996,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.field6132.gameSettings.getPointOfView().func_243192_a()) {
          return super.method2986(var1);
       } else {
-         float var4 = MathHelper.method37821(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
-         float var5 = MathHelper.method37821(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
+         float var4 = MathHelper.lerp(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
+         float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
          double var6 = this.method2967() != Class2205.field14418 ? 1.0 : -1.0;
          Vector3d var8 = new Vector3d(0.39 * var6, -0.6, 0.3);
          return var8.method11350(-var5).method11351(-var4).method11338(this.method3286(var1));

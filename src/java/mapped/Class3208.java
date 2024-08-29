@@ -43,7 +43,7 @@ public class Class3208 extends Block implements Class3207 {
       BlockPos var4 = var1.method18345();
       BlockState var5 = var1.method18360().getBlockState(var4);
       if (!var5.method23448(this)) {
-         Class7379 var6 = var1.method18360().method6739(var4);
+         FluidState var6 = var1.method18360().getFluidState(var4);
          BlockState var7 = this.method11579()
             .method23465(field18605, Class86.field219)
             .method23465(field18606, Boolean.valueOf(var6.method23472() == Class9479.field44066));
@@ -74,12 +74,12 @@ public class Class3208 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18606) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, Class7379 var4) {
+   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
       return var3.method23463(field18605) == Class86.field220 ? false : Class3207.super.method11532(var1, var2, var3, var4);
    }
 
@@ -103,7 +103,7 @@ public class Class3208 extends Block implements Class3207 {
          case 1:
             return false;
          case 2:
-            return var2.method6739(var3).method23486(Class8953.field40469);
+            return var2.getFluidState(var3).method23486(Class8953.field40469);
          case 3:
             return false;
          default:

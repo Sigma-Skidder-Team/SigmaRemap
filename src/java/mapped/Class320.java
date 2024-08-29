@@ -4,7 +4,7 @@ public final class Class320 extends Class318<Runnable> {
    public final Class1703 field1383;
 
    public Class320(Class1703 var1, World var2) {
-      super("Chunk source main thread executor for " + var2.getDimensionKey().method31399());
+      super("Chunk source main thread executor for " + var2.getDimensionKey().getLocation());
       this.field1383 = var1;
    }
 
@@ -30,7 +30,7 @@ public final class Class320 extends Class318<Runnable> {
 
    @Override
    public void run(Runnable var1) {
-      Class1703.method7395(this.field1383).method6820().func_230035_c_("runTask");
+      Class1703.method7395(this.field1383).getProfiler().func_230035_c_("runTask");
       super.run(var1);
    }
 

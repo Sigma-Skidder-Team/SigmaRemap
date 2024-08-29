@@ -20,7 +20,7 @@ public abstract class Class6777 extends Class6768<Class8278> {
 
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -64,7 +64,7 @@ public abstract class Class6777 extends Class6768<Class8278> {
                   break;
                }
 
-               var2.method7061(var27, var25, false);
+               var2.setBlockState(var27, var25, false);
             }
 
             var27.method8372(var18, var29, var19);
@@ -73,9 +73,9 @@ public abstract class Class6777 extends Class6768<Class8278> {
          if ((var28.isAir() || var28 == var10) && var30.method23448(var9.getBlock())) {
             for (int var32 = 0; var32 < var21 && var2.getBlockState(var27).method23448(var9.getBlock()); var32++) {
                if (var24 && var29 >= var17 - 4 && var29 <= var17 + 1) {
-                  var2.method7061(var27, this.method20664(), false);
+                  var2.setBlockState(var27, this.method20664(), false);
                } else {
-                  var2.method7061(var27, var26, false);
+                  var2.setBlockState(var27, var26, false);
                }
 
                var27.method8379(Direction.DOWN);

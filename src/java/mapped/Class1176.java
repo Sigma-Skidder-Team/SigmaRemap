@@ -14,7 +14,7 @@ public class Class1176 extends Class1155<Class1176> {
       this.field6370 = var1;
       this.field6368 = var2;
       ResourceLocation var5 = Class1323.method6291(var1.field6847).getKey(var2);
-      String var6 = "biome." + var5.method8293() + "." + var5.method8292();
+      String var6 = "biome." + var5.getNamespace() + "." + var5.getPath();
       if (!LanguageMap.getInstance().func_230506_b_(var6)) {
          this.field6369 = new StringTextComponent(var5.toString());
       } else {

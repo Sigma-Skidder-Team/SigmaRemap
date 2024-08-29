@@ -184,7 +184,7 @@ public class FirstPersonRenderer {
    public void method37590(float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method3137(var1);
       Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field4948, Hand.MAIN_HAND);
-      float var10 = MathHelper.method37821(var1, var4.prevRotationPitch, var4.rotationPitch);
+      float var10 = MathHelper.lerp(var1, var4.prevRotationPitch, var4.rotationPitch);
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.isHandActive()) {
@@ -214,13 +214,13 @@ public class FirstPersonRenderer {
          }
       }
 
-      float var18 = MathHelper.method37821(var1, var4.field6138, var4.field6136);
-      float var20 = MathHelper.method37821(var1, var4.field6137, var4.field6135);
+      float var18 = MathHelper.lerp(var1, var4.field6138, var4.field6136);
+      float var20 = MathHelper.lerp(var1, var4.field6137, var4.field6135);
       var2.method35293(Class7680.field32898.method25286((var4.method3282(var1) - var18) * 0.1F));
       var2.method35293(Class7680.field32900.method25286((var4.method3136(var1) - var20) * 0.1F));
       if (var11) {
          float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
-         float var16 = 1.0F - MathHelper.method37821(var1, this.field45082, this.field45081);
+         float var16 = 1.0F - MathHelper.lerp(var1, this.field45082, this.field45081);
          if (!Class9299.field42894.method20214()
             || !Class9299.method35056(Class9299.field42894, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field45079)) {
             this.method37591(var4, var1, var10, Hand.MAIN_HAND, var21, this.field45079, var16, var2, var3, var5);
@@ -229,7 +229,7 @@ public class FirstPersonRenderer {
 
       if (var12) {
          float var22 = var9 != Hand.field183 ? 0.0F : var8;
-         float var23 = 1.0F - MathHelper.method37821(var1, this.field45084, this.field45083);
+         float var23 = 1.0F - MathHelper.lerp(var1, this.field45084, this.field45083);
          if (!Class9299.field42894.method20214()
             || !Class9299.method35056(Class9299.field42894, Hand.field183, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
             this.method37591(var4, var1, var10, Hand.field183, var22, this.field45080, var23, var2, var3, var5);

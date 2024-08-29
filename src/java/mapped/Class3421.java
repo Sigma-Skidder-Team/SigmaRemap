@@ -153,7 +153,7 @@ public class Class3421 extends Block implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       Direction var4 = var1.method18354();
       BlockPos var5 = var1.method18345();
-      Class7379 var6 = var1.method18360().method6739(var5);
+      FluidState var6 = var1.method18360().getFluidState(var5);
       BlockState var7 = this.method11579()
          .method23465(field19131, var1.method18350())
          .method23465(
@@ -269,7 +269,7 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field19134) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

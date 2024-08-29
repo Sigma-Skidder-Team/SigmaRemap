@@ -31,7 +31,7 @@ public class Class3441 extends Block {
    }
 
    private void method12112(World var1, BlockPos var2, Entity var3, int var4) {
-      if (this.method12117(var1, var3) && !var1.field9020 && var1.field9016.nextInt(var4) == 0) {
+      if (this.method12117(var1, var3) && !var1.isRemote && var1.rand.nextInt(var4) == 0) {
          BlockState var7 = var1.getBlockState(var2);
          if (var7.method23448(Blocks.field36964)) {
             this.method12113(var1, var2, var7);
@@ -40,11 +40,11 @@ public class Class3441 extends Block {
    }
 
    private void method12113(World var1, BlockPos var2, BlockState var3) {
-      var1.method6742((PlayerEntity)null, var2, Sounds.field27167, Class2266.field14732, 0.7F, 0.9F + var1.field9016.nextFloat() * 0.2F);
+      var1.method6742((PlayerEntity)null, var2, Sounds.field27167, Class2266.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
       int var6 = var3.<Integer>method23463(field19244);
       if (var6 > 1) {
-         var1.method6725(var2, var3.method23465(field19244, Integer.valueOf(var6 - 1)), 2);
-         var1.method6999(2001, var2, Block.method11535(var3));
+         var1.setBlockState(var2, var3.method23465(field19244, Integer.valueOf(var6 - 1)), 2);
+         var1.playEvent(2001, var2, Block.getStateId(var3));
       } else {
          var1.method7179(var2, false);
       }
@@ -56,10 +56,10 @@ public class Class3441 extends Block {
          int var7 = var1.<Integer>method23463(field19243);
          if (var7 >= 2) {
             var2.method6742((PlayerEntity)null, var3, Sounds.field27169, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
-            var2.method6728(var3, false);
+            var2.removeBlock(var3, false);
 
             for (int var8 = 0; var8 < var1.<Integer>method23463(field19244); var8++) {
-               var2.method6999(2001, var3, Block.method11535(var1));
+               var2.playEvent(2001, var3, Block.getStateId(var1));
                Class1088 var9 = EntityType.field41096.method33215(var2);
                var9.method4770(-24000);
                var9.method5041(var3);
@@ -68,29 +68,29 @@ public class Class3441 extends Block {
             }
          } else {
             var2.method6742((PlayerEntity)null, var3, Sounds.field27168, Class2266.field14732, 0.7F, 0.9F + var4.nextFloat() * 0.2F);
-            var2.method6725(var3, var1.method23465(field19243, Integer.valueOf(var7 + 1)), 2);
+            var2.setBlockState(var3, var1.method23465(field19243, Integer.valueOf(var7 + 1)), 2);
          }
       }
    }
 
    public static boolean method12114(Class1665 var0, BlockPos var1) {
-      return method12115(var0, var1.method8313());
+      return method12115(var0, var1.down());
    }
 
    public static boolean method12115(Class1665 var0, BlockPos var1) {
-      return var0.getBlockState(var1).method23446(Class7645.field32761);
+      return var0.getBlockState(var1).method23446(BlockTags.field32761);
    }
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (method12114(var2, var3) && !var2.field9020) {
-         var2.method6999(2005, var3, 0);
+      if (method12114(var2, var3) && !var2.isRemote) {
+         var2.playEvent(2005, var3, 0);
       }
    }
 
    private boolean method12116(World var1) {
       float var4 = var1.method7001(1.0F);
-      return (double)var4 < 0.69 && (double)var4 > 0.65 ? true : var1.field9016.nextInt(500) == 0;
+      return (double)var4 < 0.69 && (double)var4 > 0.65 ? true : var1.rand.nextInt(500) == 0;
    }
 
    @Override

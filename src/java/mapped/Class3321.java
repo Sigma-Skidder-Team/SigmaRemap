@@ -19,12 +19,12 @@ public class Class3321 extends Item {
       if (var3 instanceof Class1019) {
          Class1019 var7 = (Class1019)var3;
          if (var7.method3066() && !var7.method4519() && var7.method4517() != this.field18831) {
-            if (!var2.world.field9020) {
+            if (!var2.world.isRemote) {
                var7.method4518(this.field18831);
                var1.method32182(1);
             }
 
-            return ActionResultType.method9002(var2.world.field9020);
+            return ActionResultType.method9002(var2.world.isRemote);
          }
       }
 

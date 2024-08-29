@@ -69,7 +69,7 @@ public class Class5830 extends Class5828<Class926> {
    public void method18113(PlayerEntity var1) {
       super.method18113(var1);
       this.field25548.method3625();
-      if (!var1.world.field9020) {
+      if (!var1.world.isRemote) {
          this.method18135(var1, var1.world, this.field25547);
       }
    }

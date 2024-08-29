@@ -66,9 +66,9 @@ public class ServerWorld extends World implements Class1658 {
       SaveFormat.LevelSave var3,
       Class6608 var4,
       RegistryKey<World> var5,
-      Class9535 var6,
+      DimensionType var6,
       Class7243 var7,
-      Class5646 var8,
+      ChunkGenerator var8,
       boolean var9,
       long var10,
       List<Class7016> var12,
@@ -101,7 +101,7 @@ public class ServerWorld extends World implements Class1658 {
       }
 
       this.field9059 = new Class7480(this, var1.method1436().getDimensionGeneratorSettings());
-      if (!this.method6812().method36885()) {
+      if (!this.method6812().doesHasDragonFight()) {
          this.field9058 = null;
       } else {
          this.field9058 = new Class7819(this, var1.method1436().getDimensionGeneratorSettings().method26259(), var1.method1436().method20089());
@@ -118,7 +118,7 @@ public class ServerWorld extends World implements Class1658 {
 
    @Override
    public Biome method6871(int var1, int var2, int var3) {
-      return this.method6883().method7370().method17824().method7005(var1, var2, var3);
+      return this.getChunkProvider().method7370().method17824().method7005(var1, var2, var3);
    }
 
    public Class7480 method6893() {
@@ -126,25 +126,25 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public void method6894(BooleanSupplier var1) {
-      IProfiler var4 = this.method6820();
+      IProfiler var4 = this.getProfiler();
       this.field9056 = true;
       var4.startSection("world border");
       this.method6810().method24555();
       var4.endStartSection("weather");
       boolean var5 = this.method6795();
-      if (this.method6812().method36875()) {
+      if (this.method6812().hasSkyLight()) {
          if (this.method6789().method17135(Class5462.field24242)) {
             int var6 = this.field9046.method20060();
             int var7 = this.field9046.method20059();
             int var8 = this.field9046.method20056();
-            boolean var9 = this.field9018.method20042();
-            boolean var10 = this.field9018.method20043();
+            boolean var9 = this.worldInfo.method20042();
+            boolean var10 = this.worldInfo.method20043();
             if (var6 <= 0) {
                if (var7 <= 0) {
                   if (!var9) {
-                     var7 = this.field9016.nextInt(168000) + 12000;
+                     var7 = this.rand.nextInt(168000) + 12000;
                   } else {
-                     var7 = this.field9016.nextInt(12000) + 3600;
+                     var7 = this.rand.nextInt(12000) + 3600;
                   }
                } else if (--var7 == 0) {
                   var9 = !var9;
@@ -152,9 +152,9 @@ public class ServerWorld extends World implements Class1658 {
 
                if (var8 <= 0) {
                   if (!var10) {
-                     var8 = this.field9016.nextInt(168000) + 12000;
+                     var8 = this.rand.nextInt(168000) + 12000;
                   } else {
-                     var8 = this.field9016.nextInt(12000) + 12000;
+                     var8 = this.rand.nextInt(12000) + 12000;
                   }
                } else if (--var8 == 0) {
                   var10 = !var10;
@@ -174,30 +174,30 @@ public class ServerWorld extends World implements Class1658 {
             this.field9046.method20044(var10);
          }
 
-         this.field9014 = this.field9015;
-         if (!this.field9018.method20042()) {
-            this.field9015 = (float)((double)this.field9015 - 0.01);
+         this.prevThunderingStrength = this.thunderingStrength;
+         if (!this.worldInfo.method20042()) {
+            this.thunderingStrength = (float)((double)this.thunderingStrength - 0.01);
          } else {
-            this.field9015 = (float)((double)this.field9015 + 0.01);
+            this.thunderingStrength = (float)((double)this.thunderingStrength + 0.01);
          }
 
-         this.field9015 = MathHelper.method37777(this.field9015, 0.0F, 1.0F);
-         this.field9012 = this.field9013;
-         if (!this.field9018.method20043()) {
-            this.field9013 = (float)((double)this.field9013 - 0.01);
+         this.thunderingStrength = MathHelper.method37777(this.thunderingStrength, 0.0F, 1.0F);
+         this.prevRainingStrength = this.rainingStrength;
+         if (!this.worldInfo.method20043()) {
+            this.rainingStrength = (float)((double)this.rainingStrength - 0.01);
          } else {
-            this.field9013 = (float)((double)this.field9013 + 0.01);
+            this.rainingStrength = (float)((double)this.rainingStrength + 0.01);
          }
 
-         this.field9013 = MathHelper.method37777(this.field9013, 0.0F, 1.0F);
+         this.rainingStrength = MathHelper.method37777(this.rainingStrength, 0.0F, 1.0F);
       }
 
-      if (this.field9012 != this.field9013) {
-         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24567, this.field9013), this.getDimensionKey());
+      if (this.prevRainingStrength != this.rainingStrength) {
+         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24567, this.rainingStrength), this.getDimensionKey());
       }
 
-      if (this.field9014 != this.field9015) {
-         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24568, this.field9015), this.getDimensionKey());
+      if (this.prevThunderingStrength != this.thunderingStrength) {
+         this.field9045.getPlayerList().method19457(new Class5534(Class5534.field24568, this.thunderingStrength), this.getDimensionKey());
       }
 
       if (var5 != this.method6795()) {
@@ -207,14 +207,14 @@ public class ServerWorld extends World implements Class1658 {
             this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24562, 0.0F));
          }
 
-         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24567, this.field9013));
-         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24568, this.field9015));
+         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24567, this.rainingStrength));
+         this.field9045.getPlayerList().method19456(new Class5534(Class5534.field24568, this.thunderingStrength));
       }
 
       if (this.field9048 && this.field9042.stream().noneMatch(var0 -> !var0.isSpectator() && !var0.method2909())) {
          this.field9048 = false;
          if (this.method6789().method17135(Class5462.field24232)) {
-            long var11 = this.field9018.method20034() + 24000L;
+            long var11 = this.worldInfo.method20034() + 24000L;
             this.method6896(var11 - var11 % 24000L);
          }
 
@@ -227,9 +227,9 @@ public class ServerWorld extends World implements Class1658 {
       this.method6766();
       this.method6895();
       var4.endStartSection("chunkSource");
-      this.method6883().method7366(var1);
+      this.getChunkProvider().method7366(var1);
       var4.endStartSection("tickPending");
-      if (!this.method6823()) {
+      if (!this.isDebug()) {
          this.field9051.method20728();
          this.field9052.method20728();
       }
@@ -310,11 +310,11 @@ public class ServerWorld extends World implements Class1658 {
 
    public void method6895() {
       if (this.field9060) {
-         long var3 = this.field9018.method20033() + 1L;
+         long var3 = this.worldInfo.method20033() + 1L;
          this.field9046.method20075(var3);
          this.field9046.method20074().run(this.field9045, var3);
-         if (this.field9018.method20046().method17135(Class5462.field24232)) {
-            this.method6896(this.field9018.method20034() + 1L);
+         if (this.worldInfo.method20046().method17135(Class5462.field24232)) {
+            this.method6896(this.worldInfo.method20034() + 1L);
          }
       }
    }
@@ -333,18 +333,18 @@ public class ServerWorld extends World implements Class1658 {
       this.field9042.stream().filter(Class880::isSleeping).collect(Collectors.toList()).forEach(var0 -> var0.stopSleepInBed(false, false));
    }
 
-   public void method6899(Class1674 var1, int var2) {
+   public void method6899(Chunk var1, int var2) {
       Class7481 var5 = var1.method7072();
       boolean var6 = this.method6795();
       int var7 = var5.method24356();
       int var8 = var5.method24357();
-      IProfiler var9 = this.method6820();
+      IProfiler var9 = this.getProfiler();
       var9.startSection("thunder");
-      if (var6 && this.method6794() && this.field9016.nextInt(100000) == 0) {
+      if (var6 && this.method6794() && this.rand.nextInt(100000) == 0) {
          BlockPos var10 = this.method6900(this.method6818(var7, 0, var8, 15));
          if (this.method6796(var10)) {
             Class9755 var11 = this.method6807(var10);
-            boolean var12 = this.method6789().method17135(Class5462.field24226) && this.field9016.nextDouble() < (double)var11.method38328() * 0.01;
+            boolean var12 = this.method6789().method17135(Class5462.field24226) && this.rand.nextDouble() < (double)var11.method38328() * 0.01;
             if (var12) {
                Class1076 var13 = EntityType.field41079.method33215(this);
                var13.method5001(true);
@@ -361,16 +361,16 @@ public class ServerWorld extends World implements Class1658 {
       }
 
       var9.endStartSection("iceandsnow");
-      if (this.field9016.nextInt(16) == 0) {
+      if (this.rand.nextInt(16) == 0) {
          BlockPos var19 = this.method7006(Class101.field299, this.method6818(var7, 0, var8, 15));
-         BlockPos var21 = var19.method8313();
+         BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
          if (var23.method32504(this, var21)) {
-            this.method6730(var21, Blocks.ICE.method11579());
+            this.setBlockState(var21, Blocks.ICE.method11579());
          }
 
          if (var6 && var23.method32506(this, var19)) {
-            this.method6730(var19, Blocks.SNOW.method11579());
+            this.setBlockState(var19, Blocks.SNOW.method11579());
          }
 
          if (var6 && this.getBiome(var21).method32500() == Class87.field224) {
@@ -381,7 +381,7 @@ public class ServerWorld extends World implements Class1658 {
       var9.endStartSection("tickBlocks");
       if (var2 > 0) {
          for (Class7038 var26 : var1.method7067()) {
-            if (var26 != Class1674.field9111 && var26.method21860()) {
+            if (var26 != Chunk.field9111 && var26.method21860()) {
                int var14 = var26.method21863();
 
                for (int var15 = 0; var15 < var2; var15++) {
@@ -389,12 +389,12 @@ public class ServerWorld extends World implements Class1658 {
                   var9.startSection("randomTick");
                   BlockState var17 = var26.method21852(var16.getX() - var7, var16.getY() - var14, var16.getZ() - var8);
                   if (var17.method23450()) {
-                     var17.method23431(this, var16, this.field9016);
+                     var17.method23431(this, var16, this.rand);
                   }
 
-                  Class7379 var18 = var17.method23449();
+                  FluidState var18 = var17.method23449();
                   if (var18.method23481()) {
-                     var18.method23482(this, var16, this.field9016);
+                     var18.method23482(this, var16, this.rand);
                   }
 
                   var9.endSection();
@@ -417,7 +417,7 @@ public class ServerWorld extends World implements Class1658 {
 
          return var4;
       } else {
-         return ((Class880)var6.get(this.field9016.nextInt(var6.size()))).getPosition();
+         return ((Class880)var6.get(this.rand.nextInt(var6.size()))).getPosition();
       }
    }
 
@@ -461,7 +461,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    private void method6905(Class8269<Fluid> var1) {
-      Class7379 var4 = this.method6739(var1.field35556);
+      FluidState var4 = this.getFluidState(var1.field35556);
       if (var4.method23472() == var1.method28874()) {
          var4.method23479(this, var1.field35556);
       }
@@ -470,12 +470,12 @@ public class ServerWorld extends World implements Class1658 {
    private void method6906(Class8269<Block> var1) {
       BlockState var4 = this.getBlockState(var1.field35556);
       if (var4.method23448(var1.method28874())) {
-         var4.method23430(this, var1.field35556, this.field9016);
+         var4.method23430(this, var1.field35556, this.rand);
       }
    }
 
    public void method6907(Entity var1) {
-      if (!(var1 instanceof PlayerEntity) && !this.method6883().method7351(var1)) {
+      if (!(var1 instanceof PlayerEntity) && !this.getChunkProvider().method7351(var1)) {
          this.method6909(var1);
       } else {
          var1.method3274(var1.getPosX(), var1.getPosY(), var1.getPosZ());
@@ -483,7 +483,7 @@ public class ServerWorld extends World implements Class1658 {
          var1.prevRotationPitch = var1.rotationPitch;
          if (var1.addedToChunk) {
             var1.ticksExisted++;
-            IProfiler var4 = this.method6820();
+            IProfiler var4 = this.getProfiler();
             var4.method22504(() -> Registry.ENTITY_TYPE.getKey(var1.getType()).toString());
             var4.func_230035_c_("tickNonPassenger");
             var1.tick();
@@ -502,13 +502,13 @@ public class ServerWorld extends World implements Class1658 {
    public void method6908(Entity var1, Entity var2) {
       if (var2.removed || var2.getRidingEntity() != var1) {
          var2.stopRiding();
-      } else if (var2 instanceof PlayerEntity || this.method6883().method7351(var2)) {
+      } else if (var2 instanceof PlayerEntity || this.getChunkProvider().method7351(var2)) {
          var2.method3274(var2.getPosX(), var2.getPosY(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.prevRotationPitch = var2.rotationPitch;
          if (var2.addedToChunk) {
             var2.ticksExisted++;
-            IProfiler var5 = this.method6820();
+            IProfiler var5 = this.getProfiler();
             var5.method22504(() -> Registry.ENTITY_TYPE.getKey(var2.getType()).toString());
             var5.func_230035_c_("tickPassenger");
             var2.method2868();
@@ -526,13 +526,13 @@ public class ServerWorld extends World implements Class1658 {
 
    public void method6909(Entity var1) {
       if (var1.method3406()) {
-         this.method6820().startSection("chunkCheck");
+         this.getProfiler().startSection("chunkCheck");
          int var4 = MathHelper.floor(var1.getPosX() / 16.0);
          int var5 = MathHelper.floor(var1.getPosY() / 16.0);
          int var6 = MathHelper.floor(var1.getPosZ() / 16.0);
          if (!var1.addedToChunk || var1.chunkCoordX != var4 || var1.chunkCoordY != var5 || var1.chunkCoordZ != var6) {
             if (var1.addedToChunk && this.method6843(var1.chunkCoordX, var1.chunkCoordZ)) {
-               this.method6824(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
+               this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7133(var1, var1.chunkCoordY);
             }
 
             if (!var1.method3405() && !this.method6843(var4, var6)) {
@@ -542,11 +542,11 @@ public class ServerWorld extends World implements Class1658 {
 
                var1.addedToChunk = false;
             } else {
-               this.method6824(var4, var6).method7063(var1);
+               this.getChunk(var4, var6).method7063(var1);
             }
          }
 
-         this.method6820().endSection();
+         this.getProfiler().endSection();
       }
    }
 
@@ -556,7 +556,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public void method6910(Class1339 var1, boolean var2, boolean var3) {
-      Class1703 var6 = this.method6883();
+      Class1703 var6 = this.getChunkProvider();
       if (!var3) {
          if (var1 != null) {
             var1.displaySavingString(new TranslationTextComponent("menu.savingLevel"));
@@ -576,12 +576,12 @@ public class ServerWorld extends World implements Class1658 {
          this.field9045.method1436().method20090(this.field9058.method26109());
       }
 
-      this.method6883().method7383().method28773();
+      this.getChunkProvider().method7383().method28773();
    }
 
    public List<Entity> method6912(EntityType<?> var1, Predicate<? super Entity> var2) {
       ArrayList var5 = Lists.newArrayList();
-      Class1703 var6 = this.method6883();
+      Class1703 var6 = this.getChunkProvider();
       ObjectIterator var7 = this.field9039.values().iterator();
 
       while (var7.hasNext()) {
@@ -625,7 +625,7 @@ public class ServerWorld extends World implements Class1658 {
    @Nullable
    public ServerPlayerEntity method6915() {
       List var3 = this.method6914(Class880::method3066);
-      return !var3.isEmpty() ? (ServerPlayerEntity)var3.get(this.field9016.nextInt(var3.size())) : null;
+      return !var3.isEmpty() ? (ServerPlayerEntity)var3.get(this.rand.nextInt(var3.size())) : null;
    }
 
    @Override
@@ -673,10 +673,10 @@ public class ServerWorld extends World implements Class1658 {
 
       this.field9042.add(var1);
       this.method6902();
-      Class1670 var5 = this.method6724(
-         MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), Class9176.field42145, true
+      IChunk var5 = this.getChunk(
+         MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), ChunkStatus.FULL, true
       );
-      if (var5 instanceof Class1674) {
+      if (var5 instanceof Chunk) {
          var5.method7063(var1);
       }
 
@@ -686,10 +686,10 @@ public class ServerWorld extends World implements Class1658 {
    private boolean method6924(Entity var1) {
       if (!var1.removed) {
          if (!this.method6926(var1)) {
-            Class1670 var4 = this.method6724(
-               MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), Class9176.field42145, var1.forceSpawn
+            IChunk var4 = this.getChunk(
+               MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), ChunkStatus.FULL, var1.forceSpawn
             );
-            if (var4 instanceof Class1674) {
+            if (var4 instanceof Chunk) {
                var4.method7063(var1);
                this.method6931(var1);
                return true;
@@ -759,8 +759,8 @@ public class ServerWorld extends World implements Class1658 {
       }
    }
 
-   public void method6929(Class1674 var1) {
-      this.field9006.addAll(var1.method7145().values());
+   public void method6929(Chunk var1) {
+      this.tileEntitiesToBeRemoved.addAll(var1.method7145().values());
       Class51<Entity>[] var4 = var1.method7146();
       int var5 = var4.length;
 
@@ -786,7 +786,7 @@ public class ServerWorld extends World implements Class1658 {
       }
 
       this.field9040.remove(var1.getUniqueID());
-      this.method6883().method7377(var1);
+      this.getChunkProvider().method7377(var1);
       if (var1 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var8 = (ServerPlayerEntity)var1;
          this.field9042.remove(var8);
@@ -808,7 +808,7 @@ public class ServerWorld extends World implements Class1658 {
          }
 
          this.field9040.put(var1.getUniqueID(), var1);
-         this.method6883().method7378(var1);
+         this.getChunkProvider().method7378(var1);
          if (var1 instanceof Class1006) {
             this.field9053.add(((Class1006)var1).method4230());
          }
@@ -828,9 +828,9 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    private void method6933(Entity var1) {
-      Class1670 var4 = this.method6724(var1.chunkCoordX, var1.chunkCoordZ, Class9176.field42145, false);
-      if (var4 instanceof Class1674) {
-         ((Class1674)var4).method7132(var1);
+      IChunk var4 = this.getChunk(var1.chunkCoordX, var1.chunkCoordZ, ChunkStatus.FULL, false);
+      if (var4 instanceof Chunk) {
+         ((Chunk)var4).method7132(var1);
       }
    }
 
@@ -905,8 +905,8 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Override
-   public void method6731(BlockPos var1, BlockState var2, BlockState var3, int var4) {
-      this.method6883().method7372(var1);
+   public void notifyBlockUpdate(BlockPos var1, BlockState var2, BlockState var3, int var4) {
+      this.getChunkProvider().method7372(var1);
       VoxelShape var7 = var2.method23414(this, var1);
       VoxelShape var8 = var3.method23414(this, var1);
       if (VoxelShapes.compare(var7, var8, IBooleanFunction.field44043)) {
@@ -920,10 +920,10 @@ public class ServerWorld extends World implements Class1658 {
 
    @Override
    public void method6786(Entity var1, byte var2) {
-      this.method6883().method7379(var1, new Class5464(var1, var2));
+      this.getChunkProvider().method7379(var1, new Class5464(var1, var2));
    }
 
-   public Class1703 method6883() {
+   public Class1703 getChunkProvider() {
       return this.field9043;
    }
 
@@ -986,7 +986,7 @@ public class ServerWorld extends World implements Class1658 {
 
    @Nonnull
    @Override
-   public MinecraftServer method6715() {
+   public MinecraftServer getServer() {
       return this.field9045;
    }
 
@@ -1046,15 +1046,15 @@ public class ServerWorld extends World implements Class1658 {
 
    @Nullable
    public BlockPos method6943(Structure<?> var1, BlockPos var2, int var3, boolean var4) {
-      return this.field9045.method1436().getDimensionGeneratorSettings().method26260() ? this.method6883().method7370().method17820(this, var1, var2, var3, var4) : null;
+      return this.field9045.method1436().getDimensionGeneratorSettings().method26260() ? this.getChunkProvider().method7370().method17820(this, var1, var2, var3, var4) : null;
    }
 
    @Nullable
    public BlockPos method6944(Biome var1, BlockPos var2, int var3, int var4) {
-      return this.method6883()
+      return this.getChunkProvider()
          .method7370()
          .method17824()
-         .method7204(var2.getX(), var2.getY(), var2.getZ(), var3, var4, var1x -> var1x == var1, this.field9016, true);
+         .method7204(var2.getX(), var2.getY(), var2.getZ(), var3, var4, var1x -> var1x == var1, this.rand, true);
    }
 
    @Override
@@ -1078,44 +1078,44 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public Class8250 method6945() {
-      return this.method6883().method7383();
+      return this.getChunkProvider().method7383();
    }
 
    @Nullable
    @Override
    public Class7529 method6798(String var1) {
-      return this.method6715().method1317().method6945().<Class7529>method28768(() -> new Class7529(var1), var1);
+      return this.getServer().method1317().method6945().<Class7529>method28768(() -> new Class7529(var1), var1);
    }
 
    @Override
    public void method6799(Class7529 var1) {
-      this.method6715().method1317().method6945().method28770(var1);
+      this.getServer().method1317().method6945().method28770(var1);
    }
 
    @Override
    public int method6800() {
-      return this.method6715().method1317().method6945().<Class7532>method28767(Class7532::new, "idcounts").method24618();
+      return this.getServer().method1317().method6945().<Class7532>method28767(Class7532::new, "idcounts").method24618();
    }
 
    public void method6946(BlockPos var1, float var2) {
-      Class7481 var5 = new Class7481(new BlockPos(this.field9018.method20029(), 0, this.field9018.method20031()));
-      this.field9018.method20041(var1, var2);
-      this.method6883().method7375(Class8561.field38480, var5, 11, Class2341.field16010);
-      this.method6883().method7374(Class8561.field38480, new Class7481(var1), 11, Class2341.field16010);
-      this.method6715().getPlayerList().method19456(new Class5525(var1, var2));
+      Class7481 var5 = new Class7481(new BlockPos(this.worldInfo.method20029(), 0, this.worldInfo.method20031()));
+      this.worldInfo.method20041(var1, var2);
+      this.getChunkProvider().method7375(Class8561.field38480, var5, 11, Class2341.field16010);
+      this.getChunkProvider().method7374(Class8561.field38480, new Class7481(var1), 11, Class2341.field16010);
+      this.getServer().getPlayerList().method19456(new Class5525(var1, var2));
    }
 
    public BlockPos method6947() {
-      BlockPos var3 = new BlockPos(this.field9018.method20029(), this.field9018.method20030(), this.field9018.method20031());
+      BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
       if (!this.method6810().method24523(var3)) {
-         var3 = this.method7006(Class101.field299, new BlockPos(this.method6810().method24534(), 0.0, this.method6810().method24535()));
+         var3 = this.method7006(Class101.field299, new BlockPos(this.method6810().getCenterX(), 0.0, this.method6810().getCenterZ()));
       }
 
       return var3;
    }
 
    public float method6948() {
-      return this.field9018.method20032();
+      return this.worldInfo.method20032();
    }
 
    public LongSet method6949() {
@@ -1133,13 +1133,13 @@ public class ServerWorld extends World implements Class1658 {
       } else {
          var10 = var6.method24638().add(var8);
          if (var10) {
-            this.method6824(var1, var2);
+            this.getChunk(var1, var2);
          }
       }
 
       var6.method24606(var10);
       if (var10) {
-         this.method6883().method7350(var7, var3);
+         this.getChunkProvider().method7350(var7, var3);
       }
 
       return var10;
@@ -1151,16 +1151,16 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Override
-   public void method6727(BlockPos var1, BlockState var2, BlockState var3) {
+   public void onBlockStateChange(BlockPos var1, BlockState var2, BlockState var3) {
       Optional<Class4913> var6 = Class4913.method15187(var2);
       Optional<Class4913> var7 = Class4913.method15187(var3);
       if (!Objects.equals(var6, var7)) {
          BlockPos var8 = var1.method8353();
-         var6.ifPresent(var2x -> this.method6715().execute(() -> {
+         var6.ifPresent(var2x -> this.getServer().execute(() -> {
                this.method6951().method6662(var8);
                Class7393.method23614(this, var8);
             }));
-         var7.ifPresent(var2x -> this.method6715().execute(() -> {
+         var7.ifPresent(var2x -> this.getServer().execute(() -> {
                this.method6951().method6661(var8, var2x);
                Class7393.method23613(this, var8);
             }));
@@ -1168,7 +1168,7 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public Class1653 method6951() {
-      return this.method6883().method7384();
+      return this.getChunkProvider().method7384();
    }
 
    public boolean method6952(BlockPos var1) {
@@ -1205,11 +1205,11 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    public void method6960(Path var1) throws IOException {
-      Class1649 var4 = this.method6883().field9279;
+      Class1649 var4 = this.getChunkProvider().field9279;
 
       try (BufferedWriter var5 = Files.newBufferedWriter(var1.resolve("stats.txt"))) {
          var5.write(String.format("spawning_chunks: %d\n", var4.method6566().method35138()));
-         Class7307 var7 = this.method6883().method7385();
+         Class7307 var7 = this.getChunkProvider().method7385();
          if (var7 != null) {
             ObjectIterator var8 = var7.method23091().object2IntEntrySet().iterator();
 
@@ -1220,11 +1220,11 @@ public class ServerWorld extends World implements Class1658 {
          }
 
          var5.write(String.format("entities: %d\n", this.field9039.size()));
-         var5.write(String.format("block_entities: %d\n", this.field9003.size()));
+         var5.write(String.format("block_entities: %d\n", this.loadedTileEntityList.size()));
          var5.write(String.format("block_ticks: %d\n", this.method6860().method20736()));
          var5.write(String.format("fluid_ticks: %d\n", this.method6861().method20736()));
          var5.write("distance_manager: " + var4.method6566().method35140() + "\n");
-         var5.write(String.format("pending_tasks: %d\n", this.method6883().method7369()));
+         var5.write(String.format("pending_tasks: %d\n", this.getChunkProvider().method7369()));
       }
 
       CrashReport var125 = new CrashReport("Level dump", new Exception("dummy"));
@@ -1284,7 +1284,7 @@ public class ServerWorld extends World implements Class1658 {
    private void method6962(Writer var1) throws IOException {
       Class9101 var4 = Class9101.method33937().method37003("x").method37003("y").method37003("z").method37003("type").method37004(var1);
 
-      for (TileEntity var6 : this.field9003) {
+      for (TileEntity var6 : this.loadedTileEntityList) {
          BlockPos var7 = var6.getPos();
          var4.method33938(var7.getX(), var7.getY(), var7.getZ(), Registry.field16078.getKey(var6.method3786()));
       }
@@ -1296,9 +1296,9 @@ public class ServerWorld extends World implements Class1658 {
    }
 
    @Override
-   public void method6964(BlockPos var1, Block var2) {
-      if (!this.method6823()) {
-         this.method6733(var1, var2);
+   public void func_230547_a_(BlockPos var1, Block var2) {
+      if (!this.isDebug()) {
+         this.notifyNeighborsOfStateChange(var1, var2);
       }
    }
 
@@ -1347,8 +1347,8 @@ public class ServerWorld extends World implements Class1658 {
          this.field9042.size(),
          this.field9039.size(),
          method6972(this.field9039.values(), var0 -> Registry.ENTITY_TYPE.getKey(var0.getType())),
-         this.field9004.size(),
-         method6972(this.field9004, var0 -> Registry.field16078.getKey(var0.method3786())),
+         this.tickableTileEntities.size(),
+         method6972(this.tickableTileEntities, var0 -> Registry.field16078.getKey(var0.method3786())),
          this.method6860().method20736(),
          this.method6861().method20736(),
          this.method6758()
@@ -1378,7 +1378,7 @@ public class ServerWorld extends World implements Class1658 {
       int var5 = var3.getY() - 2;
       int var6 = var3.getZ();
       BlockPos.method8364(var4 - 2, var5 + 1, var6 - 2, var4 + 2, var5 + 3, var6 + 2)
-         .forEach(var1 -> var0.method6730(var1, Blocks.AIR.method11579()));
-      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.method6730(var1, Blocks.field36527.method11579()));
+         .forEach(var1 -> var0.setBlockState(var1, Blocks.AIR.method11579()));
+      BlockPos.method8364(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2).forEach(var1 -> var0.setBlockState(var1, Blocks.field36527.method11579()));
    }
 }

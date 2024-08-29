@@ -63,8 +63,8 @@ public class ModelManager extends Class269<Class8968> implements AutoCloseable {
          if (var5 != -1) {
             int var6 = this.field1069.getInt(var2);
             if (var5 == var6) {
-               Class7379 var7 = var1.method23449();
-               Class7379 var8 = var2.method23449();
+               FluidState var7 = var1.method23449();
+               FluidState var8 = var2.method23449();
                return var7 != var8;
             }
          }

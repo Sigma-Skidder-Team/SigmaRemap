@@ -95,7 +95,7 @@ public class IngameGui extends Class1193 {
             this.method5978();
         }
 
-        float var7 = MathHelper.method37821(var2, this.field6716.player.field6142, this.field6716.player.field6141);
+        float var7 = MathHelper.lerp(var2, this.field6716.player.field6142, this.field6716.player.field6141);
         if (var7 > 0.0F && !this.field6716.player.method3033(Class8254.field35475)) {
             this.method5981(var7);
         }
@@ -933,7 +933,7 @@ public class IngameGui extends Class1193 {
 
     private void method5980(Entity var1) {
         if (Class7944.method26883()) {
-            Class7522 var4 = this.field6716.world.method6810();
+            WorldBorder var4 = this.field6716.world.method6810();
             float var5 = (float) var4.method24526(var1);
             double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0, Math.abs(var4.method24539() - var4.method24537()));
             double var8 = Math.max((double) var4.method24553(), var6);

@@ -23,7 +23,7 @@ public final class Class1669 implements Class1665 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       return this.getBlockState(var1).method23449();
    }
 }

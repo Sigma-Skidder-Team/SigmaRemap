@@ -13,6 +13,6 @@ public abstract class Class6230 extends Class6218 {
 
    @Override
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(!this.method19203() ? 1001 : 1000, var1.method11323(), 0);
+      var1.method11326().playEvent(!this.method19203() ? 1001 : 1000, var1.method11323(), 0);
    }
 }

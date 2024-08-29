@@ -22,11 +22,11 @@ public class Class6899 extends Class6896 {
 
    @Override
    public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
-      BlockPos var10 = var4.method8313();
+      BlockPos var10 = var4.down();
       method21069(var1, var10);
-      method21069(var1, var10.method8347());
-      method21069(var1, var10.method8343());
-      method21069(var1, var10.method8343().method8347());
+      method21069(var1, var10.east());
+      method21069(var1, var10.south());
+      method21069(var1, var10.south().east());
       Mutable var11 = new Mutable();
 
       for (int var12 = 0; var12 < var3; var12++) {

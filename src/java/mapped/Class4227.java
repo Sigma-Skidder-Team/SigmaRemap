@@ -29,7 +29,7 @@ public class Class4227 extends Class4167 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12927(var1, var5, 0, 2, 0, 6, 7, 7, Blocks.AIR.method11579(), Blocks.AIR.method11579(), false);
       this.method12927(var1, var5, 1, 0, 0, 5, 1, 7, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
       this.method12927(var1, var5, 1, 2, 1, 5, 2, 7, Blocks.NETHER_BRICKS.method11579(), Blocks.NETHER_BRICKS.method11579(), false);
@@ -97,7 +97,7 @@ public class Class4227 extends Class4167 {
          BlockPos var12 = new BlockPos(this.method12920(3, 5), this.method12921(5), this.method12922(3, 5));
          if (var5.method38396(var12)) {
             this.field20558 = true;
-            var1.method6725(var12, Blocks.field36532.method11579(), 2);
+            var1.setBlockState(var12, Blocks.field36532.method11579(), 2);
             TileEntity var13 = var1.getTileEntity(var12);
             if (var13 instanceof Class960) {
                ((Class960)var13).method3911().method24790(EntityType.field41010);

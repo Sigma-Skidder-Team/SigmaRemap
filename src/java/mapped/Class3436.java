@@ -79,7 +79,7 @@ public class Class3436 extends Class3433 {
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.field9020 && var4.abilities.isCreativeMode) {
+      if (!var1.isRemote && var4.abilities.isCreativeMode) {
          BlockPos var7 = var2.method8349(var3.<Direction>method23463(field19198).method536());
          if (this.method12108(var3, var1.getBlockState(var7))) {
             var1.method7179(var7, false);

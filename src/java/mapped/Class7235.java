@@ -25,9 +25,9 @@ public class Class7235 {
       this.field31087 = var15;
    }
 
-   public Class7235(Class7522 var1) {
-      this.field31079 = var1.method24534();
-      this.field31080 = var1.method24535();
+   public Class7235(WorldBorder var1) {
+      this.field31079 = var1.getCenterX();
+      this.field31080 = var1.getCenterZ();
       this.field31081 = var1.method24548();
       this.field31082 = var1.method24546();
       this.field31083 = var1.method24553();

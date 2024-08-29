@@ -66,7 +66,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31577 == null ? this.getBlock().method11493(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
    }
 
-   public int method23387(Class1665 var1, BlockPos var2) {
+   public int getOpacity(Class1665 var1, BlockPos var2) {
       return this.field31577 == null ? this.getBlock().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
    }
 
@@ -84,11 +84,11 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31577 == null || this.field31577.field28443;
    }
 
-   public boolean method23391() {
+   public boolean isTransparent() {
       return this.field31565;
    }
 
-   public int method23392() {
+   public int getLightValue() {
       Class4424 var3 = new Class4424(this);
       Client.getInstance().getEventManager().call(var3);
       return !var3.method13971() ? this.field31564 : 1;
@@ -134,7 +134,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11514(this.method23457(), var1, var2, var3);
    }
 
-   public boolean method23403() {
+   public boolean hasComparatorInputOverride() {
       return this.getBlock().method11648(this.method23457());
    }
 
@@ -234,10 +234,10 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public final void method23424(Class1660 var1, BlockPos var2, int var3) {
-      this.method23425(var1, var2, var3, 512);
+      this.updateNeighbours(var1, var2, var3, 512);
    }
 
-   public final void method23425(Class1660 var1, BlockPos var2, int var3, int var4) {
+   public final void updateNeighbours(Class1660 var1, BlockPos var2, int var3, int var4) {
       this.getBlock();
       Mutable var7 = new Mutable();
 
@@ -250,10 +250,10 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public final void method23426(Class1660 var1, BlockPos var2, int var3) {
-      this.method23427(var1, var2, var3, 512);
+      this.updateDiagonalNeighbors(var1, var2, var3, 512);
    }
 
-   public void method23427(Class1660 var1, BlockPos var2, int var3, int var4) {
+   public void updateDiagonalNeighbors(Class1660 var1, BlockPos var2, int var3, int var4) {
       this.getBlock().method11618(this.method23457(), var1, var2, var3, var4);
    }
 
@@ -342,7 +342,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11541(var1);
    }
 
-   public Class7379 method23449() {
+   public FluidState method23449() {
       return this.getBlock().method11498(this.method23457());
    }
 

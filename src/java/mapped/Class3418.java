@@ -59,17 +59,17 @@ public class Class3418 extends Block implements Class3196 {
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       if (var4.method23474()) {
-         BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8313());
-         if (!var5.method23446(Class7645.field32787)) {
+         BlockState var5 = var1.method18360().getBlockState(var1.method18345().down());
+         if (!var5.method23446(BlockTags.field32787)) {
             return null;
          } else if (!var5.method23448(Blocks.field37008)) {
             if (var5.method23448(Blocks.field37009)) {
                int var7 = var5.<Integer>method23463(field19125) <= 0 ? 0 : 1;
                return this.method11579().method23465(field19125, Integer.valueOf(var7));
             } else {
-               BlockState var6 = var1.method18360().getBlockState(var1.method18345().method8311());
+               BlockState var6 = var1.method18360().getBlockState(var1.method18345().up());
                return !var6.method23448(Blocks.field37009) && !var6.method23448(Blocks.field37008)
                   ? Blocks.field37008.method11579()
                   : this.method11579().method23465(field19125, var6.<Integer>method23463(field19125));
@@ -98,8 +98,8 @@ public class Class3418 extends Block implements Class3196 {
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19127) == 0
          && var4.nextInt(3) == 0
-         && var2.method7007(var3.method8311())
-         && var2.method7021(var3.method8311(), 0) >= 9) {
+         && var2.method7007(var3.up())
+         && var2.method7021(var3.up(), 0) >= 9) {
          int var7 = this.method12067(var2, var3) + 1;
          if (var7 < 16) {
             this.method12065(var1, var2, var3, var4, var7);
@@ -109,7 +109,7 @@ public class Class3418 extends Block implements Class3196 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return var2.getBlockState(var3.method8313()).method23446(Class7645.field32787);
+      return var2.getBlockState(var3.down()).method23446(BlockTags.field32787);
    }
 
    @Override
@@ -119,7 +119,7 @@ public class Class3418 extends Block implements Class3196 {
       }
 
       if (var2 == Direction.field673 && var3.method23448(Blocks.field37009) && var3.<Integer>method23463(field19125) > var1.<Integer>method23463(field19125)) {
-         var4.method6725(var5, var1.method23459(field19125), 2);
+         var4.setBlockState(var5, var1.method23459(field19125), 2);
       }
 
       return super.method11491(var1, var2, var3, var4, var5, var6);
@@ -147,7 +147,7 @@ public class Class3418 extends Block implements Class3196 {
       for (int var11 = 0; var11 < var10; var11++) {
          BlockPos var12 = var3.method8339(var7);
          BlockState var13 = var1.getBlockState(var12);
-         if (var9 >= 16 || var13.<Integer>method23463(field19127) == 1 || !var1.method7007(var12.method8311())) {
+         if (var9 >= 16 || var13.<Integer>method23463(field19127) == 1 || !var1.method7007(var12.up())) {
             return;
          }
 
@@ -163,7 +163,7 @@ public class Class3418 extends Block implements Class3196 {
    }
 
    public void method12065(BlockState var1, World var2, BlockPos var3, Random var4, int var5) {
-      BlockState var8 = var2.getBlockState(var3.method8313());
+      BlockState var8 = var2.getBlockState(var3.down());
       BlockPos var9 = var3.method8340(2);
       BlockState var10 = var2.getBlockState(var9);
       Class181 var11 = Class181.field642;
@@ -173,16 +173,16 @@ public class Class3418 extends Block implements Class3196 {
          } else if (var8.method23448(Blocks.field37009) && var8.<Class181>method23463(field19126) != Class181.field642) {
             var11 = Class181.field644;
             if (var10.method23448(Blocks.field37009)) {
-               var2.method6725(var3.method8313(), var8.method23465(field19126, Class181.field643), 3);
-               var2.method6725(var9, var10.method23465(field19126, Class181.field642), 3);
+               var2.setBlockState(var3.down(), var8.method23465(field19126, Class181.field643), 3);
+               var2.setBlockState(var9, var10.method23465(field19126, Class181.field642), 3);
             }
          }
       }
 
       int var12 = var1.<Integer>method23463(field19125) != 1 && !var10.method23448(Blocks.field37009) ? 0 : 1;
       int var13 = (var5 < 11 || !(var4.nextFloat() < 0.25F)) && var5 != 15 ? 0 : 1;
-      var2.method6725(
-         var3.method8311(),
+      var2.setBlockState(
+         var3.up(),
          this.method11579().method23465(field19125, Integer.valueOf(var12)).method23465(field19126, var11).method23465(field19127, Integer.valueOf(var13)),
          3
       );

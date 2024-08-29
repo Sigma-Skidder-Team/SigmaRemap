@@ -23,8 +23,8 @@ public class Class3494 extends Class3194 {
 
    @Override
    public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
-      Class7379 var6 = var2.method6739(var3);
-      Class7379 var7 = var2.method6739(var3.method8311());
+      FluidState var6 = var2.getFluidState(var3);
+      FluidState var7 = var2.getFluidState(var3.up());
       return (var6.method23472() == Class9479.field44066 || var1.method23384() == Class8649.field38964) && var7.method23472() == Class9479.field44064;
    }
 }

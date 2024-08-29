@@ -11,14 +11,14 @@ public class Class7527 {
    private static final Predicate<BlockState> field32309 = var0 -> var0.method23384().method31087();
    private final Class7776 field32310 = new Class7776(9, 256);
    private final Predicate<BlockState> field32311;
-   private final Class1670 field32312;
+   private final IChunk field32312;
 
-   public Class7527(Class1670 var1, Class101 var2) {
+   public Class7527(IChunk var1, Class101 var2) {
       this.field32311 = var2.method287();
       this.field32312 = var1;
    }
 
-   public static void method24577(Class1670 var0, Set<Class101> var1) {
+   public static void method24577(IChunk var0, Set<Class101> var1) {
       int var4 = var1.size();
       ObjectArrayList var5 = new ObjectArrayList(var4);
       ObjectListIterator var6 = var5.iterator();

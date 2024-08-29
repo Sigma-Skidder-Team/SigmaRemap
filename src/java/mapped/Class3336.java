@@ -19,20 +19,20 @@ public class Class3336 extends Item {
          BlockState var7 = var4.getBlockState(var5);
          boolean var8 = var7.method23454(var4, var5, var1.method18354());
          if (var8 && method11884(var1.method18357(), var4, var6, var1.method18354())) {
-            if (!var4.field9020) {
-               var4.method6999(2005, var6, 0);
+            if (!var4.isRemote) {
+               var4.playEvent(2005, var6, 0);
             }
 
-            return ActionResultType.method9002(var4.field9020);
+            return ActionResultType.method9002(var4.isRemote);
          } else {
             return ActionResultType.field14820;
          }
       } else {
-         if (!var4.field9020) {
-            var4.method6999(2005, var5, 0);
+         if (!var4.isRemote) {
+            var4.playEvent(2005, var5, 0);
          }
 
-         return ActionResultType.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.isRemote);
       }
    }
 
@@ -40,10 +40,10 @@ public class Class3336 extends Item {
       BlockState var5 = var1.getBlockState(var2);
       if (var5.getBlock() instanceof Class3196) {
          Class3196 var6 = (Class3196)var5.getBlock();
-         if (var6.method11486(var1, var2, var5, var1.field9020)) {
+         if (var6.method11486(var1, var2, var5, var1.isRemote)) {
             if (var1 instanceof ServerWorld) {
-               if (var6.method11487(var1, var1.field9016, var2, var5)) {
-                  var6.method11488((ServerWorld)var1, var1.field9016, var2, var5);
+               if (var6.method11487(var1, var1.rand, var2, var5)) {
+                  var6.method11488((ServerWorld)var1, var1.rand, var2, var5);
                }
 
                var0.method32182(1);
@@ -57,7 +57,7 @@ public class Class3336 extends Item {
    }
 
    public static boolean method11884(ItemStack var0, World var1, BlockPos var2, Direction var3) {
-      if (var1.getBlockState(var2).method23448(Blocks.WATER) && var1.method6739(var2).method23477() == 8) {
+      if (var1.getBlockState(var2).method23448(Blocks.WATER) && var1.getFluidState(var2).method23477() == 8) {
          if (!(var1 instanceof ServerWorld)) {
             return true;
          } else {
@@ -77,13 +77,13 @@ public class Class3336 extends Item {
                if (Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44165))
                   || Objects.equals(var11, Optional.<RegistryKey<Biome>>of(Class9495.field44168))) {
                   if (var6 == 0 && var3 != null && var3.method544().method324()) {
-                     var8 = Class7645.field32784.method24919(var1.field9016).method11579().method23465(Class3229.field18669, var3);
+                     var8 = BlockTags.field32784.method24919(var1.rand).method11579().method23465(Class3229.field18669, var3);
                   } else if (field18735.nextInt(4) == 0) {
-                     var8 = Class7645.field32782.method24919(field18735).method11579();
+                     var8 = BlockTags.field32782.method24919(field18735).method11579();
                   }
                }
 
-               if (var8.getBlock().method11540(Class7645.field32784)) {
+               if (var8.getBlock().method11540(BlockTags.field32784)) {
                   for (int var10 = 0; !var8.method23443(var1, var7) && var10 < 4; var10++) {
                      var8 = var8.method23465(Class3229.field18669, Class76.field161.method247(field18735));
                   }
@@ -91,8 +91,8 @@ public class Class3336 extends Item {
 
                if (var8.method23443(var1, var7)) {
                   BlockState var12 = var1.getBlockState(var7);
-                  if (var12.method23448(Blocks.WATER) && var1.method6739(var7).method23477() == 8) {
-                     var1.method6725(var7, var8, 3);
+                  if (var12.method23448(Blocks.WATER) && var1.getFluidState(var7).method23477() == 8) {
+                     var1.setBlockState(var7, var8, 3);
                   } else if (var12.method23448(Blocks.SEAGRASS) && field18735.nextInt(10) == 0) {
                      ((Class3196) Blocks.SEAGRASS).method11488((ServerWorld)var1, field18735, var7, var12);
                   }
@@ -120,7 +120,7 @@ public class Class3336 extends Item {
             if (!var5.method23409(var0, var1)) {
                var8 = var5.method23412(var0, var1).method19513(Class113.field414);
             } else {
-               var1 = var1.method8311();
+               var1 = var1.up();
                var2 *= 3;
                var6 = 3.0;
                var8 = 1.0;
@@ -141,7 +141,7 @@ public class Class3336 extends Item {
             double var19 = (double)var1.getX() + var17 + field18735.nextDouble() * var6 * 2.0;
             double var21 = (double)var1.getY() + field18735.nextDouble() * var8;
             double var23 = (double)var1.getZ() + var17 + field18735.nextDouble() * var6 * 2.0;
-            if (!var0.getBlockState(new BlockPos(var19, var21, var23).method8313()).isAir()) {
+            if (!var0.getBlockState(new BlockPos(var19, var21, var23).down()).isAir()) {
                var0.method6746(Class7940.field34078, var19, var21, var23, var11, var13, var15);
             }
          }

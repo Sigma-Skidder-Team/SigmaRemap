@@ -20,7 +20,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25051(World var1, BlockPos var2, FluidState var3, Random var4) {
       if (!var3.method23473() && !var3.<Boolean>method23463(field32712)) {
          if (var4.nextInt(64) == 0) {
             var1.method6745(
@@ -70,7 +70,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public BlockState method25063(Class7379 var1) {
+   public BlockState method25063(FluidState var1) {
       return Blocks.WATER.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
@@ -90,7 +90,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
+   public boolean method25055(FluidState var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
       return var5 == Direction.DOWN && !var4.method25067(Class8953.field40469);
    }
 

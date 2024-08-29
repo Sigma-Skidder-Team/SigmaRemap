@@ -9,7 +9,7 @@ public class Class196 implements Class197 {
       this.field742 = !var3 ? null : new Class212(var1);
    }
 
-   public void method602(BlockPos var1) {
+   public void checkBlock(BlockPos var1) {
       if (this.field741 != null) {
          this.field741.method660(var1);
       }

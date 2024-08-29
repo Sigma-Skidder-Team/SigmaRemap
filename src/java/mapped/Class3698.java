@@ -46,7 +46,7 @@ public class Class3698 extends Class3676<Class1046> {
       } else if (this.field19745 != 0L) {
          return var1.method6783() >= this.field19745;
       } else {
-         this.field19745 = var2.world.method6783() + (long)var1.field9016.nextInt(20);
+         this.field19745 = var2.world.method6783() + (long)var1.rand.nextInt(20);
          return false;
       }
    }
@@ -81,7 +81,7 @@ public class Class3698 extends Class3676<Class1046> {
          });
       } else {
          for (BlockPos var12 : var9) {
-            this.field19746.computeIfAbsent(var12.method8332(), var3x -> new Class8341(var2.world.field9016, var3));
+            this.field19746.computeIfAbsent(var12.method8332(), var3x -> new Class8341(var2.world.rand, var3));
          }
       }
    }

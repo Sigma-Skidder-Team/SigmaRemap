@@ -96,7 +96,7 @@ public class Class1664 implements Class1663 {
 
    private void method7025() {
       if (this.field9066 == 48 && this.field9067 == 48 && this.field9068 == 48) {
-         Class1674 var3 = this.field9062.method7177(1, 1);
+         Chunk var3 = this.field9062.method7177(1, 1);
          Class2001 var4 = new Class2001();
 
          for (int var5 = 16; var5 < 32; var5++) {
@@ -159,7 +159,7 @@ public class Class1664 implements Class1663 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       return this.getBlockState(var1).method23449();
    }
 

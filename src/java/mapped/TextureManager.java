@@ -167,7 +167,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
 
       while (var9.hasNext()) {
          ResourceLocation var10 = (ResourceLocation)var9.next();
-         String var11 = var10.method8292();
+         String var11 = var10.getPath();
          if (var11.startsWith("optifine/") || Class8564.method30606(var10)) {
             Class290 var12 = this.field1095.get(var10);
             if (var12 instanceof Class290) {

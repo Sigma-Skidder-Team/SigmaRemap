@@ -127,7 +127,7 @@ public class Class2875 extends Class2827<Class1007> {
    @Override
    public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       var1.push();
-      float var11 = MathHelper.method37821(this.field17818, this.field17817.field5632, this.field17817.field5633);
+      float var11 = MathHelper.lerp(this.field17818, this.field17817.field5632, this.field17817.field5633);
       this.field17799.field31035 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2))) + 1.0) * 0.2F;
       float var12 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2) - 1.0F)) + 1.0);
       var12 = (var12 * var12 + var12 * 2.0F) * 0.05F;

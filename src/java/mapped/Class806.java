@@ -964,7 +964,7 @@ public class Class806 extends Class798 {
 
    public static void method2061(IResourceManager var0) {
       Collection<ResourceLocation> var3 = var0.method583("textures/gui/images", var0x -> var0x.endsWith(".png"));
-      field4261 = var3.stream().filter(var0x -> var0x.method8293().equals("realms")).collect(ImmutableList.toImmutableList());
+      field4261 = var3.stream().filter(var0x -> var0x.getNamespace().equals("realms")).collect(ImmutableList.toImmutableList());
    }
 
    private void method2062(ITextComponent... var1) {

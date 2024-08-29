@@ -54,7 +54,7 @@ public class Class5549 implements Packet<Class5116> {
       var1.writeVarInt(this.field24643.length);
 
       for (int var4 = 0; var4 < this.field24643.length; var4++) {
-         var1.method35719((long)(Block.method11535(this.field24644[var4]) << 12 | this.field24643[var4]));
+         var1.method35719((long)(Block.getStateId(this.field24644[var4]) << 12 | this.field24643[var4]));
       }
    }
 

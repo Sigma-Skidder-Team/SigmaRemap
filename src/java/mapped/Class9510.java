@@ -51,7 +51,7 @@ public class Class9510 {
    public Class9510 method36727(Class9110 var1, boolean var2) {
       long var5 = var1.method33979().method8332();
       if (var2) {
-         long var7 = var1.method33979().method8311().method8332();
+         long var7 = var1.method33979().up().method8332();
          this.field44283.add(var7);
          this.field44281.add(var7);
          this.field44284.remove(var7);

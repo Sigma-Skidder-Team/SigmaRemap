@@ -118,7 +118,7 @@ public abstract class AbstractArrowEntity extends Class882 {
       if (this.field5100 && !var3) {
          if (this.field5099 != var6 && this.method3472()) {
             this.method3473();
-         } else if (!this.world.field9020) {
+         } else if (!this.world.isRemote) {
             this.method3474();
          }
 
@@ -301,7 +301,7 @@ public abstract class AbstractArrowEntity extends Class882 {
          this.method3434(this.method3433().method11344(-0.1));
          this.rotationYaw += 180.0F;
          this.prevRotationYaw += 180.0F;
-         if (!this.world.field9020 && this.method3433().method11349() < 1.0E-7) {
+         if (!this.world.isRemote && this.method3433().method11349() < 1.0E-7) {
             if (this.field5102 == Class2192.field14332) {
                this.method3303(this.method3480(), 0.1F);
             }
@@ -315,7 +315,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
          if (var4 instanceof Class880) {
             Class880 var13 = (Class880)var4;
-            if (!this.world.field9020 && this.method3489() <= 0) {
+            if (!this.world.isRemote && this.method3489() <= 0) {
                var13.method3077(var13.method3076() + 1);
             }
 
@@ -326,7 +326,7 @@ public abstract class AbstractArrowEntity extends Class882 {
                }
             }
 
-            if (!this.world.field9020 && var7 instanceof Class880) {
+            if (!this.world.isRemote && var7 instanceof Class880) {
                Class7858.method26320(var13, var7);
                Class7858.method26321((Class880)var7, var13);
             }
@@ -340,7 +340,7 @@ public abstract class AbstractArrowEntity extends Class882 {
                this.field5109.add(var13);
             }
 
-            if (!this.world.field9020 && var7 instanceof ServerPlayerEntity) {
+            if (!this.world.isRemote && var7 instanceof ServerPlayerEntity) {
                ServerPlayerEntity var15 = (ServerPlayerEntity)var7;
                if (this.field5109 != null && this.method3488()) {
                   CriteriaTriggers.field44497.method15149(var15, this.field5109);
@@ -455,7 +455,7 @@ public abstract class AbstractArrowEntity extends Class882 {
 
    @Override
    public void method3279(PlayerEntity var1) {
-      if (!this.world.field9020 && (this.field5100 || this.method3493()) && this.field5103 <= 0) {
+      if (!this.world.isRemote && (this.field5100 || this.method3493()) && this.field5103 <= 0) {
          boolean var4 = this.field5102 == Class2192.field14332
             || this.field5102 == Class2192.field14333 && var1.abilities.isCreativeMode
             || this.method3493() && this.method3460().getUniqueID() == var1.getUniqueID();
@@ -557,7 +557,7 @@ public abstract class AbstractArrowEntity extends Class882 {
    }
 
    public boolean method3493() {
-      return this.world.field9020 ? (this.dataManager.<Byte>method35445(field5097) & 2) != 0 : this.noClip;
+      return this.world.isRemote ? (this.dataManager.<Byte>method35445(field5097) & 2) != 0 : this.noClip;
    }
 
    public void method3494(boolean var1) {

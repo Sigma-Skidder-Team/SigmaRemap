@@ -28,7 +28,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18960) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
@@ -59,7 +59,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return this.method11579().method23465(field18960, Boolean.valueOf(var4.method23486(Class8953.field40469) && var4.method23477() == 8));
    }
 

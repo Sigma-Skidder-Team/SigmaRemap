@@ -9,9 +9,9 @@ public class Class2911 extends Class2898<Class4697> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4697 var5) {
-      if (var5.field22289.contains(var1.getBlockState(var4.method8311()).getBlock())) {
-         if (var5.field22286 && !var5.field22289.contains(var1.getBlockState(var4.method8313()).getBlock())) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4697 var5) {
+      if (var5.field22289.contains(var1.getBlockState(var4.up()).getBlock())) {
+         if (var5.field22286 && !var5.field22289.contains(var1.getBlockState(var4.down()).getBlock())) {
             return false;
          } else {
             BlockState var8 = var1.getBlockState(var4);
@@ -20,49 +20,49 @@ public class Class2911 extends Class2898<Class4697> {
             } else {
                int var9 = 0;
                int var10 = 0;
-               if (var5.field22289.contains(var1.getBlockState(var4.method8345()).getBlock())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.west()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.getBlockState(var4.method8347()).getBlock())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.east()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.getBlockState(var4.method8341()).getBlock())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.north()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.getBlockState(var4.method8343()).getBlock())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.south()).getBlock())) {
                   var10++;
                }
 
-               if (var5.field22289.contains(var1.getBlockState(var4.method8313()).getBlock())) {
+               if (var5.field22289.contains(var1.getBlockState(var4.down()).getBlock())) {
                   var10++;
                }
 
                int var11 = 0;
-               if (var1.method7007(var4.method8345())) {
+               if (var1.method7007(var4.west())) {
                   var11++;
                }
 
-               if (var1.method7007(var4.method8347())) {
+               if (var1.method7007(var4.east())) {
                   var11++;
                }
 
-               if (var1.method7007(var4.method8341())) {
+               if (var1.method7007(var4.north())) {
                   var11++;
                }
 
-               if (var1.method7007(var4.method8343())) {
+               if (var1.method7007(var4.south())) {
                   var11++;
                }
 
-               if (var1.method7007(var4.method8313())) {
+               if (var1.method7007(var4.down())) {
                   var11++;
                }
 
                if (var10 == var5.field22287 && var11 == var5.field22288) {
-                  var1.method6725(var4, var5.field22285.method23484(), 2);
+                  var1.setBlockState(var4, var5.field22285.getBlockState(), 2);
                   var1.method6861().method20726(var4, var5.field22285.method23472(), 0);
                   var9++;
                }

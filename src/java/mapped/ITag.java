@@ -10,9 +10,9 @@ import java.util.function.Supplier;
 
 public interface ITag<T> {
    static <T> Codec<ITag<T>> method24916(Supplier<Class7984<T>> var0) {
-      return ResourceLocation.field13020
+      return ResourceLocation.CODEC
          .flatXmap(
-            var1 -> Optional.ofNullable(var0.get().method27135(var1))
+            var1 -> Optional.ofNullable(var0.get().get(var1))
                   .map(DataResult::success)
                   .orElseGet(() -> DataResult.error("Unknown tag: " + var1)),
             var1 -> Optional.ofNullable(var0.get().method27133(var1))

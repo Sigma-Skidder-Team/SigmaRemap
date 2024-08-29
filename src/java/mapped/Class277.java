@@ -19,7 +19,7 @@ public abstract class Class277 extends Class269<Class8226> implements AutoClosea
    }
 
    private ResourceLocation method1019(ResourceLocation var1) {
-      return new ResourceLocation(var1.method8293(), this.field1060 + "/" + var1.method8292());
+      return new ResourceLocation(var1.getNamespace(), this.field1060 + "/" + var1.getPath());
    }
 
    public Class8226 method970(IResourceManager var1, IProfiler var2) {

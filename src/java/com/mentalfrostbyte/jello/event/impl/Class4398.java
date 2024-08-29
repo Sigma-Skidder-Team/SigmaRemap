@@ -30,7 +30,7 @@ public class Class4398 extends CancellableEvent {
 
     public void method13905(VoxelShape var1) {
         if (var1 == null) {
-            var1 = VoxelShapes.method27427(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+            var1 = VoxelShapes.create(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }
 
         this.field21486 = var1;

@@ -15,7 +15,7 @@ public class Class3370 extends Class3241 {
    @Override
    public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
-      int var7 = 15 + var2.field9016.nextInt(15) + var2.field9016.nextInt(15);
+      int var7 = 15 + var2.rand.nextInt(15) + var2.rand.nextInt(15);
       this.method11558(var2, var3, var7);
    }
 

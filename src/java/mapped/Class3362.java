@@ -7,7 +7,7 @@ public class Class3362 extends Class3241 {
    private static final VoxelShape field18915 = Block.method11539(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
    private static final VoxelShape field18916 = Block.method11539(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
    private static final VoxelShape field18917 = VoxelShapes.method27431(field18916, field18915);
-   private static final VoxelShape field18918 = VoxelShapes.method27433(field18917, Class937.field5296, IBooleanFunction.field44041);
+   private static final VoxelShape field18918 = VoxelShapes.combineAndSimplify(field18917, Class937.field5296, IBooleanFunction.ONLY_FIRST);
    private static final VoxelShape field18919 = VoxelShapes.method27431(field18918, Block.method11539(6.0, 0.0, 6.0, 10.0, 4.0, 10.0));
    private static final VoxelShape field18920 = VoxelShapes.method27431(field18918, Block.method11539(12.0, 4.0, 6.0, 16.0, 8.0, 10.0));
    private static final VoxelShape field18921 = VoxelShapes.method27431(field18918, Block.method11539(6.0, 4.0, 0.0, 10.0, 8.0, 4.0));
@@ -92,7 +92,7 @@ public class Class3362 extends Class3241 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class936) {
             var4.method2766((Class936)var9);
@@ -113,7 +113,7 @@ public class Class3362 extends Class3241 {
    private void method11939(World var1, BlockPos var2, BlockState var3) {
       boolean var6 = !var1.method6780(var2);
       if (var6 != var3.<Boolean>method23463(field18914)) {
-         var1.method6725(var2, var3.method23465(field18914, Boolean.valueOf(var6)), 4);
+         var1.setBlockState(var2, var3.method23465(field18914, Boolean.valueOf(var6)), 4);
       }
    }
 
@@ -123,7 +123,7 @@ public class Class3362 extends Class3241 {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class936) {
             Class7236.method22721(var2, var3, (Class936)var8);
-            var2.method6806(var3, this);
+            var2.updateComparatorOutputLevel(var3, this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);

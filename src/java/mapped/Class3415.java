@@ -109,19 +109,19 @@ public class Class3415 extends Block implements Class3207 {
    private boolean method12055(BlockState var1, boolean var2, Direction var3) {
       Block var6 = var1.getBlock();
       boolean var7 = var6 instanceof Class3199 && Class3199.method11507(var1, var3);
-      return var1.method23446(Class7645.field32764) || !method11545(var6) && var2 || var6 instanceof Class3237 || var7;
+      return var1.method23446(BlockTags.field32764) || !method11545(var6) && var2 || var6 instanceof Class3237 || var7;
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7379 var6 = var1.method18360().method6739(var1.method18345());
-      BlockPos var7 = var5.method8341();
-      BlockPos var8 = var5.method8347();
-      BlockPos var9 = var5.method8343();
-      BlockPos var10 = var5.method8345();
-      BlockPos var11 = var5.method8311();
+      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
+      BlockPos var7 = var5.north();
+      BlockPos var8 = var5.east();
+      BlockPos var9 = var5.south();
+      BlockPos var10 = var5.west();
+      BlockPos var11 = var5.up();
       BlockState var12 = var4.getBlockState(var7);
       BlockState var13 = var4.getBlockState(var8);
       BlockState var14 = var4.getBlockState(var9);
@@ -153,7 +153,7 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    private static boolean method12057(VoxelShape var0, VoxelShape var1) {
-      return ! VoxelShapes.compare(var1, var0, IBooleanFunction.field44041);
+      return ! VoxelShapes.compare(var1, var0, IBooleanFunction.ONLY_FIRST);
    }
 
    private BlockState method12058(Class1662 var1, BlockState var2, BlockPos var3, BlockState var4) {
@@ -170,7 +170,7 @@ public class Class3415 extends Block implements Class3207 {
       boolean var11 = var6 != Direction.EAST ? method12056(var3, field19107) : this.method12055(var5, var5.method23454(var1, var4, var9), var9);
       boolean var12 = var6 != Direction.SOUTH ? method12056(var3, field19109) : this.method12055(var5, var5.method23454(var1, var4, var9), var9);
       boolean var13 = var6 != Direction.WEST ? method12056(var3, field19110) : this.method12055(var5, var5.method23454(var1, var4, var9), var9);
-      BlockPos var14 = var2.method8311();
+      BlockPos var14 = var2.up();
       BlockState var15 = var1.getBlockState(var14);
       return this.method12060(var1, var3, var14, var15, var10, var11, var12, var13);
    }
@@ -197,7 +197,7 @@ public class Class3415 extends Block implements Class3207 {
             return true;
          } else {
             boolean var16 = var7 == Class184.field669 && var8 == Class184.field669 || var9 == Class184.field669 && var10 == Class184.field669;
-            return var16 ? false : var2.getBlock().method11540(Class7645.field32803) || method12057(var3, field19114);
+            return var16 ? false : var2.getBlock().method11540(BlockTags.field32803) || method12057(var3, field19114);
          }
       } else {
          return true;
@@ -220,7 +220,7 @@ public class Class3415 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field19111) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

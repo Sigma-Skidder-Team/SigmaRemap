@@ -16,7 +16,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
    @Override
    public void method3647() {
       boolean var3 = this.method3775().<Boolean>method23463(Class3244.field18698);
-      boolean var4 = this.field5324.field9020;
+      boolean var4 = this.field5324.isRemote;
       if (!var4) {
          if (!var3) {
             for (int var5 = 0; var5 < this.field5329.size(); var5++) {
@@ -57,7 +57,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
       World var3 = this.method3734();
       if (var3 != null) {
          BlockPos var4 = this.getPos();
-         Random var5 = var3.field9016;
+         Random var5 = var3.rand;
          if (var5.nextFloat() < 0.11F) {
             for (int var6 = 0; var6 < var5.nextInt(2) + 2; var6++) {
                Class3244.method11653(var3, var4, this.method3775().<Boolean>method23463(Class3244.field18699), false);
@@ -156,7 +156,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
 
    private void method3799() {
       this.method3622();
-      this.method3734().method6731(this.getPos(), this.method3775(), this.method3775(), 3);
+      this.method3734().notifyBlockUpdate(this.getPos(), this.method3775(), this.method3775(), 3);
    }
 
    @Override
@@ -166,7 +166,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
 
    public void method3800() {
       if (this.field5324 != null) {
-         if (!this.field5324.field9020) {
+         if (!this.field5324.isRemote) {
             Class7236.method22724(this.field5324, this.getPos(), this.method3795());
          }
 

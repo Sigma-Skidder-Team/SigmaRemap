@@ -39,7 +39,7 @@ public class Class3369 extends Class3241 {
             this.method11962(var2, var3, (Direction)null);
          }
 
-         var2.method6725(var3, var1.method23465(field18945, Boolean.valueOf(var9)), 3);
+         var2.setBlockState(var3, var1.method23465(field18945, Boolean.valueOf(var9)), 3);
       }
    }
 
@@ -52,7 +52,7 @@ public class Class3369 extends Class3241 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      return !this.method11960(var2, var1, var6, var4, true) ? ActionResultType.field14820 : ActionResultType.method9002(var2.field9020);
+      return !this.method11960(var2, var1, var6, var4, true) ? ActionResultType.field14820 : ActionResultType.method9002(var2.isRemote);
    }
 
    public boolean method11960(World var1, BlockState var2, BlockRayTraceResult var3, PlayerEntity var4, boolean var5) {
@@ -93,7 +93,7 @@ public class Class3369 extends Class3241 {
 
    public boolean method11962(World var1, BlockPos var2, Direction var3) {
       TileEntity var6 = var1.getTileEntity(var2);
-      if (!var1.field9020 && var6 instanceof Class966) {
+      if (!var1.isRemote && var6 instanceof Class966) {
          if (var3 == null) {
             var3 = var1.getBlockState(var2).<Direction>method23463(field18943);
          }
@@ -156,17 +156,17 @@ public class Class3369 extends Class3241 {
       Class113 var7 = var4.method544();
       if (var7 != Class113.field414) {
          boolean var8 = var7 == Class113.field413
-               && var6.getBlockState(var5.method8345()).method23454(var6, var5.method8345(), Direction.EAST)
-               && var6.getBlockState(var5.method8347()).method23454(var6, var5.method8347(), Direction.WEST)
+               && var6.getBlockState(var5.west()).method23454(var6, var5.west(), Direction.EAST)
+               && var6.getBlockState(var5.east()).method23454(var6, var5.east(), Direction.WEST)
             || var7 == Class113.field415
-               && var6.getBlockState(var5.method8341()).method23454(var6, var5.method8341(), Direction.SOUTH)
-               && var6.getBlockState(var5.method8343()).method23454(var6, var5.method8343(), Direction.NORTH);
+               && var6.getBlockState(var5.north()).method23454(var6, var5.north(), Direction.SOUTH)
+               && var6.getBlockState(var5.south()).method23454(var6, var5.south(), Direction.NORTH);
          BlockState var9 = this.method11579().method23465(field18943, var4.method536()).method23465(field18944, !var8 ? Class85.field214 : Class85.field215);
          if (var9.method23443(var1.method18360(), var1.method18345())) {
             return var9;
          }
 
-         boolean var10 = var6.getBlockState(var5.method8313()).method23454(var6, var5.method8313(), Direction.field673);
+         boolean var10 = var6.getBlockState(var5.down()).method23454(var6, var5.down(), Direction.field673);
          var9 = var9.method23465(field18944, !var10 ? Class85.field213 : Class85.field212);
          if (var9.method23443(var1.method18360(), var1.method18345())) {
             return var9;
@@ -207,7 +207,7 @@ public class Class3369 extends Class3241 {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       Direction var6 = method11964(var1).method536();
-      return var6 != Direction.field673 ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.method8311(), Direction.DOWN);
+      return var6 != Direction.field673 ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.up(), Direction.DOWN);
    }
 
    private static Direction method11964(BlockState var0) {

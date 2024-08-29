@@ -29,10 +29,10 @@ public class Class3434 extends Class3433 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.<Boolean>method23463(field19200)) {
-         var2.method6725(var3, var1.method23465(field19200, Boolean.valueOf(true)), 2);
+         var2.setBlockState(var3, var1.method23465(field19200, Boolean.valueOf(true)), 2);
          var2.method6860().method20726(var3, this, 2);
       } else {
-         var2.method6725(var3, var1.method23465(field19200, Boolean.valueOf(false)), 2);
+         var2.setBlockState(var3, var1.method23465(field19200, Boolean.valueOf(false)), 2);
       }
 
       this.method12101(var2, var3, var1);
@@ -48,7 +48,7 @@ public class Class3434 extends Class3433 {
    }
 
    private void method12100(Class1660 var1, BlockPos var2) {
-      if (!var1.method6714() && !var1.method6860().method20718(var2, this)) {
+      if (!var1.isRemote() && !var1.method6860().method20718(var2, this)) {
          var1.method6860().method20726(var2, this, 2);
       }
    }
@@ -56,8 +56,8 @@ public class Class3434 extends Class3433 {
    public void method12101(World var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>method23463(field19198);
       BlockPos var7 = var2.method8349(var6.method536());
-      var1.method6735(var7, this, var2);
-      var1.method6734(var7, this, var6);
+      var1.neighborChanged(var7, this, var2);
+      var1.notifyNeighborsOfStateExcept(var7, this, var6);
    }
 
    @Override
@@ -77,16 +77,16 @@ public class Class3434 extends Class3433 {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock()) && !var2.method6714() && var1.<Boolean>method23463(field19200) && !var2.method6860().method20718(var3, this)) {
+      if (!var1.method23448(var4.getBlock()) && !var2.isRemote() && var1.<Boolean>method23463(field19200) && !var2.method6860().method20718(var3, this)) {
          BlockState var8 = var1.method23465(field19200, Boolean.valueOf(false));
-         var2.method6725(var3, var8, 18);
+         var2.setBlockState(var3, var8, 18);
          this.method12101(var2, var3, var8);
       }
    }
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock()) && !var2.field9020 && var1.<Boolean>method23463(field19200) && var2.method6860().method20718(var3, this)) {
+      if (!var1.method23448(var4.getBlock()) && !var2.isRemote && var1.<Boolean>method23463(field19200) && var2.method6860().method20718(var3, this)) {
          this.method12101(var2, var3, var1.method23465(field19200, Boolean.valueOf(false)));
       }
    }

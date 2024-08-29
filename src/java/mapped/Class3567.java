@@ -11,7 +11,7 @@ public class Class3567 implements Class3499<Class7435> {
    }
 
    public Class4587 method12199(Class7435 var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
-      Random var17 = var2.field9016;
+      Random var17 = var2.rand;
       double var18 = (double)var17.nextFloat() * -1.9 * (double)var17.nextFloat() * 0.1;
       double var20 = (double)var17.nextFloat() * -0.5 * (double)var17.nextFloat() * 0.1 * 5.0;
       double var22 = (double)var17.nextFloat() * -1.9 * (double)var17.nextFloat() * 0.1;

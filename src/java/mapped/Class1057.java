@@ -118,13 +118,13 @@ public class Class1057 extends Class1056 implements Class1008 {
    public void tick() {
       super.tick();
       BlockPos var3 = this.dataManager.<Optional<BlockPos>>method35445(field5842).orElse((BlockPos)null);
-      if (var3 == null && !this.world.field9020) {
+      if (var3 == null && !this.world.isRemote) {
          var3 = this.getPosition();
          this.dataManager.method35446(field5842, Optional.<BlockPos>of(var3));
       }
 
       if (!this.isPassenger()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             BlockState var4 = this.world.getBlockState(var3);
             if (!var4.isAir()) {
                if (!var4.method23448(Blocks.MOVING_PISTON)) {
@@ -180,7 +180,7 @@ public class Class1057 extends Class1056 implements Class1008 {
       }
 
       if (var3 != null) {
-         if (this.world.field9020) {
+         if (this.world.isRemote) {
             if (this.field5848 > 0 && this.field5847 != null) {
                this.field5848--;
             } else {
@@ -299,7 +299,7 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Override
    public void method3155(DataParameter<?> var1) {
-      if (field5842.equals(var1) && this.world.field9020 && !this.isPassenger()) {
+      if (field5842.equals(var1) && this.world.isRemote && !this.isPassenger()) {
          BlockPos var4 = this.method4849();
          if (var4 != null) {
             if (this.field5847 != null) {
@@ -367,7 +367,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public void method4852(int var1) {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3085(Class9173.field42113).method38670(field5840);
          if (var1 != 0) {
             this.method2863(Sounds.field27052, 1.0F, 1.0F);
@@ -381,7 +381,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public float method4853(float var1) {
-      return MathHelper.method37821(var1, this.field5845, this.field5846);
+      return MathHelper.lerp(var1, this.field5845, this.field5846);
    }
 
    public int method4854() {

@@ -12,7 +12,7 @@ public class Class7611<T> implements Class7610<T> {
    }
 
    @Override
-   public ResourceLocation method24929() {
+   public ResourceLocation getName() {
       return this.field32657;
    }
 

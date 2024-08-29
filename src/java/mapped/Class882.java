@@ -154,6 +154,6 @@ public abstract class Class882 extends Entity {
          var0 += 360.0F;
       }
 
-      return MathHelper.method37821(0.2F, var0, var1);
+      return MathHelper.lerp(0.2F, var0, var1);
    }
 }

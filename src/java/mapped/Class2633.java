@@ -16,7 +16,7 @@ public class Class2633 extends Class2632 {
 
    @Override
    public void method10843(World var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, Sounds.field27167, Class2266.field14732, 0.7F, 0.9F + var1.field9016.nextFloat() * 0.2F);
+      var1.method6742((PlayerEntity)null, var2, Sounds.field27167, Class2266.field14732, 0.7F, 0.9F + var1.rand.nextFloat() * 0.2F);
    }
 
    @Override

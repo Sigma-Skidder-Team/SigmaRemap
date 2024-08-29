@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 
 public final class Class8815 {
    private static String[] field39653;
-   public final AtomicReferenceArray<Class1674> field39654;
+   public final AtomicReferenceArray<Chunk> field39654;
    private final int field39655;
    private final int field39656;
    private volatile int field39657;
@@ -17,15 +17,15 @@ public final class Class8815 {
       this.field39660 = var1;
       this.field39655 = var2;
       this.field39656 = var2 * 2 + 1;
-      this.field39654 = new AtomicReferenceArray<Class1674>(this.field39656 * this.field39656);
+      this.field39654 = new AtomicReferenceArray<Chunk>(this.field39656 * this.field39656);
    }
 
    public int method31823(int var1, int var2) {
       return Math.floorMod(var2, this.field39656) * this.field39656 + Math.floorMod(var1, this.field39656);
    }
 
-   public void method31824(int var1, Class1674 var2) {
-      Class1674 var5 = this.field39654.getAndSet(var1, var2);
+   public void method31824(int var1, Chunk var2) {
+      Chunk var5 = this.field39654.getAndSet(var1, var2);
       if (var5 != null) {
          this.field39659--;
          Class1705.method7406(this.field39660).method6840(var5);
@@ -36,7 +36,7 @@ public final class Class8815 {
       }
    }
 
-   public Class1674 method31825(int var1, Class1674 var2, Class1674 var3) {
+   public Chunk method31825(int var1, Chunk var2, Chunk var3) {
       if (this.field39654.compareAndSet(var1, var2, var3) && var3 == null) {
          this.field39659--;
       }
@@ -50,7 +50,7 @@ public final class Class8815 {
    }
 
    @Nullable
-   public Class1674 method31827(int var1) {
+   public Chunk method31827(int var1) {
       return this.field39654.get(var1);
    }
 

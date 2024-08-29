@@ -32,7 +32,7 @@ public class Class3289 extends Item {
                var11.method6995(var12);
                float var13 = (float) MathHelper.method37767((MathHelper.method37792(var1.method18352() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
                var12.method3273(var12.getPosX(), var12.getPosY(), var12.getPosZ(), var13, 0.0F);
-               this.method11828(var12, var5.field9016);
+               this.method11828(var12, var5.rand);
                var5.method6916(var12);
                var5.method6743(
                   (PlayerEntity)null, var12.getPosX(), var12.getPosY(), var12.getPosZ(), Sounds.field26360, Class2266.field14732, 0.75F, 0.8F
@@ -40,7 +40,7 @@ public class Class3289 extends Item {
             }
 
             var8.method32182(1);
-            return ActionResultType.method9002(var5.field9020);
+            return ActionResultType.method9002(var5.isRemote);
          } else {
             return ActionResultType.FAIL;
          }

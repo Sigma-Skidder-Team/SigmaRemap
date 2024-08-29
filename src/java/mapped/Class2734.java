@@ -37,8 +37,8 @@ public class Class2734 extends Class2595 {
       Vector3d var12 = new Vector3d((double)var5 + 0.5, (double)var6 + 0.5, (double)var7 + 0.5);
       BlockRayTraceResult var13 = var4.method7036(new Class6809(var11, var12, Class2271.field14775, Class1985.field12962, this.field17254));
       boolean var14 = var13.getPos().equals(var8);
-      if (var10.method11540(Class7645.field32778) && var14) {
-         var4.method6728(var8, false);
+      if (var10.method11540(BlockTags.field32778) && var14) {
+         var4.removeBlock(var8, false);
          this.field17254.method4356(var9.getBlock().method11579());
       }
    }

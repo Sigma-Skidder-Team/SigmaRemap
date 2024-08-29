@@ -24,7 +24,7 @@ public class Class3263 extends Class3262 implements Class3260 {
             float var11 = method11777(var10);
             if (!((double)var11 < 0.1)) {
                boolean var12 = var8 && var9.getItem() == Items.field37797;
-               if (!var2.field9020) {
+               if (!var2.isRemote) {
                   Class3308 var13 = (Class3308)(!(var9.getItem() instanceof Class3308) ? Items.field37797 : var9.getItem());
                   AbstractArrowEntity var14 = var13.method11850(var2, var9, var7);
                   var14.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, var11 * 3.0F, 1.0F);

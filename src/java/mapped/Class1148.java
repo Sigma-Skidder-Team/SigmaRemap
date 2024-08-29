@@ -52,7 +52,7 @@ public class Class1148 extends Screen {
    private final DecimalFormat field6279 = new DecimalFormat("0.0###");
 
    public Class1148(Class964 var1) {
-      super(new TranslationTextComponent(Blocks.field37113.method11566()));
+      super(new TranslationTextComponent(Blocks.field37113.getTranslationKey()));
       this.field6248 = var1;
       this.field6279.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT));
    }

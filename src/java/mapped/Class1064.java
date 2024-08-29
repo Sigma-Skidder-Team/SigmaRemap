@@ -152,7 +152,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
       if (this.method3005() && var5 > 0) {
          this.world.method6746(Class7940.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4769(var5);
          }
 
@@ -161,7 +161,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
       if (var6 > 0 && (var8 || !this.method4932()) && this.method4944() < this.method4907()) {
          var8 = true;
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4946(var6);
          }
       }
@@ -289,7 +289,7 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public void method4903() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          super.method4903();
          this.method4904(method4905(this.field5890.method3618(1)));
       }

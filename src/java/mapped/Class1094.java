@@ -63,7 +63,7 @@ public class Class1094 extends Class1018 {
          }
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.world.method6786(this, (byte)1);
       }
    }
@@ -319,7 +319,7 @@ public class Class1094 extends Class1018 {
    }
 
    public static boolean method5117(EntityType<Class1094> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      BlockState var7 = var1.getBlockState(var3.method8313());
+      BlockState var7 = var1.getBlockState(var3.down());
       return (var7.method23448(Blocks.field36395) || var7.method23448(Blocks.SNOW) || var7.method23448(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;
    }

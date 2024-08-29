@@ -38,7 +38,7 @@ public abstract class Class4180 extends Class4178 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.field20454.method36430(var5);
       this.field20444 = this.field20453.method32909(this.field20454, this.field20455);
       if (this.field20453.method32899(var1, this.field20455, var7, this.field20454, var4, 2)) {
@@ -69,7 +69,7 @@ public abstract class Class4180 extends Class4178 {
                   field20452.error("Error while parsing blockstate {} in jigsaw block @ {}", var19, var18.field35530);
                }
 
-               var1.method6725(var18.field35530, var14, 3);
+               var1.setBlockState(var18.field35530, var14, 3);
             }
          }
       }

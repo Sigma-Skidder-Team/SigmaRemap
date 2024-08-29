@@ -73,7 +73,7 @@ public class KeyboardListener {
                      String.format(
                         Locale.ROOT,
                         "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f",
-                        this.field43915.player.world.getDimensionKey().method31399(),
+                        this.field43915.player.world.getDimensionKey().getLocation(),
                         this.field43915.player.getPosX(),
                         this.field43915.player.getPosY(),
                         this.field43915.player.getPosZ(),

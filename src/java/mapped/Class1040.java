@@ -77,7 +77,7 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    @Override
    public void tick() {
-      if (!this.world.field9020 && this.method3066() && this.method4667()) {
+      if (!this.world.isRemote && this.method3066() && this.method4667()) {
          int var3 = this.method4670();
          this.field5771 -= var3;
          if (this.field5771 <= 0) {
@@ -100,7 +100,7 @@ public class Class1040 extends Class1038 implements Class1041 {
             var5.method32182(1);
          }
 
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4668(var1.getUniqueID(), this.rand.nextInt(2401) + 3600);
          }
 

@@ -25,7 +25,7 @@ public abstract class Class1049 extends Class1047 {
    }
 
    public static boolean method4792(EntityType<? extends Class1049> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3).method23448(Blocks.WATER) && var1.getBlockState(var3.method8311()).method23448(Blocks.WATER);
+      return var1.getBlockState(var3).method23448(Blocks.WATER) && var1.getBlockState(var3.up()).method23448(Blocks.WATER);
    }
 
    @Override
@@ -114,7 +114,7 @@ public abstract class Class1049 extends Class1047 {
          var5.method32182(1);
          ItemStack var6 = this.method4796();
          this.method4795(var6);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var1, var6);
          }
 
@@ -127,7 +127,7 @@ public abstract class Class1049 extends Class1047 {
          }
 
          this.method2904();
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }

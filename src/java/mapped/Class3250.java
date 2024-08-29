@@ -35,7 +35,7 @@ public class Class3250 extends Class3198 implements Class3245 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          if (var1.<Class82>method23463(field18713) != Class82.HEAD) {
             var3 = var3.method8349(var1.<Direction>method23463(field18484));
             var1 = var2.getBlockState(var3);
@@ -60,10 +60,10 @@ public class Class3250 extends Class3198 implements Class3245 {
                return ActionResultType.field14818;
             }
          } else {
-            var2.method6728(var3, false);
+            var2.removeBlock(var3, false);
             BlockPos var9 = var3.method8349(var1.<Direction>method23463(field18484).method536());
             if (var2.getBlockState(var9).method23448(this)) {
-               var2.method6728(var9, false);
+               var2.removeBlock(var9, false);
             }
 
             var2.method6757(
@@ -85,7 +85,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    public static boolean method11679(World var0) {
-      return var0.method6812().method36881();
+      return var0.method6812().doesBedWork();
    }
 
    private boolean method11680(World var1, BlockPos var2) {
@@ -137,14 +137,14 @@ public class Class3250 extends Class3198 implements Class3245 {
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.field9020 && var4.isCreative()) {
+      if (!var1.isRemote && var4.isCreative()) {
          Class82 var7 = var3.<Class82>method23463(field18713);
          if (var7 == Class82.FOOT) {
             BlockPos var8 = var2.method8349(method11682(var7, var3.<Direction>method23463(field18484)));
             BlockState var9 = var1.getBlockState(var8);
             if (var9.getBlock() == this && var9.<Class82>method23463(field18713) == Class82.HEAD) {
-               var1.method6725(var8, Blocks.AIR.method11579(), 35);
-               var1.method6869(var4, 2001, var8, Block.method11535(var9));
+               var1.setBlockState(var8, Blocks.AIR.method11579(), 35);
+               var1.method6869(var4, 2001, var8, Block.getStateId(var9));
             }
          }
       }
@@ -187,7 +187,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private static boolean method11685(Class1665 var0, BlockPos var1) {
-      return var0.getBlockState(var1.method8313()).getBlock() instanceof Class3250;
+      return var0.getBlockState(var1.down()).getBlock() instanceof Class3250;
    }
 
    public static Optional<Vector3d> method11686(EntityType<?> var0, Class1668 var1, BlockPos var2, float var3) {
@@ -207,7 +207,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       int[][] var7 = method11693(var3, var4);
       Optional var8 = method11688(var0, var1, var2, var7, true);
       if (!var8.isPresent()) {
-         BlockPos var9 = var2.method8313();
+         BlockPos var9 = var2.down();
          Optional var10 = method11688(var0, var1, var9, var7, true);
          if (!var10.isPresent()) {
             int[][] var11 = method11694(var3);
@@ -268,10 +268,10 @@ public class Class3250 extends Class3198 implements Class3245 {
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
       super.method11563(var1, var2, var3, var4, var5);
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          BlockPos var8 = var2.method8349(var3.<Direction>method23463(field18484));
-         var1.method6725(var8, var3.method23465(field18713, Class82.HEAD), 3);
-         var1.method6964(var2, Blocks.AIR);
+         var1.setBlockState(var8, var3.method23465(field18713, Class82.HEAD), 3);
+         var1.func_230547_a_(var2, Blocks.AIR);
          var3.method23424(var1, var2, 3);
       }
    }

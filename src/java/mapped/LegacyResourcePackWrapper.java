@@ -882,7 +882,7 @@ public class LegacyResourcePackWrapper implements IResourcePack {
    });
 
    private static ResourceLocation method1229(ResourceLocation var0) {
-      return new ResourceLocation(var0.method8293(), var0.method8292() + ".mcmeta");
+      return new ResourceLocation(var0.getNamespace(), var0.getPath() + ".mcmeta");
    }
 
    public LegacyResourcePackWrapper(IResourcePack var1, Map<ResourceLocation, ResourceLocation> var2) {

@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 public class Class372 extends Thread {
-   public final Class1645 field1625;
+   public final DedicatedServer field1625;
 
-   public Class372(Class1645 var1, String var2) {
+   public Class372(DedicatedServer var1, String var2) {
       super(var2);
       this.field1625 = var1;
    }
@@ -23,7 +23,7 @@ public class Class372 extends Thread {
             this.field1625.method6499(var4, this.field1625.method1404());
          }
       } catch (IOException var6) {
-         Class1645.method1453().error("Exception handling console input", var6);
+         DedicatedServer.method1453().error("Exception handling console input", var6);
       }
    }
 }

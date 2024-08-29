@@ -27,14 +27,14 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, Class7379 var5, float var6) {
+   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
       return this.method3532() && Class1079.method5002(var4) ? Math.min(0.8F, var6) : var6;
    }
 
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Entity var4 = var1.getEntity();
          Entity var5 = this.method3460();
          boolean var6;
@@ -72,7 +72,7 @@ public class Class902 extends Class901 {
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Class2141 var4 = !this.world.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
          this.world.method6756(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0F, false, var4);
          this.method2904();

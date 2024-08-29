@@ -29,7 +29,7 @@ public class Class9624 {
       this.method37501(var2.method3136(var5), var2.method3282(var5));
       this.method37502(
          MathHelper.method37822((double)var5, var2.prevPosX, var2.getPosX()),
-         MathHelper.method37822((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.method37821(var5, this.field45019, this.field45018),
+         MathHelper.method37822((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.lerp(var5, this.field45019, this.field45018),
          MathHelper.method37822((double)var5, var2.prevPosZ, var2.getPosZ())
       );
       if (!var3) {
@@ -142,11 +142,11 @@ public class Class9624 {
       return this.field45016;
    }
 
-   public Class7379 method37512() {
+   public FluidState method37512() {
       if (!this.field45005) {
          return Class9479.field44064.method25049();
       } else {
-         Class7379 var3 = this.field45006.method6739(this.field45009);
+         FluidState var3 = this.field45006.getFluidState(this.field45009);
          return !var3.method23474()
                && this.field45008.field18049 >= (double)((float)this.field45009.getY() + var3.method23475(this.field45006, this.field45009))
             ? Class9479.field44064.method25049()

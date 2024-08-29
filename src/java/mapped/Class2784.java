@@ -30,7 +30,7 @@ public class Class2784 extends Class2595 {
 
                BlockPos var4 = this.field17402.getPosition();
                BlockState var5 = this.field17401.world.getBlockState(var4);
-               if (var5.getBlock().method11540(Class7645.field32770)) {
+               if (var5.getBlock().method11540(BlockTags.field32770)) {
                   this.field17403 = var5.<Direction>method23464(Class3250.field18484)
                      .<BlockPos>map(var1 -> var4.method8349(var1.method536()))
                      .orElseGet(() -> new BlockPos(var4));
@@ -102,7 +102,7 @@ public class Class2784 extends Class2595 {
             false
          );
       var4.method8374(this.field17401.getPosition());
-      Class7318 var5 = this.field17401.world.method6715().method1411().method1058(Class8793.field39595);
+      Class7318 var5 = this.field17401.world.getServer().method1411().method1058(Class8793.field39595);
       Class9464 var6 = new Class9464((ServerWorld)this.field17401.world)
          .method36454(Class9525.field44335, this.field17401.getPositionVec())
          .method36454(Class9525.field44330, this.field17401)

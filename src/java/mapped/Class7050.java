@@ -17,7 +17,7 @@ public class Class7050 {
       if (field30440 != null) {
          Screen var3 = field30438.currentScreen;
          if (var3 instanceof Class851) {
-            if (!var0.method8293().equals("minecraft") || !var0.method8292().startsWith("textures/gui/")) {
+            if (!var0.getNamespace().equals("minecraft") || !var0.getPath().startsWith("textures/gui/")) {
                return var0;
             } else if (field30439 != null) {
                ClientWorld var4 = field30438.world;

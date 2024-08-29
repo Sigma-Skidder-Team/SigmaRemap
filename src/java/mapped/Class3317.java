@@ -14,7 +14,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          Entity var7 = var2.getRidingEntity();
          if (var2.isPassenger() && var7 instanceof Class1071 && var7.getType() == this.field18826) {
             Class1071 var8 = (Class1071)var7;

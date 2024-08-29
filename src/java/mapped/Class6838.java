@@ -39,7 +39,7 @@ public class Class6838 extends Class6829 {
          this.field29726.rotationYaw = this.method20816(this.field29726.rotationYaw, var11, 90.0F);
          this.field29726.field4965 = this.field29726.rotationYaw;
          float var12 = (float)(this.field29711 * this.field29726.method3086(Class9173.field42108));
-         this.field29726.method3113(MathHelper.method37821(0.125F, this.field29726.method2918(), var12));
+         this.field29726.method3113(MathHelper.lerp(0.125F, this.field29726.method2918(), var12));
          this.field29726.method3434(this.field29726.method3433().method11339(0.0, (double)this.field29726.method2918() * var5 * 0.1, 0.0));
       } else {
          this.field29726.method3113(0.0F);

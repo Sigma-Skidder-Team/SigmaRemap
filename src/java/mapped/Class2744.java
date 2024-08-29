@@ -52,7 +52,7 @@ public class Class2744 extends Class2736 {
             .method8349(this.field17271);
          BlockState var5 = var3.getBlockState(var4);
          if (Class3442.method12119(var5)) {
-            var3.method6725(var4, Class3442.method12121(var5.getBlock()), 3);
+            var3.setBlockState(var4, Class3442.method12121(var5.getBlock()), 3);
             this.field17258.method4239();
             this.field17258.method2904();
          }

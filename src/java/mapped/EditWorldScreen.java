@@ -106,7 +106,7 @@ public class EditWorldScreen extends Screen {
             20,
             new TranslationTextComponent("selectWorld.edit.export_worldgen_settings"),
             var1 -> {
-               Class8905 var4x = DynamicRegistries.func_239770_b_();
+               DynamicRegistriesImpl var4x = DynamicRegistries.func_239770_b_();
 
                DataResult<String> var9;
                try (Minecraft.PackManager var5x = this.field4562.reloadDatapacks(var4x, Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, this.field7035)) {

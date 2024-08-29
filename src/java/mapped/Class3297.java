@@ -9,6 +9,6 @@ public class Class3297 extends Class3292 {
 
    @Override
    public boolean method11843(Class5909 var1, BlockState var2) {
-      return var1.method18360().method6725(var1.method18345(), var2, 26);
+      return var1.method18360().setBlockState(var1.method18345(), var2, 26);
    }
 }

@@ -112,10 +112,10 @@ public class Class3432 extends Class3429 {
       boolean var7 = var1.<Boolean>method23463(field19197);
       boolean var8 = var2.method6780(var3) || this.method12098(var2, var3, var1, true, 0) || this.method12098(var2, var3, var1, false, 0);
       if (var8 != var7) {
-         var2.method6725(var3, var1.method23465(field19197, Boolean.valueOf(var8)), 3);
-         var2.method6733(var3.method8313(), this);
+         var2.setBlockState(var3, var1.method23465(field19197, Boolean.valueOf(var8)), 3);
+         var2.notifyNeighborsOfStateChange(var3.down(), this);
          if (var1.<Class96>method23463(field19196).method275()) {
-            var2.method6733(var3.method8311(), this);
+            var2.notifyNeighborsOfStateChange(var3.up(), this);
          }
       }
    }

@@ -59,7 +59,7 @@ public abstract class Class2642 extends Class2595 {
                   }
                }
 
-               this.field16975 = this.field16974.getPosition().method8311();
+               this.field16975 = this.field16974.getPosition().up();
                this.field16976 = Class3461.method12144(this.field16974.world, this.field16975);
                return this.field16976;
             } else {

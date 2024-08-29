@@ -82,7 +82,7 @@ public class Class7978 {
             for (int var6 = 0; var6 < this.field34296.length; var6++) {
                ResourceLocation var7 = this.field34296[var6];
                if (!Class7944.method26866(var7)) {
-                  Class7944.method26811("Texture not found: " + var7.method8292());
+                  Class7944.method26811("Texture not found: " + var7.getPath());
                   return false;
                }
             }

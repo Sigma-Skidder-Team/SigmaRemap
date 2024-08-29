@@ -44,7 +44,7 @@ public class Class892 extends Class890 {
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.rand.nextInt(8) == 0) {
             byte var4 = 1;
             if (this.rand.nextInt(32) == 0) {

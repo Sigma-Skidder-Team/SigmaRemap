@@ -71,7 +71,7 @@ public class Class2607 extends Class2605 {
          this.field16858.method3114(var3);
          Class1110.method5352(this.field16858, Class2143.field14028);
          if (!this.field16858.method3245()) {
-            this.field16858.world.method6999(1039, this.field16858.getPosition(), 0);
+            this.field16858.world.playEvent(1039, this.field16858.getPosition(), 0);
          }
       }
    }

@@ -23,7 +23,7 @@ public enum Class101 implements Class83 {
    private final String field302;
    private final Class2029 field303;
    private final Predicate<BlockState> field304;
-   private static final Map<String, Class101> field305 = Util.<Map<String, Class101>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, Class101> field305 = Util.<Map<String, Class101>>make(Maps.newHashMap(), var0 -> {
       for (Class101 var6 : values()) {
          var0.put(var6.field302, var6);
       }

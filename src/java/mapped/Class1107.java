@@ -87,7 +87,7 @@ public class Class1107 extends Class1009 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !Class3442.method12119(var2.getBlockState(var1.method8313())) ? super.method4339(var1, var2) : 10.0F;
+      return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.method4339(var1, var2) : 10.0F;
    }
 
    public static boolean method5317(EntityType<Class1107> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {

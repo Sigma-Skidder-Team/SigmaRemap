@@ -57,7 +57,7 @@ public enum Class108 implements Class83 {
       if (!var0.method23448(Blocks.CLAY)) {
          if (var0.method23448(Blocks.field36521)) {
             return field353;
-         } else if (!var0.method23446(Class7645.field32734)) {
+         } else if (!var0.method23446(BlockTags.field32734)) {
             if (var0.method23448(Blocks.PACKED_ICE)) {
                return field355;
             } else if (!var0.method23448(Blocks.field36893)) {

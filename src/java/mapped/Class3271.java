@@ -23,12 +23,12 @@ public class Class3271 extends Item implements Class3260 {
    }
 
    public static Optional<RegistryKey<World>> method11790(CompoundNBT var0) {
-      return World.field8998.parse(NBTDynamicOps.INSTANCE, var0.method116("LodestoneDimension")).result();
+      return World.CODEC.parse(NBTDynamicOps.INSTANCE, var0.method116("LodestoneDimension")).result();
    }
 
    @Override
    public void method11724(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
-      if (!var2.field9020 && method11789(var1)) {
+      if (!var2.isRemote && method11789(var1)) {
          CompoundNBT var8 = var1.getOrCreateTag();
          if (var8.contains("LodestoneTracked") && !var8.method132("LodestoneTracked")) {
             return;
@@ -71,13 +71,13 @@ public class Class3271 extends Item implements Class3260 {
             this.method11791(var5.getDimensionKey(), var4, var7.getOrCreateTag());
          }
 
-         return ActionResultType.method9002(var5.field9020);
+         return ActionResultType.method9002(var5.isRemote);
       }
    }
 
    private void method11791(RegistryKey<World> var1, BlockPos var2, CompoundNBT var3) {
       var3.put("LodestonePos", Class8354.method29284(var2));
-      World.field8998
+      World.CODEC
          .encodeStart(NBTDynamicOps.INSTANCE, var1)
          .resultOrPartial(field18771::error)
          .ifPresent(var1x -> var3.put("LodestoneDimension", var1x));

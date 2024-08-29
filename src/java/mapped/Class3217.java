@@ -12,7 +12,7 @@ public class Class3217 extends Class3213 {
    @Override
    public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
       if (method11604(var1, var2, var4)) {
-         var1.method6725(var2, this.field18626, 3);
+         var1.setBlockState(var2, this.field18626, 3);
       }
    }
 

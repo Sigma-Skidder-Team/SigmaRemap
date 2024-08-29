@@ -27,7 +27,7 @@ public class Class6898 extends Class6896 {
       int var11 = var3 + 2;
       int var12 = MathHelper.floor((double)var11 * 0.618);
       if (!var7.field22414) {
-         method21069(var1, var4.method8313());
+         method21069(var1, var4.down());
       }
 
       double var13 = 1.0;

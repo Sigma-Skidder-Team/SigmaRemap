@@ -20,8 +20,8 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25051(World var1, BlockPos var2, Class7379 var3, Random var4) {
-      BlockPos var7 = var2.method8311();
+   public void method25051(World var1, BlockPos var2, FluidState var3, Random var4) {
+      BlockPos var7 = var2.up();
       if (var1.getBlockState(var7).isAir() && !var1.getBlockState(var7).method23409(var1, var7)) {
          if (var4.nextInt(100) == 0) {
             double var8 = (double)var2.getX() + var4.nextDouble();
@@ -49,7 +49,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25053(World var1, BlockPos var2, Class7379 var3, Random var4) {
+   public void method25053(World var1, BlockPos var2, FluidState var3, Random var4) {
       if (var1.method6789().method17135(Class5462.field24223)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
@@ -59,8 +59,8 @@ public abstract class Class7637 extends Class7633 {
                   return;
                }
 
-               if (var1.method7007(var9.method8311()) && this.method25103(var1, var9)) {
-                  var1.method6730(var9.method8311(), Class3397.method12009(var1, var9));
+               if (var1.method7007(var9.up()) && this.method25103(var1, var9)) {
+                  var1.setBlockState(var9.up(), AbstractFireBlock.method12009(var1, var9));
                }
             }
          } else {
@@ -78,7 +78,7 @@ public abstract class Class7637 extends Class7633 {
                      return;
                   }
                } else if (this.method25102(var1, var11)) {
-                  var1.method6730(var11, Class3397.method12009(var1, var11));
+                  var1.setBlockState(var11, AbstractFireBlock.method12009(var1, var11));
                   return;
                }
             }
@@ -113,11 +113,11 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public int method25087(Class1662 var1) {
-      return !var1.method6812().method36877() ? 2 : 4;
+      return !var1.method6812().isUltrawarm() ? 2 : 4;
    }
 
    @Override
-   public BlockState method25063(Class7379 var1) {
+   public BlockState method25063(FluidState var1) {
       return Blocks.LAVA.method11579().method23465(Class3404.field19079, Integer.valueOf(method25094(var1)));
    }
 
@@ -128,21 +128,21 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public int method25092(Class1662 var1) {
-      return !var1.method6812().method36877() ? 2 : 1;
+      return !var1.method6812().isUltrawarm() ? 2 : 1;
    }
 
    @Override
-   public boolean method25055(Class7379 var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
+   public boolean method25055(FluidState var1, Class1665 var2, BlockPos var3, Fluid var4, Direction var5) {
       return var1.method23475(var2, var3) >= 0.44444445F && var4.method25067(Class8953.field40469);
    }
 
    @Override
    public int method25057(Class1662 var1) {
-      return !var1.method6812().method36877() ? 30 : 10;
+      return !var1.method6812().isUltrawarm() ? 30 : 10;
    }
 
    @Override
-   public int method25093(World var1, BlockPos var2, Class7379 var3, Class7379 var4) {
+   public int method25093(World var1, BlockPos var2, FluidState var3, FluidState var4) {
       int var7 = this.method25057(var1);
       if (!var3.method23474()
          && !var4.method23474()
@@ -157,7 +157,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    private void method25104(Class1660 var1, BlockPos var2) {
-      var1.method6999(1501, var2, 0);
+      var1.playEvent(1501, var2, 0);
    }
 
    @Override
@@ -166,12 +166,12 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, Class7379 var5) {
+   public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
       if (var4 == Direction.DOWN) {
-         Class7379 var8 = var1.method6739(var2);
+         FluidState var8 = var1.getFluidState(var2);
          if (this.method25067(Class8953.field40470) && var8.method23486(Class8953.field40469)) {
             if (var3.getBlock() instanceof Class3404) {
-               var1.method6725(var2, Blocks.STONE.method11579(), 3);
+               var1.setBlockState(var2, Blocks.STONE.method11579(), 3);
             }
 
             this.method25104(var1, var2);

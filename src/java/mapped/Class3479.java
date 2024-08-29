@@ -40,7 +40,7 @@ public class Class3479 extends Class3194 implements Class3196 {
          }
 
          if (var2.method7007(var11) && var1.method23443(var2, var11)) {
-            var2.method6725(var11, var1, 2);
+            var2.setBlockState(var11, var1, 2);
          }
       }
    }
@@ -52,17 +52,17 @@ public class Class3479 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockPos var6 = var3.method8313();
+      BlockPos var6 = var3.down();
       BlockState var7 = var2.getBlockState(var6);
-      return var7.method23446(Class7645.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
+      return var7.method23446(BlockTags.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
    }
 
    public boolean method12174(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {
-      var1.method6728(var2, false);
+      var1.removeBlock(var2, false);
       Class7909 var7;
       if (this != Blocks.BROWN_MUSHROOM) {
          if (this != Blocks.RED_MUSHROOM) {
-            var1.method6725(var2, var3, 3);
+            var1.setBlockState(var2, var3, 3);
             return false;
          }
 
@@ -71,8 +71,8 @@ public class Class3479 extends Class3194 implements Class3196 {
          var7 = Class9104.field41768;
       }
 
-      if (!var7.method26521(var1, var1.method6883().method7370(), var4, var2)) {
-         var1.method6725(var2, var3, 3);
+      if (!var7.method26521(var1, var1.getChunkProvider().method7370(), var4, var2)) {
+         var1.setBlockState(var2, var3, 3);
          return false;
       } else {
          return true;

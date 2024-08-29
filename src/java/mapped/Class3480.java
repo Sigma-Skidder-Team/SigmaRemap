@@ -63,7 +63,7 @@ public class Class3480 extends Class3194 implements Class3196 {
          if (var7 < this.method12176()) {
             float var8 = method12182(this, var2, var3);
             if (var4.nextInt((int)(25.0F / var8) + 1) == 0) {
-               var2.method6725(var3, this.method12178(var7 + 1), 2);
+               var2.setBlockState(var3, this.method12178(var7 + 1), 2);
             }
          }
       }
@@ -76,16 +76,16 @@ public class Class3480 extends Class3194 implements Class3196 {
          var6 = var7;
       }
 
-      var1.method6725(var2, this.method12178(var6), 2);
+      var1.setBlockState(var2, this.method12178(var6), 2);
    }
 
    public int method12181(World var1) {
-      return MathHelper.method37782(var1.field9016, 2, 5);
+      return MathHelper.method37782(var1.rand, 2, 5);
    }
 
    public static float method12182(Block var0, Class1665 var1, BlockPos var2) {
       float var5 = 1.0F;
-      BlockPos var6 = var2.method8313();
+      BlockPos var6 = var2.down();
 
       for (int var7 = -1; var7 <= 1; var7++) {
          for (int var8 = -1; var8 <= 1; var8++) {
@@ -106,19 +106,19 @@ public class Class3480 extends Class3194 implements Class3196 {
          }
       }
 
-      BlockPos var14 = var2.method8341();
-      BlockPos var15 = var2.method8343();
-      BlockPos var16 = var2.method8345();
-      BlockPos var17 = var2.method8347();
+      BlockPos var14 = var2.north();
+      BlockPos var15 = var2.south();
+      BlockPos var16 = var2.west();
+      BlockPos var17 = var2.east();
       boolean var11 = var0 == var1.getBlockState(var16).getBlock() || var0 == var1.getBlockState(var17).getBlock();
       boolean var12 = var0 == var1.getBlockState(var14).getBlock() || var0 == var1.getBlockState(var15).getBlock();
       if (var11 && var12) {
          var5 /= 2.0F;
       } else {
-         boolean var13 = var0 == var1.getBlockState(var16.method8341()).getBlock()
-            || var0 == var1.getBlockState(var17.method8341()).getBlock()
-            || var0 == var1.getBlockState(var17.method8343()).getBlock()
-            || var0 == var1.getBlockState(var16.method8343()).getBlock();
+         boolean var13 = var0 == var1.getBlockState(var16.north()).getBlock()
+            || var0 == var1.getBlockState(var17.north()).getBlock()
+            || var0 == var1.getBlockState(var17.south()).getBlock()
+            || var0 == var1.getBlockState(var16.south()).getBlock();
          if (var13) {
             var5 /= 2.0F;
          }

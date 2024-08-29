@@ -28,7 +28,7 @@ public class Class5223 extends Module {
     public static void method16265(BlockPos var0) {
         mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var0, Direction.field673));
         mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13486, var0, Direction.field673));
-        mc.world.method6730(var0, Blocks.AIR.method11579());
+        mc.world.setBlockState(var0, Blocks.AIR.method11579());
     }
 
     @EventTarget

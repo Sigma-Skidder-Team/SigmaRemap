@@ -71,7 +71,7 @@ public abstract class PlayerEntity extends Class880 {
       super(EntityType.PLAYER, var1);
       this.method3374(method2960(var4));
       this.field4926 = var4;
-      this.field4904 = new Class5830(this.inventory, !var1.field9020, this);
+      this.field4904 = new Class5830(this.inventory, !var1.isRemote, this);
       this.field4905 = this.field4904;
       this.method3273((double)var2.getX() + 0.5, (double)(var2.getY() + 1), (double)var2.getZ() + 0.5, var3, 0.0F);
       this.field4978 = 180.0F;
@@ -135,20 +135,20 @@ public abstract class PlayerEntity extends Class880 {
             this.field4917 = 100;
          }
 
-         if (!this.world.field9020 && this.world.method6740()) {
+         if (!this.world.isRemote && this.world.method6740()) {
             this.stopSleepInBed(false, true);
          }
       }
 
       this.method2854();
       super.tick();
-      if (!this.world.field9020 && this.field4905 != null && !this.field4905.method18103(this)) {
+      if (!this.world.isRemote && this.field4905 != null && !this.field4905.method18103(this)) {
          this.method2772();
          this.field4905 = this.field4904;
       }
 
       this.method2856();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.field4906.method37571(this);
          this.method2911(Class8876.field40106);
          if (this.method3066()) {
@@ -455,13 +455,13 @@ public abstract class PlayerEntity extends Class880 {
 
       this.method2872(this.method2969());
       this.method2872(this.method2971());
-      if (!this.world.field9020 && (this.fallDistance > 0.5F || this.method3250()) || this.abilities.field29607 || this.isSleeping()) {
+      if (!this.world.isRemote && (this.fallDistance > 0.5F || this.method3250()) || this.abilities.field29607 || this.isSleeping()) {
          this.method2949();
       }
    }
 
    private void method2872(CompoundNBT var1) {
-      if (var1 != null && (!var1.contains("Silent") || !var1.method132("Silent")) && this.world.field9016.nextInt(200) == 0) {
+      if (var1 != null && (!var1.contains("Silent") || !var1.method132("Silent")) && this.world.rand.nextInt(200) == 0) {
          String var4 = var1.method126("id");
          EntityType.method33199(var4)
             .filter(var0 -> var0 == EntityType.field41062)
@@ -474,10 +474,10 @@ public abstract class PlayerEntity extends Class880 {
                            this.getPosX(),
                            this.getPosY(),
                            this.getPosZ(),
-                           Class1015.method4411(this.world, this.world.field9016),
+                           Class1015.method4411(this.world, this.world.rand),
                            this.method2864(),
                            1.0F,
-                           Class1015.method4413(this.world.field9016)
+                           Class1015.method4413(this.world.rand)
                         );
                   }
                }
@@ -581,7 +581,7 @@ public abstract class PlayerEntity extends Class880 {
    @Nullable
    public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
       if (!var1.isEmpty()) {
-         if (this.world.field9020 && Class8005.method27372().method18582() >= Class5989.field26151.method18582()) {
+         if (this.world.isRemote && Class8005.method27372().method18582() >= Class5989.field26151.method18582()) {
             this.swingArm(Hand.MAIN_HAND);
          }
 
@@ -799,7 +799,7 @@ public abstract class PlayerEntity extends Class880 {
    @Override
    public void method2887(float var1) {
       if (this.field5001.getItem() == Items.field38119) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method2913(Class8876.field40098.method172(this.field5001.getItem()));
          }
 
@@ -815,7 +815,7 @@ public abstract class PlayerEntity extends Class880 {
                }
 
                this.field5001 = ItemStack.EMPTY;
-               this.method2863(Sounds.field27036, 0.8F, 0.8F + this.world.field9016.nextFloat() * 0.4F);
+               this.method2863(Sounds.field27036, 0.8F, 0.8F + this.world.rand.nextFloat() * 0.4F);
             }
          }
       }
@@ -1153,7 +1153,7 @@ public abstract class PlayerEntity extends Class880 {
                   var30 = ((Class908)var1).field5186;
                }
 
-               if (!this.world.field9020 && !var29.isEmpty() && var30 instanceof Class880) {
+               if (!this.world.isRemote && !var29.isEmpty() && var30 instanceof Class880) {
                   var29.method32122((Class880)var30, this);
                   if (var29.isEmpty()) {
                      this.method3095(Hand.MAIN_HAND, ItemStack.EMPTY);
@@ -1259,7 +1259,7 @@ public abstract class PlayerEntity extends Class880 {
       if (var8 instanceof Class3389 && var7.<Integer>method23463(Class3389.field19000) > 0 && Class3389.method11988(var0)) {
          Optional var11 = Class3389.method11991(EntityType.PLAYER, var0, var1);
          if (!var4 && var11.isPresent()) {
-            var0.method6725(var1, var7.method23465(Class3389.field19000, Integer.valueOf(var7.<Integer>method23463(Class3389.field19000) - 1)), 3);
+            var0.setBlockState(var1, var7.method23465(Class3389.field19000, Integer.valueOf(var7.<Integer>method23463(Class3389.field19000) - 1)), 3);
          }
 
          return var11;
@@ -1269,7 +1269,7 @@ public abstract class PlayerEntity extends Class880 {
          return Optional.<Vector3d>empty();
       } else {
          boolean var9 = var8.method11564();
-         boolean var10 = var0.getBlockState(var1.method8311()).getBlock().method11564();
+         boolean var10 = var0.getBlockState(var1.up()).getBlock().method11564();
          return var9 && var10
             ? Optional.<Vector3d>of(new Vector3d((double)var1.getX() + 0.5, (double)var1.getY() + 0.1, (double)var1.getZ() + 0.5))
             : Optional.<Vector3d>empty();
@@ -1587,7 +1587,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    public void method2931(float var1) {
-      if (!this.abilities.field29606 && !this.world.field9020) {
+      if (!this.abilities.field29606 && !this.world.isRemote) {
          this.field4906.method37576(var1);
       }
    }
@@ -1730,7 +1730,7 @@ public abstract class PlayerEntity extends Class880 {
    }
 
    private void method2950(CompoundNBT var1) {
-      if (!this.world.field9020 && !var1.method134()) {
+      if (!this.world.isRemote && !var1.method134()) {
          EntityType.method33217(var1, this.world).ifPresent(var1x -> {
             if (var1x instanceof Class1013) {
                ((Class1013)var1x).method4398(this.entityUniqueID);
@@ -2003,7 +2003,7 @@ public abstract class PlayerEntity extends Class880 {
          Sounds.field26959,
          Class2266.field14735,
          0.5F,
-         var1.field9016.nextFloat() * 0.1F + 0.9F
+         var1.rand.nextFloat() * 0.1F + 0.9F
       );
       if (this instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44490.method15174((ServerPlayerEntity)this, var2);
@@ -2020,8 +2020,8 @@ public abstract class PlayerEntity extends Class880 {
    @Override
    public Vector3d method2986(float var1) {
       double var4 = 0.22 * (this.method2967() != Class2205.field14418 ? 1.0 : -1.0);
-      float var6 = MathHelper.method37821(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
-      float var7 = MathHelper.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
+      float var6 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
+      float var7 = MathHelper.lerp(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
       if (this.method3165() || this.method3130()) {
          Vector3d var8 = this.method3281(var1);
          Vector3d var9 = this.method3433();

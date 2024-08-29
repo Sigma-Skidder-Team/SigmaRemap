@@ -111,7 +111,7 @@ public class Class964 extends TileEntity {
          BlockPos var3 = this.getPos();
          BlockState var4 = this.field5324.getBlockState(var3);
          if (var4.method23448(Blocks.field37113)) {
-            this.field5324.method6725(var3, var4.method23465(Class3367.field18938, this.field5402), 2);
+            this.field5324.setBlockState(var3, var4.method23465(Class3367.field18938, this.field5402), 2);
          }
       }
    }
@@ -129,7 +129,7 @@ public class Class964 extends TileEntity {
 
    public boolean method3933(PlayerEntity var1) {
       if (var1.method2979()) {
-         if (var1.method3395().field9020) {
+         if (var1.method3395().isRemote) {
             var1.method2891(this);
          }
 
@@ -144,7 +144,7 @@ public class Class964 extends TileEntity {
    }
 
    public String method3935() {
-      return this.field5395 != null ? this.field5395.method8292() : "";
+      return this.field5395 != null ? this.field5395.getPath() : "";
    }
 
    public boolean method3936() {
@@ -211,7 +211,7 @@ public class Class964 extends TileEntity {
       this.field5402 = var1;
       BlockState var4 = this.field5324.getBlockState(this.getPos());
       if (var4.method23448(Blocks.field37113)) {
-         this.field5324.method6725(this.getPos(), var4.method23465(Class3367.field18938, var1), 2);
+         this.field5324.setBlockState(this.getPos(), var4.method23465(Class3367.field18938, var1), 2);
       }
    }
 
@@ -274,7 +274,7 @@ public class Class964 extends TileEntity {
                );
                this.method3622();
                BlockState var10 = this.field5324.getBlockState(var3);
-               this.field5324.method6731(var3, var10, var10, 3);
+               this.field5324.notifyBlockUpdate(var3, var10, var10, 3);
                return true;
             } else {
                return false;
@@ -352,7 +352,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3964(boolean var1) {
-      if (this.field5402 == Class104.field318 && !this.field5324.field9020 && this.field5395 != null) {
+      if (this.field5402 == Class104.field318 && !this.field5324.isRemote && this.field5395 != null) {
          BlockPos var4 = this.getPos().method8337(this.field5398);
          ServerWorld var5 = (ServerWorld)this.field5324;
          Class8761 var6 = var5.method6938();
@@ -417,7 +417,7 @@ public class Class964 extends TileEntity {
          this.field5399 = var7;
          this.method3622();
          BlockState var9 = var1.getBlockState(var6);
-         var1.method6731(var6, var9, var9, 3);
+         var1.notifyBlockUpdate(var6, var9, var9, 3);
       }
 
       if (var2 && !var8) {
@@ -443,7 +443,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3970() {
-      if (this.field5402 == Class104.field319 && !this.field5324.field9020 && this.field5395 != null) {
+      if (this.field5402 == Class104.field319 && !this.field5324.isRemote && this.field5395 != null) {
          ServerWorld var3 = (ServerWorld)this.field5324;
          Class8761 var4 = var3.method6938();
 

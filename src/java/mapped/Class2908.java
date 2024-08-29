@@ -15,7 +15,7 @@ public class Class2908 extends Class2898<Class4738> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4738 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4738 var5) {
       boolean var8 = false;
       boolean var9 = var3.nextDouble() < 0.9;
       int var10 = !var9 ? 0 : var5.method14877().method27633(var3);

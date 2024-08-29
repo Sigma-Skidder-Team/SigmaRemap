@@ -9,9 +9,9 @@ public class Class2905 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       while (var1.method7007(var4) && var4.getY() > 2) {
-         var4 = var4.method8313();
+         var4 = var4.down();
       }
 
       if (!var1.getBlockState(var4).method23448(Blocks.SNOW_BLOCK)) {
@@ -82,7 +82,7 @@ public class Class2905 extends Class2898<Class4712> {
                   }
 
                   this.method11217(var1, var23, Blocks.PACKED_ICE.method11579());
-                  var23 = var23.method8313();
+                  var23 = var23.down();
                   if (--var24 <= 0) {
                      var23 = var23.method8340(var3.nextInt(5) + 1);
                      var24 = var3.nextInt(5);

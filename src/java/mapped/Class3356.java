@@ -39,14 +39,14 @@ public class Class3356 extends Class3241 {
       BlockPos var6 = var2.method8349(var3.<Direction>method23463(field18896).method536());
       BlockState var7 = var1.getBlockState(var6);
       if (var7.getBlock() instanceof Class3435 && var7.<Boolean>method23463(Class3435.field19202)) {
-         var1.method6728(var6, false);
+         var1.removeBlock(var6, false);
       }
    }
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020 && var2.getTileEntity(var3) == null) {
-         var2.method6728(var3, false);
+      if (!var2.isRemote && var2.getTileEntity(var3) == null) {
+         var2.removeBlock(var3, false);
          return ActionResultType.field14819;
       } else {
          return ActionResultType.field14820;

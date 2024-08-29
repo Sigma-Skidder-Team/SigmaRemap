@@ -149,7 +149,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          } else {
             super.method17842(var1, var2, var3, var4, var5);
             float var9 = !var1.method3250() ? -90.0F : -90.0F - var1.rotationPitch;
-            float var10 = MathHelper.method37821(var8, 0.0F, var9);
+            float var10 = MathHelper.lerp(var8, 0.0F, var9);
             var2.method35293(Class7680.field32898.method25286(var10));
             if (var1.method3166()) {
                var2.translate(0.0, -1.0, 0.3F);

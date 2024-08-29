@@ -41,7 +41,7 @@ public class Class886 extends AbstractArrowEntity {
       if ((this.field5114 || this.method3493()) && var3 != null) {
          byte var4 = this.dataManager.<Byte>method35445(field5111);
          if (var4 > 0 && !this.method3495()) {
-            if (!this.world.field9020 && this.field5102 == Class2192.field14332) {
+            if (!this.world.isRemote && this.field5102 == Class2192.field14332) {
                this.method3303(this.method3480(), 0.1F);
             }
 
@@ -50,7 +50,7 @@ public class Class886 extends AbstractArrowEntity {
             this.method3492(true);
             Vector3d var5 = new Vector3d(var3.getPosX() - this.getPosX(), var3.method3442() - this.getPosY(), var3.getPosZ() - this.getPosZ());
             this.method3446(this.getPosX(), this.getPosY() + var5.field18049 * 0.015 * (double)var4, this.getPosZ());
-            if (this.world.field9020) {
+            if (this.world.isRemote) {
                this.lastTickPosY = this.getPosY();
             }
 

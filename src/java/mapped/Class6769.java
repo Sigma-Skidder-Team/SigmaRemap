@@ -10,7 +10,7 @@ public class Class6769 extends Class6768<Class8278> {
 
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,

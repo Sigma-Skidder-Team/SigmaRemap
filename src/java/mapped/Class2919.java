@@ -9,10 +9,10 @@ public class Class2919 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       if (var4.getY() > var1.method6776() - 1) {
          return false;
-      } else if (!var1.getBlockState(var4).method23448(Blocks.WATER) && !var1.getBlockState(var4.method8313()).method23448(Blocks.WATER)) {
+      } else if (!var1.getBlockState(var4).method23448(Blocks.WATER) && !var1.getBlockState(var4.down()).method23448(Blocks.WATER)) {
          return false;
       } else {
          boolean var8 = false;
@@ -27,7 +27,7 @@ public class Class2919 extends Class2898<Class4712> {
          if (!var8) {
             return false;
          } else {
-            var1.method6725(var4, Blocks.field37006.method11579(), 2);
+            var1.setBlockState(var4, Blocks.field37006.method11579(), 2);
 
             for (int var19 = 0; var19 < 200; var19++) {
                int var20 = var3.nextInt(5) - var3.nextInt(6);
@@ -46,7 +46,7 @@ public class Class2919 extends Class2898<Class4712> {
                      for (Direction var17 : Direction.values()) {
                         BlockState var18 = var1.getBlockState(var22.method8349(var17));
                         if (var18.method23448(Blocks.field37006)) {
-                           var1.method6725(var22, Blocks.field37006.method11579(), 2);
+                           var1.setBlockState(var22, Blocks.field37006.method11579(), 2);
                            break;
                         }
                      }

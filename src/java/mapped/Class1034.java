@@ -124,7 +124,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public static boolean method4615(EntityType<Class1034> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return !var1.getBlockState(var3.method8313()).method23448(Blocks.field36891);
+      return !var1.getBlockState(var3.down()).method23448(Blocks.field36891);
    }
 
    @Nullable
@@ -167,7 +167,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    private void method4616(Class2106 var1, ItemStack var2) {
-      if (this.world.field9016.nextFloat() < 0.1F) {
+      if (this.world.rand.nextFloat() < 0.1F) {
          this.method2944(var1, var2);
       }
    }
@@ -191,7 +191,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ActionResultType var5 = super.method4285(var1, var2);
       if (!var5.isSuccessOrConsume()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             return Class4388.method13833(this, var1, var2);
          } else {
             boolean var6 = Class4388.method13834(this, var1.getHeldItem(var2)) && this.method4622() != Class2172.field14262;
@@ -215,7 +215,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public void method4308(boolean var1) {
       this.method3210().method35446(field5741, var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Class9805 var4 = this.method3085(Class9173.field42108);
          var4.method38670(field5745);
          if (var1) {
@@ -240,9 +240,9 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    @Override
    public void method4258() {
-      this.world.method6820().startSection("piglinBrain");
+      this.world.getProfiler().startSection("piglinBrain");
       this.method2992().method21432((ServerWorld)this.world, this);
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
       Class4388.method13812(this);
       super.method4258();
    }
@@ -305,7 +305,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class4388.method13835(this, (Class880)var1.method31109());
          }
@@ -396,7 +396,7 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    @Override
    public Class9455 method4241() {
-      return !this.world.field9020 ? Class4388.method13837(this).orElse((Class9455)null) : null;
+      return !this.world.isRemote ? Class4388.method13837(this).orElse((Class9455)null) : null;
    }
 
    @Override

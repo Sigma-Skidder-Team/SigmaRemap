@@ -29,12 +29,12 @@ public class Class3456 extends Class3194 {
    @Override
    public BlockState method11495(Class5909 var1) {
       BlockPos var4 = var1.method18345();
-      return var4.getY() < 255 && var1.method18360().getBlockState(var4.method8311()).method23441(var1) ? super.method11495(var1) : null;
+      return var4.getY() < 255 && var1.method18360().getBlockState(var4.up()).method23441(var1) ? super.method11495(var1) : null;
    }
 
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
-      var1.method6725(var2.method8311(), this.method11579().method23465(field19276, Class84.field209), 3);
+      var1.setBlockState(var2.up(), this.method11579().method23465(field19276, Class84.field209), 3);
    }
 
    @Override
@@ -42,21 +42,21 @@ public class Class3456 extends Class3194 {
       if (var1.<Class84>method23463(field19276) != Class84.field209) {
          return super.method11492(var1, var2, var3);
       } else {
-         BlockState var6 = var2.getBlockState(var3.method8313());
+         BlockState var6 = var2.getBlockState(var3.down());
          return var6.method23448(this) && var6.<Class84>method23463(field19276) == Class84.field210;
       }
    }
 
    public void method12129(Class1660 var1, BlockPos var2, int var3) {
-      var1.method6725(var2, this.method11579().method23465(field19276, Class84.field210), var3);
-      var1.method6725(var2.method8311(), this.method11579().method23465(field19276, Class84.field209), var3);
+      var1.setBlockState(var2, this.method11579().method23465(field19276, Class84.field210), var3);
+      var1.setBlockState(var2.up(), this.method11579().method23465(field19276, Class84.field209), var3);
    }
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          if (!var4.isCreative()) {
-            method11556(var3, var1, var2, (TileEntity)null, var4, var4.method3090());
+            spawnDrops(var3, var1, var2, (TileEntity)null, var4, var4.method3090());
          } else {
             method12130(var1, var2, var3, var4);
          }
@@ -73,11 +73,11 @@ public class Class3456 extends Class3194 {
    public static void method12130(World var0, BlockPos var1, BlockState var2, PlayerEntity var3) {
       Class84 var6 = var2.<Class84>method23463(field19276);
       if (var6 == Class84.field209) {
-         BlockPos var7 = var1.method8313();
+         BlockPos var7 = var1.down();
          BlockState var8 = var0.getBlockState(var7);
          if (var8.getBlock() == var2.getBlock() && var8.<Class84>method23463(field19276) == Class84.field210) {
-            var0.method6725(var7, Blocks.AIR.method11579(), 35);
-            var0.method6869(var3, 2001, var7, Block.method11535(var8));
+            var0.setBlockState(var7, Blocks.AIR.method11579(), 35);
+            var0.method6869(var3, 2001, var7, Block.getStateId(var8));
          }
       }
    }

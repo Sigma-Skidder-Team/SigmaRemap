@@ -70,8 +70,8 @@ public class Class301 implements Class268 {
                );
 
                for (ResourceLocation var9x : var3x) {
-                  String var10x = var9x.method8292();
-                  ResourceLocation var11 = new ResourceLocation(var9x.method8293(), var10x.substring(field1160, var10x.length() - field1161));
+                  String var10x = var9x.getPath();
+                  ResourceLocation var11 = new ResourceLocation(var9x.getNamespace(), var10x.substring(field1160, var10x.length() - field1161));
                   var6x.put(var11, CompletableFuture.supplyAsync(() -> {
                      List var7x = method1181(var2, var9x);
                      return Class7744.method25654(var11, this.field1166, var7, var7x);

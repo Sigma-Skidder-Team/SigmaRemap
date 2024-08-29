@@ -17,12 +17,12 @@ public final class Class6244 extends Class6218 {
          ? Class96.field247
          : var14.<Class96>method23463(((Class3429)var14.getBlock()).method12093());
       double var16;
-      if (!var14.method23446(Class7645.field32766)) {
-         if (!var14.isAir() || !var6.getBlockState(var13.method8313()).method23446(Class7645.field32766)) {
+      if (!var14.method23446(BlockTags.field32766)) {
+         if (!var14.isAir() || !var6.getBlockState(var13.down()).method23446(BlockTags.field32766)) {
             return this.field27735.method19196(var1, var2);
          }
 
-         BlockState var18 = var6.getBlockState(var13.method8313());
+         BlockState var18 = var6.getBlockState(var13.down());
          Class96 var19 = !(var18.getBlock() instanceof Class3429)
             ? Class96.field247
             : var18.<Class96>method23463(((Class3429)var18.getBlock()).method12093());
@@ -49,6 +49,6 @@ public final class Class6244 extends Class6218 {
 
    @Override
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(1000, var1.method11323(), 0);
+      var1.method11326().playEvent(1000, var1.method11323(), 0);
    }
 }

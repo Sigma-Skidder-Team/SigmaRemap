@@ -65,7 +65,7 @@ public class Class3285 extends Item {
       if (!var6.method23448(Blocks.field37061)) {
          return ActionResultType.field14820;
       } else {
-         return !Class3354.method11919(var4, var5, var6, var1.method18357()) ? ActionResultType.field14820 : ActionResultType.method9002(var4.field9020);
+         return !Class3354.method11919(var4, var5, var6, var1.method18357()) ? ActionResultType.field14820 : ActionResultType.method9002(var4.isRemote);
       }
    }
 
@@ -74,7 +74,7 @@ public class Class3285 extends Item {
       ItemStack var6 = var2.getHeldItem(var3);
       var2.method2769(var6, var3);
       var2.method2913(Class8876.field40098.method172(this));
-      return Class6794.<ItemStack>method20700(var6, var1.method6714());
+      return Class6794.<ItemStack>method20700(var6, var1.isRemote());
    }
 
    public static boolean method11820(ItemStack var0, Class6619 var1, PlayerEntity var2) {

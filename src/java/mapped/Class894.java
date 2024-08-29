@@ -47,7 +47,7 @@ public class Class894 extends Class890 {
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.world.method6786(this, (byte)3);
          this.method2904();
       }

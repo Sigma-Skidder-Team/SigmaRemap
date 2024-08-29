@@ -22,7 +22,7 @@ public class Class3213 extends Block {
 
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (method11598(var2.getBlockState(var3.method8313())) && var3.getY() >= 0) {
+      if (method11598(var2.getBlockState(var3.down())) && var3.getY() >= 0) {
          Class907 var7 = new Class907(var2, (double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5, var2.getBlockState(var3));
          this.method11596(var7);
          var2.method6916(var7);
@@ -38,7 +38,7 @@ public class Class3213 extends Block {
 
    public static boolean method11598(BlockState var0) {
       Class8649 var3 = var0.method23384();
-      return var0.isAir() || var0.method23446(Class7645.field32798) || var3.method31085() || var3.method31089();
+      return var0.isAir() || var0.method23446(BlockTags.field32798) || var3.method31085() || var3.method31089();
    }
 
    public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
@@ -50,7 +50,7 @@ public class Class3213 extends Block {
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(16) == 0) {
-         BlockPos var7 = var3.method8313();
+         BlockPos var7 = var3.down();
          if (method11598(var2.getBlockState(var7))) {
             double var8 = (double)var3.getX() + var4.nextDouble();
             double var10 = (double)var3.getY() - 0.05;

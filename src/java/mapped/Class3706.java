@@ -13,7 +13,7 @@ public class Class3706 extends Class3676<Class1042> {
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
       if (var1.method6783() - this.field19770 >= 300L) {
-         if (var1.field9016.nextInt(2) != 0) {
+         if (var1.rand.nextInt(2) != 0) {
             return false;
          } else {
             this.field19770 = var1.method6783();

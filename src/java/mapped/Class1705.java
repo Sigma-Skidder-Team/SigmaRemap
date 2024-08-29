@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class1705 extends Class1702 {
    private static final Logger field9288 = LogManager.getLogger();
-   private final Class1674 field9289;
+   private final Chunk field9289;
    private final Class196 field9290;
    public volatile Class8815 field9291;
    private final ClientWorld field9292;
@@ -15,16 +15,16 @@ public class Class1705 extends Class1702 {
    public Class1705(ClientWorld var1, int var2) {
       this.field9292 = var1;
       this.field9289 = new Class1675(var1, new Class7481(0, 0));
-      this.field9290 = new Class196(this, true, var1.method6812().method36875());
+      this.field9290 = new Class196(this, true, var1.method6812().hasSkyLight());
       this.field9291 = new Class8815(this, method7404(var2));
    }
 
    @Override
-   public Class196 method7348() {
+   public Class196 getLightManager() {
       return this.field9290;
    }
 
-   private static boolean method7398(Class1674 var0, int var1, int var2) {
+   private static boolean method7398(Chunk var0, int var1, int var2) {
       if (var0 == null) {
          return false;
       } else {
@@ -36,22 +36,22 @@ public class Class1705 extends Class1702 {
    public void method7399(int var1, int var2) {
       if (Class8815.method31828(this.field9291, var1, var2)) {
          int var5 = this.field9291.method31823(var1, var2);
-         Class1674 var6 = this.field9291.method31827(var5);
+         Chunk var6 = this.field9291.method31827(var5);
          if (method7398(var6, var1, var2)) {
             if (Class9299.field42777.method20241()) {
                Class9299.method35085(Class9299.field42777, var6);
             }
 
             var6.method7143(false);
-            this.field9291.method31825(var5, var6, (Class1674)null);
+            this.field9291.method31825(var5, var6, (Chunk)null);
          }
       }
    }
 
    @Nullable
-   public Class1674 method7346(int var1, int var2, Class9176 var3, boolean var4) {
+   public Chunk method7346(int var1, int var2, ChunkStatus var3, boolean var4) {
       if (Class8815.method31828(this.field9291, var1, var2)) {
-         Class1674 var7 = this.field9291.method31827(this.field9291.method31823(var1, var2));
+         Chunk var7 = this.field9291.method31827(this.field9291.method31823(var1, var2));
          if (method7398(var7, var1, var2)) {
             return var7;
          }
@@ -66,14 +66,14 @@ public class Class1705 extends Class1702 {
    }
 
    @Nullable
-   public Class1674 method7400(int var1, int var2, Class1684 var3, PacketBuffer var4, CompoundNBT var5, int var6, boolean var7) {
+   public Chunk method7400(int var1, int var2, Class1684 var3, PacketBuffer var4, CompoundNBT var5, int var6, boolean var7) {
       if (!Class8815.method31828(this.field9291, var1, var2)) {
          field9288.warn("Ignoring chunk since it's not in the view range: {}, {}", var1, var2);
          return null;
       } else {
          int var10 = this.field9291.method31823(var1, var2);
          Object var11 = this.field9291.field39654.get(var10);
-         if (!var7 && method7398((Class1674)var11, var1, var2)) {
+         if (!var7 && method7398((Chunk)var11, var1, var2)) {
             boolean var12 = false;
             if (var11 instanceof Class1676) {
                Class1676 var13 = (Class1676)var11;
@@ -86,7 +86,7 @@ public class Class1705 extends Class1702 {
                }
             }
 
-            ((Class1674)var11).method7142(var3, var4, var5, var6);
+            ((Chunk)var11).method7142(var3, var4, var5, var6);
             if (var12) {
                Class7038.field30374.set((Class8870)null);
             }
@@ -97,16 +97,16 @@ public class Class1705 extends Class1702 {
             }
 
             if (var11 != null) {
-               ((Class1674)var11).method7143(false);
+               ((Chunk)var11).method7143(false);
             }
 
             var11 = new Class1676(this.field9292, new Class7481(var1, var2), var3);
-            ((Class1674)var11).method7142(var3, var4, var5, var6);
-            this.field9291.method31824(var10, (Class1674)var11);
+            ((Chunk)var11).method7142(var3, var4, var5, var6);
+            this.field9291.method31824(var10, (Chunk)var11);
          }
 
-         Class7038[] var16 = ((Class1674)var11).method7067();
-         Class196 var17 = this.method7348();
+         Class7038[] var16 = ((Chunk)var11).method7067();
+         Class196 var17 = this.getLightManager();
          var17.method605(new Class7481(var1, var2), true);
 
          for (int var18 = 0; var18 < var16.length; var18++) {
@@ -119,8 +119,8 @@ public class Class1705 extends Class1702 {
             Class9299.method35085(Class9299.field42775, var11);
          }
 
-         ((Class1674)var11).method7143(true);
-         return (Class1674)var11;
+         ((Chunk)var11).method7143(true);
+         return (Chunk)var11;
       }
    }
 
@@ -141,7 +141,7 @@ public class Class1705 extends Class1702 {
          Class8815.method31830(var6, Class8815.method31833(this.field9291));
 
          for (int var7 = 0; var7 < this.field9291.field39654.length(); var7++) {
-            Class1674 var8 = this.field9291.field39654.get(var7);
+            Chunk var8 = this.field9291.field39654.get(var7);
             if (var8 != null) {
                Class7481 var9 = var8.method7072();
                if (Class8815.method31828(var6, var9.field32174, var9.field32175)) {

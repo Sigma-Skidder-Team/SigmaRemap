@@ -111,7 +111,7 @@ public class Class9743 {
    }
 
    public static void method38205(Class1036 var0) {
-      if ((double)var0.world.field9016.nextFloat() < 0.0125) {
+      if ((double)var0.world.rand.nextFloat() < 0.0125) {
          method38206(var0);
       }
    }

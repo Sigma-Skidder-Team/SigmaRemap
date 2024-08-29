@@ -8,7 +8,7 @@ public class Class7091 extends Class7092 {
    private static String[] field30517;
    public static final Codec<Class7091> field30518 = Codec.unit(() -> Class7091.field30519);
    public static final Class7091 field30519 = new Class7091();
-   private final Map<Block, Block> field30520 = Util.<Map<Block, Block>>method38508(Maps.newHashMap(), var0 -> {
+   private final Map<Block, Block> field30520 = Util.<Map<Block, Block>>make(Maps.newHashMap(), var0 -> {
       var0.put(Blocks.field36399, Blocks.field37130);
       var0.put(Blocks.field36526, Blocks.field37130);
       var0.put(Blocks.STONE, Blocks.field37134);

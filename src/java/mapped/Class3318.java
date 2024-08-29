@@ -16,7 +16,7 @@ public class Class3318 extends Item {
    @Override
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
-      if (!var4.field9020) {
+      if (!var4.isRemote) {
          ItemStack var5 = var1.method18357();
          Vector3d var6 = var1.method18355();
          Direction var7 = var1.method18354();
@@ -32,7 +32,7 @@ public class Class3318 extends Item {
          var5.method32182(1);
       }
 
-      return ActionResultType.method9002(var4.field9020);
+      return ActionResultType.method9002(var4.isRemote);
    }
 
    @Override
@@ -41,14 +41,14 @@ public class Class3318 extends Item {
          return Class6794.<ItemStack>method20698(var2.getHeldItem(var3));
       } else {
          ItemStack var6 = var2.getHeldItem(var3);
-         if (!var1.field9020) {
+         if (!var1.isRemote) {
             var1.method6916(new Class888(var1, var6, var2));
             if (!var2.abilities.isCreativeMode) {
                var6.method32182(1);
             }
          }
 
-         return Class6794.<ItemStack>method20700(var2.getHeldItem(var3), var1.method6714());
+         return Class6794.<ItemStack>method20700(var2.getHeldItem(var3), var1.isRemote());
       }
    }
 

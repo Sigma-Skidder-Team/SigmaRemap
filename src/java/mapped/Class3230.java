@@ -19,7 +19,7 @@ public class Class3230 extends Class3229 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!method11633(var1, var2, var3)) {
-         var2.method6725(
+         var2.setBlockState(
             var3,
             this.field18671.method11579().method23465(field18663, Boolean.valueOf(false)).method23465(field18669, var1.<Direction>method23463(field18669)),
             2

@@ -200,7 +200,7 @@ public class Class1048 extends Class1047 {
             this.method4781(2400);
          }
 
-         if (this.world.field9020 && this.method3250() && this.method3433().method11349() > 0.03) {
+         if (this.world.isRemote && this.method3250() && this.method3433().method11349() > 0.03) {
             Vector3d var3 = this.method3281(0.0F);
             float var4 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
             float var5 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
@@ -256,7 +256,7 @@ public class Class1048 extends Class1047 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!var5.isEmpty() && var5.getItem().method11743(Class5985.field26114)) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method2863(Sounds.field26502, 1.0F, 1.0F);
          }
 
@@ -265,7 +265,7 @@ public class Class1048 extends Class1047 {
             var5.method32182(1);
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }
@@ -278,7 +278,7 @@ public class Class1048 extends Class1047 {
                !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44121))
                   || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44145))
             )
-            && var1.method6739(var3).method23486(Class8953.field40469);
+            && var1.getFluidState(var3).method23486(Class8953.field40469);
       } else {
          return false;
       }

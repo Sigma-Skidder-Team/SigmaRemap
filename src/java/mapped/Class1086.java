@@ -18,11 +18,11 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.getBlockState(var1.method8313()).method23448(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
+      return !var2.getBlockState(var1.down()).method23448(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
    public static boolean method5034(EntityType<Class1086> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3.method8313()).method23448(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
+      return var1.getBlockState(var3.down()).method23448(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
    }
 
    @Override
@@ -67,14 +67,14 @@ public class Class1086 extends Class1087 implements Class1020 {
          }
 
          this.method2863(var9, 1.0F, 1.0F);
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else if (this.method5037() == Class2210.field14453 && var5.getItem().method11743(Class5985.field26103)) {
          if (this.field5952 == null) {
             Optional var6 = this.method5035(var5);
@@ -118,7 +118,7 @@ public class Class1086 extends Class1087 implements Class1020 {
             }
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }
@@ -127,7 +127,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    @Override
    public void method4515(Class2266 var1) {
       this.world.method6744((PlayerEntity)null, this, Sounds.field26769, var1, 1.0F, 1.0F);
-      if (!this.world.method6714()) {
+      if (!this.world.isRemote()) {
          ((ServerWorld)this.world).method6939(Class7940.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method2904();
          Class1087 var4 = EntityType.field41016.method33215(this.world);

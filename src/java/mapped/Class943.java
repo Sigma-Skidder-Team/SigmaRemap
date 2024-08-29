@@ -34,7 +34,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
                Sounds.field26535,
                Class2266.field14732,
                0.5F,
-               this.field5324.field9016.nextFloat() * 0.1F + 0.9F
+               this.field5324.rand.nextFloat() * 0.1F + 0.9F
             );
       }
 
@@ -63,7 +63,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
                   Sounds.field26534,
                   Class2266.field14732,
                   0.5F,
-                  this.field5324.field9016.nextFloat() * 0.1F + 0.9F
+                  this.field5324.rand.nextFloat() * 0.1F + 0.9F
                );
          }
 
@@ -110,6 +110,6 @@ public class Class943 extends TileEntity implements Class942, Class935 {
 
    @Override
    public float method3762(float var1) {
-      return MathHelper.method37821(var1, this.field5319, this.field5318);
+      return MathHelper.lerp(var1, this.field5319, this.field5318);
    }
 }

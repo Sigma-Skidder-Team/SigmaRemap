@@ -7,7 +7,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import java.util.Map;
 
 public class Class5952 extends Class5942<SkullTileEntity> {
-   private static final Map<Class2137, Class2844> field25952 = Util.<Map<Class2137, Class2844>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Class2137, Class2844> field25952 = Util.<Map<Class2137, Class2844>>make(Maps.newHashMap(), var0 -> {
       Class2844 var3 = new Class2844(0, 0, 64, 32);
       Class2845 var4 = new Class2845();
       Class2846 var5 = new Class2846(0.0F);
@@ -18,7 +18,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       var0.put(Class2136.field13993, var3);
       var0.put(Class2136.field13994, var5);
    });
-   private static final Map<Class2137, ResourceLocation> field25953 = Util.<Map<Class2137, ResourceLocation>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Class2137, ResourceLocation> field25953 = Util.<Map<Class2137, ResourceLocation>>make(Maps.newHashMap(), var0 -> {
       var0.put(Class2136.field13989, new ResourceLocation("textures/entity/skeleton/skeleton.png"));
       var0.put(Class2136.field13990, new ResourceLocation("textures/entity/skeleton/wither_skeleton.png"));
       var0.put(Class2136.field13992, new ResourceLocation("textures/entity/zombie/zombie.png"));

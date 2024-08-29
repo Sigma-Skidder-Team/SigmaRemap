@@ -25,7 +25,7 @@ public class Class3403 extends Block {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          method12041(var1, var2, var3);
       } else {
          method12042(var2, var3);
@@ -38,7 +38,7 @@ public class Class3403 extends Block {
    private static void method12041(BlockState var0, World var1, BlockPos var2) {
       method12042(var1, var2);
       if (!var0.<Boolean>method23463(field19077)) {
-         var1.method6725(var2, var0.method23465(field19077, Boolean.valueOf(true)), 3);
+         var1.setBlockState(var2, var0.method23465(field19077, Boolean.valueOf(true)), 3);
       }
    }
 
@@ -50,7 +50,7 @@ public class Class3403 extends Block {
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field19077)) {
-         var2.method6725(var3, var1.method23465(field19077, Boolean.valueOf(false)), 3);
+         var2.setBlockState(var3, var1.method23465(field19077, Boolean.valueOf(false)), 3);
       }
    }
 
@@ -58,7 +58,7 @@ public class Class3403 extends Block {
    public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
       if (Class7858.method26311(Class8122.field34916, var4) == 0) {
-         int var7 = 1 + var2.field9016.nextInt(5);
+         int var7 = 1 + var2.rand.nextInt(5);
          this.method11558(var2, var3, var7);
       }
    }
@@ -72,7 +72,7 @@ public class Class3403 extends Block {
 
    private static void method12042(World var0, BlockPos var1) {
       double var4 = 0.5625;
-      Random var6 = var0.field9016;
+      Random var6 = var0.rand;
 
       for (Direction var10 : Direction.values()) {
          BlockPos var11 = var1.method8349(var10);

@@ -14,7 +14,7 @@ public class BlockColors {
       BlockColors var2 = new BlockColors();
       var2.method29466(
          (var0, var1, var2x, var3) -> var1 != null && var2x != null
-               ? Class8527.method30242(var1, var0.method23463(Class3456.field19276) != Class84.field209 ? var2x : var2x.method8313())
+               ? Class8527.method30242(var1, var0.method23463(Class3456.field19276) != Class84.field209 ? var2x : var2x.down())
                : -1,
          Blocks.field36802,
          Blocks.TALL_GRASS

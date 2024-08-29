@@ -26,11 +26,11 @@ public class Class7880 {
 
    private static boolean method26422(Class1665 var0, BlockPos var1) {
       Block var4 = Blocks.SNOW;
-      if (var0.getBlockState(var1.method8341()).getBlock() == var4
-         || var0.getBlockState(var1.method8343()).getBlock() == var4
-         || var0.getBlockState(var1.method8345()).getBlock() == var4
-         || var0.getBlockState(var1.method8347()).getBlock() == var4) {
-         BlockState var5 = var0.getBlockState(var1.method8313());
+      if (var0.getBlockState(var1.north()).getBlock() == var4
+         || var0.getBlockState(var1.south()).getBlock() == var4
+         || var0.getBlockState(var1.west()).getBlock() == var4
+         || var0.getBlockState(var1.east()).getBlock() == var4) {
+         BlockState var5 = var0.getBlockState(var1.down());
          if (var5.method23409(var0, var1)) {
             return true;
          }

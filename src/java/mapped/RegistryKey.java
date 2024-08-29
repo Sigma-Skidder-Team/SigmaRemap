@@ -10,7 +10,7 @@ public class RegistryKey<T> {
    private final ResourceLocation field39299;
    private final ResourceLocation field39300;
 
-   public static <T> RegistryKey<T> method31395(RegistryKey<? extends Registry<T>> var0, ResourceLocation var1) {
+   public static <T> RegistryKey<T> getOrCreateKey(RegistryKey<? extends Registry<T>> var0, ResourceLocation var1) {
       return getOrCreateKey(var0.field39300, var1);
    }
 
@@ -34,14 +34,14 @@ public class RegistryKey<T> {
    }
 
    public boolean method31398(RegistryKey<? extends Registry<?>> var1) {
-      return this.field39299.equals(var1.method31399());
+      return this.field39299.equals(var1.getLocation());
    }
 
-   public ResourceLocation method31399() {
+   public ResourceLocation getLocation() {
       return this.field39300;
    }
 
    public static <T> Function<ResourceLocation, RegistryKey<T>> method31400(RegistryKey<? extends Registry<T>> var0) {
-      return var1 -> method31395(var0, var1);
+      return var1 -> getOrCreateKey(var0, var1);
    }
 }

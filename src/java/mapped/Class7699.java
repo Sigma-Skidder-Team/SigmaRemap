@@ -229,7 +229,7 @@ public class Class7699 {
                } else {
                   boolean var5 = this.field32992.isPresent();
                   boolean var6 = !var5 && this.field32987 % 5 == 0;
-                  if (var5 && !this.field32978.method6883().method7352(new Class7481(this.field32992.get()))) {
+                  if (var5 && !this.field32978.getChunkProvider().method7352(new Class7481(this.field32992.get()))) {
                      var6 = true;
                   }
 
@@ -550,13 +550,13 @@ public class Class7699 {
       Mutable var6 = new Mutable();
 
       for (int var7 = 0; var7 < var2; var7++) {
-         float var8 = this.field32978.field9016.nextFloat() * (float) (Math.PI * 2);
+         float var8 = this.field32978.rand.nextFloat() * (float) (Math.PI * 2);
          int var9 = this.field32977.getX()
             + MathHelper.method37767(MathHelper.cos(var8) * 32.0F * (float)var5)
-            + this.field32978.field9016.nextInt(5);
+            + this.field32978.rand.nextInt(5);
          int var10 = this.field32977.getZ()
             + MathHelper.method37767(MathHelper.sin(var8) * 32.0F * (float)var5)
-            + this.field32978.field9016.nextInt(5);
+            + this.field32978.rand.nextInt(5);
          int var11 = this.field32978.method6736(Class101.field296, var9, var10);
          var6.method8372(var9, var11, var10);
          if ((!this.field32978.method6952(var6) || var1 >= 2)
@@ -569,10 +569,10 @@ public class Class7699 {
                   var6.getY() + 10,
                   var6.getZ() + 10
                )
-            && this.field32978.method6883().method7352(new Class7481(var6))
+            && this.field32978.getChunkProvider().method7352(new Class7481(var6))
             && (
                Class8170.method28429(Class2068.field13472, this.field32978, var6, EntityType.field41072)
-                  || this.field32978.getBlockState(var6.method8313()).method23448(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()
+                  || this.field32978.getBlockState(var6.down()).method23448(Blocks.SNOW) && this.field32978.getBlockState(var6).isAir()
             )) {
             return var6;
          }

@@ -31,7 +31,7 @@ public class Class3294 extends Class3292 {
          Mutable var10 = var4.method8354().method8379(var8);
 
          while (var9 < 7) {
-            if (!var5.field9020 && !World.method6716(var10)) {
+            if (!var5.isRemote && !World.isValid(var10)) {
                PlayerEntity var11 = var1.method18358();
                int var12 = var5.method7034();
                if (var11 instanceof ServerPlayerEntity && var10.getY() >= var12) {

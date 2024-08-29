@@ -93,7 +93,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
    @Override
    public void method2871() {
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          this.method3043(this.method3042());
          if (!this.method3245()) {
             float var3 = MathHelper.cos(this.field5633 * (float) (Math.PI * 2));
@@ -160,7 +160,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
             this.field5621[this.field5622][0] = (double)this.rotationYaw;
             this.field5621[this.field5622][1] = this.getPosY();
-            if (!this.world.field9020) {
+            if (!this.world.isRemote) {
                Class7373 var47 = this.field5639.method32672();
                var47.method23360();
                if (this.field5639.method32672() != var47) {
@@ -241,7 +241,7 @@ public class Class1007 extends Class1006 implements Class1008 {
             this.method4318(this.field5626, (double)(var33 * 0.5F), 0.0, (double)(-var34 * 0.5F));
             this.method4318(this.field5630, (double)(var34 * 4.5F), 2.0, (double)(var33 * 4.5F));
             this.method4318(this.field5631, (double)(var34 * -4.5F), 2.0, (double)(var33 * -4.5F));
-            if (!this.world.field9020 && this.field4952 == 0) {
+            if (!this.world.isRemote && this.field4952 == 0) {
                this.method4321(
                   this.world.method6770(this, this.field5630.getBoundingBox().method19663(4.0, 2.0, 4.0).method19667(0.0, -2.0, 0.0), Class8088.field34761)
                );
@@ -287,7 +287,7 @@ public class Class1007 extends Class1006 implements Class1008 {
                );
             }
 
-            if (!this.world.field9020) {
+            if (!this.world.isRemote) {
                this.field5634 = this.method4324(this.field5624.getBoundingBox())
                   | this.method4324(this.field5625.getBoundingBox())
                   | this.method4324(this.field5626.getBoundingBox());
@@ -414,8 +414,8 @@ public class Class1007 extends Class1006 implements Class1008 {
                BlockState var16 = this.world.getBlockState(var15);
                Block var17 = var16.getBlock();
                if (!var16.isAir() && var16.method23384() != Class8649.field38945) {
-                  if (this.world.method6789().method17135(Class5462.field24224) && !Class7645.field32791.method24917(var17)) {
-                     var11 = this.world.method6728(var15, false) || var11;
+                  if (this.world.method6789().method17135(Class5462.field24224) && !BlockTags.field32791.method24917(var17)) {
+                     var11 = this.world.removeBlock(var15, false) || var11;
                   } else {
                      var10 = true;
                   }
@@ -428,7 +428,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          BlockPos var18 = new BlockPos(
             var4 + this.rand.nextInt(var7 - var4 + 1), var5 + this.rand.nextInt(var8 - var5 + 1), var6 + this.rand.nextInt(var9 - var6 + 1)
          );
-         this.world.method6999(2008, var18, 0);
+         this.world.playEvent(2008, var18, 0);
       }
 
       return var10;
@@ -513,7 +513,7 @@ public class Class1007 extends Class1006 implements Class1008 {
          var7 = 12000;
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.field5635 > 150 && this.field5635 % 5 == 0 && var6) {
             this.method4327(MathHelper.method37767((float)var7 * 0.08F));
          }
@@ -526,7 +526,7 @@ public class Class1007 extends Class1006 implements Class1008 {
       this.move(Class2107.field13742, new Vector3d(0.0, 0.1F, 0.0));
       this.rotationYaw += 20.0F;
       this.field4965 = this.rotationYaw;
-      if (this.field5635 == 200 && !this.world.field9020) {
+      if (this.field5635 == 200 && !this.world.isRemote) {
          if (var6) {
             this.method4327(MathHelper.method37767((float)var7 * 0.2F));
          }
@@ -834,7 +834,7 @@ public class Class1007 extends Class1006 implements Class1008 {
 
    @Override
    public void method3155(DataParameter<?> var1) {
-      if (field5619.equals(var1) && this.world.field9020) {
+      if (field5619.equals(var1) && this.world.isRemote) {
          this.field5639.method32671(Class9598.method37260(this.method3210().<Integer>method35445(field5619)));
       }
 

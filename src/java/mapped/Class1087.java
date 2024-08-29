@@ -55,7 +55,7 @@ public class Class1087 extends Class1018 {
          var1.method2863(Sounds.field26480, 1.0F, 1.0F);
          ItemStack var6 = Class8482.method29979(var5, var1, Items.field37891.method11742());
          var1.method3095(var2, var6);
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }

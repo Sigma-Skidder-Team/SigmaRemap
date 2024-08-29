@@ -129,7 +129,7 @@ public class Class3205 extends Class3200 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          var4.method2766(var1.method23445(var2, var3));
          var4.method2911(Class8876.field40176);
          return ActionResultType.field14819;

@@ -40,7 +40,7 @@ public class Class975 extends Class927 implements Class930 {
       if (!var3.isEmpty()) {
          this.field5450 = true;
          BlockState var4 = Class3475.method12172(this.field5447, this.field5448, this.field5449, var3);
-         this.field5448.method6999(1500, this.field5449, var4 == this.field5447 ? 0 : 1);
+         this.field5448.playEvent(1500, this.field5449, var4 == this.field5447 ? 0 : 1);
          this.method3620(0);
       }
    }

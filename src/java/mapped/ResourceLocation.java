@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import javax.annotation.Nullable;
 
 public class ResourceLocation implements Comparable<ResourceLocation> {
-   public static final Codec<ResourceLocation> field13020 = Codec.STRING.comapFlatMap(ResourceLocation::method8291, ResourceLocation::toString).stable();
+   public static final Codec<ResourceLocation> CODEC = Codec.STRING.comapFlatMap(ResourceLocation::method8291, ResourceLocation::toString).stable();
    private static final SimpleCommandExceptionType field13021 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.id.invalid"));
    public final String field13022;
    public final String field13023;
@@ -72,11 +72,11 @@ public class ResourceLocation implements Comparable<ResourceLocation> {
       }
    }
 
-   public String method8292() {
+   public String getPath() {
       return this.field13023;
    }
 
-   public String method8293() {
+   public String getNamespace() {
       return this.field13022;
    }
 

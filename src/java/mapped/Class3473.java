@@ -12,7 +12,7 @@ public class Class3473 extends Class3472 implements Class3196 {
 
    @Override
    public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
-      return var1.getBlockState(var2.method8311()).isAir();
+      return var1.getBlockState(var2.up()).isAir();
    }
 
    @Override
@@ -22,7 +22,7 @@ public class Class3473 extends Class3472 implements Class3196 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      BlockPos var7 = var3.method8311();
+      BlockPos var7 = var3.up();
       BlockState var8 = Blocks.GRASS.method11579();
 
       label61:
@@ -31,7 +31,7 @@ public class Class3473 extends Class3472 implements Class3196 {
 
          for (int var11 = 0; var11 < var9 / 16; var11++) {
             var10 = var10.method8336(var2.nextInt(3) - 1, (var2.nextInt(3) - 1) * var2.nextInt(3) / 2, var2.nextInt(3) - 1);
-            if (!var1.getBlockState(var10.method8313()).method23448(this) || var1.getBlockState(var10).method23456(var1, var10)) {
+            if (!var1.getBlockState(var10.down()).method23448(this) || var1.getBlockState(var10).method23456(var1, var10)) {
                continue label61;
             }
          }
@@ -57,7 +57,7 @@ public class Class3473 extends Class3472 implements Class3196 {
             }
 
             if (var12.method23443(var1, var10)) {
-               var1.method6725(var10, var12, 3);
+               var1.setBlockState(var10, var12, 3);
             }
          }
       }

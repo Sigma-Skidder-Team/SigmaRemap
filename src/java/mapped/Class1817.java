@@ -88,7 +88,7 @@ public class Class1817 implements IResourceManager {
    }
 
    private boolean method8065(ResourceLocation var1) {
-      return !var1.method8292().contains("..");
+      return !var1.getPath().contains("..");
    }
 
    @Override
@@ -129,7 +129,7 @@ public class Class1817 implements IResourceManager {
    }
 
    public static ResourceLocation method8066(ResourceLocation var0) {
-      return new ResourceLocation(var0.method8293(), var0.method8292() + ".mcmeta");
+      return new ResourceLocation(var0.getNamespace(), var0.getPath() + ".mcmeta");
    }
 
    // $VF: synthetic method

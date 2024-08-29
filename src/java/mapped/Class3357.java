@@ -8,7 +8,7 @@ public class Class3357 extends Class3241 {
    private static String[] field18898;
    public static final Class8553 field18899 = Class3433.field19198;
    public static final Class8551 field18900 = Class8820.field39708;
-   private static final Map<Item, Class6226> field18901 = Util.method38508(
+   private static final Map<Item, Class6226> field18901 = Util.make(
       new Object2ObjectOpenHashMap(), var0 -> var0.defaultReturnValue(new Class6218())
    );
 
@@ -23,7 +23,7 @@ public class Class3357 extends Class3241 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class971) {
             var4.method2766((Class971)var9);
@@ -51,7 +51,7 @@ public class Class3357 extends Class3241 {
             var6.method3621(var7, var9.method19196(var5, var8));
          }
       } else {
-         var1.method6999(1001, var2, 0);
+         var1.playEvent(1001, var2, 0);
       }
    }
 
@@ -61,13 +61,13 @@ public class Class3357 extends Class3241 {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      boolean var9 = var2.method6780(var3) || var2.method6780(var3.method8311());
+      boolean var9 = var2.method6780(var3) || var2.method6780(var3.up());
       boolean var10 = var1.<Boolean>method23463(field18900);
       if (var9 && !var10) {
          var2.method6860().method20726(var3, this, 4);
-         var2.method6725(var3, var1.method23465(field18900, Boolean.valueOf(true)), 4);
+         var2.setBlockState(var3, var1.method23465(field18900, Boolean.valueOf(true)), 4);
       } else if (!var9 && var10) {
-         var2.method6725(var3, var1.method23465(field18900, Boolean.valueOf(false)), 4);
+         var2.setBlockState(var3, var1.method23465(field18900, Boolean.valueOf(false)), 4);
       }
    }
 
@@ -102,7 +102,7 @@ public class Class3357 extends Class3241 {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class971) {
             Class7236.method22721(var2, var3, (Class971)var8);
-            var2.method6806(var3, this);
+            var2.updateComparatorOutputLevel(var3, this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);

@@ -11,9 +11,9 @@ public class Class3417 extends Block {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (var2.method6812().method36877()) {
-         var2.method6725(var3, Blocks.field36452.method11579(), 3);
-         var2.method6999(2009, var3, 0);
+      if (var2.method6812().isUltrawarm()) {
+         var2.setBlockState(var3, Blocks.field36452.method11579(), 3);
+         var2.playEvent(2009, var3, 0);
          var2.method6742((PlayerEntity)null, var3, Sounds.field26582, Class2266.field14732, 1.0F, (1.0F + var2.method6814().nextFloat() * 0.2F) * 0.7F);
       }
    }

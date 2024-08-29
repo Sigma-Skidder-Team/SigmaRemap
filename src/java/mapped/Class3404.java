@@ -9,7 +9,7 @@ public class Class3404 extends Block implements Class3405 {
    private static String[] field19078;
    public static final Class8554 field19079 = Class8820.field39755;
    public final Class7633 field19080;
-   private final List<Class7379> field19081;
+   private final List<FluidState> field19081;
    public static final VoxelShape field19082 = Block.method11539(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 
    public Class3404(Class7633 var1, AbstractBlock var2) {
@@ -30,7 +30,7 @@ public class Class3404 extends Block implements Class3405 {
    public VoxelShape method11502(BlockState var1, Class1665 var2, BlockPos var3, ISelectionContext var4) {
       return var4.method14950(field19082, var3, true)
             && var1.<Integer>method23463(field19079) == 0
-            && var4.method14952(var2.method6739(var3.method8311()), this.field19080)
+            && var4.method14952(var2.getFluidState(var3.up()), this.field19080)
          ? field19082
          : VoxelShapes.method27425();
    }
@@ -56,7 +56,7 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       int var4 = var1.<Integer>method23463(field19079);
       return this.field19081.get(Math.min(var4, 8));
    }
@@ -106,20 +106,20 @@ public class Class3404 extends Block implements Class3405 {
 
    private boolean method12043(World var1, BlockPos var2, BlockState var3) {
       if (this.field19080.method25067(Class8953.field40470)) {
-         boolean var6 = var1.getBlockState(var2.method8313()).method23448(Blocks.SOUL_SOIL);
+         boolean var6 = var1.getBlockState(var2.down()).method23448(Blocks.SOUL_SOIL);
 
          for (Direction var10 : Direction.values()) {
             if (var10 != Direction.DOWN) {
                BlockPos var11 = var2.method8349(var10);
-               if (var1.method6739(var11).method23486(Class8953.field40469)) {
-                  Block var12 = !var1.method6739(var2).method23473() ? Blocks.field36399 : Blocks.field36527;
-                  var1.method6730(var2, var12.method11579());
+               if (var1.getFluidState(var11).method23486(Class8953.field40469)) {
+                  Block var12 = !var1.getFluidState(var2).method23473() ? Blocks.field36399 : Blocks.field36527;
+                  var1.setBlockState(var2, var12.method11579());
                   this.method12044(var1, var2);
                   return false;
                }
 
                if (var6 && var1.getBlockState(var11).method23448(Blocks.field37006)) {
-                  var1.method6730(var2, Blocks.BASALT.method11579());
+                  var1.setBlockState(var2, Blocks.BASALT.method11579());
                   this.method12044(var1, var2);
                   return false;
                }
@@ -131,7 +131,7 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    private void method12044(Class1660 var1, BlockPos var2) {
-      var1.method6999(1501, var2, 0);
+      var1.playEvent(1501, var2, 0);
    }
 
    @Override
@@ -144,7 +144,7 @@ public class Class3404 extends Block implements Class3405 {
       if (var3.<Integer>method23463(field19079) != 0) {
          return Class9479.field44064;
       } else {
-         var1.method6725(var2, Blocks.AIR.method11579(), 11);
+         var1.setBlockState(var2, Blocks.AIR.method11579(), 11);
          return this.field19080;
       }
    }

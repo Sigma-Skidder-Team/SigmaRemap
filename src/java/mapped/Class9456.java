@@ -103,8 +103,8 @@ public final class Class9456 {
             var0.prevRotationYaw += 360.0F;
          }
 
-         var0.rotationPitch = MathHelper.method37821(var1, var0.prevRotationPitch, var0.rotationPitch);
-         var0.rotationYaw = MathHelper.method37821(var1, var0.prevRotationYaw, var0.rotationYaw);
+         var0.rotationPitch = MathHelper.lerp(var1, var0.prevRotationPitch, var0.rotationPitch);
+         var0.rotationYaw = MathHelper.lerp(var1, var0.prevRotationYaw, var0.rotationYaw);
       }
    }
 

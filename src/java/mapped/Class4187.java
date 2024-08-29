@@ -75,7 +75,7 @@ public class Class4187 extends Class4180 {
          var11.method3272(var2, 0.0F, 0.0F);
          var11.method4276(var3, var3.method6807(var11.getPosition()), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
          var3.method6995(var11);
-         var3.method6725(var2, Blocks.AIR.method11579(), 2);
+         var3.setBlockState(var2, Blocks.AIR.method11579(), 2);
       }
    }
 }

@@ -30,7 +30,7 @@ public class Class7038 {
       return this.field30373.method30498(var1, var2, var3);
    }
 
-   public Class7379 method21853(int var1, int var2, int var3) {
+   public FluidState method21853(int var1, int var2, int var3) {
       return this.field30373.method30498(var1, var2, var3).method23449();
    }
 
@@ -54,8 +54,8 @@ public class Class7038 {
          var8 = this.field30373.method30494(var1, var2, var3, var4);
       }
 
-      Class7379 var9 = var8.method23449();
-      Class7379 var10 = var4.method23449();
+      FluidState var9 = var8.method23449();
+      FluidState var10 = var4.method23449();
       if (!var8.isAir()) {
          this.field30370--;
          if (var8.method23450()) {
@@ -86,7 +86,7 @@ public class Class7038 {
    }
 
    public static boolean method21859(Class7038 var0) {
-      return var0 == Class1674.field9111 || var0.method21858();
+      return var0 == Chunk.field9111 || var0.method21858();
    }
 
    public boolean method21860() {
@@ -128,7 +128,7 @@ public class Class7038 {
       this.field30371 = 0;
       this.field30372 = 0;
       this.field30373.method30506((var1, var2) -> {
-         Class7379 var5x = var1.method23449();
+         FluidState var5x = var1.method23449();
          if (!var1.isAir()) {
             this.field30370 = (short)(this.field30370 + var2);
             if (var1.method23450()) {

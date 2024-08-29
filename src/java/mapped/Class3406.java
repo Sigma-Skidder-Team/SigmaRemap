@@ -13,20 +13,20 @@ public class Class3406 extends Block implements Class3405 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      BlockState var7 = var2.getBlockState(var3.method8311());
+      BlockState var7 = var2.getBlockState(var3.up());
       if (!var7.isAir()) {
          var4.method3355(var1.<Boolean>method23463(field19084));
       } else {
          var4.method3354(var1.<Boolean>method23463(field19084));
-         if (!var2.field9020) {
+         if (!var2.isRemote) {
             ServerWorld var8 = (ServerWorld)var2;
 
             for (int var9 = 0; var9 < 2; var9++) {
                var8.method6939(
                   Class7940.field34099,
-                  (double)var3.getX() + var2.field9016.nextDouble(),
+                  (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
-                  (double)var3.getZ() + var2.field9016.nextDouble(),
+                  (double)var3.getZ() + var2.rand.nextDouble(),
                   1,
                   0.0,
                   0.0,
@@ -35,9 +35,9 @@ public class Class3406 extends Block implements Class3405 {
                );
                var8.method6939(
                   Class7940.field34052,
-                  (double)var3.getX() + var2.field9016.nextDouble(),
+                  (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
-                  (double)var3.getZ() + var2.field9016.nextDouble(),
+                  (double)var3.getZ() + var2.rand.nextDouble(),
                   1,
                   0.0,
                   0.01,
@@ -51,27 +51,27 @@ public class Class3406 extends Block implements Class3405 {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      method12045(var2, var3.method8311(), method12047(var2, var3.method8313()));
+      method12045(var2, var3.up(), method12047(var2, var3.down()));
    }
 
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      method12045(var2, var3.method8311(), method12047(var2, var3));
+      method12045(var2, var3.up(), method12047(var2, var3));
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return Class9479.field44066.method25078(false);
    }
 
    public static void method12045(Class1660 var0, BlockPos var1, boolean var2) {
       if (method12046(var0, var1)) {
-         var0.method6725(var1, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(var2)), 2);
+         var0.setBlockState(var1, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(var2)), 2);
       }
    }
 
    public static boolean method12046(Class1660 var0, BlockPos var1) {
-      Class7379 var4 = var0.method6739(var1);
+      FluidState var4 = var0.getFluidState(var1);
       return var0.getBlockState(var1).method23448(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
    }
 
@@ -113,7 +113,7 @@ public class Class3406 extends Block implements Class3405 {
                var4.method6860().method20726(var5, this, 5);
             }
          } else {
-            var4.method6725(var5, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
+            var4.setBlockState(var5, Blocks.field37013.method11579().method23465(field19084, Boolean.valueOf(method12047(var4, var6))), 2);
          }
 
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
@@ -125,7 +125,7 @@ public class Class3406 extends Block implements Class3405 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockState var6 = var2.getBlockState(var3.method8313());
+      BlockState var6 = var2.getBlockState(var3.down());
       return var6.method23448(Blocks.field37013) || var6.method23448(Blocks.field36890) || var6.method23448(Blocks.SOUL_SAND);
    }
 
@@ -146,7 +146,7 @@ public class Class3406 extends Block implements Class3405 {
 
    @Override
    public Fluid method11533(Class1660 var1, BlockPos var2, BlockState var3) {
-      var1.method6725(var2, Blocks.AIR.method11579(), 11);
+      var1.setBlockState(var2, Blocks.AIR.method11579(), 11);
       return Class9479.field44066;
    }
 }

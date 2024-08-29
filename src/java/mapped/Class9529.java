@@ -49,13 +49,13 @@ public class Class9529 {
       int var24 = Class4049.method12821(var23, var1, var12);
       float var25 = Class4049.method12820(var23, var1, var12);
       var12.method8387(var10, Class2208.method8928(var11)[0], var4);
-      boolean var26 = var1.getBlockState(var12).method23387(var1, var12) == 0;
+      boolean var26 = var1.getBlockState(var12).getOpacity(var1, var12) == 0;
       var12.method8387(var10, Class2208.method8928(var11)[1], var4);
-      boolean var27 = var1.getBlockState(var12).method23387(var1, var12) == 0;
+      boolean var27 = var1.getBlockState(var12).getOpacity(var1, var12) == 0;
       var12.method8387(var10, Class2208.method8928(var11)[2], var4);
-      boolean var28 = var1.getBlockState(var12).method23387(var1, var12) == 0;
+      boolean var28 = var1.getBlockState(var12).getOpacity(var1, var12) == 0;
       var12.method8387(var10, Class2208.method8928(var11)[3], var4);
-      boolean var29 = var1.getBlockState(var12).method23387(var1, var12) == 0;
+      boolean var29 = var1.getBlockState(var12).getOpacity(var1, var12) == 0;
       float var31;
       int var32;
       if (!var28 && !var26) {

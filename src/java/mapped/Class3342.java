@@ -35,8 +35,8 @@ public class Class3342 extends Class3198 implements Class3255 {
             for (int var6 = 0; var6 < this.method11896().method38654(); var6++) {
                for (int var7 = 0; var7 < this.method11896().method38653(); var7++) {
                   Class9632 var8 = var5.method33881(var6, var7, 0);
-                  var1.method6725(var8.method37551(), Blocks.AIR.method11579(), 2);
-                  var1.method6999(2001, var8.method37551(), Block.method11535(var8.method37548()));
+                  var1.setBlockState(var8.method37551(), Blocks.AIR.method11579(), 2);
+                  var1.playEvent(2001, var8.method37551(), Block.getStateId(var8.method37548()));
                }
             }
 
@@ -53,15 +53,15 @@ public class Class3342 extends Class3198 implements Class3255 {
             for (int var19 = 0; var19 < this.method11896().method38654(); var19++) {
                for (int var22 = 0; var22 < this.method11896().method38653(); var22++) {
                   Class9632 var10 = var5.method33881(var19, var22, 0);
-                  var1.method6964(var10.method37551(), Blocks.AIR);
+                  var1.func_230547_a_(var10.method37551(), Blocks.AIR);
                }
             }
          }
       } else {
          for (int var13 = 0; var13 < this.method11894().method38653(); var13++) {
             Class9632 var16 = var5.method33881(0, var13, 0);
-            var1.method6725(var16.method37551(), Blocks.AIR.method11579(), 2);
-            var1.method6999(2001, var16.method37551(), Block.method11535(var16.method37548()));
+            var1.setBlockState(var16.method37551(), Blocks.AIR.method11579(), 2);
+            var1.playEvent(2001, var16.method37551(), Block.getStateId(var16.method37548()));
          }
 
          Class1021 var14 = EntityType.field41082.method33215(var1);
@@ -75,7 +75,7 @@ public class Class3342 extends Class3198 implements Class3255 {
 
          for (int var21 = 0; var21 < this.method11894().method38653(); var21++) {
             Class9632 var24 = var5.method33881(0, var21, 0);
-            var1.method6964(var24.method37551(), Blocks.AIR);
+            var1.func_230547_a_(var24.method37551(), Blocks.AIR);
          }
       }
    }

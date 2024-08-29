@@ -21,7 +21,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
       super.method3586(var1);
       if (this.world.method6789().method17135(Class5462.field24229)) {
          Class7236.method22722(this.world, this, this);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             Entity var4 = var1.method31113();
             if (var4 != null && var4.getType() == EntityType.PLAYER) {
                Class4388.method13832((PlayerEntity)var4, true);
@@ -102,7 +102,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
 
    @Override
    public void method2904() {
-      if (!this.world.field9020 && this.field5237) {
+      if (!this.world.isRemote && this.field5237) {
          Class7236.method22722(this.world, this, this);
       }
 
@@ -137,7 +137,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    @Override
    public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       var1.method2766(this);
-      if (var1.world.field9020) {
+      if (var1.world.isRemote) {
          return ActionResultType.field14818;
       } else {
          Class4388.method13832(var1, true);
@@ -157,8 +157,8 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    public void method3624(PlayerEntity var1) {
-      if (this.field5238 != null && this.world.method6715() != null) {
-         Class7318 var4 = this.world.method6715().method1411().method1058(this.field5238);
+      if (this.field5238 != null && this.world.getServer() != null) {
+         Class7318 var4 = this.world.getServer().method1411().method1058(this.field5238);
          if (var1 instanceof ServerPlayerEntity) {
             CriteriaTriggers.field44504.method15109((ServerPlayerEntity)var1, this.field5238);
          }

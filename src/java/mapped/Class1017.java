@@ -161,9 +161,9 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    private void method4419(World var1, double var2, double var4, double var6, double var8, double var10, Class7436 var12) {
       var1.method6746(
          var12,
-         MathHelper.method37822(var1.field9016.nextDouble(), var2, var4),
+         MathHelper.method37822(var1.rand.nextDouble(), var2, var4),
          var10,
-         MathHelper.method37822(var1.field9016.nextDouble(), var6, var8),
+         MathHelper.method37822(var1.rand.nextDouble(), var6, var8),
          0.0,
          0.0,
          0.0
@@ -229,7 +229,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    public float method4427(float var1) {
-      return MathHelper.method37821(var1, this.field5689, this.field5688);
+      return MathHelper.lerp(var1, this.field5689, this.field5688);
    }
 
    private void method4428() {
@@ -265,7 +265,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
          this.field5691++;
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4366((ServerWorld)this.world, false);
       }
    }
@@ -343,7 +343,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.field5692 > 0) {
             this.field5692--;
          }
@@ -441,7 +441,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    }
 
    private boolean method4448(BlockPos var1) {
-      return this.world.method6763(var1) && this.world.getBlockState(var1).getBlock().method11540(Class7645.field32773);
+      return this.world.method6763(var1) && this.world.getBlockState(var1).getBlock().method11540(BlockTags.field32773);
    }
 
    @Override
@@ -500,7 +500,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.method2760(var1)) {
          Entity var5 = var1.method31109();
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             Class2663.method10871(this.field5698);
          }
 

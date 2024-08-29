@@ -40,7 +40,7 @@ public class Class2738 extends Class2737 {
       )) {
          if (!var3.equals(var7)) {
             Block var8 = this.field17258.world.getBlockState(var5.method8377(var7, Direction.DOWN)).getBlock();
-            boolean var9 = var8 instanceof Class3465 || var8.method11540(Class7645.field32751);
+            boolean var9 = var8 instanceof Class3465 || var8.method11540(BlockTags.field32751);
             if (var9 && this.field17258.world.method7007(var7) && this.field17258.world.method7007(var4.method8377(var7, Direction.field673))) {
                return Vector3d.method11330(var7);
             }

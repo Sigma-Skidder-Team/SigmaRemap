@@ -69,7 +69,7 @@ public abstract class Class6819 {
             if (!this.method20795(var2, var14, var7, var15, var5, var8)) {
                var13.method8378(var4, var14, var7, var15);
                if (Class2903.method11233(var1, var13)) {
-                  var1.method6725(var13, var3.field22412.method20424(var2, var13), 19);
+                  var1.setBlockState(var13, var3.field22412.method20424(var2, var13), 19);
                   var9.method38392(new Class9764(var13, var13));
                   var6.add(var13.method8353());
                }

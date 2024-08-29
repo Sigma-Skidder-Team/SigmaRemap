@@ -10,14 +10,14 @@ public abstract class Class2921<U extends Class4698> extends Class2898<U> {
    }
 
    @Override
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, U var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, U var5) {
       BlockState var8 = this.method11254(var3, var4, (U)var5);
       int var9 = 0;
 
       for (int var10 = 0; var10 < this.method11252((U)var5); var10++) {
          BlockPos var11 = this.method11253(var3, var4, (U)var5);
          if (var1.method7007(var11) && var11.getY() < 255 && var8.method23443(var1, var11) && this.method11251(var1, var11, (U)var5)) {
-            var1.method6725(var11, var8, 2);
+            var1.setBlockState(var11, var8, 2);
             var9++;
          }
       }

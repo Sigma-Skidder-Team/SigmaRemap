@@ -16,8 +16,8 @@ public abstract class Class7195<C extends Class4729> {
    public static final Class7195<Class4728> field30892 = method22604("underwater_cave", new Class7198(Class4728.field22398));
    public static final BlockState field30893 = Blocks.AIR.method11579();
    public static final BlockState field30894 = Blocks.field37012.method11579();
-   public static final Class7379 field30895 = Class9479.field44066.method25049();
-   public static final Class7379 field30896 = Class9479.field44068.method25049();
+   public static final FluidState field30895 = Class9479.field44066.method25049();
+   public static final FluidState field30896 = Class9479.field44068.method25049();
    public Set<Block> field30897 = ImmutableSet.of(
       Blocks.STONE,
       Blocks.GRANITE,
@@ -78,7 +78,7 @@ public abstract class Class7195<C extends Class4729> {
    }
 
    public boolean method22608(
-      Class1670 var1,
+      IChunk var1,
       Function<BlockPos, Biome> var2,
       long var3,
       int var5,
@@ -140,7 +140,7 @@ public abstract class Class7195<C extends Class4729> {
    }
 
    public boolean method22596(
-      Class1670 var1,
+      IChunk var1,
       Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,
@@ -171,15 +171,15 @@ public abstract class Class7195<C extends Class4729> {
 
          if (this.method22610(var20, var21)) {
             if (var14 >= 11) {
-               var1.method7061(var5, field30894, false);
+               var1.setBlockState(var5, field30894, false);
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.DOWN);
                   if (var1.getBlockState(var7).method23448(Blocks.field36396)) {
-                     var1.method7061(var7, ((Biome)var2.apply(var5)).method32507().method24283().method28934(), false);
+                     var1.setBlockState(var7, ((Biome)var2.apply(var5)).method32507().method24283().method28934(), false);
                   }
                }
             } else {
-               var1.method7061(var5, field30896.method23484(), false);
+               var1.setBlockState(var5, field30896.getBlockState(), false);
             }
 
             return true;
@@ -190,7 +190,7 @@ public abstract class Class7195<C extends Class4729> {
    }
 
    public abstract boolean method22603(
-           Class1670 var1, Function<BlockPos, Biome> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, C var10
+           IChunk var1, Function<BlockPos, Biome> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, C var10
    );
 
    public abstract boolean method22602(Random var1, int var2, int var3, C var4);
@@ -204,13 +204,13 @@ public abstract class Class7195<C extends Class4729> {
          || (var1.method23448(Blocks.SAND) || var1.method23448(Blocks.GRAVEL)) && !var2.method23449().method23486(Class8953.field40469);
    }
 
-   public boolean method22611(Class1670 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
+   public boolean method22611(IChunk var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       Mutable var12 = new Mutable();
 
       for (int var13 = var4; var13 < var5; var13++) {
          for (int var14 = var8; var14 < var9; var14++) {
             for (int var15 = var6 - 1; var15 <= var7 + 1; var15++) {
-               if (this.field30898.contains(var1.method6739(var12.method8372(var13 + var2 * 16, var15, var14 + var3 * 16)).method23472())) {
+               if (this.field30898.contains(var1.getFluidState(var12.method8372(var13 + var2 * 16, var15, var14 + var3 * 16)).method23472())) {
                   return true;
                }
 

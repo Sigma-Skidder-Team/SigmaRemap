@@ -36,7 +36,7 @@ public class Class7971 implements ArgumentType<Class164> {
       } catch (CommandSyntaxException var8) {
       }
 
-      return var6.method28862(var2, Class7645.method25115());
+      return var6.method28862(var2, BlockTags.getCollection());
    }
 
    public Collection<String> getExamples() {

@@ -97,7 +97,7 @@ public class Class6810 {
          boolean var4 = this.field29641.startsWith("optifine/mob/");
          ResourceLocation var5 = Class9387.method35639(this.field29642, var4);
          if (var5 == null) {
-            Class7944.method26811("Invalid path: " + this.field29642.method8292());
+            Class7944.method26811("Invalid path: " + this.field29642.getPath());
             return false;
          } else {
             for (int var6 = 0; var6 < this.field29645.length; var6++) {
@@ -105,12 +105,12 @@ public class Class6810 {
                if (var7 > 1) {
                   ResourceLocation var8 = Class9387.method35641(var5, var7);
                   if (var8 == null) {
-                     Class7944.method26811("Invalid path: " + this.field29642.method8292());
+                     Class7944.method26811("Invalid path: " + this.field29642.getPath());
                      return false;
                   }
 
                   if (!Class7944.method26866(var8)) {
-                     Class7944.method26811("Texture not found: " + var8.method8292());
+                     Class7944.method26811("Texture not found: " + var8.getPath());
                      return false;
                   }
 

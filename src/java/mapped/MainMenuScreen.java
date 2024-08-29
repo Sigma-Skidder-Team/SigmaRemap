@@ -187,7 +187,7 @@ public class MainMenuScreen extends Screen {
       boolean var5 = this.method2598();
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.playdemo"), var2x -> {
          if (!var5) {
-            Class8905 var5x = DynamicRegistries.func_239770_b_();
+            DynamicRegistriesImpl var5x = DynamicRegistries.func_239770_b_();
             this.field4562.createWorld("Demo_World", MinecraftServer.field1210, var5x, DimensionGeneratorSettings.method26256(var5x));
          } else {
             this.field4562.loadWorld("Demo_World");

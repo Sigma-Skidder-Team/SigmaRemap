@@ -53,12 +53,12 @@ public class Class3246 extends Class3247 implements Class3245 {
       Direction var7 = var3.<Direction>method23463(field18484);
       BlockPos var8 = var2.method8349(var7);
       BlockState var9 = var1.getBlockState(var8);
-      if (!var9.method23403()) {
+      if (!var9.hasComparatorInputOverride()) {
          if (var6 < 15 && var9.method23400(var1, var8)) {
             var8 = var8.method8349(var7);
             var9 = var1.getBlockState(var8);
             ItemFrameEntity var10 = this.method11663(var1, var7, var8);
-            int var11 = Math.max(var10 != null ? var10.method4096() : Integer.MIN_VALUE, !var9.method23403() ? Integer.MIN_VALUE : var9.method23404(var1, var8));
+            int var11 = Math.max(var10 != null ? var10.method4096() : Integer.MIN_VALUE, !var9.hasComparatorInputOverride() ? Integer.MIN_VALUE : var9.method23404(var1, var8));
             if (var11 != Integer.MIN_VALUE) {
                var6 = var11;
             }
@@ -93,9 +93,9 @@ public class Class3246 extends Class3247 implements Class3245 {
          var1 = var1.method23459(field18706);
          float var9 = var1.method23463(field18706) != Class105.field326 ? 0.5F : 0.55F;
          var2.method6742(var4, var3, Sounds.field26462, Class2266.field14732, 0.3F, var9);
-         var2.method6725(var3, var1, 2);
+         var2.setBlockState(var3, var1, 2);
          this.method11665(var2, var3, var1);
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14820;
       }
@@ -128,9 +128,9 @@ public class Class3246 extends Class3247 implements Class3245 {
          boolean var11 = this.method11661(var1, var2, var3);
          boolean var10 = var3.<Boolean>method23463(field18708);
          if (var10 && !var11) {
-            var1.method6725(var2, var3.method23465(field18708, Boolean.valueOf(false)), 2);
+            var1.setBlockState(var2, var3.method23465(field18708, Boolean.valueOf(false)), 2);
          } else if (!var10 && var11) {
-            var1.method6725(var2, var3.method23465(field18708, Boolean.valueOf(true)), 2);
+            var1.setBlockState(var2, var3.method23465(field18708, Boolean.valueOf(true)), 2);
          }
 
          this.method11670(var1, var2, var3);

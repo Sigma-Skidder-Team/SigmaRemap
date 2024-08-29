@@ -10,7 +10,7 @@ public class Class1323 extends Screen {
    private static final ITextComponent field6993 = new TranslationTextComponent("createWorld.customize.buffet.biome");
    private final Screen field6994;
    private final Consumer<Biome> field6995;
-   private final Class2349<Biome> field6996;
+   private final MutableRegistry<Biome> field6996;
    private Class1283 field6997;
    private Biome field6998;
    private Class1206 field6999;
@@ -20,7 +20,7 @@ public class Class1323 extends Screen {
       this.field6994 = var1;
       this.field6995 = var3;
       this.field6998 = var4;
-      this.field6996 = var2.<Biome>method32453(Registry.BIOME_KEY);
+      this.field6996 = var2.<Biome>getRegistry(Registry.BIOME_KEY);
    }
 
    @Override
@@ -60,7 +60,7 @@ public class Class1323 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class2349<Biome> method6291(Class1323 var0) {
+   public static MutableRegistry<Biome> method6291(Class1323 var0) {
       return var0.field6996;
    }
 

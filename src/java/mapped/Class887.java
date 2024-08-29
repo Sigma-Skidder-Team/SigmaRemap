@@ -76,7 +76,7 @@ public class Class887 extends AbstractArrowEntity {
    @Override
    public void tick() {
       super.tick();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.field5100 && this.field5101 != 0 && !this.field5118.isEmpty() && this.field5101 >= 600) {
             this.world.method6786(this, (byte)0);
             this.field5117 = Class8137.field34976;

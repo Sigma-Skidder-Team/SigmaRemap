@@ -154,7 +154,7 @@ public class Class7551 {
       } catch (Throwable var20) {
          CrashReport var18 = CrashReport.makeCrashReport(var20, "Tesselating block model");
          CrashReportCategory var19 = var18.makeCategory("Block model being tesselated");
-         CrashReportCategory.method32814(var19, var4, var3);
+         CrashReportCategory.addBlockInfo(var19, var4, var3);
          var19.addDetail("Using AO", var15);
          throw new ReportedException(var18);
       }

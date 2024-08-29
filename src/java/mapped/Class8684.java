@@ -246,11 +246,11 @@ public class Class8684 {
    }
 
    public static ResourceLocation method31273(ResourceLocation var0, String var1) {
-      if (var0.method8293().equals("minecraft")) {
-         String var4 = var0.method8292();
+      if (var0.getNamespace().equals("minecraft")) {
+         String var4 = var0.getPath();
          String var5 = method31274(var4, var1);
          if (var5 != var4) {
-            var0 = new ResourceLocation(var0.method8293(), var5);
+            var0 = new ResourceLocation(var0.getNamespace(), var5);
          }
 
          return var0;

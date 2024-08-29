@@ -601,8 +601,8 @@ public class Class8090 {
    private ResourceLocation method28018(String var1) {
       if (var1 != null) {
          ResourceLocation var4 = new ResourceLocation(var1);
-         String var5 = var4.method8293();
-         String var6 = var4.method8292();
+         String var5 = var4.getNamespace();
+         String var6 = var4.getPath();
          if (!var6.contains("/")) {
             var6 = "textures/item/" + var6;
          }
@@ -621,10 +621,10 @@ public class Class8090 {
    }
 
    private ResourceLocation method28019(ResourceLocation var1) {
-      String var4 = var1.method8292();
+      String var4 = var1.getPath();
       var4 = Class9402.method35762(var4, "textures/");
       var4 = Class9402.method35763(var4, ".png");
-      return new ResourceLocation(var1.method8293(), var4);
+      return new ResourceLocation(var1.getNamespace(), var4);
    }
 
    public void method28020(AtlasTexture var1, Class8451 var2) {
@@ -852,7 +852,7 @@ public class Class8090 {
       }
 
       if (var1 != null && var6 != null) {
-         String var7 = var1.method8292();
+         String var7 = var1.getPath();
          IBakedModel var8 = (IBakedModel)var6.get(var7);
          if (var8 != null) {
             return var8;
@@ -886,7 +886,7 @@ public class Class8090 {
          Class1997 var6 = new Class1997(var5, "inventory");
          this.field34796 = var3.method1023(var6);
          if (this.field34796 == var4) {
-            Class7944.method26811("Custom Items: Model not found " + var6.method8292());
+            Class7944.method26811("Custom Items: Model not found " + var6.getPath());
             this.field34796 = null;
          }
       }
@@ -907,7 +907,7 @@ public class Class8090 {
                   String var12 = "item/" + var8;
                   this.field34797.put(var12, var11);
                } else {
-                  Class7944.method26811("Custom Items: Model not found " + var10.method8292());
+                  Class7944.method26811("Custom Items: Model not found " + var10.getPath());
                }
             }
          }

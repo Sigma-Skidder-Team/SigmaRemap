@@ -25,7 +25,7 @@ public class Class3699 extends Class3676<Class880> {
       Class6947<?> var7 = var2.method2992();
       Class9378 var8 = var7.method21410(this.field19748).get();
       BlockPos var9 = var8.method35579();
-      ServerWorld var10 = var1.method6715().method1318(var8.method35578());
+      ServerWorld var10 = var1.getServer().method1318(var8.method35578());
       if (var10 == null || this.method12577(var10, var9)) {
          var7.method21405(this.field19748);
       } else if (this.method12576(var10, var9, var2)) {
@@ -37,7 +37,7 @@ public class Class3699 extends Class3676<Class880> {
 
    private boolean method12576(ServerWorld var1, BlockPos var2, Class880 var3) {
       BlockState var6 = var1.getBlockState(var2);
-      return var6.getBlock().method11540(Class7645.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
+      return var6.getBlock().method11540(BlockTags.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
    }
 
    private boolean method12577(ServerWorld var1, BlockPos var2) {

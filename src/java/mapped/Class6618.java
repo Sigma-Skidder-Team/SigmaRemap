@@ -52,7 +52,7 @@ public interface Class6618 {
       for (T var8 : var0) {
          ResourceLocation var9 = (ResourceLocation)var2.apply(var8);
          if (!var6) {
-            if (method20150(var1, var9.method8293()) || var9.method8293().equals("minecraft") && method20150(var1, var9.method8292())) {
+            if (method20150(var1, var9.getNamespace()) || var9.getNamespace().equals("minecraft") && method20150(var1, var9.getPath())) {
                var3.accept(var8);
             }
          } else {

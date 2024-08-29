@@ -10,7 +10,7 @@ public class Class3327 extends Item {
    @Override
    public ActionResultType method11716(ItemStack var1, PlayerEntity var2, Class880 var3, Hand var4) {
       if (var1.method32152() && !(var3 instanceof PlayerEntity)) {
-         if (!var2.world.field9020 && var3.method3066()) {
+         if (!var2.world.isRemote && var3.method3066()) {
             var3.method3379(var1.method32149());
             if (var3 instanceof Class1006) {
                ((Class1006)var3).method4278();
@@ -19,7 +19,7 @@ public class Class3327 extends Item {
             var1.method32182(1);
          }
 
-         return ActionResultType.method9002(var2.world.field9020);
+         return ActionResultType.method9002(var2.world.isRemote);
       } else {
          return ActionResultType.field14820;
       }

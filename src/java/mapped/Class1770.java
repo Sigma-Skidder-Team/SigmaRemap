@@ -53,7 +53,7 @@ public class Class1770 implements Class1768 {
 
    private ResourceLocation method7743(int var1) {
       ResourceLocation var4 = new ResourceLocation(String.format(this.field9589, String.format("%02x", var1 / 256)));
-      return new ResourceLocation(var4.method8293(), "textures/" + var4.method8292());
+      return new ResourceLocation(var4.getNamespace(), "textures/" + var4.getPath());
    }
 
    @Nullable

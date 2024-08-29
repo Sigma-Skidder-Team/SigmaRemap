@@ -66,7 +66,7 @@ public class Class1054 extends Class1049 {
 
    @Override
    public void tick() {
-      if (!this.world.field9020 && this.method3066() && this.method3138()) {
+      if (!this.world.isRemote && this.method3066() && this.method3138()) {
          if (this.field5821 <= 0) {
             if (this.method4828() != 0) {
                if (this.field5822 > 60 && this.method4828() == 2) {

@@ -110,7 +110,7 @@ public class Class1038 extends Class1009 {
    @Override
    public void method4308(boolean var1) {
       this.method3210().method35446(field5760, var1);
-      if (this.world != null && !this.world.field9020) {
+      if (this.world != null && !this.world.isRemote) {
          Class9805 var4 = this.method3085(Class9173.field42108);
          var4.method38670(field5759);
          if (var1) {
@@ -134,7 +134,7 @@ public class Class1038 extends Class1009 {
 
    @Override
    public void tick() {
-      if (!this.world.field9020 && this.method3066() && !this.method4305()) {
+      if (!this.world.isRemote && this.method3066() && !this.method4305()) {
          if (!this.method4654()) {
             if (this.method4645()) {
                if (!this.method3263(Class8953.field40469)) {
@@ -236,7 +236,7 @@ public class Class1038 extends Class1009 {
                EntityType var16 = var10.getType();
                Class2068 var17 = Class6914.method21120(var16);
                if (Class8170.method28429(var17, this.world, var15, var16)
-                  && Class6914.method21122(var16, var5, Class2202.field14400, var15, this.world.field9016)) {
+                  && Class6914.method21122(var16, var5, Class2202.field14400, var15, this.world.rand)) {
                   var10.setPosition((double)var12, (double)var13, (double)var14);
                   if (!this.world.method7187((double)var12, (double)var13, (double)var14, 7.0)
                      && this.world.method7050(var10)

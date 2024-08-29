@@ -38,7 +38,7 @@ public class Class5821 extends Class5812 {
    @Override
    public void method18113(PlayerEntity var1) {
       super.method18113(var1);
-      if (!var1.world.field9020) {
+      if (!var1.world.isRemote) {
          ItemStack var4 = this.field25501.method18272(this.field25501.method18269());
          if (!var4.isEmpty()) {
             var1.method2882(var4, false);

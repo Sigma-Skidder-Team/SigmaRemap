@@ -544,7 +544,7 @@ public class Class9680 {
          }
 
          if (var7 instanceof Class3456 && var1.<Class84>method23463(Class3456.field19276) == Class84.field209) {
-            var3 = var3.method8313();
+            var3 = var3.down();
             var8 = var2.getBlockState(var3);
          }
 
@@ -593,7 +593,7 @@ public class Class9680 {
                } else {
                   var10 = field45269;
                   if (var1.<Class84>method23463(Class3456.field19276) == Class84.field209) {
-                     var3 = var3.method8313();
+                     var3 = var3.down();
                   }
                }
 

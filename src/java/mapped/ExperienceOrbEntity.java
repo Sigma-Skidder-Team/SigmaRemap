@@ -52,7 +52,7 @@ public class ExperienceOrbEntity extends Entity {
          this.method4174();
       }
 
-      if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470)) {
+      if (this.world.getFluidState(this.getPosition()).method23486(Class8953.field40470)) {
          this.method3435(
             (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F),
             0.2F,
@@ -149,7 +149,7 @@ public class ExperienceOrbEntity extends Entity {
 
    @Override
    public void method3279(PlayerEntity var1) {
-      if (!this.world.field9020 && this.field5557 == 0 && var1.field4910 == 0) {
+      if (!this.world.isRemote && this.field5557 == 0 && var1.field4910 == 0) {
          var1.field4910 = 2;
          var1.method2751(this, 1);
          Entry var4 = Class7858.method26340(Class8122.field34932, var1, ItemStack::method32116);

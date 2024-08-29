@@ -18,7 +18,7 @@ public class Class3344 extends Class3343 {
    }
 
    public static void method11898(World var0, BlockPos var1, SkullTileEntity var2) {
-      if (!var0.field9020) {
+      if (!var0.isRemote) {
          BlockState var5 = var2.method3775();
          boolean var6 = var5.method23448(Blocks.field36703) || var5.method23448(Blocks.field36704);
          if (var6 && var1.getY() >= 0 && var0.method6997() != Class2197.field14351) {
@@ -28,8 +28,8 @@ public class Class3344 extends Class3343 {
                for (int var9 = 0; var9 < var7.method38654(); var9++) {
                   for (int var10 = 0; var10 < var7.method38653(); var10++) {
                      Class9632 var11 = var8.method33881(var9, var10, 0);
-                     var0.method6725(var11.method37551(), Blocks.AIR.method11579(), 2);
-                     var0.method6999(2001, var11.method37551(), Block.method11535(var11.method37548()));
+                     var0.setBlockState(var11.method37551(), Blocks.AIR.method11579(), 2);
+                     var0.playEvent(2001, var11.method37551(), Block.getStateId(var11.method37548()));
                   }
                }
 
@@ -53,7 +53,7 @@ public class Class3344 extends Class3343 {
 
                for (int var16 = 0; var16 < var7.method38654(); var16++) {
                   for (int var17 = 0; var17 < var7.method38653(); var17++) {
-                     var0.method6964(var8.method33881(var16, var17, 0).method37551(), Blocks.AIR);
+                     var0.func_230547_a_(var8.method33881(var16, var17, 0).method37551(), Blocks.AIR);
                   }
                }
             }
@@ -62,7 +62,7 @@ public class Class3344 extends Class3343 {
    }
 
    public static boolean method11899(World var0, BlockPos var1, ItemStack var2) {
-      return var2.getItem() == Items.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.field9020
+      return var2.getItem() == Items.field38059 && var1.getY() >= 2 && var0.method6997() != Class2197.field14351 && !var0.isRemote
          ? method11901().method38656(var0, var1) != null
          : false;
    }
@@ -71,7 +71,7 @@ public class Class3344 extends Class3343 {
       if (field18857 == null) {
          field18857 = Class9659.method37706()
             .method37705("^^^", "###", "~#~")
-            .method37707('#', var0 -> var0.method37548().method23446(Class7645.field32793))
+            .method37707('#', var0 -> var0.method37548().method23446(BlockTags.field32793))
             .method37707('^', Class9632.method37552(Class166.method497(Blocks.field36703).or(Class166.method497(Blocks.field36704))))
             .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
             .method37708();
@@ -84,7 +84,7 @@ public class Class3344 extends Class3343 {
       if (field18858 == null) {
          field18858 = Class9659.method37706()
             .method37705("   ", "###", "~#~")
-            .method37707('#', var0 -> var0.method37548().method23446(Class7645.field32793))
+            .method37707('#', var0 -> var0.method37548().method23446(BlockTags.field32793))
             .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
             .method37708();
       }

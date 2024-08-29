@@ -20,7 +20,7 @@ public class Class8747<T> {
    }
 
    public Class8747<T> method31559(Class7610<T> var1) {
-      this.field39426.method20946(var1.method24929(), this.field39428);
+      this.field39426.method20946(var1.getName(), this.field39428);
       return this;
    }
 

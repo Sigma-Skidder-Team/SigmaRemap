@@ -50,7 +50,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY());
          int var5 = MathHelper.floor(this.getPosZ());
@@ -72,7 +72,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
             if (this.world.getBlockState(var8).isAir()
                && this.world.getBiome(var8).method32503(var8) < 0.8F
                && var6.method23443(this.world, var8)) {
-               this.world.method6730(var8, var6);
+               this.world.setBlockState(var8, var6);
             }
          }
       }
@@ -101,11 +101,11 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return ActionResultType.field14820;
       }
@@ -114,7 +114,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    @Override
    public void method4515(Class2266 var1) {
       this.world.method6744((PlayerEntity)null, this, Sounds.field27115, var1, 1.0F, 1.0F);
-      if (!this.world.method6714()) {
+      if (!this.world.isRemote()) {
          this.method4532(false);
          this.method3303(new ItemStack(Items.field37439), 1.7F);
       }

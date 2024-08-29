@@ -36,7 +36,7 @@ public class Class4204 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 10, 7, 15, false, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, Class2213.field14472, 4, 1, 0);
       int var10 = 6;
@@ -121,7 +121,7 @@ public class Class4204 extends Class4194 {
          BlockPos var27 = new BlockPos(this.method12920(5, 6), var10, this.method12922(5, 6));
          if (var5.method38396(var27)) {
             this.field20511 = true;
-            var1.method6725(var27, Blocks.field36532.method11579(), 2);
+            var1.setBlockState(var27, Blocks.field36532.method11579(), 2);
             TileEntity var21 = var1.getTileEntity(var27);
             if (var21 instanceof Class960) {
                ((Class960)var21).method3911().method24790(EntityType.field41077);

@@ -19,28 +19,28 @@ public class Class7143 extends Class7139 {
    public void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
       var3.forEach(var5x -> {
          if (var2.nextInt(3) > 0) {
-            BlockPos var8 = var5x.method8345();
+            BlockPos var8 = var5x.west();
             if (Class2898.method11221(var1, var8)) {
                this.method22273(var1, var8, Class3402.field19066, var5, var6);
             }
          }
 
          if (var2.nextInt(3) > 0) {
-            BlockPos var9 = var5x.method8347();
+            BlockPos var9 = var5x.east();
             if (Class2898.method11221(var1, var9)) {
                this.method22273(var1, var9, Class3402.field19068, var5, var6);
             }
          }
 
          if (var2.nextInt(3) > 0) {
-            BlockPos var10 = var5x.method8341();
+            BlockPos var10 = var5x.north();
             if (Class2898.method11221(var1, var10)) {
                this.method22273(var1, var10, Class3402.field19067, var5, var6);
             }
          }
 
          if (var2.nextInt(3) > 0) {
-            BlockPos var11 = var5x.method8343();
+            BlockPos var11 = var5x.south();
             if (Class2898.method11221(var1, var11)) {
                this.method22273(var1, var11, Class3402.field19065, var5, var6);
             }

@@ -26,7 +26,7 @@ public class Class3730 extends Class3676<Class1006> {
       this.method12652(var2).ifPresent(var3x -> {
          this.field19835 = var3x;
          this.field19836 = 100;
-         this.field19837 = 3 + var1.field9016.nextInt(4);
+         this.field19837 = 3 + var1.rand.nextInt(4);
          this.field19838 = 0;
          this.method12647(var2, var3x);
       });
@@ -79,7 +79,7 @@ public class Class3730 extends Class3676<Class1006> {
 
    private boolean method12649(ServerWorld var1, Class1006 var2) {
       BlockPos var5 = var2.getPosition();
-      BlockPos var6 = var5.method8313();
+      BlockPos var6 = var5.down();
       return this.method12651(var1, var5) || this.method12651(var1, var6);
    }
 
@@ -88,7 +88,7 @@ public class Class3730 extends Class3676<Class1006> {
    }
 
    private boolean method12651(ServerWorld var1, BlockPos var2) {
-      return var1.getBlockState(var2).method23446(Class7645.field32770);
+      return var1.getBlockState(var2).method23446(BlockTags.field32770);
    }
 
    private Optional<BlockPos> method12652(Class1006 var1) {

@@ -18,7 +18,7 @@ public class Class9479 {
          UnmodifiableIterator var8 = var7.method25047().getValidStates().iterator();
 
          while (var8.hasNext()) {
-            Class7379 var9 = (Class7379)var8.next();
+            FluidState var9 = (FluidState)var8.next();
             Fluid.field32708.method9269(var9);
          }
       }

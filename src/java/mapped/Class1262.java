@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Class1262 extends Class1193 {
-   private static final Map<Class101, String> field6664 = Util.<EnumMap<Class101, String>>method38508(
+   private static final Map<Class101, String> field6664 = Util.<EnumMap<Class101, String>>make(
       new EnumMap<Class101, String>(Class101.class), var0 -> {
          var0.put(Class101.field295, "SW");
          var0.put(Class101.field296, "S");
@@ -33,8 +33,8 @@ public class Class1262 extends Class1193 {
    private RayTraceResult field6667;
    private RayTraceResult field6668;
    private Class7481 field6669;
-   private Class1674 field6670;
-   private CompletableFuture<Class1674> field6671;
+   private Chunk field6670;
+   private CompletableFuture<Chunk> field6671;
    private String field6672 = null;
    private List<String> field6673 = null;
    public List<String> field6674 = null;
@@ -287,7 +287,7 @@ public class Class1262 extends Class1193 {
             var16.add(var17);
          }
 
-         var16.add(this.field6665.world.getDimensionKey().method31399() + " FC: " + var15.size());
+         var16.add(this.field6665.world.getDimensionKey().getLocation() + " FC: " + var15.size());
          var16.add("");
          var16.add(
             String.format(
@@ -317,17 +317,17 @@ public class Class1262 extends Class1193 {
          );
          if (this.field6665.world != null) {
             if (this.field6665.world.method7017(var8)) {
-               Class1674 var18 = this.method5887();
+               Chunk var18 = this.method5887();
                if (var18.method7141()) {
                   var16.add("Waiting for chunk...");
                } else {
-                  int var19 = this.field6665.world.method6883().method7348().method640(var8, 0);
+                  int var19 = this.field6665.world.getChunkProvider().getLightManager().method640(var8, 0);
                   int var20 = this.field6665.world.method7020(Class1977.field12881, var8);
                   int var21 = this.field6665.world.method7020(Class1977.field12882, var8);
                   var16.add("Client Light: " + var19 + " (" + var20 + " sky, " + var21 + " block)");
-                  Class1674 var22 = this.method5886();
+                  Chunk var22 = this.method5886();
                   if (var22 != null) {
-                     Class196 var23 = var14.method6883().method7348();
+                     Class196 var23 = var14.getChunkProvider().getLightManager();
                      var16.add(
                         "Server Light: ("
                            + var23.method638(Class1977.field12881).method643(var8)
@@ -369,7 +369,7 @@ public class Class1262 extends Class1193 {
                            + this.field6665
                               .world
                               .method6867()
-                              .<Biome>method32453(Registry.BIOME_KEY)
+                              .<Biome>getRegistry(Registry.BIOME_KEY)
                               .getKey(this.field6665.world.getBiome(var8))
                      );
                      long var28 = 0L;
@@ -400,7 +400,7 @@ public class Class1262 extends Class1193 {
 
          ServerWorld var30 = this.method5883();
          if (var30 != null) {
-            Class7307 var31 = var30.method6883().method7385();
+            Class7307 var31 = var30.getChunkProvider().method7385();
             if (var31 != null) {
                Object2IntMap var33 = var31.method23091();
                int var34 = var31.method23090();
@@ -448,26 +448,26 @@ public class Class1262 extends Class1193 {
    }
 
    @Nullable
-   private Class1674 method5886() {
+   private Chunk method5886() {
       if (this.field6671 == null) {
          ServerWorld var3 = this.method5883();
          if (var3 != null) {
-            this.field6671 = var3.method6883()
-               .method7358(this.field6669.field32174, this.field6669.field32175, Class9176.field42145, false)
-               .<Class1674>thenApply(var0 -> (Class1674)var0.map(var0x -> (Class1674)var0x, var0x -> null));
+            this.field6671 = var3.getChunkProvider()
+               .method7358(this.field6669.field32174, this.field6669.field32175, ChunkStatus.FULL, false)
+               .<Chunk>thenApply(var0 -> (Chunk)var0.map(var0x -> (Chunk)var0x, var0x -> null));
          }
 
          if (this.field6671 == null) {
-            this.field6671 = CompletableFuture.<Class1674>completedFuture(this.method5887());
+            this.field6671 = CompletableFuture.<Chunk>completedFuture(this.method5887());
          }
       }
 
-      return this.field6671.getNow((Class1674)null);
+      return this.field6671.getNow((Chunk)null);
    }
 
-   private Class1674 method5887() {
+   private Chunk method5887() {
       if (this.field6670 == null) {
-         this.field6670 = this.field6665.world.method6824(this.field6669.field32174, this.field6669.field32175);
+         this.field6670 = this.field6665.world.getChunk(this.field6669.field32174, this.field6669.field32175);
       }
 
       return this.field6670;
@@ -539,7 +539,7 @@ public class Class1262 extends Class1193 {
 
          if (this.field6668.getType() == RayTraceResult.Type.BLOCK) {
             BlockPos var25 = ((BlockRayTraceResult)this.field6668).getPos();
-            Class7379 var28 = this.field6665.world.method6739(var25);
+            FluidState var28 = this.field6665.world.getFluidState(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.getX() + ", " + var25.getY() + ", " + var25.getZ());
             var11.add(String.valueOf(Registry.field16070.getKey(var28.method23472())));
@@ -688,10 +688,10 @@ public class Class1262 extends Class1193 {
       int var11 = var2 >> 16 & 0xFF;
       int var12 = var2 >> 8 & 0xFF;
       int var13 = var2 & 0xFF;
-      int var14 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var6, (float)var10), 0, 255);
-      int var15 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var7, (float)var11), 0, 255);
-      int var16 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var8, (float)var12), 0, 255);
-      int var17 = MathHelper.method37775((int) MathHelper.method37821(var3, (float)var9, (float)var13), 0, 255);
+      int var14 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var6, (float)var10), 0, 255);
+      int var15 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var7, (float)var11), 0, 255);
+      int var16 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var8, (float)var12), 0, 255);
+      int var17 = MathHelper.method37775((int) MathHelper.lerp(var3, (float)var9, (float)var13), 0, 255);
       return var14 << 24 | var15 << 16 | var16 << 8 | var17;
    }
 

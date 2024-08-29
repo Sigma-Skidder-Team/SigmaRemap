@@ -415,7 +415,7 @@ public class Class2831 implements Consumer<Consumer<Class7952>> {
 
    public static Class7999 method11031(Class7999 var0, List<RegistryKey<Biome>> var1) {
       for (RegistryKey var5 : var1) {
-         var0.method27312(var5.method31399().toString(), Class4474.method14130(Class8576.method30647(var5)));
+         var0.method27312(var5.getLocation().toString(), Class4474.method14130(Class8576.method30647(var5)));
       }
 
       return var0;

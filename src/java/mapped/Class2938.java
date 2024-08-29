@@ -9,7 +9,7 @@ public class Class2938 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       Mutable var8 = new Mutable();
       Mutable var9 = new Mutable();
 
@@ -22,14 +22,14 @@ public class Class2938 extends Class2898<Class4712> {
             var9.method8374(var8).method8380(Direction.DOWN, 1);
             Biome var15 = var1.getBiome(var8);
             if (var15.method32505(var1, var9, false)) {
-               var1.method6725(var9, Blocks.ICE.method11579(), 2);
+               var1.setBlockState(var9, Blocks.ICE.method11579(), 2);
             }
 
             if (var15.method32506(var1, var8)) {
-               var1.method6725(var8, Blocks.SNOW.method11579(), 2);
+               var1.setBlockState(var8, Blocks.SNOW.method11579(), 2);
                BlockState var16 = var1.getBlockState(var9);
                if (var16.method23462(Class3471.field19323)) {
-                  var1.method6725(var9, var16.method23465(Class3471.field19323, Boolean.valueOf(true)), 2);
+                  var1.setBlockState(var9, var16.method23465(Class3471.field19323, Boolean.valueOf(true)), 2);
                }
             }
          }

@@ -14,13 +14,13 @@ public final class Class9777 {
    private final Registry<Class9369> field45733;
    private final int field45734;
    private final Class6989 field45735;
-   private final Class5646 field45736;
+   private final ChunkGenerator field45736;
    private final Class8761 field45737;
    private final List<? super Class4193> field45738;
    private final Random field45739;
    private final Deque<Class7213> field45740 = Queues.newArrayDeque();
 
-   public Class9777(Registry<Class9369> var1, int var2, Class6989 var3, Class5646 var4, Class8761 var5, List<? super Class4193> var6, Random var7) {
+   public Class9777(Registry<Class9369> var1, int var2, Class6989 var3, ChunkGenerator var4, Class8761 var5, List<? super Class4193> var6, Random var7) {
       this.field45733 = var1;
       this.field45734 = var2;
       this.field45735 = var3;
@@ -49,12 +49,12 @@ public final class Class9777 {
          int var22 = -1;
          ResourceLocation var23 = new ResourceLocation(var17.field35532.method126("pool"));
          Optional<Class9369> var24 = this.field45733.method9187(var23);
-         if (!var24.isPresent() || ((Class9369)var24.get()).method35538() == 0 && !Objects.equals(var23, Class9837.field45937.method31399())) {
+         if (!var24.isPresent() || ((Class9369)var24.get()).method35538() == 0 && !Objects.equals(var23, Class9837.field45937.getLocation())) {
             Class8814.method31822().warn("Empty or none existent pool: {}", var23);
          } else {
             ResourceLocation var25 = ((Class9369)var24.get()).method35534();
             Optional<Class9369> var26 = this.field45733.method9187(var25);
-            if (var26.isPresent() && (((Class9369)var26.get()).method35538() != 0 || Objects.equals(var25, Class9837.field45937.method31399()))) {
+            if (var26.isPresent() && (((Class9369)var26.get()).method35538() != 0 || Objects.equals(var25, Class9837.field45937.getLocation()))) {
                boolean var27 = var14.method38396(var20);
                MutableObject<VoxelShape> var28;
                int var29;
@@ -137,7 +137,7 @@ public final class Class9777 {
                               (VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50).method19679(0.25)), IBooleanFunction.field44039
                            )) {
                               var28.setValue(
-                                 VoxelShapes.method27434((VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50)), IBooleanFunction.field44041)
+                                 VoxelShapes.method27434((VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50)), IBooleanFunction.ONLY_FIRST)
                               );
                               int var56 = var1.method12979();
                               int var53;

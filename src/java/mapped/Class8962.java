@@ -19,16 +19,16 @@ public class Class8962 {
    }
 
    public CompoundNBT method32748(ResourceLocation var1) {
-      String var4 = var1.method8293();
+      String var4 = var1.getNamespace();
       String var5 = method32751(var4);
       Class7534 var6 = this.field40485.<Class7534>method28768(() -> this.method32747(var4, var5), var5);
-      return var6 == null ? new CompoundNBT() : var6.method24624(var1.method8292());
+      return var6 == null ? new CompoundNBT() : var6.method24624(var1.getPath());
    }
 
    public void method32749(ResourceLocation var1, CompoundNBT var2) {
-      String var5 = var1.method8293();
+      String var5 = var1.getNamespace();
       String var6 = method32751(var5);
-      this.field40485.<Class7534>method28767(() -> this.method32747(var5, var6), var6).method24625(var1.method8292(), var2);
+      this.field40485.<Class7534>method28767(() -> this.method32747(var5, var6), var6).method24625(var1.getPath(), var2);
    }
 
    public Stream<ResourceLocation> method32750() {

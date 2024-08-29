@@ -70,7 +70,7 @@ public abstract class Class2628 extends Class2595 {
    }
 
    public BlockPos method10836() {
-      return this.field16933.method8311();
+      return this.field16933.up();
    }
 
    @Override

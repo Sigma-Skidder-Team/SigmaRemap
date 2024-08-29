@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class Class8539 {
    private static String[] field38385;
    private static final Logger field38386 = LogManager.getLogger();
-   public static final EnumMap<Direction, Class6979> field38387 = Util.<EnumMap<Direction, Class6979>>method38508(
+   public static final EnumMap<Direction, Class6979> field38387 = Util.<EnumMap<Direction, Class6979>>make(
       Maps.newEnumMap(Direction.class),
       var0 -> {
          var0.put(Direction.SOUTH, Class6979.method21542());
@@ -30,7 +30,7 @@ public class Class8539 {
          );
       }
    );
-   public static final EnumMap<Direction, Class6979> field38388 = Util.<EnumMap<Direction, Class6979>>method38508(Maps.newEnumMap(Direction.class), var0 -> {
+   public static final EnumMap<Direction, Class6979> field38388 = Util.<EnumMap<Direction, Class6979>>make(Maps.newEnumMap(Direction.class), var0 -> {
       for (Direction var6 : Direction.values()) {
          var0.put(var6, field38387.get(var6).method21544());
       }

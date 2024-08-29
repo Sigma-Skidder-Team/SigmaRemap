@@ -220,11 +220,11 @@ public class Class9081 {
          TileEntity var5 = this.field41570.getTileEntity(var1);
          Block var6 = var4.getBlock();
          if ((var6 instanceof Class3355 || var6 instanceof Class3367 || var6 instanceof Class3249) && !this.field41571.method2979()) {
-            this.field41570.method6731(var1, var4, var4, 3);
+            this.field41570.notifyBlockUpdate(var1, var4, var4, 3);
             return false;
          } else if (!this.field41571.method2848(this.field41570, var1, this.field41572)) {
             var6.method11574(this.field41570, var1, var4, this.field41571);
-            boolean var7 = this.field41570.method6728(var1, false);
+            boolean var7 = this.field41570.removeBlock(var1, false);
             if (var7) {
                var6.method11551(this.field41570, var1, var4);
             }

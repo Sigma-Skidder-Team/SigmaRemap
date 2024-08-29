@@ -28,18 +28,18 @@ public class Class6991 extends Class6990 {
    @Override
    public Class8238 method21651(BlockPos var1, int var2) {
       if (this.field30244.getBlockState(var1).isAir()) {
-         BlockPos var5 = var1.method8313();
+         BlockPos var5 = var1.down();
 
          while (var5.getY() > 0 && this.field30244.getBlockState(var5).isAir()) {
-            var5 = var5.method8313();
+            var5 = var5.down();
          }
 
          if (var5.getY() > 0) {
-            return super.method21651(var5.method8311(), var2);
+            return super.method21651(var5.up(), var2);
          }
 
          while (var5.getY() < this.field30244.method7034() && this.field30244.getBlockState(var5).isAir()) {
-            var5 = var5.method8311();
+            var5 = var5.up();
          }
 
          var1 = var5;
@@ -48,10 +48,10 @@ public class Class6991 extends Class6990 {
       if (!this.field30244.getBlockState(var1).method23384().method31086()) {
          return super.method21651(var1, var2);
       } else {
-         BlockPos var6 = var1.method8311();
+         BlockPos var6 = var1.up();
 
          while (var6.getY() < this.field30244.method7034() && this.field30244.getBlockState(var6).method23384().method31086()) {
-            var6 = var6.method8311();
+            var6 = var6.up();
          }
 
          return super.method21651(var6, var2);

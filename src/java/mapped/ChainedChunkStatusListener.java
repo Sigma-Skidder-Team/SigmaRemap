@@ -17,7 +17,7 @@ public class ChainedChunkStatusListener implements Class7243 {
    }
 
    @Override
-   public void method22737(Class7481 var1, Class9176 var2) {
+   public void method22737(Class7481 var1, ChunkStatus var2) {
       this.field31095.method1641(() -> this.field31094.method22737(var1, var2));
    }
 

@@ -302,7 +302,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          if (var3) {
             var6 = this.field802.gameSettings.field44669;
             if (Class7944.method26940()) {
-               var6 *= (double) MathHelper.method37821(var2, this.field811, this.field810);
+               var6 *= (double) MathHelper.lerp(var2, this.field811, this.field810);
             }
          }
 
@@ -335,7 +335,7 @@ public class GameRenderer implements Class215, AutoCloseable {
             var6 /= (double)((1.0F - 500.0F / (var9 + 500.0F)) * 2.0F + 1.0F);
          }
 
-         Class7379 var10 = var1.method37512();
+         FluidState var10 = var1.method37512();
          if (!var10.method23474()) {
             var6 = var6 * 60.0 / 70.0;
          }
@@ -373,7 +373,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          PlayerEntity var5 = (PlayerEntity)this.field802.getRenderViewEntity();
          float var6 = var5.distanceWalkedModified - var5.prevDistanceWalkedModified;
          float var7 = -(var5.distanceWalkedModified + var6 * var2);
-         float var8 = MathHelper.method37821(var2, var5.field4908, var5.field4909);
+         float var8 = MathHelper.lerp(var2, var5.field4908, var5.field4909);
          var1.translate(
             (double)(MathHelper.sin(var7 * (float) Math.PI) * var8 * 0.5F),
             (double)(-Math.abs(MathHelper.cos(var7 * (float) Math.PI) * var8)),
@@ -557,7 +557,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          if (var4 && this.field802.world != null) {
             this.field802.getProfiler().endStartSection("gui");
             if (this.field802.player != null) {
-               float var11 = MathHelper.method37821(var1, this.field802.player.field6142, this.field802.player.field6141);
+               float var11 = MathHelper.lerp(var1, this.field802.player.field6142, this.field802.player.field6141);
                if (var11 > 0.0F && this.field802.player.method3033(Class8254.field35475) && this.field802.gameSettings.field44670 < 1.0F) {
                   this.method765(var11 * (1.0F - this.field802.gameSettings.field44670));
                }
@@ -752,7 +752,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          this.method745(var10, var1);
       }
 
-      float var12 = MathHelper.method37821(var1, this.field802.player.field6142, this.field802.player.field6141)
+      float var12 = MathHelper.lerp(var1, this.field802.player.field6142, this.field802.player.field6141)
          * this.field802.gameSettings.field44670
          * this.field802.gameSettings.field44670;
       if (var12 > 0.0F) {
@@ -1088,7 +1088,7 @@ public class GameRenderer implements Class215, AutoCloseable {
    }
 
    public float method766(float var1) {
-      return MathHelper.method37821(var1, this.field813, this.field812);
+      return MathHelper.lerp(var1, this.field813, this.field812);
    }
 
    public float method767() {

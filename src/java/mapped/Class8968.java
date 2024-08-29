@@ -49,10 +49,10 @@ public class Class8968 {
       .<ResourceLocation>mapToObj(var0 -> new ResourceLocation("block/destroy_stage_" + var0))
       .collect(Collectors.<ResourceLocation>toList());
    public static final List<ResourceLocation> field40517 = field40516.stream()
-      .<ResourceLocation>map(var0 -> new ResourceLocation("textures/" + var0.method8292() + ".png"))
+      .<ResourceLocation>map(var0 -> new ResourceLocation("textures/" + var0.getPath() + ".png"))
       .collect(Collectors.<ResourceLocation>toList());
    public static final List<RenderType> field40518 = field40517.stream().<RenderType>map(RenderType::method14338).collect(Collectors.<RenderType>toList());
-   private static final Set<Class7826> field40519 = Util.<Set<Class7826>>method38508(Sets.newHashSet(), var0 -> {
+   private static final Set<Class7826> field40519 = Util.<Set<Class7826>>make(Sets.newHashSet(), var0 -> {
       var0.add(field40511);
       var0.add(field40510);
       var0.add(field40512);
@@ -85,18 +85,18 @@ public class Class8968 {
    public static final Class1997 field40521 = new Class1997("builtin/missing", "missing");
    private static final String field40522 = field40521.toString();
    public static final String field40523 = ("{    'textures': {       'particle': '"
-         + Class1714.method7513().method8292()
+         + Class1714.method7513().getPath()
          + "',       'missingno': '"
-         + Class1714.method7513().method8292()
+         + Class1714.method7513().getPath()
          + "'    },    'elements': [         {  'from': [ 0, 0, 0 ],            'to': [ 16, 16, 16 ],            'faces': {                'down':  { 'uv': [ 0, 0, 16, 16 ], 'cullface': 'down',  'texture': '#missingno' },                'up':    { 'uv': [ 0, 0, 16, 16 ], 'cullface': 'up',    'texture': '#missingno' },                'north': { 'uv': [ 0, 0, 16, 16 ], 'cullface': 'north', 'texture': '#missingno' },                'south': { 'uv': [ 0, 0, 16, 16 ], 'cullface': 'south', 'texture': '#missingno' },                'west':  { 'uv': [ 0, 0, 16, 16 ], 'cullface': 'west',  'texture': '#missingno' },                'east':  { 'uv': [ 0, 0, 16, 16 ], 'cullface': 'east',  'texture': '#missingno' }            }        }    ]}")
       .replace('\'', '"');
    private static final Map<String, String> field40524 = Maps.newHashMap(ImmutableMap.of("missing", field40523));
    private static final Splitter field40525 = Splitter.on(',');
    private static final Splitter field40526 = Splitter.on('=').limit(2);
-   public static final Class7496 field40527 = Util.<Class7496>method38508(
+   public static final Class7496 field40527 = Util.<Class7496>make(
       Class7496.method24427("{\"gui_light\": \"front\"}"), var0 -> var0.field32207 = "generation marker"
    );
-   public static final Class7496 field40528 = Util.<Class7496>method38508(
+   public static final Class7496 field40528 = Util.<Class7496>make(
       Class7496.method24427("{\"gui_light\": \"side\"}"), var0 -> var0.field32207 = "block entity marker"
    );
    private static final Class9348<Block, BlockState> field40529 = new Class7558<Block, BlockState>(Blocks.AIR)
@@ -115,7 +115,7 @@ public class Class8968 {
    private final Map<ResourceLocation, IBakedModel> field40540 = Maps.newHashMap();
    private Map<ResourceLocation, Pair<AtlasTexture, Class8226>> field40541;
    private int field40542 = 1;
-   private final Object2IntMap<BlockState> field40543 = Util.<Object2IntMap<BlockState>>method38508(
+   private final Object2IntMap<BlockState> field40543 = Util.<Object2IntMap<BlockState>>make(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
    public Map<ResourceLocation, Class7495> field40544;
@@ -302,7 +302,7 @@ public class Class8968 {
       } else {
          Class1997 var4 = (Class1997)var1;
          if (!Objects.equals(var4.method8303(), "inventory")) {
-            ResourceLocation var31 = new ResourceLocation(var1.method8293(), var1.method8292());
+            ResourceLocation var31 = new ResourceLocation(var1.getNamespace(), var1.getPath());
             Class9348<Block, BlockState> var32 = Optional.ofNullable(field40531.get(var31))
                .orElseGet(() -> Registry.BLOCK.method9184(var31).getStateContainer());
             this.field40536.method38573(var32);
@@ -313,7 +313,7 @@ public class Class8968 {
                BlockState var5x = var9.put(BlockModelShapes.method38157(var31, var2), var2);
             });
             HashMap var10 = Maps.newHashMap();
-            ResourceLocation var11 = new ResourceLocation(var1.method8293(), "blockstates/" + var1.method8292() + ".json");
+            ResourceLocation var11 = new ResourceLocation(var1.getNamespace(), "blockstates/" + var1.getPath() + ".json");
             Class7495 var12 = this.field40537.get(field40521);
             Class9390 var13 = new Class9390(ImmutableList.of(var12), ImmutableList.of());
             Pair<Class7495, Supplier<Class9390>> var14 = Pair.of(var12, (Supplier<Class9390>)() -> var13);
@@ -437,8 +437,8 @@ public class Class8968 {
             }
          }
 
-         ResourceLocation var5 = new ResourceLocation(var1.method8293(), "item/" + var1.method8292());
-         String var6 = var1.method8292();
+         ResourceLocation var5 = new ResourceLocation(var1.getNamespace(), "item/" + var1.getPath());
+         String var6 = var1.getPath();
          if (var6.startsWith("optifine/") || var6.startsWith("item/")) {
             var5 = var1;
          }
@@ -513,7 +513,7 @@ public class Class8968 {
 
       Class7496 var10;
       try {
-         String var6 = var1.method8292();
+         String var6 = var1.getPath();
          ResourceLocation var7 = var1;
          if ("builtin/generated".equals(var6)) {
             return field40527;
@@ -539,7 +539,7 @@ public class Class8968 {
 
          Class7496 var15 = Class7496.method24426((Reader)var4);
          var15.field32207 = var1.toString();
-         String var17 = Class8684.method31275(var7.method8292());
+         String var17 = Class8684.method31275(var7.getPath());
          method32853(var15, var17);
          var10 = var15;
       } finally {
@@ -559,12 +559,12 @@ public class Class8968 {
    }
 
    private ResourceLocation method32852(ResourceLocation var1) {
-      String var4 = var1.method8292();
+      String var4 = var1.getPath();
       if (!var4.startsWith("optifine/")) {
-         return new ResourceLocation(var1.method8293(), "models/" + var1.method8292() + ".json");
+         return new ResourceLocation(var1.getNamespace(), "models/" + var1.getPath() + ".json");
       } else {
          if (!var4.endsWith(".json")) {
-            var1 = new ResourceLocation(var1.method8293(), var4 + ".json");
+            var1 = new ResourceLocation(var1.getNamespace(), var4 + ".json");
          }
 
          return var1;
@@ -584,10 +584,10 @@ public class Class8968 {
             if (var8.isPresent()) {
                Class7826 var9 = (Class7826)var8.get();
                ResourceLocation var10 = var9.method26197();
-               String var11 = var10.method8292();
+               String var11 = var10.getPath();
                String var12 = method32855(var11, var1);
                if (!var12.equals(var11)) {
-                  ResourceLocation var13 = new ResourceLocation(var10.method8293(), var12);
+                  ResourceLocation var13 = new ResourceLocation(var10.getNamespace(), var12);
                   Class7826 var14 = new Class7826(var9.method26196(), var13);
                   Either var15 = Either.left(var14);
                   var6.setValue(var15);
@@ -599,11 +599,11 @@ public class Class8968 {
 
    public static ResourceLocation method32854(ResourceLocation var0, String var1) {
       if (var0 != null && var1 != null) {
-         if (var0.method8293().equals("minecraft")) {
-            String var4 = var0.method8292();
+         if (var0.getNamespace().equals("minecraft")) {
+            String var4 = var0.getPath();
             String var5 = method32855(var4, var1);
             if (var5 != var4) {
-               var0 = new ResourceLocation(var0.method8293(), var5);
+               var0 = new ResourceLocation(var0.getNamespace(), var5);
             }
 
             return var0;

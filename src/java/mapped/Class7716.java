@@ -105,7 +105,7 @@ public class Class7716 {
    public boolean method25495(int var1, int var2, int var3) {
       BlockPos var6 = new BlockPos(var1, var2, var3);
       return field33120.world.getBlockState(new BlockPos(var1, var2 - 1, var3)).getBlock() != Blocks.AIR
-         ? !this.method25494(var6) && !this.method25494(var6.method8311())
+         ? !this.method25494(var6) && !this.method25494(var6.up())
          : false;
    }
 

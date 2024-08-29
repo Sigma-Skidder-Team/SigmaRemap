@@ -11,7 +11,7 @@ public class Class6996 extends Class6995 {
 
    @Override
    public boolean method21672(BlockPos var1) {
-      return !this.field30244.getBlockState(var1.method8313()).isAir();
+      return !this.field30244.getBlockState(var1.down()).isAir();
    }
 
    @Override

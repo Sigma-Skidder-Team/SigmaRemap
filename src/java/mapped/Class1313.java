@@ -96,7 +96,7 @@ public class Class1313 extends Screen {
             if (var5.hasNext()) {
                try {
                   ResourceLocation var9 = new ResourceLocation((String)var5.next());
-                  var8 = RegistryKey.<Biome>method31395(Registry.BIOME_KEY, var9);
+                  var8 = RegistryKey.<Biome>getOrCreateKey(Registry.BIOME_KEY, var9);
                   var0.method9188(var8).orElseThrow(() -> new IllegalArgumentException("Invalid Biome: " + var9));
                } catch (Exception var10) {
                   field6925.error("Error while parsing flat world string => {}", var10.getMessage());
@@ -104,7 +104,7 @@ public class Class1313 extends Screen {
             }
 
             RegistryKey var11 = var8;
-            var7.method38128(() -> (Biome)var0.method9189(var11));
+            var7.method38128(() -> (Biome)var0.getOrThrow(var11));
             return var7;
          }
       }
@@ -133,7 +133,7 @@ public class Class1313 extends Screen {
       this.field6929 = new TranslationTextComponent("createWorld.customize.presets.list");
       this.field6932 = new Class1189(this.field4568, 50, 40, this.field4564 - 100, 20, this.field6928);
       this.field6932.method5657(1230);
-      Class2349 var3 = this.field6927.field7000.field7092.method5789().<Biome>method32453(Registry.BIOME_KEY);
+      MutableRegistry var3 = this.field6927.field7000.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY);
       this.field6932.method5635(method6204(var3, this.field6927.method6294()));
       this.field6933 = this.field6927.method6294();
       this.field4561.add(this.field6932);
@@ -222,7 +222,7 @@ public class Class1313 extends Screen {
             var14.method38129().add(var7[var12]);
          }
 
-         var14.method38128(() -> (Biome)var6x.method9189(var2));
+         var14.method38128(() -> (Biome)var6x.getOrThrow(var2));
          var14.method38131();
          return var14.method38121(var13);
       }));

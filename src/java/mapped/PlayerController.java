@@ -58,8 +58,8 @@ public class PlayerController {
                return false;
             } else if (!var5.isAir()) {
                var6.method11574(var4, var1, var5, this.field31358.player);
-               Class7379 var7 = var4.method6739(var1);
-               boolean var8 = var4.method6725(var1, var7.method23484(), 11);
+               FluidState var7 = var4.getFluidState(var1);
+               boolean var8 = var4.setBlockState(var1, var7.getBlockState(), 11);
                if (var8) {
                   var6.method11551(var4, var1, var5);
                }

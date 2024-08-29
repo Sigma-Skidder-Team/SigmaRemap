@@ -20,7 +20,7 @@ public class AbstractBlock {
    private ResourceLocation field33976;
    private boolean field33977 = true;
    private boolean field33978;
-   private Class9817<EntityType<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.field673) && var0.method23392() < 14;
+   private Class9817<EntityType<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.field673) && var0.getLightValue() < 14;
    private Class8609 field33980 = (var0, var1x, var2x) -> var0.method23384().method31090() && var0.method23456(var1x, var2x);
    private Class8609 field33981 = (var1x, var2x, var3) -> this.field33964.method31087() && var1x.method23456(var2x, var3);
    private Class8609 field33982 = this.field33981;

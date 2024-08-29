@@ -34,7 +34,7 @@ public class Class5192 extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof Class5607) {
                 Class5607 var4 = (Class5607) var1.getPacket();
-                this.method16164(mc.world.method6722(var4.method17632()).method7072());
+                this.method16164(mc.world.getChunkAt(var4.method17632()).method7072());
             }
 
             if (var1.getPacket() instanceof Class5549) {
@@ -110,7 +110,7 @@ public class Class5192 extends Module {
                             }
                         }
 
-                        var4.add(var13.method8313());
+                        var4.add(var13.down());
                     }
                 }
             }

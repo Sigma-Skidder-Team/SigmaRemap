@@ -9,14 +9,14 @@ public class Class2939 extends Class2898<Class4734> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4734 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4734 var5) {
       int var8 = var3.nextInt(var5.field22423 + 1);
       Mutable var9 = new Mutable();
 
       for (int var10 = 0; var10 < var8; var10++) {
          this.method11282(var9, var3, var4, Math.min(var10, 7));
          if (var5.field22422.method19540(var1.getBlockState(var9), var3) && !this.method11284(var1, var9)) {
-            var1.method6725(var9, var5.field22424, 2);
+            var1.setBlockState(var9, var5.field22424, 2);
          }
       }
 

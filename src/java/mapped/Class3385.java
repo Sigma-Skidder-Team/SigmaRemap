@@ -11,11 +11,11 @@ public class Class3385 extends Block implements Class3196 {
 
    @Override
    public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
-      if (!var1.getBlockState(var2.method8311()).method23386(var1, var2)) {
+      if (!var1.getBlockState(var2.up()).method23386(var1, var2)) {
          return false;
       } else {
          for (BlockPos var8 : BlockPos.method8359(var2.method8336(-1, -1, -1), var2.method8336(1, 1, 1))) {
-            if (var1.getBlockState(var8).method23446(Class7645.field32799)) {
+            if (var1.getBlockState(var8).method23446(BlockTags.field32799)) {
                return true;
             }
          }
@@ -50,13 +50,13 @@ public class Class3385 extends Block implements Class3196 {
       }
 
       if (var8 && var7) {
-         var1.method6725(var3, !var2.nextBoolean() ? Blocks.field37083.method11579() : Blocks.field37074.method11579(), 3);
+         var1.setBlockState(var3, !var2.nextBoolean() ? Blocks.field37083.method11579() : Blocks.field37074.method11579(), 3);
       } else if (!var8) {
          if (var7) {
-            var1.method6725(var3, Blocks.field37083.method11579(), 3);
+            var1.setBlockState(var3, Blocks.field37083.method11579(), 3);
          }
       } else {
-         var1.method6725(var3, Blocks.field37074.method11579(), 3);
+         var1.setBlockState(var3, Blocks.field37074.method11579(), 3);
       }
    }
 }

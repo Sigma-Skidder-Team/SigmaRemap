@@ -27,7 +27,7 @@ public class Class3256 extends Item implements Class3255 {
       } else {
          var2.method2944(var7, var6.copy());
          var6.method32180(0);
-         return Class6794.<ItemStack>method20700(var6, var1.method6714());
+         return Class6794.<ItemStack>method20700(var6, var1.isRemote());
       }
    }
 }

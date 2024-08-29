@@ -19,7 +19,7 @@ public class Class7015 implements Class7016 {
       if (!var1.method6740() && var2) {
          float var6 = var1.method7001(0.0F);
          if ((double)var6 == 0.5) {
-            this.field30311 = var1.field9016.nextInt(10) != 0 ? Class2110.field13768 : Class2110.field13767;
+            this.field30311 = var1.rand.nextInt(10) != 0 ? Class2110.field13768 : Class2110.field13767;
          }
 
          if (this.field30311 != Class2110.field13768) {
@@ -61,7 +61,7 @@ public class Class7015 implements Class7016 {
             BlockPos var6 = var5.getPosition();
             if (var1.method6952(var6) && var1.getBiome(var6).getCategory() != Class100.field289) {
                for (int var7 = 0; var7 < 10; var7++) {
-                  float var8 = var1.field9016.nextFloat() * (float) (Math.PI * 2);
+                  float var8 = var1.rand.nextFloat() * (float) (Math.PI * 2);
                   this.field30314 = var6.getX() + MathHelper.method37767(MathHelper.cos(var8) * 32.0F);
                   this.field30315 = var6.getY();
                   this.field30316 = var6.getZ() + MathHelper.method37767(MathHelper.sin(var8) * 32.0F);
@@ -92,7 +92,7 @@ public class Class7015 implements Class7016 {
             return;
          }
 
-         var5.method3273(var4.field18048, var4.field18049, var4.field18050, var1.field9016.nextFloat() * 360.0F, 0.0F);
+         var5.method3273(var4.field18048, var4.field18049, var4.field18050, var1.rand.nextFloat() * 360.0F, 0.0F);
          var1.method6995(var5);
       }
    }
@@ -100,11 +100,11 @@ public class Class7015 implements Class7016 {
    @Nullable
    private Vector3d method21745(ServerWorld var1, BlockPos var2) {
       for (int var5 = 0; var5 < 10; var5++) {
-         int var6 = var2.getX() + var1.field9016.nextInt(16) - 8;
-         int var7 = var2.getZ() + var1.field9016.nextInt(16) - 8;
+         int var6 = var2.getX() + var1.rand.nextInt(16) - 8;
+         int var7 = var2.getZ() + var1.rand.nextInt(16) - 8;
          int var8 = var1.method6736(Class101.field296, var6, var7);
          BlockPos var9 = new BlockPos(var6, var8, var7);
-         if (var1.method6952(var9) && Class1009.method4341(EntityType.field41107, var1, Class2202.field14398, var9, var1.field9016)) {
+         if (var1.method6952(var9) && Class1009.method4341(EntityType.field41107, var1, Class2202.field14398, var9, var1.rand)) {
             return Vector3d.method11330(var9);
          }
       }

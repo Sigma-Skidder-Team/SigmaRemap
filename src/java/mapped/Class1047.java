@@ -28,7 +28,7 @@ public abstract class Class1047 extends Class1046 {
 
    @Override
    public int method2937(PlayerEntity var1) {
-      return 1 + this.world.field9016.nextInt(3);
+      return 1 + this.world.rand.nextInt(3);
    }
 
    public void method4775(int var1) {

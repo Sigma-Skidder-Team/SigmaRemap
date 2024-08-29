@@ -223,7 +223,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      if (!this.method5049() && var2.method6739(var1).method23486(Class8953.field40469)) {
+      if (!this.method5049() && var2.getFluidState(var1).method23486(Class8953.field40469)) {
          return 10.0F;
       } else {
          return !Class3441.method12114(var2, var1) ? var2.method7009(var1) - 0.5F : 10.0F;
@@ -236,7 +236,7 @@ public class Class1088 extends Class1018 {
       if (this.method3066() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.getPosition();
          if (Class3441.method12114(this.world, var3)) {
-            this.world.method6999(2001, var3, Block.method11535(Blocks.SAND.method11579()));
+            this.world.playEvent(2001, var3, Block.getStateId(Blocks.SAND.method11579()));
          }
       }
    }

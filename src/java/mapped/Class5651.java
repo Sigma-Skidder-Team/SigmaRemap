@@ -30,7 +30,7 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
       if (!Class7944.method26921() || ! Shaders.field40609) {
          var3.push();
          Vector3d var8 = var5.method2986(var2);
-         double var9 = (double)(MathHelper.method37821(var2, var1.field4965, var1.field4966) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
+         double var9 = (double)(MathHelper.lerp(var2, var1.field4965, var1.field4966) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
          Vector3d var11 = var1.method3394();
          double var12 = Math.cos(var9) * var11.field18050 + Math.sin(var9) * var11.field18048;
          double var14 = Math.sin(var9) * var11.field18050 - Math.cos(var9) * var11.field18048;
@@ -86,8 +86,8 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
 
       for (int var16 = 0; var16 < 24; var16++) {
          float var17 = (float)var16 / 23.0F;
-         int var18 = (int) MathHelper.method37821(var17, (float)var5, (float)var6);
-         int var19 = (int) MathHelper.method37821(var17, (float)var7, (float)var8);
+         int var18 = (int) MathHelper.lerp(var17, (float)var5, (float)var6);
+         int var19 = (int) MathHelper.lerp(var17, (float)var7, (float)var8);
          int var20 = Class1699.method7321(var18, var19);
          method17849(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16, false, var11, var12);
          method17849(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16 + 1, true, var11, var12);

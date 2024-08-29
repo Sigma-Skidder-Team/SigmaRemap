@@ -27,7 +27,7 @@ public class Class3409 extends Block {
 
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      Class3406.method12045(var2, var3.method8311(), false);
+      Class3406.method12045(var2, var3.up(), false);
    }
 
    @Override

@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public interface Class1668 extends Class1665 {
-   Class7522 method6810();
+   WorldBorder method6810();
 
    @Nullable
    Class1665 method6769(int var1, int var2);

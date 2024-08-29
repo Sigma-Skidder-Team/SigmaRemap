@@ -135,7 +135,7 @@ public class Class954 extends TileEntity {
          2,
          var4,
          (ITextComponent)var5,
-         this.field5324.method6715(),
+         this.field5324.getServer(),
          var1
       );
    }
@@ -150,7 +150,7 @@ public class Class954 extends TileEntity {
       } else {
          this.field5360 = var1;
          this.method3622();
-         this.field5324.method6731(this.getPos(), this.method3775(), this.method3775(), 3);
+         this.field5324.notifyBlockUpdate(this.getPos(), this.method3775(), this.method3775(), 3);
          return true;
       }
    }

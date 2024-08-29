@@ -45,16 +45,16 @@ public class Class3460 extends Block {
                var4.method3095(var5, var14);
             }
 
-            var2.method6725(var3, Blocks.FLOWER_POT.method11579(), 3);
+            var2.setBlockState(var3, Blocks.FLOWER_POT.method11579(), 3);
          } else {
-            var2.method6725(var3, var11.method11579(), 3);
+            var2.setBlockState(var3, var11.method11579(), 3);
             var4.method2911(Class8876.field40154);
             if (!var4.abilities.isCreativeMode) {
                var9.method32182(1);
             }
          }
 
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       }
    }
 

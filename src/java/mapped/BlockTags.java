@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.List;
 
-public final class Class7645 {
+public final class BlockTags {
    public static final Class7656<Block> field32733 = Class8384.<Block>method29377(new ResourceLocation("block"), Class8933::method32657);
    public static final Class7610<Block> field32734 = method25114("wool");
    public static final Class7610<Block> field32735 = method25114("planks");
@@ -85,9 +85,9 @@ public final class Class7645 {
    public static final Class7610<Block> field32812 = method25114("fence_gates");
    public static final Class7610<Block> field32813 = method25114("unstable_bottom_center");
    public static final Class7610<Block> field32814 = method25114("mushroom_grow_block");
-   public static final Class7610<Block> field32815 = method25114("infiniburn_overworld");
-   public static final Class7610<Block> field32816 = method25114("infiniburn_nether");
-   public static final Class7610<Block> field32817 = method25114("infiniburn_end");
+   public static final Class7610<Block> INFINIBURN_OVERWORLD = method25114("infiniburn_overworld");
+   public static final Class7610<Block> INFINIBURN_NETHER = method25114("infiniburn_nether");
+   public static final Class7610<Block> INFINIBURN_END = method25114("infiniburn_end");
    public static final Class7610<Block> field32818 = method25114("base_stone_overworld");
    public static final Class7610<Block> field32819 = method25114("base_stone_nether");
 
@@ -95,7 +95,7 @@ public final class Class7645 {
       return field32733.method25167(var0);
    }
 
-   public static Class7984<Block> method25115() {
+   public static Class7984<Block> getCollection() {
       return field32733.method25170();
    }
 

@@ -39,10 +39,10 @@ public class Class3197 extends Class3198 implements Class3196 {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.field9016.nextInt(5) == 0) {
+      if (var2.rand.nextInt(5) == 0) {
          int var7 = var1.<Integer>method23463(field18479);
          if (var7 < 2) {
-            var2.method6725(var3, var1.method23465(field18479, Integer.valueOf(var7 + 1)), 2);
+            var2.setBlockState(var3, var1.method23465(field18479, Integer.valueOf(var7 + 1)), 2);
          }
       }
    }
@@ -50,7 +50,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       Block var6 = var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18484))).getBlock();
-      return var6.method11540(Class7645.field32756);
+      return var6.method11540(BlockTags.field32756);
    }
 
    @Override
@@ -107,7 +107,7 @@ public class Class3197 extends Class3198 implements Class3196 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      var1.method6725(var3, var4.method23465(field18479, Integer.valueOf(var4.<Integer>method23463(field18479) + 1)), 2);
+      var1.setBlockState(var3, var4.method23465(field18479, Integer.valueOf(var4.<Integer>method23463(field18479) + 1)), 2);
    }
 
    @Override

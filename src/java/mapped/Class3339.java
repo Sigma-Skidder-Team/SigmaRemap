@@ -17,7 +17,7 @@ public class Class3339 extends Item {
 
    @Override
    public boolean method11706(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          this.method11886(var4, var1, var2, var3, false, var4.getHeldItem(Hand.MAIN_HAND));
       }
 
@@ -28,12 +28,12 @@ public class Class3339 extends Item {
    public ActionResultType method11707(Class5911 var1) {
       PlayerEntity var4 = var1.method18358();
       World var5 = var1.method18360();
-      if (!var5.field9020 && var4 != null) {
+      if (!var5.isRemote && var4 != null) {
          BlockPos var6 = var1.method18345();
          this.method11886(var4, var5.getBlockState(var6), var5, var6, true, var1.method18357());
       }
 
-      return ActionResultType.method9002(var5.field9020);
+      return ActionResultType.method9002(var5.isRemote);
    }
 
    private void method11886(PlayerEntity var1, BlockState var2, Class1660 var3, BlockPos var4, boolean var5, ItemStack var6) {
@@ -57,7 +57,7 @@ public class Class3339 extends Item {
                }
 
                BlockState var18 = method11887(var2, var15, var1.method2851());
-               var3.method6725(var4, var18, 18);
+               var3.setBlockState(var4, var18, 18);
                method11889(var1, new TranslationTextComponent(this.getTranslationKey() + ".update", var15.method30472(), method11890(var18, var15)));
             }
          } else {

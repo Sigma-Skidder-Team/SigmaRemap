@@ -7,7 +7,7 @@ public interface Class1092 {
       float var4 = (float)var0.method3086(Class9173.field42110);
       float var5;
       if (!var0.method3005() && (int)var4 > 0) {
-         var5 = var4 / 2.0F + (float)var0.world.field9016.nextInt((int)var4);
+         var5 = var4 / 2.0F + (float)var0.world.rand.nextInt((int)var4);
       } else {
          var5 = var4;
       }
@@ -30,10 +30,10 @@ public interface Class1092 {
       if (!(var8 <= 0.0)) {
          double var10 = var1.getPosX() - var0.getPosX();
          double var12 = var1.getPosZ() - var0.getPosZ();
-         float var14 = (float)(var0.world.field9016.nextInt(21) - 10);
-         double var15 = var8 * (double)(var0.world.field9016.nextFloat() * 0.5F + 0.2F);
+         float var14 = (float)(var0.world.rand.nextInt(21) - 10);
+         double var15 = var8 * (double)(var0.world.rand.nextFloat() * 0.5F + 0.2F);
          Vector3d var17 = new Vector3d(var10, 0.0, var12).method11333().method11344(var15).method11351(var14);
-         double var18 = var8 * (double)var0.world.field9016.nextFloat() * 0.5;
+         double var18 = var8 * (double)var0.world.rand.nextFloat() * 0.5;
          var1.method3280(var17.field18048, var18, var17.field18050);
          var1.velocityChanged = true;
       }

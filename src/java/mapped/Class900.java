@@ -18,7 +18,7 @@ public class Class900 extends Class898 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Entity var4 = var1.getEntity();
          if (!var4.method3249()) {
             Entity var5 = this.method3460();
@@ -39,12 +39,12 @@ public class Class900 extends Class898 {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Entity var4 = this.method3460();
          if (var4 == null || !(var4 instanceof Class1006) || this.world.method6789().method17135(Class5462.field24224)) {
             BlockPos var5 = var1.getPos().method8349(var1.getFace());
             if (this.world.method7007(var5)) {
-               this.world.method6730(var5, Class3397.method12009(this.world, var5));
+               this.world.setBlockState(var5, AbstractFireBlock.method12009(this.world, var5));
             }
          }
       }
@@ -53,7 +53,7 @@ public class Class900 extends Class898 {
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method2904();
       }
    }

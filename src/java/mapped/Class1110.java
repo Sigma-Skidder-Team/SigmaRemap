@@ -69,7 +69,7 @@ public class Class1110 extends Class1111 implements Class1008 {
    @Override
    public void tick() {
       super.tick();
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          float var3 = MathHelper.cos((float)(this.method3205() * 3 + this.ticksExisted) * 0.13F + (float) Math.PI);
          float var4 = MathHelper.cos((float)(this.method3205() * 3 + this.ticksExisted + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {

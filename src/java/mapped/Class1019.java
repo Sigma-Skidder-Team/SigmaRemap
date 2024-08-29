@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class Class1019 extends Class1018 implements Class1020 {
    private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>method35441(Class1019.class, Class7784.field33390);
-   private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>method38508(Maps.newEnumMap(Class112.class), var0 -> {
+   private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>make(Maps.newEnumMap(Class112.class), var0 -> {
       var0.put(Class112.field386, Blocks.WHITE_WOOL);
       var0.put(Class112.field387, Blocks.ORANGE_WOOL);
       var0.put(Class112.field388, Blocks.MAGENTA_WOOL);
@@ -75,7 +75,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public void method2871() {
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          this.field5707 = Math.max(0, this.field5707 - 1);
       }
 
@@ -170,7 +170,7 @@ public class Class1019 extends Class1018 implements Class1020 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() != Items.field37956) {
          return super.method4285(var1, var2);
-      } else if (!this.world.field9020 && this.method4516()) {
+      } else if (!this.world.isRemote && this.method4516()) {
          this.method4515(Class2266.field14735);
          var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          return ActionResultType.field14818;
@@ -316,7 +316,7 @@ public class Class1019 extends Class1018 implements Class1020 {
          .filter(Class3321.class::isInstance)
          .<Class3321>map(Class3321.class::cast)
          .<Class112>map(Class3321::method11876)
-         .orElseGet(() -> !this.world.field9016.nextBoolean() ? var6 : var5);
+         .orElseGet(() -> !this.world.rand.nextBoolean() ? var6 : var5);
    }
 
    private static Class926 method4523(Class112 var0, Class112 var1) {

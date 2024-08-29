@@ -16,9 +16,9 @@ public class Class3282 extends Item {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (var6.method23446(Class7645.field32766)) {
+      if (var6.method23446(BlockTags.field32766)) {
          ItemStack var7 = var1.method18357();
-         if (!var4.field9020) {
+         if (!var4.isRemote) {
             Class96 var8 = !(var6.getBlock() instanceof Class3429)
                ? Class96.field247
                : var6.<Class96>method23463(((Class3429)var6.getBlock()).method12093());
@@ -38,7 +38,7 @@ public class Class3282 extends Item {
          }
 
          var7.method32182(1);
-         return ActionResultType.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.isRemote);
       } else {
          return ActionResultType.FAIL;
       }

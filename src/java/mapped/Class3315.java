@@ -22,9 +22,9 @@ public class Class3315 extends Class3314 {
             var2.method2882(var6, false);
          }
 
-         return Class6794.<ItemStack>method20700(var7, var1.method6714());
+         return Class6794.<ItemStack>method20700(var7, var1.isRemote());
       } else {
-         return Class6794.<ItemStack>method20700(var6, var1.method6714());
+         return Class6794.<ItemStack>method20700(var6, var1.isRemote());
       }
    }
 }

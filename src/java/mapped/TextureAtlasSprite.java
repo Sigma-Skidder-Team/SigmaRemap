@@ -64,7 +64,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       this.field9324 = var1.field9324;
       Class9431 var4 = var1.field9325;
       ResourceLocation var5 = var4.method36195();
-      ResourceLocation var6 = new ResourceLocation(var5.method8293(), var5.method8292() + ".sprite_single");
+      ResourceLocation var6 = new ResourceLocation(var5.getNamespace(), var5.getPath() + ".sprite_single");
       int var7 = var4.method36196();
       int var8 = var4.method36197();
       Class7788 var9 = var4.method36200();
@@ -113,7 +113,7 @@ public class TextureAtlasSprite implements AutoCloseable {
          }
       }
 
-      if (!this.field9351 && !var2.method36195().method8292().endsWith("_leaves")) {
+      if (!this.field9351 && !var2.method36195().getPath().endsWith("_leaves")) {
          this.method7480(var8);
       }
 
@@ -565,7 +565,7 @@ public class TextureAtlasSprite implements AutoCloseable {
    }
 
    public TextureAtlasSprite method7495(String var1, int var2) {
-      ResourceLocation var5 = new ResourceLocation(this.method7465().method8293(), this.method7465().method8292() + var1);
+      ResourceLocation var5 = new ResourceLocation(this.method7465().getNamespace(), this.method7465().getPath() + var1);
       ResourceLocation var6 = this.field9324.method1096(var5);
       TextureAtlasSprite var7 = null;
       if (this.field9359.method581(var6)) {

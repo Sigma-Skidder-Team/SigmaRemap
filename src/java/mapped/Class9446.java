@@ -219,7 +219,7 @@ public class Class9446 {
             Class3292 var4 = (Class3292)var3;
             Block var5 = var4.method11845();
             if (var5 != null) {
-               return var5.method11579().method23392();
+               return var5.method11579().getLightValue();
             }
          }
 
@@ -242,10 +242,10 @@ public class Class9446 {
 
                return 0;
             } else {
-               return Blocks.BEACON.method11579().method23392() / 2;
+               return Blocks.BEACON.method11579().getLightValue() / 2;
             }
          } else {
-            return Blocks.LAVA.method11579().method23392();
+            return Blocks.LAVA.method11579().getLightValue();
          }
       } else {
          return 0;

@@ -48,19 +48,19 @@ public class Class3269 extends Class3264 {
    public ActionResultType method11707(Class5911 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      if (var1.method18354() != Direction.DOWN && var4.getBlockState(var5.method8311()).isAir()) {
+      if (var1.method18354() != Direction.DOWN && var4.getBlockState(var5.up()).isAir()) {
          BlockState var6 = field18767.get(var4.getBlockState(var5).getBlock());
          if (var6 != null) {
             PlayerEntity var7 = var1.method18358();
             var4.method6742(var7, var5, Sounds.field26651, Class2266.field14732, 1.0F, 1.0F);
-            if (!var4.field9020) {
-               var4.method6725(var5, var6, 11);
+            if (!var4.isRemote) {
+               var4.setBlockState(var5, var6, 11);
                if (var7 != null) {
                   var1.method18357().method32121(1, var7, var1x -> var1x.method3185(var1.method18359()));
                }
             }
 
-            return ActionResultType.method9002(var4.field9020);
+            return ActionResultType.method9002(var4.isRemote);
          }
       }
 

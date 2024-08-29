@@ -23,7 +23,7 @@ public class Class6902 extends Class6896 {
 
    @Override
    public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
-      method21069(var1, var4.method8313());
+      method21069(var1, var4.down());
       ArrayList var10 = Lists.newArrayList();
       Direction var11 = Class76.field161.method247(var2);
       int var12 = var3 - var2.nextInt(4) - 1;

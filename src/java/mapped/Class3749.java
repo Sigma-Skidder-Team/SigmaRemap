@@ -50,7 +50,7 @@ public class Class3749 extends Class3676<Class1042> {
    private boolean method12711(BlockPos var1, ServerWorld var2) {
       BlockState var5 = var2.getBlockState(var1);
       Block var6 = var5.getBlock();
-      Block var7 = var2.getBlockState(var1.method8313()).getBlock();
+      Block var7 = var2.getBlockState(var1.down()).getBlock();
       return var6 instanceof Class3480 && ((Class3480)var6).method12179(var5) || var5.isAir() && var7 instanceof Class3221;
    }
 
@@ -73,7 +73,7 @@ public class Class3749 extends Class3676<Class1042> {
          if (this.field19897 != null && var3 > this.field19898) {
             BlockState var7 = var1.getBlockState(this.field19897);
             Block var8 = var7.getBlock();
-            Block var9 = var1.getBlockState(this.field19897.method8313()).getBlock();
+            Block var9 = var1.getBlockState(this.field19897.down()).getBlock();
             if (var8 instanceof Class3480 && ((Class3480)var8).method12179(var7)) {
                var1.method7180(this.field19897, true, var2);
             }
@@ -89,19 +89,19 @@ public class Class3749 extends Class3676<Class1042> {
                         if (var12.getItem() != Items.field38053) {
                            if (var12.getItem() != Items.field38052) {
                               if (var12.getItem() == Items.field38112) {
-                                 var1.method6725(this.field19897, Blocks.field36884.method11579(), 3);
+                                 var1.setBlockState(this.field19897, Blocks.field36884.method11579(), 3);
                                  var13 = true;
                               }
                            } else {
-                              var1.method6725(this.field19897, Blocks.field36693.method11579(), 3);
+                              var1.setBlockState(this.field19897, Blocks.field36693.method11579(), 3);
                               var13 = true;
                            }
                         } else {
-                           var1.method6725(this.field19897, Blocks.field36694.method11579(), 3);
+                           var1.setBlockState(this.field19897, Blocks.field36694.method11579(), 3);
                            var13 = true;
                         }
                      } else {
-                        var1.method6725(this.field19897, Blocks.field36539.method11579(), 3);
+                        var1.setBlockState(this.field19897, Blocks.field36539.method11579(), 3);
                         var13 = true;
                      }
                   }

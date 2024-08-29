@@ -7,21 +7,21 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class WorldLoadProgressScreen extends Screen {
    private final TrackingChunkStatusListener field7026;
    private long field7027 = -1L;
-   private static final Object2IntMap<Class9176> field7028 = Util.<Object2IntMap<Class9176>>method38508(new Object2IntOpenHashMap(), var0 -> {
+   private static final Object2IntMap<ChunkStatus> field7028 = Util.<Object2IntMap<ChunkStatus>>make(new Object2IntOpenHashMap(), var0 -> {
       var0.defaultReturnValue(0);
-      var0.put(Class9176.field42133, 5526612);
-      var0.put(Class9176.field42134, 10066329);
-      var0.put(Class9176.field42135, 6250897);
-      var0.put(Class9176.field42136, 8434258);
-      var0.put(Class9176.field42137, 13750737);
-      var0.put(Class9176.field42138, 7497737);
-      var0.put(Class9176.field42139, 7169628);
-      var0.put(Class9176.field42140, 3159410);
-      var0.put(Class9176.field42141, 2213376);
-      var0.put(Class9176.field42142, 13421772);
-      var0.put(Class9176.field42143, 15884384);
-      var0.put(Class9176.field42144, 15658734);
-      var0.put(Class9176.field42145, 16777215);
+      var0.put(ChunkStatus.field42133, 5526612);
+      var0.put(ChunkStatus.field42134, 10066329);
+      var0.put(ChunkStatus.field42135, 6250897);
+      var0.put(ChunkStatus.field42136, 8434258);
+      var0.put(ChunkStatus.field42137, 13750737);
+      var0.put(ChunkStatus.field42138, 7497737);
+      var0.put(ChunkStatus.field42139, 7169628);
+      var0.put(ChunkStatus.field42140, 3159410);
+      var0.put(ChunkStatus.field42141, 2213376);
+      var0.put(ChunkStatus.field42142, 13421772);
+      var0.put(ChunkStatus.field42143, 15884384);
+      var0.put(ChunkStatus.field42144, 15658734);
+      var0.put(ChunkStatus.FULL, 16777215);
    });
 
    public WorldLoadProgressScreen(TrackingChunkStatusListener var1) {
@@ -74,7 +74,7 @@ public class WorldLoadProgressScreen extends Screen {
 
       for (int var17 = 0; var17 < var11; var17++) {
          for (int var18 = 0; var18 < var11; var18++) {
-            Class9176 var19 = var1.method22746(var17, var18);
+            ChunkStatus var19 = var1.method22746(var17, var18);
             int var20 = var13 + var17 * var8;
             int var21 = var14 + var18 * var8;
             method5686(var0, var20, var21, var20 + var4, var21 + var4, field7028.getInt(var19) | 0xFF000000);

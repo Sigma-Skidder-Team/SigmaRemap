@@ -30,20 +30,20 @@ public class Class6218 implements Class6226 {
       }
 
       ItemEntity var13 = new ItemEntity(var0, var7, var9, var11, var1);
-      double var14 = var0.field9016.nextDouble() * 0.1 + 0.2;
+      double var14 = var0.rand.nextDouble() * 0.1 + 0.2;
       var13.method3435(
-         var0.field9016.nextGaussian() * 0.0075F * (double)var2 + (double)var3.method539() * var14,
-         var0.field9016.nextGaussian() * 0.0075F * (double)var2 + 0.2F,
-         var0.field9016.nextGaussian() * 0.0075F * (double)var2 + (double)var3.method541() * var14
+         var0.rand.nextGaussian() * 0.0075F * (double)var2 + (double)var3.method539() * var14,
+         var0.rand.nextGaussian() * 0.0075F * (double)var2 + 0.2F,
+         var0.rand.nextGaussian() * 0.0075F * (double)var2 + (double)var3.method541() * var14
       );
       var0.method6916(var13);
    }
 
    public void method19193(Class2956 var1) {
-      var1.method11326().method6999(1000, var1.method11323(), 0);
+      var1.method11326().playEvent(1000, var1.method11323(), 0);
    }
 
    public void method19198(Class2956 var1, Direction var2) {
-      var1.method11326().method6999(2000, var1.method11323(), var2.method533());
+      var1.method11326().playEvent(2000, var1.method11323(), var2.method533());
    }
 }

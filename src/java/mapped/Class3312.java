@@ -23,7 +23,7 @@ public class Class3312 extends Item {
          Object var10;
          if (this.field18822 != EntityType.field41060) {
             if (this.field18822 != EntityType.field41043) {
-               return ActionResultType.method9002(var9.field9020);
+               return ActionResultType.method9002(var9.isRemote);
             }
 
             var10 = new ItemFrameEntity(var9, var6, var5);
@@ -39,13 +39,13 @@ public class Class3312 extends Item {
          if (!((Class995)var10).method4080()) {
             return ActionResultType.field14819;
          } else {
-            if (!var9.field9020) {
+            if (!var9.isRemote) {
                ((Class995)var10).method4084();
                var9.method6916((Entity)var10);
             }
 
             var8.method32182(1);
-            return ActionResultType.method9002(var9.field9020);
+            return ActionResultType.method9002(var9.isRemote);
          }
       }
    }

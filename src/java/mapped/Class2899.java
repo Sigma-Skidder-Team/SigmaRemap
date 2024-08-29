@@ -11,7 +11,7 @@ public class Class2899 extends Class2898<Class4699> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4699 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4699 var5) {
       boolean var8 = false;
       int var9 = var5.field22293.method27633(var3);
 
@@ -26,7 +26,7 @@ public class Class2899 extends Class2898<Class4699> {
 
                   for (BlockState var18 : var5.field22295) {
                      if (var18.method23448(var16)) {
-                        var1.method6725(var15, var5.field22292, 2);
+                        var1.setBlockState(var15, var5.field22292, 2);
                         var8 = true;
                         break;
                      }

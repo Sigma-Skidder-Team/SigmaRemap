@@ -19,7 +19,7 @@ public class Class3426 extends Block {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field19175, Class108.method300(var1.method18360().getBlockState(var1.method18345().method8313())));
+      return this.method11579().method23465(field19175, Class108.method300(var1.method18360().getBlockState(var1.method18345().down())));
    }
 
    @Override
@@ -35,21 +35,21 @@ public class Class3426 extends Block {
             this.method12083(var2, var3);
          }
 
-         var2.method6725(var3, var1.method23465(field19176, Boolean.valueOf(var9)), 3);
+         var2.setBlockState(var3, var1.method23465(field19176, Boolean.valueOf(var9)), 3);
       }
    }
 
    private void method12083(World var1, BlockPos var2) {
-      if (var1.getBlockState(var2.method8311()).isAir()) {
+      if (var1.getBlockState(var2.up()).isAir()) {
          var1.method6787(var2, this, 0, 0);
       }
    }
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          var1 = var1.method23459(field19177);
-         var2.method6725(var3, var1, 3);
+         var2.setBlockState(var3, var1, 3);
          this.method12083(var2, var3);
          var4.method2911(Class8876.field40153);
          return ActionResultType.field14819;
@@ -60,7 +60,7 @@ public class Class3426 extends Block {
 
    @Override
    public void method11602(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          this.method12083(var2, var3);
          var4.method2911(Class8876.field40152);
       }

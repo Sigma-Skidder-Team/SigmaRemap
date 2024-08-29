@@ -15,7 +15,7 @@ public class Class2929 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       byte var8 = 3;
       int var9 = var3.nextInt(2) + 2;
       int var10 = -var9 - 1;
@@ -44,7 +44,7 @@ public class Class2929 extends Class2898<Class4712> {
                if ((var18 == var10 || var18 == var11 || var20 == var15 || var20 == var16)
                   && var19 == 0
                   && var1.method7007(var21)
-                  && var1.method7007(var21.method8311())) {
+                  && var1.method7007(var21.up())) {
                   var17++;
                }
             }
@@ -59,15 +59,15 @@ public class Class2929 extends Class2898<Class4712> {
                   BlockState var36 = var1.getBlockState(var34);
                   if (var27 != var10 && var30 != -1 && var32 != var15 && var27 != var11 && var30 != 4 && var32 != var16) {
                      if (!var36.method23448(Blocks.CHEST) && !var36.method23448(Blocks.field36532)) {
-                        var1.method6725(var34, field18004, 2);
+                        var1.setBlockState(var34, field18004, 2);
                      }
-                  } else if (var34.getY() >= 0 && !var1.getBlockState(var34.method8313()).method23384().method31086()) {
-                     var1.method6725(var34, field18004, 2);
+                  } else if (var34.getY() >= 0 && !var1.getBlockState(var34.down()).method23384().method31086()) {
+                     var1.setBlockState(var34, field18004, 2);
                   } else if (var36.method23384().method31086() && !var36.method23448(Blocks.CHEST)) {
                      if (var30 == -1 && var3.nextInt(4) != 0) {
-                        var1.method6725(var34, Blocks.field36526.method11579(), 2);
+                        var1.setBlockState(var34, Blocks.field36526.method11579(), 2);
                      } else {
-                        var1.method6725(var34, Blocks.field36399.method11579(), 2);
+                        var1.setBlockState(var34, Blocks.field36399.method11579(), 2);
                      }
                   }
                }
@@ -90,7 +90,7 @@ public class Class2929 extends Class2898<Class4712> {
                   }
 
                   if (var24 == 1) {
-                     var1.method6725(var38, Class4178.method12934(var1, var38, Blocks.CHEST.method11579()), 2);
+                     var1.setBlockState(var38, Class4178.method12934(var1, var38, Blocks.CHEST.method11579()), 2);
                      Class939.method3740(var1, var3, var38, Class8793.field39536);
                      break;
                   }
@@ -98,7 +98,7 @@ public class Class2929 extends Class2898<Class4712> {
             }
          }
 
-         var1.method6725(var4, Blocks.field36532.method11579(), 2);
+         var1.setBlockState(var4, Blocks.field36532.method11579(), 2);
          TileEntity var29 = var1.getTileEntity(var4);
          if (!(var29 instanceof Class960)) {
             field18002.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.getY(), var4.getZ());

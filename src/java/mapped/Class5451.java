@@ -10,7 +10,7 @@ public class Class5451 extends Class5444<Class4712> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
       this.method17126(var4, var5);
    }
 
@@ -24,7 +24,7 @@ public class Class5451 extends Class5444<Class4712> {
    }
 
    @Override
-   public void method17112(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
       if (!this.field24210) {
          this.field24196.clear();
          this.method17126(this.method17118(), this.method17119());

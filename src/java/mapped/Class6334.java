@@ -32,8 +32,8 @@ public abstract class Class6334 extends Class6333 {
             this.field27857 = 0.0F;
             this.field27856 = 0.0F;
          } else {
-            this.field27857 = MathHelper.method37821(MathHelper.method37777(var4, this.method19272(), this.method19273()), this.method19272(), this.method19273());
-            this.field27856 = MathHelper.method37821(MathHelper.method37777(var4, 0.0F, 0.5F), 0.0F, 1.2F);
+            this.field27857 = MathHelper.lerp(MathHelper.method37777(var4, this.method19272(), this.method19273()), this.method19272(), this.method19273());
+            this.field27856 = MathHelper.lerp(MathHelper.method37777(var4, 0.0F, 0.5F), 0.0F, 1.2F);
          }
       } else {
          this.method19271();

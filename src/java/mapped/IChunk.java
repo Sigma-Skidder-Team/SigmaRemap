@@ -11,9 +11,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public interface Class1670 extends Class1665, Class1671 {
+public interface IChunk extends Class1665, Class1671 {
    @Nullable
-   BlockState method7061(BlockPos var1, BlockState var2, boolean var3);
+   BlockState setBlockState(BlockPos var1, BlockState var2, boolean var3);
 
    void method7062(BlockPos var1, TileEntity var2);
 
@@ -83,7 +83,7 @@ public interface Class1670 extends Class1665, Class1671 {
 
    boolean method7079();
 
-   Class9176 method7080();
+   ChunkStatus method7080();
 
    void method7081(BlockPos var1);
 

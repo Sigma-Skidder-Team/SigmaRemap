@@ -24,7 +24,7 @@ public class Class5824 extends Class5823 {
 
    @Override
    public boolean method18191(BlockState var1) {
-      return var1.method23446(Class7645.field32765);
+      return var1.method23446(BlockTags.field32765);
    }
 
    @Override
@@ -54,17 +54,17 @@ public class Class5824 extends Class5823 {
       this.field25520.method15235(0);
       this.field25514.method31716((var1x, var2x) -> {
          BlockState var5x = var1x.getBlockState(var2x);
-         if (!var1.abilities.isCreativeMode && var5x.method23446(Class7645.field32765) && var1.method3013().nextFloat() < 0.12F) {
+         if (!var1.abilities.isCreativeMode && var5x.method23446(BlockTags.field32765) && var1.method3013().nextFloat() < 0.12F) {
             BlockState var6 = Class3218.method11607(var5x);
             if (var6 != null) {
-               var1x.method6725(var2x, var6, 2);
-               var1x.method6999(1030, var2x, 0);
+               var1x.setBlockState(var2x, var6, 2);
+               var1x.playEvent(1030, var2x, 0);
             } else {
-               var1x.method6728(var2x, false);
-               var1x.method6999(1029, var2x, 0);
+               var1x.removeBlock(var2x, false);
+               var1x.playEvent(1029, var2x, 0);
             }
          } else {
-            var1x.method6999(1030, var2x, 0);
+            var1x.playEvent(1030, var2x, 0);
          }
       });
       return var2;

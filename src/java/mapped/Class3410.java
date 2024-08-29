@@ -64,12 +64,12 @@ public class Class3410 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockState var6 = var2.getBlockState(var3.method8313());
+      BlockState var6 = var2.getBlockState(var3.down());
       if (var6.method23448(Blocks.ICE) || var6.method23448(Blocks.PACKED_ICE) || var6.method23448(Blocks.field36765)) {
          return false;
       } else {
          return !var6.method23448(Blocks.field37119) && !var6.method23448(Blocks.SOUL_SAND)
-            ? Block.method11549(var6.method23414(var2, var3.method8313()), Direction.field673)
+            ? Block.method11549(var6.method23414(var2, var3.down()), Direction.field673)
                || var6.getBlock() == this && var6.<Integer>method23463(field19092) == 8
             : true;
       }
@@ -84,7 +84,7 @@ public class Class3410 extends Block {
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.method7020(Class1977.field12882, var3) > 11) {
          method11554(var1, var2, var3);
-         var2.method6728(var3, false);
+         var2.removeBlock(var3, false);
       }
    }
 

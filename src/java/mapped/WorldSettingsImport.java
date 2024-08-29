@@ -22,21 +22,21 @@ import org.apache.logging.log4j.Logger;
 public class WorldSettingsImport<T> extends Class6712<T> {
    private static final Logger field29412 = LogManager.getLogger();
    private final Class4383 field29413;
-   private final Class8905 field29414;
+   private final DynamicRegistriesImpl field29414;
    private final Map<RegistryKey<? extends Registry<?>>, Class7269<?>> field29415;
    private final WorldSettingsImport<JsonElement> field29416;
 
-   public static <T> WorldSettingsImport<T> create(DynamicOps<T> var0, IResourceManager var1, Class8905 var2) {
+   public static <T> WorldSettingsImport<T> create(DynamicOps<T> var0, IResourceManager var1, DynamicRegistriesImpl var2) {
       return method20472(var0, Class4383.method13751(var1), var2);
    }
 
-   public static <T> WorldSettingsImport<T> method20472(DynamicOps<T> var0, Class4383 var1, Class8905 var2) {
+   public static <T> WorldSettingsImport<T> method20472(DynamicOps<T> var0, Class4383 var1, DynamicRegistriesImpl var2) {
       WorldSettingsImport var5 = new WorldSettingsImport(var0, var1, var2, Maps.newIdentityHashMap());
       DynamicRegistries.method32461(var2, var5);
       return var5;
    }
 
-   private WorldSettingsImport(DynamicOps<T> var1, Class4383 var2, Class8905 var3, IdentityHashMap<RegistryKey<? extends Registry<?>>, Class7269<?>> var4) {
+   private WorldSettingsImport(DynamicOps<T> var1, Class4383 var2, DynamicRegistriesImpl var3, IdentityHashMap<RegistryKey<? extends Registry<?>>, Class7269<?>> var4) {
       super(var1);
       this.field29413 = var2;
       this.field29414 = var3;
@@ -47,8 +47,8 @@ public class WorldSettingsImport<T> extends Class6712<T> {
    public <E> DataResult<Pair<Supplier<E>, T>> method20473(T var1, RegistryKey<? extends Registry<E>> var2, Codec<E> var3, boolean var4) {
       Optional var7 = this.field29414.method32452(var2);
       if (var7.isPresent()) {
-         Class2349 var8 = (Class2349)var7.get();
-         DataResult var9 = ResourceLocation.field13020.decode(this.field29417, var1);
+         MutableRegistry var8 = (MutableRegistry)var7.get();
+         DataResult var9 = ResourceLocation.CODEC.decode(this.field29417, var1);
          if (var9.result().isPresent()) {
             Pair var10 = (Pair)var9.result().get();
             ResourceLocation var11 = (ResourceLocation)var10.getFirst();
@@ -61,17 +61,17 @@ public class WorldSettingsImport<T> extends Class6712<T> {
       }
    }
 
-   public <E> DataResult<Class2350<E>> method20474(Class2350<E> var1, RegistryKey<? extends Registry<E>> var2, Codec<E> var3) {
+   public <E> DataResult<SimpleRegistry<E>> method20474(SimpleRegistry<E> var1, RegistryKey<? extends Registry<E>> var2, Codec<E> var3) {
       Collection<ResourceLocation> var6 = this.field29413.method13746(var2);
-      DataResult<Class2350<E>> var7 = DataResult.success(var1, Lifecycle.stable());
-      String var8 = var2.method31399().method8292() + "/";
+      DataResult<SimpleRegistry<E>> var7 = DataResult.success(var1, Lifecycle.stable());
+      String var8 = var2.getLocation().getPath() + "/";
 
       for (ResourceLocation var10 : var6) {
-         String var11 = var10.method8292();
+         String var11 = var10.getPath();
          if (var11.endsWith(".json")) {
             if (var11.startsWith(var8)) {
                String var12 = var11.substring(var8.length(), var11.length() - ".json".length());
-               ResourceLocation var13 = new ResourceLocation(var10.method8293(), var12);
+               ResourceLocation var13 = new ResourceLocation(var10.getNamespace(), var12);
                var7 = var7.flatMap(var4 -> this.method20475(var2, var4, var3, var13).map(var1xx -> var4));
             } else {
                field29412.warn("Skipping resource {} since it does not have a registry name prefix", var10);
@@ -84,8 +84,8 @@ public class WorldSettingsImport<T> extends Class6712<T> {
       return var7.setPartial(var1);
    }
 
-   private <E> DataResult<Supplier<E>> method20475(RegistryKey<? extends Registry<E>> var1, Class2349<E> var2, Codec<E> var3, ResourceLocation var4) {
-      RegistryKey<E> var7 = RegistryKey.method31395(var1, var4);
+   private <E> DataResult<Supplier<E>> method20475(RegistryKey<? extends Registry<E>> var1, MutableRegistry<E> var2, Codec<E> var3, ResourceLocation var4) {
+      RegistryKey<E> var7 = RegistryKey.getOrCreateKey(var1, var4);
       Class7269<E> var8 = this.method20476(var1);
       DataResult<Supplier<E>> var9 = (DataResult<Supplier<E>>) Class7269.method22833(var8).get(var7);
       if (var9 == null) {

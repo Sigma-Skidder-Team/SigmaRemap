@@ -16,7 +16,7 @@ public class Class2664 extends Class2661 {
    public Class2664(Class1017 var1) {
       super(var1, null);
       this.field17022 = var1;
-      this.field17033 = this.field17022.world.field9016.nextInt(10);
+      this.field17033 = this.field17022.world.rand.nextInt(10);
       this.field17034 = Lists.newArrayList();
       this.field17035 = null;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
@@ -28,7 +28,7 @@ public class Class2664 extends Class2661 {
          && !this.field17022.method4291()
          && Class1017.method4452(this.field17022)
          && !this.method10878(Class1017.method4453(this.field17022))
-         && this.field17022.world.getBlockState(Class1017.method4453(this.field17022)).method23446(Class7645.field32794);
+         && this.field17022.world.getBlockState(Class1017.method4453(this.field17022)).method23446(BlockTags.field32794);
    }
 
    @Override

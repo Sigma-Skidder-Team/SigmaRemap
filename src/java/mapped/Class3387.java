@@ -30,7 +30,7 @@ public class Class3387 extends Class3386 implements Class3207 {
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       boolean var5 = var4.method23472() == Class9479.field44066;
       return super.method11495(var1).method23465(field18995, Boolean.valueOf(var5));
    }
@@ -50,7 +50,7 @@ public class Class3387 extends Class3386 implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18995) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

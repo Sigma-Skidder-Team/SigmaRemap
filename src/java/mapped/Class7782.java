@@ -111,7 +111,7 @@ public class Class7782 {
                   var15 /= var21;
                   var17 /= var21;
                   var19 /= var21;
-                  float var23 = this.field33378 * (0.7F + this.field33373.field9016.nextFloat() * 0.6F);
+                  float var23 = this.field33378 * (0.7F + this.field33373.rand.nextFloat() * 0.6F);
                   double var24 = this.field33374;
                   double var26 = this.field33375;
                   double var28 = this.field33376;
@@ -119,7 +119,7 @@ public class Class7782 {
                   for (float var30 = 0.3F; var23 > 0.0F; var23 -= 0.22500001F) {
                      BlockPos var31 = new BlockPos(var24, var26, var28);
                      BlockState var32 = this.field33373.getBlockState(var31);
-                     Class7379 var33 = this.field33373.method6739(var31);
+                     FluidState var33 = this.field33373.getFluidState(var31);
                      Optional<Float> var34 = this.field33380.method18423(this, this.field33373, var31, var32, var33);
                      if (var34.isPresent()) {
                         var23 -= (var34.get() + 0.3F) * 0.3F;
@@ -185,7 +185,7 @@ public class Class7782 {
    }
 
    public void method25785(boolean var1) {
-      if (this.field33373.field9020) {
+      if (this.field33373.isRemote) {
          this.field33373
             .method6745(
                this.field33374,
@@ -194,7 +194,7 @@ public class Class7782 {
                Sounds.field26610,
                Class2266.field14732,
                4.0F,
-               (1.0F + (this.field33373.field9016.nextFloat() - this.field33373.field9016.nextFloat()) * 0.2F) * 0.7F,
+               (1.0F + (this.field33373.rand.nextFloat() - this.field33373.rand.nextFloat()) * 0.2F) * 0.7F,
                false
             );
       }
@@ -210,18 +210,18 @@ public class Class7782 {
 
       if (var4) {
          ObjectArrayList var5 = new ObjectArrayList();
-         Collections.shuffle(this.field33381, this.field33373.field9016);
+         Collections.shuffle(this.field33381, this.field33373.rand);
 
          for (BlockPos var7 : this.field33381) {
             BlockState var8 = this.field33373.getBlockState(var7);
             Block var9 = var8.getBlock();
             if (!var8.isAir()) {
                BlockPos var10 = var7.method8353();
-               this.field33373.method6820().startSection("explosion_blocks");
+               this.field33373.getProfiler().startSection("explosion_blocks");
                if (var9.method11576(this) && this.field33373 instanceof ServerWorld) {
                   TileEntity var11 = !var9.isTileEntityProvider() ? null : this.field33373.getTileEntity(var7);
                   Class9464 var12 = new Class9464((ServerWorld)this.field33373)
-                     .method36450(this.field33373.field9016)
+                     .method36450(this.field33373.rand)
                      .method36454(Class9525.field44335, Vector3d.method11328(var7))
                      .method36454(Class9525.field44338, ItemStack.EMPTY)
                      .method36455(Class9525.field44337, var11)
@@ -233,9 +233,9 @@ public class Class7782 {
                   var8.method23434(var12).forEach(var2 -> method25786(var5, var2, var10));
                }
 
-               this.field33373.method6725(var7, Blocks.AIR.method11579(), 3);
+               this.field33373.setBlockState(var7, Blocks.AIR.method11579(), 3);
                var9.method11560(this.field33373, var7, this);
-               this.field33373.method6820().endSection();
+               this.field33373.getProfiler().endSection();
             }
          }
 
@@ -251,8 +251,8 @@ public class Class7782 {
          for (BlockPos var15 : this.field33381) {
             if (this.field33372.nextInt(3) == 0
                && this.field33373.getBlockState(var15).isAir()
-               && this.field33373.getBlockState(var15.method8313()).method23409(this.field33373, var15.method8313())) {
-               this.field33373.method6730(var15, Class3397.method12009(this.field33373, var15));
+               && this.field33373.getBlockState(var15.down()).method23409(this.field33373, var15.down())) {
+               this.field33373.setBlockState(var15, AbstractFireBlock.method12009(this.field33373, var15));
             }
          }
       }

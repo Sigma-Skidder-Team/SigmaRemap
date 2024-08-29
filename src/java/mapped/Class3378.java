@@ -19,7 +19,7 @@ public class Class3378 extends Class3377 {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if ((var4.nextInt(3) == 0 || this.method11970(var2, var3, 4))
-         && var2.method7015(var3) > 11 - var1.<Integer>method23463(field18978) - var1.method23387(var2, var3)
+         && var2.method7015(var3) > 11 - var1.<Integer>method23463(field18978) - var1.getOpacity(var2, var3)
          && this.method11969(var1, var2, var3)) {
          Mutable var7 = new Mutable();
 
@@ -41,7 +41,7 @@ public class Class3378 extends Class3377 {
          this.method11968(var1, var2, var3);
          return true;
       } else {
-         var2.method6725(var3, var1.method23465(field18978, Integer.valueOf(var6 + 1)), 2);
+         var2.setBlockState(var3, var1.method23465(field18978, Integer.valueOf(var6 + 1)), 2);
          return false;
       }
    }

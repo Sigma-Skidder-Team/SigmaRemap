@@ -26,13 +26,13 @@ public class Class3465 extends Block {
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.<Boolean>method23463(field19306) && var1.<Integer>method23463(field19305) == 7) {
          method11554(var1, var2, var3);
-         var2.method6728(var3, false);
+         var2.removeBlock(var3, false);
       }
    }
 
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      var2.method6725(var3, method12149(var1, var2, var3), 3);
+      var2.setBlockState(var3, method12149(var1, var2, var3), 3);
    }
 
    @Override
@@ -66,7 +66,7 @@ public class Class3465 extends Block {
    }
 
    private static int method12150(BlockState var0) {
-      if (!Class7645.field32751.method24917(var0.getBlock())) {
+      if (!BlockTags.field32751.method24917(var0.getBlock())) {
          return !(var0.getBlock() instanceof Class3465) ? 7 : var0.<Integer>method23463(field19305);
       } else {
          return 0;
@@ -75,8 +75,8 @@ public class Class3465 extends Block {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var2.method6796(var3.method8311()) && var4.nextInt(15) == 1) {
-         BlockPos var7 = var3.method8313();
+      if (var2.method6796(var3.up()) && var4.nextInt(15) == 1) {
+         BlockPos var7 = var3.down();
          BlockState var8 = var2.getBlockState(var7);
          if (!var8.method23410() || !var8.method23454(var2, var7, Direction.field673)) {
             double var9 = (double)var3.getX() + var4.nextDouble();

@@ -5,7 +5,7 @@ public interface IBooleanFunction {
    IBooleanFunction field44038 = (var0, var1) -> !var0 && !var1;
    IBooleanFunction field44039 = (var0, var1) -> var1 && !var0;
    IBooleanFunction field44040 = (var0, var1) -> !var0;
-   IBooleanFunction field44041 = (var0, var1) -> var0 && !var1;
+   IBooleanFunction ONLY_FIRST = (var0, var1) -> var0 && !var1;
    IBooleanFunction field44042 = (var0, var1) -> !var1;
    IBooleanFunction field44043 = (var0, var1) -> var0 != var1;
    IBooleanFunction field44044 = (var0, var1) -> !var0 || !var1;

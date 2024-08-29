@@ -59,7 +59,7 @@ public class Class9449 {
          ITag var8 = null;
          if (var3.has("tag")) {
             ResourceLocation var7 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
-            var8 = Class9443.method36296().method32657().method27135(var7);
+            var8 = Class9443.method36296().method32657().get(var7);
             if (var8 == null) {
                throw new JsonSyntaxException("Unknown block tag '" + var7 + "'");
             }

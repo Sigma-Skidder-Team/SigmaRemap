@@ -16,7 +16,7 @@ public class Class5730 extends Class5715<Class905> {
    public void method17853(Class905 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       float var9 = MathHelper.method37828(var1.prevRotationYaw, var1.rotationYaw, var3);
-      float var10 = MathHelper.method37821(var3, var1.prevRotationPitch, var1.rotationPitch);
+      float var10 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
       float var11 = (float)var1.ticksExisted + var3;
       var4.translate(0.0, 0.15F, 0.0);
       var4.method35293(Class7680.field32900.method25286(MathHelper.sin(var11 * 0.1F) * 180.0F));

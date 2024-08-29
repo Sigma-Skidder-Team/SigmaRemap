@@ -11,12 +11,12 @@ public class Class3374 extends Class3373 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return var2.getBlockState(var3.method8313()).method23384().method31086();
+      return var2.getBlockState(var3.down()).method23384().method31086();
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return this.method11579()
          .method23465(field18970, Integer.valueOf(MathHelper.floor((double)((180.0F + var1.method18352()) * 16.0F / 360.0F) + 0.5) & 15))
          .method23465(field18966, Boolean.valueOf(var4.method23472() == Class9479.field44066));

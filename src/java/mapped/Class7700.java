@@ -59,8 +59,8 @@ public final class Class7700 {
       .method11579()
       .method23465(Class3443.field19253, Boolean.valueOf(false))
       .method23465(Class3443.field19254, Boolean.valueOf(false));
-   public static final Class7379 field33045 = Class9479.field44066.method25049();
-   public static final Class7379 field33046 = Class9479.field44068.method25049();
+   public static final FluidState field33045 = Class9479.field44066.method25049();
+   public static final FluidState field33046 = Class9479.field44068.method25049();
    public static final BlockState field33047 = Blocks.WATER.method11579();
    public static final BlockState field33048 = Blocks.LAVA.method11579();
    public static final BlockState field33049 = Blocks.field36396.method11579();

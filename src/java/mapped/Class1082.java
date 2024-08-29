@@ -105,7 +105,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    public void method5031() {
-      if (this.world != null && !this.world.field9020) {
+      if (this.world != null && !this.world.isRemote) {
          this.field5600.method20003(this.field5947);
          this.field5600.method20003(this.field5946);
          ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Items.field37796));
@@ -154,7 +154,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method2944(Class2106 var1, ItemStack var2) {
       super.method2944(var1, var2);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method5031();
       }
    }

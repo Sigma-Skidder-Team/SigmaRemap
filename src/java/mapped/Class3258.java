@@ -23,10 +23,10 @@ public class Class3258 extends Item {
       }
 
       if (var7 != null && var7.method119("Recipes", 9)) {
-         if (!var1.field9020) {
+         if (!var1.isRemote) {
             ListNBT var8 = var7.method131("Recipes", 8);
             ArrayList var9 = Lists.newArrayList();
-            Class282 var10 = var1.method6715().method1407();
+            Class282 var10 = var1.getServer().method1407();
 
             for (int var11 = 0; var11 < var8.size(); var11++) {
                String var12 = var8.method160(var11);
@@ -43,7 +43,7 @@ public class Class3258 extends Item {
             var2.method2913(Class8876.field40098.method172(this));
          }
 
-         return Class6794.<ItemStack>method20700(var6, var1.method6714());
+         return Class6794.<ItemStack>method20700(var6, var1.isRemote());
       } else {
          field18744.error("Tag not valid: {}", var7);
          return Class6794.<ItemStack>method20699(var6);

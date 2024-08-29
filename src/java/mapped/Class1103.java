@@ -62,7 +62,7 @@ public class Class1103 extends Class1009 {
          this.method3434(this.method3433().method11347(1.0, 0.6, 1.0));
       }
 
-      if (this.world.field9020) {
+      if (this.world.isRemote) {
          if (this.rand.nextInt(24) == 0 && !this.method3245()) {
             this.world
                .method6745(

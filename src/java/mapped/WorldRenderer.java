@@ -337,7 +337,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
-            BlockPos var11 = var4.method7006(Class101.field299, var5.method8336(var9, 0, var10)).method8313();
+            BlockPos var11 = var4.method7006(Class101.field299, var5.method8336(var9, 0, var10)).down();
             Biome var12 = var4.getBiome(var11);
             if (var11.getY() > 0
                && var11.getY() <= var5.getY() + 10
@@ -352,7 +352,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var13 = var3.nextDouble();
                double var15 = var3.nextDouble();
                BlockState var17 = var4.getBlockState(var11);
-               Class7379 var18 = var4.method6739(var11);
+               FluidState var18 = var4.getFluidState(var11);
                VoxelShape var19 = var17.method23414(var4, var11);
                double var20 = var19.method19522(Class113.field414, var13, var15);
                double var22 = (double)var18.method23475(var4, var11);
@@ -742,7 +742,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          this.loadRenderers();
       }
 
-      this.field943.method6820().startSection("camera");
+      this.field943.getProfiler().startSection("camera");
       double var7 = this.field939.player.getPosX() - this.field967;
       double var9 = this.field939.player.getPosY() - this.field968;
       double var11 = this.field939.player.getPosZ() - this.field969;
@@ -764,7 +764,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       }
 
       this.field983.method33321(var6);
-      this.field943.method6820().endStartSection("cull");
+      this.field943.getProfiler().endStartSection("cull");
       this.field939.getProfiler().endStartSection("culling");
       BlockPos var13 = var1.method37505();
       Class8066 var14 = this.field947.method34761(var13);
@@ -1049,9 +1049,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
    public void updateCameraAndRender(MatrixStack matrixStackIn, float var2, long var3, boolean var5, Class9624 var6, GameRenderer var7, Class1699 var8, Class9367 var9) {
       TileEntityRendererDispatcher.instance.method27961(this.field943, this.field939.getTextureManager(), this.field939.fontRenderer, var6, this.field939.objectMouseOver);
       this.field941.method32213(this.field943, var6, this.field939.pointedEntity);
-      IProfiler var10 = this.field943.method6820();
+      IProfiler var10 = this.field943.getProfiler();
       var10.endStartSection("light_updates");
-      this.field939.world.method6883().method7348().method600(Integer.MAX_VALUE, true, true);
+      this.field939.world.getChunkProvider().getLightManager().method600(Integer.MAX_VALUE, true, true);
       Vector3d var11 = var6.method37504();
       double var12 = var11.method11320();
       double var14 = var11.method11321();
@@ -1195,7 +1195,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
       for (Class7002 var41 : this.field1005) {
          Class8066 var42 = var41.field30281;
-         Class1674 var43 = var42.method27740();
+         Chunk var43 = var42.method27740();
 
          for (Entity var45 : var43.method7146()[var42.method27718().getY() / 16]) {
             if ((this.field941.method32218(var45, var20, var12, var14, var16) || var45.method3417(this.field939.player))
@@ -1537,7 +1537,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       double var11 = MathHelper.method37822((double)var8, var1.lastTickPosX, var1.getPosX());
       double var13 = MathHelper.method37822((double)var8, var1.lastTickPosY, var1.getPosY());
       double var15 = MathHelper.method37822((double)var8, var1.lastTickPosZ, var1.getPosZ());
-      float var17 = MathHelper.method37821(var8, var1.prevRotationYaw, var1.rotationYaw);
+      float var17 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field941.method32219(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field941.method32208(var1, var8));
    }
 
@@ -2527,7 +2527,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
    private void method892(Class9624 var1) {
       BufferBuilder var2 = Tessellator.getInstance().getBuffer();
-      Class7522 var3 = this.field943.method6810();
+      WorldBorder var3 = this.field943.method6810();
       double var4 = (double)(this.field939.gameSettings.field44574 * 16);
       if (!(var1.method37504().field18048 < var3.method24532() - var4)
          || !(var1.method37504().field18048 > var3.method24530() + var4)
@@ -3009,11 +3009,11 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
    private Class2294 method916(boolean var1) {
       Class2294 var2 = this.field939.gameSettings.field44674;
-      if (var1 && var2 == Class2294.field15248 && this.field943.field9016.nextInt(10) == 0) {
+      if (var1 && var2 == Class2294.field15248 && this.field943.rand.nextInt(10) == 0) {
          var2 = Class2294.field15247;
       }
 
-      if (var2 == Class2294.field15247 && this.field943.field9016.nextInt(3) == 0) {
+      if (var2 == Class2294.field15247 && this.field943.rand.nextInt(3) == 0) {
          var2 = Class2294.field15248;
       }
 
@@ -3055,7 +3055,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    public void method919(PlayerEntity var1, int var2, BlockPos var3, int var4) {
-      Random var5 = this.field943.field9016;
+      Random var5 = this.field943.rand;
       switch (var2) {
          case 1000:
             this.field943.method6858(var3, Sounds.field26495, Class2266.field14732, 1.0F, 1.0F, false);
@@ -3153,7 +3153,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             this.field943.method6858(var3, Sounds.field26347, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1031:
-            this.field943.method6858(var3, Sounds.field26344, Class2266.field14732, 0.3F, this.field943.field9016.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, Sounds.field26344, Class2266.field14732, 0.3F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
             this.field939.getSoundHandler().method1000(MinecraftSoundManager.method19296(Sounds.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
@@ -3174,7 +3174,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
             this.field943.method6858(var3, Sounds.field26707, Class2266.field14732, 1.0F, var5.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1039:
-            this.field943.method6858(var3, Sounds.field26919, Class2266.field14733, 0.3F, this.field943.field9016.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, Sounds.field26919, Class2266.field14733, 0.3F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1040:
             this.field943.method6858(var3, Sounds.field27286, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
@@ -3183,13 +3183,13 @@ public class WorldRenderer implements Class215, AutoCloseable {
             this.field943.method6858(var3, Sounds.field26687, Class2266.field14734, 2.0F, (var5.nextFloat() - var5.nextFloat()) * 0.2F + 1.0F, false);
             break;
          case 1042:
-            this.field943.method6858(var3, Sounds.field26642, Class2266.field14732, 1.0F, this.field943.field9016.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, Sounds.field26642, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1043:
-            this.field943.method6858(var3, Sounds.field26414, Class2266.field14732, 1.0F, this.field943.field9016.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, Sounds.field26414, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1044:
-            this.field943.method6858(var3, Sounds.field27106, Class2266.field14732, 1.0F, this.field943.field9016.nextFloat() * 0.1F + 0.9F, false);
+            this.field943.method6858(var3, Sounds.field27106, Class2266.field14732, 1.0F, this.field943.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1500:
             Class3475.method12164(this.field943, var3, var4 > 0);
@@ -3417,12 +3417,12 @@ public class WorldRenderer implements Class215, AutoCloseable {
                   Sounds.field26556,
                   Class2266.field14732,
                   10.0F,
-                  (1.0F + (this.field943.field9016.nextFloat() - this.field943.field9016.nextFloat()) * 0.2F) * 0.7F,
+                  (1.0F + (this.field943.rand.nextFloat() - this.field943.rand.nextFloat()) * 0.2F) * 0.7F,
                   false
                );
             break;
          case 3001:
-            this.field943.method6858(var3, Sounds.field26540, Class2266.field14733, 64.0F, 0.8F + this.field943.field9016.nextFloat() * 0.3F, false);
+            this.field943.method6858(var3, Sounds.field26540, Class2266.field14733, 64.0F, 0.8F + this.field943.rand.nextFloat() * 0.3F, false);
       }
    }
 
@@ -3481,7 +3481,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
       if (this.field943 == null) {
          return 0;
       } else {
-         Class1705 var1 = this.field943.method6883();
+         Class1705 var1 = this.field943.getChunkProvider();
          return var1 == null ? 0 : var1.method7405();
       }
    }

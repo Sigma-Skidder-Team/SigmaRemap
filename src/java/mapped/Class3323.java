@@ -20,7 +20,7 @@ public class Class3323 extends Item {
          CriteriaTriggers.field44490.method15174((ServerPlayerEntity)var6, var1);
       }
 
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          for (Class2023 var8 : Class9741.method38176(var1)) {
             if (!var8.method8627().method22292()) {
                var3.method3035(new Class2023(var8));

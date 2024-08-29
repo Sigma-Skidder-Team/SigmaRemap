@@ -37,7 +37,7 @@ public class Class4594 extends Class4566 {
             this.field22045 *= 0.98F;
             this.field22046 *= 0.98F;
             BlockPos var3 = new BlockPos(this.field22041, this.field22042, this.field22043);
-            Class7379 var4 = this.field22037.method6739(var3);
+            FluidState var4 = this.field22037.getFluidState(var3);
             if (var4.method23472() == this.field22087 && this.field22042 < (double)((float)var3.getY() + var4.method23475(this.field22037, var3))) {
                this.method14518();
             }

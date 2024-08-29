@@ -112,7 +112,7 @@ public class Class973 extends Class939 {
    }
 
    private void method4026(BlockState var1, boolean var2) {
-      this.field5324.method6725(this.getPos(), var1.method23465(Class3242.field18694, Boolean.valueOf(var2)), 3);
+      this.field5324.setBlockState(this.getPos(), var1.method23465(Class3242.field18694, Boolean.valueOf(var2)), 3);
    }
 
    private void method4027(BlockState var1, Class9455 var2) {
@@ -120,7 +120,7 @@ public class Class973 extends Class939 {
       double var6 = (double)this.field5325.getX() + 0.5 + (double)var5.getX() / 2.0;
       double var8 = (double)this.field5325.getY() + 0.5 + (double)var5.getY() / 2.0;
       double var10 = (double)this.field5325.getZ() + 0.5 + (double)var5.getZ() / 2.0;
-      this.field5324.method6743((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.field5324.field9016.nextFloat() * 0.1F + 0.9F);
+      this.field5324.method6743((PlayerEntity)null, var6, var8, var10, var2, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
    }
 
    @Override

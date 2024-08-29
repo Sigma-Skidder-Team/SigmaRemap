@@ -57,7 +57,7 @@ public class Bootstrap {
       method25567(Registry.field16071, Class7144::method22294, var2);
       method25567(Registry.ITEM, Item::getTranslationKey, var2);
       method25567(Registry.field16073, Class6069::method18819, var2);
-      method25567(Registry.BLOCK, Block::method11566, var2);
+      method25567(Registry.BLOCK, Block::getTranslationKey, var2);
       method25567(Registry.field16080, var0 -> "stat." + var0.toString().replace(':', '.'), var2);
       method25568(var2);
       return var2;

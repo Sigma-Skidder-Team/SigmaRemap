@@ -15,7 +15,7 @@ public class Class3242 extends Class3241 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class973) {
             var4.method2766((Class973)var9);
@@ -35,7 +35,7 @@ public class Class3242 extends Class3241 {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class920) {
             Class7236.method22721(var2, var3, (Class920)var8);
-            var2.method6806(var3, this);
+            var2.updateComparatorOutputLevel(var3, this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);

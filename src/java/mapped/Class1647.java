@@ -89,7 +89,7 @@ public class Class1647 implements AutoCloseable {
          }
 
          JSONException var8 = JSONException.method10464(var20);
-         var8.method10463(var2.method8292() + var7);
+         var8.method10463(var2.getPath() + var7);
          throw var8;
       } finally {
          IOUtils.closeQuietly(var5);

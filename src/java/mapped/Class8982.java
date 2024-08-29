@@ -63,7 +63,7 @@ public class Class8982 {
 
    public void method33177() {
       for (Class8189 var4 : this.field40993) {
-         Minecraft.getInstance().world.method6730(var4.field35207, var4.field35208);
+         Minecraft.getInstance().world.setBlockState(var4.field35207, var4.field35208);
       }
 
       this.field40993.clear();
@@ -157,9 +157,9 @@ public class Class8982 {
       }
    }
 
-   public void method33185(Class1674 var1) {
+   public void method33185(Chunk var1) {
       for (Class8189 var5 : this.field40992) {
-         var1.method7061(var5.field35207, var5.field35208, false);
+         var1.setBlockState(var5.field35207, var5.field35208, false);
       }
 
       this.field40992.clear();

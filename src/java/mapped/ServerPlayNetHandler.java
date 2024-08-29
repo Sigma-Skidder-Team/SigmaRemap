@@ -176,7 +176,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private <T> void method15659(T var1, Consumer<T> var2, BiFunction<IChatFilter, T, CompletableFuture<Optional<T>>> var3) {
-      MinecraftServer var6 = this.player.getServerWorld().method6715();
+      MinecraftServer var6 = this.player.getServerWorld().getServer();
       Consumer<T> var7 = var2x -> {
          if (!this.getNetworkManager().isChannelOpen()) {
             LOGGER.debug("Ignoring packet due to disconnection");
@@ -286,7 +286,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                return;
             }
 
-            this.player.getServerWorld().method6883().method7376(this.player);
+            this.player.getServerWorld().getChunkProvider().method7376(this.player);
             this.player.method2919(this.player.getPosX() - var6, this.player.getPosY() - var8, this.player.getPosZ() - var10);
             this.field23252 = var22 >= -0.03125 && !this.server.method1359() && this.method15664(var4);
             this.field23244 = var4.getPosX();
@@ -388,20 +388,20 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                   BlockState var12 = Blocks.field36888.method11579();
                   this.player
                      .world
-                     .method6725(var6, var12.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
+                     .setBlockState(var6, var12.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
                   break;
                case 2:
                   BlockState var13 = Blocks.field36887.method11579();
                   this.player
                      .world
-                     .method6725(var6, var13.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
+                     .setBlockState(var6, var13.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
                   break;
                case 3:
                default:
                   BlockState var14 = Blocks.COMMAND_BLOCK.method11579();
                   this.player
                      .world
-                     .method6725(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
+                     .setBlockState(var6, var14.method23465(Class3355.field18893, var11).method23465(Class3355.field18894, Boolean.valueOf(var1.method17519())), 2);
             }
 
             var7.method3779();
@@ -531,7 +531,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             }
 
             var7.method3622();
-            this.player.world.method6731(var4, var5, var5, 3);
+            this.player.world.notifyBlockUpdate(var4, var5, var5, 3);
          }
       }
    }
@@ -551,7 +551,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             var7.method3986(var1.method17430());
             var7.method3987(var1.method17431());
             var7.method3622();
-            this.player.world.method6731(var4, var5, var5, 3);
+            this.player.world.notifyBlockUpdate(var4, var5, var5, 3);
          }
       }
    }
@@ -756,7 +756,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                            && !this.player.method3033(Class8254.field35491)
                            && !this.player.method3165()
                            && this.method15664(this.player);
-                        this.player.getServerWorld().method6883().method7376(this.player);
+                        this.player.getServerWorld().getChunkProvider().method7376(this.player);
                         this.player.method2763(this.player.getPosY() - var11, var1.method17630());
                         this.player.method3061(var1.method17630());
                         if (var33) {
@@ -789,7 +789,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                         var1.method17628(this.player.rotationYaw),
                         var1.method17629(this.player.rotationPitch)
                      );
-                  this.player.getServerWorld().method6883().method7376(this.player);
+                  this.player.getServerWorld().getChunkProvider().method7376(this.player);
                }
             } else if (this.field23227 - this.field23249 > 20) {
                this.field23249 = this.field23227;
@@ -1169,7 +1169,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             if (this.player.queuedEndExit) {
                this.player.queuedEndExit = false;
                this.player = this.server.getPlayerList().func_232644_a_(this.player, true);
-               CriteriaTriggers.CHANGED_DIMENSION.testForAll(this.player, World.THE_END, World.field8999);
+               CriteriaTriggers.CHANGED_DIMENSION.testForAll(this.player, World.THE_END, World.OVERWORLD);
             } else {
                if (this.player.method3042() > 0.0F) {
                   return;
@@ -1335,7 +1335,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          }
 
          var9.method3622();
-         var5.method6731(var6, var7, var7, 3);
+         var5.notifyBlockUpdate(var6, var7, var7, 3);
       }
    }
 

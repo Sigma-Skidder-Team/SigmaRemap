@@ -33,7 +33,7 @@ public class Class5585 implements Packet<Class5116> {
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.method35708(this.field24785);
-      var1.writeVarInt(Block.method11535(this.field24786));
+      var1.writeVarInt(Block.getStateId(this.field24786));
       var1.method35713(this.field24787);
       var1.writeBoolean(this.field24788);
    }

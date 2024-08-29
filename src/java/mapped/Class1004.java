@@ -15,7 +15,7 @@ public class Class1004 extends Entity {
    public Class1004(World var1, double var2, double var4, double var6, Class880 var8) {
       this(EntityType.field41069, var1);
       this.setPosition(var2, var4, var6);
-      double var11 = var1.field9016.nextDouble() * (float) (Math.PI * 2);
+      double var11 = var1.rand.nextDouble() * (float) (Math.PI * 2);
       this.method3435(-Math.sin(var11) * 0.02, 0.2F, -Math.cos(var11) * 0.02);
       this.method4182(80);
       this.prevPosX = var2;
@@ -54,12 +54,12 @@ public class Class1004 extends Entity {
       this.field5564--;
       if (this.field5564 > 0) {
          this.method3257();
-         if (this.world.field9020) {
+         if (this.world.isRemote) {
             this.world.method6746(Class7940.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
          }
       } else {
          this.method2904();
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method4180();
          }
       }

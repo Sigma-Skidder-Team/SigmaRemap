@@ -27,7 +27,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
       if (var1.<Integer>method23463(field19267) < 25 && var4.nextDouble() < this.field19268) {
          BlockPos var7 = var3.method8349(this.field19256);
          if (this.method12127(var2.getBlockState(var7))) {
-            var2.method6730(var7, var1.method23459(field19267));
+            var2.setBlockState(var7, var1.method23459(field19267));
          }
       }
    }
@@ -71,7 +71,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
       int var9 = this.method12128(var2);
 
       for (int var10 = 0; var10 < var9 && this.method12127(var1.getBlockState(var7)); var10++) {
-         var1.method6730(var7, var4.method23465(field19267, Integer.valueOf(var8)));
+         var1.setBlockState(var7, var4.method23465(field19267, Integer.valueOf(var8)));
          var7 = var7.method8349(this.field19256);
          var8 = Math.min(var8 + 1, 25);
       }

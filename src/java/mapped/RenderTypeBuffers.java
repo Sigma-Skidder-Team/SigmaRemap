@@ -6,7 +6,7 @@ import java.util.SortedMap;
 public class RenderTypeBuffers {
    private static String[] field33888;
    private final Class7828 field33889 = new Class7828();
-   public final SortedMap<RenderType, BufferBuilder> field33890 = Util.method38508(
+   public final SortedMap<RenderType, BufferBuilder> field33890 = Util.make(
       new Object2ObjectLinkedOpenHashMap<>(), var1 -> {
          var1.put(Class8624.method30906(), this.field33889.method26203(RenderType.method14300()));
          var1.put(Class8624.method30907(), this.field33889.method26203(RenderType.method14302()));

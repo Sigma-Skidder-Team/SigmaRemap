@@ -6,7 +6,7 @@ public final class Class5971 extends Class5970 {
    }
 
    @Override
-   public Class5646 method18500(Registry<Biome> var1, Registry<Class9309> var2, long var3) {
-      return new Class5645(new Class1688(var1.method9189(Class9495.field44122)), var3, () -> var2.method9189(Class9309.field43235));
+   public ChunkGenerator method18500(Registry<Biome> var1, Registry<DimensionSettings> var2, long var3) {
+      return new NoiseChunkGenerator(new Class1688(var1.getOrThrow(Class9495.field44122)), var3, () -> var2.getOrThrow(DimensionSettings.field43235));
    }
 }

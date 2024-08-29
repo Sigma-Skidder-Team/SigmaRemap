@@ -5,27 +5,27 @@ import javax.annotation.Nullable;
 
 public abstract class Class1702 implements Class1704, AutoCloseable {
    @Nullable
-   public Class1674 method7342(int var1, int var2, boolean var3) {
-      return (Class1674)this.method7346(var1, var2, Class9176.field42145, var3);
+   public Chunk method7342(int var1, int var2, boolean var3) {
+      return (Chunk)this.method7346(var1, var2, ChunkStatus.FULL, var3);
    }
 
    @Nullable
-   public Class1674 method7343(int var1, int var2) {
+   public Chunk method7343(int var1, int var2) {
       return this.method7342(var1, var2, false);
    }
 
    @Nullable
    @Override
    public Class1665 method7344(int var1, int var2) {
-      return this.method7346(var1, var2, Class9176.field42133, false);
+      return this.method7346(var1, var2, ChunkStatus.field42133, false);
    }
 
    public boolean method7345(int var1, int var2) {
-      return this.method7346(var1, var2, Class9176.field42145, false) != null;
+      return this.method7346(var1, var2, ChunkStatus.FULL, false) != null;
    }
 
    @Nullable
-   public abstract Class1670 method7346(int var1, int var2, Class9176 var3, boolean var4);
+   public abstract IChunk method7346(int var1, int var2, ChunkStatus var3, boolean var4);
 
    public abstract String method7347();
 
@@ -33,7 +33,7 @@ public abstract class Class1702 implements Class1704, AutoCloseable {
    public void close() throws IOException {
    }
 
-   public abstract Class196 method7348();
+   public abstract Class196 getLightManager();
 
    public void method7349(boolean var1, boolean var2) {
    }

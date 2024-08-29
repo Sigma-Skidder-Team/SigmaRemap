@@ -11,7 +11,7 @@ public class Class3679 extends Class3676<Class880> {
 
    @Override
    public boolean method12508(ServerWorld var1, Class880 var2) {
-      return var1.field9016.nextFloat() > 0.95F;
+      return var1.rand.nextFloat() > 0.95F;
    }
 
    @Override

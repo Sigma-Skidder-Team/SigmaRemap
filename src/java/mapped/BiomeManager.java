@@ -2,13 +2,13 @@ package mapped;
 
 import com.google.common.hash.Hashing;
 
-public class Class6668 {
+public class BiomeManager {
    private static String[] field29238;
    private final Class1683 field29239;
    private final long field29240;
-   private final Class1960 field29241;
+   private final IBiomeMagnifier field29241;
 
-   public Class6668(Class1683 var1, long var2, Class1960 var4) {
+   public BiomeManager(Class1683 var1, long var2, IBiomeMagnifier var4) {
       this.field29239 = var1;
       this.field29240 = var2;
       this.field29241 = var4;
@@ -18,8 +18,8 @@ public class Class6668 {
       return Hashing.sha256().hashLong(var0).asLong();
    }
 
-   public Class6668 method20322(Class1685 var1) {
-      return new Class6668(var1, this.field29240, this.field29241);
+   public BiomeManager method20322(Class1685 var1) {
+      return new BiomeManager(var1, this.field29240, this.field29241);
    }
 
    public Biome method20323(BlockPos var1) {

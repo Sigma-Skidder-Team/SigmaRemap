@@ -102,7 +102,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Override
    public void method4747(ItemStack var1) {
-      if (!this.world.field9020 && this.field5593 > -this.method4236() + 20) {
+      if (!this.world.isRemote && this.field5593 > -this.method4236() + 20) {
          this.field5593 = -this.method4236();
          this.method2863(this.method4749(!var1.isEmpty()), this.method3099(), this.method3100());
       }
@@ -222,7 +222,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Override
    public Vector3d method2986(float var1) {
-      float var4 = MathHelper.method37821(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
+      float var4 = MathHelper.lerp(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
       Vector3d var5 = new Vector3d(0.0, this.getBoundingBox().method19677() - 1.0, 0.2);
       return this.method3288(var1).method11338(var5.method11351(-var4));
    }

@@ -25,7 +25,7 @@ public class Class7152 implements Class7151 {
       BlockState var4 = this.field30725.method3734().getBlockState(this.field30726);
       this.field30725.method3645(var4, var1);
       this.field30725.method3622();
-      this.field30725.method3734().method6731(this.field30726, var4, var4, 3);
+      this.field30725.method3734().notifyBlockUpdate(this.field30726, var4, var4, 3);
    }
 
    @Override

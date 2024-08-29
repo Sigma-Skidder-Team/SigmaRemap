@@ -110,7 +110,7 @@ public enum Class2208 {
    private final Class81[] field14441;
    private final Class81[] field14442;
    private final Class81[] field14443;
-   private static final Class2208[] field14444 = Util.<Class2208[]>method38508(new Class2208[6], var0 -> {
+   private static final Class2208[] field14444 = Util.<Class2208[]>make(new Class2208[6], var0 -> {
       var0[Direction.DOWN.method533()] = field14432;
       var0[Direction.field673.method533()] = field14433;
       var0[Direction.NORTH.method533()] = field14434;

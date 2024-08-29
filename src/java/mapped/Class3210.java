@@ -20,7 +20,7 @@ public class Class3210 extends Block {
 
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      Class3406.method12045(var2, var3.method8311(), true);
+      Class3406.method12045(var2, var3.up(), true);
    }
 
    @Override
@@ -34,10 +34,10 @@ public class Class3210 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      BlockPos var7 = var3.method8311();
-      if (var2.method6739(var3).method23486(Class8953.field40469)) {
+      BlockPos var7 = var3.up();
+      if (var2.getFluidState(var3).method23486(Class8953.field40469)) {
          var2.method6742(
-            (PlayerEntity)null, var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.field9016.nextFloat() - var2.field9016.nextFloat()) * 0.8F
+            (PlayerEntity)null, var3, Sounds.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
          );
          var2.method6939(
             Class7940.field34085, (double)var7.getX() + 0.5, (double)var7.getY() + 0.25, (double)var7.getZ() + 0.5, 8, 0.5, 0.25, 0.5, 0.0

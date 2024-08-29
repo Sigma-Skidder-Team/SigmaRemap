@@ -18,8 +18,8 @@ public class Class2663 extends Class2661 {
       super(var1, null);
       this.field17031 = var1;
       this.field17025 = var0 -> {
-         if (!var0.method23446(Class7645.field32772)) {
-            return var0.method23446(Class7645.field32769);
+         if (!var0.method23446(BlockTags.field32772)) {
+            return var0.method23446(BlockTags.field32769);
          } else {
             return !var0.method23448(Blocks.SUNFLOWER) ? true : var0.<Class84>method23463(Class3456.field19276) == Class84.field209;
          }

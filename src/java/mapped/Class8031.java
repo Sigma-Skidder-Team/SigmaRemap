@@ -143,7 +143,7 @@ public class Class8031 {
 
          for (BlockPos var16 : var8) {
             Block var17 = var9.getBlockState(var16).getBlock();
-            var9.method6964(var16, var17);
+            var9.func_230547_a_(var16, var17);
          }
 
          if (var10 != 0) {

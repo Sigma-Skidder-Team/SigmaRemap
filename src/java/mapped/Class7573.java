@@ -28,7 +28,7 @@ public class Class7573 extends Class7574 {
       super.method24788(var1);
       if (this.method24786() != null) {
          BlockState var4 = this.method24786().getBlockState(this.method24787());
-         this.method24786().method6731(this.field32514.field5325, var4, var4, 4);
+         this.method24786().notifyBlockUpdate(this.field32514.field5325, var4, var4, 4);
       }
    }
 }

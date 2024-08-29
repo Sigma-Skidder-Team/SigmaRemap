@@ -130,7 +130,7 @@ public class Class8037 {
                   );
                }
 
-               if (var5 || !var0.world.method6739(var31).method23486(Class8953.field40469)) {
+               if (var5 || !var0.world.getFluidState(var31).method23486(Class8953.field40469)) {
                   Class2163 var28 = Class6762.method20633(var0.world, var31.method8354());
                   if (var0.method4223(var28) == 0.0F) {
                      double var29 = var8.applyAsDouble(var31);
@@ -176,16 +176,16 @@ public class Class8037 {
       } else if (!var3.test(var0)) {
          return var0;
       } else {
-         BlockPos var6 = var0.method8311();
+         BlockPos var6 = var0.up();
 
          while (var6.getY() < var2 && var3.test(var6)) {
-            var6 = var6.method8311();
+            var6 = var6.up();
          }
 
          BlockPos var7 = var6;
 
          while (var7.getY() < var2 && var7.getY() - var6.getY() < var1) {
-            BlockPos var8 = var7.method8311();
+            BlockPos var8 = var7.up();
             if (var3.test(var8)) {
                break;
             }

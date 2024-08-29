@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class Class3717 extends Class3676<Class1042> {
    private static String[] field19794;
-   private static final Map<Class8395, ResourceLocation> field19795 = Util.<Map<Class8395, ResourceLocation>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Class8395, ResourceLocation> field19795 = Util.<Map<Class8395, ResourceLocation>>make(Maps.newHashMap(), var0 -> {
       var0.put(Class8395.field36012, Class8793.field39596);
       var0.put(Class8395.field36013, Class8793.field39597);
       var0.put(Class8395.field36014, Class8793.field39598);
@@ -99,7 +99,7 @@ public class Class3717 extends Class3676<Class1042> {
          if (!field19795.containsKey(var4)) {
             return ImmutableList.of(new ItemStack(Items.field37841));
          } else {
-            Class7318 var5 = var1.world.method6715().method1411().method1058(field19795.get(var4));
+            Class7318 var5 = var1.world.getServer().method1411().method1058(field19795.get(var4));
             Class9464 var6 = new Class9464((ServerWorld)var1.world)
                .method36454(Class9525.field44335, var1.getPositionVec())
                .method36454(Class9525.field44330, var1)
@@ -130,6 +130,6 @@ public class Class3717 extends Class3676<Class1042> {
    }
 
    private static int method12610(ServerWorld var0) {
-      return 600 + var0.field9016.nextInt(6001);
+      return 600 + var0.rand.nextInt(6001);
    }
 }

@@ -60,7 +60,7 @@ public class Class3707 extends Class3706 {
    }
 
    private void method12588(ServerWorld var1, BlockState var2, BlockPos var3, BlockState var4) {
-      var1.method6999(1500, var3, var4 == var2 ? 0 : 1);
+      var1.playEvent(1500, var3, var4 == var2 ? 0 : 1);
    }
 
    private void method12589(Class1042 var1) {

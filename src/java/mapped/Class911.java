@@ -90,7 +90,7 @@ public abstract class Class911 implements ICommandSource {
    }
 
    public boolean method3564(World var1) {
-      if (var1.field9020 || var1.method6783() == this.field5193) {
+      if (var1.isRemote || var1.method6783() == this.field5193) {
          return false;
       } else if ("Searge".equalsIgnoreCase(this.field5198)) {
          this.field5197 = new StringTextComponent("#itzlipofutzli");
@@ -98,7 +98,7 @@ public abstract class Class911 implements ICommandSource {
          return true;
       } else {
          this.field5195 = 0;
-         MinecraftServer var4 = this.method3567().method6715();
+         MinecraftServer var4 = this.method3567().getServer();
          if (var4.method1361() && !Class9001.method33256(this.field5198)) {
             try {
                this.field5197 = null;
@@ -165,11 +165,11 @@ public abstract class Class911 implements ICommandSource {
 
    public ActionResultType method3572(PlayerEntity var1) {
       if (var1.method2979()) {
-         if (var1.method3395().field9020) {
+         if (var1.method3395().isRemote) {
             var1.method2890(this);
          }
 
-         return ActionResultType.method9002(var1.world.field9020);
+         return ActionResultType.method9002(var1.world.isRemote);
       } else {
          return ActionResultType.field14820;
       }

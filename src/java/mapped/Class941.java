@@ -84,7 +84,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    public static int method3758(World var0, Class932 var1, int var2, int var3, int var4, int var5, int var6) {
-      if (!var0.field9020 && var6 != 0 && (var2 + var3 + var4 + var5) % 200 == 0) {
+      if (!var0.isRemote && var6 != 0 && (var2 + var3 + var4 + var5) % 200 == 0) {
          var6 = method3759(var0, var1, var3, var4, var5);
       }
 
@@ -129,7 +129,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
             var9 += (double)var11.method541() * 0.5;
          }
 
-         this.field5324.method6743((PlayerEntity)null, var5, var7, var9, var1, Class2266.field14732, 0.5F, this.field5324.field9016.nextFloat() * 0.1F + 0.9F);
+         this.field5324.method6743((PlayerEntity)null, var5, var7, var9, var1, Class2266.field14732, 0.5F, this.field5324.rand.nextFloat() * 0.1F + 0.9F);
       }
    }
 
@@ -167,7 +167,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
       Block var3 = this.method3775().getBlock();
       if (var3 instanceof Class3348) {
          this.field5324.method6787(this.field5325, var3, 1, this.field5315);
-         this.field5324.method6733(this.field5325, var3);
+         this.field5324.notifyNeighborsOfStateChange(this.field5325, var3);
       }
    }
 
@@ -183,7 +183,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
 
    @Override
    public float method3762(float var1) {
-      return MathHelper.method37821(var1, this.field5314, this.field5313);
+      return MathHelper.lerp(var1, this.field5314, this.field5313);
    }
 
    public static int method3763(Class1665 var0, BlockPos var1) {

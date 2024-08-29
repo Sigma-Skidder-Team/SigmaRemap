@@ -5,13 +5,13 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import javax.annotation.Nullable;
 
 public abstract class Class6349 {
-   private static final Object2ObjectMap<ResourceLocation, Class6349> field27884 = Util.<Object2ObjectMap<ResourceLocation, Class6349>>method38508(
+   private static final Object2ObjectMap<ResourceLocation, Class6349> field27884 = Util.<Object2ObjectMap<ResourceLocation, Class6349>>make(
       new Object2ObjectArrayMap(), var0 -> {
          Class6348 var3 = new Class6348();
          var0.defaultReturnValue(var3);
-         var0.put(Class9535.field44366, var3);
-         var0.put(Class9535.field44367, new Class6350());
-         var0.put(Class9535.field44368, new Class6351());
+         var0.put(DimensionType.OVERWORLD_ID, var3);
+         var0.put(DimensionType.THE_NETHER_ID, new Class6350());
+         var0.put(DimensionType.THE_END_ID, new Class6351());
       }
    );
    private final float[] field27885 = new float[4];
@@ -29,8 +29,8 @@ public abstract class Class6349 {
       this.field27890 = var5;
    }
 
-   public static Class6349 method19301(Class9535 var0) {
-      return (Class6349)field27884.get(var0.method36892());
+   public static Class6349 method19301(DimensionType var0) {
+      return (Class6349)field27884.get(var0.getEffects());
    }
 
    @Nullable

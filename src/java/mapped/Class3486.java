@@ -43,7 +43,7 @@ public class Class3486 extends Class3194 implements Class3196 {
             if (var8 >= 7) {
                Direction var9 = Class76.field161.method247(var4);
                BlockPos var10 = var3.method8349(var9);
-               BlockState var11 = var2.getBlockState(var10.method8313());
+               BlockState var11 = var2.getBlockState(var10.down());
                if (var2.getBlockState(var10).isAir()
                   && (
                      var11.method23448(Blocks.FARMLAND)
@@ -52,12 +52,12 @@ public class Class3486 extends Class3194 implements Class3196 {
                         || var11.method23448(Blocks.field36398)
                         || var11.method23448(Blocks.field36395)
                   )) {
-                  var2.method6730(var10, this.field19349.method11579());
-                  var2.method6730(var3, this.field19349.method12147().method11579().method23465(Class3198.field18484, var9));
+                  var2.setBlockState(var10, this.field19349.method11579());
+                  var2.setBlockState(var3, this.field19349.method12147().method11579().method23465(Class3198.field18484, var9));
                }
             } else {
                var1 = var1.method23465(field19347, Integer.valueOf(var8 + 1));
-               var2.method6725(var3, var1, 2);
+               var2.setBlockState(var3, var1, 2);
             }
          }
       }
@@ -90,11 +90,11 @@ public class Class3486 extends Class3194 implements Class3196 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      int var7 = Math.min(7, var4.<Integer>method23463(field19347) + MathHelper.method37782(var1.field9016, 2, 5));
+      int var7 = Math.min(7, var4.<Integer>method23463(field19347) + MathHelper.method37782(var1.rand, 2, 5));
       BlockState var8 = var4.method23465(field19347, Integer.valueOf(var7));
-      var1.method6725(var3, var8, 2);
+      var1.setBlockState(var3, var8, 2);
       if (var7 == 7) {
-         var8.method23431(var1, var3, var1.field9016);
+         var8.method23431(var1, var3, var1.rand);
       }
    }
 

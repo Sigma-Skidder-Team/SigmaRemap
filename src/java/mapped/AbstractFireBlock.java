@@ -3,11 +3,11 @@ package mapped;
 import java.util.Optional;
 import java.util.Random;
 
-public abstract class Class3397 extends Block {
+public abstract class AbstractFireBlock extends Block {
    private final float field19034;
    public static final VoxelShape field19035 = Block.method11539(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
-   public Class3397(AbstractBlock var1, float var2) {
+   public AbstractFireBlock(AbstractBlock var1, float var2) {
       super(var1);
       this.field19034 = var2;
    }
@@ -18,7 +18,7 @@ public abstract class Class3397 extends Block {
    }
 
    public static BlockState method12009(Class1665 var0, BlockPos var1) {
-      BlockPos var4 = var1.method8313();
+      BlockPos var4 = var1.down();
       BlockState var5 = var0.getBlockState(var4);
       return !Class3398.method12014(var5.getBlock()) ? ((Class3399) Blocks.FIRE).method12016(var0, var1) : Blocks.field36531.method11579();
    }
@@ -43,10 +43,10 @@ public abstract class Class3397 extends Block {
          );
       }
 
-      BlockPos var7 = var3.method8313();
+      BlockPos var7 = var3.down();
       BlockState var8 = var2.getBlockState(var7);
       if (!this.method12010(var8) && !var8.method23454(var2, var7, Direction.field673)) {
-         if (this.method12010(var2.getBlockState(var3.method8345()))) {
+         if (this.method12010(var2.getBlockState(var3.west()))) {
             for (int var16 = 0; var16 < 2; var16++) {
                double var21 = (double)var3.getX() + var4.nextDouble() * 0.1F;
                double var26 = (double)var3.getY() + var4.nextDouble();
@@ -55,7 +55,7 @@ public abstract class Class3397 extends Block {
             }
          }
 
-         if (this.method12010(var2.getBlockState(var3.method8347()))) {
+         if (this.method12010(var2.getBlockState(var3.east()))) {
             for (int var17 = 0; var17 < 2; var17++) {
                double var22 = (double)(var3.getX() + 1) - var4.nextDouble() * 0.1F;
                double var27 = (double)var3.getY() + var4.nextDouble();
@@ -64,7 +64,7 @@ public abstract class Class3397 extends Block {
             }
          }
 
-         if (this.method12010(var2.getBlockState(var3.method8341()))) {
+         if (this.method12010(var2.getBlockState(var3.north()))) {
             for (int var18 = 0; var18 < 2; var18++) {
                double var23 = (double)var3.getX() + var4.nextDouble();
                double var28 = (double)var3.getY() + var4.nextDouble();
@@ -73,7 +73,7 @@ public abstract class Class3397 extends Block {
             }
          }
 
-         if (this.method12010(var2.getBlockState(var3.method8343()))) {
+         if (this.method12010(var2.getBlockState(var3.south()))) {
             for (int var19 = 0; var19 < 2; var19++) {
                double var24 = (double)var3.getX() + var4.nextDouble();
                double var29 = (double)var3.getY() + var4.nextDouble();
@@ -82,7 +82,7 @@ public abstract class Class3397 extends Block {
             }
          }
 
-         if (this.method12010(var2.getBlockState(var3.method8311()))) {
+         if (this.method12010(var2.getBlockState(var3.up()))) {
             for (int var20 = 0; var20 < 2; var20++) {
                double var25 = (double)var3.getX() + var4.nextDouble();
                double var30 = (double)(var3.getY() + 1) - var4.nextDouble() * 0.1F;
@@ -128,18 +128,18 @@ public abstract class Class3397 extends Block {
          }
 
          if (!var1.method23443(var2, var3)) {
-            var2.method6728(var3, false);
+            var2.removeBlock(var3, false);
          }
       }
    }
 
    private static boolean method12011(World var0) {
-      return var0.getDimensionKey() == World.field8999 || var0.getDimensionKey() == World.THE_NETHER;
+      return var0.getDimensionKey() == World.OVERWORLD || var0.getDimensionKey() == World.THE_NETHER;
    }
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.method6714()) {
+      if (!var1.isRemote()) {
          var1.method6869((PlayerEntity)null, 1009, var2, 0);
       }
    }

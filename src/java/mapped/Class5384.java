@@ -39,7 +39,7 @@ public class Class5384 extends Module {
       int var5 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
       int var6 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
-      for (TileEntity var8 : mc.world.field9003) {
+      for (TileEntity var8 : mc.world.loadedTileEntityList) {
          boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");
          boolean var10 = var8 instanceof Class943 && this.method16004().getBooleanValueFromSetttingName("Show Ender Chests");
          boolean var11 = var8 instanceof Class970 && this.method16004().getBooleanValueFromSetttingName("Show Trapped Chests");

@@ -9,7 +9,7 @@ public class Class2902 extends Class2898<Class4701> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4701 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4701 var5) {
       for (BlockPos var9 : BlockPos.method8359(var4.method8336(-1, -2, -1), var4.method8336(1, 2, 1))) {
          boolean var10 = var9.getX() == var4.getX();
          boolean var11 = var9.getY() == var4.getY();

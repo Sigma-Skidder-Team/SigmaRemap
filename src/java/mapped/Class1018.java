@@ -53,7 +53,7 @@ public abstract class Class1018 extends Class1045 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.getBlockState(var1.method8313()).method23448(Blocks.field36395) ? var2.method7009(var1) - 0.5F : 10.0F;
+      return !var2.getBlockState(var1.down()).method23448(Blocks.field36395) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
    @Override
@@ -78,7 +78,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    public static boolean method4500(EntityType<? extends Class1018> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3.method8313()).method23448(Blocks.field36395) && var1.method7021(var3, 0) > 8;
+      return var1.getBlockState(var3.down()).method23448(Blocks.field36395) && var1.method7021(var3, 0) > 8;
    }
 
    @Override
@@ -93,7 +93,7 @@ public abstract class Class1018 extends Class1045 {
 
    @Override
    public int method2937(PlayerEntity var1) {
-      return 1 + this.world.field9016.nextInt(3);
+      return 1 + this.world.rand.nextInt(3);
    }
 
    public boolean method4381(ItemStack var1) {
@@ -105,7 +105,7 @@ public abstract class Class1018 extends Class1045 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (this.method4381(var5)) {
          int var6 = this.method4767();
-         if (!this.world.field9020 && var6 == 0 && this.method4502()) {
+         if (!this.world.isRemote && var6 == 0 && this.method4502()) {
             this.method4501(var1, var5);
             this.method4503(var1);
             return ActionResultType.field14818;
@@ -114,10 +114,10 @@ public abstract class Class1018 extends Class1045 {
          if (this.method3005()) {
             this.method4501(var1, var5);
             this.method4768((int)((float)(-var6 / 20) * 0.1F), true);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
 
-         if (this.world.field9020) {
+         if (this.world.isRemote) {
             return ActionResultType.field14819;
          }
       }

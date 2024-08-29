@@ -148,7 +148,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class880 var6 = (Class880)var1.method31109();
             if (Class8088.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
@@ -187,16 +187,16 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    @Override
    public void method4258() {
-      this.world.method6820().startSection("zoglinBrain");
+      this.world.getProfiler().startSection("zoglinBrain");
       this.method2992().method21432((ServerWorld)this.world, this);
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
       this.method5101();
    }
 
    @Override
    public void method4308(boolean var1) {
       this.method3210().method35446(field5982, var1);
-      if (!this.world.field9020 && var1) {
+      if (!this.world.isRemote && var1) {
          this.method3085(Class9173.field42110).method38661(0.5);
       }
    }
@@ -232,7 +232,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
 
    @Override
    public Class9455 method4241() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          return !this.field5011.method21404(Class8830.field39826) ? Sounds.field27276 : Sounds.field27277;
       } else {
          return null;

@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class3398 extends Class3397 {
+public class Class3398 extends AbstractFireBlock {
    private static String[] field19036;
 
    public Class3398(AbstractBlock var1) {
@@ -14,11 +14,11 @@ public class Class3398 extends Class3397 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return method12014(var2.getBlockState(var3.method8313()).getBlock());
+      return method12014(var2.getBlockState(var3.down()).getBlock());
    }
 
    public static boolean method12014(Block var0) {
-      return var0.method11540(Class7645.field32807);
+      return var0.method11540(BlockTags.field32807);
    }
 
    @Override

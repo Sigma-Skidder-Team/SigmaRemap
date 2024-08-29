@@ -65,14 +65,14 @@ public class Class3265 extends Class3264 {
       } else {
          PlayerEntity var8 = var1.method18358();
          var4.method6742(var8, var5, Sounds.field26364, Class2266.field14732, 1.0F, 1.0F);
-         if (!var4.field9020) {
-            var4.method6725(var5, var7.method11579().method23465(Class3386.field18994, var6.<Class113>method23463(Class3386.field18994)), 11);
+         if (!var4.isRemote) {
+            var4.setBlockState(var5, var7.method11579().method23465(Class3386.field18994, var6.<Class113>method23463(Class3386.field18994)), 11);
             if (var8 != null) {
                var1.method18357().method32121(1, var8, var1x -> var1x.method3185(var1.method18359()));
             }
          }
 
-         return ActionResultType.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.isRemote);
       }
    }
 }

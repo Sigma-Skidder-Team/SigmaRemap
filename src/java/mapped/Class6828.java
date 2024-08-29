@@ -23,7 +23,7 @@ public class Class6828 extends Class6829 {
          this.field29705.rotationYaw = this.method20816(this.field29705.rotationYaw, var12, 90.0F);
          this.field29705.field4965 = this.field29705.rotationYaw;
          float var13 = (float)(this.field29711 * this.field29705.method3086(Class9173.field42108));
-         float var14 = MathHelper.method37821(0.125F, this.field29705.method2918(), var13);
+         float var14 = MathHelper.lerp(0.125F, this.field29705.method2918(), var13);
          this.field29705.method3113(var14);
          double var15 = Math.sin((double)(this.field29705.ticksExisted + this.field29705.method3205()) * 0.5) * 0.05;
          double var17 = Math.cos((double)(this.field29705.rotationYaw * (float) (Math.PI / 180.0)));

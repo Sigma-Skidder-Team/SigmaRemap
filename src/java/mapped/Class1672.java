@@ -15,14 +15,14 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Stream;
 
-public class Class1672 implements Class1670 {
+public class Class1672 implements IChunk {
    private static final Logger field9088 = LogManager.getLogger();
    private final Class7481 field9089;
    private volatile boolean field9090;
    private Class1684 field9091;
    private volatile Class196 field9092;
    private final Map<Class101, Class7527> field9093 = Maps.newEnumMap(Class101.class);
-   private volatile Class9176 field9094 = Class9176.field42133;
+   private volatile ChunkStatus field9094 = ChunkStatus.field42133;
    private final Map<BlockPos, TileEntity> field9095 = Maps.newHashMap();
    private final Map<BlockPos, CompoundNBT> field9096 = Maps.newHashMap();
    private final Class7038[] field9097 = new Class7038[16];
@@ -65,7 +65,7 @@ public class Class1672 implements Class1670 {
    @Override
    public BlockState getBlockState(BlockPos var1) {
       int var4 = var1.getY();
-      if (!World.method6721(var4)) {
+      if (!World.isYOutOfBounds(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
          return !Class7038.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.method11579();
       } else {
@@ -74,9 +74,9 @@ public class Class1672 implements Class1670 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       int var4 = var1.getY();
-      if (!World.method6721(var4)) {
+      if (!World.isYOutOfBounds(var4)) {
          Class7038 var5 = this.method7067()[var4 >> 4];
          return !Class7038.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Class9479.field44064.method25049();
       } else {
@@ -93,7 +93,7 @@ public class Class1672 implements Class1670 {
       ShortList[] var3 = new ShortList[16];
 
       for (BlockPos var5 : this.field9099) {
-         Class1670.method7094(var3, var5.getY() >> 4).add(method7113(var5));
+         IChunk.method7094(var3, var5.getY() >> 4).add(method7113(var5));
       }
 
       return var3;
@@ -109,30 +109,30 @@ public class Class1672 implements Class1670 {
 
    @Nullable
    @Override
-   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
+   public BlockState setBlockState(BlockPos var1, BlockState var2, boolean var3) {
       int var6 = var1.getX();
       int var7 = var1.getY();
       int var8 = var1.getZ();
       if (var7 >= 0 && var7 < 256) {
-         if (this.field9097[var7 >> 4] == Class1674.field9111 && var2.method23448(Blocks.AIR)) {
+         if (this.field9097[var7 >> 4] == Chunk.field9111 && var2.method23448(Blocks.AIR)) {
             return var2;
          } else {
-            if (var2.method23392() > 0) {
+            if (var2.getLightValue() > 0) {
                this.field9099.add(new BlockPos((var6 & 15) + this.method7072().method24356(), var7, (var8 & 15) + this.method7072().method24357()));
             }
 
             Class7038 var9 = this.method7106(var7 >> 4);
             BlockState var10 = var9.method21856(var6 & 15, var7 & 15, var8 & 15, var2);
-            if (this.field9094.method34306(Class9176.field42141)
+            if (this.field9094.method34306(ChunkStatus.field42141)
                && var2 != var10
                && (
-                  var2.method23387(this, var1) != var10.method23387(this, var1)
-                     || var2.method23392() != var10.method23392()
-                     || var2.method23391()
-                     || var10.method23391()
+                  var2.getOpacity(this, var1) != var10.getOpacity(this, var1)
+                     || var2.getLightValue() != var10.getLightValue()
+                     || var2.isTransparent()
+                     || var10.isTransparent()
                )) {
                Class196 var11 = this.method7112();
-               var11.method602(var1);
+               var11.checkBlock(var1);
             }
 
             EnumSet<Class101> var16 = this.method7080().method34305();
@@ -165,7 +165,7 @@ public class Class1672 implements Class1670 {
    }
 
    public Class7038 method7106(int var1) {
-      if (this.field9097[var1] == Class1674.field9111) {
+      if (this.field9097[var1] == Chunk.field9111) {
          this.field9097[var1] = new Class7038(var1 << 4);
       }
 
@@ -233,11 +233,11 @@ public class Class1672 implements Class1670 {
    }
 
    @Override
-   public Class9176 method7080() {
+   public ChunkStatus method7080() {
       return this.field9094;
    }
 
-   public void method7111(Class9176 var1) {
+   public void method7111(ChunkStatus var1) {
       this.field9094 = var1;
       this.method7078(true);
    }
@@ -353,8 +353,8 @@ public class Class1672 implements Class1670 {
 
    @Override
    public void method7082(BlockPos var1) {
-      if (!World.method6720(var1)) {
-         Class1670.method7094(this.field9100, var1.getY() >> 4).add(method7113(var1));
+      if (!World.isOutsideBuildHeight(var1)) {
+         IChunk.method7094(this.field9100, var1.getY() >> 4).add(method7113(var1));
       }
    }
 
@@ -365,7 +365,7 @@ public class Class1672 implements Class1670 {
 
    @Override
    public void method7084(short var1, int var2) {
-      Class1670.method7094(this.field9100, var2).add(var1);
+      IChunk.method7094(this.field9100, var2).add(var1);
    }
 
    public Class6806<Block> method7089() {

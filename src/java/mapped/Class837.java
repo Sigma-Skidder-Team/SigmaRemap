@@ -14,9 +14,9 @@ import javax.annotation.Nullable;
 
 public class Class837 extends Screen {
    private static final Logger field4624 = LogManager.getLogger();
-   private static final Object2IntMap<RegistryKey<World>> field4625 = Util.<Object2IntMap<RegistryKey<World>>>method38508(
+   private static final Object2IntMap<RegistryKey<World>> field4625 = Util.<Object2IntMap<RegistryKey<World>>>make(
       new Object2IntOpenCustomHashMap(Util.method38509()), var0 -> {
-         var0.put(World.field8999, -13408734);
+         var0.put(World.OVERWORLD, -13408734);
          var0.put(World.THE_NETHER, -10075085);
          var0.put(World.THE_END, -8943531);
          var0.defaultReturnValue(-2236963);
@@ -27,7 +27,7 @@ public class Class837 extends Screen {
 
    @Nullable
    public static Class837 method2560(Minecraft var0, BooleanConsumer var1, DataFixer var2, SaveFormat.LevelSave var3, boolean var4) {
-      Class8905 var7 = DynamicRegistries.func_239770_b_();
+      DynamicRegistriesImpl var7 = DynamicRegistries.func_239770_b_();
 
       try (Minecraft.PackManager var8 = var0.reloadDatapacks(var7, Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, var3)) {
          IServerConfiguration var10 = var8.getServerConfiguration();

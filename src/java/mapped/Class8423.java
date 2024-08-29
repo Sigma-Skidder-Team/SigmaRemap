@@ -6,8 +6,8 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.Lifecycle;
 
-public final class Class8423<E> implements Codec<Class2350<E>> {
-   private final Codec<Class2350<E>> field36097;
+public final class Class8423<E> implements Codec<SimpleRegistry<E>> {
+   private final Codec<SimpleRegistry<E>> field36097;
    private final RegistryKey<? extends Registry<E>> field36098;
    private final Codec<E> field36099;
 
@@ -16,17 +16,17 @@ public final class Class8423<E> implements Codec<Class2350<E>> {
    }
 
    private Class8423(RegistryKey<? extends Registry<E>> var1, Lifecycle var2, Codec<E> var3) {
-      this.field36097 = Class2350.<E>method9257(var1, var2, var3);
+      this.field36097 = SimpleRegistry.<E>method9257(var1, var2, var3);
       this.field36098 = var1;
       this.field36099 = var3;
    }
 
-   public <T> DataResult<T> encode(Class2350<E> var1, DynamicOps<T> var2, T var3) {
+   public <T> DataResult<T> encode(SimpleRegistry<E> var1, DynamicOps<T> var2, T var3) {
       return this.field36097.encode(var1, var2, var3);
    }
 
-   public <T> DataResult<Pair<Class2350<E>, T>> decode(DynamicOps<T> var1, T var2) {
-      DataResult<Pair<Class2350<E>, T>> var5 = this.field36097.decode(var1, var2);
+   public <T> DataResult<Pair<SimpleRegistry<E>, T>> decode(DynamicOps<T> var1, T var2) {
+      DataResult<Pair<SimpleRegistry<E>, T>> var5 = this.field36097.decode(var1, var2);
       return !(var1 instanceof WorldSettingsImport)
          ? var5
          : var5.flatMap(

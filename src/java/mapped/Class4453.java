@@ -29,7 +29,7 @@ public class Class4453 extends Class4441<EntityType<?>> {
 
    @Override
    public Path method14011(ResourceLocation var1) {
-      return this.field21599.method33776().resolve("data/" + var1.method8293() + "/tags/entity_types/" + var1.method8292() + ".json");
+      return this.field21599.method33776().resolve("data/" + var1.getNamespace() + "/tags/entity_types/" + var1.getPath() + ".json");
    }
 
    @Override

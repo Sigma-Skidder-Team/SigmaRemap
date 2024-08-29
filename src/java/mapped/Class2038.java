@@ -11,7 +11,7 @@ public enum Class2038 {
    field13328("ttf", Class7543::method24663),
    field13329("legacy_unicode", Class7545::method24665);
 
-   private static final Map<String, Class2038> field13330 = Util.<Map<String, Class2038>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, Class2038> field13330 = Util.<Map<String, Class2038>>make(Maps.newHashMap(), var0 -> {
       for (Class2038 var6 : values()) {
          var0.put(var6.field13331, var6);
       }

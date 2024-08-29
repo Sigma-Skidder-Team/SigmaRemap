@@ -15,7 +15,7 @@ public class Class6772 extends Class6768<Class8278> {
 
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -48,7 +48,7 @@ public class Class6772 extends Class6768<Class8278> {
                if (var28 != -1) {
                   if (var28 > 0) {
                      var28--;
-                     var2.method7061(var27, var29, false);
+                     var2.setBlockState(var27, var29, false);
                   }
                } else {
                   boolean var33 = false;
@@ -71,9 +71,9 @@ public class Class6772 extends Class6768<Class8278> {
 
                   var28 = var26;
                   if (var30 < var17 - 1) {
-                     var2.method7061(var27, var29, false);
+                     var2.setBlockState(var27, var29, false);
                   } else {
-                     var2.method7061(var27, var31, false);
+                     var2.setBlockState(var27, var31, false);
                   }
                }
             }

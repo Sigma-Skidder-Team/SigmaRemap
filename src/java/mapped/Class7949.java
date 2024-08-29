@@ -70,8 +70,8 @@ public class Class7949 {
 
    public Collection<ResourceLocation> method27017(String var1, String var2, int var3, Predicate<String> var4) {
       return this.field34183.keySet().stream().filter(var3x -> {
-         String var6 = var3x.method8292();
-         return var3x.method8293().equals(var2) && !var6.endsWith(".mcmeta") && var6.startsWith(var1 + "/") && var4.test(var6);
+         String var6 = var3x.getPath();
+         return var3x.getNamespace().equals(var2) && !var6.endsWith(".mcmeta") && var6.startsWith(var1 + "/") && var4.test(var6);
       }).collect(Collectors.<ResourceLocation>toList());
    }
 }

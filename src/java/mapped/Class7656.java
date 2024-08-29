@@ -33,7 +33,7 @@ public class Class7656<T> {
    public void method25169(Class8933 var1) {
       Class7984 var4 = this.field32851.apply(var1);
       this.field32849 = var4;
-      this.field32850.forEach(var1x -> var1x.method24931(var4::method27135));
+      this.field32850.forEach(var1x -> var1x.method24931(var4::get));
    }
 
    public Class7984<T> method25170() {
@@ -46,7 +46,7 @@ public class Class7656<T> {
 
    public Set<ResourceLocation> method25172(Class8933 var1) {
       Class7984 var4 = this.field32851.apply(var1);
-      Set var5 = this.field32850.stream().<ResourceLocation>map(Class7611::method24929).collect(Collectors.toSet());
+      Set var5 = this.field32850.stream().<ResourceLocation>map(Class7611::getName).collect(Collectors.toSet());
       ImmutableSet var6 = ImmutableSet.copyOf(var4.method27137());
       return Sets.difference(var5, var6);
    }

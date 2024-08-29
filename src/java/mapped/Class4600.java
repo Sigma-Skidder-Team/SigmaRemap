@@ -19,7 +19,7 @@ public class Class4600 extends Class4599 {
                this.field22043 + 0.5,
                Sounds.field26395,
                Class2266.field14732,
-               0.3F + this.field22037.field9016.nextFloat() * 2.0F / 3.0F,
+               0.3F + this.field22037.rand.nextFloat() * 2.0F / 3.0F,
                1.0F,
                false
             );

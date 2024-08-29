@@ -20,7 +20,7 @@ public abstract class Class4586 extends Class4587 {
       Class8661 var10;
       if (this.field22062 != 0.0F) {
          var10 = new Class8661(var2.method37508());
-         float var11 = MathHelper.method37821(var3, this.field22063, this.field22062);
+         float var11 = MathHelper.lerp(var3, this.field22063, this.field22062);
          var10.method31182(Class7680.field32902.method25285(var11));
       } else {
          var10 = var2.method37508();

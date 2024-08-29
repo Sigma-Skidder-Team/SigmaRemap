@@ -51,7 +51,7 @@ public class Class3292 extends Item {
                   var9.method32182(1);
                }
 
-               return ActionResultType.method9002(var7.field9020);
+               return ActionResultType.method9002(var7.isRemote);
             } else {
                return ActionResultType.FAIL;
             }
@@ -97,7 +97,7 @@ public class Class3292 extends Item {
       }
 
       if (var7 != var4) {
-         var2.method6725(var1, var7, 2);
+         var2.setBlockState(var1, var7, 2);
       }
 
       return var7;
@@ -118,11 +118,11 @@ public class Class3292 extends Item {
    }
 
    public boolean method11843(Class5909 var1, BlockState var2) {
-      return var1.method18360().method6725(var1.method18345(), var2, 11);
+      return var1.method18360().setBlockState(var1.method18345(), var2, 11);
    }
 
    public static boolean method11844(World var0, PlayerEntity var1, BlockPos var2, ItemStack var3) {
-      MinecraftServer var6 = var0.method6715();
+      MinecraftServer var6 = var0.getServer();
       if (var6 == null) {
          return false;
       } else {
@@ -130,7 +130,7 @@ public class Class3292 extends Item {
          if (var7 != null) {
             TileEntity var8 = var0.getTileEntity(var2);
             if (var8 != null) {
-               if (!var0.field9020 && var8.method3783() && (var1 == null || !var1.method2979())) {
+               if (!var0.isRemote && var8.method3783() && (var1 == null || !var1.method2979())) {
                   return false;
                }
 
@@ -154,7 +154,7 @@ public class Class3292 extends Item {
 
    @Override
    public String getTranslationKey() {
-      return this.method11845().method11566();
+      return this.method11845().getTranslationKey();
    }
 
    @Override

@@ -20,11 +20,11 @@ public class Class3223 extends Block {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          boolean var9 = var1.<Boolean>method23463(field18661);
          if (var9 != var2.method6780(var3)) {
             if (!var9) {
-               var2.method6725(var3, var1.method23459(field18661), 2);
+               var2.setBlockState(var3, var1.method23459(field18661), 2);
             } else {
                var2.method6860().method20726(var3, this, 4);
             }
@@ -35,7 +35,7 @@ public class Class3223 extends Block {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method23463(field18661) && !var2.method6780(var3)) {
-         var2.method6725(var3, var1.method23459(field18661), 2);
+         var2.setBlockState(var3, var1.method23459(field18661), 2);
       }
    }
 

@@ -20,7 +20,7 @@ public class Class3485 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(BlockState var1, Class1665 var2, BlockPos var3) {
-      return var1.method23446(Class7645.field32799)
+      return var1.method23446(BlockTags.field32799)
          || var1.method23448(Blocks.MYCELIUM)
          || var1.method23448(Blocks.SOUL_SOIL)
          || super.method11490(var1, var2, var3);
@@ -29,7 +29,7 @@ public class Class3485 extends Class3194 implements Class3196 {
    @Override
    public boolean method11486(Class1665 var1, BlockPos var2, BlockState var3, boolean var4) {
       Block var7 = ((Class4709)this.field19346.get().field33887).field22337.getBlock();
-      Block var8 = var1.getBlockState(var2.method8313()).getBlock();
+      Block var8 = var1.getBlockState(var2.down()).getBlock();
       return var8 == var7;
    }
 
@@ -40,6 +40,6 @@ public class Class3485 extends Class3194 implements Class3196 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      this.field19346.get().method26521(var1, var1.method6883().method7370(), var2, var3);
+      this.field19346.get().method26521(var1, var1.getChunkProvider().method7370(), var2, var3);
    }
 }

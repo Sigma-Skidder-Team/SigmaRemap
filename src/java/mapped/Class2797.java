@@ -171,39 +171,39 @@ public class Class2797<T extends Class880> extends Class2855<T> implements Class
             if (var14 >= 14.0F && var14 < 22.0F) {
                float var22 = (var14 - 14.0F) / 8.0F;
                this.field17436.field31035 = this.method11006(var17, this.field17436.field31035, (float) (Math.PI / 2) * var22);
-               this.field17435.field31035 = MathHelper.method37821(var16, this.field17435.field31035, (float) (Math.PI / 2) * var22);
+               this.field17435.field31035 = MathHelper.lerp(var16, this.field17435.field31035, (float) (Math.PI / 2) * var22);
                this.field17436.field31036 = this.method11006(var17, this.field17436.field31036, (float) Math.PI);
-               this.field17435.field31036 = MathHelper.method37821(var16, this.field17435.field31036, (float) Math.PI);
+               this.field17435.field31036 = MathHelper.lerp(var16, this.field17435.field31036, (float) Math.PI);
                this.field17436.field31037 = this.method11006(var17, this.field17436.field31037, 5.012389F - 1.8707964F * var22);
-               this.field17435.field31037 = MathHelper.method37821(var16, this.field17435.field31037, 1.2707963F + 1.8707964F * var22);
+               this.field17435.field31037 = MathHelper.lerp(var16, this.field17435.field31037, 1.2707963F + 1.8707964F * var22);
             } else if (var14 >= 22.0F && var14 < 26.0F) {
                float var18 = (var14 - 22.0F) / 4.0F;
                this.field17436.field31035 = this.method11006(var17, this.field17436.field31035, (float) (Math.PI / 2) - (float) (Math.PI / 2) * var18);
-               this.field17435.field31035 = MathHelper.method37821(var16, this.field17435.field31035, (float) (Math.PI / 2) - (float) (Math.PI / 2) * var18);
+               this.field17435.field31035 = MathHelper.lerp(var16, this.field17435.field31035, (float) (Math.PI / 2) - (float) (Math.PI / 2) * var18);
                this.field17436.field31036 = this.method11006(var17, this.field17436.field31036, (float) Math.PI);
-               this.field17435.field31036 = MathHelper.method37821(var16, this.field17435.field31036, (float) Math.PI);
+               this.field17435.field31036 = MathHelper.lerp(var16, this.field17435.field31036, (float) Math.PI);
                this.field17436.field31037 = this.method11006(var17, this.field17436.field31037, (float) Math.PI);
-               this.field17435.field31037 = MathHelper.method37821(var16, this.field17435.field31037, (float) Math.PI);
+               this.field17435.field31037 = MathHelper.lerp(var16, this.field17435.field31037, (float) Math.PI);
             }
          } else {
             this.field17436.field31035 = this.method11006(var17, this.field17436.field31035, 0.0F);
-            this.field17435.field31035 = MathHelper.method37821(var16, this.field17435.field31035, 0.0F);
+            this.field17435.field31035 = MathHelper.lerp(var16, this.field17435.field31035, 0.0F);
             this.field17436.field31036 = this.method11006(var17, this.field17436.field31036, (float) Math.PI);
-            this.field17435.field31036 = MathHelper.method37821(var16, this.field17435.field31036, (float) Math.PI);
+            this.field17435.field31036 = MathHelper.lerp(var16, this.field17435.field31036, (float) Math.PI);
             this.field17436.field31037 = this.method11006(
                var17, this.field17436.field31037, (float) Math.PI + 1.8707964F * this.method11007(var14) / this.method11007(14.0F)
             );
-            this.field17435.field31037 = MathHelper.method37821(
+            this.field17435.field31037 = MathHelper.lerp(
                var16, this.field17435.field31037, (float) Math.PI - 1.8707964F * this.method11007(var14) / this.method11007(14.0F)
             );
          }
 
          float var23 = 0.3F;
          float var19 = 0.33333334F;
-         this.field17438.field31035 = MathHelper.method37821(
+         this.field17438.field31035 = MathHelper.lerp(
             this.field17442, this.field17438.field31035, 0.3F * MathHelper.cos(var2 * 0.33333334F + (float) Math.PI)
          );
-         this.field17437.field31035 = MathHelper.method37821(this.field17442, this.field17437.field31035, 0.3F * MathHelper.cos(var2 * 0.33333334F));
+         this.field17437.field31035 = MathHelper.lerp(this.field17442, this.field17437.field31035, 0.3F * MathHelper.cos(var2 * 0.33333334F));
       }
 
       if (var1 instanceof Entity && ViaVersionLoader.field31493.contains(var1)) {

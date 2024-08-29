@@ -23,7 +23,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
       double var18 = MathHelper.method37822((double)var3, var1.lastTickPosZ, var1.getPosZ());
       double var20 = 0.3F;
       Vector3d var22 = var1.method3595(var14, var16, var18);
-      float var23 = MathHelper.method37821(var3, var1.prevRotationPitch, var1.rotationPitch);
+      float var23 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
       if (var22 != null) {
          Vector3d var24 = var1.method3594(var14, var16, var18, 0.3F);
          Vector3d var25 = var1.method3594(var14, var16, var18, -0.3F);

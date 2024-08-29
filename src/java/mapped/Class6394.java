@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 public class Class6394 extends Class6395 {
    private static final Logger field27983 = LogManager.getLogger();
 
-   public Class6394(Class1645 var1, Class8905 var2, Class8716 var3) {
+   public Class6394(DedicatedServer var1, DynamicRegistriesImpl var2, Class8716 var3) {
       super(var1, var2, var3, var1.method6498().field43821);
       Class9437 var6 = var1.method6498();
       this.method19487(var6.field43820);
@@ -117,8 +117,8 @@ public class Class6394 extends Class6395 {
       return !this.method19476() || this.canSendCommands(var1) || this.method19468().method14448(var1);
    }
 
-   public Class1645 method19444() {
-      return (Class1645)super.method19444();
+   public DedicatedServer method19444() {
+      return (DedicatedServer)super.method19444();
    }
 
    @Override

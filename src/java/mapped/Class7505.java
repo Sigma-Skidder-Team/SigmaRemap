@@ -30,7 +30,7 @@ public class Class7505 implements ArgumentType<Class8439> {
       if (var4.method28837() == null) {
          ResourceLocation var6 = var4.method28839();
          return var2 -> {
-            ITag var5x = var2.method32657().method27135(var6);
+            ITag var5x = var2.method32657().get(var6);
             if (var5x != null) {
                return new Class170(var5x, var4.method28863(), var4.method28838());
             } else {
@@ -57,7 +57,7 @@ public class Class7505 implements ArgumentType<Class8439> {
       } catch (CommandSyntaxException var8) {
       }
 
-      return var6.method28862(var2, Class7645.method25115());
+      return var6.method28862(var2, BlockTags.getCollection());
    }
 
    public Collection<String> getExamples() {

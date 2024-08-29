@@ -94,7 +94,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       Class111 var4 = Class111.field379;
       Direction var5 = var1.method18350().method536();
-      Class7379 var6 = var1.method18360().method6739(var1.method18345());
+      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
       boolean var7 = var1.method18351();
       Direction var8 = var1.method18354();
       if (var8.method544().method324() && var7) {
@@ -122,7 +122,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18867) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 
@@ -148,7 +148,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class920) {
             Class7236.method22721(var2, var3, (Class920)var8);
-            var2.method6806(var3, this);
+            var2.updateComparatorOutputLevel(var3, this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);
@@ -157,7 +157,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          Class949 var9 = this.method11528(var1, var2, var3);
          if (var9 != null) {
             var4.method2766(var9);
@@ -212,7 +212,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    private static boolean method11914(Class1665 var0, BlockPos var1) {
-      BlockPos var4 = var1.method8311();
+      BlockPos var4 = var1.up();
       return var0.getBlockState(var4).method23400(var0, var4);
    }
 

@@ -14,22 +14,22 @@ public class Class3341 extends Item {
       BlockState var6 = var4.getBlockState(var5);
       if (!var6.method23448(Blocks.field36650) || var6.<Boolean>method23463(Class3400.field19054)) {
          return ActionResultType.field14820;
-      } else if (var4.field9020) {
+      } else if (var4.isRemote) {
          return ActionResultType.field14818;
       } else {
          BlockState var7 = var6.method23465(Class3400.field19054, Boolean.valueOf(true));
          Block.method11538(var6, var7, var4, var5);
-         var4.method6725(var5, var7, 2);
-         var4.method6806(var5, Blocks.field36650);
+         var4.setBlockState(var5, var7, 2);
+         var4.updateComparatorOutputLevel(var5, Blocks.field36650);
          var1.method18357().method32182(1);
-         var4.method6999(1503, var5, 0);
+         var4.playEvent(1503, var5, 0);
          Class9086 var8 = Class3400.method12029().method38656(var4, var5);
          if (var8 != null) {
             BlockPos var9 = var8.method33878().method8336(-3, 0, -3);
 
             for (int var10 = 0; var10 < 3; var10++) {
                for (int var11 = 0; var11 < 3; var11++) {
-                  var4.method6725(var9.method8336(var10, 0, var11), Blocks.field36649.method11579(), 2);
+                  var4.setBlockState(var9.method8336(var10, 0, var11), Blocks.field36649.method11579(), 2);
                }
             }
 
@@ -49,7 +49,7 @@ public class Class3341 extends Item {
       } else {
          var2.method3154(var3);
          if (var1 instanceof ServerWorld) {
-            BlockPos var8 = ((ServerWorld)var1).method6883().method7370().method17820((ServerWorld)var1, Structure.field18067, var2.getPosition(), 100, false);
+            BlockPos var8 = ((ServerWorld)var1).getChunkProvider().method7370().method17820((ServerWorld)var1, Structure.field18067, var2.getPosition(), 100, false);
             if (var8 != null) {
                Class897 var9 = new Class897(var1, var2.getPosX(), var2.method3440(0.5), var2.getPosZ());
                var9.method3522(var6);

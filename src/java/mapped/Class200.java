@@ -72,9 +72,9 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
          } else {
             this.field750.method8375(var1);
             BlockState var9 = var8.getBlockState(this.field750);
-            boolean var10 = var9.method23410() && var9.method23391();
+            boolean var10 = var9.method23410() && var9.isTransparent();
             if (var3 != null) {
-               var3.setValue(var9.method23387(this.field746.method7386(), this.field750));
+               var3.setValue(var9.getOpacity(this.field746.method7386(), this.field750));
             }
 
             return !var10 ? Blocks.AIR.method11579() : var9;
@@ -93,8 +93,8 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
    }
 
    public static int method649(Class1665 var0, BlockState var1, BlockPos var2, BlockState var3, BlockPos var4, Direction var5, int var6) {
-      boolean var9 = var1.method23410() && var1.method23391();
-      boolean var10 = var3.method23410() && var3.method23391();
+      boolean var9 = var1.method23410() && var1.isTransparent();
+      boolean var10 = var3.method23410() && var3.isTransparent();
       if (!var9 && !var10) {
          return var6;
       } else {

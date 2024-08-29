@@ -115,7 +115,7 @@ public class Class9069 {
    private static void method33788(Class1091 var0, Class880 var1) {
       var0.method2992().method21405(Class8830.field39826);
       var0.method2992().method21405(Class8830.field39824);
-      var0.method2992().method21407(Class8830.field39837, var1, (long)field41500.method29319(var0.world.field9016));
+      var0.method2992().method21407(Class8830.field39837, var1, (long)field41500.method29319(var0.world.rand));
    }
 
    private static Optional<? extends Class880> method33789(Class1091 var0) {

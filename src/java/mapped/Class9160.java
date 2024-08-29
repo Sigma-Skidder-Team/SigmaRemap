@@ -59,7 +59,7 @@ public class Class9160 {
          var8.method2829(var6, var2, var3, true, false);
       }
 
-      String var9 = var6.method31399().toString();
+      String var9 = var6.getLocation().toString();
       if (var1.size() != 1) {
          var0.method20179(
             new TranslationTextComponent(

@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 public class Class5545 implements Packet<Class5116> {
    private static String[] field24614;
-   private Class9535 field24615;
+   private DimensionType field24615;
    private RegistryKey<World> field24616;
    private long field24617;
    private Class1894 field24618;
@@ -17,7 +17,7 @@ public class Class5545 implements Packet<Class5116> {
    public Class5545() {
    }
 
-   public Class5545(Class9535 var1, RegistryKey<World> var2, long var3, Class1894 var5, Class1894 var6, boolean var7, boolean var8, boolean var9) {
+   public Class5545(DimensionType var1, RegistryKey<World> var2, long var3, Class1894 var5, Class1894 var6, boolean var7, boolean var8, boolean var9) {
       this.field24615 = var1;
       this.field24616 = var2;
       this.field24617 = var3;
@@ -34,8 +34,8 @@ public class Class5545 implements Packet<Class5116> {
 
    @Override
    public void method17175(PacketBuffer var1) throws IOException {
-      this.field24615 = var1.<Supplier<Class9535>>method35696(Class9535.field44379).get();
-      this.field24616 = RegistryKey.<World>method31395(Registry.field16067, var1.method35731());
+      this.field24615 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
+      this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.method35731());
       this.field24617 = var1.readLong();
       this.field24618 = Class1894.method8159(var1.readUnsignedByte());
       this.field24619 = Class1894.method8159(var1.readUnsignedByte());
@@ -46,8 +46,8 @@ public class Class5545 implements Packet<Class5116> {
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.method35697(Class9535.field44379, () -> this.field24615);
-      var1.method35732(this.field24616.method31399());
+      var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24615);
+      var1.method35732(this.field24616.getLocation());
       var1.writeLong(this.field24617);
       var1.writeByte(this.field24618.method8152());
       var1.writeByte(this.field24619.method8152());
@@ -56,7 +56,7 @@ public class Class5545 implements Packet<Class5116> {
       var1.writeBoolean(this.field24622);
    }
 
-   public Class9535 method17432() {
+   public DimensionType method17432() {
       return this.field24615;
    }
 

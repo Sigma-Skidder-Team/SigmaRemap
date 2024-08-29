@@ -95,7 +95,7 @@ public class Class1105 extends Class1009 {
    @Nullable
    public Class880 method5306() {
       if (this.method5305()) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             return this.method4232();
          } else if (this.field6073 == null) {
             Entity var3 = this.world.method6774(this.dataManager.<Integer>method35445(field6067));
@@ -154,13 +154,13 @@ public class Class1105 extends Class1009 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.method6739(var1).method23486(Class8953.field40469) ? super.method4339(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
+      return !var2.getFluidState(var1).method23486(Class8953.field40469) ? super.method4339(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
    }
 
    @Override
    public void method2871() {
       if (this.method3066()) {
-         if (this.world.field9020) {
+         if (this.world.isRemote) {
             this.field6069 = this.field6068;
             if (this.method3250()) {
                if (!this.method5301()) {
@@ -177,7 +177,7 @@ public class Class1105 extends Class1009 {
                   this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
                }
 
-               this.field6075 = var3.field18049 < 0.0 && this.world.method6765(this.getPosition().method8313(), this);
+               this.field6075 = var3.field18049 < 0.0 && this.world.method6765(this.getPosition().down(), this);
             }
 
             this.field6068 = this.field6068 + this.field6070;
@@ -272,11 +272,11 @@ public class Class1105 extends Class1009 {
    }
 
    public float method5308(float var1) {
-      return MathHelper.method37821(var1, this.field6069, this.field6068);
+      return MathHelper.lerp(var1, this.field6069, this.field6068);
    }
 
    public float method5309(float var1) {
-      return MathHelper.method37821(var1, this.field6072, this.field6071);
+      return MathHelper.lerp(var1, this.field6072, this.field6071);
    }
 
    public float method5310(float var1) {
@@ -291,7 +291,7 @@ public class Class1105 extends Class1009 {
    public static boolean method5311(EntityType<? extends Class1105> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Class2197.field14351
-         && (var2 == Class2202.field14393 || var1.method6739(var3).method23486(Class8953.field40469));
+         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(Class8953.field40469));
    }
 
    @Override

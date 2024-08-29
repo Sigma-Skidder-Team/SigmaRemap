@@ -17,7 +17,7 @@ public class Class7196 extends Class7195<Class4728> {
    }
 
    public boolean method22603(
-           Class1670 var1, Function<BlockPos, Biome> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, Class4728 var10
+           IChunk var1, Function<BlockPos, Biome> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, Class4728 var10
    ) {
       int var13 = (this.method22607() * 2 - 1) * 16;
       double var14 = (double)(var5 * 16 + var3.nextInt(16));
@@ -34,7 +34,7 @@ public class Class7196 extends Class7195<Class4728> {
    }
 
    private void method22614(
-      Class1670 var1,
+      IChunk var1,
       Function<BlockPos, Biome> var2,
       long var3,
       int var5,

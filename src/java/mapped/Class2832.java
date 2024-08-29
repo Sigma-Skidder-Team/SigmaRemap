@@ -742,7 +742,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                      Class4695.method14724(Items.field38117)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)).method18317(1))
-                        .method18296(Class136.method399(Util.<CompoundNBT>method38508(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:slowness"))))
+                        .method18296(Class136.method399(Util.<CompoundNBT>make(new CompoundNBT(), var0 -> var0.method109("Potion", "minecraft:slowness"))))
                   )
                   .method18297(Class163.method492())
             )

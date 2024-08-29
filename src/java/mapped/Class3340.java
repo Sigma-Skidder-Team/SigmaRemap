@@ -17,7 +17,7 @@ public class Class3340 extends Item {
       if (!var6.method23448(Blocks.field36527) && !var6.method23448(Blocks.BEDROCK)) {
          return ActionResultType.FAIL;
       } else {
-         BlockPos var7 = var5.method8311();
+         BlockPos var7 = var5.up();
          if (var4.method7007(var7)) {
             double var8 = (double)var7.getX();
             double var10 = (double)var7.getY();
@@ -35,7 +35,7 @@ public class Class3340 extends Item {
                }
 
                var1.method18357().method32182(1);
-               return ActionResultType.method9002(var4.field9020);
+               return ActionResultType.method9002(var4.isRemote);
             } else {
                return ActionResultType.FAIL;
             }

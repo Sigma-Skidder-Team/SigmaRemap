@@ -47,18 +47,18 @@ public class Class4181 extends Class4180 {
       if (!"map_chest".equals(var1)) {
          if (!"treasure_chest".equals(var1)) {
             if ("supply_chest".equals(var1)) {
-               Class939.method3740(var3, var4, var2.method8313(), Class8793.field39567);
+               Class939.method3740(var3, var4, var2.down(), Class8793.field39567);
             }
          } else {
-            Class939.method3740(var3, var4, var2.method8313(), Class8793.field39568);
+            Class939.method3740(var3, var4, var2.down(), Class8793.field39568);
          }
       } else {
-         Class939.method3740(var3, var4, var2.method8313(), Class8793.field39566);
+         Class939.method3740(var3, var4, var2.down(), Class8793.field39566);
       }
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       int var10 = 256;
       int var11 = 0;
       BlockPos var12 = this.field20453.method32886();

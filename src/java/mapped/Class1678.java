@@ -23,6 +23,6 @@ public interface Class1678 extends Class1682, Class1662, Class1679 {
    DynamicRegistries method6867();
 
    default Optional<RegistryKey<Biome>> method7178(BlockPos var1) {
-      return this.method6867().<Biome>method32453(Registry.BIOME_KEY).method9182(this.getBiome(var1));
+      return this.method6867().<Biome>getRegistry(Registry.BIOME_KEY).method9182(this.getBiome(var1));
    }
 }

@@ -32,12 +32,12 @@ public class Class4613 extends Class4566 {
       this.field22044 += var11;
       this.field22045 += var13;
       this.field22046 += var15;
-      float var26 = var1.field9016.nextFloat() * var19;
+      float var26 = var1.rand.nextFloat() * var19;
       this.field22058 = var26;
       this.field22059 = var26;
       this.field22060 = var26;
       this.field22035 *= 0.75F * var17;
-      this.field22056 = (int)((double)var20 / ((double)var1.field9016.nextFloat() * 0.8 + 0.2));
+      this.field22056 = (int)((double)var20 / ((double)var1.rand.nextFloat() * 0.8 + 0.2));
       this.field22056 = (int)((float)this.field22056 * var17);
       this.field22056 = Math.max(this.field22056, 1);
       this.method14508(var18);

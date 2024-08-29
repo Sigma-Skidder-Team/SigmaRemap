@@ -98,7 +98,7 @@ public class Class1104 extends Class1009 {
    @Override
    public void method2871() {
       super.method2871();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (!this.method4282()) {
             this.field6063++;
          }

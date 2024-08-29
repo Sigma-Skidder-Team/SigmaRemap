@@ -26,11 +26,11 @@ public class Class9299 {
    public static Class6631 field42770 = new Class6631(field42769, "isLoading");
    public static Class6631 field42771 = new Class6631(field42769, "renderProgressText");
    public static Class6636 field42772 = new Class6636("net.minecraftforge.event.world.ChunkDataEvent$Save");
-   public static Class6634 field42773 = new Class6634(field42772, new Class[]{Class1670.class, Class1660.class, CompoundNBT.class});
+   public static Class6634 field42773 = new Class6634(field42772, new Class[]{IChunk.class, Class1660.class, CompoundNBT.class});
    public static Class6636 field42774 = new Class6636("net.minecraftforge.event.world.ChunkEvent$Load");
-   public static Class6634 field42775 = new Class6634(field42774, new Class[]{Class1670.class});
+   public static Class6634 field42775 = new Class6634(field42774, new Class[]{IChunk.class});
    public static Class6636 field42776 = new Class6636("net.minecraftforge.event.world.ChunkEvent$Unload");
-   public static Class6634 field42777 = new Class6634(field42776, new Class[]{Class1670.class});
+   public static Class6634 field42777 = new Class6634(field42776, new Class[]{IChunk.class});
    public static Class6636 field42778 = new Class6636("net.minecraftforge.fml.client.ClientHooks");
    public static Class6631 field42779 = new Class6631(field42778, "trackBrokenTexture");
    public static Class6631 field42780 = new Class6631(field42778, "trackMissingTexture");
@@ -164,7 +164,7 @@ public class Class9299 {
    public static Class6633 field42904 = new Class6633(field42903, "defaultSupplier");
    public static Class6633 field42905 = new Class6633(field42903, "spec");
    public static Class6631 field42906 = new Class6631(field42903, "get");
-   public static Class6636 field42907 = new Class6636(Class1670.class);
+   public static Class6636 field42907 = new Class6636(IChunk.class);
    public static Class6631 field42908 = new Class6631(field42907, "getWorldForge");
    public static Class6636 field42909 = new Class6636("net.minecraftforge.common.extensions.IForgeItem");
    public static Class6631 field42910 = new Class6631(field42909, "getDurabilityForDisplay");
@@ -198,7 +198,7 @@ public class Class9299 {
    public static Class6631 field42938 = new Class6631(field42937, "getRegistryName");
    public static Class6636 field42939 = new Class6636(Class8928.class);
    public static Class6631 field42940 = new Class6631(field42939, "canRenderInLayer", new Class[]{BlockState.class, RenderType.class});
-   public static Class6631 field42941 = new Class6631(field42939, "canRenderInLayer", new Class[]{Class7379.class, RenderType.class});
+   public static Class6631 field42941 = new Class6631(field42939, "canRenderInLayer", new Class[]{FluidState.class, RenderType.class});
    public static Class6636 field42942 = new Class6636("net.minecraftforge.common.extensions.IForgeTileEntity");
    public static Class6631 field42943 = new Class6631(field42942, "getRenderBoundingBox");
    public static Class6633 field42944 = new Class6633(

@@ -17,10 +17,10 @@ public class Class9155 {
       float var14 = var4.method7471();
       float var15 = (var12.field45939[0] + var12.field45939[0] + var12.field45939[2] + var12.field45939[2]) / 4.0F;
       float var16 = (var12.field45939[1] + var12.field45939[1] + var12.field45939[3] + var12.field45939[3]) / 4.0F;
-      var12.field45939[0] = MathHelper.method37821(var14, var12.field45939[0], var15);
-      var12.field45939[2] = MathHelper.method37821(var14, var12.field45939[2], var15);
-      var12.field45939[1] = MathHelper.method37821(var14, var12.field45939[1], var16);
-      var12.field45939[3] = MathHelper.method37821(var14, var12.field45939[3], var16);
+      var12.field45939[0] = MathHelper.lerp(var14, var12.field45939[0], var15);
+      var12.field45939[2] = MathHelper.lerp(var14, var12.field45939[2], var15);
+      var12.field45939[1] = MathHelper.lerp(var14, var12.field45939[1], var16);
+      var12.field45939[3] = MathHelper.lerp(var14, var12.field45939[3], var16);
       boolean var17 = !Class9299.field42868.method20214() ? var8 : false;
       int[] var18 = this.method34177(var12, var4, var5, this.method34178(var1, var2), var6.method8166(), var7, var17);
       Direction var19 = method34184(var18);

@@ -841,8 +841,8 @@ public class Class7104 {
          for (int var7 = 0; var7 < var0.length; var7++) {
             String var8 = var0[var7];
             ResourceLocation var9 = new ResourceLocation(var8);
-            String var10 = var9.method8293();
-            String var11 = var9.method8292();
+            String var10 = var9.getNamespace();
+            String var11 = var9.getPath();
             if (!var11.contains("/")) {
                var11 = "textures/block/" + var11;
             }

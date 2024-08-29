@@ -10,7 +10,7 @@ public enum Class2062 {
    field13441("feet", (var0, var1) -> var0),
    field13442("eyes", (var0, var1) -> new Vector3d(var0.field18048, var0.field18049 + (double)var1.method3393(), var0.field18050));
 
-   private static final Map<String, Class2062> field13443 = Util.<Map<String, Class2062>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<String, Class2062> field13443 = Util.<Map<String, Class2062>>make(Maps.newHashMap(), var0 -> {
       for (Class2062 var6 : values()) {
          var0.put(var6.field13444, var6);
       }

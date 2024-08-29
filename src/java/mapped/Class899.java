@@ -18,7 +18,7 @@ public class Class899 extends Class898 {
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          boolean var4 = this.world.method6789().method17135(Class5462.field24224);
          this.world
             .method6756(
@@ -37,7 +37,7 @@ public class Class899 extends Class898 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Entity var4 = var1.getEntity();
          Entity var5 = this.method3460();
          var4.method2741(Class8654.method31121(this, var5), 6.0F);

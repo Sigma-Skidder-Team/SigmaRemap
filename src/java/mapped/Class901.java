@@ -45,7 +45,7 @@ public abstract class Class901 extends Class882 {
    @Override
    public void tick() {
       Entity var3 = this.method3460();
-      if (this.world.field9020 || (var3 == null || !var3.removed) && this.world.method7017(this.getPosition())) {
+      if (this.world.isRemote || (var3 == null || !var3.removed) && this.world.method7017(this.getPosition())) {
          super.tick();
          if (this.method3529()) {
             this.method3221(1);

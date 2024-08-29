@@ -22,9 +22,9 @@ public class Class7142 extends Class7139 {
    public void method22269(Class1658 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, Class9764 var6) {
       int var9 = ((BlockPos)var3.get(0)).getY();
       var3.stream().filter(var1x -> var1x.getY() == var9).forEach(var3x -> {
-         this.method22280(var1, var2, var3x.method8345().method8341());
-         this.method22280(var1, var2, var3x.method8348(2).method8341());
-         this.method22280(var1, var2, var3x.method8345().method8344(2));
+         this.method22280(var1, var2, var3x.west().north());
+         this.method22280(var1, var2, var3x.method8348(2).north());
+         this.method22280(var1, var2, var3x.west().method8344(2));
          this.method22280(var1, var2, var3x.method8348(2).method8344(2));
 
          for (int var6x = 0; var6x < 5; var6x++) {
@@ -52,7 +52,7 @@ public class Class7142 extends Class7139 {
       for (int var6 = 2; var6 >= -3; var6--) {
          BlockPos var7 = var3.method8339(var6);
          if (Class2898.method11220(var1, var7)) {
-            var1.method6725(var7, this.field30703.method20424(var2, var3), 19);
+            var1.setBlockState(var7, this.field30703.method20424(var2, var3), 19);
             break;
          }
 

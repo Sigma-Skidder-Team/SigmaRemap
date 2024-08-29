@@ -23,7 +23,7 @@ public class Class3224 extends Block implements Class3207 {
          return true;
       } else {
          for (Direction var8 : Direction.values()) {
-            if (var1.method6739(var2.method8349(var8)).method23486(Class8953.field40469)) {
+            if (var1.getFluidState(var2.method8349(var8)).method23486(Class8953.field40469)) {
                return true;
             }
          }
@@ -35,7 +35,7 @@ public class Class3224 extends Block implements Class3207 {
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return this.method11579().method23465(field18663, Boolean.valueOf(var4.method23486(Class8953.field40469) && var4.method23477() == 8));
    }
 
@@ -57,7 +57,7 @@ public class Class3224 extends Block implements Class3207 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      BlockPos var6 = var3.method8313();
+      BlockPos var6 = var3.down();
       return var2.getBlockState(var6).method23454(var2, var6, Direction.field673);
    }
 
@@ -67,7 +67,7 @@ public class Class3224 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18663) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 }

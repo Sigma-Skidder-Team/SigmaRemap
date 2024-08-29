@@ -11,7 +11,7 @@ import java.util.concurrent.Executor;
 
 public class Class8259 {
    public static Properties method28791(ResourceLocation var0) {
-      String var3 = var0.method8292();
+      String var3 = var0.getPath();
       Class20 var4 = new Class20();
       String var5 = ".png";
       if (!var3.endsWith(var5)) {
@@ -20,7 +20,7 @@ public class Class8259 {
          String var6 = var3.substring(0, var3.length() - var5.length()) + ".properties";
 
          try {
-            ResourceLocation var7 = new ResourceLocation(var0.method8293(), var6);
+            ResourceLocation var7 = new ResourceLocation(var0.getNamespace(), var6);
             InputStream var8 = Class7944.method26864(Class7944.method26862(), var7);
             if (var8 == null) {
                return var4;
@@ -96,13 +96,13 @@ public class Class8259 {
       if (Class7944.method26913()) {
          if (var0 != null) {
             if (Class7944.method26797()) {
-               String var3 = var0.method8292();
+               String var3 = var0.getPath();
                String var4 = "textures/";
                String var5 = "optifine/";
                if (var3.startsWith(var4)) {
                   var3 = var3.substring(var4.length());
                   var3 = var5 + var3;
-                  ResourceLocation var6 = new ResourceLocation(var0.method8293(), var3);
+                  ResourceLocation var6 = new ResourceLocation(var0.getNamespace(), var3);
                   return !Class7944.method26867(Class7944.method26862(), var6) ? var0 : var6;
                } else {
                   return var0;

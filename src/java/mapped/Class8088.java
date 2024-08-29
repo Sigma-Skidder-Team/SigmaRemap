@@ -27,7 +27,7 @@ public final class Class8088 {
             var3x -> {
                if (!var3x.method3140()) {
                   return false;
-               } else if (!var0.world.field9020 || var3x instanceof PlayerEntity && ((PlayerEntity)var3x).method2905()) {
+               } else if (!var0.world.isRemote || var3x instanceof PlayerEntity && ((PlayerEntity)var3x).method2905()) {
                   Team var6 = var3x.getTeam();
                   Class2212 var7 = var6 != null ? var6.method28586() : Class2212.field14462;
                   if (var7 == Class2212.field14463) {

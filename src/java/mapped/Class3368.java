@@ -31,7 +31,7 @@ public class Class3368 extends Class3241 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          if (!var4.isSpectator()) {
             TileEntity var9 = var2.getTileEntity(var3);
             if (!(var9 instanceof Class940)) {
@@ -77,7 +77,7 @@ public class Class3368 extends Class3241 {
       TileEntity var7 = var1.getTileEntity(var2);
       if (var7 instanceof Class940) {
          Class940 var8 = (Class940)var7;
-         if (!var1.field9020 && var4.isCreative() && !var8.method3617()) {
+         if (!var1.isRemote && var4.isCreative() && !var8.method3617()) {
             ItemStack var9 = method11958(this.method11957());
             CompoundNBT var10 = var8.method3754(new CompoundNBT());
             if (!var10.method134()) {
@@ -129,7 +129,7 @@ public class Class3368 extends Class3241 {
       if (!var1.method23448(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class940) {
-            var2.method6806(var3, var1.getBlock());
+            var2.updateComparatorOutputLevel(var3, var1.getBlock());
          }
 
          super.method11513(var1, var2, var3, var4, var5);

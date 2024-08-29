@@ -29,7 +29,7 @@ public class Class3283 extends Item {
       BlockState var6 = var4.getBlockState(var5);
       if (var6.method23448(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
          ItemStack var7 = var1.method18357();
-         if (!var4.field9020) {
+         if (!var4.isRemote) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);
             var4.method6869((PlayerEntity)null, 1010, var5, Item.method11701(this));
             var7.method32182(1);
@@ -39,7 +39,7 @@ public class Class3283 extends Item {
             }
          }
 
-         return ActionResultType.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.isRemote);
       } else {
          return ActionResultType.field14820;
       }

@@ -148,7 +148,7 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    public float method5019(float var1) {
-      return MathHelper.method37821(var1, (float)this.field5941, (float)this.field5942) / (float)(this.field5943 - 2);
+      return MathHelper.lerp(var1, (float)this.field5941, (float)this.field5942) / (float)(this.field5943 - 2);
    }
 
    public int method5020() {
@@ -182,17 +182,17 @@ public class Class1081 extends Class1009 implements Class1080 {
                1.0F,
                this.rand.nextFloat() * 0.4F + 0.8F
             );
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             this.method5025();
             var5.method32121(1, var1, var1x -> var1x.method3185(var2));
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       }
    }
 
    private void method5022() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          Class2141 var3 = !this.world.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
          float var4 = !this.method5016() ? 1.0F : 2.0F;
          this.field4972 = true;

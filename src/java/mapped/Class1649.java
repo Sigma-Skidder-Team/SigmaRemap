@@ -31,7 +31,7 @@ import java.util.stream.Stream;
 
 public class Class1649 extends Class1648 implements Class1650 {
    private static final Logger field8950 = LogManager.getLogger();
-   public static final int field8951 = 33 + Class9176.method34295();
+   public static final int field8951 = 33 + ChunkStatus.method34295();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8952 = new Long2ObjectLinkedOpenHashMap();
    private volatile Long2ObjectLinkedOpenHashMap<Class8641> field8953 = this.field8952.clone();
    private final Long2ObjectLinkedOpenHashMap<Class8641> field8954 = new Long2ObjectLinkedOpenHashMap();
@@ -39,7 +39,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private final ServerWorld field8956;
    private final Class195 field8957;
    private final Class318<Runnable> field8958;
-   private final Class5646 field8959;
+   private final ChunkGenerator field8959;
    private final Supplier<Class8250> field8960;
    private final Class1653 field8961;
    private final LongSet field8962 = new LongOpenHashSet();
@@ -66,7 +66,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       Executor var5,
       Class318<Runnable> var6,
       Class1704 var7,
-      Class5646 var8,
+      ChunkGenerator var8,
       Class7243 var9,
       Supplier<Class8250> var10,
       int var11,
@@ -85,7 +85,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       this.field8964 = new Class1812(ImmutableList.of(var15, var16, var17), var5, Integer.MAX_VALUE);
       this.field8965 = this.field8964.<Runnable>method7963(var15, false);
       this.field8966 = this.field8964.<Runnable>method7963(var16, false);
-      this.field8957 = new Class195(var7, this, this.field8956.method6812().method36875(), var17, this.field8964.<Runnable>method7963(var17, false));
+      this.field8957 = new Class195(var7, this, this.field8956.method6812().hasSkyLight(), var17, this.field8964.<Runnable>method7963(var17, false));
       this.field8968 = new Class9306(this, var5, var6);
       this.field8960 = var10;
       this.field8961 = new Class1653(new File(this.field8971, "poi"), var3, var12);
@@ -146,8 +146,8 @@ public class Class1649 extends Class1648 implements Class1650 {
       Class8641 var4 = this.method6539(var1.method24352());
       if (var4 != null) {
          String var5 = var4.method31057() + "\n";
-         Class9176 var6 = var4.method31044();
-         Class1670 var7 = var4.method31045();
+         ChunkStatus var6 = var4.method31044();
+         IChunk var7 = var4.method31045();
          if (var6 != null) {
             var5 = var5 + "St: §" + var6.method34297() + var6 + '§' + "r\n";
          }
@@ -156,7 +156,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             var5 = var5 + "Ch: §" + var7.method7080().method34297() + var7.method7080() + '§' + "r\n";
          }
 
-         Class77 var8 = var4.method31055();
+         ChunkHolderLocationType var8 = var4.method31055();
          var5 = var5 + "§" + var8.ordinal() + var8;
          return var5 + '§' + "r";
       } else {
@@ -164,8 +164,8 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   private CompletableFuture<Either<List<Class1670>, Class7022>> method6542(Class7481 var1, int var2, IntFunction<Class9176> var3) {
-      List<CompletableFuture<Either<Class1670, Class7022>>> var6 = Lists.newArrayList();
+   private CompletableFuture<Either<List<IChunk>, Class7022>> method6542(Class7481 var1, int var2, IntFunction<ChunkStatus> var3) {
+      List<CompletableFuture<Either<IChunk, Class7022>>> var6 = Lists.newArrayList();
       int var7 = var1.field32174;
       int var8 = var1.field32175;
 
@@ -179,13 +179,13 @@ public class Class1649 extends Class1648 implements Class1650 {
                return CompletableFuture.completedFuture(Either.right(new Class7021(this, var12)));
             }
 
-            Class9176 var16 = var3.apply(var11);
-            CompletableFuture<Either<Class1670, Class7022>> var17 = var15.method31053(var16, this);
+            ChunkStatus var16 = var3.apply(var11);
+            CompletableFuture<Either<IChunk, Class7022>> var17 = var15.method31053(var16, this);
             var6.add(var17);
          }
       }
 
-      CompletableFuture<List<Either<Class1670, Class7022>>> var18 = Util.gather(var6);
+      CompletableFuture<List<Either<IChunk, Class7022>>> var18 = Util.gather(var6);
 
       return var18.thenApply(var4 -> {
          List var7x = Lists.newArrayList();
@@ -205,9 +205,9 @@ public class Class1649 extends Class1648 implements Class1650 {
       });
    }
 
-   public CompletableFuture<Either<Class1674, Class7022>> method6543(Class7481 var1) {
-      return this.method6542(var1, 2, var0 -> Class9176.field42145)
-         .<Either<Class1674, Class7022>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> (Class1674)var0x.get(var0x.size() / 2)), this.field8958);
+   public CompletableFuture<Either<Chunk, Class7022>> method6543(Class7481 var1) {
+      return this.method6542(var1, 2, var0 -> ChunkStatus.FULL)
+         .<Either<Chunk, Class7022>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> (Chunk)var0x.get(var0x.size() / 2)), this.field8958);
    }
 
    @Nullable
@@ -256,8 +256,8 @@ public class Class1649 extends Class1648 implements Class1650 {
    public void method6545(boolean var1) {
       if (!var1) {
          this.field8953.values().stream().filter(Class8641::method31064).forEach(var1x -> {
-            Class1670 var4x = var1x.method31046().getNow((Class1670)null);
-            if (var4x instanceof Class1673 || var4x instanceof Class1674) {
+            IChunk var4x = var1x.method31046().getNow((IChunk)null);
+            if (var4x instanceof Class1673 || var4x instanceof Chunk) {
                this.method6561(var4x);
                var1x.method31065();
             }
@@ -275,8 +275,8 @@ public class Class1649 extends Class1648 implements Class1650 {
                   this.field8958.driveUntil(var4x::isDone);
                } while (var4x != var1x.method31046());
 
-               return (Class1670)var4x.join();
-            }).filter(var0 -> var0 instanceof Class1673 || var0 instanceof Class1674).filter(this::method6561).forEach(var1x -> var5.setTrue());
+               return (IChunk)var4x.join();
+            }).filter(var0 -> var0 instanceof Class1673 || var0 instanceof Chunk).filter(this::method6561).forEach(var1x -> var5.setTrue());
          } while (var5.isTrue());
 
          this.method6547(() -> true);
@@ -286,7 +286,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    public void method6546(BooleanSupplier var1) {
-      IProfiler var4 = this.field8956.method6820();
+      IProfiler var4 = this.field8956.getProfiler();
       var4.startSection("poi");
       this.field8961.method6641(var1);
       var4.endStartSection("chunk_unload");
@@ -318,27 +318,27 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    private void method6548(long var1, Class8641 var3) {
-      CompletableFuture<Class1670> var6 = var3.method31046();
+      CompletableFuture<IChunk> var6 = var3.method31046();
       var6.thenAcceptAsync(var5 -> {
-         CompletableFuture<Class1670> var8 = var3.method31046();
+         CompletableFuture<IChunk> var8 = var3.method31046();
          if (var8 == var6) {
             if (this.field8954.remove(var1, var3) && var5 != null) {
-               if (var5 instanceof Class1674) {
-                  ((Class1674)var5).method7143(false);
+               if (var5 instanceof Chunk) {
+                  ((Chunk)var5).method7143(false);
                   if (Class9299.field42777.method20241()) {
                      Class9299.method35085(Class9299.field42777, var5);
                   }
                }
 
                this.method6561(var5);
-               if (this.field8955.remove(var1) && var5 instanceof Class1674) {
-                  Class1674 var9 = (Class1674)var5;
+               if (this.field8955.remove(var1) && var5 instanceof Chunk) {
+                  Chunk var9 = (Chunk)var5;
                   this.field8956.method6929(var9);
                }
 
                this.field8957.method603(var5.method7072());
                this.field8957.method611();
-               this.field8967.method22737(var5.method7072(), (Class9176)null);
+               this.field8967.method22737(var5.method7072(), (ChunkStatus)null);
             }
          } else {
             this.method6548(var1, var3);
@@ -360,23 +360,23 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   public CompletableFuture<Either<Class1670, Class7022>> method6550(Class8641 var1, Class9176 var2) {
+   public CompletableFuture<Either<IChunk, Class7022>> method6550(Class8641 var1, ChunkStatus var2) {
       Class7481 var5 = var1.method31056();
-      if (var2 != Class9176.field42133) {
-         CompletableFuture<Either<Class1670, Class7022>> var6 = var1.method31053(var2.method34299(), this);
-         return var6.<Either<Class1670, Class7022>>thenComposeAsync(var4 -> {
+      if (var2 != ChunkStatus.field42133) {
+         CompletableFuture<Either<IChunk, Class7022>> var6 = var1.method31053(var2.method34299(), this);
+         return var6.<Either<IChunk, Class7022>>thenComposeAsync(var4 -> {
             Optional var7 = var4.left();
             if (var7.isPresent()) {
-               if (var2 == Class9176.field42142) {
-                  this.field8968.method35128(Class8561.field38484, var5, 33 + Class9176.method34296(Class9176.field42141), var5);
+               if (var2 == ChunkStatus.field42142) {
+                  this.field8968.method35128(Class8561.field38484, var5, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var5);
                }
 
-               Class1670 var8 = (Class1670)var7.get();
+               IChunk var8 = (IChunk)var7.get();
                if (!var8.method7080().method34306(var2)) {
                   return this.method6554(var1, var2);
                } else {
                   CompletableFuture var9;
-                  if (var2 != Class9176.field42142) {
+                  if (var2 != ChunkStatus.field42142) {
                      var9 = var2.method34301(this.field8956, this.field8970, this.field8957, var2xx -> this.method6557(var1), var8);
                   } else {
                      var9 = this.method6554(var1, var2);
@@ -386,7 +386,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                   return var9;
                }
             } else {
-               return CompletableFuture.<Either<Class1670, Class7022>>completedFuture((Either<Class1670, Class7022>)var4);
+               return CompletableFuture.<Either<IChunk, Class7022>>completedFuture((Either<IChunk, Class7022>)var4);
             }
          }, this.field8958);
       } else {
@@ -394,10 +394,10 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   private CompletableFuture<Either<Class1670, Class7022>> method6551(Class7481 var1) {
-      return CompletableFuture.<Either<Class1670, Class7022>>supplyAsync(() -> {
+   private CompletableFuture<Either<IChunk, Class7022>> method6551(Class7481 var1) {
+      return CompletableFuture.<Either<IChunk, Class7022>>supplyAsync(() -> {
          try {
-            this.field8956.method6820().func_230035_c_("chunkLoad");
+            this.field8956.getProfiler().func_230035_c_("chunkLoad");
             CompoundNBT var4 = this.method6570(var1);
             if (var4 != null) {
                boolean var9 = var4.method119("Level", 10) && var4.getCompound("Level").method119("Status", 8);
@@ -435,15 +435,15 @@ public class Class1649 extends Class1648 implements Class1650 {
       return this.field8974.put(var1.method24352(), (byte)(var2 != Class2076.field13524 ? 1 : -1));
    }
 
-   private CompletableFuture<Either<Class1670, Class7022>> method6554(Class8641 var1, Class9176 var2) {
+   private CompletableFuture<Either<IChunk, Class7022>> method6554(Class8641 var1, ChunkStatus var2) {
       Class7481 var5 = var1.method31056();
-      CompletableFuture<Either<List<Class1670>, Class7022>> var6 = this.method6542(var5, var2.method34302(), var2x -> this.method6556(var2, var2x));
-      this.field8956.method6820().method22509(() -> "chunkGenerate " + var2.method34298());
+      CompletableFuture<Either<List<IChunk>, Class7022>> var6 = this.method6542(var5, var2.method34302(), var2x -> this.method6556(var2, var2x));
+      this.field8956.getProfiler().method22509(() -> "chunkGenerate " + var2.method34298());
       return var6.thenComposeAsync(
-         var4 -> (CompletionStage<Either<Class1670, Class7022>>)var4.map(
+         var4 -> (CompletionStage<Either<IChunk, Class7022>>)var4.map(
                var4x -> {
                   try {
-                     CompletableFuture<Either<Class1670, Class7022>> var7 = var2.method34300(
+                     CompletableFuture<Either<IChunk, Class7022>> var7 = var2.method34300(
                         this.field8956, this.field8959, this.field8970, this.field8957, var2xxx -> this.method6557(var1), var4x
                      );
                      this.field8967.method22737(var5, var2);
@@ -470,16 +470,16 @@ public class Class1649 extends Class1648 implements Class1650 {
       this.field8958
          .method1641(
             Util.method38515(
-               () -> this.field8968.method35129(Class8561.field38484, var1, 33 + Class9176.method34296(Class9176.field42141), var1),
+               () -> this.field8968.method35129(Class8561.field38484, var1, 33 + ChunkStatus.method34296(ChunkStatus.field42141), var1),
                () -> "release light ticket " + var1
             )
          );
    }
 
-   private Class9176 method6556(Class9176 var1, int var2) {
-      Class9176 var5;
+   private ChunkStatus method6556(ChunkStatus var1, int var2) {
+      ChunkStatus var5;
       if (var2 != 0) {
-         var5 = Class9176.method34294(Class9176.method34296(var1) + var2);
+         var5 = ChunkStatus.method34294(ChunkStatus.method34296(var1) + var2);
       } else {
          var5 = var1.method34299();
       }
@@ -487,15 +487,15 @@ public class Class1649 extends Class1648 implements Class1650 {
       return var5;
    }
 
-   private CompletableFuture<Either<Class1670, Class7022>> method6557(Class8641 var1) {
-      CompletableFuture<Either<Class1670, Class7022>> var4 = var1.method31038(Class9176.field42145.method34299());
+   private CompletableFuture<Either<IChunk, Class7022>> method6557(Class8641 var1) {
+      CompletableFuture<Either<IChunk, Class7022>> var4 = var1.method31038(ChunkStatus.FULL.method34299());
       return var4.thenApplyAsync(var2 -> {
-         Class9176 var5 = Class8641.method31062(var1.method31057());
-         return var5.method34306(Class9176.field42145) ? var2.mapLeft(var2x -> {
+         ChunkStatus var5 = Class8641.method31062(var1.method31057());
+         return var5.method34306(ChunkStatus.FULL) ? var2.mapLeft(var2x -> {
             Class7481 var5x = var1.method31056();
-            Class1674 var6;
+            Chunk var6;
             if (!(var2x instanceof Class1673)) {
-               var6 = new Class1674(this.field8956, (Class1672)var2x);
+               var6 = new Chunk(this.field8956, (Class1672)var2x);
                var1.method31066(new Class1673(var6));
             } else {
                var6 = ((Class1673)var2x).method7127();
@@ -536,11 +536,11 @@ public class Class1649 extends Class1648 implements Class1650 {
       }, var2 -> this.field8966.method1641(Class1812.method7960(var2, var1.method31056().method24352(), var1::method31057)));
    }
 
-   public CompletableFuture<Either<Class1674, Class7022>> method6558(Class8641 var1) {
+   public CompletableFuture<Either<Chunk, Class7022>> method6558(Class8641 var1) {
       Class7481 var4 = var1.method31056();
-      CompletableFuture<Either<List<Class1670>, Class7022>> var5 = this.method6542(var4, 1, var0 -> Class9176.field42145);
-      CompletableFuture<Either<Class1674, Class7022>> var6 = var5.thenApplyAsync(var0 -> var0.flatMap(var0x -> {
-            Class1674 var3 = (Class1674)var0x.get(var0x.size() / 2);
+      CompletableFuture<Either<List<IChunk>, Class7022>> var5 = this.method6542(var4, 1, var0 -> ChunkStatus.FULL);
+      CompletableFuture<Either<Chunk, Class7022>> var6 = var5.thenApplyAsync(var0 -> var0.flatMap(var0x -> {
+            Chunk var3 = (Chunk)var0x.get(var0x.size() / 2);
             var3.method7148();
             return Either.left(var3);
          }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
@@ -553,9 +553,9 @@ public class Class1649 extends Class1648 implements Class1650 {
       return var6;
    }
 
-   public CompletableFuture<Either<Class1674, Class7022>> method6559(Class8641 var1) {
-      return var1.method31053(Class9176.field42145, this).<Either<Class1674, Class7022>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> {
-            Class1674 var3 = (Class1674)var0x;
+   public CompletableFuture<Either<Chunk, Class7022>> method6559(Class8641 var1) {
+      return var1.method31053(ChunkStatus.FULL, this).<Either<Chunk, Class7022>>thenApplyAsync(var0 -> var0.mapLeft(var0x -> {
+            Chunk var3 = (Chunk)var0x;
             var3.method7150();
             return var3;
          }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
@@ -565,7 +565,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       return this.field8969.get();
    }
 
-   private boolean method6561(Class1670 var1) {
+   private boolean method6561(IChunk var1) {
       this.field8961.method6654(var1.method7072());
       if (!var1.method7079()) {
          return false;
@@ -575,18 +575,18 @@ public class Class1649 extends Class1648 implements Class1650 {
          Class7481 var4 = var1.method7072();
 
          try {
-            Class9176 var5 = var1.method7080();
+            ChunkStatus var5 = var1.method7080();
             if (var5.method34303() != Class2076.field13525) {
                if (this.method6562(var4)) {
                   return false;
                }
 
-               if (var5 == Class9176.field42133 && var1.method7074().values().stream().noneMatch(Class5444::method17117)) {
+               if (var5 == ChunkStatus.field42133 && var1.method7074().values().stream().noneMatch(Class5444::method17117)) {
                   return false;
                }
             }
 
-            this.field8956.method6820().func_230035_c_("chunkSave");
+            this.field8956.getProfiler().func_230035_c_("chunkSave");
             CompoundNBT var6 = Class9725.method38088(this.field8956, var1);
             if (Class9299.field42773.method20241()) {
                World var7 = (World)Class9299.method35070(var1, Class9299.field42908);
@@ -657,7 +657,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          if (var5 && !var4) {
             Class8641 var8 = this.method6539(var2.method24352());
             if (var8 != null) {
-               Class1674 var9 = var8.method31043();
+               Chunk var9 = var8.method31043();
                if (var9 != null) {
                   this.method6582(var1, var3, var9);
                }
@@ -704,15 +704,15 @@ public class Class1649 extends Class1648 implements Class1650 {
        for (Entry<Class8641> var6 : this.field8953.long2ObjectEntrySet()) {
            Class7481 var7 = new Class7481(var6.getLongKey());
            Class8641 var8 = var6.getValue();
-           Optional<Class1670> var9 = Optional.ofNullable(var8.method31045());
-           Optional<Class1674> var10 = var9.flatMap(var0 -> !(var0 instanceof Class1674) ? Optional.empty() : Optional.of((Class1674) var0));
+           Optional<IChunk> var9 = Optional.ofNullable(var8.method31045());
+           Optional<Chunk> var10 = var9.flatMap(var0 -> !(var0 instanceof Chunk) ? Optional.empty() : Optional.of((Chunk) var0));
            var4.method33938(
                    var7.field32174,
                    var7.field32175,
                    var8.method31057(),
                    var9.isPresent(),
-                   var9.map(Class1670::method7080).orElse(null),
-                   var10.map(Class1674::method7152).orElse(null),
+                   var9.map(IChunk::method7080).orElse(null),
+                   var10.map(Chunk::getLocationType).orElse(null),
                    method6569(var8.method31042()),
                    method6569(var8.method31040()),
                    method6569(var8.method31041()),
@@ -724,7 +724,7 @@ public class Class1649 extends Class1648 implements Class1650 {
        }
    }
 
-   private static String method6569(CompletableFuture<Either<Class1674, Class7022>> var0) {
+   private static String method6569(CompletableFuture<Either<Chunk, Class7022>> var0) {
       try {
          Either var3 = (Either)var0.getNow((Either)null);
          return var3 != null ? (String)var3.map(var0x -> "done", var0x -> "unloaded") : "not completed";
@@ -966,7 +966,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   private void method6582(ServerPlayerEntity var1, Packet<?>[] var2, Class1674 var3) {
+   private void method6582(ServerPlayerEntity var1, Packet<?>[] var2, Chunk var3) {
       if (var2[0] == null) {
          var2[0] = new Class5526(var3, 65535);
          var2[1] = new Class5523(var3.method7072(), this.field8957, true);
@@ -1008,7 +1008,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       return this.field8961;
    }
 
-   public CompletableFuture<Void> method6584(Class1674 var1) {
+   public CompletableFuture<Void> method6584(Chunk var1) {
       return this.field8958.method1634(() -> var1.method7151(this.field8956));
    }
 

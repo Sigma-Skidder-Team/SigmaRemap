@@ -83,12 +83,12 @@ public class Class8795 {
 
             BlockPos var15 = this.field39612.player.getPosition();
             if (this.field39612.player.positionVec.field18049 % 1.0 >= 0.93) {
-               var15 = var15.method8311();
+               var15 = var15.up();
             }
 
             boolean var16 = var8.field44271.method33979().equals(var15);
             if (var14 && this.field39612.player.fallDistance < 2.0F) {
-               var16 |= var8.field44271.method33979().method8311().equals(var15);
+               var16 |= var8.field44271.method33979().up().equals(var15);
             }
 
             if (this.field39612.player.onGround || this.field39618 != null && this.field39618.field44279 == Class2317.field15874) {
@@ -105,7 +105,7 @@ public class Class8795 {
                }
             }
 
-            if (var9 == Class2317.field15876 && this.field39612.world.getBlockState(var8.field44271.method33979().method8313()).isAir()) {
+            if (var9 == Class2317.field15876 && this.field39612.world.getBlockState(var8.field44271.method33979().down()).isAir()) {
                var16 = false;
             }
 
@@ -187,7 +187,7 @@ public class Class8795 {
                   }
 
                   if (var25 && var33 && var10 > 0.75 && var38) {
-                     if (this.field39612.world.getBlockState(var8.field44271.method33979().method8313()).getBlock() instanceof Class3421 && var10 < 1.1) {
+                     if (this.field39612.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
                         Class5628.method17678("YA" + var10);
                      } else {
                         this.field39612.player.method2914();
@@ -323,7 +323,7 @@ public class Class8795 {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
          if (var5 != null && var5.field44282.contains(var1.method13902().method8332())) {
-            VoxelShape var6 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
+            VoxelShape var6 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
             var1.method13905(var6);
          }
       }

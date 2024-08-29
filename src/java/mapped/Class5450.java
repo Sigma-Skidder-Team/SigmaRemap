@@ -11,7 +11,7 @@ public class Class5450 extends Class5444<Class4712> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(DynamicRegistries var1, Class5646 var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
       Class80 var10 = Class80.method254(this.field24201);
       byte var11 = 5;
       byte var12 = 5;
@@ -45,7 +45,7 @@ public class Class5450 extends Class5444<Class4712> {
    }
 
    @Override
-   public void method17112(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
       super.method17112(var1, var2, var3, var4, var5, var6);
       int var9 = this.field24197.field45679;
 
@@ -69,7 +69,7 @@ public class Class5450 extends Class5444<Class4712> {
                         break;
                      }
 
-                     var1.method6725(var17, Blocks.field36399.method11579(), 2);
+                     var1.setBlockState(var17, Blocks.field36399.method11579(), 2);
                   }
                }
             }

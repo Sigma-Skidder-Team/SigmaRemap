@@ -55,7 +55,7 @@ public class Class1335 extends Screen {
    private Class5462 field7091 = new Class5462();
    public final Class1221 field7092;
 
-   public Class1335(Screen var1, WorldSettings var2, DimensionGeneratorSettings var3, Path var4, DatapackCodec var5, Class8905 var6) {
+   public Class1335(Screen var1, WorldSettings var2, DimensionGeneratorSettings var3, Path var4, DatapackCodec var5, DynamicRegistriesImpl var6) {
       this(var1, var5, new Class1221(var6, var3, Class5970.method18504(var3), OptionalLong.of(var3.method26259())));
       this.field7090 = var2.method32426();
       this.field7074 = var2.method32430();
@@ -79,16 +79,16 @@ public class Class1335 extends Screen {
    }
 
    public static Class1335 method6353(Screen var0) {
-      Class8905 var3 = DynamicRegistries.func_239770_b_();
+      DynamicRegistriesImpl var3 = DynamicRegistries.func_239770_b_();
       return new Class1335(
          var0,
          DatapackCodec.field33531,
          new Class1221(
             var3,
             DimensionGeneratorSettings.method26257(
-               var3.<Class9535>method32453(Registry.field16066),
-               var3.<Biome>method32453(Registry.BIOME_KEY),
-               var3.<Class9309>method32453(Registry.field16099)
+               var3.<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY),
+               var3.<Biome>getRegistry(Registry.BIOME_KEY),
+               var3.<DimensionSettings>getRegistry(Registry.field16099)
             ),
             Optional.<Class5970>of(Class5970.field26025),
             OptionalLong.empty()

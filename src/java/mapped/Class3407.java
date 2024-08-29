@@ -25,8 +25,8 @@ public class Class3407 extends Block {
 
    public void method12048(World var1, BlockPos var2) {
       if (this.method12049(var1, var2)) {
-         var1.method6725(var2, Blocks.field36453.method11579(), 2);
-         var1.method6999(2001, var2, Block.method11535(Blocks.WATER.method11579()));
+         var1.setBlockState(var2, Blocks.field36453.method11579(), 2);
+         var1.playEvent(2001, var2, Block.getStateId(Blocks.WATER.method11579()));
       }
    }
 
@@ -43,7 +43,7 @@ public class Class3407 extends Block {
          for (Direction var13 : Direction.values()) {
             BlockPos var14 = var8.method8349(var13);
             BlockState var15 = var1.getBlockState(var14);
-            Class7379 var16 = var1.method6739(var14);
+            FluidState var16 = var1.getFluidState(var14);
             Class8649 var17 = var15.method23384();
             if (var16.method23486(Class8953.field40469)) {
                if (var15.getBlock() instanceof Class3405 && ((Class3405)var15.getBlock()).method11533(var1, var14, var15) != Class9479.field44064) {
@@ -55,14 +55,14 @@ public class Class3407 extends Block {
                   if (var17 == Class8649.field38937 || var17 == Class8649.field38940) {
                      TileEntity var18 = !var15.getBlock().isTileEntityProvider() ? null : var1.getTileEntity(var14);
                      method11555(var15, var1, var14, var18);
-                     var1.method6725(var14, Blocks.AIR.method11579(), 3);
+                     var1.setBlockState(var14, Blocks.AIR.method11579(), 3);
                      var6++;
                      if (var9 < 6) {
                         var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));
                      }
                   }
                } else {
-                  var1.method6725(var14, Blocks.AIR.method11579(), 3);
+                  var1.setBlockState(var14, Blocks.AIR.method11579(), 3);
                   var6++;
                   if (var9 < 6) {
                      var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));

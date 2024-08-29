@@ -224,7 +224,7 @@ public class Class4191 extends Class4188 {
    @Override
    public boolean method12933(Class1658 var1, Class9764 var2, Random var3, int var4, int var5, int var6, ResourceLocation var7) {
       BlockPos var10 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      if (var2.method38396(var10) && var1.getBlockState(var10).isAir() && !var1.getBlockState(var10.method8313()).isAir()) {
+      if (var2.method38396(var10) && var1.getBlockState(var10).isAir() && !var1.getBlockState(var10.down()).isAir()) {
          BlockState var11 = Blocks.RAIL.method11579().method23465(Class3430.field19191, !var3.nextBoolean() ? Class96.field248 : Class96.field247);
          this.method12923(var1, var11, var4, var5, var6, var2);
          Class991 var12 = new Class991(var1.method6970(), (double)var10.getX() + 0.5, (double)var10.getY() + 0.5, (double)var10.getZ() + 0.5);
@@ -237,7 +237,7 @@ public class Class4191 extends Class4188 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (this.method12919(var1, var5)) {
          return false;
       } else {
@@ -276,7 +276,7 @@ public class Class4191 extends Class4188 {
                BlockPos var22 = new BlockPos(var20, var18, var21);
                if (var5.method38396(var22) && this.method12925(var1, 1, 0, var19, var5)) {
                   this.field20485 = true;
-                  var1.method6725(var22, Blocks.field36532.method11579(), 2);
+                  var1.setBlockState(var22, Blocks.field36532.method11579(), 2);
                   TileEntity var23 = var1.getTileEntity(var22);
                   if (var23 instanceof Class960) {
                      ((Class960)var23).method3911().method24790(EntityType.field41013);

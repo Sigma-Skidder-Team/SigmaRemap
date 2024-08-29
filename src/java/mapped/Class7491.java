@@ -41,7 +41,7 @@ public class Class7491 extends Class7487 {
 
    @Override
    public boolean method24376(
-           Class8761 var1, Class1658 var2, Class7480 var3, Class5646 var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           Class8761 var1, Class1658 var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    ) {
       for (Class7487 var14 : this.field32194) {
          if (!var14.method24376(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10)) {

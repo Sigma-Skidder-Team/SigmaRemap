@@ -131,7 +131,7 @@ public class Class1090 extends Class1018 {
       ItemStack var5 = var1.getHeldItem(var2);
       if ((this.field5975 == null || this.field5975.method10900()) && !this.method5072() && this.method4381(var5) && var1.getDistanceSq(this) < 9.0) {
          this.method4501(var1, var5);
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             if (this.rand.nextInt(3) != 0) {
                this.method5076(false);
                this.world.method6786(this, (byte)40);
@@ -142,7 +142,7 @@ public class Class1090 extends Class1018 {
             }
          }
 
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }
@@ -207,8 +207,8 @@ public class Class1090 extends Class1018 {
             return false;
          }
 
-         BlockState var5 = var1.getBlockState(var4.method8313());
-         if (var5.method23448(Blocks.field36395) || var5.method23446(Class7645.field32767)) {
+         BlockState var5 = var1.getBlockState(var4.down());
+         if (var5.method23448(Blocks.field36395) || var5.method23446(BlockTags.field32767)) {
             return true;
          }
       }

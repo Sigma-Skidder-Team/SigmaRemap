@@ -38,7 +38,7 @@ public class SpawnEggItem extends Item {
                EntityType var11 = this.method11855(var5.method32142());
                var13.method24790(var11);
                var9.method3622();
-               var4.method6731(var6, var8, var8, 3);
+               var4.notifyBlockUpdate(var6, var8, var8, 3);
                var5.method32182(1);
                return ActionResultType.field14819;
             }

@@ -31,12 +31,12 @@ public class Class3443 extends Block {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       return this.method11579()
-         .method23465(field19254, Boolean.valueOf(this != var4.getBlockState(var5.method8313()).getBlock()))
-         .method23465(field19253, Boolean.valueOf(this != var4.getBlockState(var5.method8311()).getBlock()))
-         .method23465(field19249, Boolean.valueOf(this != var4.getBlockState(var5.method8341()).getBlock()))
-         .method23465(field19250, Boolean.valueOf(this != var4.getBlockState(var5.method8347()).getBlock()))
-         .method23465(field19251, Boolean.valueOf(this != var4.getBlockState(var5.method8343()).getBlock()))
-         .method23465(field19252, Boolean.valueOf(this != var4.getBlockState(var5.method8345()).getBlock()));
+         .method23465(field19254, Boolean.valueOf(this != var4.getBlockState(var5.down()).getBlock()))
+         .method23465(field19253, Boolean.valueOf(this != var4.getBlockState(var5.up()).getBlock()))
+         .method23465(field19249, Boolean.valueOf(this != var4.getBlockState(var5.north()).getBlock()))
+         .method23465(field19250, Boolean.valueOf(this != var4.getBlockState(var5.east()).getBlock()))
+         .method23465(field19251, Boolean.valueOf(this != var4.getBlockState(var5.south()).getBlock()))
+         .method23465(field19252, Boolean.valueOf(this != var4.getBlockState(var5.west()).getBlock()));
    }
 
    @Override

@@ -70,7 +70,7 @@ public class Class3354 extends Class3241 {
       CompoundNBT var6 = var5.method32142();
       PlayerEntity var7 = var1.method18358();
       boolean var8 = false;
-      if (!var4.field9020 && var7 != null && var6 != null && var7.method2979() && var6.contains("BlockEntityTag")) {
+      if (!var4.isRemote && var7 != null && var6 != null && var7.method2979() && var6.contains("BlockEntityTag")) {
          CompoundNBT var9 = var6.getCompound("BlockEntityTag");
          if (var9.contains("Book")) {
             var8 = true;
@@ -126,7 +126,7 @@ public class Class3354 extends Class3241 {
       if (var2.<Boolean>method23463(field18882)) {
          return false;
       } else {
-         if (!var0.field9020) {
+         if (!var0.isRemote) {
             method11920(var0, var1, var2, var3);
          }
 
@@ -145,23 +145,23 @@ public class Class3354 extends Class3241 {
    }
 
    public static void method11921(World var0, BlockPos var1, BlockState var2, boolean var3) {
-      var0.method6725(var1, var2.method23465(field18881, Boolean.valueOf(false)).method23465(field18882, Boolean.valueOf(var3)), 3);
+      var0.setBlockState(var1, var2.method23465(field18881, Boolean.valueOf(false)).method23465(field18882, Boolean.valueOf(var3)), 3);
       method11924(var0, var1, var2);
    }
 
    public static void method11922(World var0, BlockPos var1, BlockState var2) {
       method11923(var0, var1, var2, true);
       var0.method6860().method20726(var1, var2.getBlock(), 2);
-      var0.method6999(1043, var1, 0);
+      var0.playEvent(1043, var1, 0);
    }
 
    private static void method11923(World var0, BlockPos var1, BlockState var2, boolean var3) {
-      var0.method6725(var1, var2.method23465(field18881, Boolean.valueOf(var3)), 3);
+      var0.setBlockState(var1, var2.method23465(field18881, Boolean.valueOf(var3)), 3);
       method11924(var0, var1, var2);
    }
 
    private static void method11924(World var0, BlockPos var1, BlockState var2) {
-      var0.method6733(var1.method8313(), var2.getBlock());
+      var0.notifyNeighborsOfStateChange(var1.down(), var2.getBlock());
    }
 
    @Override
@@ -177,7 +177,7 @@ public class Class3354 extends Class3241 {
          }
 
          if (var1.<Boolean>method23463(field18881)) {
-            var2.method6733(var3.method8313(), this);
+            var2.notifyNeighborsOfStateChange(var3.down(), this);
          }
 
          super.method11513(var1, var2, var3, var4, var5);
@@ -236,11 +236,11 @@ public class Class3354 extends Class3241 {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (var1.<Boolean>method23463(field18882)) {
-         if (!var2.field9020) {
+         if (!var2.isRemote) {
             this.method11926(var2, var3, var4);
          }
 
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else {
          ItemStack var9 = var4.getHeldItem(var5);
          return !var9.isEmpty() && !var9.getItem().method11743(Class5985.field26120) ? ActionResultType.field14819 : ActionResultType.field14820;

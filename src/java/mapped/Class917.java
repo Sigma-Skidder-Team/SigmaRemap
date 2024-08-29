@@ -15,7 +15,7 @@ public class Class917 extends AbstractMinecartEntity {
    public ActionResultType method3304(PlayerEntity var1, Hand var2) {
       if (!var1.method2851()) {
          if (!this.isBeingRidden()) {
-            if (this.world.field9020) {
+            if (this.world.isRemote) {
                return ActionResultType.field14818;
             } else {
                return !var1.method3311(this) ? ActionResultType.field14820 : ActionResultType.field14819;

@@ -1,10 +1,10 @@
 package mapped;
 
 public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
-   public static final ResourceLocation field25048 = new ResourceLocation("textures/" +Class8624.field38782.method26197().method8292()  + ".png");
+   public static final ResourceLocation field25048 = new ResourceLocation("textures/" +Class8624.field38782.method26197().getPath()  + ".png");
    public static final ResourceLocation[] field25049 = Class8624.field38783
       .stream()
-      .<ResourceLocation>map(var0 -> new ResourceLocation("textures/" + var0.method26197().method8292() + ".png"))
+      .<ResourceLocation>map(var0 -> new ResourceLocation("textures/" + var0.method26197().getPath() + ".png"))
       .<ResourceLocation>toArray(ResourceLocation[]::new);
 
    public Class5683(EntityRendererManager var1) {

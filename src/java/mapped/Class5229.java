@@ -83,7 +83,7 @@ public class Class5229 extends Module {
 
         for (int var5 = 10; var5 > 0; var5--) {
             BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() + (double) var5, mc.player.getPosZ());
-            if (mc.world.getBlockState(var6).method23410() && var3 && !mc.world.getBlockState(var6.method8313()).method23410()) {
+            if (mc.world.getBlockState(var6).method23410() && var3 && !mc.world.getBlockState(var6.down()).method23410()) {
                 var4 = var5;
                 break;
             }

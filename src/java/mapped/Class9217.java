@@ -291,7 +291,7 @@ public class Class9217 {
    }
 
    public static Block method34559(PlayerEntity var0) {
-      return method34536(var0.getPosition().method8313());
+      return method34536(var0.getPosition().down());
    }
 
    public static float method34560() {

@@ -92,7 +92,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method2871() {
-      if (!this.world.field9020 && this.method3066() && this.method3138()) {
+      if (!this.world.isRemote && this.method3066() && this.method3138()) {
          this.field6008++;
          ItemStack var3 = this.method2943(Class2106.field13731);
          if (this.method5122(var3)) {
@@ -383,7 +383,7 @@ public class Class1095 extends Class1018 {
    }
 
    private void method5138(ItemStack var1) {
-      if (!var1.isEmpty() && !this.world.field9020) {
+      if (!var1.isEmpty() && !this.world.isRemote) {
          ItemEntity var4 = new ItemEntity(
             this.world, this.getPosX() + this.method3320().field18048, this.getPosY() + 1.0, this.getPosZ() + this.method3320().field18050, var1
          );
@@ -431,10 +431,10 @@ public class Class1095 extends Class1018 {
             this.method5130(false);
          }
 
-         if (this.method5131() && this.world.field9016.nextFloat() < 0.2F) {
+         if (this.method5131() && this.world.rand.nextFloat() < 0.2F) {
             BlockPos var4 = this.getPosition();
             BlockState var5 = this.world.getBlockState(var4);
-            this.world.method6999(2001, var4, Block.method11535(var5));
+            this.world.playEvent(2001, var4, Block.getStateId(var5));
          }
       }
 
@@ -496,11 +496,11 @@ public class Class1095 extends Class1018 {
    }
 
    public float method5146(float var1) {
-      return MathHelper.method37821(var1, this.field6005, this.field6004) * 0.11F * (float) Math.PI;
+      return MathHelper.lerp(var1, this.field6005, this.field6004) * 0.11F * (float) Math.PI;
    }
 
    public float method5147(float var1) {
-      return MathHelper.method37821(var1, this.field6007, this.field6006);
+      return MathHelper.lerp(var1, this.field6007, this.field6006);
    }
 
    @Override

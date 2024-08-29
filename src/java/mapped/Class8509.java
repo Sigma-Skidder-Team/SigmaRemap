@@ -9,7 +9,7 @@ public class Class8509 {
 
    public static int method30145(RegistryKey<World> var0) {
       if (var0 != World.THE_NETHER) {
-         if (var0 != World.field8999) {
+         if (var0 != World.OVERWORLD) {
             return var0 != World.THE_END ? 0 : 1;
          } else {
             return 0;

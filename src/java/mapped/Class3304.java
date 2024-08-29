@@ -25,7 +25,7 @@ public class Class3304 extends Item {
          0.5F,
          0.4F / (field18735.nextFloat() * 0.4F + 0.8F)
       );
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          Class891 var7 = new Class891(var1, var2);
          var7.method3511(var6);
          var7.method3463(var2, var2.rotationPitch, var2.rotationYaw, -20.0F, 0.7F, 1.0F);
@@ -37,6 +37,6 @@ public class Class3304 extends Item {
          var6.method32182(1);
       }
 
-      return Class6794.<ItemStack>method20700(var6, var1.method6714());
+      return Class6794.<ItemStack>method20700(var6, var1.isRemote());
    }
 }

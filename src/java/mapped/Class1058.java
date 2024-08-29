@@ -90,7 +90,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          }
       }
 
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method4366((ServerWorld)this.world, true);
       }
    }
@@ -234,7 +234,7 @@ public class Class1058 extends Class1056 implements Class1011 {
                var5.method32182(1);
             }
 
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          } else {
             return ActionResultType.field14820;
          }
@@ -273,7 +273,7 @@ public class Class1058 extends Class1056 implements Class1011 {
    @Override
    public boolean method4266(Class1662 var1) {
       BlockPos var4 = this.getPosition();
-      BlockPos var5 = var4.method8313();
+      BlockPos var5 = var4.down();
       BlockState var6 = var1.getBlockState(var5);
       if (!var6.method23419(var1, var5, this)) {
          return false;

@@ -31,7 +31,7 @@ public class Class896 extends Class890 implements Class889 {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
          Class8812 var5 = Class9741.method38185(var4);
          List var6 = Class9741.method38176(var4);
@@ -53,7 +53,7 @@ public class Class896 extends Class890 implements Class889 {
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          ItemStack var4 = this.method3509();
          Class8812 var5 = Class9741.method38185(var4);
          List var6 = Class9741.method38176(var4);
@@ -71,7 +71,7 @@ public class Class896 extends Class890 implements Class889 {
          }
 
          int var8 = !var5.method31817() ? 2002 : 2007;
-         this.world.method6999(var8, this.getPosition(), Class9741.method38182(var4));
+         this.world.playEvent(var8, this.getPosition(), Class9741.method38182(var4));
          this.method2904();
       }
    }
@@ -150,14 +150,14 @@ public class Class896 extends Class890 implements Class889 {
 
    private void method3521(BlockPos var1, Direction var2) {
       BlockState var5 = this.world.getBlockState(var1);
-      if (!var5.method23446(Class7645.field32798)) {
+      if (!var5.method23446(BlockTags.field32798)) {
          if (Class3244.method11655(var5)) {
             this.world.method6869((PlayerEntity)null, 1009, var1, 0);
             Class3244.method11652(this.world, var1, var5);
-            this.world.method6730(var1, var5.method23465(Class3244.field18698, Boolean.valueOf(false)));
+            this.world.setBlockState(var1, var5.method23465(Class3244.field18698, Boolean.valueOf(false)));
          }
       } else {
-         this.world.method6728(var1, false);
+         this.world.removeBlock(var1, false);
       }
    }
 }

@@ -44,7 +44,7 @@ public class Class4527 {
 
    public static VoxelShape method14426(Class1665 var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.method23446(Class7645.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>method23463(Class3206.field18594))
+      return !var4.method23446(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>method23463(Class3206.field18594))
          ? var4.method23414(var0, var1)
          : VoxelShapes.method27425();
    }
@@ -71,9 +71,9 @@ public class Class4527 {
       if (var3 && var0.method33220(var1.getBlockState(var2))) {
          return null;
       } else {
-         double var6 = var1.method7038(method14426(var1, var2), () -> method14426(var1, var2.method8313()));
+         double var6 = var1.method7038(method14426(var1, var2), () -> method14426(var1, var2.down()));
          if (method14423(var6)) {
-            if (var3 && var6 <= 0.0 && var0.method33220(var1.getBlockState(var2.method8313()))) {
+            if (var3 && var6 <= 0.0 && var0.method33220(var1.getBlockState(var2.down()))) {
                return null;
             } else {
                Vector3d var8 = Vector3d.method11331(var2, var6);

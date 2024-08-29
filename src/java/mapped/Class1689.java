@@ -94,7 +94,7 @@ public class Class1689 extends Class1685 {
    private final Registry<Biome> field9190;
 
    public Class1689(long var1, boolean var3, boolean var4, Registry<Biome> var5) {
-      super(field9186.stream().<Supplier<Biome>>map(var1x -> () -> var5.method9189((RegistryKey<Biome>)var1x)));
+      super(field9186.stream().<Supplier<Biome>>map(var1x -> () -> var5.getOrThrow((RegistryKey<Biome>)var1x)));
       this.field9187 = var1;
       this.field9188 = var3;
       this.field9189 = var4;

@@ -113,9 +113,9 @@ public class Class9110 {
       if (field41868.world.getBlockState(this.method33979()).getBlock() == Blocks.LAVA) {
          return false;
       } else if (field41868.world.getBlockState(this.method33979()).method23449().method23474()) {
-         return field41868.world.getBlockState(this.method33979().method8313()).getBlock() instanceof Class3239
+         return field41868.world.getBlockState(this.method33979().down()).getBlock() instanceof Class3239
             ? false
-            : this.method33988(this.method33979()) && this.method33988(this.method33979().method8311());
+            : this.method33988(this.method33979()) && this.method33988(this.method33979().up());
       } else {
          return false;
       }
@@ -130,7 +130,7 @@ public class Class9110 {
    }
 
    public boolean method33983() {
-      return this.method33980() && this.method33990(this.method33979().method8313());
+      return this.method33980() && this.method33990(this.method33979().down());
    }
 
    public static boolean method33984(BlockPos var0) {
@@ -177,7 +177,7 @@ public class Class9110 {
    public boolean method33987() {
       return this.method33986()
          || field41868.world.getBlockState(this.method33979()).getBlock() == Blocks.BEDROCK
-         || field41868.world.getBlockState(this.method33979().method8311()).getBlock() == Blocks.BEDROCK;
+         || field41868.world.getBlockState(this.method33979().up()).getBlock() == Blocks.BEDROCK;
    }
 
    public boolean method33988(BlockPos var1) {

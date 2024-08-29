@@ -45,16 +45,16 @@ public class Class2634 extends Class2628 {
          );
       if (this.method10838()) {
          World var3 = this.field16950.world;
-         BlockPos var4 = this.field16933.method8311();
+         BlockPos var4 = this.field16933.up();
          BlockState var5 = var3.getBlockState(var4);
          Block var6 = var5.getBlock();
          if (this.field16952 && var6 instanceof Class3483) {
             Integer var7 = var5.<Integer>method23463(Class3483.field19334);
             if (var7 != 0) {
-               var3.method6725(var4, var5.method23465(Class3483.field19334, Integer.valueOf(var7 - 1)), 2);
-               var3.method6999(2001, var4, Block.method11535(var5));
+               var3.setBlockState(var4, var5.method23465(Class3483.field19334, Integer.valueOf(var7 - 1)), 2);
+               var3.playEvent(2001, var4, Block.getStateId(var5));
             } else {
-               var3.method6725(var4, Blocks.AIR.method11579(), 2);
+               var3.setBlockState(var4, Blocks.AIR.method11579(), 2);
                var3.method7180(var4, true, this.field16950);
             }
 
@@ -70,7 +70,7 @@ public class Class2634 extends Class2628 {
    public boolean method10840(Class1662 var1, BlockPos var2) {
       Block var5 = var1.getBlockState(var2).getBlock();
       if (var5 == Blocks.FARMLAND && this.field16951 && !this.field16952) {
-         var2 = var2.method8311();
+         var2 = var2.up();
          BlockState var6 = var1.getBlockState(var2);
          var5 = var6.getBlock();
          if (var5 instanceof Class3483 && ((Class3483)var5).method12179(var6)) {

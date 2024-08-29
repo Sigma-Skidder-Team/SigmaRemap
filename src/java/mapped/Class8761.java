@@ -53,7 +53,7 @@ public class Class8761 {
 
    @Nullable
    private Class8969 method31606(ResourceLocation var1) {
-      ResourceLocation var4 = new ResourceLocation(var1.method8293(), "structures/" + var1.method8292() + ".nbt");
+      ResourceLocation var4 = new ResourceLocation(var1.getNamespace(), "structures/" + var1.getPath() + ".nbt");
 
       try (Class1783 var5 = this.field39444.method580(var4)) {
          return this.method31608(var5.method7763());
@@ -129,16 +129,16 @@ public class Class8761 {
 
    public Path method31611(ResourceLocation var1, String var2) {
       try {
-         Path var5 = this.field39445.resolve(var1.method8293());
+         Path var5 = this.field39445.resolve(var1.getNamespace());
          Path var6 = var5.resolve("structures");
-         return Class8950.method32698(var6, var1.method8292(), var2);
+         return Class8950.method32698(var6, var1.getPath(), var2);
       } catch (InvalidPathException var7) {
          throw new Class2496("Invalid resource path: " + var1, var7);
       }
    }
 
    private Path method31612(ResourceLocation var1, String var2) {
-      if (!var1.method8292().contains("//")) {
+      if (!var1.getPath().contains("//")) {
          Path var5 = this.method31611(var1, var2);
          if (var5.startsWith(this.field39445) && Class8950.method32696(var5) && Class8950.method32697(var5)) {
             return var5;

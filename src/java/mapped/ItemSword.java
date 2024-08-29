@@ -35,7 +35,7 @@ public class ItemSword extends Class3266 implements Class3260 {
          return var5 != Class8649.field38936
                && var5 != Class8649.field38938
                && var5 != Class8649.field38972
-               && !var2.method23446(Class7645.field32767)
+               && !var2.method23446(BlockTags.field32767)
                && var5 != Class8649.field38973
             ? 1.0F
             : 1.5F;

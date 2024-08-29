@@ -18,7 +18,7 @@ public class Class3471 extends Block {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      BlockState var4 = var1.method18360().getBlockState(var1.method18345().method8311());
+      BlockState var4 = var1.method18360().getBlockState(var1.method18345().up());
       return this.method11579().method23465(field19323, Boolean.valueOf(var4.method23448(Blocks.SNOW_BLOCK) || var4.method23448(Blocks.SNOW)));
    }
 

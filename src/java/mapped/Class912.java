@@ -38,7 +38,7 @@ public class Class912 extends Class911 {
          2,
          this.method3565().getString(),
          this.field5201.getDisplayName(),
-         this.method3567().method6715(),
+         this.method3567().getServer(),
          this.field5201
       );
    }

@@ -48,8 +48,8 @@ public class SearchTreeReloadable<T> implements IMutableSearchTree<T> {
 
    public void method21738(T var1) {
       this.field30300.apply((T)var1).forEach(var2 -> {
-         this.field30298.method25607((T)var1, var2.method8293().toLowerCase(Locale.ROOT));
-         this.field30299.method25607((T)var1, var2.method8292().toLowerCase(Locale.ROOT));
+         this.field30298.method25607((T)var1, var2.getNamespace().toLowerCase(Locale.ROOT));
+         this.field30299.method25607((T)var1, var2.getPath().toLowerCase(Locale.ROOT));
       });
    }
 

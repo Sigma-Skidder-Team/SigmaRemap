@@ -1,6 +1,6 @@
 package mapped;
 
-public enum Class1962 implements Class1960 {
+public enum Class1962 implements IBiomeMagnifier {
    field12770;
 
    private static final Class1962[] field12771 = new Class1962[]{field12770};

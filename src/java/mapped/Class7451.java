@@ -8,7 +8,7 @@ public class Class7451 {
 
    public Class7451(ResourceLocation var1) {
       for (int var4 = 0; var4 < 6; var4++) {
-         this.field32058[var4] = new ResourceLocation(var1.method8293(), var1.method8292() + '_' + var4 + ".png");
+         this.field32058[var4] = new ResourceLocation(var1.getNamespace(), var1.getPath() + '_' + var4 + ".png");
       }
    }
 

@@ -37,7 +37,7 @@ public class Class3489 extends Class3194 {
       int var7 = var1.<Integer>method23463(field19354);
       if (var7 < 3 && var4.nextInt(10) == 0) {
          var1 = var1.method23465(field19354, Integer.valueOf(var7 + 1));
-         var2.method6725(var3, var1, 2);
+         var2.setBlockState(var3, var1, 2);
       }
    }
 

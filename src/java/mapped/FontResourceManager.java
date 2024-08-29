@@ -19,7 +19,7 @@ public class FontResourceManager implements AutoCloseable {
 
    public FontResourceManager(TextureManager var1) {
       this.field8994 = var1;
-      this.field8992 = Util.<Class1807>method38508(
+      this.field8992 = Util.<Class1807>make(
          new Class1807(var1, field8991), var0 -> var0.method7919(Lists.newArrayList(new Class1768[]{new Class1772()}))
       );
    }

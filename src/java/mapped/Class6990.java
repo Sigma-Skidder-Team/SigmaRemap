@@ -101,13 +101,13 @@ public abstract class Class6990 {
                if (this.field30245 != null && !this.field30245.method28693() && var1.contains(this.field30258)) {
                   return this.field30245;
                } else {
-                  this.field30244.method6820().startSection("pathfind");
+                  this.field30244.getProfiler().startSection("pathfind");
                   float var7 = (float)this.field30243.method3086(Class9173.field42106);
-                  BlockPos var8 = !var3 ? this.field30243.getPosition() : this.field30243.getPosition().method8311();
+                  BlockPos var8 = !var3 ? this.field30243.getPosition() : this.field30243.getPosition().up();
                   int var9 = (int)(var7 + (float)var2);
                   Class1667 var10 = new Class1667(this.field30244, var8.method8336(-var9, -var9, -var9), var8.method8336(var9, var9, var9));
                   Class8238 var11 = this.field30261.method37250(var10, this.field30243, var1, var7, var4, this.field30260);
-                  this.field30244.method6820().endSection();
+                  this.field30244.getProfiler().endSection();
                   if (var11 != null && var11.method28712() != null) {
                      this.field30258 = var11.method28712();
                      this.field30259 = var4;
@@ -197,7 +197,7 @@ public abstract class Class6990 {
                .method4228()
                .method20813(
                   var5.field18048,
-                  !this.field30244.getBlockState(var6.method8313()).isAir() ? Class6762.method20626(this.field30244, var6) : var5.field18049,
+                  !this.field30244.getBlockState(var6.down()).isAir() ? Class6762.method20626(this.field30244, var6) : var5.field18049,
                   var5.field18050,
                   this.field30246
                );
@@ -318,7 +318,7 @@ public abstract class Class6990 {
    public abstract boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5);
 
    public boolean method21672(BlockPos var1) {
-      BlockPos var4 = var1.method8313();
+      BlockPos var4 = var1.down();
       return this.field30244.getBlockState(var4).method23409(this.field30244, var4);
    }
 

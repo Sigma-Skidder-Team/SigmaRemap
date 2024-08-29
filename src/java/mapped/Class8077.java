@@ -15,7 +15,7 @@ public class Class8077 implements IAmbientSoundHandler {
    public void tick() {
       this.field34718--;
       if (this.field34718 <= 0 && this.field34716.canSwim()) {
-         float var3 = this.field34716.world.field9016.nextFloat();
+         float var3 = this.field34716.world.rand.nextFloat();
          if (!(var3 < 1.0E-4F)) {
             if (!(var3 < 0.001F)) {
                if (var3 < 0.01F) {

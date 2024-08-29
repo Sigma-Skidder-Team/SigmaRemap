@@ -9,7 +9,7 @@ public class Class2950 extends Class2898<Class4705> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4705 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4705 var5) {
       var4 = new BlockPos(var4.getX(), var2.method17807(), var4.getZ());
       boolean var8 = var3.nextDouble() > 0.7;
       BlockState var9 = var5.field22322;
@@ -115,8 +115,8 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private void method11294(Class1660 var1, BlockPos var2) {
-      if (var1.getBlockState(var2.method8311()).method23448(Blocks.SNOW)) {
-         this.method11217(var1, var2.method8311(), Blocks.AIR.method11579());
+      if (var1.getBlockState(var2.up()).method23448(Blocks.SNOW)) {
+         this.method11217(var1, var2.up(), Blocks.AIR.method11579());
       }
    }
 
@@ -214,7 +214,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private boolean method11304(Class1665 var1, BlockPos var2) {
-      return var1.getBlockState(var2.method8313()).method23384() == Class8649.field38932;
+      return var1.getBlockState(var2.down()).method23384() == Class8649.field38932;
    }
 
    private void method11305(Class1660 var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {
@@ -228,13 +228,13 @@ public class Class2950 extends Class2898<Class4705> {
                if (this.method11303(var14) || var14 == Blocks.SNOW) {
                   if (this.method11304(var1, var13)) {
                      this.method11217(var1, var13, Blocks.AIR.method11579());
-                     this.method11217(var1, var13.method8311(), Blocks.AIR.method11579());
+                     this.method11217(var1, var13.up(), Blocks.AIR.method11579());
                   } else if (this.method11303(var14)) {
                      Block[] var15 = new Block[]{
-                        var1.getBlockState(var13.method8345()).getBlock(),
-                        var1.getBlockState(var13.method8347()).getBlock(),
-                        var1.getBlockState(var13.method8341()).getBlock(),
-                        var1.getBlockState(var13.method8343()).getBlock()
+                        var1.getBlockState(var13.west()).getBlock(),
+                        var1.getBlockState(var13.east()).getBlock(),
+                        var1.getBlockState(var13.north()).getBlock(),
+                        var1.getBlockState(var13.south()).getBlock()
                      };
                      int var16 = 0;
 

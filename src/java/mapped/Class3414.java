@@ -15,7 +15,7 @@ public class Class3414 extends Block {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!this.method12052(var2, var3)) {
-         var2.method6725(var3, this.field19104.method11579(), 2);
+         var2.setBlockState(var3, this.field19104.method11579(), 2);
       }
    }
 
@@ -30,7 +30,7 @@ public class Class3414 extends Block {
 
    public boolean method12052(Class1665 var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
-         Class7379 var9 = var1.method6739(var2.method8349(var8));
+         FluidState var9 = var1.getFluidState(var2.method8349(var8));
          if (var9.method23486(Class8953.field40469)) {
             return true;
          }

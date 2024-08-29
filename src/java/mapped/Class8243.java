@@ -131,7 +131,7 @@ public class Class8243 {
    }
 
    private static int method28742(Class6619 var0, float var1) throws CommandSyntaxException {
-      Class7522 var4 = var0.method20172().method6810();
+      WorldBorder var4 = var0.method20172().method6810();
       if (var4.method24546() != (double)var1) {
          var4.method24547((double)var1);
          var0.method20179(new TranslationTextComponent("commands.worldborder.damage.buffer.success", String.format(Locale.ROOT, "%.2f", var1)), true);
@@ -142,7 +142,7 @@ public class Class8243 {
    }
 
    private static int method28743(Class6619 var0, float var1) throws CommandSyntaxException {
-      Class7522 var4 = var0.method20172().method6810();
+      WorldBorder var4 = var0.method20172().method6810();
       if (var4.method24548() != (double)var1) {
          var4.method24549((double)var1);
          var0.method20179(new TranslationTextComponent("commands.worldborder.damage.amount.success", String.format(Locale.ROOT, "%.2f", var1)), true);
@@ -153,7 +153,7 @@ public class Class8243 {
    }
 
    private static int method28744(Class6619 var0, int var1) throws CommandSyntaxException {
-      Class7522 var4 = var0.method20172().method6810();
+      WorldBorder var4 = var0.method20172().method6810();
       if (var4.method24551() != var1) {
          var4.method24552(var1);
          var0.method20179(new TranslationTextComponent("commands.worldborder.warning.time.success", var1), true);
@@ -164,7 +164,7 @@ public class Class8243 {
    }
 
    private static int method28745(Class6619 var0, int var1) throws CommandSyntaxException {
-      Class7522 var4 = var0.method20172().method6810();
+      WorldBorder var4 = var0.method20172().method6810();
       if (var4.method24553() != var1) {
          var4.method24554(var1);
          var0.method20179(new TranslationTextComponent("commands.worldborder.warning.distance.success", var1), true);
@@ -181,8 +181,8 @@ public class Class8243 {
    }
 
    private static int method28747(Class6619 var0, Class8513 var1) throws CommandSyntaxException {
-      Class7522 var4 = var0.method20172().method6810();
-      if (var4.method24534() == (double)var1.field37220 && var4.method24535() == (double)var1.field37221) {
+      WorldBorder var4 = var0.method20172().method6810();
+      if (var4.getCenterX() == (double)var1.field37220 && var4.getCenterZ() == (double)var1.field37221) {
          throw field35415.create();
       } else {
          var4.method24536((double)var1.field37220, (double)var1.field37221);
@@ -197,7 +197,7 @@ public class Class8243 {
    }
 
    private static int method28748(Class6619 var0, double var1, long var3) throws CommandSyntaxException {
-      Class7522 var7 = var0.method20172().method6810();
+      WorldBorder var7 = var0.method20172().method6810();
       double var8 = var7.method24537();
       if (var8 != var1) {
          if (!(var1 < 1.0)) {

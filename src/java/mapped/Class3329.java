@@ -12,15 +12,15 @@ public class Class3329 extends Item {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Block var6 = var4.getBlockState(var5).getBlock();
-      if (!var6.method11540(Class7645.field32771)) {
+      if (!var6.method11540(BlockTags.field32771)) {
          return ActionResultType.field14820;
       } else {
          PlayerEntity var7 = var1.method18358();
-         if (!var4.field9020 && var7 != null) {
+         if (!var4.isRemote && var7 != null) {
             method11880(var7, var4, var5);
          }
 
-         return ActionResultType.method9002(var4.field9020);
+         return ActionResultType.method9002(var4.isRemote);
       }
    }
 

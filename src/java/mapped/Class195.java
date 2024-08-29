@@ -42,10 +42,10 @@ public class Class195 extends Class196 implements AutoCloseable {
    }
 
    @Override
-   public void method602(BlockPos var1) {
+   public void checkBlock(BlockPos var1) {
       BlockPos var4 = var1.method8353();
       this.method607(
-         var1.getX() >> 4, var1.getZ() >> 4, Class2044.field13350, Util.method38515(() -> super.method602(var4), () -> "checkBlock " + var4)
+         var1.getX() >> 4, var1.getZ() >> 4, Class2044.field13350, Util.method38515(() -> super.checkBlock(var4), () -> "checkBlock " + var4)
       );
    }
 
@@ -117,7 +117,7 @@ public class Class195 extends Class196 implements AutoCloseable {
       );
    }
 
-   public CompletableFuture<Class1670> method610(Class1670 var1, boolean var2) {
+   public CompletableFuture<IChunk> method610(IChunk var1, boolean var2) {
       Class7481 var5 = var1.method7072();
       var1.method7096(false);
       this.method607(var5.field32174, var5.field32175, Class2044.field13349, Util.method38515(() -> {
@@ -137,7 +137,7 @@ public class Class195 extends Class196 implements AutoCloseable {
 
          this.field737.method6555(var5);
       }, () -> "lightChunk " + var5 + " " + var2));
-      return CompletableFuture.<Class1670>supplyAsync(() -> {
+      return CompletableFuture.<IChunk>supplyAsync(() -> {
          var1.method7096(true);
          super.method609(var5, false);
          return var1;

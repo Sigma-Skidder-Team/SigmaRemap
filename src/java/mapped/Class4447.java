@@ -32,12 +32,12 @@ public class Class4447 implements Class4442 {
          var3 -> {
             if (var5.add(var3.method14634())) {
                method14045(
-                  var1, var3.method14637(), var4.resolve("data/" + var3.method14634().method8293() + "/recipes/" + var3.method14634().method8292() + ".json")
+                  var1, var3.method14637(), var4.resolve("data/" + var3.method14634().getNamespace() + "/recipes/" + var3.method14634().getPath() + ".json")
                );
                JsonObject var6 = var3.method14635();
                if (var6 != null) {
                   method14046(
-                     var1, var6, var4.resolve("data/" + var3.method14634().method8293() + "/advancements/" + var3.method14636().method8292() + ".json")
+                     var1, var6, var4.resolve("data/" + var3.method14634().getNamespace() + "/advancements/" + var3.method14636().getPath() + ".json")
                   );
                }
             } else {
@@ -3435,7 +3435,7 @@ public class Class4447 implements Class4442 {
    private static void method14048(Consumer<Class4664> var0, Item var1, Item var2) {
       Class9828.method38783(Class120.method339(var1), Class120.method339(Items.field37803), var2)
          .method38784("has_netherite_ingot", method14075(Items.field37803))
-         .method38785(var0, Registry.ITEM.getKey(var2.method11581()).method8292() + "_smithing");
+         .method38785(var0, Registry.ITEM.getKey(var2.method11581()).getPath() + "_smithing");
    }
 
    private static void method14049(Consumer<Class4664> var0, Class3303 var1, ITag<Item> var2) {
@@ -3543,7 +3543,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14061(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 3)
          .method30254("sign")
          .method30250('#', var2)
@@ -3565,7 +3565,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14063(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 3)
          .method30250('#', var2)
          .method30252("##")
@@ -3575,8 +3575,8 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14064(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var1.method11581()).method8292();
-      String var6 = Registry.ITEM.getKey(var2.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
+      String var6 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.WHITE_CARPET)
          .method30250('$', var2)
@@ -3590,7 +3590,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14065(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30249('X', Class5985.field26071)
@@ -3602,7 +3602,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14066(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var1.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
       Class8888.method32341(var1)
          .method32344(Items.field37938)
          .method32344(var2)
@@ -3612,7 +3612,7 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14067(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var2.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30250('|', Items.field37835)
@@ -3647,8 +3647,8 @@ public class Class4447 implements Class4442 {
    }
 
    private static void method14070(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
-      String var5 = Registry.ITEM.getKey(var1.method11581()).method8292();
-      String var6 = Registry.ITEM.getKey(var2.method11581()).method8292();
+      String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
+      String var6 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.GLASS_PANE)
          .method30250('$', var2)

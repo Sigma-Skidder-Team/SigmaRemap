@@ -10,6 +10,6 @@ public class Class970 extends Class941 {
    @Override
    public void method3761() {
       super.method3761();
-      this.field5324.method6733(this.field5325.method8313(), this.method3775().getBlock());
+      this.field5324.notifyNeighborsOfStateChange(this.field5325.down(), this.method3775().getBlock());
    }
 }

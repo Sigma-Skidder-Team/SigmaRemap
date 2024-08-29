@@ -19,13 +19,13 @@ public class Class3367 extends Class3241 {
       if (!(var9 instanceof Class964)) {
          return ActionResultType.field14820;
       } else {
-         return !((Class964)var9).method3933(var4) ? ActionResultType.field14820 : ActionResultType.method9002(var2.field9020);
+         return !((Class964)var9).method3933(var4) ? ActionResultType.field14820 : ActionResultType.method9002(var2.isRemote);
       }
    }
 
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
-      if (!var1.field9020 && var4 != null) {
+      if (!var1.isRemote && var4 != null) {
          TileEntity var8 = var1.getTileEntity(var2);
          if (var8 instanceof Class964) {
             ((Class964)var8).method3939(var4);

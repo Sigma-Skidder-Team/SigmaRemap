@@ -68,7 +68,7 @@ public class Class3423 extends Block implements Class3207 {
       BlockState var12 = this.method11579();
       World var5 = var1.method18360();
       BlockPos var6 = var1.method18345();
-      Class7379 var7 = var1.method18360().method6739(var1.method18345());
+      FluidState var7 = var1.method18360().getFluidState(var1.method18345());
 
       for (Direction var11 : var1.method18349()) {
          if (var11.method544().method324()) {
@@ -98,7 +98,7 @@ public class Class3423 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field19155) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 }

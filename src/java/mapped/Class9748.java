@@ -435,7 +435,7 @@ public class Class9748 {
                   var2 -> {
                      if (var2.world instanceof ServerWorld) {
                         ServerWorld var5 = (ServerWorld)var2.world;
-                        ILootCondition var6 = var5.method6715().method1412().method1052(var4);
+                        ILootCondition var6 = var5.getServer().method1412().method1052(var4);
                         if (var6 != null) {
                            LootContext var7 = new Class9464(var5)
                               .method36454(Class9525.field44330, var2)

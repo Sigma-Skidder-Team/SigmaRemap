@@ -27,9 +27,9 @@ public class Class2630 extends Class2628 {
          if (Class1088.method5059(this.field16941) >= 1) {
             if (Class1088.method5059(this.field16941) > 200) {
                World var4 = this.field16941.world;
-               var4.method6742((PlayerEntity)null, var3, Sounds.field27172, Class2266.field14732, 0.3F, 0.9F + var4.field9016.nextFloat() * 0.2F);
-               var4.method6725(
-                  this.field16933.method8311(),
+               var4.method6742((PlayerEntity)null, var3, Sounds.field27172, Class2266.field14732, 0.3F, 0.9F + var4.rand.nextFloat() * 0.2F);
+               var4.setBlockState(
+                  this.field16933.up(),
                   Blocks.field36964.method11579().method23465(Class3441.field19244, Integer.valueOf(Class1088.method5061(this.field16941).nextInt(4) + 1)),
                   3
                );
@@ -49,6 +49,6 @@ public class Class2630 extends Class2628 {
 
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
-      return var1.method7007(var2.method8311()) ? Class3441.method12115(var1, var2) : false;
+      return var1.method7007(var2.up()) ? Class3441.method12115(var1, var2) : false;
    }
 }

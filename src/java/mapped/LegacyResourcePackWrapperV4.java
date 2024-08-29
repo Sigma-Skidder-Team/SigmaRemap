@@ -16,7 +16,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class LegacyResourcePackWrapperV4 implements IResourcePack {
-   private static final Map<String, Pair<Class111, ResourceLocation>> field1180 = Util.<Map<String, Pair<Class111, ResourceLocation>>>method38508(
+   private static final Map<String, Pair<Class111, ResourceLocation>> field1180 = Util.<Map<String, Pair<Class111, ResourceLocation>>>make(
       Maps.newHashMap(), var0 -> {
          var0.put("textures/entity/chest/normal_left.png", new Pair(Class111.field380, new ResourceLocation("textures/entity/chest/normal_double.png")));
          var0.put("textures/entity/chest/normal_right.png", new Pair(Class111.field381, new ResourceLocation("textures/entity/chest/normal_double.png")));
@@ -96,10 +96,10 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
    @Override
    public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
-      if (!"minecraft".equals(var2.method8293())) {
+      if (!"minecraft".equals(var2.getNamespace())) {
          return this.field1187.method1225(var1, var2);
       } else {
-         String var5 = var2.method8292();
+         String var5 = var2.getPath();
          if (!"textures/misc/enchanted_item_glint.png".equals(var5)) {
             if ("textures/entity/iron_golem/iron_golem.png".equals(var5)) {
                return this.field1187.method1225(var1, field1186);
@@ -121,10 +121,10 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
 
    @Override
    public InputStream getResourceStream(ResourcePackType var1, ResourceLocation var2) throws IOException {
-      if (!"minecraft".equals(var2.method8293())) {
+      if (!"minecraft".equals(var2.getNamespace())) {
          return this.field1187.getResourceStream(var1, var2);
       } else {
-         String var5 = var2.method8292();
+         String var5 = var2.getPath();
          if ("textures/entity/iron_golem/iron_golem.png".equals(var5)) {
             return this.field1187.getResourceStream(var1, field1186);
          } else {

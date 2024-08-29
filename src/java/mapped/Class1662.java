@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public interface Class1662 extends Class1663, Class1668, Class1683 {
    @Nullable
-   Class1670 method6724(int var1, int var2, Class9176 var3, boolean var4);
+   IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4);
 
    @Deprecated
    boolean method6843(int var1, int var2);
@@ -14,7 +14,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    int method6808();
 
-   Class6668 getBiomeManager();
+   BiomeManager getBiomeManager();
 
    default Biome getBiome(BlockPos var1) {
       return this.getBiomeManager().method20323(var1);
@@ -37,18 +37,18 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    @Override
    default Biome method7005(int var1, int var2, int var3) {
-      Class1670 var6 = this.method6724(var1 >> 2, var3 >> 2, Class9176.field42136, false);
+      IChunk var6 = this.getChunk(var1 >> 2, var3 >> 2, ChunkStatus.field42136, false);
       return var6 != null && var6.method7077() != null ? var6.method7077().method7005(var1, var2, var3) : this.method6871(var1, var2, var3);
    }
 
    Biome method6871(int var1, int var2, int var3);
 
-   boolean method6714();
+   boolean isRemote();
 
    @Deprecated
    int method6776();
 
-   Class9535 method6812();
+   DimensionType method6812();
 
    default BlockPos method7006(Class101 var1, BlockPos var2) {
       return new BlockPos(var2.getX(), this.method6736(var1, var2.getX(), var2.getZ()), var2.getZ());
@@ -62,9 +62,9 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
       if (var1.getY() < this.method6776()) {
          BlockPos var4 = new BlockPos(var1.getX(), this.method6776(), var1.getZ());
          if (this.method7022(var4)) {
-            for (BlockPos var5 = var4.method8313(); var5.getY() > var1.getY(); var5 = var5.method8313()) {
+            for (BlockPos var5 = var4.down(); var5.getY() > var1.getY(); var5 = var5.down()) {
                BlockState var6 = this.getBlockState(var5);
-               if (var6.method23387(this, var5) > 0 && !var6.method23384().method31085()) {
+               if (var6.getOpacity(this, var5) > 0 && !var6.method23384().method31085()) {
                   return false;
                }
             }
@@ -80,33 +80,33 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    @Deprecated
    default float method7009(BlockPos var1) {
-      return this.method6812().method36890(this.method7015(var1));
+      return this.method6812().getAmbientLight(this.method7015(var1));
    }
 
    default int method7010(BlockPos var1, Direction var2) {
       return this.getBlockState(var1).method23407(this, var1, var2);
    }
 
-   default Class1670 method7011(BlockPos var1) {
-      return this.method6824(var1.getX() >> 4, var1.getZ() >> 4);
+   default IChunk method7011(BlockPos var1) {
+      return this.getChunk(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
-   default Class1670 method6824(int var1, int var2) {
-      return this.method6724(var1, var2, Class9176.field42145, true);
+   default IChunk getChunk(int var1, int var2) {
+      return this.getChunk(var1, var2, ChunkStatus.FULL, true);
    }
 
-   default Class1670 method7012(int var1, int var2, Class9176 var3) {
-      return this.method6724(var1, var2, var3, true);
+   default IChunk getChunk(int var1, int var2, ChunkStatus var3) {
+      return this.getChunk(var1, var2, var3, true);
    }
 
    @Nullable
    @Override
    default Class1665 method6769(int var1, int var2) {
-      return this.method6724(var1, var2, Class9176.field42133, false);
+      return this.getChunk(var1, var2, ChunkStatus.field42133, false);
    }
 
    default boolean method7013(BlockPos var1) {
-      return this.method6739(var1).method23486(Class8953.field40469);
+      return this.getFluidState(var1).method23486(Class8953.field40469);
    }
 
    default boolean method7014(AxisAlignedBB var1) {

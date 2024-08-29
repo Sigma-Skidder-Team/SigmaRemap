@@ -302,7 +302,7 @@ public class Class6763 extends Class6762 {
       if (var8 == Class2163.field14185 && var3 >= 1) {
          BlockState var9 = var1.getBlockState(var7.method8372(var2, var3 - 1, var4));
          Class2163 var10 = method20635(var1, var7.method8372(var2, var3 - 1, var4));
-         if (var10 == Class2163.field14196 || var9.method23448(Blocks.field36890) || var10 == Class2163.field14190 || var9.method23446(Class7645.field32809)
+         if (var10 == Class2163.field14196 || var9.method23448(Blocks.field36890) || var10 == Class2163.field14190 || var9.method23446(BlockTags.field32809)
             )
           {
             var8 = Class2163.field14196;

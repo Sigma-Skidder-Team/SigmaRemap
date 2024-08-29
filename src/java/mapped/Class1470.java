@@ -16,10 +16,10 @@ import java.util.stream.Collectors;
 
 public class Class1470 implements Runnable {
    private static final Logger field7907 = LogManager.getLogger();
-   private final Class1645 field7908;
+   private final DedicatedServer field7908;
    private final long field7909;
 
-   public Class1470(Class1645 var1) {
+   public Class1470(DedicatedServer var1) {
       this.field7908 = var1;
       this.field7909 = var1.method6507();
    }

@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -50,7 +49,7 @@ public class Class4450 implements Class4442 {
    }
 
    private static Path method14083(Path var0, Class7952 var1) {
-      return var0.resolve("data/" + var1.method27033().method8293() + "/advancements/" + var1.method27033().method8292() + ".json");
+      return var0.resolve("data/" + var1.method27033().getNamespace() + "/advancements/" + var1.method27033().getPath() + ".json");
    }
 
    @Override

@@ -20,7 +20,7 @@ public class Class3379 extends Class3231 {
    @Override
    public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
       var3.method2863(Sounds.field26664, 1.0F, 1.0F);
-      if (!var1.field9020) {
+      if (!var1.isRemote) {
          var1.method6786(var3, (byte)54);
       }
 
@@ -77,11 +77,11 @@ public class Class3379 extends Class3231 {
 
    private void method11975(World var1, Entity var2) {
       if (method11971(var2)) {
-         if (var1.field9016.nextInt(5) == 0) {
+         if (var1.rand.nextInt(5) == 0) {
             var2.method2863(Sounds.field26664, 1.0F, 1.0F);
          }
 
-         if (!var1.field9020 && var1.field9016.nextInt(5) == 0) {
+         if (!var1.isRemote && var1.rand.nextInt(5) == 0) {
             var1.method6786(var2, (byte)53);
          }
       }
@@ -96,7 +96,7 @@ public class Class3379 extends Class3231 {
    }
 
    private static void method11978(Entity var0, int var1) {
-      if (var0.world.field9020) {
+      if (var0.world.isRemote) {
          BlockState var4 = Blocks.field37119.method11579();
 
          for (int var5 = 0; var5 < var1; var5++) {

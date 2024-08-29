@@ -9,7 +9,7 @@ public class Class2923 extends Class2898<Class4710> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4710 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4710 var5) {
       if (var4.getY() >= 5) {
          int var8 = 2 + var3.nextInt(2);
          int var9 = 2 + var3.nextInt(2);
@@ -33,14 +33,14 @@ public class Class2923 extends Class2898<Class4710> {
    }
 
    private boolean method11255(Class1660 var1, BlockPos var2, Random var3) {
-      BlockPos var6 = var2.method8313();
+      BlockPos var6 = var2.down();
       BlockState var7 = var1.getBlockState(var6);
       return !var7.method23448(Blocks.field36885) ? var7.method23454(var1, var6, Direction.field673) : var3.nextBoolean();
    }
 
    private void method11256(Class1660 var1, BlockPos var2, Random var3, Class4710 var4) {
       if (var1.method7007(var2) && this.method11255(var1, var2, var3)) {
-         var1.method6725(var2, var4.field22343.method20424(var3, var2), 4);
+         var1.setBlockState(var2, var4.field22343.method20424(var3, var2), 4);
       }
    }
 }

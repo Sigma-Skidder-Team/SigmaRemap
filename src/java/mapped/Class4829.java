@@ -14,9 +14,9 @@ public class Class4829 {
       this.field22604 = Class8968.field40512.method26198();
    }
 
-   private static boolean method14920(Class1665 var0, BlockPos var1, Direction var2, Class7379 var3) {
+   private static boolean method14920(Class1665 var0, BlockPos var1, Direction var2, FluidState var3) {
       BlockPos var6 = var1.method8349(var2);
-      Class7379 var7 = var0.method6739(var6);
+      FluidState var7 = var0.getFluidState(var6);
       return var7.method23472().method25066(var3.method23472());
    }
 
@@ -24,7 +24,7 @@ public class Class4829 {
       if (!var4.method23410()) {
          return false;
       } else {
-         VoxelShape var7 = VoxelShapes.method27427(0.0, 0.0, 0.0, 1.0, (double)var2, 1.0);
+         VoxelShape var7 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, (double)var2, 1.0);
          VoxelShape var8 = var4.method23389(var0, var3);
          return VoxelShapes.method27441(var7, var8, var1);
       }
@@ -40,12 +40,12 @@ public class Class4829 {
       return method14921(var0, var3.method536(), 1.0F, var1, var2);
    }
 
-   public static boolean method14924(Class1663 var0, BlockPos var1, Class7379 var2, BlockState var3, Direction var4) {
+   public static boolean method14924(Class1663 var0, BlockPos var1, FluidState var2, BlockState var3, Direction var4) {
       return !method14923(var0, var1, var3, var4) && !method14920(var0, var1, var4, var2);
    }
 
-   public boolean method14925(Class1663 var1, BlockPos var2, Class5422 var3, Class7379 var4) {
-      BlockState var7 = var4.method23484();
+   public boolean method14925(Class1663 var1, BlockPos var2, Class5422 var3, FluidState var4) {
+      BlockState var7 = var4.getBlockState();
 
       boolean var23;
       try {
@@ -94,9 +94,9 @@ public class Class4829 {
             float var26 = var1.method6877(Direction.NORTH, true);
             float var27 = var1.method6877(Direction.WEST, true);
             float var28 = this.method14929(var1, var2, var4.method23472());
-            float var29 = this.method14929(var1, var2.method8343(), var4.method23472());
-            float var30 = this.method14929(var1, var2.method8347().method8343(), var4.method23472());
-            float var31 = this.method14929(var1, var2.method8347(), var4.method23472());
+            float var29 = this.method14929(var1, var2.south(), var4.method23472());
+            float var30 = this.method14929(var1, var2.east().south(), var4.method23472());
+            float var31 = this.method14929(var1, var2.east(), var4.method23472());
             double var32 = (double)(var2.getX() & 15);
             double var34 = (double)(var2.getY() & 15);
             double var36 = (double)(var2.getZ() & 15);
@@ -164,14 +164,14 @@ public class Class4829 {
                float var116 = (float)var9[0].method7457() / (var9[0].method7460() - var9[0].method7459());
                float var118 = (float)var9[0].method7458() / (var9[0].method7463() - var9[0].method7462());
                float var120 = 4.0F / Math.max(var118, var116);
-               var101 = MathHelper.method37821(var120, var101, var108);
-               var104 = MathHelper.method37821(var120, var104, var108);
-               var48 = MathHelper.method37821(var120, var48, var108);
-               var49 = MathHelper.method37821(var120, var49, var108);
-               var90 = MathHelper.method37821(var120, var90, var115);
-               var47 = MathHelper.method37821(var120, var47, var115);
-               var94 = MathHelper.method37821(var120, var94, var115);
-               var98 = MathHelper.method37821(var120, var98, var115);
+               var101 = MathHelper.lerp(var120, var101, var108);
+               var104 = MathHelper.lerp(var120, var104, var108);
+               var48 = MathHelper.lerp(var120, var48, var108);
+               var49 = MathHelper.lerp(var120, var49, var108);
+               var90 = MathHelper.lerp(var120, var90, var115);
+               var47 = MathHelper.lerp(var120, var47, var115);
+               var94 = MathHelper.lerp(var120, var94, var115);
+               var98 = MathHelper.lerp(var120, var98, var115);
                int var54 = this.method14928(var1, var2);
                float var55 = var25 * var20;
                float var56 = var25 * var21;
@@ -180,7 +180,7 @@ public class Class4829 {
                this.method14927(var3, var32 + 0.0, var34 + (double)var29, var36 + 1.0, var55, var56, var57, var13, var104, var47, var54);
                this.method14927(var3, var32 + 1.0, var34 + (double)var30, var36 + 1.0, var55, var56, var57, var13, var48, var94, var54);
                this.method14927(var3, var32 + 1.0, var34 + (double)var31, var36 + 0.0, var55, var56, var57, var13, var49, var98, var54);
-               if (var4.method23478(var1, var2.method8311())) {
+               if (var4.method23478(var1, var2.up())) {
                   this.method14927(var3, var32 + 0.0, var34 + (double)var28, var36 + 0.0, var55, var56, var57, var13, var101, var90, var54);
                   this.method14927(var3, var32 + 1.0, var34 + (double)var31, var36 + 0.0, var55, var56, var57, var13, var49, var98, var54);
                   this.method14927(var3, var32 + 1.0, var34 + (double)var30, var36 + 1.0, var55, var56, var57, var13, var48, var94, var54);
@@ -194,7 +194,7 @@ public class Class4829 {
                float var92 = var9[0].method7460();
                float var96 = var9[0].method7462();
                float var100 = var9[0].method7463();
-               int var103 = this.method14928(var1, var2.method8313());
+               int var103 = this.method14928(var1, var2.down());
                float var106 = var1.method6877(Direction.DOWN, true);
                float var112 = var106 * var20;
                float var114 = var106 * var21;
@@ -364,7 +364,7 @@ public class Class4829 {
 
    private int method14928(Class1663 var1, BlockPos var2) {
       int var5 = WorldRenderer.method944(var1, var2);
-      int var6 = WorldRenderer.method944(var1, var2.method8311());
+      int var6 = WorldRenderer.method944(var1, var2.up());
       int var7 = var5 & 0xFF;
       int var8 = var6 & 0xFF;
       int var9 = var5 >> 16 & 0xFF;
@@ -378,11 +378,11 @@ public class Class4829 {
 
       for (int var8 = 0; var8 < 4; var8++) {
          BlockPos var9 = var2.method8336(-(var8 & 1), 0, -(var8 >> 1 & 1));
-         if (var1.method6739(var9.method8311()).method23472().method25066(var3)) {
+         if (var1.getFluidState(var9.up()).method23472().method25066(var3)) {
             return 1.0F;
          }
 
-         Class7379 var10 = var1.method6739(var9);
+         FluidState var10 = var1.getFluidState(var9);
          if (!var10.method23472().method25066(var3)) {
             if (!var1.getBlockState(var9).method23384().method31086()) {
                var6++;

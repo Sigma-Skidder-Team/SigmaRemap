@@ -32,7 +32,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    }
 
    @Override
-   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, Class7379 var4) {
+   public boolean method11532(Class1660 var1, BlockPos var2, BlockState var3, FluidState var4) {
       return false;
    }
 
@@ -44,12 +44,12 @@ public class Class3451 extends Class3452 implements Class3449 {
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
-      Class7379 var4 = var1.method18360().method6739(var1.method18345());
+      FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       return var4.method23486(Class8953.field40469) && var4.method23477() == 8 ? super.method11495(var1) : null;
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return Class9479.field44066.method25078(false);
    }
 }

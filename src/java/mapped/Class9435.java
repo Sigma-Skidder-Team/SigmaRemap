@@ -31,44 +31,44 @@ public class Class9435 {
       this.field43782.clear();
       switch (Class7964.field34253[var1.ordinal()]) {
          case 1:
-            this.field43782.add(this.field43778.method8341());
-            this.field43782.add(this.field43778.method8343());
+            this.field43782.add(this.field43778.north());
+            this.field43782.add(this.field43778.south());
             break;
          case 2:
-            this.field43782.add(this.field43778.method8345());
-            this.field43782.add(this.field43778.method8347());
+            this.field43782.add(this.field43778.west());
+            this.field43782.add(this.field43778.east());
             break;
          case 3:
-            this.field43782.add(this.field43778.method8345());
-            this.field43782.add(this.field43778.method8347().method8311());
+            this.field43782.add(this.field43778.west());
+            this.field43782.add(this.field43778.east().up());
             break;
          case 4:
-            this.field43782.add(this.field43778.method8345().method8311());
-            this.field43782.add(this.field43778.method8347());
+            this.field43782.add(this.field43778.west().up());
+            this.field43782.add(this.field43778.east());
             break;
          case 5:
-            this.field43782.add(this.field43778.method8341().method8311());
-            this.field43782.add(this.field43778.method8343());
+            this.field43782.add(this.field43778.north().up());
+            this.field43782.add(this.field43778.south());
             break;
          case 6:
-            this.field43782.add(this.field43778.method8341());
-            this.field43782.add(this.field43778.method8343().method8311());
+            this.field43782.add(this.field43778.north());
+            this.field43782.add(this.field43778.south().up());
             break;
          case 7:
-            this.field43782.add(this.field43778.method8347());
-            this.field43782.add(this.field43778.method8343());
+            this.field43782.add(this.field43778.east());
+            this.field43782.add(this.field43778.south());
             break;
          case 8:
-            this.field43782.add(this.field43778.method8345());
-            this.field43782.add(this.field43778.method8343());
+            this.field43782.add(this.field43778.west());
+            this.field43782.add(this.field43778.south());
             break;
          case 9:
-            this.field43782.add(this.field43778.method8345());
-            this.field43782.add(this.field43778.method8341());
+            this.field43782.add(this.field43778.west());
+            this.field43782.add(this.field43778.north());
             break;
          case 10:
-            this.field43782.add(this.field43778.method8347());
-            this.field43782.add(this.field43778.method8341());
+            this.field43782.add(this.field43778.east());
+            this.field43782.add(this.field43778.north());
       }
    }
 
@@ -85,18 +85,18 @@ public class Class9435 {
 
    private boolean method36236(BlockPos var1) {
       return Class3429.method12086(this.field43777, var1)
-         || Class3429.method12086(this.field43777, var1.method8311())
-         || Class3429.method12086(this.field43777, var1.method8313());
+         || Class3429.method12086(this.field43777, var1.up())
+         || Class3429.method12086(this.field43777, var1.down());
    }
 
    @Nullable
    private Class9435 method36237(BlockPos var1) {
       BlockState var4 = this.field43777.getBlockState(var1);
       if (!Class3429.method12087(var4)) {
-         BlockPos var5 = var1.method8311();
+         BlockPos var5 = var1.up();
          var4 = this.field43777.getBlockState(var5);
          if (!Class3429.method12087(var4)) {
-            var5 = var1.method8313();
+            var5 = var1.down();
             var4 = this.field43777.getBlockState(var5);
             return !Class3429.method12087(var4) ? null : new Class9435(this.field43777, var5, var4);
          } else {
@@ -140,10 +140,10 @@ public class Class9435 {
 
    private void method36242(Class9435 var1) {
       this.field43782.add(var1.field43778);
-      BlockPos var4 = this.field43778.method8341();
-      BlockPos var5 = this.field43778.method8343();
-      BlockPos var6 = this.field43778.method8345();
-      BlockPos var7 = this.field43778.method8347();
+      BlockPos var4 = this.field43778.north();
+      BlockPos var5 = this.field43778.south();
+      BlockPos var6 = this.field43778.west();
+      BlockPos var7 = this.field43778.east();
       boolean var8 = this.method36239(var4);
       boolean var9 = this.method36239(var5);
       boolean var10 = this.method36239(var6);
@@ -176,21 +176,21 @@ public class Class9435 {
       }
 
       if (var12 == Class96.field247) {
-         if (Class3429.method12086(this.field43777, var4.method8311())) {
+         if (Class3429.method12086(this.field43777, var4.up())) {
             var12 = Class96.field251;
          }
 
-         if (Class3429.method12086(this.field43777, var5.method8311())) {
+         if (Class3429.method12086(this.field43777, var5.up())) {
             var12 = Class96.field252;
          }
       }
 
       if (var12 == Class96.field248) {
-         if (Class3429.method12086(this.field43777, var7.method8311())) {
+         if (Class3429.method12086(this.field43777, var7.up())) {
             var12 = Class96.field249;
          }
 
-         if (Class3429.method12086(this.field43777, var6.method8311())) {
+         if (Class3429.method12086(this.field43777, var6.up())) {
             var12 = Class96.field250;
          }
       }
@@ -200,7 +200,7 @@ public class Class9435 {
       }
 
       this.field43780 = this.field43780.method23465(this.field43779.method12093(), var12);
-      this.field43777.method6725(this.field43778, this.field43780, 3);
+      this.field43777.setBlockState(this.field43778, this.field43780, 3);
    }
 
    private boolean method36243(BlockPos var1) {
@@ -214,10 +214,10 @@ public class Class9435 {
    }
 
    public Class9435 method36244(boolean var1, boolean var2, Class96 var3) {
-      BlockPos var6 = this.field43778.method8341();
-      BlockPos var7 = this.field43778.method8343();
-      BlockPos var8 = this.field43778.method8345();
-      BlockPos var9 = this.field43778.method8347();
+      BlockPos var6 = this.field43778.north();
+      BlockPos var7 = this.field43778.south();
+      BlockPos var8 = this.field43778.west();
+      BlockPos var9 = this.field43778.east();
       boolean var10 = this.method36243(var6);
       boolean var11 = this.method36243(var7);
       boolean var12 = this.method36243(var8);
@@ -304,21 +304,21 @@ public class Class9435 {
       }
 
       if (var14 == Class96.field247) {
-         if (Class3429.method12086(this.field43777, var6.method8311())) {
+         if (Class3429.method12086(this.field43777, var6.up())) {
             var14 = Class96.field251;
          }
 
-         if (Class3429.method12086(this.field43777, var7.method8311())) {
+         if (Class3429.method12086(this.field43777, var7.up())) {
             var14 = Class96.field252;
          }
       }
 
       if (var14 == Class96.field248) {
-         if (Class3429.method12086(this.field43777, var9.method8311())) {
+         if (Class3429.method12086(this.field43777, var9.up())) {
             var14 = Class96.field249;
          }
 
-         if (Class3429.method12086(this.field43777, var8.method8311())) {
+         if (Class3429.method12086(this.field43777, var8.up())) {
             var14 = Class96.field250;
          }
       }
@@ -330,7 +330,7 @@ public class Class9435 {
       this.method36234(var14);
       this.field43780 = this.field43780.method23465(this.field43779.method12093(), var14);
       if (var2 || this.field43777.getBlockState(this.field43778) != this.field43780) {
-         this.field43777.method6725(this.field43778, this.field43780, 3);
+         this.field43777.setBlockState(this.field43778, this.field43780, 3);
 
          for (int var21 = 0; var21 < this.field43782.size(); var21++) {
             Class9435 var22 = this.method36237(this.field43782.get(var21));

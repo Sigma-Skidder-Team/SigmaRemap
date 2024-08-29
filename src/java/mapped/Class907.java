@@ -66,12 +66,12 @@ public class Class907 extends Entity {
          if (this.field5177++ == 0) {
             BlockPos var4 = this.getPosition();
             if (!this.world.getBlockState(var4).method23448(var3)) {
-               if (!this.world.field9020) {
+               if (!this.world.isRemote) {
                   this.method2904();
                   return;
                }
             } else {
-               this.world.method6728(var4, false);
+               this.world.removeBlock(var4, false);
             }
          }
 
@@ -80,10 +80,10 @@ public class Class907 extends Entity {
          }
 
          this.move(Class2107.field13742, this.method3433());
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             BlockPos var18 = this.getPosition();
             boolean var5 = this.field5176.getBlock() instanceof Class3217;
-            boolean var6 = var5 && this.world.method6739(var18).method23486(Class8953.field40469);
+            boolean var6 = var5 && this.world.getFluidState(var18).method23486(Class8953.field40469);
             double var7 = this.method3433().method11349();
             if (var5 && var7 > 1.0) {
                BlockRayTraceResult var9 = this.world
@@ -92,14 +92,14 @@ public class Class907 extends Entity {
                         new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.getPositionVec(), Class2271.field14774, Class1985.field12963, this
                      )
                   );
-               if (var9.getType() != RayTraceResult.Type.MISS && this.world.method6739(var9.getPos()).method23486(Class8953.field40469)) {
+               if (var9.getType() != RayTraceResult.Type.MISS && this.world.getFluidState(var9.getPos()).method23486(Class8953.field40469)) {
                   var18 = var9.getPos();
                   var6 = true;
                }
             }
 
             if (!this.onGround && !var6) {
-               if (!this.world.field9020 && (this.field5177 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field5177 > 600)) {
+               if (!this.world.isRemote && (this.field5177 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field5177 > 600)) {
                   if (this.field5178 && this.world.method6789().method17135(Class5462.field24229)) {
                      this.method3300(var3);
                   }
@@ -117,14 +117,14 @@ public class Class907 extends Entity {
                      }
                   } else {
                      boolean var10 = var19.method23441(new Class5910(this.world, var18, Direction.DOWN, ItemStack.EMPTY, Direction.field673));
-                     boolean var11 = Class3213.method11598(this.world.getBlockState(var18.method8313())) && (!var5 || !var6);
+                     boolean var11 = Class3213.method11598(this.world.getBlockState(var18.down())) && (!var5 || !var6);
                      boolean var12 = this.field5176.method23443(this.world, var18) && !var11;
                      if (var10 && var12) {
-                        if (this.field5176.method23462(Class8820.field39710) && this.world.method6739(var18).method23472() == Class9479.field44066) {
+                        if (this.field5176.method23462(Class8820.field39710) && this.world.getFluidState(var18).method23472() == Class9479.field44066) {
                            this.field5176 = this.field5176.method23465(Class8820.field39710, Boolean.valueOf(true));
                         }
 
-                        if (!this.world.method6725(var18, this.field5176, 3)) {
+                        if (!this.world.setBlockState(var18, this.field5176, 3)) {
                            if (this.field5178 && this.world.method6789().method17135(Class5462.field24229)) {
                               this.method3300(var3);
                            }
@@ -170,7 +170,7 @@ public class Class907 extends Entity {
          int var5 = MathHelper.method37773(var1 - 1.0F);
          if (var5 > 0) {
             List<Entity> var6 = Lists.newArrayList(this.world.method7181(this, this.getBoundingBox()));
-            boolean var7 = this.field5176.method23446(Class7645.field32765);
+            boolean var7 = this.field5176.method23446(BlockTags.field32765);
             Class8654 var8 = !var7 ? Class8654.field39009 : Class8654.field39008;
 
             for (Entity var10 : var6) {
@@ -209,7 +209,7 @@ public class Class907 extends Entity {
       this.field5176 = Class8354.method29285(var1.getCompound("BlockState"));
       this.field5177 = var1.method122("Time");
       if (!var1.method119("HurtEntities", 99)) {
-         if (this.field5176.method23446(Class7645.field32765)) {
+         if (this.field5176.method23446(BlockTags.field32765)) {
             this.field5180 = true;
          }
       } else {
@@ -261,6 +261,6 @@ public class Class907 extends Entity {
 
    @Override
    public Packet<?> method2835() {
-      return new Class5487(this, Block.method11535(this.method3556()));
+      return new Class5487(this, Block.getStateId(this.method3556()));
    }
 }

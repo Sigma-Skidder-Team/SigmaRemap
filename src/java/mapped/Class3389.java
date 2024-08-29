@@ -42,16 +42,16 @@ public class Class3389 extends Block {
             var9.method32182(1);
          }
 
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else if (var1.<Integer>method23463(field19000) != 0) {
          if (!method11988(var2)) {
-            if (!var2.field9020) {
+            if (!var2.isRemote) {
                this.method11987(var1, var2, var3);
             }
 
-            return ActionResultType.method9002(var2.field9020);
+            return ActionResultType.method9002(var2.isRemote);
          } else {
-            if (!var2.field9020) {
+            if (!var2.isRemote) {
                ServerPlayerEntity var10 = (ServerPlayerEntity)var4;
                if (var10.method2827() != var2.getDimensionKey() || !var10.method2825().equals(var3)) {
                   var10.method2829(var2.getDimensionKey(), var3, 0.0F, false, true);
@@ -85,12 +85,12 @@ public class Class3389 extends Block {
    }
 
    private static boolean method11986(BlockPos var0, World var1) {
-      Class7379 var4 = var1.method6739(var0);
+      FluidState var4 = var1.getFluidState(var0);
       if (var4.method23486(Class8953.field40469)) {
          if (!var4.method23473()) {
             float var5 = (float)var4.method23477();
             if (!(var5 < 2.0F)) {
-               Class7379 var6 = var1.method6739(var0.method8313());
+               FluidState var6 = var1.getFluidState(var0.down());
                return !var6.method23486(Class8953.field40469);
             } else {
                return false;
@@ -104,9 +104,9 @@ public class Class3389 extends Block {
    }
 
    private void method11987(BlockState var1, World var2, BlockPos var3) {
-      var2.method6728(var3, false);
+      var2.removeBlock(var3, false);
       boolean var6 = Class76.field161.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
-      boolean var7 = var6 || var2.method6739(var3.method8311()).method23486(Class8953.field40469);
+      boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(Class8953.field40469);
       Class5925 var8 = new Class5925(this, var7);
       var2.method6757(
          (Entity)null,
@@ -122,11 +122,11 @@ public class Class3389 extends Block {
    }
 
    public static boolean method11988(World var0) {
-      return var0.method6812().method36882();
+      return var0.method6812().doesRespawnAnchorWorks();
    }
 
    public static void method11989(World var0, BlockPos var1, BlockState var2) {
-      var0.method6725(var1, var2.method23465(field19000, Integer.valueOf(var2.<Integer>method23463(field19000) + 1)), 3);
+      var0.setBlockState(var1, var2.method23465(field19000, Integer.valueOf(var2.<Integer>method23463(field19000) + 1)), 3);
       var0.method6743(
          (PlayerEntity)null,
          (double)var1.getX() + 0.5,

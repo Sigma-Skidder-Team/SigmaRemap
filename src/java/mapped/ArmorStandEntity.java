@@ -292,7 +292,7 @@ public class ArmorStandEntity extends Class880 {
          return ActionResultType.field14820;
       } else if (var1.isSpectator()) {
          return ActionResultType.field14818;
-      } else if (!var1.world.field9020) {
+      } else if (!var1.world.isRemote) {
          Class2106 var7 = Class1006.method4271(var6);
          if (!var6.isEmpty()) {
             if (this.method4189(var7)) {
@@ -372,7 +372,7 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public boolean method2741(Class8654 var1, float var2) {
-      if (this.world.field9020 || this.removed) {
+      if (this.world.isRemote || this.removed) {
          return false;
       } else if (Class8654.field39004.equals(var1)) {
          this.method2904();
@@ -429,7 +429,7 @@ public class ArmorStandEntity extends Class880 {
    public void method2866(byte var1) {
       if (var1 != 32) {
          super.method2866(var1);
-      } else if (this.world.field9020) {
+      } else if (this.world.isRemote) {
          this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26359, this.method2864(), 0.3F, 1.0F, false);
          this.field5584 = this.world.method6783();
       }
@@ -486,7 +486,7 @@ public class ArmorStandEntity extends Class880 {
       for (int var4 = 0; var4 < this.field5581.size(); var4++) {
          ItemStack var5 = this.field5581.get(var4);
          if (!var5.isEmpty()) {
-            Block.method11557(this.world, this.getPosition().method8311(), var5);
+            Block.method11557(this.world, this.getPosition().up(), var5);
             this.field5581.set(var4, ItemStack.EMPTY);
          }
       }
@@ -494,7 +494,7 @@ public class ArmorStandEntity extends Class880 {
       for (int var6 = 0; var6 < this.field5582.size(); var6++) {
          ItemStack var7 = this.field5582.get(var6);
          if (!var7.isEmpty()) {
-            Block.method11557(this.world, this.getPosition().method8311(), var7);
+            Block.method11557(this.world, this.getPosition().up(), var7);
             this.field5582.set(var6, ItemStack.EMPTY);
          }
       }

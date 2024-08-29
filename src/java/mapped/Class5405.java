@@ -2,7 +2,7 @@ package mapped;
 
 public class Class5405 extends Class5404 {
    private static String[] field24088;
-   private Class1674 field24089;
+   private Chunk field24089;
    public Minecraft field24090 = Minecraft.getInstance();
 
    @Override
@@ -15,9 +15,9 @@ public class Class5405 extends Class5404 {
       }
    }
 
-   public Class1674 method16992(World var1, int var2, int var3) {
+   public Chunk method16992(World var1, int var2, int var3) {
       return this.field24089 != null && this.field24089.method7072().field32174 == var2 && this.field24089.method7072().field32175 == var3
          ? this.field24089
-         : (this.field24089 = var1.method6824(var2, var3));
+         : (this.field24089 = var1.getChunk(var2, var3));
    }
 }

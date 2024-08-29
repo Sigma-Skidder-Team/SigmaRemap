@@ -17,7 +17,7 @@ public abstract class Class7139 {
    }
 
    public void method22274(Class1681 var1, BlockPos var2, BlockState var3, Set<BlockPos> var4, Class9764 var5) {
-      var1.method6725(var2, var3, 19);
+      var1.setBlockState(var2, var3, 19);
       var4.add(var2);
       var5.method38392(new Class9764(var2, var2));
    }

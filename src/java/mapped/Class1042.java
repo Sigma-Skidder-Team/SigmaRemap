@@ -177,9 +177,9 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public void method4258() {
-      this.world.method6820().startSection("villagerBrain");
+      this.world.getProfiler().startSection("villagerBrain");
       this.method2992().method21432((ServerWorld)this.world, this);
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
       if (this.field5790) {
          this.field5790 = false;
       }
@@ -234,7 +234,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       } else if (!this.method3005()) {
          boolean var6 = this.method4742().isEmpty();
          if (var2 == Hand.MAIN_HAND) {
-            if (var6 && !this.world.field9020) {
+            if (var6 && !this.world.isRemote) {
                this.method4681();
             }
 
@@ -242,23 +242,23 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          }
 
          if (!var6) {
-            if (!this.world.field9020 && !this.field5796.isEmpty()) {
+            if (!this.world.isRemote && !this.field5796.isEmpty()) {
                this.method4682(var1);
             }
 
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          } else {
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
       } else {
          this.method4681();
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       }
    }
 
    private void method4681() {
       this.method4739(40);
-      if (!this.world.method6714()) {
+      if (!this.world.isRemote()) {
          this.method2863(Sounds.field27193, this.method3099(), this.method3100());
       }
    }
@@ -543,7 +543,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    public void method4699(Class8830<Class9378> var1) {
       if (this.world instanceof ServerWorld) {
-         MinecraftServer var4 = ((ServerWorld)this.world).method6715();
+         MinecraftServer var4 = ((ServerWorld)this.world).getServer();
          this.field5011.<Class9378>method21410(var1).ifPresent(var3 -> {
             ServerWorld var6 = var4.method1318(var3.method35578());
             if (var6 != null) {
@@ -619,7 +619,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public ITextComponent method3358() {
-      return new TranslationTextComponent(this.getType().method33210() + '.' + Registry.field16090.getKey(this.method4674().method26571()).method8292());
+      return new TranslationTextComponent(this.getType().method33210() + '.' + Registry.field16090.getKey(this.method4674().method26571()).getPath());
    }
 
    @Override
@@ -802,8 +802,8 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       BlockPos var4 = this.getPosition();
 
       for (int var5 = 0; var5 < 10; var5++) {
-         double var6 = (double)(var1.field9016.nextInt(16) - 8);
-         double var8 = (double)(var1.field9016.nextInt(16) - 8);
+         double var6 = (double)(var1.rand.nextInt(16) - 8);
+         double var8 = (double)(var1.rand.nextInt(16) - 8);
          BlockPos var10 = this.method4719(var4, var6, var8);
          if (var10 != null) {
             Class1058 var11 = EntityType.field41041
@@ -831,7 +831,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
       for (int var11 = 6; var11 >= -6; var11--) {
          BlockPos var12 = var9;
          BlockState var13 = var10;
-         var9 = var9.method8313();
+         var9 = var9.down();
          var10 = this.world.getBlockState(var9);
          if ((var13.isAir() || var13.method23384().method31085()) && var10.method23384().method31090()) {
             return var12;

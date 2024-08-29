@@ -22,8 +22,8 @@ public class Class3248 extends Class3247 {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       if (var4.abilities.field29610) {
-         var2.method6725(var3, var1.method23459(field18711), 3);
-         return ActionResultType.method9002(var2.field9020);
+         var2.setBlockState(var3, var1.method23459(field18711), 3);
+         return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14820;
       }
@@ -42,7 +42,7 @@ public class Class3248 extends Class3247 {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !var4.method6714() && var2.method544() != var1.<Direction>method23463(field18484).method544()
+      return !var4.isRemote() && var2.method544() != var1.<Direction>method23463(field18484).method544()
          ? var1.method23465(field18710, Boolean.valueOf(this.method11667(var4, var5, var1)))
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }

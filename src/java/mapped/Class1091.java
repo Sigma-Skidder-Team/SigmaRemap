@@ -71,7 +71,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class9069.method33793(this, (Class880)var1.method31109());
          }
@@ -99,9 +99,9 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public void method4258() {
-      this.world.method6820().startSection("hoglinBrain");
+      this.world.getProfiler().startSection("hoglinBrain");
       this.method2992().method21432((ServerWorld)this.world, this);
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
       Class9069.method33784(this);
       if (!this.method5087()) {
          this.field5978 = 0;
@@ -135,7 +135,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    public static boolean method5081(EntityType<Class1091> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return !var1.getBlockState(var3.method8313()).method23448(Blocks.field36891);
+      return !var1.getBlockState(var3.down()).method23448(Blocks.field36891);
    }
 
    @Nullable
@@ -156,7 +156,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
       if (!Class9069.method33790(this, var1)) {
-         return !var2.getBlockState(var1.method8313()).method23448(Blocks.field37083) ? 0.0F : 10.0F;
+         return !var2.getBlockState(var1.down()).method23448(Blocks.field37083) ? 0.0F : 10.0F;
       } else {
          return -1.0F;
       }
@@ -254,7 +254,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    public boolean method5087() {
-      return !this.world.method6812().method36880() && !this.method5086() && !this.method4305();
+      return !this.world.method6812().isPiglinSafe() && !this.method5086() && !this.method4305();
    }
 
    private void method5088(boolean var1) {
@@ -288,7 +288,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public Class9455 method4241() {
-      return !this.world.field9020 ? Class9069.method33798(this).orElse((Class9455)null) : null;
+      return !this.world.isRemote ? Class9069.method33798(this).orElse((Class9455)null) : null;
    }
 
    @Override

@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public class Class1674 implements Class1670 {
+public class Chunk implements IChunk {
    private static final Logger field9110 = LogManager.getLogger();
    public static final Class7038 field9111 = null;
    private final Class7038[] field9112 = new Class7038[16];
@@ -39,12 +39,12 @@ public class Class1674 implements Class1670 {
    private long field9127;
    private volatile boolean field9128;
    private long field9129;
-   private Supplier<Class77> field9130;
-   private Consumer<Class1674> field9131;
+   private Supplier<ChunkHolderLocationType> field9130;
+   private Consumer<Chunk> field9131;
    private final Class7481 field9132;
    private volatile boolean field9133;
 
-   public Class1674(World var1, Class7481 var2, Class1684 var3) {
+   public Chunk(World var1, Class7481 var2, Class1684 var3) {
       this(
          var1,
          var2,
@@ -54,11 +54,11 @@ public class Class1674 implements Class1670 {
          Class6804.<Fluid>method20727(),
          0L,
          (Class7038[])null,
-         (Consumer<Class1674>)null
+         (Consumer<Chunk>)null
       );
    }
 
-   public Class1674(
+   public Chunk(
       World var1,
       Class7481 var2,
       Class1684 var3,
@@ -67,7 +67,7 @@ public class Class1674 implements Class1670 {
       Class6802<Fluid> var6,
       long var7,
       Class7038[] var9,
-      Consumer<Class1674> var10
+      Consumer<Chunk> var10
    ) {
       this.field9120 = new Class51[16];
       this.field9116 = var1;
@@ -75,7 +75,7 @@ public class Class1674 implements Class1670 {
       this.field9118 = var4;
 
       for (Class101 var16 : Class101.values()) {
-         if (Class9176.field42145.method34305().contains(var16)) {
+         if (ChunkStatus.FULL.method34305().contains(var16)) {
             this.field9117.put(var16, new Class7527(this, var16));
          }
       }
@@ -98,7 +98,7 @@ public class Class1674 implements Class1670 {
       }
    }
 
-   public Class1674(World var1, Class1672 var2) {
+   public Chunk(World var1, Class1672 var2) {
       this(
          var1,
          var2.method7072(),
@@ -108,7 +108,7 @@ public class Class1674 implements Class1670 {
          var2.method7090(),
          var2.method7093(),
          var2.method7067(),
-         (Consumer<Class1674>)null
+         (Consumer<Chunk>)null
       );
 
       for (CompoundNBT var6 : var2.method7109()) {
@@ -132,7 +132,7 @@ public class Class1674 implements Class1670 {
       this.method7102(var2.method7101());
 
       for (Entry var11 : var2.method7068()) {
-         if (Class9176.field42145.method34305().contains(var11.getKey())) {
+         if (ChunkStatus.FULL.method34305().contains(var11.getKey())) {
             this.method7070((Class101)var11.getKey()).method24582(((Class7527)var11.getValue()).method24583());
          }
       }
@@ -163,7 +163,7 @@ public class Class1674 implements Class1670 {
       int var4 = var1.getX();
       int var5 = var1.getY();
       int var6 = var1.getZ();
-      if (this.field9116.method6823()) {
+      if (this.field9116.isDebug()) {
          BlockState var11 = null;
          if (var5 == 60) {
             var11 = Blocks.field36765.method11579();
@@ -194,11 +194,11 @@ public class Class1674 implements Class1670 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       return this.method7130(var1.getX(), var1.getY(), var1.getZ());
    }
 
-   public Class7379 method7130(int var1, int var2, int var3) {
+   public FluidState method7130(int var1, int var2, int var3) {
       try {
          if (var2 >= 0 && var2 >> 4 < this.field9112.length) {
             Class7038 var6 = this.field9112[var2 >> 4];
@@ -218,7 +218,7 @@ public class Class1674 implements Class1670 {
 
    @Nullable
    @Override
-   public BlockState method7061(BlockPos var1, BlockState var2, boolean var3) {
+   public BlockState setBlockState(BlockPos var1, BlockState var2, boolean var3) {
       int var6 = var1.getX() & 15;
       int var7 = var1.getY();
       int var8 = var1.getZ() & 15;
@@ -243,10 +243,10 @@ public class Class1674 implements Class1670 {
          this.field9117.get(Class101.field296).method24578(var6, var7, var8, var2);
          boolean var14 = var9.method21858();
          if (var10 != var14) {
-            this.field9116.method6883().method7348().method641(var1, var14);
+            this.field9116.getChunkProvider().getLightManager().method641(var1, var14);
          }
 
-         if (this.field9116.field9020) {
+         if (this.field9116.isRemote) {
             if (var13 != var12 && var13 instanceof Class3245) {
                this.field9116.method6762(var1);
             }
@@ -262,7 +262,7 @@ public class Class1674 implements Class1670 {
                }
             }
 
-            if (!this.field9116.field9020) {
+            if (!this.field9116.isRemote) {
                var2.method23428(this.field9116, var1, var11, var3);
             }
 
@@ -288,7 +288,7 @@ public class Class1674 implements Class1670 {
 
    @Nullable
    public Class196 method7131() {
-      return this.field9116.method6883().method7348();
+      return this.field9116.getChunkProvider().getLightManager();
    }
 
    @Override
@@ -384,7 +384,7 @@ public class Class1674 implements Class1670 {
 
    public void method7135(TileEntity var1) {
       this.method7062(var1.getPos(), var1);
-      if (this.field9115 || this.field9116.method6714()) {
+      if (this.field9115 || this.field9116.isRemote()) {
          this.field9116.method6761(var1.getPos(), var1);
       }
    }
@@ -427,7 +427,7 @@ public class Class1674 implements Class1670 {
 
    @Override
    public void method7081(BlockPos var1) {
-      if (this.field9115 || this.field9116.method6714()) {
+      if (this.field9115 || this.field9116.isRemote()) {
          TileEntity var4 = this.field9119.remove(var1);
          if (var4 != null) {
             var4.method3765();
@@ -588,7 +588,7 @@ public class Class1674 implements Class1670 {
                .spliterator(),
             false
          )
-         .filter(var1 -> this.getBlockState(var1).method23392() != 0);
+         .filter(var1 -> this.getBlockState(var1).getLightValue() != 0);
    }
 
    @Override
@@ -685,7 +685,7 @@ public class Class1674 implements Class1670 {
                BlockPos var7 = Class1672.method7114(var6, var4, var3);
                BlockState var8 = this.getBlockState(var7);
                BlockState var9 = Block.method11542(var8, this.field9116, var7);
-               this.field9116.method6725(var7, var9, 20);
+               this.field9116.setBlockState(var7, var9, 20);
             }
 
             this.field9123[var4].clear();
@@ -755,7 +755,7 @@ public class Class1674 implements Class1670 {
             this.field9125 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Fluid>)this.field9125).method20738(this.field9116.method6861(), var1 -> this.method6739(var1).method23472());
+         ((Class6806<Fluid>)this.field9125).method20738(this.field9116.method6861(), var1 -> this.getFluidState(var1).method23472());
          this.field9125 = Class6804.method20727();
       }
    }
@@ -777,15 +777,15 @@ public class Class1674 implements Class1670 {
    }
 
    @Override
-   public Class9176 method7080() {
-      return Class9176.field42145;
+   public ChunkStatus method7080() {
+      return ChunkStatus.FULL;
    }
 
-   public Class77 method7152() {
-      return this.field9130 != null ? this.field9130.get() : Class77.field167;
+   public ChunkHolderLocationType getLocationType() {
+      return this.field9130 != null ? this.field9130.get() : ChunkHolderLocationType.field167;
    }
 
-   public void method7153(Supplier<Class77> var1) {
+   public void method7153(Supplier<ChunkHolderLocationType> var1) {
       this.field9130 = var1;
    }
 

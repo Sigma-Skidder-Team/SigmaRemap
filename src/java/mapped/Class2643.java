@@ -58,7 +58,7 @@ public class Class2643 extends Class2642 {
    public void method10805() {
       super.method10805();
       if (this.field16974.method3013().nextInt(20) == 0) {
-         this.field16974.world.method6999(1019, this.field16975, 0);
+         this.field16974.world.playEvent(1019, this.field16975, 0);
          if (!this.field16974.field4947) {
             this.field16974.swingArm(this.field16974.method3149());
          }
@@ -72,9 +72,9 @@ public class Class2643 extends Class2642 {
       }
 
       if (this.field16982 == this.method10852() && this.method10853(this.field16974.world.method6997())) {
-         this.field16974.world.method6728(this.field16975, false);
-         this.field16974.world.method6999(1021, this.field16975, 0);
-         this.field16974.world.method6999(2001, this.field16975, Block.method11535(this.field16974.world.getBlockState(this.field16975)));
+         this.field16974.world.removeBlock(this.field16975, false);
+         this.field16974.world.playEvent(1021, this.field16975, 0);
+         this.field16974.world.playEvent(2001, this.field16975, Block.getStateId(this.field16974.world.getBlockState(this.field16975)));
       }
    }
 

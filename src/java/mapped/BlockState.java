@@ -50,7 +50,7 @@ public class BlockState extends Class7377 {
    }
 
    public int method23494(Class1665 var1, BlockPos var2) {
-      return this.method23392();
+      return this.getLightValue();
    }
 
    public boolean method23495() {

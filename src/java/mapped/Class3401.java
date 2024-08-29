@@ -27,14 +27,14 @@ public class Class3401 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.method6812().method36878() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().method8905()) {
+      if (var2.method6812().isNatural() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().method8905()) {
          while (var2.getBlockState(var3).method23448(this)) {
-            var3 = var3.method8313();
+            var3 = var3.down();
          }
 
          if (var2.getBlockState(var3).method23385(var2, var3, EntityType.field41110)) {
             Entity var7 = EntityType.field41110
-               .method33201(var2, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var3.method8311(), Class2202.field14394, false, false);
+               .method33201(var2, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var3.up(), Class2202.field14394, false, false);
             if (var7 != null) {
                var7.method3218();
             }
@@ -82,7 +82,7 @@ public class Class3401 extends Block {
          double var16 = ((double)var4.nextFloat() - 0.5) * 0.5;
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.5;
          int var20 = var4.nextInt(2) * 2 - 1;
-         if (!var2.getBlockState(var3.method8345()).method23448(this) && !var2.getBlockState(var3.method8347()).method23448(this)) {
+         if (!var2.getBlockState(var3.west()).method23448(this) && !var2.getBlockState(var3.east()).method23448(this)) {
             var8 = (double)var3.getX() + 0.5 + 0.25 * (double)var20;
             var14 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          } else {

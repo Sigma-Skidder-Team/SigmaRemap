@@ -53,13 +53,13 @@ public class Class7197 extends Class7196 {
    }
 
    @Override
-   public boolean method22611(Class1670 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
+   public boolean method22611(IChunk var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       return false;
    }
 
    @Override
    public boolean method22596(
-      Class1670 var1,
+      IChunk var1,
       Function<BlockPos, Biome> var2,
       BitSet var3,
       Random var4,

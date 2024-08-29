@@ -132,7 +132,7 @@ public class Class1807 implements AutoCloseable {
          }
       }
 
-      Class298 var7 = new Class298(new ResourceLocation(this.field9734.method8293(), this.field9734.method8292() + "/" + this.field9741.size()), var1.method8692());
+      Class298 var7 = new Class298(new ResourceLocation(this.field9734.getNamespace(), this.field9734.getPath() + "/" + this.field9741.size()), var1.method8692());
       this.field9741.add(var7);
       this.field9733.method1073(var7.method1176(), var7);
       Class8978 var8 = var7.method1175(var1);

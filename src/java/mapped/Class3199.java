@@ -95,8 +95,8 @@ public class Class3199 extends Class3198 {
       Direction var7 = var1.method18350();
       Class113 var8 = var7.method544();
       boolean var9 = var8 == Class113.field415
-            && (this.method11504(var4.getBlockState(var5.method8345())) || this.method11504(var4.getBlockState(var5.method8347())))
-         || var8 == Class113.field413 && (this.method11504(var4.getBlockState(var5.method8341())) || this.method11504(var4.getBlockState(var5.method8343())));
+            && (this.method11504(var4.getBlockState(var5.west())) || this.method11504(var4.getBlockState(var5.east())))
+         || var8 == Class113.field413 && (this.method11504(var4.getBlockState(var5.north())) || this.method11504(var4.getBlockState(var5.south())));
       return this.method11579()
          .method23465(field18484, var7)
          .method23465(field18486, Boolean.valueOf(var6))
@@ -105,7 +105,7 @@ public class Class3199 extends Class3198 {
    }
 
    private boolean method11504(BlockState var1) {
-      return var1.getBlock().method11540(Class7645.field32764);
+      return var1.getBlock().method11540(BlockTags.field32764);
    }
 
    @Override
@@ -117,22 +117,22 @@ public class Class3199 extends Class3198 {
          }
 
          var1 = var1.method23465(field18486, Boolean.valueOf(true));
-         var2.method6725(var3, var1, 10);
+         var2.setBlockState(var3, var1, 10);
       } else {
          var1 = var1.method23465(field18486, Boolean.valueOf(false));
-         var2.method6725(var3, var1, 10);
+         var2.setBlockState(var3, var1, 10);
       }
 
       var2.method6869(var4, !var1.<Boolean>method23463(field18486) ? 1014 : 1008, var3, 0);
-      return ActionResultType.method9002(var2.field9020);
+      return ActionResultType.method9002(var2.isRemote);
    }
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          boolean var9 = var2.method6780(var3);
          if (var1.<Boolean>method23463(field18487) != var9) {
-            var2.method6725(var3, var1.method23465(field18487, Boolean.valueOf(var9)).method23465(field18486, Boolean.valueOf(var9)), 2);
+            var2.setBlockState(var3, var1.method23465(field18487, Boolean.valueOf(var9)).method23465(field18486, Boolean.valueOf(var9)), 2);
             if (var1.<Boolean>method23463(field18486) != var9) {
                var2.method6869((PlayerEntity)null, !var9 ? 1014 : 1008, var3, 0);
             }

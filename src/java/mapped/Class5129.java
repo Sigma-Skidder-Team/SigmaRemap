@@ -19,7 +19,7 @@ public class Class5129 implements Class5119 {
       RenderSystem.lineWidth(6.0F);
 
       for (BlockPos var14 : BlockPos.method8359(var11.method8336(-10, -10, -10), var11.method8336(10, 10, 10))) {
-         Class7379 var15 = var12.method6739(var14);
+         FluidState var15 = var12.getFluidState(var14);
          if (var15.method23486(Class8953.field40469)) {
             double var16 = (double)((float)var14.getY() + var15.method23475(var12, var14));
             DebugRenderer.method27457(
@@ -41,7 +41,7 @@ public class Class5129 implements Class5119 {
       }
 
       for (BlockPos var19 : BlockPos.method8359(var11.method8336(-10, -10, -10), var11.method8336(10, 10, 10))) {
-         Class7379 var20 = var12.method6739(var19);
+         FluidState var20 = var12.getFluidState(var19);
          if (var20.method23486(Class8953.field40469)) {
             DebugRenderer.method27460(
                String.valueOf(var20.method23477()),

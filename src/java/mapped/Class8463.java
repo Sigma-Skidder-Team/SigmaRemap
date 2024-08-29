@@ -20,7 +20,7 @@ public class Class8463 {
    public boolean method29762(ServerWorld var1, BlockPos var2) {
       if (this != field36278) {
          if (var1.method6763(var2)) {
-            Class7379 var5 = var1.method6739(var2);
+            FluidState var5 = var1.getFluidState(var2);
             Fluid var6 = var5.method23472();
             if (this.field36279 != null && !this.field36279.method24917(var6)) {
                return false;
@@ -47,7 +47,7 @@ public class Class8463 {
          ITag var7 = null;
          if (var3.has("tag")) {
             ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
-            var7 = Class9443.method36296().method32659().method27135(var6);
+            var7 = Class9443.method36296().method32659().get(var6);
             if (var7 == null) {
                throw new JsonSyntaxException("Unknown fluid tag '" + var6 + "'");
             }

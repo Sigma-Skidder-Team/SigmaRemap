@@ -41,7 +41,7 @@ public class Class3305 extends Item {
             var16.method4171(this.field18812);
             var16.rotationYaw = var2.rotationYaw;
             if (var1.method7053(var16, var16.getBoundingBox().method19664(-0.1))) {
-               if (!var1.field9020) {
+               if (!var1.isRemote) {
                   var1.method6916(var16);
                   if (!var2.abilities.isCreativeMode) {
                      var6.method32182(1);
@@ -49,7 +49,7 @@ public class Class3305 extends Item {
                }
 
                var2.method2913(Class8876.field40098.method172(this));
-               return Class6794.<ItemStack>method20700(var6, var1.method6714());
+               return Class6794.<ItemStack>method20700(var6, var1.isRemote());
             } else {
                return Class6794.<ItemStack>method20699(var6);
             }

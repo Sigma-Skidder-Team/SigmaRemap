@@ -66,11 +66,11 @@ public class Class3270 extends Class3264 {
          PlayerEntity var7 = var1.method18358();
          BlockState var8 = field18770.get(var6.getBlock());
          BlockState var9 = null;
-         if (var8 != null && var4.getBlockState(var5.method8311()).isAir()) {
+         if (var8 != null && var4.getBlockState(var5.up()).isAir()) {
             var4.method6742(var7, var5, Sounds.field27042, Class2266.field14732, 1.0F, 1.0F);
             var9 = var8;
          } else if (var6.getBlock() instanceof Class3244 && var6.<Boolean>method23463(Class3244.field18698)) {
-            if (!var4.method6714()) {
+            if (!var4.isRemote()) {
                var4.method6869((PlayerEntity)null, 1009, var5, 0);
             }
 
@@ -81,14 +81,14 @@ public class Class3270 extends Class3264 {
          if (var9 == null) {
             return ActionResultType.field14820;
          } else {
-            if (!var4.field9020) {
-               var4.method6725(var5, var9, 11);
+            if (!var4.isRemote) {
+               var4.setBlockState(var5, var9, 11);
                if (var7 != null) {
                   var1.method18357().method32121(1, var7, var1x -> var1x.method3185(var1.method18359()));
                }
             }
 
-            return ActionResultType.method9002(var4.field9020);
+            return ActionResultType.method9002(var4.isRemote);
          }
       }
    }

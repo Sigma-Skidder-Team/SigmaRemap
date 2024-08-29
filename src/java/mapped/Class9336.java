@@ -644,10 +644,10 @@ public class Class9336 {
 
    public static ResourceLocation method35332(ResourceLocation var0, String var1) {
       if (var0 != null) {
-         String var4 = var0.method8292();
+         String var4 = var0.getPath();
          String[] var5 = var4.split(".png");
          String var6 = var5[0];
-         return new ResourceLocation(var0.method8293(), var6 + "_" + var1 + ".png");
+         return new ResourceLocation(var0.getNamespace(), var6 + "_" + var1 + ".png");
       } else {
          return null;
       }

@@ -37,7 +37,7 @@ public class Class2683 extends Class2595 {
          this.field17098 = false;
          this.field17097.method4230().method21666();
          BlockPos var4 = this.field17097.getPosition();
-         Structure var5 = !((double)var3.field9016.nextFloat() >= 0.5) ? Structure.field18065 : Structure.field18069;
+         Structure var5 = !((double)var3.rand.nextFloat() >= 0.5) ? Structure.field18065 : Structure.field18069;
          BlockPos var6 = var3.method6943(var5, var4, 50, false);
          if (var6 != null) {
             this.field17097.method4776(var6);
@@ -77,7 +77,7 @@ public class Class2683 extends Class2595 {
 
          if (var5 != null) {
             BlockPos var6 = new BlockPos(var5);
-            if (!var3.method6739(var6).method23486(Class8953.field40469) || !var3.getBlockState(var6).method23440(var3, var6, Class1947.field12615)) {
+            if (!var3.getFluidState(var6).method23486(Class8953.field40469) || !var3.getBlockState(var6).method23440(var3, var6, Class1947.field12615)) {
                var5 = Class8037.method27587(this.field17097, 8, 5, var4);
             }
          }
@@ -91,7 +91,7 @@ public class Class2683 extends Class2595 {
             .method4227()
             .method28042(var5.field18048, var5.field18049, var5.field18050, (float)(this.field17097.method4260() + 20), (float)this.field17097.method4259());
          this.field17097.method4230().method21654(var5.field18048, var5.field18049, var5.field18050, 1.3);
-         if (var3.field9016.nextInt(80) == 0) {
+         if (var3.rand.nextInt(80) == 0) {
             var3.method6786(this.field17097, (byte)38);
          }
       }

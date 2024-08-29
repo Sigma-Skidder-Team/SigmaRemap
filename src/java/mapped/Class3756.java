@@ -30,7 +30,7 @@ public class Class3756 extends Class3676<Class880> {
 
             BlockState var8 = var1.getBlockState(var6.method35579());
             return var6.method35579().method8317(var2.getPositionVec(), 2.0)
-               && var8.getBlock().method11540(Class7645.field32770)
+               && var8.getBlock().method11540(BlockTags.field32770)
                && !var8.<Boolean>method23463(Class3250.field18714);
          } else {
             return false;

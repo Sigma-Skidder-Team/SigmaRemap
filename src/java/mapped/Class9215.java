@@ -78,7 +78,7 @@ public class Class9215 {
                   var24 = var24.method8350(var2.method252(Direction.EAST), (var23 - this.field42407) * 8);
                   var3.add(new Class4187(this.field42405, "corridor_floor", var24, var2));
                   if (var19.method29406(var23, var22 - 1) == 1 || (var18.method29406(var23, var22 - 1) & 8388608) == 8388608) {
-                     var3.add(new Class4187(this.field42405, "carpet_north", var24.method8350(var2.method252(Direction.EAST), 1).method8311(), var2));
+                     var3.add(new Class4187(this.field42405, "carpet_north", var24.method8350(var2.method252(Direction.EAST), 1).up(), var2));
                   }
 
                   if (var19.method29406(var23 + 1, var22) == 1 || (var18.method29406(var23 + 1, var22) & 8388608) == 8388608) {
@@ -86,7 +86,7 @@ public class Class9215 {
                         new Class4187(
                            this.field42405,
                            "carpet_east",
-                           var24.method8350(var2.method252(Direction.SOUTH), 1).method8350(var2.method252(Direction.EAST), 5).method8311(),
+                           var24.method8350(var2.method252(Direction.SOUTH), 1).method8350(var2.method252(Direction.EAST), 5).up(),
                            var2
                         )
                      );

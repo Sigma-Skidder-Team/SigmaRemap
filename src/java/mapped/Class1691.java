@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Class1691 implements Class1658 {
    private static final Logger field9200 = LogManager.getLogger();
-   private final List<Class1670> field9201;
+   private final List<IChunk> field9201;
    private final int field9202;
    private final int field9203;
    private final int field9204;
@@ -19,18 +19,18 @@ public class Class1691 implements Class1658 {
    private final long field9206;
    private final Class6612 field9207;
    private final Random field9208;
-   private final Class9535 field9209;
+   private final DimensionType field9209;
    private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).method7089());
    private final Class6802<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).method7090());
-   private final Class6668 field9212;
+   private final BiomeManager field9212;
    private final Class7481 field9213;
    private final Class7481 field9214;
    private final Class7480 field9215;
 
-   public Class1691(ServerWorld var1, List<Class1670> var2) {
+   public Class1691(ServerWorld var1, List<IChunk> var2) {
       int var5 = MathHelper.floor(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
-         Class7481 var6 = ((Class1670)var2.get(var2.size() / 2)).method7072();
+         Class7481 var6 = ((IChunk)var2.get(var2.size() / 2)).method7072();
          this.field9201 = var2;
          this.field9202 = var6.field32174;
          this.field9203 = var6.field32175;
@@ -40,9 +40,9 @@ public class Class1691 implements Class1658 {
          this.field9207 = var1.getWorldInfo();
          this.field9208 = var1.method6814();
          this.field9209 = var1.method6812();
-         this.field9212 = new Class6668(this, Class6668.method20321(this.field9206), var1.method6812().method36886());
-         this.field9213 = ((Class1670)var2.get(0)).method7072();
-         this.field9214 = ((Class1670)var2.get(var2.size() - 1)).method7072();
+         this.field9212 = new BiomeManager(this, BiomeManager.method20321(this.field9206), var1.method6812().getMagnifier());
+         this.field9213 = ((IChunk)var2.get(0)).method7072();
+         this.field9214 = ((IChunk)var2.get(var2.size() - 1)).method7072();
          this.field9215 = var1.method6893().method24339(this);
       } else {
          throw (IllegalStateException) Util.method38516(new IllegalStateException("Cache size is not a square."));
@@ -58,14 +58,14 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class1670 method6824(int var1, int var2) {
-      return this.method7012(var1, var2, Class9176.field42133);
+   public IChunk getChunk(int var1, int var2) {
+      return this.getChunk(var1, var2, ChunkStatus.field42133);
    }
 
    @Nullable
    @Override
-   public Class1670 method6724(int var1, int var2, Class9176 var3, boolean var4) {
-      Class1670 var7;
+   public IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4) {
+      IChunk var7;
       if (!this.method6843(var1, var2)) {
          var7 = null;
       } else {
@@ -103,12 +103,12 @@ public class Class1691 implements Class1658 {
 
    @Override
    public BlockState getBlockState(BlockPos var1) {
-      return this.method6824(var1.getX() >> 4, var1.getZ() >> 4).getBlockState(var1);
+      return this.getChunk(var1.getX() >> 4, var1.getZ() >> 4).getBlockState(var1);
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
-      return this.method7011(var1).method6739(var1);
+   public FluidState getFluidState(BlockPos var1) {
+      return this.method7011(var1).getFluidState(var1);
    }
 
    @Nullable
@@ -123,7 +123,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class6668 getBiomeManager() {
+   public BiomeManager getBiomeManager() {
       return this.field9212;
    }
 
@@ -143,15 +143,15 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public boolean method6729(BlockPos var1, boolean var2, Entity var3, int var4) {
+   public boolean destroyBlock(BlockPos var1, boolean var2, Entity var3, int var4) {
       BlockState var7 = this.getBlockState(var1);
       if (!var7.isAir()) {
          if (var2) {
             TileEntity var8 = !var7.getBlock().isTileEntityProvider() ? null : this.getTileEntity(var1);
-            Block.method11556(var7, this.field9205, var1, var8, var3, ItemStack.EMPTY);
+            Block.spawnDrops(var7, this.field9205, var1, var8, var3, ItemStack.EMPTY);
          }
 
-         return this.method6726(var1, Blocks.AIR.method11579(), 3, var4);
+         return this.setBlockState(var1, Blocks.AIR.method11579(), 3, var4);
       } else {
          return false;
       }
@@ -160,7 +160,7 @@ public class Class1691 implements Class1658 {
    @Nullable
    @Override
    public TileEntity getTileEntity(BlockPos var1) {
-      Class1670 var4 = this.method7011(var1);
+      IChunk var4 = this.method7011(var1);
       TileEntity var5 = var4.getTileEntity(var1);
       if (var5 == null) {
          CompoundNBT var6 = var4.method7086(var1);
@@ -194,11 +194,11 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public boolean method6726(BlockPos var1, BlockState var2, int var3, int var4) {
-      Class1670 var7 = this.method7011(var1);
-      BlockState var8 = var7.method7061(var1, var2, false);
+   public boolean setBlockState(BlockPos var1, BlockState var2, int var3, int var4) {
+      IChunk var7 = this.method7011(var1);
+      BlockState var8 = var7.setBlockState(var1, var2, false);
       if (var8 != null) {
-         this.field9205.method6727(var1, var8, var2);
+         this.field9205.onBlockStateChange(var1, var8, var2);
       }
 
       Block var9 = var2.getBlock();
@@ -232,22 +232,22 @@ public class Class1691 implements Class1658 {
    public boolean method6916(Entity var1) {
       int var4 = MathHelper.floor(var1.getPosX() / 16.0);
       int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
-      this.method6824(var4, var5).method7063(var1);
+      this.getChunk(var4, var5).method7063(var1);
       return true;
    }
 
    @Override
-   public boolean method6728(BlockPos var1, boolean var2) {
-      return this.method6725(var1, Blocks.AIR.method11579(), 3);
+   public boolean removeBlock(BlockPos var1, boolean var2) {
+      return this.setBlockState(var1, Blocks.AIR.method11579(), 3);
    }
 
    @Override
-   public Class7522 method6810() {
+   public WorldBorder method6810() {
       return this.field9205.method6810();
    }
 
    @Override
-   public boolean method6714() {
+   public boolean isRemote() {
       return false;
    }
 
@@ -277,8 +277,8 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class1702 method6883() {
-      return this.field9205.method6883();
+   public Class1702 getChunkProvider() {
+      return this.field9205.getChunkProvider();
    }
 
    @Override
@@ -308,7 +308,7 @@ public class Class1691 implements Class1658 {
 
    @Override
    public int method6736(Class101 var1, int var2, int var3) {
-      return this.method6824(var2 >> 4, var3 >> 4).method7071(var1, var2 & 15, var3 & 15) + 1;
+      return this.getChunk(var2 >> 4, var3 >> 4).method7071(var1, var2 & 15, var3 & 15) + 1;
    }
 
    @Override
@@ -324,7 +324,7 @@ public class Class1691 implements Class1658 {
    }
 
    @Override
-   public Class9535 method6812() {
+   public DimensionType method6812() {
       return this.field9209;
    }
 

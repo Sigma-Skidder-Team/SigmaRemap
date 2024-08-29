@@ -38,7 +38,7 @@ public class Class3272 extends Item implements Class3260 {
          if (var8 >= 10) {
             int var9 = Class7858.method26337(var1);
             if (var9 <= 0 || var7.method3253()) {
-               if (!var2.field9020) {
+               if (!var2.isRemote) {
                   var1.method32121(1, var7, var1x -> var1x.method3185(var3.method3149()));
                   if (var9 == 0) {
                      Class886 var10 = new Class886(var2, var7, var1);

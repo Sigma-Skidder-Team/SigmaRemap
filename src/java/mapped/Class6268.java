@@ -31,7 +31,7 @@ public class Class6268 implements Class6267 {
       }
 
       for (ResourceLocation var15 : Class8708.method31411()) {
-         String var7 = var15.method8292().trim();
+         String var7 = var15.getPath().trim();
          var7 = "BIOME_" + var7.toUpperCase().replace(' ', '_');
          int var8 = Class8708.method31408(var15);
          Class1888 var9 = new Class1888((float)var8);

@@ -9,7 +9,7 @@ public final class Class6470 implements Class6466<Optional<BlockState>> {
       if (!var2.isPresent()) {
          var1.writeVarInt(0);
       } else {
-         var1.writeVarInt(Block.method11535((BlockState)var2.get()));
+         var1.writeVarInt(Block.getStateId((BlockState)var2.get()));
       }
    }
 

@@ -32,7 +32,7 @@ public class Block extends Class3390 implements Class3303 {
       }
    );
 
-   public static int method11535(BlockState var0) {
+   public static int getStateId(BlockState var0) {
       if (var0 != null) {
          int var3 = field18610.method9171(var0);
          return var3 != -1 ? var3 : 0;
@@ -63,7 +63,7 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public static VoxelShape method11539(double var0, double var2, double var4, double var6, double var8, double var10) {
-      return VoxelShapes.method27427(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
+      return VoxelShapes.create(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
    }
 
    public boolean method11540(ITag<Block> var1) {
@@ -93,9 +93,9 @@ public class Block extends Class3390 implements Class3303 {
    public static void method11544(BlockState var0, BlockState var1, Class1660 var2, BlockPos var3, int var4, int var5) {
       if (var1 != var0) {
          if (!var1.isAir()) {
-            var2.method6726(var3, var1, var4 & -33, var5);
-         } else if (!var2.method6714()) {
-            var2.method6729(var3, (var4 & 32) == 0, (Entity)null, var5);
+            var2.setBlockState(var3, var1, var4 & -33, var5);
+         } else if (!var2.isRemote()) {
+            var2.destroyBlock(var3, (var4 & 32) == 0, (Entity)null, var5);
          }
       }
    }
@@ -115,7 +115,7 @@ public class Block extends Class3390 implements Class3303 {
          || var0 == Blocks.field36590
          || var0 == Blocks.MELON
          || var0 == Blocks.PUMPKIN
-         || var0.method11540(Class7645.field32805);
+         || var0.method11540(BlockTags.field32805);
    }
 
    public boolean method11499(BlockState var1) {
@@ -139,7 +139,7 @@ public class Block extends Class3390 implements Class3303 {
                   if (var11 == 127) {
                      VoxelShape var12 = var0.method23388(var1, var2, var3);
                      VoxelShape var13 = var7.method23388(var1, var6, var3.method536());
-                     boolean var14 = VoxelShapes.compare(var12, var13, IBooleanFunction.field44041);
+                     boolean var14 = VoxelShapes.compare(var12, var13, IBooleanFunction.ONLY_FIRST);
                      if (var10.size() == 2048) {
                         var10.removeLastByte();
                      }
@@ -167,7 +167,7 @@ public class Block extends Class3390 implements Class3303 {
 
    public static boolean method11548(Class1662 var0, BlockPos var1, Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
-      return var2 == Direction.DOWN && var5.method23446(Class7645.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
+      return var2 == Direction.DOWN && var5.method23446(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
    }
 
    public static boolean method11549(VoxelShape var0, Direction var1) {
@@ -191,7 +191,7 @@ public class Block extends Class3390 implements Class3303 {
 
    public static List<ItemStack> method11552(BlockState var0, ServerWorld var1, BlockPos var2, TileEntity var3) {
       Class9464 var6 = new Class9464(var1)
-         .method36450(var1.field9016)
+         .method36450(var1.rand)
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
          .method36454(Class9525.field44338, ItemStack.EMPTY)
          .method36455(Class9525.field44337, var3);
@@ -200,7 +200,7 @@ public class Block extends Class3390 implements Class3303 {
 
    public static List<ItemStack> method11553(BlockState var0, ServerWorld var1, BlockPos var2, TileEntity var3, Entity var4, ItemStack var5) {
       Class9464 var8 = new Class9464(var1)
-         .method36450(var1.field9016)
+         .method36450(var1.rand)
          .method36454(Class9525.field44335, Vector3d.method11328(var2))
          .method36454(Class9525.field44338, var5)
          .method36455(Class9525.field44330, var4)
@@ -222,7 +222,7 @@ public class Block extends Class3390 implements Class3303 {
       }
    }
 
-   public static void method11556(BlockState var0, World var1, BlockPos var2, TileEntity var3, Entity var4, ItemStack var5) {
+   public static void spawnDrops(BlockState var0, World var1, BlockPos var2, TileEntity var3, Entity var4, ItemStack var5) {
       if (var1 instanceof ServerWorld) {
          method11553(var0, (ServerWorld)var1, var2, var3, var4, var5).forEach(var2x -> method11557(var1, var2, var2x));
          var0.method23433((ServerWorld)var1, var2, var5);
@@ -230,11 +230,11 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public static void method11557(World var0, BlockPos var1, ItemStack var2) {
-      if (!var0.field9020 && !var2.isEmpty() && var0.method6789().method17135(Class5462.field24228)) {
+      if (!var0.isRemote && !var2.isEmpty() && var0.method6789().method17135(Class5462.field24228)) {
          float var5 = 0.5F;
-         double var6 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
-         double var8 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
-         double var10 = (double)(var0.field9016.nextFloat() * 0.5F) + 0.25;
+         double var6 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
+         double var8 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
+         double var10 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
          ItemEntity var12 = new ItemEntity(var0, (double)var1.getX() + var6, (double)var1.getY() + var8, (double)var1.getZ() + var10, var2);
          var12.method4131();
          var0.method6916(var12);
@@ -269,7 +269,7 @@ public class Block extends Class3390 implements Class3303 {
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
       var2.method2913(Class8876.field40096.method172(this));
       var2.method2931(0.005F);
-      method11556(var4, var1, var3, var5, var2, var6);
+      spawnDrops(var4, var1, var3, var5, var2, var6);
    }
 
    public void method11563(World var1, BlockPos var2, BlockState var3, Class880 var4, ItemStack var5) {
@@ -280,10 +280,10 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public IFormattableTextComponent method11565() {
-      return new TranslationTextComponent(this.method11566());
+      return new TranslationTextComponent(this.getTranslationKey());
    }
 
-   public String method11566() {
+   public String getTranslationKey() {
       if (this.field18614 == null) {
          this.field18614 = Util.method38486("block", Registry.BLOCK.getKey(this));
       }
@@ -320,8 +320,8 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      var1.method6869(var4, 2001, var2, method11535(var3));
-      if (this.method11540(Class7645.field32810)) {
+      var1.method6869(var4, 2001, var2, getStateId(var3));
+      if (this.method11540(BlockTags.field32810)) {
          Class4388.method13832(var4, false);
       }
    }

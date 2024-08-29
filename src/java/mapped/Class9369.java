@@ -17,8 +17,8 @@ public class Class9369 {
    private static final Logger field43490 = LogManager.getLogger();
    public static final Codec<Class9369> field43491 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               ResourceLocation.field13020.fieldOf("name").forGetter(Class9369::method35537),
-               ResourceLocation.field13020.fieldOf("fallback").forGetter(Class9369::method35534),
+               ResourceLocation.CODEC.fieldOf("name").forGetter(Class9369::method35537),
+               ResourceLocation.CODEC.fieldOf("fallback").forGetter(Class9369::method35534),
                Codec.mapPair(Class7487.field32183.fieldOf("element"), Codec.INT.fieldOf("weight"))
                   .codec()
                   .listOf()
@@ -28,7 +28,7 @@ public class Class9369 {
             )
             .apply(var0, Class9369::new)
    );
-   public static final Codec<Supplier<Class9369>> field43492 = Class9054.method33671(Registry.field16105, field43491);
+   public static final Codec<Supplier<Class9369>> field43492 = RegistryKeyCodec.create(Registry.field16105, field43491);
    private final ResourceLocation field43493;
    private final List<Pair<Class7487, Integer>> field43494;
    private final List<Class7487> field43495;

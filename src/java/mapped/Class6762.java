@@ -49,10 +49,10 @@ public class Class6762 extends Class6764 {
                (this.field29475.getBlockState(var6).isAir() || this.field29475.getBlockState(var6).method23440(this.field29475, var6, Class1947.field12614))
                   && var6.getY() > 0
             ) {
-               var6 = var6.method8313();
+               var6 = var6.down();
             }
 
-            var4 = var6.method8311().getY();
+            var4 = var6.up().getY();
          } else {
             var4 = MathHelper.floor(this.field29476.getPosY() + 0.5);
          }
@@ -191,7 +191,7 @@ public class Class6762 extends Class6764 {
    }
 
    public static double method20626(Class1665 var0, BlockPos var1) {
-      BlockPos var4 = var1.method8313();
+      BlockPos var4 = var1.down();
       VoxelShape var5 = var0.getBlockState(var4).method23414(var0, var4);
       return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
    }
@@ -389,7 +389,7 @@ public class Class6762 extends Class6764 {
 
       if (var5 == Class2163.field14193
          && !(var1.getBlockState(var4).getBlock() instanceof Class3429)
-         && !(var1.getBlockState(var4.method8313()).getBlock() instanceof Class3429)) {
+         && !(var1.getBlockState(var4.down()).getBlock() instanceof Class3429)) {
          var5 = Class2163.field14194;
       }
 
@@ -476,7 +476,7 @@ public class Class6762 extends Class6764 {
                      return Class2163.field14195;
                   }
 
-                  if (var0.method6739(var1).method23486(Class8953.field40469)) {
+                  if (var0.getFluidState(var1).method23486(Class8953.field40469)) {
                      return Class2163.field14192;
                   }
                }
@@ -493,7 +493,7 @@ public class Class6762 extends Class6764 {
       Class8649 var6 = var4.method23384();
       if (var4.isAir()) {
          return Class2163.field14185;
-      } else if (var4.method23446(Class7645.field32768) || var4.method23448(Blocks.LILY_PAD)) {
+      } else if (var4.method23446(BlockTags.field32768) || var4.method23448(Blocks.LILY_PAD)) {
          return Class2163.field14188;
       } else if (var4.method23448(Blocks.CACTUS)) {
          return Class2163.field14198;
@@ -504,7 +504,7 @@ public class Class6762 extends Class6764 {
       } else if (var4.method23448(Blocks.COCOA)) {
          return Class2163.field14207;
       } else {
-         Class7379 var7 = var0.method6739(var1);
+         FluidState var7 = var0.getFluidState(var1);
          if (var7.method23486(Class8953.field40469)) {
             return Class2163.field14191;
          } else if (var7.method23486(Class8953.field40470)) {
@@ -521,8 +521,8 @@ public class Class6762 extends Class6764 {
             return Class2163.field14193;
          } else if (var5 instanceof Class3465) {
             return Class2163.field14205;
-         } else if (!var5.method11540(Class7645.field32771)
-            && !var5.method11540(Class7645.field32764)
+         } else if (!var5.method11540(BlockTags.field32771)
+            && !var5.method11540(BlockTags.field32764)
             && (!(var5 instanceof Class3199) || var4.<Boolean>method23463(Class3199.field18486))) {
             return var4.method23440(var0, var1, Class1947.field12614) ? Class2163.field14185 : Class2163.field14184;
          } else {
@@ -532,7 +532,7 @@ public class Class6762 extends Class6764 {
    }
 
    private static boolean method20636(BlockState var0) {
-      return var0.method23446(Class7645.field32798)
+      return var0.method23446(BlockTags.field32798)
          || var0.method23448(Blocks.LAVA)
          || var0.method23448(Blocks.field36890)
          || Class3244.method11655(var0);

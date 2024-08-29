@@ -43,7 +43,7 @@ public class Class6089 extends Class6069 {
                      && var12.<Integer>method23463(Class3404.field19079) == 0
                      && var6.method23443(var1, var10)
                      && var1.method7049(var6, var10, ISelectionContext.method14947())) {
-                     var1.method6730(var10, var6);
+                     var1.setBlockState(var10, var6);
                      var1.method6860().method20726(var10, Blocks.field36889, MathHelper.method37782(var0.method3013(), 60, 120));
                   }
                }

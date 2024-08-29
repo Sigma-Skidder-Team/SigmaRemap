@@ -115,7 +115,7 @@ public class Class3238 extends Block implements Class3207 {
    }
 
    @Override
-   public Class7379 method11498(BlockState var1) {
+   public FluidState method11498(BlockState var1) {
       return !var1.<Boolean>method23463(field18684) ? super.method11498(var1) : Class9479.field44066.method25078(false);
    }
 

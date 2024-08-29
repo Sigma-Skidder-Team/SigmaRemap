@@ -12,10 +12,10 @@ public interface Class1665 {
 
    BlockState getBlockState(BlockPos var1);
 
-   Class7379 method6739(BlockPos var1);
+   FluidState getFluidState(BlockPos var1);
 
    default int method7032(BlockPos var1) {
-      return this.getBlockState(var1).method23392();
+      return this.getBlockState(var1).getLightValue();
    }
 
    default int method7033() {
@@ -35,7 +35,7 @@ public interface Class1665 {
          var1,
          (var1x, var2) -> {
             BlockState var5 = this.getBlockState(var2);
-            Class7379 var6 = this.method6739(var2);
+            FluidState var6 = this.getFluidState(var2);
             Vector3d var7 = var1x.method20745();
             Vector3d var8 = var1x.method20744();
             VoxelShape var9 = var1x.method20746(var5, this, var2);
@@ -79,7 +79,7 @@ public interface Class1665 {
 
    default double method7039(BlockPos var1) {
       return this.method7038(this.getBlockState(var1).method23414(this, var1), () -> {
-         BlockPos var4 = var1.method8313();
+         BlockPos var4 = var1.down();
          return this.getBlockState(var4).method23414(this, var4);
       });
    }
@@ -109,9 +109,9 @@ public interface Class1665 {
             double var33 = var30 != 0 ? (double)var30 / var24 : Double.MAX_VALUE;
             double var35 = var31 != 0 ? (double)var31 / var26 : Double.MAX_VALUE;
             double var37 = var32 != 0 ? (double)var32 / var28 : Double.MAX_VALUE;
-            double var39 = var33 * (var30 <= 0 ? MathHelper.method37808(var13) : 1.0 - MathHelper.method37808(var13));
-            double var41 = var35 * (var31 <= 0 ? MathHelper.method37808(var15) : 1.0 - MathHelper.method37808(var15));
-            double var43 = var37 * (var32 <= 0 ? MathHelper.method37808(var17) : 1.0 - MathHelper.method37808(var17));
+            double var39 = var33 * (var30 <= 0 ? MathHelper.frac(var13) : 1.0 - MathHelper.frac(var13));
+            double var41 = var35 * (var31 <= 0 ? MathHelper.frac(var15) : 1.0 - MathHelper.frac(var15));
+            double var43 = var37 * (var32 <= 0 ? MathHelper.frac(var17) : 1.0 - MathHelper.frac(var17));
 
             while (var39 <= 1.0 || var41 <= 1.0 || var43 <= 1.0) {
                if (!(var39 < var41)) {

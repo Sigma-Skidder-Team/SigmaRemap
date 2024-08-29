@@ -12,7 +12,7 @@ public class Class7212 {
    private static final int field31012 = (int)Math.pow(16.0, 2.0);
    private static final Direction[] field31013 = Direction.values();
    private final BitSet field31014 = new BitSet(4096);
-   private static final int[] field31015 = Util.<int[]>method38508(new int[1352], var0 -> {
+   private static final int[] field31015 = Util.<int[]>make(new int[1352], var0 -> {
       boolean var3 = false;
       byte var4 = 15;
       int var5 = 0;

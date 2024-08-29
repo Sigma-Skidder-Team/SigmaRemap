@@ -11,19 +11,19 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-public abstract class Class5646 {
-   public static final Codec<Class5646> field24984 = Registry.field16136.dispatchStable(Class5646::method17790, Function.identity());
+public abstract class ChunkGenerator {
+   public static final Codec<ChunkGenerator> field24984 = Registry.field16136.dispatchStable(ChunkGenerator::method17790, Function.identity());
    public final Class1685 field24985;
    public final Class1685 field24986;
    private final Class9763 field24987;
    private final long field24988;
    private final List<Class7481> field24989 = Lists.newArrayList();
 
-   public Class5646(Class1685 var1, Class9763 var2) {
+   public ChunkGenerator(Class1685 var1, Class9763 var2) {
       this(var1, var1, var2, 0L);
    }
 
-   public Class5646(Class1685 var1, Class1685 var2, Class9763 var3, long var4) {
+   public ChunkGenerator(Class1685 var1, Class1685 var2, Class9763 var3, long var4) {
       this.field24985 = var1;
       this.field24986 = var2;
       this.field24987 = var3;
@@ -75,17 +75,17 @@ public abstract class Class5646 {
       }
    }
 
-   public abstract Codec<? extends Class5646> method17790();
+   public abstract Codec<? extends ChunkGenerator> method17790();
 
-   public abstract Class5646 method17791(long var1);
+   public abstract ChunkGenerator method17791(long var1);
 
-   public void method17818(Registry<Biome> var1, Class1670 var2) {
+   public void method17818(Registry<Biome> var1, IChunk var2) {
       Class7481 var5 = var2.method7072();
       ((Class1672)var2).method7110(new Class1684(var1, var5, this.field24986));
    }
 
-   public void method17819(long var1, Class6668 var3, Class1670 var4, Class97 var5) {
-      Class6668 var8 = var3.method20322(this.field24985);
+   public void method17819(long var1, BiomeManager var3, IChunk var4, Class97 var5) {
+      BiomeManager var8 = var3.method20322(this.field24985);
       Class2420 var9 = new Class2420();
       byte var10 = 8;
       Class7481 var11 = var4.method7072();
@@ -163,7 +163,7 @@ public abstract class Class5646 {
       }
    }
 
-   public abstract void method17801(Class1691 var1, Class1670 var2);
+   public abstract void method17801(Class1691 var1, IChunk var2);
 
    public void method17809(Class1691 var1) {
    }
@@ -188,7 +188,7 @@ public abstract class Class5646 {
       return var1.method32499().method31968(var3);
    }
 
-   public void method17825(DynamicRegistries var1, Class7480 var2, Class1670 var3, Class8761 var4, long var5) {
+   public void method17825(DynamicRegistries var1, Class7480 var2, IChunk var3, Class8761 var4, long var5) {
       Class7481 var9 = var3.method7072();
       Biome var10 = this.field24985.method7005((var9.field32174 << 2) + 2, 0, (var9.field32175 << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
@@ -198,7 +198,7 @@ public abstract class Class5646 {
       }
    }
 
-   private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, Class1670 var4, Class8761 var5, long var6, Class7481 var8, Biome var9) {
+   private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, IChunk var4, Class8761 var5, long var6, Class7481 var8, Biome var9) {
       Class5444 var12 = var3.method24341(Class2002.method8391(var4.method7072(), 0), var1.field43174, var4);
       int var13 = var12 == null ? 0 : var12.method17123();
       Class8483 var14 = this.field24987.method38381(var1.field43174);
@@ -208,7 +208,7 @@ public abstract class Class5646 {
       }
    }
 
-   public void method17827(Class1658 var1, Class7480 var2, Class1670 var3) {
+   public void method17827(Class1658 var1, Class7480 var2, IChunk var3) {
       byte var6 = 8;
       int var7 = var3.method7072().field32174;
       int var8 = var3.method7072().field32175;
@@ -220,7 +220,7 @@ public abstract class Class5646 {
          for (int var13 = var8 - 8; var13 <= var8 + 8; var13++) {
             long var14 = Class7481.method24353(var12, var13);
 
-            for (Class5444 var17 : var1.method6824(var12, var13).method7074().values()) {
+            for (Class5444 var17 : var1.getChunk(var12, var13).method7074().values()) {
                try {
                   if (var17 != Class5444.field24194 && var17.method17110().method38391(var9, var10, var9 + 15, var10 + 15)) {
                      var2.method24343(var11, var17.method17125(), var14, var3);
@@ -239,7 +239,7 @@ public abstract class Class5646 {
       }
    }
 
-   public abstract void method17803(Class1660 var1, Class7480 var2, Class1670 var3);
+   public abstract void method17803(Class1660 var1, Class7480 var2, IChunk var3);
 
    public int method17807() {
       return 63;
@@ -263,8 +263,8 @@ public abstract class Class5646 {
    }
 
    static {
-      Registry.<Codec<? extends Class5646>>method9194(Registry.field16136, "noise", Class5645.field24963);
-      Registry.<Codec<? extends Class5646>>method9194(Registry.field16136, "flat", Class5648.field24998);
-      Registry.<Codec<? extends Class5646>>method9194(Registry.field16136, "debug", Class5647.field24991);
+      Registry.<Codec<? extends ChunkGenerator>>method9194(Registry.field16136, "noise", NoiseChunkGenerator.field24963);
+      Registry.<Codec<? extends ChunkGenerator>>method9194(Registry.field16136, "flat", Class5648.field24998);
+      Registry.<Codec<? extends ChunkGenerator>>method9194(Registry.field16136, "debug", Class5647.field24991);
    }
 }

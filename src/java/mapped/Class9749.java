@@ -81,9 +81,9 @@ public class Class9749 {
       RegistryKey var6 = var5.getDimensionKey();
       boolean var7 = var5.method6949().contains(var4.method24352());
       if (!var7) {
-         throw field45508.create(var4, var6.method31399());
+         throw field45508.create(var4, var6.getLocation());
       } else {
-         var0.method20179(new TranslationTextComponent("commands.forceload.query.success", var4, var6.method31399()), false);
+         var0.method20179(new TranslationTextComponent("commands.forceload.query.success", var4, var6.getLocation()), false);
          return 1;
       }
    }
@@ -94,13 +94,13 @@ public class Class9749 {
       LongSet var5 = var3.method6949();
       int var6 = var5.size();
       if (var6 <= 0) {
-         var0.method20181(new TranslationTextComponent("commands.forceload.added.none", var4.method31399()));
+         var0.method20181(new TranslationTextComponent("commands.forceload.added.none", var4.getLocation()));
       } else {
          String var7 = Joiner.on(", ").join(var5.stream().sorted().<Class7481>map(Class7481::new).<String>map(Class7481::toString).iterator());
          if (var6 != 1) {
-            var0.method20179(new TranslationTextComponent("commands.forceload.list.multiple", var6, var4.method31399(), var7), false);
+            var0.method20179(new TranslationTextComponent("commands.forceload.list.multiple", var6, var4.getLocation(), var7), false);
          } else {
-            var0.method20179(new TranslationTextComponent("commands.forceload.list.single", var4.method31399(), var7), false);
+            var0.method20179(new TranslationTextComponent("commands.forceload.list.single", var4.getLocation(), var7), false);
          }
       }
 
@@ -114,7 +114,7 @@ public class Class9749 {
       for (long var1 : var5) {
          var3.method6950(Class7481.method24354(var1), Class7481.method24355(var1), false);
       }
-      var0.method20179(new TranslationTextComponent("commands.forceload.removed.all", var4.method31399()), true);
+      var0.method20179(new TranslationTextComponent("commands.forceload.removed.all", var4.getLocation()), true);
       return 0;
    }
 
@@ -154,12 +154,12 @@ public class Class9749 {
                   Class7481 var23 = new Class7481(var10, var11);
                   Class7481 var24 = new Class7481(var12, var13);
                   var0.method20179(
-                     new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".multiple", var19, var17.method31399(), var23, var24),
+                     new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".multiple", var19, var17.getLocation(), var23, var24),
                      true
                   );
                } else {
                   var0.method20179(
-                     new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".single", var18, var17.method31399()), true
+                     new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".single", var18, var17.getLocation()), true
                   );
                }
 

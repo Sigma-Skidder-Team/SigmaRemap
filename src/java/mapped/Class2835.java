@@ -119,7 +119,7 @@ public class Class2835 implements Consumer<Consumer<Class7952>> {
          .method27310(Class9182.method34343(100))
          .method27312(
             "killed_ghast",
-            Class4476.method14134(Class7552.method24700().method24701(EntityType.field41034).method24706(Class8576.method30648(World.field8999)))
+            Class4476.method14134(Class7552.method24700().method24701(EntityType.field41034).method24706(Class8576.method30648(World.OVERWORLD)))
          )
          .method27317(var1, "nether/uneasy_alliance");
       Class7952 var7 = Class7999.method27304()

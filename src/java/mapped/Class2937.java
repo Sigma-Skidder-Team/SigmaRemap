@@ -9,7 +9,7 @@ public class Class2937 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       return method11277(var1, var3, var4, 8, 4, 8);
    }
 
@@ -46,7 +46,7 @@ public class Class2937 extends Class2898<Class4712> {
    private static boolean method11279(Class1660 var0, Mutable var1) {
       while (true) {
          var1.method8381(0, -1, 0);
-         if (!World.method6720(var1)) {
+         if (!World.isOutsideBuildHeight(var1)) {
             if (var0.getBlockState(var1).isAir()) {
                continue;
             }
@@ -62,14 +62,14 @@ public class Class2937 extends Class2898<Class4712> {
    public static void method11280(Class1660 var0, Random var1, Mutable var2, int var3, int var4, int var5) {
       for (int var8 = 1; var8 <= var3; var8++) {
          if (var0.method7007(var2)) {
-            if (var8 == var3 || !var0.method7007(var2.method8311())) {
-               var0.method6725(
+            if (var8 == var3 || !var0.method7007(var2.up())) {
+               var0.setBlockState(
                   var2, Blocks.field37088.method11579().method23465(Class3452.field19267, Integer.valueOf(MathHelper.method37782(var1, var4, var5))), 2
                );
                break;
             }
 
-            var0.method6725(var2, Blocks.field37089.method11579(), 2);
+            var0.setBlockState(var2, Blocks.field37089.method11579(), 2);
          }
 
          var2.method8379(Direction.field673);
@@ -80,7 +80,7 @@ public class Class2937 extends Class2898<Class4712> {
       if (!var0.method7007(var1)) {
          return true;
       } else {
-         BlockState var4 = var0.getBlockState(var1.method8313());
+         BlockState var4 = var0.getBlockState(var1.down());
          return !var4.method23448(Blocks.NETHERRACK) && !var4.method23448(Blocks.field37074) && !var4.method23448(Blocks.field37076);
       }
    }

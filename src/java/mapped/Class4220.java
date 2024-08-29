@@ -14,7 +14,7 @@ public class Class4220 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       Class9312 var10 = Class9312.method35191(this.field20539)[Direction.NORTH.method533()];
       Class9312 var11 = this.field20539;
       Class9312 var12 = Class9312.method35191(var10)[Direction.field673.method533()];

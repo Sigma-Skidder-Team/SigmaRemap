@@ -20,11 +20,11 @@ public class Class3237 extends Class3238 {
    public BlockState method11495(Class5909 var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
-      Class7379 var6 = var1.method18360().method6739(var1.method18345());
-      BlockPos var7 = var5.method8341();
-      BlockPos var8 = var5.method8343();
-      BlockPos var9 = var5.method8345();
-      BlockPos var10 = var5.method8347();
+      FluidState var6 = var1.method18360().getFluidState(var1.method18345());
+      BlockPos var7 = var5.north();
+      BlockPos var8 = var5.south();
+      BlockPos var9 = var5.west();
+      BlockPos var10 = var5.east();
       BlockState var11 = var4.getBlockState(var7);
       BlockState var12 = var4.getBlockState(var8);
       BlockState var13 = var4.getBlockState(var9);
@@ -70,7 +70,7 @@ public class Class3237 extends Class3238 {
 
    public final boolean method11638(BlockState var1, boolean var2) {
       Block var5 = var1.getBlock();
-      return !method11545(var5) && var2 || var5 instanceof Class3237 || var5.method11540(Class7645.field32764);
+      return !method11545(var5) && var2 || var5 instanceof Class3237 || var5.method11540(BlockTags.field32764);
    }
 
    @Override

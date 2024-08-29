@@ -22,7 +22,7 @@ public class Class3220 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      BlockPos var7 = var3.method8311();
+      BlockPos var7 = var3.up();
       if (var2.method7007(var7)) {
          int var8 = 1;
 
@@ -33,11 +33,11 @@ public class Class3220 extends Block {
          if (var8 < 3) {
             int var9 = var1.<Integer>method23463(field18640);
             if (var9 != 15) {
-               var2.method6725(var3, var1.method23465(field18640, Integer.valueOf(var9 + 1)), 4);
+               var2.setBlockState(var3, var1.method23465(field18640, Integer.valueOf(var9 + 1)), 4);
             } else {
-               var2.method6730(var7, this.method11579());
+               var2.setBlockState(var7, this.method11579());
                BlockState var10 = var1.method23465(field18640, Integer.valueOf(0));
-               var2.method6725(var3, var10, 4);
+               var2.setBlockState(var3, var10, 4);
                var10.method23423(var2, var7, this, var3, false);
             }
          }
@@ -68,14 +68,14 @@ public class Class3220 extends Block {
       for (Direction var7 : Class76.field161) {
          BlockState var8 = var2.getBlockState(var3.method8349(var7));
          Class8649 var9 = var8.method23384();
-         if (var9.method31086() || var2.method6739(var3.method8349(var7)).method23486(Class8953.field40470)) {
+         if (var9.method31086() || var2.getFluidState(var3.method8349(var7)).method23486(Class8953.field40470)) {
             return false;
          }
       }
 
-      BlockState var10 = var2.getBlockState(var3.method8313());
+      BlockState var10 = var2.getBlockState(var3.down());
       return (var10.method23448(Blocks.CACTUS) || var10.method23448(Blocks.SAND) || var10.method23448(Blocks.RED_SAND))
-         && !var2.getBlockState(var3.method8311()).method23384().method31085();
+         && !var2.getBlockState(var3.up()).method23384().method31085();
    }
 
    @Override

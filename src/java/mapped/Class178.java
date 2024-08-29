@@ -66,7 +66,7 @@ public enum Class178 implements Class83 {
    private final boolean field617;
    private final boolean field618;
    private final Class2239 field619;
-   private static final Class178[][] field620 = Util.method38508(new Class178[values().length][values().length], var0 -> {
+   private static final Class178[][] field620 = Util.make(new Class178[values().length][values().length], var0 -> {
       Map<Pair<Class2239, BooleanList>, Class178> var3 = Arrays.stream(values()).collect(Collectors.toMap(var0x -> Pair.of(var0x.field619, var0x.method506()), var0x -> (Class178)var0x));
 
       for (Class178 var7 : values()) {

@@ -19,7 +19,7 @@ public class Class9251 {
       ArrayList var4 = Lists.newArrayList();
       ArrayList var5 = Lists.newArrayList();
       ArrayList var6 = Lists.newArrayList();
-      File var7 = var0.method7992(World.field8999);
+      File var7 = var0.method7992(World.OVERWORLD);
       File var8 = var0.method7992(World.THE_NETHER);
       File var9 = var0.method7992(World.THE_END);
       field42556.info("Scanning folders...");
@@ -34,21 +34,21 @@ public class Class9251 {
 
       int var10 = var4.size() + var5.size() + var6.size();
       field42556.info("Total conversion count is {}", var10);
-      Class8905 var11 = DynamicRegistries.func_239770_b_();
+      DynamicRegistriesImpl var11 = DynamicRegistries.func_239770_b_();
       WorldSettingsImport var12 = WorldSettingsImport.create(NBTDynamicOps.INSTANCE, Class190.field721, var11);
       IServerConfiguration var13 = var0.readServerConfiguration(var12, DatapackCodec.field33531);
       long var14 = var13 == null ? 0L : var13.getDimensionGeneratorSettings().method26259();
-      Class2349<Biome> var16 = var11.method32453(Registry.BIOME_KEY);
+      MutableRegistry<Biome> var16 = var11.getRegistry(Registry.BIOME_KEY);
       Object var17;
       if (var13 != null && var13.getDimensionGeneratorSettings().method26268()) {
-         var17 = new Class1688((Biome) var16.method9189(Class9495.field44122));
+         var17 = new Class1688((Biome) var16.getOrThrow(Class9495.field44122));
       } else {
          var17 = new Class1689(var14, false, false, var16);
       }
 
       method34800(var11, new File(var7, "region"), var4, (Class1685)var17, 0, var10, var1);
-      method34800(var11, new File(var8, "region"), var5, new Class1688(var16.method9189(Class9495.field44129)), var4.size(), var10, var1);
-      method34800(var11, new File(var9, "region"), var6, new Class1688(var16.method9189(Class9495.field44130)), var4.size() + var5.size(), var10, var1);
+      method34800(var11, new File(var8, "region"), var5, new Class1688(var16.getOrThrow(Class9495.field44129)), var4.size(), var10, var1);
+      method34800(var11, new File(var9, "region"), var6, new Class1688(var16.getOrThrow(Class9495.field44130)), var4.size() + var5.size(), var10, var1);
       method34799(var0);
       var0.saveLevel(var11, var13);
       return true;
@@ -66,7 +66,7 @@ public class Class9251 {
       }
    }
 
-   private static void method34800(Class8905 var0, File var1, Iterable<File> var2, Class1685 var3, int var4, int var5, Class1339 var6) {
+   private static void method34800(DynamicRegistriesImpl var0, File var1, Iterable<File> var2, Class1685 var3, int var4, int var5, Class1339 var6) {
       for (File var10 : var2) {
          method34801(var0, var1, var10, var3, var4, var5, var6);
          var4++;
@@ -75,7 +75,7 @@ public class Class9251 {
       }
    }
 
-   private static void method34801(Class8905 var0, File var1, File var2, Class1685 var3, int var4, int var5, Class1339 var6) {
+   private static void method34801(DynamicRegistriesImpl var0, File var1, File var2, Class1685 var3, int var4, int var5, Class1339 var6) {
       String var9 = var2.getName();
 
       try (

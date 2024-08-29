@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 public class Class9611 extends DataFix {
-   public static final Map<String, String> field44940 = Util.<Map<String, String>>method38508(Maps.newHashMap(), var0 -> {
+   public static final Map<String, String> field44940 = Util.<Map<String, String>>make(Maps.newHashMap(), var0 -> {
       var0.put("0", "minecraft:ocean");
       var0.put("1", "minecraft:plains");
       var0.put("2", "minecraft:desert");

@@ -78,7 +78,7 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Override
    public void method4903() {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          super.method4903();
          this.method4997(this.field5890.method3618(1));
          this.method4279(Class2106.field13735, 0.0F);
@@ -87,7 +87,7 @@ public class Class1074 extends AbstractHorseEntity {
 
    private void method4997(ItemStack var1) {
       this.method4991(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3085(Class9173.field42113).method38671(field5916);
          if (this.method4900(var1)) {
             int var4 = ((Class3275)var1.getItem()).method11798();
@@ -152,7 +152,7 @@ public class Class1074 extends AbstractHorseEntity {
       if (!this.method3005()) {
          if (this.method4932() && var1.method2851()) {
             this.openGUI(var1);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
 
          if (this.isBeingRidden()) {
@@ -172,19 +172,19 @@ public class Class1074 extends AbstractHorseEntity {
 
          if (!this.method4932()) {
             this.method4896();
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
 
          boolean var7 = !this.method3005() && !this.method4943() && var5.getItem() == Items.field37886;
          if (this.method4900(var5) || var7) {
             this.openGUI(var1);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          }
       }
 
       if (!this.method3005()) {
          this.method4920(var1);
-         return ActionResultType.method9002(this.world.field9020);
+         return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
       }

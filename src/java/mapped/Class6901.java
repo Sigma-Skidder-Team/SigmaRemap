@@ -24,11 +24,11 @@ public class Class6901 extends Class6896 {
    @Override
    public List<Class9359> method21065(Class1679 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, Class9764 var6, Class4733 var7) {
       ArrayList var10 = Lists.newArrayList();
-      BlockPos var11 = var4.method8313();
+      BlockPos var11 = var4.down();
       method21069(var1, var11);
-      method21069(var1, var11.method8347());
-      method21069(var1, var11.method8343());
-      method21069(var1, var11.method8343().method8347());
+      method21069(var1, var11.east());
+      method21069(var1, var11.south());
+      method21069(var1, var11.south().east());
       Direction var12 = Class76.field161.method247(var2);
       int var13 = var3 - var2.nextInt(4);
       int var14 = 2 - var2.nextInt(3);
@@ -50,9 +50,9 @@ public class Class6901 extends Class6896 {
          BlockPos var23 = new BlockPos(var18, var22, var19);
          if (Class2903.method11229(var1, var23)) {
             method21070(var1, var2, var23, var5, var6, var7);
-            method21070(var1, var2, var23.method8347(), var5, var6, var7);
-            method21070(var1, var2, var23.method8343(), var5, var6, var7);
-            method21070(var1, var2, var23.method8347().method8343(), var5, var6, var7);
+            method21070(var1, var2, var23.east(), var5, var6, var7);
+            method21070(var1, var2, var23.south(), var5, var6, var7);
+            method21070(var1, var2, var23.east().south(), var5, var6, var7);
          }
       }
 

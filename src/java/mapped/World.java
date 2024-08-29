@@ -13,99 +13,99 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public abstract class World implements Class1660, AutoCloseable {
-   public static final Logger field8997 = LogManager.getLogger();
-   public static final Codec<RegistryKey<World>> field8998 = ResourceLocation.field13020
-      .xmap(RegistryKey.<World>method31400(Registry.field16067), RegistryKey::method31399);
-   public static final RegistryKey<World> field8999 = RegistryKey.<World>method31395(Registry.field16067, new ResourceLocation("overworld"));
-   public static final RegistryKey<World> THE_NETHER = RegistryKey.<World>method31395(Registry.field16067, new ResourceLocation("the_nether"));
-   public static final RegistryKey<World> THE_END = RegistryKey.<World>method31395(Registry.field16067, new ResourceLocation("the_end"));
-   private static final Direction[] field9002 = Direction.values();
-   public final List<TileEntity> field9003 = Lists.newArrayList();
-   public final List<TileEntity> field9004 = Lists.newArrayList();
-   public final List<TileEntity> field9005 = Lists.newArrayList();
-   public final List<TileEntity> field9006 = Lists.newArrayList();
-   private final Thread field9007;
-   private final boolean field9008;
-   private int field9009;
-   public int field9010 = new Random().nextInt();
-   public final int field9011 = 1013904223;
-   public float field9012;
-   public float field9013;
-   public float field9014;
-   public float field9015;
-   public final Random field9016 = new Random();
-   private final Class9535 field9017;
-   public final Class6607 field9018;
-   private final Supplier<IProfiler> field9019;
-   public final boolean field9020;
-   public boolean field9021;
-   private final Class7522 field9022;
-   private final Class6668 field9023;
-   private final RegistryKey<World> field9024;
+   public static final Logger LOGGER = LogManager.getLogger();
+   public static final Codec<RegistryKey<World>> CODEC = ResourceLocation.CODEC
+      .xmap(RegistryKey.method31400(Registry.WORLD_KEY), RegistryKey::getLocation);
+   public static final RegistryKey<World> OVERWORLD = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("overworld"));
+   public static final RegistryKey<World> THE_NETHER = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("the_nether"));
+   public static final RegistryKey<World> THE_END = RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("the_end"));
+   private static final Direction[] FACING_VALUES = Direction.values();
+   public final List<TileEntity> loadedTileEntityList = Lists.newArrayList();
+   public final List<TileEntity> tickableTileEntities = Lists.newArrayList();
+   public final List<TileEntity> addedTileEntityList = Lists.newArrayList();
+   public final List<TileEntity> tileEntitiesToBeRemoved = Lists.newArrayList();
+   private final Thread mainThread;
+   private final boolean isDebug;
+   private int skylightSubtracted;
+   public int updateLCG = new Random().nextInt();
+   public final int DIST_HASH_MAGIC = 1013904223;
+   public float prevRainingStrength;
+   public float rainingStrength;
+   public float prevThunderingStrength;
+   public float thunderingStrength;
+   public final Random rand = new Random();
+   private final DimensionType dimensionType;
+   public final ISpawnWorldInfo worldInfo;
+   private final Supplier<IProfiler> profiler;
+   public final boolean isRemote;
+   public boolean processingLoadedTiles;
+   private final WorldBorder worldBorder;
+   private final BiomeManager biomeManager;
+   private final RegistryKey<World> dimension;
 
-   public World(Class6607 var1, RegistryKey<World> var2, Class9535 var3, Supplier<IProfiler> var4, boolean var5, boolean var6, long var7) {
-      this.field9019 = var4;
-      this.field9018 = var1;
-      this.field9017 = var3;
-      this.field9024 = var2;
-      this.field9020 = var5;
-      if (var3.method36879() == 1.0) {
-         this.field9022 = new Class7522();
+   public World(ISpawnWorldInfo worldInfo, RegistryKey<World> dimension, DimensionType dimensionType, Supplier<IProfiler> profiler, boolean isRemote, boolean isDebug, long seed) {
+      this.profiler = profiler;
+      this.worldInfo = worldInfo;
+      this.dimensionType = dimensionType;
+      this.dimension = dimension;
+      this.isRemote = isRemote;
+      if (dimensionType.getCoordinateScale() == 1.0) {
+         this.worldBorder = new WorldBorder();
       } else {
-         this.field9022 = new Class7523(this, var3);
+         this.worldBorder = new WorldBorder1(this, dimensionType);
       }
 
-      this.field9007 = Thread.currentThread();
-      this.field9023 = new Class6668(this, var7, var3.method36886());
-      this.field9008 = var6;
+      this.mainThread = Thread.currentThread();
+      this.biomeManager = new BiomeManager(this, seed, dimensionType.getMagnifier());
+      this.isDebug = isDebug;
    }
 
    @Override
-   public boolean method6714() {
-      return this.field9020;
+   public boolean isRemote() {
+      return this.isRemote;
    }
 
    @Nullable
-   public MinecraftServer method6715() {
+   public MinecraftServer getServer() {
       return null;
    }
 
-   public static boolean method6716(BlockPos var0) {
-      return !method6720(var0) && method6718(var0);
+   public static boolean isValid(BlockPos pos) {
+      return !isOutsideBuildHeight(pos) && isValidXZPosition(pos);
    }
 
-   public static boolean method6717(BlockPos var0) {
-      return !method6719(var0.getY()) && method6718(var0);
+   public static boolean isInvalidPosition(BlockPos pos) {
+      return !isInvalidYPosition(pos.getY()) && isValidXZPosition(pos);
    }
 
-   private static boolean method6718(BlockPos var0) {
-      return var0.getX() >= -30000000 && var0.getZ() >= -30000000 && var0.getX() < 30000000 && var0.getZ() < 30000000;
+   private static boolean isValidXZPosition(BlockPos pos) {
+      return pos.getX() >= -30000000 && pos.getZ() >= -30000000 && pos.getX() < 30000000 && pos.getZ() < 30000000;
    }
 
-   private static boolean method6719(int var0) {
-      return var0 < -20000000 || var0 >= 20000000;
+   private static boolean isInvalidYPosition(int y) {
+      return y < -20000000 || y >= 20000000;
    }
 
-   public static boolean method6720(BlockPos var0) {
-      return method6721(var0.getY());
+   public static boolean isOutsideBuildHeight(BlockPos pos) {
+      return isYOutOfBounds(pos.getY());
    }
 
-   public static boolean method6721(int var0) {
-      return var0 < 0 || var0 >= 256;
+   public static boolean isYOutOfBounds(int y) {
+      return y < 0 || y >= 256;
    }
 
-   public Class1674 method6722(BlockPos var1) {
-      return this.method6824(var1.getX() >> 4, var1.getZ() >> 4);
+   public Chunk getChunkAt(BlockPos pos) {
+      return this.getChunk(pos.getX() >> 4, pos.getZ() >> 4);
    }
 
-   public Class1674 method6824(int var1, int var2) {
-      return (Class1674)this.method7012(var1, var2, Class9176.field42145);
+   public Chunk getChunk(int chunkX, int chunkZ) {
+      return (Chunk)this.getChunk(chunkX, chunkZ, ChunkStatus.FULL);
    }
 
    @Override
-   public Class1670 method6724(int var1, int var2, Class9176 var3, boolean var4) {
-      Class1670 var7 = this.method6883().method7346(var1, var2, var3, var4);
-      if (var7 == null && var4) {
+   public IChunk getChunk(int x, int z, ChunkStatus requiredStatus, boolean nonnull) {
+      IChunk var7 = this.getChunkProvider().method7346(x, z, requiredStatus, nonnull);
+      if (var7 == null && nonnull) {
          throw new IllegalStateException("Should always be able to create a chunk!");
       } else {
          return var7;
@@ -113,63 +113,63 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public boolean method6725(BlockPos var1, BlockState var2, int var3) {
-      return this.method6726(var1, var2, var3, 512);
+   public boolean setBlockState(BlockPos pos, BlockState newState, int flags) {
+      return this.setBlockState(pos, newState, flags, 512);
    }
 
    @Override
-   public boolean method6726(BlockPos var1, BlockState var2, int var3, int var4) {
-      if (method6720(var1)) {
+   public boolean setBlockState(BlockPos pos, BlockState state, int flags, int recursionLeft) {
+      if (isOutsideBuildHeight(pos)) {
          return false;
-      } else if (!this.field9020 && this.method6823()) {
+      } else if (!this.isRemote && this.isDebug()) {
          return false;
       } else {
-         Class1674 var7 = this.method6722(var1);
-         Block var8 = var2.getBlock();
-         BlockState var9 = var7.method7061(var1, var2, (var3 & 64) != 0);
-         if (var9 == null) {
+         Chunk chunk = this.getChunkAt(pos);
+         Block block = state.getBlock();
+         BlockState blockstate = chunk.setBlockState(pos, state, (flags & 64) != 0);
+         if (blockstate == null) {
             return false;
          } else {
-            BlockState var10 = this.getBlockState(var1);
-            if ((var3 & 128) == 0
-               && var10 != var9
+            BlockState blockstate1 = this.getBlockState(pos);
+            if ((flags & 128) == 0
+               && blockstate1 != blockstate
                && (
-                  var10.method23387(this, var1) != var9.method23387(this, var1)
-                     || var10.method23392() != var9.method23392()
-                     || var10.method23391()
-                     || var9.method23391()
+                  blockstate1.getOpacity(this, pos) != blockstate.getOpacity(this, pos)
+                     || blockstate1.getLightValue() != blockstate.getLightValue()
+                     || blockstate1.isTransparent()
+                     || blockstate.isTransparent()
                )) {
-               this.method6820().startSection("queueCheckLight");
-               this.method6883().method7348().method602(var1);
-               this.method6820().endSection();
+               this.getProfiler().startSection("queueCheckLight");
+               this.getChunkProvider().getLightManager().checkBlock(pos);
+               this.getProfiler().endSection();
             }
 
-            if (var10 == var2) {
-               if (var9 != var10) {
-                  this.method6732(var1, var9, var10);
+            if (blockstate1 == state) {
+               if (blockstate != blockstate1) {
+                  this.markBlockRangeForRenderUpdate(pos, blockstate, blockstate1);
                }
 
-               if ((var3 & 2) != 0
-                  && (!this.field9020 || (var3 & 4) == 0)
-                  && (this.field9020 || var7.method7152() != null && var7.method7152().method249(Class77.field168))) {
-                  this.method6731(var1, var9, var2, var3);
+               if ((flags & 2) != 0
+                  && (!this.isRemote || (flags & 4) == 0)
+                  && (this.isRemote || chunk.getLocationType() != null && chunk.getLocationType().isAtLeast(ChunkHolderLocationType.TICKING))) {
+                  this.notifyBlockUpdate(pos, blockstate, state, flags);
                }
 
-               if ((var3 & 1) != 0) {
-                  this.method6964(var1, var9.getBlock());
-                  if (!this.field9020 && var2.method23403()) {
-                     this.method6806(var1, var8);
+               if ((flags & 1) != 0) {
+                  this.func_230547_a_(pos, blockstate.getBlock());
+                  if (!this.isRemote && state.hasComparatorInputOverride()) {
+                     this.updateComparatorOutputLevel(pos, block);
                   }
                }
 
-               if ((var3 & 16) == 0 && var4 > 0) {
-                  int var11 = var3 & -34;
-                  var9.method23427(this, var1, var11, var4 - 1);
-                  var2.method23425(this, var1, var11, var4 - 1);
-                  var2.method23427(this, var1, var11, var4 - 1);
+               if ((flags & 16) == 0 && recursionLeft > 0) {
+                  int i = flags & -34;
+                  blockstate.updateDiagonalNeighbors(this, pos, i, recursionLeft - 1);
+                  state.updateNeighbours(this, pos, i, recursionLeft - 1);
+                  state.updateDiagonalNeighbors(this, pos, i, recursionLeft - 1);
                }
 
-               this.method6727(var1, var9, var10);
+               this.onBlockStateChange(pos, blockstate, blockstate1);
             }
 
             return true;
@@ -177,81 +177,81 @@ public abstract class World implements Class1660, AutoCloseable {
       }
    }
 
-   public void method6727(BlockPos var1, BlockState var2, BlockState var3) {
+   public void onBlockStateChange(BlockPos var1, BlockState var2, BlockState var3) {
    }
 
    @Override
-   public boolean method6728(BlockPos var1, boolean var2) {
-      Class7379 var5 = this.method6739(var1);
-      return this.method6725(var1, var5.method23484(), 3 | (!var2 ? 0 : 64));
+   public boolean removeBlock(BlockPos var1, boolean isMoving) {
+      FluidState var5 = this.getFluidState(var1);
+      return this.setBlockState(var1, var5.getBlockState(), 3 | (!isMoving ? 0 : 64));
    }
 
    @Override
-   public boolean method6729(BlockPos var1, boolean var2, Entity var3, int var4) {
-      BlockState var7 = this.getBlockState(var1);
-      if (!var7.isAir()) {
-         Class7379 var8 = this.method6739(var1);
-         if (!(var7.getBlock() instanceof Class3397)) {
-            this.method6999(2001, var1, Block.method11535(var7));
+   public boolean destroyBlock(BlockPos pos, boolean dropBlock, Entity entity, int recursionLeft) {
+      BlockState blockstate = this.getBlockState(pos);
+      if (!blockstate.isAir()) {
+         FluidState var8 = this.getFluidState(pos);
+         if (!(blockstate.getBlock() instanceof AbstractFireBlock)) {
+            this.playEvent(2001, pos, Block.getStateId(blockstate));
          }
 
-         if (var2) {
-            TileEntity var9 = !var7.getBlock().isTileEntityProvider() ? null : this.getTileEntity(var1);
-            Block.method11556(var7, this, var1, var9, var3, ItemStack.EMPTY);
+         if (dropBlock) {
+            TileEntity tileentity = !blockstate.getBlock().isTileEntityProvider() ? null : this.getTileEntity(pos);
+            Block.spawnDrops(blockstate, this, pos, tileentity, entity, ItemStack.EMPTY);
          }
 
-         return this.method6726(var1, var8.method23484(), 3, var4);
+         return this.setBlockState(pos, var8.getBlockState(), 3, recursionLeft);
       } else {
          return false;
       }
    }
 
-   public boolean method6730(BlockPos var1, BlockState var2) {
-      return this.method6725(var1, var2, 3);
+   public boolean setBlockState(BlockPos var1, BlockState var2) {
+      return this.setBlockState(var1, var2, 3);
    }
 
-   public abstract void method6731(BlockPos var1, BlockState var2, BlockState var3, int var4);
+   public abstract void notifyBlockUpdate(BlockPos var1, BlockState var2, BlockState var3, int var4);
 
-   public void method6732(BlockPos var1, BlockState var2, BlockState var3) {
+   public void markBlockRangeForRenderUpdate(BlockPos var1, BlockState var2, BlockState var3) {
    }
 
-   public void method6733(BlockPos var1, Block var2) {
-      this.method6735(var1.method8345(), var2, var1);
-      this.method6735(var1.method8347(), var2, var1);
-      this.method6735(var1.method8313(), var2, var1);
-      this.method6735(var1.method8311(), var2, var1);
-      this.method6735(var1.method8341(), var2, var1);
-      this.method6735(var1.method8343(), var2, var1);
+   public void notifyNeighborsOfStateChange(BlockPos var1, Block var2) {
+      this.neighborChanged(var1.west(), var2, var1);
+      this.neighborChanged(var1.east(), var2, var1);
+      this.neighborChanged(var1.down(), var2, var1);
+      this.neighborChanged(var1.up(), var2, var1);
+      this.neighborChanged(var1.north(), var2, var1);
+      this.neighborChanged(var1.south(), var2, var1);
    }
 
-   public void method6734(BlockPos var1, Block var2, Direction var3) {
-      if (var3 != Direction.WEST) {
-         this.method6735(var1.method8345(), var2, var1);
+   public void notifyNeighborsOfStateExcept(BlockPos var1, Block var2, Direction skipSide) {
+      if (skipSide != Direction.WEST) {
+         this.neighborChanged(var1.west(), var2, var1);
       }
 
-      if (var3 != Direction.EAST) {
-         this.method6735(var1.method8347(), var2, var1);
+      if (skipSide != Direction.EAST) {
+         this.neighborChanged(var1.east(), var2, var1);
       }
 
-      if (var3 != Direction.DOWN) {
-         this.method6735(var1.method8313(), var2, var1);
+      if (skipSide != Direction.DOWN) {
+         this.neighborChanged(var1.down(), var2, var1);
       }
 
-      if (var3 != Direction.field673) {
-         this.method6735(var1.method8311(), var2, var1);
+      if (skipSide != Direction.field673) {
+         this.neighborChanged(var1.up(), var2, var1);
       }
 
-      if (var3 != Direction.NORTH) {
-         this.method6735(var1.method8341(), var2, var1);
+      if (skipSide != Direction.NORTH) {
+         this.neighborChanged(var1.north(), var2, var1);
       }
 
-      if (var3 != Direction.SOUTH) {
-         this.method6735(var1.method8343(), var2, var1);
+      if (skipSide != Direction.SOUTH) {
+         this.neighborChanged(var1.south(), var2, var1);
       }
    }
 
-   public void method6735(BlockPos var1, Block var2, BlockPos var3) {
-      if (!this.field9020) {
+   public void neighborChanged(BlockPos var1, Block var2, BlockPos var3) {
+      if (!this.isRemote) {
          BlockState var6 = this.getBlockState(var1);
 
          try {
@@ -261,12 +261,12 @@ public abstract class World implements Class1660, AutoCloseable {
             CrashReportCategory var9 = var8.makeCategory("Block being updated");
             var9.addDetail("Source block type", () -> {
                try {
-                  return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(var2), var2.method11566(), var2.getClass().getCanonicalName());
+                  return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(var2), var2.getTranslationKey(), var2.getClass().getCanonicalName());
                } catch (Throwable var4) {
                   return "ID #" + Registry.BLOCK.getKey(var2);
                }
             });
-            CrashReportCategory.method32814(var9, var1, var6);
+            CrashReportCategory.addBlockInfo(var9, var1, var6);
             throw new ReportedException(var8);
          }
       }
@@ -279,7 +279,7 @@ public abstract class World implements Class1660, AutoCloseable {
          if (!this.method6843(var2 >> 4, var3 >> 4)) {
             var6 = 0;
          } else {
-            var6 = this.method6824(var2 >> 4, var3 >> 4).method7071(var1, var2 & 15, var3 & 15) + 1;
+            var6 = this.getChunk(var2 >> 4, var3 >> 4).method7071(var1, var2 & 15, var3 & 15) + 1;
          }
       } else {
          var6 = this.method6776() + 1;
@@ -290,13 +290,13 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public Class196 method6737() {
-      return this.method6883().method7348();
+      return this.getChunkProvider().getLightManager();
    }
 
    @Override
    public BlockState getBlockState(BlockPos var1) {
-      if (!method6720(var1)) {
-         Class1674 var4 = this.method6824(var1.getX() >> 4, var1.getZ() >> 4);
+      if (!isOutsideBuildHeight(var1)) {
+         Chunk var4 = this.getChunk(var1.getX() >> 4, var1.getZ() >> 4);
          return var4.getBlockState(var1);
       } else {
          return Blocks.field37011.method11579();
@@ -304,21 +304,21 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
-      if (!method6720(var1)) {
-         Class1674 var4 = this.method6722(var1);
-         return var4.method6739(var1);
+   public FluidState getFluidState(BlockPos var1) {
+      if (!isOutsideBuildHeight(var1)) {
+         Chunk var4 = this.getChunkAt(var1);
+         return var4.getFluidState(var1);
       } else {
          return Class9479.field44064.method25049();
       }
    }
 
    public boolean method6740() {
-      return !this.method6812().method36887() && this.field9009 < 4;
+      return !this.method6812().doesFixedTimeExist() && this.skylightSubtracted < 4;
    }
 
    public boolean method6741() {
-      return !this.method6812().method36887() && !this.method6740();
+      return !this.method6812().doesFixedTimeExist() && !this.method6740();
    }
 
    @Override
@@ -352,54 +352,54 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public boolean method6751(TileEntity var1) {
-      if (this.field9021) {
-         field8997.error(
+      if (this.processingLoadedTiles) {
+         LOGGER.error(
             "Adding block entity while ticking: {} @ {}",
             new org.apache.logging.log4j.util.Supplier[]{() -> Registry.field16078.getKey(var1.method3786()), var1::getPos}
          );
       }
 
-      boolean var4 = this.field9003.add(var1);
+      boolean var4 = this.loadedTileEntityList.add(var1);
       if (var4 && var1 instanceof Class935) {
-         this.field9004.add(var1);
+         this.tickableTileEntities.add(var1);
       }
 
-      if (this.field9020) {
+      if (this.isRemote) {
          BlockPos var5 = var1.getPos();
          BlockState var6 = this.getBlockState(var5);
-         this.method6731(var5, var6, var6, 2);
+         this.notifyBlockUpdate(var5, var6, var6, 2);
       }
 
       return var4;
    }
 
    public void method6752(Collection<TileEntity> var1) {
-      if (!this.field9021) {
+      if (!this.processingLoadedTiles) {
          for (TileEntity var5 : var1) {
             this.method6751(var5);
          }
       } else {
-         this.field9005.addAll(var1);
+         this.addedTileEntityList.addAll(var1);
       }
    }
 
    public void method6753() {
-      IProfiler var3 = this.method6820();
+      IProfiler var3 = this.getProfiler();
       var3.startSection("blockEntities");
-      if (!this.field9006.isEmpty()) {
-         this.field9004.removeAll(this.field9006);
-         this.field9003.removeAll(this.field9006);
-         this.field9006.clear();
+      if (!this.tileEntitiesToBeRemoved.isEmpty()) {
+         this.tickableTileEntities.removeAll(this.tileEntitiesToBeRemoved);
+         this.loadedTileEntityList.removeAll(this.tileEntitiesToBeRemoved);
+         this.tileEntitiesToBeRemoved.clear();
       }
 
-      this.field9021 = true;
-      Iterator var4 = this.field9004.iterator();
+      this.processingLoadedTiles = true;
+      Iterator var4 = this.tickableTileEntities.iterator();
 
       while (var4.hasNext()) {
          TileEntity var5 = (TileEntity)var4.next();
          if (!var5.method3778() && var5.method3770()) {
             BlockPos var6 = var5.getPos();
-            if (this.method6883().method7353(var6) && this.method6810().method24523(var6)) {
+            if (this.getChunkProvider().method7353(var6) && this.method6810().method24523(var6)) {
                try {
                   var3.method22504(() -> String.valueOf(Class4387.method13793(var5.method3786())));
                   if (var5.method3786().method13796(this.getBlockState(var6).getBlock())) {
@@ -420,33 +420,33 @@ public abstract class World implements Class1660, AutoCloseable {
 
          if (var5.method3778()) {
             var4.remove();
-            this.field9003.remove(var5);
+            this.loadedTileEntityList.remove(var5);
             if (this.method7017(var5.getPos())) {
-               this.method6722(var5.getPos()).method7081(var5.getPos());
+               this.getChunkAt(var5.getPos()).method7081(var5.getPos());
             }
          }
       }
 
-      this.field9021 = false;
+      this.processingLoadedTiles = false;
       var3.endStartSection("pendingBlockEntities");
-      if (!this.field9005.isEmpty()) {
-         for (int var11 = 0; var11 < this.field9005.size(); var11++) {
-            TileEntity var12 = this.field9005.get(var11);
+      if (!this.addedTileEntityList.isEmpty()) {
+         for (int var11 = 0; var11 < this.addedTileEntityList.size(); var11++) {
+            TileEntity var12 = this.addedTileEntityList.get(var11);
             if (!var12.method3778()) {
-               if (!this.field9003.contains(var12)) {
+               if (!this.loadedTileEntityList.contains(var12)) {
                   this.method6751(var12);
                }
 
                if (this.method7017(var12.getPos())) {
-                  Class1674 var7 = this.method6722(var12.getPos());
+                  Chunk var7 = this.getChunkAt(var12.getPos());
                   BlockState var13 = var7.getBlockState(var12.getPos());
                   var7.method7062(var12.getPos(), var12);
-                  this.method6731(var12.getPos(), var13, var13, 3);
+                  this.notifyBlockUpdate(var12.getPos(), var13, var13, 3);
                }
             }
          }
 
-         this.field9005.clear();
+         this.addedTileEntityList.clear();
       }
 
       var3.endSection();
@@ -481,23 +481,23 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public String method6758() {
-      return this.method6883().method7347();
+      return this.getChunkProvider().method7347();
    }
 
    @Nullable
    @Override
    public TileEntity getTileEntity(BlockPos var1) {
-      if (!method6720(var1)) {
-         if (!this.field9020 && Thread.currentThread() != this.field9007) {
+      if (!isOutsideBuildHeight(var1)) {
+         if (!this.isRemote && Thread.currentThread() != this.mainThread) {
             return null;
          } else {
             TileEntity var4 = null;
-            if (this.field9021) {
+            if (this.processingLoadedTiles) {
                var4 = this.method6760(var1);
             }
 
             if (var4 == null) {
-               var4 = this.method6722(var1).method7029(var1, Class2206.field14421);
+               var4 = this.getChunkAt(var1).method7029(var1, Class2206.field14421);
             }
 
             if (var4 == null) {
@@ -513,8 +513,8 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Nullable
    private TileEntity method6760(BlockPos var1) {
-      for (int var4 = 0; var4 < this.field9005.size(); var4++) {
-         TileEntity var5 = this.field9005.get(var4);
+      for (int var4 = 0; var4 < this.addedTileEntityList.size(); var4++) {
+         TileEntity var5 = this.addedTileEntityList.get(var4);
          if (!var5.method3778() && var5.getPos().equals(var1)) {
             return var5;
          }
@@ -524,13 +524,13 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public void method6761(BlockPos var1, TileEntity var2) {
-      if (!method6720(var1) && var2 != null && !var2.method3778()) {
-         if (!this.field9021) {
-            this.method6722(var1).method7062(var1, var2);
+      if (!isOutsideBuildHeight(var1) && var2 != null && !var2.method3778()) {
+         if (!this.processingLoadedTiles) {
+            this.getChunkAt(var1).method7062(var1, var2);
             this.method6751(var2);
          } else {
             var2.method3769(this, var1);
-            Iterator var5 = this.field9005.iterator();
+            Iterator var5 = this.addedTileEntityList.iterator();
 
             while (var5.hasNext()) {
                TileEntity var6 = (TileEntity)var5.next();
@@ -540,34 +540,34 @@ public abstract class World implements Class1660, AutoCloseable {
                }
             }
 
-            this.field9005.add(var2);
+            this.addedTileEntityList.add(var2);
          }
       }
    }
 
    public void method6762(BlockPos var1) {
       TileEntity var4 = this.getTileEntity(var1);
-      if (var4 != null && this.field9021) {
+      if (var4 != null && this.processingLoadedTiles) {
          var4.method3765();
-         this.field9005.remove(var4);
+         this.addedTileEntityList.remove(var4);
       } else {
          if (var4 != null) {
-            this.field9005.remove(var4);
-            this.field9003.remove(var4);
-            this.field9004.remove(var4);
+            this.addedTileEntityList.remove(var4);
+            this.loadedTileEntityList.remove(var4);
+            this.tickableTileEntities.remove(var4);
          }
 
-         this.method6722(var1).method7081(var1);
+         this.getChunkAt(var1).method7081(var1);
       }
    }
 
    public boolean method6763(BlockPos var1) {
-      return !method6720(var1) ? this.method6883().method7345(var1.getX() >> 4, var1.getZ() >> 4) : false;
+      return !isOutsideBuildHeight(var1) ? this.getChunkProvider().method7345(var1.getX() >> 4, var1.getZ() >> 4) : false;
    }
 
    public boolean method6764(BlockPos var1, Entity var2, Direction var3) {
-      if (!method6720(var1)) {
-         Class1670 var6 = this.method6724(var1.getX() >> 4, var1.getZ() >> 4, Class9176.field42145, false);
+      if (!isOutsideBuildHeight(var1)) {
+         IChunk var6 = this.getChunk(var1.getX() >> 4, var1.getZ() >> 4, ChunkStatus.FULL, false);
          return var6 != null ? var6.getBlockState(var1).method23420(this, var1, var2, var3) : false;
       } else {
          return false;
@@ -582,46 +582,46 @@ public abstract class World implements Class1660, AutoCloseable {
       double var3 = 1.0 - (double)(this.method6792(1.0F) * 5.0F) / 16.0;
       double var5 = 1.0 - (double)(this.method6790(1.0F) * 5.0F) / 16.0;
       double var7 = 0.5 + 2.0 * MathHelper.method37778((double) MathHelper.cos(this.method7001(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
-      this.field9009 = (int)((1.0 - var7 * var3 * var5) * 11.0);
+      this.skylightSubtracted = (int)((1.0 - var7 * var3 * var5) * 11.0);
    }
 
    public void method6767(boolean var1, boolean var2) {
-      this.method6883().method7349(var1, var2);
+      this.getChunkProvider().method7349(var1, var2);
    }
 
    public void method6768() {
-      if (this.field9018.method20043()) {
-         this.field9013 = 1.0F;
-         if (this.field9018.method20042()) {
-            this.field9015 = 1.0F;
+      if (this.worldInfo.method20043()) {
+         this.rainingStrength = 1.0F;
+         if (this.worldInfo.method20042()) {
+            this.thunderingStrength = 1.0F;
          }
       }
    }
 
    @Override
    public void close() throws IOException {
-      this.method6883().close();
+      this.getChunkProvider().close();
    }
 
    @Nullable
    @Override
    public Class1665 method6769(int var1, int var2) {
-      return this.method6724(var1, var2, Class9176.field42145, false);
+      return this.getChunk(var1, var2, ChunkStatus.FULL, false);
    }
 
    @Override
    public List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
-      this.method6820().func_230035_c_("getEntities");
+      this.getProfiler().func_230035_c_("getEntities");
       ArrayList var6 = Lists.newArrayList();
       int var7 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28452 + 2.0) / 16.0);
       int var9 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
       int var10 = MathHelper.floor((var2.field28454 + 2.0) / 16.0);
-      Class1702 var11 = this.method6883();
+      Class1702 var11 = this.getChunkProvider();
 
       for (int var12 = var7; var12 <= var8; var12++) {
          for (int var13 = var9; var13 <= var10; var13++) {
-            Class1674 var14 = var11.method7342(var12, var13, false);
+            Chunk var14 = var11.method7342(var12, var13, false);
             if (var14 != null) {
                var14.method7138(var1, var2, var6, var3);
             }
@@ -632,7 +632,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public <T extends Entity> List<T> method6771(EntityType<T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
-      this.method6820().func_230035_c_("getEntities");
+      this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
@@ -641,7 +641,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
       for (int var11 = var6; var11 < var7; var11++) {
          for (int var12 = var8; var12 < var9; var12++) {
-            Class1674 var13 = this.method6883().method7342(var11, var12, false);
+            Chunk var13 = this.getChunkProvider().method7342(var11, var12, false);
             if (var13 != null) {
                var13.method7139(var1, var2, var10, var3);
             }
@@ -653,17 +653,17 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
-      this.method6820().func_230035_c_("getEntities");
+      this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
       int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
-      Class1702 var11 = this.method6883();
+      Class1702 var11 = this.getChunkProvider();
 
       for (int var12 = var6; var12 < var7; var12++) {
          for (int var13 = var8; var13 < var9; var13++) {
-            Class1674 var14 = var11.method7342(var12, var13, false);
+            Chunk var14 = var11.method7342(var12, var13, false);
             if (var14 != null) {
                var14.method7140(var1, var2, var10, var3);
             }
@@ -675,17 +675,17 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
-      this.method6820().func_230035_c_("getLoadedEntities");
+      this.getProfiler().func_230035_c_("getLoadedEntities");
       int var6 = MathHelper.floor((var2.field28449 - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.field28452 + 2.0) / 16.0);
       int var8 = MathHelper.floor((var2.field28451 - 2.0) / 16.0);
       int var9 = MathHelper.method37774((var2.field28454 + 2.0) / 16.0);
       ArrayList var10 = Lists.newArrayList();
-      Class1702 var11 = this.method6883();
+      Class1702 var11 = this.getChunkProvider();
 
       for (int var12 = var6; var12 < var7; var12++) {
          for (int var13 = var8; var13 < var9; var13++) {
-            Class1674 var14 = var11.method7343(var12, var13);
+            Chunk var14 = var11.method7343(var12, var13);
             if (var14 != null) {
                var14.method7140(var1, var2, var10, var3);
             }
@@ -700,7 +700,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public void method6775(BlockPos var1, TileEntity var2) {
       if (this.method7017(var1)) {
-         this.method6722(var1).method7137();
+         this.getChunkAt(var1).method7137();
       }
    }
 
@@ -711,17 +711,17 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public int method6777(BlockPos var1) {
       int var4 = 0;
-      var4 = Math.max(var4, this.method7010(var1.method8313(), Direction.DOWN));
+      var4 = Math.max(var4, this.method7010(var1.down(), Direction.DOWN));
       if (var4 < 15) {
-         var4 = Math.max(var4, this.method7010(var1.method8311(), Direction.field673));
+         var4 = Math.max(var4, this.method7010(var1.up(), Direction.field673));
          if (var4 < 15) {
-            var4 = Math.max(var4, this.method7010(var1.method8341(), Direction.NORTH));
+            var4 = Math.max(var4, this.method7010(var1.north(), Direction.NORTH));
             if (var4 < 15) {
-               var4 = Math.max(var4, this.method7010(var1.method8343(), Direction.SOUTH));
+               var4 = Math.max(var4, this.method7010(var1.south(), Direction.SOUTH));
                if (var4 < 15) {
-                  var4 = Math.max(var4, this.method7010(var1.method8345(), Direction.WEST));
+                  var4 = Math.max(var4, this.method7010(var1.west(), Direction.WEST));
                   if (var4 < 15) {
-                     var4 = Math.max(var4, this.method7010(var1.method8347(), Direction.EAST));
+                     var4 = Math.max(var4, this.method7010(var1.east(), Direction.EAST));
                      return var4 < 15 ? var4 : var4;
                   } else {
                      return var4;
@@ -751,11 +751,11 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public boolean method6780(BlockPos var1) {
-      if (this.method6779(var1.method8313(), Direction.DOWN) <= 0) {
-         if (this.method6779(var1.method8311(), Direction.field673) <= 0) {
-            if (this.method6779(var1.method8341(), Direction.NORTH) <= 0) {
-               if (this.method6779(var1.method8343(), Direction.SOUTH) <= 0) {
-                  return this.method6779(var1.method8345(), Direction.WEST) <= 0 ? this.method6779(var1.method8347(), Direction.EAST) > 0 : true;
+      if (this.method6779(var1.down(), Direction.DOWN) <= 0) {
+         if (this.method6779(var1.up(), Direction.field673) <= 0) {
+            if (this.method6779(var1.north(), Direction.NORTH) <= 0) {
+               if (this.method6779(var1.south(), Direction.SOUTH) <= 0) {
+                  return this.method6779(var1.west(), Direction.WEST) <= 0 ? this.method6779(var1.east(), Direction.EAST) > 0 : true;
                } else {
                   return true;
                }
@@ -773,7 +773,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public int method6781(BlockPos var1) {
       int var4 = 0;
 
-      for (Direction var8 : field9002) {
+      for (Direction var8 : FACING_VALUES) {
          int var9 = this.method6779(var1.method8349(var8), var8);
          if (var9 >= 15) {
             return 15;
@@ -791,11 +791,11 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    public long method6783() {
-      return this.field9018.method20033();
+      return this.worldInfo.method20033();
    }
 
    public long method6784() {
-      return this.field9018.method20034();
+      return this.worldInfo.method20034();
    }
 
    public boolean method6785(PlayerEntity var1, BlockPos var2) {
@@ -811,33 +811,33 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public Class6612 getWorldInfo() {
-      return this.field9018;
+      return this.worldInfo;
    }
 
    public Class5462 method6789() {
-      return this.field9018.method20046();
+      return this.worldInfo.method20046();
    }
 
    public float method6790(float var1) {
-      return MathHelper.method37821(var1, this.field9014, this.field9015) * this.method6792(var1);
+      return MathHelper.lerp(var1, this.prevThunderingStrength, this.thunderingStrength) * this.method6792(var1);
    }
 
    public void method6791(float var1) {
-      this.field9014 = var1;
-      this.field9015 = var1;
+      this.prevThunderingStrength = var1;
+      this.thunderingStrength = var1;
    }
 
    public float method6792(float var1) {
-      return MathHelper.method37821(var1, this.field9012, this.field9013);
+      return MathHelper.lerp(var1, this.prevRainingStrength, this.rainingStrength);
    }
 
    public void method6793(float var1) {
-      this.field9012 = var1;
-      this.field9013 = var1;
+      this.prevRainingStrength = var1;
+      this.rainingStrength = var1;
    }
 
    public boolean method6794() {
-      return this.method6812().method36875() && !this.method6812().method36876() ? (double)this.method6790(1.0F) > 0.9 : false;
+      return this.method6812().hasSkyLight() && !this.method6812().getHasCeiling() ? (double)this.method6790(1.0F) > 0.9 : false;
    }
 
    public boolean method6795() {
@@ -877,11 +877,11 @@ public abstract class World implements Class1660, AutoCloseable {
    public CrashReportCategory fillCrashReport(CrashReport var1) {
       CrashReportCategory var4 = var1.method14411("Affected level", 1);
       var4.addDetail("All players", () -> this.method6870().size() + " total; " + this.method6870());
-      var4.addDetail("Chunk stats", this.method6883()::method7347);
-      var4.addDetail("Level dimension", () -> this.getDimensionKey().method31399().toString());
+      var4.addDetail("Chunk stats", this.getChunkProvider()::method7347);
+      var4.addDetail("Level dimension", () -> this.getDimensionKey().getLocation().toString());
 
       try {
-         this.field9018.method20049(var4);
+         this.worldInfo.method20049(var4);
       } catch (Throwable var6) {
          var4.method32808("Level Data Unobtainable", var6);
       }
@@ -896,7 +896,7 @@ public abstract class World implements Class1660, AutoCloseable {
 
    public abstract Class6886 method6805();
 
-   public void method6806(BlockPos var1, Block var2) {
+   public void updateComparatorOutputLevel(BlockPos var1, Block var2) {
       for (Direction var6 : Class76.field161) {
          BlockPos var7 = var1.method8349(var6);
          if (this.method7017(var7)) {
@@ -922,7 +922,7 @@ public abstract class World implements Class1660, AutoCloseable {
       float var6 = 0.0F;
       if (this.method7017(var1)) {
          var6 = this.method7000();
-         var4 = this.method6722(var1).method7093();
+         var4 = this.getChunkAt(var1).method7093();
       }
 
       return new Class9755(this.method6997(), this.method6784(), var4, var6);
@@ -930,15 +930,15 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Override
    public int method6808() {
-      return this.field9009;
+      return this.skylightSubtracted;
    }
 
    public void setTimeLightningFlash(int var1) {
    }
 
    @Override
-   public Class7522 method6810() {
-      return this.field9022;
+   public WorldBorder method6810() {
+      return this.worldBorder;
    }
 
    public void method6811(Packet<?> var1) {
@@ -946,17 +946,17 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public Class9535 method6812() {
-      return this.field9017;
+   public DimensionType method6812() {
+      return this.dimensionType;
    }
 
    public RegistryKey<World> getDimensionKey() {
-      return this.field9024;
+      return this.dimension;
    }
 
    @Override
    public Random method6814() {
-      return this.field9016;
+      return this.rand;
    }
 
    @Override
@@ -969,8 +969,8 @@ public abstract class World implements Class1660, AutoCloseable {
    public abstract Class8933 method6817();
 
    public BlockPos method6818(int var1, int var2, int var3, int var4) {
-      this.field9010 = this.field9010 * 3 + 1013904223;
-      int var7 = this.field9010 >> 2;
+      this.updateLCG = this.updateLCG * 3 + 1013904223;
+      int var7 = this.updateLCG >> 2;
       return new BlockPos(var1 + (var7 & 15), var2 + (var7 >> 16 & var4), var3 + (var7 >> 8 & 15));
    }
 
@@ -978,20 +978,20 @@ public abstract class World implements Class1660, AutoCloseable {
       return false;
    }
 
-   public IProfiler method6820() {
-      return this.field9019.get();
+   public IProfiler getProfiler() {
+      return this.profiler.get();
    }
 
    public Supplier<IProfiler> method6821() {
-      return this.field9019;
+      return this.profiler;
    }
 
    @Override
-   public Class6668 getBiomeManager() {
-      return this.field9023;
+   public BiomeManager getBiomeManager() {
+      return this.biomeManager;
    }
 
-   public final boolean method6823() {
-      return this.field9008;
+   public final boolean isDebug() {
+      return this.isDebug;
    }
 }

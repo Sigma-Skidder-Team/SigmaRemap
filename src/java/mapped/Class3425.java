@@ -44,10 +44,10 @@ public class Class3425 extends Block {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       return this.method11579()
-         .method23465(field19166, Boolean.valueOf(this.method12082(var4.getBlockState(var5.method8341()), Direction.NORTH)))
-         .method23465(field19167, Boolean.valueOf(this.method12082(var4.getBlockState(var5.method8347()), Direction.EAST)))
-         .method23465(field19168, Boolean.valueOf(this.method12082(var4.getBlockState(var5.method8343()), Direction.SOUTH)))
-         .method23465(field19169, Boolean.valueOf(this.method12082(var4.getBlockState(var5.method8345()), Direction.WEST)));
+         .method23465(field19166, Boolean.valueOf(this.method12082(var4.getBlockState(var5.north()), Direction.NORTH)))
+         .method23465(field19167, Boolean.valueOf(this.method12082(var4.getBlockState(var5.east()), Direction.EAST)))
+         .method23465(field19168, Boolean.valueOf(this.method12082(var4.getBlockState(var5.south()), Direction.SOUTH)))
+         .method23465(field19169, Boolean.valueOf(this.method12082(var4.getBlockState(var5.west()), Direction.WEST)));
    }
 
    @Override
@@ -73,8 +73,8 @@ public class Class3425 extends Block {
 
    @Override
    public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.field9020 && !var4.method3090().isEmpty() && var4.method3090().getItem() == Items.field37956) {
-         var1.method6725(var2, var3.method23465(field19165, Boolean.valueOf(true)), 4);
+      if (!var1.isRemote && !var4.method3090().isEmpty() && var4.method3090().getItem() == Items.field37956) {
+         var1.setBlockState(var2, var3.method23465(field19165, Boolean.valueOf(true)), 4);
       }
 
       super.method11574(var1, var2, var3, var4);
@@ -101,7 +101,7 @@ public class Class3425 extends Block {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var2.field9020 && !var1.<Boolean>method23463(field19163)) {
+      if (!var2.isRemote && !var1.<Boolean>method23463(field19163)) {
          this.method12081(var2, var3);
       }
    }
@@ -129,7 +129,7 @@ public class Class3425 extends Block {
 
       if (var7 != var6) {
          var5 = var5.method23465(field19163, Boolean.valueOf(var7));
-         var1.method6725(var2, var5, 3);
+         var1.setBlockState(var2, var5, 3);
          this.method12080(var1, var2, var5);
       }
 

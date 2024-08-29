@@ -23,7 +23,7 @@ public class Class3355 extends Class3241 {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class969) {
             Class969 var10 = (Class969)var9;
@@ -72,7 +72,7 @@ public class Class3355 extends Class3241 {
             }
          }
 
-         var2.method6806(var3, this);
+         var2.updateComparatorOutputLevel(var3, this);
       }
    }
 
@@ -91,7 +91,7 @@ public class Class3355 extends Class3241 {
       TileEntity var9 = var2.getTileEntity(var3);
       if (var9 instanceof Class969 && var4.method2979()) {
          var4.method2770((Class969)var9);
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14820;
       }
@@ -118,7 +118,7 @@ public class Class3355 extends Class3241 {
             var10.method3566(var5.method32149());
          }
 
-         if (!var1.field9020) {
+         if (!var1.isRemote) {
             if (var5.method32145("BlockEntityTag") == null) {
                var10.method3570(var1.method6789().method17135(Class5462.field24236));
                var9.method4013(this == Blocks.field36888);
@@ -191,7 +191,7 @@ public class Class3355 extends Class3241 {
                   break;
                }
 
-               var0.method6806(var5, var9);
+               var0.updateComparatorOutputLevel(var5, var9);
             }
          }
 

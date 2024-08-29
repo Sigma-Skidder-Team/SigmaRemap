@@ -170,7 +170,7 @@ public class CrashReportCategory {
       return this.field40492;
    }
 
-   public static void method32814(CrashReportCategory var0, BlockPos var1, BlockState var2) {
+   public static void addBlockInfo(CrashReportCategory var0, BlockPos var1, BlockState var2) {
       if (var2 != null) {
          var0.addDetail("Block", var2::toString);
       }

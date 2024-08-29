@@ -29,7 +29,7 @@ public class IntegratedServer extends MinecraftServer {
    public IntegratedServer(
       Thread var1,
       Minecraft var2,
-      Class8905 var3,
+      DynamicRegistriesImpl var3,
       SaveFormat.LevelSave var4,
       ResourcePackList var5,
       DataPackRegistries var6,

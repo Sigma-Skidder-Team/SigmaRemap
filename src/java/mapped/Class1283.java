@@ -13,7 +13,7 @@ public class Class1283 extends Class1274<Class1176> {
       Class1323.method6291(var1)
          .method9191()
          .stream()
-         .sorted(Comparator.comparing(var0 -> var0.getKey().method31399().toString()))
+         .sorted(Comparator.comparing(var0 -> var0.getKey().getLocation().toString()))
          .forEach(var1x -> this.method6030(new Class1176(this, var1x.getValue())));
    }
 

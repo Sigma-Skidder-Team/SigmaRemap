@@ -34,7 +34,7 @@ public abstract class Class7574 {
          field32515.warn(
             "Invalid entity id '{}' at spawner {}:[{},{},{}]",
             var3,
-            this.method24786().getDimensionKey().method31399(),
+            this.method24786().getDimensionKey().getLocation(),
             var5.getX(),
             var5.getY(),
             var5.getZ()
@@ -80,11 +80,11 @@ public abstract class Class7574 {
                ListNBT var15 = var13.method131("Pos", 6);
                int var16 = var15.size();
                double var17 = var16 < 1
-                  ? (double)var4.getX() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
+                  ? (double)var4.getX() + (var3.rand.nextDouble() - var3.rand.nextDouble()) * (double)this.field32527 + 0.5
                   : var15.method158(0);
-               double var19 = var16 < 2 ? (double)(var4.getY() + var3.field9016.nextInt(3) - 1) : var15.method158(1);
+               double var19 = var16 < 2 ? (double)(var4.getY() + var3.rand.nextInt(3) - 1) : var15.method158(1);
                double var21 = var16 < 3
-                  ? (double)var4.getZ() + (var3.field9016.nextDouble() - var3.field9016.nextDouble()) * (double)this.field32527 + 0.5
+                  ? (double)var4.getZ() + (var3.rand.nextDouble() - var3.rand.nextDouble()) * (double)this.field32527 + 0.5
                   : var15.method158(2);
                if (var3.method7051(((EntityType)var14.get()).method33219(var17, var19, var21))) {
                   ServerWorld var23 = (ServerWorld)var3;
@@ -116,7 +116,7 @@ public abstract class Class7574 {
                         return;
                      }
 
-                     var24.method3273(var24.getPosX(), var24.getPosY(), var24.getPosZ(), var3.field9016.nextFloat() * 360.0F, 0.0F);
+                     var24.method3273(var24.getPosX(), var24.getPosY(), var24.getPosZ(), var3.rand.nextFloat() * 360.0F, 0.0F);
                      if (var24 instanceof Class1006) {
                         Class1006 var26 = (Class1006)var24;
                         if (!var26.method4265(var3, Class2202.field14393) || !var26.method4266(var3)) {
@@ -133,7 +133,7 @@ public abstract class Class7574 {
                         return;
                      }
 
-                     var3.method6999(2004, var4, 0);
+                     var3.playEvent(2004, var4, 0);
                      if (var24 instanceof Class1006) {
                         ((Class1006)var24).method4239();
                      }
@@ -147,9 +147,9 @@ public abstract class Class7574 {
                this.method24793();
             }
          } else {
-            double var7 = (double)var4.getX() + var3.field9016.nextDouble();
-            double var9 = (double)var4.getY() + var3.field9016.nextDouble();
-            double var11 = (double)var4.getZ() + var3.field9016.nextDouble();
+            double var7 = (double)var4.getX() + var3.rand.nextDouble();
+            double var9 = (double)var4.getY() + var3.rand.nextDouble();
+            double var11 = (double)var4.getZ() + var3.rand.nextDouble();
             var3.method6746(Class7940.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
             var3.method6746(Class7940.field34074, var7, var9, var11, 0.0, 0.0, 0.0);
             if (this.field32516 > 0) {
@@ -167,13 +167,13 @@ public abstract class Class7574 {
    private void method24793() {
       if (this.field32522 > this.field32521) {
          int var3 = this.field32522 - this.field32521;
-         this.field32516 = this.field32521 + this.method24786().field9016.nextInt(var3);
+         this.field32516 = this.field32521 + this.method24786().rand.nextInt(var3);
       } else {
          this.field32516 = this.field32521;
       }
 
       if (!this.field32517.isEmpty()) {
-         this.method24788(Class8879.<Class6693>method32314(this.method24786().field9016, this.field32517));
+         this.method24788(Class8879.<Class6693>method32314(this.method24786().rand, this.field32517));
       }
 
       this.method24785(1);
@@ -192,7 +192,7 @@ public abstract class Class7574 {
 
       if (!var1.method119("SpawnData", 10)) {
          if (!this.field32517.isEmpty()) {
-            this.method24788(Class8879.<Class6693>method32314(this.method24786().field9016, this.field32517));
+            this.method24788(Class8879.<Class6693>method32314(this.method24786().rand, this.field32517));
          }
       } else {
          this.method24788(new Class6693(1, var1.getCompound("SpawnData")));
@@ -257,7 +257,7 @@ public abstract class Class7574 {
    }
 
    public boolean method24797(int var1) {
-      if (var1 == 1 && this.method24786().field9020) {
+      if (var1 == 1 && this.method24786().isRemote) {
          this.field32516 = this.field32521;
          return true;
       } else {

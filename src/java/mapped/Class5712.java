@@ -78,7 +78,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
             var11 = var10 - var9;
          }
 
-         float var31 = MathHelper.method37821(var3, var1.prevRotationPitch, var1.rotationPitch);
+         float var31 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
          Class4410 var33 = new Class4410(var9, var10, var11, var31, var3, var1);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
@@ -106,7 +106,7 @@ public abstract class Class5712<T extends Class880, M extends Class2827<T>> exte
          float var35 = 0.0F;
          float var16 = 0.0F;
          if (!var1.isPassenger() && var1.method3066()) {
-            var35 = MathHelper.method37821(var3, var1.field4959, var1.field4960);
+            var35 = MathHelper.lerp(var3, var1.field4959, var1.field4960);
             var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
             if (var1.method3005()) {
                var16 *= 3.0F;

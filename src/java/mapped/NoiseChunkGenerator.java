@@ -10,16 +10,16 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
-public final class Class5645 extends Class5646 {
-   public static final Codec<Class5645> field24963 = RecordCodecBuilder.create(
+public final class NoiseChunkGenerator extends ChunkGenerator {
+   public static final Codec<NoiseChunkGenerator> field24963 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class1685.field9159.fieldOf("biome_source").forGetter(var0x -> var0x.field24985),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field24981),
-               Class9309.field43221.fieldOf("settings").forGetter(var0x -> var0x.field24982)
+               DimensionSettings.field43221.fieldOf("settings").forGetter(var0x -> var0x.field24982)
             )
-            .apply(var0, var0.stable(Class5645::new))
+            .apply(var0, var0.stable(NoiseChunkGenerator::new))
    );
-   private static final float[] field24964 = Util.<float[]>method38508(new float[13824], var0 -> {
+   private static final float[] field24964 = Util.<float[]>make(new float[13824], var0 -> {
       for (int var3 = 0; var3 < 24; var3++) {
          for (int var4 = 0; var4 < 24; var4++) {
             for (int var5 = 0; var5 < 24; var5++) {
@@ -28,7 +28,7 @@ public final class Class5645 extends Class5646 {
          }
       }
    });
-   private static final float[] field24965 = Util.<float[]>method38508(new float[25], var0 -> {
+   private static final float[] field24965 = Util.<float[]>make(new float[25], var0 -> {
       for (int var3 = -2; var3 <= 2; var3++) {
          for (int var4 = -2; var4 <= 2; var4++) {
             float var5 = 10.0F / MathHelper.method37765((float)(var3 * var3 + var4 * var4) + 0.2F);
@@ -52,17 +52,17 @@ public final class Class5645 extends Class5646 {
    public final BlockState field24979;
    public final BlockState field24980;
    private final long field24981;
-   public final Supplier<Class9309> field24982;
+   public final Supplier<DimensionSettings> field24982;
    private final int field24983;
 
-   public Class5645(Class1685 var1, long var2, Supplier<Class9309> var4) {
+   public NoiseChunkGenerator(Class1685 var1, long var2, Supplier<DimensionSettings> var4) {
       this(var1, var1, var2, var4);
    }
 
-   private Class5645(Class1685 var1, Class1685 var2, long var3, Supplier<Class9309> var5) {
-      super(var1, var2, ((Class9309)var5.get()).method35160(), var3);
+   private NoiseChunkGenerator(Class1685 var1, Class1685 var2, long var3, Supplier<DimensionSettings> var5) {
+      super(var1, var2, ((DimensionSettings)var5.get()).method35160(), var3);
       this.field24981 = var3;
-      Class9309 var8 = (Class9309)var5.get();
+      DimensionSettings var8 = (DimensionSettings)var5.get();
       this.field24982 = var5;
       Class9556 var9 = var8.method35161();
       this.field24983 = var9.method37010();
@@ -92,16 +92,16 @@ public final class Class5645 extends Class5646 {
    }
 
    @Override
-   public Codec<? extends Class5646> method17790() {
+   public Codec<? extends ChunkGenerator> method17790() {
       return field24963;
    }
 
    @Override
-   public Class5646 method17791(long var1) {
-      return new Class5645(this.field24985.method7200(var1), var1, this.field24982);
+   public ChunkGenerator method17791(long var1) {
+      return new NoiseChunkGenerator(this.field24985.method7200(var1), var1, this.field24982);
    }
 
-   public boolean method17792(long var1, RegistryKey<Class9309> var3) {
+   public boolean method17792(long var1, RegistryKey<DimensionSettings> var3) {
       return this.field24981 == var1 && this.field24982.get().method35168(var3);
    }
 
@@ -195,7 +195,7 @@ public final class Class5645 extends Class5646 {
          var14 = var19 * 0.265625;
          var16 = 96.0 / var21;
       } else {
-         var14 = (double)(Class1690.method7237(this.field24978, var2, var3) - 8.0F);
+         var14 = (double)(EndBiomeProvider.method7237(this.field24978, var2, var3) - 8.0F);
          if (!(var14 > 0.0)) {
             var16 = 1.0;
          } else {
@@ -322,7 +322,7 @@ public final class Class5645 extends Class5646 {
    }
 
    @Override
-   public void method17801(Class1691 var1, Class1670 var2) {
+   public void method17801(Class1691 var1, IChunk var2) {
       Class7481 var5 = var2.method7072();
       int var6 = var5.field32174;
       int var7 = var5.field32175;
@@ -348,11 +348,11 @@ public final class Class5645 extends Class5646 {
       this.method17802(var2, var8);
    }
 
-   private void method17802(Class1670 var1, Random var2) {
+   private void method17802(IChunk var1, Random var2) {
       Mutable var5 = new Mutable();
       int var6 = var1.method7072().method24356();
       int var7 = var1.method7072().method24357();
-      Class9309 var8 = this.field24982.get();
+      DimensionSettings var8 = this.field24982.get();
       int var9 = var8.method35165();
       int var10 = this.field24983 - 1 - var8.method35164();
       int var11 = 5;
@@ -363,7 +363,7 @@ public final class Class5645 extends Class5646 {
             if (var12) {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
-                     var1.method7061(var5.method8372(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.method11579(), false);
+                     var1.setBlockState(var5.method8372(var15.getX(), var10 - var16, var15.getZ()), Blocks.BEDROCK.method11579(), false);
                   }
                }
             }
@@ -371,7 +371,7 @@ public final class Class5645 extends Class5646 {
             if (var13) {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
-                     var1.method7061(var5.method8372(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.method11579(), false);
+                     var1.setBlockState(var5.method8372(var15.getX(), var9 + var17, var15.getZ()), Blocks.BEDROCK.method11579(), false);
                   }
                }
             }
@@ -380,7 +380,7 @@ public final class Class5645 extends Class5646 {
    }
 
    @Override
-   public void method17803(Class1660 var1, Class7480 var2, Class1670 var3) {
+   public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
       ObjectArrayList var6 = new ObjectArrayList(10);
       ObjectArrayList var7 = new ObjectArrayList(32);
       Class7481 var8 = var3.method7072();
@@ -502,7 +502,7 @@ public final class Class5645 extends Class5646 {
                         var19.back(var7.size());
                         BlockState var84 = this.method17800(var70, var41);
                         if (var84 != field24966) {
-                           if (var84.method23392() != 0) {
+                           if (var84.getLightValue() != 0) {
                               var17.method8372(var55, var41, var64);
                               var79.method7105(var17);
                            }

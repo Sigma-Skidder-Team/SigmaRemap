@@ -9,8 +9,8 @@ public class Class2907 extends Class2898<Class4712> {
       super(var1);
    }
 
-   public boolean method11213(Class1658 var1, Class5646 var2, Random var3, BlockPos var4, Class4712 var5) {
-      if (var1.method7007(var4) && !var1.method7007(var4.method8311())) {
+   public boolean method11213(Class1658 var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
+      if (var1.method7007(var4) && !var1.method7007(var4.up())) {
          Mutable var8 = var4.method8354();
          Mutable var9 = var4.method8354();
          boolean var10 = true;
@@ -19,11 +19,11 @@ public class Class2907 extends Class2898<Class4712> {
          boolean var13 = true;
 
          while (var1.method7007(var8)) {
-            if (World.method6720(var8)) {
+            if (World.isOutsideBuildHeight(var8)) {
                return true;
             }
 
-            var1.method6725(var8, Blocks.BASALT.method11579(), 2);
+            var1.setBlockState(var8, Blocks.BASALT.method11579(), 2);
             var10 = var10 && this.method11246(var1, var3, var9.method8377(var8, Direction.NORTH));
             var11 = var11 && this.method11246(var1, var3, var9.method8377(var8, Direction.SOUTH));
             var12 = var12 && this.method11246(var1, var3, var9.method8377(var8, Direction.WEST));
@@ -54,7 +54,7 @@ public class Class2907 extends Class2898<Class4712> {
                   }
 
                   if (!var1.method7007(var9.method8377(var14, Direction.DOWN))) {
-                     var1.method6725(var14, Blocks.BASALT.method11579(), 2);
+                     var1.setBlockState(var14, Blocks.BASALT.method11579(), 2);
                   }
                }
             }
@@ -68,7 +68,7 @@ public class Class2907 extends Class2898<Class4712> {
 
    private void method11245(Class1660 var1, Random var2, BlockPos var3) {
       if (var2.nextBoolean()) {
-         var1.method6725(var3, Blocks.BASALT.method11579(), 2);
+         var1.setBlockState(var3, Blocks.BASALT.method11579(), 2);
       }
    }
 
@@ -76,7 +76,7 @@ public class Class2907 extends Class2898<Class4712> {
       if (var2.nextInt(10) == 0) {
          return false;
       } else {
-         var1.method6725(var3, Blocks.BASALT.method11579(), 2);
+         var1.setBlockState(var3, Blocks.BASALT.method11579(), 2);
          return true;
       }
    }

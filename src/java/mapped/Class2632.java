@@ -68,7 +68,7 @@ public class Class2632 extends Class2628 {
          if (this.field16947 > 0) {
             Vector3d var7 = this.field16946.method3433();
             this.field16946.method3435(var7.field18048, 0.3, var7.field18050);
-            if (!var3.field9020) {
+            if (!var3.isRemote) {
                double var8 = 0.08;
                ((ServerWorld)var3)
                   .method6939(
@@ -94,8 +94,8 @@ public class Class2632 extends Class2628 {
          }
 
          if (this.field16947 > 60) {
-            var3.method6728(var5, false);
-            if (!var3.field9020) {
+            var3.removeBlock(var5, false);
+            if (!var3.isRemote) {
                for (int var15 = 0; var15 < 20; var15++) {
                   double var16 = var6.nextGaussian() * 0.02;
                   double var10 = var6.nextGaussian() * 0.02;
@@ -128,7 +128,7 @@ public class Class2632 extends Class2628 {
          return var1;
       } else {
          BlockPos[] var5 = new BlockPos[]{
-            var1.method8313(), var1.method8345(), var1.method8347(), var1.method8341(), var1.method8343(), var1.method8313().method8313()
+            var1.down(), var1.west(), var1.east(), var1.north(), var1.south(), var1.down().down()
          };
 
          for (BlockPos var9 : var5) {
@@ -143,11 +143,11 @@ public class Class2632 extends Class2628 {
 
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
-      Class1670 var5 = var1.method6724(var2.getX() >> 4, var2.getZ() >> 4, Class9176.field42145, false);
+      IChunk var5 = var1.getChunk(var2.getX() >> 4, var2.getZ() >> 4, ChunkStatus.FULL, false);
       return var5 == null
          ? false
          : var5.getBlockState(var2).method23448(this.field16945)
-            && var5.getBlockState(var2.method8311()).isAir()
+            && var5.getBlockState(var2.up()).isAir()
             && var5.getBlockState(var2.method8339(2)).isAir();
    }
 }

@@ -38,7 +38,7 @@ public enum Class2264 {
       new Class9827(Class8993.field41129, Class8993.field41128, Class8993.field41130)
    );
 
-   private static final Class2264[] field14722 = Util.<Class2264[]>method38508(new Class2264[6], var0 -> {
+   private static final Class2264[] field14722 = Util.<Class2264[]>make(new Class2264[6], var0 -> {
       var0[Class8993.field41131] = field14716;
       var0[Class8993.field41128] = field14717;
       var0[Class8993.field41130] = field14718;

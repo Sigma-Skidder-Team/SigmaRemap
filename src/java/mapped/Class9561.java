@@ -49,7 +49,7 @@ public class Class9561 {
    }
 
    public static int method37047(BlockState var0, Class1663 var1, BlockPos var2) {
-      return !Class9299.field42826.method20214() ? var0.method23392() : Class9299.method35065(var0, Class9299.field42826, var1, var2);
+      return !Class9299.field42826.method20214() ? var0.getLightValue() : Class9299.method35065(var0, Class9299.field42826, var1, var2);
    }
 
    public static Class7529 method37048(ItemStack var0, World var1) {

@@ -24,7 +24,7 @@ public class Class4577 extends Class4566 {
          this.field22044 *= 0.85F;
          this.field22045 *= 0.85F;
          this.field22046 *= 0.85F;
-         if (!this.field22037.method6739(new BlockPos(this.field22041, this.field22042, this.field22043)).method23486(Class8953.field40469)) {
+         if (!this.field22037.getFluidState(new BlockPos(this.field22041, this.field22042, this.field22043)).method23486(Class8953.field40469)) {
             this.method14518();
          }
       } else {

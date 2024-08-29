@@ -82,9 +82,9 @@ public class Class1036 extends Class1035 {
 
    @Override
    public void method4258() {
-      this.world.method6820().startSection("piglinBruteBrain");
+      this.world.getProfiler().startSection("piglinBruteBrain");
       this.method2992().method21432((ServerWorld)this.world, this);
-      this.world.method6820().endSection();
+      this.world.getProfiler().endSection();
       Class9743.method38199(this);
       Class9743.method38205(this);
       super.method4258();
@@ -98,7 +98,7 @@ public class Class1036 extends Class1035 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       boolean var5 = super.method2741(var1, var2);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (var5 && var1.method31109() instanceof Class880) {
             Class9743.method38204(this, (Class880)var1.method31109());
          }

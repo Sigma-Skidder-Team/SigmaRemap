@@ -19,7 +19,7 @@ public enum Class1666 implements Class1665 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       return Class9479.field44064.method25049();
    }
 }

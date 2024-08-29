@@ -322,9 +322,9 @@ public class Class1097 extends Class1018 {
 
       if (this.method5193()) {
          this.method5216();
-         if (!this.world.field9020 && this.method5195() > 80 && this.rand.nextInt(20) == 1) {
+         if (!this.world.isRemote && this.method5195() > 80 && this.rand.nextInt(20) == 1) {
             if (this.method5195() > 100 && this.method5229(this.method2943(Class2106.field13731))) {
-               if (!this.world.field9020) {
+               if (!this.world.isRemote) {
                   this.method2944(Class2106.field13731, ItemStack.EMPTY);
                }
 
@@ -397,21 +397,21 @@ public class Class1097 extends Class1018 {
    }
 
    public float method5220(float var1) {
-      return MathHelper.method37821(var1, this.field6029, this.field6028);
+      return MathHelper.lerp(var1, this.field6029, this.field6028);
    }
 
    public float method5221(float var1) {
-      return MathHelper.method37821(var1, this.field6031, this.field6030);
+      return MathHelper.lerp(var1, this.field6031, this.field6030);
    }
 
    public float method5222(float var1) {
-      return MathHelper.method37821(var1, this.field6033, this.field6032);
+      return MathHelper.lerp(var1, this.field6033, this.field6032);
    }
 
    private void method5223() {
       this.field6026++;
       if (this.field6026 <= 32) {
-         if (!this.world.field9020) {
+         if (!this.world.isRemote) {
             Vector3d var3 = this.method3433();
             if (this.field6026 != 1) {
                if ((float)this.field6026 != 7.0F && (float)this.field6026 != 15.0F && (float)this.field6026 != 23.0F) {
@@ -453,7 +453,7 @@ public class Class1097 extends Class1018 {
          }
       }
 
-      if (!this.world.method6714() && this.rand.nextInt(700) == 0 && this.world.method6789().method17135(Class5462.field24227)) {
+      if (!this.world.isRemote() && this.rand.nextInt(700) == 0 && this.world.method6789().method17135(Class5462.field24227)) {
          this.method3300(Items.field37901);
       }
    }
@@ -543,7 +543,7 @@ public class Class1097 extends Class1018 {
       if (!this.method5214()) {
          if (this.method5191()) {
             this.method5192(false);
-            return ActionResultType.method9002(this.world.field9020);
+            return ActionResultType.method9002(this.world.isRemote);
          } else if (!this.method4381(var5)) {
             return ActionResultType.field14820;
          } else {
@@ -552,11 +552,11 @@ public class Class1097 extends Class1018 {
             }
 
             if (!this.method3005()) {
-               if (!this.world.field9020 && this.method4767() == 0 && this.method4502()) {
+               if (!this.world.isRemote && this.method4767() == 0 && this.method4502()) {
                   this.method4501(var1, var5);
                   this.method4503(var1);
                } else {
-                  if (this.world.field9020 || this.method5189() || this.method3250()) {
+                  if (this.world.isRemote || this.method5189() || this.method3250()) {
                      return ActionResultType.field14820;
                   }
 

@@ -50,7 +50,7 @@ public class Class7340 {
       return this.method23257(var1.getBlock().getStateContainer(), var1);
    }
 
-   public boolean method23259(Class7379 var1) {
+   public boolean method23259(FluidState var1) {
       return this.method23257(var1.method23472().method25047(), var1);
    }
 

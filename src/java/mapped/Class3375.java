@@ -27,7 +27,7 @@ public class Class3375 extends Class3373 {
    }
 
    @Override
-   public String method11566() {
+   public String getTranslationKey() {
       return this.method11581().getTranslationKey();
    }
 
@@ -45,7 +45,7 @@ public class Class3375 extends Class3373 {
    @Override
    public BlockState method11495(Class5909 var1) {
       BlockState var4 = this.method11579();
-      Class7379 var5 = var1.method18360().method6739(var1.method18345());
+      FluidState var5 = var1.method18360().getFluidState(var1.method18345());
       World var6 = var1.method18360();
       BlockPos var7 = var1.method18345();
       Direction[] var8 = var1.method18349();

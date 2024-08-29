@@ -10,7 +10,7 @@ public class Class2763 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17331.method3226() && !this.field17331.world.method6739(this.field17331.getPosition()).method23486(Class8953.field40469);
+      return this.field17331.method3226() && !this.field17331.world.getFluidState(this.field17331.getPosition()).method23486(Class8953.field40469);
    }
 
    @Override
@@ -25,7 +25,7 @@ public class Class2763 extends Class2595 {
          MathHelper.floor(this.field17331.getPosY()),
          MathHelper.floor(this.field17331.getPosZ() + 2.0)
       )) {
-         if (this.field17331.world.method6739(var5).method23486(Class8953.field40469)) {
+         if (this.field17331.world.getFluidState(var5).method23486(Class8953.field40469)) {
             var3 = var5;
             break;
          }

@@ -9,21 +9,21 @@ import java.util.Set;
 public class Class8708 {
    private static String[] field39309;
    private static Registry<Biome> field39310 = method31404(Minecraft.getInstance().world);
-   public static Biome field39311 = field39310.method9189(Class9495.field44122);
-   public static Biome field39312 = field39310.method9189(Class9495.field44127);
-   public static Biome field39313 = field39310.method9189(Class9495.field44178);
+   public static Biome field39311 = field39310.getOrThrow(Class9495.field44122);
+   public static Biome field39312 = field39310.getOrThrow(Class9495.field44127);
+   public static Biome field39313 = field39310.getOrThrow(Class9495.field44178);
 
    public static void method31403(World var0) {
       field39310 = method31404(var0);
-      field39311 = field39310.method9189(Class9495.field44122);
-      field39312 = field39310.method9189(Class9495.field44127);
-      field39313 = field39310.method9189(Class9495.field44178);
+      field39311 = field39310.getOrThrow(Class9495.field44122);
+      field39312 = field39310.getOrThrow(Class9495.field44127);
+      field39313 = field39310.getOrThrow(Class9495.field44178);
    }
 
    public static Registry<Biome> method31404(World var0) {
       return var0 == null
-         ? DynamicRegistries.func_239770_b_().<Biome>method32453(Registry.BIOME_KEY)
-         : var0.method6867().<Biome>method32453(Registry.BIOME_KEY);
+         ? DynamicRegistries.func_239770_b_().<Biome>getRegistry(Registry.BIOME_KEY)
+         : var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY);
    }
 
    public static Registry<Biome> method31405() {

@@ -17,7 +17,7 @@ public class Class2968 extends Class2967 {
       return field18084;
    }
 
-   public boolean method11361(Class5646 var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, Class4700 var10) {
+   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, Class4700 var10) {
       int var13 = var6 >> 4;
       int var14 = var7 >> 4;
       var5.setSeed((long)(var13 ^ var14 << 4) ^ var3);
@@ -25,7 +25,7 @@ public class Class2968 extends Class2967 {
       return var5.nextInt(5) == 0 ? !this.method11382(var1, var3, var5, var6, var7) : false;
    }
 
-   private boolean method11382(Class5646 var1, long var2, Class2420 var4, int var5, int var6) {
+   private boolean method11382(ChunkGenerator var1, long var2, Class2420 var4, int var5, int var6) {
       Class8483 var9 = var1.method17822().method38381(Structure.field18073);
       if (var9 == null) {
          return false;

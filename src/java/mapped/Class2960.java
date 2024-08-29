@@ -14,7 +14,7 @@ public class Class2960 extends Structure<Class4712> {
       return false;
    }
 
-   public boolean method11361(Class5646 var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, Class4712 var10) {
+   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, Class4712 var10) {
       return method11360(var6, var7, var1) >= 60;
    }
 
@@ -23,7 +23,7 @@ public class Class2960 extends Structure<Class4712> {
       return Class5452::new;
    }
 
-   private static int method11360(int var0, int var1, Class5646 var2) {
+   private static int method11360(int var0, int var1, ChunkGenerator var2) {
       Random var5 = new Random((long)(var0 + var1 * 10387313));
       Class80 var6 = Class80.method254(var5);
       byte var7 = 5;
@@ -51,7 +51,7 @@ public class Class2960 extends Structure<Class4712> {
    }
 
    // $VF: synthetic method
-   public static int method11362(int var0, int var1, Class5646 var2) {
+   public static int method11362(int var0, int var1, ChunkGenerator var2) {
       return method11360(var0, var1, var2);
    }
 }

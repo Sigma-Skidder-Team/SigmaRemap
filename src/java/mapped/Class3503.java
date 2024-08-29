@@ -12,7 +12,7 @@ public class Class3503 implements Class3499<Class7435> {
       Class4571 var17 = new Class4571(var2, var3, var5, var7, var9, var11, var13);
       var17.method14514(0.3F, 0.5F, 1.0F);
       var17.method14507(this.field19383);
-      var17.method14515(1.0F - var2.field9016.nextFloat() * 0.7F);
+      var17.method14515(1.0F - var2.rand.nextFloat() * 0.7F);
       var17.method14516(var17.method14517() / 2);
       return var17;
    }

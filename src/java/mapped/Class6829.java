@@ -72,8 +72,8 @@ public class Class6829 {
             if (var16 > (double)this.field29707.stepHeight && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.method3429())
                || !var23.method19516()
                   && this.field29707.getPosY() < var23.method19513(Class113.field414) + (double)var20.getY()
-                  && !var22.method11540(Class7645.field32748)
-                  && !var22.method11540(Class7645.field32771)) {
+                  && !var22.method11540(BlockTags.field32748)
+                  && !var22.method11540(BlockTags.field32771)) {
                this.field29707.method4229().method27049();
                this.field29714 = Class2335.field15969;
             }

@@ -233,7 +233,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
 
    public void method5581() {
       this.method5583();
-      Class8905 var3 = DynamicRegistries.func_239770_b_();
+      DynamicRegistriesImpl var3 = DynamicRegistries.func_239770_b_();
 
       try (
               SaveFormat.LevelSave var4 = this.field6351.getSaveLoader().getLevelSave(this.field6353.method8643());

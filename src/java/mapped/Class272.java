@@ -29,8 +29,8 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
       Map<ResourceLocation, List<Class1768>> var6 = Maps.newHashMap();
 
       for (ResourceLocation var8 : var1.method583("font", var0 -> var0.endsWith(".json"))) {
-         String var9 = var8.method8292();
-         ResourceLocation var10 = new ResourceLocation(var8.method8293(), var9.substring("font/".length(), var9.length() - ".json".length()));
+         String var9 = var8.getPath();
+         ResourceLocation var10 = new ResourceLocation(var8.getNamespace(), var9.substring("font/".length(), var9.length() - ".json".length()));
          List<Class1768> var11 = var6.computeIfAbsent(var10, var0 -> Lists.newArrayList(new Class1772()));
          var2.method22504(var10::toString);
 

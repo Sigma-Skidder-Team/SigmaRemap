@@ -146,7 +146,7 @@ public final class Class120 implements Predicate<ItemStack> {
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
          } else {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "tag"));
-            ITag var6 = Class9443.method36296().method32658().method27135(var5);
+            ITag var6 = Class9443.method36296().method32658().get(var5);
             if (var6 != null) {
                return new Class4828(var6);
             } else {

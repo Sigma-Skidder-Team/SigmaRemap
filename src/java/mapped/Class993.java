@@ -69,7 +69,7 @@ public class Class993 extends AbstractMinecartEntity {
    }
 
    public void method4071(double var1) {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          double var5 = Math.sqrt(var1);
          if (var5 > 5.0) {
             var5 = 5.0;
@@ -111,7 +111,7 @@ public class Class993 extends AbstractMinecartEntity {
 
    public void method4072() {
       this.field5480 = 80;
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.world.method6786(this, (byte)10);
          if (!this.method3245()) {
             this.world
@@ -129,15 +129,15 @@ public class Class993 extends AbstractMinecartEntity {
    }
 
    @Override
-   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, Class7379 var5, float var6) {
-      return this.method4074() && (var4.method23446(Class7645.field32766) || var2.getBlockState(var3.method8311()).method23446(Class7645.field32766))
+   public float method3368(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
+      return this.method4074() && (var4.method23446(BlockTags.field32766) || var2.getBlockState(var3.up()).method23446(BlockTags.field32766))
          ? 0.0F
          : super.method3368(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
    public boolean method3369(Class7782 var1, Class1665 var2, BlockPos var3, BlockState var4, float var5) {
-      return this.method4074() && (var4.method23446(Class7645.field32766) || var2.getBlockState(var3.method8311()).method23446(Class7645.field32766))
+      return this.method4074() && (var4.method23446(BlockTags.field32766) || var2.getBlockState(var3.up()).method23446(BlockTags.field32766))
          ? false
          : super.method3369(var1, var2, var3, var4, var5);
    }

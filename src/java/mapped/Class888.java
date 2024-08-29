@@ -122,7 +122,7 @@ public class Class888 extends Class882 implements Class889 {
       }
 
       this.field5123++;
-      if (this.world.field9020 && this.field5123 % 2 < 2) {
+      if (this.world.isRemote && this.field5123 % 2 < 2) {
          this.world
             .method6746(
                Class7940.field34072,
@@ -135,7 +135,7 @@ public class Class888 extends Class882 implements Class889 {
             );
       }
 
-      if (!this.world.field9020 && this.field5123 > this.field5124) {
+      if (!this.world.isRemote && this.field5123 > this.field5124) {
          this.method3504();
       }
    }
@@ -149,7 +149,7 @@ public class Class888 extends Class882 implements Class889 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3504();
       }
    }
@@ -158,7 +158,7 @@ public class Class888 extends Class882 implements Class889 {
    public void method3466(BlockRayTraceResult var1) {
       BlockPos var4 = new BlockPos(var1.getPos());
       this.world.getBlockState(var4).method23432(this.world, var4, this);
-      if (!this.world.method6714() && this.method3505()) {
+      if (!this.world.isRemote() && this.method3505()) {
          this.method3504();
       }
 
@@ -221,7 +221,7 @@ public class Class888 extends Class882 implements Class889 {
 
    @Override
    public void method2866(byte var1) {
-      if (var1 == 17 && this.world.field9020) {
+      if (var1 == 17 && this.world.isRemote) {
          if (this.method3505()) {
             ItemStack var4 = this.dataManager.<ItemStack>method35445(field5120);
             CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;

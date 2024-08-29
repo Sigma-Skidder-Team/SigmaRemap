@@ -10,9 +10,9 @@ public class Class1677 implements Class1663 {
    public final int field9144;
    public final int field9145;
    public final int field9146;
-   public final Class1674[][] field9147;
+   public final Chunk[][] field9147;
    public final BlockState[] field9148;
-   public final Class7379[] field9149;
+   public final FluidState[] field9149;
    public final World field9150;
 
    @Nullable
@@ -25,11 +25,11 @@ public class Class1677 implements Class1663 {
       int var8 = var1.getZ() - var3 >> 4;
       int var9 = var2.getX() + var3 >> 4;
       int var10 = var2.getZ() + var3 >> 4;
-      Class1674[][] var11 = new Class1674[var9 - var7 + 1][var10 - var8 + 1];
+      Chunk[][] var11 = new Chunk[var9 - var7 + 1][var10 - var8 + 1];
 
       for (int var12 = var7; var12 <= var9; var12++) {
          for (int var13 = var8; var13 <= var10; var13++) {
-            var11[var12 - var7][var13 - var8] = var0.method6824(var12, var13);
+            var11[var12 - var7][var13 - var8] = var0.getChunk(var12, var13);
          }
       }
 
@@ -43,10 +43,10 @@ public class Class1677 implements Class1663 {
       }
    }
 
-   public static boolean method7173(BlockPos var0, BlockPos var1, int var2, int var3, Class1674[][] var4) {
+   public static boolean method7173(BlockPos var0, BlockPos var1, int var2, int var3, Chunk[][] var4) {
       for (int var7 = var0.getX() >> 4; var7 <= var1.getX() >> 4; var7++) {
          for (int var8 = var0.getZ() >> 4; var8 <= var1.getZ() >> 4; var8++) {
-            Class1674 var9 = var4[var7 - var2][var8 - var3];
+            Chunk var9 = var4[var7 - var2][var8 - var3];
             if (!var9.method7076(var0.getY(), var1.getY())) {
                return false;
             }
@@ -56,7 +56,7 @@ public class Class1677 implements Class1663 {
       return true;
    }
 
-   public Class1677(World var1, int var2, int var3, Class1674[][] var4, BlockPos var5, BlockPos var6) {
+   public Class1677(World var1, int var2, int var3, Chunk[][] var4, BlockPos var5, BlockPos var6) {
       this.field9150 = var1;
       this.field9141 = var2;
       this.field9142 = var3;
@@ -88,10 +88,10 @@ public class Class1677 implements Class1663 {
    }
 
    @Override
-   public Class7379 method6739(BlockPos var1) {
+   public FluidState getFluidState(BlockPos var1) {
       int var4 = (var1.getX() >> 4) - this.field9141;
       int var5 = (var1.getZ() >> 4) - this.field9142;
-      return this.field9147[var4][var5].method6739(var1);
+      return this.field9147[var4][var5].getFluidState(var1);
    }
 
    @Override
@@ -126,7 +126,7 @@ public class Class1677 implements Class1663 {
       return this.field9150.getBiome(var1);
    }
 
-   public Class1674 method7177(int var1, int var2) {
+   public Chunk method7177(int var1, int var2) {
       return this.field9147[var1][var2];
    }
 }

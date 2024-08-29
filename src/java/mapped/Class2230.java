@@ -68,7 +68,7 @@ public enum Class2230 implements Class2234 {
             Direction var9 = var1.method23463(Class3348.field18865);
             if (var2.method544() != var9.method544() && var9 == var3.method23463(Class3348.field18865)) {
                Class111 var10 = var2 != var9.method537() ? Class111.field381 : Class111.field380;
-               var4.method6725(var6, var3.method23465(Class3348.field18866, var10.method308()), 18);
+               var4.setBlockState(var6, var3.method23465(Class3348.field18866, var10.method308()), 18);
                if (var9 == Direction.NORTH || var9 == Direction.EAST
                ) {
                   TileEntity var11 = var4.getTileEntity(var5);
@@ -118,7 +118,7 @@ public enum Class2230 implements Class2234 {
              for (BlockPos var11 : var8) {
                  BlockState var12 = var1.getBlockState(var11);
                  if (var12.method23463(Class8820.field39747) >= var7) {
-                     var1.method6725(var11, var12.method23465(Class8820.field39747, Integer.valueOf(var7)), 18);
+                     var1.setBlockState(var11, var12.method23465(Class8820.field39747, Integer.valueOf(var7)), 18);
                      if (var6 != 7) {
                          for (Direction var16 : field14623) {
                              var4.method8377(var11, var16);

@@ -62,7 +62,7 @@ public abstract class Class1050 extends Class1049 {
    @Override
    public void tick() {
       super.tick();
-      if (this.method4806() && this.world.field9016.nextInt(200) == 1) {
+      if (this.method4806() && this.world.rand.nextInt(200) == 1) {
          List var3 = this.world.method7182(this.getClass(), this.getBoundingBox().method19663(8.0, 8.0, 8.0));
          if (var3.size() <= 1) {
             this.field5811 = 1;

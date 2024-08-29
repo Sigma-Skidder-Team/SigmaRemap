@@ -49,7 +49,7 @@ public class Class3249 extends Block implements Class3245 {
       TileEntity var9 = var2.getTileEntity(var3);
       if (var9 instanceof Class965 && var4.method2979()) {
          var4.method2892((Class965)var9);
-         return ActionResultType.method9002(var2.field9020);
+         return ActionResultType.method9002(var2.isRemote);
       } else {
          return ActionResultType.field14820;
       }

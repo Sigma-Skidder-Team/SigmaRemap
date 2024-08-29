@@ -26,7 +26,7 @@ public class Class6773 extends Class6768<Class8278> {
 
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -62,9 +62,9 @@ public class Class6773 extends Class6768<Class8278> {
                      if (var26 > 0) {
                         var26--;
                         if (!var27) {
-                           var2.method7061(var29, this.method20660(var4, var30, var5), false);
+                           var2.setBlockState(var29, this.method20660(var4, var30, var5), false);
                         } else {
-                           var2.method7061(var29, field29549, false);
+                           var2.setBlockState(var29, field29549, false);
                         }
                      }
                   } else {
@@ -85,7 +85,7 @@ public class Class6773 extends Class6768<Class8278> {
 
                      var26 = var24 + Math.max(0, var30 - var11);
                      if (var30 < var11 - 1) {
-                        var2.method7061(var29, var23, false);
+                        var2.setBlockState(var29, var23, false);
                         Block var33 = var23.getBlock();
                         if (var33 == Blocks.field36730
                            || var33 == Blocks.field36731
@@ -103,10 +103,10 @@ public class Class6773 extends Class6768<Class8278> {
                            || var33 == Blocks.field36743
                            || var33 == Blocks.field36744
                            || var33 == Blocks.field36745) {
-                           var2.method7061(var29, field29549, false);
+                           var2.setBlockState(var29, field29549, false);
                         }
                      } else if (var30 <= var11 + 3 + var24) {
-                        var2.method7061(var29, var22, false);
+                        var2.setBlockState(var29, var22, false);
                         var27 = true;
                      } else {
                         BlockState var32;
@@ -118,7 +118,7 @@ public class Class6773 extends Class6768<Class8278> {
                            var32 = field29550;
                         }
 
-                        var2.method7061(var29, var32, false);
+                        var2.setBlockState(var29, var32, false);
                      }
                   }
 

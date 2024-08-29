@@ -41,9 +41,9 @@ public class Class6805<T> implements Class6802<T> {
             var3 = 65536;
          }
 
-         Class1703 var4 = this.field29623.method6883();
+         Class1703 var4 = this.field29623.getChunkProvider();
          Iterator var5 = this.field29622.iterator();
-         this.field29623.method6820().startSection("cleaning");
+         this.field29623.getProfiler().startSection("cleaning");
 
          while (var3 > 0 && var5.hasNext()) {
             Class8269 var6 = (Class8269)var5.next();
@@ -59,7 +59,7 @@ public class Class6805<T> implements Class6802<T> {
             }
          }
 
-         this.field29623.method6820().endStartSection("ticking");
+         this.field29623.getProfiler().endStartSection("ticking");
 
          Class8269 var11;
          while ((var11 = this.field29624.poll()) != null) {
@@ -70,7 +70,7 @@ public class Class6805<T> implements Class6802<T> {
                } catch (Throwable var10) {
                   CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception while ticking");
                   CrashReportCategory var9 = var8.makeCategory("Block being ticked");
-                  CrashReportCategory.method32814(var9, var11.field35556, (BlockState)null);
+                  CrashReportCategory.addBlockInfo(var9, var11.field35556, (BlockState)null);
                   throw new ReportedException(var8);
                }
             } else {
@@ -78,7 +78,7 @@ public class Class6805<T> implements Class6802<T> {
             }
          }
 
-         this.field29623.method6820().endSection();
+         this.field29623.getProfiler().endSection();
          this.field29625.clear();
          this.field29624.clear();
       }

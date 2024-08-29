@@ -41,7 +41,7 @@ public final class ItemStack {
    );
    private static final Logger field39972 = LogManager.getLogger();
    public static final ItemStack EMPTY = new ItemStack((Item)null);
-   public static final DecimalFormat field39974 = Util.<DecimalFormat>method38508(
+   public static final DecimalFormat field39974 = Util.<DecimalFormat>make(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
    private static final Style field39975 = Style.EMPTY.setFormatting(TextFormatting.DARK_PURPLE).setItalic(true);
@@ -229,7 +229,7 @@ public final class ItemStack {
    }
 
    public <T extends Class880> void method32121(int var1, T var2, Consumer<T> var3) {
-      if (!var2.world.field9020
+      if (!var2.world.isRemote
          && (!(var2 instanceof PlayerEntity) || !((PlayerEntity)var2).abilities.isCreativeMode)
          && this.method32115()
          && this.method32120(var1, var2.method3013(), !(var2 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var2)) {
@@ -667,7 +667,7 @@ public final class ItemStack {
                return Lists.newArrayList(new ITextComponent[]{var4.getBlock().method11565().mergeStyle(TextFormatting.DARK_GRAY)});
             }
 
-            ITag<Block> var8 = Class7645.method25115().method27135(var5);
+            ITag<Block> var8 = BlockTags.getCollection().get(var5);
             if (var8 != null) {
                List<Block> var9 = var8.method24918();
                if (!var9.isEmpty()) {

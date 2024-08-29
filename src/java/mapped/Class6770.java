@@ -10,7 +10,7 @@ public class Class6770 extends Class6768<Class8278> {
 
    public void method20654(
       Random var1,
-      Class1670 var2,
+      IChunk var2,
       Biome var3,
       int var4,
       int var5,
@@ -32,7 +32,7 @@ public class Class6770 extends Class6768<Class8278> {
             var21.method8372(var19, var22, var20);
             if (!var2.getBlockState(var21).isAir()) {
                if (var22 == 62 && !var2.getBlockState(var21).method23448(var10.getBlock())) {
-                  var2.method7061(var21, var10, false);
+                  var2.setBlockState(var21, var10, false);
                }
                break;
             }

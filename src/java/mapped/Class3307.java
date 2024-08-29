@@ -16,7 +16,7 @@ public class Class3307 extends Item {
          var6.method2913(Class8876.field40098.method172(this));
       }
 
-      if (!var2.field9020) {
+      if (!var2.isRemote) {
          var3.method3040(Class8254.field35485);
       }
 

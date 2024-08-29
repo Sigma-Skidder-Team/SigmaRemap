@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Class8928 {
    private static String[] field40406;
-   private static final Map<Block, RenderType> field40407 = Util.<Map<Block, RenderType>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Block, RenderType> field40407 = Util.<Map<Block, RenderType>>make(Maps.newHashMap(), var0 -> {
       RenderType var3 = RenderType.method14343();
       var0.put(Blocks.TRIPWIRE, var3);
       RenderType var4 = RenderType.method14301();
@@ -249,7 +249,7 @@ public class Class8928 {
       var0.put(Blocks.field36889, var6);
       var0.put(Blocks.field37013, var6);
    });
-   private static final Map<Fluid, RenderType> field40408 = Util.<Map<Fluid, RenderType>>method38508(Maps.newHashMap(), var0 -> {
+   private static final Map<Fluid, RenderType> field40408 = Util.<Map<Fluid, RenderType>>make(Maps.newHashMap(), var0 -> {
       RenderType var3 = RenderType.method14304();
       var0.put(Class9479.field44065, var3);
       var0.put(Class9479.field44066, var3);
@@ -301,7 +301,7 @@ public class Class8928 {
       }
    }
 
-   public static RenderType method32634(Class7379 var0) {
+   public static RenderType method32634(FluidState var0) {
       RenderType var3 = field40408.get(var0.method23472());
       return var3 == null ? RenderType.method14300() : var3;
    }

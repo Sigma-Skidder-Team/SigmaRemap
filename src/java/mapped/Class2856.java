@@ -147,7 +147,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       super.method10997(var1, var2, var3, var4);
       float var7 = MathHelper.method37828(var1.field4966, var1.field4965, var4);
       float var8 = MathHelper.method37828(var1.field4968, var1.field4967, var4);
-      float var9 = MathHelper.method37821(var4, var1.prevRotationPitch, var1.rotationPitch);
+      float var9 = MathHelper.lerp(var4, var1.prevRotationPitch, var1.rotationPitch);
       float var10 = var8 - var7;
       float var11 = var9 * (float) (Math.PI / 180.0);
       if (var10 > 20.0F) {

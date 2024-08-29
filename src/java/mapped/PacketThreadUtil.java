@@ -8,7 +8,7 @@ public class PacketThreadUtil {
    public static RegistryKey<World> field39630 = null;
 
    public static <T extends Class5104> void checkThreadAndEnqueue(Packet<T> var0, T var1, ServerWorld var2) throws Class2466 {
-      method31780(var0, var1, var2.method6715());
+      method31780(var0, var1, var2.getServer());
    }
 
    public static <T extends Class5104> void method31780(Packet<T> var0, T var1, Class318<?> var2) throws Class2466 {

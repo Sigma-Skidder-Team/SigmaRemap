@@ -12,7 +12,7 @@ public class Class1098 extends Class1013 {
    private static final DataParameter<Boolean> field6038 = EntityDataManager.<Boolean>method35441(Class1098.class, Class7784.field33398);
    private static final DataParameter<Boolean> field6039 = EntityDataManager.<Boolean>method35441(Class1098.class, Class7784.field33398);
    private static final DataParameter<Integer> field6040 = EntityDataManager.<Integer>method35441(Class1098.class, Class7784.field33391);
-   public static final Map<Integer, ResourceLocation> field6041 = Util.<Map<Integer, ResourceLocation>>method38508(Maps.newHashMap(), var0 -> {
+   public static final Map<Integer, ResourceLocation> field6041 = Util.<Map<Integer, ResourceLocation>>make(Maps.newHashMap(), var0 -> {
       var0.put(0, new ResourceLocation("textures/entity/cat/tabby.png"));
       var0.put(1, new ResourceLocation("textures/entity/cat/black.png"));
       var0.put(2, new ResourceLocation("textures/entity/cat/red.png"));
@@ -243,15 +243,15 @@ public class Class1098 extends Class1013 {
    }
 
    public float method5264(float var1) {
-      return MathHelper.method37821(var1, this.field6045, this.field6044);
+      return MathHelper.lerp(var1, this.field6045, this.field6044);
    }
 
    public float method5265(float var1) {
-      return MathHelper.method37821(var1, this.field6047, this.field6046);
+      return MathHelper.lerp(var1, this.field6047, this.field6046);
    }
 
    public float method5266(float var1) {
-      return MathHelper.method37821(var1, this.field6049, this.field6048);
+      return MathHelper.lerp(var1, this.field6049, this.field6048);
    }
 
    public Class1098 method4389(ServerWorld var1, Class1045 var2) {
@@ -314,7 +314,7 @@ public class Class1098 extends Class1013 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       Item var6 = var5.getItem();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (!this.method4393()) {
             if (this.method4381(var5)) {
                this.method4501(var1, var5);

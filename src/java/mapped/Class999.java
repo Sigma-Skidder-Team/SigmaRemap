@@ -50,7 +50,7 @@ public class Class999 extends Entity {
    }
 
    public void method4097(float var1) {
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          this.method3210().method35446(field5498, var1);
       }
    }
@@ -128,7 +128,7 @@ public class Class999 extends Entity {
       super.tick();
       boolean var3 = this.method4107();
       float var4 = this.method4098();
-      if (!this.world.field9020) {
+      if (!this.world.isRemote) {
          if (this.ticksExisted >= this.field5506 + this.field5505) {
             this.method2904();
             return;

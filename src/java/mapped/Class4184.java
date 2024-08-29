@@ -88,7 +88,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(Class1658 var1, Class7480 var2, Class5646 var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(Class1658 var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
       if (!var5.method38396(this.field20455)) {
          return true;
       } else {
@@ -124,14 +124,14 @@ public class Class4184 extends Class4180 {
          BlockState var9 = var2.getBlockState(var8);
          if (var9.isAir() && Block.method11549(var6.method23414(var2, var3), var7)) {
             Class8551 var10 = Class3402.method12039(var7.method536());
-            var2.method6725(var8, Blocks.VINE.method11579().method23465(var10, Boolean.valueOf(true)), 3);
+            var2.setBlockState(var8, Blocks.VINE.method11579().method23465(var10, Boolean.valueOf(true)), 3);
          }
       }
    }
 
    private void method12952(Random var1, Class1660 var2, BlockPos var3) {
-      if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).method23448(Blocks.NETHERRACK) && var2.getBlockState(var3.method8311()).isAir()) {
-         var2.method6725(var3.method8311(), Blocks.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
+      if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).method23448(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
+         var2.setBlockState(var3.up(), Blocks.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
 
@@ -140,7 +140,7 @@ public class Class4184 extends Class4180 {
          for (int var6 = this.field20444.field45680 + 1; var6 < this.field20444.field45683; var6++) {
             BlockPos var7 = new BlockPos(var5, this.field20444.field45679, var6);
             if (var2.getBlockState(var7).method23448(Blocks.NETHERRACK)) {
-               this.method12954(var1, var2, var7.method8313());
+               this.method12954(var1, var2, var7.down());
             }
          }
       }
@@ -186,7 +186,7 @@ public class Class4184 extends Class4180 {
                         this.method12952(var1, var2, var14);
                      }
 
-                     this.method12954(var1, var2, var14.method8313());
+                     this.method12954(var1, var2, var14.down());
                   }
                }
             }
@@ -204,9 +204,9 @@ public class Class4184 extends Class4180 {
 
    private void method12957(Random var1, Class1660 var2, BlockPos var3) {
       if (!this.field20470.field35674 && var1.nextFloat() < 0.07F) {
-         var2.method6725(var3, Blocks.field36890.method11579(), 3);
+         var2.setBlockState(var3, Blocks.field36890.method11579(), 3);
       } else {
-         var2.method6725(var3, Blocks.NETHERRACK.method11579(), 3);
+         var2.setBlockState(var3, Blocks.NETHERRACK.method11579(), 3);
       }
    }
 

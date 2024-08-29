@@ -16,7 +16,7 @@ public class Class8523 {
          new Class7093(
             ImmutableList.of(
                new Class7872(new Class6439(Blocks.field36399, 0.8F), Class6435.field28275, Blocks.field36526.method11579()),
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6439(Blocks.field36399, 0.07F), Class6435.field28275, Blocks.COBWEB.method11579()),
@@ -67,7 +67,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6439(Blocks.field36404, 0.2F), Class6435.field28275, Blocks.COBWEB.method11579()),
@@ -116,7 +116,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.field37065), Class6435.field28275, Blocks.AIR.method11579()),
@@ -163,7 +163,7 @@ public class Class8523 {
          new Class7093(
             ImmutableList.of(
                new Class7872(new Class6439(Blocks.field36399, 0.8F), Class6435.field28275, Blocks.field36526.method11579()),
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(
@@ -212,7 +212,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6437(Class7645.field32748), Class6435.field28275, Blocks.AIR.method11579()),
+               new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.method11579()),
                new Class7872(new Class6439(Blocks.field36859, 0.08F), Class6435.field28275, Blocks.COBWEB.method11579()),

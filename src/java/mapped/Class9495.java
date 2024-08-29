@@ -82,6 +82,6 @@ public abstract class Class9495 {
    public static final RegistryKey<Biome> field44199 = method36682("basalt_deltas");
 
    private static RegistryKey<Biome> method36682(String var0) {
-      return RegistryKey.<Biome>method31395(Registry.BIOME_KEY, new ResourceLocation(var0));
+      return RegistryKey.<Biome>getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(var0));
    }
 }

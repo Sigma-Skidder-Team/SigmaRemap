@@ -70,7 +70,7 @@ public final class Class8178 implements Class8176 {
 
    @Nullable
    private BlockPos method28469(ClientWorld var1) {
-      return !var1.method6812().method36878() ? null : var1.method6880();
+      return !var1.method6812().isNatural() ? null : var1.method6880();
    }
 
    @Nullable
