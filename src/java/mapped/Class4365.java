@@ -29,7 +29,7 @@ public class Class4365 extends Class4247 {
 
    @Override
    public void method13027(float var1) {
-      this.account = Client.getInstance().getNetworkManager().getNewAccount("SigmaUser");
+      this.account = Client.getInstance().getNetworkManager().account;
       String var4 = "Log in";
       Texture var5 = ResourcesDecrypter.accountPNG;
       if (this.account != null) {

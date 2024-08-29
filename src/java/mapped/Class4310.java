@@ -294,7 +294,7 @@ public class Class4310 extends Class4307 {
    public void method13344() {
       if (this.field20983 == null) {
          this.method13222(() -> {
-            List<Class9577> var3 = new ArrayList();
+            List<Class9577> var3 = new ArrayList<>();
             var3.add(new Class9577(Class2189.field14314, "Agora", 45));
             var3.add(new Class9577(Class2189.field14311, "Agora is not yet available...", 35));
             var3.add(new Class9577(Class2189.field14313, "Ok", 55));

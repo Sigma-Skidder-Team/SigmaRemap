@@ -596,6 +596,9 @@ public class Class4305 implements Class4328 {
     }
 
     public void method13252(int var1) {
+        if (field20891.equals("Item3") && field20912.equals("Yes")) {
+            Client.getInstance().getNetworkManager().account = null; // This is so fucking bad code but who cares :trol:
+        }
         for (Class9781 var5 : this.field20922) {
             var5.method38555(this, var1);
         }

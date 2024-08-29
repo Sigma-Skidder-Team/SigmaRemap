@@ -23,6 +23,7 @@ public class NetworkManager {
 
     public String method30447(String var1, String var2, Class9507 var3) {
         NetworkManager.premium = true;
+        this.account = getNewAccount(var1);
         return null;
     }
 

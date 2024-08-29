@@ -149,7 +149,7 @@ public class Class4322 extends Class4307 {
       }
 
       if (this.field21092) {
-         String username = Client.getInstance().getNetworkManager().getNewAccount("SigmaUser").username;
+         String username = Client.getInstance().getNetworkManager().account.username;
          String welcomeBackSign = "Welcome back";
          byte var8 = 100;
          byte var9 = 10;

@@ -145,7 +145,7 @@ public class Class4327 extends Class4305 {
       this.method13230(this.field21131 = new Class4365(this, "Account", 0, var19, 0, var18, "Log in"));
       this.method13230(this.field21128 = new Class4302(this, "pre", 0, 0, 240, 100));
       this.field21128.method13247((var1x, var2x) -> {
-         if (Client.getInstance().getNetworkManager().getNewAccount("SigmaUser") != null) {
+         if (Client.getInstance().getNetworkManager().account != null) {
             ((Class4310)this.method13258()).method13343();
          } else {
             this.method13446(new Class4322());
@@ -158,7 +158,7 @@ public class Class4327 extends Class4305 {
       this.field21127.method13251((var1x, var2x) -> this.method13446(new Class4313()));
       this.field21125.method13251((var1x, var2x) -> this.method13443());
       this.field21131.method13251((var1x, var2x) -> {
-         if (Client.getInstance().getNetworkManager().getNewAccount("SigmaUser") != null) {
+         if (Client.getInstance().getNetworkManager().account != null) {
             ((Class4310)this.method13258()).method13345();
          } else {
             this.method13446(new Class4322());
