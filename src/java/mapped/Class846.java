@@ -41,7 +41,7 @@ public class Class846 extends Class838 {
          AbstractOption var4 = field4688[var3];
          int var5 = this.field4564 / 2 - 155 + var3 % 2 * 160;
          int var6 = this.field4565 / 6 + 21 * (var3 / 2) - 12;
-         Class1197 var7 = this.<Class1197>method2455(var4.method17946(this.field4562.gameSettings, var5, var6, 150));
+         Class1197 var7 = this.<Class1197>method2455(var4.method17946(this.mc.gameSettings, var5, var6, 150));
          if (var4 == AbstractOption.field25423 || var4 == AbstractOption.field25422) {
             var7.field6482 = false;
          }
@@ -55,15 +55,15 @@ public class Class846 extends Class838 {
       if (var1 instanceof Class1210) {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482 && var4.field6523 == 200) {
-            this.field4562.gameSettings.saveOptions();
-            this.field4562.displayGuiScreen(this.field4686);
+            this.mc.gameSettings.saveOptions();
+            this.mc.displayGuiScreen(this.field4686);
          }
       }
    }
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.saveOptions();
+      this.mc.gameSettings.saveOptions();
       super.onClose();
    }
 

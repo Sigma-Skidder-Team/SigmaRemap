@@ -17,7 +17,7 @@ public class Class816 extends Class798 {
    @Override
    public void method1921() {
       this.method2321();
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
    }
 
    @Override
@@ -43,11 +43,11 @@ public class Class816 extends Class798 {
    }
 
    private boolean method2319() {
-      return this.field4562.gameSettings.field44620;
+      return this.mc.gameSettings.field44620;
    }
 
    private boolean method2320() {
-      return this.field4562.currentScreen instanceof MainMenuScreen;
+      return this.mc.currentScreen instanceof MainMenuScreen;
    }
 
    private void method2321() {
@@ -74,7 +74,7 @@ public class Class816 extends Class798 {
       int var10 = var8 + 48 + 2;
       byte var11 = 0;
       if (field4444) {
-         this.field4562.getTextureManager().bindTexture(field4438);
+         this.mc.getTextureManager().bindTexture(field4438);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.pushMatrix();
          RenderSystem.scalef(0.4F, 0.4F, 0.4F);
@@ -84,14 +84,14 @@ public class Class816 extends Class798 {
       }
 
       if (var6 != 0) {
-         this.field4562.getTextureManager().bindTexture(field4436);
+         this.mc.getTextureManager().bindTexture(field4436);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5699(var1, var9 - var11, var10 - 6, 0.0F, 0.0F, 15, 25, 31, 25);
          var11 += 16;
       }
 
       if (field4442) {
-         this.field4562.getTextureManager().bindTexture(field4437);
+         this.mc.getTextureManager().bindTexture(field4437);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          byte var12 = 0;
          if ((Util.milliTime() / 800L & 1L) == 1L) {

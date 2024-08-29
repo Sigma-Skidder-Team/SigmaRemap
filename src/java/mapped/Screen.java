@@ -25,25 +25,25 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    private static final Set<String> field4559 = Sets.newHashSet(new String[]{"http", "https"});
    public final ITextComponent field4560;
    public final List<Class1152> field4561 = Lists.newArrayList();
-   public Minecraft field4562;
+   public Minecraft mc;
    public ItemRenderer field4563;
    public int field4564;
    public int field4565;
    public final List<Class1197> field4566 = Lists.newArrayList();
    public boolean field4567;
-   public FontRenderer field4568;
+   public FontRenderer fontRenderer;
    private URI field4569;
 
    public Screen(ITextComponent var1) {
       this.field4560 = var1;
    }
 
-   public ITextComponent method2453() {
+   public ITextComponent getTextComponent() {
       return this.field4560;
    }
 
    public String getNarrationMessage() {
-      return this.method2453().getString();
+      return this.getTextComponent().getString();
    }
 
    @Override
@@ -75,7 +75,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    public void method1945() {
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    public <T extends Class1197> T method2455(T var1) {
@@ -93,7 +93,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    public List<ITextComponent> method2458(ItemStack var1) {
-      return var1.getTooltip(this.field4562.player, !this.field4562.gameSettings.field44588 ? TooltipFlags.NORMAL : TooltipFlags.field14481);
+      return var1.getTooltip(this.mc.player, !this.mc.gameSettings.field44588 ? TooltipFlags.NORMAL : TooltipFlags.field14481);
    }
 
    public void method2459(MatrixStack var1, ITextComponent var2, int var3, int var4) {
@@ -109,7 +109,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          int var7 = 0;
 
          for (Class9125 var9 : var2) {
-            int var10 = this.field4568.method38822(var9);
+            int var10 = this.fontRenderer.method38822(var9);
             if (var10 > var7) {
                var7 = var10;
             }
@@ -161,7 +161,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
          for (int var19 = 0; var19 < var2.size(); var19++) {
             Class9125 var20 = (Class9125)var2.get(var19);
             if (var20 != null) {
-               this.field4568.method38813(var20, (float)var21, (float)var22, -1, true, var17, var18, false, 0, 15728880);
+               this.fontRenderer.method38813(var20, (float)var21, (float)var22, -1, true, var17, var18, false, 0, 15728880);
             }
 
             if (var19 == 0) {
@@ -185,9 +185,9 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             if (var9 == null) {
                ITextComponent var10 = var7.<ITextComponent>getParameter(HoverEvent$Action.SHOW_TEXT);
                if (var10 != null) {
-                  this.method2461(var1, this.field4562.fontRenderer.method38828(var10, Math.max(this.field4564 / 2, 200)), var3, var4);
+                  this.method2461(var1, this.mc.fontRenderer.method38828(var10, Math.max(this.field4564 / 2, 200)), var3, var4);
                }
-            } else if (this.field4562.gameSettings.field44588) {
+            } else if (this.mc.gameSettings.field44588) {
                this.method2460(var1, var9.getTooltip(), var3, var4);
             }
          } else {
@@ -210,7 +210,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             }
          } else if (var4 != null) {
             if (var4.getAction() == ClickEvent$Action.OPEN_URL) {
-               if (!this.field4562.gameSettings.field44613) {
+               if (!this.mc.gameSettings.field44613) {
                   return false;
                }
 
@@ -225,9 +225,9 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
                      throw new URISyntaxException(var4.getValue(), "Unsupported protocol: " + var6.toLowerCase(Locale.ROOT));
                   }
 
-                  if (this.field4562.gameSettings.field44614) {
+                  if (this.mc.gameSettings.field44614) {
                      this.field4569 = var5;
-                     this.field4562.displayGuiScreen(new Class830(this::method2473, var4.getValue(), false));
+                     this.mc.displayGuiScreen(new Class830(this::method2473, var4.getValue(), false));
                   } else {
                      this.method2474(var5);
                   }
@@ -242,7 +242,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
             } else if (var4.getAction() == ClickEvent$Action.RUN_COMMAND) {
                this.method2466(var4.getValue(), false);
             } else if (var4.getAction() == ClickEvent$Action.COPY_TO_CLIPBOARD) {
-               this.field4562.keyboardListener.method36350(var4.getValue());
+               this.mc.keyboardListener.method36350(var4.getValue());
             } else {
                field4558.error("Don't know how to handle {}", var4);
             }
@@ -260,16 +260,16 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
 
    public void method2466(String var1, boolean var2) {
       if (var2) {
-         this.field4562.ingameGUI.getChatGUI().method5935(var1);
+         this.mc.ingameGUI.getChatGUI().method5935(var1);
       }
 
-      this.field4562.player.method5389(var1);
+      this.mc.player.method5389(var1);
    }
 
    public void init(Minecraft var1, int var2, int var3) {
-      this.field4562 = var1;
+      this.mc = var1;
       this.field4563 = var1.getItemRenderer();
-      this.field4568 = var1.fontRenderer;
+      this.fontRenderer = var1.fontRenderer;
       this.field4564 = var2;
       this.field4565 = var3;
       this.field4566.clear();
@@ -298,7 +298,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    }
 
    public void method2470(MatrixStack var1, int var2) {
-      if (this.field4562.world == null) {
+      if (this.mc.world == null) {
          this.method2471(var2);
       } else {
          this.method5688(var1, 0, 0, this.field4564, this.field4565, -1072689136, -804253680);
@@ -308,7 +308,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
    public void method2471(int var1) {
       Tessellator var4 = Tessellator.getInstance();
       BufferBuilder var5 = var4.getBuffer();
-      this.field4562.getTextureManager().bindTexture(field6451);
+      this.mc.getTextureManager().bindTexture(field6451);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;
       var5.begin(7, DefaultVertexFormats.field43346);
@@ -335,7 +335,7 @@ public abstract class Screen extends Class1150 implements Class1219, Class1190 {
       }
 
       this.field4569 = null;
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    private void method2474(URI var1) {

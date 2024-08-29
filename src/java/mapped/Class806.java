@@ -119,7 +119,7 @@ public class Class806 extends Class798 {
          return true;
       } else {
          for (Class6128 var4 : this.field4281) {
-            if (var4.field27449.equals(this.field4562.getSession().getPlayerID())) {
+            if (var4.field27449.equals(this.mc.getSession().getPlayerID())) {
                return false;
             }
          }
@@ -168,10 +168,10 @@ public class Class806 extends Class798 {
          this.method2024();
          this.method2025();
          if (!this.field4271) {
-            this.field4562.setConnectedToRealms(false);
+            this.mc.setConnectedToRealms(false);
          }
 
-         this.field4562.keyboardListener.method36347(true);
+         this.mc.keyboardListener.method36347(true);
          if (method2013()) {
             field4262.method36019();
          }
@@ -188,9 +188,9 @@ public class Class806 extends Class798 {
 
          this.<Class1287>method2456(this.field4273);
          this.method5537(this.field4273);
-         this.field4298 = Class5991.method18584(this.field4568, field4251, 100);
+         this.field4298 = Class5991.method18584(this.fontRenderer, field4251, 100);
       } else {
-         this.field4562.displayGuiScreen(field4268);
+         this.mc.displayGuiScreen(field4268);
       }
    }
 
@@ -229,7 +229,7 @@ public class Class806 extends Class798 {
       );
       this.field4276 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, this.field4565 - 32, 90, 20, DialogTexts.field30663, var1 -> {
          if (!this.field4286) {
-            this.field4562.displayGuiScreen(this.field4272);
+            this.mc.displayGuiScreen(this.field4272);
          }
       }));
       this.field4277 = this.<Class1206>method2455(
@@ -245,7 +245,7 @@ public class Class806 extends Class798 {
          new Class1206(this.field4564 / 2 + 52, this.method2043() + 137 - 20, 98, 20, new TranslationTextComponent("mco.selectServer.trial"), var1 -> {
             if (this.field4287 && !this.field4288) {
                Util.getOSType().method8181("https://aka.ms/startjavarealmstrial");
-               this.field4562.displayGuiScreen(this.field4272);
+               this.mc.displayGuiScreen(this.field4272);
             }
          })
       );
@@ -427,7 +427,7 @@ public class Class806 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
       this.method2030();
    }
 
@@ -437,10 +437,10 @@ public class Class806 extends Class798 {
          String var4 = "https://aka.ms/ExtendJavaRealms?subscriptionId="
             + var3.field27444
             + "&profileId="
-            + this.field4562.getSession().getPlayerID()
+            + this.mc.getSession().getPlayerID()
             + "&ref="
             + (!var3.field27453 ? "expiredRealm" : "expiredTrial");
-         this.field4562.keyboardListener.method36350(var4);
+         this.mc.keyboardListener.method36350(var4);
          Util.getOSType().method8181(var4);
       }
    }
@@ -481,18 +481,18 @@ public class Class806 extends Class798 {
    }
 
    private void method2031(Class6128 var1) {
-      if (this.field4562.getSession().getPlayerID().equals(var1.field27449) || field4263) {
+      if (this.mc.getSession().getPlayerID().equals(var1.field27449) || field4263) {
          this.method2033();
-         this.field4562.displayGuiScreen(new Class815(this, var1.field27443));
+         this.mc.displayGuiScreen(new Class815(this, var1.field27443));
       }
    }
 
    private void method2032(Class6128 var1) {
-      if (var1 != null && !this.field4562.getSession().getPlayerID().equals(var1.field27449)) {
+      if (var1 != null && !this.mc.getSession().getPlayerID().equals(var1.field27449)) {
          this.method2033();
          TranslationTextComponent var4 = new TranslationTextComponent("mco.configure.world.leave.question.line1");
          TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.leave.question.line2");
-         this.field4562.displayGuiScreen(new Class808(this::method2035, Class2134.field13980, var4, var5, true));
+         this.mc.displayGuiScreen(new Class808(this::method2035, Class2134.field13980, var4, var5, true));
       }
    }
 
@@ -516,7 +516,7 @@ public class Class806 extends Class798 {
          new Class363(this, "Realms-leave-server").start();
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    private void method2036(Class6128 var1) {
@@ -548,7 +548,7 @@ public class Class806 extends Class798 {
       if (this.method2012() && this.field4285) {
          this.field4285 = false;
       } else {
-         this.field4562.displayGuiScreen(this.field4272);
+         this.mc.displayGuiScreen(this.field4272);
       }
    }
 
@@ -595,7 +595,7 @@ public class Class806 extends Class798 {
       }
 
       if (this.field4287 && !this.field4288 && this.method2012()) {
-         this.field4562.getTextureManager().bindTexture(field4240);
+         this.mc.getTextureManager().bindTexture(field4240);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          byte var10 = 8;
          byte var8 = 8;
@@ -619,7 +619,7 @@ public class Class806 extends Class798 {
    }
 
    private void method2039(MatrixStack var1, int var2, int var3) {
-      this.field4562.getTextureManager().bindTexture(field4233);
+      this.mc.getTextureManager().bindTexture(field4233);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.pushMatrix();
       RenderSystem.scalef(0.5F, 0.5F, 0.5F);
@@ -668,16 +668,16 @@ public class Class806 extends Class798 {
 
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 0.7F);
       RenderSystem.enableBlend();
-      this.field4562.getTextureManager().bindTexture(field4238);
+      this.mc.getTextureManager().bindTexture(field4238);
       boolean var10 = false;
       byte var9 = 32;
       AbstractGui.method5699(var1, 0, 32, 0.0F, 0.0F, this.field4564, this.field4565 - 40 - 32, 310, 166);
       RenderSystem.disableBlend();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4237);
       AbstractGui.method5699(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);
+      this.mc.getTextureManager().bindTexture(field4237);
       if (!field4261.isEmpty()) {
-         this.field4562.getTextureManager().bindTexture(field4261.get(this.field4292));
+         this.mc.getTextureManager().bindTexture(field4261.get(this.field4292));
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5699(var1, var6 + 7, var7 + 7, 0.0F, 0.0F, 195, 152, 195, 152);
          if (this.field4293 % 95 >= 5) {
@@ -714,7 +714,7 @@ public class Class806 extends Class798 {
          this.method5688(var1, var4 - 2, var5 + 17, var4 + 18, var5 + 18, var14, var14);
       }
 
-      this.field4562.getTextureManager().bindTexture(field4231);
+      this.mc.getTextureManager().bindTexture(field4231);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       boolean var20 = var7 && var6;
       float var22 = !var20 ? 0.0F : 16.0F;
@@ -725,7 +725,7 @@ public class Class806 extends Class798 {
          int var17 = (int)(
             Math.max(0.0F, Math.max(MathHelper.sin((float)(10 + this.field4283) * 0.57F), MathHelper.cos((float)this.field4283 * 0.35F))) * -6.0F
          );
-         this.field4562.getTextureManager().bindTexture(field4230);
+         this.mc.getTextureManager().bindTexture(field4230);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          float var18 = !var11 ? 0.0F : 8.0F;
          AbstractGui.method5699(var1, var4 + 4, var5 + 4 + var17, (float)var16, var18, 8, 8, 48, 16);
@@ -735,9 +735,9 @@ public class Class806 extends Class798 {
       boolean var24 = var7 && var11;
       if (var24) {
          ITextComponent var25 = var10 != 0 ? field4243 : field4242;
-         int var19 = this.field4568.method38821(var25);
+         int var19 = this.fontRenderer.method38821(var25);
          this.method5688(var1, var23 - 3, var3 - 3, var23 + var19 + 3, var3 + 8 + 3, -1073741824, -1073741824);
-         this.field4568.method38803(var1, var25, (float)var23, (float)var3, -1);
+         this.fontRenderer.method38803(var1, var25, (float)var23, (float)var3, -1);
       }
    }
 
@@ -771,12 +771,12 @@ public class Class806 extends Class798 {
          }
 
          this.field4271 = true;
-         this.field4562.displayGuiScreen(new Class797(var2, new Class791(this, var2, var1, this.field4297)));
+         this.mc.displayGuiScreen(new Class797(var2, new Class791(this, var2, var1, this.field4297)));
       }
    }
 
    private boolean method2047(Class6128 var1) {
-      return var1.field27449 != null && var1.field27449.equals(this.field4562.getSession().getPlayerID());
+      return var1.field27449 != null && var1.field27449.equals(this.mc.getSession().getPlayerID());
    }
 
    private boolean method2048(Class6128 var1) {
@@ -784,7 +784,7 @@ public class Class806 extends Class798 {
    }
 
    private void method2049(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      this.field4562.getTextureManager().bindTexture(field4227);
+      this.mc.getTextureManager().bindTexture(field4227);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
@@ -793,7 +793,7 @@ public class Class806 extends Class798 {
    }
 
    private void method2050(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
-      this.field4562.getTextureManager().bindTexture(field4228);
+      this.mc.getTextureManager().bindTexture(field4228);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4283 % 20 >= 10) {
          AbstractGui.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
@@ -815,7 +815,7 @@ public class Class806 extends Class798 {
    }
 
    private void method2051(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      this.field4562.getTextureManager().bindTexture(field4225);
+      this.mc.getTextureManager().bindTexture(field4225);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
@@ -824,7 +824,7 @@ public class Class806 extends Class798 {
    }
 
    private void method2052(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      this.field4562.getTextureManager().bindTexture(field4226);
+      this.mc.getTextureManager().bindTexture(field4226);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field4565 - 40 && var5 > 32 && !this.method2012()) {
@@ -838,7 +838,7 @@ public class Class806 extends Class798 {
          var8 = true;
       }
 
-      this.field4562.getTextureManager().bindTexture(field4229);
+      this.mc.getTextureManager().bindTexture(field4229);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
       AbstractGui.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
@@ -854,7 +854,7 @@ public class Class806 extends Class798 {
          var8 = true;
       }
 
-      this.field4562.getTextureManager().bindTexture(field4234);
+      this.mc.getTextureManager().bindTexture(field4234);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
       AbstractGui.method5699(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
@@ -870,7 +870,7 @@ public class Class806 extends Class798 {
          int var8 = 0;
 
          for (ITextComponent var10 : var2) {
-            int var11 = this.field4568.method38821(var10);
+            int var11 = this.fontRenderer.method38821(var10);
             if (var11 > var8) {
                var8 = var11;
             }
@@ -885,7 +885,7 @@ public class Class806 extends Class798 {
          for (ITextComponent var12 : var2) {
             int var13 = var15 - (var7 != 0 ? 0 : 3) + var7;
             this.method5688(var1, var14 - 3, var13, var14 + var8 + 3, var15 + 8 + 3 + var7, -1073741824, -1073741824);
-            this.field4568.method38803(var1, var12, (float)var14, (float)(var15 + var7), 16777215);
+            this.fontRenderer.method38803(var1, var12, (float)var14, (float)(var15 + var7), 16777215);
             var7 += 10;
          }
       }
@@ -897,7 +897,7 @@ public class Class806 extends Class798 {
          var9 = true;
       }
 
-      this.field4562.getTextureManager().bindTexture(field4235);
+      this.mc.getTextureManager().bindTexture(field4235);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = !var6 ? 0.0F : 20.0F;
       AbstractGui.method5699(var1, var4, var5, var10, 0.0F, 20, 20, 40, 20);
@@ -912,7 +912,7 @@ public class Class806 extends Class798 {
          var11 = true;
       }
 
-      this.field4562.getTextureManager().bindTexture(field4236);
+      this.mc.getTextureManager().bindTexture(field4236);
       if (!var8) {
          RenderSystem.method27889(0.5F, 0.5F, 0.5F, 1.0F);
       } else {
@@ -933,7 +933,7 @@ public class Class806 extends Class798 {
                   * -6.0F
             )
             : 0;
-         this.field4562.getTextureManager().bindTexture(field4230);
+         this.mc.getTextureManager().bindTexture(field4230);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          AbstractGui.method5699(var1, var5 + 10, var6 + 2 + var14, 40.0F, 0.0F, 8, 8, 48, 16);
       }
@@ -946,7 +946,7 @@ public class Class806 extends Class798 {
       RenderSystem.translatef((float)(this.field4564 / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(1.5F, 1.5F, 1.5F);
-      this.field4568.method38801(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
+      this.fontRenderer.method38801(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
       RenderSystem.popMatrix();
    }
 
@@ -957,13 +957,13 @@ public class Class806 extends Class798 {
       RenderSystem.translatef((float)(this.field4564 / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.scalef(1.5F, 1.5F, 1.5F);
-      this.field4568.method38801(var1, "STAGE!", 0.0F, 0.0F, -256);
+      this.fontRenderer.method38801(var1, "STAGE!", 0.0F, 0.0F, -256);
       RenderSystem.popMatrix();
    }
 
    public Class806 method2060() {
       Class806 var3 = new Class806(this.field4272);
-      var3.init(this.field4562, this.field4564, this.field4565);
+      var3.init(this.mc, this.field4564, this.field4565);
       return var3;
    }
 
@@ -977,7 +977,7 @@ public class Class806 extends Class798 {
    }
 
    private void method2063(Class1206 var1) {
-      this.field4562.displayGuiScreen(new Class823(this.field4272));
+      this.mc.displayGuiScreen(new Class823(this.field4272));
    }
 
    // $VF: synthetic method
@@ -987,12 +987,12 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2080(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2081(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1013,32 +1013,32 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2085(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2086(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2087(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2088(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2089(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2090(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1049,7 +1049,7 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2092(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1060,17 +1060,17 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2094(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2095(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2096(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1090,17 +1090,17 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2100(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2101(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2102(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1125,7 +1125,7 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2107(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1195,7 +1195,7 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2121(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1205,7 +1205,7 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2123(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1215,7 +1215,7 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2125(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -1265,17 +1265,17 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2135(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2136(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2137(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -1285,7 +1285,7 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2139(Class806 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -1310,12 +1310,12 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2144(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2145(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -1325,12 +1325,12 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2147(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2148(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -1340,32 +1340,32 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2150(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2151(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2152(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2153(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2154(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2155(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -1425,6 +1425,6 @@ public class Class806 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2167(Class806 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 }

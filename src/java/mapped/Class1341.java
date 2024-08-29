@@ -32,11 +32,11 @@ public class Class1341 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
-      this.field7119 = new Class1189(this.field4568, this.field4564 / 2 - 100, 22, 200, 20, this.field7119, new TranslationTextComponent("selectWorld.search"));
+      this.mc.keyboardListener.method36347(true);
+      this.field7119 = new Class1189(this.fontRenderer, this.field4564 / 2 - 100, 22, 200, 20, this.field7119, new TranslationTextComponent("selectWorld.search"));
       this.field7119.method5631(var1 -> this.field7120.method6066(() -> var1, false));
       this.field7120 = new Class1276(
-         this, this.field4562, this.field4564, this.field4565, 48, this.field4565 - 64, 36, () -> this.field7119.method5636(), this.field7120
+         this, this.mc, this.field4564, this.field4565, 48, this.field4565 - 64, 36, () -> this.field7119.method5636(), this.field7120
       );
       this.field4561.add(this.field7119);
       this.field4561.add(this.field7120);
@@ -57,7 +57,7 @@ public class Class1341 extends Screen {
             150,
             20,
             new TranslationTextComponent("selectWorld.create"),
-            var1 -> this.field4562.displayGuiScreen(Class1335.method6353(this))
+            var1 -> this.mc.displayGuiScreen(Class1335.method6353(this))
          )
       );
       this.field7117 = this.<Class1206>method2455(
@@ -91,7 +91,7 @@ public class Class1341 extends Screen {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 82, this.field4565 - 28, 72, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field7113))
+         new Class1206(this.field4564 / 2 + 82, this.field4565 - 28, 72, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field7113))
       );
       this.method6422(false);
       this.method5536(this.field7119);
@@ -104,7 +104,7 @@ public class Class1341 extends Screen {
 
    @Override
    public void method1945() {
-      this.field4562.displayGuiScreen(this.field7113);
+      this.mc.displayGuiScreen(this.field7113);
    }
 
    @Override
@@ -117,7 +117,7 @@ public class Class1341 extends Screen {
       this.field7114 = null;
       this.field7120.method1923(var1, var2, var3, var4);
       this.field7119.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 8, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
       super.method1923(var1, var2, var3, var4);
       if (this.field7114 != null) {
          this.method2461(var1, this.field7114, var2, var3);

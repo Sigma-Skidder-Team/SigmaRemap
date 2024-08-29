@@ -104,7 +104,7 @@ public class Class848 extends Class838 {
                if (var6 instanceof Class6681) {
                   String var11 = var6.method20366();
                   Class848 var8 = new Class848(this, this.field4695, var11);
-                  this.field4562.displayGuiScreen(var8);
+                  this.mc.displayGuiScreen(var8);
                   return;
                }
 
@@ -139,7 +139,7 @@ public class Class848 extends Class838 {
                   Shaders.method33033();
                }
 
-               this.field4562.displayGuiScreen(this.field4694);
+               this.mc.displayGuiScreen(this.field4694);
             }
          }
       }

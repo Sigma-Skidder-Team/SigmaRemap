@@ -78,17 +78,17 @@ public class Class837 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
       int var7 = this.field4564 / 2 - 150;
       int var8 = this.field4564 / 2 + 150;
       int var9 = this.field4565 / 4 + 100;
       int var10 = var9 + 10;
-      method5691(var1, this.field4568, this.field4627.method27069(), this.field4564 / 2, var9 - 9 - 2, 10526880);
+      method5691(var1, this.fontRenderer, this.field4627.method27069(), this.field4564 / 2, var9 - 9 - 2, 10526880);
       if (this.field4627.method27066() > 0) {
          method5686(var1, var7 - 1, var9 - 1, var8 + 1, var10 + 1, -16777216);
-         method5693(var1, this.field4568, new TranslationTextComponent("optimizeWorld.info.converted", this.field4627.method27067()), var7, 40, 10526880);
-         method5693(var1, this.field4568, new TranslationTextComponent("optimizeWorld.info.skipped", this.field4627.method27068()), var7, 52, 10526880);
-         method5693(var1, this.field4568, new TranslationTextComponent("optimizeWorld.info.total", this.field4627.method27066()), var7, 64, 10526880);
+         method5693(var1, this.fontRenderer, new TranslationTextComponent("optimizeWorld.info.converted", this.field4627.method27067()), var7, 40, 10526880);
+         method5693(var1, this.fontRenderer, new TranslationTextComponent("optimizeWorld.info.skipped", this.field4627.method27068()), var7, 52, 10526880);
+         method5693(var1, this.fontRenderer, new TranslationTextComponent("optimizeWorld.info.total", this.field4627.method27066()), var7, 64, 10526880);
          int var11 = 0;
          UnmodifiableIterator var12 = this.field4627.method27063().iterator();
 
@@ -100,10 +100,10 @@ public class Class837 extends Screen {
          }
 
          int var15 = this.field4627.method27067() + this.field4627.method27068();
-         method5690(var1, this.field4568, var15 + " / " + this.field4627.method27066(), this.field4564 / 2, var9 + 18 + 2, 10526880);
+         method5690(var1, this.fontRenderer, var15 + " / " + this.field4627.method27066(), this.field4564 / 2, var9 + 18 + 2, 10526880);
          method5690(
             var1,
-            this.field4568,
+            this.fontRenderer,
             MathHelper.method37767(this.field4627.method27065() * 100.0F) + "%",
             this.field4564 / 2,
             var9 + (var10 - var9) / 2 - 4,

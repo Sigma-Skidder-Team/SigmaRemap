@@ -16,7 +16,7 @@ public class Class853 extends Class851<Class5829> implements Class854 {
    public void method1921() {
       super.method1921();
       this.field4757 = this.field4564 < 379;
-      this.field4756.method5833(this.field4564, this.field4565, this.field4562, this.field4757, this.field4727);
+      this.field4756.method5833(this.field4564, this.field4565, this.mc, this.field4757, this.field4727);
       this.field4734 = this.field4756.method5837(this.field4757, this.field4564, this.field4721);
       this.field4561.add(this.field4756);
       this.method5536(this.field4756);
@@ -54,7 +54,7 @@ public class Class853 extends Class851<Class5829> implements Class854 {
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4754);
+      this.mc.getTextureManager().bindTexture(field4754);
       int var7 = this.field4734;
       int var8 = (this.field4565 - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);

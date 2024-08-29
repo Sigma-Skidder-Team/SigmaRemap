@@ -29,9 +29,9 @@ public class Class805 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4219 = new Class1189(
-         this.field4562.fontRenderer,
+         this.mc.fontRenderer,
          this.field4564 / 2 - 100,
          method1929(2),
          200,
@@ -47,13 +47,13 @@ public class Class805 extends Class798 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field4222))
+         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field4222))
       );
    }
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    private void method2007() {
@@ -63,7 +63,7 @@ public class Class805 extends Class798 {
             Class6128 var4 = var3.method14557(this.field4220.field27443, this.field4219.method5636().trim());
             if (var4 != null) {
                this.field4220.field27450 = var4.field27450;
-               this.field4562.displayGuiScreen(new Class824(this.field4221, this.field4220));
+               this.mc.displayGuiScreen(new Class824(this.field4221, this.field4220));
             } else {
                this.method2008(field4218);
             }
@@ -86,7 +86,7 @@ public class Class805 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4222);
+         this.mc.displayGuiScreen(this.field4222);
          return true;
       }
    }
@@ -94,9 +94,9 @@ public class Class805 extends Class798 {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      this.field4568.method38805(var1, field4217, (float)(this.field4564 / 2 - 100), (float)method1929(1), 10526880);
+      this.fontRenderer.method38805(var1, field4217, (float)(this.field4564 / 2 - 100), (float)method1929(1), 10526880);
       if (this.field4223 != null) {
-         method5691(var1, this.field4568, this.field4223, this.field4564 / 2, method1929(5), 16711680);
+         method5691(var1, this.fontRenderer, this.field4223, this.field4564 / 2, method1929(5), 16711680);
       }
 
       this.field4219.method1923(var1, var2, var3, var4);

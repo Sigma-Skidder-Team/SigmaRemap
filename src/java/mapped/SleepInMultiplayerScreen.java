@@ -32,7 +32,7 @@ public class SleepInMultiplayerScreen extends ChatScreen {
             }
 
             this.field7048.method5635("");
-            this.field4562.ingameGUI.getChatGUI().method5936();
+            this.mc.ingameGUI.getChatGUI().method5936();
             return true;
          }
       } else {
@@ -43,7 +43,7 @@ public class SleepInMultiplayerScreen extends ChatScreen {
    }
 
    private void method6348() {
-      ClientPlayNetHandler var3 = this.field4562.player.connection;
-      var3.sendPacket(new CEntityActionPacket(this.field4562.player, Class1865.field10042));
+      ClientPlayNetHandler var3 = this.mc.player.connection;
+      var3.sendPacket(new CEntityActionPacket(this.mc.player, Class1865.field10042));
    }
 }

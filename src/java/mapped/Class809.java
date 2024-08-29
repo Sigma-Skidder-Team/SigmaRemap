@@ -26,7 +26,7 @@ public class Class809 extends Class798 {
    @Override
    public void method1921() {
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4335))
+         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4335))
       );
    }
 
@@ -43,10 +43,10 @@ public class Class809 extends Class798 {
          var8 = field4334;
       }
 
-      method5691(var1, this.field4568, var7, this.field4564 / 2, method1929(3), 16711680);
+      method5691(var1, this.fontRenderer, var7, this.field4564 / 2, method1929(3), 16711680);
 
       for (int var9 = 0; var9 < var8.length; var9++) {
-         method5691(var1, this.field4568, var8[var9], this.field4564 / 2, method1929(5) + var9 * 12, 16777215);
+         method5691(var1, this.fontRenderer, var8[var9], this.field4564 / 2, method1929(5) + var9 * 12, 16777215);
       }
 
       super.method1923(var1, var2, var3, var4);
@@ -57,7 +57,7 @@ public class Class809 extends Class798 {
       if (var1 != 257 && var1 != 335 && var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4335);
+         this.mc.displayGuiScreen(this.field4335);
          return true;
       }
    }

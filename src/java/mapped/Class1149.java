@@ -24,21 +24,21 @@ public class Class1149 extends Screen {
    public void method1921() {
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, new TranslationTextComponent("lanServer.start"), var1 -> {
-            this.field4562.displayGuiScreen((Screen)null);
+            this.mc.displayGuiScreen((Screen)null);
             int var4 = Class6639.method20257();
             TranslationTextComponent var5;
-            if (!this.field4562.getIntegratedServer().method1374(Class1894.method8161(this.field6286), this.field6287, var4)) {
+            if (!this.mc.getIntegratedServer().method1374(Class1894.method8161(this.field6286), this.field6287, var4)) {
                var5 = new TranslationTextComponent("commands.publish.failed");
             } else {
                var5 = new TranslationTextComponent("commands.publish.started", var4);
             }
 
-            this.field4562.ingameGUI.getChatGUI().method5930(var5);
-            this.field4562.setDefaultMinecraftTitle();
+            this.mc.ingameGUI.getChatGUI().method5930(var5);
+            this.mc.setDefaultMinecraftTitle();
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6283))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6283))
       );
       this.field6285 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, 100, 150, 20, StringTextComponent.EMPTY, var1 -> {
          if (!"spectator".equals(this.field6286)) {
@@ -73,8 +73,8 @@ public class Class1149 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 50, 16777215);
-      method5691(var1, this.field4568, field6282, this.field4564 / 2, 82, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 50, 16777215);
+      method5691(var1, this.fontRenderer, field6282, this.field4564 / 2, 82, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 }

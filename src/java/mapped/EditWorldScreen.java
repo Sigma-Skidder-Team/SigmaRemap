@@ -48,7 +48,7 @@ public class EditWorldScreen extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       Class1206 var3 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 0 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.resetIcon"), var1 -> {
             FileUtils.deleteQuietly(this.field7035.method8002());
@@ -73,7 +73,7 @@ public class EditWorldScreen extends Screen {
       );
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 72 + 5, 200, 20, new TranslationTextComponent("selectWorld.edit.backupFolder"), var1 -> {
-            SaveFormat var4x = this.field4562.getSaveLoader();
+            SaveFormat var4x = this.mc.getSaveLoader();
             Path var5x = var4x.method38467();
 
             try {
@@ -92,12 +92,12 @@ public class EditWorldScreen extends Screen {
             200,
             20,
             new TranslationTextComponent("selectWorld.edit.optimize"),
-            var1 -> this.field4562.displayGuiScreen(new ConfirmBackupScreen(this, (var1x, var2) -> {
+            var1 -> this.mc.displayGuiScreen(new ConfirmBackupScreen(this, (var1x, var2) -> {
                   if (var1x) {
                      method6323(this.field7035);
                   }
 
-                  this.field4562.displayGuiScreen(Class837.method2560(this.field4562, this.field7033, this.field4562.getDataFixer(), this.field7035, var2));
+                  this.mc.displayGuiScreen(Class837.method2560(this.mc, this.field7033, this.mc.getDataFixer(), this.field7035, var2));
                }, new TranslationTextComponent("optimizeWorld.confirm.title"), new TranslationTextComponent("optimizeWorld.confirm.description"), true))
          )
       );
@@ -112,7 +112,7 @@ public class EditWorldScreen extends Screen {
                DynamicRegistriesImpl var4x = DynamicRegistries.func_239770_b_();
 
                DataResult<String> var9;
-               try (Minecraft.PackManager var5x = this.field4562.reloadDatapacks(var4x, Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, this.field7035)) {
+               try (Minecraft.PackManager var5x = this.mc.reloadDatapacks(var4x, Minecraft::loadDataPackCodec, Minecraft::loadWorld, false, this.field7035)) {
                   WorldGenSettingsExport<JsonElement> var7 = WorldGenSettingsExport.create(JsonOps.INSTANCE, var4x);
                   DataResult<JsonElement> var8 = DimensionGeneratorSettings.field_236201_a_.encodeStart(var7, var5x.getServerConfiguration().getDimensionGeneratorSettings());
                   var9 = var8.flatMap(var1x -> {
@@ -155,7 +155,7 @@ public class EditWorldScreen extends Screen {
                   var9.result().isPresent() ? "selectWorld.edit.export_worldgen_settings.success" : "selectWorld.edit.export_worldgen_settings.failure"
                );
                var9.error().ifPresent(var0 -> field7029.error("Error exporting world settings: {}", var0));
-               this.field4562.getToastGui().method5914(SystemToast.method24902(this.field4562, SystemToast.Type.field11198, var22, var21));
+               this.mc.getToastGui().method5914(SystemToast.method24902(this.mc, SystemToast.Type.field11198, var22, var21));
             }
          )
       );
@@ -170,7 +170,7 @@ public class EditWorldScreen extends Screen {
       var3.field6482 = this.field7035.method8002().isFile();
       Class2024 var4 = this.field7035.method7997();
       String var5 = var4 != null ? var4.method8644() : "";
-      this.field7034 = new Class1189(this.field4568, this.field4564 / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
+      this.field7034 = new Class1189(this.fontRenderer, this.field4564 / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7034.method5635(var5);
       this.field7034.method5631(var1 -> this.field7032.field6482 = !var1.trim().isEmpty());
       this.field4561.add(this.field7034);
@@ -191,7 +191,7 @@ public class EditWorldScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    private void method6321() {
@@ -200,7 +200,7 @@ public class EditWorldScreen extends Screen {
          this.field7033.accept(true);
       } catch (IOException var4) {
          field7029.error("Failed to access world '{}'", this.field7035.method7990(), var4);
-         SystemToast.func_238535_a_(this.field4562, this.field7035.method7990());
+         SystemToast.func_238535_a_(this.mc, this.field7035.method7990());
          this.field7033.accept(true);
       }
    }
@@ -246,8 +246,8 @@ public class EditWorldScreen extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 15, 16777215);
-      method5693(var1, this.field4568, field7031, this.field4564 / 2 - 100, 24, 10526880);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
+      method5693(var1, this.fontRenderer, field7031, this.field4564 / 2 - 100, 24, 10526880);
       this.field7034.method1923(var1, var2, var3, var4);
       super.method1923(var1, var2, var3, var4);
    }

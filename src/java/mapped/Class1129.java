@@ -26,11 +26,11 @@ public class Class1129 extends Screen {
       for (AbstractOption var7 : field6173) {
          int var8 = this.field4564 / 2 - 155 + var3 % 2 * 160;
          int var9 = this.field4565 / 6 - 12 + 24 * (var3 >> 1);
-         this.<Class1197>method2455(var7.method17946(this.field4562.gameSettings, var8, var9, 150));
+         this.<Class1197>method2455(var7.method17946(this.mc.gameSettings, var8, var9, 150));
          var3++;
       }
 
-      if (this.field4562.world == null) {
+      if (this.mc.world == null) {
          this.<Class1228>method2455(
             new Class1228(
                this.field4564 / 2 - 155 + var3 % 2 * 160,
@@ -47,36 +47,36 @@ public class Class1129 extends Screen {
             )
          );
       } else {
-         this.field6178 = this.field4562.world.method6997();
+         this.field6178 = this.mc.world.method6997();
          this.field6176 = this.<Class1206>method2455(
             new Class1206(
                this.field4564 / 2 - 155 + var3 % 2 * 160, this.field4565 / 6 - 12 + 24 * (var3 >> 1), 150, 20, this.method5431(this.field6178), var1 -> {
                   this.field6178 = Class2197.method8907(this.field6178.method8905() + 1);
-                  this.field4562.getConnection().sendPacket(new Class5517(this.field6178));
+                  this.mc.getConnection().sendPacket(new Class5517(this.field6178));
                   this.field6176.method5743(this.method5431(this.field6178));
                }
             )
          );
-         if (this.field4562.isSingleplayer() && !this.field4562.world.getWorldInfo().isHardcore()) {
+         if (this.mc.isSingleplayer() && !this.mc.world.getWorldInfo().isHardcore()) {
             this.field6176.method5741(this.field6176.method5740() - 20);
             this.field6177 = this.<Class1226>method2455(
                new Class1226(
                   this.field6176.field6477 + this.field6176.method5740(),
                   this.field6176.field6478,
-                  var1 -> this.field4562
+                  var1 -> this.mc
                         .displayGuiScreen(
                            new ConfirmScreen(
                               this::method5432,
                               new TranslationTextComponent("difficulty.lock.title"),
                               new TranslationTextComponent(
                                  "difficulty.lock.question",
-                                 new TranslationTextComponent("options.difficulty." + this.field4562.world.getWorldInfo().method20047().method8909())
+                                 new TranslationTextComponent("options.difficulty." + this.mc.world.getWorldInfo().method20047().method8909())
                               )
                            )
                         )
                )
             );
-            this.field6177.method5808(this.field4562.world.getWorldInfo().method20048());
+            this.field6177.method5808(this.mc.world.getWorldInfo().method20048());
             this.field6177.field6482 = !this.field6177.method5807();
             this.field6176.field6482 = !this.field6177.method5807();
          } else {
@@ -91,7 +91,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.skinCustomisation"),
-            var1 -> this.field4562.displayGuiScreen(new Class1139(this, this.field6175))
+            var1 -> this.mc.displayGuiScreen(new Class1139(this, this.field6175))
          )
       );
       this.<Class1206>method2455(
@@ -101,7 +101,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.sounds"),
-            var1 -> this.field4562.displayGuiScreen(new Class1137(this, this.field6175))
+            var1 -> this.mc.displayGuiScreen(new Class1137(this, this.field6175))
          )
       );
       this.<Class1206>method2455(
@@ -111,7 +111,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.video"),
-            var1 -> this.field4562.displayGuiScreen(new Class843(this, this.field6175))
+            var1 -> this.mc.displayGuiScreen(new Class843(this, this.field6175))
          )
       );
       this.<Class1206>method2455(
@@ -121,7 +121,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.controls"),
-            var1 -> this.field4562.displayGuiScreen(new Class1138(this, this.field6175))
+            var1 -> this.mc.displayGuiScreen(new Class1138(this, this.field6175))
          )
       );
       this.<Class1206>method2455(
@@ -131,7 +131,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.language"),
-            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field6175, this.field4562.getLanguageManager()))
+            var1 -> this.mc.displayGuiScreen(new Class1136(this, this.field6175, this.mc.getLanguageManager()))
          )
       );
       this.<Class1206>method2455(
@@ -141,7 +141,7 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.chat.title"),
-            var1 -> this.field4562.displayGuiScreen(new Class1141(this, this.field6175))
+            var1 -> this.mc.displayGuiScreen(new Class1141(this, this.field6175))
          )
       );
       this.<Class1206>method2455(
@@ -151,10 +151,10 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.resourcepack"),
-            var1 -> this.field4562
+            var1 -> this.mc
                   .displayGuiScreen(
                      new Class1336(
-                        this, this.field4562.getResourcePackList(), this::method5430, this.field4562.getFileResourcePacks(), new TranslationTextComponent("resourcePack.title")
+                        this, this.mc.getResourcePackList(), this::method5430, this.mc.getFileResourcePacks(), new TranslationTextComponent("resourcePack.title")
                      )
                   )
          )
@@ -166,11 +166,11 @@ public class Class1129 extends Screen {
             150,
             20,
             new TranslationTextComponent("options.accessibility.title"),
-            var1 -> this.field4562.displayGuiScreen(new Class1142(this, this.field6175))
+            var1 -> this.mc.displayGuiScreen(new Class1142(this, this.field6175))
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 / 6 + 168, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6174))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 / 6 + 168, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6174))
       );
    }
 
@@ -191,7 +191,7 @@ public class Class1129 extends Screen {
       this.field6175.saveOptions();
       ImmutableList var7 = ImmutableList.copyOf(this.field6175.resourcePacks);
       if (!var7.equals(var4)) {
-         this.field4562.reloadResources();
+         this.mc.reloadResources();
       }
    }
 
@@ -200,9 +200,9 @@ public class Class1129 extends Screen {
    }
 
    private void method5432(boolean var1) {
-      this.field4562.displayGuiScreen(this);
-      if (var1 && this.field4562.world != null) {
-         this.field4562.getConnection().sendPacket(new Class5494(true));
+      this.mc.displayGuiScreen(this);
+      if (var1 && this.mc.world != null) {
+         this.mc.getConnection().sendPacket(new Class5494(true));
          this.field6177.method5808(true);
          this.field6177.field6482 = false;
          this.field6176.field6482 = false;
@@ -217,7 +217,7 @@ public class Class1129 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 15, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 }

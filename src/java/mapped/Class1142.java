@@ -33,17 +33,17 @@ public class Class1142 extends Class1140 {
             150,
             20,
             new TranslationTextComponent("options.accessibility.link"),
-            var1 -> this.field4562.displayGuiScreen(new Class830(var1x -> {
+            var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
                   if (var1x) {
                      Util.getOSType().method8181("https://aka.ms/MinecraftJavaAccessibility");
                   }
 
-                  this.field4562.displayGuiScreen(this);
+                  this.mc.displayGuiScreen(this);
                }, "https://aka.ms/MinecraftJavaAccessibility", true))
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 27, 150, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 27, 150, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192))
       );
    }
 }

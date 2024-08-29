@@ -43,7 +43,7 @@ public class Class807 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4317 = new Class1289(this);
       if (field4313 != -1) {
          this.field4317.method6045((double)field4313);
@@ -60,12 +60,12 @@ public class Class807 extends Class798 {
       );
       this.field4322 = this.<Class1206>method2455(
          new Class1206(this.field4564 - 135, method1929(5), 120, 20, new TranslationTextComponent("mco.backup.changes.tooltip"), var1 -> {
-            this.field4562.displayGuiScreen(new Class803(this, this.field4315.get(this.field4318)));
+            this.mc.displayGuiScreen(new Class803(this, this.field4315.get(this.field4318)));
             this.field4318 = -1;
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 - 100, this.field4565 - 35, 85, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4314))
+         new Class1206(this.field4564 - 100, this.field4565 - 35, 85, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4314))
       );
       this.<Class1289>method2456(this.field4317);
       this.field4325 = this.<Class1153>method2456(new Class1153(new TranslationTextComponent("mco.configure.world.backup"), this.field4564 / 2, 12, 16777215));
@@ -122,7 +122,7 @@ public class Class807 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4314);
+         this.mc.displayGuiScreen(this.field4314);
          return true;
       }
    }
@@ -135,10 +135,10 @@ public class Class807 extends Class798 {
          String var6 = Class9740.method38174(var4);
          TranslationTextComponent var7 = new TranslationTextComponent("mco.configure.world.restore.question.line1", var5, var6);
          TranslationTextComponent var8 = new TranslationTextComponent("mco.configure.world.restore.question.line2");
-         this.field4562.displayGuiScreen(new Class808(var1x -> {
+         this.mc.displayGuiScreen(new Class808(var1x -> {
             if (!var1x) {
                this.field4318 = -1;
-               this.field4562.displayGuiScreen(this);
+               this.mc.displayGuiScreen(this);
             } else {
                this.method2176();
             }
@@ -149,9 +149,9 @@ public class Class807 extends Class798 {
    private void method2174() {
       TranslationTextComponent var3 = new TranslationTextComponent("mco.configure.world.restore.download.question.line1");
       TranslationTextComponent var4 = new TranslationTextComponent("mco.configure.world.restore.download.question.line2");
-      this.field4562.displayGuiScreen(new Class808(var1 -> {
+      this.mc.displayGuiScreen(new Class808(var1 -> {
          if (!var1) {
-            this.field4562.displayGuiScreen(this);
+            this.mc.displayGuiScreen(this);
          } else {
             this.method2175();
          }
@@ -159,7 +159,7 @@ public class Class807 extends Class798 {
    }
 
    private void method2175() {
-      this.field4562
+      this.mc
          .displayGuiScreen(
             new Class797(
                this.field4314.method2298(),
@@ -176,7 +176,7 @@ public class Class807 extends Class798 {
    private void method2176() {
       Class6122 var3 = this.field4315.get(this.field4318);
       this.field4318 = -1;
-      this.field4562.displayGuiScreen(new Class797(this.field4314.method2298(), new Class1344(var3, this.field4324.field27443, this.field4314)));
+      this.mc.displayGuiScreen(new Class797(this.field4314.method2298(), new Class1344(var3, this.field4324.field27443, this.field4314)));
    }
 
    @Override
@@ -185,9 +185,9 @@ public class Class807 extends Class798 {
       this.method2469(var1);
       this.field4317.method1923(var1, var2, var3, var4);
       this.field4325.method5542(this, var1);
-      this.field4568.method38805(var1, field4311, (float)((this.field4564 - 150) / 2 - 90), 20.0F, 10526880);
+      this.fontRenderer.method38805(var1, field4311, (float)((this.field4564 - 150) / 2 - 90), 20.0F, 10526880);
       if (this.field4323) {
-         this.field4568.method38805(var1, field4312, 20.0F, (float)(this.field4565 / 2 - 10), 16777215);
+         this.fontRenderer.method38805(var1, field4312, 20.0F, (float)(this.field4565 / 2 - 10), 16777215);
       }
 
       this.field4320.field6482 = !this.field4323;
@@ -201,9 +201,9 @@ public class Class807 extends Class798 {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.field4568.method38821(var2);
+         int var9 = this.fontRenderer.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.field4568.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
@@ -214,7 +214,7 @@ public class Class807 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2185(Class807 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -270,12 +270,12 @@ public class Class807 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2196(Class807 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2197(Class807 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -285,7 +285,7 @@ public class Class807 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2199(Class807 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -305,7 +305,7 @@ public class Class807 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2203(Class807 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method

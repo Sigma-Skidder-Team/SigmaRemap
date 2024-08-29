@@ -27,7 +27,7 @@ public class Class844 extends Class838 {
    public void method1921() {
       this.<Class1210>method2455(new Class1210(0, this.field4564 / 2 - 100, this.field4565 / 6 + 96, this.field4679));
       this.field4678.clear();
-      this.field4678.addAll(this.field4562.fontRenderer.method38828(this.field4677, this.field4564 - 50));
+      this.field4678.addAll(this.mc.fontRenderer.method38828(this.field4677, this.field4564 - 50));
    }
 
    @Override

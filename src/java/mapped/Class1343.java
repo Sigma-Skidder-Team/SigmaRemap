@@ -56,7 +56,7 @@ public class Class1343 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -69,7 +69,7 @@ public class Class1343 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field7139);
+         this.mc.displayGuiScreen(this.field7139);
          return true;
       }
    }
@@ -112,7 +112,7 @@ public class Class1343 extends Class798 {
       }
 
       this.field7138 = new Class1189(
-         this.field4562.fontRenderer,
+         this.mc.fontRenderer,
          this.field7140 + 2,
          method1929(1),
          this.field7141 - 4,
@@ -180,7 +180,7 @@ public class Class1343 extends Class798 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field7142, method1929(13), this.field7141, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field7139))
+         new Class1206(this.field7142, method1929(13), this.field7141, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field7139))
       );
       this.<Class1189>method2456(this.field7138);
       this.field7162 = this.<Class1153>method2456(
@@ -234,9 +234,9 @@ public class Class1343 extends Class798 {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      this.field4568
+      this.fontRenderer
          .method38805(
-            var1, field7137, (float)(this.field7140 + this.field7141 / 2 - this.field4568.method38821(field7137) / 2), (float)(method1929(0) - 5), 16777215
+            var1, field7137, (float)(this.field7140 + this.field7141 / 2 - this.fontRenderer.method38821(field7137) / 2), (float)(method1929(0) - 5), 16777215
          );
       this.field7162.method5542(this, var1);
       if (this.field7163 != null) {

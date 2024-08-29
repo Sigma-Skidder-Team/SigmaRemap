@@ -43,7 +43,7 @@ public class Class811 extends Class798 {
    }
 
    private void method2211() throws Exception {
-      this.field4349 = this.field4562.getSaveLoader().method38458().stream().sorted((var0, var1) -> {
+      this.field4349 = this.mc.getSaveLoader().method38458().stream().sorted((var0, var1) -> {
          if (var0.method8647() >= var1.method8647()) {
             return var0.method8647() <= var1.method8647() ? var0.method8643().compareTo(var1.method8643()) : -1;
          } else {
@@ -58,14 +58,14 @@ public class Class811 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4351 = new Class1288(this);
 
       try {
          this.method2211();
       } catch (Exception var4) {
          field4339.error("Couldn't load level list", var4);
-         this.field4562
+         this.mc
             .displayGuiScreen(new Class821(new StringTextComponent("Unable to load worlds"), ITextComponent.func_244388_a(var4.getMessage()), this.field4345));
          return;
       }
@@ -78,7 +78,7 @@ public class Class811 extends Class798 {
       );
       this.field4348.field6482 = this.field4350 >= 0 && this.field4350 < this.field4349.size();
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 6, this.field4565 - 32, 153, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4345))
+         new Class1206(this.field4564 / 2 + 6, this.field4565 - 32, 153, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4345))
       );
       this.field4352 = this.<Class1153>method2456(
          new Class1153(new TranslationTextComponent("mco.upload.select.world.title"), this.field4564 / 2, 13, 16777215)
@@ -99,13 +99,13 @@ public class Class811 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    private void method2212() {
       if (this.field4350 != -1 && !this.field4349.get(this.field4350).method8649()) {
          Class2024 var3 = this.field4349.get(this.field4350);
-         this.field4562.displayGuiScreen(new Class822(this.field4346, this.field4347, this.field4345, var3, this.field4355));
+         this.mc.displayGuiScreen(new Class822(this.field4346, this.field4347, this.field4345, var3, this.field4355));
       }
    }
 
@@ -127,7 +127,7 @@ public class Class811 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4345);
+         this.mc.displayGuiScreen(this.field4345);
          return true;
       }
    }
@@ -182,17 +182,17 @@ public class Class811 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2226(Class811 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2227(Class811 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2228(Class811 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method

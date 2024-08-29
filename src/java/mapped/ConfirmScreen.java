@@ -36,13 +36,13 @@ public class ConfirmScreen extends Screen {
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 155 + 160, this.field4565 / 6 + 96, 150, 20, this.field4603, var1 -> this.field4605.accept(false))
       );
-      this.field4601 = Class5991.method18584(this.field4568, this.field4600, this.field4564 - 50);
+      this.field4601 = Class5991.method18584(this.fontRenderer, this.field4600, this.field4564 - 50);
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 70, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 70, 16777215);
       this.field4601.method18588(var1, this.field4564 / 2, 90);
       super.method1923(var1, var2, var3, var4);
    }

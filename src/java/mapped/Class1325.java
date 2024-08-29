@@ -33,7 +33,7 @@ public abstract class Class1325 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field7012 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 4 - 150, this.field4565 / 4 + 120 + 12, 150, 20, DialogTexts.field30658, var1 -> this.method6307())
       );
@@ -47,12 +47,12 @@ public abstract class Class1325 extends Screen {
             this.method6306();
          })
       );
-      this.field7010 = new Class1300(this, this.field4568, this.field4564 / 2 - 150, 50, 300, 20, new TranslationTextComponent("advMode.command"));
+      this.field7010 = new Class1300(this, this.fontRenderer, this.field4564 / 2 - 150, 50, 300, 20, new TranslationTextComponent("advMode.command"));
       this.field7010.method5657(32500);
       this.field7010.method5631(this::method6309);
       this.field4561.add(this.field7010);
       this.field7011 = new Class1189(
-         this.field4568, this.field4564 / 2 - 150, this.method6305(), 276, 20, new TranslationTextComponent("advMode.previousOutput")
+         this.fontRenderer, this.field4564 / 2 - 150, this.method6305(), 276, 20, new TranslationTextComponent("advMode.previousOutput")
       );
       this.field7011.method5657(32500);
       this.field7011.method5666(false);
@@ -60,7 +60,7 @@ public abstract class Class1325 extends Screen {
       this.field4561.add(this.field7011);
       this.method5536(this.field7010);
       this.field7010.method5654(true);
-      this.field7016 = new Class6850(this.field4562, this, this.field7010, this.field4568, true, true, 0, 7, false, Integer.MIN_VALUE);
+      this.field7016 = new Class6850(this.mc, this, this.field7010, this.fontRenderer, true, true, 0, 7, false, Integer.MIN_VALUE);
       this.field7016.method20829(true);
       this.field7016.method20835();
    }
@@ -90,12 +90,12 @@ public abstract class Class1325 extends Screen {
          var3.method3569((ITextComponent)null);
       }
 
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    public abstract void method6308(Class911 var1);
@@ -103,7 +103,7 @@ public abstract class Class1325 extends Screen {
    @Override
    public void method1945() {
       this.method6304().method3570(this.field7015);
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    private void method6309(String var1) {
@@ -141,13 +141,13 @@ public abstract class Class1325 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, field7007, this.field4564 / 2, 20, 16777215);
-      method5693(var1, this.field4568, field7008, this.field4564 / 2 - 150, 40, 10526880);
+      method5691(var1, this.fontRenderer, field7007, this.field4564 / 2, 20, 16777215);
+      method5693(var1, this.fontRenderer, field7008, this.field4564 / 2 - 150, 40, 10526880);
       this.field7010.method1923(var1, var2, var3, var4);
       int var7 = 75;
       if (!this.field7011.method5636().isEmpty()) {
          var7 += 46 + this.method6305() - 135;
-         method5693(var1, this.field4568, field7009, this.field4564 / 2 - 150, var7 + 4, 10526880);
+         method5693(var1, this.fontRenderer, field7009, this.field4564 / 2 - 150, var7 + 4, 10526880);
          this.field7011.method1923(var1, var2, var3, var4);
       }
 

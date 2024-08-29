@@ -37,7 +37,7 @@ public class Class835 extends IngameMenuScreen {
                204,
                20,
                new StringTextComponent("Jello for Sigma Options"),
-               var1 -> this.field4562.displayGuiScreen(new Class1309())
+               var1 -> this.mc.displayGuiScreen(new Class1309())
             )
          );
       }

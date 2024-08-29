@@ -61,7 +61,7 @@ public class Class822 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4496 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, DialogTexts.field30663, var1 -> this.method2361())
       );
@@ -74,7 +74,7 @@ public class Class822 extends Class798 {
             this.field4483.method2251(() -> {
                if (!this.field4495) {
                   this.field4495 = true;
-                  this.field4562.displayGuiScreen(this);
+                  this.mc.displayGuiScreen(this);
                   this.method2367();
                }
             });
@@ -86,7 +86,7 @@ public class Class822 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    private void method2361() {
@@ -95,7 +95,7 @@ public class Class822 extends Class798 {
 
    private void method2362() {
       this.field4492 = true;
-      this.field4562.displayGuiScreen(this.field4483);
+      this.mc.displayGuiScreen(this.field4483);
    }
 
    @Override
@@ -121,7 +121,7 @@ public class Class822 extends Class798 {
          this.field4497.field6482 = false;
       }
 
-      method5691(var1, this.field4568, this.field4490, this.field4564 / 2, 50, 16777215);
+      method5691(var1, this.fontRenderer, this.field4490, this.field4564 / 2, 50, 16777215);
       if (this.field4494) {
          this.method2363(var1);
       }
@@ -133,7 +133,7 @@ public class Class822 extends Class798 {
 
       if (this.field4489 != null) {
          for (int var7 = 0; var7 < this.field4489.length; var7++) {
-            method5691(var1, this.field4568, this.field4489[var7], this.field4564 / 2, 110 + 12 * var7, 16711680);
+            method5691(var1, this.fontRenderer, this.field4489[var7], this.field4564 / 2, 110 + 12 * var7, 16711680);
          }
       }
 
@@ -141,8 +141,8 @@ public class Class822 extends Class798 {
    }
 
    private void method2363(MatrixStack var1) {
-      int var4 = this.field4568.method38821(this.field4490);
-      this.field4568.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
+      int var4 = this.fontRenderer.method38821(this.field4490);
+      this.fontRenderer.method38801(var1, field4481[this.field4498 / 10 % field4481.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
    private void method2364(MatrixStack var1) {
@@ -165,7 +165,7 @@ public class Class822 extends Class798 {
       var11.pos(var6, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
       var10.draw();
       RenderSystem.enableTexture();
-      method5690(var1, this.field4568, this.field4491 + " %", this.field4564 / 2, 84, 16777215);
+      method5690(var1, this.fontRenderer, this.field4491 + " %", this.field4564 / 2, 84, 16777215);
    }
 
    private void method2365(MatrixStack var1) {
@@ -189,9 +189,9 @@ public class Class822 extends Class798 {
 
    private void method2366(MatrixStack var1, long var2) {
       if (var2 > 0L) {
-         int var6 = this.field4568.getStringWidth(this.field4491);
+         int var6 = this.fontRenderer.getStringWidth(this.field4491);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
-         this.field4568.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
+         this.fontRenderer.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
    }
 
@@ -253,14 +253,14 @@ public class Class822 extends Class798 {
                            } else if (this.field4492) {
                               this.method2369();
                            } else {
-                              File var29 = new File(this.field4562.gameDir.getAbsolutePath(), "saves");
+                              File var29 = new File(this.mc.gameDir.getAbsolutePath(), "saves");
                               var3 = this.method2371(new File(var29, this.field4484.method8643()));
                               if (this.field4492) {
                                  this.method2369();
                               } else if (this.method2370(var3)) {
                                  this.field4490 = new TranslationTextComponent("mco.upload.uploading", this.field4484.method8644());
                                  Class9696 var9 = new Class9696(
-                                    var3, this.field4485, this.field4486, var7, this.field4562.getSession(), SharedConstants.getVersion().getName(), this.field4487
+                                    var3, this.field4485, this.field4486, var7, this.mc.getSession(), SharedConstants.getVersion().getName(), this.field4487
                                  );
                                  var9.method37965(var3x -> {
                                     if (var3x.field38749 >= 200 && var3x.field38749 < 300) {

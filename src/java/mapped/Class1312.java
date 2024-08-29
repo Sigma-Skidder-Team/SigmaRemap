@@ -24,7 +24,7 @@ public class Class1312 extends Screen {
          this.field6924.method22328(this.field4564, this.field4565);
       }
 
-      method5691(var1, this.field4568, field6923, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
+      method5691(var1, this.fontRenderer, field6923, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 

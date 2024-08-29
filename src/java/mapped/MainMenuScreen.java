@@ -43,7 +43,7 @@ public class MainMenuScreen extends Screen {
    }
 
    private boolean method2594() {
-      return this.field4562.gameSettings.field44620 && this.field4713 != null;
+      return this.mc.gameSettings.field44620 && this.field4713 != null;
    }
 
    @Override
@@ -72,15 +72,15 @@ public class MainMenuScreen extends Screen {
    @Override
    public void method1921() {
       if (this.field4708 == null) {
-         this.field4708 = this.field4562.getSplashes().method990();
+         this.field4708 = this.mc.getSplashes().method990();
       }
 
-      this.field4714 = this.field4568.getStringWidth("Copyright Mojang AB. Do not distribute!");
+      this.field4714 = this.fontRenderer.getStringWidth("Copyright Mojang AB. Do not distribute!");
       this.field4715 = this.field4564 - this.field4714 - 2;
       byte var3 = 24;
       int var4 = this.field4565 / 4 + 48;
       Class1206 var5 = null;
-      if (!this.field4562.isDemo()) {
+      if (!this.mc.isDemo()) {
          this.method2596(var4, 24);
          if (Class9299.field42976.method20241()) {
             var5 = Class9561.method37053(this, var4, 24);
@@ -102,7 +102,7 @@ public class MainMenuScreen extends Screen {
             Class1206.field6474,
             256,
             256,
-            var1 -> this.field4562.displayGuiScreen(new Class1136(this, this.field4562.gameSettings, this.field4562.getLanguageManager())),
+            var1 -> this.mc.displayGuiScreen(new Class1136(this, this.mc.gameSettings, this.mc.getLanguageManager())),
             new TranslationTextComponent("narrator.button.language")
          )
       );
@@ -113,11 +113,11 @@ public class MainMenuScreen extends Screen {
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.field4562.displayGuiScreen(new Class1129(this, this.field4562.gameSettings))
+            var1 -> this.mc.displayGuiScreen(new Class1129(this, this.mc.gameSettings))
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 2, var4 + 72 + 12, 98, 20, new TranslationTextComponent("menu.quit"), var1 -> this.field4562.shutdown())
+         new Class1206(this.field4564 / 2 + 2, var4 + 72 + 12, 98, 20, new TranslationTextComponent("menu.quit"), var1 -> this.mc.shutdown())
       );
       this.<Class1243>method2455(
          new Class1243(
@@ -131,19 +131,19 @@ public class MainMenuScreen extends Screen {
             field4706,
             32,
             64,
-            var1 -> this.field4562.displayGuiScreen(new Class1142(this, this.field4562.gameSettings)),
+            var1 -> this.mc.displayGuiScreen(new Class1142(this, this.mc.gameSettings)),
             new TranslationTextComponent("narrator.button.accessibility")
          )
       );
-      this.field4562.setConnectedToRealms(false);
-      if (this.field4562.gameSettings.field44620 && !this.field4712) {
+      this.mc.setConnectedToRealms(false);
+      if (this.mc.gameSettings.field44620 && !this.field4712) {
          Class810 var6 = new Class810();
          this.field4713 = var6.method2210(this);
          this.field4712 = true;
       }
 
       if (this.method2594()) {
-         this.field4713.init(this.field4562, this.field4564, this.field4565);
+         this.field4713.init(this.mc, this.field4564, this.field4565);
       }
 
       if (Class9299.field42978.method20214()) {
@@ -154,7 +154,7 @@ public class MainMenuScreen extends Screen {
    private void method2596(int var1, int var2) {
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.singleplayer"), var1x -> this.field4562.displayGuiScreen(new Class1341(this))
+            this.field4564 / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.singleplayer"), var1x -> this.mc.displayGuiScreen(new Class1341(this))
          )
       );
       boolean var5 = true;
@@ -163,7 +163,7 @@ public class MainMenuScreen extends Screen {
             if (!var1x.field6482) {
                this.method2461(
                   var2x,
-                  this.field4562.fontRenderer.method38828(new TranslationTextComponent("title.multiplayer.disabled"), Math.max(this.field4564 / 2 - 43, 170)),
+                  this.mc.fontRenderer.method38828(new TranslationTextComponent("title.multiplayer.disabled"), Math.max(this.field4564 / 2 - 43, 170)),
                   var3,
                   var4
                );
@@ -171,8 +171,8 @@ public class MainMenuScreen extends Screen {
          }
          : Class1206.field6512;
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, var1 + var2 * 1, 200, 20, new TranslationTextComponent("menu.multiplayer"), var1x -> {
-         Object var4 = !this.field4562.gameSettings.field44630 ? new Class1334(this) : new MultiplayerScreen(this);
-         this.field4562.displayGuiScreen((Screen)var4);
+         Object var4 = !this.mc.gameSettings.field44630 ? new Class1334(this) : new MultiplayerScreen(this);
+         this.mc.displayGuiScreen((Screen)var4);
       }, var6)).field6482 = var5;
       this.<Class1206>method2455(
             new Class1206(this.field4564 / 2 - 100, var1 + var2 * 2, 200, 20, new TranslationTextComponent("menu.online"), var1x -> this.method2599(), var6)
@@ -190,9 +190,9 @@ public class MainMenuScreen extends Screen {
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.playdemo"), var2x -> {
          if (!var5) {
             DynamicRegistriesImpl var5x = DynamicRegistries.func_239770_b_();
-            this.field4562.createWorld("Demo_World", MinecraftServer.field1210, var5x, DimensionGeneratorSettings.method26256(var5x));
+            this.mc.createWorld("Demo_World", MinecraftServer.field1210, var5x, DimensionGeneratorSettings.method26256(var5x));
          } else {
-            this.field4562.loadWorld("Demo_World");
+            this.mc.loadWorld("Demo_World");
          }
       }));
       this.field4709 = this.<Class1206>method2455(
@@ -203,12 +203,12 @@ public class MainMenuScreen extends Screen {
             20,
             new TranslationTextComponent("menu.resetdemo"),
             var1x -> {
-               SaveFormat var4 = this.field4562.getSaveLoader();
+               SaveFormat var4 = this.mc.getSaveLoader();
 
                try (SaveFormat.LevelSave var5x = var4.getLevelSave("Demo_World")) {
                   Class2024 var7 = var5x.method7997();
                   if (var7 != null) {
-                     this.field4562
+                     this.mc
                         .displayGuiScreen(
                            new ConfirmScreen(
                               this::method2600,
@@ -220,7 +220,7 @@ public class MainMenuScreen extends Screen {
                         );
                   }
                } catch (IOException var18) {
-                  SystemToast.func_238535_a_(this.field4562, "Demo_World");
+                  SystemToast.func_238535_a_(this.mc, "Demo_World");
                   field4703.warn("Failed to access demo world", var18);
                }
             }
@@ -230,10 +230,10 @@ public class MainMenuScreen extends Screen {
    }
 
    private boolean method2598() {
-      try (SaveFormat.LevelSave var3 = this.field4562.getSaveLoader().getLevelSave("Demo_World")) {
+      try (SaveFormat.LevelSave var3 = this.mc.getSaveLoader().getLevelSave("Demo_World")) {
          return var3.method7997() != null;
       } catch (IOException var17) {
-         SystemToast.func_238535_a_(this.field4562, "Demo_World");
+         SystemToast.func_238535_a_(this.mc, "Demo_World");
          field4703.warn("Failed to read demo world data", var17);
          return false;
       }
@@ -257,7 +257,7 @@ public class MainMenuScreen extends Screen {
       short var8 = 274;
       int var9 = this.field4564 / 2 - 137;
       byte var10 = 30;
-      this.field4562.getTextureManager().bindTexture(field4705);
+      this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
       RenderSystem.method27834(Class2339.field15997, Class1981.field12932);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.method37777(var7, 0.0F, 1.0F)));
@@ -265,7 +265,7 @@ public class MainMenuScreen extends Screen {
       float var11 = !this.field4717 ? 1.0F : MathHelper.method37777(var7 - 1.0F, 0.0F, 1.0F);
       int var12 = MathHelper.method37773(var11 * 255.0F) << 24;
       if ((var12 & -67108864) != 0) {
-         this.field4562.getTextureManager().bindTexture(field4710);
+         this.mc.getTextureManager().bindTexture(field4710);
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, var11);
          if (!this.field4707) {
             this.method5694(var9, 30, (var2x, var3x) -> {
@@ -282,10 +282,10 @@ public class MainMenuScreen extends Screen {
             });
          }
 
-         this.field4562.getTextureManager().bindTexture(field4711);
+         this.mc.getTextureManager().bindTexture(field4711);
          method5699(var1, var9 + 88, 67, 0.0F, 0.0F, 98, 14, 128, 16);
          if (Class9299.field42893.method20214()) {
-            Class9299.method35055(Class9299.field42893, this, var1, this.field4568, this.field4564, this.field4565);
+            Class9299.method35055(Class9299.field42893, this, var1, this.fontRenderer, this.field4564, this.field4565);
          }
 
          if (this.field4708 != null) {
@@ -294,37 +294,37 @@ public class MainMenuScreen extends Screen {
             RenderSystem.method27883(-20.0F, 0.0F, 0.0F, 1.0F);
             float var13 = 1.8F
                - MathHelper.method37771(MathHelper.sin((float)(Util.milliTime() % 1000L) / 1000.0F * (float) (Math.PI * 2)) * 0.1F);
-            var13 = var13 * 100.0F / (float)(this.field4568.getStringWidth(this.field4708) + 32);
+            var13 = var13 * 100.0F / (float)(this.fontRenderer.getStringWidth(this.field4708) + 32);
             RenderSystem.scalef(var13, var13, var13);
-            method5690(var1, this.field4568, this.field4708, 0, -8, 16776960 | var12);
+            method5690(var1, this.fontRenderer, this.field4708, 0, -8, 16776960 | var12);
             RenderSystem.popMatrix();
          }
 
          String var17 = "Minecraft " + SharedConstants.getVersion().getName();
-         if (!this.field4562.isDemo()) {
-            var17 = var17 + (!"release".equalsIgnoreCase(this.field4562.getVersionType()) ? "/" + this.field4562.getVersionType() : "");
+         if (!this.mc.isDemo()) {
+            var17 = var17 + (!"release".equalsIgnoreCase(this.mc.getVersionType()) ? "/" + this.mc.getVersionType() : "");
          } else {
             var17 = var17 + " Demo";
          }
 
-         if (this.field4562.isModdedClient()) {
+         if (this.mc.isModdedClient()) {
             var17 = var17 + I18n.format("menu.modded");
          }
 
          if (!Class9299.field42762.method20245()) {
-            method5692(var1, this.field4568, var17, 2, this.field4565 - 10, 16777215 | var12);
+            drawString(var1, this.fontRenderer, var17, 2, this.field4565 - 10, 16777215 | var12);
          } else {
             if (Class9299.field42764.method20214()) {
-               BiConsumer<Integer, String> var14 = (var3x, var4x) -> method5692(var1, this.field4568, var4x, 2, this.field4565 - (10 + var3x * 10), 16777215 | var12);
+               BiConsumer<Integer, String> var14 = (var3x, var4x) -> drawString(var1, this.fontRenderer, var4x, 2, this.field4565 - (10 + var3x * 10), 16777215 | var12);
                Class9299.method35062(Class9299.field42764, true, true, var14);
             }
 
             if (Class9299.field42765.method20214()) {
-               BiConsumer<Integer, String> var19 = (var3x, var4x) -> method5692(
+               BiConsumer<Integer, String> var19 = (var3x, var4x) -> drawString(
                      var1,
-                     this.field4568,
+                     this.fontRenderer,
                      var4x,
-                     this.field4564 - this.field4568.getStringWidth(var4x),
+                     this.field4564 - this.fontRenderer.getStringWidth(var4x),
                      this.field4565 - (10 + (var3x + 1) * 10),
                      16777215 | var12
                   );
@@ -332,7 +332,7 @@ public class MainMenuScreen extends Screen {
             }
          }
 
-         method5692(var1, this.field4568, "Copyright Mojang AB. Do not distribute!", this.field4715, this.field4565 - 10, 16777215 | var12);
+         drawString(var1, this.fontRenderer, "Copyright Mojang AB. Do not distribute!", this.field4715, this.field4565 - 10, 16777215 | var12);
          if (var2 > this.field4715 && var2 < this.field4715 + this.field4714 && var3 > this.field4565 - 10 && var3 < this.field4565) {
             method5686(var1, this.field4715, this.field4565 - 1, this.field4715 + this.field4714, this.field4565, 16777215 | var12);
          }
@@ -362,7 +362,7 @@ public class MainMenuScreen extends Screen {
                && var1 < (double)(this.field4715 + this.field4714)
                && var3 > (double)(this.field4565 - 10)
                && var3 < (double)this.field4565) {
-               this.field4562.displayGuiScreen(new WinGameScreen(false, Runnables.doNothing()));
+               this.mc.displayGuiScreen(new WinGameScreen(false, Runnables.doNothing()));
             }
 
             return false;
@@ -381,14 +381,14 @@ public class MainMenuScreen extends Screen {
 
    private void method2600(boolean var1) {
       if (var1) {
-         try (SaveFormat.LevelSave var4 = this.field4562.getSaveLoader().getLevelSave("Demo_World")) {
+         try (SaveFormat.LevelSave var4 = this.mc.getSaveLoader().getLevelSave("Demo_World")) {
             var4.deleteSave();
          } catch (IOException var17) {
-            SystemToast.func_238538_b_(this.field4562, "Demo_World");
+            SystemToast.func_238538_b_(this.mc, "Demo_World");
             field4703.warn("Failed to delete demo world", var17);
          }
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 }

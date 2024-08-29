@@ -17,7 +17,7 @@ public class DirtMessageScreen extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 70, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 70, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 }

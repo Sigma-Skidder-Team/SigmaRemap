@@ -28,13 +28,13 @@ public class Class818 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       int var3 = this.field4564 / 2 - 106;
       this.field4458 = this.<Class1206>method2455(
          new Class1206(var3 - 2, method1929(12), 106, 20, new TranslationTextComponent("mco.configure.world.buttons.done"), var1 -> this.method2329())
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 2, method1929(12), 106, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field4456))
+         new Class1206(this.field4564 / 2 + 2, method1929(12), 106, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field4456))
       );
       String var4 = this.field4457.field27447 != Class2261.field14707 ? "mco.configure.world.buttons.open" : "mco.configure.world.buttons.close";
       Class1206 var5 = new Class1206(this.field4564 / 2 - 53, method1929(0), 106, 20, new TranslationTextComponent(var4), var1 -> {
@@ -43,9 +43,9 @@ public class Class818 extends Class798 {
          } else {
             TranslationTextComponent var4x = new TranslationTextComponent("mco.configure.world.close.question.line1");
             TranslationTextComponent var5x = new TranslationTextComponent("mco.configure.world.close.question.line2");
-            this.field4562.displayGuiScreen(new Class808(var1x -> {
+            this.mc.displayGuiScreen(new Class808(var1x -> {
                if (!var1x) {
-                  this.field4562.displayGuiScreen(this);
+                  this.mc.displayGuiScreen(this);
                } else {
                   this.field4456.method2296(this);
                }
@@ -54,14 +54,14 @@ public class Class818 extends Class798 {
       });
       this.<Class1206>method2455(var5);
       this.field4460 = new Class1189(
-         this.field4562.fontRenderer, var3, method1929(4), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.name")
+         this.mc.fontRenderer, var3, method1929(4), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.name")
       );
       this.field4460.method5657(32);
       this.field4460.method5635(this.field4457.method18907());
       this.<Class1189>method2456(this.field4460);
       this.method5537(this.field4460);
       this.field4459 = new Class1189(
-         this.field4562.fontRenderer, var3, method1929(8), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.description")
+         this.mc.fontRenderer, var3, method1929(8), 212, 20, (Class1189)null, new TranslationTextComponent("mco.configure.world.description")
       );
       this.field4459.method5657(32);
       this.field4459.method5635(this.field4457.method18906());
@@ -74,7 +74,7 @@ public class Class818 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -82,7 +82,7 @@ public class Class818 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4456);
+         this.mc.displayGuiScreen(this.field4456);
          return true;
       }
    }
@@ -91,8 +91,8 @@ public class Class818 extends Class798 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field4461.method5542(this, var1);
-      this.field4568.method38805(var1, field4454, (float)(this.field4564 / 2 - 106), (float)method1929(3), 10526880);
-      this.field4568.method38805(var1, field4455, (float)(this.field4564 / 2 - 106), (float)method1929(7), 10526880);
+      this.fontRenderer.method38805(var1, field4454, (float)(this.field4564 / 2 - 106), (float)method1929(3), 10526880);
+      this.fontRenderer.method38805(var1, field4455, (float)(this.field4564 / 2 - 106), (float)method1929(7), 10526880);
       this.field4460.method1923(var1, var2, var3, var4);
       this.field4459.method1923(var1, var2, var3, var4);
       super.method1923(var1, var2, var3, var4);

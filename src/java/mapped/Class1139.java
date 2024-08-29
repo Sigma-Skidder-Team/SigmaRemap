@@ -50,13 +50,13 @@ public class Class1139 extends Class1135 {
             200,
             20,
             Class8043.method27620("of.options.skinCustomisation.ofCape"),
-            var1 -> this.field4562.displayGuiScreen(new Class845(this))
+            var1 -> this.mc.displayGuiScreen(new Class845(this))
          )
       );
       var3 += 2;
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 6 + 24 * (var3 >> 1), 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192)
+            this.field4564 / 2 - 100, this.field4565 / 6 + 24 * (var3 >> 1), 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192)
          )
       );
    }
@@ -64,7 +64,7 @@ public class Class1139 extends Class1135 {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 

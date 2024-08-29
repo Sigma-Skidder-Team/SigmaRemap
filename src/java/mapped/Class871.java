@@ -38,8 +38,8 @@ public class Class871 extends Class851<Class5822> {
       for (int var10 = 0; var10 < 3; var10++) {
          double var11 = var1 - (double)(var8 + 60);
          double var13 = var3 - (double)(var9 + 14 + 19 * var10);
-         if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field4727.method18104(this.field4562.player, var10)) {
-            this.field4562.playerController.method23146(this.field4727.field25471, var10);
+         if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field4727.method18104(this.mc.player, var10)) {
+            this.mc.playerController.method23146(this.field4727.field25471, var10);
             return true;
          }
       }
@@ -51,14 +51,14 @@ public class Class871 extends Class851<Class5822> {
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       Class7516.method24502();
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4829);
+      this.mc.getTextureManager().bindTexture(field4829);
       int var7 = (this.field4564 - this.field4721) / 2;
       int var8 = (this.field4565 - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
       RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      int var9 = (int)this.field4562.getMainWindow().method8049();
+      int var9 = (int)this.mc.getMainWindow().method8049();
       RenderSystem.method27869((this.field4564 - 320) / 2 * var9, (this.field4565 - 240) / 2 * var9, 320 * var9, 240 * var9);
       RenderSystem.translatef(-0.34F, 0.23F, 0.0F);
       RenderSystem.method27888(Class9367.method35511(90.0, 1.3333334F, 9.0F, 80.0F));
@@ -105,7 +105,7 @@ public class Class871 extends Class851<Class5822> {
       var16.method25602();
       var1.method35295();
       RenderSystem.matrixMode(5889);
-      RenderSystem.method27869(0, 0, this.field4562.getMainWindow().getFramebufferWidth(), this.field4562.getMainWindow().getFramebufferHeight());
+      RenderSystem.method27869(0, 0, this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
       RenderSystem.popMatrix();
       RenderSystem.matrixMode(5888);
       Class7516.method24503();
@@ -117,18 +117,18 @@ public class Class871 extends Class851<Class5822> {
          int var20 = var7 + 60;
          int var21 = var20 + 20;
          this.method5703(0);
-         this.field4562.getTextureManager().bindTexture(field4829);
+         this.mc.getTextureManager().bindTexture(field4829);
          int var22 = this.field4727.field25509[var19];
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          if (var22 != 0) {
             String var23 = "" + var22;
-            int var24 = 86 - this.field4568.getStringWidth(var23);
-            ITextProperties var25 = Class6577.method19915().method19916(this.field4568, var24);
+            int var24 = 86 - this.fontRenderer.getStringWidth(var23);
+            ITextProperties var25 = Class6577.method19915().method19916(this.fontRenderer, var24);
             int var26 = 6839882;
-            if ((var18 < var19 + 1 || this.field4562.player.field4920 < var22) && !this.field4562.player.abilities.isCreativeMode) {
+            if ((var18 < var19 + 1 || this.mc.player.field4920 < var22) && !this.mc.player.abilities.isCreativeMode) {
                this.method5696(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
                this.method5696(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
-               this.field4568.method38826(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
+               this.fontRenderer.method38826(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
                var26 = 4226832;
             } else {
                int var27 = var3 - (var7 + 60);
@@ -141,11 +141,11 @@ public class Class871 extends Class851<Class5822> {
                }
 
                this.method5696(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 223, 16, 16);
-               this.field4568.method38826(var25, var21, var8 + 16 + 19 * var19, var24, var26);
+               this.fontRenderer.method38826(var25, var21, var8 + 16 + 19 * var19, var24, var26);
                var26 = 8453920;
             }
 
-            this.field4568.drawStringWithShadow(var1, var23, (float)(var21 + 86 - this.field4568.getStringWidth(var23)), (float)(var8 + 16 + 19 * var19 + 7), var26);
+            this.fontRenderer.drawStringWithShadow(var1, var23, (float)(var21 + 86 - this.fontRenderer.getStringWidth(var23)), (float)(var8 + 16 + 19 * var19 + 7), var26);
          } else {
             this.method5696(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
          }
@@ -154,11 +154,11 @@ public class Class871 extends Class851<Class5822> {
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      var4 = this.field4562.getRenderPartialTicks();
+      var4 = this.mc.getRenderPartialTicks();
       this.method2469(var1);
       super.method1923(var1, var2, var3, var4);
       this.method2615(var1, var2, var3);
-      boolean var7 = this.field4562.player.abilities.isCreativeMode;
+      boolean var7 = this.mc.player.abilities.isCreativeMode;
       int var8 = this.field4727.method18184();
 
       for (int var9 = 0; var9 < 3; var9++) {
@@ -171,7 +171,7 @@ public class Class871 extends Class851<Class5822> {
             var14.add(new TranslationTextComponent("container.enchant.clue", var11.method18820(var12)).mergeStyle(TextFormatting.WHITE));
             if (!var7) {
                var14.add(StringTextComponent.EMPTY);
-               if (this.field4562.player.field4920 >= var10) {
+               if (this.mc.player.field4920 >= var10) {
                   TranslationTextComponent var15;
                   if (var13 != 1) {
                      var15 = new TranslationTextComponent("container.enchant.lapis.many", var13);

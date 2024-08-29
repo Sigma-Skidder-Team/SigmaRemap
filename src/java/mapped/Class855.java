@@ -18,7 +18,7 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    public void method1921() {
       super.method1921();
       this.field4760 = this.field4564 < 379;
-      this.field4759.method5833(this.field4564, this.field4565, this.field4562, this.field4760, this.field4727);
+      this.field4759.method5833(this.field4564, this.field4565, this.mc, this.field4760, this.field4727);
       this.field4734 = this.field4759.method5837(this.field4760, this.field4564, this.field4721);
       this.<Class1243>method2455(new Class1243(this.field4734 + 20, this.field4565 / 2 - 49, 20, 18, 0, 0, 19, field4758, var1 -> {
          this.field4759.method5834(this.field4760);
@@ -26,7 +26,7 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
          this.field4734 = this.field4759.method5837(this.field4760, this.field4564, this.field4721);
          ((Class1243)var1).method5819(this.field4734 + 20, this.field4565 / 2 - 49);
       }));
-      this.field4723 = (this.field4721 - this.field4568.method38821(this.field4560)) / 2;
+      this.field4723 = (this.field4721 - this.fontRenderer.method38821(this.field4560)) / 2;
    }
 
    @Override
@@ -54,7 +54,7 @@ public abstract class Class855<T extends Class5831> extends Class851<T> implemen
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(this.field4761);
+      this.mc.getTextureManager().bindTexture(this.field4761);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);

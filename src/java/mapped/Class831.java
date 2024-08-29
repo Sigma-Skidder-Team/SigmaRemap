@@ -23,19 +23,19 @@ public class Class831 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 / 4 + 120, 200, 20, DialogTexts.field30658, var1 -> this.method2541()));
       this.field4611.method3839(false);
       this.field4614 = new Class9079(() -> this.field4615[this.field4613], var1 -> {
          this.field4615[this.field4613] = var1;
          this.field4611.method3836(this.field4613, new StringTextComponent(var1));
-      }, Class9079.method33827(this.field4562), Class9079.method33829(this.field4562), var1 -> this.field4562.fontRenderer.getStringWidth(var1) <= 90);
+      }, Class9079.method33827(this.mc), Class9079.method33829(this.mc), var1 -> this.mc.fontRenderer.getStringWidth(var1) <= 90);
    }
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
-      ClientPlayNetHandler var3 = this.field4562.getConnection();
+      this.mc.keyboardListener.method36347(false);
+      ClientPlayNetHandler var3 = this.mc.getConnection();
       if (var3 != null) {
          var3.sendPacket(new Class5519(this.field4611.getPos(), this.field4615[0], this.field4615[1], this.field4615[2], this.field4615[3]));
       }
@@ -53,7 +53,7 @@ public class Class831 extends Screen {
 
    private void method2541() {
       this.field4611.method3622();
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    @Override
@@ -88,7 +88,7 @@ public class Class831 extends Screen {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       Class7516.method24502();
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 40, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 40, 16777215);
       var1.push();
       var1.translate((double)(this.field4564 / 2), 0.0, 50.0);
       float var7 = 93.75F;
@@ -104,7 +104,7 @@ public class Class831 extends Screen {
       float var11 = 0.6666667F;
       var1.push();
       var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-      Class7735 var12 = this.field4562.getRenderTypeBuffers().method26536();
+      Class7735 var12 = this.mc.getRenderTypeBuffers().method26536();
       Class7826 var13 = Class5947.method18473(var8.getBlock());
       Class5422 var14 = var13.method26200(var12, this.field4610::method11028);
       this.field4610.field17650.method22680(var1, var14, 15728880, Class213.field798);
@@ -125,19 +125,19 @@ public class Class831 extends Screen {
       for (int var21 = 0; var21 < this.field4615.length; var21++) {
          String var22 = this.field4615[var21];
          if (var22 != null) {
-            if (this.field4568.method38829()) {
-               var22 = this.field4568.method38806(var22);
+            if (this.fontRenderer.method38829()) {
+               var22 = this.fontRenderer.method38806(var22);
             }
 
-            float var23 = (float)(-this.field4562.fontRenderer.getStringWidth(var22) / 2);
-            this.field4562
+            float var23 = (float)(-this.mc.fontRenderer.getStringWidth(var22) / 2);
+            this.mc
                .fontRenderer
                .method38811(var22, var23, (float)(var21 * 10 - this.field4615.length * 5), var16, false, var20, var12, false, 0, 15728880, false);
             if (var21 == this.field4613 && var17 >= 0 && var10) {
-               int var24 = this.field4562.fontRenderer.getStringWidth(var22.substring(0, Math.max(Math.min(var17, var22.length()), 0)));
-               int var25 = var24 - this.field4562.fontRenderer.getStringWidth(var22) / 2;
+               int var24 = this.mc.fontRenderer.getStringWidth(var22.substring(0, Math.max(Math.min(var17, var22.length()), 0)));
+               int var25 = var24 - this.mc.fontRenderer.getStringWidth(var22) / 2;
                if (var17 >= var22.length()) {
-                  this.field4562.fontRenderer.method38811("_", (float)var25, (float)var19, var16, false, var20, var12, false, 0, 15728880, false);
+                  this.mc.fontRenderer.method38811("_", (float)var25, (float)var19, var16, false, var20, var12, false, 0, 15728880, false);
                }
             }
          }
@@ -148,8 +148,8 @@ public class Class831 extends Screen {
       for (int var33 = 0; var33 < this.field4615.length; var33++) {
          String var34 = this.field4615[var33];
          if (var34 != null && var33 == this.field4613 && var17 >= 0) {
-            int var35 = this.field4562.fontRenderer.getStringWidth(var34.substring(0, Math.max(Math.min(var17, var34.length()), 0)));
-            int var36 = var35 - this.field4562.fontRenderer.getStringWidth(var34) / 2;
+            int var35 = this.mc.fontRenderer.getStringWidth(var34.substring(0, Math.max(Math.min(var17, var34.length()), 0)));
+            int var36 = var35 - this.mc.fontRenderer.getStringWidth(var34) / 2;
             if (var10 && var17 < var34.length()) {
                method5686(var1, var36, var19 - 1, var36 + 1, var19 + 9, 0xFF000000 | var16);
             }
@@ -157,8 +157,8 @@ public class Class831 extends Screen {
             if (var18 != var17) {
                int var37 = Math.min(var17, var18);
                int var26 = Math.max(var17, var18);
-               int var27 = this.field4562.fontRenderer.getStringWidth(var34.substring(0, var37)) - this.field4562.fontRenderer.getStringWidth(var34) / 2;
-               int var28 = this.field4562.fontRenderer.getStringWidth(var34.substring(0, var26)) - this.field4562.fontRenderer.getStringWidth(var34) / 2;
+               int var27 = this.mc.fontRenderer.getStringWidth(var34.substring(0, var37)) - this.mc.fontRenderer.getStringWidth(var34) / 2;
+               int var28 = this.mc.fontRenderer.getStringWidth(var34.substring(0, var26)) - this.mc.fontRenderer.getStringWidth(var34) / 2;
                int var29 = Math.min(var27, var28);
                int var30 = Math.max(var27, var28);
                Tessellator var31 = Tessellator.getInstance();

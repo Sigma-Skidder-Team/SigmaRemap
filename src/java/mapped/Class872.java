@@ -91,8 +91,8 @@ public class Class872 extends Class851<Class5821> {
 
    @Override
    public void method2617(MatrixStack var1, int var2, int var3) {
-      method5691(var1, this.field4568, field4842, 62, 10, 14737632);
-      method5691(var1, this.field4568, field4843, 169, 10, 14737632);
+      method5691(var1, this.fontRenderer, field4842, 62, 10, 14737632);
+      method5691(var1, this.fontRenderer, field4843, 169, 10, 14737632);
 
       for (Class1197 var7 : this.field4566) {
          if (var7.method5737()) {
@@ -105,7 +105,7 @@ public class Class872 extends Class851<Class5821> {
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4841);
+      this.mc.getTextureManager().bindTexture(field4841);
       int var7 = (this.field4564 - this.field4721) / 2;
       int var8 = (this.field4565 - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
@@ -147,17 +147,17 @@ public class Class872 extends Class851<Class5821> {
 
    // $VF: synthetic method
    public static Minecraft method2705(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2706(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2707(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -172,22 +172,22 @@ public class Class872 extends Class851<Class5821> {
 
    // $VF: synthetic method
    public static Minecraft method2710(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2711(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2712(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static Minecraft method2713(Class872 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method

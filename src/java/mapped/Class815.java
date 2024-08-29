@@ -51,7 +51,7 @@ public class Class815 extends Class813 {
 
       this.field4424 = this.field4564 / 2 - 187;
       this.field4425 = this.field4564 / 2 + 190;
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4426 = this.<Class1206>method2455(
          new Class1206(
             this.method2273(0, 3),
@@ -59,7 +59,7 @@ public class Class815 extends Class813 {
             100,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.players"),
-            var1 -> this.field4562.displayGuiScreen(new Class824(this, this.field4422))
+            var1 -> this.mc.displayGuiScreen(new Class824(this, this.field4422))
          )
       );
       this.field4427 = this.<Class1206>method2455(
@@ -69,7 +69,7 @@ public class Class815 extends Class813 {
             100,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.settings"),
-            var1 -> this.field4562.displayGuiScreen(new Class818(this, this.field4422.clone()))
+            var1 -> this.mc.displayGuiScreen(new Class818(this, this.field4422.clone()))
          )
       );
       this.field4428 = this.<Class1206>method2455(
@@ -79,7 +79,7 @@ public class Class815 extends Class813 {
             100,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.subscription"),
-            var1 -> this.field4562.displayGuiScreen(new Class825(this, this.field4422.clone(), this.field4421))
+            var1 -> this.mc.displayGuiScreen(new Class825(this, this.field4422.clone(), this.field4421))
          )
       );
 
@@ -91,7 +91,7 @@ public class Class815 extends Class813 {
          new Class1206(this.method2272(0), method1929(13) - 5, 100, 20, new TranslationTextComponent("mco.configure.world.buttons.switchminigame"), var1 -> {
             Class804 var4 = new Class804(this, Class2049.field13370);
             var4.method1956(new TranslationTextComponent("mco.template.title.minigame"));
-            this.field4562.displayGuiScreen(var4);
+            this.mc.displayGuiScreen(var4);
          })
       );
       this.field4429 = this.<Class1206>method2455(
@@ -101,7 +101,7 @@ public class Class815 extends Class813 {
             90,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.options"),
-            var1 -> this.field4562
+            var1 -> this.mc
                   .displayGuiScreen(
                      new Class1343(this, this.field4422.field27451.get(this.field4422.field27456).clone(), this.field4422.field27455, this.field4422.field27456)
                   )
@@ -114,7 +114,7 @@ public class Class815 extends Class813 {
             90,
             20,
             new TranslationTextComponent("mco.configure.world.backup"),
-            var1 -> this.field4562.displayGuiScreen(new Class807(this, this.field4422.clone(), this.field4422.field27456))
+            var1 -> this.mc.displayGuiScreen(new Class807(this, this.field4422.clone(), this.field4422.field27456))
          )
       );
       this.field4431 = this.<Class1206>method2455(
@@ -124,10 +124,10 @@ public class Class815 extends Class813 {
             90,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.resetworld"),
-            var1 -> this.field4562
+            var1 -> this.mc
                   .displayGuiScreen(
                      new Class814(
-                        this, this.field4422.clone(), () -> this.field4562.displayGuiScreen(this.method2298()), () -> this.field4562.displayGuiScreen(this.method2298())
+                        this, this.field4422.clone(), () -> this.mc.displayGuiScreen(this.method2298()), () -> this.mc.displayGuiScreen(this.method2298())
                      )
                   )
          )
@@ -201,19 +201,19 @@ public class Class815 extends Class813 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field4420 = null;
       this.method2469(var1);
-      method5691(var1, this.field4568, field4412, this.field4564 / 2, method1929(4), 16777215);
+      method5691(var1, this.fontRenderer, field4412, this.field4564 / 2, method1929(4), 16777215);
       super.method1923(var1, var2, var3, var4);
       if (this.field4422 != null) {
          String var7 = this.field4422.method18907();
-         int var8 = this.field4568.getStringWidth(var7);
+         int var8 = this.fontRenderer.getStringWidth(var7);
          int var9 = this.field4422.field27447 != Class2261.field14706 ? 8388479 : 10526880;
-         int var10 = this.field4568.method38821(field4413);
-         method5691(var1, this.field4568, field4413, this.field4564 / 2, 12, 16777215);
-         method5690(var1, this.field4568, var7, this.field4564 / 2, 24, var9);
+         int var10 = this.fontRenderer.method38821(field4413);
+         method5691(var1, this.fontRenderer, field4413, this.field4564 / 2, 12, 16777215);
+         method5690(var1, this.fontRenderer, var7, this.field4564 / 2, 24, var9);
          int var11 = Math.min(this.method2273(2, 3) + 80 - 11, this.field4564 / 2 + var8 / 2 + var10 / 2 + 10);
          this.method2283(var1, var11, 7, var2, var3);
          if (this.method2288()) {
-            this.field4568
+            this.fontRenderer
                .method38805(
                   var1,
                   field4414.deepCopy().appendString(this.field4422.method18908()),
@@ -227,7 +227,7 @@ public class Class815 extends Class813 {
             this.method2282(var1, this.field4420, var2, var3);
          }
       } else {
-         method5691(var1, this.field4568, field4413, this.field4564 / 2, 17, 16777215);
+         method5691(var1, this.fontRenderer, field4413, this.field4564 / 2, 17, 16777215);
       }
    }
 
@@ -237,7 +237,7 @@ public class Class815 extends Class813 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -255,7 +255,7 @@ public class Class815 extends Class813 {
          this.field4421.method2037();
       }
 
-      this.field4562.displayGuiScreen(this.field4421);
+      this.mc.displayGuiScreen(this.field4421);
    }
 
    private void method2276(long var1) {
@@ -274,7 +274,7 @@ public class Class815 extends Class813 {
             }
          } catch (Class2435 var7) {
             field4407.error("Couldn't get own world");
-            this.field4562.execute(() -> this.field4562.displayGuiScreen(new Class821(ITextComponent.func_244388_a(var7.getMessage()), this.field4421)));
+            this.mc.execute(() -> this.mc.displayGuiScreen(new Class821(ITextComponent.func_244388_a(var7.getMessage()), this.field4421)));
          }
       }).start();
    }
@@ -300,17 +300,17 @@ public class Class815 extends Class813 {
       Class804 var3 = new Class804(this, Class2049.field13370);
       var3.method1956(new TranslationTextComponent("mco.template.title.minigame"));
       var3.method1957(new TranslationTextComponent("mco.minigame.world.info.line1"), new TranslationTextComponent("mco.minigame.world.info.line2"));
-      this.field4562.displayGuiScreen(var3);
+      this.mc.displayGuiScreen(var3);
    }
 
    private void method2280(int var1, Class6128 var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line1");
       TranslationTextComponent var6 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line2");
-      this.field4562.displayGuiScreen(new Class808(var3 -> {
+      this.mc.displayGuiScreen(new Class808(var3 -> {
          if (!var3) {
-            this.field4562.displayGuiScreen(this);
+            this.mc.displayGuiScreen(this);
          } else {
-            this.field4562.displayGuiScreen(new Class797(this.field4421, new Class790(var2.field27443, var1, () -> this.field4562.displayGuiScreen(this.method2298()))));
+            this.mc.displayGuiScreen(new Class797(this.field4421, new Class790(var2.field27443, var1, () -> this.mc.displayGuiScreen(this.method2298()))));
          }
       }, Class2134.field13980, var5, var6, true));
    }
@@ -318,12 +318,12 @@ public class Class815 extends Class813 {
    private void method2281(int var1, Class6128 var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line1");
       TranslationTextComponent var6 = new TranslationTextComponent("mco.configure.world.slot.switch.question.line2");
-      this.field4562
+      this.mc
          .displayGuiScreen(
             new Class808(
                var3 -> {
                   if (!var3) {
-                     this.field4562.displayGuiScreen(this);
+                     this.mc.displayGuiScreen(this);
                   } else {
                      Class814 var6x = new Class814(
                         this,
@@ -332,12 +332,12 @@ public class Class815 extends Class813 {
                         new TranslationTextComponent("mco.configure.world.switch.slot.subtitle"),
                         10526880,
                         DialogTexts.GUI_CANCEL,
-                        () -> this.field4562.displayGuiScreen(this.method2298()),
-                        () -> this.field4562.displayGuiScreen(this.method2298())
+                        () -> this.mc.displayGuiScreen(this.method2298()),
+                        () -> this.mc.displayGuiScreen(this.method2298())
                      );
                      var6x.method2246(var1);
                      var6x.method2247(new TranslationTextComponent("mco.create.world.reset.title"));
-                     this.field4562.displayGuiScreen(var6x);
+                     this.mc.displayGuiScreen(var6x);
                   }
                },
                Class2134.field13980,
@@ -351,13 +351,13 @@ public class Class815 extends Class813 {
    public void method2282(MatrixStack var1, ITextComponent var2, int var3, int var4) {
       int var7 = var3 + 12;
       int var8 = var4 - 12;
-      int var9 = this.field4568.method38821(var2);
+      int var9 = this.fontRenderer.method38821(var2);
       if (var7 + var9 + 3 > this.field4425) {
          var7 = var7 - var9 - 20;
       }
 
       this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-      this.field4568.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+      this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
    }
 
    private void method2283(MatrixStack var1, int var2, int var3, int var4, int var5) {
@@ -379,7 +379,7 @@ public class Class815 extends Class813 {
    }
 
    private void method2284(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      this.field4562.getTextureManager().bindTexture(field4410);
+      this.mc.getTextureManager().bindTexture(field4410);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
@@ -388,7 +388,7 @@ public class Class815 extends Class813 {
    }
 
    private void method2285(MatrixStack var1, int var2, int var3, int var4, int var5, int var6) {
-      this.field4562.getTextureManager().bindTexture(field4411);
+      this.mc.getTextureManager().bindTexture(field4411);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field4434 % 20 >= 10) {
          AbstractGui.method5699(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
@@ -410,7 +410,7 @@ public class Class815 extends Class813 {
    }
 
    private void method2286(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      this.field4562.getTextureManager().bindTexture(field4408);
+      this.mc.getTextureManager().bindTexture(field4408);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
@@ -419,7 +419,7 @@ public class Class815 extends Class813 {
    }
 
    private void method2287(MatrixStack var1, int var2, int var3, int var4, int var5) {
-      this.field4562.getTextureManager().bindTexture(field4409);
+      this.mc.getTextureManager().bindTexture(field4409);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
@@ -463,11 +463,11 @@ public class Class815 extends Class813 {
          this.field4422.field27451.put(this.field4422.field27456, var1);
       } catch (Class2435 var7) {
          field4407.error("Couldn't save slot settings");
-         this.field4562.displayGuiScreen(new Class821(var7, this));
+         this.mc.displayGuiScreen(new Class821(var7, this));
          return;
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    public void method2294(String var1, String var2) {
@@ -480,19 +480,19 @@ public class Class815 extends Class813 {
          this.field4422.method18910(var5);
       } catch (Class2435 var8) {
          field4407.error("Couldn't save settings");
-         this.field4562.displayGuiScreen(new Class821(var8, this));
+         this.mc.displayGuiScreen(new Class821(var8, this));
          return;
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    public void method2295(boolean var1, Screen var2) {
-      this.field4562.displayGuiScreen(new Class797(var2, new Class794(this.field4422, this, this.field4421, var1)));
+      this.mc.displayGuiScreen(new Class797(var2, new Class794(this.field4422, this, this.field4421, var1)));
    }
 
    public void method2296(Screen var1) {
-      this.field4562.displayGuiScreen(new Class797(var1, new Class1345(this.field4422, this)));
+      this.mc.displayGuiScreen(new Class797(var1, new Class1345(this.field4422, this)));
    }
 
    public void method2297() {
@@ -502,7 +502,7 @@ public class Class815 extends Class813 {
    @Override
    public void method2245(Class6130 var1) {
       if (var1 != null && Class2320.field15899 == var1.field27472) {
-         this.field4562.displayGuiScreen(new Class797(this.field4421, new Class795(this.field4422.field27443, var1, this.method2298())));
+         this.mc.displayGuiScreen(new Class797(this.field4421, new Class795(this.field4422.field27443, var1, this.method2298())));
       }
    }
 

@@ -74,9 +74,9 @@ public class SocialInteractionsScreen extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       if (!this.field6237) {
-         this.field6227 = new Class1297(this, this.field4562, this.field4564, this.field4565, 88, this.method5484(), 36);
+         this.field6227 = new Class1297(this, this.mc, this.field4564, this.field4565, 88, this.method5484(), 36);
       } else {
          this.field6227.method6034(this.field4564, this.field4565, 88, this.method5484());
       }
@@ -84,7 +84,7 @@ public class SocialInteractionsScreen extends Screen {
       int var3 = this.field6227.method6022() / 3;
       int var4 = this.field6227.method6053();
       int var5 = this.field6227.method6054();
-      int var6 = this.field4568.method38821(field6226) + 40;
+      int var6 = this.fontRenderer.method38821(field6226) + 40;
       int var7 = 64 + 16 * this.method5483();
       int var8 = (this.field4564 - var6) / 2;
       this.field6231 = this.<Class1206>method2455(new Class1206(var4, 45, var3, 20, field6216, var1 -> this.method5486(Class2332.field15951)));
@@ -92,15 +92,15 @@ public class SocialInteractionsScreen extends Screen {
          new Class1206((var4 + var5 - var3) / 2 + 1, 45, var3, 20, field6217, var1 -> this.method5486(Class2332.field15952))
       );
       this.field6233 = this.<Class1206>method2455(new Class1206(var5 - var3 + 1, 45, var3, 20, field6218, var1 -> this.method5486(Class2332.field15953)));
-      this.field6234 = this.<Class1206>method2455(new Class1206(var8, var7, var6, 20, field6226, var1 -> this.field4562.displayGuiScreen(new Class830(var1x -> {
+      this.field6234 = this.<Class1206>method2455(new Class1206(var8, var7, var6, 20, field6226, var1 -> this.mc.displayGuiScreen(new Class830(var1x -> {
             if (var1x) {
                Util.getOSType().method8181("https://aka.ms/javablocking");
             }
 
-            this.field4562.displayGuiScreen(this);
+            this.mc.displayGuiScreen(this);
          }, "https://aka.ms/javablocking", true))));
       String var9 = this.field6228 == null ? "" : this.field6228.method5636();
-      this.field6228 = new Class1301(this, this.field4568, this.method5485() + 28, 78, 196, 16, field6222);
+      this.field6228 = new Class1301(this, this.fontRenderer, this.method5485() + 28, 78, 196, 16, field6222);
       this.field6228.method5657(16);
       this.field6228.method5661(false);
       this.field6228.method5671(true);
@@ -122,16 +122,16 @@ public class SocialInteractionsScreen extends Screen {
       switch (Class3627.field19645[var1.ordinal()]) {
          case 1:
             this.field6231.method5743(field6219);
-            var4 = this.field4562.player.connection.method15791();
+            var4 = this.mc.player.connection.method15791();
             break;
          case 2:
             this.field6232.method5743(field6220);
-            var4 = this.field4562.func_244599_aA().method37609();
+            var4 = this.mc.func_244599_aA().method37609();
             break;
          case 3:
             this.field6233.method5743(field6221);
-            FilterManager var5 = this.field4562.func_244599_aA();
-            var4 = this.field4562.player.connection.method15791().stream().filter(var5::method37608).collect(Collectors.toSet());
+            FilterManager var5 = this.mc.func_244599_aA();
+            var4 = this.mc.player.connection.method15791().stream().filter(var5::method37608).collect(Collectors.toSet());
             break;
          default:
             var4 = ImmutableList.of();
@@ -152,14 +152,14 @@ public class SocialInteractionsScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
    public void method2469(MatrixStack var1) {
       int var4 = this.method5485() + 3;
       super.method2469(var1);
-      this.field4562.getTextureManager().bindTexture(field6215);
+      this.mc.getTextureManager().bindTexture(field6215);
       this.method5696(var1, var4, 64, 1, 1, 236, 8);
       int var5 = this.method5483();
 
@@ -173,28 +173,28 @@ public class SocialInteractionsScreen extends Screen {
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
-      this.method5488(this.field4562);
+      this.method5488(this.mc);
       this.method2469(var1);
       if (this.field6235 != null) {
-         method5693(var1, this.field4562.fontRenderer, this.field6235, this.method5485() + 8, 35, -1);
+         method5693(var1, this.mc.fontRenderer, this.field6235, this.method5485() + 8, 35, -1);
       }
 
       if (!this.field6227.method6137()) {
          this.field6227.method1923(var1, var2, var3, var4);
       } else if (!this.field6228.method5636().isEmpty()) {
-         method5691(var1, this.field4562.fontRenderer, field6223, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
+         method5691(var1, this.mc.fontRenderer, field6223, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
       } else {
          switch (Class3627.field19645[this.field6230.ordinal()]) {
             case 2:
-               method5691(var1, this.field4562.fontRenderer, field6224, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
+               method5691(var1, this.mc.fontRenderer, field6224, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
                break;
             case 3:
-               method5691(var1, this.field4562.fontRenderer, field6225, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
+               method5691(var1, this.mc.fontRenderer, field6225, this.field4564 / 2, (78 + this.method5484()) / 2, -1);
          }
       }
 
       if (!this.field6228.method5746() && this.field6228.method5636().isEmpty()) {
-         method5693(var1, this.field4562.fontRenderer, field6222, this.field6228.field6477, this.field6228.field6478, -1);
+         method5693(var1, this.mc.fontRenderer, field6222, this.field6228.field6477, this.field6228.field6478, -1);
       } else {
          this.field6228.method1923(var1, var2, var3, var4);
       }
@@ -217,8 +217,8 @@ public class SocialInteractionsScreen extends Screen {
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
-      if (!this.field6228.method5746() && this.field4562.gameSettings.field_244602_au.method8519(var1, var2)) {
-         this.field4562.displayGuiScreen((Screen)null);
+      if (!this.field6228.method5746() && this.mc.gameSettings.field_244602_au.method8519(var1, var2)) {
+         this.mc.displayGuiScreen((Screen)null);
          return true;
       } else {
          return super.method1920(var1, var2, var3);

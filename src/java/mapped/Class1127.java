@@ -25,7 +25,7 @@ public class Class1127 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       super.method1921();
       this.field6167 = new Class1294(this, this.field6171);
       this.field4561.add(this.field6167);
@@ -43,7 +43,7 @@ public class Class1127 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -55,7 +55,7 @@ public class Class1127 extends Screen {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field6170 = null;
       this.field6167.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
       super.method1923(var1, var2, var3, var4);
       if (this.field6170 != null) {
          this.method2461(var1, this.field6170, var2, var3);

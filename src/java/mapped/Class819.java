@@ -46,7 +46,7 @@ public class Class819 extends Class798 {
          this.method2337(this.field4466);
       }
 
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       Class9229.method34711(
          Stream.<ITextComponent>concat(Stream.of(this.field4467), Stream.of(this.field4468))
             .<CharSequence>map(ITextComponent::getString)
@@ -63,9 +63,9 @@ public class Class819 extends Class798 {
             var7 = new Class1206(this.method2335(var5), method1929(8), 80, 20, new TranslationTextComponent("mco.brokenworld.download"), var2 -> {
                TranslationTextComponent var5x = new TranslationTextComponent("mco.configure.world.restore.download.question.line1");
                TranslationTextComponent var6x = new TranslationTextComponent("mco.configure.world.restore.download.question.line2");
-               this.field4562.displayGuiScreen(new Class808(var2x -> {
+               this.mc.displayGuiScreen(new Class808(var2x -> {
                   if (!var2x) {
-                     this.field4562.displayGuiScreen(this);
+                     this.mc.displayGuiScreen(this);
                   } else {
                      this.method2339(var5);
                   }
@@ -80,7 +80,7 @@ public class Class819 extends Class798 {
                new TranslationTextComponent("mco.brokenworld.play"),
                var2 -> {
                   if (!this.field4465.field27451.get(var5).field27434) {
-                     this.field4562.displayGuiScreen(new Class797(this.field4463, new Class790(this.field4465.field27443, var5, this::method2338)));
+                     this.mc.displayGuiScreen(new Class797(this.field4463, new Class790(this.field4465.field27443, var5, this::method2338)));
                   } else {
                      Class814 var5x = new Class814(
                         this,
@@ -91,13 +91,13 @@ public class Class819 extends Class798 {
                         DialogTexts.GUI_CANCEL,
                         this::method2338,
                         () -> {
-                           this.field4562.displayGuiScreen(this);
+                           this.mc.displayGuiScreen(this);
                            this.method2338();
                         }
                      );
                      var5x.method2246(var5);
                      var5x.method2247(new TranslationTextComponent("mco.create.world.reset.title"));
-                     this.field4562.displayGuiScreen(var5x);
+                     this.mc.displayGuiScreen(var5x);
                   }
                }
             );
@@ -112,14 +112,14 @@ public class Class819 extends Class798 {
          this.<Class1206>method2455(
             new Class1206(this.method2335(var5), method1929(10), 80, 20, new TranslationTextComponent("mco.brokenworld.reset"), var2 -> {
                Class814 var5x = new Class814(this, this.field4465, this::method2338, () -> {
-                  this.field4562.displayGuiScreen(this);
+                  this.mc.displayGuiScreen(this);
                   this.method2338();
                });
                if (var5 != this.field4465.field27456 || this.field4465.field27455 == Class2049.field13370) {
                   var5x.method2246(var5);
                }
 
-               this.field4562.displayGuiScreen(var5x);
+               this.mc.displayGuiScreen(var5x);
             })
          );
       }
@@ -134,10 +134,10 @@ public class Class819 extends Class798 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       super.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4467, this.field4564 / 2, 17, 16777215);
+      method5691(var1, this.fontRenderer, this.field4467, this.field4564 / 2, 17, 16777215);
 
       for (int var7 = 0; var7 < this.field4468.length; var7++) {
-         method5691(var1, this.field4568, this.field4468[var7], this.field4564 / 2, method1929(-1) + 3 + var7 * 12, 10526880);
+         method5691(var1, this.fontRenderer, this.field4468[var7], this.field4564 / 2, method1929(-1) + 3 + var7 * 12, 10526880);
       }
 
       if (this.field4465 != null) {
@@ -181,7 +181,7 @@ public class Class819 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -195,7 +195,7 @@ public class Class819 extends Class798 {
    }
 
    private void method2336() {
-      this.field4562.displayGuiScreen(this.field4463);
+      this.mc.displayGuiScreen(this.field4463);
    }
 
    private void method2337(long var1) {
@@ -207,7 +207,7 @@ public class Class819 extends Class798 {
             this.method2334();
          } catch (Class2435 var7) {
             field4462.error("Couldn't get own world");
-            this.field4562.displayGuiScreen(new Class821(ITextComponent.func_244388_a(var7.getMessage()), this.field4463));
+            this.mc.displayGuiScreen(new Class821(ITextComponent.func_244388_a(var7.getMessage()), this.field4463));
          }
       }).start();
    }
@@ -216,13 +216,13 @@ public class Class819 extends Class798 {
       new Thread(() -> {
          Class4624 var3 = Class4624.method14543();
          if (this.field4465.field27447 == Class2261.field14706) {
-            this.field4562.execute(() -> this.field4562.displayGuiScreen(new Class797(this, new Class794(this.field4465, this, this.field4464, true))));
+            this.mc.execute(() -> this.mc.displayGuiScreen(new Class797(this, new Class794(this.field4465, this, this.field4464, true))));
          } else {
             try {
                this.field4464.method2060().method2046(var3.method14548(this.field4466), this);
             } catch (Class2435 var5) {
                field4462.error("Couldn't get own world");
-               this.field4562.execute(() -> this.field4562.displayGuiScreen(this.field4463));
+               this.mc.execute(() -> this.mc.displayGuiScreen(this.field4463));
             }
          }
       }).start();
@@ -235,17 +235,17 @@ public class Class819 extends Class798 {
          Class6120 var5 = var4.method14576(this.field4465.field27443, var1);
          Class812 var6 = new Class812(this, var5, this.field4465.method18921(var1), var2 -> {
             if (!var2) {
-               this.field4562.displayGuiScreen(this);
+               this.mc.displayGuiScreen(this);
             } else {
                this.field4471.add(var1);
                this.field4561.clear();
                this.method2334();
             }
          });
-         this.field4562.displayGuiScreen(var6);
+         this.mc.displayGuiScreen(var6);
       } catch (Class2435 var7) {
          field4462.error("Couldn't download world data");
-         this.field4562.displayGuiScreen(new Class821(var7, this));
+         this.mc.displayGuiScreen(new Class821(var7, this));
       }
    }
 
@@ -262,16 +262,16 @@ public class Class819 extends Class798 {
                if (var8 != 3) {
                   Class8087.method27972(String.valueOf(this.field4465.field27458), this.field4465.field27459);
                } else {
-                  this.field4562.getTextureManager().bindTexture(Class1218.field6539);
+                  this.mc.getTextureManager().bindTexture(Class1218.field6539);
                }
             } else {
-               this.field4562.getTextureManager().bindTexture(Class1218.field6538);
+               this.mc.getTextureManager().bindTexture(Class1218.field6538);
             }
          } else {
-            this.field4562.getTextureManager().bindTexture(Class1218.field6537);
+            this.mc.getTextureManager().bindTexture(Class1218.field6537);
          }
       } else {
-         this.field4562.getTextureManager().bindTexture(Class1218.field6536);
+         this.mc.getTextureManager().bindTexture(Class1218.field6536);
       }
 
       if (var6) {
@@ -284,7 +284,7 @@ public class Class819 extends Class798 {
       }
 
       AbstractGui.method5699(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
-      this.field4562.getTextureManager().bindTexture(Class1218.field6535);
+      this.mc.getTextureManager().bindTexture(Class1218.field6535);
       if (!var6) {
          RenderSystem.method27889(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
@@ -292,6 +292,6 @@ public class Class819 extends Class798 {
       }
 
       AbstractGui.method5699(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
-      method5690(var1, this.field4568, var7, var2 + 40, var3 + 66, 16777215);
+      method5690(var1, this.fontRenderer, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

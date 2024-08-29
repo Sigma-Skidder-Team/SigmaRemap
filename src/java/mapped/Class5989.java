@@ -15,53 +15,53 @@ import org.jetbrains.annotations.Nullable;
 public class Class5989 {
    private static final Int2ObjectMap<Class5989> field26127 = new Int2ObjectOpenHashMap();
    public static final List<Class5989> field26128 = new ArrayList<Class5989>();
-   public static final Class5989 field26129 = method18564(47, "1.8.x");
-   public static final Class5989 field26130 = method18564(107, "1.9");
-   public static final Class5989 field26131 = method18564(108, "1.9.1");
-   public static final Class5989 field26132 = method18564(109, "1.9.2");
-   public static final Class5989 field26133 = method18566(110, "1.9.3/4", new Class8664("1.9", 3, 4));
-   public static final Class5989 field26134 = method18564(210, "1.10.x");
-   public static final Class5989 field26135 = method18564(315, "1.11");
-   public static final Class5989 field26136 = method18566(316, "1.11.1/2", new Class8664("1.11", 1, 2));
-   public static final Class5989 field26137 = method18564(335, "1.12");
-   public static final Class5989 field26138 = method18564(338, "1.12.1");
-   public static final Class5989 field26139 = method18564(340, "1.12.2");
-   public static final Class5989 field26140 = method18564(393, "1.13");
-   public static final Class5989 field26141 = method18564(401, "1.13.1");
-   public static final Class5989 field26142 = method18564(404, "1.13.2");
-   public static final Class5989 field26143 = method18564(477, "1.14");
-   public static final Class5989 field26144 = method18564(480, "1.14.1");
-   public static final Class5989 field26145 = method18564(485, "1.14.2");
-   public static final Class5989 field26146 = method18564(490, "1.14.3");
-   public static final Class5989 field26147 = method18564(498, "1.14.4");
-   public static final Class5989 field26148 = method18564(573, "1.15");
-   public static final Class5989 field26149 = method18564(575, "1.15.1");
-   public static final Class5989 field26150 = method18564(578, "1.15.2");
-   public static final Class5989 field26151 = method18564(735, "1.16");
-   public static final Class5989 field26152 = method18564(736, "1.16.1");
-   public static final Class5989 field26153 = method18564(751, "1.16.2");
-   public static final Class5989 field26154 = method18564(753, "1.16.3");
-   public static final Class5989 field26155 = method18564(754, "1.16.4");
-   public static final Class5989 field26156 = method18564(-1, "UNKNOWN");
+   public static final Class5989 field26129 = register(47, "1.8.x");
+   public static final Class5989 field26130 = register(107, "1.9");
+   public static final Class5989 field26131 = register(108, "1.9.1");
+   public static final Class5989 field26132 = register(109, "1.9.2");
+   public static final Class5989 field26133 = register(110, "1.9.3/4", new Class8664("1.9", 3, 4));
+   public static final Class5989 field26134 = register(210, "1.10.x");
+   public static final Class5989 field26135 = register(315, "1.11");
+   public static final Class5989 field26136 = register(316, "1.11.1/2", new Class8664("1.11", 1, 2));
+   public static final Class5989 field26137 = register(335, "1.12");
+   public static final Class5989 field26138 = register(338, "1.12.1");
+   public static final Class5989 field26139 = register(340, "1.12.2");
+   public static final Class5989 field26140 = register(393, "1.13");
+   public static final Class5989 field26141 = register(401, "1.13.1");
+   public static final Class5989 field26142 = register(404, "1.13.2");
+   public static final Class5989 field26143 = register(477, "1.14");
+   public static final Class5989 field26144 = register(480, "1.14.1");
+   public static final Class5989 field26145 = register(485, "1.14.2");
+   public static final Class5989 field26146 = register(490, "1.14.3");
+   public static final Class5989 field26147 = register(498, "1.14.4");
+   public static final Class5989 field26148 = register(573, "1.15");
+   public static final Class5989 field26149 = register(575, "1.15.1");
+   public static final Class5989 field26150 = register(578, "1.15.2");
+   public static final Class5989 field26151 = register(735, "1.16");
+   public static final Class5989 field26152 = register(736, "1.16.1");
+   public static final Class5989 field26153 = register(751, "1.16.2");
+   public static final Class5989 field26154 = register(753, "1.16.3");
+   public static final Class5989 field26155 = register(754, "1.16.4");
+   public static final Class5989 field26156 = register(-1, "UNKNOWN");
    private final int field26157;
    private final int field26158;
    private final String field26159;
    private final boolean field26160;
    private final Set<String> field26161;
 
-   public static Class5989 method18564(int var0, String var1) {
-      return method18565(var0, -1, var1);
+   public static Class5989 register(int var0, String var1) {
+      return register(var0, -1, var1);
    }
 
-   public static Class5989 method18565(int var0, int var1, String var2) {
-      return method18567(var0, var1, var2, null);
+   public static Class5989 register(int var0, int var1, String var2) {
+      return populate(var0, var1, var2, null);
    }
 
-   public static Class5989 method18566(int var0, String var1, Class8664 var2) {
-      return method18567(var0, -1, var1, var2);
+   public static Class5989 register(int var0, String var1, Class8664 var2) {
+      return populate(var0, -1, var1, var2);
    }
 
-   public static Class5989 method18567(int var0, int var1, String var2, Class8664 var3) {
+   public static Class5989 populate(int var0, int var1, String var2, Class8664 var3) {
       Class5989 var6 = new Class5989(var0, var1, var2, var3);
       field26128.add(var6);
       field26127.put(var6.method18573(), var6);

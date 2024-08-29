@@ -81,7 +81,7 @@ public class Class804 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4201 = new Class1291(this, this.field4201.method6121());
       this.field4205 = this.<Class1206>method2455(
          new Class1206(
@@ -157,7 +157,7 @@ public class Class804 extends Class798 {
 
    private void method1964() {
       this.field4200.method2245((Class6130)null);
-      this.field4562.displayGuiScreen(this.field4200);
+      this.mc.displayGuiScreen(this.field4200);
    }
 
    private void method1965() {
@@ -211,12 +211,12 @@ public class Class804 extends Class798 {
          this.method1971(var1, var2, var3, this.field4215);
       }
 
-      method5691(var1, this.field4568, this.field4203, this.field4564 / 2, 13, 16777215);
+      method5691(var1, this.fontRenderer, this.field4203, this.field4564 / 2, 13, 16777215);
       if (this.field4213) {
          ITextComponent[] var7 = this.field4211;
 
          for (int var8 = 0; var8 < var7.length; var8++) {
-            int var9 = this.field4568.method38821(var7[var8]);
+            int var9 = this.fontRenderer.method38821(var7[var8]);
             int var10 = this.field4564 / 2 - var9 / 2;
             int var11 = method1929(-1 + var8);
             if (var2 >= var10 && var2 <= var10 + var9 && var3 >= var11 && var3 <= var11 + 9) {
@@ -236,7 +236,7 @@ public class Class804 extends Class798 {
                }
             }
 
-            method5691(var1, this.field4568, (ITextComponent)var13, this.field4564 / 2, method1929(-1 + var12), var14);
+            method5691(var1, this.fontRenderer, (ITextComponent)var13, this.field4564 / 2, method1929(-1 + var12), var14);
          }
       }
 
@@ -248,12 +248,12 @@ public class Class804 extends Class798 {
       for (int var7 = 0; var7 < var4.size(); var7++) {
          Class8081 var8 = (Class8081)var4.get(var7);
          int var9 = method1929(4 + var7);
-         int var10 = var8.field34733.stream().mapToInt(var1x -> this.field4568.getStringWidth(var1x.method18864())).sum();
+         int var10 = var8.field34733.stream().mapToInt(var1x -> this.fontRenderer.getStringWidth(var1x.method18864())).sum();
          int var11 = this.field4564 / 2 - var10 / 2;
 
          for (Class6102 var13 : var8.field34733) {
             int var14 = !var13.method18865() ? 16777215 : 3368635;
-            int var15 = this.field4568.drawStringWithShadow(var1, var13.method18864(), (float)var11, (float)var9, var14);
+            int var15 = this.fontRenderer.drawStringWithShadow(var1, var13.method18864(), (float)var11, (float)var9, var14);
             if (var13.method18865() && var2 > var11 && var2 < var15 && var3 > var9 - 3 && var3 < var9 + 8) {
                this.field4207 = new StringTextComponent(var13.method18866());
                this.field4208 = var13.method18866();
@@ -268,9 +268,9 @@ public class Class804 extends Class798 {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.field4568.method38821(var2);
+         int var9 = this.fontRenderer.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.field4568.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
@@ -281,7 +281,7 @@ public class Class804 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method1979(Class804 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -301,22 +301,22 @@ public class Class804 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method1983(Class804 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1984(Class804 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1985(Class804 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1986(Class804 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -326,17 +326,17 @@ public class Class804 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method1988(Class804 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1989(Class804 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method1990(Class804 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -346,7 +346,7 @@ public class Class804 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method1992(Class804 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -356,7 +356,7 @@ public class Class804 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method1994(Class804 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method

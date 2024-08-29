@@ -14,7 +14,7 @@ public class DatapackFailureScreen extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.field6213 = Class5991.method18584(this.field4568, this.method2453(), this.field4564 - 50);
+      this.field6213 = Class5991.method18584(this.fontRenderer, this.getTextComponent(), this.field4564 - 50);
       this.<Class1206>method2455(
          new Class1206(
             this.field4564 / 2 - 155, this.field4565 / 6 + 96, 150, 20, new TranslationTextComponent("datapackFailure.safeMode"), var1 -> this.field6214.run()
@@ -27,7 +27,7 @@ public class DatapackFailureScreen extends Screen {
             150,
             20,
             new TranslationTextComponent("gui.toTitle"),
-            var1 -> this.field4562.displayGuiScreen((Screen)null)
+            var1 -> this.mc.displayGuiScreen((Screen)null)
          )
       );
    }

@@ -40,14 +40,14 @@ public class Class830 extends ConfirmScreen {
    }
 
    public void method2539() {
-      this.field4562.keyboardListener.method36350(this.field4608);
+      this.mc.keyboardListener.method36350(this.field4608);
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       if (this.field4609) {
-         method5691(var1, this.field4568, this.field4606, this.field4564 / 2, 110, 16764108);
+         method5691(var1, this.fontRenderer, this.field4606, this.field4564 / 2, 110, 16764108);
       }
    }
 }

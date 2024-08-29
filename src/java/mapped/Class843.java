@@ -48,7 +48,7 @@ public class Class843 extends Class838 {
          return false;
       } else {
          if (this.field4674.guiScale != var8) {
-            this.field4562.updateWindowSize();
+            this.mc.updateWindowSize();
          }
 
          if (this.field4664.method979()) {
@@ -71,14 +71,14 @@ public class Class843 extends Class838 {
                var9.add(new TranslationTextComponent("options.graphics.warning.version", var12).mergeStyle(TextFormatting.GRAY));
             }
 
-            this.field4562.displayGuiScreen(new Class1307(field4667, var9, ImmutableList.of(new Class8001(field4668, var1x -> {
+            this.mc.displayGuiScreen(new Class1307(field4667, var9, ImmutableList.of(new Class8001(field4668, var1x -> {
                this.field4674.graphicFanciness = GraphicsFanciness.FABULOUS;
                Minecraft.getInstance().worldRenderer.loadRenderers();
                this.field4664.method977();
-               this.field4562.displayGuiScreen(this);
+               this.mc.displayGuiScreen(this);
             }), new Class8001(field4669, var1x -> {
                this.field4664.method978();
-               this.field4562.displayGuiScreen(this);
+               this.mc.displayGuiScreen(this);
             }))));
          }
 
@@ -95,7 +95,7 @@ public class Class843 extends Class838 {
       super(new TranslationTextComponent("options.videoTitle"));
       this.field4661 = var1;
       this.field4662 = var2;
-      this.field4664 = this.field4661.field4562.getGPUWarning();
+      this.field4664 = this.field4661.mc.getGPUWarning();
       this.field4664.method981();
       if (this.field4662.graphicFanciness == GraphicsFanciness.FABULOUS) {
          this.field4664.method977();
@@ -111,7 +111,7 @@ public class Class843 extends Class838 {
          if (var4 != null) {
             int var5 = this.field4564 / 2 - 155 + var3 % 2 * 160;
             int var6 = this.field4565 / 6 + 21 * (var3 / 2) - 12;
-            Class1197 var7 = this.<Class1197>method2455(var4.method17946(this.field4562.gameSettings, var5, var6, 150));
+            Class1197 var7 = this.<Class1197>method2455(var4.method17946(this.mc.gameSettings, var5, var6, 150));
             if (var4 == AbstractOption.field25344) {
                this.field4673 = var7;
             }
@@ -172,14 +172,14 @@ public class Class843 extends Class838 {
             var3.add(new TranslationTextComponent("options.graphics.warning.version", var6).mergeStyle(TextFormatting.GRAY));
          }
 
-         this.field4562.displayGuiScreen(new Class1307(field4667, var3, ImmutableList.of(new Class8001(field4668, var1 -> {
+         this.mc.displayGuiScreen(new Class1307(field4667, var3, ImmutableList.of(new Class8001(field4668, var1 -> {
             this.field4662.graphicFanciness = GraphicsFanciness.FABULOUS;
             Minecraft.getInstance().worldRenderer.loadRenderers();
             this.field4664.method977();
-            this.field4562.displayGuiScreen(this);
+            this.mc.displayGuiScreen(this);
          }), new Class8001(field4669, var1 -> {
             this.field4664.method978();
-            this.field4562.displayGuiScreen(this);
+            this.mc.displayGuiScreen(this);
          }))));
       }
    }
@@ -193,8 +193,8 @@ public class Class843 extends Class838 {
    }
 
    private void method2582() {
-      this.field4562.updateWindowSize();
-      MainWindow var3 = this.field4562.getMainWindow();
+      this.mc.updateWindowSize();
+      MainWindow var3 = this.mc.getMainWindow();
       int var4 = Class7540.method24650(this.field4673);
       int var5 = Class7540.method24651(this.field4673);
       int var6 = this.field4673.field6477 + (var4 - var5);
@@ -205,38 +205,38 @@ public class Class843 extends Class838 {
    private void method2583(Class1210 var1, int var2) {
       if (var1.field6482) {
          if (var1.field6523 == 200) {
-            this.field4562.gameSettings.saveOptions();
-            this.field4562.displayGuiScreen(this.field4661);
+            this.mc.gameSettings.saveOptions();
+            this.mc.displayGuiScreen(this.field4661);
          }
 
          if (var1.field6523 == 201) {
-            this.field4562.gameSettings.saveOptions();
+            this.mc.gameSettings.saveOptions();
             Class847 var5 = new Class847(this, this.field4662);
-            this.field4562.displayGuiScreen(var5);
+            this.mc.displayGuiScreen(var5);
          }
 
          if (var1.field6523 == 202) {
-            this.field4562.gameSettings.saveOptions();
+            this.mc.gameSettings.saveOptions();
             Class846 var6 = new Class846(this, this.field4662);
-            this.field4562.displayGuiScreen(var6);
+            this.mc.displayGuiScreen(var6);
          }
 
          if (var1.field6523 == 211) {
-            this.field4562.gameSettings.saveOptions();
+            this.mc.gameSettings.saveOptions();
             Class840 var7 = new Class840(this, this.field4662);
-            this.field4562.displayGuiScreen(var7);
+            this.mc.displayGuiScreen(var7);
          }
 
          if (var1.field6523 == 212) {
-            this.field4562.gameSettings.saveOptions();
+            this.mc.gameSettings.saveOptions();
             Class839 var8 = new Class839(this, this.field4662);
-            this.field4562.displayGuiScreen(var8);
+            this.mc.displayGuiScreen(var8);
          }
 
          if (var1.field6523 == 222) {
-            this.field4562.gameSettings.saveOptions();
+            this.mc.gameSettings.saveOptions();
             Class841 var9 = new Class841(this, this.field4662);
-            this.field4562.displayGuiScreen(var9);
+            this.mc.displayGuiScreen(var9);
          }
 
          if (var1.field6523 == 231) {
@@ -255,23 +255,23 @@ public class Class843 extends Class838 {
                return;
             }
 
-            this.field4562.gameSettings.saveOptions();
+            this.mc.gameSettings.saveOptions();
             Class842 var10 = new Class842(this, this.field4662);
-            this.field4562.displayGuiScreen(var10);
+            this.mc.displayGuiScreen(var10);
          }
       }
    }
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.saveOptions();
+      this.mc.gameSettings.saveOptions();
       super.onClose();
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4562.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
+      method5691(var1, this.mc.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
       String var7 = Class7944.method26777();
       String var8 = "HD_U";
       if (var8.equals("HD")) {
@@ -286,10 +286,10 @@ public class Class843 extends Class838 {
          var7 = "OptiFine G5 Light";
       }
 
-      method5692(var1, this.field4562.fontRenderer, var7, 2, this.field4565 - 10, 8421504);
+      drawString(var1, this.mc.fontRenderer, var7, 2, this.field4565 - 10, 8421504);
       String var9 = "Minecraft 1.16.4";
-      int var10 = this.field4562.fontRenderer.getStringWidth(var9);
-      method5692(var1, this.field4562.fontRenderer, var9, this.field4564 - var10 - 2, this.field4565 - 10, 8421504);
+      int var10 = this.mc.fontRenderer.getStringWidth(var9);
+      drawString(var1, this.mc.fontRenderer, var9, this.field4564 - var10 - 2, this.field4565 - 10, 8421504);
       super.method1923(var1, var2, var3, var4);
       this.field4671.method33640(var1, var2, var3, this.field4672);
    }

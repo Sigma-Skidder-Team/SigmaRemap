@@ -52,13 +52,13 @@ public class Class1330 extends Screen {
 
     @Override
     public void method1921() {
-        this.field4562.keyboardListener.method36347(true);
-        this.field7042 = new Class1189(this.field4568, this.field4564 / 2 - 100, 66, 200, 20, new TranslationTextComponent("addServer.enterName"));
+        this.mc.keyboardListener.method36347(true);
+        this.field7042 = new Class1189(this.fontRenderer, this.field4564 / 2 - 100, 66, 200, 20, new TranslationTextComponent("addServer.enterName"));
         this.field7042.method5654(true);
         this.field7042.method5635(this.field7040.field33188);
         this.field7042.method5631(this::method6337);
         this.field4561.add(this.field7042);
-        this.field7041 = new Class1189(this.field4568, this.field4564 / 2 - 100, 106, 200, 20, new TranslationTextComponent("addServer.enterIp"));
+        this.field7041 = new Class1189(this.fontRenderer, this.field4564 / 2 - 100, 106, 200, 20, new TranslationTextComponent("addServer.enterIp"));
         this.field7041.method5657(128);
         this.field7041.method5635(this.field7040.field33189);
         this.field7041.method5638(this.field7045);
@@ -100,7 +100,7 @@ public class Class1330 extends Screen {
 
     @Override
     public void onClose() {
-        this.field4562.keyboardListener.method36347(false);
+        this.mc.keyboardListener.method36347(false);
     }
 
     private void method6338() {
@@ -112,7 +112,7 @@ public class Class1330 extends Screen {
     @Override
     public void method1945() {
         this.method6339();
-        this.field4562.displayGuiScreen(this.field7044);
+        this.mc.displayGuiScreen(this.field7044);
     }
 
     private void method6339() {
@@ -124,9 +124,9 @@ public class Class1330 extends Screen {
     @Override
     public void method1923(MatrixStack var1, int var2, int var3, float var4) {
         this.method2469(var1);
-        method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 17, 16777215);
-        method5693(var1, this.field4568, field7036, this.field4564 / 2 - 100, 53, 10526880);
-        method5693(var1, this.field4568, field7037, this.field4564 / 2 - 100, 94, 10526880);
+        method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 17, 16777215);
+        method5693(var1, this.fontRenderer, field7036, this.field4564 / 2 - 100, 53, 10526880);
+        method5693(var1, this.fontRenderer, field7037, this.field4564 / 2 - 100, 94, 10526880);
         this.field7042.method1923(var1, var2, var3, var4);
         this.field7041.method1923(var1, var2, var3, var4);
         super.method1923(var1, var2, var3, var4);

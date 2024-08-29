@@ -54,7 +54,7 @@ public class WorldLoadProgressScreen extends Screen {
       int var11 = this.field4565 / 2;
       byte var12 = 30;
       method6319(var1, this.field7026, var10, var11 + 30, 2, 0);
-      method5690(var1, this.field4568, var7, var10, var11 - 4 - 30, 16777215);
+      method5690(var1, this.fontRenderer, var7, var10, var11 - 4 - 30, 16777215);
    }
 
    public static void method6319(MatrixStack var0, TrackingChunkStatusListener var1, int var2, int var3, int var4, int var5) {

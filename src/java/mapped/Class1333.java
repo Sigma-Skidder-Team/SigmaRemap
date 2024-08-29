@@ -13,7 +13,7 @@ public class Class1333 extends ChatScreen {
       if (!this.method6350(var1)) {
          super.method2465(var1);
       } else {
-         this.field4562.ingameGUI.getChatGUI().method5935(var1);
+         this.mc.ingameGUI.getChatGUI().method5935(var1);
       }
    }
 
@@ -24,7 +24,7 @@ public class Class1333 extends ChatScreen {
             if (!var1.equals("/reloadChunks")) {
                return false;
             } else {
-               this.field4562.worldRenderer.loadRenderers();
+               this.mc.worldRenderer.loadRenderers();
                return true;
             }
          } else {

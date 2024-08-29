@@ -1,19 +1,27 @@
 package mapped;
 
-public class Class1317 extends MultiplayerScreen {
+import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.unmapped.Class8005;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.text.StringTextComponent;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class JelloPortalScreen extends MultiplayerScreen {
    private Class1206 field6959;
    public static int field6960 = 0;
    private Class1197 field6961;
 
-   public Class1317() {
+   public JelloPortalScreen() {
       super(new MainMenuScreen());
    }
 
-   public Class1317(Screen var1) {
+   public JelloPortalScreen(Screen var1) {
       super(var1);
    }
 
-  /* @Override
+  @Override
    public void method1921() {
       super.method1921();
       Class5807 var3 = new Class5807(
@@ -28,20 +36,20 @@ public class Class1317 extends MultiplayerScreen {
             return new StringTextComponent(this.method6252(var5).method18580());
          }
       );
-      this.field6961 = this.<Class1197>method2455(var3.method17946(this.field4562.field1299, this.field4564 / 2 + 40, 7, 114));
+      this.field6961 = this.method2455(var3.method17946(this.mc.gameSettings, this.field4564 / 2 + 40, 7, 114));
    }
 
    @Override
-   public void method1923(Class9332 var1, int var2, int var3, float var4) {
+   public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
-      Class3192.method11420(
-         0, 0, Minecraft.getInstance().field1283.method8043(), (int)(30.0 * Minecraft.getInstance().field1283.method8049() / (double) GuiManager.field41348)
+      RenderUtil.method11420(
+         0, 0, Minecraft.getInstance().mainWindow.method8043(), (int)(30.0 * Minecraft.getInstance().mainWindow.method8049() / (double) GuiManager.field41348)
       );
       this.method2469(var1);
-      Class3192.method11422();
+      RenderUtil.method11422();
       this.field6961.method1923(var1, var2, var3, var4);
-      method5692(var1, this.field4568, this.method2453().getString(), this.field4564 / 2 - 146, 13, 16777215);
-      method5692(var1, this.field4568, "Jello Portal:", this.field4564 / 2 - 30, 13, Class5628.method17688(Class1979.field12896.field12910, 0.5F));
+      drawString(var1, this.fontRenderer, this.getTextComponent().getString(), this.field4564 / 2 - 146, 13, 16777215);
+      drawString(var1, this.fontRenderer, "Jello Portal:", this.field4564 / 2 - 30, 13, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
    }
 
    private int method6250() {
@@ -72,7 +80,7 @@ public class Class1317 extends MultiplayerScreen {
 
    private Class5989 method6252(int var1) {
       return this.method6251().get(var1);
-   }*/
+   }
 
    @Override
    public boolean isPauseScreen() {

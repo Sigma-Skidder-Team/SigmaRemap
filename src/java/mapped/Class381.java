@@ -28,18 +28,18 @@ public class Class381 extends Thread {
          }
 
          var3 = InetAddress.getByName(this.field1639);
-         ConnectingScreen.method6223(this.field1641, NetworkManager.method30703(var3, this.field1640, this.field1641.field4562.gameSettings.method37154()));
+         ConnectingScreen.method6223(this.field1641, NetworkManager.method30703(var3, this.field1640, this.field1641.mc.gameSettings.method37154()));
          ConnectingScreen.method6224(this.field1641)
             .setNetHandler(
                new ClientLoginNetHandler(
                   ConnectingScreen.method6224(this.field1641),
-                  this.field1641.field4562,
+                  this.field1641.mc,
                   ConnectingScreen.method6225(this.field1641),
                   var1 -> ConnectingScreen.method6227(this.field1641, var1)
                )
             );
          ConnectingScreen.method6224(this.field1641).sendPacket(new CHandshakePacket(this.field1639, this.field1640, ProtocolType.LOGIN));
-         ConnectingScreen.method6224(this.field1641).sendPacket(new CLoginStartPacket(this.field1641.field4562.getSession().getProfile()));
+         ConnectingScreen.method6224(this.field1641).sendPacket(new CLoginStartPacket(this.field1641.mc.getSession().getProfile()));
       } catch (UnknownHostException var6) {
          if (ConnectingScreen.method6222(this.field1641)) {
             return;
@@ -47,10 +47,10 @@ public class Class381 extends Thread {
 
          ConnectingScreen.method6226().error("Couldn't connect to server", var6);
          this.field1641
-            .field4562
+            .mc
             .execute(
                () -> this.field1641
-                     .field4562
+                     .mc
                      .displayGuiScreen(
                         new Class832(
                            ConnectingScreen.method6225(this.field1641), DialogTexts.field30664, new TranslationTextComponent("disconnect.genericReason", "Unknown host")
@@ -65,10 +65,10 @@ public class Class381 extends Thread {
          ConnectingScreen.method6226().error("Couldn't connect to server", var7);
          String var5 = var3 == null ? var7.toString() : var7.toString().replaceAll(var3 + ":" + this.field1640, "");
          this.field1641
-            .field4562
+            .mc
             .execute(
                () -> this.field1641
-                     .field4562
+                     .mc
                      .displayGuiScreen(
                         new Class832(ConnectingScreen.method6225(this.field1641), DialogTexts.field30664, new TranslationTextComponent("disconnect.genericReason", var5))
                      )

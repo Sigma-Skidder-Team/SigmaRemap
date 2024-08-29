@@ -89,7 +89,7 @@ public class Class1326 extends Class1325 {
 
    @Override
    public void method6308(Class911 var1) {
-      this.field4562
+      this.mc
          .getConnection()
          .sendPacket(
             new Class5578(new BlockPos(var1.method3573()), this.field7010.method5636(), this.field7021, var1.method3571(), this.field7022, this.field7023)

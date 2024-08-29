@@ -115,8 +115,8 @@ public class Class1335 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
-      this.field7068 = new Class1302(this, this.field4568, this.field4564 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
+      this.mc.keyboardListener.method36347(true);
+      this.field7068 = new Class1302(this, this.fontRenderer, this.field4564 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7068.method5635(this.field7090);
       this.field7068.method5631(var1 -> {
          this.field7090 = var1;
@@ -160,13 +160,13 @@ public class Class1335 extends Screen {
             150,
             20,
             new TranslationTextComponent("selectWorld.gameRules"),
-            var1 -> this.field4562.displayGuiScreen(new Class1127(this.field7091.clone(), var1x -> {
-                  this.field4562.displayGuiScreen(this);
+            var1 -> this.mc.displayGuiScreen(new Class1127(this.field7091.clone(), var1x -> {
+                  this.mc.displayGuiScreen(this);
                   var1x.ifPresent(var1xx -> this.field7091 = var1xx);
                }))
          )
       );
-      this.field7092.method5780(this, this.field4562, this.field4568);
+      this.field7092.method5780(this, this.mc, this.fontRenderer);
       this.field7084 = this.<Class1206>method2455(
          new Class1206(var4, 185, 150, 20, new TranslationTextComponent("selectWorld.moreWorldOptions"), var1 -> this.method6357())
       );
@@ -193,12 +193,12 @@ public class Class1335 extends Screen {
       }
 
       try {
-         this.field7069 = Class8950.method32695(this.field4562.getSaveLoader().method38466(), this.field7069, "");
+         this.field7069 = Class8950.method32695(this.mc.getSaveLoader().method38466(), this.field7069, "");
       } catch (Exception var6) {
          this.field7069 = "World";
 
          try {
-            this.field7069 = Class8950.method32695(this.field4562.getSaveLoader().method38466(), this.field7069, "");
+            this.field7069 = Class8950.method32695(this.mc.getSaveLoader().method38466(), this.field7069, "");
          } catch (Exception var5) {
             throw new RuntimeException("Could not create save folder", var5);
          }
@@ -207,11 +207,11 @@ public class Class1335 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    private void method6356() {
-      this.field4562.forcedScreenTick(new DirtMessageScreen(new TranslationTextComponent("createWorld.preparing")));
+      this.mc.forcedScreenTick(new DirtMessageScreen(new TranslationTextComponent("createWorld.preparing")));
       if (this.method6368()) {
          this.method6362();
          DimensionGeneratorSettings var3 = this.field7092.method5785(this.field7076);
@@ -232,7 +232,7 @@ public class Class1335 extends Screen {
             );
          }
 
-         this.field4562.createWorld(this.field7069, var5, this.field7092.method5789(), var3);
+         this.mc.createWorld(this.field7069, var5, this.field7092.method5789(), var3);
       }
    }
 
@@ -325,7 +325,7 @@ public class Class1335 extends Screen {
    }
 
    public void method6361() {
-      this.field4562.displayGuiScreen(this.field7067);
+      this.mc.displayGuiScreen(this.field7067);
       this.method6362();
    }
 
@@ -340,26 +340,26 @@ public class Class1335 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, -1);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, -1);
       if (!this.field7080) {
-         method5693(var1, this.field4568, field7064, this.field4564 / 2 - 100, 47, -6250336);
+         method5693(var1, this.fontRenderer, field7064, this.field4564 / 2 - 100, 47, -6250336);
          method5693(
             var1,
-            this.field4568,
+            this.fontRenderer,
             new StringTextComponent("").append(field7065).appendString(" ").appendString(this.field7069),
             this.field4564 / 2 - 100,
             85,
             -6250336
          );
          this.field7068.method1923(var1, var2, var3, var4);
-         method5693(var1, this.field4568, this.field7088, this.field4564 / 2 - 150, 122, -6250336);
-         method5693(var1, this.field4568, this.field7089, this.field4564 / 2 - 150, 134, -6250336);
+         method5693(var1, this.fontRenderer, this.field7088, this.field4564 / 2 - 150, 122, -6250336);
+         method5693(var1, this.fontRenderer, this.field7089, this.field4564 / 2 - 150, 134, -6250336);
          if (this.field7087.field6483) {
-            method5693(var1, this.field4568, field7066, this.field4564 / 2 - 150, 172, -6250336);
+            method5693(var1, this.fontRenderer, field7066, this.field4564 / 2 - 150, 172, -6250336);
          }
       } else {
-         method5693(var1, this.field4568, field7062, this.field4564 / 2 - 100, 47, -6250336);
-         method5693(var1, this.field4568, field7063, this.field4564 / 2 - 100, 85, -6250336);
+         method5693(var1, this.fontRenderer, field7062, this.field4564 / 2 - 100, 47, -6250336);
+         method5693(var1, this.fontRenderer, field7063, this.field4564 / 2 - 100, 85, -6250336);
          this.field7092.method1923(var1, var2, var3, var4);
       }
 
@@ -383,7 +383,7 @@ public class Class1335 extends Screen {
             this.field7078 = Files.createTempDirectory("mcworld-");
          } catch (IOException var4) {
             field7060.warn("Failed to create temporary dir", var4);
-            SystemToast.method24910(this.field4562, this.field7069);
+            SystemToast.method24910(this.mc, this.field7069);
             this.method6361();
          }
       }
@@ -394,7 +394,7 @@ public class Class1335 extends Screen {
    private void method6364() {
       Pair var3 = this.method6370();
       if (var3 != null) {
-         this.field4562
+         this.mc
             .displayGuiScreen(
                new Class1336(this, (ResourcePackList)var3.getSecond(), this::method6365, (File)var3.getFirst(), new TranslationTextComponent("dataPack.title"))
             );
@@ -406,28 +406,28 @@ public class Class1335 extends Screen {
       List var5 = var1.method1267().stream().filter(var1x -> !var4.contains(var1x)).collect(ImmutableList.toImmutableList());
       DatapackCodec var6 = new DatapackCodec(var4, var5);
       if (!var4.equals(this.field7077.method26104())) {
-         this.field4562.method1641(() -> this.field4562.displayGuiScreen(new DirtMessageScreen(new TranslationTextComponent("dataPack.validation.working"))));
-         DataPackRegistries.func_240961_a_(var1.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), this.field4562)
+         this.mc.method1641(() -> this.mc.displayGuiScreen(new DirtMessageScreen(new TranslationTextComponent("dataPack.validation.working"))));
+         DataPackRegistries.func_240961_a_(var1.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), this.mc)
             .handle(
                (var2, var3) -> {
                   if (var3 == null) {
-                     this.field4562.method1641(() -> {
+                     this.mc.method1641(() -> {
                         this.field7077 = var6;
                         this.field7092.method5790(var2);
                         var2.close();
-                        this.field4562.displayGuiScreen(this);
+                        this.mc.displayGuiScreen(this);
                      });
                   } else {
                      field7060.warn("Failed to validate datapack", var3);
-                     this.field4562
+                     this.mc
                         .method1641(
-                           () -> this.field4562
+                           () -> this.mc
                                  .displayGuiScreen(
                                     new ConfirmScreen(
                                        var1xx -> {
                                           if (!var1xx) {
                                              this.field7077 = DatapackCodec.field33531;
-                                             this.field4562.displayGuiScreen(this);
+                                             this.mc.displayGuiScreen(this);
                                           } else {
                                              this.method6364();
                                           }
@@ -479,7 +479,7 @@ public class Class1335 extends Screen {
    private boolean method6368() {
       if (this.field7078 != null) {
          try (
-                 SaveFormat.LevelSave var3 = this.field4562.getSaveLoader().getLevelSave(this.field7069);
+                 SaveFormat.LevelSave var3 = this.mc.getSaveLoader().getLevelSave(this.field7069);
                  Stream var5 = Files.walk(this.field7078);
          ) {
             Path var7 = var3.resolveFilePath(FolderName.DATAPACKS);
@@ -487,7 +487,7 @@ public class Class1335 extends Screen {
             var5.filter(var1 -> !var1.equals(this.field7078)).forEach(var2 -> method6367(this.field7078, var7, (Path) var2));
          } catch (IOException | Class2469 var35) {
             field7060.warn("Failed to copy datapacks to world {}", this.field7069, var35);
-            SystemToast.method24910(this.field4562, this.field7069);
+            SystemToast.method24910(this.mc, this.field7069);
             this.method6361();
             return false;
          }

@@ -45,7 +45,7 @@ public class Class824 extends Class798 {
       this.field4530 = this.field4564 / 2 - 160;
       this.field4531 = 150;
       this.field4532 = this.field4564 / 2 + 12;
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4529 = new Class1290(this);
       this.field4529.method6035(this.field4530);
       this.<Class1290>method2456(this.field4529);
@@ -61,7 +61,7 @@ public class Class824 extends Class798 {
             this.field4531 + 10,
             20,
             new TranslationTextComponent("mco.configure.world.buttons.invite"),
-            var1 -> this.field4562.displayGuiScreen(new Class805(this.field4527, this, this.field4528))
+            var1 -> this.mc.displayGuiScreen(new Class805(this.field4527, this, this.field4528))
          )
       );
       this.field4533 = this.<Class1206>method2455(
@@ -108,7 +108,7 @@ public class Class824 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -123,9 +123,9 @@ public class Class824 extends Class798 {
 
    private void method2410() {
       if (!this.field4538) {
-         this.field4562.displayGuiScreen(this.field4527);
+         this.mc.displayGuiScreen(this.field4527);
       } else {
-         this.field4562.displayGuiScreen(this.field4527.method2298());
+         this.mc.displayGuiScreen(this.field4527.method2298());
       }
    }
 
@@ -182,12 +182,12 @@ public class Class824 extends Class798 {
                }
 
                this.field4538 = true;
-               this.field4562.displayGuiScreen(this);
+               this.mc.displayGuiScreen(this);
             },
             new StringTextComponent("Question"),
             new TranslationTextComponent("mco.configure.world.uninvite.question").appendString(" '").appendString(var4.method18875()).appendString("' ?")
          );
-         this.field4562.displayGuiScreen(var5);
+         this.mc.displayGuiScreen(var5);
       }
    }
 
@@ -207,7 +207,7 @@ public class Class824 extends Class798 {
       int var7 = method1929(12) + 20;
       Tessellator var8 = Tessellator.getInstance();
       BufferBuilder var9 = var8.getBuffer();
-      this.field4562.getTextureManager().bindTexture(field4521);
+      this.mc.getTextureManager().bindTexture(field4521);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = 32.0F;
       var9.begin(7, DefaultVertexFormats.field43346);
@@ -224,7 +224,7 @@ public class Class824 extends Class798 {
       var8.draw();
       this.field4539.method5542(this, var1);
       if (this.field4528 != null && this.field4528.field27450 != null) {
-         this.field4568
+         this.fontRenderer
             .method38805(
                var1,
                new StringTextComponent("")
@@ -237,7 +237,7 @@ public class Class824 extends Class798 {
                10526880
             );
       } else {
-         this.field4568.method38805(var1, field4525, (float)this.field4530, (float)method1929(0), 10526880);
+         this.fontRenderer.method38805(var1, field4525, (float)this.field4530, (float)method1929(0), 10526880);
       }
 
       super.method1923(var1, var2, var3, var4);
@@ -250,15 +250,15 @@ public class Class824 extends Class798 {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.field4568.method38821(var2);
+         int var9 = this.fontRenderer.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.field4568.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
    private void method2417(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
-      this.field4562.getTextureManager().bindTexture(field4520);
+      this.mc.getTextureManager().bindTexture(field4520);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 7.0F;
       AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 7, 8, 14);
@@ -270,7 +270,7 @@ public class Class824 extends Class798 {
 
    private void method2418(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
-      this.field4562.getTextureManager().bindTexture(field4518);
+      this.mc.getTextureManager().bindTexture(field4518);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
       AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
@@ -282,7 +282,7 @@ public class Class824 extends Class798 {
 
    private void method2419(MatrixStack var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method1929(12) + 20 && var5 > method1929(1);
-      this.field4562.getTextureManager().bindTexture(field4519);
+      this.mc.getTextureManager().bindTexture(field4519);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
       AbstractGui.method5699(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
@@ -299,7 +299,7 @@ public class Class824 extends Class798 {
 
    // $VF: synthetic method
    public static FontRenderer method2426(Class824 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method

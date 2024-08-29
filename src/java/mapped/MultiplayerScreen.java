@@ -31,12 +31,12 @@ public class MultiplayerScreen extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       if (this.field6958) {
          this.field6949.method6034(this.field4564, this.field4565, 32, this.field4565 - 64);
       } else {
          this.field6958 = true;
-         this.field6950 = new Class7970(this.field4562);
+         this.field6950 = new Class7970(this.mc);
          this.field6950.method27094();
          this.field6956 = new Class9635();
 
@@ -47,7 +47,7 @@ public class MultiplayerScreen extends Screen {
             field4558.warn("Unable to start LAN server detection: {}", var4.getMessage());
          }
 
-         this.field6949 = new Class1279(this, this.field4562, this.field4564, this.field4565, 32, this.field4565 - 64, 36);
+         this.field6949 = new Class1279(this, this.mc, this.field4564, this.field4565, 32, this.field4565 - 64, 36);
          this.field6949.method6081(this.field6950);
       }
 
@@ -58,13 +58,13 @@ public class MultiplayerScreen extends Screen {
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 50, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.direct"), var1 -> {
             this.field6955 = new ServerData(I18n.format("selectServer.defaultName"), "", false);
-            this.field4562.displayGuiScreen(new Class1320(this, this::method6235, this.field6955));
+            this.mc.displayGuiScreen(new Class1320(this, this::method6235, this.field6955));
          })
       );
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 4 + 50, this.field4565 - 52, 100, 20, new TranslationTextComponent("selectServer.add"), var1 -> {
             this.field6955 = new ServerData(I18n.format("selectServer.defaultName"), "", false);
-            this.field4562.displayGuiScreen(new Class1330(this, this::method6234, this.field6955));
+            this.mc.displayGuiScreen(new Class1330(this, this::method6234, this.field6955));
          })
       );
       this.field6951 = this.<Class1206>method2455(
@@ -74,7 +74,7 @@ public class MultiplayerScreen extends Screen {
                ServerData var5 = ((Class1157)var4x).method5551();
                this.field6955 = new ServerData(var5.field33188, var5.field33189, false);
                this.field6955.method25583(var5);
-               this.field4562.displayGuiScreen(new Class1330(this, this::method6233, this.field6955));
+               this.mc.displayGuiScreen(new Class1330(this, this::method6233, this.field6955));
             }
          })
       );
@@ -88,7 +88,7 @@ public class MultiplayerScreen extends Screen {
                   TranslationTextComponent var7 = new TranslationTextComponent("selectServer.deleteWarning", var5);
                   TranslationTextComponent var8 = new TranslationTextComponent("selectServer.deleteButton");
                   ITextComponent var9 = DialogTexts.GUI_CANCEL;
-                  this.field4562.displayGuiScreen(new ConfirmScreen(this::method6232, var6, var7, var8, var9));
+                  this.mc.displayGuiScreen(new ConfirmScreen(this::method6232, var6, var7, var8, var9));
                }
             }
          })
@@ -97,7 +97,7 @@ public class MultiplayerScreen extends Screen {
          new Class1206(this.field4564 / 2 + 4, this.field4565 - 28, 70, 20, new TranslationTextComponent("selectServer.refresh"), var1 -> this.method6231())
       );
       this.method2455(
-         new Class1206(this.field4564 / 2 + 4 + 76, this.field4565 - 28, 75, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6948))
+         new Class1206(this.field4564 / 2 + 4 + 76, this.field4565 - 28, 75, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6948))
       );
       this.method6239();
    }
@@ -116,7 +116,7 @@ public class MultiplayerScreen extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
       if (this.field6957 != null) {
          this.field6957.interrupt();
          this.field6957 = null;
@@ -126,7 +126,7 @@ public class MultiplayerScreen extends Screen {
    }
 
    private void method6231() {
-      this.field4562.displayGuiScreen(new MultiplayerScreen(this.field6948));
+      this.mc.displayGuiScreen(new MultiplayerScreen(this.field6948));
    }
 
    private void method6232(boolean var1) {
@@ -138,7 +138,7 @@ public class MultiplayerScreen extends Screen {
          this.field6949.method6081(this.field6950);
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    private void method6233(boolean var1) {
@@ -152,7 +152,7 @@ public class MultiplayerScreen extends Screen {
          this.field6949.method6081(this.field6950);
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    private void method6234(boolean var1) {
@@ -163,12 +163,12 @@ public class MultiplayerScreen extends Screen {
          this.field6949.method6081(this.field6950);
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    private void method6235(boolean var1) {
       if (!var1) {
-         this.field4562.displayGuiScreen(this);
+         this.mc.displayGuiScreen(this);
       } else {
          this.method6237(this.field6955);
       }
@@ -200,7 +200,7 @@ public class MultiplayerScreen extends Screen {
       this.field6954 = null;
       this.method2469(var1);
       this.field6949.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
       super.method1923(var1, var2, var3, var4);
       if (this.field6954 != null) {
          this.method2460(var1, this.field6954, var2, var3);
@@ -225,7 +225,7 @@ public class MultiplayerScreen extends Screen {
       }*/
 
       Class5628.method17746(var1);
-      this.field4562.displayGuiScreen(new ConnectingScreen(this, this.field4562, var1));
+      this.mc.displayGuiScreen(new ConnectingScreen(this, this.mc, var1));
    }
 
    public void method6238(Class1156 var1) {

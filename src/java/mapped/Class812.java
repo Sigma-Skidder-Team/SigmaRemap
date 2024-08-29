@@ -55,7 +55,7 @@ public class Class812 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4362 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, this.field4565 - 42, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field4368 = true;
          this.method2235();
@@ -68,9 +68,9 @@ public class Class812 extends Class798 {
          if (!this.field4378 && this.method2234(this.field4359.field27402) >= 5368709120L) {
             TranslationTextComponent var3 = new TranslationTextComponent("mco.download.confirmation.line1", Class2072.method8729(5368709120L));
             TranslationTextComponent var4 = new TranslationTextComponent("mco.download.confirmation.line2");
-            this.field4562.displayGuiScreen(new Class808(var1 -> {
+            this.mc.displayGuiScreen(new Class808(var1 -> {
                this.field4378 = true;
-               this.field4562.displayGuiScreen(this);
+               this.mc.displayGuiScreen(this);
                this.method2240();
             }, Class2134.field13979, var3, var4, false));
          } else {
@@ -122,14 +122,14 @@ public class Class812 extends Class798 {
          this.field4379.accept(true);
       }
 
-      this.field4562.displayGuiScreen(this.field4358);
+      this.mc.displayGuiScreen(this.field4358);
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4360, this.field4564 / 2, 20, 16777215);
-      method5691(var1, this.field4568, this.field4366, this.field4564 / 2, 50, 16777215);
+      method5691(var1, this.fontRenderer, this.field4360, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4366, this.field4564 / 2, 50, 16777215);
       if (this.field4369) {
          this.method2236(var1);
       }
@@ -140,19 +140,19 @@ public class Class812 extends Class798 {
       }
 
       if (this.field4365 != null) {
-         method5691(var1, this.field4568, this.field4365, this.field4564 / 2, 110, 16711680);
+         method5691(var1, this.fontRenderer, this.field4365, this.field4564 / 2, 110, 16711680);
       }
 
       super.method1923(var1, var2, var3, var4);
    }
 
    private void method2236(MatrixStack var1) {
-      int var4 = this.field4568.method38821(this.field4366);
+      int var4 = this.fontRenderer.method38821(this.field4366);
       if (this.field4375 % 10 == 0) {
          this.field4377++;
       }
 
-      this.field4568.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
+      this.fontRenderer.method38801(var1, field4376[this.field4377 % field4376.length], (float)(this.field4564 / 2 + var4 / 2 + 5), 50.0F, 16777215);
    }
 
    private void method2237(MatrixStack var1) {
@@ -175,7 +175,7 @@ public class Class812 extends Class798 {
       var7.pos(var8, 80.0, 0.0).color(128, 128, 128, 255).endVertex();
       var6.draw();
       RenderSystem.enableTexture();
-      method5690(var1, this.field4568, this.field4367 + " %", this.field4564 / 2, 84, 16777215);
+      method5690(var1, this.fontRenderer, this.field4367 + " %", this.field4564 / 2, 84, 16777215);
    }
 
    private void method2238(MatrixStack var1) {
@@ -199,9 +199,9 @@ public class Class812 extends Class798 {
 
    private void method2239(MatrixStack var1, long var2) {
       if (var2 > 0L) {
-         int var6 = this.field4568.getStringWidth(this.field4367);
+         int var6 = this.fontRenderer.getStringWidth(this.field4367);
          String var7 = "(" + Class2072.method8729(var2) + "/s)";
-         this.field4568.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
+         this.fontRenderer.method38801(var1, var7, (float)(this.field4564 / 2 + var6 / 2 + 15), 84.0F, 16777215);
       }
    }
 
@@ -216,7 +216,7 @@ public class Class812 extends Class798 {
                this.field4366 = new TranslationTextComponent("mco.download.downloading", this.field4363);
                Class9478 var3 = new Class9478();
                var3.method36586(this.field4359.field27402);
-               var3.method36587(this.field4359, this.field4363, this.field4364, this.field4562.getSaveLoader());
+               var3.method36587(this.field4359, this.field4363, this.field4364, this.mc.getSaveLoader());
 
                while (!var3.method36589()) {
                   if (var3.method36590()) {

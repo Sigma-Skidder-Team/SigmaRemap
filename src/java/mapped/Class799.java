@@ -32,23 +32,23 @@ public class Class799 extends Class798 {
 
     @Override
     public void method1921() {
-        this.field4562.keyboardListener.method36347(true);
+        this.mc.keyboardListener.method36347(true);
         this.field4171 = this.<Class1206>method2455(
                 new Class1206(
                         this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 17, 97, 20, new TranslationTextComponent("mco.create.world"), var1 -> this.method1933()
                 )
         );
         this.<Class1206>method2455(
-                new Class1206(this.field4564 / 2 + 5, this.field4565 / 4 + 120 + 17, 95, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field4168))
+                new Class1206(this.field4564 / 2 + 5, this.field4565 / 4 + 120 + 17, 95, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field4168))
         );
         this.field4171.field6482 = false;
         this.field4169 = new Class1189(
-                this.field4562.fontRenderer, this.field4564 / 2 - 100, 65, 200, 20, (Class1189) null, new TranslationTextComponent("mco.configure.world.name")
+                this.mc.fontRenderer, this.field4564 / 2 - 100, 65, 200, 20, (Class1189) null, new TranslationTextComponent("mco.configure.world.name")
         );
         this.<Class1189>method2456(this.field4169);
         this.method5536(this.field4169);
         this.field4170 = new Class1189(
-                this.field4562.fontRenderer, this.field4564 / 2 - 100, 115, 200, 20, (Class1189) null, new TranslationTextComponent("mco.configure.world.description")
+                this.mc.fontRenderer, this.field4564 / 2 - 100, 115, 200, 20, (Class1189) null, new TranslationTextComponent("mco.configure.world.description")
         );
         this.<Class1189>method2456(this.field4170);
         this.field4172 = new Class1153(new TranslationTextComponent("mco.selectServer.create"), this.field4564 / 2, 11, 16777215);
@@ -58,7 +58,7 @@ public class Class799 extends Class798 {
 
     @Override
     public void onClose() {
-        this.field4562.keyboardListener.method36347(false);
+        this.mc.keyboardListener.method36347(false);
     }
 
     @Override
@@ -75,7 +75,7 @@ public class Class799 extends Class798 {
             this.field4171.field6482 = this.method1934();
             return var6;
         } else {
-            this.field4562.displayGuiScreen(this.field4168);
+            this.mc.displayGuiScreen(this.field4168);
             return true;
         }
     }
@@ -89,11 +89,11 @@ public class Class799 extends Class798 {
                     new TranslationTextComponent("mco.create.world.subtitle"),
                     10526880,
                     new TranslationTextComponent("mco.create.world.skip"),
-                    () -> this.field4562.displayGuiScreen(this.field4168.method2060()),
-                    () -> this.field4562.displayGuiScreen(this.field4168.method2060())
+                    () -> this.mc.displayGuiScreen(this.field4168.method2060()),
+                    () -> this.mc.displayGuiScreen(this.field4168.method2060())
             );
             var3.method2247(new TranslationTextComponent("mco.create.world.reset.title"));
-            this.field4562
+            this.mc
                     .displayGuiScreen(new Class797(this.field4168, new Class792(this.field4167.field27443, this.field4169.method5636(), this.field4170.method5636(), var3)));
         }
     }
@@ -106,8 +106,8 @@ public class Class799 extends Class798 {
     public void method1923(MatrixStack var1, int var2, int var3, float var4) {
         this.method2469(var1);
         this.field4172.method5542(this, var1);
-        this.field4568.method38805(var1, field4165, (float) (this.field4564 / 2 - 100), 52.0F, 10526880);
-        this.field4568.method38805(var1, field4166, (float) (this.field4564 / 2 - 100), 102.0F, 10526880);
+        this.fontRenderer.method38805(var1, field4165, (float) (this.field4564 / 2 - 100), 52.0F, 10526880);
+        this.fontRenderer.method38805(var1, field4166, (float) (this.field4564 / 2 - 100), 102.0F, 10526880);
         if (this.field4169 != null) {
             this.field4169.method1923(var1, var2, var3, var4);
         }

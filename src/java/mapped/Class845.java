@@ -47,21 +47,21 @@ public class Class845 extends Class838 {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482) {
             if (var4.field6523 == 200) {
-               this.field4562.displayGuiScreen(this.field4681);
+               this.mc.displayGuiScreen(this.field4681);
             }
 
             if (var4.field6523 == 210) {
                try {
-                  String var5 = this.field4562.getSession().getProfile().getName();
-                  String var6 = this.field4562.getSession().getProfile().getId().toString().replace("-", "");
-                  String var7 = this.field4562.getSession().getToken();
+                  String var5 = this.mc.getSession().getProfile().getName();
+                  String var6 = this.mc.getSession().getProfile().getId().toString().replace("-", "");
+                  String var7 = this.mc.getSession().getToken();
                   Random var8 = new Random();
                   Random var9 = new Random((long)System.identityHashCode(new Object()));
                   BigInteger var10 = new BigInteger(128, var8);
                   BigInteger var11 = new BigInteger(128, var9);
                   BigInteger var12 = var10.xor(var11);
                   String var13 = var12.toString(16);
-                  this.field4562.getSessionService().joinServer(this.field4562.getSession().getProfile(), var7, var13);
+                  this.mc.getSessionService().joinServer(this.mc.getSession().getProfile(), var7, var13);
                   String var14 = "https://optifine.net/capeChange?u=" + var6 + "&n=" + var5 + "&s=" + var13;
                   boolean var15 = Class7944.method26980(new URI(var14));
                   if (var15) {
@@ -84,15 +84,15 @@ public class Class845 extends Class838 {
 
             if (var4.field6523 == 220) {
                this.method2590(Class8043.method27619("of.message.capeOF.reloadCape"), 15000L);
-               if (this.field4562.player != null) {
+               if (this.mc.player != null) {
                   long var16 = 15000L;
                   long var18 = System.currentTimeMillis() + var16;
-                  this.field4562.player.method5386(var18);
+                  this.mc.player.method5386(var18);
                }
             }
 
             if (var4.field6523 == 230 && this.field4684 != null) {
-               this.field4562.keyboardListener.method36350(this.field4684);
+               this.mc.keyboardListener.method36350(this.field4684);
             }
          }
       }

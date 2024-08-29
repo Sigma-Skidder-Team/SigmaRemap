@@ -21,7 +21,7 @@ public class ConnectingScreen extends Screen {
 
    public ConnectingScreen(Screen var1, Minecraft var2, ServerData var3) {
       super(NarratorChatListener.field29300);
-      this.field4562 = var2;
+      this.mc = var2;
       this.field6938 = var1;
       Class9375 var6 = Class9375.method35574(var3.field33189);
       var2.unloadWorld();
@@ -31,7 +31,7 @@ public class ConnectingScreen extends Screen {
 
    public ConnectingScreen(Screen var1, Minecraft var2, String var3, int var4) {
       super(NarratorChatListener.field29300);
-      this.field4562 = var2;
+      this.mc = var2;
       this.field6938 = var1;
       var2.unloadWorld();
       this.method6219(var3, var4);
@@ -72,7 +72,7 @@ public class ConnectingScreen extends Screen {
             this.field6936.method30701(new TranslationTextComponent("connect.aborted"));
          }
 
-         this.field4562.displayGuiScreen(this.field6938);
+         this.mc.displayGuiScreen(this.field6938);
       }));
    }
 
@@ -85,7 +85,7 @@ public class ConnectingScreen extends Screen {
          NarratorChatListener.INSTANCE.say(new TranslationTextComponent("narrator.joining").getString());
       }
 
-      method5691(var1, this.field4568, this.field6939, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
+      method5691(var1, this.fontRenderer, this.field6939, this.field4564 / 2, this.field4565 / 2 - 50, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 

@@ -30,7 +30,7 @@ public class Class823 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field4512 = new Class1292(this);
       new Class376(this, "Realms-pending-invitations-fetcher").start();
       this.<Class1292>method2456(this.field4512);
@@ -43,7 +43,7 @@ public class Class823 extends Class798 {
       );
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 50, this.field4565 - 32, 100, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(new Class806(this.field4509))
+            this.field4564 / 2 - 50, this.field4565 - 32, 100, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(new Class806(this.field4509))
          )
       );
       this.field4516 = this.<Class1206>method2455(
@@ -64,7 +64,7 @@ public class Class823 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(new Class806(this.field4509));
+         this.mc.displayGuiScreen(new Class806(this.field4509));
          return true;
       }
    }
@@ -96,7 +96,7 @@ public class Class823 extends Class798 {
       }
 
       if (this.field4512.method6031() == 0 && this.field4511) {
-         method5691(var1, this.field4568, field4506, this.field4564 / 2, this.field4565 / 2 - 20, 16777215);
+         method5691(var1, this.fontRenderer, field4506, this.field4564 / 2, this.field4565 / 2 - 20, 16777215);
       }
 
       super.method1923(var1, var2, var3, var4);
@@ -106,9 +106,9 @@ public class Class823 extends Class798 {
       if (var2 != null) {
          int var7 = var3 + 12;
          int var8 = var4 - 12;
-         int var9 = this.field4568.method38821(var2);
+         int var9 = this.fontRenderer.method38821(var2);
          this.method5688(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         this.field4568.method38803(var1, var2, (float)var7, (float)var8, 16777215);
+         this.fontRenderer.method38803(var1, var2, (float)var7, (float)var8, 16777215);
       }
    }
 
@@ -123,7 +123,7 @@ public class Class823 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2387(Class823 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -143,7 +143,7 @@ public class Class823 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2391(Class823 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -153,22 +153,22 @@ public class Class823 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2393(Class823 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2394(Class823 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2395(Class823 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
    public static FontRenderer method2396(Class823 var0) {
-      return var0.field4568;
+      return var0.fontRenderer;
    }
 
    // $VF: synthetic method
@@ -178,7 +178,7 @@ public class Class823 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2398(Class823 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -203,7 +203,7 @@ public class Class823 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2403(Class823 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method

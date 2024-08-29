@@ -37,7 +37,7 @@ public class Class865 extends Class851<Class5837> {
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       this.method2469(var1);
-      this.field4562.getTextureManager().bindTexture(field4801);
+      this.mc.getTextureManager().bindTexture(field4801);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
@@ -61,7 +61,7 @@ public class Class865 extends Class851<Class5837> {
       this.method5696(var1, var7 + 119, var8 + 13 + var13, 232 + (!this.field4808 ? 12 : 0), 0, 12, 15);
       Class7516.method24502();
       if (this.field4804 != null && !this.field4810) {
-         Class7735 var14 = this.field4562.getRenderTypeBuffers().method26536();
+         Class7735 var14 = this.mc.getRenderTypeBuffers().method26536();
          var1.push();
          var1.translate((double)(var7 + 139), (double)(var8 + 52), 0.0);
          var1.method35292(24.0F, -24.0F, 1.0F);
@@ -81,7 +81,7 @@ public class Class865 extends Class851<Class5837> {
          if (this.field4809) {
             int var22 = var7 + 60;
             int var24 = var8 + 13;
-            this.field4562.getTextureManager().bindTexture(field4801);
+            this.mc.getTextureManager().bindTexture(field4801);
             this.method5696(var1, var22, var24, 0, this.field4722, 14, 14);
             int var16 = this.field4727.method18244();
             this.method2677(var16, var22, var24);
@@ -95,7 +95,7 @@ public class Class865 extends Class851<Class5837> {
             int var18 = var17 - this.field4813;
             int var19 = var23 + var18 % 4 * 14;
             int var20 = var25 + var18 / 4 * 14;
-            this.field4562.getTextureManager().bindTexture(field4801);
+            this.mc.getTextureManager().bindTexture(field4801);
             int var21 = this.field4722;
             if (var17 != this.field4727.method18244()) {
                if (var3 >= var19 && var4 >= var20 && var3 < var19 + 14 && var4 < var20 + 14) {
@@ -129,7 +129,7 @@ public class Class865 extends Class851<Class5837> {
       var9.translate(0.5, 0.5, 0.5);
       float var10 = 0.6666667F;
       var9.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-      Class7735 var11 = this.field4562.getRenderTypeBuffers().method26536();
+      Class7735 var11 = this.mc.getRenderTypeBuffers().method26536();
       this.field4803.field31035 = 0.0F;
       this.field4803.field31033 = -32.0F;
       List var12 = Class958.method3891(Class112.field393, Class958.method3886(var6));
@@ -150,9 +150,9 @@ public class Class865 extends Class851<Class5837> {
             int var12 = var11 - this.field4813;
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.method18104(this.field4562.player, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.method18104(this.mc.player, var11)) {
                Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27177, 1.0F));
-               this.field4562.playerController.method23146(this.field4727.field25471, var11);
+               this.mc.playerController.method23146(this.field4727.field25471, var11);
                return true;
             }
          }

@@ -50,7 +50,7 @@ public class WorkingScreen extends Screen implements Class1339 {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field7110) {
-         if (this.field7111 != null && this.field4562.world == null) {
+         if (this.field7111 != null && this.mc.world == null) {
             this.field7111.method22328(this.field4564, this.field4565);
          } else {
             this.method2469(var1);
@@ -58,13 +58,13 @@ public class WorkingScreen extends Screen implements Class1339 {
 
          if (this.field7109 > 0) {
             if (this.field7107 != null) {
-               method5691(var1, this.field4568, this.field7107, this.field4564 / 2, 70, 16777215);
+               method5691(var1, this.fontRenderer, this.field7107, this.field4564 / 2, 70, 16777215);
             }
 
             if (this.field7108 != null && this.field7109 != 0) {
                method5691(
                   var1,
-                  this.field4568,
+                  this.fontRenderer,
                   new StringTextComponent("").append(this.field7108).appendString(" " + this.field7109 + "%"),
                   this.field4564 / 2,
                   90,
@@ -74,8 +74,8 @@ public class WorkingScreen extends Screen implements Class1339 {
          }
 
          super.method1923(var1, var2, var3, var4);
-      } else if (!this.field4562.isConnectedToRealms()) {
-         this.field4562.displayGuiScreen((Screen)null);
+      } else if (!this.mc.isConnectedToRealms()) {
+         this.mc.displayGuiScreen((Screen)null);
       }
    }
 }

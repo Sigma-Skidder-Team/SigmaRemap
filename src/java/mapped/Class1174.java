@@ -28,7 +28,7 @@ public class Class1174 extends Class1155<Class1174> {
 
       ItemStack var16 = new ItemStack(var15);
       this.method5596(var1, var4, var3, var16);
-      this.field6359.field6849.field4568.method38805(var1, var15.method11731(var16), (float)(var4 + 18 + 5), (float)(var3 + 3), 16777215);
+      this.field6359.field6849.fontRenderer.method38805(var1, var15.method11731(var16), (float)(var4 + 18 + 5), (float)(var3 + 3), 16777215);
       String var17;
       if (var2 != 0) {
          if (var2 != Class1324.method6302(this.field6359.field6849).method38129().size() - 1) {
@@ -42,8 +42,8 @@ public class Class1174 extends Class1155<Class1174> {
 
       this.field6359
          .field6849
-         .field4568
-         .method38801(var1, var17, (float)(var4 + 2 + 213 - this.field6359.field6849.field4568.getStringWidth(var17)), (float)(var3 + 3), 16777215);
+         .fontRenderer
+         .method38801(var1, var17, (float)(var4 + 2 + 213 - this.field6359.field6849.fontRenderer.getStringWidth(var17)), (float)(var3 + 3), 16777215);
    }
 
    @Override

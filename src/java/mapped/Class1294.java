@@ -12,7 +12,7 @@ public class Class1294 extends Class1293<Class1180> {
    public final Class1127 field6858;
 
    public Class1294(Class1127 var1, Class5462 var2) {
-      super(var1.field4562, var1.field4564, var1.field4565, 43, var1.field4565 - 32, 24);
+      super(var1.mc, var1.field4564, var1.field4565, 43, var1.field4565 - 32, 24);
       this.field6858 = var1;
       Map<Class2155, Map<Class9221<?>, Class1180>> var5 = Maps.newHashMap();
       Class5462.method17131(new Class7570(this, var1, var2, var5));

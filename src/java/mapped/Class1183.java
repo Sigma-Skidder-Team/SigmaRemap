@@ -11,7 +11,7 @@ public class Class1183 extends Class1182 {
    public Class1183(Class1127 c, ITextComponent var1, List<Class9125> var2, String var3, Class7464 var5) {
       super(c, var2, var1);
       this.field6384 = c;
-      this.field6383 = new Class1189(c.field4562.fontRenderer, 10, 5, 42, 20, var1.deepCopy().appendString("\n").appendString(var3).appendString("\n"));
+      this.field6383 = new Class1189(c.mc.fontRenderer, 10, 5, 42, 20, var1.deepCopy().appendString("\n").appendString(var3).appendString("\n"));
       this.field6383.method5635(Integer.toString(var5.method24155()));
       this.field6383.method5631(var2x -> {
          if (!var5.method24158(var2x)) {

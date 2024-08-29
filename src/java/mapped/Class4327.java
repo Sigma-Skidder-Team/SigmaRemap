@@ -154,7 +154,7 @@ public class Class4327 extends Class4305 {
       });
       this.field21132.method13251((var1x, var2x) -> ((Class4310)this.method13258()).method13342());
       this.field21123.method13251((var1x, var2x) -> this.method13445(new Class1341(Minecraft.getInstance().currentScreen)));
-      this.field21124.method13251((var1x, var2x) -> this.method13445(new Class1317(Minecraft.getInstance().currentScreen)));
+      this.field21124.method13251((var1x, var2x) -> this.method13445(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
       this.field21126.method13251((var1x, var2x) -> this.method13445(new Class1129(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21127.method13251((var1x, var2x) -> this.method13446(new Class4313()));
       this.field21125.method13251((var1x, var2x) -> this.method13443());

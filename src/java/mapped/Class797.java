@@ -77,18 +77,18 @@ public class Class797 extends Class798 implements Class796 {
    private void method1922() {
       this.field4160 = true;
       this.field4162.method1912();
-      this.field4562.displayGuiScreen(this.field4157);
+      this.mc.displayGuiScreen(this.field4157);
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4158, this.field4564 / 2, method1929(3), 16777215);
+      method5691(var1, this.fontRenderer, this.field4158, this.field4564 / 2, method1929(3), 16777215);
       ITextComponent var7 = this.field4159;
       if (var7 != null) {
-         method5691(var1, this.field4568, var7, this.field4564 / 2, method1929(8), 16711680);
+         method5691(var1, this.fontRenderer, var7, this.field4564 / 2, method1929(8), 16711680);
       } else {
-         method5690(var1, this.field4568, field4164[this.field4161 % field4164.length], this.field4564 / 2, method1929(8), 8421504);
+         method5690(var1, this.fontRenderer, field4164[this.field4161 % field4164.length], this.field4564 / 2, method1929(8), 8421504);
       }
 
       super.method1923(var1, var2, var3, var4);

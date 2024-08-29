@@ -20,7 +20,7 @@ public class Class852 extends Class851<Class5836> {
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       this.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4753);
+      this.mc.getTextureManager().bindTexture(field4753);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
@@ -34,7 +34,7 @@ public class Class852 extends Class851<Class5836> {
       if (var13.getItem() != Items.field37955) {
          var15 = null;
       } else {
-         var15 = Class3316.method11860(var13, this.field4562.world);
+         var15 = Class3316.method11860(var13, this.mc.world);
          if (var15 != null) {
             if (var15.field32323) {
                var14 = true;
@@ -66,7 +66,7 @@ public class Class852 extends Class851<Class5836> {
          } else {
             this.method5696(var1, var9 + 67, var10 + 13, this.field4721, 0, 66, 66);
             this.method2630(var2, var9 + 71, var10 + 17, 0.45F);
-            this.field4562.getTextureManager().bindTexture(field4753);
+            this.mc.getTextureManager().bindTexture(field4753);
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, 0.0F, 1.0F);
             this.method5696(var1, var9 + 66, var10 + 12, 0, this.field4722, 66, 66);
@@ -75,7 +75,7 @@ public class Class852 extends Class851<Class5836> {
       } else {
          this.method5696(var1, var9 + 67 + 16, var10 + 13, this.field4721, 132, 50, 66);
          this.method2630(var2, var9 + 86, var10 + 16, 0.34F);
-         this.field4562.getTextureManager().bindTexture(field4753);
+         this.mc.getTextureManager().bindTexture(field4753);
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 1.0F);
          this.method5696(var1, var9 + 67, var10 + 13 + 16, this.field4721, 132, 50, 66);
@@ -90,7 +90,7 @@ public class Class852 extends Class851<Class5836> {
          RenderSystem.translatef((float)var2, (float)var3, 1.0F);
          RenderSystem.scalef(var4, var4, 1.0F);
          Class7735 var7 = Class7733.method25595(Tessellator.getInstance().getBuffer());
-         this.field4562.gameRenderer.method756().method593(new MatrixStack(), var7, var1, true, 15728880);
+         this.mc.gameRenderer.method756().method593(new MatrixStack(), var7, var1, true, 15728880);
          var7.method25602();
          RenderSystem.popMatrix();
       }

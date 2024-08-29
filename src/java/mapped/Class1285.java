@@ -9,7 +9,7 @@ public class Class1285 extends Class1274<Class1174> {
    public final Class1324 field6849;
 
    public Class1285(Class1324 var1) {
-      super(var1.field4562, var1.field4564, var1.field4565, 43, var1.field4565 - 60, 24);
+      super(var1.mc, var1.field4564, var1.field4565, 43, var1.field4565 - 60, 24);
       this.field6849 = var1;
 
       for (int var4 = 0; var4 < Class1324.method6302(var1).method38129().size(); var4++) {

@@ -38,7 +38,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
    @Override
    public void onClose() {
       this.field6184.method31511((Class1131)null);
-      ClientPlayNetHandler var3 = this.field4562.getConnection();
+      ClientPlayNetHandler var3 = this.mc.getConnection();
       if (var3 != null) {
          var3.sendPacket(Class5466.method17183());
       }
@@ -63,11 +63,11 @@ public class AdvancementsScreen extends Screen implements Class1131 {
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
-      if (!this.field4562.gameSettings.keyBindAdvancements.method8519(var1, var2)) {
+      if (!this.mc.gameSettings.keyBindAdvancements.method8519(var1, var2)) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen((Screen)null);
-         this.field4562.mouseHelper.grabMouse();
+         this.mc.displayGuiScreen((Screen)null);
+         this.mc.mouseHelper.grabMouse();
          return true;
       }
    }
@@ -112,18 +112,18 @@ public class AdvancementsScreen extends Screen implements Class1131 {
       } else {
          method5686(var1, var4 + 9, var5 + 18, var4 + 9 + 234, var5 + 18 + 113, -16777216);
          int var9 = var4 + 9 + 117;
-         method5691(var1, this.field4568, field6182, var9, var5 + 18 + 56 - 4, -1);
-         method5691(var1, this.field4568, field6181, var9, var5 + 18 + 113 - 9, -1);
+         method5691(var1, this.fontRenderer, field6182, var9, var5 + 18 + 56 - 4, -1);
+         method5691(var1, this.fontRenderer, field6181, var9, var5 + 18 + 113 - 9, -1);
       }
    }
 
    public void method5446(MatrixStack var1, int var2, int var3) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableBlend();
-      this.field4562.getTextureManager().bindTexture(field6179);
+      this.mc.getTextureManager().bindTexture(field6179);
       this.method5696(var1, var2, var3, 0, 0, 252, 140);
       if (this.field6185.size() > 1) {
-         this.field4562.getTextureManager().bindTexture(field6180);
+         this.mc.getTextureManager().bindTexture(field6180);
 
          for (Class1271 var7 : this.field6185.values()) {
             var7.method6003(var1, var2, var3, var7 == this.field6186);
@@ -139,7 +139,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
          RenderSystem.disableBlend();
       }
 
-      this.field4568.method38805(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
+      this.fontRenderer.method38805(var1, field6183, (float)(var2 + 8), (float)(var3 + 6), 4210752);
    }
 
    private void method5447(MatrixStack var1, int var2, int var3, int var4, int var5) {
@@ -164,7 +164,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
 
    @Override
    public void method5448(Class7952 var1) {
-      Class1271 var4 = Class1271.method6008(this.field4562, this, this.field6185.size(), var1);
+      Class1271 var4 = Class1271.method6008(this.mc, this, this.field6185.size(), var1);
       if (var4 != null) {
          this.field6185.put(var1, var4);
       }

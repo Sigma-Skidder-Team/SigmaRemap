@@ -23,7 +23,7 @@ public class Class1136 extends Class1135 {
 
    @Override
    public void method1921() {
-      this.field6195 = new Class1284(this, this.field4562);
+      this.field6195 = new Class1284(this, this.mc);
       this.field4561.add(this.field6195);
       this.field6197 = this.<Class1228>method2455(
          new Class1228(
@@ -31,7 +31,7 @@ public class Class1136 extends Class1135 {
                AbstractOption.field25360.method18078(this.field6193);
                this.field6193.saveOptions();
                var1.method5743(AbstractOption.field25360.method18081(this.field6193));
-               this.field4562.updateWindowSize();
+               this.mc.updateWindowSize();
             }
          )
       );
@@ -40,13 +40,13 @@ public class Class1136 extends Class1135 {
          if (var4 != null && !Class1164.method5565(var4).getCode().equals(this.field6196.getCurrentLanguage().getCode())) {
             this.field6196.method964(Class1164.method5565(var4));
             this.field6193.language = Class1164.method5565(var4).getCode();
-            this.field4562.reloadResources();
+            this.mc.reloadResources();
             this.field6198.method5743(DialogTexts.field30658);
             this.field6197.method5743(AbstractOption.field25360.method18081(this.field6193));
             this.field6193.saveOptions();
          }
 
-         this.field4562.displayGuiScreen(this.field6192);
+         this.mc.displayGuiScreen(this.field6192);
       }));
       super.method1921();
    }
@@ -54,8 +54,8 @@ public class Class1136 extends Class1135 {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.field6195.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 16, 16777215);
-      method5691(var1, this.field4568, field6194, this.field4564 / 2, this.field4565 - 56, 8421504);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 16, 16777215);
+      method5691(var1, this.fontRenderer, field6194, this.field4564 / 2, this.field4565 - 56, 8421504);
       super.method1923(var1, var2, var3, var4);
    }
 

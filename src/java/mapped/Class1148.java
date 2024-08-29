@@ -76,7 +76,7 @@ public class Class1148 extends Screen {
 
    private void method5500() {
       if (this.method5508(Class1897.field11138)) {
-         this.field4562.displayGuiScreen((Screen)null);
+         this.mc.displayGuiScreen((Screen)null);
       }
    }
 
@@ -87,19 +87,19 @@ public class Class1148 extends Screen {
       this.field6248.method3954(this.field6252);
       this.field6248.method3974(this.field6253);
       this.field6248.method3976(this.field6254);
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field6265 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 4 - 150, 210, 150, 20, DialogTexts.field30658, var1 -> this.method5500()));
       this.field6266 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 4, 210, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.method5501()));
       this.field6267 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.save"), var1 -> {
             if (this.field6248.method3950() == Class104.field318) {
                this.method5508(Class1897.field11139);
-               this.field4562.displayGuiScreen((Screen)null);
+               this.mc.displayGuiScreen((Screen)null);
             }
          })
       );
@@ -107,7 +107,7 @@ public class Class1148 extends Screen {
          new Class1206(this.field4564 / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.load"), var1 -> {
             if (this.field6248.method3950() == Class104.field319) {
                this.method5508(Class1897.field11140);
-               this.field4562.displayGuiScreen((Screen)null);
+               this.mc.displayGuiScreen((Screen)null);
             }
          })
       );
@@ -119,7 +119,7 @@ public class Class1148 extends Screen {
          new Class1206(this.field4564 / 2 + 4 + 100, 120, 50, 20, new TranslationTextComponent("structure_block.button.detect_size"), var1 -> {
             if (this.field6248.method3950() == Class104.field318) {
                this.method5508(Class1897.field11141);
-               this.field4562.displayGuiScreen((Screen)null);
+               this.mc.displayGuiScreen((Screen)null);
             }
          })
       );
@@ -166,46 +166,46 @@ public class Class1148 extends Screen {
          this.method5506();
       }));
       this.field6255 = new Class1304(
-         this, this.field4568, this.field4564 / 2 - 152, 40, 300, 20, new TranslationTextComponent("structure_block.structure_name")
+         this, this.fontRenderer, this.field4564 / 2 - 152, 40, 300, 20, new TranslationTextComponent("structure_block.structure_name")
       );
       this.field6255.method5657(64);
       this.field6255.method5635(this.field6248.method3934());
       this.field4561.add(this.field6255);
       BlockPos var3 = this.field6248.method3940();
-      this.field6256 = new Class1189(this.field4568, this.field4564 / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
+      this.field6256 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
       this.field6256.method5657(15);
       this.field6256.method5635(Integer.toString(var3.getX()));
       this.field4561.add(this.field6256);
-      this.field6257 = new Class1189(this.field4568, this.field4564 / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
+      this.field6257 = new Class1189(this.fontRenderer, this.field4564 / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
       this.field6257.method5657(15);
       this.field6257.method5635(Integer.toString(var3.getY()));
       this.field4561.add(this.field6257);
-      this.field6258 = new Class1189(this.field4568, this.field4564 / 2 + 8, 80, 80, 20, new TranslationTextComponent("structure_block.position.z"));
+      this.field6258 = new Class1189(this.fontRenderer, this.field4564 / 2 + 8, 80, 80, 20, new TranslationTextComponent("structure_block.position.z"));
       this.field6258.method5657(15);
       this.field6258.method5635(Integer.toString(var3.getZ()));
       this.field4561.add(this.field6258);
       BlockPos var4 = this.field6248.method3942();
-      this.field6259 = new Class1189(this.field4568, this.field4564 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
+      this.field6259 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
       this.field6259.method5657(15);
       this.field6259.method5635(Integer.toString(var4.getX()));
       this.field4561.add(this.field6259);
-      this.field6260 = new Class1189(this.field4568, this.field4564 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
+      this.field6260 = new Class1189(this.fontRenderer, this.field4564 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
       this.field6260.method5657(15);
       this.field6260.method5635(Integer.toString(var4.getY()));
       this.field4561.add(this.field6260);
-      this.field6261 = new Class1189(this.field4568, this.field4564 / 2 + 8, 120, 80, 20, new TranslationTextComponent("structure_block.size.z"));
+      this.field6261 = new Class1189(this.fontRenderer, this.field4564 / 2 + 8, 120, 80, 20, new TranslationTextComponent("structure_block.size.z"));
       this.field6261.method5657(15);
       this.field6261.method5635(Integer.toString(var4.getZ()));
       this.field4561.add(this.field6261);
-      this.field6262 = new Class1189(this.field4568, this.field4564 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.integrity"));
+      this.field6262 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.integrity"));
       this.field6262.method5657(15);
       this.field6262.method5635(this.field6279.format((double)this.field6248.method3955()));
       this.field4561.add(this.field6262);
-      this.field6263 = new Class1189(this.field4568, this.field4564 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.seed"));
+      this.field6263 = new Class1189(this.fontRenderer, this.field4564 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.seed"));
       this.field6263.method5657(31);
       this.field6263.method5635(Long.toString(this.field6248.method3957()));
       this.field4561.add(this.field6263);
-      this.field6264 = new Class1189(this.field4568, this.field4564 / 2 - 152, 120, 240, 20, new TranslationTextComponent("structure_block.custom_data"));
+      this.field6264 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 120, 240, 20, new TranslationTextComponent("structure_block.custom_data"));
       this.field6264.method5657(128);
       this.field6264.method5635(this.field6248.method3948());
       this.field4561.add(this.field6264);
@@ -251,7 +251,7 @@ public class Class1148 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    private void method5502() {
@@ -372,7 +372,7 @@ public class Class1148 extends Screen {
       );
       float var6 = this.method5510(this.field6262.method5636());
       long var7 = this.method5509(this.field6263.method5636());
-      this.field4562
+      this.mc
          .getConnection()
          .sendPacket(
             new Class5601(
@@ -442,42 +442,42 @@ public class Class1148 extends Screen {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       Class104 var7 = this.field6248.method3950();
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 10, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 10, 16777215);
       if (var7 != Class104.field321) {
-         method5693(var1, this.field4568, field6239, this.field4564 / 2 - 153, 30, 10526880);
+         method5693(var1, this.fontRenderer, field6239, this.field4564 / 2 - 153, 30, 10526880);
          this.field6255.method1923(var1, var2, var3, var4);
       }
 
       if (var7 == Class104.field319 || var7 == Class104.field318) {
-         method5693(var1, this.field4568, field6240, this.field4564 / 2 - 153, 70, 10526880);
+         method5693(var1, this.fontRenderer, field6240, this.field4564 / 2 - 153, 70, 10526880);
          this.field6256.method1923(var1, var2, var3, var4);
          this.field6257.method1923(var1, var2, var3, var4);
          this.field6258.method1923(var1, var2, var3, var4);
-         method5693(var1, this.field4568, field6244, this.field4564 / 2 + 154 - this.field4568.method38821(field6244), 150, 10526880);
+         method5693(var1, this.fontRenderer, field6244, this.field4564 / 2 + 154 - this.fontRenderer.method38821(field6244), 150, 10526880);
       }
 
       if (var7 == Class104.field318) {
-         method5693(var1, this.field4568, field6241, this.field4564 / 2 - 153, 110, 10526880);
+         method5693(var1, this.fontRenderer, field6241, this.field4564 / 2 - 153, 110, 10526880);
          this.field6259.method1923(var1, var2, var3, var4);
          this.field6260.method1923(var1, var2, var3, var4);
          this.field6261.method1923(var1, var2, var3, var4);
-         method5693(var1, this.field4568, field6245, this.field4564 / 2 + 154 - this.field4568.method38821(field6245), 110, 10526880);
-         method5693(var1, this.field4568, field6246, this.field4564 / 2 + 154 - this.field4568.method38821(field6246), 70, 10526880);
+         method5693(var1, this.fontRenderer, field6245, this.field4564 / 2 + 154 - this.fontRenderer.method38821(field6245), 110, 10526880);
+         method5693(var1, this.fontRenderer, field6246, this.field4564 / 2 + 154 - this.fontRenderer.method38821(field6246), 70, 10526880);
       }
 
       if (var7 == Class104.field319) {
-         method5693(var1, this.field4568, field6242, this.field4564 / 2 - 153, 110, 10526880);
+         method5693(var1, this.fontRenderer, field6242, this.field4564 / 2 - 153, 110, 10526880);
          this.field6262.method1923(var1, var2, var3, var4);
          this.field6263.method1923(var1, var2, var3, var4);
-         method5693(var1, this.field4568, field6247, this.field4564 / 2 + 154 - this.field4568.method38821(field6247), 70, 10526880);
+         method5693(var1, this.fontRenderer, field6247, this.field4564 / 2 + 154 - this.fontRenderer.method38821(field6247), 70, 10526880);
       }
 
       if (var7 == Class104.field321) {
-         method5693(var1, this.field4568, field6243, this.field4564 / 2 - 153, 110, 10526880);
+         method5693(var1, this.fontRenderer, field6243, this.field4564 / 2 - 153, 110, 10526880);
          this.field6264.method1923(var1, var2, var3, var4);
       }
 
-      method5693(var1, this.field4568, var7.method295(), this.field4564 / 2 - 153, 174, 10526880);
+      method5693(var1, this.fontRenderer, var7.method295(), this.field4564 / 2 - 153, 174, 10526880);
       super.method1923(var1, var2, var3, var4);
    }
 

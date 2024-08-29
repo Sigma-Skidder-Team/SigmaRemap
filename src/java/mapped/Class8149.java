@@ -270,7 +270,7 @@ public class Class8149 {
    }
 
    public static String method28263(Screen var0) {
-      ITextComponent var3 = var0.method2453();
+      ITextComponent var3 = var0.getTextComponent();
       return var3 != null ? var3.getUnformattedComponentText() : null;
    }
 

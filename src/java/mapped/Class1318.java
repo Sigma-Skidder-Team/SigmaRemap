@@ -44,7 +44,7 @@ public class Class1318 extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.field4562.playerController.method23157()) : this.field6965;
+      this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.mc.playerController.method23157()) : this.field6965;
 
       for (int var3 = 0; var3 < Class2150.field14059.length; var3++) {
          Class2150 var4 = Class2150.field14059[var3];
@@ -57,14 +57,14 @@ public class Class1318 extends Screen {
       if (!this.method6259()) {
          var1.push();
          RenderSystem.enableBlend();
-         this.field4562.getTextureManager().bindTexture(field6962);
+         this.mc.getTextureManager().bindTexture(field6962);
          int var7 = this.field4564 / 2 - 62;
          int var8 = this.field4565 / 2 - 30 - 27;
          method5699(var1, var7, var8, 0.0F, 0.0F, 125, 75, 128, 128);
          var1.method35295();
          super.method1923(var1, var2, var3, var4);
-         this.field6966.ifPresent(var2x -> method5691(var1, this.field4568, Class2150.method8863(var2x), this.field4564 / 2, this.field4565 / 2 - 30 - 20, -1));
-         method5691(var1, this.field4568, field6964, this.field4564 / 2, this.field4565 / 2 + 5, 16777215);
+         this.field6966.ifPresent(var2x -> method5691(var1, this.fontRenderer, Class2150.method8863(var2x), this.field4564 / 2, this.field4565 / 2 - 30 - 20, -1));
+         method5691(var1, this.fontRenderer, field6964, this.field4564 / 2, this.field4565 / 2 + 5, 16777215);
          if (!this.field6969) {
             this.field6967 = var2;
             this.field6968 = var3;
@@ -84,7 +84,7 @@ public class Class1318 extends Screen {
    }
 
    private void method6257() {
-      method6258(this.field4562, this.field6966);
+      method6258(this.mc, this.field6966);
    }
 
    private static void method6258(Minecraft var0, Optional<Class2150> var1) {
@@ -98,11 +98,11 @@ public class Class1318 extends Screen {
    }
 
    private boolean method6259() {
-      if (Class9798.method38639(this.field4562.getMainWindow().getHandle(), 292)) {
+      if (Class9798.method38639(this.mc.getMainWindow().getHandle(), 292)) {
          return false;
       } else {
          this.method6257();
-         this.field4562.displayGuiScreen((Screen)null);
+         this.mc.displayGuiScreen((Screen)null);
          return true;
       }
    }

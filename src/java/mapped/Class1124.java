@@ -23,10 +23,10 @@ public class Class1124 extends Class875<Class5824> {
 
    @Override
    public void method2716() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       int var3 = (this.field4564 - this.field4721) / 2;
       int var4 = (this.field4565 - this.field4722) / 2;
-      this.field6160 = new Class1189(this.field4568, var3 + 62, var4 + 24, 103, 12, new TranslationTextComponent("container.repair"));
+      this.field6160 = new Class1189(this.fontRenderer, var3 + 62, var4 + 24, 103, 12, new TranslationTextComponent("container.repair"));
       this.field6160.method5669(false);
       this.field6160.method5662(-1);
       this.field6160.method5663(-1);
@@ -47,13 +47,13 @@ public class Class1124 extends Class875<Class5824> {
    @Override
    public void onClose() {
       super.onClose();
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
    public boolean method1920(int var1, int var2, int var3) {
       if (var1 == 256) {
-         this.field4562.player.method2772();
+         this.mc.player.method2772();
       }
 
       return !this.field6160.method1920(var1, var2, var3) && !this.field6160.method5653() ? super.method1920(var1, var2, var3) : true;
@@ -68,7 +68,7 @@ public class Class1124 extends Class875<Class5824> {
          }
 
          this.field4727.method18197(var4);
-         this.field4562.player.connection.sendPacket(new Class5558(var4));
+         this.mc.player.connection.sendPacket(new Class5558(var4));
       }
    }
 
@@ -80,7 +80,7 @@ public class Class1124 extends Class875<Class5824> {
       if (var6 > 0) {
          int var7 = 8453920;
          Object var8;
-         if (var6 >= 40 && !this.field4562.player.abilities.isCreativeMode) {
+         if (var6 >= 40 && !this.mc.player.abilities.isCreativeMode) {
             var8 = field6159;
             var7 = 16736352;
          } else if (this.field4727.method18131(2).method18266()) {
@@ -93,10 +93,10 @@ public class Class1124 extends Class875<Class5824> {
          }
 
          if (var8 != null) {
-            int var9 = this.field4721 - 8 - this.field4568.method38821((ITextProperties)var8) - 2;
+            int var9 = this.field4721 - 8 - this.fontRenderer.method38821((ITextProperties)var8) - 2;
             byte var10 = 69;
             method5686(var1, var9 - 2, 67, this.field4721 - 8, 79, 1325400064);
-            this.field4568.method38803(var1, (ITextComponent)var8, (float)var9, 69.0F, var7);
+            this.fontRenderer.method38803(var1, (ITextComponent)var8, (float)var9, 69.0F, var7);
          }
       }
    }

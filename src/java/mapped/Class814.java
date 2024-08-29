@@ -63,7 +63,7 @@ public class Class814 extends Class813 {
    @Override
    public void method1921() {
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 40, method1929(14) - 10, 80, 20, this.field4387, var1 -> this.field4562.displayGuiScreen(this.field4381))
+         new Class1206(this.field4564 / 2 - 40, method1929(14) - 10, 80, 20, this.field4387, var1 -> this.mc.displayGuiScreen(this.field4381))
       );
       new Class356(this, "Realms-reset-world-fetcher").start();
       this.field4383 = this.<Class1153>method2456(new Class1153(this.field4385, this.field4564 / 2, 7, 16777215));
@@ -75,41 +75,41 @@ public class Class814 extends Class813 {
             method1929(0) + 10,
             new TranslationTextComponent("mco.reset.world.generate"),
             field4393,
-            var1 -> this.field4562.displayGuiScreen(new Class800(this, this.field4385))
+            var1 -> this.mc.displayGuiScreen(new Class800(this, this.field4385))
          )
       );
       this.<Class1242>method2455(
          new Class1242(this, this.method2248(2), method1929(0) + 10, new TranslationTextComponent("mco.reset.world.upload"), field4390, var1 -> {
             Class811 var4 = new Class811(this.field4382.field27443, this.field4400 == -1 ? this.field4382.field27456 : this.field4400, this, this.field4406);
-            this.field4562.displayGuiScreen(var4);
+            this.mc.displayGuiScreen(var4);
          })
       );
       this.<Class1242>method2455(
          new Class1242(this, this.method2248(3), method1929(0) + 10, new TranslationTextComponent("mco.reset.world.template"), field4392, var1 -> {
             Class804 var4 = new Class804(this, Class2049.field13369, this.field4396);
             var4.method1956(new TranslationTextComponent("mco.reset.world.template"));
-            this.field4562.displayGuiScreen(var4);
+            this.mc.displayGuiScreen(var4);
          })
       );
       this.<Class1242>method2455(
          new Class1242(this, this.method2248(1), method1929(6) + 20, new TranslationTextComponent("mco.reset.world.adventure"), field4391, var1 -> {
             Class804 var4 = new Class804(this, Class2049.field13371, this.field4397);
             var4.method1956(new TranslationTextComponent("mco.reset.world.adventure"));
-            this.field4562.displayGuiScreen(var4);
+            this.mc.displayGuiScreen(var4);
          })
       );
       this.<Class1242>method2455(
          new Class1242(this, this.method2248(2), method1929(6) + 20, new TranslationTextComponent("mco.reset.world.experience"), field4394, var1 -> {
             Class804 var4 = new Class804(this, Class2049.field13372, this.field4398);
             var4.method1956(new TranslationTextComponent("mco.reset.world.experience"));
-            this.field4562.displayGuiScreen(var4);
+            this.mc.displayGuiScreen(var4);
          })
       );
       this.<Class1242>method2455(
          new Class1242(this, this.method2248(3), method1929(6) + 20, new TranslationTextComponent("mco.reset.world.inspiration"), field4395, var1 -> {
             Class804 var4 = new Class804(this, Class2049.field13373, this.field4399);
             var4.method1956(new TranslationTextComponent("mco.reset.world.inspiration"));
-            this.field4562.displayGuiScreen(var4);
+            this.mc.displayGuiScreen(var4);
          })
       );
       this.method1930();
@@ -117,7 +117,7 @@ public class Class814 extends Class813 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -125,7 +125,7 @@ public class Class814 extends Class813 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4381);
+         this.mc.displayGuiScreen(this.field4381);
          return true;
       }
    }
@@ -143,7 +143,7 @@ public class Class814 extends Class813 {
    }
 
    private void method2249(MatrixStack var1, int var2, int var3, ITextComponent var4, ResourceLocation var5, boolean var6, boolean var7) {
-      this.field4562.getTextureManager().bindTexture(var5);
+      this.mc.getTextureManager().bindTexture(var5);
       if (!var6) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       } else {
@@ -151,7 +151,7 @@ public class Class814 extends Class813 {
       }
 
       AbstractGui.method5699(var1, var2 + 2, var3 + 14, 0.0F, 0.0F, 56, 56, 56, 56);
-      this.field4562.getTextureManager().bindTexture(field4389);
+      this.mc.getTextureManager().bindTexture(field4389);
       if (!var6) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       } else {
@@ -160,7 +160,7 @@ public class Class814 extends Class813 {
 
       AbstractGui.method5699(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);
       int var10 = !var6 ? 16777215 : 10526880;
-      method5691(var1, this.field4568, var4, var2 + 30, var3, var10);
+      method5691(var1, this.fontRenderer, var4, var2 + 30, var3, var10);
    }
 
    @Override
@@ -209,7 +209,7 @@ public class Class814 extends Class813 {
    }
 
    public void method2251(Runnable var1) {
-      this.field4562.displayGuiScreen(new Class797(this.field4381, new Class790(this.field4382.field27443, this.field4400, var1)));
+      this.mc.displayGuiScreen(new Class797(this.field4381, new Class790(this.field4382.field27443, this.field4400, var1)));
    }
 
    public void method2252(Class6130 var1) {
@@ -221,7 +221,7 @@ public class Class814 extends Class813 {
    }
 
    private void method2254(String var1, Class6130 var2, int var3, boolean var4) {
-      this.field4562.displayGuiScreen(new Class797(this.field4381, new Class1346(var1, var2, var3, var4, this.field4382.field27443, this.field4404, this.field4405)));
+      this.mc.displayGuiScreen(new Class797(this.field4381, new Class1346(var1, var2, var3, var4, this.field4382.field27443, this.field4404, this.field4405)));
    }
 
    public void method2255(Class7044 var1) {
@@ -236,7 +236,7 @@ public class Class814 extends Class813 {
 
    // $VF: synthetic method
    public static Minecraft method2264(Class814 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method

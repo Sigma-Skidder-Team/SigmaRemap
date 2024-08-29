@@ -26,20 +26,20 @@ public class Class1323 extends Screen {
 
    @Override
    public void method1945() {
-      this.field4562.displayGuiScreen(this.field6994);
+      this.mc.displayGuiScreen(this.field6994);
    }
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field6997 = new Class1283(this);
       this.field4561.add(this.field6997);
       this.field6999 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field6995.accept(this.field6998);
-         this.field4562.displayGuiScreen(this.field6994);
+         this.mc.displayGuiScreen(this.field6994);
       }));
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6994))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6994))
       );
       this.field6997
          .method6024(
@@ -55,8 +55,8 @@ public class Class1323 extends Screen {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2471(0);
       this.field6997.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 8, 16777215);
-      method5691(var1, this.field4568, field6993, this.field4564 / 2, 28, 10526880);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
+      method5691(var1, this.fontRenderer, field6993, this.field4564 / 2, 28, 10526880);
       super.method1923(var1, var2, var3, var4);
    }
 

@@ -51,7 +51,7 @@ public class Class1336 extends Screen {
    @Override
    public void method1945() {
       this.field7097.method31450();
-      this.field4562.displayGuiScreen(this.field7098);
+      this.mc.displayGuiScreen(this.field7098);
       this.method6400();
    }
 
@@ -81,10 +81,10 @@ public class Class1336 extends Screen {
             (var1, var2, var3, var4) -> this.method2459(var2, field7095, var3, var4)
          )
       );
-      this.field7101 = new Class1275(this.field4562, 200, this.field4565, new TranslationTextComponent("pack.available.title"));
+      this.field7101 = new Class1275(this.mc, 200, this.field4565, new TranslationTextComponent("pack.available.title"));
       this.field7101.method6035(this.field4564 / 2 - 4 - 200);
       this.field4561.add(this.field7101);
-      this.field7102 = new Class1275(this.field4562, 200, this.field4565, new TranslationTextComponent("pack.selected.title"));
+      this.field7102 = new Class1275(this.mc, 200, this.field4565, new TranslationTextComponent("pack.selected.title"));
       this.field7102.method6035(this.field4564 / 2 + 4);
       this.field4561.add(this.field7102);
       this.method6403();
@@ -116,7 +116,7 @@ public class Class1336 extends Screen {
 
    private void method6402(Class1275 var1, Stream<Class4681> var2) {
       var1.method2468().clear();
-      var2.forEach(var2x -> var1.method2468().add(new Class1175(this.field4562, var1, this, var2x)));
+      var2.forEach(var2x -> var1.method2468().add(new Class1175(this.mc, var1, this, var2x)));
    }
 
    private void method6403() {
@@ -131,8 +131,8 @@ public class Class1336 extends Screen {
       this.method2471(0);
       this.field7101.method1923(var1, var2, var3, var4);
       this.field7102.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 8, 16777215);
-      method5691(var1, this.field4568, field7094, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
+      method5691(var1, this.fontRenderer, field7094, this.field4564 / 2, 20, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 
@@ -161,13 +161,13 @@ public class Class1336 extends Screen {
    @Override
    public void method2486(List<Path> var1) {
       String var4 = var1.stream().<Path>map(Path::getFileName).<CharSequence>map(Path::toString).collect(Collectors.joining(", "));
-      this.field4562.displayGuiScreen(new ConfirmScreen(var2 -> {
+      this.mc.displayGuiScreen(new ConfirmScreen(var2 -> {
          if (var2) {
-            method6404(this.field4562, var1, this.field7103.toPath());
+            method6404(this.mc, var1, this.field7103.toPath());
             this.method6403();
          }
 
-         this.field4562.displayGuiScreen(this);
+         this.mc.displayGuiScreen(this);
       }, new TranslationTextComponent("pack.dropConfirm"), new StringTextComponent(var4)));
    }
 
@@ -192,7 +192,7 @@ public class Class1336 extends Screen {
    }
 
    private ResourceLocation method6406(ResourcePackInfo var1) {
-      return this.field7105.computeIfAbsent(var1.getName(), var2 -> this.method6405(this.field4562.getTextureManager(), var1));
+      return this.field7105.computeIfAbsent(var1.getName(), var2 -> this.method6405(this.mc.getTextureManager(), var1));
    }
 
    // $VF: synthetic method

@@ -31,7 +31,7 @@ public class Class838 extends Screen {
          if (var5 == 1 && var9 instanceof Class1230) {
             Class1230 var10 = (Class1230)var9;
             if (var10.method5811() == AbstractOption.field25344) {
-               var9.method5739(super.field4562.getSoundHandler());
+               var9.method5739(super.mc.getSoundHandler());
             }
          }
 

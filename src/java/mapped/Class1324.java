@@ -55,18 +55,18 @@ public class Class1324 extends Screen {
       );
       this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 + 5, this.field4565 - 52, 150, 20, new TranslationTextComponent("createWorld.customize.presets"), var1 -> {
-            this.field4562.displayGuiScreen(new Class1313(this));
+            this.mc.displayGuiScreen(new Class1313(this));
             this.field7002.method38131();
             this.method6296();
          })
       );
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field7001.accept(this.field7002);
-         this.field4562.displayGuiScreen(this.field7000);
+         this.mc.displayGuiScreen(this.field7000);
          this.field7002.method38131();
       }));
       this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> {
-         this.field4562.displayGuiScreen(this.field7000);
+         this.mc.displayGuiScreen(this.field7000);
          this.field7002.method38131();
       }));
       this.field7002.method38131();
@@ -83,17 +83,17 @@ public class Class1324 extends Screen {
 
    @Override
    public void method1945() {
-      this.field4562.displayGuiScreen(this.field7000);
+      this.mc.displayGuiScreen(this.field7000);
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field7005.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 8, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
       int var7 = this.field4564 / 2 - 92 - 16;
-      method5693(var1, this.field4568, this.field7003, var7, 32, 16777215);
-      method5693(var1, this.field4568, this.field7004, var7 + 2 + 213 - this.field4568.method38821(this.field7004), 32, 16777215);
+      method5693(var1, this.fontRenderer, this.field7003, var7, 32, 16777215);
+      method5693(var1, this.fontRenderer, this.field7004, var7 + 2 + 213 - this.fontRenderer.method38821(this.field7004), 32, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 

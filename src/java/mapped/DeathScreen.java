@@ -28,8 +28,8 @@ public class DeathScreen extends Screen {
             20,
             !this.field4572 ? new TranslationTextComponent("deathScreen.respawn") : new TranslationTextComponent("deathScreen.spectate"),
             var1 -> {
-               this.field4562.player.respawnPlayer();
-               this.field4562.displayGuiScreen((Screen)null);
+               this.mc.player.respawnPlayer();
+               this.mc.displayGuiScreen((Screen)null);
             }
          )
       );
@@ -49,7 +49,7 @@ public class DeathScreen extends Screen {
                      new TranslationTextComponent("deathScreen.titleScreen"),
                      new TranslationTextComponent("deathScreen.respawn")
                   );
-                  this.field4562.displayGuiScreen(var4);
+                  this.mc.displayGuiScreen(var4);
                   var4.method2536(20);
                } else {
                   this.method2489();
@@ -57,7 +57,7 @@ public class DeathScreen extends Screen {
             }
          )
       );
-      if (!this.field4572 && this.field4562.getSession() == null) {
+      if (!this.field4572 && this.mc.getSession() == null) {
          var3.field6482 = false;
       }
 
@@ -67,7 +67,7 @@ public class DeathScreen extends Screen {
 
       this.field4573 = new TranslationTextComponent("deathScreen.score")
          .appendString(": ")
-         .append(new StringTextComponent(Integer.toString(this.field4562.player.method2874())).mergeStyle(TextFormatting.YELLOW));
+         .append(new StringTextComponent(Integer.toString(this.mc.player.method2874())).mergeStyle(TextFormatting.YELLOW));
    }
 
    @Override
@@ -77,20 +77,20 @@ public class DeathScreen extends Screen {
 
    private void method2488(boolean var1) {
       if (!var1) {
-         this.field4562.player.respawnPlayer();
-         this.field4562.displayGuiScreen((Screen)null);
+         this.mc.player.respawnPlayer();
+         this.mc.displayGuiScreen((Screen)null);
       } else {
          this.method2489();
       }
    }
 
    private void method2489() {
-      if (this.field4562.world != null) {
-         this.field4562.world.sendQuittingDisconnectingPacket();
+      if (this.mc.world != null) {
+         this.mc.world.sendQuittingDisconnectingPacket();
       }
 
-      this.field4562.unloadWorld(new DirtMessageScreen(new TranslationTextComponent("menu.savingLevel")));
-      this.field4562.displayGuiScreen(new MainMenuScreen());
+      this.mc.unloadWorld(new DirtMessageScreen(new TranslationTextComponent("menu.savingLevel")));
+      this.mc.displayGuiScreen(new MainMenuScreen());
    }
 
    @Override
@@ -98,13 +98,13 @@ public class DeathScreen extends Screen {
       this.method5688(var1, 0, 0, this.field4564, this.field4565, 1615855616, -1602211792);
       RenderSystem.pushMatrix();
       RenderSystem.scalef(2.0F, 2.0F, 2.0F);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2 / 2, 30, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2 / 2, 30, 16777215);
       RenderSystem.popMatrix();
       if (this.field4571 != null) {
-         method5691(var1, this.field4568, this.field4571, this.field4564 / 2, 85, 16777215);
+         method5691(var1, this.fontRenderer, this.field4571, this.field4564 / 2, 85, 16777215);
       }
 
-      method5691(var1, this.field4568, this.field4573, this.field4564 / 2, 100, 16777215);
+      method5691(var1, this.fontRenderer, this.field4573, this.field4564 / 2, 100, 16777215);
       if (this.field4571 != null && var3 > 85 && var3 < 94) {
          Style var7 = this.method2490(var2);
          this.method2462(var1, var7, var2, var3);
@@ -118,10 +118,10 @@ public class DeathScreen extends Screen {
       if (this.field4571 == null) {
          return null;
       } else {
-         int var4 = this.field4562.fontRenderer.method38821(this.field4571);
+         int var4 = this.mc.fontRenderer.method38821(this.field4571);
          int var5 = this.field4564 / 2 - var4 / 2;
          int var6 = this.field4564 / 2 + var4 / 2;
-         return var1 >= var5 && var1 <= var6 ? this.field4562.fontRenderer.method38830().func_238357_a_(this.field4571, var1 - var5) : null;
+         return var1 >= var5 && var1 <= var6 ? this.mc.fontRenderer.method38830().func_238357_a_(this.field4571, var1 - var5) : null;
       }
    }
 

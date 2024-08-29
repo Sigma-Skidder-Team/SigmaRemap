@@ -28,7 +28,7 @@ public class Class864 extends Class851<Class5811> {
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       this.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4796);
+      this.mc.getTextureManager().bindTexture(field4796);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
@@ -88,7 +88,7 @@ public class Class864 extends Class851<Class5811> {
          int var9 = var1 + var8 % 4 * 16;
          int var10 = var8 / 4;
          int var11 = var2 + var10 * 18 + 2;
-         this.field4562.getItemRenderer().method793(((Class4845)var6.get(var7)).getRecipeOutput(), var9, var11);
+         this.mc.getItemRenderer().method793(((Class4845)var6.get(var7)).getRecipeOutput(), var9, var11);
       }
    }
 
@@ -104,9 +104,9 @@ public class Class864 extends Class851<Class5811> {
             int var12 = var11 - this.field4799;
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.field4562.player, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.mc.player, var11)) {
                Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27181, 1.0F));
-               this.field4562.playerController.method23146(this.field4727.field25471, var11);
+               this.mc.playerController.method23146(this.field4727.field25471, var11);
                return true;
             }
          }

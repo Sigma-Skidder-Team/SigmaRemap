@@ -16,7 +16,7 @@ public class Class841 extends Class838 {
    @Override
    public void method1921() {
       this.field4629.clear();
-      Class5810 var3 = new Class5810(this.field4562.getMainWindow());
+      Class5810 var3 = new Class5810(this.mc.getMainWindow());
       AbstractOption[] var4 = new AbstractOption[]{
          AbstractOption.field25387,
          AbstractOption.field25410,
@@ -36,7 +36,7 @@ public class Class841 extends Class838 {
          AbstractOption var6 = var4[var5];
          int var7 = this.field4564 / 2 - 155 + var5 % 2 * 160;
          int var8 = this.field4565 / 6 + 21 * (var5 / 2) - 12;
-         Class1197 var9 = this.<Class1197>method2455(var6.method17946(this.field4562.gameSettings, var7, var8, 150));
+         Class1197 var9 = this.<Class1197>method2455(var6.method17946(this.mc.gameSettings, var7, var8, 150));
          if (var6 == var3) {
             var9.method5741(310);
             var5++;
@@ -55,16 +55,16 @@ public class Class841 extends Class838 {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482) {
             if (var4.field6523 == 200) {
-               this.field4562.gameSettings.saveOptions();
-               this.field4562.getMainWindow().method8032();
-               this.field4562.displayGuiScreen(this.field4639);
+               this.mc.gameSettings.saveOptions();
+               this.mc.getMainWindow().method8032();
+               this.mc.displayGuiScreen(this.field4639);
             }
 
             if (var4.field6523 == 210) {
-               this.field4562.gameSettings.saveOptions();
+               this.mc.gameSettings.saveOptions();
                String var5 = I18n.format("of.message.other.reset");
                ConfirmScreen var6 = new ConfirmScreen(this::method2568, new StringTextComponent(var5), new StringTextComponent(""));
-               this.field4562.displayGuiScreen(var6);
+               this.mc.displayGuiScreen(var6);
             }
          }
       }
@@ -72,17 +72,17 @@ public class Class841 extends Class838 {
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.saveOptions();
-      this.field4562.getMainWindow().method8032();
+      this.mc.gameSettings.saveOptions();
+      this.mc.getMainWindow().method8032();
       super.onClose();
    }
 
    public void method2568(boolean var1) {
       if (var1) {
-         this.field4562.gameSettings.method37163();
+         this.mc.gameSettings.method37163();
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    @Override

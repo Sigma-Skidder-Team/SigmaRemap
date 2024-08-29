@@ -130,10 +130,10 @@ public class Class1313 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.field6928 = new TranslationTextComponent("createWorld.customize.presets.share");
       this.field6929 = new TranslationTextComponent("createWorld.customize.presets.list");
-      this.field6932 = new Class1189(this.field4568, 50, 40, this.field4564 - 100, 20, this.field6928);
+      this.field6932 = new Class1189(this.fontRenderer, 50, 40, this.field4564 - 100, 20, this.field6928);
       this.field6932.method5657(1230);
       MutableRegistry var3 = this.field6927.field7000.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY);
       this.field6932.method5635(method6204(var3, this.field6927.method6294()));
@@ -145,11 +145,11 @@ public class Class1313 extends Screen {
          new Class1206(this.field4564 / 2 - 155, this.field4565 - 28, 150, 20, new TranslationTextComponent("createWorld.customize.presets.select"), var2 -> {
             Class9733 var5 = method6203(var3, this.field6932.method5636(), this.field6933);
             this.field6927.method6295(var5);
-            this.field4562.displayGuiScreen(this.field6927);
+            this.mc.displayGuiScreen(this.field6927);
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6927))
+         new Class1206(this.field4564 / 2 + 5, this.field4565 - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6927))
       );
       this.method6205(this.field6930.method6023() != null);
    }
@@ -168,12 +168,12 @@ public class Class1313 extends Screen {
 
    @Override
    public void method1945() {
-      this.field4562.displayGuiScreen(this.field6927);
+      this.mc.displayGuiScreen(this.field6927);
    }
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -182,9 +182,9 @@ public class Class1313 extends Screen {
       this.field6930.method1923(var1, var2, var3, var4);
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, 0.0F, 400.0F);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 8, 16777215);
-      method5693(var1, this.field4568, this.field6928, 50, 30, 10526880);
-      method5693(var1, this.field4568, this.field6929, 50, 70, 10526880);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
+      method5693(var1, this.fontRenderer, this.field6928, 50, 30, 10526880);
+      method5693(var1, this.fontRenderer, this.field6929, 50, 70, 10526880);
       RenderSystem.popMatrix();
       this.field6932.method1923(var1, var2, var3, var4);
       super.method1923(var1, var2, var3, var4);

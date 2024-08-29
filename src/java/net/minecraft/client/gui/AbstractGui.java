@@ -108,7 +108,7 @@ public abstract class AbstractGui {
       var1.method38802(var0, var8, (float)(var3 - var1.method38822(var8) / 2), (float)var4, var5);
    }
 
-   public static void method5692(MatrixStack var0, FontRenderer var1, String var2, int var3, int var4, int var5) {
+   public static void drawString(MatrixStack var0, FontRenderer var1, String var2, int var3, int var4, int var5) {
       var1.drawStringWithShadow(var0, var2, (float)var3, (float)var4, var5);
    }
 

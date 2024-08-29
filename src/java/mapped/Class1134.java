@@ -15,14 +15,14 @@ public class Class1134 extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 140, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen((Screen)null)));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 140, 200, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen((Screen)null)));
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method5688(var1, 0, 0, this.field4564, this.field4565, -12574688, -11530224);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 90, 16777215);
-      method5691(var1, this.field4568, this.field6190, this.field4564 / 2, 110, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 90, 16777215);
+      method5691(var1, this.fontRenderer, this.field6190, this.field4564 / 2, 110, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 

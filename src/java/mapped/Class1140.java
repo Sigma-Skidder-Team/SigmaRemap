@@ -17,7 +17,7 @@ public abstract class Class1140 extends Class1135 {
 
    @Override
    public void method1921() {
-      this.field6205 = new Class1296(this.field4562, this.field4564, this.field4565, 32, this.field4565 - 32, 25);
+      this.field6205 = new Class1296(this.mc, this.field4564, this.field4565, 32, this.field4565 - 32, 25);
       this.field6205.method6131(this.field6203);
       this.field4561.add(this.field6205);
       this.method5472();
@@ -29,7 +29,7 @@ public abstract class Class1140 extends Class1135 {
 
    public void method5472() {
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 27, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 - 27, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192))
       );
    }
 
@@ -37,7 +37,7 @@ public abstract class Class1140 extends Class1135 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field6205.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
       super.method1923(var1, var2, var3, var4);
       List var7 = method5458(this.field6205, var2, var3);
       if (var7 != null) {

@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.JSpinner.DefaultEditor;
 import java.awt.Color;
 import java.awt.*;
+import java.awt.Dimension;
 
 public class Class2516 extends JDialog {
    public boolean field16650 = false;

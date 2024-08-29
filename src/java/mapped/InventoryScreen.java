@@ -20,19 +20,19 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
 
    @Override
    public void tick() {
-      if (!this.field4562.playerController.isInCreativeMode()) {
+      if (!this.mc.playerController.isInCreativeMode()) {
          this.field4768.method5844();
       } else {
-         this.field4562.displayGuiScreen(new CreativeScreen(this.field4562.player));
+         this.mc.displayGuiScreen(new CreativeScreen(this.mc.player));
       }
    }
 
    @Override
    public void method1921() {
-      if (!this.field4562.playerController.isInCreativeMode()) {
+      if (!this.mc.playerController.isInCreativeMode()) {
          super.method1921();
          this.field4770 = this.field4564 < 379;
-         this.field4768.method5833(this.field4564, this.field4565, this.field4562, this.field4770, this.field4727);
+         this.field4768.method5833(this.field4564, this.field4565, this.mc, this.field4770, this.field4727);
          this.field4769 = true;
          this.field4734 = this.field4768.method5837(this.field4770, this.field4564, this.field4721);
          this.field4561.add(this.field4768);
@@ -45,13 +45,13 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
             this.field4771 = true;
          }));
       } else {
-         this.field4562.displayGuiScreen(new CreativeScreen(this.field4562.player));
+         this.mc.displayGuiScreen(new CreativeScreen(this.mc.player));
       }
    }
 
    @Override
    public void method2617(MatrixStack var1, int var2, int var3) {
-      this.field4568.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
+      this.fontRenderer.method38805(var1, this.field4560, (float)this.field4723, (float)this.field4724, 4210752);
    }
 
    @Override
@@ -76,11 +76,11 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4720);
+      this.mc.getTextureManager().bindTexture(field4720);
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.field4562.player);
+      method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.mc.player);
    }
 
    public static void method2635(int var0, int var1, int var2, float var3, float var4, Class880 var5) {

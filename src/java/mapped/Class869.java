@@ -24,7 +24,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
 
    @Override
    public void method1945() {
-      this.field4562.player.method2772();
+      this.mc.player.method2772();
       super.method1945();
    }
 
@@ -36,11 +36,11 @@ public class Class869 extends Class870 implements Class867<Class5818> {
 
    @Override
    public void method2679() {
-      if (!this.field4562.player.method2935()) {
+      if (!this.mc.player.method2935()) {
          super.method2679();
       } else {
          this.<Class1206>method2455(
-            new Class1206(this.field4564 / 2 - 100, 196, 98, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen((Screen)null))
+            new Class1206(this.field4564 / 2 - 100, 196, 98, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null))
          );
          this.<Class1206>method2455(
             new Class1206(this.field4564 / 2 + 2, 196, 98, 20, new TranslationTextComponent("lectern.take_book"), var1 -> this.method2683(3))
@@ -69,7 +69,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    }
 
    private void method2683(int var1) {
-      this.field4562.playerController.method23146(this.field4817.field25471, var1);
+      this.mc.playerController.method23146(this.field4817.field25471, var1);
    }
 
    @Override

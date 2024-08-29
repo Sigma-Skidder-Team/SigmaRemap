@@ -42,7 +42,7 @@ public class Class825 extends Class798 {
    public void method1921() {
       this.method2442(this.field4553.field27443);
       Class9229.method34713(field4542.getString(), field4543.getString(), this.field4556, field4544.getString(), this.field4555.getString());
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.<Class1206>method2455(
          new Class1206(
             this.field4564 / 2 - 100,
@@ -54,21 +54,21 @@ public class Class825 extends Class798 {
                String var4 = "https://aka.ms/ExtendJavaRealms?subscriptionId="
                   + this.field4553.field27444
                   + "&profileId="
-                  + this.field4562.getSession().getPlayerID();
-               this.field4562.keyboardListener.method36350(var4);
+                  + this.mc.getSession().getPlayerID();
+               this.mc.keyboardListener.method36350(var4);
                Util.getOSType().method8181(var4);
             }
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4552))
+         new Class1206(this.field4564 / 2 - 100, method1929(12), 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4552))
       );
       if (this.field4553.field27452) {
          this.<Class1206>method2455(
             new Class1206(this.field4564 / 2 - 100, method1929(10), 200, 20, new TranslationTextComponent("mco.configure.world.delete.button"), var1 -> {
                TranslationTextComponent var4 = new TranslationTextComponent("mco.configure.world.delete.question.line1");
                TranslationTextComponent var5 = new TranslationTextComponent("mco.configure.world.delete.question.line2");
-               this.field4562.displayGuiScreen(new Class808(this::method2441, Class2134.field13979, var4, var5, true));
+               this.mc.displayGuiScreen(new Class808(this::method2441, Class2134.field13979, var4, var5, true));
             })
          );
       }
@@ -79,7 +79,7 @@ public class Class825 extends Class798 {
          new Class378(this, "Realms-delete-realm").start();
       }
 
-      this.field4562.displayGuiScreen(this);
+      this.mc.displayGuiScreen(this);
    }
 
    private void method2442(long var1) {
@@ -92,7 +92,7 @@ public class Class825 extends Class798 {
          this.field4557 = var6.field27408;
       } catch (Class2435 var7) {
          field4541.error("Couldn't get subscription");
-         this.field4562.displayGuiScreen(new Class821(var7, this.field4552));
+         this.mc.displayGuiScreen(new Class821(var7, this.field4552));
       }
    }
 
@@ -104,7 +104,7 @@ public class Class825 extends Class798 {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -112,7 +112,7 @@ public class Class825 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4552);
+         this.mc.displayGuiScreen(this.field4552);
          return true;
       }
    }
@@ -121,18 +121,18 @@ public class Class825 extends Class798 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       int var7 = this.field4564 / 2 - 100;
-      method5691(var1, this.field4568, field4542, this.field4564 / 2, 17, 16777215);
-      this.field4568.method38805(var1, field4543, (float)var7, (float)method1929(0), 10526880);
-      this.field4568.method38801(var1, this.field4556, (float)var7, (float)method1929(1), 16777215);
+      method5691(var1, this.fontRenderer, field4542, this.field4564 / 2, 17, 16777215);
+      this.fontRenderer.method38805(var1, field4543, (float)var7, (float)method1929(0), 10526880);
+      this.fontRenderer.method38801(var1, this.field4556, (float)var7, (float)method1929(1), 16777215);
       if (this.field4557 != Class2144.field14031) {
          if (this.field4557 == Class2144.field14032) {
-            this.field4568.method38805(var1, field4545, (float)var7, (float)method1929(3), 10526880);
+            this.fontRenderer.method38805(var1, field4545, (float)var7, (float)method1929(3), 10526880);
          }
       } else {
-         this.field4568.method38805(var1, field4544, (float)var7, (float)method1929(3), 10526880);
+         this.fontRenderer.method38805(var1, field4544, (float)var7, (float)method1929(3), 10526880);
       }
 
-      this.field4568.method38805(var1, this.field4555, (float)var7, (float)method1929(4), 16777215);
+      this.fontRenderer.method38805(var1, this.field4555, (float)var7, (float)method1929(4), 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 
@@ -183,7 +183,7 @@ public class Class825 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2450(Class825 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method
@@ -193,6 +193,6 @@ public class Class825 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method2452(Class825 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 }

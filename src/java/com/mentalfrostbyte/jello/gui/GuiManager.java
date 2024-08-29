@@ -74,9 +74,9 @@ public class GuiManager {
     }
 
     public static boolean method33457(Screen var0) {
-        if (var0 instanceof MultiplayerScreen && !(var0 instanceof Class1317)) {
+        if (var0 instanceof MultiplayerScreen && !(var0 instanceof JelloPortalScreen)) {
             Minecraft.getInstance().currentScreen = null;
-            Minecraft.getInstance().displayGuiScreen(new Class1317(((MultiplayerScreen) var0).field6948));
+            Minecraft.getInstance().displayGuiScreen(new JelloPortalScreen(((MultiplayerScreen) var0).field6948));
             return true;
         } else if (var0 instanceof IngameMenuScreen && !(var0 instanceof Class835)) {
             Minecraft.getInstance().currentScreen = null;

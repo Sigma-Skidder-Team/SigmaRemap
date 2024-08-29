@@ -20,7 +20,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    public void method2638() {
-      if (!this.field4562.player.method3031().isEmpty()) {
+      if (!this.mc.player.method3031().isEmpty()) {
          this.field4734 = 160 + (this.field4564 - this.field4721 - 200) / 2;
          this.field4772 = true;
       } else {
@@ -39,7 +39,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
 
    private void method2639(MatrixStack var1) {
       int var4 = this.field4734 - 124;
-      Collection var5 = this.field4562.player.method3031();
+      Collection var5 = this.mc.player.method3031();
       if (!var5.isEmpty()) {
          RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
          int var6 = 33;
@@ -55,7 +55,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    private void method2640(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
-      this.field4562.getTextureManager().bindTexture(field4720);
+      this.mc.getTextureManager().bindTexture(field4720);
       int var7 = this.field4735;
 
       for (Class2023 var9 : var4) {
@@ -66,13 +66,13 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    private void method2641(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
-      PotionSpriteUploader var7 = this.field4562.getPotionSpriteUploader();
+      PotionSpriteUploader var7 = this.mc.getPotionSpriteUploader();
       int var8 = this.field4735;
 
       for (Class2023 var10 : var4) {
          Class7144 var11 = var10.method8627();
          TextureAtlasSprite var12 = var7.method1022(var11);
-         this.field4562.getTextureManager().bindTexture(var12.method7466().method1100());
+         this.mc.getTextureManager().bindTexture(var12.method7466().method1100());
          method5695(var1, var2 + 6, var8 + 7, this.method5702(), 18, 18, var12);
          var8 += var3;
       }
@@ -87,9 +87,9 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
             var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.method8629() + 1));
          }
 
-         this.field4568.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
+         this.fontRenderer.drawStringWithShadow(var1, var10, (float)(var2 + 10 + 18), (float)(var7 + 6), 16777215);
          String var11 = Class7182.method22535(var9, 1.0F);
-         this.field4568.drawStringWithShadow(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
+         this.fontRenderer.drawStringWithShadow(var1, var11, (float)(var2 + 10 + 18), (float)(var7 + 6 + 10), 8355711);
          var7 += var3;
       }
    }

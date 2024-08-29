@@ -23,7 +23,7 @@ public class ConfirmBackupScreen extends Screen {
    @Override
    public void method1921() {
       super.method1921();
-      this.field6945 = Class5991.method18584(this.field4568, this.field6943, this.field4564 - 50);
+      this.field6945 = Class5991.method18584(this.fontRenderer, this.field6943, this.field4564 - 50);
       int var3 = (this.field6945.method18592() + 1) * 9;
       this.<Class1206>method2455(
          new Class1206(
@@ -46,7 +46,7 @@ public class ConfirmBackupScreen extends Screen {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155 + 80, 124 + var3, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field4562.displayGuiScreen(this.field6941))
+         new Class1206(this.field4564 / 2 - 155 + 80, 124 + var3, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6941))
       );
       this.field6946 = new Class1248(this.field4564 / 2 - 155 + 80, 76 + var3, 150, 20, new TranslationTextComponent("selectWorld.backupEraseCache"), false);
       if (this.field6944) {
@@ -57,7 +57,7 @@ public class ConfirmBackupScreen extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 50, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 50, 16777215);
       this.field6945.method18588(var1, this.field4564 / 2, 70);
       super.method1923(var1, var2, var3, var4);
    }
@@ -72,7 +72,7 @@ public class ConfirmBackupScreen extends Screen {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field6941);
+         this.mc.displayGuiScreen(this.field6941);
          return true;
       }
    }

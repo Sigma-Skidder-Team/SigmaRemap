@@ -26,13 +26,13 @@ public class Class1305 extends Screen implements Class1306 {
    @Override
    public void method1921() {
       this.field6906 = true;
-      this.field4562.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
+      this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
    }
 
    public void method6179() {
-      this.field6901 = new Class1280(this, this.field4562);
-      this.field6902 = new Class1282(this, this.field4562);
-      this.field6903 = new Class1277(this, this.field4562);
+      this.field6901 = new Class1280(this, this.mc);
+      this.field6902 = new Class1282(this, this.mc);
+      this.field6903 = new Class1277(this, this.mc);
    }
 
    public void method6180() {
@@ -52,7 +52,7 @@ public class Class1305 extends Screen implements Class1306 {
          )
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 100, this.field4565 - 28, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6900))
+         new Class1206(this.field4564 / 2 - 100, this.field4565 - 28, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6900))
       );
       if (this.field6902.method2468().isEmpty()) {
          var3.field6482 = false;
@@ -67,14 +67,14 @@ public class Class1305 extends Screen implements Class1306 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       if (!this.field6906) {
          this.method6182().method1923(var1, var2, var3, var4);
-         method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 20, 16777215);
+         method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 20, 16777215);
          super.method1923(var1, var2, var3, var4);
       } else {
          this.method2469(var1);
-         method5691(var1, this.field4568, field6899, this.field4564 / 2, this.field4565 / 2, 16777215);
+         method5691(var1, this.fontRenderer, field6899, this.field4564 / 2, this.field4565 / 2, 16777215);
          method5690(
             var1,
-            this.field4568,
+            this.fontRenderer,
             field6907[(int)(Util.milliTime() / 150L % (long)field6907.length)],
             this.field4564 / 2,
             this.field4565 / 2 + 18,
@@ -130,7 +130,7 @@ public class Class1305 extends Screen implements Class1306 {
 
    private void method6187(MatrixStack var1, int var2, int var3, int var4, int var5) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field6452);
+      this.mc.getTextureManager().bindTexture(field6452);
       method5697(var1, var2, var3, this.method5702(), (float)var4, (float)var5, 18, 18, 128, 128);
    }
 

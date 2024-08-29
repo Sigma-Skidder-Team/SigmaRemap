@@ -24,7 +24,7 @@ public class Class862 extends Class851<Class5826> {
    private void method2661() {
       this.field4727.method18204(this.field4790);
       this.field4727.method18213(this.field4790);
-      this.field4562.getConnection().sendPacket(new Class5541(this.field4790));
+      this.mc.getConnection().sendPacket(new Class5541(this.field4790));
    }
 
    @Override
@@ -50,22 +50,22 @@ public class Class862 extends Class851<Class5826> {
       int var6 = this.field4727.method18208();
       if (var6 > 0 && var6 <= 5 && this.field4727.method18218()) {
          IFormattableTextComponent var7 = this.field4560.deepCopy().append(field4788).append(new TranslationTextComponent("merchant.level." + var6));
-         int var8 = this.field4568.method38821(var7);
+         int var8 = this.fontRenderer.method38821(var7);
          int var9 = 49 + this.field4721 / 2 - var8 / 2;
-         this.field4568.method38805(var1, var7, (float)var9, 6.0F, 4210752);
+         this.fontRenderer.method38805(var1, var7, (float)var9, 6.0F, 4210752);
       } else {
-         this.field4568.method38805(var1, this.field4560, (float)(49 + this.field4721 / 2 - this.field4568.method38821(this.field4560) / 2), 6.0F, 4210752);
+         this.fontRenderer.method38805(var1, this.field4560, (float)(49 + this.field4721 / 2 - this.fontRenderer.method38821(this.field4560) / 2), 6.0F, 4210752);
       }
 
-      this.field4568.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
-      int var10 = this.field4568.method38821(field4787);
-      this.field4568.method38805(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
+      this.fontRenderer.method38805(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
+      int var10 = this.fontRenderer.method38821(field4787);
+      this.fontRenderer.method38805(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
    }
 
    @Override
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4786);
+      this.mc.getTextureManager().bindTexture(field4786);
       int var7 = (this.field4564 - this.field4721) / 2;
       int var8 = (this.field4565 - this.field4722) / 2;
       method5697(var1, var7, var8, this.method5702(), 0.0F, 0.0F, this.field4721, this.field4722, 256, 512);
@@ -78,7 +78,7 @@ public class Class862 extends Class851<Class5826> {
 
          Class9346 var11 = var9.get(var10);
          if (var11.method35382()) {
-            this.field4562.getTextureManager().bindTexture(field4786);
+            this.mc.getTextureManager().bindTexture(field4786);
             RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
             method5697(var1, this.field4734 + 83 + 99, this.field4735 + 35, this.method5702(), 311.0F, 0.0F, 28, 21, 256, 512);
          }
@@ -86,7 +86,7 @@ public class Class862 extends Class851<Class5826> {
    }
 
    private void method2662(MatrixStack var1, int var2, int var3, Class9346 var4) {
-      this.field4562.getTextureManager().bindTexture(field4786);
+      this.mc.getTextureManager().bindTexture(field4786);
       int var7 = this.field4727.method18208();
       int var8 = this.field4727.method18205();
       if (var7 < 5) {
@@ -135,7 +135,7 @@ public class Class862 extends Class851<Class5826> {
          int var11 = var8 + 5 + 5;
          RenderSystem.pushMatrix();
          RenderSystem.method27867();
-         this.field4562.getTextureManager().bindTexture(field4786);
+         this.mc.getTextureManager().bindTexture(field4786);
          this.method2663(var1, var8, var9, var7);
          int var12 = 0;
 
@@ -150,12 +150,12 @@ public class Class862 extends Class851<Class5826> {
                this.method2665(var1, var16, var15, var11, var19);
                if (!var17.isEmpty()) {
                   this.field4563.method794(var17, var8 + 5 + 35, var19);
-                  this.field4563.method797(this.field4568, var17, var8 + 5 + 35, var19);
+                  this.field4563.method797(this.fontRenderer, var17, var8 + 5 + 35, var19);
                }
 
                this.method2664(var1, var14, var8, var19);
                this.field4563.method794(var18, var8 + 5 + 68, var19);
-               this.field4563.method797(this.field4568, var18, var8 + 5 + 68, var19);
+               this.field4563.method797(this.fontRenderer, var18, var8 + 5 + 68, var19);
                this.field4563.field847 = 0.0F;
                var10 += 20;
                var12++;
@@ -191,7 +191,7 @@ public class Class862 extends Class851<Class5826> {
 
    private void method2664(MatrixStack var1, Class9346 var2, int var3, int var4) {
       RenderSystem.enableBlend();
-      this.field4562.getTextureManager().bindTexture(field4786);
+      this.mc.getTextureManager().bindTexture(field4786);
       if (!var2.method35382()) {
          method5697(var1, var3 + 5 + 35 + 20, var4 + 3, this.method5702(), 15.0F, 171.0F, 10, 9, 256, 512);
       } else {
@@ -202,14 +202,14 @@ public class Class862 extends Class851<Class5826> {
    private void method2665(MatrixStack var1, ItemStack var2, ItemStack var3, int var4, int var5) {
       this.field4563.method794(var2, var4, var5);
       if (var3.getCount() != var2.getCount()) {
-         this.field4563.method798(this.field4568, var3, var4, var5, var3.getCount() != 1 ? null : "1");
-         this.field4563.method798(this.field4568, var2, var4 + 14, var5, var2.getCount() != 1 ? null : "1");
-         this.field4562.getTextureManager().bindTexture(field4786);
+         this.field4563.method798(this.fontRenderer, var3, var4, var5, var3.getCount() != 1 ? null : "1");
+         this.field4563.method798(this.fontRenderer, var2, var4 + 14, var5, var2.getCount() != 1 ? null : "1");
+         this.mc.getTextureManager().bindTexture(field4786);
          this.method5703(this.method5702() + 300);
          method5697(var1, var4 + 7, var5 + 12, this.method5702(), 0.0F, 176.0F, 9, 2, 256, 512);
          this.method5703(this.method5702() - 300);
       } else {
-         this.field4563.method797(this.field4568, var2, var4, var5);
+         this.field4563.method797(this.fontRenderer, var2, var4, var5);
       }
    }
 

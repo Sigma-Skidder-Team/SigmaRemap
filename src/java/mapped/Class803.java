@@ -23,20 +23,20 @@ public class Class803 extends Class798 {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
+      this.mc.keyboardListener.method36347(true);
       this.<Class1206>method2455(
          new Class1206(
-            this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 24, 200, 20, DialogTexts.field30663, var1 -> this.field4562.displayGuiScreen(this.field4191)
+            this.field4564 / 2 - 100, this.field4565 / 4 + 120 + 24, 200, 20, DialogTexts.field30663, var1 -> this.mc.displayGuiScreen(this.field4191)
          )
       );
-      this.field4193 = new Class1278(this, this.field4562);
+      this.field4193 = new Class1278(this, this.mc);
       this.<Class1278>method2456(this.field4193);
       this.method5537(this.field4193);
    }
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class803 extends Class798 {
       if (var1 != 256) {
          return super.method1920(var1, var2, var3);
       } else {
-         this.field4562.displayGuiScreen(this.field4191);
+         this.mc.displayGuiScreen(this.field4191);
          return true;
       }
    }
@@ -52,7 +52,7 @@ public class Class803 extends Class798 {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5690(var1, this.field4568, "Changes from last backup", this.field4564 / 2, 10, 16777215);
+      method5690(var1, this.fontRenderer, "Changes from last backup", this.field4564 / 2, 10, 16777215);
       this.field4193.method1923(var1, var2, var3, var4);
       super.method1923(var1, var2, var3, var4);
    }
@@ -84,7 +84,7 @@ public class Class803 extends Class798 {
 
    // $VF: synthetic method
    public static Minecraft method1953(Class803 var0) {
-      return var0.field4562;
+      return var0.mc;
    }
 
    // $VF: synthetic method

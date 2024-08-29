@@ -40,7 +40,7 @@ public class Class840 extends Class838 {
          AbstractOption var4 = field4638[var3];
          int var5 = this.field4564 / 2 - 155 + var3 % 2 * 160;
          int var6 = this.field4565 / 6 + 21 * (var3 / 2) - 12;
-         this.<Class1197>method2455(var4.method17946(this.field4562.gameSettings, var5, var6, 150));
+         this.<Class1197>method2455(var4.method17946(this.mc.gameSettings, var5, var6, 150));
       }
 
       this.<Class1210>method2455(
@@ -58,33 +58,33 @@ public class Class840 extends Class838 {
          Class1210 var4 = (Class1210)var1;
          if (var4.field6482) {
             if (var4.field6523 == 200) {
-               this.field4562.gameSettings.saveOptions();
-               this.field4562.displayGuiScreen(this.field4636);
+               this.mc.gameSettings.saveOptions();
+               this.mc.displayGuiScreen(this.field4636);
             }
 
             if (var4.field6523 == 210) {
-               this.field4562.gameSettings.method37166(true);
+               this.mc.gameSettings.method37166(true);
             }
 
             if (var4.field6523 == 211) {
-               this.field4562.gameSettings.method37166(false);
+               this.mc.gameSettings.method37166(false);
             }
 
-            this.field4562.updateWindowSize();
+            this.mc.updateWindowSize();
          }
       }
    }
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.saveOptions();
+      this.mc.gameSettings.saveOptions();
       super.onClose();
    }
 
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5691(var1, this.field4562.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
+      method5691(var1, this.mc.fontRenderer, this.field4560, this.field4564 / 2, 15, 16777215);
       super.method1923(var1, var2, var3, var4);
    }
 }

@@ -67,7 +67,7 @@ public class Class870 extends Screen {
    }
 
    public void method2679() {
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 196, 200, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen((Screen)null)));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 100, 196, 200, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen((Screen)null)));
    }
 
    public void method2692() {
@@ -124,23 +124,23 @@ public class Class870 extends Screen {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field4562.getTextureManager().bindTexture(field4820);
+      this.mc.getTextureManager().bindTexture(field4820);
       int var7 = (this.field4564 - 192) / 2;
       this.method5696(var1, var7, 2, 0, 0, 192, 192);
       if (this.field4824 != this.field4822) {
          ITextProperties var9 = this.field4821.method24461(this.field4822);
-         this.field4823 = this.field4568.method38828(var9, 114);
+         this.field4823 = this.fontRenderer.method38828(var9, 114);
          this.field4825 = new TranslationTextComponent("book.pageIndicator", this.field4822 + 1, Math.max(this.method2693(), 1));
       }
 
       this.field4824 = this.field4822;
-      int var13 = this.field4568.method38821(this.field4825);
-      this.field4568.method38805(var1, this.field4825, (float)(var7 - var13 + 192 - 44), 18.0F, 0);
+      int var13 = this.fontRenderer.method38821(this.field4825);
+      this.fontRenderer.method38805(var1, this.field4825, (float)(var7 - var13 + 192 - 44), 18.0F, 0);
       int var10 = Math.min(14, this.field4823.size());
 
       for (int var11 = 0; var11 < var10; var11++) {
          Class9125 var12 = this.field4823.get(var11);
-         this.field4568.method38804(var1, var12, (float)(var7 + 36), (float)(32 + var11 * 9), 0);
+         this.fontRenderer.method38804(var1, var12, (float)(var7 + 36), (float)(32 + var11 * 9), 0);
       }
 
       Style var14 = this.method2695((double)var2, (double)var3);
@@ -180,7 +180,7 @@ public class Class870 extends Screen {
       } else {
          boolean var5 = super.method2464(var1);
          if (var5 && var4.getAction() == ClickEvent$Action.RUN_COMMAND) {
-            this.field4562.displayGuiScreen((Screen)null);
+            this.mc.displayGuiScreen((Screen)null);
          }
 
          return var5;
@@ -198,7 +198,7 @@ public class Class870 extends Screen {
                int var10 = var8 / 9;
                if (var10 >= 0 && var10 < this.field4823.size()) {
                   Class9125 var11 = this.field4823.get(var10);
-                  return this.field4562.fontRenderer.method38830().func_243239_a(var11, var7);
+                  return this.mc.fontRenderer.method38830().func_243239_a(var11, var7);
                } else {
                   return null;
                }

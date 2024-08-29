@@ -19,12 +19,12 @@ public class Class1135 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.gameSettings.saveOptions();
+      this.mc.gameSettings.saveOptions();
    }
 
    @Override
    public void method1945() {
-      this.field4562.displayGuiScreen(this.field6192);
+      this.mc.displayGuiScreen(this.field6192);
    }
 
    @Nullable

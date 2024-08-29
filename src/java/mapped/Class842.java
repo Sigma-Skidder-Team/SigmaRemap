@@ -117,7 +117,7 @@ public class Class842 extends Class838 {
                      boolean var14 = false;
 
                      try {
-                        URI var15 = new File(this.field4562.gameDir, "shaderpacks").toURI();
+                        URI var15 = new File(this.mc.gameDir, "shaderpacks").toURI();
                         Util.getOSType().openURI(var15);
                      } catch (Throwable var10) {
                         var10.printStackTrace();
@@ -132,7 +132,7 @@ public class Class842 extends Class838 {
                   case 202:
                      Shaders.method32950();
                      this.field4646 = true;
-                     this.field4562.displayGuiScreen(this.field4642);
+                     this.mc.displayGuiScreen(this.field4642);
                      break;
                   case 203:
                      Class848 var7 = new Class848(this, Class7944.method26928());
@@ -172,7 +172,7 @@ public class Class842 extends Class838 {
                   }
 
                   Shaders.method33033();
-                  this.field4562.scheduleResourcesRefresh();
+                  this.mc.scheduleResourcesRefresh();
                   break;
                case 3:
                   Shaders.field40875 = ! Shaders.field40875;
@@ -181,7 +181,7 @@ public class Class842 extends Class838 {
                   }
 
                   Shaders.method33033();
-                  this.field4562.scheduleResourcesRefresh();
+                  this.mc.scheduleResourcesRefresh();
                   break;
                case 4:
                   Shaders.field40865 = this.method2576(Shaders.field40865, field4647, field4649, !var2, method2476());
@@ -213,7 +213,7 @@ public class Class842 extends Class838 {
 
                   Shaders.method32992();
                   Shaders.method33033();
-                  this.field4562.scheduleResourcesRefresh();
+                  this.mc.scheduleResourcesRefresh();
                   break;
                case 9:
                   Shaders.field40862 = ! Shaders.field40862;
@@ -271,7 +271,7 @@ public class Class842 extends Class838 {
       String var7 = "OpenGL: " + Shaders.field40596 + ", " + Shaders.field40597 + ", " + Shaders.field40598;
       int var8 = this.field4630.getStringWidth(var7);
       if (var8 >= this.field4564 - 5) {
-         method5692(var1, this.field4630, var7, 5, this.field4565 - 40, 8421504);
+         drawString(var1, this.field4630, var7, 5, this.field4565 - 40, 8421504);
       } else {
          method5690(var1, this.field4630, var7, this.field4564 / 2, this.field4565 - 40, 8421504);
       }
@@ -287,7 +287,7 @@ public class Class842 extends Class838 {
    }
 
    public Minecraft method2571() {
-      return this.field4562;
+      return this.mc;
    }
 
    public void method2572(MatrixStack var1, String var2, int var3, int var4, int var5) {

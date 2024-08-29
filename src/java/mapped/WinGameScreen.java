@@ -42,8 +42,8 @@ public class WinGameScreen extends Screen {
 
    @Override
    public void tick() {
-      this.field4562.getMusicTicker().tick();
-      this.field4562.getSoundHandler().tick(false);
+      this.mc.getMusicTicker().tick();
+      this.mc.getSoundHandler().tick(false);
       float var3 = (float)(this.field7130 + this.field4565 + this.field4565 + 24) / this.field7131;
       if (this.field7127 > var3) {
          this.method6432();
@@ -57,7 +57,7 @@ public class WinGameScreen extends Screen {
 
    private void method6432() {
       this.field7126.run();
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    @Override
@@ -70,14 +70,14 @@ public class WinGameScreen extends Screen {
          try {
             short var4 = 274;
             if (this.field7125) {
-               var3 = this.field4562.getResourceManager().method580(new ResourceLocation("texts/end.txt"));
+               var3 = this.mc.getResourceManager().method580(new ResourceLocation("texts/end.txt"));
                InputStream var5 = var3.method7763();
                BufferedReader var6 = new BufferedReader(new InputStreamReader(var5, StandardCharsets.UTF_8));
                Random var7 = new Random(8124371L);
 
                String var8;
                while ((var8 = var6.readLine()) != null) {
-                  var8 = var8.replaceAll("PLAYERNAME", this.field4562.getSession().getUsername());
+                  var8 = var8.replaceAll("PLAYERNAME", this.mc.getSession().getUsername());
 
                   int var9;
                   while ((var9 = var8.indexOf(field7124)) != -1) {
@@ -86,7 +86,7 @@ public class WinGameScreen extends Screen {
                      var8 = var10 + TextFormatting.WHITE + TextFormatting.OBFUSCATED + "XXXXXXXX".substring(0, var7.nextInt(4) + 3) + var11;
                   }
 
-                  this.field7128.addAll(this.field4562.fontRenderer.method38828(new StringTextComponent(var8), 274));
+                  this.field7128.addAll(this.mc.fontRenderer.method38828(new StringTextComponent(var8), 274));
                   this.field7128.add(Class9125.field41930);
                }
 
@@ -97,12 +97,12 @@ public class WinGameScreen extends Screen {
                }
             }
 
-            InputStream var17 = this.field4562.getResourceManager().method580(new ResourceLocation("texts/credits.txt")).method7763();
+            InputStream var17 = this.mc.getResourceManager().method580(new ResourceLocation("texts/credits.txt")).method7763();
             BufferedReader var18 = new BufferedReader(new InputStreamReader(var17, StandardCharsets.UTF_8));
 
             String var19;
             while ((var19 = var18.readLine()) != null) {
-               var19 = var19.replaceAll("PLAYERNAME", this.field4562.getSession().getUsername());
+               var19 = var19.replaceAll("PLAYERNAME", this.mc.getSession().getUsername());
                var19 = var19.replaceAll("\t", "    ");
                boolean var23;
                if (var19.startsWith("[C]")) {
@@ -112,7 +112,7 @@ public class WinGameScreen extends Screen {
                   var23 = false;
                }
 
-               for (Class9125 var26 : this.field4562.fontRenderer.method38828(new StringTextComponent(var19), 274)) {
+               for (Class9125 var26 : this.mc.fontRenderer.method38828(new StringTextComponent(var19), 274)) {
                   if (var23) {
                      this.field7129.add(this.field7128.size());
                   }
@@ -134,7 +134,7 @@ public class WinGameScreen extends Screen {
    }
 
    private void method6433(int var1, int var2, float var3) {
-      this.field4562.getTextureManager().bindTexture(AbstractGui.field6451);
+      this.mc.getTextureManager().bindTexture(AbstractGui.field6451);
       int var6 = this.field4564;
       float var7 = -this.field7127 * 0.5F * this.field7131;
       float var8 = (float)this.field4565 - this.field7127 * 0.5F * this.field7131;
@@ -181,7 +181,7 @@ public class WinGameScreen extends Screen {
       float var10 = -this.field7127 * this.field7131;
       RenderSystem.pushMatrix();
       RenderSystem.translatef(0.0F, var10, 0.0F);
-      this.field4562.getTextureManager().bindTexture(field7121);
+      this.mc.getTextureManager().bindTexture(field7121);
       RenderSystem.method27889(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.disableAlphaTest();
       RenderSystem.enableBlend();
@@ -190,7 +190,7 @@ public class WinGameScreen extends Screen {
          this.method5696(var1, var2x + 155, var3x, 0, 45, 155, 44);
       });
       RenderSystem.disableBlend();
-      this.field4562.getTextureManager().bindTexture(field7122);
+      this.mc.getTextureManager().bindTexture(field7122);
       method5699(var1, var8 + 88, var9 + 37, 0.0F, 0.0F, 98, 14, 128, 16);
       RenderSystem.method27817();
       int var11 = var9 + 100;
@@ -206,10 +206,10 @@ public class WinGameScreen extends Screen {
          if ((float)var11 + var10 + 12.0F + 8.0F > 0.0F && (float)var11 + var10 < (float)this.field4565) {
             Class9125 var17 = this.field7128.get(var12);
             if (!this.field7129.contains(var12)) {
-               this.field4568.field45929.setSeed((long)((float)((long)var12 * 4238972211L) + this.field7127 / 4.0F));
-               this.field4568.method38802(var1, var17, (float)var8, (float)var11, 16777215);
+               this.fontRenderer.field45929.setSeed((long)((float)((long)var12 * 4238972211L) + this.field7127 / 4.0F));
+               this.fontRenderer.method38802(var1, var17, (float)var8, (float)var11, 16777215);
             } else {
-               this.field4568.method38802(var1, var17, (float)(var8 + (274 - this.field4568.method38822(var17)) / 2), (float)var11, 16777215);
+               this.fontRenderer.method38802(var1, var17, (float)(var8 + (274 - this.fontRenderer.method38822(var17)) / 2), (float)var11, 16777215);
             }
          }
 
@@ -217,7 +217,7 @@ public class WinGameScreen extends Screen {
       }
 
       RenderSystem.popMatrix();
-      this.field4562.getTextureManager().bindTexture(field7123);
+      this.mc.getTextureManager().bindTexture(field7123);
       RenderSystem.enableBlend();
       RenderSystem.method27834(Class2339.field16000, Class1981.field12933);
       int var16 = this.field4564;

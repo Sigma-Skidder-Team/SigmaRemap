@@ -23,11 +23,11 @@ public class Class1138 extends Class1135 {
             150,
             20,
             new TranslationTextComponent("options.mouse_settings"),
-            var1 -> this.field4562.displayGuiScreen(new Class1143(this, this.field6193))
+            var1 -> this.mc.displayGuiScreen(new Class1143(this, this.field6193))
          )
       );
       this.<Class1197>method2455(AbstractOption.field25351.method17946(this.field6193, this.field4564 / 2 - 155 + 160, 18, 150));
-      this.field6201 = new Class1295(this, this.field4562);
+      this.field6201 = new Class1295(this, this.mc);
       this.field4561.add(this.field6201);
       this.field6202 = this.<Class1206>method2455(
          new Class1206(this.field4564 / 2 - 155, this.field4565 - 29, 150, 20, new TranslationTextComponent("controls.resetAll"), var1 -> {
@@ -39,7 +39,7 @@ public class Class1138 extends Class1135 {
          })
       );
       this.<Class1206>method2455(
-         new Class1206(this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, DialogTexts.field30658, var1 -> this.field4562.displayGuiScreen(this.field6192))
+         new Class1206(this.field4564 / 2 - 155 + 160, this.field4565 - 29, 150, 20, DialogTexts.field30658, var1 -> this.mc.displayGuiScreen(this.field6192))
       );
    }
 
@@ -77,7 +77,7 @@ public class Class1138 extends Class1135 {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
       this.field6201.method1923(var1, var2, var3, var4);
-      method5691(var1, this.field4568, this.field4560, this.field4564 / 2, 8, 16777215);
+      method5691(var1, this.fontRenderer, this.field4560, this.field4564 / 2, 8, 16777215);
       boolean var7 = false;
 
       for (KeyBinding var11 : this.field6193.field44658) {

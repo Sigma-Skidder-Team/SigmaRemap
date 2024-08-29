@@ -19,9 +19,9 @@ public class Class820 extends Class798 {
       Class9229.method34711(field4473.getString());
       TranslationTextComponent var3 = new TranslationTextComponent("mco.account.update");
       ITextComponent var4 = DialogTexts.field30663;
-      int var5 = Math.max(this.field4568.method38821(var3), this.field4568.method38821(var4)) + 30;
+      int var5 = Math.max(this.fontRenderer.method38821(var3), this.fontRenderer.method38821(var4)) + 30;
       TranslationTextComponent var6 = new TranslationTextComponent("mco.account.privacy.info");
-      int var7 = (int)((double)this.field4568.method38821(var6) * 1.2);
+      int var7 = (int)((double)this.fontRenderer.method38821(var6) * 1.2);
       this.<Class1206>method2455(
          new Class1206(
             this.field4564 / 2 - var7 / 2, method1929(11), var7, 20, var6, var0 -> Util.getOSType().method8181("https://aka.ms/MinecraftGDPR")
@@ -32,8 +32,8 @@ public class Class820 extends Class798 {
             this.field4564 / 2 - (var5 + 5), method1929(13), var5, 20, var3, var0 -> Util.getOSType().method8181("https://aka.ms/UpdateMojangAccount")
          )
       );
-      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(13), var5, 20, var4, var1 -> this.field4562.displayGuiScreen(this.field4474)));
-      this.field4475 = Class5991.method18584(this.field4568, field4473, (int)Math.round((double)this.field4564 * 0.9));
+      this.<Class1206>method2455(new Class1206(this.field4564 / 2 + 5, method1929(13), var5, 20, var4, var1 -> this.mc.displayGuiScreen(this.field4474)));
+      this.field4475 = Class5991.method18584(this.fontRenderer, field4473, (int)Math.round((double)this.field4564 * 0.9));
    }
 
    @Override

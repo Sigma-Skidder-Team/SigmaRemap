@@ -14,7 +14,7 @@ public class Class1167 extends Class1155<Class1167> {
    public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       Class5966 var13 = (Class5966)Class1313.method6213().get(var2);
       this.method5570(var1, var4, var3, var13.field26006);
-      this.field6332.field6836.field4568.method38805(var1, var13.field26007, (float)(var4 + 18 + 5), (float)(var3 + 6), 16777215);
+      this.field6332.field6836.fontRenderer.method38805(var1, var13.field26007, (float)(var4 + 18 + 5), (float)(var3 + 6), 16777215);
    }
 
    @Override

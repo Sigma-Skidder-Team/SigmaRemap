@@ -38,15 +38,15 @@ public class Class1321 extends Screen {
 
    private void method6268() {
       this.method6270();
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    private void method6269() {
-      this.field4562.displayGuiScreen((Screen)null);
+      this.mc.displayGuiScreen((Screen)null);
    }
 
    private void method6270() {
-      this.field4562
+      this.mc
          .getConnection()
          .sendPacket(
             new Class5544(
@@ -61,7 +61,7 @@ public class Class1321 extends Screen {
    }
 
    private void method6271() {
-      this.field4562.getConnection().sendPacket(new Class5468(this.field6983.getPos(), this.field6988, this.field6989));
+      this.mc.getConnection().sendPacket(new Class5468(this.field6983.getPos(), this.field6988, this.field6989));
    }
 
    @Override
@@ -71,28 +71,28 @@ public class Class1321 extends Screen {
 
    @Override
    public void method1921() {
-      this.field4562.keyboardListener.method36347(true);
-      this.field6986 = new Class1189(this.field4568, this.field4564 / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
+      this.mc.keyboardListener.method36347(true);
+      this.field6986 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 20, 300, 20, new TranslationTextComponent("jigsaw_block.pool"));
       this.field6986.method5657(128);
       this.field6986.method5635(this.field6983.method3980().toString());
       this.field6986.method5631(var1 -> this.method6272());
       this.field4561.add(this.field6986);
-      this.field6984 = new Class1189(this.field4568, this.field4564 / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
+      this.field6984 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
       this.field6984.method5657(128);
       this.field6984.method5635(this.field6983.method3978().toString());
       this.field6984.method5631(var1 -> this.method6272());
       this.field4561.add(this.field6984);
-      this.field6985 = new Class1189(this.field4568, this.field4564 / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
+      this.field6985 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
       this.field6985.method5657(128);
       this.field6985.method5635(this.field6983.method3979().toString());
       this.field6985.method5631(var1 -> this.method6272());
       this.field4561.add(this.field6985);
-      this.field6987 = new Class1189(this.field4568, this.field4564 / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
+      this.field6987 = new Class1189(this.fontRenderer, this.field4564 / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
       this.field6987.method5657(256);
       this.field6987.method5635(this.field6983.method3981());
       this.field4561.add(this.field6987);
       this.field6992 = this.field6983.method3982();
-      int var3 = this.field4568.method38821(field6978) + 10;
+      int var3 = this.fontRenderer.method38821(field6978) + 10;
       this.field6990 = this.<Class1206>method2455(new Class1206(this.field4564 / 2 - 152 + var3, 150, 300 - var3, 20, this.method6273(), var1 -> {
          Class92[] var4x = Class92.values();
          int var5 = (this.field6992.ordinal() + 1) % var4x.length;
@@ -149,7 +149,7 @@ public class Class1321 extends Screen {
 
    @Override
    public void onClose() {
-      this.field4562.keyboardListener.method36347(false);
+      this.mc.keyboardListener.method36347(false);
    }
 
    @Override
@@ -167,16 +167,16 @@ public class Class1321 extends Screen {
    @Override
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       this.method2469(var1);
-      method5693(var1, this.field4568, field6979, this.field4564 / 2 - 153, 10, 10526880);
+      method5693(var1, this.fontRenderer, field6979, this.field4564 / 2 - 153, 10, 10526880);
       this.field6986.method1923(var1, var2, var3, var4);
-      method5693(var1, this.field4568, field6980, this.field4564 / 2 - 153, 45, 10526880);
+      method5693(var1, this.fontRenderer, field6980, this.field4564 / 2 - 153, 45, 10526880);
       this.field6984.method1923(var1, var2, var3, var4);
-      method5693(var1, this.field4568, field6981, this.field4564 / 2 - 153, 80, 10526880);
+      method5693(var1, this.fontRenderer, field6981, this.field4564 / 2 - 153, 80, 10526880);
       this.field6985.method1923(var1, var2, var3, var4);
-      method5693(var1, this.field4568, field6982, this.field4564 / 2 - 153, 115, 10526880);
+      method5693(var1, this.fontRenderer, field6982, this.field4564 / 2 - 153, 115, 10526880);
       this.field6987.method1923(var1, var2, var3, var4);
       if (Class3249.method11675(this.field6983.method3775()).method544().method323()) {
-         method5693(var1, this.field4568, field6978, this.field4564 / 2 - 153, 156, 16777215);
+         method5693(var1, this.fontRenderer, field6978, this.field4564 / 2 - 153, 156, 16777215);
       }
 
       super.method1923(var1, var2, var3, var4);
