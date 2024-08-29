@@ -38,7 +38,7 @@ public class Class4365 extends Class4247 {
       }
 
       this.method13268(this.field20913.method23942(var4) + 50 + 60);
-      this.method13264(Minecraft.getInstance().mainWindow.method8043() - this.field20897 - 20);
+      this.method13264(Minecraft.getInstance().mainWindow.getWidth() - this.field20897 - 20);
       boolean var6 = this.field21337 >= this.field20895 && this.field21338 <= this.field20896 + this.method13269();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
       RenderUtil.method11463(

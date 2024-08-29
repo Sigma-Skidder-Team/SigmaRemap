@@ -85,39 +85,39 @@ public class GuiSwitch extends Class4307 {
         if (CustomResourceLoadProgressGui.field6779 != null) {
             field21069.changeDirection(Direction.FORWARDS);
             int var4 = 40;
-            float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.method8043();
-            float var6 = -field21071 / (float) Minecraft.getInstance().mainWindow.method8044();
+            float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
+            float var6 = -field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();
             RenderUtil.method11455(
                     (float) var4 * var5,
                     (float) var4 * var6,
-                    (float) (Minecraft.getInstance().mainWindow.method8043() + var4),
-                    (float) (Minecraft.getInstance().mainWindow.method8044() + var4),
+                    (float) (Minecraft.getInstance().mainWindow.getWidth() + var4),
+                    (float) (Minecraft.getInstance().mainWindow.getHeight() + var4),
                     CustomResourceLoadProgressGui.field6779
             );
             float var7 = Class8603.method30791(field21069.calcPercent(), 0.16, 0.71, 0.0, 0.99);
-            int var8 = (Minecraft.getInstance().mainWindow.method8043() - 455) / 2;
-            int var9 = (int) ((float) ((Minecraft.getInstance().mainWindow.method8044() - 78) / 2 - 14) - 116.0F * var7);
+            int var8 = (Minecraft.getInstance().mainWindow.getWidth() - 455) / 2;
+            int var9 = (int) ((float) ((Minecraft.getInstance().mainWindow.getHeight() - 78) / 2 - 14) - 116.0F * var7);
             RenderUtil.method11424(
                     0.0F,
                     0.0F,
-                    (float) Minecraft.getInstance().mainWindow.method8043(),
-                    (float) Minecraft.getInstance().mainWindow.method8044(),
+                    (float) Minecraft.getInstance().mainWindow.getWidth(),
+                    (float) Minecraft.getInstance().mainWindow.getHeight(),
                     Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             super.method13027(var1);
             RenderUtil.method11449(
                     0.0F,
                     0.0F,
-                    (float) Minecraft.getInstance().mainWindow.method8043(),
-                    (float) Minecraft.getInstance().mainWindow.method8044(),
+                    (float) Minecraft.getInstance().mainWindow.getWidth(),
+                    (float) Minecraft.getInstance().mainWindow.getHeight(),
                     CustomResourceLoadProgressGui.field6780,
                     Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
             );
             RenderUtil.method11424(
                     0.0F,
                     0.0F,
-                    (float) Minecraft.getInstance().mainWindow.method8043(),
-                    (float) Minecraft.getInstance().mainWindow.method8044(),
+                    (float) Minecraft.getInstance().mainWindow.getWidth(),
+                    (float) Minecraft.getInstance().mainWindow.getHeight(),
                     Class5628.method17688(0, 0.75F * (1.0F - field21069.calcPercent()))
             );
             RenderUtil.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);

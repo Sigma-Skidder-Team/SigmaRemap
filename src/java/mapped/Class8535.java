@@ -20,7 +20,7 @@ public class Class8535 {
    private static final Logger field38382 = LogManager.getLogger();
 
    public static int method30366() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!SharedConstants.developmentMode) {
          return Class7414.method23810();
       } else {
@@ -33,7 +33,7 @@ public class Class8535 {
    }
 
    public static void method30367(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class7414.method23812(var0);
    }
 
@@ -50,7 +50,7 @@ public class Class8535 {
    }
 
    public static void method30371(Class2083 var0, int var1, int var2, int var3, int var4) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       method30372(var1);
       if (var2 >= 0) {
          Class7414.method23808(3553, 33085, var2);
@@ -65,7 +65,7 @@ public class Class8535 {
    }
 
    private static void method30372(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class7414.method23814(var0);
    }
 
@@ -93,7 +93,7 @@ public class Class8535 {
    }
 
    public static String method30374(InputStream var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       ByteBuffer var3 = null;
 
       try {
@@ -112,7 +112,7 @@ public class Class8535 {
    }
 
    public static void method30375(IntBuffer var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPixelStorei(3312, 0);
       GL11.glPixelStorei(3313, 0);
       GL11.glPixelStorei(3314, 0);

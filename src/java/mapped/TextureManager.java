@@ -31,7 +31,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    public void bindTexture(ResourceLocation var1) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          this.method1072(var1);
       } else {
          RenderSystem.method27810(() -> this.method1072(var1));

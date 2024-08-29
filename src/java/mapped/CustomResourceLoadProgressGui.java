@@ -57,8 +57,8 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
       this.field6771 = this.field6771 * 0.95F + var16 * 0.050000012F;
       GL11.glPushMatrix();
       float var17 = 1111.0F;
-      if (this.field6767.mainWindow.method8043() != 0) {
-         var17 = (float)(this.field6767.mainWindow.getFramebufferWidth() / this.field6767.mainWindow.method8043());
+      if (this.field6767.mainWindow.getWidth() != 0) {
+         var17 = (float)(this.field6767.mainWindow.getFramebufferWidth() / this.field6767.mainWindow.getWidth());
       }
 
       float var18 = (float)this.field6767.mainWindow.calcGuiScale(this.field6767.gameSettings.guiScale, this.field6767.getForceUnicodeFont()) * var17;
@@ -92,20 +92,20 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
       GL11.glEnable(3008);
       GL11.glEnable(3042);
       RenderUtil.method11454(
-         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.method8043(), (float) Minecraft.getInstance().mainWindow.method8044(), field6780, var0
+         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), field6780, var0
       );
       RenderUtil.method11424(
-         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.method8043(), (float) Minecraft.getInstance().mainWindow.method8044(), Class5628.method17688(0, 0.75F)
+         0.0F, 0.0F, (float) Minecraft.getInstance().mainWindow.getWidth(), (float) Minecraft.getInstance().mainWindow.getHeight(), Class5628.method17688(0, 0.75F)
       );
       short var4 = 455;
       byte var5 = 78;
-      int var6 = (Minecraft.getInstance().mainWindow.method8043() - var4) / 2;
-      int var7 = Math.round((float)((Minecraft.getInstance().mainWindow.method8044() - var5) / 2) - 14.0F * var0);
+      int var6 = (Minecraft.getInstance().mainWindow.getWidth() - var4) / 2;
+      int var7 = Math.round((float)((Minecraft.getInstance().mainWindow.getHeight() - var5) / 2) - 14.0F * var0);
       float var8 = 0.75F + var0 * var0 * var0 * var0 * 0.25F;
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(Minecraft.getInstance().mainWindow.method8043() / 2), (float)(Minecraft.getInstance().mainWindow.method8044() / 2), 0.0F);
+      GL11.glTranslatef((float)(Minecraft.getInstance().mainWindow.getWidth() / 2), (float)(Minecraft.getInstance().mainWindow.getHeight() / 2), 0.0F);
       GL11.glScalef(var8, var8, 0.0F);
-      GL11.glTranslatef((float)(-Minecraft.getInstance().mainWindow.method8043() / 2), (float)(-Minecraft.getInstance().mainWindow.method8044() / 2), 0.0F);
+      GL11.glTranslatef((float)(-Minecraft.getInstance().mainWindow.getWidth() / 2), (float)(-Minecraft.getInstance().mainWindow.getHeight() / 2), 0.0F);
       RenderUtil.method11449((float)var6, (float)var7, (float)var4, (float)var5, field6778, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);
       float var10 = 1.0F - var0;

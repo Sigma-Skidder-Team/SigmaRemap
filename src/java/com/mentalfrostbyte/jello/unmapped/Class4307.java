@@ -7,7 +7,7 @@ public abstract class Class4307 extends Class4305 {
     public static int field20939 = 0;
 
     public Class4307(String var1) {
-        super(null, var1, 0, 0, Minecraft.getInstance().mainWindow.method8043(), Minecraft.getInstance().mainWindow.method8044());
+        super(null, var1, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public int method13313() {
@@ -17,8 +17,8 @@ public abstract class Class4307 extends Class4305 {
     @Override
     public void method13161(JSONObject var1) {
         super.method13161(var1);
-        this.method13268(Minecraft.getInstance().mainWindow.method8043());
-        this.method13270(Minecraft.getInstance().mainWindow.method8044());
+        this.method13268(Minecraft.getInstance().mainWindow.getWidth());
+        this.method13270(Minecraft.getInstance().mainWindow.getHeight());
     }
 
     @Override

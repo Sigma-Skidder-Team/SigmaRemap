@@ -74,25 +74,25 @@ public class Class7414 {
 
    @Deprecated
    public static void method23692() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPushAttrib(8256);
    }
 
    @Deprecated
    public static void method23693() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPushAttrib(270336);
    }
 
    @Deprecated
    public static void method23694() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPopAttrib();
    }
 
    @Deprecated
    public static void method23695() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31747.method21055()) {
          field31725.field39453.method35529();
       } else {
@@ -102,7 +102,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23696() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!field31747.method21055()) {
          field31725.field39453.method35530();
       } else {
@@ -112,7 +112,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23697(int var0, float var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!field31747.method21055()) {
          if (var0 != field31725.field39454 || var1 != field31725.field39455) {
             field31725.field39454 = var0;
@@ -126,37 +126,37 @@ public class Class7414 {
 
    @Deprecated
    public static void method23698() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31726.method35530();
    }
 
    @Deprecated
    public static void method23699() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31726.method35529();
    }
 
    @Deprecated
    public static void method23700(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31727[var0].method35530();
    }
 
    @Deprecated
    public static void method23701() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31728.field41143.method35530();
    }
 
    @Deprecated
    public static void method23702() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31728.field41143.method35529();
    }
 
    @Deprecated
    public static void method23703(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31728.field41144 || var1 != field31728.field41145) {
          field31728.field41144 = var0;
          field31728.field41145 = var1;
@@ -166,49 +166,49 @@ public class Class7414 {
 
    @Deprecated
    public static void method23704(int var0, int var1, FloatBuffer var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glLightfv(var0, var1, var2);
    }
 
    @Deprecated
    public static void method23705(int var0, FloatBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glLightModelfv(var0, var1);
    }
 
    @Deprecated
    public static void method23706(float var0, float var1, float var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glNormal3f(var0, var1, var2);
    }
 
    public static void method23707() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       field31737.field40056.method35529();
    }
 
    public static void method23708() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       field31737.field40056.method35530();
    }
 
    public static void method23709(int var0, int var1, int var2, int var3) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL20.glScissor(var0, var1, var2, var3);
    }
 
    public static void method23710() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       field31730.field32405.method35529();
    }
 
    public static void method23711() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       field31730.field32405.method35530();
    }
 
    public static void method23712(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (var0 != field31730.field32407) {
          field31730.field32407 = var0;
          GL11.glDepthFunc(var0);
@@ -216,7 +216,7 @@ public class Class7414 {
    }
 
    public static void method23713(boolean var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31730.field32406) {
          field31730.field32406 = var0;
          GL11.glDepthMask(var0);
@@ -224,7 +224,7 @@ public class Class7414 {
    }
 
    public static void method23714() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31749.method21055()) {
          field31729.field40550.method35529();
       } else {
@@ -233,7 +233,7 @@ public class Class7414 {
    }
 
    public static void method23715() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31749.method21055()) {
          field31729.field40550.method35530();
       } else {
@@ -242,7 +242,7 @@ public class Class7414 {
    }
 
    public static void method23716(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31749.method21055()) {
          if (var0 != field31729.field40551 || var1 != field31729.field40552 || var0 != field31729.field40553 || var1 != field31729.field40554) {
             field31729.field40551 = var0;
@@ -261,7 +261,7 @@ public class Class7414 {
    }
 
    public static void method23717(int var0, int var1, int var2, int var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31749.method21055()) {
          if (var0 != field31729.field40551 || var1 != field31729.field40552 || var2 != field31729.field40553 || var3 != field31729.field40554) {
             field31729.field40551 = var0;
@@ -284,12 +284,12 @@ public class Class7414 {
    }
 
    public static void method23719(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL14.glBlendEquation(var0);
    }
 
    public static String method23720(GLCapabilities var0) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       Class7944.method26780();
       field31758 = var0.OpenGL31;
       if (!field31758) {
@@ -382,157 +382,157 @@ public class Class7414 {
    }
 
    public static int method23721(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glGetProgrami(var0, var1);
    }
 
    public static void method23722(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glAttachShader(var0, var1);
    }
 
    public static void method23723(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glDeleteShader(var0);
    }
 
    public static int method23724(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glCreateShader(var0);
    }
 
    public static void method23725(int var0, CharSequence var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glShaderSource(var0, var1);
    }
 
    public static void method23726(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glCompileShader(var0);
    }
 
    public static int method23727(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glGetShaderi(var0, var1);
    }
 
    public static void method23728(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUseProgram(var0);
    }
 
    public static int method23729() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glCreateProgram();
    }
 
    public static void method23730(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glDeleteProgram(var0);
    }
 
    public static void method23731(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glLinkProgram(var0);
    }
 
    public static int method23732(int var0, CharSequence var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glGetUniformLocation(var0, var1);
    }
 
    public static void method23733(int var0, IntBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform1iv(var0, var1);
    }
 
    public static void method23734(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform1i(var0, var1);
    }
 
    public static void method23735(int var0, FloatBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform1fv(var0, var1);
    }
 
    public static void method23736(int var0, IntBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform2iv(var0, var1);
    }
 
    public static void method23737(int var0, FloatBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform2fv(var0, var1);
    }
 
    public static void method23738(int var0, IntBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform3iv(var0, var1);
    }
 
    public static void method23739(int var0, FloatBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform3fv(var0, var1);
    }
 
    public static void method23740(int var0, IntBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform4iv(var0, var1);
    }
 
    public static void method23741(int var0, FloatBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniform4fv(var0, var1);
    }
 
    public static void method23742(int var0, boolean var1, FloatBuffer var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniformMatrix2fv(var0, var1, var2);
    }
 
    public static void method23743(int var0, boolean var1, FloatBuffer var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniformMatrix3fv(var0, var1, var2);
    }
 
    public static void method23744(int var0, boolean var1, FloatBuffer var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glUniformMatrix4fv(var0, var1, var2);
    }
 
    public static int method23745(int var0, CharSequence var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glGetAttribLocation(var0, var1);
    }
 
    public static int method23746() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       return GL15.glGenBuffers();
    }
 
    public static void method23747(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL15.glBindBuffer(var0, var1);
    }
 
    public static void method23748(int var0, ByteBuffer var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL15.glBufferData(var0, var1, var2);
    }
 
    public static void method23749(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL15.glDeleteBuffers(var0);
    }
 
    public static void method23750(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL20.glCopyTexSubImage2D(var0, var1, var2, var3, var4, var5, var6, var7);
    }
 
    public static void method23751(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44781[field31745.ordinal()]) {
          case 1:
             GL30.glBindFramebuffer(var0, var1);
@@ -546,7 +546,7 @@ public class Class7414 {
    }
 
    public static int method23752() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44781[field31745.ordinal()]) {
          case 1:
             if (GL30.glGetFramebufferAttachmentParameteri(36160, 36096, 36048) == 5890) {
@@ -568,7 +568,7 @@ public class Class7414 {
    }
 
    public static void method23753(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44782[field31746.ordinal()]) {
          case 1:
             GL30.glBlitFramebuffer(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
@@ -580,7 +580,7 @@ public class Class7414 {
    }
 
    public static void method23754(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44781[field31745.ordinal()]) {
          case 1:
             GL30.glDeleteFramebuffers(var0);
@@ -594,7 +594,7 @@ public class Class7414 {
    }
 
    public static int method23755() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44781[field31745.ordinal()]) {
          case 1:
             return GL30.glGenFramebuffers();
@@ -608,7 +608,7 @@ public class Class7414 {
    }
 
    public static int method23756(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44781[field31745.ordinal()]) {
          case 1:
             return GL30.glCheckFramebufferStatus(var0);
@@ -622,7 +622,7 @@ public class Class7414 {
    }
 
    public static void method23757(int var0, int var1, int var2, int var3, int var4) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       switch (Class9579.field44781[field31745.ordinal()]) {
          case 1:
             GL30.glFramebufferTexture2D(var0, var1, var2, var3, var4);
@@ -641,14 +641,14 @@ public class Class7414 {
    }
 
    public static void method23759(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL13.glActiveTexture(var0);
    }
 
    @Deprecated
    public static void method23760(int var0) {
       if (var0 != field31754) {
-         RenderSystem.method27808(RenderSystem::method27803);
+         RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          GL13.glClientActiveTexture(var0);
          field31754 = var0;
       }
@@ -656,7 +656,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23761(int var0, float var1, float var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL13.glMultiTexCoord2f(var0, var1, var2);
       if (var0 == 33986) {
          field31756 = var1;
@@ -665,34 +665,34 @@ public class Class7414 {
    }
 
    public static void method23762(int var0, int var1, int var2, int var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL14.glBlendFuncSeparate(var0, var1, var2, var3);
    }
 
    public static String method23763(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glGetShaderInfoLog(var0, var1);
    }
 
    public static String method23764(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL20.glGetProgramInfoLog(var0, var1);
    }
 
    public static void method23765() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23806(8960, 8704, 34160);
       method23769(7681, 34168);
    }
 
    public static void method23766() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23806(8960, 8704, 8448);
       method23770(8448, 5890, 34168, 34166);
    }
 
    public static void method23767(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23803(33985);
       method23804();
       method23830(5890);
@@ -712,7 +712,7 @@ public class Class7414 {
    }
 
    public static void method23768() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23803(33985);
       method23805();
       method23803(33984);
@@ -741,7 +741,7 @@ public class Class7414 {
    }
 
    public static void method23772(Class7680 var0, Class7680 var1, Class9367 var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23832();
       method23831();
       method23700(0);
@@ -766,7 +766,7 @@ public class Class7414 {
    }
 
    public static void method23773(Class7680 var0, Class7680 var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class9367 var4 = new Class9367();
       var4.method35503();
       var4.method35508(Class9367.method35515(1.0F, -1.0F, 1.0F));
@@ -776,7 +776,7 @@ public class Class7414 {
    }
 
    public static void method23774(Class7680 var0, Class7680 var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class9367 var4 = new Class9367();
       var4.method35503();
       var4.method35509(Class7680.field32900.method25286(62.0F));
@@ -822,20 +822,20 @@ public class Class7414 {
    @Deprecated
    public static void method23779() {
       if (field31764) {
-         RenderSystem.method27808(RenderSystem::method27803);
+         RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          field31731.field44792.method35530();
       }
    }
 
    @Deprecated
    public static void method23780() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31731.field44792.method35529();
    }
 
    @Deprecated
    public static void method23781(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31731.field44793) {
          field31731.field44793 = var0;
          method23786(2917, var0);
@@ -847,7 +847,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23782(float var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 < 0.0F) {
          var0 = 0.0F;
       }
@@ -863,7 +863,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23783(float var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31731.field44795) {
          field31731.field44795 = var0;
          GL11.glFogf(2915, var0);
@@ -872,7 +872,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23784(float var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31731.field44796) {
          field31731.field44796 = var0;
          GL11.glFogf(2916, var0);
@@ -881,18 +881,18 @@ public class Class7414 {
 
    @Deprecated
    public static void method23785(int var0, float[] var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glFogfv(var0, var1);
    }
 
    @Deprecated
    public static void method23786(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glFogi(var0, var1);
    }
 
    public static void method23787() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31751.method21055()) {
          field31732.field26226.method35530();
       } else {
@@ -901,7 +901,7 @@ public class Class7414 {
    }
 
    public static void method23788() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (!field31751.method21055()) {
          field31732.field26226.method35529();
       } else {
@@ -910,32 +910,32 @@ public class Class7414 {
    }
 
    public static void method23789(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPolygonMode(var0, var1);
    }
 
    public static void method23790() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31733.field30682.method35530();
    }
 
    public static void method23791() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31733.field30682.method35529();
    }
 
    public static void method23792() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31733.field30683.method35530();
    }
 
    public static void method23793() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31733.field30683.method35529();
    }
 
    public static void method23794(float var0, float var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31733.field30684 || var1 != field31733.field30685) {
          field31733.field30684 = var0;
          field31733.field30685 = var1;
@@ -944,17 +944,17 @@ public class Class7414 {
    }
 
    public static void method23795() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31734.field33643.method35530();
    }
 
    public static void method23796() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31734.field33643.method35529();
    }
 
    public static void method23797(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31734.field33644) {
          field31734.field33644 = var0;
          GL11.glLogicOp(var0);
@@ -963,19 +963,19 @@ public class Class7414 {
 
    @Deprecated
    public static void method23798(Class2164 var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23802(var0).field45814.method35530();
    }
 
    @Deprecated
    public static void method23799(Class2164 var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23802(var0).field45814.method35529();
    }
 
    @Deprecated
    public static void method23800(Class2164 var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class9796 var4 = method23802(var0);
       if (var1 != var4.field45816) {
          var4.field45816 = var1;
@@ -985,13 +985,13 @@ public class Class7414 {
 
    @Deprecated
    public static void method23801(Class2164 var0, int var1, FloatBuffer var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTexGenfv(method23802(var0).field45815, var1, var2);
    }
 
    @Deprecated
    private static Class9796 method23802(Class2164 var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       switch (Class9579.field44783[var0.ordinal()]) {
          case 1:
             return field31735.field21851;
@@ -1007,7 +1007,7 @@ public class Class7414 {
    }
 
    public static void method23803(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (field31739 != var0 - 33984) {
          field31739 = var0 - 33984;
          method23759(var0);
@@ -1015,48 +1015,48 @@ public class Class7414 {
    }
 
    public static void method23804() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       field31740[field31739].field40429.method35530();
    }
 
    public static void method23805() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31740[field31739].field40429.method35529();
    }
 
    @Deprecated
    public static void method23806(int var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTexEnvi(var0, var1, var2);
    }
 
    public static void method23807(int var0, int var1, float var2) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glTexParameterf(var0, var1, var2);
    }
 
    public static void method23808(int var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glTexParameteri(var0, var1, var2);
    }
 
    public static int method23809(int var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       return GL11.glGetTexLevelParameteri(var0, var1, var2);
    }
 
    public static int method23810() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       return GL11.glGenTextures();
    }
 
    public static void method23811(int[] var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glGenTextures(var0);
    }
 
    public static void method23812(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (var0 != 0) {
          GL11.glDeleteTextures(var0);
 
@@ -1069,7 +1069,7 @@ public class Class7414 {
    }
 
    public static void method23813(int[] var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
 
       for (Class8938 var6 : field31740) {
          for (int var10 : var0) {
@@ -1083,7 +1083,7 @@ public class Class7414 {
    }
 
    public static void method23814(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (var0 != field31740[field31739].field40430) {
          field31740[field31739].field40430 = var0;
          GL11.glBindTexture(3553, var0);
@@ -1094,23 +1094,23 @@ public class Class7414 {
    }
 
    public static void method23815(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, IntBuffer var8) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glTexImage2D(var0, var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
    public static void method23816(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, long var8) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glTexSubImage2D(var0, var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
    public static void method23817(int var0, int var1, int var2, int var3, long var4) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glGetTexImage(var0, var1, var2, var3, var4);
    }
 
    @Deprecated
    public static void method23818(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (var0 != field31741) {
          field31741 = var0;
          GL11.glShadeModel(var0);
@@ -1119,18 +1119,18 @@ public class Class7414 {
 
    @Deprecated
    public static void method23819() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31742.method35530();
    }
 
    @Deprecated
    public static void method23820() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31742.method35529();
    }
 
    public static void method23821(int var0, int var1, int var2, int var3) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class2342.field16012.field16013 = var0;
       Class2342.field16012.field16014 = var1;
       Class2342.field16012.field16015 = var2;
@@ -1139,7 +1139,7 @@ public class Class7414 {
    }
 
    public static void method23822(boolean var0, boolean var1, boolean var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31743.field36346 || var1 != field31743.field36347 || var2 != field31743.field36348 || var3 != field31743.field36349) {
          field31743.field36346 = var0;
          field31743.field36347 = var1;
@@ -1150,7 +1150,7 @@ public class Class7414 {
    }
 
    public static void method23823(int var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31736.field41162.field35856 || var0 != field31736.field41162.field35857 || var0 != field31736.field41162.field35858) {
          field31736.field41162.field35856 = var0;
          field31736.field41162.field35857 = var1;
@@ -1160,7 +1160,7 @@ public class Class7414 {
    }
 
    public static void method23824(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31736.field41163) {
          field31736.field41163 = var0;
          GL11.glStencilMask(var0);
@@ -1168,7 +1168,7 @@ public class Class7414 {
    }
 
    public static void method23825(int var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31736.field41164 || var1 != field31736.field41165 || var2 != field31736.field41166) {
          field31736.field41164 = var0;
          field31736.field41165 = var1;
@@ -1178,22 +1178,22 @@ public class Class7414 {
    }
 
    public static void method23826(double var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glClearDepth(var0);
    }
 
    public static void method23827(float var0, float var1, float var2, float var3) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glClearColor(var0, var1, var2, var3);
    }
 
    public static void method23828(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glClearStencil(var0);
    }
 
    public static void method23829(int var0, boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glClear(var0);
       if (var1) {
          method23859();
@@ -1202,79 +1202,79 @@ public class Class7414 {
 
    @Deprecated
    public static void method23830(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glMatrixMode(var0);
    }
 
    @Deprecated
    public static void method23831() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glLoadIdentity();
    }
 
    @Deprecated
    public static void method23832() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPushMatrix();
    }
 
    @Deprecated
    public static void method23833() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPopMatrix();
    }
 
    @Deprecated
    public static void method23834(int var0, FloatBuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glGetFloatv(var0, var1);
    }
 
    @Deprecated
    public static void method23835(double var0, double var2, double var4, double var6, double var8, double var10) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glOrtho(var0, var2, var4, var6, var8, var10);
    }
 
    @Deprecated
    public static void method23836(float var0, float var1, float var2, float var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glRotatef(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void method23837(float var0, float var1, float var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glScalef(var0, var1, var2);
    }
 
    @Deprecated
    public static void method23838(double var0, double var2, double var4) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glScaled(var0, var2, var4);
    }
 
    @Deprecated
    public static void method23839(float var0, float var1, float var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTranslatef(var0, var1, var2);
    }
 
    @Deprecated
    public static void method23840(double var0, double var2, double var4) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTranslated(var0, var2, var4);
    }
 
    @Deprecated
    public static void method23841(FloatBuffer var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glMultMatrixf(var0);
    }
 
    @Deprecated
    public static void method23842(Class9367 var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       var0.method35502(field31724);
       ((Buffer)field31724).rewind();
       method23841(field31724);
@@ -1282,7 +1282,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23843(float var0, float var1, float var2, float var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var0 != field31744.field43518 || var1 != field31744.field43519 || var2 != field31744.field43520 || var3 != field31744.field43521) {
          field31744.field43518 = var0;
          field31744.field43519 = var1;
@@ -1294,7 +1294,7 @@ public class Class7414 {
 
    @Deprecated
    public static void method23844() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       field31744.field43518 = -1.0F;
       field31744.field43519 = -1.0F;
       field31744.field43520 = -1.0F;
@@ -1303,37 +1303,37 @@ public class Class7414 {
 
    @Deprecated
    public static void method23845(int var0, int var1, long var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glNormalPointer(var0, var1, var2);
    }
 
    @Deprecated
    public static void method23846(int var0, int var1, int var2, long var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTexCoordPointer(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void method23847(int var0, int var1, int var2, long var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glVertexPointer(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void method23848(int var0, int var1, int var2, long var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glColorPointer(var0, var1, var2, var3);
    }
 
    public static void method23849(int var0, int var1, int var2, boolean var3, int var4, long var5) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glVertexAttribPointer(var0, var1, var2, var3, var4, var5);
    }
 
    @Deprecated
    public static void method23850(int var0) {
       if (!field31753) {
-         RenderSystem.method27808(RenderSystem::method27803);
+         RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          GL11.glEnableClientState(var0);
       }
    }
@@ -1341,23 +1341,23 @@ public class Class7414 {
    @Deprecated
    public static void method23851(int var0) {
       if (!field31753) {
-         RenderSystem.method27808(RenderSystem::method27803);
+         RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          GL11.glDisableClientState(var0);
       }
    }
 
    public static void method23852(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glEnableVertexAttribArray(var0);
    }
 
    public static void method23853(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL20.glEnableVertexAttribArray(var0);
    }
 
    public static void method23854(int var0, int var1, int var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glDrawArrays(var0, var1, var2);
       if (Class7944.method26921() && !field31755) {
          int var5 = Shaders.field40848.method26491();
@@ -1373,37 +1373,37 @@ public class Class7414 {
    }
 
    public static void method23855(float var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glLineWidth(var0);
    }
 
    public static void method23856(int var0, int var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       GL11.glPixelStorei(var0, var1);
    }
 
    public static void method23857(int var0, float var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPixelTransferf(var0, var1);
    }
 
    public static void method23858(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glReadPixels(var0, var1, var2, var3, var4, var5, var6);
    }
 
    public static int method23859() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL11.glGetError();
    }
 
    public static String method23860(int var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GL11.glGetString(var0);
    }
 
    public static int method23861(int var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       return GL11.glGetInteger(var0);
    }
 

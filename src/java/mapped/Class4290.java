@@ -15,7 +15,7 @@ public class Class4290 extends Class4278 {
    private Texture field20791;
 
    public Class4290(Class4305 var1, String var2) {
-      super(var1, var2, 0, Minecraft.getInstance().mainWindow.method8044() - 70, Minecraft.getInstance().mainWindow.method8043(), 110, false);
+      super(var1, var2, 0, Minecraft.getInstance().mainWindow.getHeight() - 70, Minecraft.getInstance().mainWindow.getWidth(), 110, false);
       this.method13292(true);
       this.method13300(false);
    }
@@ -29,7 +29,7 @@ public class Class4290 extends Class4278 {
       super.method13028(var1, var2);
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
-         && Math.abs(Minecraft.getInstance().mainWindow.method8044() - var2) < var5
+         && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
          && !this.field20892.method13239(((Class4308)this.field20892).field20940)) {
          this.field20788 = Class2059.field13416;
       }
@@ -46,7 +46,7 @@ public class Class4290 extends Class4278 {
          this.field20788 = Class2059.field13418;
       }
 
-      if (Minecraft.getInstance().mainWindow.method8044() - var2 > this.method13269()) {
+      if (Minecraft.getInstance().mainWindow.getHeight() - var2 > this.method13269()) {
          this.field20788 = Class2059.field13417;
       }
 
@@ -55,7 +55,7 @@ public class Class4290 extends Class4278 {
          var7 = Class9747.method38212(this.field20787, 0.0F, 1.0F, 1.0F);
       }
 
-      this.method13266(Minecraft.getInstance().mainWindow.method8044() - (int)((float)this.method13269() * var7));
+      this.method13266(Minecraft.getInstance().mainWindow.getHeight() - (int)((float)this.method13269() * var7));
    }
 
    @Override

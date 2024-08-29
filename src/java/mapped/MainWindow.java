@@ -29,54 +29,54 @@ import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.util.tinyfd.TinyFileDialogs;
 
 public final class MainWindow implements AutoCloseable {
-   private static final Logger field9784 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    private final GLFWErrorCallback field9785 = GLFWErrorCallback.create(this::method8018);
-   private final IWindowEventListener field9786;
-   private final Class9329 field9787;
-   private final long field9788;
-   private int field9789;
-   private int field9790;
-   private int field9791;
-   private int field9792;
-   private Optional<Class8737> field9793;
-   private boolean field9794;
-   private boolean field9795;
-   private int field9796;
-   private int field9797;
-   private int field9798;
-   private int field9799;
-   private int field9800;
-   private int field9801;
-   private int field9802;
-   private int field9803;
-   private double field9804;
+   private final IWindowEventListener mc;
+   private final Class9329 monitorHandler;
+   private final long handle;
+   private int prevWindowX;
+   private int prevWindowY;
+   private int prevWindowWidth;
+   private int prevWindowHeight;
+   private Optional<VideoMode> videoMode;
+   private boolean fullscreen;
+   private boolean lastFullscreen;
+   private int windowX;
+   private int windowY;
+   private int width;
+   private int height;
+   private int framebufferWidth;
+   private int framebufferHeight;
+   private int scaledWidth;
+   private int scaledHeight;
+   private double guiScaleFactor;
    private String field9805 = "";
-   private boolean field9806;
-   private int field9807;
-   private boolean field9808;
+   private boolean videoModeChanged;
+   private int framerateLimit;
+   private boolean vsync;
    private boolean field9809;
 
    public MainWindow(IWindowEventListener var1, Class9329 var2, ScreenSize var3, String var4, String var5) {
-      RenderSystem.method27808(RenderSystem::method27809);
-      this.field9787 = var2;
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
+      this.monitorHandler = var2;
       this.method8016();
       this.setRenderPhase("Pre startup");
-      this.field9786 = var1;
-      Optional var8 = Class8737.method31535(var4);
+      this.mc = var1;
+      Optional var8 = VideoMode.method31535(var4);
       if (!var8.isPresent()) {
          if (var3.fullscreenWidth.isPresent() && var3.fullscreenHeight.isPresent()) {
-            this.field9793 = Optional.<Class8737>of(new Class8737(var3.fullscreenWidth.getAsInt(), var3.fullscreenHeight.getAsInt(), 8, 8, 8, 60));
+            this.videoMode = Optional.<VideoMode>of(new VideoMode(var3.fullscreenWidth.getAsInt(), var3.fullscreenHeight.getAsInt(), 8, 8, 8, 60));
          } else {
-            this.field9793 = Optional.<Class8737>empty();
+            this.videoMode = Optional.<VideoMode>empty();
          }
       } else {
-         this.field9793 = var8;
+         this.videoMode = var8;
       }
 
-      this.field9795 = this.field9794 = var3.fullscreen;
-      Class7513 var9 = var2.method35258(GLFW.glfwGetPrimaryMonitor());
-      this.field9791 = this.field9798 = var3.field45780 <= 0 ? 1 : var3.field45780;
-      this.field9792 = this.field9799 = var3.field45781 <= 0 ? 1 : var3.field45781;
+      this.lastFullscreen = this.fullscreen = var3.fullscreen;
+      Monitor var9 = var2.method35258(GLFW.glfwGetPrimaryMonitor());
+      this.prevWindowWidth = this.width = var3.field45780 <= 0 ? 1 : var3.field45780;
+      this.prevWindowHeight = this.height = var3.field45781 <= 0 ? 1 : var3.field45781;
       GLFW.glfwDefaultWindowHints();
       GuiManager.method33475();
       if (Class7944.method26892()) {
@@ -89,44 +89,44 @@ public final class MainWindow implements AutoCloseable {
       GLFW.glfwWindowHint(139267, 0);
       GLFW.glfwWindowHint(139272, 0);
       if (!Class9299.field42792.method20214()) {
-         this.field9788 = GLFW.glfwCreateWindow(this.field9798, this.field9799, var5, this.field9794 && var9 != null ? var9.method24493() : 0L, 0L);
+         this.handle = GLFW.glfwCreateWindow(this.width, this.height, var5, this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L, 0L);
       } else {
          Object var10 = Class9299.method35071(Class9299.field42791);
-         this.field9788 = Class9299.method35066(
+         this.handle = Class9299.method35066(
             var10,
             Class9299.field42792,
-            (IntSupplier)() -> this.field9798,
-            (IntSupplier)() -> this.field9799,
+            (IntSupplier)() -> this.width,
+            (IntSupplier)() -> this.height,
             (Supplier<String>)() -> var5,
-            (LongSupplier)() -> this.field9794 && var9 != null ? var9.method24493() : 0L
+            (LongSupplier)() -> this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L
          );
       }
 
       if (var9 == null) {
          int[] var12 = new int[1];
          int[] var11 = new int[1];
-         GLFW.glfwGetWindowPos(this.field9788, var12, var11);
-         this.field9789 = this.field9796 = var12[0];
-         this.field9790 = this.field9797 = var11[0];
+         GLFW.glfwGetWindowPos(this.handle, var12, var11);
+         this.prevWindowX = this.windowX = var12[0];
+         this.prevWindowY = this.windowY = var11[0];
       } else {
-         Class8737 var13 = var9.method24486(!this.field9794 ? Optional.<Class8737>empty() : this.field9793);
-         this.field9789 = this.field9796 = var9.method24489() + var13.method31529() / 2 - this.field9798 / 2;
-         this.field9790 = this.field9797 = var9.method24490() + var13.method31530() / 2 - this.field9799 / 2;
+         VideoMode var13 = var9.getVideoModeOrDefault(!this.fullscreen ? Optional.<VideoMode>empty() : this.videoMode);
+         this.prevWindowX = this.windowX = var9.method24489() + var13.getWidth() / 2 - this.width / 2;
+         this.prevWindowY = this.windowY = var9.method24490() + var13.getHeight() / 2 - this.height / 2;
       }
 
-      GLFW.glfwMakeContextCurrent(this.field9788);
+      GLFW.glfwMakeContextCurrent(this.handle);
       GL.createCapabilities();
-      this.method8033();
-      this.method8023();
-      GLFW.glfwSetFramebufferSizeCallback(this.field9788, this::method8022);
-      GLFW.glfwSetWindowPosCallback(this.field9788, this::method8021);
-      GLFW.glfwSetWindowSizeCallback(this.field9788, this::method8024);
-      GLFW.glfwSetWindowFocusCallback(this.field9788, this::method8025);
-      GLFW.glfwSetCursorEnterCallback(this.field9788, this::method8026);
+      this.updateVideoMode();
+      this.updateFramebufferSize();
+      GLFW.glfwSetFramebufferSizeCallback(this.handle, this::onFramebufferSizeUpdate);
+      GLFW.glfwSetWindowPosCallback(this.handle, this::method8021);
+      GLFW.glfwSetWindowSizeCallback(this.handle, this::onWindowSizeUpdate);
+      GLFW.glfwSetWindowFocusCallback(this.handle, this::onWindowFocusUpdate);
+      GLFW.glfwSetCursorEnterCallback(this.handle, this::onWindowEnterUpdate);
    }
 
    public int getRefreshRate() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return Class8157.method28296(this);
    }
 
@@ -135,7 +135,7 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public static void method8012(BiConsumer<Integer, String> var0) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       MemoryStack var3 = MemoryStack.stackPush();
       Throwable var4 = null;
 
@@ -166,7 +166,7 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void setWindowIcon(InputStream var1, InputStream var2) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
 
       try {
          MemoryStack var5 = MemoryStack.stackPush();
@@ -204,7 +204,7 @@ public final class MainWindow implements AutoCloseable {
             var10.height(var8.get(0));
             var10.pixels(var12);
             var10.position(0);
-            GLFW.glfwSetWindowIcon(this.field9788, var10);
+            GLFW.glfwSetWindowIcon(this.handle, var10);
             STBImage.stbi_image_free(var11);
             STBImage.stbi_image_free(var12);
          } catch (Throwable var21) {
@@ -224,13 +224,13 @@ public final class MainWindow implements AutoCloseable {
             }
          }
       } catch (IOException var23) {
-         field9784.error("Couldn't set icon", var23);
+         LOGGER.error("Couldn't set icon", var23);
       }
    }
 
    @Nullable
    private ByteBuffer method8014(InputStream var1, IntBuffer var2, IntBuffer var3, IntBuffer var4) throws IOException {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       ByteBuffer var7 = null;
 
       ByteBuffer var8;
@@ -255,12 +255,12 @@ public final class MainWindow implements AutoCloseable {
    }
 
    private void method8016() {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLFW.glfwSetErrorCallback(MainWindow::method8017);
    }
 
    private static void method8017(int var0, long var1) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       String var5 = "GLFW error " + var0 + ": " + MemoryUtil.memUTF8(var1);
       TinyFileDialogs.tinyfd_messageBox(
          "Minecraft", var5 + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions).", "ok", "error", false
@@ -269,11 +269,11 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void method8018(int var1, long var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       String var6 = MemoryUtil.memUTF8(var2);
-      field9784.error("########## GL ERROR ##########");
-      field9784.error("@ {}", this.field9805);
-      field9784.error("{}: {}", var1, var6);
+      LOGGER.error("########## GL ERROR ##########");
+      LOGGER.error("@ {}", this.field9805);
+      LOGGER.error("{}: {}", var1, var6);
    }
 
    public void setLogOnGlError() {
@@ -286,233 +286,236 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void setVsync(boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
-      this.field9808 = var1;
+      RenderSystem.assertThread(RenderSystem::method27804);
+      this.vsync = var1;
       GLFW.glfwSwapInterval(!var1 ? 0 : 1);
    }
 
    @Override
    public void close() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       this.field9809 = true;
-      Callbacks.glfwFreeCallbacks(this.field9788);
+      Callbacks.glfwFreeCallbacks(this.handle);
       this.field9785.close();
-      GLFW.glfwDestroyWindow(this.field9788);
+      GLFW.glfwDestroyWindow(this.handle);
       GLFW.glfwTerminate();
    }
 
    private void method8021(long var1, int var3, int var4) {
-      this.field9796 = var3;
-      this.field9797 = var4;
+      this.windowX = var3;
+      this.windowY = var4;
    }
 
-   private void method8022(long var1, int var3, int var4) {
-      if (var1 == this.field9788) {
+   private void onFramebufferSizeUpdate(long windowPointer, int framebufferWidth, int framebufferHeight) {
+      if (windowPointer == this.handle) {
          int var7 = this.getFramebufferWidth();
          int var8 = this.getFramebufferHeight();
-         if (var3 != 0 && var4 != 0) {
-            this.field9800 = var3;
-            this.field9801 = var4;
+         if (framebufferWidth != 0 && framebufferHeight != 0) {
+            this.framebufferWidth = framebufferWidth;
+            this.framebufferHeight = framebufferHeight;
             if (this.getFramebufferWidth() != var7 || this.getFramebufferHeight() != var8) {
-               this.field9786.updateWindowSize();
+               this.mc.updateWindowSize();
             }
          }
       }
    }
 
-   private void method8023() {
-      RenderSystem.method27808(RenderSystem::method27809);
+   private void updateFramebufferSize() {
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       int[] var3 = new int[1];
       int[] var4 = new int[1];
-      GLFW.glfwGetFramebufferSize(this.field9788, var3, var4);
-      this.field9800 = var3[0];
-      this.field9801 = var4[0];
+      GLFW.glfwGetFramebufferSize(this.handle, var3, var4);
+      this.framebufferWidth = var3[0];
+      this.framebufferHeight = var4[0];
    }
 
-   private void method8024(long var1, int var3, int var4) {
-      this.field9798 = var3;
-      this.field9799 = var4;
+   private void onWindowSizeUpdate(long windowPointer, int windowWidthIn, int windowHeightIn) {
+      this.width = windowWidthIn;
+      this.height = windowHeightIn;
       Client.getInstance().getGuiManager().onResize();
    }
 
-   private void method8025(long var1, boolean var3) {
-      if (var1 == this.field9788) {
-         this.field9786.setGameFocused(var3);
+   private void onWindowFocusUpdate(long windowPointer, boolean hasFocus) {
+      if (windowPointer == this.handle) {
+         this.mc.setGameFocused(hasFocus);
       }
    }
 
-   private void method8026(long var1, boolean var3) {
-      if (var3) {
-         this.field9786.ignoreFirstMove();
+   private void onWindowEnterUpdate(long window, boolean ignoreFirst) {
+      if (ignoreFirst) {
+         this.mc.ignoreFirstMove();
       }
    }
 
-   public void setFramerateLimit(int var1) {
-      this.field9807 = var1;
+   public void setFramerateLimit(int limit) {
+      this.framerateLimit = limit;
    }
 
    public int getLimitFramerate() {
-      return this.field9807;
+      return this.framerateLimit;
    }
 
    public void flipFrame() {
-      RenderSystem.method27811(this.field9788);
-      if (this.field9794 != this.field9795) {
-         this.field9795 = this.field9794;
-         this.method8035(this.field9808);
+      RenderSystem.flipFrame(this.handle);
+      if (this.fullscreen != this.lastFullscreen) {
+         this.lastFullscreen = this.fullscreen;
+         this.toggleFullscreen(this.vsync);
       }
    }
 
-   public Optional<Class8737> method8030() {
-      return this.field9793;
+   public Optional<VideoMode> getVideoMode() {
+      return this.videoMode;
    }
 
-   public void method8031(Optional<Class8737> var1) {
-      boolean var4 = !var1.equals(this.field9793);
-      this.field9793 = var1;
-      if (var4) {
-         this.field9806 = true;
+   public void setVideoMode(Optional<VideoMode> fullscreenModeIn) {
+      boolean flag = !fullscreenModeIn.equals(this.videoMode);
+      this.videoMode = fullscreenModeIn;
+
+      if (flag)
+      {
+         this.videoModeChanged = true;
       }
    }
 
-   public void method8032() {
-      if (this.field9794 && this.field9806) {
-         this.field9806 = false;
-         this.method8033();
-         this.field9786.updateWindowSize();
+   public void update() {
+      if (this.fullscreen && this.videoModeChanged) {
+         this.videoModeChanged = false;
+         this.updateVideoMode();
+         this.mc.updateWindowSize();
       }
    }
 
-   private void method8033() {
-      RenderSystem.method27808(RenderSystem::method27809);
-      boolean var3 = GLFW.glfwGetWindowMonitor(this.field9788) != 0L;
-      if (!this.field9794) {
-         this.field9796 = this.field9789;
-         this.field9797 = this.field9790;
-         this.field9798 = this.field9791;
-         this.field9799 = this.field9792;
-         GLFW.glfwSetWindowMonitor(this.field9788, 0L, this.field9796, this.field9797, this.field9798, this.field9799, -1);
+   private void updateVideoMode() {
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
+      boolean var3 = GLFW.glfwGetWindowMonitor(this.handle) != 0L;
+      if (!this.fullscreen) {
+         this.windowX = this.prevWindowX;
+         this.windowY = this.prevWindowY;
+         this.width = this.prevWindowWidth;
+         this.height = this.prevWindowHeight;
+         GLFW.glfwSetWindowMonitor(this.handle, 0L, this.windowX, this.windowY, this.width, this.height, -1);
       } else {
-         Class7513 var4 = this.field9787.method35259(this);
-         if (var4 != null) {
-            Class8737 var5 = var4.method24486(this.field9793);
+         Monitor monitor = this.monitorHandler.getMonitor(this);
+         if (monitor != null) {
+            VideoMode videomode = monitor.getVideoModeOrDefault(this.videoMode);
             if (!var3) {
-               this.field9789 = this.field9796;
-               this.field9790 = this.field9797;
-               this.field9791 = this.field9798;
-               this.field9792 = this.field9799;
+               this.prevWindowX = this.windowX;
+               this.prevWindowY = this.windowY;
+               this.prevWindowWidth = this.width;
+               this.prevWindowHeight = this.height;
             }
 
-            this.field9796 = 0;
-            this.field9797 = 0;
-            this.field9798 = var5.method31529();
-            this.field9799 = var5.method31530();
-            GLFW.glfwSetWindowMonitor(this.field9788, var4.method24493(), this.field9796, this.field9797, this.field9798, this.field9799, var5.method31534());
+            this.windowX = 0;
+            this.windowY = 0;
+            this.width = videomode.getWidth();
+            this.height = videomode.getHeight();
+            GLFW.glfwSetWindowMonitor(this.handle, monitor.getMonitorPointer(), this.windowX, this.windowY, this.width, this.height, videomode.getRefreshRate());
          } else {
-            field9784.warn("Failed to find suitable monitor for fullscreen mode");
-            this.field9794 = false;
+            LOGGER.warn("Failed to find suitable monitor for fullscreen mode");
+            this.fullscreen = false;
          }
       }
    }
 
    public void toggleFullscreen() {
-      this.field9794 = !this.field9794;
+      this.fullscreen = !this.fullscreen;
    }
 
-   private void method8035(boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+   private void toggleFullscreen(boolean vsyncEnabled) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
 
       try {
-         this.method8033();
-         this.field9786.updateWindowSize();
-         this.setVsync(var1);
+         this.updateVideoMode();
+         this.mc.updateWindowSize();
+         this.setVsync(vsyncEnabled);
          this.flipFrame();
-      } catch (Exception var5) {
-         field9784.error("Couldn't toggle fullscreen", var5);
+      } catch (Exception exception) {
+         LOGGER.error("Couldn't toggle fullscreen", exception);
       }
    }
 
-   public int calcGuiScale(int var1, boolean var2) {
-      int var5 = 1;
+   public int calcGuiScale(int guiScaleIn, boolean forceUnicode) {
+      int i;
 
-      while (var5 != var1 && var5 < this.field9800 && var5 < this.field9801 && this.field9800 / (var5 + 1) >= 320 && this.field9801 / (var5 + 1) >= 240) {
-         var5++;
+      for (i = 1; i != guiScaleIn && i < this.framebufferWidth && i < this.framebufferHeight && this.framebufferWidth / (i + 1) >= 320 && this.framebufferHeight / (i + 1) >= 240; ++i)
+      {
       }
 
-      if (var2 && var5 % 2 != 0) {
-         var5++;
+      if (forceUnicode && i % 2 != 0)
+      {
+         ++i;
       }
 
-      return var5;
+      return i;
    }
 
-   public void setGuiScale(double var1) {
-      this.field9804 = var1;
-      int var5 = (int)((double)this.field9800 / var1);
-      this.field9802 = !((double)this.field9800 / var1 > (double)var5) ? var5 : var5 + 1;
-      int var6 = (int)((double)this.field9801 / var1);
-      this.field9803 = !((double)this.field9801 / var1 > (double)var6) ? var6 : var6 + 1;
+   public void setGuiScale(double scaleFactor) {
+      this.guiScaleFactor = scaleFactor;
+      int i = (int)((double)this.framebufferWidth / scaleFactor);
+      this.scaledWidth = (double)this.framebufferWidth / scaleFactor > (double)i ? i + 1 : i;
+      int j = (int)((double)this.framebufferHeight / scaleFactor);
+      this.scaledHeight = (double)this.framebufferHeight / scaleFactor > (double)j ? j + 1 : j;
    }
 
-   public void setWindowTitle(String var1) {
-      GLFW.glfwSetWindowTitle(this.field9788, var1);
+   public void setWindowTitle(String title) {
+      GLFW.glfwSetWindowTitle(this.handle, title);
    }
 
    public long getHandle() {
-      return this.field9788;
+      return this.handle;
    }
 
    public boolean isFullscreen() {
-      return this.field9794;
+      return this.fullscreen;
    }
 
    public int getFramebufferWidth() {
-      return this.field9800;
+      return this.framebufferWidth;
    }
 
    public int getFramebufferHeight() {
-      return this.field9801;
+      return this.framebufferHeight;
    }
 
-   public int method8043() {
-      return this.field9798;
+   public int getWidth() {
+      return this.width;
    }
 
-   public int method8044() {
-      return this.field9799;
+   public int getHeight() {
+      return this.height;
    }
 
    public int getScaledWidth() {
-      return this.field9802;
+      return this.scaledWidth;
    }
 
    public int getScaledHeight() {
-      return this.field9803;
+      return this.scaledHeight;
    }
 
-   public int method8047() {
-      return this.field9796;
+   public int getWindowX() {
+      return this.windowX;
    }
 
-   public int method8048() {
-      return this.field9797;
+   public int getWindowY() {
+      return this.windowY;
    }
 
-   public double method8049() {
-      return this.field9804;
+   public double getGuiScaleFactor() {
+      return this.guiScaleFactor;
    }
 
    @Nullable
-   public Class7513 method8050() {
-      return this.field9787.method35259(this);
+   public Monitor getMonitor() {
+      return this.monitorHandler.getMonitor(this);
    }
 
    public void setRawMouseInput(boolean var1) {
-      Class9798.method38644(this.field9788, var1);
+      Class9798.method38644(this.handle, var1);
    }
 
    public void method8052(int var1, int var2) {
-      this.method8022(this.field9788, var1, var2);
+      this.onFramebufferSizeUpdate(this.handle, var1, var2);
    }
 
    public boolean method8053() {

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.glfw.GLFWVidMode.Buffer;
 
-public final class Class8737 {
+public final class VideoMode {
    private final int field39389;
    private final int field39390;
    private final int field39391;
@@ -16,7 +16,7 @@ public final class Class8737 {
    private final int field39394;
    private static final Pattern field39395 = Pattern.compile("(\\d+)x(\\d+)(?:@(\\d+)(?::(\\d+))?)?");
 
-   public Class8737(int var1, int var2, int var3, int var4, int var5, int var6) {
+   public VideoMode(int var1, int var2, int var3, int var4, int var5, int var6) {
       this.field39389 = var1;
       this.field39390 = var2;
       this.field39391 = var3;
@@ -25,7 +25,7 @@ public final class Class8737 {
       this.field39394 = var6;
    }
 
-   public Class8737(Buffer var1) {
+   public VideoMode(Buffer var1) {
       this.field39389 = var1.width();
       this.field39390 = var1.height();
       this.field39391 = var1.redBits();
@@ -34,7 +34,7 @@ public final class Class8737 {
       this.field39394 = var1.refreshRate();
    }
 
-   public Class8737(GLFWVidMode var1) {
+   public VideoMode(GLFWVidMode var1) {
       this.field39389 = var1.width();
       this.field39390 = var1.height();
       this.field39391 = var1.redBits();
@@ -43,11 +43,11 @@ public final class Class8737 {
       this.field39394 = var1.refreshRate();
    }
 
-   public int method31529() {
+   public int getWidth() {
       return this.field39389;
    }
 
-   public int method31530() {
+   public int getHeight() {
       return this.field39390;
    }
 
@@ -63,7 +63,7 @@ public final class Class8737 {
       return this.field39393;
    }
 
-   public int method31534() {
+   public int getRefreshRate() {
       return this.field39394;
    }
 
@@ -72,7 +72,7 @@ public final class Class8737 {
       if (this == var1) {
          return true;
       } else if (var1 != null && this.getClass() == var1.getClass()) {
-         Class8737 var4 = (Class8737)var1;
+         VideoMode var4 = (VideoMode)var1;
          return this.field39389 == var4.field39389
             && this.field39390 == var4.field39390
             && this.field39391 == var4.field39391
@@ -94,9 +94,9 @@ public final class Class8737 {
       return String.format("%sx%s@%s (%sbit)", this.field39389, this.field39390, this.field39394, this.field39391 + this.field39392 + this.field39393);
    }
 
-   public static Optional<Class8737> method31535(String var0) {
+   public static Optional<VideoMode> method31535(String var0) {
       if (var0 == null) {
-         return Optional.<Class8737>empty();
+         return Optional.<VideoMode>empty();
       } else {
          try {
             Matcher var3 = field39395.matcher(var0);
@@ -120,12 +120,12 @@ public final class Class8737 {
                }
 
                int var10 = var9 / 3;
-               return Optional.<Class8737>of(new Class8737(var4, var5, var10, var10, var10, var7));
+               return Optional.<VideoMode>of(new VideoMode(var4, var5, var10, var10, var10, var7));
             }
          } catch (Exception var11) {
          }
 
-         return Optional.<Class8737>empty();
+         return Optional.<VideoMode>empty();
       }
    }
 

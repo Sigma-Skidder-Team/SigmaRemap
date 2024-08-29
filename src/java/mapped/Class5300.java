@@ -64,8 +64,8 @@ public class Class5300 extends Module {
                 if (this.getBooleanValueFromSetttingName("GUI")) {
                     ClientResource var4 = ResourceRegistry.JelloLightFont20;
                     byte var5 = -1;
-                    int var6 = Minecraft.getInstance().mainWindow.method8043();
-                    int var7 = Minecraft.getInstance().mainWindow.method8044();
+                    int var6 = Minecraft.getInstance().mainWindow.getWidth();
+                    int var7 = Minecraft.getInstance().mainWindow.getHeight();
                     if (this.field23835 && this.field23834 != null) {
                         this.field23835 = false;
                     }

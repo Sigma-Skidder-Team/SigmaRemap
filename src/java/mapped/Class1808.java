@@ -218,7 +218,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    public void method7933() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class8692.method31315(0);
       field9745 = -1;
       field9744 = null;
@@ -233,7 +233,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    public void method7934() {
-      RenderSystem.method27808(RenderSystem::method27806);
+      RenderSystem.assertThread(RenderSystem::method27806);
       this.field9754 = false;
       field9744 = this;
       this.field9755.method18285();
@@ -268,18 +268,18 @@ public class Class1808 implements Class1809, AutoCloseable {
 
    @Nullable
    public Class1708 method7936(String var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return this.field9751.get(var1);
    }
 
    public Class1709 method7937(String var1) {
-      RenderSystem.method27808(RenderSystem::method27806);
+      RenderSystem.assertThread(RenderSystem::method27806);
       Class1708 var4 = this.method7936(var1);
       return (Class1709)(var4 != null ? var4 : field9743);
    }
 
    private void method7938() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       IntArrayList var3 = new IntArrayList();
 
       for (int var4 = 0; var4 < this.field9747.size(); var4++) {

@@ -271,8 +271,8 @@ public class Class4308 extends Class4307 {
       }
 
       for (Class4305 var9 : this.method13241()) {
-         float var10 = (float)(var9.method13265() + var9.method13269() / 2 - field20941.mainWindow.method8044() / 2) * (1.0F - var4) * 0.5F;
-         float var11 = (float)(var9.method13263() + var9.method13267() / 2 - field20941.mainWindow.method8043() / 2) * (1.0F - var4) * 0.5F;
+         float var10 = (float)(var9.method13265() + var9.method13269() / 2 - field20941.mainWindow.getHeight() / 2) * (1.0F - var4) * 0.5F;
+         float var11 = (float)(var9.method13263() + var9.method13267() / 2 - field20941.mainWindow.getWidth() / 2) * (1.0F - var4) * 0.5F;
          var9.method13286((int)var11, (int)var10);
          var9.method13279(1.5F - var4 * 0.5F, 1.5F - var4 * 0.5F);
       }

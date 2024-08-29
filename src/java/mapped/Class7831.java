@@ -88,7 +88,7 @@ public class Class7831 {
    }
 
    public void method26218(long var1) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          int var5 = this.method26216();
          ImmutableList var6 = this.method26217();
 
@@ -101,7 +101,7 @@ public class Class7831 {
    }
 
    public void method26219() {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          UnmodifiableIterator var3 = this.method26217().iterator();
 
          while (var3.hasNext()) {

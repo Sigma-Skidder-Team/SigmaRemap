@@ -56,12 +56,12 @@ public enum Class2237 {
    }
 
    public void method8974() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class7414.method23856(3333, this.method8973());
    }
 
    public void method8975() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class7414.method23856(3317, this.method8973());
    }
 

@@ -510,10 +510,10 @@ public class GameRenderer implements Class215, AutoCloseable {
 
       if (!this.field802.skipRenderWorld) {
          int var7 = (int)(
-            this.field802.mouseHelper.method36738() * (double)this.field802.getMainWindow().getScaledWidth() / (double)this.field802.getMainWindow().method8043()
+            this.field802.mouseHelper.method36738() * (double)this.field802.getMainWindow().getScaledWidth() / (double)this.field802.getMainWindow().getWidth()
          );
          int var8 = (int)(
-            this.field802.mouseHelper.method36739() * (double)this.field802.getMainWindow().getScaledHeight() / (double)this.field802.getMainWindow().method8044()
+            this.field802.mouseHelper.method36739() * (double)this.field802.getMainWindow().getScaledHeight() / (double)this.field802.getMainWindow().getHeight()
          );
          if (var4 && this.field802.world != null && !Class7944.method26988()) {
             this.field802.getProfiler().startSection("level");
@@ -549,7 +549,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
          RenderSystem.matrixMode(5889);
          RenderSystem.loadIdentity();
-         RenderSystem.ortho(0.0, (double)var9.getFramebufferWidth() / var9.method8049(), (double)var9.getFramebufferHeight() / var9.method8049(), 0.0, 1000.0, 3000.0);
+         RenderSystem.ortho(0.0, (double)var9.getFramebufferWidth() / var9.getGuiScaleFactor(), (double)var9.getFramebufferHeight() / var9.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
          RenderSystem.matrixMode(5888);
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
@@ -578,7 +578,7 @@ public class GameRenderer implements Class215, AutoCloseable {
                }
 
                if (this.field802.gameSettings.showDebugInfo) {
-                  Class8578.method30657(var10, (int)this.field802.getMainWindow().method8049());
+                  Class8578.method30657(var10, (int)this.field802.getMainWindow().getGuiScaleFactor());
                }
 
                RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
@@ -643,7 +643,7 @@ public class GameRenderer implements Class215, AutoCloseable {
                         this.field802.getMainWindow().getScaledHeight(),
                         this.field802.getMainWindow().getFramebufferWidth(),
                         this.field802.getMainWindow().getFramebufferHeight(),
-                        this.field802.getMainWindow().method8049()
+                        this.field802.getMainWindow().getGuiScaleFactor()
                      )
                );
                throw new ReportedException(var17);

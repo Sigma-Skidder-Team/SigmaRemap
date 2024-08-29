@@ -772,8 +772,8 @@ public class GameSettings {
             var1.println("chatLineSpacing:" + this.field44584);
             var1.println("textBackgroundOpacity:" + this.field44585);
             var1.println("backgroundForChatOnly:" + this.field44624);
-            if (this.field44659.getMainWindow().method8030().isPresent()) {
-               var1.println("fullscreenResolution:" + this.field44659.getMainWindow().method8030().get().method31536());
+            if (this.field44659.getMainWindow().getVideoMode().isPresent()) {
+               var1.println("fullscreenResolution:" + this.field44659.getMainWindow().getVideoMode().get().method31536());
             }
 
             var1.println("hideServerAddress:" + this.field44587);

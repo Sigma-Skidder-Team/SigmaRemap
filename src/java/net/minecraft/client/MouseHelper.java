@@ -97,8 +97,8 @@ public class MouseHelper {
             boolean[] var10 = new boolean[]{false};
             if (this.field44285.loadingGui == null) {
                if (this.field44285.currentScreen != null) {
-                  double var11 = this.field44289 * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().method8043();
-                  double var13 = this.field44290 * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().method8044();
+                  double var11 = this.field44289 * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().getWidth();
+                  double var13 = this.field44290 * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().getHeight();
                   if (!var16) {
                      Screen.wrapScreenError(
                         () -> var10[0] = this.field44285.currentScreen.method2565(var11, var13, var9),
@@ -174,8 +174,8 @@ public class MouseHelper {
                         }
                      }
                   } else {
-                     double var12 = this.field44289 * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().method8043();
-                     double var14 = this.field44290 * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().method8044();
+                     double var12 = this.field44289 * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().getWidth();
+                     double var14 = this.field44290 * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().getHeight();
                      this.field44285.currentScreen.method2649(var12, var14, var10);
                   }
                }
@@ -220,12 +220,12 @@ public class MouseHelper {
 
          Screen var9 = this.field44285.currentScreen;
          if (var9 != null && this.field44285.loadingGui == null) {
-            double var10 = var3 * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().method8043();
-            double var12 = var5 * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().method8044();
+            double var10 = var3 * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().getWidth();
+            double var12 = var5 * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().getHeight();
             Screen.wrapScreenError(() -> var9.method5541(var10, var12), "mouseMoved event handler", var9.getClass().getCanonicalName());
             if (this.field44292 != -1 && this.field44295 > 0.0) {
-               double var14 = (var3 - this.field44289) * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().method8043();
-               double var16 = (var5 - this.field44290) * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().method8044();
+               double var14 = (var3 - this.field44289) * (double)this.field44285.getMainWindow().getScaledWidth() / (double)this.field44285.getMainWindow().getWidth();
+               double var16 = (var5 - this.field44290) * (double)this.field44285.getMainWindow().getScaledHeight() / (double)this.field44285.getMainWindow().getHeight();
                Screen.wrapScreenError(
                   () -> var9.method2516(var10, var12, this.field44292, var14, var16), "mouseDragged event handler", var9.getClass().getCanonicalName()
                );
@@ -314,8 +314,8 @@ public class MouseHelper {
          }
 
          this.field44302 = true;
-         this.field44289 = (double)(this.field44285.getMainWindow().method8043() / 2);
-         this.field44290 = (double)(this.field44285.getMainWindow().method8044() / 2);
+         this.field44289 = (double)(this.field44285.getMainWindow().getWidth() / 2);
+         this.field44290 = (double)(this.field44285.getMainWindow().getHeight() / 2);
          Class9798.method38642(this.field44285.getMainWindow().getHandle(), 212995, this.field44289, this.field44290);
          this.field44285.displayGuiScreen((Screen)null);
          this.field44285.leftClickCounter = 10000;
@@ -326,8 +326,8 @@ public class MouseHelper {
    public void ungrabMouse() {
       if (this.field44302) {
          this.field44302 = false;
-         this.field44289 = (double)(this.field44285.getMainWindow().method8043() / 2);
-         this.field44290 = (double)(this.field44285.getMainWindow().method8044() / 2);
+         this.field44289 = (double)(this.field44285.getMainWindow().getWidth() / 2);
+         this.field44290 = (double)(this.field44285.getMainWindow().getHeight() / 2);
          Class9798.method38642(this.field44285.getMainWindow().getHandle(), 212993, this.field44289, this.field44290);
       }
    }

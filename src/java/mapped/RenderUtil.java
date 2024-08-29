@@ -70,7 +70,7 @@ public class RenderUtil {
    }
 
    public static float method11417() {
-      return (float) mc.mainWindow.method8049();
+      return (float) mc.mainWindow.getGuiScaleFactor();
    }
 
    public static void method11418(float var0, float var1, float var2, float var3) {
@@ -1296,7 +1296,7 @@ public class RenderUtil {
       RenderSystem.matrixMode(5888);
       RenderSystem.loadIdentity();
       mc.getItemRenderer().field847 -= 1101.0F;
-      RenderSystem.scaled(1.0 / mc.mainWindow.method8049(), 1.0 / mc.mainWindow.method8049(), 1.0);
+      RenderSystem.scaled(1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0 / mc.mainWindow.getGuiScaleFactor(), 1.0);
       RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
       mc.getItemRenderer().method791(var0, 0, 0);

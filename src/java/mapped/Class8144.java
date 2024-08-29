@@ -17,13 +17,13 @@ public class Class8144 {
    }
 
    public void method28247(Class1809 var1) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       this.field35043++;
       Class7414.method23722(var1.method7944(), this.field35042);
    }
 
    public void method28248() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       this.field35043--;
       if (this.field35043 <= 0) {
          Class7414.method23723(this.field35042);
@@ -36,7 +36,7 @@ public class Class8144 {
    }
 
    public static Class8144 method28250(Class1853 var0, String var1, InputStream var2, String var3) throws IOException {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       String var6 = Class8535.method30374(var2);
       if (var6 != null) {
          int var7 = Class7414.method23724(Class1853.method8098(var0));

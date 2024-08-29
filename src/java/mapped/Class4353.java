@@ -8,7 +8,7 @@ public class Class4353 extends Class4278 {
    public final Class4308 field21278;
 
    public Class4353(Class4308 var1, Class4305 var2, String var3) {
-      super(var2, var3, 0, 0, Minecraft.getInstance().mainWindow.method8043(), Minecraft.getInstance().mainWindow.method8044(), false);
+      super(var2, var3, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);
       this.field21278 = var1;
    }
 

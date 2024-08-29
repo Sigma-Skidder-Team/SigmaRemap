@@ -133,7 +133,7 @@ public class Class7582 {
    }
 
    public static void method24820(int var0, boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       if (var0 > 0) {
          GLCapabilities var4 = GL.getCapabilities();
          if (!var4.GL_KHR_debug) {

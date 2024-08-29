@@ -291,7 +291,7 @@ public class Class1266 extends AbstractGui {
    public int method5942() {
       int var3 = method5945(this.field6699.gameSettings.field44596);
       MainWindow var4 = Minecraft.getInstance().getMainWindow();
-      int var5 = (int)((double)(var4.getFramebufferWidth() - 3) / var4.method8049());
+      int var5 = (int)((double)(var4.getFramebufferWidth() - 3) / var4.getGuiScaleFactor());
       return MathHelper.method37775(var3, 0, var5);
    }
 

@@ -38,14 +38,14 @@ public class Class8157 {
    });
 
    public static String method28295() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return GLFW.glfwGetCurrentContext() != 0L
          ? Class7414.method23860(7937) + " GL version " + Class7414.method23860(7938) + ", " + Class7414.method23860(7936)
          : "NO CONTEXT";
    }
 
    public static int method28296(MainWindow var0) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       long var3 = GLFW.glfwGetWindowMonitor(var0.getHandle());
       if (var3 == 0L) {
          var3 = GLFW.glfwGetPrimaryMonitor();
@@ -56,12 +56,12 @@ public class Class8157 {
    }
 
    public static String method28297() {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       return Version.getVersion();
    }
 
    public static LongSupplier method28298() {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       MainWindow.method8012((var0, var1) -> {
          throw new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", var0, var1));
       });
@@ -82,7 +82,7 @@ public class Class8157 {
    }
 
    public static void method28299(GLFWErrorCallbackI var0) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLFWErrorCallback var3 = GLFW.glfwSetErrorCallback(var0);
       if (var3 != null) {
          var3.free();
@@ -94,7 +94,7 @@ public class Class8157 {
    }
 
    public static void method28301() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (GL.getCapabilities().GL_NV_fog_distance) {
          if (Class7944.method26804()) {
             Class7414.method23786(34138, 34139);
@@ -107,7 +107,7 @@ public class Class8157 {
    }
 
    public static void method28302(int var0, boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLCapabilities var4 = GL.getCapabilities();
       field35102 = "Using framebuffer using " + Class7414.method23720(var4);
 
@@ -129,7 +129,7 @@ public class Class8157 {
    }
 
    public static void method28305(int var0, boolean var1, boolean var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class7414.method23805();
       Class7414.method23713(false);
       Tessellator var6 = RenderSystem.method27937();

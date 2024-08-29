@@ -56,7 +56,7 @@ public class Class841 extends Class838 {
          if (var4.field6482) {
             if (var4.field6523 == 200) {
                this.mc.gameSettings.saveOptions();
-               this.mc.getMainWindow().method8032();
+               this.mc.getMainWindow().update();
                this.mc.displayGuiScreen(this.field4639);
             }
 
@@ -73,7 +73,7 @@ public class Class841 extends Class838 {
    @Override
    public void onClose() {
       this.mc.gameSettings.saveOptions();
-      this.mc.getMainWindow().method8032();
+      this.mc.getMainWindow().update();
       super.onClose();
    }
 

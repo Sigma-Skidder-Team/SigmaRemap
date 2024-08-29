@@ -65,7 +65,7 @@ public class Class4296 extends Class4278 {
          int var5 = this.field20895 + 5;
          RenderUtil.method11455(
             (float)var5,
-            (float)((Minecraft.getInstance().mainWindow.method8044() - var4 * 342 / 460) / 2 - 60),
+            (float)((Minecraft.getInstance().mainWindow.getHeight() - var4 * 342 / 460) / 2 - 60),
             (float)var4,
             (float)(var4 * 342 / 460),
             ResourcesDecrypter.imgPNG

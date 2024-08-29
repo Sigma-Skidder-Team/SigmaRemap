@@ -23,7 +23,7 @@ public class Class1698 implements AutoCloseable {
    }
 
    public void method7303(BufferBuilder var1) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          this.method7305(var1);
       } else {
          RenderSystem.method27810(() -> this.method7305(var1));
@@ -31,7 +31,7 @@ public class Class1698 implements AutoCloseable {
    }
 
    public CompletableFuture<Void> method7304(BufferBuilder var1) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          this.method7305(var1);
          return CompletableFuture.<Void>completedFuture((Void)null);
       } else {

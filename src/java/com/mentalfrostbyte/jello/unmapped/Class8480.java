@@ -75,8 +75,8 @@ public class Class8480 {
          RenderSystem.loadIdentity();
          RenderSystem.ortho(
             0.0,
-            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
-            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
+            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(),
+            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(),
             0.0,
             1000.0,
             3000.0
@@ -85,7 +85,7 @@ public class Class8480 {
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0
+            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0
          );
          int var4 = 35;
          RenderUtil.method11420(field36354, field36355 - var4, field36356, field36357 + var4);
@@ -113,8 +113,8 @@ public class Class8480 {
          RenderSystem.loadIdentity();
          RenderSystem.ortho(
             0.0,
-            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
-            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
+            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(),
+            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(),
             0.0,
             1000.0,
             3000.0
@@ -123,7 +123,7 @@ public class Class8480 {
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348, 1.0
+            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0
          );
          mc.framebuffer.bindFramebuffer(true);
       }

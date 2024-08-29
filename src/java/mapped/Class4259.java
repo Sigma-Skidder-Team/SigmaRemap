@@ -74,7 +74,7 @@ public class Class4259 extends Class4247 {
          float var7 = (float)(this.field20897 - var6) / 2.0F;
          float var8 = (float)(this.field20898 - var6) / 2.0F;
          float var9 = (float)var1 - ((float)this.method13271() + var8 + (float)(var6 / 2));
-         float var10 = (float)(Minecraft.getInstance().mainWindow.method8044() - var2) - ((float)this.method13272() + var7 + (float)(var6 / 2));
+         float var10 = (float)(Minecraft.getInstance().mainWindow.getHeight() - var2) - ((float)this.method13272() + var7 + (float)(var6 / 2));
          float var11 = (float)var6 / ((float)(this.field20649 - 1) * 2.0F);
          float var12 = (float)(this.field20648.field32174 * 16) - this.field20651 * 16.0F;
          float var13 = (float)(this.field20648.field32175 * 16) - this.field20650 * 16.0F;

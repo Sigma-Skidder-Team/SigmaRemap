@@ -23,8 +23,8 @@ public class Class4319 extends Class4307 {
       super.method13027(var1);
       int var4 = ResourcesDecrypter.mentalfrostbytePNG.getImageWidth();
       int var5 = ResourcesDecrypter.mentalfrostbytePNG.getImageHeight();
-      var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.method8044() / 1.65F));
-      var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.method8044() / 1.65F));
+      var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
+      var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
       RenderUtil.method11426(
          0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)

@@ -113,16 +113,16 @@ public class Class4304 extends Class4305 implements Class4347 {
                   this.method13264(0);
                }
 
-               if (this.method13263() + this.method13267() > Minecraft.getInstance().mainWindow.method8043()) {
-                  this.method13264(Minecraft.getInstance().mainWindow.method8043() - this.method13267());
+               if (this.method13263() + this.method13267() > Minecraft.getInstance().mainWindow.getWidth()) {
+                  this.method13264(Minecraft.getInstance().mainWindow.getWidth() - this.method13267());
                }
 
                if (this.method13265() < 0) {
                   this.method13266(0);
                }
 
-               if (this.method13265() + this.method13269() > Minecraft.getInstance().mainWindow.method8044()) {
-                  this.method13266(Minecraft.getInstance().mainWindow.method8044() - this.method13269());
+               if (this.method13265() + this.method13269() > Minecraft.getInstance().mainWindow.getHeight()) {
+                  this.method13266(Minecraft.getInstance().mainWindow.getHeight() - this.method13269());
                }
             } else {
                if (this.method13263() < 0) {

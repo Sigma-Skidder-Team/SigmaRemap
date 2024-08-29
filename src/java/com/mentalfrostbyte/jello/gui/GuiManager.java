@@ -70,7 +70,7 @@ public class GuiManager {
         field41345 = GLFW.glfwCreateStandardCursor(221188);
         field41346 = GLFW.glfwCreateStandardCursor(221186);
         GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), field41344);
-        field41348 = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.method8044());
+        field41348 = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public static boolean method33457(Screen var0) {
@@ -167,8 +167,8 @@ public class GuiManager {
 
     public void method33460() {
         if (this.field41352 != null) {
-            this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.method8043(), (int) Minecraft.getInstance().mouseHelper.method36738()));
-            this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.method8044(), (int) Minecraft.getInstance().mouseHelper.method36739()));
+            this.field41354[0] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getWidth(), (int) Minecraft.getInstance().mouseHelper.method36738()));
+            this.field41354[1] = Math.max(0, Math.min(Minecraft.getInstance().mainWindow.getHeight(), (int) Minecraft.getInstance().mouseHelper.method36739()));
 
             for (Integer var4 : this.field41339) {
                 this.method33463(var4);
@@ -237,7 +237,7 @@ public class GuiManager {
             short var5 = 170;
 
             if (Minecraft.getInstance().gameSettings.showDebugInfo) {
-                var3 = Minecraft.getInstance().mainWindow.method8043() / 2 - var5 / 2;
+                var3 = Minecraft.getInstance().mainWindow.getWidth() / 2 - var5 / 2;
             }
 
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
@@ -379,14 +379,14 @@ public class GuiManager {
             this.method33476(Client.getInstance().getConfig());
         }
 
-        if (Minecraft.getInstance().mainWindow.method8043() != 0 && Minecraft.getInstance().mainWindow.method8044() != 0) {
+        if (Minecraft.getInstance().mainWindow.getWidth() != 0 && Minecraft.getInstance().mainWindow.getHeight() != 0) {
             field41348 = (float) Math.max(
-                    Minecraft.getInstance().mainWindow.getFramebufferWidth() / Minecraft.getInstance().mainWindow.method8043(),
-                    Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.method8044()
+                    Minecraft.getInstance().mainWindow.getFramebufferWidth() / Minecraft.getInstance().mainWindow.getWidth(),
+                    Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight()
             );
         }
 
-        RenderUtil.method11411(Minecraft.getInstance().mainWindow.method8043(), Minecraft.getInstance().mainWindow.method8044());
+        RenderUtil.method11411(Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public Class4307 method33480() {

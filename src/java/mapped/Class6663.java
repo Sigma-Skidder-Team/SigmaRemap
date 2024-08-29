@@ -11,8 +11,8 @@ public class Class6663 implements Class6664 {
       var1.method13264(0);
       var1.method13266(0);
       if (var2 == null) {
-         var1.method13268(Minecraft.getInstance().mainWindow.method8043());
-         var1.method13270(Minecraft.getInstance().mainWindow.method8044());
+         var1.method13268(Minecraft.getInstance().mainWindow.getWidth());
+         var1.method13270(Minecraft.getInstance().mainWindow.getHeight());
       } else {
          var1.method13268(var2.method13267());
          var1.method13270(var2.method13269());

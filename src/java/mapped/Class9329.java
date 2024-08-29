@@ -11,11 +11,11 @@ import org.lwjgl.glfw.GLFWMonitorCallbackI;
 
 public class Class9329 {
    private static String[] field43292;
-   private final Long2ObjectMap<Class7513> field43293 = new Long2ObjectOpenHashMap();
+   private final Long2ObjectMap<Monitor> field43293 = new Long2ObjectOpenHashMap();
    private final Class7220 field43294;
 
    public Class9329(Class7220 var1) {
-      RenderSystem.method27808(RenderSystem::method27809);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       this.field43294 = var1;
       GLFW.glfwSetMonitorCallback(this::method35257);
       PointerBuffer var4 = GLFW.glfwGetMonitors();
@@ -28,7 +28,7 @@ public class Class9329 {
    }
 
    private void method35257(long var1, int var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (var3 != 262145) {
          if (var3 == 262146) {
             this.field43293.remove(var1);
@@ -39,29 +39,29 @@ public class Class9329 {
    }
 
    @Nullable
-   public Class7513 method35258(long var1) {
-      RenderSystem.method27808(RenderSystem::method27809);
-      return (Class7513)this.field43293.get(var1);
+   public Monitor method35258(long var1) {
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
+      return (Monitor)this.field43293.get(var1);
    }
 
    @Nullable
-   public Class7513 method35259(MainWindow var1) {
+   public Monitor getMonitor(MainWindow var1) {
       long var4 = GLFW.glfwGetWindowMonitor(var1.getHandle());
       if (var4 == 0L) {
-         int var6 = var1.method8047();
-         int var7 = var6 + var1.method8043();
-         int var8 = var1.method8048();
-         int var9 = var8 + var1.method8044();
+         int var6 = var1.getWindowX();
+         int var7 = var6 + var1.getWidth();
+         int var8 = var1.getWindowY();
+         int var9 = var8 + var1.getHeight();
          int var10 = -1;
-         Class7513 var11 = null;
+         Monitor var11 = null;
          ObjectIterator var12 = this.field43293.values().iterator();
 
          while (var12.hasNext()) {
-            Class7513 var13 = (Class7513)var12.next();
+            Monitor var13 = (Monitor)var12.next();
             int var14 = var13.method24489();
-            int var15 = var14 + var13.method24488().method31529();
+            int var15 = var14 + var13.method24488().getWidth();
             int var16 = var13.method24490();
-            int var17 = var16 + var13.method24488().method31530();
+            int var17 = var16 + var13.method24488().getHeight();
             int var18 = method35260(var6, var14, var15);
             int var19 = method35260(var7, var14, var15);
             int var20 = method35260(var8, var16, var17);
@@ -90,7 +90,7 @@ public class Class9329 {
    }
 
    public void method35261() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GLFWMonitorCallback var3 = GLFW.glfwSetMonitorCallback((GLFWMonitorCallbackI)null);
       if (var3 != null) {
          var3.free();

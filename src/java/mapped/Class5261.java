@@ -83,7 +83,7 @@ public class Class5261 extends PremiumModule {
                         this.field23662.changeDirection(this.field23667 <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
                     }
 
-                    float var4 = (float) mc.mainWindow.method8043() / (float) mc.mainWindow.method8044();
+                    float var4 = (float) mc.mainWindow.getWidth() / (float) mc.mainWindow.getHeight();
                     int var5 = (int) this.getNumberValueBySettingName("Size");
                     int var6 = (int) ((float) var5 / var4);
                     int var7 = 10;
@@ -99,8 +99,8 @@ public class Class5261 extends PremiumModule {
                     }
 
                     RenderUtil.method11463(
-                            (float) (mc.mainWindow.method8043() - var7 - var5),
-                            (float) (mc.mainWindow.method8044() + var8),
+                            (float) (mc.mainWindow.getWidth() - var7 - var5),
+                            (float) (mc.mainWindow.getHeight() + var8),
                             (float) var5,
                             (float) (var6 - 1),
                             14.0F,
@@ -120,8 +120,8 @@ public class Class5261 extends PremiumModule {
                     RenderSystem.loadIdentity();
                     RenderSystem.ortho(
                             0.0,
-                            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.method8049(),
-                            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.method8049(),
+                            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(),
+                            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(),
                             0.0,
                             1000.0,
                             3000.0
@@ -130,8 +130,8 @@ public class Class5261 extends PremiumModule {
                     RenderSystem.loadIdentity();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
                     GL11.glScaled(
-                            1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348,
-                            1.0 / mc.mainWindow.method8049() * (double) GuiManager.field41348,
+                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348,
+                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348,
                             1.0
                     );
                     field23663.unbindFramebuffer();

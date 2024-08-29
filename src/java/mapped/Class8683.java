@@ -27,7 +27,7 @@ public class Class8683 {
    }
 
    public static void method31252(File var0, String var1, int var2, int var3, Framebuffer var4, Consumer<ITextComponent> var5) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          method31253(var0, var1, var2, var3, var4, var5);
       } else {
          RenderSystem.method27810(() -> method31253(var0, var1, var2, var3, var4, var5));

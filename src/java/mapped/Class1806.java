@@ -141,7 +141,7 @@ public final class Class1806 implements AutoCloseable {
    }
 
    public static void method7883(boolean var0) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!var0) {
          Class7414.method23808(3553, 10242, 10497);
          Class7414.method23808(3553, 10243, 10497);
@@ -152,7 +152,7 @@ public final class Class1806 implements AutoCloseable {
    }
 
    public static void method7884(boolean var0, boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!var0) {
          int var4 = Class7944.method26801();
          Class7414.method23808(3553, 10241, !var1 ? 9728 : var4);
@@ -278,7 +278,7 @@ public final class Class1806 implements AutoCloseable {
    }
 
    private void method7896(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, boolean var9, boolean var10, boolean var11) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       this.method7885();
       method7884(var8, var10);
       method7883(var9);
@@ -298,7 +298,7 @@ public final class Class1806 implements AutoCloseable {
    }
 
    public void method7897(int var1, boolean var2) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       this.method7885();
       this.field9724.method8974();
       Class7414.method23817(3553, var1, this.field9724.method8976(), 5121, this.field9728);

@@ -15,7 +15,7 @@ public class Framebuffer {
    public int field35739;
 
    public Framebuffer(int var1, int var2, boolean var3, boolean var4) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       this.field35734 = var3;
       this.field35735 = -1;
       this.field35736 = -1;
@@ -29,7 +29,7 @@ public class Framebuffer {
    }
 
    public void resize(int var1, int var2, boolean var3) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          this.method29104(var1, var2, var3);
       } else {
          RenderSystem.method27810(() -> this.method29104(var1, var2, var3));
@@ -37,7 +37,7 @@ public class Framebuffer {
    }
 
    private void method29104(int var1, int var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class7414.method23711();
       if (this.field35735 >= 0) {
          this.method29105();
@@ -48,7 +48,7 @@ public class Framebuffer {
    }
 
    public void method29105() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       this.method29111();
       this.unbindFramebuffer();
       if (this.field35737 > -1) {
@@ -69,7 +69,7 @@ public class Framebuffer {
    }
 
    public void method29106(Framebuffer var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!Class7414.method23862()) {
          Class7414.method23751(Class8821.field39775, this.field35735);
          int var4 = Class7414.method23752();
@@ -90,7 +90,7 @@ public class Framebuffer {
    }
 
    public void method29107(int var1, int var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       this.field35732 = var1;
       this.field35733 = var2;
       this.field35730 = var1;
@@ -123,7 +123,7 @@ public class Framebuffer {
    }
 
    public void method29108(int var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       this.field35739 = var1;
       Class7414.method23814(this.field35736);
       Class7414.method23808(3553, 10241, var1);
@@ -134,7 +134,7 @@ public class Framebuffer {
    }
 
    public void method29109() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       int var3 = Class7414.method23756(Class8821.field39775);
       if (var3 != Class8821.field39779) {
          if (var3 != Class8821.field39780) {
@@ -158,17 +158,17 @@ public class Framebuffer {
    }
 
    public void method29110() {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class7414.method23814(this.field35736);
    }
 
    public void method29111() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class7414.method23814(0);
    }
 
    public void bindFramebuffer(boolean var1) {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          this.method29113(var1);
       } else {
          RenderSystem.method27810(() -> this.method29113(var1));
@@ -176,7 +176,7 @@ public class Framebuffer {
    }
 
    private void method29113(boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       Class7414.method23751(Class8821.field39775, this.field35735);
       if (var1) {
          Class7414.method23821(0, 0, this.field35732, this.field35733);
@@ -184,7 +184,7 @@ public class Framebuffer {
    }
 
    public void unbindFramebuffer() {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          Class7414.method23751(Class8821.field39775, 0);
       } else {
          RenderSystem.method27810(() -> Class7414.method23751(Class8821.field39775, 0));
@@ -203,8 +203,8 @@ public class Framebuffer {
    }
 
    public void method29117(int var1, int var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27807);
-      if (RenderSystem.method27809()) {
+      RenderSystem.assertThread(RenderSystem::method27807);
+      if (RenderSystem.isInInitPhase()) {
          this.method29118(var1, var2, var3);
       } else {
          RenderSystem.method27810(() -> this.method29118(var1, var2, var3));
@@ -212,7 +212,7 @@ public class Framebuffer {
    }
 
    private void method29118(int var1, int var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27803);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class7414.method23822(true, true, true, false);
       Class7414.method23710();
       Class7414.method23713(false);
@@ -251,7 +251,7 @@ public class Framebuffer {
    }
 
    public void method29119(boolean var1) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       this.bindFramebuffer(true);
       Class7414.method23827(this.field35738[0], this.field35738[1], this.field35738[2], this.field35738[3]);
       short var4 = 16384;

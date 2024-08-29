@@ -6,10 +6,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class5810 extends Class5807 {
    public Class5810(MainWindow var1) {
-      this(var1, var1.method8050());
+      this(var1, var1.getMonitor());
    }
 
-   private Class5810(MainWindow var1, Class7513 var2) {
+   private Class5810(MainWindow var1, Monitor var2) {
       super(
          "options.fullscreen.resolution",
          -1.0,
@@ -17,7 +17,7 @@ public class Class5810 extends Class5807 {
          1.0F,
          var2x -> {
             if (var2 != null) {
-               Optional<Class8737> var5 = var1.method8030();
+               Optional<VideoMode> var5 = var1.getVideoMode();
                return var5.map(var1xx -> (double)var2.method24487(var1xx)).orElse(-1.0);
             } else {
                return -1.0;
@@ -26,9 +26,9 @@ public class Class5810 extends Class5807 {
          (var2x, var3) -> {
             if (var2 != null) {
                if (var3 != -1.0) {
-                  var1.method8031(Optional.<Class8737>of(var2.method24491(var3.intValue())));
+                  var1.setVideoMode(Optional.<VideoMode>of(var2.method24491(var3.intValue())));
                } else {
-                  var1.method8031(Optional.<Class8737>empty());
+                  var1.setVideoMode(Optional.<VideoMode>empty());
                }
             }
          },

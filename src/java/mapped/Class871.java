@@ -58,7 +58,7 @@ public class Class871 extends Class851<Class5822> {
       RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      int var9 = (int)this.mc.getMainWindow().method8049();
+      int var9 = (int)this.mc.getMainWindow().getGuiScaleFactor();
       RenderSystem.method27869((this.field4564 - 320) / 2 * var9, (this.field4565 - 240) / 2 * var9, 320 * var9, 240 * var9);
       RenderSystem.translatef(-0.34F, 0.23F, 0.0F);
       RenderSystem.method27888(Class9367.method35511(90.0, 1.3333334F, 9.0F, 80.0F));

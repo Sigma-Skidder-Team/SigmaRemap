@@ -369,14 +369,14 @@ public class BlockFly extends ModuleWithModuleSettings {
             if (this.getBooleanValueFromSetttingName("Show Block Amount")) {
                 if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                     this.method16744(
-                            mc.mainWindow.method8043() / 2,
-                            mc.mainWindow.method8044() / 2 + 15 - (int) (10.0F * this.field23885.calcPercent()),
+                            mc.mainWindow.getWidth() / 2,
+                            mc.mainWindow.getHeight() / 2 + 15 - (int) (10.0F * this.field23885.calcPercent()),
                             this.field23885.calcPercent()
                     );
                 } else {
                     this.method16745(
-                            mc.mainWindow.method8043() / 2,
-                            mc.mainWindow.method8044() - 138 - (int) (25.0F * Class8056.method27664(this.field23885.calcPercent(), 0.0F, 1.0F, 1.0F)),
+                            mc.mainWindow.getWidth() / 2,
+                            mc.mainWindow.getHeight() - 138 - (int) (25.0F * Class8056.method27664(this.field23885.calcPercent(), 0.0F, 1.0F, 1.0F)),
                             this.field23885.calcPercent()
                     );
                 }

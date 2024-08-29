@@ -368,7 +368,7 @@ public class TextureAtlasSprite implements AutoCloseable {
                   return;
                }
 
-               if (RenderSystem.method27803()) {
+               if (RenderSystem.isOnRenderThread()) {
                   Class1816.method8061(this.field9330);
                } else {
                   RenderSystem.method27810(() -> Class1816.method8061(this.field9330));

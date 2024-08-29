@@ -62,7 +62,7 @@ public class Class4348 extends Class4278 {
          this.field21248.changeDirection(Direction.BACKWARDS);
       }
 
-      if (this.method13272() + this.method13282() < Minecraft.getInstance().mainWindow.method8044() - 36 && this.method13272() + this.method13282() > 52) {
+      if (this.method13272() + this.method13282() < Minecraft.getInstance().mainWindow.getHeight() - 36 && this.method13272() + this.method13282() > 52) {
          if (this.field21244 != null && this.field21246 == null) {
             try {
                BufferedImage var6 = method13578(this.field21244.method25580());

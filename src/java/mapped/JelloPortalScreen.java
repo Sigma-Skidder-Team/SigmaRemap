@@ -43,7 +43,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
    public void method1923(MatrixStack var1, int var2, int var3, float var4) {
       super.method1923(var1, var2, var3, var4);
       RenderUtil.method11420(
-         0, 0, Minecraft.getInstance().mainWindow.method8043(), (int)(30.0 * Minecraft.getInstance().mainWindow.method8049() / (double) GuiManager.field41348)
+         0, 0, Minecraft.getInstance().mainWindow.getWidth(), (int)(30.0 * Minecraft.getInstance().mainWindow.getGuiScaleFactor() / (double) GuiManager.field41348)
       );
       this.method2469(var1);
       RenderUtil.method11422();

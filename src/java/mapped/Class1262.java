@@ -600,7 +600,7 @@ public class Class1262 extends AbstractGui {
 
    private void method5890(MatrixStack var1, FrameTimer var2, int var3, int var4, boolean var5) {
       if (!var5) {
-         int var8 = (int)(512.0 / this.field6665.getMainWindow().method8049());
+         int var8 = (int)(512.0 / this.field6665.getMainWindow().getGuiScaleFactor());
          var3 = Math.max(var3, var8);
          var4 = this.field6665.getMainWindow().getScaledWidth() - var3;
          RenderSystem.disableDepthTest();

@@ -11,7 +11,7 @@ public class Class291 extends Class290 {
 
    public Class291(Class1806 var1) {
       this.field1133 = var1;
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          Class8535.method30368(this.method1131(), this.field1133.method7886(), this.field1133.method7887());
          this.method1140();
          if (Class7944.method26921()) {
@@ -29,7 +29,7 @@ public class Class291 extends Class290 {
    }
 
    public Class291(int var1, int var2, boolean var3) {
-      RenderSystem.method27808(RenderSystem::method27807);
+      RenderSystem.assertThread(RenderSystem::method27807);
       this.field1133 = new Class1806(var1, var2, var3);
       Class8535.method30368(this.method1131(), this.field1133.method7886(), this.field1133.method7887());
       if (Class7944.method26921()) {

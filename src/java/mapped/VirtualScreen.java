@@ -9,7 +9,7 @@ public final class VirtualScreen implements AutoCloseable {
 
    public VirtualScreen(Minecraft var1) {
       this.field9260 = var1;
-      this.field9261 = new Class9329(Class7513::new);
+      this.field9261 = new Class9329(Monitor::new);
    }
 
    public MainWindow create(ScreenSize var1, String var2, String var3) {

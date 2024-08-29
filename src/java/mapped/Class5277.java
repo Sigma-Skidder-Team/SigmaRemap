@@ -26,16 +26,16 @@ public class Class5277 extends Module {
     @Override
     
     public void onEnable() {
-        this.field23721 = (float) ((double) (mc.mainWindow.method8043() - this.field23725.field41839) * Math.random());
-        this.field23722 = (float) ((double) (mc.mainWindow.method8044() - this.field23725.field41840) * Math.random());
+        this.field23721 = (float) ((double) (mc.mainWindow.getWidth() - this.field23725.field41839) * Math.random());
+        this.field23722 = (float) ((double) (mc.mainWindow.getHeight() - this.field23725.field41840) * Math.random());
         this.method16513();
     }
 
     @EventTarget
     private void method16512(Class4415 var1) throws IOException {
         if (this.isEnabled() && mc.player != null && mc.world != null) {
-            int var4 = mc.mainWindow.method8044();
-            int var5 = mc.mainWindow.method8043();
+            int var4 = mc.mainWindow.getHeight();
+            int var5 = mc.mainWindow.getWidth();
             byte var6 = 2;
             if (!(this.field23722 <= (float) var6)) {
                 if (this.field23722 + (float) this.field23725.field41840 > (float) var4) {

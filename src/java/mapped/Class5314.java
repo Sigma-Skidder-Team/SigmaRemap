@@ -29,11 +29,11 @@ public class Class5314 extends Module {
                     boolean var5 = false;
                     int var6 = 14;
                     if (this.getBooleanValueFromSetttingName("Show Player")) {
-                        var6 += this.method16696(0, mc.mainWindow.method8044() - 23, 114);
+                        var6 += this.method16696(0, mc.mainWindow.getHeight() - 23, 114);
                     }
 
                     if (this.getBooleanValueFromSetttingName("Show Armor")) {
-                        var6 += this.method16695(var6, mc.mainWindow.method8044() - 14) + 10;
+                        var6 += this.method16695(var6, mc.mainWindow.getHeight() - 14) + 10;
                     }
 
                     if (!this.getStringSettingValueByName("Cords").equals("None")) {
@@ -64,7 +64,7 @@ public class Class5314 extends Module {
         RenderUtil.method11439(
                 ResourceRegistry.JelloMediumFont20,
                 (float) var1,
-                (float) (mc.mainWindow.method8044() - var2),
+                (float) (mc.mainWindow.getHeight() - var2),
                 var6,
                 Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );

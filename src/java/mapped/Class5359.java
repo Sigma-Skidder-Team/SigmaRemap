@@ -61,7 +61,7 @@ public class Class5359 extends Module {
             }
 
             int var6 = -2;
-            int var7 = Minecraft.getInstance().mainWindow.method8043() - 2;
+            int var7 = Minecraft.getInstance().mainWindow.getWidth() - 2;
             byte var8 = -2;
             int var9 = new java.awt.Color(0, 192, 255, 255).getRGB();
             int var10 = new java.awt.Color(0, 192, 255, 255).getRGB();

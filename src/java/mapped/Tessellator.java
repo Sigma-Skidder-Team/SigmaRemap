@@ -6,7 +6,7 @@ public class Tessellator {
    private static final Tessellator field43408 = new Tessellator();
 
    public static Tessellator getInstance() {
-      RenderSystem.method27808(RenderSystem::method27807);
+      RenderSystem.assertThread(RenderSystem::method27807);
       return field43408;
    }
 

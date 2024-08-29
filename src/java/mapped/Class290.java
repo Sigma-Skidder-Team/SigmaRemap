@@ -13,7 +13,7 @@ public abstract class Class290 implements AutoCloseable {
    private boolean field1131;
 
    public void method1130(boolean var1, boolean var2) {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (!this.field1129 || this.field1126 != var1 || this.field1127 != var2) {
          this.field1129 = true;
          this.field1126 = var1;
@@ -36,7 +36,7 @@ public abstract class Class290 implements AutoCloseable {
    }
 
    public int method1131() {
-      RenderSystem.method27808(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::method27804);
       if (this.field1125 == -1) {
          this.field1125 = Class8535.method30366();
       }
@@ -45,7 +45,7 @@ public abstract class Class290 implements AutoCloseable {
    }
 
    public void method1132() {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          if (this.field1125 != -1) {
             Class9336.method35310(this, this.field1125);
             this.field1129 = false;

@@ -103,7 +103,7 @@ public class Class5947 extends Class5942<Class954> {
    public static void method18475() {
       Minecraft var2 = Minecraft.getInstance();
       double var3 = Class7944.method26833(var2.gameSettings.field44669, 1.0, 120.0);
-      double var5 = Math.max(1.5 * (double)var2.getMainWindow().method8044() / var3, 16.0);
+      double var5 = Math.max(1.5 * (double)var2.getMainWindow().getHeight() / var3, 16.0);
       field25939 = var5 * var5;
    }
 }

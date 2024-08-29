@@ -9,7 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Nullable;
-import java.awt.*;
 import java.awt.Dimension;
 import java.io.IOException;
 import java.io.InputStream;
@@ -464,7 +463,7 @@ public class AtlasTexture extends Class290 implements Class288 {
 
    @Override
    public void tick() {
-      if (RenderSystem.method27803()) {
+      if (RenderSystem.isOnRenderThread()) {
          this.method1097();
       } else {
          RenderSystem.method27810(this::method1097);

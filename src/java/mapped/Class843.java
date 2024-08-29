@@ -199,7 +199,7 @@ public class Class843 extends Class838 {
       int var5 = Class7540.method24651(this.field4673);
       int var6 = this.field4673.field6477 + (var4 - var5);
       int var7 = this.field4673.field6478 + var5 / 2;
-      GLFW.glfwSetCursorPos(var3.getHandle(), (double)var6 * var3.method8049(), (double)var7 * var3.method8049());
+      GLFW.glfwSetCursorPos(var3.getHandle(), (double)var6 * var3.getGuiScaleFactor(), (double)var7 * var3.getGuiScaleFactor());
    }
 
    private void method2583(Class1210 var1, int var2) {

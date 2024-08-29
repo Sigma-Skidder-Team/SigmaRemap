@@ -14,7 +14,7 @@ public class Class4352 extends Class4278 {
    public Class2422 field21276 = new Class2422();
 
    public Class4352(Class4305 var1, String var2) {
-      super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.method8043(), Minecraft.getInstance().mainWindow.method8044(), false);
+      super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);
       this.method13145(false);
       this.method13296(false);
       this.method13292(false);

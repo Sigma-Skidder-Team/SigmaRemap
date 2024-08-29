@@ -61,12 +61,12 @@ public class Class5265 extends PremiumModule {
             String var4 = this.getStringSettingValueByName("Position");
             switch (var4) {
                 case "Center":
-                    this.field23682 = Minecraft.getInstance().mainWindow.method8043() / 2 - this.field23684 / 2;
-                    this.field23683 = Minecraft.getInstance().mainWindow.method8044() / 2 + 40;
+                    this.field23682 = Minecraft.getInstance().mainWindow.getWidth() / 2 - this.field23684 / 2;
+                    this.field23683 = Minecraft.getInstance().mainWindow.getHeight() / 2 + 40;
                     break;
                 case "Bottom":
-                    this.field23682 = Minecraft.getInstance().mainWindow.method8043() / 2 - this.field23684 / 2;
-                    this.field23683 = Minecraft.getInstance().mainWindow.method8044() - 200;
+                    this.field23682 = Minecraft.getInstance().mainWindow.getWidth() / 2 - this.field23684 / 2;
+                    this.field23683 = Minecraft.getInstance().mainWindow.getHeight() - 200;
             }
 
             this.field23682 -= 100;

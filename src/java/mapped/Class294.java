@@ -51,7 +51,7 @@ public class Class294 extends Class293 {
 
       Minecraft.getInstance().execute(() -> {
          this.field1146 = true;
-         if (RenderSystem.method27803()) {
+         if (RenderSystem.isOnRenderThread()) {
             this.method1151(var1);
          } else {
             RenderSystem.method27810(() -> this.method1151(var1));

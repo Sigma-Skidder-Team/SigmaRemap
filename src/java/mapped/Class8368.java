@@ -147,12 +147,12 @@ public class Class8368 {
       int var5 = (int)(
          Class6850.method20852(this.field35928).mouseHelper.method36738()
             * (double)Class6850.method20852(this.field35928).getMainWindow().getScaledWidth()
-            / (double)Class6850.method20852(this.field35928).getMainWindow().method8043()
+            / (double)Class6850.method20852(this.field35928).getMainWindow().getWidth()
       );
       int var6 = (int)(
          Class6850.method20852(this.field35928).mouseHelper.method36739()
             * (double)Class6850.method20852(this.field35928).getMainWindow().getScaledHeight()
-            / (double)Class6850.method20852(this.field35928).getMainWindow().method8044()
+            / (double)Class6850.method20852(this.field35928).getMainWindow().getHeight()
       );
       if (!this.field35920.method36784(var5, var6)) {
          return false;
