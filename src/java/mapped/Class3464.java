@@ -16,7 +16,7 @@ public class Class3464 extends Class3462 {
          if (!var2.field9020) {
             Direction var10 = var6.getFace();
             Direction var11 = var10.method544() != Class113.field414 ? var10 : var4.method3386().method536();
-            var2.method6742((PlayerEntity)null, var3, Class6067.field26986, Class2266.field14732, 1.0F, 1.0F);
+            var2.method6742((PlayerEntity)null, var3, Sounds.field26986, Class2266.field14732, 1.0F, 1.0F);
             var2.method6725(var3, Blocks.field36589.method11579().method23465(Class3342.field18848, var11), 11);
             ItemEntity var12 = new ItemEntity(
                var2,

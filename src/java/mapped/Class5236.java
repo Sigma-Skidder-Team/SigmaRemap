@@ -31,10 +31,10 @@ public class Class5236 extends Module {
 
     @EventTarget
     private void method16324(ClickEvent var1) {
-        if (this.method15996() && (mc.player.method3331() || !this.method16004().method15974("Sneak"))) {
+        if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
             if (var1.method13976() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = Class9217.method34567(
-                        mc.player.field5031, mc.player.field5032, this.method16004().method15977("Maximum range")
+                        mc.player.field5031, mc.player.field5032, this.method16004().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -80,7 +80,7 @@ public class Class5236 extends Module {
                 mc.player.method3215(var6, var8, var10);
                 this.field23590.method27120();
                 this.field23590.method27118();
-                if (this.method16004().method15974("Auto Disable")) {
+                if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                     this.method16004().method16000();
                 }
             }
@@ -89,7 +89,7 @@ public class Class5236 extends Module {
 
     @EventTarget
     public void method16325(Class4420 var1) {
-        if (this.method15996() && this.field23589 != null && this.field23589.size() != 0) {
+        if (this.isEnabled() && this.field23589 != null && this.field23589.size() != 0) {
             if (this.field23590.method27121() > 4000L) {
                 this.field23590.method27119();
                 this.field23590.method27120();
@@ -128,7 +128,7 @@ public class Class5236 extends Module {
                         var12.method29877() - mc.gameRenderer.getActiveRenderInfo().method37504().method11321() + 1.6F,
                         var8 + 0.3F
                 );
-                Class3192.method11459(var10, Class5628.method17688(Class1979.field12903.field12910, 0.2F));
+                Class3192.method11459(var10, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.2F));
             }
 
             GL11.glPushMatrix();

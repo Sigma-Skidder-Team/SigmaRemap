@@ -45,10 +45,10 @@ public class Bind extends Command {
 
                if (var14 != -1) {
                   Client.getInstance().getModuleManager().method14668().method13725(var14, (Module)var6);
-                  var3.method20327("Key " + var2[1].method30899() + " was set for module " + ((Module)var6).method15990());
+                  var3.method20327("Key " + var2[1].method30899() + " was set for module " + ((Module)var6).getSuffix());
                } else {
                   Client.getInstance().getModuleManager().method14668().method13727(var6);
-                  var3.method20327("Keybind was reset for module " + ((Module)var6).method15990());
+                  var3.method20327("Keybind was reset for module " + ((Module)var6).getSuffix());
                }
             }
          } else {
@@ -68,9 +68,9 @@ public class Bind extends Command {
             }
 
             if (var9 != null) {
-               var3.method20327(((Module)var6).method15990() + " is bound to : " + var9);
+               var3.method20327(((Module)var6).getSuffix() + " is bound to : " + var9);
             } else {
-               var3.method20327("§c[Error] " + ((Module)var6).method15990() + " is bound to an unknown key");
+               var3.method20327("§c[Error] " + ((Module)var6).getSuffix() + " is bound to an unknown key");
             }
          }
       }
@@ -98,8 +98,8 @@ public class Bind extends Command {
    }
 
    public Module method18330(String var1) {
-      for (Module var5 : Client.getInstance().getModuleManager().method14664().values()) {
-         if (var5.method15991().replace(" ", "").equalsIgnoreCase(var1)) {
+      for (Module var5 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+         if (var5.getName().replace(" ", "").equalsIgnoreCase(var1)) {
             return var5;
          }
       }

@@ -48,7 +48,7 @@ public class Class4365 extends Class4247 {
          (float)this.field20896,
          (float)(this.field20895 + this.method13267()),
          (float)(this.field20896 + this.method13269()),
-         Class5628.method17688(Class1979.field12900.field12910, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
+         Class5628.method17688(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
       );
       float var7 = (float)(this.field20895 + this.field20897 - 60 - 10);
       float var8 = (float)(this.field20896 + 10);
@@ -58,14 +58,14 @@ public class Class4365 extends Class4247 {
          60.0F,
          60.0F,
          var5,
-         Class5628.method17688(Class1979.field12896.field12910, (0.5F + 0.5F * this.field21334) * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
       Class3192.method11439(
          this.field20913,
          (float)(this.field20895 + this.field20897 - 90 - this.field20913.method23942(var4)),
          (float)(this.field20896 + 27),
          var4,
-         Class5628.method17688(Class1979.field12896.field12910, (0.5F + 0.5F * this.field21334) * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
       super.method13027(var1);
    }

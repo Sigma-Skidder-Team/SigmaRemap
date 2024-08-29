@@ -14,14 +14,14 @@ public class Class5270 extends Module {
 
     @EventTarget
     private void method16491(Class4399 var1) {
-        if (this.method15996() && Class5628.method17761()) {
+        if (this.isEnabled() && Class5628.method17761()) {
             var1.method13908(true);
         }
     }
 
     @EventTarget
     private void method16492(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!Class5628.method17761()) {
                 if (mc.player.field5037) {
                     Class9567.method37088(var1, 0.0);
@@ -35,7 +35,7 @@ public class Class5270 extends Module {
 
     @EventTarget
     private void method16493(Class4425 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }

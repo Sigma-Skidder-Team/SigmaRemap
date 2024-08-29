@@ -87,14 +87,14 @@ public class Class5172 extends Module {
 
     @EventTarget
     private void method16097(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.method16096(var1.method13932(), true);
         }
     }
 
     @EventTarget
     private void method16098(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.method16096(var1.method13898(), false);
         }
     }

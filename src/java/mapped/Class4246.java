@@ -10,7 +10,7 @@ public class Class4246 extends Class4240 {
    private Animation field20601 = new Animation(125, 125);
 
    public Class4246(Class4277 var1, int var2) {
-      super(var1, "sliderButton", 0, 0, var2, var2, new Class6387(Class1979.field12896.field12910));
+      super(var1, "sliderButton", 0, 0, var2, var2, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor));
       this.field20601.changeDirection(Direction.BACKWARDS);
       this.method13215(true);
       this.field20886 = true;
@@ -59,7 +59,7 @@ public class Class4246 extends Class4240 {
          (float)(this.method13263() + this.method13267() / 2),
          (float)(this.method13265() + this.method13267() / 2),
          var6,
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (this.method13303() == null) {
       }

@@ -68,11 +68,11 @@ public class Class4252 extends Class4247 {
 
    public static void method13052(int var0, int var1, int var2, float var3) {
       byte var6 = 14;
-      Class3192.method11438((float)var0, (float)var1, (float)var6, Class5628.method17688(Class1979.field12891.field12910, 0.1F * var3));
-      Class3192.method11438((float)var0, (float)var1, (float)(var6 - 1), Class5628.method17688(Class1979.field12891.field12910, 0.14F * var3));
-      Class3192.method11438((float)var0, (float)var1, (float)(var6 - 2), Class5628.method17688(Class1979.field12896.field12910, var3));
+      Class3192.method11438((float)var0, (float)var1, (float)var6, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F * var3));
+      Class3192.method11438((float)var0, (float)var1, (float)(var6 - 1), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.14F * var3));
+      Class3192.method11438((float)var0, (float)var1, (float)(var6 - 2), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
       Class3192.method11438(
-         (float)var0, (float)var1, (float)(var6 - 6), Class5628.method17688(Class5628.method17690(var2, Class1979.field12891.field12910, 0.7F), var3)
+         (float)var0, (float)var1, (float)(var6 - 6), Class5628.method17688(Class5628.method17690(var2, ClientColors.DEEP_TEAL.getColor, 0.7F), var3)
       );
       Class3192.method11438((float)var0, (float)var1, (float)(var6 - 7), Class5628.method17688(var2, var3));
    }

@@ -17,11 +17,11 @@ public class Class5192 extends Module {
 
     public Class5192() {
         super(ModuleCategory.RENDER, "Search", "Searches blocks through the world");
-        Class6009 var3;
-        this.registerSetting(var3 = new Class6009<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
+        NumberSetting var3;
+        this.registerSetting(var3 = new NumberSetting<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
         BooleanSetting var4;
         this.registerSetting(var4 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
-        this.registerSetting(new Class6010("Color", "The rendered block color", Class1979.field12899.field12910, true));
+        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
         Class6003 var5;
         this.registerSetting(var5 = new Class6003("Blocks", "Blocks to render", true));
         var5.method18616(var1 -> this.field23499.clear());
@@ -31,7 +31,7 @@ public class Class5192 extends Module {
 
     @EventTarget
     public void method16163(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5607) {
                 Class5607 var4 = (Class5607) var1.method13898();
                 this.method16164(mc.world.method6722(var4.method17632()).method7072());
@@ -89,7 +89,7 @@ public class Class5192 extends Module {
         if (var1 == null) {
             return null;
         } else {
-            List var5 = (List) this.method15973("Blocks");
+            List var5 = (List) this.getSettingValueBySettingName("Blocks");
 
             for (BlockPos var7 : this.method16166(var1)) {
                 String var8 = Registry.BLOCK.getKey(mc.world.getBlockState(var7).getBlock()).toString();
@@ -98,7 +98,7 @@ public class Class5192 extends Module {
                 }
             }
 
-            if (this.method15974("Holes")) {
+            if (this.getBooleanValueFromSetttingName("Holes")) {
                 label57:
                 for (BlockPos var13 : this.method16166(var1)) {
                     if (mc.world.getBlockState(var13).getBlock() == Blocks.AIR) {
@@ -121,11 +121,11 @@ public class Class5192 extends Module {
 
     @EventTarget
     public void method16168(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.field5055 < 20) {
                 this.field23499.clear();
             } else {
-                int var4 = (int) this.method15977("Chunk Range");
+                int var4 = (int) this.getNumberValueBySettingName("Chunk Range");
                 List<Class7481> var5 = new ArrayList();
 
                 for (int var6 = -5; var6 < 5; var6++) {
@@ -169,13 +169,13 @@ public class Class5192 extends Module {
 
     @EventTarget
     public void method16169(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.method16170();
         }
     }
 
     public void method16170() {
-        int var3 = Class5628.method17688(this.method15976("Color"), 0.14F);
+        int var3 = Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), 0.14F);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
 

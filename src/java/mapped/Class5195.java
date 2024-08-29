@@ -31,7 +31,7 @@ public class Class5195 extends Module {
 
     @EventTarget
     public void method16178(StopUseItemEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.field37796 && this.field23504 >= 1) {
                 var1.method13900(true);
             }
@@ -40,7 +40,7 @@ public class Class5195 extends Module {
 
     @EventTarget
     public void method16179(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = var1.method13998().field18049;
             var1.method13998().field18049 = 0.0;
             double var6 = var1.method13998().method11348();
@@ -65,7 +65,7 @@ public class Class5195 extends Module {
 
     @EventTarget
     public void method16180(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             if (!this.field23505.method27123()) {
                 this.field23505.method27118();
             }
@@ -73,7 +73,7 @@ public class Class5195 extends Module {
             int var4 = this.method16181();
             if (var4 >= 0 || var4 <= 8) {
                 if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.field37796) {
-                    if (Class5260.method16437(Items.field37797) == 0) {
+                    if (InvManager.method16437(Items.field37797) == 0) {
                         if (this.field23505.method27121() > 5000L) {
                             Client.getInstance().getNotificationManager().post(new Notification("BowFly", "You have no arrows"));
                             this.field23505.method27120();

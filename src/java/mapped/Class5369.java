@@ -13,7 +13,7 @@ public class Class5369 extends Module {
 
     public Class5369() {
         super(ModuleCategory.MOVEMENT, "Reloaded", "A fly for AnticheatReloaded");
-        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
+        this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
         this.registerSetting(new BooleanSetting("Offset", "Offset while flying", false));
         this.registerSetting(new BooleanSetting("NoFall", "Avoid getting fall damage when flying down", true));
     }
@@ -42,7 +42,7 @@ public class Class5369 extends Module {
 
     @EventTarget
     private void method16902(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23988 = true;
@@ -52,7 +52,7 @@ public class Class5369 extends Module {
 
     @EventTarget
     private void method16903(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23988 = false;
@@ -63,36 +63,36 @@ public class Class5369 extends Module {
     @EventTarget
     @LowerPriority
     public void method16904(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23986 != -1) {
                 if (this.field23986 == 0) {
                     if (Math.abs(var1.method13994()) < 0.08) {
-                        var1.method13995(!this.method15974("Offset") ? 0.0 : -0.01);
+                        var1.method13995(!this.getBooleanValueFromSetttingName("Offset") ? 0.0 : -0.01);
                     }
 
                     Class5628.method17725(var1.method13994());
                     Class9567.method37088(var1, 0.35);
                 }
             } else {
-                double var4 = !this.method15974("Offset") ? 0.0 : 0.01;
+                double var4 = !this.getBooleanValueFromSetttingName("Offset") ? 0.0 : 0.01;
                 if (this.field23988) {
-                    var4 -= this.method15977("Speed") / 2.0F;
+                    var4 -= this.getNumberValueBySettingName("Speed") / 2.0F;
                 }
 
                 if (mc.gameSettings.field44636.isKeyDown()) {
-                    var4 += this.method15977("Speed") / 2.0F;
+                    var4 += this.getNumberValueBySettingName("Speed") / 2.0F;
                 }
 
                 var1.method13995(var4);
                 Class5628.method17725(var1.method13994());
-                Class9567.method37088(var1, this.method15977("Speed"));
+                Class9567.method37088(var1, this.getNumberValueBySettingName("Speed"));
             }
         }
     }
 
     @EventTarget
     public void method16905(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23986++;
             if (this.field23986 != 2) {
                 if (this.field23986 > 2 && this.field23986 >= 20 && this.field23986 % 20 == 0) {
@@ -102,7 +102,7 @@ public class Class5369 extends Module {
                 var1.method13912(-150.0 - Math.random() * 150.0);
             }
 
-            if (this.method15974("NoFall")) {
+            if (this.getBooleanValueFromSetttingName("NoFall")) {
                 var1.method13920(true);
             }
 
@@ -112,7 +112,7 @@ public class Class5369 extends Module {
 
     @EventTarget
     public void method16906(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;
@@ -129,11 +129,11 @@ public class Class5369 extends Module {
 
     @EventTarget
     public void method16907(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5603) {
                 Class5603 var5 = (Class5603) var4;
-                if (this.field23986 == -1 && this.method15974("NoFall")) {
+                if (this.field23986 == -1 && this.getBooleanValueFromSetttingName("NoFall")) {
                     var5.field24883 = true;
                 }
             }
@@ -142,7 +142,7 @@ public class Class5369 extends Module {
 
     @EventTarget
     public void method16908(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = this.field23987;
             mc.player.field5028.field18049 = var4;
             mc.player.field5049 = var4;

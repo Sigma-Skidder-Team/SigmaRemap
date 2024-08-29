@@ -12,7 +12,7 @@ public class JetpackFly extends Module {
 
     @EventTarget
     public void onTick(TickEvent event) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.field4981) {
                 mc.player.method2914();
             }

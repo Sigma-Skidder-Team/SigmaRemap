@@ -16,8 +16,8 @@ public class Class5371 extends Module {
 
     public Class5371() {
         super(ModuleCategory.WORLD, "FakeLag", "Other players will see you lagging !");
-        this.registerSetting(new Class6009<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
         this.registerSetting(new BooleanSetting("Combat", "Delay combat packets", true));
         this.registerSetting(new BooleanSetting("Blocks", "Delay blocks packets", true));
         this.registerSetting(new BooleanSetting("Ping", "Delay ping packets", true));
@@ -40,7 +40,7 @@ public class Class5371 extends Module {
 
     @EventTarget
     private void method16910(WorldLoadEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23989.clear();
             this.field23991 = false;
             this.field23990.method27120();
@@ -49,13 +49,13 @@ public class Class5371 extends Module {
 
     @EventTarget
     private void method16911(Class4402 var1) {
-        if (this.method15996() && mc.getConnection() != null) {
+        if (this.isEnabled() && mc.getConnection() != null) {
             if (!this.field23991) {
-                if ((float) this.field23990.method27121() > this.method15977("Delay") * 1000.0F) {
+                if ((float) this.field23990.method27121() > this.getNumberValueBySettingName("Delay") * 1000.0F) {
                     this.field23991 = true;
                     this.field23990.method27120();
                 }
-            } else if (!((float) this.field23990.method27121() > this.method15977("Lag duration") * 1000.0F)) {
+            } else if (!((float) this.field23990.method27121() > this.getNumberValueBySettingName("Lag duration") * 1000.0F)) {
                 if (!(var1.method13932() instanceof Class5603)) {
                     if (!(var1.method13932() instanceof Class5600) && !(var1.method13932() instanceof Class5493)) {
                         if (!(var1.method13932() instanceof CUseEntityPacket) && !(var1.method13932() instanceof CAnimateHandPacket)) {
@@ -64,13 +64,13 @@ public class Class5371 extends Module {
                                 return;
                             }
 
-                            if (!this.method15974("Blocks")) {
+                            if (!this.getBooleanValueFromSetttingName("Blocks")) {
                                 return;
                             }
-                        } else if (!this.method15974("Combat")) {
+                        } else if (!this.getBooleanValueFromSetttingName("Combat")) {
                             return;
                         }
-                    } else if (!this.method15974("Ping")) {
+                    } else if (!this.getBooleanValueFromSetttingName("Ping")) {
                         return;
                     }
                 }

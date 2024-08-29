@@ -65,7 +65,7 @@ public class Class3484 extends Class3194 implements Class3196 {
       } else {
          int var11 = 1 + var2.field9016.nextInt(2);
          method11557(var2, var3, new ItemStack(Items.field38170, var11 + (!var10 ? 0 : 1)));
-         var2.method6742((PlayerEntity)null, var3, Class6067.field27144, Class2266.field14732, 1.0F, 0.8F + var2.field9016.nextFloat() * 0.4F);
+         var2.method6742((PlayerEntity)null, var3, Sounds.field27144, Class2266.field14732, 1.0F, 0.8F + var2.field9016.nextFloat() * 0.4F);
          var2.method6725(var3, var1.method23465(field19342, Integer.valueOf(1)), 2);
          return ActionResultType.method9002(var2.field9020);
       }

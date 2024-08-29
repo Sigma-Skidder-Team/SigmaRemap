@@ -14,60 +14,60 @@ import java.util.*;
 
 public abstract class Module {
     public static Minecraft mc = Minecraft.getInstance();
-    private static final List<Class<? extends Module>> moduleList = new ArrayList<Class<? extends Module>>();
     public String name;
     public String descriptor;
     public ModuleCategory category;
     public boolean enabled;
     public boolean field23391;
-    public Map<String, Setting> field23397 = new LinkedHashMap<String, Setting>();
     private boolean field23392 = true;
     private Module field23394 = null;
-    private int field23395 = 0;
-    private final Set<String> field23396 = new HashSet<String>();
 
-    public Module(ModuleCategory var1, String var2, String var3) {
-        this.category = var1;
-        this.name = var2;
-        this.descriptor = var3;
+    private static final List<Class<? extends Module>> moduleList = new ArrayList<>();
+    public Map<String, Setting> settingMap = new LinkedHashMap<>();
+    private int randomAssOffset = 0;
+
+    public Module(ModuleCategory category, String name, String description) {
+        this.category = category;
+        this.name = name;
+        this.descriptor = description;
     }
 
-    public void registerSetting(Setting var1) {
-        if (!this.field23397.containsKey(var1.method18625())) {
-            this.field23397.put(var1.method18625(), var1);
+    public void registerSetting(Setting setting) {
+        if (!this.settingMap.containsKey(setting.getName())) {
+            this.settingMap.put(setting.getName(), setting);
         } else {
             throw new IllegalArgumentException("Attempted to add an option with the same name");
         }
     }
 
-    public Object method15973(String var1) {
-        return this.field23397.get(var1).method18619();
+    public Object getSettingValueBySettingName(String settingName) {
+        return this.settingMap.get(settingName).getCurrentValue();
     }
 
-    public boolean method15974(String var1) {
+    public boolean getBooleanValueFromSetttingName(String var1) {
         try {
-            return Boolean.parseBoolean(this.method15973(var1).toString());
+            return Boolean.parseBoolean(this.getSettingValueBySettingName(var1).toString());
         } catch (Exception var5) {
             return false;
         }
     }
 
-    public float[] method15975(String var1) {
-        Setting var4 = (Setting) this.method15973(var1);
-        return !(var4 instanceof Class6000) ? null : ((Class6000) var4).method18613();
+    public float[] method15975(String settingName) {
+        Setting settingNameValue = (Setting) this.getSettingValueBySettingName(settingName);
+        return !(settingNameValue instanceof Class6000) ? null : ((Class6000) settingNameValue).method18613();
     }
 
-    public int method15976(String var1) {
+    public int parseSettingValueToIntBySettingName(String settingName) {
         try {
-            return Integer.parseInt(this.method15973(var1).toString());
+            return Integer.parseInt(this.getSettingValueBySettingName(settingName).toString());
         } catch (Exception var5) {
             return -1;
         }
     }
 
-    public float method15977(String var1) {
+    public float getNumberValueBySettingName(String var1) {
         try {
-            return Float.parseFloat(this.method15973(var1).toString());
+            return Float.parseFloat(this.getSettingValueBySettingName(var1).toString());
         } catch (Exception var5) {
             return -1.0F;
         }
@@ -75,7 +75,7 @@ public abstract class Module {
 
     public String getStringSettingValueByName(String var1) {
         try {
-            return (String) this.method15973(var1);
+            return (String) this.getSettingValueBySettingName(var1);
         } catch (Exception var5) {
             return null;
         }
@@ -83,30 +83,30 @@ public abstract class Module {
 
     public List<Setting> method15979(String var1) {
         try {
-            return ((Class6008) this.field23397.get(var1)).method18635();
+            return ((Class6008) this.settingMap.get(var1)).method18635();
         } catch (Exception var5) {
             return null;
         }
     }
 
     public void method15980(String var1, Object var2) {
-        this.field23397.get(var1).method18620(var2);
+        this.settingMap.get(var1).method18620(var2);
     }
 
     public void method15981(String var1, boolean var2) {
-        this.field23397.get(var1).method18620(var2);
+        this.settingMap.get(var1).method18620(var2);
     }
 
     public void method15982(String var1, int var2) {
-        this.field23397.get(var1).method18620(var2);
+        this.settingMap.get(var1).method18620(var2);
     }
 
     public void method15983(String var1, boolean var2) {
-        this.field23397.get(var1).method18620(var2);
+        this.settingMap.get(var1).method18620(var2);
     }
 
     public void method15984(String var1, String var2) {
-        this.field23397.get(var1).method18620(var2);
+        this.settingMap.get(var1).method18620(var2);
     }
 
     public void method15985() {
@@ -117,7 +117,7 @@ public abstract class Module {
         this.enabled = false;
         this.field23391 = true;
 
-        for (Setting var4 : this.field23397.values()) {
+        for (Setting var4 : this.settingMap.values()) {
             var4.method18615();
         }
     }
@@ -134,14 +134,14 @@ public abstract class Module {
                 JSONObject  var6 = var4.getJSONObject(var5);
                 String   var7 = Class8000.method27330(var6, "name", null);
 
-                for (Setting var9 : this.field23397.values()) {
-                    if (var9.method18625().equals(var7)) {
+                for (Setting var9 : this.settingMap.values()) {
+                    if (var9.getName().equals(var7)) {
                         try {
                             var9.method18610(var6);
                         } catch (JSONException2 var11) {
                             Client.getInstance()
                                     .getLogger()
-                                    .warn("Could not initialize settings of " + this.method15991() + "." + var9.method18625() + " from config.");
+                                    .warn("Could not initialize settings of " + this.getName() + "." + var9.getName() + " from config.");
                         }
                         break;
                     }
@@ -158,12 +158,12 @@ public abstract class Module {
 
     public JSONObject method15987(JSONObject jo) {
         try {
-            jo.put("name", this.method15991());
+            jo.put("name", this.getName());
             jo.method21800("enabled", this.enabled);
             jo.method21800("allowed", this.method16001());
             JSONArray jsonArray = new JSONArray();
 
-            for (Setting s : this.field23397.values()) {
+            for (Setting s : this.settingMap.values()) {
                 jsonArray.put(s.addDataToJSONObject(new JSONObject()));
             }
 
@@ -185,26 +185,26 @@ public abstract class Module {
     }
 
     public boolean method15988() {
-        return this.method15996();
+        return this.isEnabled();
     }
 
     public Map<String, Setting> method15989() {
-        return this.field23397;
+        return this.settingMap;
     }
 
-    public String method15990() {
+    public String getSuffix() {
         return this.name;
     }
 
-    public String method15991() {
+    public String getName() {
         return this.name;
     }
 
-    public String method15992() {
+    public String getDescription() {
         return this.descriptor;
     }
 
-    public ModuleCategory method15993() {
+    public ModuleCategory getAdjustedCategoryBasedOnClientMode() {
         if (Client.getInstance().getClientMode() == ClientMode.CLASSIC && this.category == ModuleCategory.ITEM) {
             return ModuleCategory.PLAYER;
         } else {
@@ -215,14 +215,14 @@ public abstract class Module {
     }
 
     public int method15994() {
-        return this.field23395;
+        return this.randomAssOffset;
     }
 
-    public ModuleCategory method15995() {
+    public ModuleCategory getCategory() {
         return this.category;
     }
 
-    public boolean method15996() {
+    public boolean isEnabled() {
         if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
             return (Client.getInstance().getClientMode() != ClientMode.CLASSIC || this.method16006()) && this.enabled;
         } else {
@@ -253,19 +253,19 @@ public abstract class Module {
         }
     }
 
-    public void method15999(boolean var1) {
-        if (this.enabled != var1) {
-            if (!(this.enabled = var1)) {
+    public void method15999(boolean newEnabled) {
+        if (this.enabled != newEnabled) {
+            if (!(this.enabled = newEnabled)) {
                 Client.getInstance().getEventManager().unsubscribe(this);
                 if (!(this instanceof Class5325)) {
                     if (Client.getInstance().getClientMode() == ClientMode.JELLO
-                            && Client.getInstance().getModuleManager().method14662(ActiveMods.class).method15974("Sound")) {
+                            && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
                         Client.getInstance().getSoundManager().play("deactivate");
                     }
 
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
-                            && Client.getInstance().getModuleManager().method14662(Class5359.class).method15974("Sound")) {
-                        Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27131, 0.6F));
+                            && Client.getInstance().getModuleManager().getModuleByClass(Class5359.class).getBooleanValueFromSetttingName("Sound")) {
+                        Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.STONE_BUTTON_CLICK_ON, 0.6F));
                     }
                 }
 
@@ -273,17 +273,17 @@ public abstract class Module {
             } else {
                 Client.getInstance().getEventManager().subscribe(this);
                 if (Client.getInstance().getClientMode() == ClientMode.JELLO
-                        && Client.getInstance().getModuleManager().method14662(ActiveMods.class).method15974("Sound")) {
+                        && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
                     Client.getInstance().getSoundManager().play("activate");
                 }
 
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
-                        && Client.getInstance().getModuleManager().method14662(Class5359.class).method15974("Sound")) {
-                    Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27131, 0.7F));
+                        && Client.getInstance().getModuleManager().getModuleByClass(Class5359.class).getBooleanValueFromSetttingName("Sound")) {
+                    Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 
                 this.isInDevelopment();
-                this.field23395++;
+                this.randomAssOffset++;
             }
         }
 
@@ -291,7 +291,7 @@ public abstract class Module {
     }
 
     public void method16000() {
-        this.method15999(!this.method15996());
+        this.method15999(!this.isEnabled());
     }
 
     public boolean method16001() {

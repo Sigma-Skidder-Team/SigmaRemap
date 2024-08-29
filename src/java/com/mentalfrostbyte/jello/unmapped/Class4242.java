@@ -58,7 +58,7 @@ public class Class4242 extends Class4240 {
                 (float) this.method13267(),
                 (float) this.method13269(),
                 this.field20590,
-                Class1979.field12896.field12910
+                ClientColors.LIGHT_GREYISH_BLUE.getColor
         );
         GL11.glPushMatrix();
         super.method13226(var1);

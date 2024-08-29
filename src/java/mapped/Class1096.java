@@ -102,27 +102,27 @@ public class Class1096 extends Class1018 implements Class1011 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method3005() ? Class6067.field26970 : Class6067.field26971;
+      return !this.method3005() ? Sounds.field26970 : Sounds.field26971;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26973;
+      return Sounds.field26973;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26972;
+      return Sounds.field26972;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26974, 0.15F, 1.0F);
+      this.method2863(Sounds.field26974, 0.15F, 1.0F);
    }
 
    public void method5182() {
       if (this.field6013 <= 0) {
-         this.method2863(Class6067.field26975, 1.0F, this.method3100());
+         this.method2863(Sounds.field26975, 1.0F, this.method3100());
          this.field6013 = 40;
       }
    }

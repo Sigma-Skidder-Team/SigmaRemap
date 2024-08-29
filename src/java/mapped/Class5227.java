@@ -65,7 +65,7 @@ public class Class5227 extends Module {
                                                 (int) var9.getPosX(),
                                                 (int) var9.getPosY(),
                                                 (int) var9.getPosZ(),
-                                                Class1979.field12902.field12910
+                                                ClientColors.DARK_OLIVE.getColor
                                         )
                                 );
                     }
@@ -85,7 +85,7 @@ public class Class5227 extends Module {
 
     public List<Class8351> method16276(List<Class8351> var1) {
         List<Class8351> var4 = new ArrayList<>(var1);
-        if (this.method15974("Unspawn Positions")) {
+        if (this.getBooleanValueFromSetttingName("Unspawn Positions")) {
             var4.addAll(this.field23572.values());
         }
 
@@ -102,7 +102,7 @@ public class Class5227 extends Module {
 
     @EventTarget
     public void method16277(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             for (Class8351 var5 : this.method16276(Client.getInstance().getWaypointsManager().method29989())) {
                 BlockPos var6 = new BlockPos(
                         var5.field35890 - (var5.field35890 <= 0 ? 1 : 0), var5.field35893, var5.field35891 - (var5.field35891 <= 0 ? 1 : 0)
@@ -160,14 +160,14 @@ public class Class5227 extends Module {
             GL11.glPushMatrix();
             GL11.glRotatef(var4, 0.0F, 1.0F, 0.0F);
             GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
-            this.method16279(Class5628.method17690(Class1979.field12891.field12910, var1, 0.04F * (float) var4 / 90.0F));
+            this.method16279(Class5628.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var4 / 90.0F));
             GL11.glPopMatrix();
         }
 
         for (int var5 = 0; var5 <= 270; var5 += 90) {
             GL11.glPushMatrix();
             GL11.glRotatef(var5, 0.0F, 1.0F, 0.0F);
-            this.method16279(Class5628.method17690(Class1979.field12891.field12910, var1, 0.04F * (float) var5 / 90.0F));
+            this.method16279(Class5628.method17690(ClientColors.DEEP_TEAL.getColor, var1, 0.04F * (float) var5 / 90.0F));
             GL11.glPopMatrix();
         }
     }
@@ -255,7 +255,7 @@ public class Class5227 extends Module {
         GL11.glPushMatrix();
         GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(var6)), 0.0);
-        int var11 = Class5628.method17688(Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 75.0F), 0.5F);
+        int var11 = Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
         Class3192.method11426(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) var9.method23942(var4) / 2.0F + 14.0F, (float) (var9.method23952() + 7), var11
         );
@@ -263,7 +263,7 @@ public class Class5227 extends Module {
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) (var9.method23942(var4) + 28), (float) (var9.method23952() + 12), 20.0F, 0.5F
         );
         GL11.glTranslated(-var9.method23942(var4) / 2, 0.0, 0.0);
-        Class3192.method11439(var9, 0.0F, 0.0F, var4, Class5628.method17688(Class1979.field12896.field12910, 0.8F));
+        Class3192.method11439(var9, 0.0F, 0.0F, var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

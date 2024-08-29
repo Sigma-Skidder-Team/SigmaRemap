@@ -34,7 +34,7 @@ public class Class5191 extends Module {
     @EventTarget
     @LowerPriority
     public void method16158(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
             if (this.field23497 <= 9) {
                 if (this.field23497 != -1) {
@@ -58,7 +58,7 @@ public class Class5191 extends Module {
 
     @EventTarget
     public void method16159(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23497++;
             if (this.field23497 != 11) {
                 if (this.field23497 > 11 && this.field23497 >= 20 && this.field23497 % 20 == 0) {
@@ -74,7 +74,7 @@ public class Class5191 extends Module {
 
     @EventTarget
     public void method16160(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;
@@ -91,7 +91,7 @@ public class Class5191 extends Module {
 
     @EventTarget
     public void method16161(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5603) {
                 Class5603 var5 = (Class5603) var4;
@@ -104,7 +104,7 @@ public class Class5191 extends Module {
 
     @EventTarget
     public void method16162(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = this.field23498;
             mc.player.field5028.field18049 = var4;
             mc.player.field5049 = var4;

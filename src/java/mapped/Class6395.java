@@ -426,7 +426,7 @@ public abstract class Class6395 {
          var12.field4855
             .sendPacket(
                new Class5584(
-                  Class6067.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
+                  Sounds.field27014, Class2266.field14732, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
                )
             );
       }

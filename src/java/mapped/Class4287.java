@@ -8,10 +8,10 @@ import org.lwjgl.opengl.GL11;
 public class Class4287 extends Class4278 {
    private static String[] field20736;
    public static Class6387 field20778 = new Class6387(
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -34,7 +34,7 @@ public class Class4287 extends Class4278 {
             (float)this.method13263(),
             (float)this.method13265(),
             this.method13303(),
-            Class5628.method17688(Class1979.field12891.field12910, var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1)
          );
          GL11.glAlphaFunc(519, 0.0F);
       }

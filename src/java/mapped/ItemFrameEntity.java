@@ -126,7 +126,7 @@ public class ItemFrameEntity extends Class995 {
             if (!var1.method31131() && !this.method4090().isEmpty()) {
                if (!this.world.field9020) {
                   this.method4088(var1.method31109(), false);
-                  this.method2863(Class6067.field26711, 1.0F, 1.0F);
+                  this.method2863(Sounds.field26711, 1.0F, 1.0F);
                }
 
                return true;
@@ -160,13 +160,13 @@ public class ItemFrameEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      this.method2863(Class6067.field26709, 1.0F, 1.0F);
+      this.method2863(Sounds.field26709, 1.0F, 1.0F);
       this.method4088(var1, true);
    }
 
    @Override
    public void method4084() {
-      this.method2863(Class6067.field26710, 1.0F, 1.0F);
+      this.method2863(Sounds.field26710, 1.0F, 1.0F);
    }
 
    private void method4088(Entity var1, boolean var2) {
@@ -226,7 +226,7 @@ public class ItemFrameEntity extends Class995 {
 
       this.method3210().method35446(field5492, var1);
       if (!var1.isEmpty()) {
-         this.method2863(Class6067.field26708, 1.0F, 1.0F);
+         this.method2863(Sounds.field26708, 1.0F, 1.0F);
       }
 
       if (var2 && this.field5488 != null) {
@@ -318,7 +318,7 @@ public class ItemFrameEntity extends Class995 {
       if (!this.field5495) {
          if (!this.world.field9020) {
             if (var6) {
-               this.method2863(Class6067.field26712, 1.0F, 1.0F);
+               this.method2863(Sounds.field26712, 1.0F, 1.0F);
                this.method4094(this.method4093() + 1);
             } else if (var7 && !this.field5041) {
                this.method4091(var5);

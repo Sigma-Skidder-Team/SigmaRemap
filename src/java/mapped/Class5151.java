@@ -47,7 +47,7 @@ public class Class5151 extends Module {
 
    @EventTarget
    private void method15954(Class4430 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          Class2071 var4 = method15960(var1.method13977());
          if (var4 != null) {
             field23380.changeDirection(Direction.FORWARDS);
@@ -94,7 +94,7 @@ public class Class5151 extends Module {
                      Class7555 var12 = (Class7555)field23385.get(0);
                      Class7555 var15 = (Class7555)var6;
                      ModuleCategory var16 = this.field23383.get(var12.field32402);
-                     Module var17 = Client.getInstance().getModuleManager().method14665(var16).get(var15.field32402);
+                     Module var17 = Client.getInstance().getModuleManager().getModulesByCategory(var16).get(var15.field32402);
                      this.method15963(var17);
                   } else if (var5 == 3) {
                      this.method15970(true);
@@ -105,8 +105,8 @@ public class Class5151 extends Module {
                      Class7555 var7 = (Class7555)field23385.get(0);
                      Class7555 var8 = (Class7555)var6;
                      ModuleCategory var9 = this.field23383.get(var7.field32402);
-                     Module var10 = Client.getInstance().getModuleManager().method14665(var9).get(var8.field32402);
-                     var10.method15999(!var10.method15996());
+                     Module var10 = Client.getInstance().getModuleManager().getModulesByCategory(var9).get(var8.field32402);
+                     var10.method15999(!var10.isEnabled());
                   }
             }
          }
@@ -118,28 +118,28 @@ public class Class5151 extends Module {
       Class7555 var5 = (Class7555)field23385.get(1);
       Class7555 var6 = (Class7555)field23385.get(2);
       ModuleCategory var7 = this.field23383.get(var4.field32402);
-      Module var8 = Client.getInstance().getModuleManager().method14665(var7).get(var5.field32402);
+      Module var8 = Client.getInstance().getModuleManager().getModulesByCategory(var7).get(var5.field32402);
       Setting var9 = this.method15968(var8).get(var6.field32402);
       if (!(var9 instanceof ModeSetting)) {
          if (!(var9 instanceof BooleanSetting)) {
-            if (var9 instanceof Class6009) {
-               Class6009 var10 = (Class6009)var9;
-               Object var11 = var10.method18619();
+            if (var9 instanceof NumberSetting) {
+               NumberSetting var10 = (NumberSetting)var9;
+               Object var11 = var10.getCurrentValue();
                if (var11 instanceof Float) {
-                  Float var12 = (Float)var10.method18619();
+                  Float var12 = (Float)var10.getCurrentValue();
                   if (var1) {
-                     var12 = var12 - var10.method18641();
+                     var12 = var12 - var10.getIncrement();
                   } else {
-                     var12 = var12 + var10.method18641();
+                     var12 = var12 + var10.getIncrement();
                   }
 
-                  var12 = Math.min(Math.max(var12, var10.method18637()), var10.method18639());
+                  var12 = Math.min(Math.max(var12, var10.getMin()), var10.getMax());
                   var10.method18620(var12);
                }
             }
          } else {
             BooleanSetting var13 = (BooleanSetting)var9;
-            var13.method18620(Boolean.valueOf(!var13.method18619()));
+            var13.method18620(Boolean.valueOf(!var13.getCurrentValue()));
          }
       } else {
          ModeSetting var14 = (ModeSetting)var9;
@@ -166,7 +166,7 @@ public class Class5151 extends Module {
 
    @EventTarget
    private void method15956(TickEvent var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (this.field23384 <= 0) {
             field23380.changeDirection(Direction.BACKWARDS);
             this.field23381.changeDirection(Direction.BACKWARDS);
@@ -179,7 +179,7 @@ public class Class5151 extends Module {
    @EventTarget
    @HigestPriority
    private void method15957(Class4415 var1) {
-      if (this.method15996() && mc.player != null) {
+      if (this.isEnabled() && mc.player != null) {
          if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                this.method15958();
@@ -189,7 +189,7 @@ public class Class5151 extends Module {
                }
 
                this.method15959((float)(0.5 + (double)field23380.calcPercent() * 0.5));
-               Class3192.method11424(12.0F, 30.0F, 90.0F, 1.0F, Class1979.field12896.field12910);
+               Class3192.method11424(12.0F, 30.0F, 90.0F, 1.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
          }
       }
@@ -202,8 +202,8 @@ public class Class5151 extends Module {
          ModuleCategory var5 = this.field23383.get(var4.field32402);
          int var6 = 0;
 
-         for (Module var8 : Client.getInstance().getModuleManager().method14665(var5)) {
-            var3.method24727(var6++, (!var8.method15996() ? "§7" : "") + var8.method15990());
+         for (Module var8 : Client.getInstance().getModuleManager().getModulesByCategory(var5)) {
+            var3.method24727(var6++, (!var8.isEnabled() ? "§7" : "") + var8.getSuffix());
          }
       }
    }
@@ -228,8 +228,8 @@ public class Class5151 extends Module {
          }
 
          ModuleCategory var9 = this.field23383.get(var5.field32402);
-         Module var10 = Client.getInstance().getModuleManager().method14665(var9).get(var6.field32402);
-         String var11 = var10.method15992();
+         Module var10 = Client.getInstance().getModuleManager().getModulesByCategory(var9).get(var6.field32402);
+         String var11 = var10.getDescription();
          if (var4 == 3) {
             Setting var12 = this.method15968(var10).get(var7.field32402);
             var11 = var12.method18626();
@@ -244,17 +244,17 @@ public class Class5151 extends Module {
             (float)var8.method24720() + (float)var8.method24719() + 14.0F * var17,
             (float)var8.method24721() + 16.0F + (float)(25 * var8.field32402),
             24.0F * var17,
-            Class5628.method17688(Class1979.field12891.field12910, var1 * 0.6F),
-            Class5628.method17688(Class1979.field12891.field12910, var1 * 0.6F)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F),
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
          );
          int var13 = var8.method24720() + var8.method24719() + 4 + Math.round(var17 * 28.0F);
          int var14 = var8.method24721() + 25 * var8.field32402 + 4;
          int var15 = var8.field32394.method23942(var11) + 8;
          float var16 = Class8056.method27664(this.field23381.calcPercent(), 0.0F, 1.0F, 1.0F);
-         Class3192.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, Class5628.method17688(Class1979.field12891.field12910, var1 * 0.6F));
+         Class3192.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
          Class3192.method11419((float)var13, (float)var14, (float)var15 * var16, 25.0F);
          Class3192.method11439(
-            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, Class5628.method17688(Class1979.field12896.field12910, Math.min(1.0F, var1 * 1.7F))
+            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
          );
          Class3192.method11422();
       }
@@ -294,8 +294,8 @@ public class Class5151 extends Module {
    public void method15962(ModuleCategory var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : Client.getInstance().getModuleManager().method14665(var1)) {
-         var4.add(var6.method15990());
+      for (Module var6 : Client.getInstance().getModuleManager().getModulesByCategory(var1)) {
+         var4.add(var6.getSuffix());
       }
 
       this.method15964(1);
@@ -336,7 +336,7 @@ public class Class5151 extends Module {
       ArrayList var4 = new ArrayList();
 
       for (Setting var6 : this.method15968(var1)) {
-         var4.add(var6.method18625() + " " + var6.method18619());
+         var4.add(var6.getName() + " " + var6.getCurrentValue());
       }
 
       return var4;
@@ -356,7 +356,7 @@ public class Class5151 extends Module {
 
       while (var7.hasNext()) {
          Setting var6 = (Setting)var7.next();
-         if (var6.method18625().equals("Keybind")) {
+         if (var6.getName().equals("Keybind")) {
             var7.remove();
          }
       }

@@ -118,7 +118,7 @@ public class Class888 extends Class882 implements Class889 {
       this.method3468();
       if (this.field5123 == 0 && !this.method3245()) {
          this.world
-            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26577, Class2266.field14736, 3.0F, 1.0F);
+            .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26577, Class2266.field14736, 3.0F, 1.0F);
       }
 
       this.field5123++;

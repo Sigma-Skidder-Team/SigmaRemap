@@ -13,8 +13,8 @@ public class Class3599 implements Comparator<Class8012> {
    public int compare(Class8012 var1, Class8012 var2) {
       Entity var5 = var1.method27397();
       Entity var6 = var2.method27397();
-      Object var7 = Class5357.field23949 != null && Class5357.field23949.method27397() != null
-         ? Class5357.field23949.method27397()
+      Object var7 = KillAura.field23949 != null && KillAura.field23949.method27397() != null
+         ? KillAura.field23949.method27397()
          : this.field19552.field44347.player;
       float var8 = ((Entity)var7).method3275(var5);
       float var9 = ((Entity)var7).method3275(var6);

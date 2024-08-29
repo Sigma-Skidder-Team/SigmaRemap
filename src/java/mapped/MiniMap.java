@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class5274 extends Module {
+public class MiniMap extends Module {
     private static float field23708 = 64.0F;
     public ByteBuffer field23704 = null;
     public BufferedImage field23705 = null;
@@ -37,7 +37,7 @@ public class Class5274 extends Module {
     private double field23717;
     private double field23718;
 
-    public Class5274() {
+    public MiniMap() {
         super(ModuleCategory.GUI, "MiniMap", "Shows a mini map");
         this.method16005(false);
     }
@@ -58,17 +58,17 @@ public class Class5274 extends Module {
     }
 
     // $VF: synthetic method
-    public static Minecraft method16504() {
+    public static Minecraft getMC() {
         return mc;
     }
 
     // $VF: synthetic method
-    public static Minecraft method16505() {
+    public static Minecraft getMC2() {
         return mc;
     }
 
     @EventTarget
-    public void method16499(WorldLoadEvent var1) {
+    public void onWorldLoad(WorldLoadEvent var1) {
         this.field23716.clear();
     }
 
@@ -79,7 +79,7 @@ public class Class5274 extends Module {
 
     @EventTarget
     private void method16500(TickEvent var1) {
-        if (this.method15996() && mc.player != null && mc.world != null) {
+        if (this.isEnabled() && mc.player != null && mc.world != null) {
             this.field23707++;
             if ((double) field23708 < mc.player.getPosY() && mc.player.field5036) {
                 field23708 += 0.5F;
@@ -144,7 +144,7 @@ public class Class5274 extends Module {
     @EventTarget
     @HigherPriority
     private void method16501(Class4415 var1) throws IOException {
-        if (this.method15996() && mc.player != null && mc.world != null) {
+        if (this.isEnabled() && mc.player != null && mc.world != null) {
             if (this.field23704 != null) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
@@ -175,7 +175,7 @@ public class Class5274 extends Module {
                                     var11,
                                     var12,
                                     var4,
-                                    Class1979.field12896.field12910,
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor,
                                     0.0F,
                                     0.0F,
                                     (float) (this.field23715 * 16),
@@ -203,7 +203,7 @@ public class Class5274 extends Module {
                                     (float) (this.field23711 + this.field23710 / 2 - 4),
                                     (float) (this.field23712 + this.field23709 / 2 - 8),
                                     var5,
-                                    Class1979.field12896.field12910
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor
                             );
                             GL11.glPopMatrix();
                             Class3192.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);

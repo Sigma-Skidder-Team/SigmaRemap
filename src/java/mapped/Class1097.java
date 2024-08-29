@@ -240,7 +240,7 @@ public class Class1097 extends Class1018 {
 
    @Override
    public boolean method3114(Entity var1) {
-      this.method2863(Class6067.field26879, 1.0F, 1.0F);
+      this.method2863(Sounds.field26879, 1.0F, 1.0F);
       if (!this.method4307()) {
          this.field6025 = true;
       }
@@ -271,7 +271,7 @@ public class Class1097 extends Class1018 {
          }
 
          if (this.method5186() == 29 || this.method5186() == 14) {
-            this.method2863(Class6067.field26875, 1.0F, 1.0F);
+            this.method2863(Sounds.field26875, 1.0F, 1.0F);
          }
 
          this.method5187(this.method5186() - 1);
@@ -281,7 +281,7 @@ public class Class1097 extends Class1018 {
          this.method5199(this.method5198() + 1);
          if (this.method5198() <= 20) {
             if (this.method5198() == 1) {
-               this.method2863(Class6067.field26869, 1.0F, 1.0F);
+               this.method2863(Sounds.field26869, 1.0F, 1.0F);
             }
          } else {
             this.method5197(false);
@@ -342,7 +342,7 @@ public class Class1097 extends Class1018 {
    private void method5216() {
       if (this.method5195() % 5 == 0) {
          this.method2863(
-            Class6067.field26873, 0.5F + 0.5F * (float)this.field5054.nextInt(2), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F
+            Sounds.field26873, 0.5F + 0.5F * (float)this.field5054.nextInt(2), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F
          );
 
          for (int var3 = 0; var3 < 6; var3++) {
@@ -445,7 +445,7 @@ public class Class1097 extends Class1018 {
             0.0,
             var3.field18050
          );
-      this.method2863(Class6067.field26870, 1.0F, 1.0F);
+      this.method2863(Sounds.field26870, 1.0F, 1.0F);
 
       for (Class1097 var5 : this.world.<Class1097>method7182(Class1097.class, this.method3389().method19664(10.0))) {
          if (!var5.method3005() && var5.field5036 && !var5.method3250() && var5.method5230()) {
@@ -586,15 +586,15 @@ public class Class1097 extends Class1018 {
    @Override
    public Class9455 method4241() {
       if (!this.method4307()) {
-         return !this.method5211() ? Class6067.field26871 : Class6067.field26877;
+         return !this.method5211() ? Sounds.field26871 : Sounds.field26877;
       } else {
-         return Class6067.field26876;
+         return Sounds.field26876;
       }
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26874, 0.15F, 1.0F);
+      this.method2863(Sounds.field26874, 0.15F, 1.0F);
    }
 
    @Override
@@ -609,13 +609,13 @@ public class Class1097 extends Class1018 {
    @Nullable
    @Override
    public Class9455 method2880() {
-      return Class6067.field26872;
+      return Sounds.field26872;
    }
 
    @Nullable
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26878;
+      return Sounds.field26878;
    }
 
    public boolean method5230() {

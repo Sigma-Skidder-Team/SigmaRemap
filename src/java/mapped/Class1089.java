@@ -55,7 +55,7 @@ public class Class1089 extends Class1018 {
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;
       if (!this.world.field9020 && this.method3066() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
-         this.method2863(Class6067.field26452, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+         this.method2863(Sounds.field26452, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
          this.method3300(Items.field37904);
          this.field5970 = this.field5054.nextInt(6000) + 6000;
       }
@@ -68,22 +68,22 @@ public class Class1089 extends Class1018 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26450;
+      return Sounds.field26450;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26453;
+      return Sounds.field26453;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26451;
+      return Sounds.field26451;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26454, 0.15F, 1.0F);
+      this.method2863(Sounds.field26454, 0.15F, 1.0F);
    }
 
    public Class1089 method4389(ServerWorld var1, Class1045 var2) {

@@ -30,7 +30,7 @@ public class Class7457 {
    }
 
    public boolean method24107(Direction var1, Direction var2) {
-      return !Class5184.field23483.method15996() ? this.field32076.method33635(var1, var2) : true;
+      return !Class5184.field23483.isEnabled() ? this.field32076.method33635(var1, var2) : true;
    }
 
    public BitSet method24112(RenderType var1) {

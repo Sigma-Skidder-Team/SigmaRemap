@@ -42,17 +42,17 @@ public class Class1055 extends Class1047 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27125;
+      return Sounds.field27125;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27127;
+      return Sounds.field27127;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27126;
+      return Sounds.field27126;
    }
 
    @Override
@@ -148,7 +148,7 @@ public class Class1055 extends Class1047 {
    }
 
    private void method4838() {
-      this.method2863(Class6067.field27128, this.method3099(), this.method3100());
+      this.method2863(Sounds.field27128, this.method3099(), this.method3100());
       Vector3d var3 = this.method4837(new Vector3d(0.0, -1.0, 0.0)).method11339(this.getPosX(), this.getPosY(), this.getPosZ());
 
       for (int var4 = 0; var4 < 30; var4++) {

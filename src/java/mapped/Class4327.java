@@ -50,7 +50,7 @@ public class Class4327 extends Class4305 {
             128,
             128,
             ResourcesDecrypter.singleplayerPNG,
-            new Class6387(Class1979.field12896.field12910, Class1979.field12891.field12910)
+            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
       this.method13230(
@@ -62,7 +62,7 @@ public class Class4327 extends Class4305 {
             128,
             128,
             ResourcesDecrypter.multiplayerPNG,
-            new Class6387(Class1979.field12896.field12910, Class1979.field12891.field12910)
+            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
       this.method13230(
@@ -74,7 +74,7 @@ public class Class4327 extends Class4305 {
             128,
             128,
             ResourcesDecrypter.shopPNG,
-            new Class6387(Class1979.field12896.field12910, Class1979.field12891.field12910)
+            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
       this.method13230(
@@ -86,7 +86,7 @@ public class Class4327 extends Class4305 {
             128,
             128,
             ResourcesDecrypter.optionsPNG,
-            new Class6387(Class1979.field12896.field12910, Class1979.field12891.field12910)
+            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
       this.method13230(
@@ -98,12 +98,12 @@ public class Class4327 extends Class4305 {
             128,
             128,
             ResourcesDecrypter.altPNG,
-            new Class6387(Class1979.field12896.field12910, Class1979.field12891.field12910)
+            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor)
          )
       );
       this.method13230(
          this.field21130 = new Class4287(
-            this, "Copyright", 10, this.method13269() - 31, var15.method23942(var20), 128, new Class6387(Class1979.field12896.field12910), var20, var15
+            this, "Copyright", 10, this.method13269() - 31, var15.method23942(var20), 128, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
          )
       );
       this.method13230(
@@ -114,7 +114,7 @@ public class Class4327 extends Class4305 {
             this.method13269() - 31,
             128,
             128,
-            new Class6387(Class1979.field12896.field12910),
+            new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor),
             var21,
             var15
          )
@@ -123,12 +123,12 @@ public class Class4327 extends Class4305 {
       this.field21129.field20779 = true;
       this.method13230(
          this.field21132 = new Class4274(
-            this, "changelog", 432, 24, 110, 50, new Class6387(Class5628.method17688(Class1979.field12896.field12910, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
+            this, "changelog", 432, 24, 110, 50, new Class6387(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
          )
       );
       this.method13230(
          this.field21133 = new Class4274(
-            this, "quit", 30, 24, 50, 50, new Class6387(Class5628.method17688(Class1979.field12896.field12910, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
+            this, "quit", 30, 24, 50, 50, new Class6387(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
          )
       );
       this.field21133.method13251((var1x, var2x) -> {
@@ -194,7 +194,7 @@ public class Class4327 extends Class4305 {
          (float)var5,
          (float)var6,
          ResourcesDecrypter.logoLargePNG,
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       super.method13027(var1);
    }

@@ -78,7 +78,7 @@ public class Class1110 extends Class1111 implements Class1008 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Class6067.field26921,
+                  Sounds.field26921,
                   this.method2864(),
                   0.95F + this.field5054.nextFloat() * 0.05F,
                   0.95F + this.field5054.nextFloat() * 0.05F,
@@ -153,17 +153,17 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26918;
+      return Sounds.field26918;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26922;
+      return Sounds.field26922;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26920;
+      return Sounds.field26920;
    }
 
    @Override

@@ -32,7 +32,7 @@ public class Class2766 extends Class2595 {
       Vector3d var4 = var3.method3286(1.0F);
       Class1100.method5280(this.field17340).method20813(var4.field18048, var4.field18049, var4.field18050, 1.0);
       this.field17340.method5276(true);
-      this.field17340.method2863(Class6067.field27186, 1.0F, 1.0F);
+      this.field17340.method2863(Sounds.field27186, 1.0F, 1.0F);
    }
 
    @Override

@@ -35,7 +35,7 @@ public interface Class1023 extends Class1022 {
          var5,
          (float)(14 - var1.world.method6997().method8905() * 4)
       );
-      var1.method2863(Class6067.field26494, 1.0F, 1.0F / (var1.method3013().nextFloat() * 0.4F + 0.8F));
+      var1.method2863(Sounds.field26494, 1.0F, 1.0F / (var1.method3013().nextFloat() * 0.4F + 0.8F));
    }
 
    default Class7680 method4540(Class880 var1, Vector3d var2, float var3) {

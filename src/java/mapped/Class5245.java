@@ -13,8 +13,8 @@ public class Class5245 extends Module {
 
     public Class5245() {
         super(ModuleCategory.COMBAT, "Gomme", "AntiKB for GommeHD");
-        this.registerSetting(new Class6009<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
     }
 
     @EventTarget
@@ -24,7 +24,7 @@ public class Class5245 extends Module {
 
     @EventTarget
     private void method16351(Class4435 var1) {
-        double var4 = this.field23611 * (double) (1.0F - this.method15977("Delay")) - this.field23611 / 2.0;
+        double var4 = this.field23611 * (double) (1.0F - this.getNumberValueBySettingName("Delay")) - this.field23611 / 2.0;
         if (mc.player.field5036 && this.field23610 <= 0) {
         }
 
@@ -34,7 +34,7 @@ public class Class5245 extends Module {
             var1.method13997(var1.method13996() * 0.5);
         } else if (this.field23610 == 2) {
             this.field23610++;
-            Class9567.method37088(var1, this.method15977("Boost"));
+            Class9567.method37088(var1, this.getNumberValueBySettingName("Boost"));
         }
     }
 

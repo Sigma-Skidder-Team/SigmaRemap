@@ -38,7 +38,7 @@ public class Class5235 extends Module {
 
     @EventTarget
     private void method16319(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof SChatPacket) {
                 SChatPacket var4 = (SChatPacket) var1.method13898();
                 if (var4.method17648().getString().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
@@ -51,8 +51,8 @@ public class Class5235 extends Module {
     @EventTarget
     @HigherPriority
     private void method16320(Class4399 var1) {
-        if (this.method15996()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Fly.class);
+        if (this.isEnabled()) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
             if (var4.method16726() instanceof MineplexFly) {
                 MineplexFly var5 = (MineplexFly) var4.method16726();
                 if (var5.method16456()) {
@@ -62,9 +62,9 @@ public class Class5235 extends Module {
 
             if (!var1.method13921()) {
                 if (field23588 != null) {
-                    if (this.method15974("No Swing") && !this.method15974("Mineplex")) {
+                    if (this.getBooleanValueFromSetttingName("No Swing") && !this.getBooleanValueFromSetttingName("Mineplex")) {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
-                    } else if (!this.method15974("No Swing")) {
+                    } else if (!this.getBooleanValueFromSetttingName("No Swing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     }
 
@@ -81,13 +81,13 @@ public class Class5235 extends Module {
                     mc.getConnection().sendPacket(new Class5570(Hand.MAIN_HAND, var7));
                 }
             } else {
-                List var8 = this.method16321(!this.method15974("Mineplex") ? mc.playerController.method23135() : 6.0F);
+                List var8 = this.method16321(!this.getBooleanValueFromSetttingName("Mineplex") ? mc.playerController.method23135() : 6.0F);
                 if (var8.isEmpty()) {
                     field23588 = null;
                 } else {
                     Collections.sort(var8, new Class3593(this));
                     field23588 = (BlockPos) var8.get(0);
-                    if (!this.method15974("Mineplex")) {
+                    if (!this.getBooleanValueFromSetttingName("Mineplex")) {
                         float[] var6 = Class9142.method34144(
                                 (double) field23588.getX() + 0.5, (double) field23588.getZ() + 0.5, field23588.getY()
                         );

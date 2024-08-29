@@ -31,7 +31,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       if (!var5.equals(this.field5954)) {
          this.method5036(this.method5037() != Class2210.field14452 ? Class2210.field14452 : Class2210.field14453);
          this.field5954 = var5;
-         this.method2863(Class6067.field26765, 2.0F, 1.0F);
+         this.method2863(Sounds.field26765, 2.0F, 1.0F);
       }
    }
 
@@ -61,9 +61,9 @@ public class Class1086 extends Class1087 implements Class1020 {
          var1.method3095(var2, var13);
          Class9455 var9;
          if (!var11) {
-            var9 = Class6067.field26767;
+            var9 = Sounds.field26767;
          } else {
-            var9 = Class6067.field26768;
+            var9 = Sounds.field26768;
          }
 
          this.method2863(var9, 1.0F, 1.0F);
@@ -102,7 +102,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
             this.field5952 = (Class7144)var7.getLeft();
             this.field5953 = (Integer)var7.getRight();
-            this.method2863(Class6067.field26766, 2.0F, 1.0F);
+            this.method2863(Sounds.field26766, 2.0F, 1.0F);
          } else {
             for (int var10 = 0; var10 < 2; var10++) {
                this.world
@@ -126,7 +126,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, Class6067.field26769, var1, 1.0F, 1.0F);
+      this.world.method6744((PlayerEntity)null, this, Sounds.field26769, var1, 1.0F, 1.0F);
       if (!this.world.method6714()) {
          ((ServerWorld)this.world).method6939(Class7940.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method2904();

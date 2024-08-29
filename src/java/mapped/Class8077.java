@@ -20,15 +20,15 @@ public class Class8077 implements IAmbientSoundHandler {
             if (!(var3 < 0.001F)) {
                if (var3 < 0.01F) {
                   this.field34718 = 0;
-                  this.field34717.method1000(new Class6346(this.field34716, Class6067.field26332));
+                  this.field34717.method1000(new Class6346(this.field34716, Sounds.field26332));
                }
             } else {
                this.field34718 = 0;
-               this.field34717.method1000(new Class6346(this.field34716, Class6067.field26333));
+               this.field34717.method1000(new Class6346(this.field34716, Sounds.field26333));
             }
          } else {
             this.field34718 = 0;
-            this.field34717.method1000(new Class6346(this.field34716, Class6067.field26334));
+            this.field34717.method1000(new Class6346(this.field34716, Sounds.field26334));
          }
       }
    }

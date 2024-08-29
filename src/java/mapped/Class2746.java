@@ -43,7 +43,7 @@ public class Class2746 extends Class2595 {
             this.field17279.world.method6916(new Class905(this.field17279.world, this.field17279, var3, this.field17279.method4848().method544()));
             this.field17279
                .method2863(
-                  Class6067.field27053,
+                  Sounds.field27053,
                   2.0F,
                   (Class1057.method4859(this.field17279).nextFloat() - Class1057.method4860(this.field17279).nextFloat()) * 0.2F + 1.0F
                );

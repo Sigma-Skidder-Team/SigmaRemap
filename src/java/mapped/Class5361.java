@@ -23,7 +23,7 @@ public class Class5361 extends Module {
 
     @EventTarget
     private void method16862(Class4399 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13921() && mc.getCurrentServerData() != null) {
                 if (!this.field23967.isEmpty()) {
                     if (this.field23968 > 3200) {
@@ -66,7 +66,7 @@ public class Class5361 extends Module {
 
     @EventTarget
     private void method16863(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.getConnection() != null && var1.method13898() instanceof Class5503) {
                 Class5503 var4 = (Class5503) var1.method13898();
                 if (var4.method17308() == Class2176.field14283) {

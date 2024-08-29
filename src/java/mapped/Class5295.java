@@ -18,7 +18,7 @@ public class Class5295 extends Module {
 
     public Class5295() {
         super(ModuleCategory.ITEM, "AutoPotion", "Automatically throws potion to regen or speed up");
-        this.registerSetting(new Class6009<Float>("Health", "Maximum health before healing.", 6.0F, Float.class, 0.5F, 10.0F, 0.5F));
+        this.registerSetting(new NumberSetting<Float>("Health", "Maximum health before healing.", 6.0F, Float.class, 0.5F, 10.0F, 0.5F));
         this.registerSetting(new BooleanSetting("Predict", "Predicts where to pot when moving.", true));
         this.registerSetting(new BooleanSetting("Instant", "Instant potting (more packets).", false));
         this.registerSetting(new BooleanSetting("Speed", "Uses Speed pots.", true));
@@ -35,16 +35,16 @@ public class Class5295 extends Module {
     @EventTarget
     @LowestPriority
     private void method16629(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
-            if (this.method15974("In fight") || Class5357.field23949 == null && Class5357.field23948 == null) {
+        if (this.isEnabled() && var1.method13921()) {
+            if (this.getBooleanValueFromSetttingName("In fight") || KillAura.field23949 == null && KillAura.field23948 == null) {
                 int var4 = this.method16631();
                 this.field23808++;
                 int[] var5 = new int[]{6, -1, -1};
-                if (this.method15974("Regen")) {
+                if (this.getBooleanValueFromSetttingName("Regen")) {
                     var5[1] = 10;
                 }
 
-                if (this.method15974("Speed")) {
+                if (this.getBooleanValueFromSetttingName("Speed")) {
                     var5[2] = 1;
                 }
 
@@ -70,7 +70,7 @@ public class Class5295 extends Module {
                                     }
                                 } else if (this.field23808 > 18
                                         && !mc.player.method3033(Class7144.method22287(var5[var6]))
-                                        && mc.player.method3042() < this.method15977("Health") * 2.0F) {
+                                        && mc.player.method3042() < this.getNumberValueBySettingName("Health") * 2.0F) {
                                     this.method16634(var1, var4, var5[var6]);
                                 }
                             }
@@ -88,7 +88,7 @@ public class Class5295 extends Module {
         double var3 = mc.player.getPosX() + mc.player.method3433().field18048 * 26.0;
         double var5 = mc.player.field5035.field28450 - 3.6;
         double var7 = mc.player.getPosZ() + mc.player.method3433().field18050 * 26.0;
-        return !this.method15974("Predict") ? new float[]{mc.player.field5031, 90.0F} : Class9142.method34144(var3, var7, var5);
+        return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.field5031, 90.0F} : Class9142.method34144(var3, var7, var5);
     }
 
     public int method16631() {
@@ -116,7 +116,7 @@ public class Class5295 extends Module {
                 if (var9.getItem() instanceof Class3323) {
                     List<Class2023> var10 = Class7789.method25858(var9);
                     int var11 = this.method16633(var10);
-                    if (var10 != null && !var10.isEmpty() && (this.method15974("Custom potion") || var11 == 1)) {
+                    if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSetttingName("Custom potion") || var11 == 1)) {
                         for (Class2023 var13 : var10) {
                             int var14 = Class7144.method22288(var13.method8627());
                             int var15 = var13.method8629();
@@ -170,12 +170,12 @@ public class Class5295 extends Module {
             } else {
                 this.field23808 = 0;
                 int var7 = mc.player.inventory.currentItem;
-                boolean var8 = Client.getInstance().getModuleManager().method14662(Class5332.class).method15996()
-                        && Client.getInstance().getModuleManager().method14662(Class5332.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
+                boolean var8 = Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).isEnabled()
+                        && Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).getStringSettingValueByName("Type").equalsIgnoreCase("NoGround");
                 float[] var9 = this.method16630();
                 mc.player.inventory.currentItem = var6 - 36;
                 mc.playerController.method23138();
-                if (!this.method15974("Instant")) {
+                if (!this.getBooleanValueFromSetttingName("Instant")) {
                     this.field23811 = 1;
                     var1.method13918(var9[0]);
                     var1.method13916(var9[1]);
@@ -185,7 +185,7 @@ public class Class5295 extends Module {
                     mc.getConnection().sendPacket(new Class5555(Hand.field183));
                     mc.player.inventory.currentItem = var7;
                     mc.playerController.method23138();
-                    Class5357.field23954 = 1;
+                    KillAura.field23954 = 1;
                 }
 
                 this.field23810 = var7;

@@ -25,7 +25,7 @@ public class Class4376 extends Class4235 implements Class4238 {
    }
 
    public Class4376(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
-      super(var1, var2, var3, var4, var5, var6, var7, new Class6387(Class1979.field12896.field12910, Class1979.field12896.field12910));
+      super(var1, var2, var3, var4, var5, var6, var7, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor));
    }
 
    @Override

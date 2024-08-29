@@ -201,7 +201,7 @@ public abstract class Class1197 extends Class1193 implements Class1190, Class115
    }
 
    public void method5739(SoundHandler var1) {
-      var1.method1000(Class6339.method19292(Class6067.field27176, 1.0F));
+      var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27176, 1.0F));
    }
 
    public int method5740() {

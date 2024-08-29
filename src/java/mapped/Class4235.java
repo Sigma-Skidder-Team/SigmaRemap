@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class4235 extends Class4240 {
    private static String[] field20573;
-   public static final Class6387 field20574 = new Class6387(Class1979.field12896.field12910, Class5628.method17691(Class1979.field12896.field12910, 0.1F));
+   public static final Class6387 field20574 = new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, Class5628.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
    public Texture field20575;
 
    public Class4235(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7, Class6387 var8, String var9, ClientResource var10) {

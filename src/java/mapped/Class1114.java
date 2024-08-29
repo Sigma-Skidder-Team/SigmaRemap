@@ -34,17 +34,17 @@ public class Class1114 extends Class1113 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return this.method5364() && this.field5054.nextInt(4) != 0 ? null : Class6067.field26380;
+      return this.method5364() && this.field5054.nextInt(4) != 0 ? null : Sounds.field26380;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26382;
+      return Sounds.field26382;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26381;
+      return Sounds.field26381;
    }
 
    @Override

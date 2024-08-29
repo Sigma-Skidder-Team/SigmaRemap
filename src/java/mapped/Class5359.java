@@ -51,7 +51,7 @@ public class Class5359 extends Module {
 
     @EventTarget
     private void method16854(Class4415 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             String var4 = this.getStringSettingValueByName("Animation");
             String var5 = this.getStringSettingValueByName("Outline");
             this.method16855();
@@ -70,13 +70,13 @@ public class Class5359 extends Module {
             for (Entry var14 : this.field23962.entrySet()) {
                 Animation var15 = (Animation) var14.getValue();
                 Module var16 = (Module) var14.getKey();
-                if (var16.method15996() || var15.calcPercent() != 1.0F && !var4.equalsIgnoreCase("None")) {
+                if (var16.isEnabled() || var15.calcPercent() != 1.0F && !var4.equalsIgnoreCase("None")) {
                     boolean var17 = true;
                     boolean var18 = true;
                     var9 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     var10 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     int var19 = this.method16857(var16);
-                    int var20 = this.field23963.method23941(var16.method15990()) + var8;
+                    int var20 = this.field23963.method23941(var16.getSuffix()) + var8;
                     float var21 = 1.0F - Class9782.method38557(var15.calcPercent(), 0.0F, 1.0F, 1.0F);
                     if (var4.equalsIgnoreCase("Smooth") || var4.equalsIgnoreCase("Both")) {
                         var20 = (int) ((float) var20 * var21);
@@ -117,7 +117,7 @@ public class Class5359 extends Module {
                             (float) var7,
                             (float) (var6 + var20) - Class9782.method38557(var15.calcPercent(), 0.0F, 1.0F, 1.0F)
                     );
-                    this.field23963.method23937((float) (var7 - var19), (float) var6, var16.method15990(), new Color(var9));
+                    this.field23963.method23937((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
                             .method23937(
                                     (float) (var7 - this.field23964.method23942(this.method16856(var16))),
@@ -147,10 +147,10 @@ public class Class5359 extends Module {
         if (this.field23962.isEmpty()) {
             this.field23962.clear();
 
-            for (Module var4 : Client.getInstance().getModuleManager().method14664().values()) {
-                if (var4 != this && var4.method15995() != ModuleCategory.GUI) {
-                    Animation var5 = new Animation(200, 200, !var4.method15996() ? Direction.FORWARDS : Direction.BACKWARDS);
-                    var5.method25318(!var4.method15996() ? 1.0F : 0.0F);
+            for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+                if (var4 != this && var4.getCategory() != ModuleCategory.GUI) {
+                    Animation var5 = new Animation(200, 200, !var4.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
+                    var5.method25318(!var4.isEnabled() ? 1.0F : 0.0F);
                     this.field23962.put(var4, var5);
                     Setting var6 = var4.method15989().get("Type");
                     if (var6 == null) {
@@ -168,7 +168,7 @@ public class Class5359 extends Module {
         for (Entry var8 : this.field23962.entrySet()) {
             Module var9 = (Module) var8.getKey();
             Animation var11 = (Animation) var8.getValue();
-            var11.changeDirection(!var9.method15996() ? Direction.FORWARDS : Direction.BACKWARDS);
+            var11.changeDirection(!var9.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
         }
     }
 
@@ -186,7 +186,7 @@ public class Class5359 extends Module {
     }
 
     private int method16857(Module var1) {
-        String var4 = var1.method15990();
+        String var4 = var1.getSuffix();
         String var5 = this.method16856(var1);
         return this.field23963.method23942(var4) + this.field23964.method23942(var5);
     }

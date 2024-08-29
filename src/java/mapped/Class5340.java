@@ -34,7 +34,7 @@ public class Class5340 extends Class5325 {
         this.registerSetting(new Class6011("First character", "The characters your sentences will start with.", ""));
         this.registerSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
         this.registerSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
-        this.registerSetting(new Class6009<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
         this.field23891 = new Timer();
     }
 
@@ -58,7 +58,7 @@ public class Class5340 extends Class5325 {
 
     @EventTarget
     private void method16758(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23890 != null) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     this.method16759(null);

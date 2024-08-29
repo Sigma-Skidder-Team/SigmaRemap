@@ -63,7 +63,7 @@ public abstract class Class932 extends TileEntity implements Class920, Class949,
    public static boolean method3697(PlayerEntity var0, Class7969 var1, ITextComponent var2) {
       if (!var0.isSpectator() && !var1.method27091(var0.method3090())) {
          var0.sendStatusMessage(new TranslationTextComponent("container.isLocked", var2), true);
-         var0.method2834(Class6067.field26448, Class2266.field14732, 1.0F, 1.0F);
+         var0.method2834(Sounds.field26448, Class2266.field14732, 1.0F, 1.0F);
          return false;
       } else {
          return true;

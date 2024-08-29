@@ -12,7 +12,7 @@ public class Class5269 extends Module {
 
     @EventTarget
     public void method16490(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             mc.player.method3040(Class8254.field35491);
         }
     }

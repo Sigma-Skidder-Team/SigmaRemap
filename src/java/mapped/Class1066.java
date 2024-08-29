@@ -163,7 +163,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    public void method4895() {
-      this.method2863(Class6067.field26510, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(Sounds.field26510, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
    }
 
    public int method4897() {

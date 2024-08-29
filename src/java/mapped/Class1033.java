@@ -80,7 +80,7 @@ public class Class1033 extends Class1031 implements Class1022 {
                this.world.method6746(Class7940.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
             }
 
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26695, this.method2864(), 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26695, this.method2864(), 1.0F, 1.0F, false);
          } else if (this.field4952 == this.field4953 - 1) {
             this.field5739 = 3;
 
@@ -94,7 +94,7 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public Class9455 method4546() {
-      return Class6067.field26691;
+      return Sounds.field26691;
    }
 
    public Vector3d[] method4611(float var1) {
@@ -126,22 +126,22 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26691;
+      return Sounds.field26691;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26693;
+      return Sounds.field26693;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26694;
+      return Sounds.field26694;
    }
 
    @Override
    public Class9455 method4598() {
-      return Class6067.field26692;
+      return Sounds.field26692;
    }
 
    @Override
@@ -157,7 +157,7 @@ public class Class1033 extends Class1031 implements Class1022 {
       double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
       var6.method3462(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
-      this.method2863(Class6067.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(Sounds.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var6);
    }
 

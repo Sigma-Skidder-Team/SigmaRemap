@@ -53,39 +53,39 @@ public class Class4355 extends Class4247 {
          (float)this.field20896,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(Class5628.method17691(Class1979.field12896.field12910, 0.03F), this.field21289.calcPercent())
+         Class5628.method17688(Class5628.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.03F), this.field21289.calcPercent())
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(this.field20895 + 68),
          (float)(this.field20896 + 14),
          this.field21291,
-         Class5628.method17688(Class1979.field12891.field12910, 0.8F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F)
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.field20895 + 68),
          (float)(this.field20896 + 38),
          "x:" + this.field21292.getX() + " z:" + this.field21292.getZ(),
-         Class5628.method17688(Class1979.field12891.field12910, 0.5F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
       );
       byte var4 = 27;
       int var5 = this.field20897 - 43;
       float var6 = !this.method13216() ? 0.2F : 0.4F;
       Class3192.method11424(
-         (float)(this.field20895 + var5), (float)(this.field20896 + var4), 20.0F, 2.0F, Class5628.method17688(Class1979.field12891.field12910, var6)
+         (float)(this.field20895 + var5), (float)(this.field20896 + var4), 20.0F, 2.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var6)
       );
       Class3192.method11424(
-         (float)(this.field20895 + var5), (float)(this.field20896 + var4 + 5), 20.0F, 2.0F, Class5628.method17688(Class1979.field12891.field12910, var6)
+         (float)(this.field20895 + var5), (float)(this.field20896 + var4 + 5), 20.0F, 2.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var6)
       );
       Class3192.method11424(
-         (float)(this.field20895 + var5), (float)(this.field20896 + var4 + 10), 20.0F, 2.0F, Class5628.method17688(Class1979.field12891.field12910, var6)
+         (float)(this.field20895 + var5), (float)(this.field20896 + var4 + 10), 20.0F, 2.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var6)
       );
       Class3192.method11438(
          (float)(this.field20895 + 35),
          (float)(this.field20896 + this.field20898 / 2),
          20.0F,
-         Class5628.method17690(this.field21293, Class1979.field12891.field12910, 0.9F)
+         Class5628.method17690(this.field21293, ClientColors.DEEP_TEAL.getColor, 0.9F)
       );
       Class3192.method11438((float)(this.field20895 + 35), (float)(this.field20896 + this.field20898 / 2), 17.0F, this.field21293);
       Class3192.method11463(

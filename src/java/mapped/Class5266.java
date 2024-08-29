@@ -20,7 +20,7 @@ public class Class5266 extends PremiumModule {
 
     @EventTarget
     private void method16482(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.isSingleplayer()) {
                 this.method16000();
             } else {

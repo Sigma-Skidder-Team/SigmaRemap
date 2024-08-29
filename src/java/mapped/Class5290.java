@@ -19,7 +19,7 @@ public class Class5290 extends Module {
     public Class5290() {
         super(ModuleCategory.ITEM, "AutoArmor", "Automaticly equips your armor");
         this.registerSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
-        this.registerSetting(new Class6009<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
         this.registerSetting(new ModeSetting("Mode", "The way it will move armor in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
         this.registerSetting(new ModeSetting("Elytra", "Elytra Equip Mode", 0, "Ignore", "Equip", "On Use"));
     }
@@ -42,13 +42,13 @@ public class Class5290 extends Module {
     @EventTarget
     @HigherPriority
     public void method16615(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!this.field23796.method27123()) {
                 this.field23796.method27118();
             }
 
             if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) {
-                long var4 = (long) (this.method15977("Delay") * 1000.0F);
+                long var4 = (long) (this.getNumberValueBySettingName("Delay") * 1000.0F);
                 String var6 = this.getStringSettingValueByName("Elytra");
                 switch (var6) {
                     case "Ignore":
@@ -113,7 +113,7 @@ public class Class5290 extends Module {
                         Class3256 var13 = (Class3256) var9.getItem();
                         if (Class2106.field13735 == var7
                                 && (
-                                !Client.getInstance().getModuleManager().method14662(Class5290.class).method15974("Fake Items")
+                                !Client.getInstance().getModuleManager().getModuleByClass(Class5290.class).getBooleanValueFromSetttingName("Fake Items")
                                         || Client.getInstance().method19940().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
@@ -129,7 +129,7 @@ public class Class5290 extends Module {
                                 mc.player.method3349(7, true);
                             }
 
-                            if (Client.getInstance().getModuleManager().method14662(Class5290.class).method15977("Delay") > 0.0F) {
+                            if (Client.getInstance().getModuleManager().getModuleByClass(Class5290.class).getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }
@@ -139,7 +139,7 @@ public class Class5290 extends Module {
                                 && Class7789.method25872(var9)
                                 && Class7789.method25850(var9) > 0
                                 && (
-                                !Client.getInstance().getModuleManager().method14662(Class5290.class).method15974("Fake Items")
+                                !Client.getInstance().getModuleManager().getModuleByClass(Class5290.class).getBooleanValueFromSetttingName("Fake Items")
                                         || Client.getInstance().method19940().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
@@ -155,7 +155,7 @@ public class Class5290 extends Module {
                             Class7789.method25870(mc.player.field4904.field25471, var12, 0, Class2259.field14695, mc.player, true);
                             this.field23796.method27120();
                             field23798 = true;
-                            if (Client.getInstance().getModuleManager().method14662(Class5290.class).method15977("Delay") > 0.0F) {
+                            if (Client.getInstance().getModuleManager().getModuleByClass(Class5290.class).getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }

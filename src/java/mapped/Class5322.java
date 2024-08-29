@@ -23,7 +23,7 @@ public class Class5322 extends Module {
 
     @EventTarget
     public void method16715(Class4399 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             this.field23868++;
             boolean var4 = var1.method13911() > mc.player.getPosY() - 1.0E-6 && var1.method13911() < mc.player.getPosY() + 1.0E-6;
             if (var4) {
@@ -64,7 +64,7 @@ public class Class5322 extends Module {
 
     @EventTarget
     public void method16716(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5554) {
                 Class5554 var5 = (Class5554) var4;

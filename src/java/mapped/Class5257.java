@@ -22,7 +22,7 @@ public class Class5257 extends PremiumModule {
 
     @EventTarget
     public void method16419(TickEvent var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 

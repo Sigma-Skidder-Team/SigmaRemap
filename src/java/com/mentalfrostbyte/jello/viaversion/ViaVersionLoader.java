@@ -116,7 +116,7 @@ public class ViaVersionLoader {
 
                while (var7.hasNext()) {
                   ItemStack var9 = (ItemStack)var7.next();
-                  if (var9.getItem() instanceof Class3267) {
+                  if (var9.getItem() instanceof ItemSword) {
                      var8 = true;
                   }
                }
@@ -176,7 +176,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23349(Class4396 var1) {
-      if (!Client.getInstance().getModuleManager().method14662(Class5156.class).method15996() && Class8005.method27349() != Class5989.field26129.method18582()) {
+      if (!Client.getInstance().getModuleManager().getModuleByClass(Class5156.class).isEnabled() && Class8005.method27349() != Class5989.field26129.method18582()) {
          if (!field31493.isEmpty()) {
             field31493.clear();
          }
@@ -187,7 +187,7 @@ public class ViaVersionLoader {
             if (var6.getFirst() == Class2106.field13732
                && var6.getSecond() != null
                && (
-                  Client.getInstance().getModuleManager().method14662(Class5156.class).method15996()
+                  Client.getInstance().getModuleManager().getModuleByClass(Class5156.class).isEnabled()
                      || Class8005.method27349() == Class5989.field26129.method18582()
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {

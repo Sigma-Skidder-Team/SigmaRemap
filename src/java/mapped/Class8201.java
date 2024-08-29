@@ -30,7 +30,7 @@ public class Class8201 implements Class8202 {
             break;
          case 1:
             if (!this.field35233.field5324.field9020 && !Class950.method3831(this.field35233).isEmpty()) {
-               this.field35233.method3822(Class6067.field26388);
+               this.field35233.method3822(Sounds.field26388);
             }
 
             Class950.method3832(this.field35233, Class950.method3833(var2));

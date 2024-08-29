@@ -13,7 +13,7 @@ public class Class5351 extends Module {
 
     public Class5351() {
         super(ModuleCategory.COMBAT, "AAC", "Places block underneath");
-        this.registerSetting(new Class6009<Float>("Strengh", "Boost strengh", 0.7F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Strengh", "Boost strengh", 0.7F, Float.class, 0.0F, 1.0F, 0.01F));
         field23907 = 20;
     }
 
@@ -24,7 +24,7 @@ public class Class5351 extends Module {
 
     @EventTarget
     private void method16788(Class4435 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (this.method16790()) {
                 if (field23907 == 0 && !mc.player.field5036 && mc.player.field4952 > 0 && mc.player.field5045 < 2.0F) {
                     mc.player.method3280(0.0, -1.0, 0.0);
@@ -41,7 +41,7 @@ public class Class5351 extends Module {
                         float var6 = Class9567.method37082()[0];
                         double var7 = Math.cos(Math.toRadians(var6));
                         double var9 = Math.sin(Math.toRadians(var6));
-                        double var11 = (double) ((float) (7 - field23907) * this.method15977("Strengh")) * 0.04 * (double) this.field23909 * 0.2;
+                        double var11 = (double) ((float) (7 - field23907) * this.getNumberValueBySettingName("Strengh")) * 0.04 * (double) this.field23909 * 0.2;
                         double var13 = ((double) var4 * var7 + (double) var5 * var9) * var11;
                         double var15 = ((double) var4 * var9 - (double) var5 * var7) * var11;
                         float var17 = (float) (Math.atan2(var13, var15) * 180.0 / Math.PI) - 90.0F;
@@ -64,7 +64,7 @@ public class Class5351 extends Module {
 
     @EventTarget
     private void method16789(Class4396 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5590) {
                 if (this.method16790()) {
@@ -87,6 +87,6 @@ public class Class5351 extends Module {
     }
 
     public boolean method16790() {
-        return this.method15977("Strengh") == 0.0F;
+        return this.getNumberValueBySettingName("Strengh") == 0.0F;
     }
 }

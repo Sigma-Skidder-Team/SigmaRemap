@@ -54,7 +54,7 @@ public class Class2675 extends Class2672 {
 
    @Override
    public Class9455 method10894() {
-      return Class6067.field26566;
+      return Sounds.field26566;
    }
 
    @Override

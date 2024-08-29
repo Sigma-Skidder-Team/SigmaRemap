@@ -35,12 +35,12 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
 
    @Override
    public Class9455 method2859() {
-      return Class6067.field26685;
+      return Sounds.field26685;
    }
 
    @Override
    public Class9455 method2860() {
-      return Class6067.field26684;
+      return Sounds.field26684;
    }
 
    @Override
@@ -50,17 +50,17 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26682;
+      return Sounds.field26682;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26681;
+      return Sounds.field26681;
    }
 
    @Override
    public Class9455 method2926(int var1) {
-      return var1 <= 4 ? Class6067.field26683 : Class6067.field26680;
+      return var1 <= 4 ? Sounds.field26683 : Sounds.field26680;
    }
 
    @Override

@@ -54,8 +54,8 @@ public class Class4358 extends Class4247 {
 
       for (Entry var13 : GuiManager.field41338.entrySet()) {
          Class6984 var14 = new Class6984((Class<? extends Screen>)var13.getKey());
-         Class6387 var15 = new Class6387(Class5628.method17688(Class1979.field12891.field12910, 0.02F), -986896)
-            .method19410(Class5628.method17688(Class1979.field12891.field12910, 0.5F))
+         Class6387 var15 = new Class6387(Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
+            .method19410(Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F))
             .method19412(Class2218.field14492);
          Class4240 var16;
          this.field21308
@@ -76,19 +76,19 @@ public class Class4358 extends Class4247 {
 
       var11 += 50;
 
-      for (Module var19 : Client.getInstance().getModuleManager().method14664().values()) {
-         Class6387 var20 = new Class6387(16777215, -986896).method19410(Class1979.field12891.field12910).method19412(Class2218.field14488);
+      for (Module var19 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+         Class6387 var20 = new Class6387(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor).method19412(Class2218.field14488);
          Class4240 var21;
          this.field21308
             .method13230(
                var21 = new Class4240(
-                  this.field21308, var19.method15991(), 0, var11++ * 40, this.field21308.method13267(), 40, var20, new Class6984(var19).method21596()
+                  this.field21308, var19.getName(), 0, var11++ * 40, this.field21308.method13267(), 40, var20, new Class6984(var19).method21596()
                )
             );
          var21.method13034(10);
          var21.method13251((var2x, var3x) -> {
-            for (Module var7 : Client.getInstance().getModuleManager().method14664().values()) {
-               if (var7.method15991().equals(var21.method13303()) && !this.field21311) {
+            for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+               if (var7.getName().equals(var21.method13303()) && !this.field21311) {
                   this.field21309 = new Class6984(var7);
                   this.field21311 = true;
                   break;
@@ -193,7 +193,7 @@ public class Class4358 extends Class4247 {
          (float)this.field20896,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(Class1979.field12891.field12910, 0.3F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
       );
       super.method13224();
       Class3192.method11475(
@@ -202,7 +202,7 @@ public class Class4358 extends Class4247 {
          (float)this.field21305,
          (float)this.field21306,
          10.0F,
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
       Class3192.method11439(
@@ -210,7 +210,7 @@ public class Class4358 extends Class4247 {
          (float)(var5 + this.field21304),
          (float)(var5 + this.field21303),
          "Select mod to bind",
-         Class5628.method17688(Class1979.field12891.field12910, var1 * 0.7F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
       super.method13027(var1);
    }

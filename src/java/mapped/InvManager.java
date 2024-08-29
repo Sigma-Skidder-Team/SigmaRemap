@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.util.timer.Timer;
 
 import java.util.ArrayList;
 
-public class Class5260 extends PremiumModule {
+public class InvManager extends PremiumModule {
     public static int field23654 = 36;
     public static int field23655 = 37;
     public static int field23656 = 38;
@@ -21,11 +21,11 @@ public class Class5260 extends PremiumModule {
     private boolean field23659;
     private boolean field23660;
 
-    public Class5260() {
+    public InvManager() {
         super("InvManager", "Drops all useless items from your inventory", ModuleCategory.ITEM);
         this.registerSetting(new ModeSetting("Mode", "The way it will move items in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
-        this.registerSetting(new Class6009<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
+        this.registerSetting(new NumberSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
         this.registerSetting(new ModeSetting("Clean Type", "Clean type", 0, "Skywars", "All"));
         this.registerSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
         this.registerSetting(new BooleanSetting("Cleaner", "Cleans your inventory.", true));
@@ -39,18 +39,18 @@ public class Class5260 extends PremiumModule {
 
     public static boolean method16431(ItemStack var0) {
         float var3 = method16433(var0);
-        Module var4 = Client.getInstance().getModuleManager().method14662(Class5260.class);
+        Module var4 = Client.getInstance().getModuleManager().getModuleByClass(InvManager.class);
 
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                if (method16433(var6) > var3 && (var6.getItem() instanceof Class3267 || !var4.method15974("Sword"))) {
+                if (method16433(var6) > var3 && (var6.getItem() instanceof ItemSword || !var4.getBooleanValueFromSetttingName("Sword"))) {
                     return false;
                 }
             }
         }
 
-        return var0.getItem() instanceof Class3267 || !var4.method15974("Sword");
+        return var0.getItem() instanceof ItemSword || !var4.getBooleanValueFromSetttingName("Sword");
     }
 
     public static float method16433(ItemStack var0) {
@@ -61,8 +61,8 @@ public class Class5260 extends PremiumModule {
             var3 += (float) var5.method11711();
         }
 
-        if (var4 instanceof Class3267) {
-            Class3267 var6 = (Class3267) var4;
+        if (var4 instanceof ItemSword) {
+            ItemSword var6 = (ItemSword) var4;
             var3 += var6.method11784();
         }
 
@@ -192,57 +192,57 @@ public class Class5260 extends PremiumModule {
             this.field23658.method27118();
         }
 
-        if (this.method15996() && !Class5290.field23798) {
-            String var4 = this.getStringSettingValueByName("Mode");
+        if (this.isEnabled() && !Class5290.field23798) {
+            String mode = this.getStringSettingValueByName("Mode");
             if (!this.getStringSettingValueByName("Mode").equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) {
-                long var5 = (long) (this.method15977("Delay") * 20.0F);
+                long delayValue = (long) (this.getNumberValueBySettingName("Delay") * 20.0F);
                 if (mc.currentScreen instanceof InventoryScreen) {
                     this.field23659 = false;
                 }
 
-                if (this.field23660 && (long) Client.getInstance().method19939().method31333() >= var5) {
+                if (this.field23660 && (long) Client.getInstance().method19939().method31333() >= delayValue) {
                     this.field23660 = !this.field23660;
                     this.method16446(this.field23659);
                     Class7789.method25870(mc.player.field4904.field25471, 45, 0, Class2259.field14694, mc.player, true);
                     this.field23658.method27120();
                 } else {
                     if (mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen) {
-                        if (this.field23658.method27121() > var5 && field23654 >= 36) {
+                        if (this.field23658.method27121() > delayValue && field23654 >= 36) {
                             if (mc.player.field4904.method18131(field23654).method18266()) {
                                 if (!method16431(mc.player.field4904.method18131(field23654).method18265())) {
-                                    this.method16432(field23654, var4.equals("FakeInv"));
+                                    this.method16432(field23654, mode.equals("FakeInv"));
                                 }
                             } else {
-                                this.method16432(field23654, var4.equals("FakeInv"));
+                                this.method16432(field23654, mode.equals("FakeInv"));
                             }
                         }
 
                         boolean var7 = this.getStringSettingValueByName("Tools").equals("Organize");
-                        if ((long) Client.getInstance().method19939().method31333() >= var5 && field23655 >= 36 && var7) {
-                            this.method16438(field23655, var4.equals("FakeInv"));
+                        if ((long) Client.getInstance().method19939().method31333() >= delayValue && field23655 >= 36 && var7) {
+                            this.method16438(field23655, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().method19939().method31333() >= var5 && field23657 >= 36 && var7) {
-                            this.method16439(field23657, var4.equals("FakeInv"));
+                        if ((long) Client.getInstance().method19939().method31333() >= delayValue && field23657 >= 36 && var7) {
+                            this.method16439(field23657, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().method19939().method31333() >= var5 && field23656 >= 36 && var7) {
-                            this.method16440(field23656, var4.equals("FakeInv"));
+                        if ((long) Client.getInstance().method19939().method31333() >= delayValue && field23656 >= 36 && var7) {
+                            this.method16440(field23656, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().method19939().method31333() >= var5 && this.method15974("Auto Shield")) {
-                            this.method16441(var4.equals("FakeInv"));
+                        if ((long) Client.getInstance().method19939().method31333() >= delayValue && this.getBooleanValueFromSetttingName("Auto Shield")) {
+                            this.method16441(mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().method19939().method31333() >= var5 && this.method15974("Cleaner")) {
+                        if ((long) Client.getInstance().method19939().method31333() >= delayValue && this.getBooleanValueFromSetttingName("Cleaner")) {
                             for (int var8 = 9; var8 < 45; var8++) {
                                 if (mc.player.field4904.method18131(var8).method18266()) {
                                     ItemStack var9 = mc.player.field4904.method18131(var8).method18265();
                                     if (this.method16434(var9, var8)) {
-                                        this.method16446(var4.equals("FakeInv"));
+                                        this.method16446(mode.equals("FakeInv"));
                                         Class7789.method25871(var8);
                                         this.field23658.method27120();
-                                        if (var5 > 0L) {
+                                        if (delayValue > 0L) {
                                             break;
                                         }
                                     }
@@ -264,7 +264,7 @@ public class Class5260 extends PremiumModule {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.field4904.method18131(var5).method18266()) {
                 ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
-                if (method16431(var6) && method16433(var6) > 0.0F && (var6.getItem() instanceof Class3267 || !this.method15974("Sword"))) {
+                if (method16431(var6) && method16433(var6) > 0.0F && (var6.getItem() instanceof ItemSword || !this.getBooleanValueFromSetttingName("Sword"))) {
                     this.method16446(var2);
                     Class7789.method25873(var5, var1 - 36);
                     this.field23658.method27120();
@@ -284,7 +284,7 @@ public class Class5260 extends PremiumModule {
             return false;
         } else if (var2 == field23654 && method16431(mc.player.field4904.method18131(var2).method18265())) {
             return false;
-        } else if (var5 instanceof Class3334 && this.method15974("Auto Shield")) {
+        } else if (var5 instanceof Class3334 && this.getBooleanValueFromSetttingName("Auto Shield")) {
             return false;
         } else if (this.getStringSettingValueByName("Tools").equals("Throw")
                 || (
@@ -317,24 +317,24 @@ public class Class5260 extends PremiumModule {
             }
 
             if (var5 instanceof Class3292
-                    && (this.method16436() > (int) this.method15977("Block Cap") || BlockFly.blocksToNotPlace.contains(((Class3292) var5).method11845()))) {
+                    && (this.method16436() > (int) this.getNumberValueBySettingName("Block Cap") || BlockFly.blocksToNotPlace.contains(((Class3292) var5).method11845()))) {
                 return true;
-            } else if (var5 == Items.field37883 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
+            } else if (var5 == Items.field37883 && Client.getInstance().getModuleManager().getModuleByClass(Class5258.class).isEnabled()) {
                 return method16437(Items.field37883) > 1;
-            } else if (var5 == Items.field37882 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
+            } else if (var5 == Items.field37882 && Client.getInstance().getModuleManager().getModuleByClass(Class5258.class).isEnabled()) {
                 return method16437(Items.field37882) > 1;
             } else if (var5 instanceof Class3323 && Class7789.method25874(var1)) {
                 return true;
             } else if (var5 == Items.field37873) {
                 return false;
-            } else if (var5.method11744() && this.method15974("Food") && var5.method11745() != Class8672.field39078) {
+            } else if (var5.method11744() && this.getBooleanValueFromSetttingName("Food") && var5.method11745() != Class8672.field39078) {
                 return true;
-            } else if (var5 instanceof Class3269 || var5 instanceof Class3264 || var5 instanceof Class3267 || var5 instanceof Class3279) {
+            } else if (var5 instanceof Class3269 || var5 instanceof Class3264 || var5 instanceof ItemSword || var5 instanceof Class3279) {
                 return true;
-            } else if ((var5 instanceof Class3263 || var5 instanceof Class3308) && this.method15974("Archery")) {
+            } else if ((var5 instanceof Class3263 || var5 instanceof Class3308) && this.getBooleanValueFromSetttingName("Archery")) {
                 return true;
             } else {
-                return var5 instanceof SkullItem && this.method15974("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
+                return var5 instanceof SkullItem && this.getBooleanValueFromSetttingName("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
                         || var5.method11717().getString().toLowerCase().contains("stick")
                         || var5.method11717().getString().toLowerCase().contains("egg")
                         || var5.method11717().getString().toLowerCase().contains("string")
@@ -397,7 +397,7 @@ public class Class5260 extends PremiumModule {
                             this.method16446(var2);
                             Class7789.method25873(var5, field23655 - 36);
                             this.field23658.method27120();
-                            if (this.method15977("Delay") > 0.0F) {
+                            if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }
@@ -405,7 +405,7 @@ public class Class5260 extends PremiumModule {
                         this.method16446(var2);
                         Class7789.method25873(var5, field23655 - 36);
                         this.field23658.method27120();
-                        if (this.method15977("Delay") > 0.0F) {
+                        if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                             return;
                         }
                     }
@@ -424,7 +424,7 @@ public class Class5260 extends PremiumModule {
                             this.method16446(var2);
                             Class7789.method25873(var5, field23657 - 36);
                             this.field23658.method27120();
-                            if (this.method15977("Delay") > 0.0F) {
+                            if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }
@@ -432,7 +432,7 @@ public class Class5260 extends PremiumModule {
                         this.method16446(var2);
                         Class7789.method25873(var5, field23657 - 36);
                         this.field23658.method27120();
-                        if (this.method15977("Delay") > 0.0F) {
+                        if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                             return;
                         }
                     }
@@ -451,7 +451,7 @@ public class Class5260 extends PremiumModule {
                             this.method16446(var2);
                             Class7789.method25873(var5, field23656 - 36);
                             this.field23658.method27120();
-                            if (this.method15977("Delay") > 0.0F) {
+                            if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }
@@ -459,7 +459,7 @@ public class Class5260 extends PremiumModule {
                         this.method16446(var2);
                         Class7789.method25873(var5, field23656 - 36);
                         this.field23658.method27120();
-                        if (this.method15977("Delay") > 0.0F) {
+                        if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                             return;
                         }
                     }

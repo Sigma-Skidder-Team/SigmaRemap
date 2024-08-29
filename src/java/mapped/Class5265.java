@@ -21,7 +21,7 @@ public class Class5265 extends PremiumModule {
     public int field23683;
     public int field23684;
     public int field23685 = 100;
-    public int field23694 = Class5628.method17688(Class1979.field12891.field12910, 0.05F);
+    public int field23694 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F);
     private final float field23686 = 1.0F;
     private float field23687 = 0.0F;
     private float field23688 = 0.0F;
@@ -52,9 +52,9 @@ public class Class5265 extends PremiumModule {
     @HigestPriority
     private void method16473(Class4422 var1) {
         if (this.field23693 != null) {
-            this.field23684 = (this.method15974("Head") ? 100 : 0)
+            this.field23684 = (this.getBooleanValueFromSetttingName("Head") ? 100 : 0)
                     + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.field23693.getName().getString()))
-                    + (this.method15974("Armor") ? 80 : 0)
+                    + (this.getBooleanValueFromSetttingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");
             switch (var4) {

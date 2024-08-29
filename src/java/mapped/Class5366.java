@@ -12,8 +12,8 @@ public class Class5366 extends Module {
 
     public Class5366() {
         super(ModuleCategory.MOVEMENT, "Redesky", "Longjump for Redesky.");
-        this.registerSetting(new Class6009<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
         this.registerSetting(new BooleanSetting("NoFall", "Avoid taking fall damage", true));
     }
 
@@ -33,14 +33,14 @@ public class Class5366 extends Module {
         if (mc.player.field5036) {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
-                if (this.method16004().method15974("Auto Disable")) {
+                if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                     this.method16004().method16000();
                     return;
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.method16004().method15974("BorderJump") && !Class9217.method34578(var6) && Class5628.method17686()
-                        || this.method16004().method15974("Auto Jump") && Class5628.method17686()
+                if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var6) && Class5628.method17686()
+                        || this.method16004().getBooleanValueFromSetttingName("Auto Jump") && Class5628.method17686()
                         || var1.method13994() == Class9567.method37080()) {
                     this.field23981 = 1;
                     var1.method13995(Class9567.method37080());
@@ -77,8 +77,8 @@ public class Class5366 extends Module {
                         var7 = 1.32;
                 }
 
-                Class9567.method37088(var1, (double) this.method15977("Boost") * var7);
-                var1.method13995((double) this.method15977("Heigh") * Class9567.method37080());
+                Class9567.method37088(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
+                var1.method13995((double) this.getNumberValueBySettingName("Heigh") * Class9567.method37080());
                 this.field23982 = 1.0;
             } else if (var1.method13994() < 0.0 && mc.player.field5045 < 3.0F) {
                 this.field23982 = this.field23982 - var1.method13994();
@@ -90,7 +90,7 @@ public class Class5366 extends Module {
 
     @EventTarget
     public void method16896(Class4399 var1) {
-        if (this.method15974("NoFall")) {
+        if (this.getBooleanValueFromSetttingName("NoFall")) {
             if (this.field23982 > 3.0) {
                 var1.method13920(true);
                 this.field23982 = 0.0;

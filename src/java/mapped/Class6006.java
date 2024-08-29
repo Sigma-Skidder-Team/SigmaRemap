@@ -22,14 +22,14 @@ public abstract class Class6006 extends Setting<Boolean> {
 
    @Override
    public JSONObject method18610(JSONObject var1) {
-      JSONArray var4 = Class8000.method27332(var1, this.method18625());
+      JSONArray var4 = Class8000.method27332(var1, this.getName());
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.length(); var5++) {
             JSONObject var6 = var4.getJSONObject(var5);
             String var7 = Class8000.method27330(var1, "name", null);
 
             for (Setting var9 : this.method18635()) {
-               if (var9.method18625().equals(var7)) {
+               if (var9.getName().equals(var7)) {
                   var9.method18610(var6);
                   break;
                }
@@ -50,7 +50,7 @@ public abstract class Class6006 extends Setting<Boolean> {
       }
 
       var1.put("children", var4);
-      var1.put("name", this.method18625());
+      var1.put("name", this.getName());
       return super.addDataToJSONObject(var1);
    }
 

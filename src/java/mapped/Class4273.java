@@ -57,9 +57,9 @@ public class Class4273 extends Class4247 {
 
          byte var11 = 16;
          byte var12 = 8;
-         int var13 = Class1979.field12891.field12910;
+         int var13 = ClientColors.DEEP_TEAL.getColor;
          if (var10) {
-            var13 = Class1979.field12896.field12910;
+            var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor;
          }
 
          Class3192.method11439(

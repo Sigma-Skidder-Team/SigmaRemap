@@ -24,12 +24,12 @@ public class Class3470 extends Class3468 {
 
    @Override
    public void method12154(Class1660 var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, Class6067.field26761, Class2266.field14732, 0.3F, 0.90000004F);
+      var1.method6742((PlayerEntity)null, var2, Sounds.field26761, Class2266.field14732, 0.3F, 0.90000004F);
    }
 
    @Override
    public void method12155(Class1660 var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, Class6067.field26760, Class2266.field14732, 0.3F, 0.75F);
+      var1.method6742((PlayerEntity)null, var2, Sounds.field26760, Class2266.field14732, 0.3F, 0.75F);
    }
 
    @Override

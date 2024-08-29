@@ -35,7 +35,7 @@ public class Class4330 extends Class4305 {
                var6,
                0,
                0,
-               new Class6387(0, 0, 0, Class5628.method17688(Class1979.field12896.field12910, 0.8F)),
+               new Class6387(0, 0, 0, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)),
                var10,
                ResourceRegistry.JelloLightFont20
             )

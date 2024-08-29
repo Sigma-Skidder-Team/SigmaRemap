@@ -333,7 +333,7 @@ public abstract class Class880 extends Entity {
             var3.field18050 * -0.2
          );
       float var4 = !(this.field5054.nextFloat() * 0.4F + this.field5054.nextFloat() > 0.9F) ? 0.0F : 0.6F;
-      this.method2863(Class6067.field27092, var4, 0.6F + this.field5054.nextFloat() * 0.4F);
+      this.method2863(Sounds.field27092, var4, 0.6F + this.field5054.nextFloat() * 0.4F);
    }
 
    public boolean method2889() {
@@ -495,11 +495,11 @@ public abstract class Class880 extends Entity {
 
    public void method3023(ItemStack var1) {
       if (!var1.isEmpty()) {
-         Class9455 var4 = Class6067.field26351;
+         Class9455 var4 = Sounds.field26351;
          Item var5 = var1.getItem();
          if (!(var5 instanceof Class3279)) {
             if (var5 == Items.field38120) {
-               var4 = Class6067.field26350;
+               var4 = Sounds.field26350;
             }
          } else {
             var4 = ((Class3279)var5).method11806().method8788();
@@ -1098,7 +1098,7 @@ public abstract class Class880 extends Entity {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Class6067.field26713,
+                  Sounds.field26713,
                   this.method2864(),
                   0.8F,
                   0.8F + this.world.field9016.nextFloat() * 0.4F,
@@ -1239,16 +1239,16 @@ public abstract class Class880 extends Entity {
 
    @Nullable
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26612;
+      return Sounds.field26612;
    }
 
    @Nullable
    public Class9455 method2880() {
-      return Class6067.field26607;
+      return Sounds.field26607;
    }
 
    public Class9455 method2926(int var1) {
-      return var1 <= 4 ? Class6067.field26613 : Class6067.field26605;
+      return var1 <= 4 ? Sounds.field26613 : Sounds.field26605;
    }
 
    public Class9455 method3059(ItemStack var1) {
@@ -1510,7 +1510,7 @@ public abstract class Class880 extends Entity {
             this.field4952 = this.field4953;
             this.field4954 = 0.0F;
             if (var4) {
-               this.method2863(Class6067.field27145, this.method3099(), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+               this.method2863(Sounds.field27145, this.method3099(), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
             }
 
             Class8654 var8;
@@ -1583,10 +1583,10 @@ public abstract class Class880 extends Entity {
             super.method2866(var1);
             break;
          case 29:
-            this.method2863(Class6067.field27035, 1.0F, 0.8F + this.world.field9016.nextFloat() * 0.4F);
+            this.method2863(Sounds.field27035, 1.0F, 0.8F + this.world.field9016.nextFloat() * 0.4F);
             break;
          case 30:
-            this.method2863(Class6067.field27036, 0.8F, 0.8F + this.world.field9016.nextFloat() * 0.4F);
+            this.method2863(Sounds.field27036, 0.8F, 0.8F + this.world.field9016.nextFloat() * 0.4F);
             break;
          case 46:
             short var11 = 128;

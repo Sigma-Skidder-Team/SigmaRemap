@@ -15,38 +15,38 @@ import java.util.List;
 
 @InDevelopment
 public class Class5325 extends Module {
-    private final List<Class6547> field23882 = new ArrayList<Class6547>();
-    public Module[] field23878;
-    public Module field23879;
-    public ModeSetting field23881;
-    private final List<String> field23880 = new ArrayList<String>();
+    private final List<Class6547> field23882 = new ArrayList<>();
+    public Module[] moduleArray;
+    public Module module;
+    public ModeSetting modeSetting;
+    private final List<String> stringList = new ArrayList<>();
 
-    public Class5325(ModuleCategory var1, String var2, String var3, Module... var4) {
-        super(var1, var2, var3);
-        this.field23878 = var4;
+    public Class5325(ModuleCategory category, String type, String description, Module... modules) {
+        super(category, type, description);
+        this.moduleArray = modules;
 
-        for (Module var10 : this.field23878) {
-            Client.getInstance().getEventManager().register(var10);
-            this.field23880.add(var10.method15991());
-            var10.method16003(this);
+        for (Module moduleFromArray : this.moduleArray) {
+            Client.getInstance().getEventManager().register(moduleFromArray);
+            this.stringList.add(moduleFromArray.getName());
+            moduleFromArray.method16003(this);
         }
 
-        this.registerSetting(this.field23881 = new ModeSetting("Type", var2 + " mode", 0, this.field23880.toArray(new String[0])));
-        this.field23881.method18616(var1x -> this.method16724());
+        this.registerSetting(this.modeSetting = new ModeSetting("Type", type + " mode", 0, this.stringList.toArray(new String[0])));
+        this.modeSetting.method18616(var1x -> this.method16724());
         this.method16724();
     }
 
     public void method16724() {
         this.method16725();
 
-        for (Module var6 : this.field23878) {
+        for (Module var6 : this.moduleArray) {
             boolean var7 = this.getStringSettingValueByName("Type").equals(var6.name);
-            if (this.method15996() && mc.player != null) {
+            if (this.isEnabled() && mc.player != null) {
                 var6.setState(var7);
                 if (var7) {
-                    this.field23879 = var6;
+                    this.module = var6;
                 }
-            } else if (this.method15996()) {
+            } else if (this.isEnabled()) {
                 var6.method15998(var7);
             }
 
@@ -57,21 +57,21 @@ public class Class5325 extends Module {
     private void method16725() {
         boolean var3 = false;
 
-        for (Module var7 : this.field23878) {
+        for (Module var7 : this.moduleArray) {
             if (this.getStringSettingValueByName("Type").equals(var7.name)) {
                 var3 = true;
             }
         }
 
         if (!var3) {
-            this.method15984("Type", this.field23878[0].name);
+            this.method15984("Type", this.moduleArray[0].name);
         }
     }
 
     public Module method16726() {
         this.method16725();
 
-        for (Module var6 : this.field23878) {
+        for (Module var6 : this.moduleArray) {
             if (this.getStringSettingValueByName("Type").equals(var6.name)) {
                 return var6;
             }
@@ -82,32 +82,32 @@ public class Class5325 extends Module {
 
     @Override
     public boolean method15988() {
-        if (this.field23879 == null) {
+        if (this.module == null) {
             this.method16724();
         }
 
-        return this.field23879 != null ? this.field23879.method15988() : this.method15996();
+        return this.module != null ? this.module.method15988() : this.isEnabled();
     }
 
     @Override
     public JSONObject method15986(JSONObject var1) {
         JSONObject var4 = Class8000.method27331(var1, "sub-options");
         if (var4 != null) {
-            for (Module var8 : this.field23878) {
-                JSONArray var9 = Class8000.method27332(var4, var8.method15991());
+            for (Module var8 : this.moduleArray) {
+                JSONArray var9 = Class8000.method27332(var4, var8.getName());
                 if (var9 != null) {
                     for (int var10 = 0; var10 < var9.length(); var10++) {
                         JSONObject var11 = var9.getJSONObject(var10);
                         String var12 = Class8000.method27330(var11, "name", null);
 
-                        for (Setting var14 : var8.field23397.values()) {
-                            if (var14.method18625().equals(var12)) {
+                        for (Setting var14 : var8.settingMap.values()) {
+                            if (var14.getName().equals(var12)) {
                                 try {
                                     var14.method18610(var11);
                                 } catch (JSONException2 var16) {
                                     Client.getInstance()
                                             .getLogger()
-                                            .warn("Could not initialize settings of " + var8.method15991() + "." + var14.method18625() + " from config.");
+                                            .warn("Could not initialize settings of " + var8.getName() + "." + var14.getName() + " from config.");
                                 }
                                 break;
                             }
@@ -130,14 +130,14 @@ public class Class5325 extends Module {
         try {
             JSONObject var4 = new JSONObject();
 
-            for (Module var8 : this.field23878) {
+            for (Module var8 : this.moduleArray) {
                 JSONArray var9 = new JSONArray();
 
-                for (Setting var11 : var8.field23397.values()) {
+                for (Setting var11 : var8.settingMap.values()) {
                     var9.put(var11.addDataToJSONObject(new JSONObject()));
                 }
 
-                var4.put(var8.method15991(), var9);
+                var4.put(var8.getName(), var9);
             }
 
             var1.put("sub-options", var4);
@@ -150,21 +150,21 @@ public class Class5325 extends Module {
     @Override
     public void isInDevelopment() {
         this.method16724();
-        if (this.field23879 instanceof PremiumModule && !Client.getInstance().getNetworkManager().isPremium()) {
+        if (this.module instanceof PremiumModule && !Client.getInstance().getNetworkManager().isPremium()) {
             this.method15998(false);
         }
     }
 
     @Override
     public void method15965() {
-        for (Module var6 : this.field23878) {
+        for (Module var6 : this.moduleArray) {
             var6.method15999(false);
         }
     }
 
     @Override
     public void method15985() {
-        for (Module var6 : this.field23878) {
+        for (Module var6 : this.moduleArray) {
             var6.setState(false);
         }
 
@@ -186,7 +186,7 @@ public class Class5325 extends Module {
     public void method15953() {
         super.method15953();
 
-        for (Module var6 : this.field23878) {
+        for (Module var6 : this.moduleArray) {
             var6.method15953();
         }
     }

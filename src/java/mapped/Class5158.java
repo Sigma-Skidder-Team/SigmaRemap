@@ -40,7 +40,7 @@ public class Class5158 extends Module {
         }
 
         if (Math.abs((double) mc.timer.field40360 - 1.4123) < 0.001
-                && !Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
+                && !Client.getInstance().getModuleManager().getModuleByClass(Class5376.class).isEnabled()) {
             mc.timer.field40360 = 1.0F;
         }
     }
@@ -49,8 +49,8 @@ public class Class5158 extends Module {
     @LowerPriority
     public void method16037(Class4399 var1) {
         if (mc.player.field5036) {
-            if (!Client.getInstance().getModuleManager().method14662(Class5332.class).method15988()
-                    || Class5357.field23948 == null && Class5357.field23949 == null
+            if (!Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).method15988()
+                    || KillAura.field23948 == null && KillAura.field23949 == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
             } else if (var1.method13921()) {
@@ -68,7 +68,7 @@ public class Class5158 extends Module {
     @Class5631
     @HigherPriority
     public void method16038(Class4435 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
             if (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F) || mc.player.getPosY() < this.field23416) {
                 this.field23416 = -1.0;
             }
@@ -76,28 +76,28 @@ public class Class5158 extends Module {
             mc.player.field4999 = 0;
             if (mc.player.field5036) {
                 this.field23416 = mc.player.getPosY();
-                if (!Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
+                if (!Client.getInstance().getModuleManager().getModuleByClass(Class5376.class).isEnabled()) {
                     mc.timer.field40360 = 1.0F;
                 }
 
                 if (this.field23414 >= 0 && Class5330.field23887 >= 2) {
-                    if ((var1.method13994() > 0.0 || this.method15974("AutoJump") && Class5628.method17686()) && !Class5628.method17684(mc.player)) {
+                    if ((var1.method13994() > 0.0 || this.getBooleanValueFromSetttingName("AutoJump") && Class5628.method17686()) && !Class5628.method17684(mc.player)) {
                         mc.player.method2914();
                         var1.method13995(Class9567.method37080());
                         Class9567.method37088(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double) Class9567.method37078() * 0.13);
-                        if (this.method15974("Timer") && !Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
+                        if (this.getBooleanValueFromSetttingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Class5376.class).isEnabled()) {
                             mc.timer.field40360 = 1.4123F;
                         }
 
                         this.field23414 = 0;
                         this.field23418 = Class2094.field13640;
-                    } else if (Class5628.method17686() && this.method15974("GroundSpeed") && !Class5628.method17684(mc.player)) {
+                    } else if (Class5628.method17686() && this.getBooleanValueFromSetttingName("GroundSpeed") && !Class5628.method17684(mc.player)) {
                         mc.player.field5051 = 0.5F;
                         mc.player.method2914();
                         var1.method13995(0.399 + (double) Class9567.method37079() * 0.1 + 1.0E-14);
                         Class9567.method37088(var1, 0.51 + Math.random() * 1.0E-6 + (double) Class9567.method37078() * 0.098);
                         this.field23414 = 0;
-                        if (this.method15974("Timer") && !Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
+                        if (this.getBooleanValueFromSetttingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Class5376.class).isEnabled()) {
                             mc.timer.field40360 = 1.1123F;
                         }
 
@@ -113,7 +113,7 @@ public class Class5158 extends Module {
                 }
             } else if (this.field23414 >= 0) {
                 double var4 = Class9567.method37075();
-                if (!Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
+                if (!Client.getInstance().getModuleManager().getModuleByClass(Class5376.class).isEnabled()) {
                     mc.timer.field40360 = 1.0F;
                 }
 
@@ -126,7 +126,7 @@ public class Class5158 extends Module {
                             this.field23415 *= var8;
                         }
 
-                        if (Class9567.method37079() == 0 && !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
+                        if (Class9567.method37079() == 0 && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                             this.method16043(var1, this.field23414);
                         }
 
@@ -138,7 +138,7 @@ public class Class5158 extends Module {
                     case 2:
                         if (this.field23414 == 0) {
                             double var6 = 0.399 + (double) Class9567.method37079() * 0.1 + 1.0E-5;
-                            if (this.method15974("BorderJump")
+                            if (this.getBooleanValueFromSetttingName("BorderJump")
                                     && mc.world.method7055(mc.player, mc.player.field5035.method19662(0.0, -var6 - 0.0625, 0.0)).count()
                                     == 0L) {
                                 this.field23415 = 0.4103345672948576 + Math.random() * 1.0E-6 + (double) Class9567.method37078() * 0.085;
@@ -168,8 +168,8 @@ public class Class5158 extends Module {
     @EventTarget
     @LowerPriority
     public void method16039(Class4436 var1) {
-        if (!Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
-            if (this.method15974("Auto Jump") || mc.player.field4981) {
+        if (!Jesus.method16953() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            if (this.getBooleanValueFromSetttingName("Auto Jump") || mc.player.field4981) {
                 if (this.field23414 < 0) {
                     var1.method13900(true);
                 }
@@ -179,7 +179,7 @@ public class Class5158 extends Module {
 
     @EventTarget
     public void method16040(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23414 = -2;
             }
@@ -213,8 +213,8 @@ public class Class5158 extends Module {
 
     @Override
     public boolean method15988() {
-        return this.method15996()
-                && (!mc.player.field5036 || mc.player.field4981 || this.method15974("AutoJump") || this.field23418 == Class2094.field13641);
+        return this.isEnabled()
+                && (!mc.player.field5036 || mc.player.field4981 || this.getBooleanValueFromSetttingName("AutoJump") || this.field23418 == Class2094.field13641);
     }
 
     private void method16043(Class4435 var1, int var2) {

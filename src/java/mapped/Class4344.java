@@ -16,7 +16,7 @@ public class Class4344 extends Class4339 {
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(Class1979.field12899.field12910, 0.35F)
+         Class5628.method17688(ClientColors.MID_GREY.getColor, 0.35F)
       );
       Class3192.method11429(
          (float)this.field20895,
@@ -24,7 +24,7 @@ public class Class4344 extends Class4339 {
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
          2,
-         Class5628.method17688(Class1979.field12896.field12910, 0.14F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.14F)
       );
       super.method13027(var1);
    }

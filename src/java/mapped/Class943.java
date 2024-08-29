@@ -31,7 +31,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
                var7,
                (double)var4 + 0.5,
                var9,
-               Class6067.field26535,
+               Sounds.field26535,
                Class2266.field14732,
                0.5F,
                this.field5324.field9016.nextFloat() * 0.1F + 0.9F
@@ -60,7 +60,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
                   var15,
                   (double)var4 + 0.5,
                   var13,
-                  Class6067.field26534,
+                  Sounds.field26534,
                   Class2266.field14732,
                   0.5F,
                   this.field5324.field9016.nextFloat() * 0.1F + 0.9F

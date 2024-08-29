@@ -33,10 +33,10 @@ public class Class5174 extends Module {
 
     @EventTarget
     private void method16104(ClickEvent var1) {
-        if (this.method15996() && (mc.player.method3331() || !this.method16004().method15974("Sneak"))) {
+        if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
             if (var1.method13976() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = Class9217.method34567(
-                        mc.player.field5031, mc.player.field5032, this.method16004().method15977("Maximum range")
+                        mc.player.field5031, mc.player.field5032, this.method16004().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -61,14 +61,14 @@ public class Class5174 extends Module {
 
     @EventTarget
     public void method16105(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5473) {
                 Class5473 var4 = (Class5473) var1.method13898();
                 if (var4.field24297 == (double) this.field23465.getX() + 0.5
                         && var4.field24298 == (double) (this.field23465.getY() + 1)
                         && var4.field24299 == (double) this.field23465.getZ() + 0.5) {
                     Client.getInstance().getNotificationManager().post(new Notification("ClickTP", "Successfully teleported"));
-                    if (!this.method16004().method15974("Auto Disable")) {
+                    if (!this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
                         Class5628.method17725(-0.08);
@@ -85,7 +85,7 @@ public class Class5174 extends Module {
 
     @EventTarget
     private void method16106(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23464 > -1 && this.field23465 != null) {
                 var1.method13995(0.01);
                 this.field23464++;

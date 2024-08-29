@@ -60,7 +60,7 @@ public class Class5267 extends PremiumModule {
 
     @EventTarget
     private void method16483(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23699 = true;
@@ -70,7 +70,7 @@ public class Class5267 extends PremiumModule {
 
     @EventTarget
     private void method16484(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23699 = false;
@@ -81,7 +81,7 @@ public class Class5267 extends PremiumModule {
     @EventTarget
     @LowerPriority
     public void method16485(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23696++;
             if (this.field23696 != 1) {
                 if (this.field23696 != 2) {
@@ -131,7 +131,7 @@ public class Class5267 extends PremiumModule {
             var1.method13900(true);
         }
 
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             var1.method13908(true);
             var1.method13920(true);
             if (this.field23696 != 3) {
@@ -152,7 +152,7 @@ public class Class5267 extends PremiumModule {
 
     @EventTarget
     public void method16487(Class4396 var1) {
-        if (this.method15996() || this.field23696 < 0) {
+        if (this.isEnabled() || this.field23696 < 0) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;

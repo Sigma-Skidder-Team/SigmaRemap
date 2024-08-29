@@ -41,7 +41,7 @@ public class Class2768 extends Class2595 {
             Class1110.method5352(this.field17345, Class2143.field14029);
             this.method10963();
             this.field17344 = (8 + Class1110.method5354(this.field17345).nextInt(4)) * 20;
-            this.field17345.method2863(Class6067.field26923, 10.0F, 0.95F + Class1110.method5355(this.field17345).nextFloat() * 0.1F);
+            this.field17345.method2863(Sounds.field26923, 10.0F, 0.95F + Class1110.method5355(this.field17345).nextFloat() * 0.1F);
          }
       }
    }

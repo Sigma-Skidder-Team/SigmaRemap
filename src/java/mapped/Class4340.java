@@ -135,7 +135,7 @@ public class Class4340 extends Class4339 {
          22.0F,
          26.0F,
          ResourcesDecrypter.trashcanPNG,
-         Class5628.method17688(!this.field21212 ? Class1979.field12891.field12910 : Class1979.field12901.field12910, this.field21211.calcPercent() * 0.5F),
+         Class5628.method17688(!this.field21212 ? ClientColors.DEEP_TEAL.getColor : ClientColors.PALE_YELLOW.getColor, this.field21211.calcPercent() * 0.5F),
          false
       );
    }

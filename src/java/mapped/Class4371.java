@@ -17,7 +17,7 @@ public class Class4371 extends Class4247 {
          (float)this.field20895 + (float)this.field20897 / 2.0F,
          (float)this.field20896 + (float)this.field20897 / 2.0F,
          (float)this.field20897,
-         Class5628.method17688(Class5628.method17690(this.field21365, Class1979.field12891.field12910, 0.8F), var1)
+         Class5628.method17688(Class5628.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor, 0.8F), var1)
       );
       Class3192.method11438(
          (float)this.field20895 + (float)this.field20897 / 2.0F,
@@ -30,7 +30,7 @@ public class Class4371 extends Class4247 {
             (float)this.field20895 + (float)this.field20897 / 2.0F,
             (float)this.field20896 + (float)this.field20897 / 2.0F,
             (float)(this.field20897 - 2),
-            Class5628.method17688(Class1979.field12891.field12910, var1 * 0.2F)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.2F)
          );
       }
 

@@ -15,7 +15,7 @@ public class Class5238 extends Module {
 
     public Class5238() {
         super(ModuleCategory.MOVEMENT, "ViperMC", "A fly for ViperMC");
-        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 6.0F, 0.1F));
+        this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 6.0F, 0.1F));
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Class5238 extends Module {
 
     @EventTarget
     private void method16329(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23598 = true;
@@ -52,7 +52,7 @@ public class Class5238 extends Module {
 
     @EventTarget
     private void method16330(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23598 = false;
@@ -63,8 +63,8 @@ public class Class5238 extends Module {
     @EventTarget
     @LowerPriority
     public void method16331(Class4435 var1) {
-        if (this.method15996()) {
-            double var4 = this.method15977("Speed");
+        if (this.isEnabled()) {
+            double var4 = this.getNumberValueBySettingName("Speed");
             if (this.field23594 <= 0) {
                 if (this.field23594 != -1) {
                     if (this.field23594 == 0) {
@@ -100,7 +100,7 @@ public class Class5238 extends Module {
 
     @EventTarget
     public void method16332(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23594++;
             if (this.field23594 != 2) {
                 if (this.field23594 > 2) {
@@ -123,7 +123,7 @@ public class Class5238 extends Module {
 
     @EventTarget
     public void method16333(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (!(var4 instanceof Class5473)) {
                 if (var4 instanceof SChatPacket) {
@@ -150,7 +150,7 @@ public class Class5238 extends Module {
 
     @EventTarget
     public void method16334(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5603) {
                 Class5603 var5 = (Class5603) var4;
@@ -163,7 +163,7 @@ public class Class5238 extends Module {
 
     @EventTarget
     public void method16335(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = this.field23596 - this.field23597;
             double var6 = this.field23596;
             mc.player.field5028.field18049 = var6;

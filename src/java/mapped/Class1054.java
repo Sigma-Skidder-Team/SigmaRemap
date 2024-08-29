@@ -70,10 +70,10 @@ public class Class1054 extends Class1049 {
          if (this.field5821 <= 0) {
             if (this.method4828() != 0) {
                if (this.field5822 > 60 && this.method4828() == 2) {
-                  this.method2863(Class6067.field26980, this.method3099(), this.method3100());
+                  this.method2863(Sounds.field26980, this.method3099(), this.method3100());
                   this.method4829(1);
                } else if (this.field5822 > 100 && this.method4828() == 1) {
-                  this.method2863(Class6067.field26980, this.method3099(), this.method3100());
+                  this.method2863(Sounds.field26980, this.method3099(), this.method3100());
                   this.method4829(0);
                }
 
@@ -82,11 +82,11 @@ public class Class1054 extends Class1049 {
          } else {
             if (this.method4828() != 0) {
                if (this.field5821 > 40 && this.method4828() == 1) {
-                  this.method2863(Class6067.field26981, this.method3099(), this.method3100());
+                  this.method2863(Sounds.field26981, this.method3099(), this.method3100());
                   this.method4829(2);
                }
             } else {
-               this.method2863(Class6067.field26981, this.method3099(), this.method3100());
+               this.method2863(Sounds.field26981, this.method3099(), this.method3100());
                this.method4829(1);
             }
 
@@ -113,7 +113,7 @@ public class Class1054 extends Class1049 {
       int var4 = this.method4828();
       if (var1.method2741(Class8654.method31115(this), (float)(1 + var4))) {
          var1.method3035(new Class2023(Class8254.field35485, 60 * var4, 0));
-         this.method2863(Class6067.field26985, 1.0F, 1.0F);
+         this.method2863(Sounds.field26985, 1.0F, 1.0F);
       }
    }
 
@@ -131,22 +131,22 @@ public class Class1054 extends Class1049 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26979;
+      return Sounds.field26979;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26982;
+      return Sounds.field26982;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26984;
+      return Sounds.field26984;
    }
 
    @Override
    public Class9455 method4798() {
-      return Class6067.field26983;
+      return Sounds.field26983;
    }
 
    @Override

@@ -279,11 +279,11 @@ public class Item implements Class3303 {
    }
 
    public Class9455 method11746() {
-      return Class6067.field26608;
+      return Sounds.field26608;
    }
 
    public Class9455 method11747() {
-      return Class6067.field26609;
+      return Sounds.field26609;
    }
 
    public boolean method11748() {

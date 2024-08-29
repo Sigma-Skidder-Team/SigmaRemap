@@ -67,7 +67,7 @@ public class Class1029 extends Class1026 {
 
    @Override
    public Class9455 method4546() {
-      return Class6067.field26995;
+      return Sounds.field26995;
    }
 
    @Override
@@ -147,7 +147,7 @@ public class Class1029 extends Class1026 {
             this.field5729--;
             this.method4582();
             if (this.field5729 == 0) {
-               this.method2863(Class6067.field27000, 1.0F, 1.0F);
+               this.method2863(Sounds.field27000, 1.0F, 1.0F);
                this.field5730 = 20;
             }
          }
@@ -184,7 +184,7 @@ public class Class1029 extends Class1026 {
             this.method4584(var1);
          } else {
             this.field5729 = 40;
-            this.method2863(Class6067.field26999, 1.0F, 1.0F);
+            this.method2863(Sounds.field26999, 1.0F, 1.0F);
             this.world.method6786(this, (byte)39);
             var1.method3101(this);
          }
@@ -229,7 +229,7 @@ public class Class1029 extends Class1026 {
          }
       } else {
          this.field5728 = 10;
-         this.method2863(Class6067.field26994, 1.0F, 1.0F);
+         this.method2863(Sounds.field26994, 1.0F, 1.0F);
       }
 
       super.method2866(var1);
@@ -251,29 +251,29 @@ public class Class1029 extends Class1026 {
    public boolean method3114(Entity var1) {
       this.field5728 = 10;
       this.world.method6786(this, (byte)4);
-      this.method2863(Class6067.field26994, 1.0F, 1.0F);
+      this.method2863(Sounds.field26994, 1.0F, 1.0F);
       return super.method3114(var1);
    }
 
    @Nullable
    @Override
    public Class9455 method4241() {
-      return Class6067.field26993;
+      return Sounds.field26993;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26997;
+      return Sounds.field26997;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26996;
+      return Sounds.field26996;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26998, 0.15F, 1.0F);
+      this.method2863(Sounds.field26998, 0.15F, 1.0F);
    }
 
    @Override

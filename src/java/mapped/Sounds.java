@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6067 {
+public class Sounds {
    public static final Class9455 field26313 = method18806("ambient.cave");
    public static final Class9455 field26314 = method18806("ambient.basalt_deltas.additions");
    public static final Class9455 field26315 = method18806("ambient.basalt_deltas.loop");
@@ -818,8 +818,8 @@ public class Class6067 {
    public static final Class9455 field27127 = method18806("entity.squid.hurt");
    public static final Class9455 field27128 = method18806("entity.squid.squirt");
    public static final Class9455 field27129 = method18806("block.stone.break");
-   public static final Class9455 field27130 = method18806("block.stone_button.click_off");
-   public static final Class9455 field27131 = method18806("block.stone_button.click_on");
+   public static final Class9455 STONE_BUTTON_CLICK_OFF = method18806("block.stone_button.click_off");
+   public static final Class9455 STONE_BUTTON_CLICK_ON = method18806("block.stone_button.click_on");
    public static final Class9455 field27132 = method18806("block.stone.fall");
    public static final Class9455 field27133 = method18806("block.stone.hit");
    public static final Class9455 field27134 = method18806("block.stone.place");

@@ -259,7 +259,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    private void method4681() {
       this.method4739(40);
       if (!this.world.method6714()) {
-         this.method2863(Class6067.field27193, this.method3099(), this.method3100());
+         this.method2863(Sounds.field27193, this.method3099(), this.method3100());
       }
    }
 
@@ -447,7 +447,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    @Override
    public Class9455 method4241() {
       if (!this.isSleeping()) {
-         return !this.method4741() ? Class6067.field27189 : Class6067.field27194;
+         return !this.method4741() ? Sounds.field27189 : Sounds.field27194;
       } else {
          return null;
       }
@@ -455,12 +455,12 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27192;
+      return Sounds.field27192;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27191;
+      return Sounds.field27191;
    }
 
    public void method4694() {

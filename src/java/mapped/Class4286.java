@@ -20,10 +20,10 @@ import java.net.URL;
 
 public class Class4286 extends Class4278 {
    public static Class6387 field20771 = new Class6387(
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -135,9 +135,9 @@ public class Class4286 extends Class4278 {
             var1
          );
          if (this.field20775 == null && this.field20773 == null) {
-            Class3192.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, Class5628.method17688(Class1979.field12896.field12910, var1 * (1.0F - var4)));
+            Class3192.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               Class3192.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, Class5628.method17688(Class1979.field12896.field12910, var4 * var1));
+               Class3192.method11449(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          } else {
             if (this.field20775 == null) {
@@ -166,9 +166,9 @@ public class Class4286 extends Class4278 {
                this.field20776 = null;
             }
 
-            Class3192.method11449(var5, var6, var7, var8, this.field20775, Class5628.method17688(Class1979.field12896.field12910, var1 * (1.0F - var4)));
+            Class3192.method11449(var5, var6, var7, var8, this.field20775, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               Class3192.method11449(var5, var6, var7, var8, this.field20776, Class5628.method17688(Class1979.field12896.field12910, var4 * var1));
+               Class3192.method11449(var5, var6, var7, var8, this.field20776, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          }
 
@@ -184,7 +184,7 @@ public class Class4286 extends Class4278 {
             (float)var9 * var10,
             (float)var9 * var10,
             ResourcesDecrypter.playIconPNG,
-            Class5628.method17688(Class1979.field12896.field12910, var4 * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
          ClientResource var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
@@ -196,14 +196,14 @@ public class Class4286 extends Class4278 {
                   (float)(this.method13263() + (this.method13267() - var11.method23942(var12[1])) / 2),
                   (float)(this.method13265() + this.method13267() - 2),
                   var12[1],
-                  Class5628.method17688(Class1979.field12896.field12910, var1)
+                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
                Class3192.method11439(
                   var11,
                   (float)(this.method13263() + (this.method13267() - var11.method23942(var12[0])) / 2),
                   (float)(this.method13265() + this.method13267() - 2 + 13),
                   var12[0],
-                  Class5628.method17688(Class1979.field12896.field12910, var1)
+                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             } else {
                Class3192.method11439(
@@ -211,7 +211,7 @@ public class Class4286 extends Class4278 {
                   (float)(this.method13263() + (this.method13267() - var11.method23942(var12[0])) / 2),
                   (float)(this.method13265() + this.method13267() - 2 + 6),
                   var12[0],
-                  Class5628.method17688(Class1979.field12896.field12910, var1)
+                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             }
 

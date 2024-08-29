@@ -13,11 +13,11 @@ public class Class5220 extends Module {
 
     @EventTarget
     public void method16255(Class4396 var1) {
-        if (this.method15996() && mc.getCurrentServerData() != null) {
+        if (this.isEnabled() && mc.getCurrentServerData() != null) {
             if (!(var1.method13898() instanceof Class5554)) {
                 if (var1.method13898() instanceof Class5542) {
                     Class5542 var4 = (Class5542) var1.method13898();
-                    if (var4.method17422() < 0 || !this.method15974("Inv Bypass")) {
+                    if (var4.method17422() < 0 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
                         var1.method13900(true);
                     }
                 }

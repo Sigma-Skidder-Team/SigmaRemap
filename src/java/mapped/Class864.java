@@ -104,7 +104,7 @@ public class Class864 extends Class851<Class5811> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.field4562.player, var11)) {
-               Minecraft.getInstance().getSoundHandler().method1000(Class6339.method19292(Class6067.field27181, 1.0F));
+               Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27181, 1.0F));
                this.field4562.playerController.method23146(this.field4727.field25471, var11);
                return true;
             }

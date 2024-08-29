@@ -103,7 +103,7 @@ public class Class1010 extends Class1009 implements Class1011 {
       if (this.field5055 >= this.field5651 + 400) {
          this.field5651 = this.field5055;
          if (!this.method3245()) {
-            this.world.method6745(this.getPosX(), this.method3442(), this.getPosZ(), Class6067.field26549, this.method2864(), 2.5F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.method3442(), this.getPosZ(), Sounds.field26549, this.method2864(), 2.5F, 1.0F, false);
          }
       }
    }
@@ -239,8 +239,8 @@ public class Class1010 extends Class1009 implements Class1011 {
       if (var11 && !var12) {
          boolean var13 = this.method3168(var1, var3, var5, true);
          if (var13 && !this.method3245()) {
-            this.world.method6743((PlayerEntity)null, this.field5025, this.field5026, this.field5027, Class6067.field26550, this.method2864(), 1.0F, 1.0F);
-            this.method2863(Class6067.field26550, 1.0F, 1.0F);
+            this.world.method6743((PlayerEntity)null, this.field5025, this.field5026, this.field5027, Sounds.field26550, this.method2864(), 1.0F, 1.0F);
+            this.method2863(Sounds.field26550, 1.0F, 1.0F);
          }
 
          return var13;
@@ -251,17 +251,17 @@ public class Class1010 extends Class1009 implements Class1011 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method4358() ? Class6067.field26545 : Class6067.field26548;
+      return !this.method4358() ? Sounds.field26545 : Sounds.field26548;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26547;
+      return Sounds.field26547;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26546;
+      return Sounds.field26546;
    }
 
    @Override

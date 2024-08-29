@@ -16,13 +16,13 @@ public class Class5171 extends Module {
 
     public Class5171() {
         super(ModuleCategory.RENDER, "Skeleton", "Skeleton ESP.");
-        this.registerSetting(new Class6010("Color", "The Skeleton color", Class1979.field12896.field12910));
+        this.registerSetting(new ColorSetting("Color", "The Skeleton color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
         this.registerSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));
     }
 
     @EventTarget
     public void method16088(Class4420 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
             ;
         }
     }

@@ -61,25 +61,25 @@ public class PacketHandler {
 
                 Client.getInstance().getEventManager().method23217();
 
-                for (Module var23 : Client.getInstance().getModuleManager().method14664().values()) {
+                for (Module var23 : Client.getInstance().getModuleManager().getModuleMap().values()) {
                     for (Setting var28 : var23.method15989().values()) {
                         var28.method18622();
                     }
 
                     if (var23 instanceof Class5325) {
-                        for (Module var33 : ((Class5325) var23).field23878) {
+                        for (Module var33 : ((Class5325) var23).moduleArray) {
                             for (Setting var37 : var33.method15989().values()) {
                                 var37.method18622();
                             }
                         }
                     }
 
-                    if (var23.method15996()) {
+                    if (var23.isEnabled()) {
                         Client.getInstance().getEventManager().subscribe(var23);
                         if (var23 instanceof Class5325) {
                             Class5325 var27 = (Class5325) var23;
-                            if (var27.field23879 != null) {
-                                Client.getInstance().getEventManager().subscribe(var27.field23879);
+                            if (var27.module != null) {
+                                Client.getInstance().getEventManager().subscribe(var27.module);
                             }
                         }
                     } else {
@@ -87,7 +87,7 @@ public class PacketHandler {
                         if (var23 instanceof Class5325) {
                             Class5325 var26 = (Class5325) var23;
 
-                            for (Module var36 : var26.field23878) {
+                            for (Module var36 : var26.moduleArray) {
                                 Client.getInstance().getEventManager().unsubscribe(var36);
                             }
                         }

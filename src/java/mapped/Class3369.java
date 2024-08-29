@@ -99,7 +99,7 @@ public class Class3369 extends Class3241 {
          }
 
          ((Class966)var6).method3991(var3);
-         var1.method6742((PlayerEntity)null, var2, Class6067.field26400, Class2266.field14732, 2.0F, 1.0F);
+         var1.method6742((PlayerEntity)null, var2, Sounds.field26400, Class2266.field14732, 2.0F, 1.0F);
          return true;
       } else {
          return false;

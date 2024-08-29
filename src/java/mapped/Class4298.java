@@ -11,10 +11,10 @@ import java.util.UUID;
 
 public class Class4298 extends Class4278 {
    public static Class6387 field20821 = new Class6387(
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
       Class2218.field14488,
       Class2218.field14492
    );

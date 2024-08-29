@@ -17,16 +17,16 @@ public class Class5213 extends Module {
 
     @EventTarget
     private void method16233(Class4408 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }
 
     @EventTarget
     private void method16234(Class4399 var1) {
-        if (this.method15996()) {
-            boolean var4 = Client.getInstance().getModuleManager().method14662(Class5357.class).method15988();
-            boolean var5 = mc.player.method3090() != null && mc.player.method3090().getItem() instanceof Class3267;
+        if (this.isEnabled()) {
+            boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
+            boolean var5 = mc.player.method3090() != null && mc.player.method3090().getItem() instanceof ItemSword;
             if (!var1.method13921()) {
                 if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !var4 && this.getStringSettingValueByName("Mode").equals("NCP")) {
                     Class5628.method17733();

@@ -29,19 +29,19 @@ public class Class4341 extends Class4339 implements Class4342 {
    public void method13511() {
       int var3 = 0;
 
-      for (Module var5 : Client.getInstance().getModuleManager().method14665(this.field21214)) {
+      for (Module var5 : Client.getInstance().getModuleManager().getModulesByCategory(this.field21214)) {
          int var9 = Class5628.method17688(-3487030, 0.0F);
-         Class6387 var12 = new Class6387(!var5.method15996() ? 1895167477 : -14047489, !var5.method15996() ? var9 : -14042881)
-            .method19410(!var5.method15996() ? Class1979.field12891.field12910 : Class1979.field12896.field12910);
+         Class6387 var12 = new Class6387(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
+            .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
          var12.method19412(Class2218.field14488);
          Class4240 var13;
          this.method13517()
             .method13230(
                var13 = new Class4240(
-                  this.method13517(), var5.method15991() + "Button", 0, var3 * 30, this.method13267(), 30, var12, var5.method15991(), ResourceRegistry.JelloLightFont20
+                  this.method13517(), var5.getName() + "Button", 0, var3 * 30, this.method13267(), 30, var12, var5.getName(), ResourceRegistry.JelloLightFont20
                )
             );
-         if (!var5.method15996()) {
+         if (!var5.isEnabled()) {
             var13.method13034(22);
          } else {
             var13.method13034(30);
@@ -58,9 +58,9 @@ public class Class4341 extends Class4339 implements Class4342 {
                   }
                } else {
                   var5.method16000();
-                  Class6387 var9x = new Class6387(!var5.method15996() ? 1895167477 : -14047489, !var5.method15996() ? var9 : -14042881)
-                     .method19410(!var5.method15996() ? Class1979.field12891.field12910 : Class1979.field12896.field12910);
-                  if (!var5.method15996()) {
+                  Class6387 var9x = new Class6387(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
+                     .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                  if (!var5.isEnabled()) {
                      var7.method13034(22);
                   } else {
                      var7.method13034(30);
@@ -156,7 +156,7 @@ public class Class4341 extends Class4339 implements Class4342 {
 
       for (Class4240 var6 : this.field21215) {
          var4++;
-         if (var6.method13257().equals(var1.method15991() + "Button")) {
+         if (var6.method13257().equals(var1.getName() + "Button")) {
             break;
          }
       }

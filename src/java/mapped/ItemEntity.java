@@ -104,7 +104,7 @@ public class ItemEntity extends Entity {
          int var10 = !var9 ? 40 : 2;
          if (this.field5055 % var10 == 0) {
             if (this.world.method6739(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
-               this.method2863(Class6067.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
+               this.method2863(Sounds.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
             }
 
             if (!this.world.field9020 && this.method4118()) {

@@ -80,7 +80,7 @@ public class Class4306 extends Class4305 {
          (float)this.field20895,
          (float)this.field20896,
          (float)this.method13267(),
-         Class5628.method17688(Class1979.field12896.field12910, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
       );
       float var6 = (float)(this.field20936 - this.method13271());
       float var7 = (float)(this.field20937 - this.method13272());

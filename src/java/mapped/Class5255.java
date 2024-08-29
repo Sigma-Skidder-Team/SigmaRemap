@@ -76,7 +76,7 @@ public class Class5255 extends PremiumModule {
 
     @EventTarget
     private void method16405(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23639 != null) {
                 if (mc.playerController.isInCreativeMode()) {
                     Class5628.method17678("§cNoteBlockPlayer isn't available in creative mode!");
@@ -172,7 +172,7 @@ public class Class5255 extends PremiumModule {
 
     @EventTarget
     private void method16409(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23641 != null) {
                 for (Class6463 var5 : this.field23641) {
                 }
@@ -198,7 +198,7 @@ public class Class5255 extends PremiumModule {
 
     @EventTarget
     private void method16412(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23641 != null) {
                 if (var1.method13898() instanceof Class5584) {
                     Class5584 var4 = (Class5584) var1.method13898();
@@ -251,10 +251,10 @@ public class Class5255 extends PremiumModule {
                 0.0F,
                 (float) (var10.method23942(var7) / 2 + 10),
                 (float) (var10.method23952() + 2),
-                Class5628.method17688(Class1979.field12891.field12910, 0.4F)
+                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
         );
         GL11.glTranslated(-var10.method23942(var7) / 2, 0.0, 0.0);
-        Class3192.method11439(var10, 0.0F, 0.0F, var7, Class1979.field12896.field12910);
+        Class3192.method11439(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

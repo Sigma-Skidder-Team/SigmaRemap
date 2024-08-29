@@ -31,9 +31,9 @@ public class Class9528 {
    }
 
    public void method36815(Entity var1, float var2, float var3) {
-      if (this.field44346.method15974("Interact autoblock")) {
+      if (this.field44346.getBooleanValueFromSetttingName("Interact autoblock")) {
          EntityRayTraceResult var6 = Class5628.method17714(
-            !this.field44346.method15974("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.field44346.method15977("Range")
+            !this.field44346.getBooleanValueFromSetttingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.field44346.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {
             this.field44347
@@ -54,14 +54,14 @@ public class Class9528 {
 
    public boolean method36817() {
       return !this.field44346.getStringSettingValueByName("Autoblock Mode").equals("None")
-         && this.field44347.player.method3090().getItem() instanceof Class3267
+         && this.field44347.player.method3090().getItem() instanceof ItemSword
          && !this.method36813();
    }
 
    public void method36818() {
       this.field44344 = new float[3];
-      float var3 = 20.0F / this.field44346.method15977("Min CPS");
-      float var4 = 20.0F / this.field44346.method15977("Max CPS");
+      float var3 = 20.0F / this.field44346.getNumberValueBySettingName("Min CPS");
+      float var4 = 20.0F / this.field44346.getNumberValueBySettingName("Max CPS");
       if (var3 > var4) {
          float var5 = var3;
          var3 = var4;
@@ -85,7 +85,7 @@ public class Class9528 {
          var4++;
       }
 
-      if (this.field44347.player.method2973() > 1.26F && this.field44346.method15974("Cooldown")) {
+      if (this.field44347.player.method2973() > 1.26F && this.field44346.getBooleanValueFromSetttingName("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
          float var12 = this.field44347.player.method2973() - (float)this.field44347.player.field4958 - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
@@ -116,8 +116,8 @@ public class Class9528 {
    }
 
    public void method36822() {
-      float var3 = 20.0F / this.field44346.method15977("Min CPS");
-      float var4 = 20.0F / this.field44346.method15977("Max CPS");
+      float var3 = 20.0F / this.field44346.getNumberValueBySettingName("Min CPS");
+      float var4 = 20.0F / this.field44346.getNumberValueBySettingName("Max CPS");
       if (var3 > var4) {
          float var5 = var3;
          var3 = var4;
@@ -141,10 +141,10 @@ public class Class9528 {
       }
 
       Iterator var24 = var4.iterator();
-      Class5325 var25 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
+      Class5325 var25 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
       float var7 = 150.0F;
-      if (var25.method15996() && var25.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
-         var7 += var25.method16726().method15977("Lag");
+      if (var25.isEnabled() && var25.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
+         var7 += var25.method16726().getNumberValueBySettingName("Lag");
       }
 
       while (var24.hasNext()) {
@@ -162,15 +162,15 @@ public class Class9528 {
             var24.remove();
          } else if (var9 instanceof ArmorStandEntity) {
             var24.remove();
-         } else if (!this.field44346.method15974("Players") && var9 instanceof PlayerEntity) {
+         } else if (!this.field44346.getBooleanValueFromSetttingName("Players") && var9 instanceof PlayerEntity) {
             var24.remove();
          } else if (var9 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var9)) {
             var24.remove();
-         } else if (!this.field44346.method15974("Invisible") && var9.method3342()) {
+         } else if (!this.field44346.getBooleanValueFromSetttingName("Invisible") && var9.method3342()) {
             var24.remove();
-         } else if (!this.field44346.method15974("Animals") && (var9 instanceof Class1018 || var9 instanceof Class1042)) {
+         } else if (!this.field44346.getBooleanValueFromSetttingName("Animals") && (var9 instanceof Class1018 || var9 instanceof Class1042)) {
             var24.remove();
-         } else if (!this.field44346.method15974("Monsters") && var9 instanceof Class1009) {
+         } else if (!this.field44346.getBooleanValueFromSetttingName("Monsters") && var9 instanceof Class1009) {
             var24.remove();
          } else if (this.field44347.player.getRidingEntity() != null && this.field44347.player.getRidingEntity().equals(var9)) {
             var24.remove();
@@ -178,7 +178,7 @@ public class Class9528 {
             var24.remove();
          } else if (!(var9 instanceof PlayerEntity)
             || !Class8781.method31662((PlayerEntity)var9)
-            || !Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()) {
+            || !Client.getInstance().getModuleManager().getModuleByClass(Class5275.class).isEnabled()) {
             Vector3d var10 = Class5628.method17751(var9);
             if (!(this.field44347.player.method3275(var9) < 40.0F)) {
                if (this.field44349.containsKey(var9)) {
@@ -206,7 +206,7 @@ public class Class9528 {
 
             if (!(Class5628.method17754(var10) > 8.0)) {
                boolean var26 = true;
-               if (this.field44346.method15974("Smart Reach")) {
+               if (this.field44346.getBooleanValueFromSetttingName("Smart Reach")) {
                   List<Class9629<Vector3d, Long>> var27 = this.field44349.get(var9);
                   if (var27 != null) {
                      for (Class9629<Vector3d, Long> var30 : var27) {
@@ -230,7 +230,7 @@ public class Class9528 {
 
                if (var26 && Class5628.method17754(var10) > (double)var1) {
                   var24.remove();
-               } else if (!this.field44346.method15974("Through walls")) {
+               } else if (!this.field44346.getBooleanValueFromSetttingName("Through walls")) {
                   Class7461 var28 = Class9142.method34150(var9, true);
                   if (var28 == null) {
                      var24.remove();

@@ -16,39 +16,39 @@ public class Class1015 extends Class1014 implements Class1016 {
       new Item[]{Items.field37841, Items.field37960, Items.field37959, Items.field38112}
    );
    private static final Map<EntityType<?>, Class9455> field5676 = Util.<Map<EntityType<?>, Class9455>>method38508(Maps.newHashMap(), var0 -> {
-      var0.put(EntityType.field41010, Class6067.field26885);
-      var0.put(EntityType.field41013, Class6067.field26907);
-      var0.put(EntityType.field41017, Class6067.field26886);
-      var0.put(EntityType.field41021, Class6067.field26887);
-      var0.put(EntityType.field41022, Class6067.field26888);
-      var0.put(EntityType.field41024, Class6067.field26889);
-      var0.put(EntityType.field41026, Class6067.field26890);
-      var0.put(EntityType.field41027, Class6067.field26891);
-      var0.put(EntityType.field41034, Class6067.field26892);
-      var0.put(EntityType.field41036, Class6067.field26893);
-      var0.put(EntityType.field41037, Class6067.field26894);
-      var0.put(EntityType.field41039, Class6067.field26895);
-      var0.put(EntityType.field41040, Class6067.field26896);
-      var0.put(EntityType.field41049, Class6067.field26897);
-      var0.put(EntityType.field41063, Class6067.field26898);
-      var0.put(EntityType.field41065, Class6067.field26899);
-      var0.put(EntityType.field41066, Class6067.field26900);
-      var0.put(EntityType.field41067, Class6067.field26901);
-      var0.put(EntityType.field41072, Class6067.field26902);
-      var0.put(EntityType.field41075, Class6067.field26903);
-      var0.put(EntityType.field41077, Class6067.field26904);
-      var0.put(EntityType.field41078, Class6067.field26905);
-      var0.put(EntityType.field41080, Class6067.field26906);
-      var0.put(EntityType.field41085, Class6067.field26907);
-      var0.put(EntityType.field41087, Class6067.field26908);
-      var0.put(EntityType.field41097, Class6067.field26909);
-      var0.put(EntityType.field41099, Class6067.field26910);
-      var0.put(EntityType.field41101, Class6067.field26911);
-      var0.put(EntityType.field41102, Class6067.field26912);
-      var0.put(EntityType.field41103, Class6067.field26913);
-      var0.put(EntityType.field41106, Class6067.field26914);
-      var0.put(EntityType.field41107, Class6067.field26915);
-      var0.put(EntityType.field41109, Class6067.field26916);
+      var0.put(EntityType.field41010, Sounds.field26885);
+      var0.put(EntityType.field41013, Sounds.field26907);
+      var0.put(EntityType.field41017, Sounds.field26886);
+      var0.put(EntityType.field41021, Sounds.field26887);
+      var0.put(EntityType.field41022, Sounds.field26888);
+      var0.put(EntityType.field41024, Sounds.field26889);
+      var0.put(EntityType.field41026, Sounds.field26890);
+      var0.put(EntityType.field41027, Sounds.field26891);
+      var0.put(EntityType.field41034, Sounds.field26892);
+      var0.put(EntityType.field41036, Sounds.field26893);
+      var0.put(EntityType.field41037, Sounds.field26894);
+      var0.put(EntityType.field41039, Sounds.field26895);
+      var0.put(EntityType.field41040, Sounds.field26896);
+      var0.put(EntityType.field41049, Sounds.field26897);
+      var0.put(EntityType.field41063, Sounds.field26898);
+      var0.put(EntityType.field41065, Sounds.field26899);
+      var0.put(EntityType.field41066, Sounds.field26900);
+      var0.put(EntityType.field41067, Sounds.field26901);
+      var0.put(EntityType.field41072, Sounds.field26902);
+      var0.put(EntityType.field41075, Sounds.field26903);
+      var0.put(EntityType.field41077, Sounds.field26904);
+      var0.put(EntityType.field41078, Sounds.field26905);
+      var0.put(EntityType.field41080, Sounds.field26906);
+      var0.put(EntityType.field41085, Sounds.field26907);
+      var0.put(EntityType.field41087, Sounds.field26908);
+      var0.put(EntityType.field41097, Sounds.field26909);
+      var0.put(EntityType.field41099, Sounds.field26910);
+      var0.put(EntityType.field41101, Sounds.field26911);
+      var0.put(EntityType.field41102, Sounds.field26912);
+      var0.put(EntityType.field41103, Sounds.field26913);
+      var0.put(EntityType.field41106, Sounds.field26914);
+      var0.put(EntityType.field41107, Sounds.field26915);
+      var0.put(EntityType.field41109, Sounds.field26916);
    });
    public float field5677;
    public float field5678;
@@ -192,7 +192,7 @@ public class Class1015 extends Class1014 implements Class1016 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Class6067.field26882,
+                  Sounds.field26882,
                   this.method2864(),
                   1.0F,
                   1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F
@@ -285,32 +285,32 @@ public class Class1015 extends Class1014 implements Class1016 {
          ArrayList var4 = Lists.newArrayList(field5676.keySet());
          return method4412((EntityType<?>)var4.get(var1.nextInt(var4.size())));
       } else {
-         return Class6067.field26880;
+         return Sounds.field26880;
       }
    }
 
    private static Class9455 method4412(EntityType<?> var0) {
-      return field5676.getOrDefault(var0, Class6067.field26880);
+      return field5676.getOrDefault(var0, Sounds.field26880);
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26884;
+      return Sounds.field26884;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26881;
+      return Sounds.field26881;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26917, 0.15F, 1.0F);
+      this.method2863(Sounds.field26917, 0.15F, 1.0F);
    }
 
    @Override
    public float method3243(float var1) {
-      this.method2863(Class6067.field26883, 0.15F, 1.0F);
+      this.method2863(Sounds.field26883, 0.15F, 1.0F);
       return var1 + this.field5678 / 2.0F;
    }
 

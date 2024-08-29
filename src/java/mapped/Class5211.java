@@ -17,7 +17,7 @@ public class Class5211 extends Module {
 
     @EventTarget
     public void method16229(Class4399 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!var1.method13921()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10040));

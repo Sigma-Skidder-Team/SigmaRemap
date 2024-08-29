@@ -12,36 +12,36 @@ public class Class1078 extends Class1066 {
    @Override
    public Class9455 method4241() {
       super.method4241();
-      return Class6067.field26770;
+      return Sounds.field26770;
    }
 
    @Override
    public Class9455 method4893() {
       super.method4893();
-      return Class6067.field26771;
+      return Sounds.field26771;
    }
 
    @Override
    public Class9455 method2880() {
       super.method2880();
-      return Class6067.field26773;
+      return Sounds.field26773;
    }
 
    @Nullable
    @Override
    public Class9455 method4894() {
-      return Class6067.field26774;
+      return Sounds.field26774;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
       super.method2879(var1);
-      return Class6067.field26775;
+      return Sounds.field26775;
    }
 
    @Override
    public void method4895() {
-      this.method2863(Class6067.field26772, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(Sounds.field26772, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override

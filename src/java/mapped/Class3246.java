@@ -92,7 +92,7 @@ public class Class3246 extends Class3247 implements Class3245 {
       if (var4.abilities.field29610) {
          var1 = var1.method23459(field18706);
          float var9 = var1.method23463(field18706) != Class105.field326 ? 0.5F : 0.55F;
-         var2.method6742(var4, var3, Class6067.field26462, Class2266.field14732, 0.3F, var9);
+         var2.method6742(var4, var3, Sounds.field26462, Class2266.field14732, 0.3F, var9);
          var2.method6725(var3, var1, 2);
          this.method11665(var2, var3, var1);
          return ActionResultType.method9002(var2.field9020);

@@ -159,7 +159,7 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return !this.method3250() && this.field5036 && !this.method3005() ? Class6067.field27164 : super.method4241();
+      return !this.method3250() && this.field5036 && !this.method3005() ? Sounds.field27164 : super.method4241();
    }
 
    @Override
@@ -169,24 +169,24 @@ public class Class1088 extends Class1018 {
 
    @Override
    public Class9455 method2859() {
-      return Class6067.field27175;
+      return Sounds.field27175;
    }
 
    @Nullable
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method3005() ? Class6067.field27170 : Class6067.field27171;
+      return !this.method3005() ? Sounds.field27170 : Sounds.field27171;
    }
 
    @Nullable
    @Override
    public Class9455 method2880() {
-      return !this.method3005() ? Class6067.field27165 : Class6067.field27166;
+      return !this.method3005() ? Sounds.field27165 : Sounds.field27166;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      Class9455 var5 = !this.method3005() ? Class6067.field27173 : Class6067.field27174;
+      Class9455 var5 = !this.method3005() ? Sounds.field27173 : Sounds.field27174;
       this.method2863(var5, 0.15F, 1.0F);
    }
 

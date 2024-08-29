@@ -16,8 +16,8 @@ public class Class5178 extends Module {
 
     public Class5178() {
         super(ModuleCategory.MOVEMENT, "NCP", "Longjump for NoCheatPlus.");
-        this.registerSetting(new Class6009<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
         this.registerSetting(new ModeSetting("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
         this.registerSetting(new ModeSetting("Speed Mode", "The way you will speed", 0, "Basic", "Funcraft", "Hypixel"));
     }
@@ -37,11 +37,11 @@ public class Class5178 extends Module {
 
     @EventTarget
     public void method16122(Class4435 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (mc.player.field5036) {
                 this.field23478 = 0;
                 this.field23477++;
-                if (this.field23479 && var1.method13994() != 0.599 && this.method16004().method15974("Auto Disable")) {
+                if (this.field23479 && var1.method13994() != 0.599 && this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                     this.method16004().method16000();
                     Class9567.method37088(var1, Class9567.method37076() * 0.8);
                     return;
@@ -49,12 +49,12 @@ public class Class5178 extends Module {
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Class5330.field23887 > 1) {
-                    if (this.method16004().method15974("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && Class5628.method17686()) {
+                    if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) && this.field23477 > 0 && Class5628.method17686()) {
                         mc.player.method2914();
                         var1.method13993(mc.player.method3433().field18048);
                         var1.method13995(mc.player.method3433().field18049);
                         var1.method13997(mc.player.method3433().field18050);
-                    } else if (this.method16004().method15974("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && Class5628.method17686()) {
+                    } else if (this.method16004().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && Class5628.method17686()) {
                         mc.player.method2914();
                         var1.method13993(mc.player.method3433().field18048);
                         var1.method13995(mc.player.method3433().field18049);
@@ -67,8 +67,8 @@ public class Class5178 extends Module {
                 if (this.field23479) {
                     double var5 = Class9567.method37076() * 0.95;
                     if (this.field23478 == 1) {
-                        this.field23480 = (double) this.method15977("Boost") * 0.4 + (double) Class9567.method37078() * 0.05;
-                    } else if ((float) this.field23478 > this.method15977("Duration") + (float) Class9567.method37078()) {
+                        this.field23480 = (double) this.getNumberValueBySettingName("Boost") * 0.4 + (double) Class9567.method37078() * 0.05;
+                    } else if ((float) this.field23478 > this.getNumberValueBySettingName("Duration") + (float) Class9567.method37078()) {
                         this.field23480 = var5;
                     } else if (this.field23480 > var5) {
                         String var7 = this.getStringSettingValueByName("Speed Mode");
@@ -102,7 +102,7 @@ public class Class5178 extends Module {
                             case "High":
                                 var1.method13995(((Class5327) this.method16004()).method16731(this.field23478));
                                 if (Class5628.method17716()
-                                        && Client.getInstance().getModuleManager().method14662(Class5199.class).method15996()
+                                        && Client.getInstance().getModuleManager().getModuleByClass(Class5199.class).isEnabled()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
                                     double var9 = mc.player.getPosY() + var1.method13994();
                                     double var11 = var9 - (double) ((int) (var9 + 0.001));
@@ -119,7 +119,7 @@ public class Class5178 extends Module {
                     }
                 }
 
-                if (this.field23477 == 1 && mc.player.method3433().field18049 < 0.0 && this.method16004().method15974("Auto Jump")) {
+                if (this.field23477 == 1 && mc.player.method3433().field18049 < 0.0 && this.method16004().getBooleanValueFromSetttingName("Auto Jump")) {
                     Class9567.method37088(var1, Class9567.method37076() * 0.2);
                 }
             }
@@ -130,7 +130,7 @@ public class Class5178 extends Module {
 
     @EventTarget
     public void method16123(Class4436 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             this.field23479 = true;
             this.field23480 = Class9567.method37076();
             var1.method14003(this.field23480);
@@ -138,11 +138,11 @@ public class Class5178 extends Module {
             if (this.getStringSettingValueByName("Glide Mode").equals("High") && Class9567.method37079() == 0) {
                 var1.method14002(0.599);
                 var1.method14003(0.0);
-                if ((double) this.method15977("Boost") > 1.5) {
-                    var1.method14003(0.28 + (double) this.method15977("Boost") * 0.1 + (double) Class9567.method37078() * 0.05);
+                if ((double) this.getNumberValueBySettingName("Boost") > 1.5) {
+                    var1.method14003(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) Class9567.method37078() * 0.05);
                 }
 
-                if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.method15977("Boost") > 1.75) {
+                if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.getNumberValueBySettingName("Boost") > 1.75) {
                     Class5628.method17749(true);
                 }
 
@@ -166,7 +166,7 @@ public class Class5178 extends Module {
 
     @EventTarget
     public void method16124(Class4417 var1) {
-        if (!this.method15996() || !this.getStringSettingValueByName("Glide Mode").equals("High")) {
+        if (!this.isEnabled() || !this.getStringSettingValueByName("Glide Mode").equals("High")) {
         }
     }
 }

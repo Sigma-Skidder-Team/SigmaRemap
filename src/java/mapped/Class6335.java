@@ -4,7 +4,7 @@ public class Class6335 extends Class6334 {
    private static String[] field27848;
 
    public Class6335(Class1017 var1) {
-      super(var1, Class6067.field26391, Class2266.field14734);
+      super(var1, Sounds.field26391, Class2266.field14734);
       this.field27862 = 0;
    }
 

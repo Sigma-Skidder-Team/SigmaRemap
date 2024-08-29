@@ -13,9 +13,9 @@ public class Class5196 extends Module {
 
     @EventTarget
     private void method16182(Class4398 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3220) {
-                var1.method13905(Class8022.method27427(0.0, 0.0, 0.0, 1.0, !this.method15974("Above") ? 0.9375 : 0.999, 1.0));
+                var1.method13905(Class8022.method27427(0.0, 0.0, 0.0, 1.0, !this.getBooleanValueFromSetttingName("Above") ? 0.9375 : 0.999, 1.0));
             }
 
             if (mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3399) {

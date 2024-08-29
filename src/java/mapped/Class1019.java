@@ -181,7 +181,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, Class6067.field27033, var1, 1.0F, 1.0F);
+      this.world.method6744((PlayerEntity)null, this, Sounds.field27033, var1, 1.0F, 1.0F);
       this.method4520(true);
       int var4 = 1 + this.field5054.nextInt(3);
 
@@ -221,22 +221,22 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27030;
+      return Sounds.field27030;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27032;
+      return Sounds.field27032;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27031;
+      return Sounds.field27031;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field27034, 0.15F, 1.0F);
+      this.method2863(Sounds.field27034, 0.15F, 1.0F);
    }
 
    public Class112 method4517() {

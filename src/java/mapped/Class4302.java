@@ -19,7 +19,7 @@ public class Class4302 extends Class4278 {
             187.0F,
             36.0F,
             ResourcesDecrypter.gemPNG,
-            Class5628.method17688(Class1979.field12896.field12910, var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       }
    }

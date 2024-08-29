@@ -19,7 +19,7 @@ public class Class3379 extends Class3231 {
 
    @Override
    public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
-      var3.method2863(Class6067.field26664, 1.0F, 1.0F);
+      var3.method2863(Sounds.field26664, 1.0F, 1.0F);
       if (!var1.field9020) {
          var1.method6786(var3, (byte)54);
       }
@@ -78,7 +78,7 @@ public class Class3379 extends Class3231 {
    private void method11975(World var1, Entity var2) {
       if (method11971(var2)) {
          if (var1.field9016.nextInt(5) == 0) {
-            var2.method2863(Class6067.field26664, 1.0F, 1.0F);
+            var2.method2863(Sounds.field26664, 1.0F, 1.0F);
          }
 
          if (!var1.field9020 && var1.field9016.nextInt(5) == 0) {

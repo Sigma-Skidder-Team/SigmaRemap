@@ -645,7 +645,7 @@ public class ClientPlayNetHandler implements Class5116 {
                   var4.getPosX(),
                   var4.getPosY(),
                   var4.getPosZ(),
-                  Class6067.field26714,
+                  Sounds.field26714,
                   Class2266.field14735,
                   0.2F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 1.4F + 2.0F,
@@ -657,7 +657,7 @@ public class ClientPlayNetHandler implements Class5116 {
                   var4.getPosX(),
                   var4.getPosY(),
                   var4.getPosZ(),
-                  Class6067.field26569,
+                  Sounds.field26569,
                   Class2266.field14735,
                   0.1F,
                   (this.field23282.nextFloat() - this.field23282.nextFloat()) * 0.35F + 0.9F,
@@ -829,7 +829,7 @@ public class ClientPlayNetHandler implements Class5116 {
             } else {
                byte var5 = 40;
                this.field23272.particles.method1196(var4, Class7940.field34097, 30);
-               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), Class6067.field27147, var4.method2864(), 1.0F, 1.0F, false);
+               this.field23273.method6745(var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field27147, var4.method2864(), 1.0F, 1.0F, false);
                if (var4 == this.field23272.player) {
                   this.field23272.gameRenderer.method763(method15785(this.field23272.player));
                }
@@ -1112,7 +1112,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                                 var4.getPosX(),
                                                 var4.getPosY(),
                                                 var4.getPosZ(),
-                                                Class6067.field26526,
+                                                Sounds.field26526,
                                                 Class2266.field14733,
                                                 1.0F,
                                                 1.0F
@@ -1122,7 +1122,7 @@ public class ClientPlayNetHandler implements Class5116 {
                                  } else {
                                     this.field23273
                                        .method6743(
-                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), Class6067.field26985, Class2266.field14734, 1.0F, 1.0F
+                                          var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), Sounds.field26985, Class2266.field14734, 1.0F, 1.0F
                                        );
                                  }
                               } else {
@@ -1134,7 +1134,7 @@ public class ClientPlayNetHandler implements Class5116 {
                         } else {
                            this.field23273
                               .method6743(
-                                 var4, var4.getPosX(), var4.method3442(), var4.getPosZ(), Class6067.field26362, Class2266.field14735, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.method3442(), var4.getPosZ(), Sounds.field26362, Class2266.field14735, 0.18F, 0.45F
                               );
                         }
                      } else {
@@ -1549,7 +1549,7 @@ public class ClientPlayNetHandler implements Class5116 {
       this.field23272
          .getSoundHandler()
          .method1000(
-            new Class6339(
+            new MinecraftSoundManager(
                var1.method17222(),
                var1.method17223(),
                var1.method17227(),

@@ -156,17 +156,17 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26945;
+      return Sounds.field26945;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26947;
+      return Sounds.field26947;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26948;
+      return Sounds.field26948;
    }
 
    @Override
@@ -240,6 +240,6 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public Class9455 method4546() {
-      return Class6067.field26946;
+      return Sounds.field26946;
    }
 }

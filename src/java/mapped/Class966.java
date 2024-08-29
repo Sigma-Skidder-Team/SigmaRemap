@@ -60,7 +60,7 @@ public class Class966 extends TileEntity implements Class935 {
    }
 
    private void method3990() {
-      this.field5324.method6742((PlayerEntity)null, this.getPos(), Class6067.field26401, Class2266.field14732, 1.0F, 1.0F);
+      this.field5324.method6742((PlayerEntity)null, this.getPos(), Sounds.field26401, Class2266.field14732, 1.0F, 1.0F);
    }
 
    public void method3991(Direction var1) {

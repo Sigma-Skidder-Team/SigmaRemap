@@ -28,18 +28,18 @@ public class Class5261 extends PremiumModule {
         this.field23662 = new Animation(230, 200, Direction.BACKWARDS);
         this.registerSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
         this.registerSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
-        this.registerSetting(new Class6009<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
         this.method16005(false);
     }
 
     @EventTarget
     public void method16447(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (field23663 != null && (field23663.field35732 != mc.mainWindow.getFramebufferWidth() || field23663.field35733 != mc.mainWindow.getFramebufferHeight())) {
                 this.isInDevelopment();
             }
 
-            if (this.method15974("Smart Visibility")) {
+            if (this.getBooleanValueFromSetttingName("Smart Visibility")) {
                 List var4 = mc.world
                         .method6772(
                                 PlayerEntity.class,
@@ -73,16 +73,16 @@ public class Class5261 extends PremiumModule {
     @EventTarget
     public void method16450(Class4415 var1) {
         if (field23663 != null) {
-            if (this.method15996()) {
+            if (this.isEnabled()) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                    if (!this.method15974("Smart Visibility")) {
-                        this.field23662.changeDirection(mc.currentScreen != null && !this.method15974("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
+                    if (!this.getBooleanValueFromSetttingName("Smart Visibility")) {
+                        this.field23662.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSetttingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
                     } else {
                         this.field23662.changeDirection(this.field23667 <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
                     }
 
                     float var4 = (float) mc.mainWindow.method8043() / (float) mc.mainWindow.method8044();
-                    int var5 = (int) this.method15977("Size");
+                    int var5 = (int) this.getNumberValueBySettingName("Size");
                     int var6 = (int) ((float) var5 / var4);
                     int var7 = 10;
                     int var8 = -var7 - var6;
@@ -177,9 +177,9 @@ public class Class5261 extends PremiumModule {
 
     @EventTarget
     public void method16452(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (field23663 != null) {
-                if (mc.currentScreen == null || this.method15974("Show in GUI") || this.field23667 != 0) {
+                if (mc.currentScreen == null || this.getBooleanValueFromSetttingName("Show in GUI") || this.field23667 != 0) {
                     Class3192.method11468();
                     RenderSystem.pushMatrix();
                     RenderSystem.clear(16640, false);

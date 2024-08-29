@@ -14,19 +14,19 @@ public class Class5294 extends Module {
 
     @EventTarget
     private void method16626(Class4415 var1) {
-        if (!this.method15996() || mc.player == null) {
+        if (!this.isEnabled() || mc.player == null) {
         }
     }
 
     @EventTarget
     private void method16627(Class4430 var1) {
-        if (!this.method15996() || mc.player == null) {
+        if (!this.isEnabled() || mc.player == null) {
         }
     }
 
     @EventTarget
     private void method16628(ClickEvent var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13976() != ClickEvent.Button.LEFT && var1.method13976() != ClickEvent.Button.RIGHT) {
             }
         }

@@ -34,7 +34,7 @@ public class MusicTicker {
    }
 
    public void method33667(BackgroundMusicSelector var1) {
-      this.field41441 = Class6339.method19294(var1.method12189());
+      this.field41441 = MinecraftSoundManager.method19294(var1.method12189());
       if (this.field41441.method19281() != SoundHandler.field1051) {
          this.field41440.getSoundHandler().method1000(this.field41441);
       }

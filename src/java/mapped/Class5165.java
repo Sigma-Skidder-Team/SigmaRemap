@@ -12,7 +12,7 @@ public class Class5165 extends Module {
 
     @EventTarget
     private void method16067(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             mc.player.method3040(Class8254.field35475);
             mc.player.method3040(Class8254.field35481);
         }

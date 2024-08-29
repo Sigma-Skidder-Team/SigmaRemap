@@ -11,7 +11,7 @@ public class Class4368 extends Class4247 {
       this.field21351 = var7;
       Class4262 var10;
       this.method13230(var10 = new Class4262(this, "enable", 114, 9, 40, 18));
-      var10.method13093(var7.method15996());
+      var10.method13093(var7.isEnabled());
       var10.method13036(var2x -> var7.method15999(var10.method13092()));
       if (var7.method15989().size() > 0) {
          Class4364 var11;
@@ -26,22 +26,22 @@ public class Class4368 extends Class4247 {
          ClassicDecryption.regular17,
          (float)(this.field20895 + 10),
          (float)(this.field20896 + 8),
-         this.field21351.method15990(),
-         Class5628.method17688(Class1979.field12891.field12910, !this.field21351.method15996() ? 0.5F : 0.9F)
+         this.field21351.getSuffix(),
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
       );
       Class3192.method11439(
          ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 33),
          "Bind",
-         Class5628.method17688(Class1979.field12891.field12910, 1.0F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 1.0F)
       );
       Class3192.method11439(
          ClassicDecryption.regular15,
          (float)(this.field20895 + 15),
          (float)(this.field20896 + 52),
-         Class5628.method17736(this.field21351.method15976("Keybind")),
-         Class5628.method17688(Class1979.field12891.field12910, 0.7F)
+         Class5628.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F)
       );
       if (this.field21351.method15989().size() > 1) {
          Class3192.method11439(
@@ -49,7 +49,7 @@ public class Class4368 extends Class4247 {
             (float)(this.field20895 + 84),
             (float)(this.field20896 + 34),
             "Settings",
-            Class5628.method17688(Class1979.field12891.field12910, 1.0F)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 1.0F)
          );
       }
 

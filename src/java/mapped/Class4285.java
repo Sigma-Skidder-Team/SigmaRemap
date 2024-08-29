@@ -31,7 +31,7 @@ public class Class4285 extends Class4278 {
             (float)this.field20897,
             (float)this.field20898,
             ResourcesDecrypter.loadingIndicatorPNG,
-            Class5628.method17688(Class1979.field12891.field12910, this.field20770 * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
          );
          GL11.glPopMatrix();
       }

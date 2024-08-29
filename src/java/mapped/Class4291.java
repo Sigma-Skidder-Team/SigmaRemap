@@ -20,7 +20,7 @@ public class Class4291 extends Class4278 {
          (float)this.field20898,
          this.field20792,
          Class5628.method17690(
-            Class1979.field12891.field12910, Class1979.field12896.field12910, !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)
+            ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)
          )
       );
       super.method13027(var1);

@@ -42,10 +42,10 @@ public class Class5251 extends Module {
                 }
 
                 String var7 = mc.player.getName().getString().toLowerCase();
-                if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996()) {
+                if (Client.getInstance().getModuleManager().getModuleByClass(Class5364.class).isEnabled()) {
                 }
 
-                if (this.field23626.method15974("AutoL")) {
+                if (this.field23626.getBooleanValueFromSetttingName("AutoL")) {
                     String[] var8 = new String[]{"MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", ""};
                     boolean var9 = false;
 
@@ -107,7 +107,7 @@ public class Class5251 extends Module {
                     }
                 }
 
-                if (this.method15974("FriendAccept") && var6.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
+                if (this.getBooleanValueFromSetttingName("FriendAccept") && var6.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
                     for (ITextComponent var31 : var5.method17648().getSiblings()) {
                         ClickEvent var35 = var31.getStyle().getClickEvent();
                         if (var35 != null && var35.getAction() == ClickEvent$Action.RUN_COMMAND && var35.getValue().contains("/f accept")) {
@@ -117,21 +117,21 @@ public class Class5251 extends Module {
                 }
 
                 if (var6.contains("Want to play again? Click here! ") || var6.contains("coins! (Win)")) {
-                    if (this.field23626.method15974("Auto Join")) {
+                    if (this.field23626.getBooleanValueFromSetttingName("Auto Join")) {
                         for (ITextComponent var32 : var5.method17648().getSiblings()) {
                             ClickEvent var36 = var32.getStyle().getClickEvent();
                             if (var36 != null && var36.getAction() == ClickEvent$Action.RUN_COMMAND) {
-                                Class7200 var37 = new Class7200(var36.getValue(), (long) this.field23626.method15977("Auto Join delay") * 1000L);
+                                Class7200 var37 = new Class7200(var36.getValue(), (long) this.field23626.getNumberValueBySettingName("Auto Join delay") * 1000L);
                                 this.field23626.method16759(var37);
                             }
                         }
                     }
 
-                    if (this.field23626.method15974("AutoGG")) {
+                    if (this.field23626.getBooleanValueFromSetttingName("AutoGG")) {
                         this.field23626.method16760();
                     }
                 }
-            } else if (var4 instanceof Class5581 && this.method15974("Hide infos")) {
+            } else if (var4 instanceof Class5581 && this.getBooleanValueFromSetttingName("Hide infos")) {
                 Class5581 var26 = (Class5581) var4;
                 if (var26.method17528() == 2 && var26.method17525().startsWith("team_")) {
                     String var27 = var26.method17533().getString() + var26.method17534().getString();

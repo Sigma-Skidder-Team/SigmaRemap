@@ -201,7 +201,7 @@ public class MusicManager {
                                 (float) field32143.mainWindow.method8044() - var8,
                                 var4,
                                 var8,
-                                Class5628.method17688(Class1979.field12899.field12910, 0.2F * var6)
+                                Class5628.method17688(ClientColors.MID_GREY.getColor, 0.2F * var6)
                         );
                     }
 
@@ -210,7 +210,7 @@ public class MusicManager {
                     for (int var13 = 0; (float) var13 < var3; var13++) {
                         float var14 = (float) field32143.mainWindow.method8044() / 1080.0F;
                         float var15 = ((float) (Math.sqrt(this.field32165.get(var13)) / 12.0) - 5.0F) * var14;
-                        Class3192.method11424((float) var13 * var4, (float) field32143.mainWindow.method8044() - var15, var4, var15, Class1979.field12896.field12910);
+                        Class3192.method11424((float) var13 * var4, (float) field32143.mainWindow.method8044() - var15, var4, var15, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }
 
                     Class3192.method11477(Class2329.field15940);
@@ -242,14 +242,14 @@ public class MusicManager {
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 70),
                                 var11[0],
-                                Class5628.method17688(Class1979.field12891.field12910, 0.5F)
+                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 70),
                                 var11[0],
-                                Class5628.method17688(Class1979.field12896.field12910, 0.7F)
+                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
                         );
                     } else {
                         Class3192.method11439(
@@ -257,28 +257,28 @@ public class MusicManager {
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 81),
                                 var11[0],
-                                Class5628.method17688(Class1979.field12891.field12910, 0.4F)
+                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18_1,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 56),
                                 var11[1],
-                                Class5628.method17688(Class1979.field12891.field12910, 0.5F)
+                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloLightFont18,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 56),
                                 var11[1],
-                                Class5628.method17688(Class1979.field12896.field12910, 0.7F)
+                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)
                         );
                         Class3192.method11439(
                                 ResourceRegistry.JelloMediumFont20,
                                 130.0F,
                                 (float) (field32143.mainWindow.method8044() - 81),
                                 var11[0],
-                                Class5628.method17688(Class1979.field12896.field12910, 0.6F)
+                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
                         );
                     }
                 }

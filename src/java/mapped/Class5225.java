@@ -33,7 +33,7 @@ public class Class5225 extends Module {
 
     @EventTarget
     private void method16268(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23571 = true;
@@ -43,7 +43,7 @@ public class Class5225 extends Module {
 
     @EventTarget
     private void method16269(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23571 = false;
@@ -53,7 +53,7 @@ public class Class5225 extends Module {
 
     @EventTarget
     public void method16270(Class4399 var1) {
-        if (this.method15996() && var1.method13921() && this.method15974("Ground Spoof")) {
+        if (this.isEnabled() && var1.method13921() && this.getBooleanValueFromSetttingName("Ground Spoof")) {
             if (this.field23570) {
                 this.field23570 = !this.field23570;
                 var1.method13920(true);
@@ -63,7 +63,7 @@ public class Class5225 extends Module {
 
     @EventTarget
     public void method16271(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             boolean var4 = mc.player.field5036 || Class5628.method17730(mc.player, 0.001F);
             if (!var4) {
                 if (var1.method13994() < 0.0) {
@@ -71,7 +71,7 @@ public class Class5225 extends Module {
                         if (mc.player.getPositionVec().field18049 + var1.method13994() < this.field23569) {
                             this.field23570 = true;
                             int var5 = this.method16272();
-                            boolean var6 = this.method15974("Fake Block");
+                            boolean var6 = this.getBooleanValueFromSetttingName("Fake Block");
                             if (var5 >= 0 && var6) {
                                 mc.getConnection().sendPacket(new Class5539(var5));
                             }

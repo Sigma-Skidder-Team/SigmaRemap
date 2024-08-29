@@ -36,7 +36,7 @@ public class Class5311 extends Module {
             this.field23847 = this.field23848 = false;
         }
 
-        if (!this.method15974("Damage")) {
+        if (!this.getBooleanValueFromSetttingName("Damage")) {
             this.field23848 = true;
         }
     }
@@ -53,7 +53,7 @@ public class Class5311 extends Module {
 
     @EventTarget
     private void method16686(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23846 = true;
@@ -63,7 +63,7 @@ public class Class5311 extends Module {
 
     @EventTarget
     private void method16687(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23846 = false;
@@ -74,7 +74,7 @@ public class Class5311 extends Module {
     @EventTarget
     @Class5631
     public void method16688(Class4435 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
             if (mc.player.field5036) {
                 this.field23847 = this.field23848 = false;
             }

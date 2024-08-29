@@ -15,8 +15,8 @@ public class Class5181 extends Module {
 
     @EventTarget
     private void method16126(Class4436 var1) {
-        if (this.method15996()) {
-            if (Class5357.field23937) {
+        if (this.isEnabled()) {
+            if (KillAura.field23937) {
                 mc.getConnection()
                         .sendPacket(new Class5605(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
             }
@@ -25,8 +25,8 @@ public class Class5181 extends Module {
 
     @EventTarget
     private void method16127(Class4434 var1) {
-        if (this.method15996()) {
-            if (Class5357.field23937) {
+        if (this.isEnabled()) {
+            if (KillAura.field23937) {
                 var1.method13900(true);
             }
         }

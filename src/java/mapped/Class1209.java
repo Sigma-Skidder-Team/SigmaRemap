@@ -33,7 +33,7 @@ public class Class1209 extends Class1206 {
    @Override
    public void method5739(SoundHandler var1) {
       if (this.field6522) {
-         var1.method1000(Class6339.method19292(Class6067.field26414, 1.0F));
+         var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field26414, 1.0F));
       }
    }
 }

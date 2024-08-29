@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Class4281 extends Class4278 {
    public static final Class6387 field20741 = new Class6387(
-      -892679478, -892679478, -892679478, Class1979.field12891.field12910, Class2218.field14488, Class2218.field14492
+      -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492
    );
-   public static final Class6387 field20742 = new Class6387(-1, -1, -1, Class1979.field12896.field12910, Class2218.field14488, Class2218.field14492);
+   public static final Class6387 field20742 = new Class6387(-1, -1, -1, ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14488, Class2218.field14492);
    private String field20743 = "";
    private float field20744;
    private final float field20745 = 2.0F;

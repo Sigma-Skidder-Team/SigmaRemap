@@ -59,7 +59,7 @@ public class Class8909 {
                      var7.getPosX(),
                      var7.getPosY(),
                      var7.getPosZ(),
-                     Class6067.field26714,
+                     Sounds.field26714,
                      Class2266.field14735,
                      0.2F,
                      ((var7.method3013().nextFloat() - var7.method3013().nextFloat()) * 0.7F + 1.0F) * 2.0F

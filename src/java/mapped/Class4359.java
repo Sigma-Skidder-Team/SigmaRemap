@@ -44,7 +44,7 @@ public class Class4359 extends Class4247 {
             (float)this.method13265(),
             (float)this.method13267(),
             (float)this.method13269(),
-            Class5628.method17688(Class1979.field12891.field12910, 0.43F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
       } else {
          Class3192.method11424(
@@ -52,21 +52,21 @@ public class Class4359 extends Class4247 {
             (float)this.method13265(),
             (float)this.method13267(),
             (float)this.method13269(),
-            Class5628.method17688(Class1979.field12899.field12910, 0.075F)
+            Class5628.method17688(ClientColors.MID_GREY.getColor, 0.075F)
          );
          Class3192.method11424(
             (float)this.method13263() + (float)this.method13267() * var9,
             (float)this.method13265(),
             (float)this.method13267() * (1.0F - var9),
             (float)this.method13269(),
-            Class5628.method17688(Class1979.field12891.field12910, 0.43F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          Class3192.method11424(
             (float)this.method13263(),
             (float)this.method13265(),
             (float)this.method13267() * var8,
             (float)this.method13269(),
-            Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          if (var8 != 0.0F) {
             Class3192.method11455((float)this.method13263() + (float)this.method13267() * var8, (float)this.method13265(), 5.0F, 5.0F, ResourcesDecrypter.shadowRightPNG);

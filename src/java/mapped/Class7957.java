@@ -32,8 +32,8 @@ public class Class7957 {
             String var4 = var1.method21773("type");
             switch (var4) {
                case "mod":
-                  for (Module var7 : Client.getInstance().getModuleManager().method14664().values()) {
-                     if (var1.method21773("target").equals(var7.method15991())) {
+                  for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+                     if (var1.method21773("target").equals(var7.getName())) {
                         this.field34205 = var7;
                      }
                   }
@@ -52,7 +52,7 @@ public class Class7957 {
       switch (Class8251.field35450[this.method27055().ordinal()]) {
          case 1:
             var3.put("type", "mod");
-            var3.put("target", ((Module)this.field34205).method15991());
+            var3.put("target", ((Module)this.field34205).getName());
             break;
          case 2:
             var3.put("type", "screen");

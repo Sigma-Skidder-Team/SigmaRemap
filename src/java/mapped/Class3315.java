@@ -16,7 +16,7 @@ public class Class3315 extends Class3314 {
       }
 
       var2.method2913(Class8876.field40098.method172(this));
-      var2.method2863(Class6067.field27179, 1.0F, 1.0F);
+      var2.method2863(Sounds.field27179, 1.0F, 1.0F);
       if (!var7.isEmpty()) {
          if (!var2.inventory.method4045(var6.copy())) {
             var2.method2882(var6, false);

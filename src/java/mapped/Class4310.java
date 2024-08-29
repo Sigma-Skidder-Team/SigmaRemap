@@ -221,11 +221,11 @@ public class Class4310 extends Class4307 {
             (float)(this.method13267() * 2),
             (float)(this.method13269() + 200),
             field20976,
-            Class5628.method17688(Class1979.field12896.field12910, var4),
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
          Class3192.method11424(
-            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, var4 * 0.3F)
+            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
          for (Class4305 var24 : this.method13241()) {
@@ -266,7 +266,7 @@ public class Class4310 extends Class4307 {
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 - 30),
                field20980,
-               Class5628.method17688(Class1979.field12896.field12910, this.field20973.calcPercent()),
+               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
                Class2218.field14492,
                Class2218.field14492
             );
@@ -275,7 +275,7 @@ public class Class4310 extends Class4307 {
                (float)(this.field20897 / 2),
                (float)(this.field20898 / 2 + 30),
                "\"" + field20981 + "\"",
-               Class5628.method17688(Class1979.field12896.field12910, this.field20973.calcPercent() * 0.5F),
+               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
                Class2218.field14492,
                Class2218.field14492
             );

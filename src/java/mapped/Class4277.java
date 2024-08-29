@@ -87,7 +87,7 @@ public class Class4277 extends Class4247 {
             (float)(var8 - ResourceRegistry.JelloLightFont14.method23942(this.method13303()) - 10 - var11),
             (float)(var9 - 5),
             this.method13303(),
-            Class5628.method17688(Class1979.field12891.field12910, 0.5F * this.field20735.calcPercent() * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * this.field20735.calcPercent() * var1)
          );
       }
 

@@ -103,14 +103,14 @@ public class Class4338 extends Class4304 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + 60),
-         Class5628.method17688(Class1979.field12896.field12910, Math.min(1.0F, var1 * 0.9F * this.field21195))
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
       Class3192.method11424(
          (float)this.method13263(),
          (float)this.method13265() + 60.0F * this.field21195,
          (float)this.method13267(),
          (float)this.method13269() - 60.0F * this.field21195,
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (!(this.field21195 > 0.8F)) {
          if (this.field21195 < 0.2F) {
@@ -126,7 +126,7 @@ public class Class4338 extends Class4304 {
          (float)(this.method13263() + 20),
          (float)(this.method13265() + 30),
          var5,
-         Class5628.method17688(Class1979.field12891.field12910, var1 * 0.5F * this.field21195),
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
          Class2218.field14488,
          Class2218.field14492
       );
@@ -140,7 +140,7 @@ public class Class4338 extends Class4304 {
             (float)this.method13267(),
             18.0F,
             ResourcesDecrypter.shadowBottomPNG,
-            Class5628.method17688(Class1979.field12896.field12910, var1 * this.field21195 * 0.5F)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
          );
       }
    }

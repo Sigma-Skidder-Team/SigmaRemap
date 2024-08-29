@@ -502,7 +502,7 @@ public abstract class Class1006 extends Class880 {
 
    public boolean method4250(ItemStack var1, ItemStack var2) {
       if (!var2.isEmpty()) {
-         if (!(var1.getItem() instanceof Class3267)) {
+         if (!(var1.getItem() instanceof ItemSword)) {
             if (var1.getItem() instanceof Class3263 && var2.getItem() instanceof Class3263) {
                return this.method4251(var1, var2);
             } else if (var1.getItem() instanceof Class3261 && var2.getItem() instanceof Class3261) {
@@ -540,9 +540,9 @@ public abstract class Class1006 extends Class880 {
             } else {
                return false;
             }
-         } else if (var2.getItem() instanceof Class3267) {
-            Class3267 var5 = (Class3267)var1.getItem();
-            Class3267 var6 = (Class3267)var2.getItem();
+         } else if (var2.getItem() instanceof ItemSword) {
+            ItemSword var5 = (ItemSword)var1.getItem();
+            ItemSword var6 = (ItemSword)var2.getItem();
             return var5.method11784() == var6.method11784() ? this.method4251(var1, var2) : var5.method11784() > var6.method11784();
          } else {
             return true;

@@ -70,12 +70,12 @@ public class Class959 extends TileEntity implements Class935 {
       }
 
       if (var3 % 80L == 0L && this.method3903()) {
-         this.method3908(Class6067.field26468);
+         this.method3908(Sounds.field26468);
       }
 
       if (var3 > this.field5389 && this.method3903()) {
          this.field5389 = var3 + 60L + (long)this.field5324.method6814().nextInt(40);
-         this.method3908(Class6067.field26469);
+         this.method3908(Sounds.field26469);
       }
 
       if (this.field5324.field9020) {
@@ -173,7 +173,7 @@ public class Class959 extends TileEntity implements Class935 {
                this.field5387.getPosX(),
                this.field5387.getPosY(),
                this.field5387.getPosZ(),
-               Class6067.field26470,
+               Sounds.field26470,
                Class2266.field14732,
                1.0F,
                1.0F
@@ -255,7 +255,7 @@ public class Class959 extends TileEntity implements Class935 {
 
    private void method3905(boolean var1) {
       if (var1 != this.field5384) {
-         this.method3908(!var1 ? Class6067.field26471 : Class6067.field26467);
+         this.method3908(!var1 ? Sounds.field26471 : Sounds.field26467);
       }
 
       this.field5384 = var1;

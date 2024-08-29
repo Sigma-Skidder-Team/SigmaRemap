@@ -18,7 +18,7 @@ public class Class5199 extends Module {
         super(ModuleCategory.PLAYER, "NoFall", "Avoid you from getting fall damages");
         this.registerSetting(
                 new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
-                        .method18631("Hypixel", "Hypixel2")
+                        .setModeAsPremium("Hypixel", "Hypixel2")
         );
     }
 
@@ -32,7 +32,7 @@ public class Class5199 extends Module {
     @EventTarget
     @LowerPriority
     private void method16187(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13994() < -0.5
                     && (double) mc.player.field5045 > 2.0 + (double) Class9567.method37079() * 0.5
                     && !mc.player.field5036
@@ -78,7 +78,7 @@ public class Class5199 extends Module {
 
     @EventTarget
     private void method16188(Class4399 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!(mc.player.getPosY() < 2.0)) {
                 String var4 = this.getStringSettingValueByName("Mode");
                 if (!Class5628.method17716() && var4.equals("Hypixel")) {

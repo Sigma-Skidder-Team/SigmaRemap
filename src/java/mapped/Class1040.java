@@ -141,7 +141,7 @@ public class Class1040 extends Class1038 implements Class1041 {
                this.getPosX(),
                this.method3442(),
                this.getPosZ(),
-               Class6067.field27301,
+               Sounds.field27301,
                this.method2864(),
                1.0F + this.field5054.nextFloat(),
                this.field5054.nextFloat() * 0.7F + 0.3F,
@@ -226,22 +226,22 @@ public class Class1040 extends Class1038 implements Class1041 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27299;
+      return Sounds.field27299;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27303;
+      return Sounds.field27303;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27302;
+      return Sounds.field27302;
    }
 
    @Override
    public Class9455 method4643() {
-      return Class6067.field27304;
+      return Sounds.field27304;
    }
 
    @Override

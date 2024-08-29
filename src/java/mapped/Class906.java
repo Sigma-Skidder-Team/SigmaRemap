@@ -46,7 +46,7 @@ public class Class906 extends Entity {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Class6067.field26732,
+               Sounds.field26732,
                Class2266.field14731,
                10000.0F,
                0.8F + this.field5054.nextFloat() * 0.2F
@@ -57,7 +57,7 @@ public class Class906 extends Entity {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Class6067.field26731,
+               Sounds.field26731,
                Class2266.field14731,
                2.0F,
                0.5F + this.field5054.nextFloat() * 0.2F

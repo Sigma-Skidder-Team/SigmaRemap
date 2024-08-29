@@ -35,7 +35,7 @@ public class Class3289 extends Item {
                this.method11828(var12, var5.field9016);
                var5.method6916(var12);
                var5.method6743(
-                  (PlayerEntity)null, var12.getPosX(), var12.getPosY(), var12.getPosZ(), Class6067.field26360, Class2266.field14732, 0.75F, 0.8F
+                  (PlayerEntity)null, var12.getPosX(), var12.getPosY(), var12.getPosZ(), Sounds.field26360, Class2266.field14732, 0.75F, 0.8F
                );
             }
 

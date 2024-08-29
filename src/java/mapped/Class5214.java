@@ -21,7 +21,7 @@ public class Class5214 extends Module {
 
     @EventTarget
     public void method16235(Class4399 var1) {
-        if (this.method15996() && mc.player != null && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+        if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.field5036 && var1.method13921() && Class5628.method17716()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
@@ -47,7 +47,7 @@ public class Class5214 extends Module {
 
     @EventTarget
     public void method16236(Class4435 var1) {
-        if (this.method15996() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+        if (this.isEnabled() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (!mc.player.field4981) {
                 String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
@@ -113,9 +113,9 @@ public class Class5214 extends Module {
 
     @EventTarget
     private void method16237(Class4404 var1) {
-        if (this.method15996()
+        if (this.isEnabled()
                 && !this.getStringSettingValueByName("Mode").equalsIgnoreCase("NCP")
-                && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+                && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (!mc.player.method3250() && !mc.player.method3264() && !mc.player.method3063()) {
                 if (!mc.gameSettings.field44636.field13071
                         && !mc.player.method3063()
@@ -136,12 +136,12 @@ public class Class5214 extends Module {
 
     @EventTarget
     public void method16238(Class4422 var1) {
-        if (this.method15996()
+        if (this.isEnabled()
                 && Class5628.method17730(mc.player, 0.43F)
                 && !((double) mc.player.field5045 > 0.09)
-                && this.method15974("OnGround")
+                && this.getBooleanValueFromSetttingName("OnGround")
                 && !mc.gameSettings.field44636.field13071
-                && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+                && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.field5036 && Class5628.method17730(mc.player, 0.001F)) {
                 this.field23542 = mc.player.getPosY();
             }
@@ -158,7 +158,7 @@ public class Class5214 extends Module {
 
     @EventTarget
     private void method16239(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23544 = 0.0;
             }

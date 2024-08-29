@@ -28,20 +28,20 @@ public class Class5335 extends Class5325 {
                             if (!(mc.player.method3275(var7) > var1)) {
                                 if (mc.player.method3026((Class880) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
-                                        if (!this.method15974("Players") && var7 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSetttingName("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
                                         } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();
-                                        } else if (!this.method15974("Invisible") && var7.method3342()) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var7.method3342()) {
                                             var6.remove();
-                                        } else if (!this.method15974("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
                                             var6.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();
                                         } else if (!var7.method3362()) {
                                             if (var7 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var7)
-                                                    && Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()) {
+                                                    && Client.getInstance().getModuleManager().getModuleByClass(Class5275.class).isEnabled()) {
                                                 var6.remove();
                                             } else if (var5 == null || mc.player.method3275(var7) < mc.player.method3275(var5)) {
                                                 var5 = var7;

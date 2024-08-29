@@ -59,7 +59,7 @@ public class Class4251 extends Class4247 {
          (float)this.field20897,
          (float)this.field20898,
          14.0F,
-         Class5628.method17688(Class1979.field12896.field12910, var5)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
       );
       Class3192.method11474(
          (float)(this.field20895 + this.field20616),
@@ -71,7 +71,7 @@ public class Class4251 extends Class4247 {
       );
       Class3192.method11476();
       Class3192.method11474(
-         (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 14.0F, Class1979.field12896.field12910
+         (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 14.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       Class3192.method11477(Class2329.field15940);
       GL11.glPushMatrix();
@@ -88,17 +88,17 @@ public class Class4251 extends Class4247 {
          (float)(this.field20896 + 0),
          1.0F,
          (float)this.field20898,
-         Class5628.method17688(Class1979.field12891.field12910, 0.14F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
       int var6 = Class5628.method17688(Class5628.method17691(-7687425, 0.2F), 0.8F);
-      var6 = Class5628.method17688(Class1979.field12891.field12910, 0.6F);
+      var6 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F);
       Class3192.method11439(ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 30), (float)(this.field20896 + 25), "Waypoints", var6);
       Class3192.method11439(
          ResourceRegistry.JelloMediumFont40,
          (float)this.field20895,
          (float)((this.field20892.method13269() - this.field20898) / 2 - 70),
          "Jello Maps",
-         Class1979.field12896.field12910
+         ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       String var7 = Client.getInstance().getWaypointsManager().method29998().replace("/", " - ");
       Class3192.method11439(
@@ -106,7 +106,7 @@ public class Class4251 extends Class4247 {
          (float)(this.field20895 + this.field20897 - ResourceRegistry.field38859.method23942(var7) - 10),
          (float)((this.field20892.method13269() - this.field20898) / 2 - 62),
          var7,
-         Class5628.method17688(Class1979.field12896.field12910, 0.5F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)
       );
    }
 

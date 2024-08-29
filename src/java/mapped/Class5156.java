@@ -29,14 +29,14 @@ public class Class5156 extends Module {
     @HigherPriority
     @Class5631
     private void method16020(Class4399 var1) {
-        if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
+        if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             if (var1.method13921()) {
-                boolean var4 = mc.player.method3090() != null && mc.player.method3090().getItem() instanceof Class3267;
-                boolean var5 = Client.getInstance().getModuleManager().method14662(Class5357.class).method15988();
+                boolean var4 = mc.player.method3090() != null && mc.player.method3090().getItem() instanceof ItemSword;
+                boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
                 boolean var6 = true;
                 if (!mc.player.method3331()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
-                        && !Client.getInstance().getModuleManager().method14662(Class5357.class).method15988()) {
+                        && !Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988()) {
                     BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;
                     BlockPos var8 = var7.getPos();
                     Block var9 = mc.world.getBlockState(var8).getBlock();
@@ -96,7 +96,7 @@ public class Class5156 extends Module {
     @LowerPriority
     @Class5631
     private void method16021(Class4396 var1) {
-        if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
+        if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             if (mc.player != null) {
                 if (var1.method13898() instanceof Class5588) {
                     Class5588 var4 = (Class5588) var1.method13898();
@@ -114,7 +114,7 @@ public class Class5156 extends Module {
     @LowerPriority
     @Class5631
     private void method16022(Class4400 var1) {
-        if (this.method15996() || Class8005.method27372() == Class5989.field26129) {
+        if (this.isEnabled() || Class8005.method27372() == Class5989.field26129) {
             float var4 = var1.method13924();
             if (var1.method13926() && var1.method13927() == Class2205.field14417 && var1.method13928().getItem() instanceof Class3334) {
                 var1.method13931(false);

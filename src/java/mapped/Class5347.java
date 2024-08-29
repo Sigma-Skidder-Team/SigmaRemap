@@ -23,9 +23,9 @@ public class Class5347 extends Module {
 
     public Class5347() {
         super(ModuleCategory.COMBAT, "InfiniteAura", "Basically infinite aura");
-        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
-        this.registerSetting(new Class6009<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
-        this.registerSetting(new Class6009<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
         this.registerSetting(new BooleanSetting("Players", "Hit players", true));
         this.registerSetting(new BooleanSetting("Animals/Monsters", "Hit animals and monsters", false));
         this.registerSetting(new BooleanSetting("Anti-Bot", "Doesn't hit bots", true));
@@ -47,7 +47,7 @@ public class Class5347 extends Module {
     @Override
     public void isInDevelopment() {
         this.field23898 = false;
-        this.field23897 = (int) (20.0F / this.method16004().method15977("CPS"));
+        this.field23897 = (int) (20.0F / this.method16004().getNumberValueBySettingName("CPS"));
         this.field23899 = (float) this.field23897;
     }
 
@@ -61,11 +61,11 @@ public class Class5347 extends Module {
     @EventTarget
     @LowerPriority
     public void method16772(TickEvent var1) {
-        if (this.method15996()) {
-            List<Class8012> var4 = this.method16775((float) ((int) this.method15977("Range")));
+        if (this.isEnabled()) {
+            List<Class8012> var4 = this.method16775((float) ((int) this.getNumberValueBySettingName("Range")));
             if (var4 != null && var4.size() != 0) {
                 if (this.field23899 < 1.0F) {
-                    this.field23899 = this.field23899 + 20.0F / this.method16004().method15977("CPS");
+                    this.field23899 = this.field23899 + 20.0F / this.method16004().getNumberValueBySettingName("CPS");
                 }
 
                 this.field23897++;
@@ -80,7 +80,7 @@ public class Class5347 extends Module {
 
                             for (Class8012 var7 : var4) {
                                 Entity var8 = var7.method27397();
-                                if ((int) this.method15977("Targets") < ++var5x) {
+                                if ((int) this.getNumberValueBySettingName("Targets") < ++var5x) {
                                     break;
                                 }
 
@@ -89,8 +89,8 @@ public class Class5347 extends Module {
                                 ArrayList var11 = Class8901.method32447(var10, var9);
                                 this.field23900.add(var11);
                                 Collections.reverse(var11);
-                                this.method16773(var11, Client.getInstance().getModuleManager().method14662(Class5332.class).method15996());
-                                Class5628.method17735(var8, !this.method15974("No Swing"));
+                                this.method16773(var11, Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).isEnabled());
+                                Class5628.method17735(var8, !this.getBooleanValueFromSetttingName("No Swing"));
                                 Collections.reverse(var11);
                                 this.method16773(var11, false);
                             }
@@ -139,7 +139,7 @@ public class Class5347 extends Module {
 
     @EventTarget
     public void method16774(Class4420 var1) {
-        if (this.method15996() && this.field23900 != null && this.field23900.size() != 0) {
+        if (this.isEnabled() && this.field23900 != null && this.field23900.size() != 0) {
             for (List<Class8472> var5 : this.field23900) {
                 GL11.glPushMatrix();
                 GL11.glEnable(2848);
@@ -196,20 +196,20 @@ public class Class5347 extends Module {
                             if (!(mc.player.method3275(var8) > var1)) {
                                 if (mc.player.method3026((Class880) var8)) {
                                     if (!(var8 instanceof ArmorStandEntity)) {
-                                        if (!this.method15974("Players") && var8 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSetttingName("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();
                                         } else if (var8 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var8)) {
                                             var7.remove();
-                                        } else if (!this.method15974("Invisible") && var8.method3342()) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var8.method3342()) {
                                             var7.remove();
-                                        } else if (!this.method15974("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                             var7.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var8)) {
                                             var7.remove();
                                         } else if (!var8.method3362()) {
                                             if (var8 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var8)
-                                                    && Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()) {
+                                                    && Client.getInstance().getModuleManager().getModuleByClass(Class5275.class).isEnabled()) {
                                                 var7.remove();
                                             }
                                         } else {
@@ -245,11 +245,11 @@ public class Class5347 extends Module {
     public boolean method16776() {
         return this.field23898
                 && Minecraft.getInstance().player.method3090() != null
-                && Minecraft.getInstance().player.method3090().getItem() instanceof Class3267;
+                && Minecraft.getInstance().player.method3090().getItem() instanceof ItemSword;
     }
 
     @Override
     public boolean method15988() {
-        return this.method15996() && this.method16776() && Client.getInstance().method19939().method31330();
+        return this.isEnabled() && this.method16776() && Client.getInstance().method19939().method31330();
     }
 }

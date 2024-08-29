@@ -14,7 +14,7 @@ public class Class5336 extends Class5325 {
 
     @EventTarget
     private void method16751(Class4427 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13974(0.0F);
             var1.method13900(true);
         }

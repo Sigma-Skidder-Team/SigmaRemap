@@ -33,7 +33,7 @@ public class Class5277 extends Module {
 
     @EventTarget
     private void method16512(Class4415 var1) throws IOException {
-        if (this.method15996() && mc.player != null && mc.world != null) {
+        if (this.isEnabled() && mc.player != null && mc.world != null) {
             int var4 = mc.mainWindow.method8044();
             int var5 = mc.mainWindow.method8043();
             byte var6 = 2;

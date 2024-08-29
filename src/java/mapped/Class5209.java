@@ -22,7 +22,7 @@ public class Class5209 extends Module {
 
     @EventTarget
     public void method16220(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             mc.gameSettings.field44637.field13071 = false;
             if (!(mc.player.method3433().field18049 < 0.08) || mc.player.field5036) {
                 mc.player.method3349(7, false);
@@ -38,10 +38,10 @@ public class Class5209 extends Module {
 
     @EventTarget
     public void method16221(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = Class9567.method37075();
             boolean var6 = Class5628.method17686();
-            if (!this.method15974("NCP") && mc.player.method3331()) {
+            if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.method3331()) {
                 var4 *= 2.5;
             }
 
@@ -67,10 +67,10 @@ public class Class5209 extends Module {
             }
 
             int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.field44637.field13070.field34875);
-            if (var7 == 1 && this.method15974("NCP")) {
+            if (var7 == 1 && this.getBooleanValueFromSetttingName("NCP")) {
                 var1.method13995(-0.9F);
             } else if (!mc.player.method3331()) {
-                if (mc.player.field4981 && !this.method15974("NCP")) {
+                if (mc.player.field4981 && !this.getBooleanValueFromSetttingName("NCP")) {
                     var1.method13995(1.4F);
                 }
             } else {
@@ -83,7 +83,7 @@ public class Class5209 extends Module {
 
     @EventTarget
     private void method16222(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && var1.method13898() instanceof Class5590) {
                 Class5590 var4 = (Class5590) var1.method13898();
                 Entity var5 = mc.world.method6774(var4.method17565());
@@ -102,7 +102,7 @@ public class Class5209 extends Module {
 
     @EventTarget
     private void method16223(Class4399 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             byte var4 = 65;
             if (this.field23533 != var4 - 1) {
                 if (this.field23533 <= 0 && mc.player.field4981) {
@@ -137,13 +137,13 @@ public class Class5209 extends Module {
     @EventTarget
     @HigherPriority
     private void method16224(Class4402 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 
     @EventTarget
     private void method16225(Class4426 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 

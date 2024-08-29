@@ -17,12 +17,12 @@ public class Class5346 extends Module {
     public Class5346() {
         super(ModuleCategory.RENDER, "Breadcrumbs", "Shows your taken path");
         this.registerSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
-        this.registerSetting(new Class6010("Color", "The crumbs color", Class1979.field12896.field12910));
+        this.registerSetting(new ColorSetting("Color", "The crumbs color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget
     public void method16768(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13992() != 0.0 || var1.method13994() != 0.0 || var1.method13996() != 0.0) {
                 this.field23896.add(new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()));
             }
@@ -31,7 +31,7 @@ public class Class5346 extends Module {
 
     @EventTarget
     public void method16769(WorldLoadEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23896.clear();
         }
     }
@@ -53,7 +53,7 @@ public class Class5346 extends Module {
 
     @EventTarget
     public void method16771(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Vector3d var4 = new Vector3d(
                     mc.player.field5048 - (mc.player.field5048 - mc.player.getPosX()) * (double) mc.getRenderPartialTicks(),
                     mc.player.field5049 - (mc.player.field5049 - mc.player.getPosY()) * (double) mc.getRenderPartialTicks(),
@@ -66,15 +66,15 @@ public class Class5346 extends Module {
             GL11.glDisable(3553);
             GL11.glDisable(2929);
             GL11.glDepthMask(false);
-            GL11.glColor4fv(Class5628.method17709(Class5628.method17688(this.method15976("Color"), 0.5F)));
+            GL11.glColor4fv(Class5628.method17709(Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
             GL11.glBegin(3);
 
             for (Vector3d var6 : this.field23896) {
                 Vector3d var7 = this.method16770(var6);
                 double var8 = var6.method11341(var4);
-                double var10 = !this.method15974("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
+                double var10 = !this.getBooleanValueFromSetttingName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
                 if (!(var8 > 24.0)) {
-                    GL11.glColor4fv(Class5628.method17709(Class5628.method17688(this.method15976("Color"), (float) var10)));
+                    GL11.glColor4fv(Class5628.method17709(Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), (float) var10)));
                     GL11.glVertex3d(var7.field18048, var7.field18049, var7.field18050);
                 }
             }

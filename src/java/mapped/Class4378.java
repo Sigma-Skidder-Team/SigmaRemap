@@ -180,7 +180,7 @@ public class Class4378 {
    public void method13737(Module var1) {
       if (this.field21386 != null) {
          for (TouchBarItem var5 : this.field21386.getItems()) {
-            if (var5.getView() instanceof TouchBarButton && var1.method15991().equals(var5.getIdentifier())) {
+            if (var5.getView() instanceof TouchBarButton && var1.getName().equals(var5.getIdentifier())) {
                ((TouchBarButton)var5.getView()).setBezelColor(this.method13740(var1));
                new Thread(() -> {
                   try {
@@ -217,51 +217,51 @@ public class Class4378 {
       for (Class7957 var4 : this.field21387) {
          if (var4.method27055() == Class2067.field13469 && var4.method27053() > 0) {
             TouchBarButton var5 = new TouchBarButton();
-            var5.setTitle(var4.method27058().method15991());
+            var5.setTitle(var4.method27058().getName());
             var5.setBezelColor(this.method13740(var4.method27058()));
             var5.setType(TouchBarButton$ButtonType.TOGGLE);
             var5.setAction(new Class2544(this, var4));
             this.field21389.put(var4.method27058(), var5);
-            this.field21386.addItem(new TouchBarItem(var4.method27058().method15991(), var5, true));
+            this.field21386.addItem(new TouchBarItem(var4.method27058().getName(), var5, true));
          }
       }
    }
 
    public Color method13740(Module var1) {
       Color var4 = new Color(0.0F, 0.0F, 0.0F, 0.0F);
-      if (var1.method15993() != ModuleCategory.COMBAT) {
-         if (var1.method15993() != ModuleCategory.GUI) {
-            if (var1.method15993() != ModuleCategory.ITEM) {
-               if (var1.method15993() != ModuleCategory.MISC) {
-                  if (var1.method15993() != ModuleCategory.MOVEMENT) {
-                     if (var1.method15993() != ModuleCategory.PLAYER) {
-                        if (var1.method15993() != ModuleCategory.RENDER) {
-                           if (var1.method15993() == ModuleCategory.WORLD) {
-                              var4 = this.method13741(-5118535, var1.method15996());
+      if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.COMBAT) {
+         if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
+            if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.ITEM) {
+               if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.MISC) {
+                  if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.MOVEMENT) {
+                     if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.PLAYER) {
+                        if (var1.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.RENDER) {
+                           if (var1.getAdjustedCategoryBasedOnClientMode() == ModuleCategory.WORLD) {
+                              var4 = this.method13741(-5118535, var1.isEnabled());
                            }
                         } else {
-                           var4 = this.method13741(-1710108, var1.method15996());
+                           var4 = this.method13741(-1710108, var1.isEnabled());
                         }
                      } else {
-                        var4 = this.method13741(-4208147, var1.method15996());
+                        var4 = this.method13741(-4208147, var1.isEnabled());
                      }
                   } else {
-                     var4 = this.method13741(-1587309, var1.method15996());
+                     var4 = this.method13741(-1587309, var1.isEnabled());
                   }
                } else {
-                  var4 = this.method13741(-1916956, var1.method15996());
+                  var4 = this.method13741(-1916956, var1.isEnabled());
                }
             } else {
-               var4 = this.method13741(-2899864, var1.method15996());
+               var4 = this.method13741(-2899864, var1.isEnabled());
             }
          } else {
-            var4 = this.method13741(-2697514, var1.method15996());
+            var4 = this.method13741(-2697514, var1.isEnabled());
          }
       } else {
-         var4 = this.method13741(-20561, var1.method15996());
+         var4 = this.method13741(-20561, var1.isEnabled());
       }
 
-      var4.setAlpha(!var1.method15996() ? 0.35F : 1.0F);
+      var4.setAlpha(!var1.isEnabled() ? 0.35F : 1.0F);
       return var4;
    }
 

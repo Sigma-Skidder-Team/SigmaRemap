@@ -35,14 +35,14 @@ public class Class5292 extends Module {
 
     @EventTarget
     public void method16621(Class4399 var1) {
-        if (this.method15996() && var1.method13921() && this.field23804 >= 0) {
+        if (this.isEnabled() && var1.method13921() && this.field23804 >= 0) {
             var1.method13908(true);
         }
     }
 
     @EventTarget
     public void method16622(Class4435 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!mc.player.field5036) {
                 if (this.field23804 >= 0) {
                     if (this.field23807 && !Class5628.method17686()) {
@@ -92,7 +92,7 @@ public class Class5292 extends Module {
 
                 if (this.field23804 > 0) {
                     this.field23804 = -1;
-                    if (this.method16004().method15974("Auto Disable")) {
+                    if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.method16004().method16000();
                         return;
                     }
@@ -101,7 +101,7 @@ public class Class5292 extends Module {
                 this.field23807 = Class5628.method17686();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Class5628.method17686()
-                        && (this.method16004().method15974("BorderJump") && !Class9217.method34578(var4) || this.method16004().method15974("Auto Jump"))) {
+                        && (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !Class9217.method34578(var4) || this.method16004().getBooleanValueFromSetttingName("Auto Jump"))) {
                     mc.player.method2914();
                     var1.method13995(mc.player.method3433().field18049);
                     Class9567.method37088(var1, 0.0);
@@ -112,7 +112,7 @@ public class Class5292 extends Module {
 
     @EventTarget
     public void method16623(Class4436 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             this.field23802 = 0.81 + (double) this.field23805 * 0.095;
             if (mc.player.getPosY() != (double) ((int) mc.player.getPosY())) {
                 this.field23802 = 0.52;
@@ -133,7 +133,7 @@ public class Class5292 extends Module {
 
     @EventTarget
     public void method16624(Class4396 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23804 = -1;
                 this.field23805 = 0;

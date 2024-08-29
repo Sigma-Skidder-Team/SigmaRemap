@@ -18,7 +18,7 @@ public class Class5356 extends Module {
 
     @EventTarget
     public void method16817(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23932 = Class9567.method37075();
             float var4 = Class9567.method37082()[1];
             float var5 = Class9567.method37082()[2];

@@ -25,17 +25,17 @@ public class Class5300 extends Module {
 
     @EventTarget
     private void method16654(Class4396 var1) throws IOException {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5588) {
                 Class5588 var4 = (Class5588) var1.method13898();
 
                 for (Pair var6 : var4.method17562()) {
                     if (var6.getSecond() != null
-                            && ((ItemStack) var6.getSecond()).getItem() instanceof Class3267
+                            && ((ItemStack) var6.getSecond()).getItem() instanceof ItemSword
                             && mc.world.method6774(var4.method17561()) instanceof PlayerEntity) {
                         Entity var7 = mc.world.method6774(var4.method17561());
                         if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {
-                            if (this.method15974("Chat Message")) {
+                            if (this.getBooleanValueFromSetttingName("Chat Message")) {
                                 mc.player.method5389("Murderer is " + var7.getName() + ", detected by Jello client");
                             }
 
@@ -57,9 +57,9 @@ public class Class5300 extends Module {
 
     @EventTarget
     private void method16655(Class4415 var1) throws IOException {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23836) {
-                if (this.method15974("GUI")) {
+                if (this.getBooleanValueFromSetttingName("GUI")) {
                     ClientResource var4 = ResourceRegistry.JelloLightFont20;
                     byte var5 = -1;
                     int var6 = Minecraft.getInstance().mainWindow.method8043();

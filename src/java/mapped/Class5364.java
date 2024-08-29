@@ -17,14 +17,14 @@ public class Class5364 extends Module {
 
     @EventTarget
     public void method16883(Class4411 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13959(var1.method13958().replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username")));
         }
     }
 
     @EventTarget
     public void method16884(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5556) {
                 Class5556 var5 = (Class5556) var4;

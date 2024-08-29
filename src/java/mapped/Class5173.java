@@ -18,15 +18,15 @@ public class Class5173 extends Module {
 
     public Class5173() {
         super(ModuleCategory.EXPLOIT, "PingSpoof", "Makes you lagggy.");
-        this.registerSetting(new Class6009<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
+        this.registerSetting(new NumberSetting<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
         this.registerSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
     }
 
     @EventTarget
     public void method16100(WorldLoadEvent var1) {
-        if (!this.method15996()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
-            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
+        if (!this.isEnabled()) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
                 return;
             }
         }
@@ -36,9 +36,9 @@ public class Class5173 extends Module {
 
     @EventTarget
     public void method16101(TickEvent var1) {
-        if (!this.method15996()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
-            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
+        if (!this.isEnabled()) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
                 return;
             }
         }
@@ -77,9 +77,9 @@ public class Class5173 extends Module {
 
     @EventTarget
     public void method16103(Class4396 var1) {
-        if (!this.method15996()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5344.class);
-            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().method15974("Ping spoof")) {
+        if (!this.isEnabled()) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5344.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
                 return;
             }
         }
@@ -99,14 +99,14 @@ public class Class5173 extends Module {
                 } else {
                     Class5542 var8 = (Class5542) var7;
                     int var6 = var8.method17422() - this.field23463;
-                    if (var6 > 0 || var6 < -20 || !this.method15974("Inv Bypass")) {
-                        this.field23461.add(new Class8772(var8, this, (long) this.method15977("Lag")));
+                    if (var6 > 0 || var6 < -20 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
+                        this.field23461.add(new Class8772(var8, this, (long) this.getNumberValueBySettingName("Lag")));
                         var1.method13900(true);
                     }
                 }
             } else {
                 Class5554 var9 = (Class5554) var7;
-                this.field23461.add(new Class8772(var9, this, (long) this.method15977("Lag")));
+                this.field23461.add(new Class8772(var9, this, (long) this.getNumberValueBySettingName("Lag")));
                 var1.method13900(true);
             }
         }

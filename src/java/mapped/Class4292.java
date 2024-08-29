@@ -76,7 +76,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    public void method13027(float var1) {
       var1 *= this.field20794;
       byte var4 = 5;
-      int var5 = Class5628.method17688(Class1979.field12891.field12910, 0.2F * var1);
+      int var5 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.2F * var1);
       int var6 = this.field20895;
       int var7 = this.field20897;
       if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
@@ -88,7 +88,7 @@ public class Class4292 extends Class4278 implements Class4293 {
             (float)(this.field20896 + var4),
             (float)(var6 + var7),
             (float)(this.field20896 + this.field20898 - var4),
-            Class5628.method17688(Class1979.field12899.field12910, 0.1F * var1)
+            Class5628.method17688(ClientColors.MID_GREY.getColor, 0.1F * var1)
          );
       } else {
          Class3192.method11454((float)var6, (float)this.field20896, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);

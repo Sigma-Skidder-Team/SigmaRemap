@@ -201,7 +201,7 @@ public class Class1108 extends Class1006 implements Class1008 {
          if (this.getDistanceSq(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method3135(var1)
             && var1.method2741(Class8654.method31115(this), this.method5326())) {
-            this.method2863(Class6067.field27072, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+            this.method2863(Sounds.field27072, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
             this.method3399(this, var1);
          }
       }
@@ -222,16 +222,16 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method5320() ? Class6067.field27074 : Class6067.field27103;
+      return !this.method5320() ? Sounds.field27074 : Sounds.field27103;
    }
 
    @Override
    public Class9455 method2880() {
-      return !this.method5320() ? Class6067.field27073 : Class6067.field27102;
+      return !this.method5320() ? Sounds.field27073 : Sounds.field27102;
    }
 
    public Class9455 method5327() {
-      return !this.method5320() ? Class6067.field27076 : Class6067.field27105;
+      return !this.method5320() ? Sounds.field27076 : Sounds.field27105;
    }
 
    @Override
@@ -304,7 +304,7 @@ public class Class1108 extends Class1006 implements Class1008 {
    }
 
    public Class9455 method5331() {
-      return !this.method5320() ? Class6067.field27075 : Class6067.field27104;
+      return !this.method5320() ? Sounds.field27075 : Sounds.field27104;
    }
 
    @Override

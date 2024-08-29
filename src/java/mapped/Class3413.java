@@ -57,7 +57,7 @@ public class Class3413 extends Block {
                            }
                         }
 
-                        var2.method6742((PlayerEntity)null, var3, Class6067.field26417, Class2266.field14732, 1.0F, 1.0F);
+                        var2.method6742((PlayerEntity)null, var3, Sounds.field26417, Class2266.field14732, 1.0F, 1.0F);
                         this.method12051(var2, var3, var1, var10 + 1);
                      }
 
@@ -136,7 +136,7 @@ public class Class3413 extends Block {
                         }
                      }
 
-                     var2.method6742((PlayerEntity)null, var3, Class6067.field26418, Class2266.field14732, 1.0F, 1.0F);
+                     var2.method6742((PlayerEntity)null, var3, Sounds.field26418, Class2266.field14732, 1.0F, 1.0F);
                      this.method12051(var2, var3, var1, var10 - 1);
                   }
 
@@ -157,7 +157,7 @@ public class Class3413 extends Block {
 
                   var4.method2911(Class8876.field40143);
                   this.method12051(var2, var3, var1, 0);
-                  var2.method6742((PlayerEntity)null, var3, Class6067.field26429, Class2266.field14732, 1.0F, 1.0F);
+                  var2.method6742((PlayerEntity)null, var3, Sounds.field26429, Class2266.field14732, 1.0F, 1.0F);
                }
 
                return ActionResultType.method9002(var2.field9020);
@@ -170,7 +170,7 @@ public class Class3413 extends Block {
 
                var4.method2911(Class8876.field40142);
                this.method12051(var2, var3, var1, 3);
-               var2.method6742((PlayerEntity)null, var3, Class6067.field26426, Class2266.field14732, 1.0F, 1.0F);
+               var2.method6742((PlayerEntity)null, var3, Sounds.field26426, Class2266.field14732, 1.0F, 1.0F);
             }
 
             return ActionResultType.method9002(var2.field9020);

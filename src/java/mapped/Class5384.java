@@ -13,7 +13,7 @@ public class Class5384 extends Module {
 
    @EventTarget
    private void method16963(Class4420 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (mc.player != null && mc.world != null) {
             this.method16965();
             Class3192.method11476();
@@ -35,14 +35,14 @@ public class Class5384 extends Module {
    }
 
    private void method16964(boolean var1) {
-      int var4 = Class5628.method17688(this.method16004().method15976("Regular Color"), 0.7F);
-      int var5 = Class5628.method17688(this.method16004().method15976("Ender Color"), 0.7F);
-      int var6 = Class5628.method17688(this.method16004().method15976("Trapped Color"), 0.7F);
+      int var4 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
+      int var5 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
+      int var6 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.field9003) {
-         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().method15974("Show Regular Chests");
-         boolean var10 = var8 instanceof Class943 && this.method16004().method15974("Show Ender Chests");
-         boolean var11 = var8 instanceof Class970 && this.method16004().method15974("Show Trapped Chests");
+         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");
+         boolean var10 = var8 instanceof Class943 && this.method16004().getBooleanValueFromSetttingName("Show Ender Chests");
+         boolean var11 = var8 instanceof Class970 && this.method16004().getBooleanValueFromSetttingName("Show Trapped Chests");
          if (var9 || var10 || var11) {
             double var12 = Class9647.method37624(var8.getPos()).field43722;
             double var14 = Class9647.method37624(var8.getPos()).field43723;
@@ -64,7 +64,7 @@ public class Class5384 extends Module {
             if (var1) {
                Class3192.method11462(var19, 3.0F, var18);
             } else {
-               Class3192.method11459(var19, Class1979.field12896.field12910);
+               Class3192.method11459(var19, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glDisable(3042);

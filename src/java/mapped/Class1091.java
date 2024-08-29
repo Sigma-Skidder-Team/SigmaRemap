@@ -53,7 +53,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       if (var1 instanceof Class880) {
          this.field5977 = 10;
          this.world.method6786(this, (byte)4);
-         this.method2863(Class6067.field26654, 1.0F, this.method3100());
+         this.method2863(Sounds.field26654, 1.0F, this.method3100());
          Class9069.method33785(this, (Class880)var1);
          return Class1092.method5091(this, (Class880)var1);
       } else {
@@ -108,7 +108,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
       } else {
          this.field5978++;
          if (this.field5978 > 300) {
-            this.method5090(Class6067.field26655);
+            this.method5090(Sounds.field26655);
             this.method5083((ServerWorld)this.world);
          }
       }
@@ -183,7 +183,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
          super.method2866(var1);
       } else {
          this.field5977 = 10;
-         this.method2863(Class6067.field26654, 1.0F, this.method3100());
+         this.method2863(Sounds.field26654, 1.0F, this.method3100());
       }
    }
 
@@ -293,27 +293,27 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26657;
+      return Sounds.field26657;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26656;
+      return Sounds.field26656;
    }
 
    @Override
    public Class9455 method2859() {
-      return Class6067.field26685;
+      return Sounds.field26685;
    }
 
    @Override
    public Class9455 method2860() {
-      return Class6067.field26684;
+      return Sounds.field26684;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26659, 0.15F, 1.0F);
+      this.method2863(Sounds.field26659, 0.15F, 1.0F);
    }
 
    public void method5090(Class9455 var1) {

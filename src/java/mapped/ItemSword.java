@@ -4,11 +4,11 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 
-public class Class3267 extends Class3266 implements Class3260 {
+public class ItemSword extends Class3266 implements Class3260 {
    private final float field18761;
    private final Multimap<Class4869, Class9689> field18762;
 
-   public Class3267(Class2283 var1, int var2, float var3, Class5643 var4) {
+   public ItemSword(Class2283 var1, int var2, float var3, Class5643 var4) {
       super(var1, var4);
       this.field18761 = (float)var2 + var1.method9012();
       Builder var7 = ImmutableMultimap.builder();

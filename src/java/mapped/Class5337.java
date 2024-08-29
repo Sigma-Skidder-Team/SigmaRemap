@@ -10,13 +10,13 @@ public class Class5337 extends Class5325 {
         super(ModuleCategory.MOVEMENT, "ClickTP", "TP's you when you click", new Class5236(), new Class5174());
         this.registerSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
         this.registerSetting(new BooleanSetting("Auto Disable", "Disable ClickTP after teleporting", true));
-        this.registerSetting(new Class6009<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
     }
 
     @EventTarget
     public void method16752(Class4420 var1) {
-        if (this.method15996() && (mc.player.method3331() || !this.method15974("Sneak"))) {
-            BlockRayTraceResult var4 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.method15977("Maximum range"));
+        if (this.isEnabled() && (mc.player.method3331() || !this.getBooleanValueFromSetttingName("Sneak"))) {
+            BlockRayTraceResult var4 = Class9217.method34567(mc.player.field5031, mc.player.field5032, this.getNumberValueBySettingName("Maximum range"));
             BlockPos var5 = null;
             if (var4 != null) {
                 var5 = var4.getPos();

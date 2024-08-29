@@ -15,7 +15,7 @@ public class Class5249 extends Module {
 
     @EventTarget
     public void method16364(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5584 || var1.method13898() instanceof Class5475) {
                 if (mc.player.method3090() != null) {
                     if (mc.player.method3090().getItem() instanceof Class3259) {
@@ -23,7 +23,7 @@ public class Class5249 extends Module {
                             if (var1.method13898() instanceof Class5475 && !((Class5475) var1.method13898()).field24315.equals("entity.bobber.splash")) {
                                 return;
                             }
-                        } else if (!((Class5584) var1.method13898()).method17549().equals(Class6067.field26585)) {
+                        } else if (!((Class5584) var1.method13898()).method17549().equals(Sounds.field26585)) {
                             return;
                         }
 

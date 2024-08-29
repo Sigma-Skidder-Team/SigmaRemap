@@ -23,8 +23,8 @@ public class Class5360 extends Module {
     @HigherPriority
     private void method16861(Class4399 var1) {
         if (var1.method13921()) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5334.class);
-            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Minemen")) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5334.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Minemen")) {
                 if (!mc.player.field5036) {
                     this.field23966 = 0;
                 } else {

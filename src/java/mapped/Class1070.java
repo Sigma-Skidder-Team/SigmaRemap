@@ -80,7 +80,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    public void method4942(Class2266 var1) {
       this.field5908.method19693(true);
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, Class6067.field27101, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, Sounds.field27101, var1, 0.5F, 1.0F);
       }
    }
 
@@ -213,7 +213,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(!this.method3264() ? Class6067.field27098 : Class6067.field27099, 1.0F, 1.0F);
+      this.method2863(!this.method3264() ? Sounds.field27098 : Sounds.field27099, 1.0F, 1.0F);
    }
 
    @Override
@@ -234,9 +234,9 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    @Override
    public void tick() {
       if (this.method4984() && this.field5054.nextInt(140) == 0) {
-         this.method2863(Class6067.field27094, 1.0F, this.method3100());
+         this.method2863(Sounds.field27094, 1.0F, this.method3100());
       } else if (this.method4983() && this.field5054.nextInt(60) == 0) {
-         this.method2863(Class6067.field27095, 1.0F, this.method3100());
+         this.method2863(Sounds.field27095, 1.0F, this.method3100());
       }
 
       BlockState var3 = this.world.getBlockState(this.getPosition());
@@ -279,17 +279,17 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method4983() && !this.method4984() ? Class6067.field27093 : null;
+      return !this.method4983() && !this.method4984() ? Sounds.field27093 : null;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27097;
+      return Sounds.field27097;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27096;
+      return Sounds.field27096;
    }
 
    @Override
@@ -357,7 +357,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
                      this.getPosX(),
                      this.getPosY(),
                      this.getPosZ(),
-                     Class6067.field27100,
+                     Sounds.field27100,
                      this.method2864(),
                      1.0F,
                      1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F

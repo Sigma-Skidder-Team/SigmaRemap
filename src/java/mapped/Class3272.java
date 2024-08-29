@@ -48,7 +48,7 @@ public class Class3272 extends Item implements Class3260 {
                      }
 
                      var2.method6916(var10);
-                     var2.method6744((PlayerEntity)null, var10, Class6067.field27154, Class2266.field14735, 1.0F, 1.0F);
+                     var2.method6744((PlayerEntity)null, var10, Sounds.field27154, Class2266.field14735, 1.0F, 1.0F);
                      if (!var7.abilities.isCreativeMode) {
                         var7.inventory.method4048(var1);
                      }
@@ -77,12 +77,12 @@ public class Class3272 extends Item implements Class3260 {
                   Class9455 var22;
                   if (var9 < 3) {
                      if (var9 != 2) {
-                        var22 = Class6067.field27151;
+                        var22 = Sounds.field27151;
                      } else {
-                        var22 = Class6067.field27152;
+                        var22 = Sounds.field27152;
                      }
                   } else {
-                     var22 = Class6067.field27153;
+                     var22 = Sounds.field27153;
                   }
 
                   var2.method6744((PlayerEntity)null, var7, var22, Class2266.field14735, 1.0F, 1.0F);

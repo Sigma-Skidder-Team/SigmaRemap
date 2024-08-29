@@ -4,32 +4,21 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import mapped.Texture;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.URL;
 
 public class Class9507 {
-    private final String field44258;
-    private final boolean field44259;
+    private final String randomString;
+    private final boolean randomBoolean;
     private final long field44260 = System.currentTimeMillis();
     private boolean field44261 = true;
     private String field44262 = "";
     private BufferedImage field44263;
     private Texture field44264;
 
-    public Class9507(String var1, boolean var2) {
-        this.field44258 = var1;
-        this.field44259 = var2;
-        if (var2) {
-            new Thread(() -> {
-                try {
-                    URL var4 = new URL("https://jelloprg.sigmaclient.info/captcha/" + var1 + ".png");
-                    this.field44263 = ImageIO.read(var4);
-                } catch (IOException ignored) {
-                }
-            }).start();
-        }
+    public Class9507(String randomStringIn) {
+        this.randomString = randomStringIn;
+        this.randomBoolean = false;
     }
 
     @Override
@@ -56,7 +45,7 @@ public class Class9507 {
     }
 
     public boolean method36702() {
-        return this.field44259;
+        return this.randomBoolean;
     }
 
     public boolean method36703() {
@@ -76,6 +65,6 @@ public class Class9507 {
     }
 
     public String method36707() {
-        return this.field44258;
+        return this.randomString;
     }
 }

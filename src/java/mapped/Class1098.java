@@ -148,11 +148,11 @@ public class Class1098 extends Class1013 {
    @Override
    public Class9455 method4241() {
       if (!this.method4393()) {
-         return Class6067.field26434;
+         return Sounds.field26434;
       } else if (!this.method4507()) {
-         return this.field5054.nextInt(4) != 0 ? Class6067.field26433 : Class6067.field26441;
+         return this.field5054.nextInt(4) != 0 ? Sounds.field26433 : Sounds.field26441;
       } else {
-         return Class6067.field26440;
+         return Sounds.field26440;
       }
    }
 
@@ -162,17 +162,17 @@ public class Class1098 extends Class1013 {
    }
 
    public void method5258() {
-      this.method2863(Class6067.field26437, this.method3099(), this.method3100());
+      this.method2863(Sounds.field26437, this.method3099(), this.method3100());
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26439;
+      return Sounds.field26439;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26435;
+      return Sounds.field26435;
    }
 
    public static Class7037 method5259() {
@@ -187,7 +187,7 @@ public class Class1098 extends Class1013 {
    @Override
    public void method4501(PlayerEntity var1, ItemStack var2) {
       if (this.method4381(var2)) {
-         this.method2863(Class6067.field26436, 1.0F, 1.0F);
+         this.method2863(Sounds.field26436, 1.0F, 1.0F);
       }
 
       super.method4501(var1, var2);
@@ -206,7 +206,7 @@ public class Class1098 extends Class1013 {
    public void tick() {
       super.tick();
       if (this.field6043 != null && this.field6043.method10900() && !this.method4393() && this.field5055 % 100 == 0) {
-         this.method2863(Class6067.field26438, 1.0F, 1.0F);
+         this.method2863(Sounds.field26438, 1.0F, 1.0F);
       }
 
       this.method5261();
@@ -214,7 +214,7 @@ public class Class1098 extends Class1013 {
 
    private void method5261() {
       if ((this.method5253() || this.method5255()) && this.field5055 % 5 == 0) {
-         this.method2863(Class6067.field26440, 0.6F + 0.4F * (this.field5054.nextFloat() - this.field5054.nextFloat()), 1.0F);
+         this.method2863(Sounds.field26440, 0.6F + 0.4F * (this.field5054.nextFloat() - this.field5054.nextFloat()), 1.0F);
       }
 
       this.method5262();

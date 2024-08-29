@@ -22,7 +22,7 @@ public class Class4284 extends Class4278 {
          );
          super.method13027(var1 * (1.0F - var4));
          Class3192.method11449(
-            0.0F, 0.0F, 20.0F, (float)this.field20898, ResourcesDecrypter.shadowRightPNG, Class5628.method17688(Class1979.field12896.field12910, var4 * var1)
+            0.0F, 0.0F, 20.0F, (float)this.field20898, ResourcesDecrypter.shadowRightPNG, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
       }
    }

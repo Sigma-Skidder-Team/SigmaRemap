@@ -32,7 +32,7 @@ public class Class5169 extends Module {
 
    @EventTarget
    public void method16075(Class4396 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (var1.method13898() instanceof Class5607) {
             Class5607 var4 = (Class5607)var1.method13898();
             this.method16076(mc.world.method6722(var4.method17632()).method7072());
@@ -89,11 +89,11 @@ public class Class5169 extends Module {
 
    @EventTarget
    public void method16079(TickEvent var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (mc.player.field5055 < 20) {
             this.field23451.clear();
          } else {
-            int var4 = (int)this.method15977("Chunk Range");
+            int var4 = (int)this.getNumberValueBySettingName("Chunk Range");
             List<Class7481> var5 = new ArrayList<>();
 
             for (int var6 = -4; var6 < 4; var6++) {
@@ -183,7 +183,7 @@ public class Class5169 extends Module {
                this.field23454.start();
             }
 
-            if (this.method15996() && this.field23453 != null && this.field23454 != null) {
+            if (this.isEnabled() && this.field23453 != null && this.field23454 != null) {
                if (mc.player.field5055 % 20 == 0) {
                   this.field23458 = this.field23457;
                   this.field23457 = this.method16085();
@@ -308,7 +308,7 @@ public class Class5169 extends Module {
 
    @EventTarget
    public void method16084(Class4420 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          this.method16086();
       }
    }
@@ -325,7 +325,7 @@ public class Class5169 extends Module {
    }
 
    public void method16086() {
-      if (this.method15996() && this.field23453 != null && this.field23454 != null) {
+      if (this.isEnabled() && this.field23453 != null && this.field23454 != null) {
          GL11.glPushMatrix();
          GL11.glEnable(2848);
          GL11.glBlendFunc(770, 771);

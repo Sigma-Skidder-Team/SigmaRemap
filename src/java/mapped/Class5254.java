@@ -28,8 +28,8 @@ public class Class5254 extends PremiumModule {
     public Class5254() {
         super("AutoCrystal", "Automatically detonates crystals", ModuleCategory.WORLD);
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch"));
-        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
         this.registerSetting(new BooleanSetting("Players", "Hit players", true));
         this.registerSetting(new BooleanSetting("Animals/Monsters", "Hit animals and monsters", false));
         this.registerSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
@@ -167,7 +167,7 @@ public class Class5254 extends PremiumModule {
             }
 
             this.field23633 = (Entity) var4.get(0);
-            if ((float) this.field23636 >= 20.0F / this.method15977("CPS")) {
+            if ((float) this.field23636 >= 20.0F / this.getNumberValueBySettingName("CPS")) {
                 EnderCrystalEntity var5 = mc.world
                         .method6772(
                                 Entity.class, this.field23633.field5035.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof EnderCrystalEntity
@@ -304,20 +304,20 @@ public class Class5254 extends PremiumModule {
                             if (!(mc.player.method3275(var6) > var1)) {
                                 if (mc.player.method3026((Class880) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity)) {
-                                        if (!this.method15974("Players") && var6 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
                                         } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
-                                        } else if (!this.method15974("Invisible") && var6.method3342()) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.method3342()) {
                                             var5.remove();
-                                        } else if (!this.method15974("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                                             var5.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                                             var5.remove();
                                         } else if (!var6.method3362()) {
                                             if (var6 instanceof PlayerEntity
                                                     && Class8781.method31662((PlayerEntity) var6)
-                                                    && Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()) {
+                                                    && Client.getInstance().getModuleManager().getModuleByClass(Class5275.class).isEnabled()) {
                                                 var5.remove();
                                             }
                                         } else {

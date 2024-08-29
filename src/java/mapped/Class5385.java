@@ -14,7 +14,7 @@ public class Class5385 extends Module {
    @EventTarget
    @HigherPriority
    private void method16967(Class4403 var1) {
-      if (this.method15996() && var1.method13937()) {
+      if (this.isEnabled() && var1.method13937()) {
          mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10043));
       }
    }

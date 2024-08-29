@@ -159,7 +159,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          this.method3399(this, var1);
       }
 
-      this.method2863(Class6067.field26700, 1.0F, 1.0F);
+      this.method2863(Sounds.field26700, 1.0F, 1.0F);
       return var6;
    }
 
@@ -168,7 +168,7 @@ public class Class1058 extends Class1056 implements Class1011 {
       Class2286 var5 = this.method4865();
       boolean var6 = super.method2741(var1, var2);
       if (var6 && this.method4865() != var5) {
-         this.method2863(Class6067.field26701, 1.0F, 1.0F);
+         this.method2863(Sounds.field26701, 1.0F, 1.0F);
       }
 
       return var6;
@@ -192,7 +192,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          }
       } else {
          this.field5850 = 10;
-         this.method2863(Class6067.field26700, 1.0F, 1.0F);
+         this.method2863(Sounds.field26700, 1.0F, 1.0F);
       }
    }
 
@@ -212,12 +212,12 @@ public class Class1058 extends Class1056 implements Class1011 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26703;
+      return Sounds.field26703;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26702;
+      return Sounds.field26702;
    }
 
    @Override
@@ -229,7 +229,7 @@ public class Class1058 extends Class1056 implements Class1011 {
          this.method3041(25.0F);
          if (this.method3042() != var7) {
             float var8 = 1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F;
-            this.method2863(Class6067.field26704, 1.0F, var8);
+            this.method2863(Sounds.field26704, 1.0F, var8);
             if (!var1.abilities.isCreativeMode) {
                var5.method32182(1);
             }
@@ -245,7 +245,7 @@ public class Class1058 extends Class1056 implements Class1011 {
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26705, 1.0F, 1.0F);
+      this.method2863(Sounds.field26705, 1.0F, 1.0F);
    }
 
    public int method4868() {

@@ -138,7 +138,7 @@ public class Class4317 extends Class4307 {
          (float)(this.method13267() / 2),
          20.0F,
          "Account Manager - " + this.method13400() + " alts",
-         Class1979.field12896.field12910,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14488
       );
@@ -147,7 +147,7 @@ public class Class4317 extends Class4307 {
          (float)(this.method13267() / 2),
          40.0F,
          this.field21068,
-         Class1979.field12896.field12910,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14488,
          false
@@ -170,7 +170,7 @@ public class Class4317 extends Class4307 {
 
    private void method13401() {
       Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      Class3192.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, 0.23F));
+      Class3192.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.23F));
    }
 
    @Override

@@ -65,7 +65,7 @@ public class Class4250 extends Class4247 {
          (float)(this.field20897 - var5 * 2),
          (float)(this.field20898 - var5 * 2),
          3.0F,
-         Class5628.method17688(Class1979.field12891.field12910, 0.05F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       ArrayList var11 = new ArrayList();
       var11.add(new Class9778(0.0, 0.0));
@@ -78,7 +78,7 @@ public class Class4250 extends Class4247 {
          (float)((double)this.field20895 + (double)var6 * var13 + (double)var5),
          (float)(this.field20896 - var5 / 2 + this.field20898),
          14.0F,
-         Class5628.method17688(Class1979.field12892.field12910, var1)
+         Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
       List<Class9778> var15 = var12.method30790(var11);
       GL11.glPushMatrix();

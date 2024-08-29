@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import mapped.Class1979;
+import mapped.ClientColors;
 import mapped.Minecraft;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
@@ -139,7 +139,7 @@ public class ImageUtil {
     }
 
     public static BufferedImage method35037(int var0, int var1, int var2, int var3, int var4, int var5) {
-        return method35036(var0, var1, var2, var3, var4, var5, Class1979.field12891.field12910, false);
+        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor, false);
     }
 
     public static BufferedImage method35038(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
@@ -147,14 +147,14 @@ public class ImageUtil {
     }
 
     public static BufferedImage method35039(int var0, int var1, int var2, int var3, int var4, int var5, boolean var6) {
-        return method35036(var0, var1, var2, var3, var4, var5, Class1979.field12891.field12910, var6);
+        return method35036(var0, var1, var2, var3, var4, var5, ClientColors.DEEP_TEAL.getColor, var6);
     }
 
     public static BufferedImage method35040(BufferedImage var0, int var1, int var2) {
         int var5 = var0.getWidth() + var1 * 2;
         int var6 = var0.getHeight() + var1 * 2;
         BufferedImage var7 = new BufferedImage(var5, var6, var0.getType());
-        if (var2 != Class1979.field12891.field12910) {
+        if (var2 != ClientColors.DEEP_TEAL.getColor) {
             for (int var8 = 0; var8 < var5; var8++) {
                 for (int var9 = 0; var9 < var6; var9++) {
                     var7.setRGB(var8, var9, var2);

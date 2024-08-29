@@ -137,7 +137,7 @@ public class Class5280 extends Module {
 
     @EventTarget
     public void method16523(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.method3090() != null) {
                 Class2309 var4 = Class2309.method9085(mc.player.method3090().getItem());
                 if (var4 != null) {
@@ -218,8 +218,8 @@ public class Class5280 extends Module {
                             double var47 = var4.field15832.method3429() / 2.0F + 0.2F;
                             double var35 = var4.field15832.method3430() + 0.1F;
                             Class9388 var37 = new Class9388(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
-                            Class3192.method11459(var37, Class5628.method17688(Class1979.field12892.field12910, 0.1F));
-                            Class3192.method11461(var37, Class5628.method17688(Class1979.field12892.field12910, 0.1F));
+                            Class3192.method11459(var37, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
+                            Class3192.method11461(var37, Class5628.method17688(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                         }
                     } else {
                         double var49 = var4.field15825 - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();
@@ -242,8 +242,8 @@ public class Class5280 extends Module {
                         );
                         GL11.glTranslatef(-0.5F, 0.0F, -0.5F);
                         Class9388 var34 = new Class9388(0.0, 0.0, 0.0, 1.0, 0.0, 1.0);
-                        Class3192.method11459(var34, Class5628.method17688(Class1979.field12903.field12910, 0.1F));
-                        Class3192.method11461(var34, Class5628.method17688(Class1979.field12903.field12910, 0.1F));
+                        Class3192.method11459(var34, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
+                        Class3192.method11461(var34, Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.1F));
                         GL11.glPopMatrix();
                     }
 

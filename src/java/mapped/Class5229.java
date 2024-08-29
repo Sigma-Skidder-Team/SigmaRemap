@@ -24,7 +24,7 @@ public class Class5229 extends Module {
 
     @EventTarget
     private void method16289(ClickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.gameSettings.field44637.isKeyDown() && var1.method13976() == ClickEvent.Button.RIGHT) {
                 if (!(mc.player.field5032 < 0.0F)) {
                     this.method16294(this.method16292());

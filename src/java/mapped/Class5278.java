@@ -106,16 +106,16 @@ public class Class5278 extends Module {
 
     @EventTarget
     public void method16514(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.method16519();
         }
     }
 
     @EventTarget
     public void method16515(Class4413 var1) {
-        if (this.method15996()) {
-            boolean var4 = this.method16004().method15974("Show Invisibles");
-            boolean var5 = this.method15974("Show Health");
+        if (this.isEnabled()) {
+            boolean var4 = this.method16004().getBooleanValueFromSetttingName("Show Invisibles");
+            boolean var5 = this.getBooleanValueFromSetttingName("Show Health");
             RenderSystem.pushMatrix();
 
             for (Entity var7 : field23728.keySet()) {

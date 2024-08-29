@@ -11,14 +11,14 @@ public class Class5345 extends Module {
 
     public Class5345() {
         super(ModuleCategory.COMBAT, "Smooth", "Automatically aims at players");
-        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
     }
 
     @EventTarget
     private void method16765(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!(mc.player.field5032 > 45.0F)) {
-                Entity var4 = ((Class5335) this.method16004()).method16750(this.method15977("Range"));
+                Entity var4 = ((Class5335) this.method16004()).method16750(this.getNumberValueBySettingName("Range"));
                 if (var4 != null) {
                     double var5 = mc.player.field5032 - this.method16766(var4)[1];
                     double var7 = mc.player.field5031 - this.method16766(var4)[0];

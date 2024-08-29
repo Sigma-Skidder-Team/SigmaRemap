@@ -20,18 +20,18 @@ public class Class5314 extends Module {
 
     @EventTarget
     private void method16692(Class4415 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 if (!(mc.currentScreen instanceof ChatScreen)) {
                     float var4 = mc.player.field5031 % 360.0F - this.field23851 % 360.0F;
                     this.field23851 = this.field23851 + var4 / (float) Minecraft.getFps() * 1.5F;
                     boolean var5 = false;
                     int var6 = 14;
-                    if (this.method15974("Show Player")) {
+                    if (this.getBooleanValueFromSetttingName("Show Player")) {
                         var6 += this.method16696(0, mc.mainWindow.method8044() - 23, 114);
                     }
 
-                    if (this.method15974("Show Armor")) {
+                    if (this.getBooleanValueFromSetttingName("Show Armor")) {
                         var6 += this.method16695(var6, mc.mainWindow.method8044() - 14) + 10;
                     }
 
@@ -65,7 +65,7 @@ public class Class5314 extends Module {
                 (float) var1,
                 (float) (mc.mainWindow.method8044() - var2),
                 var6,
-                Class5628.method17688(Class1979.field12896.field12910, 0.8F)
+                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         return Math.max(ResourceRegistry.JelloLightFont20.method23942(var5), ResourceRegistry.JelloMediumFont20.method23942(var6));
     }
@@ -82,13 +82,13 @@ public class Class5314 extends Module {
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {
-                    Class3192.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, Class5628.method17688(Class1979.field12891.field12910, 0.5F));
+                    Class3192.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     Class3192.method11424(
                             (float) (var1 + 2),
                             (float) (var8 + 28),
                             28.0F * var9,
                             3.0F,
-                            Class5628.method17688(!((double) var9 <= 0.2) ? Class1979.field12894.field12910 : Class1979.field12901.field12910, 0.9F)
+                            Class5628.method17688(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
                     );
                 }
             }

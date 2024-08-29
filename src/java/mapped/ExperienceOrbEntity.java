@@ -58,7 +58,7 @@ public class ExperienceOrbEntity extends Entity {
             0.2F,
             (double)((this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F)
          );
-         this.method2863(Class6067.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
+         this.method2863(Sounds.field26606, 0.4F, 2.0F + this.field5054.nextFloat() * 0.4F);
       }
 
       if (!this.world.method7051(this.method3389())) {

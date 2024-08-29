@@ -356,9 +356,9 @@ public class BoatEntity extends Entity {
          case 1:
          case 2:
          case 3:
-            return Class6067.field26408;
+            return Sounds.field26408;
          case 4:
-            return Class6067.field26407;
+            return Sounds.field26407;
          case 5:
          default:
             return null;

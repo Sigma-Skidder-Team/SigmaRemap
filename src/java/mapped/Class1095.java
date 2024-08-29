@@ -87,7 +87,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public Class9455 method3060(ItemStack var1) {
-      return Class6067.field26592;
+      return Sounds.field26592;
    }
 
    @Override
@@ -126,7 +126,7 @@ public class Class1095 extends Class1018 {
 
       super.method2871();
       if (this.method5133() && this.field5054.nextFloat() < 0.05F) {
-         this.method2863(Class6067.field26588, 1.0F, 1.0F);
+         this.method2863(Sounds.field26588, 1.0F, 1.0F);
       }
    }
 
@@ -389,7 +389,7 @@ public class Class1095 extends Class1018 {
          );
          var4.method4134(40);
          var4.method4129(this.getUniqueID());
-         this.method2863(Class6067.field26597, 1.0F, 1.0F);
+         this.method2863(Sounds.field26597, 1.0F, 1.0F);
          this.world.method6916(var4);
       }
    }
@@ -537,7 +537,7 @@ public class Class1095 extends Class1018 {
    @Override
    public void method4237() {
       Class9455 var3 = this.method4241();
-      if (var3 != Class6067.field26594) {
+      if (var3 != Sounds.field26594) {
          super.method4237();
       } else {
          this.method2863(var3, 2.0F, this.method3100());
@@ -551,26 +551,26 @@ public class Class1095 extends Class1018 {
          if (!this.world.method6740() && this.field5054.nextFloat() < 0.1F) {
             List var3 = this.world.<Entity>method6772(PlayerEntity.class, this.method3389().method19663(16.0, 16.0, 16.0), Class8088.field34763);
             if (var3.isEmpty()) {
-               return Class6067.field26594;
+               return Sounds.field26594;
             }
          }
 
-         return Class6067.field26589;
+         return Sounds.field26589;
       } else {
-         return Class6067.field26595;
+         return Sounds.field26595;
       }
    }
 
    @Nullable
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26593;
+      return Sounds.field26593;
    }
 
    @Nullable
    @Override
    public Class9455 method2880() {
-      return Class6067.field26591;
+      return Sounds.field26591;
    }
 
    private boolean method5151(UUID var1) {
@@ -756,7 +756,7 @@ public class Class1095 extends Class1018 {
             this.field17203 = this.field17202.method3015();
          }
 
-         Class1095.this.method2863(Class6067.field26588, 1.0F, 1.0F);
+         Class1095.this.method2863(Sounds.field26588, 1.0F, 1.0F);
          method5175(Class1095.this, true);
          method5176(Class1095.this);
          super.method10804();

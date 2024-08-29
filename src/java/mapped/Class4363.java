@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Class4363 extends Class4247 {
-   public static final Class6387 field21325 = new Class6387(1250067, -15329770).method19410(Class1979.field12891.field12910).method19414(Class2218.field14492);
+   public static final Class6387 field21325 = new Class6387(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
    public List<String> field21326 = new ArrayList<String>();
    public int field21327 = 0;
    public boolean field21328;
@@ -103,7 +103,7 @@ public class Class4363 extends Class4247 {
                this.method13267(),
                this.method13269(),
                new Class6387(
-                  Class1979.field12896.field12910,
+                  ClientColors.LIGHT_GREYISH_BLUE.getColor,
                   -1381654,
                   this.field20914.method19405(),
                   this.field20914.method19405(),
@@ -199,7 +199,7 @@ public class Class4363 extends Class4247 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
-         Class5628.method17688(Class1979.field12896.field12910, var1 * this.field21330.calcPercent())
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21330.calcPercent())
       );
       Class3192.method11463(
          (float)this.method13263(),

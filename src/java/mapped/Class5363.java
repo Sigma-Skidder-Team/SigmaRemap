@@ -13,9 +13,9 @@ public class Class5363 extends Module {
 
     @EventTarget
     public void method16882(Class4417 var1) {
-        if (this.method15996() && mc.player.field5036) {
-            Module var4 = Client.getInstance().getModuleManager().method14662(BlockFly.class);
-            if (!var4.method15996()) {
+        if (this.isEnabled() && mc.player.field5036) {
+            Module var4 = Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class);
+            if (!var4.isEnabled()) {
                 var1.method13966(true);
             }
         }

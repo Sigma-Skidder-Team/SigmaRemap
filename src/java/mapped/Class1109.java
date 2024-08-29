@@ -93,21 +93,21 @@ public class Class1109 extends Class1108 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method5320() ? Class6067.field26751 : Class6067.field26752;
+      return !this.method5320() ? Sounds.field26751 : Sounds.field26752;
    }
 
    @Override
    public Class9455 method2880() {
-      return !this.method5320() ? Class6067.field26750 : Class6067.field26743;
+      return !this.method5320() ? Sounds.field26750 : Sounds.field26743;
    }
 
    @Override
    public Class9455 method5327() {
-      return !this.method5320() ? Class6067.field26754 : Class6067.field26755;
+      return !this.method5320() ? Sounds.field26754 : Sounds.field26755;
    }
 
    @Override
    public Class9455 method5331() {
-      return Class6067.field26753;
+      return Sounds.field26753;
    }
 }

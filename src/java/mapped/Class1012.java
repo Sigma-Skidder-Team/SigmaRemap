@@ -64,7 +64,7 @@ public class Class1012 extends Class1013 implements Class1011 {
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field27256, 0.15F, 1.0F);
+      this.method2863(Sounds.field27256, 0.15F, 1.0F);
    }
 
    @Override
@@ -88,23 +88,23 @@ public class Class1012 extends Class1013 implements Class1011 {
    public Class9455 method4241() {
       if (!this.method4369()) {
          if (this.field5054.nextInt(3) != 0) {
-            return Class6067.field27249;
+            return Sounds.field27249;
          } else {
-            return this.method4393() && this.method3042() < 10.0F ? Class6067.field27257 : Class6067.field27254;
+            return this.method4393() && this.method3042() < 10.0F ? Sounds.field27257 : Sounds.field27254;
          }
       } else {
-         return Class6067.field27251;
+         return Sounds.field27251;
       }
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27253;
+      return Sounds.field27253;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27250;
+      return Sounds.field27250;
    }
 
    @Override
@@ -141,7 +141,7 @@ public class Class1012 extends Class1013 implements Class1011 {
          if (!this.method3254()) {
             if ((this.field5662 || this.field5663) && this.field5663) {
                if (this.field5664 == 0.0F) {
-                  this.method2863(Class6067.field27255, this.method3099(), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+                  this.method2863(Sounds.field27255, this.method3099(), (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
                }
 
                this.field5665 = this.field5664;

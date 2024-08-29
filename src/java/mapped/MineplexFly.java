@@ -19,7 +19,7 @@ public class MineplexFly extends PremiumModule {
 
     public MineplexFly() {
         super("Mineplex", "Mineplex fly/longjump", ModuleCategory.MOVEMENT);
-        this.registerSetting(new Class6009<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
         this.registerSetting(new BooleanSetting("Fake", "Simulate a real fly", false));
     }
 
@@ -48,14 +48,14 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16454(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             var1.method13908(true);
         }
     }
 
     @EventTarget
     public void method16455(WorldLoadEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23673 = this.field23668 = this.field23670 = -1;
             this.field23669 = 0;
             this.field23675 = false;
@@ -64,16 +64,16 @@ public class MineplexFly extends PremiumModule {
     }
 
     public boolean method16456() {
-        return this.method15996()
+        return this.isEnabled()
                 && this.field23670 != -1
-                && this.field23671 < (double) this.method15977("Boost")
+                && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
                 && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F))
                 && !this.field23675;
     }
 
     @EventTarget
     public void method16457(Class4417 var1) {
-        if (this.method15996() && this.field23675 && mc.player != null) {
+        if (this.isEnabled() && this.field23675 && mc.player != null) {
             if (mc.player.field5036) {
                 var1.method13966(true);
             }
@@ -82,7 +82,7 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16458(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23675) {
                 Class9567.method37088(var1, 0.01);
             } else {
@@ -140,7 +140,7 @@ public class MineplexFly extends PremiumModule {
                     BlockRayTraceResult var8 = new BlockRayTraceResult(var6, Direction.field673, var7, false);
                     Class5570 var9 = new Class5570(Hand.MAIN_HAND, var8);
                     mc.getConnection().sendPacket(var9);
-                    if (!(this.field23671 < (double) this.method15977("Boost"))) {
+                    if (!(this.field23671 < (double) this.getNumberValueBySettingName("Boost"))) {
                         Class9567.method37088(var1, 0.0);
                         mc.player.method2914();
                         this.field23672 = 0.4299999;
@@ -171,7 +171,7 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16459(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23675 = true;
                 Client.getInstance().getNotificationManager().post(new Notification("Mineplex fly", "Please try again"));
@@ -181,10 +181,10 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16460(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5539
                     && this.field23670 != -1
-                    && this.field23671 < (double) this.method15977("Boost")
+                    && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
                     && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F))
                     && !this.field23675) {
                 var1.method13900(true);
@@ -224,7 +224,7 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16462(Class4422 var1) {
-        if (this.method15996() && this.method15974("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
+        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
             mc.player.field5028.field18049 = this.field23673;
             mc.player.field5049 = this.field23673;
             mc.player.field4915 = this.field23673;

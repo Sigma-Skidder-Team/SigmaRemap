@@ -430,7 +430,7 @@ public class ArmorStandEntity extends Class880 {
       if (var1 != 32) {
          super.method2866(var1);
       } else if (this.world.field9020) {
-         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26359, this.method2864(), 0.3F, 1.0F, false);
+         this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26359, this.method2864(), 0.3F, 1.0F, false);
          this.field5584 = this.world.method6783();
       }
    }
@@ -501,7 +501,7 @@ public class ArmorStandEntity extends Class880 {
    }
 
    private void method4195() {
-      this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26357, this.method2864(), 1.0F, 1.0F);
+      this.world.method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26357, this.method2864(), 1.0F, 1.0F);
    }
 
    @Override
@@ -718,19 +718,19 @@ public class ArmorStandEntity extends Class880 {
 
    @Override
    public Class9455 method2926(int var1) {
-      return Class6067.field26358;
+      return Sounds.field26358;
    }
 
    @Nullable
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26359;
+      return Sounds.field26359;
    }
 
    @Nullable
    @Override
    public Class9455 method2880() {
-      return Class6067.field26357;
+      return Sounds.field26357;
    }
 
    @Override

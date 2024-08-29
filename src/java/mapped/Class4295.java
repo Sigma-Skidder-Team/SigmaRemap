@@ -36,7 +36,7 @@ public class Class4295 extends Class4278 {
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
-            Class5628.method17688(Class1979.field12896.field12910, var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       } else {
          Class3192.method11426(

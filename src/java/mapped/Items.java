@@ -619,7 +619,7 @@ public class Items {
    public static final Item field37803 = method30157("netherite_ingot", new Item(new Class5643().method17779(ItemGroup.field31675).method17781()));
    public static final Item field37804 = method30157("netherite_scrap", new Item(new Class5643().method17779(ItemGroup.field31675).method17781()));
    public static final Item field37805 = method30157(
-      "wooden_sword", new Class3267(Class2282.field15104, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
+      "wooden_sword", new ItemSword(Class2282.field15104, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37806 = method30157(
       "wooden_shovel", new Class3270(Class2282.field15104, 1.5F, -3.0F, new Class5643().method17779(ItemGroup.field31672))
@@ -634,7 +634,7 @@ public class Items {
       "wooden_hoe", new Class3269(Class2282.field15104, 0, -3.0F, new Class5643().method17779(ItemGroup.field31672))
    );
    public static final Item field37810 = method30157(
-      "stone_sword", new Class3267(Class2282.field15105, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
+      "stone_sword", new ItemSword(Class2282.field15105, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37811 = method30157(
       "stone_shovel", new Class3270(Class2282.field15105, 1.5F, -3.0F, new Class5643().method17779(ItemGroup.field31672))
@@ -649,7 +649,7 @@ public class Items {
       "stone_hoe", new Class3269(Class2282.field15105, -1, -2.0F, new Class5643().method17779(ItemGroup.field31672))
    );
    public static final Item field37815 = method30157(
-      "golden_sword", new Class3267(Class2282.field15108, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
+      "golden_sword", new ItemSword(Class2282.field15108, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37816 = method30157(
       "golden_shovel", new Class3270(Class2282.field15108, 1.5F, -3.0F, new Class5643().method17779(ItemGroup.field31672))
@@ -664,7 +664,7 @@ public class Items {
       "golden_hoe", new Class3269(Class2282.field15108, 0, -3.0F, new Class5643().method17779(ItemGroup.field31672))
    );
    public static final Item field37820 = method30157(
-      "iron_sword", new Class3267(Class2282.field15106, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
+      "iron_sword", new ItemSword(Class2282.field15106, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37821 = method30157(
       "iron_shovel", new Class3270(Class2282.field15106, 1.5F, -3.0F, new Class5643().method17779(ItemGroup.field31672))
@@ -679,7 +679,7 @@ public class Items {
       "iron_hoe", new Class3269(Class2282.field15106, -2, -1.0F, new Class5643().method17779(ItemGroup.field31672))
    );
    public static final Item field37825 = method30157(
-      "diamond_sword", new Class3267(Class2282.field15107, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
+      "diamond_sword", new ItemSword(Class2282.field15107, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37826 = method30157(
       "diamond_shovel", new Class3270(Class2282.field15107, 1.5F, -3.0F, new Class5643().method17779(ItemGroup.field31672))
@@ -694,7 +694,7 @@ public class Items {
       "diamond_hoe", new Class3269(Class2282.field15107, -3, 0.0F, new Class5643().method17779(ItemGroup.field31672))
    );
    public static final Item field37830 = method30157(
-      "netherite_sword", new Class3267(Class2282.field15109, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673).method17781())
+      "netherite_sword", new ItemSword(Class2282.field15109, 3, -2.4F, new Class5643().method17779(ItemGroup.field31673).method17781())
    );
    public static final Item field37831 = method30157(
       "netherite_shovel", new Class3270(Class2282.field15109, 1.5F, -3.0F, new Class5643().method17779(ItemGroup.field31672).method17781())
@@ -1379,55 +1379,55 @@ public class Items {
    public static final Item field38130 = method30157("debug_stick", new Class3339(new Class5643().method17775(1)));
    public static final Item field38131 = method30157(
       "music_disc_13",
-      new Class3283(1, Class6067.field26779, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(1, Sounds.field26779, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38132 = method30157(
       "music_disc_cat",
-      new Class3283(2, Class6067.field26781, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(2, Sounds.field26781, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38133 = method30157(
       "music_disc_blocks",
-      new Class3283(3, Class6067.field26780, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(3, Sounds.field26780, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38134 = method30157(
       "music_disc_chirp",
-      new Class3283(4, Class6067.field26782, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(4, Sounds.field26782, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38135 = method30157(
       "music_disc_far",
-      new Class3283(5, Class6067.field26783, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(5, Sounds.field26783, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38136 = method30157(
       "music_disc_mall",
-      new Class3283(6, Class6067.field26784, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(6, Sounds.field26784, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38137 = method30157(
       "music_disc_mellohi",
-      new Class3283(7, Class6067.field26785, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(7, Sounds.field26785, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38138 = method30157(
       "music_disc_stal",
-      new Class3283(8, Class6067.field26787, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(8, Sounds.field26787, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38139 = method30157(
       "music_disc_strad",
-      new Class3283(9, Class6067.field26788, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(9, Sounds.field26788, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38140 = method30157(
       "music_disc_ward",
-      new Class3283(10, Class6067.field26790, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(10, Sounds.field26790, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38141 = method30157(
       "music_disc_11",
-      new Class3283(11, Class6067.field26778, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(11, Sounds.field26778, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38142 = method30157(
       "music_disc_wait",
-      new Class3283(12, Class6067.field26789, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(12, Sounds.field26789, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38143 = method30157(
       "music_disc_pigstep",
-      new Class3283(13, Class6067.field26786, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
+      new Class3283(13, Sounds.field26786, new Class5643().method17775(1).method17779(ItemGroup.field31669).method17780(Class1978.field12887))
    );
    public static final Item field38144 = method30157("trident", new Class3272(new Class5643().method17777(250).method17779(ItemGroup.field31673)));
    public static final Item field38145 = method30157("phantom_membrane", new Item(new Class5643().method17779(ItemGroup.field31674)));

@@ -109,7 +109,7 @@ public class Class5234 extends Module {
 
     @EventTarget
     private void method16304(Class4415 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     this.field23586 = var1.method13960();
@@ -153,7 +153,7 @@ public class Class5234 extends Module {
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
-                                Class5628.method17688(Class1979.field12891.field12910, 0.5F * var10)
+                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
                         );
                         Class3192.method11463(
                                 (float) (this.field23585 + var21.field42635),
@@ -168,7 +168,7 @@ public class Class5234 extends Module {
                                 (float) (this.field23585 + var21.field42635 + (var23.field42635 - ResourceRegistry.JelloLightFont18.method23942(var12)) / 2),
                                 (float) (this.field23586 + var21.field42636 + 12),
                                 var12,
-                                Class1979.field12896.field12910
+                                ClientColors.LIGHT_GREYISH_BLUE.getColor
                         );
                     }
 
@@ -224,7 +224,7 @@ public class Class5234 extends Module {
 
     @EventTarget
     private void method16305(Class4430 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (this.method16303(var1.method13977()) != null && !var1.method13978()) {
                 this.field23587.add(new Class7930(this, this.method16303(var1.method13977())));
             }
@@ -233,7 +233,7 @@ public class Class5234 extends Module {
 
     @EventTarget
     private void method16306(ClickEvent var1) {
-        if (!this.method15996() || mc.player == null) {
+        if (!this.isEnabled() || mc.player == null) {
         }
     }
 }

@@ -68,7 +68,7 @@ public class Class3424 extends Block implements Class3196 {
 
    @Override
    public float method11997(BlockState var1, PlayerEntity var2, Class1665 var3, BlockPos var4) {
-      return !(var2.method3090().getItem() instanceof Class3267) ? super.method11997(var1, var2, var3, var4) : 1.0F;
+      return !(var2.method3090().getItem() instanceof ItemSword) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 
    public void method12079(World var1, BlockPos var2) {

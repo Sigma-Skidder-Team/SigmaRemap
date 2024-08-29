@@ -132,7 +132,7 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
          this.method4441(true);
          this.method4372();
-         this.method2863(Class6067.field26393, 1.0F, 1.0F);
+         this.method2863(Sounds.field26393, 1.0F, 1.0F);
       }
 
       return var4;
@@ -455,12 +455,12 @@ public class Class1017 extends Class1018 implements Class1011, Class1016 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26390;
+      return Sounds.field26390;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26389;
+      return Sounds.field26389;
    }
 
    @Override

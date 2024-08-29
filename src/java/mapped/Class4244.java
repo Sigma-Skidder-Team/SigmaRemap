@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class4244 extends Class4240 {
    private static String[] field20594;
-   public static final Class6387 field20595 = new Class6387(Class1979.field12892.field12910, Class5628.method17691(Class1979.field12892.field12910, 0.1F));
+   public static final Class6387 field20595 = new Class6387(ClientColors.DARK_BLUE_GREY.getColor, Class5628.method17691(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
 
    public Class4244(Class4305 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20595);

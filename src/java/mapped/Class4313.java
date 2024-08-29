@@ -300,7 +300,7 @@ public class Class4313 extends Class4307 {
          114,
          (int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21015) - this.field21016,
          Minecraft.getInstance().mainWindow.method8044() - 119 - this.field21016,
-         Class1979.field12896.field12910
+         ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       this.method13365();
       this.method13367();
@@ -328,7 +328,7 @@ public class Class4313 extends Class4307 {
             (float)((int)((float) Minecraft.getInstance().mainWindow.method8043() * this.field21014) - 15),
             114.0F,
             this.field21020,
-            Class5628.method17688(Class1979.field12896.field12910, var3)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
          );
       }
 
@@ -341,7 +341,7 @@ public class Class4313 extends Class4307 {
    private void method13366() {
       int var3 = this.field20895 + this.field21016;
       int var4 = this.field20896 + this.field21016;
-      int var5 = Class5628.method17688(Class1979.field12891.field12910, 0.8F);
+      int var5 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F);
       Class3192.method11439(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
       Class3192.method11439(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
@@ -436,7 +436,7 @@ public class Class4313 extends Class4307 {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12896.field12910, 0.95F));
+      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override

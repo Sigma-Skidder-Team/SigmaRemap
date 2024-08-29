@@ -15,7 +15,7 @@ public class Class3598 implements Comparator<Module> {
    public int compare(Module var1, Module var2) {
       if (Class5359.method16860(this.field19550, var1) <= Class5359.method16860(this.field19550, var2)) {
          return Class5359.method16860(this.field19550, var1) >= Class5359.method16860(this.field19550, var2)
-            ? var1.method15990().compareTo(var2.method15990())
+            ? var1.getSuffix().compareTo(var2.getSuffix())
             : 1;
       } else {
          return -1;

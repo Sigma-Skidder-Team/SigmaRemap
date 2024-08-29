@@ -736,7 +736,7 @@ public class Class3192 {
    }
 
    public static void method11454(float var0, float var1, float var2, float var3, Texture var4, float var5) {
-      method11449(var0, var1, var2, var3, var4, Class5628.method17688(Class1979.field12896.field12910, var5));
+      method11449(var0, var1, var2, var3, var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
    }
 
    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {
@@ -978,7 +978,7 @@ public class Class3192 {
 
    public static void method11463(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
-      int var8 = Class5628.method17688(Class1979.field12896.field12910, var5);
+      int var8 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11449(var0 - var4, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner1PNG, var8);
       method11449(var0 + var2, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner2PNG, var8);
       method11449(var0 - var4, var1 + var3, var4, var4, ResourcesDecrypter.shadowCorner3PNG, var8);
@@ -990,7 +990,7 @@ public class Class3192 {
    }
 
    public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
-      int var8 = Class5628.method17688(Class1979.field12896.field12910, var5);
+      int var8 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11450(var0, var1, var4, var3, ResourcesDecrypter.shadowRightPNG, var8, false);
       method11450(var0 + var2 - var4, var1, var4, var3, ResourcesDecrypter.shadowLeftPNG, var8, false);
       method11450(var0, var1, var2, var4, ResourcesDecrypter.shadowBottomPNG, var8, false);

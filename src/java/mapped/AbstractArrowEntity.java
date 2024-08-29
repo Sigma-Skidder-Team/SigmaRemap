@@ -370,13 +370,13 @@ public abstract class AbstractArrowEntity extends Class882 {
       this.field5103 = 7;
       this.method3484(false);
       this.method3485((byte)0);
-      this.method3471(Class6067.field26361);
+      this.method3471(Sounds.field26361);
       this.method3494(false);
       this.method3475();
    }
 
    public Class9455 method3476() {
-      return Class6067.field26361;
+      return Sounds.field26361;
    }
 
    public final Class9455 method3477() {

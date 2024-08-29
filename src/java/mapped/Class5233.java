@@ -34,7 +34,7 @@ public class Class5233 extends Module {
 
     @EventTarget
     public void method16301(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23582 = 0;
             }
@@ -43,7 +43,7 @@ public class Class5233 extends Module {
 
     @EventTarget
     public void method16302(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!mc.player.field5036) {
                 if (this.field23583 > 0.0 && this.field23582 > 0) {
                     this.field23581++;

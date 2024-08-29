@@ -71,7 +71,7 @@ public class Class9624 {
          BlockRayTraceResult var11 = this.field45006.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.field45007));
          if (var11.getType() != RayTraceResult.Type.MISS) {
             double var12 = var11.method31419().method11341(this.field45008);
-            if (var12 < var1 && !Client.getInstance().getModuleManager().method14662(Class5273.class).method15996()) {
+            if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(Class5273.class).isEnabled()) {
                var1 = var12;
             }
          }

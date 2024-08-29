@@ -42,7 +42,7 @@ public class Class4264 extends Class4247 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269()),
-         Class5628.method17688(Class1979.field12899.field12910, 0.5F * var1)
+         Class5628.method17688(ClientColors.MID_GREY.getColor, 0.5F * var1)
       );
       Class4252.method13052(
          this.field20895 + Math.round((float)this.field20897 * this.field20679) + 1, this.field20896 + 4, Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1

@@ -23,7 +23,7 @@ public class Class4255 extends Class4247 {
          64.0F,
          64.0F,
          !this.method13298() ? this.field20633 : this.field20634,
-         Class1979.field12896.field12910
+         ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       int var4 = this.method13267() / 2 + this.field20895;
       int var5 = this.method13269() / 2 + this.field20896;

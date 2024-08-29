@@ -125,16 +125,16 @@ public class Class4312 extends Class4307 {
       Class3192.method11471((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
       if (this.field21004 != null) {
          Class3192.method11449(
-            (float)var7, (float)var8, (float)this.field21002, (float)var10, this.field21004, Class5628.method17688(Class1979.field12896.field12910, var1)
+            (float)var7, (float)var8, (float)this.field21002, (float)var10, this.field21004, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       }
 
       Class3192.method11426(
-         (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), Class5628.method17688(Class1979.field12891.field12910, 0.14F)
+         (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
       Class3192.method11478();
       Class3192.method11420(var7 + this.field21002, var8 - this.field20998, var7 + var9 + this.field20998, var8 + var10 + this.field20998);
-      Class3192.method11467(var7, var8, var9, var10, Class5628.method17688(Class1979.field12896.field12910, var1));
+      Class3192.method11467(var7, var8, var9, var10, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       Class3192.method11422();
       Class3192.method11420(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
       Class3192.method11467(var7, var8, var9, var10, Class5628.method17688(-2236963, var1 * 0.75F));
@@ -143,7 +143,7 @@ public class Class4312 extends Class4307 {
          (float)var8,
          (float)(var7 + this.field21002),
          (float)(var8 + var10),
-         Class5628.method17688(Class1979.field12891.field12910, 0.05F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F)
       );
       Class3192.method11422();
       super.method13027(var1);

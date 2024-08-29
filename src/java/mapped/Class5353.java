@@ -27,7 +27,7 @@ public class Class5353 extends Module {
 
     @EventTarget
     public void method16796(Class4399 var1) {
-        if (this.method15996() && mc.player != null && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+        if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.field5036 && var1.method13921()) {
                 var1.method13912(var1.method13911() + 1.0E-14);
             }
@@ -36,11 +36,11 @@ public class Class5353 extends Module {
 
     @EventTarget
     public void method16797(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.field5036
                     && mc.player.field5038
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
-                    && this.method15974("AutoJump")) {
+                    && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
                 var1.method13993(mc.player.method3433().field18048);
                 var1.method13995(mc.player.method3433().field18049);
@@ -72,8 +72,8 @@ public class Class5353 extends Module {
     @EventTarget
     @LowerPriority
     public void method16798(Class4436 var1) {
-        if (this.method15996() && !Class5381.method16953() && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
-            if (!mc.gameSettings.field44636.isKeyDown() || !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()) {
+        if (this.isEnabled() && !Jesus.method16953() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
+            if (!mc.gameSettings.field44636.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                 this.field23916 = Class9567.method37083()[0];
                 this.field23918 = 0;
                 var1.method14003(var1.method14001().method11348() * 1.05F);
@@ -83,7 +83,7 @@ public class Class5353 extends Module {
 
     @EventTarget
     private void method16799(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && var1.method13898() instanceof Class5590) {
                 Class5590 var4 = (Class5590) var1.method13898();
                 if (var4.method17565() != mc.player.method3205()) {

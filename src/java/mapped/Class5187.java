@@ -15,7 +15,7 @@ public class Class5187 extends Module {
     @EventTarget
     @LowerPriority
     private void method16145(Class4434 var1) {
-        if (this.method15996() && !var1.isCancelled()) {
+        if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.method13988();
             if (!Class5628.method17730(mc.player, 1.0E-4F)) {
                 var1.method13900(true);
@@ -38,7 +38,7 @@ public class Class5187 extends Module {
 
     @EventTarget
     private void method16146(Class4417 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!var1.method13967()) {
                 mc.player.field5051 = 1.0F;
             } else {

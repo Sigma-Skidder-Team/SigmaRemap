@@ -40,7 +40,7 @@ public class Class5258 extends PremiumModule {
 
     @EventTarget
     private void method16422(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (field23649 > 0 && !mc.player.field5036) {
                 Class9567.method37088(var1, 0.0);
             }
@@ -50,7 +50,7 @@ public class Class5258 extends PremiumModule {
     @EventTarget
     @LowerPriority
     private void method16423(Class4399 var1) {
-        if (this.method15996() && mc.playerController.method23150()) {
+        if (this.isEnabled() && mc.playerController.method23150()) {
             if (var1.method13921() && field23649 >= 0) {
                 field23649++;
                 float[] var4 = Class9142.method34144(
@@ -60,7 +60,7 @@ public class Class5258 extends PremiumModule {
                 var1.method13916(var4[1]);
             }
 
-            if (field23649 == (!this.method15974("Cubecraft") ? 3 : 5)) {
+            if (field23649 == (!this.getBooleanValueFromSetttingName("Cubecraft") ? 3 : 5)) {
                 if (mc.player.inventory.currentItem != this.field23647) {
                     this.field23648 = mc.player.inventory.currentItem;
                     mc.player.inventory.currentItem = this.field23647;
@@ -75,7 +75,7 @@ public class Class5258 extends PremiumModule {
             }
 
             int var7 = this.method16424();
-            if (!Client.getInstance().getModuleManager().method14662(Fly.class).method15996()
+            if (!Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()
                     && var7 != -1
                     && !mc.player.field5036
                     && mc.player.field5045 > 3.0F) {

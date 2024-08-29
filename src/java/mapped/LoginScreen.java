@@ -28,7 +28,7 @@ public class LoginScreen extends Class4247 {
             43,
             ResourceRegistry.JelloMediumFont40.method23942("Login"),
             50,
-            new Class6387(Class1979.field12891.field12910, Class1979.field12891.field12910, Class1979.field12891.field12910, -7631989),
+            new Class6387(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
             "Login",
             ResourceRegistry.JelloMediumFont40
          )
@@ -62,7 +62,7 @@ public class LoginScreen extends Class4247 {
       int var9 = 50;
       int var10 = 300;
       int var11 = 106;
-      Class6387 var12 = new Class6387(-892679478, -892679478, -892679478, Class1979.field12899.field12910, Class2218.field14488, Class2218.field14492);
+      Class6387 var12 = new Class6387(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
       this.method13230(this.field21353 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
       this.method13230(this.field21354 = new Class4281(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
       this.field21353.method13306(ResourceRegistry.JelloLightFont20);
@@ -90,7 +90,7 @@ public class LoginScreen extends Class4247 {
          this.field21355.method13288(var5.method36702());
          if (var5.method36702()) {
             Class3192.method11424(
-               (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, Class5628.method17688(Class1979.field12891.field12910, 0.04F)
+               (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 

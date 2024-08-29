@@ -111,30 +111,30 @@ public class Class1036 extends Class1035 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26939;
+      return Sounds.field26939;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26942;
+      return Sounds.field26942;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26941;
+      return Sounds.field26941;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26943, 0.15F, 1.0F);
+      this.method2863(Sounds.field26943, 0.15F, 1.0F);
    }
 
    public void method4638() {
-      this.method2863(Class6067.field26940, 1.0F, this.method3100());
+      this.method2863(Sounds.field26940, 1.0F, this.method3100());
    }
 
    @Override
    public void method4630() {
-      this.method2863(Class6067.field26944, 1.0F, this.method3100());
+      this.method2863(Sounds.field26944, 1.0F, this.method3100());
    }
 }

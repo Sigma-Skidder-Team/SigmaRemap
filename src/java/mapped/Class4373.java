@@ -51,7 +51,7 @@ public class Class4373 extends Class4247 {
          (float)this.field20897,
          (float)this.field20898,
          10.0F,
-         Class5628.method17688(Class5628.method17690(-14047489, Class1979.field12891.field12910, !this.method13212() ? 1.0F : 0.9F), var5)
+         Class5628.method17688(Class5628.method17690(-14047489, ClientColors.DEEP_TEAL.getColor, !this.method13212() ? 1.0F : 0.9F), var5)
       );
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.method13263() + this.method13267() / 2), (float)(this.method13265() + this.method13269() / 2), 0.0F);
@@ -63,7 +63,7 @@ public class Class4373 extends Class4247 {
          (float)this.field20897,
          (float)this.field20898,
          ResourcesDecrypter.checkPNG,
-         Class5628.method17688(Class1979.field12896.field12910, var5)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
       );
       GL11.glPopMatrix();
       var5 *= var5;

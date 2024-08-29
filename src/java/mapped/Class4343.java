@@ -36,13 +36,13 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 1:
             byte var21 = 24;
             byte var29 = 24;
-            Class4287 var37 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.method18625());
-            Class4373 var45 = new Class4373(var1, var2.method18625() + "checkbox", var1.method13267() - 24 - var5, var4 + 6, 24, 24);
+            Class4287 var37 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
+            Class4373 var45 = new Class4373(var1, var2.getName() + "checkbox", var1.method13267() - 24 - var5, var4 + 6, 24, 24);
             this.field21223.put(var37, var2);
-            var45.method13705((Boolean)var2.method18619(), false);
+            var45.method13705((Boolean)var2.getCurrentValue(), false);
             var2.method18616(var1x -> {
-               if (var45.method13703() != (Boolean)var1x.method18619()) {
-                  var45.method13705((Boolean)var1x.method18619(), false);
+               if (var45.method13703() != (Boolean)var1x.getCurrentValue()) {
+                  var45.method13705((Boolean)var1x.getCurrentValue(), false);
                }
             });
             var45.method13036(var1x -> var2.method18620(((Class4373)var1x).method13703()));
@@ -54,28 +54,28 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 2:
             byte var20 = 126;
             byte var28 = 24;
-            Class4287 var36 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.method18625());
+            Class4287 var36 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
             this.field21223.put(var36, var2);
-            Class6009 var44 = (Class6009)var2;
-            Class4277 var47 = new Class4277(var1, var2.method18625() + "slider", var1.method13267() - 126 - var5, var4 + 6, 126, 24);
+            NumberSetting var44 = (NumberSetting)var2;
+            Class4277 var47 = new Class4277(var1, var2.getName() + "slider", var1.method13267() - 126 - var5, var4 + 6, 126, 24);
             var47.method13137().method13306(ResourceRegistry.JelloLightFont14);
-            var47.method13304(Float.toString((Float)var2.method18619()));
-            var47.method13140(Class4277.method13134(var44.method18637(), var44.method18639(), (Float)var44.method18619()), false);
+            var47.method13304(Float.toString((Float)var2.getCurrentValue()));
+            var47.method13140(Class4277.method13134(var44.getMin(), var44.getMax(), (Float)var44.getCurrentValue()), false);
             var47.method13143(-1.0F);
             int var13 = var44.method18636();
             var44.method18616(
                var3x -> {
-                  if (Class4277.method13135(var47.method13138(), var44.method18637(), var44.method18639(), var44.method18641(), var13)
-                     != (Float)var3x.method18619()) {
-                     var47.method13304(Float.toString((Float)var3x.method18619()));
-                     var47.method13140(Class4277.method13134(var44.method18637(), var44.method18639(), (Float)var3x.method18619()), false);
+                  if (Class4277.method13135(var47.method13138(), var44.getMin(), var44.getMax(), var44.getIncrement(), var13)
+                     != (Float)var3x.getCurrentValue()) {
+                     var47.method13304(Float.toString((Float)var3x.getCurrentValue()));
+                     var47.method13140(Class4277.method13134(var44.getMin(), var44.getMax(), (Float)var3x.getCurrentValue()), false);
                   }
                }
             );
             var47.method13036(var4x -> {
                float var7 = ((Class4277)var4x).method13138();
-               float var8x = Class4277.method13135(var7, var44.method18637(), var44.method18639(), var44.method18641(), var13);
-               if (var8x != (Float)var2.method18619()) {
+               float var8x = Class4277.method13135(var7, var44.getMin(), var44.getMax(), var44.getIncrement(), var13);
+               if (var8x != (Float)var2.getCurrentValue()) {
                   var47.method13304(Float.toString(var8x));
                   var2.method18620(var8x);
                }
@@ -90,27 +90,27 @@ public class Class4343 extends Class4339 implements Class4342 {
             byte var27 = 27;
             Class4287 var43;
             this.method13230(
-               var43 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, var27, Class4287.field20778, var2.method18625())
+               var43 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, var27, Class4287.field20778, var2.getName())
             );
             this.field21223.put(var43, var2);
             Class4281 var35;
             this.method13230(
                var35 = new Class4281(
                   var1,
-                  var2.method18625() + "txt",
+                  var2.getName() + "txt",
                   var1.method13267() - var5 - var19,
                   var4 + var27 / 4 - 1,
                   var19,
                   var27,
                   Class4281.field20741,
-                  (String)var2.method18619()
+                  (String)var2.getCurrentValue()
                )
             );
             var35.method13306(ResourceRegistry.JelloLightFont18);
             var35.method13151(var1x -> var2.method18620(var1x.method13303()));
             var2.method18616(var2x -> {
-               if (var35.method13303() != ((Class6011)var2).method18619()) {
-                  var35.method13304(((Class6011)var2).method18619());
+               if (var35.method13303() != ((Class6011)var2).getCurrentValue()) {
+                  var35.method13304(((Class6011)var2).getCurrentValue());
                }
             });
             var4 += var27 + var5;
@@ -118,10 +118,10 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 4:
             byte var18 = 123;
             byte var26 = 27;
-            Class4287 var34 = new Class4287(var1, var2.method18625() + "lbl", var3, var4 + 2, this.field21222, 27, Class4287.field20778, var2.method18625());
+            Class4287 var34 = new Class4287(var1, var2.getName() + "lbl", var3, var4 + 2, this.field21222, 27, Class4287.field20778, var2.getName());
             Class4363 var42 = new Class4363(
                var1,
-               var2.method18625() + "btn",
+               var2.getName() + "btn",
                var1.method13267() - var5,
                var4 + 6 - 1,
                123,
@@ -147,7 +147,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          default:
             break;
          case 6:
-            Class4305 var17 = new Class4305(var1, var2.method18625() + "view", var3, var4, var1.method13267(), 0);
+            Class4305 var17 = new Class4305(var1, var2.getName() + "view", var3, var4, var1.method13267(), 0);
             int var25 = 0;
 
             for (Setting var41 : ((Class6007)var2).method18635()) {
@@ -162,14 +162,14 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 7:
             byte var16 = 123;
             byte var24 = 27;
-            Class4287 var32 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, 27, Class4287.field20778, var2.method18625());
+            Class4287 var32 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 27, Class4287.field20778, var2.getName());
             Class4377 var40 = new Class4377(
-               var1, var2.method18625() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((Class6002)var2).method18627(), (Integer)var2.method18619()
+               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((Class6002)var2).method18627(), (Integer)var2.getCurrentValue()
             );
             this.field21223.put(var32, var2);
             var2.method18616(var1x -> {
-               if (var40.method13720() != (Integer)var1x.method18619()) {
-                  var40.method13722((Integer)var1x.method18619(), false);
+               if (var40.method13720() != (Integer)var1x.getCurrentValue()) {
+                  var40.method13722((Integer)var1x.getCurrentValue(), false);
                }
             });
             var40.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
@@ -181,16 +181,16 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 8:
             short var15 = 175;
             short var23 = 200;
-            Class4287 var31 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, 200, Class4287.field20778, var2.method18625());
+            Class4287 var31 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 200, Class4287.field20778, var2.getName());
             Class4258 var39 = new Class4258(
                var1,
-               var2.method18625() + "picker",
+               var2.getName() + "picker",
                var1.method13267() - var5,
                var4 + 5,
                175,
                200,
                ((Class6003)var2).method18628(),
-               ((Class6003)var2).method18619().<String>toArray(new String[0])
+               ((Class6003)var2).getCurrentValue().<String>toArray(new String[0])
             );
             this.field21223.put(var31, var2);
             var39.method13036(var2x -> var2.method18620(var39.method13072()));
@@ -202,18 +202,18 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 9:
             short var14 = 160;
             byte var22 = 114;
-            Class6010 var30 = (Class6010)var2;
-            Class4287 var38 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.method18625());
+            ColorSetting var30 = (ColorSetting)var2;
+            Class4287 var38 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
             Class4252 var46 = new Class4252(
-               var1, var2.method18625() + "color", var1.method13267() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.method18619(), var30.method18643()
+               var1, var2.getName() + "color", var1.method13267() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.getCurrentValue(), var30.method18643()
             );
             this.field21223.put(var38, var2);
             var2.method18616(var3x -> {
-               var46.method13048((Integer)var2.method18619());
+               var46.method13048((Integer)var2.getCurrentValue());
                var46.method13046(var30.method18643());
             });
             var46.method13036(var2x -> {
-               var2.method18621(((Class4252)var2x).method13049(), false);
+               var2.isPremiumSetting(((Class4252)var2x).method13049(), false);
                var30.method18644(((Class4252)var2x).method13047());
             });
             var1.method13230(var38);
@@ -223,11 +223,11 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 10:
             short var8 = 150;
             short var9 = 150;
-            Class9318 var10 = (Class9318)var2.method18619();
-            Class4287 var11 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.method18625());
+            Class9318 var10 = (Class9318)var2.getCurrentValue();
+            Class4287 var11 = new Class4287(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, Class4287.field20778, var2.getName());
             Class4250 var12 = new Class4250(
                var1,
-               var2.method18625() + "color",
+               var2.getName() + "color",
                var1.method13267() - 150 - var5 + 10,
                var4,
                150,
@@ -240,7 +240,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             );
             this.field21223.put(var11, var2);
             var2.method18616(var2x -> {
-               Class9318 var5x = (Class9318)var2.method18619();
+               Class9318 var5x = (Class9318)var2.getCurrentValue();
                var12.method13041(var5x.field43257, var5x.field43258, var5x.field43259, var5x.field43260);
             });
             var12.method13036(
@@ -266,9 +266,9 @@ public class Class4343 extends Class4339 implements Class4342 {
       if (this.field21219 instanceof Class5325) {
          Class5325 var18 = (Class5325)this.field21219;
 
-         for (Module var10 : var18.field23878) {
+         for (Module var10 : var18.moduleArray) {
             int var11 = 0;
-            Class4305 var12 = new Class4305(this, var10.method15991() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
+            Class4305 var12 = new Class4305(this, var10.getName() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
             var12.method13261((var0, var1) -> var0.method13268(var1.method13267()));
 
             for (Setting var14 : var10.method15989().values()) {
@@ -312,7 +312,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          if (var7.method13298() && var7.method13289()) {
             var4 = true;
             this.field21226 = var8.method18626();
-            this.field21227 = var8.method18625();
+            this.field21227 = var8.getName();
             break;
          }
       }
@@ -326,21 +326,21 @@ public class Class4343 extends Class4339 implements Class4342 {
          (float)(this.method13263() + 10),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
-         Class5628.method17688(Class1979.field12896.field12910, 0.5F * this.field21225.calcPercent())
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 11),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21227,
-         Class5628.method17688(Class1979.field12896.field12910, 0.5F * this.field21225.calcPercent())
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + 14 + ResourceRegistry.JelloLightFont14.method23942(this.field21227) + 2),
          (float)(this.method13265() + this.method13269() + 24),
          this.field21226,
-         Class5628.method17688(Class1979.field12896.field12910, 0.5F * this.field21225.calcPercent())
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
    }
 

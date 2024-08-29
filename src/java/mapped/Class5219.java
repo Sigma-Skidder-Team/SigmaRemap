@@ -20,7 +20,7 @@ public class Class5219 extends Module {
         super(ModuleCategory.MOVEMENT, "Mineplex", "Speed for Mineplex");
         this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
         this.registerSetting(new BooleanSetting("OnGround", "OnGround Speed.", true));
-        this.registerSetting(new Class6009<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
     }
 
     @Override
@@ -37,16 +37,16 @@ public class Class5219 extends Module {
         this.field23553 = 0;
         this.field23552 = 0;
         this.field23554 = -1;
-        this.field23555 = this.method15977("OnGround Speed") / 4.0F;
+        this.field23555 = this.getNumberValueBySettingName("OnGround Speed") / 4.0F;
     }
 
     @EventTarget
     @HigherPriority
     public void method16250(Class4435 var1) {
-        if (this.method15996()
-                && !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()
+        if (this.isEnabled()
+                && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
                 && !Class5628.method17684(mc.player)) {
-            double var4 = this.method15977("OnGround Speed");
+            double var4 = this.getNumberValueBySettingName("OnGround Speed");
             if (!mc.player.field5036) {
                 if (mc.player.field5037) {
                     this.field23555 = 0.35;
@@ -70,7 +70,7 @@ public class Class5219 extends Module {
                     this.field23552++;
                 }
 
-                if (this.method15974("AutoJump") && Class5628.method17686()) {
+                if (this.getBooleanValueFromSetttingName("AutoJump") && Class5628.method17686()) {
                     mc.player.method2914();
                     var1.method13995(mc.player.method3433().field18049);
                 }
@@ -80,7 +80,7 @@ public class Class5219 extends Module {
                     return;
                 }
 
-                if (!this.method15974("OnGround")) {
+                if (!this.getBooleanValueFromSetttingName("OnGround")) {
                     return;
                 }
 
@@ -115,7 +115,7 @@ public class Class5219 extends Module {
 
     @EventTarget
     public void method16251(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23555 = 0.81 + (double) this.field23553 * 0.095;
             if (mc.player.getPosY() != (double) ((int) mc.player.getPosY())) {
                 this.field23555 = 0.52;
@@ -138,7 +138,7 @@ public class Class5219 extends Module {
 
     @EventTarget
     public void method16252(Class4396 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23553 = 0;
                 this.field23555 = 0.0;
@@ -148,9 +148,9 @@ public class Class5219 extends Module {
 
     @EventTarget
     public void method16253(Class4434 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13988() > 0.2) {
-                this.field23555 = this.field23555 - (double) (this.method15977("OnGround Speed") / 4.0F);
+                this.field23555 = this.field23555 - (double) (this.getNumberValueBySettingName("OnGround Speed") / 4.0F);
             }
         }
     }

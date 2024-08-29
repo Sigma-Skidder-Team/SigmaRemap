@@ -122,7 +122,7 @@ public class Class915 extends Entity {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Class6067.field26563,
+                  Sounds.field26563,
                   this.method2864(),
                   1.0F,
                   this.field5054.nextFloat() * 0.2F + 0.85F,

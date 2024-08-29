@@ -517,7 +517,7 @@ public abstract class Entity implements Class933, Class909 {
          }
 
          if (this.method3254() && this.method3327()) {
-            this.method2863(Class6067.field26611, 0.7F, 1.6F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.4F);
+            this.method2863(Sounds.field26611, 0.7F, 1.6F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.4F);
             this.method2966(-this.method2865());
          }
 
@@ -743,15 +743,15 @@ public abstract class Entity implements Class933, Class909 {
    }
 
    public Class9455 method2859() {
-      return Class6067.field26615;
+      return Sounds.field26615;
    }
 
    public Class9455 method2860() {
-      return Class6067.field26614;
+      return Sounds.field26614;
    }
 
    public Class9455 method2861() {
-      return Class6067.field26614;
+      return Sounds.field26614;
    }
 
    public void method3240() {

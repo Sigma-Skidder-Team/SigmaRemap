@@ -271,7 +271,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    }
 
    private void method5582() {
-      this.field6351.getSoundHandler().method1000(Class6339.method19292(Class6067.field27176, 1.0F));
+      this.field6351.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(Sounds.field27176, 1.0F));
       if (this.field6351.getSaveLoader().method38465(this.field6353.method8643())) {
          this.method5583();
          this.field6351.loadWorld(this.field6353.method8643());

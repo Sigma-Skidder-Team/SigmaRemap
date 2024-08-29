@@ -20,7 +20,7 @@ public class Class4294 extends Class4278 {
    public Animation field20805 = new Animation(300, 300, Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
-   private int field20808 = Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 20.0F);
+   private int field20808 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
    public Class4294(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -47,7 +47,7 @@ public class Class4294 extends Class4278 {
    @Override
    public void method13027(float var1) {
       this.method13225();
-      this.field20808 = Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 2.0F);
+      this.field20808 = Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       int var4 = ((Class4339)this.field20892.method13258()).method13513();
       int var5 = Math.max(0, this.field20896 - var4);
       int var6 = Math.max(0, this.field20898 + Math.min(100, this.field20896 - var4 - var5));
@@ -62,7 +62,7 @@ public class Class4294 extends Class4278 {
                var5,
                this.field20897,
                Math.max(20, var6),
-               Class5628.method17688(!this.method13212() ? Class1979.field12896.field12910 : this.field20808, var7)
+               Class5628.method17688(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
             );
             Class3192.method11421(this.field20895, var5, this.field20895 + this.field20897 + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
@@ -76,7 +76,7 @@ public class Class4294 extends Class4278 {
                      18.0F * this.field20803.calcPercent() * (float)var6 / 100.0F,
                      (float)(47 * var6) / 100.0F,
                      ResourcesDecrypter.selectPNG,
-                     !this.method13212() ? Class1979.field12896.field12910 : this.field20808
+                     !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
                   );
                }
 
@@ -91,7 +91,7 @@ public class Class4294 extends Class4278 {
 
    public void method13169() {
       Class3192.method11450(
-         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), Class1979.field12896.field12910, true
+         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.selectedAccount.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
       );
       Class3192.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       Class3192.method11449(
@@ -100,42 +100,42 @@ public class Class4294 extends Class4278 {
          100.0F,
          100.0F,
          ResourcesDecrypter.cerclePNG,
-         !this.method13212() ? Class1979.field12896.field12910 : this.field20808
+         !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808
       );
    }
 
    public void method13170() {
       if (this.selectedAccount.isEmailAValidEmailFormat()) {
          Class3192.method11439(
-            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getEmail(), Class1979.field12891.field12910
+            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getEmail(), ClientColors.DEEP_TEAL.getColor
          );
          Class3192.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Username: " + this.selectedAccount.getEmail(),
-            Class1979.field12899.field12910
+            ClientColors.MID_GREY.getColor
          );
          Class3192.method11439(
-            ResourceRegistry.JelloLightFont14, (float)(this.field20895 + 110), (float)(this.field20896 + 65), "Offline account", Class1979.field12899.field12910
+            ResourceRegistry.JelloLightFont14, (float)(this.field20895 + 110), (float)(this.field20896 + 65), "Offline account", ClientColors.MID_GREY.getColor
          );
       } else {
          Class3192.method11439(
-            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getKnownName(), Class1979.field12891.field12910
+            ResourceRegistry.JelloLightFont25, (float)(this.field20895 + 110), (float)(this.field20896 + 18), this.selectedAccount.getKnownName(), ClientColors.DEEP_TEAL.getColor
          );
          Class3192.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 50),
             "Email: " + this.selectedAccount.getEmail(),
-            Class1979.field12899.field12910
+            ClientColors.MID_GREY.getColor
          );
          Class3192.method11439(
             ResourceRegistry.JelloLightFont14,
             (float)(this.field20895 + 110),
             (float)(this.field20896 + 65),
             "Password: " + this.selectedAccount.getPassword().replaceAll(".", Character.toString('·')),
-            Class1979.field12899.field12910
+            ClientColors.MID_GREY.getColor
          );
       }
    }
@@ -152,7 +152,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          17.0F,
          ResourcesDecrypter.errorsPNG,
-         Class5628.method17688(Class1979.field12896.field12910, var5 * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
       );
       Class3192.method11449(
          (float)(this.field20895 + this.field20897 - 45),
@@ -160,7 +160,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          13.0F,
          ResourcesDecrypter.activePNG,
-         Class5628.method17688(Class1979.field12896.field12910, this.field20804 * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
       );
    }
 

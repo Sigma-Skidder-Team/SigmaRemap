@@ -45,7 +45,7 @@ public class Class8233 {
       var5.method22988();
       Class7286 var6 = new Class7286("settings", this.getJsonObject(var2).method21769("modConfig"));
 
-      for (Module var8 : Client.getInstance().getModuleManager().method14664().values()) {
+      for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
          JSONObject var9 = var6.method22990(var8);
          if (var9 != null) {
             var5.method22989(var9, var8);

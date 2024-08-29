@@ -13,7 +13,7 @@ public class Class5180 extends Module {
 
     @EventTarget
     private void method16125(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             for (Entity var5 : Class5628.method17680()) {
                 if (!Client.getInstance().getCombatManager().method29346(var5) && var5.field5055 > 30 && var5.method3381()) {
                     Class5628.method17678(var5.getName().getUnformattedComponentText() + " might have a custom nametag");

@@ -15,11 +15,11 @@ public class Class6387 {
    }
 
    public Class6387(int var1, int var2) {
-      this(var1, var2, Class1979.field12891.field12910);
+      this(var1, var2, ClientColors.DEEP_TEAL.getColor);
    }
 
    public Class6387(int var1, int var2, int var3) {
-      this(var1, var2, var3, Class1979.field12896.field12910);
+      this(var1, var2, var3, ClientColors.LIGHT_GREYISH_BLUE.getColor);
    }
 
    public Class6387(int var1, int var2, int var3, int var4) {

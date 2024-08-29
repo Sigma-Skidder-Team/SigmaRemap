@@ -98,7 +98,7 @@ public class BlockFly extends Class5325 {
     }
 
     public boolean method16732() {
-        return this.method15974("No Sprint") && this.method15996();
+        return this.getBooleanValueFromSetttingName("No Sprint") && this.isEnabled();
     }
 
     public void method16734() {
@@ -144,7 +144,7 @@ public class BlockFly extends Class5325 {
         String var3 = this.getStringSettingValueByName("Picking mode");
         if ((!var3.equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) && this.method16735() != 0) {
             int var4 = 43;
-            if (!this.method15974("Intelligent Block Picker")) {
+            if (!this.getBooleanValueFromSetttingName("Intelligent Block Picker")) {
                 if (!this.method16738()) {
                     int var5 = -1;
 
@@ -265,7 +265,7 @@ public class BlockFly extends Class5325 {
         }
 
         if (this.method16735() != 0 && (!mc.player.field5038 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
-            if (!Class5628.method17686() || this.method15974("Tower while moving")) {
+            if (!Class5628.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
                     case "NCP":
@@ -330,7 +330,7 @@ public class BlockFly extends Class5325 {
                 mc.player.field4999 = 20;
                 var1.method13995(Class9567.method37080());
             }
-        } else if (!Class5628.method17686() || this.method15974("Tower while moving")) {
+        } else if (!Class5628.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
             mc.player.field4999 = 0;
             mc.player.method2914();
             Class9567.method37088(var1, Class9567.method37075());
@@ -343,14 +343,14 @@ public class BlockFly extends Class5325 {
     }
 
     @Override
-    public String method15990() {
-        return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? super.method15990() : "Scaffold";
+    public String getSuffix() {
+        return Client.getInstance().getClientMode() != ClientMode.CLASSIC ? super.getSuffix() : "Scaffold";
     }
 
     @EventTarget
-    public void method16742(TickEvent var1) {
-        if (this.method15996()) {
-            if (this.method15974("Show Block Amount")) {
+    public void onTick(TickEvent var1) {
+        if (this.isEnabled()) {
+            if (this.getBooleanValueFromSetttingName("Show Block Amount")) {
                 this.field23886 = this.method16735();
             }
         }
@@ -366,7 +366,7 @@ public class BlockFly extends Class5325 {
     public void method16743(Class4415 var1) {
         this.field23885.changeDirection(Direction.FORWARDS);
         if (this.field23885.calcPercent() != 0.0F) {
-            if (this.method15974("Show Block Amount")) {
+            if (this.getBooleanValueFromSetttingName("Show Block Amount")) {
                 if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                     this.method16744(
                             mc.mainWindow.method8043() / 2,
@@ -392,14 +392,14 @@ public class BlockFly extends Class5325 {
                 (float) (var1 + 10),
                 (float) (var2 + 5),
                 this.field23886 + " Blocks",
-                Class5628.method17688(Class1979.field12891.field12910, var3 * 0.3F)
+                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var3 * 0.3F)
         );
         Class3192.method11439(
                 ClassicDecryption.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 4),
                 this.field23886 + " Blocks",
-                Class5628.method17688(Class1979.field12896.field12910, var3 * 0.8F)
+                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3 * 0.8F)
         );
         GL11.glAlphaFunc(519, 0.0F);
     }
@@ -415,10 +415,10 @@ public class BlockFly extends Class5325 {
         GL11.glPushMatrix();
         Class3192.method11465(var1, var2, var8, var9, Class5628.method17688(-15461356, 0.8F * var3));
         Class3192.method11439(
-                ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", Class5628.method17688(Class1979.field12896.field12910, var3)
+                ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
         );
         Class3192.method11439(
-                ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", Class5628.method17688(Class1979.field12896.field12910, 0.6F * var3)
+                ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var3)
         );
         var1 += 11 + var8 / 2;
         var2 += var9;

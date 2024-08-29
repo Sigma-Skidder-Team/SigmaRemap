@@ -22,7 +22,7 @@ public class Class5374 extends Module {
 
     @EventTarget
     public void method16921(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 this.field23997 = 1.0E-11;
@@ -33,7 +33,7 @@ public class Class5374 extends Module {
     @EventTarget
     @HigherPriority
     private void method16922(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             boolean var4 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
             boolean var5 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var4;
             if (Client.getInstance().method19939().method31329() > 0 && !var5) {

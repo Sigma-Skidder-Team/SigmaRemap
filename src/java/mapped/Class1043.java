@@ -110,15 +110,15 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Override
    public Class9455 method4748() {
-      return Class6067.field27195;
+      return Sounds.field27195;
    }
 
    public Class9455 method4749(boolean var1) {
-      return !var1 ? Class6067.field27193 : Class6067.field27195;
+      return !var1 ? Sounds.field27193 : Sounds.field27195;
    }
 
    public void method4750() {
-      this.method2863(Class6067.field27190, this.method3099(), this.method3100());
+      this.method2863(Sounds.field27190, this.method3099(), this.method3100());
    }
 
    @Override

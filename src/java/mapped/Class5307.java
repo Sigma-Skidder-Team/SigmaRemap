@@ -17,7 +17,7 @@ public class Class5307 extends Module {
 
     @EventTarget
     private void method16680(Class4404 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if ((int) mc.player.getPosY() == this.field23843 && !mc.player.field4981) {
                 Class5628.method17725(-2.0);
             }
@@ -34,7 +34,7 @@ public class Class5307 extends Module {
 
     @EventTarget
     private void method16681(Class4398 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13903() != null && var1.method13902().getY() == this.field23843 - 1
                     || var1.method13902().getY() == this.field23843
                     || var1.method13902().getY() == this.field23843 + 1 && mc.world.getBlockState(var1.method13902()).getBlock() instanceof Class3208
@@ -49,7 +49,7 @@ public class Class5307 extends Module {
 
     @EventTarget
     private void method16682(Class4425 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }

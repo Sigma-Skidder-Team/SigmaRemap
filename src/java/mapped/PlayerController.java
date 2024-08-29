@@ -151,7 +151,7 @@ public class PlayerController {
                   Class8447 var6 = var5.method23452();
                   this.field31358
                      .getSoundHandler()
-                     .method1000(new Class6339(var6.method29715(), Class2266.field14732, (var6.method29710() + 1.0F) / 8.0F, var6.method29711() * 0.5F, var1));
+                     .method1000(new MinecraftSoundManager(var6.method29715(), Class2266.field14732, (var6.method29710() + 1.0F) / 8.0F, var6.method29711() * 0.5F, var1));
                }
 
                this.field31363++;

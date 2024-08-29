@@ -21,7 +21,7 @@ public class Class5283 extends Module {
 
     @EventTarget
     private void method16578(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (Class5628.method17705() > this.field23755 && mc.player.field5055 % 3 == 0) {
                 this.field23755++;
             }
@@ -44,7 +44,7 @@ public class Class5283 extends Module {
     @EventTarget
     @LowestPriority
     private void method16579(Class4415 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
@@ -83,7 +83,7 @@ public class Class5283 extends Module {
                                 var6,
                                 (float) var7,
                                 var5,
-                                Class5628.method17688(Class1979.field12896.field12910, 0.8F * var4),
+                                Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
                                 Class2218.field14492,
                                 Class2218.field14488
                         );

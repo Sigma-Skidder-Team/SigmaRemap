@@ -20,7 +20,7 @@ public class VanillaFly extends Module {
 
     public VanillaFly() {
         super(ModuleCategory.MOVEMENT, "Vanilla", "Regular vanilla fly");
-        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
         this.registerSetting(new BooleanSetting("Kick bypass", "Bypass vanilla kick for flying", true));
     }
 
@@ -48,7 +48,7 @@ public class VanillaFly extends Module {
 
     @EventTarget
     private void method16916(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23995 = true;
@@ -58,7 +58,7 @@ public class VanillaFly extends Module {
 
     @EventTarget
     private void method16917(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23995 = false;
@@ -68,8 +68,8 @@ public class VanillaFly extends Module {
 
     @EventTarget
     public void method16918(Class4399 var1) {
-        if (this.method15996()) {
-            if (!mc.player.field5036 && this.method15974("Kick bypass")) {
+        if (this.isEnabled()) {
+            if (!mc.player.field5036 && this.getBooleanValueFromSetttingName("Kick bypass")) {
                 if (this.field23996 > 0 && this.field23996 % 30 == 0 && !Class5628.method17730(mc.player, 0.01F)) {
                     if (Class8005.method27349() != Class5989.field26129.method18582()) {
                         var1.method13912(var1.method13911() - 0.04);
@@ -113,14 +113,14 @@ public class VanillaFly extends Module {
 
     @EventTarget
     public void method16919(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!Class5628.method17730(mc.player, 0.01F)) {
                 this.field23996++;
             } else {
                 this.field23996 = 0;
             }
 
-            double var4 = this.method15977("Speed");
+            double var4 = this.getNumberValueBySettingName("Speed");
             double var6 = !mc.gameSettings.field44636.field13071 ? 0.0 : var4 / 2.0;
             if (mc.gameSettings.field44636.field13071 && mc.gameSettings.field44637.field13071) {
                 var6 = 0.0;

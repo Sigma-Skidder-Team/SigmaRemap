@@ -7,7 +7,7 @@ import java.util.List;
 public class Class5331 extends Class5325 {
     public Class5331() {
         super(ModuleCategory.ITEM, "AutoGapple", "Automatically eat golden apples", new Class5218(), new Class5264());
-        this.registerSetting(new Class6009<Float>("Health", "Maximum health before eating gapple.", 7.0F, Float.class, 0.5F, 10.0F, 0.5F));
+        this.registerSetting(new NumberSetting<Float>("Health", "Maximum health before eating gapple.", 7.0F, Float.class, 0.5F, 10.0F, 0.5F));
     }
 
     public int method16749(boolean var1) {

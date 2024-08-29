@@ -34,7 +34,7 @@ public enum Class2242 {
    field14675 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3267;
+         return var1 instanceof ItemSword;
       }
    },
    field14676 {

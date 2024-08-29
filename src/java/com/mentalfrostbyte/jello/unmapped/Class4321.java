@@ -78,7 +78,7 @@ public class Class4321 extends Class4307 {
                 (float) this.field20896,
                 (float) (this.field20895 + this.field20897),
                 (float) (this.field20896 + this.field20898),
-                Class5628.method17688(Class1979.field12891.field12910, var4 * 0.35F)
+                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
         );
         super.method13027(var1);
     }

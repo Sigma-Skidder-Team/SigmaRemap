@@ -57,7 +57,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
       this.field5314 = this.field5313;
       float var6 = 0.1F;
       if (this.field5315 > 0 && this.field5313 == 0.0F) {
-         this.method3760(Class6067.field26449);
+         this.method3760(Sounds.field26449);
       }
 
       if (this.field5315 == 0 && this.field5313 > 0.0F || this.field5315 > 0 && this.field5313 < 1.0F) {
@@ -74,7 +74,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
 
          float var8 = 0.5F;
          if (this.field5313 < 0.5F && var7 >= 0.5F) {
-            this.method3760(Class6067.field26447);
+            this.method3760(Sounds.field26447);
          }
 
          if (this.field5313 < 0.0F) {

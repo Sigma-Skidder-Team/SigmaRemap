@@ -28,11 +28,11 @@ public class Class4311 extends Class4307 {
       var4 += 80;
       this.method13230(this.field20986 = new Class4282(this, "password", var5, var4, var3, 45, Class4282.field20741, "", "Password", ResourceRegistry.field38868));
       var4 += 190;
-      this.method13230(this.field20987 = new Class4300(this, "login", var5, var4, var3, 40, "Login", Class1979.field12899.field12910));
+      this.method13230(this.field20987 = new Class4300(this, "login", var5, var4, var3, 40, "Login", ClientColors.MID_GREY.getColor));
       var4 += 50;
-      this.method13230(this.field20988 = new Class4300(this, "back", var5, var4, var3, 40, "Back", Class1979.field12899.field12910));
+      this.method13230(this.field20988 = new Class4300(this, "back", var5, var4, var3, 40, "Back", ClientColors.MID_GREY.getColor));
       var4 += 50;
-      this.method13230(this.field20989 = new Class4300(this, "import", var5, var4, var3, 40, "Import user:pass", Class1979.field12899.field12910));
+      this.method13230(this.field20989 = new Class4300(this, "import", var5, var4, var3, 40, "Import user:pass", ClientColors.MID_GREY.getColor));
       this.field20986.method13155(true);
       this.field20986.method13147("*");
       this.field20987.method13251((var1, var2) -> {
@@ -68,17 +68,17 @@ public class Class4311 extends Class4307 {
    @Override
    public void method13027(float var1) {
       Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12908.field12910, 0.1F));
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, 0.95F));
+      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.PALE_RED.getColor, 0.1F));
+      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.95F));
       Class3192.method11440(
-         ResourceRegistry.field38868, (float)(this.method13267() / 2), 38.0F, "Add Login", Class1979.field12896.field12910, Class2218.field14492, Class2218.field14488
+         ResourceRegistry.field38868, (float)(this.method13267() / 2), 38.0F, "Add Login", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
       );
       Class3192.method11441(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
          58.0F,
          this.field20991,
-         Class1979.field12896.field12910,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14488,
          true

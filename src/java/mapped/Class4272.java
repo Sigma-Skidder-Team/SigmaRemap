@@ -110,7 +110,7 @@ public class Class4272 extends Class4247 {
             (float)this.field20897,
             50.0F,
             ResourcesDecrypter.shadowBottomPNG,
-            Class5628.method17688(Class1979.field12896.field12910, this.field20703.calcPercent() * var1 * 0.3F)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
          );
          Class3192.method11415(this);
          Class3192.method11424(
@@ -122,7 +122,7 @@ public class Class4272 extends Class4247 {
                (float)(this.field20895 + 40),
                (float)(this.field20896 + 110),
                "No Default Profiles Available",
-               Class1979.field12899.field12910
+               ClientColors.MID_GREY.getColor
             );
          }
 

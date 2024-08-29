@@ -46,9 +46,9 @@ public class Class4320 extends Class4307 {
          0.0F,
          (float)this.field20897,
          (float)this.field20898,
-         Class5628.method17688(Class1979.field12891.field12910, this.field21076.calcPercent() * 0.95F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
       );
-      Class3192.method11439(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", Class1979.field12896.field12910);
+      Class3192.method11439(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor);
       byte var4 = 40;
       super.method13027(this.field21076.calcPercent());
    }

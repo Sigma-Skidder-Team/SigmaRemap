@@ -13,7 +13,7 @@ public class Class7959 {
             )
             .apply(var0, Class7959::new)
    );
-   public static final Class7959 field34224 = new Class7959(Class6067.field26313, 6000, 8, 2.0);
+   public static final Class7959 field34224 = new Class7959(Sounds.field26313, 6000, 8, 2.0);
    private Class9455 field34225;
    private int field34226;
    private int field34227;

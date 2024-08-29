@@ -22,8 +22,8 @@ public class Class5163 extends Module {
 
     @EventTarget
     public void method16065(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
-            if (this.method15974("Sneak")) {
+        if (this.isEnabled() && var1.method13921()) {
+            if (this.getBooleanValueFromSetttingName("Sneak")) {
                 if (this.field23435) {
                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10041));
                 } else {
@@ -33,7 +33,7 @@ public class Class5163 extends Module {
 
             this.field23435 = !this.field23435;
             this.field23436++;
-            if (this.method15974("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
+            if (this.getBooleanValueFromSetttingName("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
                 this.field23436 = 0;
                 Hand var4 = Hand.values()[this.field23434.nextInt(1)];
                 mc.player.swingArm(var4);

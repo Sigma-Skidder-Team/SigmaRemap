@@ -28,12 +28,12 @@ public class Class5298 extends Module {
 
     public Class5298() {
         super(ModuleCategory.RENDER, "Freecam", "Move client side but not server side");
-        this.registerSetting(new Class6009<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
+        this.registerSetting(new NumberSetting<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
     }
 
     @EventTarget
     public void method16639(Class4410 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13953() instanceof ClientPlayerEntity && var1.method13953() != field23814) {
                 var1.method13900(true);
             }
@@ -42,7 +42,7 @@ public class Class5298 extends Module {
 
     @EventTarget
     public void method16640(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (field23814 == null) {
                 this.isInDevelopment();
             }
@@ -73,7 +73,7 @@ public class Class5298 extends Module {
 
     @EventTarget
     public void method16641(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             field23814.method3239();
             field23814.field5035 = new Class6488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }
@@ -133,14 +133,14 @@ public class Class5298 extends Module {
 
     @EventTarget
     private void method16642(Class4425 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }
 
     @EventTarget
     private void method16643(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() != mc.gameSettings.field44637.field13070.field34875) {
                 if (var1.method13977() != mc.gameSettings.field44636.field13070.field34875) {
                     if (var1.method13977() != mc.gameSettings.field44632.field13070.field34875) {
@@ -178,7 +178,7 @@ public class Class5298 extends Module {
 
     @EventTarget
     private void method16644(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() != mc.gameSettings.field44637.field13070.field34875) {
                 if (var1.method13973() != mc.gameSettings.field44636.field13070.field34875) {
                     if (var1.method13973() != mc.gameSettings.field44632.field13070.field34875) {
@@ -216,14 +216,14 @@ public class Class5298 extends Module {
 
     @EventTarget
     public void method16645(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }
 
     @EventTarget
     public void method16646(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             var1.method13918(this.field23821 % 360.0F);
             var1.method13916(this.field23822);
             mc.player.field6122 = this.field23821;
@@ -234,7 +234,7 @@ public class Class5298 extends Module {
             float var7 = var4[0];
             double var8 = Math.cos(Math.toRadians(var7));
             double var10 = Math.sin(Math.toRadians(var7));
-            double var12 = this.method15977("Speed") / 2.0F;
+            double var12 = this.getNumberValueBySettingName("Speed") / 2.0F;
             this.field23818 = this.field23815;
             this.field23820 = this.field23817;
             this.field23819 = this.field23816;
@@ -252,7 +252,7 @@ public class Class5298 extends Module {
 
     @EventTarget
     private void method16647(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null) {
                 if (var1.method13898() instanceof Class5473) {
                     Class5473 var4 = (Class5473) var1.method13898();
@@ -276,7 +276,7 @@ public class Class5298 extends Module {
 
     @EventTarget
     private void method16648(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13932() instanceof CAnimateHandPacket) {
                 field23814.swingArm(Hand.MAIN_HAND);
             }
@@ -292,14 +292,14 @@ public class Class5298 extends Module {
 
     @EventTarget
     private void method16649(Class4427 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }
 
     @EventTarget
     private void method16650(WorldLoadEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.setState(false);
         }
     }

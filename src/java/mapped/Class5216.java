@@ -16,7 +16,7 @@ public class Class5216 extends Module {
 
     @EventTarget
     private void method16244(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23548++;
             Random var4 = new Random();
             byte var5 = 2;

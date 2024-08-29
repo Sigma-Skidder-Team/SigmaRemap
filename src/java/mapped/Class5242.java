@@ -29,13 +29,13 @@ public class Class5242 extends Module {
 
     @EventTarget
     private void method16340(Class4396 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             Packet var4 = var1.method13898();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.method17648().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
-                if (this.field23602.method15974("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
+                if (this.field23602.getBooleanValueFromSetttingName("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
                     this.field23602.method16761(var6);
                 }
 
@@ -53,15 +53,15 @@ public class Class5242 extends Module {
 
     @EventTarget
     private void method16341(WorldLoadEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23603 = false;
         }
     }
 
     @EventTarget
     private void method16342(TickEvent var1) {
-        if (this.method15996()) {
-            if (this.method15974("AutoGG") && this.field23604.method27121() > 5000L && this.field23603) {
+        if (this.isEnabled()) {
+            if (this.getBooleanValueFromSetttingName("AutoGG") && this.field23604.method27121() > 5000L && this.field23603) {
                 this.field23603 = false;
                 this.field23604.method27120();
                 this.field23602.method16760();

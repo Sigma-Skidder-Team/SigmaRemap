@@ -77,7 +77,7 @@ public class Class4303 extends Class4278 {
       var5.method13300(false);
       this.field20853.method13300(false);
       this.field20865.method13300(false);
-      Class6387 var6 = new Class6387(1250067, -15329770).method19410(Class1979.field12896.field12910).method19414(Class2218.field14492);
+      Class6387 var6 = new Class6387(1250067, -15329770).method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor).method19414(Class2218.field14492);
       ArrayList var7 = new ArrayList();
       Class4303 var8 = this;
       int var9 = 0;
@@ -110,25 +110,25 @@ public class Class4303 extends Class4278 {
       this.field20853
          .method13230(
             this.field20858 = new Class4235(
-               this.field20853, "play", var15, 27, 38, 38, ResourcesDecrypter.playPNG, new Class6387(Class1979.field12896.field12910), null
+               this.field20853, "play", var15, 27, 38, 38, ResourcesDecrypter.playPNG, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.field20853
          .method13230(
             this.field20859 = new Class4235(
-               this.field20853, "pause", var15, 27, 38, 38, ResourcesDecrypter.pausePNG, new Class6387(Class1979.field12896.field12910), null
+               this.field20853, "pause", var15, 27, 38, 38, ResourcesDecrypter.pausePNG, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.field20853
          .method13230(
             this.field20860 = new Class4235(
-               this.field20853, "forwards", var15 + 114, 23, 46, 46, ResourcesDecrypter.forwardsPNG, new Class6387(Class1979.field12896.field12910), null
+               this.field20853, "forwards", var15 + 114, 23, 46, 46, ResourcesDecrypter.forwardsPNG, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.field20853
          .method13230(
             this.field20861 = new Class4235(
-               this.field20853, "backwards", var15 - 114, 23, 46, 46, ResourcesDecrypter.backwardsPNG, new Class6387(Class1979.field12896.field12910), null
+               this.field20853, "backwards", var15 - 114, 23, 46, 46, ResourcesDecrypter.backwardsPNG, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
       this.field20853.method13230(this.field20862 = new Class4374(this.field20853, "volume", this.method13267() - this.field20845 - 19, 14, 4, 40));
@@ -305,14 +305,14 @@ public class Class4303 extends Class4278 {
          (float)(var4 + this.method13263()),
          (float)(this.method13265() + 20),
          "Jello",
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont20,
          (float)(var4 + this.method13263() + 80),
          (float)(this.method13265() + 40),
          "music",
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       Class3192.method11463((float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)this.method13269(), 14.0F, var1);
       super.method13027(var1);
@@ -329,14 +329,14 @@ public class Class4303 extends Class4278 {
          (float)(this.method13263() + this.field20845 + 14),
          (float)(this.method13265() + this.method13269() - 10) - 22.0F * var1,
          Class9275.method34955(var4),
-         Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont14,
          (float)(this.method13263() + this.method13267() - 14 - ResourceRegistry.JelloLightFont14.method23942(Class9275.method34955(var5))),
          (float)(this.method13265() + this.method13269() - 10) - 22.0F * var1,
          Class9275.method34955(var5),
-         Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
       );
    }
 
@@ -350,21 +350,21 @@ public class Class4303 extends Class4278 {
             (float)this.method13267(),
             (float)this.field20848,
             var5,
-            Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          Class3192.method11426(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - this.field20848),
             (float)(this.method13263() + this.method13267()),
             (float)(this.method13265() + this.method13269() - 5),
-            Class5628.method17688(Class1979.field12891.field12910, 0.43F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          Class3192.method11426(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - 5),
             (float)(this.method13263() + this.field20845),
             (float)(this.method13265() + this.method13269()),
-            Class5628.method17688(Class1979.field12891.field12910, 0.43F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          Class3192.method11449(
             (float)(this.method13263() + (this.field20845 - 114) / 2),
@@ -372,7 +372,7 @@ public class Class4303 extends Class4278 {
             114.0F,
             114.0F,
             var4,
-            Class5628.method17688(Class1979.field12896.field12910, var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          Class3192.method11463(
             (float)(this.method13263() + (this.field20845 - 114) / 2), (float)(this.method13265() + this.method13269() - 170), 114.0F, 114.0F, 14.0F, var1
@@ -384,21 +384,21 @@ public class Class4303 extends Class4278 {
             (float)this.method13267(),
             (float)this.field20848,
             ResourcesDecrypter.bgPNG,
-            Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          Class3192.method11426(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - this.field20848),
             (float)(this.method13263() + this.method13267()),
             (float)(this.method13265() + this.method13269() - 5),
-            Class5628.method17688(Class1979.field12891.field12910, 0.43F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          Class3192.method11426(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - 5),
             (float)(this.method13263() + this.field20845),
             (float)(this.method13265() + this.method13269()),
-            Class5628.method17688(Class1979.field12891.field12910, 0.43F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          Class3192.method11449(
             (float)(this.method13263() + (this.field20845 - 114) / 2),
@@ -406,7 +406,7 @@ public class Class4303 extends Class4278 {
             114.0F,
             114.0F,
             ResourcesDecrypter.artworkPNG,
-            Class5628.method17688(Class1979.field12896.field12910, var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          Class3192.method11463(
             (float)(this.method13263() + (this.field20845 - 114) / 2), (float)(this.method13265() + this.method13269() - 170), 114.0F, 114.0F, 14.0F, var1
@@ -454,7 +454,7 @@ public class Class4303 extends Class4278 {
          (float)var13 - (float)var10 * var9 - 50.0F * var9,
          (float)var14,
          var2,
-         Class5628.method17688(Class1979.field12896.field12910, var1 * var1 * Math.min(1.0F, Math.max(0.0F, 1.0F - var9 * 0.75F)))
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1 * Math.min(1.0F, Math.max(0.0F, 1.0F - var9 * 0.75F)))
       );
       if (var9 > 0.0F) {
          Class3192.method11439(
@@ -462,7 +462,7 @@ public class Class4303 extends Class4278 {
             (float)var13 - (float)var10 * var9 + (float)var10,
             (float)var14,
             var2,
-            Class5628.method17688(Class1979.field12896.field12910, var1 * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
       }
 
@@ -494,7 +494,7 @@ public class Class4303 extends Class4278 {
             (float)(this.method13267() - this.field20845),
             (float)this.field20847,
             this.field20864,
-            Class5628.method17688(Class1979.field12896.field12910, var4 * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
       }
 
@@ -503,21 +503,21 @@ public class Class4303 extends Class4278 {
          0.0F,
          (float)this.method13267(),
          (float)this.field20847,
-         Class5628.method17688(Class1979.field12896.field12910, var4 * var1 * 0.2F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.2F)
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont25,
          (float)((this.method13267() - ResourceRegistry.JelloLightFont25.method23942(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
-         Class5628.method17688(Class1979.field12896.field12910, var4)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4)
       );
       Class3192.method11439(
          ResourceRegistry.JelloMediumFont25,
          (float)((this.method13267() - ResourceRegistry.JelloMediumFont25.method23942(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
-         Class5628.method17688(Class1979.field12896.field12910, 1.0F - var4)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - var4)
       );
       Class3192.method11449(
          (float)this.field20845,
@@ -525,7 +525,7 @@ public class Class4303 extends Class4278 {
          (float)(this.method13267() - this.field20845),
          20.0F,
          ResourcesDecrypter.shadowBottomPNG,
-         Class5628.method17688(Class1979.field12896.field12910, var4 * var1 * 0.5F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.5F)
       );
       this.field20863 = this.field20852.method13513();
    }

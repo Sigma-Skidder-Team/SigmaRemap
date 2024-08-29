@@ -65,8 +65,8 @@ public class Class7286 {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
 
-            for (Module var8 : Client.getInstance().getModuleManager().method14664().values()) {
-               if (var8.method15991().equals(var6) && var8.method15993() != ModuleCategory.GUI && var8.method15993() != ModuleCategory.RENDER) {
+            for (Module var8 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+               if (var8.getName().equals(var6) && var8.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI && var8.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.RENDER) {
                   var5.put("enabled", "false");
                }
             }
@@ -94,8 +94,8 @@ public class Class7286 {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
 
-            if (var2.method15991().equals(var9)) {
-               if (var2.method15993() != ModuleCategory.GUI && var2.method15993() != ModuleCategory.RENDER) {
+            if (var2.getName().equals(var9)) {
+               if (var2.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI && var2.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.RENDER) {
                   var5.method9165(var7, var1);
                }
 
@@ -128,7 +128,7 @@ public class Class7286 {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
 
-            if (var1.method15991().equals(var7)) {
+            if (var1.getName().equals(var7)) {
                return var6;
             }
          }

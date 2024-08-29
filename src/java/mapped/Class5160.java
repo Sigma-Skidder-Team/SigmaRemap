@@ -38,7 +38,7 @@ public class Class5160 extends Module {
     @EventTarget
     @LowerPriority
     public void method16052(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = 0.125;
             if (this.field23424 != -1) {
                 if (this.field23424 == 0) {
@@ -57,7 +57,7 @@ public class Class5160 extends Module {
 
     @EventTarget
     public void method16053(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23424++;
             if (this.field23424 == 1) {
                 var1.method13912(0.1);
@@ -70,7 +70,7 @@ public class Class5160 extends Module {
 
     @EventTarget
     public void method16054(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;
@@ -89,7 +89,7 @@ public class Class5160 extends Module {
 
     @EventTarget
     public void method16055(Class4422 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = this.field23426;
             double var6 = this.field23425;
             double var8 = this.field23427;

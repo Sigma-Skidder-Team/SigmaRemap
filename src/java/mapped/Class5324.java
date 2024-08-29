@@ -12,7 +12,7 @@ public class Class5324 extends Module {
 
     @EventTarget
     private void method16723(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null) {
                 if (mc.player.field5055 >= 10) {
                     if (mc.player != null && var1.method13898() instanceof Class5473) {

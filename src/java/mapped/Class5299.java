@@ -32,7 +32,7 @@ public class Class5299 extends Module {
                     var1.method13995((double) ((int) mc.player.getPositionVec().field18049) - mc.player.getPositionVec().field18049);
                     this.field23832 = true;
                 }
-            } else if (this.method15974("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
+            } else if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
                 mc.player.method2914();
                 var1.method13995(mc.player.method3433().field18049);
             } else if (!mc.gameSettings.field44637.isKeyDown()) {
@@ -41,7 +41,7 @@ public class Class5299 extends Module {
             } else {
                 var1.method13995(-0.0784);
             }
-        } else if (this.method15974("AutoJump")) {
+        } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
             mc.player.method2914();
             var1.method13995(mc.player.method3433().field18049);
         }
@@ -51,10 +51,10 @@ public class Class5299 extends Module {
 
     @EventTarget
     private void method16652(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             Class9629 var4 = Class5628.method17760(1.0E-4);
             String var5 = this.getStringSettingValueByName("Mode");
-            if (this.method15974("Ceiling")
+            if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.field5036
                     && mc.world.method7055(mc.player, mc.player.field5035.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.method13912(var1.method13911() + 4.9E-7);
@@ -72,7 +72,7 @@ public class Class5299 extends Module {
                 }
 
                 if (this.field23832) {
-                    if (this.method15974("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
+                    if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.field44636.isKeyDown()) {
                         this.field23832 = !this.field23832;
                     }
 
@@ -103,7 +103,7 @@ public class Class5299 extends Module {
 
     @EventTarget
     private void method16653(Class4398 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13903() != null
                     && !var1.method13903().method19516()
                     && var1.method13903().method19514().field28450 > mc.player.field5035.field28450 + 1.0) {

@@ -139,7 +139,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public void method4942(Class2266 var1) {
       this.field5890.method3621(0, new ItemStack(Items.field37886));
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, Class6067.field26677, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, Sounds.field26677, var1, 0.5F, 1.0F);
       }
    }
 
@@ -190,7 +190,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public boolean method2921(float var1, float var2) {
       if (var1 > 1.0F) {
-         this.method2863(Class6067.field26676, 0.4F, 1.0F);
+         this.method2863(Sounds.field26676, 0.4F, 1.0F);
       }
 
       int var5 = this.method3067(var1, var2);
@@ -248,7 +248,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       boolean var4 = this.method4943();
       this.method4903();
       if (this.field5055 > 20 && !var4 && this.method4943()) {
-         this.method2863(Class6067.field26677, 0.5F, 1.0F);
+         this.method2863(Sounds.field26677, 0.5F, 1.0F);
       }
    }
 
@@ -307,18 +307,18 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (this.field5901 > 5 && this.field5901 % 3 == 0) {
                this.method4950(var6);
             } else if (this.field5901 <= 5) {
-               this.method2863(Class6067.field26679, var6.method29710() * 0.15F, var6.method29711());
+               this.method2863(Sounds.field26679, var6.method29710() * 0.15F, var6.method29711());
             }
          } else if (var6 != Class8447.field36200) {
-            this.method2863(Class6067.field26678, var6.method29710() * 0.15F, var6.method29711());
+            this.method2863(Sounds.field26678, var6.method29710() * 0.15F, var6.method29711());
          } else {
-            this.method2863(Class6067.field26679, var6.method29710() * 0.15F, var6.method29711());
+            this.method2863(Sounds.field26679, var6.method29710() * 0.15F, var6.method29711());
          }
       }
    }
 
    public void method4950(Class8447 var1) {
-      this.method2863(Class6067.field26673, var1.method29710() * 0.15F, var1.method29711());
+      this.method2863(Sounds.field26673, var1.method29710() * 0.15F, var1.method29711());
    }
 
    public static Class7037 method4951() {
@@ -706,7 +706,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4960() {
-      this.method2863(Class6067.field26675, 0.4F, 1.0F);
+      this.method2863(Sounds.field26675, 0.4F, 1.0F);
    }
 
    @Override

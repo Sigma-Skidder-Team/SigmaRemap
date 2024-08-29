@@ -29,7 +29,7 @@ public class Class5286 extends Module {
     @EventTarget
     @LowerPriority
     private void method16586(Class4434 var1) {
-        if (this.method15996() && !var1.isCancelled()) {
+        if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.method13988();
             Class2131 var6 = ((Class5330) this.method16004()).method16748(var1);
             if (var6 == Class2131.field13904) {
@@ -55,11 +55,11 @@ public class Class5286 extends Module {
 
     @EventTarget
     private void method16587(Class4399 var1) {
-        if (this.method15996() && mc.player != null && var1.method13921()) {
+        if (this.isEnabled() && mc.player != null && var1.method13921()) {
             if (this.field23758 != 1) {
                 if (this.field23758 == 3) {
-                    Module var4 = Client.getInstance().getModuleManager().method14662(Class5332.class);
-                    if (var4.method15996() && var4.getStringSettingValueByName("Type").equals("NoGround")) {
+                    Module var4 = Client.getInstance().getModuleManager().getModuleByClass(Class5332.class);
+                    if (var4.isEnabled() && var4.getStringSettingValueByName("Type").equals("NoGround")) {
                         var1.method13912(var1.method13911() + 1.0E-14);
                     } else {
                         var1.method13920(true);
@@ -73,7 +73,7 @@ public class Class5286 extends Module {
 
     @EventTarget
     private void method16588(Class4435 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (this.field23758 == 1) {
                 double var4 = Class9567.method37080();
                 if (this.field23760 < 1.1) {
@@ -120,7 +120,7 @@ public class Class5286 extends Module {
 
     @EventTarget
     private void method16589(Class4417 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!var1.method13967()) {
                 mc.player.field5051 = 1.07F;
             } else {

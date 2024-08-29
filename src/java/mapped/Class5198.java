@@ -13,11 +13,11 @@ public class Class5198 extends Module {
 
     @EventTarget
     private void method16186(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.method3090() != null) {
                 if (mc.player.method3090().getItem() instanceof Class3292) {
                     if (mc.objectMouseOver instanceof BlockRayTraceResult) {
-                        if (!this.method15974("Reduce Delay")) {
+                        if (!this.getBooleanValueFromSetttingName("Reduce Delay")) {
                             mc.rightClickDelayTimer = 0;
                         } else {
                             mc.rightClickDelayTimer--;

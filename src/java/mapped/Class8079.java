@@ -51,7 +51,7 @@ public class Class8079 implements IAmbientSoundHandler {
 
       this.field34726.ifPresent(var1 -> {
          if (this.field34723.nextDouble() < var1.method28563()) {
-            this.field34721.method1000(Class6339.method19297(var1.method28562()));
+            this.field34721.method1000(MinecraftSoundManager.method19297(var1.method28562()));
          }
       });
       this.field34725
@@ -82,7 +82,7 @@ public class Class8079 implements IAmbientSoundHandler {
                   double var18 = var12 - this.field34720.getPosZ();
                   double var20 = (double) MathHelper.method37766(var14 * var14 + var16 * var16 + var18 * var18);
                   double var22 = var20 + var1.method27076();
-                  Class6339 var24 = Class6339.method19298(
+                  MinecraftSoundManager var24 = MinecraftSoundManager.method19298(
                      var1.method27073(),
                      this.field34720.getPosX() + var14 / var20 * var22,
                      this.field34720.method3442() + var16 / var20 * var22,

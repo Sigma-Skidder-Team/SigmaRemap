@@ -27,7 +27,7 @@ public class Class5866 extends Class5839 {
       this.field25636.method31716((var1x, var2x) -> {
          long var5 = var1x.method6783();
          if (Class5837.method18257(this.field25637) != var5) {
-            var1x.method6742((PlayerEntity)null, var2x, Class6067.field27178, Class2266.field14732, 1.0F, 1.0F);
+            var1x.method6742((PlayerEntity)null, var2x, Sounds.field27178, Class2266.field14732, 1.0F, 1.0F);
             Class5837.method18258(this.field25637, var5);
          }
       });

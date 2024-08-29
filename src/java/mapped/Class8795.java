@@ -27,8 +27,8 @@ public class Class8795 {
       this.field39613.clear();
       this.field39614 = -999.0F;
       this.field39615 = -999.0F;
-      Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(false);
-      Client.getInstance().getModuleManager().method14662(Fly.class).setState(false);
+      Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).setState(false);
+      Client.getInstance().getModuleManager().getModuleByClass(Fly.class).setState(false);
    }
 
    public void method31739(List<Class9510> var1) {
@@ -212,16 +212,16 @@ public class Class8795 {
             }
 
             this.field39612.player.field5031 = var37;
-            if (var36 && !this.field39612.player.field5036 && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+            if (var36 && !this.field39612.player.field5036 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
                Class5628.method17724(0.0);
                Class5628.method17726(0.0);
             } else {
-               if (Client.getInstance().getModuleManager().method14662(Fly.class).method15996() && !Class5628.method17730(this.field39612.player, 5.0F)) {
+               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !Class5628.method17730(this.field39612.player, 5.0F)) {
                   var36 = true;
                }
 
-               Client.getInstance().getModuleManager().method14662(BlockFly.class).setState(var35);
-               Client.getInstance().getModuleManager().method14662(Fly.class).setState(var36);
+               Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).setState(var35);
+               Client.getInstance().getModuleManager().getModuleByClass(Fly.class).setState(var36);
                if (!var17 || !var16) {
                   if (var8.field44271.method33972().method11341(this.field39612.player.getPositionVec()) > 10.0) {
                      this.method31738();
@@ -363,8 +363,8 @@ public class Class8795 {
          BlockPos var17 = Class9217.method34564(this.field39612.player.field5031, this.field39612.player.field5032, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
-               int var18 = Class5628.method17688(Class1979.field12903.field12910, 0.02F);
-               int var6 = Class5628.method17688(Class1979.field12894.field12910, 0.02F);
+               int var18 = Class5628.method17688(ClientColors.PALE_ORANGE.getColor, 0.02F);
+               int var6 = Class5628.method17688(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
                GL11.glPushMatrix();
                GL11.glDisable(2929);
 
@@ -423,10 +423,10 @@ public class Class8795 {
          0.0F,
          (float)(var10.method23942(var7) / 2 + 10),
          (float)(var10.method23952() + 2),
-         Class5628.method17688(Class1979.field12891.field12910, 0.1F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F)
       );
       GL11.glTranslated((double)(-var10.method23942(var7) / 2), 0.0, 0.0);
-      Class3192.method11439(var10, 0.0F, 0.0F, var7, Class5628.method17688(Class1979.field12896.field12910, 0.3F));
+      Class3192.method11439(var10, 0.0F, 0.0F, var7, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

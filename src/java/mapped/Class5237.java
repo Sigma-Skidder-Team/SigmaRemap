@@ -76,7 +76,7 @@ public class Class5237 extends Module {
 
     @EventTarget
     private void method16327(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5543) {
                 for (Suggestion var6 : ((Class5543) var1.method13898()).method17425().getList()) {
                     String[] var7 = var6.getText().split(":");

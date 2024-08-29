@@ -13,7 +13,7 @@ public class Class5224 extends Module {
     @Override
     public void method15953() {
         super.method15953();
-        field23568 = this.method15996();
+        field23568 = this.isEnabled();
     }
 
     @Override

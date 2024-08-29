@@ -79,7 +79,7 @@ public class Class1030 extends Class1025 {
 
    @Override
    public Class9455 method4546() {
-      return Class6067.field27210;
+      return Sounds.field27210;
    }
 
    @Nullable
@@ -120,17 +120,17 @@ public class Class1030 extends Class1025 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27209;
+      return Sounds.field27209;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27211;
+      return Sounds.field27211;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27212;
+      return Sounds.field27212;
    }
 
    @Override

@@ -100,7 +100,7 @@ public class Class4266 extends Class4247 {
             GL11.glPushMatrix();
             Class3192.method11476();
             Class3192.method11474(
-               (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 8.0F, Class1979.field12896.field12910
+               (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 8.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor
             );
             Class3192.method11477(Class2329.field15940);
             Class3192.method11448(
@@ -109,7 +109,7 @@ public class Class4266 extends Class4247 {
                (float)(this.field20897 + 2),
                (float)(this.field20898 + 2),
                this.field20688,
-               Class1979.field12896.field12910
+               ClientColors.LIGHT_GREYISH_BLUE.getColor
             );
 
             while (var4.hasNext()) {
@@ -122,7 +122,7 @@ public class Class4266 extends Class4247 {
                   (float)(this.field20895 + var9),
                   (float)(var8 + this.field20898 / 4),
                   (float)(var9 * 2 - 4) * var11.field30490 + 4.0F,
-                  Class5628.method17688(Class1979.field12896.field12910, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
+                  Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
                Class3192.method11422();
                var11.field30490 = Math.min(var11.field30490 + 3.0F / (float) Minecraft.getFps(), 1.0F);
@@ -138,7 +138,7 @@ public class Class4266 extends Class4247 {
                (float)this.field20897,
                (float)this.field20898,
                6.0F,
-               Class5628.method17688(Class1979.field12891.field12910, 0.3F)
+               Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             GL11.glPopMatrix();
             Class3192.method11439(
@@ -146,10 +146,10 @@ public class Class4266 extends Class4247 {
                (float)(this.field20895 + 14),
                (float)(this.field20896 + 8),
                "+",
-               Class5628.method17688(Class1979.field12896.field12910, 0.8F)
+               Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
             Class3192.method11424(
-               (float)(this.field20895 + 16), (float)(this.field20896 + 65), 8.0F, 2.0F, Class5628.method17688(Class1979.field12896.field12910, 0.8F)
+               (float)(this.field20895 + 16), (float)(this.field20896 + 65), 8.0F, 2.0F, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
          }
       } catch (IOException var10) {

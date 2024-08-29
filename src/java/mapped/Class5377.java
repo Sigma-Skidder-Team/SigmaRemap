@@ -29,7 +29,7 @@ public class Class5377 extends Module {
         field24003.put("cxbot", ResourcesDecrypter.cxPNG);
     }
 
-    public int field24008 = Class5628.method17688(Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 75.0F), 0.5F);
+    public int field24008 = Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.5F);
     private final HashMap<BlockPos, Class7070> field24000 = new HashMap<BlockPos, Class7070>();
     private BlockPos field24001;
     private final List<Entity> field24005 = new ArrayList<Entity>();
@@ -72,8 +72,8 @@ public class Class5377 extends Module {
 
     @EventTarget
     private void method16926(TickEvent var1) {
-        if (this.method15996()) {
-            this.field24006 = this.method15974("Furnaces");
+        if (this.isEnabled()) {
+            this.field24006 = this.getBooleanValueFromSetttingName("Furnaces");
             if (!this.field24006) {
                 this.field24000.clear();
             } else {
@@ -105,7 +105,7 @@ public class Class5377 extends Module {
 
     @EventTarget
     private void method16927(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5570) {
                 Class5570 var4 = (Class5570) var1.method13932();
                 if (mc.world.getBlockState(var4.method17498().getPos()).getBlock() instanceof Class3353) {
@@ -133,7 +133,7 @@ public class Class5377 extends Module {
 
     @EventTarget
     private void method16928(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5498) {
                 Class5498 var4 = (Class5498) var1.method13898();
                 if (var4.method17285() != Class8298.field35661) {
@@ -198,9 +198,9 @@ public class Class5377 extends Module {
 
     @EventTarget
     public void method16930(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             RenderSystem.method27905(33986, 240.0F, 240.0F);
-            boolean var4 = this.method15974("Magnify");
+            boolean var4 = this.getBooleanValueFromSetttingName("Magnify");
 
             for (Entity var6 : this.field24005) {
                 float var7 = 1.0F;
@@ -228,7 +228,7 @@ public class Class5377 extends Module {
                 this.method16932((BlockPos) var11.getKey(), (Class7070) var11.getValue(), var13);
             }
 
-            if (this.method15974("Mob Owners")) {
+            if (this.getBooleanValueFromSetttingName("Mob Owners")) {
                 for (Entity var12 : mc.world.method6835()) {
                     if (var12 == mc.player && (var12 instanceof Class1013 || var12 instanceof Class1074)) {
                         UUID var14 = !(var12 instanceof Class1013) ? ((Class1074) var12).method4933() : ((Class1013) var12).method4397();
@@ -251,7 +251,7 @@ public class Class5377 extends Module {
 
                             if (this.field24007.get(var14) != null) {
                                 float var8 = 1.0F;
-                                if (this.method15974("Magnify")) {
+                                if (this.getBooleanValueFromSetttingName("Magnify")) {
                                     var8 = (float) Math.max(1.0, Math.sqrt(Class9647.method37620(var12) / 30.0));
                                 }
 
@@ -334,23 +334,23 @@ public class Class5377 extends Module {
         byte var19 = 40;
         Class3192.method11426(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
         Class3192.method11463(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
-        Class3192.method11439(var6, var13, (float) (var13 - 5), "Furnace", Class1979.field12896.field12910);
+        Class3192.method11439(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
         if (var16 == null) {
             Class3192.method11439(
-                    ResourceRegistry.JelloLightFont20, (float) (var13 + 15), (float) (var13 + 40), "Empty", Class5628.method17688(Class1979.field12896.field12910, 0.6F)
+                    ResourceRegistry.JelloLightFont20, (float) (var13 + 15), (float) (var13 + 40), "Empty", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
             );
         }
 
         ItemStack var20 = var2.method21987();
         if (var20 != null) {
             Class3192.method11479(var20, var13, var13 + 27, 45, 45);
-            Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), Class1979.field12896.field12910);
-            Class3192.method11439(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, Class1979.field12896.field12910);
+            Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            Class3192.method11439(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         }
 
         Class3192.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, Class5628.method17688(-106750, 0.3F));
         Class3192.method11426(
-                0.0F, (float) var18 - 6.0F, Math.min((float) var17 * var11, (float) var17), (float) var18, Class5628.method17688(Class1979.field12896.field12910, 0.75F)
+                0.0F, (float) var18 - 6.0F, Math.min((float) var17 * var11, (float) var17), (float) var18, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F)
         );
         GL11.glPopMatrix();
         GL11.glPopMatrix();
@@ -365,8 +365,8 @@ public class Class5377 extends Module {
     public void method16933(double var1, double var3, double var5, Entity var7, float var8, String var9) {
         ClientResource var12 = ResourceRegistry.JelloLightFont25;
         String var13 = var9 == null ? var7.getName().getString().replaceAll("§.", "") : var9;
-        if (Client.getInstance().getModuleManager().method14662(Class5364.class).method15996() && var13.equals(mc.getSession().getUsername())) {
-            var13 = Client.getInstance().getModuleManager().method14662(Class5364.class).getStringSettingValueByName("Username");
+        if (Client.getInstance().getModuleManager().getModuleByClass(Class5364.class).isEnabled() && var13.equals(mc.getSession().getUsername())) {
+            var13 = Client.getInstance().getModuleManager().getModuleByClass(Class5364.class).getStringSettingValueByName("Username");
         }
 
         if (var13.length() != 0) {
@@ -397,7 +397,7 @@ public class Class5377 extends Module {
             }
 
             int var20 = Class5628.method17688(
-                    !(var7 instanceof PlayerEntity) ? Class1979.field12896.field12910 : new Color(Class8781.method31663((PlayerEntity) var7)).getRGB(), 0.5F
+                    !(var7 instanceof PlayerEntity) ? ClientColors.LIGHT_GREYISH_BLUE.getColor : new Color(Class8781.method31663((PlayerEntity) var7)).getRGB(), 0.5F
             );
             int var21 = var12.method23942(var13) / 2;
             if (!field24003.containsKey(var13)) {
@@ -418,7 +418,7 @@ public class Class5377 extends Module {
                         14.0F,
                         (float) (var12.method23952() + 27),
                         ResourcesDecrypter.shadowRightPNG,
-                        Class5628.method17688(Class1979.field12896.field12910, 0.6F)
+                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
                 );
                 Class3192.method11463((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
@@ -441,11 +441,11 @@ public class Class5377 extends Module {
                 var23 = "H: ";
             }
 
-            Class3192.method11439(var12, 0.0F, -20.0F, var13, Class1979.field12896.field12910);
-            Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, Class1979.field12896.field12910);
+            Class3192.method11439(var12, 0.0F, -20.0F, var13, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, 10.0F, var23 + var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             Class8433 var25 = Client.getInstance().getNetworkManager().field38429.method29512(var7);
             if (var25 != null) {
-                Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, Class1979.field12896.field12910);
+                Class3192.method11439(ResourceRegistry.JelloLightFont14, 0.0F, -30.0F, var25.field36141, ClientColors.LIGHT_GREYISH_BLUE.getColor);
             }
 
             GL11.glPopMatrix();
@@ -460,7 +460,7 @@ public class Class5377 extends Module {
 
     @EventTarget
     public void method16934(Class4433 var1) {
-        if (this.method15996() && var1.method13987() instanceof PlayerEntity) {
+        if (this.isEnabled() && var1.method13987() instanceof PlayerEntity) {
             var1.method13900(true);
         }
     }

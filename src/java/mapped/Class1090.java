@@ -94,7 +94,7 @@ public class Class1090 extends Class1018 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return Class6067.field26865;
+      return Sounds.field26865;
    }
 
    @Override
@@ -104,12 +104,12 @@ public class Class1090 extends Class1018 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26864;
+      return Sounds.field26864;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26866;
+      return Sounds.field26866;
    }
 
    private float method5075() {

@@ -26,18 +26,18 @@ public class Class3469 extends Class3468 {
    @Override
    public void method12154(Class1660 var1, BlockPos var2) {
       if (this.field19004 != Class8649.field38956 && this.field19004 != Class8649.field38957) {
-         var1.method6742((PlayerEntity)null, var2, Class6067.field27136, Class2266.field14732, 0.3F, 0.6F);
+         var1.method6742((PlayerEntity)null, var2, Sounds.field27136, Class2266.field14732, 0.3F, 0.6F);
       } else {
-         var1.method6742((PlayerEntity)null, var2, Class6067.field27269, Class2266.field14732, 0.3F, 0.8F);
+         var1.method6742((PlayerEntity)null, var2, Sounds.field27269, Class2266.field14732, 0.3F, 0.8F);
       }
    }
 
    @Override
    public void method12155(Class1660 var1, BlockPos var2) {
       if (this.field19004 != Class8649.field38956 && this.field19004 != Class8649.field38957) {
-         var1.method6742((PlayerEntity)null, var2, Class6067.field27135, Class2266.field14732, 0.3F, 0.5F);
+         var1.method6742((PlayerEntity)null, var2, Sounds.field27135, Class2266.field14732, 0.3F, 0.5F);
       } else {
-         var1.method6742((PlayerEntity)null, var2, Class6067.field27268, Class2266.field14732, 0.3F, 0.7F);
+         var1.method6742((PlayerEntity)null, var2, Sounds.field27268, Class2266.field14732, 0.3F, 0.7F);
       }
    }
 

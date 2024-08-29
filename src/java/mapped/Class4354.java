@@ -64,10 +64,10 @@ public class Class4354 extends Class4247 {
                               this.field21284,
                               var15.field44773,
                               new Class6387(
-                                 Class1979.field12891.field12910,
-                                 Class1979.field12891.field12910,
-                                 Class1979.field12891.field12910,
-                                 Class1979.field12891.field12910
+                                 ClientColors.DEEP_TEAL.getColor,
+                                 ClientColors.DEEP_TEAL.getColor,
+                                 ClientColors.DEEP_TEAL.getColor,
+                                 ClientColors.DEEP_TEAL.getColor
                               ),
                               var15.field44772,
                               ResourceRegistry.field38860
@@ -113,7 +113,7 @@ public class Class4354 extends Class4247 {
                      this.field21284,
                      var15.field44773,
                      new Class6387(
-                        Class1979.field12899.field12910, Class1979.field12899.field12910, Class1979.field12899.field12910, Class1979.field12899.field12910
+                        ClientColors.MID_GREY.getColor, ClientColors.MID_GREY.getColor, ClientColors.MID_GREY.getColor, ClientColors.MID_GREY.getColor
                      ),
                      var15.field44772,
                      ResourceRegistry.JelloLightFont20
@@ -215,14 +215,14 @@ public class Class4354 extends Class4247 {
             (float)(this.method13267() + 10),
             (float)(this.method13269() + 10),
             this.field21281,
-            Class5628.method17688(Class1979.field12896.field12910, var7)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
          Class3192.method11426(
-            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, 0.1F * var7)
+            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {
             Class3192.method11465(
-               (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, Class5628.method17688(Class1979.field12896.field12910, var7)
+               (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
             );
          }
 
@@ -265,7 +265,7 @@ public class Class4354 extends Class4247 {
             }
 
             this.field21281 = TextureUtil.method32933(
-               "blur", ImageUtil.method35036(0, 0, this.method13267(), this.method13269(), 5, 10, Class1979.field12896.field12910, true)
+               "blur", ImageUtil.method35036(0, 0, this.method13267(), this.method13269(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.getColor, true)
             );
          } catch (IOException var5) {
             Client.getInstance().getLogger().error(var5.getMessage());

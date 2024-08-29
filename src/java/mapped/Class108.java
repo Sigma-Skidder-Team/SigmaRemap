@@ -1,22 +1,22 @@
 package mapped;
 
 public enum Class108 implements Class83 {
-   field347("harp", Class6067.field26854),
-   field348("basedrum", Class6067.field26848),
-   field349("snare", Class6067.field26857),
-   field350("hat", Class6067.field26855),
-   field351("bass", Class6067.field26849),
-   field352("flute", Class6067.field26852),
-   field353("bell", Class6067.field26850),
-   field354("guitar", Class6067.field26853),
-   field355("chime", Class6067.field26851),
-   field356("xylophone", Class6067.field26858),
-   field357("iron_xylophone", Class6067.field26859),
-   field358("cow_bell", Class6067.field26860),
-   field359("didgeridoo", Class6067.field26861),
-   field360("bit", Class6067.field26862),
-   field361("banjo", Class6067.field26863),
-   field362("pling", Class6067.field26856);
+   field347("harp", Sounds.field26854),
+   field348("basedrum", Sounds.field26848),
+   field349("snare", Sounds.field26857),
+   field350("hat", Sounds.field26855),
+   field351("bass", Sounds.field26849),
+   field352("flute", Sounds.field26852),
+   field353("bell", Sounds.field26850),
+   field354("guitar", Sounds.field26853),
+   field355("chime", Sounds.field26851),
+   field356("xylophone", Sounds.field26858),
+   field357("iron_xylophone", Sounds.field26859),
+   field358("cow_bell", Sounds.field26860),
+   field359("didgeridoo", Sounds.field26861),
+   field360("bit", Sounds.field26862),
+   field361("banjo", Sounds.field26863),
+   field362("pling", Sounds.field26856);
 
    private final String field363;
    private final Class9455 field364;

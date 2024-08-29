@@ -104,7 +104,7 @@ public class Class1074 extends AbstractHorseEntity {
       super.method4902(var1);
       ItemStack var5 = this.method4990();
       if (this.field5055 > 20 && this.method4900(var5) && var4 != var5) {
-         this.method2863(Class6067.field26669, 0.5F, 1.0F);
+         this.method2863(Sounds.field26669, 0.5F, 1.0F);
       }
    }
 
@@ -112,38 +112,38 @@ public class Class1074 extends AbstractHorseEntity {
    public void method4950(Class8447 var1) {
       super.method4950(var1);
       if (this.field5054.nextInt(10) == 0) {
-         this.method2863(Class6067.field26670, var1.method29710() * 0.6F, var1.method29711());
+         this.method2863(Sounds.field26670, var1.method29710() * 0.6F, var1.method29711());
       }
    }
 
    @Override
    public Class9455 method4241() {
       super.method4241();
-      return Class6067.field26667;
+      return Sounds.field26667;
    }
 
    @Override
    public Class9455 method2880() {
       super.method2880();
-      return Class6067.field26671;
+      return Sounds.field26671;
    }
 
    @Nullable
    @Override
    public Class9455 method4894() {
-      return Class6067.field26672;
+      return Sounds.field26672;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
       super.method2879(var1);
-      return Class6067.field26674;
+      return Sounds.field26674;
    }
 
    @Override
    public Class9455 method4893() {
       super.method4893();
-      return Class6067.field26668;
+      return Sounds.field26668;
    }
 
    @Override

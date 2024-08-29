@@ -38,17 +38,17 @@ public class Class1103 extends Class1009 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26402;
+      return Sounds.field26402;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26405;
+      return Sounds.field26405;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26404;
+      return Sounds.field26404;
    }
 
    @Override
@@ -69,7 +69,7 @@ public class Class1103 extends Class1009 {
                   this.getPosX() + 0.5,
                   this.getPosY() + 0.5,
                   this.getPosZ() + 0.5,
-                  Class6067.field26403,
+                  Sounds.field26403,
                   this.method2864(),
                   1.0F + this.field5054.nextFloat(),
                   this.field5054.nextFloat() * 0.7F + 0.3F,

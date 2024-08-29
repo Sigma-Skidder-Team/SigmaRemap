@@ -44,7 +44,7 @@ public class Class5341 extends Class5325 {
     public void method16763(Class4396 var1) {
         if (var1.method13898() instanceof Class5473 && mc.player != null) {
             field23893 = 0;
-            if (this.method15974("Lag back checker") && this.method15996() && mc.player.field5055 > 2) {
+            if (this.getBooleanValueFromSetttingName("Lag back checker") && this.isEnabled() && mc.player.field5055 > 2) {
                 Client.getInstance().getNotificationManager().post(new Notification("Speed", "Disabled speed due to lagback."));
                 this.method16000();
             }
@@ -52,8 +52,8 @@ public class Class5341 extends Class5325 {
     }
 
     public void method16764() {
-        if (this.field23879 instanceof Class5158) {
-            Class5158 var3 = (Class5158) this.field23879;
+        if (this.module instanceof Class5158) {
+            Class5158 var3 = (Class5158) this.module;
             var3.method16044();
         }
     }

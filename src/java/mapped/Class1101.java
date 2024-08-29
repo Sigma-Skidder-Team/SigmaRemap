@@ -53,22 +53,22 @@ public class Class1101 extends Class1009 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27119;
+      return Sounds.field27119;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27121;
+      return Sounds.field27121;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27120;
+      return Sounds.field27120;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field27122, 0.15F, 1.0F);
+      this.method2863(Sounds.field27122, 0.15F, 1.0F);
    }
 
    @Override

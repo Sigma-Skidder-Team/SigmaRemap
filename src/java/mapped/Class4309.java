@@ -64,7 +64,7 @@ public class Class4309 extends Class4307 {
    public static ArrayList<Class6984> method13328() {
       ArrayList var2 = new ArrayList();
 
-      for (Module var4 : Client.getInstance().getModuleManager().method14664().values()) {
+      for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
          var2.add(new Class6984(var4));
       }
 
@@ -140,7 +140,7 @@ public class Class4309 extends Class4307 {
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(Class1979.field12891.field12910, var5)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       Class3192.method11439(
@@ -148,7 +148,7 @@ public class Class4309 extends Class4307 {
          (float)((this.field20897 - 1060) / 2),
          (float)((this.field20898 - 357) / 2 - 90),
          "Keybind Manager",
-         Class1979.field12896.field12910
+         ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
       super.method13027(var1);
    }

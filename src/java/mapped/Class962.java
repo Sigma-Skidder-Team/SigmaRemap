@@ -111,7 +111,7 @@ public class Class962 extends TileEntity implements Class935 {
                   (double)var8.getX(),
                   (double)var8.getY(),
                   (double)var8.getZ(),
-                  Class6067.field26396,
+                  Sounds.field26396,
                   Class2266.field14732,
                   1.0F,
                   1.0F
@@ -175,7 +175,7 @@ public class Class962 extends TileEntity implements Class935 {
                   var12.method3273(var18, var20, var22, var12.field5031, var12.field5032);
                }
 
-               this.field5324.method6742((PlayerEntity)null, var7, Class6067.field26397, Class2266.field14732, 1.0F, 1.0F);
+               this.field5324.method6742((PlayerEntity)null, var7, Sounds.field26397, Class2266.field14732, 1.0F, 1.0F);
                return this.field5324.method6916(var12);
             } else {
                return false;
@@ -228,7 +228,7 @@ public class Class962 extends TileEntity implements Class935 {
             double var4 = (double)var3.getX() + 0.5;
             double var6 = (double)var3.getY();
             double var8 = (double)var3.getZ() + 0.5;
-            this.field5324.method6743((PlayerEntity)null, var4, var6, var8, Class6067.field26399, Class2266.field14732, 1.0F, 1.0F);
+            this.field5324.method6743((PlayerEntity)null, var4, var6, var8, Sounds.field26399, Class2266.field14732, 1.0F, 1.0F);
          }
 
          this.method3921();

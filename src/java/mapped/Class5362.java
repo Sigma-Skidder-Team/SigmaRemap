@@ -92,7 +92,7 @@ public class Class5362 extends Module {
 
     @EventTarget
     public void method16865(Class4399 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 for (BlockPos var5 : Class9217.method34545(Class9217.method34561(mc.playerController.method23135()))) {
                     if (Class9217.method34535(mc.player, var5)) {

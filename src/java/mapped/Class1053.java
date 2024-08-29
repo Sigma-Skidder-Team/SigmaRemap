@@ -19,21 +19,21 @@ public class Class1053 extends Class1050 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27016;
+      return Sounds.field27016;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27017;
+      return Sounds.field27017;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27019;
+      return Sounds.field27019;
    }
 
    @Override
    public Class9455 method4798() {
-      return Class6067.field27018;
+      return Sounds.field27018;
    }
 }

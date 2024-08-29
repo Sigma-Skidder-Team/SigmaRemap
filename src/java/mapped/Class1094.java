@@ -209,22 +209,22 @@ public class Class1094 extends Class1018 {
    }
 
    public Class9455 method5112() {
-      return Class6067.field26991;
+      return Sounds.field26991;
    }
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26987;
+      return Sounds.field26987;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26990;
+      return Sounds.field26990;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26989;
+      return Sounds.field26989;
    }
 
    @Override
@@ -232,7 +232,7 @@ public class Class1094 extends Class1018 {
       if (this.method5114() != 99) {
          return var1.method2741(Class8654.method31115(this), 3.0F);
       } else {
-         this.method2863(Class6067.field26988, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+         this.method2863(Sounds.field26988, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
          return var1.method2741(Class8654.method31115(this), 8.0F);
       }
    }

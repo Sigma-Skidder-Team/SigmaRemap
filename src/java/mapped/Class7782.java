@@ -191,7 +191,7 @@ public class Class7782 {
                this.field33374,
                this.field33375,
                this.field33376,
-               Class6067.field26610,
+               Sounds.field26610,
                Class2266.field14732,
                4.0F,
                (1.0F + (this.field33373.field9016.nextFloat() - this.field33373.field9016.nextFloat()) * 0.2F) * 0.7F,

@@ -45,7 +45,7 @@ public class Class8588 {
                      var1.getPosX(),
                      var1.getPosY(),
                      var1.getPosZ(),
-                     Class6067.field26714,
+                     Sounds.field26714,
                      Class2266.field14735,
                      0.2F,
                      ((var1.method3013().nextFloat() - var1.method3013().nextFloat()) * 0.7F + 1.0F) * 2.0F

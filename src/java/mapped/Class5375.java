@@ -14,16 +14,16 @@ public class Class5375 extends Module {
 
     public Class5375() {
         super(ModuleCategory.COMBAT, "Packet", "Packet criticals");
-        this.registerSetting(new Class6009<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel"));
     }
 
     @EventTarget
     private void method16923(Class4403 var1) {
-        if (this.method15996() && var1.method13935() != null && var1.method13937()) {
+        if (this.isEnabled() && var1.method13935() != null && var1.method13937()) {
             Entity var4 = var1.method13935();
             if (var4 instanceof Class880
-                    && var4.field5061 <= (int) this.method15977("HurtTime")
+                    && var4.field5061 <= (int) this.getNumberValueBySettingName("HurtTime")
                     && Class5330.field23887 > 1
                     && (this.field23998.method27121() > 200L || var4.field5061 > 0)
                     && mc.player.field5036
@@ -51,7 +51,7 @@ public class Class5375 extends Module {
     @EventTarget
     @HigherPriority
     private void method16924(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5603) {
                 if (!this.field23998.method27123()) {
                     this.field23998.method27118();

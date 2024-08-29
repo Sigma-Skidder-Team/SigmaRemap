@@ -494,7 +494,7 @@ public class ClientWorld extends World {
    @Override
    public void method6745(double var1, double var3, double var5, Class9455 var7, Class2266 var8, float var9, float var10, boolean var11) {
       double var14 = this.field9030.gameRenderer.getActiveRenderInfo().method37504().method11343(var1, var3, var5);
-      Class6339 var16 = new Class6339(var7, var8, var9, var10, var1, var3, var5);
+      MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
          this.field9030.getSoundHandler().method1001(var16, (int)(var17 * 20.0));

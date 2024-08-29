@@ -13,9 +13,9 @@ public class Class5212 extends Module {
     public Class5212() {
         super(ModuleCategory.WORLD, "Weather", "Removes rain and changes the world's time");
         this.registerSetting(new BooleanSetting("Custom time", "Set the world time", true));
-        this.registerSetting(new Class6009<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method18616(var1 -> {
-            if (this.method15974("Custom time") && this.method15996()) {
-                mc.world.method6834(-((long) this.method15977("Time")));
+        this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method18616(var1 -> {
+            if (this.getBooleanValueFromSetttingName("Custom time") && this.isEnabled()) {
+                mc.world.method6834(-((long) this.getNumberValueBySettingName("Time")));
             }
         }));
         this.registerSetting(new BooleanSetting("Disable rain", "Disable rain", true));
@@ -32,13 +32,13 @@ public class Class5212 extends Module {
             this.field23539 = true;
         }
 
-        mc.world.method6834((long) this.method15977("Time"));
+        mc.world.method6834((long) this.getNumberValueBySettingName("Time"));
     }
 
     @EventTarget
     private void method16230(TickEvent var1) {
-        if (this.method15996()) {
-            if (!this.method15974("Disable rain")) {
+        if (this.isEnabled()) {
+            if (!this.getBooleanValueFromSetttingName("Disable rain")) {
                 if (this.field23539) {
                     if (!(this.field23538 < 1.0F)) {
                         if (this.field23538 > 1.0F) {
@@ -63,7 +63,7 @@ public class Class5212 extends Module {
 
     @EventTarget
     private void method16231(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!(var1.method13898() instanceof Class5577)) {
                 if (var1.method13898() instanceof Class5534) {
                     Class5534 var4 = (Class5534) var1.method13898();
@@ -76,7 +76,7 @@ public class Class5212 extends Module {
                             this.field23539 = true;
                         }
 
-                        if (!this.method15974("Disable rain")) {
+                        if (!this.getBooleanValueFromSetttingName("Disable rain")) {
                             this.field23538 = var4.method17398();
                         } else {
                             var1.method13899(new Class5534(var4.method17397(), 0.0F));
@@ -84,8 +84,8 @@ public class Class5212 extends Module {
                         }
                     }
                 }
-            } else if (this.method15974("Custom time")) {
-                var1.method13899(new Class5577(-((long) this.method15977("Time")), -((long) this.method15977("Time")), true));
+            } else if (this.getBooleanValueFromSetttingName("Custom time")) {
+                var1.method13899(new Class5577(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
             }
         }
     }

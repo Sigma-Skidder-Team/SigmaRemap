@@ -35,11 +35,11 @@ public class Class1537 implements Runnable {
                     boolean var3 = false;
                     boolean var4 = false;
                     if (Client.getInstance().getModuleManager() != null) {
-                        List<Module> var5 = new ArrayList<>(Client.getInstance().getModuleManager().method14664().values());
+                        List<Module> var5 = new ArrayList<>(Client.getInstance().getModuleManager().getModuleMap().values());
 
-                        for (Module var7 : Client.getInstance().getModuleManager().method14664().values()) {
+                        for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
                             if (var7 instanceof Class5325) {
-                                var5.addAll(Arrays.asList(((Class5325) var7).field23878));
+                                var5.addAll(Arrays.asList(((Class5325) var7).moduleArray));
                             }
                         }
 

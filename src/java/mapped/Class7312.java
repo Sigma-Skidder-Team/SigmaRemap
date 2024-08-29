@@ -106,7 +106,7 @@ public class Class7312 {
          (float)var3,
          (float)var4,
          this.field31339,
-         Class5628.method17688(Class1979.field12896.field12910, var5),
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
          (float)var8,
          (float)var9,
          (float)this.field31342,

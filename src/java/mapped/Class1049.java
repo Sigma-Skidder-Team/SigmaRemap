@@ -110,7 +110,7 @@ public abstract class Class1049 extends Class1047 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.field37883 && this.method3066()) {
-         this.method2863(Class6067.field26430, 1.0F, 1.0F);
+         this.method2863(Sounds.field26430, 1.0F, 1.0F);
          var5.method32182(1);
          ItemStack var6 = this.method4796();
          this.method4795(var6);
@@ -149,7 +149,7 @@ public abstract class Class1049 extends Class1047 {
 
    @Override
    public Class9455 method2859() {
-      return Class6067.field26583;
+      return Sounds.field26583;
    }
 
    @Override

@@ -140,7 +140,7 @@ public class Class3354 extends Class3241 {
          Class948 var7 = (Class948)var6;
          var7.method3807(var3.method32106(1));
          method11921(var0, var1, var2, true);
-         var0.method6742((PlayerEntity)null, var1, Class6067.field26415, Class2266.field14732, 1.0F, 1.0F);
+         var0.method6742((PlayerEntity)null, var1, Sounds.field26415, Class2266.field14732, 1.0F, 1.0F);
       }
    }
 

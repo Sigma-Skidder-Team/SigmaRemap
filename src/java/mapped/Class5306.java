@@ -12,7 +12,7 @@ public class Class5306 extends Module {
 
     @EventTarget
     private void method16679(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13932() instanceof Class5522) {
                 Class5522 var4 = (Class5522) var1.method13932();
                 String[] var5 = var4.field24496.split(" ");

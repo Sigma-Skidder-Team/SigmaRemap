@@ -169,7 +169,7 @@ public class Class5822 extends Class5812 {
                this.field25505.method3622();
                this.field25508.method15235(var1.method2929());
                this.method18106(this.field25505);
-               var6x.method6742((PlayerEntity)null, var7x, Class6067.field26533, Class2266.field14732, 1.0F, var6x.field9016.nextFloat() * 0.1F + 0.9F);
+               var6x.method6742((PlayerEntity)null, var7x, Sounds.field26533, Class2266.field14732, 1.0F, var6x.field9016.nextFloat() * 0.1F + 0.9F);
             }
          });
          return true;

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4271 extends Class4247 {
-   public static final Class6387 field20697 = new Class6387(1250067, -15329770).method19410(Class1979.field12891.field12910).method19414(Class2218.field14492);
+   public static final Class6387 field20697 = new Class6387(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
    public List<Integer> field20698 = new ArrayList<Integer>();
    public List<Integer> field20699 = new ArrayList<Integer>();
    public boolean field20700;
@@ -82,7 +82,7 @@ public class Class4271 extends Class4247 {
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() + this.method13108()),
-         Class5628.method17688(Class1979.field12896.field12910, var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       Class3192.method11463(
          (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)(this.method13269() + this.method13108()), 6.0F, var1 * 0.21F

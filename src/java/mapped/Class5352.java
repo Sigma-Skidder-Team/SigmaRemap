@@ -12,7 +12,7 @@ public class Class5352 extends Module {
 
     public Class5352() {
         super(ModuleCategory.MOVEMENT, "LibreCraft", "A fly for LibreCraft");
-        this.registerSetting(new Class6009<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
+        this.registerSetting(new NumberSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Class5352 extends Module {
 
     @EventTarget
     private void method16791(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23911 = true;
@@ -48,7 +48,7 @@ public class Class5352 extends Module {
 
     @EventTarget
     private void method16792(Class4426 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23911 = false;
@@ -59,7 +59,7 @@ public class Class5352 extends Module {
     @EventTarget
     @LowerPriority
     public void method16793(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23910 <= 0) {
                 if (this.field23910 != -1) {
                     if (this.field23910 == 0) {
@@ -70,7 +70,7 @@ public class Class5352 extends Module {
                 } else {
                     var1.method13995(0.299);
                     Class5628.method17725(var1.method13994());
-                    Class9567.method37088(var1, this.method15977("Speed"));
+                    Class9567.method37088(var1, this.getNumberValueBySettingName("Speed"));
                 }
             } else {
                 var1.method13995(0.0);
@@ -81,7 +81,7 @@ public class Class5352 extends Module {
 
     @EventTarget
     public void method16794(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23910++;
             if (this.field23910 != 2) {
                 if (this.field23910 > 2) {
@@ -101,7 +101,7 @@ public class Class5352 extends Module {
 
     @EventTarget
     public void method16795(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (mc.player != null && var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;

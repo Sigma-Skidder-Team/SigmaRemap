@@ -18,11 +18,11 @@ public class Class5223 extends Module {
 
     public Class5223() {
         super(ModuleCategory.WORLD, "Nuker", "Destroys blocks around you");
-        this.registerSetting(new Class6009<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
         this.registerSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
         this.registerSetting(new Class6003("Blocks", "Blocks to destroy", true));
-        this.registerSetting(new Class6010("Color", "The rendered block color", Class1979.field12899.field12910, true));
+        this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
     }
 
     public static void method16265(BlockPos var0) {
@@ -33,8 +33,8 @@ public class Class5223 extends Module {
 
     @EventTarget
     private void method16263(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
-            this.field23567 = this.method16267(this.method15977("Range") / 2.0F);
+        if (this.isEnabled() && var1.method13921()) {
+            this.field23567 = this.method16267(this.getNumberValueBySettingName("Range") / 2.0F);
             if (this.field23567.isEmpty()) {
                 this.field23566 = null;
             } else if (mc.playerController.method23157() != Class1894.field11103) {
@@ -60,7 +60,7 @@ public class Class5223 extends Module {
                     Class4430 var5 = new Class4430(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var5);
                     mc.playerController.onPlayerDamageBlock(this.field23566, Class9217.method34580(this.field23566));
-                    if (!this.method15974("NoSwing")) {
+                    if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -75,7 +75,7 @@ public class Class5223 extends Module {
                     Class4430 var8 = new Class4430(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var8);
                     mc.playerController.onPlayerDamageBlock(this.field23566, Class9217.method34580(this.field23566));
-                    if (!this.method15974("NoSwing")) {
+                    if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -84,7 +84,7 @@ public class Class5223 extends Module {
             } else {
                 for (BlockPos var9 : this.field23567) {
                     mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.field13484, var9, Class9217.method34580(var9)));
-                    if (!this.method15974("NoSwing")) {
+                    if (!this.getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -97,7 +97,7 @@ public class Class5223 extends Module {
     @EventTarget
     public void method16264(Class4420 var1) {
         if (this.field23566 != null && !mc.world.getBlockState(this.field23566).isAir()) {
-            int var4 = Class5628.method17688(this.method15976("Color"), 0.4F);
+            int var4 = Class5628.method17688(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
             GL11.glPushMatrix();
             GL11.glDisable(2929);
             double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().method37504().method11320();

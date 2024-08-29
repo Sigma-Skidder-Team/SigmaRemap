@@ -63,7 +63,7 @@ public class Class3261 extends Class3262 implements Class3260 {
             var3.getPosX(),
             var3.getPosY(),
             var3.getPosZ(),
-            Class6067.field26488,
+            Sounds.field26488,
             var9,
             1.0F,
             1.0F / (field18735.nextFloat() * 0.5F + 1.0F) + 0.2F
@@ -199,7 +199,7 @@ public class Class3261 extends Class3262 implements Class3260 {
 
          var3.method32121(!var12 ? 1 : 3, var1, var1x -> var1x.method3185(var2));
          var0.method6916((Entity)var13);
-         var0.method6743((PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), Class6067.field26494, Class2266.field14735, 1.0F, var5);
+         var0.method6743((PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), Sounds.field26494, Class2266.field14735, 1.0F, var5);
       }
    }
 
@@ -210,7 +210,7 @@ public class Class3261 extends Class3262 implements Class3260 {
          var7.method3484(true);
       }
 
-      var7.method3471(Class6067.field26487);
+      var7.method3471(Sounds.field26487);
       var7.method3494(true);
       int var8 = Class7858.method26311(Class8122.field34931, var2);
       if (var8 > 0) {
@@ -273,7 +273,7 @@ public class Class3261 extends Class3262 implements Class3260 {
       if (!var1.field9020) {
          int var7 = Class7858.method26311(Class8122.field34930, var3);
          Class9455 var8 = this.method11768(var7);
-         Class9455 var9 = var7 != 0 ? null : Class6067.field26489;
+         Class9455 var9 = var7 != 0 ? null : Sounds.field26489;
          float var10 = (float)(var3.method32137() - var4) / (float)method11767(var3);
          if (var10 < 0.2F) {
             this.field18746 = false;
@@ -310,13 +310,13 @@ public class Class3261 extends Class3262 implements Class3260 {
    private Class9455 method11768(int var1) {
       switch (var1) {
          case 1:
-            return Class6067.field26491;
+            return Sounds.field26491;
          case 2:
-            return Class6067.field26492;
+            return Sounds.field26492;
          case 3:
-            return Class6067.field26493;
+            return Sounds.field26493;
          default:
-            return Class6067.field26490;
+            return Sounds.field26490;
       }
    }
 

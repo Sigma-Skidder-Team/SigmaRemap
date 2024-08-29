@@ -31,7 +31,7 @@ public class ModuleManager {
     }
 
     private void method14654() {
-        this.modules.sort(Comparator.comparing(Module::method15990));
+        this.modules.sort(Comparator.comparing(Module::getSuffix));
 
         for (Module var4 : this.modules) {
             Client.getInstance().getEventManager().register(var4);
@@ -48,7 +48,7 @@ public class ModuleManager {
         this.register(new Class5341());
         this.register(new Class5215());
         this.register(new Class5327());
-        this.register(new Class5381());
+        this.register(new Jesus());
         this.register(new Class5337());
         this.register(new Class5213());
         this.register(new Class5363());
@@ -60,7 +60,7 @@ public class ModuleManager {
         this.register(new Class5342());
         this.register(new Class5209());
         this.register(new Class5343());
-        this.register(new Class5357());
+        this.register(new KillAura());
         this.register(new Class5334());
         this.register(new Class5332());
         this.register(new Class5285());
@@ -85,7 +85,7 @@ public class ModuleManager {
         this.register(new Class5258());
         this.register(new Class5250());
         this.register(new Class5295());
-        this.register(new Class5260());
+        this.register(new InvManager());
         this.register(new Class5162());
         this.register(new Class5243());
         this.register(new Class5296());
@@ -147,7 +147,7 @@ public class ModuleManager {
             this.register(new Class5283());
             this.register(new Class5305());
             this.register(new Class5234());
-            this.register(new Class5274());
+            this.register(new MiniMap());
             this.register(new ActiveMods());
             this.register(new Class5261());
             this.register(new Class5377());
@@ -197,13 +197,13 @@ public class ModuleManager {
                 }
 
                 for (Module var9 : this.moduleMap.values()) {
-                    if (var9.method15991().equals(var7)) {
+                    if (var9.getName().equals(var7)) {
                         try {
                             var9.method15986(var17);
                         } catch (JSONException2 var12) {
                             Client.getInstance()
                                     .getLogger()
-                                    .warn("Could not initialize mod " + var9.method15991() + " from config. All settings for this mod have been erased.");
+                                    .warn("Could not initialize mod " + var9.getName() + " from config. All settings for this mod have been erased.");
                         }
                         break;
                     }
@@ -214,12 +214,12 @@ public class ModuleManager {
         }
 
         for (Module var18 : this.moduleMap.values()) {
-            if (var18.method15996()) {
+            if (var18.isEnabled()) {
                 Client.getInstance().getEventManager().subscribe(var18);
                 if (var18 instanceof Class5325) {
                     Class5325 var20 = (Class5325) var18;
-                    if (var20.field23879 != null) {
-                        Client.getInstance().getEventManager().subscribe(var20.field23879);
+                    if (var20.module != null) {
+                        Client.getInstance().getEventManager().subscribe(var20.module);
                     }
                 }
             } else {
@@ -227,7 +227,7 @@ public class ModuleManager {
                 if (var18 instanceof Class5325) {
                     Class5325 var19 = (Class5325) var18;
 
-                    for (Module var11 : var19.field23878) {
+                    for (Module var11 : var19.moduleArray) {
                         Client.getInstance().getEventManager().unsubscribe(var11);
                     }
                 }
@@ -260,7 +260,7 @@ public class ModuleManager {
                 }
 
                 if (var6 instanceof Class5325) {
-                    for (Module var12 : ((Class5325) var6).field23878) {
+                    for (Module var12 : ((Class5325) var6).moduleArray) {
                         for (Setting var14 : var12.method15989().values()) {
                             if (var14.method18623()) {
                                 var3++;
@@ -313,57 +313,43 @@ public class ModuleManager {
     }
 
     public int method14661() {
-        Setting var3 = this.method14662(Class5381.class).method15989().get("Mode");
+        Setting var3 = this.getModuleByClass(Jesus.class).method15989().get("Mode");
         String var4 = (String) var3.currentValue;
         var3.method18620("Dolphin");
         var3.currentValue = var4;
         return 0;
     }
 
-    public Module method14662(Class<? extends Module> var1) {
-        return this.moduleMap.get(var1);
+    public Module getModuleByClass(Class<? extends Module> module) {
+        return this.moduleMap.get(module);
     }
 
-    public Module method14663(Class<? extends Module> var1) {
-        if (var1.getSuperclass() == Class5325.class) {
-            Class5325 var4 = (Class5325) this.moduleMap.get(var1.getSuperclass());
-
-            for (Module var8 : var4.field23878) {
-                if (var8.getClass() == var1) {
-                    return var8;
-                }
-            }
-        }
-
-        return this.moduleMap.get(var1);
-    }
-
-    public Map<Class<? extends Module>, Module> method14664() {
+    public Map<Class<? extends Module>, Module> getModuleMap() {
         return this.moduleMap;
     }
 
-    public List<Module> method14665(ModuleCategory var1) {
-        ArrayList var4 = new ArrayList();
+    public List<Module> getModulesByCategory(ModuleCategory category) {
+        ArrayList<Module> moduleList = new ArrayList<>();
 
-        for (Module var6 : this.moduleMap.values()) {
-            if (var6.method15993().equals(var1)) {
-                var4.add(var6);
+        for (Module moduleFromMap : this.moduleMap.values()) {
+            if (moduleFromMap.getAdjustedCategoryBasedOnClientMode().equals(category)) {
+                moduleList.add(moduleFromMap);
             }
         }
 
-        return var4;
+        return moduleList;
     }
 
-    public List<Module> method14666() {
-        ArrayList var3 = new ArrayList();
+    public List<Module> getEnabledModules() {
+        ArrayList<Module> moduleList = new ArrayList();
 
-        for (Module var5 : this.moduleMap.values()) {
-            if (var5.method15996()) {
-                var3.add(var5);
+        for (Module moduleFromMap : this.moduleMap.values()) {
+            if (moduleFromMap.isEnabled()) {
+                moduleList.add(moduleFromMap);
             }
         }
 
-        return var3;
+        return moduleList;
     }
 
     public Class6814 method14667() {

@@ -29,14 +29,14 @@ public class Class4297 extends Class4278 {
 
       GL11.glPushMatrix();
       GL11.glTranslatef((float)this.field20895, (float)this.field20896, 0.0F);
-      Class3192.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class1979.field12891.field12910);
+      Class3192.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClientColors.DEEP_TEAL.getColor);
       Class3192.method11474(
          (float)(this.field20818.method29736().field41839 * this.field20820),
          (float)(this.field20818.method29736().field41840 * this.field20820),
          (float)this.field20820,
          (float)this.field20820,
          5.0F,
-         Class1979.field12903.field12910
+         ClientColors.PALE_ORANGE.getColor
       );
 
       for (Class9108 var5 : this.field20818.method29737().method29655()) {
@@ -45,7 +45,7 @@ public class Class4297 extends Class4278 {
             (float)(var5.field41840 * this.field20820),
             (float)this.field20820,
             (float)this.field20820,
-            Class1979.field12896.field12910
+            ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
       }
 

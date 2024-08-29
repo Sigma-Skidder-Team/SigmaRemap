@@ -40,7 +40,7 @@ public class Class4279 extends Class4278 {
          (float)(this.field20895 + 5),
          (float)(this.field20896 + 5),
          10.0F,
-         Class5628.method17688(!this.method13216() ? Class1979.field12893.field12910 : Class1979.field12892.field12910, var1)
+         Class5628.method17688(!this.method13216() ? ClientColors.DARK_GREEN.getColor : ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
       super.method13027(var1);
    }

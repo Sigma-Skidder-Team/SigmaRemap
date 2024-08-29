@@ -108,7 +108,7 @@ public class Class1063 extends Class1038 implements Class1011 {
    }
 
    private void method4878() {
-      this.method2863(Class6067.field27295, this.method3099() * 2.0F, this.method3100() * 1.8F);
+      this.method2863(Sounds.field27295, this.method3099() * 2.0F, this.method3100() * 1.8F);
    }
 
    @Override
@@ -168,17 +168,17 @@ public class Class1063 extends Class1038 implements Class1011 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method4369() ? Class6067.field27294 : Class6067.field27295;
+      return !this.method4369() ? Sounds.field27294 : Sounds.field27295;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27297;
+      return Sounds.field27297;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27296;
+      return Sounds.field27296;
    }
 
    @Override

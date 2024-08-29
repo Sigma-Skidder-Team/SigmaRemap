@@ -79,22 +79,22 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26924;
+      return Sounds.field26924;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26926;
+      return Sounds.field26926;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26925;
+      return Sounds.field26925;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26928, 0.15F, 1.0F);
+      this.method2863(Sounds.field26928, 0.15F, 1.0F);
    }
 
    @Override
@@ -139,7 +139,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    public void method4942(Class2266 var1) {
       this.field5915.method19693(true);
       if (var1 != null) {
-         this.world.method6744((PlayerEntity)null, this, Class6067.field26927, var1, 0.5F, 1.0F);
+         this.world.method6744((PlayerEntity)null, this, Sounds.field26927, var1, 0.5F, 1.0F);
       }
    }
 

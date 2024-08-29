@@ -48,7 +48,7 @@ public class Class7555 extends Class7554 {
          (float)this.method24721(),
          (float)this.method24719(),
          (float)this.method24725(),
-         Class5628.method17688(Class1979.field12891.field12910, var1 * 0.6F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
       );
       this.field32403 = this.field32403 + this.method24733();
       int var4 = this.method24720() + 4;
@@ -61,10 +61,10 @@ public class Class7555 extends Class7554 {
       byte var10 = 6;
 
       for (String var12 : this.field32400) {
-         int var13 = Class1979.field12896.field12910;
+         int var13 = ClientColors.LIGHT_GREYISH_BLUE.getColor;
          if (var12.startsWith("§7")) {
             var12 = var12.substring("§7".length());
-            var13 = Class1979.field12899.field12910;
+            var13 = ClientColors.MID_GREY.getColor;
          }
 
          Class3192.method11439(

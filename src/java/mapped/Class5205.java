@@ -93,7 +93,7 @@ public class Class5205 extends Module {
 
     @EventTarget
     public void method16213(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             for (Entity var5 : Class9217.method34549(Class5628.method17680())) {
                 if (var5 != mc.player && !Client.getInstance().getCombatManager().method29346(var5)) {
                     method16216(

@@ -33,7 +33,7 @@ public class Class5157 extends Module {
     @EventTarget
     @HigherPriority
     private void method16034(Class4434 var1) {
-        if (this.method15996() && !(var1.method13988() < 0.625)) {
+        if (this.isEnabled() && !(var1.method13988() < 0.625)) {
             if (this.field23410 == 0 && this.field23411) {
                 var1.method13900(true);
             }
@@ -42,7 +42,7 @@ public class Class5157 extends Module {
 
     @EventTarget
     private void method16035(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23410 == 1) {
                 var1.method13900(true);
                 this.field23412 = true;
@@ -53,7 +53,7 @@ public class Class5157 extends Module {
     @EventTarget
     @HigherPriority
     private void method16036(Class4399 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.field5036) {
                 this.field23413 = false;
                 if (this.field23412 && this.field23410 != 1) {
@@ -70,7 +70,7 @@ public class Class5157 extends Module {
                 boolean var6 = false;
                 boolean var7 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
                 boolean var8 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var7;
-                if (!var8 && !Class5381.method16953()) {
+                if (!var8 && !Jesus.method16953()) {
                     switch (this.field23410) {
                         case 0:
                             var1.method13908(true);
@@ -103,8 +103,8 @@ public class Class5157 extends Module {
                 var1.method13912(var1.method13911() + var4);
                 var1.method13920(var6);
             } else {
-                this.field23410 = this.method15974("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
-                if (this.method15974("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.method3433().field18049 < -0.1) {
+                this.field23410 = this.getBooleanValueFromSetttingName("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
+                if (this.getBooleanValueFromSetttingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.method3433().field18049 < -0.1) {
                     this.field23413 = !this.field23413;
                     var1.method13920(true);
                 }

@@ -710,7 +710,7 @@ public class Class5628 {
             && !field24949.player.method3250()
             && !field24949.player.method3033(Class8254.field35481)
             && !field24949.player.method3328();
-         if (var7 || field24949.player.field5036 && Client.getInstance().getModuleManager().method14662(Class5332.class).method15996()) {
+         if (var7 || field24949.player.field5036 && Client.getInstance().getModuleManager().getModuleByClass(Class5332.class).isEnabled()) {
             field24949.particles.method1195(var5.method13935(), Class7940.field34054);
          }
 
@@ -1044,7 +1044,7 @@ public class Class5628 {
                return !var0.method3362()
                   ? !(var0 instanceof PlayerEntity)
                      || !Class8781.method31662((PlayerEntity)var0)
-                     || !Client.getInstance().getModuleManager().method14662(Class5275.class).method15996()
+                     || !Client.getInstance().getModuleManager().getModuleByClass(Class5275.class).isEnabled()
                   : false;
             }
          } else {

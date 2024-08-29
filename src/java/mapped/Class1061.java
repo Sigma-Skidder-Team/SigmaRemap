@@ -65,6 +65,6 @@ public class Class1061 implements Class1060 {
 
    @Override
    public Class9455 method4748() {
-      return Class6067.field27195;
+      return Sounds.field27195;
    }
 }

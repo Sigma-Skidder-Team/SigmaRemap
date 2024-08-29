@@ -68,7 +68,7 @@ public class BlockFlyHypixelMode extends Module {
         this.field23469 = mc.player.inventory.currentItem;
         this.field23467 = this.field23466 = 999.0F;
         ((BlockFly) this.method16004()).field23884 = -1;
-        if (mc.gameSettings.field44637.isKeyDown() && this.method15974("Downwards")) {
+        if (mc.gameSettings.field44637.isKeyDown() && this.getBooleanValueFromSetttingName("Downwards")) {
             mc.gameSettings.field44637.field13071 = false;
             this.field23474 = true;
         }
@@ -107,8 +107,8 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     public void method16108(Class4417 var1) {
-        if (this.method15996()) {
-            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+        if (this.isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
                 if (mc.world
                         .method7055(
                                 mc.player,
@@ -120,8 +120,8 @@ public class BlockFlyHypixelMode extends Module {
                     var1.method13966(true);
                 }
             } else if (mc.player.field5036
-                    && Client.getInstance().getModuleManager().method14662(Class5363.class).method15996()
-                    && (!this.field23474 || !this.method15974("Downwards"))) {
+                    && Client.getInstance().getModuleManager().getModuleByClass(Class5363.class).isEnabled()
+                    && (!this.field23474 || !this.getBooleanValueFromSetttingName("Downwards"))) {
                 var1.method13966(true);
             }
         }
@@ -129,7 +129,7 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     private void method16109(Class4430 var1) {
-        if (this.method15996() && this.method15974("Downwards")) {
+        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23474 = true;
@@ -139,7 +139,7 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     private void method16110(Class4426 var1) {
-        if (this.method15996() && this.method15974("Downwards")) {
+        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23474 = false;
@@ -150,9 +150,9 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16111(Class4399 var1) {
-        if (this.method15996() && this.field23473.method16735() != 0) {
-            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().method14662(Fly.class);
-            if (!var4.method15996() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
+        if (this.isEnabled() && this.field23473.method16735() != 0) {
+            Class5325 var4 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
                 if (!var1.method13921()) {
                     this.field23473.method16736();
                     if (this.field23468 != null) {
@@ -165,7 +165,7 @@ public class BlockFlyHypixelMode extends Module {
                         }
 
                         mc.playerController.func_217292_a(mc.player, mc.world, this.field23472, var20);
-                        if (!this.method16004().method15974("NoSwing")) {
+                        if (!this.method16004().getBooleanValueFromSetttingName("NoSwing")) {
                             mc.player.swingArm(this.field23472);
                         } else {
                             mc.getConnection().sendPacket(new CAnimateHandPacket(this.field23472));
@@ -194,7 +194,7 @@ public class BlockFlyHypixelMode extends Module {
                             && mc.player.field5045 > 1.0F
                             && Class9217.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
                         var9 += Math.min(mc.player.method3433().field18049 * 2.0, 4.0);
-                    } else if (this.field23474 && this.method15974("Downwards")) {
+                    } else if (this.field23474 && this.getBooleanValueFromSetttingName("Downwards")) {
                         var9--;
                     } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                             && !mc.gameSettings.field44636.isKeyDown()) {
@@ -214,7 +214,7 @@ public class BlockFlyHypixelMode extends Module {
 
                     BlockPos var11 = new BlockPos(var5, var9 - 1.0, var7);
                     if (!Class9217.method34578(var11) && this.field23473.method16739(this.field23472)) {
-                        Class7843 var12 = Class9217.method34575(var11, !this.field23474 && this.method15974("Downwards"));
+                        Class7843 var12 = Class9217.method34575(var11, !this.field23474 && this.getBooleanValueFromSetttingName("Downwards"));
                         this.field23468 = var12;
                         if (var12 != null) {
                             float[] var13 = Class9217.method34542(this.field23468.field33646, this.field23468.field33647);
@@ -236,7 +236,7 @@ public class BlockFlyHypixelMode extends Module {
                             var1.method13916(this.field23466);
                         }
                     } else {
-                        if (this.method15974("KeepRotations") && this.field23466 != 999.0F) {
+                        if (this.getBooleanValueFromSetttingName("KeepRotations") && this.field23466 != 999.0F) {
                             var1.method13918(mc.player.field5031 + 1.0F);
                             var1.method13916(90.0F);
                         }
@@ -255,12 +255,12 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     @HigherPriority
     public void method16112(Class4435 var1) {
-        if (this.method15996() && this.field23473.method16735() != 0) {
+        if (this.isEnabled() && this.field23473.method16735() != 0) {
             if (mc.player.field5036 || Class5628.method17730(mc.player, 0.01F)) {
                 this.field23476 = mc.player.getPosY();
             }
 
-            if (this.method16004().method15974("No Sprint")) {
+            if (this.method16004().getBooleanValueFromSetttingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
@@ -280,7 +280,7 @@ public class BlockFlyHypixelMode extends Module {
                     if (mc.player.field5036 && Class5628.method17686() && !mc.player.method3331() && !this.field23474) {
                         this.field23475 = false;
                         mc.player.method2914();
-                        ((Class5341) Client.getInstance().getModuleManager().method14662(Class5341.class)).method16764();
+                        ((Class5341) Client.getInstance().getModuleManager().getModuleByClass(Class5341.class)).method16764();
                         this.field23475 = true;
                         var1.method13995(mc.player.method3433().field18049);
                         var1.method13993(mc.player.method3433().field18048);
@@ -362,7 +362,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16113(Class4402 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13932() instanceof Class5539 && ((BlockFly) this.method16004()).field23884 >= 0) {
                 var1.method13900(true);
             }
@@ -371,9 +371,9 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     public void method16114(Class4436 var1) {
-        if (this.method15996() && this.field23475) {
+        if (this.isEnabled() && this.field23475) {
             if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
+                    && (!Class5628.method17686() || this.method16004().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.method13900(true);
             }
         }
@@ -381,7 +381,7 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     public void method16115(Class4422 var1) {
-        if (this.method15996() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 >= 0) {
+        if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 >= 0) {
             if (!(mc.player.field5045 > 1.2F)) {
                 if (!(mc.player.field4915 < this.field23476)) {
                     if (!mc.player.field4981) {

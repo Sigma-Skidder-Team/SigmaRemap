@@ -45,7 +45,7 @@ public class Class5319 extends Module {
 
     @EventTarget
     private void method16710(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && var1.method13932() instanceof CEntityActionPacket
                     || var1.method13932() instanceof Class5603
                     || var1.method13932() instanceof CUseEntityPacket

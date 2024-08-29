@@ -18,8 +18,8 @@ public class Class5358 extends Module {
 
     @EventTarget
     public void method16849(Class4411 var1) {
-        if (this.method15996()) {
-            if (this.method15974("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
+        if (this.isEnabled()) {
+            if (this.getBooleanValueFromSetttingName("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
                 var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
                 var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
                 var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
@@ -33,8 +33,8 @@ public class Class5358 extends Module {
 
     @EventTarget
     public void method16851(Class4410 var1) {
-        if (this.method15996()) {
-            if (this.method15974("Hide skins")) {
+        if (this.isEnabled()) {
+            if (this.getBooleanValueFromSetttingName("Hide skins")) {
                 var1.method13955(false);
             }
         }

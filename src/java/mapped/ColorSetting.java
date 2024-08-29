@@ -6,16 +6,16 @@ import totalcross.json.JSONObject;
 
 import java.awt.Color;
 
-public class Class6010 extends Setting<Integer> {
+public class ColorSetting extends Setting<Integer> {
    public boolean field26196 = false;
 
-   public Class6010(String var1, String var2, int var3, boolean var4) {
+   public ColorSetting(String var1, String var2, int var3, boolean var4) {
       super(var1, var2, Class2314.field15859, var3);
       this.field26196 = var4;
    }
 
-   public Class6010(String var1, String var2, int var3) {
-      super(var1, var2, Class2314.field15859, var3);
+   public ColorSetting(String name, String description, int defaultColor) {
+      super(name, description, Class2314.field15859, defaultColor);
    }
 
    @Override
@@ -35,13 +35,13 @@ public class Class6010 extends Setting<Integer> {
 
    @Override
    public JSONObject addDataToJSONObject(JSONObject var1) {
-      var1.put("name", this.method18625());
+      var1.put("name", this.getName());
       var1.put("value", this.method18645());
       var1.method21800("rainbow", this.field26196);
       return var1;
    }
 
-   public Integer method18619() {
+   public Integer getCurrentValue() {
       if (!this.field26196) {
          return this.currentValue;
       } else {

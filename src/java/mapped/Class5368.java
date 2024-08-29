@@ -37,7 +37,7 @@ public class Class5368 extends Module {
             this.field23984 = true;
             this.field23985.method27120();
             this.field23985.method27118();
-            if (!this.method15974("Instant")) {
+            if (!this.getBooleanValueFromSetttingName("Instant")) {
                 Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Wait 5s..."));
             } else {
                 Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Move where you want"));
@@ -66,7 +66,7 @@ public class Class5368 extends Module {
     public void method16898(Class4399 var1) {
         if (mc.player != null) {
             if (!this.field23984 && mc.player.field5036) {
-                if (!this.method15974("Instant")) {
+                if (!this.getBooleanValueFromSetttingName("Instant")) {
                     Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Wait 5s..."));
                 } else {
                     Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Move where you want"));
@@ -82,7 +82,7 @@ public class Class5368 extends Module {
     @EventTarget
     public void method16899(Class4435 var1) {
         if (mc.player != null) {
-            if (!this.method15974("Instant") && this.field23984) {
+            if (!this.getBooleanValueFromSetttingName("Instant") && this.field23984) {
                 var1.method13993(0.0);
                 var1.method13995(0.0);
                 var1.method13997(0.0);
@@ -114,7 +114,7 @@ public class Class5368 extends Module {
                         || var1.method13932() instanceof CUseEntityPacket
                         || var1.method13932() instanceof CAnimateHandPacket
                         || var1.method13932() instanceof Class5555) {
-                    if (this.method15974("Instant")) {
+                    if (this.getBooleanValueFromSetttingName("Instant")) {
                         this.field23983.add(var1.method13932());
                     }
 
@@ -127,10 +127,10 @@ public class Class5368 extends Module {
     @EventTarget
     public void method16901(Class4396 var1) {
         if (mc.player != null && this.field23984) {
-            if (this.method15996() || this.method15974("Instant")) {
+            if (this.isEnabled() || this.getBooleanValueFromSetttingName("Instant")) {
                 if (var1.method13898() instanceof Class5473) {
                     this.method16004().method16000();
-                    if (!this.method15974("Instant")) {
+                    if (!this.getBooleanValueFromSetttingName("Instant")) {
                         Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                     } else {
                         Class5473 var4 = (Class5473) var1.method13898();

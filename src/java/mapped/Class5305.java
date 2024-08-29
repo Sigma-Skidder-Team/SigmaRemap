@@ -39,7 +39,7 @@ public class Class5305 extends Module {
 
     @EventTarget
     public void method16671(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             RenderSystem.method27905(33986, 240.0F, 240.0F);
 
             for (Entity var5 : Class5628.method17708()) {
@@ -69,14 +69,14 @@ public class Class5305 extends Module {
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
-                                Class5628.method17688(Class1979.field12891.field12910, 0.1F)
+                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.1F)
                         );
                         Class3192.method11462(
                                 new Class9388(
                                         var7 - (double) var13, var9 + 0.01F, var11 - (double) var13, var7 + (double) var13, var9 + (double) (var13 * 2.0F), var11 + (double) var13
                                 ),
                                 3.0F,
-                                Class5628.method17688(Class1979.field12891.field12910, 0.3F)
+                                Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
                         );
                         GL11.glDisable(3042);
                         if (mc.gameSettings.keyBindUseItem.isKeyDown()) {
@@ -150,7 +150,7 @@ public class Class5305 extends Module {
 
     @EventTarget
     private void method16675(Class4414 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.currentScreen instanceof Class851) {
                 Class851 var4 = (Class851) mc.currentScreen;
                 Class5839 var5 = var4.field4729;
@@ -204,15 +204,15 @@ public class Class5305 extends Module {
                     (float) var2,
                     (float) var13,
                     (float) var12,
-                    Class5628.method17688(Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 75.0F), 0.7F)
+                    Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.7F)
             );
             Class3192.method11463((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
         } else {
-            Class3192.method11467(var1, var2, var13, var12, Class5628.method17688(Class1979.field12891.field12910, 0.94F));
+            Class3192.method11467(var1, var2, var13, var12, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.94F));
         }
 
         Class3192.method11439(
-                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(Class1979.field12896.field12910, 0.8F)
+                ResourceRegistry.JelloLightFont25, (float) (var1 + var8), (float) (var2 + var8 - 3), var4, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         RenderSystem.method27820();
 
@@ -222,7 +222,7 @@ public class Class5305 extends Module {
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
             RenderSystem.method27821();
             if (var14 == this.field23841 && var5) {
-                Class3192.method11424((float) var17, (float) var16, (float) var10, (float) var10, Class5628.method17688(Class1979.field12896.field12910, 0.15F));
+                Class3192.method11424((float) var17, (float) var16, (float) var10, (float) var10, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
             }
 
             Class3192.method11479(var15, var17, var16, var10, var10);
@@ -237,10 +237,10 @@ public class Class5305 extends Module {
                         (float) (40 + var19),
                         40.0F,
                         ResourcesDecrypter.shadowPNG,
-                        Class5628.method17688(Class1979.field12896.field12910, 0.7F),
+                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
                         false
                 );
-                Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, Class1979.field12896.field12910);
+                Class3192.method11439(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                 RenderSystem.method27820();
             }
 
@@ -267,7 +267,7 @@ public class Class5305 extends Module {
                         (float) (var25 + var10),
                         (float) var29 + 9.0F * Class3192.method11417(),
                         10.0F * Class3192.method11417() * (float) var33 + 7.0F * Class3192.method11417(),
-                        Class5628.method17688(Class1979.field12891.field12910, 0.8F)
+                        Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F)
                 );
                 GL11.glPushMatrix();
                 GL11.glScalef(Class3192.method11417(), Class3192.method11417(), 0.0F);
@@ -283,7 +283,7 @@ public class Class5305 extends Module {
                                     var22,
                                     (float) (var27 + 5),
                                     5.3F + (float) var25 + (float) var10 + (float) (var21 * 10),
-                                    Class1979.field12896.field12910,
+                                    ClientColors.LIGHT_GREYISH_BLUE.getColor,
                                     new MatrixStack().method35296().method32361(),
                                     false,
                                     false

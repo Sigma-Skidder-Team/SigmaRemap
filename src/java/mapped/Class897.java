@@ -143,7 +143,7 @@ public class Class897 extends Entity implements Class889 {
          this.method3215(var4, var6, var8);
          this.field5136++;
          if (this.field5136 > 80 && !this.world.field9020) {
-            this.method2863(Class6067.field26543, 1.0F, 1.0F);
+            this.method2863(Sounds.field26543, 1.0F, 1.0F);
             this.method2904();
             if (!this.field5137) {
                this.world.method6999(2003, this.getPosition(), 0);

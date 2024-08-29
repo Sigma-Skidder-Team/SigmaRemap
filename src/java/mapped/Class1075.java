@@ -26,19 +26,19 @@ public class Class1075 extends AbstractHorseEntity {
    @Override
    public Class9455 method4241() {
       super.method4241();
-      return Class6067.field27289;
+      return Sounds.field27289;
    }
 
    @Override
    public Class9455 method2880() {
       super.method2880();
-      return Class6067.field27290;
+      return Sounds.field27290;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
       super.method2879(var1);
-      return Class6067.field27291;
+      return Sounds.field27291;
    }
 
    @Nullable

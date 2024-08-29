@@ -25,22 +25,22 @@ public class Class1087 extends Class1018 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26477;
+      return Sounds.field26477;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26479;
+      return Sounds.field26479;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26478;
+      return Sounds.field26478;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26481, 0.15F, 1.0F);
+      this.method2863(Sounds.field26481, 0.15F, 1.0F);
    }
 
    @Override
@@ -52,7 +52,7 @@ public class Class1087 extends Class1018 {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.field37882 && !this.method3005()) {
-         var1.method2863(Class6067.field26480, 1.0F, 1.0F);
+         var1.method2863(Sounds.field26480, 1.0F, 1.0F);
          ItemStack var6 = Class8482.method29979(var5, var1, Items.field37891.method11742());
          var1.method3095(var2, var6);
          return ActionResultType.method9002(this.world.field9020);

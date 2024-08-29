@@ -79,7 +79,7 @@ public class PaintingEntity extends Class995 {
    @Override
    public void method4083(Entity var1) {
       if (this.world.method6789().method17135(Class5462.field24229)) {
-         this.method2863(Class6067.field26867, 1.0F, 1.0F);
+         this.method2863(Sounds.field26867, 1.0F, 1.0F);
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var4 = (PlayerEntity)var1;
             if (var4.abilities.isCreativeMode) {
@@ -93,7 +93,7 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public void method4084() {
-      this.method2863(Class6067.field26868, 1.0F, 1.0F);
+      this.method2863(Sounds.field26868, 1.0F, 1.0F);
    }
 
    @Override

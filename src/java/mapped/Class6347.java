@@ -5,7 +5,7 @@ public class Class6347 extends Class6333 {
    private final Class1105 field27882;
 
    public Class6347(Class1105 var1) {
-      super(Class6067.field26645, Class2266.field14733);
+      super(Sounds.field26645, Class2266.field14733);
       this.field27882 = var1;
       this.field27863 = Class2279.field14845;
       this.field27861 = true;

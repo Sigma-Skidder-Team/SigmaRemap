@@ -30,7 +30,7 @@ public class Class5317 extends Module {
     @EventTarget
     @LowerPriority
     private void method16705(Class4434 var1) {
-        if (this.method15996() && !(var1.method13988() < 0.625)) {
+        if (this.isEnabled() && !(var1.method13988() < 0.625)) {
             field23862 = 0;
         }
     }
@@ -45,14 +45,14 @@ public class Class5317 extends Module {
     @EventTarget
     @HigherPriority
     private void method16707(Class4399 var1) {
-        if (!this.method15996() || Client.getInstance().getModuleManager().method14662(Class5341.class).method15996()) {
+        if (!this.isEnabled() || Client.getInstance().getModuleManager().getModuleByClass(Class5341.class).isEnabled()) {
             field23862 = 0;
         } else if (var1.method13921()) {
             if (mc.playerController.getIsHittingBlock()) {
                 field23862 = 0;
             }
 
-            boolean var4 = !this.method15974("KillAura") || Class5357.field23948 != null || Class5357.field23949 != null;
+            boolean var4 = !this.getBooleanValueFromSetttingName("KillAura") || KillAura.field23948 != null || KillAura.field23949 != null;
             if (mc.player.field5036 && mc.player.field5038 && var4) {
                 field23862++;
                 mc.player.field6120 = 0.0;

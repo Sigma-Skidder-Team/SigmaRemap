@@ -86,7 +86,7 @@ public class Class4299 extends Class4278 {
             52.0F,
             320.0F,
             this.field20831,
-            Class1979.field12896.field12910
+            ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          Class3192.method11449(
             (float)this.field20895 + var13 + var12,
@@ -94,7 +94,7 @@ public class Class4299 extends Class4278 {
             52.0F,
             320.0F,
             this.field20832,
-            Class1979.field12896.field12910
+            ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          if (var12 > -52.0F && var12 < 0.0F) {
             float var14 = (float)(var6 - 24) / (float)var8;
@@ -113,7 +113,7 @@ public class Class4299 extends Class4278 {
       }
 
       Class3192.method11436(
-         (float)this.field20895 + (float)var7 / 12.0F, (float)this.field20896 + (float)var8 * (1.0F - this.field20835), 10.0F, Class1979.field12901.field12910
+         (float)this.field20895 + (float)var7 / 12.0F, (float)this.field20896 + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.getColor
       );
       Class3192.method11422();
       this.field20837 = System.currentTimeMillis();

@@ -52,7 +52,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16202(Class4402 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13932() instanceof Class5539 && ((BlockFly) this.method16004()).field23884 >= 0) {
                 var1.method13900(true);
             }
@@ -61,7 +61,7 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     public void method16203(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 this.field23525 = 0;
@@ -71,8 +71,8 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     public void method16204(Class4417 var1) {
-        if (this.method15996()) {
-            if (mc.player.field5036 && Client.getInstance().getModuleManager().method14662(Class5363.class).method15996()) {
+        if (this.isEnabled()) {
+            if (mc.player.field5036 && Client.getInstance().getModuleManager().getModuleByClass(Class5363.class).isEnabled()) {
                 var1.method13966(true);
             }
         }
@@ -80,18 +80,18 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     public void method16205(Class4435 var1) {
-        if (this.method15996()) {
-            if (this.method16004().method15974("No Sprint")) {
+        if (this.isEnabled()) {
+            if (this.method16004().getBooleanValueFromSetttingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
-            if (!this.method15974("Haphe (AACAP)")) {
+            if (!this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
                 mc.gameSettings.field44638.field13071 = false;
                 mc.player.setSprinting(false);
             }
 
             ((BlockFly) this.method16004()).method16741(var1);
-            if (this.method15974("Haphe (AACAP)")) {
+            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
                 if (!mc.player.field5036 || mc.player.field4984 == 0.0F && mc.player.field4982 == 0.0F) {
                     if (this.field23524 >= 0) {
                         this.field23524++;
@@ -119,8 +119,8 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     private void method16206(Class4423 var1) {
-        if (this.method15996() && mc.world != null && mc.player != null) {
-            if (this.method15974("Haphe (AACAP)") && Class9567.method37087() && !mc.player.method3337()) {
+        if (this.isEnabled() && mc.world != null && mc.player != null) {
+            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && Class9567.method37087() && !mc.player.method3337()) {
                 var1.field21557 *= 1.14F;
             }
         }
@@ -137,7 +137,7 @@ public class BlockFlyAACMode extends Module {
                 }
             }
 
-            if (this.method15974("Haphe (AACAP)") && !mc.player.field4981 && !mc.player.field5036) {
+            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981 && !mc.player.field5036) {
                 if (var3.getFace() == Direction.field673) {
                     return false;
                 }
@@ -169,7 +169,7 @@ public class BlockFlyAACMode extends Module {
             }
 
             if (var6 == ActionResultType.field14818) {
-                if (!this.method16004().method15974("NoSwing")) {
+                if (!this.method16004().getBooleanValueFromSetttingName("NoSwing")) {
                     mc.player.swingArm(Hand.MAIN_HAND);
                 } else {
                     mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -192,8 +192,8 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     public void method16209(Class4422 var1) {
-        if (this.method15996()) {
-            if (!this.method15974("Haphe (AACAP)")) {
+        if (this.isEnabled()) {
+            if (!this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
             }
         }
     }
@@ -201,13 +201,13 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     @LowestPriority
     private void method16210(Class4399 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!var1.method13921()) {
-                if (Class9567.method37087() && mc.player.field5036 && this.method15974("Haphe (AACAP)") && !mc.player.field4981) {
+                if (Class9567.method37087() && mc.player.field5036 && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.field4981) {
                     mc.player.method2914();
                 }
 
-                if (!this.method15974("Haphe (AACAP)")) {
+                if (!this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
                     if (!this.method16207()) {
                         float var11 = 0.0F;
 
@@ -220,7 +220,7 @@ public class BlockFlyAACMode extends Module {
                 }
             } else {
                 double var4 = mc.player.getPosY();
-                if (!mc.player.field4981 && this.method15974("Haphe (AACAP)")) {
+                if (!mc.player.field4981 && this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
                     var4 = this.field23522;
                 }
 
@@ -244,9 +244,9 @@ public class BlockFlyAACMode extends Module {
 
     @EventTarget
     public void method16211(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
+                    && (!Class5628.method17686() || this.method16004().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.method13900(true);
             }
         }

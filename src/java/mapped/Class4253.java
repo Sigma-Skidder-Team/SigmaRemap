@@ -61,14 +61,14 @@ public class Class4253 extends Class4247 {
          (float)(this.field20895 + 25),
          (float)this.field20896 + (float)this.field20898 / 2.0F - 17.5F,
          this.field20624.method21596(),
-         Class5628.method17688(Class1979.field12891.field12910, 0.6F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       Class3192.method11439(
          ResourceRegistry.JelloLightFont12,
          (float)(this.field20895 + 25),
          (float)this.field20896 + (float)this.field20898 / 2.0F + 7.5F,
          this.field20624.method21597(),
-         Class5628.method17688(Class1979.field12891.field12910, 0.6F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       this.field20628.method13266((int)((float)this.field20898 / 2.0F - 7.5F));
       super.method13027(var1);

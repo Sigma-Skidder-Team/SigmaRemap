@@ -46,7 +46,7 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27043;
+      return Sounds.field27043;
    }
 
    @Override
@@ -58,12 +58,12 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27049;
+      return Sounds.field27049;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method4847() ? Class6067.field27050 : Class6067.field27051;
+      return !this.method4847() ? Sounds.field27050 : Sounds.field27051;
    }
 
    @Override
@@ -272,7 +272,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                Direction var6 = this.method4844(var5);
                if (var6 != null) {
                   this.field5063.method35446(field5841, var6);
-                  this.method2863(Class6067.field27054, 1.0F, 1.0F);
+                  this.method2863(Sounds.field27054, 1.0F, 1.0F);
                   this.field5063.method35446(field5842, Optional.<BlockPos>of(var5));
                   this.field5063.method35446(field5843, (byte)0);
                   this.method4233((Class880)null);
@@ -370,10 +370,10 @@ public class Class1057 extends Class1056 implements Class1008 {
       if (!this.world.field9020) {
          this.method3085(Class9173.field42113).method38670(field5840);
          if (var1 != 0) {
-            this.method2863(Class6067.field27052, 1.0F, 1.0F);
+            this.method2863(Sounds.field27052, 1.0F, 1.0F);
          } else {
             this.method3085(Class9173.field42113).method38668(field5840);
-            this.method2863(Class6067.field27048, 1.0F, 1.0F);
+            this.method2863(Sounds.field27048, 1.0F, 1.0F);
          }
       }
 

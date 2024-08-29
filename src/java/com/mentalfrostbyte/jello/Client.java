@@ -39,14 +39,13 @@ public class Client {
     private static final Minecraft mc = Minecraft.getInstance();
     public static String field28960 = "Jello";
     public static String field28962 = "Sigma Production";
-    public static List<Texture> field28992 = new ArrayList<Texture>();
+    public static List<Texture> textureList = new ArrayList<Texture>();
     public static boolean field28993 = false;
     private static Client instance;
     private final File file = new File("sigma5");
     private JSONObject config;
     private boolean field28968 = true;
     private Logger logger;
-    private ClientX509TrustManager clientX509TrustManager;
     private EventManager eventManager;
     private ModuleManager moduleManager;
     private CommandManager commandManager;
@@ -67,7 +66,7 @@ public class Client {
     private WaypointsManager waypointsManager;
     private Class8795 field28989;
     private Class8005 field28990;
-    private ClientMode field28991 = ClientMode.PREMIUM;
+    private ClientMode clientMode = ClientMode.PREMIUM;
 
     private Client() {
     }
@@ -230,17 +229,17 @@ public class Client {
     }
 
     public void method19927(Texture var1) {
-        field28992.add(var1);
+        textureList.add(var1);
     }
 
     public void method19928() {
-        if (!field28992.isEmpty()) {
+        if (!textureList.isEmpty()) {
             try {
-                for (Texture var4 : field28992) {
+                for (Texture var4 : textureList) {
                     var4.release();
                 }
 
-                field28992.clear();
+                textureList.clear();
             } catch (ConcurrentModificationException var7) {
             }
         }
@@ -346,10 +345,6 @@ public class Client {
         return this.networkManager;
     }
 
-    public ClientX509TrustManager method19947() {
-        return this.clientX509TrustManager;
-    }
-
     public WebsocketManager getWebsocketManager() {
         return this.websocketManager;
     }
@@ -366,22 +361,18 @@ public class Client {
         return this.config;
     }
 
-    public void method19952() {
-        this.config = new JSONObject();
-    }
-
     public File getFile() {
         return this.file;
     }
 
     public ClientMode getClientMode() {
-        return this.field28991;
+        return this.clientMode;
     }
 
-    public void method19955(ClientMode var1) {
-        this.field28991 = var1;
-        if (var1 != ClientMode.CLASSIC) {
-            if (var1 == ClientMode.JELLO) {
+    public void setupClient(ClientMode mode) {
+        this.clientMode = mode;
+        if (mode != ClientMode.CLASSIC) {
+            if (mode == ClientMode.JELLO) {
                 this.method19921();
                 GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Jello for Sigma 5.0");
             }
@@ -393,7 +384,7 @@ public class Client {
 
         if (this.moduleManager == null && Class1537.field8341 != null) {
             this.moduleManager = new ModuleManager();
-            this.moduleManager.register(this.field28991);
+            this.moduleManager.register(this.clientMode);
             this.moduleManager.method14659(this.config);
             this.moduleManager.method14658();
         }

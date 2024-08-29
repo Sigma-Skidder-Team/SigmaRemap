@@ -13,7 +13,7 @@ public class Class5388 extends Module {
 
    public Class5388() {
       super(ModuleCategory.MOVEMENT, "Mineplex", "Highjump for Mineplex");
-      this.registerSetting(new Class6009<Float>("Motion", "Highjump motion", 1.1F, Float.class, 0.42F, 5.0F, 0.05F));
+      this.registerSetting(new NumberSetting<Float>("Motion", "Highjump motion", 1.1F, Float.class, 0.42F, 5.0F, 0.05F));
       this.registerSetting(new BooleanSetting("Disable", "Disable on landing.", true));
       this.registerSetting(new BooleanSetting("Fake fly", "Am i flying ?", false));
    }
@@ -25,14 +25,14 @@ public class Class5388 extends Module {
 
    @EventTarget
    public void method16970(Class4417 var1) {
-      if (this.method15996() && mc.player.field5036) {
+      if (this.isEnabled() && mc.player.field5036) {
          var1.method13966(true);
       }
    }
 
    @EventTarget
    public void method16971(Class4435 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (this.field24023 && mc.player.getPosY() + 0.42 < this.field24026) {
             this.method16004().method16000();
          }
@@ -42,7 +42,7 @@ public class Class5388 extends Module {
             Class9567.method37088(var1, this.field24024);
             this.field24024 -= 0.007;
             double var4 = 0.5;
-            if (this.method15977("Motion") > 3.0F) {
+            if (this.getNumberValueBySettingName("Motion") > 3.0F) {
                var4 -= 0.8;
             }
 
@@ -59,12 +59,12 @@ public class Class5388 extends Module {
 
    @EventTarget
    public void method16972(Class4404 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (mc.player.field5036) {
             if (this.field24023) {
                this.field24023 = !this.field24023;
                Class9567.method37090(0.0);
-               if (this.method15974("Disable")) {
+               if (this.getBooleanValueFromSetttingName("Disable")) {
                   this.method16004().method16000();
                }
 
@@ -94,7 +94,7 @@ public class Class5388 extends Module {
                   mc.getConnection().sendPacket(var26);
                   this.field24026 = var24 + 0.42;
                   mc.player.method3215(var17, var24, var19);
-                  this.field24025 = (double)this.method15977("Motion");
+                  this.field24025 = (double)this.getNumberValueBySettingName("Motion");
                   this.field24024 = 0.81;
                }
             }
@@ -104,7 +104,7 @@ public class Class5388 extends Module {
 
    @EventTarget
    public void method16973(Class4396 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          Packet var4 = var1.method13898();
          if (var4 instanceof Class5473) {
             this.method16004().method16000();
@@ -114,7 +114,7 @@ public class Class5388 extends Module {
 
    @EventTarget
    public void method16974(Class4422 var1) {
-      if (this.method15996() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.method15974("Fake fly")) {
+      if (this.isEnabled() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.getBooleanValueFromSetttingName("Fake fly")) {
          mc.player.field5028.field18049 = this.field24026;
          mc.player.field5049 = this.field24026;
          mc.player.field4915 = this.field24026;

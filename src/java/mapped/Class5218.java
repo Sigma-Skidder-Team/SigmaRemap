@@ -25,7 +25,7 @@ public class Class5218 extends Module {
 
     @EventTarget
     public void method16246(StopUseItemEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23549 >= 0) {
                 var1.method13900(true);
             }
@@ -34,7 +34,7 @@ public class Class5218 extends Module {
 
     @EventTarget
     public void method16247(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             int var4 = mc.gameSettings.keyBindsHotbar.length;
 
             for (int var5 = 0; var5 < var4; var5++) {
@@ -51,13 +51,13 @@ public class Class5218 extends Module {
 
     @EventTarget
     public void method16248(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23551 < 20) {
                 this.field23551++;
             }
 
             int var4 = -1;
-            if (mc.player.method3042() <= this.method16004().method15977("Health") * 2.0F) {
+            if (mc.player.method3042() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F) {
                 var4 = ((Class5331) this.method16004()).method16749(false);
                 if (this.field23549 == -1 && this.field23551 >= 20 && var4 != -1) {
                     this.field23549 = 0;
@@ -89,7 +89,7 @@ public class Class5218 extends Module {
 
     @EventTarget
     public void method16249(Class4396 var1) {
-        if (this.method15996() && this.field23549 > 1) {
+        if (this.isEnabled() && this.field23549 > 1) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5553) {
                 Class5553 var5 = (Class5553) var4;

@@ -9,22 +9,22 @@ public class Class1085 extends Class1082 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27059;
+      return Sounds.field27059;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27069;
+      return Sounds.field27069;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27060;
+      return Sounds.field27060;
    }
 
    @Override
    public Class9455 method5030() {
-      return Class6067.field27071;
+      return Sounds.field27071;
    }
 
    @Override

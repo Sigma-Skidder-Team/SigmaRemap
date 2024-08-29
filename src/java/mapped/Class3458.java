@@ -51,7 +51,7 @@ public class Class3458 extends Block {
       if (!var0.field9020) {
          Class1004 var5 = new Class1004(var0, (double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2);
          var0.method6916(var5);
-         var0.method6743((PlayerEntity)null, var5.getPosX(), var5.getPosY(), var5.getPosZ(), Class6067.field27146, Class2266.field14732, 1.0F, 1.0F);
+         var0.method6743((PlayerEntity)null, var5.getPosX(), var5.getPosY(), var5.getPosZ(), Sounds.field27146, Class2266.field14732, 1.0F, 1.0F);
       }
    }
 

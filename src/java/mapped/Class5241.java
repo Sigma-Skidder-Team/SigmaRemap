@@ -29,8 +29,8 @@ public class Class5241 extends Module {
 
     @EventTarget
     public void method16338(Class4435 var1) {
-        if (this.method15996()) {
-            boolean var4 = this.method15974("AutoJump");
+        if (this.isEnabled()) {
+            boolean var4 = this.getBooleanValueFromSetttingName("AutoJump");
             double var5 = Class9567.method37075();
             boolean var7 = Class5628.method17686();
             if (!mc.player.field5036) {
@@ -51,7 +51,7 @@ public class Class5241 extends Module {
 
     @EventTarget
     public void method16339(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method14002(0.407 + 0.1 * (double) Class9567.method37079());
             this.field23599 = 0;
             var1.method14003(1.8);

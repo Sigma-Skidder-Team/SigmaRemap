@@ -30,15 +30,15 @@ public class Class4318 extends Class4307 {
         this.method13230(var11 = new Class4242(this, "pb2", var7, var5 + var8 + 9, var4, var6, ResourcesDecrypter.sigmaLigmaPNG));
         this.method13230(var10 = new Class4242(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, ResourcesDecrypter.jelloPNG));
         var9.method13251((var0, var1) -> {
-            Client.getInstance().method19955(ClientMode.NOADDONS);
+            Client.getInstance().setupClient(ClientMode.NOADDONS);
             Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         });
         var10.method13251((var0, var1) -> {
-            Client.getInstance().method19955(ClientMode.JELLO);
+            Client.getInstance().setupClient(ClientMode.JELLO);
             Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         });
         var11.method13251((var0, var1) -> {
-            Client.getInstance().method19955(ClientMode.CLASSIC);
+            Client.getInstance().setupClient(ClientMode.CLASSIC);
             Minecraft.getInstance().displayGuiScreen(new MainMenuScreen());
         });
         Class4305 var12 = new Class4305(this, "socialbtns", (this.method13267() - 174) / 2, this.method13269() - 70, 174, 34);
@@ -100,7 +100,7 @@ public class Class4318 extends Class4307 {
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.method8043(),
                     (float) Minecraft.getInstance().mainWindow.method8044(),
-                    Class5628.method17688(Class1979.field12891.field12910, 0.3F)
+                    Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             super.method13027(var1);
             Class3192.method11449(
@@ -109,7 +109,7 @@ public class Class4318 extends Class4307 {
                     (float) Minecraft.getInstance().mainWindow.method8043(),
                     (float) Minecraft.getInstance().mainWindow.method8044(),
                     CustomResourceLoadProgressGui.field6780,
-                    Class5628.method17688(Class1979.field12896.field12910, 1.0F - field21069.calcPercent())
+                    Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
             );
             Class3192.method11424(
                     0.0F,

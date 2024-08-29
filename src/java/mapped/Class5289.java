@@ -16,12 +16,12 @@ public class Class5289 extends Module {
 
     public Class5289() {
         super(ModuleCategory.RENDER, "Shadow", "Draws a line arround entities");
-        this.registerSetting(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget
     private void method16605(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 this.method16612();
                 Class3192.method11476();
@@ -45,7 +45,7 @@ public class Class5289 extends Module {
     }
 
     private void method16606() {
-        int var3 = Class5628.method17688(Class1979.field12896.field12910, 0.8F);
+        int var3 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
         mc.world
                 .field9025
                 .forEach(
@@ -80,7 +80,7 @@ public class Class5289 extends Module {
     private void method16607(Class2191 var1) {
         GL11.glDepthFunc(519);
         field23794 = var1;
-        int var4 = this.method15976("Color");
+        int var4 = this.parseSettingValueToIntBySettingName("Color");
         float var5 = (float) (var4 >> 24 & 0xFF) / 255.0F;
         float var6 = (float) (var4 >> 16 & 0xFF) / 255.0F;
         float var7 = (float) (var4 >> 8 & 0xFF) / 255.0F;
@@ -148,7 +148,7 @@ public class Class5289 extends Module {
 
     @EventTarget
     public void method16609(Class4410 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (field23794 != Class2191.field14327) {
                 var1.method13957(false);
             }
@@ -157,7 +157,7 @@ public class Class5289 extends Module {
 
     @EventTarget
     public void method16610(Class4433 var1) {
-        if (this.method15996() && field23794 != Class2191.field14327 && var1.method13987() instanceof PlayerEntity) {
+        if (this.isEnabled() && field23794 != Class2191.field14327 && var1.method13987() instanceof PlayerEntity) {
             var1.method13900(true);
         }
     }

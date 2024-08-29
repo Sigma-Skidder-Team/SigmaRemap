@@ -131,17 +131,17 @@ public class Class1100 extends Class1009 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27185;
+      return Sounds.field27185;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27187;
+      return Sounds.field27187;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27188;
+      return Sounds.field27188;
    }
 
    @Override

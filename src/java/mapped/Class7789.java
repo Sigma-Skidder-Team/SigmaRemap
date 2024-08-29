@@ -168,8 +168,8 @@ public class Class7789 {
 
       for (int var4 = 9; var4 <= 44; var4++) {
          ItemStack var5 = field33419.player.field4904.method18131(var4).method18265();
-         if (!method25819(var4) && var5.getItem() instanceof Class3267) {
-            float var6 = ((Class3267)var5.getItem()).method11784()
+         if (!method25819(var4) && var5.getItem() instanceof ItemSword) {
+            float var6 = ((ItemSword)var5.getItem()).method11784()
                + (float)Class7858.method26311(Class8122.field34908, var5)
                + (float)Class7858.method26311(Class8122.field34912, var5);
             if (var6 > var3 || var6 == var3 && var4 == 36) {
@@ -206,11 +206,11 @@ public class Class7789 {
          if (var6 != null) {
             float var7 = 0.0F;
             if (var0 == null) {
-               if (!(var6.getItem() instanceof Class3267)) {
+               if (!(var6.getItem() instanceof ItemSword)) {
                   continue;
                }
 
-               var7 = ((Class3267)var6.getItem()).method11784();
+               var7 = ((ItemSword)var6.getItem()).method11784();
             } else {
                var7 = var6.method32109(var0);
             }
@@ -435,8 +435,8 @@ public class Class7789 {
    }
 
    public static float method25853(ItemStack var0) {
-      return var0 != null && var0.getItem() instanceof Class3267
-         ? ((Class3267)var0.getItem()).method11784()
+      return var0 != null && var0.getItem() instanceof ItemSword
+         ? ((ItemSword)var0.getItem()).method11784()
             + (float)Class7858.method26311(Class8122.field34908, var0)
             + (float)Class7858.method26311(Class8122.field34912, var0)
          : 1.0F;
@@ -445,7 +445,7 @@ public class Class7789 {
    public static float method25854(ItemStack var0) {
       if (var0 != null) {
          Item var3 = var0.getItem();
-         if (!(var3 instanceof Class3267)) {
+         if (!(var3 instanceof ItemSword)) {
             if (!(var3 instanceof Class3287)) {
                if (!(var3 instanceof Class3271)) {
                   if (!(var3 instanceof Class3264)) {

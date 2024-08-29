@@ -43,7 +43,7 @@ public class Class5316 extends Module {
     @EventTarget
     @LowerPriority
     public void method16700(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
             if (this.field23854 <= 1) {
                 if (this.field23854 != -1) {
@@ -70,7 +70,7 @@ public class Class5316 extends Module {
 
     @EventTarget
     public void method16701(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23854++;
             if (this.field23854 != 3) {
                 if (this.field23854 > 3) {
@@ -90,7 +90,7 @@ public class Class5316 extends Module {
 
     @EventTarget
     public void method16702(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;
@@ -111,7 +111,7 @@ public class Class5316 extends Module {
 
     @EventTarget
     public void method16703(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13932();
             if (var4 instanceof Class5603) {
                 Class5603 var5 = (Class5603) var4;
@@ -124,7 +124,7 @@ public class Class5316 extends Module {
 
     @EventTarget
     public void method16704(Class4422 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 }

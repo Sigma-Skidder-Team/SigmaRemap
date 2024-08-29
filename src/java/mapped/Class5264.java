@@ -27,13 +27,13 @@ public class Class5264 extends PremiumModule {
 
     @EventTarget
     public void method16472(Class4399 var1) {
-        if (this.method15996() && var1.method13921() && !(mc.currentScreen instanceof Class868)) {
+        if (this.isEnabled() && var1.method13921() && !(mc.currentScreen instanceof Class868)) {
             if (this.field23680 < 20) {
                 this.field23680++;
             }
 
             if (this.field23681 == -1 && this.field23680 >= 20 && this.field23678 == -1) {
-                if (mc.player.method3042() <= this.method16004().method15977("Health") * 2.0F && mc.player.method2959() == 0.0F) {
+                if (mc.player.method3042() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F && mc.player.method2959() == 0.0F) {
                     this.field23681 = ((Class5331) this.method16004()).method16749(false);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
@@ -41,7 +41,7 @@ public class Class5264 extends PremiumModule {
                     }
                 }
 
-                if (this.field23678 == -1 && this.method15974("Fire resistance potions") && !mc.player.method3033(Class7144.method22287(12))) {
+                if (this.field23678 == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.method3033(Class7144.method22287(12))) {
                     this.field23681 = ((Class5331) this.method16004()).method16749(true);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;

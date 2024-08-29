@@ -15,7 +15,7 @@ public class Class5313 extends Module {
 
     @Override
     public void method15953() {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
             mc.gameSettings.field44672 = 1.0;
         }
     }
@@ -29,7 +29,7 @@ public class Class5313 extends Module {
 
     @EventTarget
     public void method16691(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             mc.gameSettings.field44672 = 999.0;
             if (mc.world != null) {
                 if (!this.getStringSettingValueByName("Type").equals("Normal")) {

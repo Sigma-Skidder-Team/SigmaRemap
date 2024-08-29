@@ -20,14 +20,14 @@ public class Class1044 extends Class1043 {
             new Class2596<Class1044>(
                this,
                Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34983),
-               Class6067.field27217,
+               Sounds.field27217,
                var1 -> this.world.method6741() && !var1.method3342()
             )
          );
       this.field5600
          .method20002(
             0,
-            new Class2596<Class1044>(this, new ItemStack(Items.field37891), Class6067.field27222, var1 -> this.world.method6740() && var1.method3342())
+            new Class2596<Class1044>(this, new ItemStack(Items.field37891), Sounds.field27222, var1 -> this.world.method6740() && var1.method3342())
          );
       this.field5600.method20002(1, new Class2781(this));
       this.field5600.method20002(1, new Class2770<Class1038>(this, Class1038.class, 8.0F, 0.5, 0.5));
@@ -134,33 +134,33 @@ public class Class1044 extends Class1043 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method4741() ? Class6067.field27215 : Class6067.field27223;
+      return !this.method4741() ? Sounds.field27215 : Sounds.field27223;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27220;
+      return Sounds.field27220;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27216;
+      return Sounds.field27216;
    }
 
    @Override
    public Class9455 method3059(ItemStack var1) {
       Item var4 = var1.getItem();
-      return var4 != Items.field37891 ? Class6067.field27219 : Class6067.field27218;
+      return var4 != Items.field37891 ? Sounds.field27219 : Sounds.field27218;
    }
 
    @Override
    public Class9455 method4749(boolean var1) {
-      return !var1 ? Class6067.field27221 : Class6067.field27224;
+      return !var1 ? Sounds.field27221 : Sounds.field27224;
    }
 
    @Override
    public Class9455 method4748() {
-      return Class6067.field27224;
+      return Sounds.field27224;
    }
 
    public void method4755(int var1) {

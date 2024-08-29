@@ -25,22 +25,22 @@ public class Class1106 extends Class1105 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method3255() ? Class6067.field26525 : Class6067.field26524;
+      return !this.method3255() ? Sounds.field26525 : Sounds.field26524;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method3255() ? Class6067.field26531 : Class6067.field26530;
+      return !this.method3255() ? Sounds.field26531 : Sounds.field26530;
    }
 
    @Override
    public Class9455 method2880() {
-      return !this.method3255() ? Class6067.field26528 : Class6067.field26527;
+      return !this.method3255() ? Sounds.field26528 : Sounds.field26527;
    }
 
    @Override
    public Class9455 method5307() {
-      return Class6067.field26529;
+      return Sounds.field26529;
    }
 
    @Override

@@ -14,7 +14,7 @@ public class Class5318 extends Module {
 
     @EventTarget
     private void method16709(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!(var1.method13898() instanceof Class5487)) {
                 if (!(var1.method13898() instanceof Class5582)) {
                     if (!(var1.method13898() instanceof Class5547)) {

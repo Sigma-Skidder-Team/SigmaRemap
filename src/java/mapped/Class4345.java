@@ -26,17 +26,17 @@ public class Class4345 extends Class4339 {
    }
 
    private int method13555(Class4305 var1, Setting var2, int var3, int var4, int var5) {
-      Class4287 var8 = new Class4287(var1, var2.method18625() + "lbl", var3, var4, 0, 0, Class4287.field20778, var2.method18625(), this.field21230);
-      Class4248 var9 = new Class4248(var1, var2.method18625() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
+      Class4287 var8 = new Class4287(var1, var2.getName() + "lbl", var3, var4, 0, 0, Class4287.field20778, var2.getName(), this.field21230);
+      Class4248 var9 = new Class4248(var1, var2.getName() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
       var1.method13230(var8);
       var1.method13230(var9);
       switch (Class9820.field45882[var2.method18618().ordinal()]) {
          case 1:
-            Class4262 var26 = new Class4262(var1, var2.method18625() + "checkbox", var3 + 135, var4 + 4, 40, 18);
-            var26.method13094((Boolean)var2.method18619(), false);
+            Class4262 var26 = new Class4262(var1, var2.getName() + "checkbox", var3 + 135, var4 + 4, 40, 18);
+            var26.method13094((Boolean)var2.getCurrentValue(), false);
             var2.method18616(var1x -> {
-               if (var26.method13092() != (Boolean)var1x.method18619()) {
-                  var26.method13094((Boolean)var1x.method18619(), false);
+               if (var26.method13092() != (Boolean)var1x.getCurrentValue()) {
+                  var26.method13094((Boolean)var1x.getCurrentValue(), false);
                }
             });
             var26.method13036(var1x -> var2.method18620(((Class4262)var1x).method13092()));
@@ -46,31 +46,31 @@ public class Class4345 extends Class4339 {
          case 2:
             short var17 = 240;
             byte var21 = 4;
-            Class6009 var25 = (Class6009)var2;
-            Class4370 var13 = new Class4370(var1, var2.method18625() + "slider", var3, var4 + 31, 240, 4);
-            var13.method13304(Float.toString((Float)var2.method18619()));
-            var8.method13304(var2.method18625() + ": " + Float.toString((Float)var2.method18619()));
-            var13.method13699(Class4277.method13134(var25.method18637(), var25.method18639(), (Float)var25.method18619()), false);
+            NumberSetting var25 = (NumberSetting)var2;
+            Class4370 var13 = new Class4370(var1, var2.getName() + "slider", var3, var4 + 31, 240, 4);
+            var13.method13304(Float.toString((Float)var2.getCurrentValue()));
+            var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
+            var13.method13699(Class4277.method13134(var25.getMin(), var25.getMax(), (Float)var25.getCurrentValue()), false);
             int var14 = var25.method18636();
             var25.method18616(
                var5x -> {
-                  if (Class4370.method13694(var13.method13697(), var25.method18637(), var25.method18639(), var25.method18641(), var14)
-                     != (Float)var5x.method18619()) {
-                     var13.method13304(Float.toString((Float)var5x.method18619()));
-                     var13.method13699(Class4370.method13693(var25.method18637(), var25.method18639(), (Float)var5x.method18619()), false);
-                     var8.method13304(var2.method18625() + ": " + Float.toString((Float)var2.method18619()));
+                  if (Class4370.method13694(var13.method13697(), var25.getMin(), var25.getMax(), var25.getIncrement(), var14)
+                     != (Float)var5x.getCurrentValue()) {
+                     var13.method13304(Float.toString((Float)var5x.getCurrentValue()));
+                     var13.method13699(Class4370.method13693(var25.getMin(), var25.getMax(), (Float)var5x.getCurrentValue()), false);
+                     var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
                   }
                }
             );
             var13.method13036(var5x -> {
                float var8x = ((Class4370)var5x).method13697();
-               float var9x = Class4370.method13694(var8x, var25.method18637(), var25.method18639(), var25.method18641(), var14);
-               if (var9x != (Float)var2.method18619()) {
+               float var9x = Class4370.method13694(var8x, var25.getMin(), var25.getMax(), var25.getIncrement(), var14);
+               if (var9x != (Float)var2.getCurrentValue()) {
                   var13.method13304(Float.toString(var9x));
                   var2.method18620(var9x);
                }
 
-               var8.method13304(var2.method18625() + ": " + Float.toString((Float)var2.method18619()));
+               var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
             });
             var1.method13230(var13);
             var4 += 54;
@@ -82,22 +82,22 @@ public class Class4345 extends Class4339 {
             this.method13230(
                var24 = new Class4282(
                   var1,
-                  var2.method18625() + "txt",
+                  var2.getName() + "txt",
                   var3,
                   var4 + 27,
                   var16,
                   var20,
                   Class4281.field20741,
-                  (String)var2.method18619(),
-                  var2.method18625(),
+                  (String)var2.getCurrentValue(),
+                  var2.getName(),
                   ResourceRegistry.field38868
                )
             );
             var24.method13306(ResourceRegistry.JelloLightFont18);
             var24.method13151(var1x -> var2.method18620(var1x.method13303()));
             var2.method18616(var2x -> {
-               if (var24.method13303() != ((Class6011)var2).method18619()) {
-                  var24.method13304(((Class6011)var2).method18619());
+               if (var24.method13303() != ((Class6011)var2).getCurrentValue()) {
+                  var24.method13304(((Class6011)var2).getCurrentValue());
                }
             });
             var4 += var20 + var5;
@@ -106,7 +106,7 @@ public class Class4345 extends Class4339 {
             int var15 = 80;
             int var19 = 20;
             Class4366 var23 = new Class4366(
-               var1, var2.method18625() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).method18634(), ((ModeSetting)var2).method18632()
+               var1, var2.getName() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).method18634(), ((ModeSetting)var2).method18632()
             );
             var2.method18616(var2x -> {
                if (var23.method13671() != ((ModeSetting)var2).method18632()) {
@@ -121,11 +121,11 @@ public class Class4345 extends Class4339 {
             byte var10 = 123;
             byte var11 = 27;
             Class4377 var12 = new Class4377(
-               var1, var2.method18625() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((Class6002)var2).method18627(), (Integer)var2.method18619()
+               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((Class6002)var2).method18627(), (Integer)var2.getCurrentValue()
             );
             var2.method18616(var1x -> {
-               if (var12.method13720() != (Integer)var1x.method18619()) {
-                  var12.method13722((Integer)var1x.method18619(), false);
+               if (var12.method13720() != (Integer)var1x.getCurrentValue()) {
+                  var12.method13722((Integer)var1x.getCurrentValue(), false);
                }
             });
             var12.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
@@ -142,7 +142,7 @@ public class Class4345 extends Class4339 {
 
    private void method13511() {
       Class4287 var3 = new Class4287(
-         this, "settingsname", 12, 2, this.field20897, 20, Class4287.field20778, this.field21229.method15990() + " Settings", this.field21230
+         this, "settingsname", 12, 2, this.field20897, 20, Class4287.field20778, this.field21229.getSuffix() + " Settings", this.field21230
       );
       this.method13230(var3);
       byte var4 = 20;
@@ -158,9 +158,9 @@ public class Class4345 extends Class4339 {
       if (this.field21229 instanceof Class5325) {
          Class5325 var16 = (Class5325)this.field21229;
 
-         for (Module var11 : var16.field23878) {
+         for (Module var11 : var16.moduleArray) {
             int var12 = 10;
-            Class4305 var13 = new Class4305(this, var11.method15991() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
+            Class4305 var13 = new Class4305(this, var11.getName() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
             var13.method13261((var0, var1) -> var0.method13268(var1.method13267()));
 
             for (Setting var15 : var11.method15989().values()) {

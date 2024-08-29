@@ -9,10 +9,10 @@ import java.util.List;
 
 public class Class4350 extends Class4278 {
    public static Class6387 field21259 = new Class6387(
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
-      Class1979.field12891.field12910,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
+      ClientColors.DEEP_TEAL.getColor,
       Class2218.field14488,
       Class2218.field14492
    );
@@ -73,7 +73,7 @@ public class Class4350 extends Class4278 {
             (float)(this.method13265() + var4 + var9 * var5.method23952()),
             (float)var4 + var10 + 1.0F,
             (float)(this.method13265() + var4 + var5.method23941(this.field20912) + var9 * var5.method23952()),
-            Class5628.method17688(Class1979.field12896.field12910, var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          super.method13027(var1);
       }
@@ -86,7 +86,7 @@ public class Class4350 extends Class4278 {
       StringBuilder var7 = new StringBuilder("");
 
       for (String var11 : var5) {
-         if (this.method13588(var11) == Class1979.field12896.field12910) {
+         if (this.method13588(var11) == ClientColors.LIGHT_GREYISH_BLUE.getColor) {
             var7.append(var11);
          } else {
             var6.add(var7.toString());
@@ -107,12 +107,12 @@ public class Class4350 extends Class4278 {
       } else if (!var1.endsWith(".")) {
          if (!var1.startsWith("if")) {
             if (!var1.endsWith("(")) {
-               return !var1.startsWith(")") ? Class1979.field12896.field12910 : -2774170;
+               return !var1.startsWith(")") ? ClientColors.LIGHT_GREYISH_BLUE.getColor : -2774170;
             } else {
                return -2774170;
             }
          } else {
-            return Class1979.field12896.field12910;
+            return ClientColors.LIGHT_GREYISH_BLUE.getColor;
          }
       } else {
          return -10442018;

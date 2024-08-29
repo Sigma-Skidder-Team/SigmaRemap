@@ -13,10 +13,10 @@ public class Class4335 extends Class4333 {
    public Class4335(Class4305 var1, String var2, int var3, int var4, ModuleCategory[] var5) {
       super(var1, var2, var3 - 296, var4 - 346, 592, 692);
 
-      for (Module var9 : Client.getInstance().getModuleManager().method14664().values()) {
+      for (Module var9 : Client.getInstance().getModuleManager().getModuleMap().values()) {
          if (var9.method16006()) {
             for (ModuleCategory var13 : var5) {
-               if (var9.method15993().equals(var13)) {
+               if (var9.getAdjustedCategoryBasedOnClientMode().equals(var13)) {
                   this.method13485(var9);
                }
             }
@@ -40,7 +40,7 @@ public class Class4335 extends Class4333 {
       int var5 = (int)Math.floor((double)((float)this.field21182 / 3.0F));
       short var6 = 170;
       byte var7 = 80;
-      this.method13230(new Class4368(this, var1.method15991(), 40 + var6 * var4, 72 + var7 * var5, var6, var7, var1));
+      this.method13230(new Class4368(this, var1.getName(), 40 + var6 * var4, 72 + var7 * var5, var6, var7, var1));
       this.field21182++;
    }
 
@@ -60,7 +60,7 @@ public class Class4335 extends Class4333 {
          for (Class4305 var5 : this.method13241()) {
             if (var5 instanceof Class4368 && this.field21149.calcPercent() == 1.0F && var5.method13114(this.method13309(), this.method13310())) {
                Class4368 var6 = (Class4368)var5;
-               Class3192.method11439(ClassicDecryption.regular17, 20.0F, (float)(this.method13269() - 26), var6.field21351.method15992(), -14540254);
+               Class3192.method11439(ClassicDecryption.regular17, 20.0F, (float)(this.method13269() - 26), var6.field21351.getDescription(), -14540254);
                Class3192.method11419(5.0F, (float)(this.method13269() - 27), 12.0F, 24.0F);
                Class3192.method11455(5.0F, (float)(this.method13269() - 27), 24.0F, 24.0F, Class4334.field21177);
                Class3192.method11422();

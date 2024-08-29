@@ -18,7 +18,7 @@ public class Class5302 extends Module {
 
     @EventTarget
     private void method16657(Class4415 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {
                 byte var4 = 5;
                 byte var5 = 60;
@@ -37,7 +37,7 @@ public class Class5302 extends Module {
                         (float) (var4 * var5 * 2) * 1.5F,
                         (float) (220 + var6),
                         ResourcesDecrypter.shadowPNG,
-                        Class5628.method17688(Class1979.field12896.field12910, 0.25F)
+                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
                 );
                 int var12 = 0;
 
@@ -93,7 +93,7 @@ public class Class5302 extends Module {
                         (float) (var1 + (var3 - ResourceRegistry.JelloLightFont25.method23942(var8)) / 2),
                         (float) (var2 + 20),
                         var8,
-                        Class5628.method17688(Class1979.field12896.field12910, var5)
+                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
                 );
             } else {
                 Class3192.method11439(
@@ -101,7 +101,7 @@ public class Class5302 extends Module {
                         (float) (var1 + (var3 - ResourceRegistry.JelloMediumFont40.method23942(var8)) / 2),
                         (float) (var2 + 10),
                         var8,
-                        Class5628.method17688(Class1979.field12896.field12910, var5)
+                        Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
                 );
             }
         } else {
@@ -110,14 +110,14 @@ public class Class5302 extends Module {
                     (float) (var2 + 28),
                     (float) (var1 + var3 / 2 + 1),
                     (float) (var2 + 38),
-                    Class5628.method17688(Class1979.field12896.field12910, var5 * 0.5F)
+                    Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * 0.5F)
             );
             Class3192.method11439(
                     ResourceRegistry.JelloLightFont18,
                     (float) (var1 + (var3 - ResourceRegistry.JelloLightFont18.method23942(var8)) / 2),
                     (float) (var2 + 40),
                     var8,
-                    Class5628.method17688(Class1979.field12896.field12910, var5)
+                    Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
             );
         }
     }

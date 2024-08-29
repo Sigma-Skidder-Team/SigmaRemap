@@ -498,25 +498,25 @@ public class Class4388 {
       if (var1 != Class8890.field40229) {
          if (!var0.method4634()) {
             if (var1 == Class8890.field40232 && method13839(var0)) {
-               return Class6067.field26936;
+               return Sounds.field26936;
             } else if (var1 != Class8890.field40231) {
                if (var1 != Class8890.field40230) {
                   if (!method13873(var0)) {
-                     return !method13872(var0) ? Class6067.field26930 : Class6067.field26936;
+                     return !method13872(var0) ? Sounds.field26930 : Sounds.field26936;
                   } else {
-                     return Class6067.field26934;
+                     return Sounds.field26934;
                   }
                } else {
-                  return Class6067.field26932;
+                  return Sounds.field26932;
                }
             } else {
-               return Class6067.field26929;
+               return Sounds.field26929;
             }
          } else {
-            return Class6067.field26936;
+            return Sounds.field26936;
          }
       } else {
-         return Class6067.field26931;
+         return Sounds.field26931;
       }
    }
 

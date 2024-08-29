@@ -20,7 +20,7 @@ public class Class5285 extends Module {
 
     @EventTarget
     private void method16583(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13977() == mc.gameSettings.field44639.field13070.field34875 && mc.player.method3337()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, Class1865.field10044));
             }
@@ -29,8 +29,8 @@ public class Class5285 extends Module {
 
     @EventTarget
     private void method16584(Class4402 var1) {
-        if (this.method15996()) {
-            if (this.field23757 && var1.method13932() instanceof CEntityActionPacket && this.method15974("AACP")) {
+        if (this.isEnabled()) {
+            if (this.field23757 && var1.method13932() instanceof CEntityActionPacket && this.getBooleanValueFromSetttingName("AACP")) {
                 CEntityActionPacket var4 = (CEntityActionPacket) var1.method13932();
                 if (var4.getAction() == Class1865.field10043) {
                     var1.method13900(true);
@@ -41,8 +41,8 @@ public class Class5285 extends Module {
 
     @EventTarget
     private void method16585(TickEvent var1) {
-        if (this.method15996()) {
-            if (this.method15974("AACP")) {
+        if (this.isEnabled()) {
+            if (this.getBooleanValueFromSetttingName("AACP")) {
                 boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof Class868);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;

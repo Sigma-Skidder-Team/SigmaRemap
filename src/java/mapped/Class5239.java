@@ -13,7 +13,7 @@ public class Class5239 extends Module {
 
     @EventTarget
     private void method16336(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             mc.gameSettings.field44632.field13071 = true;
         }
     }

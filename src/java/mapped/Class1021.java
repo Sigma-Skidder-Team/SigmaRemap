@@ -87,7 +87,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       double var12 = var1.getPosZ() - this.getPosZ();
       float var14 = MathHelper.method37766(var8 * var8 + var12 * var12) * 0.2F;
       var5.method3462(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
-      this.method2863(Class6067.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(Sounds.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }
 
@@ -113,7 +113,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4515(Class2266 var1) {
-      this.world.method6744((PlayerEntity)null, this, Class6067.field27115, var1, 1.0F, 1.0F);
+      this.world.method6744((PlayerEntity)null, this, Sounds.field27115, var1, 1.0F, 1.0F);
       if (!this.world.method6714()) {
          this.method4532(false);
          this.method3303(new ItemStack(Items.field37439), 1.7F);
@@ -141,19 +141,19 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    @Nullable
    @Override
    public Class9455 method4241() {
-      return Class6067.field27111;
+      return Sounds.field27111;
    }
 
    @Nullable
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27113;
+      return Sounds.field27113;
    }
 
    @Nullable
    @Override
    public Class9455 method2880() {
-      return Class6067.field27112;
+      return Sounds.field27112;
    }
 
    @Override

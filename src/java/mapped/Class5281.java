@@ -40,15 +40,15 @@ public class Class5281 extends Module {
         this.registerSetting(new Class6000("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
         this.registerSetting(
                 new BooleanSetting("Test Checkbox", "A test checkbox", true)
-                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed checkbox: " + var0.method18619()))
+                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed checkbox: " + var0.getCurrentValue()))
         );
         this.registerSetting(
-                new Class6009<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
-                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed slider: " + var0.method18619()))
+                new NumberSetting<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
+                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed slider: " + var0.getCurrentValue()))
         );
         this.registerSetting(
                 new Class6002("Test Type", "A test type button", 0, "hello", "goodbye")
-                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed type: " + var0.method18619()))
+                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed type: " + var0.getCurrentValue()))
         );
         this.registerSetting(
                 new Class6007(
@@ -56,7 +56,7 @@ public class Class5281 extends Module {
                         "A test suboption",
                         false,
                         new BooleanSetting("Test Checkbox", "A test checkbox", true),
-                        new Class6009<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
+                        new NumberSetting<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
                 )
         );
     }
@@ -122,7 +122,7 @@ public class Class5281 extends Module {
     @EventTarget
     @LowerPriority
     public void method16547(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
             Class5628.method17725(var1.method13994());
         }
@@ -130,19 +130,19 @@ public class Class5281 extends Module {
 
     @EventTarget
     public void method16548(Class4399 var1) {
-        if (!this.method15996() || !var1.method13921()) {
+        if (!this.isEnabled() || !var1.method13921()) {
         }
     }
 
     @EventTarget
     public void method16549(TickEvent var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 
     @EventTarget
     public void method16550(Class4415 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 
@@ -152,13 +152,13 @@ public class Class5281 extends Module {
 
     @EventTarget
     public void method16552(StopUseItemEvent var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 
     @EventTarget
     public void method16553(Class4417 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 
@@ -170,14 +170,14 @@ public class Class5281 extends Module {
     @EventTarget
     @LowestPriority
     public void method16555(Class4430 var1) {
-        if (!this.method15996()) {
+        if (!this.isEnabled()) {
         }
     }
 
     @EventTarget
     @LowestPriority
     public void method16556(ClickEvent var1) {
-        if (!this.method15996() || mc.currentScreen != null) {
+        if (!this.isEnabled() || mc.currentScreen != null) {
         }
     }
 
@@ -189,7 +189,7 @@ public class Class5281 extends Module {
     @LowestPriority
     public void method16558(Class4402 var1) {
         Packet var4 = var1.method13932();
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!(var4 instanceof CUseEntityPacket)) {
                 if (!(var4 instanceof Class5603)) {
                     if (!(var4 instanceof Class5539)) {
@@ -260,7 +260,7 @@ public class Class5281 extends Module {
     @EventTarget
     public void method16559(Class4396 var1) {
         Packet var4 = var1.method13898();
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!(var4 instanceof Class5476)) {
             }
 
@@ -271,7 +271,7 @@ public class Class5281 extends Module {
                             if (!(var4 instanceof Class5615)) {
                                 if (!(var4 instanceof Class5581)) {
                                     if (!(var4 instanceof Class5590)) {
-                                        if (var4 instanceof Class5515 && this.method15974("Explosions")) {
+                                        if (var4 instanceof Class5515 && this.getBooleanValueFromSetttingName("Explosions")) {
                                             Class5515 var5 = (Class5515) var1.method13898();
                                         }
                                     } else {

@@ -23,7 +23,7 @@ public class Class5188 extends Module {
 
     @EventTarget
     public void method16147(Class4413 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             byte var4 = 20;
             byte var5 = 32;
 
@@ -37,11 +37,11 @@ public class Class5188 extends Module {
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
-                    Class3192.method11424((float) var12, (float) var13, (float) var11, 20.0F, Class5628.method17688(Class1979.field12891.field12910, 0.5F));
+                    Class3192.method11424((float) var12, (float) var13, (float) var11, 20.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     Class3192.method11439(
-                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, Class5628.method17688(Class1979.field12891.field12910, 0.5F)
+                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F)
                     );
-                    Class3192.method11439(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, Class1979.field12896.field12910);
+                    Class3192.method11439(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     GL11.glPopMatrix();
                     List var14 = Class7789.method25877(var8);
                     if (var14.size() != 0) {
@@ -100,7 +100,7 @@ public class Class5188 extends Module {
 
     @EventTarget
     public void method16148(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.field23493.clear();
 
             for (Entity var5 : mc.world.method6835()) {
@@ -118,7 +118,7 @@ public class Class5188 extends Module {
 
     @EventTarget
     public void method16149(Class4433 var1) {
-        if (this.method15996() && var1.method13987() instanceof PlayerEntity) {
+        if (this.isEnabled() && var1.method13987() instanceof PlayerEntity) {
             var1.method13900(true);
         }
     }

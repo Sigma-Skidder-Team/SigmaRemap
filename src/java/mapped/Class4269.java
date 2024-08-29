@@ -24,7 +24,7 @@ public class Class4269 extends Class4247 {
    @Override
    public void method13027(float var1) {
       super.method13225();
-      Class3192.method11467(this.field20895, this.field20896, this.field20897, this.field20898, Class5628.method17688(Class1979.field12896.field12910, var1));
+      Class3192.method11467(this.field20895, this.field20896, this.field20897, this.field20898, Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       super.method13027(var1);
    }
 

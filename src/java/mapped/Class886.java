@@ -57,7 +57,7 @@ public class Class886 extends AbstractArrowEntity {
             double var6 = 0.05 * (double)var4;
             this.method3434(this.method3433().method11344(0.95).method11338(var5.method11333().method11344(var6)));
             if (this.field5115 == 0) {
-               this.method2863(Class6067.field27150, 10.0F, 1.0F);
+               this.method2863(Sounds.field27150, 10.0F, 1.0F);
             }
 
             this.field5115++;
@@ -99,7 +99,7 @@ public class Class886 extends AbstractArrowEntity {
       Entity var12 = this.method3460();
       Class8654 var7 = Class8654.method31119(this, (Entity)(var12 != null ? var12 : this));
       this.field5114 = true;
-      Class9455 var8 = Class6067.field27148;
+      Class9455 var8 = Sounds.field27148;
       if (var4.method2741(var7, var5)) {
          if (var4.getType() == EntityType.field41025) {
             return;
@@ -125,7 +125,7 @@ public class Class886 extends AbstractArrowEntity {
             var11.method3271(Vector3d.method11330(var10));
             var11.method3550(!(var12 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var12);
             this.world.method6916(var11);
-            var8 = Class6067.field27155;
+            var8 = Sounds.field27155;
             var13 = 5.0F;
          }
       }
@@ -135,7 +135,7 @@ public class Class886 extends AbstractArrowEntity {
 
    @Override
    public Class9455 method3476() {
-      return Class6067.field27149;
+      return Sounds.field27149;
    }
 
    @Override

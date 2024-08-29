@@ -60,7 +60,7 @@ public class Class3389 extends Block {
                      (double)var3.getX() + 0.5,
                      (double)var3.getY() + 0.5,
                      (double)var3.getZ() + 0.5,
-                     Class6067.field27015,
+                     Sounds.field27015,
                      Class2266.field14732,
                      1.0F,
                      1.0F
@@ -132,7 +132,7 @@ public class Class3389 extends Block {
          (double)var1.getX() + 0.5,
          (double)var1.getY() + 0.5,
          (double)var1.getZ() + 0.5,
-         Class6067.field27013,
+         Sounds.field27013,
          Class2266.field14732,
          1.0F,
          1.0F
@@ -148,7 +148,7 @@ public class Class3389 extends Block {
                (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,
                (double)var3.getZ() + 0.5,
-               Class6067.field27012,
+               Sounds.field27012,
                Class2266.field14732,
                1.0F,
                1.0F

@@ -64,7 +64,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      this.method2863(Class6067.field26728, 1.0F, 1.0F);
+      this.method2863(Sounds.field26728, 1.0F, 1.0F);
    }
 
    @Override
@@ -143,7 +143,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public void method4084() {
-      this.method2863(Class6067.field26729, 1.0F, 1.0F);
+      this.method2863(Sounds.field26729, 1.0F, 1.0F);
    }
 
    @Override

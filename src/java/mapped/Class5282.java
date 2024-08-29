@@ -18,7 +18,7 @@ public class Class5282 extends Module {
     public Class5282() {
         super(ModuleCategory.COMBAT, "BowAimbot", "Automatically aims at players while using a bow");
         this.registerSetting(new ModeSetting("Sort mode", "Sort mode", 0, "Angle", "Range"));
-        this.registerSetting(new Class6009<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
         this.registerSetting(new BooleanSetting("Silent", "Server-sided rotations.", false));
         this.registerSetting(new BooleanSetting("Teams", "Target team", true));
         this.registerSetting(new BooleanSetting("Players", "Target players", true));
@@ -64,14 +64,14 @@ public class Class5282 extends Module {
 
     @EventTarget
     private void method16569(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             if (!(mc.player.method3158().getItem() instanceof Class3263)) {
                 this.field23754.clear();
             } else {
-                this.field23754 = this.method16571(this.method16004().method15977("Range"));
+                this.field23754 = this.method16571(this.method16004().getNumberValueBySettingName("Range"));
             }
 
-            if (!this.field23754.isEmpty() && this.method15974("Silent")) {
+            if (!this.field23754.isEmpty() && this.getBooleanValueFromSetttingName("Silent")) {
                 float[] var4 = Class9142.method34146((Class880) this.field23754.get(0));
                 var1.method13918(var4[0]);
                 var1.method13916(var4[1]);
@@ -81,7 +81,7 @@ public class Class5282 extends Module {
 
     @EventTarget
     private void method16570(Class4415 var1) {
-        if (this.method15996() && !this.method15974("Silent")) {
+        if (this.isEnabled() && !this.getBooleanValueFromSetttingName("Silent")) {
             if (!this.field23754.isEmpty()) {
                 float[] var4 = Class9142.method34146((Class880) this.field23754.get(0));
                 mc.player.field5031 = var4[0];
@@ -110,19 +110,19 @@ public class Class5282 extends Module {
                 var5.remove();
             } else if (var6 instanceof ArmorStandEntity) {
                 var5.remove();
-            } else if (!this.method15974("Players") && var6 instanceof PlayerEntity) {
+            } else if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
                 var5.remove();
-            } else if (this.method15974("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
+            } else if (this.getBooleanValueFromSetttingName("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                 var5.remove();
-            } else if (!this.method15974("Invisible") && var6.method3342()) {
+            } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.method3342()) {
                 var5.remove();
-            } else if (!this.method15974("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
+            } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                 var5.remove();
             } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                 var5.remove();
             } else if (var6.method3362()) {
                 var5.remove();
-            } else if (var6 instanceof PlayerEntity && Class8781.method31662((PlayerEntity) var6) && !this.method15974("Teams")) {
+            } else if (var6 instanceof PlayerEntity && Class8781.method31662((PlayerEntity) var6) && !this.getBooleanValueFromSetttingName("Teams")) {
                 var5.remove();
             }
         }

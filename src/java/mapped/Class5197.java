@@ -17,7 +17,7 @@ public class Class5197 extends Module {
 
     @EventTarget
     private void method16183(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (Class5628.method17716()) {
                 mc.gameSettings.method37149();
             }
@@ -26,7 +26,7 @@ public class Class5197 extends Module {
 
     @EventTarget
     private void method16184(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5476) {
                 Class5476 var4 = (Class5476) var1.method13898();
             }

@@ -9,8 +9,8 @@ public class PremiumModule extends Module {
    }
 
    @Override
-   public boolean method15996() {
-      return Client.getInstance().getNetworkManager().isPremium() && super.method15996();
+   public boolean isEnabled() {
+      return Client.getInstance().getNetworkManager().isPremium() && super.isEnabled();
    }
 
    @Override
@@ -19,7 +19,7 @@ public class PremiumModule extends Module {
          super.setState(enabled);
       } else {
          if (this.enabled != enabled) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.method15991() + " Not yet available for free version"));
+            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
       }
@@ -31,19 +31,19 @@ public class PremiumModule extends Module {
          super.method15998(var1);
       } else {
          if (this.enabled != var1 && var1) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.method15991() + " Not yet available for free version"));
+            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
       }
    }
 
    @Override
-   public void method15999(boolean var1) {
+   public void method15999(boolean newEnabled) {
       if (Client.getInstance().getNetworkManager().isPremium()) {
-         super.method15999(var1);
+         super.method15999(newEnabled);
       } else {
-         if (this.method15996() != var1) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.method15991() + " Not yet available for free version"));
+         if (this.isEnabled() != newEnabled) {
+            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
       }

@@ -187,11 +187,11 @@ public class Class9069 {
 
    private static Class9455 method33799(Class1091 var0, Class8890 var1) {
       if (var1 == Class8890.field40232 || var0.method5087()) {
-         return Class6067.field26658;
+         return Sounds.field26658;
       } else if (var1 != Class8890.field40229) {
-         return !method33801(var0) ? Class6067.field26652 : Class6067.field26658;
+         return !method33801(var0) ? Sounds.field26652 : Sounds.field26658;
       } else {
-         return Class6067.field26653;
+         return Sounds.field26653;
       }
    }
 

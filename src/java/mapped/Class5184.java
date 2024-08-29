@@ -17,8 +17,8 @@ public class Class5184 extends Module {
     @Override
     public void isInDevelopment() {
         mc.worldRenderer.loadRenderers();
-        Class5313 var3 = (Class5313) Client.getInstance().getModuleManager().method14662(Class5313.class);
-        if (!var3.method15996()) {
+        Class5313 var3 = (Class5313) Client.getInstance().getModuleManager().getModuleByClass(Class5313.class);
+        if (!var3.isEnabled()) {
             var3.setState(true);
         }
     }
@@ -30,7 +30,7 @@ public class Class5184 extends Module {
 
     @EventTarget
     public void method16141(Class4424 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Class7377 var4 = var1.method13970();
             if (!(var4.getBlock() instanceof Class3420) && var4.getBlock() != Blocks.field37121) {
                 var1.method13900(true);

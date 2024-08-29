@@ -66,7 +66,7 @@ public class Class4290 extends Class4278 {
             this.field20896 + var4,
             this.field20897 - var4 * 2,
             this.field20898 - var4 * 2,
-            Class5628.method17688(Class1979.field12896.field12910, 0.9F * var1)
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
          );
          super.method13027(var1);
       }

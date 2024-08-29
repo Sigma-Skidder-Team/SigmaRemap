@@ -13,7 +13,7 @@ public class Class5288 extends Module {
 
     @Override
     public void method15953() {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             this.method16603();
         }
     }

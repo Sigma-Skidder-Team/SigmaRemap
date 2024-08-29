@@ -14,7 +14,7 @@ public class Class5252 extends Module {
 
     @EventTarget
     private void method16373(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.method3090() != null
                     && mc.player.method3090().getItem() instanceof Class3263
                     && mc.player.field5036) {

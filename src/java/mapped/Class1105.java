@@ -129,17 +129,17 @@ public class Class1105 extends Class1009 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method3255() ? Class6067.field26644 : Class6067.field26643;
+      return !this.method3255() ? Sounds.field26644 : Sounds.field26643;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method3255() ? Class6067.field26650 : Class6067.field26649;
+      return !this.method3255() ? Sounds.field26650 : Sounds.field26649;
    }
 
    @Override
    public Class9455 method2880() {
-      return !this.method3255() ? Class6067.field26647 : Class6067.field26646;
+      return !this.method3255() ? Sounds.field26647 : Sounds.field26646;
    }
 
    @Override
@@ -268,7 +268,7 @@ public class Class1105 extends Class1009 {
    }
 
    public Class9455 method5307() {
-      return Class6067.field26648;
+      return Sounds.field26648;
    }
 
    public float method5308(float var1) {

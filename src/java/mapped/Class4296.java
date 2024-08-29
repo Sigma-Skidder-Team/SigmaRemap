@@ -72,8 +72,8 @@ public class Class4296 extends Class4278 {
       }
 
       if (this.field20813 != null) {
-         int var6 = Class5628.method17688(Class1979.field12891.field12910, 0.2F);
-         int var7 = Class5628.method17688(Class1979.field12891.field12910, 0.7F);
+         int var6 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.2F);
+         int var7 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.7F);
          Class3192.method11439(
             ResourceRegistry.field38860,
             (float)(this.field20895 + (this.field20897 - ResourceRegistry.field38860.method23942(this.field20813.getKnownName())) / 2),

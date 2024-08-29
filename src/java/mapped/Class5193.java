@@ -11,7 +11,7 @@ public class Class5193 extends Module {
 
     public Class5193() {
         super(ModuleCategory.MOVEMENT, "Cubecraft", "Longjump for Cubecraft.");
-        this.registerSetting(new Class6009<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Class5193 extends Module {
 
     @EventTarget
     public void method16174(TickEvent var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!Class5628.method17730(mc.player, 0.001F)) {
                 this.field23501++;
                 this.field23502 -= 0.005;
@@ -60,7 +60,7 @@ public class Class5193 extends Module {
                 mc.getConnection().sendPacket(new Class5605(var4, var6, var8, true));
                 Class5628.method17725(Class9567.method37080());
                 this.field23501 = 0;
-                this.field23502 = this.method15977("Boost") / 2.0F;
+                this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;
                 Class9567.method37090(this.field23502);
             }
         }

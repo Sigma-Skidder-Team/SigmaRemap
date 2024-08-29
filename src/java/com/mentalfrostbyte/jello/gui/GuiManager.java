@@ -242,13 +242,13 @@ public class GuiManager {
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 float var7 = 0.5F + Class5151.field23380.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
-                Class3192.method11424(4.0F, 2.0F, 106.0F, 28.0F, Class5628.method17688(Class1979.field12891.field12910, 0.6F * var7));
-                Class3192.method11439(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", Class5628.method17688(Class1979.field12891.field12910, 0.5F * var7));
+                Class3192.method11424(4.0F, 2.0F, 106.0F, 28.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
+                Class3192.method11439(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
                 Class3192.method11439(
-                        ClassicDecryption.bold22, 8.0F, 1.0F, "Sigma", Class5628.method17688(Class1979.field12896.field12910, Math.min(1.0F, var7 * 1.2F))
+                        ClassicDecryption.bold22, 8.0F, 1.0F, "Sigma", Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F))
                 );
                 int var8 = Color.getHSBColor((float) (System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F).getRGB();
-                Class3192.method11439(ClassicDecryption.bold14, 73.0F, 2.0F, "5.0.0", Class5628.method17688(Class1979.field12891.field12910, 0.5F));
+                Class3192.method11439(ClassicDecryption.bold14, 73.0F, 2.0F, "5.0.0", Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.5F));
                 Class3192.method11439(ClassicDecryption.bold14, 72.0F, 1.0F, "5.0.0", Class5628.method17688(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);

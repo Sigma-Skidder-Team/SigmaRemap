@@ -13,7 +13,7 @@ public class Class5232 extends Module {
 
     @EventTarget
     private void method16297(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 this.method16299();
                 this.method16298();
@@ -23,14 +23,14 @@ public class Class5232 extends Module {
     }
 
     private void method16298() {
-        int var3 = Class5628.method17688(this.method16004().method15976("Regular Color"), 0.14F);
-        int var4 = Class5628.method17688(this.method16004().method15976("Ender Color"), 0.14F);
-        int var5 = Class5628.method17688(this.method16004().method15976("Trapped Color"), 0.14F);
+        int var3 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
+        int var4 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
+        int var5 = Class5628.method17688(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity var7 : mc.world.field9003) {
-            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.method16004().method15974("Show Regular Chests");
-            boolean var9 = var7 instanceof Class943 && this.method16004().method15974("Show Ender Chests");
-            boolean var10 = var7 instanceof Class970 && this.method16004().method15974("Show Trapped Chests");
+            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");
+            boolean var9 = var7 instanceof Class943 && this.method16004().getBooleanValueFromSetttingName("Show Ender Chests");
+            boolean var10 = var7 instanceof Class970 && this.method16004().getBooleanValueFromSetttingName("Show Trapped Chests");
             if (var8 || var9 || var10) {
                 double var11 = Class9647.method37624(var7.getPos()).field43722;
                 double var13 = Class9647.method37624(var7.getPos()).field43723;

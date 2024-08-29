@@ -41,17 +41,17 @@ public class Class1027 extends Class1026 implements Class1022 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field27233;
+      return Sounds.field27233;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field27237;
+      return Sounds.field27237;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field27235;
+      return Sounds.field27235;
    }
 
    public void method4567(boolean var1) {
@@ -104,7 +104,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                         this.getPosX(),
                         this.getPosY(),
                         this.getPosZ(),
-                        Class6067.field27236,
+                        Sounds.field27236,
                         this.method2864(),
                         1.0F,
                         0.8F + this.field5054.nextFloat() * 0.4F
@@ -141,7 +141,7 @@ public class Class1027 extends Class1026 implements Class1022 {
 
    @Override
    public Class9455 method4546() {
-      return Class6067.field27234;
+      return Sounds.field27234;
    }
 
    @Override
@@ -216,7 +216,7 @@ public class Class1027 extends Class1026 implements Class1022 {
                   this.getPosX(),
                   this.getPosY(),
                   this.getPosZ(),
-                  Class6067.field27238,
+                  Sounds.field27238,
                   this.method2864(),
                   1.0F,
                   0.8F + this.field5054.nextFloat() * 0.4F

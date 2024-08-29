@@ -11,12 +11,12 @@ import org.lwjgl.opengl.GL11;
 public class Class5279 extends Module {
     public Class5279() {
         super(ModuleCategory.RENDER, "Tracers", "Shows players");
-        this.registerSetting(new Class6010("Color", "The tracers color", Class1979.field12896.field12910));
+        this.registerSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     @EventTarget
     public void method16521(Class4420 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             GL11.glBlendFunc(770, 771);
             GL11.glAlphaFunc(519, 0.0F);
             GL11.glEnable(3042);
@@ -52,7 +52,7 @@ public class Class5279 extends Module {
         Vector3d var10 = new Vector3d(0.0, 0.0, 10.0)
                 .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.field5032)))
                 .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.field5031)));
-        int var11 = this.method15976("Color");
+        int var11 = this.parseSettingValueToIntBySettingName("Color");
         GL11.glBegin(1);
         GL11.glColor4fv(Class5628.method17709(Class5628.method17688(var11, 0.45F)));
         GL11.glVertex3d(var10.field18048, var10.field18049, var10.field18050);

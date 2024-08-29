@@ -24,9 +24,9 @@ public class Class4314 extends Class4307 {
       var5 += 80;
       this.method13230(this.field21028 = new Class4282(this, "password", var6, var5, var4, 45, Class4282.field20741, "", "New password", ResourceRegistry.field38868));
       var5 += 190;
-      this.method13230(this.field21029 = new Class4300(this, "edit", var6, var5, var4, 40, "Edit", Class1979.field12899.field12910));
+      this.method13230(this.field21029 = new Class4300(this, "edit", var6, var5, var4, 40, "Edit", ClientColors.MID_GREY.getColor));
       var5 += 50;
-      this.method13230(this.field21030 = new Class4300(this, "back", var6, var5, var4, 40, "Cancel", Class1979.field12899.field12910));
+      this.method13230(this.field21030 = new Class4300(this, "back", var6, var5, var4, 40, "Cancel", ClientColors.MID_GREY.getColor));
       this.field21028.method13155(true);
       this.field21028.method13147("*");
       this.field21029.method13251((var2, var3) -> {
@@ -47,17 +47,17 @@ public class Class4314 extends Class4307 {
    @Override
    public void method13027(float var1) {
       Class3192.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12908.field12910, 0.1F));
-      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(Class1979.field12891.field12910, 0.95F));
+      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.PALE_RED.getColor, 0.1F));
+      Class3192.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.95F));
       Class3192.method11440(
-         ResourceRegistry.field38868, (float)(this.method13267() / 2), 20.0F, "Edit Alt", Class1979.field12896.field12910, Class2218.field14492, Class2218.field14488
+         ResourceRegistry.field38868, (float)(this.method13267() / 2), 20.0F, "Edit Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
       );
       Class3192.method11441(
          ResourceRegistry.field38868,
          (float)(this.method13267() / 2),
          40.0F,
          this.field21032,
-         Class1979.field12896.field12910,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
          Class2218.field14488,
          true

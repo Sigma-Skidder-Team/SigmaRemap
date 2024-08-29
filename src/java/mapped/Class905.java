@@ -277,7 +277,7 @@ public class Class905 extends Class882 {
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
       ((ServerWorld)this.world).method6939(Class7940.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
-      this.method2863(Class6067.field27046, 1.0F, 1.0F);
+      this.method2863(Sounds.field27046, 1.0F, 1.0F);
    }
 
    @Override
@@ -294,7 +294,7 @@ public class Class905 extends Class882 {
    @Override
    public boolean method2741(Class8654 var1, float var2) {
       if (!this.world.field9020) {
-         this.method2863(Class6067.field27047, 1.0F, 1.0F);
+         this.method2863(Sounds.field27047, 1.0F, 1.0F);
          ((ServerWorld)this.world).method6939(Class7940.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.method2904();
       }

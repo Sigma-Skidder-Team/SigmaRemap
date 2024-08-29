@@ -47,12 +47,12 @@ public class Class3307 extends Item {
 
    @Override
    public Class9455 method11746() {
-      return Class6067.field26666;
+      return Sounds.field26666;
    }
 
    @Override
    public Class9455 method11747() {
-      return Class6067.field26666;
+      return Sounds.field26666;
    }
 
    @Override

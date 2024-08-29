@@ -138,7 +138,7 @@ public class Class4259 extends Class4247 {
          (float)var6,
          (float)var6,
          this.field20654.field30546,
-         Class1979.field12896.field12910,
+         ClientColors.LIGHT_GREYISH_BLUE.getColor,
          0.0F,
          0.0F,
          (float)this.field20654.field30544,
@@ -173,7 +173,7 @@ public class Class4259 extends Class4247 {
          (float)(this.field20895 - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
          (float)(this.field20896 + 35),
          var24,
-         Class5628.method17688(Class1979.field12891.field12910, 0.4F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.4F)
       );
       this.field20656 = this.field20650;
       this.field20657 = this.field20651;

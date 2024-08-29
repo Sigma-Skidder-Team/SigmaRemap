@@ -44,7 +44,7 @@ public class Class4257 extends Class4247 {
          (float)this.field20897,
          (float)this.field20898,
          (float)var4,
-         Class5628.method17688(Class1979.field12896.field12910, 0.97F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.97F)
       );
       Class3192.method11449(
          (float)(this.field20895 + 20),
@@ -52,20 +52,20 @@ public class Class4257 extends Class4247 {
          20.0F,
          20.0F,
          ResourcesDecrypter.searchPNG,
-         Class5628.method17688(Class1979.field12891.field12910, 0.3F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F)
       );
       ArrayList var5 = this.method13064();
-      if (var5.size() > 0 && this.method13067(this.field20640, ((Module)var5.get(0)).method15991())) {
-         String var6 = ((Module)var5.get(0)).method15991();
+      if (var5.size() > 0 && this.method13067(this.field20640, ((Module)var5.get(0)).getName())) {
+         String var6 = ((Module)var5.get(0)).getName();
          String var7 = this.field20640
-            + ((Module)var5.get(0)).method15991().substring(this.field20640.length(), var6.length())
-            + (!((Module)var5.get(0)).method15996() ? " - Disabled" : " - Enabled");
+            + ((Module)var5.get(0)).getName().substring(this.field20640.length(), var6.length())
+            + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
          Class3192.method11439(
             this.field20639.method13305(),
             (float)(this.field20895 + 54),
             (float)(this.field20896 + 14),
             var7,
-            Class5628.method17688(Class1979.field12891.field12910, 0.25F)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.25F)
          );
       }
 
@@ -75,8 +75,8 @@ public class Class4257 extends Class4247 {
    public ArrayList<Module> method13064() {
       ArrayList var3 = new ArrayList();
       if (this.field20640 != null && this.field20640.length() != 0) {
-         for (Module var5 : Client.getInstance().getModuleManager().method14664().values()) {
-            if (this.method13067(this.field20640, var5.method15991())) {
+         for (Module var5 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+            if (this.method13067(this.field20640, var5.getName())) {
                var3.add(var5);
             }
          }

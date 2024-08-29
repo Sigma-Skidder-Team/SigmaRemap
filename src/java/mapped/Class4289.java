@@ -21,11 +21,11 @@ public class Class4289 extends Class4278 {
       int var6 = this.field20783.method34193();
       int var7 = this.field20898 - 10 - Class4346.method13575();
       int var8 = Class5628.method17688(this.field20784, var1);
-      int var9 = Class5628.method17688(Class1979.field12891.field12910, var1);
+      int var9 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1);
       if (this.field20783.field42046) {
          var8 = Class5628.method17688(-15038729, var1);
          var4 += 402 - var6;
-         var9 = Class5628.method17688(Class1979.field12896.field12910, var1);
+         var9 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1);
       }
 
       Class3192.method11474((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);

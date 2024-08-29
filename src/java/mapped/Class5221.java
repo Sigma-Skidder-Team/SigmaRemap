@@ -21,7 +21,7 @@ public class Class5221 extends Module {
 
     @EventTarget
     public void method16256(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Vector3d var4 = new Vector3d(mc.player.getPosX(), 0.0, mc.player.getPosZ());
             if (mc.player.field5036 && this.field23558 != null) {
                 double var5 = var4.method11341(this.field23558) / (double) this.field23557;

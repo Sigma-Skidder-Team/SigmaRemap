@@ -69,17 +69,17 @@ public class Class1112 extends Class1111 implements Class1008 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26616;
+      return Sounds.field26616;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26618;
+      return Sounds.field26618;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26617;
+      return Sounds.field26617;
    }
 
    @Override

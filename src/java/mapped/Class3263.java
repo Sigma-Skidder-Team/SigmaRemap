@@ -59,7 +59,7 @@ public class Class3263 extends Class3262 implements Class3260 {
                   var7.getPosX(),
                   var7.getPosY(),
                   var7.getPosZ(),
-                  Class6067.field26363,
+                  Sounds.field26363,
                   Class2266.field14735,
                   1.0F,
                   1.0F / (field18735.nextFloat() * 0.4F + 1.2F) + var11 * 0.5F

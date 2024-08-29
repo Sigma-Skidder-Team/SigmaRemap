@@ -67,27 +67,27 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public Class9455 method4241() {
-      return !this.method3250() ? Class6067.field26514 : Class6067.field26515;
+      return !this.method3250() ? Sounds.field26514 : Sounds.field26515;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return !this.method3250() ? Class6067.field26518 : Class6067.field26519;
+      return !this.method3250() ? Sounds.field26518 : Sounds.field26519;
    }
 
    @Override
    public Class9455 method2880() {
-      return !this.method3250() ? Class6067.field26516 : Class6067.field26517;
+      return !this.method3250() ? Sounds.field26516 : Sounds.field26517;
    }
 
    @Override
    public Class9455 method4643() {
-      return Class6067.field26521;
+      return Sounds.field26521;
    }
 
    @Override
    public Class9455 method2859() {
-      return Class6067.field26522;
+      return Sounds.field26522;
    }
 
    @Override
@@ -195,7 +195,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       double var10 = var1.getPosZ() - this.getPosZ();
       double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
       var5.method3462(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().method8905() * 4));
-      this.method2863(Class6067.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
+      this.method2863(Sounds.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
       this.world.method6916(var5);
    }
 

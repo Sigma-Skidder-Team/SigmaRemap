@@ -79,7 +79,7 @@ public class Class4288 extends Class4278 {
             (float)(this.field20896 + var4),
             (float)(var5 + var6),
             (float)(this.field20896 + this.method13269() - var4),
-            Class5628.method17688(Class1979.field12899.field12910, 1.0F * var1)
+            Class5628.method17688(ClientColors.MID_GREY.getColor, 1.0F * var1)
          );
       } else {
          Class3192.method11454((float)var5, (float)this.field20896, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
@@ -89,7 +89,7 @@ public class Class4288 extends Class4278 {
             (float)(this.field20896 + var4),
             (float)(var5 + var6),
             (float)(this.field20896 + this.method13269() - var4),
-            Class5628.method17688(Class1979.field12891.field12910, 0.45F * var1)
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
          );
       }
 

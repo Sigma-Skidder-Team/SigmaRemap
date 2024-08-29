@@ -9,8 +9,8 @@ import totalcross.json.JSONObject;
 public class BooleanSetting extends Setting<Boolean> {
    public boolean field26186 = false;
 
-   public BooleanSetting(String var1, String var2, boolean var3) {
-      super(var1, var2, Class2314.field15851, var3);
+   public BooleanSetting(String name, String description, boolean value) {
+      super(name, description, Class2314.field15851, value);
    }
 
    public BooleanSetting method18630() {
@@ -28,15 +28,15 @@ public class BooleanSetting extends Setting<Boolean> {
       return this.field26186;
    }
 
-   public void method18621(Boolean var1, boolean var2) {
+   public void isPremiumSetting(Boolean var1, boolean var2) {
       if (this.field26186 && var2) {
          Client.getInstance().getNotificationManager().post(new Notification("Premium", "Not yet available for free version"));
       }
 
-      super.method18621(var1, var2);
+      super.isPremiumSetting(var1, var2);
    }
 
-   public Boolean method18619() {
+   public Boolean getCurrentValue() {
       return !this.field26186 ? this.currentValue : this.field26180;
    }
 

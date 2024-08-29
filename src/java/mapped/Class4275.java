@@ -29,7 +29,7 @@ public class Class4275 extends Class4247 {
             43,
             ResourceRegistry.JelloMediumFont40.method23942("New Account"),
             50,
-            new Class6387(Class1979.field12891.field12910, Class1979.field12891.field12910, Class1979.field12891.field12910, -7631989),
+            new Class6387(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
             "New Account",
             ResourceRegistry.JelloMediumFont40
          )
@@ -50,7 +50,7 @@ public class Class4275 extends Class4247 {
       byte var9 = 50;
       short var10 = 320;
       byte var11 = 106;
-      Class6387 var12 = new Class6387(-892679478, -892679478, -892679478, Class1979.field12899.field12910, Class2218.field14488, Class2218.field14492);
+      Class6387 var12 = new Class6387(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
       this.method13230(this.field20713 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
       this.field20713.method13306(ResourceRegistry.JelloLightFont20);
       this.method13230(this.field20714 = new Class4281(this, "Email", 228, var11 + 53, var10, var9, var12, "", "Email"));
@@ -81,7 +81,7 @@ public class Class4275 extends Class4247 {
          this.field20716.method13288(var7.method36702());
          if (var7.method36702()) {
             Class3192.method11424(
-               (float)(this.field20895 + var6), (float)(this.field20896 + var5), 114.0F, 40.0F, Class5628.method17688(Class1979.field12891.field12910, 0.04F)
+               (float)(this.field20895 + var6), (float)(this.field20896 + var5), 114.0F, 40.0F, Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 

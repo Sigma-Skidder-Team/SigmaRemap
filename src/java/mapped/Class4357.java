@@ -161,7 +161,7 @@ public class Class4357 extends Class4247 {
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20895 - var5 / 2 + this.field20897),
          (float)(this.field20896 - var5 / 2 + this.field20898),
-         Class5628.method17688(Class1979.field12891.field12910, var1 * 0.25F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       Class3192.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       float var7 = 0.9F + (1.0F - Class8603.method30791(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
@@ -175,14 +175,14 @@ public class Class4357 extends Class4247 {
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 20),
          "Profiles",
-         Class5628.method17688(Class1979.field12891.field12910, 0.8F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
       Class3192.method11426(
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 69),
          (float)(this.field20895 + this.field20897 - 25),
          (float)(this.field20896 + 70),
-         Class5628.method17688(Class1979.field12891.field12910, 0.05F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.method13027(var1);
    }

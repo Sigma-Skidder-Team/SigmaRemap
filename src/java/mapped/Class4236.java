@@ -27,7 +27,7 @@ public class Class4236 extends Class4235 implements Class4238 {
    }
 
    public Class4236(Class4305 var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
-      super(var1, var2, var3, var4, var5, var6, var7, new Class6387(Class1979.field12896.field12910, Class1979.field12896.field12910));
+      super(var1, var2, var3, var4, var5, var6, var7, new Class6387(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor));
    }
 
    @Override
@@ -77,7 +77,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          var10[2] + (float)(var11 * 2),
          var10[3] + (float)(var11 * 2),
          ResourcesDecrypter.shadowPNG,
-         Class5628.method17688(Class1979.field12896.field12910, this.field20578.calcPercent() * 0.7F * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20578.calcPercent() * 0.7F * var1)
       );
       Class3192.method11449(
          (float)var8 + var10[0],

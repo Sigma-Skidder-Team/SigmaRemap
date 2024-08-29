@@ -782,7 +782,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
 
          if (this.field6141 == 0.0F) {
-            this.field6132.getSoundHandler().method1000(Class6339.method19296(Class6067.field26978, this.field5054.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.field6132.getSoundHandler().method1000(MinecraftSoundManager.method19296(Sounds.field26978, this.field5054.nextFloat() * 0.4F + 0.8F, 0.25F));
          }
 
          this.field6141 += 0.0125F;
@@ -977,12 +977,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       boolean var4 = super.method2854();
       if (!this.isSpectator()) {
          if (!var3 && var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26329, Class2266.field14736, 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26329, Class2266.field14736, 1.0F, 1.0F, false);
             this.field6132.getSoundHandler().method1000(new Class6342(this));
          }
 
          if (var3 && !var4) {
-            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Class6067.field26330, Class2266.field14736, 1.0F, 1.0F, false);
+            this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), Sounds.field26330, Class2266.field14736, 1.0F, 1.0F, false);
          }
 
          return this.field4918;

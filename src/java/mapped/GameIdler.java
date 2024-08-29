@@ -13,7 +13,7 @@ public class GameIdler extends Module {
 
     @EventTarget
     private void method16941(Class4415 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             boolean var4 = GLFW.glfwGetWindowAttrib(mc.mainWindow.getHandle(), 131073) == 1;
             if (var4) {
                 Minecraft.getInstance().mainWindow.setFramerateLimit(mc.gameSettings.framerateLimit);

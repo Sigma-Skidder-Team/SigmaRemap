@@ -116,7 +116,7 @@ public class Class3244 extends Class3241 implements Class3207 {
                (double)var3.getX() + 0.5,
                (double)var3.getY() + 0.5,
                (double)var3.getZ() + 0.5,
-               Class6067.field26432,
+               Sounds.field26432,
                Class2266.field14732,
                0.5F + var4.nextFloat(),
                var4.nextFloat() * 0.7F + 0.6F,
@@ -159,7 +159,7 @@ public class Class3244 extends Class3241 implements Class3207 {
          boolean var7 = var3.<Boolean>method23463(field18698);
          if (var7) {
             if (!var1.method6714()) {
-               var1.method6742((PlayerEntity)null, var2, Class6067.field26611, Class2266.field14732, 1.0F, 1.0F);
+               var1.method6742((PlayerEntity)null, var2, Sounds.field26611, Class2266.field14732, 1.0F, 1.0F);
             }
 
             method11652(var1, var2, var3);

@@ -14,7 +14,7 @@ public class Class5296 extends Module {
 
     @EventTarget
     public void method16635(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!mc.player.method3066()) {
                 mc.player.respawnPlayer();
             }

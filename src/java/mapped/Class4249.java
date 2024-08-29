@@ -29,7 +29,7 @@ public class Class4249 extends Class4247 {
          (float)(this.field20897 * 3),
          (float)this.field20898,
          ResourcesDecrypter.repeatPNG,
-         Class5628.method17688(Class1979.field12896.field12910, 0.35F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
       );
       Class3192.method11422();
       super.method13027(var1);

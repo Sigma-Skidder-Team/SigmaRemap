@@ -46,7 +46,7 @@ public class Class1032 extends Class1031 {
 
    @Override
    public Class9455 method4546() {
-      return Class6067.field26561;
+      return Sounds.field26561;
    }
 
    @Override
@@ -82,17 +82,17 @@ public class Class1032 extends Class1031 {
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26559;
+      return Sounds.field26559;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26562;
+      return Sounds.field26562;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26564;
+      return Sounds.field26564;
    }
 
    private void method4601(Class1019 var1) {
@@ -106,7 +106,7 @@ public class Class1032 extends Class1031 {
 
    @Override
    public Class9455 method4598() {
-      return Class6067.field26560;
+      return Sounds.field26560;
    }
 
    @Override

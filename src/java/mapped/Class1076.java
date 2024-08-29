@@ -27,39 +27,39 @@ public class Class1076 extends AbstractHorseEntity {
    @Override
    public Class9455 method4241() {
       super.method4241();
-      return !this.method3263(Class8953.field40469) ? Class6067.field27061 : Class6067.field27065;
+      return !this.method3263(Class8953.field40469) ? Sounds.field27061 : Sounds.field27065;
    }
 
    @Override
    public Class9455 method2880() {
       super.method2880();
-      return Class6067.field27062;
+      return Sounds.field27062;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
       super.method2879(var1);
-      return Class6067.field27063;
+      return Sounds.field27063;
    }
 
    @Override
    public Class9455 method2859() {
       if (this.field5036) {
          if (!this.method3329()) {
-            return Class6067.field27068;
+            return Sounds.field27068;
          }
 
          this.field5901++;
          if (this.field5901 > 5 && this.field5901 % 3 == 0) {
-            return Class6067.field27066;
+            return Sounds.field27066;
          }
 
          if (this.field5901 <= 5) {
-            return Class6067.field27068;
+            return Sounds.field27068;
          }
       }
 
-      return Class6067.field27064;
+      return Sounds.field27064;
    }
 
    @Override
@@ -76,7 +76,7 @@ public class Class1076 extends AbstractHorseEntity {
       if (!this.method3250()) {
          super.method4960();
       } else {
-         this.method2863(Class6067.field27067, 0.4F, 1.0F);
+         this.method2863(Sounds.field27067, 0.4F, 1.0F);
       }
    }
 

@@ -105,7 +105,7 @@ public class Class4276 extends Class4247 {
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20895 - var5 / 2 + this.field20897),
          (float)(this.field20896 - var5 / 2 + this.field20898),
-         Class5628.method17688(Class1979.field12891.field12910, var1 * 0.25F)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       Class3192.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       GL11.glPushMatrix();
@@ -126,7 +126,7 @@ public class Class4276 extends Class4247 {
          (float)(this.field20896 + 68),
          (float)(this.field20895 + this.field20897 - 25),
          (float)(this.field20896 + 69),
-         Class5628.method17688(Class1979.field12891.field12910, 0.05F * var1)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.method13027(var1);
    }

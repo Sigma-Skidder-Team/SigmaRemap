@@ -27,10 +27,10 @@ public class Class5287 extends Module {
     public HashMap<Module, Float> field23774 = new HashMap<Module, Float>();
     public boolean field23781 = false;
     public ArrayList<Class8224> field23789 = new ArrayList<Class8224>();
-    public int field23790 = Class5628.method17688(Class1979.field12891.field12910, 0.0625F);
-    public int field23791 = Class5628.method17688(Class1979.field12896.field12910, 0.3F);
+    public int field23790 = Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.0625F);
+    public int field23791 = Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F);
     public List<ModuleCategory> field23792 = this.method16597();
-    public int field23793 = Class5628.method17688(Class1979.field12899.field12910, 0.05F);
+    public int field23793 = Class5628.method17688(ClientColors.MID_GREY.getColor, 0.05F);
     private final Color[] field23763 = new Color[3];
     private final Color[] field23764 = new Color[3];
     private final Color[] field23765 = new Color[3];
@@ -62,7 +62,7 @@ public class Class5287 extends Module {
     @EventTarget
     @HigestPriority
     private void method16590(Class4422 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (Client.getInstance().getGuiManager().method33472()) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
@@ -79,7 +79,7 @@ public class Class5287 extends Module {
     @EventTarget
     @HigestPriority
     private void method16591(Class4415 var1) {
-        if (this.method15996() && mc.player != null && mc.world != null) {
+        if (this.isEnabled() && mc.player != null && mc.world != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     this.field23771 = 5 * this.field23778 + this.field23779;
@@ -120,7 +120,7 @@ public class Class5287 extends Module {
     private List<Module> method16593(ModuleCategory var1) {
         ArrayList var4 = new ArrayList();
 
-        for (Module var6 : Client.getInstance().getModuleManager().method14665(var1)) {
+        for (Module var6 : Client.getInstance().getModuleManager().getModulesByCategory(var1)) {
             var4.add(var6);
         }
 
@@ -145,21 +145,21 @@ public class Class5287 extends Module {
                 this.field23774.put(var9, this.field23774.get(var9) - this.field23780);
             }
 
-            if (var9.method15996()) {
+            if (var9.isEnabled()) {
                 Class3192.method11439(
                         ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
                         (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3 + var7 * this.field23778),
-                        var9.method15991(),
-                        Class1979.field12896.field12910
+                        var9.getName(),
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor
                 );
             } else {
                 Class3192.method11439(
                         ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
                         (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2 + var7 * this.field23778),
-                        var9.method15991(),
-                        Class1979.field12896.field12910
+                        var9.getName(),
+                        ClientColors.LIGHT_GREYISH_BLUE.getColor
                 );
             }
 
@@ -307,7 +307,7 @@ public class Class5287 extends Module {
 
     @EventTarget
     private void method16598(Class4420 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             this.method16601();
             this.field23780 = (float) Math.max(Math.round(6.0F - (float) Minecraft.getFps() / 10.0F), 1);
         }
@@ -315,7 +315,7 @@ public class Class5287 extends Module {
 
     @EventTarget
     private void method16599(Class4430 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             switch (var1.method13977()) {
                 case 257:
                     if (this.field23781) {

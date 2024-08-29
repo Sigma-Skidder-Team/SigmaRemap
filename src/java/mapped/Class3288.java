@@ -23,7 +23,7 @@ public class Class3288 extends Class3287 {
 
    @Override
    public void method11826(PlayerEntity var1, Class1660 var2, BlockPos var3) {
-      var2.method6742(var1, var3, Class6067.field26427, Class2266.field14734, 1.0F, 1.0F);
+      var2.method6742(var1, var3, Sounds.field26427, Class2266.field14734, 1.0F, 1.0F);
    }
 
    private void method11827(ServerWorld var1, ItemStack var2, BlockPos var3) {

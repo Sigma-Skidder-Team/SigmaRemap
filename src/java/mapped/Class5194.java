@@ -26,12 +26,12 @@ public class Class5194 extends Module {
     }
 
     @Override
-    public String method15990() {
-        return this.method15991();
+    public String getSuffix() {
+        return this.getName();
     }
 
     private void method16177() {
-        if (this.method15996() && mc.player != null && !mc.player.abilities.isCreativeMode) {
+        if (this.isEnabled() && mc.player != null && !mc.player.abilities.isCreativeMode) {
             ItemStack var3 = mc.player.method2943(Class2106.field13732);
             if (var3.getItem() != Items.field38126) {
                 int var4 = Class7789.method25822(Items.field38126);

@@ -9,14 +9,14 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class Class5381 extends Module {
+public class Jesus extends Module {
    public int field24015;
    public int field24016;
    public int field24017;
 
-   public Class5381() {
+   public Jesus() {
       super(ModuleCategory.MOVEMENT, "Jesus", "Where's the scientific proof?");
-      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").method18631("Dolphin"));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").setModeAsPremium("Dolphin"));
       this.registerSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
    }
 
@@ -26,7 +26,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16945(Class4398 var1) {
-      if (this.method15996() && mc.world != null && !Class5258.method16421()) {
+      if (this.isEnabled() && mc.world != null && !Class5258.method16421()) {
          if (mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38940
             || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38941
             || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38943) {
@@ -60,7 +60,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16946(Class4399 var1) {
-      if (this.method15996() && mc.world != null && var1.method13921() && mc.getCurrentServerData() != null) {
+      if (this.isEnabled() && mc.world != null && var1.method13921() && mc.getCurrentServerData() != null) {
          if (method16953() && !this.method16951(mc.player.field5035)) {
             this.field24017++;
          } else {
@@ -83,13 +83,13 @@ public class Class5381 extends Module {
    @EventTarget
    @LowerPriority
    public void method16947(Class4435 var1) {
-      if (this.method15996() && mc.world != null && !Class5258.method16421()) {
+      if (this.isEnabled() && mc.world != null && !Class5258.method16421()) {
          if (this.method16951(mc.player.field5035) && !mc.player.method3331()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
             if (var4 != null && !var4.method23449().method23474()) {
                double var5 = (double)var4.method23449().method23476();
                if (var5 > 0.4) {
-                  if (this.method15974("Swim up")) {
+                  if (this.getBooleanValueFromSetttingName("Swim up")) {
                      var1.method13995(0.13);
                   }
 
@@ -146,7 +146,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16948(Class4436 var1) {
-      if (this.method15996() && mc.world != null && mc.getCurrentServerData() != null) {
+      if (this.isEnabled() && mc.world != null && mc.getCurrentServerData() != null) {
          if (method16953()) {
             if (this.field24015 % 2 != 0) {
                var1.method13900(true);
@@ -159,7 +159,7 @@ public class Class5381 extends Module {
 
    @EventTarget
    public void method16949(Class4434 var1) {
-      if (this.method15996() && !(var1.method13988() < 0.2)) {
+      if (this.isEnabled() && !(var1.method13988() < 0.2)) {
          if (method16953()) {
             var1.method13900(true);
          }
@@ -168,7 +168,7 @@ public class Class5381 extends Module {
 
    @Override
    public boolean method15988() {
-      return this.method15996() && method16953() && !this.method16950();
+      return this.isEnabled() && method16953() && !this.method16950();
    }
 
    public boolean method16950() {

@@ -57,12 +57,12 @@ public class ActiveMods extends Module {
     public void method15953() {
         this.field23612.clear();
 
-        for (Module var4 : Client.getInstance().getModuleManager().method14664().values()) {
-            if (var4.method15993() != ModuleCategory.GUI) {
+        for (Module var4 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+            if (var4.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
                 this.field23612.add(var4);
                 this.field23615.put(var4, new Animation(150, 150, Direction.BACKWARDS));
-                if (this.method15974("Animations")) {
-                    this.field23615.get(var4).changeDirection(!var4.method15996() ? Direction.BACKWARDS : Direction.FORWARDS);
+                if (this.getBooleanValueFromSetttingName("Animations")) {
+                    this.field23615.get(var4).changeDirection(!var4.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
         }
@@ -72,7 +72,7 @@ public class ActiveMods extends Module {
 
     @EventTarget
     private void method16354(Class4407 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!var1.method13939()) {
                 Class7414.method23839(0.0F, (float) (-this.field23614), 0.0F);
             } else {
@@ -91,7 +91,7 @@ public class ActiveMods extends Module {
                 int var9 = 0;
 
                 for (Module var11 : this.field23612) {
-                    if (var11.method15996()) {
+                    if (var11.isEnabled()) {
                         var9++;
                     }
                 }
@@ -112,10 +112,10 @@ public class ActiveMods extends Module {
 
     @EventTarget
     private void method16355(Class4415 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             for (Module var5 : this.field23615.keySet()) {
-                if (this.method15974("Animations")) {
-                    this.field23615.get(var5).changeDirection(!var5.method15996() ? Direction.BACKWARDS : Direction.FORWARDS);
+                if (this.getBooleanValueFromSetttingName("Animations")) {
+                    this.field23615.get(var5).changeDirection(!var5.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
 
@@ -140,8 +140,8 @@ public class ActiveMods extends Module {
                 for (Module var13 : this.field23612) {
                     float var14 = 1.0F;
                     float var15 = 1.0F;
-                    if (!this.method15974("Animations")) {
-                        if (!var13.method15996()) {
+                    if (!this.getBooleanValueFromSetttingName("Animations")) {
+                        if (!var13.isEnabled()) {
                             continue;
                         }
                     } else {
@@ -154,7 +154,7 @@ public class ActiveMods extends Module {
                         var14 = 0.86F + 0.14F * var15;
                     }
 
-                    String var22 = var13.method15990();
+                    String var22 = var13.getSuffix();
                     GL11.glAlphaFunc(519, 0.0F);
                     GL11.glPushMatrix();
                     int var17 = var6 - var20 - var8.method23942(var22) / 2;
@@ -169,7 +169,7 @@ public class ActiveMods extends Module {
                             (float) var8.method23942(var22) * 3.0F,
                             (float) (var8.method23952() + var21 + 40),
                             ResourcesDecrypter.shadowPNG,
-                            Class5628.method17688(Class1979.field12896.field12910, 0.36F * var15 * var19)
+                            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
                     );
                     Class3192.method11439(
                             var8, (float) (var6 - var20 - var8.method23942(var22)), (float) var7, var22, var15 != 1.0F ? Class5628.method17688(-1, var15 * 0.95F) : var11

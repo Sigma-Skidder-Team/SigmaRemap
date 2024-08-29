@@ -16,7 +16,7 @@ public class Class5248 extends Module {
     public Class5248() {
         super(ModuleCategory.MOVEMENT, "Cubecraft", "Speed for Cubecraft");
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hop", "YPort"));
-        this.registerSetting(new Class6009<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
         this.registerSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", false));
     }
 
@@ -37,8 +37,8 @@ public class Class5248 extends Module {
 
     @EventTarget
     public void method16361(Class4435 var1) {
-        if (this.method15996()
-                && !Client.getInstance().getModuleManager().method14662(BlockFly.class).method15996()
+        if (this.isEnabled()
+                && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
                 && !Class5628.method17684(mc.player)) {
             String var4 = this.getStringSettingValueByName("Mode");
             switch (var4) {
@@ -47,14 +47,14 @@ public class Class5248 extends Module {
                     this.field23619 = 0.27;
                     mc.timer.field40360 = 0.7F;
                     if (Class5628.method17730(mc.player, 0.01F)) {
-                        if (this.method15974("AutoJump")) {
+                        if (this.getBooleanValueFromSetttingName("AutoJump")) {
                             mc.player.method2914();
                             var1.method13995(mc.player.method3433().field18049);
                             Class9567.method37088(var1, this.field23619);
                         }
 
                         if (this.field23618 == 1) {
-                            this.field23619 = (double) this.method15977("Speed") * 2.4;
+                            this.field23619 = (double) this.getNumberValueBySettingName("Speed") * 2.4;
                         } else if (this.field23618 == 2) {
                             mc.timer.field40360 = 1.0F;
                             this.field23619 = 0.26;
@@ -93,7 +93,7 @@ public class Class5248 extends Module {
 
                         this.field23619 = Math.max(this.field23619, 0.2);
                         Class9567.method37088(var1, this.field23619);
-                    } else if (this.method15974("AutoJump")) {
+                    } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
                         mc.player.method2914();
                         var1.method13995(mc.player.method3433().field18049);
                         Class9567.method37088(var1, this.field23619);
@@ -103,16 +103,16 @@ public class Class5248 extends Module {
                     if (mc.player.field5036) {
                         if (Class5628.method17686()) {
                             var1.method13995(0.53000000000001);
-                            Class9567.method37088(var1, 3.67 * (double) this.method15977("Speed"));
+                            Class9567.method37088(var1, 3.67 * (double) this.getNumberValueBySettingName("Speed"));
                             this.field23618 = 0;
                         }
 
                         this.field23620 = mc.player.getPosY();
-                        if (!Client.getInstance().getModuleManager().method14662(Class5376.class).method15996()) {
+                        if (!Client.getInstance().getModuleManager().getModuleByClass(Class5376.class).isEnabled()) {
                             mc.timer.field40360 = 1.0F;
                         }
                     } else {
-                        mc.timer.field40360 = 1.0F - this.method15977("Speed") * 0.13F;
+                        mc.timer.field40360 = 1.0F - this.getNumberValueBySettingName("Speed") * 0.13F;
                         if (this.field23618 == 0 && var1.method13994() == 0.44100000858307864) {
                             this.field23618 = 1;
                             Class9567.method37088(var1, 0.286);
@@ -129,7 +129,7 @@ public class Class5248 extends Module {
 
     @EventTarget
     public void method16362(Class4422 var1) {
-        if (this.method15996() && !(this.field23620 < 0.0) && this.getStringSettingValueByName("Mode").equals("YPort")) {
+        if (this.isEnabled() && !(this.field23620 < 0.0) && this.getStringSettingValueByName("Mode").equals("YPort")) {
             if (mc.player.field5036 && Class5628.method17730(mc.player, 0.001F)) {
                 this.field23620 = mc.player.getPosY();
             }
@@ -146,7 +146,7 @@ public class Class5248 extends Module {
 
     @EventTarget
     public void method16363(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method14002(0.4);
             this.field23619 = 0.6 + (double) Class9567.method37078() * 0.1;
             this.field23618 = 0;

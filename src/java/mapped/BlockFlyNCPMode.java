@@ -25,7 +25,7 @@ public class BlockFlyNCPMode extends Module {
         super(ModuleCategory.MOVEMENT, "NCP", "Places block underneath");
         this.registerSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Slow", "Sneak"));
         this.registerSetting(new BooleanSetting("KeepRotations", "Keeps your rotations.", true));
-        this.registerSetting(new Class6009<Float>("Extend", "Extend value", 0.0F, Float.class, 0.0F, 6.0F, 0.1F));
+        this.registerSetting(new NumberSetting<Float>("Extend", "Extend value", 0.0F, Float.class, 0.0F, 6.0F, 0.1F));
         this.registerSetting(new BooleanSetting("Downwards", "Allows you to go down when sneaking.", true));
     }
 
@@ -69,7 +69,7 @@ public class BlockFlyNCPMode extends Module {
         this.field23924 = mc.player.inventory.currentItem;
         this.field23922 = this.field23921 = 999.0F;
         ((BlockFly) this.method16004()).field23884 = -1;
-        if (mc.gameSettings.field44637.isKeyDown() && this.method15974("Downwards")) {
+        if (mc.gameSettings.field44637.isKeyDown() && this.getBooleanValueFromSetttingName("Downwards")) {
             mc.gameSettings.field44637.field13071 = false;
             this.field23929 = true;
         }
@@ -108,8 +108,8 @@ public class BlockFlyNCPMode extends Module {
 
     @EventTarget
     public void method16805(Class4417 var1) {
-        if (this.method15996()) {
-            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().method14662(Fly.class).method15996()) {
+        if (this.isEnabled()) {
+            if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
                 if (mc.world
                         .method7055(
                                 mc.player,
@@ -121,8 +121,8 @@ public class BlockFlyNCPMode extends Module {
                     var1.method13966(true);
                 }
             } else if (mc.player.field5036
-                    && Client.getInstance().getModuleManager().method14662(Class5363.class).method15996()
-                    && (!this.field23929 || !this.method15974("Downwards"))) {
+                    && Client.getInstance().getModuleManager().getModuleByClass(Class5363.class).isEnabled()
+                    && (!this.field23929 || !this.getBooleanValueFromSetttingName("Downwards"))) {
                 var1.method13966(true);
             }
         }
@@ -130,7 +130,7 @@ public class BlockFlyNCPMode extends Module {
 
     @EventTarget
     private void method16806(Class4430 var1) {
-        if (this.method15996() && this.method15974("Downwards")) {
+        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
             if (var1.method13977() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23929 = true;
@@ -140,7 +140,7 @@ public class BlockFlyNCPMode extends Module {
 
     @EventTarget
     private void method16807(Class4426 var1) {
-        if (this.method15996() && this.method15974("Downwards")) {
+        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
             if (var1.method13973() == mc.gameSettings.field44637.field13070.field34875) {
                 var1.method13900(true);
                 this.field23929 = false;
@@ -151,7 +151,7 @@ public class BlockFlyNCPMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16808(Class4399 var1) {
-        if (this.method15996() && this.field23928.method16735() != 0) {
+        if (this.isEnabled() && this.field23928.method16735() != 0) {
             if (!var1.method13921()) {
                 this.field23928.method16736();
                 if (this.field23923 != null) {
@@ -164,7 +164,7 @@ public class BlockFlyNCPMode extends Module {
                     }
 
                     mc.playerController.func_217292_a(mc.player, mc.world, this.field23927, var13);
-                    if (!this.method16004().method15974("NoSwing")) {
+                    if (!this.method16004().getBooleanValueFromSetttingName("NoSwing")) {
                         mc.player.swingArm(this.field23927);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(this.field23927));
@@ -199,7 +199,7 @@ public class BlockFlyNCPMode extends Module {
                         && mc.player.field5045 > 1.0F
                         && Class9217.method34567(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
                     var8 += Math.min(mc.player.method3433().field18049 * 2.0, 4.0);
-                } else if (this.field23929 && this.method15974("Downwards")) {
+                } else if (this.field23929 && this.getBooleanValueFromSetttingName("Downwards")) {
                     var8--;
                 } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                         && !mc.gameSettings.field44636.isKeyDown()) {
@@ -219,7 +219,7 @@ public class BlockFlyNCPMode extends Module {
 
                 BlockPos var15 = new BlockPos(var4, var8 - 1.0, var6);
                 if (!Class9217.method34578(var15) && this.field23928.method16739(this.field23927)) {
-                    Class7843 var11 = Class9217.method34575(var15, !this.field23929 && this.method15974("Downwards"));
+                    Class7843 var11 = Class9217.method34575(var15, !this.field23929 && this.getBooleanValueFromSetttingName("Downwards"));
                     this.field23923 = var11;
                     if (var11 != null) {
                         float[] var12 = Class9217.method34542(this.field23923.field33646, this.field23923.field33647);
@@ -229,7 +229,7 @@ public class BlockFlyNCPMode extends Module {
                         var1.method13916(this.field23921);
                     }
                 } else {
-                    if (this.method15974("KeepRotations") && this.field23921 != 999.0F) {
+                    if (this.getBooleanValueFromSetttingName("KeepRotations") && this.field23921 != 999.0F) {
                         var1.method13918(this.field23922);
                         var1.method13916(this.field23921);
                     }
@@ -247,12 +247,12 @@ public class BlockFlyNCPMode extends Module {
     @EventTarget
     @HigherPriority
     public void method16809(Class4435 var1) {
-        if (this.method15996() && this.field23928.method16735() != 0) {
+        if (this.isEnabled() && this.field23928.method16735() != 0) {
             if (mc.player.field5036 || Class5628.method17730(mc.player, 0.01F)) {
                 this.field23931 = mc.player.getPosY();
             }
 
-            if (this.method16004().method15974("No Sprint")) {
+            if (this.method16004().getBooleanValueFromSetttingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
@@ -272,7 +272,7 @@ public class BlockFlyNCPMode extends Module {
                     if (mc.player.field5036 && Class5628.method17686() && !mc.player.method3331() && !this.field23929) {
                         this.field23930 = false;
                         mc.player.method2914();
-                        ((Class5341) Client.getInstance().getModuleManager().method14662(Class5341.class)).method16764();
+                        ((Class5341) Client.getInstance().getModuleManager().getModuleByClass(Class5341.class)).method16764();
                         this.field23930 = true;
                         var1.method13995(mc.player.method3433().field18049);
                         var1.method13993(mc.player.method3433().field18048);
@@ -354,7 +354,7 @@ public class BlockFlyNCPMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16810(Class4402 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (var1.method13932() instanceof Class5539 && ((BlockFly) this.method16004()).field23884 >= 0) {
                 var1.method13900(true);
             }
@@ -363,9 +363,9 @@ public class BlockFlyNCPMode extends Module {
 
     @EventTarget
     public void method16811(Class4436 var1) {
-        if (this.method15996() && this.field23930) {
+        if (this.isEnabled() && this.field23930) {
             if (this.method16004().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!Class5628.method17686() || this.method16004().method15974("Tower while moving"))) {
+                    && (!Class5628.method17686() || this.method16004().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.method13900(true);
             }
         }
@@ -373,7 +373,7 @@ public class BlockFlyNCPMode extends Module {
 
     @EventTarget
     public void method16812(Class4422 var1) {
-        if (this.method15996() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 >= 0) {
+        if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 >= 0) {
             if (!(mc.player.field5045 > 1.2F)) {
                 if (!(mc.player.field4915 < this.field23931)) {
                     if (!mc.player.field4981) {
@@ -401,7 +401,7 @@ public class BlockFlyNCPMode extends Module {
         double var15 = var5;
         double var17 = 0.0;
 
-        for (double var19 = this.method15977("Extend") * 2.0F;
+        for (double var19 = this.getNumberValueBySettingName("Extend") * 2.0F;
              Class9217.method34578(var12);
              var12 = new BlockPos(var13, mc.player.getPosY() - 1.0, var15)
         ) {

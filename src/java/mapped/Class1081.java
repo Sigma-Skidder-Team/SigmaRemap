@@ -97,7 +97,7 @@ public class Class1081 extends Class1009 implements Class1080 {
 
          int var3 = this.method5020();
          if (var3 > 0 && this.field5942 == 0) {
-            this.method2863(Class6067.field26484, 1.0F, 0.5F);
+            this.method2863(Sounds.field26484, 1.0F, 0.5F);
          }
 
          this.field5942 += var3;
@@ -116,12 +116,12 @@ public class Class1081 extends Class1009 implements Class1080 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26483;
+      return Sounds.field26483;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26482;
+      return Sounds.field26482;
    }
 
    @Override
@@ -177,7 +177,7 @@ public class Class1081 extends Class1009 implements Class1080 {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Class6067.field26587,
+               Sounds.field26587,
                this.method2864(),
                1.0F,
                this.field5054.nextFloat() * 0.4F + 0.8F

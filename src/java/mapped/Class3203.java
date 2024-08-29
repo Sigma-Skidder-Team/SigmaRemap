@@ -9,6 +9,6 @@ public class Class3203 extends Class3202 {
 
    @Override
    public Class9455 method11521(boolean var1) {
-      return !var1 ? Class6067.field27130 : Class6067.field27131;
+      return !var1 ? Sounds.STONE_BUTTON_CLICK_OFF : Sounds.STONE_BUTTON_CLICK_ON;
    }
 }

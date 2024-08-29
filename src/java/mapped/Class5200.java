@@ -19,7 +19,7 @@ public class Class5200 extends Module {
 
     @EventTarget
     public void method16189(Class4426 var1) {
-        if (this.method15996() && mc.player != null && var1.method13973() == 0) {
+        if (this.isEnabled() && mc.player != null && var1.method13973() == 0) {
             if (this.field23511 != -1) {
                 mc.player.inventory.currentItem = this.field23511;
                 this.field23511 = -1;
@@ -29,14 +29,14 @@ public class Class5200 extends Module {
 
     @EventTarget
     private void method16190(Class4430 var1) {
-        if (this.method15996() && mc.player != null && var1.method13977() == 0) {
+        if (this.isEnabled() && mc.player != null && var1.method13977() == 0) {
             this.method16192(var1.method13979());
         }
     }
 
     @EventTarget
     private void method16191(TickEvent var1) {
-        if (this.method15996() && mc.player != null && mc.gameSettings.keyBindAttack.isKeyDown()) {
+        if (this.isEnabled() && mc.player != null && mc.gameSettings.keyBindAttack.isKeyDown()) {
             this.method16192(null);
         }
     }

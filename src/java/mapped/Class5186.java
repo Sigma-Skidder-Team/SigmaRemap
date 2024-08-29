@@ -12,7 +12,7 @@ public class Class5186 extends Module {
 
     @EventTarget
     public void method16144(Class4427 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13974(0.14F);
         }
     }

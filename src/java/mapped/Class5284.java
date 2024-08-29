@@ -14,14 +14,14 @@ public class Class5284 extends Module {
 
     @EventTarget
     private void method16580(Class4425 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }
 
     @EventTarget
     public void method16581(Class4398 var1) {
-        if (this.method15996() && mc.world != null) {
+        if (this.isEnabled() && mc.world != null) {
             if ((double) var1.method13902().getY() >= mc.player.getPosY()) {
                 var1.method13905(Class8022.method27425());
             }
@@ -30,7 +30,7 @@ public class Class5284 extends Module {
 
     @EventTarget
     public void method16582(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             mc.player.field4999 = 3;
             if (mc.player.field5055 % 2 == 0) {
                 if (mc.player.field5036) {

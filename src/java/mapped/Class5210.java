@@ -32,7 +32,7 @@ public class Class5210 extends Module {
 
     @EventTarget
     public void method16226(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!mc.player.field5036) {
                 if (Class5628.method17686() && Class5351.field23907 >= 7) {
                     this.field23536++;
@@ -52,7 +52,7 @@ public class Class5210 extends Module {
 
                     this.field23535 = Class9567.method37092(var1, this.field23534, Class9567.method37083()[0], this.field23535, 45.0F);
                 }
-            } else if (this.method15974("Auto Jump") && Class5628.method17686()) {
+            } else if (this.getBooleanValueFromSetttingName("Auto Jump") && Class5628.method17686()) {
                 this.field23536 = 0;
                 mc.player.method2914();
                 var1.method13993(mc.player.method3433().field18048);
@@ -68,7 +68,7 @@ public class Class5210 extends Module {
 
     @EventTarget
     public void method16227(Class4436 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23537 < 2) {
                 this.field23537++;
             }
@@ -90,7 +90,7 @@ public class Class5210 extends Module {
 
     @EventTarget
     public void method16228(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5473) {
                 this.field23537 = 0;
                 this.field23534 = Class9567.method37075();

@@ -6,7 +6,7 @@ public class Class6345 extends Class6333 {
    private float field27878 = 0.0F;
 
    public Class6345(AbstractMinecartEntity var1) {
-      super(Class6067.field26764, Class2266.field14734);
+      super(Sounds.field26764, Class2266.field14734);
       this.field27877 = var1;
       this.field27861 = true;
       this.field27862 = 0;

@@ -15,7 +15,7 @@ public class Class2650 extends Class2647 {
       if (var2 <= var6 && this.method10856()) {
          this.method10855();
          this.field16990.method3114(var1);
-         this.field17002.method2863(Class6067.field26590, 1.0F, 1.0F);
+         this.field17002.method2863(Sounds.field26590, 1.0F, 1.0F);
       }
    }
 

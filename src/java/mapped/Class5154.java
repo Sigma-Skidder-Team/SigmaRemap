@@ -19,7 +19,7 @@ public class Class5154 extends Module {
 
    public Class5154() {
       super(ModuleCategory.MOVEMENT, "AAC", "Speed for AAC");
-      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").method18631("Fast2"));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").setModeAsPremium("Fast2"));
       this.registerSetting(new BooleanSetting("Fluid Fix", "Makes your jump fluid.", true));
       this.registerSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
@@ -40,7 +40,7 @@ public class Class5154 extends Module {
 
    @EventTarget
    public void method16008(Class4396 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          if (var1.method13898() instanceof Class5473) {
             this.field23399 = 0;
          }
@@ -49,7 +49,7 @@ public class Class5154 extends Module {
 
    @EventTarget
    public void method16009(Class4435 var1) {
-      if (this.method15996()) {
+      if (this.isEnabled()) {
          String var4 = this.getStringSettingValueByName("Mode");
          if (Class5628.method17730(mc.player, 0.01F)) {
             if (this.field23400 <= 1) {
@@ -59,7 +59,7 @@ public class Class5154 extends Module {
                this.field23398 = -1;
             }
 
-            if (Class5628.method17686() && this.method15974("Auto Jump")) {
+            if (Class5628.method17686() && this.getBooleanValueFromSetttingName("Auto Jump")) {
                mc.player.method2914();
                var1.method13995(mc.player.method3433().field18049);
             }
@@ -108,8 +108,8 @@ public class Class5154 extends Module {
 
    @EventTarget
    public void method16010(Class4422 var1) {
-      if (this.method15996()) {
-         if (this.method15974("Fluid Fix")) {
+      if (this.isEnabled()) {
+         if (this.getBooleanValueFromSetttingName("Fluid Fix")) {
             if (!mc.player.field5037 && !mc.player.field5038) {
                String var4 = this.getStringSettingValueByName("Mode");
                float var5 = 13.0F;

@@ -39,10 +39,10 @@ public class Class4308 extends Class4307 {
       this.method13230(this.field20947 = new Class4280(this, "brainFreeze"));
       Class4308 var5 = this;
 
-      for (Module var7 : Client.getInstance().getModuleManager().method14664().values()) {
-         if (!this.field20945.containsKey(var7.method15993())) {
-            Class4338 var8 = new Class4338(this, var7.method15993().getName(), var3, var4, var7.method15993());
-            this.field20945.put(var7.method15993(), var8);
+      for (Module var7 : Client.getInstance().getModuleManager().getModuleMap().values()) {
+         if (!this.field20945.containsKey(var7.getAdjustedCategoryBasedOnClientMode())) {
+            Class4338 var8 = new Class4338(this, var7.getAdjustedCategoryBasedOnClientMode().getName(), var3, var4, var7.getAdjustedCategoryBasedOnClientMode());
+            this.field20945.put(var7.getAdjustedCategoryBasedOnClientMode(), var8);
             this.method13230(var8);
             var3 += var8.method13267() + 10;
             if (this.field20945.size() == 4) {
@@ -61,7 +61,7 @@ public class Class4308 extends Class4307 {
       this.field20946.method13215(true);
       Class4235 var9;
       this.method13230(var9 = new Class4235(this, "more", this.method13267() - 69, this.method13269() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
-      var9.method13307().method19406(Class5628.method17688(Class1979.field12896.field12910, 0.3F));
+      var9.method13307().method19406(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       var9.method13300(false);
       this.field20946.method13288(field20951);
       var9.method13251((var1, var2) -> this.method13222(() -> {
@@ -135,7 +135,7 @@ public class Class4308 extends Class4307 {
       this.field20946.method13288(this.field20946.method13267() < this.method13267() && this.field20946.method13269() < this.method13269());
       super.method13028(var1, var2);
       Class5628.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
-      this.field20947.method13288(Client.getInstance().getModuleManager().method14662(Class5179.class).method15996());
+      this.field20947.method13288(Client.getInstance().getModuleManager().getModuleByClass(Class5179.class).isEnabled());
       if (this.field20948 != null) {
          int var5 = var1 - this.field20948.method13271();
          int var6 = var2 - this.field20948.method13272();
@@ -243,7 +243,7 @@ public class Class4308 extends Class4307 {
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)(this.field20896 + this.field20898),
-         Class5628.method17688(Class1979.field12891.field12910, var5)
+         Class5628.method17688(ClientColors.DEEP_TEAL.getColor, var5)
       );
       Object var6 = null;
       float var7 = 1.0F;
@@ -264,7 +264,7 @@ public class Class4308 extends Class4307 {
             (float)(this.field20897 - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
             (float)(this.field20898 - 47),
             var12,
-            Class5628.method17688(Class1979.field12896.field12910, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
          );
       }
 

@@ -55,7 +55,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class9535>> field16066 = createKey("dimension_type");
    public static final RegistryKey<Registry<World>> field16067 = createKey("dimension");
    public static final RegistryKey<Registry<Class9459>> field16068 = createKey("dimension");
-   public static final Registry<Class9455> field16069 = method9175(field16036, () -> Class6067.field26714);
+   public static final Registry<Class9455> field16069 = method9175(field16036, () -> Sounds.field26714);
    public static final Class2351<Class7631> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Registry<Class7144> field16071 = method9175(field16038, () -> Class8254.field35492);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);

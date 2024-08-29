@@ -21,11 +21,11 @@ public class Class5380 extends Module {
 
     @EventTarget
     public void method16943(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.field5036
                     && mc.player.field5038
                     && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
-                    && this.method15974("AutoJump")) {
+                    && this.getBooleanValueFromSetttingName("AutoJump")) {
                 mc.player.method2914();
                 var1.method13995(mc.player.method3433().field18049);
             }
@@ -68,7 +68,7 @@ public class Class5380 extends Module {
 
     @EventTarget
     private void method16944(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player != null && var1.method13898() instanceof Class5590) {
                 Class5590 var4 = (Class5590) var1.method13898();
                 if (var4.method17565() == mc.player.method3205()) {

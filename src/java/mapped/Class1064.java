@@ -209,38 +209,38 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public Class9455 method4893() {
-      return Class6067.field26735;
+      return Sounds.field26735;
    }
 
    @Override
    public Class9455 method4241() {
-      return Class6067.field26734;
+      return Sounds.field26734;
    }
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26739;
+      return Sounds.field26739;
    }
 
    @Override
    public Class9455 method2880() {
-      return Class6067.field26737;
+      return Sounds.field26737;
    }
 
    @Nullable
    @Override
    public Class9455 method4894() {
-      return Class6067.field26738;
+      return Sounds.field26738;
    }
 
    @Override
    public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(Class6067.field26741, 0.15F, 1.0F);
+      this.method2863(Sounds.field26741, 0.15F, 1.0F);
    }
 
    @Override
    public void method4895() {
-      this.method2863(Class6067.field26736, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
+      this.method2863(Sounds.field26736, 1.0F, (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override
@@ -283,7 +283,7 @@ public class Class1064 extends Class1066 implements Class1022 {
       super.method4902(var1);
       Class112 var5 = this.method4906();
       if (this.field5055 > 20 && var5 != null && var5 != var4) {
-         this.method2863(Class6067.field26742, 0.5F, 1.0F);
+         this.method2863(Sounds.field26742, 0.5F, 1.0F);
       }
    }
 
@@ -353,7 +353,7 @@ public class Class1064 extends Class1066 implements Class1022 {
                this.getPosX(),
                this.getPosY(),
                this.getPosZ(),
-               Class6067.field26740,
+               Sounds.field26740,
                this.method2864(),
                1.0F,
                1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.2F

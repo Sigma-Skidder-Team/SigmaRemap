@@ -22,7 +22,7 @@ public class Class5215 extends Module {
 
     @EventTarget
     public void method16240(Class4432 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.gameSettings.field44636.isKeyDown() && !mc.player.getRidingEntity().field5036) {
             }
 
@@ -73,7 +73,7 @@ public class Class5215 extends Module {
 
     @EventTarget
     public void method16241(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!(var1.method13898() instanceof Class5536)) {
             }
         }

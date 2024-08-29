@@ -294,7 +294,7 @@ public class Class904 extends Class882 {
          } else {
             this.field5156 -= var5;
             if (this.field5156 <= 0) {
-               this.method2863(Class6067.field26585, 0.25F, 1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.4F);
+               this.method2863(Sounds.field26585, 0.25F, 1.0F + (this.field5054.nextFloat() - this.field5054.nextFloat()) * 0.4F);
                double var7 = this.getPosY() + 0.5;
                var4.method6939(
                   Class7940.field34052,

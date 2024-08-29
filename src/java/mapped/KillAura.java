@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
-public class Class5357 extends Module {
+public class KillAura extends Module {
     public static boolean field23937 = false;
     public static Entity field23948;
     public static Class8012 field23949;
@@ -46,23 +46,23 @@ public class Class5357 extends Module {
     private boolean field23959;
     private double[] field23960;
 
-    public Class5357() {
+    public KillAura() {
         super(ModuleCategory.COMBAT, "KillAura", "Automatically attacks entities");
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
         this.registerSetting(new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
         this.registerSetting(new ModeSetting("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
         this.registerSetting(new ModeSetting("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
         this.registerSetting(new ModeSetting("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC", "Smooth", "LockView", "Test", "Test2", "None"));
-        this.registerSetting(new Class6009<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
+        this.registerSetting(new NumberSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
         this.registerSetting(
-                new Class6009<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method18616(var1 -> this.field23938.method36818())
+                new NumberSetting<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method18616(var1 -> this.field23938.method36818())
         );
         this.registerSetting(
-                new Class6009<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method18616(var1 -> this.field23938.method36818())
+                new NumberSetting<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method18616(var1 -> this.field23938.method36818())
         );
-        this.registerSetting(new Class6009<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
         this.registerSetting(new BooleanSetting("Interact autoblock", "Send interact packet when blocking", true));
         this.registerSetting(new BooleanSetting("Players", "Hit players", true));
         this.registerSetting(new BooleanSetting("Animals", "Hit animals", false));
@@ -76,7 +76,7 @@ public class Class5357 extends Module {
         this.registerSetting(new BooleanSetting("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
         this.registerSetting(new BooleanSetting("Silent", "Silent rotations", true));
         this.registerSetting(new BooleanSetting("ESP", "ESP on targets", true));
-        this.registerSetting(new Class6010("ESP Color", "The render color", Class1979.field12896.field12910));
+        this.registerSetting(new ColorSetting("ESP Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.getColor));
     }
 
     // $VF: synthetic method
@@ -105,32 +105,32 @@ public class Class5357 extends Module {
     }
 
     // $VF: synthetic method
-    public static Class7461 method16842(Class5357 var0) {
+    public static Class7461 method16842(KillAura var0) {
         return var0.field23953;
     }
 
     // $VF: synthetic method
-    public static Class7461 method16843(Class5357 var0) {
+    public static Class7461 method16843(KillAura var0) {
         return var0.field23952;
     }
 
     // $VF: synthetic method
-    public static Class9528 method16844(Class5357 var0) {
+    public static Class9528 method16844(KillAura var0) {
         return var0.field23938;
     }
 
     // $VF: synthetic method
-    public static List<Class8012> method16845(Class5357 var0) {
+    public static List<Class8012> method16845(KillAura var0) {
         return var0.field23950;
     }
 
     // $VF: synthetic method
-    public static int method16846(Class5357 var0) {
+    public static int method16846(KillAura var0) {
         return var0.field23942;
     }
 
     // $VF: synthetic method
-    public static int method16847(Class5357 var0, int var1) {
+    public static int method16847(KillAura var0, int var1) {
         return var0.field23942 = var1;
     }
 
@@ -160,7 +160,7 @@ public class Class5357 extends Module {
         field23951 = new Class7461(mc.player.field5031, mc.player.field5032);
         this.field23957 = -1.0F;
         this.field23938
-                .method36814(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof Class3267 && mc.gameSettings.keyBindUseItem.isKeyDown());
+                .method36814(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof ItemSword && mc.gameSettings.keyBindUseItem.isKeyDown());
         this.field23959 = false;
         this.field23946 = -1;
         this.field23938.field44349.clear();
@@ -183,7 +183,7 @@ public class Class5357 extends Module {
 
     @EventTarget
     public void method16818(WorldLoadEvent var1) {
-        if (this.method15996() && this.method15974("Disable on death")) {
+        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Disable on death")) {
             Client.getInstance().getNotificationManager().post(new Notification("Aura", "Aura disabled due to respawn"));
             this.method16000();
         }
@@ -191,12 +191,12 @@ public class Class5357 extends Module {
 
     @EventTarget
     public void method16819(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23957 != -1.0F) {
                 this.field23957++;
             }
 
-            if (this.method15974("Disable on death")) {
+            if (this.getBooleanValueFromSetttingName("Disable on death")) {
                 if (!mc.player.method3066()) {
                     this.method16000();
                     Client.getInstance().getNotificationManager().post(new Notification("Aura", "Aura disabled due to death"));
@@ -207,12 +207,12 @@ public class Class5357 extends Module {
 
     @EventTarget
     public void method16820(StopUseItemEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
-                    && (mc.player.method3090().getItem() instanceof Class3267 || this.field23943 != mc.player.inventory.currentItem)
+                    && (mc.player.method3090().getItem() instanceof ItemSword || this.field23943 != mc.player.inventory.currentItem)
                     && field23948 != null) {
                 var1.method13900(true);
-            } else if (mc.player.method3090().getItem() instanceof Class3267) {
+            } else if (mc.player.method3090().getItem() instanceof ItemSword) {
                 this.field23945 = 2;
             }
         }
@@ -221,7 +221,7 @@ public class Class5357 extends Module {
     @EventTarget
     @LowestPriority
     public void method16821(Class4399 var1) {
-        if (this.method15996() && mc.player != null) {
+        if (this.isEnabled() && mc.player != null) {
             if (!var1.method13921()) {
                 this.field23943 = mc.player.inventory.currentItem;
                 if (field23948 != null && this.field23938.method36817() && this.field23952 != null) {
@@ -236,7 +236,7 @@ public class Class5357 extends Module {
                     this.field23938.method36816();
                 }
 
-                if (this.field23938.method36813() && (!(mc.player.method3090().getItem() instanceof Class3267) || field23948 == null)) {
+                if (this.field23938.method36813() && (!(mc.player.method3090().getItem() instanceof ItemSword) || field23948 == null)) {
                     this.field23938.method36814(false);
                 }
 
@@ -252,10 +252,10 @@ public class Class5357 extends Module {
                 this.method16830();
                 if (this.field23950 != null && !this.field23950.isEmpty()) {
                     this.field23939++;
-                    float var4 = this.method15977("Hit box expand");
-                    Class5325 var5 = (Class5325) Client.getInstance().getModuleManager().method14662(Class5332.class);
-                    if (var5.method15996() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
-                        this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().method15974("Avoid Fall Damage"));
+                    float var4 = this.getNumberValueBySettingName("Hit box expand");
+                    Class5325 var5 = (Class5325) Client.getInstance().getModuleManager().getModuleByClass(Class5332.class);
+                    if (var5.isEnabled() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
+                        this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSetttingName("Avoid Fall Damage"));
                     }
 
                     this.method16831();
@@ -267,7 +267,7 @@ public class Class5357 extends Module {
                     var1.method13918(this.field23952.field32084);
                     var1.method13916(this.field23952.field32085);
                     boolean var6 = this.field23938.method36821(this.field23939);
-                    float var7 = !((double) mc.player.method2973() < 1.26) && this.method15974("Cooldown") ? mc.player.method2974(0.0F) : 1.0F;
+                    float var7 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSetttingName("Cooldown") ? mc.player.method2974(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && var7 >= 1.0F;
                     if (var6) {
                         this.field23938.method36822();
@@ -295,7 +295,7 @@ public class Class5357 extends Module {
 
     @EventTarget
     public void method16822(Class4415 var1) {
-        if (field23949 != null && !this.method15974("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
+        if (field23949 != null && !this.getBooleanValueFromSetttingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
             float var4 = MathHelper.method37792(this.field23953.field32084 + (this.field23952.field32084 - this.field23953.field32084) * mc.getRenderPartialTicks());
             float var5 = MathHelper.method37792(this.field23953.field32085 + (this.field23952.field32085 - this.field23953.field32085) * mc.getRenderPartialTicks());
             mc.player.field5031 = var4;
@@ -415,7 +415,7 @@ public class Class5357 extends Module {
         GL11.glDisable(2929);
         GL11.glBegin(5);
         int var8 = (int) (360.0F / (40.0F * var3));
-        Color var9 = new Color(this.method15976("ESP Color"));
+        Color var9 = new Color(this.parseSettingValueToIntBySettingName("ESP Color"));
         float var10 = (float) var9.getRed() / 255.0F;
         float var11 = (float) var9.getGreen() / 255.0F;
         float var12 = (float) var9.getBlue() / 255.0F;
@@ -458,13 +458,13 @@ public class Class5357 extends Module {
     public boolean method16827() {
         return field23948 != null
                 && mc.player.method3090() != null
-                && mc.player.method3090().getItem() instanceof Class3267
+                && mc.player.method3090().getItem() instanceof ItemSword
                 && !this.getStringSettingValueByName("Autoblock Mode").equals("None");
     }
 
     @Override
     public boolean method15988() {
-        return this.method15996() && this.method16827();
+        return this.isEnabled() && this.method16827();
     }
 
     public void method16828(Class4399 var1, String var2, boolean var3) {
@@ -486,16 +486,16 @@ public class Class5357 extends Module {
             }
         }
 
-        boolean var9 = !Class5381.method16953() && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F));
+        boolean var9 = !Jesus.method16953() && (mc.player.field5036 || Class5628.method17730(mc.player, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;
         } else {
             this.field23941++;
             if ((
-                    !Client.getInstance().getModuleManager().method14662(Class5341.class).method15996()
-                            || Client.getInstance().getModuleManager().method14662(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
-                            || Client.getInstance().getModuleManager().method14662(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
+                    !Client.getInstance().getModuleManager().getModuleByClass(Class5341.class).isEnabled()
+                            || Client.getInstance().getModuleManager().getModuleByClass(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")
+                            || Client.getInstance().getModuleManager().getModuleByClass(Class5341.class).getStringSettingValueByName("Type").equalsIgnoreCase("Vanilla")
             )
                     && mc.player.field5038
                     && var9
@@ -512,14 +512,14 @@ public class Class5357 extends Module {
 
     private Entity method16829(List<Class8012> var1) {
         var1 = this.field23938.method36824(var1);
-        return !var1.isEmpty() && var1.get(0).method27397().method3275(mc.player) <= this.method15977("Block Range")
+        return !var1.isEmpty() && var1.get(0).method27397().method3275(mc.player) <= this.getNumberValueBySettingName("Block Range")
                 ? var1.get(0).method27397()
                 : null;
     }
 
     private void method16830() {
-        float var3 = this.method15977("Block Range");
-        float var4 = this.method15977("Range");
+        float var3 = this.getNumberValueBySettingName("Block Range");
+        float var4 = this.getNumberValueBySettingName("Range");
         String var5 = this.getStringSettingValueByName("Mode");
         List var6 = this.field23938.method36823(Math.max(var3, var4));
         var6 = this.field23938.method36824(var6);
@@ -638,7 +638,7 @@ public class Class5357 extends Module {
 
     private void method16831() {
         Entity var3 = field23949.method27397();
-        Class7461 var4 = Class9142.method34150(var3, !this.method15974("Through walls"));
+        Class7461 var4 = Class9142.method34150(var3, !this.getBooleanValueFromSetttingName("Through walls"));
         float var5 = Class9142.method34152(this.field23952.field32084, var4.field32084);
         float var6 = var4.field32085 - this.field23952.field32085;
         String var7 = this.getStringSettingValueByName("Rotation Mode");
@@ -658,7 +658,7 @@ public class Class5357 extends Module {
                     this.field23958 = var31;
                 } else if (Math.abs(var5) > 10.0F) {
                     Entity var27 = Class5628.method17711(
-                            this.field23952.field32085, this.field23952.field32084, this.method15977("Range"), this.method15977("Hit box expand")
+                            this.field23952.field32085, this.field23952.field32084, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                     );
                     double var11 = var27 == null ? 13.4 : 1.4;
                     this.field23958 = (float) ((double) this.field23958 * 0.5296666666666666);
@@ -686,7 +686,7 @@ public class Class5357 extends Module {
                 }
 
                 Entity var28 = Class5628.method17711(
-                        this.field23953.field32085, this.field23953.field32084, this.method15977("Range"), this.method15977("Hit box expand")
+                        this.field23953.field32085, this.field23953.field32084, this.getNumberValueBySettingName("Range"), this.getNumberValueBySettingName("Hit box expand")
                 );
                 if (var28 != null && (double) this.field23947 > this.method16832(2.0, 5.0)) {
                     this.field23947 = 0;
@@ -752,7 +752,7 @@ public class Class5357 extends Module {
                 this.field23953.field32084 = this.field23952.field32084;
                 this.field23953.field32085 = this.field23952.field32085;
                 EntityRayTraceResult var40 = Class5628.method17714(
-                        var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.method15977("Range")
+                        var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (var40 == null || var40.getEntity() != var3) {
                     this.field23952 = var4;
@@ -760,7 +760,7 @@ public class Class5357 extends Module {
                 break;
             case "Test2":
                 EntityRayTraceResult var24 = Class5628.method17714(
-                        var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.method15977("Range")
+                        var3, this.field23952.field32084, this.field23952.field32085, var0 -> true, this.getNumberValueBySettingName("Range")
                 );
                 if (var24 != null && var24.getEntity() == var3) {
                     this.field23953.field32084 = this.field23952.field32084;

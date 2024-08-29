@@ -23,14 +23,14 @@ public class Class4263 extends Class4247 {
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),
          (float)this.field20897,
-         Class5628.method17688(Class1979.field12901.field12910, (0.5F + this.field20678 * 0.3F + (!this.field20909 ? 0.0F : 0.2F)) * var1)
+         Class5628.method17688(ClientColors.PALE_YELLOW.getColor, (0.5F + this.field20678 * 0.3F + (!this.field20909 ? 0.0F : 0.2F)) * var1)
       );
       Class3192.method11424(
          (float)(this.field20895 + (this.field20897 - 10) / 2),
          (float)(this.field20896 + this.field20898 / 2 - 1),
          10.0F,
          2.0F,
-         Class5628.method17688(Class1979.field12896.field12910, 0.75F * var1)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F * var1)
       );
       super.method13027(var1);
    }

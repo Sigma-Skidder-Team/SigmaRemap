@@ -37,7 +37,7 @@ public class Class5259 extends PremiumModule {
 
     @EventTarget
     private void method16426(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             if (mc.gameSettings.field44637.isKeyDown()) {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
@@ -71,7 +71,7 @@ public class Class5259 extends PremiumModule {
 
     @EventTarget
     private void method16427(Class4435 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.player.field5037 && this.field23652 != 0) {
                 this.field23652 = 0;
                 if (mc.player.field5036) {
@@ -91,7 +91,7 @@ public class Class5259 extends PremiumModule {
                     }
 
                     if (!this.field23651) {
-                        Class9567.method37088(var1, !this.method15974("Hypixel") ? 0.0031 : 0.03);
+                        Class9567.method37088(var1, !this.getBooleanValueFromSetttingName("Hypixel") ? 0.0031 : 0.03);
                     } else {
                         Class9567.method37088(var1, 0.617);
                     }
@@ -107,14 +107,14 @@ public class Class5259 extends PremiumModule {
 
     @EventTarget
     private void method16428(Class4425 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             var1.method13900(true);
         }
     }
 
     @EventTarget
     private void method16429(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             Packet var4 = var1.method13898();
             if (var4 instanceof Class5473) {
                 Class5473 var5 = (Class5473) var4;

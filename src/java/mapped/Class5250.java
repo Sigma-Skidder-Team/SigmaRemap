@@ -28,8 +28,8 @@ public class Class5250 extends Module {
         this.registerSetting(new BooleanSetting("Ignore Junk", "Ignores useless items.", true));
         this.registerSetting(new BooleanSetting("Fix ViaVersion", "Fixes ViaVersion delay.", true));
         this.registerSetting(new BooleanSetting("Close", "Automatically closes the chest when done", true));
-        this.registerSetting(new Class6009<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
         this.field23622 = new ConcurrentHashMap<Class941, Boolean>();
     }
 
@@ -44,8 +44,8 @@ public class Class5250 extends Module {
 
     @EventTarget
     public void method16365(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
-            if (this.method15974("Aura")) {
+        if (this.isEnabled() && var1.method13921()) {
+            if (this.getBooleanValueFromSetttingName("Aura")) {
                 if (this.field23624.method27121() > 2000L && this.field23621) {
                     this.field23624.method27120();
                     this.field23621 = false;
@@ -116,7 +116,7 @@ public class Class5250 extends Module {
 
     @EventTarget
     public void method16367(Class4415 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (!(mc.currentScreen instanceof Class868)) {
                 this.field23621 = false;
                 this.field23623.method27119();
@@ -129,9 +129,9 @@ public class Class5250 extends Module {
                     this.field23623.method27118();
                 }
 
-                if (!((float) Client.getInstance().method19939().method31333() < this.method15977("Delay") * 20.0F)) {
+                if (!((float) Client.getInstance().method19939().method31333() < this.getNumberValueBySettingName("Delay") * 20.0F)) {
                     if (Class7789.method25875()) {
-                        if (this.method15974("Close")) {
+                        if (this.getBooleanValueFromSetttingName("Close")) {
                             mc.player.method2772();
                         }
                     } else {
@@ -148,14 +148,14 @@ public class Class5250 extends Module {
                                     ItemStack var8 = var7.method18265();
                                     if (!this.method16369(var8)) {
                                         if (!this.field23621) {
-                                            if ((float) this.field23623.method27121() < this.method15977("First Item") * 1000.0F) {
+                                            if ((float) this.field23623.method27121() < this.getNumberValueBySettingName("First Item") * 1000.0F) {
                                                 return;
                                             }
 
                                             this.field23621 = !this.field23621;
                                         }
 
-                                        if (!this.method15974("Fix ViaVersion")) {
+                                        if (!this.getBooleanValueFromSetttingName("Fix ViaVersion")) {
                                             Class7789.method25869(var4.field4727.field25471, var7.field25579, 0, Class2259.field14695, mc.player);
                                         } else {
                                             Class7789.method25870(var4.field4727.field25471, var7.field25579, 0, Class2259.field14695, mc.player, true);
@@ -163,7 +163,7 @@ public class Class5250 extends Module {
 
                                         this.field23623.method27120();
                                         var5 = false;
-                                        if (this.method15977("Delay") > 0.0F) {
+                                        if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                             break;
                                         }
                                     }
@@ -175,7 +175,7 @@ public class Class5250 extends Module {
                                     this.field23621 = !this.field23621;
                                 }
 
-                                if (this.method15974("Close")) {
+                                if (this.getBooleanValueFromSetttingName("Close")) {
                                     mc.player.method2772();
                                 }
 
@@ -269,20 +269,20 @@ public class Class5250 extends Module {
 
     private boolean method16369(ItemStack var1) {
         Item var4 = var1.getItem();
-        if (!this.method15974("Ignore Junk")) {
+        if (!this.getBooleanValueFromSetttingName("Ignore Junk")) {
             return false;
-        } else if (!(var4 instanceof Class3267)) {
+        } else if (!(var4 instanceof ItemSword)) {
             if (var4 instanceof Class3268) {
-                return !Class5260.method16442(var1);
+                return !InvManager.method16442(var1);
             } else if (!(var4 instanceof Class3265)) {
                 if (var4 instanceof Class3270) {
-                    return !Class5260.method16443(var1);
+                    return !InvManager.method16443(var1);
                 } else if (!(var4 instanceof Class3323)) {
                     if (var4 instanceof Class3292) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
-                            && (!(var4 instanceof Class3263) || !Client.getInstance().getModuleManager().method14662(Class5260.class).method15974("Archery"))) {
-                        if (var4 == Items.field37883 && Client.getInstance().getModuleManager().method14662(Class5258.class).method15996()) {
+                            && (!(var4 instanceof Class3263) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSetttingName("Archery"))) {
+                        if (var4 == Items.field37883 && Client.getInstance().getModuleManager().getModuleByClass(Class5258.class).isEnabled()) {
                             return false;
                         } else {
                             ArrayList var5 = new ArrayList<Item>(
@@ -323,10 +323,10 @@ public class Class5250 extends Module {
                     return Class7789.method25874(var1);
                 }
             } else {
-                return !Class5260.method16444(var1);
+                return !InvManager.method16444(var1);
             }
         } else {
-            return !Class5260.method16431(var1);
+            return !InvManager.method16431(var1);
         }
     }
 

@@ -12,7 +12,7 @@ public class Class5175 extends Module {
 
     @EventTarget
     private void method16107(TickEvent var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (mc.playerController.field31362 > 0.7F) {
                 mc.playerController.field31362 = 1.0F;
             }

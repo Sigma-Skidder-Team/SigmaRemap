@@ -125,7 +125,7 @@ public class Class3475 extends Block implements Class3476 {
          (double)var1.getX(),
          (double)var1.getY(),
          (double)var1.getZ(),
-         !var2 ? Class6067.field26464 : Class6067.field26465,
+         !var2 ? Sounds.field26464 : Sounds.field26465,
          Class2266.field14732,
          1.0F,
          1.0F,
@@ -221,7 +221,7 @@ public class Class3475 extends Block implements Class3476 {
       }
 
       BlockState var13 = method12167(var0, var1, var2);
-      var1.method6742((PlayerEntity)null, var2, Class6067.field26463, Class2266.field14732, 1.0F, 1.0F);
+      var1.method6742((PlayerEntity)null, var2, Sounds.field26463, Class2266.field14732, 1.0F, 1.0F);
       return var13;
    }
 
@@ -252,7 +252,7 @@ public class Class3475 extends Block implements Class3476 {
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method23463(field19326) == 7) {
          var2.method6725(var3, var1.method23459(field19326), 3);
-         var2.method6742((PlayerEntity)null, var3, Class6067.field26466, Class2266.field14732, 1.0F, 1.0F);
+         var2.method6742((PlayerEntity)null, var3, Sounds.field26466, Class2266.field14732, 1.0F, 1.0F);
       }
    }
 

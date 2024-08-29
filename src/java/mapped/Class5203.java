@@ -16,14 +16,14 @@ public class Class5203 extends Module {
 
     public Class5203() {
         super(ModuleCategory.COMBAT, "Delay", "For anticheats with \"good\" velocity checks");
-        this.registerSetting(new Class6009<Float>("Delay", "Ticks delay", 7.0F, Float.class, 1.0F, 20.0F, 1.0F));
-        this.registerSetting(new Class6009<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
-        this.registerSetting(new Class6009<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("Delay", "Ticks delay", 7.0F, Float.class, 1.0F, 20.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+        this.registerSetting(new NumberSetting<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
     }
 
     @EventTarget
     private void method16198(Class4396 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13898() instanceof Class5515) {
                 Class5515 var4 = (Class5515) var1.method13898();
                 this.field23518.add(var4);
@@ -36,7 +36,7 @@ public class Class5203 extends Module {
                     this.field23518.add(var5);
                     var1.method13900(true);
                     if (this.field23519 == 0) {
-                        this.field23519 = (int) this.method15977("Delay");
+                        this.field23519 = (int) this.getNumberValueBySettingName("Delay");
                     }
                 }
             }
@@ -45,7 +45,7 @@ public class Class5203 extends Module {
 
     @EventTarget
     private void method16199(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (var1.method13932() instanceof CUseEntityPacket) {
                 CUseEntityPacket var4 = (CUseEntityPacket) var1.method13932();
                 CUseEntityPacketAction var5 = var4.getAction();
@@ -71,16 +71,16 @@ public class Class5203 extends Module {
             if (!(var4 instanceof Class5590)) {
                 if (var4 instanceof Class5515) {
                     Class5515 var5 = (Class5515) var4;
-                    var5.field24473 = var5.field24473 * this.method15977("H-Multiplier");
-                    var5.field24475 = var5.field24475 * this.method15977("H-Multiplier");
-                    var5.field24474 = var5.field24474 * this.method15977("V-Multiplier");
+                    var5.field24473 = var5.field24473 * this.getNumberValueBySettingName("H-Multiplier");
+                    var5.field24475 = var5.field24475 * this.getNumberValueBySettingName("H-Multiplier");
+                    var5.field24474 = var5.field24474 * this.getNumberValueBySettingName("V-Multiplier");
                     mc.getConnection().method15720(var5);
                 }
             } else {
                 Class5590 var6 = (Class5590) var4;
-                var6.field24801 = (int) ((float) var6.field24801 * this.method15977("H-Multiplier"));
-                var6.field24803 = (int) ((float) var6.field24803 * this.method15977("H-Multiplier"));
-                var6.field24802 = (int) ((float) var6.field24802 * this.method15977("V-Multiplier"));
+                var6.field24801 = (int) ((float) var6.field24801 * this.getNumberValueBySettingName("H-Multiplier"));
+                var6.field24803 = (int) ((float) var6.field24803 * this.getNumberValueBySettingName("H-Multiplier"));
+                var6.field24802 = (int) ((float) var6.field24802 * this.getNumberValueBySettingName("V-Multiplier"));
                 mc.getConnection().method15739(var6);
             }
         }

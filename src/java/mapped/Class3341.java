@@ -64,7 +64,7 @@ public class Class3341 extends Item {
                   var2.getPosX(),
                   var2.getPosY(),
                   var2.getPosZ(),
-                  Class6067.field26544,
+                  Sounds.field26544,
                   Class2266.field14734,
                   0.5F,
                   0.4F / (field18735.nextFloat() * 0.4F + 0.8F)

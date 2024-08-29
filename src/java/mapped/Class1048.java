@@ -121,7 +121,7 @@ public class Class1048 extends Class1047 {
       boolean var4 = var1.method2741(Class8654.method31115(this), (float)((int)this.method3086(Class9173.field42110)));
       if (var4) {
          this.method3399(this, var1);
-         this.method2863(Class6067.field26500, 1.0F, 1.0F);
+         this.method2863(Sounds.field26500, 1.0F, 1.0F);
       }
 
       return var4;
@@ -257,7 +257,7 @@ public class Class1048 extends Class1047 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!var5.isEmpty() && var5.getItem().method11743(Class5985.field26114)) {
          if (!this.world.field9020) {
-            this.method2863(Class6067.field26502, 1.0F, 1.0F);
+            this.method2863(Sounds.field26502, 1.0F, 1.0F);
          }
 
          this.method4779(true);
@@ -286,29 +286,29 @@ public class Class1048 extends Class1047 {
 
    @Override
    public Class9455 method2879(Class8654 var1) {
-      return Class6067.field26503;
+      return Sounds.field26503;
    }
 
    @Nullable
    @Override
    public Class9455 method2880() {
-      return Class6067.field26501;
+      return Sounds.field26501;
    }
 
    @Nullable
    @Override
    public Class9455 method4241() {
-      return !this.method3250() ? Class6067.field26498 : Class6067.field26499;
+      return !this.method3250() ? Sounds.field26498 : Sounds.field26499;
    }
 
    @Override
    public Class9455 method2860() {
-      return Class6067.field26506;
+      return Sounds.field26506;
    }
 
    @Override
    public Class9455 method2859() {
-      return Class6067.field26507;
+      return Sounds.field26507;
    }
 
    public boolean method4785() {

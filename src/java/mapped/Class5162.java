@@ -18,9 +18,9 @@ public class Class5162 extends Module {
 
     public Class5162() {
         super(ModuleCategory.ITEM, "AutoSoup", "Automatically eats soup when low life");
-        this.registerSetting(new Class6009<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
-        this.registerSetting(new Class6009<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
-        this.registerSetting(new Class6009<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
+        this.registerSetting(new NumberSetting<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));
         this.registerSetting(new ModeSetting("Refill mode", "Refill mode", 0, "Basic", "FakeInv", "OpenInv"));
         this.registerSetting(new ModeSetting("Soup mode", "Soup Mode", 0, "Instant", "Legit"));
         this.registerSetting(new ModeSetting("Bowls", "Bowls managing", 0, "Drop", "Stack"));
@@ -28,8 +28,8 @@ public class Class5162 extends Module {
 
     @Override
     public void isInDevelopment() {
-        this.field23428 = (int) this.method15977("Refill delay");
-        this.field23431 = (int) this.method15977("Refill delay");
+        this.field23428 = (int) this.getNumberValueBySettingName("Refill delay");
+        this.field23431 = (int) this.getNumberValueBySettingName("Refill delay");
         this.field23432 = false;
         this.field23433 = false;
         this.field23430 = -1;
@@ -37,7 +37,7 @@ public class Class5162 extends Module {
 
     @EventTarget
     private void method16057(Class4399 var1) {
-        if (this.method15996() && var1.method13921()) {
+        if (this.isEnabled() && var1.method13921()) {
             this.field23428++;
             this.field23431++;
             String var4 = this.getStringSettingValueByName("Refill mode");
@@ -68,7 +68,7 @@ public class Class5162 extends Module {
 
     @EventTarget
     private void method16058(Class4402 var1) {
-        if (this.method15996()) {
+        if (this.isEnabled()) {
             if (this.field23433 && var1.method13932() instanceof CClientStatusPacket) {
                 CClientStatusPacket var4 = (CClientStatusPacket) var1.method13932();
                 if (var4.getStatus() == CClientStatusPacketState.field14279) {
@@ -104,12 +104,12 @@ public class Class5162 extends Module {
     }
 
     private void method16060() {
-        int var3 = (int) this.method15977("Refill delay");
+        int var3 = (int) this.getNumberValueBySettingName("Refill delay");
         if (this.field23431 >= var3 && Client.getInstance().method19939().method31333() >= var3) {
             while (this.field23429 < 36) {
                 boolean var4 = false;
                 if (Class7789.method25866(this.field23429).getItem() == Items.field37837
-                        && Math.random() * 100.0 > (double) this.method15977("Refill accuracy")) {
+                        && Math.random() * 100.0 > (double) this.getNumberValueBySettingName("Refill accuracy")) {
                     Class7789.method25870(mc.player.field4904.field25471, this.field23429, 0, Class2259.field14695, mc.player, true);
                     this.field23431 = 0;
                     var4 = true;
@@ -157,7 +157,7 @@ public class Class5162 extends Module {
                 this.field23428 = 0;
                 this.field23430 = -1;
             } else {
-                if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.method15977("Health")) {
+                if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.getNumberValueBySettingName("Health")) {
                     return;
                 }
 
@@ -168,7 +168,7 @@ public class Class5162 extends Module {
                 mc.getConnection().sendPacket(new Class5555(Hand.MAIN_HAND));
             }
         } else {
-            if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.method15977("Health")) {
+            if (var3 < 0 || this.field23428 <= 3 || mc.player.method3042() > this.getNumberValueBySettingName("Health")) {
                 return;
             }
 

@@ -58,7 +58,7 @@ public class Class4322 extends Class4307 {
             this.field20898 / 2 + 120,
             240,
             60,
-            new Class6387(Class5628.method17688(Class1979.field12896.field12910, 0.5F)),
+            new Class6387(Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)),
             "Continue",
             ResourceRegistry.JelloLightFont25
          )
@@ -140,7 +140,7 @@ public class Class4322 extends Class4307 {
             (int)((double)this.field20898 - var5.getHeight()) / 2,
             (int)var5.getWidth(),
             (int)var5.getHeight(),
-            Class5628.method17688(Class1979.field12896.field12910, 1.0F - this.field21093.calcPercent())
+            Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - this.field21093.calcPercent())
          );
       }
 
@@ -161,15 +161,15 @@ public class Class4322 extends Class4307 {
             0.0F,
             (float)this.field20897,
             (float)this.field20898,
-            Class5628.method17688(Class1979.field12891.field12910, 0.45F * this.field21093.calcPercent())
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent())
          );
          Class3192.method11454(
             (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), ResourcesDecrypter.sigmaPNG, this.field21093.calcPercent()
          );
          int var13 = 165;
          int var14 = 54;
-         Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, Class1979.field12896.field12910);
-         Class3192.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), username, Class1979.field12896.field12910);
+         Class3192.method11439(ResourceRegistry.JelloMediumFont40, (float)(var11 + var13), (float)(var12 + var14), welcomeBackSign, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+         Class3192.method11439(ResourceRegistry.field38860, (float)(var11 + var13), (float)(var12 + var14 + 45), username, ClientColors.LIGHT_GREYISH_BLUE.getColor);
       }
 
       GL11.glPushMatrix();
@@ -201,7 +201,7 @@ public class Class4322 extends Class4307 {
          (float)(this.method13267() * 2),
          (float)(this.method13269() + 114),
          this.field21087,
-         Class5628.method17688(Class1979.field12896.field12910, this.field21085)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field21085)
       );
       GL11.glPopMatrix();
       float var8 = 0.5F;

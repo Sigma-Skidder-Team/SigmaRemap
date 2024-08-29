@@ -5,26 +5,26 @@ import javax.annotation.Nullable;
 
 public class Class8395 {
    public static final Class8395 field36011 = method29461("none", Class4913.field22751, (Class9455)null);
-   public static final Class8395 field36012 = method29461("armorer", Class4913.field22752, Class6067.field27196);
-   public static final Class8395 field36013 = method29461("butcher", Class4913.field22753, Class6067.field27197);
-   public static final Class8395 field36014 = method29461("cartographer", Class4913.field22754, Class6067.field27198);
-   public static final Class8395 field36015 = method29461("cleric", Class4913.field22755, Class6067.field27199);
+   public static final Class8395 field36012 = method29461("armorer", Class4913.field22752, Sounds.field27196);
+   public static final Class8395 field36013 = method29461("butcher", Class4913.field22753, Sounds.field27197);
+   public static final Class8395 field36014 = method29461("cartographer", Class4913.field22754, Sounds.field27198);
+   public static final Class8395 field36015 = method29461("cleric", Class4913.field22755, Sounds.field27199);
    public static final Class8395 field36016 = method29462(
       "farmer",
       Class4913.field22756,
       ImmutableSet.of(Items.field37842, Items.field37841, Items.field38112, Items.field37934),
       ImmutableSet.of(Blocks.FARMLAND),
-      Class6067.field27200
+      Sounds.field27200
    );
-   public static final Class8395 field36017 = method29461("fisherman", Class4913.field22757, Class6067.field27201);
-   public static final Class8395 field36018 = method29461("fletcher", Class4913.field22758, Class6067.field27202);
-   public static final Class8395 field36019 = method29461("leatherworker", Class4913.field22759, Class6067.field27203);
-   public static final Class8395 field36020 = method29461("librarian", Class4913.field22760, Class6067.field27204);
-   public static final Class8395 field36021 = method29461("mason", Class4913.field22761, Class6067.field27205);
+   public static final Class8395 field36017 = method29461("fisherman", Class4913.field22757, Sounds.field27201);
+   public static final Class8395 field36018 = method29461("fletcher", Class4913.field22758, Sounds.field27202);
+   public static final Class8395 field36019 = method29461("leatherworker", Class4913.field22759, Sounds.field27203);
+   public static final Class8395 field36020 = method29461("librarian", Class4913.field22760, Sounds.field27204);
+   public static final Class8395 field36021 = method29461("mason", Class4913.field22761, Sounds.field27205);
    public static final Class8395 field36022 = method29461("nitwit", Class4913.field22762, (Class9455)null);
-   public static final Class8395 field36023 = method29461("shepherd", Class4913.field22763, Class6067.field27206);
-   public static final Class8395 field36024 = method29461("toolsmith", Class4913.field22764, Class6067.field27207);
-   public static final Class8395 field36025 = method29461("weaponsmith", Class4913.field22765, Class6067.field27208);
+   public static final Class8395 field36023 = method29461("shepherd", Class4913.field22763, Sounds.field27206);
+   public static final Class8395 field36024 = method29461("toolsmith", Class4913.field22764, Sounds.field27207);
+   public static final Class8395 field36025 = method29461("weaponsmith", Class4913.field22765, Sounds.field27208);
    private final String field36026;
    private final Class4913 field36027;
    private final ImmutableSet<Item> field36028;

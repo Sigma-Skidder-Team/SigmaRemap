@@ -82,7 +82,7 @@ public class Class4348 extends Class4278 {
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
-            Class1979.field12896.field12910
+            ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          GL11.glTexParameteri(3553, 10241, 9728);
          GL11.glPushMatrix();
@@ -102,7 +102,7 @@ public class Class4348 extends Class4278 {
                (float)this.field20897,
                (float)this.field20897,
                this.field21246,
-               Class5628.method17688(Class5628.method17690(Class1979.field12896.field12910, Class1979.field12891.field12910, 0.7F), 0.8F)
+               Class5628.method17688(Class5628.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
             );
          }
 
@@ -113,7 +113,7 @@ public class Class4348 extends Class4278 {
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
             (float)(this.field20896 + this.field20898),
-            Class5628.method17688(Class1979.field12891.field12910, 0.3F + 0.3F * this.field21248.calcPercent())
+            Class5628.method17688(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
          );
       }
 
@@ -143,11 +143,11 @@ public class Class4348 extends Class4278 {
       if (this.field21245 == null) {
          Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("textures/misc/unknown_server.png"));
          Class3192.method11457(
-            (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, Class1979.field12896.field12910, 0.0F, 0.0F, 64.0F, 64.0F
+            (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.0F, 0.0F, 64.0F, 64.0F
          );
       } else {
          Class3192.method11450(
-            (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, this.field21245, Class1979.field12896.field12910, true
+            (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, this.field21245, ClientColors.LIGHT_GREYISH_BLUE.getColor, true
          );
       }
 
@@ -186,7 +186,7 @@ public class Class4348 extends Class4278 {
          !this.field21244.field33188.equals("Minecraft Server")
             ? this.field21244.field33188
             : this.field21244.field33189.substring(0, 1).toUpperCase() + this.field21244.field33189.substring(1, this.field21244.field33189.length()),
-         Class5628.method17688(Class1979.field12896.field12910, 0.9F)
+         Class5628.method17688(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F)
       );
       byte var12 = 94;
       byte var13 = 46;
@@ -197,7 +197,7 @@ public class Class4348 extends Class4278 {
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
-               Class5628.method17690(Class1979.field12891.field12910, Class1979.field12896.field12910, 0.2F)
+               Class5628.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             Class3192.method11439(
@@ -205,7 +205,7 @@ public class Class4348 extends Class4278 {
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Unbanned!",
-               Class5628.method17690(Class1979.field12894.field12910, Class1979.field12896.field12910, 0.3F)
+               Class5628.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          } else {
             Class3192.method11439(
@@ -213,7 +213,7 @@ public class Class4348 extends Class4278 {
                (float)(this.field20895 + var12),
                (float)(this.field20896 + var13),
                "Permanently banned!",
-               Class5628.method17690(Class1979.field12901.field12910, Class1979.field12896.field12910, 0.3F)
+               Class5628.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          }
       } else {
@@ -222,7 +222,7 @@ public class Class4348 extends Class4278 {
             (float)(this.field20895 + var12),
             (float)(this.field20896 + var13),
             "Compromised ban (unbannable)!",
-            Class5628.method17690(Class1979.field12902.field12910, Class1979.field12896.field12910, 0.3F)
+            Class5628.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
          );
       }
 
